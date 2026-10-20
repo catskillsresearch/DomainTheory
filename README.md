@@ -35,10 +35,14 @@ repos, each Palomar-registered on its own as specified in its repo.
 [`PROVENANCE.md`](PROVENANCE.md) tabulates each upstream, its frozen
 vendored revision, its Palomar registration (ID + version + registry
 link) and compared claim; [`formalization.yaml`](formalization.yaml)
-(v0.4) records the same machine-readably (`related_formalizations`
-with `/tree/<rev>` URLs matching `vendor/FROZEN.txt`, `sources` with
-the Scott papers as background and the five formalizations as
-derived-from). The vendored code will change and diverge — the frozen
+(v0.4) is the **union of the five vendored `formalization.yaml` files,
+in date order (1972, 1976, 1980, 1982, bridges)** — what would be
+Palomared for `DomainTheory` is that union, under the renamed
+`DomainTheory` declarations/files: 75 `main_results`, 90 alignment
+statements grouped by base, merged sources (10, deduplicated),
+classification, automation, gaps, and limitations, plus
+`related_formalizations` with `/tree/<rev>` URLs matching
+`vendor/FROZEN.txt`. The vendored code will change and diverge — the frozen
 revisions are provenance before modification, not upstream identity,
 and the upstream registrations are not transferred: `DomainTheory`
 itself is not yet Palomar-registered and has no compared claim yet.

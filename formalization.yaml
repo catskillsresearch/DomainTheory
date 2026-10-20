@@ -1,320 +1,1961 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
-version: "v0.4"
-
-# Initial Palomar provenance for DomainTheory, recorded 2026-10-20 before
-# any DomainTheory Lean development or modification of the vendored code.
-# This file describes the derivative starting point only: DomainTheory is
-# not yet Palomar-registered and has no compared claim, Challenge/Solution
-# pair, or comparator.json yet. The five Palomar registrations cited below
-# belong to the upstream repositories and are quoted from them at the
-# vendored revisions; they are not transferred to DomainTheory.
-
+# DomainTheory formalization.yaml — UNION of the five vendored
+# formalization.yaml files, in date order: scott1972 (1972), scott1976
+# (1976), scott1980 (1980), scott1982 (1982), scott_models (bridges).
+# What would be Palomared for DomainTheory is that union, under the
+# renamed DomainTheory declarations/files (see PROVENANCE.md). Generated
+# 2026-10-20 from vendor/*/formalization.yaml; DomainTheory is not yet
+# Palomar-registered and has no comparator.json / Challenge / Solution yet.
+version: v0.4
 project:
-  name: "DomainTheory — derivative development from five registered Scott formalizations (initial provenance)"
-  description: >-
-    A Lean 4 / mathlib development of Scott domain theory built as a
-    derivative work from straight file copies, vendored under vendor/ on
-    2026-10-20, of five same-author formalizations: scott1972 (Continuous
-    Lattices, Theorem 4.4), scott1976 (Data Types as Lattices),
-    scott1980 (PRG-19 neighbourhood systems, Theorem 8.8 first
-    sentence), scott1982 (information systems, Theorem 7.2 first
-    sentence), and scott_models (cross-presentation bridges). Each base
-    is registered with Palomar on its own, as specified in that repo at
-    the vendored revision (see PROVENANCE.md for the registration table
-    and vendor/FROZEN.txt for the frozen revisions). The vendored code
-    is expected to change and diverge from upstream as DomainTheory
-    develops; the frozen revisions are provenance before modification,
-    not a guarantee of continued identity with upstream. DomainTheory
-    itself has no Palomar registration and no statement of record yet.
-    The five libraries were assembled on 2026-10-20 into the single
-    DomainTheory Lean library under renamed modules/namespaces
-    (DomainTheory.ContinuousLattice, DataTypesAsLattices, Neighborhood,
-    InformationSystems, BridgeTheorems), pinned to Lean/Mathlib
-    v4.35.0; lake build is green with no sorry (see PROVENANCE.md,
-    Assembly). Dana Scott did not participate in or endorse the
-    vendored formalizations or this derivative work.
+  name: DomainTheory — Scott domain theory 1972–1982 with cross-presentation bridges (union of five registered
+    formalizations)
+  description: 'Union, in date order, of the five same-author Palomar-registered formalizations vendored
+    under vendor/ and assembled into the single DomainTheory Lean library (Lean/Mathlib v4.35.0, lake
+    build green, no sorry): (1) scott1972, Continuous Lattices, Theorem 4.4 (DomainTheory.ContinuousLattice);
+    (2) scott1976, Data Types as Lattices (DomainTheory.DataTypesAsLattices); (3) scott1980, Lectures
+    on a Mathematical Theory of Computation (PRG-19), Theorem 8.8 first sentence plus two corollaries
+    (DomainTheory.Neighborhood); (4) scott1982, Domains for Denotational Semantics, Theorem 7.2 first
+    sentence (DomainTheory.InformationSystems); (5) scott_models, cross-presentation bridge equivalences
+    (DomainTheory.BridgeTheorems). This file is the union of the five vendor/*/formalization.yaml files:
+    what would be Palomared for DomainTheory is that union, under the renamed DomainTheory declarations
+    and file paths. DomainTheory itself is not yet Palomar-registered and has no comparator.json / Challenge
+    / Solution pair yet; the five registrations cited in PROVENANCE.md and below remain the upstream repos''.
+    Dana Scott did not participate in or endorse any of these formalizations or this derivative union.'
   authors:
-    - "Lars Warren Ericson"
-  license: "Apache-2.0"
+  - Lars Warren Ericson
+  license: Apache-2.0
   responsible_maintainers:
-    - "Lars Warren Ericson"
-
+  - Lars Warren Ericson
 repository:
   role: substantive-development
-
 classification:
-  arxiv: [cs.LO, cs.PL, math.LO]
-  msc2020: ["68Q55", "06B35", "03B70"]
-
+  arxiv:
+  - math.LO
+  - math.GN
+  - cs.LO
+  - cs.PL
+  msc2020:
+  - 06B35
+  - 54H99
+  - 03B40
+  - 68Q55
+  - 03B70
+  - 68V20
+  - 18C50
+  acm1998:
+  - F.3.2 Semantics of Programming Languages — Denotational semantics
+  - F.3.1 Specifying and Verifying and Reasoning about Programs — Mechanical verification
+  - F.4.1 Mathematical Logic — Mechanical theorem proving; Lambda calculus and related systems
+  - D.3.1 Formal Definitions and Theory — Semantics
 status:
-  scope: >-
-    Initial provenance (2026-10-20), plus the same-day assembly of the
-    five vendored libraries into the single DomainTheory library
-    (DomainTheory/ with root DomainTheory.lean, Lean/Mathlib v4.35.0,
-    lake build green). main_results lists the assembled declarations
-    under their new DomainTheory names; no DomainTheory Palomar claim
-    has been selected and comparator.json does not exist yet, so these
-    are development results, not compared targets. Axiom profile is
-    the union of the vendored bases' profiles.
+  scope: 'Union of the five bases in date order (1972, 1976, 1980, 1982, bridges). Each base scope, renamed
+    to DomainTheory modules:
+
+
+    [1972 / scott1972, PALOMAR-2026-08-24-000003 v2] Complete for the compared claim and the underlying
+    DomainTheory.ContinuousLattice library it uses. Theorem 4.4 is the compared declaration theorem_4_4:
+    for a continuous lattice D₀ and projection j₀, the inverse limit D_∞ of the function-space tower is
+    a continuous lattice homeomorphic to [D_∞ → D_∞]. The Homeomorph names Scott''s product/subspace inverse-limit
+    topology and Definition 3.1 pointwise function-space topology explicitly. Challenge.lean fixes the
+    function-space lattice by pointwise order and pointwise suprema, the inverse-limit lattice by coordinatewise
+    order and infima, and the projection tower by the recursive Proposition 3.7 conjugation formulas.
+    The broader paper (Theorems 2.12, 3.3, 4.1, etc.) is formalized in the same library but is not part
+    of the advertised Comparator result; the additional Comparator theorem targets are proof obligations
+    used only to lock these concrete definition bodies.
+
+
+    [1976 / scott1976, PALOMAR-2026-08-25-000004 v1] The library is a 1:1 onto translation of the numbered
+    items in Scott 1976, except that plusR uses the doubly strict conditional of (4.4) in place of the
+    ordinary conditional written in displayed (4.10). Comparator selects the 63 theorem declarations and
+    70 definitions named in comparator.json. That match establishes those selected statements; further
+    library companions are not all compared.
+
+
+    [1980 / scott1980, PALOMAR-2026-08-24-000001 v2] Complete for the three compared embedding results.
+    The principal sourced declaration is theorem_8_8: for every countable neighbourhood system D one has
+    D ⊴ U, i.e. D ≅ D'' for some subsystem D'' ◁ U. This is Scott''s first Theorem 8.8 sentence. The other
+    compared declarations are two new formal corollaries obtained by specialization: Example 1.5 (`P4_embeds`)
+    and Exercise 7.22''s system S (`Ssys_embeds`). Scott defines those systems but does not separately
+    state these embeddings. Challenge.lean also locks the filter-element order (element_le), the Definition
+    8.7 membership predicate UMem, the non-emptiness of the master token sets, and the concrete value
+    of U. The broader book is formalized in the same library but is not part of the advertised Comparator
+    result; Exercise 8.17 Part 2 remains a documented deferral. Additional Comparator theorem targets
+    are proof obligations used only to lock these concrete definition bodies.
+
+
+    [1982 / scott1982, PALOMAR-2026-08-24-000005 v1] Complete for the compared claim. theorem_7_2 is the
+    compared declaration: approximable maps A → B are exactly the elements of the Definition 7.1 function-space
+    system |A → B|. That is Scott''s first Theorem 7.2 sentence only. Challenge.lean locks the information-system
+    axioms, the carrier-inclusion order on elements, set-level entailment, approximable maps, and the
+    concrete Definition 7.1 data (FunToken, FunCon, FunEnt, functionSystem). The broader paper is formalized
+    in the same library but is not part of the advertised Comparator result. Additional Comparator theorem
+    targets are proof obligations used only to lock these concrete definition bodies.
+
+
+    [bridge / scott_models, PALOMAR-2026-08-25-000003 v1] Complete for the compared family, with no unproved
+    step in the DomainTheory.BridgeTheorems proof modules. The 1980 ↔ 1982 coding, the round continuous-lattice
+    identification D ≃o RoundInfoSysElement, and the S-expression instance (sexNeighborhoodIso, sexIdealIso,
+    sexDomainEquationIso) are stated and proved. The rest of the DomainTheory.BridgeTheorems library (general
+    constructions, ScottMap conjugation, LRSOD) is out of the compared family. Nothing in the compared
+    statements is imported from a prior Palomar entry.'
   sorry_count: 0
   sorry_in_definitions: 0
-  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
   main_results:
-    - declaration: "DomainTheory.ContinuousLattice.theorem_4_4"
-      file: "DomainTheory/ContinuousLattice/FunctionSpaceTower.lean"
-      sorry_count: 0
-      axioms: ["propext", "Classical.choice", "Quot.sound"]
-    - declaration: "DomainTheory.InformationSystems.InfoSys.theorem_7_2"
-      file: "DomainTheory/InformationSystems/Theorem72.lean"
-      sorry_count: 0
-      axioms: ["propext", "Classical.choice", "Quot.sound"]
-    - declaration: "DomainTheory.BridgeTheorems.presentation_domains_equiv"
-      file: "DomainTheory/BridgeTheorems/PresentationDomains.lean"
-      sorry_count: 0
-      axioms: ["propext", "Classical.choice", "Quot.sound"]
-
+  - declaration: DomainTheory.ContinuousLattice.theorem_4_4
+    file: DomainTheory/ContinuousLattice/FunctionSpaceTower.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1972/comparator.json
+    literature_dependencies: []
+    base: scott1972
+    palomar_registration: PALOMAR-2026-08-24-000003 (version 2)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_1
+    file: DomainTheory/DataTypesAsLattices/Continuous.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_2
+    file: DomainTheory/DataTypesAsLattices/Graph.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_3
+    file: DomainTheory/DataTypesAsLattices/FixedPoint.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_3_tuple
+    file: DomainTheory/DataTypesAsLattices/FixedPoint.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_3_nary
+    file: DomainTheory/DataTypesAsLattices/FixedPoint.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_4
+    file: DomainTheory/DataTypesAsLattices/FixedPoint.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_5
+    file: DomainTheory/DataTypesAsLattices/Embedding.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_5_extends
+    file: DomainTheory/DataTypesAsLattices/Embedding.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_6
+    file: DomainTheory/DataTypesAsLattices/Embedding.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_1
+    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_2
+    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_3
+    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_4
+    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_4_complete
+    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_5
+    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_6
+    file: DomainTheory/DataTypesAsLattices/Computability.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_6_fin
+    file: DomainTheory/DataTypesAsLattices/Computability.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_3_1
+    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_3_2
+    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_3_2_range
+    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_3_3
+    file: DomainTheory/ContinuousLattice/FunctionSpaces.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_3_4
+    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_3_5
+    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_3_6
+    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_3_7
+    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_1
+    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_1_continuous
+    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_2
+    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_3
+    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_4
+    file: DomainTheory/ContinuousLattice/FunctionSpaceTower.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_4_typed
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.tensorR_isRetract
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.tensorR_isStrict
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.tensorR_retractLe
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.tensorR_functor
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_5
+    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_5_sum
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.plusR_retractLe
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.plusR_functor
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_6
+    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_6_limit
+    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_1
+    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_2
+    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_3
+    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_3_closure
+    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_4
+    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.typed_squarePair_boxTensor
+    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_4_plus
+    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.boxPlus_typed_iff
+    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_5_universe
+    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_6
+    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_6_combinator
+    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_6_1
+    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_6_2
+    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_6_3
+    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_6_4
+    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_6_5
+    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_6_6
+    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_6_7
+    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_7_1
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_7_2
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_7_3
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_7_4
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1976/comparator.json
+    literature_dependencies: []
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.Neighborhood.theorem_8_8
+    file: DomainTheory/Neighborhood/Theorem88a.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1980/comparator.json
+    literature_dependencies: []
+    base: scott1980
+    palomar_registration: PALOMAR-2026-08-24-000001 (version 2)
+  - declaration: DomainTheory.Neighborhood.Example15.P4_embeds
+    file: DomainTheory/Neighborhood/PalomarExamples.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1980/comparator.json
+    literature_dependencies: []
+    base: scott1980
+    palomar_registration: PALOMAR-2026-08-24-000001 (version 2)
+  - declaration: DomainTheory.Neighborhood.Exercise722.Ssys_embeds
+    file: DomainTheory/Neighborhood/PalomarExamples.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott1980/comparator.json
+    literature_dependencies: []
+    base: scott1980
+    palomar_registration: PALOMAR-2026-08-24-000001 (version 2)
+  - declaration: DomainTheory.InformationSystems.InfoSys.theorem_7_2
+    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Quot.sound
+    comparator_config: vendor/scott1982/comparator.json
+    literature_dependencies: []
+    base: scott1982
+    palomar_registration: PALOMAR-2026-08-24-000005 (version 1)
+  - declaration: DomainTheory.BridgeTheorems.neighborhoodSystem_to_infoSys
+    file: DomainTheory/BridgeTheorems/NeighborhoodToInfoSys.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Quot.sound
+    comparator_config: vendor/scott_models/comparator.json
+    literature_dependencies: []
+    base: scott_models
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
+  - declaration: DomainTheory.BridgeTheorems.infoSys_to_neighborhoodSystem
+    file: DomainTheory/BridgeTheorems/InfoSysToNeighborhood.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Quot.sound
+    comparator_config: vendor/scott_models/comparator.json
+    literature_dependencies: []
+    base: scott_models
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
+  - declaration: DomainTheory.BridgeTheorems.InfoSysToNeighborhood.domainOrderIso
+    file: DomainTheory/BridgeTheorems/InfoSysToNeighborhood.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Quot.sound
+    comparator_config: vendor/scott_models/comparator.json
+    literature_dependencies: []
+    base: scott_models
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
+  - declaration: DomainTheory.BridgeTheorems.presentation_domains_equiv
+    file: DomainTheory/BridgeTheorems.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Quot.sound
+    comparator_config: vendor/scott_models/comparator.json
+    literature_dependencies: []
+    base: scott_models
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
+  - declaration: DomainTheory.BridgeTheorems.sexNeighborhoodIso
+    file: DomainTheory/BridgeTheorems.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Quot.sound
+    comparator_config: vendor/scott_models/comparator.json
+    literature_dependencies: []
+    base: scott_models
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
+  - declaration: DomainTheory.BridgeTheorems.sexIdealIso
+    file: DomainTheory/BridgeTheorems.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Quot.sound
+    comparator_config: vendor/scott_models/comparator.json
+    literature_dependencies: []
+    base: scott_models
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
+  - declaration: DomainTheory.BridgeTheorems.sexDomainEquationIso
+    file: DomainTheory/BridgeTheorems.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Quot.sound
+    comparator_config: vendor/scott_models/comparator.json
+    literature_dependencies: []
+    base: scott_models
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
 fidelity:
-  divergences: >-
-    Provenance before modification: the vendored trees are the upstream
-    tracked trees at the revisions in vendor/FROZEN.txt, copied without
-    .git directories. Deviations already present at setup: nested
-    .gitignore files under vendor/ were removed, and top-level
-    boilerplate/scripts were copied from scott_models and repointed to
-    DomainTheory (see PROVENANCE.md). All further divergence — adapted
-    Lean code, moved modules, changed statements — will be DomainTheory
-    modifications attributable to this repository's git history, and
-    must not be read back onto the upstream repos or their Palomar
-    entries. The vendored revision of each base is its upstream git
-    HEAD at copy time and is not asserted to be the pinned commit
-    Palomar preserves for that base's registration.
+  divergences: '[1972 / scott1972] Working source: sources/ScottContinLatt1972.md. Theorem 4.4 there is
+    quoted in Challenge.lean and as theorem_4_4. Lean DInf is the inverse limit of the recursively defined
+    sequence ⟨D_n, j_n⟩ of function spaces (D_{n+1} = [D_n → D_n], j_{n+1} = [j_n → j_n], D_0 and j_0
+    given as in the paragraph above 4.4). Definition 3.1 takes [X → Y] with the product topology, represented
+    by scottMapInducedPiTopology. The inverse limit uses inverseLimitTopology, the subspace topology induced
+    from the Pi product of the stage Scott topologies. Proposition 4.1 follows Scott''s route: coordinatewise
+    maximal extensions from Proposition 3.8 are made compatible by Lemma 3.9, yielding injectivity, and
+    Theorem 2.12 supplies both the continuous-lattice result and the topology identification. Lemma 4.5
+    follows Scott''s induction after moving a projection through a directed supremum. The source-topology
+    homeomorphism uses Scott''s formulas i_∞(x) = ⨆ₙ (i_{n∞} ∘ x_{n+1} ∘ j_{∞n}) and j_∞(f) = ⨆ₙ i_{(n+1)∞}(j_{∞n}
+    ∘ f ∘ i_{n∞}). Theorem 3.3 identifies the pointwise function topology with the lattice Scott topology.
+    The abstract''s extra “and isomorphic” is theorem_4_4_orderIso and is not the numbered theorem.
 
+
+    [1976 / scott1976] Working source: sources/Data_Types_as_Lattices_vision.md (transcription of sources/Data_Types_as_Lattices.pdf).
+    Compared claims are the spanning theorems named in comparator.json. Remaining source-level notes are
+    listed in known_gaps and in arxiv.md.
+
+
+    [1980 / scott1980] Working source: sources/PRG19.md. Theorem 8.8 there is quoted in Challenge.lean
+    and as theorem_8_8. Scott writes D ⊴ U; Lean Trianglelefteq is the prose before Lemma 6.15 (D ≅ D''
+    for some D'' ◁ U). Scott''s standing assumption immediately before Definition 1.1 that the master
+    token set Δ is non-empty is enforced by NeighborhoodSystem.master_nonempty. Definition 8.7 takes U
+    as the non-empty finite unions of rational [r,s) inside [0,1). Lean UMem presents those unions by
+    List (ℚ × ℚ) without per-pair bound side-conditions; U_mem_iff_scott in Definition87.lean proves this
+    is equivalent to Scott''s literal per-pair 0 ≤ r < s ≤ 1 family. The principal compared theorem is
+    the general (non-effective) first sentence of 8.8; P4_embeds and Ssys_embeds are new formal corollaries.
+    The effective refinement theorem_8_8_b and the finitary-projection correspondence theorem_8_8_c are
+    proved in the library but are not Comparator targets.
+
+
+    [1982 / scott1982] Ground truth: sources/Domains_for_Denotational_Semantics.pdf. Theorem 7.2 is quoted
+    in Challenge.lean and as theorem_7_2. Definition 7.1 tokens are consistent pairs (u, v). Consistency
+    is Scott''s 7.1(iii). Entailment FunEnt is the constructive witness form of 7.1(iv): some s ⊆ w whose
+    inputs are entailed by u'' and whose output-union entails v'', avoiding an undecidable filter on EntSet.
+    Finset unions in the locked bodies are the choice-free ∪'' restated in Challenge.lean (and proved
+    in DomainTheory.InformationSystems.Constructive). The apply / curry clauses of Theorem 7.2 are proved
+    in the library and are not Comparator targets. The compared statements assume DecidableEq on token
+    types so the Finset operations of Definitions 2.1, 5.1, and 7.1 can be formed.
+
+
+    [bridge / scott_models] The informal note speaks of three presentations determining the same domains
+    up to order isomorphism. The compared Lean statements are the named bridges, not a 2-categorical equivalence
+    of the full categories with all morphisms. The 1972 corner is D ≃o RoundFilter ≃o RoundInfoSysElement,
+    not raw |𝒟| ≃o D. Informal [u] is InfoSys.basicOpen; informal ↟a is wayBelowUp. DecidableEq on tokens
+    (and on D for the ↟-coding) is required so InfoSys can use the choice-free Finset prelude. The sibling
+    packages remain the per-paper remotes; this snapshot vendors modified copies in vendor/ (revisions
+    and local patches: vendor/FROZEN.txt) and proves the maps between them.
+
+
+    [DomainTheory assembly, 2026-10-20] Modules/namespaces renamed as in PROVENANCE.md (Assembly) and
+    Lean/Mathlib v4.35.0 compatibility patches ported/applied there; vendor/ trees are unmodified. Declarations
+    and files below use the new DomainTheory names.'
 sources:
-  - title: "Continuous Lattices"
-    authors: ["Dana S. Scott"]
-    type: "article"
-    location: "In: Toposes, Algebraic Geometry and Logic, LNM 274, Springer, 1972, pp. 97–136. Theorem 4.4."
-    relationship: background
-    author_endorsement: not-contacted
-    note: >-
-      Literature behind vendor/scott1972; cited only. Dana Scott was
-      not contacted and did not endorse any of these formalizations.
-
-  - title: "Data Types as Lattices"
-    authors: ["Dana S. Scott"]
-    type: "article"
-    location: "Technical Monograph PRG-5, Oxford, September 1976; reprinted SIAM J. Comput. 5 (1976), 522–587."
-    relationship: background
-    author_endorsement: not-contacted
-    note: "Literature behind vendor/scott1976; cited only."
-
-  - title: "Lectures on a Mathematical Theory of Computation"
-    authors: ["Dana S. Scott"]
-    type: "paper"
-    location: "Technical Monograph PRG-19, Oxford, May 1981 (lectures 1980). Theorem 8.8, first sentence."
-    relationship: background
-    author_endorsement: not-contacted
-    note: "Literature behind vendor/scott1980; cited only."
-
-  - title: "Domains for Denotational Semantics"
-    authors: ["Dana S. Scott"]
-    type: "paper"
-    location: "In: Automata, Languages and Programming (ICALP 1982), LNCS 140, Springer, 1982. Theorem 7.2."
-    relationship: background
-    author_endorsement: not-contacted
-    note: "Literature behind vendor/scott1982; cited only."
-
-  - title: "Scott 1972 Continuous Lattices — Theorem 4.4"
-    authors: ["Lars Warren Ericson"]
-    type: "other"
-    id: "https://github.com/catskillsresearch/scott1972/tree/a198b6e24aea07cfc858a59798d0ca78161c4387"
-    location: "vendor/scott1972 (frozen rev a198b6e24aea07cfc858a59798d0ca78161c4387)"
-    relationship: adapts
-    author_endorsement: participated
-    note: >-
-      Derived-from formalization, copied before modification.
-      Registered with Palomar as specified in that repo at this
-      revision: PALOMAR-2026-08-24-000003 (version 2,
-      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000003&version=2).
-      Compared claim: Theorem 4.4, D-infinity homeomorphic to its
-      function space. Its own formalization.yaml (vendor/scott1972/)
-      is authoritative for the copy as frozen.
-
-  - title: "Scott 1976 Data Types as Lattices"
-    authors: ["Lars Warren Ericson"]
-    type: "other"
-    id: "https://github.com/catskillsresearch/scott1976/tree/94ef7f7f096078cbfe4f99595c2a3fcb4c563942"
-    location: "vendor/scott1976 (frozen rev 94ef7f7f096078cbfe4f99595c2a3fcb4c563942)"
-    relationship: adapts
-    author_endorsement: participated
-    note: >-
-      Derived-from formalization, copied before modification.
-      Registered with Palomar as specified in that repo at this
-      revision: PALOMAR-2026-08-25-000004 (version 1,
-      https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000004&version=1).
-      Compared: 63 theorem and 70 definition comparator targets.
-
-  - title: "Scott 1981 — D embeds in U (Theorem 8.8, first sentence + two corollaries)"
-    authors: ["Lars Warren Ericson"]
-    type: "other"
-    id: "https://github.com/catskillsresearch/scott1980/tree/11b25d2e9cc32176ddfc78194058c61a0138a6da"
-    location: "vendor/scott1980 (frozen rev 11b25d2e9cc32176ddfc78194058c61a0138a6da)"
-    relationship: adapts
-    author_endorsement: participated
-    note: >-
-      Derived-from formalization, copied before modification.
-      Registered with Palomar as specified in that repo at this
-      revision: PALOMAR-2026-08-24-000001 (version 2,
-      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000001&version=2).
-      Compared claim: every countable neighbourhood system embeds in
-      the universal domain, plus P4_embeds and Ssys_embeds.
-
-  - title: "Scott 1982 — Theorem 7.2 (function-space elements)"
-    authors: ["Lars Warren Ericson"]
-    type: "other"
-    id: "https://github.com/catskillsresearch/scott1982/tree/455bd70226912fa621203319292e25deb0677082"
-    location: "vendor/scott1982 (frozen rev 455bd70226912fa621203319292e25deb0677082)"
-    relationship: adapts
-    author_endorsement: participated
-    note: >-
-      Derived-from formalization, copied before modification.
-      Registered with Palomar as specified in that repo at this
-      revision: PALOMAR-2026-08-24-000005 (version 1,
-      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000005&version=1).
-      Compared claim: Theorem 7.2, first sentence.
-
-  - title: "Equivalence of Scott's three presentations of domain theory"
-    authors: ["Lars Warren Ericson"]
-    type: "other"
-    id: "https://github.com/catskillsresearch/scott_models/tree/85ed1ae09faa29fe292c9867e91cf8e9b48ab2fa"
-    location: "vendor/scott_models (frozen rev 85ed1ae09faa29fe292c9867e91cf8e9b48ab2fa)"
-    relationship: adapts
-    author_endorsement: participated
-    note: >-
-      Derived-from formalization, copied before modification,
-      including its own nested vendor/scott1972, vendor/scott1980,
-      and vendor/scott1982 copies. Registered with Palomar as
-      specified in that repo at this revision:
-      PALOMAR-2026-08-25-000003 (version 1,
-      https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000003&version=1).
-      Compared claim: cross-presentation bridge isomorphisms.
-
+- title: Continuous Lattices
+  authors:
+  - Dana S. Scott
+  type: article
+  location: 'In: Toposes, Algebraic Geometry and Logic, edited by F. W. Lawvere, LNM 274, Springer-Verlag,
+    1972, pp. 97–136. Theorem 4.4.'
+  relationship: formalizes
+  author_endorsement: not-contacted
+  note: 'Primary source. Dana Scott was not contacted and did not participate in or endorse this formalization.
+    The compared claim is Theorem 4.4. Working OCR text: vendor/scott1972/sources/ScottContinLatt1972.md.
+    Narrative inventory: arxiv.md. Also cited in scott_models (relationship there: background); the DomainTheory
+    entry above governs.'
+  base: scott1972
+- title: A Lean 4 Formalization of Scott's Continuous Lattices (1972)
+  authors:
+  - Lars Warren Ericson
+  type: article
+  id: https://arxiv.org/abs/2606.30782
+  relationship: other
+  author_endorsement: participated
+  note: The author's write-up of this formalization, not the 1972 source paper.
+  base: scott1972
+- title: Continuous Lattices (Milner correction)
+  authors:
+  - Robin Milner
+  type: article
+  location: LNM 274, pp. 135–136 (March 1972 correction)
+  relationship: background
+  author_endorsement: not-contacted
+  note: March 1972 correction to Proposition 2.10; formalized in MilnerCorrection.lean. Used in inverse-limit
+    and retraction arguments underlying Theorem 4.4. Milner was not contacted.
+  base: scott1972
+- title: Data Types as Lattices
+  authors:
+  - Dana S. Scott
+  type: article
+  location: Technical Monograph PRG-5, Oxford University Computing Laboratory, Programming Research Group,
+    September 1976; reprinted SIAM Journal on Computing, Volume 5, 1976, pages 522–587.
+  relationship: formalizes
+  author_endorsement: other
+  note: 'Primary source. Dana Scott did not review or endorse this formalization. Working PDF: vendor/scott1976/sources/Data_Types_as_Lattices.pdf.'
+  base: scott1976
+- title: Lectures on a Mathematical Theory of Computation
+  authors:
+  - Dana S. Scott
+  type: paper
+  location: Technical Monograph PRG-19, Oxford University Computing Laboratory, Programming Research Group,
+    May 1981. First sentence of Theorem 8.8.
+  relationship: formalizes
+  author_endorsement: not-contacted
+  note: 'Primary source (© 1981 Dana S. Scott / University of Oxford). Dana Scott was not contacted and
+    did not participate in or endorse this formalization. The principal sourced compared claim is the
+    first sentence of Theorem 8.8 (general universality); the other two selected embeddings are identified
+    as new formal corollaries. Working transcription: vendor/scott1980/sources/PRG19.md, which is not
+    licensed under this repository''s Apache-2.0 terms. Narrative inventory: arxiv.md. Lectures 1980;
+    monograph May 1981. Also cited in scott_models (relationship there: background); the DomainTheory
+    entry above governs.'
+  base: scott1980
+- title: A Lean 4 Certificate of Scott's Lectures on a Mathematical Theory of Computation (1981) generated
+    by LLM and registered by Palomar
+  authors:
+  - Lars Warren Ericson
+  type: other
+  relationship: other
+  author_endorsement: participated
+  note: The author's write-up of this formalization in arxiv.md, not the 1981 source monograph.
+  base: scott1980
+- title: Domains for Denotational Semantics
+  authors:
+  - Dana S. Scott
+  type: paper
+  location: 'In: Automata, Languages and Programming (ICALP 1982), LNCS 140, Springer, 1982. Theorem 7.2.'
+  relationship: formalizes
+  author_endorsement: not-contacted
+  note: 'Primary source. Dana Scott was not contacted and did not participate in or endorse this formalization.
+    The compared claim is the first sentence of Theorem 7.2. Repository copy: vendor/scott1982/sources/Domains_for_Denotational_Semantics.pdf.
+    Narrative inventory: arxiv.md. Also cited in scott_models (relationship there: background); the DomainTheory
+    entry above governs.'
+  base: scott1982
+- title: A Lean 4 Formalization of Scott's Domains for Denotational Semantics (1982)
+  authors:
+  - Lars Warren Ericson
+  type: other
+  relationship: other
+  author_endorsement: participated
+  note: The author's write-up of this formalization in arxiv.md, not the 1982 source paper.
+  base: scott1982
+- title: Equivalence of Scott's Three Presentations of Domain Theory
+  authors:
+  - Lars Warren Ericson
+  type: notes
+  id: https://github.com/catskillsresearch/scott_models/blob/main/view.pdf
+  relationship: other
+  author_endorsement: participated
+  note: Write-up of this formalization (view.pdf; source arxiv.md), not a claim that the equivalence is
+    original. It catalogs the named bridges, the round-filter identification D ≃o RoundFilter, and D ≃o
+    RoundInfoSysElement. Challenge.lean is checked against those named results, not against a transcription
+    of Scott 1972 / 1981 / 1982 in full.
+  base: scott_models
+- title: Folklore equivalence of the three presentations
+  authors: []
+  type: folklore
+  relationship: independently-proves
+  note: 'Prior result: continuous lattices, neighbourhood systems, and information systems determine the
+    same class of domains (via ideal completion and the Scott topology), as already remarked by Scott
+    (1982) for the neighbourhood / information pair. This package independently proves the named order
+    isomorphisms (including D ≃o RoundFilter ≃o RoundInfoSysElement), not a functorial equivalence of
+    categories. The equivalence is not claimed as original.'
+  base: scott_models
 related_formalizations:
-  - id: "https://github.com/catskillsresearch/scott1972/tree/a198b6e24aea07cfc858a59798d0ca78161c4387"
-    relationship: builds-on
-    note: >-
-      Vendored at vendor/scott1972, copied 2026-10-20 before
-      modification; DomainTheory is a derivative work and its code
-      will diverge from this revision. Palomar registration as
-      specified in that repo: PALOMAR-2026-08-24-000003 (version 2),
-      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000003&version=2
-      — upstream's registration, not DomainTheory's. Upstream home:
-      https://github.com/catskillsresearch/scott1972
-
-  - id: "https://github.com/catskillsresearch/scott1976/tree/94ef7f7f096078cbfe4f99595c2a3fcb4c563942"
-    relationship: builds-on
-    note: >-
-      Vendored at vendor/scott1976, copied 2026-10-20 before
-      modification; derivative code will diverge. Palomar:
-      PALOMAR-2026-08-25-000004 (version 1),
-      https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000004&version=1
-      — upstream's registration. Upstream home:
-      https://github.com/catskillsresearch/scott1976
-
-  - id: "https://github.com/catskillsresearch/scott1980/tree/11b25d2e9cc32176ddfc78194058c61a0138a6da"
-    relationship: builds-on
-    note: >-
-      Vendored at vendor/scott1980, copied 2026-10-20 before
-      modification; derivative code will diverge. Palomar:
-      PALOMAR-2026-08-24-000001 (version 2),
-      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000001&version=2
-      — upstream's registration. Upstream home:
-      https://github.com/catskillsresearch/scott1980
-
-  - id: "https://github.com/catskillsresearch/scott1982/tree/455bd70226912fa621203319292e25deb0677082"
-    relationship: builds-on
-    note: >-
-      Vendored at vendor/scott1982, copied 2026-10-20 before
-      modification; derivative code will diverge. Palomar:
-      PALOMAR-2026-08-24-000005 (version 1),
-      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000005&version=1
-      — upstream's registration. Upstream home:
-      https://github.com/catskillsresearch/scott1982
-
-  - id: "https://github.com/catskillsresearch/scott_models/tree/85ed1ae09faa29fe292c9867e91cf8e9b48ab2fa"
-    relationship: builds-on
-    note: >-
-      Vendored at vendor/scott_models, copied 2026-10-20 before
-      modification; derivative code will diverge. Palomar:
-      PALOMAR-2026-08-25-000003 (version 1),
-      https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000003&version=1
-      — upstream's registration. Upstream home:
-      https://github.com/catskillsresearch/scott_models
-
-  - id: "https://github.com/catskillsresearch/domain_theory"
-    relationship: other
-    note: >-
-      Archived earlier combined tree by the same author, noted here
-      for disambiguation. Not vendored and not a derived-from base of
-      DomainTheory; scott_models records itself as superseding it.
-      See PROVENANCE.md.
-
+- id: https://github.com/catskillsresearch/scott1972/tree/a198b6e24aea07cfc858a59798d0ca78161c4387
+  relationship: builds-on
+  note: 'Vendored at vendor/scott1972, copied 2026-10-20 before modification; DomainTheory is a derivative
+    work and its code will diverge from this revision. Palomar registration as specified in that repo:
+    PALOMAR-2026-08-24-000003 (version 2), https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000003&version=2
+    — upstream''s registration, not DomainTheory''s. Upstream home: https://github.com/catskillsresearch/scott1972'
+- id: https://github.com/catskillsresearch/scott1976/tree/94ef7f7f096078cbfe4f99595c2a3fcb4c563942
+  relationship: builds-on
+  note: 'Vendored at vendor/scott1976, copied 2026-10-20 before modification; derivative code will diverge.
+    Palomar: PALOMAR-2026-08-25-000004 (version 1), https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000004&version=1
+    — upstream''s registration. Upstream home: https://github.com/catskillsresearch/scott1976'
+- id: https://github.com/catskillsresearch/scott1980/tree/11b25d2e9cc32176ddfc78194058c61a0138a6da
+  relationship: builds-on
+  note: 'Vendored at vendor/scott1980, copied 2026-10-20 before modification; derivative code will diverge.
+    Palomar: PALOMAR-2026-08-24-000001 (version 2), https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000001&version=2
+    — upstream''s registration. Upstream home: https://github.com/catskillsresearch/scott1980'
+- id: https://github.com/catskillsresearch/scott1982/tree/455bd70226912fa621203319292e25deb0677082
+  relationship: builds-on
+  note: 'Vendored at vendor/scott1982, copied 2026-10-20 before modification; derivative code will diverge.
+    Palomar: PALOMAR-2026-08-24-000005 (version 1), https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000005&version=1
+    — upstream''s registration. Upstream home: https://github.com/catskillsresearch/scott1982'
+- id: https://github.com/catskillsresearch/scott_models/tree/85ed1ae09faa29fe292c9867e91cf8e9b48ab2fa
+  relationship: builds-on
+  note: 'Vendored at vendor/scott_models, copied 2026-10-20 before modification; derivative code will
+    diverge. Palomar: PALOMAR-2026-08-25-000003 (version 1), https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000003&version=1
+    — upstream''s registration. Upstream home: https://github.com/catskillsresearch/scott_models'
+- id: https://github.com/catskillsresearch/domain_theory
+  relationship: other
+  note: Archived earlier combined tree by the same author, noted here for disambiguation. Not vendored
+    and not a derived-from base of DomainTheory; scott_models records itself as superseding it. See PROVENANCE.md.
+- id: https://github.com/catskillsresearch/cardb
+  relationship: other
+  note: Same-author Palomar template source; not imported here. (As cited in scott1980.)
+- id: https://github.com/Vilin97/lean-pool/tree/main/LeanPool/DomainTheory
+  relationship: other
+  note: 'Public downstream ingest of catskillsresearch/domain_theory (candidates/provenance.jsonl: repo
+    catskillsresearch/domain_theory, authors Catskills Research Company). Apache-2.0 permitted the copy.
+    Incomplete relative to this snapshot (ContinuousLattice + Neighborhood + a short InfoSys; no full
+    scott1982, no bridges). Not prior work this formalization follows; a later copy of an earlier repo
+    of the same author. This SHA is the complete source to copy. (As cited in scott_models.)'
 automation:
   methods:
-    - method: agent
-      models: ["Cursor agent (scaffolding session, 2026-10-20)"]
-      framework: "Cursor"
-      role: >-
-        Repository scaffolding only: copying boilerplate from
-        scott_models, vendoring the five base repos without .git,
-        removing nested .gitignore files, repointing top-level
-        scripts to DomainTheory, and drafting this initial Palomar
-        provenance (PROVENANCE.md, formalization.yaml) under the
-        author's direction. No Lean was written or modified.
-    - method: manual
-      models: []
-      role: >-
-        The author directed the vendoring and provenance setup and
-        takes sole responsibility for the mathematical content.
-        Automation history of the vendored code as copied is recorded
-        in each vendor/*/formalization.yaml and is not claimed here.
-  notes: >-
-    This provenance was set up before modification of the derived
-    code. Future DomainTheory automation must be appended here (and
-    in scripts/ai_model_cards.py) as the development proceeds.
+  - method: agent
+    models:
+    - Cursor Grok 4.6 High Fast (SpaceXAI / Cursor)
+    framework: Cursor
+    role: '[1972 / scott1972] Primary agent for Lean 4 / mathlib formalization, lake build repair, vision-OCR
+      transcription, and arxiv.md drafting.
 
+      [1976 / scott1976] Primary agent for Lean 4 / mathlib formalization, lake build repair, vision-OCR
+      transcription, and arxiv.md drafting.
+
+      [1980 / scott1980] Primary agent for Lean 4 / mathlib formalization, lake build repair, Palomar
+      Challenge / Solution packaging, and arxiv.md drafting.
+
+      [1982 / scott1982] Primary agent for Lean 4 / mathlib formalization, lake build repair, Palomar
+      Challenge / Solution packaging, and arxiv.md drafting.'
+  - method: agent
+    models:
+    - Cursor Composer 2.5 Fast
+    framework: Cursor
+    role: '[1972 / scott1972] Routine scaffolding and medium-complexity proof obligations.
+
+      [1976 / scott1976] Routine scaffolding and medium-complexity proof obligations.
+
+      [1980 / scott1980] Routine scaffolding and medium-complexity proof obligations.
+
+      [1982 / scott1982] Routine scaffolding and medium-complexity proof obligations.'
+  - method: agent
+    models:
+    - Anthropic Claude Sonnet 5 (medium reasoning)
+    framework: Cursor
+    role: '[1972 / scott1972] Day-to-day formalization and proof-engineering.
+
+      [1976 / scott1976] Day-to-day formalization and proof-engineering.
+
+      [1980 / scott1980] Day-to-day formalization and proof-engineering.
+
+      [1982 / scott1982] Day-to-day formalization and proof-engineering.'
+  - method: agent
+    models:
+    - Anthropic Claude Opus 4.8 (high reasoning)
+    framework: Cursor
+    role: '[1972 / scott1972] Heaviest proof work including Theorem 2.12, Theorem 3.3, and Theorem 4.4.
+
+      [1976 / scott1976] Heaviest proof work.
+
+      [1980 / scott1980] Heaviest proof work including Theorem 8.8.
+
+      [1982 / scott1982] Heaviest proof work including Theorem 7.2.'
+  - method: manual
+    models: []
+    role: '[1972 / scott1972] The author chose the formalization route, reviewed every definition and
+      claim, and takes sole responsibility for the mathematical content. Dana Scott was not consulted.
+
+      [1976 / scott1976] The author chose the formalization route, reviewed every definition and claim,
+      and takes sole responsibility for the mathematical content.
+
+      [1980 / scott1980] The author chose the formalization route, reviewed every definition and claim,
+      and takes sole responsibility for the mathematical content. Dana Scott was not consulted.
+
+      [1982 / scott1982] The author chose the formalization route, reviewed every definition and claim,
+      and takes sole responsibility for the mathematical content. Dana Scott was not consulted.
+
+      [bridge / scott_models] The author chose the formalization route, reviewed every definition and
+      claim, and takes sole responsibility for the mathematical content. No large language model is listed
+      as a co-author.'
+  - method: agent
+    models:
+    - GPT-5.6 Sol
+    framework: Cursor
+    role: '[1980 / scott1980] Palomar v2 fidelity migration: structural non-empty master token sets, constructor
+      repair, public scope alignment, and validation.'
+  - method: agent
+    models:
+    - Cursor Grok 4.5 (SpaceXAI / Cursor)
+    framework: Cursor
+    role: '[bridge / scott_models] Primary agent for the ScottModels bridge theorems (neighborhoodSystem_to_infoSys,
+      infoSys_to_neighborhoodSystem, presentation_domains_equiv, round filters) and the narrative in arxiv.md
+      / view.pdf. Used in the Cursor agent environment. Generated Lean was provisional until it compiled
+      under the pinned toolchain (leanprover/lean4:v4.30.0).'
+  - method: agent
+    models:
+    - Cursor Composer 2.5 Fast (Anysphere)
+    framework: Cursor
+    role: '[bridge / scott_models] Module scaffolding, dependency-ordered wiring of ScottModels/, and
+      medium proof obligations where the strategy was already fixed. Also used in the sibling paper libraries.'
+  - method: agent
+    models:
+    - Cursor Grok 4.6 (SpaceXAI / Cursor)
+    framework: Cursor
+    role: '[bridge / scott_models] Palomar packaging of the existing bridges: Challenge.lean, Solution.lean,
+      comparator.json, formalization.yaml, and conversion of sibling Lake dependencies. Did not re-prove
+      the compared isos. Later session vendored the three paper repos into vendor/ for one Palomar SHA.'
+  - method: agent
+    models:
+    - Claude Sonnet 5 (Anthropic)
+    - Claude Opus 4.8 (Anthropic)
+    - Gemini 3.5 Flash (Google DeepMind)
+    framework: Cursor
+    role: '[bridge / scott_models] Used in the sibling paper libraries (scott1972 / scott1980 / scott1982)
+      whose type surface and portable proof patterns this package imports. Listed because that prior work
+      is a dependency of the bridges.'
+  - method: agent
+    models:
+    - Cursor agent (scaffolding session, 2026-10-20)
+    framework: Cursor
+    role: '[DomainTheory, 2026-10-20] Repository scaffolding only: copying boilerplate from scott_models,
+      vendoring the five base repos without .git, removing nested .gitignore files, repointing top-level
+      scripts to DomainTheory, and drafting this initial Palomar provenance (PROVENANCE.md, formalization.yaml)
+      under the author''s direction. No Lean was written or modified.'
+  - method: manual
+    models: []
+    role: '[DomainTheory, 2026-10-20] The author directed the vendoring and provenance setup and takes
+      sole responsibility for the mathematical content. Automation history of the vendored code as copied
+      is recorded in each vendor/*/formalization.yaml and is not claimed here.'
+  notes: '[1972 / scott1972] Palomar Challenge / Solution / comparator / formalization.yaml packaging
+    was added under the author''s direction, following the cardb template.
+
+
+    [1976 / scott1976] Palomar Challenge / Solution / comparator / formalization.yaml packaging follows
+    the scott1972 / cardb template.
+
+
+    [1980 / scott1980] Palomar Challenge / Solution / comparator / formalization.yaml packaging was added
+    under the author''s direction, following the cardb and scott1972 templates.
+
+
+    [1982 / scott1982] Palomar Challenge / Solution / comparator / formalization.yaml packaging was added
+    under the author''s direction, following the cardb and scott1972 templates.
+
+
+    [bridge / scott_models] The compared isos were developed in earlier Cursor agent sessions and are
+    already sorry-free in DomainTheory.BridgeTheorems/. Palomar Challenge / Solution / comparator / formalization.yaml
+    packaging was added later by an agent under the author''s direction. related_formalizations records
+    the three per-paper siblings and the archived combined tree; see limitations for the separate Lean-search
+    remark.
+
+
+    [DomainTheory] Union assembled 2026-10-20; future DomainTheory automation must be appended here.'
 review:
   status: self-assessed
   reviewers:
-    - "Lars Warren Ericson"
-  notes: >-
-    The author directed and reviewed this setup. No external review,
-    and no review or endorsement by Dana Scott. DomainTheory has not
-    been submitted to or registered with Palomar; the five cited
-    registrations were reviewed only as recorded in the vendored
-    repos.
+  - Lars Warren Ericson
+  notes: 'Union of the five self-assessed bases; no external review of any base or of DomainTheory, and
+    no review or endorsement by Dana Scott. DomainTheory itself has not been submitted to Palomar.
 
+
+    [1972 / scott1972] The author directed and reviewed the development. No external review of the Lean
+    source, and no review or endorsement by Dana Scott. Every proof step is checked by the Lean kernel.
+
+
+    [1976 / scott1976] The author directed and reviewed the development. No external review of the Lean
+    source, and no review or endorsement by Dana Scott. Every proof step is checked by the Lean kernel.
+
+
+    [1980 / scott1980] The author directed and reviewed the development. No external review of the Lean
+    source, and no review or endorsement by Dana Scott. Every proof step is checked by the Lean kernel.
+    Palomar''s automated v1 review identified two non-blocking presentation/fidelity warnings; this version
+    addresses both before a fresh v2 review.
+
+
+    [1982 / scott1982] The author directed and reviewed the development. No external review of the Lean
+    source, and no review or endorsement by Dana Scott. Every proof step is checked by the Lean kernel.
+
+
+    [bridge / scott_models] The author directed and reviewed the development as it was produced. No external
+    or independent review has been performed, and no mathematician other than the author has read the
+    Lean source. Every compared declaration is checked by Lean against Mathlib and the pinned sibling
+    packages.'
 known_gaps:
-  - >-
-    No DomainTheory Challenge.lean, Solution.lean, or comparator.json
-    exists yet, so scripts/palomar_preflight.sh cannot pass: it
-    validates comparator.json and audits axioms for a compared claim
-    that has not been chosen. Its vendor-revision step is satisfied by
-    this file and its lake build step passes.
-  - >-
-    No statement of record or Palomar registration for DomainTheory.
-
+- '[DomainTheory] No comparator.json, Challenge.lean, or Solution.lean yet: what would be Palomared is
+  this union, but the merged Comparator configuration (the union of the five vendor/*/comparator.json
+  name lists, renamed to DomainTheory declarations) and Challenge/Solution pair have not been authored,
+  so scripts/palomar_preflight.sh cannot pass yet.'
+- '[1980 / scott1980] Palomar compares the first sentence of Theorem 8.8 (`theorem_8_8`) plus the new
+  formal corollaries `P4_embeds` and `Ssys_embeds`. The effective second sentence (`theorem_8_8_b`) and
+  finitary-projection third sentence (`theorem_8_8_c`) are in the library, not in Comparator.'
+- '[1980 / scott1980] Exercise 8.17 Part 2 (whether U+U, U×U, or U→U is isomorphic to U) is deliberately
+  deferred. Scott flagged the function-space case as open.'
+- '[1980 / scott1980] NeighborhoodSystem, Element, Subsystem, and the PartialOrder instance are structures
+  or instances and cannot be listed as ordinary Comparator definition targets. Their reached structure
+  declarations, selected proof fields (including concrete master-nonemptiness proofs), and the named relation
+  element_le are compared instead.'
+- '[1982 / scott1982] Palomar compares only the first sentence of Theorem 7.2 (`theorem_7_2`). The apply
+  and curry clauses of that numbered theorem are in the library, not in Comparator.'
+- '[1982 / scott1982] InfoSys, Element, ApproximableMap, and the PartialOrder instance are structures
+  or instances and cannot be Comparator-locked. Their proof fields and the named order / function-system
+  axiom theorems are locked instead.'
 limitations:
-  - >-
-    This file records derived-from provenance at copy time only. It
-    does not claim the vendored repos' compared theorems, axiom
-    profiles, or Palomar registrations for DomainTheory, and the
-    vendored revisions are not asserted to be Palomar's pinned
-    commits for those entries.
-  - >-
-    As DomainTheory modifies the derived code, vendor/FROZEN.txt and
-    this file's frozen revisions remain the pre-modification record;
-    they will increasingly differ from the working tree.
-
+- '[1972 / scott1972] The historical introduction treats Scott''s D_∞ construction as a landmark early
+  model but does not establish comparative priority over other early models of the untyped lambda calculus.'
+- '[1972 / scott1972] The Comparator-compared family is Theorem 4.4 and the definitions it mentions, not
+  the full Scott 1972 inventory in arxiv.md.'
+- '[1972 / scott1972] The compared theorem depends on propext, Classical.choice, and Quot.sound. Classical.choice
+  enters via Scott-open sets and non-decidable predicates.'
+- '[1972 / scott1972] Challenge.lean states the claim with deliberate sorries; Solution.lean and DomainTheory.ContinuousLattice/ContinuousLattice/*
+  supply the proofs.'
+- '[1976 / scott1976] Comparator selects the 63 theorem declarations and 70 locked definitions named in
+  comparator.json. A match establishes those selected statements, not every informal clause of every numbered
+  theorem. Further companions remain in the library.'
+- '[1976 / scott1976] Challenge.lean may contain deliberate sorries; Solution.lean and DomainTheory.DataTypesAsLattices/DataTypesAsLattices/*
+  must not.'
+- '[1976 / scott1976] The locked coproduct plusR implements Scott''s displayed (4.10) with the doubly
+  strict conditional dcondSet of (4.4), not the ordinary McCarthy conditional condSet written in that
+  equation. On a mixed tag containing both zero and a successor, plusR returns topElem rather than the
+  union of the two injections. This matches bool in (4.3), which (4.8)–(4.10) generalize, and is required
+  for Theorem 4.5 (a ⊕ b is a retract). Displayed (4.10) is therefore not a symbol-for-symbol 1:1 transcription.'
+- '[1976 / scott1976] Compared substitution is theorem_1_3 (unary composition), theorem_1_3_tuple (binary),
+  and theorem_1_3_nary (ternary), not arbitrary finite-arity substitution.'
+- '[1976 / scott1976] theorem_1_5 proves continuity of extend f for every f, a strengthening of Scott''s
+  hypothesis that f is continuous; theorem_1_5_extends restores that hypothesis for agreement on the subspace.'
+- '[1976 / scott1976] theorem_2_2 is a conditional semantic congruence: it assumes the renamed bodies
+  already have equal interpretations and lifts that equality through lambda. It is not source-level alpha
+  conversion from a freshness hypothesis.'
+- '[1976 / scott1976] theorem_4_6_limit compares an inclusion-preserving bijection with the inverse limit
+  (an order isomorphism), not a homeomorphism.'
+- '[1976 / scott1976] theorem_6_5 is the specialization of Scott''s parameterized characterization to
+  the representative target succSet topElem.'
+- '[1980 / scott1980] The Comparator-compared embedding results are the first sentence of Theorem 8.8
+  (general universality D ⊴ U) and the two new formal corollaries P4_embeds and Ssys_embeds. The full
+  three-sentence theorem and the PRG-19 inventory in arxiv.md are not Comparator scope.'
+- '[1980 / scott1980] The compared embedding theorems depend on propext, Classical.choice, and Quot.sound.
+  Classical.choice enters via Countable.nonempty surjections and Mathlib''s order instance on ℚ.'
+- '[1980 / scott1980] Challenge.lean states the claim with deliberate sorries; Solution.lean and DomainTheory.Neighborhood/Neighborhood/*
+  supply the proofs.'
+- '[1982 / scott1982] The Comparator-compared family is the first sentence of Theorem 7.2 and the definitions
+  it mentions, not the full paper inventory in arxiv.md.'
+- '[1982 / scott1982] The compared theorem is intended to depend only on propext and Quot.sound. Challenge.lean
+  restates the choice-free Finset union locally so its import closure is Mathlib-only.'
+- '[1982 / scott1982] The compared statements assume DecidableEq on both token types. Scott''s informal
+  account is for arbitrary information systems; this is an implementation restriction needed for Finset
+  operations, not an extra mathematical hypothesis on consistency or entailment.'
+- '[1982 / scott1982] Challenge.lean states the claim with deliberate sorries; Solution.lean and DomainTheory.InformationSystems/*
+  supply the proofs.'
+- '[bridge / scott_models] The mathematical equivalence of the three presentations is prior (Scott 1982;
+  folklore) and is not claimed as original. Separately: a search of Mathlib, Tau Ceti, and public Lean
+  domain-theory repositories did not locate a prior Lean development of the cross-presentation bridges
+  of all three presentations. That is a search note about Lean treatment, not a provenance claim, and
+  it can be empty in the sense that no such development was located, not that none exists unpublished.
+  Palomar is not a novelty stamp.'
+- '[bridge / scott_models] The compared declarations are permitted to depend on propext, Quot.sound and
+  Classical.choice. The 1980 ↔ 1982 maps, presentation_domains_equiv, sexNeighborhoodIso, sexIdealIso,
+  and sexDomainEquationIso audit to {propext, Quot.sound}. Classical.choice is listed because the 1972
+  topological definition of ≪ is the classical frontier elsewhere in the library. There is no sorry outside
+  the deliberate holes in Challenge.lean, no project-defined axiom, and no native_decide.'
+- '[bridge / scott_models] Challenge.lean states the family but does not prove it; that is the Comparator
+  convention. Solution.lean re-exports the DomainTheory.BridgeTheorems proofs. Challenge restates the
+  type surface (InfoSys, NeighborhoodSystem, NbhdBasis, IsContinuousLattice, round filters, TreeToken
+  / SumToken / ProdToken, treeSystem) under the sibling namespaces so that Comparator can match names
+  and types; it is not a copy of the DomainTheory.BridgeTheorems proof modules.'
+- '[bridge / scott_models] The compared claim is the named bridges, not “we formalized Scott 1972 / PRG-19
+  / ICALP 1982,” not LRSOD / D∞ ≅ [D∞ → D∞], and not a Mathlib or Tau Ceti ingest.'
+- '[bridge / scott_models] The three vendor/ trees are modified copies of the frozen sibling revisions
+  in vendor/FROZEN.txt (not bit-identical checkouts). See related_formalizations for the Palomar-kit omissions
+  and the scott1982 Lean patches.'
+- '[DomainTheory] This union records derived-from provenance and the assembled declarations; it does not
+  transfer the five upstream Palomar registrations to DomainTheory, and the frozen vendor revisions are
+  not asserted to be Palomar''s pinned commits for those entries.'
 alignment:
-  namespace: "DomainTheory"
-  statements: []
+  sections:
+  - base: scott1972
+    date_order: '1972'
+    namespace: DomainTheory.ContinuousLattice
+    palomar_registration: PALOMAR-2026-08-24-000003 (version 2, as specified in vendor/scott1972)
+    vendor_comparator: vendor/scott1972/comparator.json
+    statements:
+    - source: 'sources/ScottContinLatt1972.md, Theorem 4.4: The inverse limit D_∞ of the recursively defined
+        sequence ⟨D_n, j_n⟩_{n=0}^∞ of function spaces is not only a continuous lattice, but it is also
+        homeomorphic to its own function space [D_∞ → D_∞].'
+      lean: theorem_4_4
+      module: Challenge (statement), FunctionSpaceTower.lean (proof)
+      status: proved
+      note: Challenge quotes that sentence. The library proves it via Proposition 4.1 and the maps i_∞,
+        j_∞ written in the proof of 4.4. Its explicit Homeomorph uses inverseLimitTopology and scottMapInducedPiTopology.
+    - source: 'Scott 1972, Definition 2.3: continuous lattice'
+      lean: IsContinuousLattice
+      module: Challenge (definition), WayBelow.lean (proof development)
+      status: proved
+      note: Compared as a definition.
+    - source: 'Scott 1972, §2: way-below relation x ≪ y'
+      lean: WayBelow
+      module: Challenge (definition), WayBelow.lean
+      status: proved
+      note: Compared as a definition.
+    - source: 'Scott 1972, §2: Scott-open sets'
+      lean: ScottOpen
+      module: Challenge (definition), WayBelow.lean
+      status: proved
+      note: Compared as a definition.
+    - source: 'sources/ScottContinLatt1972.md, Definition 3.1: [X → Y] is the space of all continuous
+        functions f : X → Y endowed with the product topology (pointwise convergence). Theorem 3.3: on
+        continuous lattices the lattice topology agrees with the product topology.'
+      lean: ScottMap
+      module: Challenge (definition), FunctionSpaces.lean
+      status: proved
+      note: Compared as a definition.
+    - source: 'Scott 1972, Theorem 3.3: [D → D''] is a complete lattice'
+      lean: ScottMap.instCompleteLattice
+      module: Challenge (concrete construction), FunctionSpaces.lean (proof)
+      status: proved
+      note: Comparator checks the concrete body generated from pointwise order (including its explicitly
+        defined strict relation) and pointwise arbitrary suprema. The pointwise order laws, strict-order
+        characterization, continuity, and least-upper-bound obligations are theorem holes in Challenge.
+    - source: 'Scott 1972, §2: induced (Scott) topology on a lattice'
+      lean: scottTopologicalSpace
+      module: Challenge (definition), Specialization.lean
+      status: proved
+      note: Compared as a definition.
+    - source: 'Scott 1972, Definition 3.6: retraction / projection'
+      lean: IsContinuousLatticeProjection
+      module: Challenge (definition), FunctionSpaces.lean
+      status: proved
+      note: Structure compared via the theorem-type worklist, not as a definition hole (Comparator only
+        accepts defs in definition_names).
+    - source: 'Scott 1972, §4: inverse limit of compatible sequences'
+      lean: InverseLimit
+      module: Challenge (definition), InverseLimits.lean
+      status: proved
+      note: Compared as a definition.
+    - source: 'Scott 1972, §4: inverse limit as a subspace of the product of the D_n'
+      lean: inverseLimitTopology
+      module: Challenge (definition), InverseLimits.lean
+      status: proved
+      note: Compared as a definition.
+    - source: 'Scott 1972, Definition 3.1: pointwise product topology on [D → D'']'
+      lean: scottMapInducedPiTopology
+      module: Challenge (definition), FunctionSpaces.lean
+      status: proved
+      note: Compared as a definition.
+    - source: 'Scott 1972, §4: function-space tower D_{n+1} = [D_n → D_n]'
+      lean: DInf
+      module: Challenge (definition), FunctionSpaceTower.lean
+      status: proved
+      note: DInf is the inverse limit of the tower; DInfFn is [D_∞ → D_∞].
+  - base: scott1976
+    date_order: '1976'
+    namespace: DomainTheory.DataTypesAsLattices
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1, as specified in vendor/scott1976)
+    vendor_comparator: vendor/scott1976/comparator.json
+    statements:
+    - source: Theorem 1.1 (The characterization theorem)
+      lean: theorem_1_1
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Continuous.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 1.2 (The graph theorem)
+      lean: theorem_1_2
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Graph.lean (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 1.3 (The substitution theorem), unary
+      lean: theorem_1_3
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/FixedPoint.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; unary composition. Binary and ternary companions are theorem_1_3_tuple
+        and theorem_1_3_nary. Not arbitrary finite-arity substitution.
+    - source: Theorem 1.3 (The substitution theorem), binary
+      lean: theorem_1_3_tuple
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/FixedPoint.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; binary substitution on the diagonal.
+    - source: Theorem 1.3 (The substitution theorem), ternary
+      lean: theorem_1_3_nary
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/FixedPoint.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; ternary substitution on the diagonal.
+    - source: Theorem 1.4 (The fixed-point theorem)
+      lean: theorem_1_4
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/FixedPoint.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 1.5 (The extension theorem), continuity
+      lean: theorem_1_5
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Embedding.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; strengthening — continuity of extend f for every f, not only continuous
+        f. Agreement on the subspace is theorem_1_5_extends.
+    - source: Theorem 1.5 (The extension theorem), extension property
+      lean: theorem_1_5_extends
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Embedding.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; extend f agrees with a continuous f on X.
+    - source: Theorem 1.6 (The embedding theorem)
+      lean: theorem_1_6
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Embedding.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; embedding of a countably based T0 space via a countable basis, not of
+        a countable poset with directed suprema.
+    - source: Theorem 2.1 (The continuity theorem)
+      lean: theorem_2_1
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Lambda.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 2.2 (The conversion theorem)
+      lean: theorem_2_2
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Lambda.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; conditional semantic congruence (renamed bodies already agree), not source-level
+        alpha from freshness.
+    - source: Theorem 2.3 (The reduction theorem)
+      lean: theorem_2_3
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Lambda.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 2.4 (The combinator theorem), generators
+      lean: theorem_2_4
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Lambda.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; the six combinatory generators. Completeness is theorem_2_4_complete.
+    - source: Theorem 2.4 (The combinator theorem), completeness
+      lean: theorem_2_4_complete
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Lambda.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; every LAMBDA term equals an applicative combination of the six constants
+        and its free variables.
+    - source: Theorem 2.5 (The first recursion theorem)
+      lean: theorem_2_5
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Lambda.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 2.6 (The definability theorem)
+      lean: theorem_2_6
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Computability.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; unary definability trinity. The k-ary form is theorem_2_6_fin.
+    - source: Theorem 2.6 (The definability theorem), finite arity
+      lean: theorem_2_6_fin
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Computability.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; k-ary computability via the nested-graph encoding.
+    - source: Theorem 3.1 (The generator theorem)
+      lean: theorem_3_1
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Enumeration.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 3.2 (The enumeration theorem), recursion
+      lean: theorem_3_2
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Enumeration.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; valNat lands in RE with Scott's clauses (i)(ii). The range equation is
+        theorem_3_2_range.
+    - source: Theorem 3.2 (The enumeration theorem), range
+      lean: theorem_3_2_range
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Enumeration.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; RE = range valNat.
+    - source: Theorem 3.3 (The second recursion theorem)
+      lean: theorem_3_3
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Enumeration.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 3.4 (The incompleteness theorem)
+      lean: theorem_3_4
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Enumeration.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 3.5 (The completeness theorem for definability)
+      lean: theorem_3_5
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Enumeration.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 3.6 (enumeration degrees)
+      lean: theorem_3_6
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Enumeration.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 3.7 (The semigroup theorem)
+      lean: theorem_3_7
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Enumeration.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 4.1 (The lattice theorem)
+      lean: theorem_4_1
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; complete-lattice half and directed density. The way-below basis is theorem_4_1_continuous.
+    - source: Theorem 4.1 (The lattice theorem), continuous basis
+      lean: theorem_4_1_continuous
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; retract ranges have a directed way-below basis of finite images.
+    - source: Theorem 4.2 (The partial ordering theorem)
+      lean: theorem_4_2
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 4.3 (The function space theorem)
+      lean: theorem_4_3
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 4.4 (The product theorem), core
+      lean: theorem_4_4
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 4.4 (ii), typed pairs
+      lean: theorem_4_4_typed
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 4.4 (iv), product functor
+      lean: tensorR_functor
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; ⊗ acts on typed maps.
+    - source: Theorem 4.5 (The sum theorem), core
+      lean: theorem_4_5
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 4.5 (The sum theorem)
+      lean: theorem_4_5_sum
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; retract, strictness, and typed characterization of ⊕.
+    - source: Theorem 4.5 (iv), sum functor
+      lean: plusR_functor
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; ⊕ acts on typed maps.
+    - source: Theorem 4.6 (The limit theorem), retracts
+      lean: theorem_4_6
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; Kleene iterates and Y(F) are retracts.
+    - source: Theorem 4.6 (The limit theorem), inverse limit
+      lean: theorem_4_6_limit
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; inclusion-preserving bijection with the inverse limit (order isomorphism
+        only, not a homeomorphism).
+    - source: Theorem 5.1 (The algebraic lattice theorem)
+      lean: theorem_5_1
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 5.2 (The representation theorem)
+      lean: theorem_5_2
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 5.3 (function space of closures), retract
+      lean: theorem_5_3
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; arrowR of closures is a retract. Closure status is theorem_5_3_closure.
+    - source: Theorem 5.3 (function space of closures)
+      lean: theorem_5_3_closure
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; arrowR of closures is a closure.
+    - source: Theorem 5.4 (product of closures)
+      lean: theorem_5_4
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; boxed product of closures is a closure. Typed pairs are typed_squarePair_boxTensor.
+    - source: Theorem 5.4, typed boxed pairs
+      lean: typed_squarePair_boxTensor
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; analogue of Theorem 4.4 (ii) for ⊠.
+    - source: Theorem 5.4 (sum of closures)
+      lean: theorem_5_4_plus
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; boxed sum of closures is a closure. The typed range is boxPlus_typed_iff.
+    - source: Theorem 5.4, typed boxed sum
+      lean: boxPlus_typed_iff
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; analogue of Theorem 4.5 typed characterization for ⊞.
+    - source: Theorem 5.5 (the universe V)
+      lean: theorem_5_5_universe
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 5.6 (limit theorem for algebraic lattices), points
+      lean: theorem_5_6
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; Y(f):V whenever f:V∘→V.
+    - source: Theorem 5.6 (limit theorem for algebraic lattices), combinator
+      lean: theorem_5_6_combinator
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
+        (proof)
+      status: proved
+      note: 'Compared by Palomar; (λf : V∘→V. Y(f)) : (V∘→V)∘→V.'
+    - source: Theorem 6.1 (The 𝔊 theorem)
+      lean: theorem_6_1
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 6.2 (The 𝔉 theorem)
+      lean: theorem_6_2
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 6.3 (The 𝔊_δ theorem)
+      lean: theorem_6_3
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 6.4 (The 𝔉 ∩̇ 𝔊 theorem)
+      lean: theorem_6_4
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 6.5 (The 𝔉 ∩̇ 𝔊_δ theorem)
+      lean: theorem_6_5
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; specialization to the representative target succSet topElem, not the
+        fully parameterized form.
+    - source: Theorem 6.6 (The 𝔅 theorem)
+      lean: theorem_6_6
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 6.7 (The 𝔅_δ theorem)
+      lean: theorem_6_7
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 7.1 (The closure theorem)
+      lean: theorem_7_1
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 7.2 (The isomorphism theorem)
+      lean: theorem_7_2
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 7.3 (The functionality theorem)
+      lean: theorem_7_3
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+    - source: Theorem 7.4 (The iterator theorem)
+      lean: theorem_7_4
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; library proof is sorry-free.
+  - base: scott1980
+    date_order: '1980'
+    namespace: DomainTheory.Neighborhood
+    palomar_registration: PALOMAR-2026-08-24-000001 (version 2, as specified in vendor/scott1980)
+    vendor_comparator: vendor/scott1980/comparator.json
+    statements:
+    - source: 'sources/PRG19.md, first sentence of Theorem 8.8: The system U is universal in the sense
+        that, for every countable neighbourhood system D, we have D ⊴ U.'
+      lean: theorem_8_8
+      module: Challenge (statement), Theorem88a.lean (proof)
+      status: proved
+      note: Challenge quotes that first sentence only. The library proves it by packaging theorem_8_8_a
+        (D ≅ D' ∧ D' ◁ U) as D ⊴ U.
+    - source: 'Scott 1981, Definition 8.7: the universal neighbourhood system U'
+      lean: U
+      module: Challenge (definition), Definition87.lean
+      status: proved
+      note: Compared as a definition. Membership is UMem (list presentation; equivalent to Scott's per-pair
+        0 ≤ r < s ≤ 1 family by U_mem_iff_scott).
+    - source: 'Scott 1981, Definition 1.1: neighbourhood system'
+      lean: NeighborhoodSystem
+      module: Challenge (structure), Basic.lean
+      status: proved
+      note: Structure; compared through the reached statement closure. Its master_nonempty field records
+        Scott's standing non-empty-Δ assumption immediately before Definition 1.1.
+    - source: 'Scott 1981, Definition 1.6 / 1.9: elements and domain isomorphism'
+      lean: DomainIso
+      module: Challenge (definition), Basic.lean
+      status: proved
+      note: Compared as a definition.
+    - source: 'Scott 1981, Definition 6.10 and the prose before Lemma 6.15: ◁ and ⊴'
+      lean: Trianglelefteq
+      module: Challenge (definition), Lemma615.lean
+      status: proved
+      note: Compared as a definition.
+    - source: 'Scott 1981, Example 1.5: all nonempty subsets of {0,1,2,3}'
+      lean: DomainTheory.Neighborhood.Example15.P4_embeds
+      module: Challenge (statement), PalomarExamples.lean
+      status: proved
+      note: 'New formal corollary, not separately stated by Scott: applying theorem_8_8 to Scott''s finite
+        Example 1.5 gives the embedding.'
+    - source: 'Scott 1981, Exercise 7.22: the least-fixed-point family S over {0,1}*'
+      lean: DomainTheory.Neighborhood.Exercise722.Ssys_embeds
+      module: Challenge (statement), PalomarExamples.lean
+      status: proved
+      note: 'New formal corollary, not separately stated by Scott: countability via SExpr lets theorem_8_8
+        embed Scott''s system S into U. SExpr is shown in Challenge.lean but is not Comparator-locked.'
+  - base: scott1982
+    date_order: '1982'
+    namespace: DomainTheory.InformationSystems.InfoSys
+    palomar_registration: PALOMAR-2026-08-24-000005 (version 1, as specified in vendor/scott1982)
+    vendor_comparator: vendor/scott1982/comparator.json
+    statements:
+    - source: 'Scott 1982, Theorem 7.2 (sources/Domains_for_Denotational_Semantics.pdf): If A, B, and
+        C are information systems, then so is A → B, and the approximable mappings f : A → B are exactly
+        the elements f ∈ |A → B|.'
+      lean: theorem_7_2
+      module: Challenge (statement), Theorem72.lean (proof)
+      status: proved
+      note: Challenge quotes that first sentence only. The library proves it by the two round-trips between
+        ApproximableMap and (functionSystem A B).Element.
+    - source: 'Scott 1982, Definition 7.1: the function-space information system A → B'
+      lean: functionSystem
+      module: Challenge (definition), FunctionSpace.lean
+      status: proved
+      note: Compared as a definition. Tokens are FunToken; consistency is FunCon; entailment is the constructive
+        witness form FunEnt.
+    - source: 'Scott 1982, Definition 2.1: information system'
+      lean: DomainTheory.InformationSystems.InfoSys
+      module: Challenge (structure), InfoSys.lean
+      status: proved
+      note: Structure; compared via the theorem-type worklist.
+    - source: 'Scott 1982, Definition 2.2: set-level entailment'
+      lean: EntSet
+      module: Challenge (definition), Definition22.lean
+      status: proved
+      note: Compared as a definition.
+    - source: 'Scott 1982, Definition 5.1: approximable mapping'
+      lean: ApproximableMap
+      module: Challenge (structure), Approximable.lean
+      status: proved
+      note: Structure; compared via the theorem-type worklist.
+  - base: scott_models
+    date_order: bridge
+    namespace: DomainTheory.BridgeTheorems
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1, as specified in vendor/scott_models)
+    vendor_comparator: vendor/scott_models/comparator.json
+    statements:
+    - source: A neighbourhood system with a decidable exhaustive coding induces an information system
+        (view.pdf, §3.2)
+      lean: neighborhoodSystem_to_infoSys
+      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.NeighborhoodToInfoSys (proof)
+      status: proved
+      note: Compared by Comparator as a definition. Tokens are neighbourhood indices; Con is membership
+        of the finite intersection in 𝒟.
+    - source: Basic opens [u] form a neighbourhood system on |A| (view.pdf, §3.3)
+      lean: infoSys_to_neighborhoodSystem
+      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.InfoSysToNeighborhood (proof)
+      status: proved
+      note: Compared by Comparator as a definition.
+    - source: '|A| ≃o filters of the basic-open neighbourhood system (view.pdf, §3.3)'
+      lean: InfoSysToNeighborhood.domainOrderIso
+      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.InfoSysToNeighborhood (proof)
+      status: proved
+      note: Compared by Comparator as a definition (OrderIso is data).
+    - source: D ≃o RoundFilter ≃o RoundInfoSysElement under IsContinuousLattice (view.pdf, §3.6)
+      lean: presentation_domains_equiv
+      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.PresentationDomains (proof)
+      status: proved
+      note: Compared by Comparator as a definition. The ↟-system's NbhdBasis supplies the 1980↔1982 coding.
+        Raw |𝒟| / full |A| remain larger. The Prop-level claim is exists_presentation_domains_equiv.
+    - source: '|T| ≃o filters of [u] on the S-expression domain (view.pdf, §5.5)'
+      lean: sexNeighborhoodIso
+      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.WorkedExampleSExpr (proof)
+      status: proved
+      note: Instance of InfoSysToNeighborhood.domainOrderIso at Factoid 8.1 SexSys. Compared by Comparator
+        as a definition.
+    - source: '|T| ≃o Ideal(K(T)) on the S-expression domain (view.pdf, §5.5)'
+      lean: sexIdealIso
+      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.WorkedExampleSExpr (proof)
+      status: proved
+      note: Instance of InfoSysToIdealCompletion.domainOrderIso at SexSys.
+    - source: '|T| ≃o |A + (T × T)| (view.pdf, §5.6)'
+      lean: sexDomainEquationIso
+      module: Challenge (statement), Solution / DomainTheory.BridgeTheorems.WorkedExampleSExpr (proof)
+      status: proved
+      note: Order isomorphism SexSys.Element ≃o SexRhs.Element induced by treeUnfold / treeFold (treeDomainIso).
+        The generic semantic factor WithBot (|A| ⊕ (|T| × |T|)) ≃o |A + (T × T)| remains as the uncompared
+        sexRhsSemanticIso.

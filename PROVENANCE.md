@@ -136,3 +136,16 @@ Lean/Mathlib v4.35.0 (the bases were pinned at v4.33.0/v4.30.0):
 
 `vendor/` itself was not modified by the assembly; divergence is in
 `DomainTheory/` only.
+
+## Union formalization (2026-10-20)
+
+`formalization.yaml` is now the union, in date order 1972 → 1976 →
+1980 → 1982 → bridges, of the five vendored `formalization.yaml`
+files: what would be Palomared for `DomainTheory` is that union,
+expressed under the renamed `DomainTheory` declarations and file
+paths (75 `main_results` and 90 alignment statements, all verified to
+exist by `#check` against the built library; 10 deduplicated
+sources; merged classification/automation/known-gaps/limitations).
+The union does not itself register `DomainTheory`: a merged
+`comparator.json` (union of the five `vendor/*/comparator.json` name
+lists, renamed) and a Challenge/Solution pair remain to be authored.
