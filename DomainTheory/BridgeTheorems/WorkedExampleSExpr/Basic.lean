@@ -1,0 +1,132 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Order.Hom.Basic
+import Mathlib.Order.Hom.WithTopBot
+import Mathlib.Order.Sum.Order
+import Mathlib.Order.Ideal
+import DomainTheory.InformationSystems.Factoid24
+import DomainTheory.InformationSystems.Factoid81
+import DomainTheory.InformationSystems.Proposition54
+import DomainTheory.BridgeTheorems.InfoSysToNeighborhood
+import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion
+import DomainTheory.BridgeTheorems.PresentationDomains
+import DomainTheory.BridgeTheorems.InfoSysConstructions
+import DomainTheory.BridgeTheorems.ScottMapBridge
+import DomainTheory.BridgeTheorems.SexDomainEquation
+
+/-!
+# Worked example — S-expression / tree domain `T ≅ A + (T × T)`
+
+Scott 1982 Factoid 8.1 (`treeSystem`) over the ℕ lower-bound atom system
+(Factoid 2.4), walked through this package’s bridges: information system →
+neighbourhood filters → ideal completion, plus identity approximable maps as
+Scott-continuous maps (Factoid 4.6).
+-/
+
+namespace DomainTheory.BridgeTheorems
+
+open DomainTheory.InformationSystems
+open DomainTheory.InformationSystems.Constructive
+open DomainTheory.InformationSystems.InfoSys
+open DomainTheory.InformationSystems.InfoSys.ApproximableMap
+open Order
+
+/-! ## Atom system (Factoid 2.4, named) -/
+
+/-- Scott’s ℕ lower-bound information system (Factoid 2.4), as a named definition. -/
+def lowerBoundSystem : InfoSys ℕ where
+  bot := 0
+  Con := Set.univ
+  Ent := Factoid24.lowerBoundEnt
+  con_subset := by
+    intro u v _ _
+    exact Set.mem_univ v
+  con_sing := by
+    intro _
+    exact Set.mem_univ _
+  ent_con := by
+    intro u a _
+    exact Set.mem_univ _
+  ent_bot := by
+    intro u _
+    exact Or.inl rfl
+  ent_refl := by
+    intro u a _ ha
+    exact Or.inr ⟨a, ha, le_rfl⟩
+  ent_trans := by
+    intro u v c _ _ hvEnt huEnt
+    rcases huEnt with rfl | ⟨n, hn, hcn⟩
+    · exact Or.inl rfl
+    · rcases hvEnt n hn with rfl | ⟨k, hk, hnk⟩
+      · exact Or.inl (Nat.le_zero.mp hcn)
+      · exact Or.inr ⟨k, hk, le_trans hcn hnk⟩
+
+/-! ## S-expression system -/
+
+/-- Tree / S-expression information system over lower-bound atoms. -/
+abbrev SexSys : InfoSys (TreeToken ℕ) :=
+  treeSystem lowerBoundSystem
+
+/-- Official right-hand side `A + (T × T)`. -/
+abbrev SexRhs : InfoSys (SumToken ℕ (ProdToken SexSys SexSys)) :=
+  treeRhs lowerBoundSystem
+
+/-! ## Concrete finite elements -/
+
+/-- Closure of a singleton atom token `{atom n}`. -/
+noncomputable def sexAtom (n : ℕ) : SexSys.Element :=
+  SexSys.closure {TreeToken.atom n} (SexSys.con_sing _)
+
+/-! ## 1982 → 1980: basic-open neighbourhood filters -/
+
+/-- `|T| ≃o` filters of basic opens `[u]`. -/
+noncomputable abbrev sexNeighborhoodIso :
+    SexSys.Element ≃o (InfoSysToNeighborhood.toNeighborhoodSystem SexSys).Element :=
+  InfoSysToNeighborhood.domainOrderIso SexSys
+
+/-! ## 1982 → ideal completion -/
+
+/-- `|T| ≃o Ideal (FiniteElement T)`. -/
+noncomputable abbrev sexIdealIso :
+    SexSys.Element ≃o Ideal (InfoSysToIdealCompletion.FiniteElement SexSys) :=
+  InfoSysToIdealCompletion.domainOrderIso SexSys
+
+/-- Neighbourhood filters ≃ ideals of finite elements (constructive triangle). -/
+noncomputable abbrev sexNeighborhoodIdealIso :=
+  neighborhood_ideal_iso SexSys
+
+/-! ## Domain equation at the level of domains (1982 constructions) -/
+
+/--
+Semantic factor: `|A + (T × T)| ≃o WithBot (|A| ⊕ (|T| × |T|))` via the generic
+product and separated-sum isos. Not the fixed-point equation itself.
+-/
+noncomputable def sexRhsSemanticIso :
+    WithBot (lowerBoundSystem.Element ⊕ (SexSys.Element × SexSys.Element)) ≃o
+      SexRhs.Element :=
+  let ιProd := InfoSysConstructions.productDomainIso SexSys SexSys
+  let ιSum := InfoSysConstructions.sumDomainIso lowerBoundSystem (productSystem SexSys SexSys)
+  let mid :=
+    (OrderIso.refl lowerBoundSystem.Element).sumCongr ιProd |>.withBotCongr
+  mid.trans ιSum
+
+/--
+**S-expression fixed-point equation.** `|T| ≃o |A + (T × T)|`, the order
+isomorphism of `SexSys.Element` with `SexRhs.Element` induced by
+`treeUnfold` / `treeFold` (`treeDomainIso`).
+-/
+noncomputable def sexDomainEquationIso :
+    SexSys.Element ≃o SexRhs.Element :=
+  treeDomainIso lowerBoundSystem
+
+/-! ## Morphisms: identity is Scott-continuous (Factoid 4.6) -/
+
+/-- Identity approximable map on `T`, as a Scott-continuous endomap. -/
+noncomputable abbrev sexIdScottContinuous : ScottContinuous SexSys SexSys :=
+  (approximableMap_scottContinuous_equiv SexSys SexSys) (idMap SexSys)
+end DomainTheory.BridgeTheorems

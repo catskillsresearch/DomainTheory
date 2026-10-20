@@ -1,0 +1,31 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Graph
+import DomainTheory.DataTypesAsLattices.FixedPoint.Basic
+import DomainTheory.DataTypesAsLattices.FixedPoint.chain_mono
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+theorem exists_index_of_finset (xs : ℕ → Pomega)
+    (hmono : ∀ n, xs n ⊆ xs (n + 1))
+    (s : Finset ℕ) (h : ∀ k ∈ s, ∃ n, k ∈ xs n) :
+    ∃ N, (s : Set ℕ) ⊆ xs N := by
+  induction s using Finset.induction with
+  | empty => exact ⟨0, by simp⟩
+  | insert i t hit ih =>
+    obtain ⟨N, hN⟩ := ih fun j hj => h j (Finset.mem_insert_of_mem hj)
+    obtain ⟨Ni, hNi⟩ := h i (Finset.mem_insert_self _ _)
+    refine ⟨max N Ni, ?_⟩
+    intro j hj
+    rw [Finset.coe_insert, Set.mem_insert_iff] at hj
+    rcases hj with rfl | hj
+    · exact chain_mono xs hmono Ni (max N Ni) (le_max_right _ _) hNi
+    · exact chain_mono xs hmono N (max N Ni) (le_max_left _ _) (hN hj)
+
+end DomainTheory.DataTypesAsLattices

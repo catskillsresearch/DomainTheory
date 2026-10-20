@@ -1,0 +1,52 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Example23
+import DomainTheory.Neighborhood.Exercise316
+import DomainTheory.Neighborhood.FunctionSpace
+import DomainTheory.Neighborhood.Exercise317.Basic
+import DomainTheory.Neighborhood.Exercise317.exists_not_mem_bitNbhd
+
+
+namespace DomainTheory.Neighborhood.Exercise317
+
+open DomainTheory.Neighborhood NeighborhoodSystem ExampleB ApproximableMap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Prefix recovery.** `encSet σ ⊆ encSet τ` forces `τ` to be an initial segment of `σ`. -/
+theorem prefix_of_encSet_subset {σ τ : Str} (h : encSet σ ⊆ encSet τ) : τ <+: σ := by
+  have hag : ∀ (i : ℕ) (b b' : Bool), σ[i]? = some b → τ[i]? = some b' → b = b' :=
+    fun i b b' => encSet_agree (encSet_mem σ) subset_rfl h
+  rcases comparable_of_agree hag with hστ | hτσ
+  · by_cases hlen : σ.length = τ.length
+    · exact (hστ.eq_of_length hlen) ▸ List.prefix_rfl
+    · exfalso
+      have hlt : σ.length < τ.length := lt_of_le_of_ne hστ.length_le hlen
+      have hb' : τ[σ.length]? = some τ[σ.length] := List.getElem?_eq_getElem hlt
+      obtain ⟨t, ht⟩ := exists_not_mem_bitNbhd τ[σ.length]
+      have hmemσ : (σ.length, t) ∈ encSet σ := by
+        intro b hb
+        rw [List.getElem?_eq_none_iff.mpr (le_refl _)] at hb
+        exact absurd hb (by simp)
+      exact ht ((h hmemσ) _ hb')
+  · exact hτσ
+
+end DomainTheory.Neighborhood.Exercise317

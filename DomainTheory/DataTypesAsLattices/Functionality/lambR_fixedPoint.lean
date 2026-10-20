@@ -1,0 +1,49 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Retracts
+import DomainTheory.DataTypesAsLattices.Functionality.Basic
+import DomainTheory.DataTypesAsLattices.Functionality.eq_4_39
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem lambR_fixedPoint : lambF lambR = lambR := by
+  simpa [lambF] using eq_4_39.symm
+
+end DomainTheory.DataTypesAsLattices

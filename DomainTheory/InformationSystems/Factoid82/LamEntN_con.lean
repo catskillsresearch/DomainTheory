@@ -1,0 +1,96 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.InformationSystems.FunctionSpace
+import DomainTheory.InformationSystems.Sum
+import Mathlib.Data.Finset.Card
+import DomainTheory.InformationSystems.Factoid82.Basic
+
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+set_option linter.unusedSectionVars false
+
+variable {α : Type*} [DecidableEq α]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+variable (A : InfoSys α)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem LamEntN_con {n : ℕ} {u : Finset (RawLamToken α)} {t : RawLamToken α}
+    (ht : LamEntN A n u t) : LamConN A n u := by
+  match n, t with
+  | 0, .bot => exact ht
+  | 0, .atom _ => exact ht.1
+  | 0, .funTok _ _ => exact False.elim ht
+  | n + 1, t =>
+    rcases ht with ht | ht
+    · exact Or.inl (LamEntN_con (n := n) ht)
+    · match t with
+      | .bot => exact ht
+      | .atom _ => exact ht.1
+      | .funTok _ _ => exact ht.1
+
+end InfoSys
+end DomainTheory.InformationSystems

@@ -1,0 +1,53 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Basic
+import DomainTheory.Neighborhood.Theorem41
+import Mathlib.Data.Set.Insert
+import DomainTheory.Neighborhood.Exercise722.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+namespace Exercise722
+
+open NeighborhoodSystem ApproximableMap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- `mulElem` is monotone in its right argument. -/
+theorem mulElem_mono_right (x : Ssys.Element) : Monotone (mulElem x) := by
+  rintro y y' hyy' Z ⟨hInS, X, hX, Y, hY, hsub⟩
+  exact ⟨hInS, X, hX, Y, hyy' Y hY, hsub⟩
+
+end Exercise722
+end DomainTheory.Neighborhood

@@ -1,0 +1,67 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Algebra.Ring.Parity
+import DomainTheory.DataTypesAsLattices.Retracts
+import DomainTheory.DataTypesAsLattices.Closures.Basic
+import DomainTheory.DataTypesAsLattices.Closures.representClosureCode_isClosure
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Scott 1976, Theorem 5.2 (The representation theorem).**
+The constructed code is a continuous closure operation and its fixed-point
+range is order-isomorphic to the source lattice. -/
+theorem theorem_5_2 {α : Type u} [CompleteLattice α]
+    (D : CountablyAlgebraic α) :
+    IsScottContinuous (representClosure D) ∧
+      IsClosure (representClosureCode D) ∧
+      ∃ φ : α → Fixpoints (funOf (representClosureCode D)),
+        Function.Bijective φ ∧
+          ∀ x y, x ≤ y ↔ (φ x : Pomega) ⊆ φ y :=
+  ⟨representClosure_isScottContinuous D,
+    representClosureCode_isClosure D,
+    ⟨fun x => representationOrderIso D x,
+      (representationOrderIso D).toEquiv.bijective,
+      fun x y => by
+        constructor
+        · intro hxy
+          exact (representationOrderIso D).map_rel_iff.mpr hxy
+        · intro hsub
+          exact (representationOrderIso D).map_rel_iff.mp hsub⟩⟩
+
+end DomainTheory.DataTypesAsLattices

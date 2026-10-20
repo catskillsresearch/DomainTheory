@@ -1,0 +1,44 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Computability.Halting
+import DomainTheory.DataTypesAsLattices.Computability
+import DomainTheory.DataTypesAsLattices.Functionality
+import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+import DomainTheory.DataTypesAsLattices.Enumeration.condC_app2
+
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+theorem cond_graph_eq_bot_iff (x y : Pomega) :
+    funOf (funOf condC x) y = botElem ↔ x = botElem ∧ y = botElem := by
+  constructor
+  · intro h
+    constructor
+    · have := congrArg (fun w => funOf w (ofNat 0)) h
+      rw [condC_beta3, eq_2_7_zero, funOf_botElem] at this
+      exact this
+    · have := congrArg (fun w => funOf w (ofNat 1)) h
+      rw [condC_beta3, eq_2_7_succ, funOf_botElem] at this
+      exact this
+  · intro ⟨hx, hy⟩
+    rw [condC_app2, hx, hy]
+    ext p
+    constructor
+    · intro hp
+      rcases hp with ⟨n, m, _, hm⟩
+      simp [condSet, botElem] at hm
+    · intro hp
+      exact hp.elim
+
+end DomainTheory.DataTypesAsLattices

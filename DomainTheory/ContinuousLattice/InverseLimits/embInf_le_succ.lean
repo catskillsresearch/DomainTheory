@@ -1,0 +1,81 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.ContinuousLattice.Theorem212
+import Mathlib.Order.GaloisConnection.Basic
+import DomainTheory.ContinuousLattice.InverseLimits.Basic
+import DomainTheory.ContinuousLattice.InverseLimits.embInf_succ
+
+
+namespace DomainTheory.ContinuousLattice
+
+open Set
+
+universe u
+
+section InverseLimit
+
+variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
+variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- The family `n ↦ i_{n∞}(xₙ)` is monotone (the lub defining `x` is monotone). -/
+theorem embInf_le_succ (x : InverseLimit D P) (n : ℕ) :
+    embInf D P n (x.1 n) ≤ embInf D P (n + 1) (x.1 (n + 1)) := by
+  rw [← embInf_succ D P n (x.1 n)]
+  exact embInf_monotone D P (n + 1)
+    (by calc (P n).incl (x.1 n) = (P n).incl ((P n).retr (x.1 (n + 1))) := by rw [x.2 n]
+          _ ≤ x.1 (n + 1) := (P n).incl_retr_le _)
+
+end InverseLimit
+end DomainTheory.ContinuousLattice

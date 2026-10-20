@@ -1,0 +1,68 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Basic
+import Mathlib.Order.Interval.Set.LinearOrder
+import Mathlib.Data.List.Basic
+import Mathlib.Data.Set.Lattice.Bounded
+import Mathlib.Data.Set.Lattice.Disjoint
+import Mathlib.Algebra.Order.Field.Rat
+import Mathlib.Tactic.NormNum
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Data.Fintype.Card
+import Mathlib.Order.CompleteLattice.Finset
+import DomainTheory.Neighborhood.Definition87.Basic
+import DomainTheory.Neighborhood.Definition87.U_union_mem
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **`U` is closed under finite (`Fintype`-indexed) unions**, as long as the result is
+non-empty: if every `f i` is either empty or a `U`-neighbourhood, so is `⋃ i, f i` (given it is
+non-empty). Proved by folding `U_union_mem` over `Finset.univ` (`Finset.induction_on`). -/
+theorem U_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℚ} (hf : ∀ i, f i = ∅ ∨ U.mem (f i))
+    (hne : (⋃ i, f i).Nonempty) : U.mem (⋃ i, f i) := by
+  classical
+  have hstep : ∀ s : Finset ι, (⋃ i ∈ s, f i) = ∅ ∨ U.mem (⋃ i ∈ s, f i) := by
+    intro s
+    induction s using Finset.induction_on with
+    | empty => exact Or.inl (by simp)
+    | insert i s hi ih =>
+      rw [Finset.set_biUnion_insert]
+      exact U_union_mem (hf i) ih
+  have hall : (⋃ i, f i) = ⋃ i ∈ (Finset.univ : Finset ι), f i := by simp
+  rw [hall] at hne ⊢
+  exact (hstep Finset.univ).resolve_left hne.ne_empty
+
+end DomainTheory.Neighborhood

@@ -1,0 +1,112 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Computability.Halting
+import DomainTheory.DataTypesAsLattices.Computability
+import DomainTheory.DataTypesAsLattices.Functionality
+import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+import DomainTheory.DataTypesAsLattices.Enumeration.valNat_unionCode
+import DomainTheory.DataTypesAsLattices.Enumeration.valNat_fin
+import DomainTheory.DataTypesAsLattices.Enumeration.valNat_condCode
+import DomainTheory.DataTypesAsLattices.Enumeration.unionOperator_app
+
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem valNat_myhillCase2Code (j n m : ℕ) :
+    valNat (myhillCase2Code j n m) =
+      e j ∪ condSet (valNat m) (valNat n) (valNat n) := by
+  simp only [myhillCase2Code, valNat_apply, valNat_unionCode, valNat_fin,
+    valNat_condCode, condC_beta3]
+  exact unionOperator_app _ _
+
+end DomainTheory.DataTypesAsLattices

@@ -1,0 +1,65 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise619PartB
+import DomainTheory.Neighborhood.Exercise621.Basic
+import DomainTheory.Neighborhood.Exercise621.oplusTok_subsystem
+import DomainTheory.Neighborhood.Exercise621.otimesTok_subsystem
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
+open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
+open DomainTheory.Neighborhood.Exercise510
+
+namespace Exercise619
+
+variable {D₀ D₁ : NeighborhoodSystem Str}
+
+
+
+
+variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+variable {A₀ A₁ B₀ B₁ : ScottSys}
+
+
+variable {C₀ C₁ : ScottSys}
+
+
+
+
+
+
+
+
+/-- **`λX. T(X)` is monotone on domains.** -/
+theorem GExpr.obj_subsystem : (T : GExpr) → {X Y : ScottSys} → X.sys ◁ Y.sys →
+    (T.obj X).sys ◁ (T.obj Y).sys
+  | .const D, _, _, _ => Subsystem.refl D.sys
+  | .var, _, _, h => h
+  | .sum a b, _, _, h => sumTok_subsystem (a.obj_subsystem h) (b.obj_subsystem h)
+  | .prod a b, _, _, h => prodTok_subsystem (a.obj_subsystem h) (b.obj_subsystem h)
+  | .oplus a b, _, _, h => oplusTok_subsystem (a.obj_subsystem h) (b.obj_subsystem h)
+  | .otimes a b, _, _, h => otimesTok_subsystem (a.obj_subsystem h) (b.obj_subsystem h)
+
+end Exercise619
+end DomainTheory.Neighborhood

@@ -1,0 +1,38 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.ContinuousLattice.Constructions
+import DomainTheory.ContinuousLattice.FunctionSpaces
+import DomainTheory.ContinuousLattice.Theorem212.Basic
+
+
+namespace DomainTheory.ContinuousLattice
+
+open Topology Set
+
+
+
+universe u
+
+
+section Theorem212Transfer
+
+variable {A B : Type u} [latticeA : CompleteLattice A] [latticeB : CompleteLattice B]
+
+
+/-- Order isomorphisms preserve Scott's topological way-below relation. -/
+theorem orderIso_wayBelow (e : A ≃o B) {x y : A} (h : x ≪ y) :
+    e x ≪ e y := by
+  obtain ⟨U, hU, hyU, hUsub⟩ := h
+  refine ⟨e.symm ⁻¹' U, scottOpen_preimage_orderIso e.symm hU, ?_, ?_⟩
+  · simpa using hyU
+  · intro z hz
+    have hxz : x ≤ e.symm z := Set.mem_Ici.1 (hUsub hz)
+    exact Set.mem_Ici.2 (by simpa using (e.le_iff_le.mpr hxz))
+
+end Theorem212Transfer
+end DomainTheory.ContinuousLattice

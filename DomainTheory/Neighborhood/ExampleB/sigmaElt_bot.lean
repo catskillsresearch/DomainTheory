@@ -1,0 +1,56 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Basic
+import Mathlib.Data.List.Infix
+import DomainTheory.Neighborhood.ExampleB.Basic
+import DomainTheory.Neighborhood.ExampleB.prepend_univ
+
+
+namespace DomainTheory.Neighborhood.ExampleB
+
+open DomainTheory.Neighborhood NeighborhoodSystem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **`σ⊥` really is `σ` applied to `⊥`.** `sigmaElt σ ⊥ = sigmaBot σ`, justifying the `σ⊥`
+notation: applying `σ` to the least element produces the finite element `↑(σΣ*)`. -/
+theorem sigmaElt_bot (σ : Str) : sigmaElt σ B.bot = sigmaBot σ := by
+  apply Element.ext
+  intro Y
+  constructor
+  · rintro ⟨hY, X, hX, hsub⟩
+    rw [B.mem_bot] at hX
+    subst hX
+    rw [B_master, prepend_univ] at hsub
+    exact ⟨hY, hsub⟩
+  · rintro ⟨hY, hcone⟩
+    refine ⟨hY, B.master, B.mem_bot.mpr rfl, ?_⟩
+    rw [B_master, prepend_univ]
+    exact hcone
+
+end DomainTheory.Neighborhood.ExampleB

@@ -1,0 +1,51 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Example24
+import DomainTheory.Neighborhood.ApproximableExercises
+import DomainTheory.Neighborhood.Exercise218.Basic
+import DomainTheory.Neighborhood.Exercise218.kOut_hOut
+
+
+namespace DomainTheory.Neighborhood.Exercise218
+
+open DomainTheory.Neighborhood NeighborhoodSystem ExampleB ApproximableMap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Exercise 2.18 — `k ∘ h = I_𝔹`.** The composite recovers the identity: reading `kOut (hOut σ) = σ`
+through the cone relations. -/
+theorem kMap_comp_hMap : kMap.comp hMap = idMap B := by
+  apply ApproximableMap.ext
+  intro X Z
+  rw [comp_rel, idMap_rel]
+  constructor
+  · rintro ⟨Y, ⟨σ, hXcone, _, hYsub⟩, τ, hYcone, hZmem, hZsub⟩
+    refine ⟨⟨σ, hXcone⟩, hZmem, ?_⟩
+    have hτ : τ <+: hOut σ := cone_subset_cone.mp (hYcone ▸ hYsub)
+    have hτσ : kOut τ <+: σ := by have := kOut_mono hτ; rwa [kOut_hOut] at this
+    calc X = cone σ := hXcone
+      _ ⊆ cone (kOut τ) := cone_subset_cone.mpr hτσ
+      _ ⊆ Z := hZsub
+  · rintro ⟨⟨σ, hXcone⟩, hZmem, hXZ⟩
+    refine ⟨cone (hOut σ), ⟨σ, hXcone, memB_cone (hOut σ), subset_rfl⟩, hOut σ, rfl, hZmem, ?_⟩
+    rw [kOut_hOut, hXcone] at *
+    exact hXZ
+
+end DomainTheory.Neighborhood.Exercise218

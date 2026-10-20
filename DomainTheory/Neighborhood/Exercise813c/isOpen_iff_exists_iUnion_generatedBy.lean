@@ -1,0 +1,49 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise813b
+import Mathlib.Topology.Constructions
+import Mathlib.Topology.Compactness.Compact
+import Mathlib.Topology.Clopen
+import DomainTheory.Neighborhood.Exercise813c.Basic
+import DomainTheory.Neighborhood.Exercise813c.generatedBy_genPoint_isClopen
+import DomainTheory.Neighborhood.Exercise813c.self_mem_box
+import DomainTheory.Neighborhood.Exercise813c.generatedBy_genPoint_box
+
+
+namespace DomainTheory.Neighborhood
+
+
+
+
+
+
+
+
+
+/-- Immediate corollary: **opens** (not just clopens) of Cantor space are exactly unions of
+`GeneratedBy genPoint` clopens — the "topological basis" fact underlying the scoping row's
+candidate `(ii)`. -/
+theorem isOpen_iff_exists_iUnion_generatedBy {O : Set (ℕ → Bool)} :
+    IsOpen O ↔ ∃ (S : Set (Set (ℕ → Bool))), (∀ Y ∈ S, GeneratedBy genPoint Y) ∧ O = ⋃ Y ∈ S, Y := by
+  constructor
+  · intro hO
+    refine ⟨{Y | GeneratedBy genPoint Y ∧ Y ⊆ O}, fun Y hY => hY.1, ?_⟩
+    ext x
+    simp only [Set.mem_iUnion, Set.mem_ofPred_eq]
+    constructor
+    · intro hx
+      obtain ⟨I, u, hu, hIu⟩ := isOpen_pi_iff.mp hO x hx
+      have hxbox : x ∈ box I x := self_mem_box I x
+      exact ⟨box I x, ⟨generatedBy_genPoint_box I x,
+        fun y hy => hIu fun i hi => by rw [hy i hi]; exact (hu i hi).2⟩, hxbox⟩
+    · rintro ⟨Y, ⟨_, hYO⟩, hxY⟩
+      exact hYO hxY
+  · rintro ⟨S, hS, rfl⟩
+    exact isOpen_biUnion fun Y hY => (generatedBy_genPoint_isClopen (hS Y hY)).isOpen
+
+end DomainTheory.Neighborhood

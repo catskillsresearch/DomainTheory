@@ -1,0 +1,63 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Theorem86
+import DomainTheory.Neighborhood.Theorem41
+import DomainTheory.Neighborhood.Exercise315
+import DomainTheory.Neighborhood.Exercise816
+import DomainTheory.Neighborhood.Exercise823.Basic
+import DomainTheory.Neighborhood.Exercise823.isFinitaryProjection_fixOp
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap Sub8_6
+
+namespace Exercise823
+
+variable {α : Type} {E : NeighborhoodSystem α}
+
+
+
+
+
+
+
+
+
+
+
+/-- **Exercise 8.23, Claim 2 (initiality with respect to projections).** If `a` is *any* other
+finitary projection that is a pre-fixed point of the same operator (`tOp t a ≤ a`, in particular
+any exact alternative solution `tOp t a = a`), then `‖t‖`'s domain embeds as a literal subsystem of
+`a`'s domain: `D_{‖t‖} ◁ D_a` (hence certainly `D_{‖t‖} ⊴ D_a`, Lemma 6.15) — Scott's "the initial
+solution... with respect to projections". The proof is Theorem 4.1's minimality
+(`fixElement_le_of_toElementMap_le`) transported through Exercise 8.16's order-isomorphism
+`a ≤ b ↔ D_a ◁ D_b`. -/
+theorem fixedNbhd_fixOp_subsystem (t : ApproximableMap (funSpace E E) (funSpace E E))
+    (ht : ∀ a, IsFinitaryProjection a → IsFinitaryProjection (tOp t a))
+    {a : ApproximableMap E E} (ha : IsFinitaryProjection a) (hpre : tOp t a ≤ a) :
+    fixedNbhd (fixOp t) ◁ fixedNbhd a := by
+  have hpre' : toApproxMap (t.toElementMap (toFilter a)) ≤ toApproxMap (toFilter a) := by
+    show tOp t a ≤ toApproxMap (toFilter a)
+    rw [toApproxMap_toFilter]
+    exact hpre
+  have h1 : t.toElementMap (toFilter a) ≤ toFilter a := by
+    have hiff := (funSpaceEquiv E E).le_iff_le
+      (x := t.toElementMap (toFilter a)) (y := toFilter a)
+    rw [funSpaceEquiv_apply, funSpaceEquiv_apply] at hiff
+    exact hiff.mp hpre'
+  have h2 : t.fixElement ≤ toFilter a := fixElement_le_of_toElementMap_le t h1
+  have hle : fixOp t ≤ a := by
+    show toApproxMap t.fixElement ≤ a
+    rw [← toApproxMap_toFilter a]
+    exact toApproxMap_monotone h2
+  exact (isFinitaryProjection_le_iff_fixedNbhd_subsystem
+    (isFinitaryProjection_fixOp t ht) ha).mp hle
+
+end Exercise823
+end DomainTheory.Neighborhood

@@ -1,0 +1,131 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Computability.Halting
+import DomainTheory.DataTypesAsLattices.Computability
+import DomainTheory.DataTypesAsLattices.Functionality
+import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem Deg_isSubalgebra (a : Pomega) : IsSubalgebra (Deg a) := by
+  constructor
+  · refine ⟨funOf Kcomb Gcomb, IsCombinatory.app .K Gcomb_combinatory, ?_⟩
+    rw [Kcomb_beta2]
+  · intro x y hx hy
+    obtain ⟨r, hr, rfl⟩ := hx
+    obtain ⟨s, hs, rfl⟩ := hy
+    refine ⟨funOf (funOf Scomb r) s, .app (.app .S hr) hs, ?_⟩
+    rw [Scomb_beta3]
+
+end DomainTheory.DataTypesAsLattices

@@ -1,0 +1,42 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Proposition710
+import Mathlib.Tactic
+import DomainTheory.Neighborhood.Definition711.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+namespace NeighborhoodSystem
+
+variable {α : Type*} (V : NeighborhoodSystem α)
+
+
+
+
+
+
+
+
+
+/-- **Definition 7.11 — Scott's displayed union form.** For `n ≥ 1`, membership is equivalent to
+some representatives `X_i ∈ x_i` with `⋃_{i<n} ↓X_i ⊆ W`. -/
+theorem PDmem_finJoin_iUnion {m : ℕ} (xs : Fin (m + 1) → V.Element) {W : Set (Set α)} :
+    (V.PDfinJoinSucc xs).mem W ↔
+      ∃ (X : Fin (m + 1) → Set α) (_hX : ∀ i, (xs i).mem (X i)),
+        V.PowerDomain.mem W ∧
+          (⋃ i, V.upSet (X i)) ⊆ W := by
+  rw [PDmem_finJoinSucc]
+  constructor
+  · rintro ⟨X, hX, hPD, hsub⟩
+    exact ⟨X, hX, hPD, Set.iUnion_subset hsub⟩
+  · rintro ⟨X, hX, hPD, hsub⟩
+    exact ⟨X, hX, hPD, (Set.iUnion_subset_iff).mp hsub⟩
+
+end NeighborhoodSystem
+end DomainTheory.Neighborhood

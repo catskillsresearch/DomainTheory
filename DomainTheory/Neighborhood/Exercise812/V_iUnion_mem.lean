@@ -1,0 +1,53 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Definition87
+import DomainTheory.Neighborhood.Theorem85
+import Mathlib.Data.Nat.BitIndices
+import Mathlib.Data.Nat.Bitwise
+import Mathlib.Combinatorics.Colex
+import DomainTheory.Neighborhood.Exercise812.Basic
+import DomainTheory.Neighborhood.Exercise812.V_union_mem
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **`V` is closed under finite (`Fintype`-indexed) unions**, as long as the result is
+non-empty — mirrors `Definition87.lean`'s `U_iUnion_mem` verbatim. -/
+theorem V_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℕ} (hf : ∀ i, f i = ∅ ∨ V.mem (f i))
+    (hne : (⋃ i, f i).Nonempty) : V.mem (⋃ i, f i) := by
+  classical
+  have hstep : ∀ s : Finset ι, (⋃ i ∈ s, f i) = ∅ ∨ V.mem (⋃ i ∈ s, f i) := by
+    intro s
+    induction s using Finset.induction_on with
+    | empty => exact Or.inl (by simp)
+    | insert i s hi ih =>
+      rw [Finset.set_biUnion_insert]
+      exact V_union_mem (hf i) ih
+  have hall : (⋃ i, f i) = ⋃ i ∈ (Finset.univ : Finset ι), f i := by simp
+  rw [hall] at hne ⊢
+  exact (hstep Finset.univ).resolve_left hne.ne_empty
+
+end DomainTheory.Neighborhood

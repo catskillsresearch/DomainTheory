@@ -1,0 +1,30 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Computability.RE
+import DomainTheory.DataTypesAsLattices.Lambda
+import DomainTheory.DataTypesAsLattices.Computability.Basic
+import DomainTheory.DataTypesAsLattices.Computability.REPredu2ecomp
+
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+theorem primrec_pair : Primrec₂ pair :=
+  (Primrec.nat_add.comp
+    (Primrec.nat_div.comp
+      (Primrec.nat_mul.comp
+        (Primrec.nat_add.comp Primrec.fst Primrec.snd)
+        (Primrec.succ.comp (Primrec.nat_add.comp Primrec.fst Primrec.snd)))
+      (Primrec.const 2))
+    Primrec.snd).of_eq fun _ => rfl
+
+end DomainTheory.DataTypesAsLattices

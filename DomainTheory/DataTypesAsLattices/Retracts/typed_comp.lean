@@ -1,0 +1,84 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.FixedLattices
+import DomainTheory.DataTypesAsLattices.Lambda
+import DomainTheory.DataTypesAsLattices.Retracts.Basic
+import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+import DomainTheory.DataTypesAsLattices.Retracts.arrowR_app
+import DomainTheory.DataTypesAsLattices.Retracts.typed_of_arrowR
+import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_restrict
+import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_range
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem typed_comp {a b c f f' : Pomega}
+    (ha : IsRetract a) (hb : IsRetract b) (_hc : IsRetract c)
+    (hf : typed f (arrowR a b)) (hf' : typed f' (arrowR b c)) :
+    typed (comp f' f) (arrowR a c) := by
+  have hf1 := typed_of_arrowR hf
+  have hf2 := typed_of_arrowR hf'
+  change comp f' f = funOf (arrowR a c) (comp f' f)
+  rw [arrowR_app]
+  apply graph_ext
+  intro x
+  have hfx : funOf f x = funOf b (funOf f (funOf a x)) := by
+    simpa [comp_app] using congrArg (fun w => funOf w x) hf1
+  have hrest := typed_arrowR_restrict ha hf
+  have hfa : funOf f (funOf a x) = funOf f x := by
+    simpa [comp_app] using (congrArg (fun w => funOf w x) hrest).symm
+  have hf'fx : funOf f' (funOf f x) =
+      funOf c (funOf f' (funOf b (funOf f x))) := by
+    simpa [comp_app] using congrArg (fun w => funOf w (funOf f x)) hf2
+  have hrange := typed_arrowR_range hb hf
+  have hbval : funOf b (funOf f (funOf a x)) = funOf f (funOf a x) := by
+    simpa [comp_app] using (congrArg (fun w => funOf w (funOf a x)) hrange).symm
+  simp only [comp_app]
+  rw [hf'fx, ← hfa, hbval, hfa]
+
+end DomainTheory.DataTypesAsLattices

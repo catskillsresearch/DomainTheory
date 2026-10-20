@@ -1,0 +1,39 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Order.CompleteLattice.Defs
+import Mathlib.Data.Finset.Basic
+import DomainTheory.DataTypesAsLattices.FixedLattices.Basic
+import DomainTheory.DataTypesAsLattices.FixedLattices.finiteBasisSups_directed
+import DomainTheory.DataTypesAsLattices.FixedLattices.sSup_finiteBasisSups
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+theorem CountablyAlgebraic.compact_finite_support
+    {α : Type u} [CompleteLattice α] (D : CountablyAlgebraic α)
+    {m : ℕ} {x : Set ℕ}
+    (h : D.compact m ≤ sSup (D.compact '' x)) :
+    ∃ t : Finset ℕ, (t : Set ℕ) ⊆ x ∧
+      D.compact m ≤ sSup (D.compact '' (t : Set ℕ)) := by
+  have h' : D.compact m ≤ sSup (finiteBasisSups D.compact x) := by
+    rwa [sSup_finiteBasisSups]
+  obtain ⟨y, ⟨t, htx, rfl⟩, hmy⟩ :=
+    D.compact_isCompact m (finiteBasisSups D.compact x)
+      (finiteBasisSups_directed D.compact x) h'
+  exact ⟨t, htx, hmy⟩
+
+end DomainTheory.DataTypesAsLattices

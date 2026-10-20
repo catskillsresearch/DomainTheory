@@ -1,0 +1,70 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Example43
+import DomainTheory.Neighborhood.Exercise326
+import DomainTheory.Neighborhood.Exercise511
+import DomainTheory.Neighborhood.Theorem41
+import DomainTheory.Neighborhood.ApproximableExercises
+import Mathlib.Computability.PartrecBasis
+import DomainTheory.Neighborhood.Theorem56Full.Basic
+
+
+namespace DomainTheory.Neighborhood.Theorem56Full
+
+open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.Neighborhood.Example43 (N natElem zeroElt succMap predMap zeroMap
+  succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
+  zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN)
+open DomainTheory.Neighborhood.Exercise326 (cond)
+open DomainTheory.Neighborhood.Exercise511 (head tail push)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section Prec
+
+variable (φf φg : ApproximableMap 𝒩 N)
+
+
+theorem precBody_apply (k : (funSpace 𝒩 N).Element) (z : 𝒩.Element) :
+    (precBody φf φg).toElementMap (pair k z) =
+      (cond N).toElementMap
+        (pair (zeroMap.toElementMap ((head N).toElementMap z))
+          (pair (φf.toElementMap ((tail N).toElementMap z))
+            (φg.toElementMap
+              ((push N).toElementMap
+                (pair (predMap.toElementMap ((head N).toElementMap z))
+                  ((push N).toElementMap
+                    (pair ((toApproxMap k).toElementMap
+                            ((push N).toElementMap
+                              (pair (predMap.toElementMap ((head N).toElementMap z))
+                                ((tail N).toElementMap z))))
+                      ((tail N).toElementMap z)))))))) := by
+  rw [precBody, toElementMap_comp]
+  simp only [toElementMap_paired, toElementMap_comp, toElementMap_proj₀, toElementMap_proj₁,
+    fst_pair, snd_pair, evalMap_apply]
+
+end Prec
+end DomainTheory.Neighborhood.Theorem56Full

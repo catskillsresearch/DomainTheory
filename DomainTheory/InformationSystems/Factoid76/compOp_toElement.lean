@@ -1,0 +1,61 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.InformationSystems.Theorem72
+import DomainTheory.InformationSystems.Proposition56
+import DomainTheory.InformationSystems.Factoid76.Basic
+import DomainTheory.InformationSystems.Factoid76.pairMap_comp_fst_snd_toElement
+import DomainTheory.InformationSystems.Factoid76.compOp_uncurry
+import DomainTheory.InformationSystems.Factoid76.compOpUncurry_toElement
+
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+open ApproximableMap
+
+set_option linter.unusedSectionVars false
+
+variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
+variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
+
+
+
+
+
+
+
+
+
+
+theorem compOp_toElement (g : ApproximableMap B C) (f : ApproximableMap A B) :
+    (compOp A B C).toElement
+      (pairElements (functionSystem B C) (functionSystem A B)
+        (approxMap_toElement B C g) (approxMap_toElement A B f)) =
+      approxMap_toElement A C (comp g f) := by
+  let Q := productSystem (functionSystem B C) (functionSystem A B)
+  let gf := pairElements (functionSystem B C) (functionSystem A B)
+      (approxMap_toElement B C g) (approxMap_toElement A B f)
+  have huniq :
+      element_toApproxMap A C ((compOp A B C).toElement gf) = comp g f := by
+    refine (ext_iff_toElement _ _).2 fun x => ?_
+    have hpair := pairMap_comp_fst_snd_toElement (X := C) (compOp A B C) gf x
+    calc
+      (element_toApproxMap A C ((compOp A B C).toElement gf)).toElement x
+          = (uncurryMap Q A C (compOp A B C)).toElement (pairElements Q A gf x) := by
+              simp only [uncurryMap, comp_toElement]
+              rw [hpair, applyMap_toElement]
+          _ = (compOpUncurry A B C).toElement (pairElements Q A gf x) := by
+              rw [compOp_uncurry]
+          _ = (comp g f).toElement x := compOpUncurry_toElement A B C g f x
+  rw [← huniq, approxMap_toElement_element_toApproxMap]
+
+end InfoSys
+end DomainTheory.InformationSystems

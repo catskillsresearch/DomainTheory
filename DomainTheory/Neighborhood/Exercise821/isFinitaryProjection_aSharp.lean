@@ -1,0 +1,62 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise717Part2
+import DomainTheory.Neighborhood.Definition89
+import DomainTheory.Neighborhood.Proposition810
+import DomainTheory.Neighborhood.Proposition810b
+import DomainTheory.Neighborhood.Lemma615
+import DomainTheory.Neighborhood.Exercise821.Basic
+import DomainTheory.Neighborhood.Exercise821.isProjection_aSharp
+import DomainTheory.Neighborhood.Exercise821.isFinitary_aSharp
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
+
+variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
+
+
+
+variable {hD : ∀ X, D.mem X → X.Nonempty}
+
+
+
+
+
+
+
+
+variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Exercise 8.21, in full (Scott 1981, PRG-19).** `a` a finitary projection of `U` `⟹` `a§` is
+a finitary projection of `U`, with `D_{a§} ≅ (D_a)§`. -/
+theorem isFinitaryProjection_aSharp {a : ApproximableMap U U} (ha : IsFinitaryProjection a) :
+    IsFinitaryProjection (aSharp a) :=
+  ⟨isProjection_aSharp ha.1, isFinitary_aSharp ha⟩
+
+end DomainTheory.Neighborhood

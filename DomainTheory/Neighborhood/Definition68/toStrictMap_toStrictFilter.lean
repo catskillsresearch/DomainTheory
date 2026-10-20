@@ -1,0 +1,30 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Definition63
+import DomainTheory.Neighborhood.Exercise510
+import DomainTheory.Neighborhood.Definition68.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+
+universe u
+
+
+
+
+
+/-- `toStrictMap ∘ toStrictFilter = id` (the right inverse of the strict-function-space
+representation, Exercise 5.10). -/
+theorem toStrictMap_toStrictFilter {α β : Type*} {V₀ : NeighborhoodSystem α}
+    {V₁ : NeighborhoodSystem β} (f : StrictMap V₀ V₁) :
+    toStrictMap (toStrictFilter f) = f :=
+  (strictFunEquiv V₀ V₁).right_inv f
+
+end DomainTheory.Neighborhood

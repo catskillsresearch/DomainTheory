@@ -1,0 +1,154 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Computability.Halting
+import DomainTheory.DataTypesAsLattices.Computability
+import DomainTheory.DataTypesAsLattices.Functionality
+import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_16_bar
+
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem eq_3_16_operator (u : Pomega) :
+    enumComp Lcomb (enumComp (funOf barComb u) Rcomb) =
+      graph (fun x => funOf u x) := by
+  unfold enumComp
+  apply congrArg graph
+  funext x
+  change funOf Lcomb
+    (funOf (lam fun x => funOf (funOf barComb u) (funOf Rcomb x)) x) =
+      funOf u x
+  rw [beta (theorem_1_3 (funOf_isScottContinuous (funOf barComb u))
+      (funOf_isScottContinuous Rcomb)) x]
+  exact eq_3_16_bar u x
+
+end DomainTheory.DataTypesAsLattices

@@ -1,0 +1,36 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Computability.RE
+import DomainTheory.DataTypesAsLattices.Lambda
+import DomainTheory.DataTypesAsLattices.Computability.Basic
+import DomainTheory.DataTypesAsLattices.Computability.REPredu2ecomp
+
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+theorem primrec_twoPow : Primrec fun k : ℕ => 2 ^ k :=
+  (Primrec.nat_rec' (f := id) (g := fun _ => (1 : ℕ))
+    (h := fun (_ : ℕ) (p : ℕ × ℕ) => p.2 * 2)
+    Primrec.id (Primrec.const 1)
+    (show Primrec fun q : ℕ × ℕ × ℕ => q.2.2 * 2 from
+      Primrec.nat_mul.comp (Primrec.snd.comp Primrec.snd) (Primrec.const 2))).of_eq
+    fun k => by
+      induction k with
+      | zero => simp
+      | succ k ih =>
+        change (Nat.rec 1 (fun n IH => (n, IH).2 * 2) k) * 2 = 2 ^ (k + 1)
+        have ih' : Nat.rec 1 (fun n IH => (n, IH).2 * 2) k = 2 ^ k := by
+          simpa [id] using ih
+        rw [ih', Nat.pow_succ, Nat.mul_comm]
+
+end DomainTheory.DataTypesAsLattices

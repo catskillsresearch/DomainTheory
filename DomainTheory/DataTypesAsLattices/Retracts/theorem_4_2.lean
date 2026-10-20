@@ -1,0 +1,42 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.FixedLattices
+import DomainTheory.DataTypesAsLattices.Lambda
+import DomainTheory.DataTypesAsLattices.Retracts.Basic
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Scott 1976, Theorem 4.2 (The partial ordering theorem).** -/
+theorem theorem_4_2 {a b c : Pomega} :
+    (IsRetract a → retractLe a a) ∧
+      (retractLe a b → retractLe b a → a = b) ∧
+      (retractLe a b → retractLe b c → retractLe a c) := by
+  refine ⟨retractLe_refl, ?_, ?_⟩
+  · intro hab hba
+    exact hab.1.trans (hba.2.symm)
+  · intro hab hbc
+    exact retractLe_trans hab hbc
+
+end DomainTheory.DataTypesAsLattices

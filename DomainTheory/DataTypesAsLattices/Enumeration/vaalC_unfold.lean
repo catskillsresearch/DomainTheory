@@ -1,0 +1,155 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Computability.Halting
+import DomainTheory.DataTypesAsLattices.Computability
+import DomainTheory.DataTypesAsLattices.Functionality
+import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+import DomainTheory.DataTypesAsLattices.Enumeration.vaalF_app
+import DomainTheory.DataTypesAsLattices.Enumeration.vaalC_fixedPoint
+
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Scott 1976, (4.46).** Unfolding of `vaal` at a tree code. -/
+theorem vaalC_unfold (x : Pomega) :
+    funOf vaalC x =
+      condSet (funOf x (ofNat 0)) Gcomb
+        (funOf (funOf vaalC (funOf (funOf x (ofNat 1)) (ofNat 0)))
+          (funOf vaalC (funOf (funOf x (ofNat 1)) (ofNat 1)))) := by
+  have h := congrArg (fun v => funOf v x) vaalC_fixedPoint
+  simpa [vaalF_app] using h.symm
+
+end DomainTheory.DataTypesAsLattices

@@ -1,0 +1,119 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.ContinuousLattice.ScottMaps
+import Mathlib.Data.Finset.Lattice.Fold
+import Mathlib.Topology.ContinuousMap.Basic
+import Mathlib.Topology.Order
+import Mathlib.Order.CompleteLattice.Basic
+import Mathlib.Order.FixedPoints
+import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
+import DomainTheory.ContinuousLattice.FunctionSpaces.incl_bot
+import DomainTheory.ContinuousLattice.FunctionSpaces.incl_finset_sup
+
+
+namespace DomainTheory.ContinuousLattice
+
+open Set Topology TopologicalSpace
+
+universe u v
+
+variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
+variable [TopologicalSpace X] [TopologicalSpace Y]
+variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
+variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section Proposition310
+
+open Finset
+
+namespace IsContinuousLatticeProjection
+
+
+
+
+
+
+
+
+/-- **Scott 1972, Proposition 3.10(i).** Projections preserve arbitrary suprema. -/
+theorem incl_sSup (P : IsContinuousLatticeProjection D D') (S : Set D) :
+    P.incl (sSup S) = sSup (Set.image (P.incl : D → D') S) := by
+  rcases S.eq_empty_or_nonempty with hS | hS
+  · subst hS
+    simp only [sSup_empty, Set.image_empty, incl_bot P]
+  · rw [sSup_finsetSupOf S]
+    have hdir := directedOn_finsetSupOf S
+    have hne : (finsetSupOf S).Nonempty := by
+      obtain ⟨x, hx⟩ := hS
+      exact ⟨x, mem_finsetSupOf_of_mem hx⟩
+    rw [P.incl.preservesDirectedSup_coe (finsetSupOf S) hne hdir]
+    apply le_antisymm
+    · apply sSup_le
+      intro b hb
+      obtain ⟨z, hz, rfl⟩ := hb
+      obtain ⟨T, hT, rfl⟩ := hz
+      have h := incl_finset_sup P T
+      conv_lhs => rw [show T.sup id = T.sup (fun x => x) from rfl]
+      rw [h]
+      apply Finset.sup_le
+      intro t ht
+      exact le_sSup (Set.mem_image_of_mem (P.incl : D → D') (hT t ht))
+    · apply sSup_le
+      intro b hb
+      obtain ⟨x, hxS, rfl⟩ := (Set.mem_image (P.incl : D → D') S b).1 hb
+      exact le_sSup (Set.mem_image_of_mem (P.incl : D → D') (mem_finsetSupOf_of_mem hxS))
+
+end IsContinuousLatticeProjection
+end Proposition310
+end DomainTheory.ContinuousLattice

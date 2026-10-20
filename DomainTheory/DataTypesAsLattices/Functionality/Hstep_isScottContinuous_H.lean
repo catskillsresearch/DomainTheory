@@ -1,0 +1,110 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Retracts
+import DomainTheory.DataTypesAsLattices.Functionality.Basic
+import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
+import DomainTheory.DataTypesAsLattices.Functionality.hSucc_isScottContinuous_H
+import DomainTheory.DataTypesAsLattices.Functionality.hPred_isScottContinuous_H
+import DomainTheory.DataTypesAsLattices.Functionality.hCond_isScottContinuous_H
+import DomainTheory.DataTypesAsLattices.Functionality.hApp_isScottContinuous_H
+import DomainTheory.DataTypesAsLattices.Functionality.hLam_isScottContinuous_H
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem Hstep_isScottContinuous_H (e t : Pomega) :
+    IsScottContinuous (fun H => Hstep H e t) :=
+  continuous_nary
+    (fun y z => dcondSet_isScottContinuous_left y z)
+    (fun x z => dcondSet_isScottContinuous_mid x z)
+    (fun x y => dcondSet_isScottContinuous_right x y)
+    (const_isScottContinuous (expTag e)) (const_isScottContinuous (hVar e t))
+    (continuous_nary
+      (fun y z => dcondSet_isScottContinuous_left y z)
+      (fun x z => dcondSet_isScottContinuous_mid x z)
+      (fun x y => dcondSet_isScottContinuous_right x y)
+      (const_isScottContinuous (predSet (expTag e)))
+      (const_isScottContinuous hZero)
+      (continuous_nary
+        (fun y z => dcondSet_isScottContinuous_left y z)
+        (fun x z => dcondSet_isScottContinuous_mid x z)
+        (fun x y => dcondSet_isScottContinuous_right x y)
+        (const_isScottContinuous (predSet (predSet (expTag e))))
+        (hSucc_isScottContinuous_H e t)
+        (continuous_nary
+          (fun y z => dcondSet_isScottContinuous_left y z)
+          (fun x z => dcondSet_isScottContinuous_mid x z)
+          (fun x y => dcondSet_isScottContinuous_right x y)
+          (const_isScottContinuous (predSet^[3] (expTag e)))
+          (hPred_isScottContinuous_H e t)
+          (continuous_nary
+            (fun y z => dcondSet_isScottContinuous_left y z)
+            (fun x z => dcondSet_isScottContinuous_mid x z)
+            (fun x y => dcondSet_isScottContinuous_right x y)
+            (const_isScottContinuous (predSet^[4] (expTag e)))
+            (hCond_isScottContinuous_H e t)
+            (continuous_nary
+              (fun y z => dcondSet_isScottContinuous_left y z)
+              (fun x z => dcondSet_isScottContinuous_mid x z)
+              (fun x y => dcondSet_isScottContinuous_right x y)
+              (const_isScottContinuous (predSet^[5] (expTag e)))
+              (hApp_isScottContinuous_H e t)
+              (continuous_nary
+                (fun y z => dcondSet_isScottContinuous_left y z)
+                (fun x z => dcondSet_isScottContinuous_mid x z)
+                (fun x y => dcondSet_isScottContinuous_right x y)
+                (const_isScottContinuous (predSet^[6] (expTag e)))
+                (hLam_isScottContinuous_H e t)
+                (const_isScottContinuous topElem)))))))
+
+end DomainTheory.DataTypesAsLattices

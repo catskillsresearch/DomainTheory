@@ -1,0 +1,71 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.FixedLattices
+import DomainTheory.DataTypesAsLattices.Lambda
+import DomainTheory.DataTypesAsLattices.Retracts.Basic
+import DomainTheory.DataTypesAsLattices.Retracts.directed_sUnion_fixed
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem sSup_fixed_eq_sUnion {f : Pomega → Pomega} (hf : IsScottContinuous f)
+    {A : Set (Fixpoints f)} (hA : IsDirectedSet A) :
+    ((@sSup (Fixpoints f) (fixpointsCompleteLattice hf).toSupSet A :
+        Fixpoints f) : Pomega) =
+      ⋃₀ (Fixpoints.vals A) := by
+  let := fixpointsCompleteLattice hf
+  let u : Fixpoints f :=
+    ⟨⋃₀ (Fixpoints.vals A), directed_sUnion_fixed hf hA⟩
+  apply subset_antisymm
+  · have hle : sSup A ≤ u := by
+      apply sSup_le
+      intro x hx
+      exact Set.subset_sUnion_of_mem ⟨x, hx, rfl⟩
+    exact hle
+  · intro k hk
+    obtain ⟨x, hxA, hkx⟩ := Set.mem_sUnion.mp hk
+    obtain ⟨y, hyA, rfl⟩ := hxA
+    exact (le_sSup hyA) hkx
+
+end DomainTheory.DataTypesAsLattices

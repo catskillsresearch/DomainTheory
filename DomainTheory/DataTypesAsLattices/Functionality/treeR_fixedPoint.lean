@@ -1,0 +1,47 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Retracts
+import DomainTheory.DataTypesAsLattices.Functionality.Basic
+import DomainTheory.DataTypesAsLattices.Functionality.eq_4_38
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem treeR_fixedPoint : treeF treeR = treeR := by
+  simpa [treeF] using eq_4_38.symm
+
+end DomainTheory.DataTypesAsLattices

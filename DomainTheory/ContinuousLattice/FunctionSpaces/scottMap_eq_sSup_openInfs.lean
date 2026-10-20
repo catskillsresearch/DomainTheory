@@ -1,0 +1,115 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.ContinuousLattice.ScottMaps
+import Mathlib.Data.Finset.Lattice.Fold
+import Mathlib.Topology.ContinuousMap.Basic
+import Mathlib.Topology.Order
+import Mathlib.Order.CompleteLattice.Basic
+import Mathlib.Order.FixedPoints
+import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
+import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendInf_le_of_mem
+
+
+namespace DomainTheory.ContinuousLattice
+
+open Set Topology TopologicalSpace
+
+universe u v
+
+variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
+variable [TopologicalSpace X] [TopologicalSpace Y]
+variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
+variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section SubspaceExtension
+
+variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y]
+
+
+
+omit [TopologicalSpace Y] in
+theorem scottMap_eq_sSup_openInfs (hD : IsContinuousLattice D) (f' : ScottMap Y D) (y : Y) :
+    (f' : Y → D) y =
+      sSup { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧
+        d = sInf (Set.image (f' : Y → D) U) } := by
+  apply le_antisymm
+  · rw [← IsContinuousLattice.sSup_wayBelow hD (f' y)]
+    apply sSup_le
+    intro a ha
+    obtain ⟨V, hV, hf'V, hVsub⟩ := ha
+    have hVopen : @IsOpen D scottTopologicalSpace V := isOpen_iff_scottOpen.mpr hV
+    have hyU : y ∈ (f' : Y → D) ⁻¹' V := hf'V
+    have hUScott : ScottOpen ((f' : Y → D) ⁻¹' V) :=
+      scottOpen_preimage ((proposition_2_5 (Subtype.val f')).mp f'.property) hV
+    have hUopen : @IsOpen Y scottTopologicalSpace ((f' : Y → D) ⁻¹' V) :=
+      isOpen_iff_scottOpen.mpr hUScott
+    have ha' : a ≤ sInf (Set.image (f' : Y → D) ((f' : Y → D) ⁻¹' V)) := by
+      apply le_sInf
+      intro d hd
+      obtain ⟨z, hzV, rfl⟩ := hd
+      exact Set.mem_Ici.1 (hVsub hzV)
+    have hmem : sInf (Set.image (f' : Y → D) ((f' : Y → D) ⁻¹' V)) ∈
+        { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧
+          d = sInf (Set.image (f' : Y → D) U) } :=
+      ⟨(f' : Y → D) ⁻¹' V, hUopen, hyU, rfl⟩
+    exact le_trans ha' (le_sSup hmem)
+  · apply sSup_le
+    intro d hd
+    obtain ⟨U, _hUopen, hyU, rfl⟩ := hd
+    exact scottSubspaceExtendInf_le_of_mem (f' := f') hyU
+
+end SubspaceExtension
+end DomainTheory.ContinuousLattice

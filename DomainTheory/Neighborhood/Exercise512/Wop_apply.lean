@@ -1,0 +1,32 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Theorem41
+import DomainTheory.Neighborhood.Exercise326
+import DomainTheory.Neighborhood.Exercise512.Basic
+import DomainTheory.Neighborhood.Exercise512.bodyMap_apply
+
+
+namespace DomainTheory.Neighborhood.Exercise512
+
+open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.Neighborhood.Exercise326 (cond TD)
+
+variable {α : Type*} (V : NeighborhoodSystem α)
+  (p : ApproximableMap V TD) (f : ApproximableMap V V)
+
+
+
+/-- `Wop(w)(x) = cond(p(x), w(f(x)), x)`. -/
+theorem Wop_apply (w : (funSpace V V).Element) (x : V.Element) :
+    (toApproxMap ((Wop V p f).toElementMap w)).toElementMap x =
+      (cond V).toElementMap
+        (pair (p.toElementMap x)
+          (pair ((toApproxMap w).toElementMap (f.toElementMap x)) x)) := by
+  rw [Wop, toElementMap_curry_apply, bodyMap_apply]
+
+end DomainTheory.Neighborhood.Exercise512

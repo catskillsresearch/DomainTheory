@@ -1,0 +1,115 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Theorem88b
+import DomainTheory.Neighborhood.RecursiveCross
+import DomainTheory.Neighborhood.Theorem88d.Basic
+import DomainTheory.Neighborhood.Theorem88d.primrec_unionUX
+import DomainTheory.Neighborhood.Theorem88d.primrec_atomUCode
+import DomainTheory.Neighborhood.Theorem88d.primrec_atomUEmpty
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem Domain.Recursive
+
+variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
+
+
+
+
+
+
+variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem primrec_yFoldStep : Nat.Primrec (yFoldStep P) := by
+  have hn : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
+  have hacc : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.2) :=
+    Nat.Primrec.right.comp Nat.Primrec.right
+  have hi : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
+    Nat.Primrec.left.comp Nat.Primrec.right
+  have h2n : Nat.Primrec (fun w : ℕ => 2 ^ w.unpair.1) := primrec_two_pow hn
+  have hk : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1 + 2 ^ w.unpair.1) :=
+    primrec_add₂ hi h2n
+  have hn1 : Nat.Primrec (fun w : ℕ => w.unpair.1 + 1) := Nat.Primrec.succ.comp hn
+  have hempty : Nat.Primrec (fun w : ℕ =>
+      atomUEmpty P (w.unpair.1 + 1) (w.unpair.2.unpair.1 + 2 ^ w.unpair.1)) :=
+    ((primrec_atomUEmpty P).comp (hn1.pair hk)).of_eq
+      fun w => by simp only [unpair_pair_fst, unpair_pair_snd]
+  have hcode : Nat.Primrec (fun w : ℕ =>
+      atomUCode P (w.unpair.1 + 1) (w.unpair.2.unpair.1 + 2 ^ w.unpair.1)) :=
+    ((primrec_atomUCode P).comp (hn1.pair hk)).of_eq
+      fun w => by simp only [unpair_pair_fst, unpair_pair_snd]
+  have hfound : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.2.unpair.1) :=
+    Nat.Primrec.left.comp hacc
+  have hval : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.2.unpair.2) :=
+    Nat.Primrec.right.comp hacc
+  have hunion : Nat.Primrec (fun w : ℕ => unionUX w.unpair.2.unpair.2.unpair.2
+      (atomUCode P (w.unpair.1 + 1) (w.unpair.2.unpair.1 + 2 ^ w.unpair.1))) :=
+    (primrec_unionUX.comp (hval.pair hcode)).of_eq
+      fun w => by simp only [unpair_pair_fst, unpair_pair_snd]
+  have hinner : Nat.Primrec (fun w : ℕ => selectFn w.unpair.2.unpair.2.unpair.1
+      (Nat.pair 1 (unionUX w.unpair.2.unpair.2.unpair.2
+        (atomUCode P (w.unpair.1 + 1) (w.unpair.2.unpair.1 + 2 ^ w.unpair.1))))
+      (Nat.pair 1 (atomUCode P (w.unpair.1 + 1) (w.unpair.2.unpair.1 + 2 ^ w.unpair.1)))) :=
+    primrec_selectFn hfound
+      ((Nat.Primrec.const 1).pair hunion)
+      ((Nat.Primrec.const 1).pair hcode)
+  exact (primrec_selectFn hempty hacc hinner).of_eq fun w => by unfold yFoldStep; simp only []
+
+end DomainTheory.Neighborhood

@@ -1,0 +1,46 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise516
+import Mathlib.Data.Nat.Bits
+import DomainTheory.Neighborhood.Exercise516ThueMorse.Basic
+import DomainTheory.Neighborhood.Exercise516ThueMorse.iterElem_succ_eq
+import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_prefix
+import DomainTheory.Neighborhood.Exercise516ThueMorse.expand_iterate_eq
+import DomainTheory.Neighborhood.Exercise516ThueMorse.iterElem_le_fixElement
+
+
+namespace DomainTheory.Neighborhood.Exercise516
+
+open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Property (a), prefix form.** Every Thue–Morse parity prefix is a prefix of `t`:
+`(tmList n)⊥ ⊑ t` for all `n`. -/
+theorem tmList_le_tElt (n : ℕ) : strBot (tmList n) ≤ tElt := by
+  have hpre : tmList n <+: expand^[n] [false] := by
+    rw [expand_iterate_eq]; exact tmList_prefix (Nat.le_of_lt (Nat.lt_two_pow_self))
+  calc strBot (tmList n) ≤ strBot (expand^[n] [false]) :=
+        strBot_le_strBot_iff.mpr hpre
+    _ = tmOp.iterElem (n + 1) := (iterElem_succ_eq n).symm
+    _ ≤ tElt := iterElem_le_fixElement tmOp (n + 1)
+
+end DomainTheory.Neighborhood.Exercise516

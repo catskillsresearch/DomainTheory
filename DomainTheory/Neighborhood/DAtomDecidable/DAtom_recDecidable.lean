@@ -1,0 +1,61 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Theorem88a
+import DomainTheory.Neighborhood.Definition71
+import DomainTheory.Neighborhood.DAtomDecidable.Basic
+import DomainTheory.Neighborhood.DAtomDecidable.DAtomEmptyChar_eq_one_iff
+import DomainTheory.Neighborhood.DAtomDecidable.primrec_DAtomEmptyChar
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem Domain.Recursive
+
+variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
+
+
+
+
+
+
+variable (cons : ℕ → ℕ)
+
+
+
+
+
+
+
+
+
+variable (incl : ℕ → ℕ)
+
+
+
+/-- **Part 5's headline result.** `D`-side atom emptiness (in the `idxSet` sense above) is
+recursively decidable in the two constraint-list codes, for any `ComputablePresentation` of `D`.
+The primitive-recursive deciders `cons`/`incl` are extracted from `P.cons_computable`/
+`P.incl_computable` *inside* this `Prop`-valued goal — an ordinary `Exists`-elimination into a
+`Prop`, so this needs no `Classical.choice` beyond what `P` itself already carries. -/
+theorem DAtom_recDecidable :
+    RecDecidable₂ (fun posC negC => DAtom P (decodeList posC) (decodeList negC) = ∅) := by
+  obtain ⟨cons, hconsp, hconss⟩ := P.cons_computable
+  obtain ⟨incl, hinclp, hincls⟩ := P.incl_computable
+  have hcons : ∀ n m, cons (Nat.pair n m) = 1 ↔ ∃ k, P.X k ⊆ P.X n ∩ P.X m := by
+    intro n m
+    have := hconss (Nat.pair n m)
+    simpa only [unpair_pair_fst, unpair_pair_snd] using this.symm
+  have hincl : ∀ n m, incl (Nat.pair n m) = 1 ↔ P.X n ⊆ P.X m := by
+    intro n m
+    have := hincls (Nat.pair n m)
+    simpa only [unpair_pair_fst, unpair_pair_snd] using this.symm
+  refine ⟨fun t => DAtomEmptyChar P cons incl t.unpair.1 t.unpair.2,
+    primrec_DAtomEmptyChar P cons incl hconsp hinclp, fun t => ?_⟩
+  exact (DAtomEmptyChar_eq_one_iff P cons incl hcons hincl t.unpair.1 t.unpair.2).symm
+
+end DomainTheory.Neighborhood

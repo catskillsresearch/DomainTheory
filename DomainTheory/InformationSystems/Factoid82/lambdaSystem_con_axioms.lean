@@ -1,0 +1,107 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.InformationSystems.FunctionSpace
+import DomainTheory.InformationSystems.Sum
+import Mathlib.Data.Finset.Card
+import DomainTheory.InformationSystems.Factoid82.Basic
+import DomainTheory.InformationSystems.Factoid82.LamTokenCon_singleton
+import DomainTheory.InformationSystems.Factoid82.LamTokenCon_subset
+import DomainTheory.InformationSystems.Factoid82.LamTokenEnt_bot
+import DomainTheory.InformationSystems.Factoid82.LamTokenEnt_of_mem
+
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+set_option linter.unusedSectionVars false
+
+variable {α : Type*} [DecidableEq α]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+variable (A : InfoSys α)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- Def 2.1 progress: `con_subset`, `con_sing`, `ent_bot`, `ent_refl`;
+`ent_con` for bot/atom; `ent_con`/`ent_trans` on `funTok` remain. -/
+theorem lambdaSystem_con_axioms :
+    (∀ {u v : Finset (LamToken A)}, LamTokenCon A u → v ⊆ u → LamTokenCon A v) ∧
+      (∀ p : LamToken A, LamTokenCon A {p}) ∧
+        (∀ {u : Finset (LamToken A)}, LamTokenCon A u → LamTokenEnt A u (lamBot A)) ∧
+          (∀ {u : Finset (LamToken A)} {p : LamToken A},
+            LamTokenCon A u → p ∈ u → LamTokenEnt A u p) :=
+  ⟨fun hu hv => LamTokenCon_subset A hu hv,
+    LamTokenCon_singleton A,
+    fun hu => LamTokenEnt_bot A hu,
+    fun hu hp => LamTokenEnt_of_mem A hu hp⟩
+
+
+end InfoSys
+end DomainTheory.InformationSystems

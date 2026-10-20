@@ -1,0 +1,40 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Basic
+import Mathlib.Basic.Countable.Defs
+import Mathlib.Data.Fintype.Powerset
+import Mathlib.Tactic
+import DomainTheory.Neighborhood.Example15.Basic
+
+
+namespace DomainTheory.Neighborhood.Example15
+
+open NeighborhoodSystem
+
+
+
+
+
+
+
+
+
+
+/-- **Factoid 1.5a (Scott 1981, PRG-19).** In Example 1.5, "sets are consistent in `𝒟` iff they
+have a non-empty intersection": a finite prefix `X₀, …, Xₙ₋₁` is consistent exactly when its
+intersection `⋂_{i<n} Xᵢ` is non-empty. -/
+theorem consistent_iff_inter_nonempty (X : ℕ → Set Token) (n : ℕ) :
+    neighborhoodSystem.Consistent X n ↔ (neighborhoodSystem.interUpTo X n).Nonempty := by
+  constructor
+  · rintro ⟨Z, hZ, hsub⟩
+    obtain ⟨z, hz⟩ := hZ
+    exact ⟨z, hsub hz⟩
+  · intro h
+    exact ⟨_, h, subset_rfl⟩
+
+end DomainTheory.Neighborhood.Example15

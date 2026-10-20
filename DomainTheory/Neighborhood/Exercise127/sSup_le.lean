@@ -1,0 +1,29 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise118
+import Mathlib.Tactic
+import DomainTheory.Neighborhood.Exercise127.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+namespace NeighborhoodSystem
+
+variable {α : Type*} (V : NeighborhoodSystem α)
+
+
+
+
+
+/-- **Exercise 1.27 — `⊔X` is least.** Any upper bound `z` of `X` satisfies `⊔X ⊑ z`. -/
+theorem sSup_le (X : Set V.Element) (hX : V.Bounded X) {z : V.Element}
+    (hz : ∀ x ∈ X, x ≤ z) : V.sSup X hX ≤ z :=
+  V.sInf_le (V.upperBounds X) (V.upperBounds_nonempty hX) hz
+
+end NeighborhoodSystem
+end DomainTheory.Neighborhood

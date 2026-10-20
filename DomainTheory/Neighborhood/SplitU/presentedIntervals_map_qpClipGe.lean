@@ -1,0 +1,29 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.UComputablePresentation
+import DomainTheory.Neighborhood.SplitU.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+open Domain.Recursive NeighborhoodSystem
+
+
+
+
+theorem presentedIntervals_map_qpClipGe (m : ℚ) (L : List (ℚ × ℚ)) :
+    presentedIntervals (L.map (qpClipGe m)) = presentedIntervals L ∩ Set.Ici m := by
+  ext x
+  simp only [mem_presentedIntervals, List.mem_map, Set.mem_inter_iff, Set.mem_Ici, qpClipGe]
+  constructor
+  · rintro ⟨p, ⟨q, hq, rfl⟩, hx1, hx2⟩
+    exact ⟨⟨q, hq, le_sup_left.trans hx1, hx2⟩, le_sup_right.trans hx1⟩
+  · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hxm⟩
+    exact ⟨(q.1 ⊔ m, q.2), ⟨q, hq, rfl⟩, sup_le hxq1 hxm, hxq2⟩
+
+end DomainTheory.Neighborhood

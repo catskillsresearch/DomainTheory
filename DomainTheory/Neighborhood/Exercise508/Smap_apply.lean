@@ -1,0 +1,34 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.FunctionSpace
+import DomainTheory.Neighborhood.Exercise508.Basic
+
+
+namespace DomainTheory.Neighborhood.Exercise508
+
+open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+
+
+variable {α β γ : Type*}
+
+
+variable {αx αa αb : Type*}
+  {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
+
+
+
+/-- The defining equation of `S`: `S(F)(G)(x) = F(x)(G(x))`. -/
+theorem Smap_apply (F : (funSpace Vx (funSpace Va Vb)).Element) (G : (funSpace Vx Va).Element)
+    (x : Vx.Element) :
+    (toApproxMap ((toApproxMap ((Smap Vx Va Vb).toElementMap F)).toElementMap G)).toElementMap x
+      = (toApproxMap ((toApproxMap F).toElementMap x)).toElementMap ((toApproxMap G).toElementMap x) := by
+  rw [Smap, toElementMap_curry_apply, toElementMap_curry_apply]
+  simp only [Sbody, toElementMap_comp, toElementMap_paired, toElementMap_proj₀,
+    toElementMap_proj₁, fst_pair, snd_pair, evalMap_apply]
+
+end DomainTheory.Neighborhood.Exercise508

@@ -1,0 +1,94 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Retracts
+import DomainTheory.DataTypesAsLattices.Functionality.Basic
+import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
+import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
+import DomainTheory.DataTypesAsLattices.Functionality.tensorR_app
+import DomainTheory.DataTypesAsLattices.Functionality.diagC_app
+import DomainTheory.DataTypesAsLattices.Functionality.graph_funOf_ext
+import DomainTheory.DataTypesAsLattices.Functionality.typed_isGraph
+import DomainTheory.DataTypesAsLattices.Functionality.comp_isGraph
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Scott 1976, Theorem 4.4.** Existence of the product mediator. -/
+theorem theorem_4_4_med {a b c f g : Pomega}
+    (_ha : IsRetract a) (_hb : IsRetract b) (hc : IsRetract c)
+    (hf : typed f (arrowR c a)) (hg : typed g (arrowR c b)) :
+    typed (pairMed f g c) (arrowR c (tensorR a b)) ∧
+      comp fstC (pairMed f g c) = f ∧
+      comp sndC (pairMed f g c) = g := by
+  have hf' := typed_of_arrowR hf
+  have hg' := typed_of_arrowR hg
+  refine ⟨?_, ?_, ?_⟩
+  · change pairMed f g c =
+        funOf (arrowR c (tensorR a b)) (pairMed f g c)
+    rw [arrowR_app, pairMed]
+    apply graph_ext
+    intro x
+    have hfxc : funOf f (funOf c x) =
+        funOf a (funOf f (funOf c x)) := by
+      have := congrArg (fun w => funOf w (funOf c x)) hf'
+      simpa [comp_app, retract_app hc] using this
+    have hgxc : funOf g (funOf c x) =
+        funOf b (funOf g (funOf c x)) := by
+      have := congrArg (fun w => funOf w (funOf c x)) hg'
+      simpa [comp_app, retract_app hc] using this
+    have hL : funOf (tensorR f g) (funOf diagC (funOf c x)) =
+        pairSeq (funOf f (funOf c x)) (funOf g (funOf c x)) := by
+      rw [diagC_app, tensorR_app, pairSeq_app_zero, pairSeq_app_one]
+    have hR : funOf (tensorR a b)
+        (funOf (tensorR f g) (funOf diagC (funOf c (funOf c x)))) =
+        pairSeq (funOf a (funOf f (funOf c x)))
+          (funOf b (funOf g (funOf c x))) := by
+      rw [retract_app hc, diagC_app]
+      have hinter :
+          funOf (tensorR f g) (pairSeq (funOf c x) (funOf c x)) =
+            pairSeq (funOf f (funOf c x)) (funOf g (funOf c x)) := by
+        rw [tensorR_app, pairSeq_app_zero, pairSeq_app_one]
+      rw [hinter, tensorR_app, pairSeq_app_zero, pairSeq_app_one]
+    simp only [comp_app]
+    rw [hL, hR]
+    exact congr (congrArg pairSeq hfxc) hgxc
+  · apply graph_funOf_ext (comp_isGraph _ _) (typed_isGraph hf)
+    intro x
+    simp only [comp_app, pairMed, fstC_app, diagC_app]
+    rw [tensorR_app, pairSeq_app_zero, pairSeq_app_zero]
+    have := congrArg (fun w => funOf w x) (typed_arrowR_restrict hc hf)
+    simpa [comp_app] using this.symm
+  · apply graph_funOf_ext (comp_isGraph _ _) (typed_isGraph hg)
+    intro x
+    simp only [comp_app, pairMed, sndC_app, diagC_app]
+    rw [tensorR_app, pairSeq_app_one, pairSeq_app_one]
+    have := congrArg (fun w => funOf w x) (typed_arrowR_restrict hc hg)
+    simpa [comp_app] using this.symm
+
+end DomainTheory.DataTypesAsLattices

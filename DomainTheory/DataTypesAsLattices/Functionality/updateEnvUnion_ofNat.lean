@@ -1,0 +1,64 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Retracts
+import DomainTheory.DataTypesAsLattices.Functionality.Basic
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem updateEnvUnion_ofNat (t x : Pomega) (n : ℕ) :
+    updateEnvUnion t x (ofNat n) = updateEnv t x n := by
+  ext k
+  constructor
+  · intro hk
+    obtain ⟨m, hm, hkm⟩ := Set.mem_iUnion₂.mp hk
+    have : m = n := by
+      simpa [ofNat, Set.singleton_subset_iff] using hm
+    subst m
+    exact hkm
+  · intro hk
+    exact Set.mem_iUnion₂.mpr ⟨n, by simp [ofNat], hk⟩
+
+end DomainTheory.DataTypesAsLattices

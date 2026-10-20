@@ -1,0 +1,106 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Example78
+import DomainTheory.Neighborhood.Theorem74
+import DomainTheory.Neighborhood.Theorem75
+import DomainTheory.Neighborhood.Exercise514
+import DomainTheory.Neighborhood.Exercise723.Basic
+
+
+namespace DomainTheory.Neighborhood.Exercise723
+
+open DomainTheory.Neighborhood Example78 NeighborhoodSystem Domain.Recursive
+open DomainTheory.Neighborhood.Exercise513 (tri num numP unnum nextCell numP_unnum)
+open DomainTheory.Neighborhood.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
+  num_succ_left_gt tag_injective)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- `graphMap`'s neighbourhood relation on indices: `Xenum … c` relates to `nbhd m` iff `nbhd m`'s
+excluded set fits inside `GraphIdx (Xenum … c)`. -/
+theorem graphMap_rel_iff (gN : ℕ → ℕ)
+    (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf PNpres PNpres (decodeList c))
+      : Set (ApproximableMap PN PN)).Nonempty) (c m : ℕ) :
+    graphMap.rel (Xenum PNpres PNpres gN c) (nbhd m) ↔
+      (nbhd m)ᶜ ⊆ GraphIdx (Xenum PNpres PNpres gN c) := by
+  constructor
+  · rintro ⟨_, _, hsub⟩; exact hsub
+  · intro h; exact ⟨Xenum_mem PNpres PNpres gN hgN c, ⟨m, rfl⟩, h⟩
+
+end DomainTheory.Neighborhood.Exercise723

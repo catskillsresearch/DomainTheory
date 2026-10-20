@@ -1,0 +1,64 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Retracts
+import DomainTheory.DataTypesAsLattices.Functionality.Basic
+import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_app
+import DomainTheory.DataTypesAsLattices.Functionality.Z_finite_no_tag
+import DomainTheory.DataTypesAsLattices.Functionality.funOf_e_union_fresh
+import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_union_fresh
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem plotkin_finite_separation (p q m : ℕ) :
+    Z m
+        (graph (fun y => funOf (e p) y) ∪
+          graph (sigmaJ (max p q + 1)))
+        ((e q) ∪ {pair (max p q + 1) 0}) =
+      Z m (e p) (e q) ∪ {pair (max p q + 1) m} := by
+  induction m with
+  | zero => rfl
+  | succ m ih =>
+      rw [Z, eq_2_9, ih]
+      have hbeta :
+          funOf (graph (fun y => funOf (e p) y))
+              (Z m (e p) (e q) ∪ {pair (max p q + 1) m}) =
+            funOf (e p) (Z m (e p) (e q) ∪ {pair (max p q + 1) m}) :=
+        beta (funOf_isScottContinuous (e p)) _
+      rw [hbeta, funOf_e_union_fresh p (max p q + 1) m _
+        (Nat.lt_succ_of_le (Nat.le_max_left p q)), sigmaJ_app,
+        sigmaJ_union_fresh (fun k => Z_finite_no_tag p q m k)]
+      rfl
+
+end DomainTheory.DataTypesAsLattices

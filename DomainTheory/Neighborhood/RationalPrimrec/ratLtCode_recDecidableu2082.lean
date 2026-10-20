@@ -1,0 +1,42 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Recursive
+import DomainTheory.Neighborhood.RationalPrimrec.Basic
+import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratLtCode
+import DomainTheory.Neighborhood.RationalPrimrec.ratLtCode_le_one
+import DomainTheory.Neighborhood.RationalPrimrec.ratLtCode_eq_one_iff
+
+
+namespace DomainTheory.Neighborhood
+
+open Domain.Recursive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **`<` on rational codes is recursively decidable.** Packaged as `RecDecidable₂` (rather than the
+raw `{0,1}` characteristic `ratLtCode`) so it composes directly with `Recursive.lean`'s closure
+lemmas (`.not`, `.and`, `.bExistsList`, `.swap`, ...). -/
+theorem ratLtCode_recDecidable₂ : RecDecidable₂ (fun c1 c2 => decodeRat c1 < decodeRat c2) := by
+  refine RecDecidable₂.of_paired_zero_one_char primrec_ratLtCode
+    (fun t => by have := ratLtCode_le_one t; omega) (fun n m => ?_)
+  exact (ratLtCode_eq_one_iff n m).symm
+
+end DomainTheory.Neighborhood

@@ -1,0 +1,129 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Theorem88b
+import DomainTheory.Neighborhood.RecursiveCross
+import DomainTheory.Neighborhood.Theorem88d.Basic
+import DomainTheory.Neighborhood.Theorem88d.UX_unionUX
+import DomainTheory.Neighborhood.Theorem88d.yFold_zero
+import DomainTheory.Neighborhood.Theorem88d.yFold_succ
+import DomainTheory.Neighborhood.Theorem88d.atomUEmpty_zero_or_one
+import DomainTheory.Neighborhood.Theorem88d.yFoldStep_eq
+import DomainTheory.Neighborhood.Theorem88d.yFold_found_le_one
+import DomainTheory.Neighborhood.Theorem88d.yFold_found_iff
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem Domain.Recursive
+
+variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
+
+
+
+
+
+
+variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **The membership form of `yFold`'s correctness**: once a non-junk bit-source has been found
+below `N`, the running code's `UX`-image is exactly the union of the genuine (non-junk) atoms
+seen so far. -/
+theorem yFold_mem_iff (n : ℕ) :
+    ∀ N, (yFold P n N).unpair.1 = 1 →
+      ∀ z : ℚ, z ∈ UX (yFold P n N).unpair.2 ↔
+        ∃ i < N, atomUEmpty P (n + 1) (i + 2 ^ n) = 0 ∧ z ∈ UX (atomUCode P (n + 1) (i + 2 ^ n)) := by
+  intro N
+  induction N with
+  | zero => intro h; simp [yFold_zero] at h
+  | succ N ih =>
+    intro hfound1 z
+    rw [yFold_succ, yFoldStep_eq] at hfound1 ⊢
+    rcases atomUEmpty_zero_or_one P (n + 1) (N + 2 ^ n) with h0 | h1
+    · rw [h0, selectFn_zero] at hfound1 ⊢
+      rcases Nat.eq_zero_or_pos (yFold P n N).unpair.1 with hf0 | hfpos
+      · rw [show (yFold P n N).unpair.1 = 0 from hf0, selectFn_zero, unpair_pair_snd]
+        constructor
+        · intro hz; exact ⟨N, Nat.lt_succ_self N, h0, hz⟩
+        · rintro ⟨i, hi, hie, hz⟩
+          rcases Nat.lt_succ_iff_lt_or_eq.mp hi with hi' | rfl
+          · exact absurd ((yFold_found_iff P n N).mpr ⟨i, hi', hie⟩) (by rw [hf0]; omega)
+          · exact hz
+      · have hf1 : (yFold P n N).unpair.1 = 1 := by
+          have := yFold_found_le_one P n N; omega
+        rw [hf1, selectFn_one, unpair_pair_snd, UX_unionUX, Set.mem_union, ih hf1 z]
+        constructor
+        · rintro (⟨i, hi, hie, hz⟩ | hz)
+          · exact ⟨i, Nat.lt_succ_of_lt hi, hie, hz⟩
+          · exact ⟨N, Nat.lt_succ_self N, h0, hz⟩
+        · rintro ⟨i, hi, hie, hz⟩
+          rcases Nat.lt_succ_iff_lt_or_eq.mp hi with hi' | rfl
+          · exact Or.inl ⟨i, hi', hie, hz⟩
+          · exact Or.inr hz
+    · rw [h1, selectFn_one] at hfound1 ⊢
+      rw [ih hfound1 z]
+      constructor
+      · rintro ⟨i, hi, hie, hz⟩; exact ⟨i, Nat.lt_succ_of_lt hi, hie, hz⟩
+      · rintro ⟨i, hi, hie, hz⟩
+        rcases Nat.lt_succ_iff_lt_or_eq.mp hi with hi' | rfl
+        · exact ⟨i, hi', hie, hz⟩
+        · exact absurd hie (by omega)
+
+end DomainTheory.Neighborhood

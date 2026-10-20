@@ -1,0 +1,36 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Proposition612
+import DomainTheory.Neighborhood.Exercise625.Basic
+import DomainTheory.Neighborhood.Exercise625.inj_proj_apply_le
+import DomainTheory.Neighborhood.Exercise625.galois
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap Subsystem
+
+variable {α : Type*} {D E : NeighborhoodSystem α}
+
+namespace Subsystem.ProjectionPair
+
+
+
+
+/-- **Exercise 6.25 — "check that the set on the right is directed".** Any two members of
+`{x ∣ g(x) ⊑ y}` have a common upper bound *inside the set*, namely `h(y)` itself (the down-set of
+`h(y)` has `h(y)` as a top, so it is trivially directed). -/
+theorem lowerSet_directed (P : ProjectionPair D E) (y : E.Element) :
+    ∀ a ∈ P.lowerSet y, ∀ b ∈ P.lowerSet y,
+      ∃ c ∈ P.lowerSet y, a ≤ c ∧ b ≤ c := by
+  intro a ha b hb
+  exact ⟨P.proj.toElementMap y, P.inj_proj_apply_le y,
+    (P.galois a y).mp ha, (P.galois b y).mp hb⟩
+
+end Subsystem.ProjectionPair
+end DomainTheory.Neighborhood

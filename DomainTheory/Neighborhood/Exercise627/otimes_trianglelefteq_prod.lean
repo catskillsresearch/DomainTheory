@@ -1,0 +1,31 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise621
+import DomainTheory.Neighborhood.Lemma615
+import DomainTheory.Neighborhood.Exercise627.Basic
+import DomainTheory.Neighborhood.Exercise627.otimesTok_subsystem_prodTok
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
+open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
+open DomainTheory.Neighborhood.Exercise510
+
+namespace Exercise627
+
+variable {D₀ D₁ : NeighborhoodSystem Str}
+
+
+/-- **Exercise 6.27 (1).** `(𝒟 ⊗ ℰ) ⊴ (𝒟 × ℰ)`. -/
+theorem otimes_trianglelefteq_prod (D₀ D₁ : NeighborhoodSystem Str) :
+    otimesTok D₀ D₁ ⊴ prodTok D₀ D₁ :=
+  (otimesTok_subsystem_prodTok D₀ D₁).trianglelefteq
+
+end Exercise627
+end DomainTheory.Neighborhood

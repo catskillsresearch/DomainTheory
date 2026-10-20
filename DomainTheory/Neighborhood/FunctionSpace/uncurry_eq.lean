@@ -1,0 +1,104 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Product
+import DomainTheory.Neighborhood.Exercise127
+import DomainTheory.Neighborhood.FunctionSpace.Basic
+import DomainTheory.Neighborhood.FunctionSpace.evalMap_apply
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap
+
+variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+variable {V₂ : NeighborhoodSystem γ}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- `uncurry` is the composition `eval ∘ ⟨h ∘ p₀, p₁⟩`. -/
+theorem uncurry_eq (h : ApproximableMap V₀ (funSpace V₁ V₂)) :
+    uncurry h = (evalMap V₁ V₂).comp (paired (h.comp (proj₀ V₀ V₁)) (proj₁ V₀ V₁)) := by
+  apply ext_of_toElementMap
+  intro w
+  rw [toElementMap_comp, toElementMap_paired, toElementMap_comp, toElementMap_proj₀,
+    toElementMap_proj₁, evalMap_apply]
+  apply Element.ext
+  intro Z
+  constructor
+  · rintro ⟨W₀, hwW₀, hW₀, hrel⟩
+    obtain ⟨X, Y, hX, hY, rfl⟩ := hW₀
+    rw [inl_preimage_prodNbhd] at hrel
+    rw [inr_preimage_prodNbhd] at hrel
+    obtain ⟨hwX, hwY⟩ := (prod_mem_split hX hY).mp hwW₀
+    exact ⟨Y, ⟨hY, hwY⟩, X, ⟨hX, hwX⟩, hrel⟩
+  · rintro ⟨Y, ⟨hY, hwY⟩, X, ⟨hX, hwX⟩, hrel⟩
+    refine ⟨prodNbhd X Y, (prod_mem_split hX hY).mpr ⟨hwX, hwY⟩, prod_mem_prodNbhd hX hY, ?_⟩
+    rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+    exact hrel
+
+end DomainTheory.Neighborhood

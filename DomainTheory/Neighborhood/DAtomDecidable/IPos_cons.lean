@@ -1,0 +1,32 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Theorem88a
+import DomainTheory.Neighborhood.Definition71
+import DomainTheory.Neighborhood.DAtomDecidable.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem Domain.Recursive
+
+variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
+
+
+
+
+theorem IPos_cons (i : ℕ) (rest : List ℕ) :
+    IPos P (i :: rest) = idxSet P.X i ∩ IPos P rest := by
+  ext m
+  simp only [IPos, Set.mem_ofPred_eq, List.mem_cons, mem_idxSet, Set.mem_inter_iff]
+  constructor
+  · intro h; exact ⟨h i (Or.inl rfl), fun j hj => h j (Or.inr hj)⟩
+  · rintro ⟨hi, hrest⟩ j (rfl | hj)
+    · exact hi
+    · exact hrest j hj
+
+end DomainTheory.Neighborhood

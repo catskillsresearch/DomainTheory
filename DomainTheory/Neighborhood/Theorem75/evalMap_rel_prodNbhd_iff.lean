@@ -1,0 +1,149 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.FunctionSpace
+import DomainTheory.Neighborhood.Definition72
+import DomainTheory.Neighborhood.Theorem74
+import DomainTheory.Neighborhood.Theorem75.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem Domain.Recursive ApproximableMap
+
+variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+
+
+
+
+
+
+
+
+
+variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Evaluation against a product neighbourhood.** `(F, X) eval Y ↔ F ⊆ [X, Y]`, for any
+function-space neighbourhood `F` and basic neighbourhoods `X, Y`: every map in `F` relates `X` to `Y`
+exactly when `F` is contained in the step set `[X, Y] = {f ∣ f X Y}`. -/
+theorem evalMap_rel_prodNbhd_iff {F : Set (ApproximableMap V₀ V₁)} (hF : (funSpace V₀ V₁).mem F)
+    {X : Set α} (hX : V₀.mem X) {Y : Set β} (hY : V₁.mem Y) :
+    (evalMap V₀ V₁).rel (prodNbhd F X) Y ↔ F ⊆ step X Y := by
+  show (prod (funSpace V₀ V₁) V₀).mem (prodNbhd F X) ∧
+    (eval V₀ V₁).rel (Sum.inl ⁻¹' prodNbhd F X) (Sum.inr ⁻¹' prodNbhd F X) Y ↔ _
+  rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+  constructor
+  · rintro ⟨_, _, _, _, hrel⟩ f hf; exact mem_step.mpr (hrel f hf)
+  · intro hsub
+    exact ⟨prod_mem_prodNbhd hF hX, hF, hX, hY, fun f hf => mem_step.mp (hsub hf)⟩
+
+end DomainTheory.Neighborhood

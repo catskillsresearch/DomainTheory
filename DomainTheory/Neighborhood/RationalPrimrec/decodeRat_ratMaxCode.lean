@@ -1,0 +1,47 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Recursive
+import DomainTheory.Neighborhood.RationalPrimrec.Basic
+import DomainTheory.Neighborhood.RationalPrimrec.ratLeCode_eq_one_iff
+import DomainTheory.Neighborhood.RationalPrimrec.ratLeCode_le_one
+
+
+namespace DomainTheory.Neighborhood
+
+open Domain.Recursive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem decodeRat_ratMaxCode (c1 c2 : ℕ) :
+    decodeRat (ratMaxCode (Nat.pair c1 c2)) = max (decodeRat c1) (decodeRat c2) := by
+  unfold ratMaxCode
+  rw [unpair_pair_fst, unpair_pair_snd]
+  by_cases h : decodeRat c1 ≤ decodeRat c2
+  · rw [(ratLeCode_eq_one_iff c1 c2).mpr h, selectFn_one, max_eq_right h]
+  · have hf : ratLeCode (Nat.pair c1 c2) ≠ 1 := fun he => h ((ratLeCode_eq_one_iff c1 c2).mp he)
+    have hf0 : ratLeCode (Nat.pair c1 c2) = 0 := by
+      have := ratLeCode_le_one (Nat.pair c1 c2); omega
+    rw [hf0, selectFn_zero, max_eq_left ((not_le.mp h).le)]
+
+end DomainTheory.Neighborhood

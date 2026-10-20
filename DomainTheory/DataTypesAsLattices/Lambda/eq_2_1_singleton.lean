@@ -1,0 +1,64 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Embedding
+import DomainTheory.DataTypesAsLattices.Lambda.Basic
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem eq_2_1_singleton (p : ℕ → Pomega) (n : ℕ) :
+    maxExtend p (ofNat n) = p n := by
+  ext k
+  constructor
+  · intro hk
+    rcases hk with ⟨he, _⟩ | ⟨m, hm, hkm⟩ | ⟨_, hall⟩
+    · have hne : ofNat n ≠ ∅ := Set.Nonempty.ne_empty ⟨n, (rfl : n ∈ ofNat n)⟩
+      exact (hne he).elim
+    · have : n = m := by
+        have hn : n ∈ ofNat m := hm ▸ (rfl : n ∈ ofNat n)
+        simpa [ofNat] using hn
+      subst this; exact hkm
+    · exact (hall n rfl).elim
+  · intro hk
+    exact Or.inr (Or.inl ⟨n, rfl, hk⟩)
+
+end DomainTheory.DataTypesAsLattices

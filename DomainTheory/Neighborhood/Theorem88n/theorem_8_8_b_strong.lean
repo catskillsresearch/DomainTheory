@@ -1,0 +1,48 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Theorem88f
+import DomainTheory.Neighborhood.Theorem88n.Basic
+import DomainTheory.Neighborhood.Theorem88n.isoProj_comp_isoInj
+import DomainTheory.Neighborhood.Theorem88n.isoInj_comp_isoProj
+import DomainTheory.Neighborhood.Theorem88n.isoInj_isComputableMap
+import DomainTheory.Neighborhood.Theorem88n.isoProj_isComputableMap
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem Domain.Recursive ApproximableMap
+
+variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
+
+
+
+
+
+
+
+/-- **`theorem_8_8_b`, strengthened.** For any effectively given `D` (via `P`), there is a
+*single* computable projection pair `i : D → U`, `j : U → D` directly (no intermediate isomorphic
+copy): compose `isoInj`/`isoProj` (the code-level iso, computable) with `DprimeUCode`'s own projection pair
+into `U` (Theorem 8.8(b)(vii), computable). -/
+theorem theorem_8_8_b_strong :
+    ∃ (i : ApproximableMap D U) (j : ApproximableMap U D),
+      j.comp i = idMap D ∧ i.comp j ≤ idMap U ∧
+        IsComputableMap P UComputablePresentation i ∧
+        IsComputableMap UComputablePresentation P j := by
+  set h := DprimeUCode_subsystem P with hh
+  refine ⟨h.inj.comp (isoInj P), (isoProj P).comp h.proj, ?_, ?_, ?_, ?_⟩
+  · rw [comp_assoc, ← comp_assoc h.proj h.inj (isoInj P), h.proj_comp_inj, idMap_comp]
+    exact isoProj_comp_isoInj P
+  · have heq : (h.inj.comp (isoInj P)).comp ((isoProj P).comp h.proj) = h.inj.comp h.proj := by
+      rw [comp_assoc, ← comp_assoc (isoInj P) (isoProj P) h.proj, isoInj_comp_isoProj, idMap_comp]
+    rw [heq]
+    exact h.inj_comp_proj_le
+  · exact comp_isComputable (isoInj_isComputableMap P) (DprimeUCode_inj_isComputableMap P)
+  · exact comp_isComputable (DprimeUCode_proj_isComputableMap P) (isoProj_isComputableMap P)
+
+end DomainTheory.Neighborhood

@@ -1,0 +1,30 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Topology.Bases
+import Mathlib.Topology.Order
+import DomainTheory.DataTypesAsLattices.Pomega
+import DomainTheory.DataTypesAsLattices.Continuous.Basic
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+open TopologicalSpace
+
+
+
+
+
+
+/-- Open sets are upper sets: if `x ∈ U` and `x ⊆ y` then `y ∈ U`. -/
+theorem isScottOpen_isUpper {U : Set Pomega} (hU : IsScottOpen U)
+    {x y : Pomega} (hx : x ∈ U) (hxy : x ⊆ y) : y ∈ U := by
+  obtain ⟨B, rfl⟩ := hU
+  obtain ⟨n, hn, hxn⟩ := Set.mem_iUnion₂.mp hx
+  exact Set.mem_iUnion₂.mpr ⟨n, hn, subset_trans hxn hxy⟩
+
+end DomainTheory.DataTypesAsLattices

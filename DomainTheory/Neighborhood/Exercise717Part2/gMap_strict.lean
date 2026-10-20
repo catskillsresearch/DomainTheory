@@ -1,0 +1,45 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise717
+import DomainTheory.Neighborhood.Exercise510
+import DomainTheory.Neighborhood.Proposition77
+import DomainTheory.Neighborhood.Exercise717Part2.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
+
+variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
+
+namespace Exercise717
+
+
+
+variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **`g` is strict** (`g(⊥) = ⊥`): Scott's "the unique *strict* mapping". -/
+theorem gMap_strict (hD : ∀ X, D.mem X → X.Nonempty) :
+    IsStrict (gMap u v hD) := fun _ h => gRel_gamma_inv hD h
+
+end Exercise717
+end DomainTheory.Neighborhood

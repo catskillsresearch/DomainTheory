@@ -1,0 +1,41 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Proposition612
+import DomainTheory.Neighborhood.Exercise625.Basic
+import DomainTheory.Neighborhood.Exercise625.proj_inj_apply
+import DomainTheory.Neighborhood.Exercise625.galois
+import DomainTheory.Neighborhood.Exercise625.upperSet_nonempty
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap Subsystem
+
+variable {α : Type*} {D E : NeighborhoodSystem α}
+
+namespace Subsystem.ProjectionPair
+
+
+
+
+
+
+
+/-- **Exercise 6.25, second extremal formula.** `g(x) = ⊓ {y ∈ |ℰ| ∣ x ⊑ h(y)}`.
+
+`g(x)` is the *least* member of the set (`x ⊑ h(g(x)) = x`, so `g(x)` is in it; every member is
+`⊒ g(x)` by the Galois connection), hence it is the greatest lower bound. -/
+theorem inj_eq_sInf (P : ProjectionPair D E) (x : D.Element) :
+    P.inj.toElementMap x = E.sInf (P.upperSet x) (P.upperSet_nonempty x) := by
+  apply le_antisymm
+  · exact E.le_sInf _ (P.upperSet_nonempty x) _ fun y hy => (P.galois x y).mpr hy
+  · refine E.sInf_le _ (P.upperSet_nonempty x) ?_
+    rw [mem_upperSet, P.proj_inj_apply x]
+
+end Subsystem.ProjectionPair
+end DomainTheory.Neighborhood

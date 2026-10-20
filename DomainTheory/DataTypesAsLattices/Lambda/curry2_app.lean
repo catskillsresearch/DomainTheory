@@ -1,0 +1,38 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Embedding
+import DomainTheory.DataTypesAsLattices.Lambda.Basic
+import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem curry2_app (f : Pomega → Pomega → Pomega)
+    (hfx : ∀ y, IsScottContinuous (fun x => f x y))
+    (hfy : ∀ x, IsScottContinuous (fun y => f x y)) (x y : Pomega) :
+    funOf (funOf (curry2 f hfx hfy) x) y = f x y := by
+  have h1 : funOf (curry2 f hfx hfy) x = graph (fun y => f x y) :=
+    beta (graph_const_isScottContinuous f hfx) x
+  rw [h1]
+  exact beta (hfy x) y
+
+end DomainTheory.DataTypesAsLattices

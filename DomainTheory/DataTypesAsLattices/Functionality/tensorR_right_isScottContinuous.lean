@@ -1,0 +1,58 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Retracts
+import DomainTheory.DataTypesAsLattices.Functionality.Basic
+import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_isScottContinuous_right
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem tensorR_right_isScottContinuous (a : Pomega) :
+    IsScottContinuous (fun b => tensorR a b) :=
+  graph_const_isScottContinuous
+    (fun b u =>
+      pairSeq (funOf a (funOf u (ofNat 0))) (funOf b (funOf u (ofNat 1))))
+    (fun u =>
+      theorem_1_3
+        (f := fun y => pairSeq (funOf a (funOf u (ofNat 0))) y)
+        (g := fun b => funOf b (funOf u (ofNat 1)))
+        (pairSeq_isScottContinuous_right (funOf a (funOf u (ofNat 0))))
+        (funOf_isScottContinuous_left (funOf u (ofNat 1))))
+
+end DomainTheory.DataTypesAsLattices

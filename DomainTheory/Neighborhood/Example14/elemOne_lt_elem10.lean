@@ -1,0 +1,90 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Basic
+import Mathlib.Tactic
+import DomainTheory.Neighborhood.Example14.Basic
+
+
+namespace DomainTheory.Neighborhood.Example14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+namespace neighborhoodSystem
+
+open NeighborhoodSystem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem elemOne_lt_elem10 : elemOne < elem10 := by
+  constructor
+  · intro X hx
+    rcases hx with rfl | rfl
+    · exact Or.inl rfl
+    · exact Or.inr (Or.inl rfl)
+  · intro h
+    rcases h leaf10 (Or.inr (Or.inr rfl)) with h1 | h1
+    · exact leaf10_ne_master h1
+    · exact leaf10_ne_right h1
+
+end neighborhoodSystem
+end DomainTheory.Neighborhood.Example14

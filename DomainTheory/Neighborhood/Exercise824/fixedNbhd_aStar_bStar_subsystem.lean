@@ -1,0 +1,90 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise823
+import DomainTheory.Neighborhood.Exercise824.Basic
+import DomainTheory.Neighborhood.Exercise824.fst_mono
+import DomainTheory.Neighborhood.Exercise824.snd_mono
+import DomainTheory.Neighborhood.Exercise824.isFinitaryProjection_aStar_bStar
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
+
+namespace Exercise824
+
+variable {α : Type} {E : NeighborhoodSystem α}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Exercise 8.24, Claim 2 (initiality with respect to projections).** If `a, b` is *any* other
+pair of finitary projections that is a pre-fixed point of the same pair of operators
+(`binOp s a b ≤ a`, `binOp t a b ≤ b`, in particular any exact alternative solution), then
+`(aStar s t, bStar s t)`'s domains embed as literal subsystems of `a`'s and `b`'s domains:
+`D_{aStar s t} ◁ D_a`, `D_{bStar s t} ◁ D_b` — Scott's "the initial solution... with respect to
+projections", for both components simultaneously. -/
+theorem fixedNbhd_aStar_bStar_subsystem (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))
+    (hst : ∀ a b, IsFinitaryProjection a → IsFinitaryProjection b →
+      IsFinitaryProjection (binOp s a b) ∧ IsFinitaryProjection (binOp t a b))
+    {a b : ApproximableMap E E} (ha : IsFinitaryProjection a) (hb : IsFinitaryProjection b)
+    (hpreA : binOp s a b ≤ a) (hpreB : binOp t a b ≤ b) :
+    fixedNbhd (aStar s t) ◁ fixedNbhd a ∧ fixedNbhd (bStar s t) ◁ fixedNbhd b := by
+  have h1 : s.toElementMap (pair (toFilter a) (toFilter b)) ≤ toFilter a := by
+    have hpreA' : toApproxMap (s.toElementMap (pair (toFilter a) (toFilter b))) ≤
+        toApproxMap (toFilter a) := by
+      show binOp s a b ≤ toApproxMap (toFilter a)
+      rw [toApproxMap_toFilter]
+      exact hpreA
+    have hiff := (funSpaceEquiv E E).le_iff_le
+      (x := s.toElementMap (pair (toFilter a) (toFilter b))) (y := toFilter a)
+    rw [funSpaceEquiv_apply, funSpaceEquiv_apply] at hiff
+    exact hiff.mp hpreA'
+  have h2 : t.toElementMap (pair (toFilter a) (toFilter b)) ≤ toFilter b := by
+    have hpreB' : toApproxMap (t.toElementMap (pair (toFilter a) (toFilter b))) ≤
+        toApproxMap (toFilter b) := by
+      show binOp t a b ≤ toApproxMap (toFilter b)
+      rw [toApproxMap_toFilter]
+      exact hpreB
+    have hiff := (funSpaceEquiv E E).le_iff_le
+      (x := t.toElementMap (pair (toFilter a) (toFilter b))) (y := toFilter b)
+    rw [funSpaceEquiv_apply, funSpaceEquiv_apply] at hiff
+    exact hiff.mp hpreB'
+  have hle : (paired s t).toElementMap (pair (toFilter a) (toFilter b)) ≤
+      pair (toFilter a) (toFilter b) := by
+    rw [toElementMap_paired]
+    exact pair_le_pair_iff.mpr ⟨h1, h2⟩
+  have hfix : (paired s t).fixElement ≤ pair (toFilter a) (toFilter b) :=
+    fixElement_le_of_toElementMap_le (paired s t) hle
+  have hfstle : (paired s t).fixElement.fst ≤ toFilter a := by
+    have := fst_mono hfix; rwa [fst_pair] at this
+  have hsndle : (paired s t).fixElement.snd ≤ toFilter b := by
+    have := snd_mono hfix; rwa [snd_pair] at this
+  have hAle : aStar s t ≤ a := by
+    show toApproxMap (paired s t).fixElement.fst ≤ a
+    rw [← toApproxMap_toFilter a]
+    exact toApproxMap_monotone hfstle
+  have hBle : bStar s t ≤ b := by
+    show toApproxMap (paired s t).fixElement.snd ≤ b
+    rw [← toApproxMap_toFilter b]
+    exact toApproxMap_monotone hsndle
+  obtain ⟨hFinA, hFinB⟩ := isFinitaryProjection_aStar_bStar s t hst
+  exact ⟨(isFinitaryProjection_le_iff_fixedNbhd_subsystem hFinA ha).mp hAle,
+    (isFinitaryProjection_le_iff_fixedNbhd_subsystem hFinB hb).mp hBle⟩
+
+end Exercise824
+end DomainTheory.Neighborhood

@@ -1,0 +1,125 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Computability.Halting
+import DomainTheory.DataTypesAsLattices.Computability
+import DomainTheory.DataTypesAsLattices.Functionality
+import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
+
+
+
+
+
+
+
+
+
+
+theorem e_subset_ofNat_iff (code n : ℕ) :
+    e code ⊆ ofNat n ↔ code = 0 ∨ code = 2 ^ n := by
+  constructor
+  · intro h
+    by_cases hz : code = 0
+    · exact Or.inl hz
+    · have hbit : ∀ k, code.testBit k = true → k = n := by
+        intro k hk
+        simpa [ofNat] using h (mem_e.mpr hk)
+      have hn : code.testBit n = true := by
+        have hk : code.testBit code.log2 = true := Nat.testBit_log2 hz
+        simpa [hbit _ hk] using hk
+      refine Or.inr (Nat.eq_of_testBit_eq fun k => ?_)
+      by_cases hk : k = n
+      · subst hk
+        simp [hn]
+      · have hfalse : code.testBit k = false :=
+          Bool.eq_false_iff.mpr fun hb => hk (hbit k hb)
+        simp [hfalse, Ne.symm hk]
+  · intro h
+    rcases h with rfl | rfl
+    · intro k hk
+      simp [e_zero] at hk
+    · intro k hk
+      simpa [e_pow2, ofNat] using hk
+
+end DomainTheory.DataTypesAsLattices

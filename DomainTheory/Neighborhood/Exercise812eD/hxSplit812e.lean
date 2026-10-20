@@ -1,0 +1,39 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise812e
+import DomainTheory.Neighborhood.SplitV
+import DomainTheory.Neighborhood.UComputablePresentation
+import DomainTheory.Neighborhood.Exercise812eD.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+open Domain.Recursive NeighborhoodSystem
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **`8.12(g)(3)`, `U`-as-prober half**: `splitX812e` also satisfies `SplitSpec'` — completing the
+concrete-construction half of `8.12(g)(3)` left open by `Exercise812e.lean`'s generic
+`splitFromBisection_isSplitSpec'`. The extra hypothesis it needs, `∀ j, VX j ≠ ∅`, is immediate:
+every `VX j` is `V.mem`-genuine (`VComputablePresentation.mem_X`) and `V.mem` structurally excludes
+`∅` (`V.mem X := ∃ k m, X = levelSet k m ∧ X.Nonempty`, `Exercise812.lean` line 199). -/
+theorem hxSplit812e : SplitSpec' V splitX812e :=
+  ComputableBisection.splitFromBisection_isSplitSpec' UComputablePresentation U_isComputableDiff
+    B812e V_noMinimal U_isPositive U_noMinimal U_diffClosed (fun j => (VX_nonempty j).ne_empty)
+
+end DomainTheory.Neighborhood

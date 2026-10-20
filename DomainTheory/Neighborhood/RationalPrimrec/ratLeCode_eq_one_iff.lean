@@ -1,0 +1,42 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Recursive
+import DomainTheory.Neighborhood.RationalPrimrec.Basic
+import DomainTheory.Neighborhood.RationalPrimrec.qDen_pos
+
+
+namespace DomainTheory.Neighborhood
+
+open Domain.Recursive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Correctness of `ratLeCode`**: it is `1` exactly when the decoded rationals compare `≤`. -/
+theorem ratLeCode_eq_one_iff (c1 c2 : ℕ) :
+    ratLeCode (Nat.pair c1 c2) = 1 ↔ decodeRat c1 ≤ decodeRat c2 := by
+  unfold ratLeCode
+  rw [unpair_pair_fst, unpair_pair_snd, isZero_eq_one_iff, Nat.sub_eq_zero_iff_le]
+  rw [decodeRat_eq c1, decodeRat_eq c2, Rat.mkRat_eq_div, Rat.mkRat_eq_div,
+    div_le_div_iff₀ (by exact_mod_cast qDen_pos c1) (by exact_mod_cast qDen_pos c2),
+    ← Nat.cast_le (α := ℚ)]
+  push_cast
+  constructor <;> intro h <;> nlinarith [h]
+
+end DomainTheory.Neighborhood

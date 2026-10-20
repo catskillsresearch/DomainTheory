@@ -1,0 +1,35 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise722Decide
+import DomainTheory.Neighborhood.Exercise722Equiv.Basic
+import DomainTheory.Neighborhood.Exercise722Equiv.coe_startFin
+import DomainTheory.Neighborhood.Exercise722Equiv.coe_foldl_stepFin
+
+
+namespace DomainTheory.Neighborhood
+
+namespace Exercise722
+
+open scoped Computability
+open Sum Set
+
+
+
+
+
+
+
+
+theorem coe_evalFin (e : SExpr) (w : List Bool) :
+    (↑(evalFin e w) : Set (autState e)) = (toNFA e).eval w := by
+  show (↑(w.foldl (stepFin e) (startFin e)) : Set (autState e))
+    = (toNFA e).evalFrom (toNFA e).start w
+  rw [coe_foldl_stepFin e w (startFin e), coe_startFin e]
+
+end Exercise722
+end DomainTheory.Neighborhood

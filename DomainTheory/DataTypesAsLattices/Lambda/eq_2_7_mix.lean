@@ -1,0 +1,77 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Embedding
+import DomainTheory.DataTypesAsLattices.Lambda.Basic
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem eq_2_7_mix (x y z : Pomega) (h0 : 0 ∈ z) (hne : z ≠ ofNat 0) :
+    condSet z x y = x ∪ y := by
+  have hpos : ∃ t, t + 1 ∈ z := by
+    by_contra h
+    apply hne
+    ext k
+    constructor
+    · intro hk
+      have : k = 0 := by
+        by_contra hk0
+        exact h ⟨k - 1, by
+          have : k = (k - 1) + 1 := (Nat.succ_pred_eq_of_ne_zero hk0).symm
+          rwa [← this]⟩
+      simp [this, ofNat]
+    · intro hk
+      simp [ofNat] at hk
+      subst hk
+      exact h0
+  ext n
+  constructor
+  · intro hn
+    rcases hn with ⟨hnx, _⟩ | ⟨hny, _⟩
+    · exact Or.inl hnx
+    · exact Or.inr hny
+  · intro hn
+    rcases hn with hnx | hny
+    · exact Or.inl ⟨hnx, h0⟩
+    · exact Or.inr ⟨hny, hpos⟩
+
+end DomainTheory.DataTypesAsLattices

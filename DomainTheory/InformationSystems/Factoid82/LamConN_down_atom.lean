@@ -1,0 +1,93 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.InformationSystems.FunctionSpace
+import DomainTheory.InformationSystems.Sum
+import Mathlib.Data.Finset.Card
+import DomainTheory.InformationSystems.Factoid82.Basic
+
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+set_option linter.unusedSectionVars false
+
+variable {α : Type*} [DecidableEq α]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+variable (A : InfoSys α)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- Atom/bot-only sets that are consistent at stage `n` are consistent at stage `0`. -/
+theorem LamConN_down_atom {n : ℕ} {u : Finset (RawLamToken α)}
+    (hu : LamConN A n u) (hF : lamFunFinset u = ∅) : LamConN A 0 u := by
+  induction n generalizing u with
+  | zero => exact hu
+  | succ n ih =>
+    rcases hu with hu | ⟨hA, _, _⟩
+    · exact ih hu hF
+    · exact ⟨by rw [hA]; exact A.con_empty, hF⟩
+
+end InfoSys
+end DomainTheory.InformationSystems

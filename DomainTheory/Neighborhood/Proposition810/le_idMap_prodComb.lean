@@ -1,0 +1,42 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Definition89
+import DomainTheory.Neighborhood.Definition83
+import DomainTheory.Neighborhood.Theorem69
+import DomainTheory.Neighborhood.Proposition810.Basic
+import DomainTheory.Neighborhood.Proposition810.toElementMap_le_of_comp_le_idMap
+import DomainTheory.Neighborhood.Proposition810.toElementMap_le_self_of_le_idMap
+import DomainTheory.Neighborhood.Proposition810.toElementMap_prodComb
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap Exercise326
+
+
+variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
+
+
+/-- **Proposition 8.10, `×`-case, projection half.** -/
+theorem le_idMap_prodComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : b ≤ idMap U) :
+    prodComb a b ≤ idMap U := by
+  rw [le_iff_toElementMap_le]
+  intro x
+  rw [toElementMap_prodComb, toElementMap_idMap]
+  have hpair : pair (a.toElementMap (jTimes.toElementMap x).fst)
+      (b.toElementMap (jTimes.toElementMap x).snd)
+      ≤ pair (jTimes.toElementMap x).fst (jTimes.toElementMap x).snd :=
+    pair_le_pair_iff.mpr
+      ⟨toElementMap_le_self_of_le_idMap ha _, toElementMap_le_self_of_le_idMap hb _⟩
+  rw [pair_fst_snd] at hpair
+  calc iTimes.toElementMap (pair (a.toElementMap (jTimes.toElementMap x).fst)
+        (b.toElementMap (jTimes.toElementMap x).snd))
+      ≤ iTimes.toElementMap (jTimes.toElementMap x) := iTimes.toElementMap_mono hpair
+    _ ≤ x := toElementMap_le_of_comp_le_idMap iTimes_comp_jTimes_le x
+
+end DomainTheory.Neighborhood

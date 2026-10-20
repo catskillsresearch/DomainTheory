@@ -1,0 +1,90 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise419
+import DomainTheory.Neighborhood.Product
+import DomainTheory.Neighborhood.Exercise516.Basic
+
+
+namespace DomainTheory.Neighborhood.Exercise516
+
+open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+variable {β : Type*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem prod_principal_pair (b₀ : Bool) (σ : Str) (b₁ : Bool) (τ : Str) :
+    (prod C C).principal (prod_mem_prodNbhd (memC_shape b₀ σ) (memC_shape b₁ τ))
+      = pair (shapeElem b₀ σ) (shapeElem b₁ τ) := by
+  apply Element.ext
+  intro P
+  rw [mem_principal]
+  constructor
+  · rintro ⟨hP, hsub⟩
+    obtain ⟨X', Y', hX', hY', rfl⟩ := hP
+    obtain ⟨hsX, hsY⟩ := prodNbhd_subset_iff.mp hsub
+    exact ⟨X', Y', ⟨hX', hsX⟩, ⟨hY', hsY⟩, rfl⟩
+  · rintro ⟨X', Y', ⟨hX', hsX⟩, ⟨hY', hsY⟩, rfl⟩
+    exact ⟨prod_mem_prodNbhd hX' hY', prodNbhd_subset_iff.mpr ⟨hsX, hsY⟩⟩
+
+end DomainTheory.Neighborhood.Exercise516

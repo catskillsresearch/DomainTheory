@@ -1,0 +1,31 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Basic
+import Mathlib.Tactic
+import DomainTheory.Neighborhood.Exercise115.Basic
+import DomainTheory.Neighborhood.Exercise115.flat_no_three_chain
+
+
+namespace DomainTheory.Neighborhood.Exercise115
+
+open DomainTheory.Neighborhood NeighborhoodSystem
+
+
+
+
+
+
+
+
+/-- **Flat has no infinite ascending chain.** -/
+theorem flat_no_infinite_chain : ¬ ∃ f : ℕ → flat.Element, StrictMono f := by
+  rintro ⟨f, hf⟩
+  exact flat_no_three_chain
+    ⟨f 0, f 1, f 2, hf (by norm_num), hf (by norm_num)⟩
+
+end DomainTheory.Neighborhood.Exercise115

@@ -1,0 +1,35 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Computability.RE
+import DomainTheory.DataTypesAsLattices.Lambda
+import DomainTheory.DataTypesAsLattices.Computability.Basic
+
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
+theorem mem_graph_const_iff (n m : ℕ) :
+    m ∈ graph (fun _ => e n) ↔
+      ∃ t, m = pair (Nat.unpair t).1 (Nat.unpair t).2 ∧
+        n.testBit (Nat.unpair t).2 = true := by
+  constructor
+  · intro ⟨a, b, hm, hb⟩
+    exact ⟨Nat.pair a b, by simp [Nat.unpair_pair, hm],
+      by simp [Nat.unpair_pair, mem_e.mp hb]⟩
+  · intro ⟨t, ht, hb⟩
+    exact ⟨(Nat.unpair t).1, (Nat.unpair t).2, ht, mem_e.mpr hb⟩
+
+end DomainTheory.DataTypesAsLattices

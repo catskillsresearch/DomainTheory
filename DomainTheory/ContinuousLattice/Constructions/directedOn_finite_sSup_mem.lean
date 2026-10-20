@@ -1,0 +1,35 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.ContinuousLattice.MilnerCorrection
+import DomainTheory.ContinuousLattice.ScottMaps
+import DomainTheory.ContinuousLattice.Injective
+import Mathlib.Order.Preorder.Finite
+import DomainTheory.ContinuousLattice.Constructions.Basic
+
+
+namespace DomainTheory.ContinuousLattice
+
+open Topology Set
+
+variable {D : Type*} [CompleteLattice D]
+
+/-- A non-empty **finite** directed set attains its supremum: `⊔S ∈ S`. A maximal element of
+`S` (which exists by finiteness) is, by directedness, the greatest element, hence the
+supremum. This is the order-theoretic heart of "finite ⟹ continuous" (Scott 1972, 2.8). -/
+theorem directedOn_finite_sSup_mem {S : Set D} (hSfin : S.Finite) (hSne : S.Nonempty)
+    (hSdir : DirectedOn (· ≤ ·) S) : sSup S ∈ S := by
+  obtain ⟨m, hm⟩ := hSfin.exists_maximal hSne
+  have hub : m ∈ upperBounds S := by
+    intro s hs
+    obtain ⟨c, hcS, hmc, hsc⟩ := hSdir m hm.1 s hs
+    exact hsc.trans (hm.2 hcS hmc)
+  have hlub : IsLUB S m := ⟨hub, fun b hb => hb hm.1⟩
+  rw [hlub.sSup_eq]
+  exact hm.1
+
+end DomainTheory.ContinuousLattice

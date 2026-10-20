@@ -1,0 +1,65 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Embedding
+import DomainTheory.DataTypesAsLattices.Lambda.Basic
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Scott 1976, (2.1).** Maximal extension by cases. -/
+theorem eq_2_1_empty (p : ℕ → Pomega) :
+    maxExtend p botElem = ⋂ n, p n := by
+  ext k
+  constructor
+  · intro hk
+    rcases hk with ⟨_, hall⟩ | h | h
+    · exact Set.mem_iInter.mpr hall
+    · rcases h with ⟨n, hn, _⟩
+      have : n ∈ (∅ : Pomega) := by
+        have : (∅ : Pomega) = ofNat n := hn
+        rw [this]; simp [ofNat]
+      exact this.elim
+    · exact (h.1 rfl).elim
+  · intro hk
+    exact Or.inl ⟨rfl, fun n => Set.mem_iInter.mp hk n⟩
+
+end DomainTheory.DataTypesAsLattices

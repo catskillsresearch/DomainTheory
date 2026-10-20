@@ -1,0 +1,37 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise516
+import Mathlib.Data.Nat.Bits
+import DomainTheory.Neighborhood.Exercise516ThueMorse.Basic
+
+
+namespace DomainTheory.Neighborhood.Exercise516
+
+open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- `(strBot τ)` has the cone of `σ` as a neighbourhood iff `σ` is a prefix of `τ`. -/
+theorem strBot_mem_cone {σ τ : Str} : (strBot τ).mem (cone σ) ↔ σ <+: τ := by
+  rw [strBot, mem_principal]
+  exact ⟨fun h => cone_subset_cone.mp h.2, fun h => ⟨memC_cone σ, cone_subset_cone.mpr h⟩⟩
+
+end DomainTheory.Neighborhood.Exercise516

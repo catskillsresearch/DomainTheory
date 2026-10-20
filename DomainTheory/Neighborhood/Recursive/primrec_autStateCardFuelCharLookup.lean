@@ -1,0 +1,345 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Data.Nat.Sqrt
+import Mathlib.Data.Nat.Pairing
+import Mathlib.Data.Nat.Bitwise
+import Mathlib.Data.List.Basic
+import Mathlib.Computability.Partrec
+import Mathlib.Tactic.Ring
+import DomainTheory.Neighborhood.Exercise722Regular
+import DomainTheory.Neighborhood.Exercise722Decide
+import DomainTheory.Neighborhood.Exercise722Equiv
+import DomainTheory.Neighborhood.Recursive.Basic
+
+
+namespace Domain.Recursive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+open DomainTheory.Neighborhood Exercise722
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem primrec_autStateCardFuelCharLookup : Nat.Primrec autStateCardFuelCharLookup := by
+  have hleft : Nat.Primrec (fun w => nthCode w.unpair.1 w.unpair.2.unpair.2.unpair.1 0) :=
+    (primrec_nthCode.comp (Nat.Primrec.pair Nat.Primrec.left
+      (Nat.Primrec.pair (Nat.Primrec.left.comp (Nat.Primrec.right.comp Nat.Primrec.right))
+        (Nat.Primrec.const 0)))).of_eq fun w => by simp
+  have hright : Nat.Primrec (fun w => nthCode w.unpair.1 w.unpair.2.unpair.2.unpair.2 0) :=
+    (primrec_nthCode.comp (Nat.Primrec.pair Nat.Primrec.left
+      (Nat.Primrec.pair (Nat.Primrec.right.comp (Nat.Primrec.right.comp Nat.Primrec.right))
+        (Nat.Primrec.const 0)))).of_eq fun w => by simp
+  have hadd : Nat.Primrec (fun w =>
+      nthCode w.unpair.1 w.unpair.2.unpair.2.unpair.1 0 +
+        nthCode w.unpair.1 w.unpair.2.unpair.2.unpair.2 0) :=
+    primrec_add₂ hleft hright
+  have hmul : Nat.Primrec (fun w =>
+      nthCode w.unpair.1 w.unpair.2.unpair.2.unpair.1 0 *
+        nthCode w.unpair.1 w.unpair.2.unpair.2.unpair.2 0) :=
+    primrec_mul₂ hleft hright
+  have hf0 : Nat.Primrec (fun _ : ℕ => (1 : ℕ)) := Nat.Primrec.const 1
+  have hf1 : Nat.Primrec (fun w => listLenChar w.unpair.2.unpair.2 + 2) :=
+    primrec_add₂ (primrec_listLenChar.comp (Nat.Primrec.right.comp Nat.Primrec.right))
+      (Nat.Primrec.const 2)
+  have ht : Nat.Primrec (fun w => w.unpair.2.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.right
+  have h01 : Nat.Primrec (fun w => isOne (1 - w.unpair.2.unpair.1)) :=
+    primrec_isOne.comp (primrec_sub₂ (Nat.Primrec.const 1) ht)
+  have h12 : Nat.Primrec (fun w => isOne (2 - w.unpair.2.unpair.1)) :=
+    primrec_isOne.comp (primrec_sub₂ (Nat.Primrec.const 2) ht)
+  have h23 : Nat.Primrec (fun w => isOne (3 - w.unpair.2.unpair.1)) :=
+    primrec_isOne.comp (primrec_sub₂ (Nat.Primrec.const 3) ht)
+  have h34 : Nat.Primrec (fun w => isOne (4 - w.unpair.2.unpair.1)) :=
+    primrec_isOne.comp (primrec_sub₂ (Nat.Primrec.const 4) ht)
+  refine (primrec_selectFn h01 hf0
+    (primrec_selectFn h12 hf1
+      (primrec_selectFn h23 hadd
+        (primrec_selectFn h34 hmul (Nat.Primrec.const 0))))).of_eq fun w => ?_
+  show _ = autStateCardFuelCharBody (fun c' => nthCode w.unpair.1 c' 0) w.unpair.2
+  rw [autStateCardFuelCharBody_eq]
+  match tag : w.unpair.2.unpair.1 with
+  | 0 =>
+    have h10 : (1 - 0 : ℕ) = 1 := rfl
+    simp only [h10, isOne_one, selectFn_one]
+  | 1 =>
+    have h01' : (1 - 1 : ℕ) = 0 := rfl
+    have h12' : (2 - 1 : ℕ) = 1 := rfl
+    simp only [h01', h12', isOne_zero, isOne_one, selectFn_zero, selectFn_one]
+  | 2 =>
+    have h01' : (1 - 2 : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
+    have h12' : (2 - 2 : ℕ) = 0 := rfl
+    have h23' : (3 - 2 : ℕ) = 1 := rfl
+    simp only [h01', h23', isOne_zero, isOne_one, selectFn_zero, selectFn_one]
+  | 3 =>
+    have h01' : (1 - 3 : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
+    have h12' : (2 - 3 : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
+    have h23' : (3 - 3 : ℕ) = 0 := rfl
+    have h34' : (4 - 3 : ℕ) = 1 := rfl
+    simp only [h01', h34', isOne_zero, isOne_one, selectFn_zero, selectFn_one]
+  | t + 4 =>
+    have h01' : (1 - (t + 4) : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
+    have h12' : (2 - (t + 4) : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
+    have h23' : (3 - (t + 4) : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
+    have h34' : (4 - (t + 4) : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
+    simp only [h01', h12', h23', h34', isOne_zero, selectFn_zero]
+
+end Domain.Recursive

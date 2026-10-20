@@ -1,0 +1,38 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Theorem88e
+import DomainTheory.Neighborhood.Definition72
+import DomainTheory.Neighborhood.Proposition612
+import DomainTheory.Neighborhood.Theorem88f.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem Domain.Recursive
+
+variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
+
+/-- **The injection `i : D'' → U` is computable.** `i`'s relation `Yc P n \, i \, UX m` reduces to
+the raw code-level subset test `UX (YseqCode P n) ⊆ UX m`, decidable by reindexing
+`UComputablePresentation.incl_computable` along `YseqCode P` in the first argument. -/
+theorem DprimeUCode_inj_isComputableMap :
+    IsComputableMap (DprimeUCodePresentation P) UComputablePresentation
+      (DprimeUCode_subsystem P).inj := by
+  have hg : Nat.Primrec (fun t : ℕ => Nat.pair (YseqCode P t.unpair.1) t.unpair.2) :=
+    Nat.Primrec.pair ((primrec_YseqCode P).comp Nat.Primrec.left) Nat.Primrec.right
+  have hp : RecDecidable (fun t : ℕ => UX (YseqCode P t.unpair.1) ⊆ UX t.unpair.2) := by
+    refine RecDecidable.of_iff (fun t => ?_) (UComputablePresentation.incl_computable.comp hg)
+    simp only [unpair_pair_fst, unpair_pair_snd]
+    rfl
+  refine REPred.of_iff (fun t => ?_) hp.re
+  show (DprimeUCode_subsystem P).inj.rel (Yc P t.unpair.1) (UX t.unpair.2) ↔ _
+  rw [Subsystem.inj_rel]
+  exact ⟨fun ⟨_, _, hsub⟩ => hsub,
+    fun hsub => ⟨⟨t.unpair.1, rfl⟩, U_mem_UX _, hsub⟩⟩
+
+end DomainTheory.Neighborhood

@@ -1,0 +1,41 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Definition83
+import DomainTheory.Neighborhood.ApproximableExercises
+import DomainTheory.Neighborhood.Theorem85.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap
+
+universe u
+
+variable {α : Type u} {E : NeighborhoodSystem α}
+
+
+
+
+
+/-- **The "easy" (`⟸`) half of formula (ii), isolated.** Valid for **any** approximable map
+`a : E → E` with **no hypothesis on `a` at all** — not even that `a` satisfies the rest of formula
+(ii), let alone that it is a finitary projection. Pure monotonicity + up-closure: `↑X ≤ x`
+(`principal_le_of_mem`) pushes `a`'s self-relation at `X` up to `x` (`toElementMap_mono`), and
+`X ⊆ Y` finishes by up-closure. Isolated from `isFinitaryProjection_of_formula`'s own proof (where
+it was the `←` branch of the `constructor`) because Exercise 8.27(b)(3) needs exactly this half,
+unconditionally, for `a := piD d` — independently of whether the *rest* of formula (ii) holds. -/
+theorem mem_of_exists_rel_self {a : ApproximableMap E E} (x : E.Element) {Y : Set α}
+    (hYE : E.mem Y) {X : Set α} (hXx : x.mem X) (hXY : X ⊆ Y) (hXaX : a.rel X X) :
+    (a.toElementMap x).mem Y := by
+  have hX : E.mem X := a.rel_dom hXaX
+  have hmem : (a.toElementMap (E.principal hX)).mem X := (a.rel_iff_mem_principal hX).mp hXaX
+  have hle : E.principal hX ≤ x := principal_le_of_mem hXx
+  have hXmem : (a.toElementMap x).mem X := (a.toElementMap_mono hle) X hmem
+  exact (a.toElementMap x).up_mem hXmem hYE hXY
+
+end DomainTheory.Neighborhood

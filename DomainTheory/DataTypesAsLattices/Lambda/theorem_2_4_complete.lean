@@ -1,0 +1,55 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Embedding
+import DomainTheory.DataTypesAsLattices.Lambda.Basic
+import DomainTheory.DataTypesAsLattices.Lambda.erase_correct
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Scott 1976, Theorem 2.4 (The combinator theorem).** Every LAMBDA
+term equals an applicative combination of the six constants and its
+free variables. -/
+theorem theorem_2_4_complete (t : Term) (ρ : ℕ → Pomega) :
+    interp t ρ = ofComb (erase t) ρ :=
+  (erase_correct t ρ).symm
+
+end DomainTheory.DataTypesAsLattices

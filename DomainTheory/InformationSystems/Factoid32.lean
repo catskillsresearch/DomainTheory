@@ -5,29 +5,5 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Proposition23
-
-/-!
-# Factoid 3.2 — every element contains Δ
-
-**Factoid 3.2 (inventory).** Scott remarks after Def 3.1 that every element contains `Δ`,
-because the least informative proposition is true of all elements.
--/
-
-namespace DomainTheory.InformationSystems
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
-/-- **Factoid 3.2.** Every element contains `Δ`. -/
-theorem factoid_3_2 (x : sys.Element) : sys.bot ∈ x.carrier := by
-  have hempty : (↑(∅ : Finset α) : Set α) ⊆ x.carrier := by
-    intro a ha
-    exact False.elim (Finset.notMem_empty a (Finset.mem_coe.1 ha))
-  have hEnt : sys.Ent ∅ sys.bot := sys.ent_bot sys.con_empty
-  exact x.closed ∅ sys.bot hempty hEnt
-
-end InfoSys
-
-end DomainTheory.InformationSystems
+import DomainTheory.InformationSystems.Factoid32.Basic
+import DomainTheory.InformationSystems.Factoid32.factoid_3_2

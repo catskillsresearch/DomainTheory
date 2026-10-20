@@ -1,0 +1,54 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Retracts
+import DomainTheory.DataTypesAsLattices.Functionality.Basic
+import DomainTheory.DataTypesAsLattices.Functionality.tensor4_map_isScottContinuous
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem tensor4_app (a b c d u : Pomega) :
+    funOf (tensor4 a b c d) u =
+      seq4 (funOf a (funOf u (ofNat 0)))
+        (funOf b (funOf u (ofNat 1)))
+        (funOf c (funOf u (ofNat 2)))
+        (funOf d (funOf u (ofNat 3))) :=
+  beta (tensor4_map_isScottContinuous a b c d) u
+
+end DomainTheory.DataTypesAsLattices

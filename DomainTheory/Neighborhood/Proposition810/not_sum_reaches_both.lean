@@ -1,0 +1,36 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Definition89
+import DomainTheory.Neighborhood.Definition83
+import DomainTheory.Neighborhood.Theorem69
+import DomainTheory.Neighborhood.Proposition810.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap Exercise326
+
+
+variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
+
+
+
+
+/-- No element of `𝒟₀+𝒟₁` reaches into both the left and the right copy (Exercise 3.18's
+disjointness `inj₀_inter_inj₁`, plus `not_sum_mem_empty`). -/
+theorem not_sum_reaches_both {γ δ} {V₀ : NeighborhoodSystem γ} {V₁ : NeighborhoodSystem δ}
+    {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
+    {w : (sum V₀ V₁ h₀ h₁).Element} (hL : ∃ X, V₀.mem X ∧ w.mem (inj₀ X))
+    (hR : ∃ Y, V₁.mem Y ∧ w.mem (inj₁ Y)) : False := by
+  obtain ⟨X, _, hX⟩ := hL
+  obtain ⟨Y, _, hY⟩ := hR
+  have h := w.inter_mem hX hY
+  rw [inj₀_inter_inj₁] at h
+  exact not_sum_mem_empty (w.sub h)
+
+end DomainTheory.Neighborhood

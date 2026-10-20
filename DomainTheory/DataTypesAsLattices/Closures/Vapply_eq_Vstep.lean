@@ -1,0 +1,48 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Algebra.Ring.Parity
+import DomainTheory.DataTypesAsLattices.Retracts
+import DomainTheory.DataTypesAsLattices.Closures.Basic
+import DomainTheory.DataTypesAsLattices.Closures.Vapply_closed
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem Vapply_eq_Vstep (a x : Pomega) :
+    Vapply a x = Vstep a x (Vapply a x) := by
+  apply subset_antisymm
+  · intro k hk
+    have hset : x ∪ funOf a (Vapply a x) ∈
+        {y | x ⊆ y ∧ funOf a y ⊆ y} :=
+      ⟨Set.subset_union_left, fun m hm =>
+        Set.subset_union_right
+          (isScottContinuous_monotone (funOf_isScottContinuous a)
+            (Vapply_closed a x) hm)⟩
+    exact hk (x ∪ funOf a (Vapply a x)) hset
+  · exact Vapply_closed a x
+
+end DomainTheory.DataTypesAsLattices

@@ -1,0 +1,56 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise717
+import DomainTheory.Neighborhood.Exercise510
+import DomainTheory.Neighborhood.Proposition77
+import DomainTheory.Neighborhood.Exercise717Part2.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
+
+variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
+
+namespace Exercise717
+
+
+
+variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section Computability
+
+variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
+
+
+
+/-- Memo lookup, in `gEval` form: at any earlier code `w' < w`, position `w-1-w'` of the table is
+`gEval w'`. -/
+theorem listGet_rtbl_gEval {w' w : ℕ} (h : w' < w) :
+    listGet (rtbl (gStep fe fU fV mIdx) w) (w - 1 - w') = gEval fe fU fV mIdx w' :=
+  listGet_rtbl (gStep fe fU fV mIdx) h
+
+end Computability
+end Exercise717
+end DomainTheory.Neighborhood

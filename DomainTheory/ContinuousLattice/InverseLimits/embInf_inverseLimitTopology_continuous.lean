@@ -1,0 +1,80 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.ContinuousLattice.Theorem212
+import Mathlib.Order.GaloisConnection.Basic
+import DomainTheory.ContinuousLattice.InverseLimits.Basic
+import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_scottTopology_eq_induced_pi
+
+
+namespace DomainTheory.ContinuousLattice
+
+open Set
+
+universe u
+
+section InverseLimit
+
+variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
+variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- Proposition 4.2's embedding `i_{n∞}` is also continuous for Scott's literal inverse-limit
+topology, namely the subspace topology inherited from the product `∏ₘ Dₘ`. -/
+theorem embInf_inverseLimitTopology_continuous (hD : ∀ n, IsContinuousLattice (D n)) (n : ℕ) :
+    @Continuous (D n) (InverseLimit D P) scottTopologicalSpace
+      (inverseLimitTopology D P) (embInf D P n) := by
+  rw [← inverseLimit_scottTopology_eq_induced_pi D P hD]
+  exact (embInf D P n).continuous
+
+end InverseLimit
+end DomainTheory.ContinuousLattice

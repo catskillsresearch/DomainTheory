@@ -1,0 +1,59 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Exercise722DFA
+import DomainTheory.Neighborhood.Exercise722Cat
+import DomainTheory.Neighborhood.Exercise722Words
+import DomainTheory.Neighborhood.Exercise722Decide.Basic
+
+
+namespace DomainTheory.Neighborhood
+
+namespace Exercise722
+
+open scoped Computability
+open Sum Set
+
+variable {σ₁ σ₂ : Type}
+
+
+
+
+
+
+
+
+
+
+
+theorem autStateCard_le_card (e : SExpr) : autStateCard e ≤ Fintype.card (autState e) := by
+  induction e with
+  | sigma =>
+    simp [autStateCard, autState]
+    exact (Fintype.card_unique (α := Unit)).ge
+  | single σ =>
+    have heq : autStateCard (.single σ) = Fintype.card (autState (.single σ)) := by
+      simp only [autStateCard, autState]
+      have h1 : Fintype.card (Option (Fin (σ.length + 1))) =
+          Fintype.card (Fin (σ.length + 1)) + 1 :=
+        Fintype.card_option (α := Fin (σ.length + 1))
+      have h2 : Fintype.card (Fin (σ.length + 1)) = σ.length + 1 :=
+        Fintype.card_fin (σ.length + 1)
+      calc σ.length + 2
+          = (σ.length + 1) + 1 := rfl
+        _ = Fintype.card (Fin (σ.length + 1)) + 1 := (congrArg (fun n => n + 1) h2).symm
+        _ = Fintype.card (Option (Fin (σ.length + 1))) := h1.symm
+    exact Nat.le_of_eq heq
+  | cap a b ih_a ih_b =>
+    simp only [autStateCard, autState]
+    exact (Nat.mul_le_mul ih_a ih_b).trans (Fintype.card_prod (autState a) (autState b)).ge
+  | cat a b ih_a ih_b =>
+    simp only [autStateCard, autState]
+    exact (Nat.add_le_add ih_a ih_b).trans (Fintype.card_sum (α := autState a) (β := autState b)).ge
+
+end Exercise722
+end DomainTheory.Neighborhood

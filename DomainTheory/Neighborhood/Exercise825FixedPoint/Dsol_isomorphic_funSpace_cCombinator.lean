@@ -1,0 +1,58 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Proposition810b
+import DomainTheory.Neighborhood.Table55
+import DomainTheory.Neighborhood.Exercise823
+import DomainTheory.Neighborhood.Exercise715
+import DomainTheory.Neighborhood.Exercise825Pow
+import DomainTheory.Neighborhood.Exercise825Embed
+import DomainTheory.Neighborhood.Exercise825Closing
+import DomainTheory.Neighborhood.Exercise820
+import DomainTheory.Neighborhood.Exercise825FixedPoint.Basic
+import DomainTheory.Neighborhood.Exercise825FixedPoint.isFinitaryProjection_cCombinator
+import DomainTheory.Neighborhood.Exercise825FixedPoint.ht_tOpMap
+import DomainTheory.Neighborhood.Exercise825FixedPoint.hT_TArrow
+
+
+namespace DomainTheory.Neighborhood
+
+open NeighborhoodSystem ApproximableMap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **`D ≅ D → 𝒰^∞` for `D := fixedNbhd (fixOp t)`.** Exercise 8.23's `fixedDomain_fixOp_iso_T`
+gives `Fix(‖t‖) ≅ D → D_c`; `fixedNbhd_elementIso_fix` identifies `D`'s own element type with
+`Fix(‖t‖)`, and `fixedNbhd_cCombinator_isomorphic` identifies `D_c` with `𝒰^∞`. -/
+theorem Dsol_isomorphic_funSpace_cCombinator :
+    fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) ≅ᴰ
+      funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) (fixedNbhd cCombinator) := by
+  have hht := ht_tOpMap cCombinator isFinitaryProjection_cCombinator
+  have hFP := Exercise823.isFinitaryProjection_fixOp (tOpMap cCombinator) hht
+  have h1 : Nonempty ((fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))).Element ≃o
+      Exercise823.Fix (Exercise823.fixOp (tOpMap cCombinator))) :=
+    ⟨fixedNbhd_elementIso_fix hFP⟩
+  have h2 := Exercise823.fixedDomain_fixOp_iso_T (tOpMap cCombinator) hht TArrow hT_TArrow
+  exact h1.elim fun e1 => h2.elim fun e2 => ⟨e1.trans e2⟩
+
+end DomainTheory.Neighborhood

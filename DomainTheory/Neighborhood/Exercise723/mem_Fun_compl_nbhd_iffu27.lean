@@ -1,0 +1,104 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.Neighborhood.Example78
+import DomainTheory.Neighborhood.Theorem74
+import DomainTheory.Neighborhood.Theorem75
+import DomainTheory.Neighborhood.Exercise514
+import DomainTheory.Neighborhood.Exercise723.Basic
+import DomainTheory.Neighborhood.Exercise723.mem_compl_nbhd
+import DomainTheory.Neighborhood.Exercise723.mem_bitsCodeList
+import DomainTheory.Neighborhood.Exercise723.mem_Fun_compl_nbhd_iff
+
+
+namespace DomainTheory.Neighborhood.Exercise723
+
+open DomainTheory.Neighborhood Example78 NeighborhoodSystem Domain.Recursive
+open DomainTheory.Neighborhood.Exercise513 (tri num numP unnum nextCell numP_unnum)
+open DomainTheory.Neighborhood.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
+  num_succ_left_gt tag_injective)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Bounded-quantifier reformulation** of `mem_Fun_compl_nbhd_iff`, avoiding `decodeList`/
+`bitsCode` for the outer existential (feeding directly into `RecDecidable.bExists`). -/
+theorem mem_Fun_compl_nbhd_iff' (n m j : ℕ) :
+    j ∈ Fun (nbhd n)ᶜ (nbhd m)ᶜ ↔
+      ∃ c, c < n ∧ n.testBit c = true ∧ untagVal c = j ∧
+        ∀ i ∈ decodeList (untagList c), bitAt m i = 1 := by
+  rw [mem_Fun_compl_nbhd_iff]
+  simp only [mem_bitsCodeList, mem_compl_nbhd, bitAt_eq_one_iff]
+  constructor
+  · rintro ⟨c, hbit, hval, hall⟩
+    exact ⟨c, lt_of_testBit_true hbit, hbit, hval, hall⟩
+  · rintro ⟨c, -, hbit, hval, hall⟩
+    exact ⟨c, hbit, hval, hall⟩
+
+end DomainTheory.Neighborhood.Exercise723

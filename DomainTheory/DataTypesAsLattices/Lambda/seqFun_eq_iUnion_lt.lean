@@ -1,0 +1,69 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Embedding
+import DomainTheory.DataTypesAsLattices.Lambda.Basic
+import DomainTheory.DataTypesAsLattices.Lambda.mem_seqFunLt
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem seqFun_eq_iUnion_lt (u z : Pomega) :
+    seqFun u z = ⋃ n, seqFunLt u z n := by
+  ext k
+  constructor
+  · intro hk
+    obtain ⟨i, hi, hki⟩ := Set.mem_iUnion₂.mp hk
+    exact Set.mem_iUnion.mpr ⟨i + 1, (mem_seqFunLt).mpr ⟨i, hi, Nat.lt_succ_self i, hki⟩⟩
+  · intro hk
+    obtain ⟨n, hn⟩ := Set.mem_iUnion.mp hk
+    obtain ⟨i, hi, _, hki⟩ := (mem_seqFunLt).mp hn
+    exact Set.mem_iUnion₂.mpr ⟨i, hi, hki⟩
+
+end DomainTheory.DataTypesAsLattices

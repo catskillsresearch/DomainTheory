@@ -1,0 +1,36 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.ContinuousLattice.Constructions
+import DomainTheory.ContinuousLattice.FunctionSpaces
+import DomainTheory.ContinuousLattice.Theorem212.Basic
+import DomainTheory.ContinuousLattice.Theorem212.theorem_2_12_backward
+
+
+namespace DomainTheory.ContinuousLattice
+
+open Topology Set
+
+
+
+universe u
+
+/-- **Scott 1972, Theorem 2.12.** A `T₀`-space is injective iff it is (homeomorphic to) a
+continuous lattice under its Scott topology. The forward direction is Proposition 2.11; the
+backward direction is `theorem_2_12_backward`. -/
+theorem theorem_2_12 {D : Type u} [TopologicalSpace D] [T0Space D] :
+    IsInjectiveSpace.{u, u} D ↔
+      ∃ (E : Type u) (inst : CompleteLattice E),
+        @IsContinuousLattice E inst ∧
+          Nonempty (@Homeomorph D E _ (@scottTopologicalSpace E inst)) := by
+  refine ⟨theorem_2_12_backward, ?_⟩
+  rintro ⟨E, inst, hE, ⟨h⟩⟩
+  let τE : TopologicalSpace E := @scottTopologicalSpace E inst
+  exact @IsInjectiveSpace.of_retract E D τE _ (theorem_2_12_forward hE)
+    ⟨⇑h, h.continuous⟩ ⟨⇑h.symm, h.symm.continuous⟩ (fun d => h.left_inv d)
+
+end DomainTheory.ContinuousLattice

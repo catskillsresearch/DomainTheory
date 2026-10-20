@@ -1,0 +1,69 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Retracts
+import DomainTheory.DataTypesAsLattices.Functionality.Basic
+import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
+import DomainTheory.DataTypesAsLattices.Functionality.Z_graph_funOf
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- Plotkin: if `z` is typed as an iterator and is extensional in its first
+argument, then `z(f)(x)` is some iterate `fⁿ(x)`. -/
+theorem theorem_7_4_plotkin (z : Pomega)
+    (hη : ∀ f, funOf z f = funOf z (graph (fun y => funOf f y)))
+    (hz : ∀ A, (arrowE (arrowE A A) (arrowE A A)).mem z)
+    (f x : Pomega) :
+    ∃ n, funOf (funOf z f) x = Z n f x := by
+  let f' : Pomega := graph (fun y => funOf f y)
+  have hf'graph : f' = graph (fun y => funOf f' y) := by
+    apply graph_ext
+    intro y
+    exact (beta (funOf_isScottContinuous f) y).symm
+  let A := iterateE f' x
+  have hf'mem : (arrowE A A).mem f' := by
+    refine ⟨hf'graph, hf'graph, ?_⟩
+    intro u v huv
+    rcases huv with ⟨⟨n, rfl⟩, rfl⟩
+    refine ⟨⟨n + 1, rfl⟩, rfl⟩
+  have hzA : (arrowE (arrowE A A) (arrowE A A)).mem z := hz A
+  have hzf : (arrowE A A).mem (funOf z f') :=
+    (theorem_7_1 (arrowE A A) (arrowE A A)).2.1 hzA hf'mem
+  have hx : A.mem x := ⟨⟨0, by simp [Z]⟩, rfl⟩
+  have hval : A.mem (funOf (funOf z f') x) :=
+    (theorem_7_1 A A).2.1 hzf hx
+  obtain ⟨⟨n, hn⟩, _⟩ := hval
+  refine ⟨n, ?_⟩
+  have hηf : funOf z f = funOf z f' := hη f
+  rw [hηf, hn, Z_graph_funOf]
+
+end DomainTheory.DataTypesAsLattices

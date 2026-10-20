@@ -1,0 +1,168 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Computability.Halting
+import DomainTheory.DataTypesAsLattices.Computability
+import DomainTheory.DataTypesAsLattices.Functionality
+import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+import DomainTheory.DataTypesAsLattices.Enumeration.seq2Term_interp
+import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed_avoids8
+import DomainTheory.DataTypesAsLattices.Enumeration.predClosed_avoids8
+import DomainTheory.DataTypesAsLattices.Enumeration.condClosed_avoids8
+import DomainTheory.DataTypesAsLattices.Enumeration.kClosed_avoids8
+import DomainTheory.DataTypesAsLattices.Enumeration.sClosed_avoids8
+import DomainTheory.DataTypesAsLattices.Enumeration.seq2Term_avoids8
+import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed_interp
+import DomainTheory.DataTypesAsLattices.Enumeration.predClosed_interp
+import DomainTheory.DataTypesAsLattices.Enumeration.condClosed_interp
+import DomainTheory.DataTypesAsLattices.Enumeration.kClosed_interp
+import DomainTheory.DataTypesAsLattices.Enumeration.sClosed_interp
+
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+open Encodable
+open Nat.Partrec (Code)
+open Nat.Partrec.Code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem gpackClosed_interp (ρ : ℕ → Pomega) :
+    interp gpackClosed ρ = Gpack := by
+  unfold gpackClosed Gpack
+  rw [seq2Term_interp _ _ ρ sucClosed_avoids8 (seq2Term_avoids8 _ _),
+    seq2Term_interp _ _ ρ predClosed_avoids8 (seq2Term_avoids8 _ _),
+    seq2Term_interp _ _ ρ condClosed_avoids8 (seq2Term_avoids8 _ _),
+    seq2Term_interp _ _ ρ kClosed_avoids8 sClosed_avoids8,
+    sucClosed_interp, predClosed_interp, condClosed_interp,
+    kClosed_interp, sClosed_interp]
+
+end DomainTheory.DataTypesAsLattices

@@ -1,0 +1,46 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.Graph
+import DomainTheory.DataTypesAsLattices.FixedPoint.Basic
+import DomainTheory.DataTypesAsLattices.FixedPoint.chain_lemma
+import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot_mono
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+/-- **Scott 1976, Theorem 1.4 (The fixed-point theorem).** -/
+theorem theorem_1_4 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
+    f (fix f) = fix f ∧ ∀ x, f x = x → fix f ⊆ x := by
+  constructor
+  · -- f(fix f) = ⋃ f(fⁿ(∅)) = ⋃ fⁿ⁺¹(∅) = fix f
+    have hchain := chain_lemma hf (iterateBot f) (iterateBot_mono hf)
+    unfold fix
+    rw [hchain]
+    ext k
+    constructor
+    · intro hk
+      obtain ⟨n, hkn⟩ := Set.mem_iUnion.mp hk
+      exact Set.mem_iUnion.mpr ⟨n + 1, hkn⟩
+    · intro hk
+      obtain ⟨n, hkn⟩ := Set.mem_iUnion.mp hk
+      cases n with
+      | zero => simp [iterateBot, botElem] at hkn
+      | succ n => exact Set.mem_iUnion.mpr ⟨n, hkn⟩
+  · intro x hx k hk
+    obtain ⟨n, hkn⟩ := Set.mem_iUnion.mp hk
+    have hsub : ∀ n, iterateBot f n ⊆ x := by
+      intro n
+      induction n with
+      | zero => simp [iterateBot, botElem]
+      | succ n ih =>
+        simpa [iterateBot, hx] using isScottContinuous_monotone hf ih
+    exact hsub n hkn
+
+end DomainTheory.DataTypesAsLattices

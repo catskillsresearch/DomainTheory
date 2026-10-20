@@ -1,0 +1,93 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import Mathlib.Computability.Halting
+import DomainTheory.DataTypesAsLattices.Computability
+import DomainTheory.DataTypesAsLattices.Functionality
+import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/-- **Scott 1976, Theorem 3.5 (Myhill–Shepherdson), construction.** -/
+theorem theorem_3_5_q (val : ℕ → Pomega) (p : ℕ → ℕ) (j m : ℕ) :
+    pair j m ∈ myhillQ val p ↔ m ∈ val (p (fin j)) := by
+  constructor
+  · intro ⟨j', m', hp, hm⟩
+    obtain ⟨rfl, rfl⟩ := pair_inj hp
+    exact hm
+  · intro hm
+    exact ⟨j, m, rfl, hm⟩
+
+end DomainTheory.DataTypesAsLattices

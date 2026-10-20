@@ -1,0 +1,77 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+import DomainTheory.DataTypesAsLattices.FixedLattices
+import DomainTheory.DataTypesAsLattices.Lambda
+import DomainTheory.DataTypesAsLattices.Retracts.Basic
+import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+import DomainTheory.DataTypesAsLattices.Retracts.arrowR_app
+import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_ii
+import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_restrict
+
+
+namespace DomainTheory.DataTypesAsLattices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+theorem typed_arrowR_iff {a b u : Pomega} (ha : IsRetract a) (_hb : IsRetract b) :
+    typed u (arrowR a b) ↔
+      u = comp u a ∧ ∀ x, typed x a → typed (funOf u x) b := by
+  constructor
+  · intro hu
+    exact ⟨typed_arrowR_restrict ha hu, fun x hx => theorem_4_3_ii hu hx⟩
+  · intro ⟨hrest, hval⟩
+    change u = funOf (arrowR a b) u
+    rw [arrowR_app]
+    apply Eq.trans hrest
+    apply graph_ext
+    intro x
+    have hx : typed (funOf a x) a := (retract_app ha x).symm
+    have hbx : funOf u (funOf a x) = funOf b (funOf u (funOf a x)) :=
+      hval (funOf a x) hx
+    simp only [comp_app]
+    exact hbx
+
+end DomainTheory.DataTypesAsLattices
