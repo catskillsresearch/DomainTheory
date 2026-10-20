@@ -10,3 +10,8 @@
 - [Total functions and functionality](1976_Total_functions_and_functionality.md)
 - [Appendix A. Proofs and technical remarks](1976_Proofs_and_technical_remarks.md)
 - [Appendix B. Acknowledgments and references](1976_Acknowledgments_and_references.md)
+
+**Lean 4**
+
+- [DataTypesAsLattices.lean](DomainTheory/DataTypesAsLattices.lean)
+- [DataTypesAsLattices/Basic.lean](DomainTheory/DataTypesAsLattices/Basic.lean)

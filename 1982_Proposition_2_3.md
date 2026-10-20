@@ -25,6 +25,9 @@ The previous axioms in 2.1 are then easily proved from the new ones. ■
 
 **Lean 4**
 
+- [InformationSystems/InformationSystems/Proposition23.lean](DomainTheory/InformationSystems/InformationSystems/Proposition23.lean)
+- [InformationSystems/InformationSystems/Proposition23/Basic.lean](DomainTheory/InformationSystems/InformationSystems/Proposition23/Basic.lean)
+- [InformationSystems/InformationSystems/Proposition23/funion_insert.lean](DomainTheory/InformationSystems/InformationSystems/Proposition23/funion_insert.lean)
 - [InformationSystems/InformationSystems/Proposition23/proposition_2_3_i.lean](DomainTheory/InformationSystems/InformationSystems/Proposition23/proposition_2_3_i.lean)
 - [InformationSystems/InformationSystems/Proposition23/proposition_2_3_ii.lean](DomainTheory/InformationSystems/InformationSystems/Proposition23/proposition_2_3_ii.lean)
 - [InformationSystems/InformationSystems/Proposition23/proposition_2_3_iii.lean](DomainTheory/InformationSystems/InformationSystems/Proposition23/proposition_2_3_iii.lean)

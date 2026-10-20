@@ -6,4 +6,8 @@ Already in formulating the axiom about the transitivity of $\vdash$ a relation b
 
 **Lean 4**
 
+- [InformationSystems/InformationSystems/Definition22.lean](DomainTheory/InformationSystems/InformationSystems/Definition22.lean)
+- [InformationSystems/InformationSystems/Definition22/Basic.lean](DomainTheory/InformationSystems/InformationSystems/Definition22/Basic.lean)
 - [InformationSystems/InformationSystems/Definition22/EntSet.lean](DomainTheory/InformationSystems/InformationSystems/Definition22/EntSet.lean)
+- [InformationSystems/InformationSystems/Definition22/entSet_empty.lean](DomainTheory/InformationSystems/InformationSystems/Definition22/entSet_empty.lean)
+- [InformationSystems/InformationSystems/Definition22/entSet_singleton.lean](DomainTheory/InformationSystems/InformationSystems/Definition22/entSet_singleton.lean)

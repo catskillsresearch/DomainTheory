@@ -10,3 +10,22 @@ Intuitively, an information system is a set of “propositions” that can be ma
 - [Proposition 2.3](1982_Proposition_2_3.md)
 
 So much for the definition of what an information system is as a mathematical structure. The next question is: What is it good for? More precisely, if information systems are the backbones of domains, then where are the elements? That is the topic of the next section.
+
+**Lean 4**
+
+- [InformationSystems/InformationSystems/Constructive.lean](DomainTheory/InformationSystems/InformationSystems/Constructive.lean)
+- [InformationSystems/InformationSystems/Constructive/Basic.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/Basic.lean)
+- [InformationSystems/InformationSystems/Constructive/Basic/notation5.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/Basic/notation5.lean)
+- [InformationSystems/InformationSystems/Constructive/coe_funion.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/coe_funion.lean)
+- [InformationSystems/InformationSystems/Constructive/decidableEq_finset.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/decidableEq_finset.lean)
+- [InformationSystems/InformationSystems/Constructive/decidableEq_finset_eq_of_subset.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/decidableEq_finset_eq_of_subset.lean)
+- [InformationSystems/InformationSystems/Constructive/decidableEq_finset_false_of_ne.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/decidableEq_finset_false_of_ne.lean)
+- [InformationSystems/InformationSystems/Constructive/funion.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/funion.lean)
+- [InformationSystems/InformationSystems/Constructive/funion_empty_right.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/funion_empty_right.lean)
+- [InformationSystems/InformationSystems/Constructive/funion_subset_iff.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/funion_subset_iff.lean)
+- [InformationSystems/InformationSystems/Constructive/insert_comm'.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/insert_comm'.lean)
+- [InformationSystems/InformationSystems/Constructive/instLeftCommutativeInsert.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/instLeftCommutativeInsert.lean)
+- [InformationSystems/InformationSystems/Constructive/mem_foldr_insert.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/mem_foldr_insert.lean)
+- [InformationSystems/InformationSystems/Constructive/mem_funion.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/mem_funion.lean)
+- [InformationSystems/InformationSystems/Constructive/subset_funion_left.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/subset_funion_left.lean)
+- [InformationSystems/InformationSystems/Constructive/subset_funion_right.lean](DomainTheory/InformationSystems/InformationSystems/Constructive/subset_funion_right.lean)

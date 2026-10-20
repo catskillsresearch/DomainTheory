@@ -33,3 +33,12 @@ $$x < j(z), \text{ some } z \in S \ .$$
 Now $j(z) = z$ , and we have what we need. This argument suffices only for a special type of open sets; but these open sets form a base for the topology, and so the argument is quite general.
 
 Turning now to the proof of theorem 2.3 we note that the topology on the function space is simply the *relativized* product topology. There is no difficulty with lubs in this case, because, as we showed in the proof of that theorem, all lubs are calculated pointwise. Thus, it is easy to verify now that the sets open in the product topology are also open in the lattice topology.
+
+**Lean 4**
+
+- [ContinuousLattice/MilnerCorrection.lean](DomainTheory/ContinuousLattice/MilnerCorrection.lean)
+- [ContinuousLattice/MilnerCorrection/Basic.lean](DomainTheory/ContinuousLattice/MilnerCorrection/Basic.lean)
+- [ContinuousLattice/MilnerCorrection/CoarserThanScottTopology.lean](DomainTheory/ContinuousLattice/MilnerCorrection/CoarserThanScottTopology.lean)
+- [ContinuousLattice/MilnerCorrection/scottLowerSubbasisSet.lean](DomainTheory/ContinuousLattice/MilnerCorrection/scottLowerSubbasisSet.lean)
+- [ContinuousLattice/MilnerCorrection/scottOpen_of_coarserThanScott.lean](DomainTheory/ContinuousLattice/MilnerCorrection/scottOpen_of_coarserThanScott.lean)
+- [ContinuousLattice/MilnerCorrection/scottPrincipalUpSet.lean](DomainTheory/ContinuousLattice/MilnerCorrection/scottPrincipalUpSet.lean)
