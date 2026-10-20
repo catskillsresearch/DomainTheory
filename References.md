@@ -1,8 +1,6 @@
 # References
 
-Committee on Publication Ethics (COPE) (2024), *Authorship and AI tools: COPE position statement*. 2024. <https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools> **[COPE24]**
-
-J. C. Abbott, ed (1970), *Trends in Lattice Theory*, Van Nostrand Reinhold Mathematical Studies, vol. 31 (1970).
+J. C. Abbott, ed. (1970), *Trends in Lattice Theory*, Van Nostrand Reinhold Mathematical Studies, vol. 31 (1970).
 
 S. Abramsky and A. Jung (1994), *Domain Theory*. In *Handbook of Logic in Computer Science*, Vol. 3, Oxford University Press, 1994. **[AJ94]**
 
@@ -38,7 +36,7 @@ H. Bekić (1969), *Definable operations in general algebra, and the theory of au
 
 H. Bekić (1971), *Towards a mathematical theory of processes*, Tech. Rep. TR 25.125, IBM Lab., Vienna.
 
-H. Bekić et Al. (1974), *A formal definition of a PL/I subset, Parts I and II*, Tech. Rep. TR 25.139, IBM Lab., Vienna.
+H. Bekić et al. (1974), *A formal definition of a PL/I subset, Parts I and II*, Tech. Rep. TR 25.139, IBM Lab., Vienna.
 
 E. Binz and H. H. Keller (1966), *Funktionenräume in der Kategorie der Limesräume*, Annales Academiae Scientiarum Fennicae, Series A, I. Mathematica, no. 383 (1966), 21 pp.
 
@@ -48,9 +46,9 @@ G. Birkhoff (1967), *Lattice Theory*, 3rd ed., American Mathematical Society Col
 
 A. Blikle (1971), *Algorithmically definable functions: A contribution towards the semantics of programming languages*, Dissertationes Math. Rozprawy Mat., 85.
 
-A. Blikle and A. Mazurkiewicz (1972), *An algebraic approach to the theory of programs, algorithms, languages and recursiveness*, Proc. Internat. Sympos. and Summer School on the Mathematical Foundations of Computer Sci., Warsaw-Jabłonna.
-
 A. Blikle (1972), *Equational languages*, Information Control, pp. 134–147.
+
+A. Blikle and A. Mazurkiewicz (1972), *An algebraic approach to the theory of programs, algorithms, languages and recursiveness*, Proc. Internat. Sympos. and Summer School on the Mathematical Foundations of Computer Sci., Warsaw-Jabłonna.
 
 A. Blikle (1973), *An algebraic approach to programs and their computations*, Proc. Symp. and Summer School on the Mathematical Foundations of Computer Sci., High Tatras, Czechoslovakia.
 
@@ -70,13 +68,13 @@ R. M. Burstall (1972b), *An algebraic description of programs with assertions, v
 
 R. Burstall and J. W. Thatcher (1974), *The algebraic theory of recursive program schemes*, Category Theory Applied to Computation and Control, E. Manes, ed., Univ. of Mass., pp. 154–160.
 
-J. M. Cadiou and J. J. Levy (1973), *Mechanizable proofs about parallel processes*, Presented at the 14th Ann. Symp. on Switching and Automata Theory.
-
 J. M. Cadiou (1973), *Recursive definitions of partial functions and their computations*, Ph.D. thesis, Computer Sci. Dept., Stanford Univ., Stanford, Calif.
+
+J. M. Cadiou and J. J. Levy (1973), *Mechanizable proofs about parallel processes*, Presented at the 14th Ann. Symp. on Switching and Automata Theory.
 
 J. W. Case (1971), *Enumeration reducibility and the partial degrees*, Ann. Math. Logic, 2, pp. 419–440.
 
-E. Čech (1966), *Topological Spaces*, (revised by Z. Frolík and M. Katětov), Prague.
+E. Čech (1966), *Topological Spaces* (revised by Z. Frolík and M. Katětov), Prague.
 
 A. K. Chandra and Z. Manna (1973), *On the power of programming features*, Artificial Intelligence Memo. AIM-185, Stanford Univ., Stanford, Calif.
 
@@ -90,6 +88,8 @@ A. Church (1951), *The calculi of $\lambda$-conversion*, Annals of Mathematical 
 
 M. J. Clint (1972), *Program proving: Co-routines*, Acta Informatica, 2, pp. 50–63.
 
+Committee on Publication Ethics (COPE) (2024), *Authorship and AI tools: COPE position statement*. 2024. <https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools> **[COPE24]**
+
 R. C. Constable and D. Gries (1972), *On classes of program schemata*, this Journal, 1, pp. 66–118.
 
 D. C. Cooper (1966), *The equivalence of certain computations*, Comput. J., 9, pp. 45–52.
@@ -98,7 +98,11 @@ B. Courcelle and J. Vuillemin (1974), *Complétude d'un système formel pour des
 
 B. Courcelle and J. Vuillemin (1974), *Semantics and axiomatics of a simple recursive language*, Rapport Laboria, vol. 60, IRIA; Also: 6th Ann. ACM Symp. on the Theory of Computing, Seattle, Washington.
 
+B. Courcelle, G. Kahn and J. Vuillemin (1974), *Algorithmes d'équivalence pour des équations récursives simples*, Proc. 2nd Colloq. on Automata Languages and Programming, Saarbrücken; Lecture Notes in Computer Science, Springer-Verlag, Berlin, pp. 213–220.
+
 H. B. Curry and R. Feys (1958), *Combinatory Logic*, vol. 1, North-Holland, Amsterdam.
+
+H. B. Curry, J. R. Hindley and J. Seldin (1971), *Combinatory Logic*, vol. 2, North-Holland, Amsterdam.
 
 M. Davis (1958), *Computability and Unsolvability*, McGraw-Hill, New York.
 
@@ -115,6 +119,8 @@ B. N. Duong (1974), *A high level, variable free calculus for recursive programm
 S. Eilenberg and C. C. Elgot (1970), *Recursiveness*, Academic Press, New York.
 
 S. Eilenberg and C. C. Elgot (1974), *Automata, Languages and Machines*, vol. A, Academic Press, New York (vol. B in press).
+
+C. C. Elgot, A. Robinson and J. D. Rutledge (1966), *Multiple control computer models*. IBM Res. Rep. RC 1622, Yorktown Heights, N.Y.
 
 C. C. Elgot (1967), *Abstract algorithms and diagram closure*, IBM Res. Rep. RC 1750, Yorktown Heights, N.Y.
 
@@ -134,7 +140,7 @@ J. Engelfriet and E. M. Schmidt (1975), *IO and OI*, DAIMI PB-47, Matematisk Ins
 
 Ju. L. Ershov (1971), *Computable numerations of morphisms*. Algebra and Logic, 10, pp. 247–308.
 
-Ju. L. Ershov (1972a), *Computable functions of finite types*. , 11, pp. 367–437.
+Ju. L. Ershov (1972a), *Computable functions of finite types*. Algebra and Logic, 11, pp. 367–437.
 
 Ju. L. Ershov (1972b), *Everywhere defined (total) continuous functionals*. Algebra and Logic, 11, pp. 656–665.
 
@@ -160,7 +166,7 @@ S. J. Garland and D. C. Luckham (1972), *Translating recursion schemes into prog
 
 H. Gericke (1966), *Lattice Theory*, Harrap.
 
-G. Gierz et al (2003), *Continuous Lattices and Domains*. Cambridge University Press, 2003. **[GHKLMS03]**
+G. Gierz et al. (2003), *Continuous Lattices and Domains*. Cambridge University Press, 2003. **[GHKLMS03]**
 
 J. A. Goguen (1967), *$L$-fuzzy sets*, J. Math. Anal. Appl., 18, pp. 145–174.
 
@@ -170,7 +176,7 @@ J. A. Goguen (1972), *On homomorphisms, simulations, correctness, subroutines an
 
 J. A. Goguen (1974), *Semantics of computation*, Category Theory Applied to Computation and Control, E. Manes, ed., Univ. of Mass., pp. 234–249.
 
-J. A. Goguen et Al. (1975), *Initial algebra semantics*, IBM Res. Rep. RC 5243, Yorktown Heights, N.Y.
+J. A. Goguen et al. (1975), *Initial algebra semantics*, IBM Res. Rep. RC 5243, Yorktown Heights, N.Y.
 
 M. J. C. Gordon (1973a), *Models of pure LISP*, Experimental Programming Rep. 31, School of Artificial Intelligence, Univ. of Edinburgh. (Also Ph.D. thesis, *Evaluation and denotation of pure LISP programs: A worked example in semantics*.)
 
@@ -186,7 +192,7 @@ I. Guessarian (1974), *Sur une réduction des schémas de programmes polyadiques
 
 L. Gutteridge (1971), *Some Results on Enumeration Reducibility*, Ph.D. dissertation, Simon Fraser Univ., Burnaby, B.C., Canada.
 
-H. B. Curry, J. R. Hindley and J. Seldin (1971), *Combinatory Logic*, vol. 2, North-Holland, Amsterdam.
+J. R. Hindley, B. Lercher and J. P. Seldin (1972), *Introduction to combinatory logic*, London Mathematical Society Lecture Note Series, vol. 7, Cambridge University Press, Cambridge, England.
 
 J. R. Hindley and G. Mitschke (1975), *Some remarks about the connections between combinatory logic and axiomatic recursion theory*, Preprint 203, Fachbereich Mathematik, Technische Hochschule Darmstadt.
 
@@ -196,13 +202,13 @@ P. Hitchcock (1974), *An approach to formal reasoning about programs*, Ph.D. the
 
 C. A. R. Hoare (1969), *An axiomatic basis of computer programming*, Comm. ACM, 12, pp. 576–580, 583.
 
-C. A. R. Hoare (1971a), *Proof of a program: FIND*, , 14, pp. 39–45.
+C. A. R. Hoare (1971a), *Proof of a program: FIND*, Comm. ACM, 14, pp. 39–45.
 
 C. A. R. Hoare (1971b), *Procedures and parameters: An axiomatic approach*, Symposium on Semantics of Programming Languages, E. Engeler, ed., Lecture Notes in Mathematics, vol. 188, Springer-Verlag, New York, pp. 102–116.
 
-C. A. R. Hoare and N. Wirth (1972), *An axiomatic definition of the programming language PASCAL*, Bericht der Fachgruppe Computer-Wissenschaften 6, Eidgenössische Technische Hochschule, Zürich.
-
 C. A. R. Hoare (1972), *Notes on data structuring*, Structured Programming, C. A. R. Hoare, E. W. Dijkstra and O. J. Dahl, Academic Press, New York.
+
+C. A. R. Hoare and N. Wirth (1972), *An axiomatic definition of the programming language PASCAL*, Bericht der Fachgruppe Computer-Wissenschaften 6, Eidgenössische Technische Hochschule, Zürich.
 
 C. A. R. Hoare and P. Lauer (1974), *Consistent and complementary formal theories of the semantics of programming languages*, Acta Informatica, 3, pp. 135–153.
 
@@ -226,11 +232,9 @@ C. B. Jones (1974), *Mathematical semantics of goto: Exit formulation and its re
 
 G. Kahn (1973), *A preliminary theory of parallel programs*. Rapport Laboria IRIA.
 
-B. Courcelle, G. Kahn and J. Vuillemin (1974), *Algorithmes d'équivalence pour des équations récursives simples*, Proc. 2nd Colloq. on Automata Languages and Programming, Saarbrücken; Lecture Notes in Computer Science, Springer-Verlag, Berlin, pp. 213–220.
-
 D. M. Kaplan (1969), *Regular expressions and the equivalence of programs*, J. Comput. System Sci., 3, pp. 361–385.
 
-R. M. Karp and R. E. Miller (1969), *Parallel program schemata*, , 3, pp. 147–195.
+R. M. Karp and R. E. Miller (1969), *Parallel program schemata*, J. Comput. System Sci., 3, pp. 147–195.
 
 J. L. Kelley (1955), *General Topology*, Van Nostrand, (1955).
 
@@ -256,13 +260,13 @@ P. J. Landin (1969), *A program/machine symmetric automata theory*, Machine Inte
 
 P. J. Landin and R. M. Burstall (1969), *Programs and their proofs: An algebraic approach*, Machine Intelligence, vol. 4, American Elsevier, New York, pp. 17–44.
 
-J. R. Hindley, B. Lercher and J. P. Seldin (1972), *Introduction to combinatory logic*, London Mathematical Society Lecture Note Series, vol. 7, Cambridge University Press, Cambridge, England.
-
 J. Leszczykowski (1971), *A theorem on resolving equations in the space of languages*, Bull. Acad. Polon. Sci. Sér. Sci. Math. Astronom. Phys., 19, pp. 967–970.
 
-C. H. Lewis and B. K. Rosen (1973–74) (1974), *Recursively defined data types, Parts I and II*. IBM Res. Reps. RC 4429 (1973), RC 4713 (1974), Yorktown Heights, N.Y.
+C. H. Lewis and B. K. Rosen (1973–74), *Recursively defined data types, Parts I and II*. IBM Res. Reps. RC 4429 (1973), RC 4713 (1974), Yorktown Heights, N.Y.
 
 B. Liskov and S. Zilles (1973), *An approach to abstraction*, Group Memo. 88, Project MAC, Mass. Inst. of Tech., Cambridge, Mass.
+
+D. Luckham, D. M. R. Park and M. Paterson (1970), *On formalized computer programs*, J. Comput. System Sci., 4, pp. 220–249.
 
 S. Mac Lane (1972), *Categories for the Working Mathematician*, Springer-Verlag, New York.
 
@@ -276,9 +280,11 @@ Z. Manna and J. McCarthy (1970), *Properties of programs and partial function lo
 
 Z. Manna and A. Pnueli (1972), *Axiomatic approach to total correctness of programs*, Artificial Intelligence Lab. Memo. AIM-210, Stanford Univ., Stanford, Calif.
 
+Z. Manna and J. M. Cadiou (1972), *Recursive definitions of partial functions and their computations*, Proc. ACM Conf. on Proving Assertions about Programs, Las Cruces, N.M., pp. 58–65.
+
 Z. Manna and J. Vuillemin (1972), *Fixpoint approach to the theory of computation*, Comm. ACM, 15, pp. 528–536.
 
-Z. Manna and J. M. Cadiou (1972), *Recursive definitions of partial functions and their computations*, Proc. ACM Conf. on Proving Assertions about Programs, Las Cruces, N.M., pp. 58–65.
+Z. Manna, Z. Ness and J. Vuillemin (1972), *Inductive methods for proving properties of programs*, Proc. ACM Conf. on Proving Assertions about Programs, Las Cruces, N.M., pp. 27–50.
 
 Z. Manna (1974), *Mathematical Theory of Computation*, McGraw-Hill, New York.
 
@@ -290,15 +296,15 @@ A. Mazurkiewicz (1971), *Proving algorithms by tail functions*, Working Paper fo
 
 A. Mazurkiewicz (1973), *Proving properties of processes*, PRACE CO PAN-CC PAS Reports, vol. 134, Warsaw.
 
-J. McCARTHY (1962), *The LISP 1.5 Programmers' Manual*, MIT Press, Cambridge, Mass.
+J. McCarthy (1962), *The LISP 1.5 Programmers' Manual*, MIT Press, Cambridge, Mass.
 
-J. McCARTHY (1963a), *A basis for a mathematical theory of computation*, Computer Programming and Formal Systems, D. Braffort and D. Hirshberg, eds., North-Holland, Amsterdam, pp. 33–70.
+J. McCarthy (1963a), *A basis for a mathematical theory of computation*, Computer Programming and Formal Systems, D. Braffort and D. Hirshberg, eds., North-Holland, Amsterdam, pp. 33–70.
 
-J. McCARTHY (1963b), *Towards a mathematical science of computation*, Information Processing 1962, Proc. IFIP Congress 1962, C. M. Poppleworth, ed., North-Holland, Amsterdam, pp. 21–28.
+J. McCarthy (1963b), *Towards a mathematical science of computation*, Information Processing 1962, Proc. IFIP Congress 1962, C. M. Poppleworth, ed., North-Holland, Amsterdam, pp. 21–28.
 
-J. McCARTHY (1966), *A formal description of a subset of ALGOL*, Formal Language Description Languages for Computer Programming, R. B. Steel, ed., North-Holland, Amsterdam, pp. 1–12.
+J. McCarthy (1966), *A formal description of a subset of ALGOL*, Formal Language Description Languages for Computer Programming, R. B. Steel, ed., North-Holland, Amsterdam, pp. 1–12.
 
-J. McCARTHY and J. Painter (1967), *Correctness of a computer for arithmetic expressions*, Mathematical Aspects of Computer Science, J. T. Schwartz, ed., Proc. of a Symposium in Applied Mathematics, vol. 19, pp. 33–41.
+J. McCarthy and J. Painter (1967), *Correctness of a computer for arithmetic expressions*, Mathematical Aspects of Computer Science, J. T. Schwartz, ed., Proc. of a Symposium in Applied Mathematics, vol. 19, pp. 33–41.
 
 E. Michael (1951), *Topologies on Spaces of Subsets*, Transactions of the American Mathematical Society, vol. 77 (1951), pp. 152-182.
 
@@ -326,15 +332,15 @@ F. Lockwood Morris (1970), *The next 700 programming language descriptions*, Com
 
 J. H. Morris (1971), *Another recursion induction principle*, Comm. ACM, 14, pp. 351–354.
 
-J. H. Morris (1972), *A correctness proof using recursively defined functions*, Formal Semantics of Programming Languages, R. Rustin, ed., Prentice-Hall, Englewood Cliffs, N.J., pp. 107–224.
-
 F. Lockwood Morris (1972), *Correctness of translations of programming languages*, Computer Sci. Memo. CS 72-303, Stanford Univ., Stanford, Calif.
+
+J. H. Morris (1972), *A correctness proof using recursively defined functions*, Formal Semantics of Programming Languages, R. Rustin, ed., Prentice-Hall, Englewood Cliffs, N.J., pp. 107–224.
 
 F. Lockwood Morris (1973), *Advice on structuring compilers and proving them correct*, Proc. SIGACT/SIGPLAN Symp. on Principles of Programming Languages, Boston, pp. 144–152.
 
-J. Morris and R. Nakajima (1973), *Mechanical characterisation of the partial order in lattice models of $\lambda$-calculus*, Tech. Rep. 18, Univ. of Calif., Berkeley.
-
 J. H. Morris (1973), *Types are not sets*, Proc. ACM Symp. on Principles of Programming Languages, Boston, pp. 120–124.
+
+J. Morris and R. Nakajima (1973), *Mechanical characterisation of the partial order in lattice models of $\lambda$-calculus*, Tech. Rep. 18, Univ. of Calif., Berkeley.
 
 P. D. Mosses (1974), *The mathematical semantics of ALGOL 60*, Tech. Monograph PRG-12, Oxford Univ. Computing Lab., Programming Research Group.
 
@@ -348,13 +354,11 @@ R. Nakajima (1975), *Infinite normal forms for $\lambda$-calculus*, $\lambda$-Ca
 
 A. Nerode (1959), *Some Stone spaces and recursion theory*, Duke Mathematical Journal, vol. 26, pp. 397–406.
 
-Z. Manna, Z. Ness and J. Vuillemin (1972), *Inductive methods for proving properties of programs*, Proc. ACM Conf. on Proving Assertions about Programs, Las Cruces, N.M., pp. 27–50.
-
 M. Nivat (1972), *Langages Algébriques sur le Magma Libre et Sémantique des Schémas de Programmes*, Proc. IRIA Symposium on Automata Formal Languages and Programming, North-Holland, Amsterdam.
 
 D. C. Oppen (1975), *On logic and program verification*, Tech. Rep. 82, Dept. Computer Sci., Univ. of Toronto.
 
-D. Luckham, D. M. R. Park and M. Paterson (1970), *On formalized computer programs*, J. Comput. System Sci., 4, pp. 220–249.
+Palomar Registry (2026), entry `PALOMAR-2026-08-25-000003`, version 1. Verified claim: order isomorphisms relating Scott’s three presentations of domains — continuous lattices (1972), neighbourhood systems (PRG-19), and information systems (1982) — including the round identification `D ≃o RoundFilter ≃o RoundInfoSysElement` and the S-expression equation `T ≅ A + (T × T)` as `|T| ≃o |A + (T × T)|` (`SexSys.Element ≃o SexRhs.Element`). <https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000003&version=1> **[PALOMAR26]**
 
 D. M. R. Park (1970a), *Fixpoint induction and proofs of program properties*, Machine Intelligence, 5, B. Meltzer and D. Michie, eds., American Elsevier, New York, pp. 59–78.
 
@@ -380,7 +384,7 @@ G. D. Plotkin (1973c), *Call-by-name, Call-by-value and the $\lambda$-calculus*,
 
 G. D. Plotkin (1975), *A powerdomain construction*, Dept. of Artificial Intelligence Res. Rep. 3, Univ. of Edinburgh.
 
-H. Rasiowa (1973), *On $\omega^*, $-valued algorithmic logic and related problems*, Supplement to Proc. Symp. and Summer School on Mathematical Foundations of Computer Sci., High Tatras, Czechoslovakia.
+H. Rasiowa (1973), *On $\omega^*$-valued algorithmic logic and related problems*, Supplement to Proc. Symp. and Summer School on Mathematical Foundations of Computer Sci., High Tatras, Czechoslovakia.
 
 P. Raulefs (1975a), *The overtyped lambda calculus*, Interner Bericht Nr. 2, Institut für Informatik, Universität Karlsruhe.
 
@@ -402,8 +406,6 @@ J. C. Reynolds (to appear), *On the interpretations of Scott's domains*. Symposi
 
 J. C. Reynolds (to appear), *Towards a theory of type structure*, Colloq. on Programming, Paris, April 1974, Lecture Notes in Computer Science, Springer-Verlag, Berlin.
 
-C. C. Elgot, A. Robinson and J. D. Rutledge (1966), *Multiple control computer models*. IBM Res. Rep. RC 1622, Yorktown Heights, N.Y.
-
 W. P. de Roever (1974a), *Recursion and parameter mechanisms: An axiomatic approach*. Proc. 2nd Colloq. on Automata Languages and Programming, Saarbrucken, Lecture Notes in Computer Science, vol. 14, Springer-Verlag, Berlin, pp. 34–65.
 
 W. P. de Roever (1974b), *Operational, mathematical and axiomatized semantics for recursive procedures and data structures*, Mathematical Centre Report ID/1, Amsterdam.
@@ -416,13 +418,11 @@ J. D. Rutledge (1970a), *Program schemata as automata, part I*. IBM Res. RC 3098
 
 J. D. Rutledge (1970b), *Parallel processes . . . Schemata and transformation*, IBM Res. Rep. RC 2912, Yorktown Heights, N.Y.
 
-Scott, D. S (1981), *Lectures on a Mathematical Theory of Computation*. Technical Monograph PRG-19, May 1981. Oxford University Computing Laboratory, Programming Research Group. © 1981 Dana S. Scott / University of Oxford.
-
 A. Salwicki (1970a), *Formalized algorithmic languages*, Bull. Acad. Polon. Sci. Sér. Math. Astronom. Phys., 18, pp. 227–232.
 
-A. Salwicki (1970b), *On the equivalence of FS-expressions and programs*, , 18, pp. 275–278.
+A. Salwicki (1970b), *On the equivalence of FS-expressions and programs*, Bull. Acad. Polon. Sci. Sér. Math. Astronom. Phys., 18, pp. 275–278.
 
-A. Salwicki (1970c), *On the predicate calculi with iteration quantifiers*, , 18, pp. 279–286.
+A. Salwicki (1970c), *On the predicate calculi with iteration quantifiers*, Bull. Acad. Polon. Sci. Sér. Math. Astronom. Phys., 18, pp. 279–286.
 
 J. G. Sanderson (1973), *The $\lambda$ calculus, lattice theory and reflexive domains*. Mathematical Institute Lecture Notes, Oxford, England.
 
@@ -436,9 +436,9 @@ D. Scott (1969), *A type-theoretical alternative to ISWIM, CUCH, OWHY*, Unpublis
 
 D. Scott (1970), *Outline of a mathematical theory of computation*, Proceedings of the Fourth Annual Princeton Conference on Information Sciences and Systems, pp. 169–176. [Also: Tech. Monograph PRG-2, Oxford Univ. Computing Lab., Programming Research Group (1970).]
 
-D. Scott (1971), *The lattice of flow diagrams*, Symposium on Semantics of Algorithmic Languages, E. Engeler, ed., Lecture Notes in Mathematics, vol. 188, Springer-Verlag, New York, pp. 311–366. [Also: Tech. Monograph PRG-3, Oxford Univ. Computing Lab., Programming Research Group (1970).]
-
 D. Scott (1971), *Lattice Theory, Data Types, and Semantics*, New York University Symposia in Areas of Current Interest in Computer Science (Randall Rustin ed.) (1971) to appear.
+
+D. Scott (1971), *The lattice of flow diagrams*, Symposium on Semantics of Algorithmic Languages, E. Engeler, ed., Lecture Notes in Mathematics, vol. 188, Springer-Verlag, New York, pp. 311–366. [Also: Tech. Monograph PRG-3, Oxford Univ. Computing Lab., Programming Research Group (1970).]
 
 D. Scott and C. Strachey (1971), *Toward a mathematical semantics for computer languages*, Proc. Symposium on Computers and Automata, Polytechnic Inst. of Brooklyn, vol. 21, pp. 19–46. [Also: Technical Monograph PRG-6, Oxford Univ. Computing Lab., Programming Research Group (1971).]
 
@@ -484,9 +484,9 @@ A. Tang (1975c), *A hierarchy of $B_\delta$ sets in $P\omega$*, IRIA, preprint.
 
 A. Tang (1975c), *Sets of the form $\{x \mid R(x) = T\}$ in $P\omega$*, IRIA, preprint.
 
-A. Tang (1975d), *Degrees in P*, IRIA, preprint.
+A. Tang (1975d), $\leqq_e$ *Degrees in P*, IRIA, preprint.
 
-A. Tarski (1930), *On some Fundamental Concepts of Mathematics (1930)*, ; translated by J. H. Woodger in *Logic, Semantics, Metamathematics*, Cambridge, 1956, pp. 30–37.
+A. Tarski (1930), *On some Fundamental Concepts of Mathematics*; translated by J. H. Woodger in *Logic, Semantics, Metamathematics*, Cambridge, 1956, pp. 30–37.
 
 A. Tarski (1955), *A lattice-theoretical fixpoint theorem and its applications*, Pacific J. Math., 5, pp. 285–309.
 
