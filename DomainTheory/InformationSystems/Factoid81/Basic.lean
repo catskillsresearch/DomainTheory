@@ -10,6 +10,13 @@ module
 public import DomainTheory.InformationSystems.Product
 public import DomainTheory.InformationSystems.Sum
 
+public import DomainTheory.InformationSystems.Factoid81.TreeToken
+public import DomainTheory.InformationSystems.Factoid81.TreeCon
+import all DomainTheory.InformationSystems.Factoid81.TreeCon
+import all DomainTheory.InformationSystems.Factoid81.atomFinset
+import all DomainTheory.InformationSystems.Factoid81.pairLFinset
+import all DomainTheory.InformationSystems.Factoid81.pairRFinset
+
 @[expose] public section
 
 /-!
@@ -34,78 +41,12 @@ universe u
 
 /-! ## Tokens (Scott §8 (1)–(3)) -/
 
-/-- Tokens of the tree system: sum tagging of atoms and product left/right copies. -/
-inductive TreeToken (α : Type u) where
-  | bot : TreeToken α
-  | atom : α → TreeToken α
-  | pairL : TreeToken α → TreeToken α
-  | pairR : TreeToken α → TreeToken α
-
-instance instDecidableEqTreeToken {α : Type u} [DecidableEq α] :
-    DecidableEq (TreeToken α)
-  | .bot, .bot => isTrue rfl
-  | .atom a, .atom b =>
-      if h : a = b then isTrue (h ▸ rfl)
-      else isFalse fun h' => h (TreeToken.atom.inj h')
-  | .pairL a, .pairL b =>
-      match instDecidableEqTreeToken a b with
-      | isTrue h => isTrue (h ▸ rfl)
-      | isFalse h => isFalse fun h' => h (TreeToken.pairL.inj h')
-  | .pairR a, .pairR b =>
-      match instDecidableEqTreeToken a b with
-      | isTrue h => isTrue (h ▸ rfl)
-      | isFalse h => isFalse fun h' => h (TreeToken.pairR.inj h')
-  | .bot, .atom _ => isFalse fun h => nomatch h
-  | .bot, .pairL _ => isFalse fun h => nomatch h
-  | .bot, .pairR _ => isFalse fun h => nomatch h
-  | .atom _, .bot => isFalse fun h => nomatch h
-  | .atom _, .pairL _ => isFalse fun h => nomatch h
-  | .atom _, .pairR _ => isFalse fun h => nomatch h
-  | .pairL _, .bot => isFalse fun h => nomatch h
-  | .pairL _, .atom _ => isFalse fun h => nomatch h
-  | .pairL _, .pairR _ => isFalse fun h => nomatch h
-  | .pairR _, .bot => isFalse fun h => nomatch h
-  | .pairR _, .atom _ => isFalse fun h => nomatch h
-  | .pairR _, .pairL _ => isFalse fun h => nomatch h
-
 variable {α : Type*} [DecidableEq α]
 
 /-- Tree bottom `Δ_T`. -/
 def treeBot : TreeToken α := .bot
 
 /-! ## Projections -/
-
-private def atomInsert : TreeToken α → Finset α → Finset α
-  | .atom x => insert x
-  | .bot | .pairL _ | .pairR _ => id
-
-private def pairLInsert : TreeToken α → Finset (TreeToken α) → Finset (TreeToken α)
-  | .pairL t => insert t
-  | .bot | .atom _ | .pairR _ => id
-
-private def pairRInsert : TreeToken α → Finset (TreeToken α) → Finset (TreeToken α)
-  | .pairR t => insert t
-  | .bot | .atom _ | .pairL _ => id
-
-private instance : LeftCommutative (atomInsert : TreeToken α → Finset α → Finset α) :=
-  ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩
-
-private instance :
-    LeftCommutative (pairLInsert : TreeToken α → Finset (TreeToken α) → Finset (TreeToken α)) :=
-  ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩
-
-private instance :
-    LeftCommutative (pairRInsert : TreeToken α → Finset (TreeToken α) → Finset (TreeToken α)) :=
-  ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩
-
-def atomFinset (u : Finset (TreeToken α)) : Finset α :=
-  Multiset.foldr atomInsert (∅ : Finset α) u.1
-
-def pairLFinset (u : Finset (TreeToken α)) : Finset (TreeToken α) :=
-  Multiset.foldr pairLInsert (∅ : Finset (TreeToken α)) u.1
-
-def pairRFinset (u : Finset (TreeToken α)) : Finset (TreeToken α) :=
-  Multiset.foldr pairRInsert (∅ : Finset (TreeToken α)) u.1
 
 private theorem mem_foldr_atom (s : Multiset (TreeToken α)) (x : α) :
     x ∈ Multiset.foldr atomInsert (∅ : Finset α) s ↔ ∃ p ∈ s, p = .atom x := by
@@ -425,15 +366,6 @@ theorem pairLFinset_singleton_pairR (t : TreeToken α) :
 /-! ## Consistency and entailment -/
 
 variable (A : InfoSys α)
-
-/-- Consistency for trees (Scott §8 (4)–(7)). -/
-inductive TreeCon : Finset (TreeToken α) → Prop where
-  | left (u : Finset (TreeToken α))
-      (hA : atomFinset u ∈ A.Con)
-      (hL : pairLFinset u = ∅) (hR : pairRFinset u = ∅) : TreeCon u
-  | right (u : Finset (TreeToken α))
-      (hA : atomFinset u = ∅)
-      (hL : TreeCon (pairLFinset u)) (hR : TreeCon (pairRFinset u)) : TreeCon u
 
 theorem TreeCon_empty : TreeCon A (∅ : Finset (TreeToken α)) :=
   TreeCon.left _ (by rw [atomFinset_empty]; exact A.con_empty)

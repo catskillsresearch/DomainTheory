@@ -9,6 +9,8 @@ module
 
 public import DomainTheory.InformationSystems.InfoSys
 
+public import DomainTheory.InformationSystems.Factoid26.Token
+
 @[expose] public section
 
 /-!
@@ -32,12 +34,6 @@ u ⊢ X  iff  X = Δ  ∨  X ∈ u.
 namespace DomainTheory.InformationSystems
 
 namespace Factoid26
-
-/-- Tokens: `bot` ≃ `Δ`, or a graph atom `pair a b`. -/
-inductive Token (A B : Type*) where
-  | bot
-  | pair (a : A) (b : B)
-  deriving DecidableEq
 
 /-- Scott’s consistency: the pairs in `u` form a partial function `A ⇀ B`
 (`bot` is ignored). -/

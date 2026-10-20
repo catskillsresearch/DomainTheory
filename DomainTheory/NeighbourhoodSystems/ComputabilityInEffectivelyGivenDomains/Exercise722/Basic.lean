@@ -12,6 +12,8 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem4
 public import Mathlib.Data.Set.Insert
 import all Mathlib.Data.Set.Insert
 
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722.InS
+
 @[expose] public section
 
 /-!
@@ -90,9 +92,6 @@ We work with tokens `Σ = List Bool` (the words over `{0,1}`); a neighbourhood i
 (a "language"). We use a bespoke `concat` (rather than mathlib's `Language.*`) so that intersection,
 `Set.univ`, and singletons remain the native `Set` operations the neighbourhood-system API expects. -/
 
-/-- Scott's `XY = {στ ∣ σ ∈ X and τ ∈ Y}`: the concatenation of two languages. -/
-def concat (X Y : Set (List Bool)) : Set (List Bool) := {w | ∃ a ∈ X, ∃ b ∈ Y, a ++ b = w}
-
 @[simp] theorem mem_concat {X Y : Set (List Bool)} {w : List Bool} :
     w ∈ concat X Y ↔ ∃ a ∈ X, ∃ b ∈ Y, a ++ b = w := Iff.rfl
 
@@ -123,19 +122,6 @@ theorem concat_nonempty {X Y : Set (List Bool)} (hX : X.Nonempty) (hY : Y.Nonemp
   exact ⟨a ++ b, a, ha, b, hb, rfl⟩
 
 /-! ## The least-fixed-point family `S` -/
-
-/-- **Scott's family `S`**, as the least fixed point (an inductive predicate). A language `X` is *in
-`S`* iff it is built from the four generators:
-
-* `Σ = {0,1}*` itself (`Set.univ`);
-* a singleton `{σ}`;
-* a concatenation `XY` of two members;
-* a *non-empty* intersection `X ∩ Y` of two members. -/
-inductive InS : Set (List Bool) → Prop
-  | univ : InS Set.univ
-  | singleton (σ : List Bool) : InS {σ}
-  | mul {X Y : Set (List Bool)} : InS X → InS Y → InS (concat X Y)
-  | inter {X Y : Set (List Bool)} : InS X → InS Y → (X ∩ Y).Nonempty → InS (X ∩ Y)
 
 /-- **Every member of `S` is non-empty.** (`Σ` and singletons are non-empty; concatenation preserves
 non-emptiness; intersections are only admitted to `S` when non-empty.) This is what makes `S`

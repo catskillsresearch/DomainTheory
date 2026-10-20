@@ -10,6 +10,8 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62A.MemA
+
 @[expose] public section
 
 /-!
@@ -111,10 +113,6 @@ theorem npow_nonempty {V : NeighborhoodSystem β} (hn : 0 < n)
 
 /-! ### Scott's slot encoding `i ⋃_{j<n} 1ʲ0 X_j` over `{0,1}*`. -/
 
-/-- The slot prefix `i 1ʲ 0`: the leading tag bit `i` (Scott's `+/−`), then `j` ones, then a zero.
-Reaching component `j` of the tag-`i` tuple means matching this prefix. -/
-def slotPre (i : Bool) (j : ℕ) : Str := i :: (List.replicate j true ++ [false])
-
 /-- Parsing the `1ʲ0` body: the position of the first `false` pins down `j` and the remainder. -/
 theorem slot_list_inj : ∀ (j j' : ℕ) (u v : Str),
     List.replicate j true ++ false :: u = List.replicate j' true ++ false :: v → j = j' ∧ u = v
@@ -138,12 +136,6 @@ theorem slotPre_inj {i i' : Bool} {j j' : ℕ} {u v : Str}
   exact ⟨hi, hj, huv⟩
 
 variable {n : ℕ}
-
-/-- **Scott's tag-`i` tuple neighbourhood** `i ⋃_{j<n} 1ʲ0 X_j`: the union of the `n` slots, slot `j`
-holding `X j` behind the prefix `i 1ʲ 0`. (For `i = false`/`true` these are Scott's left/right
-copies, the `−`/`+` summands.) -/
-def embTuple (i : Bool) (X : Fin n → Set Str) : Set Str :=
-  {w | ∃ j : Fin n, ∃ w', w = slotPre i (j : ℕ) ++ w' ∧ w' ∈ X j}
 
 @[simp] theorem mem_embTuple {i : Bool} {X : Fin n → Set Str} {w : Str} :
     w ∈ embTuple i X ↔ ∃ j : Fin n, ∃ w', w = slotPre i (j : ℕ) ++ w' ∧ w' ∈ X j := Iff.rfl
@@ -207,14 +199,6 @@ theorem embTuple_ne {i i' : Bool} (h : i ≠ i') {X Y : Fin n → Set Str} (j : 
   exact h (slotPre_inj he).1
 
 /-! ### The neighbourhood system `A` solving `A ≅ Aⁿ + Aⁿ`. -/
-
-/-- **Scott's domain `A`** as the *least* family of subsets of `Σ* = {0,1}*` containing (i) the master
-`Σ*` and (ii) every tag-`i` tuple `i ⋃_{j<n} 1ʲ0 X_j` built from components `X j` already in `A`:
-
-`A = {Σ*} ∪ ⋃_{i∈{0,1}} { i ⋃_{j<n} 1ʲ0 X_j ∣ X_j ∈ A }`. -/
-inductive MemA (n : ℕ) : Set Str → Prop
-  | univ : MemA n Set.univ
-  | tuple (i : Bool) {X : Fin n → Set Str} : (∀ j, MemA n (X j)) → MemA n (embTuple i X)
 
 /-- Under `0 < n` every neighbourhood of `A` is non-empty (Scott's `∅ ∉ A`). -/
 theorem memA_nonempty (hn : 0 < n) : ∀ {W}, MemA n W → W.Nonempty := by

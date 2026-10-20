@@ -15,6 +15,9 @@ public import DomainTheory.InformationSystems.Factoid25
 public import DomainTheory.InformationSystems.Factoid33
 public import DomainTheory.InformationSystems.Factoid35
 
+public import DomainTheory.InformationSystems.Factoid75.BoolToken
+public import DomainTheory.InformationSystems.Factoid75.BoolPoint
+
 @[expose] public section
 
 /-!
@@ -128,18 +131,6 @@ theorem IsStrict_strictify (f : ApproximableMap A B) :
 end ApproximableMap
 
 /-! ## BOOL -/
-
-inductive BoolToken
-  | bot
-  | tru
-  | fls
-  deriving DecidableEq
-
-/-- Points of the flat BOOL domain: undefined, true, or false. -/
-inductive BoolPoint
-  | undef
-  | isTrue
-  | isFalse
 
 def boolSat : BoolPoint → BoolToken → Prop
   | .undef, .bot => True

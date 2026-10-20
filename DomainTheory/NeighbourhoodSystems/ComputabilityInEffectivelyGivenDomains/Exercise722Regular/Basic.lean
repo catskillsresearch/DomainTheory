@@ -11,6 +11,8 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import Mathlib.Logic.Encodable.Basic
 import all Mathlib.Logic.Encodable.Basic
 
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.SExpr
+
 @[expose] public section
 
 /-!
@@ -70,16 +72,6 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise722
 
 /-! ## Syntax and denotation -/
-
-/-- **The syntax of `S`-terms** (Scott's four generators): `Σ`, a singleton `{σ}`, concatenation
-`X·Y`, and intersection `X ∩ Y`. A fragment of regular expressions with `·` and `∩` and the
-universal language `Σ`, but no union / complement / star. -/
-inductive SExpr : Type
-  | sigma : SExpr
-  | single : List Bool → SExpr
-  | cat : SExpr → SExpr → SExpr
-  | cap : SExpr → SExpr → SExpr
-  deriving DecidableEq
 
 /- `deriving Encodable` builds a private auxiliary type, which a public instance cannot see.
 This encoding is the public replacement: constructor tag in `Nat.pair`'s first component. -/

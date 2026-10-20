@@ -30,4 +30,8 @@ structure Dom where
   /-- The neighbourhood system on `carrier`. -/
   sys : NeighborhoodSystem carrier
 
+/-- The function domain `(A → B)`; its carrier is `ApproximableMap A.sys B.sys` and its system is the
+function space `funSpace A.sys B.sys`. -/
+abbrev Dom.arrow (A B : Dom) : Dom := ⟨ApproximableMap A.sys B.sys, funSpace A.sys B.sys⟩
+
 end DomainTheory.NeighbourhoodSystems.Exercise508

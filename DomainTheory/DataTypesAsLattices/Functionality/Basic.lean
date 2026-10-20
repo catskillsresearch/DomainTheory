@@ -8,6 +8,8 @@ module
 public import DomainTheory.DataTypesAsLattices.Retracts
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 
+public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
+
 @[expose] public section
 
 /-!
@@ -218,16 +220,6 @@ def plotkinE (p q j : ℕ) : RestrictedEquiv where
   trans := by
     intro u v w ⟨hu, _hv, huv⟩ ⟨_hv', hw, hvw⟩
     exact ⟨hu, hw, Relation.EqvGen.trans _ _ _ huv hvw⟩
-
-/-- **Scott 1976, (4.43).** Modified LAMBDA terms for the `lamb` model. -/
-inductive LambTerm where
-  | var : ℕ → LambTerm
-  | zero : LambTerm
-  | succ : LambTerm → LambTerm
-  | pred : LambTerm → LambTerm
-  | condq : LambTerm → LambTerm → LambTerm → LambTerm → LambTerm
-  | app : LambTerm → LambTerm → LambTerm
-  | lam : ℕ → LambTerm → LambTerm
 
 /-- **Scott 1976, (4.42)–(4.43).** Semantics `ℋ⟦τ⟧ : env → lamb`. -/
 def Hinterp : LambTerm → Pomega → Pomega

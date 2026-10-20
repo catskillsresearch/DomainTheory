@@ -10,6 +10,9 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Dom
 
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Poly
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.CL
+
 @[expose] public section
 
 /-!
@@ -104,10 +107,6 @@ def Smap (Vx : NeighborhoodSystem αx) (Va : NeighborhoodSystem αa) (Vb : Neigh
 /-! ### Domains as data, and the function-domain constructor. -/
 
 
-/-- The function domain `(A → B)`; its carrier is `ApproximableMap A.sys B.sys` and its system is the
-function space `funSpace A.sys B.sys`. -/
-abbrev Dom.arrow (A B : Dom) : Dom := ⟨ApproximableMap A.sys B.sys, funSpace A.sys B.sys⟩
-
 /-! ### The three combinators as elements of the appropriate function domains. -/
 
 /-- `I = λx.x` as an element of `(X → X)`. -/
@@ -123,20 +122,6 @@ def Selem (X A B : Dom) :
   toFilter (Smap X.sys A.sys B.sys)
 
 /-! ### Syntax of `λ`-bodies with one free variable, and of variable-free combinator expressions. -/
-
-/-- `Poly X A`: an open term of type `A` with a single free variable of type `X`. Constructors:
-the variable, a closed constant (any element of any domain — "enough combinators available"), and
-application. This is the syntax of `λ`-bodies whose abstraction we want to eliminate. -/
-inductive Poly (X : Dom) : Dom → Type 1 where
-  | var : Poly X X
-  | con {A : Dom} (c : A.sys.Element) : Poly X A
-  | app {A B : Dom} (f : Poly X (A.arrow B)) (a : Poly X A) : Poly X B
-
-/-- `CL A`: a **variable-free** combinator expression of type `A`. The only constructors are
-constants and application, so application (`σ(τ)`) is the sole mode of combination. -/
-inductive CL : Dom → Type 1 where
-  | con {A : Dom} (c : A.sys.Element) : CL A
-  | app {A B : Dom} (f : CL (A.arrow B)) (a : CL A) : CL B
 
 /-- The denotation of an open term: the body as a function of its free variable. -/
 def Poly.denote {X : Dom} : {A : Dom} → Poly X A → X.sys.Element → A.sys.Element

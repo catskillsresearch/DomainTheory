@@ -13,6 +13,8 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise2
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.ScottSys
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpr
+
 @[expose] public section
 
 /-!
@@ -198,14 +200,6 @@ def prodMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMa
 
 *"Generate all constructs `T(X)` formed by the constants (`T(X) = 𝒟`), by the identity (`T(X) = X`),
 and by sums and products."* -/
-
-/-- **The functor-expression algebra.** A `T(X)` built from constants, the identity, and binary sums
-and products — Scott's closed family of constructs. -/
-inductive FExpr where
-  | const : ScottSys → FExpr
-  | var : FExpr
-  | sum : FExpr → FExpr → FExpr
-  | prod : FExpr → FExpr → FExpr
 
 /-- **The action of `T` on objects.** -/
 def FExpr.obj : FExpr → ScottSys → ScottSys

@@ -10,6 +10,8 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61.MemS
+
 @[expose] public section
 
 /-!
@@ -50,21 +52,6 @@ namespace Example61
 variable {α : Type*}
 
 /-! ### Token embeddings `0X`, `1P`, `2Q` and the master `Γ`. -/
-
-/-- `0X = {([], a) ∣ a ∈ X}`: the `0`-tagged copy of a `D`-neighbourhood `X` (empty `{1,2}`-path). -/
-def embZero (X : Set α) : Set (List Bool × α) := {t | t.1 = [] ∧ t.2 ∈ X}
-
-/-- `1P = {(1::p, a) ∣ (p, a) ∈ P}`: the `1`-prefixed copy of a `D^§`-neighbourhood `P`. -/
-def embL (P : Set (List Bool × α)) : Set (List Bool × α) := {t | ∃ p', t.1 = true :: p' ∧ (p', t.2) ∈ P}
-
-/-- `2Q = {(2::q, a) ∣ (q, a) ∈ Q}`: the `2`-prefixed copy of a `D^§`-neighbourhood `Q`. -/
-def embR (Q : Set (List Bool × α)) : Set (List Bool × α) := {t | ∃ q', t.1 = false :: q' ∧ (q', t.2) ∈ Q}
-
-/-- `1P ∪ 2Q`: the product-style neighbourhood of `D^§`. -/
-def embPair (P Q : Set (List Bool × α)) : Set (List Bool × α) := embL P ∪ embR Q
-
-/-- The master neighbourhood `Γ = {1,2}* 0 Δ` of `D^§`: any path, `D`-token in `Δ`. -/
-def Gamma (D : NeighborhoodSystem α) : Set (List Bool × α) := {t | t.2 ∈ D.master}
 
 @[simp] theorem mem_embZero {X : Set α} {p : List Bool} {a : α} :
     (p, a) ∈ embZero X ↔ p = [] ∧ a ∈ X := Iff.rfl
@@ -170,15 +157,6 @@ theorem Gamma_nonempty {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.No
   obtain ⟨a, ha⟩ := hD D.master D.master_mem; exact ⟨([], a), ha⟩
 
 /-! ### The neighbourhood system `D^§`. -/
-
-/-- **Example 6.1 (Scott 1981, PRG-19).** The neighbourhoods of `D^§`, defined inductively as the
-*least* family of subsets of `Γ` containing (i) `Γ`, (ii) `0X` for `X ∈ 𝒟`, and (iii) `1P ∪ 2Q`
-whenever it already contains `P` and `Q`. This is Scott's fixed-point family
-`𝒟^§ = {Γ} ∪ {0X ∣ X ∈ 𝒟} ∪ {1P ∪ 2Q ∣ P, Q ∈ 𝒟^§}`. -/
-inductive MemS (D : NeighborhoodSystem α) : Set (List Bool × α) → Prop
-  | gamma : MemS D (Gamma D)
-  | zero {X : Set α} : D.mem X → MemS D (embZero X)
-  | pair {P Q : Set (List Bool × α)} : MemS D P → MemS D Q → MemS D (embPair P Q)
 
 /-- Every neighbourhood of `D^§` is a subset of the master `Γ` (Scott's `𝒟^§ ⊆ 𝒫(Γ)`). -/
 theorem memS_subset_gamma {D : NeighborhoodSystem α} {W : Set (List Bool × α)}

@@ -7,6 +7,10 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Embedding
 
+public import DomainTheory.DataTypesAsLattices.Lambda.Term
+public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
+public import DomainTheory.DataTypesAsLattices.Lambda.Comb
+
 @[expose] public section
 
 /-!
@@ -16,9 +20,6 @@ Table 2, equations (2.1)–(2.28), Theorems 2.1–2.5.
 -/
 
 namespace DomainTheory.DataTypesAsLattices
-
-/-- Scott's integer convention: `n = {n}` as an element of `Pω`. -/
-def ofNat (n : ℕ) : Pomega := {n}
 
 @[simp] theorem mem_ofNat {n k : ℕ} : k ∈ ofNat n ↔ k = n := by simp [ofNat]
 
@@ -32,32 +33,10 @@ def maxExtend (p : ℕ → Pomega) (x : Pomega) : Pomega :=
     (∃ n, x = ofNat n ∧ k ∈ p n) ∨
     (x ≠ ∅ ∧ ∀ n, x ≠ ofNat n)}
 
-/-- **Scott 1976, Table 2.** Successor `x + 1 = {n + 1 | n ∈ x}`. -/
-def succSet (x : Pomega) : Pomega :=
-  {k | ∃ n ∈ x, k = n + 1}
-
-/-- **Scott 1976, Table 2.** Predecessor `x − 1 = {n | n + 1 ∈ x}`. -/
-def predSet (x : Pomega) : Pomega :=
-  {k | k + 1 ∈ x}
-
-/-- **Scott 1976, Table 2.** McCarthy conditional. -/
-def condSet (z x y : Pomega) : Pomega :=
-  {n | n ∈ x ∧ 0 ∈ z} ∪ {m | m ∈ y ∧ ∃ k, k + 1 ∈ z}
-
 /-- **Scott 1976, (4.4).** Doubly strict conditional
 `z ⊒ x, y = z ⊃ (z ⊃ x, ⊤), (z ⊃ ⊤, y)`. -/
 def dcondSet (z x y : Pomega) : Pomega :=
   condSet z (condSet z x topElem) (condSet z topElem y)
-
-/-- **Scott 1976, Table 2.** Syntax of LAMBDA. -/
-inductive Term where
-  | var : ℕ → Term
-  | zero : Term
-  | succ : Term → Term
-  | pred : Term → Term
-  | cond : Term → Term → Term → Term
-  | app : Term → Term → Term
-  | lam : ℕ → Term → Term
 
 def envSet (ρ : ℕ → Pomega) (i : ℕ) (v : Pomega) : ℕ → Pomega :=
   Function.update ρ i v
@@ -120,25 +99,6 @@ def nestApplyFin (u : Pomega) : ∀ {n : ℕ}, (Fin n → Pomega) → Pomega
   | 0, _ => u
   | _n + 1, xs => nestApplyFin (funOf u (xs 0)) (Fin.tail xs)
 
-def zeroC : Pomega := ofNat 0
-def sucC : Pomega := graph succSet
-def predC : Pomega := graph predSet
-def condC : Pomega :=
-  graph (fun x => graph (fun y => graph (fun z => condSet z x y)))
-def Kcomb : Pomega := graph (fun x => graph (fun _ => x))
-def Scomb : Pomega :=
-  graph (fun u => graph (fun v => graph (fun x => funOf (funOf u x) (funOf v x))))
-
-/-- Combinatory closure of the six constants of Theorem 2.4. -/
-inductive IsCombinatory : Pomega → Prop
-  | zero : IsCombinatory zeroC
-  | suc : IsCombinatory sucC
-  | pred : IsCombinatory predC
-  | cond : IsCombinatory condC
-  | K : IsCombinatory Kcomb
-  | S : IsCombinatory Scomb
-  | app {u v} : IsCombinatory u → IsCombinatory v → IsCombinatory (funOf u v)
-
 /-- **Scott 1976, (2.8).** `ω(u) = λ x. u(x(x))`. -/
 def omegaComb (u : Pomega) : Pomega :=
   graph (fun x => funOf u (funOf x x))
@@ -166,12 +126,6 @@ def setSum (x y : Pomega) : Pomega :=
 
 /-- **Scott 1976, (2.16).** `⊤ = Y(λx. 0 ∪ (x + 1))`. -/
 def topRec (x : Pomega) : Pomega := ofNat 0 ∪ succSet x
-
-/-- Combinatory expressions generated from the six constants and variables. -/
-inductive Comb where
-  | var : ℕ → Comb
-  | zero | suc | pred | cond | K | S
-  | app : Comb → Comb → Comb
 
 def ofComb : Comb → (ℕ → Pomega) → Pomega
   | .var i, ρ => ρ i

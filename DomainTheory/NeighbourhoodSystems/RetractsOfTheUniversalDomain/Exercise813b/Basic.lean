@@ -9,6 +9,8 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.Formula
+
 @[expose] public section
 
 /-!
@@ -53,15 +55,6 @@ the naming in the parenthetical literal instead of asserted.
 namespace DomainTheory.NeighbourhoodSystems
 
 /-! ### The formula language and its two evaluations -/
-
-/-- A minimal propositional-logic syntax over `ℵ₀` variables (indexed by `ℕ`). -/
-inductive Formula : Type
-  | var (i : ℕ) : Formula
-  | bot : Formula
-  | top : Formula
-  | neg (φ : Formula) : Formula
-  | and (φ ψ : Formula) : Formula
-  | or (φ ψ : Formula) : Formula
 
 /-- The standard truth-valuation semantics: `v : ℕ → Bool` assigns each variable a truth value. -/
 def evalV (v : ℕ → Bool) : Formula → Bool

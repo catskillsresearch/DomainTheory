@@ -9,6 +9,12 @@ module
 
 public import DomainTheory.InformationSystems.Product
 
+public import DomainTheory.InformationSystems.Factoid83.VToken
+public import DomainTheory.InformationSystems.Factoid83.VEnt
+import all DomainTheory.InformationSystems.Factoid83.VEnt
+import all DomainTheory.InformationSystems.Factoid83.vPairLFinset
+import all DomainTheory.InformationSystems.Factoid83.vPairRFinset
+
 @[expose] public section
 
 /-!
@@ -34,14 +40,6 @@ set_option linter.unusedSectionVars false
 
 /-! ## Tokens of `V` (Scott (1)–(2)) -/
 
-/-- Data objects of `V`: bottom `Δ`, top `∇`, and product left/right copies. -/
-inductive VToken where
-  | bot : VToken
-  | top : VToken
-  | pairL : VToken → VToken
-  | pairR : VToken → VToken
-  deriving DecidableEq
-
 /-- Bottom `Δ_V`. -/
 def vBot : VToken := .bot
 
@@ -49,30 +47,6 @@ def vBot : VToken := .bot
 def vTop : VToken := .top
 
 /-! ## Projections `{X | (X,Δ) ∈ u}` and `{Y | (Δ,Y) ∈ u}` -/
-
-private def pairLInsert : VToken → Finset VToken → Finset VToken
-  | .pairL t => insert t
-  | .bot | .top | .pairR _ => id
-
-private def pairRInsert : VToken → Finset VToken → Finset VToken
-  | .pairR t => insert t
-  | .bot | .top | .pairL _ => id
-
-private instance :
-    LeftCommutative (pairLInsert : VToken → Finset VToken → Finset VToken) :=
-  ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩
-
-private instance :
-    LeftCommutative (pairRInsert : VToken → Finset VToken → Finset VToken) :=
-  ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩
-
-/-- Left projection: `{X | (X, Δ) ∈ u}`. -/
-def vPairLFinset (u : Finset VToken) : Finset VToken :=
-  Multiset.foldr pairLInsert (∅ : Finset VToken) u.1
-
-/-- Right projection: `{Y | (Δ, Y) ∈ u}`. -/
-def vPairRFinset (u : Finset VToken) : Finset VToken :=
-  Multiset.foldr pairRInsert (∅ : Finset VToken) u.1
 
 private theorem mem_foldr_pairL (s : Multiset VToken) (t : VToken) :
     t ∈ Multiset.foldr pairLInsert (∅ : Finset VToken) s ↔
@@ -200,20 +174,6 @@ theorem vPairRFinset_insert_pairL (u : Finset VToken) (t : VToken) :
   · exact Or.inr
 
 /-! ## Entailment for `V` (Scott (3)–(6)); all finite sets consistent -/
-
-/-- Entailment on `V` (Scott (3)–(6)). -/
-inductive VEnt : Finset VToken → VToken → Prop where
-  | bot {u : Finset VToken} : VEnt u .bot
-  | top_mem {u : Finset VToken} (h : .top ∈ u) : VEnt u .top
-  | top_both {u : Finset VToken}
-      (hL : VEnt (vPairLFinset u) .top) (hR : VEnt (vPairRFinset u) .top) :
-      VEnt u .top
-  | pairL_top {u : Finset VToken} {x : VToken} (h : .top ∈ u) : VEnt u (.pairL x)
-  | pairL_proj {u : Finset VToken} {x : VToken}
-      (h : VEnt (vPairLFinset u) x) : VEnt u (.pairL x)
-  | pairR_top {u : Finset VToken} {y : VToken} (h : .top ∈ u) : VEnt u (.pairR y)
-  | pairR_proj {u : Finset VToken} {y : VToken}
-      (h : VEnt (vPairRFinset u) y) : VEnt u (.pairR y)
 
 /-- Scott: all finite subsets of `D_V` are consistent. -/
 def VCon (_u : Finset VToken) : Prop := True

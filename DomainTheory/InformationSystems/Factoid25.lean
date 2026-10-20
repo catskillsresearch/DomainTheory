@@ -15,6 +15,8 @@ public import Mathlib.Tactic.NormNum
 import all Mathlib.Tactic.NormNum
 public import DomainTheory.InformationSystems.InfoSys
 
+public import DomainTheory.InformationSystems.Factoid25.Token
+
 @[expose] public section
 
 /-!
@@ -34,11 +36,6 @@ inhabited (Def 2.1(ii)). The always-true reading of `bot` matches Scott’s
 namespace DomainTheory.InformationSystems
 
 namespace Factoid25
-
-/-- Tokens: `bot` ≃ `(0, ∞)`, or a strict integer interval `(lo, hi)`. -/
-inductive Token : Type where
-  | bot
-  | interval (lo hi : ℕ) (hlt : lo < hi)
 
 namespace Token
 

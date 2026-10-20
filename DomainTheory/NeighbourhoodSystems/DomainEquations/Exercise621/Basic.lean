@@ -9,6 +9,8 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpr
+
 @[expose] public section
 
 /-!
@@ -332,15 +334,6 @@ identity, `+`, `×`) to also include the coalesced `⊕` and the smash `⊗`. Th
 on-maps/on-domains continuity properties are re-established by induction; the `⊕`/`⊗` composition
 law carries the strictness hypothesis (Scott's category is the **strict-map** category, and that is
 exactly what makes `⊕`/`⊗` functorial). -/
-
-/-- **The extended functor-expression algebra** (constants, identity, `+`, `×`, `⊕`, `⊗`). -/
-inductive GExpr where
-  | const : ScottSys → GExpr
-  | var : GExpr
-  | sum : GExpr → GExpr → GExpr
-  | prod : GExpr → GExpr → GExpr
-  | oplus : GExpr → GExpr → GExpr
-  | otimes : GExpr → GExpr → GExpr
 
 /-- **The action of `T` on objects.** -/
 def GExpr.obj : GExpr → ScottSys → ScottSys
