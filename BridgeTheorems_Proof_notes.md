@@ -1,0 +1,130 @@
+# Proof notes
+
+### 3.1 Continuous lattices → neighbourhood systems
+
+**Claim.** For a continuous lattice `D`, the sets `↟a = {z | a ≪ z}` form a
+`NeighborhoodSystem` on token type `D`, and under `IsContinuousLattice` one has an order
+isomorphism `D ≃o RoundFilter`.
+
+**Construction.** `wayBelowUp a` is upward closed; `↟⊥ = univ`;
+`↟a ∩ ↟b = ↟(a ⊔ b)` (interpolation / directedness of way-below). Principal filters
+`toFilter x = {↟a | a ≪ x}` are round: membership of `↟a` yields, by interpolation in a
+continuous lattice, some `b` with `a ≪ b ≪ x`, hence `↟b ∈ toFilter x`.
+
+**Why raw `|𝒟|` fails.** The larger filter `{↟a | a ≤ x}` still has `ofFilter = x`
+(supremum of codes), but is not equal to `toFilter x` whenever there are elements
+way-below strictly below `x`. Roundness (`↟a ∈ f ⇒ ∃ b, a ≪ b ∧ ↟b ∈ f`) cuts exactly
+to the image of `toFilter`.
+
+**Axioms.** `domainOrderIso : D ≃o RoundFilter` audits to `{propext, Quot.sound}`.
+
+### 3.2 Neighbourhood systems → information systems
+
+**Claim.** A neighbourhood system equipped with a decidable exhaustive coding
+`NbhdBasis ι α` of its neighbourhood family `𝒟` induces an `InfoSys` on tokens `ι`
+with `|𝒟| ≃o` the InfoSys domain.
+
+**Construction.** Tokens are neighbourhood indices. Consistency of a finite `u ⊆ ι` is
+membership of `⋂_{i∈u} nbhd i` in `𝒟` (empty intersection = master set `Δ`). Entailment
+`u ⊢ j` means the intersection is a neighbourhood contained in `nbhd j`. Filters of the
+neighbourhood system correspond to InfoSys elements via the coding.
+
+**Constructivity.** `DecidableEq ι` is required so `InfoSys` can use the choice-free
+`Finset` prelude from `scott1982`. The proof of `ent_con` avoids classical `by_cases` /
+`em`. The maps extract no witnesses; the kernel audit still reports inherited
+`Classical.choice` from the Mathlib 4.33 `Finset` instance frontier (§4).
+
+### 3.3 Information systems → neighbourhood systems
+
+**Claim.** For an information system `A`, the basic opens `[u] = {x ∈ |A| | ↑u ⊆ x}`
+(`u ∈ Con`) form a `NeighborhoodSystem` on `|A|`, and filters recover elements:
+`|A| ≃o` the filter domain.
+
+**Proof note.** Scott’s Factoid 4.6 supplies the basic-open vocabulary. The Lean proof
+initially pulled `Classical.choice` through `simp` on `basicOpen_empty` / finset unions;
+those simps were removed so the construction extracts no witnesses. The kernel audit
+still reports inherited `Classical.choice` through `InfoSys`/`Finset` (§4). Together
+with §3.2 this is the **1980 ↔ 1982** equivalence under coding.
+
+### 3.4 Information systems → ideal completion
+
+**Claim.** `|A| ≃o Ideal (FiniteElement A)`, where finite elements are closures `ū` of
+consistent finsets (`Factoid 3.5`).
+
+**Construction.** `toIdeal x` is the ideal of finite approximants of `x`; `ofIdeal`
+takes directed suprema of finite elements (1982 Factoids 4.4–4.5:
+`directedSup`, `eq_directedSup_finiteApproximants`, `compact_closure`). The maps
+extract no witnesses; the kernel audit inherits `Classical.choice` through
+`InfoSys`/`Finset` (§4).
+
+### 3.5 Algebraic complete lattices → continuous lattices
+
+**Claim.** If every element of a complete lattice is the directed supremum of compact
+elements below it (`IsAlgebraicLattice`), then `IsContinuousLattice` holds.
+
+**Proof note.** Order-theoretic compactness implies `Set.Ici k` is Scott-open, hence
+`k ≪ y` whenever `k ≤ y`. Algebraicity then yields `y = ⊔{k compact | k ≤ y} ⊆ ⊔{x | x ≪ y}`.
+This is the **classical frontier**: Scott’s `≪` is defined topologically in `scott1972`,
+so the footprint inherits that classicality even though the order argument is elementary.
+
+### 3.6 Three-presentation equivalence (`presentation_domains_equiv`)
+
+**Claim.** Under `IsContinuousLattice D` and `DecidableEq D`,
+```
+D ≃o RoundFilter ≃o RoundInfoSysElement
+```
+where `RoundInfoSysElement` is the subtype of elements of the InfoSys coded by
+`wayBelowNbhdBasis` (tokens = elements of `D`, neighbourhoods = `↟a`) that correspond
+to round filters. An extended form routes through the ideal-completion subtype.
+
+**Glue.** `wayBelowNbhdBasis` packages the `↟`-system as an `NbhdBasis`;
+`roundFilter_infoSys_iso` transports roundness along `NbhdBasis.domainOrderIso`;
+`presentation_domains_equiv` is the composite with `continuousLattice_roundFilter_iso`.
+
+**What is not claimed.** Raw `|𝒟|` and the full InfoSys domain `|A|` remain properly
+larger than `D`. The equivalence is on the **round** corner that matches continuous
+lattice points.
+
+**Axioms.** Under Mathlib 4.33 the kernel audit includes
+`{propext, Classical.choice, Quot.sound}` through the inherited InfoSys/`Finset`
+instance frontier described in §4; the round-filter construction itself performs no
+choice-based witness extraction.
+
+### 3.7 Constructions (`infoSys_constructions_equiv`)
+
+#### Products
+
+`|A| × |B| ≃o |A × B|` via 1982 `pairElements` / `fstMap` / `sndMap` (Prop 6.2).
+The maps use explicit projections and assembly, with no witness selection.
+
+#### Separated sums
+
+`WithBot (|A| ⊕ |B|) ≃o |A + B|` via `inl` / `inr` classify-and-assemble (Prop 6.4).
+Trichotomy on token polarity uses classical case-split (`Classical.choice` in the
+footprint).
+
+#### Function spaces
+
+`ApproximableMap A B ≃o |A → B|` packages Theorem 7.2
+(`approxMap_toElement` / `element_toApproxMap`) with pointwise `Le` as `PartialOrder`.
+No additional choice is used beyond the inherited InfoSys/`Finset` instance frontier.
+
+#### Factoid 4.6 bridge
+
+`ApproximableMap A B ≃o ScottContinuous A B` via `toScottContinuous` /
+`ofScottContinuous`, using Prop 5.3(v) (`rel_iff_closure_le`) and
+`closure_le_element` for the round-trip on relations. The relation-level proof performs
+no witness extraction; its kernel audit inherits the InfoSys/`Finset` frontier in §4.
+
+#### ScottMap conjugation
+
+A 1972 `ScottMap D E` conjugates along any pair of order isomorphisms
+`ιD : D ≃o D'`, `ιE : E ≃o E'` to a pointwise-ordered map `D' → E'`. Specializing to
+`continuousLattice_roundFilter_iso` / `presentation_domains_equiv` yields
+`scottMap_roundFilter_iso` and `scottMap_roundInfoSys_iso`. The conjugation itself is
+order-theoretic; the footprint includes `Classical.choice` because `ScottMap` is defined
+via Scott continuity in `scott1972`.
+
+**Out of scope (documented).** Identifying `ApproximableMap` on the coded `↟`-InfoSys
+with `ScottMap D E` (needs roundness preservation of approximable maps), and relating
+`wayBelow(D × E)` to the InfoSys product of factors (cylinder basis).
