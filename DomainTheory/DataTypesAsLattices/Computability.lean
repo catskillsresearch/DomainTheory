@@ -93,7 +93,7 @@ theorem REPred.and {α} [Primcodable α] {p q : α → Prop}
     REPred fun a => p a ∧ q a := by
   refine (hp.bind (hq.comp Computable.fst).to₂).of_eq fun a => ?_
   ext
-  simp [Part.bind_eq_bind, Part.assert]
+  simp [Part.assert]
 
 theorem IsRE.bot : IsRE botElem :=
   REPred.empty.of_eq fun n => by simp [botElem]
@@ -134,7 +134,7 @@ theorem primrec_testBit : Primrec₂ fun n k : ℕ => n.testBit k :=
     (Primrec.nat_mod.comp
       (Primrec.nat_div.comp Primrec.fst (primrec_twoPow.comp Primrec.snd))
       (Primrec.const 2))
-    (Primrec.const 1)).of_eq fun p =>
+    (Primrec.const 1)).of_eq fun _p =>
       Nat.testBit_eq_decide_div_mod_eq.symm
 
 theorem primrec_pair : Primrec₂ pair :=
@@ -192,10 +192,10 @@ theorem IsRE.of_e (j : ℕ) : IsRE (e j) := by
     ext n
     constructor
     · intro hn
-      simp [s, Finset.mem_filter] at hn
+      simp [s] at hn
       exact mem_e.mpr hn.2
     · intro hn
-      simp [s, Finset.mem_filter, Finset.mem_range, mem_e.mp hn,
+      simp [s, Finset.mem_range, mem_e.mp hn,
         Nat.lt_succ_of_le (mem_e_le hn)]
   simpa [hs] using IsRE.ofFinset s
 
@@ -273,8 +273,7 @@ theorem REPred.exists {p : ℕ → ℕ → Prop}
     have hmem : encode () ∈ Code.eval c (encode (n, m)) := by
       rw [hc, Part.mem_bind_iff]
       refine ⟨(n, m), ?_, ?_⟩
-      · change (n, m) ∈ (decode₂ (ℕ × ℕ) (encode (n, m)) : Part (ℕ × ℕ))
-        rw [decode₂_encode]
+      · rw [decode₂_encode]
         exact Part.mem_some_iff.mpr rfl
       · rw [Part.mem_map_iff]
         exact ⟨(), Part.mem_assert_iff.mpr ⟨hm, Part.mem_some_iff.mpr rfl⟩, rfl⟩
@@ -504,7 +503,7 @@ theorem lt_two_pow_of_high_bits {n k : ℕ}
       exact Nat.bit_lt_two_pow_succ_iff.mpr this
 
 theorem bits_subset_lt_two_pow {n b : ℕ} (h : e n ⊆ e b) : n < 2 ^ (b + 1) :=
-  lt_two_pow_of_high_bits fun j hj =>
+  lt_two_pow_of_high_bits fun _j hj =>
     Bool.eq_false_iff.2 fun hbit =>
       Nat.not_le.mpr hj (mem_e_le (h (mem_e.mpr hbit)))
 
@@ -526,7 +525,7 @@ theorem pos_bit_iff (n : ℕ) :
       (two_pow_le_of_testBit hk)
   · intro hn
     by_contra hex
-    push_neg at hex
+    push Not at hex
     have hlt : n < 2 := lt_two_pow_of_high_bits fun j hj => by
       cases j with
       | zero => exact (Nat.not_succ_le_zero 0 hj).elim
@@ -910,7 +909,7 @@ theorem topRecTerm_interp :
     interp topRecTerm (fun _ => botElem) = graph topRec := by
   apply congrArg graph
   funext v
-  simp [topRecTerm, topRec, interp, envSet, Function.update, eq_2_15]
+  simp [topRec, interp, envSet, Function.update, eq_2_15]
 
 theorem topElem_combinatory : IsCombinatory topElem := by
   have h : funOf Ycomb (interp topRecTerm (fun _ => botElem)) = topElem := by
@@ -1000,7 +999,7 @@ theorem addC_combinatory : IsCombinatory addC :=
         (.app .K addStepC_combinatory)))
 
 theorem addC_realizes2 : Realizes2 addC fun n m => n + m := fun n m => by
-  simp [Realizes2, addC_app, primRecComb_ofNat, primRecVal_add]
+  simp [addC_app, primRecComb_ofNat, primRecVal_add]
 
 /-- `λx. x ⊃ 0, x−1`, so numerals stay numerals. -/
 def safePredC : Pomega :=
@@ -1059,7 +1058,7 @@ theorem subC_combinatory : IsCombinatory subC :=
         (.app .K subStepC_combinatory)))
 
 theorem subC_realizes2 : Realizes2 subC fun n m => n - m := fun n m => by
-  simp [Realizes2, subC_app, primRecComb_ofNat, primRecVal_sub]
+  simp [subC_app, primRecComb_ofNat, primRecVal_sub]
 
 /-- `λx. primRecComb 0 (K (addC x))`. -/
 def mulC : Pomega :=
@@ -1101,7 +1100,7 @@ theorem primRecVal_mul (k : ℕ) : ∀ n,
       _ = ofNat (k * (n + 1)) := by rw [Nat.mul_succ, Nat.add_comm]
 
 theorem mulC_realizes2 : Realizes2 mulC fun n m => n * m := fun n m => by
-  simp [Realizes2, mulC_app, primRecComb_ofNat, primRecVal_mul]
+  simp [mulC_app, primRecComb_ofNat, primRecVal_mul]
 
 /-- `cond 1 0 n` is `1` on `0` and `0` on positive numerals. -/
 def isZeroC : Pomega := funOf (funOf condC (ofNat 1)) (ofNat 0)
@@ -1486,10 +1485,9 @@ theorem precC_realizes {f g : Pomega} {p q : ℕ → ℕ}
   simp only [interp, envSet, Function.update_self,
     Function.update_of_ne (by decide : (3 : ℕ) ≠ 0),
     Function.update_of_ne (by decide : (4 : ℕ) ≠ 0),
-    Function.update_of_ne (by decide : (5 : ℕ) ≠ 0),
     Function.update_of_ne (by decide : (6 : ℕ) ≠ 0),
     Function.update_of_ne (by decide : (7 : ℕ) ≠ 0),
-    Function.update_of_ne (by decide : (8 : ℕ) ≠ 0), precEnv]
+    precEnv]
   simp [Function.update]
   rw [unpairFstC_realizes, unpairSndC_realizes, hf, primRecOpC_app,
     primRecComb_ofNat]

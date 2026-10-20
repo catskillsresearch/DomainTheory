@@ -852,7 +852,7 @@ theorem untagRef_zero_case {c : ℕ} (h : (unnum c).1 = 0) :
 theorem untagRef_succ_case {c k : ℕ} (h : (unnum c).1 = k + 1) :
     untagRef c = (k :: (untagRef (unnum c).2).1, (untagRef (unnum c).2).2) := by
   have h0 : ¬ (unnum c).1 = 0 := by omega
-  rw [untagRef, dif_neg h0, h]
+  rw [untagRef, dite_eq_right h0, h]
   have hsub : k + 1 - 1 = k := by omega
   rw [hsub]
 

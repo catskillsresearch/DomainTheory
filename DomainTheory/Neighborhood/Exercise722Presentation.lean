@@ -706,7 +706,7 @@ theorem ssysConsistentBChar_eq_one_iff (n m : ℕ) :
       rw [hac, hbc, ← c9b5_sexprGodelEncode_eq, ← c9b5_sexprGodelEncode_eq,
         consistentBChar_eq_one_iff hfuel]
       have hnotinactive : (!ssysActive n || !ssysActive m) = false := by simp [hn, hm]
-      rw [hnotinactive, if_neg (by decide)]
+      rw [hnotinactive, ite_eq_right (by decide)]
       simp only [hdecn, hdecm]
       exact (consistentB_iff a b).symm
     · have hm0 : ssysActiveChar m = 0 := by
@@ -717,7 +717,7 @@ theorem ssysConsistentBChar_eq_one_iff (n m : ℕ) :
         cases hAm : ssysActive m with
         | false => rfl
         | true => exact absurd hAm hm
-      simp only [hm0, mulBit, mul_zero, selectFn_zero, hmf, Bool.not_false, Bool.or_true, if_true]
+      simp only [hm0, mulBit, mul_zero, selectFn_zero, hmf, Bool.not_false, Bool.or_true, ite_true]
   · have hn0 : ssysActiveChar n = 0 := by
       have hle := ssysActiveChar_le_one n
       have hne : ssysActiveChar n ≠ 1 := fun h => hn ((ssysActiveChar_eq_one_iff n).mp h)
@@ -726,7 +726,7 @@ theorem ssysConsistentBChar_eq_one_iff (n m : ℕ) :
       cases hAn : ssysActive n with
       | false => rfl
       | true => exact absurd hAn hn
-    simp only [hn0, mulBit, zero_mul, selectFn_zero, hnf, Bool.not_false, Bool.true_or, if_true]
+    simp only [hn0, mulBit, zero_mul, selectFn_zero, hnf, Bool.not_false, Bool.true_or, ite_true]
 
 /-! ### Session C9b8 — closing the `C9b` umbrella
 

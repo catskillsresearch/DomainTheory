@@ -1036,7 +1036,7 @@ theorem theorem_4_5_sum {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
         u = botElem ∨ u = topElem ∨
           (∃ x, u = pairSeq (ofNat 0) x ∧ typed x a) ∨
             (∃ y, u = pairSeq (ofNat 1) y ∧ typed y b)) :=
-  ⟨plusR_isRetract ha hb, plusR_isStrict a b, fun u => plusR_typed_iff ha hb⟩
+  ⟨plusR_isRetract ha hb, plusR_isStrict a b, fun _u => plusR_typed_iff ha hb⟩
 
 /-- **Scott 1976, (4.34).** `a ∘ outleft ∘ (a ⊕ b) : (a ⊕ b) ∘→ a`. -/
 theorem eq_4_34 {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
@@ -2420,7 +2420,7 @@ theorem eq_4_38 : treeR = plusR botElem (tensorR treeR treeR) := by
 
 /-- **Scott 1976, Theorem 4.6 applied to (4.38).** -/
 theorem treeR_isRetract : IsRetract treeR :=
-  (theorem_4_6 treeF_isScottContinuous (fun a ha =>
+  (theorem_4_6 treeF_isScottContinuous (fun _a ha =>
     plusR_isRetract bot_isRetract (tensorR_isRetract ha ha))).2
 
 theorem treeR_fixedPoint : treeF treeR = treeR := by
@@ -2504,7 +2504,7 @@ theorem lambF_isScottContinuous : IsScottContinuous lambF :=
 
 /-- **Scott 1976, Theorem 4.6 applied to (4.39).** -/
 theorem lambR_isRetract : IsRetract lambR :=
-  (theorem_4_6 lambF_isScottContinuous (fun a ha =>
+  (theorem_4_6 lambF_isScottContinuous (fun _a ha =>
     plusR_isRetract intR_isRetract (arrowR_isRetract ha ha))).2
 
 /-- **Scott 1976, (4.39).** `lamb = int ⊕ (lamb ∘→ lamb)`. -/
@@ -3028,7 +3028,7 @@ theorem eq_4_44 : expR = expF expR := by
 
 /-- **Scott 1976, Theorem 4.6 applied to (4.44).** -/
 theorem expR_isRetract : IsRetract expR :=
-  (theorem_4_6 expF_isScottContinuous (fun a ha =>
+  (theorem_4_6 expF_isScottContinuous (fun _a ha =>
     plus7_isRetract intR_isRetract bot_isRetract ha ha
       (tensor4_isRetract ha ha ha ha) (tensorR_isRetract ha ha)
       (tensorR_isRetract intR_isRetract ha))).2

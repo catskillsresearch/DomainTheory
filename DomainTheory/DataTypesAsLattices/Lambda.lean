@@ -553,7 +553,7 @@ theorem theorem_2_2 (i : ℕ) (body : Term) (ρ : ℕ → Pomega) (y : Pomega) :
           interp (.lam i body) ρ = interp (.lam i σ) ρ :=
   ⟨fun j h => theorem_2_2_alpha i j body ρ h,
     theorem_2_2_beta i body ρ y,
-    fun σ h => theorem_2_2_xi h⟩
+    fun _σ h => theorem_2_2_xi h⟩
 
 def curry2 (f : Pomega → Pomega → Pomega)
     (_hfx : ∀ y, IsScottContinuous (fun x => f x y))
@@ -582,8 +582,8 @@ theorem theorem_2_3_binary {f : Pomega → Pomega → Pomega}
   ⟨curry2 f hfx hfy, curry2_app f hfx hfy⟩
 
 def curry3 (f : Pomega → Pomega → Pomega → Pomega)
-    (hf0 : ∀ y z, IsScottContinuous (fun x => f x y z))
-    (hf1 : ∀ x z, IsScottContinuous (fun y => f x y z))
+    (_hf0 : ∀ y z, IsScottContinuous (fun x => f x y z))
+    (_hf1 : ∀ x z, IsScottContinuous (fun y => f x y z))
     (_hf2 : ∀ x y, IsScottContinuous (fun z => f x y z)) : Pomega :=
   graph (fun x => graph (fun y => graph (fun z => f x y z)))
 
@@ -896,7 +896,7 @@ theorem eq_2_7_bot (x y : Pomega) : condSet botElem x y = botElem := by
 
 theorem eq_2_7_zero (x y : Pomega) : condSet (ofNat 0) x y = x := by
   ext n
-  simp [condSet, ofNat, botElem]
+  simp [condSet, ofNat]
 
 theorem eq_2_7_succ (x y : Pomega) (k : ℕ) :
     condSet (ofNat (k + 1)) x y = y := by
@@ -986,7 +986,7 @@ theorem eq_2_14 :
       induction n with
       | zero => rfl
       | succ n ih => simp [iterateBot, ih]
-    simpa [this n] using hkn
+    simp [this n] at hkn
   · intro k hk
     exact hk.elim
 
@@ -1230,12 +1230,12 @@ theorem abs_correct (i : ℕ) (c : Comb) (ρ : ℕ → Pomega) :
   | var j =>
     simp only [abs, ofComb]
     by_cases hj : j = i
-    · rw [if_pos hj]
+    · rw [ite_eq_left hj]
       simp only [ofComb]
       convert SKK_eq_I
       funext v
       simp [envSet, Function.update, hj]
-    · rw [if_neg hj]
+    · rw [ite_eq_right hj]
       simp [ofComb, Kcomb_beta, envSet, Function.update, hj]
   | zero => simp [abs, ofComb, Kcomb_beta]
   | suc => simp [abs, ofComb, Kcomb_beta]
@@ -1415,7 +1415,7 @@ theorem eq_2_7_mix (x y z : Pomega) (h0 : 0 ∈ z) (hne : z ≠ ofNat 0) :
         exact h ⟨k - 1, by
           have : k = (k - 1) + 1 := (Nat.succ_pred_eq_of_ne_zero hk0).symm
           rwa [← this]⟩
-      simpa [this, ofNat]
+      simp [this, ofNat]
     · intro hk
       simp [ofNat] at hk
       subst hk
@@ -2329,23 +2329,13 @@ theorem dollarStepTerm_interp :
   unfold dollarStepTerm termDollarStep termDollarStepBody termShift interp
   apply congrArg graph
   funext s
-  simp only [envSet, Function.update_self, Function.update_of_ne (by decide : (1 : ℕ) ≠ 0),
-    Function.update_of_ne (by decide : (2 : ℕ) ≠ 0),
-    Function.update_of_ne (by decide : (3 : ℕ) ≠ 0),
-    Function.update_of_ne (by decide : (2 : ℕ) ≠ 1),
-    Function.update_of_ne (by decide : (3 : ℕ) ≠ 1),
-    Function.update_of_ne (by decide : (3 : ℕ) ≠ 2)]
+  simp only [envSet]
   apply congrArg graph
   funext u
-  simp only [envSet, Function.update_self,
-    Function.update_of_ne (by decide : (2 : ℕ) ≠ 1),
-    Function.update_of_ne (by decide : (3 : ℕ) ≠ 1),
-    Function.update_of_ne (by decide : (0 : ℕ) ≠ 1),
-    Function.update_of_ne (by decide : (3 : ℕ) ≠ 2),
-    Function.update_of_ne (by decide : (0 : ℕ) ≠ 2)]
+  simp only [envSet]
   apply congrArg graph
   funext z
-  simp [envSet, Function.update, condSet, succSet]
+  simp [envSet, condSet, succSet]
   rfl
 
 theorem ofNat_combinatory : ∀ n, IsCombinatory (ofNat n)
@@ -2374,11 +2364,8 @@ theorem primRecStepTerm_interp (a f u n : Pomega) :
       condSet n a (funOf (funOf f (predSet n)) (funOf u (predSet n))) := by
   change funOf (funOf (funOf (funOf (interp (.lam 0 _) (fun _ => botElem)) a) f) u) n = _
   rw [theorem_2_2_beta]
-  change funOf (funOf (funOf (interp (.lam 1 _) _) f) u) n = _
   rw [theorem_2_2_beta]
-  change funOf (funOf (interp (.lam 2 _) _) u) n = _
   rw [theorem_2_2_beta]
-  change funOf (interp (.lam 3 _) _) n = _
   rw [theorem_2_2_beta]
   simp [interp, envSet, Function.update]
 
@@ -2395,6 +2382,6 @@ theorem primRecStep_graph_of (a f : Pomega) :
   funext u
   apply congrArg graph
   funext n
-  simp [primRecStep, interp, envSet, Function.update]
+  simp [interp, envSet, Function.update]
 
 end DomainTheory.DataTypesAsLattices

@@ -1253,7 +1253,7 @@ theorem atomUCode_inter_succ_empty_of_junk {n k : ℕ} (hn0 : atomUEmpty P n k =
       unfold atomUEmpty
       rw [hp, hnge]
       exact hjunk
-    rw [if_pos hδ]
+    rw [ite_eq_left hδ]
     exact atomUCode_disjoint_YseqCode_of_posTwin_empty P hn0 htwinJunk
   · -- `k` has bit `n` unset: the "negative refinement" alone is empty, so `k`'s own atom already
     -- coincides with its positive twin's atom (`DAtom_union`), which forces junk at `n + 1`.
@@ -1303,7 +1303,7 @@ theorem atomUCode_inter_succ_empty_of_junk {n k : ℕ} (hn0 : atomUEmpty P n k =
       intro z hz
       have hz' : z ∈ UX (atomUCode P n k) ∩ UX (YseqCode P n) := by rw [← hkey]; exact hz
       exact hz'.2
-    rw [if_neg (by simp [hδ])]
+    rw [ite_eq_right (by simp [hδ])]
     apply Set.eq_empty_iff_forall_notMem.mpr
     rintro z ⟨hz1, -, hz2⟩
     exact hz2 (hsub hz1)

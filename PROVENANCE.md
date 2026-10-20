@@ -149,3 +149,25 @@ sources; merged classification/automation/known-gaps/limitations).
 The union does not itself register `DomainTheory`: a merged
 `comparator.json` (union of the five `vendor/*/comparator.json` name
 lists, renamed) and a Challenge/Solution pair remain to be authored.
+
+## Warning-free build cleanup (2026-10-20)
+
+The assembled `DomainTheory/` copies (not `vendor/`) were cleaned so a
+from-scratch `lake build` on Lean/Mathlib v4.35.0 emits no warnings:
+
+- `lakefile.toml`: `allowNonModules = true` on the `DomainTheory` library
+  (Lake's opt-out for a deliberately pre-module-system library; Mathlib
+  v4.35.0 otherwise warns on every Mathlib import).
+- Deprecated renames throughout: `if_pos`/`if_neg`/`if_true`/`if_false` →
+  `ite_eq_left`/`ite_eq_right`/`ite_true`/`ite_false`, `dif_pos`/`dif_neg`
+  → `dite_eq_left`/`dite_eq_right`, `Set.mem_setOf_eq` →
+  `Set.mem_ofPred_eq`, `Bool.cond_true`/`Bool.cond_false`, `push_neg` →
+  `push Not`, and the deprecated imports `Mathlib.Data.Set.Lattice`,
+  `Mathlib.Data.Countable.Defs`, `Mathlib.Data.Real.Basic`,
+  `Mathlib.Data.Sum.Order` replaced by their successors.
+- Style/unused linters fixed in code: `letI`/`haveI` → `let`/`have` where
+  the linter flagged them, unused simp arguments removed, unused binders
+  renamed to `_name`, redundant `change`/`simpa` tactics removed or
+  simplified, two `intro` pairs merged, one Prop-valued `def` changed to
+  `theorem`, and `omit [TopologicalSpace …] in` added to the theorems the
+  unused-section-variable linter flagged (with its downstream cascade).

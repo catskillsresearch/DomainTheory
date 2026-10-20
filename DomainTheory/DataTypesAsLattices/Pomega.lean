@@ -5,7 +5,8 @@ Authors: Lars Warren Ericson.
 -/
 import Mathlib.Data.Nat.Bitwise
 import Mathlib.Data.Set.Finite.Basic
-import Mathlib.Data.Set.Lattice
+import Mathlib.Data.Set.Lattice.Bounded
+import Mathlib.Data.Set.Lattice.Disjoint
 
 /-!
 # Scott 1976, §1 — the universal domain `Pω`

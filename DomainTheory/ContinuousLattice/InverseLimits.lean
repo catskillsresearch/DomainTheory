@@ -116,7 +116,7 @@ continuous. -/
 theorem inverseLimit_coordinate_continuous (n : ℕ) :
     @Continuous (InverseLimit D P) (D n) (inverseLimitTopology D P)
       scottTopologicalSpace (fun x => x.1 n) := by
-  letI : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
+  let : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
   rw [continuous_def]
   intro U hU
   rw [isOpen_induced_iff]
@@ -152,11 +152,9 @@ theorem isGLB_sInf' (S : Set (InverseLimit D P)) :
     @IsGLB (InverseLimit D P)
       (inverseLimitPartialOrder D P).toPreorder.toLE S (sInf S) := by
   constructor
-  · intro x hx
-    intro n
+  · intro x hx n
     exact sInf_le (Set.mem_image_of_mem _ hx)
-  · intro b hb
-    intro n
+  · intro b hb n
     refine le_sInf ?_
     rintro _ ⟨x, hx, rfl⟩
     exact hb hx n
@@ -201,9 +199,9 @@ theorem coe_sSup_of_directed (S : Set (InverseLimit D P)) (hSne : S.Nonempty)
 stage Scott spaces is an embedding. -/
 theorem inverseLimit_t0Space :
     @T0Space (InverseLimit D P) (inverseLimitTopology D P) := by
-  letI : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
-  letI : ∀ n, T0Space (D n) := fun _ => scottTopology_t0Space
-  letI : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
+  let : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
+  let : ∀ n, T0Space (D n) := fun _ => scottTopology_t0Space
+  let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
   have hval : Topology.IsEmbedding (Subtype.val : InverseLimit D P → ∀ n, D n) :=
     ⟨⟨rfl⟩, Subtype.val_injective⟩
   exact hval.t0Space
@@ -213,10 +211,10 @@ theorem inverseLimit_specializationLe_iff (x y : InverseLimit D P) :
     @SpecializationLe (InverseLimit D P) (inverseLimitTopology D P) x y ↔ x ≤ y := by
   let stageOrder : ∀ n, Preorder (D n) := fun _ => inferInstance
   let limitOrder : Preorder (InverseLimit D P) := inferInstance
-  letI : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
-  letI : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
-  letI : ∀ n, Preorder (D n) := stageOrder
-  letI : Preorder (InverseLimit D P) := limitOrder
+  let : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
+  let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
+  let : ∀ n, Preorder (D n) := stageOrder
+  let : Preorder (InverseLimit D P) := limitOrder
   have hval : Topology.IsEmbedding (Subtype.val : InverseLimit D P → ∀ n, D n) :=
     ⟨⟨rfl⟩, Subtype.val_injective⟩
   rw [specializationLe_iff_specializes, ← hval.isInducing.specializes_iff, specializes_pi]
@@ -236,10 +234,10 @@ theorem inverseLimit_isInjectiveSpace (hD : ∀ n, IsContinuousLattice (D n)) :
   intro X Y _ _ e he f
   let stageOrder : ∀ n, Preorder (D n) := fun _ => inferInstance
   let limitOrder : Preorder (InverseLimit D P) := inferInstance
-  letI : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
-  letI : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
-  letI : ∀ n, Preorder (D n) := stageOrder
-  letI : Preorder (InverseLimit D P) := limitOrder
+  let : ∀ n, TopologicalSpace (D n) := fun _ => scottTopologicalSpace
+  let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
+  let : ∀ n, Preorder (D n) := stageOrder
+  let : Preorder (InverseLimit D P) := limitOrder
   let fcoord (n : ℕ) (x : X) : D n := (f x).1 n
   have hfcoord (n : ℕ) : @Continuous X (D n) _ scottTopologicalSpace (fcoord n) :=
     (inverseLimit_coordinate_continuous D P n).comp f.continuous
@@ -271,8 +269,8 @@ Proposition 3.8/Lemma 3.9 construction; Theorem 2.12 then gives the continuous-l
 on the existing componentwise complete lattice. -/
 theorem proposition_4_1 (hD : ∀ n, IsContinuousLattice (D n)) :
     IsContinuousLattice (InverseLimit D P) := by
-  letI : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
-  letI : T0Space (InverseLimit D P) := inverseLimit_t0Space D P
+  let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
+  let : T0Space (InverseLimit D P) := inverseLimit_t0Space D P
   exact (theorem_2_12_backward_exact (inverseLimit_isInjectiveSpace D P hD)
     (inverseLimit_specializationLe_iff D P)).1
 
@@ -281,8 +279,8 @@ topology: the subspace topology inherited from the Pi product of the stage Scott
 theorem inverseLimit_scottTopology_eq_induced_pi (hD : ∀ n, IsContinuousLattice (D n)) :
     (scottTopologicalSpace : TopologicalSpace (InverseLimit D P)) =
       inverseLimitTopology D P := by
-  letI : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
-  letI : T0Space (InverseLimit D P) := inverseLimit_t0Space D P
+  let : TopologicalSpace (InverseLimit D P) := inverseLimitTopology D P
+  let : T0Space (InverseLimit D P) := inverseLimit_t0Space D P
   exact (theorem_2_12_backward_exact (inverseLimit_isInjectiveSpace D P hD)
     (inverseLimit_specializationLe_iff D P)).2
 
@@ -362,11 +360,11 @@ def iComp (n : ℕ) (x : D n) (m : ℕ) : D m :=
   if h : n ≤ m then embLE D P h x else projLE D P (le_of_lt (not_le.mp h)) x
 
 theorem iComp_of_le {n m : ℕ} (h : n ≤ m) (x : D n) : iComp D P n x m = embLE D P h x :=
-  dif_pos h
+  dite_eq_left h
 
 theorem iComp_of_ge {n m : ℕ} (h : ¬ n ≤ m) (x : D n) :
     iComp D P n x m = projLE D P (le_of_lt (not_le.mp h)) x :=
-  dif_neg h
+  dite_eq_right h
 
 theorem iComp_self (n : ℕ) (x : D n) : iComp D P n x n = x := by
   rw [iComp_of_le D P (le_refl n), embLE_self]

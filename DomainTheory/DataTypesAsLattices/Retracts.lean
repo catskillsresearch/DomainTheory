@@ -430,7 +430,7 @@ theorem sSup_fixed_eq_sUnion {f : Pomega → Pomega} (hf : IsScottContinuous f)
     ((@sSup (Fixpoints f) (fixpointsCompleteLattice hf).toSupSet A :
         Fixpoints f) : Pomega) =
       ⋃₀ (Fixpoints.vals A) := by
-  letI := fixpointsCompleteLattice hf
+  let := fixpointsCompleteLattice hf
   let u : Fixpoints f :=
     ⟨⋃₀ (Fixpoints.vals A), directed_sUnion_fixed hf hA⟩
   apply subset_antisymm
@@ -475,7 +475,7 @@ theorem retractBasis_directed {a : Pomega} (ha : IsRetract a)
       exact isScottContinuous_monotone (funOf_isScottContinuous a)
         Set.subset_union_right
 
-theorem retractBasis_wayBelow {a : Pomega} (ha : IsRetract a)
+theorem retractBasis_wayBelow {a : Pomega} (_ha : IsRetract a)
     {x y : Fixpoints (funOf a)} (hy : y ∈ retractBasis a x) :
     WayBelow y x := by
   intro A hA hxA
@@ -561,7 +561,6 @@ theorem theorem_4_1_continuous {a : Pomega} (ha : IsRetract a) :
   obtain ⟨z, hz, hnz⟩ :=
     directed_finite_cover hs' (e_finite n) (by simpa [Fixpoints.vals] using hen)
   refine ⟨z, hz, ?_⟩
-  change (y : Pomega) ⊆ z
   rw [hyn]
   have := isScottContinuous_monotone (funOf_isScottContinuous a) hnz
   rwa [z.property] at this
@@ -573,7 +572,7 @@ theorem theorem_4_1 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     (∀ A : Set Pomega, A ⊆ Fixpoints f →
       gfpBelow f (⋂₀ A) ∈ Fixpoints f ∧
         lfpAbove f (⋃₀ A) ∈ Fixpoints f) ∧
-      ∀ {a} (ha : IsRetract a),
+      ∀ {a} (_ha : IsRetract a),
         Fixpoints (funOf a) = {x | typed x a} ∧
           ∀ x : Fixpoints (funOf a),
             IsDirectedSubset (retractBasis a x) ∧
@@ -768,7 +767,7 @@ theorem arrowR_functor {a b a' b' f f' : Pomega}
       have hf'y : ∀ y, funOf f' y = funOf b' (funOf f' (funOf a' y)) := by
         intro y
         simpa [comp_app] using congrArg (fun w => funOf w y) hf2
-      simp only [arrowR_app, comp_app]
+      simp only [comp_app]
       rw [hfx]
       exact (hf'y _).symm
 
@@ -1310,7 +1309,7 @@ theorem inverseLimit_iUnion_typed {F : Pomega → Pomega}
 /-- A point of the fixed-point range determines its sequence of finite
 projections. -/
 def fixedToInverseLimit {F : Pomega → Pomega}
-    (hf : IsScottContinuous F)
+    (_hf : IsScottContinuous F)
     (hret : ∀ a, IsRetract a → IsRetract (F a))
     (hstrict : ∀ a, IsRetract a → IsStrict a → IsStrict (F a))
     (hmono : ∀ {a b}, IsRetract a → IsStrict a →

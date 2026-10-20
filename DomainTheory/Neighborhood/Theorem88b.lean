@@ -43,7 +43,7 @@ other index fixed. -/
 def eIdx (n : ℕ) : ℕ :=
   if n = 0 then P.masterIdx else if n = P.masterIdx then 0 else n
 
-theorem eIdx_zero : eIdx P 0 = P.masterIdx := if_pos rfl
+theorem eIdx_zero : eIdx P 0 = P.masterIdx := ite_eq_left rfl
 
 theorem eIdx_involutive : Function.Involutive (eIdx P) := by
   intro n
@@ -69,15 +69,15 @@ theorem eIdx_primrec : Nat.Primrec (eIdx P) := by
     · rw [h1, selectFn_zero]
       have hnm : n ≠ P.masterIdx := by intro h; subst h; unfold isZero at h1; omega
       unfold eIdx
-      rw [if_neg hn0, if_neg hnm]
+      rw [ite_eq_right hn0, ite_eq_right hnm]
     · rw [h1, selectFn_one]
       have hnm : n = P.masterIdx := by unfold isZero at h1; omega
       unfold eIdx
-      rw [if_neg hn0, if_pos hnm]
+      rw [ite_eq_right hn0, ite_eq_left hnm]
   · rw [h0, selectFn_one]
     have hn0 : n = 0 := by unfold isZero at h0; omega
     unfold eIdx
-    rw [if_pos hn0]
+    rw [ite_eq_left hn0]
 
 /-- **The re-pointed presentation `P₀`**: `P`'s enumeration reindexed by `eIdx`, so that
 `P₀.X 0 = D.master`. Built via `ComputablePresentation.reindexInvolutive`, so every one of Scott's

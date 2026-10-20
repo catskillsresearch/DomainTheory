@@ -62,10 +62,10 @@ theorem amGM : ∀ {a b : ℕ}, 4 * a * b ≤ (a + b) * (a + b)
 theorem iter_sq_le (n guess : ℕ) : Nat.sqrt.iter n guess * Nat.sqrt.iter n guess ≤ n := by
   unfold Nat.sqrt.iter
   if h : (guess + n / guess) / 2 < guess then
-    rw [dif_pos h]
+    rw [dite_eq_left h]
     exact iter_sq_le n ((guess + n / guess) / 2)
   else
-    rw [dif_neg h]
+    rw [dite_eq_right h]
     apply Nat.mul_le_of_le_div
     omega
   termination_by guess
@@ -84,7 +84,7 @@ theorem lt_iter_succ_sq (n guess : ℕ) (hn : n < (guess + 1) * (guess + 1)) :
     n < (Nat.sqrt.iter n guess + 1) * (Nat.sqrt.iter n guess + 1) := by
   unfold Nat.sqrt.iter
   if h : (guess + n / guess) / 2 < guess then
-    rw [dif_pos h]
+    rw [dite_eq_left h]
     suffices hsuff : n < ((guess + n / guess) / 2 + 1) * ((guess + n / guess) / 2 + 1) from
       lt_iter_succ_sq n ((guess + n / guess) / 2) hsuff
     refine lt_of_mul_lt_mul_left' (a := 4 * (guess * guess)) ?_
@@ -100,7 +100,7 @@ theorem lt_iter_succ_sq (n guess : ℕ) (hn : n < (guess + 1) * (guess + 1)) :
     exact Nat.add_lt_add_left
       (Nat.lt_mul_div_succ _ (lt_of_le_of_lt (Nat.zero_le _) h)) _
   else
-    rw [dif_neg h]
+    rw [dite_eq_right h]
     exact hn
   termination_by guess
   decreasing_by exact h
@@ -108,9 +108,9 @@ theorem lt_iter_succ_sq (n guess : ℕ) (hn : n < (guess + 1) * (guess + 1)) :
 /-- `sqrt n` squared is `≤ n` (choice-free; mathlib's `Nat.sqrt_le` is classical). -/
 theorem sqrt_le (n : ℕ) : Nat.sqrt n * Nat.sqrt n ≤ n := by
   rcases Nat.lt_or_ge 1 n with h | h
-  · rw [Nat.sqrt, if_neg (Nat.not_le.mpr h)]
+  · rw [Nat.sqrt, ite_eq_right (Nat.not_le.mpr h)]
     exact iter_sq_le _ _
-  · rw [Nat.sqrt, if_pos h]
+  · rw [Nat.sqrt, ite_eq_left h]
     calc n * n ≤ 1 * n := Nat.mul_le_mul_right n h
       _ = n := Nat.one_mul n
 
@@ -118,7 +118,7 @@ theorem sqrt_le (n : ℕ) : Nat.sqrt n * Nat.sqrt n ≤ n := by
 `2 ^ (log₂ n / 2 + 1)` over-shoots `√n`, which feeds `lt_iter_succ_sq`. -/
 theorem lt_succ_sqrt (n : ℕ) : n < (Nat.sqrt n + 1) * (Nat.sqrt n + 1) := by
   rcases Nat.lt_or_ge 1 n with h | h
-  · rw [Nat.sqrt, if_neg (Nat.not_le.mpr h)]
+  · rw [Nat.sqrt, ite_eq_right (Nat.not_le.mpr h)]
     refine lt_iter_succ_sq _ _ ?_
     set g := 1 <<< (n.log2 / 2 + 1) with hg
     have hshift : g = 2 ^ (n.log2 / 2 + 1) := by rw [hg, Nat.shiftLeft_eq, Nat.one_mul]
@@ -128,7 +128,7 @@ theorem lt_succ_sqrt (n : ℕ) : n < (Nat.sqrt n + 1) * (Nat.sqrt n + 1) := by
       _ ≤ 2 ^ (2 * (n.log2 / 2 + 1)) := Nat.pow_le_pow_right (by decide) (by omega)
       _ = g * g := hgg.symm
       _ ≤ (g + 1) * (g + 1) := Nat.mul_le_mul (Nat.le_succ g) (Nat.le_succ g)
-  · rw [Nat.sqrt, if_pos h]
+  · rw [Nat.sqrt, ite_eq_left h]
     exact Nat.lt_of_lt_of_le (Nat.lt_succ_self n)
       (Nat.le_mul_of_pos_right (n + 1) (Nat.succ_pos n))
 
@@ -168,12 +168,12 @@ theorem sqrt_add_eq (q a : ℕ) (h : a ≤ q + q) : Nat.sqrt (q * q + a) = q := 
 theorem unpair_pair (a b : ℕ) : Nat.unpair (Nat.pair a b) = (a, b) := by
   rw [Nat.pair]
   if h : a < b then
-    rw [if_pos h]
+    rw [ite_eq_left h]
     show Nat.unpair (b * b + a) = (a, b)
     have be : Nat.sqrt (b * b + a) = b := sqrt_add_eq b a (by omega)
-    simp only [Nat.unpair, be, Nat.add_sub_cancel_left, if_pos h]
+    simp only [Nat.unpair, be, Nat.add_sub_cancel_left, ite_eq_left h]
   else
-    rw [if_neg h]
+    rw [ite_eq_right h]
     show Nat.unpair (a * a + a + b) = (a, b)
     have ae : Nat.sqrt (a * a + a + b) = a := by
       have e : a * a + a + b = a * a + (a + b) := by omega
@@ -181,7 +181,7 @@ theorem unpair_pair (a b : ℕ) : Nat.unpair (Nat.pair a b) = (a, b) := by
     have e1 : a * a + a + b - a * a = a + b := by omega
     have e2 : ¬ a + b < a := by omega
     have e3 : a + b - a = b := by omega
-    simp only [Nat.unpair, ae, e1, if_neg e2, e3]
+    simp only [Nat.unpair, ae, e1, ite_eq_right e2, e3]
 
 /-- First projection of the pairing round-trip. -/
 @[simp] theorem unpair_pair_fst (a b : ℕ) : (Nat.pair a b).unpair.1 = a := by rw [unpair_pair]
@@ -203,16 +203,16 @@ theorem pair_unpair (n : ℕ) : Nat.pair (Nat.unpair n).1 (Nat.unpair n).2 = n :
   have hadd := sqrt_le_add n
   rw [Nat.unpair]
   if h : n - Nat.sqrt n * Nat.sqrt n < Nat.sqrt n then
-    rw [if_pos h]
+    rw [ite_eq_left h]
     show Nat.pair (n - Nat.sqrt n * Nat.sqrt n) (Nat.sqrt n) = n
-    rw [Nat.pair, if_pos h]
+    rw [Nat.pair, ite_eq_left h]
     omega
   else
-    rw [if_neg h]
+    rw [ite_eq_right h]
     have hge : Nat.sqrt n ≤ n - Nat.sqrt n * Nat.sqrt n := Nat.le_of_not_lt h
     have hlt : ¬ Nat.sqrt n < n - Nat.sqrt n * Nat.sqrt n - Nat.sqrt n := by omega
     show Nat.pair (Nat.sqrt n) (n - Nat.sqrt n * Nat.sqrt n - Nat.sqrt n) = n
-    rw [Nat.pair, if_neg hlt]
+    rw [Nat.pair, ite_eq_right hlt]
     omega
 
 /-! ## Choice-free primitive-recursive arithmetic
@@ -1888,20 +1888,20 @@ theorem nthCode_foldl (i : ℕ) : ∀ (l : List ℕ) (s r : ℕ),
     by_cases h : i = s
     · subst h
       have he : (1 : ℕ) - ((i - i) + (i - i)) = 1 := by omega
-      rw [he, selectFn_one, if_neg (lt_irrefl i), if_pos (Nat.lt_succ_self i), Nat.sub_self,
+      rw [he, selectFn_one, ite_eq_right (lt_irrefl i), ite_eq_left (Nat.lt_succ_self i), Nat.sub_self,
         List.getD_cons_zero]
     · by_cases h2 : i < s
       · have he : (1 : ℕ) - ((s - i) + (i - s)) = 0 := by omega
-        rw [he, selectFn_zero, if_pos h2, if_pos (Nat.lt_succ_of_lt h2)]
+        rw [he, selectFn_zero, ite_eq_left h2, ite_eq_left (Nat.lt_succ_of_lt h2)]
       · have he : (1 : ℕ) - ((s - i) + (i - s)) = 0 := by omega
-        rw [he, selectFn_zero, if_neg h2, if_neg (show ¬ i < s + 1 by omega),
+        rw [he, selectFn_zero, ite_eq_right h2, ite_eq_right (show ¬ i < s + 1 by omega),
           show i - s = (i - (s + 1)) + 1 by omega, List.getD_cons_succ]
 
 theorem nthCode_eq (c i d : ℕ) : nthCode c i d = (decodeList c).getD i d := by
   unfold nthCode
   rw [foldCode_eq']
   have h := nthCode_foldl i (decodeList c) 0 d
-  rw [if_neg (Nat.not_lt_zero i), Nat.sub_zero] at h
+  rw [ite_eq_right (Nat.not_lt_zero i), Nat.sub_zero] at h
   exact h
 
 theorem primrec_nthStp : Nat.Primrec nthStp := by
@@ -2744,8 +2744,8 @@ private theorem appendListTabFn_eq (c1 c2 len1 i : ℕ) :
   unfold appendListTabFn
   simp only [unpair_pair_fst, unpair_pair_snd]
   by_cases hlt : i < len1
-  · rw [if_pos hlt, (isZero_succ_sub_len1 i len1).2 hlt, selectFn_one, nthCode_eq]
-  · rw [if_neg hlt, isZero_succ_sub_len1_zero i len1 (Nat.le_of_not_gt hlt), selectFn_zero,
+  · rw [ite_eq_left hlt, (isZero_succ_sub_len1 i len1).2 hlt, selectFn_one, nthCode_eq]
+  · rw [ite_eq_right hlt, isZero_succ_sub_len1_zero i len1 (Nat.le_of_not_gt hlt), selectFn_zero,
       nthCode_eq]
 
 theorem appendListCode_eq (c1 c2 : ℕ) :
@@ -2760,11 +2760,11 @@ theorem appendListCode_eq (c1 c2 : ℕ) :
         (fun j => appendListTabFn (Nat.pair j (Nat.pair c1 (Nat.pair c2 (decodeList c1).length)))) d hi,
       hf]
     by_cases hlt : i < (decodeList c1).length
-    · rw [if_pos hlt,
+    · rw [ite_eq_left hlt,
         show (decodeList c1).getD i 0 = (decodeList c1).getD i d from by
           rw [getD_eq_getElem_cf _ 0 hlt, getD_eq_getElem_cf _ d hlt],
         (getD_append_cf (decodeList c1) (decodeList c2) d hlt).symm]
-    · rw [if_neg hlt,
+    · rw [ite_eq_right hlt,
         show (decodeList c2).getD (i - (decodeList c1).length) 0 =
             (decodeList c2).getD (i - (decodeList c1).length) d from by
           have hi2 : i - (decodeList c1).length < (decodeList c2).length := by
@@ -3401,8 +3401,7 @@ private theorem primrec_matchesBCharBody {prev : ℕ → ℕ} (hprev : Nat.Primr
     rw [matchesBCharBody_eq]
     match tag : (t.unpair.1).unpair.1 with
     | 0 | 1 | 2 | 3 =>
-      simp [selectFn, isOne, mulBit,
-        ]
+      simp [selectFn, isOne, mulBit]
     | _ + 4 =>
       simp [selectFn, isOne, mulBit]
 

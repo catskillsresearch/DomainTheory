@@ -6,7 +6,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
 import DomainTheory.Neighborhood.Basic
-import Mathlib.Data.Countable.Defs
+import Mathlib.Basic.Countable.Defs
 import Mathlib.Data.Fintype.Powerset
 import Mathlib.Tactic
 

@@ -40,7 +40,7 @@ instance Ssys_countable : Countable {S : Set (List Bool) // Ssys.mem S} := by
       refine ⟨e, ?_⟩
       have hne : (denote e).Nonempty := he.symm ▸ hX.nonempty
       dsimp [f]
-      rw [dif_pos hne]
+      rw [dite_eq_left hne]
       exact Subtype.ext he
   exact Countable.of_equiv ({S : Set (List Bool) // InS S})
     (Equiv.subtypeEquivRight fun _ => Ssys_mem.symm)

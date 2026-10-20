@@ -1024,20 +1024,20 @@ theorem primrec_TinterCode {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Pr
   refine (primrec_selectFn (primrec_isZero.comp hf) hg hz2).of_eq fun n => ?_
   unfold TinterCode TeqChar
   by_cases h0 : f n = 0
-  · rw [if_pos h0, h0, isZero]; simp
-  · rw [if_neg h0]
+  · rw [ite_eq_left h0, h0, isZero]; simp
+  · rw [ite_eq_right h0]
     have hz0 : isZero (f n) = 0 := by unfold isZero; omega
     rw [hz0, selectFn_zero]
     by_cases h1 : g n = 0
-    · rw [if_pos h1, h1, isZero]; simp
-    · rw [if_neg h1]
+    · rw [ite_eq_left h1, h1, isZero]; simp
+    · rw [ite_eq_right h1]
       have hz0' : isZero (g n) = 0 := by unfold isZero; omega
       rw [hz0', selectFn_zero]
       by_cases h2 : f n = g n
       · have : isZero ((f n - g n) + (g n - f n)) = 1 := by unfold isZero; omega
-        rw [if_pos h2, this, selectFn_one]
+        rw [ite_eq_left h2, this, selectFn_one]
       · have : isZero ((f n - g n) + (g n - f n)) = 0 := by unfold isZero; omega
-        rw [if_neg h2, this, selectFn_zero]
+        rw [ite_eq_right h2, this, selectFn_zero]
 
 /-- **The `{0,1}` intersection-equality characteristic for `T`** (Scott's relation (i)). -/
 theorem Tpres_interEq_computable : RecDecidable₃ (fun n m k => Tenum n ∩ Tenum m = Tenum k) := by
@@ -1069,10 +1069,10 @@ theorem Tpres_cons_iff (n m : ℕ) :
   rw [Tenum_inter_eq_TinterCode n m]
   constructor
   · rintro ⟨k, hk⟩ hcontra
-    rw [if_pos hcontra] at hk
+    rw [ite_eq_left hcontra] at hk
     exact Tenum_ne_empty k (Set.subset_empty_iff.mp hk)
   · intro hne
-    rw [if_neg hne]
+    rw [ite_eq_right hne]
     exact ⟨TinterCode (min n 2) (min m 2), subset_rfl⟩
 
 /-- **The `{0,1}` consistency characteristic for `T`** (Scott's relation (ii)): `∃ k, Xₖ ⊆ Xₙ ∩ Xₘ`
@@ -1099,7 +1099,7 @@ def Tpres : ComputablePresentation Example23.T where
     (primrec_TinterCode (primrec_min Nat.Primrec.left (Nat.Primrec.const 2))
       (primrec_min Nat.Primrec.right (Nat.Primrec.const 2))).of_eq fun _ => rfl
   inter_spec {n m} h := by
-    rw [Tenum_inter_eq_TinterCode n m, if_neg ((Tpres_cons_iff n m).mp h)]
+    rw [Tenum_inter_eq_TinterCode n m, ite_eq_right ((Tpres_cons_iff n m).mp h)]
   masterIdx := 0
   masterIdx_spec := rfl
 
@@ -1132,12 +1132,12 @@ noncomputable def notFn (X : Set Token) : Set Token :=
   if X = zero then one else if X = one then zero else Example12.master
 
 theorem notFn_master : notFn Example12.master = Example12.master := by
-  unfold notFn; rw [if_neg master_ne_zero_T, if_neg master_ne_one_T]
+  unfold notFn; rw [ite_eq_right master_ne_zero_T, ite_eq_right master_ne_one_T]
 
-theorem notFn_zero : notFn zero = one := by unfold notFn; rw [if_pos rfl]
+theorem notFn_zero : notFn zero = one := by unfold notFn; rw [ite_eq_left rfl]
 
 theorem notFn_one : notFn one = zero := by
-  unfold notFn; rw [if_neg (Ne.symm zero_ne_one_T), if_pos rfl]
+  unfold notFn; rw [ite_eq_right (Ne.symm zero_ne_one_T), ite_eq_left rfl]
 
 theorem notFn_mem {X : Set Token} (hX : Example23.T.mem X) : Example23.T.mem (notFn X) := by
   rcases (Example12.mem_iff X).mp hX with rfl | rfl | rfl
@@ -1176,14 +1176,14 @@ theorem primrec_notCode {f : ℕ → ℕ} (hf : Nat.Primrec f) : Nat.Primrec (fu
   unfold notCode
   by_cases h1 : f n = 1
   · have h1' : TeqChar (f n) 1 = 1 := by unfold TeqChar isZero; omega
-    rw [if_pos h1, h1', selectFn_one]
+    rw [ite_eq_left h1, h1', selectFn_one]
   · have h1' : TeqChar (f n) 1 = 0 := by unfold TeqChar isZero; omega
-    rw [if_neg h1, h1', selectFn_zero]
+    rw [ite_eq_right h1, h1', selectFn_zero]
     by_cases h2 : f n = 2
     · have h2' : TeqChar (f n) 2 = 1 := by unfold TeqChar isZero; omega
-      rw [if_pos h2, h2', selectFn_one]
+      rw [ite_eq_left h2, h2', selectFn_one]
     · have h2' : TeqChar (f n) 2 = 0 := by unfold TeqChar isZero; omega
-      rw [if_neg h2, h2', selectFn_zero]
+      rw [ite_eq_right h2, h2', selectFn_zero]
 
 theorem notFn_Tenum (n : ℕ) : notFn (Tenum n) = Tenum (notCode (min n 2)) := by
   rw [Tenum_eq_canon n]
@@ -1218,12 +1218,12 @@ noncomputable def andFn (X Y : Set Token) : Set Token :=
   if X = zero then Y else if X = one then one else Example12.master
 
 theorem andFn_master (Y : Set Token) : andFn Example12.master Y = Example12.master := by
-  unfold andFn; rw [if_neg master_ne_zero_T, if_neg master_ne_one_T]
+  unfold andFn; rw [ite_eq_right master_ne_zero_T, ite_eq_right master_ne_one_T]
 
-theorem andFn_zero (Y : Set Token) : andFn zero Y = Y := by unfold andFn; rw [if_pos rfl]
+theorem andFn_zero (Y : Set Token) : andFn zero Y = Y := by unfold andFn; rw [ite_eq_left rfl]
 
 theorem andFn_one (Y : Set Token) : andFn one Y = one := by
-  unfold andFn; rw [if_neg (Ne.symm zero_ne_one_T), if_pos rfl]
+  unfold andFn; rw [ite_eq_right (Ne.symm zero_ne_one_T), ite_eq_left rfl]
 
 theorem andFn_mem {X Y : Set Token} (hX : Example23.T.mem X) (hY : Example23.T.mem Y) :
     Example23.T.mem (andFn X Y) := by
@@ -1283,14 +1283,14 @@ theorem primrec_andCode {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primr
   unfold andCode
   by_cases h1 : f n = 1
   · have h1' : TeqChar (f n) 1 = 1 := by unfold TeqChar isZero; omega
-    rw [if_pos h1, h1', selectFn_one]
+    rw [ite_eq_left h1, h1', selectFn_one]
   · have h1' : TeqChar (f n) 1 = 0 := by unfold TeqChar isZero; omega
-    rw [if_neg h1, h1', selectFn_zero]
+    rw [ite_eq_right h1, h1', selectFn_zero]
     by_cases h2 : f n = 2
     · have h2' : TeqChar (f n) 2 = 1 := by unfold TeqChar isZero; omega
-      rw [if_pos h2, h2', selectFn_one]
+      rw [ite_eq_left h2, h2', selectFn_one]
     · have h2' : TeqChar (f n) 2 = 0 := by unfold TeqChar isZero; omega
-      rw [if_neg h2, h2', selectFn_zero]
+      rw [ite_eq_right h2, h2', selectFn_zero]
 
 theorem andFn_Tenum (n m : ℕ) :
     andFn (Tenum n) (Tenum m) = Tenum (andCode (min n 2) (min m 2)) := by

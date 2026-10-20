@@ -633,7 +633,7 @@ theorem booleanMemE_ofOpen {U : Set Pomega} (hU : IsScottOpen U) :
     simp [ofNat] at he
     subst he
     intro k hk
-    simp [ofNat] at hk
+    simp at hk
     subst hk
     exact Nat.zero_lt_one
   · ext x
@@ -796,7 +796,7 @@ theorem theorem_6_6 :
         exact ⟨this.subset, this.symm.subset⟩
       · intro hx
         have : f x = e := subset_antisymm hx.1 hx.2
-        simpa [this]⟩
+        simp [this]⟩
 
 
 /-- **Scott 1976, Theorem 6.7, equalizer → `B_δ`.**

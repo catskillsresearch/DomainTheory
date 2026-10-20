@@ -159,12 +159,12 @@ variable {P₀ P₁}
 open scoped Classical in
 theorem smashEnum_proper {t : ℕ}
     (h : P₀.X t.unpair.1 ≠ V₀.master ∧ P₁.X t.unpair.2 ≠ V₁.master) :
-    smashEnum P₀ P₁ t = prodNbhd (P₀.X t.unpair.1) (P₁.X t.unpair.2) := if_pos h
+    smashEnum P₀ P₁ t = prodNbhd (P₀.X t.unpair.1) (P₁.X t.unpair.2) := ite_eq_left h
 
 open scoped Classical in
 theorem smashEnum_master {t : ℕ}
     (h : ¬(P₀.X t.unpair.1 ≠ V₀.master ∧ P₁.X t.unpair.2 ≠ V₁.master)) :
-    smashEnum P₀ P₁ t = prodNbhd V₀.master V₁.master := if_neg h
+    smashEnum P₀ P₁ t = prodNbhd V₀.master V₁.master := ite_eq_right h
 
 theorem smashEnum_mem (t : ℕ) : (smash V₀ V₁).mem (smashEnum P₀ P₁ t) := by
   by_cases h : P₀.X t.unpair.1 ≠ V₀.master ∧ P₁.X t.unpair.2 ≠ V₁.master
@@ -823,21 +823,21 @@ variable {P₀ P₁}
 
 open scoped Classical in
 theorem osumEnum_left {t : ℕ} (h : t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master) :
-    osumEnum P₀ P₁ t = inj₀ (P₀.X t.unpair.2) := if_pos h
+    osumEnum P₀ P₁ t = inj₀ (P₀.X t.unpair.2) := ite_eq_left h
 
 open scoped Classical in
 theorem osumEnum_right {t : ℕ} (h : t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V₁.master) :
     osumEnum P₀ P₁ t = inj₁ (P₁.X t.unpair.2) := by
   have h0 : ¬(t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master) := by
     rintro ⟨hc, -⟩; obtain ⟨h1, -⟩ := h; omega
-  unfold osumEnum; rw [if_neg h0, if_pos h]
+  unfold osumEnum; rw [ite_eq_right h0, ite_eq_left h]
 
 open scoped Classical in
 theorem osumEnum_master {t : ℕ}
     (h0 : ¬(t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master))
     (h1 : ¬(t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V₁.master)) :
     osumEnum P₀ P₁ t = sumMaster V₀ V₁ := by
-  unfold osumEnum; rw [if_neg h0, if_neg h1]
+  unfold osumEnum; rw [ite_eq_right h0, ite_eq_right h1]
 
 theorem osumEnum_mem (t : ℕ) : (osum h₀ h₁).mem (osumEnum P₀ P₁ t) := by
   by_cases hL : t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master
@@ -888,13 +888,13 @@ noncomputable def osumPresentation : ScottPresentation (osum h₀ h₁) where
       else if t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V₁.master then Nat.pair 1 t.unpair.2
       else Nat.pair 2 0 with hrdef
     have hr_left : ∀ t, (t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master) →
-        r t = Nat.pair 0 t.unpair.2 := fun t h => by simp only [hrdef]; exact if_pos h
+        r t = Nat.pair 0 t.unpair.2 := fun t h => by simp only [hrdef]; exact ite_eq_left h
     have hr_right : ∀ t, ¬(t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master) →
         (t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V₁.master) → r t = Nat.pair 1 t.unpair.2 :=
-      fun t h0 h1 => by simp only [hrdef]; rw [if_neg h0, if_pos h1]
+      fun t h0 h1 => by simp only [hrdef]; rw [ite_eq_right h0, ite_eq_left h1]
     have hr_master : ∀ t, ¬(t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master) →
         ¬(t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V₁.master) → r t = Nat.pair 2 0 :=
-      fun t h0 h1 => by simp only [hrdef]; rw [if_neg h0, if_neg h1]
+      fun t h0 h1 => by simp only [hrdef]; rw [ite_eq_right h0, ite_eq_right h1]
     have hval : ∀ t, osumEnum P₀ P₁ t = sumEnum P₀ P₁ (r t) := by
       intro t
       by_cases hL : t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master
@@ -907,8 +907,8 @@ noncomputable def osumPresentation : ScottPresentation (osum h₀ h₁) where
             sumEnum_master (by rw [unpair_pair_fst]; decide) (by rw [unpair_pair_fst]; decide)]
     have hbit0 : ∀ v, isOne v = if v = 1 then 1 else 0 := fun v => by
       by_cases h : v = 1
-      · rw [if_pos h, h]; rfl
-      · rw [if_neg h]; have h1 := isOne_le_one v; have h2 := isOne_eq_one_iff v; omega
+      · rw [ite_eq_left h, h]; rfl
+      · rw [ite_eq_right h]; have h1 := isOne_le_one v; have h2 := isOne_eq_one_iff v; omega
     have hrp : Nat.Primrec r := by
       have hchr1 : Nat.Primrec (fun t : ℕ => (1 - t.unpair.1) * isOne (f₀ t.unpair.2)) :=
         primrec_mul₂ (primrec_sub₂ (Nat.Primrec.const 1) Nat.Primrec.left)
@@ -925,11 +925,11 @@ noncomputable def osumPresentation : ScottPresentation (osum h₀ h₁) where
           = if (t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master) then 1 else 0 := by
         intro t
         by_cases hc : t.unpair.1 = 0 ∧ P₀.X t.unpair.2 ≠ V₀.master
-        · rw [if_pos hc]
+        · rw [ite_eq_left hc]
           have ht0 := hc.1
           have e1 : 1 - t.unpair.1 = 1 := by omega
           rw [e1, (hc₀1 _).mpr hc.2]
-        · rw [if_neg hc]
+        · rw [ite_eq_right hc]
           rcases not_and_or.mp hc with h | h
           · have e1 : 1 - t.unpair.1 = 0 := by omega
             rw [e1, Nat.zero_mul]
@@ -941,11 +941,11 @@ noncomputable def osumPresentation : ScottPresentation (osum h₀ h₁) where
           = if (t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V₁.master) then 1 else 0 := by
         intro t
         by_cases hc : t.unpair.1 = 1 ∧ P₁.X t.unpair.2 ≠ V₁.master
-        · rw [if_pos hc, (by rw [isOne_eq_one_iff]; exact hc.1 : isOne t.unpair.1 = 1),
+        · rw [ite_eq_left hc, (by rw [isOne_eq_one_iff]; exact hc.1 : isOne t.unpair.1 = 1),
             (hc₁1 _).mpr hc.2]
-        · rw [if_neg hc]
+        · rw [ite_eq_right hc]
           rcases not_and_or.mp hc with h | h
-          · have e1 : isOne t.unpair.1 = 0 := by rw [hbit0]; exact if_neg h
+          · have e1 : isOne t.unpair.1 = 0 := by rw [hbit0]; exact ite_eq_right h
             rw [e1, Nat.zero_mul]
           · have e2 : isOne (f₁ t.unpair.2) = 0 := by
               have hle := isOne_le_one (f₁ t.unpair.2)

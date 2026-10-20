@@ -6,7 +6,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
 import Mathlib.Order.Hom.Basic
-import Mathlib.Data.Sum.Order
+import Mathlib.Order.Sum.Order
 import Mathlib.Order.WithBot
 import DomainTheory.InformationSystems.Theorem72
 import DomainTheory.InformationSystems.Proposition64

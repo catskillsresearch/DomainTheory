@@ -81,7 +81,7 @@ theorem scottFunctionTopology_eq_induced_pi (X Y : Type*) [TopologicalSpace X]
     [TopologicalSpace Y] :
     scottFunctionTopology X Y = continuousMapInducedPiTopology X Y := by
   apply le_antisymm
-  · letI : TopologicalSpace C(X, Y) := scottFunctionTopology X Y
+  · let : TopologicalSpace C(X, Y) := scottFunctionTopology X Y
     change scottFunctionTopology X Y ≤ continuousMapInducedPiTopology X Y
     rw [← continuous_iff_le_induced]
     exact continuous_pi fun x =>
@@ -97,7 +97,7 @@ theorem scottFunctionTopology_eq_induced_pi (X Y : Type*) [TopologicalSpace X]
     exact ⟨{g : X → Y | g x ∈ U}, (@continuous_apply X (fun _ => Y)
       (fun _ => inferInstance) x).isOpen_preimage U hU, rfl⟩
 
-def specializationLe_generateOpen (f g : C(X, Y)) (hfg : ∀ x, SpecializationLe (f x) (g x))
+theorem specializationLe_generateOpen (f g : C(X, Y)) (hfg : ∀ x, SpecializationLe (f x) (g x))
     {V : Set (C(X, Y))} (hV : GenerateOpen (scottFunctionEvalSubbasis X Y) V) (hf : f ∈ V) :
     g ∈ V :=
   match hV with
@@ -116,7 +116,7 @@ def specializationLe_generateOpen (f g : C(X, Y)) (hfg : ∀ x, SpecializationLe
 theorem scottFunctionSpecializationLe {f g : C(X, Y)} :
     letI := scottFunctionTopology X Y
     SpecializationLe f g ↔ ∀ x, SpecializationLe (f x) (g x) := by
-  letI : TopologicalSpace (C(X, Y)) := scottFunctionTopology X Y
+  let : TopologicalSpace (C(X, Y)) := scottFunctionTopology X Y
   constructor
   · intro hfg x U hU hfU
     exact hfg {h | h x ∈ U} (scottFunctionSubbasis_isOpen (X := X) (Y := Y) hU) hfU
@@ -454,7 +454,7 @@ theorem stepMap_wayBelow {e : D} {e' : D'} {f : ScottMap D D'}
   · intro g g' hgg' hg
     exact hg.trans_le (hgg' e)
   · intro F hFne hFdir hmem
-    simp only [Set.mem_setOf_eq, ScottMap.sSup_apply] at hmem
+    simp only [Set.mem_ofPred_eq, ScottMap.sSup_apply] at hmem
     have hne : (Set.image (fun g : ScottMap D D' => (g : D → D') e) F).Nonempty := hFne.image _
     have hdir : DirectedOn (· ≤ ·) (Set.image (fun g : ScottMap D D' => (g : D → D') e) F) := by
       rintro _ ⟨a, ha, rfl⟩ _ ⟨b, hb, rfl⟩
@@ -551,15 +551,15 @@ from the literal Pi product of the codomain Scott topology. -/
 theorem scottMapPointwiseTopology_eq_induced_pi :
     scottMapPointwiseTopology D D' = scottMapInducedPiTopology D D' := by
   apply le_antisymm
-  · letI : TopologicalSpace D' := scottTopologicalSpace
-    letI : TopologicalSpace (ScottMap D D') := scottMapPointwiseTopology D D'
+  · let : TopologicalSpace D' := scottTopologicalSpace
+    let : TopologicalSpace (ScottMap D D') := scottMapPointwiseTopology D D'
     change scottMapPointwiseTopology D D' ≤ scottMapInducedPiTopology D D'
     rw [← continuous_iff_le_induced]
     exact continuous_pi fun x =>
       continuous_def.2 fun U hU => pointwiseSubbasic_isOpen (D := D) (D' := D') x hU
   · apply le_generateFrom_iff_subset_isOpen.2
     rintro W ⟨x, U, hU, rfl⟩
-    letI : TopologicalSpace D' := scottTopologicalSpace
+    let : TopologicalSpace D' := scottTopologicalSpace
     change @IsOpen (ScottMap D D')
       (TopologicalSpace.induced (fun f : ScottMap D D' => (f : D → D'))
         (@Pi.topologicalSpace D (fun _ => D') (fun _ => scottTopologicalSpace)))
@@ -573,7 +573,7 @@ theorem scottMapPointwiseTopology_eq_induced_pi :
 theorem pointwiseSubbasic_scottOpen (x : D) {U : Set D'} (hU : ScottOpen U) :
     ScottOpen {f : ScottMap D D' | (f : D → D') x ∈ U} := by
   refine ⟨fun f f' hff' hf => hU.1 (hff' x) hf, fun F hFne hFdir hmem => ?_⟩
-  simp only [Set.mem_setOf_eq, ScottMap.sSup_apply] at hmem
+  simp only [Set.mem_ofPred_eq, ScottMap.sSup_apply] at hmem
   have hne : (Set.image (fun g : ScottMap D D' => (g : D → D') x) F).Nonempty := hFne.image _
   have hdir : DirectedOn (· ≤ ·) (Set.image (fun g : ScottMap D D' => (g : D → D') x) F) := by
     rintro _ ⟨a, ha, rfl⟩ _ ⟨b, hb, rfl⟩
@@ -879,7 +879,7 @@ theorem retr_ambientSSup_eq_sSup (R : IsContinuousLatticeRetraction D D') (S : S
   have hne' : (Set.image (R.incl : D → D') S).Nonempty := Set.image_nonempty.2 hS
   rw [R.retr.preservesDirectedSup_coe (Set.image (R.incl : D → D') S) hne' hdir']
   rw [Set.image_image, Set.image_congr fun a _ => R.retr_incl a]
-  simp [Set.image_id]
+  simp
 
 /-- The inclusion of a retraction preserves directed suprema (it is a Scott map). -/
 theorem incl_preservesDirectedSup (R : IsContinuousLatticeRetraction D D') :
@@ -1241,7 +1241,7 @@ theorem converseRetr_incl (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
     (hinj : Function.Injective i) (y : D) : converseRetr i (i y) = y := by
   have hset : {x | i x ≤ i y} = Set.Iic y := by
     ext x
-    simp only [Set.mem_setOf_eq, Set.mem_Iic]
+    simp only [Set.mem_ofPred_eq, Set.mem_Iic]
     exact ⟨le_of_incl_le hi hinj, fun hx => incl_mono_of_preservesSSup hi hx⟩
   show sSup {x | i x ≤ i y} = y
   rw [hset]
@@ -1252,7 +1252,7 @@ gives `⊔ j''S' ⊑ j(⊔S')`; conversely if `i x ⊑ ⊔S'` then for every `z 
 so `i z ⊑ x'` for some `x' ∈ S'` (directedness), whence `z ⊑ j(x') ⊑ ⊔ j''S'`; continuity of `D`
 then gives `x ⊑ ⊔ j''S'`. -/
 theorem converseRetr_preservesDirectedSup
-    (hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
+    (_hi : ∀ S : Set D, i (sSup S) = sSup (i '' S))
     (hwb : ∀ {x y : D}, x ≪ y → i x ≪ i y) (hD : IsContinuousLattice D) :
     PreservesDirectedSup (converseRetr i) := by
   intro S' hS'ne hS'dir
@@ -1322,6 +1322,7 @@ theorem sInf_image_le_sInf_image_of_subset {α : Type*} {f : α → D} {S T : Se
     obtain ⟨s, hs, rfl⟩ := hd
     exact ⟨s, hST hs, rfl⟩
 
+omit [TopologicalSpace Y] in
 theorem scottMap_eq_sSup_openInfs (hD : IsContinuousLattice D) (f' : ScottMap Y D) (y : Y) :
     (f' : Y → D) y =
       sSup { d | ∃ U, @IsOpen Y scottTopologicalSpace U ∧ y ∈ U ∧
@@ -1352,6 +1353,7 @@ theorem scottMap_eq_sSup_openInfs (hD : IsContinuousLattice D) (f' : ScottMap Y 
     obtain ⟨U, _hUopen, hyU, rfl⟩ := hd
     exact scottSubspaceExtendInf_le_of_mem (f' := f') hyU
 
+omit [TopologicalSpace X] [TopologicalSpace Y] in
 theorem scottSubspaceExtendInf_eq_of_comp {e : X → Y} {f : X → D} {U : Set Y}
     (f' : ScottMap Y D) (h : ∀ x, f' (e x) = f x) :
     scottSubspaceExtendInf e f U = sInf (Set.image (f' : Y → D) (Set.image e Set.univ ∩ U)) := by
@@ -1402,6 +1404,7 @@ theorem scottSubspaceExtendInf_mono {e : X → Y} {f g₀ : X → D} (hfg : ∀ 
   obtain ⟨x, hxU, rfl⟩ := hd
   exact le_trans (sInf_le ⟨x, hxU, rfl⟩) (hfg x)
 
+omit [TopologicalSpace X] [TopologicalSpace Y] in
 theorem scottSubspaceExtend_mono {e : X → Y} {f g₀ : X → D} (hfg : ∀ x, f x ≤ g₀ x) (y : Y) :
     scottSubspaceExtend e f y ≤ scottSubspaceExtend e g₀ y := by
   apply sSup_le
@@ -1412,6 +1415,7 @@ theorem scottSubspaceExtend_mono {e : X → Y} {f g₀ : X → D} (hfg : ∀ x, 
     ⟨U, hUopen, hyU, rfl⟩
   exact le_trans (scottSubspaceExtendInf_mono hfg U) (le_sSup hmem)
 
+omit [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y] in
 theorem scottSubspaceExtendInf_eq_of_ext {e : X → Y} {f g' : X → D} (h : ∀ x, f x = g' x) (U : Set Y) :
     scottSubspaceExtendInf e f U = scottSubspaceExtendInf e g' U := by
   unfold scottSubspaceExtendInf
@@ -1419,13 +1423,15 @@ theorem scottSubspaceExtendInf_eq_of_ext {e : X → Y} {f g' : X → D} (h : ∀
   ext d
   simp [Set.mem_image, Set.mem_preimage, h]
 
+omit [TopologicalSpace X] [TopologicalSpace Y] in
 theorem scottSubspaceExtend_eq_of_ext {e : X → Y} {f g' : X → D} (h : ∀ x, f x = g' x) (y : Y) :
     scottSubspaceExtend e f y = scottSubspaceExtend e g' y := by
   unfold scottSubspaceExtend
   congr 1
   ext d
-  simp [Set.mem_setOf_eq, scottSubspaceExtendInf_eq_of_ext h]
+  simp [Set.mem_ofPred_eq, scottSubspaceExtendInf_eq_of_ext h]
 
+omit [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y] in
 theorem scottSubspaceExtendInf_mono_retr {e : X → Y} {g : X → D'}
     (P : IsContinuousLatticeProjection D D') (U : Set Y) :
     P.retr (scottSubspaceExtendInf e g U) ≤ scottSubspaceExtendInf e (fun x => P.retr (g x)) U := by
@@ -1435,6 +1441,7 @@ theorem scottSubspaceExtendInf_mono_retr {e : X → Y} {g : X → D'}
   have hx : x ∈ e ⁻¹' U := Set.mem_preimage.mpr hxU
   exact (P.retr.monotone (sInf_le (Set.mem_image_of_mem g hx))).trans le_rfl
 
+omit [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y] in
 theorem scottSubspaceExtendInf_mono_incl {e : X → Y} {f : X → D} {g : X → D'}
     (P : IsContinuousLatticeProjection D D') (hfg : ∀ x, f x = P.retr (g x)) (U : Set Y) :
     scottSubspaceExtendInf e (fun x => P.incl (f x)) U ≤ scottSubspaceExtendInf e g U := by
@@ -1447,6 +1454,7 @@ theorem scottSubspaceExtendInf_mono_incl {e : X → Y} {f : X → D} {g : X → 
   have hincl : P.incl (f x) ≤ g x := by rw [hfg x]; exact P.incl_retr_le (g x)
   exact le_trans (sInf_le hmem) hincl
 
+omit [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y] in
 theorem scottSubspaceExtendInf_mono_incl_apply {e : X → Y} {f : X → D} (U : Set Y)
     (P : IsContinuousLatticeProjection D D') :
     P.incl (scottSubspaceExtendInf e f U) ≤ scottSubspaceExtendInf e (fun x => P.incl (f x)) U := by
@@ -1455,6 +1463,7 @@ theorem scottSubspaceExtendInf_mono_incl_apply {e : X → Y} {f : X → D} (U : 
   obtain ⟨x, hxU, rfl⟩ := hd
   exact P.incl.monotone (sInf_le (Set.mem_image_of_mem f (Set.mem_preimage.mpr hxU)))
 
+omit [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y] in
 /-- **Scott 1972, Lemma 3.9 (inclusion at infimum level).** Used in the inverse-limit
 argument (Theorem 4.4). -/
 theorem lemma_3_9_incl_inf {e : X → Y} (P : IsContinuousLatticeProjection D D')
@@ -1463,6 +1472,7 @@ theorem lemma_3_9_incl_inf {e : X → Y} (P : IsContinuousLatticeProjection D D'
   le_trans (scottSubspaceExtendInf_mono_incl_apply (e := e) (f := f) U P)
     (scottSubspaceExtendInf_mono_incl (e := e) (f := f) (g := g) P hfg U)
 
+omit [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y] in
 /-- **Scott 1972, Lemma 3.9 (retraction at infimum level).** The global equality
 `f̄ = j ∘ ḡ` assembles these infimum bounds via Proposition 3.10(i). -/
 theorem lemma_3_9_retr_inf {e : X → Y} (P : IsContinuousLatticeProjection D D') {g : X → D'}

@@ -21,3 +21,9 @@ rev = "v4.35.0"
 
 [[lean_lib]]
 name = "DomainTheory"
+# This library is deliberately written in pre-module-system style (plain
+# `import`s, no `module` headers), assembled from the vendored formalizations.
+# Mathlib v4.35.0 sets `requiresModuleSystem`, which would otherwise warn on
+# every Mathlib import; `allowNonModules` is Lake's sanctioned opt-out for a
+# library knowingly mixing non-module files with module-system dependencies.
+allowNonModules = true

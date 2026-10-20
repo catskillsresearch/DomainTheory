@@ -122,7 +122,7 @@ def toInfoSys : InfoSys ι where
     exact B.interOf_mem_of_lower_bound hu (B.interOf_anti hv)
   con_sing := by
     intro a
-    simpa [Set.mem_setOf_eq, B.interOf_singleton] using B.nbhd_mem a
+    simpa [Set.mem_ofPred_eq, B.interOf_singleton] using B.nbhd_mem a
   ent_con := by
     intro u a ⟨hu, hsub⟩
     have h₁ : B.interOf (insert a u) ⊆ B.interOf u :=
@@ -134,7 +134,7 @@ def toInfoSys : InfoSys ι where
       · exact hsub hx
       · exact (B.mem_interOf.mp hx).2 i hi
     have heq : B.interOf (insert a u) = B.interOf u := Set.Subset.antisymm h₁ h₂
-    simpa [Set.mem_setOf_eq, heq] using hu
+    simpa [Set.mem_ofPred_eq, heq] using hu
   ent_bot := by
     intro u hu
     refine ⟨hu, ?_⟩

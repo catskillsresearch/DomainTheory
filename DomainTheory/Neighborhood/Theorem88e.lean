@@ -59,7 +59,7 @@ theorem Yc_zero_eq_master : Yc P 0 = U.master := by
     show genAtom (idxSet (e P)) Set.univ (deltaOf 1) 0 ∩
       (if deltaOf 1 0 then idxSet (e P) 0 else Set.univ \ idxSet (e P) 0) ≠ ∅
     have hδ : deltaOf 1 0 = true := by decide
-    rw [hδ, if_pos rfl]
+    rw [hδ, ite_eq_left rfl]
     show (Set.univ : Set ℕ) ∩ idxSet (e P) 0 ≠ ∅
     rw [Set.univ_inter, hidx0]
     exact Set.univ_nonempty.ne_empty
@@ -123,15 +123,15 @@ theorem deltaOf_encodeBits (δ : ℕ → Bool) : ∀ n i, i < n → deltaOf (enc
     show deltaOf (encodeBits δ n + (if δ n then 2 ^ n else 0)) i = δ i
     rcases Nat.lt_succ_iff_lt_or_eq.mp hi with hi' | hi'
     · rcases Bool.eq_false_or_eq_true (δ n) with h | h
-      · rw [h, if_pos rfl, deltaOf_add_two_pow_of_lt _ hi']
+      · rw [h, ite_eq_left rfl, deltaOf_add_two_pow_of_lt _ hi']
         exact ih i hi'
-      · rw [h, if_neg (by simp), Nat.add_zero]
+      · rw [h, ite_eq_right (by simp), Nat.add_zero]
         exact ih i hi'
     · rw [hi']
       rcases Bool.eq_false_or_eq_true (δ n) with h | h
-      · rw [h, if_pos rfl]
+      · rw [h, ite_eq_left rfl]
         exact deltaOf_two_pow_add_self (encodeBits_lt δ n)
-      · rw [h, if_neg (by simp), Nat.add_zero, deltaOf_eq_testBit,
+      · rw [h, ite_eq_right (by simp), Nat.add_zero, deltaOf_eq_testBit,
           Nat.testBit_lt_two_pow (encodeBits_lt δ n)]
 
 /-- **The `genAtom`-emptiness core, for arbitrary `δ : ℕ → Bool`.** Realizes `δ`'s first `n` bits

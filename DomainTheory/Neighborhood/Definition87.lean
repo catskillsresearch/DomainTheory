@@ -8,7 +8,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 import DomainTheory.Neighborhood.Basic
 import Mathlib.Order.Interval.Set.LinearOrder
 import Mathlib.Data.List.Basic
-import Mathlib.Data.Set.Lattice
+import Mathlib.Data.Set.Lattice.Bounded
+import Mathlib.Data.Set.Lattice.Disjoint
 import Mathlib.Algebra.Order.Field.Rat
 import Mathlib.Tactic.NormNum
 import Mathlib.Algebra.Order.Field.Basic

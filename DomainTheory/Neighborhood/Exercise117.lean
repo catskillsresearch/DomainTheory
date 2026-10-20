@@ -6,7 +6,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
 import DomainTheory.Neighborhood.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Basic.Real.Basic
 import Mathlib.Data.Rat.Cast.Order
 import Mathlib.Algebra.Order.Archimedean.Real.Basic
 import Mathlib.Tactic

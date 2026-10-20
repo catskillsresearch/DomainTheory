@@ -94,21 +94,21 @@ theorem state_succ (n : ℕ) :
 
 theorem Y_succ_pos {n : ℕ} (h : cond V enum n) : Y V enum (n + 1) = enum (n + 1) := by
   show (state V enum (n + 1)).1 = enum (n + 1)
-  rw [state_succ, if_pos h]
+  rw [state_succ, ite_eq_left h]
 
 theorem Y_succ_neg {n : ℕ} (h : ¬ cond V enum n) : Y V enum (n + 1) = Y V enum n := by
   show (state V enum (n + 1)).1 = (state V enum n).1
-  rw [state_succ, if_neg h]
+  rw [state_succ, ite_eq_right h]
 
 theorem acc_succ_pos {n : ℕ} (h : cond V enum n) :
     acc V enum (n + 1) = acc V enum n ∩ enum (n + 1) := by
   show (state V enum (n + 1)).2 = acc V enum n ∩ enum (n + 1)
-  rw [state_succ, if_pos h]
+  rw [state_succ, ite_eq_left h]
 
 theorem acc_succ_neg {n : ℕ} (h : ¬ cond V enum n) :
     acc V enum (n + 1) = acc V enum n := by
   show (state V enum (n + 1)).2 = (state V enum n).2
-  rw [state_succ, if_neg h]
+  rw [state_succ, ite_eq_right h]
 
 /-- `acc n = ⋂_{i<n+1} Yᵢ`: the carried intersection is exactly the prefix intersection. -/
 theorem acc_eq_interUpTo : ∀ n, acc V enum n = V.interUpTo (Y V enum) (n + 1) := by
@@ -229,8 +229,8 @@ theorem filters_sequence_determined (x : V.Element) :
   refine ⟨fun i => if x.mem (enum i) then enum i else V.master, ?_, ?_⟩
   · intro n
     by_cases h : x.mem (enum n)
-    · simp only [if_pos h]; exact henum n
-    · simp only [if_neg h]; exact V.master_mem
+    · simp only [ite_eq_left h]; exact henum n
+    · simp only [ite_eq_right h]; exact V.master_mem
   · intro Z
     constructor
     · intro hZ
@@ -238,12 +238,12 @@ theorem filters_sequence_determined (x : V.Element) :
       have hxk : x.mem (enum k) := by rw [hk]; exact hZ
       refine ⟨x.sub hZ, k, ?_⟩
       show (if x.mem (enum k) then enum k else V.master) ⊆ Z
-      rw [if_pos hxk]; exact hk.subset
+      rw [ite_eq_left hxk]; exact hk.subset
     · rintro ⟨hZmem, n, hn⟩
       have hsx : x.mem (if x.mem (enum n) then enum n else V.master) := by
         by_cases h : x.mem (enum n)
-        · simp only [if_pos h]; exact h
-        · simp only [if_neg h]; exact x.master_mem
+        · simp only [ite_eq_left h]; exact h
+        · simp only [ite_eq_right h]; exact x.master_mem
       exact x.up_mem hsx hZmem hn
 
 end Exercise123

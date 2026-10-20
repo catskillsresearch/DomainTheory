@@ -113,7 +113,7 @@ theorem atomE_invariant :
       rw [atomE_succ]
       by_cases hδ : δ n = true
       · rw [show genAtom X Δ δ (n + 1) = genAtom X Δ δ n ∩ X n from by simp [genAtom, hδ]]
-        simp only [hδ, if_true]
+        simp only [hδ, ite_true]
         exact hspec.2.2.1
       · rw [Bool.not_eq_true] at hδ
         have hsub := genAtom_subset X Δ δ n
@@ -128,7 +128,7 @@ theorem atomE_invariant :
     · have hspec := hsplit (ihmatch δ) (ihmem δ) (X n)
       rw [atomE_succ]
       by_cases hδ : δ n = true
-      · simp only [hδ, if_true]; exact hspec.1
+      · simp only [hδ, ite_true]; exact hspec.1
       · simp only [hδ]; exact hspec.2.1
     · by_cases hagree : ∀ j < n, δ j = δ' j
       · have hδn : δ n ≠ δ' n := by
@@ -151,12 +151,12 @@ theorem atomE_invariant :
         have h1 : atomE E split X Δ δ (n + 1) ⊆ atomE E split X Δ δ n := by
           rw [atomE_succ]
           by_cases hδ : δ n = true
-          · simp only [hδ, if_true]; exact split_fst_subset' hsplit (ihmatch δ) (ihmem δ) (X n)
+          · simp only [hδ, ite_true]; exact split_fst_subset' hsplit (ihmatch δ) (ihmem δ) (X n)
           · simp only [hδ]; exact split_snd_subset' hsplit (ihmatch δ) (ihmem δ) (X n)
         have h2 : atomE E split X Δ δ' (n + 1) ⊆ atomE E split X Δ δ' n := by
           rw [atomE_succ]
           by_cases hδ' : δ' n = true
-          · simp only [hδ', if_true]; exact split_fst_subset' hsplit (ihmatch δ') (ihmem δ') (X n)
+          · simp only [hδ', ite_true]; exact split_fst_subset' hsplit (ihmatch δ') (ihmem δ') (X n)
           · simp only [hδ']; exact split_snd_subset' hsplit (ihmatch δ') (ihmem δ') (X n)
         exact Set.subset_eq_empty (Set.inter_subset_inter h1 h2) hd
 
@@ -167,7 +167,7 @@ theorem atomE_succ_subset (δ : ℕ → Bool) (n : ℕ) :
   obtain ⟨hmatch, hmem, -⟩ := atomE_invariant E split X Δ hΔ hEmne hsplit n
   rw [atomE_succ]
   by_cases hδ : δ n = true
-  · simp only [hδ, if_true]; exact split_fst_subset' hsplit (hmatch δ) (hmem δ) (X n)
+  · simp only [hδ, ite_true]; exact split_fst_subset' hsplit (hmatch δ) (hmem δ) (X n)
   · simp only [hδ]; exact split_snd_subset' hsplit (hmatch δ) (hmem δ) (X n)
 
 /-! ### `YseqE`: the abstract analogue of Scott's `Yₙ`
@@ -210,7 +210,7 @@ theorem split_fst_eq_inter_YseqE (δ : ℕ → Bool) (n : ℕ) :
       apply genAtom_congr; intro i hi; simp [hδ2def, Function.update_of_ne (ne_of_lt hi)]
     have hB2 : atomE E split X Δ δ2 n = B := by
       apply atomE_congr; intro i hi; simp [hδ2def, Function.update_of_ne (ne_of_lt hi)]
-    rw [hd2n, if_pos rfl, hA2, hB2]
+    rw [hd2n, ite_eq_left rfl, hA2, hB2]
   have hδ3_eq : atomE E split X Δ δ3 (n + 1) = I := (atomE_congr E split X Δ hagreefull).trans hI_eq
   apply Set.Subset.antisymm
   · have hIsubB : I ⊆ B := split_fst_subset' hsplit (hmatch δ) (hmem δ) (X n)
@@ -223,7 +223,7 @@ theorem split_fst_eq_inter_YseqE (δ : ℕ → Bool) (n : ℕ) :
       have hBeq : atomE E split X Δ (extendTrue δ') n = B := atomE_congr E split X Δ hagree
       have hlast : extendTrue δ' n = true := by simp [extendTrue]
       have heq : atomE E split X Δ (extendTrue δ') (n + 1) = I := by
-        rw [atomE_succ, hAeq, hBeq, hlast, if_pos rfl]
+        rw [atomE_succ, hAeq, hBeq, hlast, ite_eq_left rfl]
       rwa [heq] at hz'
     · push Not at hagree
       obtain ⟨j, hj, hjne⟩ := hagree
@@ -248,8 +248,8 @@ theorem atomE_succ_eq (δ : ℕ → Bool) (n : ℕ) :
   have hspec := hsplit (hmatch δ) (hmem δ) (X n)
   have hIeq := split_fst_eq_inter_YseqE E split X Δ hΔ hEmne hsplit δ n
   by_cases hδ : δ n = true
-  · rw [atomE_succ, if_pos hδ, if_pos hδ]; exact hIeq
-  · rw [atomE_succ, if_neg hδ, if_neg hδ]
+  · rw [atomE_succ, ite_eq_left hδ, ite_eq_left hδ]; exact hIeq
+  · rw [atomE_succ, ite_eq_right hδ, ite_eq_right hδ]
     have hJeq : (split (genAtom X Δ δ n) (atomE E split X Δ δ n) (X n)).2 =
         atomE E split X Δ δ n \ YseqE E split X Δ n := by
       have hunion := hspec.2.2.2.2.1
@@ -452,7 +452,7 @@ theorem YseqE_zero_eq_master (h0 : X 0 = Δ) : YseqE E split X Δ 0 = E.master :
     have hunion := hspec.2.2.2.2.1
     rw [hJ, Set.union_empty] at hunion
     exact hunion
-  have hkey : atomE E split X Δ δ 1 = E.master := by rw [atomE_succ, hδ0, if_pos rfl]; exact hI
+  have hkey : atomE E split X Δ δ 1 = E.master := by rw [atomE_succ, hδ0, ite_eq_left rfl]; exact hI
   apply Set.Subset.antisymm (YseqE_subset_master E split X Δ hΔ hEmne hsplit 0)
   calc E.master = atomE E split X Δ δ 1 := hkey.symm
     _ ⊆ YseqE E split X Δ 0 := subset_YseqE E split X Δ (fun i : Fin 0 => i.elim0)
@@ -485,7 +485,7 @@ theorem YseqE_nonempty_of_mem {n : ℕ} {x : α} (hxΔ : x ∈ Δ) (hxn : x ∈ 
   have hIne : (split (genAtom X Δ δ0 n) (atomE E split X Δ δ0 n) (X n)).1 ≠ ∅ :=
     fun h => hAne.ne_empty (hspec.2.2.1.mpr h)
   have hI_eq_atomE : (split (genAtom X Δ δ0 n) (atomE E split X Δ δ0 n) (X n)).1 =
-      atomE E split X Δ δ0 (n + 1) := by rw [atomE_succ, hδ0n, if_pos rfl]
+      atomE E split X Δ δ0 (n + 1) := by rw [atomE_succ, hδ0n, ite_eq_left rfl]
   set δ2 : ℕ → Bool := extendTrue (restrictFin δ0 n) with hδ2def
   have hagree : ∀ i < n + 1, δ2 i = δ0 i := by
     intro i hi

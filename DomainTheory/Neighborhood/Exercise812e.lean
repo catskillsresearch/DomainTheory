@@ -283,7 +283,7 @@ theorem splitFromBisection_eq (hpos : V.IsPositive) (hnomin : V.NoMinimal)
       emptyDiffDec P hDiff (Nat.pair n k) :=
     (emptyDiffDec_congr P hDiff hdiffClosed hnomin hn' hk').symm
   unfold splitFromBisection
-  rw [dif_pos hex, hInterEq, hDiffEq]
+  rw [dite_eq_left hex, hInterEq, hDiffEq]
   split_ifs with h1 h2
   · rfl
   · rfl
@@ -354,7 +354,7 @@ theorem splitFromBisection_isSplitSpec' (hpos : V.IsPositive) (hnomin : V.NoMini
         simp only [Set.mem_sdiff]
         exact ⟨fun hx => hx.1, fun hx =>
           ⟨hx, fun hxk => Set.eq_empty_iff_forall_notMem.mp hInterEmpty x ⟨hx, hxk⟩⟩⟩
-      rw [if_pos h1]
+      rw [ite_eq_left h1]
       refine ⟨Or.inl rfl, hBW, iff_of_true hInterEmpty rfl, ?_, Set.empty_union _,
         Set.empty_inter _⟩
       rw [hdiffEq]; exact hAB
@@ -367,7 +367,7 @@ theorem splitFromBisection_isSplitSpec' (hpos : V.IsPositive) (hnomin : V.NoMini
           refine ⟨fun hx => hx.1, fun hx => ⟨hx, ?_⟩⟩
           by_contra hxk
           exact Set.eq_empty_iff_forall_notMem.mp hDiffEmpty x ⟨hx, hxk⟩
-        rw [if_neg h1, if_pos h2]
+        rw [ite_eq_right h1, ite_eq_left h2]
         refine ⟨hBW, Or.inl rfl, ?_, iff_of_true hDiffEmpty rfl, Set.union_empty _,
           Set.inter_empty _⟩
         rw [hInterEq]; exact hAB
@@ -375,11 +375,11 @@ theorem splitFromBisection_isSplitSpec' (hpos : V.IsPositive) (hnomin : V.NoMini
           fun he => h1 ((emptyInterDec_eq_one_iff P hpos hnomin n k).mpr he)
         have h2' : P.X n \ P.X k ≠ ∅ :=
           fun he => h2 ((emptyDiffDec_eq_one_iff P hDiff hdiffClosed hnomin n k).mpr he)
-        rw [if_neg h1, if_neg h2]
+        rw [ite_eq_right h1, ite_eq_right h2]
         exact ⟨Or.inr (Q.mem_X _), Or.inr (Q.mem_X _), iff_of_false h1' (hQne _),
           iff_of_false h2' (hQne _), B.union m, B.disjoint m⟩
   · unfold splitFromBisection
-    rw [dif_neg h]
+    rw [dite_eq_right h]
     exact splitChoice'_isSplitSpec W hWnomin hAB hBW Xn
 
 end ComputableBisection

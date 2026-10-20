@@ -77,7 +77,7 @@ noncomputable def yStepG (splitY : Set β → Set α → Set β → Set α × Se
 theorem xStepG_fst_subset (splitX : Set α → Set β → Set α → Set β × Set β)
     (A : Set α) (B : Set β) (Xn : Set α) (b : Bool) : (xStepG splitX A B Xn b).1 ⊆ A := by
   by_cases hb : b = true
-  · simp only [xStepG, xyStep, hb, if_true]; exact Set.inter_subset_left
+  · simp only [xStepG, xyStep, hb, ite_true]; exact Set.inter_subset_left
   · simp only [xStepG, xyStep, hb]; exact Set.sdiff_subset
 
 theorem xStepG_snd_subset {D₁ : NeighborhoodSystem β}
@@ -86,7 +86,7 @@ theorem xStepG_snd_subset {D₁ : NeighborhoodSystem β}
     (b : Bool) : (xStepG splitX A B Xn b).2 ⊆ B := by
   have hspec := hxSplit hAB hBmem Xn
   by_cases hb : b = true
-  · simp only [xStepG, xyStep, hb, if_true]; exact Set.subset_union_left.trans_eq hspec.2.2.2.2.1
+  · simp only [xStepG, xyStep, hb, ite_true]; exact Set.subset_union_left.trans_eq hspec.2.2.2.2.1
   · simp only [xStepG, xyStep, hb]; exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
 
 theorem yStepG_fst_subset {D₀ : NeighborhoodSystem α}
@@ -95,7 +95,7 @@ theorem yStepG_fst_subset {D₀ : NeighborhoodSystem α}
     (b : Bool) : (yStepG splitY A1 B1 Yn b).1 ⊆ A1 := by
   have hspec := hySplit hBA hAmem Yn
   by_cases hb : b = true
-  · simp only [yStepG, xyStep, Prod.swap, hb, if_true]
+  · simp only [yStepG, xyStep, Prod.swap, hb, ite_true]
     exact Set.subset_union_left.trans_eq hspec.2.2.2.2.1
   · simp only [yStepG, xyStep, Prod.swap, hb]
     exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
@@ -103,7 +103,7 @@ theorem yStepG_fst_subset {D₀ : NeighborhoodSystem α}
 theorem yStepG_snd_subset (splitY : Set β → Set α → Set β → Set α × Set α)
     (A1 : Set α) (B1 : Set β) (Yn : Set β) (b : Bool) : (yStepG splitY A1 B1 Yn b).2 ⊆ B1 := by
   by_cases hb : b = true
-  · simp only [yStepG, xyStep, Prod.swap, hb, if_true]; exact Set.inter_subset_left
+  · simp only [yStepG, xyStep, Prod.swap, hb, ite_true]; exact Set.inter_subset_left
   · simp only [yStepG, xyStep, Prod.swap, hb]; exact Set.sdiff_subset
 
 /-- **`xStepG`'s two direct-refine outputs reunion to exactly the parent**: the trivial two-set
@@ -238,15 +238,15 @@ theorem atomPairG_invariant (δ : ℕ → Bool × Bool) :
     set B1 := (if (δ n).1 then I1 else J1) with hB1def
     have hA1B1 : A1 = ∅ ↔ B1 = ∅ := by
       by_cases hδ1 : (δ n).1 = true
-      · simp only [hA1def, hB1def, hδ1, if_true]; exact hspec1.2.2.1
+      · simp only [hA1def, hB1def, hδ1, ite_true]; exact hspec1.2.2.1
       · simp only [hA1def, hB1def, hδ1]; exact hspec1.2.2.2.1
     have hA1mem : A1 = ∅ ∨ D₀.mem A1 := by
       by_cases hδ1 : (δ n).1 = true
-      · simp only [hA1def, hδ1, if_true]; exact inter_mem_or_empty hD₀pos ihA (hXmem n)
+      · simp only [hA1def, hδ1, ite_true]; exact inter_mem_or_empty hD₀pos ihA (hXmem n)
       · simp only [hA1def, hδ1]; exact diff_mem_or_empty hD₀diff ihA (hXmem n)
     have hB1mem : B1 = ∅ ∨ D₁.mem B1 := by
       by_cases hδ1 : (δ n).1 = true
-      · simp only [hB1def, hδ1, if_true]; exact hspec1.1
+      · simp only [hB1def, hδ1, ite_true]; exact hspec1.1
       · simp only [hB1def, hδ1]; exact hspec1.2.1
     have hspec2 := hySplit hA1B1.symm hA1mem (Y n)
     set I2 := (splitY B1 A1 (Y n)).1 with hI2def
@@ -255,15 +255,15 @@ theorem atomPairG_invariant (δ : ℕ → Bool × Bool) :
     set A2 := (if (δ n).2 then I2 else J2) with hA2def
     have hB2A2 : B2 = ∅ ↔ A2 = ∅ := by
       by_cases hδ2 : (δ n).2 = true
-      · simp only [hB2def, hA2def, hδ2, if_true]; exact hspec2.2.2.1
+      · simp only [hB2def, hA2def, hδ2, ite_true]; exact hspec2.2.2.1
       · simp only [hB2def, hA2def, hδ2]; exact hspec2.2.2.2.1
     have hB2mem : B2 = ∅ ∨ D₁.mem B2 := by
       by_cases hδ2 : (δ n).2 = true
-      · simp only [hB2def, hδ2, if_true]; exact inter_mem_or_empty hD₁pos hB1mem (hYmem n)
+      · simp only [hB2def, hδ2, ite_true]; exact inter_mem_or_empty hD₁pos hB1mem (hYmem n)
       · simp only [hB2def, hδ2]; exact diff_mem_or_empty hD₁diff hB1mem (hYmem n)
     have hA2mem : A2 = ∅ ∨ D₀.mem A2 := by
       by_cases hδ2 : (δ n).2 = true
-      · simp only [hA2def, hδ2, if_true]; exact hspec2.1
+      · simp only [hA2def, hδ2, ite_true]; exact hspec2.1
       · simp only [hA2def, hδ2]; exact hspec2.2.1
     show (A2 = ∅ ↔ B2 = ∅) ∧ (A2 = ∅ ∨ D₀.mem A2) ∧ (B2 = ∅ ∨ D₁.mem B2)
     exact ⟨hB2A2.symm, hA2mem, hB2mem⟩
@@ -316,10 +316,10 @@ theorem xStepG_spec (δ : ℕ → Bool × Bool) (n : ℕ) :
   have hspec1 := hxSplit ihAB ihB (X n)
   refine ⟨?_, ?_⟩
   · by_cases hδ1 : (δ n).1 = true
-    · simp only [xStepG, xyStep, hδ1, if_true]; exact hspec1.2.2.1.symm
+    · simp only [xStepG, xyStep, hδ1, ite_true]; exact hspec1.2.2.1.symm
     · simp only [xStepG, xyStep, hδ1]; exact hspec1.2.2.2.1.symm
   · by_cases hδ1 : (δ n).1 = true
-    · simp only [xStepG, xyStep, hδ1, if_true]; exact inter_mem_or_empty hD₀pos ihA (hXmem n)
+    · simp only [xStepG, xyStep, hδ1, ite_true]; exact inter_mem_or_empty hD₀pos ihA (hXmem n)
     · simp only [xStepG, xyStep, hδ1]; exact diff_mem_or_empty hD₀diff ihA (hXmem n)
 
 /-- **`atomPairG`'s `α`-side only shrinks from depth `n` to `n + 1`.** -/
@@ -390,9 +390,9 @@ theorem atomPairG_fst_union_step (δ : ℕ → Bool × Bool) (n : ℕ) :
   set B := (atomPairG D₀ D₁ splitY splitX X Y δ n).2 with hBdef
   have hspec1 := hxSplit ihAB ihB (X n)
   have hBAtrue : (xStepG splitX A B (X n) true).2 = ∅ ↔ (xStepG splitX A B (X n) true).1 = ∅ := by
-    simp only [xStepG, xyStep, if_true]; exact hspec1.2.2.1.symm
+    simp only [xStepG, xyStep, ite_true]; exact hspec1.2.2.1.symm
   have hAmemtrue : (xStepG splitX A B (X n) true).1 = ∅ ∨ D₀.mem (xStepG splitX A B (X n) true).1 := by
-    simp only [xStepG, xyStep, if_true]; exact inter_mem_or_empty hD₀pos ihA (hXmem n)
+    simp only [xStepG, xyStep, ite_true]; exact inter_mem_or_empty hD₀pos ihA (hXmem n)
   have hBAfalse : (xStepG splitX A B (X n) false).2 = ∅ ↔ (xStepG splitX A B (X n) false).1 = ∅ := by
     simp only [xStepG, xyStep]; exact hspec1.2.2.2.1.symm
   have hAmemfalse : (xStepG splitX A B (X n) false).1 = ∅ ∨ D₀.mem (xStepG splitX A B (X n) false).1 := by
@@ -1390,7 +1390,7 @@ theorem encodeDeltaPair_lt (δ : ℕ → Bool × Bool) : ∀ n, encodeDeltaPair 
         ((if (δ n).1 then 1 else 0) + (if (δ n).2 then 2 else 0)) * 4 ^ n < 4 ^ (n + 1)
       rcases Bool.eq_false_or_eq_true (δ n).1 with h1 | h1 <;>
         rcases Bool.eq_false_or_eq_true (δ n).2 with h2 | h2 <;>
-        simp only [h1, h2, if_true, if_false, Bool.false_eq_true] <;> omega
+        simp only [h1, h2, ite_true, ite_false, Bool.false_eq_true] <;> omega
 
 /-- Adding a higher digit (`d * 4 ^ n`, `n > i`) never disturbs a `deltaPair`-digit strictly
 below `n`. The purely-arithmetic core making `encodeDeltaPair`'s induction go through. -/
@@ -1675,7 +1675,7 @@ theorem xSubStep_correct {s n : ℕ} {A : Set α} {B : Set β}
   have hspec1 := hxSplit hAB hBmem (P₀.X n)
   subst hA; subst hB
   by_cases hb : b = true
-  · simp only [xStepG, xyStep, hb, if_true] at hnonjunk ⊢
+  · simp only [xStepG, xyStep, hb, ite_true] at hnonjunk ⊢
     rw [xSubStep_junk_eq] at hnonjunk
     obtain ⟨-, hemp⟩ := selectFn_one_eq_zero_iff.mp hnonjunk
     rw [selectFn_one] at hemp
@@ -1688,7 +1688,7 @@ theorem xSubStep_correct {s n : ℕ} {A : Set α} {B : Set β}
       exact interIdx_eq_of_empty_zero P₀ hemp
     · rw [xSubStep_idx1_eq (h := hnonjunk), selectFn_one]
       exact (hSplitX.posIdx_spec (stateIdx0 s) (stateIdx1 s) n hne).symm
-  · simp only [xStepG, xyStep, hb, Bool.false_eq_true, if_false] at hnonjunk ⊢
+  · simp only [xStepG, xyStep, hb, Bool.false_eq_true, ite_false] at hnonjunk ⊢
     rw [xSubStep_junk_eq] at hnonjunk
     obtain ⟨-, hemp⟩ := selectFn_one_eq_zero_iff.mp hnonjunk
     rw [selectFn_zero] at hemp
@@ -1716,7 +1716,7 @@ theorem ySubStep_correct {s n : ℕ} {A : Set α} {B : Set β}
   have hspec2 := hySplit hBA hAmem (P₁.X n)
   subst hA; subst hB
   by_cases hb : b = true
-  · simp only [yStepG, xyStep, Prod.swap, hb, if_true] at hnonjunk ⊢
+  · simp only [yStepG, xyStep, Prod.swap, hb, ite_true] at hnonjunk ⊢
     rw [ySubStep_junk_eq] at hnonjunk
     obtain ⟨-, hemp⟩ := selectFn_one_eq_zero_iff.mp hnonjunk
     rw [selectFn_one] at hemp
@@ -1729,7 +1729,7 @@ theorem ySubStep_correct {s n : ℕ} {A : Set α} {B : Set β}
       exact (hSplitY.posIdx_spec (stateIdx1 s) (stateIdx0 s) n hne).symm
     · rw [ySubStep_idx1_eq (h := hnonjunk), selectFn_one]
       exact interIdx_eq_of_empty_zero P₁ hemp
-  · simp only [yStepG, xyStep, Prod.swap, hb, Bool.false_eq_true, if_false] at hnonjunk ⊢
+  · simp only [yStepG, xyStep, Prod.swap, hb, Bool.false_eq_true, ite_false] at hnonjunk ⊢
     rw [ySubStep_junk_eq] at hnonjunk
     obtain ⟨-, hemp⟩ := selectFn_one_eq_zero_iff.mp hnonjunk
     rw [selectFn_zero] at hemp
@@ -2559,17 +2559,17 @@ theorem atomPairG_fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
         have hB2 : (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) (n + 1)).2 = ∅ := by
           rw [atomPairG_succ_eq]
           by_cases hδ2 : (deltaPair i n).2 = true
-          · simp only [hδ2, if_true] at hjunk1
+          · simp only [hδ2, ite_true] at hjunk1
             rw [selectFn_one] at hjunk1
             have hBe := (emptyInterDec_eq_one_iff P₁ hD₁pos hD₁nomin _ _).mp hjunk1
             rw [hxB1] at hBe
-            simp only [yStepG, xyStep, Prod.swap, hδ2, if_true]
+            simp only [yStepG, xyStep, Prod.swap, hδ2, ite_true]
             exact hBe
-          · simp only [hδ2, Bool.false_eq_true, if_false] at hjunk1
+          · simp only [hδ2, Bool.false_eq_true, ite_false] at hjunk1
             rw [selectFn_zero] at hjunk1
             have hBe := (emptyDiffDec_eq_one_iff P₁ hDiff1 hD₁diff hD₁nomin _ _).mp hjunk1
             rw [hxB1] at hBe
-            simp only [yStepG, xyStep, Prod.swap, hδ2, Bool.false_eq_true, if_false]
+            simp only [yStepG, xyStep, Prod.swap, hδ2, Bool.false_eq_true, ite_false]
             exact hBe
         exact (atomPairG_invariant D₀ D₁ hD₀pos hD₀diff splitY hySplit hD₁pos hD₁diff splitX
           hxSplit P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne (deltaPair i) (n + 1)).1.mpr hB2
@@ -2582,12 +2582,12 @@ theorem atomPairG_fst_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
             (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).2 (P₀.X n)
             (deltaPair i n).1).1 = ∅ := by
           by_cases hδ1 : (deltaPair i n).1 = true
-          · simp only [xStepG, xyStep, hδ1, if_true] at hx1 ⊢
+          · simp only [xStepG, xyStep, hδ1, ite_true] at hx1 ⊢
             rw [selectFn_one] at hx1
             have hAe := (emptyInterDec_eq_one_iff P₀ hD₀pos hD₀nomin _ _).mp hx1
             rw [hidx0] at hAe
             exact hAe
-          · simp only [xStepG, xyStep, hδ1, Bool.false_eq_true, if_false] at hx1 ⊢
+          · simp only [xStepG, xyStep, hδ1, Bool.false_eq_true, ite_false] at hx1 ⊢
             rw [selectFn_zero] at hx1
             have hAe := (emptyDiffDec_eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin _ _).mp hx1
             rw [hidx0] at hAe
@@ -2703,17 +2703,17 @@ theorem atomPairG_snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
           hxSplit hidx0 hidx1 ihAB ihB (deltaPair i n).1 hxnonjunk
         rw [atomPairG_succ_eq]
         by_cases hδ2 : (deltaPair i n).2 = true
-        · simp only [hδ2, if_true] at hjunk1
+        · simp only [hδ2, ite_true] at hjunk1
           rw [selectFn_one] at hjunk1
           have hBe := (emptyInterDec_eq_one_iff P₁ hD₁pos hD₁nomin _ _).mp hjunk1
           rw [hxB1] at hBe
-          simp only [yStepG, xyStep, Prod.swap, hδ2, if_true]
+          simp only [yStepG, xyStep, Prod.swap, hδ2, ite_true]
           exact hBe
-        · simp only [hδ2, Bool.false_eq_true, if_false] at hjunk1
+        · simp only [hδ2, Bool.false_eq_true, ite_false] at hjunk1
           rw [selectFn_zero] at hjunk1
           have hBe := (emptyDiffDec_eq_one_iff P₁ hDiff1 hD₁diff hD₁nomin _ _).mp hjunk1
           rw [hxB1] at hBe
-          simp only [yStepG, xyStep, Prod.swap, hδ2, Bool.false_eq_true, if_false]
+          simp only [yStepG, xyStep, Prod.swap, hδ2, Bool.false_eq_true, ite_false]
           exact hBe
       · -- `xcheck = 1`: the `A1`-check tripped; hop to `B1` via `xStepG_spec`'s local biconditional,
         -- then propagate via the trivial `yStepG_snd_subset` (no `SplitSpec'` needed)
@@ -2725,12 +2725,12 @@ theorem atomPairG_snd_eq_empty_of_junk_eq_one (i : ℕ) : ∀ n,
             (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).2 (P₀.X n)
             (deltaPair i n).1).1 = ∅ := by
           by_cases hδ1 : (deltaPair i n).1 = true
-          · simp only [xStepG, xyStep, hδ1, if_true] at hx1 ⊢
+          · simp only [xStepG, xyStep, hδ1, ite_true] at hx1 ⊢
             rw [selectFn_one] at hx1
             have hAe := (emptyInterDec_eq_one_iff P₀ hD₀pos hD₀nomin _ _).mp hx1
             rw [hidx0] at hAe
             exact hAe
-          · simp only [xStepG, xyStep, hδ1, Bool.false_eq_true, if_false] at hx1 ⊢
+          · simp only [xStepG, xyStep, hδ1, Bool.false_eq_true, ite_false] at hx1 ⊢
             rw [selectFn_zero] at hx1
             have hAe := (emptyDiffDec_eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin _ _).mp hx1
             rw [hidx0] at hAe
@@ -3555,20 +3555,20 @@ private theorem yPseqAtomJunk_eq_zero_of_bit {i n : ℕ}
       (emptyDiffDec P₀ hDiff0 (Nat.pair (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY
         hSplitY n i) n)) = 0 := by
     by_cases hb : b = true
-    · simp only [xStepG, xyStep, hb, if_true] at hne
+    · simp only [xStepG, xyStep, hb, ite_true] at hne
       have hne' : P₀.X (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i) ∩
           P₀.X n ≠ ∅ := by rw [hidx0]; exact hne
-      simp only [hb, if_true, selectFn_one]
+      simp only [hb, ite_true, selectFn_one]
       by_contra hcon
       have hle := emptyInterDec_le_one P₀ (Nat.pair
         (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i) n)
       have h1 : emptyInterDec P₀ (Nat.pair
           (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i) n) = 1 := by omega
       exact hne' ((emptyInterDec_eq_one_iff P₀ hD₀pos hD₀nomin _ _).mp h1)
-    · simp only [xStepG, xyStep, hb, Bool.false_eq_true, if_false] at hne
+    · simp only [xStepG, xyStep, hb, Bool.false_eq_true, ite_false] at hne
       have hne' : P₀.X (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i) \
           P₀.X n ≠ ∅ := by rw [hidx0]; exact hne
-      simp only [hb, Bool.false_eq_true, if_false, selectFn_zero]
+      simp only [hb, Bool.false_eq_true, ite_false, selectFn_zero]
       by_contra hcon
       have hle := emptyDiffDec_le_one P₀ hDiff0 (Nat.pair
         (atomPairIdx0 P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY n i) n)
@@ -4173,7 +4173,7 @@ theorem yPseqAtomIdx_subset_xStepGFst {n i : ℕ} (b : Bool)
         (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X (deltaPair i) n).2 (P₀.X n) b).1 = ∅ := by
     have hspec1 := hxSplit ihAB ihB (P₀.X n)
     by_cases hb : b = true
-    · simp only [xStepG, xyStep, hb, if_true]; exact hspec1.2.2.1.symm
+    · simp only [xStepG, xyStep, hb, ite_true]; exact hspec1.2.2.1.symm
     · simp only [xStepG, xyStep, hb]; exact hspec1.2.2.2.1.symm
   obtain ⟨hyc0, -⟩ := ySubStep_correct P₀ P₁ hDiff1 splitY hSplitY hD₁pos hD₁diff hD₁nomin hySplit
     hxc0 hxc1 hBA hAmem true h
@@ -4357,25 +4357,25 @@ noncomputable def combinedYCode (n : ℕ) : Set β :=
 theorem combinedXCode_even (k : ℕ) :
     combinedXCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 (2 * k) = P₀.X k := by
   unfold combinedXCode
-  rw [if_pos (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
+  rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
 theorem combinedXCode_odd (k : ℕ) :
     combinedXCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 (2 * k + 1) =
       P₀.X (YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion0 k) := by
   unfold combinedXCode
-  rw [if_neg (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
+  rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 theorem combinedYCode_even (k : ℕ) :
     combinedYCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 (2 * k) =
       P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 k) := by
   unfold combinedYCode
-  rw [if_pos (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
+  rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
 theorem combinedYCode_odd (k : ℕ) :
     combinedYCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 (2 * k + 1) =
       P₁.X k := by
   unfold combinedYCode
-  rw [if_neg (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
+  rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne in
 set_option maxHeartbeats 1000000 in
@@ -4393,7 +4393,7 @@ theorem xStepG_snd_eq_inter_XPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) :
         (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).2 (P₀.X n) true).2 =
       (atomPairG D₀ D₁ splitY splitX P₀.X P₁.X δ n).2 ∩
         P₁.X (XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hUnion1 n) := by
-  simp only [xStepG, xyStep, if_true]
+  simp only [xStepG, xyStep, ite_true]
   set k := encodeDeltaPair δ n with hkdef
   have hklt : k < 4 ^ n := encodeDeltaPair_lt δ n
   have hagree : ∀ i < n, δ i = deltaPair k i := fun i hi =>
@@ -4500,9 +4500,9 @@ theorem xStepG_snd_succ_eq_XPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (b : 
     xStepG_snd_eq_inter_XPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion1 δ n
   by_cases hb : b = true
-  · rw [hb, if_pos rfl]; exact hIeq
+  · rw [hb, ite_eq_left rfl]; exact hIeq
   · rw [Bool.not_eq_true] at hb; subst hb
-    rw [if_neg (by simp)]
+    rw [ite_eq_right (by simp)]
     have hJeq : (xStepG splitX A B (P₀.X n) false).2 = B \ XP := by
       have hunion :
           (xStepG splitX A B (P₀.X n) true).2 ∪ (xStepG splitX A B (P₀.X n) false).2 = B := by
@@ -4576,13 +4576,13 @@ theorem yStepG_fst_eq_inter_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (bx 
   have hA1B1 : A1 = ∅ ↔ B1 = ∅ := by
     rw [hA1def, hB1def]
     by_cases hbx : bx = true
-    · simp only [xStepG, xyStep, hbx, if_true]; exact hspec1.2.2.1
-    · simp only [xStepG, xyStep, hbx, Bool.false_eq_true, if_false]; exact hspec1.2.2.2.1
+    · simp only [xStepG, xyStep, hbx, ite_true]; exact hspec1.2.2.1
+    · simp only [xStepG, xyStep, hbx, Bool.false_eq_true, ite_false]; exact hspec1.2.2.2.1
   have hA1mem : A1 = ∅ ∨ D₀.mem A1 := by
     rw [hA1def]
     by_cases hbx : bx = true
-    · simp only [xStepG, xyStep, hbx, if_true]; exact inter_mem_or_empty hD₀pos ihA (P₀.mem_X n)
-    · simp only [xStepG, xyStep, hbx, Bool.false_eq_true, if_false]
+    · simp only [xStepG, xyStep, hbx, ite_true]; exact inter_mem_or_empty hD₀pos ihA (P₀.mem_X n)
+    · simp only [xStepG, xyStep, hbx, Bool.false_eq_true, ite_false]
       exact diff_mem_or_empty hD₀diff ihA (P₀.mem_X n)
   by_cases hA1 : A1 = ∅
   · have hB1e : B1 = ∅ := hA1B1.mp hA1
@@ -4662,12 +4662,12 @@ theorem yStepG_fst_eq_inter_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (bx 
         have hA1e : A1 = ∅ := by
           rw [hA1def]
           by_cases hbx : bx = true
-          · simp only [xStepG, xyStep, hbx, if_true]
-            simp only [hbx, if_true, selectFn_one] at h3
+          · simp only [xStepG, xyStep, hbx, ite_true]
+            simp only [hbx, ite_true, selectFn_one] at h3
             rw [← hidx0']
             exact (emptyInterDec_eq_one_iff P₀ hD₀pos hD₀nomin _ _).mp h3
-          · simp only [xStepG, xyStep, hbx, Bool.false_eq_true, if_false]
-            simp only [hbx, Bool.false_eq_true, if_false, selectFn_zero] at h3
+          · simp only [xStepG, xyStep, hbx, Bool.false_eq_true, ite_false]
+            simp only [hbx, Bool.false_eq_true, ite_false, selectFn_zero] at h3
             rw [← hidx0']
             exact (emptyDiffDec_eq_one_iff P₀ hDiff0 hD₀diff hD₀nomin _ _).mp h3
         exact hA1 hA1e
@@ -4797,22 +4797,22 @@ theorem yStepG_fst_succ_eq_YPseqCode (δ : ℕ → Bool × Bool) (n : ℕ) (b : 
   have hA1B1 : A1 = ∅ ↔ B1 = ∅ := by
     rw [hA1def, hB1def]
     by_cases hbx : (δ n).1 = true
-    · simp only [xStepG, xyStep, hbx, if_true]; exact hspec1.2.2.1
-    · simp only [xStepG, xyStep, hbx, Bool.false_eq_true, if_false]; exact hspec1.2.2.2.1
+    · simp only [xStepG, xyStep, hbx, ite_true]; exact hspec1.2.2.1
+    · simp only [xStepG, xyStep, hbx, Bool.false_eq_true, ite_false]; exact hspec1.2.2.2.1
   have hA1mem : A1 = ∅ ∨ D₀.mem A1 := by
     rw [hA1def]
     by_cases hbx : (δ n).1 = true
-    · simp only [xStepG, xyStep, hbx, if_true]; exact inter_mem_or_empty hD₀pos ihA (P₀.mem_X n)
-    · simp only [xStepG, xyStep, hbx, Bool.false_eq_true, if_false]
+    · simp only [xStepG, xyStep, hbx, ite_true]; exact inter_mem_or_empty hD₀pos ihA (P₀.mem_X n)
+    · simp only [xStepG, xyStep, hbx, Bool.false_eq_true, ite_false]
       exact diff_mem_or_empty hD₀diff ihA (P₀.mem_X n)
   have hspec := hySplit hA1B1.symm hA1mem (P₁.X n)
   have hJeqTrue : (yStepG splitY A1 B1 (P₁.X n) true).1 = A1 ∩ YP :=
     yStepG_fst_eq_inter_YPseqCode P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff
       hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 δ n (δ n).1
   by_cases hb : b = true
-  · rw [hb, if_pos rfl]; exact hJeqTrue
+  · rw [hb, ite_eq_left rfl]; exact hJeqTrue
   · rw [Bool.not_eq_true] at hb; subst hb
-    rw [if_neg (by simp)]
+    rw [ite_eq_right (by simp)]
     have hJeq : (yStepG splitY A1 B1 (P₁.X n) false).1 = A1 \ YP := by
       have hunion :
           (yStepG splitY A1 B1 (P₁.X n) true).1 ∪ (yStepG splitY A1 B1 (P₁.X n) false).1 = A1 := by
@@ -4862,8 +4862,8 @@ theorem genAtom_combinedXCode_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
       P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne δ n
   simp only [xStepG, xyStep]
   rcases Bool.eq_false_or_eq_true (δ n).1 with hb | hb
-  · simp only [hb, if_true]
-  · simp only [hb, Bool.false_eq_true, if_false]
+  · simp only [hb, ite_true]
+  · simp only [hb, Bool.false_eq_true, ite_false]
     exact inter_diff_eq_diff_of_subset hAsub
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion1 in
@@ -4928,8 +4928,8 @@ theorem atomPairG_snd_eq_genAtomCode (δ : ℕ → Bool × Bool) (n : ℕ) :
           hxSplit P₀.X P₁.X P₀.mem_X P₁.mem_X hD₀mne hD₁mne δ n)
       simp only [yStepG, xyStep, Prod.swap]
       rcases Bool.eq_false_or_eq_true (δ n).2 with hb | hb
-      · simp only [hb, if_true]
-      · simp only [hb, Bool.false_eq_true, if_false]
+      · simp only [hb, ite_true]
+      · simp only [hb, Bool.false_eq_true, ite_false]
         exact (inter_diff_eq_diff_of_subset hB1sub).symm
 
 include hD₀pos hD₀diff hD₀nomin hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0

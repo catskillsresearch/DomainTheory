@@ -1184,17 +1184,17 @@ decreasing_by
   · exact finsetMaxDepth_outputUnion_lt ‹_› ‹_›
 
 theorem LamConDepth_empty : LamConDepth A (∅ : Finset (RawLamToken α)) := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
-  rw [LamConDepth.eq_1, dif_pos lamFunFinset_empty, lamAtomFinset_empty]
+  rw [LamConDepth.eq_1, dite_eq_left lamFunFinset_empty, lamAtomFinset_empty]
   exact A.con_empty
 
 theorem LamConDepth_of_fun_empty {u : Finset (RawLamToken α)}
     (hF : lamFunFinset u = ∅) :
     LamConDepth A u ↔ lamAtomFinset u ∈ A.Con := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
-  rw [LamConDepth.eq_1, dif_pos hF]
+  rw [LamConDepth.eq_1, dite_eq_left hF]
 
 theorem LamConDepth_of_fun_nonempty {u : Finset (RawLamToken α)}
     (hF : lamFunFinset u ≠ ∅) :
@@ -1204,13 +1204,13 @@ theorem LamConDepth_of_fun_nonempty {u : Finset (RawLamToken α)}
           LamConDepth A (listToFinset p.1) ∧ LamConDepth A (listToFinset p.2)) ∧
         (∀ s ⊆ lamFunFinset u,
           LamConDepth A (lamInputUnion s) → LamConDepth A (lamOutputUnion s)) := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
-  rw [LamConDepth.eq_1, dif_neg hF]
+  rw [LamConDepth.eq_1, dite_eq_right hF]
 
 theorem LamConDepth_mono {u v : Finset (RawLamToken α)}
     (huv : u ⊆ v) (hv : LamConDepth A v) : LamConDepth A u := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   have hFunMono := lamFunFinset_mono huv
   have hAtomMono := lamAtomFinset_mono huv
@@ -1245,7 +1245,7 @@ theorem LamConDepth_mono {u v : Finset (RawLamToken α)}
 
 theorem LamConDepth_singleton_bot :
     LamConDepth A ({.bot} : Finset (RawLamToken α)) := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   have hF : lamFunFinset ({.bot} : Finset (RawLamToken α)) = ∅ := by
     ext p; constructor
@@ -1260,7 +1260,7 @@ theorem LamConDepth_singleton_bot :
 
 theorem LamConDepth_singleton_atom (x : α) :
     LamConDepth A ({.atom x} : Finset (RawLamToken α)) := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   have hF : lamFunFinset ({.atom x} : Finset (RawLamToken α)) = ∅ := by
     ext p; constructor
@@ -1383,7 +1383,7 @@ theorem LamEntDepth_of_mem {u : Finset (RawLamToken α)} {t : RawLamToken α}
 theorem LamConDepth_insert_bot {u : Finset (RawLamToken α)}
     (hu : LamConDepth A u) :
     LamConDepth A (insert (.bot : RawLamToken α) u) := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   by_cases hF : lamFunFinset u = ∅
   · have hF' : lamFunFinset (insert (.bot : RawLamToken α) u) = ∅ := by
@@ -1407,7 +1407,7 @@ theorem LamConDepth_insert_bot {u : Finset (RawLamToken α)}
 theorem LamConDepth_insert_atom {u : Finset (RawLamToken α)} {x : α}
     (ht : LamEntDepth A u (.atom x)) :
     LamConDepth A (insert (.atom x) u) := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   cases ht with
   | atom hu hF _hne hEnt =>
@@ -1538,7 +1538,7 @@ theorem LamEntDepth_weaken_insert {u : Finset (RawLamToken α)}
     (hu' : LamConDepth A (insert a u))
     (hx : LamEntDepth A u x) (ha : LamEntDepth A u a) :
     LamEntDepth A (insert a u) x := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   have huv : u ⊆ insert a u := Finset.subset_insert a u
   match x with
@@ -1599,7 +1599,7 @@ theorem LamConDepth_funion_of_entSet (M : ℕ)
     (hEnt : ∀ t ∈ v, LamEntDepth A u t)
     (hbound : ∀ t ∈ v, Nat.max (finsetMaxDepth u) (rawDepth t) < M) :
     LamConDepth A (u ∪' v) := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   suffices ∀ (v u : Finset (RawLamToken α)),
       LamConDepth A u →
@@ -1696,7 +1696,7 @@ private theorem finsetMaxDepth_funion_le (u v : Finset (RawLamToken α)) :
 /-- Prop 2.1(iii): inserting an entailed token preserves depth-Con. -/
 theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken α}
     (ht : LamEntDepth A u t) : LamConDepth A (insert t u) := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   suffices ∀ M u t, Nat.max (finsetMaxDepth u) (rawDepth t) = M →
       LamEntDepth A u t → LamConDepth A (insert t u) from
@@ -1916,7 +1916,7 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
     (hv : LamConDepth A v) (hu : LamConDepth A u)
     (hEnts : ∀ t ∈ u, LamEntDepth A v t) (ht : LamEntDepth A u c) :
     LamEntDepth A v c := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   suffices ∀ M u v c,
       Nat.max (finsetMaxDepth v) (Nat.max (finsetMaxDepth u) (rawDepth c)) = M →
@@ -2225,7 +2225,7 @@ theorem lamDForgetFinset_mono {u v : Finset (LamDToken A)} (h : v ⊆ u) :
 theorem LamConDepth_singleton_funTok (xs ys : List (RawLamToken α))
     (hxs : LamConDepth A (listToFinset xs)) (hys : LamConDepth A (listToFinset ys)) :
     LamConDepth A ({.funTok xs ys} : Finset (RawLamToken α)) := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   have hF : lamFunFinset ({.funTok xs ys} : Finset (RawLamToken α)) = {(xs, ys)} :=
     lamFunFinset_singleton_funTok xs ys
@@ -2265,7 +2265,7 @@ theorem LamConDepth_singleton_funTok (xs ys : List (RawLamToken α))
 
 theorem IsLamWF_of_mem {u : Finset (RawLamToken α)} (hu : LamConDepth A u)
     {t : RawLamToken α} (ht : t ∈ u) : IsLamWF A t := by
-  haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   match t with
   | .bot | .atom _ => trivial

@@ -492,9 +492,9 @@ theorem consUpd_foldl_idx (projFn fc : ℕ → ℕ) (el : List ℕ) (b a flag : 
   | cons e el ih =>
     rw [List.foldl_cons, consUpd_eval, bitSelect_cons]
     by_cases hb : b % 2 = 1
-    · rw [if_pos hb, List.map_cons, List.foldl_cons, hb, selectFn_one]
+    · rw [ite_eq_left hb, List.map_cons, List.foldl_cons, hb, selectFn_one]
       exact ih (b / 2) (P.inter a (projFn e)) _
-    · rw [if_neg hb, show b % 2 = 0 by omega, selectFn_zero]
+    · rw [ite_eq_right hb, show b % 2 = 0 by omega, selectFn_zero]
       exact ih (b / 2) a flag
 
 /-- `idxCharAt fc w` (`w = pair b c`): the same fold as `consCharAt`, projecting the running

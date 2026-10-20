@@ -91,7 +91,7 @@ theorem singleDFA_evalFrom (σ : List Bool) (w : List Bool) (k : Fin (σ.length 
       else none := by
   induction w generalizing k with
   | nil =>
-    rw [DFA.evalFrom_nil, dif_pos List.nil_prefix]
+    rw [DFA.evalFrom_nil, dite_eq_left List.nil_prefix]
     simp
   | cons b w ih =>
     rw [DFA.evalFrom_cons]
@@ -103,23 +103,23 @@ theorem singleDFA_evalFrom (σ : List Bool) (w : List Bool) (k : Fin (σ.length 
         rw [hdrop, List.cons_prefix_cons]
       by_cases hchar : σ.get ⟨k, hk⟩ = b
       · have hstep : (singleDFA σ).step (some k) b = some ⟨(k : ℕ) + 1, by omega⟩ := by
-          simp only [singleDFA, Option.bind_some, dif_pos hk, if_pos hchar]
+          simp only [singleDFA, Option.bind_some, dite_eq_left hk, ite_eq_left hchar]
         rw [hstep, ih ⟨(k : ℕ) + 1, by omega⟩]
         by_cases hpre : w <+: List.drop ((k : ℕ) + 1) σ
-        · rw [dif_pos hpre, dif_pos (hcondiff.mpr ⟨hchar.symm, hpre⟩)]
+        · rw [dite_eq_left hpre, dite_eq_left (hcondiff.mpr ⟨hchar.symm, hpre⟩)]
           congr 1
           apply Fin.ext
           simp only [List.length_cons]
           omega
-        · rw [dif_neg hpre, dif_neg (fun hc => hpre (hcondiff.mp hc).2)]
+        · rw [dite_eq_right hpre, dite_eq_right (fun hc => hpre (hcondiff.mp hc).2)]
       · have hstep : (singleDFA σ).step (some k) b = none := by
-          simp only [singleDFA, Option.bind_some, dif_pos hk, if_neg hchar]
-        rw [hstep, singleDFA_evalFrom_none, dif_neg]
+          simp only [singleDFA, Option.bind_some, dite_eq_left hk, ite_eq_right hchar]
+        rw [hstep, singleDFA_evalFrom_none, dite_eq_right]
         intro hc
         exact hchar (hcondiff.mp hc).1.symm
     · have hstep : (singleDFA σ).step (some k) b = none := by
-        simp only [singleDFA, Option.bind_some, dif_neg hk]
-      rw [hstep, singleDFA_evalFrom_none, dif_neg]
+        simp only [singleDFA, Option.bind_some, dite_eq_right hk]
+      rw [hstep, singleDFA_evalFrom_none, dite_eq_right]
       have hd : List.drop (k : ℕ) σ = [] := by
         rw [List.drop_eq_nil_iff]; have := k.isLt; omega
       rw [hd]; exact (by simp : ¬ (b :: w) <+: [])
@@ -130,13 +130,13 @@ theorem singleDFA_accepts (σ : List Bool) : (singleDFA σ).accepts = {σ} := by
   show (singleDFA σ).evalFrom (some ⟨0, by omega⟩) w ∈ (singleDFA σ).accept ↔ _
   rw [singleDFA_evalFrom]
   by_cases h : w <+: List.drop (0 : ℕ) (σ : List Bool)
-  · rw [dif_pos h, List.drop_zero] at *
+  · rw [dite_eq_left h, List.drop_zero] at *
     show some (⟨0 + w.length, _⟩ : Fin (σ.length + 1)) ∈ ({some ⟨σ.length, _⟩} : Set _) ↔ w ∈ ({σ} : Set _)
     rw [Set.mem_singleton_iff, Set.mem_singleton_iff, Option.some.injEq, Fin.mk.injEq, Nat.zero_add]
     constructor
     · intro hlen; exact h.eq_of_length hlen
     · intro hw; subst hw; rfl
-  · rw [dif_neg h, List.drop_zero] at *
+  · rw [dite_eq_right h, List.drop_zero] at *
     show (none : SingleState σ) ∈ ({some ⟨σ.length, _⟩} : Set _) ↔ w ∈ ({σ} : Set _)
     rw [Set.mem_singleton_iff, Set.mem_singleton_iff]
     constructor

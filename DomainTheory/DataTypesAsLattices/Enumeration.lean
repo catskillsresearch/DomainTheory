@@ -51,7 +51,7 @@ theorem not_mem_zero_cond_graph (x y : Pomega) :
   have : pair n m = pair 0 0 := by
     simpa [pair_zero_zero] using hm.symm
   obtain ⟨rfl, rfl⟩ := pair_inj this
-  simp [e_zero, condSet, botElem] at hmem
+  simp [e_zero, condSet] at hmem
 
 theorem cond_graph_eq_bot_iff (x y : Pomega) :
     funOf (funOf condC x) y = botElem ↔ x = botElem ∧ y = botElem := by
@@ -82,7 +82,7 @@ theorem eq_3_1 (x y : Pomega) :
   · rcases hxy with ⟨rfl, rfl⟩
     have : funOf (funOf condC botElem) botElem = botElem :=
       (cond_graph_eq_bot_iff botElem botElem).mpr ⟨rfl, rfl⟩
-    simp [this, condSet, botElem]
+    simp [condSet, botElem]
   · have hne : funOf (funOf condC x) y ≠ botElem := by
       intro h
       exact hxy ((cond_graph_eq_bot_iff x y).mp h)
@@ -105,7 +105,7 @@ theorem not_mem_zero_Gcomb : 0 ∉ Gcomb := by
     have : pair n m = pair 0 0 := by simpa [pair_zero_zero] using this
     exact pair_inj this
   rcases hnm with ⟨rfl, rfl⟩
-  simp [e_zero, condSet, botElem] at hmem
+  simp [e_zero, condSet] at hmem
 
 theorem Gpack_ne_bot : Gpack ≠ botElem := by
   intro h
@@ -782,10 +782,7 @@ def interStepTerm : Term :=
 theorem interStepTerm_interp :
     interp interStepTerm (fun _ => botElem) = graph interStep := by
   unfold interStepTerm interStep
-  simp only [interp, envSet, Function.update_self,
-    Function.update_of_ne (by decide : (1 : ℕ) ≠ 0),
-    Function.update_of_ne (by decide : (2 : ℕ) ≠ 0),
-    Function.update_of_ne (by decide : (2 : ℕ) ≠ 1)]
+  simp only [interp, envSet, Function.update_self]
   apply congrArg graph
   funext f
   apply congrArg graph
@@ -886,8 +883,7 @@ theorem unionTerm_interp :
     interp unionTerm (fun _ => botElem) =
       graph (fun x => graph (fun y => x ∪ y)) := by
   unfold unionTerm
-  simp only [interp, envSet, Function.update_self,
-    Function.update_of_ne (by decide : (1 : ℕ) ≠ 0)]
+  simp only [interp, envSet, Function.update_self]
   apply congrArg graph
   funext x
   apply congrArg graph
@@ -976,7 +972,7 @@ theorem primrec₂_finAux : Primrec fun p : ℕ × ℕ => finAux p.1 p.2 := by
     have he : Primrec fun z : (ℕ × ℕ) × (ℕ × ℕ) => z.2.2 :=
       Primrec.snd.comp Primrec.snd
     exact (Primrec.cond hc ht he).to₂.of_eq fun p q => by
-      cases h : p.1.testBit q.1 <;> simp [h]
+      cases h : p.1.testBit q.1 <;> simp
   refine (Primrec.nat_rec' (f := fun p : ℕ × ℕ => p.2)
     (g := fun _ : ℕ × ℕ => botCode) (h := step)
     Primrec.snd (Primrec.const botCode) hstep).of_eq fun p => ?_
@@ -1004,7 +1000,7 @@ theorem valNat_finAux (j : ℕ) : ∀ k,
   | succ k ih =>
       simp only [finAux]
       by_cases hk : j.testBit k
-      · rw [if_pos hk, valNat_apply, valNat_apply, valNat_unionCode,
+      · rw [ite_eq_left hk, valNat_apply, valNat_apply, valNat_unionCode,
           eq_3_12, ih]
         change funOf
           (funOf (lam fun x => graph fun y => x ∪ y) (ofNat k))
@@ -1018,7 +1014,7 @@ theorem valNat_finAux (j : ℕ) : ∀ k,
         rw [beta (enumerationUnion_right_isScottContinuous (ofNat k))
           {n | n < k ∧ j.testBit n}]
         ext n
-        simp only [Set.mem_union, mem_ofNat, Set.mem_setOf_eq]
+        simp only [Set.mem_union, mem_ofNat, Set.mem_ofPred_eq]
         constructor
         · rintro (hnk | ⟨hn, hb⟩)
           · subst n
@@ -1028,9 +1024,9 @@ theorem valNat_finAux (j : ℕ) : ∀ k,
           by_cases hnk : n = k
           · exact Or.inl hnk
           · exact Or.inr ⟨Nat.lt_of_le_of_ne (Nat.le_of_lt_succ hn) hnk, hb⟩
-      · rw [if_neg hk, ih]
+      · rw [ite_eq_right hk, ih]
         ext n
-        simp only [Set.mem_setOf_eq]
+        simp only [Set.mem_ofPred_eq]
         constructor
         · rintro ⟨hn, hb⟩
           exact ⟨Nat.lt_succ_of_lt hn, hb⟩
@@ -1046,7 +1042,7 @@ theorem valNat_fin (j : ℕ) : valNat (fin j) = e j :=
   by
     rw [fin, valNat_finAux]
     ext n
-    simp only [Set.mem_setOf_eq, mem_e]
+    simp only [Set.mem_ofPred_eq, mem_e]
     constructor
     · exact fun h => h.2
     · intro h
@@ -1125,7 +1121,6 @@ theorem Gcomb_isRE : IsRE Gcomb :=
 
 theorem exists_triangle_succ (k : ℕ) : ∃ w, k < triangle (w + 1) :=
   ⟨k, by
-    change k < triangle (k + 1)
     rw [triangle_succ]
     exact lt_of_lt_of_le (Nat.lt_succ_self k) (Nat.le_add_left (k + 1) _)⟩
 
@@ -1349,7 +1344,7 @@ theorem valTraceOk_complete :
 
 theorem valNat_mem_iff (code member : ℕ) :
     member ∈ valNat code ↔ ∃ tr, valTraceOk tr ∧ valTraceHas tr code member :=
-  ⟨valTraceOk_complete code member, fun ⟨tr, hok, ⟨t, ht⟩⟩ =>
+  ⟨valTraceOk_complete code member, fun ⟨_tr, hok, ⟨_t, ht⟩⟩ =>
     valTraceOk_sound hok ht⟩
 
 theorem valTraceHas_iff (tr : ValTrace) (c m : ℕ) :
@@ -1393,7 +1388,7 @@ theorem unpairWRec_lt (k n : ℕ) :
   | zero =>
     by_cases hk : k < triangle 1
     · exact Or.inl (by simp [unpairWRec, hk])
-    · exact Or.inr (by simp [unpairWRec, hk])
+    · exact Or.inr (by simp [unpairWRec])
   | succ n ih =>
     by_cases hk : k < triangle (n + 1)
     · simp [unpairWRec_succ, hk]
@@ -1629,10 +1624,10 @@ theorem e_subset_ofNat_iff (code n : ℕ) :
       refine Or.inr (Nat.eq_of_testBit_eq fun k => ?_)
       by_cases hk : k = n
       · subst hk
-        simp [hn, Nat.testBit_two_pow]
+        simp [hn]
       · have hfalse : code.testBit k = false :=
           Bool.eq_false_iff.mpr fun hb => hk (hbit k hb)
-        simp [Nat.testBit_two_pow, hfalse, Ne.symm hk]
+        simp [hfalse, Ne.symm hk]
   · intro h
     rcases h with rfl | rfl
     · intro k hk
@@ -1754,7 +1749,7 @@ theorem theorem_3_5_case2 {u : Pomega} {p : ℕ → ℕ} {n j k : ℕ}
     (hu : IsCombinatory u) (hr : Realizes u p)
     (hext : IsExtensional valNat p)
     (hj : e j ⊆ valNat n)
-    (hne : e j ≠ valNat n)
+    (_hne : e j ≠ valNat n)
     (hkfin : k ∈ valNat (p (fin j)))
     (hkn : k ∉ valNat (p n)) : False := by
   have hiff : ∀ m, k ∈ valNat (p (myhillCase2Code j n m)) ↔ valNat m = botElem := by
@@ -1764,7 +1759,7 @@ theorem theorem_3_5_case2 {u : Pomega} {p : ℕ → ℕ} {n j k : ℕ}
         rw [valNat_myhillCase2Code, hm, eq_2_7_bot]
         simp [botElem]
       have := hext (myhillCase2Code j n m) (fin j) (by simp [this, valNat_fin])
-      simp [this, valNat_fin, hkfin, hm]
+      simp [this, hkfin, hm]
     · have : valNat (myhillCase2Code j n m) = valNat n :=
         valNat_myhillCase2Code_ne_bot j n m hj hm
       have := hext (myhillCase2Code j n m) n this
@@ -1819,15 +1814,15 @@ theorem haltEnum_range_re : REPred fun m => ∃ t, haltEnum t = m :=
 theorem haltEnum_range_not_computable :
     ¬ComputablePred fun m => ∃ t, haltEnum t = m := by
   intro hc
-  haveI := hc.choose
+  have := hc.choose
   have hsucc : ComputablePred fun n : ℕ => ∃ t, haltEnum t = n + 1 :=
     Computable.computablePred
       ((ComputablePred.decide hc).comp Primrec.succ.to_comp)
   have hn : ComputablePred fun n : ℕ =>
       (eval (Denumerable.ofNat Code n) 0).Dom :=
     hsucc.of_eq fun n => haltEnum_succ_iff n
-  haveI := hn.choose
-  haveI : DecidablePred fun c : Code => (eval c 0).Dom :=
+  have := hn.choose
+  have : DecidablePred fun c : Code => (eval c 0).Dom :=
     fun c => decidable_of_iff
       (eval (Denumerable.ofNat Code (encode c)) 0).Dom
       (by simp [Denumerable.ofNat_encode])
@@ -2022,7 +2017,7 @@ theorem theorem_3_5_case1 {u : Pomega} {p : ℕ → ℕ} {n k : ℕ}
     (hext : IsExtensional valNat p)
     (hk : k ∈ valNat (p n))
     (hnin : ¬∃ j, e j ⊆ valNat n ∧ k ∈ valNat (p (fin j)))
-    (hinf : ¬(valNat n).Finite) : False := by
+    (_hinf : ¬(valNat n).Finite) : False := by
   have hiff : ∀ m,
       k ∈ valNat (p (myhillCase1Code n m)) ↔ ¬∃ t, haltEnum t = m := by
     intro m
@@ -2259,11 +2254,11 @@ theorem interp_avoids {i : ℕ} (t : Term) (ρ : ℕ → Pomega) (v : Pomega)
     cases h with
     | inl hji =>
       subst hji
-      simp [envSet, Function.update]
+      simp [envSet]
     | inr hb =>
       by_cases hji : j = i
       · subst hji
-        simp [envSet, Function.update]
+        simp [envSet]
       · rw [envSet_comm (ρ := ρ) (i := i) (j := j) (Ne.symm hji) v w,
           ih (ρ := envSet ρ j w) (i := i) hb]
 
@@ -2385,17 +2380,14 @@ def barStepTerm : Term :=
 theorem barStepTerm_interp :
     interp barStepTerm (fun _ => botElem) = graph barStep := by
   unfold barStepTerm barStep
-  simp only [interp, envSet, Function.update_self,
-    Function.update_of_ne (by decide : (1 : ℕ) ≠ 0),
-    Function.update_of_ne (by decide : (2 : ℕ) ≠ 0),
-    Function.update_of_ne (by decide : (2 : ℕ) ≠ 1)]
+  simp only [interp, envSet, Function.update_self]
   apply congrArg graph
   funext B
   apply congrArg graph
   funext u
   apply congrArg graph
   funext x
-  simp [barStepBody, barPosTerm_interp, interp, envSet, Function.update,
+  simp [barStepBody, barPosTerm_interp, Function.update,
     succSet_ofNat]
 
 theorem barStepBody_isScottContinuous_B (u x : Pomega) :

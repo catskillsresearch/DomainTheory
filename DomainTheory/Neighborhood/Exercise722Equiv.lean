@@ -102,7 +102,7 @@ theorem coe_startFin : ∀ e : SExpr, (↑(startFin e) : Set (autState e)) = (to
       show _ = (catEps (toNFA a) (toNFA b)).εClosure (catEps (toNFA a) (toNFA b)).start
       rw [catEps_start]
       by_cases hne : ((startFin a) ∩ (acceptFin a)).Nonempty
-      · rw [if_pos hne]
+      · rw [ite_eq_left hne]
         ext x
         rw [catEps_mem_εClosure_iff, ← coe_startFin a, ← coe_acceptFin a, ← coe_startFin b]
         simp only [Finset.coe_union, Finset.coe_image, mem_union, mem_image, Finset.mem_coe]
@@ -116,7 +116,7 @@ theorem coe_startFin : ∀ e : SExpr, (↑(startFin e) : Set (autState e)) = (to
         · rintro (⟨q, hq, rfl⟩ | ⟨_, q, hq, rfl⟩)
           · exact Or.inl ⟨q, hq, rfl⟩
           · exact Or.inr ⟨q, hq, rfl⟩
-      · rw [if_neg hne]
+      · rw [ite_eq_right hne]
         ext x
         rw [catEps_mem_εClosure_iff, ← coe_startFin a, ← coe_acceptFin a, ← coe_startFin b]
         simp only [Finset.coe_image, mem_image, Finset.mem_coe]
@@ -168,7 +168,7 @@ theorem coe_stepFinSingle : ∀ (e : SExpr) (s : autState e) (c : Bool),
         ((catEps (toNFA a) (toNFA b)).step (inl s) (some c))
       rw [catEps_step_inl_some]
       by_cases hne : ((stepFinSingle a s c) ∩ (acceptFin a)).Nonempty
-      · rw [if_pos hne]
+      · rw [ite_eq_left hne]
         ext x
         rw [catEps_mem_εClosure_iff, ← coe_stepFinSingle a s c, ← coe_acceptFin a,
           ← coe_startFin b]
@@ -183,7 +183,7 @@ theorem coe_stepFinSingle : ∀ (e : SExpr) (s : autState e) (c : Bool),
         · rintro (⟨q, hq, rfl⟩ | ⟨_, q, hq, rfl⟩)
           · exact Or.inl ⟨q, hq, rfl⟩
           · exact Or.inr ⟨q, hq, rfl⟩
-      · rw [if_neg hne]
+      · rw [ite_eq_right hne]
         ext x
         rw [catEps_mem_εClosure_iff, ← coe_stepFinSingle a s c, ← coe_acceptFin a,
           ← coe_startFin b]

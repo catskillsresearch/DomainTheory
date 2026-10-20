@@ -190,15 +190,15 @@ theorem myClearBit_eq_xor {m ℓ : ℕ} (h : m.testBit ℓ = true) : myClearBit 
   intro j
   rw [hclear, Nat.testBit_two_pow_mul_add _ hrlt2 j, Nat.testBit_xor, Nat.testBit_two_pow]
   rcases lt_trichotomy j ℓ with hjl | hjl | hjl
-  · rw [if_pos (show j < ℓ + 1 by omega), Nat.testBit_mod_two_pow,
+  · rw [ite_eq_left (show j < ℓ + 1 by omega), Nat.testBit_mod_two_pow,
       decide_eq_true_iff.mpr hjl, decide_eq_false_iff_not.mpr (show ℓ ≠ j by omega)]
     simp
   · have hjt : m.testBit j = true := by rw [hjl]; exact h
-    rw [if_pos (show j < ℓ + 1 by omega), Nat.testBit_mod_two_pow,
+    rw [ite_eq_left (show j < ℓ + 1 by omega), Nat.testBit_mod_two_pow,
       decide_eq_false_iff_not.mpr (show ¬ j < ℓ by omega), hjt,
       decide_eq_true_iff.mpr hjl.symm]
     rfl
-  · rw [if_neg (show ¬ j < ℓ + 1 by omega), Nat.testBit_div_two_pow,
+  · rw [ite_eq_right (show ¬ j < ℓ + 1 by omega), Nat.testBit_div_two_pow,
       show j - (ℓ + 1) + (ℓ + 1) = j by omega, decide_eq_false_iff_not.mpr (show ℓ ≠ j by omega)]
     simp
 

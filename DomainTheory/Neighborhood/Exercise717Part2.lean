@@ -261,14 +261,14 @@ combined code `w = ⟨v, cert⟩`. A node's child code `⟨a.i, child-cert⟩` m
 theorem pair_lt_pair_left {a c b : ℕ} (h : a < c) : Nat.pair a b < Nat.pair c b := by
   unfold Nat.pair
   rcases Nat.lt_or_ge a b with hab | hab
-  · rw [if_pos hab]
+  · rw [ite_eq_left hab]
     rcases Nat.lt_or_ge c b with hcb | hcb
-    · rw [if_pos hcb]; omega
-    · rw [if_neg (Nat.not_lt.mpr hcb)]
+    · rw [ite_eq_left hcb]; omega
+    · rw [ite_eq_right (Nat.not_lt.mpr hcb)]
       have hbc : b * b ≤ c * c := Nat.mul_le_mul hcb hcb
       omega
-  · rw [if_neg (Nat.not_lt.mpr hab),
-      if_neg (Nat.not_lt.mpr (le_of_lt (lt_of_le_of_lt hab h)))]
+  · rw [ite_eq_right (Nat.not_lt.mpr hab),
+      ite_eq_right (Nat.not_lt.mpr (le_of_lt (lt_of_le_of_lt hab h)))]
     have hcc : (a + 1) * (a + 1) ≤ c * c := Nat.mul_le_mul h h
     have hexp : (a + 1) * (a + 1) = a * a + 2 * a + 1 := by ring
     omega
@@ -277,18 +277,18 @@ theorem pair_lt_pair_left {a c b : ℕ} (h : a < c) : Nat.pair a b < Nat.pair c 
 theorem pair_le_pair_right {a b d : ℕ} (h : b ≤ d) : Nat.pair a b ≤ Nat.pair a d := by
   unfold Nat.pair
   rcases Nat.lt_or_ge a b with hab | hab
-  · rw [if_pos hab, if_pos (lt_of_lt_of_le hab h)]
+  · rw [ite_eq_left hab, ite_eq_left (lt_of_lt_of_le hab h)]
     have : b * b ≤ d * d := Nat.mul_le_mul h h
     omega
-  · rw [if_neg (Nat.not_lt.mpr hab)]
+  · rw [ite_eq_right (Nat.not_lt.mpr hab)]
     rcases Nat.lt_or_ge a d with had | had
-    · rw [if_pos had]
+    · rw [ite_eq_left had]
       have h1 : a * a + a ≤ d * d := by
         calc a * a + a = a * (a + 1) := by ring
           _ ≤ a * d := Nat.mul_le_mul (le_refl a) had
           _ ≤ d * d := Nat.mul_le_mul had.le (le_refl d)
       omega
-    · rw [if_neg (Nat.not_lt.mpr had)]; omega
+    · rw [ite_eq_right (Nat.not_lt.mpr had)]; omega
 
 /-- Combined: strict in the first argument, monotone in the second. -/
 theorem pair_lt_pair_of_lt_le {a c b d : ℕ} (hac : a < c) (hbd : b ≤ d) :

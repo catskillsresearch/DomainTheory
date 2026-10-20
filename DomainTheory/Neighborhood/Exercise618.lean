@@ -378,14 +378,14 @@ theorem rho_apply (n : ℕ) (z : (iterSys V).Element) :
     cases j with
     | zero =>
       show component z 0 = if (0 : ℕ) < n + 1 then component z 0 else V.bot
-      rw [if_pos (Nat.zero_lt_succ n)]
+      rw [ite_eq_left (Nat.zero_lt_succ n)]
     | succ k =>
       rw [consSeq_succ, component_ofSeq, component_ofSeq]
       show (if k < n then component z (k + 1) else V.bot)
          = if k + 1 < n + 1 then component z (k + 1) else V.bot
       by_cases h : k < n
-      · rw [if_pos h, if_pos (Nat.succ_lt_succ h)]
-      · rw [if_neg h, if_neg (fun hc => h (Nat.lt_of_succ_lt_succ hc))]
+      · rw [ite_eq_left h, ite_eq_left (Nat.succ_lt_succ h)]
+      · rw [ite_eq_right h, ite_eq_right (fun hc => h (Nat.lt_of_succ_lt_succ hc))]
 
 /-- **`⋃ₙ ρₙ = I`.** Every `z` is the directed union of its truncations: the cofinite-`Δ` structure
 of `𝒟^∞` means each neighbourhood of `z` is already realised by a finite truncation. -/
@@ -422,8 +422,8 @@ theorem iSupRho_eq_id : descMap (imap V) = idMap (iterSys V) := by
     refine ⟨hY, fun i => ?_⟩
     show (if i < N then component z i else V.bot).mem (fiber Y i)
     by_cases h : i < N
-    · rw [if_pos h]; exact hcomp i
-    · rw [if_neg h, hN i (not_lt.mp h)]; exact V.bot.master_mem
+    · rw [ite_eq_left h]; exact hcomp i
+    · rw [ite_eq_right h, hN i (not_lt.mp h)]; exact V.bot.master_mem
 
 /-! ## Uniqueness of strict homomorphisms -/
 

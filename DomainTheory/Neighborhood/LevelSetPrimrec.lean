@@ -301,11 +301,11 @@ theorem levelSet_myUpsampleStep (k m : ℕ) :
   have hjlt : n % 2 ^ (k + 1) < 2 ^ (k + 1) := Nat.mod_lt n (Nat.two_pow_pos (k + 1))
   have h2 : (2:ℕ) ^ (k + 1) = 2 * 2 ^ k := by rw [pow_succ]; ring
   by_cases hcase : n % 2 ^ (k + 1) < 2 ^ k
-  · rw [if_pos hcase, myModPow2_eq, Nat.testBit_mod_two_pow, decide_eq_true_iff.mpr hcase,
+  · rw [ite_eq_left hcase, myModPow2_eq, Nat.testBit_mod_two_pow, decide_eq_true_iff.mpr hcase,
       Bool.true_and, hmm, Nat.mod_eq_of_lt hcase]
   · have hge : 2 ^ k ≤ n % 2 ^ (k + 1) := Nat.le_of_not_lt hcase
     have hsub : n % 2 ^ (k + 1) - 2 ^ k < 2 ^ k := by omega
-    rw [if_neg hcase, myModPow2_eq, Nat.testBit_mod_two_pow, decide_eq_true_iff.mpr hsub,
+    rw [ite_eq_right hcase, myModPow2_eq, Nat.testBit_mod_two_pow, decide_eq_true_iff.mpr hsub,
       Bool.true_and, hmm, mod_eq_sub_of_le_of_lt_two_mul hge (h2 ▸ hjlt)]
 
 /-- Joint (level, mask) iteration state for `myUpsample`: `pair level mask`. -/

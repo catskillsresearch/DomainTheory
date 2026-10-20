@@ -52,7 +52,7 @@ theorem testBit_mod_two_pow (n k i : ℕ) :
   have h := Nat.testBit_two_pow_mul_add (n / 2 ^ k) hlt i
   rw [Nat.div_add_mod] at h
   rcases Nat.lt_or_ge i k with hik | hik
-  · simp only [hik, if_true, decide_true, Bool.true_and] at h ⊢
+  · simp only [hik, ite_true, decide_true, Bool.true_and] at h ⊢
     exact h.symm
   · simp only [Nat.not_lt.mpr hik, decide_false, Bool.false_and]
     exact Nat.testBit_eq_false_of_lt (hlt.trans_le (Nat.pow_le_pow_right (by norm_num) hik))

@@ -207,7 +207,7 @@ theorem genAtom_mem_or_empty {γ : Type*} {D : NeighborhoodSystem γ} (hpos : D.
     have hbranch : (if δ n then Z n else D.master \ Z n) = ∅ ∨
         D.mem (if δ n then Z n else D.master \ Z n) := by
       by_cases hδ : δ n = true
-      · simp only [hδ, if_true]; exact Or.inr (hZ n)
+      · simp only [hδ, ite_true]; exact Or.inr (hZ n)
       · simp only [hδ]; exact hdiff D.master_mem (hZ n)
     show genAtom Z D.master δ n ∩ (if δ n then Z n else D.master \ Z n) = ∅ ∨
       D.mem (genAtom Z D.master δ n ∩ (if δ n then Z n else D.master \ Z n))
@@ -288,7 +288,7 @@ theorem splitChoice'_isSplitSpec {α γ : Type*} (E : NeighborhoodSystem γ) (hE
   intro A B hAB hBE Xn
   classical
   unfold splitChoice'
-  rw [dif_pos ⟨hAB, hBE⟩]
+  rw [dite_eq_left ⟨hAB, hBE⟩]
   exact (exists_split' hEnomin hAB hBE Xn).choose_spec.choose_spec
 
 /-- **Generalization of `Theorem88.lean`'s `split_fst_subset`**: a splitting operation's first
@@ -411,7 +411,7 @@ are both `⊆ A`). -/
 theorem xStep_fst_subset {α β : Type*} (D₁ : NeighborhoodSystem β) (hD₁nomin : D₁.NoMinimal)
     (A : Set α) (B : Set β) (Xn : Set α) (b : Bool) : (xStep D₁ hD₁nomin A B Xn b).1 ⊆ A := by
   by_cases hb : b = true
-  · simp only [xStep, xyStep, hb, if_true]; exact Set.inter_subset_left
+  · simp only [xStep, xyStep, hb, ite_true]; exact Set.inter_subset_left
   · simp only [xStep, xyStep, hb]; exact Set.sdiff_subset
 
 /-- **`xStep`'s `β`-side output is a subset of `B`**, given the `SplitSpec'` preconditions
@@ -421,7 +421,7 @@ theorem xStep_snd_subset {α β : Type*} {D₁ : NeighborhoodSystem β} (hD₁no
     (b : Bool) : (xStep D₁ hD₁nomin A B Xn b).2 ⊆ B := by
   have hspec := splitChoice'_isSplitSpec D₁ hD₁nomin hAB hBmem Xn
   by_cases hb : b = true
-  · simp only [xStep, xyStep, hb, if_true]; exact Set.subset_union_left.trans_eq hspec.2.2.2.2.1
+  · simp only [xStep, xyStep, hb, ite_true]; exact Set.subset_union_left.trans_eq hspec.2.2.2.2.1
   · simp only [xStep, xyStep, hb]; exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
 
 /-- **`yStep`'s `α`-side output is a subset of `A1`**, given the `SplitSpec'` preconditions. -/
@@ -430,7 +430,7 @@ theorem yStep_fst_subset {α β : Type*} {D₀ : NeighborhoodSystem α} (hD₀no
     (b : Bool) : (yStep D₀ hD₀nomin A1 B1 Yn b).1 ⊆ A1 := by
   have hspec := splitChoice'_isSplitSpec D₀ hD₀nomin hBA hAmem Yn
   by_cases hb : b = true
-  · simp only [yStep, xyStep, Prod.swap, hb, if_true]
+  · simp only [yStep, xyStep, Prod.swap, hb, ite_true]
     exact Set.subset_union_left.trans_eq hspec.2.2.2.2.1
   · simp only [yStep, xyStep, Prod.swap, hb]
     exact Set.subset_union_right.trans_eq hspec.2.2.2.2.1
@@ -439,7 +439,7 @@ theorem yStep_fst_subset {α β : Type*} {D₀ : NeighborhoodSystem α} (hD₀no
 theorem yStep_snd_subset {α β : Type*} (D₀ : NeighborhoodSystem α) (hD₀nomin : D₀.NoMinimal)
     (A1 : Set α) (B1 : Set β) (Yn : Set β) (b : Bool) : (yStep D₀ hD₀nomin A1 B1 Yn b).2 ⊆ B1 := by
   by_cases hb : b = true
-  · simp only [yStep, xyStep, Prod.swap, hb, if_true]; exact Set.inter_subset_left
+  · simp only [yStep, xyStep, Prod.swap, hb, ite_true]; exact Set.inter_subset_left
   · simp only [yStep, xyStep, Prod.swap, hb]; exact Set.sdiff_subset
 
 /-- **`xStep`'s two outputs, at two different sign bits, are pairwise disjoint.** -/
@@ -623,15 +623,15 @@ theorem atomPair_invariant (δ : ℕ → Bool × Bool) :
     set B1 := (if (δ n).1 then I1 else J1) with hB1def
     have hA1B1 : A1 = ∅ ↔ B1 = ∅ := by
       by_cases hδ1 : (δ n).1 = true
-      · simp only [hA1def, hB1def, hδ1, if_true]; exact hspec1.2.2.1
+      · simp only [hA1def, hB1def, hδ1, ite_true]; exact hspec1.2.2.1
       · simp only [hA1def, hB1def, hδ1]; exact hspec1.2.2.2.1
     have hA1mem : A1 = ∅ ∨ D₀.mem A1 := by
       by_cases hδ1 : (δ n).1 = true
-      · simp only [hA1def, hδ1, if_true]; exact inter_mem_or_empty hD₀pos ihA (hXmem n)
+      · simp only [hA1def, hδ1, ite_true]; exact inter_mem_or_empty hD₀pos ihA (hXmem n)
       · simp only [hA1def, hδ1]; exact diff_mem_or_empty hD₀diff ihA (hXmem n)
     have hB1mem : B1 = ∅ ∨ D₁.mem B1 := by
       by_cases hδ1 : (δ n).1 = true
-      · simp only [hB1def, hδ1, if_true]; exact hspec1.1
+      · simp only [hB1def, hδ1, ite_true]; exact hspec1.1
       · simp only [hB1def, hδ1]; exact hspec1.2.1
     have hspec2 := splitChoice'_isSplitSpec D₀ hD₀nomin hA1B1.symm hA1mem (Y n)
     set I2 := (splitChoice' D₀ hD₀nomin B1 A1 (Y n)).1 with hI2def
@@ -640,15 +640,15 @@ theorem atomPair_invariant (δ : ℕ → Bool × Bool) :
     set A2 := (if (δ n).2 then I2 else J2) with hA2def
     have hB2A2 : B2 = ∅ ↔ A2 = ∅ := by
       by_cases hδ2 : (δ n).2 = true
-      · simp only [hB2def, hA2def, hδ2, if_true]; exact hspec2.2.2.1
+      · simp only [hB2def, hA2def, hδ2, ite_true]; exact hspec2.2.2.1
       · simp only [hB2def, hA2def, hδ2]; exact hspec2.2.2.2.1
     have hB2mem : B2 = ∅ ∨ D₁.mem B2 := by
       by_cases hδ2 : (δ n).2 = true
-      · simp only [hB2def, hδ2, if_true]; exact inter_mem_or_empty hD₁pos hB1mem (hYmem n)
+      · simp only [hB2def, hδ2, ite_true]; exact inter_mem_or_empty hD₁pos hB1mem (hYmem n)
       · simp only [hB2def, hδ2]; exact diff_mem_or_empty hD₁diff hB1mem (hYmem n)
     have hA2mem : A2 = ∅ ∨ D₀.mem A2 := by
       by_cases hδ2 : (δ n).2 = true
-      · simp only [hA2def, hδ2, if_true]; exact hspec2.1
+      · simp only [hA2def, hδ2, ite_true]; exact hspec2.1
       · simp only [hA2def, hδ2]; exact hspec2.2.1
     show (A2 = ∅ ↔ B2 = ∅) ∧ (A2 = ∅ ∨ D₀.mem A2) ∧ (B2 = ∅ ∨ D₁.mem B2)
     exact ⟨hB2A2.symm, hA2mem, hB2mem⟩
@@ -716,10 +716,10 @@ theorem xStep_spec (δ : ℕ → Bool × Bool) (n : ℕ) :
   have hspec1 := splitChoice'_isSplitSpec D₁ hD₁nomin ihAB ihB (X n)
   refine ⟨?_, ?_⟩
   · by_cases hδ1 : (δ n).1 = true
-    · simp only [xStep, xyStep, hδ1, if_true]; exact hspec1.2.2.1.symm
+    · simp only [xStep, xyStep, hδ1, ite_true]; exact hspec1.2.2.1.symm
     · simp only [xStep, xyStep, hδ1]; exact hspec1.2.2.2.1.symm
   · by_cases hδ1 : (δ n).1 = true
-    · simp only [xStep, xyStep, hδ1, if_true]; exact inter_mem_or_empty hD₀pos ihA (hXmem n)
+    · simp only [xStep, xyStep, hδ1, ite_true]; exact inter_mem_or_empty hD₀pos ihA (hXmem n)
     · simp only [xStep, xyStep, hδ1]; exact diff_mem_or_empty hD₀diff ihA (hXmem n)
 
 /-- **`atomPair`'s `α`-side only shrinks from depth `n` to `n + 1`.** -/
@@ -961,9 +961,9 @@ theorem xStep_snd_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     xStep_snd_eq_inter_XPseq D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem
       hD₀mne hD₁mne δ n
   by_cases hb : b = true
-  · rw [hb, if_pos rfl]; exact hIeq
+  · rw [hb, ite_eq_left rfl]; exact hIeq
   · rw [Bool.not_eq_true] at hb; subst hb
-    rw [if_neg (by simp)]
+    rw [ite_eq_right (by simp)]
     have hJeq : (xStep D₁ hD₁nomin A B (X n) false).2 = B \ XP := by
       have hunion : (xStep D₁ hD₁nomin A B (X n) true).2 ∪ (xStep D₁ hD₁nomin A B (X n) false).2
           = B := by simp only [xStep, xyStep]; exact hspec.2.2.2.2.1
@@ -1149,9 +1149,9 @@ theorem yStep_fst_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ) (b : Bool) :
     yStep_fst_eq_inter_YPseq D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem
       hD₀mne hD₁mne δ n
   by_cases hb : b = true
-  · rw [hb, if_pos rfl]; exact hJeqTrue
+  · rw [hb, ite_eq_left rfl]; exact hJeqTrue
   · rw [Bool.not_eq_true] at hb; subst hb
-    rw [if_neg (by simp)]
+    rw [ite_eq_right (by simp)]
     have hJeq : (yStep D₀ hD₀nomin A1 B1 (Y n) false).1 = A1 \ YP := by
       have hunion : (yStep D₀ hD₀nomin A1 B1 (Y n) true).1 ∪ (yStep D₀ hD₀nomin A1 B1 (Y n) false).1
           = A1 := by simp only [yStep, xyStep, Prod.swap]; exact hspec.2.2.2.2.1
@@ -1270,34 +1270,34 @@ def combinedδ (δ : ℕ → Bool × Bool) (n : ℕ) : Bool :=
 omit hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne in
 theorem combinedX_even (k : ℕ) : combinedX D₀ D₁ hD₀nomin hD₁nomin X Y (2 * k) = X k := by
   unfold combinedX
-  rw [if_pos (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
+  rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
 omit hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne in
 theorem combinedX_odd (k : ℕ) :
     combinedX D₀ D₁ hD₀nomin hD₁nomin X Y (2 * k + 1) = YPseq D₀ D₁ hD₀nomin hD₁nomin X Y k := by
   unfold combinedX
-  rw [if_neg (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
+  rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 omit hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne in
 theorem combinedY_even (k : ℕ) :
     combinedY D₀ D₁ hD₀nomin hD₁nomin X Y (2 * k) = XPseq D₀ D₁ hD₀nomin hD₁nomin X Y k := by
   unfold combinedY
-  rw [if_pos (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
+  rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
 omit hD₀pos hD₀diff hD₁pos hD₁diff hXmem hYmem hD₀mne hD₁mne in
 theorem combinedY_odd (k : ℕ) : combinedY D₀ D₁ hD₀nomin hD₁nomin X Y (2 * k + 1) = Y k := by
   unfold combinedY
-  rw [if_neg (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
+  rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 omit hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne in
 theorem combinedδ_even (δ : ℕ → Bool × Bool) (k : ℕ) : combinedδ δ (2 * k) = (δ k).1 := by
   unfold combinedδ
-  rw [if_pos (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
+  rw [ite_eq_left (by omega : (2 * k) % 2 = 0), show (2 * k) / 2 = k from by omega]
 
 omit hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne in
 theorem combinedδ_odd (δ : ℕ → Bool × Bool) (k : ℕ) : combinedδ δ (2 * k + 1) = (δ k).2 := by
   unfold combinedδ
-  rw [if_neg (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
+  rw [ite_eq_right (by omega : ¬ (2 * k + 1) % 2 = 0), show (2 * k + 1) / 2 = k from by omega]
 
 /-- **The odd-depth half-step identity for `combinedX`**: given `atomPair δ n`'s `α`-side agrees
 with `genAtom combinedX` at the even depth `2 * n`, it also agrees at the odd depth `2 * n + 1` with
@@ -1315,8 +1315,8 @@ theorem genAtom_combinedX_succ_eq (δ : ℕ → Bool × Bool) (n : ℕ)
       hYmem hD₀mne hD₁mne δ n
   simp only [xStep, xyStep]
   rcases Bool.eq_false_or_eq_true (δ n).1 with hb | hb
-  · simp only [hb, if_true]
-  · simp only [hb, Bool.false_eq_true, if_false]
+  · simp only [hb, ite_true]
+  · simp only [hb, Bool.false_eq_true, ite_false]
     exact inter_diff_eq_diff_of_subset hAsub
 
 /-- **The odd-depth half-step identity for `combinedY`**: given `atomPair δ n`'s `β`-side agrees
@@ -1375,8 +1375,8 @@ theorem atomPair_snd_eq_genAtom (δ : ℕ → Bool × Bool) (n : ℕ) :
           hYmem hD₀mne hD₁mne δ n)
       simp only [yStep, xyStep, Prod.swap]
       rcases Bool.eq_false_or_eq_true (δ n).2 with hb | hb
-      · simp only [hb, if_true]
-      · simp only [hb, Bool.false_eq_true, if_false]
+      · simp only [hb, ite_true]
+      · simp only [hb, Bool.false_eq_true, ite_false]
         exact (inter_diff_eq_diff_of_subset hB1sub).symm
 
 /-! ### Exercise 8.12(c)(vi)(5)(c)(1): de-interleaving a sign sequence, and its round trip

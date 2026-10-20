@@ -8,7 +8,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 import DomainTheory.Neighborhood.Theorem88
 import DomainTheory.Neighborhood.Definition610
 import DomainTheory.Neighborhood.Lemma615
-import Mathlib.Data.Countable.Defs
+import Mathlib.Basic.Countable.Defs
 
 /-!
 # First sentence of Theorem 8.8 — assembling `D ≅ᴰ D' ∧ D' ◁ U`
@@ -346,11 +346,11 @@ theorem theorem_8_8_a.{u} {α : Type u} (D : NeighborhoodSystem α)
   have : Nonempty {S : Set α // D.mem S} := ⟨⟨D.master, D.master_mem⟩⟩
   obtain ⟨f, hf⟩ := exists_surjective_nat {S : Set α // D.mem S}
   set e : ℕ → Set α := fun n => if n = 0 then D.master else (f (n - 1)).1 with hedef
-  have he0 : e 0 = D.master := if_pos rfl
+  have he0 : e 0 = D.master := ite_eq_left rfl
   have hen : ∀ n, e (n + 1) = (f n).1 := by
     intro n
     show (if n + 1 = 0 then D.master else (f (n + 1 - 1)).1) = (f n).1
-    rw [if_neg (Nat.succ_ne_zero n), Nat.succ_sub_one]
+    rw [ite_eq_right (Nat.succ_ne_zero n), Nat.succ_sub_one]
   have hcover : ∀ S, D.mem S ↔ ∃ n, S = e n := by
     intro S
     constructor
