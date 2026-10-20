@@ -1,0 +1,44 @@
+# Frozen sibling checkouts vendored for DomainTheory.
+# Same author (Lars Warren Ericson). Remotes remain the per-paper homes.
+# Straight file copies of the GitHub trees below (clone, record HEAD,
+# copy the working tree, delete every .git). No .git / .lake directories.
+# Copied 2026-10-20 (UTC).
+#
+# Provenance BEFORE modification: DomainTheory is a derivative work
+# building on these copies, and the vendored code WILL change and
+# diverge from the revisions below. These revs are the pre-modification
+# record (see ../PROVENANCE.md and ../formalization.yaml, which quote
+# each repo's own Palomar registration); they are not a promise that
+# the working tree stays identical to upstream, and DomainTheory does
+# not inherit the upstream Palomar registrations.
+#
+# Deviation from upstream: nested .gitignore files were removed
+# 2026-10-20 (only the DomainTheory root .gitignore remains). That root
+# file still matches some vendored generated artifacts (arxiv.tex,
+# figures/, lean-listings/, dist/, 00README.json), so commit those
+# verbatim with `git add -f vendor/`.
+
+vendor/scott1972
+  origin: https://github.com/catskillsresearch/scott1972
+  rev:    a198b6e24aea07cfc858a59798d0ca78161c4387
+  date:   2026-10-20
+
+vendor/scott1976
+  origin: https://github.com/catskillsresearch/scott1976
+  rev:    94ef7f7f096078cbfe4f99595c2a3fcb4c563942
+  date:   2026-10-20
+
+vendor/scott1980
+  origin: https://github.com/catskillsresearch/scott1980
+  rev:    11b25d2e9cc32176ddfc78194058c61a0138a6da
+  date:   2026-10-20
+
+vendor/scott1982
+  origin: https://github.com/catskillsresearch/scott1982
+  rev:    455bd70226912fa621203319292e25deb0677082
+  date:   2026-10-20
+
+vendor/scott_models
+  origin: https://github.com/catskillsresearch/scott_models
+  rev:    85ed1ae09faa29fe292c9867e91cf8e9b48ab2fa
+  date:   2026-10-20

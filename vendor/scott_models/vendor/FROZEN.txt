@@ -1,0 +1,41 @@
+# Frozen sibling checkouts vendored for one Palomar SHA.
+# Same author (Lars Warren Ericson). Remotes remain the per-paper homes.
+# Copied 2026-08-24 (UTC). No .git / .lake directories.
+#
+# scott1982: vendor/scott1982/Scott1982/Factoid81.lean carries a bridge patch
+# (TreeEntPayload kernel disjuncts + TreeCon_insert_bot) required for
+# ScottModels/SexDomainEquation.lean; upstream at rev below is Scott-faithful only.
+# The v4.33 compatibility layer also patches Constructive/Proposition23
+# (`funion_empty_right`), Factoid77 (explicit tensor/product transports),
+# Factoid82, Fixpoint, and Theorem72 (proofs robust to stricter transparency).
+# Its lake-manifest.json is refreshed from mathlib v4.33.0.
+#
+# Vendored 1980/1982 instances used as Comparator definition holes are
+# explicitly named (`instPartialOrderElement`, `instDecidableEqSumToken`,
+# `instDecidableEqProdToken`) so Challenge and Solution share anchors.
+#
+# All three trees omit sibling Palomar packaging (comparator.json,
+# Challenge/Solution, formalization.yaml, preflight scripts, docs) so
+# this monorepo has a single Comparator config at the root. Lakefiles
+# and CI default to the paper libraries only. Full Palomar kits remain
+# on the per-paper remotes.
+# vendor/scott1972 Lean sources are otherwise unmodified from the
+# frozen revision.
+
+vendor/scott1972
+  origin: https://github.com/catskillsresearch/scott1972
+  rev:    278ba1745b6fb023fc3e9ffe53b7106ce60222c1
+  from:   /home/catskills/Desktop/scott1972
+  date:   2026-08-24
+
+vendor/scott1980
+  origin: https://github.com/catskillsresearch/scott1980
+  rev:    ef6c05671582b7883ecd40b7081b642ce5351963
+  from:   /home/catskills/Desktop/scott1980
+  date:   2026-08-24
+
+vendor/scott1982
+  origin: https://github.com/catskillsresearch/scott1982
+  rev:    d3221eec09505aa75e1b818aabc73f1f04339bdc
+  from:   /home/catskills/Desktop/scott1982
+  date:   2026-08-24

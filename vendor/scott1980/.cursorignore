@@ -1,0 +1,17 @@
+# Generated arXiv PDF pipeline — NOT a source of truth for formalization work.
+# Inventory and status live in arxiv.md; see HANDOFF.md Resume Protocol.
+arxiv_with_code.md
+arxiv_with_code.tex
+arxiv_with_code.pdf
+arxiv_with_code.aux
+arxiv_with_code.out
+arxiv_with_code.toc
+arxiv_with_code.log
+arxiv_with_code.fls
+arxiv_with_code.fdb_latexmk
+arxiv_with_code.synctex.gz
+
+# Generated single-file dump of every Scott1980 module (scripts/flatten_to_proof.py).
+# Duplicates the whole library; regenerate for LLM export, do not commit.
+proof.lean
+proof.lean.*

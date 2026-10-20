@@ -1,0 +1,320 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+# Initial Palomar provenance for DomainTheory, recorded 2026-10-20 before
+# any DomainTheory Lean development or modification of the vendored code.
+# This file describes the derivative starting point only: DomainTheory is
+# not yet Palomar-registered and has no compared claim, Challenge/Solution
+# pair, or comparator.json yet. The five Palomar registrations cited below
+# belong to the upstream repositories and are quoted from them at the
+# vendored revisions; they are not transferred to DomainTheory.
+
+project:
+  name: "DomainTheory — derivative development from five registered Scott formalizations (initial provenance)"
+  description: >-
+    A Lean 4 / mathlib development of Scott domain theory built as a
+    derivative work from straight file copies, vendored under vendor/ on
+    2026-10-20, of five same-author formalizations: scott1972 (Continuous
+    Lattices, Theorem 4.4), scott1976 (Data Types as Lattices),
+    scott1980 (PRG-19 neighbourhood systems, Theorem 8.8 first
+    sentence), scott1982 (information systems, Theorem 7.2 first
+    sentence), and scott_models (cross-presentation bridges). Each base
+    is registered with Palomar on its own, as specified in that repo at
+    the vendored revision (see PROVENANCE.md for the registration table
+    and vendor/FROZEN.txt for the frozen revisions). The vendored code
+    is expected to change and diverge from upstream as DomainTheory
+    develops; the frozen revisions are provenance before modification,
+    not a guarantee of continued identity with upstream. DomainTheory
+    itself has no Palomar registration and no statement of record yet.
+    The five libraries were assembled on 2026-10-20 into the single
+    DomainTheory Lean library under renamed modules/namespaces
+    (DomainTheory.ContinuousLattice, DataTypesAsLattices, Neighborhood,
+    InformationSystems, BridgeTheorems), pinned to Lean/Mathlib
+    v4.35.0; lake build is green with no sorry (see PROVENANCE.md,
+    Assembly). Dana Scott did not participate in or endorse the
+    vendored formalizations or this derivative work.
+  authors:
+    - "Lars Warren Ericson"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Lars Warren Ericson"
+
+repository:
+  role: substantive-development
+
+classification:
+  arxiv: [cs.LO, cs.PL, math.LO]
+  msc2020: ["68Q55", "06B35", "03B70"]
+
+status:
+  scope: >-
+    Initial provenance (2026-10-20), plus the same-day assembly of the
+    five vendored libraries into the single DomainTheory library
+    (DomainTheory/ with root DomainTheory.lean, Lean/Mathlib v4.35.0,
+    lake build green). main_results lists the assembled declarations
+    under their new DomainTheory names; no DomainTheory Palomar claim
+    has been selected and comparator.json does not exist yet, so these
+    are development results, not compared targets. Axiom profile is
+    the union of the vendored bases' profiles.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - declaration: "DomainTheory.ContinuousLattice.theorem_4_4"
+      file: "DomainTheory/ContinuousLattice/FunctionSpaceTower.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+    - declaration: "DomainTheory.InformationSystems.InfoSys.theorem_7_2"
+      file: "DomainTheory/InformationSystems/Theorem72.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+    - declaration: "DomainTheory.BridgeTheorems.presentation_domains_equiv"
+      file: "DomainTheory/BridgeTheorems/PresentationDomains.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+fidelity:
+  divergences: >-
+    Provenance before modification: the vendored trees are the upstream
+    tracked trees at the revisions in vendor/FROZEN.txt, copied without
+    .git directories. Deviations already present at setup: nested
+    .gitignore files under vendor/ were removed, and top-level
+    boilerplate/scripts were copied from scott_models and repointed to
+    DomainTheory (see PROVENANCE.md). All further divergence — adapted
+    Lean code, moved modules, changed statements — will be DomainTheory
+    modifications attributable to this repository's git history, and
+    must not be read back onto the upstream repos or their Palomar
+    entries. The vendored revision of each base is its upstream git
+    HEAD at copy time and is not asserted to be the pinned commit
+    Palomar preserves for that base's registration.
+
+sources:
+  - title: "Continuous Lattices"
+    authors: ["Dana S. Scott"]
+    type: "article"
+    location: "In: Toposes, Algebraic Geometry and Logic, LNM 274, Springer, 1972, pp. 97–136. Theorem 4.4."
+    relationship: background
+    author_endorsement: not-contacted
+    note: >-
+      Literature behind vendor/scott1972; cited only. Dana Scott was
+      not contacted and did not endorse any of these formalizations.
+
+  - title: "Data Types as Lattices"
+    authors: ["Dana S. Scott"]
+    type: "article"
+    location: "Technical Monograph PRG-5, Oxford, September 1976; reprinted SIAM J. Comput. 5 (1976), 522–587."
+    relationship: background
+    author_endorsement: not-contacted
+    note: "Literature behind vendor/scott1976; cited only."
+
+  - title: "Lectures on a Mathematical Theory of Computation"
+    authors: ["Dana S. Scott"]
+    type: "paper"
+    location: "Technical Monograph PRG-19, Oxford, May 1981 (lectures 1980). Theorem 8.8, first sentence."
+    relationship: background
+    author_endorsement: not-contacted
+    note: "Literature behind vendor/scott1980; cited only."
+
+  - title: "Domains for Denotational Semantics"
+    authors: ["Dana S. Scott"]
+    type: "paper"
+    location: "In: Automata, Languages and Programming (ICALP 1982), LNCS 140, Springer, 1982. Theorem 7.2."
+    relationship: background
+    author_endorsement: not-contacted
+    note: "Literature behind vendor/scott1982; cited only."
+
+  - title: "Scott 1972 Continuous Lattices — Theorem 4.4"
+    authors: ["Lars Warren Ericson"]
+    type: "other"
+    id: "https://github.com/catskillsresearch/scott1972/tree/a198b6e24aea07cfc858a59798d0ca78161c4387"
+    location: "vendor/scott1972 (frozen rev a198b6e24aea07cfc858a59798d0ca78161c4387)"
+    relationship: adapts
+    author_endorsement: participated
+    note: >-
+      Derived-from formalization, copied before modification.
+      Registered with Palomar as specified in that repo at this
+      revision: PALOMAR-2026-08-24-000003 (version 2,
+      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000003&version=2).
+      Compared claim: Theorem 4.4, D-infinity homeomorphic to its
+      function space. Its own formalization.yaml (vendor/scott1972/)
+      is authoritative for the copy as frozen.
+
+  - title: "Scott 1976 Data Types as Lattices"
+    authors: ["Lars Warren Ericson"]
+    type: "other"
+    id: "https://github.com/catskillsresearch/scott1976/tree/94ef7f7f096078cbfe4f99595c2a3fcb4c563942"
+    location: "vendor/scott1976 (frozen rev 94ef7f7f096078cbfe4f99595c2a3fcb4c563942)"
+    relationship: adapts
+    author_endorsement: participated
+    note: >-
+      Derived-from formalization, copied before modification.
+      Registered with Palomar as specified in that repo at this
+      revision: PALOMAR-2026-08-25-000004 (version 1,
+      https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000004&version=1).
+      Compared: 63 theorem and 70 definition comparator targets.
+
+  - title: "Scott 1981 — D embeds in U (Theorem 8.8, first sentence + two corollaries)"
+    authors: ["Lars Warren Ericson"]
+    type: "other"
+    id: "https://github.com/catskillsresearch/scott1980/tree/11b25d2e9cc32176ddfc78194058c61a0138a6da"
+    location: "vendor/scott1980 (frozen rev 11b25d2e9cc32176ddfc78194058c61a0138a6da)"
+    relationship: adapts
+    author_endorsement: participated
+    note: >-
+      Derived-from formalization, copied before modification.
+      Registered with Palomar as specified in that repo at this
+      revision: PALOMAR-2026-08-24-000001 (version 2,
+      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000001&version=2).
+      Compared claim: every countable neighbourhood system embeds in
+      the universal domain, plus P4_embeds and Ssys_embeds.
+
+  - title: "Scott 1982 — Theorem 7.2 (function-space elements)"
+    authors: ["Lars Warren Ericson"]
+    type: "other"
+    id: "https://github.com/catskillsresearch/scott1982/tree/455bd70226912fa621203319292e25deb0677082"
+    location: "vendor/scott1982 (frozen rev 455bd70226912fa621203319292e25deb0677082)"
+    relationship: adapts
+    author_endorsement: participated
+    note: >-
+      Derived-from formalization, copied before modification.
+      Registered with Palomar as specified in that repo at this
+      revision: PALOMAR-2026-08-24-000005 (version 1,
+      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000005&version=1).
+      Compared claim: Theorem 7.2, first sentence.
+
+  - title: "Equivalence of Scott's three presentations of domain theory"
+    authors: ["Lars Warren Ericson"]
+    type: "other"
+    id: "https://github.com/catskillsresearch/scott_models/tree/85ed1ae09faa29fe292c9867e91cf8e9b48ab2fa"
+    location: "vendor/scott_models (frozen rev 85ed1ae09faa29fe292c9867e91cf8e9b48ab2fa)"
+    relationship: adapts
+    author_endorsement: participated
+    note: >-
+      Derived-from formalization, copied before modification,
+      including its own nested vendor/scott1972, vendor/scott1980,
+      and vendor/scott1982 copies. Registered with Palomar as
+      specified in that repo at this revision:
+      PALOMAR-2026-08-25-000003 (version 1,
+      https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000003&version=1).
+      Compared claim: cross-presentation bridge isomorphisms.
+
+related_formalizations:
+  - id: "https://github.com/catskillsresearch/scott1972/tree/a198b6e24aea07cfc858a59798d0ca78161c4387"
+    relationship: builds-on
+    note: >-
+      Vendored at vendor/scott1972, copied 2026-10-20 before
+      modification; DomainTheory is a derivative work and its code
+      will diverge from this revision. Palomar registration as
+      specified in that repo: PALOMAR-2026-08-24-000003 (version 2),
+      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000003&version=2
+      — upstream's registration, not DomainTheory's. Upstream home:
+      https://github.com/catskillsresearch/scott1972
+
+  - id: "https://github.com/catskillsresearch/scott1976/tree/94ef7f7f096078cbfe4f99595c2a3fcb4c563942"
+    relationship: builds-on
+    note: >-
+      Vendored at vendor/scott1976, copied 2026-10-20 before
+      modification; derivative code will diverge. Palomar:
+      PALOMAR-2026-08-25-000004 (version 1),
+      https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000004&version=1
+      — upstream's registration. Upstream home:
+      https://github.com/catskillsresearch/scott1976
+
+  - id: "https://github.com/catskillsresearch/scott1980/tree/11b25d2e9cc32176ddfc78194058c61a0138a6da"
+    relationship: builds-on
+    note: >-
+      Vendored at vendor/scott1980, copied 2026-10-20 before
+      modification; derivative code will diverge. Palomar:
+      PALOMAR-2026-08-24-000001 (version 2),
+      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000001&version=2
+      — upstream's registration. Upstream home:
+      https://github.com/catskillsresearch/scott1980
+
+  - id: "https://github.com/catskillsresearch/scott1982/tree/455bd70226912fa621203319292e25deb0677082"
+    relationship: builds-on
+    note: >-
+      Vendored at vendor/scott1982, copied 2026-10-20 before
+      modification; derivative code will diverge. Palomar:
+      PALOMAR-2026-08-24-000005 (version 1),
+      https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000005&version=1
+      — upstream's registration. Upstream home:
+      https://github.com/catskillsresearch/scott1982
+
+  - id: "https://github.com/catskillsresearch/scott_models/tree/85ed1ae09faa29fe292c9867e91cf8e9b48ab2fa"
+    relationship: builds-on
+    note: >-
+      Vendored at vendor/scott_models, copied 2026-10-20 before
+      modification; derivative code will diverge. Palomar:
+      PALOMAR-2026-08-25-000003 (version 1),
+      https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000003&version=1
+      — upstream's registration. Upstream home:
+      https://github.com/catskillsresearch/scott_models
+
+  - id: "https://github.com/catskillsresearch/domain_theory"
+    relationship: other
+    note: >-
+      Archived earlier combined tree by the same author, noted here
+      for disambiguation. Not vendored and not a derived-from base of
+      DomainTheory; scott_models records itself as superseding it.
+      See PROVENANCE.md.
+
+automation:
+  methods:
+    - method: agent
+      models: ["Cursor agent (scaffolding session, 2026-10-20)"]
+      framework: "Cursor"
+      role: >-
+        Repository scaffolding only: copying boilerplate from
+        scott_models, vendoring the five base repos without .git,
+        removing nested .gitignore files, repointing top-level
+        scripts to DomainTheory, and drafting this initial Palomar
+        provenance (PROVENANCE.md, formalization.yaml) under the
+        author's direction. No Lean was written or modified.
+    - method: manual
+      models: []
+      role: >-
+        The author directed the vendoring and provenance setup and
+        takes sole responsibility for the mathematical content.
+        Automation history of the vendored code as copied is recorded
+        in each vendor/*/formalization.yaml and is not claimed here.
+  notes: >-
+    This provenance was set up before modification of the derived
+    code. Future DomainTheory automation must be appended here (and
+    in scripts/ai_model_cards.py) as the development proceeds.
+
+review:
+  status: self-assessed
+  reviewers:
+    - "Lars Warren Ericson"
+  notes: >-
+    The author directed and reviewed this setup. No external review,
+    and no review or endorsement by Dana Scott. DomainTheory has not
+    been submitted to or registered with Palomar; the five cited
+    registrations were reviewed only as recorded in the vendored
+    repos.
+
+known_gaps:
+  - >-
+    No DomainTheory Challenge.lean, Solution.lean, or comparator.json
+    exists yet, so scripts/palomar_preflight.sh cannot pass: it
+    validates comparator.json and audits axioms for a compared claim
+    that has not been chosen. Its vendor-revision step is satisfied by
+    this file and its lake build step passes.
+  - >-
+    No statement of record or Palomar registration for DomainTheory.
+
+limitations:
+  - >-
+    This file records derived-from provenance at copy time only. It
+    does not claim the vendored repos' compared theorems, axiom
+    profiles, or Palomar registrations for DomainTheory, and the
+    vendored revisions are not asserted to be Palomar's pinned
+    commits for those entries.
+  - >-
+    As DomainTheory modifies the derived code, vendor/FROZEN.txt and
+    this file's frozen revisions remain the pre-modification record;
+    they will increasingly differ from the working tree.
+
+alignment:
+  namespace: "DomainTheory"
+  statements: []

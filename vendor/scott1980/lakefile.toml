@@ -1,0 +1,28 @@
+name = "scott1980"
+version = "0.1.0"
+keywords = ["domain-theory", "scott-1980", "neighborhood-systems", "lean4"]
+defaultTargets = ["Scott1980", "Challenge", "Solution"]
+
+# Scott1980 is the proof development. Challenge / Solution are the Palomar Comparator pair.
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = true
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.33.0"
+
+[[lean_lib]]
+name = "Scott1980"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
+
+# One-off email extract at repo root (not part of the default `lake build`).
+[[lean_lib]]
+name = "CATEGORY_THEORY_EXTRACT"

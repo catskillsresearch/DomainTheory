@@ -1,0 +1,20 @@
+# Generated arXiv PDF pipeline — NOT a source of truth for formalization work.
+# Inventory and status live in arxiv.md; see HANDOFF.md Resume Protocol.
+arxiv_with_code.md
+arxiv_with_code.tex
+arxiv_with_code.pdf
+arxiv_with_code.*
+arxiv.tex
+arxiv.pdf
+arxiv.aux
+arxiv.out
+arxiv.toc
+arxiv.log
+arxiv.fls
+arxiv.fdb_latexmk
+arxiv.lof
+arxiv.synctex.gz
+lean-listings/
+figures/
+dist/
+00README.json
