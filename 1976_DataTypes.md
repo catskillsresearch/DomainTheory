@@ -1,4 +1,4 @@
-# DATA TYPES AS LATTICES
+# Data types as lattices
 
 - [Introduction](1976_Introduction.md)
 - [Continuous functions](1976_Continuous_functions.md)
