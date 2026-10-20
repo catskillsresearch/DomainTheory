@@ -7,7 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88
+public import DomainTheory.Neighborhood.Theorem88.Basic
+public import DomainTheory.Neighborhood.Theorem88.splitChoice_isSplitSpec
 public import DomainTheory.Neighborhood.Definition610
 public import DomainTheory.Neighborhood.Lemma615
 public import Mathlib.Basic.Countable.Defs

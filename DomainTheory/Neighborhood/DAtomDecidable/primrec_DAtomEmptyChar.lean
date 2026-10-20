@@ -7,7 +7,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88a
+public import DomainTheory.Neighborhood.Theorem88a.Basic
+public import DomainTheory.Neighborhood.Theorem88a.idxSet_nonempty
+public import DomainTheory.Neighborhood.Theorem88a.idxSet_eq_iff
+public import DomainTheory.Neighborhood.Theorem88a.isomorphic_DprimeU
+public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8_a
+public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8
 public import DomainTheory.Neighborhood.Definition71
 public import DomainTheory.Neighborhood.DAtomDecidable.Basic
 public import DomainTheory.Neighborhood.DAtomDecidable.primrec_meetFoldCode

@@ -7,7 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88j
+public import DomainTheory.Neighborhood.Theorem88j.Basic
+public import DomainTheory.Neighborhood.Theorem88j.D_X_mem
+public import DomainTheory.Neighborhood.Theorem88j.D_X_of_diagFixed
+public import DomainTheory.Neighborhood.Theorem88j.D_X_surj
 
 @[expose] public section
 

@@ -7,7 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88e
+public import DomainTheory.Neighborhood.Theorem88e.Basic
+public import DomainTheory.Neighborhood.Theorem88e.isomorphic_DprimeUCode
+public import DomainTheory.Neighborhood.Theorem88e.DprimeUCode_isEffectivelyGiven
 public import DomainTheory.Neighborhood.Definition72
 public import DomainTheory.Neighborhood.Proposition612
 

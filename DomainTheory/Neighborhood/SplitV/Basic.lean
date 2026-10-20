@@ -316,7 +316,7 @@ private theorem xor_two_pow_ne_self (a k : ℕ) : a ^^^ 2 ^ k ≠ a := by
   intro h
   apply hb
   have h2 : a ^^^ (a ^^^ 2 ^ k) = a ^^^ a := by rw [h]
-  simpa [← Nat.xor_assoc, Nat.xor_self, Nat.zero_xor] using h2
+  simp [← Nat.xor_assoc, Nat.xor_self, Nat.zero_xor] at h2
 
 theorem splitV_left_nonempty (n : ℕ) :
     (levelSet (splitVMinLevel n + 1) (2 ^ splitVBit n)).Nonempty :=

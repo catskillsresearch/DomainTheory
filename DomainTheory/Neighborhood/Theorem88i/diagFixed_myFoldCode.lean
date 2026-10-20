@@ -7,7 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88h
+public import DomainTheory.Neighborhood.Theorem88h.Basic
+public import DomainTheory.Neighborhood.Theorem88h.diagFixed_iff_fixedNbhd_mem
+public import DomainTheory.Neighborhood.Theorem88h.diagFixed_isREPred
+public import DomainTheory.Neighborhood.Theorem88h.diagFixed_exists_qChar
 public import DomainTheory.Neighborhood.Theorem88i.Basic
 public import DomainTheory.Neighborhood.Theorem88i.myFold_diagFixed
 public import DomainTheory.Neighborhood.Theorem88i.myFoldCode_eq

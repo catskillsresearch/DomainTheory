@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88a
+public import DomainTheory.Neighborhood.Theorem88
 public import DomainTheory.Neighborhood.Lemma615
 public import DomainTheory.Neighborhood.Proposition612
 public import DomainTheory.Neighborhood.Theorem69

@@ -7,7 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88l
+public import DomainTheory.Neighborhood.Theorem88l.Basic
+public import DomainTheory.Neighborhood.Theorem88l.myStep_subset
+public import DomainTheory.Neighborhood.Theorem88l.myFoldl_subset
+public import DomainTheory.Neighborhood.Theorem88l.myFoldl_inter_of_le
+public import DomainTheory.Neighborhood.Theorem88l.D_inter_primrec
+public import DomainTheory.Neighborhood.Theorem88l.D_X_inter_eq
+public import DomainTheory.Neighborhood.Theorem88l.D_X_inter_spec
 public import DomainTheory.Neighborhood.UComputablePresentation
 public import DomainTheory.Neighborhood.Theorem88m.Basic
 public import DomainTheory.Neighborhood.Theorem88m.fixedNbhd_isEffectivelyGiven

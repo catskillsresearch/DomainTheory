@@ -7,7 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88f
+public import DomainTheory.Neighborhood.Theorem88f.Basic
+public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_inj_isComputableMap
+public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_proj_isComputableMap
+public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_projectionPair_isComputable
 public import DomainTheory.Neighborhood.Theorem88n.Basic
 
 @[expose] public section

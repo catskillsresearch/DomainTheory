@@ -8,7 +8,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.Neighborhood.Theorem86
-public import DomainTheory.Neighborhood.Theorem88m
+public import DomainTheory.Neighborhood.Theorem88
 
 @[expose] public section
 
