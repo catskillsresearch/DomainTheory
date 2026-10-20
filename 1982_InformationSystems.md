@@ -24,11 +24,6 @@ verified_date: null
 > the PDF. Correct remaining errors, restore any missed mathematical notation,
 > and when done set `verification_status: verified` in the YAML front matter.
 
-## Bibliography
-
-Scott, D. Domains for Denotational Semantics. ICALP 1982, LNCS 140, pp. 577–613.
-
----
 
 ## Transcription
 

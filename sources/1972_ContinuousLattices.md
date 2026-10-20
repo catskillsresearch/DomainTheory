@@ -6,8 +6,6 @@ verification_status: draft
 
 # Transcription (LLM vision OCR)
 
-Scott, D. Continuous lattices. In: Toposes, Algebraic Geometry and Logic, edited by F. Lawvere. Springer-Verlag, LNM, vol. 274, 1972, pp. 97-136.
-
 # CONTINUOUS LATTICES
 
 BY
@@ -1448,52 +1446,6 @@ The range of $j$ would then be a subspace $W \subseteq V$ such that $W$ solves t
 $$W = T + [T \times W] + [[W \times W] \to W].$$
 
 And these are only a few examples: simultaneous equations are possible, and many other operators are waiting for discovery and application.
-
-**REFERENCES.** An announcement of this work and related investigations was first given in Scott (1970). Rather complete references and background material can be found in Scott (1971). A discussion of formal theories is to appear in Scott (1972).
-
-The presentation of the material of the paper changed considerably after the January conference. In the first place remarks by several participants, Ernie Mannes in particular, caused me to rethink several points. Then the opportunity of lecturing at the Project MAC Seminar at MIT during the spring provided the opportunity of trying out some new ideas; these were then codified after lectures at the University of Southern California with the aid of several very helpful discussions on topology with James Dugundji.
-
-The outcome of this development was that I found I could describe the work in purely topological terms in a simple and natural way leaving the lattices to be introduced as a special technique of analysis. This gives the presentation a much less ad hoc appearance, and relates the results to standard point-set topology in a much more understandable way. No doubt the whole idea of using completeness, inverse limits, and continuous functions could be put into a more general, more abstract categorical context, but I am not the man to do it. My interests at present lie in the direction of specific applications, though I can see that there might be some worthwhile directions to pursue.
-
-For example, in understanding the connections of my kind of spaces with other topologies, one should consider the remarks on the topology of lattices in Birkhoff's paper in Abbott (1970). Some
-
-133
-
-older papers such as Strother (1955) or Michael (1951) might also give some leads. It is curious how little there is of interest in the literature on $T_0$-spaces. Concerning function spaces there ought to be some connections with the *limit spaces* of Cook and Fischer (see especially Binz and Keller (1966)) and possibly with the notion of *quasi-topology* of Spanier (1963), but these are rather vague ideas.
-
-In a different direction note that the *algebraic lattices* of Grätzer (1968) are in fact continuous lattices in which isolated points are dense. The continuous lattices may be "higher dimensional" while algebraic lattices are "zero dimensional" - in some suitable sense. Every continuous lattice is a retract of an algebraic lattice.
-
-But does this mean anything? Specific bibliographical references follow:
-
-J. C. Abbott, ed., *Trends in Lattice Theory*, Van Nostrand Reinhold Mathematical Studies, vol. 31 (1970).
-
-P. Alexandroff and H. Hopf, *Topologie I*, Springer-Verlag, (1935).
-
-E. Binz and H. H. Keller, *Funktionenräume in der Kategorie der Limesräume*, Annales Academiae Scientiarum Fennicae, Series A, I. Mathematica, no. 383 (1966), 21 pp.
-
-G. Birkhoff, *Lattice Theory*, American Mathematical Society Colloquium Publications, vol. 25, Third (new) edition (1967).
-
-E. Čech, *Topological Spaces* (revised by Z. Frolík and M. Katětov), Prague (1966).
-
-G. Grätzer, *Universal Algebra*, Van Nostrand, (1968).
-
-J. L. Kelley, *General Topology*, Van Nostrand, (1955).
-
-E. Michael, *Topologies on Spaces of Subsets*, Transactions of the American Mathematical Society, vol. 77 (1951), pp. 152-182.
-
-A. Nerode, *Some Stone Spaces and Recursion Theory*, Duke Mathematical Journal, vol. 26 (1959), pp. 397-406.
-
-134
-
-D. Scott, *Outline of a Mathematical Theory of Computation*, Proceedings of the Fourth Annual Princeton Conference on Information Sciences and Systems (1970), pp. 169-176.
-
-——— , *Lattice Theory, Data Types, and Semantics*, New York University Symposia in Areas of Current Interest in Computer Science (Randall Rustin ed.) (1971) to appear.
-
-——— , *Lattice-theoretic Models for Various Type-free Calculi*, Proceedings of the IVth International Congress for Logic, Methodology, and the Philosophy of Science, Bucharest (1972) to appear.
-
-E. Spanier, *Quasi-topologies*, Duke Mathematical Journal, vol. 30 (1963) pp. 1-14.
-
-W. Strother, *Fixed Points, Fixed Sets, and M-Retracts*, Duke Mathematical Journal, vol. 22 (1955), pp. 551-556.
 
 ++Correction++ (Added March, 1972). Robin Milner has pointed out to me that there is an error in the remark in the paragraph immediately preceding Proposition 2.5. I was mistaken in saying that if $D$ is a $T_0$-space which becomes a complete lattice under its induced partial ordering, then every set open in the given topology is also open in the induced topology. There are many counterexamples to this statement. Let $D$ be any complete lattice. There are two extreme $T_0$-topologies which will induce the given partial ordering. The smallest such topology has as a sub-base for its open sets those sets of the form:
 

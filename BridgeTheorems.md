@@ -487,9 +487,6 @@ Pinned: Lean / mathlib v4.33.0. Sibling libraries are compiled from in-tree
 Palomar compared family: `Challenge.lean`, `Solution.lean`, `comparator.json`.
 The narrative paper of record is this document (`view.pdf`).
 
-Acknowledgments (Dana Scott, AI tool cards, artifact URL) are injected before References
-when building `arxiv.tex` via `scripts/ai_model_cards.py` — they are not kept in this file.
-
 Rebuild this document (PDF with complete Lean source appendix, one subsection per
 module):
 
@@ -498,33 +495,6 @@ bash scripts/build_arxiv_pdf.sh            # expand Lean → tex → arxiv.pdf
 bash scripts/build_arxiv_pdf.sh --pdf-only # PDF only when arxiv.tex already current
 ```
 
----
-
-## References
-
-- **[Sco72]** Dana Scott. *Continuous Lattices*. In F. W. Lawvere (ed.), *Toposes, Algebraic
-  Geometry and Logic*, LNM 274, Springer, 1972.
-- **[Sco81]** Dana Scott. *Lectures on a Mathematical Theory of Computation*. Technical
-  Monograph PRG-19, Oxford University Computing Laboratory, 1981 (neighbourhood systems).
-- **[Sco82]** Dana Scott. *Domains for Denotational Semantics*. ICALP 1982, LNCS 140,
-  Springer, 1982.
-- **[AJ94]** S. Abramsky and A. Jung. *Domain Theory*. In *Handbook of Logic in Computer
-  Science*, Vol. 3, Oxford University Press, 1994.
-- **[GHKLMS03]** G. Gierz et al. *Continuous Lattices and Domains*. Cambridge University
-  Press, 2003.
-- **[SR72]** Companion Lean formalization: [`scott1972`](https://github.com/catskillsresearch/scott1972).
-- **[ER80]** Companion Lean formalization: [`scott1980`](https://github.com/catskillsresearch/scott1980).
-- **[SR82]** Companion Lean formalization: [`scott1982`](https://github.com/catskillsresearch/scott1982).
-- **[PALOMAR26]** Palomar Registry. Entry `PALOMAR-2026-08-25-000003`, version 1.
-  Verified claim: order isomorphisms relating Scott’s three presentations of domains —
-  continuous lattices (1972), neighbourhood systems (PRG-19), and information systems
-  (1982) — including the round identification `D ≃o RoundFilter ≃o RoundInfoSysElement`
-  and the S-expression equation `T ≅ A + (T × T)` as `|T| ≃o |A + (T × T)|`
-  (`SexSys.Element ≃o SexRhs.Element`).
-  <https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000003&version=1>
-- **[COPE24]** Committee on Publication Ethics (COPE). *Authorship and AI tools: COPE position statement*. 2024. <https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools>
-<!-- AI_MODEL_REFERENCES -->
-<!-- /AI_MODEL_REFERENCES -->
 
 ---
 
