@@ -19,6 +19,8 @@ import all Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.FixedPoints
 import all Mathlib.Order.FixedPoints
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
+public import DomainTheory.ContinuousLattice.FunctionSpaces.comp
+public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapRetraction
@@ -89,10 +91,6 @@ abbrev ScottC (D D' : Type*) [CompleteLattice D] [CompleteLattice D'] :=
 
 namespace ScottMap
 
-@[ext]
-theorem ext {f g : ScottMap D D'} (h : ∀ x, f x = g x) : f = g :=
-  Subtype.ext (funext h)
-
 theorem continuous (f : ScottMap D D') :
     @Continuous D D' scottTopologicalSpace scottTopologicalSpace f :=
   f.2
@@ -102,29 +100,6 @@ theorem preservesDirectedSup_coe (f : ScottMap D D') (S : Set D) (hS : S.Nonempt
     (f : D → D') (sSup S) = sSup (Set.image (f : D → D') S) := by
   have h := (proposition_2_5 (Subtype.val f)).mp f.property
   exact h hS hSdir
-
-theorem monotone (f : ScottMap D D') : Monotone (f : D → D') :=
-  preservesDirectedSup_monotone ((proposition_2_5 (Subtype.val f)).mp f.property)
-
-theorem preservesDirectedSup_comp {f : D' → D''} {g : D → D'} (hf : PreservesDirectedSup f)
-    (hg : PreservesDirectedSup g) : PreservesDirectedSup (f ∘ g) := by
-  intro S hS hSdir
-  have hmono : Monotone g := preservesDirectedSup_monotone hg
-  have hdir' : DirectedOn (· ≤ ·) (g '' S) := by
-    intro p hp q hq
-    obtain ⟨a, ha, rfl⟩ := hp
-    obtain ⟨b, hb, rfl⟩ := hq
-    obtain ⟨c, hc, hac, hbc⟩ := hSdir a ha b hb
-    exact ⟨g c, Set.mem_image_of_mem g hc, hmono hac, hmono hbc⟩
-  have hne : (g '' S).Nonempty := Set.image_nonempty.2 hS
-  rw [Function.comp_apply, hg hS hSdir, hf hne hdir']
-  congr 1
-  exact (Set.image_comp f g S).symm
-
-def comp (f : ScottMap D' D'') (g : ScottMap D D') : ScottMap D D'' :=
-  ⟨f ∘ g, continuous_of_preservesDirectedSup (preservesDirectedSup_comp
-    ((proposition_2_5 (Subtype.val f)).mp f.property)
-    ((proposition_2_5 (Subtype.val g)).mp g.property))⟩
 
 def const (c : D') : ScottMap D D' :=
   ⟨fun _ => c, continuous_of_preservesDirectedSup fun S hS _ => by
@@ -515,30 +490,6 @@ end IsContinuousLatticeRetraction
 /-! ### Proposition 2.10: a retract of a continuous lattice is a continuous lattice -/
 
 /-! ### Proposition 3.7 -/
-
-
-namespace ScottMapRetraction
-
-def functionSpace (R₀ : IsContinuousLatticeRetraction D₀ D₀') (R₁ : IsContinuousLatticeRetraction D₁ D₁') :
-    ScottMapRetraction D₀ D₀' D₁ D₁' where
-  incl f := ScottMap.comp R₁.incl (ScottMap.comp f R₀.retr)
-  retr f' := ScottMap.comp R₁.retr (ScottMap.comp f' R₀.incl)
-  retr_incl f := ScottMap.ext fun x => by simp [ScottMap.comp, R₀.retr_incl, R₁.retr_incl]
-
-end ScottMapRetraction
-
-namespace ScottMapProjection
-
-def functionSpace (P₀ : IsContinuousLatticeProjection D₀ D₀') (P₁ : IsContinuousLatticeProjection D₁ D₁') :
-    ScottMapProjection D₀ D₀' D₁ D₁' where
-  toScottMapRetraction :=
-    ScottMapRetraction.functionSpace P₀.toIsContinuousLatticeRetraction P₁.toIsContinuousLatticeRetraction
-  incl_retr_le f' y := by
-    dsimp only [ScottMapRetraction.functionSpace, ScottMap.comp, Function.comp_def]
-    exact le_trans (P₁.incl_retr_le (f' (P₀.incl (P₀.retr y))))
-      (ScottMap.monotone f' (P₀.incl_retr_le y))
-
-end ScottMapProjection
 
 /-- **Scott 1972, Proposition 3.7 (retraction).** Function spaces inherit retractions. -/
 def proposition_3_7_retraction (R₀ : IsContinuousLatticeRetraction D₀ D₀')

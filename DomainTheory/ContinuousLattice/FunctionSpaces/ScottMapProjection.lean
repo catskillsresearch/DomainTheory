@@ -20,6 +20,8 @@ import all Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.FixedPoints
 import all Mathlib.Order.FixedPoints
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapRetraction
+public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 
 @[expose] public section
 
@@ -43,5 +45,18 @@ structure ScottMapProjection (D₀ D₀' D₁ D₁' : Type*)
     [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁'] extends
     ScottMapRetraction D₀ D₀' D₁ D₁' where
   incl_retr_le : ∀ f' x, (incl (retr f')) x ≤ f' x
+
+namespace ScottMapProjection
+
+def functionSpace (P₀ : IsContinuousLatticeProjection D₀ D₀') (P₁ : IsContinuousLatticeProjection D₁ D₁') :
+    ScottMapProjection D₀ D₀' D₁ D₁' where
+  toScottMapRetraction :=
+    ScottMapRetraction.functionSpace P₀.toIsContinuousLatticeRetraction P₁.toIsContinuousLatticeRetraction
+  incl_retr_le f' y := by
+    dsimp only [ScottMapRetraction.functionSpace, ScottMap.comp, Function.comp_def]
+    exact le_trans (P₁.incl_retr_le (f' (P₀.incl (P₀.retr y))))
+      (ScottMap.monotone f' (P₀.incl_retr_le y))
+
+end ScottMapProjection
 
 end DomainTheory.ContinuousLattice

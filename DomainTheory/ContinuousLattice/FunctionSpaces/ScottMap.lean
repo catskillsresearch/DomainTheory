@@ -45,6 +45,10 @@ namespace ScottMap
 instance : CoeFun (ScottMap D D') (fun _ => D → D') where
   coe f := f.1
 
+@[ext]
+theorem ext {f g : ScottMap D D'} (h : ∀ x, f x = g x) : f = g :=
+  Subtype.ext (funext h)
+
 end ScottMap
 
 end DomainTheory.ContinuousLattice
