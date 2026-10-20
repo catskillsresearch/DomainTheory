@@ -55,11 +55,8 @@ combinators, i.e. `IsProjection a → IsProjection b → IsProjection (a*b)` for
   `inMap₀_toElementMap_reaches_left`/`inMap₁_toElementMap_reaches_right` (witnessed by the master
   neighbourhood) to re-enter the same case after one more application of `a`/`b`.
 
-**Not attempted here: the second half of Proposition 8.10** (finitary-closure, i.e.
-`D_a * D_b ≅ D_{a*b}`) — this needs substantially more infrastructure (a general "conjugate
-fixed-point-sets across a projection pair" lemma, plus `prodEquiv`/`funSpaceEquiv`/a
-coproduct-element characterization for `sum`) and is left as a documented follow-up; see
-`HANDOFF.md`.
+The second half — finitary closure, and `D_a * D_b ≅ D_{a*b}` for `* ∈ {+,×,→}` — is
+`proposition_8_10` in `Proposition810b.lean`. `D_a` there is `fixedNbhd a`.
 
 Axiom footprint: everything here mentions `U`, so (as with `Definition89.lean`) it inherits `U`'s
 own `Classical.choice` footprint — `⊆ {propext, Classical.choice, Quot.sound}`, confirmed not new.

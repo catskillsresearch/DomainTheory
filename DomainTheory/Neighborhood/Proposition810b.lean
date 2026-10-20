@@ -16,5 +16,6 @@ public import DomainTheory.Neighborhood.Proposition810b.finitaryProjection_sumCo
 public import DomainTheory.Neighborhood.Proposition810b.finitary_arrowComb
 public import DomainTheory.Neighborhood.Proposition810b.finitaryProjection_arrowComb
 public import DomainTheory.Neighborhood.Proposition810b.finitaryProjection_combinators
+public import DomainTheory.Neighborhood.Proposition810b.proposition_8_10
 
 @[expose] public section
