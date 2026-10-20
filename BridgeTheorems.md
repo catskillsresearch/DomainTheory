@@ -6,10 +6,7 @@
 
 Dana Scott developed three presentations of the same class of domains: **continuous
 lattices** (1972), **neighbourhood systems** (PRG-19 / 1980–81), and **information
-systems** (1982). Each sibling formalization — [`scott1972`](https://github.com/catskillsresearch/scott1972),
-[`scott1980`](https://github.com/catskillsresearch/scott1980),
-[`scott1982`](https://github.com/catskillsresearch/scott1982) — treats one presentation
-in isolation. This package (`ScottModels`) supplies the **bridge theorems**: order
+systems** (1982). In this chapter we supply **bridge theorems**: order
 isomorphisms and constructivity audits showing that the three presentations determine
 the same domains (up to isomorphism), including products, separated sums, and function
 spaces at the information-system level, with a transport of 1972 Scott maps along the
