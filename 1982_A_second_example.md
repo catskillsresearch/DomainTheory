@@ -4,6 +4,6 @@
 
 Oh, I see, I have left out $\Delta$ from $D$; we must therefore include the somewhat artificial pair $(0, \infty)$ with the obvious interpretation. When I say “obvious interpretation” here I mean that $u \in \mathrm{Con}$ can be defined by saying that there must be an integer satisfying all the “propositions” in $u$. Further, $u \vdash X$ can be defined by saying that whenever an integer satisfies all the propositions in $u$, then it must satisfy $X$. The notion of “satisfy” really should be obvious from the intuitive reading given to the data objects, and the reader can verify easily that all the axioms hold for this example of an information system. ■
 
-Lean 4
+**Lean 4**
 
 - [InformationSystems/InformationSystems/Factoid25.lean](DomainTheory/InformationSystems/InformationSystems/Factoid25.lean)

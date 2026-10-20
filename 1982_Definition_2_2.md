@@ -4,6 +4,6 @@ Already in formulating the axiom about the transitivity of $\vdash$ a relation b
 
 **DEFINITION 2.2.** *For $u, v \in \mathrm{Con}$ we write $u \vdash v$ to mean that $u \vdash X$ for all $X \in v$.* ■
 
-Lean 4
+**Lean 4**
 
 - [InformationSystems/InformationSystems/Definition22/EntSet.lean](DomainTheory/InformationSystems/InformationSystems/Definition22/EntSet.lean)

@@ -35,6 +35,6 @@ $$\mathbf{A} = (D_{\mathbf{A}}, \Delta_{\mathbf{A}}, \mathrm{Con}_{\mathbf{A}}, 
 
 and say that $\mathbf{A}$ is an information system—with its parts as indicated. For a more informal discussion, the notation without subscripts can suffice, but there can be problems when several different systems are involved. ■
 
-Lean 4
+**Lean 4**
 
 - [InformationSystems/InformationSystems/InfoSys/InfoSys.lean](DomainTheory/InformationSystems/InformationSystems/InfoSys/InfoSys.lean)

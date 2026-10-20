@@ -12,7 +12,7 @@ $$u \vdash X \text{ iff either } X = \Delta \text{ or } X \in u.$$
 
 These examples show that sometimes the main part of the structure is in $\mathrm{Con}$, sometimes it is in $\vdash$, and sometimes it is in the interplay between the two notions. The object $\Delta$ is not in itself very important, but it is sometimes useful to have an object there that can always be counted upon to act in the same way in every system. ■
 
-Lean 4
+**Lean 4**
 
 - [InformationSystems/InformationSystems/Factoid26/partialFunctionSystem.lean](DomainTheory/InformationSystems/InformationSystems/Factoid26/partialFunctionSystem.lean)
 - [InformationSystems/InformationSystems/Factoid26/Basic.lean](DomainTheory/InformationSystems/InformationSystems/Factoid26/Basic.lean)

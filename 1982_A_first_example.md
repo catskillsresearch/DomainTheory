@@ -6,7 +6,7 @@ $$\{n_0, \dots, n_{k-1}\} \vdash m \quad\text{iff either } m = 0 \text{ or } m \
 
 (Remember to think of the same possible $x$ on both sides of the $\vdash$.) That $\vdash$ is an entailment relation in the sense of our axioms is clear. ■
 
-Lean 4
+**Lean 4**
 
 - [InformationSystems/InformationSystems/Factoid24.lean](DomainTheory/InformationSystems/InformationSystems/Factoid24.lean)
 - [InformationSystems/InformationSystems/lowerBoundEnt.lean](DomainTheory/InformationSystems/InformationSystems/lowerBoundEnt.lean)
