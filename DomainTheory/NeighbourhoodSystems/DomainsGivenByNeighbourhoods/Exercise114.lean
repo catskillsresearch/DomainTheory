@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise114.Basic
-public import DomainTheory.Neighborhood.Exercise114.empty_not_mem
-public import DomainTheory.Neighborhood.Exercise114.mem_singleton
-public import DomainTheory.Neighborhood.Exercise114.singleton_isTotal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise114.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise114.empty_not_mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise114.mem_singleton
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise114.singleton_isTotal
 
 @[expose] public section

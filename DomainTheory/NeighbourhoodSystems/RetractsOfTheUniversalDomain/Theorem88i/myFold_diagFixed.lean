@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88h.Basic
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_iff_fixedNbhd_mem
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_isREPred
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_exists_qChar
-public import DomainTheory.Neighborhood.Theorem88i.Basic
-public import DomainTheory.Neighborhood.Theorem88i.diagFixed_masterIdx
-public import DomainTheory.Neighborhood.Theorem88i.myFold_diagFixed_of_diagFixed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_iff_fixedNbhd_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_isREPred
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_exists_qChar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.diagFixed_masterIdx
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFold_diagFixed_of_diagFixed
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -39,4 +39,4 @@ theorem myFold_diagFixed {a : ApproximableMap V V}
     DiagFixed P a (myFold P qChar cons l) :=
   myFold_diagFixed_of_diagFixed hqChar hcons l (diagFixed_masterIdx a)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

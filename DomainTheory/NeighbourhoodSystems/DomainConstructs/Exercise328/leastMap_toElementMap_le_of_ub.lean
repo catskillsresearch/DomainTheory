@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.Exercise328.Basic
-public import DomainTheory.Neighborhood.Exercise328.Elementu2emem_interYs_of
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.Elementu2emem_interYs_of
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -38,4 +38,4 @@ theorem leastMap_toElementMap_le_of_ub {L : List (Set α × Set β)}
     exact hle p.2 ⟨(hL p hp).2, subset_rfl⟩
   exact z.up_mem hzint hY'mem hsub
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

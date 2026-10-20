@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722Decide
-public import DomainTheory.Neighborhood.Exercise722Equiv.Basic
-public import DomainTheory.Neighborhood.Exercise722Equiv.coe_stepFinSingle
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.coe_stepFinSingle
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -40,4 +40,4 @@ theorem coe_stepFin (e : SExpr) (S : Finset (autState e)) (c : Bool) :
     exact ⟨s, hs, by rw [← coe_stepFinSingle e s c] at hx; exact Finset.mem_coe.mp hx⟩
 
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

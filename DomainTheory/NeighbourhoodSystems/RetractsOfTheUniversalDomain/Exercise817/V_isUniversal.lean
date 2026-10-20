@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Exercise812g4
-public import DomainTheory.Neighborhood.Exercise817.Basic
-public import DomainTheory.Neighborhood.Exercise817.U_isUniversal
-public import DomainTheory.Neighborhood.Exercise817.isUniversal_of_isomorphic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.U_isUniversal
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.isUniversal_of_isomorphic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Subsystem
 
@@ -45,4 +45,4 @@ Exercise 8.12's headline) and universality transports along isomorphism. -/
 theorem V_isUniversal : IsUniversal.{u} V :=
   isUniversal_of_isomorphic U_isUniversal ⟨effectiveIso812_UV.toDomainIso⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

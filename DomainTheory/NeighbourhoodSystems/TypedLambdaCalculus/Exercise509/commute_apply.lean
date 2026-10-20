@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407
-public import DomainTheory.Neighborhood.Exercise509.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -28,4 +28,4 @@ theorem commute_apply {f g : ApproximableMap V V} (hcomm : f.comp g = g.comp f) 
   rwa [toElementMap_comp, toElementMap_comp] at h1
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

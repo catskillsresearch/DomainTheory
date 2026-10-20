@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812
-public import DomainTheory.Neighborhood.IntervalPrimrec
-public import DomainTheory.Neighborhood.Theorem88
-public import DomainTheory.Neighborhood.Exercise812c.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -31,4 +31,4 @@ theorem testBit_xor_and_self (a b : ℕ) (i : ℕ) :
   rw [Nat.testBit_xor, Nat.testBit_and]
   cases a.testBit i <;> cases b.testBit i <;> rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

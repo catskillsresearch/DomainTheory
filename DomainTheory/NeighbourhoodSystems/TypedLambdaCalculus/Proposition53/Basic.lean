@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Table55
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
 
 @[expose] public section
 
@@ -37,7 +37,7 @@ solution `⟨a, b⟩` one derives `!x.τ(x,b) ⊑ a`, hence `outerOp(b) ⊑ b`, 
 universal properties of `fixElement`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -59,4 +59,4 @@ def outerOp (τ : ApproximableMap (prod V₀ V₁) V₀) (σ : ApproximableMap (
     ApproximableMap V₁ V₁ :=
   σ.comp (paired (secFixX τ) (idMap V₁))
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

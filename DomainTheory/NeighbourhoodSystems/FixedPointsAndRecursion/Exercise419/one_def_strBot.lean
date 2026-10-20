@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example44
-public import DomainTheory.Neighborhood.Exercise326
-public import DomainTheory.Neighborhood.Exercise419.Basic
-public import DomainTheory.Neighborhood.Exercise419.condT_bot
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419.condT_bot
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise419
+namespace DomainTheory.NeighbourhoodSystems.Exercise419
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
 
 
 
@@ -58,4 +58,4 @@ theorem one_def_strBot (σ : Str) : oneMap.toElementMap (strBot σ) = oneDef (st
       rw [oneDef, emptyMap_strBot, headValC_true, Exercise326.cond_false,
         zeroMap_strBot, headValC_true, Exercise326.cond_false, oneMap_strBot, headValC_true]
 
-end DomainTheory.Neighborhood.Exercise419
+end DomainTheory.NeighbourhoodSystems.Exercise419

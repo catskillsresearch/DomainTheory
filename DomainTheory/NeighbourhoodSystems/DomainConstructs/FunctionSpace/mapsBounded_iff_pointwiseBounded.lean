@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.FunctionSpace.Basic
-public import DomainTheory.Neighborhood.FunctionSpace.le_iff_toElementMap_le
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.le_iff_toElementMap_le
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -84,4 +84,4 @@ theorem mapsBounded_iff_pointwiseBounded {F : Set (ApproximableMap V₀ V₁)} :
     have hmem : (f.toElementMap (V₀.principal hX)).mem Y := (f.rel_iff_mem_principal hX).mp hrel
     exact ⟨hX, (V₁.le_sSup _ (mapsBounded_principal hpb hX) ⟨f, hf, rfl⟩) Y hmem⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

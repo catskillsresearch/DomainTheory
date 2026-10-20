@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Data.List.Infix
 import all Mathlib.Data.List.Infix
-public import DomainTheory.Neighborhood.ExampleB.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.ExampleB
+namespace DomainTheory.NeighbourhoodSystems.ExampleB
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -47,4 +47,4 @@ theorem sigmaBot_le_iff (σ₀ σ₁ : Str) :
     sigmaBot σ₀ ≤ sigmaBot σ₁ ↔ σ₀ <+: σ₁ := by
   rw [sigmaBot, sigmaBot, B.principal_le_iff, cone_subset_cone]
 
-end DomainTheory.Neighborhood.ExampleB
+end DomainTheory.NeighbourhoodSystems.ExampleB

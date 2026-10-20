@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722Decide
-public import DomainTheory.Neighborhood.Exercise722Equiv.Basic
-public import DomainTheory.Neighborhood.Exercise722Equiv.coe_evalFin
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.coe_evalFin
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -46,4 +46,4 @@ theorem denote_iff_evalFin (e : SExpr) (w : List Bool) :
     · rw [← Finset.mem_coe, coe_evalFin] at hs1; exact hs1
 
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

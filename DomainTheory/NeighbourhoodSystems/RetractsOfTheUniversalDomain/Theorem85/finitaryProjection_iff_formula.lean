@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Theorem85.Basic
-public import DomainTheory.Neighborhood.Theorem85.isFinitaryProjection_of_formula
-public import DomainTheory.Neighborhood.Theorem85.formula_of_isFinitaryProjection
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.isFinitaryProjection_of_formula
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.formula_of_isFinitaryProjection
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -37,4 +37,4 @@ theorem finitaryProjection_iff_formula (a : ApproximableMap E E) :
       E.mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ a.rel X X :=
   ⟨fun h => formula_of_isFinitaryProjection h, fun hii => isFinitaryProjection_of_formula a hii⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

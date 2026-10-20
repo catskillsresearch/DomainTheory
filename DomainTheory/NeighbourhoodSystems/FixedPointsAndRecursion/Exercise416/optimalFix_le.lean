@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise413
-public import DomainTheory.Neighborhood.Exercise415
-public import DomainTheory.Neighborhood.Exercise416.Basic
-public import DomainTheory.Neighborhood.Exercise416.optimalFix_le_sInf
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise415
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise416.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise416.optimalFix_le_sInf
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -32,4 +32,4 @@ theorem optimalFix_le (f : V.Element → V.Element) (hf : Monotone f) (S : Set V
   le_trans (optimalFix_le_sInf f hf S hS hfix) (V.sInf_le S hS hs)
 
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

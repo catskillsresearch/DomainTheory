@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise323.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise323.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -27,4 +27,4 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : N
 
 theorem toUnit_unique (f : ApproximableMap V unitSys) : f = toUnit V := Subsingleton.elim _ _
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

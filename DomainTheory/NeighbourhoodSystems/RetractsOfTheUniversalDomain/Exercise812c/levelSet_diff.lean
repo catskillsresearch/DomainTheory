@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812
-public import DomainTheory.Neighborhood.IntervalPrimrec
-public import DomainTheory.Neighborhood.Theorem88
-public import DomainTheory.Neighborhood.Exercise812c.Basic
-public import DomainTheory.Neighborhood.Exercise812c.testBit_xor_and_self
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.testBit_xor_and_self
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -37,4 +37,4 @@ theorem levelSet_diff (k₁ m₁ k₂ m₂ : ℕ) :
   simp only [mem_levelSet, Set.mem_sdiff, testBit_xor_and_self, Bool.and_eq_true, Bool.not_eq_true,
     Bool.not_eq_true']
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

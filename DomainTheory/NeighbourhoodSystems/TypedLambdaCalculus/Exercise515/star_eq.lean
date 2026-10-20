@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 import all Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.FreeMonoid.Basic
 import all Mathlib.Algebra.FreeMonoid.Basic
-public import DomainTheory.Neighborhood.Exercise515.Basic
-public import DomainTheory.Neighborhood.Exercise515.mem_star
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.mem_star
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise515
+namespace DomainTheory.NeighbourhoodSystems.Exercise515
 
 open Pointwise
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {S : Type*} [Monoid S]
 
@@ -54,4 +54,4 @@ theorem star_eq (z : Set S) : star z = (1 : Set S) ∪ z * star z := by
       obtain ⟨m, hm⟩ := mem_star.mp ht
       exact mem_star.mpr ⟨m + 1, by rw [kpow_succ, Set.mem_mul]; exact ⟨a, ha, t, hm, rfl⟩⟩
 
-end DomainTheory.Neighborhood.Exercise515
+end DomainTheory.NeighbourhoodSystems.Exercise515

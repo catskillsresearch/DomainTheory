@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise621
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Exercise627.Basic
-public import DomainTheory.Neighborhood.Exercise627.strictifyMap_le
-public import DomainTheory.Neighborhood.Exercise627.toFilter_toApproxMap
-public import DomainTheory.Neighborhood.Exercise627.toStrictMap_toStrictFilter
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.strictifyMap_le
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.toFilter_toApproxMap
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.toStrictMap_toStrictFilter
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
-open DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.Exercise510
 
 namespace Exercise627
 
@@ -74,4 +74,4 @@ theorem incl_strct_le (ψ : (funSpace V₀ V₁).Element) : incl (strct ψ) ≤ 
 
 end Part5
 end Exercise627
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

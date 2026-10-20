@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise115.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise115
+namespace DomainTheory.NeighbourhoodSystems.Exercise115
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -39,4 +39,4 @@ theorem stem_principal_lt {X Y : Set ℕ} (hX : stem.mem X) (hY : stem.mem Y)
   intro he
   exact hne (stem.principal_injective hX hY he)
 
-end DomainTheory.Neighborhood.Exercise115
+end DomainTheory.NeighbourhoodSystems.Exercise115

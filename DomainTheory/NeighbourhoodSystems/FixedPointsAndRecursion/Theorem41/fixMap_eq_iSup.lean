@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Theorem41.Basic
-public import DomainTheory.Neighborhood.Theorem41.iterElem_mono
-public import DomainTheory.Neighborhood.Theorem41.fixElement_eq_iSupDirected
-public import DomainTheory.Neighborhood.Theorem41.fixMap_toElementMap
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.iterElem_mono
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixElement_eq_iSupDirected
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixMap_toElementMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -37,4 +37,4 @@ theorem fixMap_eq_iSup (V : NeighborhoodSystem α) (φ : (funSpace V V).Element)
   rw [fixMap_toElementMap]
   exact fixElement_eq_iSupDirected (toApproxMap φ)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

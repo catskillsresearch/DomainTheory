@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88e.Basic
-public import DomainTheory.Neighborhood.Theorem88e.isomorphic_DprimeUCode
-public import DomainTheory.Neighborhood.Theorem88e.DprimeUCode_isEffectivelyGiven
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Proposition612
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.isomorphic_DprimeUCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.DprimeUCode_isEffectivelyGiven
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
 
 @[expose] public section
 
@@ -43,9 +43,9 @@ decidability core — the entire content is packaging two reindexings of `incl_c
 hence r.e. (`RecDecidable.re`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

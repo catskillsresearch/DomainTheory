@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.RingTheory.Ideal.Span
 import all Mathlib.RingTheory.Ideal.Span
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise126.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise126.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Ring
 
@@ -36,4 +36,4 @@ theorem IFamily_eq_of_span_eq {F₁ F₂ : Finset A}
   · exact (IFamily_subset_iff F₂ F₁).mpr (by rw [← h]; exact Ideal.subset_span)
 
 end Ring
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

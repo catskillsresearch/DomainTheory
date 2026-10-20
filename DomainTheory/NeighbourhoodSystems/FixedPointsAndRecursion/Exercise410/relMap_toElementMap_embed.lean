@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise410.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -59,4 +59,4 @@ theorem relMap_toElementMap_embed (f : ApproximableMap V V) {a : V.Element}
     exact ⟨hVX, X, haX, ⟨W, hgW, haW, hWX⟩, subset_rfl⟩
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

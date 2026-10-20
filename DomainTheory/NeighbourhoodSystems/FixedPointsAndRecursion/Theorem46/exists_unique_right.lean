@@ -9,14 +9,14 @@ module
 
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Theorem46.Basic
-public import DomainTheory.Neighborhood.Theorem46.graph_zero_right
-public import DomainTheory.Neighborhood.Theorem46.graph_succ_right
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.graph_zero_right
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.graph_succ_right
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 universe u v
 
@@ -40,4 +40,4 @@ theorem exists_unique_right (P : PeanoModel M) (Q : PeanoModel N) (m : M) :
     rw [huniq n'' hn'']
 
 end PeanoModel
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

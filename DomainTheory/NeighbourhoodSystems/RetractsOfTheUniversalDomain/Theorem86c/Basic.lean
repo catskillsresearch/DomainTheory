@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem86
-public import DomainTheory.Neighborhood.Theorem76
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76
 
 @[expose] public section
 
@@ -48,7 +48,7 @@ decidability are all built from `RecDecidable`/`REPred` closure lemmas over conc
 recursive characteristic functions, exactly as in `Theorem75.lean`/`Theorem76.lean`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
 
@@ -64,4 +64,4 @@ variable (P : ComputablePresentation E) (gN : ℕ → ℕ)
 
 /-! ### The per-witness decidable predicate and its recursive decidability -/
 end SubComputable
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

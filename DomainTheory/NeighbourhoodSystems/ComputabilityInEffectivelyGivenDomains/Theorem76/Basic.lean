@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 
 @[expose] public section
 
@@ -53,7 +53,7 @@ the flag together with the final inclusion `X_{last} ⊆ X_ℓ`. Everything audi
 `⊆ {propext, Quot.sound}`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -105,4 +105,4 @@ def fixPStep (fincl : ℕ → ℕ) (c acc x : ℕ) : ℕ :=
 coded by `i`. Returns `pair lastIdx flag`. -/
 def fixChainChar (fincl : ℕ → ℕ) (c i : ℕ) : ℕ :=
   foldCode (fixStp fincl) c (Nat.pair P.masterIdx 1) i
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

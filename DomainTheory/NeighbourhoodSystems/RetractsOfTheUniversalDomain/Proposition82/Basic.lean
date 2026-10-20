@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition81
-public import DomainTheory.Neighborhood.Proposition612
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition81
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
 
 @[expose] public section
 
@@ -42,7 +42,7 @@ Everything here is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`), 
 and Theorem 2.5 are.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -106,4 +106,4 @@ def elementIso (h : D ◁ E) :
     · intro hle
       exact h.inj.toElementMap_mono hle
 end Subsystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

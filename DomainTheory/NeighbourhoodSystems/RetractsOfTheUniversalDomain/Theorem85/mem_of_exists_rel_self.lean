@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Theorem85.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -42,4 +42,4 @@ theorem mem_of_exists_rel_self {a : ApproximableMap E E} (x : E.Element) {Y : Se
   have hXmem : (a.toElementMap x).mem X := (a.toElementMap_mono hle) X hmem
   exact (a.toElementMap x).up_mem hXmem hYE hXY
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

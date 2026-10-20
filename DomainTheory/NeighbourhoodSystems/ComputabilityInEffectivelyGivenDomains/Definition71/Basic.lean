@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.Recursive
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive
 
 @[expose] public section
 
@@ -56,7 +56,7 @@ A neighbourhood system is *effectively given* when it admits such a presentation
 (`unitSys_isEffectivelyGiven`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -201,4 +201,4 @@ def unitPresentation : ComputablePresentation unitSys where
   inter_spec _ := by rw [Set.inter_self]
   masterIdx := 0
   masterIdx_spec := rfl
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

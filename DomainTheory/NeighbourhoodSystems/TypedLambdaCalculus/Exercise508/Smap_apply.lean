@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise508.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise508
+namespace DomainTheory.NeighbourhoodSystems.Exercise508
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
 variable {α β γ : Type*}
@@ -35,4 +35,4 @@ theorem Smap_apply (F : (funSpace Vx (funSpace Va Vb)).Element) (G : (funSpace V
   simp only [Sbody, toElementMap_comp, toElementMap_paired, toElementMap_proj₀,
     toElementMap_proj₁, fst_pair, snd_pair, evalMap_apply]
 
-end DomainTheory.Neighborhood.Exercise508
+end DomainTheory.NeighbourhoodSystems.Exercise508

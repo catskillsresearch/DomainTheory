@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example84
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Example84b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
@@ -36,4 +36,4 @@ theorem toApproxMap_injective {a b : (funSpace D E).Element} (h : toApproxMap a 
   rw [← toFilter_toApproxMap a, ← toFilter_toApproxMap b, h]
 
 end Strict
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

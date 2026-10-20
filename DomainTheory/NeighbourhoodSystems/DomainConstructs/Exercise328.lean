@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise328.Basic
-public import DomainTheory.Neighborhood.Exercise328.Elementu2emem_interYs_of
-public import DomainTheory.Neighborhood.Exercise328.val_le_leastMap_toElementMap
-public import DomainTheory.Neighborhood.Exercise328.leastMapVals_bounded
-public import DomainTheory.Neighborhood.Exercise328.leastMap_toElementMap_le_of_ub
-public import DomainTheory.Neighborhood.Exercise328.toElementMap_leastMap_eq_sSup
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.Elementu2emem_interYs_of
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.val_le_leastMap_toElementMap
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.leastMapVals_bounded
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.leastMap_toElementMap_le_of_ub
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.toElementMap_leastMap_eq_sSup
 
 @[expose] public section

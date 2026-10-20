@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise413
-public import DomainTheory.Neighborhood.Exercise415
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise415
 
 @[expose] public section
 
@@ -34,7 +34,7 @@ The data (`optimalFix`) is **choice-free**; only the *appeal to* Exercise 4.15 f
 maximal fixed points is classical.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -58,4 +58,4 @@ def optimalFix (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Elemen
     (hfix : ∀ s ∈ S, f s = s) : V.Element :=
   monoFix f (f_sInf_le f hf S hS hfix)
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

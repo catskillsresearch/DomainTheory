@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88b.Basic
-public import DomainTheory.Neighborhood.Theorem88b.eIdx_zero
-public import DomainTheory.Neighborhood.Theorem88b.he0
-public import DomainTheory.Neighborhood.Theorem88b.hcover
-public import DomainTheory.Neighborhood.Theorem88b.genAtom_empty_iff
-public import DomainTheory.Neighborhood.RecursiveCross
-public import DomainTheory.Neighborhood.Theorem88d.Basic
-public import DomainTheory.Neighborhood.Theorem88d.atomUCode_succ_true
-public import DomainTheory.Neighborhood.Theorem88d.atomUCode_disjoint_YseqCode_of_posTwin_empty
-public import DomainTheory.Neighborhood.Theorem88d.atomUCodeState_congr_twin
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.eIdx_zero
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.he0
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.hcover
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.genAtom_empty_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_succ_true
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_disjoint_YseqCode_of_posTwin_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCodeState_congr_twin
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -172,4 +172,4 @@ theorem atomUCode_succ_false {k n : ℕ} (hne : atomUEmpty P (n + 1) k = 0)
     rw [hncode, hI, selectFn_one]
     exact hEq
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

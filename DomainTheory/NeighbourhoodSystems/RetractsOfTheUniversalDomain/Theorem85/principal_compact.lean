@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Theorem85.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -42,4 +42,4 @@ theorem principal_compact {X : Set γ} (hX : V.mem X) {I : Type*} [Nonempty I]
   exact ⟨i, fun _ ⟨hW, hXW⟩ => (d i).up_mem hi hW hXW⟩
 
 end Algebraic
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

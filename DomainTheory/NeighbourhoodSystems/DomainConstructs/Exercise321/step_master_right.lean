@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise321.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -33,4 +33,4 @@ theorem step_master_right (Y : Set α) (hY : V₀.mem Y) :
   simp only [mem_step, Set.mem_univ, iff_true]
   exact f.mono f.master_rel (V₀.sub_master hY) subset_rfl hY V₁.master_mem
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

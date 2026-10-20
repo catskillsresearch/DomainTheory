@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87
-public import DomainTheory.Neighborhood.RationalPrimrec
-public import DomainTheory.Neighborhood.RecursiveCross
-public import DomainTheory.Neighborhood.IntervalPrimrec.Basic
-public import DomainTheory.Neighborhood.IntervalPrimrec.decodeRatPair_qpCombineBop
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.decodeRatPair_qpCombineBop
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -48,4 +48,4 @@ theorem mem_decodeQPairList_combineCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
       (mem_decodeList_crossCombine (bop := qpCombineBop) c1 c2 _).mpr ⟨e1, he1, e2, he2, rfl⟩, ?_⟩
     rw [decodeRatPair_qpCombineBop, he1', he2', hp]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

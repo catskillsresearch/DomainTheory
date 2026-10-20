@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Data.List.Infix
 import all Mathlib.Data.List.Infix
-public import DomainTheory.Neighborhood.ExampleB.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.ExampleB
+namespace DomainTheory.NeighbourhoodSystems.ExampleB
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -49,4 +49,4 @@ theorem prepend_append (σ τ : Str) (X : Set Str) :
   · rintro ⟨ρ, hρ, rfl⟩
     exact ⟨τ ++ ρ, ⟨ρ, hρ, rfl⟩, by rw [List.append_assoc]⟩
 
-end DomainTheory.Neighborhood.ExampleB
+end DomainTheory.NeighbourhoodSystems.ExampleB

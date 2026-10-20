@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.FunctionSpace.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -25,4 +25,4 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
 theorem ApproximableMap.le_iff {f g : ApproximableMap V₀ V₁} :
     f ≤ g ↔ ∀ X Y, f.rel X Y → g.rel X Y := Iff.rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

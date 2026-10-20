@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Proposition810.Basic
-public import DomainTheory.Neighborhood.Proposition810.toApproxMap_toElementMap_lamComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toApproxMap_toElementMap_lamComb
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -38,4 +38,4 @@ theorem isRetraction_lamComb {a b : ApproximableMap U U} (ha : IsRetraction a)
     ← comp_assoc b b (((toApproxMap φ).comp a).comp a), hb,
     comp_assoc (toApproxMap φ) a a, ha]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

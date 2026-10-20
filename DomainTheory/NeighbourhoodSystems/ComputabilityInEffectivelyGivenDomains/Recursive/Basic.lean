@@ -19,9 +19,9 @@ public import Mathlib.Computability.Partrec
 import all Mathlib.Computability.Partrec
 public import Mathlib.Tactic.Ring
 import all Mathlib.Tactic.Ring
-public import DomainTheory.Neighborhood.Exercise722Regular
-public import DomainTheory.Neighborhood.Exercise722Decide
-public import DomainTheory.Neighborhood.Exercise722Equiv
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv
 
 @[expose] public section
 
@@ -2251,7 +2251,7 @@ Fuel-bounded numeric mirrors of `autStateCard` / `matchesB` with tag dispatch li
 `decodeFuelOkCharBody`. Gödel coding matches `SExpr.encode` in `Exercise722Presentation.lean`
 (tags `0..3`, payloads at `c.unpair.2` / nested pairs). -/
 
-open DomainTheory.Neighborhood Exercise722
+open DomainTheory.NeighbourhoodSystems Exercise722
 
 /-- **Not** `private`: `Exercise722Presentation.lean` (downstream of this file via `Definition71`)
 bridges this to its own `boolNat` in Session **C9b7**, since `Recursive.lean` cannot import

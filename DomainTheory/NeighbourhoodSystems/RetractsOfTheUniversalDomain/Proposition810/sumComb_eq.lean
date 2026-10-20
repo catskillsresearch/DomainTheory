@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Proposition810.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -34,4 +34,4 @@ theorem sumComb_eq (a b : ApproximableMap U U) :
                     (b.comp (outMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty))))))).comp
         jPlus) := rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

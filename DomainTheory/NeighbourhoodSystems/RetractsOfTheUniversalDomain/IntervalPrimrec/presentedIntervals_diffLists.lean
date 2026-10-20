@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87
-public import DomainTheory.Neighborhood.RationalPrimrec
-public import DomainTheory.Neighborhood.RecursiveCross
-public import DomainTheory.Neighborhood.IntervalPrimrec.Basic
-public import DomainTheory.Neighborhood.IntervalPrimrec.presentedIntervals_diffAllList
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.presentedIntervals_diffAllList
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -48,4 +48,4 @@ theorem presentedIntervals_diffLists (L1 L2 : List (ℚ × ℚ)) :
       presentedIntervals_append, presentedIntervals_diffAllList, ih, presentedIntervals_cons,
       Set.union_sdiff_distrib]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

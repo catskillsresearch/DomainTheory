@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Theorem76.Basic
-public import DomainTheory.Neighborhood.Theorem76.fixStp_eq
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixStp_eq
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -42,4 +42,4 @@ theorem fixChainChar_eq (fincl : ℕ → ℕ) (c i : ℕ) :
     funext acc x; exact fixStp_eq fincl c acc x
   rw [hstep]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

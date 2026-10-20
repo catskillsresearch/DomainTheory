@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Recursive
-public import DomainTheory.Neighborhood.RationalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -33,4 +33,4 @@ open Domain.Recursive
 
 theorem ratLeCode_le_one (t : ℕ) : ratLeCode t ≤ 1 := isZero_le_one _
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

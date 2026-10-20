@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise823
-public import DomainTheory.Neighborhood.Exercise824.Basic
-public import DomainTheory.Neighborhood.Exercise824.toElementMap_fixElement_snd
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.toElementMap_fixElement_snd
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
 
@@ -41,4 +41,4 @@ theorem binOp_aStar_bStar_right (s t : ApproximableMap (PairSpace (E := E)) (fun
   rw [toFilter_toApproxMap, toFilter_toApproxMap, pair_fst_snd, toElementMap_fixElement_snd]
 
 end Exercise824
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

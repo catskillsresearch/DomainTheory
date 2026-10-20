@@ -73,7 +73,7 @@ Everything (including `numEquiv` and the order-isomorphisms) is **choice-free**
 (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood.Exercise513
+namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-! ### Triangular numbers -/
 
@@ -236,4 +236,4 @@ def PN_orderIso_prod : Set ℕ ≃o Set ℕ × Set ℕ :=
 def PNN_orderIso_prod : Set (ℕ × ℕ) ≃o Set ℕ × Set ℕ :=
   PN_orderIso_PNN.symm.trans PN_orderIso_prod
 
-end DomainTheory.Neighborhood.Exercise513
+end DomainTheory.NeighbourhoodSystems.Exercise513

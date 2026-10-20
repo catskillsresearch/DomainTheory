@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise720.Basic
-public import DomainTheory.Neighborhood.Exercise720.unionMap_rel_fin
-public import DomainTheory.Neighborhood.Exercise720.unionMap_rel_Ypd_iff
-public import DomainTheory.Neighborhood.Exercise720.unionMap_isComputable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise720.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise720.unionMap_rel_fin
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise720.unionMap_rel_Ypd_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise720.unionMap_isComputable
 
 @[expose] public section

@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise817
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Exercise326Sum
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.Exercise819.Basic
-public import DomainTheory.Neighborhood.Exercise819.toElementMap_swapProdT
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.toElementMap_swapProdT
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -40,4 +40,4 @@ theorem toApproxMap_pairToFun (x y : E.Element) (t : TD.Element) :
   rw [pairToFun, toElementMap_curry_apply, toElementMap_comp, toElementMap_swapProdT]
 
 end Prod
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

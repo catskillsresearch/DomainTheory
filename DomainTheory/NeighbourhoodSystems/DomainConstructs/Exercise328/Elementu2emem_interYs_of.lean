@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.Exercise328.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -43,4 +43,4 @@ theorem Element.mem_interYs_of (z : V₁.Element) {L : List (Set α × Set β)} 
       rw [heq]
       exact ih htail
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

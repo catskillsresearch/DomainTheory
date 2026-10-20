@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise117.Basic
-public import DomainTheory.Neighborhood.Exercise117.filterAt_injective
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise117.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise117.filterAt_injective
 
 @[expose] public section

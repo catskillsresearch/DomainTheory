@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition610
-public import DomainTheory.Neighborhood.Exercise222
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222
 
 @[expose] public section
 
@@ -54,9 +54,9 @@ solely through Exercise 2.22's representation isomorphism (the "for set theorist
 picks witnesses of non-emptiness and uses finite-set induction), exactly as Exercise 3.27 does.
 -/
 
-namespace DomainTheory.Neighborhood.Proposition611
+namespace DomainTheory.NeighbourhoodSystems.Proposition611
 
-open DomainTheory.Neighborhood NeighborhoodSystem Set DomainTheory.Neighborhood.Exercise222
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set DomainTheory.NeighbourhoodSystems.Exercise222
 
 variable {α : Type*}
 
@@ -275,4 +275,4 @@ def subsystemReprIso (E : NeighborhoodSystem α) :
   (subIso E).trans
     (reprIso (subFam E) (subFam_sInter_mem E) (subFam_nonempty E) (subFam_sUnion_mem E)).symm
 
-end DomainTheory.Neighborhood.Proposition611
+end DomainTheory.NeighbourhoodSystems.Proposition611

@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Table55.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -52,4 +52,4 @@ theorem fixC_apply (φ : (funSpace V V).Element) :
     (fixC V).toElementMap φ = (toApproxMap φ).fixElement := by
   rw [fixC, fixMap_toElementMap]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

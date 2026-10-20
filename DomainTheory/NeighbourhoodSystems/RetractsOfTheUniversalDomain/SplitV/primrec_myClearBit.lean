@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.LevelSetPrimrec
-public import DomainTheory.Neighborhood.MinLevel
-public import DomainTheory.Neighborhood.SplitV.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -32,4 +32,4 @@ theorem primrec_myClearBit : Nat.Primrec (fun t => myClearBit t.unpair.1 t.unpai
   have hpow : Nat.Primrec (fun t : ℕ => (2 : ℕ) ^ t.unpair.2) := primrec_two_pow Nat.Primrec.right
   exact (primrec_sub₂ Nat.Primrec.left hpow).of_eq fun _ => rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

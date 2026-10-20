@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise115.Basic
-public import DomainTheory.Neighborhood.Exercise115.stem_mem_univ
-public import DomainTheory.Neighborhood.Exercise115.stem_mem_pair
-public import DomainTheory.Neighborhood.Exercise115.stem_mem_zero
-public import DomainTheory.Neighborhood.Exercise115.stem_principal_lt
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.stem_mem_univ
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.stem_mem_pair
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.stem_mem_zero
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.stem_principal_lt
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise115
+namespace DomainTheory.NeighbourhoodSystems.Exercise115
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -50,4 +50,4 @@ theorem stem_three_chain : ∃ a b c : stem.Element, a < b ∧ b < c := by
     have : (1 : ℕ) ∈ ({0} : Set ℕ) := h ▸ (by simp : (1 : ℕ) ∈ ({0, 1} : Set ℕ))
     simp at this
 
-end DomainTheory.Neighborhood.Exercise115
+end DomainTheory.NeighbourhoodSystems.Exercise115

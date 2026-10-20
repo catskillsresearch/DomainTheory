@@ -7,24 +7,24 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Algebra.Group.Submonoid.Basic
 import all Mathlib.Algebra.Group.Submonoid.Basic
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 import all Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.Group.Nat.Defs
 import all Mathlib.Algebra.Group.Nat.Defs
-public import DomainTheory.Neighborhood.Exercise417.Basic
-public import DomainTheory.Neighborhood.Exercise417.F_univ
-public import DomainTheory.Neighborhood.Exercise417.F_one_one_singleton
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.F_univ
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.F_one_one_singleton
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise417
+namespace DomainTheory.NeighbourhoodSystems.Exercise417
 
 open Pointwise
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {S : Type*} [Monoid S]
 
@@ -45,4 +45,4 @@ theorem fixedPoint_not_unique :
   have h2 : (2 : ℕ) ∈ ({1} : Set ℕ) := by rw [h]; exact Set.mem_univ 2
   simp at h2
 
-end DomainTheory.Neighborhood.Exercise417
+end DomainTheory.NeighbourhoodSystems.Exercise417

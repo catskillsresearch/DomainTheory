@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88f.Basic
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_inj_isComputableMap
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_proj_isComputableMap
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_projectionPair_isComputable
-public import DomainTheory.Neighborhood.Theorem88n.Basic
-public import DomainTheory.Neighborhood.Theorem88n.isoProj_comp_isoInj
-public import DomainTheory.Neighborhood.Theorem88n.isoInj_comp_isoProj
-public import DomainTheory.Neighborhood.Theorem88n.isoInj_isComputableMap
-public import DomainTheory.Neighborhood.Theorem88n.isoProj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_inj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_proj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_projectionPair_isComputable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoProj_comp_isoInj
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoInj_comp_isoProj
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoInj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoProj_isComputableMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -52,4 +52,4 @@ theorem theorem_8_8_b_strong :
   · exact comp_isComputable (isoInj_isComputableMap P) (DprimeUCode_inj_isComputableMap P)
   · exact comp_isComputable (DprimeUCode_proj_isComputableMap P) (isoProj_isComputableMap P)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

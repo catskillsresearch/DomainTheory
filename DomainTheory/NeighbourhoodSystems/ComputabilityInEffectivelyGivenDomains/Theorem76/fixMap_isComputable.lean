@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Theorem76.Basic
-public import DomainTheory.Neighborhood.Theorem76.fixMap_rel_iff
-public import DomainTheory.Neighborhood.Theorem76.chainDec_iff_gStepsOK
-public import DomainTheory.Neighborhood.Theorem76.primrec_fixChainChar
-public import DomainTheory.Neighborhood.Theorem76.fixChainChar_spec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixMap_rel_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.chainDec_iff_gStepsOK
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.primrec_fixChainChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixChainChar_spec
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -100,4 +100,4 @@ theorem fixMap_isComputable
           t.unpair.2)).mp hi2
         rwa [unpair_pair_fst, unpair_pair_snd] at hi2'
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

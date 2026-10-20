@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Exercise812g4
-public import DomainTheory.Neighborhood.Exercise817.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Subsystem
 
@@ -38,4 +38,4 @@ variable {α : Type u} {β : Type v} {γ : Type w}
 theorem funSpaceUU_trianglelefteq_U : funSpace U U ⊴ U :=
   trianglelefteq_of_projectionPair iArrow jArrow jArrow_comp_iArrow iArrow_comp_jArrow_le
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

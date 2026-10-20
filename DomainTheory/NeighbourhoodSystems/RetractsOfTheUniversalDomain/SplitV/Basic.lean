@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.LevelSetPrimrec
-public import DomainTheory.Neighborhood.MinLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel
 
 @[expose] public section
 
@@ -28,7 +28,7 @@ valid index `< N`) marks "no witness found among the indices scanned so far", ex
 `bExistsFn`'s own `0`-sentinel for "not yet found".
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -436,4 +436,4 @@ theorem splitVLeft_congr {n n' : ℕ} (hn : VX n = VX n') :
 theorem splitVRight_congr {n n' : ℕ} (hn : VX n = VX n') :
     VX (splitVRight n) = VX (splitVRight n') := by
   rw [splitVRight_eq_of_congr hn]
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

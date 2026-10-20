@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Topology.Inseparable
 import all Mathlib.Topology.Inseparable
-public import DomainTheory.Neighborhood.Exercise122.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -31,4 +31,4 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 theorem isOpen_iff_isOpenFilter (U : Set V.Element) : IsOpen U ↔ V.IsOpenFilter U := Iff.rfl
 
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

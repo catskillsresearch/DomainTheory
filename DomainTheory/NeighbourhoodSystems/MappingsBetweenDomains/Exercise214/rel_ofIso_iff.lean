@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.Exercise214.Basic
-public import DomainTheory.Neighborhood.Exercise214.phi_spec
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.phi_spec
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -35,4 +35,4 @@ theorem rel_ofIso_iff (e : V₀.Element ≃o V₁.Element) {X : Set α} (hX : V�
     rw [phi_spec e hX]
     exact h
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise314.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise314.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -25,4 +25,4 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 theorem proj₁_comp_diag : (proj₁ V V).comp (diag V) = idMap V :=
   proj₁_comp_paired (idMap V) (idMap V)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

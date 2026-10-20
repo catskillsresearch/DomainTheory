@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise813a
-public import DomainTheory.Neighborhood.Exercise813b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 
 
@@ -52,4 +52,4 @@ theorem entails_iff_evalSet_subset {φ ψ : Formula} :
     rw [h2, ← mem_evalSet_iff]
     exact h (by rw [mem_evalSet_iff, ← h1]; exact hv)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

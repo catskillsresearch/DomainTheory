@@ -7,12 +7,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise221.Basic
-public import DomainTheory.Neighborhood.Exercise221.memB_imp_memC
-public import DomainTheory.Neighborhood.Exercise221.memC_nonempty
-public import DomainTheory.Neighborhood.Exercise221.isTotal_singletonElt
-public import DomainTheory.Neighborhood.Exercise221.bot_lt_Lambda
-public import DomainTheory.Neighborhood.Exercise221.juxtapose_cone
-public import DomainTheory.Neighborhood.Exercise221.juxtapose_singleton_mem
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.memB_imp_memC
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.memC_nonempty
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.isTotal_singletonElt
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.bot_lt_Lambda
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.juxtapose_cone
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.juxtapose_singleton_mem
 
 @[expose] public section

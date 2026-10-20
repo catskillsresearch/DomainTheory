@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise220.Basic
-public import DomainTheory.Neighborhood.Exercise220.toSet_succMap
-public import DomainTheory.Neighborhood.Exercise220.toSet_predMap
-public import DomainTheory.Neighborhood.Exercise220.toSet_unionMap
-public import DomainTheory.Neighborhood.Exercise220.toSet_interMapu2082
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise220.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise220.toSet_succMap
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise220.toSet_predMap
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise220.toSet_unionMap
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise220.toSet_interMapu2082
 
 @[expose] public section

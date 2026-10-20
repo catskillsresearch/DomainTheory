@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Exercise122
-public import DomainTheory.Neighborhood.Exercise213.Basic
-public import DomainTheory.Neighborhood.Exercise213.principalFamily_directed
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.principalFamily_directed
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -41,4 +41,4 @@ theorem eq_iSupDirected_principal (x : V₀.Element) :
     exact x.up_mem hX hZmem hXZ
 
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

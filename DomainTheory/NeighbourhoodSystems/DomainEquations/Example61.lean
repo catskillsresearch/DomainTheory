@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
 
 @[expose] public section
 
@@ -41,7 +41,7 @@ We use the project's `+` (`sum`, Exercise 3.18) and `×` (`prod`, Definition 3.1
 choice-free (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -737,4 +737,4 @@ end Equation
 
 end Example61
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

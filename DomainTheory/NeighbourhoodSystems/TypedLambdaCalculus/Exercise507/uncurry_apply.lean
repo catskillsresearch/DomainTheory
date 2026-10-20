@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise507.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise507
+namespace DomainTheory.NeighbourhoodSystems.Exercise507
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
@@ -32,4 +32,4 @@ theorem uncurry_apply (h : ApproximableMap V₀ (funSpace V₁ V₂))
   rw [uncurry_eq, toElementMap_comp, toElementMap_paired, toElementMap_comp,
     toElementMap_proj₀, toElementMap_proj₁, fst_pair, snd_pair, evalMap_apply]
 
-end DomainTheory.Neighborhood.Exercise507
+end DomainTheory.NeighbourhoodSystems.Exercise507

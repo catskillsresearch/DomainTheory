@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Theorem111
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise113.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise113
+namespace DomainTheory.NeighbourhoodSystems.Exercise113
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 
@@ -41,4 +41,4 @@ theorem prefix_comparable_of_mem {σ τ : Str} (y : B.Element)
     rw [← hρ, h] at hmem
     simp at hmem
 
-end DomainTheory.Neighborhood.Exercise113
+end DomainTheory.NeighbourhoodSystems.Exercise113

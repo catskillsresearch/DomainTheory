@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise423.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise423.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -62,4 +62,4 @@ theorem f_unique_fixedPoint (f : ApproximableMap V V) (a : ℕ → ApproximableM
   exact le_antisymm hge hle
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Order.Interval.Set.LinearOrder
 import all Mathlib.Order.Interval.Set.LinearOrder
 public import Mathlib.Data.List.Basic
@@ -68,7 +68,7 @@ choice made in this file; nothing here uses `Classical.choice`, `Classical.dec`,
 non-constructive existence principle directly.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -226,4 +226,4 @@ theorem presentedIntervals_map_clipGe (m : ℚ) (L : List (ℚ × ℚ)) :
     exact ⟨(q.1 ⊔ m, q.2), ⟨q, hq, rfl⟩, sup_le hxq1 hxm, hxq2⟩
 
 /-! ### `𝒰` is closed under finite unions (needed for Theorem 8.8) -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

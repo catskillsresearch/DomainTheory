@@ -9,12 +9,12 @@ module
 
 public import Mathlib.Computability.MyhillNerode
 import all Mathlib.Computability.MyhillNerode
-public import DomainTheory.Neighborhood.Example62Regular.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Example62Regular
 
@@ -42,4 +42,4 @@ theorem treeLang_injective : Function.Injective (treeLang (n := n)) := by
   cases ha : a σ <;> cases ha' : a' σ <;> simp_all
 
 end Example62Regular
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

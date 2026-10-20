@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise410.Basic
-public import DomainTheory.Neighborhood.Exercise410.relMap_toElementMap_embed
-public import DomainTheory.Neighborhood.Exercise410.fixElement_below_unique
-public import DomainTheory.Neighborhood.Exercise410.relMap_unique_fixed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.relMap_toElementMap_embed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.fixElement_below_unique
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.relMap_unique_fixed
 
 @[expose] public section

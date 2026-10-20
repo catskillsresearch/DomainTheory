@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
 
 @[expose] public section
 
@@ -59,7 +59,7 @@ depend only on `VX n`, not on `n` itself.
   position `i < 2 ^ k`, with no induction needed.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -270,4 +270,4 @@ level and the minimal mask. -/
 theorem minLevel_unique {k₁ m₁ k₂ m₂ : ℕ} (h : levelSet k₁ m₁ = levelSet k₂ m₂) :
     minLevel k₁ m₁ = minLevel k₂ m₂ ∧ minMask k₁ m₁ = minMask k₂ m₂ :=
   ⟨minLevel_eq h, minMask_eq h⟩
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic.Set
 import all Mathlib.Tactic.Set
-public import DomainTheory.Neighborhood.Approximable.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -66,4 +66,4 @@ theorem toElementMap_ofIso (e : V₀.Element ≃o V₁.Element) (x : V₀.Elemen
   exact h1.symm
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

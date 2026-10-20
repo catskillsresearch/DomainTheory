@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
-public import DomainTheory.Neighborhood.Theorem110.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -37,4 +37,4 @@ system: `𝒟 ≅ᴰ {[X]}`. -/
 theorem isomorphic_tokenSystem : V ≅ᴰ V.tokenSystem := ⟨V.tokenIso⟩
 
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

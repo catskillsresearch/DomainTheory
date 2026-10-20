@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise825Congr
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.Exercise825Closing.Basic
-public import DomainTheory.Neighborhood.Exercise825Closing.prod_self_isomorphic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Congr
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing.prod_self_isomorphic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -31,4 +31,4 @@ theorem funSpace_self_isomorphic (hDV : D ≅ᴰ funSpace D V) (hVV : prod V V �
       ((funSpace_congr_left hDD).trans hDV.symm)
   step.symm
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem85
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
 public import Mathlib.Data.Rat.Cast.Order
 import all Mathlib.Data.Rat.Cast.Order
 public import Mathlib.Algebra.Order.Archimedean.Basic
@@ -49,7 +49,7 @@ instances (as with `Definition87.lean`'s `𝒰`); no *further* choice is introdu
 one genuine classical case split (`by_contra`) used for the compactness contradiction.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise811
+namespace DomainTheory.NeighbourhoodSystems.Exercise811
 
 open NeighborhoodSystem ApproximableMap
 
@@ -419,4 +419,4 @@ noncomputable def fixOrderIso : {y : R.Element // a.toElementMap y = y} ≃o Set
         (cutPoint_le_one y'.1)).mp h
 
 /-! ### Non-finitarity -/
-end DomainTheory.Neighborhood.Exercise811
+end DomainTheory.NeighbourhoodSystems.Exercise811

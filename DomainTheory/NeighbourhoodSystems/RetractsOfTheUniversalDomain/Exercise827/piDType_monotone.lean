@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise826
-public import DomainTheory.Neighborhood.Exercise821
-public import DomainTheory.Neighborhood.Exercise827.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -77,4 +77,4 @@ theorem piDType_monotone (d : ApproximableMap U U) {s s' : U.Element} (h : s ≤
     piDType d s ≤ piDType d s' :=
   Sub8_6.toApproxMap_monotone ((piDTypeMap d).toElementMap_mono h)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

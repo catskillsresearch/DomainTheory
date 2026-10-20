@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example24
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Exercise218.Basic
-public import DomainTheory.Neighborhood.Exercise218.kOut_hOut
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.kOut_hOut
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise218
+namespace DomainTheory.NeighbourhoodSystems.Exercise218
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
 
@@ -52,4 +52,4 @@ theorem kMap_comp_hMap : kMap.comp hMap = idMap B := by
     rw [kOut_hOut, hXcone] at *
     exact hXZ
 
-end DomainTheory.Neighborhood.Exercise218
+end DomainTheory.NeighbourhoodSystems.Exercise218

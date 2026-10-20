@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.Example12
-public import DomainTheory.Neighborhood.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
 
 @[expose] public section
 
@@ -41,9 +41,9 @@ reasoning is choice-free; `parityMap` nonetheless pulls `Classical.choice` throu
 codomain `T` of Example 1.2, whose `simp`/`fin_cases` proofs already do — pre-existing and harmless.)
 -/
 
-namespace DomainTheory.Neighborhood.Example23
+namespace DomainTheory.NeighbourhoodSystems.Example23
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 /-- The two-token codomain `T` of Example 1.2. -/
 abbrev T : NeighborhoodSystem Example12.Token := Example12.neighborhoodSystem
@@ -135,4 +135,4 @@ def parityMap : ApproximableMap B T where
       rw [← hX'cone, ← hX]; exact hX'X
     have hYmem' : (valElt (scan σ)).mem Y' := (valElt (scan σ)).up_mem hY hY'mem hYY'
     exact ⟨σ', hX'cone, valElt_scan_mono hpre Y' hYmem'⟩
-end DomainTheory.Neighborhood.Example23
+end DomainTheory.NeighbourhoodSystems.Example23

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Table55.Basic
-public import DomainTheory.Neighborhood.Table55.curryC_toApproxMap
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.curryC_toApproxMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -46,4 +46,4 @@ theorem curryC_apply (φ : (funSpace (prod V₀ V₁) V₂).Element) (x : V₀.E
       = (toApproxMap φ).toElementMap (pair x y) := by
   rw [curryC_toApproxMap, toElementMap_curry_apply]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

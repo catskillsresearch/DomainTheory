@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition63
-public import DomainTheory.Neighborhood.Proposition66.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition66.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 universe u
 
@@ -26,4 +26,4 @@ only homomorphism between the two initial algebras. -/
 theorem iso_hom_unique (hA : IsInitial A) (h : AlgHom A B) : h = hA.desc B :=
   hA.uniq B h
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

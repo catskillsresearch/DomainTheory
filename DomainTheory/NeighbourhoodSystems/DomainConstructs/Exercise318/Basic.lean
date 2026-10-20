@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
 public import Mathlib.Data.Set.Image
 import all Mathlib.Data.Set.Image
 public import Mathlib.Data.Set.Insert
@@ -36,7 +36,7 @@ neighbourhood system; the section/retraction identities hold for the resulting m
 Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -381,4 +381,4 @@ def outMap₁ : ApproximableMap (sum V₀ V₁ h₀ h₁) V₁ where
   mono := by
     rintro W W' Y Y' ⟨_, _, hsub⟩ hW'W hYY' hW' hY'
     exact ⟨hW', hY', (rightPart_mono V₁ hW'W).trans (hsub.trans hYY')⟩
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

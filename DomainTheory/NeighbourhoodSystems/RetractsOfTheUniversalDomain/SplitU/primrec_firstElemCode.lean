@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.SplitU.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -31,4 +31,4 @@ open Domain.Recursive NeighborhoodSystem
 theorem primrec_firstElemCode : Nat.Primrec firstElemCode :=
   Nat.Primrec.left.comp primrec_pred
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

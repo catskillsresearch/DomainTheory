@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Example14.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example14
+namespace DomainTheory.NeighbourhoodSystems.Example14
 
 
 
@@ -87,4 +87,4 @@ theorem bot_lt_elemZero : bot < elemZero := by
     exact left_ne_master (h left (Or.inr rfl))
 
 end neighborhoodSystem
-end DomainTheory.Neighborhood.Example14
+end DomainTheory.NeighbourhoodSystems.Example14

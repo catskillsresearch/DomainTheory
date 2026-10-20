@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Lemma615.Basic
-public import DomainTheory.Neighborhood.Lemma615.trianglelefteq_of_projectionPair
-public import DomainTheory.Neighborhood.Lemma615.Subsystemu2etrianglelefteq
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.trianglelefteq_of_projectionPair
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Subsystemu2etrianglelefteq
 
 @[expose] public section

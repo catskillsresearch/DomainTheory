@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise817
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise820.Basic
-public import DomainTheory.Neighborhood.Exercise820.evalBotMap_comp_constFunMap
-public import DomainTheory.Neighborhood.Exercise820.constFunMap_comp_evalBotMap_le
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.evalBotMap_comp_constFunMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.constFunMap_comp_evalBotMap_le
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -38,4 +38,4 @@ theorem trianglelefteq_funSpace_const : B ⊴ funSpace A B :=
     (evalBotMap_comp_constFunMap A B) (constFunMap_comp_evalBotMap_le A B)
 
 end FunSpace
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

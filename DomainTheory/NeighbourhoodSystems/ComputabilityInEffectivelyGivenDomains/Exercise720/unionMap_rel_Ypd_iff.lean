@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition710
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Exercise719
-public import DomainTheory.Neighborhood.Exercise720.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise720.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -51,4 +51,4 @@ theorem unionMap_rel_Ypd_iff {V : NeighborhoodSystem α} (P : ComputablePresenta
     obtain ⟨b, hb, hab⟩ := hgen c hc a ha
     exact ⟨P.X b, (V.mem_Ypd P).mpr ⟨b, hb, P.mem_X b, subset_rfl⟩, hXin.2.trans hab⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

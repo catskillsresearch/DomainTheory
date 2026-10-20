@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Table55
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
 
 @[expose] public section
 
@@ -52,7 +52,7 @@ Each `G ⊆ [⟨Xₗ,Yₗᵢ⟩,Zₗᵢ]` is **function-space inclusion** in `(�
 `∀` over the coded entry-lists. Hence the relation is **recursive** — the answer to Scott's question.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -81,4 +81,4 @@ quantifiers are *bounded* `∀`s over the coded entry-lists (`RecDecidable₂.bF
 `(𝒟₀×𝒟₁→𝒟₂)` (a `Xenum`-singleton over the product presentation). -/
 def curryStepCode (a e' : ℕ) : ℕ :=
   Nat.pair (Nat.pair (Nat.pair a e'.unpair.1) e'.unpair.2) 0 + 1
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

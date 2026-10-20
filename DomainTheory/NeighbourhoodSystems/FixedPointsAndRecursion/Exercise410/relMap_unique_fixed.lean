@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise410.Basic
-public import DomainTheory.Neighborhood.Exercise410.relMap_toElementMap_embed
-public import DomainTheory.Neighborhood.Exercise410.fixElement_below_unique
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.relMap_toElementMap_embed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.fixElement_below_unique
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -63,4 +63,4 @@ theorem relMap_unique_fixed (f : ApproximableMap V V)
   rw [← h1, h2]
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

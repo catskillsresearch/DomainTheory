@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 
 @[expose] public section
 
@@ -42,7 +42,7 @@ We phrase conditions (ii)+(iii) together in the pointwise form `IsLUB {aₙ(x)} 
 only the project's permitted element-extensionality through `Theorem41`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -50,4 +50,4 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

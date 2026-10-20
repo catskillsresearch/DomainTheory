@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example78
-public import DomainTheory.Neighborhood.Theorem74
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Exercise514
-public import DomainTheory.Neighborhood.Exercise723.Basic
-public import DomainTheory.Neighborhood.Exercise723.testBit_orUpTo
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.testBit_orUpTo
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise723
+namespace DomainTheory.NeighbourhoodSystems.Exercise723
 
-open DomainTheory.Neighborhood Example78 NeighborhoodSystem Domain.Recursive
-open DomainTheory.Neighborhood.Exercise513 (tri num numP unnum nextCell numP_unnum)
-open DomainTheory.Neighborhood.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
+open DomainTheory.NeighbourhoodSystems Example78 NeighborhoodSystem Domain.Recursive
+open DomainTheory.NeighbourhoodSystems.Exercise513 (tri num numP unnum nextCell numP_unnum)
+open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
   num_succ_left_gt tag_injective)
 
 
@@ -56,4 +56,4 @@ theorem testBit_orUpTo_self (n m k : ℕ) :
   · rintro ⟨a, _, ha, hak, hb⟩; exact ⟨a, hak, ha, hb⟩
   · rintro ⟨a, hak, ha, hb⟩; exact ⟨a, lt_of_testBit_true ha, ha, hak, hb⟩
 
-end DomainTheory.Neighborhood.Exercise723
+end DomainTheory.NeighbourhoodSystems.Exercise723

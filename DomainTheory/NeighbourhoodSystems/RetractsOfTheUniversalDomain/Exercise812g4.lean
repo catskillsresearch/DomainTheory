@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812eD
-public import DomainTheory.Neighborhood.Exercise812f
-public import DomainTheory.Neighborhood.Exercise812g1a
-public import DomainTheory.Neighborhood.Exercise812g1b
-public import DomainTheory.Neighborhood.Exercise812g2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812eD
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812f
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g2
 
 @[expose] public section
 
@@ -33,7 +33,7 @@ concrete `U`/`V` fact this development has built:
 No new proof content — every subgoal `effectiveIso812d` demands was already discharged by one of
 the above. -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem Exercise718
 
@@ -46,4 +46,4 @@ noncomputable def effectiveIso812_UV : EffectiveIso UComputablePresentation VCom
     hySplit812f U_master_nonempty V_master_nonempty U_isComputableUnion V_isComputableUnion UX_zero
     VX_zero
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

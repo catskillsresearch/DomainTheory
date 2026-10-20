@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition613
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Theorem614.Basic
-public import DomainTheory.Neighborhood.Theorem614.key_rho
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.key_rho
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe w
 
@@ -106,4 +106,4 @@ theorem gcomp_rho_succ (s : Setup.{w}) (B : TAlgebra s.T) (g : AlgHom (colimAlg 
               (rho s n)).symm
 
 end Theorem614
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88b.Basic
-public import DomainTheory.Neighborhood.Theorem88b.eIdx_zero
-public import DomainTheory.Neighborhood.Theorem88b.he0
-public import DomainTheory.Neighborhood.Theorem88b.hcover
-public import DomainTheory.Neighborhood.Theorem88b.genAtom_empty_iff
-public import DomainTheory.Neighborhood.RecursiveCross
-public import DomainTheory.Neighborhood.Theorem88d.Basic
-public import DomainTheory.Neighborhood.Theorem88d.atomUCode_succ_true
-public import DomainTheory.Neighborhood.Theorem88d.atomUCode_succ_false
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.eIdx_zero
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.he0
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.hcover
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.genAtom_empty_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_succ_true
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_succ_false
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -126,4 +126,4 @@ theorem atomUCode_eq_genAtomYseqCode (k : ℕ) :
       · intro z hz; exact ⟨hz.1, hsub hz.1, hz.2⟩
       · rintro z ⟨hz1, -, hz2⟩; exact ⟨hz1, hz2⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

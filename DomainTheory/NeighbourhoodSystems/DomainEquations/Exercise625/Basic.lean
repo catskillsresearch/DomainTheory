@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
 
 @[expose] public section
 
@@ -53,7 +53,7 @@ Everything here is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`): 
 Exercises 1.18/1.27 are the only constructions used and are themselves choice-free.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Subsystem
 
@@ -83,4 +83,4 @@ def upperSet (P : ProjectionPair D E) (x : D.Element) : Set E.Element :=
 
 /-! ### `g` preserves consistency and all least upper bounds. -/
 end Subsystem.ProjectionPair
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

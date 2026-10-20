@@ -7,12 +7,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise507.Basic
-public import DomainTheory.Neighborhood.Exercise507.surjective_pairing
-public import DomainTheory.Neighborhood.Exercise507.uncurry_apply
-public import DomainTheory.Neighborhood.Exercise507.app_two_args
-public import DomainTheory.Neighborhood.Exercise507.lam_two_vars
-public import DomainTheory.Neighborhood.Exercise507.uncurry_lam_two_vars
-public import DomainTheory.Neighborhood.Exercise507.curryu2083_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.surjective_pairing
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.uncurry_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.app_two_args
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.lam_two_vars
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.uncurry_lam_two_vars
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.curryu2083_apply
 
 @[expose] public section

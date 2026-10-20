@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise424.Basic
-public import DomainTheory.Neighborhood.Exercise424.schroeder_bernstein
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise424.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise424.schroeder_bernstein
 
 @[expose] public section

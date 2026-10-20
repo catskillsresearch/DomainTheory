@@ -19,12 +19,12 @@ public import Mathlib.Computability.Partrec
 import all Mathlib.Computability.Partrec
 public import Mathlib.Tactic.Ring
 import all Mathlib.Tactic.Ring
-public import DomainTheory.Neighborhood.Exercise722Regular
-public import DomainTheory.Neighborhood.Exercise722Decide
-public import DomainTheory.Neighborhood.Exercise722Equiv
-public import DomainTheory.Neighborhood.Recursive.Basic
-public import DomainTheory.Neighborhood.Recursive.eq_of_le_one_iff_one
-public import DomainTheory.Neighborhood.Recursive.primrec_matchesBCatGLookup
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.eq_of_le_one_iff_one
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.primrec_matchesBCatGLookup
 
 @[expose] public section
 
@@ -271,7 +271,7 @@ namespace Domain.Recursive
 
 
 
-open DomainTheory.Neighborhood Exercise722
+open DomainTheory.NeighbourhoodSystems Exercise722
 
 
 

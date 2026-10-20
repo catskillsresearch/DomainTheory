@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise316
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 
 @[expose] public section
 
@@ -47,9 +47,9 @@ The only classical input is what is inherited from `iterProdIso` / `fixMap` and 
 `Element.ext` machinery.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise511
+namespace DomainTheory.NeighbourhoodSystems.Exercise511
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
@@ -122,4 +122,4 @@ def mapOp : ApproximableMap (funSpace (Arg V) (iterSys V)) (funSpace (Arg V) (it
 
 /-- `map : (D → D)^∞ × D → D^∞`, the least fixed point of `mapOp`. -/
 def mapMap : ApproximableMap (Arg V) (iterSys V) := toApproxMap (mapOp V).fixElement
-end DomainTheory.Neighborhood.Exercise511
+end DomainTheory.NeighbourhoodSystems.Exercise511

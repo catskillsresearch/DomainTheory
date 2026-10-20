@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise825Unit
-public import DomainTheory.Neighborhood.Exercise825FixedPoint
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Unit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint
 
 @[expose] public section
 
@@ -91,5 +91,5 @@ in this codebase that does — they inherit `𝒰`'s own `Classical.choice` foot
 (`#print axioms ⊆ {propext, Classical.choice, Quot.sound}`), confirmed not new.
 -/
 
-namespace DomainTheory.Neighborhood
-end DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
+end DomainTheory.NeighbourhoodSystems

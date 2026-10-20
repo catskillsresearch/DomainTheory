@@ -10,7 +10,7 @@ module
 public import Mathlib.Order.Hom.Basic
 import all Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.WayBelow
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 
 @[expose] public section
 
@@ -29,7 +29,7 @@ Arbitrary filters need not be principal (`{ ↟a | a ≤ x }` is a filter with
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.ContinuousLattice
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 open scoped DomainTheory.ContinuousLattice
 
 namespace ContinuousLatticeToNeighborhood

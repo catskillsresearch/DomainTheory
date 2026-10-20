@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.LevelSetPrimrec
-public import DomainTheory.Neighborhood.Exercise812g1b.Basic
-public import DomainTheory.Neighborhood.Exercise812g1b.levelSet_zero_zero
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.levelSet_zero_zero
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -27,4 +27,4 @@ theorem VX_zero : VX 0 = V.master := by
   rw [← VX_canonIdx 0, hc0]
   exact VX_VmasterIdx
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

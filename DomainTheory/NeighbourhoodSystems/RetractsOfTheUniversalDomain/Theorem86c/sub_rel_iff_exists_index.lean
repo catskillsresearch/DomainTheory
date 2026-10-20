@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem86
-public import DomainTheory.Neighborhood.Theorem76
-public import DomainTheory.Neighborhood.Theorem86c.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86c.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
 
@@ -42,4 +42,4 @@ theorem sub_rel_iff_exists_index {f : ApproximableMap E E} {a b : ℕ} :
     exact ⟨P.X y, ⟨P.mem_X y, hYf⟩, haY, hYb⟩
 
 end SubComputable
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

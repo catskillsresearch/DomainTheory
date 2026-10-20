@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -33,7 +33,7 @@ So `𝟙`, `×`, and `→` make the category cartesian closed, and `(𝒟₀ →
 right adjoint to `- × 𝒟₀`. Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -65,4 +65,4 @@ def homAdjunction (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (V₂ : NeighborhoodSystem γ) :
     ApproximableMap (prod V₀ V₁) V₂ ≃o ApproximableMap V₀ (funSpace V₁ V₂) :=
   curryEquiv V₀ V₁ V₂
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

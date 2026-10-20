@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.Example12
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Example23.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example23
+namespace DomainTheory.NeighbourhoodSystems.Example23
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 
@@ -36,4 +36,4 @@ theorem scan_append_falseFalse (τ : Str) : scan ([false, false] ++ τ) = scan �
   | none => simp [scan_false, h]
   | some b => simp [scan_false, h, Bool.not_not]
 
-end DomainTheory.Neighborhood.Example23
+end DomainTheory.NeighbourhoodSystems.Example23

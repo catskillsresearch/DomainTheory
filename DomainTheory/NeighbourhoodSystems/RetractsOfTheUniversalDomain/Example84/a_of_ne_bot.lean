@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Example84.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
@@ -55,4 +55,4 @@ theorem a_of_ne_bot {x : D.Element} (hx : x ≠ D.bot) : (a u).toElementMap x = 
   · intro huZ
     exact ⟨u.sub huZ, Or.inr ⟨hx, huZ⟩⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

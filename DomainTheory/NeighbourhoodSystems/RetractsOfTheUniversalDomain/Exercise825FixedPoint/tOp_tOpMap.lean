@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Table55
-public import DomainTheory.Neighborhood.Exercise823
-public import DomainTheory.Neighborhood.Exercise715
-public import DomainTheory.Neighborhood.Exercise825Pow
-public import DomainTheory.Neighborhood.Exercise825Embed
-public import DomainTheory.Neighborhood.Exercise825Closing
-public import DomainTheory.Neighborhood.Exercise820
-public import DomainTheory.Neighborhood.Exercise825FixedPoint.Basic
-public import DomainTheory.Neighborhood.Exercise825FixedPoint.toApproxMap_lamOp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Pow
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.toApproxMap_lamOp
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -50,4 +50,4 @@ theorem tOp_tOpMap (c a : ApproximableMap U U) :
     expMap_eq_lamComb]
   rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

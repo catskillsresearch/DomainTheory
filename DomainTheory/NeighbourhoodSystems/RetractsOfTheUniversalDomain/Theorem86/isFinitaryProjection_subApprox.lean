@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem85
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise213
-public import DomainTheory.Neighborhood.Proposition611
-public import DomainTheory.Neighborhood.Theorem86.Basic
-public import DomainTheory.Neighborhood.Theorem86.isProjection_subApprox
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.isProjection_subApprox
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -57,4 +57,4 @@ theorem isFinitaryProjection_subApprox : IsFinitaryProjection (subApprox (E := E
   ⟨isProjection_subApprox, isFinitary_subApprox⟩
 
 end Sub8_6
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

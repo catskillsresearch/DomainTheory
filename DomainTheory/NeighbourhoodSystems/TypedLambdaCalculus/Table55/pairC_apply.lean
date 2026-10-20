@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Table55.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -31,4 +31,4 @@ theorem pairC_apply (x : V₀.Element) (y : V₁.Element) :
     (toApproxMap ((pairC V₀ V₁).toElementMap x)).toElementMap y = pair x y := by
   rw [pairC, toElementMap_curry_apply, toElementMap_idMap]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example44.Basic
-public import DomainTheory.Neighborhood.Example44.prepend_subset_self
-public import DomainTheory.Neighborhood.Example44.consMap_strBot
-public import DomainTheory.Neighborhood.Example44.consMap_strElem
-public import DomainTheory.Neighborhood.Example44.altElt_eq
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44.prepend_subset_self
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44.consMap_strBot
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44.consMap_strElem
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44.altElt_eq
 
 @[expose] public section

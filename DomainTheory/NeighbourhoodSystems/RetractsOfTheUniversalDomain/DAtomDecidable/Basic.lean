@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88a.Basic
-public import DomainTheory.Neighborhood.Theorem88a.idxSet_nonempty
-public import DomainTheory.Neighborhood.Theorem88a.idxSet_eq_iff
-public import DomainTheory.Neighborhood.Theorem88a.isomorphic_DprimeU
-public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8_a
-public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8
-public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_nonempty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_eq_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.isomorphic_DprimeU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8_a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
 
 @[expose] public section
 
@@ -64,7 +64,7 @@ against `P`'s own `incl_computable`, decidable with no union/positivity lemma ne
 pattern of `Proposition710.lean`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -128,4 +128,4 @@ def DAtomEmptyChar (posC negC : ℕ) : ℕ :=
     1
 
 /-! ### The packaged decidability statement -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

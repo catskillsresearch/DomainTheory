@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise621
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Exercise627.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
-open DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.Exercise510
 
 namespace Exercise627
 
@@ -35,4 +35,4 @@ theorem fstInj_comp_fstProj_le (D₀ D₁ : NeighborhoodSystem Str) :
   exact ⟨hW, hW', hsub.trans hsub'⟩
 
 end Exercise627
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87
-public import DomainTheory.Neighborhood.RationalPrimrec
-public import DomainTheory.Neighborhood.RecursiveCross
-public import DomainTheory.Neighborhood.IntervalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -54,4 +54,4 @@ theorem primrec_diffOneCode : Nat.Primrec diffOneCode := by
   exact (Nat.Primrec.succ.comp (hleft.pair
     (Nat.Primrec.succ.comp (hright.pair (Nat.Primrec.const 0))))).of_eq fun _ => rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

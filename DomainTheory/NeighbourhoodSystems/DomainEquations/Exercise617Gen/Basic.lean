@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise617
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617
 
 @[expose] public section
 
@@ -32,11 +32,11 @@ prepending the letter `a`. Everything is the alphabet-generic copy of `Example44
 (`Cn`, `consMapN`) stays choice-free.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise617Gen
+namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
 
 set_option linter.unusedSectionVars false
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 variable {A : Type} [DecidableEq A]
 
@@ -1468,4 +1468,4 @@ Example 6.2's `C ≅ 𝟙 + C + C`.) -/
 
 /-- **`Cₙ` is the initial algebra** of `X ↦ 𝟙 + Σ_{Fin (n+1)} X`. -/
 def CfinIsInitial (n : ℕ) : IsInitial (Cnalg (Fin (n + 1))) := CnisInitial (Fin (n + 1))
-end DomainTheory.Neighborhood.Exercise617Gen
+end DomainTheory.NeighbourhoodSystems.Exercise617Gen

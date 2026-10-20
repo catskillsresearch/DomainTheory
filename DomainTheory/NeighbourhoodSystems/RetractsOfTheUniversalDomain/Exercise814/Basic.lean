@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem85
-public import DomainTheory.Neighborhood.Exercise127
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
 
 @[expose] public section
 
@@ -72,7 +72,7 @@ Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`), inher
 baseline as `Theorem85.lean`/`Exercise127.lean`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -383,4 +383,4 @@ def fixSetOrderIso (h : IsClosureOperator a) : FixSet a ≃o (domainOfClosure h)
 
 /-! ### What are the finite elements of the fixed-point set? -/
 end FiniteDomain
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

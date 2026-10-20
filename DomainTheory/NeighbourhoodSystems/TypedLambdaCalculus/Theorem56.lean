@@ -7,26 +7,26 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem56.Basic
-public import DomainTheory.Neighborhood.Theorem56.T_bot_eq
-public import DomainTheory.Neighborhood.Theorem56.strictId_natElem
-public import DomainTheory.Neighborhood.Theorem56.strictId_bot
-public import DomainTheory.Neighborhood.Theorem56.strictProju2080_apply
-public import DomainTheory.Neighborhood.Theorem56.strictProju2080_natElem
-public import DomainTheory.Neighborhood.Theorem56.strictProju2080_bot_right
-public import DomainTheory.Neighborhood.Theorem56.strictProju2080_bot_left
-public import DomainTheory.Neighborhood.Theorem56.primBody_apply
-public import DomainTheory.Neighborhood.Theorem56.primRec_rec
-public import DomainTheory.Neighborhood.Theorem56.primRec_zero
-public import DomainTheory.Neighborhood.Theorem56.primRec_succ
-public import DomainTheory.Neighborhood.Theorem56.primRec_bot
-public import DomainTheory.Neighborhood.Theorem56.muBody_apply
-public import DomainTheory.Neighborhood.Theorem56.muRec_rec
-public import DomainTheory.Neighborhood.Theorem56.muRec_found
-public import DomainTheory.Neighborhood.Theorem56.muRec_step
-public import DomainTheory.Neighborhood.Theorem56.muRec_bot
-public import DomainTheory.Neighborhood.Theorem56.muMap_natElem
-public import DomainTheory.Neighborhood.Theorem56.muRec_climb
-public import DomainTheory.Neighborhood.Theorem56.muMap_eq_least
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.T_bot_eq
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictId_natElem
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictId_bot
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictProju2080_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictProju2080_natElem
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictProju2080_bot_right
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictProju2080_bot_left
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primBody_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primRec_rec
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primRec_zero
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primRec_succ
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primRec_bot
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muBody_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muRec_rec
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muRec_found
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muRec_step
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muRec_bot
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muMap_natElem
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muRec_climb
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muMap_eq_least
 
 @[expose] public section

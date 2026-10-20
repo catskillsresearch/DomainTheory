@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722Decide
-public import DomainTheory.Neighborhood.Exercise722Equiv.Basic
-public import DomainTheory.Neighborhood.Exercise722Equiv.coe_startFin
-public import DomainTheory.Neighborhood.Exercise722Equiv.coe_foldl_stepFin
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.coe_startFin
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.coe_foldl_stepFin
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -36,4 +36,4 @@ theorem coe_evalFin (e : SExpr) (w : List Bool) :
   rw [coe_foldl_stepFin e w (startFin e), coe_startFin e]
 
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

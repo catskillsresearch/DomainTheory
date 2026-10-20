@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Example84.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
@@ -51,4 +51,4 @@ theorem a_bot : (a u).toElementMap D.bot = D.bot := by
   exact ⟨fun ⟨_, h⟩ => h.resolve_right (fun h' => h'.1 rfl) |>.symm ▸ rfl,
     fun h => ⟨h ▸ D.master_mem, Or.inl h⟩⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

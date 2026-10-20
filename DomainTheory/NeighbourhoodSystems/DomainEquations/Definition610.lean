@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition610.Basic
-public import DomainTheory.Neighborhood.Definition610.refl
-public import DomainTheory.Neighborhood.Definition610.trans
-public import DomainTheory.Neighborhood.Definition610._root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext
-public import DomainTheory.Neighborhood.Definition610.antisymm
-public import DomainTheory.Neighborhood.Definition610.subsystem_iff_subset_of_common
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.refl
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.trans
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610._root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.antisymm
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.subsystem_iff_subset_of_common
 
 @[expose] public section

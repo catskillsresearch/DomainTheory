@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812
-public import DomainTheory.Neighborhood.IntervalPrimrec
-public import DomainTheory.Neighborhood.Theorem88
-public import DomainTheory.Neighborhood.Exercise812c.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -34,4 +34,4 @@ theorem U_isPositive : U.IsPositive := by
   refine ⟨fun h => h.2.1, fun hne => ⟨⟨combineIntervals L1 L2, presentedIntervals_inter L1 L2⟩,
     hne, Set.inter_subset_left.trans hXsub⟩⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

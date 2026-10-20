@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Table55
-public import DomainTheory.Neighborhood.Exercise823
-public import DomainTheory.Neighborhood.Exercise715
-public import DomainTheory.Neighborhood.Exercise825Pow
-public import DomainTheory.Neighborhood.Exercise825Embed
-public import DomainTheory.Neighborhood.Exercise825Closing
-public import DomainTheory.Neighborhood.Exercise820
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Pow
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820
 
 @[expose] public section
 
@@ -84,7 +84,7 @@ Axiom footprint: everything here mentions `U`, so — like `Definition89.lean`/`
 confirmed not new.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -170,4 +170,4 @@ noncomputable def TArrow (a : ApproximableMap U U) : Σ β : Type, NeighborhoodS
   ⟨_, funSpace (fixedNbhd a) (fixedNbhd cCombinator)⟩
 
 /-! ## Non-triviality: `𝒰 ⊴ D` -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

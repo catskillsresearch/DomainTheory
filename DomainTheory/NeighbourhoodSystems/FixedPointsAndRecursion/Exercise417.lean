@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise417.Basic
-public import DomainTheory.Neighborhood.Exercise417.F_monotone
-public import DomainTheory.Neighborhood.Exercise417.a_mem_F
-public import DomainTheory.Neighborhood.Exercise417.b_mem_F
-public import DomainTheory.Neighborhood.Exercise417.leastSolution_eq
-public import DomainTheory.Neighborhood.Exercise417.lfpSet_eq_closure
-public import DomainTheory.Neighborhood.Exercise417.F_univ
-public import DomainTheory.Neighborhood.Exercise417.F_one_one_singleton
-public import DomainTheory.Neighborhood.Exercise417.fixedPoint_not_unique
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.F_monotone
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.a_mem_F
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.b_mem_F
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.leastSolution_eq
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.lfpSet_eq_closure
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.F_univ
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.F_one_one_singleton
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.fixedPoint_not_unique
 
 @[expose] public section

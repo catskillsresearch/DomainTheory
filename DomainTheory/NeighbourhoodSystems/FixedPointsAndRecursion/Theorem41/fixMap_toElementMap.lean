@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Theorem41.Basic
-public import DomainTheory.Neighborhood.Theorem41.fixMap_toElementMap_principal
-public import DomainTheory.Neighborhood.Theorem41.exists_principal_iterMap
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixMap_toElementMap_principal
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.exists_principal_iterMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -48,4 +48,4 @@ theorem fixMap_toElementMap (V : NeighborhoodSystem α) (φ : (funSpace V V).Ele
     rw [fixMap_toElementMap_principal]
     exact ⟨n, hWn⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

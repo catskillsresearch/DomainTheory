@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise115.Basic
-public import DomainTheory.Neighborhood.Exercise115.flat_no_three_chain
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.flat_no_three_chain
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise115
+namespace DomainTheory.NeighbourhoodSystems.Exercise115
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -33,4 +33,4 @@ theorem flat_no_infinite_chain : ¬ ∃ f : ℕ → flat.Element, StrictMono f :
   exact flat_no_three_chain
     ⟨f 0, f 1, f 2, hf (by norm_num), hf (by norm_num)⟩
 
-end DomainTheory.Neighborhood.Exercise115
+end DomainTheory.NeighbourhoodSystems.Exercise115

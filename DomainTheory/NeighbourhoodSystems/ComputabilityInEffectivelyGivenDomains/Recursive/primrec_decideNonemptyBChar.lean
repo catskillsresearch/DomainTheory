@@ -19,13 +19,13 @@ public import Mathlib.Computability.Partrec
 import all Mathlib.Computability.Partrec
 public import Mathlib.Tactic.Ring
 import all Mathlib.Tactic.Ring
-public import DomainTheory.Neighborhood.Exercise722Regular
-public import DomainTheory.Neighborhood.Exercise722Decide
-public import DomainTheory.Neighborhood.Exercise722Equiv
-public import DomainTheory.Neighborhood.Recursive.Basic
-public import DomainTheory.Neighborhood.Recursive.primrec_autStateCardFuelChar
-public import DomainTheory.Neighborhood.Recursive.primrec_matchesBChar
-public import DomainTheory.Neighborhood.Recursive.primrec_codeBound
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.primrec_autStateCardFuelChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.primrec_matchesBChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.primrec_codeBound
 
 @[expose] public section
 
@@ -272,7 +272,7 @@ namespace Domain.Recursive
 
 
 
-open DomainTheory.Neighborhood Exercise722
+open DomainTheory.NeighbourhoodSystems Exercise722
 
 
 

@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise511.Basic
-public import DomainTheory.Neighborhood.Exercise511.unfold_fold
-public import DomainTheory.Neighborhood.Exercise511.fold_unfold
-public import DomainTheory.Neighborhood.Exercise511.component_tail
-public import DomainTheory.Neighborhood.Exercise511.head_push
-public import DomainTheory.Neighborhood.Exercise511.tail_push
-public import DomainTheory.Neighborhood.Exercise511.push_head_tail
-public import DomainTheory.Neighborhood.Exercise511.diag_rec
-public import DomainTheory.Neighborhood.Exercise511.component_diag
-public import DomainTheory.Neighborhood.Exercise511.mapBody_apply
-public import DomainTheory.Neighborhood.Exercise511.map_rec
-public import DomainTheory.Neighborhood.Exercise511.component_map
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.unfold_fold
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.fold_unfold
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.component_tail
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.head_push
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.tail_push
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.push_head_tail
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.diag_rec
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.component_diag
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.mapBody_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.map_rec
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.component_map
 
 @[expose] public section

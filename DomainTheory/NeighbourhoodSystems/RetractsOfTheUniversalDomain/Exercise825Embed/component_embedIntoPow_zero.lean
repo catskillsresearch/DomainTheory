@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise511
-public import DomainTheory.Neighborhood.Exercise618
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Exercise825Embed.Basic
-public import DomainTheory.Neighborhood.Exercise825Embed.toElementMap_embedIntoPow
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise618
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.toElementMap_embedIntoPow
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise511
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
@@ -28,4 +28,4 @@ theorem component_embedIntoPow_zero (x : V.Element) :
     component ((embedIntoPow V).toElementMap x) 0 = x := by
   rw [toElementMap_embedIntoPow, ← head_apply, head_push]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

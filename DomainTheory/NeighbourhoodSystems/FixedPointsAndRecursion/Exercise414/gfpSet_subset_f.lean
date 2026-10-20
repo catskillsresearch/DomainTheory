@@ -11,13 +11,13 @@ public import Mathlib.Data.Set.Basic
 import all Mathlib.Data.Set.Basic
 public import Mathlib.Order.Monotone.Basic
 import all Mathlib.Order.Monotone.Basic
-public import DomainTheory.Neighborhood.Exercise414.Basic
-public import DomainTheory.Neighborhood.Exercise414.subset_gfpSet
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.subset_gfpSet
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise414
+namespace DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {A : Type*}
 
@@ -29,4 +29,4 @@ theorem gfpSet_subset_f (f : Set A → Set A) (hf : Monotone f) :
   rintro a ⟨x, hx, hax⟩
   exact hf (subset_gfpSet f hx) (hx hax)
 
-end DomainTheory.Neighborhood.Exercise414
+end DomainTheory.NeighbourhoodSystems.Exercise414

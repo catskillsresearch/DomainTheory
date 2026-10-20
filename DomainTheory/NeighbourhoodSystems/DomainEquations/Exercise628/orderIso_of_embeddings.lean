@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Exercise628.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -39,4 +39,4 @@ theorem orderIso_of_embeddings {P Q : Type*} [PartialOrder P] [PartialOrder Q]
     (Fintype.bijective_iff_injective_and_card f).mpr ⟨f.injective, hcard⟩
   exact ⟨{ toEquiv := Equiv.ofBijective f hbij, map_rel_iff' := f.map_rel_iff' }⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

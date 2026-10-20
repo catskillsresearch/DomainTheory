@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example62
-public import DomainTheory.Neighborhood.Example44
-public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
 
 @[expose] public section
 
@@ -85,7 +85,7 @@ above is a full, formally checked confirmation of the pattern the general argume
 Everything proved here is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 
@@ -551,4 +551,4 @@ def cdEquiv : C.Element ≃o D'.Element where
       · exact Or.inl ⟨σ, h _ hσ, rfl⟩
       · exact Or.inr ⟨σ, h _ hσ, rfl⟩
 end Exercise822
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

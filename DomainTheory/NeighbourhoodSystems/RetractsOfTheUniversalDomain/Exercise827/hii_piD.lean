@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise826
-public import DomainTheory.Neighborhood.Exercise821
-public import DomainTheory.Neighborhood.Exercise827.Basic
-public import DomainTheory.Neighborhood.Exercise827.hii_hard_direction
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.hii_hard_direction
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -87,4 +87,4 @@ theorem hii_piD (d : ApproximableMap U U) (x : (funSpace U U).Element)
     have := hii_easy_direction d x hYE hXx hXY hXX
     rwa [piD_toElementMap_mem_iff] at this
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

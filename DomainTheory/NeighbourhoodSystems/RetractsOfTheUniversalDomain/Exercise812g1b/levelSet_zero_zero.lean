@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.LevelSetPrimrec
-public import DomainTheory.Neighborhood.Exercise812g1b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -21,4 +21,4 @@ open Domain.Recursive NeighborhoodSystem
 theorem levelSet_zero_zero : levelSet 0 0 = ∅ := by
   ext n; simp [levelSet, Nat.zero_testBit]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88a.Basic
-public import DomainTheory.Neighborhood.Theorem88a.idxSet_nonempty
-public import DomainTheory.Neighborhood.Theorem88a.idxSet_eq_iff
-public import DomainTheory.Neighborhood.Theorem88a.isomorphic_DprimeU
-public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8_a
-public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.DAtomDecidable.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_nonempty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_eq_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.isomorphic_DprimeU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8_a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -40,4 +40,4 @@ theorem meetFold_cons (i : ℕ) (rest : List ℕ) :
       (Nat.pair 1 P.masterIdx) i)) := by
   unfold meetFold; rw [List.foldl_cons]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -58,9 +58,9 @@ Everything is **data**; the combinators are built from `idMap`, `curry`, `proj`,
 choice-free.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise508
+namespace DomainTheory.NeighbourhoodSystems.Exercise508
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 /-! ### A generic round-trip for the function-space representation. -/
 
@@ -170,4 +170,4 @@ def bracket {X : Dom} : {A : Dom} → Poly X A → CL (X.arrow A)
   | _, .var => .con (Ielem X)
   | _, .con c => .app (.con (Kelem _ X)) (.con c)
   | _, .app f a => .app (.app (.con (Selem X _ _)) (bracket f)) (bracket a)
-end DomainTheory.Neighborhood.Exercise508
+end DomainTheory.NeighbourhoodSystems.Exercise508

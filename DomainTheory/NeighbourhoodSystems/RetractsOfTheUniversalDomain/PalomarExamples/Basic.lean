@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88
-public import DomainTheory.Neighborhood.Example15
-public import DomainTheory.Neighborhood.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example15
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
 
 @[expose] public section
 
@@ -19,11 +19,11 @@ public import DomainTheory.Neighborhood.Exercise722Regular
 Concrete countable neighbourhood systems that instantiate `theorem_8_8`.
 -/
 
-namespace DomainTheory.Neighborhood.Example15
+namespace DomainTheory.NeighbourhoodSystems.Example15
 
-end DomainTheory.Neighborhood.Example15
+end DomainTheory.NeighbourhoodSystems.Example15
 
-namespace DomainTheory.Neighborhood.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.Exercise722
 
 /-- Countability of the neighbourhoods of `S`, via the `SExpr` presentation.
 Picking a preimage uses Mathlib's `Surjective.countable` (hence `Classical.choice`);
@@ -43,4 +43,4 @@ instance Ssys_countable : Countable {S : Set (List Bool) // Ssys.mem S} := by
       exact Subtype.ext he
   exact Countable.of_equiv ({S : Set (List Bool) // InS S})
     (Equiv.subtypeEquivRight fun _ => Ssys_mem.symm)
-end DomainTheory.Neighborhood.Exercise722
+end DomainTheory.NeighbourhoodSystems.Exercise722

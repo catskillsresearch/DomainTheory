@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Exercise724.Basic
-public import DomainTheory.Neighborhood.Exercise724.primrec_LenumSubsetChar
-public import DomainTheory.Neighborhood.Exercise724.LenumSubsetChar_le_one
-public import DomainTheory.Neighborhood.Exercise724.Lenum_subset_char_eq_one_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.primrec_LenumSubsetChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.LenumSubsetChar_le_one
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Lenum_subset_char_eq_one_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise724
+namespace DomainTheory.NeighbourhoodSystems.Exercise724
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -76,4 +76,4 @@ theorem Lenum_subset_recDecidable : RecDecidable₂ (fun n m => Lenum n ⊆ Lenu
     (fun t => by have := LenumSubsetChar_le_one t; omega)
     Lenum_subset_char_eq_one_iff
 
-end DomainTheory.Neighborhood.Exercise724
+end DomainTheory.NeighbourhoodSystems.Exercise724

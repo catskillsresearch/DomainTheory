@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.Definition79
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition79
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -55,7 +55,7 @@ arguments, so the assembled data is choice-free; `PowerDomain_isEffectivelyGiven
 from `P` inside the `Nonempty` proof (extraction into a `Prop` goal needs no choice).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -474,4 +474,4 @@ def PDPresentation (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons)
     show V.Ypd P (Nat.pair P.masterIdx 0 + 1) = V.PowerDomain.master
     rw [V.Ypd_cons_code P, V.Ypd_zero P, Set.union_empty, P.masterIdx_spec, PowerDomain_master]
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

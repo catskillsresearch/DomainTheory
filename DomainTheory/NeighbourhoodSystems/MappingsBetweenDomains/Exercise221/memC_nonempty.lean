@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Exercise221.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise221
+namespace DomainTheory.NeighbourhoodSystems.Exercise221
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 
@@ -37,4 +37,4 @@ theorem memC_nonempty {W : Set Str} (hW : C.mem W) : W.Nonempty := by
   · exact ⟨σ, mem_cone.mpr List.prefix_rfl⟩
   · exact ⟨σ, rfl⟩
 
-end DomainTheory.Neighborhood.Exercise221
+end DomainTheory.NeighbourhoodSystems.Exercise221

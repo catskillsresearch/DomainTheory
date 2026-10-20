@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise318
-public import DomainTheory.Neighborhood.Exercise319Sum.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -62,4 +62,4 @@ theorem outMap₀_comp_sumMap_comp_inMap₀ (f : ApproximableMap V₀ V₀') (g 
     · exact Or.inr (Or.inl ⟨Z, f.rel_cod hf, rfl⟩)
     · exact (leftPart_inj₀ V₀' Z).subset
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88k.Basic
-public import DomainTheory.Neighborhood.Theorem88k.D_X_cons_iff
-public import DomainTheory.Neighborhood.Theorem88k.D_X_interEq_computable
-public import DomainTheory.Neighborhood.Theorem88k.D_X_cons_computable
-public import DomainTheory.Neighborhood.Theorem88l.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_cons_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_interEq_computable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_cons_computable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -33,4 +33,4 @@ variable (P qChar cons)
 theorem D_inter_primrec : Nat.Primrec (fun t => D_inter t.unpair.1 t.unpair.2) :=
   primrec_appendListCode
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

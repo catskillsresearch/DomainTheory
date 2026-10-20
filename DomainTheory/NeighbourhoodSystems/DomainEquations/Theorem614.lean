@@ -7,26 +7,26 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem614.Basic
-public import DomainTheory.Neighborhood.Theorem614.nonempty_strict_algHom
-public import DomainTheory.Neighborhood.Theorem614.nonempty_algHom
-public import DomainTheory.Neighborhood.Theorem614.iSupRho_eq_id
-public import DomainTheory.Neighborhood.Theorem614.exists_algebra_with_hom
-public import DomainTheory.Neighborhood.Theorem614.cat_comp_eq
-public import DomainTheory.Neighborhood.Theorem614.transport_heq
-public import DomainTheory.Neighborhood.Theorem614.isoOfEq_conj
-public import DomainTheory.Neighborhood.Theorem614.map_comp_proj_heq
-public import DomainTheory.Neighborhood.Theorem614.map_rho_heq
-public import DomainTheory.Neighborhood.Theorem614.key_rho
-public import DomainTheory.Neighborhood.Theorem614.strict_rel_master
-public import DomainTheory.Neighborhood.Theorem614.rho_zero_rel
-public import DomainTheory.Neighborhood.Theorem614.gcomp_rho_zero_rel
-public import DomainTheory.Neighborhood.Theorem614.gcomp_rho_zero_indep
-public import DomainTheory.Neighborhood.Theorem614.gcomp_rho_succ
-public import DomainTheory.Neighborhood.Theorem614.gcomp_rho_indep
-public import DomainTheory.Neighborhood.Theorem614.algHom_ext
-public import DomainTheory.Neighborhood.Theorem614.gcomp_eq
-public import DomainTheory.Neighborhood.Theorem614.algHom_unique
-public import DomainTheory.Neighborhood.Theorem614.exists_unique_strict_algHom
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.nonempty_strict_algHom
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.nonempty_algHom
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.iSupRho_eq_id
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.exists_algebra_with_hom
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.cat_comp_eq
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.transport_heq
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.isoOfEq_conj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.map_comp_proj_heq
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.map_rho_heq
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.key_rho
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.strict_rel_master
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.rho_zero_rel
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.gcomp_rho_zero_rel
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.gcomp_rho_zero_indep
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.gcomp_rho_succ
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.gcomp_rho_indep
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.algHom_ext
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.gcomp_eq
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.algHom_unique
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.exists_unique_strict_algHom
 
 @[expose] public section

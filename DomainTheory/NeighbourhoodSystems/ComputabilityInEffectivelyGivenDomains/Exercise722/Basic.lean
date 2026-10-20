@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import Mathlib.Data.Set.Insert
 import all Mathlib.Data.Set.Insert
 
@@ -78,7 +78,7 @@ above answers Scott's actual equations without ever needing it.)
 Everything in this file depends only on `propext` / `Quot.sound` (no `Classical.choice`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -398,4 +398,4 @@ example (h : InS (powerLang [false, true])) :
       mulElem (streamElem [false, true]) (streamElem [false, true]) := by
   rw [streamElem_idempotent _ h, streamElem_idempotent _ h]
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

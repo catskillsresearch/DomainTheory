@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise119.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.Basic
 
 @[expose] public section
 
 
 set_option linter.unusedSimpArgs false
 
-namespace DomainTheory.Neighborhood.Exercise119
+namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 
 
 
@@ -43,4 +43,4 @@ theorem one_not_mem : ¬ mem ({1} : Set Tok) := by
   · have h2 : (2 : Tok) ∈ b := by simp [b]
     rw [← h] at h2; simp at h2
 
-end DomainTheory.Neighborhood.Exercise119
+end DomainTheory.NeighbourhoodSystems.Exercise119

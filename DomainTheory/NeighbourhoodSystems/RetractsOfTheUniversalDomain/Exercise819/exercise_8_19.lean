@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise817
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Exercise326Sum
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.Exercise819.Basic
-public import DomainTheory.Neighborhood.Exercise819.prod_trianglelefteq_of
-public import DomainTheory.Neighborhood.Exercise819.sum_trianglelefteq_of
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.prod_trianglelefteq_of
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.sum_trianglelefteq_of
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -39,4 +39,4 @@ theorem exercise_8_19 {α : Type u} {E : NeighborhoodSystem α}
     sum E E hE hE ⊴ E ∧ prod E E ⊴ E :=
   ⟨sum_trianglelefteq_of hE hT hArrow, prod_trianglelefteq_of hT hArrow⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

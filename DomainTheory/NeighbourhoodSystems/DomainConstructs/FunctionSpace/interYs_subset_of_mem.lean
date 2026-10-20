@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.FunctionSpace.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -63,4 +63,4 @@ theorem interYs_subset_of_mem {m : Set β} {L : List (Set α × Set β)} {p : Se
     (hp : p ∈ L) : interYs m L p.1 ⊆ p.2 :=
   fun _ hz => (mem_interYs.mp hz).2 p hp subset_rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

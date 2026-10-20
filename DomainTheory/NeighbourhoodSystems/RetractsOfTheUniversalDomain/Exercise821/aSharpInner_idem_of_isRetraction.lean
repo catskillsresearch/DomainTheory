@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise717Part2
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Proposition810
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Exercise821.Basic
-public import DomainTheory.Neighborhood.Exercise821.aSharpInner_eq
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821.aSharpInner_eq
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
 
@@ -56,4 +56,4 @@ theorem aSharpInner_idem_of_isRetraction {a : ApproximableMap U U} (ha : IsRetra
   rw [aSharpInner_eq]
   exact gMap_selfComp_eq_of_isRetraction ha
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

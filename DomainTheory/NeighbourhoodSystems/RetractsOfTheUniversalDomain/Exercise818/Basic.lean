@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
 
 @[expose] public section
 
@@ -39,7 +39,7 @@ Axiom footprint: `⊆ {propext, Classical.choice, Quot.sound}`, identical to `Pr
 `Proposition810b.lean` (the `Classical.choice` is `U`'s own inherited footprint, not new here).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

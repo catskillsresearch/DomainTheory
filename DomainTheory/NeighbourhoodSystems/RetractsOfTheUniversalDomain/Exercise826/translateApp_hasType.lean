@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Exercise826.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -35,4 +35,4 @@ theorem translateApp_hasType {a b f : ApproximableMap E E} (hsandwich : b.comp (
     b.toElementMap (f.toElementMap x) = f.toElementMap x := by
   conv_rhs => rw [← hsandwich, toElementMap_comp, toElementMap_comp, hx]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

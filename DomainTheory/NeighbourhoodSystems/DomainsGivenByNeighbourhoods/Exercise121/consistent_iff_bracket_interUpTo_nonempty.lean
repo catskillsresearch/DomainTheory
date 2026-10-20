@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem110
-public import DomainTheory.Neighborhood.Exercise121.Basic
-public import DomainTheory.Neighborhood.Exercise121.bracket_nonempty_iff
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise121.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise121.bracket_nonempty_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -34,4 +34,4 @@ theorem consistent_iff_bracket_interUpTo_nonempty (X : ℕ → Set α) {n : ℕ}
   exact V.bracket_nonempty_iff.symm
 
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

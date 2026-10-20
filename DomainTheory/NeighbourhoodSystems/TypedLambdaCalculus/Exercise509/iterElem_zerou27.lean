@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407
-public import DomainTheory.Neighborhood.Exercise509.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -25,4 +25,4 @@ theorem iterElem_zero' (f : ApproximableMap V V) : f.iterElem 0 = V.bot := by
   rw [iterElem_eq_iterate, Function.iterate_zero_apply]
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

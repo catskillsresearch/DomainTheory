@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Table55
-public import DomainTheory.Neighborhood.Exercise716.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -32,4 +32,4 @@ theorem toApproxMap_principal_mem {G : Set (ApproximableMap V₀ V₁)}
   rw [toApproxMap_rel, mem_principal]
   exact ⟨step_mem (hL p hp).1 (hL p hp).2, fun f hf => hf p hp⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

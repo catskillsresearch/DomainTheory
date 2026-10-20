@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810
-public import DomainTheory.Neighborhood.Theorem86
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
 
 @[expose] public section
 
@@ -56,7 +56,7 @@ footprint, `⊆ {propext, Classical.choice, Quot.sound}`, confirmed not new (sam
 `Proposition810.lean`/`Definition89.lean`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -507,4 +507,4 @@ noncomputable def arrowComb_elementIso (ha : IsFinitaryProjection a) (hb : IsFin
 end ArrowCase
 
 /-! ## Proposition 8.10(b) — assembled -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

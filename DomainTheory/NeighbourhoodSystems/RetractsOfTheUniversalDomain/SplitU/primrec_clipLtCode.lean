@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.SplitU.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -32,4 +32,4 @@ theorem primrec_clipLtCode : Nat.Primrec clipLtCode := by
   exact (Nat.Primrec.pair he1 (primrec_ratMinCode.comp (he2.pair hm))).of_eq
     fun t => by simp only [clipLtCode]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

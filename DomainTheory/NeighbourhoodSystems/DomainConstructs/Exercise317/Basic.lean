@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Exercise316
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -39,9 +39,9 @@ non-empty. `f ∘ g ⊑ I_{T^∞}` (`fg_le_id`) holds because re-encoding a deco
 the post-gap information. Hence `f` is one-one (`f_injective`).
 -/
 
-namespace DomainTheory.Neighborhood.Exercise317
+namespace DomainTheory.NeighbourhoodSystems.Exercise317
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 /-- The truth domain `T` of Example 1.2. -/
 abbrev T : NeighborhoodSystem Example12.Token := Example12.neighborhoodSystem
@@ -174,4 +174,4 @@ def g : ApproximableMap (iterSys T) B where
     exact ⟨hW₂, τ₂, rfl, hW₂W.trans (hWτ.trans (encSet_anti hpre))⟩
 
 /-! ### `g ∘ f = I_B` and `f ∘ g ⊑ I_{T^∞}`. -/
-end DomainTheory.Neighborhood.Exercise317
+end DomainTheory.NeighbourhoodSystems.Exercise317

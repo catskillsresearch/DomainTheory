@@ -11,13 +11,13 @@ public import Mathlib.Data.Set.Basic
 import all Mathlib.Data.Set.Basic
 public import Mathlib.Order.Monotone.Basic
 import all Mathlib.Order.Monotone.Basic
-public import DomainTheory.Neighborhood.Exercise414.Basic
-public import DomainTheory.Neighborhood.Exercise414.subset_gfpSet
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.subset_gfpSet
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise414
+namespace DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {A : Type*}
 
@@ -28,4 +28,4 @@ point `y = f(y)` satisfies `y ⊆ g`. Hence `f` *does* have a maximum fixed poin
 theorem gfpSet_greatest (f : Set A → Set A) {y : Set A} (hy : f y = y) :
     y ⊆ gfpSet f := subset_gfpSet f (le_of_eq hy.symm)
 
-end DomainTheory.Neighborhood.Exercise414
+end DomainTheory.NeighbourhoodSystems.Exercise414

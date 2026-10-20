@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Exercise408.Basic
-public import DomainTheory.Neighborhood.Exercise408.iterElem_succ
-public import DomainTheory.Neighborhood.Exercise408.iterElem_zero
-public import DomainTheory.Neighborhood.Exercise408.iterElem_monotone
-public import DomainTheory.Neighborhood.Exercise408.fixElement_eq_supChain
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.iterElem_succ
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.iterElem_zero
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.iterElem_monotone
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.fixElement_eq_supChain
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -44,4 +44,4 @@ theorem fix_induction (f : ApproximableMap V V) (P : V.Element → Prop)
   exact hsup f.iterElem hmono hP
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

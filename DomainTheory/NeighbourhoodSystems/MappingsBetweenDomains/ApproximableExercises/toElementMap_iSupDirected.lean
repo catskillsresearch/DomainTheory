@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
 public import Mathlib.Data.Set.Image
 import all Mathlib.Data.Set.Image
-public import DomainTheory.Neighborhood.ApproximableExercises.Basic
-public import DomainTheory.Neighborhood.ApproximableExercises.mem_iSupDirected
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises.mem_iSupDirected
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -53,4 +53,4 @@ theorem toElementMap_iSupDirected (f : ApproximableMap V₀ V₁) {I : Type*} [N
     exact ⟨X, (NeighborhoodSystem.mem_iSupDirected a hdir).mpr ⟨i, hi⟩, hrel⟩
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

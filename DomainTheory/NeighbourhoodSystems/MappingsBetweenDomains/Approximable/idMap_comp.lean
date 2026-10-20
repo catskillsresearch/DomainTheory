@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic.Set
 import all Mathlib.Tactic.Set
-public import DomainTheory.Neighborhood.Approximable.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -47,4 +47,4 @@ theorem idMap_comp (f : ApproximableMap V₀ V₁) : (idMap V₁).comp f = f := 
     exact ⟨Z, hXZ, f.rel_cod hXZ, f.rel_cod hXZ, subset_rfl⟩
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

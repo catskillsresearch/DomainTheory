@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.DAtomDecidable
-public import DomainTheory.Neighborhood.SplitU
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.Theorem88b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -24,4 +24,4 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 theorem eIdx_zero : eIdx P 0 = P.masterIdx := ite_eq_left rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

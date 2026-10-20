@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.Definition72.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -42,4 +42,4 @@ theorem apply_isComputableElement {P : ComputablePresentation V} {Q : Computable
   · rintro ⟨n, hxn, hfn⟩
     exact ⟨P.X n, hxn, hfn⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

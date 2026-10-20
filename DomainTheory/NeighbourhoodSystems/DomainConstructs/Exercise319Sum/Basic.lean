@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise318
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318
 
 @[expose] public section
 
@@ -32,7 +32,7 @@ on the basepoint `Λ` (i.e. `(f + g)(⊥)`) is unconstrained; our choice sends `
 Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -160,4 +160,4 @@ def sumMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
           g.mono hg hYY₂ hY'Y'₂ hY₂ hY'₂⟩)
 
 /-! ### The defining identities (iii) and (iv). -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

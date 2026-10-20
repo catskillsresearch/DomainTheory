@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise510.Basic
-public import DomainTheory.Neighborhood.Exercise510.smash_mem_iff
-public import DomainTheory.Neighborhood.Exercise510.isStrict_idMap
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510.smash_mem_iff
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510.isStrict_idMap
 
 @[expose] public section

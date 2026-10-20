@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88h.Basic
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_iff_fixedNbhd_mem
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_isREPred
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_exists_qChar
-public import DomainTheory.Neighborhood.Theorem88i.Basic
-public import DomainTheory.Neighborhood.Theorem88i.primrec_myStepCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_iff_fixedNbhd_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_isREPred
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_exists_qChar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.primrec_myStepCode
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -42,4 +42,4 @@ theorem primrec_myFoldCode (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primrec c
     (Nat.Primrec.const 0) (Nat.Primrec.const P.masterIdx) primrec_id).of_eq
     fun _ => rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise516ThueMorse
-public import DomainTheory.Neighborhood.Exercise516Overlap.Basic
-public import DomainTheory.Neighborhood.Exercise516Overlap.tm_two_mul_ne
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.tm_two_mul_ne
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 
 
 /-- `tm x = tm (x+1)` forces `x` to be **odd**: equal consecutive symbols only straddle a block
@@ -26,4 +26,4 @@ theorem odd_of_consec_eq {x : ℕ} (h : tm x = tm (x + 1)) : Odd x := by
   · exfalso; rw [hm, ← two_mul] at h; exact tm_two_mul_ne m h
   · exact hodd
 
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

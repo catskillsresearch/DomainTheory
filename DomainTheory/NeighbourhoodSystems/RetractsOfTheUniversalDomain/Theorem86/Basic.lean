@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem85
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise213
-public import DomainTheory.Neighborhood.Proposition611
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
 
 @[expose] public section
 
@@ -88,7 +88,7 @@ the documented "for set theorists" exercise) — the same, already-accepted, pro
 other domain-representation result in this project (Ex 3.25/3.27, Prop 6.11 itself).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -316,4 +316,4 @@ theorem isFinitary_subApprox : IsFinitary (subApprox (E := E)) :=
   ⟨_, _, ⟨subApproxFixIso.trans
     ((finitaryProjectionSubsystemEquiv E).trans (Proposition611.subsystemReprIso E))⟩⟩
 end Sub8_6
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

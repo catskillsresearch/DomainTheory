@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812e
-public import DomainTheory.Neighborhood.UBisection2
-public import DomainTheory.Neighborhood.VDiff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.VDiff
 
 @[expose] public section
 
@@ -38,7 +38,7 @@ bisection. Given `(e)(c)`'s generic `splitFromBisection`/`isComputableSplit_ofBi
   exactly mirroring `(e)(d)`'s use of `U`'s analogous facts.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -56,4 +56,4 @@ noncomputable def isComputableSplit_812f :
     IsComputableSplit VComputablePresentation UComputablePresentation splitX812f :=
   ComputableBisection.isComputableSplit_ofBisection VComputablePresentation V_isComputableDiff
     UBisection2 U_noMinimal V_isPositive V_noMinimal V_diffClosed
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

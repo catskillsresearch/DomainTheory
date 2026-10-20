@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
 
 @[expose] public section
 
@@ -38,7 +38,7 @@ carries each finite element `↑X` to a finite element `↑Y`. We extract the wi
 `φ` is `Classical.choose`-based, hence `noncomputable` and classical; the order-theoretic proofs of
 `rel_ofIso_iff`/`phi_inter` are otherwise choice-free (`propext`, `Quot.sound`). -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -48,4 +48,4 @@ variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSyst
 the neighbourhood with `e(↑X) = ↑φ(X)` provided by Theorem 2.7. -/
 noncomputable def phi (e : V₀.Element ≃o V₁.Element) {X : Set α} (hX : V₀.mem X) : Set β :=
   Classical.choose (exists_principal_eq_apply_principal e hX)
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

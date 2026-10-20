@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise717
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Proposition77
-public import DomainTheory.Neighborhood.Exercise717Part2.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
 
@@ -60,4 +60,4 @@ theorem pair_le_pair_right {a b d : ℕ} (h : b ≤ d) : Nat.pair a b ≤ Nat.pa
     · rw [ite_eq_right (Nat.not_lt.mpr had)]; omega
 
 end Exercise717
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

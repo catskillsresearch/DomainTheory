@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.Example12
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12
 
 @[expose] public section
 
@@ -29,7 +29,7 @@ Uses `Classical.choice` only through Example 1.2's finite `fin_cases`/`simp` cla
 as that file does.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise412
+namespace DomainTheory.NeighbourhoodSystems.Exercise412
 
 open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
 
@@ -58,4 +58,4 @@ theorem zero_ne_master : (Example12.zero) ≠ Example12.master := by
   have h1 : (1 : Example12.Token) ∈ ({0} : Set Example12.Token) := (h 1).mpr (Set.mem_univ 1)
   simp only [Set.mem_singleton_iff] at h1
   exact absurd h1 (by decide)
-end DomainTheory.Neighborhood.Exercise412
+end DomainTheory.NeighbourhoodSystems.Exercise412

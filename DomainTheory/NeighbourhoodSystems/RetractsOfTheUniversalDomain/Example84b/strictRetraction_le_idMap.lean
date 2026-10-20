@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example84
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Example84b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
@@ -53,4 +53,4 @@ theorem strictRetraction_le_idMap : strictRetraction (D := D) (E := E) ≤ idMap
   exact (funSpaceEquiv D E).map_rel_iff.mp hmap
 
 end Strict
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

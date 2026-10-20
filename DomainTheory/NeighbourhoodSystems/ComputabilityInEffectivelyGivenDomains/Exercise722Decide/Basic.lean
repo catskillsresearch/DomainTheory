@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722DFA
-public import DomainTheory.Neighborhood.Exercise722Cat
-public import DomainTheory.Neighborhood.Exercise722Words
-public meta import DomainTheory.Neighborhood.Exercise722Words
-public meta import DomainTheory.Neighborhood.Exercise722Regular.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Words
+public meta import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Words
+public meta import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.Basic
 
 @[expose] public section
 
@@ -32,7 +32,7 @@ The missing combinator beyond the leaves+`cat` is intersection, handled here by 
 construction `NFAinter` (mathlib has `DFA.inter` but no `NFA` intersection).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -438,4 +438,4 @@ fragment. Hence `decideEmptyB` and `consistentB` cannot decide (i).
 `toDFA` / product construction, or an alternative such as Myhill–Nerode bisimulation on the
 `autState` types. Until C7b lands, `Ssys_partially_effectively_given` will carry (ii) only. -/
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

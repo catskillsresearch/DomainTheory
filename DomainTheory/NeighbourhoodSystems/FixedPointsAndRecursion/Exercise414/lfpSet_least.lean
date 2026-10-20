@@ -11,13 +11,13 @@ public import Mathlib.Data.Set.Basic
 import all Mathlib.Data.Set.Basic
 public import Mathlib.Order.Monotone.Basic
 import all Mathlib.Order.Monotone.Basic
-public import DomainTheory.Neighborhood.Exercise414.Basic
-public import DomainTheory.Neighborhood.Exercise414.lfpSet_subset
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_subset
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise414
+namespace DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {A : Type*}
 
@@ -30,4 +30,4 @@ point `y = f(y)` satisfies `b ⊆ y`. -/
 theorem lfpSet_least (f : Set A → Set A) {y : Set A} (hy : f y = y) :
     lfpSet f ⊆ y := lfpSet_subset f (le_of_eq hy)
 
-end DomainTheory.Neighborhood.Exercise414
+end DomainTheory.NeighbourhoodSystems.Exercise414

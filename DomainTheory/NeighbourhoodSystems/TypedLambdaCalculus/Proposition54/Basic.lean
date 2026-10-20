@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 
 @[expose] public section
 
@@ -38,7 +38,7 @@ function space, so the *data* (`pfix`, `recOp`) is **choice-free**
 `ext_of_toElementMap`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -60,4 +60,4 @@ function space `(𝒟 → 𝒟)`: `recOp τ := curry(τ ∘ ⟨p₁, eval⟩)`. 
 def recOp (τ : ApproximableMap (prod V V) V) : ApproximableMap (funSpace V V) (funSpace V V) :=
   curry (τ.comp (paired (proj₁ (funSpace V V) V) (evalMap V V)))
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

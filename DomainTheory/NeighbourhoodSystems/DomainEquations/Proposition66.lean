@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition66.Basic
-public import DomainTheory.Neighborhood.Proposition66.iso_hom_unique
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition66.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition66.iso_hom_unique
 
 @[expose] public section

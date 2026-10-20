@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.IntervalPrimrec
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.UComputablePresentation.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -67,4 +67,4 @@ theorem decodeQPairList_canonCode_ne_nil (c : ℕ) : decodeQPairList (canonCode 
     unfold decodeQPairList at h'
     rwa [List.map_eq_nil_iff, decodeList_eq_nil_iff] at h'
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88b.Basic
-public import DomainTheory.Neighborhood.Theorem88b.eIdx_zero
-public import DomainTheory.Neighborhood.Theorem88b.he0
-public import DomainTheory.Neighborhood.Theorem88b.hcover
-public import DomainTheory.Neighborhood.Theorem88b.genAtom_empty_iff
-public import DomainTheory.Neighborhood.RecursiveCross
-public import DomainTheory.Neighborhood.Theorem88d.Basic
-public import DomainTheory.Neighborhood.Theorem88d.yFold_mem_iff
-public import DomainTheory.Neighborhood.Theorem88d.yFold_two_pow_found
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.eIdx_zero
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.he0
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.hcover
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.genAtom_empty_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.yFold_mem_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.yFold_two_pow_found
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -96,4 +96,4 @@ theorem mem_UX_YseqCode_iff (n : ℕ) (z : ℚ) :
       ∃ i < 2 ^ n, atomUEmpty P (n + 1) (i + 2 ^ n) = 0 ∧ z ∈ UX (atomUCode P (n + 1) (i + 2 ^ n)) :=
   yFold_mem_iff P n (2 ^ n) (yFold_two_pow_found P n) z
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.FunctionSpace.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -87,4 +87,4 @@ theorem toElementMap₂_eval (φ : (funSpace V₁ V₂).Element) (x : V₁.Eleme
     obtain ⟨f, hf⟩ := (funSpace_mem_iff.mp hstep).2
     exact ⟨step X Y, X, hrel, hxX, hstep, f.rel_dom hf, f.rel_cod hf, fun g hg => hg⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

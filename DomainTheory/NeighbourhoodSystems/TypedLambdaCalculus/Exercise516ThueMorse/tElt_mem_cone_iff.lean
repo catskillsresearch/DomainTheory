@@ -7,25 +7,25 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise516
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516
 public import Mathlib.Data.Nat.Bits
 import all Mathlib.Data.Nat.Bits
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.Basic
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.iterElem_zerou27
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.iterElem_succ_eq
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_length
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_prefix
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.expand_iterate_eq
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.strBot_mem_cone
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.cone_univ_iff
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_le_tElt
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.iterElem_zerou27
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.iterElem_succ_eq
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmList_length
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmList_prefix
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.expand_iterate_eq
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.strBot_mem_cone
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.cone_univ_iff
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmList_le_tElt
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
 
@@ -73,4 +73,4 @@ theorem tElt_mem_cone_iff (σ : Str) : tElt.mem (cone σ) ↔ σ = tmList σ.len
       strBot_mem_cone.mpr (hσ ▸ List.prefix_rfl)
     exact h _ hmem
 
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

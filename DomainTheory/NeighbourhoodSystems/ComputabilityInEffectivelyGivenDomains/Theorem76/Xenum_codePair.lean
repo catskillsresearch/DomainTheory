@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Theorem76.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -35,4 +35,4 @@ theorem Xenum_codePair (gN : ℕ → ℕ)
     Xenum P P gN (codePair a b) = step (P.X a) (P.X b) :=
   Xenum_singleton P P gN hgN a b
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

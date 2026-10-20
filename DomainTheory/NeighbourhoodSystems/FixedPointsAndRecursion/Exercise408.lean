@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise408.Basic
-public import DomainTheory.Neighborhood.Exercise408.mem_supChain
-public import DomainTheory.Neighborhood.Exercise408.iterElem_succ
-public import DomainTheory.Neighborhood.Exercise408.iterElem_zero
-public import DomainTheory.Neighborhood.Exercise408.iterElem_monotone
-public import DomainTheory.Neighborhood.Exercise408.fixElement_eq_supChain
-public import DomainTheory.Neighborhood.Exercise408.fix_induction
-public import DomainTheory.Neighborhood.Exercise408.fix_induction_eq
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.mem_supChain
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.iterElem_succ
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.iterElem_zero
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.iterElem_monotone
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.fixElement_eq_supChain
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.fix_induction
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.fix_induction_eq
 
 @[expose] public section

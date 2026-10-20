@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example13.Basic
-public import DomainTheory.Neighborhood.Example13.element_classification
-public import DomainTheory.Neighborhood.Example13.bot_lt_elemTwelve
-public import DomainTheory.Neighborhood.Example13.elemTwelve_lt_elemTwo
-public import DomainTheory.Neighborhood.Example13.elemTwo_maximal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.element_classification
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.bot_lt_elemTwelve
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.elemTwelve_lt_elemTwo
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.elemTwo_maximal
 
 @[expose] public section

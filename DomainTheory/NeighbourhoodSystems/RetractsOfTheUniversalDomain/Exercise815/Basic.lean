@@ -7,12 +7,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Definition610
-public import DomainTheory.Neighborhood.Proposition611
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Exercise714
-public import DomainTheory.Neighborhood.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
 
 @[expose] public section
 
@@ -55,7 +55,7 @@ Fix `D : NeighborhoodSystem α` and a `ComputablePresentation P` of `D`.
 6. (Second half, `D = 𝒰`): deferred pending 1–5.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -1393,4 +1393,4 @@ established by `subsystemU_effectivelyGiven_of_isComputableElement`, and is **de
 of scope** here. -/
 end TreeVal2
 end UniversalSubsystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

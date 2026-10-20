@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise516ThueMorse
-public import DomainTheory.Neighborhood.Exercise516Overlap.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 
 
 
@@ -38,4 +38,4 @@ theorem append_three_period {α : Type*} (a : List α) (m : ℕ) (hm : m < 2 * a
       List.getElem?_append_left (by omega : m - a.length < a.length),
       List.getElem?_append_right (by omega : a.length ≤ m)]
 
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

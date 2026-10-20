@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88f.Basic
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_inj_isComputableMap
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_proj_isComputableMap
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_projectionPair_isComputable
-public import DomainTheory.Neighborhood.Theorem88n.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_inj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_proj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_projectionPair_isComputable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -40,4 +40,4 @@ theorem isoInj_rel_iff_incl {a b : ℕ} :
   · intro hsub
     exact ⟨P.mem_X a, b, rfl, (P0 P).mem_X b, hb ▸ hsub⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

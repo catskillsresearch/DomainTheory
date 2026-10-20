@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810
-public import DomainTheory.Neighborhood.Theorem86
-public import DomainTheory.Neighborhood.Proposition810b.Basic
-public import DomainTheory.Neighborhood.Proposition810b.isFinitary_of_projectionPair
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b.isFinitary_of_projectionPair
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -53,4 +53,4 @@ theorem finitary_sumComb (ha : IsFinitaryProjection a) (hb : IsFinitaryProjectio
     (ISumComb_comp_JSumComb a b ha hb).symm
 
 end SumCase
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

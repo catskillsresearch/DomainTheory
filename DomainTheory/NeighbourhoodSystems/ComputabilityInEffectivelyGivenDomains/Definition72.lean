@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition72.Basic
-public import DomainTheory.Neighborhood.Definition72.idMap_isComputable
-public import DomainTheory.Neighborhood.Definition72.comp_isComputable
-public import DomainTheory.Neighborhood.Definition72.apply_isComputableElement
-public import DomainTheory.Neighborhood.Definition72.principal_isComputableElement
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.idMap_isComputable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.comp_isComputable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.apply_isComputableElement
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72.principal_isComputableElement
 
 @[expose] public section

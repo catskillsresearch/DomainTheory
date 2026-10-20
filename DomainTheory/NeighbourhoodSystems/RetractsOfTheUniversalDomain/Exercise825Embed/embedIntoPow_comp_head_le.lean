@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise511
-public import DomainTheory.Neighborhood.Exercise618
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Exercise825Embed.Basic
-public import DomainTheory.Neighborhood.Exercise825Embed.component_embedIntoPow_zero
-public import DomainTheory.Neighborhood.Exercise825Embed.component_embedIntoPow_succ
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise618
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.component_embedIntoPow_zero
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.component_embedIntoPow_succ
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise511
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
@@ -36,4 +36,4 @@ theorem embedIntoPow_comp_head_le : (embedIntoPow V).comp (head V) ≤ idMap (it
   | zero => rw [component_embedIntoPow_zero, head_apply]
   | succ m => rw [component_embedIntoPow_succ]; exact NeighborhoodSystem.bot_le V _
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem85
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.Exercise814.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -78,4 +78,4 @@ theorem isCompactFix_iff (y : FixSet a) :
     exact hy ▸ isCompactFix_toElementMap_principal h hX
 
 end FiniteDomain
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

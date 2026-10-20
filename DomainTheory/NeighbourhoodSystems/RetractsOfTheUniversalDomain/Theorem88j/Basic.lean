@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88i.Basic
-public import DomainTheory.Neighborhood.Theorem88i.myFold_cons
-public import DomainTheory.Neighborhood.Theorem88i.diagFixed_masterIdx
-public import DomainTheory.Neighborhood.Theorem88i.myStep_diagFixed_of_diagFixed
-public import DomainTheory.Neighborhood.Theorem88i.myFold_diagFixed_of_diagFixed
-public import DomainTheory.Neighborhood.Theorem88i.myFold_diagFixed
-public import DomainTheory.Neighborhood.Theorem88i.myFoldCode_eq
-public import DomainTheory.Neighborhood.Theorem88i.primrec_myStepCode
-public import DomainTheory.Neighborhood.Theorem88i.primrec_myFoldCode
-public import DomainTheory.Neighborhood.Theorem88i.diagFixed_myFoldCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFold_cons
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.diagFixed_masterIdx
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myStep_diagFixed_of_diagFixed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFold_diagFixed_of_diagFixed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFold_diagFixed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFoldCode_eq
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.primrec_myStepCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.primrec_myFoldCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.diagFixed_myFoldCode
 
 @[expose] public section
 
@@ -53,7 +53,7 @@ Everything here is **choice-free** (`⊆ {propext, Quot.sound}`), built purely f
 `decodeList` round-trip.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -65,4 +65,4 @@ presented at the fold's output raw index. -/
 def D_X (c : ℕ) : Set α := P.X (myFoldCode P qChar cons c)
 
 variable {P qChar cons}
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

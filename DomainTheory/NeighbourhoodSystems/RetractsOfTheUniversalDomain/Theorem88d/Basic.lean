@@ -7,12 +7,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88b.Basic
-public import DomainTheory.Neighborhood.Theorem88b.eIdx_zero
-public import DomainTheory.Neighborhood.Theorem88b.he0
-public import DomainTheory.Neighborhood.Theorem88b.hcover
-public import DomainTheory.Neighborhood.Theorem88b.genAtom_empty_iff
-public import DomainTheory.Neighborhood.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.eIdx_zero
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.he0
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.hcover
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.genAtom_empty_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
 
 @[expose] public section
 
@@ -79,7 +79,7 @@ the detailed continuation plan. Nothing in this file is a placeholder or `sorry`
 here is a real, checked, reusable building block for that continuation.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -690,4 +690,4 @@ disjointness (`atomUCode_disjoint`) is what rules out any *other* atom leaking a
 /-- **`Yc P`, the `Set`-valued family underlying `YseqCode`** — the code-native analogue of
 `Theorem88.lean`'s abstract `Yseq`, used to state the `genAtom`-closed-form correspondence below. -/
 def Yc (m : ℕ) : Set ℚ := UX (YseqCode P m)
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

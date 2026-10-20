@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 import all Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.FreeMonoid.Basic
 import all Mathlib.Algebra.FreeMonoid.Basic
-public import DomainTheory.Neighborhood.Exercise515.Basic
-public import DomainTheory.Neighborhood.Exercise515.part1
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.part1
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise515
+namespace DomainTheory.NeighbourhoodSystems.Exercise515
 
 open Pointwise
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {S : Type*} [Monoid S]
 
@@ -39,4 +39,4 @@ theorem part1_freeMonoid (e e' : FreeMonoid Bool) :
       = star ({e} : Set (FreeMonoid Bool)) * {e'} :=
   part1 e e'
 
-end DomainTheory.Neighborhood.Exercise515
+end DomainTheory.NeighbourhoodSystems.Exercise515

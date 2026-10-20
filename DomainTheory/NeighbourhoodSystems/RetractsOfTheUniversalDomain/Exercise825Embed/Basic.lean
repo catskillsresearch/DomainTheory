@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise511
-public import DomainTheory.Neighborhood.Exercise618
-public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise618
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
 
 @[expose] public section
 
@@ -29,9 +29,9 @@ Scott's `𝒰 ⊴ 𝒰^∞`.
 Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise511
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
@@ -39,4 +39,4 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 stack. -/
 def embedIntoPow : ApproximableMap V (iterSys V) :=
   (push V).comp (paired (idMap V) (constMap V (iterSys V).bot))
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

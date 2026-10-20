@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise316
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
 public import Mathlib.Logic.Equiv.Nat
 import all Mathlib.Logic.Equiv.Nat
 
@@ -30,7 +30,7 @@ preordered `E`, order-isomorphically. Transporting along `iterSeqEquiv` turns th
 Everything here is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -87,4 +87,4 @@ def powProdOrderIso (V : NeighborhoodSystem α) :
   (prodEquiv (iterSys V) (iterSys V)).trans <|
     (prodCongrOrderIso (iterSeqEquiv V) (iterSeqEquiv V)).trans <|
       (interleaveOrderIso V.Element).trans (iterSeqEquiv V).symm
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

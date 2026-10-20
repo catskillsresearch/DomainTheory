@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812
-public import DomainTheory.Neighborhood.Exercise812g4
-public import DomainTheory.Neighborhood.Exercise813a.Basic
-public import DomainTheory.Neighborhood.Exercise813a.affine_eq_biInter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.affine_eq_biInter
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -40,4 +40,4 @@ theorem generatedBy_affine (k ℓ : ℕ) (hℓ : ℓ < 2 ^ k) : GeneratedBy gene
     · exact GeneratedBy.of _
     · exact GeneratedBy.compl (GeneratedBy.of _)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

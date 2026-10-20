@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Exercise319
-public import DomainTheory.Neighborhood.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
 
 @[expose] public section
 
@@ -42,7 +42,7 @@ The sum (`+`) half — which needs tag analysis, hence a little more choice-free
 Everything here is `⊆ {propext, Quot.sound}` (choice-free).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -921,4 +921,4 @@ theorem sumMap_isComputable {V₀' : NeighborhoodSystem α'} {V₁' : Neighborho
     · exact ⟨sumEnum_mem _, sumEnum_mem _,
         Or.inr (Or.inr ⟨_, _, sumEnum_one hn1, sumEnum_one hm1, hgYY⟩)⟩
 end Sum
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

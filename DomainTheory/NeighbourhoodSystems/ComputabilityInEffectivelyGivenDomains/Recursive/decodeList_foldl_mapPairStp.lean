@@ -19,12 +19,12 @@ public import Mathlib.Computability.Partrec
 import all Mathlib.Computability.Partrec
 public import Mathlib.Tactic.Ring
 import all Mathlib.Tactic.Ring
-public import DomainTheory.Neighborhood.Exercise722Regular
-public import DomainTheory.Neighborhood.Exercise722Decide
-public import DomainTheory.Neighborhood.Exercise722Equiv
-public import DomainTheory.Neighborhood.Recursive.Basic
-public import DomainTheory.Neighborhood.Recursive.mapPairStp_eq
-public import DomainTheory.Neighborhood.Recursive.decodeList_mapPairStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.mapPairStp_eq
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.decodeList_mapPairStep
 
 @[expose] public section
 

@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88f.Basic
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_inj_isComputableMap
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_proj_isComputableMap
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_projectionPair_isComputable
-public import DomainTheory.Neighborhood.Theorem88g.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_inj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_proj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_projectionPair_isComputable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88g.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -34,4 +34,4 @@ theorem theorem_8_8_b {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePr
   ⟨DprimeUCode P, DprimeUCodePresentation P, DprimeUCode_subsystem P,
     isomorphic_DprimeUCode P, DprimeUCode_inj_isComputableMap P, DprimeUCode_proj_isComputableMap P⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

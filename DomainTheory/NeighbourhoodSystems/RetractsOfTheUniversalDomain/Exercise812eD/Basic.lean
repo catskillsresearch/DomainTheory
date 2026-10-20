@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812e
-public import DomainTheory.Neighborhood.SplitV
-public import DomainTheory.Neighborhood.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
 
 @[expose] public section
 
@@ -38,7 +38,7 @@ substituting `diffCode` for `combineCode` and `U_diff_mem` (`Exercise812c.lean`,
 `U`'s `IsPositive` as the "always mem-or-∅" fact driving the decidability reduction.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -137,4 +137,4 @@ noncomputable def isComputableSplit_812e :
     IsComputableSplit UComputablePresentation VComputablePresentation splitX812e :=
   ComputableBisection.isComputableSplit_ofBisection UComputablePresentation U_isComputableDiff
     B812e V_noMinimal U_isPositive U_noMinimal U_diffClosed
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Algebra.Group.Submonoid.Basic
 import all Mathlib.Algebra.Group.Submonoid.Basic
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
@@ -44,10 +44,10 @@ The constructions are **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`
 `lfpSet` from Exercise 4.14.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise417
+namespace DomainTheory.NeighbourhoodSystems.Exercise417
 
 open Pointwise
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {S : Type*} [Monoid S]
 
@@ -76,4 +76,4 @@ def preFixSubmonoid (a b : S) {x : Set S} (hx : F a b x ⊆ x) : Submonoid S whe
     exact hx (self_mul_subset_F a b x (Set.mul_mem_mul hs ht))
 
 /-! ### Non-uniqueness. -/
-end DomainTheory.Neighborhood.Exercise417
+end DomainTheory.NeighbourhoodSystems.Exercise417

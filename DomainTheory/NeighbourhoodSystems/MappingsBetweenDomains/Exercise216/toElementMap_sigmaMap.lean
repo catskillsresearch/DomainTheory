@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Exercise216.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise216.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise216
+namespace DomainTheory.NeighbourhoodSystems.Exercise216
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 /-- **Exercise 2.16.** The elementwise action of `sigmaMap σ` is Scott's `σx`: `(sigmaMap σ)(x) =
@@ -32,4 +32,4 @@ theorem toElementMap_sigmaMap (σ : Str) (x : B.Element) :
   · rintro ⟨hY, X, hxX, hsub⟩
     exact ⟨X, hxX, x.sub hxX, hY, hsub⟩
 
-end DomainTheory.Neighborhood.Exercise216
+end DomainTheory.NeighbourhoodSystems.Exercise216

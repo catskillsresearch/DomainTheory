@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise314.Basic
-public import DomainTheory.Neighborhood.Exercise314.proju2080_comp_diag
-public import DomainTheory.Neighborhood.Exercise314.proju2081_comp_diag
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise314.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise314.proju2080_comp_diag
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise314.proju2081_comp_diag
 
 @[expose] public section

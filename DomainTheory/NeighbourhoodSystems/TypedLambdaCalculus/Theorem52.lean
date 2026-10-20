@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem52.Basic
-public import DomainTheory.Neighborhood.Theorem52.subst_value
-public import DomainTheory.Neighborhood.Theorem52.beta
-public import DomainTheory.Neighborhood.Theorem52.beta_tuple
-public import DomainTheory.Neighborhood.Theorem52.beta_abs
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem52.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem52.subst_value
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem52.beta
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem52.beta_tuple
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem52.beta_abs
 
 @[expose] public section

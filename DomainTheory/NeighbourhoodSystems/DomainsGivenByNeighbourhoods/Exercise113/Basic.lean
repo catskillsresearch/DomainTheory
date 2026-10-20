@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Theorem111
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -36,9 +36,9 @@ is a **total** (maximal) element (`branch_isTotal`). These are the nodes "along 
 Constructive except `branch_isTotal`'s use of `B`'s structure (still `[propext, Quot.sound]`).
 -/
 
-namespace DomainTheory.Neighborhood.Exercise113
+namespace DomainTheory.NeighbourhoodSystems.Exercise113
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 /-- The length-`n` initial segment `p ↾ n = ⟨p 0, …, p (n-1)⟩` of an infinite path `p`. -/
 def prefixSeq (p : ℕ → Bool) : ℕ → Str
@@ -69,4 +69,4 @@ theorem branchSeq_mono (p : ℕ → Bool) : Monotone (branchSeq p) := by
 /-- **The limit/total element of an infinite path** `p`: the ascending union `⋃ₙ (p ↾ n)⊥`
 (Theorem 1.11(ii)). These are the "limit nodes all along the top" of Scott's picture. -/
 def branch (p : ℕ → Bool) : B.Element := B.iUnion (branchSeq p) (branchSeq_mono p)
-end DomainTheory.Neighborhood.Exercise113
+end DomainTheory.NeighbourhoodSystems.Exercise113

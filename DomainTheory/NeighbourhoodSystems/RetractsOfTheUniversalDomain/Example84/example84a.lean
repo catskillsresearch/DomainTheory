@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Example84.Basic
-public import DomainTheory.Neighborhood.Example84.isRetraction_a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84.isRetraction_a
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
@@ -60,4 +60,4 @@ variable (u : D.Element) (hu : u ≠ D.bot)
 theorem example84a (hu : u ≠ D.bot) :
     IsRetraction (a u) ∧ Nonempty (O.Element ≃o {y : D.Element // (a u).toElementMap y = y}) :=
   ⟨isRetraction_a u hu, ⟨fixIso u hu⟩⟩
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

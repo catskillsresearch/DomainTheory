@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition63
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Definition68.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe u
 
@@ -34,4 +34,4 @@ theorem ContinuousOnMaps.isStrict_map {T : Endofunctor DomainObj} (h : Continuou
   rw [← hΦ f]
   exact (toStrictMap (Φ.toElementMap (toStrictFilter f))).2
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

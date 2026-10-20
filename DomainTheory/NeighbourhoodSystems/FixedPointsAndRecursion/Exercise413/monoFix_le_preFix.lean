@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise118
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise413.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -32,4 +32,4 @@ theorem monoFix_le_preFix (f : V.Element → V.Element) {a : V.Element} (ha : f 
   V.sInf_le (preFix f) ⟨a, ha⟩ hx
 
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

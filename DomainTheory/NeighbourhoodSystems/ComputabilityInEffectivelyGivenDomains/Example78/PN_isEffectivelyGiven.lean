@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.Example78.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example78
+namespace DomainTheory.NeighbourhoodSystems.Example78
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -27,4 +27,4 @@ open Domain.Recursive NeighborhoodSystem
 /-- **Example 7.8 (Scott 1981, PRG-19).** The powerset domain `PN` is effectively given. -/
 theorem PN_isEffectivelyGiven : PN.IsEffectivelyGiven := ⟨PNpres⟩
 
-end DomainTheory.Neighborhood.Example78
+end DomainTheory.NeighbourhoodSystems.Example78

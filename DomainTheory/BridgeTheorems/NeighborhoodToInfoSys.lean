@@ -11,7 +11,7 @@ public import Mathlib.Data.Finset.Fold
 import all Mathlib.Data.Finset.Fold
 public import Mathlib.Order.Hom.Basic
 import all Mathlib.Order.Hom.Basic
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import DomainTheory.InformationSystems.InfoSys
 public import DomainTheory.InformationSystems.Proposition23
 
@@ -33,7 +33,7 @@ entailment is “the intersection is a neighbourhood and is contained in the tar
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 open DomainTheory.InformationSystems
 
 /-- A neighbourhood system with a decidable exhaustive index of its neighbourhoods.

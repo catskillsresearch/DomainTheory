@@ -7,12 +7,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Exercise812g4
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
 
 @[expose] public section
 
@@ -55,7 +55,7 @@ Everything proved in this file is **choice-free** (`⊆ {propext, Quot.sound}`) 
 provenance, the same footprint as every other `U`-mentioning headline theorem in this project).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Subsystem
 
@@ -167,4 +167,4 @@ theorem trianglelefteq_trans {D : NeighborhoodSystem α} {E : NeighborhoodSystem
 domain `𝒰` to an arbitrary `W`. -/
 def IsUniversal {δ : Type w} (W : NeighborhoodSystem δ) : Prop :=
   ∀ {α : Type u} (D : NeighborhoodSystem α) [Countable {S : Set α // D.mem S}], D ⊴ W
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

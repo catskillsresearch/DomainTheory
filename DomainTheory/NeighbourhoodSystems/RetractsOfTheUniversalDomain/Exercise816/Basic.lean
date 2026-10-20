@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem86
-public import DomainTheory.Neighborhood.Theorem88
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
 
 @[expose] public section
 
@@ -44,11 +44,11 @@ theory on `finitaryProjectionSubsystemEquiv` (itself choice-free, Theorem 8.6(a)
 direct citation of the already-audited choice-free `fixedNbhd_isEffectivelyGiven`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
 universe u
 
 variable {α : Type u} {E : NeighborhoodSystem α}
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

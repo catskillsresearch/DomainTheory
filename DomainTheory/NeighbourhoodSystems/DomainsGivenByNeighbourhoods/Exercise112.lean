@@ -7,12 +7,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise112.Basic
-public import DomainTheory.Neighborhood.Exercise112.fin_le_iff
-public import DomainTheory.Neighborhood.Exercise112.fin_strictMono
-public import DomainTheory.Neighborhood.Exercise112.le_top
-public import DomainTheory.Neighborhood.Exercise112.top_isTotal
-public import DomainTheory.Neighborhood.Exercise112.isTotal_iff_top
-public import DomainTheory.Neighborhood.Exercise112.element_eq
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.fin_le_iff
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.fin_strictMono
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.le_top
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.top_isTotal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.isTotal_iff_top
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.element_eq
 
 @[expose] public section

@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Example24.Basic
-public import DomainTheory.Neighborhood.Example24.runMap_rel_cone
-public import DomainTheory.Neighborhood.Example24.key
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24.runMap_rel_cone
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24.key
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example24
+namespace DomainTheory.NeighbourhoodSystems.Example24
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 
@@ -48,4 +48,4 @@ theorem eq_runMap_of_satisfies {g : ApproximableMap B B} (hg : SatisfiesRunEquat
     exact B.mem_principal (memB_cone (out σ))
   · exact ⟨fun hr => absurd (g.rel_dom hr) hX, fun hr => absurd (runMap.rel_dom hr) hX⟩
 
-end DomainTheory.Neighborhood.Example24
+end DomainTheory.NeighbourhoodSystems.Example24

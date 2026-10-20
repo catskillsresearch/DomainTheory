@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Data.Set.Finite.Basic
 import all Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise116.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise116.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Cofinite
 
@@ -43,4 +43,4 @@ theorem le_ofExcluded_univ (x : cofiniteSystem.Element) :
   exact ⟨x.sub hY, Set.subset_univ _⟩
 
 end Cofinite
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

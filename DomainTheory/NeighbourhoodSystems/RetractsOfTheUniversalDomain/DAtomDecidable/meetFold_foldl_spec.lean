@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88a.Basic
-public import DomainTheory.Neighborhood.Theorem88a.idxSet_nonempty
-public import DomainTheory.Neighborhood.Theorem88a.idxSet_eq_iff
-public import DomainTheory.Neighborhood.Theorem88a.isomorphic_DprimeU
-public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8_a
-public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.DAtomDecidable.Basic
-public import DomainTheory.Neighborhood.DAtomDecidable.IPos_cons
-public import DomainTheory.Neighborhood.DAtomDecidable.meetStep_spec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_nonempty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_eq_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.isomorphic_DprimeU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8_a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.IPos_cons
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.meetStep_spec
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -57,4 +57,4 @@ theorem meetFold_foldl_spec
     obtain ⟨hle', h1', h0'⟩ := meetStep_spec P cons hcons hle h1 h0 i
     exact ih hle' h1' h0'
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

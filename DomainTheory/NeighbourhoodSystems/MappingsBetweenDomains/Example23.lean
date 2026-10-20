@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example23.Basic
-public import DomainTheory.Neighborhood.Example23.eq_botElt_of_le
-public import DomainTheory.Neighborhood.Example23.scan_append_true
-public import DomainTheory.Neighborhood.Example23.scan_append_falseTrue
-public import DomainTheory.Neighborhood.Example23.scan_append_falseFalse
-public import DomainTheory.Neighborhood.Example23.parityMap_rel_cone
-public import DomainTheory.Neighborhood.Example23.parityMap_toElementMap_mem
-public import DomainTheory.Neighborhood.Example23.parityMap_toElementMap_sigmaElt
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23.eq_botElt_of_le
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23.scan_append_true
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23.scan_append_falseTrue
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23.scan_append_falseFalse
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23.parityMap_rel_cone
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23.parityMap_toElementMap_mem
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23.parityMap_toElementMap_sigmaElt
 
 @[expose] public section

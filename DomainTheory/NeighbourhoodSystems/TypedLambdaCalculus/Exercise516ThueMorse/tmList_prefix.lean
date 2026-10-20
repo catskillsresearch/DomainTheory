@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise516
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516
 public import Mathlib.Data.Nat.Bits
 import all Mathlib.Data.Nat.Bits
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.Basic
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_succ
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmList_succ
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
 
@@ -41,4 +41,4 @@ theorem tmList_prefix {n m : ℕ} (h : n ≤ m) : tmList n <+: tmList m := by
     · exact (ih (Nat.lt_succ_iff.mp hlt)).trans (by rw [tmList_succ]; exact List.prefix_append _ _)
     · exact List.prefix_rfl
 
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

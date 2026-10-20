@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.FunctionSpace.Basic
-public import DomainTheory.Neighborhood.FunctionSpace.mapsBounded_iff_pointwiseBounded
-public import DomainTheory.Neighborhood.FunctionSpace.toElementMap_sSupMaps
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.mapsBounded_iff_pointwiseBounded
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.toElementMap_sSupMaps
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -77,4 +77,4 @@ theorem toElementMap_sSupMaps' {F : Set (ApproximableMap V₀ V₁)} (hF : MapsB
         (mapsBounded_iff_pointwiseBounded.mp hF x) :=
   toElementMap_sSupMaps (mapsBounded_iff_pointwiseBounded.mp hF) x
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

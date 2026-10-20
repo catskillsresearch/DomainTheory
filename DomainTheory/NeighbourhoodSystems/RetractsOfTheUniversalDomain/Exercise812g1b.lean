@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812g1b.Basic
-public import DomainTheory.Neighborhood.Exercise812g1b.V_master_nonempty
-public import DomainTheory.Neighborhood.Exercise812g1b.levelSet_zero_zero
-public import DomainTheory.Neighborhood.Exercise812g1b.VX_zero
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.V_master_nonempty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.levelSet_zero_zero
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.VX_zero
 
 @[expose] public section

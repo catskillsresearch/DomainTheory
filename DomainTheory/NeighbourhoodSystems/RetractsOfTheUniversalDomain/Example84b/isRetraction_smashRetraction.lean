@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example84
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Example84b.Basic
-public import DomainTheory.Neighborhood.Example84b.smashRetraction_of_ne_bot
-public import DomainTheory.Neighborhood.Example84b.smashRetraction_of_eq_bot
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.smashRetraction_of_ne_bot
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.smashRetraction_of_eq_bot
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
@@ -47,4 +47,4 @@ theorem isRetraction_smashRetraction : IsRetraction (smashRetraction (D := D) (E
     · rw [smashRetraction_of_ne_bot hx hy, smashRetraction_of_ne_bot hx hy]
 
 end Smash
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

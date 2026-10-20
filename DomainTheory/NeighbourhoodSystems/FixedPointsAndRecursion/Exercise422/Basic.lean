@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
-public import DomainTheory.Neighborhood.Theorem46
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46
 
 @[expose] public section
 
@@ -42,9 +42,9 @@ The subset `nats` is built choice-free (`lfpSet`); the `PeanoModel` packaging of
 existence statement live over `Classical.choice` exactly as Theorem 4.6's bijection does.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise422
+namespace DomainTheory.NeighbourhoodSystems.Exercise422
 
-open DomainTheory.Neighborhood DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {M : Type*} (zero : M) (succ : M → M)
 
@@ -123,4 +123,4 @@ def natPeano : PeanoModel ℕ where
     induction n with
     | zero => exact h0
     | succ k ih => exact hstep k ih
-end DomainTheory.Neighborhood.Exercise422
+end DomainTheory.NeighbourhoodSystems.Exercise422

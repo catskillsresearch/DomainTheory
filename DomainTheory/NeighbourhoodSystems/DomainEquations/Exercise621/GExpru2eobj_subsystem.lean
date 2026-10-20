@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise619PartB
-public import DomainTheory.Neighborhood.Exercise621.Basic
-public import DomainTheory.Neighborhood.Exercise621.oplusTok_subsystem
-public import DomainTheory.Neighborhood.Exercise621.otimesTok_subsystem
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusTok_subsystem
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesTok_subsystem
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
-open DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.Exercise510
 
 namespace Exercise619
 
@@ -66,4 +66,4 @@ theorem GExpr.obj_subsystem : (T : GExpr) → {X Y : ScottSys} → X.sys ◁ Y.s
   | .otimes a b, _, _, h => otimesTok_subsystem (a.obj_subsystem h) (b.obj_subsystem h)
 
 end Exercise619
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

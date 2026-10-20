@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.LevelSetPrimrec
-public import DomainTheory.Neighborhood.Exercise812c
-public import DomainTheory.Neighborhood.Exercise812d
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d
 
 @[expose] public section
 
@@ -36,7 +36,7 @@ infrastructure needed is a computable version of that combinator. Rather than re
 `myXor_eq_xor`/`myLand_eq_land`, no new arithmetic identity needed.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -296,4 +296,4 @@ def V_isComputableDiff : IsComputableDiff VComputablePresentation where
   diffIdx_spec := Vdiff_spec
   diff_computable := V_diff_computable
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

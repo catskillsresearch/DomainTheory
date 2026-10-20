@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722Regular
-public meta import DomainTheory.Neighborhood.Exercise722Regular.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
+public meta import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.Basic
 
 @[expose] public section
 
@@ -20,7 +20,7 @@ whether any word in a finite list is accepted by the `matchesB` matcher. The cha
 `mem_wordsUpTo` is the length bound used later for pumping-based short-word search (Session C4).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -35,4 +35,4 @@ def anyMatchesB (e : SExpr) (ws : List (List Bool)) : Bool := ws.any (matchesB e
 
 #eval anyMatchesB .sigma (wordsUpTo 0) -- should be `true` (the empty word lies in Σ)
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

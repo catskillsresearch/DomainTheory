@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition613
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Theorem614.Basic
-public import DomainTheory.Neighborhood.Theorem614.nonempty_algHom
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.nonempty_algHom
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe w
 
@@ -79,4 +79,4 @@ theorem exists_algebra_with_hom (s : Setup.{w}) :
   ⟨colimAlg s, ⟨colimIso s⟩, fun B hk => nonempty_algHom s B hk⟩
 
 end Theorem614
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

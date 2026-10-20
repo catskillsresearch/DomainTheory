@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise319.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -30,4 +30,4 @@ theorem proj_paired (h₀ : ApproximableMap V₂ V₀) (h₁ : ApproximableMap V
     (proj₀ V₀ V₁).comp (paired h₀ h₁) = h₀ ∧ (proj₁ V₀ V₁).comp (paired h₀ h₁) = h₁ :=
   ⟨proj₀_comp_paired h₀ h₁, proj₁_comp_paired h₀ h₁⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

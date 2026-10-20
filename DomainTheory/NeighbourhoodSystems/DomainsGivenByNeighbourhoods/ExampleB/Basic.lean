@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Data.List.Infix
 import all Mathlib.Data.List.Infix
 
@@ -43,9 +43,9 @@ Everything is **constructive** (`#print axioms ⊆ {propext, Quot.sound}`): list
 so the trichotomy is choice-free.
 -/
 
-namespace DomainTheory.Neighborhood.ExampleB
+namespace DomainTheory.NeighbourhoodSystems.ExampleB
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 /-- The token type `Σ* = List Bool` (finite binary strings); `Λ = []`. -/
 abbrev Str := List Bool
@@ -166,4 +166,4 @@ def sigmaElt (σ : Str) (x : B.Element) : B.Element where
     exact ⟨hY, X', hX', hsub'.trans hXY⟩
 
 /-! ### Every element is a union of its finite approximations `σ⊥`. -/
-end DomainTheory.Neighborhood.ExampleB
+end DomainTheory.NeighbourhoodSystems.ExampleB

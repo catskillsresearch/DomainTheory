@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Recursive
-public import DomainTheory.Neighborhood.RationalPrimrec.Basic
-public import DomainTheory.Neighborhood.RationalPrimrec.primrec_qNumP
-public import DomainTheory.Neighborhood.RationalPrimrec.primrec_qNumN
-public import DomainTheory.Neighborhood.RationalPrimrec.primrec_qDen
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.primrec_qNumP
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.primrec_qNumN
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.primrec_qDen
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -63,4 +63,4 @@ theorem primrec_ratMidCode : Nat.Primrec ratMidCode := by
   exact (Nat.Primrec.pair (Nat.Primrec.pair hnumP hnumN) hden).of_eq fun t => by
     simp only [ratMidCode]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

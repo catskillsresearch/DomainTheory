@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise509.Basic
-public import DomainTheory.Neighborhood.Exercise509.commute_apply
-public import DomainTheory.Neighborhood.Exercise509.commuting_least_common_fixed
-public import DomainTheory.Neighborhood.Exercise509.iterElem_succ
-public import DomainTheory.Neighborhood.Exercise509.iterElem_zerou27
-public import DomainTheory.Neighborhood.Exercise509.fixElement_eq_of_commuting_bot
-public import DomainTheory.Neighborhood.Exercise509.iterElem_le_fixElement
-public import DomainTheory.Neighborhood.Exercise509.comp_self_iterElem
-public import DomainTheory.Neighborhood.Exercise509.fixElement_iterTwice
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.commute_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.commuting_least_common_fixed
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.iterElem_succ
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.iterElem_zerou27
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.fixElement_eq_of_commuting_bot
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.iterElem_le_fixElement
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.comp_self_iterElem
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.fixElement_iterTwice
 
 @[expose] public section

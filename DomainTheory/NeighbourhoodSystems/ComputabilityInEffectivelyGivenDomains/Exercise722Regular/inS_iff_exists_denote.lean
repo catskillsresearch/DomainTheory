@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722
 public import Mathlib.Logic.Encodable.Basic
 import all Mathlib.Logic.Encodable.Basic
-public import DomainTheory.Neighborhood.Exercise722Regular.Basic
-public import DomainTheory.Neighborhood.Exercise722Regular.InS_denote_of_nonempty
-public import DomainTheory.Neighborhood.Exercise722Regular.InS_exists_denote
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.InS_denote_of_nonempty
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.InS_exists_denote
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -44,4 +44,4 @@ theorem inS_iff_exists_denote {X : Set (List Bool)} :
     exact InS_denote_of_nonempty hne
 
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

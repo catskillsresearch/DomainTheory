@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise817
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Exercise326Sum
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.Exercise819.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -40,4 +40,4 @@ theorem pair_bot {V0 : NeighborhoodSystem α} {V1 : NeighborhoodSystem β} :
   · exact NeighborhoodSystem.bot_le _ _
 
 end General
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

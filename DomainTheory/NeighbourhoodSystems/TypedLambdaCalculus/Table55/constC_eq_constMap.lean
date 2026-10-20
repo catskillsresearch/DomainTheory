@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Table55.Basic
-public import DomainTheory.Neighborhood.Table55.constC_apply
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.constC_apply
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -45,4 +45,4 @@ theorem constC_eq_constMap (k : V₁.Element) :
   intro x
   rw [constC_apply, toElementMap_constMap]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

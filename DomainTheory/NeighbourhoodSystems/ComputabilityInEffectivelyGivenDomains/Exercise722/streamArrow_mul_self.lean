@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import Mathlib.Data.Set.Insert
 import all Mathlib.Data.Set.Insert
-public import DomainTheory.Neighborhood.Exercise722.Basic
-public import DomainTheory.Neighborhood.Exercise722.streamArrow_le_mul_self
-public import DomainTheory.Neighborhood.Exercise722.streamArrow_mul_self_le
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722.streamArrow_le_mul_self
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722.streamArrow_mul_self_le
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -58,4 +58,4 @@ theorem streamArrow_mul_self (σ : List Bool) :
   le_antisymm (streamArrow_mul_self_le σ) (streamArrow_le_mul_self σ)
 
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

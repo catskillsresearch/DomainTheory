@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.DAtomDecidable
-public import DomainTheory.Neighborhood.SplitU
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.Theorem88b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -36,4 +36,4 @@ theorem hcover : ∀ S, D.mem S ↔ ∃ n, S = e P n := by
   · rintro ⟨n, rfl⟩
     exact (P0 P).mem_X n
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

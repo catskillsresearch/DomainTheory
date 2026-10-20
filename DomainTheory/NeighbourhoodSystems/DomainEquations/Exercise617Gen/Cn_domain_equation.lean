@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise617
-public import DomainTheory.Neighborhood.Exercise617Gen.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise617Gen
+namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
 
 set_option linter.unusedSectionVars false
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 variable {A : Type} [DecidableEq A]
 
@@ -76,4 +76,4 @@ variable {A : Type} [DecidableEq A]
 theorem Cn_domain_equation (A : Type) [DecidableEq A] [Inhabited A] :
     Cn A ≅ᴰ CCn A := ⟨ccEquiv⟩
 
-end DomainTheory.Neighborhood.Exercise617Gen
+end DomainTheory.NeighbourhoodSystems.Exercise617Gen

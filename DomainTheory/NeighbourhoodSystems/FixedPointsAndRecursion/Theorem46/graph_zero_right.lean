@@ -9,12 +9,12 @@ module
 
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Theorem46.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 universe u v
 
@@ -34,4 +34,4 @@ theorem graph_zero_right (P : PeanoModel M) (Q : PeanoModel N) {k : N}
   | step _ => exact absurd hz (P.zero_ne_succ _)
 
 end PeanoModel
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.FunctionSpace.Basic
-public import DomainTheory.Neighborhood.FunctionSpace.evalMap_apply
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.evalMap_apply
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -105,4 +105,4 @@ theorem uncurry_eq (h : ApproximableMap V₀ (funSpace V₁ V₂)) :
     rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
     exact hrel
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

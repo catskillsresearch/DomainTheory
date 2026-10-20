@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise419
-public import DomainTheory.Neighborhood.Product
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 
 @[expose] public section
 
@@ -43,9 +43,9 @@ The Thue–Morse properties of `t = 0·merge(neg t, tail t)` (its digit-sum-mod-
 overlap-freeness) are real combinatorics-on-words and are left as a separate follow-up.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-! ### List helpers: bit-complement `flip` and bit-doubling `double`. -/
 
@@ -356,4 +356,4 @@ def mergeMap : ApproximableMap (prod C C) C where
 /-! #### Extensionality for maps `C × C → C` via finite element pairs. -/
 
 /-! #### The recursion equation and `merge(x, x) = d(x)`. -/
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

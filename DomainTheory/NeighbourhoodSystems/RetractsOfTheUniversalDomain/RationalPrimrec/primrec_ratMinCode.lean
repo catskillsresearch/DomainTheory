@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Recursive
-public import DomainTheory.Neighborhood.RationalPrimrec.Basic
-public import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratLeCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.primrec_ratLeCode
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -39,4 +39,4 @@ open Domain.Recursive
 theorem primrec_ratMinCode : Nat.Primrec ratMinCode :=
   primrec_selectFn primrec_ratLeCode Nat.Primrec.left Nat.Primrec.right
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

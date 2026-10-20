@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem86
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.Exercise816
-public import DomainTheory.Neighborhood.Exercise823.Basic
-public import DomainTheory.Neighborhood.Exercise823.isFinitaryProjection_fixOp
-public import DomainTheory.Neighborhood.Exercise823.tOp_fixOp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.isFinitaryProjection_fixOp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.tOp_fixOp
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6
 
@@ -50,4 +50,4 @@ theorem fixedDomain_fixOp_iso_T (t : ApproximableMap (funSpace E E) (funSpace E 
   rwa [tOp_fixOp] at h
 
 end Exercise823
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

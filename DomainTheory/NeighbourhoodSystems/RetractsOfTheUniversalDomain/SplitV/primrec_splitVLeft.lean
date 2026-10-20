@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.LevelSetPrimrec
-public import DomainTheory.Neighborhood.MinLevel
-public import DomainTheory.Neighborhood.SplitV.Basic
-public import DomainTheory.Neighborhood.SplitV.primrec_splitVMinLevel
-public import DomainTheory.Neighborhood.SplitV.primrec_splitVBit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_splitVMinLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_splitVBit
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -47,4 +47,4 @@ theorem primrec_splitVLeft : Nat.Primrec splitVLeft := by
   have hpow : Nat.Primrec (fun n : ℕ => (2 : ℕ) ^ splitVBit n) := primrec_two_pow primrec_splitVBit
   exact (Nat.Primrec.pair hk1 hpow).of_eq fun n => rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

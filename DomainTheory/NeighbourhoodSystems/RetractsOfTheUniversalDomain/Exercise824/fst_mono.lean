@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise823
-public import DomainTheory.Neighborhood.Exercise824.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
 
@@ -35,4 +35,4 @@ theorem fst_mono {z z' : (PairSpace (E := E)).Element} (h : z ≤ z') : z.fst �
   exact ⟨hX.1, h _ hX.2⟩
 
 end Exercise824
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

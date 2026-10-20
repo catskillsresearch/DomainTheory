@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic.Set
 import all Mathlib.Tactic.Set
-public import DomainTheory.Neighborhood.Approximable.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -32,4 +32,4 @@ theorem sSupDirected_le (V : NeighborhoodSystem α) (S : Set V.Element) (hne : S
   exact hy s hs Z hsZ
 
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise119.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.Basic
 
 @[expose] public section
 
 
 set_option linter.unusedSimpArgs false
 
-namespace DomainTheory.Neighborhood.Exercise119
+namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 
 
 
@@ -27,4 +27,4 @@ theorem positiveExample_isPositive : positiveExample.IsPositive := by
   intro X Y _ _
   exact Iff.rfl
 
-end DomainTheory.Neighborhood.Exercise119
+end DomainTheory.NeighbourhoodSystems.Exercise119

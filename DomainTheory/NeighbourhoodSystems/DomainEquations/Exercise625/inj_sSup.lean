@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Exercise625.Basic
-public import DomainTheory.Neighborhood.Exercise625.galois
-public import DomainTheory.Neighborhood.Exercise625.inj_bounded
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.galois
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.inj_bounded
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Subsystem
 
@@ -48,4 +48,4 @@ theorem inj_sSup (P : ProjectionPair D E) {S : Set D.Element} (hS : D.Bounded S)
     exact P.inj.toElementMap_mono (D.le_sSup S hS hs)
 
 end Subsystem.ProjectionPair
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

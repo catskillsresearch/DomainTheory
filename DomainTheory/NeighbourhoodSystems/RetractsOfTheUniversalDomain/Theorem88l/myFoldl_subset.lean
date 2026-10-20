@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88k.Basic
-public import DomainTheory.Neighborhood.Theorem88k.D_X_cons_iff
-public import DomainTheory.Neighborhood.Theorem88k.D_X_interEq_computable
-public import DomainTheory.Neighborhood.Theorem88k.D_X_cons_computable
-public import DomainTheory.Neighborhood.Theorem88l.Basic
-public import DomainTheory.Neighborhood.Theorem88l.myStep_subset
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_cons_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_interEq_computable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_cons_computable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.myStep_subset
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -39,4 +39,4 @@ theorem myFoldl_subset
     rw [List.foldl_cons]
     exact (ih (myStep P qChar cons r e)).trans (myStep_subset hcons r e)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

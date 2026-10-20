@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise826
-public import DomainTheory.Neighborhood.Exercise821
-public import DomainTheory.Neighborhood.Exercise827.Basic
-public import DomainTheory.Neighborhood.Exercise827.exists_X_of_mem_stepFun
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.exists_X_of_mem_stepFun
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -82,4 +82,4 @@ theorem hii_hard_direction (d : ApproximableMap U U) (x : (funSpace U U).Element
   obtain ⟨⟨L, _, rfl⟩, _⟩ := hYE
   exact exists_X_of_mem_stepFun d x L hmem
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

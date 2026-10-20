@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise826
-public import DomainTheory.Neighborhood.Exercise821
-public import DomainTheory.Neighborhood.Exercise827.Basic
-public import DomainTheory.Neighborhood.Exercise827.toElementMap_piDTypeMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.toElementMap_piDTypeMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -78,4 +78,4 @@ theorem toElementMap_piDApply' (d f : ApproximableMap U U) (t : U.Element) :
       (piDType d (subU.toElementMap t)).toElementMap (f.toElementMap (subU.toElementMap t)) := by
   rw [toElementMap_piDApply, piDType, toElementMap_piDTypeMap]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

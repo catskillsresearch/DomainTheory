@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise717Part2
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Proposition810
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
 
 @[expose] public section
 
@@ -108,7 +108,7 @@ confirmed not new; `dsharpMap`/`dsharpMap_id` (mentioning no `U`) are fully choi
 `gMap_eq_of_satisfies` (matching 8.21(b)'s own baseline, nothing new).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
 
@@ -512,4 +512,4 @@ noncomputable def dsharp_fixedNbhd_elementIso {a : ApproximableMap U U}
       {y : U.Element // (aSharp a).toElementMap y = y} :=
   elementIsoOfProjectionPair (ISharpComb a) (JSharpComb a) (JSharpComb_comp_ISharpComb a)
     (ISharpComb_comp_JSharpComb ha).symm
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.IntervalPrimrec
-public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
 
 @[expose] public section
 
@@ -40,7 +40,7 @@ is so permissive — is automatically a genuine `U`-neighbourhood whenever it is
 "consistent" reduces to "non-empty").
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -443,4 +443,4 @@ def UComputablePresentation : ComputablePresentation U where
   inter_spec := Uinter_spec
   masterIdx := UmasterIdx
   masterIdx_spec := UX_UmasterIdx
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

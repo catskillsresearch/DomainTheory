@@ -7,22 +7,22 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example78
-public import DomainTheory.Neighborhood.Theorem74
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Exercise514
-public import DomainTheory.Neighborhood.Exercise723.Basic
-public import DomainTheory.Neighborhood.Exercise723.compl_nbhd_plusIdx
-public import DomainTheory.Neighborhood.Exercise723.nbhd_subset_iff_compl_subset_compl
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.compl_nbhd_plusIdx
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.nbhd_subset_iff_compl_subset_compl
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise723
+namespace DomainTheory.NeighbourhoodSystems.Exercise723
 
-open DomainTheory.Neighborhood Example78 NeighborhoodSystem Domain.Recursive
-open DomainTheory.Neighborhood.Exercise513 (tri num numP unnum nextCell numP_unnum)
-open DomainTheory.Neighborhood.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
+open DomainTheory.NeighbourhoodSystems Example78 NeighborhoodSystem Domain.Recursive
+open DomainTheory.NeighbourhoodSystems.Exercise513 (tri num numP unnum nextCell numP_unnum)
+open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
   num_succ_left_gt tag_injective)
 
 
@@ -63,4 +63,4 @@ theorem plusMap_rel_iff (n m k : ℕ) :
   · intro h
     exact ⟨nbhd n, nbhd m, rfl, ⟨n, rfl⟩, ⟨m, rfl⟩, ⟨k, rfl⟩, h⟩
 
-end DomainTheory.Neighborhood.Exercise723
+end DomainTheory.NeighbourhoodSystems.Exercise723

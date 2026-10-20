@@ -7,12 +7,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem46.Basic
-public import DomainTheory.Neighborhood.Theorem46.Graphu2eswap
-public import DomainTheory.Neighborhood.Theorem46.graph_zero_right
-public import DomainTheory.Neighborhood.Theorem46.graph_succ_right
-public import DomainTheory.Neighborhood.Theorem46.exists_unique_right
-public import DomainTheory.Neighborhood.Theorem46.exists_unique_left
-public import DomainTheory.Neighborhood.Theorem46.peano_models_isomorphic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Graphu2eswap
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.graph_zero_right
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.graph_succ_right
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.exists_unique_right
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.exists_unique_left
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.peano_models_isomorphic
 
 @[expose] public section

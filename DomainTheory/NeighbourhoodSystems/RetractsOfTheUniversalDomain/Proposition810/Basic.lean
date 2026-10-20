@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Theorem69
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
 
 @[expose] public section
 
@@ -62,7 +62,7 @@ Axiom footprint: everything here mentions `U`, so (as with `Definition89.lean`) 
 own `Classical.choice` footprint — `⊆ {propext, Classical.choice, Quot.sound}`, confirmed not new.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -77,4 +77,4 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 /-! ## `+` (Definition 8.9's `sumComb`), by direct case analysis on `sum_element_trichotomy` -/
 
 /-! ## Proposition 8.10, first half — assembled -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

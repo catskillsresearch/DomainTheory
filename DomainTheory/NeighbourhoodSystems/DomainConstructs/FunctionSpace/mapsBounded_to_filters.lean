@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.FunctionSpace.Basic
-public import DomainTheory.Neighborhood.FunctionSpace.toFilter_le_iff
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.toFilter_le_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -74,4 +74,4 @@ theorem mapsBounded_to_filters {F : Set (ApproximableMap V₀ V₁)} (h : MapsBo
   obtain ⟨f, hf, rfl⟩ := hφ
   exact (toFilter_le_iff).mpr (hh f hf)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

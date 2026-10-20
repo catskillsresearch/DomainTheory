@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
 
 @[expose] public section
 
@@ -25,7 +25,7 @@ Sessions C9–C10 will add `RecDecidable₂` consistency and the `ComputablePres
 relation (i) `interEq` remains deferred (see `Exercise722Decide.lean`, Session C7a).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -1022,4 +1022,4 @@ theorem Ssys_partially_effectively_given : IsPartiallyEffectivelyGiven Ssys := �
 
 end Exercise722
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

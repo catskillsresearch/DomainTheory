@@ -9,14 +9,14 @@ module
 
 public import Mathlib.Computability.MyhillNerode
 import all Mathlib.Computability.MyhillNerode
-public import DomainTheory.Neighborhood.Example62Regular.Basic
-public import DomainTheory.Neighborhood.Example62Regular.treeLang_select
-public import DomainTheory.Neighborhood.Example62Regular.treeLang_injective
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.treeLang_select
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.treeLang_injective
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Example62Regular
 
@@ -46,4 +46,4 @@ theorem eventuallyPeriodic_iff_isRegular (a : Tree n) :
   exact (Set.finite_image_iff (treeLang_injective.injOn)).symm
 
 end Example62Regular
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

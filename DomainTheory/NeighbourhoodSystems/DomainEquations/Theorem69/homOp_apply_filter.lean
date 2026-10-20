@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition68
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Theorem69.Basic
-public import DomainTheory.Neighborhood.Theorem69.toStrictFilter_toStrictMap
-public import DomainTheory.Neighborhood.Theorem69.homOp_rel
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.toStrictFilter_toStrictMap
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.homOp_rel
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe u
 
@@ -87,4 +87,4 @@ theorem homOp_apply_filter (g : StrictMap (T.obj D).sys (T.obj E).sys) :
   exact hL.symm
 
 end HomOp
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

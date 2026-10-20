@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise419
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise516.Basic
-public import DomainTheory.Neighborhood.Exercise516.map_ext_C
-public import DomainTheory.Neighborhood.Exercise516.mergeElem_diag
-public import DomainTheory.Neighborhood.Exercise516.mergeMap_pair
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.map_ext_C
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.mergeElem_diag
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.mergeMap_pair
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
 
@@ -99,4 +99,4 @@ theorem mergeMap_diag (x : C.Element) :
   simp only [toElementMap_comp, toElementMap_paired, toElementMap_idMap] at hx
   exact hx
 
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

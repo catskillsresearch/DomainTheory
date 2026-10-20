@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition610
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Proposition612.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -38,4 +38,4 @@ theorem toElementMap_inj (h : D ◁ E) (x : D.Element) {Y : Set α} :
     exact ⟨X, hX, x.sub hX, hY, hXY⟩
 
 end Subsystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

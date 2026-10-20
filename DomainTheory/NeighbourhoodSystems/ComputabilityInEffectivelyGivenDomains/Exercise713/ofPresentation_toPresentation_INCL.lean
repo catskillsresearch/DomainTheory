@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.Exercise713.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise713
+namespace DomainTheory.NeighbourhoodSystems.Exercise713
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -35,4 +35,4 @@ theorem ofPresentation_toPresentation_INCL (I : InclStructure) (n m : ℕ) :
   show I.toNbhd n ⊆ I.toNbhd m ↔ I.INCL n m
   exact I.toNbhd_subset_iff
 
-end DomainTheory.Neighborhood.Exercise713
+end DomainTheory.NeighbourhoodSystems.Exercise713

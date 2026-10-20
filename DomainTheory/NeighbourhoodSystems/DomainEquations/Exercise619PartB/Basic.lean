@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise619
-public import DomainTheory.Neighborhood.Definition613
-public import DomainTheory.Neighborhood.Exercise213
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -65,11 +65,11 @@ Kleene union `⋃ₙ mFunⁿ({Λ})` — gives a `Γ = tok(T({Γ}))` (`exists_tok
 Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
-open DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.Exercise510
 
 namespace Exercise619
 
@@ -480,4 +480,4 @@ theorem exists_singleton_subsystem (T : FExpr) (hT : T.RootedConst) :
     show X ∩ Y = Γ
     rw [show X = Γ from hX, show Y = Γ from hY, Set.inter_self]
 end Exercise619
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

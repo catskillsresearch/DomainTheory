@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Proposition67
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Exercise408
-public import DomainTheory.Neighborhood.Theorem616.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition67
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe w
 
@@ -38,4 +38,4 @@ theorem botStrict_rel {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Nei
   · rintro ⟨hX, rfl⟩
     exact sstep_cod_master hX
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
 public import Mathlib.Computability.EpsilonNFA
 import all Mathlib.Computability.EpsilonNFA
 
@@ -35,7 +35,7 @@ split `x = u ++ v` with the `M₁`-prefix `u` accepted. The `Sum` state type sta
 plugs into the `Fintype`-DFA/NFA decision route (`Exercise722DFA.lean`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -70,4 +70,4 @@ variable (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂)
 
 example [Fintype σ₁] [Fintype σ₂] : Fintype (σ₁ ⊕ σ₂) := inferInstance
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

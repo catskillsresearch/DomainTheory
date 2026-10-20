@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
 
 @[expose] public section
 
@@ -53,7 +53,7 @@ Everything is **choice-free at the relational core** (`projElementEmbedding`,
 unavoidable, as it extracts a `Fintype` from `Finite` and a surjection's section.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -88,4 +88,4 @@ def projElementEmbedding {α β : Type*} {D : NeighborhoodSystem α} {E : Neighb
 /-- **A neighbourhood system is *finite*** when it has only finitely many neighbourhoods. -/
 def NeighborhoodSystem.IsFinite {α : Type*} (D : NeighborhoodSystem α) : Prop :=
   Finite {X : Set α // D.mem X}
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

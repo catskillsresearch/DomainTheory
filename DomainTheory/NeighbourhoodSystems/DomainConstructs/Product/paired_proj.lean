@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Product.Basic
-public import DomainTheory.Neighborhood.Product.toElementMap_paired
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product.toElementMap_paired
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -73,4 +73,4 @@ theorem paired_proj (h : ApproximableMap V₂ (prod V₀ V₁)) :
   rw [toElementMap_paired, toElementMap_comp, toElementMap_comp, toElementMap_proj₀,
     toElementMap_proj₁, pair_fst_snd]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

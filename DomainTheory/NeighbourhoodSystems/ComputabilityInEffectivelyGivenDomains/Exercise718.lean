@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise715
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715
 
 @[expose] public section
 
@@ -60,7 +60,7 @@ maximum is needed (the cofinite bound of `reindexG`) is obtained by a `Prop`-lev
 choosing witnesses.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise718
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
@@ -540,4 +540,4 @@ theorem iterSys_isomorphic_iterIter (P : ComputablePresentation V) :
   (iterSys_effectivelyIsomorphic_iterIter P).isomorphic
 
 end Exercise718
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

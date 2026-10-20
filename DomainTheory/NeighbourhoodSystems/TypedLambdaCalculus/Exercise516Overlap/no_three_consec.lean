@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise516ThueMorse
-public import DomainTheory.Neighborhood.Exercise516Overlap.Basic
-public import DomainTheory.Neighborhood.Exercise516Overlap.odd_of_consec_eq
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.odd_of_consec_eq
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 
 
 /-- **No three consecutive equal symbols** (the period-`1` case): `¬ (tm j = tm (j+1) ∧
@@ -29,4 +29,4 @@ theorem no_three_consec (j : ℕ) : ¬ (tm j = tm (j + 1) ∧ tm (j + 1) = tm (j
   rcases hj1 with ⟨b, hb⟩
   omega
 
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

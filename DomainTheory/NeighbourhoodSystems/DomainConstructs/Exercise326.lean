@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise326.Basic
-public import DomainTheory.Neighborhood.Exercise326.cond_toElementMap_mem
-public import DomainTheory.Neighborhood.Exercise326.cond_true
-public import DomainTheory.Neighborhood.Exercise326.cond_false
-public import DomainTheory.Neighborhood.Exercise326.cond_bot
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.cond_toElementMap_mem
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.cond_true
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.cond_false
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.cond_bot
 
 @[expose] public section

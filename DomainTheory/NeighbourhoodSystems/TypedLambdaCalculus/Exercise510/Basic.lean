@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -51,9 +51,9 @@ enters only the `smashCurryEquiv` *proof*, through the genuinely-classical `X = 
 boundary case analysis.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise510
+namespace DomainTheory.NeighbourhoodSystems.Exercise510
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β γ : Type*}
 
@@ -855,4 +855,4 @@ def smashCurryEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β
       obtain ⟨hY, hmm⟩ := hmem p hp
       obtain ⟨W, hWmem, hWrel⟩ := hmm
       exact ⟨hY, W, hWmem, hg W p.2 hWrel⟩
-end DomainTheory.Neighborhood.Exercise510
+end DomainTheory.NeighbourhoodSystems.Exercise510

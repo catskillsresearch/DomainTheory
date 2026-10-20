@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87
-public import DomainTheory.Neighborhood.RationalPrimrec
-public import DomainTheory.Neighborhood.RecursiveCross
-public import DomainTheory.Neighborhood.IntervalPrimrec.Basic
-public import DomainTheory.Neighborhood.IntervalPrimrec.qpNonemptyBop_eq_one_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.qpNonemptyBop_eq_one_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -66,4 +66,4 @@ theorem qpNonemptyChar_eq_one_iff (c : ℕ) :
   refine exists_congr fun e => and_congr_right fun _ => ?_
   rw [unpair_pair_fst, qpNonemptyBop_eq_one_iff]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition613
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Theorem614.Basic
-public import DomainTheory.Neighborhood.Theorem614.gcomp_rho_zero_indep
-public import DomainTheory.Neighborhood.Theorem614.gcomp_rho_succ
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.gcomp_rho_zero_indep
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.gcomp_rho_succ
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe w
 
@@ -85,4 +85,4 @@ theorem gcomp_rho_indep (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.ma
   | succ k ih => rw [gcomp_rho_succ s B g k, gcomp_rho_succ s B g' k, ih]
 
 end Theorem614
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -43,9 +43,9 @@ inherently classical; the construction of `h` uses `Classical.choice` (the `g`-p
 the statement demands.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise424
+namespace DomainTheory.NeighbourhoodSystems.Exercise424
 
-open DomainTheory.Neighborhood.Exercise414 Function
+open DomainTheory.NeighbourhoodSystems.Exercise414 Function
 
 variable {A B : Type*} {f : A → B} {g : B → A}
 
@@ -123,4 +123,4 @@ theorem sbFun_surjective (hg : Injective g) : Surjective (sbFun f g) := by
 /-- **Exercise 4.24 (Scott 1981, PRG-19).** The one-one correspondence as an `Equiv A ≃ B`. -/
 noncomputable def schroeder_bernstein_equiv (hf : Injective f) (hg : Injective g) : A ≃ B :=
   Equiv.ofBijective (sbFun f g) ⟨sbFun_injective hf, sbFun_surjective hg⟩
-end DomainTheory.Neighborhood.Exercise424
+end DomainTheory.NeighbourhoodSystems.Exercise424

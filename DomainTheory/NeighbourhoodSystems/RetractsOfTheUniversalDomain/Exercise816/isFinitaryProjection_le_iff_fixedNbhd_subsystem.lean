@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem86
-public import DomainTheory.Neighborhood.Theorem88
-public import DomainTheory.Neighborhood.Exercise816.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -44,4 +44,4 @@ theorem isFinitaryProjection_le_iff_fixedNbhd_subsystem {a b : ApproximableMap E
     have hback := (finitaryProjectionSubsystemEquiv E).symm.monotone hle
     rwa [OrderIso.symm_apply_apply, OrderIso.symm_apply_apply] at hback
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

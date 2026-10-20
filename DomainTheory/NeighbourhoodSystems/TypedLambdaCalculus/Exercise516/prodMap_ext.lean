@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise419
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise516.Basic
-public import DomainTheory.Neighborhood.Exercise516.memC_eq_shape
-public import DomainTheory.Neighborhood.Exercise516.prod_principal_pair
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.memC_eq_shape
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.prod_principal_pair
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
 
@@ -95,4 +95,4 @@ theorem prodMap_ext {f g : ApproximableMap (prod C C) C}
     prod_principal_pair b₀ σ b₁ τ
   rw [heq]; exact h b₀ σ b₁ τ
 
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

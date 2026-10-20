@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Table55
-public import DomainTheory.Neighborhood.Exercise716.Basic
-public import DomainTheory.Neighborhood.Exercise716.curryComb_rel_recDecidable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.curryComb_rel_recDecidable
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -84,4 +84,4 @@ theorem curryComb_isComputable
       (primrec_funConsChar P₁ P₂ fc1 fc2 hfc1p hfc2p)
   exact ⟨PA, PB, hRec, hRec.re⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

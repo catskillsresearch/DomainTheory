@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 
 @[expose] public section
 
@@ -47,7 +47,7 @@ sized effort to the rest of this file and is left as a documented follow-up; see
 Everything proved here is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -228,4 +228,4 @@ theorem toElementMap_sectionMap (w' : F.Element) :
     have := e.symm.monotone key
     rwa [e.symm_apply_apply] at this
 end HardDirection
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

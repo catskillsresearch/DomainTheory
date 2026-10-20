@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -36,9 +36,9 @@ Deliverables:
   of indices in `x` is bounded — `Nat.find` over a `¬`-predicate); everything else is constructive.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise112
+namespace DomainTheory.NeighbourhoodSystems.Exercise112
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 /-- The final segment (tail) `tail n = {m ∣ n ≤ m}`; the neighbourhood "all integers `≥ n`". -/
 def tail (n : ℕ) : Set ℕ := {m | n ≤ m}
@@ -97,4 +97,4 @@ def top : neighborhoodSystem.Element where
 @[simp] theorem mem_top {X : Set ℕ} : top.mem X ↔ neighborhoodSystem.mem X := Iff.rfl
 
 /-! ### Classification: finite `fin n`, or the limit `top` (classical). -/
-end DomainTheory.Neighborhood.Exercise112
+end DomainTheory.NeighbourhoodSystems.Exercise112

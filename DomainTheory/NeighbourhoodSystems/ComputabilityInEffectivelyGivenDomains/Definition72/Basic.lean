@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
 
 @[expose] public section
 
@@ -54,7 +54,7 @@ Everything here is `⊆ {propext, Quot.sound}` (choice-free): it is built only f
 deciders of Definition 7.1 and the choice-free r.e. layer of `Recursive.lean`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -75,4 +75,4 @@ def IsComputableElement {W : NeighborhoodSystem β} (Q : ComputablePresentation 
   REPred (fun m => y.mem (Q.X m))
 
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

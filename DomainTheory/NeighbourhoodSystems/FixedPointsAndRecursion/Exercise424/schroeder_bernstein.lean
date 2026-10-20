@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise424.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise424.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise424
+namespace DomainTheory.NeighbourhoodSystems.Exercise424
 
-open DomainTheory.Neighborhood.Exercise414 Function
+open DomainTheory.NeighbourhoodSystems.Exercise414 Function
 
 variable {A B : Type*} {f : A → B} {g : B → A}
 
@@ -39,4 +39,4 @@ theorem schroeder_bernstein (hf : Injective f) (hg : Injective g) :
     ∃ h : A → B, Bijective h :=
   ⟨sbFun f g, sbFun_injective hf, sbFun_surjective hg⟩
 
-end DomainTheory.Neighborhood.Exercise424
+end DomainTheory.NeighbourhoodSystems.Exercise424

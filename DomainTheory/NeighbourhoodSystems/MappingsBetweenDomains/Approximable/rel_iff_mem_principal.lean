@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic.Set
 import all Mathlib.Tactic.Set
-public import DomainTheory.Neighborhood.Approximable.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -42,4 +42,4 @@ theorem rel_iff_mem_principal (f : ApproximableMap V₀ V₁) {X : Set α} (hX :
     exact f.mono hZY hXZ subset_rfl hX (f.rel_cod hZY)
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

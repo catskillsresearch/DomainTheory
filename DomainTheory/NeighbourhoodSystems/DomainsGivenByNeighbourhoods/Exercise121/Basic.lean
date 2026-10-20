@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem110
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110
 
 @[expose] public section
 
@@ -32,7 +32,7 @@ Everything is `[propext, Quot.sound]` (the corollaries inherit the constructive 
 Theorem 1.10 / Theorem 1.1c).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -53,4 +53,4 @@ def filterFixedBy (x : V.Element) : V.tokenSystem.Element := V.toToken x
 
 /-! ### Consistency ⟺ non-empty intersection of brackets. -/
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812e
-public import DomainTheory.Neighborhood.SplitV
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.Exercise812eD.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812eD.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -40,4 +40,4 @@ theorem hxSplit812e : SplitSpec' V splitX812e :=
   ComputableBisection.splitFromBisection_isSplitSpec' UComputablePresentation U_isComputableDiff
     B812e V_noMinimal U_isPositive U_noMinimal U_diffClosed (fun j => (VX_nonempty j).ne_empty)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

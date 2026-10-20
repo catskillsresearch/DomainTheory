@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise510.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise510
+namespace DomainTheory.NeighbourhoodSystems.Exercise510
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β γ : Type*}
 
@@ -31,4 +31,4 @@ theorem smash_mem_iff {W : Set (α ⊕ β)} :
     (smash V₀ V₁).mem W ↔
       W = prodNbhd V₀.master V₁.master ∨ SmashProper V₀ V₁ W := Iff.rfl
 
-end DomainTheory.Neighborhood.Exercise510
+end DomainTheory.NeighbourhoodSystems.Exercise510

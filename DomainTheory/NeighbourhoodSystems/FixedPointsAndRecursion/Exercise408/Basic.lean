@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 
 @[expose] public section
 
@@ -35,7 +35,7 @@ corollary inherits `Classical.choice` only through the `Element` extensionality 
 two directed unions.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -48,4 +48,4 @@ def supChain (s : ℕ → V.Element) (hmono : Monotone s) : V.Element :=
   NeighborhoodSystem.iSupDirected s
     (fun i j => ⟨max i j, hmono (le_max_left i j), hmono (le_max_right i j)⟩)
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

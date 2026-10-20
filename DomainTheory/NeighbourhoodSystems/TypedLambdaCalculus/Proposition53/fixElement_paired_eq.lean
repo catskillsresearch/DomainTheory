@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Table55
-public import DomainTheory.Neighborhood.Proposition53.Basic
-public import DomainTheory.Neighborhood.Proposition53.sectionX_apply
-public import DomainTheory.Neighborhood.Proposition53.secFixX_apply
-public import DomainTheory.Neighborhood.Proposition53.secFixX_isFixed
-public import DomainTheory.Neighborhood.Proposition53.outerOp_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.sectionX_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.secFixX_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.secFixX_isFixed
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.outerOp_apply
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -95,4 +95,4 @@ theorem fixElement_paired_eq (τ : ApproximableMap (prod V₀ V₁) V₀)
     exact pair_le_pair_iff.mpr ⟨hxstar_le, hystar_le⟩
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise719
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -93,7 +93,7 @@ helper, and the curried combinator — adds **no further** use of choice; the re
 `Recursive.lean` is choice-free.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -158,4 +158,4 @@ def papply (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
 
 The base predicate "`eval` is recursively enumerable on codes" is Theorem 7.5's `evalMap_isComputable`
 transported to the ternary `eval` relation; we take it as the hypothesis `heval`. -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

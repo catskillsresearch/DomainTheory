@@ -7,22 +7,22 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 import all Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.FreeMonoid.Basic
 import all Mathlib.Algebra.FreeMonoid.Basic
-public import DomainTheory.Neighborhood.Exercise515.Basic
-public import DomainTheory.Neighborhood.Exercise515.smul_assoc
-public import DomainTheory.Neighborhood.Exercise515.mem_star
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.smul_assoc
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.mem_star
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise515
+namespace DomainTheory.NeighbourhoodSystems.Exercise515
 
 open Pointwise
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {S : Type*} [Monoid S]
 
@@ -49,4 +49,4 @@ theorem star_mul_subset_prefixed (z v x : Set S) (hx : z * x ∪ v ⊆ x) : star
   obtain ⟨n, hn⟩ := mem_star.mp ha
   exact hpow n (by rw [Set.mem_mul]; exact ⟨a, hn, t, ht, rfl⟩)
 
-end DomainTheory.Neighborhood.Exercise515
+end DomainTheory.NeighbourhoodSystems.Exercise515

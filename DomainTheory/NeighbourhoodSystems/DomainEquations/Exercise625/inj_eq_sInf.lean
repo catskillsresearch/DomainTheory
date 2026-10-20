@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Exercise625.Basic
-public import DomainTheory.Neighborhood.Exercise625.proj_inj_apply
-public import DomainTheory.Neighborhood.Exercise625.galois
-public import DomainTheory.Neighborhood.Exercise625.upperSet_nonempty
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.proj_inj_apply
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.galois
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.upperSet_nonempty
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Subsystem
 
@@ -42,4 +42,4 @@ theorem inj_eq_sInf (P : ProjectionPair D E) (x : D.Element) :
     rw [mem_upperSet, P.proj_inj_apply x]
 
 end Subsystem.ProjectionPair
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

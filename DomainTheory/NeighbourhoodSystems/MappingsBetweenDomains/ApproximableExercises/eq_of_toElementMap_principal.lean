@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
 public import Mathlib.Data.Set.Image
 import all Mathlib.Data.Set.Image
-public import DomainTheory.Neighborhood.ApproximableExercises.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -42,4 +42,4 @@ theorem eq_of_toElementMap_principal {f g : ApproximableMap V₀ V₁}
     · intro hr; exact absurd (g.rel_dom hr) hX
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

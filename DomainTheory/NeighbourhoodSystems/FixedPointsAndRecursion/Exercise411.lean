@@ -7,12 +7,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise411.Basic
-public import DomainTheory.Neighborhood.Exercise411.iterElem_le_fixElement
-public import DomainTheory.Neighborhood.Exercise411.fixElement_uniform
-public import DomainTheory.Neighborhood.Exercise411.inclMap_toElementMap
-public import DomainTheory.Neighborhood.Exercise411.inclMap_bot
-public import DomainTheory.Neighborhood.Exercise411.inclMap_intertwine
-public import DomainTheory.Neighborhood.Exercise411.fix_unique_of_uniform
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.iterElem_le_fixElement
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.fixElement_uniform
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.inclMap_toElementMap
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.inclMap_bot
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.inclMap_intertwine
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.fix_unique_of_uniform
 
 @[expose] public section

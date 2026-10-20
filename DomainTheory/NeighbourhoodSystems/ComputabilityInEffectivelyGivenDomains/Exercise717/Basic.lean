@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Combinators77
-public import DomainTheory.Neighborhood.Theorem74
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Combinators77
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
 
 @[expose] public section
 
@@ -50,7 +50,7 @@ choice-free `⊆ {propext, Quot.sound}`; only the `IsComputableMap` proofs route
 (set reasoning over the arbitrary carrier `α`, inherited from `incl_computable`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Example61
 
@@ -140,4 +140,4 @@ def pairSharpMap : ApproximableMap (prod (Dsharp D hD) (Dsharp D hD)) (Dsharp D 
       (prod (Dsharp D hD) (Dsharp D hD)).mem V ∧ MemS D W ∧
         ∃ A B, MemS D A ∧ MemS D B ∧ V = prodNbhd A B ∧ embPair A B ⊆ W := Iff.rfl
 end Proposition77
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

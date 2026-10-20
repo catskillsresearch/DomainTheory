@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example62
-public import DomainTheory.Neighborhood.Example44
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Exercise822.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 
@@ -71,4 +71,4 @@ namespace Exercise822
 theorem C_isomorphic_D' : C ≅ᴰ D' := ⟨cdEquiv⟩
 
 end Exercise822
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

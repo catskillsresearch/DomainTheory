@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise215.Basic
-public import DomainTheory.Neighborhood.Exercise215.O_mem_univ
-public import DomainTheory.Neighborhood.Exercise215.botElt_le_topElt
-public import DomainTheory.Neighborhood.Exercise215.botElt_ne_topElt
-public import DomainTheory.Neighborhood.Exercise215.basicOpen_empty_eq_singleton_top
-public import DomainTheory.Neighborhood.Exercise215.not_isOpen_singleton_botElt
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise215.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise215.O_mem_univ
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise215.botElt_le_topElt
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise215.botElt_ne_topElt
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise215.basicOpen_empty_eq_singleton_top
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise215.not_isOpen_singleton_botElt
 
 @[expose] public section

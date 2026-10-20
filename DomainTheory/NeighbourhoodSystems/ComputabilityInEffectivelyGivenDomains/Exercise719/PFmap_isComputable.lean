@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition710
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise719.Basic
-public import DomainTheory.Neighborhood.Exercise719.PFmap_isComputable_Ypd
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719.PFmap_isComputable_Ypd
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -41,4 +41,4 @@ theorem PFmap_isComputable (P : ComputablePresentation V) (Q : ComputablePresent
       (W.PDPresentation Q consW hconsWp hconsWs) (PFmap f) := by
   exact PFmap_isComputable_Ypd P Q hf
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -36,7 +36,7 @@ Note the variance: `X ↦ ↑X` is inclusion-**preserving** (`upSet_subset_iff`)
 `principal`. Everything is `[propext, Quot.sound]`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -156,4 +156,4 @@ def powerIso : V.Element ≃o V.powerSystem.Element where
       obtain ⟨W, hW, rfl⟩ := hS
       exact ⟨W, h W hW, rfl⟩
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

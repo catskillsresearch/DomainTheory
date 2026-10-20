@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise826
-public import DomainTheory.Neighborhood.Exercise821
-public import DomainTheory.Neighborhood.Exercise827.Basic
-public import DomainTheory.Neighborhood.Exercise827.piDApply_toElementMap_eq
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piDApply_toElementMap_eq
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -66,4 +66,4 @@ theorem isRetraction_piD (d : ApproximableMap U U) : IsRetraction (piD d) := by
   exact toElementMap_idem_of_isRetraction
     (isFinitaryProjection_decode_subU (d.toElementMap (subU.toElementMap t))).1.1 _
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88l.Basic
-public import DomainTheory.Neighborhood.Theorem88l.myStep_subset
-public import DomainTheory.Neighborhood.Theorem88l.myFoldl_subset
-public import DomainTheory.Neighborhood.Theorem88l.myFoldl_inter_of_le
-public import DomainTheory.Neighborhood.Theorem88l.D_inter_primrec
-public import DomainTheory.Neighborhood.Theorem88l.D_X_inter_eq
-public import DomainTheory.Neighborhood.Theorem88l.D_X_inter_spec
-public import DomainTheory.Neighborhood.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.myStep_subset
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.myFoldl_subset
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.myFoldl_inter_of_le
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.D_inter_primrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.D_X_inter_eq
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.D_X_inter_spec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
 
 @[expose] public section
 
@@ -68,9 +68,9 @@ headline theorems, `theorem_8_8_a`/`theorem_8_8_b`, audit identically (confirmed
 term merely *stating* something about `ApproximableMap U U`/`_ ◁ U` inherits `U`'s own footprint.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 variable {α : Type*} {V : NeighborhoodSystem α}
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

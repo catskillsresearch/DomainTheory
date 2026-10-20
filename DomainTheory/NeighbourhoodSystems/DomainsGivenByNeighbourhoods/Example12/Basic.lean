@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -24,7 +24,7 @@ its domain elements (Definition 1.6): there are exactly three filters, and exact
 partial element — the bottom filter `{Δ}`.
 -/
 
-namespace DomainTheory.Neighborhood.Example12
+namespace DomainTheory.NeighbourhoodSystems.Example12
 
 /-- Tokens for Example 1.2: `Δ = {0, 1}`. -/
 abbrev Token := Fin 2
@@ -257,4 +257,4 @@ theorem zero_ne_one : zero ≠ (one : Set Token) := by
   rw [h] at h0
   simp [one] at h0
 end neighborhoodSystem
-end DomainTheory.Neighborhood.Example12
+end DomainTheory.NeighbourhoodSystems.Example12

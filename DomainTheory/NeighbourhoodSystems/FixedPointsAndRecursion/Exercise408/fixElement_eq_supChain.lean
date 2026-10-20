@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Exercise408.Basic
-public import DomainTheory.Neighborhood.Exercise408.mem_supChain
-public import DomainTheory.Neighborhood.Exercise408.iterElem_monotone
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.mem_supChain
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.iterElem_monotone
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -36,4 +36,4 @@ theorem fixElement_eq_supChain (f : ApproximableMap V V) :
   · rintro ⟨n, hn⟩; exact ⟨n, (mem_iterElem f n).mp hn⟩
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

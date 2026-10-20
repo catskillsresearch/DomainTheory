@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Data.Set.Finite.Basic
 import all Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Tactic
@@ -35,9 +35,9 @@ Deliverables:
 Constructive (`[propext, Quot.sound]`).
 -/
 
-namespace DomainTheory.Neighborhood.Exercise114
+namespace DomainTheory.NeighbourhoodSystems.Exercise114
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 /-- Membership: `X` is a neighbourhood iff `X = ℕ` (the master `Δ`) or `X` is finite and non-empty. -/
 def mem (X : Set ℕ) : Prop := X = Set.univ ∨ (X.Finite ∧ X.Nonempty)
@@ -73,4 +73,4 @@ def fin {X : Set ℕ} (h : neighborhoodSystem.mem X) : neighborhoodSystem.Elemen
 
 /-- `⊥ = ↑Δ = ↑ℕ`, the least element. -/
 def bot : neighborhoodSystem.Element := neighborhoodSystem.bot
-end DomainTheory.Neighborhood.Exercise114
+end DomainTheory.NeighbourhoodSystems.Exercise114

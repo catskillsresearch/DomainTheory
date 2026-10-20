@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise823
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823
 
 @[expose] public section
 
@@ -104,7 +104,7 @@ Everything **proved** in this file (Claims 1–2) is **choice-free**
 (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
 
@@ -153,4 +153,4 @@ def bOp (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
 
 /-! ## Claim 2 — the simultaneous fixed point genuinely solves the equations, and is initial -/
 end Exercise824
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition613
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Theorem614.Basic
-public import DomainTheory.Neighborhood.Theorem614.transport_heq
-public import DomainTheory.Neighborhood.Theorem614.isoOfEq_conj
-public import DomainTheory.Neighborhood.Theorem614.map_rho_heq
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.transport_heq
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.isoOfEq_conj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.map_rho_heq
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe w
 
@@ -86,4 +86,4 @@ theorem key_rho (s : Setup.{w}) (n : ℕ) :
     (transport_heq (colimObj_eq s) (Tmap_rho s n)).symm
 
 end Theorem614
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407
-public import DomainTheory.Neighborhood.Exercise410
-public import DomainTheory.Neighborhood.Exercise411.Basic
-public import DomainTheory.Neighborhood.Exercise411.inclMap_toElementMap
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.inclMap_toElementMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -34,4 +34,4 @@ theorem inclMap_intertwine (f : ApproximableMap V V) {a : V.Element} (ha : f.toE
   rw [inclMap_toElementMap, inclMap_toElementMap, relMap_toElementMap_embed]
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

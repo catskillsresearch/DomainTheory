@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 
 @[expose] public section
 
@@ -34,7 +34,7 @@ The `n`-fold product `𝒟₀ × ⋯ × 𝒟_{n-1}` over `⋃_{i<n} 1ⁱ0 Δᵢ`
 Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -52,4 +52,4 @@ def diag : ApproximableMap V (prod V V) := paired (idMap V) (idMap V)
 @[simp] theorem toElementMap_diag (x : V.Element) :
     (diag V).toElementMap x = pair x x := by
   rw [diag, toElementMap_paired, toElementMap_idMap]
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

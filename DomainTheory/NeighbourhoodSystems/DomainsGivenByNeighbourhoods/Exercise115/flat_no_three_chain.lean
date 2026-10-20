@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise115.Basic
-public import DomainTheory.Neighborhood.Exercise115.flat_classify
-public import DomainTheory.Neighborhood.Exercise115.flat_atom_maximal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.flat_classify
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.flat_atom_maximal
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise115
+namespace DomainTheory.NeighbourhoodSystems.Exercise115
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -35,4 +35,4 @@ theorem flat_no_three_chain : ¬ ∃ a b c : flat.Element, a < b ∧ b < c := by
   · exact absurd (le_antisymm hab.le (flat.bot_le a)) (ne_of_lt hab)
   · exact (ne_of_lt hbc) (flat_atom_maximal n c hbc.le).symm
 
-end DomainTheory.Neighborhood.Exercise115
+end DomainTheory.NeighbourhoodSystems.Exercise115

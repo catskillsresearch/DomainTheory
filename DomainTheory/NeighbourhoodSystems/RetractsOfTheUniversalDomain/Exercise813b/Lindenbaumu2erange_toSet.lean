@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise813a
-public import DomainTheory.Neighborhood.Exercise813b.Basic
-public import DomainTheory.Neighborhood.Exercise813b.generatedBy_iff_exists_evalSet
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.generatedBy_iff_exists_evalSet
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 
 
@@ -49,4 +49,4 @@ theorem Lindenbaum.range_toSet : Set.range Lindenbaum.toSet = {X | GeneratedBy g
   · rintro ⟨φ, rfl⟩
     exact ⟨⟦φ⟧, rfl⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

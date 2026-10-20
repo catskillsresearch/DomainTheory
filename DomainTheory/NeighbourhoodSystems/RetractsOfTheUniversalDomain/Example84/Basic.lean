@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Product
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 
 @[expose] public section
 
@@ -55,7 +55,7 @@ two-element system `O = {{0},{0,1}}` arises from a retraction on `D`. Scott's co
   in the axiom audit recorded in `HANDOFF.md`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
@@ -415,4 +415,4 @@ def fixIso (hu : u ≠ D.bot) : O.Element ≃o {y : D.Element // (a u).toElement
       have := toElementMap_mono check h
       rwa [check_toElementMap_fixOfO u hu, check_toElementMap_fixOfO u hu] at this
     · exact fixOfO_mono u
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

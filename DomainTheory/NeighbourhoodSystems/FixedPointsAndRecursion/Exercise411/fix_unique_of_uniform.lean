@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407
-public import DomainTheory.Neighborhood.Exercise410
-public import DomainTheory.Neighborhood.Exercise411.Basic
-public import DomainTheory.Neighborhood.Exercise411.inclMap_toElementMap
-public import DomainTheory.Neighborhood.Exercise411.inclMap_bot
-public import DomainTheory.Neighborhood.Exercise411.inclMap_intertwine
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.inclMap_toElementMap
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.inclMap_bot
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.inclMap_intertwine
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -57,4 +57,4 @@ theorem fix_unique_of_uniform
   rw [huniq, inclMap_toElementMap, embed_restrict] at huse
   exact huse.symm
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

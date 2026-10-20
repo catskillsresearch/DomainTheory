@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Exercise625.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Subsystem
 
@@ -28,4 +28,4 @@ theorem inj_proj_apply_le (P : ProjectionPair D E) (y : E.Element) :
   rwa [toElementMap_comp, toElementMap_idMap] at h
 
 end Subsystem.ProjectionPair
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

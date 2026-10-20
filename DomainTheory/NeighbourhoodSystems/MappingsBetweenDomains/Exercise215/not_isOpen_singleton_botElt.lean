@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise213
-public import DomainTheory.Neighborhood.Exercise215.Basic
-public import DomainTheory.Neighborhood.Exercise215.botElt_ne_topElt
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise215.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise215.botElt_ne_topElt
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise215
+namespace DomainTheory.NeighbourhoodSystems.Exercise215
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -44,4 +44,4 @@ theorem not_isOpen_singleton_botElt : ¬ IsOpen ({botElt} : Set O.Element) := by
     hsub (show topElt ∈ O.basicOpen Set.univ from (O_master ▸ topElt.master_mem))
   exact botElt_ne_topElt (Set.mem_singleton_iff.mp htop).symm
 
-end DomainTheory.Neighborhood.Exercise215
+end DomainTheory.NeighbourhoodSystems.Exercise215

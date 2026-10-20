@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Proposition810.Basic
-public import DomainTheory.Neighborhood.Proposition810.toElementMap_bot_eq_bot_of_comp_eq_idMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_bot_eq_bot_of_comp_eq_idMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -30,4 +30,4 @@ theorem jPlus_bot_eq_bot :
     jPlus.toElementMap U.bot = (sum U U U_mem_nonempty U_mem_nonempty).bot :=
   toElementMap_bot_eq_bot_of_comp_eq_idMap jPlus_comp_iPlus
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

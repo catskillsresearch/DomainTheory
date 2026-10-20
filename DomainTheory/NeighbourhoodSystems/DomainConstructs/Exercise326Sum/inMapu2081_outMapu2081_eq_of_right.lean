@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise326
-public import DomainTheory.Neighborhood.Exercise319Sum
-public import DomainTheory.Neighborhood.Exercise326Sum.Basic
-public import DomainTheory.Neighborhood.Exercise326Sum.not_sum_mem_empty
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.not_sum_mem_empty
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise326
+namespace DomainTheory.NeighbourhoodSystems.Exercise326
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
@@ -67,4 +67,4 @@ theorem inMap₁_outMap₁_eq_of_right {x : (sum V₀ V₁ h₀ h₁).Element}
     · exact ⟨Y', ⟨inj₁ Y', hxZ, Or.inr (Or.inr ⟨Y', hY', rfl⟩), hY', (rightPart_inj₁ V₁ Y').subset⟩,
         hY', Or.inr (Or.inr ⟨Y', hY', rfl⟩), subset_rfl⟩
 
-end DomainTheory.Neighborhood.Exercise326
+end DomainTheory.NeighbourhoodSystems.Exercise326

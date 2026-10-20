@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise621
-public import DomainTheory.Neighborhood.Exercise626.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise626.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
-open DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.Exercise510
 
 namespace Exercise619
 
@@ -46,4 +46,4 @@ theorem liftBot_le (z : (liftTok D hD).Element) : liftBot D hD ≤ z := by
   rintro W rfl; exact z.master_mem
 
 end Exercise619
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

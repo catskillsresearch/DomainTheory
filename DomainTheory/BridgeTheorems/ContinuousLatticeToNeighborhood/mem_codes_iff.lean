@@ -10,7 +10,7 @@ module
 public import Mathlib.Order.Hom.Basic
 import all Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.WayBelow
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Basic
 
 @[expose] public section
@@ -19,7 +19,7 @@ public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Basic
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.ContinuousLattice
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 open scoped DomainTheory.ContinuousLattice
 
 namespace ContinuousLatticeToNeighborhood

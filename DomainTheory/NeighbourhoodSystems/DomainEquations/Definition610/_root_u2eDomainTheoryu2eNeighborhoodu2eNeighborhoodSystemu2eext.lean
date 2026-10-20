@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
-public import DomainTheory.Neighborhood.Definition610.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 variable {α : Type*}
 
@@ -23,7 +23,7 @@ namespace Subsystem
 
 /-- Two neighbourhood systems with the same `mem` and the same `master` are equal (the remaining
 fields of `NeighborhoodSystem` are `Prop`s). -/
-theorem _root_.DomainTheory.Neighborhood.NeighborhoodSystem.ext {D E : NeighborhoodSystem α}
+theorem _root_.DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.ext {D E : NeighborhoodSystem α}
     (hmem : ∀ X, D.mem X ↔ E.mem X) (hmaster : D.master = E.master) : D = E := by
   rcases D with ⟨Dmem, Dmaster, _, _, _⟩
   rcases E with ⟨Emem, Emaster, _, _, _⟩
@@ -33,4 +33,4 @@ theorem _root_.DomainTheory.Neighborhood.NeighborhoodSystem.ext {D E : Neighborh
   rfl
 
 end Subsystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

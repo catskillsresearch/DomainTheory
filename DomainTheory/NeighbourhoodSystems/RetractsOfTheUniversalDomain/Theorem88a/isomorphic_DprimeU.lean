@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88.Basic
-public import DomainTheory.Neighborhood.Theorem88.splitChoice_isSplitSpec
-public import DomainTheory.Neighborhood.Definition610
-public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.splitChoice_isSplitSpec
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
 public import Mathlib.Basic.Countable.Defs
 import all Mathlib.Basic.Countable.Defs
-public import DomainTheory.Neighborhood.Theorem88a.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -42,4 +42,4 @@ variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
 theorem isomorphic_DprimeU : D ≅ᴰ DprimeU D e hcover he0 := ⟨domainIso D e hcover he0⟩
 
 end Iso
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

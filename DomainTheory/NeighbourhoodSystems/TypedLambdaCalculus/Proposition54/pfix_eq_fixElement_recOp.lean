@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Proposition54.Basic
-public import DomainTheory.Neighborhood.Proposition54.sectionu2082_apply
-public import DomainTheory.Neighborhood.Proposition54.pfix_apply
-public import DomainTheory.Neighborhood.Proposition54.recOp_apply
-public import DomainTheory.Neighborhood.Proposition54.pfix_isFixed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.sectionu2082_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.pfix_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.recOp_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.pfix_isFixed
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -78,4 +78,4 @@ theorem pfix_eq_fixElement_recOp (τ : ApproximableMap (prod V V) V) :
     exact this
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

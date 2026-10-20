@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem110.Basic
-public import DomainTheory.Neighborhood.Theorem110.bracket_inter_nonempty_iff
-public import DomainTheory.Neighborhood.Theorem110.isomorphic_tokenSystem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110.bracket_inter_nonempty_iff
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110.isomorphic_tokenSystem
 
 @[expose] public section

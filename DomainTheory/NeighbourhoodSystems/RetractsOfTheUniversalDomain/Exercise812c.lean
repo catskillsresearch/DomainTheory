@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812c.Basic
-public import DomainTheory.Neighborhood.Exercise812c.U_diff_mem
-public import DomainTheory.Neighborhood.Exercise812c.testBit_xor_and_self
-public import DomainTheory.Neighborhood.Exercise812c.levelSet_diff
-public import DomainTheory.Neighborhood.Exercise812c.V_diff_mem
-public import DomainTheory.Neighborhood.Exercise812c.U_noMinimal
-public import DomainTheory.Neighborhood.Exercise812c.V_mem_nonempty
-public import DomainTheory.Neighborhood.Exercise812c.V_noMinimal
-public import DomainTheory.Neighborhood.Exercise812c.U_diffClosed
-public import DomainTheory.Neighborhood.Exercise812c.V_diffClosed
-public import DomainTheory.Neighborhood.Exercise812c.U_isPositive
-public import DomainTheory.Neighborhood.Exercise812c.V_isPositive
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.U_diff_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.testBit_xor_and_self
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.levelSet_diff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.V_diff_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.U_noMinimal
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.V_mem_nonempty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.V_noMinimal
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.U_diffClosed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.V_diffClosed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.U_isPositive
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.V_isPositive
 
 @[expose] public section

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 
 @[expose] public section
 
@@ -47,7 +47,7 @@ All combinators are **data**; the genuinely first-order ones (`P₀`, `P₁`, `p
 `ofIso`/`fixMap` API.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -180,4 +180,4 @@ def funpairC (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂
 /-- **Table 5.5 (Scott 1981, PRG-19).** `fix = λf.!x.f(x)`, the least fixed-point operator
 `(𝒟 → 𝒟) → 𝒟` (Theorem 4.2's `fixMap`). -/
 def fixC (V : NeighborhoodSystem α) : ApproximableMap (funSpace V V) V := fixMap V
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

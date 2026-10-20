@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Order.Zorn
 import all Mathlib.Order.Zorn
 public import Mathlib.Tactic
@@ -37,7 +37,7 @@ reversal. This is the explicitly **classical** exercise: `exists_total_ge` legit
 `Classical.choice` through `zorn_le_nonempty_Ici₀`. The `chainUnion` *construction* is choice-free
 (`[propext, Quot.sound]`). -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -60,4 +60,4 @@ def chainUnion (C : Set V.Element) (hne : C.Nonempty) (hchain : IsChain (· ≤ 
     rintro X Y ⟨x, hxC, hxX⟩ hY hXY
     exact ⟨x, hxC, x.up_mem hxX hY hXY⟩
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

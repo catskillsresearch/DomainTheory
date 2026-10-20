@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Exercise625.Basic
-public import DomainTheory.Neighborhood.Exercise625.proj_inj_apply
-public import DomainTheory.Neighborhood.Exercise625.inj_proj_apply_le
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.proj_inj_apply
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.inj_proj_apply_le
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Subsystem
 
@@ -38,4 +38,4 @@ theorem galois (P : ProjectionPair D E) (x : D.Element) (y : E.Element) :
     exact (P.inj.toElementMap_mono hxy).trans (P.inj_proj_apply_le y)
 
 end Subsystem.ProjectionPair
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

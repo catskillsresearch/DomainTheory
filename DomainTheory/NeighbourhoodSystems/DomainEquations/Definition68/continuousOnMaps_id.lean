@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition63
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Definition68.Basic
-public import DomainTheory.Neighborhood.Definition68.toStrictMap_toStrictFilter
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.toStrictMap_toStrictFilter
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe u
 
@@ -33,4 +33,4 @@ theorem continuousOnMaps_id : ContinuousOnMaps (idEndofunctor DomainObj) := by
   show (toStrictMap ((idMap (strictFun D.sys E.sys)).toElementMap (toStrictFilter f))).1 = f.1
   rw [toElementMap_idMap, toStrictMap_toStrictFilter]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

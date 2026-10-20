@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.SplitU.Basic
-public import DomainTheory.Neighborhood.SplitU.decodeRatPair_clipLtCode
-public import DomainTheory.Neighborhood.SplitU.decodeQPairList_singletonCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.decodeRatPair_clipLtCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.decodeQPairList_singletonCode
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -42,4 +42,4 @@ theorem mem_decodeQPairList_clipLtListCode (m c : ℕ) (p : ℚ × ℚ) :
     exact ⟨y, hy, by
       rw [decodeQPairList_singletonCode, List.mem_singleton, decodeRatPair_clipLtCode]; exact hp⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

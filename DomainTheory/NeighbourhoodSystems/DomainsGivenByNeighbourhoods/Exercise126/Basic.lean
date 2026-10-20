@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.RingTheory.Ideal.Span
 import all Mathlib.RingTheory.Ideal.Span
 public import Mathlib.Tactic
@@ -40,7 +40,7 @@ This file formalizes (`Δ = Finset A`, tokens are finite subsets):
 Constructive (`[propext, Quot.sound]`): the round trips are equational, the only inputs being
 mathlib's `Ideal.span` API. -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Ring
 
@@ -226,4 +226,4 @@ def ringIso : (ringSystem (A := A)).Element ≃o Ideal A where
     · intro h a ha
       exact h (IFamily {a}) ha
 end Ring
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

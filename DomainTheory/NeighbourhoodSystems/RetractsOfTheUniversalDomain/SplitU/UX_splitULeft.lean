@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.SplitU.Basic
-public import DomainTheory.Neighborhood.SplitU.presentedIntervals_map_qpClipLt
-public import DomainTheory.Neighborhood.SplitU.presentedIntervals_decodeQPairList_clipLtListCode
-public import DomainTheory.Neighborhood.SplitU.mem_decodeQPairList_firstElemCode
-public import DomainTheory.Neighborhood.SplitU.splitU_p0_lt
-public import DomainTheory.Neighborhood.SplitU.splitU_mid_gt
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.presentedIntervals_map_qpClipLt
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.presentedIntervals_decodeQPairList_clipLtListCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.mem_decodeQPairList_firstElemCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.splitU_p0_lt
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.splitU_mid_gt
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -55,4 +55,4 @@ theorem UX_splitULeft (n : ℕ) :
   rw [presentedIntervals_decodeQPairList_clipLtListCode]
   rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812d
-public import DomainTheory.Neighborhood.Exercise812e.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -89,4 +89,4 @@ theorem splitFromBisection_isSplitSpec' (hpos : V.IsPositive) (hnomin : V.NoMini
     exact splitChoice'_isSplitSpec W hWnomin hAB hBW Xn
 
 end ComputableBisection
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

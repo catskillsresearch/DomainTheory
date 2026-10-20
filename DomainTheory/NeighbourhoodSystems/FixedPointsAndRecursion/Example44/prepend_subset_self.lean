@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Example44.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example44
+namespace DomainTheory.NeighbourhoodSystems.Example44
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
 
 
 
@@ -40,4 +40,4 @@ open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB
 refines. (Used only via `prepend_mono`; kept implicit.) -/
 theorem prepend_subset_self : True := trivial
 
-end DomainTheory.Neighborhood.Example44
+end DomainTheory.NeighbourhoodSystems.Example44

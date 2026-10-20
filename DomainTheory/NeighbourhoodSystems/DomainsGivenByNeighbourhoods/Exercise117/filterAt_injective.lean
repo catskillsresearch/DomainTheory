@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Basic.Real.Basic
 import all Mathlib.Basic.Real.Basic
 public import Mathlib.Data.Rat.Cast.Order
@@ -16,12 +16,12 @@ public import Mathlib.Algebra.Order.Archimedean.Real.Basic
 import all Mathlib.Algebra.Order.Archimedean.Real.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise117.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise117.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace RatInterval
 
@@ -55,4 +55,4 @@ theorem filterAt_injective {s t : ℝ} (h : filterAt s = filterAt t) : s = t := 
     exact absurd hsmem.2.1 (not_lt.mpr ha1.le)
 
 end RatInterval
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

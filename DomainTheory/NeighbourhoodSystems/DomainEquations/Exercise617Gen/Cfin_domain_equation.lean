@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise617
-public import DomainTheory.Neighborhood.Exercise617Gen.Basic
-public import DomainTheory.Neighborhood.Exercise617Gen.Cn_domain_equation
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.Cn_domain_equation
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise617Gen
+namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
 
 set_option linter.unusedSectionVars false
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 variable {A : Type} [DecidableEq A]
 
@@ -78,4 +78,4 @@ variable {A : Type} [DecidableEq A]
 theorem Cfin_domain_equation (n : ℕ) : Cn (Fin (n + 1)) ≅ᴰ CCn (Fin (n + 1)) :=
   Cn_domain_equation (Fin (n + 1))
 
-end DomainTheory.Neighborhood.Exercise617Gen
+end DomainTheory.NeighbourhoodSystems.Exercise617Gen

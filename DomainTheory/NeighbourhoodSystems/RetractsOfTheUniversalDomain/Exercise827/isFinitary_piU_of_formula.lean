@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise826
-public import DomainTheory.Neighborhood.Exercise821
-public import DomainTheory.Neighborhood.Exercise827.Basic
-public import DomainTheory.Neighborhood.Exercise827.isFinitary_piU_of_isFinitary_piD
-public import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piD_of_formula
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.isFinitary_piU_of_isFinitary_piD
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.isFinitaryProjection_piD_of_formula
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -66,4 +66,4 @@ theorem isFinitary_piU_of_formula {d : ApproximableMap U U}
     IsFinitary (piU d) :=
   isFinitary_piU_of_isFinitary_piD (isFinitaryProjection_piD_of_formula d hii).2
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

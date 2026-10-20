@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.SplitU.Basic
-public import DomainTheory.Neighborhood.SplitU.primrec_clipGeCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.primrec_clipGeCode
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -32,4 +32,4 @@ theorem primrec_clipGeListCode : Nat.Primrec (fun t : ℕ => clipGeListCode t.un
     Nat.Primrec.succ.comp (primrec_clipGeCode.pair (Nat.Primrec.const 0))
   exact (primrec_flatMapCode hg).of_eq fun _ => rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

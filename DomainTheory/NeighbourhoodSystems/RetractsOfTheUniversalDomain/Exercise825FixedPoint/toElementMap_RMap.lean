@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Table55
-public import DomainTheory.Neighborhood.Exercise823
-public import DomainTheory.Neighborhood.Exercise715
-public import DomainTheory.Neighborhood.Exercise825Pow
-public import DomainTheory.Neighborhood.Exercise825Embed
-public import DomainTheory.Neighborhood.Exercise825Closing
-public import DomainTheory.Neighborhood.Exercise820
-public import DomainTheory.Neighborhood.Exercise825FixedPoint.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Pow
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -41,4 +41,4 @@ theorem toElementMap_RMap (c : ApproximableMap U U) (ψ φ : (funSpace U U).Elem
   simp only [RMap, toElementMap_comp, toElementMap_paired, toElementMap_proj₀, toElementMap_proj₁,
     fst_pair, snd_pair, evalMap_apply]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

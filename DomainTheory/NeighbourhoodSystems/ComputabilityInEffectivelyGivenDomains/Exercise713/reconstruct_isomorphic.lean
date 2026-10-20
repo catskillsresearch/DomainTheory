@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.Exercise713.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise713
+namespace DomainTheory.NeighbourhoodSystems.Exercise713
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -38,4 +38,4 @@ an effectively given `V` via its `INCL` relation is domain-isomorphic to `V`. -/
 theorem reconstruct_isomorphic (P : ComputablePresentation V) : reconstruct P ≅ᴰ V :=
   ⟨(reconIso P).symm⟩
 
-end DomainTheory.Neighborhood.Exercise713
+end DomainTheory.NeighbourhoodSystems.Exercise713

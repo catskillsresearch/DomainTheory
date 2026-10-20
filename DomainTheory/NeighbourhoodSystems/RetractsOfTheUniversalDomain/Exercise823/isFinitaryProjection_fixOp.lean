@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem86
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.Exercise816
-public import DomainTheory.Neighborhood.Exercise823.Basic
-public import DomainTheory.Neighborhood.Exercise823.toApproxMap_bot_eq_constMap
-public import DomainTheory.Neighborhood.Exercise823.isFinitaryProjection_constMap_bot
-public import DomainTheory.Neighborhood.Exercise823.tOp_toApproxMap
-public import DomainTheory.Neighborhood.Exercise823.iterElem_succu27
-public import DomainTheory.Neighborhood.Exercise823.iterElem_zerou27
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.toApproxMap_bot_eq_constMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.isFinitaryProjection_constMap_bot
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.tOp_toApproxMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.iterElem_succu27
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.iterElem_zerou27
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6
 
@@ -81,4 +81,4 @@ theorem isFinitaryProjection_fixOp (t : ApproximableMap (funSpace E E) (funSpace
   rw [← toApproxMap_subFilter, hkey]
 
 end Exercise823
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

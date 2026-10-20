@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87
-public import DomainTheory.Neighborhood.Theorem85
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
 public import Mathlib.Data.Nat.BitIndices
 import all Mathlib.Data.Nat.BitIndices
 public import Mathlib.Data.Nat.Bitwise
@@ -106,7 +106,7 @@ API — the exact same phenomenon `Definition87.lean` documents for `ℚ`'s orde
 `Rat.le_refl` reports this footprint) — not a choice made in this file.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -190,4 +190,4 @@ def V : NeighborhoodSystem ℕ where
 /-! ### `V` has no minimal neighbourhoods -/
 
 /-! ### Faithfulness: `V.mem` literally matches Scott's "finite unions of `2^k ℕ + ℓ`" -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

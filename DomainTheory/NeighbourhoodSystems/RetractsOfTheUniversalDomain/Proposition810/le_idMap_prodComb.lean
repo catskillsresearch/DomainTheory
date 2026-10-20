@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Proposition810.Basic
-public import DomainTheory.Neighborhood.Proposition810.toElementMap_le_of_comp_le_idMap
-public import DomainTheory.Neighborhood.Proposition810.toElementMap_le_self_of_le_idMap
-public import DomainTheory.Neighborhood.Proposition810.toElementMap_prodComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_le_of_comp_le_idMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_le_self_of_le_idMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_prodComb
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -43,4 +43,4 @@ theorem le_idMap_prodComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb :
       ≤ iTimes.toElementMap (jTimes.toElementMap x) := iTimes.toElementMap_mono hpair
     _ ≤ x := toElementMap_le_of_comp_le_idMap iTimes_comp_jTimes_le x
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

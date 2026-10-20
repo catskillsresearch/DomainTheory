@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Exercise818.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise818.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -31,4 +31,4 @@ theorem exercise_8_18 {a b : ApproximableMap U U} (ha : IsProjection a) (hb : Is
           IsFinitaryProjection (arrowComb a b)) :=
   ⟨isProjection_combinators ha hb, fun hfa hfb => finitaryProjection_combinators hfa hfb⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

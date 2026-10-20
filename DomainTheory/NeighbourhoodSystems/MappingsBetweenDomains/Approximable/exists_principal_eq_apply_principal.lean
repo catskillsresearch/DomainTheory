@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic.Set
 import all Mathlib.Tactic.Set
-public import DomainTheory.Neighborhood.Approximable.Basic
-public import DomainTheory.Neighborhood.Approximable.le_sSupDirected
-public import DomainTheory.Neighborhood.Approximable.sSupDirected_le
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable.le_sSupDirected
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable.sSupDirected_le
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -106,4 +106,4 @@ theorem exists_principal_eq_apply_principal (e : V₀.Element ≃o V₁.Element)
   exact le_antisymm hw_le_prinY (hprin_le_w hY hYw)
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

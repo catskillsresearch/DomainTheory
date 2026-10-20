@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 
 @[expose] public section
 
@@ -30,7 +30,7 @@ corresponding fact about cartesian products of *ordered sets*: mathlib's `OrderI
 Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -140,4 +140,4 @@ def unitProdD (V₀ : NeighborhoodSystem α) :
 def prodCongrD (e₀ : V₀.Element ≃o V₀'.Element) (e₁ : V₁.Element ≃o V₁'.Element) :
     (prod V₀ V₁).Element ≃o (prod V₀' V₁').Element :=
   (prodEquiv V₀ V₁).trans ((prodCongrOrderIso e₀ e₁).trans (prodEquiv V₀' V₁').symm)
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

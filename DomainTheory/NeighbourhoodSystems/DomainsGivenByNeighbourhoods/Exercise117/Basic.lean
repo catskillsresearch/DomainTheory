@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Basic.Real.Basic
 import all Mathlib.Basic.Real.Basic
 public import Mathlib.Data.Rat.Cast.Order
@@ -40,7 +40,7 @@ The constructions are `[propext, Quot.sound]`; injectivity uses `exists_rat_btwn
 classical).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace RatInterval
 
@@ -107,4 +107,4 @@ def filterAt (t : ℝ) : ratIntervalSystem.Element where
 @[simp] theorem mem_filterAt {t : ℝ} {X : Set ℝ} :
     (filterAt t).mem X ↔ ratIntervalMem X ∧ t ∈ X := Iff.rfl
 end RatInterval
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

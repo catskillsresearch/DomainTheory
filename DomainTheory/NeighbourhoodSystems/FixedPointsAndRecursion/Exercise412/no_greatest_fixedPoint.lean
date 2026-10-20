@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.Example12
-public import DomainTheory.Neighborhood.Exercise412.Basic
-public import DomainTheory.Neighborhood.Exercise412.elemOne_not_le_elemZero
-public import DomainTheory.Neighborhood.Exercise412.elemZero_not_le_elemOne
-public import DomainTheory.Neighborhood.Exercise412.idMap_fixed
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise412.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise412.elemOne_not_le_elemZero
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise412.elemZero_not_le_elemOne
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise412.idMap_fixed
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise412
+namespace DomainTheory.NeighbourhoodSystems.Exercise412
 
 open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
 
@@ -39,4 +39,4 @@ theorem no_greatest_fixedPoint :
   · exact elemOne_not_le_elemZero h1
   · exact elemZero_not_le_elemOne h0
 
-end DomainTheory.Neighborhood.Exercise412
+end DomainTheory.NeighbourhoodSystems.Exercise412

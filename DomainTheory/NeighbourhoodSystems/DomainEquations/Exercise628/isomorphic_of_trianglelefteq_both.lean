@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Exercise628.Basic
-public import DomainTheory.Neighborhood.Exercise628.Triangleleftequ2eelementEmbedding
-public import DomainTheory.Neighborhood.Exercise628.orderIso_of_embeddings
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.Triangleleftequ2eelementEmbedding
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.orderIso_of_embeddings
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -35,4 +35,4 @@ theorem isomorphic_of_trianglelefteq_both [Finite D.Element] [Finite E.Element]
   obtain ⟨g⟩ := h₂.elementEmbedding
   exact orderIso_of_embeddings f g
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

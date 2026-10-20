@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
 public import Mathlib.Computability.DFA
 import all Mathlib.Computability.DFA
 public import Mathlib.Data.Fintype.Option
 import all Mathlib.Data.Fintype.Option
-public import DomainTheory.Neighborhood.Exercise722DFA.Basic
-public import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_evalFrom
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.singleDFA_evalFrom
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -50,4 +50,4 @@ theorem singleDFA_accepts (σ : List Bool) : (singleDFA σ).accepts = {σ} := by
     · intro hw; subst hw; exact absurd List.prefix_rfl h
 
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

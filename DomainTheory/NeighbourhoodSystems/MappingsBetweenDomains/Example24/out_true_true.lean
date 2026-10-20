@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Example24.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example24
+namespace DomainTheory.NeighbourhoodSystems.Example24
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 
@@ -28,4 +28,4 @@ open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
 /-- Cons-form restatement of `out_append_trueTrue`, for peeling one token at a time in `key`. -/
 theorem out_true_true (t : Str) : out (true :: true :: t) = out (true :: t) := rfl
 
-end DomainTheory.Neighborhood.Example24
+end DomainTheory.NeighbourhoodSystems.Example24

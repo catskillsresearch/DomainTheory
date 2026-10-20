@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Exercise319
-public import DomainTheory.Neighborhood.Exercise319Sum
-public import DomainTheory.Neighborhood.Theorem74.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -35,4 +35,4 @@ theorem prod_isEffectivelyGiven (h₀ : V₀.IsEffectivelyGiven) (h₁ : V₁.Is
   obtain ⟨P₀⟩ := h₀; obtain ⟨P₁⟩ := h₁
   exact ⟨prodPresentation P₀ P₁⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

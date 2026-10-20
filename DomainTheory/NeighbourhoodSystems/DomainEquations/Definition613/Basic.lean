@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition68
-public import DomainTheory.Neighborhood.Proposition611
-public import DomainTheory.Neighborhood.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
 
 @[expose] public section
 
@@ -59,7 +59,7 @@ The identity functor is monotone and continuous on domains (`monotoneOnDomains_i
 (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -117,4 +117,4 @@ def ContinuousOnDomains (T : Endofunctor DomainObj.{w}) : Prop :=
       {U : NeighborhoodSystem α} (hUE : U ◁ E)
       (_hU : ∀ X, U.mem X ↔ ∃ D ∈ ℱ, D.mem X),
       targetFam T hmono hUE = ⋃ D, ⋃ hD : D ∈ ℱ, targetFam T hmono (hℱ hD)
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

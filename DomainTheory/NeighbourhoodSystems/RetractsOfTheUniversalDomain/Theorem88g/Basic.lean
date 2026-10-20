@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88f.Basic
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_inj_isComputableMap
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_proj_isComputableMap
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_projectionPair_isComputable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_inj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_proj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_projectionPair_isComputable
 
 @[expose] public section
 
@@ -31,7 +31,7 @@ statement (`Theorem88a.lean`) with `D'` replaced by a presented `D'` and the pro
 additionally asserted computable.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

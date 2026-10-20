@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition710
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -41,7 +41,7 @@ equivalently `PD.mem W ∧ ⋃_{i<n} ↓X_i ⊆ W` for some choice of representa
 `PDsingleton x` is the unary join; on principal filters, `PDsingleton (↑X) = ↑(↓X)`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -108,4 +108,4 @@ def PDsingleton (x : V.Element) : V.PowerDomain.Element := V.PDfinJoin 1 (fun (_
   · rintro ⟨X, hX, hPD, hsub⟩
     refine ⟨fun _ => X, fun _ => hX, hPD, fun _ => hsub⟩
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

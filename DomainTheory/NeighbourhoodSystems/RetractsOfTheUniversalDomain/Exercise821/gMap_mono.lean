@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise717Part2
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Proposition810
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Exercise821.Basic
-public import DomainTheory.Neighborhood.Exercise821.GRelu2emono_uv
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821.GRelu2emono_uv
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
 
@@ -33,4 +33,4 @@ theorem gMap_mono (hD : ∀ X, D.mem X → X.Nonempty)
   intro W Z h
   exact GRel.mono_uv hD hu hv h
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

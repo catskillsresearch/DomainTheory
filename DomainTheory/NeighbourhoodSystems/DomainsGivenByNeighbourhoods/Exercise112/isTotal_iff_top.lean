@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise112.Basic
-public import DomainTheory.Neighborhood.Exercise112.le_top
-public import DomainTheory.Neighborhood.Exercise112.top_isTotal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.le_top
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.top_isTotal
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise112
+namespace DomainTheory.NeighbourhoodSystems.Exercise112
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -43,4 +43,4 @@ theorem isTotal_iff_top (x : neighborhoodSystem.Element) :
     exact le_antisymm (le_top x) (h top (le_top x))
   · rintro rfl; exact top_isTotal
 
-end DomainTheory.Neighborhood.Exercise112
+end DomainTheory.NeighbourhoodSystems.Exercise112

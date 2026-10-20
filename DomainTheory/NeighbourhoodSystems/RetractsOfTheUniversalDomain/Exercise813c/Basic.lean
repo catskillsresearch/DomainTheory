@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise813b
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b
 public import Mathlib.Topology.Constructions
 import all Mathlib.Topology.Constructions
 public import Mathlib.Topology.Compactness.Compact
@@ -50,7 +50,7 @@ exactly unions of `GeneratedBy genPoint` sets — the "topological basis" fact `
 row anticipated, now free from the clopen identification.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 /-! ### `genPoint`: the coordinate-projection clopens of Cantor space -/
 
@@ -341,4 +341,4 @@ def elementOfOpen {O : Set (ℕ → Bool)} (hO : O ≠ Set.univ) : V.Element whe
       up_mem_dualFilter (fun Y hY Z hZg hZY => down_mem_idealOf hY hZg hZY) hY₁
         hC₂.generatedBy_right ((hC₁.subset_iff hC₂).mp hX₁X₂),
       hC₂⟩
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

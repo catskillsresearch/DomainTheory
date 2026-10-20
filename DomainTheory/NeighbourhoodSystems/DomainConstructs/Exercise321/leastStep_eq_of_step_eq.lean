@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise321.Basic
-public import DomainTheory.Neighborhood.Exercise321.leastStep_mem
-public import DomainTheory.Neighborhood.Exercise321.leastStep_le
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.leastStep_mem
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.leastStep_le
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -38,4 +38,4 @@ theorem leastStep_eq_of_step_eq {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ 
   · exact leastStep_le hY hZ (h ▸ leastStep_mem hY' hZ')
   · exact leastStep_le hY' hZ' (h.symm ▸ leastStep_mem hY hZ)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

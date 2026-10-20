@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812
-public import DomainTheory.Neighborhood.Exercise812g4
-public import DomainTheory.Neighborhood.Exercise813a.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -37,4 +37,4 @@ needed: `effectiveIso812_UV` (`Exercise812g4.lean`, already `Pass`) already supp
 isomorphism (in fact an *effective* one, stronger than what `8.13` asks for). -/
 theorem exercise813a : U ≅ᴰ V := ⟨effectiveIso812_UV.toDomainIso⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

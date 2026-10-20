@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise817
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -80,7 +80,7 @@ trivial (the underlying `toElementMap`s are literally equal, not just comparable
 `Classical.choice` is pulled in anywhere, unlike most of `D`-mentioning Exercise 8.19.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -123,4 +123,4 @@ end FunSpace
 /-! ## Exercise 8.20, specialized and assembled -/
 
 variable {α : Type u} (D : NeighborhoodSystem α)
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

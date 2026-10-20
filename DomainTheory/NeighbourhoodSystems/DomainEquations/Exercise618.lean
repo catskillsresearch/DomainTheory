@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise316
-public import DomainTheory.Neighborhood.Exercise319
-public import DomainTheory.Neighborhood.Exercise617
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617
 
 @[expose] public section
 
@@ -50,9 +50,9 @@ does **not** apply, and `𝒟^∞` must be built directly as in Exercise 3.16).
 Everything is choice-free where it is data.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe w
 
@@ -570,4 +570,4 @@ def iterIsInitial (Dom : StrictDomainObj.{w}) : IsInitial (iterAlg Dom) where
 
 end Exercise618
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

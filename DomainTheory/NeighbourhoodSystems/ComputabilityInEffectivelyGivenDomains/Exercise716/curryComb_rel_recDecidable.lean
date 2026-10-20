@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Table55
-public import DomainTheory.Neighborhood.Exercise716.Basic
-public import DomainTheory.Neighborhood.Exercise716.curryIso_apply
-public import DomainTheory.Neighborhood.Exercise716.primrec_curryStepCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.curryIso_apply
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.primrec_curryStepCode
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -122,4 +122,4 @@ theorem curryComb_rel_recDecidable
   refine RecDecidable.of_iff (fun t => ?_) (guard2.not.or B2)
   exact Decidable.imp_iff_not_or
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

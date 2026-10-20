@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Exercise221.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise221
+namespace DomainTheory.NeighbourhoodSystems.Exercise221
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 
@@ -47,4 +47,4 @@ theorem isTotal_singletonElt (σ : Str) : C.IsTotal (singletonElt σ) := by
     subset_singleton_eq hmemC Set.inter_subset_left
   exact ⟨y.sub hZ, by rw [← heq]; exact Set.inter_subset_right⟩
 
-end DomainTheory.Neighborhood.Exercise221
+end DomainTheory.NeighbourhoodSystems.Exercise221

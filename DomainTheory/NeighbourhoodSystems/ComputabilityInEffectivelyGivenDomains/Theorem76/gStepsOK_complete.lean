@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Theorem76.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -46,4 +46,4 @@ theorem gStepsOK_complete (g : ApproximableMap V V) (P : ComputablePresentation 
     obtain ⟨full', hs', hl'⟩ := ih k ℓ h2
     exact ⟨k :: full', ⟨h1, hs'⟩, hl'⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

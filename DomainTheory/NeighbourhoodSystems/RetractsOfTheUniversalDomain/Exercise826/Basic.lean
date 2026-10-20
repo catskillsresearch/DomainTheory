@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
 
 @[expose] public section
 
@@ -71,7 +71,7 @@ Axiom audit: `Uapply_Ulam` mentions `𝒰`, hence inherits `𝒰`'s own `Classic
 (`⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -102,4 +102,4 @@ neighbourhood system `E` and arbitrary `a, b : E → E` — specializes to Scott
 projections, but needs nothing special about `E`. -/
 def translateAbs (a b body : ApproximableMap E E) : ApproximableMap E E :=
   b.comp (body.comp a)
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

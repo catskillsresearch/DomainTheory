@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example84
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Example84b.Basic
-public import DomainTheory.Neighborhood.Example84b.smashFadeInner_mem
-public import DomainTheory.Neighborhood.Example84b.smashRetraction_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.smashFadeInner_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.smashRetraction_mem
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
@@ -51,4 +51,4 @@ theorem smashRetraction_mem_iff {z : (prod D E).Element} {Z : Set (α ⊕ β)} :
     · exact ⟨hPZ, Or.inr ⟨hx, hPZ, Or.inr ⟨hy, hzZ⟩⟩⟩
 
 end Smash
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

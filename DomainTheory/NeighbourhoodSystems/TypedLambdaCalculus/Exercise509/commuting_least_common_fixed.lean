@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407
-public import DomainTheory.Neighborhood.Exercise509.Basic
-public import DomainTheory.Neighborhood.Exercise509.commute_apply
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.commute_apply
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -62,4 +62,4 @@ theorem commuting_least_common_fixed {f g : ApproximableMap V V} (hcomm : f.comp
   exact fixAbove_least g ha_le haw (le_of_eq hgw)
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

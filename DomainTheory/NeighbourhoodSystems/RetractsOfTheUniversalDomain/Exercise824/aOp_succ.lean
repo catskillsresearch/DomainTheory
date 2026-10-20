@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise823
-public import DomainTheory.Neighborhood.Exercise824.Basic
-public import DomainTheory.Neighborhood.Exercise824.iterElem_succ_pair
-public import DomainTheory.Neighborhood.Exercise824.iterElem_pair_eq_pair
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.iterElem_succ_pair
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.iterElem_pair_eq_pair
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
 
@@ -41,4 +41,4 @@ theorem aOp_succ (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n 
   rw [iterElem_succ_pair, toElementMap_paired, fst_pair, iterElem_pair_eq_pair]
 
 end Exercise824
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

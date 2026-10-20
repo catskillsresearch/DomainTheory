@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
 
 @[expose] public section
 
@@ -50,7 +50,7 @@ Everything is choice-free (`⊆ {propext, Quot.sound}`): all the bit-level facts
 primitive-recursive `myLor`.
 -/
 
-namespace DomainTheory.Neighborhood.Example78
+namespace DomainTheory.NeighbourhoodSystems.Example78
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -124,4 +124,4 @@ def PNpres : ComputablePresentation PN where
   inter_spec := fun {n m} _ => (nbhd_inter n m).symm
   masterIdx := 0
   masterIdx_spec := nbhd_zero
-end DomainTheory.Neighborhood.Example78
+end DomainTheory.NeighbourhoodSystems.Example78

@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
 
 @[expose] public section
 
@@ -46,9 +46,9 @@ This is the "strong left-to-right bias" Scott describes: `y` is consulted only a
 have terminated.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise221
+namespace DomainTheory.NeighbourhoodSystems.Exercise221
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 /-! ### The neighbourhood system `𝒞`: cones together with terminator singletons. -/
 
@@ -226,4 +226,4 @@ def juxtapose : ApproximableMap₂ C C C where
         exact ((prepend_subset_cone σ' Y').trans (h2.trans hsub)).trans hZZ'
     · obtain rfl : X' = ({σ} : Set Str) := subset_singleton_eq hX' hX'X
       exact Or.inr ⟨σ, rfl, ((prepend_mono σ hY'Y).trans hsub).trans hZZ'⟩
-end DomainTheory.Neighborhood.Exercise221
+end DomainTheory.NeighbourhoodSystems.Exercise221

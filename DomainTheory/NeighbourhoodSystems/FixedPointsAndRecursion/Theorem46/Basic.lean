@@ -46,7 +46,7 @@ functional-and-total relation pulls `Classical.choice`, exactly as a Dedekind/re
 must.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 universe u v
 
@@ -82,4 +82,4 @@ inductive Graph (P : PeanoModel M) (Q : PeanoModel N) : M → N → Prop
   | base : Graph P Q P.zero Q.zero
   | step : ∀ {m n}, Graph P Q m n → Graph P Q (P.succ m) (Q.succ n)
 end PeanoModel
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

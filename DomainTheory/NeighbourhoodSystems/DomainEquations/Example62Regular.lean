@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example62Regular.Basic
-public import DomainTheory.Neighborhood.Example62Regular.select_cons
-public import DomainTheory.Neighborhood.Example62Regular.select_append
-public import DomainTheory.Neighborhood.Example62Regular.treeLang_eq_pos
-public import DomainTheory.Neighborhood.Example62Regular.treeLang_select
-public import DomainTheory.Neighborhood.Example62Regular.treeLang_injective
-public import DomainTheory.Neighborhood.Example62Regular.eventuallyPeriodic_iff_isRegular
-public import DomainTheory.Neighborhood.Example62Regular.isRegular_iff_exists_eventuallyPeriodic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.select_cons
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.select_append
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.treeLang_eq_pos
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.treeLang_select
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.treeLang_injective
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.eventuallyPeriodic_iff_isRegular
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.isRegular_iff_exists_eventuallyPeriodic
 
 @[expose] public section

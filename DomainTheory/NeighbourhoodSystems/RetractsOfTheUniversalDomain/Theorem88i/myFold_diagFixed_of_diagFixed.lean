@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88h.Basic
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_iff_fixedNbhd_mem
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_isREPred
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_exists_qChar
-public import DomainTheory.Neighborhood.Theorem88i.Basic
-public import DomainTheory.Neighborhood.Theorem88i.myStep_diagFixed_of_diagFixed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_iff_fixedNbhd_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_isREPred
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_exists_qChar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myStep_diagFixed_of_diagFixed
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -42,4 +42,4 @@ theorem myFold_diagFixed_of_diagFixed {a : ApproximableMap V V}
     rw [List.foldl_cons]
     exact ih (myStep_diagFixed_of_diagFixed hqChar hcons hr e)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

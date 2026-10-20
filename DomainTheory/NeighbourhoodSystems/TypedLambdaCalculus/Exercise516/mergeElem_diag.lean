@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise419
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise516.Basic
-public import DomainTheory.Neighborhood.Exercise516.mergeVal_diag
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.mergeVal_diag
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
 
@@ -76,4 +76,4 @@ variable {β : Type*}
 theorem mergeElem_diag (s : Bool) (σ : Str) : mergeElem σ s σ s = shapeElem s (double σ) := by
   simp [mergeElem, mergeVal_diag]
 
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

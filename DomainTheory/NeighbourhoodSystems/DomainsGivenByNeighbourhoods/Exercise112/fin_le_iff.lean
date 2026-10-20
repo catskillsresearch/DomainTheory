@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise112.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise112
+namespace DomainTheory.NeighbourhoodSystems.Exercise112
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -34,4 +34,4 @@ open DomainTheory.Neighborhood NeighborhoodSystem
 theorem fin_le_iff (n m : ℕ) : fin n ≤ fin m ↔ n ≤ m := by
   rw [fin, fin, neighborhoodSystem.principal_le_iff, tail_subset_iff]
 
-end DomainTheory.Neighborhood.Exercise112
+end DomainTheory.NeighbourhoodSystems.Exercise112

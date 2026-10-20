@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
 
 @[expose] public section
 
@@ -67,9 +67,9 @@ choice-free; the `Prop`-level union/membership reasoning over `Set β` may pull 
 (the usual `Set`-equality pattern of Lecture VII), flagged in the checkpoint.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise714
+namespace DomainTheory.NeighbourhoodSystems.Exercise714
 
-open NeighborhoodSystem Domain.Recursive DomainTheory.Neighborhood
+open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
 
 /-! ## Half 1 — non-empty r.e. ⇔ range of a primitive recursive function -/
 
@@ -198,4 +198,4 @@ theorem computableElement_eq_decreasing_iUnion_principal {W : NeighborhoodSystem
     exact ⟨i, y.sub hZ, by rw [← hZeq]; exact ht_sub_r i⟩
   · rintro ⟨i, hWZ, hsub⟩
     exact y.up_mem (ht_mem i) hWZ hsub
-end DomainTheory.Neighborhood.Exercise714
+end DomainTheory.NeighbourhoodSystems.Exercise714

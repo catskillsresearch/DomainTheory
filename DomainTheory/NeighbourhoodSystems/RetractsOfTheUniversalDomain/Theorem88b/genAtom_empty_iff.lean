@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.DAtomDecidable
-public import DomainTheory.Neighborhood.SplitU
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.Theorem88b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -47,4 +47,4 @@ theorem genAtom_empty_iff (δ : ℕ → Bool) (n : ℕ) :
       DAtom (P0 P) (posnegList δ n).1 (posnegList δ n).2 = ∅ := by
   rw [genAtom_eq_DAtom]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise719
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise721.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise721.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -41,4 +41,4 @@ theorem papplyEval_step_witness {V : NeighborhoodSystem α} {W : NeighborhoodSys
   have hfstep : f.rel X₀ Y₀ := mem_step.mp (hGsub hf)
   exact f.mono hfstep hXsub subset_rfl hXmem hY₀
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Exercise714.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise714
+namespace DomainTheory.NeighbourhoodSystems.Exercise714
 
-open NeighborhoodSystem Domain.Recursive DomainTheory.Neighborhood
+open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
 
 
 /-- **The range of a primitive recursive function is recursively enumerable.** The relation
@@ -28,4 +28,4 @@ theorem repred_range_primrec {r : ℕ → ℕ} (hr : Nat.Primrec r) :
   refine exists_congr (fun i => ?_)
   simp only [unpair_pair_fst, unpair_pair_snd]
 
-end DomainTheory.Neighborhood.Exercise714
+end DomainTheory.NeighbourhoodSystems.Exercise714

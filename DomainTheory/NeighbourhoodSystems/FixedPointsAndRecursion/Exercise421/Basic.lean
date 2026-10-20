@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -45,9 +45,9 @@ solution in `P ℕ`, exactly the set of multiples of `n` (`mulOp_lfp_eq_multiple
 All set-level constructions are **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood.Exercise421
+namespace DomainTheory.NeighbourhoodSystems.Exercise421
 
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 /-! ### The order relation as a unique fixed point. -/
 
@@ -83,4 +83,4 @@ def addIso (m : ℕ) : ℕ ≃ {k : ℕ // k ∈ upSet m} where
 
 /-- Scott's hint operator `n·ℕ = {0} ∪ {n + m ∣ m ∈ n·ℕ}` on `P ℕ` (for fixed `n`). -/
 def mulOp (n : ℕ) (u : Set ℕ) : Set ℕ := {0} ∪ {k | ∃ m ∈ u, k = n + m}
-end DomainTheory.Neighborhood.Exercise421
+end DomainTheory.NeighbourhoodSystems.Exercise421

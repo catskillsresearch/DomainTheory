@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition610
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Lemma615.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -29,4 +29,4 @@ witness of `D ⊴ E` (take `D' = D`). Together with `trianglelefteq_of_projectio
 theorem Subsystem.trianglelefteq {D E : NeighborhoodSystem α} (h : D ◁ E) : D ⊴ E :=
   ⟨D, h, Isomorphic.refl D⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

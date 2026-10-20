@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise516ThueMorse
-public import DomainTheory.Neighborhood.Exercise516Overlap.Basic
-public import DomainTheory.Neighborhood.Exercise516Overlap.no_cube
-public import DomainTheory.Neighborhood.Exercise516Overlap.tmList_getElemu3f
-public import DomainTheory.Neighborhood.Exercise516Overlap.append_three_period
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.no_cube
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.tmList_getElemu3f
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.append_three_period
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 
 
 
@@ -66,4 +66,4 @@ theorem tElt_cube_free (u a : Str) (ha : a ≠ []) :
     rw [← e1, hper, e2]
   exact Option.some.inj this
 
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

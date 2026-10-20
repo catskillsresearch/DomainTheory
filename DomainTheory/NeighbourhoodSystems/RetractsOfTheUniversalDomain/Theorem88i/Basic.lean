@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88h.Basic
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_iff_fixedNbhd_mem
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_isREPred
-public import DomainTheory.Neighborhood.Theorem88h.diagFixed_exists_qChar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_iff_fixedNbhd_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_isREPred
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_exists_qChar
 
 @[expose] public section
 
@@ -57,7 +57,7 @@ choice-free `foldCode`/`selectFn`/`isOne` machinery and `Theorem85.lean`'s choic
 `fixedNbhd_subsystem`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -91,4 +91,4 @@ def myStepCode (w : ℕ) : ℕ := myStep P qChar cons w.unpair.2.unpair.1 w.unpa
 
 /-- The code-level `qChar`-gated fold. -/
 def myFoldCode (c : ℕ) : ℕ := foldCode (myStepCode P qChar cons) 0 P.masterIdx c
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

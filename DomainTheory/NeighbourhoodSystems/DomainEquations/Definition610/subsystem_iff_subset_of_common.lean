@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
-public import DomainTheory.Neighborhood.Definition610.Basic
-public import DomainTheory.Neighborhood.Definition610.trans
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.trans
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 variable {α : Type*}
 
@@ -41,4 +41,4 @@ theorem subsystem_iff_subset_of_common {D₀ D₁ E : NeighborhoodSystem α}
     exact h₀.inter_closed hX hY (h₁.sub hXY)
 
 end Subsystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

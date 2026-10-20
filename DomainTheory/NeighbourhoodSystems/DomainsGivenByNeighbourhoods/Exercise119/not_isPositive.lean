@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise119.Basic
-public import DomainTheory.Neighborhood.Exercise119.a_inter_b
-public import DomainTheory.Neighborhood.Exercise119.one_not_mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.a_inter_b
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.one_not_mem
 
 @[expose] public section
 
 
 set_option linter.unusedSimpArgs false
 
-namespace DomainTheory.Neighborhood.Exercise119
+namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 
 
 
@@ -45,4 +45,4 @@ theorem not_isPositive : ¬ notPositiveSystem.IsPositive := by
   rw [a_inter_b] at hab
   exact one_not_mem (hab.mpr ⟨1, rfl⟩)
 
-end DomainTheory.Neighborhood.Exercise119
+end DomainTheory.NeighbourhoodSystems.Exercise119

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise321.Basic
-public import DomainTheory.Neighborhood.Exercise321.leastStep_mem
-public import DomainTheory.Neighborhood.Exercise321.leastStep_le
-public import DomainTheory.Neighborhood.Exercise321.leastStep_rel
-public import DomainTheory.Neighborhood.Exercise321.step_master_right
-public import DomainTheory.Neighborhood.Exercise321.step_eq_univ_iff
-public import DomainTheory.Neighborhood.Exercise321.leastStep_eq_of_step_eq
-public import DomainTheory.Neighborhood.Exercise321.step_eq_of_ne_master
-public import DomainTheory.Neighborhood.Exercise321.step_eq_iff
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.leastStep_mem
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.leastStep_le
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.leastStep_rel
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_master_right
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_eq_univ_iff
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.leastStep_eq_of_step_eq
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_eq_of_ne_master
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_eq_iff
 
 @[expose] public section

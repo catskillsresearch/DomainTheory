@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.LevelSetPrimrec
-public import DomainTheory.Neighborhood.MinLevel
-public import DomainTheory.Neighborhood.SplitV.Basic
-public import DomainTheory.Neighborhood.SplitV.primrec_myClearBit
-public import DomainTheory.Neighborhood.SplitV.primrec_splitVMinLevel
-public import DomainTheory.Neighborhood.SplitV.primrec_splitVUpsampled
-public import DomainTheory.Neighborhood.SplitV.primrec_splitVBit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_myClearBit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_splitVMinLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_splitVUpsampled
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_splitVBit
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -51,4 +51,4 @@ theorem primrec_splitVRight : Nat.Primrec splitVRight := by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (Nat.Primrec.pair hk1 hclear).of_eq fun n => rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

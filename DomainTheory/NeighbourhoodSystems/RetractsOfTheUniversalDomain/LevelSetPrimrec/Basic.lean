@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812
-public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
 
 @[expose] public section
 
@@ -64,7 +64,7 @@ other file in this project touching `ℕ`'s order/decidability API — reports t
 introduced here.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -690,4 +690,4 @@ def VComputablePresentation : ComputablePresentation V where
   inter_spec := Vinter_spec
   masterIdx := VmasterIdx
   masterIdx_spec := VX_VmasterIdx
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

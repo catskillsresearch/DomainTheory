@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise118.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.Basic
 
 @[expose] public section
 
 
 set_option linter.unusedSimpArgs false
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 
 
@@ -38,4 +38,4 @@ theorem triple_mem : ∀ i, i < 3 → triple i ∈ family := by
   · exact Or.inr (Or.inr rfl)
 
 end triSys
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

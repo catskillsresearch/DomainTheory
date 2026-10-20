@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Combinators77
-public import DomainTheory.Neighborhood.Theorem74
-public import DomainTheory.Neighborhood.Exercise717.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Combinators77
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Example61
 
@@ -52,4 +52,4 @@ theorem proj1_rel_Vsharp_iff (P : ComputablePresentation D) (m k : ℕ) :
       exact ⟨Vsharp D P a.unpair.1, Vsharp D P a.unpair.2, rfl, hsub⟩
 
 end Proposition77
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812
-public import DomainTheory.Neighborhood.Exercise812g4
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
 
 @[expose] public section
 
@@ -41,7 +41,7 @@ of `n : ℕ`. This file makes that identification precise and complete:
   `Pass`, `Exercise812g4.lean`). No new back-and-forth argument is needed at all.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -85,4 +85,4 @@ inductive GeneratedBy {α : Type*} (g : ℕ → Set α) : Set α → Prop
 /-! ### `generator`'s independence: the algebra is *free* on `ℵ₀` generators -/
 
 /-! ### Headline: Exercise 8.13's "(for logicians)" half -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

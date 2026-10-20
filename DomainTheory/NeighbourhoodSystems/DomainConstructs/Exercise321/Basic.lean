@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -30,7 +30,7 @@ Scott's Exercise 3.21 asks to make this precise.
 Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -81,4 +81,4 @@ def leastStep (Y : Set α) (Z : Set β) (hY : V₀.mem Y) (hZ : V₁.mem Z) :
 /-! ### Uniqueness when `Z ≠ Δ₂`. -/
 
 /-! ### The general identity criterion. -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

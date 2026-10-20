@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88b.Basic
-public import DomainTheory.Neighborhood.Theorem88b.eIdx_zero
-public import DomainTheory.Neighborhood.Theorem88b.he0
-public import DomainTheory.Neighborhood.Theorem88b.hcover
-public import DomainTheory.Neighborhood.Theorem88b.genAtom_empty_iff
-public import DomainTheory.Neighborhood.RecursiveCross
-public import DomainTheory.Neighborhood.Theorem88d.Basic
-public import DomainTheory.Neighborhood.Theorem88d.mem_decodeQPairList_appendCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.eIdx_zero
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.he0
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.hcover
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.genAtom_empty_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.mem_decodeQPairList_appendCode
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -40,4 +40,4 @@ theorem presentedIntervals_decodeQPairList_appendCode (c1 c2 : ℕ) :
     · exact ⟨p, (mem_decodeQPairList_appendCode c1 c2 p).mpr (Or.inl hp), h1, h2⟩
     · exact ⟨p, (mem_decodeQPairList_appendCode c1 c2 p).mpr (Or.inr hp), h1, h2⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

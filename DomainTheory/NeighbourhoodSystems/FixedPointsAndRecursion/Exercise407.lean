@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407.Basic
-public import DomainTheory.Neighborhood.Exercise407.le_fixAbove
-public import DomainTheory.Neighborhood.Exercise407.fixAbove_isFixed
-public import DomainTheory.Neighborhood.Exercise407.fixAbove_least
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407.le_fixAbove
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407.fixAbove_isFixed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407.fixAbove_least
 
 @[expose] public section

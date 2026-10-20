@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise508.Basic
-public import DomainTheory.Neighborhood.Exercise508.toApproxMap_toFilter
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.toApproxMap_toFilter
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise508
+namespace DomainTheory.NeighbourhoodSystems.Exercise508
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
 variable {α β γ : Type*}
@@ -39,4 +39,4 @@ theorem Ielem_apply (X : Dom) (x : X.sys.Element) :
     (toApproxMap (Ielem X)).toElementMap x = x := by
   rw [Ielem, toApproxMap_toFilter, toElementMap_idMap]
 
-end DomainTheory.Neighborhood.Exercise508
+end DomainTheory.NeighbourhoodSystems.Exercise508

@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise425.Basic
-public import DomainTheory.Neighborhood.Exercise425.consMap_oneBot
-public import DomainTheory.Neighborhood.Exercise425.consMap_oneElem
-public import DomainTheory.Neighborhood.Exercise425.infElt_eq
-public import DomainTheory.Neighborhood.Exercise425.relateNToC1_natElem
-public import DomainTheory.Neighborhood.Exercise425.relateNToC1_bot
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.consMap_oneBot
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.consMap_oneElem
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.infElt_eq
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.relateNToC1_natElem
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.relateNToC1_bot
 
 @[expose] public section

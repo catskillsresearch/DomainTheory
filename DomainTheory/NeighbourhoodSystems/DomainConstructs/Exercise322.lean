@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise322.Basic
-public import DomainTheory.Neighborhood.Exercise322.toElementMap_compApp
-public import DomainTheory.Neighborhood.Exercise322.toElementMap_compMap_apply
-public import DomainTheory.Neighborhood.Exercise322.toApproxMap_compMap
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.toElementMap_compApp
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.toElementMap_compMap_apply
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.toApproxMap_compMap
 
 @[expose] public section

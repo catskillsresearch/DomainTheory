@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812d
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
 
 @[expose] public section
 
@@ -32,7 +32,7 @@ to the trivial always-`1` decider.
   `Exercise812.lean`'s inlined union identity already used in `V_union_mem`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -195,4 +195,4 @@ def V_isComputableUnion : IsComputableUnion VComputablePresentation where
   unionIdx_spec := Vunion_spec'
   union_computable := V_union_computable
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

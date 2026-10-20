@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition613
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 
 @[expose] public section
 
@@ -58,9 +58,9 @@ syntactically equal** (`colim s` vs `(colimAlg s).carrier.sys` vs `(objColim s).
   g.hom` — the `have` unifies by defeq), then `rw [← e]`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe w
 
@@ -360,4 +360,4 @@ abbrev Tmap_rho (s : Setup.{w}) (n : ℕ) :
 
 /-! ### Uniqueness and initiality (among strict algebras) -/
 end Theorem614
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Product.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -61,4 +61,4 @@ theorem pair_le_pair_iff {x x' : V₀.Element} {y y' : V₁.Element} :
   · rintro ⟨hx, hy⟩ W ⟨X, Y, hX, hY, rfl⟩
     exact ⟨X, Y, hx X hX, hy Y hY, rfl⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

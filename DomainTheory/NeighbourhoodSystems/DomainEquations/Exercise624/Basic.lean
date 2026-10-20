@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise619PartB
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB
 
 @[expose] public section
 
@@ -64,10 +64,10 @@ of the simultaneous Theorem 6.14, which then yields the required isomorphisms
 Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
+open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
 
 namespace Exercise624
 
@@ -116,4 +116,4 @@ def Fsol (D E : ScottSys) : ScottSys := D.sum (D.prod E)
 /-- The second right-hand side `D + E`. -/
 def Gsol (D E : ScottSys) : ScottSys := D.sum E
 end Exercise624
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

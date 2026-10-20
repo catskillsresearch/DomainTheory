@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.SplitU.Basic
-public import DomainTheory.Neighborhood.SplitU.primrec_clipGeListCode
-public import DomainTheory.Neighborhood.SplitU.primrec_splitMidCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.primrec_clipGeListCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.primrec_splitMidCode
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -38,4 +38,4 @@ theorem primrec_splitURight : Nat.Primrec splitURight :=
   (primrec_clipGeListCode.comp (primrec_splitMidCode.pair primrec_canonCode)).of_eq
     fun n => by simp only [splitURight, unpair_pair_fst, unpair_pair_snd]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

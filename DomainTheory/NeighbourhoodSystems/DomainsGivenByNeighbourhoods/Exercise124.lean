@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise124.Basic
-public import DomainTheory.Neighborhood.Exercise124.le_chainUnion
-public import DomainTheory.Neighborhood.Exercise124.exists_total_ge
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124.le_chainUnion
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124.exists_total_ge
 
 @[expose] public section

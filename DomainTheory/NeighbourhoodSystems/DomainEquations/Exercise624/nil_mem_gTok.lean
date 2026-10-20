@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise619PartB
-public import DomainTheory.Neighborhood.Exercise624.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
+open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
 
 namespace Exercise624
 
@@ -26,4 +26,4 @@ namespace Exercise624
 theorem nil_mem_gTok (p q : Set Str) : ([] : Str) ∈ gTok p q := Set.mem_insert _ _
 
 end Exercise624
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

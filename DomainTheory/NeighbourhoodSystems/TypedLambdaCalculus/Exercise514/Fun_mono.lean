@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise513
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513
 public import Mathlib.Data.List.Basic
 import all Mathlib.Data.List.Basic
-public import DomainTheory.Neighborhood.Exercise514.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise514
+namespace DomainTheory.NeighbourhoodSystems.Exercise514
 
-open DomainTheory.Neighborhood.Exercise513
+open DomainTheory.NeighbourhoodSystems.Exercise513
 
 
 
@@ -36,4 +36,4 @@ theorem Fun_mono {u u' x x' : Set ℕ} (hu : u ⊆ u') (hx : x ⊆ x') : Fun u x
   rintro m ⟨ns, hns, htag⟩
   exact ⟨ns, fun n hn => hx (hns n hn), hu htag⟩
 
-end DomainTheory.Neighborhood.Exercise514
+end DomainTheory.NeighbourhoodSystems.Exercise514

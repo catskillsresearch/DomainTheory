@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise823
-public import DomainTheory.Neighborhood.Exercise824.Basic
-public import DomainTheory.Neighborhood.Exercise824.isFinitaryProjection_aStar_bStar
-public import DomainTheory.Neighborhood.Exercise824.binOp_aStar_bStar_left
-public import DomainTheory.Neighborhood.Exercise824.binOp_aStar_bStar_right
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.isFinitaryProjection_aStar_bStar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.binOp_aStar_bStar_left
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.binOp_aStar_bStar_right
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
 
@@ -61,4 +61,4 @@ theorem fixedDomain_aStar_bStar_iso (s t : ApproximableMap (PairSpace (E := E)) 
   exact ⟨h1, h2⟩
 
 end Exercise824
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

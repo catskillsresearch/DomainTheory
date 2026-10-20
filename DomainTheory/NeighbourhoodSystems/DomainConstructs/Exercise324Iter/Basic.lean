@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise316
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -33,7 +33,7 @@ Everything is **choice-free in spirit**; the only classical input is inherited f
 `funSpaceEquiv` and the `choose` in the `∃/∀`-swap lemma, exactly as elsewhere in §3.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -150,4 +150,4 @@ def funIterIso (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     (funIterEquiv V₀ V₁).trans <|
       (piCongrOrderIso (fun _ : ℕ => (funSpaceEquiv V₀ V₁).symm)).trans
         (iterSeqEquiv (funSpace V₀ V₁)).symm
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

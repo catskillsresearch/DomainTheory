@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition68
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 
 @[expose] public section
 
@@ -57,9 +57,9 @@ is done by `Exists.elim` while proving a `Prop`, so it stays **choice-free**
 (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe u
 
@@ -129,4 +129,4 @@ def homOp : ApproximableMap (strictFun (T.obj D).sys (T.obj E).sys) (strictFun D
 end HomOp
 
 /-! ### Theorem 6.9. -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

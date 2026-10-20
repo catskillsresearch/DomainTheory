@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Exercise714.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise714
+namespace DomainTheory.NeighbourhoodSystems.Exercise714
 
-open NeighborhoodSystem Domain.Recursive DomainTheory.Neighborhood
+open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
 
 
 
@@ -46,4 +46,4 @@ theorem repred₂_exists_primrec_enum {p : ℕ → ℕ → Prop} (hp : REPred₂
     change (pf i).unpair.2 = m at hr
     rw [← hs, ← hr]; exact (pair_unpair _).symm
 
-end DomainTheory.Neighborhood.Exercise714
+end DomainTheory.NeighbourhoodSystems.Exercise714

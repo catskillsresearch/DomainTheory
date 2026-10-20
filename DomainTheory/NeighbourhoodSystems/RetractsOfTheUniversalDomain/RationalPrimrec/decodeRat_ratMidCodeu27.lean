@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Recursive
-public import DomainTheory.Neighborhood.RationalPrimrec.Basic
-public import DomainTheory.Neighborhood.RationalPrimrec.decodeRat_ratMidCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.decodeRat_ratMidCode
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -52,4 +52,4 @@ theorem decodeRat_ratMidCode' (e : ℕ) :
   have h := decodeRat_ratMidCode e.unpair.1 e.unpair.2
   rwa [Nat.pair_unpair] at h
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

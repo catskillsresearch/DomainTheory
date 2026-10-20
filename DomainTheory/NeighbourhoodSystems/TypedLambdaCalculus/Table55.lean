@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Table55.Basic
-public import DomainTheory.Neighborhood.Table55.pairC_apply
-public import DomainTheory.Neighborhood.Table55.evalC_apply
-public import DomainTheory.Neighborhood.Table55.constC_apply
-public import DomainTheory.Neighborhood.Table55.constC_eq_constMap
-public import DomainTheory.Neighborhood.Table55.curryC_toApproxMap
-public import DomainTheory.Neighborhood.Table55.curryC_apply
-public import DomainTheory.Neighborhood.Table55.compC_apply
-public import DomainTheory.Neighborhood.Table55.compC_eq_comp
-public import DomainTheory.Neighborhood.Table55.funpairC_apply
-public import DomainTheory.Neighborhood.Table55.funpairC_eq_paired
-public import DomainTheory.Neighborhood.Table55.fixC_apply
-public import DomainTheory.Neighborhood.Table55.fixC_fixed
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.pairC_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.evalC_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.constC_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.constC_eq_constMap
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.curryC_toApproxMap
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.curryC_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.compC_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.compC_eq_comp
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.funpairC_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.funpairC_eq_paired
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.fixC_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.fixC_fixed
 
 @[expose] public section

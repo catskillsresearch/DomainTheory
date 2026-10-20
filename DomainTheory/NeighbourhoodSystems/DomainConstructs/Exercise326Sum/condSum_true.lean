@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise326
-public import DomainTheory.Neighborhood.Exercise319Sum
-public import DomainTheory.Neighborhood.Exercise326Sum.Basic
-public import DomainTheory.Neighborhood.Exercise326Sum.condSumEmb_toElementMap
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.condSumEmb_toElementMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise326
+namespace DomainTheory.NeighbourhoodSystems.Exercise326
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
@@ -32,4 +32,4 @@ theorem condSum_true (x : V₀.Element) (y : V₁.Element) :
       = (inMap₀ (h₀ := h₀) (h₁ := h₁)).toElementMap x := by
   rw [condSum, toElementMap_comp, condSumEmb_toElementMap, cond_true]
 
-end DomainTheory.Neighborhood.Exercise326
+end DomainTheory.NeighbourhoodSystems.Exercise326

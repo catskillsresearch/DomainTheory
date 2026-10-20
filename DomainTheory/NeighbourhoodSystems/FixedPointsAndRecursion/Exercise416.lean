@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise416.Basic
-public import DomainTheory.Neighborhood.Exercise416.optimalFix_isFixed
-public import DomainTheory.Neighborhood.Exercise416.optimalFix_le_sInf
-public import DomainTheory.Neighborhood.Exercise416.optimalFix_le
-public import DomainTheory.Neighborhood.Exercise416.optimalFix_consistent
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise416.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise416.optimalFix_isFixed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise416.optimalFix_le_sInf
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise416.optimalFix_le
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise416.optimalFix_consistent
 
 @[expose] public section

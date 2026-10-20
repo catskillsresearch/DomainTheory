@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88k.Basic
-public import DomainTheory.Neighborhood.Theorem88k.D_X_cons_iff
-public import DomainTheory.Neighborhood.Theorem88k.D_X_interEq_computable
-public import DomainTheory.Neighborhood.Theorem88k.D_X_cons_computable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_cons_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_interEq_computable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_cons_computable
 
 @[expose] public section
 
@@ -59,7 +59,7 @@ tightened in this session (dropping a stray `by_contra`/lemma-set `simp` that pu
 `Classical.choice`) to be choice-free outright, so no new taint is introduced here.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -80,4 +80,4 @@ def D_inter (c₁ c₂ : ℕ) : ℕ := appendListCode c₁ c₂
 variable (P qChar cons)
 
 variable {P qChar cons}
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

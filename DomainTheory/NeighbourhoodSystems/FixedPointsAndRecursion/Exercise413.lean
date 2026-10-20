@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise413.Basic
-public import DomainTheory.Neighborhood.Exercise413.monoFix_le_preFix
-public import DomainTheory.Neighborhood.Exercise413.monoFix_le
-public import DomainTheory.Neighborhood.Exercise413.monoFix_preFix
-public import DomainTheory.Neighborhood.Exercise413.monoFix_isFixed
-public import DomainTheory.Neighborhood.Exercise413.monoFix_least
-public import DomainTheory.Neighborhood.Exercise413.exists_unique_nat_rec
-public import DomainTheory.Neighborhood.Exercise413.nat_iterate_unique
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.monoFix_le_preFix
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.monoFix_le
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.monoFix_preFix
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.monoFix_isFixed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.monoFix_least
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.exists_unique_nat_rec
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.nat_iterate_unique
 
 @[expose] public section

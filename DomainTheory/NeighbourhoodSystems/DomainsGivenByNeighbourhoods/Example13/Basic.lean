@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -27,7 +27,7 @@ This is a concrete finite computation (`fin_cases`/`simp`); footprint
 `[propext, Classical.choice, Quot.sound]` — same as Example 1.2.
 -/
 
-namespace DomainTheory.Neighborhood.Example13
+namespace DomainTheory.NeighbourhoodSystems.Example13
 
 /-- Tokens for Example 1.3: `Δ = {0, 1, 2}`. -/
 abbrev Token := Fin 3
@@ -263,4 +263,4 @@ theorem mem_twelve_of_mem (x : neighborhoodSystem.Element) (htwelve : x.mem twel
     · exact x.master_mem
     · rw [hx]; exact htwelve
 end neighborhoodSystem
-end DomainTheory.Neighborhood.Example13
+end DomainTheory.NeighbourhoodSystems.Example13

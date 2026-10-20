@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407
-public import DomainTheory.Neighborhood.Exercise410
-public import DomainTheory.Neighborhood.Exercise411.Basic
-public import DomainTheory.Neighborhood.Exercise411.inclMap_toElementMap
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.inclMap_toElementMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -41,4 +41,4 @@ theorem inclMap_bot (a : V.Element) : (inclMap a).toElementMap (relSystem a).bot
     exact ⟨V.master_mem, V.master, a.master_mem, (relSystem a).bot.master_mem, subset_rfl⟩
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example84
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Exercise510
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
 
 @[expose] public section
 
@@ -17,7 +17,7 @@ public import DomainTheory.Neighborhood.Exercise510
 # Lecture VIII — Example 8.4(b) (Scott 1981, PRG-19): `smash` and `strict` as projections
 
 The remainder of Scott's **EXAMPLES 8.4**, building on Example 8.4(a)'s `check`/`fade` combinators
-(`DomainTheory.Neighborhood/Neighborhood/Example84.lean`):
+(`DomainTheory.NeighbourhoodSystems/Neighborhood/Example84.lean`):
 
 * **`smash : D × E → D × E`**, `smash(x, y) = fade(check(x), fade(check(y), ⟨x, y⟩))`, is a
   *projection* on `D × E` whose range is isomorphic to the smash product `D ⊗ E` (Exercise 5.10).
@@ -61,7 +61,7 @@ Everything is **choice-free** in the *data* (`smashRetraction`, `strictRetractio
 `by_contra`/`by_cases` case splits, exactly mirroring 8.4(a)'s discipline.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
@@ -220,4 +220,4 @@ def strictRetractionFixIso :
     show toApproxMap φ.1 ≤ toApproxMap φ'.1 ↔ φ.1 ≤ φ'.1
     exact (funSpaceEquiv D E).map_rel_iff
 end Strict
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

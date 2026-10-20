@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem85
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise213
-public import DomainTheory.Neighborhood.Proposition611
-public import DomainTheory.Neighborhood.Theorem86.Basic
-public import DomainTheory.Neighborhood.Theorem86.sub_sub
-public import DomainTheory.Neighborhood.Theorem86.isFinitaryProjection_of_sub_eq_self
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.sub_sub
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.isFinitaryProjection_of_sub_eq_self
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -38,4 +38,4 @@ fixed point of `sub` (feed `isFinitaryProjection_of_sub_eq_self (sub_sub f)` bac
 theorem isFinitaryProjection_sub (f : ApproximableMap E E) : IsFinitaryProjection (sub f) :=
   isFinitaryProjection_of_sub_eq_self (sub_sub f)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

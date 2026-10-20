@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise817
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise820.Basic
-public import DomainTheory.Neighborhood.Exercise820.proju2080_comp_embedFst
-public import DomainTheory.Neighborhood.Exercise820.embedFst_comp_proju2080_le
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.proju2080_comp_embedFst
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.embedFst_comp_proju2080_le
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -35,4 +35,4 @@ theorem trianglelefteq_prod_fst : A ⊴ prod A B :=
     (embedFst_comp_proj₀_le A B)
 
 end Prod
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

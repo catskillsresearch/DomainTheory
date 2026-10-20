@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87.Basic
-public import DomainTheory.Neighborhood.Definition87.U_no_minimal
-public import DomainTheory.Neighborhood.Definition87.presentedIntervals_append
-public import DomainTheory.Neighborhood.Definition87.U_union_mem
-public import DomainTheory.Neighborhood.Definition87.U_iUnion_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.U_no_minimal
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.presentedIntervals_append
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.U_union_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.U_iUnion_mem
 
 @[expose] public section

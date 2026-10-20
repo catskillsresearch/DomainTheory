@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -40,9 +40,9 @@ The classification results are *classical* (they decide whether an element conta
 constructions and the non-isomorphism argument are otherwise elementary.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise115
+namespace DomainTheory.NeighbourhoodSystems.Exercise115
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 /-- `{n} ∩ {m} = ∅` for `n ≠ m`. -/
 theorem singleton_disjoint {n m : ℕ} (h : n ≠ m) : ({n} : Set ℕ) ∩ {m} = ∅ := by
@@ -116,4 +116,4 @@ def stem : NeighborhoodSystem ℕ :=
     stem.mem X ↔ X = Set.univ ∨ X = {0, 1} ∨ ∃ n, X = {n} := Iff.rfl
 
 /-! ## Non-isomorphism. -/
-end DomainTheory.Neighborhood.Exercise115
+end DomainTheory.NeighbourhoodSystems.Exercise115

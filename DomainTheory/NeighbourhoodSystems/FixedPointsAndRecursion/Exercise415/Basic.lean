@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise124
-public import DomainTheory.Neighborhood.Exercise413
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413
 
 @[expose] public section
 
@@ -35,7 +35,7 @@ This is the explicitly **classical** exercise (Zorn ⟹ `Classical.choice`), exa
 1.24; the `chainUnion` construction itself is choice-free.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -43,4 +43,4 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

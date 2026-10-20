@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Exercise316
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise317.Basic
-public import DomainTheory.Neighborhood.Exercise317.exists_not_mem_bitNbhd
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.exists_not_mem_bitNbhd
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise317
+namespace DomainTheory.NeighbourhoodSystems.Exercise317
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
 
@@ -53,4 +53,4 @@ theorem prefix_of_encSet_subset {σ τ : Str} (h : encSet σ ⊆ encSet τ) : τ
       exact ht ((h hmemσ) _ hb')
   · exact hτσ
 
-end DomainTheory.Neighborhood.Exercise317
+end DomainTheory.NeighbourhoodSystems.Exercise317

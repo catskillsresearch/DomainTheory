@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.SplitV.Basic
-public import DomainTheory.Neighborhood.SplitV.primrec_myFirstBit
-public import DomainTheory.Neighborhood.SplitV.myFirstBit_le
-public import DomainTheory.Neighborhood.SplitV.primrec_myClearBit
-public import DomainTheory.Neighborhood.SplitV.primrec_splitVMinLevel
-public import DomainTheory.Neighborhood.SplitV.primrec_splitVMinMask
-public import DomainTheory.Neighborhood.SplitV.primrec_splitVUpsampled
-public import DomainTheory.Neighborhood.SplitV.primrec_splitVBit
-public import DomainTheory.Neighborhood.SplitV.primrec_splitVLeft
-public import DomainTheory.Neighborhood.SplitV.primrec_splitVRight
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_myFirstBit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.myFirstBit_le
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_myClearBit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_splitVMinLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_splitVMinMask
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_splitVUpsampled
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_splitVBit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_splitVLeft
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.primrec_splitVRight
 
 @[expose] public section

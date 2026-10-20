@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example61
-public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
 
 @[expose] public section
 
@@ -38,7 +38,7 @@ This file builds the construction in milestones:
   `surj` (every `𝒟^§`-neighbourhood is some `V k`), nonemptiness. All choice-free.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive Example61
 
@@ -911,4 +911,4 @@ def dsharpPresentation (hD : ∀ X, D.mem X → X.Nonempty) :
   masterIdx := 0
   masterIdx_spec := Vsharp_zero P
 end Proposition77
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

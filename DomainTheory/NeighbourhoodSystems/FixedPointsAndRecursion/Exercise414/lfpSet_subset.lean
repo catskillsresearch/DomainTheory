@@ -11,12 +11,12 @@ public import Mathlib.Data.Set.Basic
 import all Mathlib.Data.Set.Basic
 public import Mathlib.Order.Monotone.Basic
 import all Mathlib.Order.Monotone.Basic
-public import DomainTheory.Neighborhood.Exercise414.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise414
+namespace DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {A : Type*}
 
@@ -28,4 +28,4 @@ variable {A : Type*}
 theorem lfpSet_subset (f : Set A → Set A) {x : Set A} (hx : f x ⊆ x) : lfpSet f ⊆ x :=
   fun _ ha => ha x hx
 
-end DomainTheory.Neighborhood.Exercise414
+end DomainTheory.NeighbourhoodSystems.Exercise414

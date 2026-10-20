@@ -7,22 +7,22 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 import all Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.FreeMonoid.Basic
 import all Mathlib.Algebra.FreeMonoid.Basic
-public import DomainTheory.Neighborhood.Exercise515.Basic
-public import DomainTheory.Neighborhood.Exercise515.star_mul_isFixed
-public import DomainTheory.Neighborhood.Exercise515.star_mul_subset_prefixed
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.star_mul_isFixed
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.star_mul_subset_prefixed
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise515
+namespace DomainTheory.NeighbourhoodSystems.Exercise515
 
 open Pointwise
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {S : Type*} [Monoid S]
 
@@ -42,4 +42,4 @@ theorem arden (z v : Set S) : lfpSet (G z v) = star z * v := by
   · intro s hs x hx
     exact star_mul_subset_prefixed z v x hx hs
 
-end DomainTheory.Neighborhood.Exercise515
+end DomainTheory.NeighbourhoodSystems.Exercise515

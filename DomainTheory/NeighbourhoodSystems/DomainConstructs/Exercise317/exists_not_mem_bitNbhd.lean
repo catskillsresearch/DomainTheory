@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Exercise316
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise317.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise317
+namespace DomainTheory.NeighbourhoodSystems.Exercise317
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
 
@@ -27,4 +27,4 @@ theorem exists_not_mem_bitNbhd (b : Bool) : ∃ t : Token, t ∉ bitNbhd b := by
   · exact ⟨1, by simp [bitNbhd, Example12.zero]⟩
   · exact ⟨0, by simp [bitNbhd, Example12.one]⟩
 
-end DomainTheory.Neighborhood.Exercise317
+end DomainTheory.NeighbourhoodSystems.Exercise317

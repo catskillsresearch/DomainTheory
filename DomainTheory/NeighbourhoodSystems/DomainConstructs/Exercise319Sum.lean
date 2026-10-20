@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise319Sum.Basic
-public import DomainTheory.Neighborhood.Exercise319Sum.outMapu2080_comp_sumMap_comp_inMapu2080
-public import DomainTheory.Neighborhood.Exercise319Sum.outMapu2081_comp_sumMap_comp_inMapu2081
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.outMapu2080_comp_sumMap_comp_inMapu2080
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.outMapu2081_comp_sumMap_comp_inMapu2081
 
 @[expose] public section

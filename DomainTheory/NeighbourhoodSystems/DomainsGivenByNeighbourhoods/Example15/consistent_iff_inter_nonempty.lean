@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Basic.Countable.Defs
 import all Mathlib.Basic.Countable.Defs
 public import Mathlib.Data.Fintype.Powerset
 import all Mathlib.Data.Fintype.Powerset
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Example15.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example15.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example15
+namespace DomainTheory.NeighbourhoodSystems.Example15
 
 open NeighborhoodSystem
 
@@ -44,4 +44,4 @@ theorem consistent_iff_inter_nonempty (X : ℕ → Set Token) (n : ℕ) :
   · intro h
     exact ⟨_, h, subset_rfl⟩
 
-end DomainTheory.Neighborhood.Example15
+end DomainTheory.NeighbourhoodSystems.Example15

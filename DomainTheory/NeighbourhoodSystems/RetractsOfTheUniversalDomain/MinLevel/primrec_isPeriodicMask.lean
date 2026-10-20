@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.LevelSetPrimrec
-public import DomainTheory.Neighborhood.MinLevel.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -40,4 +40,4 @@ theorem primrec_isPeriodicMask :
   exact (primrec_isZero.comp (primrec_add₂ (primrec_sub₂ hups hmodk)
     (primrec_sub₂ hmodk hups))).of_eq fun t => rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

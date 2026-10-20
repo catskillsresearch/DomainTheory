@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722
 public import Mathlib.Logic.Encodable.Basic
 import all Mathlib.Logic.Encodable.Basic
-public import DomainTheory.Neighborhood.Exercise722Regular.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -44,4 +44,4 @@ theorem InS_exists_denote {X : Set (List Bool)} (h : InS X) : ∃ e : SExpr, den
     exact ⟨.cap ea eb, rfl⟩
 
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

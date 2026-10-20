@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722Cat.Basic
-public import DomainTheory.Neighborhood.Exercise722Cat.catEps_mem_u3b5Closure_iff
-public import DomainTheory.Neighborhood.Exercise722Cat.catEps_mem_eval_iff
-public import DomainTheory.Neighborhood.Exercise722Cat.catEps_accepts
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat.catEps_mem_u3b5Closure_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat.catEps_mem_eval_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat.catEps_accepts
 
 @[expose] public section

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise315
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
 
 @[expose] public section
 
@@ -44,7 +44,7 @@ Everything is **choice-free in spirit**; the classical content is only what is i
 project's `Element.ext`/`prodEquiv` machinery, as elsewhere in §3.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -336,4 +336,4 @@ def projN (V : NeighborhoodSystem α) (n : ℕ) : ApproximableMap (iterSys V) V 
     · rw [fiber_single_ne h]; exact V.sub_master (hW.1 i)
   · rintro ⟨hX, hz⟩
     exact ⟨single V n X, hz, single_mem hX, hX, by rw [fiber_single_self]⟩
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

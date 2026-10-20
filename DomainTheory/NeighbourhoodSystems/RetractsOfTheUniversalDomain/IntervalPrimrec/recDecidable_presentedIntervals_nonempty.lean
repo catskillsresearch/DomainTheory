@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87
-public import DomainTheory.Neighborhood.RationalPrimrec
-public import DomainTheory.Neighborhood.RecursiveCross
-public import DomainTheory.Neighborhood.IntervalPrimrec.Basic
-public import DomainTheory.Neighborhood.IntervalPrimrec.primrec_qpNonemptyChar
-public import DomainTheory.Neighborhood.IntervalPrimrec.qpNonemptyChar_le_one
-public import DomainTheory.Neighborhood.IntervalPrimrec.presentedIntervals_decodeQPairList_nonempty_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.primrec_qpNonemptyChar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.qpNonemptyChar_le_one
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.presentedIntervals_decodeQPairList_nonempty_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -68,4 +68,4 @@ theorem recDecidable_presentedIntervals_nonempty :
     (fun c => by have := qpNonemptyChar_le_one c; omega)
     presentedIntervals_decodeQPairList_nonempty_iff
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

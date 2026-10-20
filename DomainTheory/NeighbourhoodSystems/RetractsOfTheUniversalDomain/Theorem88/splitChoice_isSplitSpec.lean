@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
 public import Mathlib.Data.Fintype.Pi
 import all Mathlib.Data.Fintype.Pi
-public import DomainTheory.Neighborhood.Theorem88.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -40,4 +40,4 @@ theorem splitChoice_isSplitSpec : SplitSpec (α := α) splitChoice := by
   rw [dite_eq_left ⟨hAB, hBU⟩]
   exact (exists_split hAB hBU Xn).choose_spec.choose_spec
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

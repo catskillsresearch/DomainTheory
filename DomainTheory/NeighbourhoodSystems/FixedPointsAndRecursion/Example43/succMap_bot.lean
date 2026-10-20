@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Example43.Basic
-public import DomainTheory.Neighborhood.Example43.constLiftN_bot
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43.constLiftN_bot
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example43
+namespace DomainTheory.NeighbourhoodSystems.Example43
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
 
@@ -41,4 +41,4 @@ open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
 theorem succMap_bot : succMap.toElementMap N.bot = N.bot :=
   constLiftN_bot N (fun n => natElem (n + 1))
 
-end DomainTheory.Neighborhood.Example43
+end DomainTheory.NeighbourhoodSystems.Example43

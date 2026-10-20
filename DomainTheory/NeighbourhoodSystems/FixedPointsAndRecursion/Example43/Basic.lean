@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 
 @[expose] public section
 
@@ -45,9 +45,9 @@ of the displayed equations uniformly. The data (`N`, `constLiftN`, `succMap`, `p
 structurally from the truth domain `T` of Example 1.2 exactly as `Example23.parityMap` does.
 -/
 
-namespace DomainTheory.Neighborhood.Example43
+namespace DomainTheory.NeighbourhoodSystems.Example43
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 /-! ### The neighbourhood system `N`. -/
 
@@ -182,4 +182,4 @@ def zeroVal : ℕ → T.Element
 def zeroMap : ApproximableMap N T := constLiftN T zeroVal
 
 /-! ### `pred` undoes `succ`. -/
-end DomainTheory.Neighborhood.Example43
+end DomainTheory.NeighbourhoodSystems.Example43

@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Exercise826.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -39,4 +39,4 @@ theorem translateAbs_sandwich {a b body : ApproximableMap E E}
   show b.comp ((b.comp (body.comp a)).comp a) = b.comp (body.comp a)
   rw [comp_assoc b (body.comp a) a, comp_assoc body a a, ha, ← comp_assoc b b (body.comp a), hb]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

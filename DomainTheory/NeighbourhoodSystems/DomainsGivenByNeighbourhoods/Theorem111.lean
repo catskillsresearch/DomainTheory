@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem111.Basic
-public import DomainTheory.Neighborhood.Theorem111.iInter_le
-public import DomainTheory.Neighborhood.Theorem111.le_iInter
-public import DomainTheory.Neighborhood.Theorem111.le_iUnion
-public import DomainTheory.Neighborhood.Theorem111.iUnion_le
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111.iInter_le
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111.le_iInter
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111.le_iUnion
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111.iUnion_le
 
 @[expose] public section

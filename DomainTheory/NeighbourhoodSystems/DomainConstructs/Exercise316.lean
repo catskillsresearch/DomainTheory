@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise316.Basic
-public import DomainTheory.Neighborhood.Exercise316.iter_isomorphic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316.iter_isomorphic
 
 @[expose] public section

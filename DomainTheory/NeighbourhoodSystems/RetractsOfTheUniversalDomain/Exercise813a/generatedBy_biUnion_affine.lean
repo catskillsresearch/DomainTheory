@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812
-public import DomainTheory.Neighborhood.Exercise812g4
-public import DomainTheory.Neighborhood.Exercise813a.Basic
-public import DomainTheory.Neighborhood.Exercise813a.generatedBy_affine
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.generatedBy_affine
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -38,4 +38,4 @@ theorem generatedBy_biUnion_affine (k : ℕ) (s : Finset ℕ) (hs : ∀ ℓ ∈ 
     exact GeneratedBy.union (generatedBy_affine k a (hs a (Finset.mem_insert_self a s)))
       (ih fun ℓ hℓ => hs ℓ (Finset.mem_insert_of_mem hℓ))
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

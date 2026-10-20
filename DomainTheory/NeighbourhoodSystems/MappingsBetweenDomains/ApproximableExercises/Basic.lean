@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
 public import Mathlib.Data.Set.Image
 import all Mathlib.Data.Set.Image
 
@@ -36,7 +36,7 @@ All constructions are **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`
 `eq_of_…`/uniqueness lemmas decide membership by `by_cases` and are therefore classical, exactly like
 `ext_of_toElementMap`. -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -175,4 +175,4 @@ def toElementMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) (x : V₀.Element) (
 @[simp] theorem mem_toElementMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) (x : V₀.Element) (y : V₁.Element)
     {Z : Set γ} : (f.toElementMap₂ x y).mem Z ↔ ∃ X Y, x.mem X ∧ y.mem Y ∧ f.rel X Y Z := Iff.rfl
 end ApproximableMap₂
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

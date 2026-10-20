@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
 
 @[expose] public section
 
@@ -71,7 +71,7 @@ constructive and choice-free. The Mathlib `Category` is therefore *usable but co
 this development, and is deliberately not used.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 universe u v w
 
@@ -199,4 +199,4 @@ structure Iso (X Y : Obj) where
   /-- `hom ∘ inv = I_Y`. -/
   inv_hom_id : hom ⊚ inv = Category.id Y
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

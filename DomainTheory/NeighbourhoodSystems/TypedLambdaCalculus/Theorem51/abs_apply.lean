@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Table55
-public import DomainTheory.Neighborhood.Theorem51.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem51.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -35,4 +35,4 @@ theorem abs_apply (g : ApproximableMap (prod V₀ V₁) V₂) (v : V₀.Element)
   toElementMap_curry_apply g v x
 
 end Theorem51
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

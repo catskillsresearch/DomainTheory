@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 
 @[expose] public section
 
@@ -38,7 +38,7 @@ Everything is constructive (`[propext, Quot.sound]`): `[X]`-membership is just `
 filter laws mirror the constructive proofs for `principal`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -175,4 +175,4 @@ def tokenIso : V.Element ≃o V.tokenSystem.Element where
       obtain ⟨X, hX, rfl⟩ := hS
       exact ⟨X, h X hX, rfl⟩
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

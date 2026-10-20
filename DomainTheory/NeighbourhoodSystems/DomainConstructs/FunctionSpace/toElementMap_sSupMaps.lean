@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.FunctionSpace.Basic
-public import DomainTheory.Neighborhood.FunctionSpace.le_iff_toElementMap_le
-public import DomainTheory.Neighborhood.FunctionSpace.toElementMap_sSupMaps_principal
-public import DomainTheory.Neighborhood.FunctionSpace.le_sSupMaps
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.le_iff_toElementMap_le
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.toElementMap_sSupMaps_principal
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.le_sSupMaps
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -93,4 +93,4 @@ theorem toElementMap_sSupMaps {F : Set (ApproximableMap V₀ V₁)} (hF : Pointw
     obtain ⟨f, hf, rfl⟩ := hs
     exact le_iff_toElementMap_le.mp (le_sSupMaps hF hf) x
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

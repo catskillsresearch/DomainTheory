@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise507.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise507
+namespace DomainTheory.NeighbourhoodSystems.Exercise507
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
@@ -30,4 +30,4 @@ theorem app_two_args (σ : ApproximableMap (prod V₀ V₁) V₂) (x : V₀.Elem
       (toApproxMap ((curry σ).toElementMap x)).toElementMap y := by
   rw [toElementMap_curry_apply]
 
-end DomainTheory.Neighborhood.Exercise507
+end DomainTheory.NeighbourhoodSystems.Exercise507

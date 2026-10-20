@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise622.Basic
-public import DomainTheory.Neighborhood.Exercise622.nil_mem_Cnat
-public import DomainTheory.Neighborhood.Exercise622.nil_mem_Cone
-public import DomainTheory.Neighborhood.Exercise622.NExpr_rooted
-public import DomainTheory.Neighborhood.Exercise622.MExpr_rooted
-public import DomainTheory.Neighborhood.Exercise622.NStarExpr_rooted
-public import DomainTheory.Neighborhood.Exercise622.N_eq_solution
-public import DomainTheory.Neighborhood.Exercise622.M_eq_solution
-public import DomainTheory.Neighborhood.Exercise622.NStar_eq_solution
-public import DomainTheory.Neighborhood.Exercise622.NStar_over_N_exists
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.nil_mem_Cnat
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.nil_mem_Cone
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NExpr_rooted
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.MExpr_rooted
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NStarExpr_rooted
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.N_eq_solution
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.M_eq_solution
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NStar_eq_solution
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NStar_over_N_exists
 
 @[expose] public section

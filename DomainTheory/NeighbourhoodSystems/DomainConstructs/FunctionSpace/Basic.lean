@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
 
 @[expose] public section
 
@@ -43,7 +43,7 @@ This file formalizes:
   `sSupMaps` with `toElementMap_sSupMaps` (iii).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -612,4 +612,4 @@ def curryEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
       intro p hp
       have hgrel : g.rel (prodNbhd X p.1) p.2 := hmem p hp
       exact hg _ _ hgrel
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise621
-public import DomainTheory.Neighborhood.Exercise622.Basic
-public import DomainTheory.Neighborhood.Exercise622.NExpr_rooted
-public import DomainTheory.Neighborhood.Exercise622.NStar_eq_solution
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NExpr_rooted
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NStar_eq_solution
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
 
 namespace Exercise619
 
@@ -41,4 +41,4 @@ theorem NStar_over_N_exists :
   exact ⟨singletonSys Γ₁ ⟨[], hnil₁⟩, hnil₁, NStar_eq_solution _ hnil₁⟩
 
 end Exercise619
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

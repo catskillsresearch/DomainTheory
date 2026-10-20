@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise813b
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b
 public import Mathlib.Topology.Constructions
 import all Mathlib.Topology.Constructions
 public import Mathlib.Topology.Compactness.Compact
 import all Mathlib.Topology.Compactness.Compact
 public import Mathlib.Topology.Clopen
 import all Mathlib.Topology.Clopen
-public import DomainTheory.Neighborhood.Exercise813c.Basic
-public import DomainTheory.Neighborhood.Exercise813c.generatedBy_genPoint_box
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.generatedBy_genPoint_box
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 
 
@@ -40,4 +40,4 @@ theorem generatedBy_genPoint_biUnion {β : Type*} (t : Finset β) (I : β → Fi
     rw [Finset.set_biUnion_insert]
     exact (generatedBy_genPoint_box _ _).union ih
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

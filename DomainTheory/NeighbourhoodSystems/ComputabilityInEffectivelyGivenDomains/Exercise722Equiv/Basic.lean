@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
 
 @[expose] public section
 
@@ -28,7 +28,7 @@ question "is there a word `e₁` accepts but `e₂` rejects" becomes an ordinary
 on a *deterministic* (singleton-step) NFA, to which `exists_accepted_word_short` applies directly.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -133,4 +133,4 @@ def subsetB (e1 e2 : SExpr) : Bool :=
 `subsetB` in both directions. -/
 def interEqB (e1 e2 : SExpr) : Bool := subsetB e1 e2 && subsetB e2 e1
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

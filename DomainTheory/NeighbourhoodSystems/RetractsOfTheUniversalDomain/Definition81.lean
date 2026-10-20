@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -30,7 +30,7 @@ interesting closure facts come from Proposition 8.2 onward).
 Everything here is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -44,4 +44,4 @@ def IsRetraction (a : ApproximableMap E E) : Prop := a.comp a = a
 @[simp] theorem isRetraction_idMap : IsRetraction (idMap E) :=
   idMap_comp (idMap E)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

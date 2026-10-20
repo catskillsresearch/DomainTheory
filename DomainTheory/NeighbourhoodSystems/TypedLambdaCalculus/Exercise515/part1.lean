@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 import all Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.FreeMonoid.Basic
 import all Mathlib.Algebra.FreeMonoid.Basic
-public import DomainTheory.Neighborhood.Exercise515.Basic
-public import DomainTheory.Neighborhood.Exercise515.arden
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.arden
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise515
+namespace DomainTheory.NeighbourhoodSystems.Exercise515
 
 open Pointwise
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {S : Type*} [Monoid S]
 
@@ -40,4 +40,4 @@ theorem part1 (e e' : S) :
   have hG : (fun w => ({e} : Set S) * w ∪ {e'}) = G ({e} : Set S) {e'} := rfl
   rw [hG]; exact arden {e} {e'}
 
-end DomainTheory.Neighborhood.Exercise515
+end DomainTheory.NeighbourhoodSystems.Exercise515

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414.Basic
-public import DomainTheory.Neighborhood.Exercise414.subset_gfpSet
-public import DomainTheory.Neighborhood.Exercise414.gfpSet_subset_f
-public import DomainTheory.Neighborhood.Exercise414.gfpSet_isFixed
-public import DomainTheory.Neighborhood.Exercise414.gfpSet_greatest
-public import DomainTheory.Neighborhood.Exercise414.lfpSet_subset
-public import DomainTheory.Neighborhood.Exercise414.f_subset_lfpSet
-public import DomainTheory.Neighborhood.Exercise414.lfpSet_isFixed
-public import DomainTheory.Neighborhood.Exercise414.lfpSet_least
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.subset_gfpSet
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.gfpSet_subset_f
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.gfpSet_isFixed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.gfpSet_greatest
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_subset
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.f_subset_lfpSet
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_isFixed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_least
 
 @[expose] public section

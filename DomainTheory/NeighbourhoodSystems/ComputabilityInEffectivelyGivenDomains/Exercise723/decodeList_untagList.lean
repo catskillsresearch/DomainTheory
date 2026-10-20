@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example78
-public import DomainTheory.Neighborhood.Theorem74
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Exercise514
-public import DomainTheory.Neighborhood.Exercise723.Basic
-public import DomainTheory.Neighborhood.Exercise723.untagState_spec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagState_spec
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise723
+namespace DomainTheory.NeighbourhoodSystems.Exercise723
 
-open DomainTheory.Neighborhood Example78 NeighborhoodSystem Domain.Recursive
-open DomainTheory.Neighborhood.Exercise513 (tri num numP unnum nextCell numP_unnum)
-open DomainTheory.Neighborhood.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
+open DomainTheory.NeighbourhoodSystems Example78 NeighborhoodSystem Domain.Recursive
+open DomainTheory.NeighbourhoodSystems.Exercise513 (tri num numP unnum nextCell numP_unnum)
+open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
   num_succ_left_gt tag_injective)
 
 
@@ -109,4 +109,4 @@ theorem decodeList_untagList (c : ℕ) : decodeList (untagList c) = (untagRef c)
         List.reverse_cons, List.append_assoc, List.singleton_append]
   rw [hfold (untagRef c).1 0, decodeList_zero, List.append_nil, List.reverse_reverse]
 
-end DomainTheory.Neighborhood.Exercise723
+end DomainTheory.NeighbourhoodSystems.Exercise723

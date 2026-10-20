@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Theorem74
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
 
 @[expose] public section
 
@@ -40,7 +40,7 @@ neighbourhood by `f.rel_cod`.
 `𝒟₀`-inclusion to be decidable to single out `{i ∣ X ⊆ Xᵢ}` — and is developed with the decider.)
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -1469,4 +1469,4 @@ map `gᴬ = gSection g X`, with `gᴬ Y Z ↔ X ∪ Y g Z` (Theorem 3.12). On th
 (for consistent `c`) `∀ ⟨j, k⟩ ∈ decodeList c, X₀ₙ ∪ X₁ⱼ g X₂ₖ` — a **bounded `∀` over the coded
 list, with the `𝒟₀`-parameter `n`** of the r.e. relation of `g`. This is r.e. by the parameterised
 closure `REPred.forall_mem_decodeList₂`; junk codes go to `univ` (always satisfied). Choice-free. -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

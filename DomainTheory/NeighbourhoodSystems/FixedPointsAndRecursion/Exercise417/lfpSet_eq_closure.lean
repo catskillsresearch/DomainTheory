@@ -7,25 +7,25 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Algebra.Group.Submonoid.Basic
 import all Mathlib.Algebra.Group.Submonoid.Basic
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 import all Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.Group.Nat.Defs
 import all Mathlib.Algebra.Group.Nat.Defs
-public import DomainTheory.Neighborhood.Exercise417.Basic
-public import DomainTheory.Neighborhood.Exercise417.a_mem_F
-public import DomainTheory.Neighborhood.Exercise417.b_mem_F
-public import DomainTheory.Neighborhood.Exercise417.leastSolution_eq
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.a_mem_F
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.b_mem_F
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.leastSolution_eq
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise417
+namespace DomainTheory.NeighbourhoodSystems.Exercise417
 
 open Pointwise
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {S : Type*} [Monoid S]
 
@@ -65,4 +65,4 @@ theorem lfpSet_eq_closure (a b : S) :
       · rw [Set.mem_singleton_iff.mp h]; exact hb
     exact (Submonoid.closure_le (S := preFixSubmonoid a b hfix)).mpr hmem
 
-end DomainTheory.Neighborhood.Exercise417
+end DomainTheory.NeighbourhoodSystems.Exercise417

@@ -42,7 +42,7 @@ basic theory avoids maximal-filter existence (Zorn/choice). Every theorem here d
 on `propext`/`Quot.sound` (no `Classical.choice`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 /-- **Definition 1.1 (Scott 1981, PRG-19).** A *neighbourhood system* over a token type
 `α`. `mem X` means "`X` is a neighbourhood" (`X ∈ 𝒟`), and `master` is Scott's least
@@ -488,4 +488,4 @@ theorem Isomorphic.trans {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁
     {V₂ : NeighborhoodSystem γ} (h₀ : V₀ ≅ᴰ V₁) (h₁ : V₁ ≅ᴰ V₂) : V₀ ≅ᴰ V₂ :=
   h₀.elim fun e₀ => h₁.elim fun e₁ => ⟨e₀.trans e₁⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

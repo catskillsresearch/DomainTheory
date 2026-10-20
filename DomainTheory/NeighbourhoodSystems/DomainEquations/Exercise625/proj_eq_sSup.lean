@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Exercise625.Basic
-public import DomainTheory.Neighborhood.Exercise625.inj_proj_apply_le
-public import DomainTheory.Neighborhood.Exercise625.galois
-public import DomainTheory.Neighborhood.Exercise625.lowerSet_bounded
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.inj_proj_apply_le
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.galois
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.lowerSet_bounded
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Subsystem
 
@@ -38,4 +38,4 @@ theorem proj_eq_sSup (P : ProjectionPair D E) (y : E.Element) :
   · exact D.sSup_le _ (P.lowerSet_bounded y) fun x hx => (P.galois x y).mp hx
 
 end Subsystem.ProjectionPair
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

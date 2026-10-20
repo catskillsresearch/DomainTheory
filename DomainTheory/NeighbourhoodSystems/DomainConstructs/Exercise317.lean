@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise317.Basic
-public import DomainTheory.Neighborhood.Exercise317.exists_not_mem_bitNbhd
-public import DomainTheory.Neighborhood.Exercise317.prefix_of_encSet_subset
-public import DomainTheory.Neighborhood.Exercise317.gf_eq_id
-public import DomainTheory.Neighborhood.Exercise317.fg_le_id
-public import DomainTheory.Neighborhood.Exercise317.f_injective
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.exists_not_mem_bitNbhd
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.prefix_of_encSet_subset
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.gf_eq_id
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.fg_le_id
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.f_injective
 
 @[expose] public section

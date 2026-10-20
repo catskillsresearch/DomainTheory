@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise315.Basic
-public import DomainTheory.Neighborhood.Exercise315.prod_comm_isomorphic
-public import DomainTheory.Neighborhood.Exercise315.prod_assoc_isomorphic
-public import DomainTheory.Neighborhood.Exercise315.prod_unit_isomorphic
-public import DomainTheory.Neighborhood.Exercise315.unit_prod_isomorphic
-public import DomainTheory.Neighborhood.Exercise315.Isomorphicu2eprod
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.prod_comm_isomorphic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.prod_assoc_isomorphic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.prod_unit_isomorphic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.unit_prod_isomorphic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.Isomorphicu2eprod
 
 @[expose] public section

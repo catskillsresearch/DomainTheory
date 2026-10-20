@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise513
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513
 public import Mathlib.Data.List.Basic
 import all Mathlib.Data.List.Basic
 
@@ -58,9 +58,9 @@ With `entries ns = {n ∣ n ∈ ns}` the finite set of entries of a list:
 Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood.Exercise514
+namespace DomainTheory.NeighbourhoodSystems.Exercise514
 
-open DomainTheory.Neighborhood.Exercise513
+open DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-! ### A strict lower bound for `num` -/
 
@@ -101,4 +101,4 @@ so the `Monotone`-based statement would not be choice-free. The two are definiti
 def IsApprox (f : Set ℕ → Set ℕ) : Prop :=
   (∀ ⦃x x' : Set ℕ⦄, x ⊆ x' → f x ⊆ f x') ∧
     ∀ x m, m ∈ f x → ∃ ns, (∀ n ∈ ns, n ∈ x) ∧ m ∈ f (entries ns)
-end DomainTheory.Neighborhood.Exercise514
+end DomainTheory.NeighbourhoodSystems.Exercise514

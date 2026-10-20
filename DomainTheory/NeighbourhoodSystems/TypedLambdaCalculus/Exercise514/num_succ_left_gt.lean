@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise513
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513
 public import Mathlib.Data.List.Basic
 import all Mathlib.Data.List.Basic
-public import DomainTheory.Neighborhood.Exercise514.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise514
+namespace DomainTheory.NeighbourhoodSystems.Exercise514
 
-open DomainTheory.Neighborhood.Exercise513
+open DomainTheory.NeighbourhoodSystems.Exercise513
 
 
 /-- `num (n+1) b` strictly exceeds its second argument: this is what makes the decode recursion
@@ -28,4 +28,4 @@ theorem num_succ_left_gt (n b : ℕ) : b < num (n + 1) b := by
   rw [e, tri_succ]
   omega
 
-end DomainTheory.Neighborhood.Exercise514
+end DomainTheory.NeighbourhoodSystems.Exercise514

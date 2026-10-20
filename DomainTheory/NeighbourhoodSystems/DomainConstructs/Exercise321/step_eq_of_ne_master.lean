@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise321.Basic
-public import DomainTheory.Neighborhood.Exercise321.leastStep_mem
-public import DomainTheory.Neighborhood.Exercise321.leastStep_rel
-public import DomainTheory.Neighborhood.Exercise321.step_master_right
-public import DomainTheory.Neighborhood.Exercise321.step_eq_univ_iff
-public import DomainTheory.Neighborhood.Exercise321.leastStep_eq_of_step_eq
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.leastStep_mem
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.leastStep_rel
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_master_right
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_eq_univ_iff
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.leastStep_eq_of_step_eq
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -66,4 +66,4 @@ theorem step_eq_of_ne_master {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V
     rw [interYs_single_subset_eq hZ' hYY'] at h2; exact h2
   exact ⟨Set.Subset.antisymm hYY' hY'Y, Set.Subset.antisymm hZZ' hZ'Z⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

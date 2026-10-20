@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722
 public import Mathlib.Logic.Encodable.Basic
 import all Mathlib.Logic.Encodable.Basic
 
@@ -65,7 +65,7 @@ reachability + a pumping/length bound, then `matchesB` over a bounded word set) 
 undertaking. Everything in *this* file is `⊆ {propext, Quot.sound}` (no `Classical.choice`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -273,4 +273,4 @@ fragment-emptiness, because the fragment is **not closed under complement / set-
 /-- "Contains a `0`" as a fragment expression: `Σ · {0} · Σ`. -/
 def containsZero : SExpr := .cat .sigma (.cat (.single [false]) .sigma)
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Example12.Basic
-public import DomainTheory.Neighborhood.Example12.element_classification
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.element_classification
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example12
+namespace DomainTheory.NeighbourhoodSystems.Example12
 
 
 
@@ -58,4 +58,4 @@ theorem bot_is_unique_partial (x : neighborhoodSystem.Element) :
   · exact (hne1 hx).elim
 
 end neighborhoodSystem
-end DomainTheory.Neighborhood.Example12
+end DomainTheory.NeighbourhoodSystems.Example12

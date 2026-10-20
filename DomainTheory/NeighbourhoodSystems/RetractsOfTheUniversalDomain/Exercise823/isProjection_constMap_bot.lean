@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem86
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.Exercise816
-public import DomainTheory.Neighborhood.Exercise823.Basic
-public import DomainTheory.Neighborhood.Exercise823.isRetraction_constMap_bot
-public import DomainTheory.Neighborhood.Exercise823.constMap_bot_le_idMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.isRetraction_constMap_bot
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.constMap_bot_le_idMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6
 
@@ -32,4 +32,4 @@ theorem isProjection_constMap_bot (E : NeighborhoodSystem α) :
   ⟨isRetraction_constMap_bot E, constMap_bot_le_idMap E⟩
 
 end Exercise823
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

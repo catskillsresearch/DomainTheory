@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Exercise319Sum
-public import DomainTheory.Neighborhood.Example62A.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62A.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Example62A
 
@@ -83,4 +83,4 @@ sum `Aⁿ + Aⁿ` of two copies of its own `n`-fold cartesian power. -/
 theorem A_domain_equation (hn : 0 < n) : Asys n hn ≅ᴰ AAsys hn := ⟨aaEquiv hn⟩
 
 end Example62A
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

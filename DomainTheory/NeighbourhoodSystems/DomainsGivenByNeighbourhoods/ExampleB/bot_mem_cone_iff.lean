@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Data.List.Infix
 import all Mathlib.Data.List.Infix
-public import DomainTheory.Neighborhood.ExampleB.Basic
-public import DomainTheory.Neighborhood.ExampleB.cone_injective
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB.cone_injective
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.ExampleB
+namespace DomainTheory.NeighbourhoodSystems.ExampleB
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -49,4 +49,4 @@ theorem bot_mem_cone_iff {σ : Str} : B.bot.mem (cone σ) ↔ σ = [] := by
   · exact cone_injective
   · intro h; rw [h]
 
-end DomainTheory.Neighborhood.ExampleB
+end DomainTheory.NeighbourhoodSystems.ExampleB

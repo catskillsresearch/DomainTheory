@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise127.Basic
-public import DomainTheory.Neighborhood.Exercise127.le_sSup
-public import DomainTheory.Neighborhood.Exercise127.sSup_le
-public import DomainTheory.Neighborhood.Exercise127.interUpTo_pairSeq
-public import DomainTheory.Neighborhood.Exercise127.consistent_pair_iff_bounded
-public import DomainTheory.Neighborhood.Exercise127.bounded_iff_finite_bounded
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.le_sSup
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.sSup_le
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.interUpTo_pairSeq
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.consistent_pair_iff_bounded
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.bounded_iff_finite_bounded
 
 @[expose] public section

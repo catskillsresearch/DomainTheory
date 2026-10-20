@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise813a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a
 
 @[expose] public section
 
@@ -50,7 +50,7 @@ the naming in the parenthetical literal instead of asserted.
   respects order (hence the Boolean-algebra structure), not just underlying sets.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 /-! ### The formula language and its two evaluations -/
 
@@ -179,4 +179,4 @@ def Lindenbaum.toSet : Lindenbaum → Set ℕ :=
 
 /-- Semantic entailment: `φ ⊨ ψ` iff every valuation satisfying `φ` satisfies `ψ`. -/
 def Entails (φ ψ : Formula) : Prop := ∀ v, evalV v φ = true → evalV v ψ = true
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
 
 @[expose] public section
 
@@ -37,7 +37,7 @@ Correctness (`UX_splitULeft`/`UX_splitURight`) shows these compute exactly `Xₙ
 `splitU_union`/`splitU_left_ne`/`splitU_right_ne` package the four properties.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -91,4 +91,4 @@ def splitULeft (n : ℕ) : ℕ := clipLtListCode (splitMidCode n) (canonCode n)
 def splitURight (n : ℕ) : ℕ := clipGeListCode (splitMidCode n) (canonCode n)
 
 /-! ### Correctness -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

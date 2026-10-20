@@ -7,22 +7,22 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example78
-public import DomainTheory.Neighborhood.Theorem74
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Exercise514
-public import DomainTheory.Neighborhood.Exercise723.Basic
-public import DomainTheory.Neighborhood.Exercise723.mem_sumSet
-public import DomainTheory.Neighborhood.Exercise723.plusIdx_testBit
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.mem_sumSet
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusIdx_testBit
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise723
+namespace DomainTheory.NeighbourhoodSystems.Exercise723
 
-open DomainTheory.Neighborhood Example78 NeighborhoodSystem Domain.Recursive
-open DomainTheory.Neighborhood.Exercise513 (tri num numP unnum nextCell numP_unnum)
-open DomainTheory.Neighborhood.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
+open DomainTheory.NeighbourhoodSystems Example78 NeighborhoodSystem Domain.Recursive
+open DomainTheory.NeighbourhoodSystems.Exercise513 (tri num numP unnum nextCell numP_unnum)
+open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
   num_succ_left_gt tag_injective)
 
 
@@ -59,4 +59,4 @@ theorem compl_nbhd_plusIdx (n m : ℕ) : (nbhd (plusIdx n m))ᶜ = (nbhd n)ᶜ +
   · rintro ⟨a, ha, b, hb, rfl⟩
     exact ⟨a, by omega, ha, by rw [Nat.add_sub_cancel_left]; exact hb⟩
 
-end DomainTheory.Neighborhood.Exercise723
+end DomainTheory.NeighbourhoodSystems.Exercise723

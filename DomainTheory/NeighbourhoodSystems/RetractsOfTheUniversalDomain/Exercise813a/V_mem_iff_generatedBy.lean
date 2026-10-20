@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812
-public import DomainTheory.Neighborhood.Exercise812g4
-public import DomainTheory.Neighborhood.Exercise813a.Basic
-public import DomainTheory.Neighborhood.Exercise813a.generatedBy_generator_imp
-public import DomainTheory.Neighborhood.Exercise813a.generatedBy_levelSet
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.generatedBy_generator_imp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.generatedBy_levelSet
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -43,4 +43,4 @@ theorem V_mem_iff_generatedBy {X : Set ℕ} : V.mem X ↔ GeneratedBy generator 
   · rintro ⟨hgen, hne⟩
     exact (generatedBy_generator_imp hgen).resolve_left hne.ne_empty
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

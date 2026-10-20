@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Data.List.Infix
 import all Mathlib.Data.List.Infix
-public import DomainTheory.Neighborhood.ExampleB.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.ExampleB
+namespace DomainTheory.NeighbourhoodSystems.ExampleB
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -53,4 +53,4 @@ theorem sigmaElt_nil (x : B.Element) : sigmaElt [] x = x := by
   · intro hY
     exact ⟨x.sub hY, Y, hY, by rw [prepend_nil]⟩
 
-end DomainTheory.Neighborhood.ExampleB
+end DomainTheory.NeighbourhoodSystems.ExampleB

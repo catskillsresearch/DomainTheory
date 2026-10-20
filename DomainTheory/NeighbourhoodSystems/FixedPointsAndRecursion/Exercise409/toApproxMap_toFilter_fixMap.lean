@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise409.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise409.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -27,4 +27,4 @@ theorem toApproxMap_toFilter_fixMap (V : NeighborhoodSystem α) :
   have he := (funSpaceEquiv (funSpace V V) V).apply_symm_apply (fixMap V)
   rwa [funSpaceEquiv_apply, funSpaceEquiv_symm_apply] at he
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

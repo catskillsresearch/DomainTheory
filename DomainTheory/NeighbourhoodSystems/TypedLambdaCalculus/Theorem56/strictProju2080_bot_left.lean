@@ -7,22 +7,22 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example43
-public import DomainTheory.Neighborhood.Exercise326
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Theorem56.Basic
-public import DomainTheory.Neighborhood.Theorem56.strictProju2080_apply
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictProju2080_apply
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Theorem56
+namespace DomainTheory.NeighbourhoodSystems.Theorem56
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
-open DomainTheory.Neighborhood.Example43 (N natElem zeroElt succMap predMap zeroMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap predMap zeroMap
   succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
   zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN constLiftN_natElem)
-open DomainTheory.Neighborhood.Exercise326 (cond)
+open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 
 
 
@@ -35,4 +35,4 @@ theorem strictProj₀_bot_left (m : ℕ) :
   | zero => rw [zeroMap_natElem_zero, Exercise326.cond_true]
   | succ k => rw [zeroMap_natElem_succ, Exercise326.cond_false]
 
-end DomainTheory.Neighborhood.Theorem56
+end DomainTheory.NeighbourhoodSystems.Theorem56

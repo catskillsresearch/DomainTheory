@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example84
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Example84b.Basic
-public import DomainTheory.Neighborhood.Example84b.smashRetraction_mem_iff
-public import DomainTheory.Neighborhood.Example84b.smash_subsystem_prod
-public import DomainTheory.Neighborhood.Example84b.mem_toElementMap_retractionOfSubsystem_smash
-public import DomainTheory.Neighborhood.Example84b.exists_smash_witness
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.smashRetraction_mem_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.smash_subsystem_prod
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.mem_toElementMap_retractionOfSubsystem_smash
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.exists_smash_witness
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
@@ -64,4 +64,4 @@ theorem smashRetraction_eq_retractionOfSubsystem :
       · intro hybot; rw [hybot, mem_bot] at hzsYB; exact hYBne hzsYB
 
 end Smash
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

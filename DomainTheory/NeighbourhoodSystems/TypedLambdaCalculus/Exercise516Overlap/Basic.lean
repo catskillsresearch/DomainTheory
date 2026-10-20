@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise516ThueMorse
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse
 
 @[expose] public section
 
@@ -31,9 +31,9 @@ contracts to a period-`q` overlap via the substitution structure, and an odd per
 run of three equal symbols.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 
 /-! ### The two basic facts about consecutive symbols. -/
 
@@ -47,4 +47,4 @@ def Overlap (i p : ℕ) : Prop := 1 ≤ p ∧ ∀ k, k ≤ p → tm (i + k) = tm
 /-! ### Cube-freeness — Scott's literal form `t ≠ u·a·a·a·v`. -/
 
 open Example44 ExampleB NeighborhoodSystem
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

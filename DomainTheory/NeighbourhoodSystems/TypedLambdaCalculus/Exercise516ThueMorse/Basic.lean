@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise516
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516
 public import Mathlib.Data.Nat.Bits
 import all Mathlib.Data.Nat.Bits
 
@@ -46,9 +46,9 @@ uniqueness lemmas. Overlap-freeness (property (b)) is a self-contained word-comb
 lives in its own module.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 /-! ### The Thue–Morse morphism `expand` (`0 ↦ 01`, `1 ↦ 10`). -/
 
@@ -89,4 +89,4 @@ the least fixed point of `Φ`. -/
 def tElt : C.Element := tmOp.fixElement
 
 /-! ### Property (a) — the digit characterization. -/
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

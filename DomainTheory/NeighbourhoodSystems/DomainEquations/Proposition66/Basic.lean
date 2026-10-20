@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition63
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
 
 @[expose] public section
 
@@ -26,7 +26,7 @@ realising it is the only one (`iso_hom_unique`).
 Choice-free (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 universe u
 
@@ -51,4 +51,4 @@ def initialIso (hA : IsInitial A) (hB : IsInitial B) : Iso A.carrier B.carrier w
     have h := comp_desc_eq_id hB hA
     have := congrArg AlgHom.hom h
     simpa using this
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

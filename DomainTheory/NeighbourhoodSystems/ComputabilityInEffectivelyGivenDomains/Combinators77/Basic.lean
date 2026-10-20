@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition77
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77
 
 @[expose] public section
 
@@ -39,7 +39,7 @@ style of Theorem 7.4's `proj₀`/`in₀`. The `ApproximableMap` data is choice-f
 correctness proofs route through `Classical` (set equality over an arbitrary carrier).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive Example61
 
@@ -120,4 +120,4 @@ def proj0Map : ApproximableMap (Dsharp D hD) (Dsharp D hD) where
     (proj0Map hD).rel W Z ↔
       MemS D W ∧ MemS D Z ∧ (Z = Gamma D ∨ ∃ Pp Qq, W = embPair Pp Qq ∧ Pp ⊆ Z) := Iff.rfl
 end Proposition77
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

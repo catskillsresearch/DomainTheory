@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.Example12
-public import DomainTheory.Neighborhood.Exercise412.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise412.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise412
+namespace DomainTheory.NeighbourhoodSystems.Exercise412
 
 open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
 
@@ -26,4 +26,4 @@ open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
 (so `I_T` has *many* fixed points: `⊥`, `elemZero`, `elemOne`). -/
 theorem idMap_fixed (x : T.Element) : (idMap T).toElementMap x = x := toElementMap_idMap x
 
-end DomainTheory.Neighborhood.Exercise412
+end DomainTheory.NeighbourhoodSystems.Exercise412

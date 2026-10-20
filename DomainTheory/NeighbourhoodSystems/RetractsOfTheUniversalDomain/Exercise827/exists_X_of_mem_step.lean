@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise826
-public import DomainTheory.Neighborhood.Exercise821
-public import DomainTheory.Neighborhood.Exercise827.Basic
-public import DomainTheory.Neighborhood.Exercise827.piD_rel_self_iff
-public import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piDType
-public import DomainTheory.Neighborhood.Exercise827.piDType_monotone
-public import DomainTheory.Neighborhood.Exercise827.toElementMap_piDApplyu27
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piD_rel_self_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.isFinitaryProjection_piDType
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piDType_monotone
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.toElementMap_piDApplyu27
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -153,4 +153,4 @@ theorem exists_X_of_mem_step (d : ApproximableMap U U) (x : (funSpace U U).Eleme
     exact mem_of_exists_rel_self (g.toElementMap (U.principal hTfinal))
       ((piDType d (U.principal hTfinal)).rel_dom hPfinal) hgmem subset_rfl hPfinal
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

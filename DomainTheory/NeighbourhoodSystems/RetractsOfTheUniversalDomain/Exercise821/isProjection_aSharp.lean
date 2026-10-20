@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise717Part2
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Proposition810
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Exercise821.Basic
-public import DomainTheory.Neighborhood.Exercise821.aSharp_le_idMap_of_le
-public import DomainTheory.Neighborhood.Exercise821.aSharpInner_idem_of_isRetraction
-public import DomainTheory.Neighborhood.Exercise821.isRetraction_aSharp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821.aSharp_le_idMap_of_le
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821.aSharpInner_idem_of_isRetraction
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821.isRetraction_aSharp
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
 
@@ -60,4 +60,4 @@ theorem isProjection_aSharp {a : ApproximableMap U U} (ha : IsProjection a) :
     IsProjection (aSharp a) :=
   ⟨isRetraction_aSharp (aSharpInner_idem_of_isRetraction ha.1), aSharp_le_idMap_of_le ha.2⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

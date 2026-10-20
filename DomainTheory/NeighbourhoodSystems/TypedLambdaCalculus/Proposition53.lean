@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition53.Basic
-public import DomainTheory.Neighborhood.Proposition53.sectionX_apply
-public import DomainTheory.Neighborhood.Proposition53.secFixX_apply
-public import DomainTheory.Neighborhood.Proposition53.secFixX_isFixed
-public import DomainTheory.Neighborhood.Proposition53.outerOp_apply
-public import DomainTheory.Neighborhood.Proposition53.fixElement_paired_eq
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.sectionX_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.secFixX_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.secFixX_isFixed
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.outerOp_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.fixElement_paired_eq
 
 @[expose] public section

@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise119.Basic
-public import DomainTheory.Neighborhood.Exercise119.positiveExample_isPositive
-public import DomainTheory.Neighborhood.Exercise119.a_inter_b
-public import DomainTheory.Neighborhood.Exercise119.one_not_mem
-public import DomainTheory.Neighborhood.Exercise119.not_isPositive
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.positiveExample_isPositive
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.a_inter_b
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.one_not_mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.not_isPositive
 
 @[expose] public section

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition63
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
 
 @[expose] public section
 
@@ -31,7 +31,7 @@ satisfy the domain equation `D ≅ T(D)`".
 Choice-free (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 universe u
 
@@ -71,4 +71,4 @@ def lambek (A : TAlgebra T) (hA : IsInitial A) : Iso (T.obj A.carrier) A.carrier
       _ = T.map (Category.id A.carrier) := by rw [str_comp_desc A hA]
       _ = Category.id (T.obj A.carrier) := T.map_id _
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

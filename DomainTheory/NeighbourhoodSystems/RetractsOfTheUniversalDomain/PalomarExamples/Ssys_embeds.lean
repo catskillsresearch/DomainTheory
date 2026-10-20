@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88
-public import DomainTheory.Neighborhood.Example15
-public import DomainTheory.Neighborhood.Exercise722Regular
-public import DomainTheory.Neighborhood.PalomarExamples.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example15
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.PalomarExamples.Basic
 
 @[expose] public section
 
 
 
-namespace DomainTheory.Neighborhood.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.Exercise722
 
 
 /-- **New corollary for Exercise 7.22.** Countability is `Ssys_countable` (via `SExpr`), so the
@@ -24,4 +24,4 @@ first sentence of Theorem 8.8 applies. Scott does not separately state this embe
 theorem Ssys_embeds : Ssys ⊴ U :=
   theorem_8_8 Ssys
 
-end DomainTheory.Neighborhood.Exercise722
+end DomainTheory.NeighbourhoodSystems.Exercise722

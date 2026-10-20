@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -36,9 +36,9 @@ Everything is `[propext, Quot.sound]`.
 
 set_option linter.unusedSimpArgs false
 
-namespace DomainTheory.Neighborhood.Exercise119
+namespace DomainTheory.NeighbourhoodSystems.Exercise119
 
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 
 /-! ### A positive system: all non-empty subsets of `Fin 2`. -/
 
@@ -118,4 +118,4 @@ def notPositiveSystem : NeighborhoodSystem Tok where
     · rw [h]; exact mem_a
     · rw [h]; exact mem_b
     · rw [h] at hZsub; exact (not_mem_sub_one hZ hZsub).elim
-end DomainTheory.Neighborhood.Exercise119
+end DomainTheory.NeighbourhoodSystems.Exercise119

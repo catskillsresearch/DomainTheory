@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise318.Basic
-public import DomainTheory.Neighborhood.Exercise318.inju2080_injective
-public import DomainTheory.Neighborhood.Exercise318.inju2081_injective
-public import DomainTheory.Neighborhood.Exercise318.outMapu2080_comp_inMapu2080
-public import DomainTheory.Neighborhood.Exercise318.outMapu2081_comp_inMapu2081
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318.inju2080_injective
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318.inju2081_injective
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318.outMapu2080_comp_inMapu2080
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318.outMapu2081_comp_inMapu2081
 
 @[expose] public section

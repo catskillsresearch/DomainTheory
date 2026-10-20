@@ -7,23 +7,23 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition89
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Proposition810.Basic
-public import DomainTheory.Neighborhood.Proposition810.toElementMap_of_comp_eq_idMap
-public import DomainTheory.Neighborhood.Proposition810.toElementMap_idem_of_isRetraction
-public import DomainTheory.Neighborhood.Proposition810.inMapu2080_toElementMap_reaches_left
-public import DomainTheory.Neighborhood.Proposition810.inMapu2081_toElementMap_reaches_right
-public import DomainTheory.Neighborhood.Proposition810.jPlus_bot_eq_bot
-public import DomainTheory.Neighborhood.Proposition810.toElementMap_sumComb_of_left
-public import DomainTheory.Neighborhood.Proposition810.toElementMap_sumComb_of_right
-public import DomainTheory.Neighborhood.Proposition810.toElementMap_sumComb_of_neither
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_of_comp_eq_idMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_idem_of_isRetraction
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.inMapu2080_toElementMap_reaches_left
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.inMapu2081_toElementMap_reaches_right
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.jPlus_bot_eq_bot
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_sumComb_of_left
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_sumComb_of_right
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_sumComb_of_neither
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -64,4 +64,4 @@ theorem isRetraction_sumComb {a b : ApproximableMap U U} (ha : IsRetraction a)
     rw [jPlus_bot_eq_bot, mem_bot] at hW
     exact hW
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

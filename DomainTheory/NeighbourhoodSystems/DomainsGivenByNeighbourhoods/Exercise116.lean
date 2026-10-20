@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise116.Basic
-public import DomainTheory.Neighborhood.Exercise116.le_ofExcluded_univ
-public import DomainTheory.Neighborhood.Exercise116.ofExcluded_univ_isTotal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise116.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise116.le_ofExcluded_univ
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise116.ofExcluded_univ_isTotal
 
 @[expose] public section

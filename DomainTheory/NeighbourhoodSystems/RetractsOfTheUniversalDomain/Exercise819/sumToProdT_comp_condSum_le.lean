@@ -7,25 +7,25 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise817
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Exercise326Sum
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.Exercise819.Basic
-public import DomainTheory.Neighborhood.Exercise819.outMapu2081_comp_inMapu2080
-public import DomainTheory.Neighborhood.Exercise819.outMapu2080_comp_inMapu2081
-public import DomainTheory.Neighborhood.Exercise819.which_inMapu2080_le_trueElt
-public import DomainTheory.Neighborhood.Exercise819.which_bot_le
-public import DomainTheory.Neighborhood.Exercise819.outMapu2080_bot_le
-public import DomainTheory.Neighborhood.Exercise819.outMapu2081_bot_le
-public import DomainTheory.Neighborhood.Exercise819.which_inMapu2081_le_falseElt
-public import DomainTheory.Neighborhood.Exercise819.TD_trichotomy
-public import DomainTheory.Neighborhood.Exercise819.toElementMap_sumToProdT
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.outMapu2081_comp_inMapu2080
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.outMapu2080_comp_inMapu2081
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.which_inMapu2080_le_trueElt
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.which_bot_le
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.outMapu2080_bot_le
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.outMapu2081_bot_le
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.which_inMapu2081_le_falseElt
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.TD_trichotomy
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.toElementMap_sumToProdT
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
@@ -82,4 +82,4 @@ theorem sumToProdT_comp_condSum_le :
       exact h2.le
 
 end Sum
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

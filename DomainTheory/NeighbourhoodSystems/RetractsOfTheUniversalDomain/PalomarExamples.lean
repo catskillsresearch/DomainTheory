@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.PalomarExamples.Basic
-public import DomainTheory.Neighborhood.PalomarExamples.P4_embeds
-public import DomainTheory.Neighborhood.PalomarExamples.Ssys_embeds
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.PalomarExamples.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.PalomarExamples.P4_embeds
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.PalomarExamples.Ssys_embeds
 
 @[expose] public section

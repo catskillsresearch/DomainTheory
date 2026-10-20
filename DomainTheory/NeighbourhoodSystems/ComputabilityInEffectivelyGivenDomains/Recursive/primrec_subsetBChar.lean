@@ -19,16 +19,16 @@ public import Mathlib.Computability.Partrec
 import all Mathlib.Computability.Partrec
 public import Mathlib.Tactic.Ring
 import all Mathlib.Tactic.Ring
-public import DomainTheory.Neighborhood.Exercise722Regular
-public import DomainTheory.Neighborhood.Exercise722Decide
-public import DomainTheory.Neighborhood.Exercise722Equiv
-public import DomainTheory.Neighborhood.Recursive.Basic
-public import DomainTheory.Neighborhood.Recursive.primrec_pow
-public import DomainTheory.Neighborhood.Recursive.primrec_powu2082
-public import DomainTheory.Neighborhood.Recursive.primrec_bForallFn_param
-public import DomainTheory.Neighborhood.Recursive.primrec_autStateCardFuelChar2
-public import DomainTheory.Neighborhood.Recursive.primrec_matchesBChar2
-public import DomainTheory.Neighborhood.Recursive.primrec_codeBound
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.primrec_pow
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.primrec_powu2082
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.primrec_bForallFn_param
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.primrec_autStateCardFuelChar2
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.primrec_matchesBChar2
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.primrec_codeBound
 
 @[expose] public section
 
@@ -275,7 +275,7 @@ namespace Domain.Recursive
 
 
 
-open DomainTheory.Neighborhood Exercise722
+open DomainTheory.NeighbourhoodSystems Exercise722
 
 
 

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Recursive
-public import DomainTheory.Neighborhood.RationalPrimrec.Basic
-public import DomainTheory.Neighborhood.RationalPrimrec.qDen_pos
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.qDen_pos
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -43,4 +43,4 @@ theorem ratLeCode_eq_one_iff (c1 c2 : ℕ) :
   push_cast
   constructor <;> intro h <;> nlinarith [h]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example44
-public import DomainTheory.Neighborhood.Exercise326
-public import DomainTheory.Neighborhood.Exercise419.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise419
+namespace DomainTheory.NeighbourhoodSystems.Exercise419
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
 
 
 /-- **Exercise 4.19 — Peano (ii′) for `{0,1}*`.** The two successor ranges are disjoint:
@@ -24,4 +24,4 @@ open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Examp
 theorem peano_cons_disjoint (σ τ : Str) : (false :: σ) ≠ (true :: τ) := by
   simp
 
-end DomainTheory.Neighborhood.Exercise419
+end DomainTheory.NeighbourhoodSystems.Exercise419

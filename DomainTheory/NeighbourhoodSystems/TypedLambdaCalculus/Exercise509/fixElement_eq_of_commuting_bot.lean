@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407
-public import DomainTheory.Neighborhood.Exercise509.Basic
-public import DomainTheory.Neighborhood.Exercise509.commute_apply
-public import DomainTheory.Neighborhood.Exercise509.iterElem_succ
-public import DomainTheory.Neighborhood.Exercise509.iterElem_zerou27
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.commute_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.iterElem_succ
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.iterElem_zerou27
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -77,4 +77,4 @@ theorem fixElement_eq_of_commuting_bot {f g : ApproximableMap V V} (hcomm : f.co
   · exact fixElement_le_of_toElementMap_le g (le_of_eq hgfixf)
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

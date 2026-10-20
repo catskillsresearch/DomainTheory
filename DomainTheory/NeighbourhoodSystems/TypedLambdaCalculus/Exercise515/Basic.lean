@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 import all Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.FreeMonoid.Basic
@@ -44,10 +44,10 @@ recursion (`kpow`) rather than `⋃ₙ zⁿ`, and phrase Arden's lemma without `
 everything **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood.Exercise515
+namespace DomainTheory.NeighbourhoodSystems.Exercise515
 
 open Pointwise
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {S : Type*} [Monoid S]
 
@@ -87,4 +87,4 @@ def parkX (a b c d : Set S) : Set S := star (parkA a b) * parkC a b c d
 
 /-- The accompanying least solution for `y`: `y₀ = a*·(b·x₀ ∪ d)`. -/
 def parkY (a b c d : Set S) : Set S := star a * (b * parkX a b c d ∪ d)
-end DomainTheory.Neighborhood.Exercise515
+end DomainTheory.NeighbourhoodSystems.Exercise515

@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Exercise221.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise221
+namespace DomainTheory.NeighbourhoodSystems.Exercise221
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 
@@ -58,4 +58,4 @@ theorem juxtapose_cone (σ : Str) (y : C.Element) :
     exact ⟨cone σ, C.master, ⟨memC_cone σ, subset_rfl⟩, y.master_mem, C.master_mem, hZ,
       Or.inl ⟨σ, rfl, hconeσZ⟩⟩
 
-end DomainTheory.Neighborhood.Exercise221
+end DomainTheory.NeighbourhoodSystems.Exercise221

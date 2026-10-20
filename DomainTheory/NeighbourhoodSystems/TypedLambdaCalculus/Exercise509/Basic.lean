@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
 
 @[expose] public section
 
@@ -33,7 +33,7 @@ For the second part, commutation gives `g(fⁿ(⊥)) = fⁿ⁺¹(⊥)` once `g(�
 All maps and elements are choice-free; the equalities use only the order on `|𝒟|`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -41,4 +41,4 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

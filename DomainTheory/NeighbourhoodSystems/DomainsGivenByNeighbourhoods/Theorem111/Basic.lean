@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Order.Monotone.Basic
 import all Mathlib.Order.Monotone.Basic
 
@@ -34,7 +34,7 @@ We realize each as a concrete `Element`:
 Everything is constructive (`[propext, Quot.sound]`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -75,4 +75,4 @@ def iUnion (x : ℕ → V.Element) (hmono : Monotone x) : V.Element where
 @[simp] theorem mem_iUnion (x : ℕ → V.Element) (hmono : Monotone x) {X : Set α} :
     (V.iUnion x hmono).mem X ↔ ∃ n, (x n).mem X := Iff.rfl
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

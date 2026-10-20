@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88l.Basic
-public import DomainTheory.Neighborhood.Theorem88l.myStep_subset
-public import DomainTheory.Neighborhood.Theorem88l.myFoldl_subset
-public import DomainTheory.Neighborhood.Theorem88l.myFoldl_inter_of_le
-public import DomainTheory.Neighborhood.Theorem88l.D_inter_primrec
-public import DomainTheory.Neighborhood.Theorem88l.D_X_inter_eq
-public import DomainTheory.Neighborhood.Theorem88l.D_X_inter_spec
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.Theorem88m.Basic
-public import DomainTheory.Neighborhood.Theorem88m.fixedNbhd_isEffectivelyGiven
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.myStep_subset
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.myFoldl_subset
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.myFoldl_inter_of_le
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.D_inter_primrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.D_X_inter_eq
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.D_X_inter_spec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88m.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88m.fixedNbhd_isEffectivelyGiven
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -38,4 +38,4 @@ theorem theorem_8_8_c {a : ApproximableMap U U} (_hfin : IsFinitaryProjection a)
     (fixedNbhd a).IsEffectivelyGiven ∧ fixedNbhd a ◁ U :=
   ⟨fixedNbhd_isEffectivelyGiven hcomp, fixedNbhd_subsystem a⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

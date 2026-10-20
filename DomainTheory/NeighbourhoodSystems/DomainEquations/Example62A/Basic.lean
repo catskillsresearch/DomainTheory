@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
 
 @[expose] public section
 
@@ -47,7 +47,7 @@ aside (eventually-periodic trees ↔ regular events) are formalised in `Example6
 All *data* is choice-free (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Example62A
 
@@ -553,4 +553,4 @@ def aaEquiv (hn : 0 < n) : (Asys n hn).Element ≃o (AAsys hn).Element where
       · exact Or.inr (Or.inl ⟨X, hX, rfl, h _ hzX⟩)
       · exact Or.inr (Or.inr ⟨Y, hY, rfl, h _ hzY⟩)
 end Example62A
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

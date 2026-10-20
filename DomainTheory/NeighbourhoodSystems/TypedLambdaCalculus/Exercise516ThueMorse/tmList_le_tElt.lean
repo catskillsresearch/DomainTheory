@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise516
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516
 public import Mathlib.Data.Nat.Bits
 import all Mathlib.Data.Nat.Bits
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.Basic
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.iterElem_succ_eq
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_prefix
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.expand_iterate_eq
-public import DomainTheory.Neighborhood.Exercise516ThueMorse.iterElem_le_fixElement
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.iterElem_succ_eq
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmList_prefix
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.expand_iterate_eq
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.iterElem_le_fixElement
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
 
@@ -48,4 +48,4 @@ theorem tmList_le_tElt (n : ℕ) : strBot (tmList n) ≤ tElt := by
     _ = tmOp.iterElem (n + 1) := (iterElem_succ_eq n).symm
     _ ≤ tElt := iterElem_le_fixElement tmOp (n + 1)
 
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

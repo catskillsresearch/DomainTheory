@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Exercise324
-public import DomainTheory.Neighborhood.Table55
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
 
 @[expose] public section
 
@@ -32,7 +32,7 @@ argument of Exercise 8.25 (`D ≅ D → V`, `V × V ≅ V` `⟹` `D × D ≅ D`,
 Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -101,4 +101,4 @@ noncomputable def funSpaceCongrOrderIso (e0 : V₀.Element ≃o V₀'.Element)
     (funSpaceCongr_hji e0 e1) (funSpaceCongr_hij e0 e1)
 
 /-! ### Currying, as a domain isomorphism -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

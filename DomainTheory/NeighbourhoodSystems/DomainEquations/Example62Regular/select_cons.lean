@@ -9,12 +9,12 @@ module
 
 public import Mathlib.Computability.MyhillNerode
 import all Mathlib.Computability.MyhillNerode
-public import DomainTheory.Neighborhood.Example62Regular.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Example62Regular
 
@@ -35,4 +35,4 @@ theorem select_cons (a : Tree n) (i : Fin n) (σ : List (Fin n)) :
   funext τ; simp [child]
 
 end Example62Regular
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.SplitU
-public import DomainTheory.Neighborhood.Exercise812e
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e
 
 @[expose] public section
 
@@ -43,7 +43,7 @@ compute exactly these two quantities as primitive-recursive folds over `canonCod
 `SplitU.lean`'s `clipLtListCode`/`clipGeListCode` unchanged for the actual clipping.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -449,4 +449,4 @@ def UBisection2 : ComputableBisection UComputablePresentation where
   union := splitU2_union
   left_congr := fun _ _ h => splitU2Left_congr h
   right_congr := fun _ _ h => splitU2Right_congr h
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

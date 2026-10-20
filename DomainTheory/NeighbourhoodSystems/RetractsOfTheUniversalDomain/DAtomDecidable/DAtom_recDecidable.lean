@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88a.Basic
-public import DomainTheory.Neighborhood.Theorem88a.idxSet_nonempty
-public import DomainTheory.Neighborhood.Theorem88a.idxSet_eq_iff
-public import DomainTheory.Neighborhood.Theorem88a.isomorphic_DprimeU
-public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8_a
-public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.DAtomDecidable.Basic
-public import DomainTheory.Neighborhood.DAtomDecidable.DAtomEmptyChar_eq_one_iff
-public import DomainTheory.Neighborhood.DAtomDecidable.primrec_DAtomEmptyChar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_nonempty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_eq_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.isomorphic_DprimeU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8_a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.DAtomEmptyChar_eq_one_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.primrec_DAtomEmptyChar
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -67,4 +67,4 @@ theorem DAtom_recDecidable :
     primrec_DAtomEmptyChar P cons incl hconsp hinclp, fun t => ?_⟩
   exact (DAtomEmptyChar_eq_one_iff P cons incl hcons hincl t.unpair.1 t.unpair.2).symm
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

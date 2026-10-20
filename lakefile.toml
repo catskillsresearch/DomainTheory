@@ -6,7 +6,7 @@ defaultTargets = ["DomainTheory"]
 # DomainTheory is a single Lean library assembled as a derivative work
 # from the vendored per-paper formalizations (see PROVENANCE.md and
 # vendor/FROZEN.txt): DomainTheory/ContinuousLattice (ex-scott1972),
-# DataTypesAsLattices (ex-scott1976), Neighborhood (ex-scott1980),
+# DataTypesAsLattices (ex-scott1976), NeighbourhoodSystems (ex-scott1980),
 # InformationSystems (ex-scott1982), BridgeTheorems (ex-scott_models).
 # `lake build` builds DomainTheory.lean and all submodules.
 

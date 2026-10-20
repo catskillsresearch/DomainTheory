@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise513
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513
 public import Mathlib.Data.List.Basic
 import all Mathlib.Data.List.Basic
-public import DomainTheory.Neighborhood.Exercise514.Basic
-public import DomainTheory.Neighborhood.Exercise514.num_succ_left_gt
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.num_succ_left_gt
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise514
+namespace DomainTheory.NeighbourhoodSystems.Exercise514
 
-open DomainTheory.Neighborhood.Exercise513
+open DomainTheory.NeighbourhoodSystems.Exercise513
 
 
 
@@ -39,4 +39,4 @@ theorem tag_surjective (c : ℕ) : ∃ ns m, tag ns m = c := by
           obtain ⟨ns, m, hns⟩ := ih b hlt
           exact ⟨k :: ns, m, by rw [tag_cons, hns]; exact hab⟩
 
-end DomainTheory.Neighborhood.Exercise514
+end DomainTheory.NeighbourhoodSystems.Exercise514

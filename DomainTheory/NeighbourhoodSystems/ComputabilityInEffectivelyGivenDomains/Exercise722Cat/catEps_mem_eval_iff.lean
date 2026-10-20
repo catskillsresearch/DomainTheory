@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
 public import Mathlib.Computability.EpsilonNFA
 import all Mathlib.Computability.EpsilonNFA
-public import DomainTheory.Neighborhood.Exercise722Cat.Basic
-public import DomainTheory.Neighborhood.Exercise722Cat.catEps_mem_u3b5Closure_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat.catEps_mem_u3b5Closure_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -114,4 +114,4 @@ theorem catEps_mem_eval_iff (x : List Bool) (s : σ₁ ⊕ σ₂) :
           exact Or.inl ⟨t', hstep, rfl⟩
 
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

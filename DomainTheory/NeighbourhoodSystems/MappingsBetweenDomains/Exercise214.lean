@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise214.Basic
-public import DomainTheory.Neighborhood.Exercise214.phi_mem
-public import DomainTheory.Neighborhood.Exercise214.phi_spec
-public import DomainTheory.Neighborhood.Exercise214.rel_ofIso_iff
-public import DomainTheory.Neighborhood.Exercise214.phi_inter
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.phi_mem
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.phi_spec
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.rel_ofIso_iff
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.phi_inter
 
 @[expose] public section

@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Table55
-public import DomainTheory.Neighborhood.Exercise823
-public import DomainTheory.Neighborhood.Exercise715
-public import DomainTheory.Neighborhood.Exercise825Pow
-public import DomainTheory.Neighborhood.Exercise825Embed
-public import DomainTheory.Neighborhood.Exercise825Closing
-public import DomainTheory.Neighborhood.Exercise820
-public import DomainTheory.Neighborhood.Exercise825FixedPoint.Basic
-public import DomainTheory.Neighborhood.Exercise825FixedPoint.toElementMap_RMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Pow
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.toElementMap_RMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -58,4 +58,4 @@ theorem toApproxMap_lamOp (c a : ApproximableMap U U) :
     toElementMap_curry_apply, toElementMap_RMap, Sub8_6.toApproxMap_toFilter,
     toApproxMap_toElementMap_expMap, toElementMap_comp, toElementMap_comp]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

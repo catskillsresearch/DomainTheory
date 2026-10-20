@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise118.Basic
-public import DomainTheory.Neighborhood.Exercise118.sInf_le
-public import DomainTheory.Neighborhood.Exercise118.le_sInf
-public import DomainTheory.Neighborhood.Exercise118.subset_leastFilter
-public import DomainTheory.Neighborhood.Exercise118.leastFilter_le
-public import DomainTheory.Neighborhood.Exercise118.triSys_master
-public import DomainTheory.Neighborhood.Exercise118.family_pairwise_nonempty
-public import DomainTheory.Neighborhood.Exercise118.triple_mem
-public import DomainTheory.Neighborhood.Exercise118.triple_interUpTo_empty
-public import DomainTheory.Neighborhood.Exercise118.not_finitelyConsistent
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.sInf_le
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.le_sInf
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.subset_leastFilter
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.leastFilter_le
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.triSys_master
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.family_pairwise_nonempty
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.triple_mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.triple_interUpTo_empty
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.not_finitelyConsistent
 
 @[expose] public section

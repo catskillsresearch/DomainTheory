@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise222
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -39,9 +39,9 @@ down the step-set neighbourhoods of Definition 3.8 explicitly. This is exactly S
 Exercise 2.22 and from the `graph`-inversion.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise327
+namespace DomainTheory.NeighbourhoodSystems.Exercise327
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
@@ -163,4 +163,4 @@ noncomputable def funSpaceReprIso (V₀ : NeighborhoodSystem α) (V₁ : Neighbo
   (Exercise222.reprIso (C V₀ V₁) C_inter C_nonempty C_dir).trans
     ((graphEquiv V₀ V₁).symm.trans (funSpaceEquiv V₀ V₁).symm)
 
-end DomainTheory.Neighborhood.Exercise327
+end DomainTheory.NeighbourhoodSystems.Exercise327

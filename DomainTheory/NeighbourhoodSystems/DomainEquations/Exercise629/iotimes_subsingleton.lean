@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 public import Mathlib.Data.Set.Finite.Basic
 import all Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Data.Finset.Basic
 import all Mathlib.Data.Finset.Basic
-public import DomainTheory.Neighborhood.Exercise629.Basic
-public import DomainTheory.Neighborhood.Exercise629.iotimes_only_master
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.iotimes_only_master
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -67,4 +67,4 @@ theorem iotimes_subsingleton [Infinite ι] (D : ∀ i, NeighborhoodSystem (α i)
   · intro hy; rw [iotimes_only_master D W (y.sub hy)]; exact x.master_mem
 
 end Exercise629
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

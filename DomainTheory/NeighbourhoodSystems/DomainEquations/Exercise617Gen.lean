@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise617Gen.Basic
-public import DomainTheory.Neighborhood.Exercise617Gen.embA_nonempty
-public import DomainTheory.Neighborhood.Exercise617Gen.embA_ne
-public import DomainTheory.Neighborhood.Exercise617Gen.Cn_domain_equation
-public import DomainTheory.Neighborhood.Exercise617Gen.Cfin_domain_equation
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.embA_nonempty
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.embA_ne
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.Cn_domain_equation
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.Cfin_domain_equation
 
 @[expose] public section

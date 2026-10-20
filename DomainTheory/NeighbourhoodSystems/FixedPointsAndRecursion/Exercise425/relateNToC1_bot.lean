@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example43
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise425.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise425
+namespace DomainTheory.NeighbourhoodSystems.Exercise425
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
 
@@ -51,4 +51,4 @@ open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
 theorem relateNToC1_bot : relateNToC1.toElementMap Example43.N.bot = C1.bot :=
   Example43.constLiftN_bot C1 oneElem
 
-end DomainTheory.Neighborhood.Exercise425
+end DomainTheory.NeighbourhoodSystems.Exercise425

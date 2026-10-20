@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Exercise826.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -37,4 +37,4 @@ theorem Uapply_Ulam (f : ApproximableMap U U) (x : U.Element) :
     (toElementMap_comp jArrow iArrow (toFilter f)).symm
   rw [h1, jArrow_comp_iArrow, toElementMap_idMap, evalMap_apply, hround]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

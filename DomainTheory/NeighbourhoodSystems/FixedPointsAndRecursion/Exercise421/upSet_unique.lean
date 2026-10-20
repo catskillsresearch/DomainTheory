@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise421.Basic
-public import DomainTheory.Neighborhood.Exercise421.upSet_zero
-public import DomainTheory.Neighborhood.Exercise421.upSet_succ
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.upSet_zero
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.upSet_succ
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise421
+namespace DomainTheory.NeighbourhoodSystems.Exercise421
 
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
 
@@ -36,4 +36,4 @@ theorem upSet_unique (s : ℕ → Set ℕ) (h0 : s 0 = Set.univ)
   | zero => rw [h0, upSet_zero]
   | succ k ih => rw [hsucc k, ih, upSet_succ]
 
-end DomainTheory.Neighborhood.Exercise421
+end DomainTheory.NeighbourhoodSystems.Exercise421

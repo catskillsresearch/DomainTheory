@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812
-public import DomainTheory.Neighborhood.IntervalPrimrec
-public import DomainTheory.Neighborhood.Theorem88
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
 
 @[expose] public section
 
@@ -76,7 +76,7 @@ assembly into `DomainIso D₀ D₁`. This remaining work is comparable in size t
 plus the interleaving glue — a substantial next increment, tracked in `HANDOFF.md`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -2045,4 +2045,4 @@ theorem isomorphic_812c : D₀ ≅ᴰ D₁ :=
   ⟨domainIso812c D₀ D₁ hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem hD₀mne
     hD₁mne hXcover hYcover hX0 hY0⟩
 end Iso
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

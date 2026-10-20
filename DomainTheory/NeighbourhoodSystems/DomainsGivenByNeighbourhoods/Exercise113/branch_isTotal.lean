@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Theorem111
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise113.Basic
-public import DomainTheory.Neighborhood.Exercise113.branch_mem_iff
-public import DomainTheory.Neighborhood.Exercise113.prefix_comparable_of_mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.branch_mem_iff
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.prefix_comparable_of_mem
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise113
+namespace DomainTheory.NeighbourhoodSystems.Exercise113
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 
@@ -43,4 +43,4 @@ theorem branch_isTotal (p : ℕ → Bool) : B.IsTotal (branch p) := by
     have hσ : prefixSeq p σ.length = σ := h.eq_of_length hlen
     exact (branch_mem_iff p).mpr ⟨σ.length, by rw [hσ]⟩
 
-end DomainTheory.Neighborhood.Exercise113
+end DomainTheory.NeighbourhoodSystems.Exercise113

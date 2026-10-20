@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Example12.Basic
-public import DomainTheory.Neighborhood.Example12.element_classification
-public import DomainTheory.Neighborhood.Example12.not_elemZero_le_elemOne
-public import DomainTheory.Neighborhood.Example12.not_elemOne_le_elemZero
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.element_classification
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.not_elemZero_le_elemOne
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.not_elemOne_le_elemZero
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example12
+namespace DomainTheory.NeighbourhoodSystems.Example12
 
 
 
@@ -64,4 +64,4 @@ theorem eq_bot_of_le_elemZero_of_le_elemOne {a : neighborhoodSystem.Element}
   · exact absurd h0 not_elemOne_le_elemZero
 
 end neighborhoodSystem
-end DomainTheory.Neighborhood.Example12
+end DomainTheory.NeighbourhoodSystems.Example12

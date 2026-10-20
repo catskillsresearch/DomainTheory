@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
 public import Mathlib.Computability.DFA
 import all Mathlib.Computability.DFA
 public import Mathlib.Data.Fintype.Option
 import all Mathlib.Data.Fintype.Option
-public import DomainTheory.Neighborhood.Exercise722DFA.Basic
-public import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_evalFrom_none
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.singleDFA_evalFrom_none
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -77,4 +77,4 @@ theorem singleDFA_evalFrom (σ : List Bool) (w : List Bool) (k : Fin (σ.length 
       rw [hd]; exact (by simp : ¬ (b :: w) <+: [])
 
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

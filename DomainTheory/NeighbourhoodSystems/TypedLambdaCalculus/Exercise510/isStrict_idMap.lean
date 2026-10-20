@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise510.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise510
+namespace DomainTheory.NeighbourhoodSystems.Exercise510
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β γ : Type*}
 
@@ -49,4 +49,4 @@ theorem isStrict_idMap : IsStrict (idMap V₀) := by
   rintro Y ⟨_, hY, hsub⟩
   exact Set.Subset.antisymm (V₀.sub_master hY) hsub
 
-end DomainTheory.Neighborhood.Exercise510
+end DomainTheory.NeighbourhoodSystems.Exercise510

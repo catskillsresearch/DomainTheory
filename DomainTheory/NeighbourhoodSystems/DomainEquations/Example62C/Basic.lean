@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example62
-public import DomainTheory.Neighborhood.Example44
-public import DomainTheory.Neighborhood.Exercise315
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
 
 @[expose] public section
 
@@ -39,7 +39,7 @@ the three-way separated sum `sum3` (mirroring Exercise 3.18), then exhibit the o
 All *data* is choice-free (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 
@@ -676,4 +676,4 @@ def ccEquiv : C.Element ≃o CC.Element where
       · exact Or.inr (Or.inr (Or.inl ⟨X, hX, rfl, h _ hz⟩))
       · exact Or.inr (Or.inr (Or.inr ⟨Y, hY, rfl, h _ hz⟩))
 end Example62C
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

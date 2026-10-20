@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.UBisection2.Basic
-public import DomainTheory.Neighborhood.UBisection2.listMinFst_le_one
-public import DomainTheory.Neighborhood.UBisection2.zero_le_listMaxSnd
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.listMinFst_le_one
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.zero_le_listMaxSnd
 
 @[expose] public section

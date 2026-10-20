@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
-public import DomainTheory.Neighborhood.Exercise120
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -57,7 +57,7 @@ neighbourhood system*, effectively given when `𝒟` is, is the separate **Propo
 (`Proposition710.lean`). Everything here is choice-free (`⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -78,4 +78,4 @@ def PDmem (W : Set (Set α)) : Prop :=
 
 /-! ### Definition 7.9 — the two displayed intersection remarks -/
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

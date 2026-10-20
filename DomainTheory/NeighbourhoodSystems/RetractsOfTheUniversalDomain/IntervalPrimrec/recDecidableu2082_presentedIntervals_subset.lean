@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87
-public import DomainTheory.Neighborhood.RationalPrimrec
-public import DomainTheory.Neighborhood.RecursiveCross
-public import DomainTheory.Neighborhood.IntervalPrimrec.Basic
-public import DomainTheory.Neighborhood.IntervalPrimrec.primrec_diffCode
-public import DomainTheory.Neighborhood.IntervalPrimrec.recDecidable_presentedIntervals_nonempty
-public import DomainTheory.Neighborhood.IntervalPrimrec.presentedIntervals_decodeQPairList_subset_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.primrec_diffCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.recDecidable_presentedIntervals_nonempty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.presentedIntervals_decodeQPairList_subset_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -70,4 +70,4 @@ theorem recDecidable₂_presentedIntervals_subset :
     (recDecidable_presentedIntervals_nonempty.comp primrec_diffCode).not
   exact presentedIntervals_decodeQPairList_subset_iff t.unpair.1 t.unpair.2
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

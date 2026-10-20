@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem85
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Theorem88h.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -32,4 +32,4 @@ theorem diagFixed_isREPred {P : ComputablePresentation V} {a : ApproximableMap V
   simp only [unpair_pair_fst, unpair_pair_snd]
   exact Iff.rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

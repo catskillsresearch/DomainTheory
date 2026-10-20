@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.Exercise214.Basic
-public import DomainTheory.Neighborhood.Exercise214.phi_mem
-public import DomainTheory.Neighborhood.Exercise214.phi_spec
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.phi_mem
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.phi_spec
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -73,4 +73,4 @@ theorem phi_inter (e : V₀.Element ≃o V₁.Element) {X X' : Set α}
     exact (V₁.principal_le_iff (phi_mem e hXX') hinter).mp h
   exact Set.Subset.antisymm hsubInter hsub2
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

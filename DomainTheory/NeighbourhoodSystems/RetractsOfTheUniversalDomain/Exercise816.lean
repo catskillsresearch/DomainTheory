@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise816.Basic
-public import DomainTheory.Neighborhood.Exercise816.isFinitaryProjection_le_iff_fixedNbhd_subsystem
-public import DomainTheory.Neighborhood.Exercise816.exercise_8_16
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816.isFinitaryProjection_le_iff_fixedNbhd_subsystem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816.exercise_8_16
 
 @[expose] public section

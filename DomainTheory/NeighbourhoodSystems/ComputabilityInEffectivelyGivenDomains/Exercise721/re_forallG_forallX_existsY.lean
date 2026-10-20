@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise719
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise721.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise721.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -81,4 +81,4 @@ theorem re_forallG_forallX_existsY {R : ℕ → ℕ → ℕ → Prop}
   refine REPred.of_iff (fun w => ?_) (hGfull.comp hm4)
   simp only [unpair_pair_fst, unpair_pair_snd]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

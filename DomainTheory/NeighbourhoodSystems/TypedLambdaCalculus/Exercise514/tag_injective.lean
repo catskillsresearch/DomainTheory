@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise513
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513
 public import Mathlib.Data.List.Basic
 import all Mathlib.Data.List.Basic
-public import DomainTheory.Neighborhood.Exercise514.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise514
+namespace DomainTheory.NeighbourhoodSystems.Exercise514
 
-open DomainTheory.Neighborhood.Exercise513
+open DomainTheory.NeighbourhoodSystems.Exercise513
 
 
 
@@ -57,4 +57,4 @@ theorem tag_injective : ∀ {ns₁ ns₂ : List ℕ} {m₁ m₂ : ℕ},
           obtain ⟨hns, hm⟩ := ih h2
           exact ⟨by rw [hn, hns], hm⟩
 
-end DomainTheory.Neighborhood.Exercise514
+end DomainTheory.NeighbourhoodSystems.Exercise514

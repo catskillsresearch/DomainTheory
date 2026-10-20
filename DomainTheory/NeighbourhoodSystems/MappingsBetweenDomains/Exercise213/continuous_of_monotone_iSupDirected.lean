@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Exercise122
-public import DomainTheory.Neighborhood.Exercise213.Basic
-public import DomainTheory.Neighborhood.Exercise213.principalFamily_directed
-public import DomainTheory.Neighborhood.Exercise213.eq_iSupDirected_principal
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.principalFamily_directed
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.eq_iSupDirected_principal
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -61,4 +61,4 @@ theorem continuous_of_monotone_iSupDirected {c : V₀.Element → V₁.Element} 
   exact (hmono hple) Y hi
 
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

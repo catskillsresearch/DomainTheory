@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.Exercise328.Basic
-public import DomainTheory.Neighborhood.Exercise328.val_le_leastMap_toElementMap
-public import DomainTheory.Neighborhood.Exercise328.leastMapVals_bounded
-public import DomainTheory.Neighborhood.Exercise328.leastMap_toElementMap_le_of_ub
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.val_le_leastMap_toElementMap
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.leastMapVals_bounded
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.leastMap_toElementMap_le_of_ub
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -39,4 +39,4 @@ theorem toElementMap_leastMap_eq_sSup (L : List (Set α × Set β))
     rintro w ⟨p, hp, hp1x, rfl⟩
     exact val_le_leastMap_toElementMap hL hcons hp hp1x
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import Mathlib.Data.Set.Finite.Basic
 import all Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.Neighborhood.Exercise220.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise220.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise220
+namespace DomainTheory.NeighbourhoodSystems.Exercise220
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -55,4 +55,4 @@ theorem toSet_succMap (x : powerSet.Element) :
     rw [Set.mem_singleton_iff] at ha; subst ha
     exact ⟨m, by rw [compl_compl]; exact Set.mem_singleton m, rfl⟩
 
-end DomainTheory.Neighborhood.Exercise220
+end DomainTheory.NeighbourhoodSystems.Exercise220

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise322.Basic
-public import DomainTheory.Neighborhood.Exercise322.toElementMap_compApp
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.toElementMap_compApp
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -31,4 +31,4 @@ theorem toElementMap_compMap_apply (Gφ : (funSpace V₁ V₂).Element) (Fφ : (
       = (toApproxMap Gφ).toElementMap ((toApproxMap Fφ).toElementMap x) := by
   rw [compMap, toElementMap_curry_apply, toElementMap_compApp]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

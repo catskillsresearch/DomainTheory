@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407
-public import DomainTheory.Neighborhood.Exercise410
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410
 
 @[expose] public section
 
@@ -39,7 +39,7 @@ fixed point of `f'` by (ii), and `f'` has **exactly one** fixed point (Exercise 
 the project's permitted `Element.ext`; the inclusion data `inclMap` is **choice-free**.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -73,4 +73,4 @@ end ApproximableMap
 open ApproximableMap
 
 universe u
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

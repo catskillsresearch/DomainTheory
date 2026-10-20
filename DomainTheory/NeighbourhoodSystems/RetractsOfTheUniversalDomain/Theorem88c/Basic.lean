@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88b.Basic
-public import DomainTheory.Neighborhood.Theorem88b.eIdx_zero
-public import DomainTheory.Neighborhood.Theorem88b.he0
-public import DomainTheory.Neighborhood.Theorem88b.hcover
-public import DomainTheory.Neighborhood.Theorem88b.genAtom_empty_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.eIdx_zero
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.he0
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.hcover
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.genAtom_empty_iff
 
 @[expose] public section
 
@@ -62,7 +62,7 @@ functions); the presentation's `X`-field itself (`Yidx e`) is unavoidably classi
 `splitChoice`), exactly like `unitPresentation`'s trivial `X` field is "just data".
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -225,4 +225,4 @@ noncomputable def DprimeUPresentation :
   inter_spec h := DprimeU_inter_spec P h
   masterIdx := 0
   masterIdx_spec := Yidx_zero D (e P) (hcover P) (he0 P)
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

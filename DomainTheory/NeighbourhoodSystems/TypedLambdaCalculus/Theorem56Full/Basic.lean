@@ -7,11 +7,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example43
-public import DomainTheory.Neighborhood.Exercise326
-public import DomainTheory.Neighborhood.Exercise511
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import Mathlib.Computability.PartrecBasis
 import all Mathlib.Computability.PartrecBasis
 
@@ -35,14 +35,14 @@ function is realised by a single map that depends only on coordinates `0..k-1`. 
 minimisation compose. The capstone is `partrec_lamDef` and the 1-ary corollary `partrec_one`.
 -/
 
-namespace DomainTheory.Neighborhood.Theorem56Full
+namespace DomainTheory.NeighbourhoodSystems.Theorem56Full
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
-open DomainTheory.Neighborhood.Example43 (N natElem zeroElt succMap predMap zeroMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap predMap zeroMap
   succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
   zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN)
-open DomainTheory.Neighborhood.Exercise326 (cond)
-open DomainTheory.Neighborhood.Exercise511 (head tail push)
+open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
+open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 /-- The universal argument domain `𝒩 = N^∞` (Exercise 3.16). All `k`-ary number functions are
 realised as approximable maps `𝒩 → N` depending only on coordinates `0..k-1`. -/
@@ -210,4 +210,4 @@ naturals: `τ(n̂) = m̂` when `h n = m`, `τ(n̂) = ⊥` when `h n` diverges, a
 
 /-- Inject `N → 𝒩` as the stack whose only nonzero coordinate is the head. -/
 def oneArg : ApproximableMap N 𝒩 := (push N).comp (paired (idMap N) (constMap N 𝒩.bot))
-end DomainTheory.Neighborhood.Theorem56Full
+end DomainTheory.NeighbourhoodSystems.Theorem56Full

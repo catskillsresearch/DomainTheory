@@ -9,13 +9,13 @@ module
 
 public import Mathlib.Computability.MyhillNerode
 import all Mathlib.Computability.MyhillNerode
-public import DomainTheory.Neighborhood.Example62Regular.Basic
-public import DomainTheory.Neighborhood.Example62Regular.eventuallyPeriodic_iff_isRegular
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62Regular.eventuallyPeriodic_iff_isRegular
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Example62Regular
 
@@ -51,4 +51,4 @@ theorem isRegular_iff_exists_eventuallyPeriodic (L : Language (Fin n)) :
     exact (eventuallyPeriodic_iff_isRegular a).mp hEP
 
 end Example62Regular
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

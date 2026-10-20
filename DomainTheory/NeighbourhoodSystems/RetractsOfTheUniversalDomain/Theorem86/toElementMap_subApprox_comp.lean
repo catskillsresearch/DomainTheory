@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem85
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise213
-public import DomainTheory.Neighborhood.Proposition611
-public import DomainTheory.Neighborhood.Theorem86.Basic
-public import DomainTheory.Neighborhood.Theorem86.subFilter_subFilter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.subFilter_subFilter
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -56,4 +56,4 @@ theorem toElementMap_subApprox_comp (φ : (funSpace E E).Element) :
   exact subFilter_subFilter φ
 
 end Sub8_6
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Exercise122
-public import DomainTheory.Neighborhood.Exercise213.Basic
-public import DomainTheory.Neighborhood.Exercise213.mem_iff_principal_of_continuous
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.mem_iff_principal_of_continuous
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -47,4 +47,4 @@ theorem toElementMap_ofContinuous (c : V₀.Element → V₁.Element) (hc : Cont
     rwa [ofContinuous, toElementMap_ofMono_principal]
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

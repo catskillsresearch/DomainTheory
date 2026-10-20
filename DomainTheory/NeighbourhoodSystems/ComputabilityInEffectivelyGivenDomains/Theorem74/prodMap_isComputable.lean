@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Exercise319
-public import DomainTheory.Neighborhood.Exercise319Sum
-public import DomainTheory.Neighborhood.Theorem74.Basic
-public import DomainTheory.Neighborhood.Theorem74.proju2080_isComputable
-public import DomainTheory.Neighborhood.Theorem74.proju2081_isComputable
-public import DomainTheory.Neighborhood.Theorem74.paired_isComputable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74.proju2080_isComputable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74.proju2081_isComputable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74.paired_isComputable
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -44,4 +44,4 @@ theorem prodMap_isComputable {V₀' : NeighborhoodSystem α'} {V₁' : Neighborh
   exact paired_isComputable (comp_isComputable (proj₀_isComputable P₀ P₁) hf)
     (comp_isComputable (proj₁_isComputable P₀ P₁) hg)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88j.Basic
-public import DomainTheory.Neighborhood.Theorem88j.D_X_mem
-public import DomainTheory.Neighborhood.Theorem88j.D_X_of_diagFixed
-public import DomainTheory.Neighborhood.Theorem88j.D_X_surj
-public import DomainTheory.Neighborhood.Theorem88k.Basic
-public import DomainTheory.Neighborhood.Theorem88k.D_X_cons_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.D_X_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.D_X_of_diagFixed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.D_X_surj
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_cons_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -45,4 +45,4 @@ theorem D_X_cons_computable {a : ApproximableMap V V}
   simp only [unpair_pair_fst, unpair_pair_snd]
   exact D_X_cons_iff hqChar hcons t.unpair.1 t.unpair.2
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

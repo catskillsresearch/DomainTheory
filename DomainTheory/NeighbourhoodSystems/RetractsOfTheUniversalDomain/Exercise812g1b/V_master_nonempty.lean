@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.LevelSetPrimrec
-public import DomainTheory.Neighborhood.Exercise812g1b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
 /-- `hD₁mne` for `V`: the master neighbourhood `V.master = Set.univ` is non-empty. -/
 theorem V_master_nonempty : V.master.Nonempty := Set.univ_nonempty
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

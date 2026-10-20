@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
 
 @[expose] public section
 
@@ -43,9 +43,9 @@ element `σ⊥`, peeling *one* token of `σ` at a time, mirroring `out`'s own ca
 substitution into the equations. Constructive except for the `by_cases` in `ApproximableMap.ext`
 (`#print axioms ⊆ {propext, Classical.choice, Quot.sound}`). -/
 
-namespace DomainTheory.Neighborhood.Example24
+namespace DomainTheory.NeighbourhoodSystems.Example24
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 /-- Inside the first run of `1`'s: swallow `1`'s; on the first `0`, emit it and copy the rest. -/
 def del : Str → Str
@@ -134,4 +134,4 @@ structure SatisfiesRunEquations (g : ApproximableMap B B) : Prop where
   oneOne : ∀ x : B.Element, g.toElementMap (sigmaElt [true, true] x) = g.toElementMap (sigmaElt [true] x)
   oneZero : ∀ x : B.Element, g.toElementMap (sigmaElt [true, false] x) = sigmaElt [false] x
   one : g.toElementMap (sigmaElt [true] B.bot) = B.bot
-end DomainTheory.Neighborhood.Example24
+end DomainTheory.NeighbourhoodSystems.Example24

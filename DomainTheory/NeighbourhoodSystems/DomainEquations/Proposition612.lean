@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition612.Basic
-public import DomainTheory.Neighborhood.Proposition612.toElementMap_inj
-public import DomainTheory.Neighborhood.Proposition612.toElementMap_proj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.toElementMap_inj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.toElementMap_proj
 
 @[expose] public section

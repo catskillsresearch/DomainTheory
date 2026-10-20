@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Example44.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example44
+namespace DomainTheory.NeighbourhoodSystems.Example44
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
 
 
 
@@ -51,4 +51,4 @@ theorem consMap_strElem (b : Bool) (σ : Str) :
     refine ⟨{σ}, ⟨memC_singleton σ, subset_rfl⟩, memC_singleton σ, hY, ?_⟩
     rw [prepend_singleton]; exact hsub
 
-end DomainTheory.Neighborhood.Example44
+end DomainTheory.NeighbourhoodSystems.Example44

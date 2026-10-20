@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example43
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -43,9 +43,9 @@ The data (`C₁`, `consMap`, `relateNToC1`) is **choice-free** (`#print axioms �
 Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood.Exercise425
+namespace DomainTheory.NeighbourhoodSystems.Exercise425
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 /-! ### Tails, singletons, and the shift. -/
 
@@ -178,4 +178,4 @@ def infElt : C1.Element := consMap.fixElement
 the numeral `n̂` to the finite string `1ⁿ` and `⊥` to `⊥` (strict). Built from the strict-lift
 combinator `constLiftN` of Example 4.3. -/
 def relateNToC1 : ApproximableMap Example43.N C1 := Example43.constLiftN C1 oneElem
-end DomainTheory.Neighborhood.Exercise425
+end DomainTheory.NeighbourhoodSystems.Exercise425

@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.SplitU.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -28,4 +28,4 @@ theorem decodeRatPair_clipGeCode (m e : ℕ) :
   unfold clipGeCode decodeRatPair qpClipGe
   simp only [unpair_pair_fst, unpair_pair_snd, decodeRat_ratMaxCode]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

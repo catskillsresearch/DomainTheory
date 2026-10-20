@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Order.Interval.Set.LinearOrder
 import all Mathlib.Order.Interval.Set.LinearOrder
 public import Mathlib.Data.List.Basic
@@ -26,12 +26,12 @@ public import Mathlib.Data.Fintype.Card
 import all Mathlib.Data.Fintype.Card
 public import Mathlib.Order.CompleteLattice.Finset
 import all Mathlib.Order.CompleteLattice.Finset
-public import DomainTheory.Neighborhood.Definition87.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -105,4 +105,4 @@ theorem U_no_minimal {X : Set ℚ} (hX : U.mem X) :
       rw [hEq]; exact Set.inter_subset_left
     exact hYne.ne_empty ((Set.inter_eq_left.mpr hYsub).symm.trans hYZinter)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

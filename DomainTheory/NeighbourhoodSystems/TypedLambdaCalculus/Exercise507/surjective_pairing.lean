@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise507.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise507
+namespace DomainTheory.NeighbourhoodSystems.Exercise507
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
@@ -27,4 +27,4 @@ theorem surjective_pairing (z : (prod V₀ V₁).Element) :
     pair ((proj₀ V₀ V₁).toElementMap z) ((proj₁ V₀ V₁).toElementMap z) = z := by
   rw [toElementMap_proj₀, toElementMap_proj₁, pair_fst_snd]
 
-end DomainTheory.Neighborhood.Exercise507
+end DomainTheory.NeighbourhoodSystems.Exercise507

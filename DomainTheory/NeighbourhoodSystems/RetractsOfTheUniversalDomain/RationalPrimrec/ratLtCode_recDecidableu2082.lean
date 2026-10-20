@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Recursive
-public import DomainTheory.Neighborhood.RationalPrimrec.Basic
-public import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratLtCode
-public import DomainTheory.Neighborhood.RationalPrimrec.ratLtCode_le_one
-public import DomainTheory.Neighborhood.RationalPrimrec.ratLtCode_eq_one_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.primrec_ratLtCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.ratLtCode_le_one
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec.ratLtCode_eq_one_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -43,4 +43,4 @@ theorem ratLtCode_recDecidable₂ : RecDecidable₂ (fun c1 c2 => decodeRat c1 <
     (fun t => by have := ratLtCode_le_one t; omega) (fun n m => ?_)
   exact (ratLtCode_eq_one_iff n m).symm
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

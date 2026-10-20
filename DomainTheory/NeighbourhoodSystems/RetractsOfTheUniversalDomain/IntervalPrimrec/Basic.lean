@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87
-public import DomainTheory.Neighborhood.RationalPrimrec
-public import DomainTheory.Neighborhood.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
 
 @[expose] public section
 
@@ -31,7 +31,7 @@ lemmas (`presentedIntervals_decodeQPairList_combineCode` and its helpers) additi
 being `Classical.choice`-tainted, not from any classical reasoning performed in this file.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -280,4 +280,4 @@ def qpNonemptyBop (e : ℕ) : ℕ := ratLtCode (Nat.pair e.unpair.1 e.unpair.2)
 `decodeList c` via `Recursive.lean`'s `existsListChar` (the second argument of `existsListChar` is
 an unused parameter, fixed to `0`). -/
 def qpNonemptyChar (c : ℕ) : ℕ := existsListChar (fun t => qpNonemptyBop t.unpair.1) 0 c
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

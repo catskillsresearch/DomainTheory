@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88a.Basic
-public import DomainTheory.Neighborhood.Theorem88a.idxSet_nonempty
-public import DomainTheory.Neighborhood.Theorem88a.idxSet_eq_iff
-public import DomainTheory.Neighborhood.Theorem88a.isomorphic_DprimeU
-public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8_a
-public import DomainTheory.Neighborhood.Theorem88a.theorem_8_8
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.DAtomDecidable.Basic
-public import DomainTheory.Neighborhood.DAtomDecidable.primrec_meetStepCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_nonempty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_eq_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.isomorphic_DprimeU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8_a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.primrec_meetStepCode
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -45,4 +45,4 @@ theorem primrec_meetFoldCode (hconsp : Nat.Primrec cons) :
   (primrec_foldCode (primrec_meetStepCode P cons hconsp) (Nat.Primrec.const 0)
     (Nat.Primrec.const (Nat.pair 1 P.masterIdx)) primrec_id).of_eq (fun _ => rfl)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

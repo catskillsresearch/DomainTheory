@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise118.Basic
-public import DomainTheory.Neighborhood.Exercise118.triple_mem
-public import DomainTheory.Neighborhood.Exercise118.triple_interUpTo_empty
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.triple_mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.triple_interUpTo_empty
 
 @[expose] public section
 
 
 set_option linter.unusedSimpArgs false
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 
 
@@ -42,4 +42,4 @@ theorem not_finitelyConsistent : ¬ triSys.FinitelyConsistent family := by
   exact Set.not_nonempty_empty hZne
 
 end triSys
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

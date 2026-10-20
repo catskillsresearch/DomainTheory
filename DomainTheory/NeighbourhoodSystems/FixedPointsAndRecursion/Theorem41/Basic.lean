@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 
 @[expose] public section
 
@@ -41,7 +41,7 @@ All *data* constructions (`iterMap`, `fixElement`, `iterElem`, `fixMap`) are **c
 `Classical.choice` only through the project's `ext_of_toElementMap`, as permitted.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -154,4 +154,4 @@ def fixMap (V : NeighborhoodSystem α) : ApproximableMap (funSpace V V) V :=
       apply fixElement_mono
       exact (funSpaceEquiv V V).monotone
         (((funSpace V V).principal_le_iff hW hW').mpr hW'W))
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

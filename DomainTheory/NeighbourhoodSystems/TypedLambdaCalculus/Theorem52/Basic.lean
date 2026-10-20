@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Table55
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
 
 @[expose] public section
 
@@ -36,7 +36,7 @@ Everything here is at the level of approximable maps; the *map equation* `beta` 
 `ext_of_toElementMap`, the *value* equations are choice-free.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -46,4 +46,4 @@ variable {α β γ δ : Type*}
 
 namespace Theorem52
 end Theorem52
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

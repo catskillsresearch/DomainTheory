@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise826
-public import DomainTheory.Neighborhood.Exercise821
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821
 
 @[expose] public section
 
@@ -76,7 +76,7 @@ Axiom audit: everything here mentions `𝒰`, hence inherits `𝒰`'s own `Class
 (`⊆ {propext, Classical.choice, Quot.sound}`, not new).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -616,4 +616,4 @@ System-F-style parametric polymorphism than to any single-step algebraic closure
 template anywhere in Lectures I–VIII. It is intentionally left as the natural terminus of this
 formalization project, matching Scott's own framing of it as "the problem."
 -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

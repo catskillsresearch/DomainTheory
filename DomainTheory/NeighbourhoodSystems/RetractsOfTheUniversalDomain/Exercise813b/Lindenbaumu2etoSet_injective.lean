@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise813a
-public import DomainTheory.Neighborhood.Exercise813b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 
 
@@ -42,4 +42,4 @@ theorem Lindenbaum.toSet_injective : Function.Injective Lindenbaum.toSet := by
       intro h
       exact Quotient.sound (semanticEquiv_iff_evalSet_eq.mpr h)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

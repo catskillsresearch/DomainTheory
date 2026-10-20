@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise326
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
 
 @[expose] public section
 
@@ -52,10 +52,10 @@ Everything is choice-free in spirit; the only classical input is inherited from 
 (Example 1.2) and the project's `Element.ext` / `ext_of_toElementMap` machinery.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise512
+namespace DomainTheory.NeighbourhoodSystems.Exercise512
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
-open DomainTheory.Neighborhood.Exercise326 (cond TD)
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems.Exercise326 (cond TD)
 
 variable {α : Type*} (V : NeighborhoodSystem α)
   (p : ApproximableMap V TD) (f : ApproximableMap V V)
@@ -79,4 +79,4 @@ def whileFix : (funSpace V V).Element := (Wop V p f).fixElement
 
 /-- The approximable function `while p do f : D → D` denoted by `whileFix`. -/
 def whileMap : ApproximableMap V V := toApproxMap (whileFix V p f)
-end DomainTheory.Neighborhood.Exercise512
+end DomainTheory.NeighbourhoodSystems.Exercise512

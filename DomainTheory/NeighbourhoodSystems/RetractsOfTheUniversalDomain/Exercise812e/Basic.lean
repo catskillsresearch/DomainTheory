@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812d
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d
 
 @[expose] public section
 
@@ -34,7 +34,7 @@ gets junk-masked (`xSubStep`'s `newJunk`) before ever being read — see the `(e
 `arxiv.md` for the case-by-case argument. Only the "both deciders silent" branch genuinely bisects
 `B`, via the supplied `ComputableBisection`. -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -289,4 +289,4 @@ noncomputable def isComputableSplit_ofBisection (hpos : V.IsPositive) (hnomin : 
         have := emptyDiffDec_le_one P hDiff (Nat.pair n k); omega
       simp [negIdxFromBisection, h1', h2']
 end ComputableBisection
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

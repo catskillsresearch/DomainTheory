@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise513
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513
 public import Mathlib.Data.List.Basic
 import all Mathlib.Data.List.Basic
-public import DomainTheory.Neighborhood.Exercise514.Basic
-public import DomainTheory.Neighborhood.Exercise514.tag_injective
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.tag_injective
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise514
+namespace DomainTheory.NeighbourhoodSystems.Exercise514
 
-open DomainTheory.Neighborhood.Exercise513
+open DomainTheory.NeighbourhoodSystems.Exercise513
 
 
 
@@ -46,4 +46,4 @@ theorem Fun_Graph {f : Set ℕ → Set ℕ} (hf : IsApprox f) (x : Set ℕ) :
     obtain ⟨ns, hsub, hmem⟩ := hf.2 x m hm
     exact ⟨ns, hsub, ns, m, rfl, hmem⟩
 
-end DomainTheory.Neighborhood.Exercise514
+end DomainTheory.NeighbourhoodSystems.Exercise514

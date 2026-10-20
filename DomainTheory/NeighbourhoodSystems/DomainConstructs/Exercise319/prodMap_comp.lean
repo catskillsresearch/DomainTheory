@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise319.Basic
-public import DomainTheory.Neighborhood.Exercise319.toElementMap_prodMap
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.toElementMap_prodMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -35,4 +35,4 @@ theorem prodMap_comp {α'' β'' : Type*} {V₀'' : NeighborhoodSystem α''} {V�
   rw [toElementMap_prodMap, toElementMap_comp, toElementMap_comp, toElementMap_comp,
     toElementMap_prodMap, toElementMap_prodMap, fst_pair, snd_pair]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

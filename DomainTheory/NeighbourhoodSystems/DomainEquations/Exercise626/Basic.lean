@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise621
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
 
 @[expose] public section
 
@@ -41,11 +41,11 @@ is `eq_liftBot_or_exists_liftUp`, a `Prop`-level case split that uses excluded m
 to decide whether an element lies above the fresh bottom — unavoidable and called out there.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
-open DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.Exercise510
 
 namespace Exercise619
 
@@ -638,4 +638,4 @@ def liftProdEquiv : (D.lift.otimes E.lift).sys.Element ≃o (D.prod E).lift.sys.
       · exact Or.inl rfl
       · exact Or.inr ⟨X, Y, hX, hY, rfl, h _ hzXY⟩
 end Exercise619
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -11,14 +11,14 @@ public import Mathlib.Data.Set.Basic
 import all Mathlib.Data.Set.Basic
 public import Mathlib.Order.Monotone.Basic
 import all Mathlib.Order.Monotone.Basic
-public import DomainTheory.Neighborhood.Exercise414.Basic
-public import DomainTheory.Neighborhood.Exercise414.lfpSet_subset
-public import DomainTheory.Neighborhood.Exercise414.f_subset_lfpSet
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_subset
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.f_subset_lfpSet
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise414
+namespace DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {A : Type*}
 
@@ -33,4 +33,4 @@ theorem lfpSet_isFixed (f : Set A → Set A) (hf : Monotone f) :
   have hsup : lfpSet f ⊆ f (lfpSet f) := lfpSet_subset f (hf hsub)
   exact Set.Subset.antisymm hsub hsup
 
-end DomainTheory.Neighborhood.Exercise414
+end DomainTheory.NeighbourhoodSystems.Exercise414

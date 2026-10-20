@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition63
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Definition68.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe u
 
@@ -31,4 +31,4 @@ theorem toStrictMap_toStrictFilter {α β : Type*} {V₀ : NeighborhoodSystem α
     toStrictMap (toStrictFilter f) = f :=
   (strictFunEquiv V₀ V₁).right_inv f
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

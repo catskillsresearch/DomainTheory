@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Product.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -61,4 +61,4 @@ theorem ApproximableMap.rel_master (f : ApproximableMap V₀ V₁) {X : Set α} 
     f.rel X V₁.master :=
   f.mono f.master_rel (V₀.sub_master hX) subset_rfl hX V₁.master_mem
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

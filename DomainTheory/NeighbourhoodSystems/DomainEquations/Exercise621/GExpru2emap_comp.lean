@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise619PartB
-public import DomainTheory.Neighborhood.Exercise621.Basic
-public import DomainTheory.Neighborhood.Exercise621.oplusMapTok_comp
-public import DomainTheory.Neighborhood.Exercise621.otimesMapTok_comp
-public import DomainTheory.Neighborhood.Exercise621.GExpru2emap_isStrict
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusMapTok_comp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesMapTok_comp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2emap_isStrict
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
-open DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.Exercise510
 
 namespace Exercise619
 
@@ -85,4 +85,4 @@ theorem GExpr.map_comp : (T : GExpr) → {X Y Z : ScottSys} → (f : Approximabl
       · exact otimesMapTok_comp _ _ (a.map_isStrict g hg) (b.map_isStrict g hg)
 
 end Exercise619
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

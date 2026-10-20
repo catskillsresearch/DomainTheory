@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise421.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise421
+namespace DomainTheory.NeighbourhoodSystems.Exercise421
 
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
 
@@ -49,4 +49,4 @@ theorem mem_fixedPoint_iff {u : Set (ℕ × ℕ)} (hu : leOp u = u) (n m : ℕ) 
       · exact Or.inl h'
       · exact Or.inr ⟨k, ih.mpr (Nat.lt_succ_iff.mp h'), rfl⟩
 
-end DomainTheory.Neighborhood.Exercise421
+end DomainTheory.NeighbourhoodSystems.Exercise421

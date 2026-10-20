@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Recursive
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive
 
 @[expose] public section
 
@@ -50,7 +50,7 @@ Everything here is `⊆ {propext, Quot.sound}` — no `Classical.choice` — sin
 and `ℚ`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -156,4 +156,4 @@ def ratMidCode (t : ℕ) : ℕ :=
   Nat.pair (Nat.pair (qNumP c1 * qDen c2 + qNumP c2 * qDen c1)
                       (qNumN c1 * qDen c2 + qNumN c2 * qDen c1))
     (2 * qDen c1 * qDen c2 - 1)
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

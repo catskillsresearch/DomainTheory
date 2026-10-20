@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise621
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Exercise623.Basic
-public import DomainTheory.Neighborhood.Exercise623.expHom_comp_expInv
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.expHom_comp_expInv
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.Exercise510
 
 namespace Exercise619
 
@@ -105,4 +105,4 @@ theorem algHom_fix (g : AlgHom (ExpAlg N hN) B) :
 
 end Existence
 end Exercise619
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

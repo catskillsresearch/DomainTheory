@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.MinLevel.Basic
-public import DomainTheory.Neighborhood.MinLevel.primrec_isPeriodicMask
-public import DomainTheory.Neighborhood.MinLevel.primrec_minLevel
-public import DomainTheory.Neighborhood.MinLevel.primrec_minMask
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.primrec_isPeriodicMask
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.primrec_minLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.primrec_minMask
 
 @[expose] public section

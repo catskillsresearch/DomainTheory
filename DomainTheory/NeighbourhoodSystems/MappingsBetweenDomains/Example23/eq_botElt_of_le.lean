@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.Example12
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Example23.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example23
+namespace DomainTheory.NeighbourhoodSystems.Example23
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 
@@ -31,4 +31,4 @@ tokens yet is the only state consistent with committing to either verdict.) -/
 theorem eq_botElt_of_le {a : T.Element} (h0 : a ≤ trueElt) (h1 : a ≤ falseElt) : a = botElt :=
   Example12.neighborhoodSystem.eq_bot_of_le_elemZero_of_le_elemOne h0 h1
 
-end DomainTheory.Neighborhood.Example23
+end DomainTheory.NeighbourhoodSystems.Example23

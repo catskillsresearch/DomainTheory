@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise321.Basic
-public import DomainTheory.Neighborhood.Exercise321.step_master_right
-public import DomainTheory.Neighborhood.Exercise321.step_eq_univ_iff
-public import DomainTheory.Neighborhood.Exercise321.step_eq_of_ne_master
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_master_right
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_eq_univ_iff
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_eq_of_ne_master
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -48,4 +48,4 @@ theorem step_eq_iff {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V₁.mem Z
     · rw [step_master_right Y hY, step_master_right Y' hY']
     · rfl
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

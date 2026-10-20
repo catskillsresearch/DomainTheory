@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise813a
-public import DomainTheory.Neighborhood.Exercise813b.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 
 
@@ -48,4 +48,4 @@ theorem generatedBy_iff_exists_evalSet {X : Set ℕ} :
     | and φ ψ ihφ ihψ => exact ihφ.inter ihψ
     | or φ ψ ihφ ihψ => exact ihφ.union ihψ
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

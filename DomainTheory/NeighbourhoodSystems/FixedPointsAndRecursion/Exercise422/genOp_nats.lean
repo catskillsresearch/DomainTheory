@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
-public import DomainTheory.Neighborhood.Theorem46
-public import DomainTheory.Neighborhood.Exercise422.Basic
-public import DomainTheory.Neighborhood.Exercise422.genOp_monotone
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.genOp_monotone
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise422
+namespace DomainTheory.NeighbourhoodSystems.Exercise422
 
-open DomainTheory.Neighborhood DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {M : Type*} (zero : M) (succ : M → M)
 
@@ -26,4 +26,4 @@ variable {M : Type*} (zero : M) (succ : M → M)
 theorem genOp_nats : genOp zero succ (nats zero succ) = nats zero succ :=
   lfpSet_isFixed (genOp zero succ) (genOp_monotone zero succ)
 
-end DomainTheory.Neighborhood.Exercise422
+end DomainTheory.NeighbourhoodSystems.Exercise422

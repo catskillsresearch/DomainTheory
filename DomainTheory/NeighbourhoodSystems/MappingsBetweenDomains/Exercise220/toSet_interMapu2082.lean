@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import Mathlib.Data.Set.Finite.Basic
 import all Mathlib.Data.Set.Finite.Basic
-public import DomainTheory.Neighborhood.Exercise220.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise220.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise220
+namespace DomainTheory.NeighbourhoodSystems.Exercise220
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
 
@@ -56,4 +56,4 @@ theorem toSet_interMap₂ (x y : powerSet.Element) :
     exact ⟨{k}ᶜ, {k}ᶜ, hkx, hky, mem_compl_singleton k, mem_compl_singleton k,
       mem_compl_singleton k, Set.union_subset subset_rfl subset_rfl⟩
 
-end DomainTheory.Neighborhood.Exercise220
+end DomainTheory.NeighbourhoodSystems.Exercise220

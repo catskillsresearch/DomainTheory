@@ -9,14 +9,14 @@ module
 
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Theorem46.Basic
-public import DomainTheory.Neighborhood.Theorem46.Graphu2eswap
-public import DomainTheory.Neighborhood.Theorem46.exists_unique_right
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Graphu2eswap
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.exists_unique_right
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 universe u v
 
@@ -34,4 +34,4 @@ theorem exists_unique_left (P : PeanoModel M) (Q : PeanoModel N) (n : N) :
   exact ⟨m, hm.swap, fun y hy => huniq y hy.swap⟩
 
 end PeanoModel
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 
 @[expose] public section
 
@@ -28,7 +28,7 @@ applied to `a ⊑ f(a)`), hence *directed*, so its union `x = ⊔ₙ fⁿ(a)` is
 All constructions are **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -71,4 +71,4 @@ def fixAbove (f : ApproximableMap V V) {a : V.Element} (ha : a ≤ f.toElementMa
     (fun i j => ⟨max i j, iterFrom_mono f ha (le_max_left i j),
       iterFrom_mono f ha (le_max_right i j)⟩)
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

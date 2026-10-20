@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem85
-public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
 
 @[expose] public section
 
@@ -52,7 +52,7 @@ will specialize `V := 𝒰`, `P := UComputablePresentation`. Everything here is 
 `Recursive.lean`'s choice-free `REPred`/`RecDecidable` closure lemmas.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -63,4 +63,4 @@ iff the presented neighbourhood `Xₙ = P.X n` is already `a`-fixed, i.e. (`diag
 iff `Xₙ` is a neighbourhood of Theorem 8.5's subsystem `fixedNbhd a = {X ∈ V ∣ X a X}`. -/
 def DiagFixed (P : ComputablePresentation V) (a : ApproximableMap V V) (n : ℕ) : Prop :=
   a.rel (P.X n) (P.X n)
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

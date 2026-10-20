@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Exercise122
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122
 
 @[expose] public section
 
@@ -40,7 +40,7 @@ and continuous functions `|𝒟₀| → |𝒟₁|` as the same thing.
 Choice-free apart from the `ofMono`/Exercise-2.9 ingredients (whose uniqueness companions are the
 only classical pieces). -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -83,4 +83,4 @@ def ofContinuous (c : V₀.Element → V₁.Element) (hc : Continuous c) : Appro
     (fun _X _X' hX hX' hX'X =>
       NeighborhoodSystem.continuous_monotone hc ((V₀.principal_le_iff hX hX').mpr hX'X))
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

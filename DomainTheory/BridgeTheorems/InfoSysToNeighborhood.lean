@@ -9,7 +9,7 @@ module
 
 public import Mathlib.Order.Hom.Basic
 import all Mathlib.Order.Hom.Basic
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import DomainTheory.InformationSystems.Factoid35
 public import DomainTheory.InformationSystems.Factoid46
 public import DomainTheory.InformationSystems.Proposition23
@@ -27,7 +27,7 @@ whose filters recover the original elements. This is the converse direction to
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.Neighborhood
+open DomainTheory.NeighbourhoodSystems
 open DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 open DomainTheory.InformationSystems.InfoSys

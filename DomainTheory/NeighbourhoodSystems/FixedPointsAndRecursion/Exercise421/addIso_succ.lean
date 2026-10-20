@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise421.Basic
-public import DomainTheory.Neighborhood.Exercise421.addIso_apply
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.addIso_apply
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise421
+namespace DomainTheory.NeighbourhoodSystems.Exercise421
 
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
 
@@ -32,4 +32,4 @@ open DomainTheory.Neighborhood.Exercise414
 theorem addIso_succ (m n : ℕ) : (addIso m (n + 1) : ℕ) = (addIso m n : ℕ) + 1 := by
   simp only [addIso_apply]; omega
 
-end DomainTheory.Neighborhood.Exercise421
+end DomainTheory.NeighbourhoodSystems.Exercise421

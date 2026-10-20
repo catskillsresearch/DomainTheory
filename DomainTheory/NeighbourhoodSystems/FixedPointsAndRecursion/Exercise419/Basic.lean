@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example44
-public import DomainTheory.Neighborhood.Exercise326
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
 
 @[expose] public section
 
@@ -45,9 +45,9 @@ The `liftC` *data* is **choice-free**; the truth-domain tests inherit `Classical
 structurally from `T` (Example 1.2), exactly as `Example23.parityMap` and `Example43.zeroMap` do.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise419
+namespace DomainTheory.NeighbourhoodSystems.Exercise419
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
 
 /-! ### "Peano's Axioms" for `{0,1}* = List Bool`. -/
 
@@ -246,4 +246,4 @@ def oneDef (x : C.Element) : T.Element :=
     (pair (emptyMap.toElementMap x)
       (pair 𝕗
         ((Exercise326.cond T).toElementMap (pair (zeroMap.toElementMap x) (pair 𝕗 𝕥)))))
-end DomainTheory.Neighborhood.Exercise419
+end DomainTheory.NeighbourhoodSystems.Exercise419

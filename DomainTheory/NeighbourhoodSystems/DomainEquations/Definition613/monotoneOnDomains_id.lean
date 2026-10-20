@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition68
-public import DomainTheory.Neighborhood.Proposition611
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Definition613.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -30,4 +30,4 @@ theorem monotoneOnDomains_id : MonotoneOnDomains (idEndofunctor DomainObj.{w}) :
   intro α D E h
   exact ⟨rfl, h, HEq.rfl, HEq.rfl⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

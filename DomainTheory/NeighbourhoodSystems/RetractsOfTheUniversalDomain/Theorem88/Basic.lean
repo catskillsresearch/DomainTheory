@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
 public import Mathlib.Data.Fintype.Pi
 import all Mathlib.Data.Fintype.Pi
 
@@ -64,7 +64,7 @@ statement for an *arbitrary* countable `D` (Scott's own remark that the effectiv
 classical, is the substance of the follow-up Theorem 8.8(b)).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -726,4 +726,4 @@ theorem Yseq_nonempty_of_mem {n : ℕ} {x : α} (hxΔ : x ∈ Δ) (hxn : x ∈ X
     rw [hδ2_eq, ← hI_eq_atomU]
     exact Set.nonempty_iff_ne_empty.mpr hIne
   exact hne2.mono (subset_Yseq split X Δ (restrictFin δ0 n))
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

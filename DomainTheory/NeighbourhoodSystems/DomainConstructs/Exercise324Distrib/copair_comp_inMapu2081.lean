@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise319Sum
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise324Distrib.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -41,4 +41,4 @@ theorem copair_comp_inMap₁ (a : ApproximableMap V₀ V₂) (b : ApproximableMa
       Or.inr (Or.inr ⟨Y, b.rel_dom hg, rfl⟩), b.rel_cod hg,
       Or.inr (Or.inr ⟨Y, rfl, hg⟩)⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

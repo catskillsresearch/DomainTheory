@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise825Closing.Basic
-public import DomainTheory.Neighborhood.Exercise825Closing.prod_self_isomorphic
-public import DomainTheory.Neighborhood.Exercise825Closing.funSpace_self_isomorphic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing.prod_self_isomorphic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing.funSpace_self_isomorphic
 
 @[expose] public section

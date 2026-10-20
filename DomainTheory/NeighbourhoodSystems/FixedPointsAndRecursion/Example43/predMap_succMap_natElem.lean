@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Example43.Basic
-public import DomainTheory.Neighborhood.Example43.succMap_natElem
-public import DomainTheory.Neighborhood.Example43.predMap_natElem_succ
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43.succMap_natElem
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43.predMap_natElem_succ
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example43
+namespace DomainTheory.NeighbourhoodSystems.Example43
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
 
@@ -52,4 +52,4 @@ theorem predMap_succMap_natElem (n : ℕ) :
     predMap.toElementMap (succMap.toElementMap (natElem n)) = natElem n := by
   rw [succMap_natElem, predMap_natElem_succ]
 
-end DomainTheory.Neighborhood.Example43
+end DomainTheory.NeighbourhoodSystems.Example43

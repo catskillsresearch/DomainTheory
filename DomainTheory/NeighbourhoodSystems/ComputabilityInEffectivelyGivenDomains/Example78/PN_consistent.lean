@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.Example78.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example78
+namespace DomainTheory.NeighbourhoodSystems.Example78
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -28,4 +28,4 @@ consistent"): their intersection `nbhd (n ||| m)` is itself a neighbourhood cont
 theorem PN_consistent (n m : ℕ) : ∃ k, nbhd k ⊆ nbhd n ∩ nbhd m :=
   ⟨myLor n m, (nbhd_inter n m).symm.subset⟩
 
-end DomainTheory.Neighborhood.Example78
+end DomainTheory.NeighbourhoodSystems.Example78

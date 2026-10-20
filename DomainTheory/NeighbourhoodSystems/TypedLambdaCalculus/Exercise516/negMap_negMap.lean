@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise419
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise516.Basic
-public import DomainTheory.Neighborhood.Exercise516.negMap_comp_negMap
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.negMap_comp_negMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise516
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
 
@@ -55,4 +55,4 @@ theorem negMap_negMap (x : C.Element) : negMap.toElementMap (negMap.toElementMap
   have h := negMap_comp_negMap
   rw [← toElementMap_comp, h, toElementMap_idMap]
 
-end DomainTheory.Neighborhood.Exercise516
+end DomainTheory.NeighbourhoodSystems.Exercise516

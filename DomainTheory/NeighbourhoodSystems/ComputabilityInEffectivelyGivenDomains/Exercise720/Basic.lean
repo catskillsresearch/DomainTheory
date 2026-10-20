@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition710
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Exercise719
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719
 
 @[expose] public section
 
@@ -75,7 +75,7 @@ of this file (the relation `unionMap`, the displayed formula, and the recursive 
 **no further** use of choice; the recursion layer of `Recursive.lean` is choice-free.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -122,4 +122,4 @@ def unionMap (V : NeighborhoodSystem α) :
   Iff.rfl
 
 /-! ### Computability: `union` is computable (recursive) whenever `D` is effectively given. -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

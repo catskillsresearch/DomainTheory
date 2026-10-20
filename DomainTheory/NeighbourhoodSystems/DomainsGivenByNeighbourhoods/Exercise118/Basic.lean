@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -34,7 +34,7 @@ Constructive (`[propext, Quot.sound]`) except the counterexample's finite case-a
 
 set_option linter.unusedSimpArgs false
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 /-- Concatenation of two finite sequences: the first `n1` entries are `X1 0, …, X1 (n1-1)`,
 then `X2 0, X2 1, …`. -/
@@ -163,4 +163,4 @@ def family : Set (Set (Fin 3)) := {A, B, Cc}
 /-- The triple `A, B, Cc` as a finite sequence. -/
 def triple : ℕ → Set (Fin 3) := fun i => if i = 0 then A else if i = 1 then B else Cc
 end triSys
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

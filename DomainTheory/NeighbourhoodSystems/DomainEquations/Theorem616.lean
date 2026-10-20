@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem616.Basic
-public import DomainTheory.Neighborhood.Theorem616.opStep
-public import DomainTheory.Neighborhood.Theorem616.botStrict_rel
-public import DomainTheory.Neighborhood.Theorem616.trianglelefteq_of_isInitial
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.opStep
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.botStrict_rel
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.trianglelefteq_of_isInitial
 
 @[expose] public section

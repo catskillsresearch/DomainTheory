@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88.Basic
-public import DomainTheory.Neighborhood.Theorem88.splitChoice_isSplitSpec
-public import DomainTheory.Neighborhood.Definition610
-public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.splitChoice_isSplitSpec
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
 public import Mathlib.Basic.Countable.Defs
 import all Mathlib.Basic.Countable.Defs
 
@@ -56,7 +56,7 @@ and feed `(X', Δ')` into `Yseq`. Three facts drive everything below:
   `e i ∩ e j = e m` whenever `{e i, e j}` is witnessed-consistent — and *only* then.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -323,4 +323,4 @@ noncomputable def domainIso : DomainIso D (DprimeU D e hcover he0) where
 end Iso
 
 /-! ## Theorem 8.8, first sentence: the general (non-effective) universality of `U` -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

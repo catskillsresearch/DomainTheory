@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition710
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -83,7 +83,7 @@ closure layer of `Recursive.lean` is choice-free, so `PFmap_isComputable*` add o
 input `hf` on top of the power-domain's inherited `Classical.choice`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -180,4 +180,4 @@ def PFmapComb (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
     (PFmapComb V W).rel Φ Ψ ↔
       (funSpace V W).mem Φ ∧ (funSpace V.PowerDomain W.PowerDomain).mem Ψ ∧
         ∀ f ∈ Φ, PFmap f ∈ Ψ := Iff.rfl
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

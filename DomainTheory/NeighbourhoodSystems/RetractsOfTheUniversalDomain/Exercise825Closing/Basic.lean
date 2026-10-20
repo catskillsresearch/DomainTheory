@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise825Congr
-public import DomainTheory.Neighborhood.Exercise315
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Congr
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
 
 @[expose] public section
 
@@ -52,9 +52,9 @@ Everything is **choice-free modulo `ApproximableMap.ext_of_toElementMap`**
 (`#print axioms ⊆ {propext, Classical.choice, Quot.sound}`, matching `funSpace_congr`'s budget).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
 variable {α β : Type*} {D : NeighborhoodSystem α} {V : NeighborhoodSystem β}
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

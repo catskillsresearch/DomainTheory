@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise324Distrib.Basic
-public import DomainTheory.Neighborhood.Exercise324Distrib.copair_comp_inMapu2080
-public import DomainTheory.Neighborhood.Exercise324Distrib.copair_comp_inMapu2081
-public import DomainTheory.Neighborhood.Exercise324Distrib.copairProj_copair
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.copair_comp_inMapu2080
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.copair_comp_inMapu2081
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.copairProj_copair
 
 @[expose] public section

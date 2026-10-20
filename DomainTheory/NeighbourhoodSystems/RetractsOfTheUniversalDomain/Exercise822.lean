@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise822.Basic
-public import DomainTheory.Neighborhood.Exercise822.B_subsystem_C
-public import DomainTheory.Neighborhood.Exercise822.B_trianglelefteq_C
-public import DomainTheory.Neighborhood.Exercise822.C_isomorphic_Du27
-public import DomainTheory.Neighborhood.Exercise822.C_trianglelefteq_B
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.B_subsystem_C
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.B_trianglelefteq_C
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.C_isomorphic_Du27
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.C_trianglelefteq_B
 
 @[expose] public section

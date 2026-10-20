@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise825.Basic
-public import DomainTheory.Neighborhood.Exercise825.exercise_8_25
-public import DomainTheory.Neighborhood.Exercise825.exercise_8_25_universal
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825.exercise_8_25
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825.exercise_8_25_universal
 
 @[expose] public section

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise118
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -38,7 +38,7 @@ The constructions (`sSup`) are `[propext, Quot.sound]`. The hard direction of
 *proof*, so the construction stays choice-free.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -69,4 +69,4 @@ def pairSeq (U W : Set α) : ℕ → Set α := fun i => if i = 0 then U else W
 
 /-! ### Boundedness is finitary (with the aid of Exercise 1.18). -/
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 
 @[expose] public section
 
@@ -31,7 +31,7 @@ The sum functor `f + g` is treated in `Exercise318.lean`/`Exercise319Sum.lean` a
 is built. Everything here is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -47,4 +47,4 @@ def prodMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
 /-! ### Exercise 3.20 — `×` is a functor. -/
 
 /-! ### Exercise 3.20 — `prod` is the categorical product. -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

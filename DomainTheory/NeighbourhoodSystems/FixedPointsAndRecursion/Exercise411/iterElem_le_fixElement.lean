@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407
-public import DomainTheory.Neighborhood.Exercise410
-public import DomainTheory.Neighborhood.Exercise411.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -29,4 +29,4 @@ theorem iterElem_le_fixElement (f : ApproximableMap V V) (n : ℕ) :
   fun _ hX => ⟨n, (mem_iterElem f n).mp hX⟩
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

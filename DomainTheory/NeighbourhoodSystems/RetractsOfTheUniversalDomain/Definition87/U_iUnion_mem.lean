@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Order.Interval.Set.LinearOrder
 import all Mathlib.Order.Interval.Set.LinearOrder
 public import Mathlib.Data.List.Basic
@@ -26,13 +26,13 @@ public import Mathlib.Data.Fintype.Card
 import all Mathlib.Data.Fintype.Card
 public import Mathlib.Order.CompleteLattice.Finset
 import all Mathlib.Order.CompleteLattice.Finset
-public import DomainTheory.Neighborhood.Definition87.Basic
-public import DomainTheory.Neighborhood.Definition87.U_union_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.U_union_mem
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -78,4 +78,4 @@ theorem U_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℚ} (hf : ∀ i,
   rw [hall] at hne ⊢
   exact (hstep Finset.univ).resolve_left hne.ne_empty
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise120.Basic
-public import DomainTheory.Neighborhood.Exercise120.powerSystem_isPositive
-public import DomainTheory.Neighborhood.Exercise120.isomorphic_powerSystem
-public import DomainTheory.Neighborhood.Exercise120.toPower_principal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.powerSystem_isPositive
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.isomorphic_powerSystem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.toPower_principal
 
 @[expose] public section

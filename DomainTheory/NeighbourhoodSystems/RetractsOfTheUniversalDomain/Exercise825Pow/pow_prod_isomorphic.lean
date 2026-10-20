@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise316
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
 public import Mathlib.Logic.Equiv.Nat
 import all Mathlib.Logic.Equiv.Nat
-public import DomainTheory.Neighborhood.Exercise825Pow.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Pow.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -33,4 +33,4 @@ theorem pow_prod_isomorphic (V : NeighborhoodSystem α) :
     prod (iterSys V) (iterSys V) ≅ᴰ iterSys V :=
   ⟨powProdOrderIso V⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

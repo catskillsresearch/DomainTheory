@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise714.Basic
-public import DomainTheory.Neighborhood.Exercise714.repred_range_primrec
-public import DomainTheory.Neighborhood.Exercise714.repredu2082_exists_primrec_enum
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714.repred_range_primrec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714.repredu2082_exists_primrec_enum
 
 @[expose] public section

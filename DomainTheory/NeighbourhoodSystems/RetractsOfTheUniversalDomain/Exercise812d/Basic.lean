@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812c
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Exercise718
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise718
 
 @[expose] public section
 
@@ -52,7 +52,7 @@ We also verify, as a sanity check that the abstraction is not vacuous and genuin
 `splitY := splitChoice' D₀ hD₀nomin` recovers `atomPair` exactly (`atomPairG_splitChoice_eq`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
@@ -6070,4 +6070,4 @@ theorem effectivelyIsomorphic_812d : EffectivelyIsomorphic P₀ P₁ :=
   ⟨effectiveIso812d P₀ P₁ hDiff0 hDiff1 splitX hSplitX splitY hSplitY hD₀pos hD₀diff hD₀nomin
     hxSplit hD₁pos hD₁diff hD₁nomin hySplit hD₀mne hD₁mne hUnion0 hUnion1 hX0 hY0⟩
 end EffectiveIso812d
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

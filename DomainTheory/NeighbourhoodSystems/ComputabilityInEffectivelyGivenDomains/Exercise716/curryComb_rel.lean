@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem75
-public import DomainTheory.Neighborhood.Table55
-public import DomainTheory.Neighborhood.Exercise716.Basic
-public import DomainTheory.Neighborhood.Exercise716.curryIso_apply
-public import DomainTheory.Neighborhood.Exercise716.toApproxMap_principal_mem
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.curryIso_apply
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.toApproxMap_principal_mem
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -50,4 +50,4 @@ theorem curryComb_rel {G : Set (ApproximableMap (prod V₀ V₁) V₂)}
     rw [curryIso_apply, mem_toFilter]
     exact ⟨hH, hall _ (toApproxMap_principal_mem hG)⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

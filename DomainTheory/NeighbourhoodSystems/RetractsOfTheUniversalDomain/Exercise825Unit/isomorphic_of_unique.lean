@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise825Unit.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Unit.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -26,4 +26,4 @@ theorem isomorphic_of_unique (V₀ : NeighborhoodSystem α) (V₁ : Neighborhood
     [Unique V₀.Element] [Unique V₁.Element] : V₀ ≅ᴰ V₁ :=
   ⟨isoOfUnique V₀ V₁⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

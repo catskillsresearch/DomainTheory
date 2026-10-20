@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem88f.Basic
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_inj_isComputableMap
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_proj_isComputableMap
-public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_projectionPair_isComputable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_inj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_proj_isComputableMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_projectionPair_isComputable
 
 @[expose] public section
 
@@ -56,7 +56,7 @@ and everything downstream that mentions `U`/`UComputablePresentation` inherits i
 directly: `U_isEffectivelyGiven`, `DprimeUCode_subsystem`, `YseqCode` all show the same footprint).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -75,4 +75,4 @@ noncomputable def isoProj : ApproximableMap (DprimeUCode P) D := ofIso (domainIs
 /-! ## Computability of `isoInj`, `isoProj` -/
 
 /-! ## Assembly: a direct computable projection pair `D ⇄ U` -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

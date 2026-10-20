@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -28,7 +28,7 @@ and Proposition 3.2's `prodEquiv` gives the domain isomorphism `funProdIso`.
 Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -71,4 +71,4 @@ def funProdIso (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (funProdEquiv V₀ V₁ V₂).trans <|
       (prodCongrOrderIso (funSpaceEquiv V₀ V₁).symm (funSpaceEquiv V₀ V₂).symm).trans
         (prodEquiv (funSpace V₀ V₁) (funSpace V₀ V₂)).symm
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

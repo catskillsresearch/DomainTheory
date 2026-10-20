@@ -7,22 +7,22 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise619
-public import DomainTheory.Neighborhood.Definition613
-public import DomainTheory.Neighborhood.Exercise213
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise619PartB.Basic
-public import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_mono
-public import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_continuous_mp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpru2emap_mono
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpru2emap_continuous_mp
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
-open DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.Exercise510
 
 namespace Exercise619
 
@@ -60,4 +60,4 @@ theorem FExpr.map_continuous (T : FExpr) {I : Type} [Nonempty I] {X Y : ScottSys
   exact (T.map_mono hgif) A B hi
 
 end Exercise619
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

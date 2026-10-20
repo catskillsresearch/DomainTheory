@@ -7,23 +7,23 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition810b
-public import DomainTheory.Neighborhood.Table55
-public import DomainTheory.Neighborhood.Exercise823
-public import DomainTheory.Neighborhood.Exercise715
-public import DomainTheory.Neighborhood.Exercise825Pow
-public import DomainTheory.Neighborhood.Exercise825Embed
-public import DomainTheory.Neighborhood.Exercise825Closing
-public import DomainTheory.Neighborhood.Exercise820
-public import DomainTheory.Neighborhood.Exercise825FixedPoint.Basic
-public import DomainTheory.Neighborhood.Exercise825FixedPoint.isFinitaryProjection_cCombinator
-public import DomainTheory.Neighborhood.Exercise825FixedPoint.ht_tOpMap
-public import DomainTheory.Neighborhood.Exercise825FixedPoint.hT_TArrow
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Pow
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.isFinitaryProjection_cCombinator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.ht_tOpMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.hT_TArrow
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -59,4 +59,4 @@ theorem Dsol_isomorphic_funSpace_cCombinator :
   have h2 := Exercise823.fixedDomain_fixOp_iso_T (tOpMap cCombinator) hht TArrow hT_TArrow
   exact h1.elim fun e1 => h2.elim fun e2 => ⟨e1.trans e2⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

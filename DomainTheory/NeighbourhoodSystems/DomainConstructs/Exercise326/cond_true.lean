@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Exercise326.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise326
+namespace DomainTheory.NeighbourhoodSystems.Exercise326
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α : Type*}
 
@@ -62,4 +62,4 @@ theorem cond_true (x y : V.Element) :
     refine Or.inl ⟨inl_preimage_prodNbhd _ _, ?_⟩
     rw [inr_preimage_prodNbhd, inl_preimage_prodNbhd]
 
-end DomainTheory.Neighborhood.Exercise326
+end DomainTheory.NeighbourhoodSystems.Exercise326

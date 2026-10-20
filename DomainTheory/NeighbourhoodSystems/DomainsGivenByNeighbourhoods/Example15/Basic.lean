@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Basic.Countable.Defs
 import all Mathlib.Basic.Countable.Defs
 public import Mathlib.Data.Fintype.Powerset
@@ -39,7 +39,7 @@ Unlike Examples 1.2–1.4 this construction needs no `fin_cases`/`decide`: it is
 bookkeeping, so it audits **constructive** (`[propext, Quot.sound]`).
 -/
 
-namespace DomainTheory.Neighborhood.Example15
+namespace DomainTheory.NeighbourhoodSystems.Example15
 
 open NeighborhoodSystem
 
@@ -81,4 +81,4 @@ def neighborhoodSystem : NeighborhoodSystem Token where
 /-- The neighbourhoods of Example 1.5 are a finite family, hence countable. -/
 instance P4_countable : Countable {S : Set Token // neighborhoodSystem.mem S} :=
   inferInstance
-end DomainTheory.Neighborhood.Example15
+end DomainTheory.NeighbourhoodSystems.Example15

@@ -7,21 +7,21 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise326
-public import DomainTheory.Neighborhood.Exercise319Sum
-public import DomainTheory.Neighborhood.Exercise326Sum.Basic
-public import DomainTheory.Neighborhood.Exercise326Sum.which_mem_zero
-public import DomainTheory.Neighborhood.Exercise326Sum.which_mem_one
-public import DomainTheory.Neighborhood.Exercise326Sum.inMapu2080_outMapu2080_eq_of_left
-public import DomainTheory.Neighborhood.Exercise326Sum.inMapu2081_outMapu2081_eq_of_right
-public import DomainTheory.Neighborhood.Exercise326Sum.sum_element_trichotomy
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.which_mem_zero
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.which_mem_one
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.inMapu2080_outMapu2080_eq_of_left
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.inMapu2081_outMapu2081_eq_of_right
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.sum_element_trichotomy
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise326
+namespace DomainTheory.NeighbourhoodSystems.Exercise326
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
@@ -65,4 +65,4 @@ theorem cond_which (x : (sum V₀ V₁ h₀ h₁).Element) :
     · exact Or.inr (Or.inl ⟨hR, by rw [inMap₁_outMap₁_eq_of_right hR]; exact hxZ⟩)
     · exact Or.inr (Or.inr (hN Z hxZ))
 
-end DomainTheory.Neighborhood.Exercise326
+end DomainTheory.NeighbourhoodSystems.Exercise326

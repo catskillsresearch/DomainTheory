@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise421.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise421
+namespace DomainTheory.NeighbourhoodSystems.Exercise421
 
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
 
@@ -34,4 +34,4 @@ theorem mulOp_monotone (n : ℕ) : Monotone (mulOp n) := by
   · exact Or.inl hk
   · exact Or.inr ⟨m, huv hm, rfl⟩
 
-end DomainTheory.Neighborhood.Exercise421
+end DomainTheory.NeighbourhoodSystems.Exercise421

@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise122
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -35,9 +35,9 @@ are mutually inverse and inclusion-preserving (`openIso`), so by **Theorem 3.10*
 basic neighbourhoods.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise325
+namespace DomainTheory.NeighbourhoodSystems.Exercise325
 
-open DomainTheory.Neighborhood NeighborhoodSystem Set
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set
 
 /-- The **Sierpiński domain** `𝒪`: the system over a one-token type whose neighbourhoods are `Δ`
 (`univ`) and `∅`. Its elements are `⊥` (only `Δ`) and `⊤` (also `∅`), i.e. the two-point domain. -/
@@ -179,4 +179,4 @@ def opensReprIso (V : NeighborhoodSystem α) :
     {U : Set V.Element // IsOpen U} ≃o (funSpace V sierpinski).Element :=
   (openIso V).trans (funSpaceEquiv V sierpinski).symm
 
-end DomainTheory.Neighborhood.Exercise325
+end DomainTheory.NeighbourhoodSystems.Exercise325

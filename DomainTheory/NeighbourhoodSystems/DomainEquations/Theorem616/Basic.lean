@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Proposition67
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Exercise408
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition67
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408
 
 @[expose] public section
 
@@ -43,13 +43,13 @@ approximant chains `H`, `G`, `K` (for `h`, `g`, `k`) and the ladder identity `H 
 point. Lemma 6.15 (`trianglelefteq_of_projectionPair`) then closes `D ⊴ E`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe w
 
 /-! ### General helpers. -/
 
 /-! ### Theorem 6.16. -/
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

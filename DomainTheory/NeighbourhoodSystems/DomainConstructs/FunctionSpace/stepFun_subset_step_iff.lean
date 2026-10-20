@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise127
-public import DomainTheory.Neighborhood.FunctionSpace.Basic
-public import DomainTheory.Neighborhood.FunctionSpace.leastMap_mem_stepFun
-public import DomainTheory.Neighborhood.FunctionSpace.rel_interYs
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.leastMap_mem_stepFun
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.rel_interYs
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -75,4 +75,4 @@ theorem stepFun_subset_step_iff {L : List (Set α × Set β)} (hL : ∀ p ∈ L,
   · intro hsub f hf
     exact f.mono (rel_interYs hf hX) subset_rfl hsub hX hY
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

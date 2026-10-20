@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition613.Basic
-public import DomainTheory.Neighborhood.Definition613.monotoneOnDomains_id
-public import DomainTheory.Neighborhood.Definition613.continuousOnDomains_id
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.monotoneOnDomains_id
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.continuousOnDomains_id
 
 @[expose] public section

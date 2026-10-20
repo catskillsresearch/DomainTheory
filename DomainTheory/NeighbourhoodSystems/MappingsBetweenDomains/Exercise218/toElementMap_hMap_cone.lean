@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example24
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Exercise218.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise218
+namespace DomainTheory.NeighbourhoodSystems.Exercise218
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
 
@@ -45,4 +45,4 @@ theorem toElementMap_hMap_cone (σ : Str) :
   · rintro ⟨hYmem, hsub⟩
     exact ⟨σ, rfl, hYmem, hsub⟩
 
-end DomainTheory.Neighborhood.Exercise218
+end DomainTheory.NeighbourhoodSystems.Exercise218

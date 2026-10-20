@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.DAtomDecidable
-public import DomainTheory.Neighborhood.SplitU
-public import DomainTheory.Neighborhood.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
 
 @[expose] public section
 
@@ -35,7 +35,7 @@ with no need to redo any of Part 5's `DAtom` apparatus (it applies to `P₀` exa
 `P`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -180,4 +180,4 @@ theorem genAtom_eq_DAtom (δ : ℕ → Bool) :
       show IPos (P0 P) (posnegList δ n).1 ∩ {m | ∀ j ∈ (posnegList δ n).2, m ∉ idxSet (e P) j}
           ∩ (Set.univ \ idxSet (e P) n) = _
       ac_rfl
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

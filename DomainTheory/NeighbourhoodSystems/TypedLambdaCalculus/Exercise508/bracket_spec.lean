@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise508.Basic
-public import DomainTheory.Neighborhood.Exercise508.Ielem_apply
-public import DomainTheory.Neighborhood.Exercise508.Kelem_apply
-public import DomainTheory.Neighborhood.Exercise508.Selem_apply
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Ielem_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Kelem_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Selem_apply
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise508
+namespace DomainTheory.NeighbourhoodSystems.Exercise508
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
 variable {α β γ : Type*}
@@ -64,4 +64,4 @@ theorem bracket_spec {X : Dom} {A : Dom} (t : Poly X A) (x : X.sys.Element) :
       rw [ihf, iha] at hS
       exact hS
 
-end DomainTheory.Neighborhood.Exercise508
+end DomainTheory.NeighbourhoodSystems.Exercise508

@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import Mathlib.Tactic
 import all Mathlib.Tactic
-public import DomainTheory.Neighborhood.Exercise421.Basic
-public import DomainTheory.Neighborhood.Exercise421.mem_fixedPoint_iff
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.mem_fixedPoint_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise421
+namespace DomainTheory.NeighbourhoodSystems.Exercise421
 
-open DomainTheory.Neighborhood.Exercise414
+open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
 
@@ -30,4 +30,4 @@ theorem leOp_unique {u : Set (ℕ × ℕ)} (hu : leOp u = u) : u = leRel := by
   rw [mem_fixedPoint_iff hu]
   rfl
 
-end DomainTheory.Neighborhood.Exercise421
+end DomainTheory.NeighbourhoodSystems.Exercise421

@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem86
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.Exercise816
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816
 
 @[expose] public section
 
@@ -105,7 +105,7 @@ Everything **proved** in this file (Claims 1–2) is **choice-free**
 (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6
 
@@ -159,4 +159,4 @@ def fixOp (t : ApproximableMap (funSpace E E) (funSpace E E)) : ApproximableMap 
 formulation. -/
 abbrev Fix (a : ApproximableMap E E) := {y : E.Element // a.toElementMap y = y}
 end Exercise823
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

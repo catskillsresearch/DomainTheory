@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem74
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Exercise316
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
 
 @[expose] public section
 
@@ -53,7 +53,7 @@ it admits a full `ComputablePresentation` and is treated choice-free in the exis
 the coordinate-projection combinators `projN`/`head` computable.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -1298,4 +1298,4 @@ Scott's "various appropriate combinators" for `D^∞` are the coordinate project
 `W (projN n) X ↔ fiber W n ⊆ X` reads off as `X_{iterIdx t n} ⊆ X_b` — a recursive slice of
 `incl_computable`, hence r.e. (In particular `head = projN 0`.) -/
 end Iterate
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

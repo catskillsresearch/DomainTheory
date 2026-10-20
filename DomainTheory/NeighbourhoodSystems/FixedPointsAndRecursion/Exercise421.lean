@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise421.Basic
-public import DomainTheory.Neighborhood.Exercise421.leOp_monotone
-public import DomainTheory.Neighborhood.Exercise421.leRel_isFixed
-public import DomainTheory.Neighborhood.Exercise421.mem_fixedPoint_iff
-public import DomainTheory.Neighborhood.Exercise421.leOp_unique
-public import DomainTheory.Neighborhood.Exercise421.upSet_zero
-public import DomainTheory.Neighborhood.Exercise421.upSet_succ
-public import DomainTheory.Neighborhood.Exercise421.upSet_unique
-public import DomainTheory.Neighborhood.Exercise421.addIso_apply
-public import DomainTheory.Neighborhood.Exercise421.addIso_zero
-public import DomainTheory.Neighborhood.Exercise421.addIso_succ
-public import DomainTheory.Neighborhood.Exercise421.mulOp_monotone
-public import DomainTheory.Neighborhood.Exercise421.mulOp_lfp_eq_multiples
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.leOp_monotone
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.leRel_isFixed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.mem_fixedPoint_iff
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.leOp_unique
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.upSet_zero
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.upSet_succ
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.upSet_unique
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.addIso_apply
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.addIso_zero
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.addIso_succ
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.mulOp_monotone
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.mulOp_lfp_eq_multiples
 
 @[expose] public section

@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example43
-public import DomainTheory.Neighborhood.Exercise418.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise418.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise418
+namespace DomainTheory.NeighbourhoodSystems.Exercise418
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap Example43
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example43
 
 
 /-- **Exercise 4.18 (Scott 1981, PRG-19).** The numerals are distinct: `n̂ = m̂ ⟹ n = m`. -/
@@ -26,4 +26,4 @@ theorem natElem_injective {n m : ℕ} (h : natElem n = natElem m) : n = m := by
   · exact absurd hu (singleton_ne_univ n)
   · exact singleton_nat_inj hs
 
-end DomainTheory.Neighborhood.Exercise418
+end DomainTheory.NeighbourhoodSystems.Exercise418

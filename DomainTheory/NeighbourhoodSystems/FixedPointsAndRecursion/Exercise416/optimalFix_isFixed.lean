@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise413
-public import DomainTheory.Neighborhood.Exercise415
-public import DomainTheory.Neighborhood.Exercise416.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise415
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise416.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -31,4 +31,4 @@ theorem optimalFix_isFixed (f : V.Element → V.Element) (hf : Monotone f) (S : 
   monoFix_isFixed f hf _
 
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

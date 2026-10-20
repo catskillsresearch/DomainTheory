@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import Mathlib.Data.Set.Insert
 import all Mathlib.Data.Set.Insert
-public import DomainTheory.Neighborhood.Exercise722.Basic
-public import DomainTheory.Neighborhood.Exercise722.Ssys_master
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722.Ssys_master
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
@@ -60,4 +60,4 @@ theorem mulElem_bot_le (y : Ssys.Element) : mulElem Ssys.bot y ≤ y := by
   simpa using append_mem_concat (Set.mem_univ ([] : List Bool)) hw
 
 end Exercise722
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example24
-public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 
 @[expose] public section
 
@@ -38,9 +38,9 @@ neighbourhood relation `X h Y ↔ ∃ σ, X = σΣ* ∧ Y ∈ 𝔹 ∧ (hOut σ)
 
 Choice-free (`#print axioms ⊆ {propext, Quot.sound}`): everything is decidable list surgery. -/
 
-namespace DomainTheory.Neighborhood.Exercise218
+namespace DomainTheory.NeighbourhoodSystems.Exercise218
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 /-! ### The doubling output `hOut` and its monotonicity. -/
 
@@ -142,4 +142,4 @@ def kMap : ApproximableMap B B where
     exact ⟨σ', hX'cone, hY'mem, (hcone.trans hYsub).trans hYY'⟩
 
 /-! ### `k ∘ h = I`, `k` not injective, `h` not surjective. -/
-end DomainTheory.Neighborhood.Exercise218
+end DomainTheory.NeighbourhoodSystems.Exercise218

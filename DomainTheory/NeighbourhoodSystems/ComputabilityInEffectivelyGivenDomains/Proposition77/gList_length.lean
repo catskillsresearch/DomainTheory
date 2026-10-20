@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example61
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Proposition77.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive Example61
 
@@ -74,4 +74,4 @@ theorem gList_length (step : ℕ → ℕ) (w : ℕ) : (gList step w).length = w 
   | succ w ih => rw [gList, List.length_cons, ih]
 
 end Proposition77
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

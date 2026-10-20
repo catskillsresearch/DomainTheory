@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Example24.Basic
-public import DomainTheory.Neighborhood.Example24.runMap_rel_cone
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24.runMap_rel_cone
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example24
+namespace DomainTheory.NeighbourhoodSystems.Example24
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 
@@ -44,4 +44,4 @@ theorem runMap_toElementMap_sigmaElt (σ : Str) (x : B.Element) (Y : Set Str) :
     exact ⟨cone (σ ++ τ), ⟨memB_cone _, cone τ, hτ, (prepend_cone σ τ).le⟩,
       (runMap_rel_cone (σ ++ τ) Y).mpr ⟨hYmem, hsub⟩⟩
 
-end DomainTheory.Neighborhood.Example24
+end DomainTheory.NeighbourhoodSystems.Example24

@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic.Set
 import all Mathlib.Tactic.Set
 
@@ -48,7 +48,7 @@ Everything in this file is **choice-free** (`#print axioms ⊆ {propext, Quot.so
 classical lemma is `ext_of_toElementMap`, which decides neighbourhood membership by `by_cases`
 (`Classical.em`). -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -215,4 +215,4 @@ def ofIso (e : V₀.Element ≃o V₁.Element) : ApproximableMap V₀ V₁ where
     have hmem : (e (V₀.principal hX')).mem Y := (e.monotone hle) Y hY
     exact (e (V₀.principal hX')).up_mem hmem hY' hYY'
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

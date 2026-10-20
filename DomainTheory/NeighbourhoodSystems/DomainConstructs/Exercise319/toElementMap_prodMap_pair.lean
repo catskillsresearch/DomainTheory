@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Exercise319.Basic
-public import DomainTheory.Neighborhood.Exercise319.toElementMap_prodMap
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.toElementMap_prodMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -29,4 +29,4 @@ theorem toElementMap_prodMap_pair (f : ApproximableMap V₀ V₀') (g : Approxim
     (prodMap f g).toElementMap (pair x y) = pair (f.toElementMap x) (g.toElementMap y) := by
   rw [toElementMap_prodMap, fst_pair, snd_pair]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

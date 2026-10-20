@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise422.Basic
-public import DomainTheory.Neighborhood.Exercise422.genOp_monotone
-public import DomainTheory.Neighborhood.Exercise422.genOp_nats
-public import DomainTheory.Neighborhood.Exercise422.exists_peano_submodel
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.genOp_monotone
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.genOp_nats
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.exists_peano_submodel
 
 @[expose] public section

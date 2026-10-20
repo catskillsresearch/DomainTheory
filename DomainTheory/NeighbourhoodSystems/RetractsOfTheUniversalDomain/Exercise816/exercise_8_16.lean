@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem86
-public import DomainTheory.Neighborhood.Theorem88
-public import DomainTheory.Neighborhood.Exercise816.Basic
-public import DomainTheory.Neighborhood.Exercise816.isFinitaryProjection_le_iff_fixedNbhd_subsystem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816.isFinitaryProjection_le_iff_fixedNbhd_subsystem
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -40,4 +40,4 @@ theorem exercise_8_16 :
   ⟨fun ha hb => isFinitaryProjection_le_iff_fixedNbhd_subsystem ha hb,
     fun hcomp => fixedNbhd_isEffectivelyGiven hcomp⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

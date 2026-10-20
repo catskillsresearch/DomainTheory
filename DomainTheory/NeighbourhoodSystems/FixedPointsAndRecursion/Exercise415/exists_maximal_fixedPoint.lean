@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise124
-public import DomainTheory.Neighborhood.Exercise413
-public import DomainTheory.Neighborhood.Exercise415.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise415.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -48,4 +48,4 @@ theorem exists_maximal_fixedPoint (f : V.Element → V.Element) (hf : Monotone f
   exact le_of_eq hy.symm
 
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

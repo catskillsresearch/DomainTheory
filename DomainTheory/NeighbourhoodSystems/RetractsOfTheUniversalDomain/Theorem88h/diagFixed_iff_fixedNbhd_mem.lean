@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem85
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Theorem88h.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -27,4 +27,4 @@ theorem diagFixed_iff_fixedNbhd_mem (P : ComputablePresentation V) (a : Approxim
     (n : ℕ) : DiagFixed P a n ↔ (fixedNbhd a).mem (P.X n) :=
   (and_iff_right (P.mem_X n)).symm
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

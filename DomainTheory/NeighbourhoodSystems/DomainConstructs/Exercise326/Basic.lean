@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
-public import DomainTheory.Neighborhood.Example23
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
 
 @[expose] public section
 
@@ -50,9 +50,9 @@ Everything is **choice-free** in spirit; the only classical input is inherited f
 and from the project's `ext_of_toElementMap`/`Element.ext` machinery, as elsewhere in §3.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise326
+namespace DomainTheory.NeighbourhoodSystems.Exercise326
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α : Type*}
 
@@ -184,4 +184,4 @@ def cond (V : NeighborhoodSystem α) : ApproximableMap (prod TD (prod V V)) V wh
     (cond V).rel W Z ↔ (prod TD (prod V V)).mem W ∧ V.mem Z ∧ condGuard V W Z := Iff.rfl
 
 /-! ### Elementwise characterization, and the three defining identities. -/
-end DomainTheory.Neighborhood.Exercise326
+end DomainTheory.NeighbourhoodSystems.Exercise326

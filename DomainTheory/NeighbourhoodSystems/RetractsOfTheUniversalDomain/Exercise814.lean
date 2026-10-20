@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise814.Basic
-public import DomainTheory.Neighborhood.Exercise814.isFinitary_of_isClosureOperator
-public import DomainTheory.Neighborhood.Exercise814.isCompactFix_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.isFinitary_of_isClosureOperator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.isCompactFix_iff
 
 @[expose] public section

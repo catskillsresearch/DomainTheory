@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition63
-public import DomainTheory.Neighborhood.Theorem69
-public import DomainTheory.Neighborhood.Example62C
-public import DomainTheory.Neighborhood.Exercise516
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62C
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516
 
 @[expose] public section
 
@@ -58,9 +58,9 @@ Everything is choice-free where it is data; the homomorphism/uniqueness layer re
 established machinery.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe w
 
@@ -1018,4 +1018,4 @@ def CisInitial : IsInitial Calg where
   desc := descAlgHom
   uniq := fun B h => descAlgHom_uniq B h
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

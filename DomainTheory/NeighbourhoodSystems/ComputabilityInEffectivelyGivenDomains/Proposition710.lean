@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition710.Basic
-public import DomainTheory.Neighborhood.Proposition710.NeighborhoodSystemu2ePowerDomain_isEffectivelyGiven
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710.NeighborhoodSystemu2ePowerDomain_isEffectivelyGiven
 
 @[expose] public section

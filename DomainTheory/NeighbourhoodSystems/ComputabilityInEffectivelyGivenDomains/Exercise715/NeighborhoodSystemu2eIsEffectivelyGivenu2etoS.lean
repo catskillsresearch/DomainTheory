@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem74
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Exercise316
-public import DomainTheory.Neighborhood.Exercise715.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -30,4 +30,4 @@ theorem NeighborhoodSystem.IsEffectivelyGiven.toS {V : NeighborhoodSystem α}
     (h : V.IsEffectivelyGiven) : V.IsEffectivelyGivenS :=
   h.elim fun P => ⟨P.toScott⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

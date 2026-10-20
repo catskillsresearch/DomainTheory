@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Theorem85.Basic
-public import DomainTheory.Neighborhood.Theorem85.fixedNbhd_subsystem
-public import DomainTheory.Neighborhood.Theorem85.mem_of_exists_rel_self
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.fixedNbhd_subsystem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.mem_of_exists_rel_self
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -56,4 +56,4 @@ theorem isFinitaryProjection_of_formula (a : ApproximableMap E E)
   rw [heq]
   exact Subsystem.isFinitaryProjection_retractionOfSubsystem (fixedNbhd_subsystem a)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

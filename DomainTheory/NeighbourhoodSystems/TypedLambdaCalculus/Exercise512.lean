@@ -7,13 +7,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise512.Basic
-public import DomainTheory.Neighborhood.Exercise512.bodyMap_apply
-public import DomainTheory.Neighborhood.Exercise512.Wop_apply
-public import DomainTheory.Neighborhood.Exercise512.whileMap_rec
-public import DomainTheory.Neighborhood.Exercise512.whileMap_true
-public import DomainTheory.Neighborhood.Exercise512.whileMap_false
-public import DomainTheory.Neighborhood.Exercise512.whileMap_bot
-public import DomainTheory.Neighborhood.Exercise512.whileMap_least
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise512.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise512.bodyMap_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise512.Wop_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise512.whileMap_rec
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise512.whileMap_true
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise512.whileMap_false
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise512.whileMap_bot
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise512.whileMap_least
 
 @[expose] public section

@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise826
-public import DomainTheory.Neighborhood.Exercise821
-public import DomainTheory.Neighborhood.Exercise827.Basic
-public import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piD_of_formula
-public import DomainTheory.Neighborhood.Exercise827.hii_piD
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.isFinitaryProjection_piD_of_formula
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.hii_piD
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -80,4 +80,4 @@ polymorphic type* (a strictly stronger statement than the exercise asks for). -/
 theorem isFinitaryProjection_piD (d : ApproximableMap U U) : IsFinitaryProjection (piD d) :=
   isFinitaryProjection_piD_of_formula d (fun x => hii_piD d x)
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

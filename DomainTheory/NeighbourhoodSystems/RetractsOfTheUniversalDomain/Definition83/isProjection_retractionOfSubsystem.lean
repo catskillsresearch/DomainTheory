@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition82
-public import DomainTheory.Neighborhood.Definition83.Basic
-public import DomainTheory.Neighborhood.Definition83.retractionOfSubsystem_le_idMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83.retractionOfSubsystem_le_idMap
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -35,4 +35,4 @@ theorem isProjection_retractionOfSubsystem (h : D ◁ E) :
   ⟨isRetraction_retractionOfSubsystem h, retractionOfSubsystem_le_idMap h⟩
 
 end Subsystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,19 +7,19 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise717
-public import DomainTheory.Neighborhood.Exercise510
-public import DomainTheory.Neighborhood.Proposition77
-public import DomainTheory.Neighborhood.Exercise717Part2.Basic
-public import DomainTheory.Neighborhood.Exercise717Part2.gStep_gamma
-public import DomainTheory.Neighborhood.Exercise717Part2.gStep_leaf
-public import DomainTheory.Neighborhood.Exercise717Part2.gStep_node
-public import DomainTheory.Neighborhood.Exercise717Part2.gEval_pair
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gStep_gamma
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gStep_leaf
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gStep_node
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gEval_pair
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
 
@@ -65,4 +65,4 @@ theorem gEval_out (n cert : ℕ) :
 
 end Computability
 end Exercise717
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

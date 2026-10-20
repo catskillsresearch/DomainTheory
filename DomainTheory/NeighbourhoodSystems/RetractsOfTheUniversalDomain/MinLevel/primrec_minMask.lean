@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.LevelSetPrimrec
-public import DomainTheory.Neighborhood.MinLevel.Basic
-public import DomainTheory.Neighborhood.MinLevel.primrec_minLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.primrec_minLevel
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
@@ -35,4 +35,4 @@ theorem primrec_minMask : Nat.Primrec (fun t => minMask t.unpair.1 t.unpair.2) :
   exact (primrec_myModPow2.comp (hm.pair hpow)).of_eq fun t => by
     simp only [unpair_pair_fst, unpair_pair_snd, minMask]
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

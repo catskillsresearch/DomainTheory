@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import Mathlib.Data.Set.Finite.Basic
 import all Mathlib.Data.Set.Finite.Basic
 
@@ -41,9 +41,9 @@ element `↑(Fᶜ)`, and `⊥ = ↑ℕ` is the empty set.
 Choice-free (`#print axioms ⊆ {propext, Quot.sound}`); the `Set.Finite.induction_on` in
 `mem_compl_of_finite` is structural recursion on a finiteness proof, not `Classical.choice`. -/
 
-namespace DomainTheory.Neighborhood.Exercise220
+namespace DomainTheory.NeighbourhoodSystems.Exercise220
 
-open DomainTheory.Neighborhood NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 /-! ### The neighbourhood system `𝒫` (cofinite sets). -/
 
@@ -228,4 +228,4 @@ def interMap₂ : ApproximableMap₂ powerSet powerSet powerSet where
   mono := by
     rintro X X' Y Y' Z Z' ⟨_, _, _, hsub⟩ hX'X hY'Y hZZ' hX' hY' hZ'
     exact ⟨hX', hY', hZ', (Set.union_subset_union hX'X hY'Y).trans (hsub.trans hZZ')⟩
-end DomainTheory.Neighborhood.Exercise220
+end DomainTheory.NeighbourhoodSystems.Exercise220

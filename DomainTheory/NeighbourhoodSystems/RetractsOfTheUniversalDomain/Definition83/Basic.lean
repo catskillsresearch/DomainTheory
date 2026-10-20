@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition82
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82
 
 @[expose] public section
 
@@ -28,7 +28,7 @@ sufficient") is the content of Theorem 8.5, formalized separately.
 Everything here is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -56,4 +56,4 @@ namespace Subsystem
 
 variable {h : D ◁ E}
 end Subsystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

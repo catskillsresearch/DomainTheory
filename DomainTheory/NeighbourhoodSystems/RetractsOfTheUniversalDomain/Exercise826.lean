@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise826.Basic
-public import DomainTheory.Neighborhood.Exercise826.Uapply_Ulam
-public import DomainTheory.Neighborhood.Exercise826.translateAbs_sandwich
-public import DomainTheory.Neighborhood.Exercise826.translateApp_hasType
-public import DomainTheory.Neighborhood.Exercise826.translateAbs_idMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.Uapply_Ulam
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.translateAbs_sandwich
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.translateApp_hasType
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.translateAbs_idMap
 
 @[expose] public section

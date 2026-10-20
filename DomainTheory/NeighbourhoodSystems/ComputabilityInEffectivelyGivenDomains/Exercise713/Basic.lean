@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
 
 @[expose] public section
 
@@ -66,7 +66,7 @@ the arbitrary carrier `α` (the `MEET ↔ interEq` proof, the isomorphism's filt
 pulls `Classical.choice` at the `Prop` level only — the same pattern as Theorems 7.4/7.5/7.10.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise713
+namespace DomainTheory.NeighbourhoodSystems.Exercise713
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -381,4 +381,4 @@ def reconIso (P : ComputablePresentation V) : V.Element ≃o (reconstruct P).Ele
     · intro h Y hY
       obtain ⟨n, rfl, hxn⟩ := hY
       exact ⟨n, rfl, h (P.X n) hxn⟩
-end DomainTheory.Neighborhood.Exercise713
+end DomainTheory.NeighbourhoodSystems.Exercise713

@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise719
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise721.Basic
-public import DomainTheory.Neighborhood.Exercise721.re_forallG_forallX_existsY
-public import DomainTheory.Neighborhood.Exercise721.papplyEval_rel_Ypd_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise721.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise721.re_forallG_forallX_existsY
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise721.papplyEval_rel_Ypd_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -44,4 +44,4 @@ theorem papplyEval_isComputable {V : NeighborhoodSystem α} {W : NeighborhoodSys
       (R := fun g x y => (eval V W).rel (Pf.X g) (P.X x) (Q.X y)) heval)
   exact papplyEval_rel_Ypd_iff Pf P Q
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

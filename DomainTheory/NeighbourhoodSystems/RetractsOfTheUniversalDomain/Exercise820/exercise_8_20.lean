@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise817
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise820.Basic
-public import DomainTheory.Neighborhood.Exercise820.D_trianglelefteq_prod
-public import DomainTheory.Neighborhood.Exercise820.D_trianglelefteq_funSpace
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.D_trianglelefteq_prod
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.D_trianglelefteq_funSpace
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -35,4 +35,4 @@ multiplicity of projection pairs that Scott also asks about. -/
 theorem exercise_8_20 : D ⊴ prod D D ∧ D ⊴ funSpace D D :=
   ⟨D_trianglelefteq_prod D, D_trianglelefteq_funSpace D⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

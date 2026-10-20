@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Example23
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
 
 @[expose] public section
 
@@ -39,9 +39,9 @@ enters, everything else being pure substitution into the equations.
 Constructive except for the `by_cases` in `ApproximableMap.ext`'s use of `Classical.em`
 (`#print axioms ⊆ {propext, Classical.choice, Quot.sound}`). -/
 
-namespace DomainTheory.Neighborhood.Exercise216
+namespace DomainTheory.NeighbourhoodSystems.Exercise216
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 /-- **Exercise 2.16 — `x ↦ σx` is approximable.** The neighbourhood relation `X f Y ↔ σX ⊆ Y`
 (confined to `B × B`). Definition 2.1: (i) `σΔ ⊆ Δ`; (ii) the prefixed cone `σX` is a common lower
@@ -68,4 +68,4 @@ structure SatisfiesParityEquations (g : ApproximableMap B Example23.T) : Prop wh
   one : ∀ x : B.Element, g.toElementMap (sigmaElt [true] x) = Example23.trueElt
   zeroOne : ∀ x : B.Element, g.toElementMap (sigmaElt [false, true] x) = Example23.falseElt
   zeroZero : ∀ x : B.Element, g.toElementMap (sigmaElt [false, false] x) = g.toElementMap x
-end DomainTheory.Neighborhood.Exercise216
+end DomainTheory.NeighbourhoodSystems.Exercise216

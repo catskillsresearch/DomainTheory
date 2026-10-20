@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition63
-public import DomainTheory.Neighborhood.Exercise510
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
 
 @[expose] public section
 
@@ -62,9 +62,9 @@ representing `Φ` is the identity on the function space. Everything here is **ch
 (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 universe u
 
@@ -92,4 +92,4 @@ def ContinuousOnMaps (T : Endofunctor DomainObj) : Prop :=
     ∃ Φ : ApproximableMap (strictFun D.sys E.sys) (strictFun (T.obj D).sys (T.obj E).sys),
       ∀ f : StrictMap D.sys E.sys,
         (toStrictMap (Φ.toElementMap (toStrictFilter f))).1 = T.map (X := D) (Y := E) f.1
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

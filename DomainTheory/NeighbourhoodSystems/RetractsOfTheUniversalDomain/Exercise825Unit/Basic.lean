@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise315
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -36,7 +36,7 @@ Everything here is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`): 
 `Unique`/`Subsingleton` reasoning and the existing `funSpaceEquiv` bijection.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -65,4 +65,4 @@ along `funSpaceEquiv`. -/
 instance uniqueFunSpaceUnitSys : Unique (funSpace unitSys unitSys).Element where
   default := (funSpaceEquiv unitSys unitSys).symm default
   uniq _x := (funSpaceEquiv unitSys unitSys).injective (Subsingleton.elim _ _)
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

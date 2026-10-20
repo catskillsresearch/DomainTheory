@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise621
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
 
 @[expose] public section
 
@@ -48,10 +48,10 @@ constant systems `{{0},{0,Λ}}`, `{{Λ}}` and checking they are `∅`-free and r
 **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
 
 namespace Exercise619
 
@@ -102,4 +102,4 @@ def NStarExpr (N : ScottSys) : GExpr := .oplus (.const N) (.otimes (.const N) .v
 
 /-! ## Each equation has a solution (`Γ = tok(T({Γ}))`, so `{Γ} ◁ T({Γ})` and 6.14 applies) -/
 end Exercise619
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

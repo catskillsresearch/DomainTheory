@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise825Unit.Basic
-public import DomainTheory.Neighborhood.Exercise825Unit.isomorphic_of_unique
-public import DomainTheory.Neighborhood.Exercise825Unit.funSpace_unitSys_isomorphic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Unit.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Unit.isomorphic_of_unique
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Unit.funSpace_unitSys_isomorphic
 
 @[expose] public section

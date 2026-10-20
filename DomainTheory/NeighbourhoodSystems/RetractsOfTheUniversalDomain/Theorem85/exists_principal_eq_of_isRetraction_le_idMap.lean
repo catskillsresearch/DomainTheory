@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition83
-public import DomainTheory.Neighborhood.ApproximableExercises
-public import DomainTheory.Neighborhood.Theorem85.Basic
-public import DomainTheory.Neighborhood.Theorem85.principal_isCompactElt
-public import DomainTheory.Neighborhood.Theorem85.eq_principal_of_isCompactElt
-public import DomainTheory.Neighborhood.Theorem85.toElementMap_idem
-public import DomainTheory.Neighborhood.Theorem85.e_apply_iSupDirected_fixed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.principal_isCompactElt
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.eq_principal_of_isCompactElt
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.toElementMap_idem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.e_apply_iSupDirected_fixed
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -86,4 +86,4 @@ theorem exists_principal_eq_of_isRetraction_le_idMap (ha_ret : IsRetraction a)
   exact ⟨i0, hfinal.trans hd2le⟩
 
 end HardDirection
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

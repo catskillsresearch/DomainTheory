@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
 
@@ -41,7 +41,7 @@ and is always a neighbourhood, which is the hint `Y_prefix_consistent`.
 
 The construction is `[propext, Quot.sound]` given the supplied `DecidablePred`. -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -253,4 +253,4 @@ theorem filters_sequence_determined (x : V.Element) :
 
 end Exercise123
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

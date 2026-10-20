@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise407
-public import DomainTheory.Neighborhood.Exercise509.Basic
-public import DomainTheory.Neighborhood.Exercise509.iterElem_le_fixElement
-public import DomainTheory.Neighborhood.Exercise509.comp_self_iterElem
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.iterElem_le_fixElement
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.comp_self_iterElem
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -40,4 +40,4 @@ theorem fixElement_iterTwice (f : ApproximableMap V V) :
     rw [toElementMap_comp, toElementMap_fixElement, toElementMap_fixElement]
 
 end ApproximableMap
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

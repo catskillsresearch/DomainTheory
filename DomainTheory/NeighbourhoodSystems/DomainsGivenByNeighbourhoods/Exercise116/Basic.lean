@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Data.Set.Finite.Basic
 import all Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Tactic
@@ -37,7 +37,7 @@ classification lemmas are not choice-free; the *constructions* (`ofExcluded`, `c
 are `[propext, Quot.sound]`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Cofinite
 
@@ -166,4 +166,4 @@ def fullSystem : NeighborhoodSystem ℕ where
   inter_mem := fun _ _ _ _ => trivial
   sub_master := fun _ => Set.subset_univ _
 end Cofinite
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

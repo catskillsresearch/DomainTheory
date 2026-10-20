@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
 
 @[expose] public section
 
@@ -38,7 +38,7 @@ filter maps `toBB` (forward) / `fromBB` (inverse), mirroring `Example61.dsharpEq
 All *data* is choice-free (`#print axioms ⊆ {propext, Quot.sound}`).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ExampleB
 
@@ -374,4 +374,4 @@ def bbEquiv : B.Element ≃o BB.Element where
       · exact Or.inr (Or.inl ⟨X, hX, rfl, h _ hzX⟩)
       · exact Or.inr (Or.inr ⟨Y, hY, rfl, h _ hzY⟩)
 end Example62
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

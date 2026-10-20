@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Table55
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
 
 @[expose] public section
 
@@ -39,7 +39,7 @@ subterms `σᵢ` are already approximable.
 This module collects the five closure facts as concrete lemmas; everything is **choice-free**.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -59,4 +59,4 @@ namespace Theorem51
 
 /-! ### Case 5 — an abstraction. -/
 end Theorem51
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Exercise625.Basic
-public import DomainTheory.Neighborhood.Exercise625.galois
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.galois
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Subsystem
 
@@ -31,4 +31,4 @@ theorem lowerSet_bounded (P : ProjectionPair D E) (y : E.Element) :
   ⟨P.proj.toElementMap y, fun _ hx => (P.galois _ y).mp hx⟩
 
 end Subsystem.ProjectionPair
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,23 +7,23 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise813b
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b
 public import Mathlib.Topology.Constructions
 import all Mathlib.Topology.Constructions
 public import Mathlib.Topology.Compactness.Compact
 import all Mathlib.Topology.Compactness.Compact
 public import Mathlib.Topology.Clopen
 import all Mathlib.Topology.Clopen
-public import DomainTheory.Neighborhood.Exercise813c.Basic
-public import DomainTheory.Neighborhood.Exercise813c.generatedBy_genPoint_isClopen
-public import DomainTheory.Neighborhood.Exercise813c.self_mem_box
-public import DomainTheory.Neighborhood.Exercise813c.isOpen_box
-public import DomainTheory.Neighborhood.Exercise813c.generatedBy_genPoint_biUnion
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.generatedBy_genPoint_isClopen
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.self_mem_box
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.isOpen_box
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.generatedBy_genPoint_biUnion
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 
 
@@ -58,4 +58,4 @@ theorem isClopen_iff_generatedBy_genPoint {Y : Set (ℕ → Bool)} :
   rw [heq]
   exact generatedBy_genPoint_biUnion t Ig fg
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

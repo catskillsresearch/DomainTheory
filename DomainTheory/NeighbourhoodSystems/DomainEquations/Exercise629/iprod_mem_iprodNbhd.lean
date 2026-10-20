@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 public import Mathlib.Data.Set.Finite.Basic
 import all Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Data.Finset.Basic
 import all Mathlib.Data.Finset.Basic
-public import DomainTheory.Neighborhood.Exercise629.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -50,4 +50,4 @@ theorem iprod_mem_iprodNbhd {X : ∀ i, Set (α i)} (hX : ∀ i, (D i).mem (X i)
 
 end IndexedProduct
 end Exercise629
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

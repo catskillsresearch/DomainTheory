@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise118
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 
 @[expose] public section
 
@@ -46,7 +46,7 @@ it removes the circularity (one no longer needs 4.1 to build the iteration).
 (`nat_iterate_unique`), closing the loop without circularity.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -72,4 +72,4 @@ def monoFix (f : V.Element → V.Element) {a : V.Element} (ha : f a ≤ a) : V.E
 
 /-! ### (4) Specialization to `⟨ℕ, 0, ⁺⟩`. -/
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

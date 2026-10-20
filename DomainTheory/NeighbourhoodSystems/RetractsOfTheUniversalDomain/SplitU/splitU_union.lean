@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.UComputablePresentation
-public import DomainTheory.Neighborhood.SplitU.Basic
-public import DomainTheory.Neighborhood.SplitU.UX_splitULeft
-public import DomainTheory.Neighborhood.SplitU.UX_splitURight
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.UX_splitULeft
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.UX_splitURight
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
 
@@ -47,4 +47,4 @@ theorem splitU_union (n : ℕ) : UX (splitULeft n) ∪ UX (splitURight n) = UX n
     · exact Or.inl ⟨h, hlt⟩
     · exact Or.inr ⟨h, hge⟩
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

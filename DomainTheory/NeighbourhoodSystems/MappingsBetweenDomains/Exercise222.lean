@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
 public import Mathlib.Data.Set.Finite.Basic
 import all Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Data.Set.Lattice.Bounded
@@ -46,9 +46,9 @@ of `C.Nonempty`, finite-set induction). This is documented and expected per the 
 ("for set theorists").
 -/
 
-namespace DomainTheory.Neighborhood.Exercise222
+namespace DomainTheory.NeighbourhoodSystems.Exercise222
 
-open DomainTheory.Neighborhood NeighborhoodSystem Set
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set
 
 variable {τ : Type*} (C : Set (Set τ))
 
@@ -308,4 +308,4 @@ def reprIso : (reprSystem C hInter hne).Element ≃o {X : Set τ // X ∈ C} whe
       obtain ⟨F, hF, htCl⟩ := ht
       exact ⟨F, hab _ hF, htCl⟩
 
-end DomainTheory.Neighborhood.Exercise222
+end DomainTheory.NeighbourhoodSystems.Exercise222

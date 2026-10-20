@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example62.Basic
-public import DomainTheory.Neighborhood.Example62.embBit_nonempty
-public import DomainTheory.Neighborhood.Example62.B_domain_equation
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62.embBit_nonempty
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62.B_domain_equation
 
 @[expose] public section

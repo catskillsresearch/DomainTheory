@@ -7,24 +7,24 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition87
-public import DomainTheory.Neighborhood.Theorem85
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
 public import Mathlib.Data.Nat.BitIndices
 import all Mathlib.Data.Nat.BitIndices
 public import Mathlib.Data.Nat.Bitwise
 import all Mathlib.Data.Nat.Bitwise
 public import Mathlib.Combinatorics.Colex
 import all Mathlib.Combinatorics.Colex
-public import DomainTheory.Neighborhood.Exercise812.Basic
-public import DomainTheory.Neighborhood.Exercise812.affine_nonempty
-public import DomainTheory.Neighborhood.Exercise812.affine_eq_levelSet
-public import DomainTheory.Neighborhood.Exercise812.levelSet_eq_biUnion
-public import DomainTheory.Neighborhood.Exercise812.V_iUnion_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.affine_nonempty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.affine_eq_levelSet
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.levelSet_eq_biUnion
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.V_iUnion_mem
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -72,4 +72,4 @@ theorem V_mem_iff_finiteUnion {X : Set ℕ} :
     rw [hrw] at hne ⊢
     exact V_iUnion_mem hf hne
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Proposition82.Basic
-public import DomainTheory.Neighborhood.Proposition82.isRetraction_retractionOfSubsystem
-public import DomainTheory.Neighborhood.Proposition82.retraction_of_subsystem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82.isRetraction_retractionOfSubsystem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82.retraction_of_subsystem
 
 @[expose] public section

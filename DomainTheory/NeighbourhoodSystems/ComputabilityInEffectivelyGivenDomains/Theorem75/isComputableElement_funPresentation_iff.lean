@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Theorem74
-public import DomainTheory.Neighborhood.Theorem75.Basic
-public import DomainTheory.Neighborhood.Theorem75.Xenum_isComputableElement_iff
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.Xenum_isComputableElement_iff
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -149,4 +149,4 @@ theorem isComputableElement_funPresentation_iff (gN incl0 incl1 eq1 : ℕ → �
         hincl1 hincl1p heq1 heq1p) φ ↔ IsComputableMap P₀ P₁ (toApproxMap φ) :=
   Xenum_isComputableElement_iff P₀ P₁ gN hgNp hgN φ
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

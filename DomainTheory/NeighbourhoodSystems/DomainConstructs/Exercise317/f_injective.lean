@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Exercise316
-public import DomainTheory.Neighborhood.FunctionSpace
-public import DomainTheory.Neighborhood.Exercise317.Basic
-public import DomainTheory.Neighborhood.Exercise317.gf_eq_id
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.gf_eq_id
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise317
+namespace DomainTheory.NeighbourhoodSystems.Exercise317
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
 
@@ -46,4 +46,4 @@ theorem f_injective : Function.Injective f.toElementMap := by
     rw [toElementMap_comp, toElementMap_comp, hxy]
   rwa [gf_eq_id, toElementMap_idMap, toElementMap_idMap] at this
 
-end DomainTheory.Neighborhood.Exercise317
+end DomainTheory.NeighbourhoodSystems.Exercise317

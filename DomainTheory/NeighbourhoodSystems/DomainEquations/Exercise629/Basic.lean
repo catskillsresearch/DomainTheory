@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 public import Mathlib.Data.Set.Finite.Basic
 import all Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Data.Finset.Basic
@@ -58,7 +58,7 @@ the degeneracy `iotimes_only_master`/`iotimes_subsingleton` (a cardinality argum
 classical `Set.Finite`). Both are flagged in their docstrings.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -542,4 +542,4 @@ def iotimes [Nonempty ι] (D : ∀ i, NeighborhoodSystem (α i)) : NeighborhoodS
             (by rw [← heq]; exact Set.inter_subset_left))
         · exact hXf.inter hX'f
 end Exercise629
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

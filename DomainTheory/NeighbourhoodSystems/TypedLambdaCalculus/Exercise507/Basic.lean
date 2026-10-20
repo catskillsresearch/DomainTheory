@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
@@ -42,9 +42,9 @@ No new axioms are introduced beyond the project's `Element.ext` / `ext_of_toElem
 already used by `curry`/`uncurry`.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise507
+namespace DomainTheory.NeighbourhoodSystems.Exercise507
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
@@ -64,4 +64,4 @@ single-variable binders all the way down. -/
 def curry₃ (g : ApproximableMap (prod (prod V₀ V₁) V₂) V₃) :
     ApproximableMap V₀ (funSpace V₁ (funSpace V₂ V₃)) :=
   curry (curry g)
-end DomainTheory.Neighborhood.Exercise507
+end DomainTheory.NeighbourhoodSystems.Exercise507

@@ -7,14 +7,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise825Unit
-public import DomainTheory.Neighborhood.Exercise825FixedPoint
-public import DomainTheory.Neighborhood.Exercise825.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Unit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 /-- **Exercise 8.25 (Scott 1981, PRG-19), the answer.** The concrete domain
 `D := fixedNbhd (fixOp (tOpMap cCombinator))` (built in `Exercise825FixedPoint.lean` by the
@@ -25,4 +25,4 @@ theorem exercise_8_25 :
         (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
   exercise_8_25_main
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

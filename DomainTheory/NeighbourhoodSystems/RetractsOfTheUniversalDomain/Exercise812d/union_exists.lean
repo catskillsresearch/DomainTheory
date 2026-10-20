@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812c
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.Definition72
-public import DomainTheory.Neighborhood.Exercise718
-public import DomainTheory.Neighborhood.Exercise812d.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise718
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.Basic
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
@@ -92,4 +92,4 @@ theorem union_exists (hunion : V.UnionClosed) (n m : ℕ) :
   P.surj (hunion (P.mem_X n) (P.mem_X m))
 
 end IsComputableUnion
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

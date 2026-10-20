@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Topology.Inseparable
 import all Mathlib.Topology.Inseparable
 
@@ -50,7 +50,7 @@ partial order, recoverable from the topology by (iii)); the open-ended limit-poi
 exercise need Definition 1.7 (`↑X`) and are deferred.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem
 
@@ -102,4 +102,4 @@ instance instTopologicalSpaceElement : TopologicalSpace V.Element where
     obtain ⟨X, hX, hXt⟩ := hS t htS x hxt
     exact ⟨X, hX, hXt.trans fun _ ha => ⟨t, htS, ha⟩⟩
 end NeighborhoodSystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

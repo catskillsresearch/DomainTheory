@@ -7,12 +7,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise508.Basic
-public import DomainTheory.Neighborhood.Exercise508.toApproxMap_toFilter
-public import DomainTheory.Neighborhood.Exercise508.Smap_apply
-public import DomainTheory.Neighborhood.Exercise508.Ielem_apply
-public import DomainTheory.Neighborhood.Exercise508.Kelem_apply
-public import DomainTheory.Neighborhood.Exercise508.Selem_apply
-public import DomainTheory.Neighborhood.Exercise508.bracket_spec
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.toApproxMap_toFilter
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Smap_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Ielem_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Kelem_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Selem_apply
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.bracket_spec
 
 @[expose] public section

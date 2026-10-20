@@ -7,16 +7,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Proposition612
-public import DomainTheory.Neighborhood.Exercise628.Basic
-public import DomainTheory.Neighborhood.Exercise628.isomorphic_of_trianglelefteq_both
-public import DomainTheory.Neighborhood.Exercise628.finite_element_of_isFinite
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.isomorphic_of_trianglelefteq_both
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.finite_element_of_isFinite
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -36,4 +36,4 @@ theorem isomorphic_of_finite_system (hD : D.IsFinite) (hE : E.IsFinite)
   have := finite_element_of_isFinite hE
   exact isomorphic_of_trianglelefteq_both h₁ h₂
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

@@ -7,17 +7,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise316
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise511.Basic
-public import DomainTheory.Neighborhood.Exercise511.mapBody_apply
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.mapBody_apply
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Exercise511
+namespace DomainTheory.NeighbourhoodSystems.Exercise511
 
-open DomainTheory.Neighborhood NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
@@ -51,4 +51,4 @@ theorem map_rec (s : (iterSys (funSpace V V)).Element) (x : V.Element) :
   rw [← mapOp, hfix] at hval
   rw [mapMap, hval, mapBody_apply]
 
-end DomainTheory.Neighborhood.Exercise511
+end DomainTheory.NeighbourhoodSystems.Exercise511

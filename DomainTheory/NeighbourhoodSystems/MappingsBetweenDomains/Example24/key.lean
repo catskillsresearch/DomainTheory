@@ -7,18 +7,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Approximable
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Example24.Basic
-public import DomainTheory.Neighborhood.Example24.out_true_true
-public import DomainTheory.Neighborhood.Example24.out_true_false
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24.Basic
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24.out_true_true
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24.out_true_false
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood.Example24
+namespace DomainTheory.NeighbourhoodSystems.Example24
 
-open DomainTheory.Neighborhood NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 
@@ -61,4 +61,4 @@ theorem key (g : ApproximableMap B B) (hg : SatisfiesRunEquations g) :
       rw [out_false, show (false :: t : Str) = [false] ++ t from rfl, sigmaElt_append, hg.zero,
         key g hg t, show (false :: out t : Str) = [false] ++ out t from rfl, sigmaElt_append]
 
-end DomainTheory.Neighborhood.Example24
+end DomainTheory.NeighbourhoodSystems.Example24

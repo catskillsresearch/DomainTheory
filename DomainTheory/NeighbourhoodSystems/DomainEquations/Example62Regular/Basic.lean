@@ -42,7 +42,7 @@ content is entirely the combinatorics-on-words / automata correspondence, orthog
 neighbourhood-system machinery.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace Example62Regular
 
@@ -86,4 +86,4 @@ def treeLang (a : Tree n) : Language (Fin n) := {σ | a σ = true}
 distinct subtrees, so it is "ultimately periodic" along every branch.) -/
 def EventuallyPeriodic (a : Tree n) : Prop := (Set.range (select a)).Finite
 end Example62Regular
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

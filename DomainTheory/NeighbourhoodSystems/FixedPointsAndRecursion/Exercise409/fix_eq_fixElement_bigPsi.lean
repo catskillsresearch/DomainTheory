@@ -7,15 +7,15 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
-public import DomainTheory.Neighborhood.Exercise409.Basic
-public import DomainTheory.Neighborhood.Exercise409.bigPsi_fix
-public import DomainTheory.Neighborhood.Exercise409.bigPsi_least
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise409.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise409.bigPsi_fix
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise409.bigPsi_least
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -30,4 +30,4 @@ theorem fix_eq_fixElement_bigPsi (V : NeighborhoodSystem α) :
   · exact bigPsi_least V _ (le_of_eq (toElementMap_fixElement (bigPsi V)))
   · exact fixElement_le_of_toElementMap_le (bigPsi V) (le_of_eq (bigPsi_fix V))
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

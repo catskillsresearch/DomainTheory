@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 
 @[expose] public section
 
@@ -40,7 +40,7 @@ Propositions 6.11 (the subsystems of `E` form a domain) and 6.12 (a `D ◁ E` yi
 pair `i, j`) build on this relation and are formalized separately.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 variable {α : Type*}
 
@@ -61,4 +61,4 @@ structure Subsystem (D E : NeighborhoodSystem α) : Prop where
 
 namespace Subsystem
 end Subsystem
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

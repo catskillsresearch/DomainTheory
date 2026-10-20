@@ -7,20 +7,20 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise621
-public import DomainTheory.Neighborhood.Lemma615
-public import DomainTheory.Neighborhood.Exercise627.Basic
-public import DomainTheory.Neighborhood.Exercise627.subsingleton_element_of_only_master
-public import DomainTheory.Neighborhood.Exercise627.otimes_unitPt_collapse
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.subsingleton_element_of_only_master
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.otimes_unitPt_collapse
 
 @[expose] public section
 
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.Neighborhood.Exercise619
-open DomainTheory.Neighborhood.Example62 DomainTheory.Neighborhood.ExampleB
-open DomainTheory.Neighborhood.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.Exercise510
 
 namespace Exercise627
 
@@ -75,4 +75,4 @@ theorem not_trianglelefteq_otimes :
     (e (twoPt.principal twoPt.master_mem))))
 
 end Exercise627
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

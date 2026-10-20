@@ -7,8 +7,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise812c
-public import DomainTheory.Neighborhood.Theorem88
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
 
 @[expose] public section
 
@@ -46,7 +46,7 @@ already in scope in `Exercise812c.lean`'s `section AtomPair`). The finite-constr
 8.12(c)(vi)(2)/(vi)(3).
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
@@ -503,4 +503,4 @@ theorem YseqE_nonempty_of_mem {n : ℕ} {x : α} (hxΔ : x ∈ Δ) (hxn : x ∈ 
     exact Set.nonempty_iff_ne_empty.mpr hIne
   exact hne2.mono (subset_YseqE E split X Δ (restrictFin δ0 n))
 
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

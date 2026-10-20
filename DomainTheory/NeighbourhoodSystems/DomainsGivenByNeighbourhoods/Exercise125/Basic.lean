@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Order.UpperLower.Basic
 import all Mathlib.Order.UpperLower.Basic
 public import Mathlib.Order.Bounds.Basic
@@ -45,7 +45,7 @@ total element is **not** finite (`topElement_not_principal_of_noMax`): not all e
 The system and `Ici` lemmas are `[propext, Quot.sound]`; the classification's surjectivity uses
 the well-ordering (`WellFounded.has_min`), so it is classical. -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 namespace FinalSegment
 
@@ -225,4 +225,4 @@ theorem topElement_not_principal_of_noMax (hnomax : ∀ a : Δ, ∃ b, a < b) (a
   have hsub : Set.Ici a ⊆ Set.Ici b := hmem.2
   exact absurd (Set.Ici_subset_Ici.mp hsub) (not_le.mpr hab)
 end FinalSegment
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

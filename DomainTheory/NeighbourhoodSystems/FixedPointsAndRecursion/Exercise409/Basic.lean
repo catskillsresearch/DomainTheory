@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 
 @[expose] public section
 
@@ -40,7 +40,7 @@ The operator data `bigPsi` is **choice-free**; equalities of elements/operators 
 project's permitted `Element.ext` / `ext_of_toElementMap`.
 -/
 
-namespace DomainTheory.Neighborhood
+namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -52,4 +52,4 @@ def bigPsi (V : NeighborhoodSystem α) :
     ApproximableMap (funSpace (funSpace V V) V) (funSpace (funSpace V V) V) :=
   curry ((evalMap V V).comp
     (paired (proj₁ (funSpace (funSpace V V) V) (funSpace V V)) (evalMap (funSpace V V) V)))
-end DomainTheory.Neighborhood
+end DomainTheory.NeighbourhoodSystems

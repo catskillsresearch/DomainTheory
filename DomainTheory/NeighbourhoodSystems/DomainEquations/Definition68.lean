@@ -7,9 +7,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition68.Basic
-public import DomainTheory.Neighborhood.Definition68.ContinuousOnMapsu2eisStrict_map
-public import DomainTheory.Neighborhood.Definition68.toStrictMap_toStrictFilter
-public import DomainTheory.Neighborhood.Definition68.continuousOnMaps_id
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.ContinuousOnMapsu2eisStrict_map
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.toStrictMap_toStrictFilter
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.continuousOnMaps_id
 
 @[expose] public section

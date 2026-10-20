@@ -7,10 +7,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Definition71
-public import DomainTheory.Neighborhood.ExampleB
-public import DomainTheory.Neighborhood.Example23
-public import DomainTheory.Neighborhood.Theorem75
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
 
 @[expose] public section
 
@@ -48,7 +48,7 @@ sequences of naturals directly:
   **`Lmem`**'s nested-or-disjointness (`L_nestedOrDisjoint`) and hence the system **`L`**.
 -/
 
-namespace DomainTheory.Neighborhood.Exercise724
+namespace DomainTheory.NeighbourhoodSystems.Exercise724
 
 open NeighborhoodSystem Domain.Recursive
 
@@ -865,7 +865,7 @@ uses `Classical.choice` exactly once (to extract concrete characteristic functio
 deciders of `Lpres`/`Tpres`), matching the classical bridge already used for `toElement_surjective`.
 -/
 
-open DomainTheory.Neighborhood.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-! ### A computable presentation of `T` (Example 1.2's three-point domain) -/
 
@@ -1480,4 +1480,4 @@ theorem deMorganT_isComputable :
       (comp_isComputable (proj₀_isComputable LTpres LTpres) notT_lifted_isComputable)
       (comp_isComputable (proj₁_isComputable LTpres LTpres) notT_lifted_isComputable))
     (comp_isComputable andT_lifted_isComputable notT_lifted_isComputable)
-end DomainTheory.Neighborhood.Exercise724
+end DomainTheory.NeighbourhoodSystems.Exercise724

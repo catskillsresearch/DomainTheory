@@ -7,12 +7,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.Neighborhood.Exercise418.Basic
-public import DomainTheory.Neighborhood.Exercise418.not_N_mem_empty
-public import DomainTheory.Neighborhood.Exercise418.element_classification
-public import DomainTheory.Neighborhood.Exercise418.natElem_injective
-public import DomainTheory.Neighborhood.Exercise418.succMap_injective
-public import DomainTheory.Neighborhood.Exercise418.natElem_zero_ne_succ
-public import DomainTheory.Neighborhood.Exercise418.zero_ne_succMap
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise418.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise418.not_N_mem_empty
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise418.element_classification
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise418.natElem_injective
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise418.succMap_injective
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise418.natElem_zero_ne_succ
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise418.zero_ne_succMap
 
 @[expose] public section
