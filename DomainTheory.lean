@@ -7,7 +7,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 import DomainTheory.ContinuousLattice
 import DomainTheory.DataTypesAsLattices
-import DomainTheory.Neighborhood
+import DomainTheory.NeighbourhoodSystems
 import DomainTheory.InformationSystems
 import DomainTheory.BridgeTheorems
 
@@ -23,7 +23,7 @@ formalizations vendored under `vendor/` (see `PROVENANCE.md` and
   (ex-`Scott1972.ContinuousLattice`)
 * `DomainTheory.DataTypesAsLattices` — Scott 1976, data types as
   lattices (ex-`Scott1976.DataTypesAsLattices`)
-* `DomainTheory.Neighborhood` — Scott 1980 (PRG-19), neighbourhood
+* `DomainTheory.NeighbourhoodSystems` — Scott 1980 (PRG-19), neighbourhood
   systems (ex-`Scott1980.Neighborhood`)
 * `DomainTheory.InformationSystems` — Scott 1982, information systems
   (ex-`Scott1982`)
