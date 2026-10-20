@@ -20,5 +20,3 @@ conjugation) and trichotomy for separated sums.
 - [Proof notes](BridgeTheorems_Proof_notes.md)
 - [Constructivity summary](BridgeTheorems_Constructivity_summary.md)
 - [Worked example — S-expressions / trees](BridgeTheorems_Worked_example.md)
-- [Build](BridgeTheorems_Build.md)
-- [Lean Code](BridgeTheorems_Lean_code.md)
