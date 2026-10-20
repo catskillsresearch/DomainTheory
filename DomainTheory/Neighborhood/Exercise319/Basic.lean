@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Product
+module
+
+public import DomainTheory.Neighborhood.Product
+
+@[expose] public section
 
 /-!
 # Exercise 3.19 / 3.20 (Scott 1981, PRG-19, §3) — the product functor `f × g`

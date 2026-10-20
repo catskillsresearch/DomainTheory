@@ -5,9 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722Regular
-import Mathlib.Computability.DFA
-import Mathlib.Data.Fintype.Option
+module
+
+public import DomainTheory.Neighborhood.Exercise722Regular
+public import Mathlib.Computability.DFA
+import all Mathlib.Computability.DFA
+public import Mathlib.Data.Fintype.Option
+import all Mathlib.Data.Fintype.Option
+
+@[expose] public section
 
 /-!
 # Exercise 7.22 — toward effective givenness: explicit `Fintype` DFAs (WIP)

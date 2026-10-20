@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise812d
+module
+
+public import DomainTheory.Neighborhood.Exercise812d
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(e) (Scott 1981, PRG-19, Lecture VIII) — `U` satisfies the extension property

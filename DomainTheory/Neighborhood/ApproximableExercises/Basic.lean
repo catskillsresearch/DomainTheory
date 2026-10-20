@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Approximable
-import Mathlib.Data.Set.Image
+module
+
+public import DomainTheory.Neighborhood.Approximable
+public import Mathlib.Data.Set.Image
+import all Mathlib.Data.Set.Image
+
+@[expose] public section
 
 /-!
 # Lecture II (§2) — Exercises 2.8–2.12 and 2.19 (the algebra of approximable mappings)

@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid41.Basic
-import DomainTheory.InformationSystems.Factoid41.inf_le_left
-import DomainTheory.InformationSystems.Factoid41.inf_le_right
-import DomainTheory.InformationSystems.Factoid41.le_inf
-import DomainTheory.InformationSystems.Factoid41.inf_le_iff
-import DomainTheory.InformationSystems.Factoid41.le_iff_inf_eq
-import DomainTheory.InformationSystems.Factoid41.inf_idem
-import DomainTheory.InformationSystems.Factoid41.inf_comm
-import DomainTheory.InformationSystems.Factoid41.inf_assoc
-import DomainTheory.InformationSystems.Factoid41.inf_mono
-import DomainTheory.InformationSystems.Factoid41.botElement_inf
-import DomainTheory.InformationSystems.Factoid41.inf_botElement
+module
+
+public import DomainTheory.InformationSystems.Factoid41.Basic
+public import DomainTheory.InformationSystems.Factoid41.inf_le_left
+public import DomainTheory.InformationSystems.Factoid41.inf_le_right
+public import DomainTheory.InformationSystems.Factoid41.le_inf
+public import DomainTheory.InformationSystems.Factoid41.inf_le_iff
+public import DomainTheory.InformationSystems.Factoid41.le_iff_inf_eq
+public import DomainTheory.InformationSystems.Factoid41.inf_idem
+public import DomainTheory.InformationSystems.Factoid41.inf_comm
+public import DomainTheory.InformationSystems.Factoid41.inf_assoc
+public import DomainTheory.InformationSystems.Factoid41.inf_mono
+public import DomainTheory.InformationSystems.Factoid41.botElement_inf
+public import DomainTheory.InformationSystems.Factoid41.inf_botElement
+
+@[expose] public section

@@ -5,10 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise414
-import Mathlib.Algebra.Group.Submonoid.Basic
-import Mathlib.Algebra.Group.Pointwise.Set.Basic
-import Mathlib.Algebra.Group.Nat.Defs
+module
+
+public import DomainTheory.Neighborhood.Exercise414
+public import Mathlib.Algebra.Group.Submonoid.Basic
+import all Mathlib.Algebra.Group.Submonoid.Basic
+public import Mathlib.Algebra.Group.Pointwise.Set.Basic
+import all Mathlib.Algebra.Group.Pointwise.Set.Basic
+public import Mathlib.Algebra.Group.Nat.Defs
+import all Mathlib.Algebra.Group.Nat.Defs
+
+@[expose] public section
 
 /-!
 # Exercise 4.17 (Scott 1981, PRG-19, Lecture IV) — least solution in a monoid power-set

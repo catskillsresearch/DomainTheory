@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem85
-import DomainTheory.Neighborhood.FunctionSpace
-import DomainTheory.Neighborhood.Exercise213
-import DomainTheory.Neighborhood.Proposition611
+module
+
+public import DomainTheory.Neighborhood.Theorem85
+public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.Neighborhood.Exercise213
+public import DomainTheory.Neighborhood.Proposition611
+
+@[expose] public section
 
 /-!
 # Lecture VIII — Theorem 8.6 (Scott 1981, PRG-19): the `sub` combinator

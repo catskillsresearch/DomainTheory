@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Approximable
+module
+
+public import DomainTheory.InformationSystems.Approximable
+
+@[expose] public section
 
 /-!
 # Proposition 5.4 — the identity approximable mapping

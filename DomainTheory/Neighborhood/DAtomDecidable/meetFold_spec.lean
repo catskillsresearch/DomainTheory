@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88a
-import DomainTheory.Neighborhood.Definition71
-import DomainTheory.Neighborhood.DAtomDecidable.Basic
-import DomainTheory.Neighborhood.DAtomDecidable.idxSet_masterIdx_eq_univ
-import DomainTheory.Neighborhood.DAtomDecidable.meetFold_foldl_spec
+module
+
+public import DomainTheory.Neighborhood.Theorem88a
+public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.Neighborhood.DAtomDecidable.Basic
+public import DomainTheory.Neighborhood.DAtomDecidable.idxSet_masterIdx_eq_univ
+public import DomainTheory.Neighborhood.DAtomDecidable.meetFold_foldl_spec
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise315
+module
+
+public import DomainTheory.Neighborhood.Exercise315
+
+@[expose] public section
 
 /-!
 # Exercise 3.16 (Scott 1981, PRG-19, §3) — the infinite iterate `𝒟^∞`

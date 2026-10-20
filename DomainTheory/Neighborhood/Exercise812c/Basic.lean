@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise812
-import DomainTheory.Neighborhood.IntervalPrimrec
-import DomainTheory.Neighborhood.Theorem88
+module
+
+public import DomainTheory.Neighborhood.Exercise812
+public import DomainTheory.Neighborhood.IntervalPrimrec
+public import DomainTheory.Neighborhood.Theorem88
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(c) (Scott 1981, PRG-19, Lecture VIII) — a general two-sided back-and-forth lemma

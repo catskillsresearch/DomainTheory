@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise622.Basic
-import DomainTheory.Neighborhood.Exercise622.nil_mem_Cnat
-import DomainTheory.Neighborhood.Exercise622.nil_mem_Cone
-import DomainTheory.Neighborhood.Exercise622.NExpr_rooted
-import DomainTheory.Neighborhood.Exercise622.MExpr_rooted
-import DomainTheory.Neighborhood.Exercise622.NStarExpr_rooted
-import DomainTheory.Neighborhood.Exercise622.N_eq_solution
-import DomainTheory.Neighborhood.Exercise622.M_eq_solution
-import DomainTheory.Neighborhood.Exercise622.NStar_eq_solution
-import DomainTheory.Neighborhood.Exercise622.NStar_over_N_exists
+module
+
+public import DomainTheory.Neighborhood.Exercise622.Basic
+public import DomainTheory.Neighborhood.Exercise622.nil_mem_Cnat
+public import DomainTheory.Neighborhood.Exercise622.nil_mem_Cone
+public import DomainTheory.Neighborhood.Exercise622.NExpr_rooted
+public import DomainTheory.Neighborhood.Exercise622.MExpr_rooted
+public import DomainTheory.Neighborhood.Exercise622.NStarExpr_rooted
+public import DomainTheory.Neighborhood.Exercise622.N_eq_solution
+public import DomainTheory.Neighborhood.Exercise622.M_eq_solution
+public import DomainTheory.Neighborhood.Exercise622.NStar_eq_solution
+public import DomainTheory.Neighborhood.Exercise622.NStar_over_N_exists
+
+@[expose] public section

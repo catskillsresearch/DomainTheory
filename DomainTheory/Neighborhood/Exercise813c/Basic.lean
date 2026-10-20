@@ -5,10 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise813b
-import Mathlib.Topology.Constructions
-import Mathlib.Topology.Compactness.Compact
-import Mathlib.Topology.Clopen
+module
+
+public import DomainTheory.Neighborhood.Exercise813b
+public import Mathlib.Topology.Constructions
+import all Mathlib.Topology.Constructions
+public import Mathlib.Topology.Compactness.Compact
+import all Mathlib.Topology.Compactness.Compact
+public import Mathlib.Topology.Clopen
+import all Mathlib.Topology.Clopen
+
+@[expose] public section
 
 /-!
 # Exercise 8.13(c) (Scott 1981, PRG-19, Lecture VIII) — connecting to Cantor space

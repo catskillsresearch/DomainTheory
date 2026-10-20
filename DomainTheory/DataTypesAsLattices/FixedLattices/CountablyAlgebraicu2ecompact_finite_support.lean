@@ -5,11 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.CompleteLattice.Defs
-import Mathlib.Data.Finset.Basic
-import DomainTheory.DataTypesAsLattices.FixedLattices.Basic
-import DomainTheory.DataTypesAsLattices.FixedLattices.finiteBasisSups_directed
-import DomainTheory.DataTypesAsLattices.FixedLattices.sSup_finiteBasisSups
+module
+
+public import Mathlib.Order.CompleteLattice.Defs
+import all Mathlib.Order.CompleteLattice.Defs
+public import Mathlib.Data.Finset.Basic
+import all Mathlib.Data.Finset.Basic
+public import DomainTheory.DataTypesAsLattices.FixedLattices.Basic
+public import DomainTheory.DataTypesAsLattices.FixedLattices.finiteBasisSups_directed
+public import DomainTheory.DataTypesAsLattices.FixedLattices.sSup_finiteBasisSups
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

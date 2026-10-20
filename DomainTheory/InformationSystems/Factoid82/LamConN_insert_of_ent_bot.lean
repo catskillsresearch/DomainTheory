@@ -5,12 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.FunctionSpace
-import DomainTheory.InformationSystems.Sum
-import Mathlib.Data.Finset.Card
-import DomainTheory.InformationSystems.Factoid82.Basic
-import DomainTheory.InformationSystems.Factoid82.LamEntN_con
-import DomainTheory.InformationSystems.Factoid82.LamConN_insert_bot
+module
+
+public import DomainTheory.InformationSystems.FunctionSpace
+public import DomainTheory.InformationSystems.Sum
+public import Mathlib.Data.Finset.Card
+import all Mathlib.Data.Finset.Card
+public import DomainTheory.InformationSystems.Factoid82.Basic
+public import DomainTheory.InformationSystems.Factoid82.LamEntN_con
+public import DomainTheory.InformationSystems.Factoid82.LamConN_insert_bot
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems

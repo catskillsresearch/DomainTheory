@@ -5,239 +5,243 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import DomainTheory.Neighborhood.Example12
-import DomainTheory.Neighborhood.Example13
-import DomainTheory.Neighborhood.Example14
-import DomainTheory.Neighborhood.Example15
-import DomainTheory.Neighborhood.ExampleB
-import DomainTheory.Neighborhood.Theorem110
-import DomainTheory.Neighborhood.Theorem111
-import DomainTheory.Neighborhood.Exercise112
-import DomainTheory.Neighborhood.Exercise113
-import DomainTheory.Neighborhood.Exercise114
-import DomainTheory.Neighborhood.Exercise115
-import DomainTheory.Neighborhood.Exercise116
-import DomainTheory.Neighborhood.Exercise117
-import DomainTheory.Neighborhood.Exercise118
-import DomainTheory.Neighborhood.Exercise119
-import DomainTheory.Neighborhood.Exercise120
-import DomainTheory.Neighborhood.Exercise121
-import DomainTheory.Neighborhood.Exercise122
-import DomainTheory.Neighborhood.Exercise123
-import DomainTheory.Neighborhood.Exercise124
-import DomainTheory.Neighborhood.Exercise125
-import DomainTheory.Neighborhood.Exercise126
-import DomainTheory.Neighborhood.Exercise127
-import DomainTheory.Neighborhood.Approximable
-import DomainTheory.Neighborhood.ApproximableExercises
-import DomainTheory.Neighborhood.Example23
-import DomainTheory.Neighborhood.Example24
-import DomainTheory.Neighborhood.Exercise213
-import DomainTheory.Neighborhood.Exercise214
-import DomainTheory.Neighborhood.Exercise215
-import DomainTheory.Neighborhood.Exercise216
-import DomainTheory.Neighborhood.Exercise218
-import DomainTheory.Neighborhood.Exercise220
-import DomainTheory.Neighborhood.Exercise221
-import DomainTheory.Neighborhood.Exercise222
-import DomainTheory.Neighborhood.Product
-import DomainTheory.Neighborhood.FunctionSpace
-import DomainTheory.Neighborhood.Exercise314
-import DomainTheory.Neighborhood.Exercise315
-import DomainTheory.Neighborhood.Exercise318
-import DomainTheory.Neighborhood.Exercise319
-import DomainTheory.Neighborhood.Exercise319Sum
-import DomainTheory.Neighborhood.Exercise321
-import DomainTheory.Neighborhood.Exercise322
-import DomainTheory.Neighborhood.Exercise323
-import DomainTheory.Neighborhood.Exercise324
-import DomainTheory.Neighborhood.Exercise316
-import DomainTheory.Neighborhood.Exercise317
-import DomainTheory.Neighborhood.Exercise324Iter
-import DomainTheory.Neighborhood.Exercise324Distrib
-import DomainTheory.Neighborhood.Exercise325
-import DomainTheory.Neighborhood.Exercise327
-import DomainTheory.Neighborhood.Exercise326
-import DomainTheory.Neighborhood.Exercise326Sum
-import DomainTheory.Neighborhood.Exercise328
-import DomainTheory.Neighborhood.Theorem41
-import DomainTheory.Neighborhood.Example43
-import DomainTheory.Neighborhood.Example44
-import DomainTheory.Neighborhood.Theorem46
-import DomainTheory.Neighborhood.Exercise407
-import DomainTheory.Neighborhood.Exercise408
-import DomainTheory.Neighborhood.Exercise409
-import DomainTheory.Neighborhood.Exercise410
-import DomainTheory.Neighborhood.Exercise411
-import DomainTheory.Neighborhood.Exercise412
-import DomainTheory.Neighborhood.Exercise413
-import DomainTheory.Neighborhood.Exercise414
-import DomainTheory.Neighborhood.Exercise415
-import DomainTheory.Neighborhood.Exercise416
-import DomainTheory.Neighborhood.Exercise417
-import DomainTheory.Neighborhood.Exercise418
-import DomainTheory.Neighborhood.Exercise419
-import DomainTheory.Neighborhood.Exercise420
-import DomainTheory.Neighborhood.Exercise421
-import DomainTheory.Neighborhood.Exercise422
-import DomainTheory.Neighborhood.Exercise423
-import DomainTheory.Neighborhood.Exercise424
-import DomainTheory.Neighborhood.Exercise425
-import DomainTheory.Neighborhood.Table55
-import DomainTheory.Neighborhood.Theorem51
-import DomainTheory.Neighborhood.Theorem52
-import DomainTheory.Neighborhood.Proposition53
-import DomainTheory.Neighborhood.Proposition54
-import DomainTheory.Neighborhood.Theorem56
-import DomainTheory.Neighborhood.Theorem56Full
-import DomainTheory.Neighborhood.Exercise507
-import DomainTheory.Neighborhood.Exercise508
-import DomainTheory.Neighborhood.Exercise509
-import DomainTheory.Neighborhood.Exercise510
-import DomainTheory.Neighborhood.Exercise511
-import DomainTheory.Neighborhood.Exercise512
-import DomainTheory.Neighborhood.Exercise513
-import DomainTheory.Neighborhood.Exercise514
-import DomainTheory.Neighborhood.Exercise515
-import DomainTheory.Neighborhood.Exercise516
-import DomainTheory.Neighborhood.Exercise516ThueMorse
-import DomainTheory.Neighborhood.Exercise516Overlap
-import DomainTheory.Neighborhood.Example61
-import DomainTheory.Neighborhood.Example62
-import DomainTheory.Neighborhood.Example62C
-import DomainTheory.Neighborhood.Example62A
-import DomainTheory.Neighborhood.Example62Regular
-import DomainTheory.Neighborhood.Definition63
-import DomainTheory.Neighborhood.Proposition66
-import DomainTheory.Neighborhood.Proposition67
-import DomainTheory.Neighborhood.Definition68
-import DomainTheory.Neighborhood.Theorem69
-import DomainTheory.Neighborhood.Definition610
-import DomainTheory.Neighborhood.Proposition611
-import DomainTheory.Neighborhood.Proposition612
-import DomainTheory.Neighborhood.Definition613
-import DomainTheory.Neighborhood.Theorem614
-import DomainTheory.Neighborhood.Lemma615
-import DomainTheory.Neighborhood.Theorem616
-import DomainTheory.Neighborhood.Exercise617
-import DomainTheory.Neighborhood.Exercise617Gen
-import DomainTheory.Neighborhood.Exercise618
-import DomainTheory.Neighborhood.Exercise619
-import DomainTheory.Neighborhood.Exercise619PartB
-import DomainTheory.Neighborhood.Exercise621
-import DomainTheory.Neighborhood.Exercise622
-import DomainTheory.Neighborhood.Exercise623
-import DomainTheory.Neighborhood.Exercise624
-import DomainTheory.Neighborhood.Exercise625
-import DomainTheory.Neighborhood.Exercise626
-import DomainTheory.Neighborhood.Exercise627
-import DomainTheory.Neighborhood.Exercise628
-import DomainTheory.Neighborhood.Exercise629
-import DomainTheory.Neighborhood.Recursive
-import DomainTheory.Neighborhood.Definition71
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.Theorem74
-import DomainTheory.Neighborhood.Theorem75
-import DomainTheory.Neighborhood.Theorem76
-import DomainTheory.Neighborhood.Proposition77
-import DomainTheory.Neighborhood.Combinators77
-import DomainTheory.Neighborhood.Example78
-import DomainTheory.Neighborhood.Definition79
-import DomainTheory.Neighborhood.Proposition710
-import DomainTheory.Neighborhood.Definition711
-import DomainTheory.Neighborhood.Proposition712
-import DomainTheory.Neighborhood.Exercise713
-import DomainTheory.Neighborhood.Exercise714
-import DomainTheory.Neighborhood.Exercise715
-import DomainTheory.Neighborhood.Exercise716
-import DomainTheory.Neighborhood.Exercise717
-import DomainTheory.Neighborhood.Exercise717Part2
-import DomainTheory.Neighborhood.Exercise718
-import DomainTheory.Neighborhood.Exercise719
-import DomainTheory.Neighborhood.Exercise720
-import DomainTheory.Neighborhood.Exercise721
-import DomainTheory.Neighborhood.Exercise722
-import DomainTheory.Neighborhood.Exercise722Regular
-import DomainTheory.Neighborhood.Exercise722DFA
-import DomainTheory.Neighborhood.Exercise722Cat
-import DomainTheory.Neighborhood.Exercise722Decide
-import DomainTheory.Neighborhood.Exercise722Words
-import DomainTheory.Neighborhood.Exercise722Equiv
-import DomainTheory.Neighborhood.Exercise722Presentation
-import DomainTheory.Neighborhood.Exercise723
-import DomainTheory.Neighborhood.Exercise724
-import DomainTheory.Neighborhood.Definition81
-import DomainTheory.Neighborhood.Proposition82
-import DomainTheory.Neighborhood.Definition83
-import DomainTheory.Neighborhood.Theorem85
-import DomainTheory.Neighborhood.Theorem86
-import DomainTheory.Neighborhood.Theorem86c
-import DomainTheory.Neighborhood.Example84
-import DomainTheory.Neighborhood.Example84b
-import DomainTheory.Neighborhood.Definition87
-import DomainTheory.Neighborhood.RationalPrimrec
-import DomainTheory.Neighborhood.RecursiveCross
-import DomainTheory.Neighborhood.IntervalPrimrec
-import DomainTheory.Neighborhood.UComputablePresentation
-import DomainTheory.Neighborhood.SplitU
-import DomainTheory.Neighborhood.DAtomDecidable
-import DomainTheory.Neighborhood.Theorem88
-import DomainTheory.Neighborhood.Theorem88a
-import DomainTheory.Neighborhood.Theorem88b
-import DomainTheory.Neighborhood.Theorem88c
-import DomainTheory.Neighborhood.Theorem88d
-import DomainTheory.Neighborhood.Theorem88e
-import DomainTheory.Neighborhood.Theorem88f
-import DomainTheory.Neighborhood.Theorem88g
-import DomainTheory.Neighborhood.Theorem88h
-import DomainTheory.Neighborhood.Theorem88i
-import DomainTheory.Neighborhood.Theorem88j
-import DomainTheory.Neighborhood.Theorem88k
-import DomainTheory.Neighborhood.Theorem88l
-import DomainTheory.Neighborhood.Theorem88m
-import DomainTheory.Neighborhood.Theorem88n
-import DomainTheory.Neighborhood.Definition89
-import DomainTheory.Neighborhood.Proposition810
-import DomainTheory.Neighborhood.Proposition810b
-import DomainTheory.Neighborhood.Exercise811
-import DomainTheory.Neighborhood.Exercise812
-import DomainTheory.Neighborhood.LevelSetPrimrec
-import DomainTheory.Neighborhood.MinLevel
-import DomainTheory.Neighborhood.Exercise812c
-import DomainTheory.Neighborhood.Exercise812cYseq
-import DomainTheory.Neighborhood.Exercise812d
-import DomainTheory.Neighborhood.Exercise812e
-import DomainTheory.Neighborhood.Exercise812eD
-import DomainTheory.Neighborhood.SplitV
-import DomainTheory.Neighborhood.VDiff
-import DomainTheory.Neighborhood.UBisection2
-import DomainTheory.Neighborhood.Exercise812f
-import DomainTheory.Neighborhood.Exercise812g1a
-import DomainTheory.Neighborhood.Exercise812g1b
-import DomainTheory.Neighborhood.Exercise812g2
-import DomainTheory.Neighborhood.Exercise812g4
-import DomainTheory.Neighborhood.Exercise813a
-import DomainTheory.Neighborhood.Exercise813b
-import DomainTheory.Neighborhood.Exercise813c
-import DomainTheory.Neighborhood.Exercise814
-import DomainTheory.Neighborhood.Exercise815
-import DomainTheory.Neighborhood.Exercise816
-import DomainTheory.Neighborhood.Exercise817
-import DomainTheory.Neighborhood.Exercise818
-import DomainTheory.Neighborhood.Exercise819
-import DomainTheory.Neighborhood.Exercise820
-import DomainTheory.Neighborhood.Exercise821
-import DomainTheory.Neighborhood.Exercise822
-import DomainTheory.Neighborhood.Exercise823
-import DomainTheory.Neighborhood.Exercise824
-import DomainTheory.Neighborhood.Exercise825Unit
-import DomainTheory.Neighborhood.Exercise825Congr
-import DomainTheory.Neighborhood.Exercise825Closing
-import DomainTheory.Neighborhood.Exercise825Pow
-import DomainTheory.Neighborhood.Exercise825Embed
-import DomainTheory.Neighborhood.Exercise825FixedPoint
-import DomainTheory.Neighborhood.Exercise825
-import DomainTheory.Neighborhood.Exercise826
-import DomainTheory.Neighborhood.Exercise827
-import DomainTheory.Neighborhood.PalomarExamples
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.Neighborhood.Example12
+public import DomainTheory.Neighborhood.Example13
+public import DomainTheory.Neighborhood.Example14
+public import DomainTheory.Neighborhood.Example15
+public import DomainTheory.Neighborhood.ExampleB
+public import DomainTheory.Neighborhood.Theorem110
+public import DomainTheory.Neighborhood.Theorem111
+public import DomainTheory.Neighborhood.Exercise112
+public import DomainTheory.Neighborhood.Exercise113
+public import DomainTheory.Neighborhood.Exercise114
+public import DomainTheory.Neighborhood.Exercise115
+public import DomainTheory.Neighborhood.Exercise116
+public import DomainTheory.Neighborhood.Exercise117
+public import DomainTheory.Neighborhood.Exercise118
+public import DomainTheory.Neighborhood.Exercise119
+public import DomainTheory.Neighborhood.Exercise120
+public import DomainTheory.Neighborhood.Exercise121
+public import DomainTheory.Neighborhood.Exercise122
+public import DomainTheory.Neighborhood.Exercise123
+public import DomainTheory.Neighborhood.Exercise124
+public import DomainTheory.Neighborhood.Exercise125
+public import DomainTheory.Neighborhood.Exercise126
+public import DomainTheory.Neighborhood.Exercise127
+public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.Neighborhood.Example23
+public import DomainTheory.Neighborhood.Example24
+public import DomainTheory.Neighborhood.Exercise213
+public import DomainTheory.Neighborhood.Exercise214
+public import DomainTheory.Neighborhood.Exercise215
+public import DomainTheory.Neighborhood.Exercise216
+public import DomainTheory.Neighborhood.Exercise218
+public import DomainTheory.Neighborhood.Exercise220
+public import DomainTheory.Neighborhood.Exercise221
+public import DomainTheory.Neighborhood.Exercise222
+public import DomainTheory.Neighborhood.Product
+public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.Neighborhood.Exercise314
+public import DomainTheory.Neighborhood.Exercise315
+public import DomainTheory.Neighborhood.Exercise318
+public import DomainTheory.Neighborhood.Exercise319
+public import DomainTheory.Neighborhood.Exercise319Sum
+public import DomainTheory.Neighborhood.Exercise321
+public import DomainTheory.Neighborhood.Exercise322
+public import DomainTheory.Neighborhood.Exercise323
+public import DomainTheory.Neighborhood.Exercise324
+public import DomainTheory.Neighborhood.Exercise316
+public import DomainTheory.Neighborhood.Exercise317
+public import DomainTheory.Neighborhood.Exercise324Iter
+public import DomainTheory.Neighborhood.Exercise324Distrib
+public import DomainTheory.Neighborhood.Exercise325
+public import DomainTheory.Neighborhood.Exercise327
+public import DomainTheory.Neighborhood.Exercise326
+public import DomainTheory.Neighborhood.Exercise326Sum
+public import DomainTheory.Neighborhood.Exercise328
+public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.Neighborhood.Example43
+public import DomainTheory.Neighborhood.Example44
+public import DomainTheory.Neighborhood.Theorem46
+public import DomainTheory.Neighborhood.Exercise407
+public import DomainTheory.Neighborhood.Exercise408
+public import DomainTheory.Neighborhood.Exercise409
+public import DomainTheory.Neighborhood.Exercise410
+public import DomainTheory.Neighborhood.Exercise411
+public import DomainTheory.Neighborhood.Exercise412
+public import DomainTheory.Neighborhood.Exercise413
+public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.Neighborhood.Exercise415
+public import DomainTheory.Neighborhood.Exercise416
+public import DomainTheory.Neighborhood.Exercise417
+public import DomainTheory.Neighborhood.Exercise418
+public import DomainTheory.Neighborhood.Exercise419
+public import DomainTheory.Neighborhood.Exercise420
+public import DomainTheory.Neighborhood.Exercise421
+public import DomainTheory.Neighborhood.Exercise422
+public import DomainTheory.Neighborhood.Exercise423
+public import DomainTheory.Neighborhood.Exercise424
+public import DomainTheory.Neighborhood.Exercise425
+public import DomainTheory.Neighborhood.Table55
+public import DomainTheory.Neighborhood.Theorem51
+public import DomainTheory.Neighborhood.Theorem52
+public import DomainTheory.Neighborhood.Proposition53
+public import DomainTheory.Neighborhood.Proposition54
+public import DomainTheory.Neighborhood.Theorem56
+public import DomainTheory.Neighborhood.Theorem56Full
+public import DomainTheory.Neighborhood.Exercise507
+public import DomainTheory.Neighborhood.Exercise508
+public import DomainTheory.Neighborhood.Exercise509
+public import DomainTheory.Neighborhood.Exercise510
+public import DomainTheory.Neighborhood.Exercise511
+public import DomainTheory.Neighborhood.Exercise512
+public import DomainTheory.Neighborhood.Exercise513
+public import DomainTheory.Neighborhood.Exercise514
+public import DomainTheory.Neighborhood.Exercise515
+public import DomainTheory.Neighborhood.Exercise516
+public import DomainTheory.Neighborhood.Exercise516ThueMorse
+public import DomainTheory.Neighborhood.Exercise516Overlap
+public import DomainTheory.Neighborhood.Example61
+public import DomainTheory.Neighborhood.Example62
+public import DomainTheory.Neighborhood.Example62C
+public import DomainTheory.Neighborhood.Example62A
+public import DomainTheory.Neighborhood.Example62Regular
+public import DomainTheory.Neighborhood.Definition63
+public import DomainTheory.Neighborhood.Proposition66
+public import DomainTheory.Neighborhood.Proposition67
+public import DomainTheory.Neighborhood.Definition68
+public import DomainTheory.Neighborhood.Theorem69
+public import DomainTheory.Neighborhood.Definition610
+public import DomainTheory.Neighborhood.Proposition611
+public import DomainTheory.Neighborhood.Proposition612
+public import DomainTheory.Neighborhood.Definition613
+public import DomainTheory.Neighborhood.Theorem614
+public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.Neighborhood.Theorem616
+public import DomainTheory.Neighborhood.Exercise617
+public import DomainTheory.Neighborhood.Exercise617Gen
+public import DomainTheory.Neighborhood.Exercise618
+public import DomainTheory.Neighborhood.Exercise619
+public import DomainTheory.Neighborhood.Exercise619PartB
+public import DomainTheory.Neighborhood.Exercise621
+public import DomainTheory.Neighborhood.Exercise622
+public import DomainTheory.Neighborhood.Exercise623
+public import DomainTheory.Neighborhood.Exercise624
+public import DomainTheory.Neighborhood.Exercise625
+public import DomainTheory.Neighborhood.Exercise626
+public import DomainTheory.Neighborhood.Exercise627
+public import DomainTheory.Neighborhood.Exercise628
+public import DomainTheory.Neighborhood.Exercise629
+public import DomainTheory.Neighborhood.Recursive
+public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.Theorem74
+public import DomainTheory.Neighborhood.Theorem75
+public import DomainTheory.Neighborhood.Theorem76
+public import DomainTheory.Neighborhood.Proposition77
+public import DomainTheory.Neighborhood.Combinators77
+public import DomainTheory.Neighborhood.Example78
+public import DomainTheory.Neighborhood.Definition79
+public import DomainTheory.Neighborhood.Proposition710
+public import DomainTheory.Neighborhood.Definition711
+public import DomainTheory.Neighborhood.Proposition712
+public import DomainTheory.Neighborhood.Exercise713
+public import DomainTheory.Neighborhood.Exercise714
+public import DomainTheory.Neighborhood.Exercise715
+public import DomainTheory.Neighborhood.Exercise716
+public import DomainTheory.Neighborhood.Exercise717
+public import DomainTheory.Neighborhood.Exercise717Part2
+public import DomainTheory.Neighborhood.Exercise718
+public import DomainTheory.Neighborhood.Exercise719
+public import DomainTheory.Neighborhood.Exercise720
+public import DomainTheory.Neighborhood.Exercise721
+public import DomainTheory.Neighborhood.Exercise722
+public import DomainTheory.Neighborhood.Exercise722Regular
+public import DomainTheory.Neighborhood.Exercise722DFA
+public import DomainTheory.Neighborhood.Exercise722Cat
+public import DomainTheory.Neighborhood.Exercise722Decide
+public import DomainTheory.Neighborhood.Exercise722Words
+public import DomainTheory.Neighborhood.Exercise722Equiv
+public import DomainTheory.Neighborhood.Exercise722Presentation
+public import DomainTheory.Neighborhood.Exercise723
+public import DomainTheory.Neighborhood.Exercise724
+public import DomainTheory.Neighborhood.Definition81
+public import DomainTheory.Neighborhood.Proposition82
+public import DomainTheory.Neighborhood.Definition83
+public import DomainTheory.Neighborhood.Theorem85
+public import DomainTheory.Neighborhood.Theorem86
+public import DomainTheory.Neighborhood.Theorem86c
+public import DomainTheory.Neighborhood.Example84
+public import DomainTheory.Neighborhood.Example84b
+public import DomainTheory.Neighborhood.Definition87
+public import DomainTheory.Neighborhood.RationalPrimrec
+public import DomainTheory.Neighborhood.RecursiveCross
+public import DomainTheory.Neighborhood.IntervalPrimrec
+public import DomainTheory.Neighborhood.UComputablePresentation
+public import DomainTheory.Neighborhood.SplitU
+public import DomainTheory.Neighborhood.DAtomDecidable
+public import DomainTheory.Neighborhood.Theorem88
+public import DomainTheory.Neighborhood.Theorem88a
+public import DomainTheory.Neighborhood.Theorem88b
+public import DomainTheory.Neighborhood.Theorem88c
+public import DomainTheory.Neighborhood.Theorem88d
+public import DomainTheory.Neighborhood.Theorem88e
+public import DomainTheory.Neighborhood.Theorem88f
+public import DomainTheory.Neighborhood.Theorem88g
+public import DomainTheory.Neighborhood.Theorem88h
+public import DomainTheory.Neighborhood.Theorem88i
+public import DomainTheory.Neighborhood.Theorem88j
+public import DomainTheory.Neighborhood.Theorem88k
+public import DomainTheory.Neighborhood.Theorem88l
+public import DomainTheory.Neighborhood.Theorem88m
+public import DomainTheory.Neighborhood.Theorem88n
+public import DomainTheory.Neighborhood.Definition89
+public import DomainTheory.Neighborhood.Proposition810
+public import DomainTheory.Neighborhood.Proposition810b
+public import DomainTheory.Neighborhood.Exercise811
+public import DomainTheory.Neighborhood.Exercise812
+public import DomainTheory.Neighborhood.LevelSetPrimrec
+public import DomainTheory.Neighborhood.MinLevel
+public import DomainTheory.Neighborhood.Exercise812c
+public import DomainTheory.Neighborhood.Exercise812cYseq
+public import DomainTheory.Neighborhood.Exercise812d
+public import DomainTheory.Neighborhood.Exercise812e
+public import DomainTheory.Neighborhood.Exercise812eD
+public import DomainTheory.Neighborhood.SplitV
+public import DomainTheory.Neighborhood.VDiff
+public import DomainTheory.Neighborhood.UBisection2
+public import DomainTheory.Neighborhood.Exercise812f
+public import DomainTheory.Neighborhood.Exercise812g1a
+public import DomainTheory.Neighborhood.Exercise812g1b
+public import DomainTheory.Neighborhood.Exercise812g2
+public import DomainTheory.Neighborhood.Exercise812g4
+public import DomainTheory.Neighborhood.Exercise813a
+public import DomainTheory.Neighborhood.Exercise813b
+public import DomainTheory.Neighborhood.Exercise813c
+public import DomainTheory.Neighborhood.Exercise814
+public import DomainTheory.Neighborhood.Exercise815
+public import DomainTheory.Neighborhood.Exercise816
+public import DomainTheory.Neighborhood.Exercise817
+public import DomainTheory.Neighborhood.Exercise818
+public import DomainTheory.Neighborhood.Exercise819
+public import DomainTheory.Neighborhood.Exercise820
+public import DomainTheory.Neighborhood.Exercise821
+public import DomainTheory.Neighborhood.Exercise822
+public import DomainTheory.Neighborhood.Exercise823
+public import DomainTheory.Neighborhood.Exercise824
+public import DomainTheory.Neighborhood.Exercise825Unit
+public import DomainTheory.Neighborhood.Exercise825Congr
+public import DomainTheory.Neighborhood.Exercise825Closing
+public import DomainTheory.Neighborhood.Exercise825Pow
+public import DomainTheory.Neighborhood.Exercise825Embed
+public import DomainTheory.Neighborhood.Exercise825FixedPoint
+public import DomainTheory.Neighborhood.Exercise825
+public import DomainTheory.Neighborhood.Exercise826
+public import DomainTheory.Neighborhood.Exercise827
+public import DomainTheory.Neighborhood.PalomarExamples
+
+@[expose] public section

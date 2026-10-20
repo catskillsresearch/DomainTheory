@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Approximable.Basic
-import DomainTheory.InformationSystems.Approximable.toElement_mono
+module
+
+public import DomainTheory.InformationSystems.Approximable.Basic
+public import DomainTheory.InformationSystems.Approximable.toElement_mono
+
+@[expose] public section

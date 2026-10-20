@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise118
-import DomainTheory.Neighborhood.Theorem41
-import DomainTheory.Neighborhood.Exercise413.Basic
-import DomainTheory.Neighborhood.Exercise413.monoFix_le_preFix
-import DomainTheory.Neighborhood.Exercise413.monoFix_preFix
+module
+
+public import DomainTheory.Neighborhood.Exercise118
+public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.Neighborhood.Exercise413.Basic
+public import DomainTheory.Neighborhood.Exercise413.monoFix_le_preFix
+public import DomainTheory.Neighborhood.Exercise413.monoFix_preFix
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

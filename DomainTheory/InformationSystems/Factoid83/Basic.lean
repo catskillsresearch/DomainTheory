@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Product
+module
+
+public import DomainTheory.InformationSystems.Product
+
+@[expose] public section
 
 /-!
 # Factoid 8.3 — universal domain via `V` (with top) and `U` (top removed)

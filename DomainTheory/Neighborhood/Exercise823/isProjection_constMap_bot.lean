@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem86
-import DomainTheory.Neighborhood.Theorem41
-import DomainTheory.Neighborhood.Exercise315
-import DomainTheory.Neighborhood.Exercise816
-import DomainTheory.Neighborhood.Exercise823.Basic
-import DomainTheory.Neighborhood.Exercise823.isRetraction_constMap_bot
-import DomainTheory.Neighborhood.Exercise823.constMap_bot_le_idMap
+module
+
+public import DomainTheory.Neighborhood.Theorem86
+public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.Neighborhood.Exercise315
+public import DomainTheory.Neighborhood.Exercise816
+public import DomainTheory.Neighborhood.Exercise823.Basic
+public import DomainTheory.Neighborhood.Exercise823.isRetraction_constMap_bot
+public import DomainTheory.Neighborhood.Exercise823.constMap_bot_le_idMap
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

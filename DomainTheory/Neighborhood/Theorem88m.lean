@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88m.Basic
-import DomainTheory.Neighborhood.Theorem88m.fixedNbhd_isEffectivelyGiven
-import DomainTheory.Neighborhood.Theorem88m.theorem_8_8_c
+module
+
+public import DomainTheory.Neighborhood.Theorem88m.Basic
+public import DomainTheory.Neighborhood.Theorem88m.fixedNbhd_isEffectivelyGiven
+public import DomainTheory.Neighborhood.Theorem88m.theorem_8_8_c
+
+@[expose] public section

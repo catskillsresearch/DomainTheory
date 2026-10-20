@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise516
-import Mathlib.Data.Nat.Bits
+module
+
+public import DomainTheory.Neighborhood.Exercise516
+public import Mathlib.Data.Nat.Bits
+import all Mathlib.Data.Nat.Bits
+
+@[expose] public section
 
 /-!
 # Exercise 5.16 follow-up (Scott 1981, PRG-19, Lecture V) — the Thue–Morse sequence `t`

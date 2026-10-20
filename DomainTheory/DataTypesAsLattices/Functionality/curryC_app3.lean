@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.curry_body_isScottContinuous_y
-import DomainTheory.DataTypesAsLattices.Functionality.curryC_app2
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.curry_body_isScottContinuous_y
+public import DomainTheory.DataTypesAsLattices.Functionality.curryC_app2
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Theorem72
-import DomainTheory.InformationSystems.Factoid33
+module
+
+public import DomainTheory.InformationSystems.Theorem72
+public import DomainTheory.InformationSystems.Factoid33
+
+@[expose] public section
 
 /-!
 # Least fixed-point operator — Theorem 7.3

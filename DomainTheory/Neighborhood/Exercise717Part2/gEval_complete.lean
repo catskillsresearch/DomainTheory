@@ -5,17 +5,21 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise717
-import DomainTheory.Neighborhood.Exercise510
-import DomainTheory.Neighborhood.Proposition77
-import DomainTheory.Neighborhood.Exercise717Part2.Basic
-import DomainTheory.Neighborhood.Exercise717Part2.pair_lt_pair_of_lt_le
-import DomainTheory.Neighborhood.Exercise717Part2.gStep_gamma
-import DomainTheory.Neighborhood.Exercise717Part2.gStep_leaf
-import DomainTheory.Neighborhood.Exercise717Part2.gStep_node
-import DomainTheory.Neighborhood.Exercise717Part2.gEval_pair
-import DomainTheory.Neighborhood.Exercise717Part2.listGet_rtbl_gEval
-import DomainTheory.Neighborhood.Exercise717Part2.gEval_out
+module
+
+public import DomainTheory.Neighborhood.Exercise717
+public import DomainTheory.Neighborhood.Exercise510
+public import DomainTheory.Neighborhood.Proposition77
+public import DomainTheory.Neighborhood.Exercise717Part2.Basic
+public import DomainTheory.Neighborhood.Exercise717Part2.pair_lt_pair_of_lt_le
+public import DomainTheory.Neighborhood.Exercise717Part2.gStep_gamma
+public import DomainTheory.Neighborhood.Exercise717Part2.gStep_leaf
+public import DomainTheory.Neighborhood.Exercise717Part2.gStep_node
+public import DomainTheory.Neighborhood.Exercise717Part2.gEval_pair
+public import DomainTheory.Neighborhood.Exercise717Part2.listGet_rtbl_gEval
+public import DomainTheory.Neighborhood.Exercise717Part2.gEval_out
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

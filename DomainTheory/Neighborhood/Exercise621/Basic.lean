@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise619PartB
+module
+
+public import DomainTheory.Neighborhood.Exercise619PartB
+
+@[expose] public section
 
 /-!
 # Exercise 6.21 (Scott 1981, PRG-19, §6) — the *separated* sum `⊕` and product `⊗`

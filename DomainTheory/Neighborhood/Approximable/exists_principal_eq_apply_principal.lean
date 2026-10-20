@@ -5,11 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Tactic.Set
-import DomainTheory.Neighborhood.Approximable.Basic
-import DomainTheory.Neighborhood.Approximable.le_sSupDirected
-import DomainTheory.Neighborhood.Approximable.sSupDirected_le
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Tactic.Set
+import all Mathlib.Tactic.Set
+public import DomainTheory.Neighborhood.Approximable.Basic
+public import DomainTheory.Neighborhood.Approximable.le_sSupDirected
+public import DomainTheory.Neighborhood.Approximable.sSupDirected_le
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

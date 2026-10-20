@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition810b
-import DomainTheory.Neighborhood.Exercise324
-import DomainTheory.Neighborhood.Table55
+module
+
+public import DomainTheory.Neighborhood.Proposition810b
+public import DomainTheory.Neighborhood.Exercise324
+public import DomainTheory.Neighborhood.Table55
+
+@[expose] public section
 
 /-!
 # Exercise 8.25 (Scott 1981, PRG-19, §8), toolkit — function-space congruence and currying

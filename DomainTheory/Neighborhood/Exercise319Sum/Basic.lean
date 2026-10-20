@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise318
+module
+
+public import DomainTheory.Neighborhood.Exercise318
+
+@[expose] public section
 
 /-!
 # Exercise 3.19 (Scott 1981, PRG-19, §3) — the sum functor `f + g`

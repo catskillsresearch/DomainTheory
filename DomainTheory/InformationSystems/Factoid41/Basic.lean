@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid33
+module
+
+public import DomainTheory.InformationSystems.Factoid33
+
+@[expose] public section
 
 /-!
 # Factoid 4.1 — `|A|` is an inf-semilattice under intersection

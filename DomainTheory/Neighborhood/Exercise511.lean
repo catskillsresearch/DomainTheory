@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise511.Basic
-import DomainTheory.Neighborhood.Exercise511.unfold_fold
-import DomainTheory.Neighborhood.Exercise511.fold_unfold
-import DomainTheory.Neighborhood.Exercise511.component_tail
-import DomainTheory.Neighborhood.Exercise511.head_push
-import DomainTheory.Neighborhood.Exercise511.tail_push
-import DomainTheory.Neighborhood.Exercise511.push_head_tail
-import DomainTheory.Neighborhood.Exercise511.diag_rec
-import DomainTheory.Neighborhood.Exercise511.component_diag
-import DomainTheory.Neighborhood.Exercise511.mapBody_apply
-import DomainTheory.Neighborhood.Exercise511.map_rec
-import DomainTheory.Neighborhood.Exercise511.component_map
+module
+
+public import DomainTheory.Neighborhood.Exercise511.Basic
+public import DomainTheory.Neighborhood.Exercise511.unfold_fold
+public import DomainTheory.Neighborhood.Exercise511.fold_unfold
+public import DomainTheory.Neighborhood.Exercise511.component_tail
+public import DomainTheory.Neighborhood.Exercise511.head_push
+public import DomainTheory.Neighborhood.Exercise511.tail_push
+public import DomainTheory.Neighborhood.Exercise511.push_head_tail
+public import DomainTheory.Neighborhood.Exercise511.diag_rec
+public import DomainTheory.Neighborhood.Exercise511.component_diag
+public import DomainTheory.Neighborhood.Exercise511.mapBody_apply
+public import DomainTheory.Neighborhood.Exercise511.map_rec
+public import DomainTheory.Neighborhood.Exercise511.component_map
+
+@[expose] public section

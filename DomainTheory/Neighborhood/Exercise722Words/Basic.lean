@@ -5,7 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722Regular
+module
+
+public import DomainTheory.Neighborhood.Exercise722Regular
+public meta import DomainTheory.Neighborhood.Exercise722Regular.Basic
+
+@[expose] public section
 
 /-!
 # Exercise 7.22 — bounded word enumeration for emptiness search

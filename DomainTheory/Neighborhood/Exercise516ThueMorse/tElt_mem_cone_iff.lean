@@ -5,17 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise516
-import Mathlib.Data.Nat.Bits
-import DomainTheory.Neighborhood.Exercise516ThueMorse.Basic
-import DomainTheory.Neighborhood.Exercise516ThueMorse.iterElem_zerou27
-import DomainTheory.Neighborhood.Exercise516ThueMorse.iterElem_succ_eq
-import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_length
-import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_prefix
-import DomainTheory.Neighborhood.Exercise516ThueMorse.expand_iterate_eq
-import DomainTheory.Neighborhood.Exercise516ThueMorse.strBot_mem_cone
-import DomainTheory.Neighborhood.Exercise516ThueMorse.cone_univ_iff
-import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_le_tElt
+module
+
+public import DomainTheory.Neighborhood.Exercise516
+public import Mathlib.Data.Nat.Bits
+import all Mathlib.Data.Nat.Bits
+public import DomainTheory.Neighborhood.Exercise516ThueMorse.Basic
+public import DomainTheory.Neighborhood.Exercise516ThueMorse.iterElem_zerou27
+public import DomainTheory.Neighborhood.Exercise516ThueMorse.iterElem_succ_eq
+public import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_length
+public import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_prefix
+public import DomainTheory.Neighborhood.Exercise516ThueMorse.expand_iterate_eq
+public import DomainTheory.Neighborhood.Exercise516ThueMorse.strBot_mem_cone
+public import DomainTheory.Neighborhood.Exercise516ThueMorse.cone_univ_iff
+public import DomainTheory.Neighborhood.Exercise516ThueMorse.tmList_le_tElt
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.Exercise516

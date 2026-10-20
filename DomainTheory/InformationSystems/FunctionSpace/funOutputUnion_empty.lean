@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Constructive
-import DomainTheory.InformationSystems.Proposition23
-import DomainTheory.InformationSystems.FunctionSpace.Basic
+module
+
+public import DomainTheory.InformationSystems.Constructive
+public import DomainTheory.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.FunctionSpace.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems

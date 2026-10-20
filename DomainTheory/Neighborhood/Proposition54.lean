@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition54.Basic
-import DomainTheory.Neighborhood.Proposition54.sectionu2082_apply
-import DomainTheory.Neighborhood.Proposition54.pfix_apply
-import DomainTheory.Neighborhood.Proposition54.recOp_apply
-import DomainTheory.Neighborhood.Proposition54.pfix_isFixed
-import DomainTheory.Neighborhood.Proposition54.pfix_eq_fixElement_recOp
+module
+
+public import DomainTheory.Neighborhood.Proposition54.Basic
+public import DomainTheory.Neighborhood.Proposition54.sectionu2082_apply
+public import DomainTheory.Neighborhood.Proposition54.pfix_apply
+public import DomainTheory.Neighborhood.Proposition54.recOp_apply
+public import DomainTheory.Neighborhood.Proposition54.pfix_isFixed
+public import DomainTheory.Neighborhood.Proposition54.pfix_eq_fixElement_recOp
+
+@[expose] public section

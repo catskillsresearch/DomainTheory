@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise409.Basic
-import DomainTheory.Neighborhood.Exercise409.bigPsi_apply
-import DomainTheory.Neighborhood.Exercise409.toApproxMap_toFilter_fixMap
-import DomainTheory.Neighborhood.Exercise409.bigPsi_fix
-import DomainTheory.Neighborhood.Exercise409.bigPsi_least
-import DomainTheory.Neighborhood.Exercise409.fix_eq_fixElement_bigPsi
+module
+
+public import DomainTheory.Neighborhood.Exercise409.Basic
+public import DomainTheory.Neighborhood.Exercise409.bigPsi_apply
+public import DomainTheory.Neighborhood.Exercise409.toApproxMap_toFilter_fixMap
+public import DomainTheory.Neighborhood.Exercise409.bigPsi_fix
+public import DomainTheory.Neighborhood.Exercise409.bigPsi_least
+public import DomainTheory.Neighborhood.Exercise409.fix_eq_fixElement_bigPsi
+
+@[expose] public section

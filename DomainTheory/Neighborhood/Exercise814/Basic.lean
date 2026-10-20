@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem85
-import DomainTheory.Neighborhood.Exercise127
+module
+
+public import DomainTheory.Neighborhood.Theorem85
+public import DomainTheory.Neighborhood.Exercise127
+
+@[expose] public section
 
 /-!
 # Exercise 8.14 (Scott 1981, PRG-19) — closure operators and the fixed-point domain

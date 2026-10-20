@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.FixedLattices
-import DomainTheory.DataTypesAsLattices.Lambda
-import DomainTheory.DataTypesAsLattices.Retracts.Basic
-import DomainTheory.DataTypesAsLattices.Retracts.sSup_fixed_eq_sUnion
-import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_directed
-import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_sSup
+module
+
+public import DomainTheory.DataTypesAsLattices.FixedLattices
+public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Retracts.Basic
+public import DomainTheory.DataTypesAsLattices.Retracts.sSup_fixed_eq_sUnion
+public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_directed
+public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_sSup
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

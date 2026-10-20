@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem86
-import DomainTheory.Neighborhood.Theorem41
-import DomainTheory.Neighborhood.Exercise315
-import DomainTheory.Neighborhood.Exercise816
+module
+
+public import DomainTheory.Neighborhood.Theorem86
+public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.Neighborhood.Exercise315
+public import DomainTheory.Neighborhood.Exercise816
+
+@[expose] public section
 
 /-!
 # Exercise 8.23 (Scott 1981, PRG-19, §8) — the fixed-point method really does solve `D ≅ T(D)`

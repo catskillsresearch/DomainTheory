@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise823
+module
+
+public import DomainTheory.Neighborhood.Exercise823
+
+@[expose] public section
 
 /-!
 # Exercise 8.24 (Scott 1981, PRG-19, §8) — mutual fixed points really do solve `D ≅ S(D,E)`,

@@ -5,14 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.funOf_top
-import DomainTheory.DataTypesAsLattices.Functionality.predSet_iterate_ofNat
-import DomainTheory.DataTypesAsLattices.Functionality.predSet_iterate_self
-import DomainTheory.DataTypesAsLattices.Functionality.plus7_app
-import DomainTheory.DataTypesAsLattices.Functionality.tagInj_zero
-import DomainTheory.DataTypesAsLattices.Functionality.tagInj_one
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.funOf_top
+public import DomainTheory.DataTypesAsLattices.Functionality.predSet_iterate_ofNat
+public import DomainTheory.DataTypesAsLattices.Functionality.predSet_iterate_self
+public import DomainTheory.DataTypesAsLattices.Functionality.plus7_app
+public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_zero
+public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_one
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

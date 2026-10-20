@@ -5,8 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Set.Basic
+module
+
+public import Mathlib.Data.Finset.Basic
+import all Mathlib.Data.Finset.Basic
+public import Mathlib.Data.Set.Basic
+import all Mathlib.Data.Set.Basic
+
+@[expose] public section
 
 /-!
 # Scott Information Systems

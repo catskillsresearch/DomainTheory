@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid36
-import DomainTheory.InformationSystems.Factoid44
+module
+
+public import DomainTheory.InformationSystems.Factoid36
+public import DomainTheory.InformationSystems.Factoid44
+
+@[expose] public section
 
 /-!
 # Factoid 4.5 — algebraicity via finite elements

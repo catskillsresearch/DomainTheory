@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Order.Monotone.Basic
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Order.Monotone.Basic
+import all Mathlib.Order.Monotone.Basic
+
+@[expose] public section
 
 /-!
 # Theorem 1.11 (Scott 1981, PRG-19, §1) — closure of `|𝒟|` under sequential `⋂` and ascending `⋃`

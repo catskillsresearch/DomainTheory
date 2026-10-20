@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example24
-import DomainTheory.Neighborhood.ApproximableExercises
+module
+
+public import DomainTheory.Neighborhood.Example24
+public import DomainTheory.Neighborhood.ApproximableExercises
+
+@[expose] public section
 
 /-!
 # Exercise 2.18 (Scott 1981, PRG-19, §2) — the "spacing" map `h : 𝔹 → 𝔹`

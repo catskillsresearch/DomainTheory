@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid81
-import DomainTheory.InformationSystems.Factoid82
+module
+
+public import DomainTheory.InformationSystems.Factoid81
+public import DomainTheory.InformationSystems.Factoid82
+
+@[expose] public section
 
 /-!
 # Domain equations — Section 8

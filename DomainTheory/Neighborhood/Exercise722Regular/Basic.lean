@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722
-import Mathlib.Logic.Encodable.Basic
+module
+
+public import DomainTheory.Neighborhood.Exercise722
+public import Mathlib.Logic.Encodable.Basic
+import all Mathlib.Logic.Encodable.Basic
+
+@[expose] public section
 
 /-!
 # Exercise 7.22 (Scott 1981, PRG-19, §7) — the regular-event layer
@@ -74,7 +79,100 @@ inductive SExpr : Type
   | single : List Bool → SExpr
   | cat : SExpr → SExpr → SExpr
   | cap : SExpr → SExpr → SExpr
-  deriving DecidableEq, Encodable
+  deriving DecidableEq
+
+/- `deriving Encodable` builds a private auxiliary type, which a public instance cannot see.
+This encoding is the public replacement: constructor tag in `Nat.pair`'s first component. -/
+def sexprToNat : SExpr → ℕ
+  | .sigma => Nat.pair 0 0
+  | .single σ => Nat.pair 1 (Encodable.encode σ)
+  | .cat a b => Nat.pair 2 (Nat.pair (sexprToNat a) (sexprToNat b))
+  | .cap a b => Nat.pair 3 (Nat.pair (sexprToNat a) (sexprToNat b))
+
+theorem snd_lt_pair_of_pos_fst {a b : ℕ} (ha : 0 < a) : b < Nat.pair a b := by
+  rw [Nat.pair]
+  split_ifs with h
+  · have hb : 0 < b := Nat.lt_trans ha h
+    have hbb : b ≤ b * b := by
+      calc
+        b = 1 * b := (Nat.one_mul b).symm
+        _ ≤ b * b := Nat.mul_le_mul_right b (Nat.succ_le_of_lt hb)
+    have : b * b < b * b + a := Nat.lt_add_of_pos_right ha
+    omega
+  · have : 0 < a * a + a := by
+      have : a ≤ a * a + a := Nat.le_add_left _ _
+      omega
+    omega
+
+/-- Decode with an explicit fuel bound so the recursion is structural. -/
+def sexprOfNatFuel : ℕ → ℕ → Option SExpr
+  | 0, _ => none
+  | fuel + 1, n =>
+    match n.unpair.1 with
+    | 0 => some .sigma
+    | 1 => (Encodable.decode n.unpair.2).map SExpr.single
+    | 2 =>
+      match sexprOfNatFuel fuel n.unpair.2.unpair.1, sexprOfNatFuel fuel n.unpair.2.unpair.2 with
+      | some a, some b => some (.cat a b)
+      | _, _ => none
+    | 3 =>
+      match sexprOfNatFuel fuel n.unpair.2.unpair.1, sexprOfNatFuel fuel n.unpair.2.unpair.2 with
+      | some a, some b => some (.cap a b)
+      | _, _ => none
+    | _ => none
+
+def sexprOfNat (n : ℕ) : Option SExpr := sexprOfNatFuel (n + 1) n
+
+theorem sexprOfNatFuel_sexprToNat (e : SExpr) :
+    ∀ fuel, sexprToNat e < fuel → sexprOfNatFuel fuel (sexprToNat e) = some e := by
+  induction e with
+  | sigma =>
+    intro fuel hfuel
+    cases fuel with
+    | zero => omega
+    | succ fuel => simp [sexprToNat, sexprOfNatFuel, Nat.unpair_pair]
+  | single σ =>
+    intro fuel hfuel
+    cases fuel with
+    | zero => omega
+    | succ fuel => simp [sexprToNat, sexprOfNatFuel, Nat.unpair_pair, Encodable.encodek]
+  | cat a b iha ihb =>
+    intro fuel hfuel
+    cases fuel with
+    | zero => omega
+    | succ fuel =>
+      have ha : sexprToNat a < fuel := by
+        have hinner : sexprToNat a ≤ Nat.pair (sexprToNat a) (sexprToNat b) := Nat.left_le_pair _ _
+        have houter : Nat.pair (sexprToNat a) (sexprToNat b) < sexprToNat (.cat a b) := by
+          simpa [sexprToNat] using snd_lt_pair_of_pos_fst (a := 2) (b := Nat.pair (sexprToNat a) (sexprToNat b)) (by omega)
+        omega
+      have hb : sexprToNat b < fuel := by
+        have hinner : sexprToNat b ≤ Nat.pair (sexprToNat a) (sexprToNat b) := Nat.right_le_pair _ _
+        have houter : Nat.pair (sexprToNat a) (sexprToNat b) < sexprToNat (.cat a b) := by
+          simpa [sexprToNat] using snd_lt_pair_of_pos_fst (a := 2) (b := Nat.pair (sexprToNat a) (sexprToNat b)) (by omega)
+        omega
+      simp [sexprToNat, sexprOfNatFuel, Nat.unpair_pair, iha _ ha, ihb _ hb]
+  | cap a b iha ihb =>
+    intro fuel hfuel
+    cases fuel with
+    | zero => omega
+    | succ fuel =>
+      have ha : sexprToNat a < fuel := by
+        have hinner : sexprToNat a ≤ Nat.pair (sexprToNat a) (sexprToNat b) := Nat.left_le_pair _ _
+        have houter : Nat.pair (sexprToNat a) (sexprToNat b) < sexprToNat (.cap a b) := by
+          simpa [sexprToNat] using snd_lt_pair_of_pos_fst (a := 3) (b := Nat.pair (sexprToNat a) (sexprToNat b)) (by omega)
+        omega
+      have hb : sexprToNat b < fuel := by
+        have hinner : sexprToNat b ≤ Nat.pair (sexprToNat a) (sexprToNat b) := Nat.right_le_pair _ _
+        have houter : Nat.pair (sexprToNat a) (sexprToNat b) < sexprToNat (.cap a b) := by
+          simpa [sexprToNat] using snd_lt_pair_of_pos_fst (a := 3) (b := Nat.pair (sexprToNat a) (sexprToNat b)) (by omega)
+        omega
+      simp [sexprToNat, sexprOfNatFuel, Nat.unpair_pair, iha _ ha, ihb _ hb]
+
+instance : Encodable SExpr where
+  encode := sexprToNat
+  decode := sexprOfNat
+  encodek e := sexprOfNatFuel_sexprToNat e (sexprToNat e + 1) (Nat.lt_succ_self _)
 
 /-- The language denoted by an `S`-term. -/
 def denote : SExpr → Set (List Bool)

@@ -5,16 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Approximable.Basic
-import DomainTheory.Neighborhood.Approximable.le_sSupDirected
-import DomainTheory.Neighborhood.Approximable.sSupDirected_le
-import DomainTheory.Neighborhood.Approximable.rel_iff_mem_principal
-import DomainTheory.Neighborhood.Approximable.toElementMap_mono
-import DomainTheory.Neighborhood.Approximable.ext_of_toElementMap
-import DomainTheory.Neighborhood.Approximable.idMap_comp
-import DomainTheory.Neighborhood.Approximable.comp_idMap
-import DomainTheory.Neighborhood.Approximable.comp_assoc
-import DomainTheory.Neighborhood.Approximable.toElementMap_comp
-import DomainTheory.Neighborhood.Approximable.toElementMap_ofIso
-import DomainTheory.Neighborhood.Approximable.exists_approximable_of_iso
-import DomainTheory.Neighborhood.Approximable.exists_principal_eq_apply_principal
+module
+
+public import DomainTheory.Neighborhood.Approximable.Basic
+public import DomainTheory.Neighborhood.Approximable.le_sSupDirected
+public import DomainTheory.Neighborhood.Approximable.sSupDirected_le
+public import DomainTheory.Neighborhood.Approximable.rel_iff_mem_principal
+public import DomainTheory.Neighborhood.Approximable.toElementMap_mono
+public import DomainTheory.Neighborhood.Approximable.ext_of_toElementMap
+public import DomainTheory.Neighborhood.Approximable.idMap_comp
+public import DomainTheory.Neighborhood.Approximable.comp_idMap
+public import DomainTheory.Neighborhood.Approximable.comp_assoc
+public import DomainTheory.Neighborhood.Approximable.toElementMap_comp
+public import DomainTheory.Neighborhood.Approximable.toElementMap_ofIso
+public import DomainTheory.Neighborhood.Approximable.exists_approximable_of_iso
+public import DomainTheory.Neighborhood.Approximable.exists_principal_eq_apply_principal
+
+@[expose] public section

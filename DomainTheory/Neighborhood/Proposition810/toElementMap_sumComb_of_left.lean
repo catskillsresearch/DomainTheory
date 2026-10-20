@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition89
-import DomainTheory.Neighborhood.Definition83
-import DomainTheory.Neighborhood.Theorem69
-import DomainTheory.Neighborhood.Proposition810.Basic
-import DomainTheory.Neighborhood.Proposition810.not_sum_reaches_both
-import DomainTheory.Neighborhood.Proposition810.toElementMap_sumComb_mem
+module
+
+public import DomainTheory.Neighborhood.Definition89
+public import DomainTheory.Neighborhood.Definition83
+public import DomainTheory.Neighborhood.Theorem69
+public import DomainTheory.Neighborhood.Proposition810.Basic
+public import DomainTheory.Neighborhood.Proposition810.not_sum_reaches_both
+public import DomainTheory.Neighborhood.Proposition810.toElementMap_sumComb_mem
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

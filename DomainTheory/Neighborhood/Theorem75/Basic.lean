@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.FunctionSpace
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.Theorem74
+module
+
+public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.Theorem74
+
+@[expose] public section
 
 /-!
 # Theorem 7.5 (Scott 1981, PRG-19, §7) — `(𝒟₀ → 𝒟₁)` is effectively given

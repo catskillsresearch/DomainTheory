@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid32
+module
+
+public import DomainTheory.InformationSystems.Factoid32
+
+@[expose] public section
 
 /-!
 # Factoid 3.3 — the bottom element ⊥

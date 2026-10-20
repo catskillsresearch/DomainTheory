@@ -5,16 +5,25 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.ScottMaps
-import Mathlib.Data.Finset.Lattice.Fold
-import Mathlib.Topology.ContinuousMap.Basic
-import Mathlib.Topology.Order
-import Mathlib.Order.CompleteLattice.Basic
-import Mathlib.Order.FixedPoints
-import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
-import DomainTheory.ContinuousLattice.FunctionSpaces.sInf_image_le_sInf_image_of_subset
-import DomainTheory.ContinuousLattice.FunctionSpaces.scottMap_eq_sSup_openInfs
-import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendInf_eq_of_comp
+module
+
+public import DomainTheory.ContinuousLattice.ScottMaps
+public import Mathlib.Data.Finset.Lattice.Fold
+import all Mathlib.Data.Finset.Lattice.Fold
+public import Mathlib.Topology.ContinuousMap.Basic
+import all Mathlib.Topology.ContinuousMap.Basic
+public import Mathlib.Topology.Order
+import all Mathlib.Topology.Order
+public import Mathlib.Order.CompleteLattice.Basic
+import all Mathlib.Order.CompleteLattice.Basic
+public import Mathlib.Order.FixedPoints
+import all Mathlib.Order.FixedPoints
+public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
+public import DomainTheory.ContinuousLattice.FunctionSpaces.sInf_image_le_sInf_image_of_subset
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMap_eq_sSup_openInfs
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendInf_eq_of_comp
+
+@[expose] public section
 
 
 namespace DomainTheory.ContinuousLattice

@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example62
-import DomainTheory.Neighborhood.Example44
-import DomainTheory.Neighborhood.Lemma615
+module
+
+public import DomainTheory.Neighborhood.Example62
+public import DomainTheory.Neighborhood.Example44
+public import DomainTheory.Neighborhood.Lemma615
+
+@[expose] public section
 
 /-!
 # Exercise 8.22 (Scott 1981, PRG-19, §8) — `B ⊴ C`, `C ⊴ B`, and general domain equations

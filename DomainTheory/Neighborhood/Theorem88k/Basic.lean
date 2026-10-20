@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88j
+module
+
+public import DomainTheory.Neighborhood.Theorem88j
+
+@[expose] public section
 
 /-!
 # Theorem 8.8(c), Part 4 of 6 — `D_X`'s `interEq`/`cons` relations are recursively decidable

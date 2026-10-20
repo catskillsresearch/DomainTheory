@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem75
-import DomainTheory.Neighborhood.Theorem41
-import DomainTheory.Neighborhood.Theorem76.Basic
-import DomainTheory.Neighborhood.Theorem76.fixChainChar_eq
-import DomainTheory.Neighborhood.Theorem76.fixPStep_foldl_fst
-import DomainTheory.Neighborhood.Theorem76.fixPStep_foldl_snd
+module
+
+public import DomainTheory.Neighborhood.Theorem75
+public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.Neighborhood.Theorem76.Basic
+public import DomainTheory.Neighborhood.Theorem76.fixChainChar_eq
+public import DomainTheory.Neighborhood.Theorem76.fixPStep_foldl_fst
+public import DomainTheory.Neighborhood.Theorem76.fixPStep_foldl_snd
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

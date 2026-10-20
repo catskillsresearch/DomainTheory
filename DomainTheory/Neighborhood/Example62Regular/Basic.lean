@@ -5,7 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.MyhillNerode
+module
+
+public import Mathlib.Computability.MyhillNerode
+import all Mathlib.Computability.MyhillNerode
+
+@[expose] public section
 
 /-!
 # Example 6.2 (Scott 1981, PRG-19, §6) — eventually-periodic trees and regular events

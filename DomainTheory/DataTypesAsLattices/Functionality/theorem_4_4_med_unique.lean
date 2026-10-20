@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
-import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
-import DomainTheory.DataTypesAsLattices.Functionality.tensorR_app
-import DomainTheory.DataTypesAsLattices.Functionality.diagC_app
-import DomainTheory.DataTypesAsLattices.Functionality.graph_funOf_ext
-import DomainTheory.DataTypesAsLattices.Functionality.typed_isGraph
-import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_4_med
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
+public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
+public import DomainTheory.DataTypesAsLattices.Functionality.tensorR_app
+public import DomainTheory.DataTypesAsLattices.Functionality.diagC_app
+public import DomainTheory.DataTypesAsLattices.Functionality.graph_funOf_ext
+public import DomainTheory.DataTypesAsLattices.Functionality.typed_isGraph
+public import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_4_med
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

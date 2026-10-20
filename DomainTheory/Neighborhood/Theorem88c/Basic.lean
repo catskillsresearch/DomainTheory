@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88b
+module
+
+public import DomainTheory.Neighborhood.Theorem88b
+
+@[expose] public section
 
 /-!
 # Theorem 8.8(b), Part 6d/6e — `D'` (Theorem 8.8(a)'s own subsystem) is effectively given

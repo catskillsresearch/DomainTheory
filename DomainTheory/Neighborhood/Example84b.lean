@@ -5,20 +5,24 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example84b.Basic
-import DomainTheory.Neighborhood.Example84b.smashFadeInner_mem
-import DomainTheory.Neighborhood.Example84b.smashRetraction_mem
-import DomainTheory.Neighborhood.Example84b.smashRetraction_mem_iff
-import DomainTheory.Neighborhood.Example84b.smashRetraction_of_ne_bot
-import DomainTheory.Neighborhood.Example84b.smashRetraction_of_eq_bot
-import DomainTheory.Neighborhood.Example84b.isRetraction_smashRetraction
-import DomainTheory.Neighborhood.Example84b.smashRetraction_le_idMap
-import DomainTheory.Neighborhood.Example84b.smash_subsystem_prod
-import DomainTheory.Neighborhood.Example84b.mem_toElementMap_retractionOfSubsystem_smash
-import DomainTheory.Neighborhood.Example84b.exists_smash_witness
-import DomainTheory.Neighborhood.Example84b.smashRetraction_eq_retractionOfSubsystem
-import DomainTheory.Neighborhood.Example84b.example84b_smash
-import DomainTheory.Neighborhood.Example84b.toApproxMap_injective
-import DomainTheory.Neighborhood.Example84b.isRetraction_strictRetraction
-import DomainTheory.Neighborhood.Example84b.strictRetraction_le_idMap
-import DomainTheory.Neighborhood.Example84b.example84b_strict
+module
+
+public import DomainTheory.Neighborhood.Example84b.Basic
+public import DomainTheory.Neighborhood.Example84b.smashFadeInner_mem
+public import DomainTheory.Neighborhood.Example84b.smashRetraction_mem
+public import DomainTheory.Neighborhood.Example84b.smashRetraction_mem_iff
+public import DomainTheory.Neighborhood.Example84b.smashRetraction_of_ne_bot
+public import DomainTheory.Neighborhood.Example84b.smashRetraction_of_eq_bot
+public import DomainTheory.Neighborhood.Example84b.isRetraction_smashRetraction
+public import DomainTheory.Neighborhood.Example84b.smashRetraction_le_idMap
+public import DomainTheory.Neighborhood.Example84b.smash_subsystem_prod
+public import DomainTheory.Neighborhood.Example84b.mem_toElementMap_retractionOfSubsystem_smash
+public import DomainTheory.Neighborhood.Example84b.exists_smash_witness
+public import DomainTheory.Neighborhood.Example84b.smashRetraction_eq_retractionOfSubsystem
+public import DomainTheory.Neighborhood.Example84b.example84b_smash
+public import DomainTheory.Neighborhood.Example84b.toApproxMap_injective
+public import DomainTheory.Neighborhood.Example84b.isRetraction_strictRetraction
+public import DomainTheory.Neighborhood.Example84b.strictRetraction_le_idMap
+public import DomainTheory.Neighborhood.Example84b.example84b_strict
+
+@[expose] public section

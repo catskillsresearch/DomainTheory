@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.ExampleB
-import DomainTheory.Neighborhood.Exercise319Sum
+module
+
+public import DomainTheory.Neighborhood.ExampleB
+public import DomainTheory.Neighborhood.Exercise319Sum
+
+@[expose] public section
 
 /-!
 # Example 6.2 (Scott 1981, PRG-19, §6) — `B` and `C` as solutions of domain equations

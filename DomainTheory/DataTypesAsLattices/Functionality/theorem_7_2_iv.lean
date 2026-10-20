@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.pairElem_eq_pairSeq
-import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
-import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_bot
-import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_inl
-import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_inr
-import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_top
-import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_iff
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_eq_pairSeq
+public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
+public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_bot
+public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_inl
+public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_inr
+public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_top
+public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_iff
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

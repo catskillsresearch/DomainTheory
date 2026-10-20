@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise812
-import DomainTheory.Neighborhood.Exercise812g4
+module
+
+public import DomainTheory.Neighborhood.Exercise812
+public import DomainTheory.Neighborhood.Exercise812g4
+
+@[expose] public section
 
 /-!
 # Exercise 8.13(a) (Scott 1981, PRG-19, Lecture VIII) — `V` *is* the free Boolean algebra on `ℵ₀`

@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise415.Basic
-import DomainTheory.Neighborhood.Exercise415.chainUnion_le
-import DomainTheory.Neighborhood.Exercise415.exists_maximal_fixedPoint
-import DomainTheory.Neighborhood.Exercise415.exists_least_fixedPoint
+module
+
+public import DomainTheory.Neighborhood.Exercise415.Basic
+public import DomainTheory.Neighborhood.Exercise415.chainUnion_le
+public import DomainTheory.Neighborhood.Exercise415.exists_maximal_fixedPoint
+public import DomainTheory.Neighborhood.Exercise415.exists_least_fixedPoint
+
+@[expose] public section

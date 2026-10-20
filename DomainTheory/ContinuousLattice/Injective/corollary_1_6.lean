@@ -5,13 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Topology.ContinuousMap.T0Sierpinski
-import Mathlib.Topology.ContinuousMap.Basic
-import Mathlib.Topology.Sets.Opens
-import DomainTheory.ContinuousLattice.Injective.Basic
-import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2eof_retract
-import DomainTheory.ContinuousLattice.Injective.isInjectiveSpace_sierpinski_power
-import DomainTheory.ContinuousLattice.Injective.proposition_1_5
+module
+
+public import Mathlib.Topology.ContinuousMap.T0Sierpinski
+import all Mathlib.Topology.ContinuousMap.T0Sierpinski
+public import Mathlib.Topology.ContinuousMap.Basic
+import all Mathlib.Topology.ContinuousMap.Basic
+public import Mathlib.Topology.Sets.Opens
+import all Mathlib.Topology.Sets.Opens
+public import DomainTheory.ContinuousLattice.Injective.Basic
+public import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2eof_retract
+public import DomainTheory.ContinuousLattice.Injective.isInjectiveSpace_sierpinski_power
+public import DomainTheory.ContinuousLattice.Injective.proposition_1_5
+
+@[expose] public section
 
 
 

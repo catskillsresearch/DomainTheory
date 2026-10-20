@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise417.Basic
-import DomainTheory.Neighborhood.Exercise417.F_monotone
-import DomainTheory.Neighborhood.Exercise417.a_mem_F
-import DomainTheory.Neighborhood.Exercise417.b_mem_F
-import DomainTheory.Neighborhood.Exercise417.leastSolution_eq
-import DomainTheory.Neighborhood.Exercise417.lfpSet_eq_closure
-import DomainTheory.Neighborhood.Exercise417.F_univ
-import DomainTheory.Neighborhood.Exercise417.F_one_one_singleton
-import DomainTheory.Neighborhood.Exercise417.fixedPoint_not_unique
+module
+
+public import DomainTheory.Neighborhood.Exercise417.Basic
+public import DomainTheory.Neighborhood.Exercise417.F_monotone
+public import DomainTheory.Neighborhood.Exercise417.a_mem_F
+public import DomainTheory.Neighborhood.Exercise417.b_mem_F
+public import DomainTheory.Neighborhood.Exercise417.leastSolution_eq
+public import DomainTheory.Neighborhood.Exercise417.lfpSet_eq_closure
+public import DomainTheory.Neighborhood.Exercise417.F_univ
+public import DomainTheory.Neighborhood.Exercise417.F_one_one_singleton
+public import DomainTheory.Neighborhood.Exercise417.fixedPoint_not_unique
+
+@[expose] public section

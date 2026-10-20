@@ -3,9 +3,15 @@ Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lars Warren Ericson.
 -/
-import Mathlib.Topology.Bases
-import Mathlib.Topology.Order
-import DomainTheory.DataTypesAsLattices.Pomega
+module
+
+public import Mathlib.Topology.Bases
+import all Mathlib.Topology.Bases
+public import Mathlib.Topology.Order
+import all Mathlib.Topology.Order
+public import DomainTheory.DataTypesAsLattices.Pomega
+
+@[expose] public section
 
 /-!
 # Scott 1976, §1 — Scott topology and continuous maps on `Pω`

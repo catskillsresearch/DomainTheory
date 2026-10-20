@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise407
-import DomainTheory.Neighborhood.Exercise410
+module
+
+public import DomainTheory.Neighborhood.Exercise407
+public import DomainTheory.Neighborhood.Exercise410
+
+@[expose] public section
 
 /-!
 # Exercise 4.11 (Scott 1981, PRG-19, Lecture IV) — Plotkin's uniqueness of `fix`

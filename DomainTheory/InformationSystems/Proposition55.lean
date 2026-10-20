@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Proposition55.Basic
-import DomainTheory.InformationSystems.Proposition55.comp_toElement
+module
+
+public import DomainTheory.InformationSystems.Proposition55.Basic
+public import DomainTheory.InformationSystems.Proposition55.comp_toElement
+
+@[expose] public section

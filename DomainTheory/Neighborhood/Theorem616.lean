@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem616.Basic
-import DomainTheory.Neighborhood.Theorem616.opStep
-import DomainTheory.Neighborhood.Theorem616.botStrict_rel
-import DomainTheory.Neighborhood.Theorem616.trianglelefteq_of_isInitial
+module
+
+public import DomainTheory.Neighborhood.Theorem616.Basic
+public import DomainTheory.Neighborhood.Theorem616.opStep
+public import DomainTheory.Neighborhood.Theorem616.botStrict_rel
+public import DomainTheory.Neighborhood.Theorem616.trianglelefteq_of_isInitial
+
+@[expose] public section

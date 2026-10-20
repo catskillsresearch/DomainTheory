@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.Basic
-import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_iff
-import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_toIdeal_iff
+module
+
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.Basic
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_iff
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_toIdeal_iff
+
+@[expose] public section

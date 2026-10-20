@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise714.Basic
-import DomainTheory.Neighborhood.Exercise714.repred_range_primrec
-import DomainTheory.Neighborhood.Exercise714.repredu2082_exists_primrec_enum
+module
+
+public import DomainTheory.Neighborhood.Exercise714.Basic
+public import DomainTheory.Neighborhood.Exercise714.repred_range_primrec
+public import DomainTheory.Neighborhood.Exercise714.repredu2082_exists_primrec_enum
+
+@[expose] public section

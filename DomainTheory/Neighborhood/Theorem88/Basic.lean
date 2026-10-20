@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition87
-import Mathlib.Data.Fintype.Pi
+module
+
+public import DomainTheory.Neighborhood.Definition87
+public import Mathlib.Data.Fintype.Pi
+import all Mathlib.Data.Fintype.Pi
+
+@[expose] public section
 
 /-!
 # Theorem 8.8 (Scott 1981, PRG-19, Lecture VIII) — `U` is universal

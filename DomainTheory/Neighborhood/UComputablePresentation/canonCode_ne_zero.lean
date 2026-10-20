@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.IntervalPrimrec
-import DomainTheory.Neighborhood.Definition71
-import DomainTheory.Neighborhood.UComputablePresentation.Basic
-import DomainTheory.Neighborhood.UComputablePresentation.decodeQPairList_canonCode_ne_nil
+module
+
+public import DomainTheory.Neighborhood.IntervalPrimrec
+public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.Neighborhood.UComputablePresentation.Basic
+public import DomainTheory.Neighborhood.UComputablePresentation.decodeQPairList_canonCode_ne_nil
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

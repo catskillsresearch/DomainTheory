@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise322.Basic
-import DomainTheory.Neighborhood.Exercise322.toElementMap_compApp
-import DomainTheory.Neighborhood.Exercise322.toElementMap_compMap_apply
-import DomainTheory.Neighborhood.Exercise322.toApproxMap_compMap
+module
+
+public import DomainTheory.Neighborhood.Exercise322.Basic
+public import DomainTheory.Neighborhood.Exercise322.toElementMap_compApp
+public import DomainTheory.Neighborhood.Exercise322.toElementMap_compMap_apply
+public import DomainTheory.Neighborhood.Exercise322.toApproxMap_compMap
+
+@[expose] public section

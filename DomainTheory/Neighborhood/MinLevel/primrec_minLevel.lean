@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.LevelSetPrimrec
-import DomainTheory.Neighborhood.MinLevel.Basic
-import DomainTheory.Neighborhood.MinLevel.primrec_isPeriodicMask
+module
+
+public import DomainTheory.Neighborhood.LevelSetPrimrec
+public import DomainTheory.Neighborhood.MinLevel.Basic
+public import DomainTheory.Neighborhood.MinLevel.primrec_isPeriodicMask
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

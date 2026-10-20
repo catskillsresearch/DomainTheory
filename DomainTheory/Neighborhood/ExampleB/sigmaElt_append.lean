@@ -5,11 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Data.List.Infix
-import DomainTheory.Neighborhood.ExampleB.Basic
-import DomainTheory.Neighborhood.ExampleB.prepend_mono
-import DomainTheory.Neighborhood.ExampleB.prepend_append
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Data.List.Infix
+import all Mathlib.Data.List.Infix
+public import DomainTheory.Neighborhood.ExampleB.Basic
+public import DomainTheory.Neighborhood.ExampleB.prepend_mono
+public import DomainTheory.Neighborhood.ExampleB.prepend_append
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.ExampleB

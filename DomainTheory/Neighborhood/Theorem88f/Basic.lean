@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88e
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.Proposition612
+module
+
+public import DomainTheory.Neighborhood.Theorem88e
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.Proposition612
+
+@[expose] public section
 
 /-!
 # Theorem 8.8(b)(vii)(4) — the projection pair `D'' ⊴ U` is computable

@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.FixedLattices
-import DomainTheory.DataTypesAsLattices.Lambda
-import DomainTheory.DataTypesAsLattices.Retracts.Basic
-import DomainTheory.DataTypesAsLattices.Retracts.arrowR_isRetract
-import DomainTheory.DataTypesAsLattices.Retracts.arrowR_isStrict
-import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_iff
-import DomainTheory.DataTypesAsLattices.Retracts.arrowR_retractLe
-import DomainTheory.DataTypesAsLattices.Retracts.arrowR_functor
-import DomainTheory.DataTypesAsLattices.Retracts.typed_comp
+module
+
+public import DomainTheory.DataTypesAsLattices.FixedLattices
+public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Retracts.Basic
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_isRetract
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_isStrict
+public import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_iff
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_retractLe
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_functor
+public import DomainTheory.DataTypesAsLattices.Retracts.typed_comp
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.Hom.Basic
-import DomainTheory.InformationSystems.Factoid81
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import DomainTheory.InformationSystems.Factoid81
+
+@[expose] public section
 
 /-!
 # Domain equation `|T| ≃o |A + (T × T)|` via unfolding

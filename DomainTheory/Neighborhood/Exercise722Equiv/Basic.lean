@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722Decide
+module
+
+public import DomainTheory.Neighborhood.Exercise722Decide
+
+@[expose] public section
 
 /-!
 # Exercise 7.22k — language equivalence via a `Finset`-valued subset construction (Session C7b)

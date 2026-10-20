@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88d
-import DomainTheory.Neighborhood.Theorem88c
+module
+
+public import DomainTheory.Neighborhood.Theorem88d
+public import DomainTheory.Neighborhood.Theorem88c
+
+@[expose] public section
 
 /-!
 # Theorem 8.8(b)(vii)(3) — a genuinely code-driven subsystem `D''`

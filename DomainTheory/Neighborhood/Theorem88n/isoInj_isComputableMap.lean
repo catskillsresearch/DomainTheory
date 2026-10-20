@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88f
-import DomainTheory.Neighborhood.Theorem88n.Basic
-import DomainTheory.Neighborhood.Theorem88n.isoInj_rel_iff_incl
+module
+
+public import DomainTheory.Neighborhood.Theorem88f
+public import DomainTheory.Neighborhood.Theorem88n.Basic
+public import DomainTheory.Neighborhood.Theorem88n.isoInj_rel_iff_incl
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

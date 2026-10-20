@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example43
-import DomainTheory.Neighborhood.Exercise326
-import DomainTheory.Neighborhood.FunctionSpace
+module
+
+public import DomainTheory.Neighborhood.Example43
+public import DomainTheory.Neighborhood.Exercise326
+public import DomainTheory.Neighborhood.FunctionSpace
+
+@[expose] public section
 
 /-!
 # Theorem 5.6 (Scott 1981, PRG-19, §5) — recursive functions are λ-definable

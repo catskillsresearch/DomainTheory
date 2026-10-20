@@ -5,9 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.InverseLimits
-import Mathlib.Order.Hom.Basic
-import Mathlib.Topology.Homeomorph.Defs
+module
+
+public import DomainTheory.ContinuousLattice.InverseLimits
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import Mathlib.Topology.Homeomorph.Defs
+import all Mathlib.Topology.Homeomorph.Defs
+
+@[expose] public section
 
 /-!
 # The function-space tower and Theorem 4.4

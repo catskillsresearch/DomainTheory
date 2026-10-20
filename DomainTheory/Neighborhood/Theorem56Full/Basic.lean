@@ -5,12 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example43
-import DomainTheory.Neighborhood.Exercise326
-import DomainTheory.Neighborhood.Exercise511
-import DomainTheory.Neighborhood.Theorem41
-import DomainTheory.Neighborhood.ApproximableExercises
-import Mathlib.Computability.PartrecBasis
+module
+
+public import DomainTheory.Neighborhood.Example43
+public import DomainTheory.Neighborhood.Exercise326
+public import DomainTheory.Neighborhood.Exercise511
+public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.Neighborhood.ApproximableExercises
+public import Mathlib.Computability.PartrecBasis
+import all Mathlib.Computability.PartrecBasis
+
+@[expose] public section
 
 /-!
 # Theorem 5.6 (Scott 1981, PRG-19, §5) — the FULL closure: partial recursive ⟹ λ-definable

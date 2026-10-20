@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition613
-import DomainTheory.Neighborhood.Theorem69
-import DomainTheory.Neighborhood.ApproximableExercises
+module
+
+public import DomainTheory.Neighborhood.Definition613
+public import DomainTheory.Neighborhood.Theorem69
+public import DomainTheory.Neighborhood.ApproximableExercises
+
+@[expose] public section
 
 /-!
 # Lecture VI — Theorem 6.14 (Scott 1981, PRG-19): existence of initial `T`-algebras

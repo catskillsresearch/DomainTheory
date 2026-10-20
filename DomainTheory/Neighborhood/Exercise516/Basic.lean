@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise419
-import DomainTheory.Neighborhood.Product
+module
+
+public import DomainTheory.Neighborhood.Exercise419
+public import DomainTheory.Neighborhood.Product
+
+@[expose] public section
 
 /-!
 # Exercise 5.16 (Scott 1981, PRG-19, Lecture V) — `neg`, `merge` and `d` on `C`

@@ -5,24 +5,28 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.typed_pairSeq_tensorR
-import DomainTheory.DataTypesAsLattices.Functionality.tensor4_app
-import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_zero
-import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_one
-import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_two
-import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_three
-import DomainTheory.DataTypesAsLattices.Functionality.eq_4_44
-import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl0
-import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl1
-import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl2
-import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl3
-import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl4
-import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl5
-import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl6
-import DomainTheory.DataTypesAsLattices.Functionality.typed_ofNat_intR
-import DomainTheory.DataTypesAsLattices.Functionality.typed_bot_botElem
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.typed_pairSeq_tensorR
+public import DomainTheory.DataTypesAsLattices.Functionality.tensor4_app
+public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_zero
+public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_one
+public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_two
+public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_three
+public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_44
+public import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl0
+public import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl1
+public import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl2
+public import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl3
+public import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl4
+public import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl5
+public import DomainTheory.DataTypesAsLattices.Functionality.plus7_typed_inl6
+public import DomainTheory.DataTypesAsLattices.Functionality.typed_ofNat_intR
+public import DomainTheory.DataTypesAsLattices.Functionality.typed_bot_botElem
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

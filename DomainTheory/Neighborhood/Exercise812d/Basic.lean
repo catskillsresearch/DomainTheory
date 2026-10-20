@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise812c
-import DomainTheory.Neighborhood.Definition71
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.Exercise718
+module
+
+public import DomainTheory.Neighborhood.Exercise812c
+public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.Exercise718
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(d) (Scott 1981, PRG-19, Lecture VIII) — effective refinement of 8.12(c)

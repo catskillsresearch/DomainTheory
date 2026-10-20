@@ -5,14 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise516Overlap.Basic
-import DomainTheory.Neighborhood.Exercise516Overlap.tm_two_mul_ne
-import DomainTheory.Neighborhood.Exercise516Overlap.odd_of_consec_eq
-import DomainTheory.Neighborhood.Exercise516Overlap.no_three_consec
-import DomainTheory.Neighborhood.Exercise516Overlap.tm_of_eq_two_mul
-import DomainTheory.Neighborhood.Exercise516Overlap.tm_of_eq_two_mul_add_one
-import DomainTheory.Neighborhood.Exercise516Overlap.no_overlap
-import DomainTheory.Neighborhood.Exercise516Overlap.no_cube
-import DomainTheory.Neighborhood.Exercise516Overlap.tmList_getElemu3f
-import DomainTheory.Neighborhood.Exercise516Overlap.append_three_period
-import DomainTheory.Neighborhood.Exercise516Overlap.tElt_cube_free
+module
+
+public import DomainTheory.Neighborhood.Exercise516Overlap.Basic
+public import DomainTheory.Neighborhood.Exercise516Overlap.tm_two_mul_ne
+public import DomainTheory.Neighborhood.Exercise516Overlap.odd_of_consec_eq
+public import DomainTheory.Neighborhood.Exercise516Overlap.no_three_consec
+public import DomainTheory.Neighborhood.Exercise516Overlap.tm_of_eq_two_mul
+public import DomainTheory.Neighborhood.Exercise516Overlap.tm_of_eq_two_mul_add_one
+public import DomainTheory.Neighborhood.Exercise516Overlap.no_overlap
+public import DomainTheory.Neighborhood.Exercise516Overlap.no_cube
+public import DomainTheory.Neighborhood.Exercise516Overlap.tmList_getElemu3f
+public import DomainTheory.Neighborhood.Exercise516Overlap.append_three_period
+public import DomainTheory.Neighborhood.Exercise516Overlap.tElt_cube_free
+
+@[expose] public section

@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise720.Basic
-import DomainTheory.Neighborhood.Exercise720.unionMap_rel_fin
-import DomainTheory.Neighborhood.Exercise720.unionMap_rel_Ypd_iff
-import DomainTheory.Neighborhood.Exercise720.unionMap_isComputable
+module
+
+public import DomainTheory.Neighborhood.Exercise720.Basic
+public import DomainTheory.Neighborhood.Exercise720.unionMap_rel_fin
+public import DomainTheory.Neighborhood.Exercise720.unionMap_rel_Ypd_iff
+public import DomainTheory.Neighborhood.Exercise720.unionMap_isComputable
+
+@[expose] public section

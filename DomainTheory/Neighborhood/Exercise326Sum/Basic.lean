@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise326
-import DomainTheory.Neighborhood.Exercise319Sum
+module
+
+public import DomainTheory.Neighborhood.Exercise326
+public import DomainTheory.Neighborhood.Exercise319Sum
+
+@[expose] public section
 
 /-!
 # Exercise 3.26, continued (Scott 1981, PRG-19, §3) — the sum-valued conditional and `which`

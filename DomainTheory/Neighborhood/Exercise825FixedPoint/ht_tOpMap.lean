@@ -5,16 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition810b
-import DomainTheory.Neighborhood.Table55
-import DomainTheory.Neighborhood.Exercise823
-import DomainTheory.Neighborhood.Exercise715
-import DomainTheory.Neighborhood.Exercise825Pow
-import DomainTheory.Neighborhood.Exercise825Embed
-import DomainTheory.Neighborhood.Exercise825Closing
-import DomainTheory.Neighborhood.Exercise820
-import DomainTheory.Neighborhood.Exercise825FixedPoint.Basic
-import DomainTheory.Neighborhood.Exercise825FixedPoint.tOp_tOpMap
+module
+
+public import DomainTheory.Neighborhood.Proposition810b
+public import DomainTheory.Neighborhood.Table55
+public import DomainTheory.Neighborhood.Exercise823
+public import DomainTheory.Neighborhood.Exercise715
+public import DomainTheory.Neighborhood.Exercise825Pow
+public import DomainTheory.Neighborhood.Exercise825Embed
+public import DomainTheory.Neighborhood.Exercise825Closing
+public import DomainTheory.Neighborhood.Exercise820
+public import DomainTheory.Neighborhood.Exercise825FixedPoint.Basic
+public import DomainTheory.Neighborhood.Exercise825FixedPoint.tOp_tOpMap
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

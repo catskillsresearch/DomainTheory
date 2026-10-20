@@ -5,11 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.RE
-import DomainTheory.DataTypesAsLattices.Lambda
-import DomainTheory.DataTypesAsLattices.Computability.Basic
-import DomainTheory.DataTypesAsLattices.Computability.mulC_realizes2
-import DomainTheory.DataTypesAsLattices.Computability.leC_realizes2
+module
+
+public import Mathlib.Computability.RE
+import all Mathlib.Computability.RE
+public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Computability.Basic
+public import DomainTheory.DataTypesAsLattices.Computability.mulC_realizes2
+public import DomainTheory.DataTypesAsLattices.Computability.leC_realizes2
+
+@[expose] public section
 
 
 set_option maxHeartbeats 2000000

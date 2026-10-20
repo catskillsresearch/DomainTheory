@@ -5,17 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.Halting
-import DomainTheory.DataTypesAsLattices.Computability
-import DomainTheory.DataTypesAsLattices.Functionality
-import DomainTheory.DataTypesAsLattices.Enumeration.Basic
-import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp_eq
-import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_zero
-import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_left
-import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_right
-import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_append
-import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_cons
-import DomainTheory.DataTypesAsLattices.Enumeration.exists_concat_traces
+module
+
+public import Mathlib.Computability.Halting
+import all Mathlib.Computability.Halting
+public import DomainTheory.DataTypesAsLattices.Computability
+public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp_eq
+public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_zero
+public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_left
+public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas_append_right
+public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_append
+public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_cons
+public import DomainTheory.DataTypesAsLattices.Enumeration.exists_concat_traces
+
+@[expose] public section
 
 
 set_option maxHeartbeats 2000000

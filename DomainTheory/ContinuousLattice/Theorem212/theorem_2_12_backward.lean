@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.Constructions
-import DomainTheory.ContinuousLattice.FunctionSpaces
-import DomainTheory.ContinuousLattice.Theorem212.Basic
-import DomainTheory.ContinuousLattice.Theorem212.idemFix_isContinuousLattice
-import DomainTheory.ContinuousLattice.Theorem212.idemFix_scottTopology
+module
+
+public import DomainTheory.ContinuousLattice.Constructions
+public import DomainTheory.ContinuousLattice.FunctionSpaces
+public import DomainTheory.ContinuousLattice.Theorem212.Basic
+public import DomainTheory.ContinuousLattice.Theorem212.idemFix_isContinuousLattice
+public import DomainTheory.ContinuousLattice.Theorem212.idemFix_scottTopology
+
+@[expose] public section
 
 
 namespace DomainTheory.ContinuousLattice

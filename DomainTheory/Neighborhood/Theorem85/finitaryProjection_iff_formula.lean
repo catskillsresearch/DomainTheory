@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition83
-import DomainTheory.Neighborhood.ApproximableExercises
-import DomainTheory.Neighborhood.Theorem85.Basic
-import DomainTheory.Neighborhood.Theorem85.isFinitaryProjection_of_formula
-import DomainTheory.Neighborhood.Theorem85.formula_of_isFinitaryProjection
+module
+
+public import DomainTheory.Neighborhood.Definition83
+public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.Neighborhood.Theorem85.Basic
+public import DomainTheory.Neighborhood.Theorem85.isFinitaryProjection_of_formula
+public import DomainTheory.Neighborhood.Theorem85.formula_of_isFinitaryProjection
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

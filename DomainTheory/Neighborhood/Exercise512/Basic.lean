@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem41
-import DomainTheory.Neighborhood.Exercise326
+module
+
+public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.Neighborhood.Exercise326
+
+@[expose] public section
 
 /-!
 # Exercise 5.12 (Scott 1981, PRG-19, §5) — the `while` combinator

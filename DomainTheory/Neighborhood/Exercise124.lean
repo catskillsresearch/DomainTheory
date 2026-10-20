@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise124.Basic
-import DomainTheory.Neighborhood.Exercise124.le_chainUnion
-import DomainTheory.Neighborhood.Exercise124.exists_total_ge
+module
+
+public import DomainTheory.Neighborhood.Exercise124.Basic
+public import DomainTheory.Neighborhood.Exercise124.le_chainUnion
+public import DomainTheory.Neighborhood.Exercise124.exists_total_ge
+
+@[expose] public section

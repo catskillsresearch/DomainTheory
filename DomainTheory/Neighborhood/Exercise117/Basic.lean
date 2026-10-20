@@ -5,11 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Basic.Real.Basic
-import Mathlib.Data.Rat.Cast.Order
-import Mathlib.Algebra.Order.Archimedean.Real.Basic
-import Mathlib.Tactic
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Basic.Real.Basic
+import all Mathlib.Basic.Real.Basic
+public import Mathlib.Data.Rat.Cast.Order
+import all Mathlib.Data.Rat.Cast.Order
+public import Mathlib.Algebra.Order.Archimedean.Real.Basic
+import all Mathlib.Algebra.Order.Archimedean.Real.Basic
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Exercise 1.17 (Scott 1981, PRG-19, §1) — rational open intervals on `ℝ`

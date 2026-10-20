@@ -5,18 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise820.Basic
-import DomainTheory.Neighborhood.Exercise820.proju2080_comp_embedFst
-import DomainTheory.Neighborhood.Exercise820.embedFst_comp_proju2080_le
-import DomainTheory.Neighborhood.Exercise820.proju2081_comp_embedSnd
-import DomainTheory.Neighborhood.Exercise820.embedSnd_comp_proju2081_le
-import DomainTheory.Neighborhood.Exercise820.trianglelefteq_prod_fst
-import DomainTheory.Neighborhood.Exercise820.trianglelefteq_prod_snd
-import DomainTheory.Neighborhood.Exercise820.embedFst_ne_embedSnd_of_ne_bot
-import DomainTheory.Neighborhood.Exercise820.toElementMap_evalBotMap
-import DomainTheory.Neighborhood.Exercise820.evalBotMap_comp_constFunMap
-import DomainTheory.Neighborhood.Exercise820.constFunMap_comp_evalBotMap_le
-import DomainTheory.Neighborhood.Exercise820.trianglelefteq_funSpace_const
-import DomainTheory.Neighborhood.Exercise820.D_trianglelefteq_prod
-import DomainTheory.Neighborhood.Exercise820.D_trianglelefteq_funSpace
-import DomainTheory.Neighborhood.Exercise820.exercise_8_20
+module
+
+public import DomainTheory.Neighborhood.Exercise820.Basic
+public import DomainTheory.Neighborhood.Exercise820.proju2080_comp_embedFst
+public import DomainTheory.Neighborhood.Exercise820.embedFst_comp_proju2080_le
+public import DomainTheory.Neighborhood.Exercise820.proju2081_comp_embedSnd
+public import DomainTheory.Neighborhood.Exercise820.embedSnd_comp_proju2081_le
+public import DomainTheory.Neighborhood.Exercise820.trianglelefteq_prod_fst
+public import DomainTheory.Neighborhood.Exercise820.trianglelefteq_prod_snd
+public import DomainTheory.Neighborhood.Exercise820.embedFst_ne_embedSnd_of_ne_bot
+public import DomainTheory.Neighborhood.Exercise820.toElementMap_evalBotMap
+public import DomainTheory.Neighborhood.Exercise820.evalBotMap_comp_constFunMap
+public import DomainTheory.Neighborhood.Exercise820.constFunMap_comp_evalBotMap_le
+public import DomainTheory.Neighborhood.Exercise820.trianglelefteq_funSpace_const
+public import DomainTheory.Neighborhood.Exercise820.D_trianglelefteq_prod
+public import DomainTheory.Neighborhood.Exercise820.D_trianglelefteq_funSpace
+public import DomainTheory.Neighborhood.Exercise820.exercise_8_20
+
+@[expose] public section

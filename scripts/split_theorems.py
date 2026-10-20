@@ -44,7 +44,8 @@ def is_top_level_decl_line(line: str) -> bool:
     if re.match(r"^\s*(include|omit)\b", line):
         return True
     return bool(DECL_HEAD.match(line))
-IMPORT = re.compile(r"^import\s+")
+IMPORT = re.compile(r"^(?:public\s+|meta\s+)?import\s+")
+MODULE_HEADER = re.compile(r"^(?:module|public section|@\[expose\]\s+public section)\s*$")
 DOC_BLOCK = re.compile(r"/--(?:[^-]|(-(?!/)))*?-/", re.DOTALL)
 CONTEXT_LINE = re.compile(
     r"^(\s*)("
@@ -343,7 +344,11 @@ def split_header(lines: list[str]) -> tuple[list[str], int]:
             i += 1
             if lines[i - 1].strip().endswith("-/"):
                 break
-    while i < len(lines) and (IMPORT.match(lines[i]) or lines[i].strip() == ""):
+    while i < len(lines) and (
+        IMPORT.match(lines[i])
+        or lines[i].strip() == ""
+        or MODULE_HEADER.match(lines[i].strip())
+    ):
         header.append(lines[i])
         i += 1
     while i < len(lines) and lines[i].strip().startswith("/-!"):
@@ -860,7 +865,11 @@ def insert_imports(content: str, new_imports: list[str]) -> str:
             if lines[i - 1].strip().endswith("-/"):
                 break
     last_import = i
-    while i < len(lines) and (IMPORT.match(lines[i]) or lines[i].strip() == ""):
+    while i < len(lines) and (
+        IMPORT.match(lines[i])
+        or lines[i].strip() == ""
+        or MODULE_HEADER.match(lines[i].strip())
+    ):
         if IMPORT.match(lines[i]):
             last_import = i + 1
         i += 1
@@ -1030,13 +1039,22 @@ def process_file(path: Path, dry_run: bool = False) -> bool:
         while thm_lines and thm_lines[-1].strip().startswith("omit "):
             thm_lines.pop()
         safe = safe_module_name(d.name)
-        imports = [ln for ln in header if IMPORT.match(ln)]
-        extra = [f"import {base_mod}.Basic\n"]
+        imports = []
+        for ln in header:
+            if not IMPORT.match(ln):
+                continue
+            if ln.startswith("import all "):
+                imports.append(ln)
+            elif ln.startswith("import "):
+                imports.append("public " + ln)
+            else:
+                imports.append(ln)
+        extra = [f"public import {base_mod}.Basic\n"]
         seen: set[str] = set()
         for psafe in needed_theorem_imports(thm_lines, decls, d, lines):
             if psafe == safe or psafe in seen:
                 continue
-            extra.append(f"import {base_mod}.{psafe}\n")
+            extra.append(f"public import {base_mod}.{psafe}\n")
             seen.add(psafe)
         body = (
             "".join(ctx)
@@ -1046,10 +1064,10 @@ def process_file(path: Path, dry_run: bool = False) -> bool:
         )
         content = (
             COPYRIGHT
-            + "\n"
+            + "\nmodule\n\n"
             + "".join(imports)
             + "".join(extra)
-            + "\n"
+            + "\n@[expose] public section\n\n"
             + body
         )
         if not content.endswith("\n"):

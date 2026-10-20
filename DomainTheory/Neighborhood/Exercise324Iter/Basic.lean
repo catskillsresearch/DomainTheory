@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise316
-import DomainTheory.Neighborhood.FunctionSpace
+module
+
+public import DomainTheory.Neighborhood.Exercise316
+public import DomainTheory.Neighborhood.FunctionSpace
+
+@[expose] public section
 
 /-!
 # Exercise 3.24(ii) (Scott 1981, PRG-19, §3) — `(𝒟₀ → 𝒟₁^∞) ≅ (𝒟₀ → 𝒟₁)^∞`

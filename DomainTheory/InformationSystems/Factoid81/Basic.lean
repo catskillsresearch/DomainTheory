@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Product
-import DomainTheory.InformationSystems.Sum
+module
+
+public import DomainTheory.InformationSystems.Product
+public import DomainTheory.InformationSystems.Sum
+
+@[expose] public section
 
 /-!
 # Factoid 8.1 — tree / S-expression domain `T ≅ A + (T × T)`

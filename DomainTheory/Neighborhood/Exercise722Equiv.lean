@@ -5,16 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722Equiv.Basic
-import DomainTheory.Neighborhood.Exercise722Equiv.coe_startFin
-import DomainTheory.Neighborhood.Exercise722Equiv.coe_stepFinSingle
-import DomainTheory.Neighborhood.Exercise722Equiv.coe_stepFin
-import DomainTheory.Neighborhood.Exercise722Equiv.coe_foldl_stepFin
-import DomainTheory.Neighborhood.Exercise722Equiv.coe_evalFin
-import DomainTheory.Neighborhood.Exercise722Equiv.denote_iff_evalFin
-import DomainTheory.Neighborhood.Exercise722Equiv.diffNFA_evalFrom
-import DomainTheory.Neighborhood.Exercise722Equiv.diffNFA_eval
-import DomainTheory.Neighborhood.Exercise722Equiv.diffNFA_mem_accepts_iff
-import DomainTheory.Neighborhood.Exercise722Equiv.exists_diff_word_short
-import DomainTheory.Neighborhood.Exercise722Equiv.subsetB_iff
-import DomainTheory.Neighborhood.Exercise722Equiv.interEqB_iff
+module
+
+public import DomainTheory.Neighborhood.Exercise722Equiv.Basic
+public import DomainTheory.Neighborhood.Exercise722Equiv.coe_startFin
+public import DomainTheory.Neighborhood.Exercise722Equiv.coe_stepFinSingle
+public import DomainTheory.Neighborhood.Exercise722Equiv.coe_stepFin
+public import DomainTheory.Neighborhood.Exercise722Equiv.coe_foldl_stepFin
+public import DomainTheory.Neighborhood.Exercise722Equiv.coe_evalFin
+public import DomainTheory.Neighborhood.Exercise722Equiv.denote_iff_evalFin
+public import DomainTheory.Neighborhood.Exercise722Equiv.diffNFA_evalFrom
+public import DomainTheory.Neighborhood.Exercise722Equiv.diffNFA_eval
+public import DomainTheory.Neighborhood.Exercise722Equiv.diffNFA_mem_accepts_iff
+public import DomainTheory.Neighborhood.Exercise722Equiv.exists_diff_word_short
+public import DomainTheory.Neighborhood.Exercise722Equiv.subsetB_iff
+public import DomainTheory.Neighborhood.Exercise722Equiv.interEqB_iff
+
+@[expose] public section

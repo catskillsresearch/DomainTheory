@@ -3,8 +3,13 @@ Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lars Warren Ericson.
 -/
-import DomainTheory.DataTypesAsLattices.Retracts
-import Mathlib.Data.Set.Finite.Powerset
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import Mathlib.Data.Set.Finite.Powerset
+import all Mathlib.Data.Set.Finite.Powerset
+
+@[expose] public section
 
 /-!
 # Scott 1976, §6 — classification of subsets of `Pω`

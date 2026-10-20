@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Proposition23.Basic
-import DomainTheory.InformationSystems.Proposition23.funion_insert
-import DomainTheory.InformationSystems.Proposition23.proposition_2_3_i
-import DomainTheory.InformationSystems.Proposition23.proposition_2_3_iii
-import DomainTheory.InformationSystems.Proposition23.proposition_2_3_iv
-import DomainTheory.InformationSystems.Proposition23.proposition_2_3_v
-import DomainTheory.InformationSystems.Proposition23.proposition_2_3_vi
-import DomainTheory.InformationSystems.Proposition23.proposition_2_3_ii
+module
+
+public import DomainTheory.InformationSystems.Proposition23.Basic
+public import DomainTheory.InformationSystems.Proposition23.funion_insert
+public import DomainTheory.InformationSystems.Proposition23.proposition_2_3_i
+public import DomainTheory.InformationSystems.Proposition23.proposition_2_3_iii
+public import DomainTheory.InformationSystems.Proposition23.proposition_2_3_iv
+public import DomainTheory.InformationSystems.Proposition23.proposition_2_3_v
+public import DomainTheory.InformationSystems.Proposition23.proposition_2_3_vi
+public import DomainTheory.InformationSystems.Proposition23.proposition_2_3_ii
+
+@[expose] public section

@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Theorem72
-import DomainTheory.InformationSystems.Proposition56
-import DomainTheory.InformationSystems.Factoid76.Basic
-import DomainTheory.InformationSystems.Factoid76.pairMap_comp_fst_snd_toElement
-import DomainTheory.InformationSystems.Factoid76.compOp_uncurry
-import DomainTheory.InformationSystems.Factoid76.compOpUncurry_toElement
+module
+
+public import DomainTheory.InformationSystems.Theorem72
+public import DomainTheory.InformationSystems.Proposition56
+public import DomainTheory.InformationSystems.Factoid76.Basic
+public import DomainTheory.InformationSystems.Factoid76.pairMap_comp_fst_snd_toElement
+public import DomainTheory.InformationSystems.Factoid76.compOp_uncurry
+public import DomainTheory.InformationSystems.Factoid76.compOpUncurry_toElement
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems

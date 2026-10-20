@@ -5,8 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Data.Set.Basic
-import Mathlib.Order.Hom.Basic
+module
+
+public import Mathlib.Data.Set.Basic
+import all Mathlib.Data.Set.Basic
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+
+@[expose] public section
 
 /-!
 # Neighborhood systems (Scott 1981, PRG-19, §1) — foundations

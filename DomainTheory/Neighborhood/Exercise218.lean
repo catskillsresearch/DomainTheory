@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise218.Basic
-import DomainTheory.Neighborhood.Exercise218.kOut_hOut
-import DomainTheory.Neighborhood.Exercise218.toElementMap_hMap_cone
-import DomainTheory.Neighborhood.Exercise218.toElementMap_kMap_cone
-import DomainTheory.Neighborhood.Exercise218.kMap_comp_hMap
-import DomainTheory.Neighborhood.Exercise218.kMap_not_injective
-import DomainTheory.Neighborhood.Exercise218.hMap_not_surjective
+module
+
+public import DomainTheory.Neighborhood.Exercise218.Basic
+public import DomainTheory.Neighborhood.Exercise218.kOut_hOut
+public import DomainTheory.Neighborhood.Exercise218.toElementMap_hMap_cone
+public import DomainTheory.Neighborhood.Exercise218.toElementMap_kMap_cone
+public import DomainTheory.Neighborhood.Exercise218.kMap_comp_hMap
+public import DomainTheory.Neighborhood.Exercise218.kMap_not_injective
+public import DomainTheory.Neighborhood.Exercise218.hMap_not_surjective
+
+@[expose] public section

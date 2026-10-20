@@ -5,9 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise414
-import Mathlib.Algebra.Group.Pointwise.Set.Basic
-import Mathlib.Algebra.FreeMonoid.Basic
+module
+
+public import DomainTheory.Neighborhood.Exercise414
+public import Mathlib.Algebra.Group.Pointwise.Set.Basic
+import all Mathlib.Algebra.Group.Pointwise.Set.Basic
+public import Mathlib.Algebra.FreeMonoid.Basic
+import all Mathlib.Algebra.FreeMonoid.Basic
+
+@[expose] public section
 
 /-!
 # Exercise 5.15 (Scott 1981, PRG-19, Lecture V) — free-semigroup powerset and Arden's lemma

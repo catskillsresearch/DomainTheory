@@ -5,14 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition89
-import DomainTheory.Neighborhood.Definition83
-import DomainTheory.Neighborhood.Theorem69
-import DomainTheory.Neighborhood.Proposition810.Basic
-import DomainTheory.Neighborhood.Proposition810.toElementMap_of_comp_eq_idMap
-import DomainTheory.Neighborhood.Proposition810.toElementMap_idem_of_isRetraction
-import DomainTheory.Neighborhood.Proposition810.isRetraction_lamComb
-import DomainTheory.Neighborhood.Proposition810.toElementMap_arrowComb
+module
+
+public import DomainTheory.Neighborhood.Definition89
+public import DomainTheory.Neighborhood.Definition83
+public import DomainTheory.Neighborhood.Theorem69
+public import DomainTheory.Neighborhood.Proposition810.Basic
+public import DomainTheory.Neighborhood.Proposition810.toElementMap_of_comp_eq_idMap
+public import DomainTheory.Neighborhood.Proposition810.toElementMap_idem_of_isRetraction
+public import DomainTheory.Neighborhood.Proposition810.isRetraction_lamComb
+public import DomainTheory.Neighborhood.Proposition810.toElementMap_arrowComb
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

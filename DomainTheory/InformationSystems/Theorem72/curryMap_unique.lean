@@ -5,17 +5,21 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.FunctionSpace
-import DomainTheory.InformationSystems.Proposition53
-import DomainTheory.InformationSystems.Proposition55
-import DomainTheory.InformationSystems.Proposition62
-import DomainTheory.InformationSystems.Factoid32
-import DomainTheory.InformationSystems.Theorem72.Basic
-import DomainTheory.InformationSystems.Theorem72.approxMap_toElement_element_toApproxMap
-import DomainTheory.InformationSystems.Theorem72.fstMap_pairElements
-import DomainTheory.InformationSystems.Theorem72.sndMap_pairElements
-import DomainTheory.InformationSystems.Theorem72.applyMap_toElement
-import DomainTheory.InformationSystems.Theorem72.uncurry_curryMap
+module
+
+public import DomainTheory.InformationSystems.FunctionSpace
+public import DomainTheory.InformationSystems.Proposition53
+public import DomainTheory.InformationSystems.Proposition55
+public import DomainTheory.InformationSystems.Proposition62
+public import DomainTheory.InformationSystems.Factoid32
+public import DomainTheory.InformationSystems.Theorem72.Basic
+public import DomainTheory.InformationSystems.Theorem72.approxMap_toElement_element_toApproxMap
+public import DomainTheory.InformationSystems.Theorem72.fstMap_pairElements
+public import DomainTheory.InformationSystems.Theorem72.sndMap_pairElements
+public import DomainTheory.InformationSystems.Theorem72.applyMap_toElement
+public import DomainTheory.InformationSystems.Theorem72.uncurry_curryMap
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems

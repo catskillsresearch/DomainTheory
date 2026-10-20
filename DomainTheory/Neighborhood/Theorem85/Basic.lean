@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition83
-import DomainTheory.Neighborhood.ApproximableExercises
+module
+
+public import DomainTheory.Neighborhood.Definition83
+public import DomainTheory.Neighborhood.ApproximableExercises
+
+@[expose] public section
 
 /-!
 # Lecture VIII — Theorem 8.5 (Scott 1981, PRG-19): finitary projections via a step-closure formula

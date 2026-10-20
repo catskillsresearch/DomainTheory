@@ -5,10 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Algebra.Order.Field.Rat
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import DomainTheory.InformationSystems.InfoSys
+module
+
+public import Mathlib.Algebra.Order.Field.Rat
+import all Mathlib.Algebra.Order.Field.Rat
+public import Mathlib.Tactic.Linarith
+import all Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+import all Mathlib.Tactic.NormNum
+public import DomainTheory.InformationSystems.InfoSys
+
+@[expose] public section
 
 /-!
 # Factoid 2.5 — second example: open intervals plus `(0, ∞)`

@@ -5,9 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.ExampleB
-import DomainTheory.Neighborhood.Theorem111
-import Mathlib.Tactic
+module
+
+public import DomainTheory.Neighborhood.ExampleB
+public import DomainTheory.Neighborhood.Theorem111
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Exercise 1.13 (Scott 1981, PRG-19, §1) — the infinite binary system `B`, revisited

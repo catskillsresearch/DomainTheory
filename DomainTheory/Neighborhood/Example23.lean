@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example23.Basic
-import DomainTheory.Neighborhood.Example23.eq_botElt_of_le
-import DomainTheory.Neighborhood.Example23.scan_append_true
-import DomainTheory.Neighborhood.Example23.scan_append_falseTrue
-import DomainTheory.Neighborhood.Example23.scan_append_falseFalse
-import DomainTheory.Neighborhood.Example23.parityMap_rel_cone
-import DomainTheory.Neighborhood.Example23.parityMap_toElementMap_mem
-import DomainTheory.Neighborhood.Example23.parityMap_toElementMap_sigmaElt
+module
+
+public import DomainTheory.Neighborhood.Example23.Basic
+public import DomainTheory.Neighborhood.Example23.eq_botElt_of_le
+public import DomainTheory.Neighborhood.Example23.scan_append_true
+public import DomainTheory.Neighborhood.Example23.scan_append_falseTrue
+public import DomainTheory.Neighborhood.Example23.scan_append_falseFalse
+public import DomainTheory.Neighborhood.Example23.parityMap_rel_cone
+public import DomainTheory.Neighborhood.Example23.parityMap_toElementMap_mem
+public import DomainTheory.Neighborhood.Example23.parityMap_toElementMap_sigmaElt
+
+@[expose] public section

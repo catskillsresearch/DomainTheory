@@ -5,17 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.RE
-import DomainTheory.DataTypesAsLattices.Lambda
-import DomainTheory.DataTypesAsLattices.Computability.Basic
-import DomainTheory.DataTypesAsLattices.Computability.REPredu2ecomp
-import DomainTheory.DataTypesAsLattices.Computability.REPredu2eand
-import DomainTheory.DataTypesAsLattices.Computability.primrec_testBit
-import DomainTheory.DataTypesAsLattices.Computability.primrec_pair
-import DomainTheory.DataTypesAsLattices.Computability.REPredu2eor
-import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
-import DomainTheory.DataTypesAsLattices.Computability.primrecPred_bool
-import DomainTheory.DataTypesAsLattices.Computability.mem_condC_iff
+module
+
+public import Mathlib.Computability.RE
+import all Mathlib.Computability.RE
+public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Computability.Basic
+public import DomainTheory.DataTypesAsLattices.Computability.REPredu2ecomp
+public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eand
+public import DomainTheory.DataTypesAsLattices.Computability.primrec_testBit
+public import DomainTheory.DataTypesAsLattices.Computability.primrec_pair
+public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eor
+public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
+public import DomainTheory.DataTypesAsLattices.Computability.primrecPred_bool
+public import DomainTheory.DataTypesAsLattices.Computability.mem_condC_iff
+
+@[expose] public section
 
 
 set_option maxHeartbeats 2000000

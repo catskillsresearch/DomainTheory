@@ -5,12 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Tactic
-import DomainTheory.Neighborhood.Example12.Basic
-import DomainTheory.Neighborhood.Example12.element_classification
-import DomainTheory.Neighborhood.Example12.not_elemZero_le_elemOne
-import DomainTheory.Neighborhood.Example12.not_elemOne_le_elemZero
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+public import DomainTheory.Neighborhood.Example12.Basic
+public import DomainTheory.Neighborhood.Example12.element_classification
+public import DomainTheory.Neighborhood.Example12.not_elemZero_le_elemOne
+public import DomainTheory.Neighborhood.Example12.not_elemOne_le_elemZero
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.Example12

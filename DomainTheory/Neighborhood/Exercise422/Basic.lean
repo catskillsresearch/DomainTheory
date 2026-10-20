@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise414
-import DomainTheory.Neighborhood.Theorem46
+module
+
+public import DomainTheory.Neighborhood.Exercise414
+public import DomainTheory.Neighborhood.Theorem46
+
+@[expose] public section
 
 /-!
 # Exercise 4.22 (Scott 1981, PRG-19, Lecture IV) — carving a Peano model out of a partial one

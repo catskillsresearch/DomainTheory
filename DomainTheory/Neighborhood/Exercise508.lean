@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise508.Basic
-import DomainTheory.Neighborhood.Exercise508.toApproxMap_toFilter
-import DomainTheory.Neighborhood.Exercise508.Smap_apply
-import DomainTheory.Neighborhood.Exercise508.Ielem_apply
-import DomainTheory.Neighborhood.Exercise508.Kelem_apply
-import DomainTheory.Neighborhood.Exercise508.Selem_apply
-import DomainTheory.Neighborhood.Exercise508.bracket_spec
+module
+
+public import DomainTheory.Neighborhood.Exercise508.Basic
+public import DomainTheory.Neighborhood.Exercise508.toApproxMap_toFilter
+public import DomainTheory.Neighborhood.Exercise508.Smap_apply
+public import DomainTheory.Neighborhood.Exercise508.Ielem_apply
+public import DomainTheory.Neighborhood.Exercise508.Kelem_apply
+public import DomainTheory.Neighborhood.Exercise508.Selem_apply
+public import DomainTheory.Neighborhood.Exercise508.bracket_spec
+
+@[expose] public section

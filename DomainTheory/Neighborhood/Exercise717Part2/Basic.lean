@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise717
-import DomainTheory.Neighborhood.Exercise510
-import DomainTheory.Neighborhood.Proposition77
+module
+
+public import DomainTheory.Neighborhood.Exercise717
+public import DomainTheory.Neighborhood.Exercise510
+public import DomainTheory.Neighborhood.Proposition77
+
+@[expose] public section
 
 /-!
 # Exercise 7.17 (Scott 1981, PRG-19, §7) — Part 2: the universal strict mapping `g : D^§ → E`

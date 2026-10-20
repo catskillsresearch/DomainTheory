@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise516ThueMorse
+module
+
+public import DomainTheory.Neighborhood.Exercise516ThueMorse
+
+@[expose] public section
 
 /-!
 # Exercise 5.16 follow-up (Scott 1981, PRG-19, Lecture V) — overlap-freeness of `t`

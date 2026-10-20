@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition83
-import DomainTheory.Neighborhood.Product
+module
+
+public import DomainTheory.Neighborhood.Definition83
+public import DomainTheory.Neighborhood.Product
+
+@[expose] public section
 
 /-!
 # Lecture VIII — Examples 8.4 (Scott 1981, PRG-19): `check`/`fade` and the two-point retraction

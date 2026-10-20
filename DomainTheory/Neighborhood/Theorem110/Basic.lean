@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
+module
+
+public import DomainTheory.Neighborhood.Basic
+
+@[expose] public section
 
 /-!
 # Theorem 1.10 (Scott 1981, PRG-19, §1) — the element-token system `{[X]}`

@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example62Regular.Basic
-import DomainTheory.Neighborhood.Example62Regular.select_cons
-import DomainTheory.Neighborhood.Example62Regular.select_append
-import DomainTheory.Neighborhood.Example62Regular.treeLang_eq_pos
-import DomainTheory.Neighborhood.Example62Regular.treeLang_select
-import DomainTheory.Neighborhood.Example62Regular.treeLang_injective
-import DomainTheory.Neighborhood.Example62Regular.eventuallyPeriodic_iff_isRegular
-import DomainTheory.Neighborhood.Example62Regular.isRegular_iff_exists_eventuallyPeriodic
+module
+
+public import DomainTheory.Neighborhood.Example62Regular.Basic
+public import DomainTheory.Neighborhood.Example62Regular.select_cons
+public import DomainTheory.Neighborhood.Example62Regular.select_append
+public import DomainTheory.Neighborhood.Example62Regular.treeLang_eq_pos
+public import DomainTheory.Neighborhood.Example62Regular.treeLang_select
+public import DomainTheory.Neighborhood.Example62Regular.treeLang_injective
+public import DomainTheory.Neighborhood.Example62Regular.eventuallyPeriodic_iff_isRegular
+public import DomainTheory.Neighborhood.Example62Regular.isRegular_iff_exists_eventuallyPeriodic
+
+@[expose] public section

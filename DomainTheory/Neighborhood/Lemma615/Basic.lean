@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition610
-import DomainTheory.Neighborhood.FunctionSpace
+module
+
+public import DomainTheory.Neighborhood.Definition610
+public import DomainTheory.Neighborhood.FunctionSpace
+
+@[expose] public section
 
 /-!
 # Lecture VI — Lemma 6.15 (Scott 1981, PRG-19): the converse of Proposition 6.12

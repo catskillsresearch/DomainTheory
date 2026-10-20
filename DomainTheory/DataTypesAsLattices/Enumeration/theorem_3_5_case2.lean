@@ -5,16 +5,21 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.Halting
-import DomainTheory.DataTypesAsLattices.Computability
-import DomainTheory.DataTypesAsLattices.Functionality
-import DomainTheory.DataTypesAsLattices.Enumeration.Basic
-import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_4
-import DomainTheory.DataTypesAsLattices.Enumeration.valNat_fin
-import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillCase2Code
-import DomainTheory.DataTypesAsLattices.Enumeration.valNat_myhillCase2Code
-import DomainTheory.DataTypesAsLattices.Enumeration.valNat_myhillCase2Code_ne_bot
-import DomainTheory.DataTypesAsLattices.Enumeration.valNat_mem_comp_primrec
+module
+
+public import Mathlib.Computability.Halting
+import all Mathlib.Computability.Halting
+public import DomainTheory.DataTypesAsLattices.Computability
+public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_4
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_fin
+public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillCase2Code
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_myhillCase2Code
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_myhillCase2Code_ne_bot
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_mem_comp_primrec
+
+@[expose] public section
 
 
 set_option maxHeartbeats 2000000

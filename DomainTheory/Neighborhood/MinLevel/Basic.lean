@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.LevelSetPrimrec
+module
+
+public import DomainTheory.Neighborhood.LevelSetPrimrec
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(e)(d)(i) (Scott 1981, PRG-19, Lecture VIII) — minimal-level canonicalization

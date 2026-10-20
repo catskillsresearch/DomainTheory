@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition612
+module
+
+public import DomainTheory.Neighborhood.Proposition612
+
+@[expose] public section
 
 /-!
 # Lecture VI — Exercise 6.25 (Scott 1981, PRG-19): the Galois connection of a projection pair

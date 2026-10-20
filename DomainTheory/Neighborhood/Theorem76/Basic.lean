@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem75
-import DomainTheory.Neighborhood.Theorem41
+module
+
+public import DomainTheory.Neighborhood.Theorem75
+public import DomainTheory.Neighborhood.Theorem41
+
+@[expose] public section
 
 /-!
 # Theorem 7.6 (Scott 1981, PRG-19, §7) — `fix : (𝒟 → 𝒟) → 𝒟` is computable

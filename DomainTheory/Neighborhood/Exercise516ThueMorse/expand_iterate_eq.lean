@@ -5,10 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise516
-import Mathlib.Data.Nat.Bits
-import DomainTheory.Neighborhood.Exercise516ThueMorse.Basic
-import DomainTheory.Neighborhood.Exercise516ThueMorse.expand_tmList
+module
+
+public import DomainTheory.Neighborhood.Exercise516
+public import Mathlib.Data.Nat.Bits
+import all Mathlib.Data.Nat.Bits
+public import DomainTheory.Neighborhood.Exercise516ThueMorse.Basic
+public import DomainTheory.Neighborhood.Exercise516ThueMorse.expand_tmList
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.Exercise516

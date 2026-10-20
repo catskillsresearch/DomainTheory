@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem86
-import DomainTheory.Neighborhood.Theorem76
+module
+
+public import DomainTheory.Neighborhood.Theorem86
+public import DomainTheory.Neighborhood.Theorem76
+
+@[expose] public section
 
 /-!
 # Theorem 8.6(c) (Scott 1981, PRG-19, Lecture VIII) — `sub` is computable

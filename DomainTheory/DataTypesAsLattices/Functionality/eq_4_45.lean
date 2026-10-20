@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.encodeExp_typed
-import DomainTheory.DataTypesAsLattices.Functionality.Htyped_typed
-import DomainTheory.DataTypesAsLattices.Functionality.Hfun_decode
-import DomainTheory.DataTypesAsLattices.Functionality.Hcomb_app
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.encodeExp_typed
+public import DomainTheory.DataTypesAsLattices.Functionality.Htyped_typed
+public import DomainTheory.DataTypesAsLattices.Functionality.Hfun_decode
+public import DomainTheory.DataTypesAsLattices.Functionality.Hcomb_app
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

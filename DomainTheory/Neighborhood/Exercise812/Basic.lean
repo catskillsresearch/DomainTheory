@@ -5,11 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition87
-import DomainTheory.Neighborhood.Theorem85
-import Mathlib.Data.Nat.BitIndices
-import Mathlib.Data.Nat.Bitwise
-import Mathlib.Combinatorics.Colex
+module
+
+public import DomainTheory.Neighborhood.Definition87
+public import DomainTheory.Neighborhood.Theorem85
+public import Mathlib.Data.Nat.BitIndices
+import all Mathlib.Data.Nat.BitIndices
+public import Mathlib.Data.Nat.Bitwise
+import all Mathlib.Data.Nat.Bitwise
+public import Mathlib.Combinatorics.Colex
+import all Mathlib.Combinatorics.Colex
+
+@[expose] public section
 
 /-!
 # Exercise 8.12 (Scott 1981, PRG-19, Lecture VIII) — a `ℕ`-presentation of `𝒰`

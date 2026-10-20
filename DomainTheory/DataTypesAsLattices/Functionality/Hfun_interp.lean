@@ -5,24 +5,28 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
-import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
-import DomainTheory.DataTypesAsLattices.Functionality.tagInj_one
-import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_zero
-import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_one
-import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_two
-import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_three
-import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion_ofNat
-import DomainTheory.DataTypesAsLattices.Functionality.Hfun_app2
-import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag0
-import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag1
-import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag2
-import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag3
-import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag4
-import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag5
-import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag6
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
+public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
+public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_one
+public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_zero
+public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_one
+public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_two
+public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_three
+public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion_ofNat
+public import DomainTheory.DataTypesAsLattices.Functionality.Hfun_app2
+public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag0
+public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag1
+public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag2
+public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag3
+public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag4
+public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag5
+public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag6
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

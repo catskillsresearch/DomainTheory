@@ -5,31 +5,35 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.SplitU.Basic
-import DomainTheory.Neighborhood.SplitU.presentedIntervals_map_qpClipLt
-import DomainTheory.Neighborhood.SplitU.presentedIntervals_map_qpClipGe
-import DomainTheory.Neighborhood.SplitU.primrec_clipLtCode
-import DomainTheory.Neighborhood.SplitU.primrec_clipGeCode
-import DomainTheory.Neighborhood.SplitU.decodeRatPair_clipLtCode
-import DomainTheory.Neighborhood.SplitU.decodeRatPair_clipGeCode
-import DomainTheory.Neighborhood.SplitU.primrec_clipLtListCode
-import DomainTheory.Neighborhood.SplitU.primrec_clipGeListCode
-import DomainTheory.Neighborhood.SplitU.decodeQPairList_singletonCode
-import DomainTheory.Neighborhood.SplitU.mem_decodeQPairList_clipLtListCode
-import DomainTheory.Neighborhood.SplitU.mem_decodeQPairList_clipGeListCode
-import DomainTheory.Neighborhood.SplitU.presentedIntervals_decodeQPairList_clipLtListCode
-import DomainTheory.Neighborhood.SplitU.presentedIntervals_decodeQPairList_clipGeListCode
-import DomainTheory.Neighborhood.SplitU.primrec_firstElemCode
-import DomainTheory.Neighborhood.SplitU.mem_decodeQPairList_firstElemCode
-import DomainTheory.Neighborhood.SplitU.primrec_splitMidCode
-import DomainTheory.Neighborhood.SplitU.primrec_splitULeft
-import DomainTheory.Neighborhood.SplitU.primrec_splitURight
-import DomainTheory.Neighborhood.SplitU.splitU_p0_lt
-import DomainTheory.Neighborhood.SplitU.splitU_mid_gt
-import DomainTheory.Neighborhood.SplitU.splitU_mid_lt
-import DomainTheory.Neighborhood.SplitU.UX_splitULeft
-import DomainTheory.Neighborhood.SplitU.UX_splitURight
-import DomainTheory.Neighborhood.SplitU.splitU_disjoint
-import DomainTheory.Neighborhood.SplitU.splitU_union
-import DomainTheory.Neighborhood.SplitU.splitU_left_ne
-import DomainTheory.Neighborhood.SplitU.splitU_right_ne
+module
+
+public import DomainTheory.Neighborhood.SplitU.Basic
+public import DomainTheory.Neighborhood.SplitU.presentedIntervals_map_qpClipLt
+public import DomainTheory.Neighborhood.SplitU.presentedIntervals_map_qpClipGe
+public import DomainTheory.Neighborhood.SplitU.primrec_clipLtCode
+public import DomainTheory.Neighborhood.SplitU.primrec_clipGeCode
+public import DomainTheory.Neighborhood.SplitU.decodeRatPair_clipLtCode
+public import DomainTheory.Neighborhood.SplitU.decodeRatPair_clipGeCode
+public import DomainTheory.Neighborhood.SplitU.primrec_clipLtListCode
+public import DomainTheory.Neighborhood.SplitU.primrec_clipGeListCode
+public import DomainTheory.Neighborhood.SplitU.decodeQPairList_singletonCode
+public import DomainTheory.Neighborhood.SplitU.mem_decodeQPairList_clipLtListCode
+public import DomainTheory.Neighborhood.SplitU.mem_decodeQPairList_clipGeListCode
+public import DomainTheory.Neighborhood.SplitU.presentedIntervals_decodeQPairList_clipLtListCode
+public import DomainTheory.Neighborhood.SplitU.presentedIntervals_decodeQPairList_clipGeListCode
+public import DomainTheory.Neighborhood.SplitU.primrec_firstElemCode
+public import DomainTheory.Neighborhood.SplitU.mem_decodeQPairList_firstElemCode
+public import DomainTheory.Neighborhood.SplitU.primrec_splitMidCode
+public import DomainTheory.Neighborhood.SplitU.primrec_splitULeft
+public import DomainTheory.Neighborhood.SplitU.primrec_splitURight
+public import DomainTheory.Neighborhood.SplitU.splitU_p0_lt
+public import DomainTheory.Neighborhood.SplitU.splitU_mid_gt
+public import DomainTheory.Neighborhood.SplitU.splitU_mid_lt
+public import DomainTheory.Neighborhood.SplitU.UX_splitULeft
+public import DomainTheory.Neighborhood.SplitU.UX_splitURight
+public import DomainTheory.Neighborhood.SplitU.splitU_disjoint
+public import DomainTheory.Neighborhood.SplitU.splitU_union
+public import DomainTheory.Neighborhood.SplitU.splitU_left_ne
+public import DomainTheory.Neighborhood.SplitU.splitU_right_ne
+
+@[expose] public section

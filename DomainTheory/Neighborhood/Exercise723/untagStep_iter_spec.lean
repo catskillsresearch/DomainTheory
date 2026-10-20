@@ -5,18 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example78
-import DomainTheory.Neighborhood.Theorem74
-import DomainTheory.Neighborhood.Theorem75
-import DomainTheory.Neighborhood.Exercise514
-import DomainTheory.Neighborhood.Exercise723.Basic
-import DomainTheory.Neighborhood.Exercise723.unnum1_spec
-import DomainTheory.Neighborhood.Exercise723.unnum2_spec
-import DomainTheory.Neighborhood.Exercise723.untagRef_zero_case
-import DomainTheory.Neighborhood.Exercise723.untagRef_succ_case
-import DomainTheory.Neighborhood.Exercise723.untagStep_of_done_iterate
-import DomainTheory.Neighborhood.Exercise723.untagStep_halt
-import DomainTheory.Neighborhood.Exercise723.untagStep_cont
+module
+
+public import DomainTheory.Neighborhood.Example78
+public import DomainTheory.Neighborhood.Theorem74
+public import DomainTheory.Neighborhood.Theorem75
+public import DomainTheory.Neighborhood.Exercise514
+public import DomainTheory.Neighborhood.Exercise723.Basic
+public import DomainTheory.Neighborhood.Exercise723.unnum1_spec
+public import DomainTheory.Neighborhood.Exercise723.unnum2_spec
+public import DomainTheory.Neighborhood.Exercise723.untagRef_zero_case
+public import DomainTheory.Neighborhood.Exercise723.untagRef_succ_case
+public import DomainTheory.Neighborhood.Exercise723.untagStep_of_done_iterate
+public import DomainTheory.Neighborhood.Exercise723.untagStep_halt
+public import DomainTheory.Neighborhood.Exercise723.untagStep_cont
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.Exercise723

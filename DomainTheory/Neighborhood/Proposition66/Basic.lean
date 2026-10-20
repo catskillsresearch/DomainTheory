@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition63
+module
+
+public import DomainTheory.Neighborhood.Definition63
+
+@[expose] public section
 
 /-!
 # Lecture VI — Proposition 6.6 (Scott 1981, PRG-19): initial algebras are uniquely isomorphic

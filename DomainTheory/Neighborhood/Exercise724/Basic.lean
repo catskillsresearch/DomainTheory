@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition71
-import DomainTheory.Neighborhood.ExampleB
-import DomainTheory.Neighborhood.Example23
-import DomainTheory.Neighborhood.Theorem75
+module
+
+public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.Neighborhood.ExampleB
+public import DomainTheory.Neighborhood.Example23
+public import DomainTheory.Neighborhood.Theorem75
+
+@[expose] public section
 
 /-!
 # Exercise 7.24 (Scott 1981, PRG-19, §7) — the LUCID system `L`

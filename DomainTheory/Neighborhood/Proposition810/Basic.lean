@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition89
-import DomainTheory.Neighborhood.Definition83
-import DomainTheory.Neighborhood.Theorem69
+module
+
+public import DomainTheory.Neighborhood.Definition89
+public import DomainTheory.Neighborhood.Definition83
+public import DomainTheory.Neighborhood.Theorem69
+
+@[expose] public section
 
 /-!
 # Proposition 8.10 (Scott 1981, PRG-19) — the combinators preserve projections

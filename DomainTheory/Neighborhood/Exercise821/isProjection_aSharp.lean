@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise717Part2
-import DomainTheory.Neighborhood.Definition89
-import DomainTheory.Neighborhood.Proposition810
-import DomainTheory.Neighborhood.Proposition810b
-import DomainTheory.Neighborhood.Lemma615
-import DomainTheory.Neighborhood.Exercise821.Basic
-import DomainTheory.Neighborhood.Exercise821.aSharp_le_idMap_of_le
-import DomainTheory.Neighborhood.Exercise821.aSharpInner_idem_of_isRetraction
-import DomainTheory.Neighborhood.Exercise821.isRetraction_aSharp
+module
+
+public import DomainTheory.Neighborhood.Exercise717Part2
+public import DomainTheory.Neighborhood.Definition89
+public import DomainTheory.Neighborhood.Proposition810
+public import DomainTheory.Neighborhood.Proposition810b
+public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.Neighborhood.Exercise821.Basic
+public import DomainTheory.Neighborhood.Exercise821.aSharp_le_idMap_of_le
+public import DomainTheory.Neighborhood.Exercise821.aSharpInner_idem_of_isRetraction
+public import DomainTheory.Neighborhood.Exercise821.isRetraction_aSharp
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

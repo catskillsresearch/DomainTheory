@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise413
-import DomainTheory.Neighborhood.Exercise415
+module
+
+public import DomainTheory.Neighborhood.Exercise413
+public import DomainTheory.Neighborhood.Exercise415
+
+@[expose] public section
 
 /-!
 # Exercise 4.16 (Scott 1981, PRG-19, Lecture IV) — the *optimal* fixed point

@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Constructive
-import DomainTheory.InformationSystems.Factoid43
+module
+
+public import DomainTheory.InformationSystems.Constructive
+public import DomainTheory.InformationSystems.Factoid43
+
+@[expose] public section
 
 /-!
 # Factoid 4.4 — directed (and chain) unions are elements

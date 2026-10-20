@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Proposition55
-import DomainTheory.InformationSystems.Factoid34
-import DomainTheory.InformationSystems.Factoid35
+module
+
+public import DomainTheory.InformationSystems.Proposition55
+public import DomainTheory.InformationSystems.Factoid34
+public import DomainTheory.InformationSystems.Factoid35
+
+@[expose] public section
 
 /-!
 # Factoid 8.4 — a domain of domains (Scott’s sketch)

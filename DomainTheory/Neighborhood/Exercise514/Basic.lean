@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise513
-import Mathlib.Data.List.Basic
+module
+
+public import DomainTheory.Neighborhood.Exercise513
+public import Mathlib.Data.List.Basic
+import all Mathlib.Data.List.Basic
+
+@[expose] public section
 
 /-!
 # Exercise 5.14 (Scott 1981, PRG-19, Lecture V) — the graph model `Pω`

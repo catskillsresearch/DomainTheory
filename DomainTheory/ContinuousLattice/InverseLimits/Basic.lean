@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.Theorem212
-import Mathlib.Order.GaloisConnection.Basic
+module
+
+public import DomainTheory.ContinuousLattice.Theorem212
+public import Mathlib.Order.GaloisConnection.Basic
+import all Mathlib.Order.GaloisConnection.Basic
+
+@[expose] public section
 
 /-!
 # Inverse limits of continuous lattices (Scott 1972, §4)

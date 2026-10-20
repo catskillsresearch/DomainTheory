@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise715
+module
+
+public import DomainTheory.Neighborhood.Exercise715
+
+@[expose] public section
 
 /-!
 # Exercise 7.18 (Scott 1981, PRG-19, §7) — effective isomorphism; `D^∞ ≅ (D^∞)^∞` is effective

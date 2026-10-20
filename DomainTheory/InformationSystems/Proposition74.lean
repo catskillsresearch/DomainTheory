@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Proposition74.Basic
-import DomainTheory.InformationSystems.Proposition74.proposition_7_4_ii
-import DomainTheory.InformationSystems.Proposition74.toElement_comp_fix_le
-import DomainTheory.InformationSystems.Proposition74.fixElement_le_toElement_fix
-import DomainTheory.InformationSystems.Proposition74.fixChain_toElement_le_fix
-import DomainTheory.InformationSystems.Proposition74.toElement_fix_le_fixElement
-import DomainTheory.InformationSystems.Proposition74.proposition_7_4_iii
-import DomainTheory.InformationSystems.Proposition74.proposition_7_4_unique
-import DomainTheory.InformationSystems.Proposition74.idMap_botElement
+module
+
+public import DomainTheory.InformationSystems.Proposition74.Basic
+public import DomainTheory.InformationSystems.Proposition74.proposition_7_4_ii
+public import DomainTheory.InformationSystems.Proposition74.toElement_comp_fix_le
+public import DomainTheory.InformationSystems.Proposition74.fixElement_le_toElement_fix
+public import DomainTheory.InformationSystems.Proposition74.fixChain_toElement_le_fix
+public import DomainTheory.InformationSystems.Proposition74.toElement_fix_le_fixElement
+public import DomainTheory.InformationSystems.Proposition74.proposition_7_4_iii
+public import DomainTheory.InformationSystems.Proposition74.proposition_7_4_unique
+public import DomainTheory.InformationSystems.Proposition74.idMap_botElement
+
+@[expose] public section

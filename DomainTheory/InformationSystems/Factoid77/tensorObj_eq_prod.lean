@@ -5,12 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Theorem72
-import DomainTheory.InformationSystems.Factoid65
-import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
-import Mathlib.CategoryTheory.Monoidal.Closed.Basic
-import Mathlib.CategoryTheory.Adjunction.Basic
-import DomainTheory.InformationSystems.Factoid77.Basic
+module
+
+public import DomainTheory.InformationSystems.Theorem72
+public import DomainTheory.InformationSystems.Factoid65
+public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
+import all Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
+public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
+import all Mathlib.CategoryTheory.Monoidal.Closed.Basic
+public import Mathlib.CategoryTheory.Adjunction.Basic
+import all Mathlib.CategoryTheory.Adjunction.Basic
+public import DomainTheory.InformationSystems.Factoid77.Basic
+
+@[expose] public section
 
 
 universe u

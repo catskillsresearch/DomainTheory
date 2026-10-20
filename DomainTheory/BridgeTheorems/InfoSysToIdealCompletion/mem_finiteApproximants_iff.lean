@@ -5,10 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.Hom.Basic
-import Mathlib.Order.Ideal
-import DomainTheory.InformationSystems.Factoid45
-import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.Basic
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import Mathlib.Order.Ideal
+import all Mathlib.Order.Ideal
+public import DomainTheory.InformationSystems.Factoid45
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.BridgeTheorems

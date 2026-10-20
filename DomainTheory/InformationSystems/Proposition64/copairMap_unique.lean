@@ -5,20 +5,24 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Sum
-import DomainTheory.InformationSystems.Factoid33
-import DomainTheory.InformationSystems.Proposition53
-import DomainTheory.InformationSystems.Proposition55
-import DomainTheory.InformationSystems.Proposition64.Basic
-import DomainTheory.InformationSystems.Proposition64.SumCon_liftSumLeft
-import DomainTheory.InformationSystems.Proposition64.SumCon_liftSumRight
-import DomainTheory.InformationSystems.Proposition64.lftFinset_eq_empty_or_mem
-import DomainTheory.InformationSystems.Proposition64.rhtFinset_eq_empty_or_mem
-import DomainTheory.InformationSystems.Proposition64.entSet_liftLft_of_left_only
-import DomainTheory.InformationSystems.Proposition64.entSet_liftRht_of_right_only
-import DomainTheory.InformationSystems.Proposition64.entSet_empty_of_rel_bot_like
-import DomainTheory.InformationSystems.Proposition64.entSet_u_of_inl_witness
-import DomainTheory.InformationSystems.Proposition64.entSet_u_of_inr_witness
+module
+
+public import DomainTheory.InformationSystems.Sum
+public import DomainTheory.InformationSystems.Factoid33
+public import DomainTheory.InformationSystems.Proposition53
+public import DomainTheory.InformationSystems.Proposition55
+public import DomainTheory.InformationSystems.Proposition64.Basic
+public import DomainTheory.InformationSystems.Proposition64.SumCon_liftSumLeft
+public import DomainTheory.InformationSystems.Proposition64.SumCon_liftSumRight
+public import DomainTheory.InformationSystems.Proposition64.lftFinset_eq_empty_or_mem
+public import DomainTheory.InformationSystems.Proposition64.rhtFinset_eq_empty_or_mem
+public import DomainTheory.InformationSystems.Proposition64.entSet_liftLft_of_left_only
+public import DomainTheory.InformationSystems.Proposition64.entSet_liftRht_of_right_only
+public import DomainTheory.InformationSystems.Proposition64.entSet_empty_of_rel_bot_like
+public import DomainTheory.InformationSystems.Proposition64.entSet_u_of_inl_witness
+public import DomainTheory.InformationSystems.Proposition64.entSet_u_of_inr_witness
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems

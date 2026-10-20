@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Data.Finset.Basic
-import DomainTheory.InformationSystems.Constructive.Basic
+module
+
+public import Mathlib.Data.Finset.Basic
+import all Mathlib.Data.Finset.Basic
+public import DomainTheory.InformationSystems.Constructive.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems.Constructive

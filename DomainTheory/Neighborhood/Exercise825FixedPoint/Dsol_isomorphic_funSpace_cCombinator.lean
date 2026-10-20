@@ -5,18 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition810b
-import DomainTheory.Neighborhood.Table55
-import DomainTheory.Neighborhood.Exercise823
-import DomainTheory.Neighborhood.Exercise715
-import DomainTheory.Neighborhood.Exercise825Pow
-import DomainTheory.Neighborhood.Exercise825Embed
-import DomainTheory.Neighborhood.Exercise825Closing
-import DomainTheory.Neighborhood.Exercise820
-import DomainTheory.Neighborhood.Exercise825FixedPoint.Basic
-import DomainTheory.Neighborhood.Exercise825FixedPoint.isFinitaryProjection_cCombinator
-import DomainTheory.Neighborhood.Exercise825FixedPoint.ht_tOpMap
-import DomainTheory.Neighborhood.Exercise825FixedPoint.hT_TArrow
+module
+
+public import DomainTheory.Neighborhood.Proposition810b
+public import DomainTheory.Neighborhood.Table55
+public import DomainTheory.Neighborhood.Exercise823
+public import DomainTheory.Neighborhood.Exercise715
+public import DomainTheory.Neighborhood.Exercise825Pow
+public import DomainTheory.Neighborhood.Exercise825Embed
+public import DomainTheory.Neighborhood.Exercise825Closing
+public import DomainTheory.Neighborhood.Exercise820
+public import DomainTheory.Neighborhood.Exercise825FixedPoint.Basic
+public import DomainTheory.Neighborhood.Exercise825FixedPoint.isFinitaryProjection_cCombinator
+public import DomainTheory.Neighborhood.Exercise825FixedPoint.ht_tOpMap
+public import DomainTheory.Neighborhood.Exercise825FixedPoint.hT_TArrow
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

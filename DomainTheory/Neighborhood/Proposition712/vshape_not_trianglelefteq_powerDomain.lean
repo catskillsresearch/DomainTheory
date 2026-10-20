@@ -5,17 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition711
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.ApproximableExercises
-import DomainTheory.Neighborhood.Product
-import DomainTheory.Neighborhood.Proposition710
-import DomainTheory.Neighborhood.Theorem74
-import DomainTheory.Neighborhood.Lemma615
-import Mathlib.Tactic
-import DomainTheory.Neighborhood.Proposition712.Basic
-import DomainTheory.Neighborhood.Proposition712.hasTop_of_trianglelefteq_powerDomain
-import DomainTheory.Neighborhood.Proposition712.Vshape_not_hasTop
+module
+
+public import DomainTheory.Neighborhood.Definition711
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.Neighborhood.Product
+public import DomainTheory.Neighborhood.Proposition710
+public import DomainTheory.Neighborhood.Theorem74
+public import DomainTheory.Neighborhood.Lemma615
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+public import DomainTheory.Neighborhood.Proposition712.Basic
+public import DomainTheory.Neighborhood.Proposition712.hasTop_of_trianglelefteq_powerDomain
+public import DomainTheory.Neighborhood.Proposition712.Vshape_not_hasTop
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

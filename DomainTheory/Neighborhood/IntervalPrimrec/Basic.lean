@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition87
-import DomainTheory.Neighborhood.RationalPrimrec
-import DomainTheory.Neighborhood.RecursiveCross
+module
+
+public import DomainTheory.Neighborhood.Definition87
+public import DomainTheory.Neighborhood.RationalPrimrec
+public import DomainTheory.Neighborhood.RecursiveCross
+
+@[expose] public section
 
 /-!
 # Primitive-recursive interval-list arithmetic for `𝒰` (Definition 8.7)

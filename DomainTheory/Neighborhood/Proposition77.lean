@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition77.Basic
-import DomainTheory.Neighborhood.Proposition77.gList_length
-import DomainTheory.Neighborhood.Proposition77.dsharp_isEffectivelyGiven
+module
+
+public import DomainTheory.Neighborhood.Proposition77.Basic
+public import DomainTheory.Neighborhood.Proposition77.gList_length
+public import DomainTheory.Neighborhood.Proposition77.dsharp_isEffectivelyGiven
+
+@[expose] public section

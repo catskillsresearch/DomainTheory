@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise621
-import DomainTheory.Neighborhood.Lemma615
+module
+
+public import DomainTheory.Neighborhood.Exercise621
+public import DomainTheory.Neighborhood.Lemma615
+
+@[expose] public section
 
 /-!
 # Exercise 6.27 (Scott 1981, PRG-19, §6) — which subsystem relations hold

@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Basic
-import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.mem_codes_iff
-import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.codes_lower
+module
+
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Basic
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.mem_codes_iff
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.codes_lower
+
+@[expose] public section

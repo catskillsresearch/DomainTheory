@@ -5,9 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722DFA
-import DomainTheory.Neighborhood.Exercise722Cat
-import DomainTheory.Neighborhood.Exercise722Words
+module
+
+public import DomainTheory.Neighborhood.Exercise722DFA
+public import DomainTheory.Neighborhood.Exercise722Cat
+public import DomainTheory.Neighborhood.Exercise722Words
+public meta import DomainTheory.Neighborhood.Exercise722Words
+public meta import DomainTheory.Neighborhood.Exercise722Regular.Basic
+
+@[expose] public section
 
 /-!
 # Exercise 7.22 — every fragment expression has a `Fintype` automaton (`denote e = accepts`)

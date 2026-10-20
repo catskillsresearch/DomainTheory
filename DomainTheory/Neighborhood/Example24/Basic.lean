@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Approximable
-import DomainTheory.Neighborhood.ExampleB
+module
+
+public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.Neighborhood.ExampleB
+
+@[expose] public section
 
 /-!
 # Example 2.4 (Scott 1981, PRG-19, §2) — eliminating the first run of `1`'s, `g : B → B`

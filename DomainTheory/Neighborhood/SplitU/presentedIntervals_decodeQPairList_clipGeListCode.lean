@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.UComputablePresentation
-import DomainTheory.Neighborhood.SplitU.Basic
-import DomainTheory.Neighborhood.SplitU.presentedIntervals_map_qpClipGe
-import DomainTheory.Neighborhood.SplitU.mem_decodeQPairList_clipGeListCode
+module
+
+public import DomainTheory.Neighborhood.UComputablePresentation
+public import DomainTheory.Neighborhood.SplitU.Basic
+public import DomainTheory.Neighborhood.SplitU.presentedIntervals_map_qpClipGe
+public import DomainTheory.Neighborhood.SplitU.mem_decodeQPairList_clipGeListCode
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

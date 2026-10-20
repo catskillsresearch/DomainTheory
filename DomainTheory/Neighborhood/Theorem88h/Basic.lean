@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem85
-import DomainTheory.Neighborhood.Definition72
+module
+
+public import DomainTheory.Neighborhood.Theorem85
+public import DomainTheory.Neighborhood.Definition72
+
+@[expose] public section
 
 /-!
 # Theorem 8.8(c), Part 1 of 6 — the diagonal fixed-point predicate is recursively enumerable

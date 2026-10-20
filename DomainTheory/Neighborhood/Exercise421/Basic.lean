@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise414
-import Mathlib.Tactic
+module
+
+public import DomainTheory.Neighborhood.Exercise414
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Exercise 4.21 (Scott 1981, PRG-19, Lecture IV) — `≤` as a unique fixed point; addition & multiplication

@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.SplitV.Basic
-import DomainTheory.Neighborhood.SplitV.primrec_myFirstBit
-import DomainTheory.Neighborhood.SplitV.myFirstBit_le
-import DomainTheory.Neighborhood.SplitV.primrec_myClearBit
-import DomainTheory.Neighborhood.SplitV.primrec_splitVMinLevel
-import DomainTheory.Neighborhood.SplitV.primrec_splitVMinMask
-import DomainTheory.Neighborhood.SplitV.primrec_splitVUpsampled
-import DomainTheory.Neighborhood.SplitV.primrec_splitVBit
-import DomainTheory.Neighborhood.SplitV.primrec_splitVLeft
-import DomainTheory.Neighborhood.SplitV.primrec_splitVRight
+module
+
+public import DomainTheory.Neighborhood.SplitV.Basic
+public import DomainTheory.Neighborhood.SplitV.primrec_myFirstBit
+public import DomainTheory.Neighborhood.SplitV.myFirstBit_le
+public import DomainTheory.Neighborhood.SplitV.primrec_myClearBit
+public import DomainTheory.Neighborhood.SplitV.primrec_splitVMinLevel
+public import DomainTheory.Neighborhood.SplitV.primrec_splitVMinMask
+public import DomainTheory.Neighborhood.SplitV.primrec_splitVUpsampled
+public import DomainTheory.Neighborhood.SplitV.primrec_splitVBit
+public import DomainTheory.Neighborhood.SplitV.primrec_splitVLeft
+public import DomainTheory.Neighborhood.SplitV.primrec_splitVRight
+
+@[expose] public section

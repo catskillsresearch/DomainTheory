@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.FunctionSpace.Basic
-import DomainTheory.InformationSystems.FunctionSpace.funInputUnion_empty
-import DomainTheory.InformationSystems.FunctionSpace.funOutputUnion_empty
+module
+
+public import DomainTheory.InformationSystems.FunctionSpace.Basic
+public import DomainTheory.InformationSystems.FunctionSpace.funInputUnion_empty
+public import DomainTheory.InformationSystems.FunctionSpace.funOutputUnion_empty
+
+@[expose] public section

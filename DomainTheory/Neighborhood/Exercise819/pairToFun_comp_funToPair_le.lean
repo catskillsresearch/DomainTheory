@@ -5,14 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise817
-import DomainTheory.Neighborhood.Proposition810b
-import DomainTheory.Neighborhood.Exercise326Sum
-import DomainTheory.Neighborhood.Exercise315
-import DomainTheory.Neighborhood.Exercise819.Basic
-import DomainTheory.Neighborhood.Exercise819.TD_trichotomy
-import DomainTheory.Neighborhood.Exercise819.toApproxMap_pairToFun
-import DomainTheory.Neighborhood.Exercise819.toElementMap_funToPair
+module
+
+public import DomainTheory.Neighborhood.Exercise817
+public import DomainTheory.Neighborhood.Proposition810b
+public import DomainTheory.Neighborhood.Exercise326Sum
+public import DomainTheory.Neighborhood.Exercise315
+public import DomainTheory.Neighborhood.Exercise819.Basic
+public import DomainTheory.Neighborhood.Exercise819.TD_trichotomy
+public import DomainTheory.Neighborhood.Exercise819.toApproxMap_pairToFun
+public import DomainTheory.Neighborhood.Exercise819.toElementMap_funToPair
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

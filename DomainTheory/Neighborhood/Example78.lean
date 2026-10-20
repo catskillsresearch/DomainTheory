@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example78.Basic
-import DomainTheory.Neighborhood.Example78.PN_consistent
-import DomainTheory.Neighborhood.Example78.PN_isEffectivelyGiven
+module
+
+public import DomainTheory.Neighborhood.Example78.Basic
+public import DomainTheory.Neighborhood.Example78.PN_consistent
+public import DomainTheory.Neighborhood.Example78.PN_isEffectivelyGiven
+
+@[expose] public section

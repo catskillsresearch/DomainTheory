@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition710
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.FunctionSpace
-import DomainTheory.Neighborhood.Exercise719.Basic
-import DomainTheory.Neighborhood.Exercise719.exists_stepFun_forall_PFmap_rel
+module
+
+public import DomainTheory.Neighborhood.Proposition710
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.Neighborhood.Exercise719.Basic
+public import DomainTheory.Neighborhood.Exercise719.exists_stepFun_forall_PFmap_rel
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

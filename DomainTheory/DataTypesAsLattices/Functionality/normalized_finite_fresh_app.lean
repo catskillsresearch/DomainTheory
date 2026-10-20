@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.funOf_e_union_fresh
-import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_app
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.funOf_e_union_fresh
+public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_app
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

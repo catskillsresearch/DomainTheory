@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid36.Basic
-import DomainTheory.InformationSystems.Factoid36.closure_le_of_entSet
-import DomainTheory.InformationSystems.Factoid36.closure_le_of_subset
-import DomainTheory.InformationSystems.Factoid36.closure_le_element
-import DomainTheory.InformationSystems.Factoid36.mem_element_iff_mem_closure
-import DomainTheory.InformationSystems.Factoid36.element_eq_approxUnion
-import DomainTheory.InformationSystems.Factoid36.closures_directed
+module
+
+public import DomainTheory.InformationSystems.Factoid36.Basic
+public import DomainTheory.InformationSystems.Factoid36.closure_le_of_entSet
+public import DomainTheory.InformationSystems.Factoid36.closure_le_of_subset
+public import DomainTheory.InformationSystems.Factoid36.closure_le_element
+public import DomainTheory.InformationSystems.Factoid36.mem_element_iff_mem_closure
+public import DomainTheory.InformationSystems.Factoid36.element_eq_approxUnion
+public import DomainTheory.InformationSystems.Factoid36.closures_directed
+
+@[expose] public section

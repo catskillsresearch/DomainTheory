@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise119.Basic
-import DomainTheory.Neighborhood.Exercise119.positiveExample_isPositive
-import DomainTheory.Neighborhood.Exercise119.a_inter_b
-import DomainTheory.Neighborhood.Exercise119.one_not_mem
-import DomainTheory.Neighborhood.Exercise119.not_isPositive
+module
+
+public import DomainTheory.Neighborhood.Exercise119.Basic
+public import DomainTheory.Neighborhood.Exercise119.positiveExample_isPositive
+public import DomainTheory.Neighborhood.Exercise119.a_inter_b
+public import DomainTheory.Neighborhood.Exercise119.one_not_mem
+public import DomainTheory.Neighborhood.Exercise119.not_isPositive
+
+@[expose] public section

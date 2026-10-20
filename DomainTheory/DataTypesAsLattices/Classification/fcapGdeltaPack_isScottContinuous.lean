@@ -5,9 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import Mathlib.Data.Set.Finite.Powerset
-import DomainTheory.DataTypesAsLattices.Classification.Basic
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import Mathlib.Data.Set.Finite.Powerset
+import all Mathlib.Data.Set.Finite.Powerset
+public import DomainTheory.DataTypesAsLattices.Classification.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

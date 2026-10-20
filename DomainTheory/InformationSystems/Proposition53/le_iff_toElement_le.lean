@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Approximable
-import DomainTheory.InformationSystems.Proposition53.Basic
-import DomainTheory.InformationSystems.Proposition53.rel_iff_closure_le
+module
+
+public import DomainTheory.InformationSystems.Approximable
+public import DomainTheory.InformationSystems.Proposition53.Basic
+public import DomainTheory.InformationSystems.Proposition53.rel_iff_closure_le
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems

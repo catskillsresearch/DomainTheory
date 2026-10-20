@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Product
-import DomainTheory.InformationSystems.Proposition53
-import DomainTheory.InformationSystems.Proposition55
-import DomainTheory.InformationSystems.Proposition62.Basic
-import DomainTheory.InformationSystems.Proposition62.element_eq_of_fst_snd
-import DomainTheory.InformationSystems.Proposition62.comp_fstMap_pairMap
-import DomainTheory.InformationSystems.Proposition62.comp_sndMap_pairMap
+module
+
+public import DomainTheory.InformationSystems.Product
+public import DomainTheory.InformationSystems.Proposition53
+public import DomainTheory.InformationSystems.Proposition55
+public import DomainTheory.InformationSystems.Proposition62.Basic
+public import DomainTheory.InformationSystems.Proposition62.element_eq_of_fst_snd
+public import DomainTheory.InformationSystems.Proposition62.comp_fstMap_pairMap
+public import DomainTheory.InformationSystems.Proposition62.comp_sndMap_pairMap
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems

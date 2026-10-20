@@ -5,12 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Data.Multiset.MapFold
-import DomainTheory.InformationSystems.FunctionSpace
-import DomainTheory.InformationSystems.Theorem72
-import DomainTheory.InformationSystems.Factoid25
-import DomainTheory.InformationSystems.Factoid33
-import DomainTheory.InformationSystems.Factoid35
+module
+
+public import Mathlib.Data.Multiset.MapFold
+import all Mathlib.Data.Multiset.MapFold
+public import DomainTheory.InformationSystems.FunctionSpace
+public import DomainTheory.InformationSystems.Theorem72
+public import DomainTheory.InformationSystems.Factoid25
+public import DomainTheory.InformationSystems.Factoid33
+public import DomainTheory.InformationSystems.Factoid35
+
+@[expose] public section
 
 /-!
 # Factoid 7.5 — strict mappings, `strictify`, BOOL, and the conditional

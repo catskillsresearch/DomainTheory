@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem41
-import DomainTheory.Neighborhood.ApproximableExercises
+module
+
+public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.Neighborhood.ApproximableExercises
+
+@[expose] public section
 
 /-!
 # Exercise 4.7 (Scott 1981, PRG-19, Lecture IV)

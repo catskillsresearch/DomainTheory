@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem74
-import DomainTheory.Neighborhood.Exercise510
-import DomainTheory.Neighborhood.Exercise316
+module
+
+public import DomainTheory.Neighborhood.Theorem74
+public import DomainTheory.Neighborhood.Exercise510
+public import DomainTheory.Neighborhood.Exercise316
+
+@[expose] public section
 
 /-!
 # Exercise 7.15 (Scott 1981, PRG-19, §7) — effective givenness of `⊗`, `⊕`, `D^∞`

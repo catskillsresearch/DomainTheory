@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem75
-import DomainTheory.Neighborhood.Table55
+module
+
+public import DomainTheory.Neighborhood.Theorem75
+public import DomainTheory.Neighborhood.Table55
+
+@[expose] public section
 
 /-!
 # Exercise 7.16 (Scott 1981, PRG-19, §7) — `curry` as a neighbourhood relation

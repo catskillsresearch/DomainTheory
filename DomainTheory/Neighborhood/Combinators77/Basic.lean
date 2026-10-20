@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition77
+module
+
+public import DomainTheory.Neighborhood.Proposition77
+
+@[expose] public section
 
 /-!
 # Proposition 7.7 — Milestone 4: the Example 6.1 combinators are computable

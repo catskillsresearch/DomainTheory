@@ -5,15 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.Halting
-import DomainTheory.DataTypesAsLattices.Computability
-import DomainTheory.DataTypesAsLattices.Functionality
-import DomainTheory.DataTypesAsLattices.Enumeration.Basic
-import DomainTheory.DataTypesAsLattices.Enumeration.primrec_secondRecV
-import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_3_i
-import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_3_ii
-import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_3_from_v
-import DomainTheory.DataTypesAsLattices.Enumeration.primrec_recNat
+module
+
+public import Mathlib.Computability.Halting
+import all Mathlib.Computability.Halting
+public import DomainTheory.DataTypesAsLattices.Computability
+public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_secondRecV
+public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_3_i
+public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_3_ii
+public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_3_from_v
+public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_recNat
+
+@[expose] public section
 
 
 set_option maxHeartbeats 2000000

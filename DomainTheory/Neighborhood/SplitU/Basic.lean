@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.UComputablePresentation
+module
+
+public import DomainTheory.Neighborhood.UComputablePresentation
+
+@[expose] public section
 
 /-!
 # Theorem 8.8(b), Part 4 — an explicit, deterministic `splitU`

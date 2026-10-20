@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88a
-import DomainTheory.Neighborhood.Definition71
+module
+
+public import DomainTheory.Neighborhood.Theorem88a
+public import DomainTheory.Neighborhood.Definition71
+
+@[expose] public section
 
 /-!
 # Theorem 8.8(b), Part 5 — decidable `D`-side atom emptiness

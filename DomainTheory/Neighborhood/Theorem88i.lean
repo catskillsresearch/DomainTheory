@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88i.Basic
-import DomainTheory.Neighborhood.Theorem88i.myFold_cons
-import DomainTheory.Neighborhood.Theorem88i.diagFixed_masterIdx
-import DomainTheory.Neighborhood.Theorem88i.myStep_diagFixed_of_diagFixed
-import DomainTheory.Neighborhood.Theorem88i.myFold_diagFixed_of_diagFixed
-import DomainTheory.Neighborhood.Theorem88i.myFold_diagFixed
-import DomainTheory.Neighborhood.Theorem88i.myFoldCode_eq
-import DomainTheory.Neighborhood.Theorem88i.primrec_myStepCode
-import DomainTheory.Neighborhood.Theorem88i.primrec_myFoldCode
-import DomainTheory.Neighborhood.Theorem88i.diagFixed_myFoldCode
+module
+
+public import DomainTheory.Neighborhood.Theorem88i.Basic
+public import DomainTheory.Neighborhood.Theorem88i.myFold_cons
+public import DomainTheory.Neighborhood.Theorem88i.diagFixed_masterIdx
+public import DomainTheory.Neighborhood.Theorem88i.myStep_diagFixed_of_diagFixed
+public import DomainTheory.Neighborhood.Theorem88i.myFold_diagFixed_of_diagFixed
+public import DomainTheory.Neighborhood.Theorem88i.myFold_diagFixed
+public import DomainTheory.Neighborhood.Theorem88i.myFoldCode_eq
+public import DomainTheory.Neighborhood.Theorem88i.primrec_myStepCode
+public import DomainTheory.Neighborhood.Theorem88i.primrec_myFoldCode
+public import DomainTheory.Neighborhood.Theorem88i.diagFixed_myFoldCode
+
+@[expose] public section

@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.sumMed_app_inl
-import DomainTheory.DataTypesAsLattices.Functionality.sumMed_app_inr
-import DomainTheory.DataTypesAsLattices.Functionality.sumMed_isGraph
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.sumMed_app_inl
+public import DomainTheory.DataTypesAsLattices.Functionality.sumMed_app_inr
+public import DomainTheory.DataTypesAsLattices.Functionality.sumMed_isGraph
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

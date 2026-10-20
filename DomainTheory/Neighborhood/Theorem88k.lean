@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88k.Basic
-import DomainTheory.Neighborhood.Theorem88k.D_X_cons_iff
-import DomainTheory.Neighborhood.Theorem88k.D_X_interEq_computable
-import DomainTheory.Neighborhood.Theorem88k.D_X_cons_computable
+module
+
+public import DomainTheory.Neighborhood.Theorem88k.Basic
+public import DomainTheory.Neighborhood.Theorem88k.D_X_cons_iff
+public import DomainTheory.Neighborhood.Theorem88k.D_X_interEq_computable
+public import DomainTheory.Neighborhood.Theorem88k.D_X_cons_computable
+
+@[expose] public section

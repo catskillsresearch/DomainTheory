@@ -5,10 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.MyhillNerode
-import DomainTheory.Neighborhood.Example62Regular.Basic
-import DomainTheory.Neighborhood.Example62Regular.treeLang_select
-import DomainTheory.Neighborhood.Example62Regular.treeLang_injective
+module
+
+public import Mathlib.Computability.MyhillNerode
+import all Mathlib.Computability.MyhillNerode
+public import DomainTheory.Neighborhood.Example62Regular.Basic
+public import DomainTheory.Neighborhood.Example62Regular.treeLang_select
+public import DomainTheory.Neighborhood.Example62Regular.treeLang_injective
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

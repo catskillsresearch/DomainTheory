@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise414.Basic
-import DomainTheory.Neighborhood.Exercise414.subset_gfpSet
-import DomainTheory.Neighborhood.Exercise414.gfpSet_subset_f
-import DomainTheory.Neighborhood.Exercise414.gfpSet_isFixed
-import DomainTheory.Neighborhood.Exercise414.gfpSet_greatest
-import DomainTheory.Neighborhood.Exercise414.lfpSet_subset
-import DomainTheory.Neighborhood.Exercise414.f_subset_lfpSet
-import DomainTheory.Neighborhood.Exercise414.lfpSet_isFixed
-import DomainTheory.Neighborhood.Exercise414.lfpSet_least
+module
+
+public import DomainTheory.Neighborhood.Exercise414.Basic
+public import DomainTheory.Neighborhood.Exercise414.subset_gfpSet
+public import DomainTheory.Neighborhood.Exercise414.gfpSet_subset_f
+public import DomainTheory.Neighborhood.Exercise414.gfpSet_isFixed
+public import DomainTheory.Neighborhood.Exercise414.gfpSet_greatest
+public import DomainTheory.Neighborhood.Exercise414.lfpSet_subset
+public import DomainTheory.Neighborhood.Exercise414.f_subset_lfpSet
+public import DomainTheory.Neighborhood.Exercise414.lfpSet_isFixed
+public import DomainTheory.Neighborhood.Exercise414.lfpSet_least
+
+@[expose] public section

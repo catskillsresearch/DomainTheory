@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise222
-import DomainTheory.Neighborhood.FunctionSpace
+module
+
+public import DomainTheory.Neighborhood.Exercise222
+public import DomainTheory.Neighborhood.FunctionSpace
+
+@[expose] public section
 
 /-!
 # Exercise 3.27 (Scott 1981, PRG-19, §3) — `(𝒟₀ → 𝒟₁)` is a domain, via Exercise 2.22

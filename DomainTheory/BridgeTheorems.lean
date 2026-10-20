@@ -5,17 +5,21 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.Specialization
-import DomainTheory.Neighborhood.Basic
-import DomainTheory.InformationSystems.InfoSys
-import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys
-import DomainTheory.BridgeTheorems.InfoSysToNeighborhood
-import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
-import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion
-import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
-import DomainTheory.BridgeTheorems.PresentationDomains
-import DomainTheory.BridgeTheorems.InfoSysConstructions
-import DomainTheory.BridgeTheorems.ScottMapBridge
-import DomainTheory.BridgeTheorems.SexDomainEquation
-import DomainTheory.BridgeTheorems.WorkedExampleSExpr
-import DomainTheory.BridgeTheorems.Equivalence
+module
+
+public import DomainTheory.ContinuousLattice.Specialization
+public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.InformationSystems.InfoSys
+public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys
+public import DomainTheory.BridgeTheorems.InfoSysToNeighborhood
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion
+public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
+public import DomainTheory.BridgeTheorems.PresentationDomains
+public import DomainTheory.BridgeTheorems.InfoSysConstructions
+public import DomainTheory.BridgeTheorems.ScottMapBridge
+public import DomainTheory.BridgeTheorems.SexDomainEquation
+public import DomainTheory.BridgeTheorems.WorkedExampleSExpr
+public import DomainTheory.BridgeTheorems.Equivalence
+
+@[expose] public section

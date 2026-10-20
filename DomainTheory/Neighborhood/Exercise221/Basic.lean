@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.ApproximableExercises
-import DomainTheory.Neighborhood.ExampleB
+module
+
+public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.Neighborhood.ExampleB
+
+@[expose] public section
 
 /-!
 # Exercise 2.21 (Scott 1981, PRG-19) — the system `𝒞`, total finite sequences, juxtaposition

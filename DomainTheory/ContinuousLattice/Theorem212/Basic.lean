@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.Constructions
-import DomainTheory.ContinuousLattice.FunctionSpaces
+module
+
+public import DomainTheory.ContinuousLattice.Constructions
+public import DomainTheory.ContinuousLattice.FunctionSpaces
+
+@[expose] public section
 
 /-!
 # Theorem 2.12: injective spaces are exactly the continuous lattices

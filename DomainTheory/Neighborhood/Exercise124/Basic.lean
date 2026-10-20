@@ -5,9 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Order.Zorn
-import Mathlib.Tactic
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Order.Zorn
+import all Mathlib.Order.Zorn
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Exercise 1.24 (Scott 1981, PRG-19, §1) — every partial element extends to a total one (AC)

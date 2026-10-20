@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88i
+module
+
+public import DomainTheory.Neighborhood.Theorem88i
+
+@[expose] public section
 
 /-!
 # Theorem 8.8(c), Part 3 of 6 — the induced enumeration covers `fixedNbhd a`

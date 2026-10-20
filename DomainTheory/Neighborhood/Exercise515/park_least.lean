@@ -5,14 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise414
-import Mathlib.Algebra.Group.Pointwise.Set.Basic
-import Mathlib.Algebra.FreeMonoid.Basic
-import DomainTheory.Neighborhood.Exercise515.Basic
-import DomainTheory.Neighborhood.Exercise515.smul_assoc
-import DomainTheory.Neighborhood.Exercise515.sunion_mul
-import DomainTheory.Neighborhood.Exercise515.smul_union
-import DomainTheory.Neighborhood.Exercise515.arden
+module
+
+public import DomainTheory.Neighborhood.Exercise414
+public import Mathlib.Algebra.Group.Pointwise.Set.Basic
+import all Mathlib.Algebra.Group.Pointwise.Set.Basic
+public import Mathlib.Algebra.FreeMonoid.Basic
+import all Mathlib.Algebra.FreeMonoid.Basic
+public import DomainTheory.Neighborhood.Exercise515.Basic
+public import DomainTheory.Neighborhood.Exercise515.smul_assoc
+public import DomainTheory.Neighborhood.Exercise515.sunion_mul
+public import DomainTheory.Neighborhood.Exercise515.smul_union
+public import DomainTheory.Neighborhood.Exercise515.arden
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.Exercise515

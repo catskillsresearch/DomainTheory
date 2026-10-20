@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise812f.Basic
-import DomainTheory.Neighborhood.Exercise812f.hySplit812f
+module
+
+public import DomainTheory.Neighborhood.Exercise812f.Basic
+public import DomainTheory.Neighborhood.Exercise812f.hySplit812f
+
+@[expose] public section

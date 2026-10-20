@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise825Congr
-import DomainTheory.Neighborhood.Exercise315
+module
+
+public import DomainTheory.Neighborhood.Exercise825Congr
+public import DomainTheory.Neighborhood.Exercise315
+
+@[expose] public section
 
 /-!
 # Exercise 8.25 (Scott 1981, PRG-19, §8), toolkit — the abstract closing argument

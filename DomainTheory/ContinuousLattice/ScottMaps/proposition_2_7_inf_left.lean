@@ -5,12 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.Specialization
-import Mathlib.Order.ScottContinuity
-import Mathlib.Topology.Order.ScottTopology
-import DomainTheory.ContinuousLattice.ScottMaps.Basic
-import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
-import DomainTheory.ContinuousLattice.ScottMaps.meet_preservesDirectedSup
+module
+
+public import DomainTheory.ContinuousLattice.Specialization
+public import Mathlib.Order.ScottContinuity
+import all Mathlib.Order.ScottContinuity
+public import Mathlib.Topology.Order.ScottTopology
+import all Mathlib.Topology.Order.ScottTopology
+public import DomainTheory.ContinuousLattice.ScottMaps.Basic
+public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
+public import DomainTheory.ContinuousLattice.ScottMaps.meet_preservesDirectedSup
+
+@[expose] public section
 
 
 namespace DomainTheory.ContinuousLattice

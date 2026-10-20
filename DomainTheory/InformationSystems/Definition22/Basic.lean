@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.InfoSys
+module
+
+public import DomainTheory.InformationSystems.InfoSys
+
+@[expose] public section
 
 /-!
 # Definition 2.2 — set-level entailment

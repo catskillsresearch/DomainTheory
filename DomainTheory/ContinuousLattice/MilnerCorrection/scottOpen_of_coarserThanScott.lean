@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.Specialization
-import DomainTheory.ContinuousLattice.MilnerCorrection.Basic
+module
+
+public import DomainTheory.ContinuousLattice.Specialization
+public import DomainTheory.ContinuousLattice.MilnerCorrection.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.ContinuousLattice

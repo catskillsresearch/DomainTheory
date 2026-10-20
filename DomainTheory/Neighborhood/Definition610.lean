@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition610.Basic
-import DomainTheory.Neighborhood.Definition610.refl
-import DomainTheory.Neighborhood.Definition610.trans
-import DomainTheory.Neighborhood.Definition610._root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext
-import DomainTheory.Neighborhood.Definition610.antisymm
-import DomainTheory.Neighborhood.Definition610.subsystem_iff_subset_of_common
+module
+
+public import DomainTheory.Neighborhood.Definition610.Basic
+public import DomainTheory.Neighborhood.Definition610.refl
+public import DomainTheory.Neighborhood.Definition610.trans
+public import DomainTheory.Neighborhood.Definition610._root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext
+public import DomainTheory.Neighborhood.Definition610.antisymm
+public import DomainTheory.Neighborhood.Definition610.subsystem_iff_subset_of_common
+
+@[expose] public section

@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Constructive.Basic
-import DomainTheory.InformationSystems.Constructive.coe_funion
-import DomainTheory.InformationSystems.Constructive.subset_funion_left
-import DomainTheory.InformationSystems.Constructive.subset_funion_right
-import DomainTheory.InformationSystems.Constructive.funion_subset_iff
+module
+
+public import DomainTheory.InformationSystems.Constructive.Basic
+public import DomainTheory.InformationSystems.Constructive.coe_funion
+public import DomainTheory.InformationSystems.Constructive.subset_funion_left
+public import DomainTheory.InformationSystems.Constructive.subset_funion_right
+public import DomainTheory.InformationSystems.Constructive.funion_subset_iff
+
+@[expose] public section

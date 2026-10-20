@@ -5,22 +5,27 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.Halting
-import DomainTheory.DataTypesAsLattices.Computability
-import DomainTheory.DataTypesAsLattices.Functionality
-import DomainTheory.DataTypesAsLattices.Enumeration.Basic
-import DomainTheory.DataTypesAsLattices.Enumeration.seq2Term_interp
-import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed_avoids8
-import DomainTheory.DataTypesAsLattices.Enumeration.predClosed_avoids8
-import DomainTheory.DataTypesAsLattices.Enumeration.condClosed_avoids8
-import DomainTheory.DataTypesAsLattices.Enumeration.kClosed_avoids8
-import DomainTheory.DataTypesAsLattices.Enumeration.sClosed_avoids8
-import DomainTheory.DataTypesAsLattices.Enumeration.seq2Term_avoids8
-import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed_interp
-import DomainTheory.DataTypesAsLattices.Enumeration.predClosed_interp
-import DomainTheory.DataTypesAsLattices.Enumeration.condClosed_interp
-import DomainTheory.DataTypesAsLattices.Enumeration.kClosed_interp
-import DomainTheory.DataTypesAsLattices.Enumeration.sClosed_interp
+module
+
+public import Mathlib.Computability.Halting
+import all Mathlib.Computability.Halting
+public import DomainTheory.DataTypesAsLattices.Computability
+public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+public import DomainTheory.DataTypesAsLattices.Enumeration.seq2Term_interp
+public import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed_avoids8
+public import DomainTheory.DataTypesAsLattices.Enumeration.predClosed_avoids8
+public import DomainTheory.DataTypesAsLattices.Enumeration.condClosed_avoids8
+public import DomainTheory.DataTypesAsLattices.Enumeration.kClosed_avoids8
+public import DomainTheory.DataTypesAsLattices.Enumeration.sClosed_avoids8
+public import DomainTheory.DataTypesAsLattices.Enumeration.seq2Term_avoids8
+public import DomainTheory.DataTypesAsLattices.Enumeration.sucClosed_interp
+public import DomainTheory.DataTypesAsLattices.Enumeration.predClosed_interp
+public import DomainTheory.DataTypesAsLattices.Enumeration.condClosed_interp
+public import DomainTheory.DataTypesAsLattices.Enumeration.kClosed_interp
+public import DomainTheory.DataTypesAsLattices.Enumeration.sClosed_interp
+
+@[expose] public section
 
 
 set_option maxHeartbeats 2000000

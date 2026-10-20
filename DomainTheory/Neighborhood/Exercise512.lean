@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise512.Basic
-import DomainTheory.Neighborhood.Exercise512.bodyMap_apply
-import DomainTheory.Neighborhood.Exercise512.Wop_apply
-import DomainTheory.Neighborhood.Exercise512.whileMap_rec
-import DomainTheory.Neighborhood.Exercise512.whileMap_true
-import DomainTheory.Neighborhood.Exercise512.whileMap_false
-import DomainTheory.Neighborhood.Exercise512.whileMap_bot
-import DomainTheory.Neighborhood.Exercise512.whileMap_least
+module
+
+public import DomainTheory.Neighborhood.Exercise512.Basic
+public import DomainTheory.Neighborhood.Exercise512.bodyMap_apply
+public import DomainTheory.Neighborhood.Exercise512.Wop_apply
+public import DomainTheory.Neighborhood.Exercise512.whileMap_rec
+public import DomainTheory.Neighborhood.Exercise512.whileMap_true
+public import DomainTheory.Neighborhood.Exercise512.whileMap_false
+public import DomainTheory.Neighborhood.Exercise512.whileMap_bot
+public import DomainTheory.Neighborhood.Exercise512.whileMap_least
+
+@[expose] public section

@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example23
-import DomainTheory.Neighborhood.Theorem41
+module
+
+public import DomainTheory.Neighborhood.Example23
+public import DomainTheory.Neighborhood.Theorem41
+
+@[expose] public section
 
 /-!
 # Example 4.4 (Scott 1981, PRG-19, §4) — the domain `C` of binary sequences

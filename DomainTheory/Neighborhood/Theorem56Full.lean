@@ -5,60 +5,64 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem56Full.Basic
-import DomainTheory.Neighborhood.Theorem56Full.T_bot_eq
-import DomainTheory.Neighborhood.Theorem56Full.eq_of_component_eq
-import DomainTheory.Neighborhood.Theorem56Full.argElem_argLike
-import DomainTheory.Neighborhood.Theorem56Full.component_push_zero
-import DomainTheory.Neighborhood.Theorem56Full.component_push_succ
-import DomainTheory.Neighborhood.Theorem56Full.guard1_apply
-import DomainTheory.Neighborhood.Theorem56Full.guard1_total
-import DomainTheory.Neighborhood.Theorem56Full.guard1_bot
-import DomainTheory.Neighborhood.Theorem56Full.guard1_inner_bot
-import DomainTheory.Neighborhood.Theorem56Full.strictGuardN_total
-import DomainTheory.Neighborhood.Theorem56Full.strictGuardN_strict
-import DomainTheory.Neighborhood.Theorem56Full.tupleMap_succ
-import DomainTheory.Neighborhood.Theorem56Full.component_tupleMap
-import DomainTheory.Neighborhood.Theorem56Full.component_vecElem_lt
-import DomainTheory.Neighborhood.Theorem56Full.vecElem_totals
-import DomainTheory.Neighborhood.Theorem56Full.component_argElem_none
-import DomainTheory.Neighborhood.Theorem56Full.lamDef_of_inner
-import DomainTheory.Neighborhood.Theorem56Full.lamDef_total
-import DomainTheory.Neighborhood.Theorem56Full.lamDef_zero
-import DomainTheory.Neighborhood.Theorem56Full.lamDef_succ
-import DomainTheory.Neighborhood.Theorem56Full.lamDef_get
-import DomainTheory.Neighborhood.Theorem56Full.lamDef_congr
-import DomainTheory.Neighborhood.Theorem56Full.realizer_value
-import DomainTheory.Neighborhood.Theorem56Full.component_bot
-import DomainTheory.Neighborhood.Theorem56Full.tupleMap_zero
-import DomainTheory.Neighborhood.Theorem56Full.component_tupleMap_ge
-import DomainTheory.Neighborhood.Theorem56Full.tupleMap_vecElem_eq
-import DomainTheory.Neighborhood.Theorem56Full.tupleMap_argLike
-import DomainTheory.Neighborhood.Theorem56Full.mem_mOfFn
-import DomainTheory.Neighborhood.Theorem56Full.lamDef_comp
-import DomainTheory.Neighborhood.Theorem56Full.lamDef_coe_val
-import DomainTheory.Neighborhood.Theorem56Full.lamDef_primComp
-import DomainTheory.Neighborhood.Theorem56Full.push_natElem_vecElem
-import DomainTheory.Neighborhood.Theorem56Full.precBody_apply
-import DomainTheory.Neighborhood.Theorem56Full.recMap_rec
-import DomainTheory.Neighborhood.Theorem56Full.recMap_eval
-import DomainTheory.Neighborhood.Theorem56Full.lamDef_prec
-import DomainTheory.Neighborhood.Theorem56Full.primrec_lamDef
-import DomainTheory.Neighborhood.Theorem56Full.findBody_apply
-import DomainTheory.Neighborhood.Theorem56Full.searchMap_rec
-import DomainTheory.Neighborhood.Theorem56Full.findMap_vecElem
-import DomainTheory.Neighborhood.Theorem56Full.searchMap_step_found
-import DomainTheory.Neighborhood.Theorem56Full.searchMap_step_next
-import DomainTheory.Neighborhood.Theorem56Full.searchMap_climb
-import DomainTheory.Neighborhood.Theorem56Full.toApproxMap_bot
-import DomainTheory.Neighborhood.Theorem56Full.evalAt_apply
-import DomainTheory.Neighborhood.Theorem56Full.findOp_iterElem_zero
-import DomainTheory.Neighborhood.Theorem56Full.iterVal_zero
-import DomainTheory.Neighborhood.Theorem56Full.iterVal_succ
-import DomainTheory.Neighborhood.Theorem56Full.iterVal_bot
-import DomainTheory.Neighborhood.Theorem56Full.searchMap_diverge
-import DomainTheory.Neighborhood.Theorem56Full.lamDef_rfind
-import DomainTheory.Neighborhood.Theorem56Full.partrec_lamDef
-import DomainTheory.Neighborhood.Theorem56Full.oneArg_natElem
-import DomainTheory.Neighborhood.Theorem56Full.oneArg_bot
-import DomainTheory.Neighborhood.Theorem56Full.partrec_one
+module
+
+public import DomainTheory.Neighborhood.Theorem56Full.Basic
+public import DomainTheory.Neighborhood.Theorem56Full.T_bot_eq
+public import DomainTheory.Neighborhood.Theorem56Full.eq_of_component_eq
+public import DomainTheory.Neighborhood.Theorem56Full.argElem_argLike
+public import DomainTheory.Neighborhood.Theorem56Full.component_push_zero
+public import DomainTheory.Neighborhood.Theorem56Full.component_push_succ
+public import DomainTheory.Neighborhood.Theorem56Full.guard1_apply
+public import DomainTheory.Neighborhood.Theorem56Full.guard1_total
+public import DomainTheory.Neighborhood.Theorem56Full.guard1_bot
+public import DomainTheory.Neighborhood.Theorem56Full.guard1_inner_bot
+public import DomainTheory.Neighborhood.Theorem56Full.strictGuardN_total
+public import DomainTheory.Neighborhood.Theorem56Full.strictGuardN_strict
+public import DomainTheory.Neighborhood.Theorem56Full.tupleMap_succ
+public import DomainTheory.Neighborhood.Theorem56Full.component_tupleMap
+public import DomainTheory.Neighborhood.Theorem56Full.component_vecElem_lt
+public import DomainTheory.Neighborhood.Theorem56Full.vecElem_totals
+public import DomainTheory.Neighborhood.Theorem56Full.component_argElem_none
+public import DomainTheory.Neighborhood.Theorem56Full.lamDef_of_inner
+public import DomainTheory.Neighborhood.Theorem56Full.lamDef_total
+public import DomainTheory.Neighborhood.Theorem56Full.lamDef_zero
+public import DomainTheory.Neighborhood.Theorem56Full.lamDef_succ
+public import DomainTheory.Neighborhood.Theorem56Full.lamDef_get
+public import DomainTheory.Neighborhood.Theorem56Full.lamDef_congr
+public import DomainTheory.Neighborhood.Theorem56Full.realizer_value
+public import DomainTheory.Neighborhood.Theorem56Full.component_bot
+public import DomainTheory.Neighborhood.Theorem56Full.tupleMap_zero
+public import DomainTheory.Neighborhood.Theorem56Full.component_tupleMap_ge
+public import DomainTheory.Neighborhood.Theorem56Full.tupleMap_vecElem_eq
+public import DomainTheory.Neighborhood.Theorem56Full.tupleMap_argLike
+public import DomainTheory.Neighborhood.Theorem56Full.mem_mOfFn
+public import DomainTheory.Neighborhood.Theorem56Full.lamDef_comp
+public import DomainTheory.Neighborhood.Theorem56Full.lamDef_coe_val
+public import DomainTheory.Neighborhood.Theorem56Full.lamDef_primComp
+public import DomainTheory.Neighborhood.Theorem56Full.push_natElem_vecElem
+public import DomainTheory.Neighborhood.Theorem56Full.precBody_apply
+public import DomainTheory.Neighborhood.Theorem56Full.recMap_rec
+public import DomainTheory.Neighborhood.Theorem56Full.recMap_eval
+public import DomainTheory.Neighborhood.Theorem56Full.lamDef_prec
+public import DomainTheory.Neighborhood.Theorem56Full.primrec_lamDef
+public import DomainTheory.Neighborhood.Theorem56Full.findBody_apply
+public import DomainTheory.Neighborhood.Theorem56Full.searchMap_rec
+public import DomainTheory.Neighborhood.Theorem56Full.findMap_vecElem
+public import DomainTheory.Neighborhood.Theorem56Full.searchMap_step_found
+public import DomainTheory.Neighborhood.Theorem56Full.searchMap_step_next
+public import DomainTheory.Neighborhood.Theorem56Full.searchMap_climb
+public import DomainTheory.Neighborhood.Theorem56Full.toApproxMap_bot
+public import DomainTheory.Neighborhood.Theorem56Full.evalAt_apply
+public import DomainTheory.Neighborhood.Theorem56Full.findOp_iterElem_zero
+public import DomainTheory.Neighborhood.Theorem56Full.iterVal_zero
+public import DomainTheory.Neighborhood.Theorem56Full.iterVal_succ
+public import DomainTheory.Neighborhood.Theorem56Full.iterVal_bot
+public import DomainTheory.Neighborhood.Theorem56Full.searchMap_diverge
+public import DomainTheory.Neighborhood.Theorem56Full.lamDef_rfind
+public import DomainTheory.Neighborhood.Theorem56Full.partrec_lamDef
+public import DomainTheory.Neighborhood.Theorem56Full.oneArg_natElem
+public import DomainTheory.Neighborhood.Theorem56Full.oneArg_bot
+public import DomainTheory.Neighborhood.Theorem56Full.partrec_one
+
+@[expose] public section

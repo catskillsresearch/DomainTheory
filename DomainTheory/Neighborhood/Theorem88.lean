@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88.Basic
-import DomainTheory.Neighborhood.Theorem88.splitChoice_isSplitSpec
+module
+
+public import DomainTheory.Neighborhood.Theorem88.Basic
+public import DomainTheory.Neighborhood.Theorem88.splitChoice_isSplitSpec
+
+@[expose] public section

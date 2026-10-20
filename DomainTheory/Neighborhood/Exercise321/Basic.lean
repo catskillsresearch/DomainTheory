@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.FunctionSpace
+module
+
+public import DomainTheory.Neighborhood.FunctionSpace
+
+@[expose] public section
 
 /-!
 # Exercise 3.21 (Scott 1981, PRG-19, §3) — when does `[Y, Z]` determine `Y` and `Z`?

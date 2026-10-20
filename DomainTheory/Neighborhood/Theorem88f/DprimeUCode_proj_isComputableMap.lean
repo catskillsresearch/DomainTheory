@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88e
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.Proposition612
-import DomainTheory.Neighborhood.Theorem88f.Basic
+module
+
+public import DomainTheory.Neighborhood.Theorem88e
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.Proposition612
+public import DomainTheory.Neighborhood.Theorem88f.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

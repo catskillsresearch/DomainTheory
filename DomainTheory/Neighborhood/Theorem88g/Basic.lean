@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88f
+module
+
+public import DomainTheory.Neighborhood.Theorem88f
+
+@[expose] public section
 
 /-!
 # Theorem 8.8(b)(viii) — final assembly

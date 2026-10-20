@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid32.Basic
-import DomainTheory.InformationSystems.Factoid32.factoid_3_2
+module
+
+public import DomainTheory.InformationSystems.Factoid32.Basic
+public import DomainTheory.InformationSystems.Factoid32.factoid_3_2
+
+@[expose] public section

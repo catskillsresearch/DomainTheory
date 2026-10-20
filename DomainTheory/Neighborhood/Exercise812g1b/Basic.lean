@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.LevelSetPrimrec
+module
+
+public import DomainTheory.Neighborhood.LevelSetPrimrec
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(g)(1)(b) — the `V`-side small assembly prerequisites

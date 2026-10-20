@@ -5,14 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.singletonE_mem
-import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
-import DomainTheory.DataTypesAsLattices.Functionality.graph_funOf_ext
-import DomainTheory.DataTypesAsLattices.Functionality.Kcomb_app2
-import DomainTheory.DataTypesAsLattices.Functionality.Kcomb_isGraph
-import DomainTheory.DataTypesAsLattices.Functionality.Kcomb_app_isGraph
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.singletonE_mem
+public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
+public import DomainTheory.DataTypesAsLattices.Functionality.graph_funOf_ext
+public import DomainTheory.DataTypesAsLattices.Functionality.Kcomb_app2
+public import DomainTheory.DataTypesAsLattices.Functionality.Kcomb_isGraph
+public import DomainTheory.DataTypesAsLattices.Functionality.Kcomb_app_isGraph
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

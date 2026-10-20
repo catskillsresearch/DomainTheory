@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Combinators77.Basic
-import DomainTheory.Neighborhood.Combinators77.inSharpMap_toElementMap
-import DomainTheory.Neighborhood.Combinators77.inSharp_isComputable
-import DomainTheory.Neighborhood.Combinators77.proj0_toElementMap_pairSharp
-import DomainTheory.Neighborhood.Combinators77.proj0_rel_Vsharp_iff
-import DomainTheory.Neighborhood.Combinators77.proj0_isComputable
+module
+
+public import DomainTheory.Neighborhood.Combinators77.Basic
+public import DomainTheory.Neighborhood.Combinators77.inSharpMap_toElementMap
+public import DomainTheory.Neighborhood.Combinators77.inSharp_isComputable
+public import DomainTheory.Neighborhood.Combinators77.proj0_toElementMap_pairSharp
+public import DomainTheory.Neighborhood.Combinators77.proj0_rel_Vsharp_iff
+public import DomainTheory.Neighborhood.Combinators77.proj0_isComputable
+
+@[expose] public section

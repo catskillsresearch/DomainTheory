@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise316
-import Mathlib.Logic.Equiv.Nat
+module
+
+public import DomainTheory.Neighborhood.Exercise316
+public import Mathlib.Logic.Equiv.Nat
+import all Mathlib.Logic.Equiv.Nat
+
+@[expose] public section
 
 /-!
 # Exercise 8.25 (Scott 1981, PRG-19, §8), step 2 — `𝒰^∞ × 𝒰^∞ ≅ 𝒰^∞`

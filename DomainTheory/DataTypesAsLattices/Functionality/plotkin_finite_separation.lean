@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_app
-import DomainTheory.DataTypesAsLattices.Functionality.Z_finite_no_tag
-import DomainTheory.DataTypesAsLattices.Functionality.funOf_e_union_fresh
-import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_union_fresh
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_app
+public import DomainTheory.DataTypesAsLattices.Functionality.Z_finite_no_tag
+public import DomainTheory.DataTypesAsLattices.Functionality.funOf_e_union_fresh
+public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_union_fresh
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

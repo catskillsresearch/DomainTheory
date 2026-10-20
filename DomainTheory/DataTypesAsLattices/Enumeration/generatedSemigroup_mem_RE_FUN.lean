@@ -5,18 +5,23 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.Halting
-import DomainTheory.DataTypesAsLattices.Computability
-import DomainTheory.DataTypesAsLattices.Functionality
-import DomainTheory.DataTypesAsLattices.Enumeration.Basic
-import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb_combinatory
-import DomainTheory.DataTypesAsLattices.Enumeration.Lcomb_combinatory
-import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb_mem_FUN
-import DomainTheory.DataTypesAsLattices.Enumeration.Lcomb_mem_FUN
-import DomainTheory.DataTypesAsLattices.Enumeration.Gbar_combinatory
-import DomainTheory.DataTypesAsLattices.Enumeration.Gbar_mem_FUN
-import DomainTheory.DataTypesAsLattices.Enumeration.enumComp_combinatory
-import DomainTheory.DataTypesAsLattices.Enumeration.enumComp_mem_FUN
+module
+
+public import Mathlib.Computability.Halting
+import all Mathlib.Computability.Halting
+public import DomainTheory.DataTypesAsLattices.Computability
+public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb_combinatory
+public import DomainTheory.DataTypesAsLattices.Enumeration.Lcomb_combinatory
+public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb_mem_FUN
+public import DomainTheory.DataTypesAsLattices.Enumeration.Lcomb_mem_FUN
+public import DomainTheory.DataTypesAsLattices.Enumeration.Gbar_combinatory
+public import DomainTheory.DataTypesAsLattices.Enumeration.Gbar_mem_FUN
+public import DomainTheory.DataTypesAsLattices.Enumeration.enumComp_combinatory
+public import DomainTheory.DataTypesAsLattices.Enumeration.enumComp_mem_FUN
+
+@[expose] public section
 
 
 set_option maxHeartbeats 2000000

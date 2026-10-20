@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid43.Basic
-import DomainTheory.InformationSystems.Factoid43.subset_deductiveClosure
-import DomainTheory.InformationSystems.Factoid43.le_familySup
-import DomainTheory.InformationSystems.Factoid43.familySup_le
-import DomainTheory.InformationSystems.Factoid43.finitelyConsistent_of_upperBound
-import DomainTheory.InformationSystems.Factoid43.exists_isLUB_iff
-import DomainTheory.InformationSystems.Factoid43.le_join_left
-import DomainTheory.InformationSystems.Factoid43.le_join_right
-import DomainTheory.InformationSystems.Factoid43.join_le
-import DomainTheory.InformationSystems.Factoid43.exists_join_iff
+module
+
+public import DomainTheory.InformationSystems.Factoid43.Basic
+public import DomainTheory.InformationSystems.Factoid43.subset_deductiveClosure
+public import DomainTheory.InformationSystems.Factoid43.le_familySup
+public import DomainTheory.InformationSystems.Factoid43.familySup_le
+public import DomainTheory.InformationSystems.Factoid43.finitelyConsistent_of_upperBound
+public import DomainTheory.InformationSystems.Factoid43.exists_isLUB_iff
+public import DomainTheory.InformationSystems.Factoid43.le_join_left
+public import DomainTheory.InformationSystems.Factoid43.le_join_right
+public import DomainTheory.InformationSystems.Factoid43.join_le
+public import DomainTheory.InformationSystems.Factoid43.exists_join_iff
+
+@[expose] public section

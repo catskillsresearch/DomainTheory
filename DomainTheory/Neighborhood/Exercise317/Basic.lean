@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example23
-import DomainTheory.Neighborhood.Exercise316
-import DomainTheory.Neighborhood.FunctionSpace
+module
+
+public import DomainTheory.Neighborhood.Example23
+public import DomainTheory.Neighborhood.Exercise316
+public import DomainTheory.Neighborhood.FunctionSpace
+
+@[expose] public section
 
 /-!
 # Exercise 3.17 (Scott 1981, PRG-19, §3) — `B` is a retract of `T^∞`

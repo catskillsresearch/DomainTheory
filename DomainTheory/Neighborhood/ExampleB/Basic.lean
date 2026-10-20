@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Data.List.Infix
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Data.List.Infix
+import all Mathlib.Data.List.Infix
+
+@[expose] public section
 
 /-!
 # Example 1.B (Scott 1981, PRG-19, §1) — binary sequences

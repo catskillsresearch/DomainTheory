@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise814.Basic
-import DomainTheory.Neighborhood.Exercise814.isFinitary_of_isClosureOperator
-import DomainTheory.Neighborhood.Exercise814.isCompactFix_iff
+module
+
+public import DomainTheory.Neighborhood.Exercise814.Basic
+public import DomainTheory.Neighborhood.Exercise814.isFinitary_of_isClosureOperator
+public import DomainTheory.Neighborhood.Exercise814.isCompactFix_iff
+
+@[expose] public section

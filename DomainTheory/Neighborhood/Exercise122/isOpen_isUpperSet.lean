@@ -5,9 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Topology.Inseparable
-import DomainTheory.Neighborhood.Exercise122.Basic
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Topology.Inseparable
+import all Mathlib.Topology.Inseparable
+public import DomainTheory.Neighborhood.Exercise122.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

@@ -5,10 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.CompleteLattice.Basic
-import Mathlib.Order.UpperLower.Basic
-import Mathlib.Order.Directed
-import DomainTheory.ContinuousLattice.WayBelow.Basic
+module
+
+public import Mathlib.Order.CompleteLattice.Basic
+import all Mathlib.Order.CompleteLattice.Basic
+public import Mathlib.Order.UpperLower.Basic
+import all Mathlib.Order.UpperLower.Basic
+public import Mathlib.Order.Directed
+import all Mathlib.Order.Directed
+public import DomainTheory.ContinuousLattice.WayBelow.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.ContinuousLattice

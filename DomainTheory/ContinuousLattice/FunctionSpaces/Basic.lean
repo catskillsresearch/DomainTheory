@@ -5,12 +5,21 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.ScottMaps
-import Mathlib.Data.Finset.Lattice.Fold
-import Mathlib.Topology.ContinuousMap.Basic
-import Mathlib.Topology.Order
-import Mathlib.Order.CompleteLattice.Basic
-import Mathlib.Order.FixedPoints
+module
+
+public import DomainTheory.ContinuousLattice.ScottMaps
+public import Mathlib.Data.Finset.Lattice.Fold
+import all Mathlib.Data.Finset.Lattice.Fold
+public import Mathlib.Topology.ContinuousMap.Basic
+import all Mathlib.Topology.ContinuousMap.Basic
+public import Mathlib.Topology.Order
+import all Mathlib.Topology.Order
+public import Mathlib.Order.CompleteLattice.Basic
+import all Mathlib.Order.CompleteLattice.Basic
+public import Mathlib.Order.FixedPoints
+import all Mathlib.Order.FixedPoints
+
+@[expose] public section
 
 /-!
 # Function spaces on continuous lattices (Scott 1972, §3)

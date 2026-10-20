@@ -5,10 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Order.UpperLower.Basic
-import Mathlib.Order.Bounds.Basic
-import Mathlib.Tactic
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Order.UpperLower.Basic
+import all Mathlib.Order.UpperLower.Basic
+public import Mathlib.Order.Bounds.Basic
+import all Mathlib.Order.Bounds.Basic
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Exercise 1.25 (Scott 1981, PRG-19, §1) — final segments of an ordinal

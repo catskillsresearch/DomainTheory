@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise826
-import DomainTheory.Neighborhood.Exercise821
-import DomainTheory.Neighborhood.Exercise827.Basic
-import DomainTheory.Neighborhood.Exercise827.isProjection_piU
-import DomainTheory.Neighborhood.Exercise827.isFinitary_piU_of_isFinitary_piD
-import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piD
+module
+
+public import DomainTheory.Neighborhood.Exercise826
+public import DomainTheory.Neighborhood.Exercise821
+public import DomainTheory.Neighborhood.Exercise827.Basic
+public import DomainTheory.Neighborhood.Exercise827.isProjection_piU
+public import DomainTheory.Neighborhood.Exercise827.isFinitary_piU_of_isFinitary_piD
+public import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piD
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

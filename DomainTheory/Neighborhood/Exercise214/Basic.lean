@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Approximable
+module
+
+public import DomainTheory.Neighborhood.Approximable
+
+@[expose] public section
 
 /-!
 # Exercise 2.14 (Scott 1981, PRG-19, §2) — the neighbourhood correspondence `φ` of an isomorphism

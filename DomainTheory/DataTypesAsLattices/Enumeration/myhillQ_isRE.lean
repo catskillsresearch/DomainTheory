@@ -5,17 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.Halting
-import DomainTheory.DataTypesAsLattices.Computability
-import DomainTheory.DataTypesAsLattices.Functionality
-import DomainTheory.DataTypesAsLattices.Enumeration.Basic
-import DomainTheory.DataTypesAsLattices.Enumeration.primrec_fin
-import DomainTheory.DataTypesAsLattices.Enumeration.primrec_unpairComp
-import DomainTheory.DataTypesAsLattices.Enumeration.REPredu2eexists_param
-import DomainTheory.DataTypesAsLattices.Enumeration.valNat_mem_re
-import DomainTheory.DataTypesAsLattices.Enumeration.mem_myhillQ
-import DomainTheory.DataTypesAsLattices.Enumeration.realizes_valNat_mem
-import DomainTheory.DataTypesAsLattices.Enumeration.funOf_ofNat_mem_re
+module
+
+public import Mathlib.Computability.Halting
+import all Mathlib.Computability.Halting
+public import DomainTheory.DataTypesAsLattices.Computability
+public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_fin
+public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_unpairComp
+public import DomainTheory.DataTypesAsLattices.Enumeration.REPredu2eexists_param
+public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_mem_re
+public import DomainTheory.DataTypesAsLattices.Enumeration.mem_myhillQ
+public import DomainTheory.DataTypesAsLattices.Enumeration.realizes_valNat_mem
+public import DomainTheory.DataTypesAsLattices.Enumeration.funOf_ofNat_mem_re
+
+@[expose] public section
 
 
 set_option maxHeartbeats 2000000

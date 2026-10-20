@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88a
-import DomainTheory.Neighborhood.Lemma615
-import DomainTheory.Neighborhood.Proposition612
-import DomainTheory.Neighborhood.Theorem69
-import DomainTheory.Neighborhood.Definition89
-import DomainTheory.Neighborhood.Exercise812g4
-import DomainTheory.Neighborhood.Exercise817.Basic
-import DomainTheory.Neighborhood.Exercise817.U_isUniversal
-import DomainTheory.Neighborhood.Exercise817.isUniversal_of_isomorphic
+module
+
+public import DomainTheory.Neighborhood.Theorem88a
+public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.Neighborhood.Proposition612
+public import DomainTheory.Neighborhood.Theorem69
+public import DomainTheory.Neighborhood.Definition89
+public import DomainTheory.Neighborhood.Exercise812g4
+public import DomainTheory.Neighborhood.Exercise817.Basic
+public import DomainTheory.Neighborhood.Exercise817.U_isUniversal
+public import DomainTheory.Neighborhood.Exercise817.isUniversal_of_isomorphic
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

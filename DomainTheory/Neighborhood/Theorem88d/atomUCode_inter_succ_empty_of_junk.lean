@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88b
-import DomainTheory.Neighborhood.RecursiveCross
-import DomainTheory.Neighborhood.Theorem88d.Basic
-import DomainTheory.Neighborhood.Theorem88d.datomDec_eq_zero
-import DomainTheory.Neighborhood.Theorem88d.deltaOf_mod_two_pow_of_lt
-import DomainTheory.Neighborhood.Theorem88d.atomUCode_succ_true
-import DomainTheory.Neighborhood.Theorem88d.atomUCode_disjoint_YseqCode_of_posTwin_empty
-import DomainTheory.Neighborhood.Theorem88d.atomUCodeState_congr_twin
-import DomainTheory.Neighborhood.Theorem88d.DAtom_union
+module
+
+public import DomainTheory.Neighborhood.Theorem88b
+public import DomainTheory.Neighborhood.RecursiveCross
+public import DomainTheory.Neighborhood.Theorem88d.Basic
+public import DomainTheory.Neighborhood.Theorem88d.datomDec_eq_zero
+public import DomainTheory.Neighborhood.Theorem88d.deltaOf_mod_two_pow_of_lt
+public import DomainTheory.Neighborhood.Theorem88d.atomUCode_succ_true
+public import DomainTheory.Neighborhood.Theorem88d.atomUCode_disjoint_YseqCode_of_posTwin_empty
+public import DomainTheory.Neighborhood.Theorem88d.atomUCodeState_congr_twin
+public import DomainTheory.Neighborhood.Theorem88d.DAtom_union
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

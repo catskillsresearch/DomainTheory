@@ -5,22 +5,26 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722.Basic
-import DomainTheory.Neighborhood.Exercise722.concat_singleton
-import DomainTheory.Neighborhood.Exercise722.Ssys_master
-import DomainTheory.Neighborhood.Exercise722.Ssys_isPositive
-import DomainTheory.Neighborhood.Exercise722.emb_mul
-import DomainTheory.Neighborhood.Exercise722.emb_injective
-import DomainTheory.Neighborhood.Exercise722.prependMap_toElementMap
-import DomainTheory.Neighborhood.Exercise722.streamArrow_eq
-import DomainTheory.Neighborhood.Exercise722.mulElem_mono_right
-import DomainTheory.Neighborhood.Exercise722.mulElem_bot_le
-import DomainTheory.Neighborhood.Exercise722.streamArrow_le_mul_self
-import DomainTheory.Neighborhood.Exercise722.prependMap_iterElem_mul_streamArrow_le
-import DomainTheory.Neighborhood.Exercise722.streamArrow_mul_self_le
-import DomainTheory.Neighborhood.Exercise722.streamArrow_mul_self
-import DomainTheory.Neighborhood.Exercise722.streamArrow_mul_self_self
-import DomainTheory.Neighborhood.Exercise722.streamArrow_mul_self_append_true
-import DomainTheory.Neighborhood.Exercise722.streamArrow_containsZero_pow_four
-import DomainTheory.Neighborhood.Exercise722.repeatWord_succ
-import DomainTheory.Neighborhood.Exercise722.powerLang_concat
+module
+
+public import DomainTheory.Neighborhood.Exercise722.Basic
+public import DomainTheory.Neighborhood.Exercise722.concat_singleton
+public import DomainTheory.Neighborhood.Exercise722.Ssys_master
+public import DomainTheory.Neighborhood.Exercise722.Ssys_isPositive
+public import DomainTheory.Neighborhood.Exercise722.emb_mul
+public import DomainTheory.Neighborhood.Exercise722.emb_injective
+public import DomainTheory.Neighborhood.Exercise722.prependMap_toElementMap
+public import DomainTheory.Neighborhood.Exercise722.streamArrow_eq
+public import DomainTheory.Neighborhood.Exercise722.mulElem_mono_right
+public import DomainTheory.Neighborhood.Exercise722.mulElem_bot_le
+public import DomainTheory.Neighborhood.Exercise722.streamArrow_le_mul_self
+public import DomainTheory.Neighborhood.Exercise722.prependMap_iterElem_mul_streamArrow_le
+public import DomainTheory.Neighborhood.Exercise722.streamArrow_mul_self_le
+public import DomainTheory.Neighborhood.Exercise722.streamArrow_mul_self
+public import DomainTheory.Neighborhood.Exercise722.streamArrow_mul_self_self
+public import DomainTheory.Neighborhood.Exercise722.streamArrow_mul_self_append_true
+public import DomainTheory.Neighborhood.Exercise722.streamArrow_containsZero_pow_four
+public import DomainTheory.Neighborhood.Exercise722.repeatWord_succ
+public import DomainTheory.Neighborhood.Exercise722.powerLang_concat
+
+@[expose] public section

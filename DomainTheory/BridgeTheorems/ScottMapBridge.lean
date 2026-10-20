@@ -5,13 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.Hom.Basic
-import DomainTheory.ContinuousLattice.FunctionSpaces
-import DomainTheory.InformationSystems.Factoid46
-import DomainTheory.InformationSystems.Factoid36
-import DomainTheory.InformationSystems.Proposition53
-import DomainTheory.BridgeTheorems.InfoSysConstructions
-import DomainTheory.BridgeTheorems.PresentationDomains
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import DomainTheory.ContinuousLattice.FunctionSpaces
+public import DomainTheory.InformationSystems.Factoid46
+public import DomainTheory.InformationSystems.Factoid36
+public import DomainTheory.InformationSystems.Proposition53
+public import DomainTheory.BridgeTheorems.InfoSysConstructions
+public import DomainTheory.BridgeTheorems.PresentationDomains
+
+@[expose] public section
 
 /-!
 # Construction cross-links — ApproximableMap ↔ ScottContinuous ↔ ScottMap

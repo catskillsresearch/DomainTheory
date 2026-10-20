@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.UComputablePresentation
+module
+
+public import DomainTheory.Neighborhood.UComputablePresentation
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(g)(1)(a) — the `U`-side small assembly prerequisites

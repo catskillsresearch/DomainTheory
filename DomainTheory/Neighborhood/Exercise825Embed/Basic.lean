@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise511
-import DomainTheory.Neighborhood.Exercise618
-import DomainTheory.Neighborhood.Lemma615
+module
+
+public import DomainTheory.Neighborhood.Exercise511
+public import DomainTheory.Neighborhood.Exercise618
+public import DomainTheory.Neighborhood.Lemma615
+
+@[expose] public section
 
 /-!
 # Exercise 8.25 (Scott 1981, PRG-19, §8), step 3 — `𝒟 ⊴ 𝒟^∞`

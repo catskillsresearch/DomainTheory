@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition71
+module
+
+public import DomainTheory.Neighborhood.Definition71
+
+@[expose] public section
 
 /-!
 # Exercise 7.13 (Scott 1981, PRG-19, §7) — effectively given domains ↔ an `INCL` relation on `ℕ`

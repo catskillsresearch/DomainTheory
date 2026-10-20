@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88k
-import DomainTheory.Neighborhood.Theorem88l.Basic
-import DomainTheory.Neighborhood.Theorem88l.myFoldl_inter_of_le
-import DomainTheory.Neighborhood.Theorem88l.D_X_inter_eq
+module
+
+public import DomainTheory.Neighborhood.Theorem88k
+public import DomainTheory.Neighborhood.Theorem88l.Basic
+public import DomainTheory.Neighborhood.Theorem88l.myFoldl_inter_of_le
+public import DomainTheory.Neighborhood.Theorem88l.D_X_inter_eq
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

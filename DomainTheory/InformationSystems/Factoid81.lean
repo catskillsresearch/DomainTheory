@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid81.Basic
-import DomainTheory.InformationSystems.Factoid81.treeUnfold_bot
-import DomainTheory.InformationSystems.Factoid81.treeUnfold_atom
-import DomainTheory.InformationSystems.Factoid81.treeUnfold_pairL
-import DomainTheory.InformationSystems.Factoid81.treeUnfold_pairR
-import DomainTheory.InformationSystems.Factoid81.treeUnfold_pairL_bot_eq_pairR_bot
-import DomainTheory.InformationSystems.Factoid81.treeRhs_eq_sum_product
+module
+
+public import DomainTheory.InformationSystems.Factoid81.Basic
+public import DomainTheory.InformationSystems.Factoid81.treeUnfold_bot
+public import DomainTheory.InformationSystems.Factoid81.treeUnfold_atom
+public import DomainTheory.InformationSystems.Factoid81.treeUnfold_pairL
+public import DomainTheory.InformationSystems.Factoid81.treeUnfold_pairR
+public import DomainTheory.InformationSystems.Factoid81.treeUnfold_pairL_bot_eq_pairR_bot
+public import DomainTheory.InformationSystems.Factoid81.treeRhs_eq_sum_product
+
+@[expose] public section

@@ -5,9 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Order.Monotone.Basic
-import DomainTheory.Neighborhood.Theorem111.Basic
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Order.Monotone.Basic
+import all Mathlib.Order.Monotone.Basic
+public import DomainTheory.Neighborhood.Theorem111.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

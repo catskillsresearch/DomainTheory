@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition89
-import DomainTheory.Neighborhood.Definition83
-import DomainTheory.Neighborhood.Theorem69
-import DomainTheory.Neighborhood.Proposition810.Basic
-import DomainTheory.Neighborhood.Proposition810.toElementMap_le_of_comp_le_idMap
-import DomainTheory.Neighborhood.Proposition810.toElementMap_le_self_of_le_idMap
-import DomainTheory.Neighborhood.Proposition810.toElementMap_sumComb_of_left
-import DomainTheory.Neighborhood.Proposition810.toElementMap_sumComb_of_right
-import DomainTheory.Neighborhood.Proposition810.toElementMap_sumComb_of_neither
+module
+
+public import DomainTheory.Neighborhood.Definition89
+public import DomainTheory.Neighborhood.Definition83
+public import DomainTheory.Neighborhood.Theorem69
+public import DomainTheory.Neighborhood.Proposition810.Basic
+public import DomainTheory.Neighborhood.Proposition810.toElementMap_le_of_comp_le_idMap
+public import DomainTheory.Neighborhood.Proposition810.toElementMap_le_self_of_le_idMap
+public import DomainTheory.Neighborhood.Proposition810.toElementMap_sumComb_of_left
+public import DomainTheory.Neighborhood.Proposition810.toElementMap_sumComb_of_right
+public import DomainTheory.Neighborhood.Proposition810.toElementMap_sumComb_of_neither
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

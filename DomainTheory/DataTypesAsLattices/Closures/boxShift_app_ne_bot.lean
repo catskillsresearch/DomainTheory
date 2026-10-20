@@ -5,10 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Algebra.Ring.Parity
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Closures.Basic
-import DomainTheory.DataTypesAsLattices.Closures.zero_mem_boxShift_app
+module
+
+public import Mathlib.Algebra.Ring.Parity
+import all Mathlib.Algebra.Ring.Parity
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Closures.Basic
+public import DomainTheory.DataTypesAsLattices.Closures.zero_mem_boxShift_app
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

@@ -5,13 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import Mathlib.Data.Set.Finite.Powerset
-import DomainTheory.DataTypesAsLattices.Classification.Basic
-import DomainTheory.DataTypesAsLattices.Classification.theorem_6_3
-import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succSet_top
-import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack_eq
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import Mathlib.Data.Set.Finite.Powerset
+import all Mathlib.Data.Set.Finite.Powerset
+public import DomainTheory.DataTypesAsLattices.Classification.Basic
+public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_3
+public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succSet_top
+public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack_eq
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

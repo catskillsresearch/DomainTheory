@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise118
-import Mathlib.Tactic
+module
+
+public import DomainTheory.Neighborhood.Exercise118
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Exercise 1.27 (Scott 1981, PRG-19, §1) — bounded sets and least upper bounds

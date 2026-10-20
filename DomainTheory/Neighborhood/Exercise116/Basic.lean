@@ -5,9 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Data.Set.Finite.Basic
-import Mathlib.Tactic
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Data.Set.Finite.Basic
+import all Mathlib.Data.Set.Finite.Basic
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Exercise 1.16 (Scott 1981, PRG-19, §1) — cofinite subsets of `ℕ`

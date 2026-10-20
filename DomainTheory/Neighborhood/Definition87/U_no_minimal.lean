@@ -5,17 +5,30 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Order.Interval.Set.LinearOrder
-import Mathlib.Data.List.Basic
-import Mathlib.Data.Set.Lattice.Bounded
-import Mathlib.Data.Set.Lattice.Disjoint
-import Mathlib.Algebra.Order.Field.Rat
-import Mathlib.Tactic.NormNum
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Data.Fintype.Card
-import Mathlib.Order.CompleteLattice.Finset
-import DomainTheory.Neighborhood.Definition87.Basic
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Order.Interval.Set.LinearOrder
+import all Mathlib.Order.Interval.Set.LinearOrder
+public import Mathlib.Data.List.Basic
+import all Mathlib.Data.List.Basic
+public import Mathlib.Data.Set.Lattice.Bounded
+import all Mathlib.Data.Set.Lattice.Bounded
+public import Mathlib.Data.Set.Lattice.Disjoint
+import all Mathlib.Data.Set.Lattice.Disjoint
+public import Mathlib.Algebra.Order.Field.Rat
+import all Mathlib.Algebra.Order.Field.Rat
+public import Mathlib.Tactic.NormNum
+import all Mathlib.Tactic.NormNum
+public import Mathlib.Algebra.Order.Field.Basic
+import all Mathlib.Algebra.Order.Field.Basic
+public import Mathlib.Data.Fintype.Card
+import all Mathlib.Data.Fintype.Card
+public import Mathlib.Order.CompleteLattice.Finset
+import all Mathlib.Order.CompleteLattice.Finset
+public import DomainTheory.Neighborhood.Definition87.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

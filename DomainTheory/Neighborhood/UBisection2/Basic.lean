@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.SplitU
-import DomainTheory.Neighborhood.Exercise812e
+module
+
+public import DomainTheory.Neighborhood.SplitU
+public import DomainTheory.Neighborhood.Exercise812e
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(f), prerequisite — a *presentation-independent* canonical bisection of `U`

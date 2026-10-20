@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition87
-import DomainTheory.Neighborhood.RationalPrimrec
-import DomainTheory.Neighborhood.RecursiveCross
-import DomainTheory.Neighborhood.IntervalPrimrec.Basic
-import DomainTheory.Neighborhood.IntervalPrimrec.primrec_diffCode
-import DomainTheory.Neighborhood.IntervalPrimrec.recDecidable_presentedIntervals_nonempty
-import DomainTheory.Neighborhood.IntervalPrimrec.presentedIntervals_decodeQPairList_subset_iff
+module
+
+public import DomainTheory.Neighborhood.Definition87
+public import DomainTheory.Neighborhood.RationalPrimrec
+public import DomainTheory.Neighborhood.RecursiveCross
+public import DomainTheory.Neighborhood.IntervalPrimrec.Basic
+public import DomainTheory.Neighborhood.IntervalPrimrec.primrec_diffCode
+public import DomainTheory.Neighborhood.IntervalPrimrec.recDecidable_presentedIntervals_nonempty
+public import DomainTheory.Neighborhood.IntervalPrimrec.presentedIntervals_decodeQPairList_subset_iff
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

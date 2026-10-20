@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition71
-import DomainTheory.Neighborhood.Exercise722Decide
+module
+
+public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.Neighborhood.Exercise722Decide
+
+@[expose] public section
 
 /-!
 # Exercise 7.22 — computable presentation backbone (`SsysX`)
@@ -189,13 +193,17 @@ private theorem decodeFuel_succ_cat (fuel c : ℕ) (h : c.unpair.1 = 2) :
     decodeFuel (fuel + 1) c =
       match decodeFuel fuel c.unpair.2.unpair.1, decodeFuel fuel c.unpair.2.unpair.2 with
       | some a, some b => some (.cat a b)
-      | _, _ => none := by simp [decodeFuel, h]
+      | _, _ => none := by
+  simp [decodeFuel, h]
+  rfl
 
 private theorem decodeFuel_succ_cap (fuel c : ℕ) (h : c.unpair.1 = 3) :
     decodeFuel (fuel + 1) c =
       match decodeFuel fuel c.unpair.2.unpair.1, decodeFuel fuel c.unpair.2.unpair.2 with
       | some a, some b => some (.cap a b)
-      | _, _ => none := by simp [decodeFuel, h]
+      | _, _ => none := by
+  simp [decodeFuel, h]
+  rfl
 
 private theorem decodeFuel_succ_junk (fuel c : ℕ) (h : 4 ≤ c.unpair.1) :
     decodeFuel (fuel + 1) c = none := by

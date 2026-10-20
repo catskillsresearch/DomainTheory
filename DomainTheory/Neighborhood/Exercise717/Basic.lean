@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Combinators77
-import DomainTheory.Neighborhood.Theorem74
+module
+
+public import DomainTheory.Neighborhood.Combinators77
+public import DomainTheory.Neighborhood.Theorem74
+
+@[expose] public section
 
 /-!
 # Exercise 7.17 (Scott 1981, PRG-19, §7) — Part 1: all the Example 6.1 combinators for `D^§`

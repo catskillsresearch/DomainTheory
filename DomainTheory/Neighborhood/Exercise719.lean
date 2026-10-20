@@ -5,16 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise719.Basic
-import DomainTheory.Neighborhood.Exercise719.PDmem_mem
-import DomainTheory.Neighborhood.Exercise719.PFmap_rel_fin
-import DomainTheory.Neighborhood.Exercise719.PFmap_idMap
-import DomainTheory.Neighborhood.Exercise719.comp_witness
-import DomainTheory.Neighborhood.Exercise719.PFmap_comp
-import DomainTheory.Neighborhood.Exercise719.bExists_decodeList_re
-import DomainTheory.Neighborhood.Exercise719.PFmap_rel_Ypd_iff
-import DomainTheory.Neighborhood.Exercise719.PFmap_isComputable_Ypd
-import DomainTheory.Neighborhood.Exercise719.PFmap_isComputable
-import DomainTheory.Neighborhood.Exercise719.gather_witnesses
-import DomainTheory.Neighborhood.Exercise719.exists_stepFun_forall_PFmap_rel
-import DomainTheory.Neighborhood.Exercise719.PFmapComb_toElementMap
+module
+
+public import DomainTheory.Neighborhood.Exercise719.Basic
+public import DomainTheory.Neighborhood.Exercise719.PDmem_mem
+public import DomainTheory.Neighborhood.Exercise719.PFmap_rel_fin
+public import DomainTheory.Neighborhood.Exercise719.PFmap_idMap
+public import DomainTheory.Neighborhood.Exercise719.comp_witness
+public import DomainTheory.Neighborhood.Exercise719.PFmap_comp
+public import DomainTheory.Neighborhood.Exercise719.bExists_decodeList_re
+public import DomainTheory.Neighborhood.Exercise719.PFmap_rel_Ypd_iff
+public import DomainTheory.Neighborhood.Exercise719.PFmap_isComputable_Ypd
+public import DomainTheory.Neighborhood.Exercise719.PFmap_isComputable
+public import DomainTheory.Neighborhood.Exercise719.gather_witnesses
+public import DomainTheory.Neighborhood.Exercise719.exists_stepFun_forall_PFmap_rel
+public import DomainTheory.Neighborhood.Exercise719.PFmapComb_toElementMap
+
+@[expose] public section

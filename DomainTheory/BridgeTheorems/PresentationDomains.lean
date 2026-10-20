@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.BridgeTheorems.PresentationDomains.Basic
-import DomainTheory.BridgeTheorems.PresentationDomains.wayBelowNbhdBasis_system
+module
+
+public import DomainTheory.BridgeTheorems.PresentationDomains.Basic
+public import DomainTheory.BridgeTheorems.PresentationDomains.wayBelowNbhdBasis_system
+
+@[expose] public section

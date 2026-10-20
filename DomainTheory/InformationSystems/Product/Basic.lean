@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Constructive
-import DomainTheory.InformationSystems.Proposition23
+module
+
+public import DomainTheory.InformationSystems.Constructive
+public import DomainTheory.InformationSystems.Proposition23
+
+@[expose] public section
 
 /-!
 # Product of information systems — Definition 6.1

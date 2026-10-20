@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition63
-import DomainTheory.Neighborhood.Exercise510
+module
+
+public import DomainTheory.Neighborhood.Definition63
+public import DomainTheory.Neighborhood.Exercise510
+
+@[expose] public section
 
 /-!
 # Lecture VI — Definition 6.8 (Scott 1981, PRG-19): functors *continuous on maps*

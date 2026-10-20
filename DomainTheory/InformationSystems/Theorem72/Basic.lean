@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.FunctionSpace
-import DomainTheory.InformationSystems.Proposition53
-import DomainTheory.InformationSystems.Proposition55
-import DomainTheory.InformationSystems.Proposition62
-import DomainTheory.InformationSystems.Factoid32
+module
+
+public import DomainTheory.InformationSystems.FunctionSpace
+public import DomainTheory.InformationSystems.Proposition53
+public import DomainTheory.InformationSystems.Proposition55
+public import DomainTheory.InformationSystems.Proposition62
+public import DomainTheory.InformationSystems.Factoid32
+
+@[expose] public section
 
 /-!
 # Theorem 7.2 — function space elements, apply, and curry

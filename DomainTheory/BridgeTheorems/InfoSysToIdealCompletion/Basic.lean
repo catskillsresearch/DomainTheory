@@ -5,9 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.Hom.Basic
-import Mathlib.Order.Ideal
-import DomainTheory.InformationSystems.Factoid45
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import Mathlib.Order.Ideal
+import all Mathlib.Order.Ideal
+public import DomainTheory.InformationSystems.Factoid45
+
+@[expose] public section
 
 /-!
 # Information systems → ideal completion (1982 → algebraic dcpo)

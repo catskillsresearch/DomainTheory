@@ -5,16 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem86
-import DomainTheory.Neighborhood.Theorem41
-import DomainTheory.Neighborhood.Exercise315
-import DomainTheory.Neighborhood.Exercise816
-import DomainTheory.Neighborhood.Exercise823.Basic
-import DomainTheory.Neighborhood.Exercise823.toApproxMap_bot_eq_constMap
-import DomainTheory.Neighborhood.Exercise823.isFinitaryProjection_constMap_bot
-import DomainTheory.Neighborhood.Exercise823.tOp_toApproxMap
-import DomainTheory.Neighborhood.Exercise823.iterElem_succu27
-import DomainTheory.Neighborhood.Exercise823.iterElem_zerou27
+module
+
+public import DomainTheory.Neighborhood.Theorem86
+public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.Neighborhood.Exercise315
+public import DomainTheory.Neighborhood.Exercise816
+public import DomainTheory.Neighborhood.Exercise823.Basic
+public import DomainTheory.Neighborhood.Exercise823.toApproxMap_bot_eq_constMap
+public import DomainTheory.Neighborhood.Exercise823.isFinitaryProjection_constMap_bot
+public import DomainTheory.Neighborhood.Exercise823.tOp_toApproxMap
+public import DomainTheory.Neighborhood.Exercise823.iterElem_succu27
+public import DomainTheory.Neighborhood.Exercise823.iterElem_zerou27
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

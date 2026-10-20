@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Proposition56.Basic
-import DomainTheory.InformationSystems.Proposition56.constMap_toElement
-import DomainTheory.InformationSystems.Proposition56.constMap_unique
-import DomainTheory.InformationSystems.Proposition56.comp_constMap
-import DomainTheory.InformationSystems.Proposition56.constMap_comp
+module
+
+public import DomainTheory.InformationSystems.Proposition56.Basic
+public import DomainTheory.InformationSystems.Proposition56.constMap_toElement
+public import DomainTheory.InformationSystems.Proposition56.constMap_unique
+public import DomainTheory.InformationSystems.Proposition56.comp_constMap
+public import DomainTheory.InformationSystems.Proposition56.constMap_comp
+
+@[expose] public section

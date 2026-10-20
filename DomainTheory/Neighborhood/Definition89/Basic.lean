@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88n
-import DomainTheory.Neighborhood.Theorem74
-import DomainTheory.Neighborhood.Theorem75
-import DomainTheory.Neighborhood.Exercise326Sum
-import DomainTheory.Neighborhood.Exercise319
+module
+
+public import DomainTheory.Neighborhood.Theorem88n
+public import DomainTheory.Neighborhood.Theorem74
+public import DomainTheory.Neighborhood.Theorem75
+public import DomainTheory.Neighborhood.Exercise326Sum
+public import DomainTheory.Neighborhood.Exercise319
+
+@[expose] public section
 
 /-!
 # Definition 8.9 (Scott 1981, PRG-19) — the combinators `a+b`, `a×b`, `a→b` on projections of `𝒰`

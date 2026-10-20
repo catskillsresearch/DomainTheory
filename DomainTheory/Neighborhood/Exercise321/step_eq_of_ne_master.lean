@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.FunctionSpace
-import DomainTheory.Neighborhood.Exercise321.Basic
-import DomainTheory.Neighborhood.Exercise321.leastStep_mem
-import DomainTheory.Neighborhood.Exercise321.leastStep_rel
-import DomainTheory.Neighborhood.Exercise321.step_master_right
-import DomainTheory.Neighborhood.Exercise321.step_eq_univ_iff
-import DomainTheory.Neighborhood.Exercise321.leastStep_eq_of_step_eq
+module
+
+public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.Neighborhood.Exercise321.Basic
+public import DomainTheory.Neighborhood.Exercise321.leastStep_mem
+public import DomainTheory.Neighborhood.Exercise321.leastStep_rel
+public import DomainTheory.Neighborhood.Exercise321.step_master_right
+public import DomainTheory.Neighborhood.Exercise321.step_eq_univ_iff
+public import DomainTheory.Neighborhood.Exercise321.leastStep_eq_of_step_eq
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

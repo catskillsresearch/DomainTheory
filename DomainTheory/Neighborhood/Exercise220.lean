@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise220.Basic
-import DomainTheory.Neighborhood.Exercise220.toSet_succMap
-import DomainTheory.Neighborhood.Exercise220.toSet_predMap
-import DomainTheory.Neighborhood.Exercise220.toSet_unionMap
-import DomainTheory.Neighborhood.Exercise220.toSet_interMapu2082
+module
+
+public import DomainTheory.Neighborhood.Exercise220.Basic
+public import DomainTheory.Neighborhood.Exercise220.toSet_succMap
+public import DomainTheory.Neighborhood.Exercise220.toSet_predMap
+public import DomainTheory.Neighborhood.Exercise220.toSet_unionMap
+public import DomainTheory.Neighborhood.Exercise220.toSet_interMapu2082
+
+@[expose] public section

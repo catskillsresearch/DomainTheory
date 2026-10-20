@@ -5,23 +5,27 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise827.Basic
-import DomainTheory.Neighborhood.Exercise827.piDApply_toElementMap_eq
-import DomainTheory.Neighborhood.Exercise827.isRetraction_piD
-import DomainTheory.Neighborhood.Exercise827.le_idMap_piD
-import DomainTheory.Neighborhood.Exercise827.isProjection_piD
-import DomainTheory.Neighborhood.Exercise827.isProjection_piU
-import DomainTheory.Neighborhood.Exercise827.isFinitary_piU_of_isFinitary_piD
-import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piD_of_formula
-import DomainTheory.Neighborhood.Exercise827.isFinitary_piU_of_formula
-import DomainTheory.Neighborhood.Exercise827.piD_rel_self_iff
-import DomainTheory.Neighborhood.Exercise827.toElementMap_piDTypeMap
-import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piDType
-import DomainTheory.Neighborhood.Exercise827.piDType_monotone
-import DomainTheory.Neighborhood.Exercise827.toElementMap_piDApplyu27
-import DomainTheory.Neighborhood.Exercise827.exists_X_of_mem_step
-import DomainTheory.Neighborhood.Exercise827.exists_X_of_mem_stepFun
-import DomainTheory.Neighborhood.Exercise827.hii_hard_direction
-import DomainTheory.Neighborhood.Exercise827.hii_piD
-import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piD
-import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piU
+module
+
+public import DomainTheory.Neighborhood.Exercise827.Basic
+public import DomainTheory.Neighborhood.Exercise827.piDApply_toElementMap_eq
+public import DomainTheory.Neighborhood.Exercise827.isRetraction_piD
+public import DomainTheory.Neighborhood.Exercise827.le_idMap_piD
+public import DomainTheory.Neighborhood.Exercise827.isProjection_piD
+public import DomainTheory.Neighborhood.Exercise827.isProjection_piU
+public import DomainTheory.Neighborhood.Exercise827.isFinitary_piU_of_isFinitary_piD
+public import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piD_of_formula
+public import DomainTheory.Neighborhood.Exercise827.isFinitary_piU_of_formula
+public import DomainTheory.Neighborhood.Exercise827.piD_rel_self_iff
+public import DomainTheory.Neighborhood.Exercise827.toElementMap_piDTypeMap
+public import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piDType
+public import DomainTheory.Neighborhood.Exercise827.piDType_monotone
+public import DomainTheory.Neighborhood.Exercise827.toElementMap_piDApplyu27
+public import DomainTheory.Neighborhood.Exercise827.exists_X_of_mem_step
+public import DomainTheory.Neighborhood.Exercise827.exists_X_of_mem_stepFun
+public import DomainTheory.Neighborhood.Exercise827.hii_hard_direction
+public import DomainTheory.Neighborhood.Exercise827.hii_piD
+public import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piD
+public import DomainTheory.Neighborhood.Exercise827.isFinitaryProjection_piU
+
+@[expose] public section

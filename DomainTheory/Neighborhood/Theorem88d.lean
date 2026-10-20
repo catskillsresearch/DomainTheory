@@ -5,48 +5,52 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88d.Basic
-import DomainTheory.Neighborhood.Theorem88d.mem_decodeQPairList_appendCode
-import DomainTheory.Neighborhood.Theorem88d.presentedIntervals_decodeQPairList_appendCode
-import DomainTheory.Neighborhood.Theorem88d.primrec_unionUX
-import DomainTheory.Neighborhood.Theorem88d.U_mem_union_UX
-import DomainTheory.Neighborhood.Theorem88d.UX_unionUX
-import DomainTheory.Neighborhood.Theorem88d.primrec_wY
-import DomainTheory.Neighborhood.Theorem88d.primrec_wState
-import DomainTheory.Neighborhood.Theorem88d.primrec_stateRem
-import DomainTheory.Neighborhood.Theorem88d.primrec_statePos
-import DomainTheory.Neighborhood.Theorem88d.primrec_stateNeg
-import DomainTheory.Neighborhood.Theorem88d.primrec_stateCode
-import DomainTheory.Neighborhood.Theorem88d.primrec_atomBase
-import DomainTheory.Neighborhood.Theorem88d.primrec_atomStep
-import DomainTheory.Neighborhood.Theorem88d.primrec_datomDec
-import DomainTheory.Neighborhood.Theorem88d.datomDec_eq_zero
-import DomainTheory.Neighborhood.Theorem88d.primrec_atomUCodeState
-import DomainTheory.Neighborhood.Theorem88d.primrec_atomUPos
-import DomainTheory.Neighborhood.Theorem88d.primrec_atomUNeg
-import DomainTheory.Neighborhood.Theorem88d.primrec_atomUCode
-import DomainTheory.Neighborhood.Theorem88d.atomUEmpty_congr
-import DomainTheory.Neighborhood.Theorem88d.atomUCode_mem
-import DomainTheory.Neighborhood.Theorem88d.deltaOf_mod_two_pow_of_lt
-import DomainTheory.Neighborhood.Theorem88d.primrec_atomUEmpty
-import DomainTheory.Neighborhood.Theorem88d.primrec_yFoldStep
-import DomainTheory.Neighborhood.Theorem88d.yFold_zero
-import DomainTheory.Neighborhood.Theorem88d.yFold_succ
-import DomainTheory.Neighborhood.Theorem88d.primrec_yFold
-import DomainTheory.Neighborhood.Theorem88d.atomUEmpty_zero_or_one
-import DomainTheory.Neighborhood.Theorem88d.yFoldStep_eq
-import DomainTheory.Neighborhood.Theorem88d.yFold_found_le_one
-import DomainTheory.Neighborhood.Theorem88d.yFold_found_iff
-import DomainTheory.Neighborhood.Theorem88d.yFold_mem_iff
-import DomainTheory.Neighborhood.Theorem88d.yFold_two_pow_found
-import DomainTheory.Neighborhood.Theorem88d.primrec_YseqCode
-import DomainTheory.Neighborhood.Theorem88d.mem_UX_YseqCode_iff
-import DomainTheory.Neighborhood.Theorem88d.atomUCode_succ_true
-import DomainTheory.Neighborhood.Theorem88d.eq_of_deltaOf_agree_of_lt_two_pow
-import DomainTheory.Neighborhood.Theorem88d.atomUCode_disjoint_YseqCode_of_posTwin_empty
-import DomainTheory.Neighborhood.Theorem88d.atomUCodeState_congr_twin
-import DomainTheory.Neighborhood.Theorem88d.atomUCode_succ_false
-import DomainTheory.Neighborhood.Theorem88d.DAtom_union
-import DomainTheory.Neighborhood.Theorem88d.atomUCode_eq_genAtomYseqCode
-import DomainTheory.Neighborhood.Theorem88d.atomUCode_inter_succ_empty_of_junk
-import DomainTheory.Neighborhood.Theorem88d.genAtom_Yc_empty_iff
+module
+
+public import DomainTheory.Neighborhood.Theorem88d.Basic
+public import DomainTheory.Neighborhood.Theorem88d.mem_decodeQPairList_appendCode
+public import DomainTheory.Neighborhood.Theorem88d.presentedIntervals_decodeQPairList_appendCode
+public import DomainTheory.Neighborhood.Theorem88d.primrec_unionUX
+public import DomainTheory.Neighborhood.Theorem88d.U_mem_union_UX
+public import DomainTheory.Neighborhood.Theorem88d.UX_unionUX
+public import DomainTheory.Neighborhood.Theorem88d.primrec_wY
+public import DomainTheory.Neighborhood.Theorem88d.primrec_wState
+public import DomainTheory.Neighborhood.Theorem88d.primrec_stateRem
+public import DomainTheory.Neighborhood.Theorem88d.primrec_statePos
+public import DomainTheory.Neighborhood.Theorem88d.primrec_stateNeg
+public import DomainTheory.Neighborhood.Theorem88d.primrec_stateCode
+public import DomainTheory.Neighborhood.Theorem88d.primrec_atomBase
+public import DomainTheory.Neighborhood.Theorem88d.primrec_atomStep
+public import DomainTheory.Neighborhood.Theorem88d.primrec_datomDec
+public import DomainTheory.Neighborhood.Theorem88d.datomDec_eq_zero
+public import DomainTheory.Neighborhood.Theorem88d.primrec_atomUCodeState
+public import DomainTheory.Neighborhood.Theorem88d.primrec_atomUPos
+public import DomainTheory.Neighborhood.Theorem88d.primrec_atomUNeg
+public import DomainTheory.Neighborhood.Theorem88d.primrec_atomUCode
+public import DomainTheory.Neighborhood.Theorem88d.atomUEmpty_congr
+public import DomainTheory.Neighborhood.Theorem88d.atomUCode_mem
+public import DomainTheory.Neighborhood.Theorem88d.deltaOf_mod_two_pow_of_lt
+public import DomainTheory.Neighborhood.Theorem88d.primrec_atomUEmpty
+public import DomainTheory.Neighborhood.Theorem88d.primrec_yFoldStep
+public import DomainTheory.Neighborhood.Theorem88d.yFold_zero
+public import DomainTheory.Neighborhood.Theorem88d.yFold_succ
+public import DomainTheory.Neighborhood.Theorem88d.primrec_yFold
+public import DomainTheory.Neighborhood.Theorem88d.atomUEmpty_zero_or_one
+public import DomainTheory.Neighborhood.Theorem88d.yFoldStep_eq
+public import DomainTheory.Neighborhood.Theorem88d.yFold_found_le_one
+public import DomainTheory.Neighborhood.Theorem88d.yFold_found_iff
+public import DomainTheory.Neighborhood.Theorem88d.yFold_mem_iff
+public import DomainTheory.Neighborhood.Theorem88d.yFold_two_pow_found
+public import DomainTheory.Neighborhood.Theorem88d.primrec_YseqCode
+public import DomainTheory.Neighborhood.Theorem88d.mem_UX_YseqCode_iff
+public import DomainTheory.Neighborhood.Theorem88d.atomUCode_succ_true
+public import DomainTheory.Neighborhood.Theorem88d.eq_of_deltaOf_agree_of_lt_two_pow
+public import DomainTheory.Neighborhood.Theorem88d.atomUCode_disjoint_YseqCode_of_posTwin_empty
+public import DomainTheory.Neighborhood.Theorem88d.atomUCodeState_congr_twin
+public import DomainTheory.Neighborhood.Theorem88d.atomUCode_succ_false
+public import DomainTheory.Neighborhood.Theorem88d.DAtom_union
+public import DomainTheory.Neighborhood.Theorem88d.atomUCode_eq_genAtomYseqCode
+public import DomainTheory.Neighborhood.Theorem88d.atomUCode_inter_succ_empty_of_junk
+public import DomainTheory.Neighborhood.Theorem88d.genAtom_Yc_empty_iff
+
+@[expose] public section

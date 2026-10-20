@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.Exercise319
-import DomainTheory.Neighborhood.Exercise319Sum
+module
+
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.Exercise319
+public import DomainTheory.Neighborhood.Exercise319Sum
+
+@[expose] public section
 
 /-!
 # Theorem 7.4 (Scott 1981, PRG-19, §7) — `+` and `×` preserve effective givenness

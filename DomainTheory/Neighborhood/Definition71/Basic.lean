@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import DomainTheory.Neighborhood.Exercise315
-import DomainTheory.Neighborhood.Recursive
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.Neighborhood.Exercise315
+public import DomainTheory.Neighborhood.Recursive
+
+@[expose] public section
 
 /-!
 # Definition 7.1 (Scott 1981, PRG-19, §7) — computable presentations / effectively given domains

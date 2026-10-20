@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition63
-import DomainTheory.Neighborhood.Theorem69
-import DomainTheory.Neighborhood.Example62C
-import DomainTheory.Neighborhood.Exercise516
+module
+
+public import DomainTheory.Neighborhood.Definition63
+public import DomainTheory.Neighborhood.Theorem69
+public import DomainTheory.Neighborhood.Example62C
+public import DomainTheory.Neighborhood.Exercise516
+
+@[expose] public section
 
 /-!
 # Exercise 6.17 (Scott 1981, PRG-19, §6) — the algebras for which `C` is initial

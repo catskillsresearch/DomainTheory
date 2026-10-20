@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Lemma615
-import DomainTheory.Neighborhood.Proposition612
+module
+
+public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.Neighborhood.Proposition612
+
+@[expose] public section
 
 /-!
 # Exercise 6.28 (Scott 1981, PRG-19, §6) — Plotkin's finite Cantor–Schröder–Bernstein

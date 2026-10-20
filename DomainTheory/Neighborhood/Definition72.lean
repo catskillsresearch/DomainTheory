@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition72.Basic
-import DomainTheory.Neighborhood.Definition72.idMap_isComputable
-import DomainTheory.Neighborhood.Definition72.comp_isComputable
-import DomainTheory.Neighborhood.Definition72.apply_isComputableElement
-import DomainTheory.Neighborhood.Definition72.principal_isComputableElement
+module
+
+public import DomainTheory.Neighborhood.Definition72.Basic
+public import DomainTheory.Neighborhood.Definition72.idMap_isComputable
+public import DomainTheory.Neighborhood.Definition72.comp_isComputable
+public import DomainTheory.Neighborhood.Definition72.apply_isComputableElement
+public import DomainTheory.Neighborhood.Definition72.principal_isComputableElement
+
+@[expose] public section

@@ -5,18 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
-import DomainTheory.DataTypesAsLattices.Functionality.graph_funOf_ext
-import DomainTheory.DataTypesAsLattices.Functionality.Z_isScottContinuous_right
-import DomainTheory.DataTypesAsLattices.Functionality.Z_isScottContinuous_left
-import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_app2
-import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_isGraph
-import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_app_isGraph
-import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_4_sigma_index
-import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_app
-import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_4_finite
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
+public import DomainTheory.DataTypesAsLattices.Functionality.graph_funOf_ext
+public import DomainTheory.DataTypesAsLattices.Functionality.Z_isScottContinuous_right
+public import DomainTheory.DataTypesAsLattices.Functionality.Z_isScottContinuous_left
+public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_app2
+public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_isGraph
+public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_app_isGraph
+public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_4_sigma_index
+public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_app
+public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_4_finite
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

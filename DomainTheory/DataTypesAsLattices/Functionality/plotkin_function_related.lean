@@ -5,16 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_app
-import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite
-import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite_union
-import DomainTheory.DataTypesAsLattices.Functionality.plotkinE_erase
-import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_app
-import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_fresh_app
-import DomainTheory.DataTypesAsLattices.Functionality.finite_sigma_union_app
-import DomainTheory.DataTypesAsLattices.Functionality.finite_sigma_plain_app
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_app
+public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite
+public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite_union
+public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE_erase
+public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_app
+public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_fresh_app
+public import DomainTheory.DataTypesAsLattices.Functionality.finite_sigma_union_app
+public import DomainTheory.DataTypesAsLattices.Functionality.finite_sigma_plain_app
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

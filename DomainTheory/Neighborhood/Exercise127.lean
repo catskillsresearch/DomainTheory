@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise127.Basic
-import DomainTheory.Neighborhood.Exercise127.le_sSup
-import DomainTheory.Neighborhood.Exercise127.sSup_le
-import DomainTheory.Neighborhood.Exercise127.interUpTo_pairSeq
-import DomainTheory.Neighborhood.Exercise127.consistent_pair_iff_bounded
-import DomainTheory.Neighborhood.Exercise127.bounded_iff_finite_bounded
+module
+
+public import DomainTheory.Neighborhood.Exercise127.Basic
+public import DomainTheory.Neighborhood.Exercise127.le_sSup
+public import DomainTheory.Neighborhood.Exercise127.sSup_le
+public import DomainTheory.Neighborhood.Exercise127.interUpTo_pairSeq
+public import DomainTheory.Neighborhood.Exercise127.consistent_pair_iff_bounded
+public import DomainTheory.Neighborhood.Exercise127.bounded_iff_finite_bounded
+
+@[expose] public section

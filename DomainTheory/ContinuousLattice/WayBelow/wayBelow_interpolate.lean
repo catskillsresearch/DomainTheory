@@ -5,16 +5,23 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.CompleteLattice.Basic
-import Mathlib.Order.UpperLower.Basic
-import Mathlib.Order.Directed
-import DomainTheory.ContinuousLattice.WayBelow.Basic
-import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
-import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
-import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
-import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
-import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
-import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
+module
+
+public import Mathlib.Order.CompleteLattice.Basic
+import all Mathlib.Order.CompleteLattice.Basic
+public import Mathlib.Order.UpperLower.Basic
+import all Mathlib.Order.UpperLower.Basic
+public import Mathlib.Order.Directed
+import all Mathlib.Order.Directed
+public import DomainTheory.ContinuousLattice.WayBelow.Basic
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
+public import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
+public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
+public import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
+public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
+
+@[expose] public section
 
 
 namespace DomainTheory.ContinuousLattice

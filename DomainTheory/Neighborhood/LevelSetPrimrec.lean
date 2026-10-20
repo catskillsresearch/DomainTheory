@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.LevelSetPrimrec.Basic
-import DomainTheory.Neighborhood.LevelSetPrimrec.myTestBit_le_one
-import DomainTheory.Neighborhood.LevelSetPrimrec.V_isEffectivelyGiven
+module
+
+public import DomainTheory.Neighborhood.LevelSetPrimrec.Basic
+public import DomainTheory.Neighborhood.LevelSetPrimrec.myTestBit_le_one
+public import DomainTheory.Neighborhood.LevelSetPrimrec.V_isEffectivelyGiven
+
+@[expose] public section

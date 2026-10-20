@@ -5,11 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Algebra.Ring.Parity
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Closures.Basic
-import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_universe
-import DomainTheory.DataTypesAsLattices.Closures.theorem_5_3_closure
+module
+
+public import Mathlib.Algebra.Ring.Parity
+import all Mathlib.Algebra.Ring.Parity
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Closures.Basic
+public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_universe
+public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_3_closure
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

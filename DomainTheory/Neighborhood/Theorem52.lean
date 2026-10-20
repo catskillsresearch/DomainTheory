@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem52.Basic
-import DomainTheory.Neighborhood.Theorem52.subst_value
-import DomainTheory.Neighborhood.Theorem52.beta
-import DomainTheory.Neighborhood.Theorem52.beta_tuple
-import DomainTheory.Neighborhood.Theorem52.beta_abs
+module
+
+public import DomainTheory.Neighborhood.Theorem52.Basic
+public import DomainTheory.Neighborhood.Theorem52.subst_value
+public import DomainTheory.Neighborhood.Theorem52.beta
+public import DomainTheory.Neighborhood.Theorem52.beta_tuple
+public import DomainTheory.Neighborhood.Theorem52.beta_abs
+
+@[expose] public section

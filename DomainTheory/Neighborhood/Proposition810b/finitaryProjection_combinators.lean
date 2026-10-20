@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition810
-import DomainTheory.Neighborhood.Theorem86
-import DomainTheory.Neighborhood.Proposition810b.Basic
-import DomainTheory.Neighborhood.Proposition810b.finitaryProjection_prodComb
-import DomainTheory.Neighborhood.Proposition810b.finitaryProjection_sumComb
-import DomainTheory.Neighborhood.Proposition810b.finitaryProjection_arrowComb
+module
+
+public import DomainTheory.Neighborhood.Proposition810
+public import DomainTheory.Neighborhood.Theorem86
+public import DomainTheory.Neighborhood.Proposition810b.Basic
+public import DomainTheory.Neighborhood.Proposition810b.finitaryProjection_prodComb
+public import DomainTheory.Neighborhood.Proposition810b.finitaryProjection_sumComb
+public import DomainTheory.Neighborhood.Proposition810b.finitaryProjection_arrowComb
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

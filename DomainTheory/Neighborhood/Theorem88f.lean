@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88f.Basic
-import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_inj_isComputableMap
-import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_proj_isComputableMap
-import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_projectionPair_isComputable
+module
+
+public import DomainTheory.Neighborhood.Theorem88f.Basic
+public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_inj_isComputableMap
+public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_proj_isComputableMap
+public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_projectionPair_isComputable
+
+@[expose] public section

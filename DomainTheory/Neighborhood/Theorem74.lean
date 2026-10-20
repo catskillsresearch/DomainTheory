@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem74.Basic
-import DomainTheory.Neighborhood.Theorem74.prod_isEffectivelyGiven
-import DomainTheory.Neighborhood.Theorem74.proju2080_isComputable
-import DomainTheory.Neighborhood.Theorem74.proju2081_isComputable
-import DomainTheory.Neighborhood.Theorem74.paired_isComputable
-import DomainTheory.Neighborhood.Theorem74.prodMap_isComputable
+module
+
+public import DomainTheory.Neighborhood.Theorem74.Basic
+public import DomainTheory.Neighborhood.Theorem74.prod_isEffectivelyGiven
+public import DomainTheory.Neighborhood.Theorem74.proju2080_isComputable
+public import DomainTheory.Neighborhood.Theorem74.proju2081_isComputable
+public import DomainTheory.Neighborhood.Theorem74.paired_isComputable
+public import DomainTheory.Neighborhood.Theorem74.prodMap_isComputable
+
+@[expose] public section

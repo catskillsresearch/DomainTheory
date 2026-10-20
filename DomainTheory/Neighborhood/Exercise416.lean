@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise416.Basic
-import DomainTheory.Neighborhood.Exercise416.optimalFix_isFixed
-import DomainTheory.Neighborhood.Exercise416.optimalFix_le_sInf
-import DomainTheory.Neighborhood.Exercise416.optimalFix_le
-import DomainTheory.Neighborhood.Exercise416.optimalFix_consistent
+module
+
+public import DomainTheory.Neighborhood.Exercise416.Basic
+public import DomainTheory.Neighborhood.Exercise416.optimalFix_isFixed
+public import DomainTheory.Neighborhood.Exercise416.optimalFix_le_sInf
+public import DomainTheory.Neighborhood.Exercise416.optimalFix_le
+public import DomainTheory.Neighborhood.Exercise416.optimalFix_consistent
+
+@[expose] public section

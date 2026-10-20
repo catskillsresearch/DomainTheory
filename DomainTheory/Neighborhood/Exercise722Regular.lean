@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722Regular.Basic
-import DomainTheory.Neighborhood.Exercise722Regular.InS_denote_of_nonempty
-import DomainTheory.Neighborhood.Exercise722Regular.InS_exists_denote
-import DomainTheory.Neighborhood.Exercise722Regular.inS_iff_exists_denote
-import DomainTheory.Neighborhood.Exercise722Regular.inS_eq_range_denote
-import DomainTheory.Neighborhood.Exercise722Regular.empty_iff_equiv_emptyExpr
-import DomainTheory.Neighborhood.Exercise722Regular.interEq_iff
-import DomainTheory.Neighborhood.Exercise722Regular.mem_denote_sigma
-import DomainTheory.Neighborhood.Exercise722Regular.denote_catSigmaSigma
-import DomainTheory.Neighborhood.Exercise722Regular.sigma_ne_containsZero
+module
+
+public import DomainTheory.Neighborhood.Exercise722Regular.Basic
+public import DomainTheory.Neighborhood.Exercise722Regular.InS_denote_of_nonempty
+public import DomainTheory.Neighborhood.Exercise722Regular.InS_exists_denote
+public import DomainTheory.Neighborhood.Exercise722Regular.inS_iff_exists_denote
+public import DomainTheory.Neighborhood.Exercise722Regular.inS_eq_range_denote
+public import DomainTheory.Neighborhood.Exercise722Regular.empty_iff_equiv_emptyExpr
+public import DomainTheory.Neighborhood.Exercise722Regular.interEq_iff
+public import DomainTheory.Neighborhood.Exercise722Regular.mem_denote_sigma
+public import DomainTheory.Neighborhood.Exercise722Regular.denote_catSigmaSigma
+public import DomainTheory.Neighborhood.Exercise722Regular.sigma_ne_containsZero
+
+@[expose] public section

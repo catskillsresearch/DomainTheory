@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition612
-import DomainTheory.Neighborhood.Exercise625.Basic
-import DomainTheory.Neighborhood.Exercise625.inj_proj_apply_le
-import DomainTheory.Neighborhood.Exercise625.galois
-import DomainTheory.Neighborhood.Exercise625.lowerSet_bounded
+module
+
+public import DomainTheory.Neighborhood.Proposition612
+public import DomainTheory.Neighborhood.Exercise625.Basic
+public import DomainTheory.Neighborhood.Exercise625.inj_proj_apply_le
+public import DomainTheory.Neighborhood.Exercise625.galois
+public import DomainTheory.Neighborhood.Exercise625.lowerSet_bounded
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

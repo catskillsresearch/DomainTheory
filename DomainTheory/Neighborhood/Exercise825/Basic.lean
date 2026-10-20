@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise825Unit
-import DomainTheory.Neighborhood.Exercise825FixedPoint
+module
+
+public import DomainTheory.Neighborhood.Exercise825Unit
+public import DomainTheory.Neighborhood.Exercise825FixedPoint
+
+@[expose] public section
 
 /-!
 # Exercise 8.25 (Scott 1981, PRG-19, §8) — a non-trivial domain isomorphic to its own function space

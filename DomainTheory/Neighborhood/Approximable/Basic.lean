@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Tactic.Set
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Tactic.Set
+import all Mathlib.Tactic.Set
+
+@[expose] public section
 
 /-!
 # Lecture II (§2) — approximable mappings: Definitions 2.1, 2.2 and Theorems 2.5–2.7
@@ -197,8 +202,8 @@ mapping" is the relation `X f Y ↔ Y ∈ e(↑X)`. The conditions of 2.1 hold b
 means `↑X ⊑ ↑X'`, so `e(↑X) ⊑ e(↑X')` and the output transports along, then widens by `up_mem`. -/
 def ofIso (e : V₀.Element ≃o V₁.Element) : ApproximableMap V₀ V₁ where
   rel X Y := ∃ _ : V₀.mem X, (e (V₀.principal ‹V₀.mem X›)).mem Y
-  rel_dom := fun ⟨hX, _⟩ => hX
-  rel_cod := fun ⟨_, hY⟩ => (e _).sub hY
+  rel_dom := fun h => h.1
+  rel_cod := fun h => (e _).sub h.2
   master_rel := ⟨V₀.master_mem, (e _).master_mem⟩
   inter_right := by
     rintro X Y Y' ⟨hX, hY⟩ ⟨_, hY'⟩

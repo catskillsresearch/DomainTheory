@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.InfoSys
+module
+
+public import DomainTheory.InformationSystems.InfoSys
+
+@[expose] public section
 
 /-!
 # Factoid 2.4 — first example: lower bounds on ℕ

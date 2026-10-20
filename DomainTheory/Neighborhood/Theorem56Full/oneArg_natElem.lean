@@ -5,16 +5,21 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example43
-import DomainTheory.Neighborhood.Exercise326
-import DomainTheory.Neighborhood.Exercise511
-import DomainTheory.Neighborhood.Theorem41
-import DomainTheory.Neighborhood.ApproximableExercises
-import Mathlib.Computability.PartrecBasis
-import DomainTheory.Neighborhood.Theorem56Full.Basic
-import DomainTheory.Neighborhood.Theorem56Full.eq_of_component_eq
-import DomainTheory.Neighborhood.Theorem56Full.component_bot
-import DomainTheory.Neighborhood.Theorem56Full.push_natElem_vecElem
+module
+
+public import DomainTheory.Neighborhood.Example43
+public import DomainTheory.Neighborhood.Exercise326
+public import DomainTheory.Neighborhood.Exercise511
+public import DomainTheory.Neighborhood.Theorem41
+public import DomainTheory.Neighborhood.ApproximableExercises
+public import Mathlib.Computability.PartrecBasis
+import all Mathlib.Computability.PartrecBasis
+public import DomainTheory.Neighborhood.Theorem56Full.Basic
+public import DomainTheory.Neighborhood.Theorem56Full.eq_of_component_eq
+public import DomainTheory.Neighborhood.Theorem56Full.component_bot
+public import DomainTheory.Neighborhood.Theorem56Full.push_natElem_vecElem
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.Theorem56Full

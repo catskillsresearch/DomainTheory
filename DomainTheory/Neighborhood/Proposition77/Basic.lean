@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example61
-import DomainTheory.Neighborhood.Definition72
+module
+
+public import DomainTheory.Neighborhood.Example61
+public import DomainTheory.Neighborhood.Definition72
+
+@[expose] public section
 
 /-!
 # Proposition 7.7 (Scott 1981, PRG-19, §7) — `D^§` is effectively given

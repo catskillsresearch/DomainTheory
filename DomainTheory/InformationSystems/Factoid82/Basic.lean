@@ -5,9 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.FunctionSpace
-import DomainTheory.InformationSystems.Sum
-import Mathlib.Data.Finset.Card
+module
+
+public import DomainTheory.InformationSystems.FunctionSpace
+public import DomainTheory.InformationSystems.Sum
+public import Mathlib.Data.Finset.Card
+import all Mathlib.Data.Finset.Card
+
+@[expose] public section
 
 /-!
 # Factoid 8.2 — λ-calculus model `D ≅ A + (D → D)`

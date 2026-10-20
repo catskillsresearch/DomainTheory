@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722Decide.Basic
-import DomainTheory.Neighborhood.Exercise722Decide.autStateCard_le_card
-import DomainTheory.Neighborhood.Exercise722Decide.nfa_accepts_nonempty_iff
-import DomainTheory.Neighborhood.Exercise722Decide.denote_eq_empty_iff
-import DomainTheory.Neighborhood.Exercise722Decide.pathStateAt_last
-import DomainTheory.Neighborhood.Exercise722Decide.nfa_accepts_nonempty_iff_short
-import DomainTheory.Neighborhood.Exercise722Decide.consistentB_iff_Ssys
+module
+
+public import DomainTheory.Neighborhood.Exercise722Decide.Basic
+public import DomainTheory.Neighborhood.Exercise722Decide.autStateCard_le_card
+public import DomainTheory.Neighborhood.Exercise722Decide.nfa_accepts_nonempty_iff
+public import DomainTheory.Neighborhood.Exercise722Decide.denote_eq_empty_iff
+public import DomainTheory.Neighborhood.Exercise722Decide.pathStateAt_last
+public import DomainTheory.Neighborhood.Exercise722Decide.nfa_accepts_nonempty_iff_short
+public import DomainTheory.Neighborhood.Exercise722Decide.consistentB_iff_Ssys
+
+@[expose] public section

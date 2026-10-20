@@ -5,12 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.Hom.Basic
-import Mathlib.Order.Sum.Order
-import Mathlib.Order.WithBot
-import DomainTheory.InformationSystems.Theorem72
-import DomainTheory.InformationSystems.Proposition64
-import DomainTheory.BridgeTheorems.InfoSysConstructions.Basic
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import Mathlib.Order.Sum.Order
+import all Mathlib.Order.Sum.Order
+public import Mathlib.Order.WithBot
+import all Mathlib.Order.WithBot
+public import DomainTheory.InformationSystems.Theorem72
+public import DomainTheory.InformationSystems.Proposition64
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.BridgeTheorems

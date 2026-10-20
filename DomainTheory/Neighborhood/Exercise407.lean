@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise407.Basic
-import DomainTheory.Neighborhood.Exercise407.le_fixAbove
-import DomainTheory.Neighborhood.Exercise407.fixAbove_isFixed
-import DomainTheory.Neighborhood.Exercise407.fixAbove_least
+module
+
+public import DomainTheory.Neighborhood.Exercise407.Basic
+public import DomainTheory.Neighborhood.Exercise407.le_fixAbove
+public import DomainTheory.Neighborhood.Exercise407.fixAbove_isFixed
+public import DomainTheory.Neighborhood.Exercise407.fixAbove_least
+
+@[expose] public section

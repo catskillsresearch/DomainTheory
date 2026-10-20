@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Embedding
-import DomainTheory.DataTypesAsLattices.Lambda.Basic
-import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
-import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
+module
+
+public import DomainTheory.DataTypesAsLattices.Embedding
+public import DomainTheory.DataTypesAsLattices.Lambda.Basic
+public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_left
+public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

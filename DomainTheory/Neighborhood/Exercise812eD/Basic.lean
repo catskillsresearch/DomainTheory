@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise812e
-import DomainTheory.Neighborhood.SplitV
-import DomainTheory.Neighborhood.UComputablePresentation
+module
+
+public import DomainTheory.Neighborhood.Exercise812e
+public import DomainTheory.Neighborhood.SplitV
+public import DomainTheory.Neighborhood.UComputablePresentation
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(e)(d)(iii) (Scott 1981, PRG-19, Lecture VIII) — package as `ComputableBisection`;

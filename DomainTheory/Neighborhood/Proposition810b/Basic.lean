@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition810
-import DomainTheory.Neighborhood.Theorem86
+module
+
+public import DomainTheory.Neighborhood.Proposition810
+public import DomainTheory.Neighborhood.Theorem86
+
+@[expose] public section
 
 /-!
 # Proposition 8.10 (Scott 1981, PRG-19), second half — finitary-closure

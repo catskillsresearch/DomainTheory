@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88h
+module
+
+public import DomainTheory.Neighborhood.Theorem88h
+
+@[expose] public section
 
 /-!
 # Theorem 8.8(c), Part 2 of 6 — a `qChar`-gated primitive-recursive fold landing back in `DiagFixed`

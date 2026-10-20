@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example15.Basic
-import DomainTheory.Neighborhood.Example15.mem_iff_nonempty
-import DomainTheory.Neighborhood.Example15.consistent_iff_inter_nonempty
+module
+
+public import DomainTheory.Neighborhood.Example15.Basic
+public import DomainTheory.Neighborhood.Example15.mem_iff_nonempty
+public import DomainTheory.Neighborhood.Example15.consistent_iff_inter_nonempty
+
+@[expose] public section

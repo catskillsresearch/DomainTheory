@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise623.Basic
-import DomainTheory.Neighborhood.Exercise623.expHom_comp_expInv
-import DomainTheory.Neighborhood.Exercise623.algHom_fix
-import DomainTheory.Neighborhood.Exercise623.descRel_le_algHom
-import DomainTheory.Neighborhood.Exercise623.descMap_le_algHom
-import DomainTheory.Neighborhood.Exercise623.Subsystemu2eproj_isStrict
+module
+
+public import DomainTheory.Neighborhood.Exercise623.Basic
+public import DomainTheory.Neighborhood.Exercise623.expHom_comp_expInv
+public import DomainTheory.Neighborhood.Exercise623.algHom_fix
+public import DomainTheory.Neighborhood.Exercise623.descRel_le_algHom
+public import DomainTheory.Neighborhood.Exercise623.descMap_le_algHom
+public import DomainTheory.Neighborhood.Exercise623.Subsystemu2eproj_isStrict
+
+@[expose] public section

@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Lemma615
-import DomainTheory.Neighborhood.Proposition612
-import DomainTheory.Neighborhood.Exercise628.Basic
-import DomainTheory.Neighborhood.Exercise628.isomorphic_of_trianglelefteq_both
-import DomainTheory.Neighborhood.Exercise628.finite_element_of_isFinite
+module
+
+public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.Neighborhood.Proposition612
+public import DomainTheory.Neighborhood.Exercise628.Basic
+public import DomainTheory.Neighborhood.Exercise628.isomorphic_of_trianglelefteq_both
+public import DomainTheory.Neighborhood.Exercise628.finite_element_of_isFinite
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

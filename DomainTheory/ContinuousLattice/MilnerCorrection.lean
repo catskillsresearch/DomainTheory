@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.MilnerCorrection.Basic
-import DomainTheory.ContinuousLattice.MilnerCorrection.scottOpen_of_coarserThanScott
+module
+
+public import DomainTheory.ContinuousLattice.MilnerCorrection.Basic
+public import DomainTheory.ContinuousLattice.MilnerCorrection.scottOpen_of_coarserThanScott
+
+@[expose] public section

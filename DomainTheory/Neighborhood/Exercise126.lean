@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise126.Basic
-import DomainTheory.Neighborhood.Exercise126.IFamily_eq_of_span_eq
+module
+
+public import DomainTheory.Neighborhood.Exercise126.Basic
+public import DomainTheory.Neighborhood.Exercise126.IFamily_eq_of_span_eq
+
+@[expose] public section

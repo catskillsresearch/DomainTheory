@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Graph
-import DomainTheory.DataTypesAsLattices.FixedPoint.Basic
-import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3_diag
-import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+module
+
+public import DomainTheory.DataTypesAsLattices.Graph
+public import DomainTheory.DataTypesAsLattices.FixedPoint.Basic
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3_diag
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

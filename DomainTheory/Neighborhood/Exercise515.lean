@@ -5,20 +5,24 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise515.Basic
-import DomainTheory.Neighborhood.Exercise515.smul_assoc
-import DomainTheory.Neighborhood.Exercise515.sunion_mul
-import DomainTheory.Neighborhood.Exercise515.smul_union
-import DomainTheory.Neighborhood.Exercise515.mem_star
-import DomainTheory.Neighborhood.Exercise515.star_eq
-import DomainTheory.Neighborhood.Exercise515.star_mul_isFixed
-import DomainTheory.Neighborhood.Exercise515.star_mul_subset_prefixed
-import DomainTheory.Neighborhood.Exercise515.arden
-import DomainTheory.Neighborhood.Exercise515.mem_kpow_singleton
-import DomainTheory.Neighborhood.Exercise515.mem_star_singleton
-import DomainTheory.Neighborhood.Exercise515.part1
-import DomainTheory.Neighborhood.Exercise515.part1_freeMonoid
-import DomainTheory.Neighborhood.Exercise515.parkX_eq
-import DomainTheory.Neighborhood.Exercise515.parkY_eq
-import DomainTheory.Neighborhood.Exercise515.park_solves
-import DomainTheory.Neighborhood.Exercise515.park_least
+module
+
+public import DomainTheory.Neighborhood.Exercise515.Basic
+public import DomainTheory.Neighborhood.Exercise515.smul_assoc
+public import DomainTheory.Neighborhood.Exercise515.sunion_mul
+public import DomainTheory.Neighborhood.Exercise515.smul_union
+public import DomainTheory.Neighborhood.Exercise515.mem_star
+public import DomainTheory.Neighborhood.Exercise515.star_eq
+public import DomainTheory.Neighborhood.Exercise515.star_mul_isFixed
+public import DomainTheory.Neighborhood.Exercise515.star_mul_subset_prefixed
+public import DomainTheory.Neighborhood.Exercise515.arden
+public import DomainTheory.Neighborhood.Exercise515.mem_kpow_singleton
+public import DomainTheory.Neighborhood.Exercise515.mem_star_singleton
+public import DomainTheory.Neighborhood.Exercise515.part1
+public import DomainTheory.Neighborhood.Exercise515.part1_freeMonoid
+public import DomainTheory.Neighborhood.Exercise515.parkX_eq
+public import DomainTheory.Neighborhood.Exercise515.parkY_eq
+public import DomainTheory.Neighborhood.Exercise515.park_solves
+public import DomainTheory.Neighborhood.Exercise515.park_least
+
+@[expose] public section

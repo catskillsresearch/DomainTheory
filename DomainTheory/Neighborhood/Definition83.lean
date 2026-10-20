@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition83.Basic
-import DomainTheory.Neighborhood.Definition83.retractionOfSubsystem_le_idMap
-import DomainTheory.Neighborhood.Definition83.isProjection_retractionOfSubsystem
-import DomainTheory.Neighborhood.Definition83.isFinitary_retractionOfSubsystem
-import DomainTheory.Neighborhood.Definition83.isFinitaryProjection_retractionOfSubsystem
+module
+
+public import DomainTheory.Neighborhood.Definition83.Basic
+public import DomainTheory.Neighborhood.Definition83.retractionOfSubsystem_le_idMap
+public import DomainTheory.Neighborhood.Definition83.isProjection_retractionOfSubsystem
+public import DomainTheory.Neighborhood.Definition83.isFinitary_retractionOfSubsystem
+public import DomainTheory.Neighborhood.Definition83.isFinitaryProjection_retractionOfSubsystem
+
+@[expose] public section

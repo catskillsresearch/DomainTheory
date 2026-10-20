@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722Regular
-import Mathlib.Computability.EpsilonNFA
+module
+
+public import DomainTheory.Neighborhood.Exercise722Regular
+public import Mathlib.Computability.EpsilonNFA
+import all Mathlib.Computability.EpsilonNFA
+
+@[expose] public section
 
 /-!
 # Exercise 7.22 — the concatenation automaton (the crux mathlib lacks)

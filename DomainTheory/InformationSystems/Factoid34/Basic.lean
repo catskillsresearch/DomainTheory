@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.InfoSys
+module
+
+public import DomainTheory.InformationSystems.InfoSys
+
+@[expose] public section
 
 /-!
 # Factoid 3.4 — top element and total elements

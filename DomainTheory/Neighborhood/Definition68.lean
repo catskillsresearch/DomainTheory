@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition68.Basic
-import DomainTheory.Neighborhood.Definition68.ContinuousOnMapsu2eisStrict_map
-import DomainTheory.Neighborhood.Definition68.toStrictMap_toStrictFilter
-import DomainTheory.Neighborhood.Definition68.continuousOnMaps_id
+module
+
+public import DomainTheory.Neighborhood.Definition68.Basic
+public import DomainTheory.Neighborhood.Definition68.ContinuousOnMapsu2eisStrict_map
+public import DomainTheory.Neighborhood.Definition68.toStrictMap_toStrictFilter
+public import DomainTheory.Neighborhood.Definition68.continuousOnMaps_id
+
+@[expose] public section

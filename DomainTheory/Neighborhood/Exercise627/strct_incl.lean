@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise621
-import DomainTheory.Neighborhood.Lemma615
-import DomainTheory.Neighborhood.Exercise627.Basic
-import DomainTheory.Neighborhood.Exercise627.strictifyMap_of_isStrict
-import DomainTheory.Neighborhood.Exercise627.toApproxMap_toFilter
-import DomainTheory.Neighborhood.Exercise627.toStrictFilter_toStrictMap
+module
+
+public import DomainTheory.Neighborhood.Exercise621
+public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.Neighborhood.Exercise627.Basic
+public import DomainTheory.Neighborhood.Exercise627.strictifyMap_of_isStrict
+public import DomainTheory.Neighborhood.Exercise627.toApproxMap_toFilter
+public import DomainTheory.Neighborhood.Exercise627.toStrictFilter_toStrictMap
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

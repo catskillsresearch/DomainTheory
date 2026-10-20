@@ -5,17 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Algebra.Ring.Parity
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Closures.Basic
-import DomainTheory.DataTypesAsLattices.Closures.eq_5_8
-import DomainTheory.DataTypesAsLattices.Closures.squarePair_mono
-import DomainTheory.DataTypesAsLattices.Closures.squarePair_bot_bot
-import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_left
-import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_right
-import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_mixed
-import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_empty
-import DomainTheory.DataTypesAsLattices.Closures.boxShift_expansive
+module
+
+public import Mathlib.Algebra.Ring.Parity
+import all Mathlib.Algebra.Ring.Parity
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Closures.Basic
+public import DomainTheory.DataTypesAsLattices.Closures.eq_5_8
+public import DomainTheory.DataTypesAsLattices.Closures.squarePair_mono
+public import DomainTheory.DataTypesAsLattices.Closures.squarePair_bot_bot
+public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_left
+public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_right
+public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_mixed
+public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_empty
+public import DomainTheory.DataTypesAsLattices.Closures.boxShift_expansive
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

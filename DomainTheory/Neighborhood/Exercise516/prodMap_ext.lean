@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise419
-import DomainTheory.Neighborhood.Product
-import DomainTheory.Neighborhood.Exercise516.Basic
-import DomainTheory.Neighborhood.Exercise516.memC_eq_shape
-import DomainTheory.Neighborhood.Exercise516.prod_principal_pair
+module
+
+public import DomainTheory.Neighborhood.Exercise419
+public import DomainTheory.Neighborhood.Product
+public import DomainTheory.Neighborhood.Exercise516.Basic
+public import DomainTheory.Neighborhood.Exercise516.memC_eq_shape
+public import DomainTheory.Neighborhood.Exercise516.prod_principal_pair
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.Exercise516

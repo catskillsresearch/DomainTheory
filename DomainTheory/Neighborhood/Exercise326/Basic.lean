@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Product
-import DomainTheory.Neighborhood.Example23
+module
+
+public import DomainTheory.Neighborhood.Product
+public import DomainTheory.Neighborhood.Example23
+
+@[expose] public section
 
 /-!
 # Exercise 3.26 (Scott 1981, PRG-19, §3) — the conditional operator `cond`

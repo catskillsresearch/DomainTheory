@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example62
-import DomainTheory.Neighborhood.Product
+module
+
+public import DomainTheory.Neighborhood.Example62
+public import DomainTheory.Neighborhood.Product
+
+@[expose] public section
 
 /-!
 # Exercise 6.19 (Scott 1981, PRG-19, §6) — sum and product on the category of strict maps

@@ -5,43 +5,47 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Constructive
-import DomainTheory.InformationSystems.InfoSys
-import DomainTheory.InformationSystems.Definition22
-import DomainTheory.InformationSystems.Proposition23
-import DomainTheory.InformationSystems.Factoid24
-import DomainTheory.InformationSystems.Factoid25
-import DomainTheory.InformationSystems.Factoid26
-import DomainTheory.InformationSystems.Factoid32
-import DomainTheory.InformationSystems.Factoid33
-import DomainTheory.InformationSystems.Factoid34
-import DomainTheory.InformationSystems.Factoid35
-import DomainTheory.InformationSystems.Factoid36
-import DomainTheory.InformationSystems.Factoid41
-import DomainTheory.InformationSystems.Factoid42
-import DomainTheory.InformationSystems.Factoid43
-import DomainTheory.InformationSystems.Factoid44
-import DomainTheory.InformationSystems.Factoid45
-import DomainTheory.InformationSystems.Factoid46
-import DomainTheory.InformationSystems.Approximable
-import DomainTheory.InformationSystems.Proposition53
-import DomainTheory.InformationSystems.Proposition54
-import DomainTheory.InformationSystems.Proposition55
-import DomainTheory.InformationSystems.Proposition56
-import DomainTheory.InformationSystems.Product
-import DomainTheory.InformationSystems.Proposition62
-import DomainTheory.InformationSystems.Sum
-import DomainTheory.InformationSystems.Proposition64
-import DomainTheory.InformationSystems.Factoid65
-import DomainTheory.InformationSystems.FunctionSpace
-import DomainTheory.InformationSystems.Theorem72
-import DomainTheory.InformationSystems.Fixpoint
-import DomainTheory.InformationSystems.Proposition74
-import DomainTheory.InformationSystems.Factoid75
-import DomainTheory.InformationSystems.Factoid76
-import DomainTheory.InformationSystems.Factoid77
-import DomainTheory.InformationSystems.Factoid81
-import DomainTheory.InformationSystems.Factoid82
-import DomainTheory.InformationSystems.Factoid83
-import DomainTheory.InformationSystems.Factoid84
-import DomainTheory.InformationSystems.DomainEquation
+module
+
+public import DomainTheory.InformationSystems.Constructive
+public import DomainTheory.InformationSystems.InfoSys
+public import DomainTheory.InformationSystems.Definition22
+public import DomainTheory.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.Factoid24
+public import DomainTheory.InformationSystems.Factoid25
+public import DomainTheory.InformationSystems.Factoid26
+public import DomainTheory.InformationSystems.Factoid32
+public import DomainTheory.InformationSystems.Factoid33
+public import DomainTheory.InformationSystems.Factoid34
+public import DomainTheory.InformationSystems.Factoid35
+public import DomainTheory.InformationSystems.Factoid36
+public import DomainTheory.InformationSystems.Factoid41
+public import DomainTheory.InformationSystems.Factoid42
+public import DomainTheory.InformationSystems.Factoid43
+public import DomainTheory.InformationSystems.Factoid44
+public import DomainTheory.InformationSystems.Factoid45
+public import DomainTheory.InformationSystems.Factoid46
+public import DomainTheory.InformationSystems.Approximable
+public import DomainTheory.InformationSystems.Proposition53
+public import DomainTheory.InformationSystems.Proposition54
+public import DomainTheory.InformationSystems.Proposition55
+public import DomainTheory.InformationSystems.Proposition56
+public import DomainTheory.InformationSystems.Product
+public import DomainTheory.InformationSystems.Proposition62
+public import DomainTheory.InformationSystems.Sum
+public import DomainTheory.InformationSystems.Proposition64
+public import DomainTheory.InformationSystems.Factoid65
+public import DomainTheory.InformationSystems.FunctionSpace
+public import DomainTheory.InformationSystems.Theorem72
+public import DomainTheory.InformationSystems.Fixpoint
+public import DomainTheory.InformationSystems.Proposition74
+public import DomainTheory.InformationSystems.Factoid75
+public import DomainTheory.InformationSystems.Factoid76
+public import DomainTheory.InformationSystems.Factoid77
+public import DomainTheory.InformationSystems.Factoid81
+public import DomainTheory.InformationSystems.Factoid82
+public import DomainTheory.InformationSystems.Factoid83
+public import DomainTheory.InformationSystems.Factoid84
+public import DomainTheory.InformationSystems.DomainEquation
+
+@[expose] public section

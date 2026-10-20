@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88k
+module
+
+public import DomainTheory.Neighborhood.Theorem88k
+
+@[expose] public section
 
 /-!
 # Theorem 8.8(c), Part 5 of 6 — a primitive-recursive `.inter` for `D_X`, and its `inter_spec`

@@ -5,9 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.Specialization
-import Mathlib.Order.ScottContinuity
-import Mathlib.Topology.Order.ScottTopology
+module
+
+public import DomainTheory.ContinuousLattice.Specialization
+public import Mathlib.Order.ScottContinuity
+import all Mathlib.Order.ScottContinuity
+public import Mathlib.Topology.Order.ScottTopology
+import all Mathlib.Topology.Order.ScottTopology
+
+@[expose] public section
 
 /-!
 # Scott-continuous maps (Scott 1972, §2.5–2.7)

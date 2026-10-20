@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Approximable
+module
+
+public import DomainTheory.InformationSystems.Approximable
+
+@[expose] public section
 
 /-!
 # Proposition 5.3 — images, order, and the closure bridge

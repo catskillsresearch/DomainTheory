@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition79.Basic
-import DomainTheory.Neighborhood.Definition79.dagger_isomorphic
-import DomainTheory.Neighborhood.Definition79.mem_PDunion
-import DomainTheory.Neighborhood.Definition79.PDmem_empty
-import DomainTheory.Neighborhood.Definition79.PDmem_upSet
-import DomainTheory.Neighborhood.Definition79.PDmem_master
-import DomainTheory.Neighborhood.Definition79.PDmem_union
-import DomainTheory.Neighborhood.Definition79.PDmem_iff_fin
-import DomainTheory.Neighborhood.Definition79.upSet_inter_nonempty_iff
-import DomainTheory.Neighborhood.Definition79.dagger_upSet_inter
+module
+
+public import DomainTheory.Neighborhood.Definition79.Basic
+public import DomainTheory.Neighborhood.Definition79.dagger_isomorphic
+public import DomainTheory.Neighborhood.Definition79.mem_PDunion
+public import DomainTheory.Neighborhood.Definition79.PDmem_empty
+public import DomainTheory.Neighborhood.Definition79.PDmem_upSet
+public import DomainTheory.Neighborhood.Definition79.PDmem_master
+public import DomainTheory.Neighborhood.Definition79.PDmem_union
+public import DomainTheory.Neighborhood.Definition79.PDmem_iff_fin
+public import DomainTheory.Neighborhood.Definition79.upSet_inter_nonempty_iff
+public import DomainTheory.Neighborhood.Definition79.dagger_upSet_inter
+
+@[expose] public section

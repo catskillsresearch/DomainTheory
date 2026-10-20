@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Approximable
-import DomainTheory.InformationSystems.Factoid45
+module
+
+public import DomainTheory.InformationSystems.Approximable
+public import DomainTheory.InformationSystems.Factoid45
+
+@[expose] public section
 
 /-!
 # Factoid 4.6 — Scott topology and continuous maps

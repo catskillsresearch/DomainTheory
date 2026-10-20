@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise216.Basic
-import DomainTheory.Neighborhood.Exercise216.toElementMap_sigmaMap
-import DomainTheory.Neighborhood.Exercise216.parityMap_satisfies
-import DomainTheory.Neighborhood.Exercise216.key
-import DomainTheory.Neighborhood.Exercise216.eq_parityMap_of_satisfies
+module
+
+public import DomainTheory.Neighborhood.Exercise216.Basic
+public import DomainTheory.Neighborhood.Exercise216.toElementMap_sigmaMap
+public import DomainTheory.Neighborhood.Exercise216.parityMap_satisfies
+public import DomainTheory.Neighborhood.Exercise216.key
+public import DomainTheory.Neighborhood.Exercise216.eq_parityMap_of_satisfies
+
+@[expose] public section

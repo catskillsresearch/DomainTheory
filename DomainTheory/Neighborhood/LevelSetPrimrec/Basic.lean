@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise812
-import DomainTheory.Neighborhood.Definition71
+module
+
+public import DomainTheory.Neighborhood.Exercise812
+public import DomainTheory.Neighborhood.Definition71
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(b) (Scott 1981, PRG-19, Lecture VIII) — `V`'s computable presentation

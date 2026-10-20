@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Topology.Inseparable
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Topology.Inseparable
+import all Mathlib.Topology.Inseparable
+
+@[expose] public section
 
 /-!
 # Exercise 1.22 (Scott 1981, PRG-19, §1) — the topology on `|𝒟|`

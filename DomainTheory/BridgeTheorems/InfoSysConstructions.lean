@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.BridgeTheorems.InfoSysConstructions.Basic
-import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair_mono
-import DomainTheory.BridgeTheorems.InfoSysConstructions.sumElementLft_eq
-import DomainTheory.BridgeTheorems.InfoSysConstructions.sumElementRht_eq
+module
+
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.Basic
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair_mono
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.sumElementLft_eq
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.sumElementRht_eq
+
+@[expose] public section

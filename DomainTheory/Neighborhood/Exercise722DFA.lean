@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722DFA.Basic
-import DomainTheory.Neighborhood.Exercise722DFA.sigmaDFA_accepts_denote
-import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_evalFrom_none
-import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_evalFrom
-import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_accepts
-import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_accepts_denote
-import DomainTheory.Neighborhood.Exercise722DFA.inter_eval
-import DomainTheory.Neighborhood.Exercise722DFA.interDFA_accepts
+module
+
+public import DomainTheory.Neighborhood.Exercise722DFA.Basic
+public import DomainTheory.Neighborhood.Exercise722DFA.sigmaDFA_accepts_denote
+public import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_evalFrom_none
+public import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_evalFrom
+public import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_accepts
+public import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_accepts_denote
+public import DomainTheory.Neighborhood.Exercise722DFA.inter_eval
+public import DomainTheory.Neighborhood.Exercise722DFA.interDFA_accepts
+
+@[expose] public section

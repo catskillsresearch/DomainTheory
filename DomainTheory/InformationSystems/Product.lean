@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Product.Basic
-import DomainTheory.InformationSystems.Product.fstFinset_funion
-import DomainTheory.InformationSystems.Product.sndFinset_funion
+module
+
+public import DomainTheory.InformationSystems.Product.Basic
+public import DomainTheory.InformationSystems.Product.fstFinset_funion
+public import DomainTheory.InformationSystems.Product.sndFinset_funion
+
+@[expose] public section

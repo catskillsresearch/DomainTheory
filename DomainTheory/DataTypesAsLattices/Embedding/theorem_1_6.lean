@@ -5,14 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Topology.Bases
-import Mathlib.Topology.Defs.Induced
-import Mathlib.Topology.Order
-import Mathlib.Topology.Separation.Basic
-import DomainTheory.DataTypesAsLattices.FixedPoint
-import DomainTheory.DataTypesAsLattices.Embedding.Basic
-import DomainTheory.DataTypesAsLattices.Embedding.embed_inducing
-import DomainTheory.DataTypesAsLattices.Embedding.embed_injective
+module
+
+public import Mathlib.Topology.Bases
+import all Mathlib.Topology.Bases
+public import Mathlib.Topology.Defs.Induced
+import all Mathlib.Topology.Defs.Induced
+public import Mathlib.Topology.Order
+import all Mathlib.Topology.Order
+public import Mathlib.Topology.Separation.Basic
+import all Mathlib.Topology.Separation.Basic
+public import DomainTheory.DataTypesAsLattices.FixedPoint
+public import DomainTheory.DataTypesAsLattices.Embedding.Basic
+public import DomainTheory.DataTypesAsLattices.Embedding.embed_inducing
+public import DomainTheory.DataTypesAsLattices.Embedding.embed_injective
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

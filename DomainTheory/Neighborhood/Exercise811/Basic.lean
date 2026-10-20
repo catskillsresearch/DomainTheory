@@ -5,11 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem85
-import Mathlib.Data.Rat.Cast.Order
-import Mathlib.Algebra.Order.Archimedean.Basic
-import Mathlib.Order.Bounds.OrderIso
-import Mathlib.Order.ConditionallyCompleteLattice.Basic
+module
+
+public import DomainTheory.Neighborhood.Theorem85
+public import Mathlib.Data.Rat.Cast.Order
+import all Mathlib.Data.Rat.Cast.Order
+public import Mathlib.Algebra.Order.Archimedean.Basic
+import all Mathlib.Algebra.Order.Archimedean.Basic
+public import Mathlib.Order.Bounds.OrderIso
+import all Mathlib.Order.Bounds.OrderIso
+public import Mathlib.Order.ConditionallyCompleteLattice.Basic
+import all Mathlib.Order.ConditionallyCompleteLattice.Basic
+
+@[expose] public section
 
 /-!
 # Exercise 8.11 (Scott 1981, PRG-19, Lecture VIII)

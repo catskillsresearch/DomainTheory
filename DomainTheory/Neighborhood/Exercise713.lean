@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise713.Basic
-import DomainTheory.Neighborhood.Exercise713.axiom_i
-import DomainTheory.Neighborhood.Exercise713.axiom_ii
-import DomainTheory.Neighborhood.Exercise713.axiom_iii
-import DomainTheory.Neighborhood.Exercise713.axiom_iv
-import DomainTheory.Neighborhood.Exercise713.toSystem_isEffectivelyGiven
-import DomainTheory.Neighborhood.Exercise713.ofPresentation_toPresentation_INCL
-import DomainTheory.Neighborhood.Exercise713.reconstruct_isomorphic
+module
+
+public import DomainTheory.Neighborhood.Exercise713.Basic
+public import DomainTheory.Neighborhood.Exercise713.axiom_i
+public import DomainTheory.Neighborhood.Exercise713.axiom_ii
+public import DomainTheory.Neighborhood.Exercise713.axiom_iii
+public import DomainTheory.Neighborhood.Exercise713.axiom_iv
+public import DomainTheory.Neighborhood.Exercise713.toSystem_isEffectivelyGiven
+public import DomainTheory.Neighborhood.Exercise713.ofPresentation_toPresentation_INCL
+public import DomainTheory.Neighborhood.Exercise713.reconstruct_isomorphic
+
+@[expose] public section

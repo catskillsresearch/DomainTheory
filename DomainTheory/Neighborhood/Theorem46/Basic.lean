@@ -5,7 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Tactic
+module
+
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Lecture IV (§4) — Definition 4.5 and Theorem 4.6: models of Peano's Axioms

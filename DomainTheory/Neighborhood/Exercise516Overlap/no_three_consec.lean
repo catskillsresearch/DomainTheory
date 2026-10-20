@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise516ThueMorse
-import DomainTheory.Neighborhood.Exercise516Overlap.Basic
-import DomainTheory.Neighborhood.Exercise516Overlap.odd_of_consec_eq
+module
+
+public import DomainTheory.Neighborhood.Exercise516ThueMorse
+public import DomainTheory.Neighborhood.Exercise516Overlap.Basic
+public import DomainTheory.Neighborhood.Exercise516Overlap.odd_of_consec_eq
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.Exercise516

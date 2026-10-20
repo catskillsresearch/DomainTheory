@@ -5,16 +5,21 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.Halting
-import DomainTheory.DataTypesAsLattices.Computability
-import DomainTheory.DataTypesAsLattices.Functionality
-import DomainTheory.DataTypesAsLattices.Enumeration.Basic
-import DomainTheory.DataTypesAsLattices.Enumeration.Deg_isSubalgebra
-import DomainTheory.DataTypesAsLattices.Enumeration.Deg_self
-import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSubalgebra_isSubalgebra
-import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSubalgebra_generator
-import DomainTheory.DataTypesAsLattices.Enumeration.combinatory_mem_subalgebra
-import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_6_generated
+module
+
+public import Mathlib.Computability.Halting
+import all Mathlib.Computability.Halting
+public import DomainTheory.DataTypesAsLattices.Computability
+public import DomainTheory.DataTypesAsLattices.Functionality
+public import DomainTheory.DataTypesAsLattices.Enumeration.Basic
+public import DomainTheory.DataTypesAsLattices.Enumeration.Deg_isSubalgebra
+public import DomainTheory.DataTypesAsLattices.Enumeration.Deg_self
+public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSubalgebra_isSubalgebra
+public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSubalgebra_generator
+public import DomainTheory.DataTypesAsLattices.Enumeration.combinatory_mem_subalgebra
+public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_6_generated
+
+@[expose] public section
 
 
 set_option maxHeartbeats 2000000

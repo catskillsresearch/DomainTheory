@@ -5,11 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Theorem72
-import DomainTheory.InformationSystems.Factoid65
-import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
-import Mathlib.CategoryTheory.Monoidal.Closed.Basic
-import Mathlib.CategoryTheory.Adjunction.Basic
+module
+
+public import DomainTheory.InformationSystems.Theorem72
+public import DomainTheory.InformationSystems.Factoid65
+public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
+import all Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
+public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
+import all Mathlib.CategoryTheory.Monoidal.Closed.Basic
+public import Mathlib.CategoryTheory.Adjunction.Basic
+import all Mathlib.CategoryTheory.Adjunction.Basic
+
+@[expose] public section
 
 /-!
 # Factoid 7.7 — cartesian closed structure (stretch goal)

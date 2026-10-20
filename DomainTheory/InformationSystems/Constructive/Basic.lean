@@ -5,7 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Data.Finset.Basic
+module
+
+public import Mathlib.Data.Finset.Basic
+import all Mathlib.Data.Finset.Basic
+
+@[expose] public section
 
 /-!
 # A choice-free `Finset` prelude

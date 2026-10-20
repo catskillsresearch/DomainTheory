@@ -5,9 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.CompleteLattice.Basic
-import Mathlib.Order.Directed
-import DomainTheory.ContinuousLattice.WayBelow
+module
+
+public import Mathlib.Order.CompleteLattice.Basic
+import all Mathlib.Order.CompleteLattice.Basic
+public import Mathlib.Order.Directed
+import all Mathlib.Order.Directed
+public import DomainTheory.ContinuousLattice.WayBelow
+
+@[expose] public section
 
 /-!
 # Algebraic complete lattices → continuous lattices (ideal-completion → 1972)

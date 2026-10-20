@@ -5,12 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.Theorem212
-import Mathlib.Order.GaloisConnection.Basic
-import DomainTheory.ContinuousLattice.InverseLimits.Basic
-import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_t0Space
-import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_specializationLe_iff
-import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_isInjectiveSpace
+module
+
+public import DomainTheory.ContinuousLattice.Theorem212
+public import Mathlib.Order.GaloisConnection.Basic
+import all Mathlib.Order.GaloisConnection.Basic
+public import DomainTheory.ContinuousLattice.InverseLimits.Basic
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_t0Space
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_specializationLe_iff
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_isInjectiveSpace
+
+@[expose] public section
 
 
 namespace DomainTheory.ContinuousLattice

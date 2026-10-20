@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88e
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.Proposition612
-import DomainTheory.Neighborhood.Theorem88f.Basic
-import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_inj_isComputableMap
-import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_proj_isComputableMap
+module
+
+public import DomainTheory.Neighborhood.Theorem88e
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.Proposition612
+public import DomainTheory.Neighborhood.Theorem88f.Basic
+public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_inj_isComputableMap
+public import DomainTheory.Neighborhood.Theorem88f.DprimeUCode_proj_isComputableMap
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

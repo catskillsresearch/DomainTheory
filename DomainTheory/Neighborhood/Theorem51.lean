@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem51.Basic
-import DomainTheory.Neighborhood.Theorem51.var_fst
-import DomainTheory.Neighborhood.Theorem51.var_snd
-import DomainTheory.Neighborhood.Theorem51.const_apply
-import DomainTheory.Neighborhood.Theorem51.tuple_apply
-import DomainTheory.Neighborhood.Theorem51.app_apply
-import DomainTheory.Neighborhood.Theorem51.abs_apply
+module
+
+public import DomainTheory.Neighborhood.Theorem51.Basic
+public import DomainTheory.Neighborhood.Theorem51.var_fst
+public import DomainTheory.Neighborhood.Theorem51.var_snd
+public import DomainTheory.Neighborhood.Theorem51.const_apply
+public import DomainTheory.Neighborhood.Theorem51.tuple_apply
+public import DomainTheory.Neighborhood.Theorem51.app_apply
+public import DomainTheory.Neighborhood.Theorem51.abs_apply
+
+@[expose] public section

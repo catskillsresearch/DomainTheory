@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Approximable
-import DomainTheory.Neighborhood.ExampleB
-import DomainTheory.Neighborhood.Example24.Basic
-import DomainTheory.Neighborhood.Example24.out_true_true
-import DomainTheory.Neighborhood.Example24.out_true_false
+module
+
+public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.Neighborhood.ExampleB
+public import DomainTheory.Neighborhood.Example24.Basic
+public import DomainTheory.Neighborhood.Example24.out_true_true
+public import DomainTheory.Neighborhood.Example24.out_true_false
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.Example24

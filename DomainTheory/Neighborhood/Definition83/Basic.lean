@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition82
+module
+
+public import DomainTheory.Neighborhood.Proposition82
+
+@[expose] public section
 
 /-!
 # Lecture VIII — Definition 8.3 (Scott 1981, PRG-19): projections and finitary retractions

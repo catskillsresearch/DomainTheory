@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.PalomarExamples.Basic
-import DomainTheory.Neighborhood.PalomarExamples.P4_embeds
-import DomainTheory.Neighborhood.PalomarExamples.Ssys_embeds
+module
+
+public import DomainTheory.Neighborhood.PalomarExamples.Basic
+public import DomainTheory.Neighborhood.PalomarExamples.P4_embeds
+public import DomainTheory.Neighborhood.PalomarExamples.Ssys_embeds
+
+@[expose] public section

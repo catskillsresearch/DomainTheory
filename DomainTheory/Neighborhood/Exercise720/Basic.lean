@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition710
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.Exercise719
+module
+
+public import DomainTheory.Neighborhood.Proposition710
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.Exercise719
+
+@[expose] public section
 
 /-!
 # Exercise 7.20 (Scott 1981, PRG-19, §7) — the combinator `union : ℙ(ℙD) → ℙD`

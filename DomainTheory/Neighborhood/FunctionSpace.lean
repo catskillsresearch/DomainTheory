@@ -5,25 +5,29 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.FunctionSpace.Basic
-import DomainTheory.Neighborhood.FunctionSpace.ApproximableMapu2ele_iff
-import DomainTheory.Neighborhood.FunctionSpace.interYs_subset_of_mem
-import DomainTheory.Neighborhood.FunctionSpace.leastMap_mem_stepFun
-import DomainTheory.Neighborhood.FunctionSpace.rel_interYs
-import DomainTheory.Neighborhood.FunctionSpace.leastMap_le
-import DomainTheory.Neighborhood.FunctionSpace.stepFun_subset_step_iff
-import DomainTheory.Neighborhood.FunctionSpace.le_iff_toElementMap_le
-import DomainTheory.Neighborhood.FunctionSpace.toFilter_le_iff
-import DomainTheory.Neighborhood.FunctionSpace.mapsBounded_to_filters
-import DomainTheory.Neighborhood.FunctionSpace.toElementMap_sSupMaps_principal
-import DomainTheory.Neighborhood.FunctionSpace.mapsBounded_iff_pointwiseBounded
-import DomainTheory.Neighborhood.FunctionSpace.le_sSupMaps
-import DomainTheory.Neighborhood.FunctionSpace.sSupMaps_le
-import DomainTheory.Neighborhood.FunctionSpace.toElementMap_sSupMaps
-import DomainTheory.Neighborhood.FunctionSpace.toElementMap_sSupMapsu27
-import DomainTheory.Neighborhood.FunctionSpace.toElementMapu2082_eval
-import DomainTheory.Neighborhood.FunctionSpace.evalMap_apply
-import DomainTheory.Neighborhood.FunctionSpace.toElementMap_curry_apply
-import DomainTheory.Neighborhood.FunctionSpace.uncurry_eq
-import DomainTheory.Neighborhood.FunctionSpace.eval_comp_curry
-import DomainTheory.Neighborhood.FunctionSpace.curry_eval_comp
+module
+
+public import DomainTheory.Neighborhood.FunctionSpace.Basic
+public import DomainTheory.Neighborhood.FunctionSpace.ApproximableMapu2ele_iff
+public import DomainTheory.Neighborhood.FunctionSpace.interYs_subset_of_mem
+public import DomainTheory.Neighborhood.FunctionSpace.leastMap_mem_stepFun
+public import DomainTheory.Neighborhood.FunctionSpace.rel_interYs
+public import DomainTheory.Neighborhood.FunctionSpace.leastMap_le
+public import DomainTheory.Neighborhood.FunctionSpace.stepFun_subset_step_iff
+public import DomainTheory.Neighborhood.FunctionSpace.le_iff_toElementMap_le
+public import DomainTheory.Neighborhood.FunctionSpace.toFilter_le_iff
+public import DomainTheory.Neighborhood.FunctionSpace.mapsBounded_to_filters
+public import DomainTheory.Neighborhood.FunctionSpace.toElementMap_sSupMaps_principal
+public import DomainTheory.Neighborhood.FunctionSpace.mapsBounded_iff_pointwiseBounded
+public import DomainTheory.Neighborhood.FunctionSpace.le_sSupMaps
+public import DomainTheory.Neighborhood.FunctionSpace.sSupMaps_le
+public import DomainTheory.Neighborhood.FunctionSpace.toElementMap_sSupMaps
+public import DomainTheory.Neighborhood.FunctionSpace.toElementMap_sSupMapsu27
+public import DomainTheory.Neighborhood.FunctionSpace.toElementMapu2082_eval
+public import DomainTheory.Neighborhood.FunctionSpace.evalMap_apply
+public import DomainTheory.Neighborhood.FunctionSpace.toElementMap_curry_apply
+public import DomainTheory.Neighborhood.FunctionSpace.uncurry_eq
+public import DomainTheory.Neighborhood.FunctionSpace.eval_comp_curry
+public import DomainTheory.Neighborhood.FunctionSpace.curry_eval_comp
+
+@[expose] public section

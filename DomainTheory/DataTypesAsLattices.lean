@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Pomega
-import DomainTheory.DataTypesAsLattices.Continuous
-import DomainTheory.DataTypesAsLattices.Graph
-import DomainTheory.DataTypesAsLattices.FixedPoint
-import DomainTheory.DataTypesAsLattices.Embedding
-import DomainTheory.DataTypesAsLattices.Lambda
-import DomainTheory.DataTypesAsLattices.Computability
-import DomainTheory.DataTypesAsLattices.Enumeration
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Closures
-import DomainTheory.DataTypesAsLattices.Classification
-import DomainTheory.DataTypesAsLattices.Functionality
+module
+
+public import DomainTheory.DataTypesAsLattices.Pomega
+public import DomainTheory.DataTypesAsLattices.Continuous
+public import DomainTheory.DataTypesAsLattices.Graph
+public import DomainTheory.DataTypesAsLattices.FixedPoint
+public import DomainTheory.DataTypesAsLattices.Embedding
+public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Computability
+public import DomainTheory.DataTypesAsLattices.Enumeration
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Closures
+public import DomainTheory.DataTypesAsLattices.Classification
+public import DomainTheory.DataTypesAsLattices.Functionality
+
+@[expose] public section

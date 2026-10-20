@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise716.Basic
-import DomainTheory.Neighborhood.Exercise716.curryIso_apply
-import DomainTheory.Neighborhood.Exercise716.toApproxMap_principal_mem
-import DomainTheory.Neighborhood.Exercise716.curryComb_rel
-import DomainTheory.Neighborhood.Exercise716.primrec_curryStepCode
-import DomainTheory.Neighborhood.Exercise716.curryComb_rel_recDecidable
-import DomainTheory.Neighborhood.Exercise716.curryComb_isComputable
+module
+
+public import DomainTheory.Neighborhood.Exercise716.Basic
+public import DomainTheory.Neighborhood.Exercise716.curryIso_apply
+public import DomainTheory.Neighborhood.Exercise716.toApproxMap_principal_mem
+public import DomainTheory.Neighborhood.Exercise716.curryComb_rel
+public import DomainTheory.Neighborhood.Exercise716.primrec_curryStepCode
+public import DomainTheory.Neighborhood.Exercise716.curryComb_rel_recDecidable
+public import DomainTheory.Neighborhood.Exercise716.curryComb_isComputable
+
+@[expose] public section

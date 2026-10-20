@@ -5,19 +5,23 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem76.Basic
-import DomainTheory.Neighborhood.Theorem76.gStepsOK_sound
-import DomainTheory.Neighborhood.Theorem76.gStepsOK_complete
-import DomainTheory.Neighborhood.Theorem76.fixElement_mem_iff_chain
-import DomainTheory.Neighborhood.Theorem76.Xenum_codePair
-import DomainTheory.Neighborhood.Theorem76.leastMap_Xenum_rel
-import DomainTheory.Neighborhood.Theorem76.fixMap_rel_iff
-import DomainTheory.Neighborhood.Theorem76.chainDec_iff_gStepsOK
-import DomainTheory.Neighborhood.Theorem76.fixStp_eq
-import DomainTheory.Neighborhood.Theorem76.primrec_fixStp
-import DomainTheory.Neighborhood.Theorem76.fixChainChar_eq
-import DomainTheory.Neighborhood.Theorem76.primrec_fixChainChar
-import DomainTheory.Neighborhood.Theorem76.fixPStep_foldl_fst
-import DomainTheory.Neighborhood.Theorem76.fixPStep_foldl_snd
-import DomainTheory.Neighborhood.Theorem76.fixChainChar_spec
-import DomainTheory.Neighborhood.Theorem76.fixMap_isComputable
+module
+
+public import DomainTheory.Neighborhood.Theorem76.Basic
+public import DomainTheory.Neighborhood.Theorem76.gStepsOK_sound
+public import DomainTheory.Neighborhood.Theorem76.gStepsOK_complete
+public import DomainTheory.Neighborhood.Theorem76.fixElement_mem_iff_chain
+public import DomainTheory.Neighborhood.Theorem76.Xenum_codePair
+public import DomainTheory.Neighborhood.Theorem76.leastMap_Xenum_rel
+public import DomainTheory.Neighborhood.Theorem76.fixMap_rel_iff
+public import DomainTheory.Neighborhood.Theorem76.chainDec_iff_gStepsOK
+public import DomainTheory.Neighborhood.Theorem76.fixStp_eq
+public import DomainTheory.Neighborhood.Theorem76.primrec_fixStp
+public import DomainTheory.Neighborhood.Theorem76.fixChainChar_eq
+public import DomainTheory.Neighborhood.Theorem76.primrec_fixChainChar
+public import DomainTheory.Neighborhood.Theorem76.fixPStep_foldl_fst
+public import DomainTheory.Neighborhood.Theorem76.fixPStep_foldl_snd
+public import DomainTheory.Neighborhood.Theorem76.fixChainChar_spec
+public import DomainTheory.Neighborhood.Theorem76.fixMap_isComputable
+
+@[expose] public section

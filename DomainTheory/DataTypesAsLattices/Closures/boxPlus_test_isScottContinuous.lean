@@ -5,14 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Algebra.Ring.Parity
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Closures.Basic
-import DomainTheory.DataTypesAsLattices.Closures.squareFst_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Closures.squareSnd_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Closures.union_left_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Closures.union_const_left_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Closures.boxTag_isScottContinuous
+module
+
+public import Mathlib.Algebra.Ring.Parity
+import all Mathlib.Algebra.Ring.Parity
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Closures.Basic
+public import DomainTheory.DataTypesAsLattices.Closures.squareFst_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Closures.squareSnd_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Closures.union_left_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Closures.union_const_left_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Closures.boxTag_isScottContinuous
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

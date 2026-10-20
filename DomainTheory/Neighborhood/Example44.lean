@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example44.Basic
-import DomainTheory.Neighborhood.Example44.prepend_subset_self
-import DomainTheory.Neighborhood.Example44.consMap_strBot
-import DomainTheory.Neighborhood.Example44.consMap_strElem
-import DomainTheory.Neighborhood.Example44.altElt_eq
+module
+
+public import DomainTheory.Neighborhood.Example44.Basic
+public import DomainTheory.Neighborhood.Example44.prepend_subset_self
+public import DomainTheory.Neighborhood.Example44.consMap_strBot
+public import DomainTheory.Neighborhood.Example44.consMap_strElem
+public import DomainTheory.Neighborhood.Example44.altElt_eq
+
+@[expose] public section

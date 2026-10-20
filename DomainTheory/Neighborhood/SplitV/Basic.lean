@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.LevelSetPrimrec
-import DomainTheory.Neighborhood.MinLevel
+module
+
+public import DomainTheory.Neighborhood.LevelSetPrimrec
+public import DomainTheory.Neighborhood.MinLevel
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(e)(b)/(e)(d)(ii) (Scott 1981, PRG-19, Lecture VIII) — a computable canonical
@@ -312,7 +316,7 @@ private theorem xor_two_pow_ne_self (a k : ℕ) : a ^^^ 2 ^ k ≠ a := by
   intro h
   apply hb
   have h2 : a ^^^ (a ^^^ 2 ^ k) = a ^^^ a := by rw [h]
-  simp at h2
+  simpa [← Nat.xor_assoc, Nat.xor_self, Nat.zero_xor] using h2
 
 theorem splitV_left_nonempty (n : ℕ) :
     (levelSet (splitVMinLevel n + 1) (2 ^ splitVBit n)).Nonempty :=

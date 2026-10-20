@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise817.Basic
-import DomainTheory.Neighborhood.Exercise817.sumUU_trianglelefteq_U
-import DomainTheory.Neighborhood.Exercise817.prodUU_trianglelefteq_U
-import DomainTheory.Neighborhood.Exercise817.funSpaceUU_trianglelefteq_U
-import DomainTheory.Neighborhood.Exercise817.U_isUniversal
-import DomainTheory.Neighborhood.Exercise817.isUniversal_of_isomorphic
-import DomainTheory.Neighborhood.Exercise817.V_isUniversal
+module
+
+public import DomainTheory.Neighborhood.Exercise817.Basic
+public import DomainTheory.Neighborhood.Exercise817.sumUU_trianglelefteq_U
+public import DomainTheory.Neighborhood.Exercise817.prodUU_trianglelefteq_U
+public import DomainTheory.Neighborhood.Exercise817.funSpaceUU_trianglelefteq_U
+public import DomainTheory.Neighborhood.Exercise817.U_isUniversal
+public import DomainTheory.Neighborhood.Exercise817.isUniversal_of_isomorphic
+public import DomainTheory.Neighborhood.Exercise817.V_isUniversal
+
+@[expose] public section

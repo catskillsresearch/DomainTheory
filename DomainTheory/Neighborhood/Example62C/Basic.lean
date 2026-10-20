@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example62
-import DomainTheory.Neighborhood.Example44
-import DomainTheory.Neighborhood.Exercise315
+module
+
+public import DomainTheory.Neighborhood.Example62
+public import DomainTheory.Neighborhood.Example44
+public import DomainTheory.Neighborhood.Exercise315
+
+@[expose] public section
 
 /-!
 # Example 6.2 (Scott 1981, PRG-19, §6) — `C ≅ {{Λ}} + C + C`

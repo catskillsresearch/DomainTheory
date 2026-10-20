@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Embedding
-import DomainTheory.DataTypesAsLattices.Lambda.Basic
-import DomainTheory.DataTypesAsLattices.Lambda.pair_zero_zero
-import DomainTheory.DataTypesAsLattices.Lambda.pair_one_zero
+module
+
+public import DomainTheory.DataTypesAsLattices.Embedding
+public import DomainTheory.DataTypesAsLattices.Lambda.Basic
+public import DomainTheory.DataTypesAsLattices.Lambda.pair_zero_zero
+public import DomainTheory.DataTypesAsLattices.Lambda.pair_one_zero
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

@@ -3,9 +3,13 @@ Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Lars Warren Ericson.
 -/
-import DomainTheory.DataTypesAsLattices.Enumeration
-import DomainTheory.DataTypesAsLattices.Classification
-import DomainTheory.DataTypesAsLattices.Closures
+module
+
+public import DomainTheory.DataTypesAsLattices.Enumeration
+public import DomainTheory.DataTypesAsLattices.Classification
+public import DomainTheory.DataTypesAsLattices.Closures
+
+@[expose] public section
 
 /-!
 # Scott 1976 — Data Types as Lattices

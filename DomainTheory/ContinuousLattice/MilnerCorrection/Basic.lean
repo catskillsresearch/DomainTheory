@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.Specialization
+module
+
+public import DomainTheory.ContinuousLattice.Specialization
+
+@[expose] public section
 
 /-!
 # March 1972 correction (Scott, pp. 135–136)

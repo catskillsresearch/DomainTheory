@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise326.Basic
-import DomainTheory.Neighborhood.Exercise326.cond_toElementMap_mem
-import DomainTheory.Neighborhood.Exercise326.cond_true
-import DomainTheory.Neighborhood.Exercise326.cond_false
-import DomainTheory.Neighborhood.Exercise326.cond_bot
+module
+
+public import DomainTheory.Neighborhood.Exercise326.Basic
+public import DomainTheory.Neighborhood.Exercise326.cond_toElementMap_mem
+public import DomainTheory.Neighborhood.Exercise326.cond_true
+public import DomainTheory.Neighborhood.Exercise326.cond_false
+public import DomainTheory.Neighborhood.Exercise326.cond_bot
+
+@[expose] public section

@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Definition22.Basic
-import DomainTheory.InformationSystems.Definition22.entSet_empty
-import DomainTheory.InformationSystems.Definition22.entSet_singleton
+module
+
+public import DomainTheory.InformationSystems.Definition22.Basic
+public import DomainTheory.InformationSystems.Definition22.entSet_empty
+public import DomainTheory.InformationSystems.Definition22.entSet_singleton
+
+@[expose] public section

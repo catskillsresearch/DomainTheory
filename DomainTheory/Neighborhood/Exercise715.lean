@@ -5,19 +5,23 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise715.Basic
-import DomainTheory.Neighborhood.Exercise715.NeighborhoodSystemu2eIsEffectivelyGivenu2etoS
-import DomainTheory.Neighborhood.Exercise715.smash_isEffectivelyGivenS
-import DomainTheory.Neighborhood.Exercise715.smashMap_isComputable
-import DomainTheory.Neighborhood.Exercise715.smashProju2080_isComputable
-import DomainTheory.Neighborhood.Exercise715.smashProju2081_isComputable
-import DomainTheory.Neighborhood.Exercise715.smashPaired_isComputable
-import DomainTheory.Neighborhood.Exercise715.osum_mem_iff
-import DomainTheory.Neighborhood.Exercise715.osum_isEffectivelyGivenS
-import DomainTheory.Neighborhood.Exercise715.osumInMapu2080_isComputable
-import DomainTheory.Neighborhood.Exercise715.osumInMapu2081_isComputable
-import DomainTheory.Neighborhood.Exercise715.osumOutMapu2080_isComputable
-import DomainTheory.Neighborhood.Exercise715.osumOutMapu2081_isComputable
-import DomainTheory.Neighborhood.Exercise715.osumMap_isComputable
-import DomainTheory.Neighborhood.Exercise715.iterSys_isEffectivelyGiven
-import DomainTheory.Neighborhood.Exercise715.projN_isComputable
+module
+
+public import DomainTheory.Neighborhood.Exercise715.Basic
+public import DomainTheory.Neighborhood.Exercise715.NeighborhoodSystemu2eIsEffectivelyGivenu2etoS
+public import DomainTheory.Neighborhood.Exercise715.smash_isEffectivelyGivenS
+public import DomainTheory.Neighborhood.Exercise715.smashMap_isComputable
+public import DomainTheory.Neighborhood.Exercise715.smashProju2080_isComputable
+public import DomainTheory.Neighborhood.Exercise715.smashProju2081_isComputable
+public import DomainTheory.Neighborhood.Exercise715.smashPaired_isComputable
+public import DomainTheory.Neighborhood.Exercise715.osum_mem_iff
+public import DomainTheory.Neighborhood.Exercise715.osum_isEffectivelyGivenS
+public import DomainTheory.Neighborhood.Exercise715.osumInMapu2080_isComputable
+public import DomainTheory.Neighborhood.Exercise715.osumInMapu2081_isComputable
+public import DomainTheory.Neighborhood.Exercise715.osumOutMapu2080_isComputable
+public import DomainTheory.Neighborhood.Exercise715.osumOutMapu2081_isComputable
+public import DomainTheory.Neighborhood.Exercise715.osumMap_isComputable
+public import DomainTheory.Neighborhood.Exercise715.iterSys_isEffectivelyGiven
+public import DomainTheory.Neighborhood.Exercise715.projN_isComputable
+
+@[expose] public section

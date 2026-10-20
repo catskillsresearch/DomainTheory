@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise422.Basic
-import DomainTheory.Neighborhood.Exercise422.genOp_monotone
-import DomainTheory.Neighborhood.Exercise422.genOp_nats
-import DomainTheory.Neighborhood.Exercise422.exists_peano_submodel
+module
+
+public import DomainTheory.Neighborhood.Exercise422.Basic
+public import DomainTheory.Neighborhood.Exercise422.genOp_monotone
+public import DomainTheory.Neighborhood.Exercise422.genOp_nats
+public import DomainTheory.Neighborhood.Exercise422.exists_peano_submodel
+
+@[expose] public section

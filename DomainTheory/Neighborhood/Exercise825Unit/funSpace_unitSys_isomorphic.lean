@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise315
-import DomainTheory.Neighborhood.FunctionSpace
-import DomainTheory.Neighborhood.Exercise825Unit.Basic
-import DomainTheory.Neighborhood.Exercise825Unit.isomorphic_of_unique
+module
+
+public import DomainTheory.Neighborhood.Exercise315
+public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.Neighborhood.Exercise825Unit.Basic
+public import DomainTheory.Neighborhood.Exercise825Unit.isomorphic_of_unique
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

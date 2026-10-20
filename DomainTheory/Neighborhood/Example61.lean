@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Product
-import DomainTheory.Neighborhood.Exercise319Sum
+module
+
+public import DomainTheory.Neighborhood.Product
+public import DomainTheory.Neighborhood.Exercise319Sum
+
+@[expose] public section
 
 /-!
 # Example 6.1 (Scott 1981, PRG-19, §6) — the tree algebra `D^§` and the domain equation

@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise319Sum
-import DomainTheory.Neighborhood.Product
+module
+
+public import DomainTheory.Neighborhood.Exercise319Sum
+public import DomainTheory.Neighborhood.Product
+
+@[expose] public section
 
 /-!
 # Exercise 3.24(iii)(iv) (Scott 1981, PRG-19, §3) — sum/product "isomorphisms" that are only maps

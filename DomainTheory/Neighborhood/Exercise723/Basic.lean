@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example78
-import DomainTheory.Neighborhood.Theorem74
-import DomainTheory.Neighborhood.Theorem75
-import DomainTheory.Neighborhood.Exercise514
+module
+
+public import DomainTheory.Neighborhood.Example78
+public import DomainTheory.Neighborhood.Theorem74
+public import DomainTheory.Neighborhood.Theorem75
+public import DomainTheory.Neighborhood.Exercise514
+
+@[expose] public section
 
 /-!
 # Exercise 7.23 (Scott 1981, PRG-19, §7) — completing the discussion of `PN`

@@ -5,11 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Tactic
-import DomainTheory.Neighborhood.Exercise119.Basic
-import DomainTheory.Neighborhood.Exercise119.a_inter_b
-import DomainTheory.Neighborhood.Exercise119.one_not_mem
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+public import DomainTheory.Neighborhood.Exercise119.Basic
+public import DomainTheory.Neighborhood.Exercise119.a_inter_b
+public import DomainTheory.Neighborhood.Exercise119.one_not_mem
+
+@[expose] public section
 
 
 set_option linter.unusedSimpArgs false

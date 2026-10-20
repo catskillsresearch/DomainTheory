@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.ApproximableExercises
-import DomainTheory.Neighborhood.Exercise122
+module
+
+public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.Neighborhood.Exercise122
+
+@[expose] public section
 
 /-!
 # Exercise 2.13 (Scott 1981, PRG-19, §2) — approximable maps **are** the continuous functions

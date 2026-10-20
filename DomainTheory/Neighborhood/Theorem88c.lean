@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88c.Basic
-import DomainTheory.Neighborhood.Theorem88c.DprimeU_isEffectivelyGiven
+module
+
+public import DomainTheory.Neighborhood.Theorem88c.Basic
+public import DomainTheory.Neighborhood.Theorem88c.DprimeU_isEffectivelyGiven
+
+@[expose] public section

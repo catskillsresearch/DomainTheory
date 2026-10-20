@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Computability.MyhillNerode
-import DomainTheory.Neighborhood.Example62Regular.Basic
+module
+
+public import Mathlib.Computability.MyhillNerode
+import all Mathlib.Computability.MyhillNerode
+public import DomainTheory.Neighborhood.Example62Regular.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

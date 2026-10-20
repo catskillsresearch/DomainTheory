@@ -5,24 +5,28 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.RationalPrimrec.Basic
-import DomainTheory.Neighborhood.RationalPrimrec.decodeRat_surjective
-import DomainTheory.Neighborhood.RationalPrimrec.primrec_qNumP
-import DomainTheory.Neighborhood.RationalPrimrec.primrec_qNumN
-import DomainTheory.Neighborhood.RationalPrimrec.primrec_qDen
-import DomainTheory.Neighborhood.RationalPrimrec.qDen_pos
-import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratLeCode
-import DomainTheory.Neighborhood.RationalPrimrec.ratLeCode_eq_one_iff
-import DomainTheory.Neighborhood.RationalPrimrec.ratLeCode_le_one
-import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratLtCode
-import DomainTheory.Neighborhood.RationalPrimrec.ratLtCode_le_one
-import DomainTheory.Neighborhood.RationalPrimrec.ratLtCode_eq_one_iff
-import DomainTheory.Neighborhood.RationalPrimrec.ratLtCode_recDecidableu2082
-import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratMaxCode
-import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratMinCode
-import DomainTheory.Neighborhood.RationalPrimrec.decodeRat_ratMaxCode
-import DomainTheory.Neighborhood.RationalPrimrec.decodeRat_ratMinCode
-import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratMidCode
-import DomainTheory.Neighborhood.RationalPrimrec.qDen_ratMidCode
-import DomainTheory.Neighborhood.RationalPrimrec.decodeRat_ratMidCode
-import DomainTheory.Neighborhood.RationalPrimrec.decodeRat_ratMidCodeu27
+module
+
+public import DomainTheory.Neighborhood.RationalPrimrec.Basic
+public import DomainTheory.Neighborhood.RationalPrimrec.decodeRat_surjective
+public import DomainTheory.Neighborhood.RationalPrimrec.primrec_qNumP
+public import DomainTheory.Neighborhood.RationalPrimrec.primrec_qNumN
+public import DomainTheory.Neighborhood.RationalPrimrec.primrec_qDen
+public import DomainTheory.Neighborhood.RationalPrimrec.qDen_pos
+public import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratLeCode
+public import DomainTheory.Neighborhood.RationalPrimrec.ratLeCode_eq_one_iff
+public import DomainTheory.Neighborhood.RationalPrimrec.ratLeCode_le_one
+public import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratLtCode
+public import DomainTheory.Neighborhood.RationalPrimrec.ratLtCode_le_one
+public import DomainTheory.Neighborhood.RationalPrimrec.ratLtCode_eq_one_iff
+public import DomainTheory.Neighborhood.RationalPrimrec.ratLtCode_recDecidableu2082
+public import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratMaxCode
+public import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratMinCode
+public import DomainTheory.Neighborhood.RationalPrimrec.decodeRat_ratMaxCode
+public import DomainTheory.Neighborhood.RationalPrimrec.decodeRat_ratMinCode
+public import DomainTheory.Neighborhood.RationalPrimrec.primrec_ratMidCode
+public import DomainTheory.Neighborhood.RationalPrimrec.qDen_ratMidCode
+public import DomainTheory.Neighborhood.RationalPrimrec.decodeRat_ratMidCode
+public import DomainTheory.Neighborhood.RationalPrimrec.decodeRat_ratMidCodeu27
+
+@[expose] public section

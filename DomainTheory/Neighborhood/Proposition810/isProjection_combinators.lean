@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition89
-import DomainTheory.Neighborhood.Definition83
-import DomainTheory.Neighborhood.Theorem69
-import DomainTheory.Neighborhood.Proposition810.Basic
-import DomainTheory.Neighborhood.Proposition810.isProjection_prodComb
-import DomainTheory.Neighborhood.Proposition810.isProjection_arrowComb
-import DomainTheory.Neighborhood.Proposition810.isProjection_sumComb
+module
+
+public import DomainTheory.Neighborhood.Definition89
+public import DomainTheory.Neighborhood.Definition83
+public import DomainTheory.Neighborhood.Theorem69
+public import DomainTheory.Neighborhood.Proposition810.Basic
+public import DomainTheory.Neighborhood.Proposition810.isProjection_prodComb
+public import DomainTheory.Neighborhood.Proposition810.isProjection_arrowComb
+public import DomainTheory.Neighborhood.Proposition810.isProjection_sumComb
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise122.Basic
-import DomainTheory.Neighborhood.Exercise122.isOpen_iff_isOpenFilter
-import DomainTheory.Neighborhood.Exercise122.isOpen_basicOpen
-import DomainTheory.Neighborhood.Exercise122.isOpen_isUpperSet
-import DomainTheory.Neighborhood.Exercise122.isOpen_iff_upper_basic
-import DomainTheory.Neighborhood.Exercise122.le_iff_isOpen_imp
-import DomainTheory.Neighborhood.Exercise122.specializes_iff_le
+module
+
+public import DomainTheory.Neighborhood.Exercise122.Basic
+public import DomainTheory.Neighborhood.Exercise122.isOpen_iff_isOpenFilter
+public import DomainTheory.Neighborhood.Exercise122.isOpen_basicOpen
+public import DomainTheory.Neighborhood.Exercise122.isOpen_isUpperSet
+public import DomainTheory.Neighborhood.Exercise122.isOpen_iff_upper_basic
+public import DomainTheory.Neighborhood.Exercise122.le_iff_isOpen_imp
+public import DomainTheory.Neighborhood.Exercise122.specializes_iff_le
+
+@[expose] public section

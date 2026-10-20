@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
+module
+
+public import DomainTheory.Neighborhood.Basic
+
+@[expose] public section
 
 /-!
 # Lecture VI — Definition 6.10 (Scott 1981, PRG-19): the subsystem relation `D ◁ E`

@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid84.Basic
-import DomainTheory.InformationSystems.Factoid84.mem_botElement
-import DomainTheory.InformationSystems.Factoid84.barElement_zero_eq_bot
-import DomainTheory.InformationSystems.Factoid84.scottCon_empty_iff_consistent
-import DomainTheory.InformationSystems.Factoid84.flatRel_of_mem_one
-import DomainTheory.InformationSystems.Factoid84.not_RogueApprox_idMap
+module
+
+public import DomainTheory.InformationSystems.Factoid84.Basic
+public import DomainTheory.InformationSystems.Factoid84.mem_botElement
+public import DomainTheory.InformationSystems.Factoid84.barElement_zero_eq_bot
+public import DomainTheory.InformationSystems.Factoid84.scottCon_empty_iff_consistent
+public import DomainTheory.InformationSystems.Factoid84.flatRel_of_mem_one
+public import DomainTheory.InformationSystems.Factoid84.not_RogueApprox_idMap
+
+@[expose] public section

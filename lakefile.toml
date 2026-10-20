@@ -10,6 +10,14 @@ defaultTargets = ["DomainTheory"]
 # InformationSystems (ex-scott1982), BridgeTheorems (ex-scott_models).
 # `lake build` builds DomainTheory.lean and all submodules.
 
+# Existing `private` helpers are referenced from public declarations. The module
+# system forbids that unless this porting option is on. Warnings stay off so
+# the build remains warning-free while those references are still in place.
+moreLeanArgs = [
+  "-Dbackward.privateInPublic=true",
+  "-Dbackward.privateInPublic.warn=false",
+]
+
 [leanOptions]
 pp.unicode.fun = true
 relaxedAutoImplicit = true
@@ -21,9 +29,3 @@ rev = "v4.35.0"
 
 [[lean_lib]]
 name = "DomainTheory"
-# This library is deliberately written in pre-module-system style (plain
-# `import`s, no `module` headers), assembled from the vendored formalizations.
-# Mathlib v4.35.0 sets `requiresModuleSystem`, which would otherwise warn on
-# every Mathlib import; `allowNonModules` is Lake's sanctioned opt-out for a
-# library knowingly mixing non-module files with module-system dependencies.
-allowNonModules = true

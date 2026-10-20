@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid44.Basic
-import DomainTheory.InformationSystems.Factoid44.le_directedSup
-import DomainTheory.InformationSystems.Factoid44.directedSup_le
-import DomainTheory.InformationSystems.Factoid44.directedSup_carrier_eq_union
+module
+
+public import DomainTheory.InformationSystems.Factoid44.Basic
+public import DomainTheory.InformationSystems.Factoid44.le_directedSup
+public import DomainTheory.InformationSystems.Factoid44.directedSup_le
+public import DomainTheory.InformationSystems.Factoid44.directedSup_carrier_eq_union
+
+@[expose] public section

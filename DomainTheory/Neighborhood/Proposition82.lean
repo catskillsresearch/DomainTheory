@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition82.Basic
-import DomainTheory.Neighborhood.Proposition82.isRetraction_retractionOfSubsystem
-import DomainTheory.Neighborhood.Proposition82.retraction_of_subsystem
+module
+
+public import DomainTheory.Neighborhood.Proposition82.Basic
+public import DomainTheory.Neighborhood.Proposition82.isRetraction_retractionOfSubsystem
+public import DomainTheory.Neighborhood.Proposition82.retraction_of_subsystem
+
+@[expose] public section

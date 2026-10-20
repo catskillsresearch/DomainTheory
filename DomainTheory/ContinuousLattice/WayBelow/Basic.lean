@@ -5,9 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.CompleteLattice.Basic
-import Mathlib.Order.UpperLower.Basic
-import Mathlib.Order.Directed
+module
+
+public import Mathlib.Order.CompleteLattice.Basic
+import all Mathlib.Order.CompleteLattice.Basic
+public import Mathlib.Order.UpperLower.Basic
+import all Mathlib.Order.UpperLower.Basic
+public import Mathlib.Order.Directed
+import all Mathlib.Order.Directed
+
+@[expose] public section
 
 /-!
 # The induced (Scott) topology and the way-below relation (Scott 1972, §2)

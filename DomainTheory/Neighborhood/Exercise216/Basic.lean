@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Approximable
-import DomainTheory.Neighborhood.ExampleB
-import DomainTheory.Neighborhood.Example23
+module
+
+public import DomainTheory.Neighborhood.Approximable
+public import DomainTheory.Neighborhood.ExampleB
+public import DomainTheory.Neighborhood.Example23
+
+@[expose] public section
 
 /-!
 # Exercise 2.16 (Scott 1981, PRG-19, §2) — the prefixing map `x ↦ σx` is approximable

@@ -5,16 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.FunctionSpace
-import DomainTheory.InformationSystems.Proposition53
-import DomainTheory.InformationSystems.Proposition55
-import DomainTheory.InformationSystems.Proposition62
-import DomainTheory.InformationSystems.Factoid32
-import DomainTheory.InformationSystems.Theorem72.Basic
-import DomainTheory.InformationSystems.Theorem72.mkFunToken_eq
-import DomainTheory.InformationSystems.Theorem72.mem_fst_of_subset_pairElements
-import DomainTheory.InformationSystems.Theorem72.mem_snd_of_subset_pairElements
-import DomainTheory.InformationSystems.Theorem72.subset_pairElements_liftPair
+module
+
+public import DomainTheory.InformationSystems.FunctionSpace
+public import DomainTheory.InformationSystems.Proposition53
+public import DomainTheory.InformationSystems.Proposition55
+public import DomainTheory.InformationSystems.Proposition62
+public import DomainTheory.InformationSystems.Factoid32
+public import DomainTheory.InformationSystems.Theorem72.Basic
+public import DomainTheory.InformationSystems.Theorem72.mkFunToken_eq
+public import DomainTheory.InformationSystems.Theorem72.mem_fst_of_subset_pairElements
+public import DomainTheory.InformationSystems.Theorem72.mem_snd_of_subset_pairElements
+public import DomainTheory.InformationSystems.Theorem72.subset_pairElements_liftPair
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems

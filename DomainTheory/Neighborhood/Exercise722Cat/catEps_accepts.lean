@@ -5,10 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722Regular
-import Mathlib.Computability.EpsilonNFA
-import DomainTheory.Neighborhood.Exercise722Cat.Basic
-import DomainTheory.Neighborhood.Exercise722Cat.catEps_mem_eval_iff
+module
+
+public import DomainTheory.Neighborhood.Exercise722Regular
+public import Mathlib.Computability.EpsilonNFA
+import all Mathlib.Computability.EpsilonNFA
+public import DomainTheory.Neighborhood.Exercise722Cat.Basic
+public import DomainTheory.Neighborhood.Exercise722Cat.catEps_mem_eval_iff
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

@@ -5,11 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise722Regular
-import Mathlib.Computability.DFA
-import Mathlib.Data.Fintype.Option
-import DomainTheory.Neighborhood.Exercise722DFA.Basic
-import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_evalFrom_none
+module
+
+public import DomainTheory.Neighborhood.Exercise722Regular
+public import Mathlib.Computability.DFA
+import all Mathlib.Computability.DFA
+public import Mathlib.Data.Fintype.Option
+import all Mathlib.Data.Fintype.Option
+public import DomainTheory.Neighborhood.Exercise722DFA.Basic
+public import DomainTheory.Neighborhood.Exercise722DFA.singleDFA_evalFrom_none
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

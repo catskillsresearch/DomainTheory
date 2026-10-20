@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example84
-import DomainTheory.Neighborhood.Definition83
-import DomainTheory.Neighborhood.Exercise510
+module
+
+public import DomainTheory.Neighborhood.Example84
+public import DomainTheory.Neighborhood.Definition83
+public import DomainTheory.Neighborhood.Exercise510
+
+@[expose] public section
 
 /-!
 # Lecture VIII — Example 8.4(b) (Scott 1981, PRG-19): `smash` and `strict` as projections

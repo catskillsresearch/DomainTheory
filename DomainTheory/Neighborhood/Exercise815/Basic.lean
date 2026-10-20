@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem75
-import DomainTheory.Neighborhood.Definition610
-import DomainTheory.Neighborhood.Proposition611
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.Exercise714
-import DomainTheory.Neighborhood.UComputablePresentation
+module
+
+public import DomainTheory.Neighborhood.Theorem75
+public import DomainTheory.Neighborhood.Definition610
+public import DomainTheory.Neighborhood.Proposition611
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.Exercise714
+public import DomainTheory.Neighborhood.UComputablePresentation
+
+@[expose] public section
 
 /-!
 # Exercise 8.15 (Scott 1981, PRG-19) — `{X ∣ X ◁ D}` is effectively presented if `D` is

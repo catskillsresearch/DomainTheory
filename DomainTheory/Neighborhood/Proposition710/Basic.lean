@@ -5,9 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition71
-import DomainTheory.Neighborhood.Definition79
-import Mathlib.Tactic
+module
+
+public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.Neighborhood.Definition79
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Proposition 7.10 (Scott 1981, PRG-19, §7) — `ℙ𝒟` is a neighbourhood system, effectively given

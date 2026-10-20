@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Proposition56
-import DomainTheory.InformationSystems.Factoid33
+module
+
+public import DomainTheory.InformationSystems.Proposition56
+public import DomainTheory.InformationSystems.Factoid33
+
+@[expose] public section
 
 /-!
 # Factoid 6.5 — the unit domain

@@ -5,14 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise326
-import DomainTheory.Neighborhood.Exercise319Sum
-import DomainTheory.Neighborhood.Exercise326Sum.Basic
-import DomainTheory.Neighborhood.Exercise326Sum.which_mem_zero
-import DomainTheory.Neighborhood.Exercise326Sum.which_mem_one
-import DomainTheory.Neighborhood.Exercise326Sum.inMapu2080_outMapu2080_eq_of_left
-import DomainTheory.Neighborhood.Exercise326Sum.inMapu2081_outMapu2081_eq_of_right
-import DomainTheory.Neighborhood.Exercise326Sum.sum_element_trichotomy
+module
+
+public import DomainTheory.Neighborhood.Exercise326
+public import DomainTheory.Neighborhood.Exercise319Sum
+public import DomainTheory.Neighborhood.Exercise326Sum.Basic
+public import DomainTheory.Neighborhood.Exercise326Sum.which_mem_zero
+public import DomainTheory.Neighborhood.Exercise326Sum.which_mem_one
+public import DomainTheory.Neighborhood.Exercise326Sum.inMapu2080_outMapu2080_eq_of_left
+public import DomainTheory.Neighborhood.Exercise326Sum.inMapu2081_outMapu2081_eq_of_right
+public import DomainTheory.Neighborhood.Exercise326Sum.sum_element_trichotomy
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.Exercise326

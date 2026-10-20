@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.LevelSetPrimrec
-import DomainTheory.Neighborhood.MinLevel
-import DomainTheory.Neighborhood.SplitV.Basic
-import DomainTheory.Neighborhood.SplitV.primrec_splitVMinLevel
-import DomainTheory.Neighborhood.SplitV.primrec_splitVMinMask
+module
+
+public import DomainTheory.Neighborhood.LevelSetPrimrec
+public import DomainTheory.Neighborhood.MinLevel
+public import DomainTheory.Neighborhood.SplitV.Basic
+public import DomainTheory.Neighborhood.SplitV.primrec_splitVMinLevel
+public import DomainTheory.Neighborhood.SplitV.primrec_splitVMinMask
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

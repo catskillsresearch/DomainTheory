@@ -5,24 +5,28 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise824.Basic
-import DomainTheory.Neighborhood.Exercise824.fst_mono
-import DomainTheory.Neighborhood.Exercise824.snd_mono
-import DomainTheory.Neighborhood.Exercise824.pair_bot_bot
-import DomainTheory.Neighborhood.Exercise824.pairSpace_bot_fst
-import DomainTheory.Neighborhood.Exercise824.pairSpace_bot_snd
-import DomainTheory.Neighborhood.Exercise824.iterElem_succ_pair
-import DomainTheory.Neighborhood.Exercise824.iterElem_zero_pair
-import DomainTheory.Neighborhood.Exercise824.iterElem_pair_eq_pair
-import DomainTheory.Neighborhood.Exercise824.aOp_succ
-import DomainTheory.Neighborhood.Exercise824.bOp_succ
-import DomainTheory.Neighborhood.Exercise824.aOp_zero
-import DomainTheory.Neighborhood.Exercise824.bOp_zero
-import DomainTheory.Neighborhood.Exercise824.isFinitaryProjection_chain
-import DomainTheory.Neighborhood.Exercise824.isFinitaryProjection_aStar_bStar
-import DomainTheory.Neighborhood.Exercise824.toElementMap_fixElement_fst
-import DomainTheory.Neighborhood.Exercise824.toElementMap_fixElement_snd
-import DomainTheory.Neighborhood.Exercise824.binOp_aStar_bStar_left
-import DomainTheory.Neighborhood.Exercise824.binOp_aStar_bStar_right
-import DomainTheory.Neighborhood.Exercise824.fixedDomain_aStar_bStar_iso
-import DomainTheory.Neighborhood.Exercise824.fixedNbhd_aStar_bStar_subsystem
+module
+
+public import DomainTheory.Neighborhood.Exercise824.Basic
+public import DomainTheory.Neighborhood.Exercise824.fst_mono
+public import DomainTheory.Neighborhood.Exercise824.snd_mono
+public import DomainTheory.Neighborhood.Exercise824.pair_bot_bot
+public import DomainTheory.Neighborhood.Exercise824.pairSpace_bot_fst
+public import DomainTheory.Neighborhood.Exercise824.pairSpace_bot_snd
+public import DomainTheory.Neighborhood.Exercise824.iterElem_succ_pair
+public import DomainTheory.Neighborhood.Exercise824.iterElem_zero_pair
+public import DomainTheory.Neighborhood.Exercise824.iterElem_pair_eq_pair
+public import DomainTheory.Neighborhood.Exercise824.aOp_succ
+public import DomainTheory.Neighborhood.Exercise824.bOp_succ
+public import DomainTheory.Neighborhood.Exercise824.aOp_zero
+public import DomainTheory.Neighborhood.Exercise824.bOp_zero
+public import DomainTheory.Neighborhood.Exercise824.isFinitaryProjection_chain
+public import DomainTheory.Neighborhood.Exercise824.isFinitaryProjection_aStar_bStar
+public import DomainTheory.Neighborhood.Exercise824.toElementMap_fixElement_fst
+public import DomainTheory.Neighborhood.Exercise824.toElementMap_fixElement_snd
+public import DomainTheory.Neighborhood.Exercise824.binOp_aStar_bStar_left
+public import DomainTheory.Neighborhood.Exercise824.binOp_aStar_bStar_right
+public import DomainTheory.Neighborhood.Exercise824.fixedDomain_aStar_bStar_iso
+public import DomainTheory.Neighborhood.Exercise824.fixedNbhd_aStar_bStar_subsystem
+
+@[expose] public section

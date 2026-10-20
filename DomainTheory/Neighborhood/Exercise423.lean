@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise423.Basic
-import DomainTheory.Neighborhood.Exercise423.f_unique_fixedPoint
+module
+
+public import DomainTheory.Neighborhood.Exercise423.Basic
+public import DomainTheory.Neighborhood.Exercise423.f_unique_fixedPoint
+
+@[expose] public section

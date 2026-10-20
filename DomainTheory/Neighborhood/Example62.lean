@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example62.Basic
-import DomainTheory.Neighborhood.Example62.embBit_nonempty
-import DomainTheory.Neighborhood.Example62.B_domain_equation
+module
+
+public import DomainTheory.Neighborhood.Example62.Basic
+public import DomainTheory.Neighborhood.Example62.embBit_nonempty
+public import DomainTheory.Neighborhood.Example62.B_domain_equation
+
+@[expose] public section

@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.Exercise319
-import DomainTheory.Neighborhood.Exercise319Sum
-import DomainTheory.Neighborhood.Theorem74.Basic
-import DomainTheory.Neighborhood.Theorem74.proju2080_isComputable
-import DomainTheory.Neighborhood.Theorem74.proju2081_isComputable
-import DomainTheory.Neighborhood.Theorem74.paired_isComputable
+module
+
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.Exercise319
+public import DomainTheory.Neighborhood.Exercise319Sum
+public import DomainTheory.Neighborhood.Theorem74.Basic
+public import DomainTheory.Neighborhood.Theorem74.proju2080_isComputable
+public import DomainTheory.Neighborhood.Theorem74.proju2081_isComputable
+public import DomainTheory.Neighborhood.Theorem74.paired_isComputable
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

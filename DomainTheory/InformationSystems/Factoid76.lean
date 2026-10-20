@@ -5,14 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid76.Basic
-import DomainTheory.InformationSystems.Factoid76.pairMap_toElement_pairElements
-import DomainTheory.InformationSystems.Factoid76.pairMap_comp_fst_snd_toElement
-import DomainTheory.InformationSystems.Factoid76.constOp_uncurry
-import DomainTheory.InformationSystems.Factoid76.constOp_toElement
-import DomainTheory.InformationSystems.Factoid76.pairOp_uncurry
-import DomainTheory.InformationSystems.Factoid76.pairOpUncurry_toElement
-import DomainTheory.InformationSystems.Factoid76.pairOp_toElement
-import DomainTheory.InformationSystems.Factoid76.compOp_uncurry
-import DomainTheory.InformationSystems.Factoid76.compOpUncurry_toElement
-import DomainTheory.InformationSystems.Factoid76.compOp_toElement
+module
+
+public import DomainTheory.InformationSystems.Factoid76.Basic
+public import DomainTheory.InformationSystems.Factoid76.pairMap_toElement_pairElements
+public import DomainTheory.InformationSystems.Factoid76.pairMap_comp_fst_snd_toElement
+public import DomainTheory.InformationSystems.Factoid76.constOp_uncurry
+public import DomainTheory.InformationSystems.Factoid76.constOp_toElement
+public import DomainTheory.InformationSystems.Factoid76.pairOp_uncurry
+public import DomainTheory.InformationSystems.Factoid76.pairOpUncurry_toElement
+public import DomainTheory.InformationSystems.Factoid76.pairOp_toElement
+public import DomainTheory.InformationSystems.Factoid76.compOp_uncurry
+public import DomainTheory.InformationSystems.Factoid76.compOpUncurry_toElement
+public import DomainTheory.InformationSystems.Factoid76.compOp_toElement
+
+@[expose] public section

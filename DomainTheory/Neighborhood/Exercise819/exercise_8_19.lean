@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise817
-import DomainTheory.Neighborhood.Proposition810b
-import DomainTheory.Neighborhood.Exercise326Sum
-import DomainTheory.Neighborhood.Exercise315
-import DomainTheory.Neighborhood.Exercise819.Basic
-import DomainTheory.Neighborhood.Exercise819.prod_trianglelefteq_of
-import DomainTheory.Neighborhood.Exercise819.sum_trianglelefteq_of
+module
+
+public import DomainTheory.Neighborhood.Exercise817
+public import DomainTheory.Neighborhood.Proposition810b
+public import DomainTheory.Neighborhood.Exercise326Sum
+public import DomainTheory.Neighborhood.Exercise315
+public import DomainTheory.Neighborhood.Exercise819.Basic
+public import DomainTheory.Neighborhood.Exercise819.prod_trianglelefteq_of
+public import DomainTheory.Neighborhood.Exercise819.sum_trianglelefteq_of
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

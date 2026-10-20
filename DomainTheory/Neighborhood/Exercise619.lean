@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise619.Basic
-import DomainTheory.Neighborhood.Exercise619.sumTok_mem_master
-import DomainTheory.Neighborhood.Exercise619.sumTok_nonempty
-import DomainTheory.Neighborhood.Exercise619.sumTok_iso_sum
-import DomainTheory.Neighborhood.Exercise619.prodTokNbhd_master_eq
-import DomainTheory.Neighborhood.Exercise619.prodTok_nonempty
-import DomainTheory.Neighborhood.Exercise619.prodTok_iso_prod
+module
+
+public import DomainTheory.Neighborhood.Exercise619.Basic
+public import DomainTheory.Neighborhood.Exercise619.sumTok_mem_master
+public import DomainTheory.Neighborhood.Exercise619.sumTok_nonempty
+public import DomainTheory.Neighborhood.Exercise619.sumTok_iso_sum
+public import DomainTheory.Neighborhood.Exercise619.prodTokNbhd_master_eq
+public import DomainTheory.Neighborhood.Exercise619.prodTok_nonempty
+public import DomainTheory.Neighborhood.Exercise619.prodTok_iso_prod
+
+@[expose] public section

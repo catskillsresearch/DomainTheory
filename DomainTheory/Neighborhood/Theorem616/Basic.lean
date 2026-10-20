@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem69
-import DomainTheory.Neighborhood.Proposition67
-import DomainTheory.Neighborhood.Lemma615
-import DomainTheory.Neighborhood.Exercise408
+module
+
+public import DomainTheory.Neighborhood.Theorem69
+public import DomainTheory.Neighborhood.Proposition67
+public import DomainTheory.Neighborhood.Lemma615
+public import DomainTheory.Neighborhood.Exercise408
+
+@[expose] public section
 
 /-!
 # Lecture VI — Theorem 6.16 (Scott 1981, PRG-19): an initial algebra embeds in every solution

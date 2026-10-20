@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid33
-import DomainTheory.InformationSystems.Factoid41.Basic
-import DomainTheory.InformationSystems.Factoid41.inf_comm
-import DomainTheory.InformationSystems.Factoid41.botElement_inf
+module
+
+public import DomainTheory.InformationSystems.Factoid33
+public import DomainTheory.InformationSystems.Factoid41.Basic
+public import DomainTheory.InformationSystems.Factoid41.inf_comm
+public import DomainTheory.InformationSystems.Factoid41.botElement_inf
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems

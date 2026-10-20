@@ -5,11 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Approximable
-import Mathlib.Data.Set.Finite.Basic
-import Mathlib.Data.Set.Lattice.Bounded
-import Mathlib.Data.Set.Lattice.Disjoint
-import Mathlib.Order.Directed
+module
+
+public import DomainTheory.Neighborhood.Approximable
+public import Mathlib.Data.Set.Finite.Basic
+import all Mathlib.Data.Set.Finite.Basic
+public import Mathlib.Data.Set.Lattice.Bounded
+import all Mathlib.Data.Set.Lattice.Bounded
+public import Mathlib.Data.Set.Lattice.Disjoint
+import all Mathlib.Data.Set.Lattice.Disjoint
+public import Mathlib.Order.Directed
+import all Mathlib.Order.Directed
+
+@[expose] public section
 
 /-!
 # Exercise 2.22 (Scott 1981, PRG-19) — the abstract representation theorem

@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition710
-import DomainTheory.Neighborhood.Definition72
-import DomainTheory.Neighborhood.FunctionSpace
+module
+
+public import DomainTheory.Neighborhood.Proposition710
+public import DomainTheory.Neighborhood.Definition72
+public import DomainTheory.Neighborhood.FunctionSpace
+
+@[expose] public section
 
 /-!
 # Exercise 7.19 (Scott 1981, PRG-19, §7) — `D ↦ ℙD` is a functor

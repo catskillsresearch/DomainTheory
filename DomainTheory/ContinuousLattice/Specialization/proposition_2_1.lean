@@ -5,14 +5,22 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.WayBelow
-import Mathlib.Topology.Inseparable
-import Mathlib.Topology.Separation.Basic
-import Mathlib.Topology.Order.ScottTopology
-import Mathlib.Order.DirSupClosed
-import DomainTheory.ContinuousLattice.Specialization.Basic
-import DomainTheory.ContinuousLattice.Specialization.proposition_2_1_of_le
-import DomainTheory.ContinuousLattice.Specialization.proposition_2_1_le_of_converges
+module
+
+public import DomainTheory.ContinuousLattice.WayBelow
+public import Mathlib.Topology.Inseparable
+import all Mathlib.Topology.Inseparable
+public import Mathlib.Topology.Separation.Basic
+import all Mathlib.Topology.Separation.Basic
+public import Mathlib.Topology.Order.ScottTopology
+import all Mathlib.Topology.Order.ScottTopology
+public import Mathlib.Order.DirSupClosed
+import all Mathlib.Order.DirSupClosed
+public import DomainTheory.ContinuousLattice.Specialization.Basic
+public import DomainTheory.ContinuousLattice.Specialization.proposition_2_1_of_le
+public import DomainTheory.ContinuousLattice.Specialization.proposition_2_1_le_of_converges
+
+@[expose] public section
 
 
 namespace DomainTheory.ContinuousLattice

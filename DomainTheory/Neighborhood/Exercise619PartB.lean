@@ -5,23 +5,27 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise619PartB.Basic
-import DomainTheory.Neighborhood.Exercise619PartB.sumMapTok_isStrict
-import DomainTheory.Neighborhood.Exercise619PartB.prodMapTok_isStrict
-import DomainTheory.Neighborhood.Exercise619PartB.sumMapTok_id
-import DomainTheory.Neighborhood.Exercise619PartB.sumMapTok_comp
-import DomainTheory.Neighborhood.Exercise619PartB.prodMapTok_id
-import DomainTheory.Neighborhood.Exercise619PartB.prodMapTok_comp
-import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_isStrict
-import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_id
-import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_comp
-import DomainTheory.Neighborhood.Exercise619PartB.sumMapTok_mono
-import DomainTheory.Neighborhood.Exercise619PartB.prodMapTok_mono
-import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_mono
-import DomainTheory.Neighborhood.Exercise619PartB.sumTok_subsystem
-import DomainTheory.Neighborhood.Exercise619PartB.prodTok_subsystem
-import DomainTheory.Neighborhood.Exercise619PartB.FExpru2eobj_subsystem
-import DomainTheory.Neighborhood.Exercise619PartB.FExpru2eobj_continuous_mp
-import DomainTheory.Neighborhood.Exercise619PartB.FExpru2eobj_continuous
-import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_continuous_mp
-import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_continuous
+module
+
+public import DomainTheory.Neighborhood.Exercise619PartB.Basic
+public import DomainTheory.Neighborhood.Exercise619PartB.sumMapTok_isStrict
+public import DomainTheory.Neighborhood.Exercise619PartB.prodMapTok_isStrict
+public import DomainTheory.Neighborhood.Exercise619PartB.sumMapTok_id
+public import DomainTheory.Neighborhood.Exercise619PartB.sumMapTok_comp
+public import DomainTheory.Neighborhood.Exercise619PartB.prodMapTok_id
+public import DomainTheory.Neighborhood.Exercise619PartB.prodMapTok_comp
+public import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_isStrict
+public import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_id
+public import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_comp
+public import DomainTheory.Neighborhood.Exercise619PartB.sumMapTok_mono
+public import DomainTheory.Neighborhood.Exercise619PartB.prodMapTok_mono
+public import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_mono
+public import DomainTheory.Neighborhood.Exercise619PartB.sumTok_subsystem
+public import DomainTheory.Neighborhood.Exercise619PartB.prodTok_subsystem
+public import DomainTheory.Neighborhood.Exercise619PartB.FExpru2eobj_subsystem
+public import DomainTheory.Neighborhood.Exercise619PartB.FExpru2eobj_continuous_mp
+public import DomainTheory.Neighborhood.Exercise619PartB.FExpru2eobj_continuous
+public import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_continuous_mp
+public import DomainTheory.Neighborhood.Exercise619PartB.FExpru2emap_continuous
+
+@[expose] public section

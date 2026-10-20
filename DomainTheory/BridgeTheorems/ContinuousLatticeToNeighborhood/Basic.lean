@@ -5,9 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.Hom.Basic
-import DomainTheory.ContinuousLattice.WayBelow
-import DomainTheory.Neighborhood.Basic
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import DomainTheory.ContinuousLattice.WayBelow
+public import DomainTheory.Neighborhood.Basic
+
+@[expose] public section
 
 /-!
 # Continuous lattices → neighbourhood systems (1972 → 1980)

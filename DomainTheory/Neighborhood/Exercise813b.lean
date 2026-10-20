@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise813b.Basic
-import DomainTheory.Neighborhood.Exercise813b.generatedBy_iff_exists_evalSet
-import DomainTheory.Neighborhood.Exercise813b.Lindenbaumu2etoSet_injective
-import DomainTheory.Neighborhood.Exercise813b.Lindenbaumu2erange_toSet
-import DomainTheory.Neighborhood.Exercise813b.entails_iff_evalSet_subset
+module
+
+public import DomainTheory.Neighborhood.Exercise813b.Basic
+public import DomainTheory.Neighborhood.Exercise813b.generatedBy_iff_exists_evalSet
+public import DomainTheory.Neighborhood.Exercise813b.Lindenbaumu2etoSet_injective
+public import DomainTheory.Neighborhood.Exercise813b.Lindenbaumu2erange_toSet
+public import DomainTheory.Neighborhood.Exercise813b.entails_iff_evalSet_subset
+
+@[expose] public section

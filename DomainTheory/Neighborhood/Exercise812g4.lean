@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise812eD
-import DomainTheory.Neighborhood.Exercise812f
-import DomainTheory.Neighborhood.Exercise812g1a
-import DomainTheory.Neighborhood.Exercise812g1b
-import DomainTheory.Neighborhood.Exercise812g2
+module
+
+public import DomainTheory.Neighborhood.Exercise812eD
+public import DomainTheory.Neighborhood.Exercise812f
+public import DomainTheory.Neighborhood.Exercise812g1a
+public import DomainTheory.Neighborhood.Exercise812g1b
+public import DomainTheory.Neighborhood.Exercise812g2
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(g)(4) (Scott 1981, PRG-19, Lecture VIII) — final assembly: `U ≅ V`

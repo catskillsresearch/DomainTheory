@@ -5,9 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Approximable
-import Mathlib.Data.Set.Image
-import Mathlib.Data.Set.Insert
+module
+
+public import DomainTheory.Neighborhood.Approximable
+public import Mathlib.Data.Set.Image
+import all Mathlib.Data.Set.Image
+public import Mathlib.Data.Set.Insert
+import all Mathlib.Data.Set.Insert
+
+@[expose] public section
 
 /-!
 # Exercise 3.18 (Scott 1981, PRG-19, §3) — the sum (coproduct) system

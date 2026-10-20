@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition83
-import DomainTheory.Neighborhood.ApproximableExercises
-import DomainTheory.Neighborhood.Theorem85.Basic
-import DomainTheory.Neighborhood.Theorem85.principal_compact
+module
+
+public import DomainTheory.Neighborhood.Definition83
+public import DomainTheory.Neighborhood.ApproximableExercises
+public import DomainTheory.Neighborhood.Theorem85.Basic
+public import DomainTheory.Neighborhood.Theorem85.principal_compact
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

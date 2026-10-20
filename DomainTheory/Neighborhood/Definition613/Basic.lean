@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition68
-import DomainTheory.Neighborhood.Proposition611
-import DomainTheory.Neighborhood.Proposition612
+module
+
+public import DomainTheory.Neighborhood.Definition68
+public import DomainTheory.Neighborhood.Proposition611
+public import DomainTheory.Neighborhood.Proposition612
+
+@[expose] public section
 
 /-!
 # Lecture VI — Definition 6.13 (Scott 1981, PRG-19): functors *monotone / continuous on domains*

@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Recursive
+module
+
+public import DomainTheory.Neighborhood.Recursive
+
+@[expose] public section
 
 /-!
 # A choice-free Gödel numbering of `ℚ`, with primitive-recursive comparison/max/min

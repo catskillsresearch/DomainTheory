@@ -5,10 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.Basic.Countable.Defs
-import Mathlib.Data.Fintype.Powerset
-import Mathlib.Tactic
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.Basic.Countable.Defs
+import all Mathlib.Basic.Countable.Defs
+public import Mathlib.Data.Fintype.Powerset
+import all Mathlib.Data.Fintype.Powerset
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Example 1.5 (Scott 1981, PRG-19, §1)

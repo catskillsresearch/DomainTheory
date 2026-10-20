@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Product
-import DomainTheory.Neighborhood.Exercise127
+module
+
+public import DomainTheory.Neighborhood.Product
+public import DomainTheory.Neighborhood.Exercise127
+
+@[expose] public section
 
 /-!
 # Lecture III (§3) — the function space `(𝒟₀ → 𝒟₁)`: Definitions 3.8, Propositions 3.9,

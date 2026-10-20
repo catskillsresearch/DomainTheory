@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Lemma615.Basic
-import DomainTheory.Neighborhood.Lemma615.trianglelefteq_of_projectionPair
-import DomainTheory.Neighborhood.Lemma615.Subsystemu2etrianglelefteq
+module
+
+public import DomainTheory.Neighborhood.Lemma615.Basic
+public import DomainTheory.Neighborhood.Lemma615.trianglelefteq_of_projectionPair
+public import DomainTheory.Neighborhood.Lemma615.Subsystemu2etrianglelefteq
+
+@[expose] public section

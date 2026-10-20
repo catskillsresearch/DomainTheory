@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition610
-import DomainTheory.Neighborhood.Exercise222
+module
+
+public import DomainTheory.Neighborhood.Definition610
+public import DomainTheory.Neighborhood.Exercise222
+
+@[expose] public section
 
 /-!
 # Lecture VI — Proposition 6.11 (Scott 1981, PRG-19): the subsystems of `E` form a domain

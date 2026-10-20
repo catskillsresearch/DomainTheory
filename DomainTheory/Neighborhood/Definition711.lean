@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition711.Basic
-import DomainTheory.Neighborhood.Definition711.PDmem_finJoin
-import DomainTheory.Neighborhood.Definition711.PDmem_finJoin_iUnion
+module
+
+public import DomainTheory.Neighborhood.Definition711.Basic
+public import DomainTheory.Neighborhood.Definition711.PDmem_finJoin
+public import DomainTheory.Neighborhood.Definition711.PDmem_finJoin_iUnion
+
+@[expose] public section

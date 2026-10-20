@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem110
+module
+
+public import DomainTheory.Neighborhood.Theorem110
+
+@[expose] public section
 
 /-!
 # Exercise 1.21 (Scott 1981, PRG-19, §1) — Theorem 1.10 in greater detail

@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition68
-import DomainTheory.Neighborhood.Theorem41
+module
+
+public import DomainTheory.Neighborhood.Definition68
+public import DomainTheory.Neighborhood.Theorem41
+
+@[expose] public section
 
 /-!
 # Lecture VI — Theorem 6.9 (Scott 1981, PRG-19): homomorphisms out of a fixed point

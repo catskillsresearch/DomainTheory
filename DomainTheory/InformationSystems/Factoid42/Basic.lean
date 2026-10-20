@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid41
+module
+
+public import DomainTheory.InformationSystems.Factoid41
+
+@[expose] public section
 
 /-!
 # Factoid 4.2 — conditional completeness for meets

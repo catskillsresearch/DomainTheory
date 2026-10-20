@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid35.Basic
-import DomainTheory.InformationSystems.Factoid35.mem_closure_iff
-import DomainTheory.InformationSystems.Factoid35.subset_closure
+module
+
+public import DomainTheory.InformationSystems.Factoid35.Basic
+public import DomainTheory.InformationSystems.Factoid35.mem_closure_iff
+public import DomainTheory.InformationSystems.Factoid35.subset_closure
+
+@[expose] public section

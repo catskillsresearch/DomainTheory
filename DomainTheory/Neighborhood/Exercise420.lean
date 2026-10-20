@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise420.Basic
-import DomainTheory.Neighborhood.Exercise420.comp_fixElement_isFixed
-import DomainTheory.Neighborhood.Exercise420.fixElement_comp_comm
+module
+
+public import DomainTheory.Neighborhood.Exercise420.Basic
+public import DomainTheory.Neighborhood.Exercise420.comp_fixElement_isFixed
+public import DomainTheory.Neighborhood.Exercise420.fixElement_comp_comm
+
+@[expose] public section

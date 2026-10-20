@@ -5,17 +5,21 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid75.Basic
-import DomainTheory.InformationSystems.Factoid75.strictify_toElement_le
-import DomainTheory.InformationSystems.Factoid75.toFunFinset_empty
-import DomainTheory.InformationSystems.Factoid75.not_ent_tru_fls
-import DomainTheory.InformationSystems.Factoid75.not_ent_fls_tru
-import DomainTheory.InformationSystems.Factoid75.not_emptyEntails_singleton_tru
-import DomainTheory.InformationSystems.Factoid75.not_emptyEntails_singleton_fls
-import DomainTheory.InformationSystems.Factoid75.condMap_toElement_boolTrue
-import DomainTheory.InformationSystems.Factoid75.condMap_toElement_boolFalse
-import DomainTheory.InformationSystems.Factoid75.condMap_pair_roundtrip
-import DomainTheory.InformationSystems.Factoid75.entSet_singleton_tru_of_ent_tru
-import DomainTheory.InformationSystems.Factoid75.entSet_singleton_fls_of_ent_fls
-import DomainTheory.InformationSystems.Factoid75.condMap_unique
-import DomainTheory.InformationSystems.Factoid75.conditional_iso
+module
+
+public import DomainTheory.InformationSystems.Factoid75.Basic
+public import DomainTheory.InformationSystems.Factoid75.strictify_toElement_le
+public import DomainTheory.InformationSystems.Factoid75.toFunFinset_empty
+public import DomainTheory.InformationSystems.Factoid75.not_ent_tru_fls
+public import DomainTheory.InformationSystems.Factoid75.not_ent_fls_tru
+public import DomainTheory.InformationSystems.Factoid75.not_emptyEntails_singleton_tru
+public import DomainTheory.InformationSystems.Factoid75.not_emptyEntails_singleton_fls
+public import DomainTheory.InformationSystems.Factoid75.condMap_toElement_boolTrue
+public import DomainTheory.InformationSystems.Factoid75.condMap_toElement_boolFalse
+public import DomainTheory.InformationSystems.Factoid75.condMap_pair_roundtrip
+public import DomainTheory.InformationSystems.Factoid75.entSet_singleton_tru_of_ent_tru
+public import DomainTheory.InformationSystems.Factoid75.entSet_singleton_fls_of_ent_fls
+public import DomainTheory.InformationSystems.Factoid75.condMap_unique
+public import DomainTheory.InformationSystems.Factoid75.conditional_iso
+
+@[expose] public section

@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise326Sum.Basic
-import DomainTheory.Neighborhood.Exercise326Sum.condSumEmb_toElementMap
-import DomainTheory.Neighborhood.Exercise326Sum.condSum_true
-import DomainTheory.Neighborhood.Exercise326Sum.condSum_false
-import DomainTheory.Neighborhood.Exercise326Sum.condSum_bot
-import DomainTheory.Neighborhood.Exercise326Sum.not_sum_mem_empty
-import DomainTheory.Neighborhood.Exercise326Sum.which_mem_zero
-import DomainTheory.Neighborhood.Exercise326Sum.which_mem_one
-import DomainTheory.Neighborhood.Exercise326Sum.inMapu2080_outMapu2080_eq_of_left
-import DomainTheory.Neighborhood.Exercise326Sum.inMapu2081_outMapu2081_eq_of_right
-import DomainTheory.Neighborhood.Exercise326Sum.sum_element_trichotomy
-import DomainTheory.Neighborhood.Exercise326Sum.cond_which
+module
+
+public import DomainTheory.Neighborhood.Exercise326Sum.Basic
+public import DomainTheory.Neighborhood.Exercise326Sum.condSumEmb_toElementMap
+public import DomainTheory.Neighborhood.Exercise326Sum.condSum_true
+public import DomainTheory.Neighborhood.Exercise326Sum.condSum_false
+public import DomainTheory.Neighborhood.Exercise326Sum.condSum_bot
+public import DomainTheory.Neighborhood.Exercise326Sum.not_sum_mem_empty
+public import DomainTheory.Neighborhood.Exercise326Sum.which_mem_zero
+public import DomainTheory.Neighborhood.Exercise326Sum.which_mem_one
+public import DomainTheory.Neighborhood.Exercise326Sum.inMapu2080_outMapu2080_eq_of_left
+public import DomainTheory.Neighborhood.Exercise326Sum.inMapu2081_outMapu2081_eq_of_right
+public import DomainTheory.Neighborhood.Exercise326Sum.sum_element_trichotomy
+public import DomainTheory.Neighborhood.Exercise326Sum.cond_which
+
+@[expose] public section

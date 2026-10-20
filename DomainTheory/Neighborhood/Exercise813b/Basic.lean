@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise813a
+module
+
+public import DomainTheory.Neighborhood.Exercise813a
+
+@[expose] public section
 
 /-!
 # Exercise 8.13(b) (Scott 1981, PRG-19, Lecture VIII) — the Lindenbaum algebra bridge

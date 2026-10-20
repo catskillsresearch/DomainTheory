@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise113.Basic
-import DomainTheory.Neighborhood.Exercise113.branch_mem_iff
-import DomainTheory.Neighborhood.Exercise113.branchSeq_le_branch
-import DomainTheory.Neighborhood.Exercise113.prefix_comparable_of_mem
-import DomainTheory.Neighborhood.Exercise113.branch_isTotal
+module
+
+public import DomainTheory.Neighborhood.Exercise113.Basic
+public import DomainTheory.Neighborhood.Exercise113.branch_mem_iff
+public import DomainTheory.Neighborhood.Exercise113.branchSeq_le_branch
+public import DomainTheory.Neighborhood.Exercise113.prefix_comparable_of_mem
+public import DomainTheory.Neighborhood.Exercise113.branch_isTotal
+
+@[expose] public section

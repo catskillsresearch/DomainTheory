@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition66.Basic
-import DomainTheory.Neighborhood.Proposition66.iso_hom_unique
+module
+
+public import DomainTheory.Neighborhood.Proposition66.Basic
+public import DomainTheory.Neighborhood.Proposition66.iso_hom_unique
+
+@[expose] public section

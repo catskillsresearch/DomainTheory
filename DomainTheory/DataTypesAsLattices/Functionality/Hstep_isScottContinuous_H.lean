@@ -5,14 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
-import DomainTheory.DataTypesAsLattices.Functionality.hSucc_isScottContinuous_H
-import DomainTheory.DataTypesAsLattices.Functionality.hPred_isScottContinuous_H
-import DomainTheory.DataTypesAsLattices.Functionality.hCond_isScottContinuous_H
-import DomainTheory.DataTypesAsLattices.Functionality.hApp_isScottContinuous_H
-import DomainTheory.DataTypesAsLattices.Functionality.hLam_isScottContinuous_H
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
+public import DomainTheory.DataTypesAsLattices.Functionality.hSucc_isScottContinuous_H
+public import DomainTheory.DataTypesAsLattices.Functionality.hPred_isScottContinuous_H
+public import DomainTheory.DataTypesAsLattices.Functionality.hCond_isScottContinuous_H
+public import DomainTheory.DataTypesAsLattices.Functionality.hApp_isScottContinuous_H
+public import DomainTheory.DataTypesAsLattices.Functionality.hLam_isScottContinuous_H
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition710.Basic
-import DomainTheory.Neighborhood.Proposition710.NeighborhoodSystemu2ePowerDomain_isEffectivelyGiven
+module
+
+public import DomainTheory.Neighborhood.Proposition710.Basic
+public import DomainTheory.Neighborhood.Proposition710.NeighborhoodSystemu2ePowerDomain_isEffectivelyGiven
+
+@[expose] public section

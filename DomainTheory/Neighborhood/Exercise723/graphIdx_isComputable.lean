@@ -5,15 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Example78
-import DomainTheory.Neighborhood.Theorem74
-import DomainTheory.Neighborhood.Theorem75
-import DomainTheory.Neighborhood.Exercise514
-import DomainTheory.Neighborhood.Exercise723.Basic
-import DomainTheory.Neighborhood.Exercise723.primrec_untagList
-import DomainTheory.Neighborhood.Exercise723.primrec_untagVal
-import DomainTheory.Neighborhood.Exercise723.mem_GraphIdx_iff
-import DomainTheory.Neighborhood.Exercise723.forall_rel_iff_subset_step
+module
+
+public import DomainTheory.Neighborhood.Example78
+public import DomainTheory.Neighborhood.Theorem74
+public import DomainTheory.Neighborhood.Theorem75
+public import DomainTheory.Neighborhood.Exercise514
+public import DomainTheory.Neighborhood.Exercise723.Basic
+public import DomainTheory.Neighborhood.Exercise723.primrec_untagList
+public import DomainTheory.Neighborhood.Exercise723.primrec_untagVal
+public import DomainTheory.Neighborhood.Exercise723.mem_GraphIdx_iff
+public import DomainTheory.Neighborhood.Exercise723.forall_rel_iff_subset_step
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood.Exercise723

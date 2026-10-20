@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.LevelSetPrimrec
-import DomainTheory.Neighborhood.Exercise812c
-import DomainTheory.Neighborhood.Exercise812d
+module
+
+public import DomainTheory.Neighborhood.LevelSetPrimrec
+public import DomainTheory.Neighborhood.Exercise812c
+public import DomainTheory.Neighborhood.Exercise812d
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(f), prerequisite — `V` has a computable set-difference (`IsComputableDiff`)

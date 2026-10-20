@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition72
+module
+
+public import DomainTheory.Neighborhood.Definition72
+
+@[expose] public section
 
 /-!
 # Exercise 7.14 (Scott 1981, PRG-19, §7) — the r.e. facts after Definition 7.2

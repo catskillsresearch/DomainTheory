@@ -5,16 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.Z_graph_funOf
-import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_4_plotkin
-import DomainTheory.DataTypesAsLattices.Functionality.Z_finite_no_tag
-import DomainTheory.DataTypesAsLattices.Functionality.plotkin_finite_separation
-import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite
-import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite_union
-import DomainTheory.DataTypesAsLattices.Functionality.plotkinE_erase
-import DomainTheory.DataTypesAsLattices.Functionality.plotkin_function_related
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.Z_graph_funOf
+public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_4_plotkin
+public import DomainTheory.DataTypesAsLattices.Functionality.Z_finite_no_tag
+public import DomainTheory.DataTypesAsLattices.Functionality.plotkin_finite_separation
+public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite
+public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite_union
+public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE_erase
+public import DomainTheory.DataTypesAsLattices.Functionality.plotkin_function_related
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

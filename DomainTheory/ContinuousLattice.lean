@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.ContinuousLattice.Injective
-import DomainTheory.ContinuousLattice.WayBelow
-import DomainTheory.ContinuousLattice.Specialization
-import DomainTheory.ContinuousLattice.ScottMaps
-import DomainTheory.ContinuousLattice.MilnerCorrection
-import DomainTheory.ContinuousLattice.Constructions
-import DomainTheory.ContinuousLattice.FunctionSpaces
-import DomainTheory.ContinuousLattice.Theorem212
-import DomainTheory.ContinuousLattice.InverseLimits
-import DomainTheory.ContinuousLattice.FunctionSpaceTower
+module
+
+public import DomainTheory.ContinuousLattice.Injective
+public import DomainTheory.ContinuousLattice.WayBelow
+public import DomainTheory.ContinuousLattice.Specialization
+public import DomainTheory.ContinuousLattice.ScottMaps
+public import DomainTheory.ContinuousLattice.MilnerCorrection
+public import DomainTheory.ContinuousLattice.Constructions
+public import DomainTheory.ContinuousLattice.FunctionSpaces
+public import DomainTheory.ContinuousLattice.Theorem212
+public import DomainTheory.ContinuousLattice.InverseLimits
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower
+
+@[expose] public section

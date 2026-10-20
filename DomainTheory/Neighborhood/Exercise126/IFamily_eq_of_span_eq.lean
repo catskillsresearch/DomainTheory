@@ -5,10 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Basic
-import Mathlib.RingTheory.Ideal.Span
-import Mathlib.Tactic
-import DomainTheory.Neighborhood.Exercise126.Basic
+module
+
+public import DomainTheory.Neighborhood.Basic
+public import Mathlib.RingTheory.Ideal.Span
+import all Mathlib.RingTheory.Ideal.Span
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+public import DomainTheory.Neighborhood.Exercise126.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

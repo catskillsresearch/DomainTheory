@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.ApproximableExercises
-import Mathlib.Data.Set.Finite.Basic
+module
+
+public import DomainTheory.Neighborhood.ApproximableExercises
+public import Mathlib.Data.Set.Finite.Basic
+import all Mathlib.Data.Set.Finite.Basic
+
+@[expose] public section
 
 /-!
 # Exercise 2.20 (Scott 1981, PRG-19, §2) — the powerset domain `𝒫`

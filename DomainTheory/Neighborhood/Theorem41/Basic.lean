@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.FunctionSpace
-import DomainTheory.Neighborhood.ApproximableExercises
+module
+
+public import DomainTheory.Neighborhood.FunctionSpace
+public import DomainTheory.Neighborhood.ApproximableExercises
+
+@[expose] public section
 
 /-!
 # Lecture IV (§4) — fixed points and recursion: Theorems 4.1 and 4.2

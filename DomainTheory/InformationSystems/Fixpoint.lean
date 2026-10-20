@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Fixpoint.Basic
-import DomainTheory.InformationSystems.Fixpoint.fixChain_subset_pre_fixed
-import DomainTheory.InformationSystems.Fixpoint.fixElement_le_of_pre_fixed
-import DomainTheory.InformationSystems.Fixpoint.fixChain_step_of_rel
-import DomainTheory.InformationSystems.Fixpoint.toElement_fixElement_le
-import DomainTheory.InformationSystems.Fixpoint.fixElement_fixed
-import DomainTheory.InformationSystems.Fixpoint.fixElement_unique
-import DomainTheory.InformationSystems.Fixpoint.fixMap_unique
+module
+
+public import DomainTheory.InformationSystems.Fixpoint.Basic
+public import DomainTheory.InformationSystems.Fixpoint.fixChain_subset_pre_fixed
+public import DomainTheory.InformationSystems.Fixpoint.fixElement_le_of_pre_fixed
+public import DomainTheory.InformationSystems.Fixpoint.fixChain_step_of_rel
+public import DomainTheory.InformationSystems.Fixpoint.toElement_fixElement_le
+public import DomainTheory.InformationSystems.Fixpoint.fixElement_fixed
+public import DomainTheory.InformationSystems.Fixpoint.fixElement_unique
+public import DomainTheory.InformationSystems.Fixpoint.fixMap_unique
+
+@[expose] public section

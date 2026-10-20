@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise628.Basic
-import DomainTheory.Neighborhood.Exercise628.Triangleleftequ2eelementEmbedding
-import DomainTheory.Neighborhood.Exercise628.orderIso_of_embeddings
-import DomainTheory.Neighborhood.Exercise628.isomorphic_of_trianglelefteq_both
-import DomainTheory.Neighborhood.Exercise628.finite_element_of_isFinite
-import DomainTheory.Neighborhood.Exercise628.isomorphic_of_finite_system
+module
+
+public import DomainTheory.Neighborhood.Exercise628.Basic
+public import DomainTheory.Neighborhood.Exercise628.Triangleleftequ2eelementEmbedding
+public import DomainTheory.Neighborhood.Exercise628.orderIso_of_embeddings
+public import DomainTheory.Neighborhood.Exercise628.isomorphic_of_trianglelefteq_both
+public import DomainTheory.Neighborhood.Exercise628.finite_element_of_isFinite
+public import DomainTheory.Neighborhood.Exercise628.isomorphic_of_finite_system
+
+@[expose] public section

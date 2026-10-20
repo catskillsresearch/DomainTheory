@@ -5,8 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Data.Set.Basic
-import Mathlib.Order.Monotone.Basic
+module
+
+public import Mathlib.Data.Set.Basic
+import all Mathlib.Data.Set.Basic
+public import Mathlib.Order.Monotone.Basic
+import all Mathlib.Order.Monotone.Basic
+
+@[expose] public section
 
 /-!
 # Exercise 4.14 (Scott 1981, PRG-19, Lecture IV) — `P A` has a maximum fixed point

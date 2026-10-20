@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Product
-import DomainTheory.Neighborhood.Exercise127
-import DomainTheory.Neighborhood.FunctionSpace.Basic
-import DomainTheory.Neighborhood.FunctionSpace.le_iff_toElementMap_le
-import DomainTheory.Neighborhood.FunctionSpace.toElementMap_sSupMaps_principal
-import DomainTheory.Neighborhood.FunctionSpace.le_sSupMaps
+module
+
+public import DomainTheory.Neighborhood.Product
+public import DomainTheory.Neighborhood.Exercise127
+public import DomainTheory.Neighborhood.FunctionSpace.Basic
+public import DomainTheory.Neighborhood.FunctionSpace.le_iff_toElementMap_le
+public import DomainTheory.Neighborhood.FunctionSpace.toElementMap_sSupMaps_principal
+public import DomainTheory.Neighborhood.FunctionSpace.le_sSupMaps
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

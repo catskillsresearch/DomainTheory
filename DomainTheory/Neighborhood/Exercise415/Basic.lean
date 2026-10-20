@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise124
-import DomainTheory.Neighborhood.Exercise413
+module
+
+public import DomainTheory.Neighborhood.Exercise124
+public import DomainTheory.Neighborhood.Exercise413
+
+@[expose] public section
 
 /-!
 # Exercise 4.15 (Scott 1981, PRG-19, Lecture IV) — a maximal (and a least) fixed point

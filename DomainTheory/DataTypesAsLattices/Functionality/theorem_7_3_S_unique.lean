@@ -5,16 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Retracts
-import DomainTheory.DataTypesAsLattices.Functionality.Basic
-import DomainTheory.DataTypesAsLattices.Functionality.singletonE_mem
-import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
-import DomainTheory.DataTypesAsLattices.Functionality.graph_funOf_ext
-import DomainTheory.DataTypesAsLattices.Functionality.Scomb_app3
-import DomainTheory.DataTypesAsLattices.Functionality.Scomb_isGraph
-import DomainTheory.DataTypesAsLattices.Functionality.Scomb_app_isGraph
-import DomainTheory.DataTypesAsLattices.Functionality.Scomb_app2_isGraph
-import DomainTheory.DataTypesAsLattices.Functionality.eta2_app
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.Basic
+public import DomainTheory.DataTypesAsLattices.Functionality.singletonE_mem
+public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
+public import DomainTheory.DataTypesAsLattices.Functionality.graph_funOf_ext
+public import DomainTheory.DataTypesAsLattices.Functionality.Scomb_app3
+public import DomainTheory.DataTypesAsLattices.Functionality.Scomb_isGraph
+public import DomainTheory.DataTypesAsLattices.Functionality.Scomb_app_isGraph
+public import DomainTheory.DataTypesAsLattices.Functionality.Scomb_app2_isGraph
+public import DomainTheory.DataTypesAsLattices.Functionality.eta2_app
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

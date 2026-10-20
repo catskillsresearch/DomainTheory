@@ -5,10 +5,14 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem86
-import DomainTheory.Neighborhood.Theorem76
-import DomainTheory.Neighborhood.Theorem86c.Basic
-import DomainTheory.Neighborhood.Theorem86c.sub_rel_iff_exists_index
+module
+
+public import DomainTheory.Neighborhood.Theorem86
+public import DomainTheory.Neighborhood.Theorem76
+public import DomainTheory.Neighborhood.Theorem86c.Basic
+public import DomainTheory.Neighborhood.Theorem86c.sub_rel_iff_exists_index
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

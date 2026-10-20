@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Recursive
-import DomainTheory.Neighborhood.RationalPrimrec.Basic
-import DomainTheory.Neighborhood.RationalPrimrec.qDen_pos
+module
+
+public import DomainTheory.Neighborhood.Recursive
+public import DomainTheory.Neighborhood.RationalPrimrec.Basic
+public import DomainTheory.Neighborhood.RationalPrimrec.qDen_pos
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

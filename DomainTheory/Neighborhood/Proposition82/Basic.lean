@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition81
-import DomainTheory.Neighborhood.Proposition612
+module
+
+public import DomainTheory.Neighborhood.Definition81
+public import DomainTheory.Neighborhood.Proposition612
+
+@[expose] public section
 
 /-!
 # Lecture VIII — Proposition 8.2 (Scott 1981, PRG-19): `D ◁ E` induces a retraction

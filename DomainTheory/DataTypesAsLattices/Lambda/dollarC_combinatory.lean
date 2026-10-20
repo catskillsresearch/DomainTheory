@@ -5,14 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Embedding
-import DomainTheory.DataTypesAsLattices.Lambda.Basic
-import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
-import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4_closed
-import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_combinatory
-import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Lambda.dollarC_eq_fix_termDollarStep
-import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm_interp
+module
+
+public import DomainTheory.DataTypesAsLattices.Embedding
+public import DomainTheory.DataTypesAsLattices.Lambda.Basic
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
+public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4_closed
+public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_combinatory
+public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Lambda.dollarC_eq_fix_termDollarStep
+public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm_interp
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

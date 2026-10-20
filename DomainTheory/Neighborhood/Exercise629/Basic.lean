@@ -5,9 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Product
-import Mathlib.Data.Set.Finite.Basic
-import Mathlib.Data.Finset.Basic
+module
+
+public import DomainTheory.Neighborhood.Product
+public import Mathlib.Data.Set.Finite.Basic
+import all Mathlib.Data.Set.Finite.Basic
+public import Mathlib.Data.Finset.Basic
+import all Mathlib.Data.Finset.Basic
+
+@[expose] public section
 
 /-!
 # Exercise 6.29 (Scott 1981, PRG-19, §6) — infinitary sum and product

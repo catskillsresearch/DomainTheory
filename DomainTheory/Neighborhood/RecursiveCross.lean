@@ -5,14 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.RecursiveCross.Basic
-import DomainTheory.Neighborhood.RecursiveCross.primrec_consStep2
-import DomainTheory.Neighborhood.RecursiveCross.primrec_appendCode
-import DomainTheory.Neighborhood.RecursiveCross.primrec_crossInnerStep
-import DomainTheory.Neighborhood.RecursiveCross.primrec_crossInner
-import DomainTheory.Neighborhood.RecursiveCross.primrec_crossOuterStep
-import DomainTheory.Neighborhood.RecursiveCross.primrec_crossCombine
-import DomainTheory.Neighborhood.RecursiveCross.mem_decodeList_crossCombine
-import DomainTheory.Neighborhood.RecursiveCross.primrec_flatMapStep
-import DomainTheory.Neighborhood.RecursiveCross.primrec_flatMapCode
-import DomainTheory.Neighborhood.RecursiveCross.mem_decodeList_flatMapCode
+module
+
+public import DomainTheory.Neighborhood.RecursiveCross.Basic
+public import DomainTheory.Neighborhood.RecursiveCross.primrec_consStep2
+public import DomainTheory.Neighborhood.RecursiveCross.primrec_appendCode
+public import DomainTheory.Neighborhood.RecursiveCross.primrec_crossInnerStep
+public import DomainTheory.Neighborhood.RecursiveCross.primrec_crossInner
+public import DomainTheory.Neighborhood.RecursiveCross.primrec_crossOuterStep
+public import DomainTheory.Neighborhood.RecursiveCross.primrec_crossCombine
+public import DomainTheory.Neighborhood.RecursiveCross.mem_decodeList_crossCombine
+public import DomainTheory.Neighborhood.RecursiveCross.primrec_flatMapStep
+public import DomainTheory.Neighborhood.RecursiveCross.primrec_flatMapCode
+public import DomainTheory.Neighborhood.RecursiveCross.mem_decodeList_flatMapCode
+
+@[expose] public section

@@ -5,8 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Proposition710
-import Mathlib.Tactic
+module
+
+public import DomainTheory.Neighborhood.Proposition710
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Definition 7.11 (Scott 1981, PRG-19, §7) — finite-element joins in `ℙ𝒟`

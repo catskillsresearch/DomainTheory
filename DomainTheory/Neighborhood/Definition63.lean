@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Approximable
+module
+
+public import DomainTheory.Neighborhood.Approximable
+
+@[expose] public section
 
 /-!
 # Lecture VI — Definitions 6.3–6.5 (Scott 1981, PRG-19): functors, `T`-algebras, initial algebras

@@ -5,12 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Theorem88
-import DomainTheory.Neighborhood.Definition610
-import DomainTheory.Neighborhood.Lemma615
-import Mathlib.Basic.Countable.Defs
-import DomainTheory.Neighborhood.Theorem88a.Basic
-import DomainTheory.Neighborhood.Theorem88a.isomorphic_DprimeU
+module
+
+public import DomainTheory.Neighborhood.Theorem88
+public import DomainTheory.Neighborhood.Definition610
+public import DomainTheory.Neighborhood.Lemma615
+public import Mathlib.Basic.Countable.Defs
+import all Mathlib.Basic.Countable.Defs
+public import DomainTheory.Neighborhood.Theorem88a.Basic
+public import DomainTheory.Neighborhood.Theorem88a.isomorphic_DprimeU
+
+@[expose] public section
 
 
 namespace DomainTheory.Neighborhood

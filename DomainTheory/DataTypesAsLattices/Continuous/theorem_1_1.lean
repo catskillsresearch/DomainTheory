@@ -5,13 +5,19 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Topology.Bases
-import Mathlib.Topology.Order
-import DomainTheory.DataTypesAsLattices.Pomega
-import DomainTheory.DataTypesAsLattices.Continuous.Basic
-import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
-import DomainTheory.DataTypesAsLattices.Continuous.isScottContinuous_monotone
-import DomainTheory.DataTypesAsLattices.Continuous.exists_e_cover_finite
+module
+
+public import Mathlib.Topology.Bases
+import all Mathlib.Topology.Bases
+public import Mathlib.Topology.Order
+import all Mathlib.Topology.Order
+public import DomainTheory.DataTypesAsLattices.Pomega
+public import DomainTheory.DataTypesAsLattices.Continuous.Basic
+public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
+public import DomainTheory.DataTypesAsLattices.Continuous.isScottContinuous_monotone
+public import DomainTheory.DataTypesAsLattices.Continuous.exists_e_cover_finite
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

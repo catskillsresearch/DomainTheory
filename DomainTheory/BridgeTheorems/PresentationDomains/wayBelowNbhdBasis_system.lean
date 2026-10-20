@@ -5,13 +5,18 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.Hom.Basic
-import DomainTheory.BridgeTheorems.InfoSysToNeighborhood
-import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion
-import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys
-import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
-import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
-import DomainTheory.BridgeTheorems.PresentationDomains.Basic
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import DomainTheory.BridgeTheorems.InfoSysToNeighborhood
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion
+public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
+public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
+public import DomainTheory.BridgeTheorems.PresentationDomains.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.BridgeTheorems

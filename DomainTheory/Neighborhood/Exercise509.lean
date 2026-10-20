@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise509.Basic
-import DomainTheory.Neighborhood.Exercise509.commute_apply
-import DomainTheory.Neighborhood.Exercise509.commuting_least_common_fixed
-import DomainTheory.Neighborhood.Exercise509.iterElem_succ
-import DomainTheory.Neighborhood.Exercise509.iterElem_zerou27
-import DomainTheory.Neighborhood.Exercise509.fixElement_eq_of_commuting_bot
-import DomainTheory.Neighborhood.Exercise509.iterElem_le_fixElement
-import DomainTheory.Neighborhood.Exercise509.comp_self_iterElem
-import DomainTheory.Neighborhood.Exercise509.fixElement_iterTwice
+module
+
+public import DomainTheory.Neighborhood.Exercise509.Basic
+public import DomainTheory.Neighborhood.Exercise509.commute_apply
+public import DomainTheory.Neighborhood.Exercise509.commuting_least_common_fixed
+public import DomainTheory.Neighborhood.Exercise509.iterElem_succ
+public import DomainTheory.Neighborhood.Exercise509.iterElem_zerou27
+public import DomainTheory.Neighborhood.Exercise509.fixElement_eq_of_commuting_bot
+public import DomainTheory.Neighborhood.Exercise509.iterElem_le_fixElement
+public import DomainTheory.Neighborhood.Exercise509.comp_self_iterElem
+public import DomainTheory.Neighborhood.Exercise509.fixElement_iterTwice
+
+@[expose] public section

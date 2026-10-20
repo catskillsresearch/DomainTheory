@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise316
-import DomainTheory.Neighborhood.Exercise319
-import DomainTheory.Neighborhood.Exercise617
+module
+
+public import DomainTheory.Neighborhood.Exercise316
+public import DomainTheory.Neighborhood.Exercise319
+public import DomainTheory.Neighborhood.Exercise617
+
+@[expose] public section
 
 /-!
 # Exercise 6.18 (Scott 1981, PRG-19, §6) — `𝒟^∞` as an initial algebra

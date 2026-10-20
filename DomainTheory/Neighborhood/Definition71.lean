@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition71.Basic
-import DomainTheory.Neighborhood.Definition71.unitSys_isEffectivelyGiven
+module
+
+public import DomainTheory.Neighborhood.Definition71.Basic
+public import DomainTheory.Neighborhood.Definition71.unitSys_isEffectivelyGiven
+
+@[expose] public section

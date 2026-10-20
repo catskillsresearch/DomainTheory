@@ -5,13 +5,17 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Embedding.Basic
-import DomainTheory.DataTypesAsLattices.Embedding.mem_extend
-import DomainTheory.DataTypesAsLattices.Embedding.isOpen_extend_mem
-import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_5
-import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_5_extends
-import DomainTheory.DataTypesAsLattices.Embedding.embed_inducing
-import DomainTheory.DataTypesAsLattices.Embedding.embed_injective
-import DomainTheory.DataTypesAsLattices.Embedding.embed_continuous
-import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_6
-import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_6_injective_continuous
+module
+
+public import DomainTheory.DataTypesAsLattices.Embedding.Basic
+public import DomainTheory.DataTypesAsLattices.Embedding.mem_extend
+public import DomainTheory.DataTypesAsLattices.Embedding.isOpen_extend_mem
+public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_5
+public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_5_extends
+public import DomainTheory.DataTypesAsLattices.Embedding.embed_inducing
+public import DomainTheory.DataTypesAsLattices.Embedding.embed_injective
+public import DomainTheory.DataTypesAsLattices.Embedding.embed_continuous
+public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_6
+public import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_6_injective_continuous
+
+@[expose] public section

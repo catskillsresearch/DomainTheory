@@ -5,5 +5,9 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise324.Basic
-import DomainTheory.Neighborhood.Exercise324.funProd_isomorphic
+module
+
+public import DomainTheory.Neighborhood.Exercise324.Basic
+public import DomainTheory.Neighborhood.Exercise324.funProd_isomorphic
+
+@[expose] public section

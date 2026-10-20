@@ -5,12 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.DataTypesAsLattices.Embedding
-import DomainTheory.DataTypesAsLattices.Lambda.Basic
-import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_beta
-import DomainTheory.DataTypesAsLattices.Lambda.Scomb_beta2
-import DomainTheory.DataTypesAsLattices.Lambda.SKK_eq_I
-import DomainTheory.DataTypesAsLattices.Lambda.ofComb_update_isScottContinuous
+module
+
+public import DomainTheory.DataTypesAsLattices.Embedding
+public import DomainTheory.DataTypesAsLattices.Lambda.Basic
+public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_beta
+public import DomainTheory.DataTypesAsLattices.Lambda.Scomb_beta2
+public import DomainTheory.DataTypesAsLattices.Lambda.SKK_eq_I
+public import DomainTheory.DataTypesAsLattices.Lambda.ofComb_update_isScottContinuous
+
+@[expose] public section
 
 
 namespace DomainTheory.DataTypesAsLattices

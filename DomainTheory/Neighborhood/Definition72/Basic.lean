@@ -5,8 +5,12 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Definition71
-import DomainTheory.Neighborhood.Approximable
+module
+
+public import DomainTheory.Neighborhood.Definition71
+public import DomainTheory.Neighborhood.Approximable
+
+@[expose] public section
 
 /-!
 # Definition 7.2 (Scott 1981, PRG-19, §7) — computable maps and computable elements

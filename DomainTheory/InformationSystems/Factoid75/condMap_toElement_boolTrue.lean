@@ -5,15 +5,20 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Data.Multiset.MapFold
-import DomainTheory.InformationSystems.FunctionSpace
-import DomainTheory.InformationSystems.Theorem72
-import DomainTheory.InformationSystems.Factoid25
-import DomainTheory.InformationSystems.Factoid33
-import DomainTheory.InformationSystems.Factoid35
-import DomainTheory.InformationSystems.Factoid75.Basic
-import DomainTheory.InformationSystems.Factoid75.not_ent_tru_fls
-import DomainTheory.InformationSystems.Factoid75.not_emptyEntails_singleton_tru
+module
+
+public import Mathlib.Data.Multiset.MapFold
+import all Mathlib.Data.Multiset.MapFold
+public import DomainTheory.InformationSystems.FunctionSpace
+public import DomainTheory.InformationSystems.Theorem72
+public import DomainTheory.InformationSystems.Factoid25
+public import DomainTheory.InformationSystems.Factoid33
+public import DomainTheory.InformationSystems.Factoid35
+public import DomainTheory.InformationSystems.Factoid75.Basic
+public import DomainTheory.InformationSystems.Factoid75.not_ent_tru_fls
+public import DomainTheory.InformationSystems.Factoid75.not_emptyEntails_singleton_tru
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems

@@ -5,11 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Theorem72
-import DomainTheory.InformationSystems.Factoid33
-import DomainTheory.InformationSystems.Fixpoint.Basic
-import DomainTheory.InformationSystems.Fixpoint.fixElement_le_of_pre_fixed
-import DomainTheory.InformationSystems.Fixpoint.toElement_fixElement_le
+module
+
+public import DomainTheory.InformationSystems.Theorem72
+public import DomainTheory.InformationSystems.Factoid33
+public import DomainTheory.InformationSystems.Fixpoint.Basic
+public import DomainTheory.InformationSystems.Fixpoint.fixElement_le_of_pre_fixed
+public import DomainTheory.InformationSystems.Fixpoint.toElement_fixElement_le
+
+@[expose] public section
 
 
 namespace DomainTheory.InformationSystems

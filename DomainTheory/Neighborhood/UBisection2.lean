@@ -5,6 +5,10 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.UBisection2.Basic
-import DomainTheory.Neighborhood.UBisection2.listMinFst_le_one
-import DomainTheory.Neighborhood.UBisection2.zero_le_listMaxSnd
+module
+
+public import DomainTheory.Neighborhood.UBisection2.Basic
+public import DomainTheory.Neighborhood.UBisection2.listMinFst_le_one
+public import DomainTheory.Neighborhood.UBisection2.zero_le_listMaxSnd
+
+@[expose] public section

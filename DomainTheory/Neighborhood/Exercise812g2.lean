@@ -5,9 +5,13 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.Neighborhood.Exercise812d
-import DomainTheory.Neighborhood.UComputablePresentation
-import DomainTheory.Neighborhood.LevelSetPrimrec
+module
+
+public import DomainTheory.Neighborhood.Exercise812d
+public import DomainTheory.Neighborhood.UComputablePresentation
+public import DomainTheory.Neighborhood.LevelSetPrimrec
+
+@[expose] public section
 
 /-!
 # Exercise 8.12(g)(2) — `IsComputableUnion` for `U` and `V`

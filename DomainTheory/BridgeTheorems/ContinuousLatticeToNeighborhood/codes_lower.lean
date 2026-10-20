@@ -5,10 +5,15 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.Hom.Basic
-import DomainTheory.ContinuousLattice.WayBelow
-import DomainTheory.Neighborhood.Basic
-import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Basic
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import DomainTheory.ContinuousLattice.WayBelow
+public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Basic
+
+@[expose] public section
 
 
 namespace DomainTheory.BridgeTheorems

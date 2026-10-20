@@ -5,7 +5,11 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import DomainTheory.InformationSystems.Factoid77.Basic
-import DomainTheory.InformationSystems.Factoid77.tensorObj_eq_prod
-import DomainTheory.InformationSystems.Factoid77.expFunctor_obj
-import DomainTheory.InformationSystems.Factoid77.ihom_obj_eq_exp
+module
+
+public import DomainTheory.InformationSystems.Factoid77.Basic
+public import DomainTheory.InformationSystems.Factoid77.tensorObj_eq_prod
+public import DomainTheory.InformationSystems.Factoid77.expFunctor_obj
+public import DomainTheory.InformationSystems.Factoid77.ihom_obj_eq_exp
+
+@[expose] public section

@@ -5,11 +5,16 @@ Authors: Lars Warren Ericson.
 Github:  https://github.com/catskillsresearch/DomainTheory
 -/
 
-import Mathlib.Order.Hom.Basic
-import DomainTheory.Neighborhood.Basic
-import DomainTheory.InformationSystems.Factoid35
-import DomainTheory.InformationSystems.Factoid46
-import DomainTheory.InformationSystems.Proposition23
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import DomainTheory.Neighborhood.Basic
+public import DomainTheory.InformationSystems.Factoid35
+public import DomainTheory.InformationSystems.Factoid46
+public import DomainTheory.InformationSystems.Proposition23
+
+@[expose] public section
 
 /-!
 # Information systems → neighbourhood systems (1982 → 1980)
