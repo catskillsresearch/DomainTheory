@@ -1,0 +1,36 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.InformationSystems.InformationSystems.Constructive
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.Basic
+
+@[expose] public section
+
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
+
+
+
+
+
+
+
+theorem le_directedSup (S : Set sys.Element) (hne : S.Nonempty) (hdir : sys.IsDirected S)
+    {x : sys.Element} (hx : x ∈ S) : x ≤ sys.directedSup S hne hdir :=
+  sys.le_familySup S (sys.finitelyConsistent_of_directed S hne hdir) hx
+
+end InfoSys
+end DomainTheory.InformationSystems

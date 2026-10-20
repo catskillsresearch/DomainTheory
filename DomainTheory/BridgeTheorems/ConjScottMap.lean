@@ -11,9 +11,9 @@ module
 public import Mathlib.Order.Hom.Basic
 import all Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces
-public import DomainTheory.InformationSystems.Factoid46
-public import DomainTheory.InformationSystems.Factoid36
-public import DomainTheory.InformationSystems.Proposition53
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53
 public import DomainTheory.BridgeTheorems.InfoSysConstructions
 public import DomainTheory.BridgeTheorems.PresentationDomains
 

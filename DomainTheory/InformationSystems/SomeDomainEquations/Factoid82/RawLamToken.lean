@@ -1,0 +1,85 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
+public import Mathlib.Data.Finset.Card
+import all Mathlib.Data.Finset.Card
+
+@[expose] public section
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+set_option linter.unusedSectionVars false
+variable {α : Type*} [DecidableEq α]
+
+inductive RawLamToken (α : Type*) where
+  | bot : RawLamToken α
+  | atom : α → RawLamToken α
+  | funTok : List (RawLamToken α) → List (RawLamToken α) → RawLamToken α
+
+mutual
+  def rawLamBEq : RawLamToken α → RawLamToken α → Bool
+    | .bot, .bot => true
+    | .atom x, .atom y => decide (x = y)
+    | .funTok u v, .funTok u' v' => rawLamListBEq u u' && rawLamListBEq v v'
+    | _, _ => false
+  def rawLamListBEq : List (RawLamToken α) → List (RawLamToken α) → Bool
+    | [], [] => true
+    | x :: xs, y :: ys => rawLamBEq x y && rawLamListBEq xs ys
+    | _, _ => false
+end
+
+mutual
+  theorem rawLamBEq_eq : ∀ a b : RawLamToken α, rawLamBEq a b = true ↔ a = b
+  | .bot, .bot => by simp [rawLamBEq]
+  | .atom x, .atom y => by
+      simp only [rawLamBEq, decide_eq_true_eq]
+      exact ⟨congrArg RawLamToken.atom, RawLamToken.atom.inj⟩
+  | .funTok u v, .funTok u' v' => by
+      simp only [rawLamBEq, Bool.and_eq_true]
+      constructor
+      · intro ⟨hu, hv⟩
+        rw [(rawLamListBEq_eq u u').1 hu, (rawLamListBEq_eq v v').1 hv]
+      · intro h
+        injection h with hu hv
+        subst hu; subst hv
+        exact ⟨(rawLamListBEq_eq u u).2 rfl, (rawLamListBEq_eq v v).2 rfl⟩
+  | .bot, .atom _ | .bot, .funTok _ _ | .atom _, .bot | .atom _, .funTok _ _
+  | .funTok _ _, .bot | .funTok _ _, .atom _ => by
+      constructor
+      · intro h; simp [rawLamBEq] at h
+      · intro h; cases h
+  theorem rawLamListBEq_eq : ∀ u v : List (RawLamToken α), rawLamListBEq u v = true ↔ u = v
+  | [], [] => by simp [rawLamListBEq]
+  | x :: xs, y :: ys => by
+      simp only [rawLamListBEq, Bool.and_eq_true]
+      constructor
+      · intro ⟨hx, hxs⟩
+        rw [(rawLamBEq_eq x y).1 hx, (rawLamListBEq_eq xs ys).1 hxs]
+      · intro h
+        injection h with hx hxs
+        subst hx; subst hxs
+        exact ⟨(rawLamBEq_eq x x).2 rfl, (rawLamListBEq_eq xs xs).2 rfl⟩
+  | [], _ :: _ | _ :: _, [] => by
+      constructor
+      · intro h; simp [rawLamListBEq] at h
+      · intro h; cases h
+end
+
+instance : DecidableEq (RawLamToken α) := fun a b =>
+  if h : rawLamBEq a b = true then isTrue ((rawLamBEq_eq a b).1 h)
+  else isFalse fun hab => h ((rawLamBEq_eq a b).2 hab)
+
+end InfoSys
+end DomainTheory.InformationSystems

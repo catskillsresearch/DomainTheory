@@ -13,8 +13,8 @@ public import Mathlib.Order.Sum.Order
 import all Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
 import all Mathlib.Order.WithBot
-public import DomainTheory.InformationSystems.Theorem72
-public import DomainTheory.InformationSystems.Proposition64
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.left_bot_mem_inlMap_toElement
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.sumElementLft_inlMap_toElement
 

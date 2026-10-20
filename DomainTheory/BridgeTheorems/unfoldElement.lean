@@ -9,7 +9,7 @@ module
 
 public import Mathlib.Order.Hom.Basic
 import all Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.Factoid81
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81
 public import DomainTheory.BridgeTheorems.TreeProd
 public import DomainTheory.BridgeTheorems.treeFold
 public import DomainTheory.BridgeTheorems.treeUnfold_treeFold

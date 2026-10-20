@@ -1,0 +1,20 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.Basic
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.proposition_7_4_ii
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.toElement_comp_fix_le
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.fixElement_le_toElement_fix
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.fixChain_toElement_le_fix
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.toElement_fix_le_fixElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.proposition_7_4_iii
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.proposition_7_4_unique
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.idMap_botElement
+
+@[expose] public section

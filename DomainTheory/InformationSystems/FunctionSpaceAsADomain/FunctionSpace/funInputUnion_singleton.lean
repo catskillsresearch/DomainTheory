@@ -1,0 +1,51 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.InformationSystems.InformationSystems.Constructive
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.FunToken
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BasicInst7
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.instLeftCommutativeFunInput
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.instLeftCommutativeFunOutput
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funInputUnion
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mem_funInputUnion
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+set_option linter.unusedSectionVars false
+
+universe u v
+
+variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
+
+variable (A : InfoSys α) (B : InfoSys β)
+
+theorem funInputUnion_singleton (p : FunToken A B) :
+    funInputUnion A B {p} = p.val.1 := by
+  ext x
+  constructor
+  · intro hx
+    rcases (mem_funInputUnion A B).1 hx with ⟨q, hq, hx'⟩
+    have : q = p := Finset.mem_singleton.mp hq
+    subst this
+    exact hx'
+  · intro hx
+    exact (mem_funInputUnion A B).2 ⟨p, Finset.mem_singleton_self p, hx⟩
+
+end InfoSys
+
+end DomainTheory.InformationSystems

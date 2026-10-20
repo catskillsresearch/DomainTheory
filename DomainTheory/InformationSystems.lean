@@ -7,45 +7,52 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-public import DomainTheory.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.Definition22
-public import DomainTheory.InformationSystems.Proposition23
-public import DomainTheory.InformationSystems.Factoid24
-public import DomainTheory.InformationSystems.Factoid25
-public import DomainTheory.InformationSystems.Factoid26
-public import DomainTheory.InformationSystems.Factoid32
-public import DomainTheory.InformationSystems.Factoid33
-public import DomainTheory.InformationSystems.Factoid34
-public import DomainTheory.InformationSystems.Factoid35
-public import DomainTheory.InformationSystems.Factoid36
-public import DomainTheory.InformationSystems.Factoid41
-public import DomainTheory.InformationSystems.Factoid42
-public import DomainTheory.InformationSystems.Factoid43
-public import DomainTheory.InformationSystems.Factoid44
-public import DomainTheory.InformationSystems.Factoid45
-public import DomainTheory.InformationSystems.Factoid46
-public import DomainTheory.InformationSystems.Approximable
-public import DomainTheory.InformationSystems.Proposition53
-public import DomainTheory.InformationSystems.Proposition54
-public import DomainTheory.InformationSystems.Proposition55
-public import DomainTheory.InformationSystems.Proposition56
-public import DomainTheory.InformationSystems.Product
-public import DomainTheory.InformationSystems.Proposition62
-public import DomainTheory.InformationSystems.Sum
-public import DomainTheory.InformationSystems.Proposition64
-public import DomainTheory.InformationSystems.Factoid65
-public import DomainTheory.InformationSystems.FunctionSpace
-public import DomainTheory.InformationSystems.Theorem72
-public import DomainTheory.InformationSystems.Fixpoint
-public import DomainTheory.InformationSystems.Proposition74
-public import DomainTheory.InformationSystems.Factoid75
-public import DomainTheory.InformationSystems.Factoid76
-public import DomainTheory.InformationSystems.Factoid77
-public import DomainTheory.InformationSystems.Factoid81
-public import DomainTheory.InformationSystems.Factoid82
-public import DomainTheory.InformationSystems.Factoid83
-public import DomainTheory.InformationSystems.Factoid84
-public import DomainTheory.InformationSystems.DomainEquation
+-- Information systems
+public import DomainTheory.InformationSystems.InformationSystems.Constructive
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys
+public import DomainTheory.InformationSystems.InformationSystems.Definition22
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.Factoid24
+public import DomainTheory.InformationSystems.InformationSystems.Factoid25
+public import DomainTheory.InformationSystems.InformationSystems.Factoid26
+-- The elements of a system
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid34
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36
+-- Domains as lattices and as topological spaces
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
+-- Approximable mappings between domains
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56
+-- Products and sums of domains
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65
+-- The function space as a domain
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77
+-- Some domain equations
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84
+public import DomainTheory.InformationSystems.SomeDomainEquations.DomainEquation
 
 @[expose] public section

@@ -11,7 +11,7 @@ public import Mathlib.Order.Hom.Basic
 import all Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 import all Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.Factoid45
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.Basic
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_iff
 
