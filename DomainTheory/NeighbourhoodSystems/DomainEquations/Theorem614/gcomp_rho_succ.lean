@@ -87,18 +87,18 @@ theorem gcomp_rho_succ (s : Setup.{w}) (B : TAlgebra s.T) (g : AlgHom (colimAlg 
       = g.hom ⊚ ((colimIso s).hom ⊚ (Tmap_rho s n ⊚ (colimIso s).inv)) :=
           congrArg (fun x => g.hom ⊚ x) (key_rho s n)
     _ = (g.hom ⊚ (colimIso s).hom) ⊚ (Tmap_rho s n ⊚ (colimIso s).inv) :=
-          (Category.assoc g.hom (colimIso s).hom (Tmap_rho s n ⊚ (colimIso s).inv)).symm
+          CategoryTheory.Category.assoc (Tmap_rho s n ⊚ (colimIso s).inv) (colimIso s).hom g.hom
     _ = (B.str ⊚ s.T.map (X := objColim s) (Y := B.carrier) g.hom)
             ⊚ (Tmap_rho s n ⊚ (colimIso s).inv) := by rw [hcomm]
     _ = B.str ⊚ (s.T.map (X := objColim s) (Y := B.carrier) g.hom
             ⊚ (Tmap_rho s n ⊚ (colimIso s).inv)) :=
-          Category.assoc B.str (s.T.map (X := objColim s) (Y := B.carrier) g.hom)
-            (Tmap_rho s n ⊚ (colimIso s).inv)
+          (CategoryTheory.Category.assoc (Tmap_rho s n ⊚ (colimIso s).inv)
+            (s.T.map (X := objColim s) (Y := B.carrier) g.hom) B.str).symm
     _ = B.str ⊚ ((s.T.map (X := objColim s) (Y := B.carrier) g.hom ⊚ Tmap_rho s n)
             ⊚ (colimIso s).inv) :=
           congrArg (B.str ⊚ ·)
-            (Category.assoc (s.T.map (X := objColim s) (Y := B.carrier) g.hom) (Tmap_rho s n)
-              (colimIso s).inv).symm
+            (CategoryTheory.Category.assoc (colimIso s).inv (Tmap_rho s n)
+              (s.T.map (X := objColim s) (Y := B.carrier) g.hom))
     _ = B.str ⊚ (s.T.map (X := objColim s) (Y := B.carrier) (g.hom ⊚ rho s n)
             ⊚ (colimIso s).inv) :=
           congrArg (fun m => B.str ⊚ (m ⊚ (colimIso s).inv))

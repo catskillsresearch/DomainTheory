@@ -74,16 +74,16 @@ strictness is preserved by `isStrict_idMap` / `isStrict_comp`. -/
 instance : Category StrictDomainObj where
   Hom D E := StrictMap D.sys E.sys
   id D := ⟨ApproximableMap.idMap D.sys, isStrict_idMap⟩
-  comp g f := ⟨g.1.comp f.1, isStrict_comp g.2 f.2⟩
-  id_comp f := Subtype.ext (ApproximableMap.idMap_comp f.1)
-  comp_id f := Subtype.ext (ApproximableMap.comp_idMap f.1)
-  assoc h g f := Subtype.ext (ApproximableMap.comp_assoc h.1 g.1 f.1)
+  comp f g := ⟨g.1.comp f.1, isStrict_comp g.2 f.2⟩
+  id_comp f := Subtype.ext (ApproximableMap.comp_idMap f.1)
+  comp_id f := Subtype.ext (ApproximableMap.idMap_comp f.1)
+  assoc f g h := Subtype.ext (ApproximableMap.comp_assoc h.1 g.1 f.1).symm
 
 @[simp] theorem StrictDomainObj.id_val (D : StrictDomainObj) :
-    (Category.id D : StrictMap D.sys D.sys).1 = ApproximableMap.idMap D.sys := rfl
+    ((𝟙 D) : StrictMap D.sys D.sys).1 = ApproximableMap.idMap D.sys := rfl
 
 @[simp] theorem StrictDomainObj.comp_val {D E F : StrictDomainObj}
-    (g : Category.Hom E F) (f : Category.Hom D E) :
+    (g : (E ⟶ F)) (f : (D ⟶ E)) :
     ((g ⊚ f : StrictMap D.sys F.sys)).1 = g.1.comp f.1 := rfl
 
 /-! ## The functor `T(X) = 𝟙 + X + X` on objects -/
@@ -617,8 +617,8 @@ end SumInjMap
 open Example62C in
 /-- The morphism action of `T`: `T(f) = I_𝟙 + f + f` (identity on the terminator, `f` on each
 successor copy). Always strict (`isStrict_sumMap3`). -/
-def tcMapHom {D E : StrictDomainObj.{w}} (f : Category.Hom D E) :
-    Category.Hom (tcObj D) (tcObj E) :=
+def tcMapHom {D E : StrictDomainObj.{w}} (f : (D ⟶ E)) :
+    ((tcObj D) ⟶ (tcObj E)) :=
   ⟨sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := D.nonempty) (h₂ := D.nonempty)
       (h₀' := Example62C.unitSys_nonempty) (h₁' := E.nonempty) (h₂' := E.nonempty)
       (idMap unitSys) f.1 f.1, isStrict_sumMap3 _ _ _⟩
@@ -644,7 +644,7 @@ abbrev Tc : Endofunctor StrictDomainObj.{w} where
 
 @[simp] theorem Tc_obj (D : StrictDomainObj.{w}) : Tc.obj D = tcObj D := rfl
 
-@[simp] theorem Tc_map_val {D E : StrictDomainObj.{w}} (f : Category.Hom D E) :
+@[simp] theorem Tc_map_val {D E : StrictDomainObj.{w}} (f : (D ⟶ E)) :
     (Tc.map f).1 = sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := D.nonempty) (h₂ := D.nonempty)
       (h₀' := Example62C.unitSys_nonempty) (h₁' := E.nonempty) (h₂' := E.nonempty)
       (idMap unitSys) f.1 f.1 := rfl
@@ -666,7 +666,7 @@ open Example44 Example62C in
 `CC`), and the structure map `i : 𝟙 + C + C → C` is the inverse of the domain-equation isomorphism
 `ccEquiv` (Example 6.2), realised as an approximable map by `ofIso`; it is strict by `isStrict_ofIso`.
 Concretely `i` sends the terminator to `Λ̂` and each `b`-copy of `x` to `b·x`. -/
-abbrev cStr : Category.Hom (Tc.obj Cobj) Cobj :=
+abbrev cStr : ((Tc.obj Cobj) ⟶ Cobj) :=
   ⟨ofIso (by exact ccEquiv.symm), isStrict_ofIso _⟩
 
 open Example44 Example62C in
@@ -846,7 +846,7 @@ theorem descMap_strict : IsStrict (descMap B) := by
   rfl
 
 /-- The bundled strict homomorphism `C → E`. -/
-def descStrict : Category.Hom Cobj B.carrier := ⟨descMap B, descMap_strict B⟩
+def descStrict : (Cobj ⟶ B.carrier) := ⟨descMap B, descMap_strict B⟩
 
 /-! ### The homomorphism square and uniqueness -/
 

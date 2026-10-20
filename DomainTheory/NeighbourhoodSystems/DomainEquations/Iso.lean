@@ -25,12 +25,12 @@ variable {T : Endofunctor Obj}
 /-- An isomorphism in the category: a pair of mutually inverse morphisms. -/
 structure Iso (X Y : Obj) where
   /-- The forward morphism. -/
-  hom : Category.Hom X Y
+  hom : (X ⟶ Y)
   /-- The inverse morphism. -/
-  inv : Category.Hom Y X
+  inv : (Y ⟶ X)
   /-- `inv ∘ hom = I_X`. -/
-  hom_inv_id : inv ⊚ hom = Category.id X
+  hom_inv_id : inv ⊚ hom = (𝟙 X)
   /-- `hom ∘ inv = I_Y`. -/
-  inv_hom_id : hom ⊚ inv = Category.id Y
+  inv_hom_id : hom ⊚ inv = (𝟙 Y)
 
 end DomainTheory.NeighbourhoodSystems

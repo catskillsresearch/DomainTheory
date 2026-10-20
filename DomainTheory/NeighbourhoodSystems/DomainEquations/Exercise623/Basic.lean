@@ -260,15 +260,15 @@ by `isStrict_idMap`/`isStrict_comp`. The fixed carrier `Str` is what removes all
 instance : Category ScottSys where
   Hom A B := StrictMap A.sys B.sys
   id A := ⟨idMap A.sys, isStrict_idMap⟩
-  comp g f := ⟨g.1.comp f.1, isStrict_comp g.2 f.2⟩
-  id_comp f := Subtype.ext (idMap_comp f.1)
-  comp_id f := Subtype.ext (comp_idMap f.1)
-  assoc h g f := Subtype.ext (comp_assoc h.1 g.1 f.1)
+  comp f g := ⟨g.1.comp f.1, isStrict_comp g.2 f.2⟩
+  id_comp f := Subtype.ext (comp_idMap f.1)
+  comp_id f := Subtype.ext (idMap_comp f.1)
+  assoc f g h := Subtype.ext (comp_assoc h.1 g.1 f.1).symm
 
 @[simp] theorem ScottSys.id_val (A : ScottSys) :
-    (Category.id A : StrictMap A.sys A.sys).1 = idMap A.sys := rfl
+    ((𝟙 A) : StrictMap A.sys A.sys).1 = idMap A.sys := rfl
 
-@[simp] theorem ScottSys.comp_val {A B C : ScottSys} (g : Category.Hom B C) (f : Category.Hom A B) :
+@[simp] theorem ScottSys.comp_val {A B C : ScottSys} (g : (B ⟶ C)) (f : (A ⟶ B)) :
     ((g ⊚ f : StrictMap A.sys C.sys)).1 = g.1.comp f.1 := rfl
 
 /-- The morphism action of `gFunctor T`: a strict `f` is sent to the strict map `T(f)`. (Typed via
@@ -300,7 +300,7 @@ abbrev TexpF (N : ScottSys) : Endofunctor ScottSys := gFunctor (Texp N)
 /-- The identity isomorphism in any category induced by an object equality. -/
 def isoOfObjEq {Obj : Type*} [Category Obj] {X Y : Obj} (h : X = Y) : Iso X Y := by
   cases h
-  exact ⟨Category.id X, Category.id X, Category.id_comp _, Category.id_comp _⟩
+  exact ⟨(𝟙 X), (𝟙 X), CategoryTheory.Category.id_comp _, CategoryTheory.Category.id_comp _⟩
 
 /-- **The structure isomorphism `T(Exp) ≅ Exp`.** Since Phase 1 proved `T(Exp) = Exp` as objects
 (`Exp_structure_eq`), this is the identity isomorphism. -/

@@ -7,33 +7,29 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 
 module
 
-
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import Mathlib.CategoryTheory.Category.Basic
 
 @[expose] public section
 
-universe u v w
-
 namespace DomainTheory.NeighbourhoodSystems
 
-/-- A category: objects (a type `Obj`), hom-sets `Hom X Y`, identities, composition, and the three
-category laws. We bundle it as a class so a fixed object type can carry its categorical structure.
-The composition `comp g f` reads "`g` after `f`" (the same convention as `ApproximableMap.comp`). -/
-class Category (Obj : Type u) where
-  /-- The morphisms from `X` to `Y`. -/
-  Hom : Obj → Obj → Type v
-  /-- The identity morphism on each object. -/
-  id : (X : Obj) → Hom X X
-  /-- Composition: `comp g f` is "`g` after `f`". -/
-  comp : {X Y Z : Obj} → Hom Y Z → Hom X Y → Hom X Z
-  /-- Left identity law `I ∘ f = f`. -/
-  id_comp : ∀ {X Y : Obj} (f : Hom X Y), comp (id Y) f = f
-  /-- Right identity law `f ∘ I = f`. -/
-  comp_id : ∀ {X Y : Obj} (f : Hom X Y), comp f (id X) = f
-  /-- Associativity `(h ∘ g) ∘ f = h ∘ (g ∘ f)`. -/
-  assoc : ∀ {W X Y Z : Obj} (h : Hom Y Z) (g : Hom X Y) (f : Hom W X),
-    comp (comp h g) f = comp h (comp g f)
+/-!
+The category of domains is Mathlib's `CategoryTheory.Category`. Scott writes composition as
+"`g` after `f`"; Mathlib writes `f ≫ g` for "`f` then `g`". The notation `g ⊚ f` is that reversed
+reading, so `g ⊚ f` is `f ≫ g`.
+-/
 
-@[inherit_doc] infixr:80 " ⊚ " => Category.comp
+export CategoryTheory (Category)
+
+open scoped CategoryTheory
+
+universe u v
+
+scoped notation "𝟙" => CategoryTheory.CategoryStruct.id
+
+abbrev compAfter {Obj : Type u} [Category.{v} Obj] {X Y Z : Obj} (g : Y ⟶ Z) (f : X ⟶ Y) : X ⟶ Z :=
+  f ≫ g
+
+scoped infixr:80 " ⊚ " => compAfter
 
 end DomainTheory.NeighbourhoodSystems

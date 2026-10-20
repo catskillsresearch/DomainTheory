@@ -72,7 +72,7 @@ variable {α : Type w}
 
 /-- Transport of a `Hom X X` along an object equality is heterogeneously equal to itself. -/
 theorem transport_heq {Obj : Type*} [Category Obj] {X Y : Obj} (e : X = Y)
-    (f : Category.Hom X X) : HEq (e ▸ f : Category.Hom Y Y) f := by
+    (f : (X ⟶ X)) : HEq (e ▸ f : (Y ⟶ Y)) f := by
   cases e; rfl
 
 end Theorem614

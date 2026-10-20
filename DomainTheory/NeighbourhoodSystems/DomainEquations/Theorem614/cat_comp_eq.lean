@@ -68,7 +68,7 @@ variable {α : Type w}
 
 
 /-- In the category of domains, `⊚` (categorical composition) is `ApproximableMap.comp`. -/
-theorem cat_comp_eq {X Y Z : DomainObj} (g : Category.Hom Y Z) (f : Category.Hom X Y) :
+theorem cat_comp_eq {X Y Z : DomainObj} (g : (Y ⟶ Z)) (f : (X ⟶ Y)) :
     g ⊚ f = g.comp f := rfl
 
 end Theorem614

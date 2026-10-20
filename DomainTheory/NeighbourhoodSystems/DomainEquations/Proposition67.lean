@@ -52,7 +52,7 @@ def strHom (A : TAlgebra T) : AlgHom (tStr A) A where
 /-- The composite `i ∘ j` of `i` with the descent homomorphism `j : (D,i) → (T(D),T(i))` is the
 identity on `D`. -/
 theorem str_comp_desc (A : TAlgebra T) (hA : IsInitial A) :
-    A.str ⊚ (hA.desc (tStr A)).hom = Category.id A.carrier := by
+    A.str ⊚ (hA.desc (tStr A)).hom = (𝟙 A.carrier) := by
   have h : (strHom A).comp (hA.desc (tStr A)) = AlgHom.id A := by
     rw [hA.uniq A ((strHom A).comp (hA.desc (tStr A))), hA.uniq A (AlgHom.id A)]
   exact congrArg AlgHom.hom h
@@ -68,7 +68,7 @@ def lambek (A : TAlgebra T) (hA : IsInitial A) : Iso (T.obj A.carrier) A.carrier
         = (tStr A).str ⊚ T.map (hA.desc (tStr A)).hom := (hA.desc (tStr A)).comm
       _ = T.map A.str ⊚ T.map (hA.desc (tStr A)).hom := rfl
       _ = T.map (A.str ⊚ (hA.desc (tStr A)).hom) := (T.map_comp _ _).symm
-      _ = T.map (Category.id A.carrier) := by rw [str_comp_desc A hA]
-      _ = Category.id (T.obj A.carrier) := T.map_id _
+      _ = T.map ((𝟙 A.carrier)) := by rw [str_comp_desc A hA]
+      _ = (𝟙 (T.obj A.carrier)) := T.map_id _
 
 end DomainTheory.NeighbourhoodSystems

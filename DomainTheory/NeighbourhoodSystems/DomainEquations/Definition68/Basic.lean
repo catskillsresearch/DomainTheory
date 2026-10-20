@@ -80,7 +80,7 @@ def idEndofunctor (Obj : Type u) [Category Obj] : Endofunctor Obj where
     (idEndofunctor Obj).obj X = X := rfl
 
 @[simp] theorem idEndofunctor_map {Obj : Type u} [Category Obj] {X Y : Obj}
-    (f : Category.Hom X Y) : (idEndofunctor Obj).map f = f := rfl
+    (f : (X ⟶ Y)) : (idEndofunctor Obj).map f = f := rfl
 
 /-- **Definition 6.8 (Scott 1981, PRG-19).** An endofunctor `T` on the category of domains is
 *continuous on maps* when, for every pair of domains `D` and `E`, the induced action `λf. T(f)` on the

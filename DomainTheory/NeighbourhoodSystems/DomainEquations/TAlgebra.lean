@@ -26,6 +26,6 @@ structure TAlgebra (T : Endofunctor Obj) where
   /-- The underlying object `E`. -/
   carrier : Obj
   /-- The structure map `k : T(E) → E`. -/
-  str : Category.Hom (T.obj carrier) carrier
+  str : ((T.obj carrier) ⟶ carrier)
 
 end DomainTheory.NeighbourhoodSystems

@@ -509,8 +509,8 @@ def prodObj (Dom X : StrictDomainObj.{w}) : StrictDomainObj.{w} where
   nonempty := prod_nonempty Dom.nonempty X.nonempty
 
 /-- The morphism action `T(f) = id_𝒟 × f`, strict by `isStrict_prodMap`. -/
-def prodMapHom (Dom : StrictDomainObj.{w}) {X Y : StrictDomainObj.{w}} (f : Category.Hom X Y) :
-    Category.Hom (prodObj Dom X) (prodObj Dom Y) :=
+def prodMapHom (Dom : StrictDomainObj.{w}) {X Y : StrictDomainObj.{w}} (f : (X ⟶ Y)) :
+    ((prodObj Dom X) ⟶ (prodObj Dom Y)) :=
   ⟨prodMap (idMap Dom.sys) f.1, isStrict_prodMap isStrict_idMap f.2⟩
 
 /-- **The product endofunctor `T(X) = 𝒟 × X`** on `∅`-free domains and strict maps, for a fixed

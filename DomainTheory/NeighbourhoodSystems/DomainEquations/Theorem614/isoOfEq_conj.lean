@@ -72,11 +72,12 @@ variable {α : Type w}
 
 /-- Conjugation by the identity isomorphism `isoOfEq e` is the object-transport along `e`. -/
 theorem isoOfEq_conj {Obj : Type*} [Category Obj] {X Y : Obj} (e : X = Y)
-    (f : Category.Hom X X) :
-    (isoOfEq e).hom ⊚ f ⊚ (isoOfEq e).inv = (e ▸ f : Category.Hom Y Y) := by
+    (f : (X ⟶ X)) :
+    (isoOfEq e).hom ⊚ f ⊚ (isoOfEq e).inv = (e ▸ f : (Y ⟶ Y)) := by
   cases e
-  change Category.id X ⊚ f ⊚ Category.id X = f
-  rw [Category.id_comp, Category.comp_id]
+  change (𝟙 X) ⊚ f ⊚ (𝟙 X) = f
+  dsimp only [compAfter]
+  rw [CategoryTheory.Category.comp_id, CategoryTheory.Category.id_comp]
 
 end Theorem614
 end DomainTheory.NeighbourhoodSystems

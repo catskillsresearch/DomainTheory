@@ -710,12 +710,12 @@ abbrev tsigObj (A : Type) [DecidableEq A] (D : StrictDomainObj.{0}) : StrictDoma
     (tsigObj A D).sys = sumSig A D.sys D.nonempty := rfl
 
 /-- `Tsig` on maps: `Tsig(f) = I_𝟙 + Σ_a f`, strict by `isStrict_sumMapSig`. -/
-def tsigMapHom (A : Type) [DecidableEq A] {D E : StrictDomainObj.{0}} (f : Category.Hom D E) :
-    Category.Hom (tsigObj A D) (tsigObj A E) :=
+def tsigMapHom (A : Type) [DecidableEq A] {D E : StrictDomainObj.{0}} (f : (D ⟶ E)) :
+    ((tsigObj A D) ⟶ (tsigObj A E)) :=
   ⟨sumMapSig (A := A) (h₀ := D.nonempty) (h₁ := E.nonempty) f.1, isStrict_sumMapSig _⟩
 
 @[simp] theorem tsigMapHom_val (A : Type) [DecidableEq A] {D E : StrictDomainObj.{0}}
-    (f : Category.Hom D E) :
+    (f : (D ⟶ E)) :
     (tsigMapHom A f).1 = sumMapSig (A := A) (h₀ := D.nonempty) (h₁ := E.nonempty) f.1 := rfl
 
 /-- **The functor `Tsig(X) = 𝟙 + Σ_{a:A} X`** on the category of `∅`-free domains and strict maps. -/
@@ -729,7 +729,7 @@ abbrev Tsig (A : Type) [DecidableEq A] : Endofunctor StrictDomainObj.{0} where
     (Tsig A).obj D = tsigObj A D := rfl
 
 @[simp] theorem Tsig_map_val (A : Type) [DecidableEq A] {D E : StrictDomainObj.{0}}
-    (f : Category.Hom D E) :
+    (f : (D ⟶ E)) :
     ((Tsig A).map f).1 = sumMapSig (A := A) (h₀ := D.nonempty) (h₁ := E.nonempty) f.1 := rfl
 
 /-! ## Stage 3: the domain equation `Cₐ ≅ 𝟙 + Σ_a Cₐ`.
@@ -1132,7 +1132,7 @@ abbrev Cnobj (A : Type) [DecidableEq A] : StrictDomainObj.{0} := ⟨Strn A, Cn A
 
 /-- **The `Tsig`-algebra structure on `Cₐ`.** The structure map `i : 𝟙+Σ_a Cₐ → Cₐ` is the inverse of
 the domain-equation isomorphism `ccEquiv`, strict by `isStrict_ofIso`. -/
-abbrev cnStr : Category.Hom ((Tsig A).obj (Cnobj A)) (Cnobj A) :=
+abbrev cnStr : (((Tsig A).obj (Cnobj A)) ⟶ (Cnobj A)) :=
   ⟨ofIso ccEquiv.symm, isStrict_ofIso _⟩
 
 /-- **`Cₐ` is a `Tsig`-algebra** for `Tsig(X) = 𝟙 + Σ_a X`. -/
@@ -1317,7 +1317,7 @@ theorem descMap_strict : IsStrict (descMap B) := by
   rfl
 
 /-- The bundled strict homomorphism `Cₐ → E`. -/
-def descStrict : Category.Hom (Cnobj A) B.carrier := ⟨descMap B, descMap_strict B⟩
+def descStrict : ((Cnobj A) ⟶ B.carrier) := ⟨descMap B, descMap_strict B⟩
 
 /-! ### The homomorphism square and uniqueness. -/
 

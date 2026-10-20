@@ -263,7 +263,7 @@ theorem domainObj_ext {c : Type w} (σ : NeighborhoodSystem c) (e : c = α)
 /-- The identity isomorphism induced by an object equality in any category. -/
 def isoOfEq {Obj : Type*} [Category Obj] {X Y : Obj} (h : X = Y) : Iso X Y := by
   cases h
-  exact ⟨Category.id X, Category.id X, Category.id_comp _, Category.id_comp _⟩
+  exact ⟨(𝟙 X), (𝟙 X), CategoryTheory.Category.id_comp _, CategoryTheory.Category.id_comp _⟩
 
 /-- **`T(𝒟) ≅ 𝒟` is the identity**, packaged as a `DomainObj` equality `T(𝒟) = 𝒟`. -/
 theorem colimObj_eq (s : Setup.{w}) :

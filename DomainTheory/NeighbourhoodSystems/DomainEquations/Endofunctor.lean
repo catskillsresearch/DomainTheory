@@ -26,11 +26,11 @@ structure Endofunctor (Obj : Type u) [Category Obj] where
   /-- The action on objects. -/
   obj : Obj → Obj
   /-- The action on morphisms. -/
-  map : {X Y : Obj} → Category.Hom X Y → Category.Hom (obj X) (obj Y)
+  map : {X Y : Obj} → (X ⟶ Y) → ((obj X) ⟶ (obj Y))
   /-- `T(I_X) = I_{T(X)}`. -/
-  map_id : ∀ (X : Obj), map (Category.id X) = Category.id (obj X)
+  map_id : ∀ (X : Obj), map ((𝟙 X)) = (𝟙 (obj X))
   /-- `T(g ∘ f) = T(g) ∘ T(f)`. -/
-  map_comp : ∀ {X Y Z : Obj} (g : Category.Hom Y Z) (f : Category.Hom X Y),
+  map_comp : ∀ {X Y Z : Obj} (g : (Y ⟶ Z)) (f : (X ⟶ Y)),
     map (g ⊚ f) = (map g) ⊚ (map f)
 
 end DomainTheory.NeighbourhoodSystems

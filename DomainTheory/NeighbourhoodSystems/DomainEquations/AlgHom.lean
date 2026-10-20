@@ -27,7 +27,7 @@ variable {T : Endofunctor Obj}
 `hom : E → F` making the square commute, i.e. `hom ∘ k = m ∘ T(hom)`. -/
 structure AlgHom (A B : TAlgebra T) where
   /-- The underlying morphism `h : E → F`. -/
-  hom : Category.Hom A.carrier B.carrier
+  hom : (A.carrier ⟶ B.carrier)
   /-- The homomorphism square `h ∘ k = m ∘ T(h)`. -/
   comm : hom ⊚ A.str = B.str ⊚ T.map hom
 
