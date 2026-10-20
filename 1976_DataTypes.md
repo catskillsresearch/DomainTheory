@@ -1,67 +1,16 @@
----
-source_pdf: Data_Types_as_Lattices.pdf
-ocr_method: cursor-vision-triple-merge
-verification_status: draft
----
-
-# Transcription (LLM vision OCR)
-**DATA TYPES**
-
-**AS**
-
-**LATTICES**
-
-by
-
-**Dana Scott**
-
-**Oxford University Computing Laboratory**  
-**Programming Research Group**
-**ACCESSION NO.** ✓ **DATE** 06 FEB 2002
-
-**SHELFMARK**  
-PRG 05
-
-3033969640
-
-Technical Monograph PRG-5, September 1976
-
-Oxford University Computing Laboratory  
-Programming Research Group  
-45 Banbury Road, Oxford OX2 6PE
-
-Reprinted from the SIAM Journal on Computing, Volume 5, 1976, pages 522–587. Copyright 1976 by Society for Industrial and Applied Mathematics, Philadelphia. All rights reserved.
-**SIAM J. COMPUT.**  
-Vol. 5, No. 3, September 1976
-
-> Oxford University Computing Laboratory  
-> 19 Parks Road  
-> OXFORD  
-> OXFORD OX1 3QD
-
 # DATA TYPES AS LATTICES
+
+## Introduction
 
 *To the Memory of Christopher Strachey, 1916–1975*
 
-**DANA SCOTT**†
+The meaning of many kinds of expressions in programming languages can be taken as elements of certain spaces of “partial” objects. In this report these spaces are modeled in one universal domain $\mathbf{P}\omega$, the set of all subsets of the integers. This domain renders the connection of this semantic theory with the ordinary theory of number theoretic (especially general recursive) functions clear and straightforward.
 
-**Abstract.** The meaning of many kinds of expressions in programming languages can be taken as elements of certain spaces of “partial” objects. In this report these spaces are modeled in one universal domain $\mathbf{P}\omega$, the set of all subsets of the integers. This domain renders the connection of this semantic theory with the ordinary theory of number theoretic (especially general recursive) functions clear and straightforward.
-
-**Key words.** programming language semantics, lattice, continuous lattice, algebraic lattice, computability, retract, combinatory logic, lambda calculus, recursion theorem, enumeration degrees, continuous function, fixed-point theorem
-
-**Introduction.** Investigations begun in 1969 with Christopher Strachey led to the idea that the denotations of many kinds of expressions in programming languages could be taken as elements of certain kinds of spaces of “partial” objects. As these spaces could be treated as function spaces, their structure at first seemed excessively complicated—even impossible. But then the author discovered that there were many more spaces than we had first imagined—even wanted. They could be presented as lattices (or as some prefer, semilattices), and the main technique was to employ topological ideas, in particular the notion of a continuous function. This approach and its applications have been presented in a number of publications, but that part of the foundation concerned with *computability* (in the sense of recursion theory) was never before adequately exposed. The purpose of the present paper is to provide such a foundation and to simplify the whole presentation by a de-emphasis of abstract ideas. An Appendix and the references provide a partial guide to the literature and an indication of connections with other work.
+Investigations begun in 1969 with Christopher Strachey led to the idea that the denotations of many kinds of expressions in programming languages could be taken as elements of certain kinds of spaces of “partial” objects. As these spaces could be treated as function spaces, their structure at first seemed excessively complicated—even impossible. But then the author discovered that there were many more spaces than we had first imagined—even wanted. They could be presented as lattices (or as some prefer, semilattices), and the main technique was to employ topological ideas, in particular the notion of a continuous function. This approach and its applications have been presented in a number of publications, but that part of the foundation concerned with *computability* (in the sense of recursion theory) was never before adequately exposed. The purpose of the present paper is to provide such a foundation and to simplify the whole presentation by a de-emphasis of abstract ideas. An Appendix and the references provide a partial guide to the literature and an indication of connections with other work.
 
 The main innovation in this report is to model everything within one “universal” domain $\mathbf{P}\omega = \{x \mid x \subseteq \omega\}$, the domain of all subsets of the set $\omega$ of nonnegative integers. The advantages are many: by the most elementary considerations $\mathbf{P}\omega$ is recognized to be a lattice and a topological space. In fact, $\mathbf{P}\omega$ is a *continuous lattice*, even an *algebraic lattice*, but in the beginning we do not even need to define such an “advanced” concept; we can save these ideas for an *analysis* of what has been done here in a more direct way. Next by taking the set of integers as the basis of the construction, the connection with the ordinary theory of number-theoretic (especially, general recursive) functions can be made clear and straightforward.
 
 The model $\mathbf{P}\omega$ can be intuitively viewed as the domain of *multiple-valued* integers; what is new in the presentation is that functions are not only multiple-valued but also “multiple-argumented”. This remark is given a precise sense in § 2 below, but the upshot of the idea is that multiple-valued integers are regarded as
-
----
-
-\* Received by the editors May 23, 1975, and in revised form March 17, 1976.
-
-† Mathematics Department, Oxford University, Oxford, England OX2 6PE.
-**DATA TYPES AS LATTICES**
-
 objects in themselves—possibly infinite—and as something more than just the collection of single integers contained in them. This combination of the finite with the infinite into a single domain, together with the idea that a continuous function can be reduced to its *graph* (in the end, a set of integers), makes it possible to view an $x \in \mathbf{P}\omega$ at one time as a value, at another as an argument, then as an integer, then as a function, and still later as a functional (or combinator). The “paradox” of self-application (as in $x(x)$) is solved by allowing the *same* $x$ to be used in two *different* ways. This is done in ordinary recursion theory via Gödel numbers (as in $\{e\}(e)$), but the advantage of the present theory is that not only is the function concept the *extensional* one, but it includes *arbitrary* continuous functions and not just the computable ones.
 
 Section 1 introduces the elementary ideas on the topology of $\mathbf{P}\omega$ and the continuous functions including the fixed-point theorem. Section 2 has to do with computability and definability. The language LAMBDA is introduced as an extension of the pure $\lambda$-calculus by four arithmetical combinators; in fact, it is indicated in § 3 how the whole system could be based on *one* combinator. What is shown is that computability in $\mathbf{P}\omega$ according to the natural definition (which assumes that we already know what a recursively enumerable set of integers is) is equivalent to LAMBDA-definability. The main tool is, not surprisingly, the first recursion theorem formulated with the aid of the so-called *paradoxical combinator* $\mathbf{Y}$. The plan is hardly original, but the point is to work out what it all means in the model.

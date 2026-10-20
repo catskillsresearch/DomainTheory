@@ -1,4 +1,4 @@
-# Domain Theory library in Lean 4
+# Domain Theory in Lean 4
 
 - [Continuous Lattices (1972)](1972_ContinuousLattices.md) 
 - [Datatypes as Lattices (1976)](1976_DataTypes.md) 

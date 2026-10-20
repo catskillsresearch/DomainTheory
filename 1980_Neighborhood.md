@@ -6,6 +6,6 @@
 - [Domain constructs](1980_Domain_constructs.md)
 - [Fixed points and recursion](1980_Fixed_points_and_recursion.md)
 - [Typed $\lambda$-calculus](1980_Typed_lambda-calculus.md)
-- [Introduction to domain equations](1980_Introduction_to_domain_equations.md)
+- [Domain equations](1980_Introduction_to_domain_equations.md)
 - [Computability in effectively given domains](1980_Computability_in_effectively_given_domains.md)
 - [Retracts of the universal domain](1980_Retracts_of_the_universal_domain.md)
