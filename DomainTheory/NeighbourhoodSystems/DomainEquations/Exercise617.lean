@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62C
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.StrictDomainObj
 
 @[expose] public section
 
@@ -66,15 +67,6 @@ universe w
 
 /-! ## The category of `∅`-free domains and strict maps -/
 
-/-- An object of Scott's category (Exercise 6.19): a token type, a neighbourhood system on it, and the
-standing assumption `∅ ∉ 𝒟` (every neighbourhood is non-empty). -/
-structure StrictDomainObj : Type (w + 1) where
-  /-- The token type. -/
-  carrier : Type w
-  /-- The neighbourhood system. -/
-  sys : NeighborhoodSystem carrier
-  /-- Scott's standing assumption `∅ ∉ 𝒟`. -/
-  nonempty : ∀ X, sys.mem X → X.Nonempty
 
 /-- **The category of `∅`-free domains and strict maps.** Morphisms are strict approximable maps
 (`StrictMap`, Exercise 5.10); identities and associative composition come from Theorem 2.5, and

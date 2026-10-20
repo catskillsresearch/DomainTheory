@@ -6,6 +6,7 @@ Authors: Lars Warren Ericson.
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 
 @[expose] public section
 
@@ -24,12 +25,6 @@ theorem pairElem_tag_ne (x y : Pomega) :
     pairElem (ofNat 0) x ≠ pairElem (ofNat 1) y :=
   seq2_tag_ne x y
 
-/-- **Scott 1976, §7, Definition.** A restricted equivalence is a
-symmetric transitive relation, coded as a set of pairs. -/
-structure RestrictedEquiv where
-  rel : Pomega → Pomega → Prop
-  symm : ∀ {x y}, rel x y → rel y x
-  trans : ∀ {x y z}, rel x y → rel y z → rel x z
 
 /-- `x : A` means `x A x`. -/
 def RestrictedEquiv.mem (A : RestrictedEquiv) (x : Pomega) : Prop :=

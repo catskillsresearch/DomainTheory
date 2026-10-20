@@ -13,6 +13,7 @@ public import Mathlib.Topology.ContinuousMap.Basic
 import all Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Sets.Opens
 import all Mathlib.Topology.Sets.Opens
+public import DomainTheory.ContinuousLattice.Injective.IsRetractSubspace
 
 @[expose] public section
 
@@ -44,10 +45,3 @@ topological embedding `e : X → Y` and every continuous `f : X → D`, there is
 def IsInjectiveSpace (D : Type v) [TopologicalSpace D] : Prop :=
   ∀ {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y] (e : X → Y),
     IsEmbedding e → ∀ f : C(X, D), ∃ g : C(Y, D), ∀ x, g (e x) = f x
-
-/-- Scott's notion of retract: a subspace with a continuous retraction. -/
-structure IsRetractSubspace (D' D : Type u) [TopologicalSpace D'] [TopologicalSpace D] where
-  section' : C(D', D)
-  isEmbedding_section : IsEmbedding section'
-  retraction : C(D, D')
-  retraction_section : ∀ d, retraction (section' d) = d

@@ -18,6 +18,11 @@ public import Mathlib.Order.CompleteLattice.Basic
 import all Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.FixedPoints
 import all Mathlib.Order.FixedPoints
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
+public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
+public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapRetraction
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapProjection
 
 @[expose] public section
 
@@ -81,14 +86,8 @@ abbrev ScottFunctionSpace (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y
 abbrev ScottC (D D' : Type*) [CompleteLattice D] [CompleteLattice D'] :=
   @ContinuousMap D D' scottTopologicalSpace scottTopologicalSpace
 
-/-- Continuous maps between complete lattices with Scott's induced topologies. -/
-def ScottMap (D : Type u) (D' : Type v) [CompleteLattice D] [CompleteLattice D'] : Type _ :=
-  { f : D → D' // @Continuous D D' scottTopologicalSpace scottTopologicalSpace f }
 
 namespace ScottMap
-
-instance : CoeFun (ScottMap D D') (fun _ => D → D') where
-  coe f := f.1
 
 @[ext]
 theorem ext {f g : ScottMap D D'} (h : ∀ x, f x = g x) : f = g :=
@@ -502,22 +501,6 @@ noncomputable def scottLambda (f : ScottMap (D × D') D'') : ScottMap D (ScottMa
 
 /-! ### Definition 3.6 -/
 
-/-- **Scott 1972, Definition 3.6.** A *retraction* of continuous lattices. -/
-structure IsContinuousLatticeRetraction (D : Type u) (D' : Type v)
-    [CompleteLattice D] [CompleteLattice D'] where
-  incl : ScottMap D D'
-  retr : ScottMap D' D
-  retr_incl : ∀ d, retr (incl d) = d
-
-/-- **Scott 1972, Definition 3.6.** A *projection* of continuous lattices: a retract with
-`i ∘ j ⊑ id`. -/
-structure IsContinuousLatticeProjection (D : Type u) (D' : Type v)
-    [CompleteLattice D] [CompleteLattice D']
-    extends IsContinuousLatticeRetraction D D' where
-  incl_retr_le : ∀ d,
-    @LE.le D'
-      (ChainCompletePartialOrder.instOfCompleteLattice (α := D')).toPartialOrder.toPreorder.toLE
-      (incl (retr d)) d
 
 namespace IsContinuousLatticeRetraction
 
@@ -533,21 +516,6 @@ end IsContinuousLatticeRetraction
 
 /-! ### Proposition 3.7 -/
 
-/-- **Scott 1972, Proposition 3.7 (retraction half).** If `D_n` is a retract of `D'_n`
-(`n = 0,1`), then `[D₀ → D₁]` is a retract of `[D'₀ → D'₁]` via
-`f ↦ i₁ ∘ f ∘ j₀` and `f' ↦ j₁ ∘ f' ∘ i₀`. -/
-structure ScottMapRetraction (D₀ D₀' D₁ D₁' : Type*)
-    [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁'] where
-  incl : ScottMap D₀ D₁ → ScottMap D₀' D₁'
-  retr : ScottMap D₀' D₁' → ScottMap D₀ D₁
-  retr_incl : ∀ f, retr (incl f) = f
-
-/-- **Scott 1972, Proposition 3.7 (projection half).** Under the same hypotheses with
-projections, the induced pair on function spaces is also a projection. -/
-structure ScottMapProjection (D₀ D₀' D₁ D₁' : Type*)
-    [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁'] extends
-    ScottMapRetraction D₀ D₀' D₁ D₁' where
-  incl_retr_le : ∀ f' x, (incl (retr f')) x ≤ f' x
 
 namespace ScottMapRetraction
 

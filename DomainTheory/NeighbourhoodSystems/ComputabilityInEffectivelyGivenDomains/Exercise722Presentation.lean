@@ -9,6 +9,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.ConsistencyPresentation
 
 @[expose] public section
 
@@ -977,18 +978,6 @@ asked for by Exercise 7.22; completing them would be mechanical (7.22k's `ssysCa
 `capCode` already compute the right index) and is worth doing only if a later exercise wants to
 feed `Ssys` into that shared apparatus. -/
 
-/-- Definition 7.1 restricted to relation (ii) only (no `interEq_computable`, unlike
-`ComputablePresentation`/`ScottPresentation` in `Definition71.lean`/`Exercise715.lean`, whose
-pattern this mirrors). -/
-structure ConsistencyPresentation (V : NeighborhoodSystem α) where
-  /-- The enumeration `𝒟 = {Xₙ ∣ n ∈ ℕ}`. -/
-  X : ℕ → Set α
-  /-- Every `Xₙ` is a neighbourhood. -/
-  mem_X : ∀ n, V.mem (X n)
-  /-- The enumeration is onto `𝒟`. -/
-  surj : ∀ {Y : Set α}, V.mem Y → ∃ n, X n = Y
-  /-- **7.1(ii)** — consistency `∃ k. X_k ⊆ Xₙ ∩ Xₘ` is recursively decidable in `n, m`. -/
-  cons_computable : RecDecidable₂ (fun n m => ∃ k, X k ⊆ X n ∩ X m)
 
 /-- A neighbourhood system is *partially* effectively given when it admits a presentation
 carrying relation (ii) (but not necessarily (i)). Named at top level (not `NeighborhoodSystem.…`)

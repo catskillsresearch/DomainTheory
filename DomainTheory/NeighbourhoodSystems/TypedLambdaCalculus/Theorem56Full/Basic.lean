@@ -14,6 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem4
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import Mathlib.Computability.PartrecBasis
 import all Mathlib.Computability.PartrecBasis
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.LamDef
 
 @[expose] public section
 
@@ -44,24 +45,8 @@ open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap pred
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
-/-- The universal argument domain `𝒩 = N^∞` (Exercise 3.16). All `k`-ary number functions are
-realised as approximable maps `𝒩 → N` depending only on coordinates `0..k-1`. -/
-abbrev 𝒩 : NeighborhoodSystem (ℕ × ℕ) := iterSys N
-
 /-! ### Element builders. -/
 
-/-- `none ↦ ⊥`, `some n ↦ n̂`. -/
-def optElem : Option ℕ → N.Element
-  | none => N.bot
-  | some n => natElem n
-
-/-- The argument element of `𝒩` whose first `n` coordinates are `optElem (a i)` and the rest `⊥`. -/
-def argElem {n : ℕ} (a : Fin n → Option ℕ) : 𝒩.Element :=
-  ofSeq (fun i => if h : i < n then optElem (a ⟨i, h⟩) else N.bot)
-
-/-- The argument element of `𝒩` carrying a `List.Vector ℕ n` in its first `n` coordinates. -/
-def vecElem {n : ℕ} (v : List.Vector ℕ n) : 𝒩.Element :=
-  argElem (fun i => some (v.get i))
 
 @[simp] theorem component_argElem {n : ℕ} (a : Fin n → Option ℕ) (i : ℕ) :
     component (argElem a) i = if h : i < n then optElem (a ⟨i, h⟩) else N.bot := by
@@ -71,8 +56,6 @@ def vecElem {n : ℕ} (v : List.Vector ℕ n) : 𝒩.Element :=
     component (vecElem v) i = if h : i < n then natElem (v.get ⟨i, h⟩) else N.bot := by
   rw [vecElem, component_argElem]; split <;> rfl
 
-/-- A `𝒩`-element is *arg-like* if every coordinate is total or `⊥` (true of all `argElem`). -/
-def ArgLike (z : 𝒩.Element) : Prop := ∀ j, component z j = N.bot ∨ ∃ k, component z j = natElem k
 
 /-! ### Components through `push`. -/
 
@@ -99,14 +82,6 @@ def tupleMap : (n : ℕ) → (Fin n → ApproximableMap 𝒩 N) → Approximable
 
 /-! ### The λ-definability specification. -/
 
-/-- `φ : 𝒩 → N` realises the `n`-ary partial function `f` (a *very strict* λ-definition):
-`φ` returns `f`'s value on total arguments, `⊥` where `f` is undefined, and `⊥` on *any* arg-like
-input with a `⊥` among its first `n` coordinates. -/
-structure LamDef {n : ℕ} (φ : ApproximableMap 𝒩 N) (f : List.Vector ℕ n →. ℕ) : Prop where
-  defined : ∀ (v : List.Vector ℕ n) (c : ℕ), c ∈ f v → φ.toElementMap (vecElem v) = natElem c
-  undef : ∀ (v : List.Vector ℕ n), ¬ (f v).Dom → φ.toElementMap (vecElem v) = N.bot
-  strict : ∀ (z : 𝒩.Element), ArgLike z → ∀ i, i < n → component z i = N.bot →
-    φ.toElementMap z = N.bot
 
 /-! ### Primitive recursive base cases: `zero`, `succ`, `get`. -/
 

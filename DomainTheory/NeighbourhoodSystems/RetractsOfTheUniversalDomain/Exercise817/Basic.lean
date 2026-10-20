@@ -13,6 +13,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.ProjPair
 
 @[expose] public section
 
@@ -71,17 +72,6 @@ are heterogeneous (`i : ApproximableMap D E`, `j : ApproximableMap E D`, possibl
 types), so we bundle a small local heterogeneous analogue, `ProjPair`, purely as scaffolding for
 `trianglelefteq_trans` below. -/
 
-/-- **A heterogeneous projection pair** — the raw data `Lemma615.trianglelefteq_of_projectionPair`
-consumes, bundled for easy composition. -/
-structure ProjPair (D : NeighborhoodSystem α) (E : NeighborhoodSystem β) where
-  /-- The injection `i : D → E`. -/
-  inj : ApproximableMap D E
-  /-- The projection `j : E → D`. -/
-  proj : ApproximableMap E D
-  /-- `j ∘ i = I_D`. -/
-  proj_comp_inj : proj.comp inj = idMap D
-  /-- `i ∘ j ⊆ I_E`. -/
-  inj_comp_proj_le : inj.comp proj ≤ idMap E
 
 /-- **A subsystem relation `D ◁ E` gives a `ProjPair`** (Proposition 6.12, rebundled). -/
 def ProjPair.ofSubsystem {D E : NeighborhoodSystem α} (h : D ◁ E) : ProjPair D E where

@@ -10,6 +10,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Words
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.PathSplit
 public meta import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Words
 public meta import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.Basic
 
@@ -202,16 +203,6 @@ section ShortWord
 
 variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
 
-/-- State after reading the first `n` symbols along a concrete path (`n ≤ x.length`). -/
-def pathStateAtAux {s t : σ} {x : List Bool} : M.Path s t x → ∀ n, n ≤ x.length → σ
-  | .nil s, 0, _ => s
-  | .nil _, n + 1, hn => (Nat.not_succ_le_zero n hn).elim
-  | .cons _ s' _ _ _ _ p', 0, _ => s'
-  | .cons _ _ _ _ _ _ p', n + 1, hn =>
-      pathStateAtAux p' n (Nat.le_of_succ_le_succ hn)
-
-def pathStateAt {s t : σ} {x : List Bool} (p : M.Path s t x) (n : ℕ) (hn : n ≤ x.length) : σ :=
-  pathStateAtAux p n hn
 
 omit [Fintype σ] in
 @[simp] theorem pathStateAt_zero {s t : σ} {x : List Bool} (p : M.Path s t x) :
@@ -238,11 +229,6 @@ def pathAppend {s u t : σ} {a b : List Bool} (p : M.Path s u a) (p' : M.Path u 
   | .cons sMid s' _ a' xs hstep p'' =>
       .cons sMid s' _ a' (xs ++ b) hstep (pathAppend p'' p')
 
-structure PathSplit {s t : σ} {x : List Bool} (p : M.Path s t x) (n : ℕ) (hn : n ≤ x.length) where
-  u : σ
-  hp : M.Path s u (x.take n)
-  ht : M.Path u t (x.drop n)
-  hu : pathStateAt p n hn = u
 
 noncomputable def pathAppend_take_drop {s t : σ} {x : List Bool} (p : M.Path s t x) (n : ℕ)
     (hn : n ≤ x.length) : PathSplit p n hn := by

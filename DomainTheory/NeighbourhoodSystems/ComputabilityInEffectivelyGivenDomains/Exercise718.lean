@@ -8,6 +8,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.EffectiveIso
 
 @[expose] public section
 
@@ -69,24 +70,6 @@ variable {α β : Type*}
 
 /-! ## Part 1 — the definition of *effective isomorphism* -/
 
-/-- **Exercise 7.18 (Scott 1981, PRG-19) — effective isomorphism (completing the sentence).** Two
-effectively given systems `D` (presentation `P`) and `E` (presentation `Q`) are *effectively
-isomorphic* iff there is a pair of mutually inverse approximable maps `toMap : D → E`,
-`invMap : E → D`, **both computable** (Definition 7.2). -/
-structure EffectiveIso {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
-    (P : ComputablePresentation V) (Q : ComputablePresentation W) where
-  /-- The forward map `D → E`. -/
-  toMap : ApproximableMap V W
-  /-- The inverse map `E → D`. -/
-  invMap : ApproximableMap W V
-  /-- The forward map is computable. -/
-  toMap_computable : IsComputableMap P Q toMap
-  /-- The inverse map is computable. -/
-  invMap_computable : IsComputableMap Q P invMap
-  /-- `invMap ∘ toMap = I_D`. -/
-  left_inv : invMap.comp toMap = idMap V
-  /-- `toMap ∘ invMap = I_E`. -/
-  right_inv : toMap.comp invMap = idMap W
 
 /-- **Exercise 7.18 — effectively isomorphic.** `D` and `E` are effectively isomorphic when an
 `EffectiveIso` exists. -/

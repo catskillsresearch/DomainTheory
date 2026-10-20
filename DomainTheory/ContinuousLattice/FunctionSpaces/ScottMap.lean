@@ -1,0 +1,50 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+
+public import DomainTheory.ContinuousLattice.ScottMaps
+public import Mathlib.Data.Finset.Lattice.Fold
+import all Mathlib.Data.Finset.Lattice.Fold
+public import Mathlib.Topology.ContinuousMap.Basic
+import all Mathlib.Topology.ContinuousMap.Basic
+public import Mathlib.Topology.Order
+import all Mathlib.Topology.Order
+public import Mathlib.Order.CompleteLattice.Basic
+import all Mathlib.Order.CompleteLattice.Basic
+public import Mathlib.Order.FixedPoints
+import all Mathlib.Order.FixedPoints
+
+@[expose] public section
+
+universe u v
+
+namespace DomainTheory.ContinuousLattice
+
+open Set Topology TopologicalSpace
+
+variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
+
+variable [TopologicalSpace X] [TopologicalSpace Y]
+
+variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
+
+variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
+
+/-- Continuous maps between complete lattices with Scott's induced topologies. -/
+def ScottMap (D : Type u) (D' : Type v) [CompleteLattice D] [CompleteLattice D'] : Type _ :=
+  { f : D → D' // @Continuous D D' scottTopologicalSpace scottTopologicalSpace f }
+
+namespace ScottMap
+
+instance : CoeFun (ScottMap D D') (fun _ => D → D') where
+  coe f := f.1
+
+end ScottMap
+
+end DomainTheory.ContinuousLattice

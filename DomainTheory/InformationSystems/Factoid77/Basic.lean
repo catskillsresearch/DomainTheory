@@ -15,6 +15,7 @@ public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 import all Mathlib.CategoryTheory.Monoidal.Closed.Basic
 public import Mathlib.CategoryTheory.Adjunction.Basic
 import all Mathlib.CategoryTheory.Adjunction.Basic
+public import DomainTheory.InformationSystems.Factoid77.InfoSysObj
 
 @[expose] public section
 
@@ -46,11 +47,6 @@ namespace InfoSys
 
 /-! ## Bundled objects -/
 
-/-- Bundled information system (object of the Scott category). -/
-structure InfoSysObj : Type (u + 1) where
-  Token : Type u
-  [decEq : DecidableEq Token]
-  sys : InfoSys Token
 
 attribute [instance] InfoSysObj.decEq
 

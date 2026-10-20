@@ -15,6 +15,7 @@ public import DomainTheory.InformationSystems.Factoid36
 public import DomainTheory.InformationSystems.Proposition53
 public import DomainTheory.BridgeTheorems.InfoSysConstructions
 public import DomainTheory.BridgeTheorems.PresentationDomains
+public import DomainTheory.BridgeTheorems.ConjScottMap
 
 @[expose] public section
 
@@ -111,10 +112,6 @@ theorem conjScottMapFun_le_iff {D' E' : Type*} [PartialOrder D'] [PartialOrder E
   · intro hfg x
     exact ιE.monotone (hfg (ιD.symm x))
 
-/-- Scott maps packaged as their conjugates along given presentation isos. -/
-structure ConjScottMap {D' E' : Type*} [PartialOrder D'] [PartialOrder E']
-    (ιD : D ≃o D') (ιE : E ≃o E') where
-  scott : ScottMap D E
 
 namespace ConjScottMap
 

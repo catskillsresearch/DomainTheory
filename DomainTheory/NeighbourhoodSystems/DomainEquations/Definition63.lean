@@ -8,6 +8,13 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Category
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.DomainObj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Endofunctor
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.TAlgebra
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.AlgHom
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.IsInitial
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Iso
 
 @[expose] public section
 
@@ -75,37 +82,11 @@ namespace DomainTheory.NeighbourhoodSystems
 
 universe u v w
 
-/-- A category: objects (a type `Obj`), hom-sets `Hom X Y`, identities, composition, and the three
-category laws. We bundle it as a class so a fixed object type can carry its categorical structure.
-The composition `comp g f` reads "`g` after `f`" (the same convention as `ApproximableMap.comp`). -/
-class Category (Obj : Type u) where
-  /-- The morphisms from `X` to `Y`. -/
-  Hom : Obj → Obj → Type v
-  /-- The identity morphism on each object. -/
-  id : (X : Obj) → Hom X X
-  /-- Composition: `comp g f` is "`g` after `f`". -/
-  comp : {X Y Z : Obj} → Hom Y Z → Hom X Y → Hom X Z
-  /-- Left identity law `I ∘ f = f`. -/
-  id_comp : ∀ {X Y : Obj} (f : Hom X Y), comp (id Y) f = f
-  /-- Right identity law `f ∘ I = f`. -/
-  comp_id : ∀ {X Y : Obj} (f : Hom X Y), comp f (id X) = f
-  /-- Associativity `(h ∘ g) ∘ f = h ∘ (g ∘ f)`. -/
-  assoc : ∀ {W X Y Z : Obj} (h : Hom Y Z) (g : Hom X Y) (f : Hom W X),
-    comp (comp h g) f = comp h (comp g f)
-
-@[inherit_doc] infixr:80 " ⊚ " => Category.comp
-
 /-! ### The category of neighbourhood systems and approximable maps
 
 Scott's running category (prose before Definition 6.3). Objects bundle a token type with a system;
 morphisms are approximable maps; the laws are Theorem 2.5. -/
 
-/-- An object of the category of domains: a token type together with a neighbourhood system on it. -/
-structure DomainObj : Type (w + 1) where
-  /-- The token type. -/
-  carrier : Type w
-  /-- The neighbourhood system (the "domain"). -/
-  sys : NeighborhoodSystem carrier
 
 /-- **The category of domains and approximable maps** (Scott's prose preceding Definition 6.3):
 identities and associative composition come from Theorem 2.5 (`idMap_comp`, `comp_idMap`,
@@ -122,39 +103,12 @@ variable {Obj : Type u} [Category Obj]
 
 /-! ### Definition 6.3 — functors -/
 
-/-- **Definition 6.3 (Scott 1981, PRG-19).** A *functor* on a category into itself (an
-*endofunctor*): an assignment `obj` on objects and `map` on morphisms preserving identities
-(`map_id`) and composition (`map_comp`). -/
-structure Endofunctor (Obj : Type u) [Category Obj] where
-  /-- The action on objects. -/
-  obj : Obj → Obj
-  /-- The action on morphisms. -/
-  map : {X Y : Obj} → Category.Hom X Y → Category.Hom (obj X) (obj Y)
-  /-- `T(I_X) = I_{T(X)}`. -/
-  map_id : ∀ (X : Obj), map (Category.id X) = Category.id (obj X)
-  /-- `T(g ∘ f) = T(g) ∘ T(f)`. -/
-  map_comp : ∀ {X Y Z : Obj} (g : Category.Hom Y Z) (f : Category.Hom X Y),
-    map (g ⊚ f) = (map g) ⊚ (map f)
 
 /-! ### Definition 6.4 — `T`-algebras and their homomorphisms -/
 
-/-- **Definition 6.4 (Scott 1981, PRG-19).** A *`T`-algebra*: a domain `carrier` together with a
-structure map `str : T(carrier) → carrier`. -/
-structure TAlgebra (T : Endofunctor Obj) where
-  /-- The underlying object `E`. -/
-  carrier : Obj
-  /-- The structure map `k : T(E) → E`. -/
-  str : Category.Hom (T.obj carrier) carrier
 
 variable {T : Endofunctor Obj}
 
-/-- **Definition 6.4 (Scott 1981, PRG-19).** A *homomorphism* of `T`-algebras `(E,k) → (F,m)`: a map
-`hom : E → F` making the square commute, i.e. `hom ∘ k = m ∘ T(hom)`. -/
-structure AlgHom (A B : TAlgebra T) where
-  /-- The underlying morphism `h : E → F`. -/
-  hom : Category.Hom A.carrier B.carrier
-  /-- The homomorphism square `h ∘ k = m ∘ T(h)`. -/
-  comm : hom ⊚ A.str = B.str ⊚ T.map hom
 
 namespace AlgHom
 
@@ -179,24 +133,5 @@ end AlgHom
 
 /-! ### Definition 6.5 — initial `T`-algebras -/
 
-/-- **Definition 6.5 (Scott 1981, PRG-19).** A `T`-algebra `A` is *initial* iff there is a (unique)
-homomorphism from `A` into every `T`-algebra. We package the homomorphism as the data `desc` and its
-uniqueness as `uniq`. -/
-structure IsInitial (A : TAlgebra T) where
-  /-- The chosen homomorphism into any algebra `B`. -/
-  desc : (B : TAlgebra T) → AlgHom A B
-  /-- It is the only homomorphism `A → B`. -/
-  uniq : ∀ (B : TAlgebra T) (h : AlgHom A B), h = desc B
-
-/-- An isomorphism in the category: a pair of mutually inverse morphisms. -/
-structure Iso (X Y : Obj) where
-  /-- The forward morphism. -/
-  hom : Category.Hom X Y
-  /-- The inverse morphism. -/
-  inv : Category.Hom Y X
-  /-- `inv ∘ hom = I_X`. -/
-  hom_inv_id : inv ⊚ hom = Category.id X
-  /-- `hom ∘ inv = I_Y`. -/
-  inv_hom_id : hom ⊚ inv = Category.id Y
 
 end DomainTheory.NeighbourhoodSystems

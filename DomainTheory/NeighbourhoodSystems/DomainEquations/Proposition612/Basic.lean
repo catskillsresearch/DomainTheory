@@ -9,6 +9,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.ProjectionPair
 
 @[expose] public section
 
@@ -119,17 +120,6 @@ theorem inj_comp_proj_le (h : D ◁ E) : h.inj.comp h.proj ≤ idMap E := by
   obtain ⟨X, ⟨hEY, _, hYX⟩, _, hEY', hXY'⟩ := hr
   exact ⟨hEY, hEY', hYX.trans hXY'⟩
 
-/-- **A projection pair (Definition 6.13 vocabulary).** Bundles Scott's `i, j` together with the two
-laws, ready for reuse in monotone/continuous-on-domains functors and the existence Theorem 6.14. -/
-structure ProjectionPair (D E : NeighborhoodSystem α) where
-  /-- The injection `i : D → E`. -/
-  inj : ApproximableMap D E
-  /-- The projection `j : E → D`. -/
-  proj : ApproximableMap E D
-  /-- `j ∘ i = I_D`. -/
-  proj_comp_inj : proj.comp inj = idMap D
-  /-- `i ∘ j ⊆ I_E`. -/
-  inj_comp_proj_le : inj.comp proj ≤ idMap E
 
 /-- **Proposition 6.12 (Scott 1981, PRG-19).** Every subdomain relation `D ◁ E` gives rise to a
 projection pair `i : D → E`, `j : E → D` with `j ∘ i = I_D` and `i ∘ j ⊆ I_E`. -/

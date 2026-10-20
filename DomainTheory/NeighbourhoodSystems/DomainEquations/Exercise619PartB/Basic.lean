@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.ScottSys
 
 @[expose] public section
 
@@ -75,13 +76,6 @@ namespace Exercise619
 
 /-! ## Objects of Scott's category: `∅`-free systems over `{0,1}*` -/
 
-/-- **An object of the Exercise 6.19 category.** An `∅`-free neighbourhood system over
-`Str = {0,1}*` (`ne`: every neighbourhood is non-empty, Scott's `∅ ∉ 𝒟`). -/
-structure ScottSys where
-  /-- The underlying neighbourhood system on `{0,1}*`. -/
-  sys : NeighborhoodSystem Str
-  /-- `∅ ∉ 𝒟`: every neighbourhood is non-empty. -/
-  ne : ∀ X, sys.mem X → X.Nonempty
 
 /-- The **sum object** `𝒟₀ + 𝒟₁` of Part A, repackaged as an object of the category. -/
 def ScottSys.sum (A₀ A₁ : ScottSys) : ScottSys :=
