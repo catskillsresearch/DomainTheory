@@ -8,6 +8,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.InformationSystems.InfoSys
+public import DomainTheory.InformationSystems.lowerBoundEnt
 
 @[expose] public section
 
@@ -29,9 +30,6 @@ namespace DomainTheory.InformationSystems
 
 namespace Factoid24
 
-/-- Entailment for the lower-bound system: `u ⊢ m` iff `m = 0` or some `n ∈ u` has `m ≤ n`. -/
-def lowerBoundEnt (u : Finset ℕ) (m : ℕ) : Prop :=
-  m = 0 ∨ ∃ n ∈ u, m ≤ n
 
 /-- **Factoid 2.4.** The ℕ lower-bound information system of Scott 1982, §2. -/
 example : InfoSys ℕ where

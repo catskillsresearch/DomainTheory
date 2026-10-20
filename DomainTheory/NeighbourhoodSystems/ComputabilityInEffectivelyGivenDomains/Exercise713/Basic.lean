@@ -9,6 +9,26 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.InclStructure
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.CONS
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.MEET
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.toNbhd
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.toSystem
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.toPresentation
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.ofPresentation
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.reconElem
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.reconElemInv
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.reconIso
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.mem_toNbhd
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.toNbhd_subset_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.toNbhd_top
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.toNbhd_subset_inter_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.toNbhd_inter_eq_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.toSystem_mem
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.meet_iff_interEq
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.ofPresentation_INCL
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.mem_ofPresentation_toNbhd
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.ofPresentation_toNbhd_eq_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.reconstruct
 
 @[expose] public section
 
@@ -76,92 +96,18 @@ namespace InclStructure
 
 variable (I : InclStructure)
 
-/-- Scott's consistency relation `CONS(n, m) :↔ ∃ k. INCL(k, n) ∧ INCL(k, m)`. -/
-def CONS (n m : ℕ) : Prop := ∃ k, I.INCL k n ∧ I.INCL k m
 
-/-- Scott's binary-meet relation `MEET(n, m, k) :↔ ∀ j. (INCL(j, k) ↔ INCL(j, n) ∧ INCL(j, m))`. -/
-def MEET (n m k : ℕ) : Prop := ∀ j, I.INCL j k ↔ (I.INCL j n ∧ I.INCL j m)
 
 /-! ### (⇐) Scott's hint system `Sₙ = {m ∣ INCL(m, n)}` -/
 
-/-- The hint neighbourhood `Sₙ = {m ∣ INCL(m, n)}` over the token type `ℕ`. -/
-def toNbhd (n : ℕ) : Set ℕ := {m | I.INCL m n}
 
-@[simp] theorem mem_toNbhd {n m : ℕ} : m ∈ I.toNbhd n ↔ I.INCL m n := Iff.rfl
 
-/-- **The key inclusion law:** `Sₙ ⊆ Sₖ ↔ INCL(n, k)`. `→` reads off `INCL(n, k)` from `n ∈ Sₙ`
-(reflexivity (i)); `←` is transitivity (ii). -/
-theorem toNbhd_subset_iff {n k : ℕ} : I.toNbhd n ⊆ I.toNbhd k ↔ I.INCL n k := by
-  constructor
-  · intro h
-    exact h (I.incl_refl n)
-  · intro hnk m hm
-    exact I.incl_trans hm hnk
 
-/-- `S_{topIdx} = ℕ`: the master code's neighbourhood is everything (axiom (iii)). -/
-theorem toNbhd_top : I.toNbhd I.topIdx = Set.univ := by
-  ext m
-  simp only [mem_toNbhd, Set.mem_univ, iff_true]
-  exact I.topIdx_spec m
 
-/-- `Sₖ ⊆ Sₙ ∩ Sₘ ↔ INCL(k, n) ∧ INCL(k, m)`. -/
-theorem toNbhd_subset_inter_iff (k n m : ℕ) :
-    I.toNbhd k ⊆ I.toNbhd n ∩ I.toNbhd m ↔ (I.INCL k n ∧ I.INCL k m) := by
-  rw [Set.subset_inter_iff, I.toNbhd_subset_iff, I.toNbhd_subset_iff]
 
-/-- `Sₙ ∩ Sₘ = Sₖ ↔ MEET(n, m, k)` — Scott's relation 7.1(i) *is* `MEET`. -/
-theorem toNbhd_inter_eq_iff (n m k : ℕ) :
-    I.toNbhd n ∩ I.toNbhd m = I.toNbhd k ↔ I.MEET n m k := by
-  unfold MEET
-  rw [Set.ext_iff]
-  refine forall_congr' fun j => ?_
-  rw [Set.mem_inter_iff, mem_toNbhd, mem_toNbhd, mem_toNbhd]
-  exact iff_comm
 
-/-- **Exercise 7.13 (⇐) — the hint system is a neighbourhood system.** `Sₙ = {m ∣ INCL(m, n)}` over
-tokens `ℕ`, master `Δ = ℕ = S_{topIdx}`; closure under intersection is axiom (iv) via `MEET`. -/
-def toSystem : NeighborhoodSystem ℕ where
-  mem Y := ∃ n, Y = I.toNbhd n
-  master := Set.univ
-  master_nonempty := Set.univ_nonempty
-  master_mem := ⟨I.topIdx, I.toNbhd_top.symm⟩
-  inter_mem := by
-    rintro X Y Z ⟨n, rfl⟩ ⟨m, rfl⟩ ⟨l, rfl⟩ hZsub
-    have hln : I.INCL l n := I.toNbhd_subset_iff.mp (hZsub.trans Set.inter_subset_left)
-    have hlm : I.INCL l m := I.toNbhd_subset_iff.mp (hZsub.trans Set.inter_subset_right)
-    exact ⟨I.meetIdx n m, (I.toNbhd_inter_eq_iff n m (I.meetIdx n m)).mpr
-      (I.meetIdx_spec ⟨l, hln, hlm⟩)⟩
-  sub_master := by rintro X _; exact Set.subset_univ X
 
-@[simp] theorem toSystem_mem {Y : Set ℕ} : I.toSystem.mem Y ↔ ∃ n, Y = I.toNbhd n := Iff.rfl
 
-/-- **Exercise 7.13 (⇐) — the hint system is effectively given.** The enumeration is `Sₙ`; relation
-7.1(i) `Sₙ ∩ Sₘ = Sₖ` is `MEET` (`meet_dec`); relation 7.1(ii) consistency is `CONS` (`cons_dec`);
-the intersection function is `meetIdx`; the master code is `topIdx`. -/
-def toPresentation : ComputablePresentation I.toSystem where
-  X := I.toNbhd
-  mem_X n := ⟨n, rfl⟩
-  surj := by rintro Y ⟨n, rfl⟩; exact ⟨n, rfl⟩
-  interEq_computable :=
-    RecDecidable.of_iff
-      (fun t => (I.toNbhd_inter_eq_iff t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2))
-      I.meet_dec
-  cons_computable :=
-    RecDecidable.of_iff
-      (fun t => by
-        refine exists_congr fun k => ?_
-        exact I.toNbhd_subset_inter_iff k t.unpair.1 t.unpair.2)
-      I.cons_dec
-  inter := I.meetIdx
-  inter_primrec := I.meetIdx_primrec
-  inter_spec := by
-    intro n m hcons
-    obtain ⟨k, hk⟩ := hcons
-    rw [Set.subset_inter_iff] at hk
-    have hcons' : I.CONS n m := ⟨k, I.toNbhd_subset_iff.mp hk.1, I.toNbhd_subset_iff.mp hk.2⟩
-    exact ((I.toNbhd_inter_eq_iff n m (I.meetIdx n m)).mpr (I.meetIdx_spec hcons')).symm
-  masterIdx := I.topIdx
-  masterIdx_spec := I.toNbhd_top
 
 end InclStructure
 
@@ -169,76 +115,10 @@ end InclStructure
 
 variable {α : Type*} {V : NeighborhoodSystem α}
 
-/-- **The `MEET ↔ interEq` reduction.** On an effectively given system, Scott's `MEET(n, m, k)` is
-equivalent to `Xₙ ∩ Xₘ = Xₖ`, so it is decidable by relation 7.1(i).
 
-`⇐` is `Set.subset_inter_iff`. `⇒`: from `MEET` at `j = k` we get `Xₖ ⊆ Xₙ ∩ Xₘ`, so `Xₖ` witnesses
-consistency of `(n, m)`; `inter_mem` then makes `Xₙ ∩ Xₘ` a neighbourhood, `surj` enumerates it as
-some `Xₚ`, and `MEET` at `j = p` gives `Xₙ ∩ Xₘ = Xₚ ⊆ Xₖ`. -/
-theorem meet_iff_interEq (P : ComputablePresentation V) (n m k : ℕ) :
-    (∀ j, P.X j ⊆ P.X k ↔ (P.X j ⊆ P.X n ∧ P.X j ⊆ P.X m)) ↔ (P.X n ∩ P.X m = P.X k) := by
-  constructor
-  · intro h
-    have hk : P.X k ⊆ P.X n ∩ P.X m :=
-      Set.subset_inter ((h k).mp subset_rfl).1 ((h k).mp subset_rfl).2
-    refine Set.Subset.antisymm ?_ hk
-    have hmem : V.mem (P.X n ∩ P.X m) := V.inter_mem (P.mem_X n) (P.mem_X m) (P.mem_X k) hk
-    obtain ⟨p, hp⟩ := P.surj hmem
-    have hpk : P.X p ⊆ P.X k :=
-      (h p).mpr (by rw [hp]; exact ⟨Set.inter_subset_left, Set.inter_subset_right⟩)
-    exact hp ▸ hpk
-  · intro h j
-    rw [← h, Set.subset_inter_iff]
 
-/-- **Exercise 7.13 (⇒) — every effectively given domain is an `INCL` relation.** Given a computable
-presentation `P` of `V`, set `INCL(n, m) := Xₙ ⊆ Xₘ`. Reflexivity/transitivity are those of `⊆`; the
-master code is `P.masterIdx` (`Xₙ ⊆ master`); the meet function is `P.inter`. `INCL`/`CONS` decidability
-are `P.incl_computable`/`P.cons_computable`; `MEET` decidability is `meet_iff_interEq` ∘
-`P.interEq_computable`. -/
-def ofPresentation (P : ComputablePresentation V) : InclStructure where
-  INCL n m := P.X n ⊆ P.X m
-  meetIdx := P.inter
-  topIdx := P.masterIdx
-  incl_dec := P.incl_computable
-  cons_dec :=
-    RecDecidable.of_iff
-      (fun t => by
-        refine exists_congr fun k => ?_
-        exact (Set.subset_inter_iff).symm)
-      P.cons_computable
-  meet_dec :=
-    RecDecidable.of_iff
-      (fun t => meet_iff_interEq P t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2)
-      P.interEq_computable
-  meetIdx_primrec := P.inter_primrec
-  incl_refl := fun _ => subset_rfl
-  incl_trans := fun h1 h2 => h1.trans h2
-  topIdx_spec := by
-    intro n
-    show P.X n ⊆ P.X P.masterIdx
-    rw [P.masterIdx_spec]
-    exact V.sub_master (P.mem_X n)
-  meetIdx_spec := by
-    intro n m hcons j
-    obtain ⟨k, h1, h2⟩ := hcons
-    have hcons' : ∃ k, P.X k ⊆ P.X n ∩ P.X m := ⟨k, Set.subset_inter h1 h2⟩
-    show P.X j ⊆ P.X (P.inter n m) ↔ _
-    rw [P.inter_spec hcons', Set.subset_inter_iff]
 
-@[simp] theorem ofPresentation_INCL (P : ComputablePresentation V) (n m : ℕ) :
-    (ofPresentation P).INCL n m ↔ P.X n ⊆ P.X m := Iff.rfl
 
-@[simp] theorem mem_ofPresentation_toNbhd (P : ComputablePresentation V) (j n : ℕ) :
-    j ∈ (ofPresentation P).toNbhd n ↔ P.X j ⊆ P.X n := Iff.rfl
-
-/-- For `S = ofPresentation P`, two hint neighbourhoods coincide iff the underlying neighbourhoods
-do: `Sₙ = Sₘ ↔ Xₙ = Xₘ`. -/
-theorem ofPresentation_toNbhd_eq_iff (P : ComputablePresentation V) (n m : ℕ) :
-    (ofPresentation P).toNbhd n = (ofPresentation P).toNbhd m ↔ P.X n = P.X m := by
-  rw [Set.Subset.antisymm_iff, (ofPresentation P).toNbhd_subset_iff,
-    (ofPresentation P).toNbhd_subset_iff]
-  show (P.X n ⊆ P.X m ∧ P.X m ⊆ P.X n) ↔ P.X n = P.X m
-  exact (Set.Subset.antisymm_iff).symm
 
 /-! ### Round-trip A: `INCL ↦ 𝒟 ↦ INCL` recovers `INCL` -/
 
@@ -249,105 +129,7 @@ domain-isomorphic to the original. The finite-element correspondence is `Xₙ �
 preserving, since `Sₙ ⊆ Sₘ ↔ Xₙ ⊆ Xₘ`); we extend it to all elements (filters) via the mutually
 inverse `reconElem`/`reconElemInv`, in the style of Exercise 1.20's `powerIso`. -/
 
-/-- The reconstructed system `toSystem (ofPresentation P)` over tokens `ℕ`. -/
-abbrev reconstruct (P : ComputablePresentation V) : NeighborhoodSystem ℕ :=
-  (ofPresentation P).toSystem
 
-/-- The element of the reconstructed system corresponding to `x ∈ |V|`: the filter
-`{Sₙ ∣ Xₙ ∈ x}`. -/
-def reconElem (P : ComputablePresentation V) (x : V.Element) : (reconstruct P).Element where
-  mem Y := ∃ n, Y = (ofPresentation P).toNbhd n ∧ x.mem (P.X n)
-  sub := by rintro Y ⟨n, rfl, _⟩; exact ⟨n, rfl⟩
-  master_mem :=
-    ⟨P.masterIdx, (ofPresentation P).toNbhd_top.symm, by rw [P.masterIdx_spec]; exact x.master_mem⟩
-  inter_mem := by
-    rintro X Y ⟨n, rfl, hxn⟩ ⟨m, rfl, hxm⟩
-    have hmem : V.mem (P.X n ∩ P.X m) := x.sub (x.inter_mem hxn hxm)
-    obtain ⟨q, hq⟩ := P.surj hmem
-    refine ⟨q, ?_, ?_⟩
-    · ext j
-      rw [Set.mem_inter_iff, mem_ofPresentation_toNbhd, mem_ofPresentation_toNbhd,
-        mem_ofPresentation_toNbhd, hq, Set.subset_inter_iff]
-    · have : x.mem (P.X q) := by rw [hq]; exact x.inter_mem hxn hxm
-      exact this
-  up_mem := by
-    rintro X Y ⟨n, rfl, hxn⟩ ⟨m, rfl⟩ hsub
-    have hnm : P.X n ⊆ P.X m := (ofPresentation P).toNbhd_subset_iff.mp hsub
-    exact ⟨m, rfl, x.up_mem hxn (P.mem_X m) hnm⟩
 
-/-- The element of `|V|` corresponding to `y` in the reconstructed system: the filter
-`{Xₙ ∣ Sₙ ∈ y}`. -/
-def reconElemInv (P : ComputablePresentation V) (y : (reconstruct P).Element) : V.Element where
-  mem W := ∃ n, W = P.X n ∧ y.mem ((ofPresentation P).toNbhd n)
-  sub := by rintro W ⟨n, rfl, _⟩; exact P.mem_X n
-  master_mem :=
-    ⟨P.masterIdx, P.masterIdx_spec.symm, by
-      rw [show (ofPresentation P).toNbhd P.masterIdx = Set.univ from (ofPresentation P).toNbhd_top]
-      exact y.master_mem⟩
-  inter_mem := by
-    rintro X Y ⟨n, rfl, hyn⟩ ⟨m, rfl, hym⟩
-    obtain ⟨p, hp⟩ := y.sub (y.inter_mem hyn hym)
-    have hpmem : p ∈ (ofPresentation P).toNbhd n ∩ (ofPresentation P).toNbhd m :=
-      hp ▸ ((ofPresentation P).mem_toNbhd.mpr ((ofPresentation P).incl_refl p))
-    rw [Set.mem_inter_iff, mem_ofPresentation_toNbhd, mem_ofPresentation_toNbhd] at hpmem
-    have hwit : P.X p ⊆ P.X n ∩ P.X m := Set.subset_inter hpmem.1 hpmem.2
-    have hmem : V.mem (P.X n ∩ P.X m) := V.inter_mem (P.mem_X n) (P.mem_X m) (P.mem_X p) hwit
-    obtain ⟨q, hq⟩ := P.surj hmem
-    refine ⟨q, hq.symm, ?_⟩
-    have htoNbhd : (ofPresentation P).toNbhd q
-        = (ofPresentation P).toNbhd n ∩ (ofPresentation P).toNbhd m := by
-      ext j
-      rw [Set.mem_inter_iff, mem_ofPresentation_toNbhd, mem_ofPresentation_toNbhd,
-        mem_ofPresentation_toNbhd, hq, Set.subset_inter_iff]
-    rw [htoNbhd]
-    exact y.inter_mem hyn hym
-  up_mem := by
-    rintro W Z ⟨n, rfl, hyn⟩ hZ hWZ
-    obtain ⟨p, hp⟩ := P.surj hZ
-    refine ⟨p, hp.symm, ?_⟩
-    have hnp : (ofPresentation P).toNbhd n ⊆ (ofPresentation P).toNbhd p :=
-      (ofPresentation P).toNbhd_subset_iff.mpr (by show P.X n ⊆ P.X p; rw [hp]; exact hWZ)
-    exact y.up_mem hyn ⟨p, rfl⟩ hnp
 
-/-- **Round-trip B (the isomorphism).** `reconElem`/`reconElemInv` are mutually inverse and preserve
-and reflect the approximation order, giving `|V| ≃o |toSystem (ofPresentation P)|`. -/
-def reconIso (P : ComputablePresentation V) : V.Element ≃o (reconstruct P).Element where
-  toFun := reconElem P
-  invFun := reconElemInv P
-  left_inv := by
-    intro x
-    apply Element.ext
-    intro W
-    constructor
-    · rintro ⟨n, rfl, m, hWm, hxm⟩
-      rw [ofPresentation_toNbhd_eq_iff] at hWm
-      rw [hWm]; exact hxm
-    · intro hxW
-      obtain ⟨n, hn⟩ := P.surj (x.sub hxW)
-      exact ⟨n, hn.symm, n, rfl, by rw [hn]; exact hxW⟩
-  right_inv := by
-    intro y
-    apply Element.ext
-    intro T
-    constructor
-    · rintro ⟨n, rfl, m, hXm, hym⟩
-      have : (ofPresentation P).toNbhd n = (ofPresentation P).toNbhd m :=
-        (ofPresentation_toNbhd_eq_iff P n m).mpr hXm
-      rw [this]; exact hym
-    · intro hyT
-      obtain ⟨n, hn⟩ := y.sub hyT
-      exact ⟨n, hn, n, rfl, by rw [← hn]; exact hyT⟩
-  map_rel_iff' := by
-    intro x x'
-    constructor
-    · intro h W hxW
-      obtain ⟨n, hn⟩ := P.surj (x.sub hxW)
-      have hmem : (reconElem P x).mem ((ofPresentation P).toNbhd n) :=
-        ⟨n, rfl, by rw [hn]; exact hxW⟩
-      obtain ⟨m, hm, hx'm⟩ := h ((ofPresentation P).toNbhd n) hmem
-      rw [ofPresentation_toNbhd_eq_iff] at hm
-      rw [← hn, hm]; exact hx'm
-    · intro h Y hY
-      obtain ⟨n, rfl, hxn⟩ := hY
-      exact ⟨n, rfl, h (P.X n) hxn⟩
 end DomainTheory.NeighbourhoodSystems.Exercise713

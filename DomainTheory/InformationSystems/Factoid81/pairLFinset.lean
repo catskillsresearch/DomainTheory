@@ -28,12 +28,49 @@ private def pairLInsert : TreeToken α → Finset (TreeToken α) → Finset (Tre
   | .pairL t => insert t
   | .bot | .atom _ | .pairR _ => id
 
-private instance :
+instance :
     LeftCommutative (pairLInsert : TreeToken α → Finset (TreeToken α) → Finset (TreeToken α)) :=
   ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩
 
 def pairLFinset (u : Finset (TreeToken α)) : Finset (TreeToken α) :=
   Multiset.foldr pairLInsert (∅ : Finset (TreeToken α)) u.1
+
+private theorem mem_foldr_pairL (s : Multiset (TreeToken α)) (t : TreeToken α) :
+    t ∈ Multiset.foldr pairLInsert (∅ : Finset (TreeToken α)) s ↔
+      ∃ p ∈ s, p = .pairL t := by
+  refine Multiset.induction_on s ?_ ?_
+  · constructor
+    · intro ht; exact False.elim (Finset.notMem_empty t ht)
+    · rintro ⟨_, hp, _⟩; exact False.elim (by cases hp)
+  · intro p rest ih
+    cases p with
+    | pairL a =>
+      simp only [Multiset.foldr_cons, pairLInsert, Finset.mem_insert, ih, Multiset.mem_cons]
+      constructor
+      · rintro (ht | ⟨q, hq, hq'⟩)
+        · exact ⟨.pairL a, Or.inl rfl, congrArg TreeToken.pairL ht.symm⟩
+        · exact ⟨q, Or.inr hq, hq'⟩
+      · rintro ⟨q, hq, hq'⟩
+        rcases hq with rfl | hq
+        · injection hq' with ht; exact Or.inl ht.symm
+        · exact Or.inr ⟨q, hq, hq'⟩
+    | bot | atom _ | pairR _ =>
+      simp only [Multiset.foldr_cons, pairLInsert, id_eq, ih, Multiset.mem_cons]
+      constructor
+      · rintro ⟨q, hq, hq'⟩; exact ⟨q, Or.inr hq, hq'⟩
+      · rintro ⟨q, hq, hq'⟩
+        rcases hq with rfl | hq
+        · exact False.elim (nomatch hq')
+        · exact ⟨q, hq, hq'⟩
+
+theorem mem_pairLFinset {u : Finset (TreeToken α)} {t : TreeToken α} :
+    t ∈ pairLFinset u ↔ .pairL t ∈ u := by
+  constructor
+  · intro ht
+    rcases (mem_foldr_pairL u.1 t).1 ht with ⟨p, hp, hp'⟩
+    subst hp'; exact Finset.mem_def.2 hp
+  · intro ht
+    exact (mem_foldr_pairL u.1 t).2 ⟨.pairL t, Finset.mem_def.1 ht, rfl⟩
 
 end InfoSys
 end DomainTheory.InformationSystems

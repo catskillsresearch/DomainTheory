@@ -1,0 +1,43 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.consSeq_zero
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.consSeq_succ
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.component_bot
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.jmap
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.imap
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+
+universe w
+
+namespace Exercise618
+
+variable {α : Type*} {V : NeighborhoodSystem α}
+
+/-- `j ∘ i = I` on `𝒟 × 𝒟^∞`. -/
+theorem jmap_comp_imap : (jmap V).comp (imap V) = idMap (prod V (iterSys V)) := by
+  apply ext_of_toElementMap
+  intro w
+  simp only [jmap, imap]
+  rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, toElementMap_idMap,
+    OrderIso.apply_symm_apply]
+
+end Exercise618
+
+end DomainTheory.NeighbourhoodSystems

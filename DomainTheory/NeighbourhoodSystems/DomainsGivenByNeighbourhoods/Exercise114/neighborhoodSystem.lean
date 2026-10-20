@@ -1,0 +1,42 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import Mathlib.Data.Set.Finite.Basic
+import all Mathlib.Data.Set.Finite.Basic
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise114.mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise114.nonempty_of_mem
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise114
+
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
+
+/-- **Exercise 1.14.** The neighbourhood system of finite non-empty subsets of `ℕ` (plus `Δ = ℕ`). -/
+def neighborhoodSystem : NeighborhoodSystem ℕ where
+  mem := mem
+  master := Set.univ
+  master_nonempty := Set.univ_nonempty
+  master_mem := Or.inl rfl
+  inter_mem := by
+    intro X Y Z hX hY hZ hZsub
+    have hne : (X ∩ Y).Nonempty := (nonempty_of_mem hZ).mono hZsub
+    rcases hX with hX | hX
+    · rw [hX, Set.univ_inter]; exact hY
+    · rcases hY with hY | hY
+      · rw [hY, Set.inter_univ]; exact Or.inr hX
+      · exact Or.inr ⟨hX.1.inter_of_left Y, hne⟩
+  sub_master := fun _ => Set.subset_univ _
+
+end DomainTheory.NeighbourhoodSystems.Exercise114

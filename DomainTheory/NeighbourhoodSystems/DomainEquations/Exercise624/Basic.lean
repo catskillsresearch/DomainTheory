@@ -8,6 +8,17 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.gTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.fTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.pIter
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.GammaD
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.GammaE
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Dsol
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Esol
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Fsol
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Gsol
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.nil_mem_GammaD
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.nil_mem_GammaE
 
 @[expose] public section
 
@@ -73,47 +84,23 @@ namespace Exercise624
 
 /-! ## The two token recursions `gTok` and `fTok` -/
 
-/-- `gTok p q = tok((D + E))` for `D = {p}`, `E = {q}`: the tagged union `{Λ} ∪ 0p ∪ 1q`. It is also
-the master of the product `{p} × {q}` (sum and product share the master shape over `{0,1}*`). -/
-def gTok (p q : Set Str) : Set Str := insert ([] : Str) (embBit false p ∪ embBit true q)
 
-/-- `fTok p q = tok((D + (D×E)))` for `D = {p}`, `E = {q}`: `{Λ} ∪ 0p ∪ 1(gTok p q)`, equivalently
-`gTok p (gTok p q)`. -/
-def fTok (p q : Set Str) : Set Str := gTok p (gTok p q)
 
 /-! ## Token-level continuity over a chain: a membership reaches a single finite stage -/
 
 /-! ## The simultaneous Kleene iteration `Φⁿ({Λ}, {Λ})` -/
 
-/-- The pair iteration `Φ(p, q) = (fTok p q, gTok p q)` from the bottom pair `({Λ}, {Λ})`. -/
-def pIter : ℕ → Set Str × Set Str
-  | 0 => ({([] : Str)}, {([] : Str)})
-  | n + 1 => (fTok (pIter n).1 (pIter n).2, gTok (pIter n).1 (pIter n).2)
 
-/-- The first component of the double fixed point, `Γ_D = ⋃ₙ (Φⁿ).₁`. -/
-def GammaD : Set Str := ⋃ n, (pIter n).1
 
-/-- The second component of the double fixed point, `Γ_E = ⋃ₙ (Φⁿ).₂`. -/
-def GammaE : Set Str := ⋃ n, (pIter n).2
 
-theorem nil_mem_GammaD : ([] : Str) ∈ GammaD := Set.mem_iUnion.mpr ⟨0, rfl⟩
 
-theorem nil_mem_GammaE : ([] : Str) ∈ GammaE := Set.mem_iUnion.mpr ⟨0, rfl⟩
 
 /-! ## The double fixed point -/
 
 /-! ## The two solution systems and the simultaneous subsystem facts -/
 
-/-- The solution system `D = {Γ_D}`. -/
-def Dsol : ScottSys := singletonSys GammaD ⟨[], nil_mem_GammaD⟩
 
-/-- The solution system `E = {Γ_E}`. -/
-def Esol : ScottSys := singletonSys GammaE ⟨[], nil_mem_GammaE⟩
 
-/-- The first right-hand side `D + (D × E)`. -/
-def Fsol (D E : ScottSys) : ScottSys := D.sum (D.prod E)
 
-/-- The second right-hand side `D + E`. -/
-def Gsol (D E : ScottSys) : ScottSys := D.sum E
 end Exercise624
 end DomainTheory.NeighbourhoodSystems

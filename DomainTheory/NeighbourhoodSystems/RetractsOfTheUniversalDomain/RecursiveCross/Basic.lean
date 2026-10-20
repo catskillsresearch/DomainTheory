@@ -8,6 +8,14 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross.consStep2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross.appendCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross.crossInnerStep
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross.crossInner
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross.crossOuterStep
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross.crossCombine
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross.flatMapStep
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross.flatMapCode
 
 @[expose] public section
 
@@ -33,19 +41,13 @@ namespace Domain.Recursive
 
 /-! ### `appendCode`: concatenation of two coded lists (up to order) -/
 
-/-- `foldCode`'s step for consing the popped element `x` onto the accumulator (ignoring the
-threaded parameter). -/
-def consStep2 (w : ℕ) : ℕ := Nat.pair w.unpair.1 w.unpair.2.unpair.1 + 1
 
-/-- `appendCode c1 c2` codes a list with the same **elements** as `decodeList c1 ++ decodeList c2`
-(reversed on the `c1` side, since `foldCode` conses left-to-right; irrelevant for set-level uses). -/
-def appendCode (c1 c2 : ℕ) : ℕ := foldCode consStep2 0 c2 c1
 
 theorem consStep2_eq (x acc params : ℕ) :
     consStep2 (Nat.pair x (Nat.pair acc params)) = Nat.pair x acc + 1 := by
   unfold consStep2; simp only [unpair_pair_fst, unpair_pair_snd]
 
-private theorem mem_decodeList_appendCode_aux :
+theorem mem_decodeList_appendCode_aux :
     ∀ (l : List ℕ) (acc z : ℕ),
       z ∈ decodeList (List.foldl (fun acc x => consStep2 (Nat.pair x (Nat.pair acc 0))) acc l)
         ↔ z ∈ l ∨ z ∈ decodeList acc
@@ -71,13 +73,7 @@ theorem mem_decodeList_appendCode (c1 c2 z : ℕ) :
 
 /-! ### `crossInner`: `bop x` mapped over a coded list -/
 
-/-- `foldCode`'s step for the inner loop: pops `y` from `c2`, applies `bop (pair x y)` (`x` threaded
-as the fixed parameter), conses onto the accumulator. -/
-def crossInnerStep (bop : ℕ → ℕ) (w : ℕ) : ℕ :=
-  Nat.pair (bop (Nat.pair w.unpair.2.unpair.2 w.unpair.1)) w.unpair.2.unpair.1 + 1
 
-/-- `crossInner bop x c2` codes `[bop (x, y) ∣ y ∈ decodeList c2]` (up to order). -/
-def crossInner (bop : ℕ → ℕ) (x c2 : ℕ) : ℕ := foldCode (crossInnerStep bop) x 0 c2
 
 theorem crossInnerStep_eq (bop : ℕ → ℕ) (y acc x : ℕ) :
     crossInnerStep bop (Nat.pair y (Nat.pair acc x)) = Nat.pair (bop (Nat.pair x y)) acc + 1 := by
@@ -112,15 +108,7 @@ theorem mem_decodeList_crossInner {bop : ℕ → ℕ} (x c2 z : ℕ) :
 
 /-! ### `crossCombine`: the full nested fold -/
 
-/-- `foldCode`'s outer step: pops `x` from `c1`, appends `crossInner bop x c2` onto the
-accumulator (`c2` threaded as the fixed parameter). -/
-def crossOuterStep (bop : ℕ → ℕ) (w : ℕ) : ℕ :=
-  appendCode (crossInner bop w.unpair.1 w.unpair.2.unpair.2) w.unpair.2.unpair.1
 
-/-- **`crossCombine bop c1 c2`** codes `[bop (x, y) ∣ x ∈ decodeList c1, y ∈ decodeList c2]`
-(up to order/duplicates), i.e. the code-level analogue of `L1.flatMap (fun x => L2.map (bop x ·))`.
-This is the workhorse behind `Definition87.lean`'s `combineIntervals` at the code level. -/
-def crossCombine (bop : ℕ → ℕ) (c1 c2 : ℕ) : ℕ := foldCode (crossOuterStep bop) c2 0 c1
 
 theorem crossOuterStep_eq (bop : ℕ → ℕ) (x acc c2 : ℕ) :
     crossOuterStep bop (Nat.pair x (Nat.pair acc c2)) = appendCode (crossInner bop x c2) acc := by
@@ -156,14 +144,7 @@ code-level analogue of `l.flatMap (fun y => decodeList (f x y))`. This is the pi
 interval can produce `0`, `1`, or `2` result-pieces per step, so the per-element result is itself
 list-valued. -/
 
-/-- `foldCode`'s step for `flatMapCode`: pops `y` from the folded list, appends `f (pair x y)`
-(`x` threaded as the fixed parameter) onto the accumulator. -/
-def flatMapStep (f : ℕ → ℕ) (w : ℕ) : ℕ :=
-  appendCode (f (Nat.pair w.unpair.2.unpair.2 w.unpair.1)) w.unpair.2.unpair.1
 
-/-- **`flatMapCode f x c`** codes `(decodeList c).flatMap (fun y => decodeList (f (pair x y)))`
-(up to order/duplicates). -/
-def flatMapCode (f : ℕ → ℕ) (x c : ℕ) : ℕ := foldCode (flatMapStep f) x 0 c
 
 theorem flatMapStep_eq (f : ℕ → ℕ) (y acc x : ℕ) :
     flatMapStep f (Nat.pair y (Nat.pair acc x)) = appendCode (f (Nat.pair x y)) acc := by

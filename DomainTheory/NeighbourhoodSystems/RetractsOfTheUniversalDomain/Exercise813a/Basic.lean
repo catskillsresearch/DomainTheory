@@ -11,6 +11,10 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.GeneratedBy
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.bitmaskOf
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.generator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.testBit_sum_two_pow
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.testBit_bitmaskOf
 
 @[expose] public section
 
@@ -49,24 +53,11 @@ open NeighborhoodSystem
 
 /-! ### A general bit-arithmetic toolkit (not specific to `generator`) -/
 
-/-- **`(∑ j ∈ s, 2^j).testBit i ↔ i ∈ s`.** The general "read off a prescribed finite bit pattern"
-fact behind `upsample` (`Exercise812.lean`) — isolated here for reuse. -/
-theorem testBit_sum_two_pow {s : Finset ℕ} {i : ℕ} : (∑ j ∈ s, 2 ^ j).testBit i ↔ i ∈ s := by
-  rw [← Nat.mem_bitIndices, ← List.mem_toFinset, Finset.toFinset_bitIndices_sum_two_pow]
 
-/-- Build a natural number with a prescribed (finite) set of bits set — the "witness" constructor
-used both for `generator`'s `levelSet` realization and for the complement/independence proofs
-below. -/
-def bitmaskOf (s : Finset ℕ) : ℕ := ∑ j ∈ s, 2 ^ j
 
-@[simp] theorem testBit_bitmaskOf {s : Finset ℕ} {i : ℕ} : (bitmaskOf s).testBit i ↔ i ∈ s :=
-  testBit_sum_two_pow
 
 /-! ### `generator i`: the `i`-th independent propositional variable, as a subset of `ℕ` -/
 
-/-- The **`i`-th generator**: `{n | n.testBit i}`, the set of naturals whose `i`-th binary digit is
-`1`. These are Scott's `ℵ₀` propositional variables, realized concretely. -/
-def generator (i : ℕ) : Set ℕ := {n : ℕ | n.testBit i = true}
 
 @[simp] theorem mem_generator {i n : ℕ} : n ∈ generator i ↔ n.testBit i = true := Iff.rfl
 

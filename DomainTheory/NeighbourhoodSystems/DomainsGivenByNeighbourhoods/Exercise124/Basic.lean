@@ -12,6 +12,7 @@ public import Mathlib.Order.Zorn
 import all Mathlib.Order.Zorn
 public import Mathlib.Tactic
 import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124.chainUnion
 
 @[expose] public section
 
@@ -43,21 +44,5 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- **Exercise 1.24 — the union of a chain of filters is a filter.** For a non-empty chain `C` of
-filters, `⋃ C = {X ∣ ∃ x ∈ C, X ∈ x}` is again a filter. The intersection axiom uses chain
-totality: given `X ∈ x` and `Y ∈ y` with `x, y ∈ C`, one of `x ⊑ y`, `y ⊑ x` holds, and the larger
-filter contains both `X` and `Y`, hence `X ∩ Y`. -/
-def chainUnion (C : Set V.Element) (hne : C.Nonempty) (hchain : IsChain (· ≤ ·) C) : V.Element where
-  mem X := ∃ x ∈ C, x.mem X
-  sub := by rintro X ⟨x, _, hxX⟩; exact x.sub hxX
-  master_mem := by obtain ⟨x, hxC⟩ := hne; exact ⟨x, hxC, x.master_mem⟩
-  inter_mem := by
-    rintro X Y ⟨x, hxC, hxX⟩ ⟨y, hyC, hyY⟩
-    rcases hchain.total hxC hyC with hxy | hyx
-    · exact ⟨y, hyC, y.inter_mem (hxy X hxX) hyY⟩
-    · exact ⟨x, hxC, x.inter_mem hxX (hyx Y hyY)⟩
-  up_mem := by
-    rintro X Y ⟨x, hxC, hxX⟩ hY hXY
-    exact ⟨x, hxC, x.up_mem hxX hY hXY⟩
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems

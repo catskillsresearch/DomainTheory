@@ -1,0 +1,39 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap Exercise326
+
+universe u
+
+section Prod
+
+variable {α : Type u} {E : NeighborhoodSystem α}
+
+/-- **Reading off the pair from a function `T → E`.** `funToPair(φ) = (φ(true), φ(false))`. -/
+noncomputable def funToPair : ApproximableMap (funSpace TD E) (prod E E) :=
+  paired
+    ((evalMap TD E).comp
+      (paired (idMap (funSpace TD E)) (constMap (funSpace TD E) Example23.trueElt)))
+    ((evalMap TD E).comp
+      (paired (idMap (funSpace TD E)) (constMap (funSpace TD E) Example23.falseElt)))
+
+end Prod
+
+end DomainTheory.NeighbourhoodSystems

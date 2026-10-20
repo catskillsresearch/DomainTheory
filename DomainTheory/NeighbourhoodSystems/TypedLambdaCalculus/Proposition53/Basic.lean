@@ -8,6 +8,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.sectionX
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.secFixX
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.outerOp
 
 @[expose] public section
 
@@ -45,18 +48,7 @@ variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSyst
 
 namespace ApproximableMap
 
-/-- The section `x ↦ τ(x, y)` of `τ : 𝒟₀ × 𝒟₁ → 𝒟₀` at a fixed `y`, as an approximable endomap of
-`𝒟₀` (the curried `τ ∘ swap` applied to `y`). -/
-def sectionX (τ : ApproximableMap (prod V₀ V₁) V₀) (y : V₁.Element) : ApproximableMap V₀ V₀ :=
-  toApproxMap ((curry (τ.comp (swapC V₁ V₀))).toElementMap y)
 
-/-- The approximable map `y ↦ !x. τ(x, y)`: `fix ∘ curry(τ ∘ swap)`. -/
-def secFixX (τ : ApproximableMap (prod V₀ V₁) V₀) : ApproximableMap V₁ V₀ :=
-  (fixMap V₀).comp (curry (τ.comp (swapC V₁ V₀)))
 
-/-- The outer operator `y ↦ σ(!x. τ(x, y), y)`. -/
-def outerOp (τ : ApproximableMap (prod V₀ V₁) V₀) (σ : ApproximableMap (prod V₀ V₁) V₁) :
-    ApproximableMap V₁ V₁ :=
-  σ.comp (paired (secFixX τ) (idMap V₁))
 end ApproximableMap
 end DomainTheory.NeighbourhoodSystems

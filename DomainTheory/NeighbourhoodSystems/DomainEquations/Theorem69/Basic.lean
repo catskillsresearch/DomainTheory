@@ -9,6 +9,13 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.homOpComp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.homOp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.isStrict_comp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.comp_mono_gen
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.toStrictMap_mono
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.toStrictFilter_mono
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.homOpComp_mono
 
 @[expose] public section
 
@@ -68,32 +75,9 @@ variable {α β γ : Type*}
 
 /-! ### General helper lemmas (strictness and monotonicity of composition). -/
 
-/-- The composite of strict maps is strict: `(a ∘ b)(⊥) = a(b(⊥)) = a(⊥) = ⊥`. -/
-theorem isStrict_comp {a : ApproximableMap V₁ V₂} {b : ApproximableMap V₀ V₁}
-    (ha : IsStrict a) (hb : IsStrict b) : IsStrict (a.comp b) := by
-  rw [isStrict_iff_apply_bot, toElementMap_comp, isStrict_iff_apply_bot.mp hb,
-    isStrict_iff_apply_bot.mp ha]
 
-/-- Composition is monotone in both arguments (general arities). -/
-theorem comp_mono_gen {a a' : ApproximableMap V₁ V₂} {b b' : ApproximableMap V₀ V₁}
-    (ha : a ≤ a') (hb : b ≤ b') : a.comp b ≤ a'.comp b' := by
-  intro X Z h
-  obtain ⟨Y, hXY, hYZ⟩ := h
-  exact ⟨Y, hb _ _ hXY, ha _ _ hYZ⟩
 
-/-- `toStrictMap` is monotone. -/
-theorem toStrictMap_mono {φ φ' : (strictFun V₀ V₁).Element} (h : φ ≤ φ') :
-    toStrictMap φ ≤ toStrictMap φ' := by
-  intro X Y hrel
-  rw [toStrictMap_rel] at hrel ⊢
-  exact h _ hrel
 
-/-- `toStrictFilter` is monotone. -/
-theorem toStrictFilter_mono {f f' : StrictMap V₀ V₁} (h : f ≤ f') :
-    toStrictFilter f ≤ toStrictFilter f' := by
-  intro W hW
-  rw [mem_toStrictFilter] at hW ⊢
-  exact ⟨hW.1, strictFun_mem_up_closed hW.1 hW.2 h⟩
 
 /-! ### The post/pre-composition operator on strict function spaces. -/
 
@@ -104,27 +88,8 @@ variable (T : Endofunctor DomainObj) (D E : DomainObj)
   (k : ApproximableMap (T.obj E).sys E.sys)
   (hj : IsStrict j) (hk : IsStrict k)
 
-/-- The strict composite `g ↦ k ∘ g ∘ j : (T(D) →⊥ T(E)) → (D →⊥ E)`. -/
-def homOpComp (g : StrictMap (T.obj D).sys (T.obj E).sys) : StrictMap D.sys E.sys :=
-  ⟨k.comp (g.1.comp j), isStrict_comp hk (isStrict_comp g.2 hj)⟩
 
-theorem homOpComp_mono {g g' : StrictMap (T.obj D).sys (T.obj E).sys} (hgg : g ≤ g') :
-    homOpComp T D E j k hj hk g ≤ homOpComp T D E j k hj hk g' := by
-  show k.comp (g.1.comp j) ≤ k.comp (g'.1.comp j)
-  exact comp_mono_gen le_rfl (comp_mono_gen (Subtype.coe_le_coe.mpr hgg) le_rfl)
 
-/-- **The operator `λg. k ∘ g ∘ j`** as an approximable map between the strict function spaces, built
-by Exercise 2.8 (`ofMono`) from its values on finite elements. -/
-def homOp : ApproximableMap (strictFun (T.obj D).sys (T.obj E).sys) (strictFun D.sys E.sys) :=
-  ofMono
-    (fun N hN => toStrictFilter (homOpComp T D E j k hj hk
-      (toStrictMap ((strictFun (T.obj D).sys (T.obj E).sys).principal hN))))
-    (by
-      intro N N' hN hN' hN'N
-      apply toStrictFilter_mono
-      apply homOpComp_mono
-      apply toStrictMap_mono
-      exact ((strictFun (T.obj D).sys (T.obj E).sys).principal_le_iff hN hN').mpr hN'N)
 
 end HomOp
 

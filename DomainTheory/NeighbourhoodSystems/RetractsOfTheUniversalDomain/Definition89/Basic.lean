@@ -12,6 +12,23 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.sumUUPresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.prodUUPresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.funSpaceUUPresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.iPlus
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.jPlus
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.iTimes
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.jTimes
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.iArrow
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.jArrow
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.sumComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.prodComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.lamComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.arrowComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.U_mem_nonempty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.sumUU_isEffectivelyGiven
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.prodUU_isEffectivelyGiven
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.funSpaceUU_isEffectivelyGiven
 
 @[expose] public section
 
@@ -51,82 +68,24 @@ open NeighborhoodSystem ApproximableMap Exercise326
 
 /-! ## `𝒰`-nonemptiness, and the three effectively-given constructs -/
 
-/-- Every `𝒰`-neighbourhood is non-empty (built into Definition 8.7). -/
-theorem U_mem_nonempty : ∀ X, U.mem X → X.Nonempty := fun _ hX => hX.2.1
 
-/-- `𝒰 + 𝒰` is effectively given (Theorem 7.4, applied to `U`'s own presentation twice). -/
-theorem sumUU_isEffectivelyGiven :
-    (sum U U U_mem_nonempty U_mem_nonempty).IsEffectivelyGiven :=
-  sum_isEffectivelyGiven U_isEffectivelyGiven U_isEffectivelyGiven
 
-/-- `𝒰 × 𝒰` is effectively given (Theorem 7.4, applied to `U`'s own presentation twice). -/
-theorem prodUU_isEffectivelyGiven : (prod U U).IsEffectivelyGiven :=
-  prod_isEffectivelyGiven U_isEffectivelyGiven U_isEffectivelyGiven
 
-/-- `𝒰 → 𝒰` is effectively given (Theorem 7.5, applied to `U`'s own presentation twice). -/
-theorem funSpaceUU_isEffectivelyGiven : (funSpace U U).IsEffectivelyGiven :=
-  funSpace_isEffectivelyGiven U_isEffectivelyGiven U_isEffectivelyGiven
 
-/-- A fixed presentation of `𝒰 + 𝒰`. -/
-noncomputable def sumUUPresentation : ComputablePresentation (sum U U U_mem_nonempty U_mem_nonempty) :=
-  sumUU_isEffectivelyGiven.some
 
-/-- A fixed presentation of `𝒰 × 𝒰`. -/
-noncomputable def prodUUPresentation : ComputablePresentation (prod U U) :=
-  prodUU_isEffectivelyGiven.some
 
-/-- A fixed presentation of `𝒰 → 𝒰`. -/
-noncomputable def funSpaceUUPresentation : ComputablePresentation (funSpace U U) :=
-  funSpaceUU_isEffectivelyGiven.some
 
 /-! ## Definition 8.9 — the six fixed computable projection pairs -/
 
-/-- **`i₊ : 𝒰+𝒰 → 𝒰`** (Definition 8.9), fixed by `theorem_8_8_b_strong` applied to `𝒰+𝒰`. -/
-noncomputable def iPlus : ApproximableMap (sum U U U_mem_nonempty U_mem_nonempty) U :=
-  (theorem_8_8_b_strong sumUUPresentation).choose
 
-/-- **`j₊ : 𝒰 → 𝒰+𝒰`** (Definition 8.9). -/
-noncomputable def jPlus : ApproximableMap U (sum U U U_mem_nonempty U_mem_nonempty) :=
-  (theorem_8_8_b_strong sumUUPresentation).choose_spec.choose
 
-/-- **`i_× : 𝒰×𝒰 → 𝒰`** (Definition 8.9), fixed by `theorem_8_8_b_strong` applied to `𝒰×𝒰`. -/
-noncomputable def iTimes : ApproximableMap (prod U U) U :=
-  (theorem_8_8_b_strong prodUUPresentation).choose
 
-/-- **`j_× : 𝒰 → 𝒰×𝒰`** (Definition 8.9). -/
-noncomputable def jTimes : ApproximableMap U (prod U U) :=
-  (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose
 
-/-- **`i_→ : (𝒰→𝒰) → 𝒰`** (Definition 8.9), fixed by `theorem_8_8_b_strong` applied to `𝒰→𝒰`. -/
-noncomputable def iArrow : ApproximableMap (funSpace U U) U :=
-  (theorem_8_8_b_strong funSpaceUUPresentation).choose
 
-/-- **`j_→ : 𝒰 → (𝒰→𝒰)`** (Definition 8.9). -/
-noncomputable def jArrow : ApproximableMap U (funSpace U U) :=
-  (theorem_8_8_b_strong funSpaceUUPresentation).choose_spec.choose
 
 /-! ## Definition 8.9 — the three combinators -/
 
-/-- **`a + b : 𝒰 → 𝒰`** (Definition 8.9): `cond ∘ ⟨which, i₊∘in₀∘a∘out₀, i₊∘in₁∘b∘out₁⟩ ∘ j₊`. -/
-noncomputable def sumComb (a b : ApproximableMap U U) : ApproximableMap U U :=
-  (cond U).comp
-    ((paired (whichMap U U U_mem_nonempty U_mem_nonempty)
-        (paired (iPlus.comp ((inMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).comp
-                  (a.comp (outMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)))))
-                (iPlus.comp ((inMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).comp
-                  (b.comp (outMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty))))))).comp
-      jPlus)
 
-/-- **`a × b : 𝒰 → 𝒰`** (Definition 8.9): `i_× ∘ ⟨a∘proj₀, b∘proj₁⟩ ∘ j_×`. -/
-noncomputable def prodComb (a b : ApproximableMap U U) : ApproximableMap U U :=
-  iTimes.comp ((paired (a.comp (proj₀ U U)) (b.comp (proj₁ U U))).comp jTimes)
 
-/-- **`λf. b∘f∘a : (𝒰→𝒰) → (𝒰→𝒰)`**, uncurried as `b ∘ eval ∘ (id ×ₘ a)`. -/
-noncomputable def lamComb (a b : ApproximableMap U U) :
-    ApproximableMap (funSpace U U) (funSpace U U) :=
-  curry (b.comp ((evalMap U U).comp (prodMap (idMap (funSpace U U)) a)))
 
-/-- **`a → b : 𝒰 → 𝒰`** (Definition 8.9): `i_→ ∘ (λf. b∘f∘a) ∘ j_→`. -/
-noncomputable def arrowComb (a b : ApproximableMap U U) : ApproximableMap U U :=
-  iArrow.comp ((lamComb a b).comp jArrow)
 end DomainTheory.NeighbourhoodSystems

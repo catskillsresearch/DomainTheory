@@ -9,6 +9,16 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.genOp
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.nats
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.subZero
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.subSucc
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.peanoSub
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.natPeano
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.zero_mem_nats
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.succ_mem_nats
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.nats_induction
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.Nat'
 
 @[expose] public section
 
@@ -48,79 +58,17 @@ open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercis
 
 variable {M : Type*} (zero : M) (succ : M → M)
 
-/-- Scott's operator `g(x) = {0} ∪ x⁺` on `P(N*)`, whose least fixed point is the smallest subset
-containing `0` and closed under the successor. -/
-def genOp (x : Set M) : Set M := {zero} ∪ succ '' x
 
-/-- The carved-out subset `N ⊆ N*`: the least fixed point of `g` (Exercise 4.13(2)/4.14). -/
-def nats : Set M := lfpSet (genOp zero succ)
 
-/-- `0 ∈ N` — directly from the `lfpSet` definition (no monotonicity needed), keeping the
-construction choice-free. -/
-theorem zero_mem_nats : zero ∈ nats zero succ := by
-  intro x hx
-  exact hx (Or.inl rfl)
 
-/-- `N` is closed under the successor: `n ∈ N ⟹ n⁺ ∈ N` — again directly from `lfpSet`. -/
-theorem succ_mem_nats {n : M} (hn : n ∈ nats zero succ) : succ n ∈ nats zero succ := by
-  intro x hx
-  exact hx (Or.inr ⟨n, hn x hx, rfl⟩)
 
-/-- **Induction by minimality.** Any subset `s ⊆ N*` containing `0` and closed under `⁺` contains
-all of `N`. (This is the heart of axiom (iii): `s` is a pre-fixed point of `g`, hence dominates the
-least fixed point `nats`.) -/
-theorem nats_induction (s : Set M) (h0 : zero ∈ s) (hsucc : ∀ n ∈ s, succ n ∈ s) :
-    nats zero succ ⊆ s := by
-  apply lfpSet_subset (genOp zero succ)
-  rintro x (rfl | ⟨n, hn, rfl⟩)
-  · exact h0
-  · exact hsucc n hn
 
 /-! ### The carved-out structure is a model of Peano's Axioms. -/
 
-/-- The subtype `N = {m // m ∈ nats}` carrying the carved-out Peano structure. -/
-abbrev Nat' : Type _ := {m : M // m ∈ nats zero succ}
 
-/-- The zero of the subtype. -/
-def subZero : Nat' zero succ := ⟨zero, zero_mem_nats zero succ⟩
 
-/-- The successor of the subtype (well-defined by closure `succ_mem_nats`). -/
-def subSucc (n : Nat' zero succ) : Nat' zero succ := ⟨succ n.1, succ_mem_nats zero succ n.2⟩
 
-/-- **Exercise 4.22 (Scott 1981, PRG-19).** The carved-out subset `N ⊆ N*`, with the inherited
-`0` and `⁺`, is a model of **all three** Peano axioms — even though `N*` was only assumed to satisfy
-(i) and (ii). Axioms (i)/(ii) are inherited; (iii) holds by minimality of the least fixed point. -/
-def peanoSub (hzero : ∀ n, zero ≠ succ n) (hinj : Function.Injective succ) :
-    PeanoModel (Nat' zero succ) where
-  zero := subZero zero succ
-  succ := subSucc zero succ
-  zero_ne_succ n h := hzero n.1 (Subtype.ext_iff.mp h)
-  succ_injective a b h := Subtype.ext (hinj (Subtype.ext_iff.mp h))
-  induction s h0 hstep := by
-    -- pull `s` back to a subset of `N*`, show it is closed under `0`/`⁺`, apply `nats_induction`
-    intro n
-    have hsub : nats zero succ ⊆
-        {m | ∃ h : m ∈ nats zero succ, (⟨m, h⟩ : Nat' zero succ) ∈ s} := by
-      apply nats_induction zero succ
-      · exact ⟨zero_mem_nats zero succ, h0⟩
-      · rintro m ⟨hmnat, hms⟩
-        exact ⟨succ_mem_nats zero succ hmnat, hstep ⟨m, hmnat⟩ hms⟩
-    obtain ⟨_, hns⟩ := hsub n.2
-    exact hns
 
 /-! ### Existence of `N*` (axiom of infinity): the standard `ℕ`. -/
 
-/-- *(For set theorists.)* The standard natural numbers `⟨ℕ, 0, ⁺⟩` form a model of Peano's Axioms;
-their existence is the **axiom of infinity**. (This witnesses that an `N*` satisfying (i)/(ii) — in
-fact all three — exists in the first place.) -/
-def natPeano : PeanoModel ℕ where
-  zero := 0
-  succ := Nat.succ
-  zero_ne_succ n := (Nat.succ_ne_zero n).symm
-  succ_injective := Nat.succ_injective
-  induction s h0 hstep := by
-    intro n
-    induction n with
-    | zero => exact h0
-    | succ k ih => exact hstep k ih
 end DomainTheory.NeighbourhoodSystems.Exercise422

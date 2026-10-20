@@ -1,0 +1,52 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.EffectiveIso
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.fiber2
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.mem_fiber2
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.reindexF
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.fiber2_reindexF
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.fiber_reindexG
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+namespace Exercise718
+
+open NeighborhoodSystem Domain.Recursive ApproximableMap
+
+variable {α β : Type*}
+
+variable {V : NeighborhoodSystem α}
+
+theorem reindexF_mem {W : Set (ℕ × α)} (hW : (iterSys V).mem W) :
+    (iterSys (iterSys V)).mem (reindexF W) := by
+  obtain ⟨hWf, Nw, hNw⟩ := hW
+  refine ⟨fun i => ⟨fun j => ?_, Nw, fun j hj => ?_⟩, Nw, fun i hi => ?_⟩
+  · -- inner fibers are `V`-neighbourhoods
+    show V.mem (fiber2 (reindexF W) i j)
+    rw [fiber2_reindexF]; exact hWf (Nat.pair i j)
+  · -- inner cofinite-`Δ` (per `i`)
+    show fiber2 (reindexF W) i j = V.master
+    rw [fiber2_reindexF]
+    exact hNw (Nat.pair i j) (le_trans hj (le_pair_right i j))
+  · -- outer cofinite-`Δ`
+    apply eq_of_fiber_eq
+    intro j
+    show fiber2 (reindexF W) i j = fiber ((iterSys V).master) j
+    rw [fiber2_reindexF, fiber_iterSys_master]
+    exact hNw (Nat.pair i j) (le_trans hi (le_pair_left i j))
+
+end Exercise718
+
+end DomainTheory.NeighbourhoodSystems

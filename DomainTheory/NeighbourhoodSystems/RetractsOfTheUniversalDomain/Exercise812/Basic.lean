@@ -15,6 +15,16 @@ public import Mathlib.Data.Nat.Bitwise
 import all Mathlib.Data.Nat.Bitwise
 public import Mathlib.Combinatorics.Colex
 import all Mathlib.Combinatorics.Colex
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.affine
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.levelSet
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.upsample
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.V
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.mem_affine
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.mem_levelSet
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.levelSet_zero_one
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.testBit_upsample
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.levelSet_upsample
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.levelSet_inter
 
 @[expose] public section
 
@@ -112,80 +122,21 @@ open NeighborhoodSystem
 
 /-! ### `affine k ℓ`, Scott's `2^k ℕ + ℓ` -/
 
-/-- **`2^k ℕ + ℓ`** (for `ℓ < 2^k`): the residue class of `ℓ` modulo `2^k`. Automatically `∅` when
-`ℓ ≥ 2^k` (no `n` can leave a remainder that large), matching Scott's side condition `ℓ < 2^k`
-without needing to bake it into the definition. -/
-def affine (k ℓ : ℕ) : Set ℕ := {n : ℕ | n % 2 ^ k = ℓ}
 
-@[simp] theorem mem_affine {k ℓ n : ℕ} : n ∈ affine k ℓ ↔ n % 2 ^ k = ℓ := Iff.rfl
 
 /-! ### `levelSet k m`: a bookkeeping-free encoding of finite unions at a fixed level -/
 
-/-- The union of the residue classes `affine k ℓ` for `ℓ < 2^k` with `m.testBit ℓ = true`. Every
-finite union of `affine`-sets sharing the *same* level `k` is of this form for a unique `m`
-(`Finset.range (2^k)` residues partition `ℕ`, unlike arbitrary rational intervals), so a single
-natural number `m` replaces the `List` bookkeeping `Definition87.lean` needs for `𝒰`. -/
-def levelSet (k m : ℕ) : Set ℕ := {n : ℕ | m.testBit (n % 2 ^ k) = true}
 
-@[simp] theorem mem_levelSet {k m n : ℕ} : n ∈ levelSet k m ↔ m.testBit (n % 2 ^ k) = true :=
-  Iff.rfl
 
-/-- `levelSet 0 1 = ℕ`: at level `0` there is a single residue class (everything is `≡ 0 mod 1`),
-and `1` (bit `0` set) selects it. This is `V`'s master neighbourhood. -/
-theorem levelSet_zero_one : levelSet 0 1 = Set.univ := by
-  ext n; simp [levelSet, Nat.mod_one]
 
 /-! ### `upsample`: re-expressing a bitmask at a finer level -/
 
-/-- Re-express a level-`k` bitmask `m` at a finer level `k' ≥ k`: residue `r` (mod `2^k'`) is
-included iff `r`'s coarser residue `r % 2^k` was. Built via `Nat.equivBitIndices` (the bijection
-`ℕ ≃ Finset ℕ` sending `n` to its set bits) rather than raw shifting arithmetic. -/
-def upsample (k k' m : ℕ) : ℕ :=
-  ∑ r ∈ (Finset.range (2 ^ k')).filter (fun r => m.testBit (r % 2 ^ k)), 2 ^ r
 
-theorem testBit_upsample {k k' m r : ℕ} (hr : r < 2 ^ k') :
-    (upsample k k' m).testBit r ↔ m.testBit (r % 2 ^ k) := by
-  unfold upsample
-  rw [← Nat.mem_bitIndices, ← List.mem_toFinset, Finset.toFinset_bitIndices_sum_two_pow,
-    Finset.mem_filter, Finset.mem_range]
-  simp [hr]
 
-/-- **`upsample` preserves the set `levelSet` represents.** -/
-theorem levelSet_upsample {k k' m : ℕ} (hk : k ≤ k') : levelSet k' (upsample k k' m) = levelSet k m := by
-  ext n
-  simp only [mem_levelSet]
-  rw [testBit_upsample (Nat.mod_lt n (by positivity)),
-    Nat.mod_mod_of_dvd n (pow_dvd_pow 2 hk)]
 
-/-- **`levelSet` is closed under intersection, unconditionally** (unlike `Definition87.lean`'s `U`,
-which genuinely needs a consistency hypothesis): upsample both masks to the common level
-`max k₁ k₂` and take the bitwise `AND`. -/
-theorem levelSet_inter (k₁ m₁ k₂ m₂ : ℕ) :
-    levelSet k₁ m₁ ∩ levelSet k₂ m₂
-      = levelSet (max k₁ k₂) (upsample k₁ (max k₁ k₂) m₁ &&& upsample k₂ (max k₁ k₂) m₂) := by
-  rw [← levelSet_upsample (le_max_left k₁ k₂) (m := m₁), ← levelSet_upsample (le_max_right k₁ k₂) (m := m₂)]
-  ext n
-  simp only [mem_levelSet, Set.mem_inter_iff, Nat.testBit_and, Bool.and_eq_true]
 
 /-! ### `V`, the `ℕ`-presentation of Exercise 8.12 -/
 
-/-- **Exercise 8.12's `V`**: the neighbourhood system over `ℕ` whose neighbourhoods are the
-non-empty finite unions of residue classes `2^k ℕ + ℓ` (`ℓ < 2^k`). Bookkeeping-free via
-`levelSet`: every finite union of `affine`-sets — even at *different* levels `kᵢ` — refines
-(`levelSet_upsample`) to a single common level, so `V.mem X := ∃ k m, X = levelSet k m` already
-captures every such union (`V_mem_iff_finiteUnion` below makes this precise). Closure under
-intersection needs no consistency hypothesis (`levelSet_inter`), mirroring `Example78.lean`'s `PN`
-rather than `Definition87.lean`'s `U`. -/
-def V : NeighborhoodSystem ℕ where
-  mem X := ∃ k m, X = levelSet k m ∧ X.Nonempty
-  master := Set.univ
-  master_nonempty := Set.univ_nonempty
-  master_mem := ⟨0, 1, levelSet_zero_one.symm, Set.univ_nonempty⟩
-  inter_mem := by
-    rintro X Y Z ⟨k₁, m₁, rfl, -⟩ ⟨k₂, m₂, rfl, -⟩ ⟨k₃, m₃, rfl, hZne⟩ hZsub
-    exact ⟨max k₁ k₂, upsample k₁ (max k₁ k₂) m₁ &&& upsample k₂ (max k₁ k₂) m₂,
-      levelSet_inter k₁ m₁ k₂ m₂, hZne.mono hZsub⟩
-  sub_master := by rintro X _; exact Set.subset_univ X
 
 /-! ### `V` has no minimal neighbourhoods -/
 

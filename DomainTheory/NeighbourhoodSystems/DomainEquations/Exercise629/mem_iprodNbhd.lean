@@ -1,0 +1,36 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import Mathlib.Data.Set.Finite.Basic
+import all Mathlib.Data.Set.Finite.Basic
+public import Mathlib.Data.Finset.Basic
+import all Mathlib.Data.Finset.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.iprodNbhd
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem
+
+namespace Exercise629
+
+universe u v
+
+variable {ι : Type u} {α : ι → Type v}
+
+@[simp] theorem mem_iprodNbhd {X : ∀ i, Set (α i)} {i : ι} {a : α i} :
+    (⟨i, a⟩ : Σ i, α i) ∈ iprodNbhd X ↔ a ∈ X i := Iff.rfl
+
+end Exercise629
+
+end DomainTheory.NeighbourhoodSystems

@@ -10,6 +10,20 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.positiveExample
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.master
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.a
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.b
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.memSet
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.notPositiveSystem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.Tok
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.mem_iff
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.mem_master
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.mem_a
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.mem_b
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.not_mem_sub_one
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.inter_eq
 
 @[expose] public section
 
@@ -42,80 +56,17 @@ open DomainTheory.NeighbourhoodSystems
 
 /-! ### A positive system: all non-empty subsets of `Fin 2`. -/
 
-/-- All non-empty subsets of `Fin 2` form a *positive* neighbourhood system: there `X ∩ Y ∈ 𝒟`
-literally **is** `(X ∩ Y).Nonempty`, so (ii′) is `Iff.rfl`. -/
-def positiveExample : NeighborhoodSystem (Fin 2) :=
-  NeighborhoodSystem.ofPositive (fun X => X.Nonempty) Set.univ
-    (by exact ⟨(0 : Fin 2), Set.mem_univ 0⟩)
-    (by exact ⟨(0 : Fin 2), Set.mem_univ 0⟩) (by intro X _; exact Set.subset_univ X)
-    (by intro X Y _ _; exact Iff.rfl)
 
 /-! ### A non-positive system over `Δ = {0,1,2}`. -/
 
-/-- Tokens `Δ = {0, 1, 2}`. -/
-abbrev Tok := Fin 3
 
-/-- The master neighbourhood `Δ`. -/
-def master : Set Tok := Set.univ
 
-/-- The neighbourhood `{0, 1}`. -/
-def a : Set Tok := {0, 1}
 
-/-- The neighbourhood `{1, 2}`. -/
-def b : Set Tok := {1, 2}
 
-/-- `𝒟 = {Δ, {0,1}, {1,2}}`. -/
-def memSet : Set (Set Tok) := {master, a, b}
 
-/-- Membership in `𝒟`. -/
-def mem (X : Set Tok) : Prop := X ∈ memSet
 
-theorem mem_iff (X : Set Tok) : mem X ↔ X = master ∨ X = a ∨ X = b := by
-  simp only [mem, memSet, Set.mem_insert_iff, Set.mem_singleton_iff]
 
-theorem mem_master : mem master := (mem_iff _).mpr (Or.inl rfl)
-theorem mem_a : mem a := (mem_iff _).mpr (Or.inr (Or.inl rfl))
-theorem mem_b : mem b := (mem_iff _).mpr (Or.inr (Or.inr rfl))
 
-/-- No neighbourhood is contained in `{1}` (each contains a token other than `1`). This is why
-the overlapping pair `{0,1}`, `{1,2}` never triggers condition (ii). -/
-theorem not_mem_sub_one {Z : Set Tok} (hZ : mem Z) (hsub : Z ⊆ ({1} : Set Tok)) : False := by
-  rcases (mem_iff Z).mp hZ with rfl | rfl | rfl
-  · exact absurd (hsub (show (0 : Tok) ∈ master by simp [master])) (by simp)
-  · exact absurd (hsub (show (0 : Tok) ∈ a by simp [a])) (by simp)
-  · exact absurd (hsub (show (2 : Tok) ∈ b by simp [b])) (by simp)
 
-/-- Classification of binary intersections in `𝒟`. -/
-theorem inter_eq (X Y : Set Tok) (hX : mem X) (hY : mem Y) :
-    X ∩ Y = master ∨ X ∩ Y = a ∨ X ∩ Y = b ∨ X ∩ Y = ({1} : Set Tok) := by
-  rcases (mem_iff X).mp hX with rfl | rfl | rfl
-  · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-    · exact Or.inl (by ext x; fin_cases x <;> simp [master, a, b])
-    · exact Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b]))
-    · exact Or.inr (Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b])))
-  · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-    · exact Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b]))
-    · exact Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b]))
-    · exact Or.inr (Or.inr (Or.inr (by ext x; fin_cases x <;> simp [master, a, b])))
-  · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-    · exact Or.inr (Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b])))
-    · exact Or.inr (Or.inr (Or.inr (by ext x; fin_cases x <;> simp [master, a, b])))
-    · exact Or.inr (Or.inr (Or.inl (by ext x; fin_cases x <;> simp [master, a, b])))
 
-/-- **Exercise 1.19 — the non-positive example is a neighbourhood system.** The only intersection
-that is not already a neighbourhood is `{0,1} ∩ {1,2} = {1}`, and that case is impossible: a
-consistency witness `Z ⊆ {1}` with `Z ∈ 𝒟` does not exist (`not_mem_sub_one`). -/
-def notPositiveSystem : NeighborhoodSystem Tok where
-  mem := mem
-  master := master
-  master_nonempty := Set.univ_nonempty
-  master_mem := mem_master
-  sub_master := fun _ => Set.subset_univ _
-  inter_mem := by
-    intro X Y Z hX hY hZ hZsub
-    rcases inter_eq X Y hX hY with h | h | h | h
-    · rw [h]; exact mem_master
-    · rw [h]; exact mem_a
-    · rw [h]; exact mem_b
-    · rw [h] at hZsub; exact (not_mem_sub_one hZ hZsub).elim
 end DomainTheory.NeighbourhoodSystems.Exercise119

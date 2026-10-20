@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_cons_iff
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_interEq_computable
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_cons_computable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.D_inter
 
 @[expose] public section
 
@@ -72,10 +73,6 @@ variable {P qChar cons}
 
 /-! ### `D_inter`, its primitive-recursiveness, and `inter_spec` -/
 
-/-- **The `.inter` field for `D_X`**: concatenate the two list-codes (`Recursive.lean`'s
-Exercise 7.22 `appendListCode`), reusing that this is exactly `myFoldCode`'s left-fold-from-
-`P.masterIdx` restarted at `myFoldCode c₁` (via `List.foldl_append`). -/
-def D_inter (c₁ c₂ : ℕ) : ℕ := appendListCode c₁ c₂
 
 variable (P qChar cons)
 

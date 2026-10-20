@@ -10,6 +10,30 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.master
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.twelve
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.two
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.memSet
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.neighborhoodSystem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.bot
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.elemTwelve
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.elemTwo
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.Token
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.mem_master
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.mem_twelve
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.mem_two
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.mem_iff
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.master_not_subset_twelve
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.master_not_subset_two
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.twelve_not_subset_two
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.eq_of_master_subset
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.master_inter
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.inter_master
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.twelve_inter_two
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.two_inter_twelve
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.inter_eq
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example13.twelve_inter_two
 
 @[expose] public section
 
@@ -29,42 +53,13 @@ This is a concrete finite computation (`fin_cases`/`simp`); footprint
 
 namespace DomainTheory.NeighbourhoodSystems.Example13
 
-/-- Tokens for Example 1.3: `Δ = {0, 1, 2}`. -/
-abbrev Token := Fin 3
 
-/-- The master neighbourhood `Δ = {0, 1, 2}`. -/
-def master : Set Token := Set.univ
 
-/-- The neighbourhood `{1, 2}`. -/
-def twelve : Set Token := (insert 2 {1} : Set Token)
 
-/-- The neighbourhood `{2}`. -/
-def two : Set Token := {2}
 
-/-- The three neighbourhoods of Example 1.3. -/
-def memSet : Set (Set Token) := {master, twelve, two}
 
-/-- Membership in the neighbourhood system `𝒟` of Example 1.3. -/
-def mem (X : Set Token) : Prop := X ∈ memSet
 
-theorem mem_master : mem master := by simp [mem, memSet, master, twelve, two]
-theorem mem_twelve : mem twelve := by simp [mem, memSet, master, twelve, two]
-theorem mem_two : mem two := by simp [mem, memSet, master, twelve, two]
 
-/-- A neighbourhood of Example 1.3 is exactly one of `Δ`, `{1,2}`, or `{2}`. -/
-theorem mem_iff (X : Set Token) : mem X ↔ X = master ∨ X = twelve ∨ X = two := by
-  constructor
-  · intro h
-    simp [mem, memSet, master, twelve, two] at h
-    rcases h with rfl | rfl | rfl
-    · exact Or.inl rfl
-    · exact Or.inr (Or.inl rfl)
-    · exact Or.inr (Or.inr rfl)
-  · intro h
-    rcases h with rfl | rfl | rfl
-    · exact mem_master
-    · exact mem_twelve
-    · exact mem_two
 
 theorem twelve_ne_master : twelve ≠ master := by
   intro h
@@ -87,145 +82,24 @@ theorem two_ne_twelve : two ≠ twelve := by
     simp [twelve]
   simp [two] at hmem
 
-private theorem master_not_subset_twelve : ¬master ⊆ twelve := by
-  intro h
-  have : (0 : Token) ∈ twelve := h (by simp [master])
-  simp [twelve] at this
 
-private theorem master_not_subset_two : ¬master ⊆ two := by
-  intro h
-  have : (0 : Token) ∈ two := h (by simp [master])
-  simp [two] at this
 
-private theorem twelve_not_subset_two : ¬twelve ⊆ two := by
-  intro h
-  have : (1 : Token) ∈ two := h (by simp [twelve])
-  simp [two] at this
 
-private theorem eq_of_master_subset {Y : Set Token} (h : mem Y) (hsub : master ⊆ Y) : Y = master := by
-  rcases (mem_iff Y).mp h with rfl | htwelve | htwo
-  · rfl
-  · exact absurd htwelve (fun h' => master_not_subset_twelve (h' ▸ hsub))
-  · exact absurd htwo (fun h' => master_not_subset_two (h' ▸ hsub))
 
-private theorem master_inter (A : Set Token) : master ∩ A = A := by
-  rw [master]; exact Set.univ_inter A
 
-private theorem inter_master (A : Set Token) : A ∩ master = A := by
-  rw [master]; exact Set.inter_univ A
 
-private theorem twelve_inter_two : twelve ∩ two = two := by
-  ext t
-  fin_cases t <;> simp [twelve, two]
 
-private theorem two_inter_twelve : two ∩ twelve = two := by
-  ext t
-  fin_cases t <;> simp [twelve, two]
 
-private theorem inter_eq (X Y : Set Token) (h : mem X) (h' : mem Y) :
-    X ∩ Y = master ∨ X ∩ Y = twelve ∨ X ∩ Y = two := by
-  rcases (mem_iff X).mp h with rfl | rfl | rfl <;>
-    rcases (mem_iff Y).mp h' with rfl | rfl | rfl
-  · exact Or.inl (master_inter _)
-  · exact Or.inr (Or.inl (master_inter _))
-  · exact Or.inr (Or.inr (master_inter _))
-  · exact Or.inr (Or.inl (inter_master _))
-  · exact Or.inr (Or.inl (Set.inter_self _))
-  · exact Or.inr (Or.inr (twelve_inter_two))
-  · exact Or.inr (Or.inr (inter_master _))
-  · exact Or.inr (Or.inr (two_inter_twelve))
-  · exact Or.inr (Or.inr (Set.inter_self _))
 
-/-- **Example 1.3.** The neighbourhood system on `Δ = {0, 1, 2}`. -/
-def neighborhoodSystem : NeighborhoodSystem Token where
-  mem := mem
-  master := master
-  master_nonempty := Set.univ_nonempty
-  master_mem := mem_master
-  sub_master := fun _ => Set.subset_univ _
-  inter_mem := by
-    intro X Y Z hX hY hZ hZsub
-    rcases inter_eq X Y hX hY with h | h | h
-    · rw [h]; exact mem_master
-    · rw [h]; exact mem_twelve
-    · rw [h]; exact mem_two
 
 namespace neighborhoodSystem
 
 open NeighborhoodSystem
 
-/-- The bottom element `⊥ = {Δ}`. -/
-def bot : neighborhoodSystem.Element where
-  mem X := X = master
-  sub h := by rw [h]; exact mem_master
-  master_mem := rfl
-  inter_mem := by
-    intro X Y hX hY
-    rw [hX, hY, master_inter]
-  up_mem := by
-    intro X Y hX hY hXY
-    rw [hX] at hXY
-    exact eq_of_master_subset hY hXY
 
-/-- The intermediate partial element `{Δ, {1,2}}`. -/
-def elemTwelve : neighborhoodSystem.Element where
-  mem X := X = master ∨ X = twelve
-  sub h := by
-    rcases h with rfl | rfl
-    · exact mem_master
-    · exact mem_twelve
-  master_mem := Or.inl rfl
-  inter_mem := by
-    intro X Y hX hY
-    rcases hX with rfl | rfl <;> rcases hY with rfl | rfl
-    · exact Or.inl (master_inter _)
-    · exact Or.inr (master_inter _)
-    · exact Or.inr (inter_master _)
-    · exact Or.inr (Set.inter_self _)
-  up_mem := by
-    intro X Y hX hY hXY
-    rcases hX with rfl | rfl
-    · exact Or.inl (eq_of_master_subset hY hXY)
-    · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-      · exact Or.inl rfl
-      · exact Or.inr rfl
-      · exact absurd hXY twelve_not_subset_two
 
-/-- The total element `{Δ, {1,2}, {2}}`. -/
-def elemTwo : neighborhoodSystem.Element where
-  mem X := X = master ∨ X = twelve ∨ X = two
-  sub h := by
-    rcases h with rfl | rfl | rfl
-    · exact mem_master
-    · exact mem_twelve
-    · exact mem_two
-  master_mem := Or.inl rfl
-  inter_mem := by
-    intro X Y hX hY
-    rcases hX with rfl | rfl | rfl <;> rcases hY with rfl | rfl | rfl
-    · exact Or.inl (master_inter _)
-    · exact Or.inr (Or.inl (master_inter _))
-    · exact Or.inr (Or.inr (master_inter _))
-    · exact Or.inr (Or.inl (inter_master _))
-    · exact Or.inr (Or.inl (Set.inter_self _))
-    · exact Or.inr (Or.inr (twelve_inter_two))
-    · exact Or.inr (Or.inr (inter_master _))
-    · exact Or.inr (Or.inr (two_inter_twelve))
-    · exact Or.inr (Or.inr (Set.inter_self _))
-  up_mem := by
-    intro X Y hX hY hXY
-    rcases hX with rfl | rfl | rfl
-    · exact Or.inl (eq_of_master_subset hY hXY)
-    · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-      · exact Or.inl rfl
-      · exact Or.inr (Or.inl rfl)
-      · exact Or.inr (Or.inr rfl)
-    · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-      · exact Or.inl rfl
-      · exact Or.inr (Or.inl rfl)
-      · exact Or.inr (Or.inr rfl)
 
-private theorem two_subset_twelve : two ⊆ twelve := by
+theorem two_subset_twelve : two ⊆ twelve := by
   intro t ht
   fin_cases t <;> simp [two, twelve] at ht ⊢
 

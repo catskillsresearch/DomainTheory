@@ -1,0 +1,42 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+-/
+module
+
+public import Mathlib.Algebra.Ring.Parity
+import all Mathlib.Algebra.Ring.Parity
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Closures.IsClosure
+public import DomainTheory.DataTypesAsLattices.Closures.closureCompact
+public import DomainTheory.DataTypesAsLattices.Closures.closureCompact_isCompact
+public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff
+public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
+public import DomainTheory.DataTypesAsLattices.Closures.fixed_eq_sSup_compacts
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.DataTypesAsLattices
+
+/-- Theorem 5.1 packaged as a concrete countably algebraic lattice. -/
+def closureRangeCountablyAlgebraic (a : Pomega) (ha : IsClosure a) :
+    CountablyAlgebraic (Fixpoints (funOf a)) where
+  compact := closureCompact a ha
+  compact_isCompact := closureCompact_isCompact ha
+  compact_complete := fun x hx => (compact_fixed_iff ha x).mp hx
+  density := fun x => by
+    have hsets : {k | IsCompact k ∧ k ≤ x} = compactFixedBelow a x := by
+      ext k
+      constructor
+      · intro ⟨hk, hkx⟩
+        obtain ⟨n, hn⟩ := (compact_fixed_iff ha k).mp hk
+        exact ⟨⟨n, congrArg Subtype.val hn⟩, hkx⟩
+      · intro ⟨⟨n, hn⟩, hkx⟩
+        exact ⟨(compact_fixed_iff ha k).mpr ⟨n, Subtype.ext hn⟩, hkx⟩
+    rw [hsets]
+    exact (fixed_eq_sSup_compacts ha x).2
+
+end DomainTheory.DataTypesAsLattices

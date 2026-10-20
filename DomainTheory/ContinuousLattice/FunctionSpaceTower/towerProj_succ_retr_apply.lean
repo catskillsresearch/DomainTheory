@@ -1,0 +1,47 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.ContinuousLattice.InverseLimits
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import Mathlib.Topology.Homeomorph.Defs
+import all Mathlib.Topology.Homeomorph.Defs
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.CLat
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerType
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.BasicInst5
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerType_zero
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.BasicInst8
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerToMap_coe
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.ContinuousLattice
+
+universe u
+
+attribute [instance] CLat.str
+
+section Tower
+
+variable (D₀ : CLat.{u})
+  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+
+/-- **Scott 1972, recursion before Theorem 4.4 (from Proposition 3.7).**
+`j_{n+1}(x') = jₙ ∘ x' ∘ iₙ`. -/
+theorem towerProj_succ_retr_apply (n : ℕ) (x' : towerType D₀ (n + 2)) (y : towerType D₀ n) :
+    ((towerProj D₀ j₀ (n + 1)).retr x') y
+      = (towerProj D₀ j₀ n).retr (x' ((towerProj D₀ j₀ n).incl y)) := rfl
+
+end Tower
+
+end DomainTheory.ContinuousLattice

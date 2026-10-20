@@ -10,6 +10,85 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.interList
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.funPair
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.funListOf
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.interFrom
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.idxchain
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.bitSelect
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.consUpd
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.consStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.consCharAt
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.appendStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.appendStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.appendCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.condSet
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.interYsStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.interYsIdx
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.funImpChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.funConsChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.subStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.subChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.botMap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.trivStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.trivialChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.Xenum
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.interIdx
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.consPairChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.eqEnumChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.interEqChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.funPresentation
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.interList_nil
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.funPair_fst
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.funPair_snd
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.funListOf_valid
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.bitSelect_nil
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.appendStp_eq
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.decodeList_appendStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.decodeList_foldl_appendStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.decodeList_appendCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.primrec_appendCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.stepFun_funListOf_appendCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.funListOf_cons
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.rel_interYs_funList
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.interYs_funList_mem_of_nonempty
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.stepFun_funListOf_subset_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.selectFn_isOne
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.decodeList_encodeList
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.mem_condSet
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.condSet_nil
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.condSet_subset
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.condSet_cons_pos
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.condSet_cons_neg
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.condSet_eq_interYs
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.condFoldl_spec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.interYsIdx_spec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.primrec_interYsStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.primrec_interYsIdx
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.andFoldl_eq_one_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.andFoldl_one
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.subChar_spec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.primrec_subStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.primrec_subChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.botMap_rel
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.stepFun_funListOf_eq_univ_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.trivialChar_spec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.primrec_trivStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.primrec_trivialChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.Xenum_pos
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.Xenum_neg
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.Xenum_mem
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.Xenum_nonempty
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.Xenum_inter_eq
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.consPairChar_spec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.primrec_consPairChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.primrec_interIdx
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.selectFn_mul_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.eqEnumChar_spec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.primrec_eqEnumChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.interEqChar_spec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.primrec_interEqChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.exists_funListOf
 
 @[expose] public section
 
@@ -48,13 +127,7 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
 
 /-! ### `interList` — the intersection of a finite list of neighbourhoods (with a base). -/
 
-/-- The intersection of the sets in `M`, taken inside the base set `base` (so the empty list gives
-`base`, matching the convention 1.1a where the empty intersection is `Δ`). -/
-def interList (base : Set β) : List (Set β) → Set β
-  | [] => base
-  | Y :: M => Y ∩ interList base M
 
-@[simp] theorem interList_nil (base : Set β) : interList base [] = base := rfl
 
 theorem interList_cons (base : Set β) (Y : Set β) (M : List (Set β)) :
     interList base (Y :: M) = Y ∩ interList base M := rfl
@@ -122,21 +195,9 @@ builds the least map `leastMap`; its consistency hypothesis is discharged input-
 
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
-/-- The step pair coded by an entry `e`: `(X_{e.unpair.1}, Y_{e.unpair.2})`. -/
-def funPair (e : ℕ) : Set α × Set β := (P₀.X e.unpair.1, P₁.X e.unpair.2)
 
-@[simp] theorem funPair_fst (e : ℕ) : (funPair P₀ P₁ e).1 = P₀.X e.unpair.1 := rfl
-@[simp] theorem funPair_snd (e : ℕ) : (funPair P₀ P₁ e).2 = P₁.X e.unpair.2 := rfl
 
-/-- The list of step pairs coded by an entry-list `el`. -/
-def funListOf (el : List ℕ) : List (Set α × Set β) := el.map (funPair P₀ P₁)
 
-theorem funListOf_valid (el : List ℕ) :
-    ∀ p ∈ funListOf P₀ P₁ el, V₀.mem p.1 ∧ V₁.mem p.2 := by
-  intro p hp
-  rw [funListOf, List.mem_map] at hp
-  obtain ⟨e, _, rfl⟩ := hp
-  exact ⟨P₀.mem_X _, P₁.mem_X _⟩
 
 /-- **Proposition 3.9(i) (Scott 1981, PRG-19), over coded entry-lists — choice-free.** The
 function-space neighbourhood `⋂[X_{eᵢ}, Y_{eᵢ}]` coded by `el` is non-empty iff for every
@@ -229,11 +290,6 @@ section ConsChain
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-/-- The running intersection of `A` with the neighbourhoods `X_j` (`j ∈ js`), left-accumulated to
-match `List.foldl`. -/
-def interFrom (A : Set α) : List ℕ → Set α
-  | [] => A
-  | j :: js => interFrom (A ∩ P.X j) js
 
 theorem mem_interFrom {A : Set α} {js : List ℕ} {z : α} :
     z ∈ interFrom P A js ↔ z ∈ A ∧ ∀ j ∈ js, z ∈ P.X j := by
@@ -281,8 +337,6 @@ theorem interFrom_eq_of_foldl : ∀ (js : List ℕ) (A : Set α) (a : ℕ),
     rw [List.foldl_cons, interFrom]
     exact interFrom_eq_of_foldl js (A ∩ P.X j) (P.inter a j) hXinter hAXj hmem'
 
-/-- The `inter`-chain index of `js`: `inter`-fold from `masterIdx`. -/
-def idxchain (js : List ℕ) : ℕ := js.foldl (fun acc j => P.inter acc j) P.masterIdx
 
 /-- When `js` is consistent, the `inter`-chain index genuinely indexes `⋂{X_j ∣ j ∈ js}`. -/
 theorem idxchain_spec {js : List ℕ} (h : V.mem (interFrom P V.master js)) :
@@ -300,12 +354,7 @@ universal statement over sublists is a *bounded* universal statement over bitmas
 (`forall_sublist_iff_forall_bitmask`) — and bounded-`∀` of a recursively decidable predicate is
 recursively decidable (`RecDecidable.bForall`). All choice-free. -/
 
-/-- The sublist of `L` selected by the bitmask `b` (low bit = head). -/
-def bitSelect : List ℕ → ℕ → List ℕ
-  | [], _ => []
-  | e :: L, b => if b % 2 = 1 then e :: bitSelect L (b / 2) else bitSelect L (b / 2)
 
-@[simp] theorem bitSelect_nil (b : ℕ) : bitSelect [] b = [] := rfl
 
 theorem bitSelect_cons (e : ℕ) (L : List ℕ) (b : ℕ) :
     bitSelect (e :: L) b =
@@ -365,14 +414,6 @@ section ConsFold
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
-/-- One fold step (see the section doc). `projFn` extracts the relevant component index from an
-entry; `fc` is `P.cons_computable`'s `{0,1}` consistency tester. -/
-def consUpd (projFn fc : ℕ → ℕ) (s x : ℕ) : ℕ :=
-  selectFn (s.unpair.1 % 2)
-    (Nat.pair (s.unpair.1 / 2)
-      (Nat.pair (P.inter s.unpair.2.unpair.1 (projFn x))
-        (selectFn s.unpair.2.unpair.2 (isOne (fc (Nat.pair s.unpair.2.unpair.1 (projFn x)))) 0)))
-    (Nat.pair (s.unpair.1 / 2) (Nat.pair s.unpair.2.unpair.1 s.unpair.2.unpair.2))
 
 theorem consUpd_eval (projFn fc : ℕ → ℕ) (b idx flag x : ℕ) :
     consUpd P projFn fc (Nat.pair b (Nat.pair idx flag)) x =
@@ -447,16 +488,7 @@ theorem consUpd_foldl_spec (projFn fc : ℕ → ℕ)
     · rw [ite_eq_right hb, show b % 2 = 0 by omega, selectFn_zero]
       exact ih (b / 2) a
 
-/-- `foldCode`-shaped wrapper of `consUpd` (state lives in `w.unpair.2.unpair.1`, entry in
-`w.unpair.1`). -/
-def consStp (projFn fc : ℕ → ℕ) (w : ℕ) : ℕ :=
-  consUpd P projFn fc w.unpair.2.unpair.1 w.unpair.1
 
-/-- The `{0,1}` characteristic function of the bitmask-selected-sublist consistency test, packaged
-through `foldCode` so it is primitive recursive. Input `w = pair b c` (bitmask `b`, list code `c`). -/
-def consCharAt (projFn fc : ℕ → ℕ) (w : ℕ) : ℕ :=
-  (foldCode (consStp P projFn fc) 0 (Nat.pair w.unpair.1 (Nat.pair P.masterIdx 1))
-    w.unpair.2).unpair.2.unpair.2
 
 theorem consCharAt_spec (projFn fc : ℕ → ℕ)
     (hfc : ∀ s, fc s = 1 ↔ ∃ k, P.X k ⊆ P.X s.unpair.1 ∩ P.X s.unpair.2) (w : ℕ) :
@@ -620,56 +652,14 @@ fold one code onto another (prepending each entry), giving `appendCode a b` whos
 `(decodeList b).reverse ++ decodeList a`; since `stepFun` is an *intersection* (order- and
 duplicate-invariant), this codes `X a ∩ X b` regardless of the reversal. All choice-free. -/
 
-/-- Prepend the entry `x` onto the list coded by `acc`. -/
-def appendStep (acc x : ℕ) : ℕ := Nat.pair x acc + 1
 
-/-- `foldCode`-shaped wrapper of `appendStep`. -/
-def appendStp (w : ℕ) : ℕ := appendStep w.unpair.2.unpair.1 w.unpair.1
 
-theorem appendStp_eq (x acc : ℕ) : appendStp (Nat.pair x (Nat.pair acc 0)) = appendStep acc x := by
-  unfold appendStp; simp only [unpair_pair_fst, unpair_pair_snd]
 
-theorem decodeList_appendStep (acc x : ℕ) :
-    decodeList (appendStep acc x) = x :: decodeList acc := by
-  unfold appendStep; rw [decodeList_succ, unpair_pair_fst, unpair_pair_snd]
 
-theorem decodeList_foldl_appendStp (el : List ℕ) (acc : ℕ) :
-    decodeList (List.foldl (fun acc x => appendStp (Nat.pair x (Nat.pair acc 0))) acc el)
-      = el.reverse ++ decodeList acc := by
-  induction el generalizing acc with
-  | nil => simp
-  | cons e el ih =>
-    rw [List.foldl_cons, ih, appendStp_eq, decodeList_appendStep, List.reverse_cons,
-      List.append_assoc, List.singleton_append]
 
-/-- **`appendCode a b`** codes `(decodeList b).reverse ++ decodeList a`. -/
-def appendCode (a b : ℕ) : ℕ := foldCode appendStp 0 a b
 
-theorem decodeList_appendCode (a b : ℕ) :
-    decodeList (appendCode a b) = (decodeList b).reverse ++ decodeList a := by
-  unfold appendCode; rw [foldCode_eq']; exact decodeList_foldl_appendStp (decodeList b) a
 
-theorem primrec_appendCode : Nat.Primrec (fun t => appendCode t.unpair.1 t.unpair.2) := by
-  have hstp : Nat.Primrec appendStp :=
-    (primrec_add₂ (Nat.Primrec.left.pair (Nat.Primrec.left.comp Nat.Primrec.right))
-      (Nat.Primrec.const 1)).of_eq (fun w => rfl)
-  exact (primrec_foldCode hstp (Nat.Primrec.const 0) Nat.Primrec.left Nat.Primrec.right).of_eq
-    (fun t => rfl)
 
-/-- `stepFun (funListOf (decodeList (appendCode a b)))` is exactly `X a ∩ X b` at the level of the
-underlying step-intersections. -/
-theorem stepFun_funListOf_appendCode (a b : ℕ) :
-    (stepFun (funListOf P₀ P₁ (decodeList (appendCode a b))) : Set (ApproximableMap V₀ V₁)) =
-      stepFun (funListOf P₀ P₁ (decodeList a)) ∩ stepFun (funListOf P₀ P₁ (decodeList b)) := by
-  ext f
-  rw [decodeList_appendCode]
-  simp only [funListOf, List.map_append, List.map_reverse, mem_stepFun, Set.mem_inter_iff,
-    List.mem_append, List.mem_reverse]
-  constructor
-  · intro h; exact ⟨fun p hp => h p (Or.inr hp), fun p hp => h p (Or.inl hp)⟩
-  · rintro ⟨ha, hb⟩ p (hp | hp)
-    · exact hb p hp
-    · exact ha p hp
 
 /-! ### Milestone 5 — the function-space inclusion characterization (choice-free).
 
@@ -679,75 +669,9 @@ needs `f.rel X' (interYs Δ₁ La X')` for arbitrary `f ∈ stepFun La` — the 
 this *classically* (`by_cases X' ⊆ Xᵢ`), so we **re-prove it choice-free** for the presented list
 `funListOf el`, replacing the case split by `P₀.incl_computable`'s recursive decidability (`.em`). -/
 
-theorem funListOf_cons (e : ℕ) (el : List ℕ) :
-    funListOf P₀ P₁ (e :: el) = funPair P₀ P₁ e :: funListOf P₀ P₁ el := rfl
 
-/-- **Choice-free `rel_interYs` for a presented list.** Any `f ∈ stepFun (funListOf el)` relates each
-`X₀_{n'}` to the intersection of the relevant outputs `interYs Δ₁ (funListOf el) (X₀_{n'})`. The
-case split on `X₀_{n'} ⊆ X₀_{e.1}` is discharged by `P₀.incl_computable.em` (no `Classical.choice`). -/
-theorem rel_interYs_funList {f : ApproximableMap V₀ V₁} {el : List ℕ}
-    (hf : f ∈ stepFun (funListOf P₀ P₁ el)) (n' : ℕ) :
-    f.rel (P₀.X n') (interYs V₁.master (funListOf P₀ P₁ el) (P₀.X n')) := by
-  induction el with
-  | nil =>
-    rw [funListOf, List.map_nil, interYs_nil]
-    exact f.mono f.master_rel (V₀.sub_master (P₀.mem_X n')) subset_rfl (P₀.mem_X n') V₁.master_mem
-  | cons e el ih =>
-    rw [funListOf_cons] at hf
-    have hftail : f ∈ stepFun (funListOf P₀ P₁ el) :=
-      fun p hp => hf p (List.mem_cons_of_mem _ hp)
-    have htail := ih hftail
-    rw [funListOf_cons]
-    rcases P₀.incl_computable.em (Nat.pair n' e.unpair.1) with hinc | hinc <;>
-      simp only [unpair_pair_fst, unpair_pair_snd] at hinc
-    · have hp : f.rel (P₀.X e.unpair.1) (P₁.X e.unpair.2) :=
-        hf (funPair P₀ P₁ e) (List.mem_cons.mpr (Or.inl rfl))
-      have hXp2 : f.rel (P₀.X n') (P₁.X e.unpair.2) :=
-        f.mono hp hinc subset_rfl (P₀.mem_X n') (f.rel_cod hp)
-      have heq : interYs V₁.master (funPair P₀ P₁ e :: funListOf P₀ P₁ el) (P₀.X n')
-          = P₁.X e.unpair.2 ∩ interYs V₁.master (funListOf P₀ P₁ el) (P₀.X n') := by
-        rw [interYs_cons]; ext z
-        simp only [Set.mem_inter_iff, Set.mem_ofPred_eq, funPair]
-        exact ⟨fun ⟨h1, h2⟩ => ⟨h1 hinc, h2⟩, fun ⟨h1, h2⟩ => ⟨fun _ => h1, h2⟩⟩
-      rw [heq]; exact f.inter_right hXp2 htail
-    · have heq : interYs V₁.master (funPair P₀ P₁ e :: funListOf P₀ P₁ el) (P₀.X n')
-          = interYs V₁.master (funListOf P₀ P₁ el) (P₀.X n') := by
-        rw [interYs_cons]; ext z
-        simp only [Set.mem_inter_iff, Set.mem_ofPred_eq, funPair]
-        exact ⟨fun h => h.2, fun h => ⟨fun hc => absurd hc hinc, h⟩⟩
-      rw [heq]; exact htail
 
-/-- If `stepFun (funListOf ea)` is non-empty, then `interYs Δ₁ (funListOf ea) X` is a neighbourhood of
-`𝒟₁` for every `X ∈ 𝒟₀` (the consistency hypothesis needed by `leastMap`). Choice-free. -/
-theorem interYs_funList_mem_of_nonempty {ea : List ℕ}
-    (h : (stepFun (funListOf P₀ P₁ ea) : Set (ApproximableMap V₀ V₁)).Nonempty)
-    {X : Set α} (hX : V₀.mem X) :
-    V₁.mem (interYs V₁.master (funListOf P₀ P₁ ea) X) := by
-  obtain ⟨n', hn'⟩ := P₀.surj hX
-  obtain ⟨f, hf⟩ := h
-  have hr := rel_interYs_funList P₀ P₁ hf n'
-  rw [hn'] at hr
-  exact f.rel_cod hr
 
-/-- **Function-space inclusion characterisation (choice-free).** With `ea` consistent (so the least
-map exists), `stepFun (funListOf ea) ⊆ stepFun (funListOf eb)` iff for every entry `e' ∈ eb`, the
-intersection of the `ea`-outputs relevant to the input `X₀_{e'.1}` is contained in `X₁_{e'.2}`. -/
-theorem stepFun_funListOf_subset_iff {ea eb : List ℕ}
-    (hcons : ∀ {X : Set α}, V₀.mem X → V₁.mem (interYs V₁.master (funListOf P₀ P₁ ea) X)) :
-    (stepFun (funListOf P₀ P₁ ea) : Set (ApproximableMap V₀ V₁)) ⊆ stepFun (funListOf P₀ P₁ eb) ↔
-      ∀ e' ∈ eb, interYs V₁.master (funListOf P₀ P₁ ea) (P₀.X e'.unpair.1) ⊆ P₁.X e'.unpair.2 := by
-  have hL : ∀ p ∈ funListOf P₀ P₁ ea, V₀.mem p.1 ∧ V₁.mem p.2 := funListOf_valid P₀ P₁ ea
-  constructor
-  · intro hsub e' he'
-    have hmem := hsub (leastMap_mem_stepFun hL hcons)
-    have hrel := hmem (funPair P₀ P₁ e') (List.mem_map.mpr ⟨e', he', rfl⟩)
-    exact (leastMap_rel.mp hrel).2.2
-  · intro hcond f hf p hp
-    rw [funListOf, List.mem_map] at hp
-    obtain ⟨e', he', rfl⟩ := hp
-    show f.rel (P₀.X e'.unpair.1) (P₁.X e'.unpair.2)
-    exact f.mono (rel_interYs_funList P₀ P₁ hf e'.unpair.1) subset_rfl (hcond e' he')
-      (P₀.mem_X _) (P₁.mem_X _)
 
 /-! ### Milestone 5b — the function-space inclusion / equality / consistency deciders.
 
@@ -756,24 +680,7 @@ function-space presentation. Two small generic facts first; then the `interYs`-i
 *conditional* `inter`-chain over `𝒟₁`, gated by the decidable `𝒟₀`-inclusion test); then the
 deciders themselves. All choice-free. -/
 
-/-- `selectFn` driven by `isOne` is a `Nat`-equality `if` (choice-free; `decEq` on `ℕ`). -/
-theorem selectFn_isOne (v a b : ℕ) : selectFn (isOne v) a b = if v = 1 then a else b := by
-  by_cases h : v = 1
-  · rw [ite_eq_left h, h, (isOne_eq_one_iff 1).mpr rfl, selectFn_one]
-  · rw [ite_eq_right h]
-    have h0 : isOne v = 0 := by
-      rcases (show isOne v = 0 ∨ isOne v = 1 from by have := isOne_le_one v; omega) with h0 | h1
-      · exact h0
-      · exact absurd ((isOne_eq_one_iff v).mp h1) h
-    rw [h0, selectFn_zero]
 
-/-- `decodeList` inverts `encodeList`: every list is the decoding of its code. -/
-theorem decodeList_encodeList (l : List ℕ) : decodeList (encodeList l) = l := by
-  induction l with
-  | nil => rw [show encodeList ([] : List ℕ) = 0 from rfl, decodeList_zero]
-  | cons a l ih =>
-    rw [show encodeList (a :: l) = Nat.pair a (encodeList l) + 1 from rfl,
-      decodeList_succ, unpair_pair_fst, unpair_pair_snd, ih]
 
 /-! #### The `interYs`-index fold: a conditional `inter`-chain over `𝒟₁`.
 
@@ -784,146 +691,18 @@ it by folding `P₁.inter` over `decodeList a`, intersecting at an entry exactly
 inclusion test fires. `condSet k A el` is the running set; `interYsFoldl_spec` is the index
 correctness (when the result is consistent), mirroring `interFrom_eq_of_foldl`. -/
 
-/-- The running set of the conditional `inter`-chain: `A` intersected with the outputs `X₁_{e.2}` of
-the entries `e ∈ el` whose input dominates `X₀_k`. -/
-def condSet (k : ℕ) (A : Set β) (el : List ℕ) : Set β :=
-  {z | z ∈ A ∧ ∀ e ∈ el, P₀.X k ⊆ P₀.X e.unpair.1 → z ∈ P₁.X e.unpair.2}
 
-theorem mem_condSet {k : ℕ} {A : Set β} {el : List ℕ} {z : β} :
-    z ∈ condSet P₀ P₁ k A el ↔ z ∈ A ∧ ∀ e ∈ el, P₀.X k ⊆ P₀.X e.unpair.1 → z ∈ P₁.X e.unpair.2 :=
-  Iff.rfl
 
-theorem condSet_nil (k : ℕ) (A : Set β) : condSet P₀ P₁ k A [] = A := by
-  ext z; simp [condSet]
 
-theorem condSet_subset (k : ℕ) (A : Set β) (el : List ℕ) : condSet P₀ P₁ k A el ⊆ A :=
-  fun _ hz => hz.1
 
-/-- `condSet` cons-step when the input dominates the head entry's input: intersect `A` with the
-head's output. -/
-theorem condSet_cons_pos {k : ℕ} {A : Set β} {e : ℕ} {el : List ℕ}
-    (h : P₀.X k ⊆ P₀.X e.unpair.1) :
-    condSet P₀ P₁ k A (e :: el) = condSet P₀ P₁ k (A ∩ P₁.X e.unpair.2) el := by
-  ext z
-  simp only [mem_condSet, List.mem_cons, Set.mem_inter_iff]
-  constructor
-  · rintro ⟨hzA, hall⟩
-    exact ⟨⟨hzA, hall e (Or.inl rfl) h⟩, fun e' he' hsub => hall e' (Or.inr he') hsub⟩
-  · rintro ⟨⟨hzA, hzE⟩, hall⟩
-    exact ⟨hzA, fun e' he' hsub => he'.elim (fun heq => heq ▸ hzE) (fun hmem => hall e' hmem hsub)⟩
 
-/-- `condSet` cons-step when the input does not dominate the head entry's input: drop the head. -/
-theorem condSet_cons_neg {k : ℕ} {A : Set β} {e : ℕ} {el : List ℕ}
-    (h : ¬ P₀.X k ⊆ P₀.X e.unpair.1) :
-    condSet P₀ P₁ k A (e :: el) = condSet P₀ P₁ k A el := by
-  ext z
-  simp only [mem_condSet, List.mem_cons]
-  constructor
-  · rintro ⟨hzA, hall⟩
-    exact ⟨hzA, fun e' he' hsub => hall e' (Or.inr he') hsub⟩
-  · rintro ⟨hzA, hall⟩
-    exact ⟨hzA, fun e' he' hsub => he'.elim (fun heq => absurd (heq ▸ hsub) h) (fun hmem => hall e' hmem hsub)⟩
 
-/-- `condSet k Δ₁ el` is exactly `interYs Δ₁ (funListOf el) (X₀_k)`. -/
-theorem condSet_eq_interYs (k : ℕ) (el : List ℕ) :
-    condSet P₀ P₁ k V₁.master el = interYs V₁.master (funListOf P₀ P₁ el) (P₀.X k) := by
-  ext z
-  rw [mem_interYs, mem_condSet]
-  constructor
-  · rintro ⟨hz, hall⟩
-    refine ⟨hz, ?_⟩
-    intro p hp hsub
-    rw [funListOf, List.mem_map] at hp
-    obtain ⟨e, he, rfl⟩ := hp
-    exact hall e he hsub
-  · rintro ⟨hz, hall⟩
-    exact ⟨hz, fun e he hsub => hall (funPair P₀ P₁ e) (List.mem_map.mpr ⟨e, he, rfl⟩) hsub⟩
 
-/-- One step of the `interYs`-index fold. State `pair entry (pair acc k)`: entry `e = w.unpair.1`,
-running `𝒟₁`-index `acc = w.unpair.2.unpair.1`, input index `k = w.unpair.2.unpair.2` (the
-`foldCode` parameter). Intersects `acc` with `e`'s output index when the inclusion test fires. -/
-def interYsStp (incl0 : ℕ → ℕ) (w : ℕ) : ℕ :=
-  selectFn (isOne (incl0 (Nat.pair w.unpair.2.unpair.2 w.unpair.1.unpair.1)))
-    (P₁.inter w.unpair.2.unpair.1 w.unpair.1.unpair.2) w.unpair.2.unpair.1
 
-/-- The index of `interYs Δ₁ (funListOf (decodeList a)) (X₀_k)`: a conditional `inter`-fold over
-`decodeList a` from `masterIdx`, with `k` carried as the `foldCode` parameter. -/
-def interYsIdx (incl0 : ℕ → ℕ) (a k : ℕ) : ℕ :=
-  foldCode (interYsStp P₁ incl0) k P₁.masterIdx a
 
-/-- Correctness of the conditional `inter`-fold (`if`-form). When the running set is consistent, the
-fold computes an index of it, by induction with `inter_spec` (mirrors `interFrom_eq_of_foldl`). -/
-theorem condFoldl_spec (incl0 : ℕ → ℕ)
-    (hincl0 : ∀ s, incl0 s = 1 ↔ P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2) (k : ℕ) :
-    ∀ (el : List ℕ) (A : Set β) (a : ℕ), P₁.X a = A → V₁.mem A →
-      V₁.mem (condSet P₀ P₁ k A el) →
-      P₁.X (List.foldl (fun acc x => if incl0 (Nat.pair k x.unpair.1) = 1
-              then P₁.inter acc x.unpair.2 else acc) a el) = condSet P₀ P₁ k A el
-  | [], A, a, hXa, _, _ => by rw [List.foldl_nil, condSet_nil]; exact hXa
-  | e :: el, A, a, hXa, hA, hcons => by
-    rw [List.foldl_cons]
-    by_cases hpred : incl0 (Nat.pair k e.unpair.1) = 1
-    · rw [ite_eq_left hpred]
-      have hincl : P₀.X k ⊆ P₀.X e.unpair.1 := by
-        have h := (hincl0 (Nat.pair k e.unpair.1)).mp hpred
-        rwa [unpair_pair_fst, unpair_pair_snd] at h
-      rw [condSet_cons_pos P₀ P₁ hincl] at hcons ⊢
-      have hwit : V₁.mem (A ∩ P₁.X e.unpair.2) :=
-        V₁.inter_mem hA (P₁.mem_X _) hcons (condSet_subset P₀ P₁ k (A ∩ P₁.X e.unpair.2) el)
-      have hk : ∃ j, P₁.X j ⊆ P₁.X a ∩ P₁.X e.unpair.2 := by
-        obtain ⟨j, hj⟩ := P₁.surj hwit; exact ⟨j, by rw [hj, hXa]⟩
-      have hXinter : P₁.X (P₁.inter a e.unpair.2) = A ∩ P₁.X e.unpair.2 := by
-        rw [P₁.inter_spec hk, hXa]
-      exact condFoldl_spec incl0 hincl0 k el (A ∩ P₁.X e.unpair.2) (P₁.inter a e.unpair.2)
-        hXinter hwit hcons
-    · rw [ite_eq_right hpred]
-      have hincl : ¬ P₀.X k ⊆ P₀.X e.unpair.1 := fun hc =>
-        hpred ((hincl0 (Nat.pair k e.unpair.1)).mpr (by rwa [unpair_pair_fst, unpair_pair_snd]))
-      rw [condSet_cons_neg P₀ P₁ hincl] at hcons ⊢
-      exact condFoldl_spec incl0 hincl0 k el A a hXa hA hcons
 
-/-- **`interYsIdx` indexes `interYs Δ₁ (funListOf (decodeList a)) (X₀_k)`** (when that is consistent,
-which it is whenever `stepFun (funListOf (decodeList a))` is non-empty). Choice-free. -/
-theorem interYsIdx_spec (incl0 : ℕ → ℕ)
-    (hincl0 : ∀ s, incl0 s = 1 ↔ P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2) (a k : ℕ)
-    (hcons : V₁.mem (interYs V₁.master (funListOf P₀ P₁ (decodeList a)) (P₀.X k))) :
-    P₁.X (interYsIdx P₁ incl0 a k)
-      = interYs V₁.master (funListOf P₀ P₁ (decodeList a)) (P₀.X k) := by
-  unfold interYsIdx
-  rw [foldCode_eq']
-  have hstep : (fun acc x => interYsStp P₁ incl0 (Nat.pair x (Nat.pair acc k)))
-      = (fun acc x => if incl0 (Nat.pair k x.unpair.1) = 1
-            then P₁.inter acc x.unpair.2 else acc) := by
-    funext acc x
-    show interYsStp P₁ incl0 (Nat.pair x (Nat.pair acc k)) = _
-    unfold interYsStp
-    simp only [unpair_pair_fst, unpair_pair_snd]
-    exact selectFn_isOne _ _ _
-  rw [hstep]
-  rw [← condSet_eq_interYs P₀ P₁ k (decodeList a)] at hcons ⊢
-  exact condFoldl_spec P₀ P₁ incl0 hincl0 k (decodeList a) V₁.master P₁.masterIdx
-    P₁.masterIdx_spec V₁.master_mem hcons
 
-theorem primrec_interYsStp (incl0 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0) :
-    Nat.Primrec (interYsStp P₁ incl0) := by
-  have he1 : Nat.Primrec (fun w : ℕ => w.unpair.1.unpair.1) :=
-    Nat.Primrec.left.comp Nat.Primrec.left
-  have he2 : Nat.Primrec (fun w : ℕ => w.unpair.1.unpair.2) :=
-    Nat.Primrec.right.comp Nat.Primrec.left
-  have hacc : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
-    Nat.Primrec.left.comp Nat.Primrec.right
-  have hk : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.2) :=
-    Nat.Primrec.right.comp Nat.Primrec.right
-  have hcond := primrec_isOne.comp (hincl0p.comp (hk.pair he1))
-  have hinter := P₁.inter_primrec.comp (hacc.pair he2)
-  refine (primrec_selectFn hcond hinter hacc).of_eq (fun w => ?_)
-  unfold interYsStp
-  simp only [unpair_pair_fst, unpair_pair_snd]
 
-theorem primrec_interYsIdx (incl0 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0) :
-    Nat.Primrec (fun t => interYsIdx P₁ incl0 t.unpair.1 t.unpair.2) :=
-  (primrec_foldCode (primrec_interYsStp P₁ incl0 hincl0p) Nat.Primrec.right
-    (Nat.Primrec.const P₁.masterIdx) Nat.Primrec.left).of_eq (fun _ => rfl)
 
 /-! #### A concrete `{0,1}` characteristic function for function-space consistency.
 
@@ -939,14 +718,7 @@ theorem selectFn_one_iff_imp {A B : ℕ} (hA : A ≤ 1) :
   · rw [selectFn_zero]; simp
   · rw [selectFn_one]; simp
 
-/-- The per-bitmask implication char: `cons₀(selected inputs) → cons₁(selected outputs)`. -/
-def funImpChar (fc0 fc1 : ℕ → ℕ) (w : ℕ) : ℕ :=
-  selectFn (isOne (consCharAt P₀ (fun e => e.unpair.1) fc0 w))
-    (isOne (consCharAt P₁ (fun e => e.unpair.2) fc1 w)) 1
 
-/-- The concrete `{0,1}` characteristic function of function-space consistency. -/
-def funConsChar (fc0 fc1 : ℕ → ℕ) (c : ℕ) : ℕ :=
-  bForallFn (funImpChar P₀ P₁ fc0 fc1) c (2 ^ c)
 
 theorem funConsChar_spec (fc0 fc1 : ℕ → ℕ)
     (hfc0 : ∀ s, fc0 s = 1 ↔ ∃ k, P₀.X k ⊆ P₀.X s.unpair.1 ∩ P₀.X s.unpair.2)
@@ -986,371 +758,44 @@ theorem primrec_funConsChar (fc0 fc1 : ℕ → ℕ) (hfc0p : Nat.Primrec fc0) (h
 
 /-! #### A generic list-`AND` and the `stepFun`-inclusion decider `subChar`. -/
 
-/-- A `{0,1}` left-fold `AND` of `isOne ∘ g` over a list, started from `a ∈ {0,1}`. -/
-theorem andFoldl_eq_one_iff (g : ℕ → ℕ) :
-    ∀ (el : List ℕ) (a : ℕ), a ≤ 1 →
-      (List.foldl (fun acc x => selectFn acc (isOne (g x)) 0) a el = 1 ↔
-        a = 1 ∧ ∀ e ∈ el, g e = 1)
-  | [], a, _ => by simp
-  | e :: el, a, ha => by
-    rw [List.foldl_cons]
-    have hstep : selectFn a (isOne (g e)) 0 ≤ 1 := by
-      rcases (show a = 0 ∨ a = 1 by omega) with h | h <;> subst h
-      · rw [selectFn_zero]; exact Nat.zero_le 1
-      · rw [selectFn_one]; exact isOne_le_one _
-    rw [andFoldl_eq_one_iff g el _ hstep]
-    rcases (show a = 0 ∨ a = 1 by omega) with h | h <;> subst h
-    · rw [selectFn_zero]; simp
-    · rw [selectFn_one, List.forall_mem_cons, isOne_eq_one_iff]
-      constructor
-      · rintro ⟨hge, hall⟩; exact ⟨rfl, hge, hall⟩
-      · rintro ⟨_, hge, hall⟩; exact ⟨hge, hall⟩
 
-theorem andFoldl_one (g : ℕ → ℕ) (el : List ℕ) :
-    List.foldl (fun acc x => selectFn acc (isOne (g x)) 0) 1 el = 1 ↔ ∀ e ∈ el, g e = 1 := by
-  rw [andFoldl_eq_one_iff g el 1 (le_refl 1)]; simp
 
-/-- One step of the `stepFun`-inclusion fold over `decodeList b`: test `interYs-index ⊆ output`. -/
-def subStp (incl0 incl1 : ℕ → ℕ) (w : ℕ) : ℕ :=
-  selectFn w.unpair.2.unpair.1
-    (isOne (incl1 (Nat.pair (interYsIdx P₁ incl0 w.unpair.2.unpair.2 w.unpair.1.unpair.1)
-      w.unpair.1.unpair.2))) 0
 
-/-- The `{0,1}` characteristic function of `stepFun (funListOf (decodeList a)) ⊆ stepFun (funListOf
-(decodeList b))` (correct when `a` is consistent). `a` is the `foldCode` parameter, `b` the code. -/
-def subChar (incl0 incl1 : ℕ → ℕ) (a b : ℕ) : ℕ := foldCode (subStp P₁ incl0 incl1) a 1 b
 
-theorem subChar_spec (incl0 incl1 : ℕ → ℕ)
-    (hincl0 : ∀ s, incl0 s = 1 ↔ P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2)
-    (hincl1 : ∀ s, incl1 s = 1 ↔ P₁.X s.unpair.1 ⊆ P₁.X s.unpair.2)
-    {a : ℕ}
-    (hane : (stepFun (funListOf P₀ P₁ (decodeList a)) : Set (ApproximableMap V₀ V₁)).Nonempty)
-    (b : ℕ) :
-    subChar P₁ incl0 incl1 a b = 1 ↔
-      (stepFun (funListOf P₀ P₁ (decodeList a)) : Set (ApproximableMap V₀ V₁)) ⊆
-        stepFun (funListOf P₀ P₁ (decodeList b)) := by
-  have hcons : ∀ {X : Set α},
-      V₀.mem X → V₁.mem (interYs V₁.master (funListOf P₀ P₁ (decodeList a)) X) :=
-    fun {X} hX => interYs_funList_mem_of_nonempty P₀ P₁ hane hX
-  rw [stepFun_funListOf_subset_iff P₀ P₁ hcons]
-  unfold subChar
-  rw [foldCode_eq']
-  have hstep : (fun acc x => subStp P₁ incl0 incl1 (Nat.pair x (Nat.pair acc a)))
-      = (fun acc x => selectFn acc
-          (isOne (incl1 (Nat.pair (interYsIdx P₁ incl0 a x.unpair.1) x.unpair.2))) 0) := by
-    funext acc x
-    show subStp P₁ incl0 incl1 (Nat.pair x (Nat.pair acc a)) = _
-    unfold subStp
-    simp only [unpair_pair_fst, unpair_pair_snd]
-  rw [hstep, andFoldl_one (fun x => incl1 (Nat.pair (interYsIdx P₁ incl0 a x.unpair.1) x.unpair.2))]
-  refine forall_congr' (fun e' => ?_)
-  refine imp_congr_right (fun he' => ?_)
-  rw [hincl1]
-  simp only [unpair_pair_fst, unpair_pair_snd]
-  rw [interYsIdx_spec P₀ P₁ incl0 hincl0 a e'.unpair.1 (hcons (P₀.mem_X e'.unpair.1))]
 
-theorem primrec_subStp (incl0 incl1 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0)
-    (hincl1p : Nat.Primrec incl1) : Nat.Primrec (subStp P₁ incl0 incl1) := by
-  have hflag : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
-    Nat.Primrec.left.comp Nat.Primrec.right
-  have ha : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.2) :=
-    Nat.Primrec.right.comp Nat.Primrec.right
-  have hk : Nat.Primrec (fun w : ℕ => w.unpair.1.unpair.1) :=
-    Nat.Primrec.left.comp Nat.Primrec.left
-  have he2 : Nat.Primrec (fun w : ℕ => w.unpair.1.unpair.2) :=
-    Nat.Primrec.right.comp Nat.Primrec.left
-  have hidx : Nat.Primrec
-      (fun w : ℕ => interYsIdx P₁ incl0 w.unpair.2.unpair.2 w.unpair.1.unpair.1) :=
-    ((primrec_interYsIdx P₁ incl0 hincl0p).comp (ha.pair hk)).of_eq (fun w => by
-      show interYsIdx P₁ incl0 (Nat.pair w.unpair.2.unpair.2 w.unpair.1.unpair.1).unpair.1
-        (Nat.pair w.unpair.2.unpair.2 w.unpair.1.unpair.1).unpair.2 = _
-      rw [unpair_pair_fst, unpair_pair_snd])
-  have hincl := hincl1p.comp (hidx.pair he2)
-  refine (primrec_selectFn hflag (primrec_isOne.comp hincl) (Nat.Primrec.const 0)).of_eq (fun w => ?_)
-  unfold subStp
-  rfl
 
-theorem primrec_subChar (incl0 incl1 : ℕ → ℕ) (hincl0p : Nat.Primrec incl0)
-    (hincl1p : Nat.Primrec incl1) :
-    Nat.Primrec (fun t => subChar P₁ incl0 incl1 t.unpair.1 t.unpair.2) :=
-  (primrec_foldCode (primrec_subStp P₁ incl0 incl1 hincl0p hincl1p) Nat.Primrec.left
-    (Nat.Primrec.const 1) Nat.Primrec.right).of_eq (fun _ => rfl)
 
 /-! #### The trivial test: `stepFun (funListOf el) = univ ⟺ every output is `Δ₁`. -/
 
-/-- The least map of the empty step-list — the function-space bottom: it relates every `𝒟₀`
-neighbourhood only to `Δ₁`. -/
-def botMap : ApproximableMap V₀ V₁ :=
-  leastMap [] (by simp) (by intro X _; rw [interYs_nil]; exact V₁.master_mem)
 
-theorem botMap_rel {X : Set α} {Y : Set β} :
-    (botMap : ApproximableMap V₀ V₁).rel X Y ↔ V₀.mem X ∧ V₁.mem Y ∧ V₁.master ⊆ Y := Iff.rfl
 
-/-- **`stepFun (funListOf el)` is everything iff every output neighbourhood is `Δ₁`.** Forward:
-the bottom map `botMap` lies in `univ`, and `botMap.rel X Y` forces `Y = Δ₁`. Backward: `[X, Δ₁]`
-is satisfied by every map. Choice-free. -/
-theorem stepFun_funListOf_eq_univ_iff (el : List ℕ) :
-    (stepFun (funListOf P₀ P₁ el) : Set (ApproximableMap V₀ V₁)) = Set.univ ↔
-      ∀ e ∈ el, P₁.X e.unpair.2 = V₁.master := by
-  constructor
-  · intro h e he
-    have hbot : (botMap : ApproximableMap V₀ V₁) ∈ stepFun (funListOf P₀ P₁ el) := by
-      rw [h]; exact Set.mem_univ _
-    have hr := hbot (funPair P₀ P₁ e) (List.mem_map.mpr ⟨e, he, rfl⟩)
-    exact Set.Subset.antisymm (V₁.sub_master (P₁.mem_X _)) (botMap_rel.mp hr).2.2
-  · intro h
-    ext f
-    simp only [Set.mem_univ, iff_true, mem_stepFun]
-    intro p hp
-    rw [funListOf, List.mem_map] at hp
-    obtain ⟨e, he, rfl⟩ := hp
-    show f.rel (P₀.X e.unpair.1) (P₁.X e.unpair.2)
-    rw [h e he]
-    exact f.mono f.master_rel (V₀.sub_master (P₀.mem_X _)) subset_rfl (P₀.mem_X _) V₁.master_mem
 
-/-- One step of the trivial-test fold: is this entry's output index equal to `masterIdx`? -/
-def trivStp (eq1 : ℕ → ℕ) (w : ℕ) : ℕ :=
-  selectFn w.unpair.2.unpair.1
-    (isOne (eq1 (Nat.pair w.unpair.1.unpair.2 P₁.masterIdx))) 0
 
-/-- The `{0,1}` characteristic function of `stepFun (funListOf (decodeList a)) = univ`. -/
-def trivialChar (eq1 : ℕ → ℕ) (a : ℕ) : ℕ := foldCode (trivStp P₁ eq1) 0 1 a
 
-theorem trivialChar_spec (eq1 : ℕ → ℕ)
-    (heq1 : ∀ s, eq1 s = 1 ↔ P₁.X s.unpair.1 = P₁.X s.unpair.2) (a : ℕ) :
-    trivialChar P₁ eq1 a = 1 ↔
-      (stepFun (funListOf P₀ P₁ (decodeList a)) : Set (ApproximableMap V₀ V₁)) = Set.univ := by
-  rw [stepFun_funListOf_eq_univ_iff P₀ P₁]
-  unfold trivialChar
-  rw [foldCode_eq']
-  have hstep : (fun acc x => trivStp P₁ eq1 (Nat.pair x (Nat.pair acc 0)))
-      = (fun acc x => selectFn acc (isOne (eq1 (Nat.pair x.unpair.2 P₁.masterIdx))) 0) := by
-    funext acc x
-    show trivStp P₁ eq1 (Nat.pair x (Nat.pair acc 0)) = _
-    unfold trivStp
-    simp only [unpair_pair_fst, unpair_pair_snd]
-  rw [hstep, andFoldl_one (fun x => eq1 (Nat.pair x.unpair.2 P₁.masterIdx))]
-  refine forall_congr' (fun e => ?_)
-  refine imp_congr_right (fun he => ?_)
-  rw [heq1]
-  simp only [unpair_pair_fst, unpair_pair_snd, P₁.masterIdx_spec]
 
-theorem primrec_trivStp (eq1 : ℕ → ℕ) (heq1p : Nat.Primrec eq1) :
-    Nat.Primrec (trivStp P₁ eq1) := by
-  have hflag : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
-    Nat.Primrec.left.comp Nat.Primrec.right
-  have he2 : Nat.Primrec (fun w : ℕ => w.unpair.1.unpair.2) :=
-    Nat.Primrec.right.comp Nat.Primrec.left
-  have harg := heq1p.comp (he2.pair (Nat.Primrec.const P₁.masterIdx))
-  refine (primrec_selectFn hflag (primrec_isOne.comp harg) (Nat.Primrec.const 0)).of_eq (fun w => ?_)
-  unfold trivStp
-  rfl
 
-theorem primrec_trivialChar (eq1 : ℕ → ℕ) (heq1p : Nat.Primrec eq1) :
-    Nat.Primrec (trivialChar P₁ eq1) :=
-  (primrec_foldCode (primrec_trivStp P₁ eq1 heq1p) (Nat.Primrec.const 0)
-    (Nat.Primrec.const 1) primrec_id).of_eq (fun _ => rfl)
 
 /-! #### The function-space enumeration `Xenum` and its consistency-pair decider. -/
 
-/-- The function-space enumeration: a code `c` lists step-pairs; if they are consistent (`gN c = 1`,
-where `gN` is the consistency char) the neighbourhood is `stepFun (funListOf (decodeList c))`,
-otherwise we send the junk code to the master neighbourhood `univ`. Choice-free as *data* because the
-branch is a `Nat`-equality `if`. -/
-def Xenum (gN : ℕ → ℕ) (c : ℕ) : Set (ApproximableMap V₀ V₁) :=
-  if gN c = 1 then stepFun (funListOf P₀ P₁ (decodeList c)) else Set.univ
 
-theorem Xenum_pos {gN : ℕ → ℕ} {c : ℕ} (h : gN c = 1) :
-    Xenum P₀ P₁ gN c = stepFun (funListOf P₀ P₁ (decodeList c)) := ite_eq_left h
 
-theorem Xenum_neg {gN : ℕ → ℕ} {c : ℕ} (h : gN c ≠ 1) : Xenum P₀ P₁ gN c = Set.univ := ite_eq_right h
 
-theorem Xenum_mem (gN : ℕ → ℕ)
-    (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
-      : Set (ApproximableMap V₀ V₁)).Nonempty) (c : ℕ) :
-    (funSpace V₀ V₁).mem (Xenum P₀ P₁ gN c) := by
-  by_cases h : gN c = 1
-  · rw [Xenum_pos P₀ P₁ h]
-    exact ⟨⟨funListOf P₀ P₁ (decodeList c), funListOf_valid P₀ P₁ _, rfl⟩, (hgN c).mp h⟩
-  · rw [Xenum_neg P₀ P₁ h]; exact funSpace_master ▸ (funSpace V₀ V₁).master_mem
 
-theorem Xenum_nonempty (gN : ℕ → ℕ)
-    (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
-      : Set (ApproximableMap V₀ V₁)).Nonempty) (c : ℕ) :
-    (Xenum P₀ P₁ gN c).Nonempty := (Xenum_mem P₀ P₁ gN hgN c).2
 
-/-- The canonical code of the intersection `Xenum n ∩ Xenum m`: `appendCode` when both are
-consistent, otherwise the consistent side (the other being `univ`). -/
-def interIdx (gN : ℕ → ℕ) (n m : ℕ) : ℕ :=
-  selectFn (isOne (gN n)) (selectFn (isOne (gN m)) (appendCode n m) n) m
 
-/-- **`interIdx` codes the intersection** whenever it is non-empty (and the result is in the
-enumeration). -/
-theorem Xenum_inter_eq (gN : ℕ → ℕ)
-    (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
-      : Set (ApproximableMap V₀ V₁)).Nonempty) (n m : ℕ)
-    (hne : (Xenum P₀ P₁ gN n ∩ Xenum P₀ P₁ gN m).Nonempty) :
-    Xenum P₀ P₁ gN (interIdx gN n m) = Xenum P₀ P₁ gN n ∩ Xenum P₀ P₁ gN m := by
-  unfold interIdx
-  rw [selectFn_isOne]
-  by_cases hn : gN n = 1
-  · rw [ite_eq_left hn, selectFn_isOne]
-    by_cases hm : gN m = 1
-    · rw [ite_eq_left hm, Xenum_pos P₀ P₁ hn, Xenum_pos P₀ P₁ hm, ← stepFun_funListOf_appendCode P₀ P₁ n m]
-      rw [Xenum_pos P₀ P₁ hn, Xenum_pos P₀ P₁ hm] at hne
-      have hgne : gN (appendCode n m) = 1 :=
-        (hgN _).mpr (by rw [stepFun_funListOf_appendCode P₀ P₁ n m]; exact hne)
-      rw [Xenum_pos P₀ P₁ hgne]
-    · rw [ite_eq_right hm, Xenum_neg P₀ P₁ hm, Set.inter_univ]
-  · rw [ite_eq_right hn, Xenum_neg P₀ P₁ hn, Set.univ_inter]
 
-/-- The `{0,1}` characteristic function of Scott's consistency relation (ii) for the function space:
-`∃ k, Xenum k ⊆ Xenum n ∩ Xenum m`. -/
-def consPairChar (gN : ℕ → ℕ) (n m : ℕ) : ℕ :=
-  selectFn (isOne (gN n)) (selectFn (isOne (gN m)) (gN (appendCode n m)) 1) 1
 
-theorem consPairChar_spec (gN : ℕ → ℕ)
-    (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
-      : Set (ApproximableMap V₀ V₁)).Nonempty) (n m : ℕ) :
-    consPairChar gN n m = 1 ↔
-      ∃ k, Xenum P₀ P₁ gN k ⊆ Xenum P₀ P₁ gN n ∩ Xenum P₀ P₁ gN m := by
-  have hcons_iff : (∃ k, Xenum P₀ P₁ gN k ⊆ Xenum P₀ P₁ gN n ∩ Xenum P₀ P₁ gN m) ↔
-      (Xenum P₀ P₁ gN n ∩ Xenum P₀ P₁ gN m).Nonempty := by
-    constructor
-    · rintro ⟨k, hk⟩; exact (Xenum_nonempty P₀ P₁ gN hgN k).mono hk
-    · intro hne
-      exact ⟨interIdx gN n m, (Xenum_inter_eq P₀ P₁ gN hgN n m hne).subset⟩
-  rw [hcons_iff]
-  unfold consPairChar
-  by_cases hn : gN n = 1
-  · rw [selectFn_isOne, ite_eq_left hn, selectFn_isOne]
-    by_cases hm : gN m = 1
-    · rw [ite_eq_left hm, hgN (appendCode n m), Xenum_pos P₀ P₁ hn, Xenum_pos P₀ P₁ hm,
-        ← stepFun_funListOf_appendCode P₀ P₁ n m]
-    · rw [ite_eq_right hm, Xenum_pos P₀ P₁ hn, Xenum_neg P₀ P₁ hm, Set.inter_univ]
-      exact iff_of_true rfl ((hgN n).mp hn)
-  · rw [selectFn_isOne, ite_eq_right hn, Xenum_neg P₀ P₁ hn, Set.univ_inter]
-    exact iff_of_true rfl (Xenum_nonempty P₀ P₁ gN hgN m)
 
-theorem primrec_consPairChar (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN) :
-    Nat.Primrec (fun t => consPairChar gN t.unpair.1 t.unpair.2) := by
-  have hn := hgNp.comp Nat.Primrec.left
-  have hm := hgNp.comp Nat.Primrec.right
-  have happ := hgNp.comp primrec_appendCode
-  have hinner := primrec_selectFn (primrec_isOne.comp hm) happ (Nat.Primrec.const 1)
-  exact (primrec_selectFn (primrec_isOne.comp hn) hinner (Nat.Primrec.const 1)).of_eq (fun _ => rfl)
 
-theorem primrec_interIdx (gN : ℕ → ℕ) (hgNp : Nat.Primrec gN) :
-    Nat.Primrec (fun t => interIdx gN t.unpair.1 t.unpair.2) := by
-  have hn := hgNp.comp Nat.Primrec.left
-  have hm := hgNp.comp Nat.Primrec.right
-  have hinner := primrec_selectFn (primrec_isOne.comp hm) primrec_appendCode Nat.Primrec.left
-  exact (primrec_selectFn (primrec_isOne.comp hn) hinner Nat.Primrec.right).of_eq (fun _ => rfl)
 
 /-! #### The equality decider `eqEnumChar` and Scott's relation (i) `interEqChar`. -/
 
-/-- `selectFn c d 0 = 1` decides the conjunction `c = 1 ∧ d = 1`. -/
-theorem selectFn_mul_iff (c d : ℕ) : selectFn c d 0 = 1 ↔ c = 1 ∧ d = 1 := by
-  have h : selectFn c d 0 = c * d := by simp only [selectFn, Nat.mul_zero, Nat.add_zero]
-  rw [h, nat_mul_eq_one]
 
-/-- The `{0,1}` characteristic function of `Xenum a = Xenum b`. Both consistent → inclusion both
-ways (`subChar`); one consistent, one junk (`univ`) → the consistent side is the trivial
-neighbourhood (`trivialChar`); both junk → equal. -/
-def eqEnumChar (gN incl0 incl1 eq1 : ℕ → ℕ) (a b : ℕ) : ℕ :=
-  selectFn (isOne (gN a))
-    (selectFn (isOne (gN b))
-      (selectFn (subChar P₁ incl0 incl1 a b) (subChar P₁ incl0 incl1 b a) 0)
-      (trivialChar P₁ eq1 a))
-    (selectFn (isOne (gN b)) (trivialChar P₁ eq1 b) 1)
 
-theorem eqEnumChar_spec (gN incl0 incl1 eq1 : ℕ → ℕ)
-    (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
-      : Set (ApproximableMap V₀ V₁)).Nonempty)
-    (hincl0 : ∀ s, incl0 s = 1 ↔ P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2)
-    (hincl1 : ∀ s, incl1 s = 1 ↔ P₁.X s.unpair.1 ⊆ P₁.X s.unpair.2)
-    (heq1 : ∀ s, eq1 s = 1 ↔ P₁.X s.unpair.1 = P₁.X s.unpair.2) (a b : ℕ) :
-    eqEnumChar P₁ gN incl0 incl1 eq1 a b = 1 ↔ Xenum P₀ P₁ gN a = Xenum P₀ P₁ gN b := by
-  unfold eqEnumChar
-  by_cases ha : gN a = 1
-  · rw [selectFn_isOne, ite_eq_left ha, selectFn_isOne]
-    have hanea := (hgN a).mp ha
-    by_cases hb : gN b = 1
-    · rw [ite_eq_left hb, Xenum_pos P₀ P₁ ha, Xenum_pos P₀ P₁ hb, selectFn_mul_iff,
-        subChar_spec P₀ P₁ incl0 incl1 hincl0 hincl1 hanea b,
-        subChar_spec P₀ P₁ incl0 incl1 hincl0 hincl1 ((hgN b).mp hb) a]
-      exact ⟨fun ⟨h1, h2⟩ => Set.Subset.antisymm h1 h2, fun h => ⟨h.subset, h.superset⟩⟩
-    · rw [ite_eq_right hb, Xenum_pos P₀ P₁ ha, Xenum_neg P₀ P₁ hb, trivialChar_spec P₀ P₁ eq1 heq1 a]
-  · rw [selectFn_isOne, ite_eq_right ha, selectFn_isOne]
-    by_cases hb : gN b = 1
-    · rw [ite_eq_left hb, Xenum_neg P₀ P₁ ha, Xenum_pos P₀ P₁ hb, trivialChar_spec P₀ P₁ eq1 heq1 b]
-      exact eq_comm
-    · rw [ite_eq_right hb, Xenum_neg P₀ P₁ ha, Xenum_neg P₀ P₁ hb]
-      exact iff_of_true rfl rfl
 
-theorem primrec_eqEnumChar (gN incl0 incl1 eq1 : ℕ → ℕ) (hgNp : Nat.Primrec gN)
-    (hincl0p : Nat.Primrec incl0) (hincl1p : Nat.Primrec incl1) (heq1p : Nat.Primrec eq1) :
-    Nat.Primrec (fun t => eqEnumChar P₁ gN incl0 incl1 eq1 t.unpair.1 t.unpair.2) := by
-  have ha := primrec_isOne.comp (hgNp.comp Nat.Primrec.left)
-  have hb := primrec_isOne.comp (hgNp.comp Nat.Primrec.right)
-  have hsubab : Nat.Primrec (fun t => subChar P₁ incl0 incl1 t.unpair.1 t.unpair.2) :=
-    primrec_subChar P₁ incl0 incl1 hincl0p hincl1p
-  have hsubba : Nat.Primrec (fun t => subChar P₁ incl0 incl1 t.unpair.2 t.unpair.1) :=
-    ((primrec_subChar P₁ incl0 incl1 hincl0p hincl1p).comp
-      (Nat.Primrec.right.pair Nat.Primrec.left)).of_eq (fun t => by
-        show subChar P₁ incl0 incl1 (Nat.pair t.unpair.2 t.unpair.1).unpair.1
-          (Nat.pair t.unpair.2 t.unpair.1).unpair.2 = _
-        rw [unpair_pair_fst, unpair_pair_snd])
-  have htriva := (primrec_trivialChar P₁ eq1 heq1p).comp Nat.Primrec.left
-  have htrivb := (primrec_trivialChar P₁ eq1 heq1p).comp Nat.Primrec.right
-  have hbothcons := primrec_selectFn hsubab hsubba (Nat.Primrec.const 0)
-  have hacons := primrec_selectFn hb hbothcons htriva
-  have hanot := primrec_selectFn hb htrivb (Nat.Primrec.const 1)
-  exact (primrec_selectFn ha hacons hanot).of_eq (fun _ => rfl)
 
-/-- The `{0,1}` characteristic function of Scott's relation (i) for the function space:
-`Xenum n ∩ Xenum m = Xenum k`. -/
-def interEqChar (gN incl0 incl1 eq1 : ℕ → ℕ) (n m k : ℕ) : ℕ :=
-  selectFn (consPairChar gN n m) (eqEnumChar P₁ gN incl0 incl1 eq1 (interIdx gN n m) k) 0
 
-theorem interEqChar_spec (gN incl0 incl1 eq1 : ℕ → ℕ)
-    (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
-      : Set (ApproximableMap V₀ V₁)).Nonempty)
-    (hincl0 : ∀ s, incl0 s = 1 ↔ P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2)
-    (hincl1 : ∀ s, incl1 s = 1 ↔ P₁.X s.unpair.1 ⊆ P₁.X s.unpair.2)
-    (heq1 : ∀ s, eq1 s = 1 ↔ P₁.X s.unpair.1 = P₁.X s.unpair.2) (n m k : ℕ) :
-    interEqChar P₁ gN incl0 incl1 eq1 n m k = 1 ↔
-      Xenum P₀ P₁ gN n ∩ Xenum P₀ P₁ gN m = Xenum P₀ P₁ gN k := by
-  unfold interEqChar
-  rw [selectFn_mul_iff, consPairChar_spec P₀ P₁ gN hgN n m,
-    eqEnumChar_spec P₀ P₁ gN incl0 incl1 eq1 hgN hincl0 hincl1 heq1 (interIdx gN n m) k]
-  constructor
-  · rintro ⟨⟨k', hk'⟩, heq⟩
-    have hne : (Xenum P₀ P₁ gN n ∩ Xenum P₀ P₁ gN m).Nonempty :=
-      (Xenum_nonempty P₀ P₁ gN hgN k').mono hk'
-    rw [← Xenum_inter_eq P₀ P₁ gN hgN n m hne]; exact heq
-  · intro heq
-    have hne : (Xenum P₀ P₁ gN n ∩ Xenum P₀ P₁ gN m).Nonempty := by
-      rw [heq]; exact Xenum_nonempty P₀ P₁ gN hgN k
-    exact ⟨⟨k, heq.superset⟩, by rw [Xenum_inter_eq P₀ P₁ gN hgN n m hne]; exact heq⟩
 
-theorem primrec_interEqChar (gN incl0 incl1 eq1 : ℕ → ℕ) (hgNp : Nat.Primrec gN)
-    (hincl0p : Nat.Primrec incl0) (hincl1p : Nat.Primrec incl1) (heq1p : Nat.Primrec eq1) :
-    Nat.Primrec (fun t => interEqChar P₁ gN incl0 incl1 eq1 t.unpair.1
-      t.unpair.2.unpair.1 t.unpair.2.unpair.2) := by
-  have hn : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
-  have hm : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.1) :=
-    Nat.Primrec.left.comp Nat.Primrec.right
-  have hk : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.2) :=
-    Nat.Primrec.right.comp Nat.Primrec.right
-  have hcons := (primrec_consPairChar gN hgNp).comp (hn.pair hm)
-  have hidx := (primrec_interIdx gN hgNp).comp (hn.pair hm)
-  have heqc := (primrec_eqEnumChar P₁ gN incl0 incl1 eq1 hgNp hincl0p hincl1p heq1p).comp
-    (hidx.pair hk)
-  refine (primrec_selectFn hcons heqc (Nat.Primrec.const 0)).of_eq (fun t => ?_)
-  show _ = interEqChar P₁ gN incl0 incl1 eq1 t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2
-  unfold interEqChar
-  simp only [unpair_pair_fst, unpair_pair_snd]
 
 /-! ### Milestone 6 — assembling the function-space presentation.
 
@@ -1360,60 +805,7 @@ theorem primrec_interEqChar (gN incl0 incl1 eq1 : ℕ → ℕ) (hgNp : Nat.Primr
 obtained choice-free from the component presentations' relations *inside* the `Nonempty` proof of
 `funSpace_isEffectivelyGiven` (extraction into a `Prop` goal needs no choice). -/
 
-/-- Every valid finite step-list is `funListOf` of some entry-list (choice-free: `Exists.elim` of
-`P₀.surj`/`P₁.surj`, entry by entry). -/
-theorem exists_funListOf {L : List (Set α × Set β)} (hL : ∀ p ∈ L, V₀.mem p.1 ∧ V₁.mem p.2) :
-    ∃ el, funListOf P₀ P₁ el = L := by
-  induction L with
-  | nil => exact ⟨[], rfl⟩
-  | cons p L ih =>
-    obtain ⟨X, Y⟩ := p
-    obtain ⟨i, hi⟩ := P₀.surj (hL (X, Y) (List.mem_cons.mpr (Or.inl rfl))).1
-    obtain ⟨j, hj⟩ := P₁.surj (hL (X, Y) (List.mem_cons.mpr (Or.inl rfl))).2
-    obtain ⟨el, hel⟩ := ih (fun q hq => hL q (List.mem_cons.mpr (Or.inr hq)))
-    refine ⟨Nat.pair i j :: el, ?_⟩
-    rw [funListOf_cons, hel]
-    congr 1
-    show (P₀.X (Nat.pair i j).unpair.1, P₁.X (Nat.pair i j).unpair.2) = (X, Y)
-    rw [unpair_pair_fst, unpair_pair_snd, hi, hj]
 
-/-- **The function-space presentation.** Built from explicit characteristic functions for the
-component presentations' relations (`gN` = function-space consistency, `incl0`/`incl1` = inclusion,
-`eq1` = equality), so it is choice-free given those concrete functions. -/
-def funPresentation (gN incl0 incl1 eq1 : ℕ → ℕ)
-    (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P₀ P₁ (decodeList c))
-      : Set (ApproximableMap V₀ V₁)).Nonempty) (hgNp : Nat.Primrec gN)
-    (hincl0 : ∀ s, incl0 s = 1 ↔ P₀.X s.unpair.1 ⊆ P₀.X s.unpair.2) (hincl0p : Nat.Primrec incl0)
-    (hincl1 : ∀ s, incl1 s = 1 ↔ P₁.X s.unpair.1 ⊆ P₁.X s.unpair.2) (hincl1p : Nat.Primrec incl1)
-    (heq1 : ∀ s, eq1 s = 1 ↔ P₁.X s.unpair.1 = P₁.X s.unpair.2) (heq1p : Nat.Primrec eq1) :
-    ComputablePresentation (funSpace V₀ V₁) where
-  X := Xenum P₀ P₁ gN
-  mem_X := Xenum_mem P₀ P₁ gN hgN
-  surj := by
-    rintro W ⟨⟨L, hL, rfl⟩, hne⟩
-    obtain ⟨el, hel⟩ := exists_funListOf P₀ P₁ hL
-    have hc : gN (encodeList el) = 1 := by rw [hgN, decodeList_encodeList, hel]; exact hne
-    exact ⟨encodeList el, by rw [Xenum_pos P₀ P₁ hc, decodeList_encodeList, hel]⟩
-  interEq_computable :=
-    ⟨fun t => interEqChar P₁ gN incl0 incl1 eq1 t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2,
-      primrec_interEqChar P₁ gN incl0 incl1 eq1 hgNp hincl0p hincl1p heq1p,
-      fun t => (interEqChar_spec P₀ P₁ gN incl0 incl1 eq1 hgN hincl0 hincl1 heq1
-        t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2).symm⟩
-  cons_computable :=
-    ⟨fun t => consPairChar gN t.unpair.1 t.unpair.2, primrec_consPairChar gN hgNp,
-      fun t => (consPairChar_spec P₀ P₁ gN hgN t.unpair.1 t.unpair.2).symm⟩
-  inter := interIdx gN
-  inter_primrec := primrec_interIdx gN hgNp
-  inter_spec := by
-    intro n m h
-    obtain ⟨k, hk⟩ := h
-    exact Xenum_inter_eq P₀ P₁ gN hgN n m ((Xenum_nonempty P₀ P₁ gN hgN k).mono hk)
-  masterIdx := 0
-  masterIdx_spec := by
-    show Xenum P₀ P₁ gN 0 = Set.univ
-    unfold Xenum
-    rw [decodeList_zero]
-    simp only [funListOf, List.map_nil, stepFun_nil, ite_self]
 
 /-- **Theorem 7.5 (existence part) (Scott 1981, PRG-19).** If `𝒟₀` and `𝒟₁` are effectively given,
 then so is the function space `(𝒟₀ → 𝒟₁)`. Choice-free. -/

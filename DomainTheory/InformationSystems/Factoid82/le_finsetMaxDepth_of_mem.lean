@@ -1,0 +1,56 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.InformationSystems.FunctionSpace
+public import DomainTheory.InformationSystems.Sum
+public import Mathlib.Data.Finset.Card
+import all Mathlib.Data.Finset.Card
+public import DomainTheory.InformationSystems.Factoid82.RawLamToken
+public import DomainTheory.InformationSystems.Factoid82.LamEntDepthInst9
+public import DomainTheory.InformationSystems.Factoid82.LamEntDepthInst10
+public import DomainTheory.InformationSystems.Factoid82.LamEntDepthInst17
+public import DomainTheory.InformationSystems.Factoid82.LamEntDepthInst18
+public import DomainTheory.InformationSystems.Factoid82.rawDepth
+public import DomainTheory.InformationSystems.Factoid82.maxDepthInsert
+public import DomainTheory.InformationSystems.Factoid82.LamEntDepthInst31
+public import DomainTheory.InformationSystems.Factoid82.finsetMaxDepth
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+set_option linter.unusedSectionVars false
+
+variable {α : Type*} [DecidableEq α]
+
+variable (A : InfoSys α)
+
+theorem le_finsetMaxDepth_of_mem {u : Finset (RawLamToken α)} {t : RawLamToken α}
+    (ht : t ∈ u) : rawDepth t ≤ finsetMaxDepth u := by
+  simp only [finsetMaxDepth]
+  have ht' : t ∈ u.1 := Finset.mem_def.1 ht
+  revert ht'
+  refine Multiset.induction_on u.1 ?_ ?_
+  · intro ht'; cases ht'
+  · intro a s ih ht'
+    simp only [Multiset.mem_cons] at ht'
+    simp only [Multiset.foldr_cons, maxDepthInsert]
+    rcases ht' with rfl | ht'
+    · exact Nat.le_max_left _ _
+    · exact Nat.le_trans (ih ht') (Nat.le_max_right _ _)
+
+end InfoSys
+
+end DomainTheory.InformationSystems

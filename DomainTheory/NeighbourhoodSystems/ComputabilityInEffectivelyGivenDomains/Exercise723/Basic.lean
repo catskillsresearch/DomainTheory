@@ -11,6 +11,42 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.capMap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.halfIter
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.bitAt
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.cupMap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.sumSet
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.orUpTo
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusIdx
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusMap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.elemSet
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.bitsList
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.bitsCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.bitsStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.tagStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.tagCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.tagOfBits
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.nextCellStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.unnumPair
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.unnum1
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.unnum2
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagRef
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagState
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagList
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagVal
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.gMap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.funMap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.GraphIdx
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.graphMap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.halfIter_zero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.Basic.notation16
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.sumSet_mono
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.compl_subset_compl_of_subset
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.compl_inter_nbhd
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.mem_elemSet
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.GraphIdx_mono
 
 @[expose] public section
 
@@ -47,26 +83,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
 
 /-! ## `λx,y. x∩y` -/
 
-/-- **`λx,y. x∩y` as an approximable map** `PN × PN → PN`. On neighbourhoods: `X ∪ Y` relates to
-`Z` iff `X ⊆ Z` and `Y ⊆ Z` (the "test at the minimal witness" idiom: `X`, `Y` are themselves the
-tightest possible arguments consistent with the input information). -/
-def capMap : ApproximableMap (prod PN PN) PN where
-  rel W Z := ∃ X Y, W = prodNbhd X Y ∧ PN.mem X ∧ PN.mem Y ∧ PN.mem Z ∧ X ⊆ Z ∧ Y ⊆ Z
-  rel_dom := by rintro W Z ⟨X, Y, rfl, hX, hY, _, _, _⟩; exact prod_mem_prodNbhd hX hY
-  rel_cod := by rintro W Z ⟨X, Y, rfl, _, _, hZ, _, _⟩; exact hZ
-  master_rel := ⟨Set.univ, Set.univ, rfl, PN.master_mem, PN.master_mem, PN.master_mem,
-    Set.subset_univ _, Set.subset_univ _⟩
-  inter_right := by
-    rintro W Z Z' ⟨X, Y, rfl, hX, hY, hZ, hXZ, hYZ⟩ ⟨X', Y', heq, _, _, hZ', hXZ', hYZ'⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
-    obtain ⟨k, hk⟩ := hZ; obtain ⟨k', hk'⟩ := hZ'; subst hk; subst hk'
-    exact ⟨X, Y, rfl, hX, hY, ⟨myLor k k', nbhd_inter k k'⟩,
-      Set.subset_inter hXZ hXZ', Set.subset_inter hYZ hYZ'⟩
-  mono := by
-    rintro W W' Z Z' ⟨X, Y, rfl, hX, hY, hZ, hXZ, hYZ⟩ hW'W hZZ' hW' hZ'
-    obtain ⟨X', Y', hX', hY', rfl⟩ := hW'
-    obtain ⟨hXX', hYY'⟩ := prodNbhd_subset_iff.mp hW'W
-    exact ⟨X', Y', rfl, hX', hY', hZ', hXX'.trans (hXZ.trans hZZ'), hYY'.trans (hYZ.trans hZZ')⟩
 
 /-! ## Bit-level utilities: `Nat.testBit` is primitive recursively decidable
 
@@ -82,10 +98,7 @@ theorem lt_of_testBit_true {n i : ℕ} (h : n.testBit i = true) : i < n := by
   rw [Nat.testBit_eq_false_of_lt hlt] at h
   exact absurd h (by decide)
 
-/-- Iterated halving `(·/2)^[k] n`, the primitive-recursive core of `Nat.testBit`. -/
-def halfIter (n k : ℕ) : ℕ := (fun x : ℕ => x / 2)^[k] n
 
-@[simp] theorem halfIter_zero (n : ℕ) : halfIter n 0 = n := rfl
 
 theorem halfIter_succ (n k : ℕ) : halfIter n (k + 1) = halfIter (n / 2) k := by
   unfold halfIter; rw [Function.iterate_succ_apply]
@@ -97,8 +110,6 @@ theorem primrec_halfIter : Nat.Primrec (fun t => halfIter t.unpair.1 t.unpair.2)
   simp only [Nat.unpaired, unpair_pair_snd]
   exact rec_const_iterate (fun x => x / 2) t.unpair.1 t.unpair.2
 
-/-- The `{0,1}`-valued primitive-recursive proxy for `Nat.testBit`. -/
-def bitAt (n k : ℕ) : ℕ := halfIter n k % 2
 
 theorem primrec_bitAt : Nat.Primrec (fun t => bitAt t.unpair.1 t.unpair.2) :=
   primrec_mod2.comp primrec_halfIter
@@ -118,26 +129,6 @@ theorem bitAt_eq_one_iff (n k : ℕ) : bitAt n k = 1 ↔ n.testBit k = true := b
 
 /-! ## `λx,y. x∪y` -/
 
-/-- **`λx,y. x∪y` as an approximable map** `PN × PN → PN`. On neighbourhoods: `X ∪ Y` relates to
-`Z` iff `nbhd(myLor n m) ⊆ Z` — the excluded set of `Z` must fit inside the *union* `Eₙ ∪ Eₘ`, i.e.
-`nbhd n ∩ nbhd m ⊆ Z` (`Eₙ ∪ Eₘ = E_{myLor n m}`, `nbhd_inter`). -/
-def cupMap : ApproximableMap (prod PN PN) PN where
-  rel W Z := ∃ X Y, W = prodNbhd X Y ∧ PN.mem X ∧ PN.mem Y ∧ PN.mem Z ∧ X ∩ Y ⊆ Z
-  rel_dom := by rintro W Z ⟨X, Y, rfl, hX, hY, _, _⟩; exact prod_mem_prodNbhd hX hY
-  rel_cod := by rintro W Z ⟨X, Y, rfl, _, _, hZ, _⟩; exact hZ
-  master_rel := ⟨Set.univ, Set.univ, rfl, PN.master_mem, PN.master_mem, PN.master_mem,
-    Set.inter_subset_left.trans (Set.subset_univ _)⟩
-  inter_right := by
-    rintro W Z Z' ⟨X, Y, rfl, hX, hY, hZ, hXYZ⟩ ⟨X', Y', heq, _, _, hZ', hXYZ'⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
-    obtain ⟨k, hk⟩ := hZ; obtain ⟨k', hk'⟩ := hZ'; subst hk; subst hk'
-    exact ⟨X, Y, rfl, hX, hY, ⟨myLor k k', nbhd_inter k k'⟩, Set.subset_inter hXYZ hXYZ'⟩
-  mono := by
-    rintro W W' Z Z' ⟨X, Y, rfl, hX, hY, hZ, hXYZ⟩ hW'W hZZ' hW' hZ'
-    obtain ⟨X', Y', hX', hY', rfl⟩ := hW'
-    obtain ⟨hXX', hYY'⟩ := prodNbhd_subset_iff.mp hW'W
-    exact ⟨X', Y', rfl, hX', hY', hZ',
-      (Set.inter_subset_inter hXX' hYY').trans (hXYZ.trans hZZ')⟩
 
 /-! ## `λx,y. x+y` (Minkowski sum)
 
@@ -147,77 +138,18 @@ over `Eₙ` and `b` over `Eₘ` — `Eₙ + Eₘ = ⋃ {a + Eₘ ∣ a ∈ Eₙ}
 per set bit of `n`. This is computed by `plusIdx`, an iterative bitwise-OR fold (mirroring `myLor`)
 of `m <<< a` over the set bits `a` of `n`. -/
 
-/-- Scott's `x + y = {n+m ∣ n ∈ x, m ∈ y}` (Minkowski sum) for `x, y ⊆ ℕ`. -/
-def sumSet (X Y : Set ℕ) : Set ℕ := {k | ∃ a ∈ X, ∃ b ∈ Y, a + b = k}
 
-@[inherit_doc] infixl:65 " +ˢ " => sumSet
 
-theorem sumSet_mono {X X' Y Y' : Set ℕ} (hX : X ⊆ X') (hY : Y ⊆ Y') : X +ˢ Y ⊆ X' +ˢ Y' := by
-  rintro k ⟨a, ha, b, hb, rfl⟩
-  exact ⟨a, hX ha, b, hY hb, rfl⟩
 
-/-- **Choice-free antitone `compl`** (only the direction needed here): unlike the general
-`Set.compl_subset_compl` (a `BooleanAlgebra` lemma whose `↔` proof is classical), this direction is
-constructive contraposition and needs no excluded middle. -/
-theorem compl_subset_compl_of_subset {X Y : Set ℕ} (h : X ⊆ Y) : Yᶜ ⊆ Xᶜ :=
-  fun _ hx hxX => hx (h hxX)
 
 /-- The excluded set of `nbhd n`, as a set of naturals: `(nbhd n)ᶜ = {k ∣ n.testBit k}`. -/
 theorem compl_nbhd (n : ℕ) : (nbhd n)ᶜ = {k | n.testBit k = true} := by
   ext k; simp [nbhd]
 
-/-- **Choice-free De Morgan for `nbhd`'s excluded sets.** The general `Set.compl_inter` needs
-excluded middle; here, since membership in `nbhd a`/`nbhd b` is decided by `Nat.testBit`, a case
-split on the two (concrete) bits suffices. -/
-theorem compl_inter_nbhd (a b : ℕ) : (nbhd a ∩ nbhd b)ᶜ = (nbhd a)ᶜ ∪ (nbhd b)ᶜ := by
-  ext x
-  simp only [Set.mem_compl_iff, Set.mem_inter_iff, Set.mem_union, mem_nbhd]
-  cases a.testBit x <;> cases b.testBit x <;> decide
 
-/-- **Reference spec for `plusIdx`.** The running bitwise-OR of `m <<< a` over set bits `a < N` of
-`n`, built by ordinary (non-primitive-recursive) structural recursion — used only to state and prove
-correctness of the primitive-recursive `plusIdx` below. -/
-def orUpTo (n m : ℕ) : ℕ → ℕ
-  | 0 => 0
-  | k + 1 => myLor (orUpTo n m k) (selectFn (bitAt n k) (m <<< k) 0)
 
-/-- **`plusIdx n m`: the primitive-recursive index of `Eₙ + Eₘ`.** -/
-def plusIdx (n m : ℕ) : ℕ := orUpTo n m n
 
-/-- The primitive-recursive step function for `orUpTo`'s bitwise-OR fold: `(n, m, a, acc) ↦
-(n, m, a+1, acc ||| (if testBit n a then m<<<a else 0))`. -/
-def plusStep (s : ℕ) : ℕ :=
-  Nat.pair (Nat.pair s.unpair.1.unpair.1 s.unpair.1.unpair.2)
-    (Nat.pair (s.unpair.2.unpair.1 + 1)
-      (myLor s.unpair.2.unpair.2
-        (selectFn (bitAt s.unpair.1.unpair.1 s.unpair.2.unpair.1)
-          (s.unpair.1.unpair.2 <<< s.unpair.2.unpair.1) 0)))
 
-/-- **`λx,y. x+y` as an approximable map** `PN × PN → PN`. On neighbourhoods: `X ∪ Y` relates to `Z`
-iff `Zᶜ ⊆ Xᶜ +ˢ Yᶜ` — the excluded set of the output must fit inside the *Minkowski sum* of the
-inputs' excluded sets, the most that is guaranteed knowing only `Eₙ ⊆ Sx` and `Eₘ ⊆ Sy`. -/
-def plusMap : ApproximableMap (prod PN PN) PN where
-  rel W Z := ∃ X Y, W = prodNbhd X Y ∧ PN.mem X ∧ PN.mem Y ∧ PN.mem Z ∧ Zᶜ ⊆ Xᶜ +ˢ Yᶜ
-  rel_dom := by rintro W Z ⟨X, Y, rfl, hX, hY, _, _⟩; exact prod_mem_prodNbhd hX hY
-  rel_cod := by rintro W Z ⟨X, Y, rfl, _, _, hZ, _⟩; exact hZ
-  master_rel := ⟨Set.univ, Set.univ, rfl, PN.master_mem, PN.master_mem, PN.master_mem,
-    fun x hx => absurd (Set.mem_univ x) hx⟩
-  inter_right := by
-    rintro W Z Z' ⟨X, Y, rfl, hX, hY, hZ, hsub⟩ ⟨X', Y', heq, _, _, hZ', hsub'⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
-    obtain ⟨k, hk⟩ := hZ; obtain ⟨k', hk'⟩ := hZ'; subst hk; subst hk'
-    refine ⟨X, Y, rfl, hX, hY, ⟨myLor k k', nbhd_inter k k'⟩, ?_⟩
-    rw [compl_inter_nbhd]
-    exact Set.union_subset hsub hsub'
-  mono := by
-    rintro W W' Z Z' ⟨X, Y, rfl, hX, hY, hZ, hsub⟩ hW'W hZZ' hW' hZ'
-    obtain ⟨X', Y', hX', hY', rfl⟩ := hW'
-    obtain ⟨hXX', hYY'⟩ := prodNbhd_subset_iff.mp hW'W
-    refine ⟨X', Y', rfl, hX', hY', hZ', ?_⟩
-    calc Z'ᶜ ⊆ Zᶜ := compl_subset_compl_of_subset hZZ'
-      _ ⊆ Xᶜ +ˢ Yᶜ := hsub
-      _ ⊆ X'ᶜ +ˢ Y'ᶜ :=
-        sumSet_mono (compl_subset_compl_of_subset hXX') (compl_subset_compl_of_subset hYY')
 
 /-! ## What are the computable elements of `PN`?
 
@@ -235,12 +167,7 @@ so `x.mem (nbhd n) ↔ Eₙ ⊆ elemSet x` (`nbhd_mem_iff_subset_elemSet`). This
 I.e. **the computable elements of `PN` are exactly the recursively enumerable sets** — Scott's
 headline fact about the powerset domain. -/
 
-/-- The subset of `ℕ` "positively described" by a `PN`-element `x`: the union of the excluded finite
-sets of every neighbourhood it contains. -/
-def elemSet (x : PN.Element) : Set ℕ := {k | ∃ n, x.mem (nbhd n) ∧ n.testBit k = true}
 
-@[simp] theorem mem_elemSet {x : PN.Element} {k : ℕ} :
-    k ∈ elemSet x ↔ ∃ n, x.mem (nbhd n) ∧ n.testBit k = true := Iff.rfl
 
 /-- **Finite covering (choice-free, structural induction on the witness list).** If every `k` in a
 list `L` has *some* neighbourhood `nbhd m` of `x` with `m.testBit k`, a single `nbhd m₀ ∈ x` works for
@@ -263,11 +190,6 @@ theorem exists_combined_witness (x : PN.Element) :
       · exact Or.inl hbk
       · exact Or.inr (hall j hj)
 
-/-- The (non-primitive-recursive) list of set-bit positions of `n`: every set bit `k` of `n`
-satisfies `k < n` (`lt_of_testBit_true`), so ranging over `List.range n` catches them all. Used only
-to state/prove the pure covering fact `nbhd_mem_iff_subset_elemSet`; see `bitsCode` below for the
-primitive-recursive analogue used in the computability direction. -/
-def bitsList (n : ℕ) : List ℕ := (List.range n).filter (fun k => n.testBit k)
 
 theorem mem_bitsList {n k : ℕ} : k ∈ bitsList n ↔ n.testBit k = true := by
   unfold bitsList
@@ -319,10 +241,6 @@ Needed for the converse computability direction: to invoke the generic closure
 list (`Nat.pair k acc + 1`, matching `decodeList`'s own `c + 1 ↦ c.unpair.1 :: decodeList c.unpair.2`)
 exactly when `n.testBit k`. -/
 
-/-- `bitsCode n N` codes the list of `k < N` with `n.testBit k = true`. -/
-def bitsCode : ℕ → ℕ → ℕ
-  | _, 0 => 0
-  | n, N + 1 => selectFn (bitAt n N) (Nat.pair N (bitsCode n N) + 1) (bitsCode n N)
 
 theorem mem_decodeList_bitsCode (n : ℕ) :
     ∀ N k, k ∈ decodeList (bitsCode n N) ↔ k < N ∧ n.testBit k = true
@@ -352,13 +270,6 @@ theorem mem_decodeList_bitsCode (n : ℕ) :
         · exact ⟨hkN, hk⟩
         · subst hkN; exact absurd hk hbit
 
-/-- The primitive-recursive step function for `bitsCode`'s iteration: `(n, N, acc) ↦
-(n, N+1, if n.testBit N then pair N acc + 1 else acc)`. -/
-def bitsStep (s : ℕ) : ℕ :=
-  Nat.pair s.unpair.1
-    (Nat.pair (s.unpair.2.unpair.1 + 1)
-      (selectFn (bitAt s.unpair.1 s.unpair.2.unpair.1)
-        (Nat.pair s.unpair.2.unpair.1 s.unpair.2.unpair.2 + 1) s.unpair.2.unpair.2))
 
 theorem primrec_bitsStep : Nat.Primrec bitsStep := by
   have hn : Nat.Primrec (fun s : ℕ => s.unpair.1) := Nat.Primrec.left
@@ -451,15 +362,8 @@ direct construction (it does not factor through `curry`/`eval`), built from the 
 
 /-! ### `num`/`tag` are primitive recursive -/
 
-/-- `foldCode`-shaped step for `tagCode`: `(acc, x) ↦ num (x+1) acc` (the `params` slot is unused). -/
-def tagStep (w : ℕ) : ℕ := num (w.unpair.1 + 1) w.unpair.2.unpair.1
 
-/-- **`tagCode code m` codes `tag (decodeList code) m`.** Built via `appendCode 0 code` (which
-reverses `decodeList code`) so that `foldCode`'s left fold computes `tag`'s right fold. -/
-def tagCode (code m : ℕ) : ℕ := foldCode tagStep 0 (num 0 m) (appendCode 0 code)
 
-/-- `tagOfBits j m` codes `tag (decodeList (bitsCode j j)) m`, primitive recursive in `(j, m)`. -/
-def tagOfBits (j m : ℕ) : ℕ := tagCode (bitsCode j j) m
 
 /-! ### `unnum` is primitive recursive
 
@@ -468,19 +372,9 @@ def tagOfBits (j m : ℕ) : ℕ := tagCode (bitsCode j j) m
 itself is `nextCell` iterated (Exercise 5.13), so we first make `unnum` primitive recursive by the
 same iterate-a-step-function device as `halfIter`/`bitsCode`/`plusIdx`. -/
 
-/-- Pair-coded version of `nextCell : ℕ × ℕ → ℕ × ℕ` (`(0, m) ↦ (m+1, 0)`, `(n+1, m) ↦ (n, m+1)`). -/
-def nextCellStep (w : ℕ) : ℕ :=
-  selectFn (isZero w.unpair.1) (Nat.pair (w.unpair.2 + 1) 0)
-    (Nat.pair (w.unpair.1 - 1) (w.unpair.2 + 1))
 
-/-- `nextCellStep` iterated from `(0,0)`, coding `unnum v` as a single `Nat.pair`. -/
-def unnumPair (v : ℕ) : ℕ := nextCellStep^[v] (Nat.pair 0 0)
 
-/-- The first component of `unnum v`, primitive recursive. -/
-def unnum1 (v : ℕ) : ℕ := (unnumPair v).unpair.1
 
-/-- The second component of `unnum v`, primitive recursive. -/
-def unnum2 (v : ℕ) : ℕ := (unnumPair v).unpair.2
 
 /-! ### `untagRef`: the (non-primitive-recursive) structural inverse of `tag`
 
@@ -488,21 +382,6 @@ Reference decoder, by well-founded recursion peeling one `unnum` layer at a time
 `tag_surjective`'s existence proof, but now *computing* the witness); used only to state/prove
 correctness of the primitive-recursive `untagList`/`untagVal` below. -/
 
-/-- `untagRef c = (ns, m)` with `tag ns m = c` (`tag_untagRef`). -/
-def untagRef (c : ℕ) : List ℕ × ℕ :=
-  if _h : (unnum c).1 = 0 then ([], (unnum c).2)
-  else
-    have hlt : (unnum c).2 < c := by
-      have heq : num (unnum c).1 (unnum c).2 = c := by
-        have h := numP_unnum c
-        simpa [numP] using h
-      obtain ⟨k, hk⟩ : ∃ k, (unnum c).1 = k + 1 := ⟨(unnum c).1 - 1, by omega⟩
-      rw [hk] at heq
-      have hb := num_succ_left_gt k (unnum c).2
-      omega
-    (((unnum c).1 - 1) :: (untagRef (unnum c).2).1, (untagRef (unnum c).2).2)
-termination_by c
-decreasing_by all_goals exact hlt
 
 /-- **`unnum`'s second component strictly decreases** when the first is a successor — the
 decreasing measure for both `untagRef` (well-founded recursion) and `untagStep` (bounded
@@ -522,103 +401,20 @@ coded via `appendStep`'s convention) until `unnum`'s first component is `0`, at 
 is set and the state freezes. Since `code` strictly decreases every non-frozen step
 (`unnum_snd_lt_of_fst_succ`), `c + 1` iterations always suffice to freeze starting from `code = c`. -/
 
-/-- The state-transition step: no-op once `done`; otherwise peel one `unnum` layer. -/
-def untagStep (w : ℕ) : ℕ :=
-  selectFn w.unpair.2.unpair.1 w
-    (selectFn (isZero (unnum1 w.unpair.1))
-      (Nat.pair (unnum2 w.unpair.1)
-        (Nat.pair 1 (Nat.pair w.unpair.2.unpair.2.unpair.1 (unnum2 w.unpair.1))))
-      (Nat.pair (unnum2 w.unpair.1)
-        (Nat.pair 0
-          (Nat.pair (Nat.pair (unnum1 w.unpair.1 - 1) w.unpair.2.unpair.2.unpair.1 + 1)
-            w.unpair.2.unpair.2.unpair.2))))
 
-/-- `untagStep` iterated `c + 1` times from the fresh state `(c, 0, 0, 0)`. -/
-def untagState (c : ℕ) : ℕ := untagStep^[c + 1] (Nat.pair c (Nat.pair 0 (Nat.pair 0 0)))
 
-/-- **`untagList c`**: the (`appendCode`-reversed) code of `(untagRef c).1`, primitive recursive. -/
-def untagList (c : ℕ) : ℕ := appendCode 0 (untagState c).unpair.2.unpair.2.unpair.1
 
-/-- **`untagVal c`**: the value component of `untagRef c`, primitive recursive. -/
-def untagVal (c : ℕ) : ℕ := (untagState c).unpair.2.unpair.2.unpair.2
 
-/-- **`λx,y. Fun x y` as an approximable map** `PN × PN → PN`, built by the same "reversal" idiom as
-`plusMap`: `Zᶜ ⊆ Fun Xᶜ Yᶜ`. `funMap` (the actual `fun` combinator of Exercise 5.14, a map
-`PN → (PN →⃗ PN)`) is `curry gMap` (`Theorem75.curry`). -/
-def gMap : ApproximableMap (prod PN PN) PN where
-  rel W Z := ∃ X Y, W = prodNbhd X Y ∧ PN.mem X ∧ PN.mem Y ∧ PN.mem Z ∧ Zᶜ ⊆ Fun Xᶜ Yᶜ
-  rel_dom := by rintro W Z ⟨X, Y, rfl, hX, hY, _, _⟩; exact prod_mem_prodNbhd hX hY
-  rel_cod := by rintro W Z ⟨X, Y, rfl, _, _, hZ, _⟩; exact hZ
-  master_rel := ⟨Set.univ, Set.univ, rfl, PN.master_mem, PN.master_mem, PN.master_mem,
-    fun x hx => absurd (Set.mem_univ x) hx⟩
-  inter_right := by
-    rintro W Z Z' ⟨X, Y, rfl, hX, hY, hZ, hsub⟩ ⟨X', Y', heq, _, _, hZ', hsub'⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
-    obtain ⟨k, hk⟩ := hZ; obtain ⟨k', hk'⟩ := hZ'; subst hk; subst hk'
-    refine ⟨X, Y, rfl, hX, hY, ⟨myLor k k', nbhd_inter k k'⟩, ?_⟩
-    rw [compl_inter_nbhd]
-    exact Set.union_subset hsub hsub'
-  mono := by
-    rintro W W' Z Z' ⟨X, Y, rfl, hX, hY, hZ, hsub⟩ hW'W hZZ' hW' hZ'
-    obtain ⟨X', Y', hX', hY', rfl⟩ := hW'
-    obtain ⟨hXX', hYY'⟩ := prodNbhd_subset_iff.mp hW'W
-    refine ⟨X', Y', rfl, hX', hY', hZ', ?_⟩
-    calc Z'ᶜ ⊆ Zᶜ := compl_subset_compl_of_subset hZZ'
-      _ ⊆ Fun Xᶜ Yᶜ := hsub
-      _ ⊆ Fun X'ᶜ Y'ᶜ :=
-        Fun_mono (compl_subset_compl_of_subset hXX') (compl_subset_compl_of_subset hYY')
 
 /-! ### `gMap` is computable -/
 
 /-! ### `fun`, via currying `gMap` -/
 
-/-- **`fun` as an approximable map** `PN → (PN → PN)`, obtained by currying `gMap`. -/
-def funMap : ApproximableMap PN (funSpace PN PN) := curry gMap
 
 /-! ### `graph`, dually to `gMap` -/
 
-/-- `GraphIdx W`: the domain-theoretic "positive content" of `graph(W)`, mirroring Exercise 5.14's
-`Graph f = {tag ns m ∣ m ∈ f (entries ns)}`, but phrased at the level of neighbourhood relations and
-tested against *every* map `f ∈ W` (Scott's "guaranteed regardless of which `f ∈ W`" idiom, as in
-`eval`'s `∀ f ∈ F, f.rel X Y`). The "argument" is canonically `tagOfBits n m = tag (decodeList
-(bitsCode n n)) m` (`decodeList (bitsCode n n)` has entries exactly `Eₙ`, `mem_bitsCodeList`), so it
-ranges over the countably many finite sets `(nbhd n)ᶜ` rather than over arbitrary lists — exactly the
-finite-set arguments `Graph` needs, up to the reindexing already used throughout this file. Using the
-*primitive-recursive* list `bitsCode n n` (rather than the merely well-founded `bitsList n`) is what
-makes the decode direction (`mem_GraphIdx_iff` below) computable. -/
-def GraphIdx (W : Set (ApproximableMap PN PN)) : Set ℕ :=
-  {c | ∃ n m₀ m, c = tagOfBits n m ∧ (∀ f ∈ W, f.rel (nbhd n) (nbhd m₀)) ∧ m₀.testBit m = true}
 
-/-- **`GraphIdx` is antitone: shrinking `W` (more information about the map) can only add
-guaranteed content.** -/
-theorem GraphIdx_mono {W W' : Set (ApproximableMap PN PN)} (h : W' ⊆ W) :
-    GraphIdx W ⊆ GraphIdx W' := by
-  rintro c ⟨n, m₀, m, rfl, hf, hbit⟩
-  exact ⟨n, m₀, m, rfl, fun f hf' => hf f (h hf'), hbit⟩
 
-/-- **`graph` as an approximable map** `(PN → PN) → PN`, dually to `gMap`'s "reversal idiom":
-`Zᶜ ⊆ GraphIdx W`. -/
-def graphMap : ApproximableMap (funSpace PN PN) PN where
-  rel W Z := (funSpace PN PN).mem W ∧ PN.mem Z ∧ Zᶜ ⊆ GraphIdx W
-  rel_dom := fun ⟨h, _, _⟩ => h
-  rel_cod := fun ⟨_, h, _⟩ => h
-  master_rel := ⟨(funSpace PN PN).master_mem, PN.master_mem, by
-    show (Set.univ : Set ℕ)ᶜ ⊆ GraphIdx Set.univ
-    intro x hx
-    exact absurd (Set.mem_univ x) hx⟩
-  inter_right := by
-    rintro W Z Z' ⟨hW, hZ, hsub⟩ ⟨_, hZ', hsub'⟩
-    obtain ⟨k, hk⟩ := hZ; obtain ⟨k', hk'⟩ := hZ'; subst hk; subst hk'
-    refine ⟨hW, ⟨myLor k k', nbhd_inter k k'⟩, ?_⟩
-    rw [compl_inter_nbhd]
-    exact Set.union_subset hsub hsub'
-  mono := by
-    rintro W W' Z Z' ⟨hW, hZ, hsub⟩ hW'W hZZ' hW' hZ'
-    obtain ⟨k', rfl⟩ := hZ'
-    refine ⟨hW', ⟨k', rfl⟩, ?_⟩
-    calc (nbhd k')ᶜ ⊆ Zᶜ := compl_subset_compl_of_subset hZZ'
-      _ ⊆ GraphIdx W := hsub
-      _ ⊆ GraphIdx W' := GraphIdx_mono hW'W
 
 /-! ### `graph` is computable -/
 end DomainTheory.NeighbourhoodSystems.Exercise723

@@ -1,0 +1,56 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import DomainTheory.ContinuousLattice.FunctionSpaces
+public import DomainTheory.InformationSystems.Factoid46
+public import DomainTheory.InformationSystems.Factoid36
+public import DomainTheory.InformationSystems.Proposition53
+public import DomainTheory.BridgeTheorems.InfoSysConstructions
+public import DomainTheory.BridgeTheorems.PresentationDomains
+public import DomainTheory.BridgeTheorems.ConjScottMap
+public import DomainTheory.BridgeTheorems.ScottMapBridgeInst9
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.BridgeTheorems
+
+open DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+open DomainTheory.InformationSystems.InfoSys
+
+open DomainTheory.InformationSystems.InfoSys.ApproximableMap
+
+open DomainTheory.ContinuousLattice
+
+open ContinuousLatticeToNeighborhood
+
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+
+theorem ofScottContinuous_toScottContinuous {A : InfoSys α} {B : InfoSys β}
+    (f : ApproximableMap A B) :
+    ofScottContinuous (toScottContinuous f) = f := by
+  refine ApproximableMap.ext fun u v => ?_
+  constructor
+  · intro ⟨hu, hv, hsub⟩
+    exact (f.rel_iff_closure_le hu hv).2
+      (B.closure_le_element (f.toElement (A.closure u hu)) hv hsub)
+  · intro hrel
+    refine ⟨f.rel_dom hrel, f.rel_cod hrel, ?_⟩
+    intro y hy
+    have hv : v ∈ B.Con := f.rel_cod hrel
+    have hu : u ∈ A.Con := f.rel_dom hrel
+    exact (f.rel_iff_closure_le hu hv).1 hrel (B.subset_closure hv (Finset.mem_coe.1 hy))
+
+end DomainTheory.BridgeTheorems

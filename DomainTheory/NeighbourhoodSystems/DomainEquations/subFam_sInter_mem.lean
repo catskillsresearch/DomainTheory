@@ -1,0 +1,32 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.subFam
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.interSys
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.interSys_subsystem
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.interSys_nbset
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems.Proposition611
+
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set DomainTheory.NeighbourhoodSystems.Exercise222
+
+variable {α : Type*}
+
+/-- **Closure under non-empty intersection** (Exercise 2.22's hypothesis (i)). -/
+theorem subFam_sInter_mem (E : NeighborhoodSystem α) (ℱ : Set (Set (Set α)))
+    (hne : ℱ.Nonempty) (hℱ : ℱ ⊆ subFam E) : ⋂₀ ℱ ∈ subFam E :=
+  ⟨interSys E ℱ hne hℱ, interSys_subsystem E ℱ hne hℱ, (interSys_nbset E ℱ hne hℱ).symm⟩
+
+end DomainTheory.NeighbourhoodSystems.Proposition611

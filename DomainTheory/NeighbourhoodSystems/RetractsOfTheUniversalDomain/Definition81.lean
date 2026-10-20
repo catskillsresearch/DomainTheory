@@ -8,6 +8,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsRetraction
 
 @[expose] public section
 
@@ -36,9 +37,6 @@ open NeighborhoodSystem ApproximableMap
 
 variable {α : Type*} {E : NeighborhoodSystem α}
 
-/-- **Definition 8.1 (Scott 1981, PRG-19).** A *retraction* of `E` is an approximable mapping
-`a : E → E` with `a ∘ a = a`. -/
-def IsRetraction (a : ApproximableMap E E) : Prop := a.comp a = a
 
 /-- The identity mapping `I_E` is (trivially) a retraction. -/
 @[simp] theorem isRetraction_idMap : IsRetraction (idMap E) :=

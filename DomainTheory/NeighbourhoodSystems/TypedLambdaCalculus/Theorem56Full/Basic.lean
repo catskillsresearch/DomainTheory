@@ -15,6 +15,21 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approxima
 public import Mathlib.Computability.PartrecBasis
 import all Mathlib.Computability.PartrecBasis
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.LamDef
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.guard1
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.strictGuardN
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.tupleMap
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.precBody
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.recOp
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.recMap
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.findBody
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.findOp
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.searchMap
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.findMap
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.evalAt
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.rfindZeroPred
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.oneArg
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.component_argElem
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.component_vecElem
 
 @[expose] public section
 
@@ -48,13 +63,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 /-! ### Element builders. -/
 
 
-@[simp] theorem component_argElem {n : ℕ} (a : Fin n → Option ℕ) (i : ℕ) :
-    component (argElem a) i = if h : i < n then optElem (a ⟨i, h⟩) else N.bot := by
-  rw [argElem, component_ofSeq]
 
-@[simp] theorem component_vecElem {n : ℕ} (v : List.Vector ℕ n) (i : ℕ) :
-    component (vecElem v) i = if h : i < n then natElem (v.get ⟨i, h⟩) else N.bot := by
-  rw [vecElem, component_argElem]; split <;> rfl
 
 
 /-! ### Components through `push`. -/
@@ -64,21 +73,10 @@ open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 `guard1 j φ z = cond(zero(zⱼ), φ z, φ z)`: equals `φ z` when `zⱼ` is total, `⊥` when `zⱼ = ⊥`.
 Composing the guards for `j = 0..n-1` makes a map *very strict* in its first `n` coordinates. -/
 
-/-- Test coordinate `j`: `cond(zero(zⱼ), φ z, φ z)`. -/
-def guard1 (j : ℕ) (φ : ApproximableMap 𝒩 N) : ApproximableMap 𝒩 N :=
-  (cond N).comp (paired (zeroMap.comp (projN N j)) (paired φ φ))
 
-/-- Test coordinates `0..n-1`. -/
-def strictGuardN : ℕ → ApproximableMap 𝒩 N → ApproximableMap 𝒩 N
-  | 0, φ => φ
-  | n + 1, φ => guard1 n (strictGuardN n φ)
 
 /-! ### `tupleMap`: assemble `n` scalar maps into the first `n` coordinates of `𝒩`. -/
 
-/-- `⟨g₀, …, g_{n-1}⟩ : 𝒩 → 𝒩` placing `gᵢ` at coordinate `i` (`< n`) and `⊥` beyond. -/
-def tupleMap : (n : ℕ) → (Fin n → ApproximableMap 𝒩 N) → ApproximableMap 𝒩 𝒩
-  | 0, _ => constMap 𝒩 𝒩.bot
-  | n + 1, gs => (push N).comp (paired (gs 0) (tupleMap n (fun i => gs i.succ)))
 
 /-! ### The λ-definability specification. -/
 
@@ -99,28 +97,8 @@ section Prec
 
 variable (φf φg : ApproximableMap 𝒩 N)
 
-/-- The primitive-recursion body. -/
-def precBody : ApproximableMap (prod (funSpace 𝒩 N) 𝒩) N :=
-  (cond N).comp
-    (paired (zeroMap.comp ((head N).comp (proj₁ (funSpace 𝒩 N) 𝒩)))
-      (paired (φf.comp ((tail N).comp (proj₁ (funSpace 𝒩 N) 𝒩)))
-        (φg.comp
-          ((push N).comp
-            (paired (predMap.comp ((head N).comp (proj₁ (funSpace 𝒩 N) 𝒩)))
-              ((push N).comp
-                (paired
-                  ((evalMap 𝒩 N).comp
-                    (paired (proj₀ (funSpace 𝒩 N) 𝒩)
-                      ((push N).comp
-                        (paired (predMap.comp ((head N).comp (proj₁ (funSpace 𝒩 N) 𝒩)))
-                          ((tail N).comp (proj₁ (funSpace 𝒩 N) 𝒩))))))
-                  ((tail N).comp (proj₁ (funSpace 𝒩 N) 𝒩)))))))))
 
-/-- The primitive-recursion operator `R(k) = λz. …`. -/
-def recOp : ApproximableMap (funSpace 𝒩 N) (funSpace 𝒩 N) := curry (precBody φf φg)
 
-/-- `recMap : 𝒩 → N`, the least fixed point of `recOp` (before strictifying). -/
-def recMap : ApproximableMap 𝒩 N := toApproxMap (recOp φf φg).fixElement
 
 end Prec
 
@@ -142,37 +120,13 @@ section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
 
-/-- The search body `S(k, z) = cond(zero(f z), head z, k(push(succ(head z), tail z)))`. -/
-def findBody : ApproximableMap (prod (funSpace 𝒩 N) 𝒩) N :=
-  (cond N).comp
-    (paired (zeroMap.comp (φf.comp (proj₁ (funSpace 𝒩 N) 𝒩)))
-      (paired ((head N).comp (proj₁ (funSpace 𝒩 N) 𝒩))
-        ((evalMap 𝒩 N).comp
-          (paired (proj₀ (funSpace 𝒩 N) 𝒩)
-            ((push N).comp
-              (paired (succMap.comp ((head N).comp (proj₁ (funSpace 𝒩 N) 𝒩)))
-                ((tail N).comp (proj₁ (funSpace 𝒩 N) 𝒩))))))))
 
-/-- The search operator `S(k) = λz. …`, whose least fixed point is the running search. -/
-def findOp : ApproximableMap (funSpace 𝒩 N) (funSpace 𝒩 N) := curry (findBody φf)
 
-/-- `searchMap : 𝒩 → N`, the least fixed point of `findOp` (the counter lives in coordinate `0`). -/
-def searchMap : ApproximableMap 𝒩 N := toApproxMap (findOp φf).fixElement
 
-/-- `findMap : 𝒩 → N` starts the search with counter `0`. -/
-def findMap : ApproximableMap 𝒩 N :=
-  (searchMap φf).comp ((push N).comp (paired (constMap 𝒩 (natElem 0)) (idMap 𝒩)))
 
 /-! #### Divergence via the directed sup of approximants. -/
 
-/-- `evalAt z` evaluates a function-space element at the fixed argument `z`. -/
-def evalAt (z : 𝒩.Element) : ApproximableMap (funSpace 𝒩 N) N :=
-  (evalMap 𝒩 N).comp (paired (idMap (funSpace 𝒩 N)) (constMap (funSpace 𝒩 N) z))
 
-/-- The `ℕ →. Bool` predicate `k ↦ f(k ::ᵥ v) = 0`, packaged so `Nat.rfind` is well-typed at
-implicit transparency (Lean 4.33: `ℕ →. Bool` no longer unfolds to `ℕ → Part Bool` in `rw`). -/
-def rfindZeroPred {n : ℕ} (f : List.Vector ℕ (n + 1) → ℕ) (v : List.Vector ℕ n) : ℕ →. Bool :=
-  fun k => Part.some (decide (f (k ::ᵥ v) = 0))
 
 end Rfind
 
@@ -183,6 +137,4 @@ end Rfind
 Every partial recursive `h : ℕ →. ℕ` is realised by an approximable map `τ : N → N` over the flat
 naturals: `τ(n̂) = m̂` when `h n = m`, `τ(n̂) = ⊥` when `h n` diverges, and `τ(⊥) = ⊥` (strictness). -/
 
-/-- Inject `N → 𝒩` as the stack whose only nonzero coordinate is the head. -/
-def oneArg : ApproximableMap N 𝒩 := (push N).comp (paired (idMap N) (constMap N 𝒩.bot))
 end DomainTheory.NeighbourhoodSystems.Theorem56Full

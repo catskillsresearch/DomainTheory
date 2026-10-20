@@ -26,6 +26,25 @@ public import Mathlib.Data.Fintype.Card
 import all Mathlib.Data.Fintype.Card
 public import Mathlib.Order.CompleteLattice.Finset
 import all Mathlib.Order.CompleteLattice.Finset
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.presentedIntervals
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.combineIntervals
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.UMem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.U
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.clip
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.clipLt
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.clipGe
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.mem_presentedIntervals
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.presentedIntervals_nil
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.presentedIntervals_cons
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.presentedIntervals_inter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.UMaster
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.U_master_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.UMaster_nonempty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.U_inter_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.U_sub_master
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.clip
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.clipLt
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87.clipGe
 
 @[expose] public section
 
@@ -74,89 +93,25 @@ open NeighborhoodSystem
 
 /-! ### Finite unions of rational intervals -/
 
-/-- The set presented by a list of interval endpoint-pairs: the union `⋃ (r,s) ∈ L, [r,s)`. -/
-def presentedIntervals (L : List (ℚ × ℚ)) : Set ℚ := ⋃ p ∈ L, Set.Ico p.1 p.2
 
-@[simp] theorem mem_presentedIntervals {L : List (ℚ × ℚ)} {x : ℚ} :
-    x ∈ presentedIntervals L ↔ ∃ p ∈ L, p.1 ≤ x ∧ x < p.2 := by
-  simp only [presentedIntervals, Set.mem_iUnion, Set.mem_Ico, exists_prop]
 
-@[simp] theorem presentedIntervals_nil : presentedIntervals ([] : List (ℚ × ℚ)) = ∅ := by
-  ext x; simp
 
-theorem presentedIntervals_cons (p : ℚ × ℚ) (L : List (ℚ × ℚ)) :
-    presentedIntervals (p :: L) = Set.Ico p.1 p.2 ∪ presentedIntervals L := by
-  ext x; simp [Set.mem_Ico, or_and_right, exists_or]
 
-/-- Pairwise-combine two endpoint-lists via `Set.Ico_inter_Ico`, realizing the intersection of the
-two presented unions as another presented union. -/
-def combineIntervals (L1 L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) :=
-  L1.flatMap (fun p => L2.map (fun q => (p.1 ⊔ q.1, p.2 ⊓ q.2)))
 
-/-- **The presented family is closed under intersection**, with no side conditions on endpoints:
-`Set.Ico_inter_Ico` handles crossed bounds automatically by returning the empty interval. -/
-theorem presentedIntervals_inter (L1 L2 : List (ℚ × ℚ)) :
-    presentedIntervals L1 ∩ presentedIntervals L2 = presentedIntervals (combineIntervals L1 L2) := by
-  ext x
-  simp only [mem_presentedIntervals, combineIntervals, List.mem_flatMap, List.mem_map,
-    Set.mem_inter_iff]
-  constructor
-  · rintro ⟨⟨p, hp, hxp1, hxp2⟩, ⟨q, hq, hxq1, hxq2⟩⟩
-    exact ⟨(p.1 ⊔ q.1, p.2 ⊓ q.2), ⟨p, hp, q, hq, rfl⟩, sup_le hxp1 hxq1, lt_inf_iff.mpr ⟨hxp2, hxq2⟩⟩
-  · rintro ⟨r, ⟨p, hp, q, hq, rfl⟩, hx1, hx2⟩
-    exact ⟨⟨p, hp, le_sup_left.trans hx1, hx2.trans_le inf_le_left⟩,
-      ⟨q, hq, le_sup_right.trans hx1, hx2.trans_le inf_le_right⟩⟩
 
 /-! ### `𝒰`, the universal neighbourhood system over `[0,1) ⊆ ℚ` -/
 
-/-- Membership in Scott's universal family: non-empty subsets of `[0,1)` presentable as a
-finite union of rational half-open intervals. -/
-def UMem (X : Set ℚ) : Prop :=
-  (∃ L : List (ℚ × ℚ), X = presentedIntervals L) ∧ X.Nonempty ∧ X ⊆ Set.Ico (0 : ℚ) 1
 
-/-- Scott's master neighbourhood `Δ = [0,1)` for `𝒰`. -/
-abbrev UMaster : Set ℚ := Set.Ico (0 : ℚ) 1
 
-/-- `[0,1)` is presented by the single interval `[0,1)`. -/
-theorem U_master_mem : UMem UMaster :=
-  ⟨⟨[(0, 1)], by rw [presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]⟩,
-    ⟨0, by norm_num⟩, subset_rfl⟩
 
-/-- Scott's token set `[0,1)` is non-empty. -/
-theorem UMaster_nonempty : UMaster.Nonempty := by
-  exact ⟨0, by simp [UMaster]⟩
 
-/-- Intersection of two presentable sets is presentable, via `combineIntervals`. -/
-theorem U_inter_mem {X Y Z : Set ℚ} (hX : UMem X) (hY : UMem Y) (hZ : UMem Z)
-    (hZsub : Z ⊆ X ∩ Y) : UMem (X ∩ Y) := by
-  rcases hX with ⟨⟨L1, rfl⟩, -, hXsub⟩
-  rcases hY with ⟨⟨L2, rfl⟩, -, -⟩
-  rcases hZ with ⟨-, hZne, -⟩
-  exact ⟨⟨combineIntervals L1 L2, presentedIntervals_inter L1 L2⟩,
-    hZne.mono hZsub, Set.inter_subset_left.trans hXsub⟩
 
-/-- Every `UMem` set is contained in `[0,1)`. -/
-theorem U_sub_master {X : Set ℚ} (hX : UMem X) : X ⊆ UMaster := hX.2.2
 
-/-- **Definition 8.7 (Scott 1981, PRG-19).** The neighbourhood system `𝒰` over `[0,1) ⊆ ℚ`: its
-neighbourhoods are the non-empty subsets of `[0,1)` presentable as a finite union of rational
-intervals `[r,s)` (see the module docstring for why the raw endpoints need no `0 ≤ r < s ≤ 1`
-side-condition, and `mem_iff_scott` for the literal reconciliation). Proof fields are named
-theorems so Palomar can lock this value without generated `._proof_N` constants. -/
-def U : NeighborhoodSystem ℚ where
-  mem := UMem
-  master := UMaster
-  master_nonempty := UMaster_nonempty
-  master_mem := U_master_mem
-  inter_mem := U_inter_mem
-  sub_master := U_sub_master
 
 /-! ### Faithfulness: `U.mem` literally matches Scott's per-pair-bounded description -/
 
-/-- Clip an interval-pair to `[0,1)`, moving `r` up to `0` and `s` down to `1` when needed. -/
-private def clip (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ 0, p.2 ⊓ 1)
 
-private theorem presentedIntervals_map_clip (L : List (ℚ × ℚ)) :
+theorem presentedIntervals_map_clip (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map clip) = presentedIntervals L ∩ Set.Ico (0 : ℚ) 1 := by
   ext x
   simp only [mem_presentedIntervals, List.mem_map, Set.mem_inter_iff, Set.mem_Ico, clip]
@@ -202,8 +157,6 @@ theorem U_mem_iff_scott {X : Set ℚ} :
 
 /-! ### `𝒰` has no minimal neighbourhoods -/
 
-private def clipLt (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1, p.2 ⊓ m)
-private def clipGe (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ m, p.2)
 
 theorem presentedIntervals_map_clipLt (m : ℚ) (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map (clipLt m)) = presentedIntervals L ∩ Set.Iio m := by

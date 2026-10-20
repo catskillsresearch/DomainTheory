@@ -1,0 +1,38 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import Mathlib.Algebra.Order.Field.Rat
+import all Mathlib.Algebra.Order.Field.Rat
+public import Mathlib.Tactic.Linarith
+import all Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+import all Mathlib.Tactic.NormNum
+public import DomainTheory.InformationSystems.InfoSys
+public import DomainTheory.InformationSystems.Factoid25.Token
+public import DomainTheory.InformationSystems.instDecidableEq
+public import DomainTheory.InformationSystems.Sat
+public import DomainTheory.InformationSystems.sat_midpoint
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.InformationSystems
+
+namespace Factoid25
+
+/-- Every token is satisfiable. -/
+theorem sat_sing (t : Token) : ∃ x : ℚ, Sat x t := by
+  cases t with
+  | bot => exact ⟨0, trivial⟩
+  | interval lo hi hlt => exact ⟨_, sat_midpoint hlt⟩
+
+end Factoid25
+
+end DomainTheory.InformationSystems

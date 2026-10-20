@@ -1,0 +1,78 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.InformationSystems.FunctionSpace
+public import DomainTheory.InformationSystems.Sum
+public import Mathlib.Data.Finset.Card
+import all Mathlib.Data.Finset.Card
+public import DomainTheory.InformationSystems.Factoid82.RawLamToken
+public import DomainTheory.InformationSystems.Factoid82.RawLamToken
+public import DomainTheory.InformationSystems.Factoid82.LamEntDepth
+public import DomainTheory.InformationSystems.Factoid82.LamEntDepth
+public import DomainTheory.InformationSystems.Factoid82.lamAtomFinset_mono
+public import DomainTheory.InformationSystems.Factoid82.lamFunFinset_mono
+public import DomainTheory.InformationSystems.Factoid82.BasicInst23
+public import DomainTheory.InformationSystems.Factoid82.BasicInst27
+public import DomainTheory.InformationSystems.Factoid82.LamConDepth_of_fun_empty
+public import DomainTheory.InformationSystems.Factoid82.LamConDepth_of_fun_nonempty
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+set_option linter.unusedSectionVars false
+
+variable {α : Type*} [DecidableEq α]
+
+variable (A : InfoSys α)
+
+theorem LamConDepth_mono {u v : Finset (RawLamToken α)}
+    (huv : u ⊆ v) (hv : LamConDepth A v) : LamConDepth A u := by
+  have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
+    decidableEq_finset
+  have hFunMono := lamFunFinset_mono huv
+  have hAtomMono := lamAtomFinset_mono huv
+  by_cases hFv : lamFunFinset v = ∅
+  · have hFu : lamFunFinset u = ∅ :=
+      Finset.Subset.antisymm
+        (fun p hp => by
+          have := hFunMono hp
+          rw [hFv] at this; exact False.elim (Finset.notMem_empty p this))
+        (Finset.empty_subset _)
+    exact (LamConDepth_of_fun_empty A hFu).2
+      (A.con_subset ((LamConDepth_of_fun_empty A hFv).1 hv) hAtomMono)
+  · have hv' := (LamConDepth_of_fun_nonempty A hFv).1 hv
+    rcases hv' with ⟨hAv, hWF, hFun⟩
+    by_cases hFu : lamFunFinset u = ∅
+    · have hAu : lamAtomFinset u = ∅ :=
+        Finset.Subset.antisymm
+          (fun x hx => by
+            have := hAtomMono hx
+            rw [hAv] at this; exact False.elim (Finset.notMem_empty x this))
+          (Finset.empty_subset _)
+      exact (LamConDepth_of_fun_empty A hFu).2 (by rw [hAu]; exact A.con_empty)
+    · refine (LamConDepth_of_fun_nonempty A hFu).2 ⟨?_, ?_, ?_⟩
+      · exact Finset.Subset.antisymm
+          (fun x hx => by
+            have := hAtomMono hx
+            rw [hAv] at this; exact False.elim (Finset.notMem_empty x this))
+          (Finset.empty_subset _)
+      · intro p hp; exact hWF p (hFunMono hp)
+      · intro s hs hIn
+        exact hFun s (fun p hp => hFunMono (hs hp)) hIn
+
+end InfoSys
+
+end DomainTheory.InformationSystems

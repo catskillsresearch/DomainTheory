@@ -15,6 +15,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.TAlgebra
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.AlgHom
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.IsInitial
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Iso
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.id
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.comp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63Inst2
 
 @[expose] public section
 
@@ -56,16 +59,6 @@ Scott's running category (prose before Definition 6.3). Objects bundle a token t
 morphisms are approximable maps; the laws are Theorem 2.5. -/
 
 
-/-- **The category of domains and approximable maps** (Scott's prose preceding Definition 6.3):
-identities and associative composition come from Theorem 2.5 (`idMap_comp`, `comp_idMap`,
-`comp_assoc`). -/
-instance : Category DomainObj where
-  Hom D E := ApproximableMap D.sys E.sys
-  id D := ApproximableMap.idMap D.sys
-  comp f g := g.comp f
-  id_comp f := ApproximableMap.comp_idMap f
-  comp_id f := ApproximableMap.idMap_comp f
-  assoc f g h := (ApproximableMap.comp_assoc h g f).symm
 
 variable {Obj : Type u} [Category Obj]
 
@@ -80,24 +73,7 @@ variable {T : Endofunctor Obj}
 
 namespace AlgHom
 
-/-- The identity is a homomorphism: `I ∘ k = k ∘ T(I)`. -/
-def id (A : TAlgebra T) : AlgHom A A where
-  hom := (𝟙 A.carrier)
-  comm := by
-    simp only [compAfter]
-    rw [CategoryTheory.Category.comp_id, T.map_id, CategoryTheory.Category.id_comp]
 
-/-- Composition of `T`-algebra homomorphisms (the `T`-algebras and homomorphisms form a category —
-the remark after Definition 6.4). -/
-def comp {A B C : TAlgebra T} (β : AlgHom B C) (α : AlgHom A B) : AlgHom A C where
-  hom := β.hom ⊚ α.hom
-  comm := by
-    have hα := α.comm
-    have hβ := β.comm
-    have hmap := T.map_comp β.hom α.hom
-    dsimp only [compAfter] at hα hβ hmap ⊢
-    rw [← CategoryTheory.Category.assoc, hα, CategoryTheory.Category.assoc, hβ,
-      ← CategoryTheory.Category.assoc, hmap]
 
 @[simp] theorem id_hom (A : TAlgebra T) : (AlgHom.id A).hom = (𝟙 A.carrier) := rfl
 

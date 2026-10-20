@@ -1,0 +1,37 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77.listGet
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77.listGet_foldl
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem Domain.Recursive Example61
+
+variable {α : Type*}
+
+namespace Proposition77
+
+variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
+
+/-- **Correctness of `listGet`** on a coded list. -/
+theorem listGet_encodeList (l : List ℕ) (i : ℕ) : listGet (encodeList l) i = l.getD i 0 := by
+  unfold listGet
+  rw [foldCode_eq]
+  exact listGet_foldl l i 0
+
+end Proposition77
+
+end DomainTheory.NeighbourhoodSystems

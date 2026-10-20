@@ -14,6 +14,37 @@ public import Mathlib.Topology.Compactness.Compact
 import all Mathlib.Topology.Compactness.Compact
 public import Mathlib.Topology.Clopen
 import all Mathlib.Topology.Clopen
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.genPoint
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.box
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.evalSet'
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.toSet'
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.Corresponds
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.dualFilter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.idealOf
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.elementOfOpen
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.mem_genPoint
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.generatedBy_genPoint_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.mem_box
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.mem_evalSet'_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.generatedBy_iff_exists_evalSet'
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.semanticEquiv_iff_evalSet'_eq
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.entails_iff_evalSet'_subset
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.toSet'_mk
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.subset_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.generatedBy_left
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.generatedBy_right
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.nonempty_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.inter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.mem_dualFilter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.dualFilter_dualFilter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.univ_mem_dualFilter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.not_empty_mem_dualFilter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.inter_mem_dualFilter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.up_mem_dualFilter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.empty_mem_idealOf
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.univ_not_mem_idealOf
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.union_mem_idealOf
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.down_mem_idealOf
 
 @[expose] public section
 
@@ -54,25 +85,12 @@ namespace DomainTheory.NeighbourhoodSystems
 
 /-! ### `genPoint`: the coordinate-projection clopens of Cantor space -/
 
-/-- The `i`-th coordinate-projection basic clopen of Cantor space `ℕ → Bool`: the literal
-transcription, on this carrier, of `8.13(a)`'s `generator i`. -/
-def genPoint (i : ℕ) : Set (ℕ → Bool) := (fun x : ℕ → Bool => x i) ⁻¹' {true}
 
-@[simp] theorem mem_genPoint {i : ℕ} {x : ℕ → Bool} : x ∈ genPoint i ↔ x i = true := Iff.rfl
 
-/-- `GeneratedBy genPoint ∅` — recorded separately since `GeneratedBy`'s only route to `∅` is via
-`compl` of `univ`. -/
-theorem generatedBy_genPoint_empty : GeneratedBy genPoint (∅ : Set (ℕ → Bool)) := by
-  simpa using GeneratedBy.univ.compl
 
 /-! ### `box`: finite-support basic clopens -/
 
-/-- The basic clopen pinning every coordinate in `I` to match `f`, and leaving the rest free —
-the standard basis element of the product topology on `ℕ → Bool`. -/
-def box (I : Finset ℕ) (f : ℕ → Bool) : Set (ℕ → Bool) := {x | ∀ i ∈ I, x i = f i}
 
-@[simp] theorem mem_box {I : Finset ℕ} {f x : ℕ → Bool} :
-    x ∈ box I f ↔ ∀ i ∈ I, x i = f i := Iff.rfl
 
 /-! ### The headline: clopens are exactly `GeneratedBy genPoint` -/
 
@@ -95,87 +113,13 @@ an order-isomorphism between the two concrete algebras, without needing any (non
 of the wildly different underlying carriers `ℕ`/`ℕ → Bool`.
 -/
 
-/-- The *same* recursion as `evalSet`, but interpreted via `genPoint` instead of `generator`. -/
-def evalSet' : Formula → Set (ℕ → Bool)
-  | .var i => genPoint i
-  | .bot => ∅
-  | .top => Set.univ
-  | .neg φ => (evalSet' φ)ᶜ
-  | .and φ ψ => evalSet' φ ∩ evalSet' ψ
-  | .or φ ψ => evalSet' φ ∪ evalSet' ψ
 
-/-- Cantor space's own points already *are* valuations, so this bridge is definitional-level
-simple: no bit-encoding step is needed (contrast `8.13(b)`'s `mem_evalSet_iff`). -/
-theorem mem_evalSet'_iff (x : ℕ → Bool) (φ : Formula) :
-    x ∈ evalSet' φ ↔ evalV x φ = true := by
-  induction φ with
-  | var i => simp [evalSet', evalV]
-  | bot => simp [evalSet', evalV]
-  | top => simp [evalSet', evalV]
-  | neg φ ih => simp [evalSet', evalV, ih]
-  | and φ ψ ihφ ihψ => simp [evalSet', evalV, ihφ, ihψ]
-  | or φ ψ ihφ ihψ => simp [evalSet', evalV, ihφ, ihψ]
 
-theorem generatedBy_iff_exists_evalSet' {Y : Set (ℕ → Bool)} :
-    GeneratedBy genPoint Y ↔ ∃ φ : Formula, evalSet' φ = Y := by
-  constructor
-  · intro h
-    induction h with
-    | of i => exact ⟨.var i, rfl⟩
-    | univ => exact ⟨.top, rfl⟩
-    | @inter X Y _ _ ih1 ih2 =>
-      obtain ⟨φ, rfl⟩ := ih1; obtain ⟨ψ, rfl⟩ := ih2
-      exact ⟨.and φ ψ, rfl⟩
-    | @union X Y _ _ ih1 ih2 =>
-      obtain ⟨φ, rfl⟩ := ih1; obtain ⟨ψ, rfl⟩ := ih2
-      exact ⟨.or φ ψ, rfl⟩
-    | @compl X _ ih =>
-      obtain ⟨φ, rfl⟩ := ih
-      exact ⟨.neg φ, rfl⟩
-  · rintro ⟨φ, rfl⟩
-    induction φ with
-    | var i => exact GeneratedBy.of i
-    | bot => simpa [evalSet'] using GeneratedBy.univ.compl
-    | top => exact GeneratedBy.univ
-    | neg φ ih => exact ih.compl
-    | and φ ψ ihφ ihψ => exact ihφ.inter ihψ
-    | or φ ψ ihφ ihψ => exact ihφ.union ihψ
 
-/-- No finitary agreement argument is needed here (contrast `8.13(b)`'s `semanticEquiv_iff_
-evalSet_eq`): `evalV`'s own domain `ℕ → Bool` already *is* Cantor space's points. -/
-theorem semanticEquiv_iff_evalSet'_eq {φ ψ : Formula} :
-    SemanticEquiv φ ψ ↔ evalSet' φ = evalSet' ψ := by
-  constructor
-  · intro h
-    ext x
-    rw [mem_evalSet'_iff, mem_evalSet'_iff, h]
-  · intro h v
-    have hmem : v ∈ evalSet' φ ↔ v ∈ evalSet' ψ := by rw [h]
-    rw [mem_evalSet'_iff, mem_evalSet'_iff] at hmem
-    rcases hφ : evalV v φ with - | - <;> rcases hψ : evalV v ψ with - | - <;> simp_all
 
-/-- The same finitary-free argument as `semanticEquiv_iff_evalSet'_eq`, for entailment. -/
-theorem entails_iff_evalSet'_subset {φ ψ : Formula} :
-    Entails φ ψ ↔ evalSet' φ ⊆ evalSet' ψ := by
-  constructor
-  · intro h x hx
-    rw [mem_evalSet'_iff] at hx ⊢
-    exact h _ hx
-  · intro h v hv
-    exact (mem_evalSet'_iff v ψ).mp (h ((mem_evalSet'_iff v φ).mpr hv))
 
-/-- `Lindenbaum`'s canonical map to Cantor-space clopens, the counterpart of `8.13(b)`'s
-`Lindenbaum.toSet`. -/
-def Lindenbaum.toSet' : Lindenbaum → Set (ℕ → Bool) :=
-  Quotient.lift evalSet' fun _ _ h => semanticEquiv_iff_evalSet'_eq.mp h
 
-@[simp] theorem Lindenbaum.toSet'_mk (φ : Formula) :
-    Lindenbaum.toSet' ⟦φ⟧ = evalSet' φ := rfl
 
-/-- **`8.13(c2)`, the headline.** `X` and `Y` are the `evalSet`/`evalSet'` images of a *common*
-`Formula` — i.e. the same node of the (unique, up to `SemanticEquiv`) Lindenbaum algebra. -/
-def Corresponds (X : Set ℕ) (Y : Set (ℕ → Bool)) : Prop :=
-  ∃ φ : Formula, evalSet φ = X ∧ evalSet' φ = Y
 
 theorem exists_corresponds_of_generatedBy_generator {X : Set ℕ} (hX : GeneratedBy generator X) :
     ∃ Y, Corresponds X Y := by
@@ -189,47 +133,10 @@ theorem Corresponds.unique_left {X₁ X₂ : Set ℕ} {Y : Set (ℕ → Bool)}
   have hse : SemanticEquiv φ ψ := semanticEquiv_iff_evalSet'_eq.mpr (hφY.trans hψY.symm)
   rw [← hφX, ← hψX, semanticEquiv_iff_evalSet_eq.mp hse]
 
-/-- `Corresponds` also matches `⊆` — i.e. it is an order-isomorphism between the two concrete
-algebras, not just a bijection. -/
-theorem Corresponds.subset_iff {X₁ X₂ : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}
-    (h1 : Corresponds X₁ Y₁) (h2 : Corresponds X₂ Y₂) : X₁ ⊆ X₂ ↔ Y₁ ⊆ Y₂ := by
-  obtain ⟨φ, hφX, hφY⟩ := h1
-  obtain ⟨ψ, hψX, hψY⟩ := h2
-  subst hφX; subst hφY; subst hψX; subst hψY
-  exact ⟨fun hsub => entails_iff_evalSet'_subset.mp (entails_iff_evalSet_subset.mpr hsub),
-    fun hsub => entails_iff_evalSet_subset.mp (entails_iff_evalSet'_subset.mpr hsub)⟩
 
-theorem Corresponds.generatedBy_left {X : Set ℕ} {Y : Set (ℕ → Bool)} (h : Corresponds X Y) :
-    GeneratedBy generator X := by
-  obtain ⟨φ, rfl, -⟩ := h; exact generatedBy_iff_exists_evalSet.mpr ⟨φ, rfl⟩
 
-theorem Corresponds.generatedBy_right {X : Set ℕ} {Y : Set (ℕ → Bool)} (h : Corresponds X Y) :
-    GeneratedBy genPoint Y := by
-  obtain ⟨φ, -, rfl⟩ := h; exact generatedBy_iff_exists_evalSet'.mpr ⟨φ, rfl⟩
 
-/-- `Corresponds` matches `Set.Nonempty` — via `n ↦ fun i => n.testBit i` directly for `→`, and
-`exists_bitsOf_agree` (`8.13(b)`) for `←`, since a formula's satisfying valuation can always be
-swapped for a matching bit-derived one on its own (finite) variables. -/
-theorem Corresponds.nonempty_iff {X : Set ℕ} {Y : Set (ℕ → Bool)} (h : Corresponds X Y) :
-    X.Nonempty ↔ Y.Nonempty := by
-  obtain ⟨φ, rfl, rfl⟩ := h
-  constructor
-  · rintro ⟨n, hn⟩
-    exact ⟨fun i => n.testBit i, (mem_evalSet'_iff _ φ).mpr ((mem_evalSet_iff n φ).mp hn)⟩
-  · rintro ⟨v, hv⟩
-    obtain ⟨n, hn⟩ := exists_bitsOf_agree (vars φ) v
-    refine ⟨n, (mem_evalSet_iff n φ).mpr ?_⟩
-    rw [evalV_eq_of_agree hn]
-    exact (mem_evalSet'_iff v φ).mp hv
 
-theorem Corresponds.inter {X₁ X₂ : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}
-    (h1 : Corresponds X₁ Y₁) (h2 : Corresponds X₂ Y₂) :
-    Corresponds (X₁ ∩ X₂) (Y₁ ∩ Y₂) := by
-  obtain ⟨φ, hφX, hφY⟩ := h1
-  obtain ⟨ψ, hψX, hψY⟩ := h2
-  refine ⟨.and φ ψ, ?_, ?_⟩
-  · show evalSet φ ∩ evalSet ψ = X₁ ∩ X₂; rw [hφX, hψX]
-  · show evalSet' φ ∩ evalSet' ψ = Y₁ ∩ Y₂; rw [hφY, hψY]
 
 /-!
 ## `8.13(c3)`: ideal/filter complementation
@@ -244,40 +151,12 @@ properties as its own small lemma, so `8.13(c4)` can assemble a genuine `V.Eleme
 from them.
 -/
 
-/-- `Y ↦ Yᶜ`, applied to a whole family: turns an ideal into (the membership predicate of) a
-filter, and vice versa (`dualFilter` is its own inverse, `dualFilter_dualFilter`). -/
-def dualFilter {α : Type*} (x : Set (Set α)) : Set (Set α) := {Y | Yᶜ ∈ x}
 
-@[simp] theorem mem_dualFilter {α : Type*} {x : Set (Set α)} {Y : Set α} :
-    Y ∈ dualFilter x ↔ Yᶜ ∈ x := Iff.rfl
 
-@[simp] theorem dualFilter_dualFilter {α : Type*} (x : Set (Set α)) :
-    dualFilter (dualFilter x) = x := by
-  ext Y; simp [dualFilter]
 
-/-- An ideal containing `∅` dualizes to a filter containing `univ`. -/
-theorem univ_mem_dualFilter {α : Type*} {x : Set (Set α)} (h : (∅ : Set α) ∈ x) :
-    Set.univ ∈ dualFilter x := by simpa [dualFilter] using h
 
-/-- An ideal excluding `univ` dualizes to a filter excluding `∅`. -/
-theorem not_empty_mem_dualFilter {α : Type*} {x : Set (Set α)} (h : Set.univ ∉ x) :
-    (∅ : Set α) ∉ dualFilter x := by simpa [dualFilter] using h
 
-/-- An ideal closed under (binary, hence finite) union dualizes to a filter closed under
-intersection (`(Y ∩ Z)ᶜ = Yᶜ ∪ Zᶜ`, De Morgan). -/
-theorem inter_mem_dualFilter {α : Type*} {x : Set (Set α)}
-    (hx : ∀ Y ∈ x, ∀ Z ∈ x, Y ∪ Z ∈ x) {Y Z : Set α}
-    (hY : Y ∈ dualFilter x) (hZ : Z ∈ dualFilter x) : Y ∩ Z ∈ dualFilter x := by
-  have h := hx _ hY _ hZ
-  simpa [dualFilter, Set.compl_inter] using h
 
-/-- An ideal downward-closed within `GeneratedBy g` dualizes to a filter upward-closed within
-`GeneratedBy g` (De Morgan again: `Z ⊆ Y ↔ Yᶜ ⊆ Zᶜ`). -/
-theorem up_mem_dualFilter {α : Type*} {g : ℕ → Set α} {x : Set (Set α)}
-    (hx : ∀ Y ∈ x, ∀ Z, GeneratedBy g Z → Z ⊆ Y → Z ∈ x) {Y Z : Set α}
-    (hY : Y ∈ dualFilter x) (hZg : GeneratedBy g Z) (hYZ : Y ⊆ Z) : Z ∈ dualFilter x := by
-  have hcompl : Zᶜ ⊆ Yᶜ := Set.compl_subset_compl.mpr hYZ
-  simpa [dualFilter] using hx _ hY _ hZg.compl hcompl
 
 /-!
 ## `8.13(c4)`: assembly
@@ -299,46 +178,9 @@ remark is informal here, consistent with the parenthetical's own looser phrasing
 scoping already flagged the parallel "opens vs. closeds" imprecision).
 -/
 
-/-- The clopens contained in `O`: a proper ideal of `GeneratedBy genPoint` whenever `O ≠ univ`. -/
-def idealOf (O : Set (ℕ → Bool)) : Set (Set (ℕ → Bool)) := {Y | GeneratedBy genPoint Y ∧ Y ⊆ O}
 
-theorem empty_mem_idealOf (O : Set (ℕ → Bool)) : (∅ : Set (ℕ → Bool)) ∈ idealOf O :=
-  ⟨generatedBy_genPoint_empty, Set.empty_subset _⟩
 
-theorem univ_not_mem_idealOf {O : Set (ℕ → Bool)} (hO : O ≠ Set.univ) : Set.univ ∉ idealOf O :=
-  fun h => hO (Set.univ_subset_iff.mp h.2)
 
-theorem union_mem_idealOf {O Y Z : Set (ℕ → Bool)} (hY : Y ∈ idealOf O) (hZ : Z ∈ idealOf O) :
-    Y ∪ Z ∈ idealOf O := ⟨hY.1.union hZ.1, Set.union_subset hY.2 hZ.2⟩
 
-theorem down_mem_idealOf {O Y Z : Set (ℕ → Bool)} (hY : Y ∈ idealOf O)
-    (hZg : GeneratedBy genPoint Z) (hZY : Z ⊆ Y) : Z ∈ idealOf O := ⟨hZg, hZY.trans hY.2⟩
 
-/-- **`8.13(c4)`, the headline connection.** Every open `O ≠ Set.univ` of Cantor space `2^ℕ`
-determines a genuine element of `V` (hence of `U`, via `exercise813a`) — the proper filter "dual"
-to the ideal of clopens inside `O`, transported to `ℕ`-clopens via `Corresponds`. This is the
-precise sense in which `8.13(a)`'s filter-domain representation of `U` connects with the
-(non-`univ`, and per Scott's remark, morally non-empty) open subsets of Cantor space. -/
-def elementOfOpen {O : Set (ℕ → Bool)} (hO : O ≠ Set.univ) : V.Element where
-  mem X := ∃ Y, Y ∈ dualFilter (idealOf O) ∧ Corresponds X Y
-  sub := by
-    rintro X ⟨Y, hY, hCorr⟩
-    have hYne : Y ≠ ∅ := fun hYe =>
-      not_empty_mem_dualFilter (univ_not_mem_idealOf hO) (hYe ▸ hY)
-    exact V_mem_iff_generatedBy.mpr ⟨hCorr.generatedBy_left,
-      hCorr.nonempty_iff.mpr (Set.nonempty_iff_ne_empty.mpr hYne)⟩
-  master_mem := ⟨Set.univ, univ_mem_dualFilter (empty_mem_idealOf O), .top, rfl, rfl⟩
-  inter_mem := by
-    rintro X₁ X₂ ⟨Y₁, hY₁, hC₁⟩ ⟨Y₂, hY₂, hC₂⟩
-    exact ⟨Y₁ ∩ Y₂,
-      inter_mem_dualFilter (fun Y hY Z hZ => union_mem_idealOf hY hZ) hY₁ hY₂, hC₁.inter hC₂⟩
-  up_mem := by
-    rintro X₁ X₂ ⟨Y₁, hY₁, hC₁⟩ hX₂mem hX₁X₂
-    obtain ⟨hX₂gen, -⟩ := V_mem_iff_generatedBy.mp hX₂mem
-    obtain ⟨ψ, hψ⟩ := generatedBy_iff_exists_evalSet.mp hX₂gen
-    have hC₂ : Corresponds X₂ (evalSet' ψ) := ⟨ψ, hψ, rfl⟩
-    refine ⟨evalSet' ψ,
-      up_mem_dualFilter (fun Y hY Z hZg hZY => down_mem_idealOf hY hZg hZY) hY₁
-        hC₂.generatedBy_right ((hC₁.subset_iff hC₂).mp hX₁X₂),
-      hC₂⟩
 end DomainTheory.NeighbourhoodSystems

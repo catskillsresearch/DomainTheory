@@ -103,11 +103,11 @@ theorem gEval_complete (hD : ∀ X, D.mem X → X.Nonempty)
       refine ⟨Nat.pair e (Nat.pair wit (Nat.pair certL certR)), ?_, ?_⟩
       · rw [gEval_pair, gStep_node, unpair_pair_fst]
         have hcertL : certL ≤ Nat.pair e (Nat.pair wit (Nat.pair certL certR)) :=
-          le_trans (le_pair_left _ _)
-            (le_trans (le_pair_right wit _) (le_pair_right e _))
+          le_trans (Domain.Recursive.le_pair_left _ _)
+            (le_trans (Domain.Recursive.le_pair_right wit _) (Domain.Recursive.le_pair_right e _))
         have hcertR : certR ≤ Nat.pair e (Nat.pair wit (Nat.pair certL certR)) :=
-          le_trans (le_pair_right _ _)
-            (le_trans (le_pair_right wit _) (le_pair_right e _))
+          le_trans (Domain.Recursive.le_pair_right _ _)
+            (le_trans (Domain.Recursive.le_pair_right wit _) (Domain.Recursive.le_pair_right e _))
         have hlt1 : Nat.pair a.unpair.1 certL < Nat.pair (2 * a + 2)
             (Nat.pair e (Nat.pair wit (Nat.pair certL certR))) :=
           pair_lt_pair_of_lt_le (by have := unpair_fst_le a; omega) hcertL

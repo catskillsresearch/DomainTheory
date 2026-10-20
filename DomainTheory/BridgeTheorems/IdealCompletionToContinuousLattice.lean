@@ -12,6 +12,8 @@ import all Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.Directed
 import all Mathlib.Order.Directed
 public import DomainTheory.ContinuousLattice.WayBelow
+public import DomainTheory.BridgeTheorems.IsCompactElement
+public import DomainTheory.BridgeTheorems.IsAlgebraicLattice
 
 @[expose] public section
 
@@ -36,9 +38,6 @@ namespace IdealCompletionToContinuousLattice
 
 variable {D : Type*} [CompleteLattice D]
 
-/-- Order-theoretic compactness: inaccessible by nonempty directed suprema. -/
-def IsCompactElement (k : D) : Prop :=
-  ∀ ⦃S : Set D⦄, S.Nonempty → DirectedOn (· ≤ ·) S → k ≤ sSup S → ∃ s ∈ S, k ≤ s
 
 /-- Compactness implies `Set.Ici k` is Scott-open. -/
 theorem scottOpen_Ici_of_compact {k : D} (hk : IsCompactElement k) :
@@ -51,11 +50,6 @@ theorem scottOpen_Ici_of_compact {k : D} (hk : IsCompactElement k) :
 theorem compact_wayBelow {k y : D} (hk : IsCompactElement k) (hky : k ≤ y) : k ≪ y :=
   ⟨Set.Ici k, scottOpen_Ici_of_compact hk, Set.mem_Ici.2 hky, subset_rfl⟩
 
-/-- Algebraicity: every element is the directed lub of compact elements below it. -/
-def IsAlgebraicLattice (D : Type*) [CompleteLattice D] : Prop :=
-  ∀ y : D,
-    let S := {x : D | IsCompactElement x ∧ x ≤ y}
-    S.Nonempty ∧ DirectedOn (· ≤ ·) S ∧ sSup S = y
 
 /-- **Blueprint:** algebraic complete lattice ⇒ continuous lattice (Scott Def. 2.3). -/
 theorem isContinuousLattice_of_algebraic (hA : IsAlgebraicLattice D) :

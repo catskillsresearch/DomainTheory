@@ -16,6 +16,7 @@ import all Mathlib.CategoryTheory.Monoidal.Closed.Basic
 public import Mathlib.CategoryTheory.Adjunction.Basic
 import all Mathlib.CategoryTheory.Adjunction.Basic
 public import DomainTheory.InformationSystems.Factoid77.Basic
+public import DomainTheory.InformationSystems.Factoid77.instCartesianMonoidalCategoryInfoSysObj
 
 @[expose] public section
 

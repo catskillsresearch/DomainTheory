@@ -1,0 +1,52 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap
+
+variable {α β γ : Type*}
+
+variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
+
+/-- **Exercise 3.24(i) (Scott 1981, PRG-19).** The order-isomorphism on approximable maps
+`Hom(𝒟₀, 𝒟₁ × 𝒟₂) ≃o Hom(𝒟₀, 𝒟₁) × Hom(𝒟₀, 𝒟₂)`, `h ↦ (p₀ ∘ h, p₁ ∘ h)`. -/
+def funProdEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
+    (V₂ : NeighborhoodSystem γ) :
+    ApproximableMap V₀ (prod V₁ V₂) ≃o (ApproximableMap V₀ V₁ × ApproximableMap V₀ V₂) where
+  toFun h := ((proj₀ V₁ V₂).comp h, (proj₁ V₁ V₂).comp h)
+  invFun p := paired p.1 p.2
+  left_inv h := paired_proj h
+  right_inv p := by
+    ext1
+    · exact proj₀_comp_paired p.1 p.2
+    · exact proj₁_comp_paired p.1 p.2
+  map_rel_iff' := by
+    intro h h'
+    constructor
+    · rintro ⟨h0, h1⟩
+      rw [← paired_proj h, ← paired_proj h']
+      intro Z P hrel
+      obtain ⟨hP, hfP, hgP⟩ := hrel
+      exact ⟨hP, h0 _ _ hfP, h1 _ _ hgP⟩
+    · intro hle
+      refine ⟨fun X Y hrel => ?_, fun X Y hrel => ?_⟩
+      · obtain ⟨W, hW, hYW⟩ := hrel
+        exact ⟨W, hle X W hW, hYW⟩
+      · obtain ⟨W, hW, hYW⟩ := hrel
+        exact ⟨W, hle X W hW, hYW⟩
+
+end DomainTheory.NeighbourhoodSystems

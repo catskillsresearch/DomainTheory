@@ -1,0 +1,26 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+-/
+module
+
+public import DomainTheory.DataTypesAsLattices.FixedLattices
+public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
+public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
+public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
+public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_mono
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.DataTypesAsLattices
+
+theorem inverseLimit_chain {F : Pomega → Pomega}
+    (hf : IsScottContinuous F) (v : RetractInverseLimit F) :
+    ∀ n m, n ≤ m → v.1 n ⊆ v.1 m :=
+  chain_mono v.1 (inverseLimit_mono hf v)
+
+end DomainTheory.DataTypesAsLattices

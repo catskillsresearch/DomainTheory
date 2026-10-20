@@ -1,0 +1,38 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.ConsistencyPresentation
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.index
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.decode_index
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.SsysX
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+namespace Exercise722
+
+open Set Domain.Recursive
+
+theorem SsysX_surj {Y : Set (List Bool)} (hY : InS Y) : ∃ n, SsysX n = Y := by
+  obtain ⟨e, he, hne⟩ := inS_iff_exists_denote.mp hY
+  refine ⟨SExpr.index e, ?_⟩
+  unfold SsysX
+  rw [SExpr.decode_index e]
+  have hne' : (denote e).Nonempty := he ▸ hne
+  have hb : decideNonemptyB e = true := (decideNonemptyB_iff e).2 hne'
+  simp [hb, he]
+
+end Exercise722
+
+end DomainTheory.NeighbourhoodSystems

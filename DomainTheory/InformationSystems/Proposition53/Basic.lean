@@ -8,6 +8,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.InformationSystems.Approximable
+public import DomainTheory.InformationSystems.Proposition53.Le
 
 @[expose] public section
 
@@ -30,7 +31,6 @@ namespace ApproximableMap
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable {A : InfoSys α} {B : InfoSys β}
 
-def Le (f g : ApproximableMap A B) : Prop := ∀ ⦃u v⦄, f.rel u v → g.rel u v
 end ApproximableMap
 end InfoSys
 end DomainTheory.InformationSystems

@@ -11,6 +11,11 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.finitaryWitnessEquivBot
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.tOp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.fixOp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.eq_bot_of_fixed_constMap_bot
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.uniqueFixedConstMapBot
 
 @[expose] public section
 
@@ -115,41 +120,12 @@ variable {α : Type} {E : NeighborhoodSystem α}
 
 /-! ## The constant-bottom map is a finitary projection (base case of the induction) -/
 
-/-- The fixed-point set of the constant-bottom map is the singleton `{⊥}`. -/
-theorem eq_bot_of_fixed_constMap_bot {y : E.Element}
-    (hy : (constMap E E.bot).toElementMap y = y) : y = E.bot := by
-  rw [toElementMap_constMap] at hy
-  exact hy.symm
 
-instance uniqueFixedConstMapBot :
-    Unique {y : E.Element // (constMap E E.bot).toElementMap y = y} where
-  default := ⟨E.bot, toElementMap_constMap E.bot E.bot⟩
-  uniq := fun ⟨_y, hy⟩ => Subtype.ext (eq_bot_of_fixed_constMap_bot hy)
 
-/-- The singleton fixed-point set of the constant-bottom map is order-isomorphic to the (also
-singleton) terminal system `unitSys` (`Exercise315.lean`). -/
-def finitaryWitnessEquivBot (E : NeighborhoodSystem α) :
-    {y : E.Element // (constMap E E.bot).toElementMap y = y} ≃o unitSys.Element where
-  toFun _ := default
-  invFun _ := default
-  left_inv a := (Unique.eq_default a).symm
-  right_inv b := (Unique.eq_default b).symm
-  map_rel_iff' := by
-    intro a b
-    have hab : a = b := (Unique.eq_default a).trans (Unique.eq_default b).symm
-    exact iff_of_true (le_refl default) (le_of_eq hab)
 
 /-! ## `t` as a self-map of the function space, and the induced operator `tOp` on maps -/
 
-/-- **Scott's `t(a)`**: the operator `t : (E → E) → (E → E)` induced by an approximable self-map
-`t` of the function space `funSpace E E`, applied to an actual map `a : E → E`. -/
-def tOp (t : ApproximableMap (funSpace E E) (funSpace E E)) (a : ApproximableMap E E) :
-    ApproximableMap E E :=
-  toApproxMap (t.toElementMap (toFilter a))
 
-/-- **Scott's `‖t‖ = fix(t)`**, as an actual approximable map `E → E`. -/
-def fixOp (t : ApproximableMap (funSpace E E) (funSpace E E)) : ApproximableMap E E :=
-  toApproxMap t.fixElement
 
 /-! ## Claim 1 — `‖t‖` is a finitary projection -/
 

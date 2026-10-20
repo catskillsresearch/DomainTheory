@@ -9,6 +9,9 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.ofContinuous
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.continuous_monotone
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.BasicInst8
 
 @[expose] public section
 
@@ -54,33 +57,11 @@ end ApproximableMap
 
 namespace NeighborhoodSystem
 
-/-- A continuous function between domains is monotone for the approximation order `⊑`: this is
-because `⊑` is recoverable from the topology (`le_iff_isOpen_imp`) and continuous preimages of opens
-are open and upward closed (`isOpen_isUpperSet`). -/
-theorem continuous_monotone {c : V₀.Element → V₁.Element} (hc : Continuous c) : Monotone c := by
-  intro x y hxy
-  rw [V₁.le_iff_isOpen_imp]
-  intro U hU hxU
-  exact V₀.isOpen_isUpperSet (hU.preimage hc) hxU hxy
 
-/-- **Algebraicity.** Every element `x` is the directed union of its own principal
-("finite"/compact) approximants: `x = ⋃ {↑X ∣ X ∈ x}`, literally as an `iSupDirected`. (Used below
-to reduce continuity checks to principal elements; a duplicate of `Theorem85.lean`'s own copy,
-kept local here to avoid a heavy import for this early file.) -/
-instance instNonemptyMemSubtype (x : V₀.Element) : Nonempty {X : Set α // x.mem X} :=
-  ⟨⟨V₀.master, x.master_mem⟩⟩
 
 end NeighborhoodSystem
 
 namespace ApproximableMap
 
-/-- **Exercise 2.13 (reverse).** The approximable mapping determined by a continuous function `c`:
-its action on the finite element `↑X` is the value `c(↑X)`, extended to all of `𝒟₀` via `ofMono`.
-Monotonicity of `X ↦ c(↑X)` is `continuous_monotone` together with the inclusion-reversal
-`X' ⊆ X ↔ ↑X ⊑ ↑X'`. -/
-def ofContinuous (c : V₀.Element → V₁.Element) (hc : Continuous c) : ApproximableMap V₀ V₁ :=
-  ofMono (fun _X hX => c (V₀.principal hX))
-    (fun _X _X' hX hX' hX'X =>
-      NeighborhoodSystem.continuous_monotone hc ((V₀.principal_le_iff hX hX').mpr hX'X))
 end ApproximableMap
 end DomainTheory.NeighbourhoodSystems

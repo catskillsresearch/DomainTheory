@@ -12,6 +12,15 @@ public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 import all Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.FreeMonoid.Basic
 import all Mathlib.Algebra.FreeMonoid.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.kpow
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.star
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.G
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.parkA
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.parkC
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.parkX
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.parkY
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.kpow_zero
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.kpow_succ
 
 @[expose] public section
 
@@ -55,36 +64,17 @@ variable {S : Type*} [Monoid S]
 
 /-! ### The star `z* = ⋃ₙ zⁿ`, by explicit recursion -/
 
-/-- `zⁿ` as an iterated pointwise product (left-recursion `z^{n+1} = z·zⁿ`). -/
-def kpow (z : Set S) : ℕ → Set S
-  | 0 => 1
-  | n + 1 => z * kpow z n
 
-@[simp] theorem kpow_zero (z : Set S) : kpow z 0 = 1 := rfl
-@[simp] theorem kpow_succ (z : Set S) (n : ℕ) : kpow z (n + 1) = z * kpow z n := rfl
 
-/-- Scott's `z*`: the set of all finite products of elements of `z` (including the empty product
-`1`). Defined as `{s ∣ ∃ n, s ∈ zⁿ}` to stay choice-free (avoiding `⋃` order lemmas). -/
-def star (z : Set S) : Set S := {s | ∃ n, s ∈ kpow z n}
 
 /-! ### Arden's lemma -/
 
-/-- Scott's operator `w ↦ z·w ∪ v`, whose least fixed point is the least solution of `w = z·w ∪ v`. -/
-def G (z v : Set S) (w : Set S) : Set S := z * w ∪ v
 
 /-! ### Part (1): the single equation `z = {e}·z ∪ {e'}` -/
 
 /-! ### Part (2): David Park's simultaneous system -/
 
-/-- The "feedback" coefficient `A = a ∪ b·a*·b` of the eliminated system. -/
-def parkA (a b : Set S) : Set S := a ∪ b * star a * b
 
-/-- The "feedback" constant `C = c ∪ b·a*·d`. -/
-def parkC (a b c d : Set S) : Set S := c ∪ b * star a * d
 
-/-- Park's least solution for `x`: `x₀ = (a ∪ b·a*·b)*·(c ∪ b·a*·d)`. -/
-def parkX (a b c d : Set S) : Set S := star (parkA a b) * parkC a b c d
 
-/-- The accompanying least solution for `y`: `y₀ = a*·(b·x₀ ∪ d)`. -/
-def parkY (a b c d : Set S) : Set S := star a * (b * parkX a b c d ∪ d)
 end DomainTheory.NeighbourhoodSystems.Exercise515

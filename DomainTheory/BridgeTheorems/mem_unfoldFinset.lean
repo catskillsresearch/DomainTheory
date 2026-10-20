@@ -1,0 +1,38 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import DomainTheory.InformationSystems.Factoid81
+public import DomainTheory.BridgeTheorems.SexDomainEquationInst10
+public import DomainTheory.BridgeTheorems.unfoldFinset
+public import DomainTheory.BridgeTheorems.mem_foldr_unfold
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.BridgeTheorems
+
+open DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+open DomainTheory.InformationSystems.InfoSys
+
+variable {α : Type*} [DecidableEq α] (A : InfoSys α)
+
+theorem mem_unfoldFinset {u : Finset (TreeToken α)}
+    {s : SumToken α (ProdToken (treeSystem A) (treeSystem A))} :
+    s ∈ unfoldFinset A u ↔ ∃ t ∈ u, treeUnfold A t = s := by
+  unfold unfoldFinset
+  rw [mem_foldr_unfold]
+  simp only [Finset.mem_def]
+
+end DomainTheory.BridgeTheorems

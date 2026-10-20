@@ -6,6 +6,11 @@ Authors: Lars Warren Ericson.
 module
 
 public import DomainTheory.DataTypesAsLattices.Continuous
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Graph.IsGraph
+public import DomainTheory.DataTypesAsLattices.Graph.lam
+public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 
 @[expose] public section
 
@@ -17,23 +22,8 @@ public import DomainTheory.DataTypesAsLattices.Continuous
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- **Scott 1976, §1, Definition.**
-`graph(f) = {(n, m) | m ∈ f(e n)}`. -/
-def graph (f : Pomega → Pomega) : Pomega :=
-  {p | ∃ n m, p = pair n m ∧ m ∈ f (e n)}
 
-/-- **Scott 1976, §1, Definition / Table 2.**
-`fun(u)(x) = {m | ∃ e n ⊆ x. (n, m) ∈ u}`. -/
-def funOf (u : Pomega) (x : Pomega) : Pomega :=
-  {m | ∃ n, e n ⊆ x ∧ pair n m ∈ u}
 
-infixl:70 " ⬝ " => funOf
 
-/-- **Scott 1976, Theorem 1.2 (iii).** Equality in (ii) iff `u` is downward
-closed in the finite-set argument: `(k, m) ∈ u` and `e k ⊆ e n` imply `(n, m) ∈ u`. -/
-def IsGraph (u : Pomega) : Prop :=
-  ∀ ⦃k m n⦄, pair k m ∈ u → e k ⊆ e n → pair n m ∈ u
 
-/-- Abstraction: `λ x. τ` as a graph (Table 2). -/
-def lam (τ : Pomega → Pomega) : Pomega := graph τ
 end DomainTheory.DataTypesAsLattices

@@ -10,43 +10,22 @@ public import Mathlib.Order.CompleteLattice.Defs
 import all Mathlib.Order.CompleteLattice.Defs
 public import Mathlib.Data.Finset.Basic
 import all Mathlib.Data.Finset.Basic
+public import DomainTheory.DataTypesAsLattices.FixedLattices.IsDirectedSet
+public import DomainTheory.DataTypesAsLattices.FixedLattices.WayBelow
+public import DomainTheory.DataTypesAsLattices.FixedLattices.IsCompact
+public import DomainTheory.DataTypesAsLattices.FixedLattices.completeLatticeLE
+public import DomainTheory.DataTypesAsLattices.FixedLattices.completeLatticeSupSet
+public import DomainTheory.DataTypesAsLattices.FixedLattices.completeLatticePreorder
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- A nonempty directed subset of a preorder. -/
-def IsDirectedSet {α : Type u} [Preorder α] (s : Set α) : Prop :=
-  s.Nonempty ∧
-    ∀ ⦃x⦄, x ∈ s → ∀ ⦃y⦄, y ∈ s →
-      ∃ z ∈ s, x ≤ z ∧ y ≤ z
 
-/-- Pin `≤` / `sSup` to the `CompleteLattice` instance path so Challenge and
-Solution elaborate `CountablyAlgebraic.mk` identically. -/
-abbrev completeLatticeLE {α : Type u} [CompleteLattice α] : LE α :=
-  @Preorder.toLE α
-    (@PartialOrder.toPreorder α
-      (@CompleteSemilatticeInf.toPartialOrder α
-        (@CompleteLattice.toCompleteSemilatticeInf α ‹_›)))
 
-abbrev completeLatticeSupSet {α : Type u} [CompleteLattice α] : SupSet α :=
-  @CompleteSemilatticeSup.toSupSet α
-    (@CompleteLattice.toCompleteSemilatticeSup α ‹_›)
 
-abbrev completeLatticePreorder {α : Type u} [CompleteLattice α] : Preorder α :=
-  @PartialOrder.toPreorder α
-    (@CompleteSemilatticeInf.toPartialOrder α
-      (@CompleteLattice.toCompleteSemilatticeInf α ‹_›))
 
-/-- The way-below relation, phrased using directed suprema. -/
-def WayBelow {α : Type u} [CompleteLattice α] (x y : α) : Prop :=
-  ∀ s : Set α, @IsDirectedSet α completeLatticePreorder s →
-    @LE.le α completeLatticeLE y (@sSup α completeLatticeSupSet s) →
-    ∃ z ∈ s, @LE.le α completeLatticeLE x z
 
-/-- Compactness internal to a complete lattice. -/
-def IsCompact {α : Type u} [CompleteLattice α] (x : α) : Prop :=
-  WayBelow x x
 
 /-- A concrete countable algebraic lattice: `compact` enumerates exactly the
 compact elements and `density` says that they generate every point. -/

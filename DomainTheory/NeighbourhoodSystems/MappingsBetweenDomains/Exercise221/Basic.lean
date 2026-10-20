@@ -9,6 +9,26 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.memC
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.C
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.singletonElt
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.Lambda
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.juxtapose
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.cone_not_subset_singleton
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.cone_ne_singleton
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.cone_singleton_nd
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.singleton_cone_nd
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.singleton_singleton_nd
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.nestedOrDisjoint_C
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.C_mem
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.C_master
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.memC_cone
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.memC_singleton
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.subset_singleton_eq
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.prepend_singleton
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.memC_prepend
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.prepend_subset_cone
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.prepend_mono
 
 @[expose] public section
 
@@ -52,178 +72,29 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 /-! ### The neighbourhood system `𝒞`: cones together with terminator singletons. -/
 
-/-- Membership in `𝒞`: `X` is either a cone `σΣ*` (as in `𝔹`) or a terminator singleton `{σ}`. -/
-def memC (X : Set Str) : Prop := (∃ σ, X = cone σ) ∨ (∃ σ, X = {σ})
 
-/-- A singleton is never a cone (a cone has at least two elements `σ` and `σ0`). -/
-theorem cone_not_subset_singleton (σ τ : Str) : ¬ cone σ ⊆ ({τ} : Set Str) := by
-  intro h
-  have h1 : σ ∈ ({τ} : Set Str) := h (mem_cone.mpr List.prefix_rfl)
-  have h2 : (σ ++ [false]) ∈ ({τ} : Set Str) := h (mem_cone.mpr (List.prefix_append σ [false]))
-  rw [Set.mem_singleton_iff] at h1 h2
-  rw [← h1] at h2
-  have hlen := congrArg List.length h2
-  simp only [List.length_append, List.length_cons, List.length_nil] at hlen
-  omega
 
-/-- Cones and singletons are distinct neighbourhoods. -/
-theorem cone_ne_singleton (σ τ : Str) : cone σ ≠ ({τ} : Set Str) := by
-  intro h
-  refine cone_not_subset_singleton σ τ ?_
-  intro x hx
-  rw [← h]; exact hx
 
-/-- Nested-or-disjoint for a cone vs. a terminator singleton: `{τ} ⊆ σΣ*` iff `σ ⪯ τ`, else
-disjoint. Choice-free (`σ <+: τ` is decidable). -/
-theorem cone_singleton_nd (σ τ : Str) :
-    cone σ ⊆ ({τ} : Set Str) ∨ ({τ} : Set Str) ⊆ cone σ ∨ cone σ ∩ ({τ} : Set Str) = ∅ :=
-  if h : σ <+: τ then
-    Or.inr (Or.inl (Set.singleton_subset_iff.mpr (mem_cone.mpr h)))
-  else
-    Or.inr (Or.inr (by
-      ext w
-      simp only [Set.mem_inter_iff, mem_cone, Set.mem_singleton_iff, Set.mem_empty_iff_false,
-        iff_false, not_and]
-      rintro hw rfl
-      exact h hw))
 
-/-- Nested-or-disjoint for a terminator singleton vs. a cone (the mirror of `cone_singleton_nd`). -/
-theorem singleton_cone_nd (σ τ : Str) :
-    ({σ} : Set Str) ⊆ cone τ ∨ cone τ ⊆ ({σ} : Set Str) ∨ ({σ} : Set Str) ∩ cone τ = ∅ :=
-  if h : τ <+: σ then
-    Or.inl (Set.singleton_subset_iff.mpr (mem_cone.mpr h))
-  else
-    Or.inr (Or.inr (by
-      ext w
-      simp only [Set.mem_inter_iff, Set.mem_singleton_iff, mem_cone, Set.mem_empty_iff_false,
-        iff_false, not_and]
-      rintro rfl hw
-      exact h hw))
 
-/-- Nested-or-disjoint for two terminator singletons: equal or disjoint. -/
-theorem singleton_singleton_nd (σ τ : Str) :
-    ({σ} : Set Str) ⊆ ({τ} : Set Str) ∨ ({τ} : Set Str) ⊆ ({σ} : Set Str) ∨
-      ({σ} : Set Str) ∩ ({τ} : Set Str) = ∅ := by
-  by_cases h : σ = τ
-  · subst h; exact Or.inl subset_rfl
-  · refine Or.inr (Or.inr ?_)
-    ext w
-    simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false,
-      not_and]
-    rintro rfl h2
-    exact h h2
 
-/-- **`𝒞` is pairwise nested-or-disjoint.** Cone/cone is the `𝔹` trichotomy; the mixed and
-singleton/singleton cases are the three lemmas above. -/
-theorem nestedOrDisjoint_C : NestedOrDisjoint memC := by
-  rintro X Y hX hY
-  rcases hX with ⟨σ, rfl⟩ | ⟨σ, rfl⟩ <;> rcases hY with ⟨τ, rfl⟩ | ⟨τ, rfl⟩
-  · exact cone_trichotomy σ τ
-  · exact cone_singleton_nd σ τ
-  · exact singleton_cone_nd σ τ
-  · exact singleton_singleton_nd σ τ
 
-/-- **The system `𝒞`** on `Δ = Σ*`: cones and terminator singletons. -/
-def C : NeighborhoodSystem Str :=
-  ofNestedOrDisjoint memC Set.univ ⟨[], Set.mem_univ _⟩
-    (Or.inl ⟨[], cone_nil.symm⟩) nestedOrDisjoint_C
-    (by rintro X (⟨σ, rfl⟩ | ⟨σ, rfl⟩) <;> exact Set.subset_univ _)
 
-@[simp] theorem C_mem {X : Set Str} : C.mem X ↔ memC X := Iff.rfl
 
-@[simp] theorem C_master : C.master = Set.univ := rfl
 
-/-- Every cone is a neighbourhood of `𝒞` — this is the inclusion `𝔹 ⊆ 𝒞`. -/
-theorem memC_cone (σ : Str) : C.mem (cone σ) := Or.inl ⟨σ, rfl⟩
 
-/-- Every terminator singleton `{σ}` is a neighbourhood of `𝒞`. -/
-theorem memC_singleton (σ : Str) : C.mem ({σ} : Set Str) := Or.inr ⟨σ, rfl⟩
 
-/-- A nonempty `𝒞`-neighbourhood contained in a singleton *is* that singleton. -/
-theorem subset_singleton_eq {W : Set Str} {σ : Str} (hW : C.mem W) (hsub : W ⊆ ({σ} : Set Str)) :
-    W = ({σ} : Set Str) := by
-  rcases hW with ⟨ρ, rfl⟩ | ⟨ρ, rfl⟩
-  · exact absurd hsub (cone_not_subset_singleton ρ σ)
-  · rw [Set.singleton_subset_iff, Set.mem_singleton_iff] at hsub
-    rw [hsub]
 
 /-! ### Total elements: finite sequences `↑{σ}`, and `⊥ ⊏ Λ`. -/
 
-/-- The **total finite sequence** `σ` as an element of `|𝒞|`: the principal filter `↑{σ}`. -/
-def singletonElt (σ : Str) : C.Element := C.principal (memC_singleton σ)
 
-/-- `Λ`, the **total empty sequence** (terminated): `↑{[]}`. -/
-def Lambda : C.Element := singletonElt []
 
 /-! ### Prepending a string to a `𝒞`-neighbourhood. -/
 
-/-- `σ{ρ} = {σρ}`: prepending `σ` to a terminator singleton. -/
-theorem prepend_singleton (σ ρ : Str) : prepend σ ({ρ} : Set Str) = ({σ ++ ρ} : Set Str) := by
-  ext w
-  simp only [mem_prepend, Set.mem_singleton_iff]
-  constructor
-  · rintro ⟨τ, rfl, rfl⟩; rfl
-  · rintro rfl; exact ⟨ρ, rfl, rfl⟩
 
-/-- Prepending preserves `𝒞`-membership (cone ↦ cone, singleton ↦ singleton). -/
-theorem memC_prepend (σ : Str) {Y : Set Str} (hY : C.mem Y) : C.mem (prepend σ Y) := by
-  rcases hY with ⟨ρ, rfl⟩ | ⟨ρ, rfl⟩
-  · rw [prepend_cone]; exact memC_cone (σ ++ ρ)
-  · rw [prepend_singleton]; exact memC_singleton (σ ++ ρ)
 
-/-- `σY ⊆ σΣ* = cone σ`: prepending `σ` always lands inside the cone of `σ`. -/
-theorem prepend_subset_cone (σ : Str) (Y : Set Str) : prepend σ Y ⊆ cone σ := by
-  rintro w ⟨τ, _, rfl⟩
-  exact mem_cone.mpr (List.prefix_append σ τ)
 
-/-- Prepending is monotone in the suffix set. -/
-theorem prepend_mono (σ : Str) {Y Y' : Set Str} (h : Y' ⊆ Y) : prepend σ Y' ⊆ prepend σ Y := by
-  rintro w ⟨τ, hτ, rfl⟩
-  exact ⟨τ, h hτ, rfl⟩
 
 /-! ### Juxtaposition `xy` as an approximable map of two variables. -/
 
-/-- **Juxtaposition `xy`** as an approximable map `𝒞 × 𝒞 → 𝒞`.
-
-The relation `X, Y j Z` reads off the *left-to-right bias*: if the first input neighbourhood `X` is
-a cone `σΣ*` (`x` extends `σ` but is undetermined), the output only commits to the prefix `σ`
-(`σΣ* ⊆ Z`), ignoring `Y`; if `X` is a terminator `{σ}` (`x` is the total finite sequence `σ`), the
-output prepends `σ` to the second input `Y` (`σY ⊆ Z`). -/
-def juxtapose : ApproximableMap₂ C C C where
-  rel X Y Z := C.mem Y ∧ C.mem Z ∧
-    ((∃ σ, X = cone σ ∧ cone σ ⊆ Z) ∨ (∃ σ, X = ({σ} : Set Str) ∧ prepend σ Y ⊆ Z))
-  rel_dom₀ := by
-    rintro X Y Z ⟨_, _, (⟨σ, rfl, _⟩ | ⟨σ, rfl, _⟩)⟩
-    · exact memC_cone σ
-    · exact memC_singleton σ
-  rel_dom₁ := fun ⟨hY, _, _⟩ => hY
-  rel_cod := fun ⟨_, hZ, _⟩ => hZ
-  master_rel := ⟨C.master_mem, C.master_mem,
-    Or.inl ⟨[], C_master.trans cone_nil.symm, by rw [C_master]; exact Set.subset_univ _⟩⟩
-  inter_right := by
-    rintro X Y Z Z' ⟨hY, hZ, hd⟩ ⟨_, hZ', hd'⟩
-    rcases hd with ⟨σ, rfl, hsub⟩ | ⟨σ, rfl, hsub⟩
-    · rcases hd' with ⟨σ', hX', hsub'⟩ | ⟨σ', hX', _⟩
-      · obtain rfl : σ = σ' := cone_injective hX'
-        exact ⟨hY, C.inter_mem hZ hZ' (memC_cone σ) (Set.subset_inter hsub hsub'),
-          Or.inl ⟨σ, rfl, Set.subset_inter hsub hsub'⟩⟩
-      · exact absurd hX' (cone_ne_singleton σ σ')
-    · rcases hd' with ⟨σ', hX', _⟩ | ⟨σ', hX', hsub'⟩
-      · exact absurd hX'.symm (cone_ne_singleton σ' σ)
-      · obtain rfl : σ = σ' := by
-          have := hX'; rw [Set.singleton_eq_singleton_iff] at this; exact this
-        exact ⟨hY, C.inter_mem hZ hZ' (memC_prepend σ hY) (Set.subset_inter hsub hsub'),
-          Or.inr ⟨σ, rfl, Set.subset_inter hsub hsub'⟩⟩
-  mono := by
-    rintro X X' Y Y' Z Z' ⟨hY, _, hd⟩ hX'X hY'Y hZZ' hX' hY' hZ'
-    refine ⟨hY', hZ', ?_⟩
-    rcases hd with ⟨σ, rfl, hsub⟩ | ⟨σ, rfl, hsub⟩
-    · rcases hX' with ⟨σ', rfl⟩ | ⟨σ', rfl⟩
-      · exact Or.inl ⟨σ', rfl, (hX'X.trans hsub).trans hZZ'⟩
-      · refine Or.inr ⟨σ', rfl, ?_⟩
-        have hσσ' : σ <+: σ' := mem_cone.mp (Set.singleton_subset_iff.mp hX'X)
-        have h2 : cone σ' ⊆ cone σ := cone_subset_cone.mpr hσσ'
-        exact ((prepend_subset_cone σ' Y').trans (h2.trans hsub)).trans hZZ'
-    · obtain rfl : X' = ({σ} : Set Str) := subset_singleton_eq hX' hX'X
-      exact Or.inr ⟨σ, rfl, ((prepend_mono σ hY'Y).trans hsub).trans hZZ'⟩
 end DomainTheory.NeighbourhoodSystems.Exercise221

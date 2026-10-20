@@ -1,0 +1,21 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+-/
+module
+
+public import DomainTheory.DataTypesAsLattices.FixedLattices
+public import DomainTheory.DataTypesAsLattices.Lambda
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.DataTypesAsLattices
+
+/-- Greatest postfixed point of `z ↦ f z ∩ b` (Knaster–Tarski inf below `b`). -/
+def gfpBelow (f : Pomega → Pomega) (b : Pomega) : Pomega :=
+  ⋃₀ {x | x ⊆ f x ∩ b}
+
+end DomainTheory.DataTypesAsLattices

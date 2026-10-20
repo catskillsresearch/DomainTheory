@@ -10,6 +10,15 @@ module
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516
 public import Mathlib.Data.Nat.Bits
 import all Mathlib.Data.Nat.Bits
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.expand
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmOp
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tm
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmList
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tElt
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.expand_nil
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.expand_cons
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tm_zero
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmList_zero
 
 @[expose] public section
 
@@ -52,41 +61,22 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exampl
 
 /-! ### The Thue–Morse morphism `expand` (`0 ↦ 01`, `1 ↦ 10`). -/
 
-/-- The Thue–Morse substitution applied letterwise: each bit `b` is replaced by `b (¬b)`. -/
-def expand : Str → Str
-  | [] => []
-  | b :: σ => b :: (!b) :: expand σ
 
-@[simp] theorem expand_nil : expand [] = [] := rfl
 
-@[simp] theorem expand_cons (b : Bool) (σ : Str) : expand (b :: σ) = b :: (!b) :: expand σ := rfl
 
 /-! ### `Φ` on a partial element computes by interleaving — and equals `expand`. -/
 
-/-- **Exercise 5.16 (the operator `Φ`).** `Φ(x) = 0·merge(neg x, tail x)` as an approximable map. -/
-def tmOp : ApproximableMap C C :=
-  (consMap false).comp (mergeMap.comp (paired negMap tailMap))
 
 /-! ### The finite approximants of the least fixed point are the morphism iterates. -/
 
 /-! ### The parity bit-function `tm` and its prefixes. -/
 
-/-- The Thue–Morse bit-function: `tm n = ⊕(binary digits of n)`, the parity of the number of `1`s in
-the binary expansion of `n` (Lambek's description). -/
-def tm (n : ℕ) : Bool := (Nat.bits n).foldr xor false
 
-@[simp] theorem tm_zero : tm 0 = false := by simp [tm, Nat.zero_bits]
 
-/-- The length-`n` Thue–Morse prefix `[tm 0, tm 1, …, tm (n-1)]`. -/
-def tmList (n : ℕ) : Str := (List.range n).map tm
 
-@[simp] theorem tmList_zero : tmList 0 = [] := rfl
 
 /-! ### Step 0 — the element `t` and its unfolding. -/
 
-/-- **Exercise 5.16 (Scott 1981, PRG-19).** Scott's Thue–Morse element `t = 0·merge(neg t, tail t)`,
-the least fixed point of `Φ`. -/
-def tElt : C.Element := tmOp.fixElement
 
 /-! ### Property (a) — the digit characterization. -/
 end DomainTheory.NeighbourhoodSystems.Exercise516

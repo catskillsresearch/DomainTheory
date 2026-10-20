@@ -1,0 +1,34 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import Mathlib.RingTheory.Ideal.Span
+import all Mathlib.RingTheory.Ideal.Span
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+namespace Ring
+
+open NeighborhoodSystem
+
+variable {A : Type*} [CommRing A]
+
+/-- **Exercise 1.26 — the basic neighbourhood `I(F)`.** `I(F) = {G ∣ F ⊆ ⟨G⟩}`, the finite sets `G`
+whose generated ideal contains `F`. -/
+def IFamily (F : Finset A) : Set (Finset A) := {G | (↑F : Set A) ⊆ Ideal.span (↑G : Set A)}
+
+end Ring
+
+end DomainTheory.NeighbourhoodSystems

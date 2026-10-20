@@ -10,6 +10,73 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.master
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.left
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.right
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf00
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf01
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf10
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf11
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.memSet
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.neighborhoodSystem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.bot
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.elemZero
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.elemOne
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.elem00
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.elem01
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.elem10
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.elem11
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.Token
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.mem_master
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.mem_left
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.mem_right
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.mem_leaf00
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.mem_leaf01
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.mem_leaf10
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.mem_leaf11
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.mem_iff
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.not_mem_empty
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.eq_of_master_subset
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.left_subset_cases
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.right_subset_cases
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf00_subset_cases
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf01_subset_cases
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf10_subset_cases
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf11_subset_cases
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.master_inter
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.inter_master
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.left_inter_leaf00
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf00_inter_left
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.left_inter_leaf01
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf01_inter_left
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.right_inter_leaf10
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf10_inter_right
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.right_inter_leaf11
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf11_inter_right
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.left_inter_right
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.right_inter_left
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.left_inter_leaf10
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf10_inter_left
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.left_inter_leaf11
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf11_inter_left
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.right_inter_leaf00
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf00_inter_right
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.right_inter_leaf01
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf01_inter_right
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf00_inter_leaf01
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf01_inter_leaf00
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf00_inter_leaf10
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf10_inter_leaf00
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf00_inter_leaf11
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf11_inter_leaf00
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf01_inter_leaf10
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf10_inter_leaf01
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf01_inter_leaf11
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf11_inter_leaf01
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf10_inter_leaf11
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.leaf11_inter_leaf10
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.inter_eq
 
 @[expose] public section
 
@@ -42,85 +109,18 @@ This is a concrete finite computation (`fin_cases`/`simp`); footprint
 
 namespace DomainTheory.NeighbourhoodSystems.Example14
 
-/-- Tokens for Example 1.4: the binary tree `Δ = {Λ,0,1,00,01,10,11}`, encoded as `Fin 7`
-(`Λ=0, 0=1, 1=2, 00=3, 01=4, 10=5, 11=6`). -/
-abbrev Token := Fin 7
 
-/-- The master neighbourhood `Δ` (the whole tree). -/
-def master : Set Token := Set.univ
 
-/-- The left subtree `{0, 00, 01} = {1, 3, 4}`. -/
-def left : Set Token := {1, 3, 4}
 
-/-- The right subtree `{1, 10, 11} = {2, 5, 6}`. -/
-def right : Set Token := {2, 5, 6}
 
-/-- The leaf `{00} = {3}`. -/
-def leaf00 : Set Token := {3}
 
-/-- The leaf `{01} = {4}`. -/
-def leaf01 : Set Token := {4}
 
-/-- The leaf `{10} = {5}`. -/
-def leaf10 : Set Token := {5}
 
-/-- The leaf `{11} = {6}`. -/
-def leaf11 : Set Token := {6}
 
-/-- The seven neighbourhoods of Example 1.4. -/
-def memSet : Set (Set Token) := {master, left, right, leaf00, leaf01, leaf10, leaf11}
 
-/-- Membership in the neighbourhood system `𝒟` of Example 1.4. -/
-def mem (X : Set Token) : Prop := X ∈ memSet
 
-theorem mem_master : mem master := by
-  simp [mem, memSet, master, left, right, leaf00, leaf01, leaf10, leaf11]
-theorem mem_left : mem left := by
-  simp [mem, memSet, master, left, right, leaf00, leaf01, leaf10, leaf11]
-theorem mem_right : mem right := by
-  simp [mem, memSet, master, left, right, leaf00, leaf01, leaf10, leaf11]
-theorem mem_leaf00 : mem leaf00 := by
-  simp [mem, memSet, master, left, right, leaf00, leaf01, leaf10, leaf11]
-theorem mem_leaf01 : mem leaf01 := by
-  simp [mem, memSet, master, left, right, leaf00, leaf01, leaf10, leaf11]
-theorem mem_leaf10 : mem leaf10 := by
-  simp [mem, memSet, master, left, right, leaf00, leaf01, leaf10, leaf11]
-theorem mem_leaf11 : mem leaf11 := by
-  simp [mem, memSet, master, left, right, leaf00, leaf01, leaf10, leaf11]
 
-/-- A neighbourhood of Example 1.4 is exactly one of the seven. -/
-theorem mem_iff (X : Set Token) :
-    mem X ↔ X = master ∨ X = left ∨ X = right ∨ X = leaf00 ∨ X = leaf01 ∨ X = leaf10 ∨ X = leaf11 := by
-  constructor
-  · intro h
-    simpa [mem, memSet] using h
-  · intro h
-    rcases h with rfl | rfl | rfl | rfl | rfl | rfl | rfl
-    · exact mem_master
-    · exact mem_left
-    · exact mem_right
-    · exact mem_leaf00
-    · exact mem_leaf01
-    · exact mem_leaf10
-    · exact mem_leaf11
 
-theorem not_mem_empty : ¬mem (∅ : Set Token) := by
-  intro h
-  rcases (mem_iff (∅ : Set Token)).mp h with h | h | h | h | h | h | h
-  · have : (0 : Token) ∈ (∅ : Set Token) := by rw [h]; simp [master]
-    simp at this
-  · have : (1 : Token) ∈ (∅ : Set Token) := by rw [h]; simp [left]
-    simp at this
-  · have : (2 : Token) ∈ (∅ : Set Token) := by rw [h]; simp [right]
-    simp at this
-  · have : (3 : Token) ∈ (∅ : Set Token) := by rw [h]; simp [leaf00]
-    simp at this
-  · have : (4 : Token) ∈ (∅ : Set Token) := by rw [h]; simp [leaf01]
-    simp at this
-  · have : (5 : Token) ∈ (∅ : Set Token) := by rw [h]; simp [leaf10]
-    simp at this
-  · have : (6 : Token) ∈ (∅ : Set Token) := by rw [h]; simp [leaf11]
-    simp at this
 
 /-! ### Distinctness of neighbourhoods (only the pairs needed below). -/
 
@@ -176,7 +176,7 @@ theorem leaf11_ne_right : leaf11 ≠ right := by
 
 /-! ### Nested-subset facts. -/
 
-private theorem leaf00_subset_left : leaf00 ⊆ left := by
+theorem leaf00_subset_left : leaf00 ⊆ left := by
   intro t ht; fin_cases t <;> simp [leaf00, left] at ht ⊢
 
 private theorem leaf01_subset_left : leaf01 ⊆ left := by
@@ -190,386 +190,31 @@ private theorem leaf11_subset_right : leaf11 ⊆ right := by
 
 /-! ### "Which neighbourhoods contain a given one" (upward classification). -/
 
-private theorem eq_of_master_subset {Y : Set Token} (hY : mem Y) (h : master ⊆ Y) : Y = master := by
-  rcases (mem_iff Y).mp hY with rfl | rfl | rfl | rfl | rfl | rfl | rfl
-  · rfl
-  · exact absurd (h (show (0 : Token) ∈ master by simp [master])) (by simp [left])
-  · exact absurd (h (show (0 : Token) ∈ master by simp [master])) (by simp [right])
-  · exact absurd (h (show (0 : Token) ∈ master by simp [master])) (by simp [leaf00])
-  · exact absurd (h (show (0 : Token) ∈ master by simp [master])) (by simp [leaf01])
-  · exact absurd (h (show (0 : Token) ∈ master by simp [master])) (by simp [leaf10])
-  · exact absurd (h (show (0 : Token) ∈ master by simp [master])) (by simp [leaf11])
 
-private theorem left_subset_cases {Y : Set Token} (hY : mem Y) (h : left ⊆ Y) :
-    Y = master ∨ Y = left := by
-  rcases (mem_iff Y).mp hY with rfl | rfl | rfl | rfl | rfl | rfl | rfl
-  · exact Or.inl rfl
-  · exact Or.inr rfl
-  · exact absurd (h (show (1 : Token) ∈ left by simp [left])) (by simp [right])
-  · exact absurd (h (show (1 : Token) ∈ left by simp [left])) (by simp [leaf00])
-  · exact absurd (h (show (1 : Token) ∈ left by simp [left])) (by simp [leaf01])
-  · exact absurd (h (show (1 : Token) ∈ left by simp [left])) (by simp [leaf10])
-  · exact absurd (h (show (1 : Token) ∈ left by simp [left])) (by simp [leaf11])
 
-private theorem right_subset_cases {Y : Set Token} (hY : mem Y) (h : right ⊆ Y) :
-    Y = master ∨ Y = right := by
-  rcases (mem_iff Y).mp hY with rfl | rfl | rfl | rfl | rfl | rfl | rfl
-  · exact Or.inl rfl
-  · exact absurd (h (show (2 : Token) ∈ right by simp [right])) (by simp [left])
-  · exact Or.inr rfl
-  · exact absurd (h (show (2 : Token) ∈ right by simp [right])) (by simp [leaf00])
-  · exact absurd (h (show (2 : Token) ∈ right by simp [right])) (by simp [leaf01])
-  · exact absurd (h (show (2 : Token) ∈ right by simp [right])) (by simp [leaf10])
-  · exact absurd (h (show (2 : Token) ∈ right by simp [right])) (by simp [leaf11])
 
-private theorem leaf00_subset_cases {Y : Set Token} (hY : mem Y) (h : leaf00 ⊆ Y) :
-    Y = master ∨ Y = left ∨ Y = leaf00 := by
-  rcases (mem_iff Y).mp hY with rfl | rfl | rfl | rfl | rfl | rfl | rfl
-  · exact Or.inl rfl
-  · exact Or.inr (Or.inl rfl)
-  · exact absurd (h (show (3 : Token) ∈ leaf00 by simp [leaf00])) (by simp [right])
-  · exact Or.inr (Or.inr rfl)
-  · exact absurd (h (show (3 : Token) ∈ leaf00 by simp [leaf00])) (by simp [leaf01])
-  · exact absurd (h (show (3 : Token) ∈ leaf00 by simp [leaf00])) (by simp [leaf10])
-  · exact absurd (h (show (3 : Token) ∈ leaf00 by simp [leaf00])) (by simp [leaf11])
 
-private theorem leaf01_subset_cases {Y : Set Token} (hY : mem Y) (h : leaf01 ⊆ Y) :
-    Y = master ∨ Y = left ∨ Y = leaf01 := by
-  rcases (mem_iff Y).mp hY with rfl | rfl | rfl | rfl | rfl | rfl | rfl
-  · exact Or.inl rfl
-  · exact Or.inr (Or.inl rfl)
-  · exact absurd (h (show (4 : Token) ∈ leaf01 by simp [leaf01])) (by simp [right])
-  · exact absurd (h (show (4 : Token) ∈ leaf01 by simp [leaf01])) (by simp [leaf00])
-  · exact Or.inr (Or.inr rfl)
-  · exact absurd (h (show (4 : Token) ∈ leaf01 by simp [leaf01])) (by simp [leaf10])
-  · exact absurd (h (show (4 : Token) ∈ leaf01 by simp [leaf01])) (by simp [leaf11])
 
-private theorem leaf10_subset_cases {Y : Set Token} (hY : mem Y) (h : leaf10 ⊆ Y) :
-    Y = master ∨ Y = right ∨ Y = leaf10 := by
-  rcases (mem_iff Y).mp hY with rfl | rfl | rfl | rfl | rfl | rfl | rfl
-  · exact Or.inl rfl
-  · exact absurd (h (show (5 : Token) ∈ leaf10 by simp [leaf10])) (by simp [left])
-  · exact Or.inr (Or.inl rfl)
-  · exact absurd (h (show (5 : Token) ∈ leaf10 by simp [leaf10])) (by simp [leaf00])
-  · exact absurd (h (show (5 : Token) ∈ leaf10 by simp [leaf10])) (by simp [leaf01])
-  · exact Or.inr (Or.inr rfl)
-  · exact absurd (h (show (5 : Token) ∈ leaf10 by simp [leaf10])) (by simp [leaf11])
 
-private theorem leaf11_subset_cases {Y : Set Token} (hY : mem Y) (h : leaf11 ⊆ Y) :
-    Y = master ∨ Y = right ∨ Y = leaf11 := by
-  rcases (mem_iff Y).mp hY with rfl | rfl | rfl | rfl | rfl | rfl | rfl
-  · exact Or.inl rfl
-  · exact absurd (h (show (6 : Token) ∈ leaf11 by simp [leaf11])) (by simp [left])
-  · exact Or.inr (Or.inl rfl)
-  · exact absurd (h (show (6 : Token) ∈ leaf11 by simp [leaf11])) (by simp [leaf00])
-  · exact absurd (h (show (6 : Token) ∈ leaf11 by simp [leaf11])) (by simp [leaf01])
-  · exact absurd (h (show (6 : Token) ∈ leaf11 by simp [leaf11])) (by simp [leaf10])
-  · exact Or.inr (Or.inr rfl)
 
 /-! ### Intersections. -/
 
-private theorem master_inter (A : Set Token) : master ∩ A = A := by
-  rw [master]; exact Set.univ_inter A
 
-private theorem inter_master (A : Set Token) : A ∩ master = A := by
-  rw [master]; exact Set.inter_univ A
 
-private theorem left_inter_leaf00 : left ∩ leaf00 = leaf00 := by
-  ext t; fin_cases t <;> simp [left, leaf00]
-private theorem leaf00_inter_left : leaf00 ∩ left = leaf00 := by
-  rw [Set.inter_comm]; exact left_inter_leaf00
-private theorem left_inter_leaf01 : left ∩ leaf01 = leaf01 := by
-  ext t; fin_cases t <;> simp [left, leaf01]
-private theorem leaf01_inter_left : leaf01 ∩ left = leaf01 := by
-  rw [Set.inter_comm]; exact left_inter_leaf01
-private theorem right_inter_leaf10 : right ∩ leaf10 = leaf10 := by
-  ext t; fin_cases t <;> simp [right, leaf10]
-private theorem leaf10_inter_right : leaf10 ∩ right = leaf10 := by
-  rw [Set.inter_comm]; exact right_inter_leaf10
-private theorem right_inter_leaf11 : right ∩ leaf11 = leaf11 := by
-  ext t; fin_cases t <;> simp [right, leaf11]
-private theorem leaf11_inter_right : leaf11 ∩ right = leaf11 := by
-  rw [Set.inter_comm]; exact right_inter_leaf11
 
-private theorem left_inter_right : left ∩ right = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [left, right]
-private theorem right_inter_left : right ∩ left = (∅ : Set Token) := by
-  rw [Set.inter_comm]; exact left_inter_right
-private theorem left_inter_leaf10 : left ∩ leaf10 = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [left, leaf10]
-private theorem leaf10_inter_left : leaf10 ∩ left = (∅ : Set Token) := by
-  rw [Set.inter_comm]; exact left_inter_leaf10
-private theorem left_inter_leaf11 : left ∩ leaf11 = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [left, leaf11]
-private theorem leaf11_inter_left : leaf11 ∩ left = (∅ : Set Token) := by
-  rw [Set.inter_comm]; exact left_inter_leaf11
-private theorem right_inter_leaf00 : right ∩ leaf00 = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [right, leaf00]
-private theorem leaf00_inter_right : leaf00 ∩ right = (∅ : Set Token) := by
-  rw [Set.inter_comm]; exact right_inter_leaf00
-private theorem right_inter_leaf01 : right ∩ leaf01 = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [right, leaf01]
-private theorem leaf01_inter_right : leaf01 ∩ right = (∅ : Set Token) := by
-  rw [Set.inter_comm]; exact right_inter_leaf01
-private theorem leaf00_inter_leaf01 : leaf00 ∩ leaf01 = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [leaf00, leaf01]
-private theorem leaf01_inter_leaf00 : leaf01 ∩ leaf00 = (∅ : Set Token) := by
-  rw [Set.inter_comm]; exact leaf00_inter_leaf01
-private theorem leaf00_inter_leaf10 : leaf00 ∩ leaf10 = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [leaf00, leaf10]
-private theorem leaf10_inter_leaf00 : leaf10 ∩ leaf00 = (∅ : Set Token) := by
-  rw [Set.inter_comm]; exact leaf00_inter_leaf10
-private theorem leaf00_inter_leaf11 : leaf00 ∩ leaf11 = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [leaf00, leaf11]
-private theorem leaf11_inter_leaf00 : leaf11 ∩ leaf00 = (∅ : Set Token) := by
-  rw [Set.inter_comm]; exact leaf00_inter_leaf11
-private theorem leaf01_inter_leaf10 : leaf01 ∩ leaf10 = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [leaf01, leaf10]
-private theorem leaf10_inter_leaf01 : leaf10 ∩ leaf01 = (∅ : Set Token) := by
-  rw [Set.inter_comm]; exact leaf01_inter_leaf10
-private theorem leaf01_inter_leaf11 : leaf01 ∩ leaf11 = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [leaf01, leaf11]
-private theorem leaf11_inter_leaf01 : leaf11 ∩ leaf01 = (∅ : Set Token) := by
-  rw [Set.inter_comm]; exact leaf01_inter_leaf11
-private theorem leaf10_inter_leaf11 : leaf10 ∩ leaf11 = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [leaf10, leaf11]
-private theorem leaf11_inter_leaf10 : leaf11 ∩ leaf10 = (∅ : Set Token) := by
-  rw [Set.inter_comm]; exact leaf10_inter_leaf11
 
-/-- Every binary intersection of two neighbourhoods is again a neighbourhood, or is empty
-(the tree's "nested-or-disjoint" property). -/
-private theorem inter_eq (X Y : Set Token) (hX : mem X) (hY : mem Y) :
-    X ∩ Y = master ∨ X ∩ Y = left ∨ X ∩ Y = right ∨ X ∩ Y = leaf00 ∨
-      X ∩ Y = leaf01 ∨ X ∩ Y = leaf10 ∨ X ∩ Y = leaf11 ∨ X ∩ Y = (∅ : Set Token) := by
-  rcases (mem_iff X).mp hX with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
-    rcases (mem_iff Y).mp hY with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
-    simp only [master_inter, inter_master, Set.inter_self,
-      left_inter_right, right_inter_left, left_inter_leaf10, leaf10_inter_left,
-      left_inter_leaf11, leaf11_inter_left, right_inter_leaf00, leaf00_inter_right,
-      right_inter_leaf01, leaf01_inter_right, leaf00_inter_leaf01, leaf01_inter_leaf00,
-      leaf00_inter_leaf10, leaf10_inter_leaf00, leaf00_inter_leaf11, leaf11_inter_leaf00,
-      leaf01_inter_leaf10, leaf10_inter_leaf01, leaf01_inter_leaf11, leaf11_inter_leaf01,
-      leaf10_inter_leaf11, leaf11_inter_leaf10,
-      left_inter_leaf00, leaf00_inter_left, left_inter_leaf01, leaf01_inter_left,
-      right_inter_leaf10, leaf10_inter_right, right_inter_leaf11, leaf11_inter_right,
-      true_or, or_true]
 
-/-- **Example 1.4.** The binary-tree neighbourhood system on `Δ = {Λ,0,1,00,01,10,11}`. -/
-def neighborhoodSystem : NeighborhoodSystem Token where
-  mem := mem
-  master := master
-  master_nonempty := Set.univ_nonempty
-  master_mem := mem_master
-  sub_master := fun _ => Set.subset_univ _
-  inter_mem := by
-    intro X Y Z hX hY hZ hZsub
-    rcases inter_eq X Y hX hY with h | h | h | h | h | h | h | h
-    · rw [h]; exact mem_master
-    · rw [h]; exact mem_left
-    · rw [h]; exact mem_right
-    · rw [h]; exact mem_leaf00
-    · rw [h]; exact mem_leaf01
-    · rw [h]; exact mem_leaf10
-    · rw [h]; exact mem_leaf11
-    · rw [h] at hZsub
-      have hz : Z = (∅ : Set Token) := Set.subset_empty_iff.mp hZsub
-      subst hz
-      exact absurd hZ not_mem_empty
 
 namespace neighborhoodSystem
 
 open NeighborhoodSystem
 
-/-- The bottom element `⊥ = {Δ}` (node `Λ`). -/
-def bot : neighborhoodSystem.Element where
-  mem X := X = master
-  sub h := by rw [h]; exact mem_master
-  master_mem := rfl
-  inter_mem := by
-    intro X Y hX hY
-    rw [hX, hY, master_inter]
-  up_mem := by
-    intro X Y hX hY hXY
-    rw [hX] at hXY
-    exact eq_of_master_subset hY hXY
 
-/-- The partial element `{Δ, left}` (node `0`): the left branch is decided. -/
-def elemZero : neighborhoodSystem.Element where
-  mem X := X = master ∨ X = left
-  sub h := by
-    rcases h with rfl | rfl
-    · exact mem_master
-    · exact mem_left
-  master_mem := Or.inl rfl
-  inter_mem := by
-    intro X Y hX hY
-    rcases hX with rfl | rfl <;> rcases hY with rfl | rfl
-    · exact Or.inl (master_inter _)
-    · exact Or.inr (master_inter _)
-    · exact Or.inr (inter_master _)
-    · exact Or.inr (Set.inter_self _)
-  up_mem := by
-    intro X Y hX hY hXY
-    rcases hX with rfl | rfl
-    · exact Or.inl (eq_of_master_subset hY hXY)
-    · rcases left_subset_cases hY hXY with h | h
-      · exact Or.inl h
-      · exact Or.inr h
 
-/-- The partial element `{Δ, right}` (node `1`): the right branch is decided. -/
-def elemOne : neighborhoodSystem.Element where
-  mem X := X = master ∨ X = right
-  sub h := by
-    rcases h with rfl | rfl
-    · exact mem_master
-    · exact mem_right
-  master_mem := Or.inl rfl
-  inter_mem := by
-    intro X Y hX hY
-    rcases hX with rfl | rfl <;> rcases hY with rfl | rfl
-    · exact Or.inl (master_inter _)
-    · exact Or.inr (master_inter _)
-    · exact Or.inr (inter_master _)
-    · exact Or.inr (Set.inter_self _)
-  up_mem := by
-    intro X Y hX hY hXY
-    rcases hX with rfl | rfl
-    · exact Or.inl (eq_of_master_subset hY hXY)
-    · rcases right_subset_cases hY hXY with h | h
-      · exact Or.inl h
-      · exact Or.inr h
 
-/-- The total element `{Δ, left, leaf00}` (leaf `00`). -/
-def elem00 : neighborhoodSystem.Element where
-  mem X := X = master ∨ X = left ∨ X = leaf00
-  sub h := by
-    rcases h with rfl | rfl | rfl
-    · exact mem_master
-    · exact mem_left
-    · exact mem_leaf00
-  master_mem := Or.inl rfl
-  inter_mem := by
-    intro X Y hX hY
-    rcases hX with rfl | rfl | rfl <;> rcases hY with rfl | rfl | rfl
-    · exact Or.inl (master_inter _)
-    · exact Or.inr (Or.inl (master_inter _))
-    · exact Or.inr (Or.inr (master_inter _))
-    · exact Or.inr (Or.inl (inter_master _))
-    · exact Or.inr (Or.inl (Set.inter_self _))
-    · exact Or.inr (Or.inr left_inter_leaf00)
-    · exact Or.inr (Or.inr (inter_master _))
-    · exact Or.inr (Or.inr leaf00_inter_left)
-    · exact Or.inr (Or.inr (Set.inter_self _))
-  up_mem := by
-    intro X Y hX hY hXY
-    rcases hX with rfl | rfl | rfl
-    · exact Or.inl (eq_of_master_subset hY hXY)
-    · rcases left_subset_cases hY hXY with h | h
-      · exact Or.inl h
-      · exact Or.inr (Or.inl h)
-    · rcases leaf00_subset_cases hY hXY with h | h | h
-      · exact Or.inl h
-      · exact Or.inr (Or.inl h)
-      · exact Or.inr (Or.inr h)
 
-/-- The total element `{Δ, left, leaf01}` (leaf `01`). -/
-def elem01 : neighborhoodSystem.Element where
-  mem X := X = master ∨ X = left ∨ X = leaf01
-  sub h := by
-    rcases h with rfl | rfl | rfl
-    · exact mem_master
-    · exact mem_left
-    · exact mem_leaf01
-  master_mem := Or.inl rfl
-  inter_mem := by
-    intro X Y hX hY
-    rcases hX with rfl | rfl | rfl <;> rcases hY with rfl | rfl | rfl
-    · exact Or.inl (master_inter _)
-    · exact Or.inr (Or.inl (master_inter _))
-    · exact Or.inr (Or.inr (master_inter _))
-    · exact Or.inr (Or.inl (inter_master _))
-    · exact Or.inr (Or.inl (Set.inter_self _))
-    · exact Or.inr (Or.inr left_inter_leaf01)
-    · exact Or.inr (Or.inr (inter_master _))
-    · exact Or.inr (Or.inr leaf01_inter_left)
-    · exact Or.inr (Or.inr (Set.inter_self _))
-  up_mem := by
-    intro X Y hX hY hXY
-    rcases hX with rfl | rfl | rfl
-    · exact Or.inl (eq_of_master_subset hY hXY)
-    · rcases left_subset_cases hY hXY with h | h
-      · exact Or.inl h
-      · exact Or.inr (Or.inl h)
-    · rcases leaf01_subset_cases hY hXY with h | h | h
-      · exact Or.inl h
-      · exact Or.inr (Or.inl h)
-      · exact Or.inr (Or.inr h)
 
-/-- The total element `{Δ, right, leaf10}` (leaf `10`). -/
-def elem10 : neighborhoodSystem.Element where
-  mem X := X = master ∨ X = right ∨ X = leaf10
-  sub h := by
-    rcases h with rfl | rfl | rfl
-    · exact mem_master
-    · exact mem_right
-    · exact mem_leaf10
-  master_mem := Or.inl rfl
-  inter_mem := by
-    intro X Y hX hY
-    rcases hX with rfl | rfl | rfl <;> rcases hY with rfl | rfl | rfl
-    · exact Or.inl (master_inter _)
-    · exact Or.inr (Or.inl (master_inter _))
-    · exact Or.inr (Or.inr (master_inter _))
-    · exact Or.inr (Or.inl (inter_master _))
-    · exact Or.inr (Or.inl (Set.inter_self _))
-    · exact Or.inr (Or.inr right_inter_leaf10)
-    · exact Or.inr (Or.inr (inter_master _))
-    · exact Or.inr (Or.inr leaf10_inter_right)
-    · exact Or.inr (Or.inr (Set.inter_self _))
-  up_mem := by
-    intro X Y hX hY hXY
-    rcases hX with rfl | rfl | rfl
-    · exact Or.inl (eq_of_master_subset hY hXY)
-    · rcases right_subset_cases hY hXY with h | h
-      · exact Or.inl h
-      · exact Or.inr (Or.inl h)
-    · rcases leaf10_subset_cases hY hXY with h | h | h
-      · exact Or.inl h
-      · exact Or.inr (Or.inl h)
-      · exact Or.inr (Or.inr h)
 
-/-- The total element `{Δ, right, leaf11}` (leaf `11`). -/
-def elem11 : neighborhoodSystem.Element where
-  mem X := X = master ∨ X = right ∨ X = leaf11
-  sub h := by
-    rcases h with rfl | rfl | rfl
-    · exact mem_master
-    · exact mem_right
-    · exact mem_leaf11
-  master_mem := Or.inl rfl
-  inter_mem := by
-    intro X Y hX hY
-    rcases hX with rfl | rfl | rfl <;> rcases hY with rfl | rfl | rfl
-    · exact Or.inl (master_inter _)
-    · exact Or.inr (Or.inl (master_inter _))
-    · exact Or.inr (Or.inr (master_inter _))
-    · exact Or.inr (Or.inl (inter_master _))
-    · exact Or.inr (Or.inl (Set.inter_self _))
-    · exact Or.inr (Or.inr right_inter_leaf11)
-    · exact Or.inr (Or.inr (inter_master _))
-    · exact Or.inr (Or.inr leaf11_inter_right)
-    · exact Or.inr (Or.inr (Set.inter_self _))
-  up_mem := by
-    intro X Y hX hY hXY
-    rcases hX with rfl | rfl | rfl
-    · exact Or.inl (eq_of_master_subset hY hXY)
-    · rcases right_subset_cases hY hXY with h | h
-      · exact Or.inl h
-      · exact Or.inr (Or.inl h)
-    · rcases leaf11_subset_cases hY hXY with h | h | h
-      · exact Or.inl h
-      · exact Or.inr (Or.inl h)
-      · exact Or.inr (Or.inr h)
 
 /-! ### Filter classification: the seven elements. -/
 

@@ -12,6 +12,12 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Poly
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.CL
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Sbody
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Smap
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Ielem
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Kelem
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Selem
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.bracket
 
 @[expose] public section
 
@@ -79,73 +85,20 @@ out of projections, pairing and `eval`, then curry twice. -/
 variable {αx αa αb : Type*}
   {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
-/-- The uncurried body of `S`: with `F : 𝒟ₓ → (𝒟ₐ → 𝒟_b)`, `G : 𝒟ₓ → 𝒟ₐ`, `x : 𝒟ₓ`,
-`Sbody⟨⟨F, G⟩, x⟩ = (F x)(G x)`, expressed using only `proj`, `pair` and `eval`. -/
-def Sbody (Vx : NeighborhoodSystem αx) (Va : NeighborhoodSystem αa) (Vb : NeighborhoodSystem αb) :
-    ApproximableMap
-      (prod (prod (funSpace Vx (funSpace Va Vb)) (funSpace Vx Va)) Vx) Vb :=
-  (evalMap Va Vb).comp
-    (paired
-      ((evalMap Vx (funSpace Va Vb)).comp
-        (paired
-          ((proj₀ (funSpace Vx (funSpace Va Vb)) (funSpace Vx Va)).comp
-            (proj₀ (prod (funSpace Vx (funSpace Va Vb)) (funSpace Vx Va)) Vx))
-          (proj₁ (prod (funSpace Vx (funSpace Va Vb)) (funSpace Vx Va)) Vx)))
-      ((evalMap Vx Va).comp
-        (paired
-          ((proj₁ (funSpace Vx (funSpace Va Vb)) (funSpace Vx Va)).comp
-            (proj₀ (prod (funSpace Vx (funSpace Va Vb)) (funSpace Vx Va)) Vx))
-          (proj₁ (prod (funSpace Vx (funSpace Va Vb)) (funSpace Vx Va)) Vx))))
 
-/-- `S = λf, g, x. f(x)(g(x))`, the curried form
-`(𝒟ₓ → (𝒟ₐ → 𝒟_b)) → ((𝒟ₓ → 𝒟ₐ) → (𝒟ₓ → 𝒟_b))`. -/
-def Smap (Vx : NeighborhoodSystem αx) (Va : NeighborhoodSystem αa) (Vb : NeighborhoodSystem αb) :
-    ApproximableMap (funSpace Vx (funSpace Va Vb))
-      (funSpace (funSpace Vx Va) (funSpace Vx Vb)) :=
-  curry (curry (Sbody Vx Va Vb))
 
 /-! ### Domains as data, and the function-domain constructor. -/
 
 
 /-! ### The three combinators as elements of the appropriate function domains. -/
 
-/-- `I = λx.x` as an element of `(X → X)`. -/
-def Ielem (X : Dom) : (X.arrow X).sys.Element := toFilter (idMap X.sys)
 
-/-- `K = λx, y.x` as an element of `(A → (X → A))`. -/
-def Kelem (A X : Dom) : (A.arrow (X.arrow A)).sys.Element := toFilter (curry (proj₀ A.sys X.sys))
 
-/-- `S = λf, g, x. f(x)(g(x))` as an element of
-`((X → (A → B)) → ((X → A) → (X → B)))`. -/
-def Selem (X A B : Dom) :
-    ((X.arrow (A.arrow B)).arrow ((X.arrow A).arrow (X.arrow B))).sys.Element :=
-  toFilter (Smap X.sys A.sys B.sys)
 
 /-! ### Syntax of `λ`-bodies with one free variable, and of variable-free combinator expressions. -/
 
-/-- The denotation of an open term: the body as a function of its free variable. -/
-def Poly.denote {X : Dom} : {A : Dom} → Poly X A → X.sys.Element → A.sys.Element
-  | _, .var, x => x
-  | _, .con c, _ => c
-  | _, .app f a, x => (toApproxMap (f.denote x)).toElementMap (a.denote x)
 
-/-- The denotation of a variable-free combinator expression: a single element. -/
-def CL.denote : {A : Dom} → CL A → A.sys.Element
-  | _, .con c => c
-  | _, .app f a => (toApproxMap f.denote).toElementMap a.denote
 
 /-! ### Bracket abstraction. -/
 
-/-- **Bracket abstraction.** Turn an open body `t` (a `λ`-body with one free variable) into a
-*variable-free* combinator expression denoting `λx.t`, using only application and the combinators
-`I`, `K`, `S` together with the constants already occurring in `t`:
-
-* `[x] x        = I`
-* `[x] c        = K(c)`           (`c` a constant / closed term)
-* `[x] (f a)    = S([x]f)([x]a)`.
--/
-def bracket {X : Dom} : {A : Dom} → Poly X A → CL (X.arrow A)
-  | _, .var => .con (Ielem X)
-  | _, .con c => .app (.con (Kelem _ X)) (.con c)
-  | _, .app f a => .app (.app (.con (Selem X _ _)) (bracket f)) (bracket a)
 end DomainTheory.NeighbourhoodSystems.Exercise508

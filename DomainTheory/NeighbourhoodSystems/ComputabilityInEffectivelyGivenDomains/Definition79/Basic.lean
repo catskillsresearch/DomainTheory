@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Bas
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120
 public import Mathlib.Tactic
 import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition79.PDmem
 
 @[expose] public section
 
@@ -69,12 +70,6 @@ Exercise 1.20's `powerSystem` (over the token type `Δ† = 𝒟`, i.e. `Set α`
 neighbourhood system (`powerSystem_isPositive`). -/
 abbrev dagger : NeighborhoodSystem (Set α) := V.powerSystem
 
-/-- **Definition 7.9 — the Smyth power domain `ℙ𝒟`.** A set `W : Set (Set α)` is a
-neighbourhood of `ℙ𝒟` iff it is a *finite union of down-sets* `⋃_{X ∈ L} ↓X` for some finite
-list `L` of `𝒟`-neighbourhoods. The empty list `L = []` realizes Scott's `n = 0` (the empty
-union `∅`). -/
-def PDmem (W : Set (Set α)) : Prop :=
-  ∃ L : List (Set α), (∀ X ∈ L, V.mem X) ∧ W = ⋃ X ∈ L, V.upSet X
 
 /-! ### Definition 7.9 — the two displayed intersection remarks -/
 end NeighborhoodSystem

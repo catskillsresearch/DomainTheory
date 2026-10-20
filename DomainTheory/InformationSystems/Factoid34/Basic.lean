@@ -8,6 +8,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.InformationSystems.InfoSys
+public import DomainTheory.InformationSystems.Factoid34.IsTotal
+public import DomainTheory.InformationSystems.Factoid34.AllConsistent
+public import DomainTheory.InformationSystems.Factoid34.topElement
 
 @[expose] public section
 
@@ -26,16 +29,7 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- A **total** element is a maximal element of `|A|` under inclusion. -/
-def IsTotal (x : sys.Element) : Prop := ∀ y, x ≤ y → y ≤ x
 
-/-- Every finite set of tokens is consistent. -/
-def AllConsistent : Prop := ∀ u : Finset α, u ∈ sys.Con
 
-/-- **Factoid 3.4.** When every finite set is consistent, the top element is `D` itself. -/
-def topElement (h : sys.AllConsistent) : sys.Element where
-  carrier := Set.univ
-  consistent := fun Y _ => h Y
-  closed := fun _ _ _ _ => trivial
 end InfoSys
 end DomainTheory.InformationSystems

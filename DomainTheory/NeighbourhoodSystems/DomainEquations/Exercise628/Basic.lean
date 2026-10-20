@@ -9,6 +9,8 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.projElementEmbedding
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.IsFinite
 
 @[expose] public section
 
@@ -61,23 +63,6 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-! ## An order embedding `|D| ↪o |E|` from a projection pair / from `⊴` -/
 
-/-- **The element-wise map of an injection `i` is an order embedding.** Given approximable maps
-`i : D → E`, `j : E → D` with `j ∘ i = I_D`, the map `x ↦ i(x)` on elements is an order embedding
-`|D| ↪o |E|`: monotone by `toElementMap_mono`, and order-reflecting because `j(·)` is a monotone
-left inverse (`j(i(x)) = x`). Choice-free. -/
-def projElementEmbedding {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-    (i : ApproximableMap D E) (j : ApproximableMap E D) (hji : j.comp i = idMap D) :
-    D.Element ↪o E.Element :=
-  OrderEmbedding.ofMapLEIff i.toElementMap (by
-    have hround : ∀ x : D.Element, j.toElementMap (i.toElementMap x) = x := by
-      intro x; rw [← toElementMap_comp, hji, toElementMap_idMap]
-    intro a b
-    constructor
-    · intro h
-      have hjm := toElementMap_mono j h
-      rwa [hround a, hround b] at hjm
-    · intro h
-      exact toElementMap_mono i h)
 
 /-! ## Finite Cantor–Schröder–Bernstein for ordered types -/
 
@@ -85,7 +70,4 @@ def projElementEmbedding {α β : Type*} {D : NeighborhoodSystem α} {E : Neighb
 
 /-! ## "Finite system" = finitely many neighbourhoods -/
 
-/-- **A neighbourhood system is *finite*** when it has only finitely many neighbourhoods. -/
-def NeighborhoodSystem.IsFinite {α : Type*} (D : NeighborhoodSystem α) : Prop :=
-  Finite {X : Set α // D.mem X}
 end DomainTheory.NeighbourhoodSystems

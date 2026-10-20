@@ -1,0 +1,40 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+-/
+module
+
+public import Mathlib.Computability.RE
+import all Mathlib.Computability.RE
+public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Computability.pairComb
+public import DomainTheory.DataTypesAsLattices.Computability.unpairFstC
+public import DomainTheory.DataTypesAsLattices.Computability.unpairSndC
+public import DomainTheory.DataTypesAsLattices.Computability.primRecOpC
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+set_option maxHeartbeats 2000000
+
+namespace DomainTheory.DataTypesAsLattices
+
+open Encodable
+
+open Nat.Partrec (Code)
+
+open Nat.Partrec.Code
+
+/-- Environment for the primitive-recursion constructor of `Nat.Primrec`. -/
+def precEnv (f g : Pomega) : ℕ → Pomega
+  | 3 => primRecOpC
+  | 4 => f
+  | 5 => g
+  | 6 => unpairFstC
+  | 7 => unpairSndC
+  | 8 => pairComb
+  | _ => botElem
+
+end DomainTheory.DataTypesAsLattices

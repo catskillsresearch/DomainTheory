@@ -10,6 +10,15 @@ module
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
 public import Mathlib.Data.Fintype.Pi
 import all Mathlib.Data.Fintype.Pi
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.genAtom
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.SplitSpec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.splitChoice
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.atomU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.extendTrue
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.restrictFin
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Yseq
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.exists_split
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.atomU_zero
 
 @[expose] public section
 
@@ -70,43 +79,6 @@ open NeighborhoodSystem
 
 variable {α : Type*}
 
-/-- **The key local splitting step behind Theorem 8.8(a)'s back-and-forth construction.** Given a
-`D`-side atom `A` matched with a `U`-side atom `B` (`A = ∅ ↔ B = ∅`, and `B` is either empty or a
-genuine `U`-neighbourhood), and a new target set `Xₙ` (morally the next `D`-neighbourhood `Xₙ`),
-produce matching refinements `I` (for `A ∩ Xₙ`) and `J` (for `A \ Xₙ`). -/
-theorem exists_split {A : Set α} {B : Set ℚ} (hAB : A = ∅ ↔ B = ∅)
-    (hBU : B = ∅ ∨ U.mem B) (Xn : Set α) :
-    ∃ I J : Set ℚ, (I = ∅ ∨ U.mem I) ∧ (J = ∅ ∨ U.mem J) ∧
-      (A ∩ Xn = ∅ ↔ I = ∅) ∧ (A \ Xn = ∅ ↔ J = ∅) ∧ I ∪ J = B ∧ I ∩ J = ∅ := by
-  by_cases h1 : A ∩ Xn = ∅
-  · refine ⟨∅, B, Or.inl rfl, hBU, by simp [h1], ?_, by simp, by simp⟩
-    have hAeq : A \ Xn = A := by
-      ext x
-      simp only [Set.mem_sdiff]
-      refine ⟨fun hx => hx.1, fun hx => ⟨hx, fun hxn => ?_⟩⟩
-      exact Set.eq_empty_iff_forall_notMem.mp h1 x ⟨hx, hxn⟩
-    rw [hAeq, hAB]
-  · by_cases h2 : A \ Xn = ∅
-    · refine ⟨B, ∅, hBU, Or.inl rfl, ?_, iff_of_true h2 rfl, by simp, by simp⟩
-      have hAeq : A ∩ Xn = A := by
-        ext x
-        simp only [Set.mem_inter_iff]
-        refine ⟨fun hx => hx.1, fun hx => ⟨hx, ?_⟩⟩
-        by_contra hxn
-        exact Set.eq_empty_iff_forall_notMem.mp h2 x ⟨hx, hxn⟩
-      rw [hAeq, hAB]
-    · have hAne : A ≠ ∅ := by
-        intro hA
-        apply h1
-        rw [hA]
-        exact Set.empty_inter Xn
-      have hBne : B ≠ ∅ := fun hB => hAne (hAB.mpr hB)
-      have hBU' : U.mem B := hBU.resolve_left hBne
-      obtain ⟨Y, Z, hY, hZ, hYZinter, hYZunion, -, -⟩ := U_no_minimal hBU'
-      have hYne : Y ≠ ∅ := hY.2.1.ne_empty
-      have hZne : Z ≠ ∅ := hZ.2.1.ne_empty
-      exact ⟨Y, Z, Or.inr hY, Or.inr hZ, iff_of_false h1 hYne, iff_of_false h2 hZne,
-        hYZunion, hYZinter⟩
 
 /-! ### Boolean atoms, indexed by `δ : ℕ → Bool`
 
@@ -118,9 +90,6 @@ the `U`-side). We deliberately index by *all* of `ℕ → Bool` rather than `Fin
 harmless redundancy (many `δ` present the same atom). A genuine finite index type (`Fin n → Bool`)
 only reappears once, locally, when a *finite union* is actually needed (`Yseq`, below). -/
 
-def genAtom {β : Type*} (Z : ℕ → Set β) (M : Set β) (δ : ℕ → Bool) : ℕ → Set β
-  | 0 => M
-  | (n + 1) => genAtom Z M δ n ∩ (if δ n then Z n else M \ Z n)
 
 theorem genAtom_subset {β : Type*} (Z : ℕ → Set β) (M : Set β) (δ : ℕ → Bool) (n : ℕ) :
     genAtom Z M δ n ⊆ M := by
@@ -187,30 +156,7 @@ place non-constructivity enters this file). Theorem 8.8(b)'s effective refinemen
 atom-emptiness test — getting the entire invariant/transfer apparatus below "for free", with no
 need to reprove any of it. -/
 
-/-- **The abstract specification a splitting operation must satisfy** — exactly `exists_split`'s
-conclusion, as a `Prop` about a *total* function `split`. Both the classical `splitChoice` (via
-`Classical.choice`) and the effective, computable `splitEff` (Theorem 8.8(b)) satisfy this. -/
-def SplitSpec (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ) : Prop :=
-  ∀ {A : Set α} {B : Set ℚ}, (A = ∅ ↔ B = ∅) → (B = ∅ ∨ U.mem B) → ∀ Xn : Set α,
-    ((split A B Xn).1 = ∅ ∨ U.mem (split A B Xn).1) ∧
-      ((split A B Xn).2 = ∅ ∨ U.mem (split A B Xn).2) ∧
-      (A ∩ Xn = ∅ ↔ (split A B Xn).1 = ∅) ∧
-      (A \ Xn = ∅ ↔ (split A B Xn).2 = ∅) ∧
-      (split A B Xn).1 ∪ (split A B Xn).2 = B ∧
-      (split A B Xn).1 ∩ (split A B Xn).2 = ∅
 
-open Classical in
-/-- **Total packaging of `exists_split`.** Given any `A : Set α`, `B : Set ℚ`, `Xn : Set α`,
-`splitChoice A B Xn` is the pair `(I, J)` produced by `exists_split` whenever the hypotheses hold
-(`A = ∅ ↔ B = ∅` and `B = ∅ ∨ U.mem B`), and the junk value `(∅, ∅)` otherwise. Making this total
-(rather than threading proof obligations through a dependent recursive definition) is what lets
-`atomU` below be defined by plain structural recursion on `ℕ`; `splitChoice_isSplitSpec` recovers
-`exists_split`'s conclusions whenever the hypotheses genuinely hold, which is all that is ever
-used (the junk branch is never reached along the real construction). -/
-noncomputable def splitChoice (A : Set α) (B : Set ℚ) (Xn : Set α) : Set ℚ × Set ℚ :=
-  if h : (A = ∅ ↔ B = ∅) ∧ (B = ∅ ∨ U.mem B) then
-    ⟨(exists_split h.1 h.2 Xn).choose, (exists_split h.1 h.2 Xn).choose_spec.choose⟩
-  else (∅, ∅)
 
 /-- **A splitting operation's first output is a subset of `B`** (`I ⊆ B`, from `I ∪ J = B`) —
 a corollary of `SplitSpec` alone, needing no facts about the specific `split`. -/
@@ -235,18 +181,9 @@ taking the `δ n`-side of the split. -/
 
 variable (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
 
-/-- The `U`-side atom matching `genAtom X Δ δ n`, built recursively via an abstract splitting
-operation `split` (instantiated with `splitChoice` for Theorem 8.8(a), `splitEff` for 8.8(b)). -/
-noncomputable def atomU (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
-    (X : ℕ → Set α) (Δ : Set α) (δ : ℕ → Bool) : ℕ → Set ℚ
-  | 0 => U.master
-  | (n + 1) =>
-      if δ n then (split (genAtom X Δ δ n) (atomU split X Δ δ n) (X n)).1
-      else (split (genAtom X Δ δ n) (atomU split X Δ δ n) (X n)).2
 
 variable (X : ℕ → Set α) (Δ : Set α)
 
-@[simp] theorem atomU_zero (δ : ℕ → Bool) : atomU split X Δ δ 0 = U.master := rfl
 
 theorem atomU_succ (δ : ℕ → Bool) (n : ℕ) :
     atomU split X Δ δ (n + 1) =
@@ -361,12 +298,7 @@ A genuine `Fintype` index (`Fin n → Bool`) is used *only* here, to state a bon
 (the padding value is irrelevant beyond position `n`, and *must* be `true` at position `n` itself,
 to select the "+"-branch of the split there). -/
 
-/-- Pad `δ' : Fin n → Bool` to a total `ℕ → Bool`, filling positions `≥ n` with `true`. -/
-def extendTrue {n : ℕ} (δ' : Fin n → Bool) : ℕ → Bool :=
-  fun i => if h : i < n then δ' ⟨i, h⟩ else true
 
-/-- Restrict `δ : ℕ → Bool` to `Fin n → Bool`. -/
-def restrictFin (δ : ℕ → Bool) (n : ℕ) : Fin n → Bool := fun i => δ i.val
 
 omit hΔ hsplit in
 theorem extendTrue_agree {n : ℕ} (δ' : Fin n → Bool) (i : ℕ) (hi : i < n) :
@@ -376,10 +308,6 @@ omit hΔ hsplit in
 theorem extendTrue_restrictFin_agree (δ : ℕ → Bool) (n i : ℕ) (hi : i < n) :
     extendTrue (restrictFin δ n) i = δ i := by simp [extendTrue, restrictFin, hi]
 
-/-- **Scott's `Yₙ`**: the union, over all `2ⁿ` depth-`n` atoms, of the "+"-piece chosen when
-splitting against `X n`. -/
-noncomputable def Yseq (n : ℕ) : Set ℚ :=
-  ⋃ δ' : Fin n → Bool, atomU split X Δ (extendTrue δ') (n + 1)
 
 omit hΔ hsplit in
 theorem subset_Yseq {n : ℕ} (δ' : Fin n → Bool) :

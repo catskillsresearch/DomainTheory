@@ -10,6 +10,15 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.flatMem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.flat
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.stemMem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.stem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.singleton_disjoint
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.flatNOD
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.flat_mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.flat_master
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.stemNOD
 
 @[expose] public section
 
@@ -44,73 +53,18 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise115
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-/-- `{n} ∩ {m} = ∅` for `n ≠ m`. -/
-theorem singleton_disjoint {n m : ℕ} (h : n ≠ m) : ({n} : Set ℕ) ∩ {m} = ∅ := by
-  ext k
-  simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false]
-  rintro ⟨rfl, h2⟩
-  exact h h2
 
 /-! ## The flat domain `flat`. -/
 
-/-- Neighbourhoods of the flat domain: `Δ = ℕ` together with all singletons. -/
-def flatMem (X : Set ℕ) : Prop := X = Set.univ ∨ ∃ n, X = {n}
 
-theorem flatNOD : NestedOrDisjoint flatMem := by
-  rintro X Y (rfl | ⟨n, rfl⟩) (rfl | ⟨m, rfl⟩)
-  · exact Or.inl (subset_refl _)
-  · exact Or.inr (Or.inl (Set.subset_univ _))
-  · exact Or.inl (Set.subset_univ _)
-  · rcases eq_or_ne n m with rfl | h
-    · exact Or.inl (subset_refl _)
-    · exact Or.inr (Or.inr (singleton_disjoint h))
 
-/-- **Exercise 1.15 — the flat domain.** `𝒟 = {ℕ} ∪ {{n}}`. -/
-def flat : NeighborhoodSystem ℕ :=
-  ofNestedOrDisjoint flatMem Set.univ Set.univ_nonempty
-    (Or.inl rfl) flatNOD (fun _ => Set.subset_univ _)
 
-@[simp] theorem flat_mem {X : Set ℕ} : flat.mem X ↔ X = Set.univ ∨ ∃ n, X = {n} := Iff.rfl
 
-@[simp] theorem flat_master : flat.master = Set.univ := rfl
 
 /-! ## The "stem" domain `stem`. -/
 
-/-- Neighbourhoods of the stem domain: `Δ = ℕ`, the pair `{0,1}`, and all singletons. -/
-def stemMem (X : Set ℕ) : Prop := X = Set.univ ∨ X = {0, 1} ∨ ∃ n, X = {n}
 
-theorem stemNOD : NestedOrDisjoint stemMem := by
-  have pair_single : ∀ m : ℕ, ({m} : Set ℕ) ⊆ {0, 1} ∨ ({0, 1} : Set ℕ) ∩ {m} = ∅ := by
-    intro m
-    by_cases h : m = 0 ∨ m = 1
-    · refine Or.inl ?_
-      rcases h with rfl | rfl <;> intro k hk <;> simp_all
-    · refine Or.inr ?_
-      ext k
-      simp only [Set.mem_inter_iff, Set.mem_insert_iff, Set.mem_singleton_iff,
-        Set.mem_empty_iff_false, iff_false, not_and]
-      rintro (rfl | rfl) rfl <;> simp_all
-  rintro X Y (rfl | rfl | ⟨n, rfl⟩) (rfl | rfl | ⟨m, rfl⟩)
-  · exact Or.inl (subset_refl _)
-  · exact Or.inr (Or.inl (Set.subset_univ _))
-  · exact Or.inr (Or.inl (Set.subset_univ _))
-  · exact Or.inl (Set.subset_univ _)
-  · exact Or.inl (subset_refl _)
-  · rcases pair_single m with h | h
-    · exact Or.inr (Or.inl h)
-    · exact Or.inr (Or.inr h)
-  · exact Or.inl (Set.subset_univ _)
-  · rcases pair_single n with h | h
-    · exact Or.inl h
-    · exact Or.inr (Or.inr (by rw [Set.inter_comm]; exact h))
-  · rcases eq_or_ne n m with rfl | h
-    · exact Or.inl (subset_refl _)
-    · exact Or.inr (Or.inr (singleton_disjoint h))
 
-/-- **Exercise 1.15 — the stem domain.** `𝒟 = {ℕ, {0,1}} ∪ {{n}}`. -/
-def stem : NeighborhoodSystem ℕ :=
-  ofNestedOrDisjoint stemMem Set.univ Set.univ_nonempty
-    (Or.inl rfl) stemNOD (fun _ => Set.subset_univ _)
 
 @[simp] theorem stem_mem {X : Set ℕ} :
     stem.mem X ↔ X = Set.univ ∨ X = {0, 1} ∨ ∃ n, X = {n} := Iff.rfl

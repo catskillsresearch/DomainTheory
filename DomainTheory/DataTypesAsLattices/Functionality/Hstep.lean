@@ -1,0 +1,37 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+-/
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
+public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
+public import DomainTheory.DataTypesAsLattices.Functionality.expTag
+public import DomainTheory.DataTypesAsLattices.Functionality.hVar
+public import DomainTheory.DataTypesAsLattices.Functionality.hZero
+public import DomainTheory.DataTypesAsLattices.Functionality.hSucc
+public import DomainTheory.DataTypesAsLattices.Functionality.hPred
+public import DomainTheory.DataTypesAsLattices.Functionality.hCond
+public import DomainTheory.DataTypesAsLattices.Functionality.hApp
+public import DomainTheory.DataTypesAsLattices.Functionality.hLam
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.DataTypesAsLattices
+
+/-- One continuous step of (4.43), dispatched on the (4.44) tags. -/
+def Hstep (H e t : Pomega) : Pomega :=
+  dcondSet (expTag e) (hVar e t)
+    (dcondSet (predSet (expTag e)) hZero
+      (dcondSet (predSet (predSet (expTag e))) (hSucc H e t)
+        (dcondSet (predSet^[3] (expTag e)) (hPred H e t)
+          (dcondSet (predSet^[4] (expTag e)) (hCond H e t)
+            (dcondSet (predSet^[5] (expTag e)) (hApp H e t)
+              (dcondSet (predSet^[6] (expTag e)) (hLam H e t)
+                topElem))))))
+
+end DomainTheory.DataTypesAsLattices

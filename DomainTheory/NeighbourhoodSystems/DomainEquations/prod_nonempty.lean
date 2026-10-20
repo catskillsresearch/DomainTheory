@@ -1,0 +1,36 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+
+universe w
+
+namespace Exercise618
+
+/-- The product of two `∅`-free systems is `∅`-free. -/
+theorem prod_nonempty {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+    (h₀ : ∀ X, V₀.mem X → X.Nonempty) (_h₁ : ∀ Y, V₁.mem Y → Y.Nonempty) :
+    ∀ W, (prod V₀ V₁).mem W → W.Nonempty := by
+  rintro W ⟨X, Y, hX, _, rfl⟩
+  obtain ⟨a, ha⟩ := h₀ X hX
+  exact ⟨Sum.inl a, mem_prodNbhd_inl.mpr ha⟩
+
+end Exercise618
+
+end DomainTheory.NeighbourhoodSystems

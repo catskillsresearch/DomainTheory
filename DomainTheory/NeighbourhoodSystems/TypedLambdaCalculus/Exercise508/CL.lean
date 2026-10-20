@@ -25,4 +25,10 @@ inductive CL : Dom → Type 1 where
   | con {A : Dom} (c : A.sys.Element) : CL A
   | app {A B : Dom} (f : CL (A.arrow B)) (a : CL A) : CL B
 
+
+/-- The denotation of a variable-free combinator expression: a single element. -/
+def CL.denote : {A : Dom} → CL A → A.sys.Element
+  | _, .con c => c
+  | _, .app f a => (toApproxMap f.denote).toElementMap a.denote
+
 end DomainTheory.NeighbourhoodSystems.Exercise508

@@ -6,6 +6,8 @@ Authors: Lars Warren Ericson.
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph
+public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
+public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
 
 @[expose] public section
 
@@ -15,12 +17,5 @@ public import DomainTheory.DataTypesAsLattices.Graph
 
 namespace DomainTheory.DataTypesAsLattices
 
-/-- Iterate `f` starting from `⊥`. -/
-def iterateBot (f : Pomega → Pomega) : ℕ → Pomega
-  | 0 => botElem
-  | n + 1 => f (iterateBot f n)
 
-/-- **Scott 1976, Theorem 1.4.** Least fixed point `fix(f) = ⋃_n fⁿ(∅)`. -/
-def fix (f : Pomega → Pomega) : Pomega :=
-  ⋃ n, iterateBot f n
 end DomainTheory.DataTypesAsLattices

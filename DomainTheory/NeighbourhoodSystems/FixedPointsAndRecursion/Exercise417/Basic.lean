@@ -14,6 +14,11 @@ public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 import all Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.Group.Nat.Defs
 import all Mathlib.Algebra.Group.Nat.Defs
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.F
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.preFixSubmonoid
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.base_subset_F
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.self_mul_subset_F
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.one_mem_F
 
 @[expose] public section
 
@@ -51,29 +56,12 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {S : Type*} [Monoid S]
 
-/-- Scott's operator `F(x) = {1} ∪ {a, b} ∪ x · x` on `P S`. -/
-def F (a b : S) (x : Set S) : Set S := {1} ∪ {a, b} ∪ x * x
 
-/-- `{1} ∪ {a, b} ⊆ F a b x`. -/
-theorem base_subset_F (a b : S) (x : Set S) : {1} ∪ {a, b} ⊆ F a b x :=
-  Set.subset_union_left
 
-theorem self_mul_subset_F (a b : S) (x : Set S) : x * x ⊆ F a b x :=
-  Set.subset_union_right
 
-theorem one_mem_F (a b : S) (x : Set S) : (1 : S) ∈ F a b x :=
-  base_subset_F a b x (Set.mem_union_left _ rfl)
 
 /-! ### The least solution. -/
 
-/-- A pre-fixed point of `F` is a submonoid containing `{a, b}`: it contains `1` and is closed under
-multiplication and contains `a, b`. Packaged as the submonoid with that carrier. -/
-def preFixSubmonoid (a b : S) {x : Set S} (hx : F a b x ⊆ x) : Submonoid S where
-  carrier := x
-  one_mem' := hx (one_mem_F a b x)
-  mul_mem' := by
-    intro s t hs ht
-    exact hx (self_mul_subset_F a b x (Set.mul_mem_mul hs ht))
 
 /-! ### Non-uniqueness. -/
 end DomainTheory.NeighbourhoodSystems.Exercise417

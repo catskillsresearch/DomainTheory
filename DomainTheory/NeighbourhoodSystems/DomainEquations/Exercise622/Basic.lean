@@ -8,6 +8,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.Cnat
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.Cone
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NExpr
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.MExpr
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NStarExpr
 
 @[expose] public section
 
@@ -57,48 +62,12 @@ namespace Exercise619
 
 /-! ## The two constant domains -/
 
-/-- **The two-point generator `{{0},{0,Λ}}`.** Its tokens are `Δ = {0,Λ}`, with the one proper
-neighbourhood `{0}` sitting strictly below the master `{0,Λ} = Δ`. As a domain this is the chain
-`{0} ⊏ Δ` (one point above the bottom). Here `0 = [false]` and `Λ = []`. -/
-def Cnat : ScottSys where
-  sys :=
-    { mem := fun X => X = {([false] : Str)} ∨ X = {([false] : Str), ([] : Str)}
-      master := {([false] : Str), ([] : Str)}
-      master_nonempty := ⟨[false], Set.mem_insert _ _⟩
-      master_mem := Or.inr rfl
-      inter_mem := by
-        have hAB : ({([false] : Str)} : Set Str) ⊆ {([false] : Str), ([] : Str)} :=
-          Set.singleton_subset_iff.mpr (Set.mem_insert _ _)
-        rintro X Y Z (rfl | rfl) (rfl | rfl) _ _
-        · exact Or.inl (Set.inter_self _)
-        · exact Or.inl (Set.inter_eq_self_of_subset_left hAB)
-        · exact Or.inl (Set.inter_eq_self_of_subset_right hAB)
-        · exact Or.inr (Set.inter_self _)
-      sub_master := by
-        have hAB : ({([false] : Str)} : Set Str) ⊆ {([false] : Str), ([] : Str)} :=
-          Set.singleton_subset_iff.mpr (Set.mem_insert _ _)
-        rintro X (rfl | rfl)
-        · exact hAB
-        · exact subset_rfl }
-  ne := by
-    rintro X (rfl | rfl)
-    · exact ⟨[false], rfl⟩
-    · exact ⟨[false], Set.mem_insert _ _⟩
 
-/-- **The one-point domain `{{Λ}} = 𝟙`** (the terminal object of Scott's category). -/
-def Cone : ScottSys := singletonSys ({([] : Str)} : Set Str) ⟨[], rfl⟩
 
 /-! ## The three domain equations as `GExpr` constructs -/
 
-/-- `T(X) = {{0},{0,Λ}} ⊕ X` — the right-hand side of `N ≅ {{0},{0,Λ}} ⊕ N`. -/
-def NExpr : GExpr := .oplus (.const Cnat) .var
 
-/-- `T(X) = {{Λ}} + X` — the right-hand side of `M ≅ {{Λ}} + M`. -/
-def MExpr : GExpr := .sum (.const Cone) .var
 
-/-- `T(X) = N ⊕ (N ⊗ X)` — the right-hand side of `N* ≅ N ⊕ (N ⊗ N*)`, parametrised by the (rooted)
-datum domain `N`. -/
-def NStarExpr (N : ScottSys) : GExpr := .oplus (.const N) (.otimes (.const N) .var)
 
 /-! ## Each equation has a solution (`Γ = tok(T({Γ}))`, so `{Γ} ◁ T({Γ})` and 6.14 applies) -/
 end Exercise619

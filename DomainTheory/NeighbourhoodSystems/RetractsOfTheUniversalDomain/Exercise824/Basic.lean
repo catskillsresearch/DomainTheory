@@ -8,6 +8,12 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.binOp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.aStar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.bStar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.aOp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.bOp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.PairSpace
 
 @[expose] public section
 
@@ -114,34 +120,11 @@ variable {α : Type} {E : NeighborhoodSystem α}
 
 /-! ## The pair space `(E → E) × (E → E)`, and the combined operator `⟨s, t⟩` -/
 
-/-- Scott's pair space `(E → E) × (E → E)`: pairs of self-maps of `E`, as an actual
-`NeighborhoodSystem` (Lecture III's product of two copies of the function space). -/
-abbrev PairSpace : NeighborhoodSystem (ApproximableMap E E ⊕ ApproximableMap E E) :=
-  prod (funSpace E E) (funSpace E E)
 
-/-- Scott's `s(a, b)`: the operator `(E → E) × (E → E) → (E → E)` induced by an approximable map
-`s` out of the pair space, applied to two actual maps `a b : E → E`. -/
-def binOp (f : ApproximableMap (PairSpace (E := E)) (funSpace E E))
-    (a b : ApproximableMap E E) : ApproximableMap E E :=
-  toApproxMap (f.toElementMap (pair (toFilter a) (toFilter b)))
 
-/-- Scott's `‖s‖ = fix(⟨s, t⟩)`'s first component, as an actual approximable map `E → E`. -/
-def aStar (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) : ApproximableMap E E :=
-  toApproxMap (paired s t).fixElement.fst
 
-/-- Scott's `‖t‖ = fix(⟨s, t⟩)`'s second component, as an actual approximable map `E → E`. -/
-def bStar (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) : ApproximableMap E E :=
-  toApproxMap (paired s t).fixElement.snd
 
-/-- The `n`-th approximant's first component, as an actual approximable map `E → E`. -/
-def aOp (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
-    ApproximableMap E E :=
-  toApproxMap ((paired s t).iterElem n).fst
 
-/-- The `n`-th approximant's second component, as an actual approximable map `E → E`. -/
-def bOp (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
-    ApproximableMap E E :=
-  toApproxMap ((paired s t).iterElem n).snd
 
 /-! ## `.fst`/`.snd` are monotone (needed for the directed-union chase in Claim 1) -/
 

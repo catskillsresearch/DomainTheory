@@ -1,0 +1,66 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.mem_finGenSys
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.mem_nbhdGen
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.mem_SubD
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.SubD_master
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.nodeCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.TreeVal
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.primrec_TreeVal
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.TreeVal_node
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.Q2X
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.SubD
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem Domain.Recursive
+
+variable {α : Type*} {D : NeighborhoodSystem α}
+
+section UniversalSubsystem
+
+section TreeVal2
+
+variable (r : ℕ → ℕ) (x : (SubD UComputablePresentation).Element)
+
+/-- **`cons_computable` for `Q2X r`.** The crux resolved by the term algebra: the backward
+direction's witness is `nodeCode n m`, no search needed to *name* it, and it works because
+`Uinter_spec` applies exactly when consistency holds. -/
+theorem Q2_cons_computable (hr : Nat.Primrec r) :
+    RecDecidable₂ (fun n m => ∃ k, Q2X r k ⊆ Q2X r n ∩ Q2X r m) := by
+  have hTV := primrec_TreeVal r hr
+  have hreindex : Nat.Primrec (fun t : ℕ => Nat.pair (TreeVal r t.unpair.1) (TreeVal r t.unpair.2)) :=
+    (hTV.comp Nat.Primrec.left).pair (hTV.comp Nat.Primrec.right)
+  refine RecDecidable.of_iff (fun t => ?_) (U_cons_computable.comp hreindex)
+  simp only [unpair_pair_fst, unpair_pair_snd]
+  constructor
+  · rintro ⟨k, hk⟩
+    exact ⟨TreeVal r k, hk⟩
+  · rintro ⟨k, hk⟩
+    refine ⟨nodeCode t.unpair.1 t.unpair.2, ?_⟩
+    show UX (TreeVal r (nodeCode t.unpair.1 t.unpair.2)) ⊆
+      UX (TreeVal r t.unpair.1) ∩ UX (TreeVal r t.unpair.2)
+    rw [TreeVal_node, Uinter_spec ⟨k, hk⟩]
+
+end TreeVal2
+
+end UniversalSubsystem
+
+end DomainTheory.NeighbourhoodSystems

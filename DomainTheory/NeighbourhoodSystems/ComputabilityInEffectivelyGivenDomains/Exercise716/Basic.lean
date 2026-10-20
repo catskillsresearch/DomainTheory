@@ -9,6 +9,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.curryStepCode
 
 @[expose] public section
 
@@ -77,8 +78,4 @@ function-space inclusion in `(𝒟₀×𝒟₁→𝒟₂)`, recursively *decidab
 `[⟨Xₗ,Yₗᵢ⟩,Zₗᵢ]` is a one-entry function-space neighbourhood (`Xenum_singleton`); the surrounding
 quantifiers are *bounded* `∀`s over the coded entry-lists (`RecDecidable₂.bForallList`). -/
 
-/-- The code of the one-entry function-space neighbourhood `[⟨X_{e.1}, X_{e'.1}⟩, X_{e'.2}]` of
-`(𝒟₀×𝒟₁→𝒟₂)` (a `Xenum`-singleton over the product presentation). -/
-def curryStepCode (a e' : ℕ) : ℕ :=
-  Nat.pair (Nat.pair (Nat.pair a e'.unpair.1) e'.unpair.2) 0 + 1
 end DomainTheory.NeighbourhoodSystems

@@ -12,6 +12,20 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.he0
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.hcover
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.genAtom_empty_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.capPosCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.capNegCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.DprimeUPresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.idxSet_inter_eq_iff_DAtom
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.capPosCode_eq
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.capNegCode_eq
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.primrec_capPosCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.primrec_capNegCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.DAtom_pair_recDecidable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.inclK_i_recDecidable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.inclK_j_recDecidable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.DprimeU_interEq_computable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.DprimeU_cons_computable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.DprimeU_inter_spec
 
 @[expose] public section
 
@@ -70,159 +84,23 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-! ## A general `idxSet`/`DAtom` fact: 2-point atom emptiness characterizes `idxSet`-intersection -/
 
-/-- **`idxSet`-intersection, characterized by a single `DAtom` emptiness query.** For *any*
-computable presentation `Q`, `idxSet Q.X i ∩ idxSet Q.X j = idxSet Q.X k` iff `Q.X k` refines both
-`Q.X i` and `Q.X j` (Scott's own decidable inclusion) *and* the depth-2 atom `DAtom Q [i,j] [k]`
-(positive constraints `{i,j}`, negative constraint `{k}`) is empty. The three pieces are each
-decidable (`incl_computable` used twice, `DAtom_recDecidable` at a fixed 2-element/1-element list
-pair), so this is
-the bridge that lets Part 5's `DAtom` apparatus decide `idxSet`-level *equations*, not just
-emptiness. -/
-theorem idxSet_inter_eq_iff_DAtom {β : Type*} {V : NeighborhoodSystem β}
-    (Q : ComputablePresentation V) (i j k : ℕ) :
-    idxSet Q.X i ∩ idxSet Q.X j = idxSet Q.X k ↔
-      Q.X k ⊆ Q.X i ∧ Q.X k ⊆ Q.X j ∧ DAtom Q [i, j] [k] = ∅ := by
-  have hDAtom_iff : DAtom Q [i, j] [k] = ∅ ↔ idxSet Q.X i ∩ idxSet Q.X j ⊆ idxSet Q.X k := by
-    have hIPos : IPos Q [i, j] = idxSet Q.X i ∩ idxSet Q.X j := by
-      rw [IPos_cons, IPos_cons, IPos_nil, Set.inter_univ]
-    have hDAtom_eq : DAtom Q [i, j] [k] = (idxSet Q.X i ∩ idxSet Q.X j) \ idxSet Q.X k := by
-      show IPos Q [i, j] ∩ {m | ∀ j' ∈ ([k] : List ℕ), m ∉ idxSet Q.X j'} = _
-      rw [hIPos]
-      ext m
-      simp [Set.mem_sdiff]
-    rw [hDAtom_eq, Set.sdiff_eq_empty]
-  constructor
-  · intro heq
-    have h1 : idxSet Q.X k ⊆ idxSet Q.X i := by rw [← heq]; exact Set.inter_subset_left
-    have h2 : idxSet Q.X k ⊆ idxSet Q.X j := by rw [← heq]; exact Set.inter_subset_right
-    exact ⟨(idxSet_subset_iff Q.X k i).mp h1, (idxSet_subset_iff Q.X k j).mp h2,
-      hDAtom_iff.mpr heq.subset⟩
-  · rintro ⟨hki, hkj, hempty⟩
-    exact Set.Subset.antisymm (hDAtom_iff.mp hempty)
-      (Set.subset_inter ((idxSet_subset_iff Q.X k i).mpr hki) ((idxSet_subset_iff Q.X k j).mpr hkj))
 
 /-! ## Packaging `DAtom (P0 P) [i, j] [k] = ∅` as a `RecDecidable₃` -/
 
-private def capPosCode (t : ℕ) : ℕ := encodeList [t.unpair.1, t.unpair.2.unpair.1]
 
-private def capNegCode (t : ℕ) : ℕ := encodeList [t.unpair.2.unpair.2]
 
-private theorem capPosCode_eq (a b : ℕ) : encodeList [a, b] = Nat.pair a (Nat.pair b 0 + 1) + 1 :=
-  rfl
 
-private theorem capNegCode_eq (a : ℕ) : encodeList [a] = Nat.pair a 0 + 1 := rfl
 
-private theorem primrec_capPosCode : Nat.Primrec capPosCode := by
-  have h2 : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.right
-  have hinner : Nat.Primrec (fun t : ℕ => Nat.pair (t.unpair.2.unpair.1) 0 + 1) :=
-    primrec_add₂ (Nat.Primrec.pair h2 (Nat.Primrec.const 0)) (Nat.Primrec.const 1)
-  have houter : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.1 (Nat.pair t.unpair.2.unpair.1 0 + 1)) :=
-    Nat.Primrec.pair Nat.Primrec.left hinner
-  refine (primrec_add₂ houter (Nat.Primrec.const 1)).of_eq (fun t => ?_)
-  show _ = capPosCode t
-  rw [capPosCode, capPosCode_eq]
 
-private theorem primrec_capNegCode : Nat.Primrec capNegCode := by
-  have hinner : Nat.Primrec (fun t : ℕ => Nat.pair (t.unpair.2.unpair.2) 0) :=
-    Nat.Primrec.pair (Nat.Primrec.right.comp Nat.Primrec.right) (Nat.Primrec.const 0)
-  refine (primrec_add₂ hinner (Nat.Primrec.const 1)).of_eq (fun t => ?_)
-  show _ = capNegCode t
-  rw [capNegCode, capNegCode_eq]
 
-/-- **`DAtom (P0 P) [i, j] [k] = ∅` is recursively decidable in `(i, j, k)`.** Reindexes
-`DAtom_recDecidable (P0 P)` (Part 5) along the codes of the fixed-shape lists `[i,j]`/`[k]`. -/
-theorem DAtom_pair_recDecidable :
-    RecDecidable₃ (fun i j k => DAtom (P0 P) [i, j] [k] = ∅) := by
-  have hg : Nat.Primrec (fun t : ℕ => Nat.pair (capPosCode t) (capNegCode t)) :=
-    primrec_capPosCode.pair primrec_capNegCode
-  have hp := (DAtom_recDecidable (P0 P)).comp hg
-  refine RecDecidable.of_iff (fun t => ?_) hp
-  simp only [unpair_pair_fst, unpair_pair_snd, capPosCode, capNegCode, decodeList_encodeList]
 
 /-! ## `Yidx`'s index relations are decidable -/
 
-/-- **`Yidx (e P) i ⊆ Yidx (e P) j`, reindexed.** A thin wrapper packaging two `incl_computable`-style
-facts (`(P0 P).X k ⊆ (P0 P).X i`, resp. `j`) as `RecDecidable₃`, ready to combine with the `DAtom`
-decider above. -/
-private theorem inclK_i_recDecidable :
-    RecDecidable₃ (fun i _ k => (P0 P).X k ⊆ (P0 P).X i) := by
-  have hg : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.2.unpair.2 t.unpair.1) :=
-    Nat.Primrec.pair (Nat.Primrec.right.comp Nat.Primrec.right) Nat.Primrec.left
-  have hp := (P0 P).incl_computable.comp hg
-  refine RecDecidable.of_iff (fun t => ?_) hp
-  simp only [unpair_pair_fst, unpair_pair_snd]
 
-private theorem inclK_j_recDecidable :
-    RecDecidable₃ (fun _ j k => (P0 P).X k ⊆ (P0 P).X j) := by
-  have hg : Nat.Primrec (fun t : ℕ => Nat.pair t.unpair.2.unpair.2 t.unpair.2.unpair.1) :=
-    Nat.Primrec.pair (Nat.Primrec.right.comp Nat.Primrec.right)
-      (Nat.Primrec.left.comp Nat.Primrec.right)
-  have hp := (P0 P).incl_computable.comp hg
-  refine RecDecidable.of_iff (fun t => ?_) hp
-  simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- **Part 6's headline decidability result.** `Yidx (e P) i ∩ Yidx (e P) j = Yidx (e P) k` is
-recursively decidable in `(i, j, k)`: it transfers (`transfer_inter_eq_iff`) to the `idxSet`-level
-equation, which `idxSet_inter_eq_iff_DAtom` reduces to two `incl_computable` queries and one
-`DAtom_recDecidable` query — all already decidable. -/
-theorem DprimeU_interEq_computable :
-    RecDecidable₃ (fun i j k => Yidx (e P) i ∩ Yidx (e P) j = Yidx (e P) k) := by
-  have hcomb : RecDecidable₃ (fun i j k =>
-      ((P0 P).X k ⊆ (P0 P).X i ∧ (P0 P).X k ⊆ (P0 P).X j) ∧ DAtom (P0 P) [i, j] [k] = ∅) :=
-    (inclK_i_recDecidable P |>.and (inclK_j_recDecidable P)).and (DAtom_pair_recDecidable P)
-  refine RecDecidable.of_iff (fun t => ?_) hcomb
-  dsimp only
-  rw [← transfer_inter_eq_iff splitChoice (idxSet (e P)) Set.univ univ_nonempty_nat
-      splitChoice_isSplitSpec t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2
-      (Set.subset_univ _) (Set.subset_univ _) (Set.subset_univ _),
-    idxSet_inter_eq_iff_DAtom (P0 P) t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2]
-  tauto
 
-/-- **`∃ k, Yidx (e P) k ⊆ Yidx (e P) i ∩ Yidx (e P) j` is recursively decidable in `(i, j)`.** This
-transfers (`embed_subset_iff`, twice) to `∃ k, e P k ⊆ e P i ∧ e P k ⊆ e P j`, which is literally
-`(P0 P).cons_computable`'s own predicate — reused with no new `Nat.Primrec` work. -/
-theorem DprimeU_cons_computable :
-    RecDecidable₂ (fun i j => ∃ k, Yidx (e P) k ⊆ Yidx (e P) i ∩ Yidx (e P) j) := by
-  refine RecDecidable.of_iff (fun t => ?_) (P0 P).cons_computable
-  simp only [Set.subset_inter_iff]
-  exact exists_congr (fun k => by
-    rw [← embed_subset_iff (e P) k t.unpair.1, ← embed_subset_iff (e P) k t.unpair.2])
 
-/-- **The intersection index transfers.** `(P0 P).inter n m` — Scott's own primitive-recursive
-intersection index for `D` (reused verbatim, no new index function) — also indexes `Yidx (e P) n ∩
-Yidx (e P) m` whenever that intersection is consistent. -/
-theorem DprimeU_inter_spec {n m : ℕ}
-    (h : ∃ k, Yidx (e P) k ⊆ Yidx (e P) n ∩ Yidx (e P) m) :
-    Yidx (e P) ((P0 P).inter n m) = Yidx (e P) n ∩ Yidx (e P) m := by
-  have h' : ∃ k, (P0 P).X k ⊆ (P0 P).X n ∩ (P0 P).X m := by
-    obtain ⟨k, hk⟩ := h
-    rw [Set.subset_inter_iff] at hk
-    exact ⟨k, Set.subset_inter ((embed_subset_iff (e P) k n).mpr hk.1)
-      ((embed_subset_iff (e P) k m).mpr hk.2)⟩
-  have heP : (P0 P).X ((P0 P).inter n m) = (P0 P).X n ∩ (P0 P).X m := (P0 P).inter_spec h'
-  have hidx : idxSet (e P) n ∩ idxSet (e P) m = idxSet (e P) ((P0 P).inter n m) :=
-    idxSet_inter_of_inter_eq (e P) heP.symm
-  exact ((transfer_inter_eq_iff splitChoice (idxSet (e P)) Set.univ univ_nonempty_nat
-    splitChoice_isSplitSpec n m ((P0 P).inter n m)
-    (Set.subset_univ _) (Set.subset_univ _) (Set.subset_univ _)).mp hidx).symm
 
 /-! ## Assembling the `ComputablePresentation` -/
 
-/-- **Part 6's final assembly.** Theorem 8.8(a)'s own subsystem `DprimeU D (e P) (hcover P) (he0 P)`
-(no new construction — the *same* classical `D'`, built via `splitChoice`, that already witnesses
-`D ≅ᴰ D'` and `D' ◁ U`) is **effectively given**: its enumeration is `Yidx (e P)` (classical, exactly
-like `unitPresentation`'s constant `X`), and its two index relations reduce, via the transfer lemmas
-above, to facts already decided by `P0 P`'s own deciders and Part 5's `DAtom_recDecidable`. -/
-noncomputable def DprimeUPresentation :
-    ComputablePresentation (DprimeU D (e P) (hcover P) (he0 P)) where
-  X n := Yidx (e P) n
-  mem_X n := ⟨n, rfl⟩
-  surj := fun hY => hY.imp (fun _ h => h.symm)
-  interEq_computable := DprimeU_interEq_computable P
-  cons_computable := DprimeU_cons_computable P
-  inter n m := (P0 P).inter n m
-  inter_primrec := (P0 P).inter_primrec
-  inter_spec h := DprimeU_inter_spec P h
-  masterIdx := 0
-  masterIdx_spec := Yidx_zero D (e P) (hcover P) (he0 P)
 end DomainTheory.NeighbourhoodSystems

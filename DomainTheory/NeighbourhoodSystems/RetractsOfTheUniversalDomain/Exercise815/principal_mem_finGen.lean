@@ -1,0 +1,49 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.finGen
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem Domain.Recursive
+
+variable {α : Type*} {D : NeighborhoodSystem α}
+
+section FinGen
+
+variable (P : ComputablePresentation D)
+
+/-- The single-index generator `P.X i` lies in `Fin(js)` whenever `i ∈ js` (witness: the singleton
+sub-selection `[i]`, always `D`-consistent since `interFrom P D.master [i] = D.master ∩ P.X i =
+P.X i` using `P.X i ⊆ D.master`). -/
+theorem principal_mem_finGen {js : List ℕ} {i : ℕ} (hi : i ∈ js) : P.X i ∈ finGen P js := by
+  refine ⟨[i], (List.singleton_sublist).mpr hi, P.mem_X i, ?_⟩
+  apply Set.ext
+  intro z
+  rw [mem_interFrom]
+  constructor
+  · intro hz
+    exact ⟨D.sub_master (P.mem_X i) hz,
+      fun j hj => by rw [List.mem_singleton] at hj; subst hj; exact hz⟩
+  · rintro ⟨_, hall⟩
+    exact hall i (List.mem_singleton.mpr rfl)
+
+end FinGen
+
+end DomainTheory.NeighbourhoodSystems

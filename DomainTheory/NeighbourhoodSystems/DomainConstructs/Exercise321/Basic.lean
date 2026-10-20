@@ -8,6 +8,10 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.leastStep
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.interYs_single_subset_eq
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.interYs_single_not_subset_eq
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.stepCons
 
 @[expose] public section
 
@@ -38,43 +42,11 @@ variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSyst
 
 /-! ### The intersection `interYs` of a single step. -/
 
-/-- For a single step `[Y, Z]` and a *sharp enough* input `X ⊆ Y`, the intersection is just `Z`. -/
-theorem interYs_single_subset_eq {YX : Set α} {Z : Set β} {X : Set α} (hZ : V₁.mem Z)
-    (hXY : X ⊆ YX) : interYs V₁.master [(YX, Z)] X = Z := by
-  ext z
-  rw [mem_interYs]
-  constructor
-  · rintro ⟨_, hall⟩; exact hall (YX, Z) (List.mem_singleton.mpr rfl) hXY
-  · intro hz
-    exact ⟨V₁.sub_master hZ hz, fun p hp _ => by rw [List.mem_singleton] at hp; subst hp; exact hz⟩
 
-/-- For a single step `[Y, Z]` and an input `X ⊄ Y`, the intersection is the whole master `Δ₂`. -/
-theorem interYs_single_not_subset_eq {YX : Set α} {Z : Set β} {X : Set α}
-    (hXY : ¬ X ⊆ YX) : interYs V₁.master [(YX, Z)] X = V₁.master := by
-  ext z
-  rw [mem_interYs]
-  constructor
-  · rintro ⟨hm, _⟩; exact hm
-  · intro hz
-    exact ⟨hz, fun p hp hXp => by rw [List.mem_singleton] at hp; subst hp; exact absurd hXp hXY⟩
 
 /-! ### The least element of a single step neighbourhood. -/
 
-/-- Consistency (`hcons`) for a single step `[Y, Z]`: the intersection over the relevant outputs is
-either `Z` (sharp input) or `Δ₂` (blunt input), both neighbourhoods. -/
-theorem stepCons {Y : Set α} {Z : Set β} (hZ : V₁.mem Z) :
-    ∀ {X}, V₀.mem X → V₁.mem (interYs V₁.master [(Y, Z)] X) := by
-  intro X _
-  by_cases hXY : X ⊆ Y
-  · rw [interYs_single_subset_eq hZ hXY]; exact hZ
-  · rw [interYs_single_not_subset_eq hXY]; exact V₁.master_mem
 
-/-- The single-step least map `f₀ ∈ [Y, Z]`: `leastMap [(Y, Z)]`, the minimal approximable mapping
-relating `Y` to `Z`. -/
-def leastStep (Y : Set α) (Z : Set β) (hY : V₀.mem Y) (hZ : V₁.mem Z) :
-    ApproximableMap V₀ V₁ :=
-  leastMap [(Y, Z)] (by rintro p hp; rw [List.mem_singleton] at hp; subst hp; exact ⟨hY, hZ⟩)
-    (stepCons hZ)
 
 /-! ### `[Y, Z]` is the whole space exactly when `Z = Δ₂`. -/
 

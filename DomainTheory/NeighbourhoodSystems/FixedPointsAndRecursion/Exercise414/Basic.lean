@@ -11,6 +11,8 @@ public import Mathlib.Data.Set.Basic
 import all Mathlib.Data.Set.Basic
 public import Mathlib.Order.Monotone.Basic
 import all Mathlib.Order.Monotone.Basic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.gfpSet
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet
 
 @[expose] public section
 
@@ -44,13 +46,7 @@ variable {A : Type*}
 
 /-! ### Greatest fixed point — the answer to Exercise 4.14. -/
 
-/-- **Exercise 4.14 (Scott 1981, PRG-19).** The *greatest* fixed point of a monotone `f : P A → P A`,
-constructed as the union of all post-fixed points `⋃ {x ∣ x ⊆ f(x)}`. -/
-def gfpSet (f : Set A → Set A) : Set A := {a | ∃ x : Set A, x ⊆ f x ∧ a ∈ x}
 
 /-! ### Least fixed point — the dual, realizing Exercise 4.13(2) on `P A`. -/
 
-/-- **Exercise 4.13(2) (Scott 1981, PRG-19).** The *least* fixed point of a monotone `f : P A → P A`,
-as the intersection of all pre-fixed points `⋂ {x ∣ f(x) ⊆ x}`. -/
-def lfpSet (f : Set A → Set A) : Set A := {a | ∀ x : Set A, f x ⊆ x → a ∈ x}
 end DomainTheory.NeighbourhoodSystems.Exercise414

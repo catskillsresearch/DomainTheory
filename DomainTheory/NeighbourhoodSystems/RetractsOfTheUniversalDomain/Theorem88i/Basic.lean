@@ -11,6 +11,11 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_iff_fixedNbhd_mem
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_isREPred
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_exists_qChar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myStep
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFold
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myStepCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFoldCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFold_nil
 
 @[expose] public section
 
@@ -66,18 +71,8 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 /-! ### The fold, at the `Set`/`List` level -/
 
-/-- **One step of the `qChar`-gated fold.** The accumulator `r` is a raw index (no `(ok,idx)` pair
-needed); `e` codes the next list entry `⟨i, n⟩ = Nat.pair i n`. If `qChar e = 1` (a checked
-`qChar`-witness for `n := e.unpair.2`) *and* `cons (Nat.pair r n) = 1` (`r`, `n` are `V`-consistent),
-advance to `P.inter r n`; otherwise no-op (skip this entry). -/
-def myStep (r e : ℕ) : ℕ :=
-  selectFn (isOne (qChar e) * isOne (cons (Nat.pair r e.unpair.2)))
-    (P.inter r e.unpair.2) r
 
-/-- **The `qChar`-gated fold**, starting from `P.masterIdx`. -/
-def myFold (l : List ℕ) : ℕ := l.foldl (myStep P qChar cons) P.masterIdx
 
-@[simp] theorem myFold_nil : myFold P qChar cons [] = P.masterIdx := rfl
 
 variable {P qChar cons}
 
@@ -85,10 +80,5 @@ variable (P qChar cons)
 
 /-! ### Code-level `myFold`, and its primitive recursivity -/
 
-/-- `foldCode`-shaped step matching `myStep`: state `w = pair e (pair r params)` (`params`
-unused). -/
-def myStepCode (w : ℕ) : ℕ := myStep P qChar cons w.unpair.2.unpair.1 w.unpair.1
 
-/-- The code-level `qChar`-gated fold. -/
-def myFoldCode (c : ℕ) : ℕ := foldCode (myStepCode P qChar cons) 0 P.masterIdx c
 end DomainTheory.NeighbourhoodSystems

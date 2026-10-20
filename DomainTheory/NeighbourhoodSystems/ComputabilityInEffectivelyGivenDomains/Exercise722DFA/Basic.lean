@@ -12,6 +12,10 @@ public import Mathlib.Computability.DFA
 import all Mathlib.Computability.DFA
 public import Mathlib.Data.Fintype.Option
 import all Mathlib.Data.Fintype.Option
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.sigmaDFA
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.singleDFA
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.sigmaDFA_accepts
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.SingleState
 
 @[expose] public section
 
@@ -48,31 +52,11 @@ open scoped Computability
 
 /-! ## `Σ` (the universal language) -/
 
-/-- The one-state DFA recognising `Σ = {0,1}*` (every word accepted). -/
-def sigmaDFA : DFA Bool Unit where
-  step _ _ := ()
-  start := ()
-  accept := Set.univ
 
-@[simp] theorem sigmaDFA_accepts : sigmaDFA.accepts = Set.univ :=
-  Set.eq_univ_of_forall fun _ => Set.mem_univ _
 
 /-! ## A singleton `{σ}` -/
 
-/-- States of the single-word DFA for `σ`: `some i` means "the input so far is the length-`i` prefix
-of `σ`" (`i ≤ |σ|`); `none` is the dead/sink state (input has diverged from `σ`). -/
-abbrev SingleState (σ : List Bool) : Type := Option (Fin (σ.length + 1))
 
-/-- The single-word DFA recognising `{σ}`. From `some i` (`i < |σ|`) reading the correct next
-character advances to `some (i+1)`; any mismatch — or any character once `σ` is fully consumed — goes
-to the dead state `none`. -/
-def singleDFA (σ : List Bool) : DFA Bool (SingleState σ) where
-  step s b := s.bind fun i =>
-    if h : (i : ℕ) < σ.length then
-      if σ.get ⟨i, h⟩ = b then some ⟨i + 1, by omega⟩ else none
-    else none
-  start := some ⟨0, by omega⟩
-  accept := {some ⟨σ.length, by omega⟩}
 
 /-! ## Intersection (`cap`) and complement — free from mathlib
 

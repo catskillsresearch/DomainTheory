@@ -9,6 +9,10 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise323.toUnit
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise323.homAdjunction
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise323.BasicInst4
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise323.BasicInst5
 
 @[expose] public section
 
@@ -42,27 +46,9 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : N
 
 /-! ### The terminal domain. -/
 
-/-- There is at most one approximable mapping into the terminal domain `𝟙`: the codomain `|𝟙|`
-is a subsingleton, so any two maps have the same elementwise action. -/
-instance : Subsingleton (ApproximableMap V unitSys) :=
-  ⟨fun _ _ => ext_of_toElementMap fun _ => Subsingleton.elim _ _⟩
 
-/-- **Exercise 3.23 (Scott 1981, PRG-19).** `𝟙 = unitSys` is the *terminal object*: for every domain
-`𝒟` there is a unique approximable mapping `𝒟 → 𝟙` (the constant map at `⊥`). -/
-instance : Unique (ApproximableMap V unitSys) where
-  default := constMap V (default : unitSys.Element)
-  uniq _ := Subsingleton.elim _ _
 
-/-- **Exercise 3.23 (Scott 1981, PRG-19).** The unique map to the terminal object, named. -/
-def toUnit : ApproximableMap V unitSys := default
 
 /-! ### The exponential adjunction (cartesian closure). -/
 
-/-- **Exercise 3.23 (Scott 1981, PRG-19).** The cartesian-closed adjunction
-`Hom(𝒟₀ × 𝒟₁, 𝒟₂) ≃o Hom(𝒟₀, (𝒟₁ → 𝒟₂))`, exhibiting `(𝒟₁ → 𝒟₂)` as the exponential object. This
-is exactly `curryEquiv` of Theorem 3.12. -/
-def homAdjunction (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
-    (V₂ : NeighborhoodSystem γ) :
-    ApproximableMap (prod V₀ V₁) V₂ ≃o ApproximableMap V₀ (funSpace V₁ V₂) :=
-  curryEquiv V₀ V₁ V₂
 end DomainTheory.NeighbourhoodSystems

@@ -8,6 +8,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.ContinuousLattice.Specialization
+public import DomainTheory.ContinuousLattice.MilnerCorrection.scottLowerSubbasisSet
+public import DomainTheory.ContinuousLattice.MilnerCorrection.scottPrincipalUpSet
+public import DomainTheory.ContinuousLattice.MilnerCorrection.CoarserThanScottTopology
 
 @[expose] public section
 
@@ -44,19 +47,8 @@ variable {D D' : Type*} [CompleteLattice D] [CompleteLattice D']
 
 /-! ### Extreme `T₀`-topologies inducing the order -/
 
-/-- Lower subbasic set `{x | x ⋢ y}` from Scott's March 1972 correction. -/
-def scottLowerSubbasisSet (y : D) : Set D :=
-  { x | ¬ x ≤ y }
 
-/-- Upper subbasic set `{x | y ⊑ x}` (principal up-set) from the correction. -/
-def scottPrincipalUpSet (y : D) : Set D :=
-  Set.Ici y
 
 /-! ### Milner hypothesis for 2.9, 2.10, 3.3 -/
 
-/-- **March 1972 correction.** The given topology `τ` is coarser than (or equal to) the Scott
-topology: every set open in `τ` is Scott-open. Equivalently `Opens(τ) ⊆ Opens(Scott)`,
-i.e. `scottTopologicalSpace ≤ τ` in mathlib's order on topologies. -/
-def CoarserThanScottTopology (τ : TopologicalSpace D) : Prop :=
-  scottTopologicalSpace ≤ τ
 end DomainTheory.ContinuousLattice

@@ -8,6 +8,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise121.IsComplete
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise121.filterFixedBy
 
 @[expose] public section
 
@@ -40,16 +42,7 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-! ### Completeness: every filter is fixed by a unique point. -/
 
-/-- A neighbourhood system `𝒟'` over `β` is **complete** when every filter `y ∈ |𝒟'|` is *fixed
-by a unique point* `b ∈ β`: a neighbourhood `S` lies in `y` iff `b ∈ S`. (Scott: "*a filter is
-fixed by a point iff it is the filter of all neighbourhoods containing that point*".) -/
-def IsComplete {β : Type*} (V' : NeighborhoodSystem β) : Prop :=
-  ∀ y : V'.Element, ∃! b : β, ∀ S, V'.mem S → (y.mem S ↔ b ∈ S)
 
-/-- The filter of `{[X]}` *fixed by* the point `x ∈ |𝒟|` is `toToken x` (the filter of all
-brackets containing `x`). By Theorem 1.10 this is a bijection `|𝒟| ≃ |{[X]}|`, so tokens and
-(partial) elements are identified. -/
-def filterFixedBy (x : V.Element) : V.tokenSystem.Element := V.toToken x
 
 /-! ### Consistency ⟺ non-empty intersection of brackets. -/
 end NeighborhoodSystem

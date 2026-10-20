@@ -13,6 +13,32 @@ public import Mathlib.Order.Hom.Basic
 import all Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NeighborhoodSystem
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Element
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ofNestedOrDisjoint
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.IsPositive
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ofPositive
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.interUpTo
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Consistent
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.element_le
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.limitFamily
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.SeqEquiv
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.IsTotal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Isomorphic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.interUpTo_zero
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.interUpTo_succ
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ext
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.element_le_refl
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.element_le_trans
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.element_le_antisymm
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.BasicInst22
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.mem_principal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.mem_bot
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.BasicInst34
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic.notation40
 
 @[expose] public section
 
@@ -47,65 +73,9 @@ on `propext`/`Quot.sound` (no `Classical.choice`).
 namespace DomainTheory.NeighbourhoodSystems
 
 
-/-- Scott's *"very special circumstance"* (the prose after Examples 1.2–1.4): a family `𝒟`
-is **nested-or-disjoint** when any two of its members are either nested (one included in the
-other) or disjoint. -/
-def NestedOrDisjoint {α : Type*} (mem : Set α → Prop) : Prop :=
-  ∀ ⦃X Y : Set α⦄, mem X → mem Y → X ⊆ Y ∨ Y ⊆ X ∨ X ∩ Y = ∅
 
-/-- **Factoid 1.4a (Scott 1981, PRG-19).** "In these systems two neighbourhoods are either
-disjoint or one is included in the other": a family containing `Δ` whose members are pairwise
-nested-or-disjoint **is** a neighbourhood system. This uniformly explains why Examples 1.2,
-1.3 and 1.4 satisfy Definition 1.1.
 
-The verification of condition (ii) needs no choice: if `X, Y` are nested then `X ∩ Y` is the
-smaller (already in `𝒟`); if they are disjoint then the consistency witness `Z ⊆ X ∩ Y = ∅`
-forces `Z = ∅`, whence `X ∩ Y = ∅ = Z ∈ 𝒟`. The caller supplies `master_nonempty`
-(Scott's standing `Δ ≠ ∅` assumption) and `sub_master` (`𝒟 ⊆ 𝒫(Δ)`) directly. -/
-def NeighborhoodSystem.ofNestedOrDisjoint {α : Type*} (mem : Set α → Prop) (master : Set α)
-    (master_nonempty : master.Nonempty) (master_mem : mem master) (hnd : NestedOrDisjoint mem)
-    (sub_master : ∀ {X : Set α}, mem X → X ⊆ master) : NeighborhoodSystem α where
-  mem := mem
-  master := master
-  master_nonempty := master_nonempty
-  master_mem := master_mem
-  sub_master := sub_master
-  inter_mem := by
-    intro X Y Z hX hY hZ hZsub
-    rcases hnd hX hY with h | h | h
-    · rwa [Set.inter_eq_left.mpr h]
-    · rwa [Set.inter_eq_right.mpr h]
-    · rw [h]
-      rw [h] at hZsub
-      rwa [← Set.subset_empty_iff.mp hZsub]
 
-/-- **Exercise 1.19 (Scott 1981, PRG-19) — positivity, condition (ii′).** A neighbourhood
-system is *positive* when Scott's (ii) is strengthened to the biconditional **(ii′)**: for
-`X, Y ∈ 𝒟`, the intersection `X ∩ Y` is a neighbourhood **iff** it is non-empty. -/
-def NeighborhoodSystem.IsPositive {α : Type*} (V : NeighborhoodSystem α) : Prop :=
-  ∀ ⦃X Y : Set α⦄, V.mem X → V.mem Y → (V.mem (X ∩ Y) ↔ (X ∩ Y).Nonempty)
-
-/-- **Exercise 1.19 — a positive system is a neighbourhood system.** Scott: "*prove that a
-positive neighbourhood system is indeed a neighbourhood system*". From the raw data — (i)
-`Δ ∈ 𝒟`, `𝒟 ⊆ 𝒫(Δ)`, and the positivity axiom (ii′) — condition (ii) follows: a consistency
-witness `Z ⊆ X ∩ Y` with `Z ∈ 𝒟` is itself non-empty (apply (ii′) to `Z ∩ Z = Z`), so
-`X ∩ Y ⊇ Z` is non-empty, whence `X ∩ Y ∈ 𝒟` by (ii′). Choice-free. -/
-def NeighborhoodSystem.ofPositive {α : Type*} (mem : Set α → Prop) (master : Set α)
-    (master_nonempty : master.Nonempty) (master_mem : mem master)
-    (sub_master : ∀ {X : Set α}, mem X → X ⊆ master)
-    (pos : ∀ ⦃X Y : Set α⦄, mem X → mem Y → (mem (X ∩ Y) ↔ (X ∩ Y).Nonempty)) :
-    NeighborhoodSystem α where
-  mem := mem
-  master := master
-  master_nonempty := master_nonempty
-  master_mem := master_mem
-  sub_master := sub_master
-  inter_mem := by
-    intro X Y Z hX hY hZ hZsub
-    have hZZ : mem (Z ∩ Z) := by rwa [Set.inter_self]
-    have hZne : (Z ∩ Z).Nonempty := (pos hZ hZ).mp hZZ
-    rw [Set.inter_self] at hZne
-    exact (pos hX hY).mpr (hZne.mono hZsub)
 
 /-- The system built by `ofPositive` is indeed positive. -/
 theorem NeighborhoodSystem.ofPositive_isPositive {α : Type*} (mem : Set α → Prop)
@@ -119,25 +89,8 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- The finite intersection `⋂_{i < n} Xᵢ` of the first `n` terms of a sequence of
-neighbourhoods, defined by Scott's recursive convention (**Factoid 1.1a / 1.1b**):
 
-* `n = 0` : the empty intersection is `Δ` (`master`);
-* `n + 1` : `(⋂_{i < n} Xᵢ) ∩ Xₙ`.
 
-(See `interUpTo_zero` and `interUpTo_succ` for the two defining equations as lemmas.) -/
-def interUpTo (V : NeighborhoodSystem α) (X : ℕ → Set α) : ℕ → Set α
-  | 0 => V.master
-  | (n + 1) => interUpTo V X n ∩ X n
-
-/-- **Factoid 1.1a.** The intersection of the empty sequence of neighbourhoods is `Δ`:
-`⋂_{i < 0} Xᵢ = Δ`. -/
-@[simp] theorem interUpTo_zero (X : ℕ → Set α) : V.interUpTo X 0 = V.master := rfl
-
-/-- **Factoid 1.1b.** The intersection of the first `n + 1` neighbourhoods peels off the
-last factor: `⋂_{i < n+1} Xᵢ = (⋂_{i < n} Xᵢ) ∩ Xₙ`. -/
-@[simp] theorem interUpTo_succ (X : ℕ → Set α) (n : ℕ) :
-    V.interUpTo X (n + 1) = V.interUpTo X n ∩ X n := rfl
 
 /-- The finite intersection is contained in each of its factors: `⋂_{i < n} Xᵢ ⊆ Xⱼ` for
 `j < n`. (Supporting lemma: this is what makes `⋂_{i < n} Xᵢ` a common lower bound of the
@@ -154,12 +107,6 @@ theorem interUpTo_subset (X : ℕ → Set α) :
     · subst h'; exact Set.inter_subset_right
     · exact Set.inter_subset_left.trans (ih h')
 
-/-- A finite sequence `X₀, …, Xₙ₋₁` of neighbourhoods is *consistent in* `𝒟` when it has a
-common lower bound inside `𝒟`: some `Z ∈ 𝒟` contained in the intersection `⋂_{i < n} Xᵢ`
-(equivalently, contained in every `Xⱼ`, `j < n`). This is Scott's notion of consistency,
-generalized from pairs to finite sequences. -/
-def Consistent (X : ℕ → Set α) (n : ℕ) : Prop :=
-  ∃ Z, V.mem Z ∧ Z ⊆ V.interUpTo X n
 
 /-- **Theorem 1.1c (extension of the intersection property).** Scott: "from (ii), we can
 extend the intersection property to any finite sequence." If `Xᵢ ∈ 𝒟` for every `i < n`
@@ -198,13 +145,6 @@ theorem consistent_iff_interUpTo_mem (X : ℕ → Set α) {n : ℕ}
   · intro h; exact ⟨V.interUpTo X n, h, Set.Subset.refl _⟩
 
 
-/-- Two elements with the same membership predicate are equal (the remaining fields are `Prop`s). -/
-theorem Element.ext {x y : V.Element} (h : ∀ X, x.mem X ↔ y.mem X) : x = y := by
-  rcases x with ⟨xmem, _, _, _, _⟩
-  rcases y with ⟨ymem, _, _, _, _⟩
-  have hmem : xmem = ymem := funext fun X => propext (h X)
-  subst hmem
-  rfl
 
 /-- A filter (`Element`) is closed under the finite intersection `⋂_{i<n} Xᵢ`: if every factor
 `Xᵢ` (`i < n`) lies in the filter `x`, so does `interUpTo X n`. Used in Exercises 1.18 and 1.21.
@@ -231,45 +171,12 @@ theorem Element.mem_interUpTo_iff {α : Type*} {V : NeighborhoodSystem α} (x : 
     exact x.up_mem h (hX i hi) (V.interUpTo_subset X hi)
   · exact x.mem_interUpTo X
 
-/-- Filter-inclusion order on elements (Scott's approximation order, Definition 1.8).
-Named so Palomar can lock the `PartialOrder` relation without inlining it. -/
-def element_le (x y : V.Element) : Prop :=
-  ∀ X, x.mem X → y.mem X
 
-/-- Reflexivity of the filter-inclusion order. Named so Palomar can lock the
-`PartialOrder` instance without a generated `._proof_N`. -/
-theorem element_le_refl (x : V.Element) : ∀ X, x.mem X → x.mem X :=
-  fun _ h => h
 
-/-- Transitivity of the filter-inclusion order. -/
-theorem element_le_trans (x y z : V.Element)
-    (hxy : ∀ X, x.mem X → y.mem X) (hyz : ∀ X, y.mem X → z.mem X) :
-    ∀ X, x.mem X → z.mem X :=
-  fun X h => hyz X (hxy X h)
 
-/-- Antisymmetry of the filter-inclusion order. -/
-theorem element_le_antisymm (x y : V.Element)
-    (hxy : ∀ X, x.mem X → y.mem X) (hyx : ∀ X, y.mem X → x.mem X) :
-    x = y :=
-  @Element.ext α V x y fun X => ⟨hxy X, hyx X⟩
 
-/-- Elements are ordered by inclusion of their membership predicates (Scott's approximation
-order, Definition 1.8). -/
-instance : PartialOrder V.Element where
-  le := element_le V
-  le_refl := element_le_refl V
-  le_trans := element_le_trans V
-  le_antisymm := element_le_antisymm V
 
-/-- The **limit family** of a sequence of neighbourhoods (Scott, the prose before Definition
-1.6): `x = {Z ∈ 𝒟 ∣ Xₙ ⊆ Z for some n}` — the family of all neighbourhoods eventually reached
-by `⟨Xₙ⟩`. This is the construction Scott uses to motivate the (ideal) elements of `|𝒟|`. -/
-def limitFamily (X : ℕ → Set α) : Set (Set α) := {Z | V.mem Z ∧ ∃ n, X n ⊆ Z}
 
-/-- Two sequences of neighbourhoods are **equivalent** ("each goes equally deep as the other"):
-for every `Yₘ` some `Xₙ ⊆ Yₘ`, and for every `Xₙ` some `Yₘ ⊆ Xₙ`. -/
-def SeqEquiv (X Y : ℕ → Set α) : Prop :=
-  (∀ m, ∃ n, X n ⊆ Y m) ∧ (∀ n, ∃ m, Y m ⊆ X n)
 
 /-- **Factoid 1.5b (Scott 1981, PRG-19).** "It is easy to prove that … the two families are
 *equal* if and only if the sequences are *equivalent*." Given that every term of each sequence
@@ -299,28 +206,7 @@ theorem limitFamily_eq_iff (X Y : ℕ → Set α)
       obtain ⟨n, hn⟩ := h1 m
       exact ⟨hZ, n, hn.trans hm⟩
 
-/-- **Definition 1.7 (Scott 1981, PRG-19).** The *principal filter* `↑X` determined by a
-neighbourhood `X ∈ 𝒟`:
 
-`↑X = {Y ∈ 𝒟 ∣ X ⊆ Y}`.
-
-These are Scott's *finite elements* of `|𝒟|`. The four filter conditions:
-
-* `sub` is the first projection (`Y ∈ ↑X ⟹ Y ∈ 𝒟`);
-* `master_mem` needs `X ⊆ Δ`, supplied by `V.sub_master` (Scott's `𝒟 ⊆ 𝒫(Δ)`);
-* `inter_mem` uses `Set.subset_inter` (from `X ⊆ Y₁`, `X ⊆ Y₂`) with `X` itself as the
-  consistency witness for `V.inter_mem`;
-* `up_mem` is transitivity of `⊆`. -/
-def principal {X : Set α} (hX : V.mem X) : V.Element where
-  mem Y := V.mem Y ∧ X ⊆ Y
-  sub h := h.1
-  master_mem := ⟨V.master_mem, V.sub_master hX⟩
-  inter_mem h1 h2 :=
-    ⟨V.inter_mem h1.1 h2.1 hX (Set.subset_inter h1.2 h2.2), Set.subset_inter h1.2 h2.2⟩
-  up_mem h hY hsub := ⟨hY, h.2.trans hsub⟩
-
-@[simp] theorem mem_principal {X Y : Set α} (hX : V.mem X) :
-    (V.principal hX).mem Y ↔ V.mem Y ∧ X ⊆ Y := Iff.rfl
 
 /-- **Factoid 1.7a (Scott 1981, PRG-19) — inclusion-*reversing*.** "It is obvious that the
 correspondence between `X` and `↑X` is one-one and inclusion *reversing*." The order on `↑`:
@@ -358,43 +244,10 @@ theorem eq_iUnion_principal (x : V.Element) {Z : Set α} :
   · rintro ⟨X, hX, hVZ, hXZ⟩
     exact x.up_mem hX hVZ hXZ
 
-/-- **Definition 1.8 (Scott 1981, PRG-19) — `⊥`.** The least defined element `⊥ = {Δ}`,
-"read: *bottom*". It is the principal filter of the master neighbourhood `Δ`: `⊥ = ↑Δ`. -/
-def bot : V.Element := V.principal V.master_mem
 
-/-- **Definition 1.8 — `⊥ = {Δ}` literally.** Scott's `⊥` is the *singleton* `{Δ}`: a
-neighbourhood `Y` belongs to `⊥` iff `Y = Δ`.
 
-`→`: `Y ∈ ⊥ = ↑Δ` gives `Y ∈ 𝒟` and `Δ ⊆ Y`; `V.sub_master` gives the reverse `Y ⊆ Δ`, so
-`Y = Δ` by antisymmetry. `←`: `Δ ∈ 𝒟` and `Δ ⊆ Δ`. -/
-@[simp] theorem mem_bot {Y : Set α} : V.bot.mem Y ↔ Y = V.master := by
-  constructor
-  · rintro ⟨hY, hΔY⟩
-    exact Set.Subset.antisymm (V.sub_master hY) hΔY
-  · rintro rfl
-    exact ⟨V.master_mem, subset_rfl⟩
 
-/-- **Factoid 1.8a (Scott 1981, PRG-19).** "The element that approximates all others, `{Δ}`,
-is called `⊥`": `⊥` is the least element of `|𝒟|`, `⊥ ⊑ x` for every `x`.
 
-Given `Y ∈ ⊥`, i.e. `Y = Δ`, membership `Δ ∈ x` is filter condition (i) (`x.master_mem`). -/
-theorem bot_le (x : V.Element) : V.bot ≤ x := by
-  intro Y hY
-  rw [mem_bot] at hY
-  subst hY
-  exact x.master_mem
-
-/-- **Factoid 1.8a, packaged.** `⊥` is an `OrderBot` for the approximation order, so the `⊥`
-notation refers to `{Δ}`. Constructive (`bot_le` is `[propext, Quot.sound]`). -/
-instance : OrderBot V.Element where
-  bot := V.bot
-  bot_le := V.bot_le
-
-/-- **Definition 1.8 (Scott 1981, PRG-19) — *total* elements.** "Elements maximal with respect
-to the approximation relation are called *total elements*." `x` is total iff it is maximal: any
-`y` it approximates approximates it back. This is the *predicate* only; the *existence* of total
-elements above a given `x` (Exercise 1.24) is choice-dependent and out of scope here. -/
-def IsTotal (x : V.Element) : Prop := ∀ y, x ≤ y → y ≤ x
 
 /-- **Factoid 1.8b (Scott 1981, PRG-19) — "Examples 1.2–1.5 revisited".** "Any explicitly given
 filter `x` is principal … the minimal `X ∈ x` tells us all we need to know." Stated honestly: if
@@ -418,19 +271,8 @@ theorem eq_principal_of_isMin (x : V.Element) {X : Set α} (hX : x.mem X)
 
 end NeighborhoodSystem
 
-/-- **Definition 1.9 (Scott 1981, PRG-19).** Two neighbourhood systems `𝒟₀` and `𝒟₁` (over possibly
-*different* token types) *determine isomorphic domains* iff there is a one-one, inclusion-preserving
-correspondence between `|𝒟₀|` and `|𝒟₁|`. We package "one-one + preserves inclusion (both ways)" as
-mathlib's order-isomorphism `≃o`: an `OrderIso` is automatically a bijection that *reflects* as well
-as preserves `⊑` (`map_rel_iff`), which is exactly Scott's requirement. -/
-abbrev DomainIso {α β : Type*} (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) : Type _ :=
-  V₀.Element ≃o V₁.Element
 
-/-- Scott's `𝒟₀ ≅ 𝒟₁`: the domains are isomorphic (there *exists* a `DomainIso`). -/
-def Isomorphic {α β : Type*} (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) : Prop :=
-  Nonempty (DomainIso V₀ V₁)
 
-@[inherit_doc] infix:25 " ≅ᴰ " => Isomorphic
 
 /-- `≅ᴰ` is reflexive (`OrderIso.refl`). -/
 theorem Isomorphic.refl {α : Type*} (V : NeighborhoodSystem α) : V ≅ᴰ V :=

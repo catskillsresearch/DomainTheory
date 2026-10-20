@@ -1,0 +1,34 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.MonotoneAt
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.MonotoneOnDomains
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap
+
+universe w
+
+/-- The **target-side neighbourhood family** of the image `T(D)` of a subsystem `h : D ◁ E`, viewed
+over `T(E)`'s carrier (using `MonotoneAt.carrier_eq` to transport neighbourhoods of `T(D)` to that
+carrier). This is the data on which "`λD. T(D)` is approximable" is expressed. -/
+def targetFam (T : Endofunctor DomainObj.{w}) (hmono : MonotoneOnDomains T)
+    {α : Type w} {D E : NeighborhoodSystem α} (h : D ◁ E) :
+    Set (Set (T.obj ⟨α, E⟩).carrier) :=
+  {Y | (T.obj ⟨α, D⟩).sys.mem ((hmono h).carrier_eq ▸ Y)}
+
+end DomainTheory.NeighbourhoodSystems

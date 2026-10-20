@@ -12,6 +12,7 @@ public import Mathlib.Order.ScottContinuity
 import all Mathlib.Order.ScottContinuity
 public import Mathlib.Topology.Order.ScottTopology
 import all Mathlib.Topology.Order.ScottTopology
+public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 
 @[expose] public section
 
@@ -25,8 +26,6 @@ open Set Topology
 
 variable {D D' D'' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
-def PreservesDirectedSup (f : D → D') : Prop :=
-  ∀ ⦃S : Set D⦄, S.Nonempty → DirectedOn (· ≤ ·) S → f (sSup S) = sSup (f '' S)
 
 /-! ### Proposition 2.6 -/
 

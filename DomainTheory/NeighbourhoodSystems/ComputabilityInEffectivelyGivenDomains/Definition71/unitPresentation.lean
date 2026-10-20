@@ -1,0 +1,41 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71.ComputablePresentation
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem Domain.Recursive
+
+variable {α : Type*}
+
+/-- The trivial presentation of the one-point system `𝟙 = unitSys`: the constant enumeration
+`Xₙ = Δ = univ`. Both of Scott's relations are *always true* here (any two neighbourhoods are equal
+and consistent), hence trivially recursively decidable via the constant `1` decider. -/
+def unitPresentation : ComputablePresentation unitSys where
+  X _ := Set.univ
+  mem_X _ := rfl
+  surj := by rintro Y rfl; exact ⟨0, rfl⟩
+  interEq_computable := recDecidable_of_forall fun _ => Set.inter_self Set.univ
+  cons_computable := recDecidable_of_forall fun _ =>
+    ⟨0, by rw [Set.inter_self]⟩
+  inter _ _ := 0
+  inter_primrec := Nat.Primrec.zero
+  inter_spec _ := by rw [Set.inter_self]
+  masterIdx := 0
+  masterIdx_spec := rfl
+
+end DomainTheory.NeighbourhoodSystems

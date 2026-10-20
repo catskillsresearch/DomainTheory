@@ -10,6 +10,19 @@ module
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictId
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictProj₀
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.qSel
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.kSel
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.argX
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.argY
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primBody
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primOp
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primRec
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muBody
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muOp
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muRec
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muMap
 
 @[expose] public section
 
@@ -61,15 +74,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 
 /-! ### Strict starting functions (`λx. cond(zero x, x, x)`). -/
 
-/-- Scott's **strict identity** `λx. cond(zero(x), x, x)`: the identity on totals, `⊥` on `⊥`. -/
-def strictId : ApproximableMap N N :=
-  (cond N).comp (paired zeroMap (paired (idMap N) (idMap N)))
 
-/-- Scott's **strict first projection** `λx₀, x₁. cond(zero(x₁), x₀, x₀)` on `N × N`. -/
-def strictProj₀ : ApproximableMap (prod N N) N :=
-  (cond N).comp
-    (paired (zeroMap.comp (proj₁ N N))
-      (paired (proj₀ N N) (proj₀ N N)))
 
 /-! ### Primitive recursion.
 
@@ -82,41 +87,16 @@ recursion `h̄` with `h̄(0, m) = f(m)`, `h̄(n+1, m) = g(n, m, h̄(n, m))` is t
 The recursion bodies live over `prod F Q` with `F = funSpace (N×N) N` (the unknown) and `Q = N × N`
 (the argument pair). We name the four selectors once to keep the body terms readable. -/
 
-/-- The argument pair `⟨x, y⟩` (`= proj₁`). -/
-def qSel : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) (prod N N) :=
-  proj₁ (funSpace (prod N N) N) (prod N N)
 
-/-- The unknown function `k` (`= proj₀`). -/
-def kSel : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) (funSpace (prod N N) N) :=
-  proj₀ (funSpace (prod N N) N) (prod N N)
 
-/-- The first argument `x`. -/
-def argX : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) N := (proj₀ N N).comp qSel
 
-/-- The second argument `y`. -/
-def argY : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) N := (proj₁ N N).comp qSel
 
 section PrimRec
 
 variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)
 
-/-- The two-argument body `M(k, ⟨x, y⟩) = cond(zero(x), f(y), g(pred x, y, k(pred x, y)))`. -/
-def primBody : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) N :=
-  (cond N).comp
-    (paired (zeroMap.comp argX)
-      (paired (f.comp argY)
-        (g.comp
-          (paired (predMap.comp argX)
-            (paired argY
-              ((evalMap (prod N N) N).comp
-                (paired kSel (paired (predMap.comp argX) argY))))))))
 
-/-- The primitive-recursion operator `R(k) = λx,y. cond(zero x, f y, g(pred x, y, k(pred x, y)))`. -/
-def primOp : ApproximableMap (funSpace (prod N N) N) (funSpace (prod N N) N) :=
-  curry (primBody f g)
 
-/-- `primRec f g : N × N → N`, the least fixed point of `primOp`. -/
-def primRec : ApproximableMap (prod N N) N := toApproxMap (primOp f g).fixElement
 
 end PrimRec
 
@@ -129,22 +109,8 @@ section Mu
 
 variable (f : ApproximableMap (prod N N) N)
 
-/-- The body `M(g, ⟨x, y⟩) = cond(zero(f(x, y)), x, g(succ x, y))`. -/
-def muBody : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) N :=
-  (cond N).comp
-    (paired (zeroMap.comp (f.comp qSel))
-      (paired argX
-        ((evalMap (prod N N) N).comp
-          (paired kSel (paired (succMap.comp argX) argY)))))
 
-/-- The μ-operator `R(g) = λx,y. cond(zero(f(x, y)), x, g(succ x, y))`. -/
-def muOp : ApproximableMap (funSpace (prod N N) N) (funSpace (prod N N) N) :=
-  curry (muBody f)
 
-/-- `muRec f : N × N → N`, the binary search `ḡ`, least fixed point of `muOp`. -/
-def muRec : ApproximableMap (prod N N) N := toApproxMap (muOp f).fixElement
 
-/-- The minimization `μ : N → N`, `h̄(m) = ḡ(0̂, m)` (the strict `0`-seeded search). -/
-def muMap : ApproximableMap N N := muRec f |>.comp (paired (constLiftN N (fun _ => zeroElt)) (idMap N))
 end Mu
 end DomainTheory.NeighbourhoodSystems.Theorem56

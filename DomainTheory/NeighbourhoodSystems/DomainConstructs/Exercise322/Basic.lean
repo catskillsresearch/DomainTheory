@@ -8,6 +8,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.compApp
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise322.compMap
 
 @[expose] public section
 
@@ -36,24 +38,5 @@ open NeighborhoodSystem ApproximableMap
 variable {α β γ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
-/-- The uncurried composition map `((𝒟₁→𝒟₂) × (𝒟₀→𝒟₁)) × 𝒟₀ → 𝒟₂`, `⟨⟨g, f⟩, x⟩ ↦ g(f(x))`,
-built from the inner evaluation `(𝒟₀→𝒟₁) × 𝒟₀ → 𝒟₁`, the outer evaluation `(𝒟₁→𝒟₂) × 𝒟₁ → 𝒟₂`,
-and the product projections/pairing (Definition 3.3). -/
-def compApp (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
-    ApproximableMap (prod (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀) V₂ :=
-  (evalMap V₁ V₂).comp
-    (paired
-      ((proj₀ (funSpace V₁ V₂) (funSpace V₀ V₁)).comp
-        (proj₀ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))
-      ((evalMap V₀ V₁).comp
-        (paired
-          ((proj₁ (funSpace V₁ V₂) (funSpace V₀ V₁)).comp
-            (proj₀ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))
-          (proj₁ (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) V₀))))
 
-/-- **Exercise 3.22 (Scott 1981, PRG-19).** The composition mapping
-`comp : (𝒟₁ → 𝒟₂) × (𝒟₀ → 𝒟₁) → (𝒟₀ → 𝒟₂)`, `comp = curry(compApp)`. -/
-def compMap (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
-    ApproximableMap (prod (funSpace V₁ V₂) (funSpace V₀ V₁)) (funSpace V₀ V₂) :=
-  curry (compApp V₀ V₁ V₂)
 end DomainTheory.NeighbourhoodSystems

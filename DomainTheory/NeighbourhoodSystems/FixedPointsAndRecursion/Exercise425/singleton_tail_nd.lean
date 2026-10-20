@@ -1,0 +1,35 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.tail
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.mem_tail
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise425
+
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
+
+/-- A singleton and a tail are nested or disjoint. -/
+theorem singleton_tail_nd (n k : ℕ) :
+    ({k} : Set ℕ) ⊆ tail n ∨ tail n ⊆ {k} ∨ ({k} : Set ℕ) ∩ tail n = ∅ := by
+  by_cases h : n ≤ k
+  · exact Or.inl (by intro x hx; rw [Set.mem_singleton_iff] at hx; subst hx; exact h)
+  · refine Or.inr (Or.inr ?_)
+    ext w
+    simp only [Set.mem_inter_iff, Set.mem_singleton_iff, mem_tail, Set.mem_empty_iff_false,
+      iff_false, not_and]
+    rintro rfl hw; exact h hw
+
+end DomainTheory.NeighbourhoodSystems.Exercise425

@@ -27,4 +27,11 @@ inductive Poly (X : Dom) : Dom → Type 1 where
   | con {A : Dom} (c : A.sys.Element) : Poly X A
   | app {A B : Dom} (f : Poly X (A.arrow B)) (a : Poly X A) : Poly X B
 
+
+/-- The denotation of an open term: the body as a function of its free variable. -/
+def Poly.denote {X : Dom} : {A : Dom} → Poly X A → X.sys.Element → A.sys.Element
+  | _, .var, x => x
+  | _, .con c, _ => c
+  | _, .app f a, x => (toApproxMap (f.denote x)).toElementMap (a.denote x)
+
 end DomainTheory.NeighbourhoodSystems.Exercise508

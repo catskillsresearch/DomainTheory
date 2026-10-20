@@ -1,0 +1,40 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.ContinuousLattice.Theorem212
+public import Mathlib.Order.GaloisConnection.Basic
+import all Mathlib.Order.GaloisConnection.Basic
+public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.ContinuousLattice
+
+open Set
+
+universe u
+
+section InverseLimit
+
+variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
+
+variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
+
+/-- Antisymmetry of the coordinatewise inverse-limit order. -/
+theorem inverseLimitLE_antisymm (x y : InverseLimit D P)
+    (hxy : inverseLimitLE D P x y) (hyx : inverseLimitLE D P y x) :
+    x = y :=
+  Subtype.ext (funext fun n => le_antisymm (hxy n) (hyx n))
+
+end InverseLimit
+
+end DomainTheory.ContinuousLattice

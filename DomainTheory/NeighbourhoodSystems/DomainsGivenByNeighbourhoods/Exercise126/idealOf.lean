@@ -1,0 +1,68 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import Mathlib.RingTheory.Ideal.Span
+import all Mathlib.RingTheory.Ideal.Span
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise126.IFamily
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise126.mem_IFamily
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise126.IFamily_subset_iff
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise126.IFamily_inter
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise126.ringSystem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise126.ringSystem_mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise126.IFamily_mem
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+namespace Ring
+
+open NeighborhoodSystem
+
+variable {A : Type*} [CommRing A]
+
+variable [DecidableEq A]
+
+/-- **Exercise 1.26 — the ideal of a filter.** `idealOf x = {a ∣ I({a}) ∈ x}`. The closure
+properties of an ideal come from the filter axioms: `0` from the master, `+` from `∩`-closure
+(`I({a}) ∩ I({b}) = I({a,b}) ⊆ I({a+b})`), and `•` from upward closure (`I({a}) ⊆ I({c·a})`). -/
+def idealOf (x : (ringSystem (A := A)).Element) : Ideal A where
+  carrier := {a | x.mem (IFamily {a})}
+  zero_mem' := by
+    show x.mem (IFamily {(0 : A)})
+    refine x.up_mem x.master_mem (IFamily_mem {(0 : A)}) ?_
+    intro G _
+    rw [mem_IFamily, Finset.coe_singleton, Set.singleton_subset_iff]
+    exact Submodule.zero_mem _
+  add_mem' := by
+    intro a b ha hb
+    show x.mem (IFamily {a + b})
+    have h := x.inter_mem ha hb
+    rw [IFamily_inter] at h
+    refine x.up_mem h (IFamily_mem {a + b}) ?_
+    apply (IFamily_subset_iff _ _).mpr
+    rw [Finset.coe_singleton, Set.singleton_subset_iff, Finset.coe_union,
+      Finset.coe_singleton, Finset.coe_singleton]
+    exact Ideal.add_mem _ (Ideal.subset_span (by simp)) (Ideal.subset_span (by simp))
+  smul_mem' := by
+    intro c a ha
+    show x.mem (IFamily {c • a})
+    refine x.up_mem ha (IFamily_mem {c • a}) ?_
+    apply (IFamily_subset_iff _ _).mpr
+    rw [Finset.coe_singleton, Set.singleton_subset_iff, Finset.coe_singleton]
+    exact Submodule.smul_mem _ c (Ideal.subset_span (Set.mem_singleton a))
+
+end Ring
+
+end DomainTheory.NeighbourhoodSystems

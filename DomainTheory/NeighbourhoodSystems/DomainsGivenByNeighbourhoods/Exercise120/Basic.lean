@@ -10,6 +10,16 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.upSet
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.powerSystem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.toPower
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.ofPower
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.powerIso
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.mem_upSet
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.upSet_inter
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.upSet_subset_iff
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.upSet_injective
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise120.powerSystem_mem
 
 @[expose] public section
 
@@ -42,118 +52,16 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- Exercise 1.20's `↑X = {Y ∈ 𝒟 ∣ Y ⊆ X}` (the up-set of `X` *inside* `𝒟`). -/
-def upSet (X : Set α) : Set (Set α) := {Y | V.mem Y ∧ Y ⊆ X}
 
-@[simp] theorem mem_upSet {X Y : Set α} : Y ∈ V.upSet X ↔ V.mem Y ∧ Y ⊆ X := Iff.rfl
 
-/-- `↑X ∩ ↑Y = ↑(X ∩ Y)` — a set identity (no membership hypotheses). -/
-theorem upSet_inter (X Y : Set α) : V.upSet X ∩ V.upSet Y = V.upSet (X ∩ Y) := by
-  ext Z
-  simp only [Set.mem_inter_iff, mem_upSet, Set.subset_inter_iff]
-  tauto
 
-/-- `X ↦ ↑X` is inclusion-**preserving**: `↑X ⊆ ↑Y ↔ X ⊆ Y` (for `X ∈ 𝒟`).
-`→` tests at `X ∈ ↑X`; `←` is transitivity of `⊆`. -/
-theorem upSet_subset_iff {X Y : Set α} (hX : V.mem X) : V.upSet X ⊆ V.upSet Y ↔ X ⊆ Y := by
-  constructor
-  · intro h
-    exact (h ⟨hX, subset_rfl⟩).2
-  · intro hXY Z hZ
-    exact ⟨hZ.1, hZ.2.trans hXY⟩
 
-/-- `X ↦ ↑X` is one-one on `𝒟`. -/
-theorem upSet_injective {X Y : Set α} (hX : V.mem X) (hY : V.mem Y)
-    (h : V.upSet X = V.upSet Y) : X = Y :=
-  Set.Subset.antisymm ((V.upSet_subset_iff hX).mp h.subset)
-    ((V.upSet_subset_iff hY).mp h.superset)
 
-/-- **Exercise 1.20 — the power system `𝒟' = {↑X ∣ X ∈ 𝒟}`** over the tokens `Δ' = 𝒟`. The
-master is `↑Δ`; the intersection law uses the consistency witness `Z ∈ ↑Z ⊆ ↑X ∩ ↑Y` to get
-`Z ⊆ X ∩ Y`, hence `X ∩ Y ∈ 𝒟` and `↑X ∩ ↑Y = ↑(X∩Y)`. -/
-def powerSystem : NeighborhoodSystem (Set α) where
-  mem S := ∃ X, V.mem X ∧ S = V.upSet X
-  master := V.upSet V.master
-  master_nonempty := ⟨V.master, V.master_mem, subset_rfl⟩
-  master_mem := ⟨V.master, V.master_mem, rfl⟩
-  inter_mem := by
-    rintro S T W ⟨X, hX, rfl⟩ ⟨Y, hY, rfl⟩ ⟨Z, hZ, rfl⟩ hWsub
-    have hZin : Z ∈ V.upSet X ∩ V.upSet Y := hWsub ⟨hZ, subset_rfl⟩
-    obtain ⟨⟨_, hZX⟩, _, hZY⟩ := hZin
-    have hXY : V.mem (X ∩ Y) := V.inter_mem hX hY hZ (Set.subset_inter hZX hZY)
-    exact ⟨X ∩ Y, hXY, V.upSet_inter X Y⟩
-  sub_master := by
-    intro S hS
-    obtain ⟨X, hX, rfl⟩ := hS
-    exact (V.upSet_subset_iff hX).mpr (V.sub_master hX)
 
-@[simp] theorem powerSystem_mem {S : Set (Set α)} :
-    V.powerSystem.mem S ↔ ∃ X, V.mem X ∧ S = V.upSet X := Iff.rfl
 
 /-! ### The isomorphism `|𝒟| ≃o |𝒟'|`. -/
 
-/-- The element of `|𝒟'|` corresponding to `x ∈ |𝒟|`: the filter `{↑W ∣ W ∈ x}`. -/
-def toPower (x : V.Element) : V.powerSystem.Element where
-  mem S := ∃ W, x.mem W ∧ S = V.upSet W
-  sub := by rintro S ⟨W, hW, rfl⟩; exact ⟨W, x.sub hW, rfl⟩
-  master_mem := ⟨V.master, x.master_mem, rfl⟩
-  inter_mem := by
-    rintro S T ⟨W1, hW1, rfl⟩ ⟨W2, hW2, rfl⟩
-    exact ⟨W1 ∩ W2, x.inter_mem hW1 hW2, V.upSet_inter W1 W2⟩
-  up_mem := by
-    rintro S T ⟨W, hW, rfl⟩ hT hsub
-    obtain ⟨W', hW', rfl⟩ := hT
-    exact ⟨W', x.up_mem hW hW' ((V.upSet_subset_iff (x.sub hW)).mp hsub), rfl⟩
 
-/-- The element of `|𝒟|` corresponding to `y ∈ |𝒟'|`: the filter `{W ∣ ↑W ∈ y}`. -/
-def ofPower (y : V.powerSystem.Element) : V.Element where
-  mem W := V.mem W ∧ y.mem (V.upSet W)
-  sub h := h.1
-  master_mem := ⟨V.master_mem, y.master_mem⟩
-  inter_mem := by
-    rintro X Y ⟨hX, hyX⟩ ⟨hY, hyY⟩
-    have hyInter : y.mem (V.upSet X ∩ V.upSet Y) := y.inter_mem hyX hyY
-    rw [V.upSet_inter] at hyInter
-    obtain ⟨W, hW, hWeq⟩ := y.sub hyInter
-    have hWin : W ∈ V.upSet (X ∩ Y) := by rw [hWeq]; exact ⟨hW, subset_rfl⟩
-    exact ⟨V.inter_mem hX hY hW hWin.2, hyInter⟩
-  up_mem := by
-    rintro X Y ⟨hX, hyX⟩ hY hXY
-    exact ⟨hY, y.up_mem hyX ⟨Y, hY, rfl⟩ ((V.upSet_subset_iff hX).mpr hXY)⟩
 
-/-- **Exercise 1.20 (the isomorphism).** `toPower`/`ofPower` are mutually inverse and
-preserve/reflect `⊑`, giving `|𝒟| ≃o |𝒟'|`. -/
-def powerIso : V.Element ≃o V.powerSystem.Element where
-  toFun := V.toPower
-  invFun := V.ofPower
-  left_inv := by
-    intro x
-    apply Element.ext
-    intro W
-    constructor
-    · rintro ⟨hW, W', hW', heq⟩
-      rw [V.upSet_injective hW (x.sub hW') heq]; exact hW'
-    · intro hx
-      exact ⟨x.sub hx, W, hx, rfl⟩
-  right_inv := by
-    intro y
-    apply Element.ext
-    intro S
-    constructor
-    · rintro ⟨W, ⟨_, hyW⟩, rfl⟩
-      exact hyW
-    · intro hyS
-      obtain ⟨W, hW, rfl⟩ := y.sub hyS
-      exact ⟨W, ⟨hW, hyS⟩, rfl⟩
-  map_rel_iff' := by
-    intro x x'
-    constructor
-    · intro h W hx
-      have hmem : (V.toPower x).mem (V.upSet W) := ⟨W, hx, rfl⟩
-      obtain ⟨W', hW', heq⟩ := h (V.upSet W) hmem
-      rw [V.upSet_injective (x.sub hx) (x'.sub hW') heq]; exact hW'
-    · intro h S hS
-      obtain ⟨W, hW, rfl⟩ := hS
-      exact ⟨W, h W hW, rfl⟩
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems

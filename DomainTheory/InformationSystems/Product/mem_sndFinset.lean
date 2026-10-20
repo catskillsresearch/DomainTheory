@@ -1,0 +1,47 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.InformationSystems.Constructive
+public import DomainTheory.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.Product.BasicInst5
+public import DomainTheory.InformationSystems.Product.ProdToken
+public import DomainTheory.InformationSystems.Product.BasicInst7
+public import DomainTheory.InformationSystems.Product.instLeftCommutativeFstInsert
+public import DomainTheory.InformationSystems.Product.instLeftCommutativeSndInsert
+public import DomainTheory.InformationSystems.Product.sndFinset
+public import DomainTheory.InformationSystems.Product.mem_foldr_snd
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+
+variable (A : InfoSys α) (B : InfoSys β)
+
+theorem mem_sndFinset {u : Finset (ProdToken A B)} {y : β} :
+    y ∈ sndFinset A B u ↔ ∃ p ∈ u, p.val.1 = A.bot ∧ p.val.2 = y := by
+  unfold sndFinset
+  rw [mem_foldr_snd]
+  constructor
+  · rintro ⟨p, hp, hy⟩
+    have hp' := Finset.mem_filter.mp hp
+    exact ⟨p, hp'.1, hp'.2, hy⟩
+  · rintro ⟨p, hp, hbot, hy⟩
+    exact ⟨p, Finset.mem_filter.mpr ⟨hp, hbot⟩, hy⟩
+
+end InfoSys
+
+end DomainTheory.InformationSystems

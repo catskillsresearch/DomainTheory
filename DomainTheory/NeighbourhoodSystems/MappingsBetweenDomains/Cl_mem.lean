@@ -1,0 +1,43 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
+public import Mathlib.Data.Set.Finite.Basic
+import all Mathlib.Data.Set.Finite.Basic
+public import Mathlib.Data.Set.Lattice.Bounded
+import all Mathlib.Data.Set.Lattice.Bounded
+public import Mathlib.Data.Set.Lattice.Disjoint
+import all Mathlib.Data.Set.Lattice.Disjoint
+public import Mathlib.Order.Directed
+import all Mathlib.Order.Directed
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Cl
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise222
+
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set
+
+variable {τ : Type*} (C : Set (Set τ))
+
+variable (hInter : ∀ 𝒮 : Set (Set τ), 𝒮.Nonempty → 𝒮 ⊆ C → ⋂₀ 𝒮 ∈ C)
+
+include hInter in
+/-- Every closure `F̄` of a token lies in `C` (closure under non-empty intersection). -/
+theorem Cl_mem {F : Set τ} (h : ∃ X ∈ C, F ⊆ X) : Cl C F ∈ C := by
+  show ⋂₀ {X | X ∈ C ∧ F ⊆ X} ∈ C
+  apply hInter
+  · obtain ⟨X, hX, hFX⟩ := h
+    exact ⟨X, hX, hFX⟩
+  · intro X hX
+    exact hX.1
+
+end DomainTheory.NeighbourhoodSystems.Exercise222

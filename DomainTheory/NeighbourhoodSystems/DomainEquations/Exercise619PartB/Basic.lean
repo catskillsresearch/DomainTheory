@@ -14,6 +14,18 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.ScottSys
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpr
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.sum
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.prod
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.sumMapTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.prodMapTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.obj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.map
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.tok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.singletonSys
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.mFun
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.RootedConst
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.mIter
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.embBit_not_subset_cross
 
 @[expose] public section
 
@@ -79,120 +91,16 @@ namespace Exercise619
 /-! ## Objects of Scott's category: `∅`-free systems over `{0,1}*` -/
 
 
-/-- The **sum object** `𝒟₀ + 𝒟₁` of Part A, repackaged as an object of the category. -/
-def ScottSys.sum (A₀ A₁ : ScottSys) : ScottSys :=
-  ⟨sumTok A₀.sys A₁.sys A₀.ne A₁.ne, sumTok_nonempty⟩
 
-/-- The **product object** `𝒟₀ × 𝒟₁` of Part A, repackaged as an object of the category. -/
-def ScottSys.prod (A₀ A₁ : ScottSys) : ScottSys :=
-  ⟨prodTok A₀.sys A₁.sys, prodTok_nonempty⟩
 
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
-/-- A non-empty `b`-tagged copy can never sit inside a `b'`-tagged copy for `b ≠ b'`. -/
-theorem embBit_not_subset_cross {b b' : Bool} (h : b ≠ b') {X Y : Set Str} (hX : X.Nonempty)
-    (hsub : embBit b X ⊆ embBit b' Y) : False := by
-  obtain ⟨t, ht⟩ := hX
-  obtain ⟨w', he, -⟩ := hsub ⟨t, rfl, ht⟩
-  simp only [List.cons.injEq] at he
-  exact h he.1
 
 /-! ## The functorial action of sum on maps -/
 
-/-- **`f₀ + f₁`, the action of the sum functor on (approximable) maps.** It carries the master to the
-master (so it is strict), a left copy `0X` to `0X'` whenever `X f₀ X'`, and a right copy `1Y` to
-`1Y'` whenever `Y f₁ Y'`. -/
-def sumMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys) :
-    ApproximableMap (A₀.sum A₁).sys (B₀.sum B₁).sys where
-  rel W W' :=
-    ((sumTok A₀.sys A₁.sys A₀.ne A₁.ne).mem W ∧ W' = sumTokMaster B₀.sys B₁.sys) ∨
-    (∃ X X', f₀.rel X X' ∧ W = embBit false X ∧ W' = embBit false X') ∨
-    (∃ Y Y', f₁.rel Y Y' ∧ W = embBit true Y ∧ W' = embBit true Y')
-  rel_dom := by
-    rintro W W' (⟨hW, -⟩ | ⟨X, X', hrel, rfl, -⟩ | ⟨Y, Y', hrel, rfl, -⟩)
-    · exact hW
-    · exact Or.inr (Or.inl ⟨X, f₀.rel_dom hrel, rfl⟩)
-    · exact Or.inr (Or.inr ⟨Y, f₁.rel_dom hrel, rfl⟩)
-  rel_cod := by
-    rintro W W' (⟨-, rfl⟩ | ⟨X, X', hrel, -, rfl⟩ | ⟨Y, Y', hrel, -, rfl⟩)
-    · exact Or.inl rfl
-    · exact Or.inr (Or.inl ⟨X', f₀.rel_cod hrel, rfl⟩)
-    · exact Or.inr (Or.inr ⟨Y', f₁.rel_cod hrel, rfl⟩)
-  master_rel := Or.inl ⟨(A₀.sum A₁).sys.master_mem, rfl⟩
-  inter_right := by
-    rintro W W'₁ W'₂ h1 h2
-    rcases h1 with ⟨hW, rfl⟩ | ⟨X, X', hrel, rfl, rfl⟩ | ⟨Y, Y', hrel, rfl, rfl⟩
-    · rcases h2 with ⟨-, rfl⟩ | ⟨X, X', hrel, hWeq, rfl⟩ | ⟨Y, Y', hrel, hWeq, rfl⟩
-      · exact Or.inl ⟨hW, by rw [Set.inter_self]⟩
-      · exact Or.inr (Or.inl ⟨X, X', hrel, hWeq, by rw [sumTokMaster_inter_embF (f₀.rel_cod hrel)]⟩)
-      · exact Or.inr (Or.inr ⟨Y, Y', hrel, hWeq, by rw [sumTokMaster_inter_embT (f₁.rel_cod hrel)]⟩)
-    · rcases h2 with ⟨-, rfl⟩ | ⟨X₂, X'₂, hrel₂, hWeq, rfl⟩ | ⟨Y₂, Y'₂, hrel₂, hWeq, rfl⟩
-      · refine Or.inr (Or.inl ⟨X, X', hrel, rfl, ?_⟩)
-        rw [Set.inter_comm, sumTokMaster_inter_embF (f₀.rel_cod hrel)]
-      · obtain rfl := embBit_injective hWeq
-        exact Or.inr (Or.inl ⟨X, X' ∩ X'₂, f₀.inter_right hrel hrel₂, rfl, embBit_inter false X' X'₂⟩)
-      · exact absurd hWeq (embBit_ne (by decide) (A₀.ne X (f₀.rel_dom hrel)))
-    · rcases h2 with ⟨-, rfl⟩ | ⟨X₂, X'₂, hrel₂, hWeq, rfl⟩ | ⟨Y₂, Y'₂, hrel₂, hWeq, rfl⟩
-      · refine Or.inr (Or.inr ⟨Y, Y', hrel, rfl, ?_⟩)
-        rw [Set.inter_comm, sumTokMaster_inter_embT (f₁.rel_cod hrel)]
-      · exact absurd hWeq (embBit_ne (by decide) (A₁.ne Y (f₁.rel_dom hrel)))
-      · obtain rfl := embBit_injective hWeq
-        exact Or.inr (Or.inr ⟨Y, Y' ∩ Y'₂, f₁.inter_right hrel hrel₂, rfl, embBit_inter true Y' Y'₂⟩)
-  mono := by
-    rintro W W'' Z Z' h hWW hZZ' hW'' hZ'
-    rcases h with ⟨-, rfl⟩ | ⟨X, X', hrel, rfl, rfl⟩ | ⟨Y, Y', hrel, rfl, rfl⟩
-    · -- output was the master; a blunter neighbourhood must again be the master.
-      exact Or.inl ⟨hW'', Set.Subset.antisymm ((B₀.sum B₁).sys.sub_master hZ') hZZ'⟩
-    · -- input `0X`, output `0X'`. The sharper input `W''` and blunter output `Z'`.
-      rcases hZ' with rfl | ⟨X₃, hX₃, rfl⟩ | ⟨Y₃, hY₃, rfl⟩
-      · exact Or.inl ⟨hW'', rfl⟩
-      · rcases hW'' with rfl | ⟨X₂, hX₂, rfl⟩ | ⟨Y₂, hY₂, rfl⟩
-        · exact absurd (hWW nil_mem_sumTokMaster) nil_not_mem_embBit
-        · exact Or.inr (Or.inl ⟨X₂, X₃,
-            f₀.mono hrel (embBit_subset.mp hWW) (embBit_subset.mp hZZ') hX₂ hX₃, rfl, rfl⟩)
-        · exact absurd hWW (fun hsub => embBit_not_subset_cross (by decide) (A₁.ne Y₂ hY₂) hsub)
-      · exact absurd hZZ' (fun hsub =>
-          embBit_not_subset_cross (by decide) (B₀.ne X' (f₀.rel_cod hrel)) hsub)
-    · -- input `1Y`, output `1Y'`.
-      rcases hZ' with rfl | ⟨X₃, hX₃, rfl⟩ | ⟨Y₃, hY₃, rfl⟩
-      · exact Or.inl ⟨hW'', rfl⟩
-      · exact absurd hZZ' (fun hsub =>
-          embBit_not_subset_cross (by decide) (B₁.ne Y' (f₁.rel_cod hrel)) hsub)
-      · rcases hW'' with rfl | ⟨X₂, hX₂, rfl⟩ | ⟨Y₂, hY₂, rfl⟩
-        · exact absurd (hWW nil_mem_sumTokMaster) nil_not_mem_embBit
-        · exact absurd hWW (fun hsub => embBit_not_subset_cross (by decide) (A₀.ne X₂ hX₂) hsub)
-        · exact Or.inr (Or.inr ⟨Y₂, Y₃,
-            f₁.mono hrel (embBit_subset.mp hWW) (embBit_subset.mp hZZ') hY₂ hY₃, rfl, rfl⟩)
 
 /-! ## The functorial action of product on maps -/
 
-/-- **`f₀ × f₁`, the action of the product functor on (approximable) maps.** A product
-neighbourhood `{Λ} ∪ 0X ∪ 1Y` is sent to `{Λ} ∪ 0X' ∪ 1Y'` whenever `X f₀ X'` and `Y f₁ Y'`. -/
-def prodMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMap A₁.sys B₁.sys) :
-    ApproximableMap (A₀.prod A₁).sys (B₀.prod B₁).sys where
-  rel W W' := ∃ X Y X' Y', f₀.rel X X' ∧ f₁.rel Y Y' ∧
-    W = prodTokNbhd X Y ∧ W' = prodTokNbhd X' Y'
-  rel_dom := by
-    rintro W W' ⟨X, Y, X', Y', h0, h1, rfl, -⟩
-    exact prodTok_mem_prodTokNbhd (f₀.rel_dom h0) (f₁.rel_dom h1)
-  rel_cod := by
-    rintro W W' ⟨X, Y, X', Y', h0, h1, -, rfl⟩
-    exact prodTok_mem_prodTokNbhd (f₀.rel_cod h0) (f₁.rel_cod h1)
-  master_rel :=
-    ⟨A₀.sys.master, A₁.sys.master, B₀.sys.master, B₁.sys.master,
-      f₀.master_rel, f₁.master_rel, rfl, rfl⟩
-  inter_right := by
-    rintro W W'₁ W'₂ ⟨X, Y, X', Y', h0, h1, rfl, rfl⟩ ⟨X₂, Y₂, X'₂, Y'₂, h0₂, h1₂, hWeq, rfl⟩
-    obtain ⟨rfl, rfl⟩ := prodTokNbhd_injective hWeq
-    exact ⟨X, Y, X' ∩ X'₂, Y' ∩ Y'₂, f₀.inter_right h0 h0₂, f₁.inter_right h1 h1₂, rfl,
-      prodTokNbhd_inter X' X'₂ Y' Y'₂⟩
-  mono := by
-    rintro W W'' Z Z' ⟨X, Y, X', Y', h0, h1, rfl, rfl⟩ hWW hZZ' hW'' hZ'
-    obtain ⟨X₂, Y₂, hX₂, hY₂, rfl⟩ := hW''
-    obtain ⟨X'₃, Y'₃, hX'₃, hY'₃, rfl⟩ := hZ'
-    obtain ⟨hsX, hsY⟩ := prodTokNbhd_subset_iff.mp hWW
-    obtain ⟨hsX', hsY'⟩ := prodTokNbhd_subset_iff.mp hZZ'
-    exact ⟨X₂, Y₂, X'₃, Y'₃, f₀.mono h0 hsX hsX' hX₂ hX'₃, f₁.mono h1 hsY hsY' hY₂ hY'₃, rfl, rfl⟩
 
 /-! ## The bifunctor laws: identities and composition are preserved -/
 
@@ -201,21 +109,7 @@ def prodMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableMa
 *"Generate all constructs `T(X)` formed by the constants (`T(X) = 𝒟`), by the identity (`T(X) = X`),
 and by sums and products."* -/
 
-/-- **The action of `T` on objects.** -/
-def FExpr.obj : FExpr → ScottSys → ScottSys
-  | .const D, _ => D
-  | .var, X => X
-  | .sum T₀ T₁, X => (T₀.obj X).sum (T₁.obj X)
-  | .prod T₀ T₁, X => (T₀.obj X).prod (T₁.obj X)
 
-/-- **The action of `T` on (approximable) maps.** Constants act by the identity, the identity functor
-acts by `f` itself, and sums/products act by the bifunctorial combinators `sumMapTok`/`prodMapTok`. -/
-def FExpr.map : (T : FExpr) → {X Y : ScottSys} → ApproximableMap X.sys Y.sys →
-    ApproximableMap (T.obj X).sys (T.obj Y).sys
-  | .const D, _, _, _ => idMap D.sys
-  | .var, _, _, f => f
-  | .sum T₀ T₁, _, _, f => sumMapTok (T₀.map f) (T₁.map f)
-  | .prod T₀ T₁, _, _, f => prodMapTok (T₀.map f) (T₁.map f)
 
 /-! ## Continuous on maps — the monotone half
 
@@ -266,33 +160,8 @@ hypothesis Theorem 6.14 needs. (For the bottom to stay in the domain we need `Λ
 constant systems `C`; this is recorded by `FExpr.RootedConst`, and holds automatically for sums and
 products since their masters contain `Λ`.) -/
 
-/-- **`tok(𝒟)`** — the underlying set of tokens of a system, i.e. its master neighbourhood `Δ`. -/
-def ScottSys.tok (D : ScottSys) : Set Str := D.sys.master
 
-/-- **The one-neighbourhood system `{Γ}`** over `{0,1}*`: its only neighbourhood is `Γ` itself, and
-its master (token set) is `Γ`. It is `∅`-free precisely because `Γ` is non-empty. -/
-def singletonSys (Γ : Set Str) (h : Γ.Nonempty) : ScottSys where
-  sys :=
-    { mem := fun X => X = Γ
-      master := Γ
-      master_nonempty := h
-      master_mem := rfl
-      inter_mem := by
-        intro X Y Z hX hY _ _
-        show X ∩ Y = Γ
-        rw [hX, hY, Set.inter_self]
-      sub_master := by intro X hX; rw [show X = Γ from hX] }
-  ne := by intro X hX; rw [show X = Γ from hX]; exact h
 
-/-- **The token-level master recursion.** `mFun T Γ` computes `tok(T({Γ}))` purely from `Γ`, without
-touching the neighbourhood data of `{Γ}` (`mFun_eq_master`): constants are constant, the identity
-returns `Γ`, and both sum and product wrap the two component token sets with the tags `0,1` under a
-common root `Λ` (`sumTokMaster = prodTokNbhd` agree on masters). -/
-def mFun : FExpr → Set Str → Set Str
-  | .const C, _ => C.sys.master
-  | .var, Γ => Γ
-  | .sum T₀ T₁, Γ => insert ([] : Str) (embBit false (mFun T₀ Γ) ∪ embBit true (mFun T₁ Γ))
-  | .prod T₀ T₁, Γ => insert ([] : Str) (embBit false (mFun T₀ Γ) ∪ embBit true (mFun T₁ Γ))
 
 /-- `mFun T Γ` is exactly the token set `tok(T({Γ})) = (T.obj {Γ}).sys.master`. -/
 theorem mFun_eq_master : (T : FExpr) → {Γ : Set Str} → (h : Γ.Nonempty) →
@@ -375,13 +244,6 @@ theorem mFun_continuous (T : FExpr) {ℱ : Set (Set Str)} {U : Set Str}
 
 /-! ### A fixed point `Γ = tok(T({Γ}))` — so `{Γ} ◁ T({Γ})` and 6.14 applies -/
 
-/-- **`Λ ∈ tok(C)` for every constant `C` occurring in `T`.** This is what keeps the bottom `{Λ}` and
-the whole Kleene chain inside the domain `{Γ ∣ Λ ∈ Γ}`; sums and products satisfy it for free. -/
-def FExpr.RootedConst : FExpr → Prop
-  | .const C => ([] : Str) ∈ C.sys.master
-  | .var => True
-  | .sum a b => a.RootedConst ∧ b.RootedConst
-  | .prod a b => a.RootedConst ∧ b.RootedConst
 
 /-- If `Λ ∈ Γ` then `Λ ∈ tok(T({Γ}))` — so `λΓ. tok(T({Γ}))` is an endofunction of the domain. -/
 theorem mFun_nil_mem : ∀ (T : FExpr), T.RootedConst → {Γ : Set Str} →
@@ -391,10 +253,6 @@ theorem mFun_nil_mem : ∀ (T : FExpr), T.RootedConst → {Γ : Set Str} →
   | .sum _ _, _, _, _ => Set.mem_insert _ _
   | .prod _ _, _, _, _ => Set.mem_insert _ _
 
-/-- The **Kleene iteration** `mFunⁿ({Λ})` whose union is the least fixed point above `{Λ}`. -/
-def mIter (T : FExpr) : ℕ → Set Str
-  | 0 => {([] : Str)}
-  | n + 1 => mFun T (mIter T n)
 
 theorem nil_mem_mIter (T : FExpr) (hT : T.RootedConst) : ∀ n, ([] : Str) ∈ mIter T n
   | 0 => rfl

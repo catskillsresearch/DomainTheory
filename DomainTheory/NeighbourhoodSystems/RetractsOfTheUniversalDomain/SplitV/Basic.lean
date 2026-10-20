@@ -9,6 +9,14 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.myFirstBit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.myClearBit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.splitVMinLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.splitVMinMask
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.splitVUpsampled
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.splitVBit
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.splitVLeft
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.splitVRight
 
 @[expose] public section
 
@@ -34,15 +42,6 @@ open Domain.Recursive
 
 /-! ### `myFirstBit`: definition -/
 
-/-- **The least-set-bit search combinator.** `myFirstBit m N` is the smallest `ℓ < N` with
-`m.testBit ℓ = true`, or `N` itself (a sentinel, since a genuine witness is always `< N`) if no
-such `ℓ` exists. Folds over `i = 0, 1, …, N - 1` in increasing order (via `Nat.rec` on `N`,
-mirroring `bExistsFn`'s recursion exactly): once a witness has been found (the running value is
-`< i`), it is carried forward unchanged; otherwise (`ih = i`, nothing found yet) bit `i` itself is
-tested, becoming the new witness if set, or `i + 1` (the new sentinel) if not. -/
-def myFirstBit (m N : ℕ) : ℕ :=
-  Nat.rec (motive := fun _ => ℕ) 0
-    (fun i ih => selectFn (isZero (i - ih)) (selectFn (myTestBit m i) i (i + 1)) ih) N
 
 /-! ### `myFirstBit`: primitive recursiveness -/
 
@@ -120,10 +119,6 @@ computable stand-in: clearing a *known-set* bit is the same as subtracting its p
 `Nat.testBit_xor`/`Nat.testBit_two_pow` unchanged, exactly as `V_no_minimal`'s original proof
 does. -/
 
-/-- **The "clear one bit" primitive.** `myClearBit m ℓ := m - 2 ^ ℓ` — primitive recursive for
-free (plain subtraction and a power of two), and, whenever bit `ℓ` of `m` is genuinely set,
-literally equal to `m ^^^ 2 ^ ℓ` (`myClearBit_eq_xor`). -/
-def myClearBit (m ℓ : ℕ) : ℕ := m - 2 ^ ℓ
 
 /-- **`myClearBit` realizes `^^^ 2 ^ ℓ` whenever bit `ℓ` is genuinely set.** Proof: decompose `m`
 around the boundary `2 ^ (ℓ + 1)` (`hqr`, via `Nat.div_add_mod`/`Nat.mod_mod_of_dvd` and a
@@ -187,11 +182,7 @@ fact, as it turns out, their raw *indices* (`splitVLeft_eq_of_congr`/`splitVRigh
 stronger than the `left_congr`/`right_congr` fields actually demand) — depend only on `VX n` as a
 set, delivering `ComputableBisection.left_congr`/`right_congr` for `(e)(d)(iii)`. -/
 
-/-- The presentation-independent canonical level of `VX n`. -/
-def splitVMinLevel (n : ℕ) : ℕ := minLevel (canonIdx n).unpair.1 (canonIdx n).unpair.2
 
-/-- The presentation-independent canonical mask of `VX n`, at `splitVMinLevel n`'s width. -/
-def splitVMinMask (n : ℕ) : ℕ := minMask (canonIdx n).unpair.1 (canonIdx n).unpair.2
 
 /-- `(splitVMinLevel n, splitVMinMask n)` presents the same set as `canonIdx n`'s own pair, i.e.
 `VX n` itself. -/
@@ -221,23 +212,9 @@ genuine "twin" — `(e)(b)(iv)`'s job to make precise). `splitVLeft`/`splitVRigh
 levelSet (k+1) (2^ℓ₀)` / `Z := levelSet (k+1) (M ^^^ 2^ℓ₀)` (`V_no_minimal`'s own `Y`/`Z`) as codes,
 using `myClearBit` (`(e)(b)(ii)`) as the computable stand-in for `^^^`. -/
 
-/-- The upsampled mask `M := myUpsample k (k+1) m` for `(k, m) := (splitVMinLevel n, splitVMinMask
-n)` — Scott's `M` from `V_no_minimal`, at the code level, fed the *minimal* presentation. -/
-def splitVUpsampled (n : ℕ) : ℕ :=
-  myUpsample (splitVMinLevel n) (splitVMinLevel n + 1) (splitVMinMask n)
 
-/-- The splitting bit `ℓ₀` — the least set bit of the upsampled mask `M`, bounded by `2 ^ (k+1)`. -/
-def splitVBit (n : ℕ) : ℕ :=
-  myFirstBit (splitVUpsampled n) (2 ^ (splitVMinLevel n + 1))
 
-/-- **`splitVLeft`**: the code for `Y := levelSet (k+1) (2 ^ ℓ₀)`, `V_no_minimal`'s "left" half. -/
-def splitVLeft (n : ℕ) : ℕ := Nat.pair (splitVMinLevel n + 1) (2 ^ splitVBit n)
 
-/-- **`splitVRight`**: the code for `Z := levelSet (k+1) (M ^^^ 2 ^ ℓ₀)`, `V_no_minimal`'s "right"
-half — `myClearBit` stands in for `^^^` (justified since `ℓ₀` is, by construction, a genuinely set
-bit of `M`; `myClearBit_eq_xor`, `(e)(b)(ii)`). -/
-def splitVRight (n : ℕ) : ℕ :=
-  Nat.pair (splitVMinLevel n + 1) (myClearBit (splitVUpsampled n) (splitVBit n))
 
 /-! ## 8.12(e)(b)(iv): correctness — `VX_splitVLeft`/`VX_splitVRight`, `splitV_disjoint`,
 `splitV_union`
@@ -311,7 +288,7 @@ theorem splitV_twin_testBit (n : ℕ) :
 
 /-- `ℓ₀ ^^^ 2 ^ k` is always genuinely different from `ℓ₀` (used to show `2 ^ ℓ₀` and `M ^^^ 2 ^
 ℓ₀`'s witnessing bits are disjoint). -/
-private theorem xor_two_pow_ne_self (a k : ℕ) : a ^^^ 2 ^ k ≠ a := by
+theorem xor_two_pow_ne_self (a k : ℕ) : a ^^^ 2 ^ k ≠ a := by
   have hb : (2 : ℕ) ^ k ≠ 0 := (Nat.two_pow_pos k).ne'
   intro h
   apply hb

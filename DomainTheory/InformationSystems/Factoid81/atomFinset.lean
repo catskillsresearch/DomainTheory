@@ -10,6 +10,8 @@ module
 public import DomainTheory.InformationSystems.Product
 public import DomainTheory.InformationSystems.Sum
 public import DomainTheory.InformationSystems.Factoid81.TreeToken
+public import DomainTheory.InformationSystems.Factoid81.atomInsert
+public import DomainTheory.InformationSystems.Factoid81.atomInsert
 
 @[expose] public section
 
@@ -24,11 +26,8 @@ universe u
 variable {α : Type*} [DecidableEq α]
 variable (A : InfoSys α)
 
-private def atomInsert : TreeToken α → Finset α → Finset α
-  | .atom x => insert x
-  | .bot | .pairL _ | .pairR _ => id
 
-private instance : LeftCommutative (atomInsert : TreeToken α → Finset α → Finset α) :=
+instance : LeftCommutative (atomInsert : TreeToken α → Finset α → Finset α) :=
   ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩
 
 def atomFinset (u : Finset (TreeToken α)) : Finset α :=

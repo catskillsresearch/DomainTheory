@@ -12,6 +12,100 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.LFunData
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.LenumSubsetChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.finPrefix
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.streamElement
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.toElement
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.HasMin
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.buildData
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.toStream
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.gammaEquivElement
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.bitToNat
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.embStr
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.TinterCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.TeqChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tpres
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.notFn
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.notT
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.notCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.andFn
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.andMap2
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.andT
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.andCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.pres
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.ofPresentation
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.postcompose
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.pwFst
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.pwSnd
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.pwArg
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.pointwiseBin
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.LTdata
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.LTpres
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.BasicInst2
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.cons_inl
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.cons_inr
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.L_mem
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.L_master
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.finPrefix_zero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.finPrefix_succ
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.finPrefix_length
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.finPrefix_take
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.finPrefix_prefix_succ
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.finPrefix_prefix_of_le
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.nbhd_finPrefix_antitone
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.principal_hasMin
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.streamElement_not_hasMin
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.finPrefix_eq_of_streamElement_eq
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.streamElement_injective
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.toElement_injective
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.exists_cons_prefix_of_prefix_of_length_lt
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.exists_extend_of_not_hasMin
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.buildData_succ
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.buildData_eq_finPrefix
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.mem_nbhd_finPrefix_toStream
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.exists_finPrefix_subset_of_mem
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.toElement_surjective
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.toElement_bijective
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.bitToNat_false
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.bitToNat_true
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.embStr_nil
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_zero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_one
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_two
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_eq_canon
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_mem
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_surj
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_ne_empty
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.master_ne_zero_T
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.master_ne_one_T
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.zero_ne_one_T
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_injOn
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.zero_inter_one_T
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.one_inter_zero_T
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_inter_eq
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_interEq_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_interEq_iff'
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.primrec_TeqChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.primrec_TinterCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tpres_interEq_computable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_inter_eq_TinterCode'
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tenum_inter_eq_TinterCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tpres_cons_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Tpres_cons_computable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.eq_master_of_master_subset
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.subset_iff_eq_or_eq_master
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.notFn_master
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.notFn_zero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.notFn_one
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.notFn_mem
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.andFn_master
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.andFn_zero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.andFn_one
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.andFn_mem
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.pwFst
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.pwSnd
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.pwArg
 
 @[expose] public section
 
@@ -56,28 +150,16 @@ open NeighborhoodSystem Domain.Recursive
 /-! ## `Γ`: finite and infinite sequences of naturals -/
 
 
-instance : Nonempty Gamma := ⟨Sum.inl []⟩
 
-@[simp] theorem cons_inl (i : ℕ) (l : List ℕ) : cons i (.inl l) = .inl (i :: l) := rfl
 
-@[simp] theorem cons_inr (i : ℕ) (s : ℕ → ℕ) : cons i (.inr s) = .inr (streamCons i s) := rfl
 
 /-! ## The neighbourhood system `L` -/
 
-@[simp] theorem L_mem {X : Set Gamma} : L.mem X ↔ Lmem X := Iff.rfl
 
-@[simp] theorem L_master : L.master = Set.univ := rfl
 
 /-! ## `L` is effectively given -/
 
 
-/-- **`Xₙ ⊆ Xₘ` `{0,1}` characteristic**, packaged as a single *named* unary function (rather than
-an anonymous `t.unpair`-lambda passed positionally to `RecDecidable₂.of_paired_zero_one_char`):
-naming it lets the `hfe` obligation be stated and proved as a standalone lemma whose conclusion is
-syntactically `LenumSubsetChar (Nat.pair n m) = 1`, so the final application only needs to match
-this name against itself — no elaborator-side defeq unfolding of `Nat.pair`/`Nat.unpair` (which is
-expensive and blows the `whnf` budget; see the project's course-of-values discipline). -/
-def LenumSubsetChar (t : ℕ) : ℕ := isPrefixChar t.unpair.2 t.unpair.1
 
 
 /-! ### The primitive-recursive intersection function
@@ -103,237 +185,34 @@ infinite vs. infinite recovers `f` pointwise from its prefixes). Surjectivity ge
 choice (build the infinite witness sequence one coordinate at a time; flagged below), matching
 Scott's "**can be identified with**" (an existence claim, not a computable retraction). -/
 
-/-- The length-`n` prefix of an infinite stream `f`: `finPrefix f n = [f 0, …, f (n - 1)]`. -/
-def finPrefix (f : ℕ → ℕ) (n : ℕ) : List ℕ := (List.range n).map f
 
-@[simp] theorem finPrefix_zero (f : ℕ → ℕ) : finPrefix f 0 = [] := rfl
 
-theorem finPrefix_succ (f : ℕ → ℕ) (n : ℕ) :
-    finPrefix f (n + 1) = finPrefix f n ++ [f n] := by
-  unfold finPrefix; rw [List.range_succ, List.map_append, List.map_singleton]
 
-theorem finPrefix_length (f : ℕ → ℕ) (n : ℕ) : (finPrefix f n).length = n := by
-  unfold finPrefix; rw [List.length_map, List.length_range]
 
-theorem finPrefix_take (f : ℕ → ℕ) {n m : ℕ} (h : n ≤ m) :
-    (finPrefix f m).take n = finPrefix f n := by
-  unfold finPrefix; rw [← List.map_take, List.take_range, min_eq_left h]
 
-theorem finPrefix_prefix_succ (f : ℕ → ℕ) (n : ℕ) : finPrefix f n <+: finPrefix f (n + 1) := by
-  rw [finPrefix_succ]; exact List.prefix_append _ _
 
-theorem finPrefix_prefix_of_le (f : ℕ → ℕ) {n m : ℕ} (h : n ≤ m) :
-    finPrefix f n <+: finPrefix f m := by
-  induction h with
-  | refl => exact List.prefix_refl _
-  | step _ ih => exact ih.trans (finPrefix_prefix_succ f _)
 
-/-- Longer prefixes give smaller (more specific) neighbourhoods. -/
-theorem nbhd_finPrefix_antitone (f : ℕ → ℕ) {n m : ℕ} (h : n ≤ m) :
-    nbhd (finPrefix f m) ⊆ nbhd (finPrefix f n) :=
-  (nbhd_subset_iff _ _).mpr (finPrefix_prefix_of_le f h)
 
-/-- **The element of `|L|` determined by an infinite sequence `f`**: the filter of neighbourhoods
-containing some finite prefix of `f` — Scott's `limitFamily` (Definition 1.6's motivating prose),
-specialized to `L`'s prefix chain `nbhd (finPrefix f ·)`. -/
-def streamElement (f : ℕ → ℕ) : L.Element where
-  mem Z := L.mem Z ∧ ∃ n, nbhd (finPrefix f n) ⊆ Z
-  sub h := h.1
-  master_mem := ⟨mem_nbhd [], 0, subset_rfl⟩
-  inter_mem := by
-    rintro X Y ⟨hXmem, n, hXsub⟩ ⟨hYmem, m, hYsub⟩
-    have hn : nbhd (finPrefix f (max n m)) ⊆ X :=
-      (nbhd_finPrefix_antitone f (le_max_left n m)).trans hXsub
-    have hm : nbhd (finPrefix f (max n m)) ⊆ Y :=
-      (nbhd_finPrefix_antitone f (le_max_right n m)).trans hYsub
-    exact ⟨L.inter_mem hXmem hYmem (mem_nbhd _) (Set.subset_inter hn hm),
-      max n m, Set.subset_inter hn hm⟩
-  up_mem := by
-    rintro X Y ⟨-, n, hn⟩ hYmem hXY
-    exact ⟨hYmem, n, hn.trans hXY⟩
 
-/-- **`toElement`: `Γ → |L|`**, realizing Scott's identification. -/
-def toElement : Gamma → L.Element
-  | .inl l => L.principal (L_mem.mpr (mem_nbhd l))
-  | .inr f => streamElement f
 
-/-- A filter `x` **has a minimum neighbourhood** — the hallmark of Scott's *finite* elements. -/
-def HasMin (x : L.Element) : Prop := ∃ X, x.mem X ∧ ∀ Y, x.mem Y → X ⊆ Y
 
-theorem principal_hasMin (l : List ℕ) : HasMin (L.principal (mem_nbhd l)) :=
-  ⟨nbhd l, ⟨mem_nbhd l, subset_rfl⟩, fun _ hY => hY.2⟩
 
-/-- **The infinite elements have no minimum neighbourhood.** Given any witness `X ⊇ nbhd
-(finPrefix f n)` in the filter, the *next* prefix neighbourhood is strictly smaller yet still in
-the filter, so `X` cannot be the minimum. -/
-theorem streamElement_not_hasMin (f : ℕ → ℕ) : ¬ HasMin (streamElement f) := by
-  rintro ⟨X, ⟨-, n, hXsub⟩, hmin⟩
-  have hmemsucc : (streamElement f).mem (nbhd (finPrefix f (n + 1))) := ⟨mem_nbhd _, n + 1, subset_rfl⟩
-  have hle : X ⊆ nbhd (finPrefix f (n + 1)) := hmin _ hmemsucc
-  have heq : nbhd (finPrefix f n) = nbhd (finPrefix f (n + 1)) :=
-    Set.Subset.antisymm (hXsub.trans hle) (nbhd_finPrefix_antitone f (Nat.le_succ n))
-  have hlen := congrArg List.length (nbhd_injective heq)
-  rw [finPrefix_length, finPrefix_length] at hlen
-  omega
 
-/-- **Prefixes match on the nose whenever the stream elements agree.** -/
-theorem finPrefix_eq_of_streamElement_eq {f₁ f₂ : ℕ → ℕ} (heq : streamElement f₁ = streamElement f₂) :
-    ∀ n, finPrefix f₁ n = finPrefix f₂ n := by
-  intro n
-  have hmem1 : (streamElement f₁).mem (nbhd (finPrefix f₁ n)) := ⟨mem_nbhd _, n, subset_rfl⟩
-  rw [heq] at hmem1
-  obtain ⟨-, m, hm⟩ := hmem1
-  have hpre : finPrefix f₁ n <+: finPrefix f₂ m := (nbhd_subset_iff _ _).mp hm
-  have hlen : n ≤ m := by
-    have hl := hpre.length_le; rwa [finPrefix_length, finPrefix_length] at hl
-  have hpre' : finPrefix f₁ n = (finPrefix f₂ m).take (finPrefix f₁ n).length :=
-    List.prefix_iff_eq_take.mp hpre
-  rw [finPrefix_length] at hpre'
-  rw [hpre', finPrefix_take f₂ hlen]
 
-/-- **`streamElement` is injective**: two streams agreeing on every finite prefix agree
-everywhere. -/
-theorem streamElement_injective : Function.Injective streamElement := by
-  intro f₁ f₂ heq
-  have hpre := finPrefix_eq_of_streamElement_eq heq
-  funext n
-  have h1 := hpre (n + 1)
-  rw [finPrefix_succ, finPrefix_succ, hpre n] at h1
-  simpa using List.append_cancel_left h1
 
-/-- **`toElement` is injective** (Exercise 7.24, second claim, uniqueness half). Finite vs. finite
-is `nbhd_injective`; the two mixed cases are separated by `HasMin`; infinite vs. infinite is
-`streamElement_injective`. -/
-theorem toElement_injective : Function.Injective toElement := by
-  rintro (l₁ | f₁) (l₂ | f₂) heq
-  · exact congrArg Sum.inl
-      (nbhd_injective (principal_injective (V := L) (mem_nbhd l₁) (mem_nbhd l₂) heq))
-  · have heq' : L.principal (mem_nbhd l₁) = streamElement f₂ := heq
-    exact absurd (heq' ▸ principal_hasMin l₁) (streamElement_not_hasMin f₂)
-  · have heq' : streamElement f₁ = L.principal (mem_nbhd l₂) := heq
-    exact absurd (principal_hasMin l₂) (heq' ▸ streamElement_not_hasMin f₁)
-  · exact congrArg Sum.inr (streamElement_injective heq)
 
 /-! ### Surjectivity (uses choice to build the witness stream, coordinate by coordinate) -/
 
-/-- If `l ++ [i] <+: l'` fails for every `i`, then... (helper): a list strictly longer than a
-prefix of it extends by *some* single element first. -/
-theorem exists_cons_prefix_of_prefix_of_length_lt {l l' : List ℕ} (h : l <+: l')
-    (hlt : l.length < l'.length) : ∃ i, l ++ [i] <+: l' := by
-  obtain ⟨r, hr⟩ := h
-  cases r with
-  | nil => simp [← hr] at hlt
-  | cons i r' => exact ⟨i, r', by rw [← hr]; simp⟩
 
-/-- **One-step extension exists whenever `x` has no minimum.** If `x.mem (nbhd l)` and `x` has no
-smallest neighbourhood, some length-`(l.length + 1)` extension `l ++ [i]` is also in `x`: pick any
-`Y ∈ x.mem` witnessing that `nbhd l` is not the minimum (`hx`), which — being nested with `nbhd l`
-(disjointness is impossible, `x.inter_mem` would force `L.mem ∅`) and *not* containing it — is a
-strictly smaller neighbourhood `nbhd l' ⊊ nbhd l`; the first new list entry of `l'` past `l` is the
-witness `i`. -/
-theorem exists_extend_of_not_hasMin {x : L.Element} (hx : ¬ HasMin x) {l : List ℕ}
-    (hl : x.mem (nbhd l)) : ∃ i, x.mem (nbhd (l ++ [i])) := by
-  have hex : ∃ Y, x.mem Y ∧ ¬ nbhd l ⊆ Y := by
-    by_contra hc; push Not at hc; exact hx ⟨nbhd l, hl, hc⟩
-  obtain ⟨Y, hYmem, hnsub⟩ := hex
-  obtain ⟨l', rfl⟩ := x.sub hYmem
-  rcases L_nestedOrDisjoint (mem_nbhd l) (mem_nbhd l') with hsub | hsub | hdisj
-  · exact absurd hsub hnsub
-  · have hpre : l <+: l' := (nbhd_subset_iff l' l).mp hsub
-    have hne : l ≠ l' := by rintro rfl; exact hnsub subset_rfl
-    have hlt : l.length < l'.length :=
-      lt_of_le_of_ne hpre.length_le (fun heqlen => hne (hpre.eq_of_length heqlen))
-    obtain ⟨i, hi⟩ := exists_cons_prefix_of_prefix_of_length_lt hpre hlt
-    exact ⟨i, x.up_mem hYmem (mem_nbhd _) ((nbhd_subset_iff l' (l ++ [i])).mpr hi)⟩
-  · exfalso
-    have hxmem : x.mem (nbhd l ∩ nbhd l') := x.inter_mem hl hYmem
-    rw [hdisj] at hxmem
-    obtain ⟨l'', hl''⟩ := x.sub hxmem
-    exact (nbhd_nonempty l'').ne_empty hl''.symm
 
-/-- **Choice-built data**: the length-`n` list `x.mem`s, together with the invariant, by iterating
-`exists_extend_of_not_hasMin`. This is the one genuinely non-constructive step (`Classical.choose`
-picking a witness coordinate at every stage), unavoidable for a *general* filter `x` (no
-computability is assumed of `x` at this point in the exercise). -/
-noncomputable def buildData (x : L.Element) (hx : ¬ HasMin x) :
-    ∀ n : ℕ, {l : List ℕ // x.mem (nbhd l) ∧ l.length = n} :=
-  fun n =>
-    Nat.rec (⟨[], x.master_mem, rfl⟩ : {l : List ℕ // x.mem (nbhd l) ∧ l.length = 0})
-      (fun n prev =>
-        ⟨prev.1 ++ [Classical.choose (exists_extend_of_not_hasMin hx prev.2.1)],
-          Classical.choose_spec (exists_extend_of_not_hasMin hx prev.2.1),
-          by rw [List.length_append, List.length_singleton, prev.2.2]⟩)
-      n
 
-/-- **`toStream x hx`: the witness infinite sequence for a min-free filter `x`.** -/
-noncomputable def toStream (x : L.Element) (hx : ¬ HasMin x) (n : ℕ) : ℕ :=
-  Classical.choose (exists_extend_of_not_hasMin hx (buildData x hx n).2.1)
 
-theorem buildData_succ (x : L.Element) (hx : ¬ HasMin x) (n : ℕ) :
-    (buildData x hx (n + 1)).1 = (buildData x hx n).1 ++ [toStream x hx n] := rfl
 
-theorem buildData_eq_finPrefix (x : L.Element) (hx : ¬ HasMin x) :
-    ∀ n, (buildData x hx n).1 = finPrefix (toStream x hx) n
-  | 0 => rfl
-  | n + 1 => by rw [buildData_succ, finPrefix_succ, buildData_eq_finPrefix x hx n]
 
-theorem mem_nbhd_finPrefix_toStream (x : L.Element) (hx : ¬ HasMin x) (n : ℕ) :
-    x.mem (nbhd (finPrefix (toStream x hx) n)) :=
-  buildData_eq_finPrefix x hx n ▸ (buildData x hx n).2.1
 
-/-- **Every neighbourhood `Z ∈ x` contains some sufficiently deep prefix.** `Z = nbhd l` for some
-`l` (`x.sub`), and comparing `nbhd l` against the (unboundedly long) chain
-`nbhd (finPrefix (toStream x hx) n)` — nested, not disjoint, by the same
-`x.inter_mem`/`L_nestedOrDisjoint` argument as `exists_extend_of_not_hasMin` — forces `l` itself to
-be a prefix of the chain once `n > l.length` (the chain entry is then too long to be *the* shorter
-side). Together with `mem_nbhd_finPrefix_toStream` this gives `streamElement (toStream x hx) = x`
-(used directly in `toElement_surjective`). -/
-theorem exists_finPrefix_subset_of_mem (x : L.Element) (hx : ¬ HasMin x) {Z : Set Gamma}
-    (hZ : x.mem Z) : ∃ n, nbhd (finPrefix (toStream x hx) n) ⊆ Z := by
-  obtain ⟨l, rfl⟩ := x.sub hZ
-  refine ⟨l.length + 1, ?_⟩
-  set n := l.length + 1
-  have hn : x.mem (nbhd (finPrefix (toStream x hx) n)) := mem_nbhd_finPrefix_toStream x hx n
-  have hinter := x.inter_mem hZ hn
-  rcases L_nestedOrDisjoint (mem_nbhd l) (mem_nbhd (finPrefix (toStream x hx) n)) with
-    hsub | hsub | hdisj
-  · -- nbhd l ⊆ nbhd (finPrefix _ n): impossible by length once n = l.length + 1
-    have hpre : finPrefix (toStream x hx) n <+: l := (nbhd_subset_iff l _).mp hsub
-    have := hpre.length_le
-    rw [finPrefix_length] at this
-    omega
-  · exact hsub
-  · exfalso
-    rw [hdisj] at hinter
-    obtain ⟨l', hl'⟩ := x.sub hinter
-    exact (nbhd_nonempty l').ne_empty hl'.symm
 
-/-- **`toElement` is surjective** (Exercise 7.24, second claim, existence half; uses
-`Classical.choice` via `buildData`/`toStream` for the infinite case — see `buildData`'s docstring).
--/
-theorem toElement_surjective : Function.Surjective toElement := by
-  intro x
-  by_cases hx : HasMin x
-  · obtain ⟨X, hXmem, hXmin⟩ := hx
-    obtain ⟨l, rfl⟩ := x.sub hXmem
-    exact ⟨Sum.inl l, (eq_principal_of_isMin (V := L) x hXmem hXmin).symm⟩
-  · exact ⟨Sum.inr (toStream x hx), by
-      apply Element.ext
-      intro Z
-      constructor
-      · rintro ⟨hZmem, n, hn⟩
-        exact x.up_mem (mem_nbhd_finPrefix_toStream x hx n) hZmem hn
-      · intro hZ
-        exact ⟨x.sub hZ, exists_finPrefix_subset_of_mem x hx hZ⟩⟩
 
-/-- **Exercise 7.24, second claim.** `|L|` (the domain elements `L.Element`) is exactly the type of
-finite-or-infinite sequences of naturals `Γ`, via `toElement`. -/
-theorem toElement_bijective : Function.Bijective toElement :=
-  ⟨toElement_injective, toElement_surjective⟩
 
-/-- **`Γ ≃ |L|`**, the promised identification (noncomputable: surjectivity used choice). -/
-noncomputable def gammaEquivElement : Gamma ≃ L.Element :=
-  Equiv.ofBijective toElement toElement_bijective
 
 /-! ## Exercise 7.24, third claim — the connection between `B` and `L`
 
@@ -350,19 +229,12 @@ binary sequences with the `ℕ → ℕ`-branch of `Γ` whose values happen to li
 argument as `toElement`'s `Sum.inr` case — `B`'s domain `|B|` sits inside `|L|` as the sub-domain of
 "binary-valued" LUCID sequences. -/
 
-/-- The digit-wise embedding of a bit into `ℕ`: `false ↦ 0`, `true ↦ 1`. -/
-def bitToNat (b : Bool) : ℕ := if b then 1 else 0
 
-@[simp] theorem bitToNat_false : bitToNat false = 0 := rfl
-@[simp] theorem bitToNat_true : bitToNat true = 1 := rfl
 
 theorem bitToNat_injective : Function.Injective bitToNat := by
   intro a b h; cases a <;> cases b <;> simp_all [bitToNat]
 
-/-- Embed a finite bit-string `Σ*` into a finite `ℕ`-list `Γ`'s finite part, digit by digit. -/
-def embStr (σ : ExampleB.Str) : List ℕ := σ.map bitToNat
 
-@[simp] theorem embStr_nil : embStr [] = [] := rfl
 
 theorem embStr_cons (b : Bool) (s : ExampleB.Str) : embStr (b :: s) = bitToNat b :: embStr s := rfl
 
@@ -423,265 +295,41 @@ open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 /-! ### A computable presentation of `T` (Example 1.2's three-point domain) -/
 
-/-- **`T`'s enumeration.** `0 ↦ Δ`, `1 ↦ {0}`, `2 ↦ {1}`, and every `n ≥ 2` collapses to `{1}` — we
-only need *some* enumeration onto the three neighbourhoods, not a bijection. -/
-def Tenum (n : ℕ) : Set Token :=
-  match n with
-  | 0 => Example12.master
-  | 1 => zero
-  | _ => one
 
-@[simp] theorem Tenum_zero : Tenum 0 = Example12.master := rfl
-@[simp] theorem Tenum_one : Tenum 1 = zero := rfl
-@[simp] theorem Tenum_two : Tenum 2 = one := rfl
 
-/-- `Tenum` only depends on `n` through `min n 2`. -/
-theorem Tenum_eq_canon (n : ℕ) : Tenum n = Tenum (min n 2) := by
-  rcases n with _ | _ | n
-  · rfl
-  · rfl
-  · show one = Tenum (min (n + 2) 2)
-    rw [show min (n + 2) 2 = 2 from by omega]
-    rfl
 
-theorem Tenum_mem (n : ℕ) : Example23.T.mem (Tenum n) := by
-  rcases n with _ | _ | n
-  · exact Example12.mem_master
-  · exact Example12.mem_zero
-  · exact Example12.mem_one
 
-theorem Tenum_surj {Y : Set Token} (hY : Example23.T.mem Y) : ∃ n, Tenum n = Y := by
-  rcases (Example12.mem_iff Y).mp hY with rfl | rfl | rfl
-  · exact ⟨0, rfl⟩
-  · exact ⟨1, rfl⟩
-  · exact ⟨2, rfl⟩
 
-/-- `Tenum` never hits `∅` (it always lands on a genuine `T`-neighbourhood, and `∅` is not one). -/
-theorem Tenum_ne_empty (n : ℕ) : Tenum n ≠ (∅ : Set Token) := by
-  intro h
-  exact Example12.not_mem_empty (h ▸ Tenum_mem n)
 
-private theorem master_ne_zero_T : Example12.master ≠ zero := by
-  intro h
-  have h1 : (1 : Token) ∈ Example12.master := by simp [Example12.master]
-  rw [h] at h1; simp [zero] at h1
 
-private theorem master_ne_one_T : Example12.master ≠ one := by
-  intro h
-  have h1 : (0 : Token) ∈ Example12.master := by simp [Example12.master]
-  rw [h] at h1; simp [one] at h1
 
-private theorem zero_ne_one_T : zero ≠ one := by
-  intro h
-  have h1 : (0 : Token) ∈ zero := by simp [zero]
-  rw [h] at h1; simp [one] at h1
 
-/-- `Tenum` is injective on its "canonical" range `{0, 1, 2}`. -/
-theorem Tenum_injOn {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) (h : Tenum a = Tenum b) : a = b := by
-  interval_cases a <;> interval_cases b <;>
-    simp only [Tenum_zero, Tenum_one, Tenum_two] at h <;>
-    first
-      | rfl
-      | exact absurd h master_ne_zero_T
-      | exact absurd h.symm master_ne_zero_T
-      | exact absurd h master_ne_one_T
-      | exact absurd h.symm master_ne_one_T
-      | exact absurd h zero_ne_one_T
-      | exact absurd h.symm zero_ne_one_T
 
-private theorem zero_inter_one_T : zero ∩ one = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [zero, one]
 
-private theorem one_inter_zero_T : one ∩ zero = (∅ : Set Token) := by
-  ext t; fin_cases t <;> simp [zero, one]
 
-/-- **The intersection code.** `TinterCode a b` names the intersection `Tenum a ∩ Tenum b` when it
-is a `T`-neighbourhood (`a = 0`, `b = 0`, or `a = b`), and is the junk value `3` (never `≤ 2`, hence
-never named by `Tenum`'s canonical range) exactly when the intersection is inconsistent
-(`{0} ∩ {1} = ∅`). -/
-def TinterCode (a b : ℕ) : ℕ := if a = 0 then b else if b = 0 then a else if a = b then a else 3
 
-theorem Tenum_inter_eq {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) :
-    Tenum a ∩ Tenum b = if a = 0 then Tenum b else if b = 0 then Tenum a
-      else if a = b then Tenum a else (∅ : Set Token) := by
-  interval_cases a <;> interval_cases b <;>
-    simp [Tenum, Example12.master, Set.univ_inter, Set.inter_univ, Set.inter_self,
-      zero_inter_one_T, one_inter_zero_T]
 
-theorem Tenum_interEq_iff {a b c : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) (hc : c ≤ 2) :
-    Tenum a ∩ Tenum b = Tenum c ↔ TinterCode a b = c := by
-  rw [Tenum_inter_eq ha hb]
-  unfold TinterCode
-  split_ifs with h1 h2 h3
-  · exact ⟨fun h => (Tenum_injOn hb hc h).symm ▸ rfl, fun h => h ▸ rfl⟩
-  · exact ⟨fun h => (Tenum_injOn ha hc h).symm ▸ rfl, fun h => h ▸ rfl⟩
-  · exact ⟨fun h => (Tenum_injOn ha hc h).symm ▸ rfl, fun h => h ▸ rfl⟩
-  · exact ⟨fun h => absurd h.symm (Tenum_ne_empty c), fun h => absurd h.symm (by omega)⟩
 
-/-- Same characterization, restated for arbitrary `n, m, k` via the `min · 2` canonicalization. -/
-theorem Tenum_interEq_iff' (n m k : ℕ) :
-    Tenum n ∩ Tenum m = Tenum k ↔ TinterCode (min n 2) (min m 2) = min k 2 := by
-  rw [Tenum_eq_canon n, Tenum_eq_canon m, Tenum_eq_canon k,
-    Tenum_interEq_iff (Nat.min_le_right n 2) (Nat.min_le_right m 2) (Nat.min_le_right k 2)]
 
-/-- `TeqChar a b = 1` decides `a = b` (truncated-subtraction trick, primitive recursive). -/
-def TeqChar (a b : ℕ) : ℕ := isZero ((a - b) + (b - a))
 
-theorem primrec_TeqChar {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
-    Nat.Primrec (fun n => TeqChar (f n) (g n)) :=
-  (primrec_isZero.comp (primrec_add₂ (primrec_sub₂ hf hg) (primrec_sub₂ hg hf))).of_eq
-    fun _ => rfl
 
-theorem primrec_TinterCode {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
-    Nat.Primrec (fun n => TinterCode (f n) (g n)) := by
-  have heq : Nat.Primrec (fun n => TeqChar (f n) (g n)) := primrec_TeqChar hf hg
-  have hz1 := primrec_selectFn heq hf (Nat.Primrec.const 3)
-  have hz2 := primrec_selectFn (primrec_isZero.comp hg) hf hz1
-  refine (primrec_selectFn (primrec_isZero.comp hf) hg hz2).of_eq fun n => ?_
-  unfold TinterCode TeqChar
-  by_cases h0 : f n = 0
-  · rw [ite_eq_left h0, h0, isZero]; simp
-  · rw [ite_eq_right h0]
-    have hz0 : isZero (f n) = 0 := by unfold isZero; omega
-    rw [hz0, selectFn_zero]
-    by_cases h1 : g n = 0
-    · rw [ite_eq_left h1, h1, isZero]; simp
-    · rw [ite_eq_right h1]
-      have hz0' : isZero (g n) = 0 := by unfold isZero; omega
-      rw [hz0', selectFn_zero]
-      by_cases h2 : f n = g n
-      · have : isZero ((f n - g n) + (g n - f n)) = 1 := by unfold isZero; omega
-        rw [ite_eq_left h2, this, selectFn_one]
-      · have : isZero ((f n - g n) + (g n - f n)) = 0 := by unfold isZero; omega
-        rw [ite_eq_right h2, this, selectFn_zero]
 
-/-- **The `{0,1}` intersection-equality characteristic for `T`** (Scott's relation (i)). -/
-theorem Tpres_interEq_computable : RecDecidable₃ (fun n m k => Tenum n ∩ Tenum m = Tenum k) := by
-  have ha : Nat.Primrec (fun t : ℕ => TinterCode (min t.unpair.1 2) (min t.unpair.2.unpair.1 2)) :=
-    primrec_TinterCode (primrec_min Nat.Primrec.left (Nat.Primrec.const 2))
-      (primrec_min (Nat.Primrec.left.comp Nat.Primrec.right) (Nat.Primrec.const 2))
-  have hb : Nat.Primrec (fun t : ℕ => min t.unpair.2.unpair.2 2) :=
-    primrec_min (Nat.Primrec.right.comp Nat.Primrec.right) (Nat.Primrec.const 2)
-  exact RecDecidable.of_iff
-    (fun t => Tenum_interEq_iff' t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2)
-    (RecDecidable.natEq ha hb)
 
-/-- `Tenum n ∩ Tenum m` is `Tenum (TinterCode ·)` when consistent, and `∅` exactly when
-`TinterCode` hits the junk value `3`. -/
-theorem Tenum_inter_eq_TinterCode' {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) :
-    Tenum a ∩ Tenum b = if TinterCode a b = 3 then (∅ : Set Token) else Tenum (TinterCode a b) := by
-  interval_cases a <;> interval_cases b <;>
-    simp [Tenum, TinterCode, Example12.master, Set.univ_inter, Set.inter_univ, Set.inter_self,
-      zero_inter_one_T, one_inter_zero_T]
 
-theorem Tenum_inter_eq_TinterCode (n m : ℕ) :
-    Tenum n ∩ Tenum m = if TinterCode (min n 2) (min m 2) = 3 then (∅ : Set Token)
-      else Tenum (TinterCode (min n 2) (min m 2)) := by
-  rw [Tenum_eq_canon n, Tenum_eq_canon m]
-  exact Tenum_inter_eq_TinterCode' (Nat.min_le_right n 2) (Nat.min_le_right m 2)
 
-theorem Tpres_cons_iff (n m : ℕ) :
-    (∃ k, Tenum k ⊆ Tenum n ∩ Tenum m) ↔ TinterCode (min n 2) (min m 2) ≠ 3 := by
-  rw [Tenum_inter_eq_TinterCode n m]
-  constructor
-  · rintro ⟨k, hk⟩ hcontra
-    rw [ite_eq_left hcontra] at hk
-    exact Tenum_ne_empty k (Set.subset_empty_iff.mp hk)
-  · intro hne
-    rw [ite_eq_right hne]
-    exact ⟨TinterCode (min n 2) (min m 2), subset_rfl⟩
 
-/-- **The `{0,1}` consistency characteristic for `T`** (Scott's relation (ii)): `∃ k, Xₖ ⊆ Xₙ ∩ Xₘ`
-holds iff `Xₙ ∩ Xₘ` is itself a `T`-neighbourhood, i.e. `TinterCode` did not hit the junk value `3`. -/
-theorem Tpres_cons_computable : RecDecidable₂ (fun n m => ∃ k, Tenum k ⊆ Tenum n ∩ Tenum m) := by
-  have ha : Nat.Primrec (fun t : ℕ => TinterCode (min t.unpair.1 2) (min t.unpair.2 2)) :=
-    primrec_TinterCode (primrec_min Nat.Primrec.left (Nat.Primrec.const 2))
-      (primrec_min Nat.Primrec.right (Nat.Primrec.const 2))
-  have hne : RecDecidable (fun t : ℕ => TinterCode (min t.unpair.1 2) (min t.unpair.2 2) ≠ 3) :=
-    (RecDecidable.natEq ha (Nat.Primrec.const 3)).not
-  exact RecDecidable.of_iff (fun t => Tpres_cons_iff t.unpair.1 t.unpair.2) hne
 
-/-- **`T` is effectively given**, via the hand-built enumeration `Tenum`. The presentation's
-`inter`/`masterIdx` fields reuse `TinterCode`/`0` (both concrete, no search required, since `T`'s
-finiteness makes the intersection function immediate from the case analysis above). -/
-def Tpres : ComputablePresentation Example23.T where
-  X := Tenum
-  mem_X := Tenum_mem
-  surj := Tenum_surj
-  interEq_computable := Tpres_interEq_computable
-  cons_computable := Tpres_cons_computable
-  inter n m := TinterCode (min n 2) (min m 2)
-  inter_primrec :=
-    (primrec_TinterCode (primrec_min Nat.Primrec.left (Nat.Primrec.const 2))
-      (primrec_min Nat.Primrec.right (Nat.Primrec.const 2))).of_eq fun _ => rfl
-  inter_spec {n m} h := by
-    rw [Tenum_inter_eq_TinterCode n m, ite_eq_right ((Tpres_cons_iff n m).mp h)]
-  masterIdx := 0
-  masterIdx_spec := rfl
 
 /-! ### `notT` — pointwise negation on `T`, as a computable map -/
 
-private theorem eq_master_of_master_subset {Y : Set Token} (h : Example12.master ⊆ Y) :
-    Y = Example12.master := (Set.univ_subset_iff.mp h : Y = Set.univ)
 
-/-- **Among `T`'s three neighbourhoods, `X' ⊆ X` forces `X' = X` or `X = Δ`.** (`Δ` is the only
-non-trivial containee since `{0}`, `{1}` are incomparable singletons.) -/
-theorem subset_iff_eq_or_eq_master {X' X : Set Token} (hX' : Example23.T.mem X')
-    (hX : Example23.T.mem X) (h : X' ⊆ X) : X' = X ∨ X = Example12.master := by
-  rcases (Example12.mem_iff X).mp hX with rfl | rfl | rfl
-  · exact Or.inr rfl
-  · refine Or.inl ?_
-    rcases (Example12.mem_iff X').mp hX' with rfl | rfl | rfl
-    · exact absurd (show (1 : Token) ∈ zero from h (by simp [Example12.master])) (by simp [zero])
-    · rfl
-    · exact absurd (show (1 : Token) ∈ zero from h (by simp [one])) (by simp [zero])
-  · refine Or.inl ?_
-    rcases (Example12.mem_iff X').mp hX' with rfl | rfl | rfl
-    · exact absurd (show (0 : Token) ∈ one from h (by simp [Example12.master])) (by simp [one])
-    · exact absurd (show (0 : Token) ∈ one from h (by simp [zero])) (by simp [one])
-    · rfl
 
-/-- The pointwise negation function on `T`'s three neighbourhoods: swaps `{0}`/`{1}`, fixes `Δ`. -/
-noncomputable def notFn (X : Set Token) : Set Token :=
-  if X = zero then one else if X = one then zero else Example12.master
 
-theorem notFn_master : notFn Example12.master = Example12.master := by
-  unfold notFn; rw [ite_eq_right master_ne_zero_T, ite_eq_right master_ne_one_T]
 
-theorem notFn_zero : notFn zero = one := by unfold notFn; rw [ite_eq_left rfl]
 
-theorem notFn_one : notFn one = zero := by
-  unfold notFn; rw [ite_eq_right (Ne.symm zero_ne_one_T), ite_eq_left rfl]
 
-theorem notFn_mem {X : Set Token} (hX : Example23.T.mem X) : Example23.T.mem (notFn X) := by
-  rcases (Example12.mem_iff X).mp hX with rfl | rfl | rfl
-  · rw [notFn_master]; exact Example12.mem_master
-  · rw [notFn_zero]; exact Example12.mem_one
-  · rw [notFn_one]; exact Example12.mem_zero
 
-/-- **Pointwise negation on `T`**, as an approximable map: `X f Y ↔ mem X ∧ mem Y ∧ notFn X ⊆ Y`
-(Scott's "step" pattern, turning the pointwise function `notFn` into a neighbourhood relation). -/
-noncomputable def notT : ApproximableMap Example23.T Example23.T where
-  rel X Y := Example23.T.mem X ∧ Example23.T.mem Y ∧ notFn X ⊆ Y
-  rel_dom h := h.1
-  rel_cod h := h.2.1
-  master_rel := ⟨Example12.mem_master, Example12.mem_master, by
-    show notFn Example12.master ⊆ Example12.master; rw [notFn_master]⟩
-  inter_right := by
-    rintro X Y Y' ⟨hX, hY, hsub⟩ ⟨_, hY', hsub'⟩
-    exact ⟨hX, Example23.T.inter_mem hY hY' (notFn_mem hX) (Set.subset_inter hsub hsub'),
-      Set.subset_inter hsub hsub'⟩
-  mono := by
-    rintro X X' Y Y' ⟨hX, hY, hsub⟩ hX'X hYY' hX' hY'
-    refine ⟨hX', hY', ?_⟩
-    rcases subset_iff_eq_or_eq_master hX' hX hX'X with heq | heq
-    · rw [heq]; exact hsub.trans hYY'
-    · rw [heq, notFn_master] at hsub
-      have hY'master : Y' = Example12.master := eq_master_of_master_subset (hsub.trans hYY')
-      rw [hY'master, Example12.master]; exact Set.subset_univ _
 
-/-- `notCode c` names `notFn (Tenum c)` when `c ≤ 2`: `0 ↦ 0`, `1 ↦ 2`, `2 ↦ 1`. -/
-def notCode (c : ℕ) : ℕ := if c = 1 then 2 else if c = 2 then 1 else 0
 
 theorem primrec_notCode {f : ℕ → ℕ} (hf : Nat.Primrec f) : Nat.Primrec (fun n => notCode (f n)) := by
   refine (primrec_selectFn (primrec_TeqChar hf (Nat.Primrec.const 1)) (Nat.Primrec.const 2)
@@ -724,70 +372,13 @@ theorem notT_isComputable : IsComputableMap Tpres Tpres notT := by
 
 /-! ### `andT` — pointwise (sequential/left-strict) conjunction on `T`, as a computable map -/
 
-/-- **Sequential conjunction** on `T`'s neighbourhoods: `andFn X Y` is `Y` when `X` names `true`
-(`zero`), the constant `false` (`one`) when `X` names `false` — regardless of `Y` — and `Δ` (no
-information yet) otherwise. This is the standard *left-strict* `and`, matching `zero`/`one` naming
-`true`/`false` (`Example23.trueElt = elemZero`, `Example23.falseElt = elemOne`). -/
-noncomputable def andFn (X Y : Set Token) : Set Token :=
-  if X = zero then Y else if X = one then one else Example12.master
 
-theorem andFn_master (Y : Set Token) : andFn Example12.master Y = Example12.master := by
-  unfold andFn; rw [ite_eq_right master_ne_zero_T, ite_eq_right master_ne_one_T]
 
-theorem andFn_zero (Y : Set Token) : andFn zero Y = Y := by unfold andFn; rw [ite_eq_left rfl]
 
-theorem andFn_one (Y : Set Token) : andFn one Y = one := by
-  unfold andFn; rw [ite_eq_right (Ne.symm zero_ne_one_T), ite_eq_left rfl]
 
-theorem andFn_mem {X Y : Set Token} (hX : Example23.T.mem X) (hY : Example23.T.mem Y) :
-    Example23.T.mem (andFn X Y) := by
-  rcases (Example12.mem_iff X).mp hX with rfl | rfl | rfl
-  · rw [andFn_master]; exact Example12.mem_master
-  · rw [andFn_zero]; exact hY
-  · rw [andFn_one]; exact Example12.mem_one
 
-/-- **Pointwise (sequential) conjunction on `T`**, as a two-variable approximable mapping:
-`X, Y f Z ↔ mem X ∧ mem Y ∧ mem Z ∧ andFn X Y ⊆ Z` (Scott's "step" pattern again). -/
-noncomputable def andMap2 : ApproximableMap₂ Example23.T Example23.T Example23.T where
-  rel X Y Z := Example23.T.mem X ∧ Example23.T.mem Y ∧ Example23.T.mem Z ∧ andFn X Y ⊆ Z
-  rel_dom₀ h := h.1
-  rel_dom₁ h := h.2.1
-  rel_cod h := h.2.2.1
-  master_rel := ⟨Example12.mem_master, Example12.mem_master, Example12.mem_master, by
-    show andFn Example12.master Example12.master ⊆ Example12.master
-    rw [andFn_master]⟩
-  inter_right := by
-    rintro X Y Z Z' ⟨hX, hY, hZ, hsub⟩ ⟨_, _, hZ', hsub'⟩
-    exact ⟨hX, hY, Example23.T.inter_mem hZ hZ' (andFn_mem hX hY) (Set.subset_inter hsub hsub'),
-      Set.subset_inter hsub hsub'⟩
-  mono := by
-    rintro X X' Y Y' Z Z' ⟨hX, hY, hZ, hsub⟩ hX'X hY'Y hZZ' hX' hY' hZ'
-    refine ⟨hX', hY', hZ', ?_⟩
-    rcases (Example12.mem_iff X).mp hX with rfl | rfl | rfl
-    · rw [andFn_master] at hsub
-      have hZ'master : Z' = Example12.master := eq_master_of_master_subset (hsub.trans hZZ')
-      rw [hZ'master, Example12.master]; exact Set.subset_univ _
-    · rw [andFn_zero] at hsub
-      have hX'eq : X' = zero :=
-        (subset_iff_eq_or_eq_master hX' Example12.mem_zero hX'X).resolve_right
-          master_ne_zero_T.symm
-      rw [hX'eq, andFn_zero]
-      exact (hY'Y.trans hsub).trans hZZ'
-    · rw [andFn_one] at hsub
-      have hX'eq : X' = one :=
-        (subset_iff_eq_or_eq_master hX' Example12.mem_one hX'X).resolve_right
-          master_ne_one_T.symm
-      rw [hX'eq, andFn_one]
-      exact hsub.trans hZZ'
 
-/-- **`andT`**, the joint approximable mapping `T × T → T` corresponding to `andMap2`
-(Theorem 3.5's `ofMap₂`). -/
-noncomputable def andT : ApproximableMap (prod Example23.T Example23.T) Example23.T :=
-  ofMap₂ andMap2
 
-/-- `andCode a b` names `andFn (Tenum a) (Tenum b)` when `a, b ≤ 2`: `andCode 0 b = 0`,
-`andCode 1 b = b`, `andCode 2 b = 2`. -/
-def andCode (a b : ℕ) : ℕ := if a = 1 then b else if a = 2 then 2 else 0
 
 theorem primrec_andCode {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => andCode (f n) (g n)) := by
@@ -867,38 +458,8 @@ pull concrete deciders out of `P.incl_computable`/`P.cons_computable`/`P.eq_comp
 variable {β γ δ : Type*}
 
 
-/-- The concrete `ComputablePresentation (L → V)` assembled from an `LFunData` bundle. -/
-def LFunData.pres {V : NeighborhoodSystem β} {P : ComputablePresentation V} (d : LFunData P) :
-    ComputablePresentation (funSpace L V) :=
-  funPresentation Lpres P d.gN d.incl0 d.incl1 d.eq1 d.hgN d.hgNp d.hincl0 d.hincl0p
-    d.hincl1 d.hincl1p d.heq1 d.heq1p
 
-/-- **The one use of `Classical.choice` in this section.** Every `ComputablePresentation P` of a
-`V` yields *some* `LFunData P`, by choosing concrete deciders out of `Lpres`'s and `P`'s existential
-`incl_computable`/`cons_computable`/`eq_computable` witnesses. -/
-noncomputable def LFunData.ofPresentation {V : NeighborhoodSystem β} (P : ComputablePresentation V) :
-    LFunData P where
-  gN := funConsChar Lpres P Lpres.cons_computable.choose P.cons_computable.choose
-  incl0 := Lpres.incl_computable.choose
-  incl1 := P.incl_computable.choose
-  eq1 := P.eq_computable.choose
-  hgN := funConsChar_spec Lpres P Lpres.cons_computable.choose P.cons_computable.choose
-    (fun s => (Lpres.cons_computable.choose_spec.2 s).symm)
-    (fun s => (P.cons_computable.choose_spec.2 s).symm)
-  hgNp := primrec_funConsChar Lpres P Lpres.cons_computable.choose P.cons_computable.choose
-    Lpres.cons_computable.choose_spec.1 P.cons_computable.choose_spec.1
-  hincl0 := fun s => (Lpres.incl_computable.choose_spec.2 s).symm
-  hincl0p := Lpres.incl_computable.choose_spec.1
-  hincl1 := fun s => (P.incl_computable.choose_spec.2 s).symm
-  hincl1p := P.incl_computable.choose_spec.1
-  heq1 := fun s => (P.eq_computable.choose_spec.2 s).symm
-  heq1p := P.eq_computable.choose_spec.1
 
-/-- **`postcompose h`**: post-composing every `L`-indexed sequence `f : L → V₁` with `h`, i.e.
-`f ↦ h ∘ f`. Built as `curry (h ∘ eval)`, following Scott. -/
-def postcompose {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-    (h : ApproximableMap V₁ V₂) : ApproximableMap (funSpace L V₁) (funSpace L V₂) :=
-  curry (h.comp (evalMap L V₁))
 
 /-- **`postcompose` preserves computability.** If `h : V₁ → V₂` is computable, then so is
 `postcompose h : (L → V₁) → (L → V₂)`, relative to any concrete function-space presentations built
@@ -916,30 +477,9 @@ theorem postcompose_isComputable {V₁ : NeighborhoodSystem β} {V₂ : Neighbor
     d₂.hgN d₂.hgNp d₂.hincl0 d₂.hincl0p d₂.hincl1 d₂.hincl1p d₂.heq1 d₂.heq1p
     (comp_isComputable heval hh)
 
-/-- The "extract `f`" projection out of the pointwise-binary domain `(L→V₀) × (L→V₁) × L`. -/
-private def pwFst (V₀ : NeighborhoodSystem β) (V₁ : NeighborhoodSystem γ) :
-    ApproximableMap (prod (prod (funSpace L V₀) (funSpace L V₁)) L) (funSpace L V₀) :=
-  (proj₀ (funSpace L V₀) (funSpace L V₁)).comp (proj₀ (prod (funSpace L V₀) (funSpace L V₁)) L)
 
-/-- The "extract `g`" projection out of the pointwise-binary domain. -/
-private def pwSnd (V₀ : NeighborhoodSystem β) (V₁ : NeighborhoodSystem γ) :
-    ApproximableMap (prod (prod (funSpace L V₀) (funSpace L V₁)) L) (funSpace L V₁) :=
-  (proj₁ (funSpace L V₀) (funSpace L V₁)).comp (proj₀ (prod (funSpace L V₀) (funSpace L V₁)) L)
 
-/-- The "extract the shared argument `x`" projection out of the pointwise-binary domain. -/
-private def pwArg (V₀ : NeighborhoodSystem β) (V₁ : NeighborhoodSystem γ) :
-    ApproximableMap (prod (prod (funSpace L V₀) (funSpace L V₁)) L) L :=
-  proj₁ (prod (funSpace L V₀) (funSpace L V₁)) L
 
-/-- **`pointwiseBin h`**: given `f : L → V₀`, `g : L → V₁`, produce the `L`-sequence
-`x ↦ h(f x, g x)`. Built by evaluating both factors at the shared argument and applying `h`, then
-`curry`-ing. -/
-def pointwiseBin {V₀ : NeighborhoodSystem β} {V₁ : NeighborhoodSystem γ} {V₂ : NeighborhoodSystem δ}
-    (h : ApproximableMap (prod V₀ V₁) V₂) :
-    ApproximableMap (prod (funSpace L V₀) (funSpace L V₁)) (funSpace L V₂) :=
-  curry (h.comp (paired
-    ((evalMap L V₀).comp (paired (pwFst V₀ V₁) (pwArg V₀ V₁)))
-    ((evalMap L V₁).comp (paired (pwSnd V₀ V₁) (pwArg V₀ V₁)))))
 
 /-- **`pointwiseBin` preserves computability.** If `h : V₀ × V₁ → V₂` is computable, then so is
 `pointwiseBin h : (L → V₀) × (L → V₁) → (L → V₂)`, by the same composition-closure argument as
@@ -985,11 +525,7 @@ defines a computable map on `(L→T)`; `deMorganT_isComputable` below composes b
 together (`¬(¬f ∧ ¬g)`, De Morgan's law for the sequential `and`) as a concrete witness of this
 closure. -/
 
-/-- The one concrete presentation of `(L → T)` used to state the LUCID combinators' computability. -/
-noncomputable def LTdata : LFunData Tpres := LFunData.ofPresentation Tpres
 
-/-- **The computable presentation of `(L → T)`.** -/
-noncomputable def LTpres : ComputablePresentation (funSpace L Example23.T) := LTdata.pres
 
 /-- **Exercise 7.24, fourth claim, `notT` case.** LUCID's pointwise negation lifts to a computable
 map of type `(L→T) → (L→T)`. -/

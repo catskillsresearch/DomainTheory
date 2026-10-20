@@ -8,6 +8,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83.IsProjection
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83.IsFinitary
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83.IsFinitaryProjection
 
 @[expose] public section
 
@@ -36,21 +39,8 @@ universe u
 
 variable {α : Type u} {D E : NeighborhoodSystem α}
 
-/-- **Definition 8.3, first clause (Scott 1981, PRG-19).** A retraction `a : E → E` is a
-*projection* provided `a ⊑ I_E`. (We do not separately require `IsRetraction a` in the
-definition, matching Scott's usage where "projection" is applied to a retraction already in
-hand; the conjunction is spelled out where needed, e.g. `IsFinitaryProjection`.) -/
-def IsProjection (a : ApproximableMap E E) : Prop := IsRetraction a ∧ a ≤ idMap E
 
-/-- **Definition 8.3, second clause (Scott 1981, PRG-19).** A retraction `a : E → E` is *finitary*
-iff its fixed-point set `{y ∈ |E| ∣ a(y) = y}` — ordered by the inherited inclusion `⊑` — is
-isomorphic to (the element poset of) some neighbourhood system. -/
-def IsFinitary (a : ApproximableMap E E) : Prop :=
-  ∃ (β : Type u) (F : NeighborhoodSystem β),
-    Nonempty ({y : E.Element // a.toElementMap y = y} ≃o F.Element)
 
-/-- A **finitary projection**: both clauses of Definition 8.3 together with `IsRetraction`. -/
-def IsFinitaryProjection (a : ApproximableMap E E) : Prop := IsProjection a ∧ IsFinitary a
 
 namespace Subsystem
 

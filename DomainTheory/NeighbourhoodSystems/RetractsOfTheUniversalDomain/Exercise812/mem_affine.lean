@@ -1,0 +1,30 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
+public import Mathlib.Data.Nat.BitIndices
+import all Mathlib.Data.Nat.BitIndices
+public import Mathlib.Data.Nat.Bitwise
+import all Mathlib.Data.Nat.Bitwise
+public import Mathlib.Combinatorics.Colex
+import all Mathlib.Combinatorics.Colex
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.affine
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem
+
+@[simp] theorem mem_affine {k ℓ n : ℕ} : n ∈ affine k ℓ ↔ n % 2 ^ k = ℓ := Iff.rfl
+
+end DomainTheory.NeighbourhoodSystems

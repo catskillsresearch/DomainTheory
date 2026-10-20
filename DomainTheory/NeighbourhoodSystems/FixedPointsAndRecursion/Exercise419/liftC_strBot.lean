@@ -1,0 +1,44 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419.not_cone_subset_singleton
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419.headValC_nil
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419.headValC_false
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419.headValC_true
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419.liftC
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise419
+
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
+
+variable {β : Type*}
+
+/-- `liftC` on a partial element: `f(σ⊥) = coneVal σ`. -/
+theorem liftC_strBot (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
+    (hcone : ∀ {σ τ : Str}, σ <+: τ → coneVal σ ≤ coneVal τ)
+    (hsing : ∀ {σ τ : Str}, σ <+: τ → coneVal σ ≤ singVal τ) (σ : Str) :
+    (liftC V coneVal singVal hcone hsing).toElementMap (strBot σ) = coneVal σ := by
+  apply Element.ext
+  intro Y
+  constructor
+  · rintro ⟨X, ⟨_, hsub⟩, hrel⟩
+    rcases hrel with ⟨σ', hXcone, hY⟩ | ⟨σ', hXsing, hY⟩
+    · have hpre : σ' <+: σ := cone_subset_cone.mp (hXcone ▸ hsub)
+      exact hcone hpre Y hY
+    · exact absurd (hXsing ▸ hsub) (not_cone_subset_singleton σ σ')
+  · intro hY
+    exact ⟨cone σ, ⟨memC_cone σ, subset_rfl⟩, Or.inl ⟨σ, rfl, hY⟩⟩
+
+end DomainTheory.NeighbourhoodSystems.Exercise419

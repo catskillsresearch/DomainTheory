@@ -10,6 +10,10 @@ module
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719.PFmap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719.PFmapComb
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719.PDmem_down
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719.PFmap_rel
 
 @[expose] public section
 
@@ -93,51 +97,12 @@ namespace NeighborhoodSystem
 
 variable (V : NeighborhoodSystem α)
 
-/-- **`ℙ𝒟`-neighbourhoods are downward closed.** If `Z ∈ A` and `X ⊆ Z` with `X ∈ 𝒟`, then `X ∈ A`
-(each `A = ⋃ ↓Xᵢ` is a union of down-sets). -/
-theorem PDmem_down {A : Set (Set α)} (hA : V.PDmem A) {Z X : Set α}
-    (hZ : Z ∈ A) (hXZ : X ⊆ Z) (hX : V.mem X) : X ∈ A := by
-  obtain ⟨L, hL, rfl⟩ := hA
-  obtain ⟨X', hX', _, hZsub⟩ := (V.mem_PDunion).mp hZ
-  exact (V.mem_PDunion).mpr ⟨X', hX', hX, hXZ.trans hZsub⟩
 
 end NeighborhoodSystem
 
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
-/-- **Exercise 7.19 (Scott 1981, PRG-19) — the functorial action `ℙf : ℙD → ℙE`.** Given an
-approximable map `f : D → E`, the relation between `ℙD`- and `ℙE`-neighbourhoods is "every member of
-the source is `f`-related to some member of the target". This is the representation-independent form
-of Scott's displayed `∀ i < n ∃ j < m. Xᵢ f Yⱼ` (see `PFmap_rel_fin`). -/
-def PFmap (f : ApproximableMap V W) : ApproximableMap V.PowerDomain W.PowerDomain where
-  rel A B := V.PDmem A ∧ W.PDmem B ∧ ∀ X ∈ A, ∃ Y ∈ B, f.rel X Y
-  rel_dom h := h.1
-  rel_cod h := h.2.1
-  master_rel := by
-    refine ⟨V.PDmem_master, W.PDmem_master, ?_⟩
-    rintro X ⟨hXmem, hXsub⟩
-    exact ⟨W.master, ⟨W.master_mem, subset_rfl⟩,
-      f.mono f.master_rel hXsub subset_rfl hXmem W.master_mem⟩
-  inter_right := by
-    rintro A B B' ⟨hA, hB, hbody⟩ ⟨-, hB', hbody'⟩
-    refine ⟨hA, W.PDmem_inter hB hB', ?_⟩
-    intro X hX
-    obtain ⟨Y, hYB, hrel⟩ := hbody X hX
-    obtain ⟨Y', hY'B', hrel'⟩ := hbody' X hX
-    have hinmem : W.mem (Y ∩ Y') := f.rel_cod (f.inter_right hrel hrel')
-    exact ⟨Y ∩ Y', Set.mem_inter
-      (W.PDmem_down hB hYB Set.inter_subset_left hinmem)
-      (W.PDmem_down hB' hY'B' Set.inter_subset_right hinmem),
-      f.inter_right hrel hrel'⟩
-  mono := by
-    rintro A A' B B' ⟨_, _, hbody⟩ hA'A hBB' hA' hB'
-    refine ⟨hA', hB', ?_⟩
-    intro X hX
-    obtain ⟨Y, hYB, hrel⟩ := hbody X (hA'A hX)
-    exact ⟨Y, hBB' hYB, hrel⟩
 
-@[simp] theorem PFmap_rel {f : ApproximableMap V W} {A : Set (Set α)} {B : Set (Set β)} :
-    (PFmap f).rel A B ↔ V.PDmem A ∧ W.PDmem B ∧ ∀ X ∈ A, ∃ Y ∈ B, f.rel X Y := Iff.rfl
 
 /-! ### Functoriality: `ℙ` preserves identities and composition. -/
 
@@ -145,35 +110,6 @@ def PFmap (f : ApproximableMap V W) : ApproximableMap V.PowerDomain W.PowerDomai
 
 /-! ### The combinator `λf. ℙf` (Scott's second question). -/
 
-/-- **Exercise 7.19 — the combinator `λf. ℙf : (D → E) → (ℙD → ℙE)`.** The flat Smyth-style lift
-`(Φ, Ψ) ↦ mem Φ ∧ mem Ψ ∧ ∀ f ∈ Φ, ℙf ∈ Ψ` of Exercise 7.19's functorial action, one level up on the
-function spaces (`funSpace`, Theorem 3.10) — the same recipe as Exercise 7.16's `curryComb` and
-Exercise 7.21's `papplyEval`. Approximability is immediate: unlike `PFmap` itself, the body is a bare
-membership check with no witnesses to gather. -/
-def PFmapComb (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
-    ApproximableMap (funSpace V W) (funSpace V.PowerDomain W.PowerDomain) where
-  rel Φ Ψ := (funSpace V W).mem Φ ∧ (funSpace V.PowerDomain W.PowerDomain).mem Ψ ∧
-    ∀ f ∈ Φ, PFmap f ∈ Ψ
-  rel_dom h := h.1
-  rel_cod h := h.2.1
-  master_rel :=
-    ⟨(funSpace V W).master_mem, (funSpace V.PowerDomain W.PowerDomain).master_mem,
-      fun _ _ => Set.mem_univ _⟩
-  inter_right := by
-    rintro Φ Ψ Ψ' ⟨hΦ, hΨ, hbody⟩ ⟨-, hΨ', hbody'⟩
-    obtain ⟨f₀, hf₀⟩ := hΦ.2
-    obtain ⟨⟨L₂, hL₂, rfl⟩, -⟩ := hΨ
-    obtain ⟨⟨L₂', hL₂', rfl⟩, -⟩ := hΨ'
-    refine ⟨hΦ, ⟨⟨L₂ ++ L₂', ?_, (stepFun_append _ _).symm⟩,
-        ⟨PFmap f₀, Set.mem_inter (hbody f₀ hf₀) (hbody' f₀ hf₀)⟩⟩,
-      fun f hf => Set.mem_inter (hbody f hf) (hbody' f hf)⟩
-    intro q hq
-    rcases List.mem_append.mp hq with hq' | hq'
-    · exact hL₂ q hq'
-    · exact hL₂' q hq'
-  mono := by
-    rintro Φ Φ' Ψ Ψ' ⟨_, _, hbody⟩ hΦ'Φ hΨΨ' hΦ' hΨ'
-    exact ⟨hΦ', hΨ', fun f hf => hΨΨ' (hbody f (hΦ'Φ hf))⟩
 
 @[simp] theorem PFmapComb_rel {Φ : Set (ApproximableMap V W)}
     {Ψ : Set (ApproximableMap V.PowerDomain W.PowerDomain)} :

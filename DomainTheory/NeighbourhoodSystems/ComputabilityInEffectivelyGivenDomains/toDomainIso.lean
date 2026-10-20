@@ -1,0 +1,52 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.EffectiveIso
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+namespace Exercise718
+
+open NeighborhoodSystem Domain.Recursive ApproximableMap
+
+variable {α β : Type*}
+
+namespace EffectiveIso
+
+variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
+  {P : ComputablePresentation V} {Q : ComputablePresentation W}
+
+/-- An effective isomorphism is in particular a domain isomorphism (`|D| ≃o |E|`): the elementwise
+maps are mutually inverse (from `left_inv`/`right_inv` via `toElementMap_comp`/`toElementMap_idMap`)
+and each is monotone (`toElementMap_mono`), so they reflect as well as preserve `⊑`. -/
+def toDomainIso (e : EffectiveIso P Q) : DomainIso V W where
+  toFun := e.toMap.toElementMap
+  invFun := e.invMap.toElementMap
+  left_inv x := by
+    rw [← toElementMap_comp, e.left_inv, toElementMap_idMap]
+  right_inv y := by
+    rw [← toElementMap_comp, e.right_inv, toElementMap_idMap]
+  map_rel_iff' := by
+    intro x y
+    show e.toMap.toElementMap x ≤ e.toMap.toElementMap y ↔ x ≤ y
+    refine ⟨fun h => ?_, fun h => e.toMap.toElementMap_mono h⟩
+    have hmono := e.invMap.toElementMap_mono h
+    rwa [← toElementMap_comp, ← toElementMap_comp, e.left_inv, toElementMap_idMap,
+      toElementMap_idMap] at hmono
+
+end EffectiveIso
+
+end Exercise718
+
+end DomainTheory.NeighbourhoodSystems

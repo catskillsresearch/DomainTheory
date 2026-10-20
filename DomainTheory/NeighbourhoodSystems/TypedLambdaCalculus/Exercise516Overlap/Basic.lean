@@ -8,6 +8,7 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.Overlap
 
 @[expose] public section
 
@@ -41,8 +42,6 @@ open DomainTheory.NeighbourhoodSystems
 
 /-! ### Overlaps. -/
 
-/-- An **overlap** of period `p ≥ 1` at offset `i`: a factor of length `2p+1` with period `p`. -/
-def Overlap (i p : ℕ) : Prop := 1 ≤ p ∧ ∀ k, k ≤ p → tm (i + k) = tm (i + p + k)
 
 /-! ### Cube-freeness — Scott's literal form `t ≠ u·a·a·a·v`. -/
 

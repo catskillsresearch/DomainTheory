@@ -11,6 +11,21 @@ public import DomainTheory.InformationSystems.Proposition55
 public import DomainTheory.InformationSystems.Factoid34
 public import DomainTheory.InformationSystems.Factoid35
 public import DomainTheory.InformationSystems.Factoid84.IsDomainApprox
+public import DomainTheory.InformationSystems.Factoid84.DomainApprox
+public import DomainTheory.InformationSystems.Factoid84.scottCon
+public import DomainTheory.InformationSystems.Factoid84.flatRel
+public import DomainTheory.InformationSystems.Factoid84.flatMap
+public import DomainTheory.InformationSystems.Factoid84.flatDomainApprox
+public import DomainTheory.InformationSystems.Factoid84.mem_barElement
+public import DomainTheory.InformationSystems.Factoid84.mem_topElement
+public import DomainTheory.InformationSystems.Factoid84.BotApprox_any
+public import DomainTheory.InformationSystems.Factoid84.flatRel_empty
+public import DomainTheory.InformationSystems.Factoid84.flatMap_refl
+public import DomainTheory.InformationSystems.Factoid84.flatMap_toElement_of_mem_one
+public import DomainTheory.InformationSystems.Factoid84.flatMap_rogue
+public import DomainTheory.InformationSystems.Factoid84.flatMap_consistent
+public import DomainTheory.InformationSystems.Factoid84.flatMap_idem
+public import DomainTheory.InformationSystems.Factoid84.flatMap_isDomain
 
 @[expose] public section
 
@@ -41,173 +56,28 @@ namespace Factoid84
 /-! ## The powerset domain `P` (Scott) -/
 
 
-theorem mem_barElement (n x : ℕ) :
-    x ∈ (barElement n).carrier ↔ x = 0 ∨ x = n := by
-  constructor
-  · intro hx
-    have : PEnt (bar n) x := (P.mem_closure_iff (by trivial : bar n ∈ P.Con)).1 hx
-    rcases this with rfl | hx'
-    · exact Or.inl rfl
-    · exact Or.inr (Finset.mem_singleton.mp hx')
-  · intro h
-    rcases h with rfl | hn
-    · exact (P.mem_closure_iff (by trivial : bar n ∈ P.Con)).2 (Or.inl rfl)
-    · rw [hn]
-      exact (P.mem_closure_iff (by trivial : bar n ∈ P.Con)).2
-        (Or.inr (Finset.mem_singleton_self n))
 
 
-theorem mem_topElement (x : ℕ) : x ∈ topElement.carrier := trivial
 
 /-! ## Scott’s conditions (1)–(5) on `r : P → P` -/
 
 
-/-- Elements of the domain of domains (Scott’s assertion after (1)–(5)). -/
-def DomainApprox : Type :=
-  { r : ApproximableMap P P // IsDomainApprox r }
 
-/-- Scott’s consistency remark: for such an `r`, a finite `u` is “consistent”
-when `\bar 1 ⊈ r(\bar u)`. -/
-def scottCon (r : ApproximableMap P P) (u : Finset ℕ) : Prop :=
-  ¬ ((barElement 1).carrier ⊆
-      (r.toElement (P.closure u (by trivial))).carrier)
 
 /-! ## (3) is automatic for any approximable map -/
 
-theorem BotApprox_any (r : ApproximableMap P P) : BotApprox r := by
-  intro x hx
-  have hx0 : x = 0 := by
-    rcases (mem_barElement 0 x).1 hx with rfl | rfl <;> rfl
-  subst hx0
-  refine ⟨∅, fun a ha => False.elim (Finset.notMem_empty a (Finset.mem_coe.1 ha)), ?_⟩
-  have hempty := r.empty_rel
-  have hbot : P.EntSet ∅ ({0} : Finset ℕ) := by
-    intro z hz
-    rw [Finset.mem_singleton] at hz; subst hz
-    exact Or.inl rfl
-  exact r.mono hempty (P.entSet_empty ∅) hbot trivial trivial
 
 /-! ## Example: flat domain map (treat `1` as rogue) -/
 
-/-- If `1 ∈ u`, accept any `v`; else require `v ⊆ u ∪ {0}` and `1 ∉ v`. -/
-def flatRel (u v : Finset ℕ) : Prop :=
-  (1 ∈ u) ∨ ((∀ n ∈ v, n = 0 ∨ n ∈ u) ∧ 1 ∉ v)
 
-theorem flatRel_empty : flatRel ∅ ∅ :=
-  Or.inr ⟨fun _ hn => False.elim (Finset.notMem_empty _ hn), Finset.notMem_empty _⟩
 
-def flatMap : ApproximableMap P P where
-  rel := flatRel
-  rel_dom := fun _ => trivial
-  rel_cod := fun _ => trivial
-  empty_rel := flatRel_empty
-  union_right := by
-    intro u v v' hv hv'
-    rcases hv with h1 | ⟨hv, hv1⟩
-    · exact Or.inl h1
-    · rcases hv' with h1 | ⟨hv', hv1'⟩
-      · exact Or.inl h1
-      · refine Or.inr ⟨?_, ?_⟩
-        · intro n hn
-          rcases mem_funion.1 hn with h | h
-          · exact hv n h
-          · exact hv' n h
-        · intro h1
-          rcases mem_funion.1 h1 with h | h
-          · exact hv1 h
-          · exact hv1' h
-  mono := by
-    intro u u' v v' hrel hEntu hEntv _ _
-    rcases hrel with h1 | ⟨hv, hv1⟩
-    · -- 1 ∈ u; show 1 ∈ u' from EntSet
-      have h := hEntu 1 h1
-      rcases h with h0 | h1'
-      · exact False.elim (by cases h0)
-      · exact Or.inl h1'
-    · refine Or.inr ⟨?_, ?_⟩
-      · intro n hn
-        have hn' := hEntv n hn
-        rcases hn' with rfl | hn'
-        · exact Or.inl rfl
-        · have hn'' := hv n hn'
-          rcases hn'' with rfl | hn''
-          · exact Or.inl rfl
-          · have hu' := hEntu n hn''
-            rcases hu' with rfl | hu'
-            · exact Or.inl rfl
-            · exact Or.inr hu'
-      · intro h1v
-        have h := hEntv 1 h1v
-        rcases h with h0 | h1v'
-        · exact False.elim (by cases h0)
-        · exact hv1 h1v'
 
-theorem flatMap_refl : ReflApprox flatMap := by
-  intro u v ⟨_, _, hEnt⟩
-  by_cases h1 : 1 ∈ u
-  · exact Or.inl h1
-  · refine Or.inr ⟨?_, ?_⟩
-    · intro n hn; exact hEnt n hn
-    · intro h1v
-      have h := hEnt 1 h1v
-      rcases h with h0 | h
-      · exact absurd h0 (by decide)
-      · exact h1 h
 
-theorem flatMap_toElement_of_mem_one {x : P.Element} (h1 : 1 ∈ x.carrier) :
-    flatMap.toElement x = topElement := by
-  apply le_antisymm
-  · intro _ _; exact mem_topElement _
-  · intro n _
-    refine ⟨{1}, ?_, Or.inl (Finset.mem_singleton_self 1)⟩
-    intro a ha
-    have : a = 1 := Finset.mem_singleton.mp (Finset.mem_coe.1 ha)
-    subst this; exact h1
 
-theorem flatMap_rogue : RogueApprox flatMap :=
-  flatMap_toElement_of_mem_one ((mem_barElement 1 1).2 (Or.inr rfl))
 
-theorem flatMap_consistent : ConsistentApprox flatMap := by
-  intro hsub
-  have h1 : 1 ∈ (barElement 1).carrier := (mem_barElement 1 1).2 (Or.inr rfl)
-  have h1' : 1 ∈ (flatMap.toElement (barElement 0)).carrier := hsub h1
-  rcases (mem_toElement flatMap (barElement 0)).1 h1' with ⟨u, hu, hrel⟩
-  rcases hrel with h1u | ⟨_, hv1⟩
-  · have : 1 ∈ (barElement 0).carrier := hu (Finset.mem_coe.2 h1u)
-    rcases (mem_barElement 0 1).1 this with h | h
-    · exact absurd h (by decide)
-    · exact absurd h (by decide)
-  · exact hv1 (Finset.mem_singleton_self 1)
 
-theorem flatMap_idem : IdemApprox flatMap := by
-  refine ApproximableMap.ext fun u v => ?_
-  constructor
-  · rintro ⟨w, hf, hg⟩
-    rcases hf with h1u | ⟨hw, hw1⟩
-    · exact Or.inl h1u
-    · rcases hg with h1w | ⟨hv, hv1⟩
-      · exact False.elim (hw1 h1w)
-      · refine Or.inr ⟨?_, hv1⟩
-        · intro n hn
-          have hn' := hv n hn
-          rcases hn' with rfl | hn'
-          · exact Or.inl rfl
-          · exact hw n hn'
-  · intro h
-    rcases h with h1u | ⟨hv, hv1⟩
-    · exact ⟨insert 1 v, Or.inl h1u, Or.inl (Finset.mem_insert_self 1 v)⟩
-    · exact ⟨v, Or.inr ⟨hv, hv1⟩, Or.inr ⟨fun n hn => Or.inr hn, hv1⟩⟩
 
-theorem flatMap_isDomain : IsDomainApprox flatMap where
-  refl := flatMap_refl
-  idem := flatMap_idem
-  bot := BotApprox_any flatMap
-  rogue := flatMap_rogue
-  consistent := flatMap_consistent
 
-/-- Witness that Scott’s (1)–(5) are inhabited. -/
-def flatDomainApprox : DomainApprox :=
-  ⟨flatMap, flatMap_isDomain⟩
 
 /-! ## Identity fails (4): `I_P` is not a domain map -/
 end Factoid84

@@ -1,0 +1,49 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import Mathlib.Order.UpperLower.Basic
+import all Mathlib.Order.UpperLower.Basic
+public import Mathlib.Order.Bounds.Basic
+import all Mathlib.Order.Bounds.Basic
+public import Mathlib.Tactic
+import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise125.mem_def
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise125.master_eq
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise125.Ici_mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise125.lowerSetOf
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise125.ofLowerSet
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+namespace FinalSegment
+
+open NeighborhoodSystem
+
+variable {Δ : Type*} [LinearOrder Δ] [Nonempty Δ]
+
+variable [WellFoundedLT Δ]
+
+omit [WellFoundedLT Δ] in
+theorem lowerSetOf_ofLowerSet (S : Set Δ) (hSne : S.Nonempty) (hS : IsLowerSet S) :
+    lowerSetOf (ofLowerSet S hSne hS) = S := by
+  ext a
+  constructor
+  · rintro ⟨_, b, hbS, hba⟩
+    exact hS (Set.Ici_subset_Ici.mp hba) hbS
+  · intro ha
+    exact ⟨Ici_mem a, a, ha, subset_rfl⟩
+
+end FinalSegment
+
+end DomainTheory.NeighbourhoodSystems

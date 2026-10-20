@@ -10,6 +10,36 @@ public import Mathlib.Data.Set.Finite.Powerset
 import all Mathlib.Data.Set.Finite.Powerset
 
 public import DomainTheory.DataTypesAsLattices.Classification.IsBooleanOpen
+public import DomainTheory.DataTypesAsLattices.Classification.charOpen
+public import DomainTheory.DataTypesAsLattices.Classification.ScottG
+public import DomainTheory.DataTypesAsLattices.Classification.ScottF
+public import DomainTheory.DataTypesAsLattices.Classification.ScottB
+public import DomainTheory.DataTypesAsLattices.Classification.IsScottGdelta
+public import DomainTheory.DataTypesAsLattices.Classification.IsFcapG
+public import DomainTheory.DataTypesAsLattices.Classification.IsFcapGdelta
+public import DomainTheory.DataTypesAsLattices.Classification.IsBdelta
+public import DomainTheory.DataTypesAsLattices.Classification.charTop
+public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
+public import DomainTheory.DataTypesAsLattices.Classification.oddEvenPack
+public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack
+public import DomainTheory.DataTypesAsLattices.Classification.evenPart
+public import DomainTheory.DataTypesAsLattices.Classification.oddPart
+public import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
+public import DomainTheory.DataTypesAsLattices.Classification.closedToZero
+public import DomainTheory.DataTypesAsLattices.Classification.zeroPrime
+public import DomainTheory.DataTypesAsLattices.Classification.uvU
+public import DomainTheory.DataTypesAsLattices.Classification.uvV
+public import DomainTheory.DataTypesAsLattices.Classification.IsThreeValued
+public import DomainTheory.DataTypesAsLattices.Classification.typicalG
+public import DomainTheory.DataTypesAsLattices.Classification.typicalF
+public import DomainTheory.DataTypesAsLattices.Classification.typicalGdelta
+public import DomainTheory.DataTypesAsLattices.Classification.typicalFcapG
+public import DomainTheory.DataTypesAsLattices.Classification.typicalFcapGdelta
+public import DomainTheory.DataTypesAsLattices.Classification.typicalBdelta
+public import DomainTheory.DataTypesAsLattices.Classification.typicalSigma11
+public import DomainTheory.DataTypesAsLattices.Classification.typicalPi11
+public import DomainTheory.DataTypesAsLattices.Classification.IsSigma11
+public import DomainTheory.DataTypesAsLattices.Classification.IsPi11
 
 @[expose] public section
 
@@ -23,10 +53,6 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-/-- Characteristic-style map used in Theorem 6.1: `0 ∈ f(x)` iff some
-finite piece of `x` already lies in `U`. -/
-def charOpen (U : Set Pomega) (x : Pomega) : Pomega :=
-  {k | k = 0 ∧ ∃ n, e n ⊆ x ∧ e n ∈ U}
 
 theorem charOpen_isScottContinuous (U : Set Pomega) :
     IsScottContinuous (charOpen U) := by
@@ -39,22 +65,11 @@ theorem charOpen_isScottContinuous (U : Set Pomega) :
     obtain ⟨m, hm, hk0, n, hn, hne⟩ := mem_scottUnion.mp hk
     exact ⟨hk0, n, subset_trans hn hm, hne⟩
 
-def ScottG : Set (Set Pomega) := {U | IsScottOpen U}
-def ScottF : Set (Set Pomega) := {U | IsScottOpen Uᶜ}
 
-def ScottB : Set (Set Pomega) := {U | IsBooleanOpen U}
 
-def IsScottGdelta (U : Set Pomega) : Prop :=
-  ∃ Us : ℕ → Set Pomega, (∀ n, IsScottOpen (Us n)) ∧ U = ⋂ n, Us n
 
-def IsFcapG (U : Set Pomega) : Prop :=
-  ∃ C O, IsScottOpen Cᶜ ∧ IsScottOpen O ∧ U = C ∩ O
 
-def IsFcapGdelta (U : Set Pomega) : Prop :=
-  ∃ C G, IsScottOpen Cᶜ ∧ IsScottGdelta G ∧ U = C ∩ G
 
-def IsBdelta (U : Set Pomega) : Prop :=
-  ∃ Bs : ℕ → Set Pomega, (∀ n, IsBooleanOpen (Bs n)) ∧ U = ⋂ n, Bs n
 
 theorem isScottOpen_univ : IsScottOpen (Set.univ : Set Pomega) :=
   (isScottOpen_iff_isOpen _).mpr isOpen_univ
@@ -92,8 +107,6 @@ theorem mem_isScottOpen_iff {U : Set Pomega} (hU : IsScottOpen U) {x : Pomega} :
   · intro ⟨n, hn, hne⟩
     exact isScottOpen_isUpper hU hne hn
 
-def charTop (U : Set Pomega) (x : Pomega) : Pomega :=
-  {_k | ∃ n, e n ⊆ x ∧ e n ∈ U}
 
 theorem charTop_isScottContinuous (U : Set Pomega) :
     IsScottContinuous (charTop U) := by
@@ -142,8 +155,6 @@ theorem charTop_eq_bot_of_closed {C : Set Pomega} (hC : IsScottOpen Cᶜ) (x : P
   rw [charTop_eq_bot hC]
   simp
 
-def pairIndexed (fs : ℕ → Pomega → Pomega) (x : Pomega) : Pomega :=
-  {k | ∃ n m, k = pair n m ∧ m ∈ fs n x}
 
 theorem pairIndexed_isScottContinuous (fs : ℕ → Pomega → Pomega)
     (hfs : ∀ n, IsScottContinuous (fs n)) :
@@ -159,8 +170,6 @@ theorem pairIndexed_isScottContinuous (fs : ℕ → Pomega → Pomega)
     obtain ⟨p, hp, n, m, hk, hm⟩ := mem_scottUnion.mp hk
     exact ⟨n, m, hk, isScottContinuous_monotone (hfs n) hp hm⟩
 
-def oddEvenPack (f g : Pomega → Pomega) (x : Pomega) : Pomega :=
-  {k | (∃ n, k = 2 * n + 1 ∧ n ∈ f x) ∨ (∃ n, k = 2 * n ∧ n ∈ g x)}
 
 theorem oddEvenPack_isScottContinuous {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
@@ -182,11 +191,7 @@ theorem oddEvenPack_isScottContinuous {f g : Pomega → Pomega}
     · exact Or.inl ⟨n, hk, isScottContinuous_monotone hf hp hn⟩
     · exact Or.inr ⟨n, hk, isScottContinuous_monotone hg hp hn⟩
 
-def fcapGdeltaPack (f g : Pomega → Pomega) (x : Pomega) : Pomega :=
-  {k | (k = 0 ∧ 0 ∈ f x) ∨ ∃ n, k = n + 1 ∧ n ∈ g x}
 
-def evenPart (y : Pomega) : Pomega := {n | 2 * n ∈ y}
-def oddPart (y : Pomega) : Pomega := {n | 2 * n + 1 ∈ y}
 
 theorem evenPart_oddEven (f g : Pomega → Pomega) (x : Pomega) :
     evenPart (oddEvenPack f g x) = g x := by
@@ -264,13 +269,6 @@ theorem isBooleanOpen_sUnion_finite {S : Set (Set Pomega)}
     exact (hUV a (Set.mem_insert a s)).union
       (ih fun u hu => hUV u (Set.mem_insert_of_mem a hu))
 
-/-- Witness used in the inductive proof of Theorem 6.6. -/
-def BooleanMemE (U : Set Pomega) : Prop :=
-  ∃ (f : Pomega → Pomega) (N : ℕ) (E : Set Pomega),
-    IsScottContinuous f ∧
-      (∀ x, f x ⊆ {m | m < N}) ∧
-        E.Finite ∧ (∀ e ∈ E, e ⊆ {m | m < N}) ∧
-          U = {x | f x ∈ E}
 
 theorem booleanMemE_ofOpen {U : Set Pomega} (hU : IsScottOpen U) :
     BooleanMemE U := by
@@ -578,9 +576,6 @@ theorem union_isScottContinuous_right (x : Pomega) :
     · exact Or.inl h
     · exact Or.inr (hn h)
 
-/-- Three-valued characteristic of a Scott-closed set: `0` on `C`, `⊤` off `C`. -/
-def closedToZero (C : Set Pomega) (x : Pomega) : Pomega :=
-  ofNat 0 ∪ charTop Cᶜ x
 
 theorem closedToZero_isScottContinuous (C : Set Pomega) :
     IsScottContinuous (closedToZero C) :=
@@ -588,25 +583,9 @@ theorem closedToZero_isScottContinuous (C : Set Pomega) :
     union_isScottContinuous_left union_isScottContinuous_right
     (const_isScottContinuous (ofNat 0)) (charTop_isScottContinuous Cᶜ)
 
-/-- Scott's auxiliary value `0'` used in the many-valued tables of Theorem 6.7.
-    The vision transcription writes `0' = 0 ∪ ⊥`, which equals `0` and would
-    collapse the tables; the tables need a point distinct from `⊥`, `0`, and
-    `⊤`, so we take `0 ∪ 1`. -/
-def zeroPrime : Pomega := ofNat 0 ∪ ofNat 1
 
-/-- Scott's table `u` on `{⊥, 0, ⊤}`, extended continuously to all of `Pω`. -/
-def uvU (x y : Pomega) : Pomega :=
-  {k | (k = 0 ∧ (x.Nonempty ∨ y.Nonempty)) ∨
-       (k = 1 ∧ ((0 ∈ x ∧ ∃ n, n + 1 ∈ y) ∨ ((∃ n, n + 1 ∈ x) ∧ 0 ∈ y)))}
 
-/-- Scott's table `v` on `{⊥, 0, ⊤}`, extended continuously to all of `Pω`. -/
-def uvV (x y : Pomega) : Pomega :=
-  {k | k = 0 ∨
-       (k = 1 ∧ ((∃ n, n + 1 ∈ x) ∨ (∃ n, n + 1 ∈ y))) ∨
-       (0 ∈ x ∧ (∃ n, n + 1 ∈ x) ∧ 0 ∈ y ∧ (∃ n, n + 1 ∈ y))}
 
-def IsThreeValued (x : Pomega) : Prop :=
-  x = botElem ∨ x = ofNat 0 ∨ x = topElem
 
 theorem uvU_mono_left {x x' y : Pomega} (h : x ⊆ x') : uvU x y ⊆ uvU x' y := by
   intro k hk
@@ -1292,25 +1271,8 @@ theorem seq2_pair_isScottContinuous {f g : Pomega → Pomega}
     IsScottContinuous (fun x => seq2 (f x) (g x)) :=
   theorem_1_3_tuple seq2_isScottContinuous_left seq2_isScottContinuous_right hf hg
 
-def typicalG : Set Pomega := {x | 0 ∈ x}
-def typicalF : Set Pomega := {botElem}
-def typicalGdelta : Set Pomega := {topElem}
-def typicalFcapG : Set Pomega := {ofNat 0}
-def typicalFcapGdelta : Set Pomega := {succSet topElem}
-def typicalBdelta : Set Pomega :=
-  {u | funOf u (ofNat 0) = funOf u (ofNat 1)}
-def typicalSigma11 : Set Pomega :=
-  {u | ∃ y, funOf u (ofNat 0) ⬝ y = funOf u (ofNat 1) ⬝ y}
-def typicalPi11 : Set Pomega :=
-  {u | ∀ y, ∃ z, funOf (funOf u y) z = ofNat 0}
 
-def IsSigma11 (U : Set Pomega) : Prop :=
-  ∃ f g, IsScottContinuous f ∧ IsScottContinuous g ∧
-    U = {x | ∃ y, funOf (f x) y = funOf (g x) y}
 
-def IsPi11 (U : Set Pomega) : Prop :=
-  ∃ h, IsScottContinuous h ∧
-    U = {x | ∀ y, ∃ z, funOf (funOf (h x) y) z = ofNat 0}
 
 /-- **Scott 1976, Table 3 / Theorem 6.7.** `𝔅_δ` is the class of continuous
 preimages of `{u | u₀ = u₁}`. -/

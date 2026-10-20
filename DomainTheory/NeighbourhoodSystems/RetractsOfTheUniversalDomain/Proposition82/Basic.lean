@@ -9,6 +9,10 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition81
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82.retractionOfSubsystem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82.elementIso
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82.retractionOfSubsystem_rel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82.retractionOfSubsystem_toElementMap_inj
 
 @[expose] public section
 
@@ -50,60 +54,8 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 
 namespace Subsystem
 
-/-- **Proposition 8.2's retraction `a = i ∘ j`.** As a neighbourhood relation (unfolding `inj`/
-`proj`), `X a Z ↔ ∃ Y ∈ D, X ⊆ Y ⊆ Z` — exactly Scott's formula. -/
-def retractionOfSubsystem (h : D ◁ E) : ApproximableMap E E := h.inj.comp h.proj
 
-@[simp] theorem retractionOfSubsystem_rel (h : D ◁ E) {X Z : Set α} :
-    (retractionOfSubsystem h).rel X Z ↔ E.mem X ∧ E.mem Z ∧ ∃ Y, D.mem Y ∧ X ⊆ Y ∧ Y ⊆ Z := by
-  simp only [retractionOfSubsystem, comp_rel, inj_rel, proj_rel]
-  constructor
-  · rintro ⟨Y, ⟨hEX, hDY, hXY⟩, hDY', hEZ, hYZ⟩
-    exact ⟨hEX, hEZ, Y, hDY, hXY, hYZ⟩
-  · rintro ⟨hEX, hEZ, Y, hDY, hXY, hYZ⟩
-    exact ⟨Y, ⟨hEX, hDY, hXY⟩, hDY, hEZ, hYZ⟩
 
-/-- `retractionOfSubsystem h` fixes exactly `i(x)` for `x ∈ |D|`: `a(i(x)) = i(x)`. -/
-theorem retractionOfSubsystem_toElementMap_inj (h : D ◁ E) (x : D.Element) :
-    (retractionOfSubsystem h).toElementMap (h.inj.toElementMap x) = h.inj.toElementMap x := by
-  have h1 : (retractionOfSubsystem h).toElementMap (h.inj.toElementMap x)
-      = h.inj.toElementMap (h.proj.toElementMap (h.inj.toElementMap x)) :=
-    toElementMap_comp h.inj h.proj (h.inj.toElementMap x)
-  have h2 : h.proj.toElementMap (h.inj.toElementMap x) = (h.proj.comp h.inj).toElementMap x :=
-    (toElementMap_comp h.proj h.inj x).symm
-  rw [h1, h2, h.proj_comp_inj, toElementMap_idMap]
 
-/-- **Proposition 8.2, second half.** `|D|` is order-isomorphic to the fixed-point set of
-`a = retractionOfSubsystem h`, via `x ↦ i(x)` with inverse `y ↦ j(y)`. -/
-def elementIso (h : D ◁ E) :
-    D.Element ≃o {y : E.Element // (retractionOfSubsystem h).toElementMap y = y} where
-  toFun x := ⟨h.inj.toElementMap x, retractionOfSubsystem_toElementMap_inj h x⟩
-  invFun y := h.proj.toElementMap y.1
-  left_inv x := by
-    have h1 : h.proj.toElementMap (h.inj.toElementMap x) = (h.proj.comp h.inj).toElementMap x :=
-      (toElementMap_comp h.proj h.inj x).symm
-    show h.proj.toElementMap (h.inj.toElementMap x) = x
-    rw [h1, h.proj_comp_inj, toElementMap_idMap]
-  right_inv y := by
-    apply Subtype.ext
-    have hfix : (h.inj.comp h.proj).toElementMap y.1 = y.1 := y.2
-    have h1 : (h.inj.comp h.proj).toElementMap y.1 = h.inj.toElementMap (h.proj.toElementMap y.1) :=
-      toElementMap_comp h.inj h.proj y.1
-    show h.inj.toElementMap (h.proj.toElementMap y.1) = y.1
-    rw [← h1]; exact hfix
-  map_rel_iff' := by
-    intro x x'
-    show h.inj.toElementMap x ≤ h.inj.toElementMap x' ↔ x ≤ x'
-    constructor
-    · intro hle
-      have hmono := h.proj.toElementMap_mono hle
-      have h1 : h.proj.toElementMap (h.inj.toElementMap x) = (h.proj.comp h.inj).toElementMap x :=
-        (toElementMap_comp h.proj h.inj x).symm
-      have h2 : h.proj.toElementMap (h.inj.toElementMap x') = (h.proj.comp h.inj).toElementMap x' :=
-        (toElementMap_comp h.proj h.inj x').symm
-      rw [h1, h2, h.proj_comp_inj, toElementMap_idMap, toElementMap_idMap] at hmono
-      exact hmono
-    · intro hle
-      exact h.inj.toElementMap_mono hle
 end Subsystem
 end DomainTheory.NeighbourhoodSystems

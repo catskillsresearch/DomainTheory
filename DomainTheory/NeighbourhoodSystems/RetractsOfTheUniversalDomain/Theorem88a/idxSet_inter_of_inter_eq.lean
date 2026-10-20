@@ -1,0 +1,44 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.splitChoice_isSplitSpec
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import Mathlib.Basic.Countable.Defs
+import all Mathlib.Basic.Countable.Defs
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.mem_idxSet
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem
+
+variable {α : Type*}
+
+section Reencode
+
+variable (e : ℕ → Set α)
+
+/-- If `e i ∩ e j = e m` (i.e. `{e i, e j}` is witnessed-consistent, with witness realizing the
+intersection exactly as `e m`), then `idxSet e i ∩ idxSet e j = idxSet e m` — a **definitional**
+rewriting of the set-builder, needing no transfer at all. -/
+theorem idxSet_inter_of_inter_eq {i j m : ℕ} (h : e i ∩ e j = e m) :
+    idxSet e i ∩ idxSet e j = idxSet e m := by
+  ext k
+  show e k ⊆ e i ∧ e k ⊆ e j ↔ e k ⊆ e m
+  rw [← Set.subset_inter_iff, h]
+
+end Reencode
+
+end DomainTheory.NeighbourhoodSystems

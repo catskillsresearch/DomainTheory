@@ -8,6 +8,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.Uapply
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.Ulam
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.translateAbs
 
 @[expose] public section
 
@@ -77,17 +80,7 @@ open NeighborhoodSystem ApproximableMap
 
 /-! ## Part 1 (of the exercise write-up): the end-of-lecture equations, self-hosted in `𝒰` -/
 
-/-- **Self-application inside `𝒰`** (the end-of-lecture equation `u(x) := j_→(u)(x)`): decode
-`u : 𝒰` into an actual function `𝒰 → 𝒰` via `j_→` (`jArrow`, Definition 8.9), then apply it to
-`x`. -/
-noncomputable def Uapply (u x : U.Element) : U.Element :=
-  (evalMap U U).toElementMap (pair (jArrow.toElementMap u) x)
 
-/-- **Self-abstraction inside `𝒰`** (the end-of-lecture equation `λx.τ ≅ i_→(λx.τ)`): given the
-"outside" function `f : 𝒰 → 𝒰` (`τ`'s ordinary denotation as an approximable map), encode it into
-`𝒰` via `i_→` (`iArrow`, Definition 8.9). -/
-noncomputable def Ulam (f : ApproximableMap U U) : U.Element :=
-  iArrow.toElementMap (toFilter f)
 
 /-! ## Part 2 (of the exercise write-up): the abstraction recipe, and "has the right type" -/
 
@@ -95,11 +88,4 @@ universe u
 
 variable {α : Type u} {E : NeighborhoodSystem α}
 
-/-- **Scott's translation recipe for a `λ`-abstraction**, `λx^{D_a}.σ ↦ λx. b(σ'[a(x)/x])`: given
-the further-translated body `body : E → E` (Scott's `σ'`, the untyped realization of `σ` as a
-function of `x`), form the projection-sandwiched abstraction `b∘body∘a`. Stated for an arbitrary
-neighbourhood system `E` and arbitrary `a, b : E → E` — specializes to Scott's `𝒰`/finitary
-projections, but needs nothing special about `E`. -/
-def translateAbs (a b body : ApproximableMap E E) : ApproximableMap E E :=
-  b.comp (body.comp a)
 end DomainTheory.NeighbourhoodSystems

@@ -1,0 +1,26 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+-/
+module
+
+public import DomainTheory.DataTypesAsLattices.Embedding
+public import DomainTheory.DataTypesAsLattices.Lambda.Term
+public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
+public import DomainTheory.DataTypesAsLattices.Lambda.Comb
+public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.DataTypesAsLattices
+
+/-- Least operator solving the (2.17) recursion. -/
+def interStep (f : Pomega) : Pomega :=
+  graph (fun x => graph (fun y =>
+    condSet x (condSet y (ofNat 0) botElem)
+      (succSet (funOf (funOf f (predSet x)) (predSet y)))))
+
+end DomainTheory.DataTypesAsLattices

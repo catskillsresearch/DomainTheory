@@ -15,6 +15,19 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.presentationIterU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.cInj
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.cProj
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.cCombinator
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.cElementIso
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.fixedNbhd_elementIso_fix
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.RMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.curryOnceC
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.lamOp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.tOpMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.TArrow
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.cProj_comp_cInj
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.RDom
 
 @[expose] public section
 
@@ -90,84 +103,26 @@ open NeighborhoodSystem ApproximableMap
 
 /-! ## Building `c`, a finitary projection with `Fix(c) ≅ 𝒰^∞` -/
 
-/-- A fixed computable presentation of `𝒰^∞ = iterSys 𝒰` (Exercise 7.15). -/
-noncomputable def presentationIterU : ComputablePresentation (iterSys U) :=
-  Classical.choice (iterSys_isEffectivelyGiven U_isEffectivelyGiven)
 
-/-- **`i : 𝒰^∞ → 𝒰`**, fixed by Theorem 8.8(b) applied to `𝒰^∞`. -/
-noncomputable def cInj : ApproximableMap (iterSys U) U :=
-  (theorem_8_8_b_strong presentationIterU).choose
 
-/-- **`j : 𝒰 → 𝒰^∞`**, fixed by Theorem 8.8(b) applied to `𝒰^∞`. -/
-noncomputable def cProj : ApproximableMap U (iterSys U) :=
-  (theorem_8_8_b_strong presentationIterU).choose_spec.choose
 
-theorem cProj_comp_cInj : cProj.comp cInj = idMap (iterSys U) :=
-  (theorem_8_8_b_strong presentationIterU).choose_spec.choose_spec.1
 
-/-- **`c := i ∘ j : 𝒰 → 𝒰`**, the finitary projection witnessing `𝒰^∞` inside `𝒰`. -/
-noncomputable def cCombinator : ApproximableMap U U := cInj.comp cProj
 
-/-- **`𝒰^∞ ≅ Fix(c)`**, from the generic projection-pair `elementIso` (Proposition 8.10(b)'s
-`elementIsoOfProjectionPair`). -/
-noncomputable def cElementIso :
-    (iterSys U).Element ≃o {y : U.Element // cCombinator.toElementMap y = y} :=
-  elementIsoOfProjectionPair cInj cProj cProj_comp_cInj rfl
 
-/-- **`fixedNbhd a ≅ Fix(a)`, for any finitary projection `a : 𝒰 → 𝒰`.** Theorem 8.6(a)'s
-`inj_comp_proj_eq_self` identifies `retractionOfSubsystem (fixedNbhd_subsystem a)` with `a` itself,
-transporting Proposition 8.2's `elementIso` along the identification. -/
-noncomputable def fixedNbhd_elementIso_fix {a : ApproximableMap U U} (ha : IsFinitaryProjection a) :
-    (fixedNbhd a).Element ≃o {y : U.Element // a.toElementMap y = y} := by
-  have h := Subsystem.elementIso (fixedNbhd_subsystem a)
-  unfold Subsystem.retractionOfSubsystem at h
-  rwa [inj_comp_proj_eq_self ha] at h
 
 /-! ## The joint evaluator `R(ψ, φ, x) := c(φ(ψ(x)))`, built from `evalMap`/`proj`/`paired` -/
 
-/-- The domain `(𝒰→𝒰) × ((𝒰→𝒰) × 𝒰)` of the joint evaluator: an element `⟨ψ, ⟨φ, x⟩⟩` packages
-the varying map `ψ` (to become `a`), the curry variable `φ`, and the point `x`. -/
-abbrev RDom := prod (funSpace U U) (prod (funSpace U U) U)
 
-/-- `R(ψ, φ, x) := c(φ(ψ(x)))`, purely as a composite of `evalMap`, `proj`s and `paired` — jointly
-continuous in `(ψ, φ, x)` since `evalMap` is. -/
-noncomputable def RMap (c : ApproximableMap U U) : ApproximableMap RDom U :=
-  c.comp ((evalMap U U).comp
-    (paired
-      ((proj₀ (funSpace U U) U).comp (proj₁ (funSpace U U) (prod (funSpace U U) U)))
-      ((evalMap U U).comp
-        (paired (proj₀ (funSpace U U) (prod (funSpace U U) U))
-          ((proj₁ (funSpace U U) U).comp (proj₁ (funSpace U U) (prod (funSpace U U) U)))))))
 
 /-! ## Currying `R` twice: `lamOp c : (𝒰→𝒰) → ((𝒰→𝒰) → (𝒰→𝒰))`, recovering `lamComb (-) c` -/
 
-/-- First curry (peeling off `ψ`), leaving the `(φ, x)` pair bundled: an element of
-`𝒰→𝒰 → funSpace ((𝒰→𝒰) × 𝒰) 𝒰`. -/
-noncomputable def curryOnceC (c : ApproximableMap U U) :
-    ApproximableMap (funSpace U U) (funSpace (prod (funSpace U U) U) U) :=
-  curry (RMap c)
 
-/-- Second curry (via Table 5.5's `curryC`, peeling off `φ`): `ψ ↦ (φ ↦ (x ↦ R(ψ,φ,x)))`, an
-element of the fourth-order function space `(𝒰→𝒰) → ((𝒰→𝒰) → (𝒰→𝒰))`. -/
-noncomputable def lamOp (c : ApproximableMap U U) :
-    ApproximableMap (funSpace U U) (funSpace (funSpace U U) (funSpace U U)) :=
-  (curryC (funSpace U U) U U).comp (curryOnceC c)
 
 /-! ## `t := tOpMap c`, conjugating `lamOp c` by the fixed pair `𝒰 ⇄ (𝒰→𝒰)` -/
 
-/-- **`t(a) := a → c`, made continuous in `a`.** Conjugates `lamOp c`'s output by the fixed
-projection pair `jArrow : 𝒰 → (𝒰→𝒰)`, `iArrow : (𝒰→𝒰) → 𝒰` (Definition 8.9), via `expMap jArrow
-iArrow`. -/
-noncomputable def tOpMap (c : ApproximableMap U U) :
-    ApproximableMap (funSpace U U) (funSpace U U) :=
-  (expMap jArrow iArrow).comp (lamOp c)
 
 /-! ## Assembling `D ≅ D → 𝒰^∞` -/
 
-/-- Exercise 8.23's abstract correspondence `T(a) := D_a → D_c` (a domain, for each finitary
-projection `a`). -/
-noncomputable def TArrow (a : ApproximableMap U U) : Σ β : Type, NeighborhoodSystem β :=
-  ⟨_, funSpace (fixedNbhd a) (fixedNbhd cCombinator)⟩
 
 /-! ## Non-triviality: `𝒰 ⊴ D` -/
 end DomainTheory.NeighbourhoodSystems

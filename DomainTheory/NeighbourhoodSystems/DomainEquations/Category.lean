@@ -8,6 +8,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import Mathlib.CategoryTheory.Category.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Category.notation4
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.compAfter
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Category.notation6
 
 @[expose] public section
 
@@ -25,11 +28,7 @@ open scoped CategoryTheory
 
 universe u v
 
-scoped notation "𝟙" => CategoryTheory.CategoryStruct.id
 
-abbrev compAfter {Obj : Type u} [Category.{v} Obj] {X Y Z : Obj} (g : Y ⟶ Z) (f : X ⟶ Y) : X ⟶ Z :=
-  f ≫ g
 
-scoped infixr:80 " ⊚ " => compAfter
 
 end DomainTheory.NeighbourhoodSystems

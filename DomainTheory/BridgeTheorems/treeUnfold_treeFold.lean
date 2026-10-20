@@ -1,0 +1,52 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import DomainTheory.InformationSystems.Factoid81
+public import DomainTheory.BridgeTheorems.treeFold
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.BridgeTheorems
+
+open DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+open DomainTheory.InformationSystems.InfoSys
+
+variable {α : Type*} [DecidableEq α] (A : InfoSys α)
+
+theorem treeUnfold_treeFold (s : SumToken α (ProdToken (treeSystem A) (treeSystem A))) :
+    treeUnfold A (treeFold A s) = s := by
+  cases s with
+  | bot => rfl
+  | left x => rfl
+  | right p =>
+    dsimp [treeFold, treeUnfold]
+    split_ifs with hb
+    · apply congrArg SumToken.right
+      apply Subtype.ext
+      apply Prod.ext
+      · rfl
+      · exact hb.symm
+    · have ha : p.val.1 = treeBot := by
+        rcases p.property with h1 | h2
+        · exact h1
+        · exact False.elim (hb h2)
+      apply congrArg SumToken.right
+      apply Subtype.ext
+      apply Prod.ext
+      · exact ha.symm
+      · rfl
+
+end DomainTheory.BridgeTheorems

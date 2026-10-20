@@ -22,6 +22,105 @@ import all Mathlib.Tactic.Ring
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.selectFn
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.RecDecidable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.RecDecidable₂
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.RecDecidable₃
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.REPred
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.REPred₂
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.encodeList
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.foldStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.foldCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.decodeList
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.halfParity
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.isOne
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.isZero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.bForallFn
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.bExistsFn
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.reForallF
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.reForallStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.reForallChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.mapPairStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.mapPairStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.mapPairCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.lowOr
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.lorStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.myLor
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.allListStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.existsListStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.allListChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.existsListChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.isBinDigit
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.allBinDigitsChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.nthStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.nthCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.tabStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.tabCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.fuelTableStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.fuelTable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.mulBit
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.decodeFuelOkCharBody
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.decodeFuelOkChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.decodeFuelOkCharLookup
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.listLenStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.listLenChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.natEqChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.listEqStpNonzero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.listEqStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.listEqStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.listEqChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.appendListTabFn
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.appendListCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.takeListTabFn
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.takeCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.dropListTabFn
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.dropCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.c9b5_boolNat
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.c9b5_encodeListBool
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.c9b5_sexprDepth
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.c9b5_sexprGodelEncode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.autStateCardFuelCharBody
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.autStateCardFuelChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.autStateCardFuelCharLookup
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.matchesBCatG
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.matchesBCharBody
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.matchesBChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.matchesBCatGLookup
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.matchesBCharBodyLookup
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.codeBound
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.c9b6_decodeListBool
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.decideNonemptyBChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.capCode
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.consistentBChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.subsetBoundChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.subsetGuardChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.subsetBChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.interEqChar
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.amGM
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.iter_sq_le
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.lt_of_mul_lt_mul_left'
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.lt_iter_succ_sq
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.sqrt_le
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.lt_succ_sqrt
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.sqrt_eq_of
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.sqrt_add_eq
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.unpair_pair
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.unpair_pair_fst
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.unpair_pair_snd
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.sqrt_le_add
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.pair_unpair
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.selectFn_one
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.selectFn_zero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.selectFn_ite
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.le_pair_right
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.unpair_snd_le
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.isOne_eq_one_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.isOne_one
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.isOne_zero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.natEqChar_eq_one_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.listEqStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.c9b5_boolNat
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.c9b6_decodeListBool
 
 @[expose] public section
 
@@ -57,171 +156,23 @@ namespace Domain.Recursive
 mathlib's `Nat.sqrt.iter_sq_le` / `Nat.sqrt.lt_iter_succ_sq` are the heart of `Nat.sqrt`'s
 correctness, but they use `grind` / `lia` (classical). We reprove them with `omega`. -/
 
-/-- **AM–GM for naturals (choice-free).** `4 a b ≤ (a+b)²`. Faithful port of mathlib's `private`
-`Nat.AM_GM` (no classical tactics). -/
-theorem amGM : ∀ {a b : ℕ}, 4 * a * b ≤ (a + b) * (a + b)
-  | 0, _ => by rw [Nat.mul_zero, Nat.zero_mul]; exact Nat.zero_le _
-  | _, 0 => by rw [Nat.mul_zero]; exact Nat.zero_le _
-  | a + 1, b + 1 => by
-    simpa only [Nat.mul_add, Nat.add_mul, show (4 : ℕ) = 1 + 1 + 1 + 1 from rfl, Nat.one_mul,
-      Nat.mul_one, Nat.add_assoc, Nat.add_left_comm, Nat.add_le_add_iff_left]
-      using Nat.add_le_add_right (@amGM a b) 4
 
-/-- **Choice-free `sqrt.iter` lower bound.** `iter n guess ² ≤ n`. Faithful port of
-`Nat.sqrt.iter_sq_le`, with `grind` replaced by `omega`. -/
-theorem iter_sq_le (n guess : ℕ) : Nat.sqrt.iter n guess * Nat.sqrt.iter n guess ≤ n := by
-  unfold Nat.sqrt.iter
-  if h : (guess + n / guess) / 2 < guess then
-    rw [dite_eq_left h]
-    exact iter_sq_le n ((guess + n / guess) / 2)
-  else
-    rw [dite_eq_right h]
-    apply Nat.mul_le_of_le_div
-    omega
-  termination_by guess
-  decreasing_by exact h
 
-/-- Choice-free left-cancellation for `<` under `*` (mathlib's `Nat.lt_of_mul_lt_mul_left` is
-classical). From `a*b < a*c` deduce `b < c`, by the contrapositive `c ≤ b → a*c ≤ a*b`. -/
-theorem lt_of_mul_lt_mul_left' {a b c : ℕ} (h : a * b < a * c) : b < c := by
-  rcases Nat.lt_or_ge b c with hbc | hbc
-  · exact hbc
-  · exact absurd h (Nat.not_lt.mpr (Nat.mul_le_mul_left a hbc))
 
-/-- **Choice-free `sqrt.iter` upper bound.** If `n < (guess+1)²` then `n < (iter n guess + 1)²`.
-Faithful port of `Nat.sqrt.lt_iter_succ_sq`, with `lia` replaced by `omega`. -/
-theorem lt_iter_succ_sq (n guess : ℕ) (hn : n < (guess + 1) * (guess + 1)) :
-    n < (Nat.sqrt.iter n guess + 1) * (Nat.sqrt.iter n guess + 1) := by
-  unfold Nat.sqrt.iter
-  if h : (guess + n / guess) / 2 < guess then
-    rw [dite_eq_left h]
-    suffices hsuff : n < ((guess + n / guess) / 2 + 1) * ((guess + n / guess) / 2 + 1) from
-      lt_iter_succ_sq n ((guess + n / guess) / 2) hsuff
-    refine lt_of_mul_lt_mul_left' (a := 4 * (guess * guess)) ?_
-    apply Nat.lt_of_le_of_lt amGM
-    rw [show (4 : ℕ) = 2 * 2 from rfl]
-    rw [Nat.mul_mul_mul_comm 2, Nat.mul_mul_mul_comm (2 * guess)]
-    refine Nat.mul_self_lt_mul_self (?_ : _ < _ * ((_ / 2) + 1))
-    rw [← Nat.add_div_right _ (by decide), Nat.mul_comm 2, Nat.mul_assoc,
-      show guess + n / guess + 2 = (guess + n / guess + 1) + 1 from rfl]
-    have aux : (guess + n / guess + 1) ≤ 2 * ((guess + n / guess + 1 + 1) / 2) := by omega
-    refine lt_of_lt_of_le ?_ (Nat.mul_le_mul_left _ aux)
-    rw [Nat.add_assoc, Nat.mul_add]
-    exact Nat.add_lt_add_left
-      (Nat.lt_mul_div_succ _ (lt_of_le_of_lt (Nat.zero_le _) h)) _
-  else
-    rw [dite_eq_right h]
-    exact hn
-  termination_by guess
-  decreasing_by exact h
 
-/-- `sqrt n` squared is `≤ n` (choice-free; mathlib's `Nat.sqrt_le` is classical). -/
-theorem sqrt_le (n : ℕ) : Nat.sqrt n * Nat.sqrt n ≤ n := by
-  rcases Nat.lt_or_ge 1 n with h | h
-  · rw [Nat.sqrt, ite_eq_right (Nat.not_le.mpr h)]
-    exact iter_sq_le _ _
-  · rw [Nat.sqrt, ite_eq_left h]
-    calc n * n ≤ 1 * n := Nat.mul_le_mul_right n h
-      _ = n := Nat.one_mul n
 
-/-- `n < (sqrt n + 1)²` (choice-free; mathlib's `Nat.lt_succ_sqrt` is classical). The initial guess
-`2 ^ (log₂ n / 2 + 1)` over-shoots `√n`, which feeds `lt_iter_succ_sq`. -/
-theorem lt_succ_sqrt (n : ℕ) : n < (Nat.sqrt n + 1) * (Nat.sqrt n + 1) := by
-  rcases Nat.lt_or_ge 1 n with h | h
-  · rw [Nat.sqrt, ite_eq_right (Nat.not_le.mpr h)]
-    refine lt_iter_succ_sq _ _ ?_
-    set g := 1 <<< (n.log2 / 2 + 1) with hg
-    have hshift : g = 2 ^ (n.log2 / 2 + 1) := by rw [hg, Nat.shiftLeft_eq, Nat.one_mul]
-    have hgg : g * g = 2 ^ (2 * (n.log2 / 2 + 1)) := by
-      rw [hshift, ← pow_add]; congr 1; omega
-    calc n < 2 ^ (n.log2 + 1) := Nat.lt_log2_self
-      _ ≤ 2 ^ (2 * (n.log2 / 2 + 1)) := Nat.pow_le_pow_right (by decide) (by omega)
-      _ = g * g := hgg.symm
-      _ ≤ (g + 1) * (g + 1) := Nat.mul_le_mul (Nat.le_succ g) (Nat.le_succ g)
-  · rw [Nat.sqrt, ite_eq_left h]
-    exact Nat.lt_of_lt_of_le (Nat.lt_succ_self n)
-      (Nat.le_mul_of_pos_right (n + 1) (Nat.succ_pos n))
 
-/-- **The square-root characterization (choice-free).** If `q² ≤ m < (q+1)²` then `sqrt m = q`. The
-uniqueness step is `omega` from the two bounds plus `sqrt_le`/`lt_succ_sqrt`. -/
-theorem sqrt_eq_of {m q : ℕ} (h1 : q * q ≤ m) (h2 : m < (q + 1) * (q + 1)) : Nat.sqrt m = q := by
-  have hle := sqrt_le m
-  have hlt := lt_succ_sqrt m
-  have hq_le : q ≤ Nat.sqrt m := by
-    rcases Nat.lt_or_ge (Nat.sqrt m) q with hh | hh
-    · exfalso
-      have ha : Nat.sqrt m + 1 ≤ q := hh
-      have hmul : (Nat.sqrt m + 1) * (Nat.sqrt m + 1) ≤ q * q := Nat.mul_le_mul ha ha
-      omega
-    · exact hh
-  have hle_q : Nat.sqrt m ≤ q := by
-    rcases Nat.lt_or_ge q (Nat.sqrt m) with hh | hh
-    · exfalso
-      have ha : q + 1 ≤ Nat.sqrt m := hh
-      have hmul : (q + 1) * (q + 1) ≤ Nat.sqrt m * Nat.sqrt m := Nat.mul_le_mul ha ha
-      omega
-    · exact hh
-  omega
 
-/-- `sqrt (q² + a) = q` whenever `a ≤ 2q` (choice-free; mathlib's `Nat.sqrt_add_eq` is classical). -/
-theorem sqrt_add_eq (q a : ℕ) (h : a ≤ q + q) : Nat.sqrt (q * q + a) = q := by
-  refine sqrt_eq_of (Nat.le_add_right _ _) ?_
-  have expand : (q + 1) * (q + 1) = q * q + q + q + 1 := Nat.succ_mul_succ q q
-  omega
 
 /-! ## Choice-free pairing round-trip
 
 `Nat.pair`/`Nat.unpair` are themselves choice-free *definitions*; only mathlib's `unpair_pair`
 *lemma* (via `sqrt_add_eq`) is classical. We reprove the round-trip on our choice-free `sqrt`. -/
 
-/-- **`unpair ∘ pair = id` (choice-free).** Mirrors `Nat.unpair_pair`. -/
-theorem unpair_pair (a b : ℕ) : Nat.unpair (Nat.pair a b) = (a, b) := by
-  rw [Nat.pair]
-  if h : a < b then
-    rw [ite_eq_left h]
-    show Nat.unpair (b * b + a) = (a, b)
-    have be : Nat.sqrt (b * b + a) = b := sqrt_add_eq b a (by omega)
-    simp only [Nat.unpair, be, Nat.add_sub_cancel_left, ite_eq_left h]
-  else
-    rw [ite_eq_right h]
-    show Nat.unpair (a * a + a + b) = (a, b)
-    have ae : Nat.sqrt (a * a + a + b) = a := by
-      have e : a * a + a + b = a * a + (a + b) := by omega
-      rw [e]; exact sqrt_add_eq a (a + b) (by omega)
-    have e1 : a * a + a + b - a * a = a + b := by omega
-    have e2 : ¬ a + b < a := by omega
-    have e3 : a + b - a = b := by omega
-    simp only [Nat.unpair, ae, e1, ite_eq_right e2, e3]
 
-@[simp] theorem unpair_pair_fst (a b : ℕ) : (Nat.pair a b).unpair.1 = a := by rw [unpair_pair]
 
-@[simp] theorem unpair_pair_snd (a b : ℕ) : (Nat.pair a b).unpair.2 = b := by rw [unpair_pair]
 
-/-- `n ≤ (sqrt n)² + 2·sqrt n` (choice-free; needed for `pair_unpair`). -/
-theorem sqrt_le_add (n : ℕ) : n ≤ Nat.sqrt n * Nat.sqrt n + Nat.sqrt n + Nat.sqrt n := by
-  have h := lt_succ_sqrt n
-  have e : (Nat.sqrt n + 1) * (Nat.sqrt n + 1)
-      = Nat.sqrt n * Nat.sqrt n + Nat.sqrt n + Nat.sqrt n + 1 := Nat.succ_mul_succ _ _
-  omega
 
-/-- **`pair ∘ unpair = id` (choice-free).** Mirrors `Nat.pair_unpair`. -/
-theorem pair_unpair (n : ℕ) : Nat.pair (Nat.unpair n).1 (Nat.unpair n).2 = n := by
-  have sm : Nat.sqrt n * Nat.sqrt n + (n - Nat.sqrt n * Nat.sqrt n) = n :=
-    Nat.add_sub_cancel' (sqrt_le _)
-  have hadd := sqrt_le_add n
-  rw [Nat.unpair]
-  if h : n - Nat.sqrt n * Nat.sqrt n < Nat.sqrt n then
-    rw [ite_eq_left h]
-    show Nat.pair (n - Nat.sqrt n * Nat.sqrt n) (Nat.sqrt n) = n
-    rw [Nat.pair, ite_eq_left h]
-    omega
-  else
-    rw [ite_eq_right h]
-    have hge : Nat.sqrt n ≤ n - Nat.sqrt n * Nat.sqrt n := Nat.le_of_not_lt h
-    have hlt : ¬ Nat.sqrt n < n - Nat.sqrt n * Nat.sqrt n - Nat.sqrt n := by omega
-    show Nat.pair (Nat.sqrt n) (n - Nat.sqrt n * Nat.sqrt n - Nat.sqrt n) = n
-    rw [Nat.pair, ite_eq_right hlt]
-    omega
 
 /-! ## Choice-free primitive-recursive arithmetic
 
@@ -235,7 +186,7 @@ theorem primrec_id : Nat.Primrec id :=
   (Nat.Primrec.left.pair Nat.Primrec.right).of_eq fun n => pair_unpair n
 
 /-- The `prec` recursor for addition computes the sum. -/
-private theorem rec_add (a b : ℕ) : Nat.rec a (fun _ IH => IH + 1) b = a + b := by
+theorem rec_add (a b : ℕ) : Nat.rec a (fun _ IH => IH + 1) b = a + b := by
   induction b with
   | zero => rfl
   | succ k ih => show Nat.rec a (fun _ IH => IH + 1) k + 1 = a + (k + 1); omega
@@ -321,22 +272,14 @@ theorem primrec_sub₂ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primre
   (primrec_sub.comp (hf.pair hg)).of_eq fun n => by
     simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
 
-/-- Choice-free primitive-recursive **selection**: `selectFn c a b = a` if `c = 1`, `= b` if `c = 0`
-(for a `{0,1}`-valued `c`), via `c * a + (1 - c) * b`. -/
-def selectFn (c a b : ℕ) : ℕ := c * a + (1 - c) * b
 
-@[simp] theorem selectFn_one (a b : ℕ) : selectFn 1 a b = a := by simp [selectFn]
 
-@[simp] theorem selectFn_zero (a b : ℕ) : selectFn 0 a b = b := by simp [selectFn]
 
 /-- `selectFn` of primitive-recursive `c, a, b` is primitive recursive. -/
 theorem primrec_selectFn {c a b : ℕ → ℕ} (hc : Nat.Primrec c) (ha : Nat.Primrec a)
     (hb : Nat.Primrec b) : Nat.Primrec (fun n => selectFn (c n) (a n) (b n)) :=
   primrec_add₂ (primrec_mul₂ hc ha) (primrec_mul₂ (primrec_sub₂ (Nat.Primrec.const 1) hc) hb)
 
-@[simp] theorem selectFn_ite {c : Prop} [Decidable c] (a b : ℕ) :
-    selectFn (if c then 1 else 0) a b = if c then a else b := by
-  split <;> simp [selectFn]
 
 /-! ## "Recursively decidable" predicates (Scott's notion, Definition 7.1)
 
@@ -345,17 +288,8 @@ function. Tuples are coded by `Nat.pair`. These are the building blocks Scott's 
 (relations on indices), and the closure lemmas (`of_iff`, `comp` = reindex, `and`) let us derive the
 inclusion- and equality-deciders. All choice-free. -/
 
-/-- A unary predicate `p : ℕ → Prop` is **recursively decidable**. -/
-def RecDecidable (p : ℕ → Prop) : Prop :=
-  ∃ f : ℕ → ℕ, Nat.Primrec f ∧ ∀ n, p n ↔ f n = 1
 
-/-- A binary relation is recursively decidable when its `Nat.pair`-coding is. -/
-def RecDecidable₂ (r : ℕ → ℕ → Prop) : Prop :=
-  RecDecidable fun t => r t.unpair.1 t.unpair.2
 
-/-- A ternary relation is recursively decidable when its `Nat.pair`-coding (`pair n (pair m k)`) is. -/
-def RecDecidable₃ (r : ℕ → ℕ → ℕ → Prop) : Prop :=
-  RecDecidable fun t => r t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2
 
 /-- Recursive decidability transfers across a pointwise logical equivalence. -/
 theorem RecDecidable.of_iff {p q : ℕ → Prop} (h : ∀ n, q n ↔ p n) (hp : RecDecidable p) :
@@ -445,14 +379,7 @@ identically false), exactly as r.e. sets require. Every recursively decidable pr
 (`RecDecidable.re`, dropping the search variable), and r.e.-ness transfers across pointwise
 equivalence (`REPred.of_iff`). All choice-free. -/
 
-/-- A unary predicate `p : ℕ → Prop` is **recursively enumerable**: it is the projection of a
-recursively decidable relation, `p n ↔ ∃ i, q (Nat.pair i n)`. -/
-def REPred (p : ℕ → Prop) : Prop :=
-  ∃ q : ℕ → Prop, RecDecidable q ∧ ∀ n, p n ↔ ∃ i, q (Nat.pair i n)
 
-/-- A binary relation is recursively enumerable when its `Nat.pair`-coding is. -/
-def REPred₂ (r : ℕ → ℕ → Prop) : Prop :=
-  REPred fun t => r t.unpair.1 t.unpair.2
 
 /-- **Every recursively decidable predicate is recursively enumerable.** Use the decider as the
 relation `q ⟨i, n⟩ := p n` (a reindex of `p` along `unpair.2`, dropping the search variable `i`); the
@@ -571,25 +498,12 @@ genuinely primitive-recursive `foldCode`. The key results are:
 `foldStep` walks one entry: the state is `pair remainingCode accumulator`; an empty remaining code
 (`= 0`) is a fixed point, otherwise it pops the head and applies `stp`. -/
 
-/-- `b ≤ pair a b` (choice-free; avoids mathlib's `Nat.right_le_pair` to keep the axiom set clean). -/
-theorem le_pair_right (a b : ℕ) : b ≤ Nat.pair a b := by
-  have hbb : b ≤ b * b := by
-    rcases Nat.eq_zero_or_pos b with h | h
-    · simp [h]
-    · exact Nat.le_mul_of_pos_left b h
-  unfold Nat.pair
-  split <;> omega
 
 /-- `a ≤ pair a b` (choice-free). -/
 theorem le_pair_left (a b : ℕ) : a ≤ Nat.pair a b := by
   unfold Nat.pair
   split <;> omega
 
-/-- Encode a list of naturals as a single natural: `[] ↦ 0`, `a :: l ↦ pair a (encodeList l) + 1`.
-The `+1` keeps the empty list (code `0`) distinguishable from any nonempty list. -/
-def encodeList : List ℕ → ℕ
-  | [] => 0
-  | a :: l => Nat.pair a (encodeList l) + 1
 
 /-- The length of a list is bounded by its code; this is the fuel bound that lets a `c`-fold iterate
 enough times to consume the whole list coded by `c`. -/
@@ -601,13 +515,6 @@ theorem encodeList_length_le : ∀ l : List ℕ, l.length ≤ encodeList l
     have hle : encodeList l ≤ Nat.pair a (encodeList l) := le_pair_right a (encodeList l)
     omega
 
-/-- One step of the code-walking fold. The state `s = pair rc acc` carries the remaining code `rc`
-and accumulator `acc`. If `rc = 0` the state is a fixed point; otherwise `rc - 1 = pair head tail`,
-and the step pops `head`, recurses on `tail`, and updates `acc := stp (pair head (pair acc params))`. -/
-def foldStep (stp : ℕ → ℕ) (params s : ℕ) : ℕ :=
-  selectFn (1 - s.unpair.1) s
-    (Nat.pair (s.unpair.1 - 1).unpair.2
-      (stp (Nat.pair (s.unpair.1 - 1).unpair.1 (Nat.pair s.unpair.2 params))))
 
 /-- Empty remaining code: the fold state is unchanged. -/
 theorem foldStep_zero (stp : ℕ → ℕ) (params acc : ℕ) :
@@ -625,10 +532,6 @@ theorem foldStep_pos (stp : ℕ → ℕ) (params a t acc : ℕ) :
   have h2 : Nat.pair a t + 1 - 1 = Nat.pair a t := by omega
   rw [h1, h2, selectFn_zero, unpair_pair_fst, unpair_pair_snd]
 
-/-- Fold the list coded by `c`, threading accumulator `z` and parameter `params`. Implemented as
-`c`-fold iteration of `foldStep` from the initial state `pair c z`, projecting out the accumulator. -/
-def foldCode (stp : ℕ → ℕ) (params z c : ℕ) : ℕ :=
-  ((foldStep stp params)^[c] (Nat.pair c z)).unpair.2
 
 /-- `Nat.rec` with a counter-independent step is just function iteration (choice-free). Needed to
 bridge the `Nat.Primrec.prec` form (a `Nat.rec`) with `foldCode`'s `Function.iterate` form. -/
@@ -671,10 +574,6 @@ theorem foldCode_eq (stp : ℕ → ℕ) (params z : ℕ) (l : List ℕ) :
   unfold foldCode
   exact foldStep_iterate stp params (encodeList l) l z (encodeList_length_le l)
 
-/-- `n.unpair.2 ≤ n` (choice-free); the decreasing measure for `decodeList`. -/
-theorem unpair_snd_le (n : ℕ) : n.unpair.2 ≤ n := by
-  have h := le_pair_right n.unpair.1 n.unpair.2
-  rwa [pair_unpair] at h
 
 theorem unpair_left_le (n : ℕ) : n.unpair.1 ≤ n := by
   have h := le_pair_left n.unpair.1 n.unpair.2
@@ -697,12 +596,6 @@ theorem pair_le_pair {a b a' b' : ℕ} (ha : a ≤ a') (hb : b ≤ b') :
     Nat.pair a b ≤ Nat.pair a' b' :=
   le_trans (pair_le_pair_left b ha) (pair_le_pair_right' a' hb)
 
-/-- Decode a natural back into a list of naturals, inverting `encodeList`. Well-founded on the
-remaining code (`c.unpair.2 ≤ c < c + 1`). -/
-def decodeList : ℕ → List ℕ
-  | 0 => []
-  | (c + 1) => c.unpair.1 :: decodeList c.unpair.2
-decreasing_by exact Nat.lt_succ_of_le (unpair_snd_le c)
 
 theorem decodeList_zero : decodeList 0 = [] := by rw [decodeList]
 
@@ -787,11 +680,6 @@ time: at each entry it reads `b % 2` (is this entry in the subset?) and recurses
 division/modulus by the literal `2` is needed — which `omega` discharges directly — so this stays
 choice-free without a general `div`/`mod`. Computed jointly by `halfParity n = pair (n/2) (n%2)`. -/
 
-/-- `halfParity n = pair (n / 2) (n % 2)`, built by structural recursion: from `(h, p)` for `n`, the
-value for `n+1` is `(h + p, 1 - p)` (carry on odd→even). -/
-def halfParity (n : ℕ) : ℕ :=
-  Nat.rec (motive := fun _ => ℕ) 0
-    (fun _ ih => Nat.pair (ih.unpair.1 + ih.unpair.2) (1 - ih.unpair.2)) n
 
 /-! ## Bounded quantifiers for recursively decidable predicates
 
@@ -800,17 +688,11 @@ step-pairs is consistent iff for **every** subset (coded by a bitmask `b < 2^q`)
 holds. Bounded quantification of a recursively decidable predicate is again recursively decidable —
 choice-free, via an explicit `Nat.rec` fold of the `{0,1}` indicator. -/
 
-/-- Indicator of `v = 1`, as a `{0,1}`-valued primitive-recursive function. -/
-def isOne (v : ℕ) : ℕ := 1 - ((v - 1) + (1 - v))
 
 theorem isOne_le_one (v : ℕ) : isOne v ≤ 1 := by unfold isOne; omega
 
-theorem isOne_eq_one_iff (v : ℕ) : isOne v = 1 ↔ v = 1 := by
-  unfold isOne; constructor <;> (intro h; omega)
 
-@[simp] theorem isOne_one : isOne 1 = 1 := (isOne_eq_one_iff 1).2 rfl
 
-@[simp] theorem isOne_zero : isOne 0 = 0 := by unfold isOne; omega
 
 theorem isOne_of_ne_one {v : ℕ} (h : v ≠ 1) : isOne v = 0 := by
   unfold isOne
@@ -821,8 +703,6 @@ theorem primrec_isOne : Nat.Primrec isOne :=
     (primrec_add₂ (primrec_sub₂ primrec_id (Nat.Primrec.const 1))
       (primrec_sub₂ (Nat.Primrec.const 1) primrec_id))
 
-/-- `{0,1}` test for `n = 0`. -/
-def isZero (n : ℕ) : ℕ := 1 - min n 1
 
 theorem isZero_eq_one_iff (n : ℕ) : isZero n = 1 ↔ n = 0 := by
   unfold isZero; omega
@@ -844,10 +724,6 @@ theorem primrec_le {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g)
     Nat.Primrec (fun n => isZero (f n - g n)) :=
   primrec_isZero.comp (primrec_sub₂ hf hg)
 
-/-- The `{0,1}`-valued bounded-`∀` indicator: `1` iff `g (pair i n) = 1` for all `i < N`. Folded
-right-to-left with `selectFn` so the result stays in `{0,1}`. -/
-def bForallFn (g : ℕ → ℕ) (n N : ℕ) : ℕ :=
-  Nat.rec (motive := fun _ => ℕ) 1 (fun i ih => selectFn ih (isOne (g (Nat.pair i n))) 0) N
 
 theorem bForallFn_le_one (g : ℕ → ℕ) (n N : ℕ) : bForallFn g n N ≤ 1 := by
   induction N with
@@ -885,10 +761,6 @@ theorem bForallFn_eq_one_iff (g : ℕ → ℕ) (n N : ℕ) :
         · subst heq; exact hgN
       · intro hall; exact hall N (Nat.lt_succ_self N)
 
-/-- The `{0,1}`-valued bounded-`∃` indicator: `1` iff `∃ i < N, g (pair i n) = 1`. Folded
-right-to-left with `selectFn` so the result stays in `{0,1}`. -/
-def bExistsFn (g : ℕ → ℕ) (n N : ℕ) : ℕ :=
-  Nat.rec (motive := fun _ => ℕ) 0 (fun i ih => selectFn ih 1 (isOne (g (Nat.pair i n)))) N
 
 theorem bExistsFn_le_one (g : ℕ → ℕ) (n N : ℕ) : bExistsFn g n N ≤ 1 := by
   induction N with
@@ -983,23 +855,8 @@ The "computable elements = computable maps" half of Theorem 7.5 needs r.e.-ness 
 r.e."; choice-free we realise the search for the finite tuple of witnesses as a *single* code `w`
 whose decoded list supplies one witness per list entry, threaded through a `foldCode`. -/
 
-/-- The pure (set-theoretic) witness-threading fold step. The accumulator is `pair remWitness flag`:
-at the list head `x` we pop a witness `i` (the `decodeList` head of `remWitness`, i.e.
-`(remWitness - 1).unpair.1`) with new remaining code `(remWitness - 1).unpair.2`, and `AND` the flag
-with `isOne (qc ⟨i, x⟩)`. -/
-def reForallF (qc : ℕ → ℕ) (acc x : ℕ) : ℕ :=
-  Nat.pair (acc.unpair.1 - 1).unpair.2
-    (selectFn acc.unpair.2 (isOne (qc (Nat.pair (acc.unpair.1 - 1).unpair.1 x))) 0)
 
-/-- The `foldCode`-form step (parameter unused), used to package `reForallF` primitive-recursively. -/
-def reForallStp (qc : ℕ → ℕ) (w : ℕ) : ℕ :=
-  Nat.pair (w.unpair.2.unpair.1.unpair.1 - 1).unpair.2
-    (selectFn w.unpair.2.unpair.1.unpair.2
-      (isOne (qc (Nat.pair (w.unpair.2.unpair.1.unpair.1 - 1).unpair.1 w.unpair.1))) 0)
 
-/-- The `{0,1}`-flag computed by threading witness code `w` through the list coded by `c`. -/
-def reForallChar (qc : ℕ → ℕ) (w c : ℕ) : ℕ :=
-  (foldCode (reForallStp qc) 0 (Nat.pair w 1) c).unpair.2
 
 theorem reForallStp_eq (qc : ℕ → ℕ) (acc x : ℕ) :
     reForallStp qc (Nat.pair x (Nat.pair acc 0)) = reForallF qc acc x := by
@@ -1179,15 +1036,8 @@ theorem REPred.forall_mem_decodeList {p : ℕ → Prop} (hp : REPred p) :
 list of pairs `⟨n, e⟩` (order is irrelevant under `∀ ∈`), so the parameterised body becomes the
 plain `fun s => p s.1 s.2` over the re-coded list. -/
 
-/-- Prepend the *pair* `⟨n, x⟩` onto the list coded by `acc`. -/
-def mapPairStep (n acc x : ℕ) : ℕ := Nat.pair (Nat.pair n x) acc + 1
 
-/-- `foldCode`-shaped wrapper of `mapPairStep` (parameter `n` threaded via the `params` slot). -/
-def mapPairStp (w : ℕ) : ℕ :=
-  mapPairStep w.unpair.2.unpair.2 w.unpair.2.unpair.1 w.unpair.1
 
-/-- **`mapPairCode n c`** codes the list `(decodeList c).map ⟨n, ·⟩` (reversed). -/
-def mapPairCode (n c : ℕ) : ℕ := foldCode mapPairStp n 0 c
 
 /-! ## Choice-free primitive-recursive bitwise OR (for Example 7.8, the powerset `PN`)
 
@@ -1202,9 +1052,6 @@ mathlib's `Nat.lor` is defined through `Nat.bitwise`/`binaryRec`, none of which 
 bit of each argument, ORs them, and accumulates with a doubling weight). The result coincides with
 `Nat.lor` (`myLor_eq_lor`), so all the set-level facts can use mathlib's clean `Nat.testBit_lor`. -/
 
-/-- The low-bit OR `(x ||| y) % 2`, in arithmetic `{0,1}`-valued form (so it is primitive recursive
-without referring to `Nat.lor`). Equal to `(x ||| y) % 2` by `lowOr_eq_mod`. -/
-def lowOr (x y : ℕ) : ℕ := 1 - (1 - (x % 2 + y % 2))
 
 /-- `lowOr x y = (x ||| y) % 2`: both sides depend only on the low bits `x % 2`, `y % 2`. -/
 theorem lowOr_eq_mod (x y : ℕ) : lowOr x y = (x ||| y) % 2 := by
@@ -1227,16 +1074,7 @@ theorem lowOr_eq_mod (x y : ℕ) : lowOr x y = (x ||| y) % 2 := by
   · -- x%2=1, y%2=1
     rw [key.mpr (Or.inl hx)]
 
-/-- Packed iteration state `pair (pair curA curB) (pair weight acc)` for the bitwise-OR fold. -/
-def lorStep (s : ℕ) : ℕ :=
-  Nat.pair (Nat.pair (s.unpair.1.unpair.1 / 2) (s.unpair.1.unpair.2 / 2))
-    (Nat.pair (2 * s.unpair.2.unpair.1)
-      (s.unpair.2.unpair.2 + s.unpair.2.unpair.1 * lowOr s.unpair.1.unpair.1 s.unpair.1.unpair.2))
 
-/-- The iterative bitwise OR: iterate `lorStep` `a + b` times (enough to consume every set bit of `a`
-and `b`) from the initial state, and read off the accumulator. -/
-def myLor (a b : ℕ) : ℕ :=
-  (lorStep^[a + b] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.2
 
 /-- One recursion step for `Nat.lor` on the low bit: `x ||| y = 2 (x/2 ||| y/2) + lowOr x y`. -/
 theorem lor_low_rec (x y : ℕ) : x ||| y = 2 * (x / 2 ||| y / 2) + lowOr x y := by
@@ -1314,19 +1152,9 @@ no witness threading. These are exactly what Scott's Smyth power-domain equality
 choice-free. The list is coded by the *first* argument; the *second* argument is a free parameter
 threaded through the `foldCode` `params` slot. -/
 
-/-- AND-fold step (`foldCode` shape): `acc ↦ acc ∧ isOne (g ⟨head, params⟩)`. -/
-def allListStp (g : ℕ → ℕ) (w : ℕ) : ℕ :=
-  selectFn w.unpair.2.unpair.1 (isOne (g (Nat.pair w.unpair.1 w.unpair.2.unpair.2))) 0
 
-/-- OR-fold step (`foldCode` shape): `acc ↦ acc ∨ isOne (g ⟨head, params⟩)`. -/
-def existsListStp (g : ℕ → ℕ) (w : ℕ) : ℕ :=
-  selectFn w.unpair.2.unpair.1 1 (isOne (g (Nat.pair w.unpair.1 w.unpair.2.unpair.2)))
 
-/-- The `{0,1}` flag of the bounded `∀ e ∈ decodeList c, g ⟨e, p⟩ = 1`. -/
-def allListChar (g : ℕ → ℕ) (p c : ℕ) : ℕ := foldCode (allListStp g) p 1 c
 
-/-- The `{0,1}` flag of the bounded `∃ e ∈ decodeList c, g ⟨e, p⟩ = 1`. -/
-def existsListChar (g : ℕ → ℕ) (p c : ℕ) : ℕ := foldCode (existsListStp g) p 0 c
 
 theorem allListStp_eq (g : ℕ → ℕ) (acc x p : ℕ) :
     allListStp g (Nat.pair x (Nat.pair acc p)) = selectFn acc (isOne (g (Nat.pair x p))) 0 := by
@@ -1409,9 +1237,6 @@ theorem primrec_allListStp {g : ℕ → ℕ} (hg : Nat.Primrec g) : Nat.Primrec 
     primrec_isOne.comp (hg.comp (hx.pair hp))
   exact (primrec_selectFn hacc hcall (Nat.Primrec.const 0)).of_eq fun _ => rfl
 
-/-- `{0,1}` flag: `1` iff `n` encodes a binary digit (`0` or `1`). -/
-def isBinDigit (n : ℕ) : ℕ :=
-  selectFn (isOne (1 - n)) 1 (selectFn (isOne (2 - n)) 1 0)
 
 theorem isBinDigit_eq_one_iff (n : ℕ) : isBinDigit n = 1 ↔ n = 0 ∨ n = 1 := by
   unfold isBinDigit selectFn isOne
@@ -1423,9 +1248,6 @@ theorem primrec_isBinDigit : Nat.Primrec isBinDigit := by
   refine (primrec_selectFn h01 (Nat.Primrec.const 1)
     (primrec_selectFn h12 (Nat.Primrec.const 1) (Nat.Primrec.const 0))).of_eq fun _ => rfl
 
-/-- `{0,1}` flag: every entry of `decodeList c` is a binary digit. -/
-def allBinDigitsChar (c : ℕ) : ℕ :=
-  allListChar (fun t => isBinDigit t.unpair.1) 0 c
 
 theorem allBinDigitsChar_eq_one_iff (c : ℕ) :
     allBinDigitsChar c = 1 ↔ ∀ x ∈ decodeList c, x = 0 ∨ x = 1 := by
@@ -1450,22 +1272,12 @@ primitive-recursive list **indexing** `nthCode c i d = (decodeList c).getD i d` 
 `tabCode g p B` coding `[g⟨0,p⟩, …, g⟨B-1,p⟩]` (used for the intersection function). Both choice-free,
 both built from the existing `foldCode`/`Nat.Primrec.prec` engine. -/
 
-/-- `foldCode`-shaped indexing step. State `pair counter result`, parameter the target index `i`;
-bump the counter and overwrite the result exactly when `counter = i` (via the `{0,1}` equality bit
-`1 - ((counter - i) + (i - counter))`). -/
-def nthStp (w : ℕ) : ℕ :=
-  Nat.pair (w.unpair.2.unpair.1.unpair.1 + 1)
-    (selectFn (1 - ((w.unpair.2.unpair.1.unpair.1 - w.unpair.2.unpair.2)
-        + (w.unpair.2.unpair.2 - w.unpair.2.unpair.1.unpair.1)))
-      w.unpair.1 w.unpair.2.unpair.1.unpair.2)
 
 theorem nthStp_val (i x s r : ℕ) :
     nthStp (Nat.pair x (Nat.pair (Nat.pair s r) i))
       = Nat.pair (s + 1) (selectFn (1 - ((s - i) + (i - s))) x r) := by
   unfold nthStp; simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- **Primitive-recursive indexing into a coded list.** `nthCode c i d = (decodeList c).getD i d`. -/
-def nthCode (c i d : ℕ) : ℕ := (foldCode nthStp i (Nat.pair 0 d) c).unpair.2
 
 theorem nthCode_foldl (i : ℕ) : ∀ (l : List ℕ) (s r : ℕ),
     (List.foldl (fun acc x => nthStp (Nat.pair x (Nat.pair acc i))) (Nat.pair s r) l).unpair.2
@@ -1516,21 +1328,12 @@ theorem primrec_nthCode : Nat.Primrec
     ((Nat.Primrec.const 0).pair (Nat.Primrec.right.comp Nat.Primrec.right)) Nat.Primrec.left
   exact (Nat.Primrec.right.comp hfold).of_eq fun _ => rfl
 
-/-- `tabCode`'s recursion step, in the `Nat.Primrec.prec` packaging: the state is
-`pair a (pair y IH)` with `a = pair B p`; it prepends `g⟨B-1-y, p⟩` onto the tail `IH`. -/
-def tabStep (g : ℕ → ℕ) (w : ℕ) : ℕ :=
-  Nat.pair (g (Nat.pair (w.unpair.1.unpair.1 - 1 - w.unpair.2.unpair.1) w.unpair.1.unpair.2))
-    w.unpair.2.unpair.2 + 1
 
 theorem tabStep_val (g : ℕ → ℕ) (a y IH : ℕ) :
     tabStep g (Nat.pair a (Nat.pair y IH))
       = Nat.pair (g (Nat.pair (a.unpair.1 - 1 - y) a.unpair.2)) IH + 1 := by
   unfold tabStep; simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- **Primitive-recursive tabulation.** With `a = pair B p`, `tabCode g a B` codes the list
-`[g⟨0,p⟩, g⟨1,p⟩, …, g⟨B-1,p⟩]` (length `B`). Built directly from the `prec` step `tabStep`. -/
-def tabCode (g : ℕ → ℕ) (a B : ℕ) : ℕ :=
-  Nat.rec (motive := fun _ => ℕ) 0 (fun y IH => tabStep g (Nat.pair a (Nat.pair y IH))) B
 
 /-- After `K ≤ B` steps the accumulated code decodes to the indices `B-K, …, B-1`. -/
 theorem decodeList_tabCode_aux (g : ℕ → ℕ) (B p : ℕ) :
@@ -1636,18 +1439,7 @@ course-of-values recursion: tabulate `F fuel` at every code up to a bound as a c
 always `≤ c` (chains of `Nat.unpair` projections), a table covering `[0, c]` is self-sufficient
 throughout the whole recursion — no growing/re-tabulating needed as fuel increases. -/
 
-/-- One fuel-recursion step, applied to every code in `[0, bound]` at once. `bodyLookup`
-represents `Body`'s step with `prev` replaced by table lookup: semantically `bodyLookup (pair
-table c) = Body (fun c' => nthCode table c' 0) c` (see `fuelTable_eq_of_recursion`). -/
-def fuelTableStep (bodyLookup : ℕ → ℕ) (bound prevTable : ℕ) : ℕ :=
-  tabCode (fun w => bodyLookup (Nat.pair w.unpair.2 w.unpair.1))
-    (Nat.pair (bound + 1) prevTable) (bound + 1)
 
-/-- Tabulates the fuel-recursive function with base value `0` and step `bodyLookup` at every code
-in `[0, bound]`, as a coded list, for `fuel` iterations. -/
-def fuelTable (bodyLookup : ℕ → ℕ) (bound fuel : ℕ) : ℕ :=
-  Nat.rec (motive := fun _ => ℕ) (tabCode (fun _ => 0) (Nat.pair (bound + 1) 0) (bound + 1))
-    (fun _ prevTable => fuelTableStep bodyLookup bound prevTable) fuel
 
 /-- Tag-dispatch on `e.unpair.1 ∈ {0,1,2,3}` (else `fdef e`). -/
 theorem primrec_tagCase4 {f0 f1 f2 f3 fdef : ℕ → ℕ}
@@ -1678,8 +1470,6 @@ theorem primrec_tagCase4 {f0 f1 f2 f3 fdef : ℕ → ℕ}
 Mirrors tag dispatch on `c.unpair.1 ∈ {0,1,2,3}`; at `fuel + 1` recurses at `fuel` on sub-codes
 for `.cat`/`.cap`. Shallow link **7.22i(b)1(d–e)** uses dispatch lemmas from **7.22i(b)1(c)**. -/
 
-/-- `{0,1}` AND on flags (both must be `1`). -/
-def mulBit (a b : ℕ) : ℕ := a * b
 
 theorem mulBit_eq_one_iff (a b : ℕ) : mulBit a b = 1 ↔ a = 1 ∧ b = 1 := by
   simp [mulBit]
@@ -1692,14 +1482,6 @@ theorem mulBit_le_one {a b : ℕ} (ha : a ≤ 1) (hb : b ≤ 1) : mulBit a b ≤
 theorem primrec_mulBit : Nat.Primrec (fun t => mulBit t.unpair.1 t.unpair.2) :=
   primrec_mul₂ Nat.Primrec.left Nat.Primrec.right
 
-/-- One step of fuel-bounded decode-ok (previous fuel level supplied as `prev`). -/
-def decodeFuelOkCharBody (prev : ℕ → ℕ) (c : ℕ) : ℕ :=
-  let sub := mulBit (prev c.unpair.2.unpair.1) (prev c.unpair.2.unpair.2)
-  selectFn (isOne (1 - c.unpair.1))
-    (selectFn (isOne (1 - c.unpair.2)) 1 0)
-    (selectFn (isOne (2 - c.unpair.1)) (allBinDigitsChar c.unpair.2)
-      (selectFn (isOne (3 - c.unpair.1)) sub
-        (selectFn (isOne (4 - c.unpair.1)) sub 0)))
 
 /-- Tag-dispatch form of `decodeFuelOkCharBody` (**7.22i(b)1(c)**). -/
 theorem decodeFuelOkCharBody_eq (prev : ℕ → ℕ) (c : ℕ) :
@@ -1736,10 +1518,6 @@ theorem decodeFuelOkCharBody_eq (prev : ℕ → ℕ) (c : ℕ) :
     have hne4 : isOne (4 - (t + 4)) = 0 := isOne_of_ne_one (by omega)
     simp only [hne1, hne2, hne3, hne4, selectFn_zero]
 
-/-- `{0,1}` flag: `1` iff fuel-bounded `SExpr` decode succeeds on code `c`. -/
-def decodeFuelOkChar : ℕ → ℕ → ℕ
-  | 0, _ => 0
-  | fuel + 1, c => decodeFuelOkCharBody (decodeFuelOkChar fuel) c
 
 theorem primrec_decodeFuelOkCharBody {prev : ℕ → ℕ} (hprev : Nat.Primrec prev) :
     Nat.Primrec (fun c => decodeFuelOkCharBody prev c) := by
@@ -1773,24 +1551,16 @@ theorem decodeFuelOkCharBody_local (f g : ℕ → ℕ) (c : ℕ) (h : ∀ c' ≤
   have h2 : c.unpair.2.unpair.2 ≤ c := le_trans (unpair_snd_le c.unpair.2) (unpair_snd_le c)
   rw [h _ h1, h _ h2]
 
-/-- `decodeFuelOkCharBody`'s step, with `prev` replaced by table lookup: `w.unpair.1` is the
-previous fuel level's table, `w.unpair.2` is the code being queried. -/
-def decodeFuelOkCharLookup (w : ℕ) : ℕ :=
-  decodeFuelOkCharBody (fun c' => nthCode w.unpair.1 c' 0) w.unpair.2
 
 /-! ## Exercise 7.22 C9b2 — coded list length
 
 `listLenChar c` = `(decodeList c).length`, via a `foldCode` counter (**7.22i(b)2**). -/
 
-/-- Length fold step: ignore head/params, increment accumulator. -/
-def listLenStp (w : ℕ) : ℕ := w.unpair.2.unpair.1 + 1
 
 theorem listLenStp_eq (acc x p : ℕ) :
     listLenStp (Nat.pair x (Nat.pair acc p)) = acc + 1 := by
   unfold listLenStp; simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- Coded list length: `(decodeList c).length`. -/
-def listLenChar (c : ℕ) : ℕ := foldCode listLenStp 0 0 c
 
 theorem listLenChar_eq (c : ℕ) : listLenChar c = (decodeList c).length := by
   have hfun : (fun acc x => listLenStp (Nat.pair x (Nat.pair acc 0))) = fun acc _ => acc + 1 := by
@@ -1818,11 +1588,7 @@ theorem primrec_listLenChar : Nat.Primrec listLenChar := by
 Synchronized `foldCode` over `c1` threading remainder-code of `c2` (**7.22i(b)3**). No witness
 search — decidable elementwise equality only. -/
 
-/-- `{0,1}` nat-equality char (reused in C9b tag/element comparisons). -/
-def natEqChar (a b : ℕ) : ℕ := 1 - ((a - b) + (b - a))
 
-@[simp] theorem natEqChar_eq_one_iff (a b : ℕ) : natEqChar a b = 1 ↔ a = b := by
-  unfold natEqChar; omega
 
 theorem natEqChar_le_one (a b : ℕ) : natEqChar a b ≤ 1 := by unfold natEqChar; omega
 
@@ -1834,18 +1600,8 @@ theorem primrec_natEqChar : Nat.Primrec (fun t => natEqChar t.unpair.1 t.unpair.
     (primrec_add₂ (primrec_sub₂ Nat.Primrec.left Nat.Primrec.right)
       (primrec_sub₂ Nat.Primrec.right Nat.Primrec.left))).of_eq fun _ => rfl
 
-/-- Non-empty-`remC2` branch of `listEqStp`. -/
-def listEqStpNonzero (w : ℕ) : ℕ :=
-  Nat.pair
-    (selectFn w.unpair.2.unpair.1.unpair.1
-      (natEqChar w.unpair.1 ((w.unpair.2.unpair.1.unpair.2 - 1).unpair.1)) 0)
-    ((w.unpair.2.unpair.1.unpair.2 - 1).unpair.2)
 
-/-- Fold step: state `pair flag remC2`; consume one head of `c1`, peel one cons off `remC2`. -/
-def listEqStp (w : ℕ) : ℕ :=
-  selectFn (isZero w.unpair.2.unpair.1.unpair.2) (Nat.pair 0 0) (listEqStpNonzero w)
 
-private def listEqStep (st x : ℕ) : ℕ := listEqStp (Nat.pair x (Nat.pair st 0))
 
 theorem listEqStp_acc (flag rem x : ℕ) :
     listEqStp (Nat.pair x (Nat.pair (Nat.pair flag rem) 0)) =
@@ -1854,10 +1610,6 @@ theorem listEqStp_acc (flag rem x : ℕ) :
   unfold listEqStp listEqStpNonzero
   simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-- `listEqChar c1 c2 = 1 ↔ decodeList c1 = decodeList c2`. -/
-def listEqChar (c1 c2 : ℕ) : ℕ :=
-  let r := foldCode listEqStp 0 (Nat.pair 1 c2) c1
-  mulBit r.unpair.1 (isZero r.unpair.2)
 
 theorem decodeList_eq_nil_iff (c : ℕ) : decodeList c = [] ↔ c = 0 := by
   constructor
@@ -2012,38 +1764,11 @@ theorem primrec_listEqChar : Nat.Primrec (fun t => listEqChar t.unpair.1 t.unpai
 Built via `tabCode` + `nthCode`/`listLenChar` (no snoc/reverse fold). Correctness goes through
 `tabCode_nth_lt`/`tabCode_nth_ge` + `nthCode_eq` only. -/
 
-/-- Tabulation lookup for `appendListCode`: params `pair c1 (pair c2 len1)`. -/
-def appendListTabFn (w : ℕ) : ℕ :=
-  let i := w.unpair.1
-  let p := w.unpair.2
-  let len1 := p.unpair.2.unpair.2
-  selectFn (isZero ((i + 1) - len1))
-    (nthCode p.unpair.1 i 0)
-    (nthCode p.unpair.2.unpair.1 (i - len1) 0)
 
-/-- Coded list append: `decodeList (appendListCode c1 c2) = decodeList c1 ++ decodeList c2`. -/
-def appendListCode (c1 c2 : ℕ) : ℕ :=
-  let len1 := listLenChar c1
-  let len2 := listLenChar c2
-  tabCode appendListTabFn (Nat.pair (len1 + len2) (Nat.pair c1 (Nat.pair c2 len1))) (len1 + len2)
 
-/-- Tabulation lookup for `takeCode`: params `pair n c`. -/
-def takeListTabFn (w : ℕ) : ℕ := nthCode (w.unpair.2.unpair.2) w.unpair.1 0
 
-/-- Coded list take: `decodeList (takeCode n c) = (decodeList c).take n`. -/
-def takeCode (n c : ℕ) : ℕ :=
-  let len := listLenChar c
-  let B := Nat.min n len
-  tabCode takeListTabFn (Nat.pair B (Nat.pair n c)) B
 
-/-- Tabulation lookup for `dropCode`: params `pair n c`. -/
-def dropListTabFn (w : ℕ) : ℕ :=
-  nthCode (w.unpair.2.unpair.2) (w.unpair.1 + w.unpair.2.unpair.1) 0
 
-/-- Coded list drop: `decodeList (dropCode n c) = (decodeList c).drop n`. -/
-def dropCode (n c : ℕ) : ℕ :=
-  let len := listLenChar c
-  tabCode dropListTabFn (Nat.pair (len - n) (Nat.pair n c)) (len - n)
 
 /-- Two lists agree when every `getD` index does. (Choice-free: `by_contra`/`Classical.choice` is
 avoided by case-splitting on `Nat.lt_trichotomy` — a decidable fact — instead.) -/
@@ -2252,26 +1977,11 @@ Fuel-bounded numeric mirrors of `autStateCard` / `matchesB` with tag dispatch li
 (tags `0..3`, payloads at `c.unpair.2` / nested pairs). -/
 
 open DomainTheory.NeighbourhoodSystems Exercise722
+open DomainTheory.NeighbourhoodSystems.Exercise722
 
-/-- **Not** `private`: `Exercise722Presentation.lean` (downstream of this file via `Definition71`)
-bridges this to its own `boolNat` in Session **C9b7**, since `Recursive.lean` cannot import
-`Exercise722Presentation.lean` (would cycle) and so cannot state that bridge itself. -/
-def c9b5_boolNat (b : Bool) : ℕ := if b then 1 else 0
 
-def c9b5_encodeListBool (σ : List Bool) : ℕ := encodeList (σ.map c9b5_boolNat)
 
-def c9b5_sexprDepth : SExpr → ℕ
-  | .sigma => 1
-  | .single _ => 1
-  | .cat a b => 1 + max (c9b5_sexprDepth a) (c9b5_sexprDepth b)
-  | .cap a b => 1 + max (c9b5_sexprDepth a) (c9b5_sexprDepth b)
 
-/-- Gödel code mirroring `SExpr.encode` in `Exercise722Presentation.lean`. -/
-def c9b5_sexprGodelEncode : SExpr → ℕ
-  | .sigma => Nat.pair 0 0
-  | .single σ => Nat.pair 1 (c9b5_encodeListBool σ)
-  | .cat a b => Nat.pair 2 (Nat.pair (c9b5_sexprGodelEncode a) (c9b5_sexprGodelEncode b))
-  | .cap a b => Nat.pair 3 (Nat.pair (c9b5_sexprGodelEncode a) (c9b5_sexprGodelEncode b))
 
 private theorem c9b5_decodeList_encodeListBool (σ : List Bool) :
     decodeList (c9b5_encodeListBool σ) = σ.map c9b5_boolNat := by
@@ -2324,17 +2034,6 @@ private theorem c9b5_listEqChar_encodeListBool (w σ : List Bool) :
     listEqChar (c9b5_encodeListBool w) (c9b5_encodeListBool σ) = 1 ↔ w = σ := by
   simp only [listEqChar_eq_one_iff, c9b5_decodeList_encodeListBool, c9b5_map_boolNat_eq_iff]
 
-/-- One fuel step of state-card counting (previous fuel level as `prev`). -/
-def autStateCardFuelCharBody (prev : ℕ → ℕ) (c : ℕ) : ℕ :=
-  let subAdd := prev c.unpair.2.unpair.1 + prev c.unpair.2.unpair.2
-  let subMul := prev c.unpair.2.unpair.1 * prev c.unpair.2.unpair.2
-  selectFn (isOne (1 - c.unpair.1))
-    1
-    (selectFn (isOne (2 - c.unpair.1))
-      (listLenChar c.unpair.2 + 2)
-      (selectFn (isOne (3 - c.unpair.1))
-        subAdd
-        (selectFn (isOne (4 - c.unpair.1)) subMul 0)))
 
 theorem autStateCardFuelCharBody_eq (prev : ℕ → ℕ) (c : ℕ) :
     autStateCardFuelCharBody prev c =
@@ -2371,10 +2070,6 @@ theorem autStateCardFuelCharBody_eq (prev : ℕ → ℕ) (c : ℕ) :
     have hne4 : isOne (4 - (t + 4)) = 0 := isOne_of_ne_one (by omega)
     simp only [hne1, hne2, hne3, hne4, selectFn_zero]
 
-/-- Fuel-bounded mirror of `autStateCard` on Gödel codes. -/
-def autStateCardFuelChar : ℕ → ℕ → ℕ
-  | 0, _ => 0
-  | fuel + 1, c => autStateCardFuelCharBody (autStateCardFuelChar fuel) c
 
 theorem autStateCardFuelChar_eq_autStateCard {fuel : ℕ} {e : SExpr}
     (h : c9b5_sexprDepth e ≤ fuel) :
@@ -2438,30 +2133,8 @@ theorem autStateCardFuelCharBody_local (f g : ℕ → ℕ) (c : ℕ) (h : ∀ c'
   have h2 : c.unpair.2.unpair.2 ≤ c := le_trans (unpair_snd_le c.unpair.2) (unpair_snd_le c)
   rw [h _ h1, h _ h2]
 
-/-- `autStateCardFuelCharBody`'s step, with `prev` replaced by table lookup. -/
-def autStateCardFuelCharLookup (w : ℕ) : ℕ :=
-  autStateCardFuelCharBody (fun c' => nthCode w.unpair.1 c' 0) w.unpair.2
 
-/-- Cat-branch step for `matchesBCharBody` (`p` = `pair cutPoint (pair c cw)`). -/
-def matchesBCatG (prev : ℕ → ℕ) (p : ℕ) : ℕ :=
-  let i := p.unpair.1
-  let c := p.unpair.2.unpair.1
-  let cw := p.unpair.2.unpair.2
-  mulBit (prev (Nat.pair c.unpair.2.unpair.1 (takeCode i cw)))
-        (prev (Nat.pair c.unpair.2.unpair.2 (dropCode i cw)))
 
-/-- One fuel step of `matchesB` (packed subcode+word at `prev`). -/
-def matchesBCharBody (prev : ℕ → ℕ) (c cw : ℕ) : ℕ :=
-  let catExist := bExistsFn (matchesBCatG prev) (Nat.pair c cw) (listLenChar cw + 1)
-  let capAnd := mulBit (prev (Nat.pair c.unpair.2.unpair.1 cw))
-                    (prev (Nat.pair c.unpair.2.unpair.2 cw))
-  selectFn (isOne (1 - c.unpair.1))
-    1
-    (selectFn (isOne (2 - c.unpair.1))
-      (listEqChar cw c.unpair.2)
-      (selectFn (isOne (3 - c.unpair.1))
-        catExist
-        (selectFn (isOne (4 - c.unpair.1)) capAnd 0)))
 
 theorem matchesBCharBody_eq (prev : ℕ → ℕ) (c cw : ℕ) :
     matchesBCharBody prev c cw =
@@ -2501,11 +2174,6 @@ theorem matchesBCharBody_eq (prev : ℕ → ℕ) (c cw : ℕ) :
     have hne4 : isOne (4 - (t + 4)) = 0 := isOne_of_ne_one (by omega)
     simp only [hne1, hne2, hne3, hne4, selectFn_zero]
 
-/-- Fuel-bounded `{0,1}` mirror of `matchesB`. -/
-def matchesBChar : ℕ → ℕ → ℕ → ℕ
-  | 0, _, _ => 0
-  | fuel + 1, c, cw =>
-      matchesBCharBody (fun p => matchesBChar fuel p.unpair.1 p.unpair.2) c cw
 
 private theorem c9b5_matchesBCatG_char (fuel : ℕ) (a b : SExpr) (w : List Bool) (i : ℕ) :
     matchesBCatG (fun p => matchesBChar fuel p.unpair.1 p.unpair.2)
@@ -2675,24 +2343,13 @@ theorem matchesBCharBody_local (f g : ℕ → ℕ) (c cw : ℕ)
     rw [h _ h1, h _ h2]
   | _ + 4 => rfl
 
-/-- `matchesBCatG`'s step, with `prev` replaced by table lookup: `w.unpair.1` is the table,
-`w.unpair.2` is the packed `pair i (pair c cw)`. -/
-def matchesBCatGLookup (w : ℕ) : ℕ :=
-  matchesBCatG (fun p' => nthCode w.unpair.1 p' 0) w.unpair.2
 
-/-- `matchesBCharBody`'s step, with `prev` replaced by table lookup. -/
-def matchesBCharBodyLookup (w : ℕ) : ℕ :=
-  matchesBCharBody (fun p' => nthCode w.unpair.1 p' 0) w.unpair.2.unpair.1 w.unpair.2.unpair.2
 
 /-! ## Exercise 7.22 C9b6 — `decideNonemptyBChar`, `consistentBChar`
 
 Bounded index search over valid bit-list codes (via `codeBound`) instead of materializing
 `wordsUpToCode`. -/
 
-/-- Upper bound on Gödel codes of `{0,1}`-lists of length at most `n`. -/
-def codeBound : ℕ → ℕ
-  | 0 => 1
-  | n + 1 => Nat.pair 1 (codeBound n) + 1
 
 /-- `Nat.pair 0 t < Nat.pair 1 b` whenever `t < b`, via mathlib's `Nat.pair` monotonicity
 in each argument (`pair_lt_pair_right` then `pair_lt_pair_left`). -/
@@ -2747,8 +2404,6 @@ private theorem c9b6_encodeListBool_lt_codeBound {n : ℕ} {w : List Bool} (hw :
     obtain ⟨b, _, hb⟩ := hx
     cases b <;> simp [c9b5_boolNat] at hb <;> omega
 
-private def c9b6_decodeListBool (c : ℕ) : List Bool :=
-  (decodeList c).map fun n => decide (n = 1)
 
 private theorem c9b6_boolNat_decide_eq (x : ℕ) (hx : x = 0 ∨ x = 1) :
     c9b5_boolNat (decide (x = 1)) = x := by
@@ -2772,14 +2427,6 @@ private theorem c9b6_matchesBChar_of_allBin {fuel : ℕ} {e : SExpr} {c : ℕ}
   apply (matchesBChar_eq_one_iff (w := c9b6_decodeListBool c) h).1
   rwa [c9b6_encodeListBool_decodeListBool_of_allBin hall]
 
-/-- `{0,1}` non-emptiness decider: bounded search over valid bit-list codes. The candidate
-word's Gödel code `i` and the target `c_e` are threaded through `bExistsFn`'s own parameter slot
-(`n := c_e`) rather than a fixed `0`, so `primrec_decideNonemptyBChar` composes directly out of
-`primrec_bExistsFn`. -/
-def decideNonemptyBChar (fuel : ℕ) (c_e : ℕ) : ℕ :=
-  bExistsFn (fun p =>
-      mulBit (allBinDigitsChar p.unpair.1) (matchesBChar fuel p.unpair.2 p.unpair.1))
-    c_e (codeBound (autStateCardFuelChar fuel c_e))
 
 theorem decideNonemptyBChar_eq_one_iff {fuel : ℕ} {e : SExpr}
     (h : c9b5_sexprDepth e ≤ fuel) :
@@ -2796,16 +2443,11 @@ theorem decideNonemptyBChar_eq_one_iff {fuel : ℕ} {e : SExpr}
     rw [autStateCardFuelChar_eq_autStateCard h]
     exact c9b6_encodeListBool_lt_codeBound (by rwa [mem_wordsUpTo] at hwmem)
 
-/-- Tag-3 cap code matching `SExpr.encode` / `c9b5_sexprGodelEncode`. -/
-def capCode (a b : ℕ) : ℕ := Nat.pair 3 (Nat.pair a b)
 
 theorem c9b6_sexprGodelEncode_cap (a b : SExpr) :
     c9b5_sexprGodelEncode (.cap a b) = capCode (c9b5_sexprGodelEncode a) (c9b5_sexprGodelEncode b) :=
   rfl
 
-/-- `{0,1}` cap-consistency decider on Gödel codes. -/
-def consistentBChar (fuel : ℕ) (c1 c2 : ℕ) : ℕ :=
-  decideNonemptyBChar fuel (capCode c1 c2)
 
 /-! ### `decideNonemptyBChar`/`consistentBChar` jointly primitive recursive in `(fuel, code)`
 
@@ -2826,28 +2468,11 @@ acceptance does). That construction is cited here **only** for its length bound
 search calling `matchesB`, which already has a joint `(fuel, code)`-primitive-recursive mirror
 (`matchesBChar`, C9b5/C9b8). Only the *bound formula* and the *bounded-forall* wiring are new. -/
 
-/-- Numeric mirror of `Fintype.card (Finset (autState e₁) × Finset (autState e₂))`
-(`exists_diff_word_short`'s state-count bound), via `autStateCard_eq_card` +
-`Fintype.card_finset`/`card_prod`. -/
-def subsetBoundChar (fuel c1 c2 : ℕ) : ℕ :=
-  2 ^ (autStateCardFuelChar fuel c1) * 2 ^ (autStateCardFuelChar fuel c2)
 
-/-- `{0,1}` gate: code `i` is a valid bit-string of length `≤ subsetBoundChar fuel c1 c2`. Screens
-out both non-bit-string codes (`allBinDigitsChar`) and over-long ones (`listLenChar` vs the bound),
-so the bounded-forall search below never needs the (false) converse of `codeBound_ge`. -/
-def subsetGuardChar (fuel c1 c2 i : ℕ) : ℕ :=
-  mulBit (allBinDigitsChar i) (isOne (1 - (listLenChar i - subsetBoundChar fuel c1 c2)))
 
 theorem subsetGuardChar_le_one (fuel c1 c2 i : ℕ) : subsetGuardChar fuel c1 c2 i ≤ 1 :=
   mulBit_le_one (allBinDigitsChar_le_one _) (isOne_le_one _)
 
-@[irreducible] def subsetBChar (fuel c1 c2 : ℕ) : ℕ :=
-  bForallFn (fun p =>
-      selectFn (subsetGuardChar fuel p.unpair.2.unpair.1 p.unpair.2.unpair.2 p.unpair.1)
-        (selectFn (matchesBChar fuel p.unpair.2.unpair.1 p.unpair.1)
-          (matchesBChar fuel p.unpair.2.unpair.2 p.unpair.1) 1)
-        1)
-    (Nat.pair c1 c2) (codeBound (subsetBoundChar fuel c1 c2))
 
 set_option maxHeartbeats 800000 in
 theorem subsetBChar_eq_one_iff {fuel : ℕ} {e1 e2 : SExpr}
@@ -2925,6 +2550,4 @@ theorem subsetBChar_eq_one_iff {fuel : ℕ} {e1 e2 : SExpr}
           omega
         rw [hc1', selectFn_zero]
 
-@[irreducible] def interEqChar (fuel c1 c2 : ℕ) : ℕ :=
-  mulBit (subsetBChar fuel c1 c2) (subsetBChar fuel c2 c1)
 end Domain.Recursive

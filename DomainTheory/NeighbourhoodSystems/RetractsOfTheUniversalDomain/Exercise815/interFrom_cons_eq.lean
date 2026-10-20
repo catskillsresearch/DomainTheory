@@ -1,0 +1,43 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.mem_finGenSys
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem Domain.Recursive
+
+variable {α : Type*} {D : NeighborhoodSystem α}
+
+section FinGen
+
+variable (P : ComputablePresentation D)
+
+/-- `interFrom P A (j :: sub)` splits off the head as an intersection with `P.X j` — a pure
+set-theoretic fact from `mem_interFrom`'s characterization. -/
+theorem interFrom_cons_eq (A : Set α) (j : ℕ) (sub : List ℕ) :
+    interFrom P A (j :: sub) = P.X j ∩ interFrom P A sub := by
+  apply Set.ext
+  intro z
+  rw [Set.mem_inter_iff, mem_interFrom, mem_interFrom, List.forall_mem_cons]
+  tauto
+
+end FinGen
+
+end DomainTheory.NeighbourhoodSystems

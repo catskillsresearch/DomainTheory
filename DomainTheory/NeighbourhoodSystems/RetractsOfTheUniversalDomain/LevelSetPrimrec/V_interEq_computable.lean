@@ -1,0 +1,66 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.myUpsample
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.primrec_myUpsample
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.canonIdx
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.primrec_canonIdx
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.VX
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.levelSet_eq_iff_myUpsample_eq
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.VinterRaw
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.primrec_VinterRaw
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.levelSet_VinterRaw
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open Domain.Recursive NeighborhoodSystem
+
+/-- **7.1(i) for `V`**: `Xₙ ∩ Xₘ = X_k` is recursively decidable, reduced to `myUpsample` equality
+of the raw intersection code against `X_k`'s own code (`levelSet_eq_iff_myUpsample_eq`). -/
+theorem V_interEq_computable : RecDecidable₃ (fun n m k => VX n ∩ VX m = VX k) := by
+  unfold RecDecidable₃
+  have hvr : Nat.Primrec (fun t : ℕ => VinterRaw t.unpair.1 t.unpair.2.unpair.1) :=
+    (primrec_VinterRaw.comp (Nat.Primrec.left.pair
+      (Nat.Primrec.left.comp Nat.Primrec.right))).of_eq fun t => by
+      simp only [unpair_pair_fst, unpair_pair_snd]
+  have hvrK : Nat.Primrec (fun t : ℕ => (VinterRaw t.unpair.1 t.unpair.2.unpair.1).unpair.1) :=
+    Nat.Primrec.left.comp hvr
+  have hvrM : Nat.Primrec (fun t : ℕ => (VinterRaw t.unpair.1 t.unpair.2.unpair.1).unpair.2) :=
+    Nat.Primrec.right.comp hvr
+  have hck : Nat.Primrec (fun t : ℕ => canonIdx t.unpair.2.unpair.2) :=
+    primrec_canonIdx.comp (Nat.Primrec.right.comp Nat.Primrec.right)
+  have hckK : Nat.Primrec (fun t : ℕ => (canonIdx t.unpair.2.unpair.2).unpair.1) :=
+    Nat.Primrec.left.comp hck
+  have hckM : Nat.Primrec (fun t : ℕ => (canonIdx t.unpair.2.unpair.2).unpair.2) :=
+    Nat.Primrec.right.comp hck
+  have hkJ : Nat.Primrec (fun t : ℕ =>
+      max (VinterRaw t.unpair.1 t.unpair.2.unpair.1).unpair.1 (canonIdx t.unpair.2.unpair.2).unpair.1) :=
+    primrec_max hvrK hckK
+  have hLHS : Nat.Primrec (fun t : ℕ => myUpsample (VinterRaw t.unpair.1 t.unpair.2.unpair.1).unpair.1
+      (max (VinterRaw t.unpair.1 t.unpair.2.unpair.1).unpair.1 (canonIdx t.unpair.2.unpair.2).unpair.1)
+      (VinterRaw t.unpair.1 t.unpair.2.unpair.1).unpair.2) :=
+    (primrec_myUpsample.comp (hvrK.pair (hkJ.pair hvrM))).of_eq fun t => by
+      simp only [unpair_pair_fst, unpair_pair_snd]
+  have hRHS : Nat.Primrec (fun t : ℕ => myUpsample (canonIdx t.unpair.2.unpair.2).unpair.1
+      (max (VinterRaw t.unpair.1 t.unpair.2.unpair.1).unpair.1 (canonIdx t.unpair.2.unpair.2).unpair.1)
+      (canonIdx t.unpair.2.unpair.2).unpair.2) :=
+    (primrec_myUpsample.comp (hckK.pair (hkJ.pair hckM))).of_eq fun t => by
+      simp only [unpair_pair_fst, unpair_pair_snd]
+  refine RecDecidable.of_iff (fun t => ?_) (RecDecidable.natEq hLHS hRHS)
+  dsimp only
+  rw [← levelSet_VinterRaw, ← levelSet_eq_iff_myUpsample_eq]
+  rfl
+
+end DomainTheory.NeighbourhoodSystems

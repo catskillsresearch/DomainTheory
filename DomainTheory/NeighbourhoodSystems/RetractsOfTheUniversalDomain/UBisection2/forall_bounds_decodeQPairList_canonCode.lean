@@ -1,0 +1,41 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open Domain.Recursive NeighborhoodSystem
+
+/-- **Every pair of `decodeQPairList (canonCode c)` has both endpoints in `[0, 1]`** — mirrors
+`forall_lt_decodeQPairList_canonCode` (nondegeneracy), giving the companion boundedness fact. -/
+theorem forall_bounds_decodeQPairList_canonCode (c : ℕ) :
+    ∀ p ∈ decodeQPairList (canonCode c), 0 ≤ p.1 ∧ p.2 ≤ 1 := by
+  unfold canonCode
+  by_cases hz : canonListCode c = 0
+  · have hzero : isZero (canonListCode c) = 1 := by rw [hz]; exact (isZero_eq_one_iff 0).mpr rfl
+    rw [hzero, selectFn_one]
+    intro p hp
+    rw [decodeQPairList_masterCode, List.mem_singleton] at hp
+    rw [hp]; norm_num
+  · have hzero : isZero (canonListCode c) = 0 := by
+      by_contra hcontra
+      have h1 := isZero_le_one (canonListCode c)
+      exact hz ((isZero_eq_one_iff _).mp (by omega))
+    rw [hzero, selectFn_zero]
+    intro p hp
+    obtain ⟨p0, -, -, rfl⟩ := (mem_decodeQPairList_canonListCode c p).mp hp
+    exact ⟨le_sup_right, inf_le_right⟩
+
+end DomainTheory.NeighbourhoodSystems

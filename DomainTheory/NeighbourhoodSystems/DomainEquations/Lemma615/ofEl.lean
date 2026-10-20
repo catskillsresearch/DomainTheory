@@ -1,0 +1,56 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.IsGen
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.isGen_master
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.isGen_exists
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.isGen_mono'
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.isGen_inter
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Dprime
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.mem_Dprime
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Dprime_subsystem
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Basic.notation4
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap
+
+variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
+
+section ProjectionPair
+
+variable (i : ApproximableMap D E) (j : ApproximableMap E D)
+
+/-- **Inverse map of the isomorphism `D ≅ D'`.** `y ↦ {X ∣ ∃ Y ∈ y, IsGen i j X Y}`. (Needs both
+laws: `j ∘ i = I_D` for generator existence and `i ∘ j ⊆ I_E` for `isGen_mono'`.) -/
+def ofEl (hji : j.comp i = idMap D) (hij : i.comp j ≤ idMap E)
+    (y : (Dprime i j).Element) : D.Element where
+  mem X := ∃ Y, y.mem Y ∧ IsGen i j X Y
+  sub := by rintro X ⟨Y, _, hg⟩; exact i.rel_dom hg.1
+  master_mem := ⟨E.master, y.master_mem, isGen_master i j⟩
+  inter_mem := by
+    rintro X₁ X₂ ⟨Y₁, hY₁y, hg₁⟩ ⟨Y₂, hY₂y, hg₂⟩
+    have hyInter : y.mem (Y₁ ∩ Y₂) := y.inter_mem hY₁y hY₂y
+    have hEInter : E.mem (Y₁ ∩ Y₂) := (Dprime_subsystem i j).sub (y.sub hyInter)
+    exact ⟨Y₁ ∩ Y₂, hyInter, isGen_inter i j hg₁ hg₂ hEInter⟩
+  up_mem := by
+    rintro X X' ⟨Y, hYy, hg⟩ hDX' hXX'
+    obtain ⟨Y', hg'⟩ := isGen_exists i j hji hDX'
+    have hYY' : Y ⊆ Y' := isGen_mono' i j hij hg hg' hXX'
+    exact ⟨Y', y.up_mem hYy ⟨X', hg'⟩ hYY', hg'⟩
+
+end ProjectionPair
+
+end DomainTheory.NeighbourhoodSystems

@@ -13,6 +13,33 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.hcover
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.genAtom_empty_iff
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.unionUX
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.wY
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.wState
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.stateRem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.statePos
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.stateNeg
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.stateCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.packState
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomBase
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomStep
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.datomDec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCodeState
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUPos
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUNeg
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.deltaOf
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUEmpty
+import all DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.encodeBits
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.yFoldStep
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.yFold
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.YseqCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Yc
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.stateRem_packState
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.statePos_packState
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.stateNeg_packState
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.stateCode_packState
+import all DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.encodeBits
 
 @[expose] public section
 
@@ -87,10 +114,6 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-! ## Union of two `U`-codes via `appendCode` (list concatenation, up to order) -/
 
-/-- **`unionUX n m` codes `UX n ∪ UX m`.** Canonicalizes both inputs first (mirroring `Uinter`),
-then concatenates; the result is always a genuine `U`-neighbourhood since a union of two such is
-again presentable, non-empty, and `⊆ [0,1)`. -/
-def unionUX (n m : ℕ) : ℕ := appendCode (canonCode n) (canonCode m)
 
 /-! ## The code-native atom recursion
 
@@ -111,53 +134,12 @@ section AtomCode
 
 variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 
-/-- Extract the current depth `y` from a packed step-input `w = pair k (pair y state)`. -/
-def wY (w : ℕ) : ℕ := w.unpair.2.unpair.1
 
-/-- Extract the packed `(remK, posC, negC, uCode)` state from `w = pair k (pair y state)`. -/
-def wState (w : ℕ) : ℕ := w.unpair.2.unpair.2
 
-def stateRem (s : ℕ) : ℕ := s.unpair.1
-def statePos (s : ℕ) : ℕ := s.unpair.2.unpair.1
-def stateNeg (s : ℕ) : ℕ := s.unpair.2.unpair.2.unpair.1
-def stateCode (s : ℕ) : ℕ := s.unpair.2.unpair.2.unpair.2
 
-/-- Pack `(remK, posC, negC, uCode)` into a single state code. -/
-def packState (remK posC negC uCode : ℕ) : ℕ := Nat.pair remK (Nat.pair posC (Nat.pair negC uCode))
 
-@[simp] theorem stateRem_packState (a b c d : ℕ) : stateRem (packState a b c d) = a := by
-  unfold stateRem packState; simp only [unpair_pair_fst]
-@[simp] theorem statePos_packState (a b c d : ℕ) : statePos (packState a b c d) = b := by
-  unfold statePos packState; simp only [unpair_pair_fst, unpair_pair_snd]
-@[simp] theorem stateNeg_packState (a b c d : ℕ) : stateNeg (packState a b c d) = c := by
-  unfold stateNeg packState; simp only [unpair_pair_fst, unpair_pair_snd]
-@[simp] theorem stateCode_packState (a b c d : ℕ) : stateCode (packState a b c d) = d := by
-  unfold stateCode packState; simp only [unpair_pair_snd]
 
-/-- The initial state at depth `0`: no constraints yet (`posC = negC = 0`, the empty-list code),
-`U`-side code is `U.master`'s (`UmasterIdx`), and the unconsumed bit-source is the whole of `k`. -/
-def atomBase (k : ℕ) : ℕ := packState k 0 0 UmasterIdx
 
-/-- **The per-step state transition.** `datomDec` should be `DAtom_recDecidable (P0 P)`'s extracted
-decider (`datomDec (pair posC negC) = 1 ↔ DAtom (P0 P) (decodeList posC) (decodeList negC) = ∅`);
-kept abstract here so `Nat.Primrec`-ness can be proved once and reused. `bit := remK % 2`, then:
-`posC' := pair y posC + 1` / `negC' := pair y negC + 1` are the candidate accumulators with the
-current index `y` prepended; `emptyI`/`emptyJ` decide whether the "+"/"-"-refinements are already
-`D`-side empty; the new `U`-code either stays `0` (junk, `D`-side empty), is carried over unchanged
-(the refinement equals the old atom outright), or is `splitULeft`/`splitURight` of the old code
-(a genuine split). -/
-def atomStep (datomDec : ℕ → ℕ) (w : ℕ) : ℕ :=
-  let y := wY w
-  let s := wState w
-  let bit := stateRem s % 2
-  let posC' := Nat.pair y (statePos s) + 1
-  let negC' := Nat.pair y (stateNeg s) + 1
-  let emptyI := datomDec (Nat.pair posC' (stateNeg s))
-  let emptyJ := datomDec (Nat.pair (statePos s) negC')
-  packState (stateRem s / 2) (selectFn bit posC' (statePos s)) (selectFn bit (stateNeg s) negC')
-    (selectFn bit
-      (selectFn emptyI 0 (selectFn emptyJ (stateCode s) (splitULeft (stateCode s))))
-      (selectFn emptyJ 0 (selectFn emptyI (stateCode s) (splitURight (stateCode s)))))
 
 end AtomCode
 
@@ -165,14 +147,6 @@ end AtomCode
 
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- **The extracted `D`-atom-emptiness decider for `P0 P`.** Obtained non-constructively
-(`Classical.choice`, via `RecDecidable`'s bare existential) from `DAtom_recDecidable (P0 P)`; the
-resulting *function* is exactly as computable as any other `Nat.Primrec` function in this
-codebase — only *naming* it needs choice, mirroring `DprimeUPresentation`'s own `noncomputable`.
-Wrapped in `isOne` so the result is *literally* `{0,1}`-valued (not just "`= 1` iff ..."): `(vii)(1)`'s
-`selectFn`-based case analysis on `emptyI`/`emptyJ` needs the *exact* value `0` on the false side, not
-merely `≠ 1` (`selectFn`, unlike a genuine `if`, is only well-behaved on a literal `0`/`1` condition). -/
-noncomputable def datomDec : ℕ → ℕ := fun n => isOne ((DAtom_recDecidable (P0 P)).choose n)
 
 theorem datomDec_spec (posC negC : ℕ) :
     datomDec P (Nat.pair posC negC) = 1 ↔ DAtom (P0 P) (decodeList posC) (decodeList negC) = ∅ := by
@@ -185,19 +159,7 @@ theorem datomDec_spec (posC negC : ℕ) :
 
 theorem datomDec_le_one (n : ℕ) : datomDec P n ≤ 1 := by unfold datomDec; exact isOne_le_one _
 
-/-- **The full state recursion**, packing `atomBase`/`atomStep (datomDec P)` via `Nat.Primrec.prec`:
-`atomUCodeState P (pair k n)` is the depth-`n` state for bit-source `k`. -/
-noncomputable def atomUCodeState (t : ℕ) : ℕ :=
-  t.unpair.2.rec (atomBase t.unpair.1) (fun y IH => atomStep (datomDec P) (Nat.pair t.unpair.1 (Nat.pair y IH)))
 
-/-- **The depth-`n` accumulated positive-index code**, for bit-source `k`. -/
-noncomputable def atomUPos (n k : ℕ) : ℕ := statePos (atomUCodeState P (Nat.pair k n))
-/-- **The depth-`n` accumulated negative-index code**, for bit-source `k`. -/
-noncomputable def atomUNeg (n k : ℕ) : ℕ := stateNeg (atomUCodeState P (Nat.pair k n))
-/-- **The depth-`n` `U`-side code**, for bit-source `k` (meaningful exactly when the matching
-`D`-side atom, `DAtom (P0 P) (decodeList (atomUPos P n k)) (decodeList (atomUNeg P n k))`, is
-non-empty — see `genAtom_atomUCode` below). -/
-noncomputable def atomUCode (n k : ℕ) : ℕ := stateCode (atomUCodeState P (Nat.pair k n))
 
 /-! ## Per-step correctness: the `D`-side atom is tracked exactly -/
 
@@ -218,9 +180,6 @@ theorem DAtom_cons_neg (Q : ComputablePresentation D) (j : ℕ) (pos neg : List 
   · rintro ⟨hj, hpos, hneg⟩
     exact ⟨hpos, fun i hi => hi.elim (fun h => h ▸ hj) (hneg i)⟩
 
-/-- **The bit-sequence associated to a bit-source `k`**: `deltaOf k i = true` iff bit `i` of `k`
-(read low-bit-first, matching `atomStep`'s `remK % 2`/`remK / 2` peeling) is `1`. -/
-def deltaOf (k : ℕ) : ℕ → Bool := fun i => decide ((k / 2 ^ i) % 2 = 1)
 
 /-- **Unfolding `atomUCodeState` one step.** -/
 theorem atomUCodeState_succ (k n : ℕ) :
@@ -309,9 +268,6 @@ verbatim; instead:
   be excluded; `(vii)(2)`'s `YseqCode` filters junk `k`'s out of its union, so this restricted
   disjointness is exactly what is needed downstream. -/
 
-/-- **`D`-side atom emptiness at depth `n`, for bit-source `k`** — `1` iff the accumulated
-`(pos, neg)` constraint pair already denotes the empty `D`-index atom. -/
-noncomputable def atomUEmpty (n k : ℕ) : ℕ := datomDec P (Nat.pair (atomUPos P n k) (atomUNeg P n k))
 
 theorem atomUEmpty_eq_one_iff (n k : ℕ) :
     atomUEmpty P n k = 1 ↔ DAtom (P0 P) (decodeList (atomUPos P n k)) (decodeList (atomUNeg P n k)) = ∅ :=
@@ -575,9 +531,6 @@ Purely a `Prop`-level existence tool (never claimed `Nat.Primrec`): given *any* 
 the *abstract* nonemptiness fact "every index's own atom is nonempty" into a concrete witness
 bit-source for `yFold`'s search range. -/
 
-private def encodeBits (δ : ℕ → Bool) : ℕ → ℕ
-  | 0 => 0
-  | n + 1 => encodeBits δ n + (if δ n then 2 ^ n else 0)
 
 private theorem encodeBits_lt (δ : ℕ → Bool) : ∀ n, encodeBits δ n < 2 ^ n
   | 0 => by simp [encodeBits]
@@ -649,36 +602,12 @@ theorem exists_atomUEmpty_zero (n : ℕ) : ∃ i < 2 ^ n, atomUEmpty P (n + 1) (
 (mirroring `atomStep`'s own convention), so that feeding it directly into `Nat.Primrec.prec` needs
 no further unpair/pair bookkeeping. -/
 
-/-- One step of the depth-`n` union fold over bit-sources `i + 2ⁿ` (bit `n` forced `1`): silently
-skip over `D`-side-empty ("junk") atoms — whose code is frozen at the aliasing value `0`
-(`atomUCode_eq_zero_of_empty`) and would otherwise contribute the spurious `UX 0 = U.master` to the
-union — and union in every genuine (non-junk) atom's code via `unionUX`. The accumulator is packed
-as `(found, code)`: `found = 0` means "no genuine atom seen among the earlier `i' < i` yet" (`code`
-is junk and unused in that case); `found = 1` means `code` already holds the union of all genuine
-atoms seen so far. -/
-noncomputable def yFoldStep (w : ℕ) : ℕ :=
-  let n := w.unpair.1
-  let i := w.unpair.2.unpair.1
-  let acc := w.unpair.2.unpair.2
-  let k := i + 2 ^ n
-  selectFn (atomUEmpty P (n + 1) k) acc
-    (selectFn acc.unpair.1
-      (Nat.pair 1 (unionUX acc.unpair.2 (atomUCode P (n + 1) k)))
-      (Nat.pair 1 (atomUCode P (n + 1) k)))
 
-/-- The depth-`n` union fold over `i < N`, starting from the "nothing found yet" accumulator
-`(0, 0)`. -/
-noncomputable def yFold (n N : ℕ) : ℕ :=
-  N.rec (Nat.pair 0 0) (fun i acc => yFoldStep P (Nat.pair n (Nat.pair i acc)))
 
 /-! ### Correctness: `yFold`'s "found" flag and running union, by induction on `N` -/
 
 /-! ### `YseqCode`: assembling the fold at `N = 2ⁿ` -/
 
-/-- **`YseqCode`, Scott's `Yₙ` coded.** The `Nat.Primrec` union, over the `2ⁿ` bit-sources
-`i < 2ⁿ` (bit `n` forced `1`, i.e. `i + 2ⁿ`), of the genuine (non-junk) atoms `atomUCode P (n+1)
-(i + 2ⁿ)`. -/
-noncomputable def YseqCode (n : ℕ) : ℕ := (yFold P n (2 ^ n)).unpair.2
 
 /-! ### The closed form: `YseqCode` recovers the "+"-piece of the atom recursion
 
@@ -687,7 +616,4 @@ atom recursion is exactly the intersection of the depth-`n` atom with `YseqCode`
 disjointness (`atomUCode_disjoint`) is what rules out any *other* atom leaking a point into
 `UX (YseqCode P n)` that isn't already forced into this one. -/
 
-/-- **`Yc P`, the `Set`-valued family underlying `YseqCode`** — the code-native analogue of
-`Theorem88.lean`'s abstract `Yseq`, used to state the `genAtom`-closed-form correspondence below. -/
-def Yc (m : ℕ) : Set ℚ := UX (YseqCode P m)
 end DomainTheory.NeighbourhoodSystems

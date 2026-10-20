@@ -1,0 +1,51 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.ContinuousLattice.InverseLimits
+public import Mathlib.Order.Hom.Basic
+import all Mathlib.Order.Hom.Basic
+public import Mathlib.Topology.Homeomorph.Defs
+import all Mathlib.Topology.Homeomorph.Defs
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.CLat
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.BasicInst5
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerType_zero
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.BasicInst8
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerToMap_coe
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.DInfFn
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.ContinuousLattice
+
+universe u
+
+attribute [instance] CLat.str
+
+section LimitMaps
+
+variable (D₀ : CLat.{u})
+  (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
+
+/-- `j_∞` evaluated at `f` is the supremum of the summands `jInfTerm n f`. -/
+theorem projInfInf_apply (f : DInfFn D₀ j₀) :
+    projInfInf D₀ j₀ f = ⨆ n, jInfTerm D₀ j₀ n f := by
+  show (sSup (Set.range (jInfTerm D₀ j₀)) : ScottMap _ _) f = _
+  rw [ScottMap.sSup_apply, ← Set.range_comp, sSup_range]
+  rfl
+
+end LimitMaps
+
+end DomainTheory.ContinuousLattice

@@ -8,6 +8,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Words.wordsUpTo
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Words.anyMatchesB
 public meta import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.Basic
 
 @[expose] public section
@@ -24,15 +26,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
-/-- Every word over `{false,true}` of length at most `n`, listed without duplicates. -/
-def wordsUpTo : ℕ → List (List Bool)
-  | 0 => [[]]
-  | n + 1 =>
-    (wordsUpTo n) ++ (wordsUpTo n).flatMap fun w => [[false] ++ w, [true] ++ w]
 
-/-- True iff some word in `ws` is accepted by `matchesB e`. -/
-def anyMatchesB (e : SExpr) (ws : List (List Bool)) : Bool := ws.any (matchesB e)
-
-#eval anyMatchesB .sigma (wordsUpTo 0) -- should be `true` (the empty word lies in Σ)
 end Exercise722
 end DomainTheory.NeighbourhoodSystems

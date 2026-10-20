@@ -8,6 +8,16 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.qpClipLt
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.qpClipGe
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.clipLtCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.clipGeCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.clipLtListCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.clipGeListCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.firstElemCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.splitMidCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.splitULeft
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU.splitURight
 
 @[expose] public section
 
@@ -43,21 +53,11 @@ open Domain.Recursive NeighborhoodSystem
 
 /-! ### Public one-sided clips (`Definition87.lean`'s `clipLt`/`clipGe` are `private`) -/
 
-/-- Clip a pair down to `(-∞, m)`: leave the left endpoint, clamp the right endpoint at `m`. -/
-def qpClipLt (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1, p.2 ⊓ m)
 
-/-- Clip a pair up to `[m, ∞)`: clamp the left endpoint at `m`, leave the right endpoint. -/
-def qpClipGe (m : ℚ) (p : ℚ × ℚ) : ℚ × ℚ := (p.1 ⊔ m, p.2)
 
 /-! ### One-sided clips, at the code level -/
 
-/-- Clip a rational-pair code `e` to `(-∞, decodeRat m)`, given `t = pair m e`. -/
-def clipLtCode (t : ℕ) : ℕ :=
-  Nat.pair t.unpair.2.unpair.1 (ratMinCode (Nat.pair t.unpair.2.unpair.2 t.unpair.1))
 
-/-- Clip a rational-pair code `e` to `[decodeRat m, ∞)`, given `t = pair m e`. -/
-def clipGeCode (t : ℕ) : ℕ :=
-  Nat.pair (ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1)) t.unpair.2.unpair.2
 
 /-! ### Mapping a one-sided clip over a whole list, at the code level
 
@@ -65,30 +65,15 @@ def clipGeCode (t : ℕ) : ℕ :=
 threaded through as a *fixed* parameter — exactly what's needed here, with `x := m` the (already
 computed) midpoint code and `f := fun t => [clip t]` (singleton). -/
 
-/-- Clip every pair of the list-code `c` into `(-∞, decodeRat m)`. -/
-def clipLtListCode (m c : ℕ) : ℕ := flatMapCode (fun t => Nat.pair (clipLtCode t) 0 + 1) m c
 
-/-- Clip every pair of the list-code `c` into `[decodeRat m, ∞)`. -/
-def clipGeListCode (m c : ℕ) : ℕ := flatMapCode (fun t => Nat.pair (clipGeCode t) 0 + 1) m c
 
 /-! ### The first pair of a non-empty list code -/
 
-/-- The code of the head element of a non-empty list-code `c` (`decodeList c`'s head). Junk
-(`0`'s `unpair.1`) when `c = 0`, but we only ever apply it to `canonCode n ≠ 0`
-(`canonCode_ne_zero`). -/
-def firstElemCode (c : ℕ) : ℕ := (c - 1).unpair.1
 
 /-! ### `splitU`: the canonical midpoint split -/
 
-/-- The midpoint code of the first pair of `canonCode n`'s presenting list. -/
-def splitMidCode (n : ℕ) : ℕ := ratMidCode (firstElemCode (canonCode n))
 
-/-- The "left" half of the canonical split of `Xₙ`: `Xₙ ∩ (-∞, m)` for `m` the midpoint of `Xₙ`'s
-first presenting pair. -/
-def splitULeft (n : ℕ) : ℕ := clipLtListCode (splitMidCode n) (canonCode n)
 
-/-- The "right" half of the canonical split of `Xₙ`: `Xₙ ∩ [m, ∞)`. -/
-def splitURight (n : ℕ) : ℕ := clipGeListCode (splitMidCode n) (canonCode n)
 
 /-! ### Correctness -/
 end DomainTheory.NeighbourhoodSystems

@@ -9,6 +9,11 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.fixedNbhd
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.IsCompactElt
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.sectionMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.fixedNbhd_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.BasicInst8
 
 @[expose] public section
 
@@ -55,27 +60,7 @@ universe u
 
 variable {α : Type u} {E : NeighborhoodSystem α}
 
-/-- **The candidate subdomain of Theorem 8.5's proof, `D = {X ∈ E ∣ X a X}`.** Built for *any*
-approximable map `a : E → E` — the neighbourhood-system axioms need only `mono`/`inter_right` of
-`a`, no projection or finitary hypothesis. (This is also exactly Theorem 8.6's `Fix(sub)` predicate
-`X sub(f) X`, restated for a single map `a` in place of the function-space token `f`.) -/
-def fixedNbhd (a : ApproximableMap E E) : NeighborhoodSystem α where
-  mem X := E.mem X ∧ a.rel X X
-  master := E.master
-  master_nonempty := E.master_nonempty
-  master_mem := ⟨E.master_mem, a.master_rel⟩
-  inter_mem := by
-    rintro X Y Z ⟨hXE, hXa⟩ ⟨hYE, hYa⟩ ⟨hZE, _⟩ hZsub
-    have hXYE : E.mem (X ∩ Y) := E.inter_mem hXE hYE hZE hZsub
-    have h1 : a.rel (X ∩ Y) X :=
-      a.mono hXa Set.inter_subset_left subset_rfl hXYE hXE
-    have h2 : a.rel (X ∩ Y) Y :=
-      a.mono hYa Set.inter_subset_right subset_rfl hXYE hYE
-    exact ⟨hXYE, a.inter_right h1 h2⟩
-  sub_master := fun h => E.sub_master h.1
 
-@[simp] theorem fixedNbhd_mem {a : ApproximableMap E E} {X : Set α} :
-    (fixedNbhd a).mem X ↔ E.mem X ∧ a.rel X X := Iff.rfl
 
 /-! ## Algebraicity and compactness
 
@@ -88,8 +73,6 @@ section Algebraic
 
 variable {γ : Type u} {V : NeighborhoodSystem γ}
 
-instance instNonemptyMemSubtype (x : V.Element) : Nonempty {X : Set γ // x.mem X} :=
-  ⟨⟨V.master, x.master_mem⟩⟩
 
 /-- A neighbourhood `Z` witnessing `y`'s membership is always a *lower bound* on `y`: `↑Z ⊑ y`.
 The general form of `Basic.lean`'s remark that `⊥ = ↑Δ` is least: any witnessed `↑Z` sits below
@@ -121,14 +104,6 @@ theorem eq_iSupDirected_principal (x : V.Element) :
     obtain ⟨hZmem, hXZ⟩ := (V.mem_principal _).mp hZ'
     exact x.up_mem hX hZmem hXZ
 
-/-- **Compactness, as a standalone predicate**: `x` is compact iff every time `x` sits below a
-directed union it already sits below one of the summands. By algebraicity, this is exactly the
-same thing as being principal (`eq_principal_of_isCompactElt`). Stated with `I` fixed to `V`'s own
-token universe (the only instantiation ever needed below), to sidestep spurious universe-metavariable
-friction from a separately-auto-bound `Type*` inside a reusable `def`. -/
-def IsCompactElt (x : V.Element) : Prop :=
-  ∀ {I : Type u} [Nonempty I] (d : I → V.Element) (hdir : ∀ i j, ∃ k, d i ≤ d k ∧ d j ≤ d k),
-    x ≤ iSupDirected d hdir → ∃ i, x ≤ d i
 
 end Algebraic
 
@@ -157,17 +132,8 @@ theorem toElementMap_iSupDirected_fixed {I : Type u} [Nonempty I] (d : I → E.E
   rw [mem_iSupDirected, mem_iSupDirected]
   simp_rw [hfix]
 
-/-- The fixed-point set of `a`, as a bare type — matching `IsFinitary`'s witness type. -/
-abbrev FixSet (a : ApproximableMap E E) := {y : E.Element // a.toElementMap y = y}
-
 variable {β : Type u} {F : NeighborhoodSystem β} (e : FixSet a ≃o F.Element)
 
-/-- **The section `i : F → E`** induced by the abstract witness `e` of `IsFinitary a`: on the
-principal element `↑X` of `F`, `i` returns the underlying `E`-element of `e.symm(↑X) ∈ Fix(a)`.
-Built via `ofMono` (Exercise 2.8) — monotone on principals is all that's needed. -/
-def sectionMap : ApproximableMap F E :=
-  ofMono (fun _X hX => (e.symm (F.principal hX)).1) (fun _ _ hX hX' hXX' =>
-    e.symm.monotone ((F.principal_le_iff hX hX').mpr hXX'))
 
 @[simp] theorem toElementMap_sectionMap_principal {X : Set β} (hX : F.mem X) :
     (sectionMap e).toElementMap (F.principal hX) = (e.symm (F.principal hX)).1 :=

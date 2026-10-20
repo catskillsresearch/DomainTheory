@@ -10,6 +10,11 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118
 public import Mathlib.Tactic
 import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.Bounded
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.upperBounds
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.sSup
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.pairSeq
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.upperBounds_nonempty
 
 @[expose] public section
 
@@ -44,28 +49,12 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- **Exercise 1.27 — bounded set of elements.** `X ⊆ |𝒟|` is *bounded* iff it has an upper
-bound `y ∈ |𝒟|`: `x ⊑ y` for all `x ∈ X`. -/
-def Bounded (X : Set V.Element) : Prop := ∃ y : V.Element, ∀ x ∈ X, x ≤ y
 
-/-- The family of upper bounds of `X`: `{y ∣ x ⊑ y for all x ∈ X}`. -/
-def upperBounds (X : Set V.Element) : Set V.Element := {y | ∀ x ∈ X, x ≤ y}
 
-/-- If `X` is bounded then its upper-bound family is non-empty (it contains the witness). -/
-theorem upperBounds_nonempty {X : Set V.Element} (hX : V.Bounded X) :
-    (V.upperBounds X).Nonempty :=
-  hX.imp fun _ hy => hy
 
-/-- **Exercise 1.27 — `⊔X`.** The least upper bound of a bounded `X`, defined à la Scott as the
-intersection of all upper bounds: `⊔X = ⋂ {y ∣ x ⊑ y all x∈X}`. Reusing `sInf` from Exercise
-1.18 on the (non-empty, because bounded) family of upper bounds. -/
-def sSup (X : Set V.Element) (hX : V.Bounded X) : V.Element :=
-  V.sInf (V.upperBounds X) (V.upperBounds_nonempty hX)
 
 /-! ### Boundedness of `{↑U, ↑W}` ⟺ consistency of `⟨U, W⟩`. -/
 
-/-- The two-term sequence `⟨U, W⟩` as a function `ℕ → Set α` (used to phrase `Consistent`). -/
-def pairSeq (U W : Set α) : ℕ → Set α := fun i => if i = 0 then U else W
 
 /-! ### Boundedness is finitary (with the aid of Exercise 1.18). -/
 end NeighborhoodSystem

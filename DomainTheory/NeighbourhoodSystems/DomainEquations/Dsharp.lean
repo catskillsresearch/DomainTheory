@@ -1,0 +1,48 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61.MemS
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.mem_embZero
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.mem_embL
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.mem_embR
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.mem_embPair
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.mem_Gamma
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.memS_subset_gamma
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.memS_inter
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem
+
+namespace Example61
+
+variable {α : Type*}
+
+/-- **Example 6.1 (Scott 1981, PRG-19).** The *tree algebra* `D^§`: a neighbourhood system over
+`Γ = {1,2}* 0 Δ`, under the standing assumption `∅ ∉ 𝒟` (`hD`). -/
+abbrev Dsharp (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty) :
+    NeighborhoodSystem (List Bool × α) where
+  mem := MemS D
+  master := Gamma D
+  master_nonempty := by
+    obtain ⟨a, ha⟩ := D.master_nonempty
+    exact ⟨([], a), ha⟩
+  master_mem := MemS.gamma
+  inter_mem := fun hX hY hZ hsub => memS_inter hD hX hY hZ hsub
+  sub_master := memS_subset_gamma
+
+end Example61
+
+end DomainTheory.NeighbourhoodSystems

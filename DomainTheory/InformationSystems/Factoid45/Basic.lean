@@ -9,6 +9,7 @@ module
 
 public import DomainTheory.InformationSystems.Factoid36
 public import DomainTheory.InformationSystems.Factoid44
+public import DomainTheory.InformationSystems.Factoid45.finiteApproximants
 
 @[expose] public section
 
@@ -29,8 +30,5 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-/-- Finite approximations of `x`: the set `{ū | u ∈ Con, u ⊆ x}`. -/
-def finiteApproximants (x : sys.Element) : Set sys.Element :=
-  {y | ∃ (u : Finset α) (hu : u ∈ sys.Con), ↑u ⊆ x.carrier ∧ y = sys.closure u hu}
 end InfoSys
 end DomainTheory.InformationSystems

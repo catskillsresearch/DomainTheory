@@ -42,7 +42,6 @@ section IndexedProduct
 
 variable [Nonempty ι]
 
-variable (D) in
 
 theorem iprod_mem_iprodNbhd {X : ∀ i, Set (α i)} (hX : ∀ i, (D i).mem (X i))
     (hXf : FinSupp D X) : (iprod D).mem (iprodNbhd X) :=

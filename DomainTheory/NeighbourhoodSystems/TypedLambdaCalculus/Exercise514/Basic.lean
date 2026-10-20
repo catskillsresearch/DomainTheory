@@ -10,6 +10,14 @@ module
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513
 public import Mathlib.Data.List.Basic
 import all Mathlib.Data.List.Basic
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.tag
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.entries
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Fun
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Graph
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.IsApprox
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.tag_nil
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.tag_cons
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.mem_entries
 
 @[expose] public section
 
@@ -66,39 +74,13 @@ open DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-! ### The tag: coding `(List ℕ) × ℕ` as `ℕ` -/
 
-/-- `tag [n₀, …, n_{k-1}] m = [n₀+1, …, n_{k-1}+1, 0, m]`, built from the pairing function `num`. -/
-def tag : List ℕ → ℕ → ℕ
-  | [], m => num 0 m
-  | (n :: ns), m => num (n + 1) (tag ns m)
 
-@[simp] theorem tag_nil (m : ℕ) : tag [] m = num 0 m := rfl
 
-@[simp] theorem tag_cons (n : ℕ) (ns : List ℕ) (m : ℕ) :
-    tag (n :: ns) m = num (n + 1) (tag ns m) := rfl
 
 /-! ### The maps `fun` and `graph` -/
 
-/-- The finite set of entries of a list, as a subset of `ℕ`. -/
-def entries (ns : List ℕ) : Set ℕ := {n | n ∈ ns}
 
-@[simp] theorem mem_entries {n : ℕ} {ns : List ℕ} : n ∈ entries ns ↔ n ∈ ns := Iff.rfl
 
-/-- `fun(u)(x)` — apply the "function coded by `u`" to argument `x`. -/
-def Fun (u : Set ℕ) (x : Set ℕ) : Set ℕ :=
-  {m | ∃ ns, (∀ n ∈ ns, n ∈ x) ∧ tag ns m ∈ u}
 
-/-- `graph(f)` — the code of the function `f`. -/
-def Graph (f : Set ℕ → Set ℕ) : Set ℕ :=
-  {c | ∃ ns m, c = tag ns m ∧ m ∈ f (entries ns)}
 
-/-- A map `f : Pω → Pω` is *approximable* (continuous) when it is monotone and every output is
-already produced by a finite subset of the input. The finite subsets of `x` are exactly the
-`entries ns` with all entries in `x`.
-
-Monotonicity is phrased as an explicit `⊆`-implication rather than `Monotone f`: on `Set ℕ` the
-order `≤` resolves through the `CompleteLattice` instance whose construction uses `Classical.choice`,
-so the `Monotone`-based statement would not be choice-free. The two are definitionally equal. -/
-def IsApprox (f : Set ℕ → Set ℕ) : Prop :=
-  (∀ ⦃x x' : Set ℕ⦄, x ⊆ x' → f x ⊆ f x') ∧
-    ∀ x m, m ∈ f x → ∃ ns, (∀ n ∈ ns, n ∈ x) ∧ m ∈ f (entries ns)
 end DomainTheory.NeighbourhoodSystems.Exercise514

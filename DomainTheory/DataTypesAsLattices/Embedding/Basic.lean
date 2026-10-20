@@ -14,6 +14,8 @@ import all Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 import all Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.FixedPoint
+public import DomainTheory.DataTypesAsLattices.Embedding.extend
+public import DomainTheory.DataTypesAsLattices.Embedding.embed
 
 @[expose] public section
 
@@ -27,14 +29,5 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace Topology Function
 
-/-- **Scott 1976, Theorem 1.5.** Maximal continuous extension of
-`f : X → Pω` along a subspace inclusion `X ⊆ Y`:
-`f̄(y) = ⋃ { ⋂ {f(x) | x ∈ X ∩ U} | y ∈ U, U open in Y }`. -/
-def extend {Y : Type*} [TopologicalSpace Y] {X : Set Y}
-    (f : X → Pomega) (y : Y) : Pomega :=
-  ⋃₀ { t | ∃ U : Set Y, IsOpen U ∧ y ∈ U ∧ t = ⋂₀ (f '' {x : X | ↑x ∈ U}) }
 
-/-- **Scott 1976, Theorem 1.6.** The embedding `ε(x) = {n | x ∈ U n}`. -/
-def embed {X : Type*} (U : ℕ → Set X) (x : X) : Pomega :=
-  {n | x ∈ U n}
 end DomainTheory.DataTypesAsLattices

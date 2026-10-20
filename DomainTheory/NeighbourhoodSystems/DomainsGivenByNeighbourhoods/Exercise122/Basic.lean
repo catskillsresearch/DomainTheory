@@ -10,6 +10,9 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Topology.Inseparable
 import all Mathlib.Topology.Inseparable
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122.basicOpen
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122.IsOpenFilter
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122.mem_basicOpen
 
 @[expose] public section
 
@@ -56,13 +59,7 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-/-- Scott's `[X] = {x ∈ |𝒟| ∣ X ∈ x}` (Theorem 1.10 notation): the set of elements of the domain
-`|𝒟|` that contain the neighbourhood `X`. These sets are the basic opens of the topology of
-Exercise 1.22. -/
-def basicOpen (X : Set α) : Set V.Element := {x | x.mem X}
 
-@[simp] theorem mem_basicOpen {X : Set α} {x : V.Element} :
-    x ∈ V.basicOpen X ↔ x.mem X := Iff.rfl
 
 /-- `[X ∩ Y] ⊆ [X]` whenever `X ∈ 𝒟`: a filter containing `X ∩ Y` contains `X` (upward closure).
 This (with the symmetric version) is the closure of the basic opens under finite intersection,
@@ -76,10 +73,6 @@ theorem basicOpen_inter_subset_right {X Y : Set α} (hY : V.mem Y) :
     V.basicOpen (X ∩ Y) ⊆ V.basicOpen Y :=
   fun z hz => z.up_mem hz hY Set.inter_subset_right
 
-/-- A set `𝒰 ⊆ |𝒟|` is *open* (Exercise 1.22, condition (ii)) when every point `x ∈ 𝒰` has a
-basic neighbourhood `[X]` with `X ∈ x` contained in `𝒰`. -/
-def IsOpenFilter (U : Set V.Element) : Prop :=
-  ∀ x ∈ U, ∃ X, x.mem X ∧ V.basicOpen X ⊆ U
 
 /-- **Exercise 1.22 (the space).** The basic opens `[X]` (`X ∈ 𝒟`) generate a topology on `|𝒟|`:
 `𝒰` is open iff it is a union of basic opens (condition (ii)). The three axioms hold because the

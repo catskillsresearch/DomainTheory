@@ -1,0 +1,47 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.InformationSystems.FunctionSpace
+public import DomainTheory.InformationSystems.Sum
+public import Mathlib.Data.Finset.Card
+import all Mathlib.Data.Finset.Card
+public import DomainTheory.InformationSystems.Factoid82.RawLamToken
+public import DomainTheory.InformationSystems.Factoid82.RawLamToken
+public import DomainTheory.InformationSystems.Factoid82.LamEntDepth
+public import DomainTheory.InformationSystems.Factoid82.LamEntDepth
+public import DomainTheory.InformationSystems.Factoid82.mem_lamAtomFinset
+public import DomainTheory.InformationSystems.Factoid82.BasicInst23
+public import DomainTheory.InformationSystems.Factoid82.BasicInst27
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+set_option linter.unusedSectionVars false
+
+variable {α : Type*} [DecidableEq α]
+
+variable (A : InfoSys α)
+
+theorem lamAtomFinset_singleton_funTok (u v : List (RawLamToken α)) :
+    lamAtomFinset ({.funTok u v} : Finset (RawLamToken α)) = ∅ := by
+  ext x
+  constructor
+  · intro hx; exact False.elim (nomatch mem_lamAtomFinset.1 hx)
+  · intro hx; exact False.elim (Finset.notMem_empty x hx)
+
+end InfoSys
+
+end DomainTheory.InformationSystems

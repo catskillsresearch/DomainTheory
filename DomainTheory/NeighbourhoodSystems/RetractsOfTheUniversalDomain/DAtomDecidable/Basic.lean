@@ -14,6 +14,15 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8_a
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.IPos
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.DAtom
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.meetStep
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.meetFold
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.meetStepCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.meetFoldCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.DAtomEmptyChar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.IPos_nil
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.meetFold_nil
 
 @[expose] public section
 
@@ -72,60 +81,26 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-! ### Finite meets of `idxSet`s, at the `Set` level -/
 
-/-- The `idxSet`-atom of the *positive* constraints `pos`: indices `m` with `Xₘ ⊆ Xᵢ` for every
-`i ∈ pos`. (The empty list gives `Set.univ`, matching `genAtom`'s depth-`0` value.) -/
-def IPos (pos : List ℕ) : Set ℕ := {m | ∀ i ∈ pos, m ∈ idxSet P.X i}
 
-@[simp] theorem IPos_nil : IPos P [] = Set.univ := by
-  ext m; simp [IPos]
 
-/-- **The full atom**: positive constraints `pos` together with negative constraints `neg`
-(`¬(Xₘ ⊆ Xⱼ)` for `j ∈ neg`). This is `genAtom (idxSet P.X) Set.univ δ n` for the sign sequence
-built from `pos`/`neg`. -/
-def DAtom (pos neg : List ℕ) : Set ℕ := IPos P pos ∩ {m | ∀ j ∈ neg, m ∉ idxSet P.X j}
 
 /-! ### The meet-fold: one step, threading an `{ok, idx}`-coded accumulator -/
 
 variable (cons : ℕ → ℕ)
 
-/-- One step of the positive meet-fold. The accumulator `r` codes `(ok, idx)`
-(`r.unpair.1 = ok`, `r.unpair.2 = idx`); `i` is the next positive-constraint index. If the fold is
-still "ok" and `P`'s consistency decider accepts `(idx, i)`, advance to `P.inter idx i`; otherwise
-the fold is permanently "not ok" (accumulator frozen at the last good `idx`, which is discarded by
-`meetFold_spec` in that case anyway). -/
-def meetStep (r i : ℕ) : ℕ :=
-  selectFn (isOne r.unpair.1 * isOne (cons (Nat.pair r.unpair.2 i)))
-    (Nat.pair 1 (P.inter r.unpair.2 i)) (Nat.pair 0 r.unpair.2)
 
-/-- **The positive meet-fold**: fold `meetStep` across `pos`, starting from `(ok, idx) = (1,
-masterIdx)` (the empty meet is `Δ`, always "ok"). -/
-def meetFold (l : List ℕ) : ℕ := l.foldl (meetStep P cons) (Nat.pair 1 P.masterIdx)
 
-@[simp] theorem meetFold_nil : meetFold P cons [] = Nat.pair 1 P.masterIdx := rfl
 
 /-! ### `DAtom` emptiness, reduced to the meet-fold witness and a bounded negative check -/
 
 /-! ### Code-level `meetFold`, and its primitive recursivity -/
 
-/-- `foldCode`-shaped step matching `meetStep`: state `w = pair i (pair r params)` (`params`
-unused). -/
-def meetStepCode (w : ℕ) : ℕ := meetStep P cons w.unpair.2.unpair.1 w.unpair.1
 
-/-- The code-level positive meet-fold. -/
-def meetFoldCode (c : ℕ) : ℕ := foldCode (meetStepCode P cons) 0 (Nat.pair 1 P.masterIdx) c
 
 /-! ### The full decision procedure and its decidability -/
 
 variable (incl : ℕ → ℕ)
 
-/-- **The full `DAtom`-emptiness decider.** `1` iff `DAtom (decodeList posC) (decodeList negC) =
-∅`: either the positive meet is already inconsistent (`ok ≠ 1`), or the meet's index `idx` lies
-inside some negative target (bounded existential over `decodeList negC`, via `existsListChar`). -/
-def DAtomEmptyChar (posC negC : ℕ) : ℕ :=
-  selectFn (isOne (meetFoldCode P cons posC).unpair.1)
-    (existsListChar (fun t => incl (Nat.pair t.unpair.2 t.unpair.1))
-      (meetFoldCode P cons posC).unpair.2 negC)
-    1
 
 /-! ### The packaged decidability statement -/
 end DomainTheory.NeighbourhoodSystems

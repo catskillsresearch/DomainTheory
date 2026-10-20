@@ -9,6 +9,16 @@ module
 
 public import Mathlib.Data.Finset.Basic
 import all Mathlib.Data.Finset.Basic
+public import DomainTheory.InformationSystems.Constructive.funion
+public import DomainTheory.InformationSystems.Constructive.decidableEq_finset
+public import DomainTheory.InformationSystems.Constructive.insert_comm'
+public import DomainTheory.InformationSystems.Constructive.instLeftCommutativeInsert
+public import DomainTheory.InformationSystems.Constructive.Basic.notation5
+public import DomainTheory.InformationSystems.Constructive.mem_foldr_insert
+public import DomainTheory.InformationSystems.Constructive.mem_funion
+public import DomainTheory.InformationSystems.Constructive.funion_empty_right
+public import DomainTheory.InformationSystems.Constructive.decidableEq_finset_eq_of_subset
+public import DomainTheory.InformationSystems.Constructive.decidableEq_finset_false_of_ne
 
 @[expose] public section
 
@@ -47,66 +57,13 @@ namespace DomainTheory.InformationSystems.Constructive
 
 variable {α : Type*} [DecidableEq α]
 
-/-- Choice-free commutativity of `insert` (mathlib's `Finset.insert_comm` is choice-tainted).
-Needed to fold `insert` over a `Multiset`. -/
-theorem insert_comm' (a b : α) (s : Finset α) :
-    insert a (insert b s) = insert b (insert a s) := by
-  ext x
-  simp only [Finset.mem_insert]
-  constructor
-  · rintro (h | h | h)
-    exacts [Or.inr (Or.inl h), Or.inl h, Or.inr (Or.inr h)]
-  · rintro (h | h | h)
-    exacts [Or.inr (Or.inl h), Or.inl h, Or.inr (Or.inr h)]
 
-instance instLeftCommutativeInsert :
-    LeftCommutative (insert : α → Finset α → Finset α) := ⟨insert_comm'⟩
 
-/-- Choice-free binary union of finite sets, obtained by folding `insert` over the second
-argument's underlying multiset. Definitionally equal in content to `u ∪ v`, but — unlike
-mathlib's `(· ∪ ·)` — free of any `Classical.choice` dependency. -/
-def funion (u v : Finset α) : Finset α := Multiset.foldr insert u v.1
 
-@[inherit_doc] infixl:65 " ∪' " => funion
 
-theorem mem_foldr_insert (a : α) (u : Finset α) (s : Multiset α) :
-    a ∈ Multiset.foldr insert u s ↔ a ∈ u ∨ a ∈ s := by
-  refine Multiset.induction_on s ?_ ?_
-  · simp
-  · intro b t ih
-    simp only [Multiset.foldr_cons, Finset.mem_insert, ih, Multiset.mem_cons]
-    constructor
-    · rintro (h | h | h)
-      exacts [Or.inr (Or.inl h), Or.inl h, Or.inr (Or.inr h)]
-    · rintro (h | h | h)
-      exacts [Or.inr (Or.inl h), Or.inl h, Or.inr (Or.inr h)]
 
-@[simp] theorem mem_funion {a : α} {u v : Finset α} :
-    a ∈ u ∪' v ↔ a ∈ u ∨ a ∈ v := mem_foldr_insert a u v.1
 
-@[simp] theorem funion_empty_right (u : Finset α) : u ∪' (∅ : Finset α) = u := by
-  ext x
-  simp only [mem_funion, Finset.notMem_empty, or_false]
 
-omit [DecidableEq α] in
-/-- If mutual subset holds, the finsets are equal. -/
-theorem decidableEq_finset_eq_of_subset (s t : Finset α) (h : s ⊆ t ∧ t ⊆ s) : s = t :=
-  Finset.Subset.antisymm h.1 h.2
 
-omit [DecidableEq α] in
-/-- Mutual subset is required for finset equality in this decidable instance. -/
-theorem decidableEq_finset_false_of_ne (s t : Finset α) (h : ¬(s ⊆ t ∧ t ⊆ s)) (heq : s = t) :
-    False := by
-  subst heq
-  exact h ⟨Finset.Subset.refl _, Finset.Subset.refl _⟩
 
-/-- Choice-free decidable equality for `Finset`.
-mathlib's `Finset.decidableEq` goes through `Multiset` quotients and pulls
-`Classical.choice`; this version uses only decidable membership and subset. -/
-def decidableEq_finset {α : Type*} [DecidableEq α] : DecidableEq (Finset α) :=
-  fun s t =>
-    if h : s ⊆ t ∧ t ⊆ s then
-      isTrue (decidableEq_finset_eq_of_subset s t h)
-    else
-      isFalse (decidableEq_finset_false_of_ne s t h)
 end DomainTheory.InformationSystems.Constructive

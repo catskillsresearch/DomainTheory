@@ -10,6 +10,17 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import Mathlib.Tactic
 import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.tail
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.neighborhoodSystem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.fin
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.top
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.mem_tail
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.tail_subset_iff
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.tail_inter
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.nestedOrDisjoint
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.ns_mem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.mem_tail_nbhd
 
 @[expose] public section
 
@@ -40,59 +51,20 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise112
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-/-- The final segment (tail) `tail n = {m ∣ n ≤ m}`; the neighbourhood "all integers `≥ n`". -/
-def tail (n : ℕ) : Set ℕ := {m | n ≤ m}
 
-@[simp] theorem mem_tail {n m : ℕ} : m ∈ tail n ↔ n ≤ m := Iff.rfl
 
-/-- A longer tail is a *smaller* set: `tail n ⊆ tail m ↔ m ≤ n`. -/
-theorem tail_subset_iff {n m : ℕ} : tail n ⊆ tail m ↔ m ≤ n := by
-  constructor
-  · intro h
-    exact h (show n ∈ tail n from le_refl n)
-  · intro hmn k hk
-    exact le_trans hmn hk
 
-/-- `tail n ∩ tail m = tail (max n m)` (the intersection of two tails is the shorter one). -/
-theorem tail_inter (n m : ℕ) : tail n ∩ tail m = tail (max n m) := by
-  ext k
-  simp only [Set.mem_inter_iff, mem_tail]
-  omega
 
-/-- Membership in the final-segment system: `X` is a neighbourhood iff `X = tail n` for some `n`. -/
-def mem (X : Set ℕ) : Prop := ∃ n, X = tail n
 
-theorem nestedOrDisjoint : NestedOrDisjoint mem := by
-  rintro X Y ⟨n, rfl⟩ ⟨m, rfl⟩
-  rcases le_total n m with h | h
-  · exact Or.inr (Or.inl (tail_subset_iff.mpr h))
-  · exact Or.inl (tail_subset_iff.mpr h)
 
-/-- **Exercise 1.12.** The final-segment neighbourhood system on `ℕ` (master `Δ = tail 0 = ℕ`). -/
-def neighborhoodSystem : NeighborhoodSystem ℕ :=
-  ofNestedOrDisjoint mem (tail 0) ⟨0, Nat.zero_le 0⟩ ⟨0, rfl⟩ nestedOrDisjoint
-    (fun {X} hX => by obtain ⟨n, rfl⟩ := hX; exact tail_subset_iff.mpr (Nat.zero_le n))
 
-@[simp] theorem ns_mem {X : Set ℕ} : neighborhoodSystem.mem X ↔ ∃ n, X = tail n := Iff.rfl
 
-theorem mem_tail_nbhd (n : ℕ) : neighborhoodSystem.mem (tail n) := ⟨n, rfl⟩
 
 /-! ### Finite elements: the principal filters `fin n = ↑(tail n)`. -/
 
-/-- The finite element `fin n = ↑(tail n)` (principal filter of the tail). -/
-def fin (n : ℕ) : neighborhoodSystem.Element := neighborhoodSystem.principal (mem_tail_nbhd n)
 
 /-! ### The limit element: the whole system `𝒟`, the greatest / unique total element. -/
 
-/-- The **limit element** `top`: the filter of *all* tails (Scott's single limit node). -/
-def top : neighborhoodSystem.Element where
-  mem X := neighborhoodSystem.mem X
-  sub h := h
-  master_mem := neighborhoodSystem.master_mem
-  inter_mem := by
-    rintro X Y ⟨n, rfl⟩ ⟨m, rfl⟩
-    exact ⟨max n m, tail_inter n m⟩
-  up_mem _ hY _ := hY
 
 @[simp] theorem mem_top {X : Set ℕ} : top.mem X ↔ neighborhoodSystem.mem X := Iff.rfl
 

@@ -12,6 +12,25 @@ public import Mathlib.Logic.Encodable.Basic
 import all Mathlib.Logic.Encodable.Basic
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.SExpr
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.sexprToNat
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.sexprOfNatFuel
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.sexprOfNat
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.denote
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.matchesB
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.emptyExpr
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.containsZero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.snd_lt_pair_of_pos_fst
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.sexprOfNatFuel_sexprToNat
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.BasicInst7
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.denote_sigma
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.denote_single
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.denote_cat
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.denote_cap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.mem_concat_iff_split
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.matchesB_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.BasicInst16
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.BasicInst17
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.denote_emptyExpr
 
 @[expose] public section
 
@@ -75,153 +94,19 @@ namespace Exercise722
 
 /- `deriving Encodable` builds a private auxiliary type, which a public instance cannot see.
 This encoding is the public replacement: constructor tag in `Nat.pair`'s first component. -/
-def sexprToNat : SExpr → ℕ
-  | .sigma => Nat.pair 0 0
-  | .single σ => Nat.pair 1 (Encodable.encode σ)
-  | .cat a b => Nat.pair 2 (Nat.pair (sexprToNat a) (sexprToNat b))
-  | .cap a b => Nat.pair 3 (Nat.pair (sexprToNat a) (sexprToNat b))
 
-theorem snd_lt_pair_of_pos_fst {a b : ℕ} (ha : 0 < a) : b < Nat.pair a b := by
-  rw [Nat.pair]
-  split_ifs with h
-  · have hb : 0 < b := Nat.lt_trans ha h
-    have hbb : b ≤ b * b := by
-      calc
-        b = 1 * b := (Nat.one_mul b).symm
-        _ ≤ b * b := Nat.mul_le_mul_right b (Nat.succ_le_of_lt hb)
-    have : b * b < b * b + a := Nat.lt_add_of_pos_right ha
-    omega
-  · have : 0 < a * a + a := by
-      have : a ≤ a * a + a := Nat.le_add_left _ _
-      omega
-    omega
 
-/-- Decode with an explicit fuel bound so the recursion is structural. -/
-def sexprOfNatFuel : ℕ → ℕ → Option SExpr
-  | 0, _ => none
-  | fuel + 1, n =>
-    match n.unpair.1 with
-    | 0 => some .sigma
-    | 1 => (Encodable.decode n.unpair.2).map SExpr.single
-    | 2 =>
-      match sexprOfNatFuel fuel n.unpair.2.unpair.1, sexprOfNatFuel fuel n.unpair.2.unpair.2 with
-      | some a, some b => some (.cat a b)
-      | _, _ => none
-    | 3 =>
-      match sexprOfNatFuel fuel n.unpair.2.unpair.1, sexprOfNatFuel fuel n.unpair.2.unpair.2 with
-      | some a, some b => some (.cap a b)
-      | _, _ => none
-    | _ => none
 
-def sexprOfNat (n : ℕ) : Option SExpr := sexprOfNatFuel (n + 1) n
 
-theorem sexprOfNatFuel_sexprToNat (e : SExpr) :
-    ∀ fuel, sexprToNat e < fuel → sexprOfNatFuel fuel (sexprToNat e) = some e := by
-  induction e with
-  | sigma =>
-    intro fuel hfuel
-    cases fuel with
-    | zero => omega
-    | succ fuel => simp [sexprToNat, sexprOfNatFuel, Nat.unpair_pair]
-  | single σ =>
-    intro fuel hfuel
-    cases fuel with
-    | zero => omega
-    | succ fuel => simp [sexprToNat, sexprOfNatFuel, Nat.unpair_pair, Encodable.encodek]
-  | cat a b iha ihb =>
-    intro fuel hfuel
-    cases fuel with
-    | zero => omega
-    | succ fuel =>
-      have ha : sexprToNat a < fuel := by
-        have hinner : sexprToNat a ≤ Nat.pair (sexprToNat a) (sexprToNat b) := Nat.left_le_pair _ _
-        have houter : Nat.pair (sexprToNat a) (sexprToNat b) < sexprToNat (.cat a b) := by
-          simpa [sexprToNat] using snd_lt_pair_of_pos_fst (a := 2) (b := Nat.pair (sexprToNat a) (sexprToNat b)) (by omega)
-        omega
-      have hb : sexprToNat b < fuel := by
-        have hinner : sexprToNat b ≤ Nat.pair (sexprToNat a) (sexprToNat b) := Nat.right_le_pair _ _
-        have houter : Nat.pair (sexprToNat a) (sexprToNat b) < sexprToNat (.cat a b) := by
-          simpa [sexprToNat] using snd_lt_pair_of_pos_fst (a := 2) (b := Nat.pair (sexprToNat a) (sexprToNat b)) (by omega)
-        omega
-      simp [sexprToNat, sexprOfNatFuel, Nat.unpair_pair, iha _ ha, ihb _ hb]
-  | cap a b iha ihb =>
-    intro fuel hfuel
-    cases fuel with
-    | zero => omega
-    | succ fuel =>
-      have ha : sexprToNat a < fuel := by
-        have hinner : sexprToNat a ≤ Nat.pair (sexprToNat a) (sexprToNat b) := Nat.left_le_pair _ _
-        have houter : Nat.pair (sexprToNat a) (sexprToNat b) < sexprToNat (.cap a b) := by
-          simpa [sexprToNat] using snd_lt_pair_of_pos_fst (a := 3) (b := Nat.pair (sexprToNat a) (sexprToNat b)) (by omega)
-        omega
-      have hb : sexprToNat b < fuel := by
-        have hinner : sexprToNat b ≤ Nat.pair (sexprToNat a) (sexprToNat b) := Nat.right_le_pair _ _
-        have houter : Nat.pair (sexprToNat a) (sexprToNat b) < sexprToNat (.cap a b) := by
-          simpa [sexprToNat] using snd_lt_pair_of_pos_fst (a := 3) (b := Nat.pair (sexprToNat a) (sexprToNat b)) (by omega)
-        omega
-      simp [sexprToNat, sexprOfNatFuel, Nat.unpair_pair, iha _ ha, ihb _ hb]
 
-instance : Encodable SExpr where
-  encode := sexprToNat
-  decode := sexprOfNat
-  encodek e := sexprOfNatFuel_sexprToNat e (sexprToNat e + 1) (Nat.lt_succ_self _)
 
-/-- The language denoted by an `S`-term. -/
-def denote : SExpr → Set (List Bool)
-  | .sigma => Set.univ
-  | .single σ => {σ}
-  | .cat a b => concat (denote a) (denote b)
-  | .cap a b => denote a ∩ denote b
 
-@[simp] theorem denote_sigma : denote .sigma = Set.univ := rfl
-@[simp] theorem denote_single (σ : List Bool) : denote (.single σ) = {σ} := rfl
-@[simp] theorem denote_cat (a b : SExpr) : denote (.cat a b) = concat (denote a) (denote b) := rfl
-@[simp] theorem denote_cap (a b : SExpr) : denote (.cap a b) = denote a ∩ denote b := rfl
 
 /-! ## Decidable word membership (the computational core of "regular event") -/
 
-/-- A word `w` lies in a concatenation `X·Y` iff it splits as `w = w.take i ++ w.drop i` with the
-prefix in `X` and the suffix in `Y` for some cut point `i ≤ |w|`. (The cut point is the length of
-the `X`-part.) -/
-theorem mem_concat_iff_split {X Y : Set (List Bool)} {w : List Bool} :
-    w ∈ concat X Y ↔ ∃ i, i ≤ w.length ∧ w.take i ∈ X ∧ w.drop i ∈ Y := by
-  constructor
-  · rintro ⟨a, ha, b, hb, rfl⟩
-    refine ⟨a.length, by simp, ?_, ?_⟩
-    · rw [List.take_left]; exact ha
-    · rw [List.drop_left]; exact hb
-  · rintro ⟨i, _, hpre, hsuf⟩
-    exact ⟨w.take i, hpre, w.drop i, hsuf, w.take_append_drop i⟩
 
-/-- The **`Bool` matcher** for `S`-terms: a structurally-recursive decision of word membership. The
-concatenation case tries every cut point `i ∈ {0,…,|w|}`; the intersection case is the conjunction. -/
-def matchesB : SExpr → List Bool → Bool
-  | .sigma, _ => true
-  | .single σ, w => decide (w = σ)
-  | .cat a b, w => (List.range (w.length + 1)).any (fun i => matchesB a (w.take i) && matchesB b (w.drop i))
-  | .cap a b, w => matchesB a w && matchesB b w
 
-/-- **The matcher is correct**: `matchesB e w = true ↔ w ∈ denote e`. By structural induction on `e`;
-the concatenation case unfolds `List.any` over the cut points and applies `mem_concat_iff_split`. -/
-theorem matchesB_iff (e : SExpr) (w : List Bool) : matchesB e w = true ↔ w ∈ denote e := by
-  induction e generalizing w with
-  | sigma => simp [matchesB]
-  | single σ => simp [matchesB]
-  | cat a b iha ihb =>
-    rw [denote_cat, mem_concat_iff_split]
-    simp only [matchesB, List.any_eq_true, List.mem_range, Bool.and_eq_true]
-    constructor
-    · rintro ⟨i, hi, ha, hb⟩
-      exact ⟨i, Nat.lt_succ_iff.mp hi, (iha _).mp ha, (ihb _).mp hb⟩
-    · rintro ⟨i, hi, ha, hb⟩
-      exact ⟨i, Nat.lt_succ_iff.mpr hi, (iha _).mpr ha, (ihb _).mpr hb⟩
-  | cap a b iha ihb =>
-    simp only [matchesB, Bool.and_eq_true, denote_cap, Set.mem_inter_iff]
-    rw [iha, ihb]
 
-/-- **Membership in a regular event is decidable** (choice-free), via the matcher. -/
-instance decidableMemDenote (e : SExpr) : DecidablePred (· ∈ denote e) :=
-  fun w => decidable_of_iff (matchesB e w = true) (matchesB_iff e w)
 
 /-! ## Soundness and completeness: the syntax captures exactly `S` -/
 
@@ -231,7 +116,6 @@ instance decidableMemDenote (e : SExpr) : DecidablePred (· ∈ denote e) :=
 range of `denote` (restricted to non-empty denotations), is at most countable — Scott's standing
 "at most a countable infinity of neighbourhoods" (Definition 7.1). -/
 
-instance : Countable SExpr := inferInstance
 
 /-! ## Reducing Definition 7.1's two relations to language equivalence on `SExpr`
 
@@ -244,17 +128,7 @@ such codes, Scott's two recursive-decidability obligations of Definition 7.1 bec
 We show **both** are instances of *deciding language equivalence of two `SExpr`s* — and that emptiness
 alone is therefore **not** enough (relation (i) needs the full equivalence test). -/
 
-/-- The empty language is denotable in the fragment (it is **not** a member of `S`, which is
-positive): `{0} ∩ {1} = ∅`. This is the canonical "`∅`" expression used to phrase emptiness as an
-equivalence query. -/
-def emptyExpr : SExpr := .cap (.single [false]) (.single [true])
 
-@[simp] theorem denote_emptyExpr : denote emptyExpr = (∅ : Set (List Bool)) := by
-  ext w
-  simp only [emptyExpr, denote_cap, denote_single, Set.mem_inter_iff, Set.mem_singleton_iff,
-    Set.mem_empty_iff_false, iff_false, not_and]
-  rintro rfl
-  decide
 
 /-! ## Why an emptiness decider is *not* enough (the concrete obstruction)
 
@@ -262,7 +136,5 @@ Relation (i) is genuine regular-language **equivalence**, which is strictly stro
 fragment-emptiness, because the fragment is **not closed under complement / set-difference**
 (`L₁ ⊆ L₂ ↔ L₁ \ L₂ = ∅` needs `\`). The following exhibit the obstruction concretely. -/
 
-/-- "Contains a `0`" as a fragment expression: `Σ · {0} · Σ`. -/
-def containsZero : SExpr := .cat .sigma (.cat (.single [false]) .sigma)
 end Exercise722
 end DomainTheory.NeighbourhoodSystems

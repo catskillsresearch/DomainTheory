@@ -1,0 +1,39 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+-/
+module
+
+public import DomainTheory.DataTypesAsLattices.FixedLattices
+public import DomainTheory.DataTypesAsLattices.Lambda
+public import DomainTheory.DataTypesAsLattices.Retracts.comp_app
+public import DomainTheory.DataTypesAsLattices.Retracts.IsRetract
+public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
+public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
+public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
+public import DomainTheory.DataTypesAsLattices.Retracts.iterateBot_retractLe
+public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
+public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.DataTypesAsLattices
+
+/-- Earlier typed coordinates are fixed by every later projection. -/
+theorem inverseLimit_project_earlier {F : Pomega → Pomega}
+    (hret : ∀ a, IsRetract a → IsRetract (F a))
+    (hstrict : ∀ a, IsRetract a → IsStrict a → IsStrict (F a))
+    (hmono : ∀ {a b}, IsRetract a → IsStrict a →
+      IsRetract b → IsStrict b → retractLe a b → retractLe (F a) (F b))
+    (v : RetractInverseLimit F) {m n : ℕ} (hmn : m ≤ n) :
+    funOf (iterateBot F n) (v.1 m) = v.1 m := by
+  have hle := iterateBot_retractLe hret hstrict hmono hmn
+  have hm : funOf (iterateBot F m) (v.1 m) = v.1 m :=
+    (v.property.1 m).symm
+  have happ := congrArg (fun a => funOf a (v.1 m)) hle.2
+  simpa only [comp_app, hm] using happ.symm
+
+end DomainTheory.DataTypesAsLattices

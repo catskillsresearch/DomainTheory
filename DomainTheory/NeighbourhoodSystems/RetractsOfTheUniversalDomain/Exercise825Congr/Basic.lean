@@ -10,6 +10,12 @@ module
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Congr.orderIsoOfMutualInverse
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Congr.funSpaceCongrOrderIso
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Congr.ofIso_symm_comp_ofIso
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Congr.ofIso_comp_ofIso_symm
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Congr.funSpaceCongr_hji
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Congr.funSpaceCongr_hij
 
 @[expose] public section
 
@@ -42,63 +48,15 @@ variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 /-! ### A standalone gadget: exact mutual inverses give an order-isomorphism -/
 
-/-- **Two approximable maps that are *exact* (not merely `≤`) mutual inverses give an
-order-isomorphism of element types.** The generic upgrade behind `elementIsoOfProjectionPair`
-(`Proposition810b.lean`) when the projection-pair equation holds in *both* directions: then the
-fixed-point subtype on the codomain side is *everything*, collapsing to a genuine bijection. -/
-def orderIsoOfMutualInverse {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-    (i : ApproximableMap D E) (j : ApproximableMap E D)
-    (hji : j.comp i = idMap D) (hij : i.comp j = idMap E) : D.Element ≃o E.Element where
-  toFun := i.toElementMap
-  invFun := j.toElementMap
-  left_inv x := by rw [← toElementMap_comp, hji, toElementMap_idMap]
-  right_inv y := by rw [← toElementMap_comp, hij, toElementMap_idMap]
-  map_rel_iff' := by
-    intro x x'
-    show i.toElementMap x ≤ i.toElementMap x' ↔ x ≤ x'
-    constructor
-    · intro h
-      have hm := j.toElementMap_mono h
-      rwa [← toElementMap_comp, ← toElementMap_comp, hji, toElementMap_idMap,
-        toElementMap_idMap] at hm
-    · intro h
-      exact i.toElementMap_mono h
 
 /-! ### `ofIso e` and `ofIso e.symm` are exact mutual inverses -/
 
-theorem ofIso_symm_comp_ofIso (e : V₀.Element ≃o V₀'.Element) :
-    (ofIso e.symm).comp (ofIso e) = idMap V₀ := by
-  apply ext_of_toElementMap
-  intro x
-  rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, toElementMap_idMap,
-    OrderIso.symm_apply_apply]
 
-theorem ofIso_comp_ofIso_symm (e : V₀.Element ≃o V₀'.Element) :
-    (ofIso e).comp (ofIso e.symm) = idMap V₀' := by
-  apply ext_of_toElementMap
-  intro x
-  rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, toElementMap_idMap,
-    OrderIso.apply_symm_apply]
 
 /-! ### `funSpace` congruence -/
 
-theorem funSpaceCongr_hji (e0 : V₀.Element ≃o V₀'.Element) (e1 : V₁.Element ≃o V₁'.Element) :
-    (expMap (ofIso e0) (ofIso e1.symm)).comp (expMap (ofIso e0.symm) (ofIso e1)) =
-      idMap (funSpace V₀ V₁) := by
-  rw [← expMap_comp, ofIso_symm_comp_ofIso, ofIso_symm_comp_ofIso, expMap_id]
 
-theorem funSpaceCongr_hij (e0 : V₀.Element ≃o V₀'.Element) (e1 : V₁.Element ≃o V₁'.Element) :
-    (expMap (ofIso e0.symm) (ofIso e1)).comp (expMap (ofIso e0) (ofIso e1.symm)) =
-      idMap (funSpace V₀' V₁') := by
-  rw [← expMap_comp, ofIso_comp_ofIso_symm, ofIso_comp_ofIso_symm, expMap_id]
 
-/-- **`funSpace` is a congruence for `≃o`.** `𝒟₀ ≃o 𝒟₀'`, `𝒟₁ ≃o 𝒟₁'` `⟹`
-`(𝒟₀ → 𝒟₁) ≃o (𝒟₀' → 𝒟₁')`. -/
-noncomputable def funSpaceCongrOrderIso (e0 : V₀.Element ≃o V₀'.Element)
-    (e1 : V₁.Element ≃o V₁'.Element) :
-    (funSpace V₀ V₁).Element ≃o (funSpace V₀' V₁').Element :=
-  orderIsoOfMutualInverse (expMap (ofIso e0.symm) (ofIso e1)) (expMap (ofIso e0) (ofIso e1.symm))
-    (funSpaceCongr_hji e0 e1) (funSpaceCongr_hij e0 e1)
 
 /-! ### Currying, as a domain isomorphism -/
 end DomainTheory.NeighbourhoodSystems

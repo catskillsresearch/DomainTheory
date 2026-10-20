@@ -8,6 +8,8 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714.tFun
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714.tFun
 
 @[expose] public section
 
@@ -111,14 +113,8 @@ theorem repred_exists_primrec_range {p : ℕ → Prop} (hp : REPred p) {a : ℕ}
 
 variable {β : Type*}
 
-/-- The **running-intersection enumeration** of a computable element: `tFun Q r 0 = r 0` and
-`tFun Q r (i+1) = Q.inter (tFun Q r i) (r (i+1))`. As `i` grows it lists the meet of the first `i+1`
-members `Y_{r 0}, …, Y_{r i}` of the element, giving a *decreasing* chain of neighbourhoods. -/
-private def tFun {W : NeighborhoodSystem β} (Q : ComputablePresentation W) (r : ℕ → ℕ) (n : ℕ) :
-    ℕ :=
-  Nat.rec (motive := fun _ => ℕ) (r 0) (fun y IH => Q.inter IH (r (y + 1))) n
 
-private theorem tFun_zero {W : NeighborhoodSystem β} (Q : ComputablePresentation W) (r : ℕ → ℕ) :
+theorem tFun_zero {W : NeighborhoodSystem β} (Q : ComputablePresentation W) (r : ℕ → ℕ) :
     tFun Q r 0 = r 0 := rfl
 
 private theorem tFun_succ {W : NeighborhoodSystem β} (Q : ComputablePresentation W) (r : ℕ → ℕ)

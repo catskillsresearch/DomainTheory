@@ -1,0 +1,30 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+-/
+module
+
+public import DomainTheory.DataTypesAsLattices.Embedding
+public import DomainTheory.DataTypesAsLattices.Lambda.Term
+public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
+public import DomainTheory.DataTypesAsLattices.Lambda.Comb
+public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.abs
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.DataTypesAsLattices
+
+def erase : Term → Comb
+  | .var i => .var i
+  | .zero => .zero
+  | .succ t => .app .suc (erase t)
+  | .pred t => .app .pred (erase t)
+  | .cond z x y => .app (.app (.app .cond (erase x)) (erase y)) (erase z)
+  | .app u x => .app (erase u) (erase x)
+  | .lam i body => abs i (erase body)
+
+end DomainTheory.DataTypesAsLattices

@@ -14,6 +14,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.ProjPair
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.ofSubsystem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.ofIso
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.comp
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.IsUniversal
 
 @[expose] public section
 
@@ -73,57 +77,8 @@ types), so we bundle a small local heterogeneous analogue, `ProjPair`, purely as
 `trianglelefteq_trans` below. -/
 
 
-/-- **A subsystem relation `D ◁ E` gives a `ProjPair`** (Proposition 6.12, rebundled). -/
-def ProjPair.ofSubsystem {D E : NeighborhoodSystem α} (h : D ◁ E) : ProjPair D E where
-  inj := h.inj
-  proj := h.proj
-  proj_comp_inj := h.proj_comp_inj
-  inj_comp_proj_le := h.inj_comp_proj_le
 
-/-- **A `DomainIso` gives a `ProjPair`, via Theorem 2.7's `ofIso`.** Both round trips are genuine
-*equalities* (not just `≤`), since `e` is a full isomorphism, not merely a retraction. Uses
-`le_iff_toElementMap_le` (choice-free) rather than the classical `ext_of_toElementMap` — matching
-`Theorem86.lean`'s `isRetraction_subApprox`, which flags the same discipline. -/
-def ProjPair.ofIso {D : NeighborhoodSystem α} {E : NeighborhoodSystem β} (e : DomainIso D E) :
-    ProjPair D E where
-  inj := ApproximableMap.ofIso e
-  proj := ApproximableMap.ofIso e.symm
-  proj_comp_inj := by
-    have heq : ∀ x, ((ApproximableMap.ofIso e.symm).comp (ApproximableMap.ofIso e)).toElementMap x
-        = (idMap D).toElementMap x := by
-      intro x
-      rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, OrderIso.symm_apply_apply,
-        toElementMap_idMap]
-    exact le_antisymm (le_iff_toElementMap_le.mpr fun x => (heq x).le)
-      (le_iff_toElementMap_le.mpr fun x => (heq x).ge)
-  inj_comp_proj_le := by
-    have heq : ∀ y, ((ApproximableMap.ofIso e).comp (ApproximableMap.ofIso e.symm)).toElementMap y
-        = (idMap E).toElementMap y := by
-      intro y
-      rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply,
-        toElementMap_idMap]
-    exact le_iff_toElementMap_le.mpr fun y => (heq y).le
 
-/-- **`ProjPair`s compose.** If `D ⇄ E` and `E ⇄ F` are projection pairs, so is `D ⇄ F`
-(`inj := p2.inj ∘ p1.inj`, `proj := p1.proj ∘ p2.proj`). The first law composes as an equality
-chain; the second only needs `≤`, transported through `comp_mono_gen`. -/
-def ProjPair.comp {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-    {F : NeighborhoodSystem γ} (p1 : ProjPair D E) (p2 : ProjPair E F) :
-    ProjPair D F where
-  inj := p2.inj.comp p1.inj
-  proj := p1.proj.comp p2.proj
-  proj_comp_inj := by
-    show (p1.proj.comp p2.proj).comp (p2.inj.comp p1.inj) = idMap D
-    rw [comp_assoc, ← comp_assoc p2.proj p2.inj p1.inj, p2.proj_comp_inj, idMap_comp,
-      p1.proj_comp_inj]
-  inj_comp_proj_le := by
-    show (p2.inj.comp p1.inj).comp (p1.proj.comp p2.proj) ≤ idMap F
-    rw [comp_assoc, ← comp_assoc p1.inj p1.proj p2.proj]
-    calc p2.inj.comp ((p1.inj.comp p1.proj).comp p2.proj)
-        ≤ p2.inj.comp ((idMap E).comp p2.proj) :=
-          comp_mono_gen le_rfl (comp_mono_gen p1.inj_comp_proj_le le_rfl)
-      _ = p2.inj.comp p2.proj := by rw [idMap_comp]
-      _ ≤ idMap F := p2.inj_comp_proj_le
 
 /-- **`D ⊴ E` composed with an isomorphism `D ≅ᴰ D'` on the left is still `D ⊴ E`** — immediate
 from unfolding `⊴` and composing the two `DomainIso`s (`OrderIso.trans`). -/
@@ -152,9 +107,4 @@ theorem trianglelefteq_trans {D : NeighborhoodSystem α} {E : NeighborhoodSystem
 
 /-! ## Part 3 — a universal domain `V ≠ 𝒰` -/
 
-/-- **Universality, as an abstract predicate**: every countable neighbourhood system embeds
-(up to isomorphism) as a subsystem of `W` — Theorem 8.8(a)'s property, extracted from the specific
-domain `𝒰` to an arbitrary `W`. -/
-def IsUniversal {δ : Type w} (W : NeighborhoodSystem δ) : Prop :=
-  ∀ {α : Type u} (D : NeighborhoodSystem α) [Countable {S : Set α // D.mem S}], D ⊴ W
 end DomainTheory.NeighbourhoodSystems

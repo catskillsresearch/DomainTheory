@@ -8,6 +8,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.section₂
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.pfix
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.recOp
 
 @[expose] public section
 
@@ -46,18 +49,7 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
-/-- The section `y ↦ τ(x, y)` of `τ : 𝒟 × 𝒟 → 𝒟` at a fixed `x`, as an approximable endomap of
-`𝒟` (the curried `τ` applied to `x`). -/
-def section₂ (τ : ApproximableMap (prod V V) V) (x : V.Element) : ApproximableMap V V :=
-  toApproxMap ((curry τ).toElementMap x)
 
-/-- The **left-hand side** `λx. !y. τ(x, y)` of Proposition 5.4: `fix ∘ curry(τ)`. -/
-def pfix (τ : ApproximableMap (prod V V) V) : ApproximableMap V V :=
-  (fixMap V).comp (curry τ)
 
-/-- The **operator** `λg. λx. τ(x, g(x))` of Proposition 5.4, as an approximable endomap of the
-function space `(𝒟 → 𝒟)`: `recOp τ := curry(τ ∘ ⟨p₁, eval⟩)`. -/
-def recOp (τ : ApproximableMap (prod V V) V) : ApproximableMap (funSpace V V) (funSpace V V) :=
-  curry (τ.comp (paired (proj₁ (funSpace V V) V) (evalMap V V)))
 end ApproximableMap
 end DomainTheory.NeighbourhoodSystems

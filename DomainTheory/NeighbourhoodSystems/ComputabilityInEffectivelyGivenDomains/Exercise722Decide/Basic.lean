@@ -11,6 +11,34 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Words
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.PathSplit
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.NFAinter
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.autState
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.autStateCard
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.toNFA
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.pathAppend
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.pathAppend_take_drop
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.decideNonemptyB
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.decideEmptyB
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.consistentB
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.NFAinter_mem_eval_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.NFAinter_mem_accepts_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.dfaToNFA_eval
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.dfaToNFA_accepts
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.instFintypeAutState
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.instDecidableEqAutState
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.toNFA_accepts
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.pathStateAt_zero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.pathStateAt_succ
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.mem_accepts_of_path
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.accepts_skip_loop
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.accepts_card_zero
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.accepts_shorten_step
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.exists_accepted_word_short
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.autStateCard_eq_card
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.denote_nonempty_iff_short
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.decideNonemptyB_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.decideEmptyB_iff
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.BasicInst40
 public meta import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Words
 public meta import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.Basic
 
@@ -46,40 +74,10 @@ section NFAinterLemmas
 
 /-! ## NFA intersection (product) -/
 
-/-- Product NFA recognising the intersection: states `σ₁ × σ₂`, stepping/starting/accepting
-componentwise. -/
-def NFAinter (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂) : NFA Bool (σ₁ × σ₂) where
-  step s a := {t | t.1 ∈ M₁.step s.1 a ∧ t.2 ∈ M₂.step s.2 a}
-  start := {s | s.1 ∈ M₁.start ∧ s.2 ∈ M₂.start}
-  accept := {s | s.1 ∈ M₁.accept ∧ s.2 ∈ M₂.accept}
 
 variable (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂)
 
-theorem NFAinter_mem_eval_iff (x : List Bool) (p : σ₁ × σ₂) :
-    p ∈ (NFAinter M₁ M₂).eval x ↔ p.1 ∈ M₁.eval x ∧ p.2 ∈ M₂.eval x := by
-  induction x using List.reverseRecOn generalizing p with
-  | nil => exact Iff.rfl
-  | append_singleton x a ih =>
-    rw [NFA.eval_append_singleton, NFA.mem_stepSet]
-    constructor
-    · rintro ⟨q, hq, hstep⟩
-      rw [ih] at hq
-      rw [NFA.eval_append_singleton, NFA.mem_stepSet, NFA.eval_append_singleton, NFA.mem_stepSet]
-      exact ⟨⟨q.1, hq.1, hstep.1⟩, ⟨q.2, hq.2, hstep.2⟩⟩
-    · rintro ⟨h1, h2⟩
-      rw [NFA.eval_append_singleton, NFA.mem_stepSet] at h1 h2
-      obtain ⟨q1, hq1, hs1⟩ := h1
-      obtain ⟨q2, hq2, hs2⟩ := h2
-      exact ⟨(q1, q2), (ih (q1, q2)).mpr ⟨hq1, hq2⟩, hs1, hs2⟩
 
-theorem NFAinter_mem_accepts_iff (x : List Bool) :
-    x ∈ (NFAinter M₁ M₂).accepts ↔ x ∈ M₁.accepts ∧ x ∈ M₂.accepts := by
-  constructor
-  · rintro ⟨p, hp, hpe⟩
-    rw [NFAinter_mem_eval_iff] at hpe
-    exact ⟨⟨p.1, hp.1, hpe.1⟩, ⟨p.2, hp.2, hpe.2⟩⟩
-  · rintro ⟨⟨s, hs, hse⟩, ⟨t, ht, hte⟩⟩
-    exact ⟨(s, t), ⟨hs, ht⟩, (NFAinter_mem_eval_iff M₁ M₂ x (s, t)).mpr ⟨hse, hte⟩⟩
 
 end NFAinterLemmas
 
@@ -88,101 +86,18 @@ end NFAinterLemmas
 mathlib's `DFA.toNFA_correct` depends on `Classical.choice`; we reprove it choice-free (the leaf
 automata are DFAs, so the uniform `toNFA` must convert them without pulling choice). -/
 
-/-- The NFA from a DFA tracks the single deterministic state as a singleton. -/
-theorem dfaToNFA_eval {σ : Type} (M : DFA Bool σ) (x : List Bool) :
-    M.toNFA.eval x = {M.eval x} := by
-  induction x using List.reverseRecOn with
-  | nil => rfl
-  | append_singleton x a ih =>
-    rw [NFA.eval_append_singleton, ih]
-    ext s
-    rw [NFA.mem_stepSet]
-    constructor
-    · rintro ⟨t, ht, hs⟩
-      rw [Set.mem_singleton_iff] at ht
-      subst ht
-      rw [Set.mem_singleton_iff, DFA.eval_append_singleton]
-      exact hs
-    · intro hs
-      rw [Set.mem_singleton_iff, DFA.eval_append_singleton] at hs
-      exact ⟨M.eval x, Set.mem_singleton _, hs⟩
 
-/-- Choice-free version of `DFA.toNFA_correct`. -/
-theorem dfaToNFA_accepts {σ : Type} (M : DFA Bool σ) : M.toNFA.accepts = M.accepts := by
-  ext x
-  constructor
-  · rintro ⟨S, hS, hSe⟩
-    rw [dfaToNFA_eval, Set.mem_singleton_iff] at hSe
-    rw [DFA.mem_accepts, ← hSe]
-    exact hS
-  · intro hx
-    rw [DFA.mem_accepts] at hx
-    exact ⟨M.eval x, hx, by rw [dfaToNFA_eval]; exact Set.mem_singleton _⟩
 
 /-! ## The uniform recogniser `toNFA` -/
 
-/-- State type of the automaton for an `SExpr` (a `Fintype`, see `instFintypeAutState`). -/
-def autState : SExpr → Type
-  | .sigma => Unit
-  | .single σ => Option (Fin (σ.length + 1))
-  | .cap a b => autState a × autState b
-  | .cat a b => autState a ⊕ autState b
 
-instance instFintypeAutState : (e : SExpr) → Fintype (autState e)
-  | .sigma => inferInstanceAs (Fintype Unit)
-  | .single σ => inferInstanceAs (Fintype (Option (Fin (σ.length + 1))))
-  | .cap a b => by
-      letI := instFintypeAutState a; letI := instFintypeAutState b
-      exact inferInstanceAs (Fintype (autState a × autState b))
-  | .cat a b => by
-      letI := instFintypeAutState a; letI := instFintypeAutState b
-      exact inferInstanceAs (Fintype (autState a ⊕ autState b))
 
-instance instDecidableEqAutState : (e : SExpr) → DecidableEq (autState e)
-  | .sigma => inferInstanceAs (DecidableEq Unit)
-  | .single σ => inferInstanceAs (DecidableEq (Option (Fin (σ.length + 1))))
-  | .cap a b => by
-      letI := instDecidableEqAutState a; letI := instDecidableEqAutState b
-      exact inferInstanceAs (DecidableEq (autState a × autState b))
-  | .cat a b => by
-      letI := instDecidableEqAutState a; letI := instDecidableEqAutState b
-      exact inferInstanceAs (DecidableEq (autState a ⊕ autState b))
 
 example : DecidableEq (autState (.sigma : SExpr)) := inferInstance
 example : DecidableEq (autState (.single [true, false] : SExpr)) := inferInstance
 
-/-- A crude upper bound on `Fintype.card (autState e)` (used to bound word search length). -/
-def autStateCard : SExpr → ℕ
-  | .sigma => 1
-  | .single σ => σ.length + 2
-  | .cap a b => autStateCard a * autStateCard b
-  | .cat a b => autStateCard a + autStateCard b
 
-/-- The uniform automaton for a fragment expression: leaves from `Exercise722DFA.lean`, `cap` by the
-product construction, `cat` by the concatenation automaton (`Exercise722Cat.lean`). -/
-def toNFA : (e : SExpr) → NFA Bool (autState e)
-  | .sigma => sigmaDFA.toNFA
-  | .single σ => (singleDFA σ).toNFA
-  | .cap a b => NFAinter (toNFA a) (toNFA b)
-  | .cat a b => (catEps (toNFA a) (toNFA b)).toNFA
 
-/-- **The automaton recognises exactly the language it should.** -/
-theorem toNFA_accepts : (e : SExpr) → (toNFA e).accepts = denote e
-  | .sigma => by
-      change sigmaDFA.toNFA.accepts = denote .sigma
-      rw [dfaToNFA_accepts sigmaDFA, sigmaDFA_accepts, denote_sigma]
-  | .single σ => by
-      change (singleDFA σ).toNFA.accepts = denote (.single σ)
-      rw [dfaToNFA_accepts (singleDFA σ)]
-      exact singleDFA_accepts_denote σ
-  | .cap a b => by
-      ext x
-      change x ∈ (NFAinter (toNFA a) (toNFA b)).accepts ↔ _
-      rw [NFAinter_mem_accepts_iff, toNFA_accepts a, toNFA_accepts b, denote_cap]
-      exact (Set.mem_inter_iff x (denote a) (denote b)).symm
-  | .cat a b => by
-      change (catEps (toNFA a) (toNFA b)).toNFA.accepts = denote (.cat a b)
-      rw [εNFA.toNFA_correct, catEps_accepts, toNFA_accepts a, toNFA_accepts b, denote_cat]
 
 /-! ## Emptiness reduces to reachability of an accept state
 
@@ -204,190 +119,32 @@ section ShortWord
 variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
 
 
-omit [Fintype σ] in
-@[simp] theorem pathStateAt_zero {s t : σ} {x : List Bool} (p : M.Path s t x) :
-    pathStateAt p 0 (Nat.zero_le _) = s := by
-  cases x with
-  | nil =>
-    cases p; simp [pathStateAt, pathStateAtAux]
-  | cons a xs =>
-    cases p with
-    | cons _ s' _ _ _ _ _ => simp [pathStateAt, pathStateAtAux]
-
-omit [Fintype σ] in
-theorem pathStateAt_succ {sMid s' u : σ} {a : Bool} {xs : List Bool}
-    (hstep : sMid ∈ M.step s' a) (p' : M.Path sMid u xs) (n : ℕ) (hn : n ≤ xs.length) :
-    pathStateAt (.cons sMid s' u a xs hstep p') (n + 1) (Nat.succ_le_succ hn) =
-      pathStateAt p' n hn := by
-  simp [pathStateAt, pathStateAtAux]
-
-/-- Append two paths meeting at the middle state. -/
-def pathAppend {s u t : σ} {a b : List Bool} (p : M.Path s u a) (p' : M.Path u t b) :
-    M.Path s t (a ++ b) :=
-  match p with
-  | .nil _ => p'
-  | .cons sMid s' _ a' xs hstep p'' =>
-      .cons sMid s' _ a' (xs ++ b) hstep (pathAppend p'' p')
 
 
-noncomputable def pathAppend_take_drop {s t : σ} {x : List Bool} (p : M.Path s t x) (n : ℕ)
-    (hn : n ≤ x.length) : PathSplit p n hn := by
-  revert n hn
-  induction p with
-  | nil s =>
-    intro n hn
-    have hn0 : n = 0 := Nat.eq_zero_of_le_zero hn
-    subst hn0
-    exact { u := s, hp := .nil s, ht := .nil s, hu := by rfl }
-  | cons sMid s' u a xs hstep p' ih =>
-    intro n hn
-    cases n with
-    | zero =>
-      exact { u := s', hp := .nil s', ht := .cons sMid s' u a xs hstep p', hu := by rfl }
-    | succ n' =>
-      have hn' : n' ≤ xs.length := by simpa [List.length_cons] using hn
-      have split := ih n' hn'
-      exact {
-        u := split.u
-        hp := .cons sMid s' split.u a (xs.take n') hstep split.hp
-        ht := split.ht
-        hu := by rw [pathStateAt_succ hstep p' n' hn']; exact split.hu
-      }
 
-omit [Fintype σ] in
-theorem mem_accepts_of_path {s t : σ} {x : List Bool} (hs : s ∈ M.start) (ht : t ∈ M.accept)
-    (p : M.Path s t x) : x ∈ M.accepts := by
-  rw [NFA.accepts_iff_exists_path]
-  exact ⟨s, hs, t, ht, ⟨p⟩⟩
 
-omit [Fintype σ] in
-theorem accepts_skip_loop {s t : σ} {x : List Bool} {i j : ℕ}
-    (hi : i ≤ x.length) (hj : j ≤ x.length) (_hij : i < j)
-    (hs : s ∈ M.start) (ht : t ∈ M.accept) (hp : M.Path s t x)
-    (heq : pathStateAt hp i hi = pathStateAt hp j hj) :
-    x.take i ++ x.drop j ∈ M.accepts := by
-  let splitI := pathAppend_take_drop hp i hi
-  let splitJ := pathAppend_take_drop hp j hj
-  have hqq' : splitI.u = splitJ.u := by rw [← splitI.hu, heq, splitJ.hu]
-  exact mem_accepts_of_path hs ht (pathAppend splitI.hp (hqq' ▸ splitJ.ht))
 
-theorem accepts_card_zero (hσ : Fintype.card σ = 0) {w : List Bool} (hw : w ∈ M.accepts) : False := by
-  rw [NFA.mem_accepts] at hw
-  obtain ⟨t, ht, hte⟩ := hw
-  rw [NFA.mem_evalFrom_iff_exists (S := M.start) (s := t) (x := w)] at hte
-  obtain ⟨s, hs, _⟩ := hte
-  exact (Fintype.card_eq_zero_iff.mp hσ).elim s
 
-theorem accepts_shorten_step {x : List Bool} (hx : x ∈ M.accepts)
-    (hlen : Fintype.card σ ≤ x.length) :
-    ∃ y, y ∈ M.accepts ∧ y.length < x.length := by
-  rw [NFA.accepts_iff_exists_path] at hx
-  obtain ⟨s, hs, t, ht, ⟨hp⟩⟩ := hx
-  obtain ⟨i, j, hne, heq⟩ :=
-    Fintype.exists_ne_map_eq_of_card_lt
-      (f := fun k : Fin (x.length + 1) => pathStateAt hp k.val (Nat.le_of_lt_succ k.isLt))
-      (by rw [Fintype.card_fin]; exact Nat.lt_succ_iff.mpr hlen)
-  have hval : i.val ≠ j.val := fun h => hne (Fin.ext h)
-  rcases Nat.lt_or_gt_of_ne hval with hij | hij
-  · refine ⟨x.take i.val ++ x.drop j.val, ?_, ?_⟩
-    · exact accepts_skip_loop (by omega) (by omega) hij hs ht hp heq
-    · have : j.val - i.val > 0 := Nat.sub_pos_of_lt hij
-      simp [List.length_append, List.length_take, List.length_drop]
-      omega
-  · refine ⟨x.take j.val ++ x.drop i.val, ?_, ?_⟩
-    · exact accepts_skip_loop (by omega) (by omega) hij hs ht hp heq.symm
-    · have : i.val - j.val > 0 := Nat.sub_pos_of_lt hij
-      simp [List.length_append, List.length_take, List.length_drop]
-      omega
 
-theorem exists_accepted_word_short (h : M.accepts.Nonempty) :
-    ∃ w, w.length < Fintype.card σ ∧ w ∈ M.accepts := by
-  by_cases hσ : Fintype.card σ = 0
-  · obtain ⟨x, hx⟩ := h
-    exact (accepts_card_zero hσ hx).elim
-  · obtain ⟨x, hx⟩ := h
-    exact Nat.strongRecOn x.length
-      (motive := fun n =>
-        ∀ w, w.length = n → w ∈ M.accepts → ∃ u, u.length < Fintype.card σ ∧ u ∈ M.accepts)
-      (fun n ih w hwlen hw => by
-        by_cases hlt : n < Fintype.card σ
-        · exact ⟨w, hwlen ▸ hlt, hw⟩
-        · have hge : Fintype.card σ ≤ n := Nat.not_lt.mp hlt
-          obtain ⟨y, hy, hylt⟩ := accepts_shorten_step hw (hwlen.symm ▸ hge)
-          exact ih y.length (Nat.lt_of_lt_of_eq hylt hwlen) y rfl hy)
-      x rfl hx
 
-theorem autStateCard_eq_card (e : SExpr) : autStateCard e = Fintype.card (autState e) := by
-  induction e with
-  | sigma =>
-    simp [autStateCard, autState]
-    exact (Fintype.card_unique (α := Unit)).symm
-  | single σ =>
-    simp only [autStateCard, autState]
-    have h1 : Fintype.card (Option (Fin (σ.length + 1))) =
-        Fintype.card (Fin (σ.length + 1)) + 1 :=
-      Fintype.card_option (α := Fin (σ.length + 1))
-    have h2 : Fintype.card (Fin (σ.length + 1)) = σ.length + 1 :=
-      Fintype.card_fin (σ.length + 1)
-    calc autStateCard (.single σ)
-        = σ.length + 2 := rfl
-      _ = (σ.length + 1) + 1 := rfl
-      _ = Fintype.card (Fin (σ.length + 1)) + 1 := (congrArg (fun n => n + 1) h2).symm
-      _ = Fintype.card (Option (Fin (σ.length + 1))) := h1.symm
-  | cap a b ih_a ih_b =>
-    simp [autStateCard, autState, ih_a, ih_b]
-    exact (Fintype.card_prod (autState a) (autState b)).symm
-  | cat a b ih_a ih_b =>
-    simp [autStateCard, autState, ih_a, ih_b]
-    exact (Fintype.card_sum (α := autState a) (β := autState b)).symm
 
-theorem denote_nonempty_iff_short (e : SExpr) :
-    (denote e).Nonempty ↔ ∃ w ∈ wordsUpTo (autStateCard e), matchesB e w = true := by
-  have hc : autStateCard e = Fintype.card (autState e) := autStateCard_eq_card e
-  constructor
-  · intro hne
-    rw [← toNFA_accepts e] at hne
-    obtain ⟨w, hwlt, hw⟩ := exists_accepted_word_short hne
-    refine ⟨w, ?_, ?_⟩
-    · rw [mem_wordsUpTo, hc]; omega
-    · rw [matchesB_iff, ← toNFA_accepts e]; exact hw
-  · intro ⟨w, hwmem, hmatch⟩
-    rw [mem_wordsUpTo, hc] at hwmem
-    exact ⟨w, (matchesB_iff e w).mp hmatch⟩
+
+
 
 end ShortWord
 
 /-! ## Emptiness decider (Session C5) -/
 
-/-- Search `wordsUpTo (autStateCard e)` for a word accepted by `matchesB e`. -/
-def decideNonemptyB (e : SExpr) : Bool :=
-  anyMatchesB e (wordsUpTo (autStateCard e))
 
-/-- Decidable emptiness of `denote e` via bounded word search. -/
-def decideEmptyB (e : SExpr) : Bool := !decideNonemptyB e
 
-@[simp] theorem decideNonemptyB_iff (e : SExpr) :
-    decideNonemptyB e = true ↔ (denote e).Nonempty := by
-  simp [decideNonemptyB, anyMatchesB, List.any_eq_true, denote_nonempty_iff_short]
 
-@[simp] theorem decideEmptyB_iff (e : SExpr) :
-    decideEmptyB e = true ↔ denote e = ∅ := by
-  rw [decideEmptyB, Bool.not_eq_true_eq_eq_false, ← Bool.eq_false_eq_not_eq_true,
-    decideNonemptyB_iff, Set.not_nonempty_iff_eq_empty]
 
-instance decidableEmptyDenote (e : SExpr) : Decidable (denote e = ∅) :=
-  if h : decideEmptyB e then .isTrue (decideEmptyB_iff e |>.mp h)
-  else .isFalse fun he => h (decideEmptyB_iff e |>.mpr he)
-
-#eval decideEmptyB (.cap (.single [false]) (.single [true])) -- should be `true` (disjoint singletons)
 
 /-! ## Consistency decider (Session C6) — Definition 7.1 relation (ii)
 
 For `X, Y ∈ S`, Scott's consistency `∃ Z ∈ S, Z ⊆ X ∩ Y` is equivalent to `(X ∩ Y).Nonempty`
 by positivity (`Ssys_isPositive`). On syntax, this is non-emptiness of `denote (cap a b)`. -/
 
-/-- Decides relation (ii) on a pair of expressions: `true` iff `denote a ∩ denote b` is non-empty. -/
-def consistentB (a b : SExpr) : Bool := !decideEmptyB (.cap a b)
 
 @[simp] theorem consistentB_iff (a b : SExpr) :
     consistentB a b = true ↔ (denote (.cap a b)).Nonempty := by

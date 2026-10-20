@@ -1,0 +1,48 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.enc_nil
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.enc_cons
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.D'_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.D'_master
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.toD'
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.fromD'
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.toD'_mem_enc
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.toD'_mem_encC
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.fromD'_mem_cone
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.fromD'_mem_singleton
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
+
+namespace Exercise822
+
+theorem fromD'_toD' (x : C.Element) : fromD' (toD' x) = x := by
+  apply NeighborhoodSystem.Element.ext
+  intro X
+  constructor
+  · rintro (⟨σ, hσ, rfl⟩ | ⟨σ, hσ, rfl⟩)
+    · exact (toD'_mem_enc σ).mp hσ
+    · exact (toD'_mem_encC σ).mp hσ
+  · intro hX
+    rcases x.sub hX with ⟨σ, rfl⟩ | ⟨σ, rfl⟩
+    · exact Or.inl ⟨σ, (toD'_mem_enc σ).mpr hX, rfl⟩
+    · exact Or.inr ⟨σ, (toD'_mem_encC σ).mpr hX, rfl⟩
+
+end Exercise822
+
+end DomainTheory.NeighbourhoodSystems

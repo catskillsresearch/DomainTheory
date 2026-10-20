@@ -11,6 +11,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.MonotoneAt
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.MonotoneOnDomains
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.targetFam
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613.ContinuousOnDomains
 
 @[expose] public section
 
@@ -69,33 +72,8 @@ universe w
 /-! ### Monotone on domains -/
 
 
-/-- **Definition 6.13 (Scott 1981, PRG-19), monotone on domains.** A functor `T` is *monotone on
-domains* iff every subdomain relation `D ◁ E` is carried to a subdomain relation `T(D) ◁ T(E)` whose
-projection pair is `(T(i), T(j))` — see `MonotoneAt`. -/
-def MonotoneOnDomains (T : Endofunctor DomainObj.{w}) : Prop :=
-  ∀ {α : Type w} {D E : NeighborhoodSystem α} (h : D ◁ E), MonotoneAt T h
 
 /-! ### Continuous on domains -/
 
-/-- The **target-side neighbourhood family** of the image `T(D)` of a subsystem `h : D ◁ E`, viewed
-over `T(E)`'s carrier (using `MonotoneAt.carrier_eq` to transport neighbourhoods of `T(D)` to that
-carrier). This is the data on which "`λD. T(D)` is approximable" is expressed. -/
-def targetFam (T : Endofunctor DomainObj.{w}) (hmono : MonotoneOnDomains T)
-    {α : Type w} {D E : NeighborhoodSystem α} (h : D ◁ E) :
-    Set (Set (T.obj ⟨α, E⟩).carrier) :=
-  {Y | (T.obj ⟨α, D⟩).sys.mem ((hmono h).carrier_eq ▸ Y)}
 
-/-- **Definition 6.13 (Scott 1981, PRG-19), continuous on domains.** A monotone functor `T` is
-*continuous on domains* iff `λD. T(D) : {D ∣ D ◁ E} → {D' ∣ D' ◁ T(E)}` is approximable. In the
-neighbourhood framework this is *preservation of directed unions of subsystems*: for any non-empty
-directed family `ℱ` of subsystems of `E` whose union is the subsystem `U` (`hU`), the target-side
-neighbourhood family of `T(U)` is the union of those of the `T(D)` for `D ∈ ℱ`. -/
-def ContinuousOnDomains (T : Endofunctor DomainObj.{w}) : Prop :=
-  ∃ hmono : MonotoneOnDomains T,
-    ∀ {α : Type w} {E : NeighborhoodSystem α}
-      (ℱ : Set (NeighborhoodSystem α)) (hℱ : ∀ ⦃D⦄, D ∈ ℱ → D ◁ E)
-      (_hne : ℱ.Nonempty) (_hdir : DirectedOn (· ◁ ·) ℱ)
-      {U : NeighborhoodSystem α} (hUE : U ◁ E)
-      (_hU : ∀ X, U.mem X ↔ ∃ D ∈ ℱ, D.mem X),
-      targetFam T hmono hUE = ⋃ D, ⋃ hD : D ∈ ℱ, targetFam T hmono (hℱ hD)
 end DomainTheory.NeighbourhoodSystems

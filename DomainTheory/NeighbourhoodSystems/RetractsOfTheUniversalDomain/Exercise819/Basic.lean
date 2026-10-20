@@ -11,6 +11,10 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.swapProdT
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.pairToFun
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.funToPair
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.sumToProdT
 
 @[expose] public section
 
@@ -79,23 +83,8 @@ section Prod
 
 variable {α : Type u} {E : NeighborhoodSystem α}
 
-/-- The "swap" map `(E×E)×T → T×(E×E)`, used to feed `cond`'s `T×E×E`-shaped domain from a
-`(E×E)×T`-shaped one so it can be curried away from the `T`-argument. -/
-noncomputable def swapProdT : ApproximableMap (prod (prod E E) TD) (prod TD (prod E E)) :=
-  paired (proj₁ (prod E E) TD) (proj₀ (prod E E) TD)
 
-/-- **Pairing up, as a function out of `T`.** `pairToFun(x, y) : T → E` sends `t ↦ cond(t, x,
-y)`; in particular `true ↦ x`, `false ↦ y`, `⊥ ↦ ⊥` (Exercise 3.26). -/
-noncomputable def pairToFun : ApproximableMap (prod E E) (funSpace TD E) :=
-  curry ((cond E).comp swapProdT)
 
-/-- **Reading off the pair from a function `T → E`.** `funToPair(φ) = (φ(true), φ(false))`. -/
-noncomputable def funToPair : ApproximableMap (funSpace TD E) (prod E E) :=
-  paired
-    ((evalMap TD E).comp
-      (paired (idMap (funSpace TD E)) (constMap (funSpace TD E) Example23.trueElt)))
-    ((evalMap TD E).comp
-      (paired (idMap (funSpace TD E)) (constMap (funSpace TD E) Example23.falseElt)))
 
 end Prod
 
@@ -105,10 +94,6 @@ section Sum
 
 variable {α : Type u} {E : NeighborhoodSystem α} (hE : ∀ X, E.mem X → X.Nonempty)
 
-/-- **The tagging embedding `E + E → T × (E × E)`.** `w ↦ (which w, out₀ w, out₁ w)`. -/
-noncomputable def sumToProdT : ApproximableMap (sum E E hE hE) (prod TD (prod E E)) :=
-  paired (whichMap E E hE hE)
-    (paired (outMap₀ (h₀ := hE) (h₁ := hE)) (outMap₁ (h₀ := hE) (h₁ := hE)))
 
 end Sum
 

@@ -270,6 +270,7 @@ namespace Domain.Recursive
 
 
 open DomainTheory.NeighbourhoodSystems Exercise722
+open DomainTheory.NeighbourhoodSystems.Exercise722
 
 
 

@@ -11,6 +11,8 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_inj_isComputableMap
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_proj_isComputableMap
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_projectionPair_isComputable
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoInj
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoProj
 
 @[expose] public section
 
@@ -64,11 +66,7 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-! ## `isoInj`, `isoProj`: the code-level iso `D ≅ᴰ DprimeUCode P` as approximable maps -/
 
-/-- **`isoInj : D → D''`**, Theorem 2.7 applied to `domainIsoCode P`. -/
-noncomputable def isoInj : ApproximableMap D (DprimeUCode P) := ofIso (domainIsoCode P)
 
-/-- **`isoProj : D'' → D`**, Theorem 2.7 applied to the inverse iso. -/
-noncomputable def isoProj : ApproximableMap (DprimeUCode P) D := ofIso (domainIsoCode P).symm
 
 /-! ## Reducing `isoInj.rel`/`isoProj.rel` to raw-index inclusion tests -/
 

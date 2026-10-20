@@ -1,0 +1,66 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.toSum_mem_inj₀
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.toSum_mem_inj₁
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.fromSum_mem_embF
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.fromSum_mem_embT
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.mem_prodTokNbhd_nil
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.mem_prodTokNbhd_false
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.mem_prodTokNbhd_true
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.prodTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.prodTok_mem_iff
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.prodTok_master
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.fstTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.sndTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.mem_fstTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.mem_sndTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.prodTok_mem_split
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.pairTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.pairTok_fstTok_sndTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.fstTok_pairTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.sndTok_pairTok
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap Example62 ExampleB
+
+namespace Exercise619
+
+variable {D₀ D₁ : NeighborhoodSystem Str}
+
+variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
+
+/-- The order-isomorphism `|D₀ × D₁|ₜₒₖ ≃o |D₀| × |D₁|` (Scott's Proposition 3.2, token-level). -/
+def prodTokEquiv : (prodTok D₀ D₁).Element ≃o D₀.Element × D₁.Element where
+  toFun z := (fstTok z, sndTok z)
+  invFun p := pairTok p.1 p.2
+  left_inv z := pairTok_fstTok_sndTok z
+  right_inv p := by simp
+  map_rel_iff' := by
+    intro z z'
+    constructor
+    · rintro ⟨h1, h2⟩ W hW
+      obtain ⟨X, Y, hX, hY, rfl⟩ := z.sub hW
+      obtain ⟨ha, hb⟩ := (prodTok_mem_split hX hY).mp hW
+      have hX' : (fstTok z').mem X := h1 X ⟨hX, ha⟩
+      have hY' : (sndTok z').mem Y := h2 Y ⟨hY, hb⟩
+      exact (prodTok_mem_split hX hY).mpr ⟨hX'.2, hY'.2⟩
+    · intro h
+      exact ⟨fun X ⟨hX, hzX⟩ => ⟨hX, h _ hzX⟩, fun Y ⟨hY, hzY⟩ => ⟨hY, h _ hzY⟩⟩
+
+end Exercise619
+
+end DomainTheory.NeighbourhoodSystems

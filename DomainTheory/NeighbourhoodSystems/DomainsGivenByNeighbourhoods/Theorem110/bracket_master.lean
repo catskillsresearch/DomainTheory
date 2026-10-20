@@ -1,0 +1,29 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110.bracket
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110.mem_bracket
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+namespace NeighborhoodSystem
+
+variable {α : Type*} (V : NeighborhoodSystem α)
+
+@[simp] theorem bracket_master : V.bracket V.master = Set.univ := by
+  ext x; simp only [mem_bracket, Set.mem_univ, iff_true]; exact x.master_mem
+
+end NeighborhoodSystem
+
+end DomainTheory.NeighbourhoodSystems

@@ -1,0 +1,39 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import Mathlib.Data.Nat.Sqrt
+import all Mathlib.Data.Nat.Sqrt
+public import Mathlib.Data.Nat.Pairing
+import all Mathlib.Data.Nat.Pairing
+public import Mathlib.Data.Nat.Bitwise
+import all Mathlib.Data.Nat.Bitwise
+public import Mathlib.Data.List.Basic
+import all Mathlib.Data.List.Basic
+public import Mathlib.Computability.Partrec
+import all Mathlib.Computability.Partrec
+public import Mathlib.Tactic.Ring
+import all Mathlib.Tactic.Ring
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive.sqrt_eq_of
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace Domain.Recursive
+
+/-- `sqrt (q² + a) = q` whenever `a ≤ 2q` (choice-free; mathlib's `Nat.sqrt_add_eq` is classical). -/
+theorem sqrt_add_eq (q a : ℕ) (h : a ≤ q + q) : Nat.sqrt (q * q + a) = q := by
+  refine sqrt_eq_of (Nat.le_add_right _ _) ?_
+  have expand : (q + 1) * (q + 1) = q * q + q + q + 1 := Nat.succ_mul_succ q q
+  omega
+
+end Domain.Recursive

@@ -11,6 +11,13 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111
 public import Mathlib.Tactic
 import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.prefixSeq
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.branchSeq
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.branch
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.prefixSeq_length
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.prefixSeq_prefix_succ
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.prefixSeq_mono
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.branchSeq_mono
 
 @[expose] public section
 
@@ -40,33 +47,10 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise113
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
-/-- The length-`n` initial segment `p ↾ n = ⟨p 0, …, p (n-1)⟩` of an infinite path `p`. -/
-def prefixSeq (p : ℕ → Bool) : ℕ → Str
-  | 0 => []
-  | (n + 1) => prefixSeq p n ++ [p n]
 
-@[simp] theorem prefixSeq_length (p : ℕ → Bool) (n : ℕ) : (prefixSeq p n).length = n := by
-  induction n with
-  | zero => rfl
-  | succ k ih => simp [prefixSeq, ih]
 
-theorem prefixSeq_prefix_succ (p : ℕ → Bool) (n : ℕ) :
-    prefixSeq p n <+: prefixSeq p (n + 1) := ⟨[p n], rfl⟩
 
-theorem prefixSeq_mono (p : ℕ → Bool) {n m : ℕ} (h : n ≤ m) :
-    prefixSeq p n <+: prefixSeq p m := by
-  induction m, h using Nat.le_induction with
-  | base => exact List.prefix_rfl
-  | succ k _ ih => exact ih.trans (prefixSeq_prefix_succ p k)
 
-/-- The finite approximations `σₙ⊥ = (p ↾ n)⊥` along the path `p`. -/
-def branchSeq (p : ℕ → Bool) (n : ℕ) : B.Element := sigmaBot (prefixSeq p n)
 
-theorem branchSeq_mono (p : ℕ → Bool) : Monotone (branchSeq p) := by
-  intro n m h
-  exact (sigmaBot_le_iff (prefixSeq p n) (prefixSeq p m)).mpr (prefixSeq_mono p h)
 
-/-- **The limit/total element of an infinite path** `p`: the ascending union `⋃ₙ (p ↾ n)⊥`
-(Theorem 1.11(ii)). These are the "limit nodes all along the top" of Scott's picture. -/
-def branch (p : ℕ → Bool) : B.Element := B.iUnion (branchSeq p) (branchSeq_mono p)
 end DomainTheory.NeighbourhoodSystems.Exercise113

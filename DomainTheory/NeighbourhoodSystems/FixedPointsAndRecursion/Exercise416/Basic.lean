@@ -9,6 +9,8 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise415
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise416.optimalFix
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise416.f_sInf_le
 
 @[expose] public section
 
@@ -42,20 +44,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace NeighborhoodSystem
 
-/-- **Exercise 4.16(1) (Scott 1981, PRG-19).** Scott's formula: for a non-empty set `S` of fixed
-points, `f(⋂S) ⊑ ⋂S`. (`f(⋂S) ⊑ f(s) = s` for each `s ∈ S`, then take the glb.) -/
-theorem f_sInf_le (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Element)
-    (hS : S.Nonempty) (hfix : ∀ s ∈ S, f s = s) : f (V.sInf S hS) ≤ V.sInf S hS := by
-  apply V.le_sInf
-  intro s hsS
-  calc f (V.sInf S hS) ≤ f s := hf (V.sInf_le S hS hsS)
-    _ = s := hfix s hsS
 
-/-- **Exercise 4.16 (Scott 1981, PRG-19).** The *optimal* fixed point associated with a non-empty
-set `S` of fixed points: the least fixed point sitting below `⋂S` (Exercise 4.13(1) applied to the
-pre-fixed point `⋂S`). -/
-def optimalFix (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Element) (hS : S.Nonempty)
-    (hfix : ∀ s ∈ S, f s = s) : V.Element :=
-  monoFix f (f_sInf_le f hf S hS hfix)
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems

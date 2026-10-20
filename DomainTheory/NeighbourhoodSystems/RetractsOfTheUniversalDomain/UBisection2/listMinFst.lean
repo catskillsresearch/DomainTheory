@@ -1,0 +1,25 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open Domain.Recursive NeighborhoodSystem
+
+/-- `min_i pᵢ.1` over a presenting list, folded with seed `1` (safe: every genuine pair has
+`p.1 < 1` once bounded, `forall_bounds_decodeQPairList_canonCode`). -/
+def listMinFst (L : List (ℚ × ℚ)) : ℚ := L.foldl (fun acc p => min acc p.1) 1
+
+end DomainTheory.NeighbourhoodSystems

@@ -8,6 +8,9 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.lowerSet
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.upperSet
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.mem_lowerSet
 
 @[expose] public section
 
@@ -63,20 +66,10 @@ namespace Subsystem.ProjectionPair
 
 /-! ### First extremal formula: `h(y) = ⊔ {x ∣ g(x) ⊑ y}`. -/
 
-/-- The set `{x ∈ |𝒟| ∣ g(x) ⊑ y}` of the first formula. By the Galois connection it is the
-down-set `{x ∣ x ⊑ h(y)}` of `h(y)`. -/
-def lowerSet (P : ProjectionPair D E) (y : E.Element) : Set D.Element :=
-  {x | P.inj.toElementMap x ≤ y}
 
-@[simp] theorem mem_lowerSet (P : ProjectionPair D E) {y : E.Element} {x : D.Element} :
-    x ∈ P.lowerSet y ↔ P.inj.toElementMap x ≤ y := Iff.rfl
 
 /-! ### Second extremal formula: `g(x) = ⊓ {y ∣ x ⊑ h(y)}`. -/
 
-/-- The set `{y ∈ |ℰ| ∣ x ⊑ h(y)}` of the second formula. By the Galois connection it is the
-up-set `{y ∣ g(x) ⊑ y}` of `g(x)`. -/
-def upperSet (P : ProjectionPair D E) (x : D.Element) : Set E.Element :=
-  {y | x ≤ P.proj.toElementMap y}
 
 @[simp] theorem mem_upperSet (P : ProjectionPair D E) {x : D.Element} {y : E.Element} :
     y ∈ P.upperSet x ↔ x ≤ P.proj.toElementMap y := Iff.rfl

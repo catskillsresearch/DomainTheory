@@ -1,0 +1,26 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+-/
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts
+public import Mathlib.Data.Set.Finite.Powerset
+import all Mathlib.Data.Set.Finite.Powerset
+public import DomainTheory.DataTypesAsLattices.Classification.IsBooleanOpen
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.DataTypesAsLattices
+
+open TopologicalSpace
+
+/-- Characteristic-style map used in Theorem 6.1: `0 ∈ f(x)` iff some
+finite piece of `x` already lies in `U`. -/
+def charOpen (U : Set Pomega) (x : Pomega) : Pomega :=
+  {k | k = 0 ∧ ∃ n, e n ⊆ x ∧ e n ∈ U}
+
+end DomainTheory.DataTypesAsLattices

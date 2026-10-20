@@ -10,6 +10,12 @@ module
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.eIdx
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.P0
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.posnegList
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.eIdx_involutive
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.eIdx_primrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.P0_X
 
 @[expose] public section
 
@@ -41,54 +47,10 @@ open NeighborhoodSystem Domain.Recursive
 
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
-/-- **Swap `0` and `P.masterIdx`.** A primitive-recursive involution on `ℕ` re-pointing whichever
-index `P.masterIdx` names `D`'s master neighbourhood to sit at index `0` instead, leaving every
-other index fixed. -/
-def eIdx (n : ℕ) : ℕ :=
-  if n = 0 then P.masterIdx else if n = P.masterIdx then 0 else n
 
-theorem eIdx_involutive : Function.Involutive (eIdx P) := by
-  intro n
-  unfold eIdx
-  split_ifs with h0 hm hm' hm'' hm''' <;> simp_all
 
-theorem eIdx_primrec : Nat.Primrec (eIdx P) := by
-  have hc0 : Nat.Primrec (fun n => isZero n) := primrec_isZero
-  have hcm : Nat.Primrec (fun n : ℕ => isZero ((n - P.masterIdx) + (P.masterIdx - n))) :=
-    primrec_isZero.comp
-      (primrec_add₂ (primrec_sub₂ primrec_id (Nat.Primrec.const P.masterIdx))
-        (primrec_sub₂ (Nat.Primrec.const P.masterIdx) primrec_id))
-  have hinner : Nat.Primrec (fun n : ℕ =>
-      selectFn (isZero ((n - P.masterIdx) + (P.masterIdx - n))) 0 n) :=
-    primrec_ite hcm (Nat.Primrec.const 0) primrec_id
-  refine (primrec_ite hc0 (Nat.Primrec.const P.masterIdx) hinner).of_eq (fun n => ?_)
-  rcases (show isZero n = 0 ∨ isZero n = 1 from by have := isZero_le_one n; omega) with h0 | h0
-  · rw [h0, selectFn_zero]
-    have hn0 : n ≠ 0 := by intro h; subst h; unfold isZero at h0; omega
-    rcases (show isZero ((n - P.masterIdx) + (P.masterIdx - n)) = 0 ∨
-        isZero ((n - P.masterIdx) + (P.masterIdx - n)) = 1 from
-        by have := isZero_le_one ((n - P.masterIdx) + (P.masterIdx - n)); omega) with h1 | h1
-    · rw [h1, selectFn_zero]
-      have hnm : n ≠ P.masterIdx := by intro h; subst h; unfold isZero at h1; omega
-      unfold eIdx
-      rw [ite_eq_right hn0, ite_eq_right hnm]
-    · rw [h1, selectFn_one]
-      have hnm : n = P.masterIdx := by unfold isZero at h1; omega
-      unfold eIdx
-      rw [ite_eq_right hn0, ite_eq_left hnm]
-  · rw [h0, selectFn_one]
-    have hn0 : n = 0 := by unfold isZero at h0; omega
-    unfold eIdx
-    rw [ite_eq_left hn0]
 
-/-- **The re-pointed presentation `P₀`**: `P`'s enumeration reindexed by `eIdx`, so that
-`P₀.X 0 = D.master`. Built via `ComputablePresentation.reindexInvolutive`, so every one of Scott's
-structural fields — in particular the two deciders `interEq_computable`/`cons_computable` needed
-for `DAtom_recDecidable` — transfers automatically, with no need to redo Part 5's work. -/
-noncomputable def P0 : ComputablePresentation D :=
-  P.reindexInvolutive (eIdx P) (eIdx_involutive P) (eIdx_primrec P)
 
-@[simp] theorem P0_X (n : ℕ) : (P0 P).X n = P.X (eIdx P n) := rfl
 
 /-- **`e := P₀.X`, Scott's re-enumeration with `e 0 = D.master`.** -/
 noncomputable abbrev e : ℕ → Set α := (P0 P).X
@@ -103,14 +65,6 @@ carry. `posnegList` extracts these accumulators from `δ` by mirroring `genAtom`
 step-for-step, so `genAtom_eq_DAtom` (below) is a one-line induction, not a `List.range`/`filter`
 reindexing exercise. -/
 
-/-- **The `(pos, neg)` accumulator pair for a sign sequence `δ`, at depth `n`.** Mirrors
-`genAtom`'s own recursion: at step `n`, `n` itself joins `pos` (if `δ n = true`) or `neg`
-(otherwise). -/
-def posnegList (δ : ℕ → Bool) : ℕ → List ℕ × List ℕ
-  | 0 => ([], [])
-  | n + 1 =>
-      let pn := posnegList δ n
-      if δ n then (pn.1 ++ [n], pn.2) else (pn.1, pn.2 ++ [n])
 
 @[simp] theorem posnegList_zero (δ : ℕ → Bool) : posnegList δ 0 = ([], []) := rfl
 

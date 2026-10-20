@@ -8,6 +8,18 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.relSystem
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.embed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.restrict
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.relIso
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.relMap
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.relSystem_mem
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.relSystem_master
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.embed_le
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.embed_restrict
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.restrict_embed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.embed_mono
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.le_of_embed_le
 
 @[expose] public section
 
@@ -49,119 +61,19 @@ namespace ApproximableMap
 
 /-! ### The relativized domain `Dₐ`. -/
 
-/-- **Exercise 4.10 (Scott 1981, PRG-19).** The relativized neighbourhood system `Dₐ`: same tokens
-and master, neighbourhoods exactly the members of the filter `a`. -/
-def relSystem (a : V.Element) : NeighborhoodSystem α where
-  mem X := a.mem X
-  master := V.master
-  master_nonempty := V.master_nonempty
-  master_mem := a.master_mem
-  sub_master := fun hX => V.sub_master (a.sub hX)
-  inter_mem := fun hX hY _ _ => a.inter_mem hX hY
 
-@[simp] theorem relSystem_mem (a : V.Element) {X : Set α} :
-    (relSystem a).mem X ↔ a.mem X := Iff.rfl
 
-@[simp] theorem relSystem_master (a : V.Element) : (relSystem a).master = V.master := rfl
 
-/-- The `𝒟`-element obtained from a `Dₐ`-filter by upward closure in `𝒟`. -/
-def embed (a : V.Element) (g : (relSystem a).Element) : V.Element where
-  mem X := V.mem X ∧ ∃ W, a.mem W ∧ g.mem W ∧ W ⊆ X
-  sub := fun h => h.1
-  master_mem := ⟨V.master_mem, V.master, a.master_mem, g.master_mem, subset_rfl⟩
-  inter_mem := by
-    rintro X Y ⟨hVX, Wx, haWx, hgWx, hWxX⟩ ⟨hVY, Wy, haWy, hgWy, hWyY⟩
-    have haWxy : a.mem (Wx ∩ Wy) := a.inter_mem haWx haWy
-    have hgWxy : g.mem (Wx ∩ Wy) := g.inter_mem hgWx hgWy
-    have hsub : Wx ∩ Wy ⊆ X ∩ Y := Set.inter_subset_inter hWxX hWyY
-    refine ⟨V.inter_mem hVX hVY (a.sub haWxy) hsub, Wx ∩ Wy, haWxy, hgWxy, hsub⟩
-  up_mem := by
-    rintro X Y ⟨hVX, W, haW, hgW, hWX⟩ hVY hXY
-    exact ⟨hVY, W, haW, hgW, subset_trans hWX hXY⟩
 
-/-- The `Dₐ`-filter obtained from an element `x ⊑ a` by restriction (same membership). -/
-def restrict (a : V.Element) (x : V.Element) (hx : x ≤ a) : (relSystem a).Element where
-  mem X := x.mem X
-  sub := fun h => hx _ h
-  master_mem := x.master_mem
-  inter_mem := fun hX hY => x.inter_mem hX hY
-  up_mem := fun hX hY hXY => x.up_mem hX (a.sub hY) hXY
 
-/-- `embed a g ⊑ a`: the embedding lands below `a`. -/
-theorem embed_le (a : V.Element) (g : (relSystem a).Element) : embed a g ≤ a := by
-  rintro X ⟨hVX, W, haW, _, hWX⟩
-  exact a.up_mem haW hVX hWX
 
-theorem embed_restrict (a : V.Element) (x : V.Element) (hx : x ≤ a) :
-    embed a (restrict a x hx) = x := by
-  apply Element.ext
-  intro X
-  constructor
-  · rintro ⟨hVX, W, _, hxW, hWX⟩
-    exact x.up_mem hxW hVX hWX
-  · intro hxX
-    exact ⟨x.sub hxX, X, hx _ hxX, hxX, subset_rfl⟩
 
-theorem restrict_embed (a : V.Element) (g : (relSystem a).Element) :
-    restrict a (embed a g) (embed_le a g) = g := by
-  apply Element.ext
-  intro X
-  constructor
-  · rintro ⟨hVX, W, haW, hgW, hWX⟩
-    exact g.up_mem hgW (a.up_mem haW hVX hWX) hWX
-  · intro hgX
-    exact ⟨a.sub (g.sub hgX), X, g.sub hgX, hgX, subset_rfl⟩
 
-theorem embed_mono (a : V.Element) {g₁ g₂ : (relSystem a).Element} (h : g₁ ≤ g₂) :
-    embed a g₁ ≤ embed a g₂ := by
-  rintro X ⟨hVX, W, haW, hgW, hWX⟩
-  exact ⟨hVX, W, haW, h _ hgW, hWX⟩
 
-theorem le_of_embed_le (a : V.Element) {g₁ g₂ : (relSystem a).Element}
-    (h : embed a g₁ ≤ embed a g₂) : g₁ ≤ g₂ := by
-  intro X hg₁X
-  have hVX : V.mem X := a.sub (g₁.sub hg₁X)
-  have : (embed a g₂).mem X := h X ⟨hVX, X, g₁.sub hg₁X, hg₁X, subset_rfl⟩
-  obtain ⟨_, W, haW, hg₂W, hWX⟩ := this
-  exact g₂.up_mem hg₂W (g₁.sub hg₁X) hWX
 
-/-- **Exercise 4.10 (Scott 1981, PRG-19).** `|Dₐ| ≃o {x ∈ |𝒟| ∣ x ⊑ a}`: the relativized domain has
-exactly the elements below `a` as its points, with the inherited order. -/
-def relIso (a : V.Element) : (relSystem a).Element ≃o {x : V.Element // x ≤ a} where
-  toFun g := ⟨embed a g, embed_le a g⟩
-  invFun x := restrict a x.1 x.2
-  left_inv g := restrict_embed a g
-  right_inv x := Subtype.ext (embed_restrict a x.1 x.2)
-  map_rel_iff' := by
-    intro g₁ g₂
-    constructor
-    · intro h; exact le_of_embed_le a h
-    · intro h; exact embed_mono a h
 
 /-! ### Restricting an endomap with `f(a) = a`. -/
 
-/-- **Exercise 4.10 (Scott 1981, PRG-19).** When `f(a) = a`, the restriction `f' : Dₐ → Dₐ`
-(`f'(x) = f(x)`). The codomain condition uses `↑X ⊑ a ⟹ f(↑X) ⊑ f(a) = a`. -/
-def relMap (f : ApproximableMap V V) {a : V.Element} (ha : f.toElementMap a = a) :
-    ApproximableMap (relSystem a) (relSystem a) where
-  rel X Y := a.mem X ∧ f.rel X Y
-  rel_dom := fun h => h.1
-  rel_cod := by
-    rintro X Y ⟨haX, hXY⟩
-    have hVX : V.mem X := a.sub haX
-    have hpr : V.principal hVX ≤ a := fun Z ⟨hVZ, hXZ⟩ => a.up_mem haX hVZ hXZ
-    have hmemfX : (f.toElementMap (V.principal hVX)).mem Y := (f.rel_iff_mem_principal hVX).mp hXY
-    have hle : f.toElementMap (V.principal hVX) ≤ f.toElementMap a := f.toElementMap_mono hpr
-    have : (f.toElementMap a).mem Y := hle Y hmemfX
-    rw [ha] at this
-    exact this
-  master_rel := ⟨a.master_mem, f.master_rel⟩
-  inter_right := by
-    rintro X Y Y' ⟨haX, hXY⟩ ⟨_, hXY'⟩
-    exact ⟨haX, f.inter_right hXY hXY'⟩
-  mono := by
-    rintro X X' Y Y' ⟨_, hXY⟩ hX'X hYY' haX' haY'
-    exact ⟨haX', f.mono hXY hX'X hYY' (a.sub haX') (a.sub haY')⟩
 
 /-! ### How many fixed points does `f'` have? -/
 end ApproximableMap

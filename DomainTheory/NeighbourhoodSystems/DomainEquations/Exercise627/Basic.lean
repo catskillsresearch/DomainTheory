@@ -9,6 +9,30 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.fstInj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.fstProj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.leftN
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.inlInj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.inlProj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.strictifyMap
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.strictify
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.incl
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.strct
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.inclMap
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.strctMap
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.twoPt
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.unitPt
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.embF_subset_leftN
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.leftN_master
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.leftN_proper
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.X_eq_master_of_nil_mem_leftN
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.subset_of_embF_subset_leftN
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.X_eq_master_of_embT_subset_leftN
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.leftN_subset_iff
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.oplus_mem_leftN
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.strictifyMap_isStrict
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.incl_mono
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.strct_mono
 
 @[expose] public section
 
@@ -67,36 +91,7 @@ embeds via the projection pair `i(X) = (X, ⊥)`, `j(W) = fst W`. Concretely we 
 product neighbourhood `prodTokNbhd X Δ₁` (pair `X` with all of `ℰ`); the embedding/projection are the
 two refinement relations against that neighbourhood, exactly as in Proposition 6.12. -/
 
-/-- The injection `i : 𝒟 → 𝒟 × ℰ`: `X i W ↔ X ∈ 𝒟 ∧ W ∈ 𝒟×ℰ ∧ (X,Δ₁) ⊆ W`. -/
-def fstInj (D₀ D₁ : NeighborhoodSystem Str) : ApproximableMap D₀ (prodTok D₀ D₁) where
-  rel X W := D₀.mem X ∧ (prodTok D₀ D₁).mem W ∧ prodTokNbhd X D₁.master ⊆ W
-  rel_dom h := h.1
-  rel_cod h := h.2.1
-  master_rel := ⟨D₀.master_mem, (prodTok D₀ D₁).master_mem, subset_rfl⟩
-  inter_right := by
-    rintro X W W' ⟨hX, hW, hsub⟩ ⟨_, hW', hsub'⟩
-    exact ⟨hX, (prodTok D₀ D₁).inter_mem hW hW' (prodTok_mem_prodTokNbhd hX D₁.master_mem)
-      (Set.subset_inter hsub hsub'), Set.subset_inter hsub hsub'⟩
-  mono := by
-    rintro X X' W W' ⟨_, _, hsub⟩ hX'X hWW' hX' hW'
-    exact ⟨hX', hW', ((prodTokNbhd_subset_iff.mpr ⟨hX'X, subset_rfl⟩).trans hsub).trans hWW'⟩
 
-/-- The projection `j : 𝒟 × ℰ → 𝒟`: `W j X ↔ W ∈ 𝒟×ℰ ∧ X ∈ 𝒟 ∧ W ⊆ (X,Δ₁)`. -/
-def fstProj (D₀ D₁ : NeighborhoodSystem Str) : ApproximableMap (prodTok D₀ D₁) D₀ where
-  rel W X := (prodTok D₀ D₁).mem W ∧ D₀.mem X ∧ W ⊆ prodTokNbhd X D₁.master
-  rel_dom h := h.1
-  rel_cod h := h.2.1
-  master_rel := ⟨(prodTok D₀ D₁).master_mem, D₀.master_mem, subset_rfl⟩
-  inter_right := by
-    rintro W X X' ⟨hW, hX, hsub⟩ ⟨_, hX', hsub'⟩
-    obtain ⟨A, B, hA, hB, rfl⟩ := hW
-    have hAX : A ⊆ X := (prodTokNbhd_subset_iff.mp hsub).1
-    have hAX' : A ⊆ X' := (prodTokNbhd_subset_iff.mp hsub').1
-    exact ⟨prodTok_mem_prodTokNbhd hA hB, D₀.inter_mem hX hX' hA (Set.subset_inter hAX hAX'),
-      prodTokNbhd_subset_iff.mpr ⟨Set.subset_inter hAX hAX', D₁.sub_master hB⟩⟩
-  mono := by
-    rintro W W' X X' ⟨_, _, hsub⟩ hW'W hXX' hW' hX'
-    exact ⟨hW', hX', hW'W.trans (hsub.trans (prodTokNbhd_subset_iff.mpr ⟨hXX', subset_rfl⟩))⟩
 
 /-! ## (3) `(𝒟 ⊕ ℰ) ◁ (𝒟 + ℰ)` — the coalesced sum is literally a subsystem of the sum
 
@@ -117,105 +112,16 @@ This is genuinely unavoidable at this level of generality (Scott's tokens are co
 but we work over arbitrary `NeighborhoodSystem`s), so `inl_trianglelefteq_oplus` depends on
 `Classical.choice` (called out in the axiom audit). Every other part of Exercise 6.27 is choice-free. -/
 
-/-- The left-copy generator: `0X` for proper `X`, the shared bottom `sumTokMaster` for `X = Δ₀`. The
-set-builder `{w ∣ w ∈ sumTokMaster ∧ X = Δ₀}` keeps the *definition* choice-free. -/
-def leftN (D₀ D₁ : NeighborhoodSystem Str) (X : Set Str) : Set Str :=
-  embBit false X ∪ {w | w ∈ sumTokMaster D₀ D₁ ∧ X = D₀.master}
 
-theorem embF_subset_leftN {X : Set Str} : embBit false X ⊆ leftN D₀ D₁ X :=
-  Set.subset_union_left
 
-theorem leftN_master : leftN D₀ D₁ D₀.master = sumTokMaster D₀ D₁ := by
-  apply Set.eq_of_subset_of_subset
-  · rintro w (hw | ⟨hw, -⟩)
-    · exact embF_subset_sumTokMaster D₀.master_mem hw
-    · exact hw
-  · exact fun w hw => Or.inr ⟨hw, rfl⟩
 
-theorem leftN_proper {X : Set Str} (hne : X ≠ D₀.master) : leftN D₀ D₁ X = embBit false X := by
-  apply Set.eq_of_subset_of_subset
-  · rintro w (hw | ⟨-, hXm⟩)
-    · exact hw
-    · exact absurd hXm hne
-  · exact embF_subset_leftN
 
-theorem X_eq_master_of_nil_mem_leftN {X : Set Str} (h : ([] : Str) ∈ leftN D₀ D₁ X) :
-    X = D₀.master := by
-  rcases h with h | ⟨-, h⟩
-  · exact absurd h nil_not_mem_embBit
-  · exact h
 
-theorem subset_of_embF_subset_leftN {A X : Set Str} (hA : A ⊆ D₀.master)
-    (h : embBit false A ⊆ leftN D₀ D₁ X) : A ⊆ X := by
-  intro σ hσ
-  rcases h ⟨σ, rfl, hσ⟩ with ⟨w', hw', hw'X⟩ | ⟨-, hXm⟩
-  · rw [List.cons.injEq] at hw'; rw [hw'.2]; exact hw'X
-  · rw [hXm]; exact hA hσ
 
-theorem X_eq_master_of_embT_subset_leftN {B X : Set Str} (hB : B.Nonempty)
-    (h : embBit true B ⊆ leftN D₀ D₁ X) : X = D₀.master := by
-  obtain ⟨σ, hσ⟩ := hB
-  rcases h ⟨σ, rfl, hσ⟩ with ⟨w', hw', -⟩ | ⟨-, hXm⟩
-  · rw [List.cons.injEq] at hw'; exact absurd hw'.1 (by decide)
-  · exact hXm
 
-theorem leftN_subset_iff {X X' : Set Str} (hX : D₀.mem X) (hX' : D₀.mem X') :
-    leftN D₀ D₁ X ⊆ leftN D₀ D₁ X' ↔ X ⊆ X' := by
-  constructor
-  · intro h
-    exact subset_of_embF_subset_leftN (D₀.sub_master hX) (embF_subset_leftN.trans h)
-  · intro hXX'
-    rintro w (⟨w', rfl, hw'⟩ | ⟨hw, hXm⟩)
-    · exact embF_subset_leftN ⟨w', rfl, hXX' hw'⟩
-    · exact Or.inr ⟨hw, Set.Subset.antisymm (D₀.sub_master hX') (hXm ▸ hXX')⟩
 
-/-- The **only** classical step in Exercise 6.27: `leftN X` is an `𝒟 ⊕ ℰ`-neighbourhood. The proof
-splits on the (undecidable for arbitrary `X`) test `X = Δ₀`. -/
-theorem oplus_mem_leftN {X : Set Str} (hX : D₀.mem X) :
-    (oplusTok D₀ D₁ h₀ h₁).mem (leftN D₀ D₁ X) := by
-  by_cases h : X = D₀.master
-  · rw [h, leftN_master]; exact (oplusTok D₀ D₁ h₀ h₁).master_mem
-  · rw [leftN_proper h]; exact oplusTok_mem_embF hX h
 
-/-- The injection `i : 𝒟 → 𝒟 ⊕ ℰ`: `X i W ↔ X ∈ 𝒟 ∧ W ∈ 𝒟⊕ℰ ∧ leftN X ⊆ W`. -/
-def inlInj : ApproximableMap D₀ (oplusTok D₀ D₁ h₀ h₁) where
-  rel X W := D₀.mem X ∧ (oplusTok D₀ D₁ h₀ h₁).mem W ∧ leftN D₀ D₁ X ⊆ W
-  rel_dom h := h.1
-  rel_cod h := h.2.1
-  master_rel := ⟨D₀.master_mem, (oplusTok D₀ D₁ h₀ h₁).master_mem, leftN_master.le⟩
-  inter_right := by
-    rintro X W W' ⟨hX, hW, hsub⟩ ⟨_, hW', hsub'⟩
-    exact ⟨hX, (oplusTok D₀ D₁ h₀ h₁).inter_mem hW hW' (oplus_mem_leftN hX)
-      (Set.subset_inter hsub hsub'), Set.subset_inter hsub hsub'⟩
-  mono := by
-    rintro X X' W W' ⟨hX, _, hsub⟩ hX'X hWW' hX' hW'
-    exact ⟨hX', hW', ((leftN_subset_iff hX' hX).mpr hX'X).trans (hsub.trans hWW')⟩
 
-/-- The projection `j : 𝒟 ⊕ ℰ → 𝒟`: `W j X ↔ W ∈ 𝒟⊕ℰ ∧ X ∈ 𝒟 ∧ W ⊆ leftN X`. -/
-def inlProj : ApproximableMap (oplusTok D₀ D₁ h₀ h₁) D₀ where
-  rel W X := (oplusTok D₀ D₁ h₀ h₁).mem W ∧ D₀.mem X ∧ W ⊆ leftN D₀ D₁ X
-  rel_dom h := h.1
-  rel_cod h := h.2.1
-  master_rel := ⟨(oplusTok D₀ D₁ h₀ h₁).master_mem, D₀.master_mem, leftN_master.ge⟩
-  inter_right := by
-    rintro W X X' ⟨hW, hX, hsub⟩ ⟨_, hX', hsub'⟩
-    rcases hW with rfl | ⟨A, hA, hAne, rfl⟩ | ⟨B, hB, hBne, rfl⟩
-    · have hXm := X_eq_master_of_nil_mem_leftN (hsub nil_mem_sumTokMaster)
-      have hX'm := X_eq_master_of_nil_mem_leftN (hsub' nil_mem_sumTokMaster)
-      subst hXm; subst hX'm; rw [Set.inter_self]
-      exact ⟨Or.inl rfl, D₀.master_mem, leftN_master.ge⟩
-    · have hAX : A ⊆ X := subset_of_embF_subset_leftN (D₀.sub_master hA) hsub
-      have hAX' : A ⊆ X' := subset_of_embF_subset_leftN (D₀.sub_master hA) hsub'
-      exact ⟨oplusTok_mem_embF hA hAne, D₀.inter_mem hX hX' hA (Set.subset_inter hAX hAX'),
-        (embBit_subset.mpr (Set.subset_inter hAX hAX')).trans embF_subset_leftN⟩
-    · have hXm := X_eq_master_of_embT_subset_leftN (h₁ B hB) hsub
-      have hX'm := X_eq_master_of_embT_subset_leftN (h₁ B hB) hsub'
-      subst hXm; subst hX'm; rw [Set.inter_self]
-      exact ⟨oplusTok_mem_embT hB hBne, D₀.master_mem, by
-        rw [leftN_master]; exact embT_subset_sumTokMaster hB⟩
-  mono := by
-    rintro W W' X X' ⟨_, hX, hsub⟩ hW'W hXX' hW' hX'
-    exact ⟨hW', hX', hW'W.trans (hsub.trans ((leftN_subset_iff hX hX').mpr hXX'))⟩
 
 theorem inlProj_comp_inlInj :
     (inlProj (D₀ := D₀) (D₁ := D₁) (h₀ := h₀) (h₁ := h₁)).comp inlInj = idMap D₀ := by
@@ -255,64 +161,14 @@ section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-/-- **Strictification of a map** (on relations): keep `f` but force the master input to the master
-output. The resulting map is strict, lies below `f`, and is the identity on strict maps. -/
-def strictifyMap (g : ApproximableMap V₀ V₁) : ApproximableMap V₀ V₁ where
-  rel X Y := g.rel X Y ∧ (X = V₀.master → Y = V₁.master)
-  rel_dom h := g.rel_dom h.1
-  rel_cod h := g.rel_cod h.1
-  master_rel := ⟨g.master_rel, fun _ => rfl⟩
-  inter_right := by
-    rintro X Y Y' ⟨hg, hs⟩ ⟨hg', hs'⟩
-    exact ⟨g.inter_right hg hg', fun hX => by rw [hs hX, hs' hX, Set.inter_self]⟩
-  mono := by
-    rintro X X' Y Y' ⟨hg, hs⟩ hX'X hYY' hX' hY'
-    refine ⟨g.mono hg hX'X hYY' hX' hY', fun hX'm => ?_⟩
-    have hX : V₀.mem X := g.rel_dom hg
-    have hXm : X = V₀.master := Set.Subset.antisymm (V₀.sub_master hX) (hX'm ▸ hX'X)
-    exact Set.Subset.antisymm (V₁.sub_master hY') ((hs hXm) ▸ hYY')
 
-theorem strictifyMap_isStrict (g : ApproximableMap V₀ V₁) : IsStrict (strictifyMap g) :=
-  fun _ h => h.2 rfl
 
-/-- The strictification as an element of the *strict* function space's token type. -/
-def strictify (g : ApproximableMap V₀ V₁) : StrictMap V₀ V₁ := ⟨strictifyMap g, strictifyMap_isStrict g⟩
 
-/-- Element-level inclusion `|𝒟 →⊥ ℰ| → |𝒟 → ℰ|`. -/
-def incl (φ : (strictFun V₀ V₁).Element) : (funSpace V₀ V₁).Element :=
-  toFilter (toStrictMap φ).1
 
-/-- Element-level strictification `|𝒟 → ℰ| → |𝒟 →⊥ ℰ|`. -/
-def strct (ψ : (funSpace V₀ V₁).Element) : (strictFun V₀ V₁).Element :=
-  toStrictFilter (strictify (toApproxMap ψ))
 
-theorem incl_mono : Monotone (incl (V₀ := V₀) (V₁ := V₁)) := by
-  intro a b hab M hM
-  obtain ⟨hMmem, haM⟩ := hM
-  obtain ⟨⟨L, hL, rfl⟩, hne⟩ := hMmem
-  refine ⟨⟨⟨L, hL, rfl⟩, hne⟩, ?_⟩
-  intro p hp
-  have hle : (toStrictMap a).1 ≤ (toStrictMap b).1 := (strictFunEquiv V₀ V₁).monotone hab
-  exact hle p.1 p.2 (haM p hp)
 
-theorem strct_mono : Monotone (strct (V₀ := V₀) (V₁ := V₁)) := by
-  intro a b hab W hW
-  obtain ⟨hWmem, haW⟩ := hW
-  obtain ⟨⟨L, hL, rfl⟩, hne⟩ := hWmem
-  refine ⟨⟨⟨L, hL, rfl⟩, hne⟩, ?_⟩
-  intro p hp
-  have hle : toApproxMap a ≤ toApproxMap b := (funSpaceEquiv V₀ V₁).monotone hab
-  exact ⟨hle p.1 p.2 (haW p hp).1, (haW p hp).2⟩
 
-/-- The inclusion `i : 𝒟 →⊥ ℰ ↪ 𝒟 → ℰ`. -/
-def inclMap : ApproximableMap (strictFun V₀ V₁) (funSpace V₀ V₁) :=
-  ofMono (fun _ hW => incl ((strictFun V₀ V₁).principal hW))
-    (fun _ _ hW hW' hW'W => incl_mono (((strictFun V₀ V₁).principal_le_iff hW hW').mpr hW'W))
 
-/-- The strictification retraction `j : 𝒟 → ℰ → 𝒟 →⊥ ℰ`. -/
-def strctMap : ApproximableMap (funSpace V₀ V₁) (strictFun V₀ V₁) :=
-  ofMono (fun _ hM => strct ((funSpace V₀ V₁).principal hM))
-    (fun _ _ hM hM' hM'M => strct_mono (((funSpace V₀ V₁).principal_le_iff hM hM').mpr hM'M))
 
 end Part5
 
@@ -323,24 +179,6 @@ neighbourhood the whole product collapses to its bottom. Concretely, for the one
 the system `𝒟 ⊗ 𝟙` has *only* its master as a neighbourhood, hence a one-point element lattice; a
 `𝒟` with two distinct points therefore cannot embed. This refutes the universal claim. -/
 
-/-- A concrete two-point domain over `{0,1}*`: neighbourhoods `Set.univ` (`= ⊥`) and `{[]}`. -/
-def twoPt : NeighborhoodSystem Str where
-  mem X := X = Set.univ ∨ X = {[]}
-  master := Set.univ
-  master_nonempty := ⟨[], Set.mem_univ _⟩
-  master_mem := Or.inl rfl
-  sub_master := by
-    rintro X (rfl | rfl)
-    · exact subset_rfl
-    · exact Set.subset_univ _
-  inter_mem := by
-    rintro X Y Z (rfl | rfl) (rfl | rfl) _ _
-    · rw [Set.inter_self]; exact Or.inl rfl
-    · rw [Set.univ_inter]; exact Or.inr rfl
-    · rw [Set.inter_univ]; exact Or.inr rfl
-    · rw [Set.inter_self]; exact Or.inr rfl
 
-/-- The one-point unit domain `𝟙` over `{0,1}*` (only neighbourhood `{[]}`). -/
-def unitPt : NeighborhoodSystem Str := (singletonSys ({[]} : Set Str) ⟨[], rfl⟩).sys
 end Exercise627
 end DomainTheory.NeighbourhoodSystems

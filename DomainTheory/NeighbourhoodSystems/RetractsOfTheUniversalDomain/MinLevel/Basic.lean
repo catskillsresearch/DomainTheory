@@ -8,6 +8,11 @@ Github:  https://github.com/catskillsresearch/DomainTheory
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.isPeriodicMask
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.minLevel
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.minMask
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.minLevelFold
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.MinLevel.minLevelFold
 
 @[expose] public section
 
@@ -65,12 +70,6 @@ open Domain.Recursive
 
 /-! ## `isPeriodicMask`: an `O(1)` decider for "presentable at a smaller level" -/
 
-/-- **`isPeriodicMask k j m ∈ {0,1}`** decides whether `levelSet k m` is also presentable at level
-`j` via `m`'s own low bits (`isPeriodicMask_iff`), for `j ≤ k`. Meaningless (junk) for `j > k`,
-exactly like `myUpsample` itself. -/
-def isPeriodicMask (k j m : ℕ) : ℕ :=
-  isZero ((myUpsample j k (myModPow2 m (2 ^ j)) - myModPow2 m (2 ^ k)) +
-    (myModPow2 m (2 ^ k) - myUpsample j k (myModPow2 m (2 ^ j))))
 
 theorem isPeriodicMask_le_one (k j m : ℕ) : isPeriodicMask k j m ≤ 1 := isZero_le_one _
 
@@ -110,26 +109,12 @@ theorem isPeriodicMask_self (k m : ℕ) : isPeriodicMask k k m = 1 := by
 Mirrors `SplitV.lean`'s `myFirstBit` exactly: fold over `i = 0, 1, …, k` (via `Nat.rec` on the
 bound `k + 1`), carrying forward the first `i` found with `isPeriodicMask k i m = 1`. -/
 
-/-- **`minLevel k m`**: the smallest `j ≤ k` such that `levelSet k m` is presentable at level `j`
-(`minLevel_isPeriodicMask`, `minLevel_le`); the presentation-independent canonical level of the set
-`levelSet k m` (`minLevel_unique`). -/
-def minLevel (k m : ℕ) : ℕ :=
-  Nat.rec (motive := fun _ => ℕ) 0
-    (fun i ih => selectFn (isZero (i - ih)) (selectFn (isPeriodicMask k i m) i (i + 1)) ih) (k + 1)
 
-/-- **`minMask k m`**: `m`'s own bits, truncated to `minLevel k m`'s width — the presentation-
-independent canonical mask of the set `levelSet k m` (`minLevel_unique`). -/
-def minMask (k m : ℕ) : ℕ := myModPow2 m (2 ^ minLevel k m)
 
 /-! ### `minLevel`: correctness -/
 
-/-- The raw `Nat.rec`-fold underlying `minLevel k m`, exposed at an arbitrary bound `N` so the
-inductive argument below can range over all `N`, specializing to `N = k + 1` at the end. -/
-private def minLevelFold (k m N : ℕ) : ℕ :=
-  Nat.rec (motive := fun _ => ℕ) 0
-    (fun i ih => selectFn (isZero (i - ih)) (selectFn (isPeriodicMask k i m) i (i + 1)) ih) N
 
-private theorem minLevel_eq_fold (k m : ℕ) : minLevel k m = minLevelFold k m (k + 1) := rfl
+theorem minLevel_eq_fold (k m : ℕ) : minLevel k m = minLevelFold k m (k + 1) := rfl
 
 private theorem minLevelFold_succ (k m N : ℕ) :
     minLevelFold k m (N + 1) =

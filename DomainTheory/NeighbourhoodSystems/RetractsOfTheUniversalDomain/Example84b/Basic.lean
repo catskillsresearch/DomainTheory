@@ -10,6 +10,23 @@ module
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.smashFadeInner
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.smashRetraction
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.strictEvalFade
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.strictRetraction
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.strictRetractionFixIso
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.mem_toElementMap_fade
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.check_toElementMap_mem_zero_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.pair_bot_bot
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.prod_bot_fst
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.prod_bot_snd
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.toFilter_toApproxMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.toApproxMap_toFilter
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.toApproxMap_strictRetraction_mem
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.strictRetraction_apply_bot
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.strictRetraction_apply_of_ne_bot
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.isStrict_toApproxMap_of_fixed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.strictRetraction_fixed_of_isStrict
 
 @[expose] public section
 
@@ -69,60 +86,16 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 /-! ## A shared closed form for `fade` at a general codomain. -/
 
-/-- The closed form of `fade`'s elementwise action, generalized (via `mem_toElementMap₂_fade`) from
-Example 8.4(a)'s ambient `D` to an arbitrary neighbourhood system `G`. -/
-theorem mem_toElementMap_fade {γ : Type*} {G : NeighborhoodSystem γ} (t : O.Element) (w : G.Element)
-    {Z : Set γ} :
-    ((fade (D := G)).toElementMap (pair t w)).mem Z ↔
-      G.mem Z ∧ (Z = G.master ∨ (t.mem ({0} : Set (Fin 2)) ∧ w.mem Z)) := by
-  rw [show (fade (D := G)) = ofMap₂ (fade₂ (D := G)) from rfl, toElementMap_ofMap₂_pair,
-    mem_toElementMap₂_fade]
 
-/-- `check(x) ∋ {0} ↔ x ≠ ⊥`: the clean, non-set-theoretic form of `mem_toElementMap_check`. -/
-theorem check_toElementMap_mem_zero_iff {x : D.Element} :
-    (check.toElementMap x).mem ({0} : Set (Fin 2)) ↔ x ≠ D.bot := by
-  rw [mem_toElementMap_check]
-  constructor
-  · rintro ⟨-, h | h⟩
-    · exact absurd h fin2_zero_ne_zero_one
-    · exact h
-  · intro h; exact ⟨O_mem_zero, Or.inr h⟩
 
 /-! ## `smash : D × E → D × E`. -/
 
 section Smash
 
-/-- `(prod D E).bot = ⟨⊥_D, ⊥_E⟩`. -/
-theorem pair_bot_bot : pair (D.bot) (E.bot) = (prod D E).bot := by
-  apply Element.ext
-  intro W
-  rw [mem_pair, mem_bot]
-  constructor
-  · rintro ⟨X, Y, hX, hY, rfl⟩
-    rw [mem_bot] at hX hY
-    rw [hX, hY, prod_master]
-  · intro hW
-    refine ⟨D.master, E.master, ?_, ?_, ?_⟩
-    · rw [mem_bot]
-    · rw [mem_bot]
-    · rw [hW, prod_master]
 
-@[simp] theorem prod_bot_fst : ((prod D E).bot).fst = D.bot := by rw [← pair_bot_bot, fst_pair]
 
-@[simp] theorem prod_bot_snd : ((prod D E).bot).snd = E.bot := by rw [← pair_bot_bot, snd_pair]
 
-/-- The inner application `fade(check(y), z)` of Scott's `smash(x, y) = fade(check(x),
-fade(check(y), ⟨x, y⟩))`: here `z = ⟨x, y⟩` is passed through `idMap` (Scott's `⟨x,y⟩` *is* the
-ambient input). -/
-def smashFadeInner : ApproximableMap (prod D E) (prod D E) :=
-  (fade (D := prod D E)).comp
-    (paired ((check (D := E)).comp (proj₁ D E)) (idMap (prod D E)))
 
-/-- **Example 8.4(b)(ii)'s `smash` combinator.** `smash(x, y) = fade(check(x), fade(check(y),
-⟨x, y⟩))`. -/
-def smashRetraction : ApproximableMap (prod D E) (prod D E) :=
-  (fade (D := prod D E)).comp
-    (paired ((check (D := D)).comp (proj₀ D E)) (smashFadeInner (D := D) (E := E)))
 
 end Smash
 
@@ -130,94 +103,14 @@ end Smash
 
 section Strict
 
-/-- Two tiny reproofs of `funSpaceEquiv`'s own round-trips, stated standalone so the closed-form
-calculations below don't have to fight `OrderIso` field-access notation. -/
-theorem toFilter_toApproxMap (φ : (funSpace D E).Element) : toFilter (toApproxMap φ) = φ :=
-  (funSpaceEquiv D E).left_inv φ
 
-theorem toApproxMap_toFilter (f : ApproximableMap D E) : toApproxMap (toFilter f) = f :=
-  (funSpaceEquiv D E).right_inv f
 
-/-- `g(f, y) = fade(check(y), f(y))`, as a joint approximable map `(D → E) × D → E`. -/
-def strictEvalFade : ApproximableMap (prod (funSpace D E) D) E :=
-  (fade (D := E)).comp
-    (paired ((check (D := D)).comp (proj₁ (funSpace D E) D)) (evalMap D E))
 
-/-- **Example 8.4(b)(i)'s `strict` combinator.** `strict(f) = λy. fade(check(y), f(y))`, built via
-Theorem 3.12's `curry`. -/
-def strictRetraction : ApproximableMap (funSpace D E) (funSpace D E) := curry strictEvalFade
 
-/-- The closed form of `strict`'s elementwise action: `strict(f)(y) = ⊥_E` if `y = ⊥_D`, else
-`f(y)`. -/
-theorem toApproxMap_strictRetraction_mem {φ : (funSpace D E).Element} {y : D.Element}
-    {Z : Set β} :
-    ((toApproxMap (strictRetraction.toElementMap φ)).toElementMap y).mem Z ↔
-      E.mem Z ∧ (Z = E.master ∨ (y ≠ D.bot ∧ ((toApproxMap φ).toElementMap y).mem Z)) := by
-  show ((toApproxMap ((curry strictEvalFade).toElementMap φ)).toElementMap y).mem Z ↔ _
-  rw [toElementMap_curry_apply]
-  show (((fade (D := E)).comp
-    (paired ((check (D := D)).comp (proj₁ (funSpace D E) D)) (evalMap D E))).toElementMap
-      (pair φ y)).mem Z ↔ _
-  rw [toElementMap_comp, toElementMap_paired, toElementMap_comp, toElementMap_proj₁, snd_pair,
-    evalMap_apply, mem_toElementMap_fade, check_toElementMap_mem_zero_iff]
 
-theorem strictRetraction_apply_bot (φ : (funSpace D E).Element) :
-    (toApproxMap (strictRetraction.toElementMap φ)).toElementMap D.bot = E.bot := by
-  apply Element.ext
-  intro Z
-  rw [toApproxMap_strictRetraction_mem, mem_bot]
-  constructor
-  · rintro ⟨-, rfl | ⟨hne, -⟩⟩
-    · rfl
-    · exact absurd rfl hne
-  · rintro rfl
-    exact ⟨E.master_mem, Or.inl rfl⟩
 
-theorem strictRetraction_apply_of_ne_bot {y : D.Element} (hy : y ≠ D.bot)
-    (φ : (funSpace D E).Element) :
-    (toApproxMap (strictRetraction.toElementMap φ)).toElementMap y
-      = (toApproxMap φ).toElementMap y := by
-  apply Element.ext
-  intro Z
-  rw [toApproxMap_strictRetraction_mem]
-  constructor
-  · rintro ⟨-, rfl | ⟨-, hZ⟩⟩
-    · exact ((toApproxMap φ).toElementMap y).master_mem
-    · exact hZ
-  · intro hZ
-    exact ⟨((toApproxMap φ).toElementMap y).sub hZ, Or.inr ⟨hy, hZ⟩⟩
 
-/-- **`f` is a fixed point of `strict` iff `f` is strict.** -/
-theorem isStrict_toApproxMap_of_fixed {φ : (funSpace D E).Element}
-    (hφ : strictRetraction.toElementMap φ = φ) : Exercise510.IsStrict (toApproxMap φ) := by
-  rw [Exercise510.isStrict_iff_apply_bot]
-  have h := strictRetraction_apply_bot φ
-  rwa [hφ] at h
 
-theorem strictRetraction_fixed_of_isStrict {f : ApproximableMap D E} (hf : Exercise510.IsStrict f) :
-    strictRetraction.toElementMap (toFilter f) = toFilter f := by
-  have hbot : f.toElementMap D.bot = E.bot := Exercise510.isStrict_iff_apply_bot.mp hf
-  have key : toApproxMap (strictRetraction.toElementMap (toFilter f)) = f := by
-    apply ext_of_toElementMap
-    intro y
-    by_cases hy : y = D.bot
-    · rw [hy, strictRetraction_apply_bot, hbot]
-    · rw [strictRetraction_apply_of_ne_bot hy, toApproxMap_toFilter]
-  rw [← toFilter_toApproxMap (strictRetraction.toElementMap (toFilter f)), key]
 
-/-- **Example 8.4(b)(i), the fixed-point representation.** Restricting `funSpaceEquiv` along
-`isStrict_toApproxMap_of_fixed`/`strictRetraction_fixed_of_isStrict` identifies `Fix(strict)` with
-the strict approximable maps `Exercise510.StrictMap D E`. -/
-def strictRetractionFixIso :
-    {φ : (funSpace D E).Element // strictRetraction.toElementMap φ = φ} ≃o
-      Exercise510.StrictMap D E where
-  toFun φ := ⟨toApproxMap φ.1, isStrict_toApproxMap_of_fixed φ.2⟩
-  invFun f := ⟨toFilter f.1, strictRetraction_fixed_of_isStrict f.2⟩
-  left_inv φ := Subtype.ext (toFilter_toApproxMap φ.1)
-  right_inv f := Subtype.ext (toApproxMap_toFilter f.1)
-  map_rel_iff' := by
-    intro φ φ'
-    show toApproxMap φ.1 ≤ toApproxMap φ'.1 ↔ φ.1 ≤ φ'.1
-    exact (funSpaceEquiv D E).map_rel_iff
 end Strict
 end DomainTheory.NeighbourhoodSystems

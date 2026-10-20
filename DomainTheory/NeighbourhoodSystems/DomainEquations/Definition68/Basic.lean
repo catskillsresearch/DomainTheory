@@ -9,6 +9,10 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.idEndofunctor
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.ContinuousOnMaps
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.idEndofunctor_obj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.idEndofunctor_map
 
 @[expose] public section
 
@@ -68,28 +72,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exerci
 
 universe u
 
-/-- The **identity endofunctor** on any category: it fixes objects and morphisms. (A convenient
-witness that `Endofunctor` is inhabited; used to show Definition 6.8 is non-vacuous.) -/
-def idEndofunctor (Obj : Type u) [Category Obj] : Endofunctor Obj where
-  obj X := X
-  map f := f
-  map_id _ := rfl
-  map_comp _ _ := rfl
 
-@[simp] theorem idEndofunctor_obj {Obj : Type u} [Category Obj] (X : Obj) :
-    (idEndofunctor Obj).obj X = X := rfl
 
-@[simp] theorem idEndofunctor_map {Obj : Type u} [Category Obj] {X Y : Obj}
-    (f : (X ⟶ Y)) : (idEndofunctor Obj).map f = f := rfl
 
-/-- **Definition 6.8 (Scott 1981, PRG-19).** An endofunctor `T` on the category of domains is
-*continuous on maps* when, for every pair of domains `D` and `E`, the induced action `λf. T(f)` on the
-**strict** function space `(D →⊥ E)` is approximable: there is an approximable map `Φ` from
-`(D →⊥ E)` to `(T(D) →⊥ T(E))` whose elementwise action (read through the representation
-`strictFunEquiv`) sends each strict map `f` to `T(f)`. -/
-def ContinuousOnMaps (T : Endofunctor DomainObj) : Prop :=
-  ∀ D E : DomainObj,
-    ∃ Φ : ApproximableMap (strictFun D.sys E.sys) (strictFun (T.obj D).sys (T.obj E).sys),
-      ∀ f : StrictMap D.sys E.sys,
-        (toStrictMap (Φ.toElementMap (toStrictFilter f))).1 = T.map (X := D) (Y := E) f.1
 end DomainTheory.NeighbourhoodSystems

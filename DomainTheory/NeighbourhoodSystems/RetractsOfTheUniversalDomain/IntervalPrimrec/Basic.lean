@@ -10,6 +10,25 @@ module
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RationalPrimrec
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.RecursiveCross
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.encodeRatPair
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.decodeRatPair
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.encodeQPairList
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.decodeQPairList
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.qpCombineBop
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.combineCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.diffOneList
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.diffSingleList
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.diffAllList
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.diffLists
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.diffOneCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.diffSingleCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.diffAllStep
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.diffAllCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.diffCode
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.qpNonemptyBop
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.qpNonemptyChar
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.decodeRatPair_encodeRatPair
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec.decodeQPairList_encodeQPairList
 
 @[expose] public section
 
@@ -37,37 +56,15 @@ open Domain.Recursive
 
 /-! ### Encoding `List (ℚ × ℚ)` -/
 
-/-- Encode a pair of rationals as a single natural. -/
-def encodeRatPair (p : ℚ × ℚ) : ℕ := Nat.pair (encodeRat p.1) (encodeRat p.2)
 
-/-- Decode a natural as a pair of rationals. -/
-def decodeRatPair (c : ℕ) : ℚ × ℚ := (decodeRat c.unpair.1, decodeRat c.unpair.2)
 
-@[simp] theorem decodeRatPair_encodeRatPair (p : ℚ × ℚ) : decodeRatPair (encodeRatPair p) = p := by
-  unfold decodeRatPair encodeRatPair
-  simp only [unpair_pair_fst, unpair_pair_snd, decodeRat_encodeRat]
 
-/-- Encode a list of rational pairs as a single natural, via `encodeList`. -/
-def encodeQPairList (L : List (ℚ × ℚ)) : ℕ := encodeList (L.map encodeRatPair)
 
-/-- Decode a natural as a list of rational pairs. -/
-def decodeQPairList (c : ℕ) : List (ℚ × ℚ) := (decodeList c).map decodeRatPair
 
-@[simp] theorem decodeQPairList_encodeQPairList (L : List (ℚ × ℚ)) :
-    decodeQPairList (encodeQPairList L) = L := by
-  unfold decodeQPairList encodeQPairList
-  rw [decodeList_encodeList, List.map_map]
-  simp only [Function.comp_def, decodeRatPair_encodeRatPair, List.map_id_fun', id]
 
 /-! ### `combineIntervals` at the code level -/
 
-/-- The per-pair-code operation `(pc, qc) ↦ (max, min)` realizing `(p.1 ⊔ q.1, p.2 ⊓ q.2)`. -/
-def qpCombineBop (t : ℕ) : ℕ :=
-  Nat.pair (ratMaxCode (Nat.pair t.unpair.1.unpair.1 t.unpair.2.unpair.1))
-    (ratMinCode (Nat.pair t.unpair.1.unpair.2 t.unpair.2.unpair.2))
 
-/-- `combineCode` realizes `combineIntervals` on codes: `Nat.Primrec` in both arguments. -/
-def combineCode (c1 c2 : ℕ) : ℕ := crossCombine qpCombineBop c1 c2
 
 /-- Two lists with the same **elements** present the same set. -/
 theorem presentedIntervals_congr {L1 L2 : List (ℚ × ℚ)} (h : ∀ p, p ∈ L1 ↔ p ∈ L2) :
@@ -108,9 +105,6 @@ theorem Ico_diff_Ico (a b c d : ℚ) :
     · exact ⟨⟨ha, hb⟩, fun ⟨hc', _⟩ => absurd hc' (not_le.mpr hc)⟩
     · exact ⟨⟨ha, hb⟩, fun ⟨_, hd'⟩ => absurd hd' (not_lt.mpr hd)⟩
 
-/-- **Difference of a single interval-pair by another**, as a `≤ 2`-element list, via the
-unconditional `Ico_diff_Ico`. -/
-def diffOneList (p q : ℚ × ℚ) : List (ℚ × ℚ) := [(p.1, p.2 ⊓ q.1), (p.1 ⊔ q.2, p.2)]
 
 theorem presentedIntervals_diffOneList (p q : ℚ × ℚ) :
     presentedIntervals (diffOneList p q) = Set.Ico p.1 p.2 \ Set.Ico q.1 q.2 := by
@@ -118,9 +112,6 @@ theorem presentedIntervals_diffOneList (p q : ℚ × ℚ) :
   rw [presentedIntervals_cons, presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]
   exact (Ico_diff_Ico p.1 p.2 q.1 q.2).symm
 
-/-- **Subtract a single interval-pair `q` from a whole presenting list `L`.** -/
-def diffSingleList (L : List (ℚ × ℚ)) (q : ℚ × ℚ) : List (ℚ × ℚ) :=
-  L.flatMap (fun p => diffOneList p q)
 
 theorem presentedIntervals_diffSingleList (L : List (ℚ × ℚ)) (q : ℚ × ℚ) :
     presentedIntervals (diffSingleList L q) = presentedIntervals L \ Set.Ico q.1 q.2 := by
@@ -131,23 +122,10 @@ theorem presentedIntervals_diffSingleList (L : List (ℚ × ℚ)) (q : ℚ × �
       presentedIntervals_append, presentedIntervals_diffOneList, ih, presentedIntervals_cons,
       Set.union_sdiff_distrib]
 
-/-- **Subtract a whole presenting list `L2` from a single interval-pair `p`**, by folding
-`diffSingleList` over `L2`, starting from `[p]`. -/
-def diffAllList (p : ℚ × ℚ) (L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L2.foldl diffSingleList [p]
 
-/-- **Subtract `L2` from `L1`**, presenting the set difference `presentedIntervals L1 \\
-presentedIntervals L2`. -/
-def diffLists (L1 L2 : List (ℚ × ℚ)) : List (ℚ × ℚ) := L1.flatMap (fun p => diffAllList p L2)
 
 /-! ### The code level: `diffOneCode`/`diffSingleCode`/`diffAllCode`/`diffCode` -/
 
-/-- Code-level `diffOneList`, taking `t = pair qc pc` (subtracted interval `q` **first**, matching
-`flatMapCode`'s calling convention). -/
-def diffOneCode (t : ℕ) : ℕ :=
-  Nat.pair
-    (Nat.pair t.unpair.2.unpair.1 (ratMinCode (Nat.pair t.unpair.2.unpair.2 t.unpair.1.unpair.1)))
-    (Nat.pair (Nat.pair (ratMaxCode (Nat.pair t.unpair.2.unpair.1 t.unpair.1.unpair.2))
-      t.unpair.2.unpair.2) 0 + 1) + 1
 
 theorem decodeQPairList_diffOneCode (qc pc : ℕ) :
     decodeQPairList (diffOneCode (Nat.pair qc pc)) = diffOneList (decodeRatPair pc) (decodeRatPair qc) := by
@@ -170,9 +148,6 @@ theorem mem_decodeQPairList_flatMapCode (f : ℕ → ℕ) (x c : ℕ) (p : ℚ �
     obtain ⟨e, he, rfl⟩ := List.mem_map.mp hp
     exact ⟨e, (mem_decodeList_flatMapCode (f := f) x c e).mpr ⟨y, hy, he⟩, rfl⟩
 
-/-- `diffSingleCode accL q` subtracts the single interval-pair coded by `q` from the whole
-QPair-list coded by `accL`. -/
-def diffSingleCode (accL q : ℕ) : ℕ := flatMapCode diffOneCode q accL
 
 theorem mem_decodeQPairList_diffSingleCode (accL q : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (diffSingleCode accL q) ↔ p ∈ diffSingleList (decodeQPairList accL) (decodeRatPair q) := by
@@ -190,13 +165,7 @@ theorem presentedIntervals_decodeQPairList_diffSingleCode (accL q : ℕ) :
       = presentedIntervals (decodeQPairList accL) \ Set.Ico (decodeRatPair q).1 (decodeRatPair q).2 := by
   rw [presentedIntervals_congr (mem_decodeQPairList_diffSingleCode accL q), presentedIntervals_diffSingleList]
 
-/-- `foldCode`'s step for `diffAllCode`'s fold over `L2` (params unused): pops `q`, subtracts it
-from the "remaining pieces" accumulator via `diffSingleCode`. -/
-def diffAllStep (w : ℕ) : ℕ := diffSingleCode w.unpair.2.unpair.1 w.unpair.1
 
-/-- `diffAllCode pc L2` subtracts the whole QPair-list coded by `L2` from the single interval-pair
-coded by `pc`, folding `diffSingleCode` over `L2` from the seed `[pc]`. -/
-def diffAllCode (pc L2 : ℕ) : ℕ := foldCode diffAllStep 0 (Nat.pair pc 0 + 1) L2
 
 theorem diffAllStep_eq (acc x : ℕ) : diffAllStep (Nat.pair x (Nat.pair acc 0)) = diffSingleCode acc x := by
   unfold diffAllStep; simp only [unpair_pair_fst, unpair_pair_snd]
@@ -222,8 +191,6 @@ theorem presentedIntervals_decodeQPairList_diffAllCode (pc L2 : ℕ) :
   simp only [decodeList_succ, unpair_pair_fst, unpair_pair_snd, decodeList_zero, List.map_cons,
     List.map_nil, presentedIntervals_cons, presentedIntervals_nil, Set.union_empty]
 
-/-- `diffCode c1 c2` subtracts the QPair-list coded by `c2` from the QPair-list coded by `c1`. -/
-def diffCode (c1 c2 : ℕ) : ℕ := flatMapCode (fun t => diffAllCode t.unpair.2 t.unpair.1) c2 c1
 
 theorem mem_decodeQPairList_diffCode (c1 c2 : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (diffCode c1 c2) ↔ ∃ y ∈ decodeList c1, p ∈ decodeQPairList (diffAllCode y c2) := by
@@ -273,11 +240,5 @@ theorem presentedIntervals_nonempty_iff (L : List (ℚ × ℚ)) :
   · rintro ⟨p, hp, hlt⟩
     exact ⟨p.1, mem_presentedIntervals.mpr ⟨p, hp, le_refl _, hlt⟩⟩
 
-/-- The `{0,1}` flag: does the rational-pair code `e` decode to a non-degenerate pair `p.1 < p.2`? -/
-def qpNonemptyBop (e : ℕ) : ℕ := ratLtCode (Nat.pair e.unpair.1 e.unpair.2)
 
-/-- The `{0,1}` flag: does the QPair-list code `c` present a non-empty set? A bounded `∃` over
-`decodeList c` via `Recursive.lean`'s `existsListChar` (the second argument of `existsListChar` is
-an unused parameter, fixed to `0`). -/
-def qpNonemptyChar (c : ℕ) : ℕ := existsListChar (fun t => qpNonemptyBop t.unpair.1) 0 c
 end DomainTheory.NeighbourhoodSystems

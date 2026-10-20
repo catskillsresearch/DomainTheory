@@ -9,6 +9,27 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.subU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.subUFixIso
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.subUFixIsoSubFixed
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.IsPolymorphicType
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piDUncurried
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piD
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piDApply
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piUFixIso
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.scFamily
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.scPrincipal
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piDTypeMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piDType
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.toElementMap_subU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.jArrow_comp_iArrow_apply
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.subApprox_fix_of_subU_fix
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.subU_fix_of_subApprox_fix
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.toElementMap_piU
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piD_fix_of_piU_fix
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.piU_fix_of_piD_fix
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.BasicInst38
 
 @[expose] public section
 
@@ -82,11 +103,6 @@ open NeighborhoodSystem ApproximableMap
 
 /-! ## Step 1: `subU`, `sub` regarded as a combinator on `𝒰` itself -/
 
-/-- **`sub`, regarded as a finitary projection of `𝒰` itself** (the exercise's opening sentence):
-conjugate Theorem 8.6(b)'s `subApprox : (𝒰→𝒰)→(𝒰→𝒰)` through the fixed pair `i_→, j_→`
-(Definition 8.9), exactly as `a→b` is built from `λf.b∘f∘a` in `Definition89.lean`. -/
-noncomputable def subU : ApproximableMap U U :=
-  iArrow.comp (Sub8_6.subApprox.comp jArrow)
 
 /-! ### A reusable gadget: conjugating a projection of `(𝒰→𝒰)` through `i_→, j_→` gives a
 projection of `𝒰`. Used for both `subU` (from `subApprox`) and, later, `piU d` (from `piD d`). -/
@@ -121,66 +137,10 @@ theorem isProjection_conjArrow {H : ApproximableMap (funSpace U U) (funSpace U U
 theorem isProjection_subU : IsProjection subU :=
   isProjection_conjArrow Sub8_6.isProjection_subApprox
 
-/-- `subU`'s defining formula unfolded at the element level. -/
-theorem toElementMap_subU (w : U.Element) :
-    subU.toElementMap w = iArrow.toElementMap (Sub8_6.subApprox.toElementMap
-      (jArrow.toElementMap w)) := by
-  unfold subU
-  rw [toElementMap_comp, toElementMap_comp]
 
-theorem jArrow_comp_iArrow_apply (v : (funSpace U U).Element) :
-    jArrow.toElementMap (iArrow.toElementMap v) = v := by
-  rw [show jArrow.toElementMap (iArrow.toElementMap v) = (jArrow.comp iArrow).toElementMap v from
-    (toElementMap_comp jArrow iArrow v).symm, jArrow_comp_iArrow, toElementMap_idMap]
 
-/-- Unfolds `subU.toElementMap w = w` (via `jArrow_comp_iArrow`) into the statement that
-`j_→(w)` is already a fixed point of `subApprox`. Used for both `subUFixIso.toFun`'s well-typing
-and its `left_inv`. -/
-theorem subApprox_fix_of_subU_fix {w : U.Element} (hw : subU.toElementMap w = w) :
-    Sub8_6.subApprox.toElementMap (jArrow.toElementMap w) = jArrow.toElementMap w := by
-  rw [toElementMap_subU] at hw
-  have hstep := congrArg jArrow.toElementMap hw
-  rwa [jArrow_comp_iArrow_apply] at hstep
 
-theorem subU_fix_of_subApprox_fix {φ : (funSpace U U).Element}
-    (hφ : Sub8_6.subApprox.toElementMap φ = φ) :
-    subU.toElementMap (iArrow.toElementMap φ) = iArrow.toElementMap φ := by
-  rw [toElementMap_subU, jArrow_comp_iArrow_apply, hφ]
 
-/-- **`Fix(subU) ≃o Fix(subApprox)`.** Forward: `w ↦ j_→(w)`; backward: `φ ↦ i_→(φ)`. Needs only
-`j_→∘i_→ = I` (no inequality on `i_→∘j_→`). -/
-noncomputable def subUFixIso :
-    {w : U.Element // subU.toElementMap w = w} ≃o
-      {φ : (funSpace U U).Element // Sub8_6.subApprox.toElementMap φ = φ} where
-  toFun w := ⟨jArrow.toElementMap w.1, subApprox_fix_of_subU_fix w.2⟩
-  invFun φ := ⟨iArrow.toElementMap φ.1, subU_fix_of_subApprox_fix φ.2⟩
-  left_inv w := by
-    apply Subtype.ext
-    show iArrow.toElementMap (jArrow.toElementMap w.1) = w.1
-    have hw := toElementMap_subU w.1
-    rw [w.2] at hw
-    rw [subApprox_fix_of_subU_fix w.2] at hw
-    exact hw.symm
-  right_inv φ := by
-    apply Subtype.ext
-    exact jArrow_comp_iArrow_apply φ.1
-  map_rel_iff' := by
-    intro w w'
-    show jArrow.toElementMap w.1 ≤ jArrow.toElementMap w'.1 ↔ w.1 ≤ w'.1
-    constructor
-    · intro hle
-      have h2 := iArrow.toElementMap_mono hle
-      have e1 : iArrow.toElementMap (jArrow.toElementMap w.1) = w.1 := by
-        have hw := toElementMap_subU w.1
-        rw [w.2, subApprox_fix_of_subU_fix w.2] at hw
-        exact hw.symm
-      have e2 : iArrow.toElementMap (jArrow.toElementMap w'.1) = w'.1 := by
-        have hw' := toElementMap_subU w'.1
-        rw [w'.2, subApprox_fix_of_subU_fix w'.2] at hw'
-        exact hw'.symm
-      rwa [e1, e2] at h2
-    · intro hle
-      exact jArrow.toElementMap_mono hle
 
 /-- **`subU` is finitary.** Composes `subUFixIso` with Theorem 8.6(b)(ii)'s `isFinitary_subApprox`. -/
 theorem isFinitary_subU : IsFinitary subU := by
@@ -192,21 +152,9 @@ opening sentence, in full). -/
 theorem isFinitaryProjection_subU : IsFinitaryProjection subU :=
   ⟨isProjection_subU, isFinitary_subU⟩
 
-/-- **`subU`'s fixed points are exactly the finitary projections of `𝒰`** (Exercise 8.27's
-opening sentence, precisely): composing `subUFixIso` with Theorem 8.6(b)(ii)'s `subApproxFixIso`
-identifies `Fix(subU)` with `{f : 𝒰→𝒰 ∣ sub f = f}`, which by Theorem 8.6(a)'s
-`sub_eq_self_iff_isFinitaryProjection` is exactly `{f ∣ IsFinitaryProjection f}`. -/
-noncomputable def subUFixIsoSubFixed :
-    {w : U.Element // subU.toElementMap w = w} ≃o
-      {f : ApproximableMap U U // sub f = f} :=
-  subUFixIso.trans Sub8_6.subApproxFixIso
 
 /-! ## Step 2: polymorphic types -/
 
-/-- **A polymorphic type** (Scott 1981, PRG-19, Exercise 8.27): `d = sub∘d∘sub`, `sub` here being
-`subU` (Step 1's "`sub` regarded as a combinator on `𝒰`"). -/
-def IsPolymorphicType (d : ApproximableMap U U) : Prop :=
-  subU.comp (d.comp subU) = d
 
 /-- If `a` is idempotent and `f = a∘g∘a` for *some* `g`, then `a(f(z)) = f(z)` for *every* `z` —
 i.e. any map "sandwiched" between two copies of an idempotent `a` always lands in `Fix(a)`,
@@ -255,14 +203,6 @@ Scott's formula: `Π(d)(x)(t) = sub(d(sub(t)))(x(sub(t)))`. Built exactly as
 `Exercise825FixedPoint.lean`'s `RMap` — a raw composite of `evalMap`/`proj`/`paired`, uncurried,
 then curried. -/
 
-/-- **`Π(d)(x)(t)`, uncurried**: an `ApproximableMap ((𝒰→𝒰) × 𝒰) 𝒰`, jointly continuous in
-`(x, t)` for `d` fixed. -/
-noncomputable def piDUncurried (d : ApproximableMap U U) : ApproximableMap (prod (funSpace U U) U) U :=
-  (evalMap U U).comp
-    (paired
-      (jArrow.comp (subU.comp (d.comp (subU.comp (proj₁ (funSpace U U) U)))))
-      ((evalMap U U).comp
-        (paired (proj₀ (funSpace U U) U) (subU.comp (proj₁ (funSpace U U) U)))))
 
 theorem toElementMap_piDUncurried (d : ApproximableMap U U) (φ : (funSpace U U).Element)
     (t : U.Element) :
@@ -273,15 +213,7 @@ theorem toElementMap_piDUncurried (d : ApproximableMap U U) (φ : (funSpace U U)
   simp only [piDUncurried, toElementMap_comp, toElementMap_paired, toElementMap_proj₀,
     toElementMap_proj₁, fst_pair, snd_pair, evalMap_apply]
 
-/-- **`Π(d)`, as a self-map of `(𝒰→𝒰)`** (currying `piDUncurried d` in `x`, leaving `t` bound). -/
-noncomputable def piD (d : ApproximableMap U U) : ApproximableMap (funSpace U U) (funSpace U U) :=
-  curry (piDUncurried d)
 
-/-- **`Π(d)(x)`, for `x` a plain map `𝒰 → 𝒰`** (not yet an element of the function space) — the
-formula's "closed form" as a composite `ApproximableMap`, matching Scott's
-`λt. sub(d(sub(t)))(x(sub(t)))` literally. -/
-noncomputable def piDApply (d f : ApproximableMap U U) : ApproximableMap U U :=
-  (evalMap U U).comp (paired (jArrow.comp (subU.comp (d.comp subU))) (f.comp subU))
 
 theorem toElementMap_piDApply (d f : ApproximableMap U U) (t : U.Element) :
     (piDApply d f).toElementMap t =
@@ -297,11 +229,6 @@ theorem toApproxMap_toElementMap_piD (d : ApproximableMap U U) (φ : (funSpace U
   intro t
   rw [piD, toElementMap_curry_apply, toElementMap_piDUncurried, toElementMap_piDApply]
 
-/-- **`Π(d)`, regarded as a combinator living in `𝒰` itself** — conjugating `piD d` through
-`i_→, j_→` (Definition 8.9), exactly as `subU` was built from `subApprox` in Step 1. This is what
-Scott's "type" means: a self-map *of `𝒰`*, not of `(𝒰→𝒰)`. -/
-noncomputable def piU (d : ApproximableMap U U) : ApproximableMap U U :=
-  iArrow.comp ((piD d).comp jArrow)
 
 /-! ## Step 4: "it is easy to check that `Π(d)` is a projection" — Scott's own hint
 
@@ -318,63 +245,9 @@ Mirrors Step 1's `subUFixIso` verbatim, substituting `piD d`/`piU d` for `subApp
 unchanged). Reduces "`piU d` is finitary" to "`piD d` is finitary" — the target of Exercise
 8.27(b)(1) onward — exactly as `isFinitary_subU` was obtained from `isFinitary_subApprox`. -/
 
-/-- `piU d`'s defining formula unfolded at the element level (mirrors `toElementMap_subU`). -/
-theorem toElementMap_piU (d : ApproximableMap U U) (w : U.Element) :
-    (piU d).toElementMap w =
-      iArrow.toElementMap ((piD d).toElementMap (jArrow.toElementMap w)) := by
-  unfold piU
-  rw [toElementMap_comp, toElementMap_comp]
 
-/-- Unfolds `(piU d).toElementMap w = w` into the statement that `j_→(w)` is already a fixed
-point of `piD d` (mirrors `subApprox_fix_of_subU_fix`). -/
-theorem piD_fix_of_piU_fix {d : ApproximableMap U U} {w : U.Element}
-    (hw : (piU d).toElementMap w = w) :
-    (piD d).toElementMap (jArrow.toElementMap w) = jArrow.toElementMap w := by
-  rw [toElementMap_piU] at hw
-  have hstep := congrArg jArrow.toElementMap hw
-  rwa [jArrow_comp_iArrow_apply] at hstep
 
-/-- Mirrors `subU_fix_of_subApprox_fix`. -/
-theorem piU_fix_of_piD_fix {d : ApproximableMap U U} {φ : (funSpace U U).Element}
-    (hφ : (piD d).toElementMap φ = φ) :
-    (piU d).toElementMap (iArrow.toElementMap φ) = iArrow.toElementMap φ := by
-  rw [toElementMap_piU, jArrow_comp_iArrow_apply, hφ]
 
-/-- **Exercise 8.27(b)(0): `Fix(piU d) ≃o Fix(piD d)`.** Forward: `w ↦ j_→(w)`; backward:
-`φ ↦ i_→(φ)`. Needs only `j_→∘i_→ = I` (no inequality on `i_→∘j_→`) — mirrors `subUFixIso`
-verbatim, with `piD d`/`piU d` in place of `subApprox`/`subU`. -/
-noncomputable def piUFixIso (d : ApproximableMap U U) :
-    {w : U.Element // (piU d).toElementMap w = w} ≃o
-      {φ : (funSpace U U).Element // (piD d).toElementMap φ = φ} where
-  toFun w := ⟨jArrow.toElementMap w.1, piD_fix_of_piU_fix w.2⟩
-  invFun φ := ⟨iArrow.toElementMap φ.1, piU_fix_of_piD_fix φ.2⟩
-  left_inv w := by
-    apply Subtype.ext
-    show iArrow.toElementMap (jArrow.toElementMap w.1) = w.1
-    have hw := toElementMap_piU d w.1
-    rw [w.2] at hw
-    rw [piD_fix_of_piU_fix w.2] at hw
-    exact hw.symm
-  right_inv φ := by
-    apply Subtype.ext
-    exact jArrow_comp_iArrow_apply φ.1
-  map_rel_iff' := by
-    intro w w'
-    show jArrow.toElementMap w.1 ≤ jArrow.toElementMap w'.1 ↔ w.1 ≤ w'.1
-    constructor
-    · intro hle
-      have h2 := iArrow.toElementMap_mono hle
-      have e1 : iArrow.toElementMap (jArrow.toElementMap w.1) = w.1 := by
-        have hw := toElementMap_piU d w.1
-        rw [w.2, piD_fix_of_piU_fix w.2] at hw
-        exact hw.symm
-      have e2 : iArrow.toElementMap (jArrow.toElementMap w'.1) = w'.1 := by
-        have hw' := toElementMap_piU d w'.1
-        rw [w'.2, piD_fix_of_piU_fix w'.2] at hw'
-        exact hw'.symm
-      rwa [e1, e2] at h2
-    · intro hle
-      exact jArrow.toElementMap_mono hle
 
 /-! ## Exercise 8.27(b)(1): reduce finitariness of `piD d` to Theorem 8.5's step-closure formula
 
@@ -528,15 +401,8 @@ theorem exists_rel_self_subset_of_mem {t : U.Element} (ht : subU.toElementMap t 
     (formula_of_isFinitaryProjection isFinitaryProjection_subU t).mp hmem
   exact ⟨T, hTT, hTt, hTT₀⟩
 
-/-- The family of `subU`-self-consistent nbhds already in `t`'s filter. -/
-def scFamily (t : U.Element) : Type := {T : Set ℚ // subU.rel T T ∧ t.mem T}
 
-instance instNonemptyScFamily (t : U.Element) : Nonempty (scFamily t) :=
-  ⟨⟨U.master, subU.master_rel, t.master_mem⟩⟩
 
-/-- The principal element witnessed by a member of `scFamily t`. -/
-def scPrincipal {t : U.Element} (i : scFamily t) : U.Element :=
-  U.principal (t.sub i.2.2)
 
 /-- **`scFamily t`'s principals form a directed family.** Given `i, j`, apply
 `exists_rel_self_subset_of_mem` at the common refinement `i.1 ∩ j.1` (valid via `t.inter_mem`). -/
@@ -564,16 +430,7 @@ theorem eq_iSupDirected_scPrincipal {t : U.Element} (ht : subU.toElementMap t = 
     obtain ⟨hZmem, hTZ⟩ := (U.mem_principal _).mp hi
     exact t.up_mem i.2.2 hZmem hTZ
 
-/-- **The "type at `s`" map**, `decode(subU(d(s)))`, as a function of the *element* `s` (not just
-`s = subU(principal Y)` for some `Y`). Packaging `piDApply`'s inner formula this way is what lets
-continuity/monotonicity in `s` be stated directly. -/
-noncomputable def piDTypeMap (d : ApproximableMap U U) : ApproximableMap U (funSpace U U) :=
-  jArrow.comp (subU.comp d)
 
-/-- The "type at `s`" itself, as an `ApproximableMap U U`. Always a finitary projection
-(`isFinitaryProjection_piDType`, Step 4), for *any* `d` and `s`. -/
-noncomputable def piDType (d : ApproximableMap U U) (s : U.Element) : ApproximableMap U U :=
-  toApproxMap ((piDTypeMap d).toElementMap s)
 
 /-! ## Discussion: "why does this equation mean that `x` is in the product?"
 

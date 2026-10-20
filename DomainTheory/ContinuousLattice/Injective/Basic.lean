@@ -14,6 +14,7 @@ import all Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Sets.Opens
 import all Mathlib.Topology.Sets.Opens
 public import DomainTheory.ContinuousLattice.Injective.IsRetractSubspace
+public import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpace
 
 @[expose] public section
 
@@ -39,9 +40,3 @@ open Topology TopologicalSpace
 
 universe u v w
 
-/-- **Scott 1972, Definition 1.1.** A topological space `D` is *injective* when, for every
-topological embedding `e : X → Y` and every continuous `f : X → D`, there is a continuous
-`g : Y → D` extending `f` along `e`. -/
-def IsInjectiveSpace (D : Type v) [TopologicalSpace D] : Prop :=
-  ∀ {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y] (e : X → Y),
-    IsEmbedding e → ∀ f : C(X, D), ∃ g : C(Y, D), ∀ x, g (e x) = f x

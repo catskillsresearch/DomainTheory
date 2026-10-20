@@ -1,0 +1,61 @@
+/-
+Copyright (c) 2026  Lars Warren Ericson.  All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Lars Warren Ericson.
+Github:  https://github.com/catskillsresearch/DomainTheory
+-/
+
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.gGen_master
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.gTower_zero
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.gTower_succ
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.mem_gColim
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.gColim_master
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.Texp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.BasicInst28
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.id_val
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.comp_val
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.gFunctor_obj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.gFunctorMap_val
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.descRel_succ
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.inj_isStrict
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.map_inj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.map_proj
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.expSub
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.rho
+
+@[expose] public section
+
+set_option linter.unusedSectionVars false
+
+namespace DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.Exercise510
+
+namespace Exercise619
+
+variable {A₀ A₁ B₀ B₁ : ScottSys}
+
+section Uniqueness
+
+variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master)
+
+/-- `T(ρₙ) = T(iₙ) ∘ T(jₙ) = i'ₙ ∘ j'ₙ`, the projection pair of `T(Texpⁿ{Γ}) ◁ T(Exp)`. -/
+theorem map_rho_eq (n : ℕ) :
+    (Texp N).map (rho hN n)
+      = ((Texp N).obj_subsystem (expSub hN n)).inj.comp
+        ((Texp N).obj_subsystem (expSub hN n)).proj := by
+  unfold rho
+  rw [(Texp N).map_comp (expSub hN n).proj (Subsystem.inj_isStrict (expSub hN n)),
+      (Texp N).map_inj, (Texp N).map_proj]
+
+end Uniqueness
+
+end Exercise619
+
+end DomainTheory.NeighbourhoodSystems

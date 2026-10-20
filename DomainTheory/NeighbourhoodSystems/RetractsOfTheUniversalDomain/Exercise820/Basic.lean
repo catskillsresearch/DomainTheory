@@ -9,6 +9,10 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.embedFst
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.embedSnd
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.constFunMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.evalBotMap
 
 @[expose] public section
 
@@ -92,11 +96,7 @@ section Prod
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
 
-/-- **`a ↦ ⟨a, ⊥⟩`.** -/
-noncomputable def embedFst : ApproximableMap A (prod A B) := paired (idMap A) (constMap A B.bot)
 
-/-- **`b ↦ ⟨⊥, b⟩`.** -/
-noncomputable def embedSnd : ApproximableMap B (prod A B) := paired (constMap B A.bot) (idMap B)
 
 end Prod
 
@@ -106,13 +106,7 @@ section FunSpace
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
 
-/-- **`b ↦ (λ_. b)`, the constant-function embedding.** `curry (proj₀ B A) : B → (A → B)` sends `b`
-to the function that ignores its argument and always returns `b`. -/
-noncomputable def constFunMap : ApproximableMap B (funSpace A B) := curry (proj₀ B A)
 
-/-- **`φ ↦ φ(⊥)`, evaluation at the bottom.** -/
-noncomputable def evalBotMap : ApproximableMap (funSpace A B) B :=
-  (evalMap A B).comp (paired (idMap (funSpace A B)) (constMap (funSpace A B) A.bot))
 
 @[simp] theorem toApproxMap_constFunMap (b : B.Element) (a : A.Element) :
     (toApproxMap ((constFunMap A B).toElementMap b)).toElementMap a = b := by

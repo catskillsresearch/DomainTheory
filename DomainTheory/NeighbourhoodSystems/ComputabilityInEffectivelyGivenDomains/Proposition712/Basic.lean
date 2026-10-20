@@ -16,6 +16,19 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
 public import Mathlib.Tactic
 import all Mathlib.Tactic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.PDsingletonApproxMap
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.PDsingletonMeet
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.PDfinJoinApproxMap₂
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.finJoinMap_prod
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.HasTop
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.improperTop
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.Vshape
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.PDsingleton_mono
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.PDsingletonApproxMap_rel
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.PDsingletonMeet_mem
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.finJoinMap_prod_rel
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.tf_inter
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.ft_inter
 
 @[expose] public section
 
@@ -89,67 +102,17 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 
 /-! ### Part A — the singleton approximable map. -/
 
-/-- **Proposition 7.12 — monotonicity of `{·}` on principal inputs.** When `X' ⊆ X`, the join
-`{↑X'}` is blunter than `{↑X}` in `|ℙ𝒟|`. -/
-theorem PDsingleton_mono {X X' : Set α} (hX : V.mem X) (hX' : V.mem X') (hX'X : X' ⊆ X) :
-    V.PDsingleton (V.principal hX) ≤ V.PDsingleton (V.principal hX') := by
-  intro W hW
-  rw [PDmem_singleton] at hW ⊢
-  obtain ⟨Y, hYpr, hPD, hsub⟩ := hW
-  rw [mem_principal] at hYpr
-  exact ⟨Y, ⟨hYpr.1, hX'X.trans hYpr.2⟩, hPD, hsub⟩
 
-/-- **Proposition 7.12 — the singleton approximable map `λ x. {x}`.** Built from Exercise 2.8's
-extension principle: on the finite element `↑X` the value is `{↑X}`. -/
-def PDsingletonApproxMap : ApproximableMap V V.PowerDomain :=
-  ofMono (fun _X hX => V.PDsingleton (V.principal hX))
-    (fun X X' hX hX' hX'X => @PDsingleton_mono α V X X' hX hX' hX'X)
 
-@[simp] theorem PDsingletonApproxMap_rel {X : Set α} {W : Set (Set α)} (hX : V.mem X) :
-    (PDsingletonApproxMap (V := V)).rel X W ↔ (V.PDsingleton (V.principal hX)).mem W := by
-  dsimp [PDsingletonApproxMap, ofMono]
-  constructor
-  · intro ⟨_, h⟩; exact h
-  · intro h; exact ⟨hX, h⟩
 
 /-! ### Part B — the intersection law. -/
 
-/-- Meet of two `{·}`-values in `|ℙ𝒟|`. -/
-def PDsingletonMeet (a b : V.PowerDomain.Element) : V.PowerDomain.Element where
-  mem W := a.mem W ∧ b.mem W
-  sub h := a.sub h.1
-  master_mem := ⟨a.master_mem, b.master_mem⟩
-  inter_mem h1 h2 := ⟨a.inter_mem h1.1 h2.1, b.inter_mem h1.2 h2.2⟩
-  up_mem h hW hsub := ⟨a.up_mem h.1 hW hsub, b.up_mem h.2 hW hsub⟩
 
-@[simp] theorem PDsingletonMeet_mem {a b : V.PowerDomain.Element} {W : Set (Set α)} :
-    (V.PDsingletonMeet a b).mem W ↔ a.mem W ∧ b.mem W := Iff.rfl
 
 /-! ### Part B continued — binary approximable join map. -/
 
-/-- **Proposition 7.12 — the binary join as a two-variable approximable map.** -/
-def PDfinJoinApproxMap₂ : ApproximableMap₂ V V V.PowerDomain where
-  rel X Y W := (PDsingletonApproxMap (V := V)).rel X W ∧ (PDsingletonApproxMap (V := V)).rel Y W
-  rel_dom₀ h := (PDsingletonApproxMap (V := V)).rel_dom h.1
-  rel_dom₁ h := (PDsingletonApproxMap (V := V)).rel_dom h.2
-  rel_cod h := (PDsingletonApproxMap (V := V)).rel_cod h.1
-  master_rel := ⟨(PDsingletonApproxMap (V := V)).master_rel, (PDsingletonApproxMap (V := V)).master_rel⟩
-  inter_right := fun ⟨h1, h2⟩ ⟨h1', h2'⟩ =>
-    ⟨(PDsingletonApproxMap (V := V)).inter_right h1 h1',
-      (PDsingletonApproxMap (V := V)).inter_right h2 h2'⟩
-  mono := fun ⟨h1, h2⟩ hXX' hYY' hWW' hX' hY' hW' =>
-    ⟨(PDsingletonApproxMap (V := V)).mono h1 hXX' hWW' hX' hW',
-      (PDsingletonApproxMap (V := V)).mono h2 hYY' hWW' hY' hW'⟩
 
-/-- **Proposition 7.12 — the binary join map on `D × D`.** -/
-def finJoinMap_prod : ApproximableMap (prod V V) V.PowerDomain := ofMap₂ (PDfinJoinApproxMap₂ (V := V))
 
-@[simp] theorem finJoinMap_prod_rel {X Y : Set α} (hX : V.mem X) (hY : V.mem Y) {W : Set (Set α)} :
-    (finJoinMap_prod (V := V)).rel (prodNbhd X Y) W ↔
-      (PDfinJoinApproxMap₂ (V := V)).rel X Y W := by
-  dsimp [finJoinMap_prod, ofMap₂]
-  simp only [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
-  exact ⟨fun ⟨_, h⟩ => h, fun h => ⟨prod_mem_prodNbhd hX hY, h⟩⟩
 
 /-! ### Part D — computability. -/
 
@@ -169,62 +132,11 @@ open NeighborhoodSystem
 
 variable {γ δ : Type*}
 
-/-- A domain *has a greatest element* if some element dominates every other. Order-isomorphisms and
-the inclusion order on filters transport this property. -/
-def HasTop (E : NeighborhoodSystem γ) : Prop := ∃ t : E.Element, ∀ x : E.Element, x ≤ t
 
-/-- **The improper filter.** When a system `E` is *unconditionally* closed under intersection, the
-family of *all* its neighbourhoods is a genuine filter — the greatest element of `|E|`. -/
-def improperTop (E : NeighborhoodSystem γ)
-    (hcl : ∀ {X Y : Set γ}, E.mem X → E.mem Y → E.mem (X ∩ Y)) : E.Element where
-  mem := E.mem
-  sub h := h
-  master_mem := E.master_mem
-  inter_mem h1 h2 := hcl h1 h2
-  up_mem _ hY _ := hY
 
 /-! ### The flat two-point domain `Vshape`, with no greatest element. -/
 
-/-- `{true} ∩ {false} = ∅` in `Set Bool`. -/
-theorem tf_inter : ({true} : Set Bool) ∩ {false} = ∅ := by
-  ext b
-  simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false, not_and]
-  rintro rfl h; exact absurd h (by decide)
 
-/-- `{false} ∩ {true} = ∅` in `Set Bool`. -/
-private theorem ft_inter : ({false} : Set Bool) ∩ {true} = ∅ := by
-  ext b
-  simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false, not_and]
-  rintro rfl h; exact absurd h (by decide)
 
-/-- The flat two-point domain over `Bool`: the neighbourhoods are the master `Δ = {true, false}`
-and the two singletons `{true}`, `{false}`. Since `{true} ∩ {false} = ∅` and `∅` is not a
-neighbourhood (and has no neighbourhood subset), condition (ii) holds only vacuously there — this is
-a genuine Scott neighbourhood system whose two singletons are *inconsistent*. -/
-def Vshape : NeighborhoodSystem Bool where
-  mem X := X = Set.univ ∨ X = {true} ∨ X = {false}
-  master := Set.univ
-  master_nonempty := ⟨true, Set.mem_univ _⟩
-  master_mem := Or.inl rfl
-  sub_master _ := Set.subset_univ _
-  inter_mem := by
-    rintro X Y Z hX hY hZ hZsub
-    -- every neighbourhood is nonempty, so a witness `Z ⊆ X ∩ Y = ∅` is impossible
-    have hZne : Z.Nonempty := by
-      rcases hZ with rfl | rfl | rfl
-      · exact ⟨true, Set.mem_univ true⟩
-      · exact ⟨true, rfl⟩
-      · exact ⟨false, rfl⟩
-    obtain ⟨z, hz⟩ := hZne
-    rcases hX with rfl | rfl | rfl <;> rcases hY with rfl | rfl | rfl
-    · exact Or.inl (by rw [Set.inter_self])
-    · exact Or.inr (Or.inl (by rw [Set.univ_inter]))
-    · exact Or.inr (Or.inr (by rw [Set.univ_inter]))
-    · exact Or.inr (Or.inl (by rw [Set.inter_univ]))
-    · exact Or.inr (Or.inl (by rw [Set.inter_self]))
-    · rw [tf_inter] at hZsub; exact absurd (hZsub hz) (Set.notMem_empty z)
-    · exact Or.inr (Or.inr (by rw [Set.inter_univ]))
-    · rw [ft_inter] at hZsub; exact absurd (hZsub hz) (Set.notMem_empty z)
-    · exact Or.inr (Or.inr (by rw [Set.inter_self]))
 end Counterexample712C
 end DomainTheory.NeighbourhoodSystems

@@ -24,6 +24,12 @@ public import DomainTheory.BridgeTheorems.PresentationDomains
 public import DomainTheory.BridgeTheorems.InfoSysConstructions
 public import DomainTheory.BridgeTheorems.ScottMapBridge
 public import DomainTheory.BridgeTheorems.SexDomainEquation
+public import DomainTheory.BridgeTheorems.WorkedExampleSExpr.lowerBoundSystem
+public import DomainTheory.BridgeTheorems.WorkedExampleSExpr.sexAtom
+public import DomainTheory.BridgeTheorems.WorkedExampleSExpr.sexRhsSemanticIso
+public import DomainTheory.BridgeTheorems.WorkedExampleSExpr.sexDomainEquationIso
+public import DomainTheory.BridgeTheorems.WorkedExampleSExpr.SexSys
+public import DomainTheory.BridgeTheorems.WorkedExampleSExpr.SexRhs
 
 @[expose] public section
 
@@ -46,49 +52,13 @@ open Order
 
 /-! ## Atom system (Factoid 2.4, named) -/
 
-/-- Scott’s ℕ lower-bound information system (Factoid 2.4), as a named definition. -/
-def lowerBoundSystem : InfoSys ℕ where
-  bot := 0
-  Con := Set.univ
-  Ent := Factoid24.lowerBoundEnt
-  con_subset := by
-    intro u v _ _
-    exact Set.mem_univ v
-  con_sing := by
-    intro _
-    exact Set.mem_univ _
-  ent_con := by
-    intro u a _
-    exact Set.mem_univ _
-  ent_bot := by
-    intro u _
-    exact Or.inl rfl
-  ent_refl := by
-    intro u a _ ha
-    exact Or.inr ⟨a, ha, le_rfl⟩
-  ent_trans := by
-    intro u v c _ _ hvEnt huEnt
-    rcases huEnt with rfl | ⟨n, hn, hcn⟩
-    · exact Or.inl rfl
-    · rcases hvEnt n hn with rfl | ⟨k, hk, hnk⟩
-      · exact Or.inl (Nat.le_zero.mp hcn)
-      · exact Or.inr ⟨k, hk, le_trans hcn hnk⟩
 
 /-! ## S-expression system -/
 
-/-- Tree / S-expression information system over lower-bound atoms. -/
-abbrev SexSys : InfoSys (TreeToken ℕ) :=
-  treeSystem lowerBoundSystem
 
-/-- Official right-hand side `A + (T × T)`. -/
-abbrev SexRhs : InfoSys (SumToken ℕ (ProdToken SexSys SexSys)) :=
-  treeRhs lowerBoundSystem
 
 /-! ## Concrete finite elements -/
 
-/-- Closure of a singleton atom token `{atom n}`. -/
-noncomputable def sexAtom (n : ℕ) : SexSys.Element :=
-  SexSys.closure {TreeToken.atom n} (SexSys.con_sing _)
 
 /-! ## 1982 → 1980: basic-open neighbourhood filters -/
 
@@ -110,27 +80,7 @@ noncomputable abbrev sexNeighborhoodIdealIso :=
 
 /-! ## Domain equation at the level of domains (1982 constructions) -/
 
-/--
-Semantic factor: `|A + (T × T)| ≃o WithBot (|A| ⊕ (|T| × |T|))` via the generic
-product and separated-sum isos. Not the fixed-point equation itself.
--/
-noncomputable def sexRhsSemanticIso :
-    WithBot (lowerBoundSystem.Element ⊕ (SexSys.Element × SexSys.Element)) ≃o
-      SexRhs.Element :=
-  let ιProd := InfoSysConstructions.productDomainIso SexSys SexSys
-  let ιSum := InfoSysConstructions.sumDomainIso lowerBoundSystem (productSystem SexSys SexSys)
-  let mid :=
-    (OrderIso.refl lowerBoundSystem.Element).sumCongr ιProd |>.withBotCongr
-  mid.trans ιSum
 
-/--
-**S-expression fixed-point equation.** `|T| ≃o |A + (T × T)|`, the order
-isomorphism of `SexSys.Element` with `SexRhs.Element` induced by
-`treeUnfold` / `treeFold` (`treeDomainIso`).
--/
-noncomputable def sexDomainEquationIso :
-    SexSys.Element ≃o SexRhs.Element :=
-  treeDomainIso lowerBoundSystem
 
 /-! ## Morphisms: identity is Scott-continuous (Factoid 4.6) -/
 

@@ -10,6 +10,19 @@ module
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.Formula
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.evalV
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.evalSet
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.vars
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.SemanticEquiv
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.Lindenbaum
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.toSet
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.Entails
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.mem_evalSet_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.evalV_eq_of_agree
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.exists_bitsOf_agree
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.formulaSetoid
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.semanticEquiv_iff_evalSet_eq
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.toSet_mk
 
 @[expose] public section
 
@@ -56,120 +69,24 @@ namespace DomainTheory.NeighbourhoodSystems
 
 /-! ### The formula language and its two evaluations -/
 
-/-- The standard truth-valuation semantics: `v : ℕ → Bool` assigns each variable a truth value. -/
-def evalV (v : ℕ → Bool) : Formula → Bool
-  | .var i => v i
-  | .bot => false
-  | .top => true
-  | .neg φ => !(evalV v φ)
-  | .and φ ψ => evalV v φ && evalV v ψ
-  | .or φ ψ => evalV v φ || evalV v ψ
 
-/-- The *same* recursion, but interpreted in `Set ℕ` via `generator` (`Exercise813a.lean`) instead
-of an abstract Boolean — i.e. the specific homomorphism `var i ↦ generator i`. -/
-def evalSet : Formula → Set ℕ
-  | .var i => generator i
-  | .bot => ∅
-  | .top => Set.univ
-  | .neg φ => (evalSet φ)ᶜ
-  | .and φ ψ => evalSet φ ∩ evalSet ψ
-  | .or φ ψ => evalSet φ ∪ evalSet ψ
 
-/-- The (finite) set of variables occurring in a formula. -/
-def vars : Formula → Finset ℕ
-  | .var i => {i}
-  | .bot => ∅
-  | .top => ∅
-  | .neg φ => vars φ
-  | .and φ ψ => vars φ ∪ vars ψ
-  | .or φ ψ => vars φ ∪ vars ψ
 
-/-- **The bridge between the two evaluations**: `evalSet` at `n : ℕ` agrees with `evalV` at `n`'s
-own bit-sequence `fun i => n.testBit i`. -/
-theorem mem_evalSet_iff (n : ℕ) (φ : Formula) :
-    n ∈ evalSet φ ↔ evalV (fun i => n.testBit i) φ = true := by
-  induction φ with
-  | var i => simp [evalSet, evalV]
-  | bot => simp [evalSet, evalV]
-  | top => simp [evalSet, evalV]
-  | neg φ ih => simp [evalSet, evalV, ih]
-  | and φ ψ ihφ ihψ => simp [evalSet, evalV, ihφ, ihψ]
-  | or φ ψ ihφ ihψ => simp [evalSet, evalV, ihφ, ihψ]
 
 /-! ### Only finitely many variables matter -/
 
-theorem evalV_eq_of_agree {φ : Formula} {v v' : ℕ → Bool} (h : ∀ i ∈ vars φ, v i = v' i) :
-    evalV v φ = evalV v' φ := by
-  induction φ with
-  | var i => exact h i (Finset.mem_singleton_self i)
-  | bot => rfl
-  | top => rfl
-  | neg φ ih => simp only [evalV, ih h]
-  | and φ ψ ihφ ihψ =>
-    simp only [evalV, vars] at h ⊢
-    rw [ihφ (fun i hi => h i (Finset.mem_union_left _ hi)),
-      ihψ (fun i hi => h i (Finset.mem_union_right _ hi))]
-  | or φ ψ ihφ ihψ =>
-    simp only [evalV, vars] at h ⊢
-    rw [ihφ (fun i hi => h i (Finset.mem_union_left _ hi)),
-      ihψ (fun i hi => h i (Finset.mem_union_right _ hi))]
 
-/-- Given any (finite) target set of variables and any valuation `v`, some `n : ℕ` matches `v` on
-exactly that set — witnessed directly via `bitmaskOf` (`Exercise813a.lean`). -/
-theorem exists_bitsOf_agree (S : Finset ℕ) (v : ℕ → Bool) :
-    ∃ n : ℕ, ∀ i ∈ S, n.testBit i = v i := by
-  refine ⟨bitmaskOf (S.filter (fun i => v i)), fun i hi => ?_⟩
-  have key : (bitmaskOf (S.filter (fun i => v i))).testBit i = true ↔ v i = true := by
-    rw [testBit_bitmaskOf]; simp [Finset.mem_filter, hi]
-  rcases hv : v i with - | - <;> rcases hn : (bitmaskOf (S.filter (fun i => v i))).testBit i
-    with - | - <;> simp_all
 
 /-! ### `SemanticEquiv`: the Lindenbaum equivalence relation -/
 
-/-- **Scott's Lindenbaum equivalence**: `φ ~ ψ` iff they agree under every truth valuation. -/
-def SemanticEquiv (φ ψ : Formula) : Prop := ∀ v, evalV v φ = evalV v ψ
 
-instance formulaSetoid : Setoid Formula where
-  r := SemanticEquiv
-  iseqv := ⟨fun _ _ => rfl, fun h v => (h v).symm, fun h1 h2 v => (h1 v).trans (h2 v)⟩
 
-/-- **The one substantive lemma**: semantic equivalence (quantifying over *all* valuations) agrees
-with `evalSet`-equality (which only ever "tests" the countably many bit-derived valuations) —
-because a formula only mentions finitely many variables, any valuation can be swapped for a
-matching bit-derived one on the (finite) variables that actually occur. -/
-theorem semanticEquiv_iff_evalSet_eq {φ ψ : Formula} :
-    SemanticEquiv φ ψ ↔ evalSet φ = evalSet ψ := by
-  constructor
-  · intro h
-    ext n
-    rw [mem_evalSet_iff, mem_evalSet_iff, h]
-  · intro h v
-    obtain ⟨n, hn⟩ := exists_bitsOf_agree (vars φ ∪ vars ψ) v
-    have h1 : evalV v φ = evalV (fun i => n.testBit i) φ :=
-      evalV_eq_of_agree fun i hi => (hn i (Finset.mem_union_left _ hi)).symm
-    have h2 : evalV v ψ = evalV (fun i => n.testBit i) ψ :=
-      evalV_eq_of_agree fun i hi => (hn i (Finset.mem_union_right _ hi)).symm
-    have hiff : evalV (fun i => n.testBit i) φ = true ↔ evalV (fun i => n.testBit i) ψ = true := by
-      rw [← mem_evalSet_iff, ← mem_evalSet_iff, h]
-    rw [h1, h2]
-    rcases hφ : evalV (fun i => n.testBit i) φ with - | - <;>
-      rcases hψ : evalV (fun i => n.testBit i) ψ with - | - <;> simp_all
 
 /-! ### `Lindenbaum`, the Lindenbaum algebra of propositional calculus -/
 
-/-- **The Lindenbaum algebra of propositional calculus**: `Formula` quotiented by semantic
-equivalence. -/
-def Lindenbaum : Type := Quotient formulaSetoid
 
-/-- The canonical map to `Set ℕ`, well-defined by `semanticEquiv_iff_evalSet_eq`. -/
-def Lindenbaum.toSet : Lindenbaum → Set ℕ :=
-  Quotient.lift evalSet fun _ _ h => semanticEquiv_iff_evalSet_eq.mp h
 
-@[simp] theorem Lindenbaum.toSet_mk (φ : Formula) :
-    Lindenbaum.toSet ⟦φ⟧ = evalSet φ := rfl
 
 /-! ### The bijection also matches entailment with `⊆` -/
 
-/-- Semantic entailment: `φ ⊨ ψ` iff every valuation satisfying `φ` satisfies `ψ`. -/
-def Entails (φ ψ : Formula) : Prop := ∀ v, evalV v φ = true → evalV v ψ = true
 end DomainTheory.NeighbourhoodSystems

@@ -9,6 +9,13 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.gLastOf
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.gStepsOK
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.codePair
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.chainDec
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixStp
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixPStep
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixChainChar
 
 @[expose] public section
 
@@ -64,45 +71,16 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 `gStepsOK g P a full` says: starting from the index `a`, the consecutive `g`-steps along the index
 list `full` all hold, and `gLastOf a full` is the final index reached. -/
 
-/-- The last index of the chain `a, full₀, full₁, …`. -/
-def gLastOf : ℕ → List ℕ → ℕ
-  | a, [] => a
-  | _, (b :: rest) => gLastOf b rest
 
-/-- The consecutive `g`-steps `g.rel (X_a) (X_{full₀})`, `g.rel (X_{full₀}) (X_{full₁})`, … all hold. -/
-def gStepsOK (g : ApproximableMap V V) (P : ComputablePresentation V) : ℕ → List ℕ → Prop
-  | _, [] => True
-  | a, (b :: rest) => g.rel (P.X a) (P.X b) ∧ gStepsOK g P b rest
 
 /-! ### The least map of `Xenum c` and its decidable one-step relation. -/
 
-/-- The one-entry function-space code: `Xenum (codePair a b) = [X_a, X_b]`. -/
-def codePair (a b : ℕ) : ℕ := Nat.pair (Nat.pair a b) 0 + 1
 
 variable (P : ComputablePresentation V)
 
 /-! ### The decidable chain predicate and its primitive-recursive `foldCode`. -/
 
-/-- The decidable mirror of `gStepsOK`, phrased with the function-space inclusion char `fincl`. -/
-def chainDec (fincl : ℕ → ℕ) (c : ℕ) : ℕ → List ℕ → Prop
-  | _, [] => True
-  | a, (b :: rest) => fincl (Nat.pair c (codePair a b)) = 1 ∧ chainDec fincl c b rest
 
-/-- One packed `foldCode` step: state `pair acc params` with `acc = pair prev flag`, current element
-`x`. Updates the flag with the one-step consistency test and advances `prev` to `x`. -/
-def fixStp (fincl : ℕ → ℕ) (w : ℕ) : ℕ :=
-  Nat.pair w.unpair.1
-    (selectFn w.unpair.2.unpair.1.unpair.2
-      (isOne (fincl (Nat.pair w.unpair.2.unpair.2
-        (codePair w.unpair.2.unpair.1.unpair.1 w.unpair.1)))) 0)
 
-/-- The pure left-fold step corresponding to `fixStp` (parameter `c`, accumulator `acc = pair prev
-flag`, current element `x`). -/
-def fixPStep (fincl : ℕ → ℕ) (c acc x : ℕ) : ℕ :=
-  Nat.pair x (selectFn acc.unpair.2 (isOne (fincl (Nat.pair c (codePair acc.unpair.1 x)))) 0)
 
-/-- The chain `foldCode`: starts from `pair masterIdx 1`, threads the parameter `c`, over the list
-coded by `i`. Returns `pair lastIdx flag`. -/
-def fixChainChar (fincl : ℕ → ℕ) (c i : ℕ) : ℕ :=
-  foldCode (fixStp fincl) c (Nat.pair P.masterIdx 1) i
 end DomainTheory.NeighbourhoodSystems
