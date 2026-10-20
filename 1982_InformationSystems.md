@@ -24,11 +24,7 @@ verified_date: null
 > the PDF. Correct remaining errors, restore any missed mathematical notation,
 > and when done set `verification_status: verified` in the YAML front matter.
 
-
 ## Transcription
-
-<!-- page 1 -->
-
 # DOMAINS FOR DENOTATIONAL SEMANTICS
 
 by  
@@ -45,9 +41,6 @@ Pittsburgh, Pennsylvania 15213
 For example, Category Theory, which is much used in discussions of the Theory of Domains, seems far too abstract to many people. On the other hand, Automata Theory—which has often benefited from some use of Category Theory—is quite abstract and, in many aspects perhaps, quite useless, but the level of abstraction is fairly low and the reasons for the definitions are usually evident. Thus, the subject has become by now a standard topic even for undergraduate courses. I believe that Michael Rabin and I had much to do with influencing the subsequent development of the theory by formulating some years ago some basic concepts (many previously known) in a way that made sense to anyone who had been exposed to a little Abstract Algebra, Logic and Set Theory. This expository part of our paper did not require originality, but rather a certain frame of mind and a certain style of writing to put the ideas and problems in sharp relief. (The original paper is Rabin-Scott [1959]; see the excellent historical review of the subject in Greibach [1981].)
 
 Domain Theory has fared less well. I feel I made a mistake in 1969 in using Lattice Theory as a mode of presentation—a mistake as far as Computer Science is concerned. Lattices are very familiar to logicians and those interested in Universal Algebra, and I liked very much the structures I found. But it takes some time to learn the special terminology and to become comfortable with the necessary examples. Indeed, without a stock of examples, it is impossible to have sufficient intuition for making the required constructions. True, some people took to the approach, and the lattice-theoretic definitions were simple enough to motivate. But a much
-
-<!-- page 2 -->
-
 greater percentage of people I came in contact with found the large number of things to learn a definite roadblock to understanding. And the Lattice Theory was only partly standard, since this approach to the theory has to employ complete lattices and topological notions in order to explain *limits* and *continuity* adequately. In fact, Topology of a rather mathematically simple set-theoretical kind could have been used as the whole foundation much as in Scott [1972], but that kind of mathematics seems even less attractive to computer scientists. Again, it is a matter of background, I think, and it is unreasonable to expect people to know everything. Nevertheless, the lattice-theoretic approach has great consistency and coherence; it has been carried out in full detail in Gierz, *et al.* [1980], which also gives the topological connections. That book contains a large number of references to the mathematical literature to show the connections of the theory to many other topics. What we had to miss out there is a clear hook-up with computability theory, owing simply to a lack of space and time to be able to cover everything.
 
 In Scott [1981], I tried out another, different presentation (which is also explained in Scott [1982].) However, I have found that the use of *neighborhood systems* causes confusion in people not used to thinking in terms of sets of sets of sets of sets . . . , even though the set theory required is quite simple. My purpose in the present lecture, then, is to go back once more to the very beginning to try out another plan for making the story easy and natural. The notion to be used I call an *information system*. This is a “static” notion appropriate to bodies of information about coherent groups of elements. The “dynamic” ideas enter in the ways different systems can be related and in the semantical definitions about meanings of programming language constructs. (For discussions of semantical definitions see Stoy [1977], Gordon [1979], and Tennent [1981].) Neighborhood systems are, in a precise sense, equivalent to information systems, but there seems to be an interesting trade-off between what properties of structures are *axiomatized* and what are *implicit* in the form of the structure. Perhaps, despite their simplicity, neighborhoods leave too much implicit, too much to be extracted by definition; information systems, on the other hand, do seem to be more flexible in doing several of the important constructions. It all comes down to just where one imposes the closure conditions on the structures. I have a feeling that I now have found just about the right mix of axioms *vs.* definitions.
@@ -55,9 +48,6 @@ In Scott [1981], I tried out another, different presentation (which is also expl
 Another word about Category Theory: I actually feel that it is particularly significant and important for the theory and for the whole area of semantics. But it must be approached with great caution, for the sheer number of definitions and axioms can try the most patient reader. It seems to me to be especially necessary in discussing applications of abstract mathematical ideas to keep the motivation strongly in mind. This is often hard to do if the categories get too thick, but of course it all depends on the writer. Category Theory is especially useful in stating *general* properties of structures and in *characterizing* constructions uniquely; however, there often is a problem actually justifying the *existence* of certain constructions, and a direct approach can be quicker than quoting lots of theorems. But, man cannot live by construction alone: theorems have to be proved in order to get the proper value out of the work. Domain Theory must also be convenient for demonstrating the soundness of various proof rules for properties of recursively defined objects and recursively defined domains, and I think that Category Theory can be helpful here. A step in the right direction has been made in the LCF system (see Gordon-Milner-Wadsworth [1979]), which, however, does not take advantage of general Category Theory; but the whole area needs much more development in my opinion.
 
 The main purpose of the Theory of Domains in Denotational Semantics, as I see it, is to give a mathematical model of a system of *types*—including function-space types—and to explain
-
-<!-- page 3 -->
-
 a notion of computability with respect to these types. There are many possible theories of types, but the construction of domains is meant to justify recursive definitions at all types, and—most essentially—to justify recursive definitions of types. Pursuing these goals has certain consequences, as we shall see. The model presented here is only one approach, and some comparisons with other methods will be made in Section 8. Again some help from Category Theory would be welcome in comparing the different kinds of modelling.
 
 One benefit of Domain Theory is that it is possible to make sense of types containing *infinite* elements. The cost required seems to be that the domains therefore have to contain *partial* elements as well as *total* elements. And this is where the lattice-theoretic definitions entered in the earlier presentations: the partial ordering with relations like $x \sqsubseteq y$ was used to express the fact that the element $x$ was “less defined” (i.e. more partial) than $y$ but “contained in” $y$. The relation $\sqsubseteq$, however, must be subjected to many axioms to have a theory suitable to the desired applications. Instead of such a big group of axioms, I wish to put forward here a construction where the “skeleton” (or better: “backbone”) of a domain is introduced by just a few axioms. Then the domain itself is defined as a certain construct from the backbone in order to define the appropriate notion of element. There are several advantages I can see to the new approach:
@@ -77,9 +67,6 @@ It is to be hoped that the reader can judge the validity of these claims from th
 $$(D, \Delta, \mathrm{Con}, \vdash),$$
 
 where $D$ is a set (the set of data objects or propositions), where $\Delta$ is a distinguished member of $D$ (the least informative member), where $\mathrm{Con}$ is a set of finite subsets of $D$ (the consistent sets of objects), and where $\vdash$ is a binary relation between members of $\mathrm{Con}$ and members of $D$ (the
-
-<!-- page 4 -->
-
 entailment relation for objects). Concerning $\mathrm{Con}$, the following axioms must be satisfied for all finite subsets $u, v \subseteq D$:
 
 (i) $u \in \mathrm{Con}$, whenever $u \subseteq v \in \mathrm{Con}$;
@@ -109,9 +96,6 @@ Not just any combination of data objects will describe a possible element, howev
 $$\{n_0, \dots, n_{k-1}\} \vdash m \quad\text{iff either } m = 0 \text{ or } m \le n_i \text{ for some } i < k.$$
 
 (Remember to think of the same possible $x$ on both sides of the $\vdash$.) That $\vdash$ is an entailment relation in the sense of our axioms is clear. ■
-
-<!-- page 5 -->
-
 **A second example.** The first example is possibly misleading because all (finite) sets of data objects were allowed to be consistent. The example can be modified in a natural way so this is not so; of course, quite a different system will be obtained. The idea is to let $D$ be the set of all pairs $(n, m)$ of integers with $n < m$, where such a pair stands now for the proposition $n < x < m$. Clearly the two data objects $(0, 2)$ and $(3, 7)$ taken together are inconsistent. (Why?)
 
 Oh, I see, I have left out $\Delta$ from $D$; we must therefore include the somewhat artificial pair $(0, \infty)$ with the obvious interpretation. When I say “obvious interpretation” here I mean that $u \in \mathrm{Con}$ can be defined by saying that there must be an integer satisfying all the “propositions” in $u$. Further, $u \vdash X$ can be defined by saying that whenever an integer satisfies all the propositions in $u$, then it must satisfy $X$. The notion of “satisfy” really should be obvious from the intuitive reading given to the data objects, and the reader can verify easily that all the axioms hold for this example of an information system. ■
@@ -139,9 +123,6 @@ Already in formulating the axiom about the transitivity of $\vdash$ a relation b
 (ii) $u \vdash v$ implies $u \cup v \in \mathrm{Con}$;
 
 (iii) $u \vdash u$;
-
-<!-- page 6 -->
-
 (iv) $u \vdash v$ and $v \vdash w$ imply $u \vdash w$;
 
 (v) $u' \supseteq u$, $u \vdash v$, and $v \supseteq v'$ imply $u' \vdash v'$; and
@@ -181,9 +162,6 @@ x = \{X \in D_{\mathbf{A}} \mid X \text{ is true of } x\}.
 $$
 
 There can be no confusion injected here in identifying elements that ought to be distinct, since we are assuming that there are enough data objects in the system. If for some reason we felt we ought to have more of them to distinguish between more elements, then we would have to pass to a larger and *different* information system. By agreement, then, the above equation is a tautology.
-
-<!-- page 7 -->
-
 So, for the sake of simplicity, elements can be taken to be *sets* of data objects. But, we hasten to ask, which sets? The question is really: What are the properties of truth? The answers are well known, and, in fact, we have already used them in our examples in the last section. In words, the set of true propositions about a possible element must be (i) consistent in itself, and (ii) closed under entailment (or *deductively closed*, for short). Condition (i) is clear because we are talking about a *possible* element, not an impossible one. Condition (ii) is acceptable, because, by the very meaning of the word, entailment should be truth preserving. In addition, we are also saying the converse: *any* set having properties (i) and (ii) corresponds to a (partial) element. Here is the formal statement:
 
 **DEFINITION 3.1.** The *elements* of the information system $\mathbf{A} = (D_{\mathbf{A}}, \Delta_{\mathbf{A}}, \mathrm{Con}_{\mathbf{A}}, \vdash_{\mathbf{A}})$ are those subsets $x$ of $D_{\mathbf{A}}$ where:
@@ -207,9 +185,6 @@ Returning to our question of the balance between axiomatizaton and construction,
 *The examples.* Let us look again at the three examples of information systems of the last section. (1) In the first we see that the elements, by the formal definition, are either the finite sets $\{n \mid n \leq m\}$ or the whole set (i.e. $\top$). Intuitively, this corresponds to the fact that the chosen propositions only give *lower bounds* on a possible element; thus, no element is “finished” until it becomes infinite. (2) In the second example there is no top, and the elements are the sets of the form:
 
 $$\{(n, q) \mid n \leq m \leq p \leq q\},$$
-
-<!-- page 8 -->
-
 where $m \leq p$ are given, and where $q = \infty$ is allowed. The total elements here correspond to the (non-negative) integers, and the partial elements to situations where the lower and upper bounds have not come exactly together. (3) In the third example, the elements are just the graphs (i.e. sets of ordered pairs) of partial functions from $A$ into $B$ (with the object $\Delta$ adjoined to the graph). Total elements correspond to total functions (i.e. functions well defined on all of the set $A$). ■
 
 The reader should be able to obtain some more examples of information systems from his own experience and should then consider what the corresponding domain is like. Examples are really quite easy to make up. Needless to say, Mathematical Logic provides a host of information systems, but logicians do not often consider the domains determined by the the systems they know to be worthy of study *in themselves*. In particular, it does not seem to be widely recognized that the domains obtained from information systems form a rich category, as we shall show later. The word "category" is definitely being used here in the precise technical sense of Category Theory, and the application of the notion is very appropriate since the category of domains has very good closure properties.
@@ -223,9 +198,6 @@ Now here is one of the main points of the new exposition: Because $x \subseteq y
 Let us try out another notion. Elements are consistent, deductively closed sets of data objects. Right? Every subset of a consistent set is consistent, but not every subset is closed under entailment, in general. Right? But suppose that $x$ and $y$ are two elements. It can easily be seen that their intersection $x \cap y$ is again consistent and deductively closed (by a 2 nanosecond proof). Therefore, the set of elements of a domain is closed under intersection. This means that, as a partially ordered set, $|\mathbf{A}|$ is an *inf semilattice*.
 
 Well, the exact terminology is quite unimportant, but the properties of $\cap$ when combined with the properties of $\subseteq$ are pleasantly "algebraic" (and run to several lines when written out). We all know them: $\cap$ is idempotent, commutative, and associative. The element $\bot$, being the
-
-<!-- page 9 -->
-
 The element $\bot$, being the smallest element of the domain, is a zero element for $\cap$. The operation $\cap$ is monotonic with respect to $\subseteq$, and we have the connection:
 
 $$x \subseteq y \text{ iff } x \cap y = x.$$
@@ -245,9 +217,6 @@ $$x_0 \subseteq x_1 \subseteq x_2 \subseteq \cdots \subseteq x_n \subseteq x_{n+
 As $n$ increases, we can say that the elements $x_n$ are getting “better and better”; thus, they must be approaching something even more desirable *in the limit*. Let
 
 $$y = \bigcup_{n=0}^{\infty} x_n,$$
-
-<!-- page 10 -->
-
 then there is no question that $y$ is a subset of $D_{\mathbf{A}}$. But is it an element? Consistency, recall, means that every *finite* subset is in $\mathrm{Con}_{\mathbf{A}}$. The trick is that a finite subset of $y$ must be a subset of one of the $x_n$, because the sequence of elements $x_n$ is increasing. But all the terms of our given sequence are elements, and so, consistent; therefore, every finite subset of $y$ is consistent.
 
 The same argument also shows that the set $y$ of data objects is closed under entailment, because $\vdash_{\mathbf{A}}$ is defined as a relation between finite (consistent) sets and data objects. It follows that since each $x_n$ is a set closed under $\vdash_{\mathbf{A}}$, then so is $y$. In other words, $y$ is indeed an element. Otherwise said, the domain $|\mathbf{A}|$ is closed under the formation of unions of increasing chains of elements, and the union is, of course, the sup in the sense of the partial ordering. Again we have proved closure rather than assuming it, and the necessary properties of the sup follow from its definition as a union.
@@ -269,9 +238,6 @@ This can be read intuitively as saying that every element of the domain is the *
 *Topological considerations.* Geometrically speaking, a topological space is a collection of "points" which group themselves in various "neighborhoods" providing thereby a sense of "nearness." More specifically, a neighborhood of a point in a *metric space* consists of all those points within a certain positive "distance" from the given point; that is, nearness is limited, but it is not pushed to *zero*. The major reason for leaving some "breathing space" around the point comes out in defining continuity of functions.
 
 A function $f$ from one topological space to another is said to be *continuous* provided that, for every point $x$ of the first space, and for every neighborhood in the second space around $f(x)$, it is
-
-<!-- page 11 -->
-
 possible to find—in the first space—a neighborhood around $x$ with the following property. If the function is restricted to this neighborhood, then its values lie entirely in the given neighborhood around $f(x)$. In the metric case we can say that if we do not want the function to wander any great distance from $f(x)$, then there is a restricted distance around $x$ giving a neighborhood over which the function values stay as close to $f(x)$ as specified. This keeps the function from jumping around wildly, since small variations in $x$ lead to only small variations in $f(x)$.
 
 The intuition about continuity is no doubt very clear in the more geometric examples, and geometric intuition can carry us quite far. But the spaces obtained from domain theory are not really geometric spaces, so we need to make some shifts in our metaphors. The geometric notion of a point usually implies that two points are perfectly distinguishable: if $x$ and $y$ are different, then they have disjoint neighborhoods. This is certainly true in the metric case, where, if two points are different, then they are at a positive distance apart. Early on in the study of topological spaces, however, it was found that not all spaces were metric, and weaker separation properties of pairs of distinct points were uncovered. One of the very weak versions of such a condition is called the "$T_0$-axiom." The best way to put it is that if two points have the same neighborhoods, then they are the same. The contrapositive statement sounds odd: if two points are distinct, then there is a neighborhood that contains one but not the other. The oddity of this statement lies in the feeling that you cannot make up your mind over which is the better point.
@@ -291,9 +257,6 @@ $$[u]_{\mathbf{A}} \cap [v]_{\mathbf{A}} = [u \cup v]_{\mathbf{A}}.$$
 In case $u$ and $v$ are inconsistent with each other, then the intersection will be the empty set $\emptyset$. Because every element of our domain $|\mathbf{A}|$ is the union of the finite elements it contains, it is trivial to prove that two elements with exactly the same neighborhoods are the same. For these reasons, then, it follows that $|\mathbf{A}|$ is a $T_0$-topological space. The immediate reaction to this intelligence is: So what?
 
 The answer to this scepticism will appear in the best light when we discuss in the next section the notion of function or mapping appropriate to our domains. The argument will be based on the
-
-<!-- page 12 -->
-
 extremely elementary form of the definition that characterizes the general continuous function together with the fact that the geometric intuition is suggestive of theorems to prove. In Section 6 we will find that the space of all continuous functions between two given domains is also a domain, a most useful result that is interesting topologically. But further interest for Domain Theory comes from the circumstance that there is a connection between geometry and domains. We cannot go into the full details here, but I can make some brief remarks.
 
 Before continuing that discussion, though, it should be remarked that once the topology of the domain has been uncovered, then the unions of chains of elements (or directed sets of elements) are topological limits according to accepted general definitions. Thus, what we felt intuitively was a limiting process (the getting better and better up to the union) is in fact a limit formation in a precise mathematical sense. This helps convince us that we are on the right track.
@@ -305,9 +268,6 @@ This argument proves that $\mathrm{Tot}_{\mathbf{A}}$ is a *Hausdorff space* (or
 *A note on neighborhood structures.* Topological spaces can be defined in several ways, and in general they do not carry a preferred neighborhood structure. (For example, there is no topological significance to the usual rational intervals we use to define neighborhoods for the real line: any similarly dense set of points would do in place of the rational numbers.) Domains, the way we have defined them, however, do have preferred neighborhoods. The set of finite elements of $|\mathbf{A}|$ can be defined topologically, and as we have seen they determine a convenient set of neighborhoods. (The reason for all this is the so-called zero-dimensional character of the domains. There is a higher-dimensional theory, but this leads to continuous lattices and can only be explained using the kind of presentation in Gierz, *et al.* [1980]. It is too long-winded a story for the present paper. The higher-dimensional domains do not have a preferred set of neighborhoods, however.)
 
 Having realized this, it is a short step to giving an algebraic axiomatization of the neighborhood structure. Smyth [1975] contains a presentation in terms of the equivalent notion of
-
-<!-- page 13 -->
-
 **5. Approximable mappings between domains.**
 
 Once a general notion of set or domain has been defined mathematically, the next major issue is: How are the different domains to be related one to another? The answer to this important question can many times be given by defining an appropriate concept of mapping between domains. The answer need not be unique; the same collection of domains may support more than one idea of function depending on the special aspects of the domains that need to be brought out. In the case of the kinds of domains being studied here, there are two principal answers, one of which is to be explained in this section.
@@ -323,9 +283,6 @@ Consider two domains. To map from one to another, some information about a possi
 (ii) $u\ f\ v$ and $u\ f\ v'$ always imply $u\ f\ (v \cup v')$; and
 
 (iii) $u' \vdash_{\mathbf{A}} u$, $u\ f\ v$, and $v \vdash_{\mathbf{B}} v'$ always imply $u'\ f\ v'$.
-
-<!-- page 14 -->
-
 We say that $\mathbf{A}$ is the *source* of $f$ and $\mathbf{B}$ is the *target*. $\blacksquare$
 
 Intuitively the relationship $u\ f\ v$ is an input/output passage which can be read informally as: “if you are willing to give at least $u$ amount of information about the argument, then the mapping $f$ is willing to give at least $v$ amount of information about the value (and possibly even more—if you are patient).” Condition (i) means that no (non-trivial) information about the input merits no information about the output. Condition (ii) implies that all the contributions to the output from a fixed input are consistent, and in fact the union of two of the output sets is again an output set. Output corresponding to a fixed input is cumulative. Condition (iii) assures us that the mapping relation $f$ works in harmony with the two entailment relations: if a certain relationship holds, and if the left-hand side is strengthened while the right-hand side is weakened, then the mapping relation must continue to hold. What we must discuss next is what this means for elements.
@@ -359,9 +316,6 @@ Moreover, the approximable mappings are monotone in the sense that
 (iv) $x \subseteq y$ in $|\mathbf{A}|$ always implies $f(x) \subseteq f(y)$ in $|\mathbf{B}|$.
 
 *All these results follow from the observation that*
-
-<!-- page 15 -->
-
 (v) $\quad u\ f\ v \text{ iff } \bar{v} \subseteq f(\bar{u}),$
 
 for all $u \in \mathrm{Con}_{\mathbf{A}}$ and all $v \in \mathrm{Con}_{\mathbf{B}}$. $\blacksquare$
@@ -393,9 +347,6 @@ In other words, the given entailment relation itself defines the identity functi
 *for all $x \in |\mathbf{A}|$.* $\blacksquare$
 
 In other words, composition of input/output relations is effected by putting the input into the first, getting some output, and then putting that in as input to the second. The correctness of this
-
-<!-- page 16 -->
-
 recipe on elements (i.e. formula 5.5(ii)) follows from the basic formula 5.3(v). Because the class of all sets and arbitrary mappings forms a category—in the formal meaning of the word—the above three propositions show that the totality of information systems and approximable mappings also forms a category: a sub-category of the category of sets. We have given a special representation to the category by our use of data objects and consistent sets, and we have thereby put the elements into a secondary position—for a good reason. But the elements are there to use. The axioms for a category could also be verified directly using the basic definitions like 5.4(i) and 5.5(i); the details are bland. The more interesting topic is: what are the closure conditions on our domains; how do we construct new domains given old ones?
 
 Before we go on to the first basic constructs of sums and products of domains, we remark on some other easy examples of approximable mappings: constant maps.
@@ -419,9 +370,6 @@ The proof is immediate, since we need only interpret the input/output relation $
 **6. Products and sums of domains.** In the category of sets, the product (the cartesian product) of two sets is by definition just the set of ordered pairs of elements. We could use the same definition in the category of domains—provided we worked in terms of the elements of the domains. The disadvantage is that the determination of the product domain from data objects is lost, or at least pushed into the background. We shall therefore give a construction of products directly in terms of the given data objects, and then show how to prove that the product is just the one expected when we look at the elements.
 
 The idea for the definition is a simple one. Think of two domains $\mathbf{A}$ and $\mathbf{B}$. A data object $X \in D_{\mathbf{A}}$ can be giving information about a possible element $x \in |\mathbf{A}|$, and a data object $Y \in D_{\mathbf{B}}$ can be giving information about a possible element $y \in |\mathbf{B}|$. How do we wish to give information about the pair $(x, y)$? The first piece of advice is not to say all that is known all at once. For
-
-<!-- page 17 -->
-
 example, if pressed, we can say we know $X$ about the first coordinate of the pair; only later, if really pressed, we can say we also know $Y$ about the second coordinate. The point is that data objects provide only partial information, and it does not matter if it takes several of them to give fairly complete information about the whole element. This attitude motivates, then, the particular form of our official definition.
 
 **DEFINITION 6.1.** Let $\mathbf{A}$ and $\mathbf{B}$ be two information systems. By $\mathbf{A} \times \mathbf{B}$, the *product system*, we understand the system where:
@@ -457,9 +405,6 @@ $$f : \mathbf{C} \to \mathbf{A} \text{ and } g : \mathbf{C} \to \mathbf{B},$$
 $$\mathrm{fst} \circ \langle f, g \rangle = f \text{ and } \mathrm{snd} \circ \langle f, g \rangle = g.$$
 
 *Proof.* Checking that 6.1 does indeed define an information system is straightforward, but there are six things that must be proved according to Definition 2.1. We have to leave the details to the reader. Next using the notation of 6.1, where $\mathrm{fst}$ and $\mathrm{snd}$ were applied as operations on consistent sets $u \in \mathrm{Con}_{\mathbf{A} \times \mathbf{B}}$, we redefine matters to have approximable mappings, where, for $v \in \mathrm{Con}_{\mathbf{A}}$ and $w \in \mathrm{Con}_{\mathbf{B}}$,
-
-<!-- page 18 -->
-
 $(1)$ $u\ \mathrm{fst}\ v$ iff $\mathrm{fst}\, u \vdash_{\mathbf{A}} v$;
 
 $(2)$ $u\ \mathrm{snd}\ w$ iff $\mathrm{snd}\, u \vdash_{\mathbf{B}} w$; and
@@ -499,9 +444,6 @@ $(5)$ $\langle f, g \rangle(t) = (f(t), g(t))$,
 for all $t \in |\mathbf{C}|$.
 
 There are also remarks that could be made about the pointwise nature of the partial ordering of $|\mathbf{A} \times \mathbf{B}|$, but we will not formulate them here. We do remark, however, that there is also a trivial product of no terms, $\mathbf{1}$, called the *unit type* or *domain*. It is such that $D_{\mathbf{1}} = \{\Delta_{\mathbf{1}}\}$, and
-
-<!-- page 19 -->
-
 that equation determines it up to isomorphism. The domain $\mathbf{1}$ has but one element, namely $\perp_{\mathbf{1}}$. Note also that all approximable mappings $f : \mathbf{1} \to \mathbf{A}$ are constant, which shows how Definition 5.1 is a generalization of Definition 3.1. Note finally that there is but one approximable mapping $f : \mathbf{A} \to \mathbf{1}$, namely $f = 0 = \mathrm{const}(\perp_{\mathbf{1}})$. $\blacksquare$
 
 We turn now to the definition and properties of sums of domains.
@@ -539,9 +481,6 @@ $$f : \mathbf{A} \to \mathbf{C} \quad \text{and} \quad g : \mathbf{B} \to \mathb
 there is one and only one approximable mapping $[f, g] : \mathbf{A} + \mathbf{B} \to \mathbf{C}$, such that
 
 $$[f, g] \circ \mathrm{inl} = f, \quad [f, g] \circ \mathrm{inr} = g, \quad \text{and} \quad [f, g](\perp_{\mathbf{A}+\mathbf{B}}) = \perp_{\mathbf{C}}.$$
-
-<!-- page 20 -->
-
 *Proof.* The proof that 6.3 defines a system satisfying the basic axioms of 2.1 has to be left to the reader. Next using the notation of 6.1, where $\mathrm{lft}$ and $\mathrm{rht}$ were applied as operations on consistent sets $u \in \mathrm{Con}_{\mathbf{A}+\mathbf{B}}$, we redefine matters to have approximable mappings, where, for $v \in \mathrm{Con}_{\mathbf{A}}$ and $w \in \mathrm{Con}_{\mathbf{B}}$,
 
 $(1)$ $v\ \mathrm{inl}\ u$ iff $\{(X, \Delta) \mid X \in v\} \vdash_{\mathbf{A}+\mathbf{B}} u$;
@@ -563,9 +502,6 @@ has two elements $\mathrm{true}$ and $\mathrm{false}$, such that any mapping on 
 **7. The function space as a domain.** Functions or mappings between domains are of basic importance for our theory, since it is through them that we most easily transform data and relate the structures into which the elements defined by the data objects enter. There are many possible functions, and large groups of them can be treated in a uniform manner. For instance, if the source and target domains match properly, any pair of functions can be composed—composition is an operation on functions of general significance. Now, if in the theory we could combine functions into domains themselves, then an operation like composition might become a mapping of the theory. Indeed, this is exactly what happens: suitably construed, composition is an approximable mapping of two arguments. Of course, for each configuration of linked source and target domains, there is a separate composition operation.
 
 In order to make approximable mappings elements of a suitable domain, we have to discover first what their appropriate data objects are. In Section 5 this was hinted at already. To determine an approximable mapping $f : \mathbf{A} \to \mathbf{B}$, we have to say which pairs $(u, v)$ with $u \in D_{\mathbf{A}}$ and $v \in D_{\mathbf{B}}$ stand in the mapping relation $u\ f\ v$. One such pair gives a certain (finite) amount of information about the possible functions that contain it, and an approximable mapping is
-
-<!-- page 21 -->
-
 completely determined by such pairs. Therefore, if there are appropriate notions of consistency and entailment for these pairs, we will be able to form a domain having functions as elements. Let us try out a formal definition first, and then look to an explanation of how it works.
 
 **DEFINITION 7.1.** Let $\mathbf{A}$ and $\mathbf{B}$ be two information systems. By $\mathbf{A} \to \mathbf{B}$, the *function space*, we understand the system where:
@@ -585,9 +521,6 @@ for all $u' \in \mathrm{Con}_{\mathbf{A}}$ and $v' \in \mathrm{Con}_{\mathbf{B}}
 We have already explained the choice of data objects in (i) above, and the least informative pair in (ii) is clearly right. Remember that as a data object $(u, v)$ should be read as meaning that if the information in $u$ is supplied as input, then at least $v$ will be obtained as output. It is pretty obvious that one such data object by itself is consistent (they make constant functions, don't they?), but a set of several of these pairs may not be consistent. Hence, the need for part (iii) of the definition. It can be read informally as follows: Look for a selection $I$ of the indices used in setting up $w$ where the $u_i$ for $i \in I$ are jointly consistent. Since the pairs in $w$ are meant as correct information about a single function, then the combined input from all these selected $u_i$ must be allowable. The function will then be required to give as output at least all the $v_i$ for $i \in I$, owing to the fact that we are given that $w$ is true of the function we have in mind. As a consequence, the set $\bigcup \{ v_i \mid i \in I \}$ has got to be consistent, because it comes as output from consistent input for a single approximable function. What we are arguing for is the necessity of (iii)—the word “consistency” should mean that the data objects in the set are all true of at least one function.
 
 Finally we have to argue that (iv) must give the right notion of entailment for these data objects. This can be seen by noting that for a fixed consistent $w$ the set of pairs $(u', v')$ satisfying the right-hand side of (iv) defines an approximable function. In checking this we have to remark that, for each $u' \in \mathrm{Con}_{\mathbf{A}}$, the set $\bigcup \{ v_i \mid u' \vdash_{\mathbf{A}} u_i \}$ is consistent, so the definition makes sense. The transitivity properties needed for proving that we have an approximable mapping are easy to establish. This shows in particular that $w$ is true of at least one approximable function, since the separate pairs $(u_i, v_i)$ all satisfy the definition. But it is also simple to argue that for any approximable function, if $w$ is true of it, then so is any pair $(u', v')$ satisfying the definition of (iv). Consequently, what we find in (iv) is the definition of the least approximable function generated by $w$. The argument we have just outlined thus shows that the relationship $w \vdash_{\mathbf{A} \to \mathbf{B}} (u', v')$ means exactly that whenever $w$ is true of an approximable mapping then so is $(u', v')$. It follows at once that $\vdash_{\mathbf{A} \to \mathbf{B}}$ is an entailment relation, and that the elements of $\mathbf{A} \to \mathbf{B}$ are just the approximable mappings, as we indicate in the next theorem.
-
-<!-- page 22 -->
-
 **THEOREM 7.2.** If $\mathbf{A}$, $\mathbf{B}$, and $\mathbf{C}$ are information systems, then so is $\mathbf{A} \to \mathbf{B}$, and the approximable mappings $f : \mathbf{A} \to \mathbf{B}$ are exactly the elements $f \in |\mathbf{A} \to \mathbf{B}|$. Moreover we have an approximable mapping $\text{apply} : (\mathbf{B} \to \mathbf{C}) \times \mathbf{B} \to \mathbf{C}$ such that whenever $g : \mathbf{B} \to \mathbf{C}$ and $y \in |\mathbf{B}|$, then
 
 $$\text{apply}(g, y) = g(y).$$
@@ -609,9 +542,6 @@ The definition of $\text{curry } h$ uses the same trick of regarding a binary re
 $$h(x, y) = (\text{curry } h)(x)(y),$$
 
 for all $x \in |\mathbf{A}|$ and $y \in |\mathbf{B}|$. From this equation it follows that $\text{curry } h$ is uniquely determined. But, from what we know about $\text{apply}$, this is actually the same equation as that stated at the end of the theorem. $\blacksquare$
-
-<!-- page 23 -->
-
 *Approximations to functions.* Why have approximable functions been given this name? In general, elements of domains are the limits of their finite approximations. We have just indicated why the approximable mappings from one domain into another do form the elements of a domain themselves. We have explicitly shown how to construct the finite approximable mappings $\overline{w}$. A closer examination of the definitions would emphasize the very constructive nature of this analysis. It follows that the approximable mappings can therefore be approximated by simple functions. It does not follow that all approximable mappings are simple or constructive, since what takes place in the limiting process can be very complex. But the result does show how we can start to make distinctions once a precise sense of approximation is uncovered. $\blacksquare$
 
 *Higher-type functions and the combinators.* In the above discussion we have already combined the function-space construction with other domains by means of products. But there is nothing now stopping us from iterating the arrow domain constructor with itself as much as we like. This is how the so-called higher types are formed. In certain categories, such as the category of sets, this is a non-constructive move leading to the higher cardinal numbers. In the category of domains, however, the construct is constructive, because we have shown how to define all the parts of $\mathbf{A} \to \mathbf{B}$ in terms of very finite data objects (assuming, it need hardly be added, that $\mathbf{A}$ and $\mathbf{B}$ are constructively given).
@@ -631,9 +561,6 @@ where for functions of the proper type we have:
 $$\text{pair}(f, g) = \langle f, g \rangle$$
 
 There will be a similar operator for the construct of Proposition 6.4.
-
-<!-- page 24 -->
-
 Of course the most basic operator of function composition is also approximable of the appropriate type. We can write:
 
 $$\mathrm{comp} : (\mathbf{B} \to \mathbf{C}) \times (\mathbf{A} \to \mathbf{B}) \to (\mathbf{A} \to \mathbf{C}),$$
@@ -667,9 +594,6 @@ Specifically, we define $\mathrm{fix}(f)$ to be the union of all $v \in \mathrm{
 (2) $u_i \ f \ u_{i+1}$ for all $i < n$; and
 
 (3) $u_n = v$.
-
-<!-- page 25 -->
-
 Because $f$ is approximable, it is clear that $\mathrm{fix}\, f$ is closed under entailment. To prove that it is consistent, suppose both $v$ and $v'$ belong to the sets thrown into the union. We have to show that $v \cup v'$ is consistent and also is thrown in. Consider the two sequences $u_0, \ldots, u_n \in \mathrm{Con}_{\mathbf{A}}$ and $u'_0, \ldots, u'_n \in \mathrm{Con}_{\mathbf{A}}$ that are responsible for putting $v$ and $v'$ in. It is without loss of generality that we assume they are of the same length, since we can always add lots of $\emptyset$'s onto the front of the shorter one and still satisfy (1)–(3). Now one just argues by induction on $i$ that the sequence of unions $u_i \cup u'_i$ satisfies (1)–(3) with respect to $v \cup v'$.
 
 But why is $\mathrm{fix}$ approximable? The method of proof is to replace $f$ by $\bar{w}$ in (2) above, and to use the condition that there exists a sequence satisfying (1)–(3) as defining a relation between sets $w \in \mathrm{Con}_{\mathbf{A} \to \mathbf{A}}$ and sets $v \in \mathrm{Con}_{\mathbf{A}}$. It is not difficult to prove that this is an approximable mapping in the sense of the official definition. Clearly this relation determines $\mathrm{fix}$ as an operator. $\blacksquare$
@@ -695,9 +619,6 @@ The collection of strict mappings forms a domain, too. The way to see this is to
 There is also a useful operator
 
 $$\mathrm{strict} : (\mathbf{A} \to \mathbf{B}) \to (\mathbf{A} \to_{\blacksquare} \mathbf{B})$$
-
-<!-- page 26 -->
-
 defined by the condition that for $f : \mathbf{A} \to \mathbf{B}$ we have:
 
 $$u \,\mathit{strict}(f)\, v \text{ iff either } \emptyset \vdash_{\mathbf{B}} v \text{ or } \emptyset \not\vdash_{\mathbf{A}} u \text{ and } u f v,$$
@@ -721,9 +642,6 @@ $$\mathrm{cond}(x, y)(t) = \begin{cases} x, & \text{if } t = \text{true}, \\ y, 
 Let a domain (information system) $\mathbf{A}$ be given. What we want to construct is a domain $\mathbf{T}$ of “trees” built up from elements of $\mathbf{A}$ as “atoms”. For simplicity we consider unlabelled binary trees here, but more complex trees are easy to accommodate. The domain equation we want to “solve” is this one:
 
 $$\mathbf{T} \cong \mathbf{A} + (\mathbf{T} \times \mathbf{T}).$$
-
-<!-- page 27 -->
-
 If such a domain exists, then we can say that (up to isomorphism) the elements of the domain $\mathbf{T}$ are either bottom, or elements of the given domain $\mathbf{A}$, or pairs of elements from the domain $\mathbf{T}$ itself. And these are the only kinds of elements that $\mathbf{T}$ has.
 
 To prove that such a domain exists it is only necessary to ask what information has to be given about a prospective element. The answer may involve us in a regress, but the running backwards need not be infinite—at least for the finite elements. As we shall see, the infinite elements of $\mathbf{T}$ can be self-replicating; but, to define a domain fully, all we have to do is to build up the finite elements out of the data objects in a systematic way. Fortunately, in order to satisfy the above equation, the required closure conditions on data objects are simple to achieve.
@@ -753,9 +671,6 @@ Defining the data objects is but part of the story: the same data objects can en
 (4) $\emptyset \in \mathrm{Con}_{\mathbf{T}}$;
 
 (5) $u \cup \{\Delta_{\mathbf{T}}\} \in \mathrm{Con}_{\mathbf{T}}$ whenever $u \in \mathrm{Con}_{\mathbf{T}}$;
-
-<!-- page 28 -->
-
 (6) $\{(X, \Delta) \mid X \in w\} \in \mathrm{Con}_{\mathbf{T}}$ whenever $w \in \mathrm{Con}_{\mathbf{A}}$;
 
 (7) $\{(\Delta, (Y, \Delta_{\mathbf{T}})) \mid Y \in u\} \cup \{(\Delta, (\Delta_{\mathbf{T}}, Z)) \mid Z \in v\} \in \mathrm{Con}_{\mathbf{T}}$ whenever $u, v \in \mathrm{Con}_{\mathbf{T}}$.
@@ -781,9 +696,6 @@ Having defined and verified that $\mathbf{T}$ is an information system, the vali
 It should be remarked that the sense can be made precise in which $\mathbf{T}$ is the *least* solution of the given domain equation. (It is an initial algebra in a suitable category of algebras and algebra homomorphisms.) It is pretty obvious that it is minimal in some sense, because we put into it only what was strictly required by the problem and nothing more.
 
 It is also fairly obvious that there are *many* solutions to this domain equation. A non-constructive way to obtain non-minimal solutions is to interpret the whole construction of $\mathbf{T}$ in a non-standard model of set theory. Though, in the definition of $D_{\mathbf{T}}$, it looks like we are only working with very finite objects, everything we did could be made abstract and could be carried out in some funny universe. The result would be a system of “finite” data objects having all the right formal properties but containing things not in the standard minimal system. We would then take the notions of consistency and entailment that also exist in the funny universe and
-
-<!-- page 29 -->
-
 restrict them to sets of data objects that are actually finite in the standard sense. It can be seen from the formal properties of the construction that the resulting notions satisfy our axioms for an information system and that the domain equation holds—BUT the system would have many different elements beyond what we put into the original $\mathbf{T}$. To make this construction work, by the way, we would have to force $\mathbf{A}$ to be absolute in the model: if it is actually finite (say, $\mathbf{A} = \mathbf{BOOL}$), then there is no problem. (Constructive methods for introducing “nonstandard” data objects can also be given.)
 
 Finally, we must remark on why we called $\mathbf{T}$ a domain of $S$-expressions. The answer becomes clear when we structure $\mathbf{T}$ as an algebra. First, there is an approximable mapping
@@ -813,9 +725,6 @@ As is common to remark, $S$-expressions can also be thought of as trees: the par
 The domain equation we wish to solve is:
 
 $$\mathbf{D} \cong \mathbf{A} + (\mathbf{D} \to \mathbf{D}).$$
-
-<!-- page 30 -->
-
 We proceed in much the same way we did for $\mathbf{T}$, except we must now put in data objects appropriate to the function space. Here is construction, where again $\Delta$ is chosen outside $D_{\mathbf{A}}$ and $\Delta_{\mathbf{D}} = (\Delta, \Delta)$:
 
 (1) $\Delta_{\mathbf{D}} \in D_{\mathbf{D}}$;
@@ -847,9 +756,6 @@ To complete the definition we have to give the clauses for the inductive definit
 Obviously these definitions are much shorter if we have a domain in which all sets are consistent, but there are many reasons for retaining the consistency concept throughout. The check that $\mathbf{D}$ is an information system and satisfies the domain equation is mechanical. We cannot detail here how this construction provides a $\lambda$-calculus model.
 
 It is clear that these definitions are constructive, and that, with a suitable Gödel numbering of the data objects, the predicates for consistency and entailment are recursively enumerable. However, the recursion used builds up the predicates by going from less complicated data objects to more complicated ones; therefore, the predicates must be recursive, because, for a certain size data object, the derivation that puts it into the predicate is of a bounded length. This observation helps in the discussion of the computability of the operators defined on these domains—another topic we cannot discuss here. $\blacksquare$
-
-<!-- page 31 -->
-
 *A universal domain.* As a final example of building up domains recursively, we give a construction of a “universal” domain $U$. (The reason for the name will be explained presently.) The best way to define $U$ seems to be to define a domain $V$ with a top element first, and then to remove the top.
 
 The recursion for $V$ is remarkably simple. We begin with two distinct objects $\Delta$ and $\nabla$ that give information about the bottom and top of $V$, respectively. Thus, $\Delta_V = \Delta$ by definition. We assume that these two special data objects are “atomic” in the sense that they are not equal to any ordered pair of objects. For the definition of $D_V$ we have these clauses:
@@ -885,9 +791,6 @@ Because $\nabla$ entails everything, we can regard it as a “rogue” object th
 (9) $\mathrm{Con}_U = \{u \subseteq D_U \mid u \text{ finite and } u \nvdash_V \nabla\}$; and
 
 (10) $u \vdash_U Y$ iff $u \in \mathrm{Con}_U$, $Y \in D_U$ and $u \vdash_V Y$.
-
-<!-- page 32 -->
-
 The same style of definition would work in any situation when an information system has a rogue data object that entails everything: there always is a system that results from eliminating all those objects that entail everything. Indeed, we could have always included such an object in any domain and altered the definition to take as elements those deductively closed sets of data objects that *do* not have the rogue object as a member. We did not do this for the reason that superfluous elements cause lots of exceptions in constructs such as product, where there is a temptation to let them enter into various combinations.
 
 Now in $U$ we *do* allow $\nabla$ to enter into combinations—and this is part of the secret of the construction. The consequence is, however, that the domain equation which $U$ satisfies is not too easy to state since it involves an unfamiliar functor. So it is not through such equations that we will understand its nature in a direct way. But it is possible to explain how it works by reference to the steps in the construction.
@@ -899,9 +802,6 @@ We can now see that a single data object (if it contains $\nabla$) looks down th
 This is all very well, but what, we ask, is the good of this domain, and why is it called “universal”. The proof cannot be given here, but the result is as follows. As a consequence of standard facts about countable Boolean algebras, it can be proved that every “countably based” domain is a subdomain of $U$. More specifically, if $\mathbf{A}$ is an information system, and if $D_{\mathbf{A}}$ is countable, then there exists a pair of approximable mappings
 
 $$a : \mathbf{A} \to \mathbf{U} \text{ and } b : \mathbf{U} \to \mathbf{A},$$
-
-<!-- page 33 -->
-
 such that
 
 $$b \circ a = I_{\mathbf{A}} \text{ and } a \circ b \subseteq I_{\mathbf{U}}.$$
@@ -923,9 +823,6 @@ The answer can be expressed most succinctly using our standard notation. If we t
 To say that $r$ is transitive is to say:
 
 (2) $r \circ r = r$.
-
-<!-- page 34 -->
-
 To say that for $r$ the object $0$ plays at being $\Delta$ is to say:
 
 $$(3) \quad \bar{0} \subseteq r(\bot),$$

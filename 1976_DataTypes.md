@@ -5,10 +5,6 @@ verification_status: draft
 ---
 
 # Transcription (LLM vision OCR)
-
-
-<!-- page 1 -->
-
 **DATA TYPES**
 
 **AS**
@@ -21,9 +17,6 @@ by
 
 **Oxford University Computing Laboratory**  
 **Programming Research Group**
-
-<!-- page 2 -->
-
 **ACCESSION NO.** ✓ **DATE** 06 FEB 2002
 
 **SHELFMARK**  
@@ -38,9 +31,6 @@ Programming Research Group
 45 Banbury Road, Oxford OX2 6PE
 
 Reprinted from the SIAM Journal on Computing, Volume 5, 1976, pages 522–587. Copyright 1976 by Society for Industrial and Applied Mathematics, Philadelphia. All rights reserved.
-
-<!-- page 3 -->
-
 **SIAM J. COMPUT.**  
 Vol. 5, No. 3, September 1976
 
@@ -70,9 +60,6 @@ The model $\mathbf{P}\omega$ can be intuitively viewed as the domain of *multipl
 \* Received by the editors May 23, 1975, and in revised form March 17, 1976.
 
 † Mathematics Department, Oxford University, Oxford, England OX2 6PE.
-
-<!-- page 4 -->
-
 **DATA TYPES AS LATTICES**
 
 objects in themselves—possibly infinite—and as something more than just the collection of single integers contained in them. This combination of the finite with the infinite into a single domain, together with the idea that a continuous function can be reduced to its *graph* (in the end, a set of integers), makes it possible to view an $x \in \mathbf{P}\omega$ at one time as a value, at another as an argument, then as an integer, then as a function, and still later as a functional (or combinator). The “paradox” of self-application (as in $x(x)$) is solved by allowing the *same* $x$ to be used in two *different* ways. This is done in ordinary recursion theory via Gödel numbers (as in $\{e\}(e)$), but the advantage of the present theory is that not only is the function concept the *extensional* one, but it includes *arbitrary* continuous functions and not just the computable ones.
@@ -93,9 +80,6 @@ Along the way we have to show how to give every $\lambda$-term a denotation in $
 | $(\eta)$ | $y = \lambda x.y(x)$ |
 | $(\xi^*)$ | $\lambda x.\tau \subseteq \lambda x.\sigma \quad \text{if} \quad \forall x.\,\tau \subseteq \sigma$ |
 | $(\mu)$ | $x \subseteq y \text{ and } u \subseteq v \text{ imply } u(x) \subseteq v(y)$ |
-
-<!-- page 5 -->
-
 Section 3 has to do with enumeration and degrees. Gödel numbers for LAMBDA are defined in a very easy way which takes advantage of the notation of combinators. This leads to the second recursion theorem, and results on incompleteness and undecidability follow along standard lines. *Relative recursiveness* is also very easy to define in the system, and we make the tie-in with *enumeration degrees* which correspond to finitely generated combinatory subalgebras of $\mathbf{P}\omega$. Finally a theorem of Myhill and Shepherdson is interpreted as a most satisfactory completeness property for definability in the system.
 
 Sections 4 and 5 show how a calculus of *retracts* leads to quite simple definitions of a host of useful domains (as lattices). Section 6 investigates the classification of other subsets (*nonlattices*) of $\mathbf{P}\omega$; while § 7 contrasts partial (multiple-valued) functions with total functions, and interprets various theories of functionality. Connections with category theory are mentioned.
@@ -109,9 +93,6 @@ $$\sim x = \{ n \mid n \notin x \}$$
 where it is understood that such variables as $i, j, k, l, m, n$ range over *integers in* $\omega$, while $u, v, w, x, y, z$ range over *subsets of* $\omega$.
 
 The domain $\mathbf{P}\omega$ can also be made into a topological space—in many ways. A common method is to match each $x \subseteq \omega$ with the corresponding characteristic function in $\{0, 1\}^\omega$, and to take the induced product topology. In this way $\mathbf{P}\omega$ is a totally disconnected compact Hausdorff space homeomorphic to the Cantor “middle-third” set. This is *not* the topology we want; it is a *positive-and-negative* topology which makes the function $\sim x$ continuous. We want a weaker topology: the topology of positive “information”, which has the advantage that all continuous functions possess fixed points. (The equation $x = \sim x$ is impossible.) The topology that we *do* want is exactly that appropriate to considering $\mathbf{P}\omega$ to be a continuous lattice. But all this terminology of abstract mathematics is quite unnecessary, since the required definitions can be given in very elementary terms.
-
-<!-- page 6 -->
-
 **DATA TYPES AS LATTICES**
 
 To make the topology “visible”, we introduce a standard enumeration $\{e_n \mid n \in \omega\}$ of all *finite* subsets of $\omega$. Specifically we set
@@ -151,9 +132,6 @@ Note that open sets and continuous functions have a *monotonicity property*:
 *whenever* $x \subseteq y$, *then* $f(x) \subseteq f(y)$.
 
 This gives a precise expression to the “positive” character of our topology. However, note too that openness and continuity mean rather more than just monotonicity. In particular, a continuous function is completely determined by the pairs of integers $n, m$ such that $m \in f(e_n)$, as can be seen from the definition. (Hence, there are only a continuum number of continuous functions, but more than a continuum number of monotonic functions.) This brings us to the definition of the *graph* of a continuous function.
-
-<!-- page 7 -->
-
 **DANA SCOTT**
 
 To formulate the definition, we introduce a standard enumeration $(n, m)$ of all pairs of integers. Specifically we set
@@ -197,9 +175,6 @@ The other general fact about continuous functions that we shall use constantly c
 $$\mathbf{fix}(f) = \bigcup \{ f^n(\varnothing) \mid n \in \omega \},$$
 
 *where $\varnothing$ is the empty set and $f^n$ is the $n$-fold composition of $f$ with itself.*
-
-<!-- page 8 -->
-
 **DATA TYPES AS LATTICES**
 
 Actually **fix** is a *functional* with continuity properties of its own. We shall not give the required definitions here because they can be more easily derived from the construction of the model given in the next section.
@@ -225,9 +200,6 @@ In order to make the plan of the work clearer, the proofs of the theorems have b
 Before looking at the language, a short discussion of the "meaning" of the elements $x \in \mathbf{P}\omega$ will be helpful from the point of view of motivation. Now in itself $x \in \mathbf{P}\omega$ is a set, but this does not reveal its *meaning*. Actually $x$ has no "fixed" meaning, because it can be *used* in strikingly different ways; we look for meaning here solely in terms of use. Nevertheless it is possible to give some coherent guidelines.
 
 In the first place it is convenient to let the singleton subsets $\{n\} \in \mathbf{P}\omega$ stand for the corresponding integers. In fact, we shall enforce by convention the equation $n = \{n\}$ as a way of simplifying notation. In this way, $\omega \subseteq \mathbf{P}\omega$ as a subset. (Note that our convention conflicts with such set-theoretical equations as $5 = \{0, 1, 2, 3, 4\}$. What we have done is to abandon the usual set-theoretical conventions in favor of a slight redefinition of *set of integers* which produces a more helpful convention for present purposes.) So, if we choose, a singleton "means" a single integer. The next
-
-<!-- page 9 -->
-
 question is what a "large" set $x \in \mathbf{P}\omega$ could mean. Here is an answer: if we write:
 
 $$x = \{0, 5, 17\} = 0 \cup 5 \cup 17,$$
@@ -255,9 +227,6 @@ $$(2.2) \quad \hat{p}(x) = \bigcup \{p(n) \mid n \in x\}.$$
 The same formulae work for *all* multiple-valued functions $p : \omega \to \mathbf{P}\omega$. Functions like $f = \hat{p}$ are exactly characterized as being those continuous functions $f : \mathbf{P}\omega \to \mathbf{P}\omega$ which in addition are *distributive* in the sense of these equations:
 
 $$f(x \cup y) = f(x) \cup f(y) \quad \text{and} \quad f(\varnothing) = \varnothing.$$
-
-<!-- page 10 -->
-
 **DATA TYPES AS LATTICES**
 
 The sets $\varnothing$ and $\omega$ play special roles. When we consider them as elements of $\mathbf{P}\omega$ we shall employ the notation:
@@ -293,9 +262,6 @@ $$z \supset x, y = \{n \in x \mid 0 \in z\} \cup \{m \in y \mid \exists k.\, k +
 $$u(x) = \{m \mid \exists e_n \subseteq x.\, (n, m) \in u\}$$
 
 $$\lambda x.\, \tau = \{(n, m) \mid m \in \tau[e_n / x]\}$$
-
-<!-- page 11 -->
-
 **DANA SCOTT**
 
 The definition has been left somewhat informal in hopes that it will be more understandable. In the above, $\tau$ is any term of the language. LAMBDA is type-free and allows any combination to be made by substitution into the given functions. There is one primitive constant $(0)$; there are two unary functions $(x + 1,\, x - 1)$; there is one binary function $(u(x))$ and one ternary function $(z \supset x, y)$; finally there is one variable binding operator $(\lambda x.\, \tau)$. The first three equations have obvious sense. In the fourth, $z \supset x, y$ is McCarthy's conditional expression (a test for zero). Next $u(x)$ defines *application* ($u$ is treated as a graph and $x$ as a set), and $\lambda x.\, \tau$ is *functional abstraction* (compare the definition of **fun**). In defining $\lambda x.\, \tau$, we use $\tau[e_n/x]$ as a shorthand for evaluating the term $\tau$ when the variable $x$ is given the value $e_n$.
@@ -329,9 +295,6 @@ $$f(x_0, x_1, \cdots, x_{k-1}) = u(x_0)(x_1) \cdots (x_{k-1}),$$
 *where $u$ is a suitably chosen element of $\mathbf{P}\omega$.*
 
 **THEOREM 2.4** (The combinator theorem). *The LAMBDA-definable func-*
-
-<!-- page 12 -->
-
 **DATA TYPES AS LATTICES**
 
 ...tions can be generated (*from variables*) by iterated application with the aid of these six constants:
@@ -363,9 +326,6 @@ The identification of functions with graphs entails that the function space of a
 $$\mathbf{FUN} = \{u \mid u = \lambda x.\, u(x)\} \subseteq \mathbf{P}\omega.$$
 
 The identification is *topological* in that the subspace topology agree with the product topology on the function space. This is the topology of pointwise convergence and is closely connected with the lattice structure on the function space which is also defined pointwise (that is, argumentwise). In the notation of $\lambda$-abstraction we can express this as the extension of the axiom of extensionality called $(\xi^*)$ in Table 1 of the Introduction. The laws in Table 1 are not the only ones valid in the model, however. We may also note such argumentwise distribution
-
-<!-- page 13 -->
-
 laws as:
 
 $$(2.9) \quad (f \cup g)(x) = f(x) \cup g(x);$$
@@ -415,9 +375,6 @@ $$(2.23) \quad \langle x_0, x_1, \dots, x_n \rangle_i = \begin{cases} x_i & \tex
 This gives us the method of LAMBDA-defining *finite sequences* (in a quite natural way), and the next step is to consider *infinite sequences*. But these are just the functions $\hat{p}$ where $p : \omega \to \mathbf{P}\omega$ is arbitrary. What we need then is a condition expressible in the language equivalent to saying $u = \hat{p}$ for some $p$. This is the same as
 
 $$u = \lambda x.\, \bigcup \{ u_i \mid i \in x \}.$$
-
-<!-- page 14 -->
-
 **DATA TYPES AS LATTICES**
 
 but the $\cup$- and set-notation is not part of LAMBDA. We are forced into a recursive definition:
@@ -461,9 +418,6 @@ If $q$ is a partial recursive function in the usual sense, then we can regard it
 *(ii) $\lambda x_0 \lambda x_1 \cdots \lambda x_{k-1}.\, f(x_0)(x_1) \cdots (x_{k-1})$ as a set is r.e.;*
 
 *(iii) $\lambda x_0 \lambda x_1 \cdots \lambda x_{k-1}.\, f(x_0)(x_1) \cdots (x_{k-1})$ is LAMBDA-definable.*
-
-<!-- page 15 -->
-
 **DANA SCOTT**
 
 As a hint for the proof we may note that the method of (2.27) shows that all primitive recursive functions $p$ have the corresponding $\hat{p}$ LAMBDA-definable. Next we remark that a nonempty r.e. set is the range of a primitive recursive function; but the range of $p$ is $\hat{p}(\top)$, which is clearly LAMBDA-definable. That any LAMBDA-definable set (graph) is r.e. is obvious from the definition of the language itself. More details are given in the Appendix.
@@ -479,9 +433,6 @@ In the course of the development in this section we have stated many equations w
 $$(2.28) \quad \mathbf{Y}(\lambda f \lambda x.\, g(x)(f(x))) = \lambda x.\, \mathbf{Y}(g(x)).$$
 
 Call the left side $f'$ and the right $f''$. Now $f'' = \lambda x.\, g(x)(\mathbf{Y}(g(x))) = \lambda x.\, g(x)(f''(x))$, thus $f' \subseteq f''$, because $f'$ is a least fixed point. On the other hand $f' = \lambda x.\, g(x)(f'(x))$, so $f'(x) = g(x)(f'(x))$. Thus $f''(x) \subseteq f'(x)$, because $f''(x)$ is a least fixed point. As this holds for all $x$, we see that $f'' \subseteq f'$; and so they are equal. There must be many other such equations.
-
-<!-- page 16 -->
-
 **DATA TYPES AS LATTICES**
 
 **3. Enumeration and degrees.** A great advantage of the combinators from the formal point of view is that (bound) variables are eliminated in favor of “algebraic” combinations. The disadvantage is that the algebra is not all that pretty, as the combinations tend to get rather long and general laws are rather few. Nevertheless as a technical device it is mildly remarkable that we can have a notation for all r.e. sets requiring so few primitives. In the model defined here the reduction to one combinator rests on a lemma about conditionals:
@@ -521,9 +472,6 @@ This function accomplishes the enumeration as follows:
 *(ii)* $\mathbf{val}(\mathbf{apply}(n)(m)) = \mathbf{val}(n)(\mathbf{val}(m))$.
 
 As a principal application of the Enumeration Theorem we may mention the following: suppose $u$ is given as LAMBDA-definable. We look at its definition and rewrite it in terms of combinators—eventually in terms of $\mathbf{G}$ alone. Then using 0 and $\mathbf{apply}$ we write down the name of an integer corresponding to the combination—say, $n$. By Theorem 3.2 we see that we have *effectively found* from
-
-<!-- page 17 -->
-
 the definition an integer such that $\mathbf{val}\, n = u$. This remark can be strengthened by some numerology.
 
 $$(3.8) \quad \mathbf{apply}(0)(0) = 1 \quad \text{and} \quad \mathbf{val}(1) = 0;$$
@@ -565,9 +513,6 @@ $$\mathbf{val}(v(n)) = n \cap \mathbf{val}(n),$$
 and note that:
 
 $$n \cap \mathbf{val}(n) = \bot \quad \text{iff} \quad n \notin \mathbf{val}(n).$$
-
-<!-- page 18 -->
-
 **DATA TYPES AS LATTICES**
 
 Call the set in question in Theorem 3.4 the set $b$. If it were r.e., then so would be:
@@ -603,9 +548,6 @@ Of course $q$ is uniquely determined (because the values of $q$ are given at lea
 The preceding results indicate that the expected results on r.e. sets are forthcoming in a smooth and unified manner in this setting. Some knowledge of r.e. theory was presupposed, but analysis shows that the knowledge required is slight. The notion of primitive recursive functions should certainly be well understood together with standard examples. Partial functions need not be introduced separately since they are naturally incorporated into LAMBDA (the theory of multiple-valued functions). As a working definition of r.e. one can take either “empty or the range of a primitive recursive function” or, more uniformly, “a set of the form $\{m \mid \exists n.\, m + 1 = p(n)\}$ where $p$ is primitive recursive”. A few obvious closure properties of r.e. sets should then be proved, and then an adequate foundation for the discussion of LAMBDA will have been provided.
 
 The point of introducing LAMBDA is that further closure properties are more easily expressed in a theory where equations can be variously interpreted as involving numbers, functionals, etc., without becoming too heavily involved in intricate Gödel numbering and encodings. Another useful feature of the present theory concerns the ease with which we can introduce *relative recursiveness*.
-
-<!-- page 19 -->
-
 As we have seen, $\{\mathbf{val}(n) \mid n \in \omega\}$ is an enumeration of all r.e. sets. Suppose we add a new set $a$ as a new constant. What are the sets enumerable in $a$? Answer: $\{\mathbf{val}(n)(a) \mid n \in \omega\}$, since in combinatory logic a parameter can always be factored out as an extra argument. Another way to put the point is this: for $b$ to be enumeration reducible to $a$ it is necessary and sufficient that $b = u(a)$ where $u \in \mathbf{RE}$. This is *word for word* the definition given by Rogers (1967, pp. 146–147). What we have done is to put the theory of enumeration operators (Friedberg–Rogers and Myhill–Shepherdson) into a general setting in which the language LAMBDA not only provides definitions but also the basis of a calculus for demonstrating properties of the operators defined. The algebraic style of this language throws a little light on the notion of enumeration degree. In the first place we can identify the degree of an element with the set of all objects reducible to it (rather than just those equivalent to it) and write
 
 $$\mathbf{Deg}(a) = \{u(a) \mid u \in \mathbf{RE}\}.$$
@@ -623,9 +565,6 @@ $$\mathbf{TOT} = \{u \mid u = \mathbf{\$}(u) \text{ and } \forall n \in \omega.\
 the space of all graphs of total functions. Then the system $\{\mathbf{Deg}(u) \mid u \in \mathbf{TOT}\}$ is isomorphic to the system of Turing degrees. Now there are many other interesting subsets of $\mathbf{P}\omega$. Whether the degree structure of these various subsets is worth investigation is a question whose answer awaits some new ideas.
 
 Among the subsets of $\mathbf{P}\omega$ with natural mathematical structure, we of course have $\mathbf{FUN}$, which is a semigroup under $\circ = \lambda u \lambda v \lambda x.\, u(v(x))$. It is, however, a rather
-
-<!-- page 20 -->
-
 **DATA TYPES AS LATTICES**
 
 complicated semigroup. We introduce for its study three new combinators:
@@ -649,9 +588,6 @@ Certainly the word problem for $\mathbf{RE} \cap \mathbf{FUN}$ is unsolvable, in
 **4. Retracts and data types.** Data can be structured in many ways: ordered tuples, lists, arrays, trees, streams, and even operations and functions. The last point becomes clear if one thinks of *parameters*. We would normally hardly consider the pairing function $\lambda x \lambda y.\, \langle x, y \rangle$ as being in itself a piece of data. But if we treat the first variable as a *parameter*, then it can be specialized to a *fixed value*, say the element $a$, producing the function $\lambda y.\, \langle a, y \rangle$. This function is more likely to be the output of some process and *in itself* can be considered as a datum. It is rather like one *whole row* of a matrix. If we were to regard a two-argument function $f$ as being a matrix, then its $a$th row would be exactly $\lambda y.\, f(a)(y)$. If $s$ were a selection function, then, for example, $\lambda y.\, f(s(y))(y)$ would represent the selection of one element out of each column of the matrix. This selection could be taken as a specialization of parameters in the operator $\lambda u \lambda v \lambda y.\, u(v(y))(y)$. We have not been very definite here about the exact nature of the fixed $a$, $f$, or $s$, or the range of the variable $y$ or the range of values of the function $f$. The point is only to recall a few elements of structure and to suggest an abstract view of data going beyond the usual iterated arrays and trees.
 
 What then is a *data type*? Answer: a type of data. That is to say, a collection of data that have been grouped together for reasons of similarity of structure or perhaps mere convenience. Thus the collection may very well be a mixed bag, but more often than not canons of taste or demands of simplicity dictate an adherence to regularity. The grouping may be formed to eliminate irrelevant objects and focus the attention in other ways. It is frequently a matter of good organization that aids the understanding of complex definitions. In programming languages, one of the major reasons for making an explicit declaration of a data type (that is, the restriction of certain variables to certain *"modes"*) is that the computed objects of that type can enjoy a special *representation* in the machine that allows the manipulation of these objects via the chosen representation to be reasonably efficient. This is a very critical matter for good language design and good compiler writing. In this report, however, we cannot discuss the problems of representation,
-
-<!-- page 21 -->
-
 **DANA SCOTT**
 
 important as they may be. Our objective here is conceptual organization, and we wish to show how such ideas, in the language for computable functions used here, can find the proper expression.
@@ -681,9 +617,6 @@ $$(4.5) \quad u \circ v = \lambda x.\, u(v(x)).$$
 And it is quite simple to prove that each of the three combinators in (4.1)–(4.3) is a retract according to the definition. But what is the point?
 
 Consider $\mathbf{fun}$. No matter what $u \in \mathbf{P}\omega$ we take, $\mathbf{fun}(u)$ is (the graph of) a *function*. And if $u$ already is (the graph of) a function, then $u = \mathbf{fun}(u)$. That is to say, the range of $\mathbf{fun}$ is the same as the set of fixed points of $\mathbf{fun}$ is the same as the set of all (graphs of) functions. Any mapping $a$ whose range and fixed-point set
-
-<!-- page 22 -->
-
 **DATA TYPES AS LATTICES**
 
 coincide satisfies $a = a \circ a$, and conversely. A retract is a mapping which “retracts” the whole space onto its range and which is the identity mapping on its range. That is the import of the equation $a = a \circ a$. Strictly speaking, the range is the retract and the mapping is the retraction, but for us the mapping is more important. (Note, however, that distinct retracts can have the same range.) We let the mapping stand in for the range.
@@ -707,9 +640,6 @@ The idea here should be clear: $a \sqsubseteq b$ means that $a$ is a retract of 
 There do not seem to be any lattice properties of $\sqsubseteq$ of a general nature. Note, however, that if retracts commute, $a \circ b = b \circ a$, then $a \circ b$ is the greatest lower bound under $\sqsubseteq$ of $a$ and $b$. Also if we have a sequence where both $a_n \sqsubseteq a_{n+1}$ and $a_n \subseteq a_{n+1}$ for all $n \in \omega$, then $\bigcup\{a_n \mid n \in \omega\}$ is the upper bound for the $a_n$ under $\sqsubseteq$, as can easily be argued from the definition by continuity of $\circ$.
 
 Certainly there is no “least” retract under $\sqsubseteq$. One has $\bot = \bot \circ a$ (recall: $\bot = \lambda x.\,\bot$), but not $a \circ \bot = \bot$. This last equation means more simply that $a(\bot) = \bot$; that is, $a$ is *strict*. For retracts strictness is thus equivalent to $\bot \sqsubseteq a$, so we can say that there is a least strict retract. The combinator $\mathbf{I} = \lambda u.\, u$ clearly represents the
-
-<!-- page 23 -->
-
 **DANA SCOTT**
 
 largest retract (the *whole space*), and it is strict also. In a certain sense strictness can be assumed without loss of generality. For if $a$ is not strict, let
@@ -753,9 +683,6 @@ $$(4.12) \quad (a \otimes b) \circ (a' \otimes b') = (a \circ a') \otimes (b \ci
 $$(4.13) \quad (a \oplus b) \circ (a' \oplus b') = (a \circ a') \oplus (b \circ b').$$
 
 The reversal of order $(a' \circ a)$ on the right-hand side of (4.11) should be remarked.
-
-<!-- page 24 -->
-
 **DATA TYPES AS LATTICES**
 
 These equations will be used not only for properties of types (ranges of retracts) but also for the mappings between the types.
@@ -807,9 +734,6 @@ $$(4.21) \quad \mathbf{snd} \circ (f \otimes f') = f' \circ \mathbf{snd}.$$
 Here $a$ and $b$ are retracts and $f$ and $f'$ are functions. Now suppose $a, b$, and $c$ are retracts and $f : c \circ\to a$ and $g : c \circ\to b$. Let
 
 $$h = (f \otimes g) \circ \mathbf{diag} \circ c.$$
-
-<!-- page 25 -->
-
 **DANA SCOTT**
 
 We can readily prove that:
@@ -867,9 +791,6 @@ $$(4.29) \quad \mathbf{outright} = \lambda u.\, u_0 \supset \bot,\, u_1;$$
 $$(4.30) \quad \mathbf{which} = \lambda u.\, u_0;$$
 
 $$(4.31) \quad \mathbf{out} = \lambda u.\, u_1.$$
-
-<!-- page 26 -->
-
 (The last two are the same as **fst** and **snd**, but they will be used differently.) We find:
 
 $$(4.32) \quad (a \oplus b) \circ \mathbf{inleft} \circ a : a \circ\to (a \oplus b);$$
@@ -911,9 +832,6 @@ To be certain that **tree** is a retract, we need a general theorem:
 This can be applied to the case of (4.38) where $F = \lambda z.\, \mathbf{nil} \oplus (z \otimes z)$. Thus we can analyze **tree** as an inverse limit. This approach has the great advantage over the earlier method of the author where limits were required in showing that **tree** exists. Here we use **Y** to give existence at once, and then apply Theorems 4.3–4.5 to figure out the nature of the retract.
 
 In Theorem 4.6, the fact that $c$ is a retract can be reasoned as follows: $\bot$ is a
-
-<!-- page 27 -->
-
 **DANA SCOTT**
 
 retract. Thus each $F^n(\bot)$ is a retract. We compute:
@@ -943,9 +861,6 @@ $$(4.39) \quad \mathbf{lamb} = \mathbf{int} \oplus (\mathbf{lamb} \circ\to \math
 This looks innocent, but the range of **lamb** would give a quite different and not unattractive model for the $\lambda$-calculus (plus arithmetic). What we do to investigate this model is to modify LAMBDA slightly by replacing the ternary conditional $z \supset x, y$ by a quaternary one $w \supset x, y, z$; otherwise the syntax of the language remains the same. The semantics, however, is a little more complex.
 
 Let us use $\tau$, $\sigma$, $\rho$, $\theta$ as syntactical variables for expressions in the modified language. The semantics is provided by a function $\mathcal{H}$ that maps the expressions of the language to their values in (the range of) **lamb**. To be completely rigorous we
-
-<!-- page 28 -->
-
 **DATA TYPES AS LATTICES**
 
 also have to confront the question of free and bound variables. For simplicity let us index the variables of the language by integers, and let us take the variables to be $v_0, v_1, v_2, \dots, v_n, \dots$. We cannot simply evaluate out an expression $\tau$ to its value $\mathcal{H}\llbracket \tau \rrbracket$ until we know the values of the free variables in $\tau$. The values of these variables will be given by an "environment" $t$ which can be construed as a *sequence* of values in **lamb**. We can restrict these environments to the retract:
@@ -975,9 +890,6 @@ $$(4.43) \quad \begin{aligned}
 A good question is: why does $\mathcal{H}$ exist? The answer is: because of the fixed-point theorem.
 
 If we rewrite the semantic equations $\mathcal{H}\llbracket \tau \rrbracket(t) = (\dots)$ in (43) by the equation $\mathcal{H}\llbracket \tau \rrbracket = \lambda t : \mathbf{env}\, (\dots)$, then $\mathcal{H}$ is seen to be a function from expressions to values in **lamb**. As the range of **lamb** is contained in $\mathbf{P}\omega$, we can say more broadly that $\mathcal{H} \in \mathbf{P}\omega^{\mathbf{Exp}}$, where **Exp** is the syntactical set of expressions and the exponential notation designates the set of *all* functions from **Exp** into $\mathbf{P}\omega$. This function set is a complete lattice because $\mathbf{P}\omega$ is. Therefore if we read (4.43) as a definition by cases on **Exp**, then we can find $\mathcal{H}$ as a suitable fixed point in the complete lattice $\mathbf{P}\omega^{\mathbf{Exp}}$. Indeed it is the fixed point of a continuous operator.
-
-<!-- page 29 -->
-
 **DANA SCOTT**
 
 Actually we can regard **Exp** as being a subset of $\mathbf{P}\omega$ to avoid dragging in other lattices. What we need is another recursive definition of a data type:
@@ -998,9 +910,6 @@ $$(4.46) \quad \mathbf{vaal} = \lambda x : \mathbf{tree}.\, \mathbf{which}(x) \s
 We have $\mathbf{vaal} : \mathbf{tree} \to \mathbf{id}$, where of course (4.46) is taken as defining **vaal** as the least fixed point. This is an example of a computable function between effectively given retracts. The LAMBDA-definable elements of $\mathbf{P}\omega$ are the computable elements in the range of **vaal**.
 
 We have discussed the category of retracts and continuous maps, but if they are all LAMBDA-definable, then they fall within the countable model **RE**. Thus there is *another* category of effectively given retracts and effectively given continuous maps. (Examples: **tree**, **id**, **vaal**, and all those retracts and maps generated by $\oplus$, $\otimes$, and $\circ\to$.) This category seems to deserve the status of a generalized recursion theory; though this is not to say that as yet very much is known about it. In fact, the proper formulation may require an enriched category rather than a restricted one. Thus instead of confining attention to the computable retracts and computable maps, it might be better to use the full category with all maps and to single out the computable ones (also maybe the finite ones) by special predicates. In effect we have avoided any methodological decisions by working in
-
-<!-- page 30 -->
-
 **DATA TYPES AS LATTICES**
 
 the universal space $\mathbf{P}\omega$ and by *defining* a notion when required—if possible with the aid of LAMBDA. This makes it possible to give all the necessary definitions and to prove the theorems without at first having to worry about axiomatic problems.
@@ -1028,9 +937,6 @@ $$(5.3) \quad \mathbf{boool} = \lambda u.\, u \supset 0,\, \mathbf{T} + 1.$$
 The closed sets of **boool** are $\bot$, $0$, $\mathbf{T} + 1$, and $\mathbf{T}$. Note that with any closure operation $a$, the function value $a(x)$ is the least closed set (fixed point of $a$) including as a subset the given set $x$. Thus given any family $\mathscr{C} \subseteq \mathbf{P}\omega$ of “closed” sets which is closed under the intersection of subfamilies, if we define
 
 $$(5.4) \quad a(x) = \bigcap \{y \in \mathscr{C} \mid x \subseteq y\},$$
-
-<!-- page 31 -->
-
 **DANA SCOTT**
 
 then this will be a closure operation *provided* it is continuous. This remark makes it easy to check that certain functions are closure operations if we can spot easily the family $\mathscr{C}$ of fixed points.
@@ -1068,9 +974,6 @@ The proof is very easy if one notes that the isolated points of $\{x \mid x = a(
 By Theorem 1.6 we know that the algebraic lattice is a retract, but a more direct argument makes the closure property clear. Thus, let $D$ be the algebraic lattice with $\{d_n \mid n \in \omega\}$ as the set of all isolated points with the indicated enumeration. We shall use the square notation with symbols $\sqsubseteq$ and $\sqcup$ for the lattice ordering and sup. The desired closure operation is defined by:
 
 $$a(x) = \{m \mid d_m \sqsubseteq \sqcup \{d_n \mid n \in x\}\}.$$
-
-<!-- page 32 -->
-
 **DATA TYPES AS LATTICES**
 
 It is an easy exercise to show that from the definition of “isolated” it follows that $a$ is continuous; and from density, it follows that $D$ is in a one-to-one order preserving correspondence with the fixed points of $a$.
@@ -1112,9 +1015,6 @@ $$(5.15) \quad \mathbf{V}(a)(x) = \bigcap \{ y \mid x \sqsubseteq y \text{ and }
 These two definitions are easily seen to be equivalent. What is unexpected is the discovery (due in a different form to Peter Hancock and Per Martin-Löf) that $\mathbf{V}$ itself is a closure operation.
 
 **THEOREM 5.5 (The universe theorem for algebraic lattices).** *The function $\mathbf{V}$ is a closure operation and its fixed points comprise the set of all closure operations.*
-
-<!-- page 33 -->
-
 **DANA SCOTT**
 
 Thus to say $a$ is a closure operation, write $a : \mathbf{V}$. To have a mapping on closure operations, write $f : \mathbf{V} \circ\to \mathbf{V}$. Remark that 5.5 allows us to write $\mathbf{V} : \mathbf{V}$. It all seems rather circular, but it is quite consistent. The category of separate algebraic lattices “contains itself”—if we are careful to work through retracts of $\mathbf{P}\omega$.
@@ -1164,9 +1064,6 @@ $$(\lambda f : \mathbf{V} \circ\to \mathbf{V}.\, \mathbf{Y}(f)) : (\mathbf{V} \c
 In words: if $f$ is a mapping on closure operations, then its least fixed point is also a closure operation. The proof of course holds with any retract in place of $\mathbf{V}$, but we are more interested in applications to $\mathbf{V}$. For example, note that $\mathbf{V}(\bot) = \mathbf{I}$. Now let $f = \lambda a : \mathbf{V}.\, a \circ\to a$. The least fixed point of this $f$ is the limit of the sequence:
 
 $$\bot,\, \mathbf{I},\, \mathbf{I} \circ\to \mathbf{I},\, (\mathbf{I} \circ\to \mathbf{I}) \circ\to (\mathbf{I} \circ\to \mathbf{I}),\, ((\mathbf{I} \circ\to \mathbf{I}) \circ\to (\mathbf{I} \circ\to \mathbf{I})) \circ\to ((\mathbf{I} \circ\to \mathbf{I}) \circ\to (\mathbf{I} \circ\to \mathbf{I})),\, \ldots$$
-
-<!-- page 34 -->
-
 **DATA TYPES AS LATTICES**
 
 and we see that all these retracts are *strict*. This means $\mathbf{Y}(f)$ is nontrivial in that it has at least *two* fixed points (viz., $\bot$ and $\top$). But $d = \mathbf{Y}(f)$ must be the least closure operation satisfying
@@ -1208,9 +1105,6 @@ and
 $$\mathbf{perf}(\langle 1, \langle x, y \rangle \rangle) = \Delta(\mathbf{perf}(x))(\mathbf{perf}(y))$$
 
 when $x, y : \mathbf{tree}$. Every tree, aside from $\top$ or $\bot$, is either *atomic* or a pair of trees. The atomic tree is “perfect” (that is, $\mathbf{perf}(\langle 0 \rangle) = 0$). A finite tree which does not
-
-<!-- page 35 -->
-
 **DANA SCOTT**
 
 contain $\bot$ or $\top$ is perfect—as we can see inductively using the table above for $\Delta$. An infinite tree is never perfect: either some branch ends in $\top$ and **perf** maps it to $\top$, or $\top$ is never reached and **perf** maps it to $\bot$. Thus the subset in question is then seen to be the set of *finite* trees generated from the atom by pairing. This is clearly a desirable subset, and it is sorted out by a function with a simple recursive definition. The general question is: what subsets can be characterized by equations? The answer can be given by reference to the topology of $\mathbf{P}\omega$.
@@ -1242,9 +1136,6 @@ $$\{x \mid f(x) = \bot\},$$
 *where $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is continuous.*
 
 Aside from $\{x \mid x = \bot\}$, we could have used $\{x \mid x \subseteq a\}$ as the typical closed set where $a \in \mathbf{P}\omega$ is any element whatsoever aside from $\top$. This $\top$ has, by the way, a
-
-<!-- page 36 -->
-
 **DATA TYPES AS LATTICES**
 
 special character. We note:
@@ -1304,9 +1195,6 @@ $$C \cap U = \{x \mid h(x) = 0\},$$
 as desired.
 
 It is easy to see that $\{e\} \in \mathfrak{F} \dot{\cap} \mathfrak{G}$ if $e$ is finite, but in general $\{a\} \notin \mathfrak{F} \dot{\cap} \mathfrak{G}_\delta$. In
-
-<!-- page 37 -->
-
 **DANA SCOTT**
 
 In case $a$ is infinite but not equal to $\top$ (say, $a = \{n \mid n > 0\} = \top + 1$), then $\{a\}$ is typical in its class.
@@ -1362,9 +1250,6 @@ $$\{x \mid f(x) = g(x)\} = \{x \mid \forall n \in \omega [n \in f(x) \leftrighta
 $$= \bigcap_{n=0}^{\infty} (\{x \mid n \in f(x), n \in g(x)\} \cup \{x \mid n \notin f(x), n \notin g(x)\})$$
 
 That puts the set in the class $(\mathfrak{F} \cup \mathfrak{G})_\delta = \mathfrak{B}_\delta$.
-
-<!-- page 38 -->
-
 **DATA TYPES AS LATTICES**
 
 On the other hand, we can see that $(\mathfrak{F} \cup \mathfrak{G})_\sigma$ is exactly $\mathfrak{B}_\delta$. Because, in view of Theorem 6.6, $\mathfrak{B}_\sigma$, the class of *countable* unions of $\mathfrak{B}$-sets, is exactly $(\mathfrak{F} \dot{\cap} \mathfrak{G})_\sigma$. The remark we want to make then follows by taking complements.
@@ -1413,9 +1298,6 @@ $$\{x \mid \forall y \exists z . h(x)(y)(z) = 0\},$$
 with continuous $f, g, h$. For the three classes we then have as “typical” sets those shown in Table 3.
 
 It should be remarked that $\mathfrak{B}_\delta$ contains all the closed sets in the *Cantor space* topology on $\mathbf{P}\omega$ (that is, the topology obtained when it is regarded as the infinite product of *discrete* two-point spaces). Therefore the $\Sigma_1^1$ sets for the two topologies on $\mathbf{P}\omega$ are the *same*. Hence, since we know for Cantor space that $\Delta_1^1 = \Sigma_1^1 \cap \Pi_1^1$ is the class of *Borel sets*, we can conclude that the two topologies on $\mathbf{P}\omega$ have the *same* Borel sets. (That is, in both cases $\Delta_1^1$ is the Boolean $\sigma$-algebra generated from the open sets.)
-
-<!-- page 39 -->
-
 **DANA SCOTT**
 
 **TABLE 3** *Classes and typical sets*
@@ -1446,9 +1328,6 @@ We can show that $\mathbf{top} : \mathbf{P}\omega \to \{\bot, \top\}$. For a tre
 An aspect of the problem of classification treated in this section which has not been given close enough attention is the explicitly constructive way of verifying the closure properties of the classes. Consider the class $\mathfrak{B}_\delta$, for example. Let $B$ be the typical set as shown in Table 3. Then whatever $f \in \mathbf{P}\omega$ we choose, the set
 
 $$\{x \mid f(x) \in B\}$$
-
-<!-- page 40 -->
-
 is a $\mathfrak{B}_\delta$-set and every such set has this form. Thus the $f$'s *index* the elements of the class. Suppose $f, g \in \mathbf{P}\omega$. What we should look for are two LAMBDA-definable combinators such that $\mathbf{union}(f)(g)$ and $\mathbf{inter}(f)(g)$ give the functions that index the union and intersection of the sets determined by $f$ and $g$. That is, we want:
 
 $$\{x \mid \mathbf{union}(f)(g)(x) \in B\} = \{x \mid f(x) \in B\} \cup \{x \mid g(x) \in B\}.$$
@@ -1460,9 +1339,6 @@ It should be possible to extract the precise definition from the outline of the 
 Whatever the pleasures of partial functions (and the multiple-valued ones, too), the desire for total functions remains. Take the integers. We are more interested in $\omega$ than $\omega \cup \{\bot, \top\}$. Since the multiple values $\bot$ and $\top$ are but two in number, it is easy to avoid them. The problem becomes tiresome in considering functions, however. The lattice represented by the retract $\mathbf{int} \circ\to \mathbf{int}$ is much too large, in that there are as many nontotal functions in this domain as total ones. The aim of the present section is to introduce an interpretation of a theory of functionality in the model $\mathbf{P}\omega$ that provides a convenient way of restricting attention to the functions (or other objects) that are total in the desired sense. The theory of functionality is rather like proposals of Curry, but not quite the same for important reasons as we will see.
 
 In the theory of retracts of §§ 5 and 6, the plan of “restricting attention” was the very simple one of restricting to a *subset*. It was made notationally simple as the subsets in question could be parameterized by continuous functions. The retraction mappings stand in for their ranges. Even better, certain continuous functions act on these retractions as space-forming functors (such as $\oplus$ and $\circ\to$), which gives greater notational simplicity because one language is able to serve for several
-
-<!-- page 41 -->
-
 **DANA SCOTT**
 
 tasks. When we pass to the theory of total functions, this same kind of simplicity is no longer possible owing to an increase in quantifier complexity in the necessary definitions. (This remark is made definite below.) Another point where there is some loss of simplicity concerns the representation of entities in $\mathbf{P}\omega$: subsets will no longer be enough, since we will need *quotients* of subsets. This is not a very startling point. Many constructions are affected in a natural way via equivalence classes. An equivalence relation makes you blind to certain distinctions. It may be easier also to remain a bit blind than to search for the most beautiful representative of an equivalence class: there may be nothing to choose between several candidates, and it can cost too much effort to attempt a choice. Thus our first agreement is that for many purposes a *kind* of object can be taken as a set of equivalence classes for an equivalence relation on a subset of $\mathbf{P}\omega$.
@@ -1496,9 +1372,6 @@ $$(7.6) \quad A \to B = \{\langle \lambda x.\, u(x), \lambda x.\, v(x) \rangle \
 $$(7.7) \quad A \times B = \{\langle \langle x, x' \rangle, \langle y, y' \rangle \rangle \mid x \, A \, y \text{ and } x' \, B \, y'\},$$
 
 $$(7.8) \quad A + B = \{\langle \langle 0, x \rangle, \langle 0, y \rangle \rangle \mid x \, A \, y\} \cup \{\langle \langle 1, x' \rangle, \langle 1, y' \rangle \rangle \mid x' \, B \, y'\}.$$
-
-<!-- page 42 -->
-
 **DATA TYPES AS LATTICES**
 
 **THEOREM 7.1 (The closure theorem).** *If $A$ and $B$ are restricted equivalence relations, then so are $A \to B$, $A \times B$ and $A + B$. We find:*
@@ -1538,9 +1411,6 @@ Thus $N$ is a $\mathfrak{B}_\delta$-set. What is $N \to N$? We see:
 $$(7.11) \quad f : N \to N \text{ iff } f : \mathbf{fun} \text{ and } f(n) \in \omega \text{ whenever } n \in \omega.$$
 
 This $N \to N$ is indeed the type of all total functions from $\omega$ into $\omega$. It can be shown that $N \to N$ is also a $\mathfrak{B}_\delta$-set: good. But what is $(N \to N) \to N$? This is no longer a $\mathfrak{B}_\delta$-set, the best we can say is $\Pi_1^1$. By Theorem 7.1 it corresponds to the type of all
-
-<!-- page 43 -->
-
 (extensional) *continuous* total functions from $N \to N$ into $N$. (The condition on $A$ and $B$ on the right side of (7.6) makes the concept of function embodied in $A \to B$ extensional, since the functions are meant to preserve the equivalence relations.)
 
 A more precise discussion identifies $N \to N$ as a topological space, usually called the *Baire space*. If we introduce the finite discrete spaces by:
@@ -1582,9 +1452,6 @@ $$x \, A \, x'.$$
 We must show that:
 
 $$\mathbf{S}(f)(g)(x) \, C \, \mathbf{S}(f')(g')(x').$$
-
-<!-- page 44 -->
-
 **DATA TYPES AS LATTICES**
 
 Now by definition of the combinator $\mathbf{S}$ we have:
@@ -1636,9 +1503,6 @@ follows from Theorem 7.1(ii) and Theorem 7.3(ii) and (iii) in view of the identi
 $$(7.14) \quad \lambda f \lambda g.\, f \circ g = \mathbf{S}(\mathbf{K}(\mathbf{S}))(\mathbf{K})$$
 
 (see Appendix A).
-
-<!-- page 45 -->
-
 **DANA SCOTT**
 
 A more interesting result concerns the *iterators* defined as follows:
@@ -1688,9 +1552,6 @@ $$z(\sigma_j)((j, 0)) = \sigma_j^{n_j}((j, 0)) = (j, n_j)$$
 Take any two $j, j' \in \omega$. We also know there is an $n \in \omega$ where:
 
 $$z(\sigma_j \cup \sigma_{j'})((j, 0) \cup (j', 0)) = (j, n) \cup (j', n).$$
-
-<!-- page 46 -->
-
 **DATA TYPES AS LATTICES**
 
 in view of (7.19). But since $\sigma_j \subseteq \sigma_j \cup \sigma_{j'}$ and $\sigma_{j'} \subseteq \sigma_j \cup \sigma_{j'}$, we have:
@@ -1743,9 +1604,6 @@ $$z(\lambda x.\, f(x))(x) = f^n(x).$$
 But then by continuity this equation holds for *all* $f, x$. It follows now that $z = \mathbf{Z}_n$, by the proviso of the theorem.
 
 These results bring up many questions which we leave unanswered here. For example, which combinators (i.e., pure $\lambda$-terms) have functionality as in the examples above, and can we decide when a term is one such? In particular, can the diagonal combinator $\lambda x.\, x(x)$ be typed? (The argument of Hindley, et al. (1972, p. 81) is purely formal and does not apparently apply to the model.) What about terms in LAMBDA beyond the pure $\lambda$-calculus?
-
-<!-- page 47 -->
-
 **DANA SCOTT**
 
 **Appendix A. Proofs and technical remarks.**
@@ -1777,9 +1635,6 @@ Finally, to show that $f(g(x, y), h(y, x, y))$ is continuous, it is sufficient t
 **LEMMA.** *If $x_n \subseteq x_{n+1}$ for all $n$, and if $f$ is continuous, then*
 
 $$f\!\left(\bigcup \{x_n \mid n \in \omega\}\right) = \bigcup \{f(x_n) \mid n \in \omega\}.$$
-
-<!-- page 48 -->
-
 **DATA TYPES AS LATTICES**
 
 *Proof.* By monotonicity, the inclusion holds in one direction. Suppose $e_m \subseteq f(\bigcup \{x_n \mid n \in \omega\})$. Then by Theorem 1.1 we have $e_m \subseteq f(e_k)$ for some $e_k \subseteq \bigcup \{x_n \mid n \in \omega\}$. Because $e_k$ is finite and the sequence is increasing, we can argue that $e_k \subseteq x_n$ for some $n$. But then $f(e_k) \subseteq f(x_n)$. This shows that $e_m \subseteq \bigcup \{f(x_n) \mid n \in \omega\}$ and proves the inclusion in the other direction. (*Exercise:* Does this property characterize continuous functions?)
@@ -1809,9 +1664,6 @@ which is always open. To show that $\varepsilon$ is an embedding, we must finall
 $$\varepsilon(U_n) = \varepsilon(X) \cap \{z \mid n \in z\},$$
 
 which is clear.
-
-<!-- page 49 -->
-
 **DANA SCOTT**
 
 **For Section 2.** Equation (2.1) defines a continuous function because it is a special case of Theorem 1.5, where we have been able to simplify the definition into cases because $\omega$ is a very elementary subset of $\mathbf{P}\omega$. Equation (2.2) gives a continuous function since the definition makes $\hat{p}$ distributive, as remarked in the text for finite unions, but it is just as easy to show that $\hat{p}$ distributes over arbitrary unions. The difference between a continuous $f$ and a distributive $\hat{p}$ is this: to find $m \in f(x)$ we need a finite subset $e_n \subseteq x$ with $m \in f(e_n)$; however, to find $m \in \hat{p}(x)$ we need only *one* element $n \in x$ with $m \in \hat{p}(\{n\}) = \hat{p}(n) = p(n)$. Continuous functions are generalizations of distributive functions. The generality is necessary. For example, in (2.3) we see another function $x; y$ distributive in each of its variables; but take care: the function $x; x$ is not distributive in $x$—there is no closure under substitution. This is just one reason why continuous functions are better. Another good example comes from (2.4) if you compare the functions $x$, $x + x$, $x + x + x$, etc.
@@ -1839,9 +1691,6 @@ Thus $\lambda x.\, f(x, y)$ is continuous in $y$.
 The verification of $(\alpha)$ of Table 1 is obvious as the '$x$' in '$\lambda x.\,\tau$' is a bound variable. (Care should be taken in making the proviso that '$y$' is not otherwise free in $\tau$.) The same would of course hold for any other pair of variables. We do not bother very much about alphabetic questions.
 
 The verification of $(\beta)$ is just a restatement of Theorem 1.2(i). Let $\tau$ define a function $f$ (of $x$). Then by definition $f(x) = \tau$ and $\lambda x.\,\tau = \mathbf{graph}(f)$. Also $\mathbf{fun}(u)(x)$ in the notation of Theorem 1.2 is the same as the binary operation $u(x)$ in the notation of LAMBDA. Thus in Theorem 1.2(i) if we apply both sides to $y$ we get nothing else than $(\beta)$.
-
-<!-- page 50 -->
-
 **DATA TYPES AS LATTICES**
 
 Half of property $(\xi)$ is already implied by $(\beta)$: the implication from left to right. (Just apply both sides to $x$.) In the other direction, $\forall x.\,\tau = \sigma$ means that $\tau$ and $\sigma$ define the *same* function of $x$; thus, the two graphs must be equal.
@@ -1879,9 +1728,6 @@ Let $d = \lambda x.\, u(x(x))$ and let $a$ be any other fixed point of $u(x)$. T
 $$d(d) = \bigcup \{e_l(e_l) \mid e_l \subseteq d\}.$$
 
 By way of induction, suppose that this implication holds for all $n < l$. Assume that $e_l \subseteq d$ and that $m \in e_l(e_l)$. We will want to use the induction hypothesis to show that $m \in a$. By the definition of application, there exists an integer $n$ such that $(n, m) \in e_l$ and $e_n \subseteq e_l$. But $n \le (n, m) < l$, and $e_n \subseteq d$. By the hypothesis, we have $e_n(e_n) \subseteq a$. Note that $(n, m) \in d$ also, and that $d$ is defined by $\lambda$-abstraction; thus,
-
-<!-- page 51 -->
-
 **DANA SCOTT**
 
 $m \in d(e_n)$ by definition. By monotonicity $u(e_n(e_n)) \subseteq u(a) = a$; therefore $m \in a$. This shows that $e_l(e_l) \subseteq a$, and the inductive proof is complete.
@@ -1911,9 +1757,6 @@ $$\lambda x.\, \top = \{(n, m) \mid m \in \top\} = \top;$$
 because in the last every integer is a (number of a) pair. Suppose now that $a = \lambda x.\, a$ and $a \neq \top$. Let $k$ be the least integer where $k \notin a$. Now $k = (n, m)$ for some $n$ and $m$. If $m \in a$, then $(n, m) \in a = \lambda x.\, a$; hence $m \notin a$. But $m \leq k$ and $k$ is minimal; therefore, $m = k$. But this is only possible if $k = m = n = 0$. Suppose further $a \neq \bot$ and that $l$ is the least integer where $l \in a$. Now $l = (i, j)$ with $j \in a$ and $j \leq l$. So $j = l$ and $l = j = i = 0$. This contradiction proves that $a = \bot$ or $a = \top$.
 
 Equations (2.19)–(2.22) are definitions, and (2.23) is proved easily by induction on $i$. Equation (2.24) is also a definition. To prove (2.25) we note that
-
-<!-- page 52 -->
-
 **DATA TYPES AS LATTICES**
 
 $\{ u_i \mid i \in x \}$ is continuous (even: distributive) in $u$ and $x$. Thus, there is a continuous function $\mathbf{seq}(u)(x)$ giving this value. What is required is to prove that it is LAMBDA-definable. We see:
@@ -1957,9 +1800,6 @@ $$\quad \text{iff} \quad \exists n\, \forall m < n\, [[m \in e_n \text{ implies 
 **For Section 3.** For the proof of (3.1) we distinguish cases. In case $x = y = \bot$, we note that $\mathbf{cond}(\bot)(\bot) = \bot$ and $\bot(\bot) = \bot$, so the equation checks in this case. Recall:
 
 $$\mathbf{cond}(x)(y) = \lambda z.\, z \supset x, y = \{(n, m) \mid m \in (e_n \supset x, y)\}.$$
-
-<!-- page 53 -->
-
 **DANA SCOTT**
 
 We can show $0 \notin \mathbf{cond}(x)(y)$. Note first $0 = (n, m)$ iff $n = 0 = m$; furthermore, $e_0 = \bot$ and $\bot \supset x, y = \bot$; but $0 \notin \bot$. Also we have:
@@ -2003,9 +1843,6 @@ We choose $u$ primitive recursive, where:
 $$\mathbf{val}(u(m)) = t(m).$$
 
 By the choice of $k$, and by the extensionality of $p$, and by the fact that $\mathbf{val}(n) \neq e_j$,
-
-<!-- page 54 -->
-
 **DATA TYPES AS LATTICES**
 
 By the choice of $k$, and by the extensionality of $p$, and by the fact that $\mathbf{val}(n) \neq e_j$, we have:
@@ -2043,9 +1880,6 @@ and so the theorem is proved.
 **For Section 4.** The notion of a *continuous lattice* is due to Scott (1970/71) and we shall not review all the facts here. One special feature of these lattices is that the lattice operations of meet and join ($\sqcap$ and $\sqcup$) are continuous (that is, commute with directed sups). As topological spaces, they can be characterized as those $T_0$-spaces satisfying the extension theorem (which we proved for $\mathbf{P}\omega$ in Theorem 1.5).
 
 *Proof of Theorem 4.1.* Consider a continuous function $a$, and let $A = \{x \mid x = a(x)\}$. By the fixed-point theorem (Theorem 1.4) we know that $A$ is nonempty and that it has a least element under $\subseteq$. Certainly $A$ is partially ordered by $\subseteq$; further, $A$ is closed under *directed* unions but not under arbitrary unions.
-
-<!-- page 55 -->
-
 That is, $A$ is not a complete sublattice of $\mathbf{P}\omega$ with regard to the lattice operations of $\mathbf{P}\omega$, but it could be a complete lattice on its own—if we can show sups exist. Thus, let $S \subseteq A$ be an arbitrary subset of $A$. By the fixed-point theorem, find the least solution to the equation:
 
 $$y = \bigcup \{x \mid x \in S\} \cup a(y).$$
@@ -2075,9 +1909,6 @@ $$a(x) = \{m \mid \exists n \in x.\, m \ll n\}.$$
 We see at once that $a$ is continuous; and, because $\ll$ is transitive and dense, $a$ is a retract. Since $\ll$ is irreflexive, it is the case for finite nonempty sets $x$ that $\max_\ll(x) \notin a(x)$; hence, $a$ is nonextensive. As $a(\top) = \top$, we find $a \neq \bot$. The proof is complete.
 
 Note that there are many transitive, dense, irreflexive relations on $\omega$, so there are many nonextensive retracts. These retracts, like $a$ above, are *distributive*.
-
-<!-- page 56 -->
-
 **DATA TYPES AS LATTICES**
 
 A nondistributive example is:
@@ -2111,9 +1942,6 @@ The main point of the proof of Theorem 4.6 has already been given in the text.
 **For Sections 5–7.** Sufficient hints for proofs have been given in the text.
 
 **Appendix B. Acknowledgments and references.** My greatest overall debt is to the late Christopher Strachey, who provided not only the initial stimulus and continuing encouragement, but also what may be termed the necessary irritation. Not being a trained mathematician, he often assumed that various operations made sense without looking too closely or rigorously at the details. This was particularly the case with the $\lambda$-calculus, which he used as freely as everyday algebra. Having repeatedly and outspokenly condemned the $\lambda$-calculus as a formal system without clear mathematical foundations, it was up to me to provide some alternative. The first suggestion was a typed system put forward in Scott (1969) (unpublished, but later developed as LCF by Robin Milner and his collaborators). Experience with the type structure of function spaces, which had come to my attention from work in recursion theory by Nerode, Platek and others, soon convinced me that there were many more similar structures than might at first be imagined. In particular, a vague idea about a space with a “dense” basis led quickly to the more direct construction, by inverse limits, of function spaces of “infinite” type that were very reasonable models of the classical “type-free”
-
-<!-- page 57 -->
-
 **DANA SCOTT**
 
 $\lambda$-calculus (as well as many other calculi for other "reflexive domains"). The details can be found in Scott (1971) and Scott (1973b). Algebra was justified, but the work in doing so was tiring and the exact connections with computability were not all that easy to describe.
@@ -2121,9 +1949,6 @@ $\lambda$-calculus (as well as many other calculi for other "reflexive domains")
 In the meantime Plotkin (1972) contained suggestions for a "set-theoretical" construction of models, but not much notice was taken of the plan at the time it was circulated—perhaps owing to a fairly sketchy presentation of the precise semantics of the $\lambda$-calculus. The present paper evolved particularly from the project of making the connections with ordinary recursion theory easier to comprehend, since a satisfactory theory of computability and programming language semantics had to face this problem. The idea of using sets of integers for a model was first put forward by the author at a meeting at Oberwolfach at Easter in 1973 and in a more definitive form at the Third Scandinavian Logic Symposium shortly thereafter (see Scott (1975a) which is a preliminary and shorter version of this paper). The author gave a report on the model at the Bristol Logic Colloquium in July 1973, but did not submit a paper for the proceedings. A series of several lectures was presented at the Kiel Logic Colloquium in July 1974, covering most of the present paper which was distributed as a preprint at the meeting. The text (but unfortunately neither acknowledgments nor references) was printed in the proceedings (Springer Lecture Notes in Mathematics, vol. 499). In 1973 after experimentation with definitions somehow forced him into the definition of the model, the author realized that it was essentially the same as Plotkin's idea and, even more surprising, it was already implicit in a very precise form in much earlier work by Myhill–Shepherdson (1955) and Friedberg–Rogers (1959) (see also Rogers (1967)) on *enumeration operators*. What had happened was that Plotkin had not made enough tie-up with recursion theory, and the recursive people had not seen the tie-up with $\lambda$-calculus, even though they knew that one could do a lot with such operators. Actually, if the author had taken his own advice in 1971 (see *Continuous lattices*, Scott (1972a, end of $\S$ 2)), he would have seen that many spaces have their own continuous-function spaces as computable retracts, a fact which is just exactly the basis for the present construction; but instead he said: "it [the representation as a retract] does not seem to be of too much help in proving theorems."
 
 Over the years in work on $\lambda$-calculus and programming language semantics, personal contact and correspondence with a large number of people has been very stimulating and helpful. I must mention particularly de Bakker, Barendregt, Bekic, Blikle, Böhm, Curry, Egli, Engeler, Ershov, Goodman, Hyland, Kreisel, Landin, Milne, Milner, Mosses, Nivat, Park, Plotkin, Reynolds, de Roever, Smyth, Stoy, Tang, Tennent, Wadsworth. (I apologize to those I have inadvertently left out of this list.) In the reference list a very imperfect attempt has been made to collect references directly relevant to the topics of this paper as well as pointers to related areas that may be of inspiration for future work. The list of papers is undoubtedly incomplete, and inaccurate as well, but the author hopes it may be of some use for those seeking orientation. It is a very vexing problem to keep such references up to date. Some remarks toward references and acknowledgments on the specific results in the various sections follow. Felipe Bracho deserves special thanks for help in the preparation of the final manuscript and with the reference list.
-
-<!-- page 58 -->
-
 **DATA TYPES AS LATTICES**
 
 *Section 1.* The relevance of the “positive” or “weak” topology first came to the author’s attention through the work of Nerode (1959). Continuous functionals were studied by Kleene and Platek and many other researchers in recursion theory. Monotonicity was particularly stressed by Platek (1964). The graphs and the definition of application are used in the same way by Plotkin (1972) and Rogers (1967, see p. 147). The fixed-point theorem is very well-known. See, e.g., Tarski (1955). The extension theorem was formulated by the author, but it is very similar to many results in point-set topology; it was used in a prominent way in Scott (1972a) to characterize continuous lattices. The embedding theorem is well-known; see, e.g., Čech (1966).
@@ -2137,9 +1962,6 @@ Over the years in work on $\lambda$-calculus and programming language semantics,
 *Section 5.* Algebraic lattices have been known for a long time (see Gratzer (1968)) and also closure operations (see, e.g., Tarski (1930)). It was Per Martin-Löf and Peter Hancock who suggested that they might form a “universe”; in particular the construction of $\mathbf{V}$ is essentially due to them. The limit theorem is due to the author.
 
 *Section 6.* More information on the classification by notions in descriptive set theory of various subsets can be found in the work of Tang who also makes
-
-<!-- page 59 -->
-
 **DANA SCOTT**
 
 *Section 6.* More information on the classification by notions in descriptive set theory of various subsets can be found in the work of Tang who also makes connections with the work of Wadge. The various normal forms for the classes of sets (e.g., Table 3) are due to the author.

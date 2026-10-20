@@ -14,8 +14,6 @@ The outcome of this development was that I found I could describe the work in pu
 
 For example, in understanding the connections of my kind of spaces with other topologies, one should consider the remarks on the topology of lattices in Birkhoff's paper in Abbott (1970). Some
 
-133
-
 older papers such as Strother (1955) or Michael (1951) might also give some leads. It is curious how little there is of interest in the literature on $T_0$-spaces. Concerning function spaces there ought to be some connections with the *limit spaces* of Cook and Fischer (see especially Binz and Keller (1966)) and possibly with the notion of *quasi-topology* of Spanier (1963), but these are rather vague ideas.
 
 In a different direction note that the *algebraic lattices* of Grätzer (1968) are in fact continuous lattices in which isolated points are dense. The continuous lattices may be "higher dimensional" while algebraic lattices are "zero dimensional" - in some suitable sense. Every continuous lattice is a retract of an algebraic lattice.
@@ -40,8 +38,6 @@ E. Michael, *Topologies on Spaces of Subsets*, Transactions of the American Math
 
 A. Nerode, *Some Stone Spaces and Recursion Theory*, Duke Mathematical Journal, vol. 26 (1959), pp. 397-406.
 
-134
-
 D. Scott, *Outline of a Mathematical Theory of Computation*, Proceedings of the Fourth Annual Princeton Conference on Information Sciences and Systems (1970), pp. 169-176.
 
 ——— , *Lattice Theory, Data Types, and Semantics*, New York University Symposia in Areas of Current Interest in Computer Science (Randall Rustin ed.) (1971) to appear.
@@ -51,7 +47,6 @@ D. Scott, *Outline of a Mathematical Theory of Computation*, Proceedings of the 
 E. Spanier, *Quasi-topologies*, Duke Mathematical Journal, vol. 30 (1963) pp. 1-14.
 
 W. Strother, *Fixed Points, Fixed Sets, and M-Retracts*, Duke Mathematical Journal, vol. 22 (1955), pp. 551-556.
-
 
 ## [1976_DataTypes.md](1976_DataTypes.md)
 
@@ -92,9 +87,6 @@ H. BEKIĆ ET AL. (1974), *A formal definition of a PL/I subset, Parts I and II*,
 R. S. BIRD (1974), *Unsolvability of the inclusion problem for DBS schemas*, Rep. RCS22, Dept. of Computer Sci., Univ. of Reading.
 
 G. BIRKHOFF (1967), *Lattice Theory*, 3rd ed., Colloquium Publications, vol. 25, American Mathematical Society, Providence, R.I.
-
-<!-- page 60 -->
-
 **DATA TYPES AS LATTICES**
 
 A. BLIKLE (1971), *Algorithmically definable functions: A contribution towards the semantics of programming languages*, Dissertationes Math. Rozprawy Mat., 85.
@@ -156,9 +148,6 @@ H. B. CURRY AND R. FEYS (1958), *Combinatory Logic*, vol. 1, North-Holland, Amst
 H. B. CURRY, J. R. HINDLEY AND J. SELDIN (1971), *Combinatory Logic*, vol. 2, North-Holland, Amsterdam.
 
 M. DAVIS (1958), *Computability and Unsolvability*, McGraw-Hill, New York.
-
-<!-- page 61 -->
-
 **DANA SCOTT**
 
 E. W. DIJKSTRA (1974), *A simple axiomatic basis for programming language constructs*. Indag. Math., 36, pp. 1–15.
@@ -226,9 +215,6 @@ J. A. GOGUEN (1967), *$L$-fuzzy sets*, J. Math. Anal. Appl., 18, pp. 145–174.
 ——— (1969), *Categories of $L$-sets*, Bull. Amer. Math. Soc., 75, pp. 524–622.
 
 ——— (1972), *On homomorphisms, simulations, correctness, subroutines and termination for programs and program schemes*. Proc. 13th IEEE Conf. on Switching and Automata Theory, pp. 52–60.
-
-<!-- page 62 -->
-
 **DATA TYPES AS LATTICES**
 
 ——— (1974), *Semantics of computation*, Category Theory Applied to Computation and Control, E. Manes, ed., Univ. of Mass., pp. 234–249.
@@ -282,9 +268,6 @@ J. M. E. HYLAND (1975a), *Recursion theory on the countable functionals*, D. Phi
 Y. I. IANOV (1970), *The logical scheme of algorithms*, Problems in Cybernetics, vol. 1, Pergamon Press, New York.
 
 S. IGARASHI (1972), *Admissibility of fixed point induction in first order logic of typed theories*, Artificial Intelligence Memo. AIM-168, Computer Sci. Dept., Stanford Univ., Stanford, Calif.
-
-<!-- page 63 -->
-
 **DANA SCOTT**
 
 K. INDERMARK (1974), *Gleichungsdefinierbarkeit in Relationalstrukturen*, Habilitationsschrift, Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Freidrich-Wilhelms-Universatat, Bonn, W. Germany.
@@ -348,9 +331,6 @@ Z. MANNA AND A. PNUELI (1970), *Formalization of properties of functional progra
 Z. MANNA AND J. VUILLEMIN (1972), *Fixpoint approach to the theory of computation*, Comm. ACM, 15, pp. 528–536.
 
 G. MARKOWSKY (1974), *Categories of chain-complete posets*, RC 5100, Comput. Sci. Dept. IBM T. J. Watson Research Center, Yorktown Heights, N.Y.
-
-<!-- page 64 -->
-
 **DATA TYPES AS LATTICES**
 
 ——— (1974), *Chain-complete posets and directed sets with applications*, RC 5024, IBM T. J. Watson Research Center, Yorktown Heights, N. Y.
@@ -408,9 +388,6 @@ P. D. MOSSES (1974), *The mathematical semantics of ALGOL 60*, Tech. Monograph P
 ——— (1975a), *The semantics of semantic equations*, Mathematical Foundations of Computer Science, Goos and Hartmanis, eds., Lecture Notes in Computer Science, vol. 28, Springer-Verlag, New York, pp. 409–422.
 
 ——— (1975b), *Mathematical semantics and compiler generation*, Thesis, Oxford Univ., Oxford, England.
-
-<!-- page 65 -->
-
 **DANA SCOTT**
 
 J. MYHILL AND J. C. SHEPHERDSON (1955), *Effective operations on partial recursive functions*, Z. Math. Logik Grundlagen Math., 1, pp. 310–317.
@@ -466,9 +443,6 @@ J. C. REYNOLDS (1969), *Gedanken: A Simple Typeless Language*, Reprint 7621, Arg
 ——— (1974a), *On the relation between direct and continuation semantics*, Proc. 2nd Colloq. on Automata, Languages and Programming, Saarbrücken, Lecture Notes in Computer Science, vol. 14, Springer-Verlag, Berlin, pp. 141–156.
 
 ——— (1974b), *Semantics of the lattice of flow diagrams*, Systems and Information Science Dept., Syracuse Univ., Syracuse, N.Y. (preprint).
-
-<!-- page 66 -->
-
 **DATA TYPES AS LATTICES**
 
 J. C. REYNOLDS (to appear), *On the interpretations of Scott's domains*. Symposia Mathematica.
@@ -522,9 +496,6 @@ D. SCOTT (1969), *A type-theoretical alternative to ISWIM, CUCH, OWHY*, Unpublis
 D. SCOTT AND C. STRACHEY (1971), *Toward a mathematical semantics for computer languages*, Proc. Symposium on Computers and Automata, Polytechnic Inst. of Brooklyn, vol. 21, pp. 19–46. [Also: Technical Monograph PRG-6, Oxford Univ. Computing Lab., Programming Research Group (1971).]
 
 J. C. SHEPHERDSON (1975), *Computation over abstract structures: Serial and parallel procedures and Friedman's effective definitional schemes*, Logic Colloquium 1973, H. E. Rose and J. C. Shepherdson, eds., North-Holland, Amsterdam, pp. 445–513.
-
-<!-- page 67 -->
-
 **DANA SCOTT**
 
 C. STRACHEY (1966), *Towards a formal semantics*, Formal Language Description Languages for Computer Programming, T. B. Steel, ed., North-Holland, Amsterdam, pp. 198–220.
@@ -588,9 +559,6 @@ M. WAND (1973), *Mathematical foundations of formal language theory*, MAC-TR-108
 ——— (1974c), *Realizing data structures as lattices*, Tech. Rep. 11, Computer Sci. Dept., Indiana Univ.
 
 ——— (1975), *Fixed-point constructions in order-enriched categories*, Tech. Rep. 23, Computer Sci. Dept., Indiana Univ.
-
-<!-- page 68 -->
-
 **DATA TYPES AS LATTICES**
 
 P. WEGNER AND D. LEHMANN (1972), *Algebraic and topological prerequisites to Scott's theory of computation*, Tech. Rep. 72-2, Dept. of Computer Sci., Hebrew Univ. of Jerusalem.
@@ -598,7 +566,6 @@ P. WEGNER AND D. LEHMANN (1972), *Algebraic and topological prerequisites to Sco
 R. W. WEYRAUCH AND R. MILNER (1972), *Program correctness in a mechanized logic*. Proc. of the 1st USA-JAPAN Computer Conf., pp. 384–390.
 
 J. B. WRIGHT (1972), *Characterization of recursively enumerable sets*, J. Symbolic Logic, 37, pp. 507–511.
-
 
 ## [1980_Neighborhood.md](1980_Neighborhood.md)
 
@@ -659,9 +626,6 @@ This is a series of technical monographs on topics in the field of computation. 
 
 **PRG-16** C. A. R. Hoare, S. D. Brookes and A. W. Roscoe  
 *A Theory of Communicating Sequential Processes*
-
-<!-- page 152 -->
-
 **PRG-17**  
 Andrew P Black  
 *Report on the Programming Notation 3R*
@@ -699,7 +663,6 @@ Bernard Sufrin
 ## Bibliography
 
 Scott, D. Domains for Denotational Semantics. ICALP 1982, LNCS 140, pp. 577–613.
-
 
 ## [BridgeTheorems.md](BridgeTheorems.md)
 

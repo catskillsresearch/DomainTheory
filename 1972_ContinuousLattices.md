@@ -1,40 +1,12 @@
----
-source_pdf: ScottContinLatt1972.pdf
-ocr_method: cursor-vision-triple-merge
-verification_status: draft
----
-
-# Transcription (LLM vision OCR)
-
 # CONTINUOUS LATTICES
-
-BY
-
-Dana Scott
-
-## ABSTRACT
 
 Starting from the topological point of view a certain wide class of $T_0$-spaces is introduced having a very strong extension property for continuous functions with values in these spaces. It is then shown that all such spaces are complete lattices whose lattice structure determines the topology - these are the *continuous lattices* - and every such lattice has the extension property. With this foundation the lattices are studied in detail with respect to projections, subspaces, embeddings, and constructions such as products, sums, function spaces, and inverse limits. The main result of the paper is a proof that every topological space can be embedded in a continuous lattice which is homeomorphic (and isomorphic) to its own function space. The function algebra of such spaces provides mathematical models for the Church-Curry $\lambda$-calculus.
 
-## CONTENTS
-
-1. Introduction
-2. Injective Spaces
-3. Continuous Lattices
-4. Function Spaces
-5. Inverse Limits
-
-References
-
-98
-
-## 0. Introduction
+## 1. Introduction
 
 Through a roundabout chain of mathematical events I have become interested in $T_0$-spaces, those topological spaces satisfying the weakest separation axiom to the effect that two distinct points cannot share the same system of open neighborhoods. These spaces seem to have been originally suggested by Kolmogoroff and were introduced first in Alexandroff and Hopf (1935). Subsequent topology textbooks have dutifully recorded the definition but without much enthusiasm: mainly the idea is introduced to provide exercises. In the book Čech (1966) for example, $T_0$-spaces are called *feebly semi-separated spaces*, which surely is a term expressing mild contempt. Some interest has been shown in finite $T_0$-spaces (finite $T_1$-spaces are necessarily discrete), but generally topology seems to go better under at least the Hausdorff separation axiom. The reason for this is no doubt the strong motivation we get from geometry, where points *are* points and where distinct points *can* be separated.
 
 What I hope to show in this paper is that from a less geometric point of view $T_0$-spaces can be not only interesting but also natural. The interest for me lies in the construction of *function spaces*, and the main result is the production of a large number of $T_0$-spaces $D$ such that $D$ and $[D \to D]$ are *homeomorphic*. Here $[D \to D]$ is the space of all continuous functions from $D$ into $D$ with the topology of pointwise convergence (the product topology). It will be shown that every space can be embedded in such a space $D$, and that $D$ can be chosen to have quite strong extension properties for $D$-valued continuous functions. These properties make $D$ most convenient for applications to logic and recursive function theory, which was the author's original motivation. Some of the facts about these spaces seem to be most easily proved with the aid of some lattice theory, a circumstance that throws new light on the connections between topology and lattices. In fact, the required spaces are at the same time complete lattices whose topology is determined by the lattice structure in a special way, whence my title.
-
-99
 
 **1. INJECTIVE SPACES.** All spaces are $T_0$-spaces, and we begin by defining a class of spaces to be called *injective*.
 
@@ -65,8 +37,6 @@ We now have a large number of injective spaces, and further examples could be fo
 **1.4 Proposition.** A retract of an injective space is injective.
 
 **Proof:** Let $D$ be injective. By a retract of $D$ we understand a subspace $D' \subseteq D$ for which there exists a retraction map $j: D \to D'$ such that
-
-100
 
 $$
 D' = x \in D : j(x) = x.
@@ -114,8 +84,6 @@ which shows that the image $e(U)$ is open in the subspace $e(X) \subseteq D$. Th
 
 **1.7 Corollary.** A space is injective iff it is a retract of every space of which it is a subspace.
 
-101
-
 **Proof:** As in the proof of 1.6, this property is obvious for injective spaces. But in view of 1.5 every such space is a retract of a power of $\mathbb{O}$ and hence is injective. $\square$
 
 As a result of these very elementary considerations, the injective spaces could be called *absolute retracts*, if one remembers to modify the standard definitions by using *arbitrary* subspaces rather than just *closed* subspaces. Note too that it is easy to show that the only continuous maps $e: X \to Y$ for which the extension property
@@ -158,8 +126,6 @@ $$
 x : I \to X
 $$
 
-102
-
 where $\langle I, \le \rangle$ is a directed set and where $i \le j$ implies $x_i \sqsubseteq x_j$ for all $i, j \in I$. In a $T_1$-space a monotone net is constant (hence, uninteresting) because the $\sqsubseteq$-relation is the identity. As usual (cf. Kelley (1955), p.66) we say that a net $x$ *converges* to an element $y$ iff whenever $U$ is open and $y \in U$, then for some $i \in I$ we have $x_j \in U$ for all $j \ge i$. Note that a monotone net $x$ converges to each of its terms $x_i$. Suppose that a monotone net $x$ converges to an element $y$ which is an upper bound to all the terms of $x$. Then $y$ must be the *least upper bound*, which we write as:
 
 $$
@@ -191,8 +157,6 @@ $$
 gives the definition.
 
 Given a complete lattice $D$ we define
-
-103
 
 $$
 x \ll y \text{ iff } y \in \text{Int}z \in D : x \sqsubseteq z,
@@ -246,8 +210,6 @@ It easily follows by lattice theory that the equation of 2.3 implies that of 2.4
 
 In the converse direction we have only to note that if $U$ is open and $y \in U$, then $\sqcap U \ll y$. The implication from 2.4 to 2.3 results at once. $\square$
 
-104
-
 What is the idea of this definition? A continuous lattice is more special than a complete lattice: not only are lubs to be limits but every element must be a limit from below. This rather rough remark can be made more precise. In any complete lattice $D$ define the *principal limit* of a net $x : I \to D$ by the formula:
 
 $$
@@ -294,8 +256,6 @@ $$
 
 hold for all $y \in D$, where $U$ ranges over the given open sets. Because in that case if $V$ is open in the lattice sense and $y \in V$, then $\sqcap U \in V$ for some set $U$, open in the given sense, where $y \in U$. But $U \subseteq V$ follows, and so $V$ is a union of given open sets and is itself open in the given topology. Of course this equation implies that $D$ is a continuous lattice by virtue of 2.4. Notice that by the same token the sets of the form $y \in D : x \ll y$ will form a basis for the open sets of a continuous lattice.
 
-105
-
 hold for all $y \in D$, where $U$ ranges over the given open sets. Because in that case if $V$ is open in the lattice sense and $y \in V$, then $\sqcap U \in V$ for some set $U$, open in the given sense, where $y \in U$. But $U \subseteq V$ follows, and so $V$ is a union of given open sets and is itself open in the given topology. Of course this equation implies that $D$ is a continuous lattice by virtue of 2.4. Notice that by the same token the sets of the form $y \in D : x \ll y$ will form a basis for the open sets of a continuous lattice.
 
 **2.5 Proposition.** *If $D$ and $D'$ are complete lattices with their induced topologies, then a function $f : D \to D'$ is continuous iff for all directed subsets $S \subseteq D$:*
@@ -331,8 +291,6 @@ is a map where the separate continuity holds as follows:
 $$
 f(\bigsqcup S, y) = \bigsqcup f(x, y) : x \in S
 $$
-
-106
 
 and
 
@@ -398,8 +356,6 @@ is open. But then $t \sqsubseteq y$, and so $t \sqsubseteq x \sqcap y$, and the 
 
 It is now time to provide some examples of continuous lattices.
 
-107
-
 **2.8 Proposition.** A finite lattice is a continuous lattice. $\square$
 
 **2.9 Proposition.** The Cartesian product of any number of continuous lattices is a continuous lattice with the induced topology agreeing with the product topology.
@@ -445,8 +401,6 @@ and
 $$
 y = \bigsqcup [y_i]^i : i \in I.
 $$
-
-108
 
 It follows that
 
@@ -507,8 +461,6 @@ $$
 
 in $D$. In this way we now know that $D$ is a complete lattice. We must
 
-109
-
 still show that $D$ is continuous.
 
 Suppose $y \in D$. In $D'$ we can write:
@@ -557,8 +509,6 @@ $$d' \sqsubseteq \sqcap f(x) : x \in X \cap U $$
 
 for some open $U \subseteq Y$ with $y \in U$. Thus
 
-110
-
 $$d' \sqsubseteq \bar{f}(y')$$
 
 for all $y' \in U$ by virtue of the definition of $\bar{f}$. Since $d \ll d'$, we have also
@@ -597,8 +547,6 @@ That makes $D$ a continuous lattice with the sets $ y \in D : x \ll y $ as a bas
 
 The retract approach to injective spaces should also be considered. The Cartesian powers $\mathbb{O}^I$ are very simple spaces; indeed, as lattices these are just the Boolean algebras of *all subsets* of $I$ (that is, isomorphic thereto). The topology has as a basis the
 
-111
-
 classes of sets containing given finite sets (the *weak topology*, cf. Nerode (1959)). A continuous function
 
 $$j : \mathcal{P}I \to \mathcal{P}I$$
@@ -635,8 +583,6 @@ $$f \sqsubseteq g \quad \text{iff} \quad f(x) \sqsubseteq g(x) \text{ for all } 
 
 where $f, g \in [X \to Y]$. $\square$
 
-112
-
 where $f, g \in [X \to Y]$. $\square$
 
 The first question, of course, is what kind of a partial ordering this is.
@@ -666,8 +612,6 @@ where $e$ ranges over $D$ and $e'$ over $D'$, and where the function $\overright
 $$\overrightarrow{e}[e, e'](x) = \begin{cases} e' & \text{if } e \ll x,  \bot & \text{if not,} \end{cases}$$
 
 for all $x \in D$. Call the function on the right $f'$. Calculate:
-
-113
 
 $$
 f'(x) = \bigsqcup \overrightarrow{e}[e, e'](x) : e' \ll f(e)
@@ -704,8 +648,6 @@ $$
 $$
 
 is continuous.
-
-114
 
 **Proof:** Here lambda is defined by:
 
@@ -748,8 +690,6 @@ $$
 
 What will be useful will be to return at this point to a discussion of the injective properties of continuous lattices. If one continuous lattice is a subspace of another it is of course a retract. This relationship between spaces can be given by a pair of continuous maps
 
-115
-
 $$i : D \to D' \quad \text{and} \quad j : D' \to D,$$
 
 where
@@ -790,8 +730,6 @@ Thus, in case our retraction is a projection, we have $\tilde{f} \sqsubseteq f'$
 
 $$i_n : D_n \to D'_n \quad \text{and} \quad j_n : D'_n \to D_n$$
 
-116
-
 for $n = 0,1$ make $D_n$ a retraction (projection) of $D'_n$. Then $[D_0 \rightarrow D_1]$ is also a retraction (projection) of $[D'_0 \rightarrow D'_1]$ by means of the pair of maps:
 
 $$\vec{i}(f) = i_1 \circ f \circ j_0 \text{ , and}$$
@@ -831,8 +769,6 @@ By the same argument we could show that $\bar{f}$ is the maximal solution of $\b
 $$\overline{g \circ e} \sqsubseteq \bar{f}.$$
 
 But $g \circ e = \overline{g \circ e} \circ e$, so by 3.8, $g \sqsubseteq \overline{g \circ e}$, and $\bar{f}$ is thus maximal.
-
-117
 
 In the case that the range spaces are being extended, the following lemma relating the extensions will be very useful when we consider inverse limits.
 
@@ -887,8 +823,6 @@ i(x) = (x, \bot)
 $$
 
 for $x \in D$.
-
-118
 
 **3.10 Proposition.** If the continuous lattice $D$ is a projection of the continuous lattice $D'$ via the pair of maps $i, j$; then for all $S \subseteq D$ and all $x, y \in D$ we have:
 
@@ -948,8 +882,6 @@ $$
 
 which completes the argument for equation (i).
 
-119
-
 Condition (ii) is obvious. For (iii) we argue as follows. Assume $x \ll y$. Since $D'$ is continuous we can write:
 
 $$i(y) = \bigsqcup  z' \in D' : z' \ll i(y) ,$$
@@ -993,8 +925,6 @@ holds for all $x$ with $i(x) \sqsubseteq \bigsqcup S'$. The desired result follo
 
 As a corollary of 3.10 we can easily see which *subspaces* of a continuous lattice $D'$ are projections of it. Such a subspace $D \subseteq D'$ must first be closed under $\bigsqcup$. That is, if $S \subseteq D$, then $\bigsqcup S \in D$ for
 
-120
-
 all $S$, where the lub is taken in the sense of $D'$. The identity map on $D$ will then satisfy (i) and (ii). But this is not enough, since we would not know that $D$ is a continuous lattice, nor whether (iii) holds. The following additional condition would be sufficient, if assumed for all $y \in D$:
 
 $$y = \bigsqcup x \in D : x \ll y,$$
@@ -1028,8 +958,6 @@ $$y = j(y) = \bigsqcup j(x') : x' \ll y.$$
 But each $j(x') \in D$, so $y = \bigsqcup x \in D : x \ll y$, as desired.
 
 The foregoing discussion suggests looking more closely at the space of all projections of a continuous lattice since they are so easily characterized.
-
-121
 
 **3.11 Definition.** Given a continuous lattice $D$, we let the space of projections be denoted by:
 
@@ -1069,8 +997,6 @@ Similarly, if $S$ is a directed set of $J_D$, then $D(\bigsqcup S)$ is the $\big
 
 $$\bigcup D(j) : j \in S.$$
 
-122
-
 These are not very deep facts, but their proofs were very much facilitated by the introduction of $J_D$ and the utilization of the lattice structure of $[D \to D]$. Along the same line we can define for $j, k \in J_D$ a function $(j \to k) \in [D \to D] \to [D \to D]$ by the equation
 
 $$(j \to k)(f) = k \circ f \circ j.$$
@@ -1096,8 +1022,6 @@ The pair $\mathrm{con}$, $\mathrm{min}$ are not the only pair for making $D$ a p
 $$\lambda x.\vec{e}[t,x] \quad \text{and} \quad \lambda f. f(t),$$
 
 where $x$ ranges over $D$, and $f$ over $[D \to D]$, and where $t$ is a fixed *isolated* element of $D$ (that is, $t \ll t$ holds). The pair $\mathrm{con}$ and $\mathrm{min}$ will result if we set $t = \bot$. (Note that the expression $\vec{e}[t,x]$, though continuous in $x$, is not continuous—or even monotonic—in the variable $t$.) A lattice may very well possess a large number of isolated
-
-123
 
 elements, whence a large number of projections. And furthermore this is the only way the function $j = \lambda f. f(t)$ can be a projection. For assume the existence of an inverse $i : D \to [D \to D]$ satisfying the proper conditions. Then it would be the case that
 
@@ -1134,8 +1058,6 @@ $$\mathrm{fix} : [D \to D] \to D$$
 $$f(\mathrm{fix}(f)) = \mathrm{fix}(f)$$
 
 and whenever $f(x) \sqsubseteq x$, then $\mathrm{fix}(f) \sqsubseteq x$.
-
-124
 
 and whenever $f(x) \sqsubseteq x$, then
 
@@ -1177,8 +1099,6 @@ where for each $n$
 
 $$f_n = j_n \circ f_{n+1}.$$
 
-125
-
 Because, we can define
 
 $$f_{\infty} : Y \to X_{\infty}$$
@@ -1208,8 +1128,6 @@ $$x \sqsubseteq y \quad \text{iff} \quad x_n \sqsubseteq y_n \text{ for all } n.
 $$i_{n\infty}(x) = \langle y_m \rangle_{m=0}^{\infty}$$
 
 where
-
-126
 
 $$
 y_m = \begin{cases}
@@ -1253,8 +1171,6 @@ $$
 
 and introduce the pairs $i_{n+1}, j_{n+1}$ making $D_{n+1}$ a projection of $D_{n+2}$ by the method of 3.7. Specifically we shall have for $x \in D_{n+1}$ and $x' \in D_{n+2}$:
 
-127
-
 $$
 i_{n+1}(x) = i_n \circ x \circ j_n,
 $$
@@ -1295,8 +1211,6 @@ $$
 
 In the converse order the calculation is only a bit more complicated. The idea is that since all the functions $f$ are continuous and since the elements $x$ are the limits of their approximations, then each $f$ is actually completely determined by its
 
-128
-
 In the converse order the calculation is only a bit more complicated. The idea is that since all the functions $f$ are continuous and since the elements $x$ are the limits of their approximations, then each $f$ is actually completely determined by its sequence of restrictions $j_{\infty n} \circ f \circ i_{n\infty} \in D_{n+1}$. This simple idea can be made more precise with the aid of a lemma about $D_\infty$, which allows us in certain cases to recognize projections from limits.
 
 **4.5 Lemma.** Suppose for each $n$ we have $u_{(n+1)} \in D_{n+1}$ and we let:
@@ -1334,8 +1248,6 @@ and the proof that $i_\infty$ and $j_\infty$ are inverse to one another is compl
 
 We can explain the idea of this proof in other terms using a suggestion made to me by F. W. Lawvere. Consider the category of
 
-129
-
 We can explain the idea of this proof in other terms using a suggestion made to me by F. W. Lawvere. Consider the category of continuous lattices and projections. In that category our $D_\infty$ is, as we have remarked, both a *direct* and an *inverse* limit. Note too that with regard to projections $[D \to D']$ is a *functor*, for we can also define $[j \to j']$ when the maps are projections. In this language our particular inverse system is defined by the recursion:
 
 $$D_{n+1} = [D_n \to D_n] \quad \text{and} \quad j_{n+1} = [j_n \to j_n],$$
@@ -1369,8 +1281,6 @@ Since we have shown $[D_\infty \to D_\infty]$ to be homeomorphic to $D_\infty$, 
 
 $$x(y) = \bigsqcup_{n=0}^{\infty} i_{n\infty}(x_{n+1}(y_n)).$$
 
-130
-
 Similarly we can define $\lambda$-abstraction on continuous expressions:
 
 $$\lambda x.[\ldots x \ldots] = j_\infty(\lambda x : D_\infty.[\ldots x \ldots]),$$
@@ -1398,8 +1308,6 @@ Suppose we were to start with the least, non-trivial lattice $0 = \top, \bot$ fo
 Hence our construction gives two limit spaces $D_\infty$ and $D'*\infty$. Are they the same? No, they are not. It can be shown, for example, that the $\top$ of $D*\infty$ is *isolated* (that is, $\top \ll \top$), while the same is not true of $D'*\infty$. More interestingly, David Park has proved that the fixed-point operator fix mentioned in 3.14 has algebraic properties in $D*\infty$ quite different from those in $D'*\infty$. By algebraic here, we of course have reference to the functional algebra embodied in the application operation $x(y)$ defined on these limit spaces. Note, by the way, that in view of our isomorphism result we can regard fix (or any other similar continuous function for that matter) as an element of $D*\infty$. This makes the "algebra" of $D_\infty$ quite a rich field for study.
 
 The reader will have surely remarked that by virtue of 1.5, every $T_0$-space $X$ whatsoever can be embedded as a subspace in a $D_\infty$. Besides this all the continuous functions on $X$ (oh, into $D_\infty$, say) can be extended to $D_\infty$; whence they can be regarded as *elements* of $D_\infty$. Thus we have been able to embed not only the topology of $X$ into $D_\infty$ but also all of the continuous function theory over $X$. So far this is only a "logical" construction. For more interesting "mathematical" results we shall have to investigate whether any useful theorems about the usual function spaces $[X \to X]$ can be obtained with the aid of $D_\infty$. This method can easily be employed for real- or complex-valued continuous functions, though it seems more oriented toward pointwise convergence than anything else. Still, there seems to be a chance it might be useful—especially if one wished to consider continuous *operators* on function spaces.
-
-131
 
 The idea of forming the limit space can also be applied to *other* functors besides $[D \to D]$. Thus instead of solving the “equation”
 
@@ -1435,8 +1343,6 @@ $$(j \times k)\ ,\ (j + k)\ ,\ \text{and}\ (j \to k)$$
 
 on the projections obtaining again elements of $\mathcal{J}_V$. The projections so obtained correspond to the indicated constructions of subspaces, of course. (Indeed, if we had the time and space, we could show that $\mathcal{J}_V$ becomes a very interesting category). There will be a particular
 
-132
-
 projection $t$ corresponding to $T$, and reason for doing all this is to show that the existence of subspaces of $V$ can now be established by solving equations in $\mathcal{J}_V$. For example, by the fixed-point construction we could find a $j \in \mathcal{J}_V$ such that
 
 $$j = t + (t \times j) + ((j \times j) \to j).$$
@@ -1455,8 +1361,6 @@ These sets are easily proved to be open in any $T_0$-topology which induces the 
 
 $$x \in D : y \sqsubseteq x.$$
 
-135
-
 Such sets will give a base for a $T_0$-topology that is the maximal topology inducing the given partial ordering. Clearly they need not be open in the induced lattice topology; in particular, they may well fail to satisfy conditions (ii) on open sets. To make the remark in question correct, we must thus suppose that the given $T_0$-topology is *contained within* the induced lattice topology. The equation given in the paragraph indicated will then be a sufficient condition for the two topologies to be identical.
 
 The remark was employed in the proof of three different propositions: 2.9, 2.10, and 3.3. In the case of 2.9 one must verify that the product topology is contained within the lattice topology. This need only be done for the basis for the product topology, and for such basic open sets the result needed is obvious. In the case of proposition 2.10 the question concerns a relationship between the topologies of a space and a subspace; the spaces in question are also lattices. Note in passing that a lub in the subspace is generally *larger* in the partial ordering than the corresponding lub relative to the whole space. This puts the inequalities in the wrong direction, and so it is not immediate that a relativized open set for the subspace is open in the lattice topology of the subspace. However, in this case we can appeal to the continuous retraction. Recall that the relativized open sets of the kind that we used in the proof of 2.10 are of the form:
@@ -1470,8 +1374,6 @@ $$\bigsqcup S \in U \ .$$
 Referring back to the proof of 2.10 we know that ($S' = S \subseteq D$, but $\bigsqcup S'$ is the join computed in the ambient lattice $D'$)
 
 $$j(\bigsqcup S') = \bigsqcup S \ ,$$
-
-136
 
 which means that
 

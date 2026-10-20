@@ -10,10 +10,6 @@ verification_note: >-
 ---
 
 # Transcription (LLM vision OCR)
-
-
-<!-- page 1 -->
-
 Oxford University Computing Laboratory  
 OXFORD OX1 3QD
 
@@ -29,9 +25,6 @@ Oxford University Computing Laboratory,
 Programming Research Group,  
 45, Banbury Road,  
 OXFORD, OX2 6PE
-
-<!-- page 2 -->
-
 © 1981 by Dana S. Scott  
 University of Oxford  
 Mathematical Institute  
@@ -43,11 +36,6 @@ Michaelmas Term 1980
 <u>Preliminary Version</u>  
 <u>Completed November 1980</u>  
 <u>Revised May 1981</u>
-
-<!-- page 3 -->
-
-<!-- page i -->
-
 # TABLE OF CONTENTS
 
 INTRODUCTION (ii)
@@ -67,9 +55,6 @@ LECTURE VI : *Introduction to domain equations* 89
 LECTURE VII : *Computability in effectively given domains* 113
 
 LECTURE VIII : *Retracts of the universal domain* 133
-
-<!-- page 4 -->
-
 # INTRODUCTION
 
 These notes were written in conjunction with the lectures delivered by me for the Semantics of Programming Languages sequence during Michaelmas Term 1980 at Oxford. I started writing around the first week of October and finished at the end of November. The purpose of the course was to provide the foundations needed for the method of denotational semantics; in particular, I wanted to make the connections with recursive function theory more definite and to show explicit, effectively given solutions to domain equations. Roughly, these chapters cover the first half of the book of J.E. Stoy. I plan soon to expand the notes into a book by adding additional chapters on other theoretical topics that time did not permit me to cover in one eight-week term.
@@ -77,17 +62,11 @@ These notes were written in conjunction with the lectures delivered by me for th
 When I started writing Lecture I in October, I did not know what the later lectures would contain: I could see no further ahead than part of Lecture III in the beginning. The lectures had to be typed in advance of the class meetings, however, so there was at the time of composition no opportunity for second thoughts of any major proportions: I had to write the text straight through. As a consequence there are many remarks I would like to transpose and many additional points of explanation I see are needed; further worked examples and easier exercises are also required. During the spring, after receiving many helpful comments, I was able to introduce a few changes in the text and make some necessary corrections. However, a complete retyping was impossible. Nevertheless, this preliminary version of the book seems to provide a quite detailed introduction and is sufficient to exhibit the scope of the approach and several applications.
 
 The idea of using neighbourhood systems to give set-theoretical representations of domains had been in the back of
-
-<!-- page 5 -->
-
 my mind for some time in connection with specific examples. But the thought that a systematic development along these lines might be easier to follow than the more abstract lattice-theoretic and topological approach used by myself and others in many publications only came to me during the IFIP Working Group 2.2 meeting in Copenhagen in mid-June 1980. I gave a brief public presentation at ICALP '80 in Holland in mid-July.
 
 One large mistake I have made is to de-emphasize partial orderings too much, since at the right point the concepts and the language are in fact helpful. The basic plan is that, instead of axiomatizing the theory using partial orderings, the necessary facts come out as *theorems*. For a neighbourhood system $\mathcal{D}$, the set of elements $|\mathcal{D}|$, which consists of filters, is naturally partially ordered. And approximable mappings naturally *preserve* the ordering. And so on. The advantage I see from the point of view of exposition is that properties can be brought out one at a time instead of having to put them down all in advance of any experience with the ideas. My own feeling after writing these chapters is that the plan has worked out far better than I could have dared to hope. I was especially glad that I could generate so many *exercises*, and I hope eventually to provide many more. One interesting place at which partial orderings prove their usefulness is in visualizing domains. As it stands now the text does not contain enough in the way of pictures. This will have to be remedied in a future version. Undoubtedly to include enough explanation, several of the lectures will have to be sub-divided into separate chapters.
 
 One major improvement is needed: to bring Exercise 2.22 into the main text. I did not know in advance how often I would need this result for giving (easy) set-theoretical characterizations of domains and structure on them. This will be an easy repair, but it will cause quite a bit of rewriting. Clearly
-
-<!-- page 6 -->
-
 much more has to be said about the interplay between elements and neighbourhoods. In particular, the character of the elements of a domain, like the power set of a set, has not been sufficiently illustrated, and quite a bit of expansion on this topic is also needed.
 
 Finally I have to explain that I had no time whatsoever to put in references and a bibliography. The ideas I have used have occurred to many, many people who have worked on domains, and I do not wish to claim originality. I *am* claiming some advantage to my style of representation, but I fully realize that a published version will have to have detailed historical references and notes at the ends of the lectures. Needless to say I should very much appreciate any advice or criticism from readers of this preliminary version.
@@ -98,9 +77,6 @@ Dana S. Scott
 Merton College  
 Oxford  
 May 1981
-
-<!-- page 7 -->
-
 # LECTURE I
 
 <u>DOMAINS GIVEN BY NEIGHBOURHOODS</u>
@@ -110,9 +86,6 @@ Often an object (or element) can be determined by a selection of its properties.
 Generally, the collection of these neighbourhoods is, for one reason or another, somewhat restricted; that is, a completely arbitrary property may not be allowable as a neighbourhood. Therefore, the elements determined by selections of neighbourhoods may not be as separable into the discrete objects common to the classical view of set theory. This is particularly true in working with infinite objects: it is hard to specify an infinite element completely. The theory of elements to be studied here, then, is going to permit *partial elements* as well as *total elements*, and each neighbourhood system will define a *domain* of such elements.
 
 Since we may wish to use a neighbourhood system to introduce elements not previously investigated, the neighbourhoods do not have to be regarded as sets of the as-yet-to-be-defined objects. We can take a non-empty set $\Delta$ of *tokens* (or "traces") that function as "parts" of elements — or even as parts of "descriptions" of elements. Then a neighbourhood is a subset $X \subseteq \Delta$ containing all those tokens that provide sufficient information when taken together to "approximate" a possible element up to a certain "degree". All these words in inverted commas are vague, and in any case we shall have at the start only a *qualitative* theory of "degree of approximation". A token should be considered as a very "rough" representative of an element, and a neighbourhood should be regarded as "smoothing out" irrelevant details by grouping together *all* those representatives sharing some common feature. One neighbourhood, then,
-
-<!-- page 8 -->
-
 may be only a very incomplete specification of an (ideal) element; fuller specifications can be secured by taking "convergent" sequences of neighbourhoods. Even then convergence need not be to a total element.
 
 Let us call the family of allowed neighbourhoods $\mathcal{D}$; it is a family of subsets of the set $\Delta$. An obvious first question is: when are two neighbourhoods $X$, $Y \in \mathcal{D}$ neighbourhoods of the "same" element? This question of course generalizes to a (finite) sequence of neighbourhoods. This property we will call the *consistency* of the sequence of neighbourhoods. By definition this will mean that the given neighbourhoods all contain a common neighbourhood in $\mathcal{D}$. That is, for $X$, $Y$ to be consistent, there must be a $Z \in \mathcal{D}$ with $Z \subseteq X$ and $Z \subseteq Y$. This is not a very informative definition, but it has something of the flavour of a notion of consistency insofar as it can be expressed within $\mathcal{D}$. When consistency holds it seems reasonable enough at first glance to say that the intersection $X \cap Y$ is also an approximation to this common element. If this is reasonable, then $X \cap Y$ should also be regarded as a neighbourhood. This assumption has many consequences, but as a preliminary theory of approximation we will find it quite workable with many natural instances. Taking intersections just means taking more and more properties of the element and putting them together "conjunctively". It is something we do all the time. We therefore accept the idea for the present for giving our first principal definition.
@@ -122,9 +95,6 @@ DEFINITION 1.1. A family $\mathcal{D}$ of subsets of a given set $\Delta$ is cal
 (i) $\Delta \in \mathcal{D}$;
 
 (ii) whenever $X$, $Y$, $Z \in \mathcal{D}$ and $Z \subseteq X \cap Y$, then $X \cap Y \in \mathcal{D}$. $\square$
-
-<!-- page 9 -->
-
 We remark that by convention $\Delta$ corresponds to the intersection of an empty sequence of neighbourhoods; in particular,
 
 $$
@@ -169,9 +139,6 @@ In pictures we have:
 │      │           ╰───╯       │        │
 │      ╰──────────────────────╯        │
 ╰──────────────────────────────────────╯
-
-<!-- page 10 -->
-
 Instead of stepping to the total element (here represented by 2) in one big step, the passage is divided into two steps. (Note 0 and 1 cannot be taken as representing total elements.) This example is not very interesting because the direction of approximation is unique. We need an example with some choice. $\square$
 
 EXAMPLE 1.4. Let $\Delta = \{\Lambda, 0, 1, 00, 01, 10, 11\}$ and let $\mathcal{D} = \{\Delta, \{0, 00, 01\}, \{1, 10, 11\}, \{00\}, \{01\}, \{10\}, \{11\}\}$.
@@ -200,9 +167,6 @@ The tokens are finite sequences of 0's and 1's (up to length 2) with $\Lambda$ t
 It should be noted that, in these three examples, the reason that we have a neighbourhood system is a simple consequence of a
 
 **Resolutions from the image:** “is unique” (not “in unique”); $\mathcal{D}$ begins with $\Delta$, not $\Lambda$; Pass 1’s nested-box diagram matches the neighborhood boundaries in the scan; em dashes around “in the picture” as in the source.
-
-<!-- page 11 -->
-
 very special circumstance: in these systems two neighbourhoods are either disjoint or one is included in the other. This arrangement of neighbourhoods is by no means necessary.
 
 EXAMPLE 1.5. Let $\Delta = \{0, 1, 2, 3\}$ and let $\mathcal{D}$ be the family of all non-empty subsets of $\Delta$.
@@ -218,9 +182,6 @@ $$
 Trivially, any finite initial segment of this sequence is consistent, and so each $X_n$ is a partial approximation to the "limit". If $\mathcal{D}$ were always to be taken as *finite*, of course, there would be no point in discussing limits since any such sequence would eventually be constant. The elements in the finite case would therefore be completely represented by neighbourhoods with the *minimal* neighbourhoods corresponding to the total elements. But there are many reasons to go beyond the finite (though perhaps not too far beyond).
 
 Suppose $\langle Y_n \rangle_{n=0}^\infty$ is another "convergent" sequence with
-
-<!-- page 12 -->
-
 $Y_{n+1} \subseteq Y_n$ for all indices: when do the two sequences of neighbourhoods determine the *same limit*? The two sequences can surely be different; for example, $\langle Y_n \rangle_{n=0}^\infty$ could be a subsequence of $\langle X_n \rangle_{n=0}^\infty$, say, $Y_n = X_{2n}$. Still we would want to say that the same limit is obtained. Without being given any further structure on the neighbourhoods, a simple answer is just to say that each sequence goes *equally deep* as the other:
 
 for each $m$ there is an $n$ with $X_n \subseteq Y_m$, and
@@ -246,9 +207,6 @@ DEFINITION 1.6. The (ideal) elements of a neighbourhood system $\mathcal{D}$ are
 (iii) whenever $X \in x$ and $X \subseteq Y \in \mathcal{D}$, then $Y \in x$.
 
 The *domain* of all such elements is written as $|\mathcal{D}|$. $\square$
-
-<!-- page 13 -->
-
 The idea of 1.6 is a well-known mathematical device: the families $x$ satisfying (i)–(iii) are usually called *filters*. Most frequently the emphasis is put on the *maximal* filters, and these would be our *total* elements; however, in general, the proof that maximal filters exist is non-constructive, so for our purposes it is better not to neglect the partial filters. When maximal filters can be found, well and good, but we do not have to insist on them. Note that the generality of 1.6 is achieved by not requiring that there is a sequence of neighbourhoods that "generates" the filter $x$. (See Exercise 1.22.)
 
 We have often said that neighbourhoods determine partial elements by themselves; we now make this remark precise.
@@ -276,9 +234,6 @@ $$
 That is, every element is a certain type of "limit" of finite elements. (This statement is made more precise in Exercise 1.21)
 
 We note that we have now had several occasions to use inclusion relationships between elements; this is an important relationship, and we give it a special name.
-
-<!-- page 14 -->
-
 DEFINITION 1.8. For $x, y \in |\mathcal{D}|$, we say that $x$ *approximates* $y$ iff $x \subseteq y$. The element that approximates all others, $\{\Delta\}$, is called $\perp$ (read: *bottom*); it is the "least defined" element, or the "most partial" element. Elements maximal with respect to the approximation relation are called *total elements*. $\square$
 
 EXAMPLES 1.2 – 1.5 (Revisited). The examples as given were all finite, so any explicitly given filter $x$ is principal, the element is finite, the minimal $X \in x$ tells us all we need to know. In such simple situations there is essentially no difference between elements and neighbourhoods — except for the reversal of the order as noted. This (necessary) reversal should not, however, become a matter of confusion: the smaller the neighbourhood has become, the more it has "converged", and so the better defined the element has become. In the approximation relation the "poorer" elements are placed below the "better" with the total up at the top. This will become clearer in discussing "infinite" elements.
@@ -306,9 +261,6 @@ What do we find in $|B|$? Of course $\perp = \{\Delta\} \in |B|$. For any $x \in
 $$
 \sigma x = \{Y \mid \sigma X \subseteq Y \text{ some } X \in x\}.
 $$
-
-<!-- page 15 -->
-
 Again there is an exercise here to show $\sigma x \in |B|$. In particular $\sigma\perp \in |B|$ for all $\sigma \in \Sigma^*$, and these are just the finite elements. The minimal element of $\sigma\perp$ is $\sigma\Delta$. Note that $\sigma_0\perp \subseteq \sigma_1\perp$ if and only if $\sigma_0$ is an *initial segment* of the sequence $\sigma_1$.
 
 If now $x \in |B|$ is any explicitly given element (that is, if we know for any $X \in B$ whether or not $X \in x$), we have but to work out from these definitions that
@@ -324,9 +276,6 @@ The generalization of 1.5 to the infinite case where $\Delta = \mathbf{N} = \{0,
 Many constructions (choices of $\mathcal{D}$) lead to the "same" domain; "sameness" is an important notion and it is to be defined in terms of "isomorphism", which in turn is to be defined in terms of approximation preserving correspondences.
 
 DEFINITION 1.9. Two neighbourhood systems $\mathcal{D}_0$ and $\mathcal{D}_1$ determine *isomorphic domains* iff there is a one-one correspondence between $|\mathcal{D}_0|$ and $|\mathcal{D}_1|$ which preserves inclusion between the elements of the domains. In symbols we write $\mathcal{D}_0 \cong \mathcal{D}_1$. $\square$
-
-<!-- page 16 -->
-
 It is certain that the property of 1.9 is necessary, but it may not be so clear that it is sufficient. We shall in fact prove in the next lecture that an isomorphism between domains always maps finite elements to finite elements, so it always results from a one-one inclusion-preserving correspondence between neighbourhoods. This is surely as strong as could be hoped. This general result is not needed to see that particular domains are isomorphic.
 
 In some of the examples tokens corresponded to total elements and in some to partial elements; it is not difficult to see (ex post facto) that every domain can be presented with tokens exactly corresponding to partial elements.
@@ -362,9 +311,6 @@ $$
 $$
 
 are in a one-one, inclusion-preserving correspondence. Thus, we can induce the desired one-one correspondence between the elements of the two systems. $\square$
-
-<!-- page 17 -->
-
 The import of 1.10 is that the original tokens in $\Delta$ can be replaced by the elements of $|\mathcal{D}|$. This process replaces the neighbourhood $X \subseteq \Delta$ by the subset $[X] \subseteq |\mathcal{D}|$. As the passage is inclusion preserving, the domain has not really changed, only its presentation. Though of some theoretical charm, the theorem is not of much use since we still have to get $\mathcal{D}$ from somewhere. It does emphasize, though, that the rôle of the tokens is simply to keep the inclusions (and intersections) of neighbourhoods sorted out. It is *not* always true that the tokens can be identified with the total elements.
 
 The last theorem in this lecture is a result on *closure properties* of a domain with respect to set-theoretical operations which have interesting meanings with respect to approximation.
@@ -382,9 +328,6 @@ $$
 *Proof:* The conditions of 1.6 have to be checked. For the case of intersection, all of 1.6(i)–(iii) are quite obvious. For the case of union, only 1.6(ii) gives pause and it requires the proviso. If $X$ and $Y$ belong to the union, then $X \in x_n$, say, and $Y \in x_m$. But, either $n < m$ or $m < n$, and if $k = \max(n, m)$, then $X, Y \in x_k$. Since $x_k \in |\mathcal{D}|$, we have $X \cap Y \in x_k$; thus, $X \cap Y$ belongs to the union. This proves (ii). $\square$
 
 In words, the intersection is the best element that is at the same time an approximation to all of the elements $x_n$; the intersection is exactly what is common to all the given elements. The union on the other hand is just what the (increas-
-
-<!-- page 18 -->
-
 The union on the other hand is just what the (increasing sequence of the) $x_n$ approximates; the union combines contributions from all the $x_n$ into a "better" element -- but no more than that.
 
 In thinking about domains a rough diagram of the partial-ordering relation $\subseteq$ between elements is often helpful. The picture of 1.4 is an example where the nodes represent the elements. Any finite tree growing up from a root node would also be an example. Indeed, any finite partially ordered set with least element would be an example. (Here no distinction between tokens and elements is necessary.) A lattice diagram is also illustrated.
@@ -436,9 +379,6 @@ In thinking about domains a rough diagram of the partial-ordering relation $\sub
 ```
 
 The root node is the element $\perp$ of $|\mathcal{D}|$; there need be no top node $\top$. *Approximation* is represented by a passage from a lower node to a higher node along the rising lines. The system $\mathcal{D}$ of neighbourhoods is the collection of sets each of which is all
-
-<!-- page 19 -->
-
 the nodes above a given node. For infinite examples, however, care must be given to introduce limit nodes. The first few exercises should be provided with pictures to illustrate the structure.
 
 ## EXERCISES
@@ -456,9 +396,6 @@ for $n \in \mathbb{N}$. Verify that this is a neighbourhood system. What are the
 **EXERCISE 1.14.** Let $\Delta = \mathbb{N}$ and let $\mathcal{V}$ be the family of finite non-empty subsets of $\Delta$ plus the set $\Delta$. Show that this is a neighbourhood system. What are the total elements? What are the finite elements? Draw a picture.
 
 **EXERCISE 1.15.** Construct non-isomorphic infinite domains where all elements are finite but where there are no infinite chains $\langle x_n \rangle_{n=0}^{\infty}$ of elements with $x_n \sqsubseteq x_{n+1}$ but $x_n \neq x_{n+1}$ for all $n$.
-
-<!-- page 20 -->
-
 **EXERCISE 1.16.** Let $\Delta = \mathbf{N}$ and let $\mathcal{D}$ be the family of *cofinite* subsets of $\mathbf{N}$. Show that $|\mathcal{D}|$ is isomorphic to the partially ordered set of *all* subsets of $\mathbf{N}$ under inclusion. Construct some other neighbourhood systems where $\mathcal{D}$ is closed under finite intersection. What happens to the total elements in such systems?
 
 **EXERCISE 1.17.** Let $\Delta = \mathbf{R}$ be the real line. Let $\mathcal{D}$ be the set of non-empty open intervals with rational end points plus the set $\Delta$. Show that this is a neighbourhood system. For any real $t \in \mathbf{R}$, show that $\{ X \in \mathcal{D} \mid t \in X \}$ is a filter. Is it always total? What are the total elements of $|\mathcal{D}|$? (Hint: When $t$ is rational consider all intervals with $t$ as a right-hand end point.)
@@ -466,9 +403,6 @@ for $n \in \mathbb{N}$. Verify that this is a neighbourhood system. What are the
 **EXERCISE 1.18.** Let $\mathcal{D}$ be a neighbourhood system. Call a subset $C \subseteq \mathcal{D}$ *consistent* iff every finite subset of $C$ is consistent in $\mathcal{D}$. Give an example where $C$ is a subset with more than two elements, every pair of neighbourhoods in $C$ is consistent, but $C$ is *not* consistent. Show that if $C$ is consistent, then there is a *least* filter $x \in |\mathcal{D}|$ with $C \subseteq x$. Show generally that the *intersection* of any non-empty collection of filters is again a filter.
 
 **EXERCISE 1.19.** Define a *positive neighbourhood system* to be a family $\mathcal{D}$ where (ii) of 1.1 is replaced by **(ii')** whenever $X, Y \in \mathcal{D}$, then $X \cap Y \neq \emptyset$ iff $X \cap Y \in \mathcal{D}$. Prove that a positive neighbourhood system is indeed a neighbourhood system in the sense of the earlier definition. Give an example of a neighbourhood system that is *not* positive. (Hint: (suggested by C.A.R. Hoare). Let $\Delta = \mathbf{N} \times \mathbf{N}$, in the plane. Let $\mathcal{D}$ be the family of subsets $X \subseteq \mathbf{N} \times \mathbf{N}$ where all but a finite number of places the *vertical* sections of $X$ are the whole of $\mathbf{N}$ but at the other places the sections are finite and nonempty. Smaller examples are of course possible.)
-
-<!-- page 21 -->
-
 **EXERCISE 1.20.** Let $\mathcal{D}$ be any neighbourhood system over a set $\Delta$. Let $\Delta' = \mathcal{D}$ and define
 
 $$
@@ -498,9 +432,6 @@ $$
 Prove also that the inclusion relation on $|\mathcal{D}|$ can be defined topologically as:
 
 (iii) $x \sqsubseteq y$ iff for all open $\mathcal{U} \subseteq |\mathcal{D}|$, if $x \in \mathcal{U}$ then $y \in \mathcal{U}$.
-
-<!-- page 22 -->
-
 Is $|D|$ ever a Hausdorff space?
 
 Show that if $(x_n)_{n=0}^{\infty}$ is a sequence of elements of $|D|$ with $x_n \subseteq x_{n+1}$ for all $n$, then
@@ -530,9 +461,6 @@ $$
 Show that $\{Y_0, Y_1, \ldots, Y_n, \ldots\}$ is a total element of $|D|$. (Hint: Show first that $Y_0, Y_1, \ldots, Y_{n-1}$ is consistent for all $n$.) In such a system show that all filters can be determined by sequences.
 
 **EXERCISE 1.24.** (For set theorists). Prove, using the Axiom of Choice, or some equivalent principle, that in every domain a partial element can always be extended to a total element. Is this assertion equivalent to the Axiom of Choice? (Hint: Remember to prove that the union of every (transfinite) chain of filters is again a filter.)
-
-<!-- page 23 -->
-
 **EXERCISE 1.25.** (For set theorists). Let $\Delta$ be any well-ordered set (ordinal). (Even small ordinals like $\omega \cdot 3$ or $\omega^5$ are interesting.) Let $\mathcal{D}$ be the family of non-empty *final* segments of $\Delta$. What is $|\mathcal{D}|$? Are all elements finite? Is every approximation to a finite element finite?
 
 **EXERCISE 1.26.** (For algebraists). Let $A$ be a commutative ring with unit. Let $\Delta$ be the set of finite subsets $F \subseteq A$. Define
@@ -550,9 +478,6 @@ $$
 $$
 
 Prove that if $X$ is bounded, then $\bigsqcup X$ is the *least upper bound* for $X$ in $|\mathcal{D}|$. Prove also: if $U, V \in \mathcal{D}$ are neighbourhoods, then $\{U, V\}$ is consistent in $\mathcal{D}$ iff $\{\uparrow U, \uparrow V\}$ is bounded in $|\mathcal{D}|$. (That is, boundedness is for elements what consistency is for neighbourhoods.) Prove finally with the aid of 1.18 that $X \subseteq |\mathcal{D}|$ is bounded iff every finite subset of $X$ is bounded.
-
-<!-- page 24 -->
-
 # LECTURE II
 
 <u>MAPPINGS BETWEEN DOMAINS</u>
@@ -560,9 +485,6 @@ Prove that if $X$ is bounded, then $\bigsqcup X$ is the *least upper bound* for 
 The elements of a domain are regarded as being specified by approximations: the neighbourhoods. With the idea of approximation as the dominant notion, therefore, it is natural to look for a concept of mapping (transformation of domains) that in some suitable sense preserves the spirit of the approximations. In a 'theory of computability,' where the (finite) approximations to the elements are all we can ever know at one time, the only mappings that can be computed are those that proceed by approximation, somehow passing from the neighbourhoods of one domain over to the neighbourhoods of the other.
 
 Suppose $X \in \mathcal{D}_0$ is given - it is an approximation to certain elements of $|\mathcal{D}_0|$. (More precisely $\uparrow X$ is the approximation in the domain, but it is easier to speak of the neighbourhood $X$.) What can be said about the approximations of the images of these elements under the mapping we will call $f$? If $X$ is not a very sharp approximation, then not very much can be said about the image in the other domain $|\mathcal{D}_1|$. Trivially, of course, we can say that $\Delta_1$ is an approximation - because it approximates everything in its domain. Suppose, however, that we could say more. Suppose we could say that both $Y$ and $Y'$ approximate the image of $X$. If the mapping $f$ is coherent, then it is reasonable to suppose that such a statement would imply that $Y$ and $Y'$ are *consistent* in $\mathcal{D}_1$. But if this is so, then since the two neighbourhoods are meant to cluster around the same images, we can feel some confidence in saying that $Y \cap Y'$ approximates these images. In other words to specify $f$ we do not supply a unique image of $X$, but we say which of the $Y \in \mathcal{D}_1$ approximate the (ideal) image. To make this idea work a *monotonicity condition* is also needed since we are trying to express the idea that "if we give at least $X$ as an approximate input to $f$, then we can expect at least $Y$ as output." Thus,
-
-<!-- page 25 -->
-
 a mapping is taken as a kind of relation between neighbourhoods.
 
 **DEFINITION 2.1.** An *approximable mapping* $f : D_0 \to D_1$ between domains is a binary relation $f \subseteq D_0 \times D_1$ between neighbourhoods such that
@@ -588,9 +510,6 @@ One indication that the conditions of 2.1 are sufficient for a definition is tha
 (i) $f(x) = \{ Y \in D_1 \mid \exists X \in x.\ X f Y \}$
 
 for all $x \in |D_0|$. Conversely, this function uniquely determines
-
-<!-- page 26 -->
-
 the original relation by the equivalence:
 
 (ii) $X f Y$ iff $Y \in f(\uparrow X)$
@@ -614,9 +533,6 @@ Note that the right-hand side of (ii) can be written:
 $$\uparrow Y \subseteq f(\uparrow X),$$
 
 which can be read as saying that the partial element determined by the neighbourhood $Y$ approximates the function value at the element determined by $X$. This precise relationship of course fits the informal discussion of mapping given earlier. Indeed whenever $x \in [X]$ and $X f Y$ hold, then $f(x) \in [Y]$ always follows, which is another way to construe the mapping character of $f$. Some examples of mappings are now called for.
-
-<!-- page 27 -->
-
 **EXAMPLE 2.3.** Let $T$ be the neighbourhood system of the two-token domain of Example 1.2. To avoid confusion with some other domains, we will call the two total elements of $|T|$ respectively true and false. There is only one other finite element here, namely $\perp = \text{undefined}$. We often use these elements as indicators of results: true indicates a positive outcome; false, a negative outcome; and $\perp$ indicates that there is not enough information to decide the outcome totally.
 
 Let $B$ be the system for the binary tree as in the last chapter. What we wish to define is an approximable mapping $f : B \to T$. The intuitive idea of the mapping we have in mind is that the binary sequence is being read from left to right, and we are counting the number of 0's seen before the first 1 is encountered. We then test the parity of this count; if it is even, the output is true; if not, false. Using a suggestive informal notation with three dots, some results of the function that does the counting and testing can be written as:
@@ -657,9 +573,6 @@ X f Y \text{ iff } Y \in \perp \text{ or } X \sqsubseteq 0^n 1 \Delta \text{ for
 $$
 
 It should be checked that 2.1(i)–(ii) are satisfied. $\square$
-
-<!-- page 28 -->
-
 **EXAMPLE 2.4.** Let us briefly describe an approximable mapping $g : B \to B$. Informally, $g$ can be said to "read a sequence from left to right and eliminate the first consecutive run of 1's while copying all the other digits as read." We will have
 
 $$
@@ -688,9 +601,6 @@ If $f : D_0 \to D_1$ and $g : D_1 \to D_2$ are given, then the *composition* $g 
 (ii) $X\ g \circ f\ Z$ iff $\exists Y \in D_1.\ X\ f\ Y$ and $Y\ g\ Z$.
 
 *Proof:* (We may use MacLane [1971] as the standard reference on category theory, but we require hardly more than the basic definitions at this stage.) To check that we have a category, we need to know that the identity and composition maps really are maps in the category and that certain identity and associative laws hold. Now it is obvious that $I_D$ satisfies 2.1 (i)-(iii). Moreover if $f : D_0 \to D_1$, all we have to prove is:
-
-<!-- page 29 -->
-
 $$
 f \circ I_{D_0} = I_{D_1} \circ f = f
 $$
@@ -725,9 +635,6 @@ $$
 So, as relations, $h \circ (g \circ f) = (h \circ g) \circ f$. $\square$
 
 It may seem as though we have, in the definition of composition, written things backwards. But the reason is that when mappings are taken as elementwise functions, then the order is preserved in expressions involving the usual function value notation. We have, for example:
-
-<!-- page 30 -->
-
 **PROPOSITION 2.6.** Given $f : D_0 \to D_1$ and $g : D_1 \to D_2$, the following equations hold:
 
 (i) $I_{D_0}(x) = x$, and
@@ -749,9 +656,6 @@ The first part is easy; indeed, there is a general result that monotone function
 $$
 f(x) = \{ Y \in D_1 \mid \exists X \in x.\ Y \in f(\uparrow X) \}.
 $$
-
-<!-- page 31 -->
-
 Consider the right-hand side of this equation: it is a filter. (This either can be proved directly or Exercise 2.11 can be used.) Because $f$ is an onto-function, we can call the right-hand side $f(x')$ for some $x' \in |D_0|$. But since $X \in x$ implies $\uparrow X \subseteq x$ and $f(\uparrow X) \subseteq f(x)$, the right-hand side is included in the left-hand side. In other words $f(x') \subseteq f(x)$. But, since $f$ is an isomorphism, $x' \subseteq x$ follows.
 
 In the other direction, if $X \in x$, then $f(\uparrow X) \subseteq f(x')$ holds by definition, so $\uparrow X \subseteq x'$. This implies $X \in x'$; and, as $X$ is arbitrary, $x \subseteq x'$. So $x = x'$, and $f(x) = f(x')$ as desired.
@@ -767,9 +671,6 @@ Because $Y' \subseteq Y$ always implies $y_{Y'} \subseteq y_Y$ and each $y_Y \in
 ## EXERCISES
 
 **EXERCISE 2.8.** With reference to the proof of 2.2 show that an approximable mapping is uniquely determined by its elementwise effect on finite elements. Moreover any arbitrary monotone function on finite elements of $|D_0|$ with values in $|D_1|$ comes from an approximable $f : D_0 \to D_1$.
-
-<!-- page 32 -->
-
 **EXERCISE 2.9.** Prove that if $f : D_0 \to D_1$ is an approximable mapping, then the elementwise mapping $f : |D_0| \to |D_1|$ satisfies the equation
 
 $$
@@ -805,9 +706,6 @@ f(\bigcup \{ a_i \mid i \in I \}) = \bigcup \{ f(a_i) \mid i \in I \};
 $$
 
 that is, <u>approximable mappings always preserve directed unions</u>. If an elementwise function preserves directed unions, must it come from an approximable mapping? (Hint: Invoke 2.9.)
-
-<!-- page 33 -->
-
 **EXERCISE 2.12.** Suppose $(I, \le)$ is a directed, partially ordered set and $f_i : D_0 \to D_1$ is a family of approximable mappings indexed by $i \in I$, where we assume
 
 $$
@@ -853,9 +751,6 @@ for all $X \in D_0$. Show that the approximable mapping determined by $f$ is jus
 $$
 \varphi(X \cap X') = \varphi(X) \cap \varphi(X').
 $$
-
-<!-- page 34 -->
-
 Remark that the isomorphisms between domains correspond exactly to the isomorphisms between neighbourhood systems (in the sense of one-one inclusion preserving correspondences).
 
 **EXERCISE 2.15.** (For topologists.) Consider the one-token system with
@@ -882,9 +777,6 @@ $$g(10x) = 0x,$$
 $$g(1) = \bot,$$
 
 or are some missing?
-
-<!-- page 35 -->
-
 **EXERCISE 2.18.** What is the meaning in words of the approximable mapping $h : \mathbb{B} \to \mathbb{B}$, where
 
 $$h(0x) = 00h(x), \text{ and}$$
@@ -914,9 +806,6 @@ for the relationship among neighbourhoods.) What is the corresponding version of
 
 $$x + 1 = \{n + 1 \mid n \in x\}, \text{ and}$$
 $$x - 1 = \{n \mid n + 1 \in x\}.$$
-
-<!-- page 36 -->
-
 **EXERCISE 2.21.** The system $\mathcal{B}$ of 2.3 has as its total elements only the infinite sequences. Modify the construction of $\mathcal{B}$ to another neighbourhood system $\mathcal{C}$ which has *both* the finite and infinite sequences as total elements. (Hint: $\mathcal{B} \subseteq \mathcal{C}$.) Show that there is an approximable map $xy$ on elements naturally extending ordinary juxtaposition of sequences. (Hint: Write $01001$ for a *total* finite sequence and $01001\perp$ for the corresponding finite partial element. Remember to distinguish between $\Lambda$ (the total empty sequence) and $\perp$ (the undefined sequence). The definition should work out so that if $x$ is an infinite sequence (hence, total), then $xy = x$ for all $y$. What will $xy$ equal if $x$ is not total? In other words, the construction possesses a rather strong left-to-right bias.)
 
 **EXERCISE 2.22.** (For set theorists). We have remarked in Exercise 1.18 and in Exercise 2.11 that any domain $|D|$, as a family of sets (in fact, a family of subsets of the set $D$ itself), is closed under the intersection of an arbitrary non-empty sub family and under the union of any directed sub family. For those familiar with the subject matter, the example of the (proper) ideals of a commutative ring (with unit) is also seen to be such a family. What is the abstract situation? Let $\mathbf{C}$ be *any* family of sets with these closure properties. It is to be shown that $\mathbf{C}$ is inclusion-isomorphic to a domain. (Hint: Let $\Delta$ be the set of finite sets included in sets in $\mathbf{C}$. For $F \in \Delta$, define its "closure" by the equation:
@@ -932,9 +821,6 @@ for $F \in \Delta$. Notice that for all $X \in \mathbf{C}$
 $$X = \bigcup \{ \overline{F} \mid F \subseteq X \text{ and } F \in \Delta \}.$$)
 
 Check that approximable functions on these families are just those preserving directed unions.
-
-<!-- page 37 -->
-
 **LECTURE III**
 
 **DOMAIN CONSTRUCTS**
@@ -968,9 +854,6 @@ $$
 $$
 
 Thus, $\{X \cup Y, X' \cup Y'\}$ is consistent in $\mathcal{D}_0 \times \mathcal{D}_1$ iff $\{X, X'\}$ is
-
-<!-- page 38 -->
-
 consistent in $\mathcal{D}_0$ and $\{Y, Y'\}$ is consistent in $\mathcal{D}_1$. In the consistent case we find
 
 $$
@@ -1030,9 +913,6 @@ Z\ \langle f, g \rangle\ (X \cup Y) \text{ iff } Z\ f\ X \text{ and } Z\ g\ Y
 $$
 
 holds for all $X \in \mathcal{D}_0$, $Y \in \mathcal{D}_1$, and $Z \in \mathcal{D}_2$. $\square$
-
-<!-- page 39 -->
-
 **PROPOSITION 3.4.** The mappings $p_0$, $p_1$ and $\langle f, g \rangle$ are approximable mappings, provided $f$ and $g$ are, and we have:
 
 (i) $p_0 \circ \langle f, g \rangle = f$ and $p_1 \circ \langle f, g \rangle = g$.
@@ -1078,9 +958,6 @@ $$
 $$
 
 equivalent to the old relationship. We can also employ an element-wise notation as in $f(\langle x, y \rangle)$, which can more easily be written $f(x, y)$. Similar remarks apply to functions of more than two arguments.
-
-<!-- page 40 -->
-
 We have discussed several times what it means for a function $f(x)$ to come from an approximable mapping. It is interesting to ask the analogous question for functions of several arguments.
 
 **THEOREM 3.5.** An elementwise function
@@ -1102,9 +979,6 @@ There is no real confusion here in using “$b$” both for function and value. 
 Conversely, assume that both these functions come from approximable mappings no matter the choice of $a$ and $b$. Clearly the mapping to determine $f$ is the relation from $X \cup Y$ to $Z$ where
 $$Z \in f(\uparrow X, \uparrow Y) = f(\uparrow(X \cup Y)).$$
 To prove that this determines $f$ we calculate by the formula of Exercise 2.9:
-
-<!-- page 41 -->
-
 $$
 \begin{aligned}
 f(x, y) &= \bigcup \{ f(\uparrow X, y) \mid X \in x \} \\
@@ -1153,9 +1027,6 @@ k \cdot \langle p_3, p_0, p_2 \rangle : D_0 \times D_1 \times D_2 \times D_3 \to
 $$
 
 Now no matter on what domains $f$ is defined, the following composition makes sense:
-
-<!-- page 42 -->
-
 $$
 f \circ \langle g \circ \langle p_0, p_1 \rangle, h \circ \langle p_1, p_2 \rangle, k \circ \langle p_3, p_0, p_2 \rangle \rangle ;
 $$
@@ -1175,9 +1046,6 @@ $$
 where $X \in D_0$ and $Y \in D_1$. $\square$
 
 We have been calling our mappings "approximable" for a long time now without saying exactly how they can be approximated! Definition 3.8 supplies the missing key, because once a domain has been defined, then the general theory gives an explicit meaning to the word approximation. We still have to verify, however, that the mappings do correspond to the elements of the domain.
-
-<!-- page 43 -->
-
 **PROPOSITION 3.9.** Let neighbourhoods $X_i \in D_0$ and $Y_i \in D_1$ be given for $i < n$. Then the set of $[X_i, Y_i]$ for $i < n$ is consistent in $(D_0 \to D_1)$ iff the following condition holds:
 
 (i) whenever $I \subseteq \{0, 1, \ldots, n-1\}$ and $\{X_i \mid i \in I\}$ is consistent in $D_0$, then $\{Y_i \mid i \in I\}$ must be consistent in $D_1$.
@@ -1217,9 +1085,6 @@ $$
 $$
 X_i f_0 Y_i
 $$
-
-<!-- page 44 -->
-
 holds trivially for all $i < n$; therefore,
 
 $$
@@ -1273,9 +1138,6 @@ for all $X, X' \in \mathcal{D}_0$ and $Y, Y' \in \mathcal{D}_1$. We are now read
 **THEOREM 3.10.** Given neighbourhood systems $\mathcal{D}_0$ and $\mathcal{D}_1$, the function space system $(\mathcal{D}_0 \to \mathcal{D}_1)$ is complete in the sense that every filter in $|\mathcal{D}_0 \to \mathcal{D}_1|$ is fixed by a unique approximable mapping.
 
 *Proof:* Let $f : \mathcal{D}_0 \to \mathcal{D}_1$ be an approximable mapping. By the very definition of $(\mathcal{D}_0 \to \mathcal{D}_1)$ it determines a filter by the definition:
-
-<!-- page 45 -->
-
 $$\hat{f} = \{ F \in (D_0 \to D_1) \mid f \in F \}.$$
 
 Trivially $[X, Y] \in \hat{f}$ iff $f \in [X, Y]$ iff $X f Y$; so this filter uniquely determines the relation $f$. What we have to show is that every filter in $|D_0 \to D_1|$ is of this form.
@@ -1299,9 +1161,6 @@ where for all $f : D_1 \to D_2$ and all $x \in |D_1|$ we have
 *Proof:* For $F \in (D_1 \to D_2)$ and $X \in D_1$ and $Y \in D_2$ define $\text{eval}$ as a relation by:
 
 $$F, X \text{ eval } Y \quad \text{iff} \quad X f Y \text{ for all } f \in F.$$
-
-<!-- page 46 -->
-
 Remember that neighbourhoods in the function space are sets of approximable mappings. It is easily checked that this definition makes eval approximable. We now calculate the function values by the formula of 2.2 (i):
 
 $$
@@ -1339,9 +1198,6 @@ Moreover we have these functional equations:
 (ii) $\text{eval} \circ \langle \text{curry}(g) \circ p_0,\ p_1 \rangle = g$, and
 
 (iii) $\text{curry}(\text{eval} \circ \langle h \circ p_0,\ p_1 \rangle) = h$,
-
-<!-- page 47 -->
-
 where the $p_i : \mathcal{D}_0 \times \mathcal{D}_1 \to \mathcal{D}_i$ are the projection mappings and $h : \mathcal{D}_0 \to (\mathcal{D}_1 \to \mathcal{D}_2)$ is any approximable mapping. This provides an isomorphism between the domains $|\mathcal{D}_0 \times \mathcal{D}_1 \to \mathcal{D}_2|$ and $|\mathcal{D}_0 \to (\mathcal{D}_1 \to \mathcal{D}_2)|$ and so we can regard
 
 $$\mathrm{curry} : (\mathcal{D}_0 \times \mathcal{D}_1 \to \mathcal{D}_2) \to (\mathcal{D}_0 \to (\mathcal{D}_1 \to \mathcal{D}_2))$$
@@ -1374,9 +1230,6 @@ k(x)(y) &= \mathrm{eval} \circ \langle h \circ p_0, p_1 \rangle(\langle x, y \ra
 \end{aligned}$$
 
 As this is true for all $y \in |\mathcal{D}_1|$, then $k(x) = h(x)$ follows. As this is true for all $x \in |\mathcal{D}_0|$, then $k = h$ follows, and (iii) is proved.
-
-<!-- page 48 -->
-
 Taking (ii) and (iii) together, it is clear that the domains $|D_0 \times D_1 \to D_2|$ and $|D_0 \to (D_1 \to D_2)|$ are in a one-one correspondence.
 
 $$
@@ -1402,9 +1255,6 @@ and in that case for all $x \in |D_0|$:
 *Proof.* The implication in (i) from left to right follows because evaluation is monotone in the function as well as the argument. The converse implication is a consequence of 2.2(ii).
 
 For the proof of (ii) and (iii) we see that by (i) if $F$ is bounded, so is every set $\{f(x) \mid f \in F\}$. For the converse direction, it is clear that (iii) defines *some* pointwise mapping; we have only to prove that it is *approximable*. The calculation that $\sqcup F$ preserves directed unions (see 2.9 and 2.11) is probably the simplest way to reach the conclusion. $\square$
-
-<!-- page 49 -->
-
 ## EXERCISES
 
 **EXERCISE 3.14.** For the most part we can assume that there is at most a countable number of tokens; thus, without loss of generality the underlying sets $\Delta_i$ of given systems $\mathcal{D}_i$ could be assumed to be subsets of $\Sigma^*$ where $\Sigma = \{0, 1\}$. (Any denumerable set would do.) Show that the product $\mathcal{D}_0 \times \mathcal{D}_1$ could be defined as the system over the set $0\Delta_0 \cup 1\Delta_1$ where
@@ -1442,9 +1292,6 @@ Note that for a 2-termed product we simplify $10\Delta_1$ to $1\Delta_1$.
 How does the product of no factors fit in? Prove also:
 
 (iii) $\mathcal{D}_0 \cong \mathcal{D}'_0$ and $\mathcal{D}_1 \cong \mathcal{D}'_1$ imply $\mathcal{D}_0 \times \mathcal{D}_1 \cong \mathcal{D}'_0 \times \mathcal{D}'_1$.
-
-<!-- page 50 -->
-
 **EXERCISE 3.16.** Let $\mathcal{D}$ be a given neighbourhood system over $\Delta \subseteq \Sigma^*$. Define
 
 $$
@@ -1489,9 +1336,6 @@ g \circ f = I_{\mathcal{B}} \quad \text{and} \quad f \circ g \subseteq I_{\mathc
 $$
 
 Are $\mathcal{B}$ and $\mathcal{T}^\infty$ isomorphic? Are $\mathcal{B}$ and $\mathcal{T} \times \mathcal{B}$ isomorphic?
-
-<!-- page 51 -->
-
 **EXERCISE 3.18.** Let $\mathcal{D}_0$ and $\mathcal{D}_1$ be neighbourhood systems over $\Delta_0$ and $\Delta_1$, where we again assume that these are subsets of $\Sigma^*$. We assume that in addition *no neighbourhood is empty*. Why is this possible without loss of generality?
 
 Define the *sum system* by:
@@ -1535,9 +1379,6 @@ In addition prove that
 (iv) $out_1 \circ (f + g) \circ in_1 = g$.
 
 Do equations (iii) and (iv) uniquely determine $f + g$?
-
-<!-- page 52 -->
-
 **EXERCISE 3.20.** (For category theorists). Show that the result of 3.19 can be used to prove that $\mathbf{+}$ and $\mathbf{\times}$ on the category of domains and approximable maps are indeed functors. Show further that $\mathbf{\times}$ is the categorical product for this category.
 
 **EXERCISE 3.21.** In the proofs of 3.12 in the definition of curry ($g$) it is rather cavalierly assumed that the neighbourhood $[Y, Z]$ uniquely determines $Y$ and $Z$. Show that this is true if $Z \neq \Delta_2$. (Hint: Find explicitly the least of $f \in [Y, Z]$.) Show that if $Z = \Delta_2$ the biconditional stated at the start of the proof is still valid even though $Y$ is not uniquely determined. (Hint: Remember that $\Delta_1\ g\ \Delta_2$ must hold.) For arbitrary pairs of neighbourhoods of $(D_1 \to D_2)$ is there a simple criterion for identity?
@@ -1563,9 +1404,6 @@ Show this directly by writing down the neighbourhood relation and by building th
 5. $(D_1 \to D_2) \times (D_0 \to D_1) \to (D_0 \to D_2)$.
 
 The maps are of course not uniquely determined, but the shifting of brackets ought to suggest the right choice.)
-
-<!-- page 53 -->
-
 **EXERCISE 3.23.** (For category theorists.) Show that the results of 3.11 and 3.12 prove that the category of domains and approximable mappings is a *cartesian closed category*. (Mac Lane [1971] pp. 95–96 may be consulted for a very brief introduction.) What is the *terminal domain* in this category? What sort of functor is $(D_0 \to D_1)$?
 
 **EXERCISE 3.24.** Establish some more isomorphisms :
@@ -1603,9 +1441,6 @@ $$
 & 0, 1 \in C \text{ and } \Delta \subseteq Z ,
 \end{aligned}
 $$
-
-<!-- page 54 -->
-
 where $C \in T$ and $X \in D$ and $Y \in D$ and where we are using the construction of Exercise 3.14.) Find a similar operator in the domain
 
 $$
@@ -1645,9 +1480,6 @@ f_0(x) = \bigsqcup \{ \uparrow Y_i \mid x \in [X_i] \} ,
 $$
 
 for $x \in |D_0|$. Try to draw a picture of $|D_0|$ with neighbourhoods $[X_i]$ and the corresponding values of the function $f_0$.
-
-<!-- page 55 -->
-
 # LECTURE IV
 
 <u>FIXED POINTS AND RECURSION</u>
@@ -1685,9 +1517,6 @@ U\ f\ V \quad \text{and} \quad U'\ f\ V'
 $$
 
 hold and $U, U'$ are consistent in $D$, then $V$ and $V'$ are consistent and
-
-<!-- page 56 -->
-
 $(U \cap U')\ f\ (V \cap V')$
 
 must hold. Generalizing this to sequences, if
@@ -1735,9 +1564,6 @@ $$
 $$
 
 for all $f : D \to D.$
-
-<!-- page 57 -->
-
 **Proof:** Formula (iii) can be put in a more elementary form:
 
 $$
@@ -1787,9 +1613,6 @@ $$
 $$
 
 That is to say, the two operators are identical. $\square$
-
-<!-- page 58 -->
-
 The reader may have noticed that we used recursion in the proof of 4.1 (we had to define $f^n$ for all $n \in \mathbf{N}$). But 4.1 and 4.2 can be used to justify definitions by recursion on a large number of domains — definitions where the process of iteration is far from being as straightforward. In discussing this point, let us start with some basic examples.
 
 **EXAMPLE 4.3.** The infinite generalization of our original example 1.2 is the system
@@ -1827,9 +1650,6 @@ F \text{ and } (\mathbf{N} \to \mathbf{N})
 $$
 
 by our definitions are *NOT* isomorphic; though the two domains are closely related. We can define a mapping
-
-<!-- page 59 -->
-
 $$
 \mathrm{val} : F \times N \to N
 $$
@@ -1891,9 +1711,6 @@ If $\pi$ were a total function, then $f(\pi)$ would be total. But if $\pi$ is pa
 $$
 f(\pi) = \bigcup \{ f(\phi) \mid \phi \subseteq \pi \},
 $$
-
-<!-- page 60 -->
-
 where $\phi$ ranges over $\Phi$.
 
 Well, we have proved that every approximable map of a domain into itself has a (*least*) fixed point. What is the least fixed point of this $f$? Suppose $\sigma = f(\sigma)$. Then $\sigma(0) = 0$, and
@@ -1965,9 +1782,6 @@ The *structured domain*
 $$
 \langle N, 0, \mathrm{succ}, \mathrm{pred}, \mathrm{zero} \rangle
 $$
-
-<!-- page 61 -->
-
 can be called "THE domain of integers" for our present theory. We shall meet many other structured domains in the sequel.
 
 Now the iterated summation function $\sigma$ can be completely characterized — as a map $\sigma : N \to N$ rather than as an element $\sigma \in |F|$ — by the following equation:
@@ -2007,9 +1821,6 @@ $$
 $$
 \sigma\perp = \uparrow \sigma\Sigma^* \quad \text{(a partial element).}
 $$
-
-<!-- page 62 -->
-
 In other words we identify $\sigma$ with the corresponding total element in $|C|$.
 
 We wish now to think of $C$ as a structured domain seen as a kind of generalization of $N$. The empty sequence $\Lambda$ will play the rôle of $0 \in |N|$; the map succ has two different analogues for $C$, however. Just as for $B$ we define for $x \in |C|$ and $\sigma \in \Sigma^*$:
@@ -2055,9 +1866,6 @@ $$
 $$
 
 where the three maps take on truth-values to distinguish various kinds of elements in $|C|$ as follows:
-
-<!-- page 63 -->
-
 $$
 \begin{aligned}
 \mathrm{empty}\,(\Lambda) &= \mathrm{true}, \\
@@ -2111,9 +1919,6 @@ d(1x) &= 11d(x).
 $$
 
 We can write:
-
-<!-- page 64 -->
-
 $$
 \begin{aligned}
 d(x) &= \mathrm{cond}(\mathrm{empty}(x),\, \Lambda, \\
@@ -2137,9 +1942,6 @@ It should be checked that this equation exactly characterizes the intended mappi
 The examples we have given with $N$ and $C$ are examples of definitions of functions by *recursion*. The literal meaning of “recursion” is “running backwards”, and a look at the equations for our examples will show that the functions are characterized by giving their values either *outright* (e.g. at $0$ or at $\Lambda$) or at *earlier* arguments (e.g. at $\mathrm{pred}(x)$ or at $\mathrm{tail}(x)$). The reader should keep in mind that a recursive “definition” is not really a definition in the sense of *explicit definition* but rather is a characterization; a theorem has to be proved to show that such functions exist. Now we have a general definition of domain and a general theorem on fixed points and a general construction of function-space domain; THEREFORE, we know that there are solutions to our equations PROVIDED THAT the variables range over elements of a domain and that the other, given functions that appear in the equations are already known to be approximable (continuous). This proviso is very important, and we shall remark on it time after time.
 
 But, as is well known, recursion also can be done over sets like $\mathbf{N}$, and we should examine now the connection between the familiar kind of recursion and what we are doing over domains. Of course, one simple connection is already provided by the way we regard $\mathbf{N}$ as a subset of $N$. But there are other useful connections that can be employed in a way that may seem more direct.
-
-<!-- page 65 -->
-
 **DEFINITION 4.5.** A structured set $\langle \mathbf{N}, 0, {}^+ \rangle$, where $0 \in \mathbf{N}$ and ${}^+ : \mathbf{N} \to \mathbf{N}$ is a unary function, is said to be a *model for Peano's Axioms* if the following conditions are satisfied:
 
 (i) $0 \neq n^+$, for all $n \in \mathbf{N}$;
@@ -2171,9 +1973,6 @@ $$
 $$
 r = \{(0, \square)\} \cup \{(n^+, m^\#) \mid (n, m) \in r\}.
 $$
-
-<!-- page 66 -->
-
 This $r \subseteq \mathbf{N} \times \mathbf{M}$ as a binary relation will turn out to be a one-one correspondence giving the required isomorphism.
 
 First of all we see by construction that
@@ -2201,9 +2000,6 @@ Note that the rôles of $\mathbf{N}$ and $\mathbf{M}$ are completely symmetric, 
 **EXERCISES**
 
 **EXERCISE 4.7.** Formula 4.2(iii) shows how to find the *least* fixed point of $f : D \to D$. Suppose on the other hand that $a \in |D|$ is such that $a \subseteq f(a)$. Will there be a fixed point $x = f(x)$ with $a \subseteq x$?
-
-<!-- page 67 -->
-
 (Hint: How do we know $\bigsqcup_{n=0}^{\infty} f^n(\bot) \in |D|$ ?)
 
 **EXERCISE 4.8.** Suppose $f : D \to D$ and $S \subseteq |D|$ are such that
@@ -2243,9 +2039,6 @@ $$
 $$
 
 Show that if $f : D \to D$ is approximable, then $f$ can be restricted to an approximable map $f' : D_{\mathrm{fix}(f)} \to D_{\mathrm{fix}(f)}$ where $f'(x) = f(x)$ for all $x \in |D_{\mathrm{fix}(f)}|$. How many fixed points does $f'$ have in $|D_{\mathrm{fix}(f)}|$?
-
-<!-- page 68 -->
-
 **EXERCISE 4.11.** (Suggested by G. Plotkin). We can regard $\mathrm{fix}$ as assigning a fixed-point operator to each domain $D$. Show that $\mathrm{fix}$ is uniquely determined by the following general conditions on an assignment $D \rightsquigarrow F_D$:
 
 (i) $F_D : (D \to D) \to D$;
@@ -2277,9 +2070,6 @@ Note that $\mathrm{fix}(f) \sqsubseteq a$. (Hint: Remark that by 1.17 the formul
 (ii) $s(n^+) = s(n)^\cdot$, for $n \in \mathbf{N}$.
 
 (4) Employ (3) for the proof of 4.1 by identifying $\langle \mathbf{N}, 0, {}^+ \rangle$.
-
-<!-- page 69 -->
-
 **EXERCISE 4.14.** Need a monotone function $f : PA \to PA$ always have a *maximum* fixed point?
 
 **EXERCISE 4.15.** (For set theorists.) Let $f : |D| \to |D|$ be a monotone function on (the elements of) a domain. Show that $f$ has a *maximal* fixed point (i.e. a fixed point that cannot be extended to a larger fixed point). (Hint: By Zorn's Lemma consider a maximal chain
@@ -2315,9 +2105,6 @@ x \cdot y = \{ t \cdot u \mid t \in x \text{ and } u \in y \}?
 $$
 
 Need the fixed point be unique?
-
-<!-- page 70 -->
-
 **EXERCISE 4.18.** In Example 4.3 there are many unproved assertions about $N$ and $F$. These should be checked. In particular, the isomorphism theorem of 4.6 could be proved by constructing a simple domain $M$ from $\mathbf{M}$ in the way $N$ is constructed from $\mathbf{N}$.
 
 **EXERCISE 4.19.** There are many unproved assertions in Example 4.4! In particular discuss "Peano's Axioms" for $\{0,1\}^*$. Show, moreover, that $\mathrm{one} : C \to T$ can be defined from the rest of the structure by a fixed-point equation.
@@ -2345,9 +2132,6 @@ $$
 where $n \in \mathbf{N}$ is fixed.)
 
 **EXERCISE 4.22.** Suppose $\mathbf{N}^*$ is a structured set satisfying only axioms (i) and (ii) of 4.5. Must there be a subset $\mathbf{N} \subseteq \mathbf{N}^*$ that satisfies (i), (ii), and (iii)? (Hint: Use a least fixed point in $P\mathbf{N}^*$.) (For set theorists): How do we know from the axioms of set theory that there exists such a set $\mathbf{N}^*$?
-
-<!-- page 71 -->
-
 **EXERCISE 4.23.** (Suggested by S. Eilenberg). Suppose $f : \mathcal{D} \to \mathcal{D}$ is approximable on a given domain $\mathcal{D}$. Suppose $a_n : \mathcal{D} \to \mathcal{D}$ is a sequence of approximable maps where
 
 (i) $a_0(x) = \bot$, for all $x \in |\mathcal{D}|$;
@@ -2381,9 +2165,6 @@ C_1 = \{\, \{1^m \mid m > n\} \mid n \in \mathbf{N} \,\} \cup \{\, \{1^n\} \mid 
 $$
 
 What structure should be put on $C_1$ strictly analogous to that on $C (= C_2)$? What kinds of approximable maps relate $\mathbf{N}$, $C_1$, and $C_2$? Draw some pictures.
-
-<!-- page 72 -->
-
 # LECTURE V
 
 <u>TYPED $\lambda$ - CALCULUS</u>
@@ -2405,9 +2186,6 @@ x_0^{\mathcal{D}}, x_1^{\mathcal{D}}, x_2^{\mathcal{D}}, \ldots,
 $$
 
 but the subscripts to insure an infinity of variables and the superscripts to record the typing of the variables lead to a notation as
-
-<!-- page 73 -->
-
 tiresome to write as it is to read. We simply agree that we can have as many variables as we need and that they come in all the types.
 
 Strictly speaking we should also introduce *type symbols* and not confuse types with domains. But if the reader will simply keep in mind that *form* in language has always to be kept distinct from *content*, the confusion at the type level will not matter so very much. A point at which the confusion might cause a real confusion concerns *compound types*. Given $\mathcal{D}_0$ and $\mathcal{D}_1$ we can form such compounds as
@@ -2421,9 +2199,6 @@ What has to be remembered is that a compound domain (neighbourhood system), $\ma
 Besides variables, we will also need certain *constants*. For instance, the symbol $0$ (perhaps, better $0^{\mathbf{N}}$) denotes a certain element of $|\mathbf{N}|$. Similarly, in view of Theorem 4.2, for each domain $\mathcal{D}$ there is a well-determined element $\mathrm{fix}^{\mathcal{D}}$ of the compound type $((\mathcal{D} \to \mathcal{D}) \to \mathcal{D})$ denoting the least fixed-point operator. We have considered any number of similar constants of a great variety of types already (cf. 4.3 and 4.4; cond is an especially good one). We can say that the variables and constants are *atomic terms*, where "atomic" here means non-compound.
 
 To form compound terms, there are several means: for example, if $\tau, \ldots, \sigma$ is a list of already obtained terms (including variables or constants), then we can form an ordered *tuple*
-
-<!-- page 74 -->
-
 We have already done so in 3.1. If the types of $\tau, \dots, \sigma$ are $D, \dots, D'$, respectively, then the type of the tuple is the product domain
 
 $$D \times \dots \times D',$$
@@ -2457,9 +2232,6 @@ What we have not done is to reward our regard by, as yet, providing a quick-to-w
 $$\lambda x_0, \dots, x_{n-1} \cdot \tau,$$
 
 where we stress that the $x_i$ must be *distinct* variables and that this
-
-<!-- page 75 -->
-
 expression denotes the *whole function*. That is why we provide it with a special symbol.
 
 Here is an example of the $\lambda$ - notation
@@ -2517,9 +2289,6 @@ $$
 $$
 
 The first should be immediately clear; while the second is particularly *instructive*. What is being illustrated is that the $\lambda$ - notation can
-
-<!-- page 76 -->
-
 be *iterated*. The distinction being drawn is between
 
 $$
@@ -2583,9 +2352,6 @@ and read this as
 > "$\sigma$ is the least (recursively defined) function $f$ whose value at $n$ is cond $(\dots)$."
 
 We note that in the so-called "body" of the expression inside the
-
-<!-- page 77 -->
-
 cond-part the variable $f$ occurs again. That is just the point! This is a *recursive definition*; it is made into an *explicit* definition by invoking the least fixed-point operator.
 
 In a $\lambda$-expression, $\lambda x, y, z . \tau$, say, the variables $x, y, z$ are being *bound* in $\tau$; but $\tau$ may have other variables that are nowhere bound in $\tau$ and these remain *free variables* of the whole expression. Bound variables are *dummy variables* and may be rewritten by other variables; thus
@@ -2611,9 +2377,6 @@ Suppose $\tau$ has the form
 $$\langle \sigma_0, \dots, \sigma_{n-1} \rangle .$$
 
 Then the $\sigma_i$ are less complex terms, and so we can assume — as our induction hypothesis — that they define approximable functions of the free variables. Having said this, we just apply the already
-
-<!-- page 78 -->
-
 proved 3.4 to conclude (after a suitable generalization to the multivariate case) that $\tau$, which takes on tuples as values, also defines an approximable function.
 
 Next, suppose $\tau$ has the form
@@ -2647,9 +2410,6 @@ $$\lambda x_0, \dots, x_{k-1} . \sigma,$$
 which has a string of bound variables. $\square$
 
 We can now say more precisely what it means to call $\sigma = \tau$ a "true equation". This means that, if we employ the method of the proof of 5.1, the two terms define the *same function* of the free variables. For example,
-
-<!-- page 79 -->
-
 $$\lambda x . \tau = \lambda y . \tau [y / x]$$
 
 is true, provided $y$ does not occur free in the term $\tau$, since the systematic generation of the function defined by $\lambda x . \tau$ does not depend on what the variable $x$ *looks like* but only on its *position* in the term $\tau$. Some other obviously desirable rules for generating true equations are stated in the exercises. But one rule is so basic that we state it here in full generality.
@@ -2687,9 +2447,6 @@ In case $\tau$ is an *application*, we want (supposing the term is $\tau_0 (\tau
 $$(\lambda x . \tau_0 (\tau_1))(\sigma) = \tau_0 [\sigma / x] (\tau_1 [\sigma / x]) .$$
 
 We can proceed as in the last case, noting that the left-hand side equals
-
-<!-- page 80 -->
-
 $$
 \mathrm{eval}\ ((\lambda x . \langle \tau_0 , \tau_1 \rangle)\ (\sigma))\ .
 $$
@@ -2739,9 +2496,6 @@ $$
 This completes the proof. $\square$
 
 We note that if $\tau'$ is the term $\lambda x, y . \tau$, then $\tau'(x, y)$ means the same as $\tau$. This gives a convenient way of indicating free variables: we just write $\sigma(x, y)$ — where $x, y$ are not free in $\sigma$ — and this will have the same values as any term $\tau$ which does involve the extra free variables $x$ and $y$. We use this notational device in the next theorem.
-
-<!-- page 81 -->
-
 **PROPOSITION 5.3.** The least fixed point of $\lambda x, y.\ \langle \tau(x, y), \sigma(x, y) \rangle$ is the pair with coordinates
 
 $! x.\ \tau(x,\ ! y.\ \sigma(x, y))$ and
@@ -2773,9 +2527,6 @@ $\tau(x_0, y_0) \sqsubseteq x_0$,
 it follows that
 
 $! x.\ \tau(x, y_0) \sqsubseteq x_0$.
-
-<!-- page 82 -->
-
 Consequently,
 
 $$\sigma(! x . \tau(x, y_0), y_0) \sqsubseteq \sigma(x_0, y_0) \sqsubseteq y_0.$$
@@ -2821,9 +2572,6 @@ $$g_0(x) = \tau(x, g_0(x)),$$
 for any given $x$. But by definition of $f$ we find
 
 $$f(x) = ! y . \tau(x, y) \sqsubseteq g_0(x).$$
-
-<!-- page 83 -->
-
 As this holds for all $x$, then $f \sqsubseteq g_0$ follows. So the equation is true. $\square$
 
 The last proof is instructive as it uses equations and inclusions between functions. In particular we have just made use of the principle:
@@ -2859,9 +2607,6 @@ $$
 $$
 
 **A TABLE OF COMBINATORS**
-
-<!-- page 84 -->
-
 It is important to note that since we have not typed the variables, these equations are ambiguous: they only become precise when the types are specified. It follows, therefore, that what we find in the table are *schemes* for combinators; there are actually infinitely many distinct combinators corresponding to any one equation depending on how the variables have types chosen for them. Clearly it is better to imagine this variety of combinators than it is to try to notate them with type superscripts.
 
 One interest of combinators is that it is often possible to write expressions without variables — if enough combinators are used. This is sometimes useful, but it can become clumsy. On the other hand, if the same combination occurs over and over, it is sometimes useful to give it a name. This is what we do with, say, *composition* where
@@ -2885,9 +2630,6 @@ and where if $h(n) = m$, then
 $$
 \tau(n) = m
 $$
-
-<!-- page 85 -->
-
 is true; and if $h(n)$ is undefined, then
 
 $$
@@ -2931,9 +2673,6 @@ $$
 $$
 
 to represent $\bar{g}$, because the function so defined is not strict. But any function in $\mathbf{N}^k \to \mathbf{N}$ can be cut down to a strict function by a simple device. Consider
-
-<!-- page 86 -->
-
 $$
 \lambda x.\ \mathrm{cond}(\mathrm{zero}(x), x, x)
 $$
@@ -2977,9 +2716,6 @@ $$
 Here we have had to use the fixed-point operator on a variable $k$ of type $(\mathbf{N}^2 \to \mathbf{N})$. The variables $x, y$ are of type $\mathbf{N}$ and the $\mathrm{cond}$-construction puts the two traditional equations into two clauses of one expression. It is easy to see that the fixed-point function *is* strict and is nothing more than $\bar{h}$.
 
 That completes the representation of *primitive recursive* functions. To obtain the *partial recursive* functions, the idea is to use the so-called $\mu$-scheme (least number operator) and, further, to close up under substitution. We need only treat the $\mu$-scheme. Suppose, by way of example, $f(n, m)$ is given as a
-
-<!-- page 87 -->
-
 primitive recursive function. We then define $h$ (generally, a partial function) by
 
 $$h(m) = \text{the least } n \text{ where } f(n,m) = 0.$$
@@ -3007,9 +2743,6 @@ Recursion on $N$ was the topic of 5.6; further examples of recursion on other do
 $$\lambda x, y.\, \tau \quad \text{and} \quad \sigma(x, y)$$
 
 which use only $\lambda v$ with one variable and applications only to one argument at a time. Note that use must be made of the combinators $p_0$, $p_1$, pair. Generalize the result to functions of many variables.
-
-<!-- page 88 -->
-
 **EXERCISE 5.8.** (For combinator nuts.) Table 5.5 was meant to show how combinators could be defined in terms of $\lambda$-expressions. Can the tables be turned to show that with enough combinators available, every $\lambda$-expression can be defined by combining combinators, using $\sigma(\tau)$ as the *only* mode of combination?
 
 **EXERCISE 5.9.** Suppose that $f, g : \mathcal{D} \to \mathcal{D}$ are approximable and $f \circ g = g \circ f$. Show that $f$ and $g$ have a *least common fixed point* $x = f(x) = g(x)$. (Hint: Refer back to Exercise 4.20.) If in addition $f(\bot) = g(\bot)$, show that $\mathrm{fix}(f) = \mathrm{fix}(g)$. In particular, will $\mathrm{fix}(f) = \mathrm{fix}(f^2)$? What if we only assume $f \circ g = g^2 \circ f$?
@@ -3047,9 +2780,6 @@ where for all $x \in |\mathcal{D}|$ we have
 $$
 \mathrm{diag}(x) = \langle x \rangle_{n=0}^\infty.
 $$
-
-<!-- page 89 -->
-
 (Hint: Try a recursive definition, say
 
 $$
@@ -3113,9 +2843,6 @@ Draw a picture (i.e. an infinite matrix) for the function and find a closed form
 $$
 P\mathbf{N},\ P(\mathbf{N} \times \mathbf{N}),\ P\mathbf{N} \times P\mathbf{N}.
 $$
-
-<!-- page 90 -->
-
 **EXERCISE 5.14.** Show that there are approximable mappings
 
 $$
@@ -3178,9 +2905,6 @@ $$
 where the $\{\cdot\}$ has been dropped off $\{a\}$, $\{b\}$ etc., and where the $^*$-notation has been extended to the whole domain, so that $z^* = \Lambda \cup z^* \cdot z$.
 
 (Hint: Apply 5.3.)
-
-<!-- page 91 -->
-
 **EXERCISE 5.16.** Return to the discussion of Example 4.4 and the construction of the domain of finite and infinite binary sequences. Give a fixed-point definition of $\mathrm{neg} : C \to C$, where
 
 $$
@@ -3206,9 +2930,6 @@ t = 0\,\mathrm{merge}(\mathrm{neg}(t), \mathrm{tail}(t)).
 $$
 
 Prove that the $n^{\mathrm{th}}$ digit of $t$ is the sum mod 2 of the digits of the number $n$ written in the binary scale (a suggestion of J. Lambek). Show also that $t \neq u\,a\,a\,a\,v$ where $a$ is any finite sequence $\neq \Lambda$, and where $u$ is finite.
-
-<!-- page 92 -->
-
 # LECTURE VI
 
 <u>INTRODUCTION TO DOMAIN EQUATIONS</u>
@@ -3218,9 +2939,6 @@ The major reason for introducing the theory of domains is to have a notion of *c
 **EXAMPLE 6.1**. Let $D$ be fixed as a given domain. We are now familiar with a useful construct like $D \times D$ whose elements are ordered pairs $\langle x, y \rangle$ of elements $x, y$ of $D$. The question is: can this construct be iterated? The answer is obviously yes, since $D \times (D \times D)$ and $(D \times D) \times (D \times D)$ and so on can be formed with elements $\langle x, \langle y, z \rangle \rangle$ and $\langle \langle u, v \rangle, \langle x, y \rangle \rangle$ and the like. But the real question is: can the construct be iterated *indefinitely*? AND can the results be collected together into a *single* domain? The answer is yes, but it requires a bit of work to get it right. The method to be introduced will be open to many variations, so more than one answer is possible, giving non-isomorphic domains.
 
 In order to collect all the iterates into one large domain we give ourselves first a very big domain inside of which the desired family of neighbourhoods will be found. There are many ways to make this choice, and we are fixing on one that will keep the notation simple. We have often used binary sequences for examples and constructions, but for this example let us use
-
-<!-- page 93 -->
-
 ternary sequences. Let $\Sigma = \{0, 1, 2\}$ and let $\Sigma^*$ be all finite sequences from this three-letter alphabet. We will select subsets of $\Sigma^*$ for our neighbourhoods. As $\Sigma^*$ is countably infinite, it is without much loss of generality to assume that $\mathcal{D}$ is a neighbourhood system over $\Delta$, where we take $\Delta \subseteq \Sigma^*$. Also without loss of generality we can assume $\emptyset \notin \mathcal{D}$. (Why?)
 
 We wish to find another set $\Gamma \subseteq \Sigma^*$ to be the set of tokens for the new domain. After we find it, we will still have to say just which $X \subseteq \Gamma$ are appropriate for the structure we want.
@@ -3258,9 +2976,6 @@ $$
 $$
 
 The reader should stop to think why $\mathcal{D}^{\S}$ can be immediately seen to exist by writing such an equation. Of course another way to describe $\mathcal{D}^{\S}$ is to say it is the least family of sets containing (i) the set $\Gamma$, (ii) the sets $0X$ for $X$ in the given system $\mathcal{D}$, and (iii) sets $1X \cup 2Y$ whenever it already contains $X$ and $Y$ (closure
-
-<!-- page 94 -->
-
 under a set-forming operation). By saying "least" we mean (iv) nothing else belongs to $\mathcal{D}^{\S}$ except as allowed by (i)–(iii); this makes the truth of the equation for $\mathcal{D}^{\S}$ clear. So $\mathcal{D}^{\S}$ exists as a family of sets, but what good is it?
 
 By our construction of $\Gamma$, all the sets we put into $\mathcal{D}^{\S}$ are subsets of $\Gamma$ (why?); so $\mathcal{D}^{\S}$ has a chance of being a system over $\Gamma$ if we can check the closure under intersection. So suppose $Z \subseteq X \cap Y$ where $Z, X, Y \in \mathcal{D}^{\S}$; we want to show $X \cap Y \in \mathcal{D}^{\S}$. We argue by induction on the number of steps required to put $X$ and $Y$ into $\mathcal{D}^{\S}$ by (i)–(iii). There are several cases.
@@ -3298,9 +3013,6 @@ We can think of the $A_i$ and $B_i$ put into $\mathcal{D}^{\S}$ earlier and the 
 $$
 X \cap Y = (1A_1 \cup 2A_2) \cap (1B_1 \cup 2B_2) = 1(A_1 \cap B_1) \cup 2(A_2 \cap B_2).
 $$
-
-<!-- page 95 -->
-
 We have now seen that $D^\S$ is a neighbourhood system, but why was it constructed that way? The reason is simply this isomorphism (or domain equation):
 
 $$
@@ -3358,9 +3070,6 @@ in $|D^\S|$ as a tree:
            ·   d
           / \
          b   c
-
-<!-- page 96 -->
-
 Note that the tree has binary branching with the elements of $|D|$ at the ends of the branches. Any such tree could be given a notation as an element of $|D^{\S}|$. The finite elements of $|D^{\S}|$ correspond exactly to such finite trees.
 
 What of the infinite elements of $|D^{\S}|$? Are there infinite trees? Let $a, b \in |D^{\S}|$ be any elements of $|D^{\S}|$. Since pairing is an approximable mapping, we can solve the fixed-point equation
@@ -3408,9 +3117,6 @@ and
 $$
 v = \bigcup_{n=0}^{\infty} v_n.
 $$
-
-<!-- page 97 -->
-
 The reader should think how to explain from tree diagrams the approximation relation $v_n \sqsubseteq v$ and more general such relationships.
 
 We could call $D^\S$ a tree algebra over $D$. There may be others. A general one is a structure of the form
@@ -3454,9 +3160,6 @@ $$
 By what we said earlier, $g$ will be uniquely determined by (1)–(3), because these equations tell us exactly how to calculate $g$ on all finite elements of $|D^\S|$. An approximable mapping is always determined by its action on the finite elements. But why does $g$ exist?
 
 It would not be too hard to give an inductive construction of $g$ as a neighbourhood relation, but a fixed-point equation is easier to write down for the same purpose. We need, though, to have the inverse ("predecessor") functions:
-
-<!-- page 98 -->
-
 $$
 \text{out} : D^\S \to D
 $$
@@ -3504,9 +3207,6 @@ $$
 This $g$ exists by fixed-point theory, and it satisfies (1)–(3) by what we know about the structure of $|D^\S|$. As we said, $g$ is unique because the values on finite elements are fixed.
 
 In algebraic language $g$ is a *homomorphism* of tree algebras; and $D^\S$ is called an *initial algebra*, because for any tree algebra $E$ there is a unique homomorphism $g : D^\S \to E$. We note at once that any two initial algebras are isomorphic. For if $D^*$ were another, there would exist homomorphisms in both directions between $D^\S$ and $D^*$. But the compositions of homomorphisms are again homomorphisms, and in the case of $D^\S$ if we go from $D^\S$ to $D^*$ and back to $D^\S$, the result must be the identity. The reason is that the identity can be the only homomorphism of an initial algebra into itself. We thus have a precise meaning of the minimal character of $D^\S$. But note it still took a construction to show that the domain $D^\S$ exists. $\square$
-
-<!-- page 99 -->
-
 **EXAMPLE 6.2.** Our staple examples $B$ and $C$ satisfy “domain equations” in the form of isomorphisms as we have previously seen. Indeed
 
 $$
@@ -3556,9 +3256,6 @@ a = \pm \langle a_0, a_1, \ldots, a_{n-1} \rangle,
 $$
 
 where $+$ is chosen if $a$ is on the right, and $-$ if on the left. As a tree diagram $a$ might look like this for $n = 3$:
-
-<!-- page 100 -->
-
 ```
                          a  +
                         / | \
@@ -3603,9 +3300,6 @@ L_a = \{\sigma \in \Sigma^* \mid \mathrm{pos}(a\sigma) = \mathrm{true}\}
 $$
 
 corresponding to an eventually periodic tree is always a *regular event* of automata theory, and every such language has this form. In fact, $a$ just represents the initial state of an automaton, and $a\sigma$ represents the state after "reading" a tape $\sigma$. $\square$
-
-<!-- page 101 -->
-
 In order to formulate more generally the idea of a domain equation and initial algebra, we must introduce a small amount of the terminology of category theory. To be as specific as possible, think of systems $D$ over sets $\Delta \subseteq \Sigma^*$ with $\Sigma = \{0, 1\}$, say. They form quite an interesting category with respect to the approximable maps $f : D \to D'$. Recall that to be a category of "domains" and "maps" all that is required is an associative composition $g \circ f$ of maps with identity maps $I : D \to D$ for each domain of the category. And this we certainly have for the systems indicated. And there are many other categories waiting around: for instance, restrict systems to those where $\emptyset \notin D$. This is not much of a restriction, as every system is isomorphic to one like this. Or restrict the maps to being the strict maps $f : D \to D'$ where $f(\bot_D) = \bot_{D'}$. This is an essentially different, though related category. We shall find many others.
 
 What examples 6.1 and 6.2 suggest is the notion of a construct which makes new domains out of old. For example, with $D$ fixed, 6.1 suggests for any domain $X$ over $\Gamma \subseteq \Sigma^*$ a domain
@@ -3633,9 +3327,6 @@ another map
 $$
 T(f) : T(X) \to T(Y)
 $$
-
-<!-- page 102 -->
-
 in such a way that identity maps and compositions are preserved:
 
 $$
@@ -3687,9 +3378,6 @@ h \circ k = m \circ T(h)
 $$
 
 holds. $\square$
-
-<!-- page 103 -->
-
 In our example from 6.1 a $T$-algebra is a *strict* map
 
 $$k : D + (E \times E) \to E.$$
@@ -3713,9 +3401,6 @@ Slightly more interesting is the behaviour of $T$ on initial algebras.
 **PROPOSITION 6.7.** If $i : T(D) \to D$ is an initial $T$-algebra, then so is $T(i) : T^2(D) \to T(D)$ and $i$ is the isomorphism from $T(D)$ to $D$.
 
 **Proof:** Clearly since $T$ is a functor, the map $T(i)$ has the right mapping character to make $T(D)$ a $T$-algebra. Since $D$ is initial, we have a commuting diagram:
-
-<!-- page 104 -->
-
 $$
 \begin{array}{ccc}
 T(D) & \xrightarrow{i} & D \\
@@ -3769,9 +3454,6 @@ $$
 $$
 
 is approximable.
-
-<!-- page 105 -->
-
 **THEOREM 6.9.** If the functor $T$ is continuous on maps and if $D \cong T(D)$, so in particular $D$ is a $T$-algebra, then for any $T$-algebra $k : T(E) \to E$ there is a homomorphism $h : D \to E$.
 
 *Proof:* Let $i : T(D) \to D$ make $D$ a $T$-algebra, where $j : D \to T(D)$ is the inverse so that $i$ is an isomorphism of domains. Suppose that $k : T(E) \to E$ is any $T$-algebra. A homomorphism $h : D \to E$ would satisfy
@@ -3805,9 +3487,6 @@ $$
 to mean that these are neighbourhood systems over the same set of tokens $\Delta$ and not only is $D \subseteq E$ but whenever $X, Y \in D$ and $X \cap Y \in E$, then $X \cap Y \in D$. $\square$
 
 For the subdomain relation $D \triangleleft E$ to hold, $D$ has to be a smaller family of neighbourhoods, but the notion of consistency in $D$ also has to be the same as in $E$. Note that if $D_0 \triangleleft E$ and $D_1 \triangleleft E$ then
-
-<!-- page 106 -->
-
 $$
 D_0 \triangleleft D_1 \text{ iff } D_0 \subseteq D_1.
 $$
@@ -3853,9 +3532,6 @@ $$
 $$
 
 is approximable. $\square$
-
-<!-- page 107 -->
-
 We can now state an existence theorem that covers in fairly wide generality the examples of this lecture.
 
 **THEOREM 6.14.** If the functor $T$ is continuous on maps and monotone and continuous on domains, and if there is a set $\Gamma$ such that
@@ -3889,9 +3565,6 @@ T(\mathcal{D}) &= T\!\left(\bigcup_{n=0}^{\infty} T^n(\{\Gamma\})\right) \\
 &= \mathcal{D}.
 \end{aligned}
 $$
-
-<!-- page 108 -->
-
 Thus, not only is $\mathcal{D}$ a $T$-algebra, but the isomorphism we get for $\mathcal{D}$ and $T(\mathcal{D})$ is just the identity mapping. We know by 6.9 that homomorphisms exist; what remains to show is that homomorphism from $\mathcal{D}$ are unique. As in the examples, we will show in effect they are determined uniquely on the finite elements of $\mathcal{D}$.
 
 Since each $T^n(\{\Gamma\}) \triangleleft \mathcal{D}$, there are projection mappings $i_n : T^n(\{\Gamma\}) \to \mathcal{D}$ and $j_n : \mathcal{D} \to T^n(\{\Gamma\})$.
@@ -3929,9 +3602,6 @@ $$
 We wish to show that $h$ really is the least fixed point of this equation.
 
 Define $h_n = h \circ \rho_n : \mathcal{D} \to E$. For $n = 0$, the map $\rho_0$ is the trivial map where $\rho_0(x) = \bot_{\mathcal{D}}$ for all $x \in |\mathcal{D}|$. But $h$ must be strict, so $h_0(x) = \bot_E$ for all $x \in |\mathcal{D}|$; that is, $h_0$ is the least element of $|\mathcal{D} \to_\bot E|$. Now calculate :
-
-<!-- page 109 -->
-
 $$
 \begin{aligned}
 k \circ T(h_n) &= k \circ T(h) \circ T(\rho_n) \\
@@ -3971,9 +3641,6 @@ i(\uparrow X) = \bigcup \{ \uparrow Y \mid Y \in i(\uparrow X) \} \ .
 $$
 
 Applying $j$ to both sides we have:
-
-<!-- page 110 -->
-
 $$
 \uparrow X = j \circ i(\uparrow X) = \bigcup \{ j(\uparrow Y) \mid Y \in i(\uparrow X) \}.
 $$
@@ -4009,9 +3676,6 @@ $$
 $$
 
 It follows that $Y' \cap Z' = X' \in i(\uparrow X)$. On the other hand we already knew $X \in j(\uparrow X')$, which implies $i(\uparrow X) \subseteq \uparrow X'$. We may thus conclude that $i(\uparrow X) = \uparrow X'$. In other words $X' \in \mathcal{D}'$. $\square$
-
-<!-- page 111 -->
-
 **THEOREM 6.16.** If on the category of domains and strict approximable maps the functor $T$ is continuous on maps, and if $D$ is an initial $T$-algebra, then for any system $E \cong T(E)$ we have $D \trianglelefteq E$.
 
 **Proof:** There is a homomorphism $h : D \to E$. By 6.9 there is a homomorphism $g : E \to D$. Now $g \circ h : D \to D$ is also a homomorphism, so $g \circ h = I_D$ because $D$ is initial. In view of 6.15, all we have to prove now is that $h \circ g \sqsubseteq I_E$.
@@ -4069,9 +3733,6 @@ k = u \circ T(k) \circ v.
 $$
 
 But $I_E$ is one of the fixed points; whence $h \circ g \sqsubseteq I_E$ must follow. $\square$
-
-<!-- page 112 -->
-
 # EXERCISES
 
 **EXERCISE 6.17.** What are the algebras for which $C$ is initial? If $A$ of 6.2 is a generalization of $B$, what is the corresponding generalization of $C$? Prove that it exists and explain what are the algebras involved.
@@ -4109,9 +3770,6 @@ $$
 $$
 
 so that $\{\Gamma\} \triangleleft T(\{\Gamma\})$, and so 6.14 applies.
-
-<!-- page 113 -->
-
 **EXERCISE 6.21.** Do the same as 6.19 and 6.20 when the functors are also allowed to be generated by the operations:
 
 $$
@@ -4169,9 +3827,6 @@ E \cong D + E,
 $$
 
 by using a double fixed-point method. First decide what the underlying set of tokens should be, and then define $D$ and $E$ by simultaneous fixed points. (Syntactical domains as in 6.23 may very well require several simultaneous equations.)
-
-<!-- page 114 -->
-
 **EXERCISE 6.25.** For a projection pair $g : \mathcal{D} \to \mathcal{E}$ and $h : \mathcal{E} \to \mathcal{D}$ show that for $x \in |\mathcal{D}|$ and $y \in |\mathcal{E}|$ we have:
 
 $$g(x) \sqsubseteq y \text{ iff } x \sqsubseteq h(y).$$
@@ -4209,17 +3864,11 @@ $$(\mathcal{D} \to_\perp \mathcal{E}) \trianglelefteq (\mathcal{D} \to \mathcal{
 $$\mathcal{D} \trianglelefteq \mathcal{E} \trianglelefteq \mathcal{D} \ ,$$
 
 then $\mathcal{D} \cong \mathcal{E}$. Need the same be true of infinite systems?
-
-<!-- page 115 -->
-
 **EXERCISE 6.29.** Generalize $+$ and $\times$ to infinitary operations on domains:
 
 $$\sum_{n=0}^{\infty} D_n \quad \text{and} \quad \prod_{n=0}^{\infty} D_n.$$
 
 Would a similar generalization be possible for $\oplus$ and $\otimes$?
-
-<!-- page 116 -->
-
 # LECTURE VII
 
 <u>COMPUTABILITY IN EFFECTIVELY GIVEN DOMAINS</u>
@@ -4235,9 +3884,6 @@ $$
 (Hint: Consider the characteristic function $e$ of the even numbers. Take $f = \bar{e}$ and let $\pi$ be very horrid.) The reason we imagined we knew which were the computable $f : N \to N$ is that $N$ is always thought of in a standard presentation. We must thus define "in general" a concept of an *effectively given domain*, that is to say, one with a sufficiently computable presentation to represent the additional knowledge about the domain.
 
 The main idea will be that the *finite elements* of $|D|$ should be regarded as the ones initially known. Abstractly, to know a finite element is to know how it is *related* to other finite elements.
-
-<!-- page 117 -->
-
 Of course, this will mean that we will allow at most a countable infinity of finite elements — but this restriction well accords with intuition. To make precise the terminology "related to" it proves most convenient to go back to the neighbourhoods (in any case they are in a one-one correspondence with the finite elements).
 
 **DEFINITION 7.1.** A neighbourhood system $D$ has a *computable presentation* provided we can write
@@ -4259,9 +3905,6 @@ $$\langle X_n \rangle_{n=0}^{\infty},$$
 is the presentation. Even more strictly, when it is required to cope with infinitely many domains at a time, it would be necessary to give the actual Gödel numbers of the recursive relations (i) and (ii) (rather than just saying there exists some way of showing them to be recursively decidable).
 
 The intuitive idea of 7.1 is that the system is effectively given if you know how to do elementary "calculations" with neighbourhoods. The basic calculations are the forming of intersections. The neighbourhoods have to be laid out in a systematic way; and, if we are asked for an intersection of two given neighbourhoods, we have to be able to locate it in the standard sequence. Relation (ii) is the *consistency condition* , which is the necessary and sufficient condition for the intersection to exist in $D$. When (ii) is true, therefore, we have only to try $k = 0, 1, 2, \ldots$ until we discover that we have found the intersection. We are
-
-<!-- page 118 -->
-
 assuming that these basic decisions can be carried out in "finite time". Note that the obvious biconditional,
 
 $$X_n \subseteq X_m \text{ iff } X_n \cap X_m = X_n,$$
@@ -4287,9 +3930,6 @@ Therefore, 7.2 incorporates the notion of a *computable element* of a domain. An
 $$\{ m \in \mathbf{N} \mid Y_m \in y \}$$
 
 is a recursively enumerable set of integers. The point is that the elements of $|E|$ are finite or infinite. If $y$ were finite, the set of indices above would indeed be recursive in view of
-
-<!-- page 119 -->
-
 our assumptions on $E$. But an infinite element can in general only be approximated "a little at a time". We cannot expect to know the whole story of its approximations in a flash. What it means to be recursively enumerable is that there is a primitive recursive function (hence, a total function), $r : \mathbf{N} \to \mathbf{N}$, such that
 
 $$y = \{ Y_{r(i)} \mid i \in \mathbf{N} \}.$$
@@ -4305,9 +3945,6 @@ Definitions 7.1 and 7.2 may very well irritate the person hearing them for the f
 **PROPOSITION 7.3.** The identity map on an effectively given domain is computable; the composition of computable mappings on effectively given domains is again computable. $\square$
 
 The proofs for 7.3 are so trivial they are hardly worth an exercise. Note the immediate and useful consequence: if $f : D \to E$ is computable and $x \in |D|$ is computable, then $f(x) \in |E|$ is also computable. The next result is, however, worth working out even though it is quite easy.
-
-<!-- page 120 -->
-
 **THEOREM 7.4.** If $\mathcal{D}_0$ and $\mathcal{D}_1$ are effectively given, then so are $(\mathcal{D}_0 + \mathcal{D}_1)$ and $(\mathcal{D}_0 \times \mathcal{D}_1)$.
 
 Moreover the combinators $\mathrm{in}_i$ and $\mathrm{out}_i$ and $\mathrm{proj}_i^2$ are all computable; further, if $f$ and $g$ are computable maps, then so are $f + g$ and $f \times g$.
@@ -4351,9 +3988,6 @@ and
 $$W_k \ \mathrm{proj}_1^2 \ X_m^1 \text{ iff } X_{q(k)}^1 \subseteq X_m^1 \ .$$
 
 The reader needs to check that these are recursively enumerable
-
-<!-- page 121 -->
-
 Relations in the indices. For this purpose it may be convenient to recall some closure properties of these relations: taking conjunctions, disjunctions, substituting recursive functions, applying an existential quantifier to the front. $\square$
 
 Products give us a way of providing an immediate meaning to the notion of a computable function of several variables. Note that the proof of 3.7 is “effective” and shows that substitution of computable functions of several variables into each other always gives computable functions. We turn next to the function spaces.
@@ -4369,9 +4003,6 @@ $$
 \bigcap_{i < q} [X_{n_i}, Y_{m_i}],
 $$
 where $\langle n_0, n_1, \ldots, n_{q-1} \rangle$ and $\langle m_0, m_1, \ldots, m_{q-1} \rangle$ are two finite sequences of integers determining the choice of the function-space neighbourhood. In 3.9(i) the test for nonemptiness is given. Assuming the decidability of relations in $\mathcal{D}_0$ and $\mathcal{D}_1$, one remarks that the consistency of *finite sequences* of neighbourhoods is also decidable. (Hint: Test the first *two*, then form their intersection. Next test the third given neighbourhood against this one set; if consistent, form the intersection, and carry on.) By 3.9(i) at most $2 \cdot 2^q$ such sequential checks must be carried out to determine whether the function-space neighbourhood is non empty.
-
-<!-- page 122 -->
-
 It may not be fun, but the checks can be carried out in finite time. Owing to this decidability, we can therefore enumerate in a systematic way *all* the pairs of finite sequences $\langle n_0, \ldots \rangle$ and $\langle m_0, \ldots \rangle$ that determine neighbourhoods: that is the way that $(\mathcal{D}_0 \to \mathcal{D}_1)$ obtains its enumeration.
 
 Concerning the decidability of the required relations on $(\mathcal{D}_0 \to \mathcal{D}_1)$, we remark first off that consistency is more of the same: to test two finite intersections against each other, just form one big intersection and test it for non-emptiness as before. Secondly, the testing for intersection comes down in the end to testing one typical intersection of $[X, Y]$-neighbourhoods for equality with another. But equality amounts to two inclusions; inclusion in an intersection amounts to inclusion in each term. Therefore, what we need to do is to check a finite number of statements of the form:
@@ -4389,9 +4020,6 @@ In showing that the combinators are computable, we refer first to the proof of 3
 $$\bigcap_{i < q} [X_{n_i}, Y_{m_i}], \ X_k \text{ eval } Y_\ell.$$
 
 As we needed not to be so specific, we expressed the holding of this relationship in terms of *all* the functions in the function-
-
-<!-- page 123 -->
-
 space neighbourhood. But we know that the neighbourhood, by 3.9(ii), has a minimal element; it is then sufficient to test for the holding of $X_k f_0 Y_\ell$ at this minimal function $f_0$. But this test, we have already seen, is decidable. So the pairs in eval actually form a recursive set, not just a recursively enumerable set; thus, eval is a computable function.
 
 The case of curry involves three domains and is a bit more messy. But again, if the required neighbourhoods are written out in full, it will be seen that curry, too, is computable. We leave this minor struggle to the exercises.
@@ -4415,9 +4043,6 @@ We have nearly all our favourite combinators computable, but perhaps the most im
 $$\mathcal{D} = \{ X_n \mid n \in \mathbb{N} \}$$
 
 as effectively given, fix as a relation comes down to
-
-<!-- page 124 -->
-
 $$\bigcap_{i < q} [X_{n_i}, X_{m_i}] \text{ fix } X_\ell \text{ iff for some finite sequence}$$
 
 $$\Delta = X_{k_0}, \ldots, X_{k_p} = X_\ell,$$
@@ -4437,9 +4062,6 @@ The major consequence of what we have done up to this point concerns typed $\lam
 $$D = \{ X_n \mid n \in \mathbf{N} \},$$
 
 the relation $k \in X_n$ is *recursive* in $k$ and $n$. (It is worth thinking why this is so.) Of course, a lot of other things are recursive also.
-
-<!-- page 125 -->
-
 Now what kind of a system is $D^\S$? The construction of 6.1 made it a system over a certain set of strings $\Gamma$. For the sake of checking various assertions about computability, we are transposing everything back to $\mathbf{N}$. (These are all denumerable sets in any case.) The set $\Gamma$ is divided into three equally big parts, and we can do the same for $\mathbf{N}$. Let us write for any $m, k \in \mathbf{N}$ and subset $X \subseteq \mathbf{N}$:
 
 $$mX + k = \{ m \cdot n + k \mid n \in X \}.$$
@@ -4467,9 +4089,6 @@ The reader also has to check that 7.1(i)–(ii) hold for the $V_k$. The idea is 
 Next for the combinators, we have to translate neighbourhood relations into relations among integer indices. A selection of examples must suffice,
 
 $$X_n\ (\lambda x.\, x^\S)\ V_k \text{ iff } V_{2n+1} \subseteq V_k$$
-
-<!-- page 126 -->
-
 $$V_m \ \mathrm{proj}_0 \ V_k \text{ iff } k = 0 \text{ or } \exists n \in \mathbf{N}.\, m = 2n + 2 \text{ and } V_{p(n)} \subseteq V_k.$$
 
 The reader should write out other cases. $\square$
@@ -4489,9 +4108,6 @@ $$(P\mathbf{N}) = \{ \mathbf{N} \setminus E_n \mid n \in \mathbf{N} \}.$$
 As the relationship $E_n \cup E_m = E_k$ is recursive, there is no trouble in proving that this is a computable presentation. In this system, of course, any two neighbourhoods are consistent. Various combinators on $P\mathbf{N}$ are suggested in Exercise 7.23. $\square$
 
 We end this chapter with an example of another kind of domain construct. This construct is known as the *Smyth Power Domain*. It is defined for any neighbourhood system $\mathcal{D}$ and results in a new system we shall call here $\mathbb{P}\mathcal{D}$. The elements of $\mathbb{P}\mathcal{D}$ behave rather like *sets of elements* of $\mathcal{D}$, but since our elements can be either partial or total, there are certain dangers to pushing the analogy too far. For some purposes a rival construct called the *Plotkin Power Domain* is better, but it leads outside the category of neighbourhood systems as defined in these lectures. Do not confuse $P\mathbf{N}$ with $\mathbb{P}\mathcal{D}$.
-
-<!-- page 127 -->
-
 **DEFINITION 7.9.** Let $\mathcal{D}$ be any neighbourhood system and define
 
 $$\mathbb{P}\mathcal{D} = \left\{ \bigcup_{i < n} (\downarrow X_i) \mid \forall i < n.\, X_i \in \mathcal{D} \right\}.$$
@@ -4525,9 +4141,6 @@ $$\mathcal{D} = \{ X_n \mid n \in \mathbb{N} \},$$
 then the elements of $\mathbb{P}\mathcal{D}$ can be written as:
 
 $$\bigcup_{i < q} (\downarrow X_{n_i}),$$
-
-<!-- page 128 -->
-
 and hence are indexed by the finite sequences $\langle n_0, \dots, n_{q-1} \rangle$ of integers. Now one of the standard devices of recursion theory is to put the finite sequences of integers into a recursive one-one correspondence with the integers themselves. This is the start of the recursive presentation of $\mathbb{P}\mathcal{D}$, since it means we can list effectively all the required neighbourhoods.
 
 Next consider an intersection
@@ -4551,9 +4164,6 @@ $$\exists i < q \ldotp X_k \subseteq X_{n_i} \, .$$
 By our assumptions on $\mathcal{D}$, this is decidable. (It is this part of the argument that required the passage to $\mathcal{D}^\dagger$. It does not seem to be generally true that the closure under finite unions of an effectively given system is again effectively given.) $\square$
 
 One of the main reasons that $\mathbb{P}\mathcal{D}$ is like a power domain is the possibility of forming "finite sets".
-
-<!-- page 129 -->
-
 **DEFINITION 7.11.** For elements $x_0, \dots, x_{n-1} \in |D|$ we define
 
 $$\{x_0, \dots, x_{n-1}\} = \{z \in \mathbb{P} D \mid \exists X_0 \in x_0 \dots \exists X_{n-1} \in x_{n-1}.\, \bigcup_{i<n} (\uparrow X_i) \subseteq z\}.$$
@@ -4597,9 +4207,6 @@ An equation between approximable functions that checks for finite elements also 
 Finally, we note that
 
 $$D \cong D^\dagger \trianglelefteq \mathbb{P} D$$
-
-<!-- page 130 -->
-
 and that the isomorphism involved is just $\lambda x.\,\{x\}$ by what we saw on the finite elements. $\square$
 
 Further combinators on the power domain are given in the exercises.
@@ -4633,9 +4240,6 @@ Is this essentially any effectively given system?)
 $$y = \bigcup \{ \uparrow Y_{t(i)} \mid i \in \mathbf{N} \},$$
 
 where $t : \mathbf{N} \to \mathbf{N}$ is primitive recursive and where we may assume
-
-<!-- page 131 -->
-
 $Y_{t(i+1)} \subseteq Y_{t(i)}$
 
 for all $i \in \mathbf{N}$.
@@ -4657,9 +4261,6 @@ is a computable mapping.
 $$D^\infty \cong (D^\infty)^\infty$$
 
 is effective.
-
-<!-- page 132 -->
-
 **EXERCISE 7.19.** Prove that $D \mapsto \mathbb{P} D$ is a functor by defining for each $f : D \to E$ a mapping
 
 $$\mathbb{P} f : \mathbb{P} D \to \mathbb{P} E$$
@@ -4701,9 +4302,6 @@ $$\mathbb{P}(D \times E) \times \mathbb{P}(E \times F) \to \mathbb{P}(D \times F
 Is there any connection between
 
 $$\mathbb{P}\mathbf{N} \text{ and } P\mathbf{N}\ ????$$
-
-<!-- page 133 -->
-
 **EXERCISE 7.22.** (For algebraists.) Let $\Sigma = \{0,1\}^*$ be the free semigroup. A new domain is constructed by defining a family of sets by the least fixed point theorem as follows:
 
 $$S = \{\Sigma\} \cup \{\{\sigma\} \mid \sigma \in \Sigma\} \cup \{XY \mid X, Y \in S\} \cup \{X \cap Y \mid X, Y \in S \text{ and } X \cap Y \neq \emptyset\}.$$
@@ -4733,9 +4331,6 @@ where for $x, y \in P\mathbf{N}$ we define
 $$x + y = \{n + m \mid n \in x \text{ and } m \in y\}.$$
 
 What are the computable elements of $P\mathbf{N}$ ?
-
-<!-- page 134 -->
-
 **EXERCISE 7.24.** (Suggested by the LUCID language of Ashcroft and Wadge: SIAM Jour. Comp. vol. 5 (1976).)
 
 Define a set $\Gamma$ by
@@ -4757,9 +4352,6 @@ or of type
 $$(L \to T) \times (L \to T) \to (L \to T).$$
 
 Conclude that programs in LUCID define computable maps.
-
-<!-- page 135 -->
-
 # LECTURE VIII
 
 <u>RETRACTS OF THE UNIVERSAL DOMAIN</u>
@@ -4789,9 +4381,6 @@ $$a \circ a = i \circ j \circ i \circ j = i \circ j = a;$$
 and so $a$ is a retraction.
 
 We can also employ $i$ and $j$ to give the isomorphism on $|D|$. If $x \in |D|$, then $i(x) \in |E|$ and we calculate:
-
-<!-- page 136 -->
-
 $$a(i(x)) = i \circ j \circ i(x) = i(x).$$
 
 Thus, $i(x)$ belongs to the fixed-point set of $a$. In the other direction, if $a(y) = y$, then $i(j(y)) = y$. But $j(y) \in |D|$, so $i$ maps $|D|$ one-one and onto the fixed-point set of $a$. As $i$ and $j$ are monotone, the map is an isomorphism with respect to $\sqsubseteq$. $\square$
@@ -4828,9 +4417,6 @@ Now, take any $u \in |D|$ with $u \neq \bot$, and define
 $$a(x) = \mathrm{fade}(\mathrm{check}(x), u).$$
 
 Then $a$ is a retraction (not a projection in general) and the range of $a$ is isomorphic to $O$.
-
-<!-- page 137 -->
-
 Another way of using these combinators is to find $(D \to_{\perp} E)$ as a retraction of $(D \to E)$. Specifically, define a combinator
 
 $$\mathrm{strict} : (D \to E) \to (D \to E)$$
@@ -4858,9 +4444,6 @@ for $x \in |D|$ and $y \in |E|$. $\square$
 (ii) $a(x) = \{Y \in E \mid \exists X \in x.\, X \subseteq Y \land X \ a \ X\}$, for all $x \in |E|$.
 
 *Proof:* Suppose $a$ satisfies (ii) first. Inasmuch as $X \in x$ and $X \subseteq Y$ always imply $Y \in x$, for all $x \in |E|$, we see $a(x) \subseteq x$ must always hold. Moreover, it is obvious that $X \in x$ and $X \ a \ X$ always imply $X \in a(x)$; therefore, $a(x) \subseteq a(a(x))$ for all $x \in |E|$. This shows that $a$
-
-<!-- page 138 -->
-
 is indeed a projection.
 
 Let $D = \{X \in E \mid X \ a \ X\}$, then it is easy to check that $D \triangleleft E$ and that $a$ is determined from $D$ exactly as in 8.2; thus, the fixed-point set of $a$ is isomorphic to a domain, by what we have already proved. So we have shown (ii) implies (i).
@@ -4894,9 +4477,6 @@ $$\mathrm{sub} : (E \to E) \to (E \to E)$$
 by the formula
 
 $$X \ \mathrm{sub} \ (f) \ Z \quad \text{iff} \quad \exists Y \in E.\quad X \subseteq Y \ \ f \ Y \subseteq Z,$$
-
-<!-- page 139 -->
-
 for all $X, Z \in E$ and all $f : E \to E$. Then the range of $\mathrm{sub}$ consists exactly of the finitary projections on $E$, and moreover $\mathrm{sub}$ itself is a finitary projection on $(E \to E)$. If $E$ is effectively given, then $\mathrm{sub}$ is computable.
 
 *Proof:* It is trivial to check that $\mathrm{sub}(f)$ is always approximable. Also, it is obvious from the definition that the correspondence
@@ -4922,9 +4502,6 @@ then there is no problem in checking that $a$ satisfies 8.5(ii) *and conversely*
 Finally, to prove that $\mathrm{sub}$ is a finitary projection of $(E \to E)$, we invoke 6.11 and remark that, in view of 8.2, the fixed point set (range) of $\mathrm{sub}$ is in a one-one inclusion-preserving correspondence with the domain $\{D \mid D \triangleleft E\}$. $\square$
 
 These results have almost completely translated the theory of $\triangleleft$-subdomains into $\lambda$-calculus via the sub-combinator. One last step will complete the passage, and then we shall be able to return to solving domain equations.
-
-<!-- page 140 -->
-
 **DEFINITION 8.7.** Let $\mathbb{Q}$ be the set of rational numbers, and let
 $$[0, 1) = \{q \in \mathbb{Q} \mid 0 \le q < 1\},$$
 and similarly for $[r, s)$ for any $r < s$ in $\mathbb{Q}$. The neighbourhood system $\mathcal{U}$ over $[0, 1)$ is the set of all non-empty finite unions of rational intervals $[r, s)$ with $0 \le r < s \le 1$. $\square$
@@ -4946,9 +4523,6 @@ Moreover, if $\mathcal{D}$ is effectively given, then the projection pair making
 
 *Proof:* As $\mathcal{D}$ is countable, we can assume that
 $$\mathcal{D} = \{X_n \mid n \in \mathbb{N}\},$$
-
-<!-- page 141 -->
-
 where $\mathcal{D}$ is a system over a set $\Delta$ (say, $X_0 = \Delta$). We shall do the effective and general cases together, where for the latter all remarks on recursiveness are just left out. So, if we want $\mathcal{D}$ effectively given, the above enumeration should be taken as the computable presentation.
 
 Without loss of generality we can assume $\mathcal{D} \cong \mathcal{D}^\dagger$, since otherwise we would just replace $\mathcal{D}$ by $\mathcal{D}^\dagger$. The advantage of this preparation is that unions in $\mathcal{D}^\dagger$ keep things rather *separate* (as we noticed in constructing $\mathbb{P}\mathcal{D}$). In particular, we can be sure of this equivalence:
@@ -4975,9 +4549,6 @@ form a partition of $\Delta$ into (at most) $2^n$ parts. The reason for assumpti
 Suppose, corresponding to $X_0, X_1, \ldots, X_{n-1}$, we have selected $Y_0, Y_1, \ldots, Y_{n-1} \in \mathcal{U}$ so that, for all $\delta \in \{+, -\}^n$,
 
 $$(\blacksquare) \qquad \bigcap_{i < n} \delta_i X_i = \emptyset \quad \text{iff} \quad \bigcap_{i < n} \delta_i Y_i = \emptyset.$$
-
-<!-- page 142 -->
-
 We wish to show - effectively - how to choose $Y_n$ corresponding to $X_n$, so that $(\blacksquare)$ holds with $n+1$ replacing $n$. Proceeding inductively, we obtain a recursive enumeration of sets $Y_n \in \mathcal{U}$ so that
 
 $$\mathcal{D} \equiv \{ Y_n \mid n \in \mathbb{N} \} \triangleleft \mathcal{U} .$$
@@ -5012,9 +4583,6 @@ The set $Y_n \in \mathcal{U}$, it can be found effectively, and $(\blacksquare)$
 Finally, suppose that $a$ is a computable, finitary projection of $\mathcal{U}$. As we have seen in the proof of 8.5, the domain corresponding to the range of $a$ is isomorphic to the neighbourhood system
 
 $$\{ Y \in \mathcal{U} \mid Y \ a \ Y \} \triangleleft \mathcal{U} .$$
-
-<!-- page 143 -->
-
 Clearly, if $a$ as a set of ordered pairs of neighbourhoods is recursively enumerable, then the above set is also recursively enumerable (because equality between neighbourhoods is decidable). It follows easily that the subsystem is effectively given as a neighbourhood system in its own right. $\square$
 
 We have now proved that $\mathcal{U}$ is a nice and big domain that is nicely behaved with respect to computable mappings. It has some very interesting subdomains; to name a few:
@@ -5038,9 +4606,6 @@ for all $a, b : \mathcal{U} \to \mathcal{U}$. $\square$
 These interesting(computable!) combinators on elements of $\mathcal{U} \to \mathcal{U}$ have many, many properties. We shall, however, only see what they do to projections.
 
 **PROPOSITION 8.10.** If $a, b : \mathcal{U} \to \mathcal{U}$ are projections, then so are $a + b$, $a \times b$, and $a \to b$. If $a$ and $b$ are finitary, then so are the others; for the fixed-point set of each of them is isomorphic to the corresponding construct applied to the domains determined by $a$ and $b$.
-
-<!-- page 144 -->
-
 *Proof:* Suppose that $a, b \sqsubseteq I_{\mathcal{U}}$ (= $I$ for short). Then
 
 $$a + b \sqsubseteq I + I = i_+ \circ j_+ \sqsubseteq I.$$
@@ -5085,9 +4650,6 @@ then $b \circ f \circ a = f$. Conversely, if $f$ is like this, then let
 $$g = b \circ f \circ i_a.$$
 
 Thus, $i_b \circ g \circ a = b \circ f \circ a = f$; so there is an order-preserving isomorphism between the $g : D_a \to D_b$ and the $f = b \circ f \circ a$.
-
-<!-- page 145 -->
-
 The isomorphism proofs for $+$ and $\times$ are similar. $\square$
 
 Well, this was a lot of work, but the pay-off is rather handsome. What we have done is transpose all the
@@ -5123,9 +4685,6 @@ And, there is no reason to stop here. The system
 $$T \cong \{\{0, 1/2\}, \{1/2, 1\}, \{0, 1\}\} \triangleleft U,$$
 
 so we might as well think of
-
-<!-- page 146 -->
-
 $$\text{true, false} \in |U|$$
 
 and think of $\mathrm{cond} : U \times U \times U \to U$. No! that is wrong: under the new regime *EVERYTHING IS AN ELEMENT OF U*. With the new meaning of $\lambda$, all functions, all pairs, all combinators, all constructs become elements of $U$.
@@ -5151,9 +4710,6 @@ $$2^k X + \ell, \quad \text{where } \ell < 2^k.$$
 Let $V$ be the non-empty finite unions of sets $2^k \mathbb{N} + \ell$. Show that $U \cong V$ and that the isomorphism is effective, thus obtaining another presentation of $U$.
 
 **EXERCISE 8.13.** (For logicians.) Prove that the universal domain $U$ is isomorphic to the domain of all proper filters of the free Boolean algebra on $\aleph_0$-generators (= the Lindenbaum algebra of propositional calculus). (For topologists.) Connect this
-
-<!-- page 147 -->
-
 representation of $\mathcal{U}$ with the collection of non-empty open subsets of the product space $2^{\mathbf{N}}$ (= Cantor space).
 
 **EXERCISE 8.14.** A retraction $a : D \to D$ is called a *closure operator* iff $I_D \sqsubseteq a$. On a domain like $P\mathbf{N}$, give some examples of closure operators. (Hint: Close up a set of integers under addition. Is this continuous on $P\mathbf{N}$?) Prove in general for any closure $a : D \to D$ that the fixed-point set of $a$ is always a finitary domain. (Hint: Show that the fixed-point set is closed under intersections and directed unions.) What are the finite elements of the fixed-point set?
@@ -5171,9 +4727,6 @@ $$a \sqsubseteq b \quad \text{iff} \quad D_a \triangleleft D_b.$$
 (This fills in the gap at the end of the proof of 8.6.) Also finish off the proof of 8.8 by showing that if $E$ is effectively given and $a : E \to E$ is computable, then $D_a$ is effectively given.
 
 **EXERCISE 8.17.** Find explicitly (if possible) the projection pairs for $\mathcal{U} + \mathcal{U}$, $\mathcal{U} \times \mathcal{U}$, and $\mathcal{U} \to \mathcal{U}$ needed for 8.9. Are any of these domains isomorphic with $\mathcal{U}$? (The author does not know a really good construction for $\mathcal{U} \to \mathcal{U}$.) Find a universal domain $V \neq \mathcal{U}$.
-
-<!-- page 148 -->
-
 **EXERCISE 8.18.** Many of the cases of 8.10 were left unproved. Please establish these assertions explicitly.
 
 **EXERCISE 8.19.** Suppose we know both
@@ -5211,9 +4764,6 @@ $$D_{t(a)} \cong T(D_a) \ .$$
 Does it follow that $\|t\| = \mathrm{fix}(t)$ is such that
 
 $$D_{\|t\|} \cong T(D_{\|t\|})$$
-
-<!-- page 149 -->
-
 really is the initial solution of the domain equation with respect to projections? Since $t$ is computable, will this solution be effectively given?
 
 **EXERCISE 8.24.** Suppose $S$ and $T$ are two (binary-argument) constructs on domains that can be made into computable operators on projections of the universal domain. Show that we can therefore find a pair of effectively presented domains such that
@@ -5247,9 +4797,6 @@ and then show $D$ satisfies $(\spadesuit)$.) Is this $D$ effectively given?
 $$
 f : D_a \to D_b,
 $$
-
-<!-- page 150 -->
-
 write instead
 
 $$f = b \circ f \circ a,$$
@@ -5279,5 +4826,3 @@ for all types $t$. (Why does this equation mean that $x$ is in the product?) Def
 $$\Pi = \lambda d\,\lambda x\,\lambda t.\,\mathrm{sub}(d(\mathrm{sub}(t)))(x(\mathrm{sub}(t))).$$
 
 Show that for $d$ a polymorphic type, $\Pi(d)$ is a type. (Hint: It is easy to check that $\Pi(d)$ is a projection; the problem is to show it is *finitary*.)
-
-<!-- page 151 -->
