@@ -9,6 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition67
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixElement_eq_iSupDirected
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.opStep
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.botStrict_rel

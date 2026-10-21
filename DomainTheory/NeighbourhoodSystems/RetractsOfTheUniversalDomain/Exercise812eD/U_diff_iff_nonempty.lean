@@ -7,6 +7,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.U_diff_mem
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
 
 @[expose] public section

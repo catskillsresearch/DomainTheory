@@ -8,6 +8,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516
 public import Mathlib.Data.Nat.Bits
 import all Mathlib.Data.Nat.Bits
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.iterElem_eq_iterate
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.Basic
 
 @[expose] public section

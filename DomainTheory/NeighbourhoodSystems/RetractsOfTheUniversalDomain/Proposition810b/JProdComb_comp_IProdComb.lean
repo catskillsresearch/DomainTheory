@@ -8,6 +8,8 @@ module
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b.IProdComb
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.prodMap_comp
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.prodMap_id
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b.JProdComb
 
 @[expose] public section

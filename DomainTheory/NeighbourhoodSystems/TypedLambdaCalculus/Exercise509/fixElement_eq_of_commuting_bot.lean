@@ -6,6 +6,9 @@ ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixElement_eq_iSupDirected
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.iterElem_mono
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.Basic
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.commute_apply
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.iterElem_succ

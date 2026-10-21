@@ -6,6 +6,7 @@ ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.iterElem_eq_iterate
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise509.Basic
 
 @[expose] public section

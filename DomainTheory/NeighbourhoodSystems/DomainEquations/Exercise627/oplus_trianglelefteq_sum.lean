@@ -7,6 +7,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Subsystemu2etrianglelefteq
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.oplusTok_subsystem_sumTok
 

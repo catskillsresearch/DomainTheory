@@ -5,6 +5,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.U_noMinimal
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.VDiff
 
 @[expose] public section

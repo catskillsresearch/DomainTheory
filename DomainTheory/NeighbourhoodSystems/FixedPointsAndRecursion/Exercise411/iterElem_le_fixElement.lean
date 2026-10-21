@@ -7,6 +7,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.mem_iterElem
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.Basic
 
 @[expose] public section
