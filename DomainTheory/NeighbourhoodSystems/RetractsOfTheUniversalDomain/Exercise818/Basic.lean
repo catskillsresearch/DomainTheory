@@ -37,5 +37,4 @@ Axiom footprint: `⊆ {propext, Classical.choice, Quot.sound}`, identical to `Pr
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap
 end DomainTheory.NeighbourhoodSystems

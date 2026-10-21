@@ -52,7 +52,6 @@ codomain `T` of Example 1.2, whose `simp`/`fin_cases` proofs already do — pre-
 
 namespace DomainTheory.NeighbourhoodSystems.Example23
 
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 end DomainTheory.NeighbourhoodSystems.Example23

@@ -31,5 +31,3 @@ theorem) that every `T₀`-space embeds in a power of the Sierpiński space.
 
 /-- Scott's two-point Sierpiński space 𝕆: `Prop` with the Sierpiński topology. -/
 abbrev Sierpinski := Prop
-
-open Topology TopologicalSpace

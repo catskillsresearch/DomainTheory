@@ -25,7 +25,6 @@ Theorems 1.5 and 1.6.
 
 namespace DomainTheory.DataTypesAsLattices
 
-open TopologicalSpace Topology Function
 
 
 end DomainTheory.DataTypesAsLattices

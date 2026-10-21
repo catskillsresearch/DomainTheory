@@ -32,7 +32,6 @@ the above. -/
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open Domain.Recursive NeighborhoodSystem Exercise718
 
 
 end DomainTheory.NeighbourhoodSystems

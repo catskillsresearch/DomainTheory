@@ -71,6 +71,5 @@ end ApproximableMap
 
 /-! ### Theorem 4.2 — the approximable fixed-point operator `fix`. -/
 
-open ApproximableMap
 
 end DomainTheory.NeighbourhoodSystems

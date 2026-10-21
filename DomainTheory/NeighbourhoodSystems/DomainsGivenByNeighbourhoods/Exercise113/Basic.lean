@@ -41,7 +41,6 @@ Constructive except `branch_isTotal`'s use of `B`'s structure (still `[propext, 
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise113
 
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
 end DomainTheory.NeighbourhoodSystems.Exercise113

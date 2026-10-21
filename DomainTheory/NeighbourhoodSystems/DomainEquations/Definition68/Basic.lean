@@ -64,7 +64,6 @@ representing `Φ` is the identity on the function space. Everything here is **ch
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 
 end DomainTheory.NeighbourhoodSystems

@@ -41,5 +41,4 @@ open DomainTheory.NeighbourhoodSystems
 
 /-! ### Cube-freeness — Scott's literal form `t ≠ u·a·a·a·v`. -/
 
-open Example44 ExampleB NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems.Exercise516

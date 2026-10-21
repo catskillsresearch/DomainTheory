@@ -53,6 +53,5 @@ end ApproximableMap
 
 /-! ### Plotkin's uniqueness theorem. -/
 
-open ApproximableMap
 
 end DomainTheory.NeighbourhoodSystems

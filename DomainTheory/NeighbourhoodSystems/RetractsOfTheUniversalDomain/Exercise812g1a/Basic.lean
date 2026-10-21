@@ -22,5 +22,4 @@ branch (`canonList_eq_of_filter_eq_nil`), landing on the same `[(0,1)] ↦ U.mas
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open Domain.Recursive NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems

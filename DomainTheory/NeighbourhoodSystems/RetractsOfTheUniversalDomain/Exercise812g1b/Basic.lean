@@ -22,5 +22,4 @@ empty-input fallback branch (`canonIdx_eq_master_of_empty`), landing on `Vmaster
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open Domain.Recursive NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems

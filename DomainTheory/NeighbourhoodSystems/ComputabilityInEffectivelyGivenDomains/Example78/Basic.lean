@@ -55,7 +55,6 @@ primitive-recursive `myLor`.
 
 namespace DomainTheory.NeighbourhoodSystems.Example78
 
-open Domain.Recursive NeighborhoodSystem
 
 
 end DomainTheory.NeighbourhoodSystems.Example78

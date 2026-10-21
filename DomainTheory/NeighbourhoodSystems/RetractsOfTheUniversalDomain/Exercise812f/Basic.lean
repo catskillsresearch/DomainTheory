@@ -38,7 +38,6 @@ bisection. Given `(e)(c)`'s generic `splitFromBisection`/`isComputableSplit_ofBi
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open Domain.Recursive NeighborhoodSystem
 
 
 end DomainTheory.NeighbourhoodSystems

@@ -29,5 +29,4 @@ additionally asserted computable.
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem Domain.Recursive
 end DomainTheory.NeighbourhoodSystems

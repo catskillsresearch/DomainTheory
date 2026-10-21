@@ -20,7 +20,6 @@ reading, so `g ⊚ f` is `f ≫ g`.
 
 export CategoryTheory (Category)
 
-open scoped CategoryTheory
 
 
 end DomainTheory.NeighbourhoodSystems
