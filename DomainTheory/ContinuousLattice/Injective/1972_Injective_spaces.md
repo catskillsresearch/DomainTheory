@@ -1,5 +1,9 @@
 # Injective spaces
 
+Scott's §1 uses the two-point **Sierpiński space** $\mathbb{O}$ (`Prop` with the Sierpiński topology in Lean).
+
+- [ContinuousLattice/Injective/Basic.lean](Basic.lean)
+
 - [T0 spaces](1972_T0_spaces.md)
 - [Definition 1.1](1972_Definition_1_1.md)
 - [Proposition 1.2](1972_Proposition_1_2.md)
@@ -9,7 +13,3 @@
 - [Corollary 1.6](1972_Corollary_1_6.md)
 - [Corollary 1.7](1972_Corollary_1_7.md)
 - [Absolute retracts](1972_Absolute_retracts.md)
-
-**Lean 4**
-
-- [ContinuousLattice/Injective/Basic.lean](Basic.lean)
