@@ -45,4 +45,4 @@ This shows that $i$ is an isomorphism. $\square$
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainEquations/Proposition67.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Proposition67.lean)
+- [NeighbourhoodSystems/DomainEquations/Proposition67.lean](Proposition67.lean)

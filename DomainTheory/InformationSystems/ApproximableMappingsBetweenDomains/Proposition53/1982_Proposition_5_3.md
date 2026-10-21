@@ -19,10 +19,10 @@ for all $u \in \mathrm{Con}_{\mathbf{A}}$ and all $v \in \mathrm{Con}_{\mathbf{B
 
 **Lean 4**
 
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition53.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Basic.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Basic.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Le.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Le.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/ext_iff_toElement.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/ext_iff_toElement.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/le_iff_toElement_le.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/le_iff_toElement_le.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_closure_le.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_closure_le.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_forall_singleton.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_forall_singleton.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53.lean](../Proposition53.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Basic.lean](Basic.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Le.lean](Le.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/ext_iff_toElement.lean](ext_iff_toElement.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/le_iff_toElement_le.lean](le_iff_toElement_le.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_closure_le.lean](rel_iff_closure_le.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_forall_singleton.lean](rel_iff_forall_singleton.lean)

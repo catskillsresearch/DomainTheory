@@ -44,7 +44,7 @@ Using this style of notation we have:
 
 **Lean 4**
 
-- [DataTypesAsLattices/Closures/theorem_5_5.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_5.lean)
-- [DataTypesAsLattices/Closures/theorem_5_5_iff.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_5_iff.lean)
-- [DataTypesAsLattices/Closures/theorem_5_5_universe.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_5_universe.lean)
-- [DataTypesAsLattices/Closures/theorem_5_5_values.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_5_values.lean)
+- [DataTypesAsLattices/Closures/theorem_5_5.lean](theorem_5_5.lean)
+- [DataTypesAsLattices/Closures/theorem_5_5_iff.lean](theorem_5_5_iff.lean)
+- [DataTypesAsLattices/Closures/theorem_5_5_universe.lean](theorem_5_5_universe.lean)
+- [DataTypesAsLattices/Closures/theorem_5_5_values.lean](theorem_5_5_values.lean)

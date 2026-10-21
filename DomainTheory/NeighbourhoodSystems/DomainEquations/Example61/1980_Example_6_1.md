@@ -274,10 +274,10 @@ In algebraic language $g$ is a *homomorphism* of tree algebras; and $D^\S$ is ca
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainEquations/Example61.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Example61.lean)
-- [NeighbourhoodSystems/DomainEquations/Example61/Gamma.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Example61/Gamma.lean)
-- [NeighbourhoodSystems/DomainEquations/Example61/MemS.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Example61/MemS.lean)
-- [NeighbourhoodSystems/DomainEquations/Example61/embL.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Example61/embL.lean)
-- [NeighbourhoodSystems/DomainEquations/Example61/embPair.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Example61/embPair.lean)
-- [NeighbourhoodSystems/DomainEquations/Example61/embR.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Example61/embR.lean)
-- [NeighbourhoodSystems/DomainEquations/Example61/embZero.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Example61/embZero.lean)
+- [NeighbourhoodSystems/DomainEquations/Example61.lean](../Example61.lean)
+- [NeighbourhoodSystems/DomainEquations/Example61/Gamma.lean](Gamma.lean)
+- [NeighbourhoodSystems/DomainEquations/Example61/MemS.lean](MemS.lean)
+- [NeighbourhoodSystems/DomainEquations/Example61/embL.lean](embL.lean)
+- [NeighbourhoodSystems/DomainEquations/Example61/embPair.lean](embPair.lean)
+- [NeighbourhoodSystems/DomainEquations/Example61/embR.lean](embR.lean)
+- [NeighbourhoodSystems/DomainEquations/Example61/embZero.lean](embZero.lean)

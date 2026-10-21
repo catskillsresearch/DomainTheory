@@ -6,4 +6,4 @@
 
 **Lean 4**
 
-- [ContinuousLattice/Injective/corollary_1_6.lean](DomainTheory/ContinuousLattice/Injective/corollary_1_6.lean)
+- [ContinuousLattice/Injective/corollary_1_6.lean](corollary_1_6.lean)

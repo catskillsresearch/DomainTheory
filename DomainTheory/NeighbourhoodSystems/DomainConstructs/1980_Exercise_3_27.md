@@ -10,4 +10,4 @@ is approximable without bringing in the neighbourhoods in such an explicit way? 
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainConstructs/Exercise327.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise327.lean)
+- [NeighbourhoodSystems/DomainConstructs/Exercise327.lean](Exercise327.lean)

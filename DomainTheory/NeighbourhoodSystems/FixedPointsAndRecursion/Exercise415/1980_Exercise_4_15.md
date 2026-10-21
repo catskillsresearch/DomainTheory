@@ -10,8 +10,8 @@ and use 2.11 to remark that $\bigsqcup C \in |D|$.) Now argue that $f$ has a <u>
 
 **Lean 4**
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/Basic.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/Basic.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/chainUnion_le.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/chainUnion_le.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/exists_least_fixedPoint.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/exists_least_fixedPoint.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/exists_maximal_fixedPoint.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/exists_maximal_fixedPoint.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415.lean](../Exercise415.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/chainUnion_le.lean](chainUnion_le.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/exists_least_fixedPoint.lean](exists_least_fixedPoint.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise415/exists_maximal_fixedPoint.lean](exists_maximal_fixedPoint.lean)

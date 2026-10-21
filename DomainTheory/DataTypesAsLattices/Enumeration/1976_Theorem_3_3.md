@@ -16,8 +16,8 @@ Note that if $u$ is LAMBDA-definable, then we find first an $n$ such that $\math
 
 **Lean 4**
 
-- [DataTypesAsLattices/Enumeration/theorem_3_3.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_3.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_3_from_v.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_3_from_v.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_3_i.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_3_i.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_3_ii.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_3_ii.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_3_val.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_3_val.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_3.lean](theorem_3_3.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_3_from_v.lean](theorem_3_3_from_v.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_3_i.lean](theorem_3_3_i.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_3_ii.lean](theorem_3_3_ii.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_3_val.lean](theorem_3_3_val.lean)

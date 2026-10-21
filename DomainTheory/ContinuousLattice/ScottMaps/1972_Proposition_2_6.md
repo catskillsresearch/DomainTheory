@@ -48,4 +48,4 @@ and that gives the joint continuity. $\square$
 
 **Lean 4**
 
-- [ContinuousLattice/ScottMaps/proposition_2_6.lean](DomainTheory/ContinuousLattice/ScottMaps/proposition_2_6.lean)
+- [ContinuousLattice/ScottMaps/proposition_2_6.lean](proposition_2_6.lean)

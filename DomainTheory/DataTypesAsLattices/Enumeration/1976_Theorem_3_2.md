@@ -27,7 +27,7 @@ We note that $\mathbf{num}$ is a primitive recursive (total) function. The combi
 
 **Lean 4**
 
-- [DataTypesAsLattices/Enumeration/theorem_3_2.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_2.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_2_i.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_2_i.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_2_range.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_2_range.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_2_surjective.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_2_surjective.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_2.lean](theorem_3_2.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_2_i.lean](theorem_3_2_i.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_2_range.lean](theorem_3_2_range.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_2_surjective.lean](theorem_3_2_surjective.lean)

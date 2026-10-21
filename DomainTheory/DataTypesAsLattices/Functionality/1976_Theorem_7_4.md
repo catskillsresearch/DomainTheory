@@ -92,9 +92,9 @@ These results bring up many questions which we leave unanswered here. For exampl
 
 **Lean 4**
 
-- [DataTypesAsLattices/Functionality/theorem_7_4.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_4_finite.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4_finite.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_4_i.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4_i.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_4_plotkin.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4_plotkin.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_4_sigma_index.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4_sigma_index.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_4_unique.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4_unique.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4.lean](theorem_7_4.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4_finite.lean](theorem_7_4_finite.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4_i.lean](theorem_7_4_i.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4_plotkin.lean](theorem_7_4_plotkin.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4_sigma_index.lean](theorem_7_4_sigma_index.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4_unique.lean](theorem_7_4_unique.lean)

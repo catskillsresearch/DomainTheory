@@ -8,5 +8,5 @@ $$\bar{f}(y) = \bigcup \{ \bigcap \{ f(x) \mid x \in X \cap U \} \mid y \in U \}
 
 **Lean 4**
 
-- [DataTypesAsLattices/Embedding/theorem_1_5.lean](DomainTheory/DataTypesAsLattices/Embedding/theorem_1_5.lean)
-- [DataTypesAsLattices/Embedding/theorem_1_5_extends.lean](DomainTheory/DataTypesAsLattices/Embedding/theorem_1_5_extends.lean)
+- [DataTypesAsLattices/Embedding/theorem_1_5.lean](theorem_1_5.lean)
+- [DataTypesAsLattices/Embedding/theorem_1_5_extends.lean](theorem_1_5_extends.lean)

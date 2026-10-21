@@ -4,12 +4,12 @@
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/Basic.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/Basic.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt_injective.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt_injective.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/inter_mem'.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/inter_mem'.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem_nonempty.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem_nonempty.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem_mem.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem_mem.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117.lean](../Exercise117.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt.lean](filterAt.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt_injective.lean](filterAt_injective.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/inter_mem'.lean](inter_mem'.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem.lean](ratIntervalMem.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem_nonempty.lean](ratIntervalMem_nonempty.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem.lean](ratIntervalSystem.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem_mem.lean](ratIntervalSystem_mem.lean)

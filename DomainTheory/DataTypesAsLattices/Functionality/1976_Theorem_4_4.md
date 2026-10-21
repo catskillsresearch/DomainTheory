@@ -68,8 +68,8 @@ This shows that our category of retracts is a *Cartesian closed category*, which
 
 **Lean 4**
 
-- [DataTypesAsLattices/Retracts/theorem_4_4.lean](DomainTheory/DataTypesAsLattices/Retracts/theorem_4_4.lean)
-- [DataTypesAsLattices/Retracts/theorem_4_4_ii.lean](DomainTheory/DataTypesAsLattices/Retracts/theorem_4_4_ii.lean)
-- [DataTypesAsLattices/Functionality/theorem_4_4_med.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_4_4_med.lean)
-- [DataTypesAsLattices/Functionality/theorem_4_4_med_unique.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_4_4_med_unique.lean)
-- [DataTypesAsLattices/Functionality/theorem_4_4_typed.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_4_4_typed.lean)
+- [DataTypesAsLattices/Retracts/theorem_4_4.lean](../Retracts/theorem_4_4.lean)
+- [DataTypesAsLattices/Retracts/theorem_4_4_ii.lean](../Retracts/theorem_4_4_ii.lean)
+- [DataTypesAsLattices/Functionality/theorem_4_4_med.lean](theorem_4_4_med.lean)
+- [DataTypesAsLattices/Functionality/theorem_4_4_med_unique.lean](theorem_4_4_med_unique.lean)
+- [DataTypesAsLattices/Functionality/theorem_4_4_typed.lean](theorem_4_4_typed.lean)

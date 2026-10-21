@@ -30,4 +30,4 @@ In case $a$ is infinite but not equal to $\top$ (say, $a = \{n \mid n > 0\} = \t
 
 **Lean 4**
 
-- [DataTypesAsLattices/Classification/theorem_6_4.lean](DomainTheory/DataTypesAsLattices/Classification/theorem_6_4.lean)
+- [DataTypesAsLattices/Classification/theorem_6_4.lean](theorem_6_4.lean)

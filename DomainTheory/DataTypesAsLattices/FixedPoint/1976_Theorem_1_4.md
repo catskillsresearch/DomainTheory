@@ -14,4 +14,4 @@ For those familiar with the abstract theory of topological spaces we give in con
 
 **Lean 4**
 
-- [DataTypesAsLattices/FixedPoint/theorem_1_4.lean](DomainTheory/DataTypesAsLattices/FixedPoint/theorem_1_4.lean)
+- [DataTypesAsLattices/FixedPoint/theorem_1_4.lean](theorem_1_4.lean)

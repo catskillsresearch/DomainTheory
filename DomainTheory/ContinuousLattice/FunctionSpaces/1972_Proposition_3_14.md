@@ -56,4 +56,4 @@ where $f^n(x) = f(f(\ldots f(x) \ldots))$ ($n$ times). Thus $\mathrm{fix}$ is th
 
 **Lean 4**
 
-- [ContinuousLattice/FunctionSpaces/proposition_3_14.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_3_14.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_3_14.lean](proposition_3_14.lean)

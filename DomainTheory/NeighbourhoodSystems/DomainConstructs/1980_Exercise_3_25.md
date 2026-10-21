@@ -4,4 +4,4 @@
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainConstructs/Exercise325.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Exercise325.lean)
+- [NeighbourhoodSystems/DomainConstructs/Exercise325.lean](Exercise325.lean)

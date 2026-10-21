@@ -17,6 +17,6 @@ We note in conclusion that most constructions by fixed points give algebraic lat
 
 **Lean 4**
 
-- [DataTypesAsLattices/Closures/theorem_5_6.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_6.lean)
-- [DataTypesAsLattices/Closures/theorem_5_6_combinator.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_6_combinator.lean)
-- [DataTypesAsLattices/Closures/theorem_5_6_iterates.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_6_iterates.lean)
+- [DataTypesAsLattices/Closures/theorem_5_6.lean](theorem_5_6.lean)
+- [DataTypesAsLattices/Closures/theorem_5_6_combinator.lean](theorem_5_6_combinator.lean)
+- [DataTypesAsLattices/Closures/theorem_5_6_iterates.lean](theorem_5_6_iterates.lean)

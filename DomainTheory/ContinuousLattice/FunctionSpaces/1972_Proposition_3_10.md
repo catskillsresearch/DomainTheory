@@ -109,5 +109,5 @@ holds for all $x$ with $i(x) \sqsubseteq \bigsqcup S'$. The desired result follo
 
 **Lean 4**
 
-- [ContinuousLattice/FunctionSpaces/proposition_3_10_converse.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_3_10_converse.lean)
-- [ContinuousLattice/FunctionSpaces/proposition_3_10_forward.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_3_10_forward.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_3_10_converse.lean](proposition_3_10_converse.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_3_10_forward.lean](proposition_3_10_forward.lean)

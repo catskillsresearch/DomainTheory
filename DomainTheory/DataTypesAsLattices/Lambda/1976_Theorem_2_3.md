@@ -10,7 +10,7 @@ $$f(x_0, x_1, \cdots, x_{k-1}) = u(x_0)(x_1) \cdots (x_{k-1}),$$
 
 **Lean 4**
 
-- [DataTypesAsLattices/Lambda/theorem_2_3.lean](DomainTheory/DataTypesAsLattices/Lambda/theorem_2_3.lean)
-- [DataTypesAsLattices/Lambda/theorem_2_3_binary.lean](DomainTheory/DataTypesAsLattices/Lambda/theorem_2_3_binary.lean)
-- [DataTypesAsLattices/Lambda/theorem_2_3_ternary.lean](DomainTheory/DataTypesAsLattices/Lambda/theorem_2_3_ternary.lean)
-- [DataTypesAsLattices/Lambda/theorem_2_3_unary.lean](DomainTheory/DataTypesAsLattices/Lambda/theorem_2_3_unary.lean)
+- [DataTypesAsLattices/Lambda/theorem_2_3.lean](theorem_2_3.lean)
+- [DataTypesAsLattices/Lambda/theorem_2_3_binary.lean](theorem_2_3_binary.lean)
+- [DataTypesAsLattices/Lambda/theorem_2_3_ternary.lean](theorem_2_3_ternary.lean)
+- [DataTypesAsLattices/Lambda/theorem_2_3_unary.lean](theorem_2_3_unary.lean)

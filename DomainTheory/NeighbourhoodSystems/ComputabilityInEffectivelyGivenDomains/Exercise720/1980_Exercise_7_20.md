@@ -16,9 +16,9 @@ Are $\mathbb{P}(\mathbb{P} D)$ and $\mathbb{P} D$ generally isomorphic??
 
 **Lean 4**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/Basic.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/Basic.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_isComputable.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_isComputable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_Ypd_iff.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_Ypd_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_fin.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_fin.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720.lean](../Exercise720.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap.lean](unionMap.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_isComputable.lean](unionMap_isComputable.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_Ypd_iff.lean](unionMap_rel_Ypd_iff.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_fin.lean](unionMap_rel_fin.lean)

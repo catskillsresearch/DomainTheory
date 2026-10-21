@@ -12,4 +12,4 @@ There is no single subset of $\mathbf{P}\omega$ typical for $\mathfrak{B}$, whic
 
 **Lean 4**
 
-- [DataTypesAsLattices/Classification/theorem_6_5.lean](DomainTheory/DataTypesAsLattices/Classification/theorem_6_5.lean)
+- [DataTypesAsLattices/Classification/theorem_6_5.lean](theorem_6_5.lean)

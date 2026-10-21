@@ -21,10 +21,10 @@ Before we go on to the first basic constructs of sums and products of domains, w
 
 **Lean 4**
 
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/Basic.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/Basic.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_comp.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_comp.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_toElement.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_toElement.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_unique.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_unique.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean](../Proposition56.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/Basic.lean](Basic.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean](comp_constMap.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean](constMap.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_comp.lean](constMap_comp.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_toElement.lean](constMap_toElement.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_unique.lean](constMap_unique.lean)

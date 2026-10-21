@@ -14,7 +14,7 @@ In other words, the given entailment relation itself defines the identity functi
 
 **Lean 4**
 
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/Basic.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/Basic.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp_toElement.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp_toElement.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean](../Proposition55.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/Basic.lean](Basic.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean](comp.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp_toElement.lean](comp_toElement.lean)

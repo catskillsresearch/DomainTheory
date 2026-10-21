@@ -10,5 +10,5 @@ In order to make the plan of the work clearer, the proofs of the theorems have b
 
 **Lean 4**
 
-- [DataTypesAsLattices/Embedding/theorem_1_6.lean](DomainTheory/DataTypesAsLattices/Embedding/theorem_1_6.lean)
-- [DataTypesAsLattices/Embedding/theorem_1_6_injective_continuous.lean](DomainTheory/DataTypesAsLattices/Embedding/theorem_1_6_injective_continuous.lean)
+- [DataTypesAsLattices/Embedding/theorem_1_6.lean](theorem_1_6.lean)
+- [DataTypesAsLattices/Embedding/theorem_1_6_injective_continuous.lean](theorem_1_6_injective_continuous.lean)

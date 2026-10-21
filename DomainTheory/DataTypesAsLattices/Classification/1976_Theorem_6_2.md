@@ -14,4 +14,4 @@ Thus $\{\top\}$ is a countable intersection of open sets, otherwise called a $\m
 
 **Lean 4**
 
-- [DataTypesAsLattices/Classification/theorem_6_2.lean](DomainTheory/DataTypesAsLattices/Classification/theorem_6_2.lean)
+- [DataTypesAsLattices/Classification/theorem_6_2.lean](theorem_6_2.lean)

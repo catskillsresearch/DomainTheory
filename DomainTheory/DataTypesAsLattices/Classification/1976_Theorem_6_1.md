@@ -12,4 +12,4 @@ We can say that $\{x \mid 0 \in x\}$ is the *typical* open set, and that every o
 
 **Lean 4**
 
-- [DataTypesAsLattices/Classification/theorem_6_1.lean](DomainTheory/DataTypesAsLattices/Classification/theorem_6_1.lean)
+- [DataTypesAsLattices/Classification/theorem_6_1.lean](theorem_6_1.lean)

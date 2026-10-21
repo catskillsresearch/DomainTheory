@@ -16,12 +16,12 @@ which use only $\lambda v$ with one variable and applications only to one argume
 
 **Lean 4**
 
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise507.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/Basic.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/Basic.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/app_two_args.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/app_two_args.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/curryu2083_apply.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/curryu2083_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/curry₃.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/curry₃.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/lam_two_vars.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/lam_two_vars.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/surjective_pairing.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/surjective_pairing.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/uncurry_apply.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/uncurry_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/uncurry_lam_two_vars.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/uncurry_lam_two_vars.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507.lean](../Exercise507.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/app_two_args.lean](app_two_args.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/curryu2083_apply.lean](curryu2083_apply.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/curry₃.lean](curry₃.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/lam_two_vars.lean](lam_two_vars.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/surjective_pairing.lean](surjective_pairing.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/uncurry_apply.lean](uncurry_apply.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise507/uncurry_lam_two_vars.lean](uncurry_lam_two_vars.lean)

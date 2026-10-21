@@ -20,6 +20,6 @@ to show that $D'$ is injective. $\square$
 
 **Lean 4**
 
-- [ContinuousLattice/Injective/IsInjectiveSpaceu2eof_retract.lean](DomainTheory/ContinuousLattice/Injective/IsInjectiveSpaceu2eof_retract.lean)
-- [ContinuousLattice/Injective/IsRetractSubspace.lean](DomainTheory/ContinuousLattice/Injective/IsRetractSubspace.lean)
-- [ContinuousLattice/Injective/proposition_1_4.lean](DomainTheory/ContinuousLattice/Injective/proposition_1_4.lean)
+- [ContinuousLattice/Injective/IsInjectiveSpaceu2eof_retract.lean](IsInjectiveSpaceu2eof_retract.lean)
+- [ContinuousLattice/Injective/IsRetractSubspace.lean](IsRetractSubspace.lean)
+- [ContinuousLattice/Injective/proposition_1_4.lean](proposition_1_4.lean)

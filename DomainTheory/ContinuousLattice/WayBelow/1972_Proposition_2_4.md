@@ -17,3 +17,8 @@ $$
 It easily follows by lattice theory that the equation of 2.3 implies that of 2.4.
 
 In the converse direction we have only to note that if $U$ is open and $y \in U$, then $\sqcap U \ll y$. The implication from 2.4 to 2.3 results at once. $\square$
+
+**Lean 4**
+
+- [ContinuousLattice/WayBelow/isContinuousLattice_iff_isLUB_sInf_nhds.lean](isContinuousLattice_iff_isLUB_sInf_nhds.lean)
+- [ContinuousLattice/WayBelow/sInf_wayBelow.lean](sInf_wayBelow.lean)

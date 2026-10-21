@@ -33,3 +33,18 @@ The primary purpose of introducing it is to provide a simple definition for the 
 (vi) $x \ll x$ iff $z \in D : x \sqsubseteq z$ is open;
 
 (vii) if $S \subseteq D$ is directed, then $x \ll \bigsqcup S$ iff $x \ll y$ for some $y \in S$. $\square$
+
+**Lean 4**
+
+- [ContinuousLattice/WayBelow.lean](../WayBelow.lean)
+- [ContinuousLattice/WayBelow/Basic.lean](Basic.lean)
+- [ContinuousLattice/WayBelow/Basic/notation5.lean](Basic/notation5.lean)
+- [ContinuousLattice/WayBelow/WayBelow.lean](WayBelow.lean)
+- [ContinuousLattice/WayBelow/bot_wayBelow.lean](bot_wayBelow.lean)
+- [ContinuousLattice/WayBelow/WayBelowu2esup.lean](WayBelowu2esup.lean)
+- [ContinuousLattice/WayBelow/WayBelowu2etrans_le.lean](WayBelowu2etrans_le.lean)
+- [ContinuousLattice/WayBelow/WayBelowu2ele_trans.lean](WayBelowu2ele_trans.lean)
+- [ContinuousLattice/WayBelow/WayBelowu2ele.lean](WayBelowu2ele.lean)
+- [ContinuousLattice/WayBelow/wayBelow_self_iff_scottOpen_Ici.lean](wayBelow_self_iff_scottOpen_Ici.lean)
+- [ContinuousLattice/WayBelow/scottOpen_wayBelow.lean](scottOpen_wayBelow.lean)
+- [ContinuousLattice/WayBelow/wayBelow_sSup_iff.lean](wayBelow_sSup_iff.lean)

@@ -6,4 +6,4 @@
 
 **Lean 4**
 
-- [ContinuousLattice/InverseLimits/proposition_4_1.lean](DomainTheory/ContinuousLattice/InverseLimits/proposition_4_1.lean)
+- [ContinuousLattice/InverseLimits/proposition_4_1.lean](proposition_4_1.lean)

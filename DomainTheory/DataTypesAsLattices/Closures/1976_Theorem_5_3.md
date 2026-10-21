@@ -22,5 +22,5 @@ We can then establish with the aid of (5.8)–(5.10):
 
 **Lean 4**
 
-- [DataTypesAsLattices/Closures/theorem_5_3.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_3.lean)
-- [DataTypesAsLattices/Closures/theorem_5_3_closure.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_3_closure.lean)
+- [DataTypesAsLattices/Closures/theorem_5_3.lean](theorem_5_3.lean)
+- [DataTypesAsLattices/Closures/theorem_5_3_closure.lean](theorem_5_3_closure.lean)

@@ -16,5 +16,5 @@ These two definitions are easily seen to be equivalent. What is unexpected is th
 
 **Lean 4**
 
-- [DataTypesAsLattices/Closures/theorem_5_4.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_4.lean)
-- [DataTypesAsLattices/Closures/theorem_5_4_plus.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_4_plus.lean)
+- [DataTypesAsLattices/Closures/theorem_5_4.lean](theorem_5_4.lean)
+- [DataTypesAsLattices/Closures/theorem_5_4_plus.lean](theorem_5_4_plus.lean)

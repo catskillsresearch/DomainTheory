@@ -20,12 +20,12 @@ where $\sigma'$ is the further translation of $\sigma$ into untyped $\lambda$-ca
 
 **Lean 4**
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Basic.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Basic.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply_Ulam.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply_Ulam.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Ulam.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Ulam.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_idMap.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_idMap.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_sandwich.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_sandwich.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateApp_hasType.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateApp_hasType.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826.lean](../Exercise826.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply.lean](Uapply.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply_Ulam.lean](Uapply_Ulam.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Ulam.lean](Ulam.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs.lean](translateAbs.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_idMap.lean](translateAbs_idMap.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_sandwich.lean](translateAbs_sandwich.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateApp_hasType.lean](translateApp_hasType.lean)

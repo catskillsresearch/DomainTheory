@@ -14,11 +14,11 @@ and finding the least fixed point over $\bigcap S$.
 
 **Lean 4**
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/Basic.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/Basic.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/f_sInf_le.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/f_sInf_le.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_consistent.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_consistent.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_isFixed.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_isFixed.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_le.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_le.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_le_sInf.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_le_sInf.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416.lean](../Exercise416.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/f_sInf_le.lean](f_sInf_le.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix.lean](optimalFix.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_consistent.lean](optimalFix_consistent.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_isFixed.lean](optimalFix_isFixed.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_le.lean](optimalFix_le.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise416/optimalFix_le_sInf.lean](optimalFix_le_sInf.lean)

@@ -27,12 +27,12 @@ assures us that the inclusion relation between neighbourhoods is itself decidabl
 
 **Lean 4**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/Basic.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/Basic.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/ComputablePresentation.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/ComputablePresentation.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/IsEffectivelyGiven.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/IsEffectivelyGiven.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/inclShuffle.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/inclShuffle.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/reindexInvolutive.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/reindexInvolutive.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/swapPair.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/swapPair.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitPresentation.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitPresentation.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitSys_isEffectivelyGiven.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitSys_isEffectivelyGiven.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71.lean](../Definition71.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/ComputablePresentation.lean](ComputablePresentation.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/IsEffectivelyGiven.lean](IsEffectivelyGiven.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/inclShuffle.lean](inclShuffle.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/reindexInvolutive.lean](reindexInvolutive.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/swapPair.lean](swapPair.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitPresentation.lean](unitPresentation.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitSys_isEffectivelyGiven.lean](unitSys_isEffectivelyGiven.lean)

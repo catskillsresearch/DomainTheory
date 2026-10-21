@@ -38,4 +38,4 @@ for all $x, y \in D$ and $f \in [D \to D]$. They are obviously continuous. The m
 
 **Lean 4**
 
-- [ContinuousLattice/FunctionSpaces/proposition_3_13.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_3_13.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_3_13.lean](proposition_3_13.lean)

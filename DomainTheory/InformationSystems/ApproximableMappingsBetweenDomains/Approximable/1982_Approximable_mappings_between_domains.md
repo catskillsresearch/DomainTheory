@@ -8,20 +8,20 @@ Consider two domains. To map from one to another, some information about a possi
 
 - [Definition 5.1](1982_Definition_5_1.md)
 - [Definition 5.2](1982_Definition_5_2.md)
-- [Proposition 5.3](1982_Proposition_5_3.md)
-- [Proposition 5.4](1982_Proposition_5_4.md)
-- [Proposition 5.5](1982_Proposition_5_5.md)
-- [Proposition 5.6](1982_Proposition_5_6.md)
+- [Proposition 5.3](../Proposition53/1982_Proposition_5_3.md)
+- [Proposition 5.4](../Proposition54/1982_Proposition_5_4.md)
+- [Proposition 5.5](../Proposition55/1982_Proposition_5_5.md)
+- [Proposition 5.6](../Proposition56/1982_Proposition_5_6.md)
 
 The proof is immediate, since we need only interpret the input/output relation $u\ (\mathrm{const}\ b)\ v$ as meaning $v \subseteq b$. We note that our notation is somewhat ambiguous since, for example, in 5.6(iii) we are using $\mathrm{const}\ b$ in two senses: once as a mapping from $\mathbf{A}$, and once as a mapping from $\mathbf{D}$. In fact, we should hang two subscripts on the thing to fix both the source and the target of the mapping. This is too painful, however, and we generally rely on context to make the meaning clear. (Formal rules of type checking can be given, so on a computer-based system all the necessary subscripts could be put back in. Thus, the kind of ambiguity we are dealing with here is not very serious.)
 
 **Lean 4**
 
-- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Basic.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Basic.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/exists_rel_of_subset_image.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/exists_rel_of_subset_image.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/singleton_funion_eq.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/singleton_funion_eq.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement_mono.lean](DomainTheory/InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement_mono.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable.lean](../Approximable.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean](ApproximableMap.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Basic.lean](Basic.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/exists_rel_of_subset_image.lean](exists_rel_of_subset_image.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext.lean](ext.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/singleton_funion_eq.lean](singleton_funion_eq.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement.lean](toElement.lean)
+- [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement_mono.lean](toElement_mono.lean)

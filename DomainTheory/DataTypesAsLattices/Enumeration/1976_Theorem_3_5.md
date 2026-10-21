@@ -15,10 +15,10 @@ The set-theoretical inclusion is then the same as the partial ordering of degree
 
 **Lean 4**
 
-- [DataTypesAsLattices/Enumeration/theorem_3_5.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_5.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5_case1.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_5_case1.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5_case2.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_5_case2.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5_of_realizer.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_5_of_realizer.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5_q.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_5_q.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5_q_app.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_5_q_app.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5_unique.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_5_unique.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_5.lean](theorem_3_5.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_5_case1.lean](theorem_3_5_case1.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_5_case2.lean](theorem_3_5_case2.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_5_of_realizer.lean](theorem_3_5_of_realizer.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_5_q.lean](theorem_3_5_q.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_5_q_app.lean](theorem_3_5_q_app.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_5_unique.lean](theorem_3_5_unique.lean)

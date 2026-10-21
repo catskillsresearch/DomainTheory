@@ -6,4 +6,6 @@ It is now time to provide some examples of continuous lattices.
 
 **Lean 4**
 
-- [ContinuousLattice/Constructions/proposition_2_8.lean](DomainTheory/ContinuousLattice/Constructions/proposition_2_8.lean)
+- [ContinuousLattice/Constructions.lean](../Constructions.lean)
+- [ContinuousLattice/Constructions/directedOn_finite_sSup_mem.lean](directedOn_finite_sSup_mem.lean)
+- [ContinuousLattice/Constructions/proposition_2_8.lean](proposition_2_8.lean)

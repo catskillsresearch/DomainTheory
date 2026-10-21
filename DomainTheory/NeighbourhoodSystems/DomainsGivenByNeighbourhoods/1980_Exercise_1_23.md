@@ -20,4 +20,4 @@ Show that $\{Y_0, Y_1, \ldots, Y_n, \ldots\}$ is a total element of $|D|$. (Hint
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise123.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise123.lean)
+- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise123.lean](Exercise123.lean)

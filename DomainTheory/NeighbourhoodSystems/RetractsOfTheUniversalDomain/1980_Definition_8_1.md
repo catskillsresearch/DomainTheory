@@ -4,4 +4,4 @@
 
 **Lean 4**
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition81.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition81.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition81.lean](Definition81.lean)

@@ -14,7 +14,7 @@ is continuous.
 
 **Lean 4**
 
-- [ContinuousLattice/FunctionSpaces/corollary_3_4.lean](DomainTheory/ContinuousLattice/FunctionSpaces/corollary_3_4.lean)
-- [ContinuousLattice/FunctionSpaces/corollary_3_4_eval_on_C.lean](DomainTheory/ContinuousLattice/FunctionSpaces/corollary_3_4_eval_on_C.lean)
-- [ContinuousLattice/FunctionSpaces/corollary_3_4_jointly_continuous.lean](DomainTheory/ContinuousLattice/FunctionSpaces/corollary_3_4_jointly_continuous.lean)
-- [ContinuousLattice/FunctionSpaces/corollary_3_4_preservesDirectedSup.lean](DomainTheory/ContinuousLattice/FunctionSpaces/corollary_3_4_preservesDirectedSup.lean)
+- [ContinuousLattice/FunctionSpaces/corollary_3_4.lean](corollary_3_4.lean)
+- [ContinuousLattice/FunctionSpaces/corollary_3_4_eval_on_C.lean](corollary_3_4_eval_on_C.lean)
+- [ContinuousLattice/FunctionSpaces/corollary_3_4_jointly_continuous.lean](corollary_3_4_jointly_continuous.lean)
+- [ContinuousLattice/FunctionSpaces/corollary_3_4_preservesDirectedSup.lean](corollary_3_4_preservesDirectedSup.lean)

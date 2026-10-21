@@ -6,5 +6,5 @@
 
 **Lean 4**
 
-- [ContinuousLattice/Injective/IsInjectiveSpaceu2epi.lean](DomainTheory/ContinuousLattice/Injective/IsInjectiveSpaceu2epi.lean)
-- [ContinuousLattice/Injective/proposition_1_3.lean](DomainTheory/ContinuousLattice/Injective/proposition_1_3.lean)
+- [ContinuousLattice/Injective/IsInjectiveSpaceu2epi.lean](IsInjectiveSpaceu2epi.lean)
+- [ContinuousLattice/Injective/proposition_1_3.lean](proposition_1_3.lean)

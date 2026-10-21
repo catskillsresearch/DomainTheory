@@ -16,6 +16,6 @@ Parts (i), (iii), (iv), and (v) can be proved using (4.8) and (4.11) in an algeb
 
 **Lean 4**
 
-- [DataTypesAsLattices/Retracts/theorem_4_3.lean](DomainTheory/DataTypesAsLattices/Retracts/theorem_4_3.lean)
-- [DataTypesAsLattices/Retracts/theorem_4_3_i.lean](DomainTheory/DataTypesAsLattices/Retracts/theorem_4_3_i.lean)
-- [DataTypesAsLattices/Retracts/theorem_4_3_ii.lean](DomainTheory/DataTypesAsLattices/Retracts/theorem_4_3_ii.lean)
+- [DataTypesAsLattices/Retracts/theorem_4_3.lean](theorem_4_3.lean)
+- [DataTypesAsLattices/Retracts/theorem_4_3_i.lean](theorem_4_3_i.lean)
+- [DataTypesAsLattices/Retracts/theorem_4_3_ii.lean](theorem_4_3_ii.lean)

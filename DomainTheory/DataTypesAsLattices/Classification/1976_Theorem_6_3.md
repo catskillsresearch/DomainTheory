@@ -28,4 +28,4 @@ We let $\mathfrak{F} \dot{\cap} \mathfrak{G}$ denote the class of all sets of th
 
 **Lean 4**
 
-- [DataTypesAsLattices/Classification/theorem_6_3.lean](DomainTheory/DataTypesAsLattices/Classification/theorem_6_3.lean)
+- [DataTypesAsLattices/Classification/theorem_6_3.lean](theorem_6_3.lean)

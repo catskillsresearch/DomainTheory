@@ -52,4 +52,13 @@ and so $d \sqsubseteq \bar{f}(x')$. Since $d \ll f(x')$ always implies $d \sqsub
 
 **Lean 4**
 
-- [ContinuousLattice/Constructions/proposition_2_11.lean](DomainTheory/ContinuousLattice/Constructions/proposition_2_11.lean)
+- [ContinuousLattice/WayBelow/wayBelow_interpolate.lean](../WayBelow/wayBelow_interpolate.lean)
+- [ContinuousLattice/Constructions/scottExtend.lean](scottExtend.lean)
+- [ContinuousLattice/Constructions/scottExtend_aux_nonempty.lean](scottExtend_aux_nonempty.lean)
+- [ContinuousLattice/Constructions/scottExtend_aux_directed.lean](scottExtend_aux_directed.lean)
+- [ContinuousLattice/Constructions/scottExtend_continuous.lean](scottExtend_continuous.lean)
+- [ContinuousLattice/Constructions/scottExtend_eq_of_continuous.lean](scottExtend_eq_of_continuous.lean)
+- [ContinuousLattice/Constructions/continuous_eq_sSup_openInfs.lean](continuous_eq_sSup_openInfs.lean)
+- [ContinuousLattice/Constructions/scottExtend_maximal.lean](scottExtend_maximal.lean)
+- [ContinuousLattice/Constructions/scottExtend_maximal_le.lean](scottExtend_maximal_le.lean)
+- [ContinuousLattice/Constructions/proposition_2_11.lean](proposition_2_11.lean)

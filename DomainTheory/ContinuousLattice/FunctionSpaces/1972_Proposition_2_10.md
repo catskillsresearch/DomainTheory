@@ -67,6 +67,6 @@ where $U$ ranges over the open subsets of $D$, and so the lattice is continuous 
 
 **Lean 4**
 
-- [ContinuousLattice/FunctionSpaces/proposition_2_10.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10.lean)
-- [ContinuousLattice/FunctionSpaces/proposition_2_10_a.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10_a.lean)
-- [ContinuousLattice/FunctionSpaces/proposition_2_10_b.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10_b.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_2_10.lean](proposition_2_10.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_2_10_a.lean](proposition_2_10_a.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_2_10_b.lean](proposition_2_10_b.lean)

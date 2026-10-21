@@ -28,4 +28,4 @@ which establishes that $f' \sqsubseteq \bar{f}$. $\square$
 
 **Lean 4**
 
-- [ContinuousLattice/Constructions/proposition_3_8.lean](DomainTheory/ContinuousLattice/Constructions/proposition_3_8.lean)
+- [ContinuousLattice/Constructions/proposition_3_8.lean](proposition_3_8.lean)

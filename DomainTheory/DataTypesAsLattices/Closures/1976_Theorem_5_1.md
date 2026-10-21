@@ -4,5 +4,5 @@
 
 **Lean 4**
 
-- [DataTypesAsLattices/Closures/theorem_5_1.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_1.lean)
-- [DataTypesAsLattices/Closures/theorem_5_1_isolated.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_1_isolated.lean)
+- [DataTypesAsLattices/Closures/theorem_5_1.lean](theorem_5_1.lean)
+- [DataTypesAsLattices/Closures/theorem_5_1_isolated.lean](theorem_5_1_isolated.lean)

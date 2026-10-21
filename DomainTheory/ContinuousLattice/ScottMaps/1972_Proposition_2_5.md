@@ -70,4 +70,13 @@ so $f(x) \sqsubseteq f(y)$. Thus $f$ is monotonic and so $U$ satisfies condition
 
 **Lean 4**
 
-- [ContinuousLattice/ScottMaps/proposition_2_5.lean](DomainTheory/ContinuousLattice/ScottMaps/proposition_2_5.lean)
+- [ContinuousLattice/ScottMaps.lean](../ScottMaps.lean)
+- [ContinuousLattice/ScottMaps/Basic.lean](Basic.lean)
+- [ContinuousLattice/ScottMaps/PreservesDirectedSup.lean](PreservesDirectedSup.lean)
+- [ContinuousLattice/ScottMaps/preservesDirectedSup_monotone.lean](preservesDirectedSup_monotone.lean)
+- [ContinuousLattice/ScottMaps/scottOpen_preimage.lean](scottOpen_preimage.lean)
+- [ContinuousLattice/ScottMaps/continuous_preservesDirectedSup.lean](continuous_preservesDirectedSup.lean)
+- [ContinuousLattice/ScottMaps/continuous_of_preservesDirectedSup.lean](continuous_of_preservesDirectedSup.lean)
+- [ContinuousLattice/ScottMaps/proposition_2_5.lean](proposition_2_5.lean)
+- [ContinuousLattice/WayBelow/exists_wayBelow_subset.lean](../WayBelow/exists_wayBelow_subset.lean)
+- [ContinuousLattice/WayBelow/exists_wayBelow_Ici_subset.lean](../WayBelow/exists_wayBelow_Ici_subset.lean)

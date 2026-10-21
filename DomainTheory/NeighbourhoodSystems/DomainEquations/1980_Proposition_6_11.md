@@ -10,5 +10,5 @@ forms a domain in its own right. $\square$
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainEquations/Proposition611.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Proposition611.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition611Inst16.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Proposition611Inst16.lean)
+- [NeighbourhoodSystems/DomainEquations/Proposition611.lean](Proposition611.lean)
+- [NeighbourhoodSystems/DomainEquations/Proposition611Inst16.lean](Proposition611Inst16.lean)

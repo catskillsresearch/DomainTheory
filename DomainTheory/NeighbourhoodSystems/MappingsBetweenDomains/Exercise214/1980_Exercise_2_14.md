@@ -15,10 +15,10 @@ Remark that the isomorphisms between domains correspond exactly to the isomorphi
 
 **Lean 4**
 
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise214.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/Basic.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/Basic.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_inter.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_inter.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_mem.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_mem.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_spec.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_spec.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/rel_ofIso_iff.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/rel_ofIso_iff.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214.lean](../Exercise214.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi.lean](phi.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_inter.lean](phi_inter.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_mem.lean](phi_mem.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/phi_spec.lean](phi_spec.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise214/rel_ofIso_iff.lean](rel_ofIso_iff.lean)

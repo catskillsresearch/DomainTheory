@@ -14,5 +14,5 @@ where $f \in [D_0 \rightarrow D_1]$ and $f' \in [D'_0 \rightarrow D'_1]$. $\squa
 
 **Lean 4**
 
-- [ContinuousLattice/FunctionSpaces/proposition_3_7_projection.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_3_7_projection.lean)
-- [ContinuousLattice/FunctionSpaces/proposition_3_7_retraction.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_3_7_retraction.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_3_7_projection.lean](proposition_3_7_projection.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_3_7_retraction.lean](proposition_3_7_retraction.lean)

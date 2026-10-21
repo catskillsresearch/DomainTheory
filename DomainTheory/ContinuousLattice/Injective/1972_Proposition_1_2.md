@@ -8,5 +8,5 @@ A slightly less trivial example of an injective space is the 2-point space $\mat
 
 **Lean 4**
 
-- [ContinuousLattice/Injective/isInjectiveSpace_sierpinski.lean](DomainTheory/ContinuousLattice/Injective/isInjectiveSpace_sierpinski.lean)
-- [ContinuousLattice/Injective/proposition_1_2.lean](DomainTheory/ContinuousLattice/Injective/proposition_1_2.lean)
+- [ContinuousLattice/Injective/isInjectiveSpace_sierpinski.lean](isInjectiveSpace_sierpinski.lean)
+- [ContinuousLattice/Injective/proposition_1_2.lean](proposition_1_2.lean)

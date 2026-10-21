@@ -61,6 +61,6 @@ To be certain that **tree** is a retract, we need a general theorem:
 
 **Lean 4**
 
-- [DataTypesAsLattices/Retracts/theorem_4_5.lean](DomainTheory/DataTypesAsLattices/Retracts/theorem_4_5.lean)
-- [DataTypesAsLattices/Retracts/theorem_4_5_strict.lean](DomainTheory/DataTypesAsLattices/Retracts/theorem_4_5_strict.lean)
-- [DataTypesAsLattices/Functionality/theorem_4_5_sum.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_4_5_sum.lean)
+- [DataTypesAsLattices/Retracts/theorem_4_5.lean](theorem_4_5.lean)
+- [DataTypesAsLattices/Retracts/theorem_4_5_strict.lean](theorem_4_5_strict.lean)
+- [DataTypesAsLattices/Functionality/theorem_4_5_sum.lean](../Functionality/theorem_4_5_sum.lean)

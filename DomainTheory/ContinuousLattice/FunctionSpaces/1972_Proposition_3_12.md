@@ -20,4 +20,4 @@ It follows that $J_D$ is $\bigsqcup$-closed and hence is a complete lattice. $\s
 
 **Lean 4**
 
-- [ContinuousLattice/FunctionSpaces/proposition_3_12.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_3_12.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_3_12.lean](proposition_3_12.lean)

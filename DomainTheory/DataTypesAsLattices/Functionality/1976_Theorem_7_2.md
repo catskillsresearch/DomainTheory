@@ -35,11 +35,11 @@ then $N \to N_2$ can also be identified with a topological space, usually called
 
 **Lean 4**
 
-- [DataTypesAsLattices/Functionality/theorem_7_2.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_2.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_2_i.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_2_i.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_2_i_iso.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_2_i_iso.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_2_ii.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_2_ii.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_2_ii_of_typed.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_2_ii_of_typed.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_2_iii.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_2_iii.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_2_iii_exact.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_2_iii_exact.lean)
-- [DataTypesAsLattices/Functionality/theorem_7_2_iv.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_2_iv.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_2.lean](theorem_7_2.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_2_i.lean](theorem_7_2_i.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_2_i_iso.lean](theorem_7_2_i_iso.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_2_ii.lean](theorem_7_2_ii.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_2_ii_of_typed.lean](theorem_7_2_ii_of_typed.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_2_iii.lean](theorem_7_2_iii.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_2_iii_exact.lean](theorem_7_2_iii_exact.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_2_iv.lean](theorem_7_2_iv.lean)

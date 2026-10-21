@@ -1,6 +1,6 @@
 # Injective spaces
 
-**1. INJECTIVE SPACES.** All spaces are $T_0$-spaces, and we begin by defining a class of spaces to be called *injective*.
+All spaces are $T_0$-spaces, and we begin by defining a class of spaces to be called *injective*.
 
 - [Definition 1.1](1972_Definition_1_1.md)
 - [Proposition 1.2](1972_Proposition_1_2.md)
@@ -26,5 +26,5 @@ Thus it would seem that we have a reasonably good initial grasp of the notion of
 
 **Lean 4**
 
-- [ContinuousLattice/Injective.lean](DomainTheory/ContinuousLattice/Injective.lean)
-- [ContinuousLattice/Injective/Basic.lean](DomainTheory/ContinuousLattice/Injective/Basic.lean)
+- [ContinuousLattice/Injective.lean](../Injective.lean)
+- [ContinuousLattice/Injective/Basic.lean](Basic.lean)

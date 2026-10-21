@@ -24,4 +24,4 @@ The proof that $i_{n\infty}$ and $j_{\infty n}$ form a projection is now an easy
 
 **Lean 4**
 
-- [ContinuousLattice/InverseLimits/proposition_4_2.lean](DomainTheory/ContinuousLattice/InverseLimits/proposition_4_2.lean)
+- [ContinuousLattice/InverseLimits/proposition_4_2.lean](proposition_4_2.lean)

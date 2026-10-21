@@ -69,8 +69,8 @@ and the proof that $i_\infty$ and $j_\infty$ are inverse to one another is compl
 
 **Lean 4**
 
-- [ContinuousLattice/FunctionSpaceTower/theorem_4_4.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/theorem_4_4.lean)
-- [ContinuousLattice/FunctionSpaceTower/theorem_4_4_inverses.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/theorem_4_4_inverses.lean)
-- [ContinuousLattice/FunctionSpaceTower/theorem_4_4_orderIso.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/theorem_4_4_orderIso.lean)
-- [ContinuousLattice/FunctionSpaceTower/theorem_4_4_scottTopology_homeomorph.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/theorem_4_4_scottTopology_homeomorph.lean)
-- [ContinuousLattice/FunctionSpaceTower/theorem_4_4_sourceTopology_homeomorph.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/theorem_4_4_sourceTopology_homeomorph.lean)
+- [ContinuousLattice/FunctionSpaceTower/theorem_4_4.lean](theorem_4_4.lean)
+- [ContinuousLattice/FunctionSpaceTower/theorem_4_4_inverses.lean](theorem_4_4_inverses.lean)
+- [ContinuousLattice/FunctionSpaceTower/theorem_4_4_orderIso.lean](theorem_4_4_orderIso.lean)
+- [ContinuousLattice/FunctionSpaceTower/theorem_4_4_scottTopology_homeomorph.lean](theorem_4_4_scottTopology_homeomorph.lean)
+- [ContinuousLattice/FunctionSpaceTower/theorem_4_4_sourceTopology_homeomorph.lean](theorem_4_4_sourceTopology_homeomorph.lean)

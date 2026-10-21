@@ -14,4 +14,4 @@ In the last section we introduced an algebra of retracts, much of which carries 
 
 **Lean 4**
 
-- [DataTypesAsLattices/Closures/theorem_5_2.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_2.lean)
+- [DataTypesAsLattices/Closures/theorem_5_2.lean](theorem_5_2.lean)

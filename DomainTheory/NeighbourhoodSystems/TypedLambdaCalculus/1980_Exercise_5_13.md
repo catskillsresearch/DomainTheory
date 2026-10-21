@@ -22,4 +22,4 @@ $$
 
 **Lean 4**
 
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise513.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Exercise513.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise513.lean](Exercise513.lean)

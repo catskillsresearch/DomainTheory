@@ -17,10 +17,10 @@ conjugation) and trichotomy for separated sums.
 
 - [Introduction](BridgeTheorems_Introduction.md)
 - [Catalog of bridge theorems](BridgeTheorems_Catalog_of_bridge_theorems.md)
-- [Proof notes](BridgeTheorems_Proof_notes.md)
+- [Proof notes](BridgeTheorems/BridgeTheorems_Proof_notes.md)
 - [Constructivity summary](BridgeTheorems_Constructivity_summary.md)
-- [Worked example — S-expressions / trees](BridgeTheorems_Worked_example.md)
+- [Worked example — S-expressions / trees](BridgeTheorems/BridgeTheorems_Worked_example.md)
 
 **Lean 4**
 
-- [BridgeTheorems.lean](DomainTheory/BridgeTheorems.lean)
+- [BridgeTheorems.lean](BridgeTheorems.lean)

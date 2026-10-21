@@ -4,6 +4,6 @@
 
 **Lean 4**
 
-- [DataTypesAsLattices/Retracts/theorem_4_1.lean](DomainTheory/DataTypesAsLattices/Retracts/theorem_4_1.lean)
-- [DataTypesAsLattices/Retracts/theorem_4_1_complete.lean](DomainTheory/DataTypesAsLattices/Retracts/theorem_4_1_complete.lean)
-- [DataTypesAsLattices/Retracts/theorem_4_1_continuous.lean](DomainTheory/DataTypesAsLattices/Retracts/theorem_4_1_continuous.lean)
+- [DataTypesAsLattices/Retracts/theorem_4_1.lean](theorem_4_1.lean)
+- [DataTypesAsLattices/Retracts/theorem_4_1_complete.lean](theorem_4_1_complete.lean)
+- [DataTypesAsLattices/Retracts/theorem_4_1_continuous.lean](theorem_4_1_continuous.lean)

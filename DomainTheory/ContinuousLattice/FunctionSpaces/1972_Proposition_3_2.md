@@ -10,4 +10,4 @@ where $f, g \in [X \to Y]$. $\square$
 
 **Lean 4**
 
-- [ContinuousLattice/FunctionSpaces/proposition_3_2.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_3_2.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_3_2.lean](proposition_3_2.lean)

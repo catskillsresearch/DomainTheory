@@ -14,4 +14,4 @@ It follows easily from (7.1) that the restricted equivalence relations form a Ca
 
 **Lean 4**
 
-- [DataTypesAsLattices/Functionality/theorem_7_1.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_1.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_1.lean](theorem_7_1.lean)

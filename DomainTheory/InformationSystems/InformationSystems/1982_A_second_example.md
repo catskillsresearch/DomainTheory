@@ -6,10 +6,10 @@ Oh, I see, I have left out $\Delta$ from $D$; we must therefore include the some
 
 **Lean 4**
 
-- [InformationSystems/InformationSystems/Factoid25.lean](DomainTheory/InformationSystems/InformationSystems/Factoid25.lean)
-- [InformationSystems/InformationSystems/Factoid25/Token.lean](DomainTheory/InformationSystems/InformationSystems/Factoid25/Token.lean)
-- [InformationSystems/InformationSystems/Sat.lean](DomainTheory/InformationSystems/InformationSystems/Sat.lean)
-- [InformationSystems/InformationSystems/instDecidableEq.lean](DomainTheory/InformationSystems/InformationSystems/instDecidableEq.lean)
-- [InformationSystems/InformationSystems/ofSatisfaction.lean](DomainTheory/InformationSystems/InformationSystems/ofSatisfaction.lean)
-- [InformationSystems/InformationSystems/sat_midpoint.lean](DomainTheory/InformationSystems/InformationSystems/sat_midpoint.lean)
-- [InformationSystems/InformationSystems/sat_sing.lean](DomainTheory/InformationSystems/InformationSystems/sat_sing.lean)
+- [InformationSystems/InformationSystems/Factoid25.lean](Factoid25.lean)
+- [InformationSystems/InformationSystems/Factoid25/Token.lean](Factoid25/Token.lean)
+- [InformationSystems/InformationSystems/Sat.lean](Sat.lean)
+- [InformationSystems/InformationSystems/instDecidableEq.lean](instDecidableEq.lean)
+- [InformationSystems/InformationSystems/ofSatisfaction.lean](ofSatisfaction.lean)
+- [InformationSystems/InformationSystems/sat_midpoint.lean](sat_midpoint.lean)
+- [InformationSystems/InformationSystems/sat_sing.lean](sat_sing.lean)

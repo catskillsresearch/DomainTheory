@@ -56,6 +56,7 @@ where $U$ ranges now over the open subsets of the product topology on $D^*$. By 
 
 **Lean 4**
 
-- [ContinuousLattice/Constructions/proposition_2_9.lean](DomainTheory/ContinuousLattice/Constructions/proposition_2_9.lean)
-- [ContinuousLattice/Constructions/proposition_2_9_a.lean](DomainTheory/ContinuousLattice/Constructions/proposition_2_9_a.lean)
-- [ContinuousLattice/Constructions/proposition_2_9_b.lean](DomainTheory/ContinuousLattice/Constructions/proposition_2_9_b.lean)
+- [ContinuousLattice/Constructions/Basic.lean](Basic.lean)
+- [ContinuousLattice/Constructions/proposition_2_9.lean](proposition_2_9.lean)
+- [ContinuousLattice/Constructions/proposition_2_9_a.lean](proposition_2_9_a.lean)
+- [ContinuousLattice/Constructions/proposition_2_9_b.lean](proposition_2_9_b.lean)

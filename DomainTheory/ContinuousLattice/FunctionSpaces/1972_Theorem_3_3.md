@@ -44,9 +44,9 @@ With the equation for $f$ proved, note next that for all $g \in [D \to D']$, $e'
 
 **Lean 4**
 
-- [ContinuousLattice/FunctionSpaces/theorem_3_3.lean](DomainTheory/ContinuousLattice/FunctionSpaces/theorem_3_3.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_isContinuousLattice.lean](DomainTheory/ContinuousLattice/FunctionSpaces/theorem_3_3_isContinuousLattice.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_sSup.lean](DomainTheory/ContinuousLattice/FunctionSpaces/theorem_3_3_sSup.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_sup.lean](DomainTheory/ContinuousLattice/FunctionSpaces/theorem_3_3_sup.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_topology.lean](DomainTheory/ContinuousLattice/FunctionSpaces/theorem_3_3_topology.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_topology_induced_pi.lean](DomainTheory/ContinuousLattice/FunctionSpaces/theorem_3_3_topology_induced_pi.lean)
+- [ContinuousLattice/FunctionSpaces/theorem_3_3.lean](theorem_3_3.lean)
+- [ContinuousLattice/FunctionSpaces/theorem_3_3_isContinuousLattice.lean](theorem_3_3_isContinuousLattice.lean)
+- [ContinuousLattice/FunctionSpaces/theorem_3_3_sSup.lean](theorem_3_3_sSup.lean)
+- [ContinuousLattice/FunctionSpaces/theorem_3_3_sup.lean](theorem_3_3_sup.lean)
+- [ContinuousLattice/FunctionSpaces/theorem_3_3_topology.lean](theorem_3_3_topology.lean)
+- [ContinuousLattice/FunctionSpaces/theorem_3_3_topology_induced_pi.lean](theorem_3_3_topology_induced_pi.lean)

@@ -82,13 +82,13 @@ On the one side we have the prefix notation, and on the other, the more common i
 
 **Lean 4**
 
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition54.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/Basic.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/Basic.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_apply.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_eq_fixElement_recOp.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_eq_fixElement_recOp.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_isFixed.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_isFixed.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/recOp.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/recOp.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/recOp_apply.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/recOp_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/sectionu2082_apply.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/sectionu2082_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/section₂.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/section₂.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54.lean](../Proposition54.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix.lean](pfix.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_apply.lean](pfix_apply.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_eq_fixElement_recOp.lean](pfix_eq_fixElement_recOp.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/pfix_isFixed.lean](pfix_isFixed.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/recOp.lean](recOp.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/recOp_apply.lean](recOp_apply.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/sectionu2082_apply.lean](sectionu2082_apply.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition54/section₂.lean](section₂.lean)

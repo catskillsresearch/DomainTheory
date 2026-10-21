@@ -24,8 +24,8 @@ Call the left side $f'$ and the right $f''$. Now $f'' = \lambda x.\, g(x)(\mathb
 
 **Lean 4**
 
-- [DataTypesAsLattices/Computability/theorem_2_6.lean](DomainTheory/DataTypesAsLattices/Computability/theorem_2_6.lean)
-- [DataTypesAsLattices/Computability/theorem_2_6_combinatory_zero.lean](DomainTheory/DataTypesAsLattices/Computability/theorem_2_6_combinatory_zero.lean)
-- [DataTypesAsLattices/Computability/theorem_2_6_fin.lean](DomainTheory/DataTypesAsLattices/Computability/theorem_2_6_fin.lean)
-- [DataTypesAsLattices/Computability/theorem_2_6_lambda_continuous.lean](DomainTheory/DataTypesAsLattices/Computability/theorem_2_6_lambda_continuous.lean)
-- [DataTypesAsLattices/Computability/theorem_2_6_ofNat_isRE.lean](DomainTheory/DataTypesAsLattices/Computability/theorem_2_6_ofNat_isRE.lean)
+- [DataTypesAsLattices/Computability/theorem_2_6.lean](theorem_2_6.lean)
+- [DataTypesAsLattices/Computability/theorem_2_6_combinatory_zero.lean](theorem_2_6_combinatory_zero.lean)
+- [DataTypesAsLattices/Computability/theorem_2_6_fin.lean](theorem_2_6_fin.lean)
+- [DataTypesAsLattices/Computability/theorem_2_6_lambda_continuous.lean](theorem_2_6_lambda_continuous.lean)
+- [DataTypesAsLattices/Computability/theorem_2_6_ofNat_isRE.lean](theorem_2_6_ofNat_isRE.lean)

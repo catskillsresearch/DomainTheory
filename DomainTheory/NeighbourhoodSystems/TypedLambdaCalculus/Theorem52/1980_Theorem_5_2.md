@@ -88,9 +88,9 @@ This completes the proof. $\square$
 
 **Lean 4**
 
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Theorem52.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/Basic.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/Basic.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_abs.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_abs.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_tuple.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_tuple.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/subst_value.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/subst_value.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52.lean](../Theorem52.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta.lean](beta.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_abs.lean](beta_abs.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_tuple.lean](beta_tuple.lean)
+- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/subst_value.lean](subst_value.lean)

@@ -4,11 +4,11 @@
 
 **Lean 4**
 
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise216.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/Basic.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/Basic.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/SatisfiesParityEquations.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/SatisfiesParityEquations.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/eq_parityMap_of_satisfies.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/eq_parityMap_of_satisfies.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/key.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/key.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/parityMap_satisfies.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/parityMap_satisfies.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/sigmaMap.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/sigmaMap.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/toElementMap_sigmaMap.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/toElementMap_sigmaMap.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216.lean](../Exercise216.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/SatisfiesParityEquations.lean](SatisfiesParityEquations.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/eq_parityMap_of_satisfies.lean](eq_parityMap_of_satisfies.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/key.lean](key.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/parityMap_satisfies.lean](parityMap_satisfies.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/sigmaMap.lean](sigmaMap.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise216/toElementMap_sigmaMap.lean](toElementMap_sigmaMap.lean)

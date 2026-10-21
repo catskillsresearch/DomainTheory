@@ -14,4 +14,4 @@ Some people will object to this terminology because I use the subspace relations
 
 **Lean 4**
 
-- [ContinuousLattice/Injective/IsInjectiveSpace.lean](DomainTheory/ContinuousLattice/Injective/IsInjectiveSpace.lean)
+- [ContinuousLattice/Injective/IsInjectiveSpace.lean](IsInjectiveSpace.lean)

@@ -45,13 +45,13 @@ Note that the rôles of $\mathbf{N}$ and $\mathbf{M}$ are completely symmetric, 
 
 **Lean 4**
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Basic.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Basic.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Graph.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Graph.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Graphu2eswap.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Graphu2eswap.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/PeanoModel.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/PeanoModel.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/exists_unique_left.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/exists_unique_left.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/exists_unique_right.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/exists_unique_right.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/graph_succ_right.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/graph_succ_right.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/graph_zero_right.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/graph_zero_right.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/peano_models_isomorphic.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/peano_models_isomorphic.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46.lean](../Theorem46.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Graph.lean](Graph.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/Graphu2eswap.lean](Graphu2eswap.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/PeanoModel.lean](PeanoModel.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/exists_unique_left.lean](exists_unique_left.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/exists_unique_right.lean](exists_unique_right.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/graph_succ_right.lean](graph_succ_right.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/graph_zero_right.lean](graph_zero_right.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Theorem46/peano_models_isomorphic.lean](peano_models_isomorphic.lean)

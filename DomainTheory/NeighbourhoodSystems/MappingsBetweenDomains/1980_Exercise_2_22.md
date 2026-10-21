@@ -16,4 +16,4 @@ Check that approximable functions on these families are just those preserving di
 
 **Lean 4**
 
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise222.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Exercise222.lean)
+- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise222.lean](Exercise222.lean)

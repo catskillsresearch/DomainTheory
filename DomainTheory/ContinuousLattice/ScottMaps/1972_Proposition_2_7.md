@@ -32,6 +32,7 @@ is open. But then $t \sqsubseteq y$, and so $t \sqsubseteq x \sqcap y$, and the 
 
 **Lean 4**
 
-- [ContinuousLattice/ScottMaps/proposition_2_7_inf_left.lean](DomainTheory/ContinuousLattice/ScottMaps/proposition_2_7_inf_left.lean)
-- [ContinuousLattice/ScottMaps/proposition_2_7_inf_right.lean](DomainTheory/ContinuousLattice/ScottMaps/proposition_2_7_inf_right.lean)
-- [ContinuousLattice/ScottMaps/proposition_2_7_sup.lean](DomainTheory/ContinuousLattice/ScottMaps/proposition_2_7_sup.lean)
+- [ContinuousLattice/ScottMaps/meet_preservesDirectedSup.lean](meet_preservesDirectedSup.lean)
+- [ContinuousLattice/ScottMaps/proposition_2_7_inf_left.lean](proposition_2_7_inf_left.lean)
+- [ContinuousLattice/ScottMaps/proposition_2_7_inf_right.lean](proposition_2_7_inf_right.lean)
+- [ContinuousLattice/ScottMaps/proposition_2_7_sup.lean](proposition_2_7_sup.lean)

@@ -50,4 +50,4 @@ These equations will be used not only for properties of types (ranges of retract
 
 **Lean 4**
 
-- [DataTypesAsLattices/Retracts/theorem_4_2.lean](DomainTheory/DataTypesAsLattices/Retracts/theorem_4_2.lean)
+- [DataTypesAsLattices/Retracts/theorem_4_2.lean](theorem_4_2.lean)

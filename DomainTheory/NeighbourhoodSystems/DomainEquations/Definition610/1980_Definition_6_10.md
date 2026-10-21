@@ -19,12 +19,12 @@ It is also easy to prove that the union of a directed family of subdomains of $E
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainEquations/Definition610.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition610.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition610/Basic.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition610/Basic.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition610/Basic/notation2.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition610/Basic/notation2.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition610/Subsystem.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition610/Subsystem.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition610/_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition610/_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition610/antisymm.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition610/antisymm.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition610/refl.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition610/refl.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition610/subsystem_iff_subset_of_common.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition610/subsystem_iff_subset_of_common.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition610/trans.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition610/trans.lean)
+- [NeighbourhoodSystems/DomainEquations/Definition610.lean](../Definition610.lean)
+- [NeighbourhoodSystems/DomainEquations/Definition610/Basic.lean](Basic.lean)
+- [NeighbourhoodSystems/DomainEquations/Definition610/Basic/notation2.lean](Basic/notation2.lean)
+- [NeighbourhoodSystems/DomainEquations/Definition610/Subsystem.lean](Subsystem.lean)
+- [NeighbourhoodSystems/DomainEquations/Definition610/_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.lean](_root_u2eDomainTheoryu2eNeighborhoodu2eNeighborhoodSystemu2eext.lean)
+- [NeighbourhoodSystems/DomainEquations/Definition610/antisymm.lean](antisymm.lean)
+- [NeighbourhoodSystems/DomainEquations/Definition610/refl.lean](refl.lean)
+- [NeighbourhoodSystems/DomainEquations/Definition610/subsystem_iff_subset_of_common.lean](subsystem_iff_subset_of_common.lean)
+- [NeighbourhoodSystems/DomainEquations/Definition610/trans.lean](trans.lean)

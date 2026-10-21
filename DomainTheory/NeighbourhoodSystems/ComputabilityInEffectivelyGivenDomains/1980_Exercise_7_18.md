@@ -8,4 +8,4 @@ is effective.
 
 **Lean 4**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise718.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise718.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise718.lean](Exercise718.lean)

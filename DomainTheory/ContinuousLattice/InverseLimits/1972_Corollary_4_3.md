@@ -24,4 +24,4 @@ for $x \in D_\infty$, and we have $f_n = f_\infty \circ i_{n\infty}$. $\square$
 
 **Lean 4**
 
-- [ContinuousLattice/InverseLimits/corollary_4_3.lean](DomainTheory/ContinuousLattice/InverseLimits/corollary_4_3.lean)
+- [ContinuousLattice/InverseLimits/corollary_4_3.lean](corollary_4_3.lean)

@@ -10,7 +10,7 @@ $$
 
 **Lean 4**
 
-- [NeighbourhoodSystems/DomainEquations/Exercise618.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise618.lean)
-- [NeighbourhoodSystems/DomainEquations/Exercise618/descAlgHom.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise618/descAlgHom.lean)
-- [NeighbourhoodSystems/DomainEquations/Exercise618/descMap.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise618/descMap.lean)
-- [NeighbourhoodSystems/DomainEquations/Exercise618/descMap_strict.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise618/descMap_strict.lean)
+- [NeighbourhoodSystems/DomainEquations/Exercise618.lean](../Exercise618.lean)
+- [NeighbourhoodSystems/DomainEquations/Exercise618/descAlgHom.lean](descAlgHom.lean)
+- [NeighbourhoodSystems/DomainEquations/Exercise618/descMap.lean](descMap.lean)
+- [NeighbourhoodSystems/DomainEquations/Exercise618/descMap_strict.lean](descMap_strict.lean)
