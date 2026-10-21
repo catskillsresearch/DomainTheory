@@ -20,8 +20,11 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 variable {α : Type*}
 
-
-
+/-- The empty power-domain neighbourhood lies under every intersection of neighbourhoods. -/
+theorem ypd_zero_subset_inter {V : NeighborhoodSystem α} (P : ComputablePresentation V) (a b : ℕ) :
+    V.Ypd P 0 ⊆ V.Ypd P a ∩ V.Ypd P b := by
+  rw [V.Ypd_zero P]
+  exact Set.empty_subset _
 
 /-- **Exercise 7.20 (Scott's first question) — `union` is computable.** Given `P : Computable
 Presentation 𝒟` with a primitive-recursive consistency decider `consV`, `union` is a computable map
@@ -35,10 +38,7 @@ theorem unionMap_isComputable {V : NeighborhoodSystem α} (P : ComputablePresent
     IsComputableMap
       (V.PowerDomain.PDPresentation (V.PDPresentation P consV hconsVp hconsVs)
         (fun _ => 1) (Nat.Primrec.const 1)
-        (fun a b => ⟨fun _ => ⟨0, by
-            show V.Ypd P 0 ⊆ _
-            rw [V.Ypd_zero P]; exact Set.empty_subset _⟩,
-          fun _ => rfl⟩))
+        (fun a b => ⟨fun _ => ⟨0, ypd_zero_subset_inter P a b⟩, fun _ => rfl⟩))
       (V.PDPresentation P consV hconsVp hconsVs)
       (unionMap V) := by
   have hrd : RecDecidable₂ (fun n m => ∀ c ∈ decodeList n, ∀ a ∈ decodeList c,

@@ -77,7 +77,7 @@ theorem example_720.{u_1} : And
                           hconsVs)
                         b)))
                 (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))
-                (@DomainTheory.NeighbourhoodSystems.unionMap_isComputable._proof_1 α V P consV hconsVp hconsVs a b))
+                (@DomainTheory.NeighbourhoodSystems.ypd_zero_subset_inter α V P a b))
             fun
               (x :
                 ∃ (k : Nat),
@@ -224,7 +224,7 @@ theorem example_720.{u_1} : And
                           hconsVs)
                         b)))
                 (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))
-                (@DomainTheory.NeighbourhoodSystems.unionMap_isComputable._proof_1 α V P consV hconsVp hconsVs a b))
+                (@DomainTheory.NeighbourhoodSystems.ypd_zero_subset_inter α V P a b))
             fun
               (x :
                 ∃ (k : Nat),
@@ -370,7 +370,7 @@ theorem example_720.{u_1} : And
                           hconsVs)
                         b)))
                 (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))
-                (@DomainTheory.NeighbourhoodSystems.unionMap_isComputable._proof_1 α V P consV hconsVp hconsVs a b))
+                (@DomainTheory.NeighbourhoodSystems.ypd_zero_subset_inter α V P a b))
             fun
               (x :
                 ∃ (k : Nat),
