@@ -14,7 +14,7 @@ To **construct** a $T_0$ topology in this project:
 
 - **Scott topology.** On a complete lattice `D`, the Scott topology is $T_0$; see the proof below (`scottTopology_t0Space`).
 - **Subspaces and embeddings.** If `f : X → Y` is an embedding and `Y` is $T_0$, then `X` with the subspace topology is $T_0$ (`Topology.IsEmbedding.t0Space`).
-- **Sierpiński space.** `Prop` with the Sierpiński topology is $T_0$; powers and products built from it inherit $T_0$ness (see [Injective spaces](1972_Injective_spaces.md), where `Basic.lean` defines `Sierpinski`).
+- **Sierpiński space.** `Prop` with the Sierpiński topology is $T_0$; powers and products built from it inherit $T_0$ness (see [Proposition 1.2](1972_Proposition_1_2.md), where `Sierpinski` is defined and shown injective).
 - **Inverse limits.** Towers of Scott spaces give a $T_0$ inverse-limit topology (`inverseLimit_t0Space` in the inverse-limits development—stated in that chapter, not re-proved here).
 
 When no instance is available yet, prove `T0Space X` by applying the constructor for the class and showing `Inseparable x y → x = y`, or by citing a construction theorem such as `scottTopology_t0Space`.

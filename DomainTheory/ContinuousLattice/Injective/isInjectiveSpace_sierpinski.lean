@@ -11,7 +11,7 @@ public import Mathlib.Topology.ContinuousMap.Basic
 import all Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Sets.Opens
 import all Mathlib.Topology.Sets.Opens
-public import DomainTheory.ContinuousLattice.Injective.Basic
+public import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpace
 
 @[expose] public section
 
@@ -19,8 +19,11 @@ public import DomainTheory.ContinuousLattice.Injective.Basic
 open Topology TopologicalSpace
 
 
+/-- Scott's two-point Sierpiński space 𝕆: `Prop` with the Sierpiński topology. -/
+abbrev Sierpinski := Prop
+
 /-- **Scott 1972, Proposition 1.2.** The Sierpiński space is injective. -/
-theorem isInjectiveSpace_sierpinski : IsInjectiveSpace.{u} Prop := by
+theorem isInjectiveSpace_sierpinski : IsInjectiveSpace.{u} Sierpinski := by
   intro X Y _ _ e he f
   have hfopen : IsOpen {x | f x} := continuous_Prop.1 f.continuous
   rw [he.isInducing.isOpen_iff] at hfopen

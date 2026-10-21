@@ -1,6 +1,8 @@
 # Proposition 1.2
 
-A slightly less trivial example of an injective space is the 2-point space $\mathbb{O}$ with "points" $\bot$ and $\top$ where $\top$ is open but $\bot$ is not. (This space is sometimes called the *Sierpinski Space*.)
+A slightly less trivial example of an injective space is the 2-point space $\mathbb{O}$ with "points" $\bot$ and $\top$ where $\top$ is open but $\bot$ is not. (This space is sometimes called the *Sierpiński Space*.)
+
+In Lean, **`Sierpinski`** is that space: `Prop` with the Sierpiński topology (`abbrev Sierpinski := Prop`).
 
 **1.2 Proposition.** The space $\mathbb{O}$ is injective.
 

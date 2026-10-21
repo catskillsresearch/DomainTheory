@@ -1,5 +1,5 @@
 /-ai
-Scott's two-point Sierpiński space is the type of propositions, equipped with the Sierpiński topology.
+Scott's §1 on injective T₀-spaces: extension along subspace embeddings, products, retracts, and embedding into a Sierpiński power.
 ai-/
 module
 
@@ -25,9 +25,7 @@ theorem) that every `T₀`-space embeds in a power of the Sierpiński space.
 ## Main definitions / results
 
 * `IsInjectiveSpace` — Scott's Definition 1.1.
-* `proposition_1_2` … `proposition_1_5` — Scott's Propositions 1.2–1.5.
+* `Sierpinski`, `isInjectiveSpace_sierpinski`, `proposition_1_2` — Scott's Proposition 1.2.
+* `proposition_1_3` … `proposition_1_5` — Scott's Propositions 1.3–1.5.
 * `corollary_1_6`, `corollary_1_7` — Scott's Corollaries 1.6 and 1.7.
 -/
-
-/-- Scott's two-point Sierpiński space 𝕆: `Prop` with the Sierpiński topology. -/
-abbrev Sierpinski := Prop
