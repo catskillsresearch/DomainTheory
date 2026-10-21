@@ -15,10 +15,10 @@ even when the proof term extracts no witness. Genuine classical frontiers remain
 Scott’s 1972 topological definition of `≪` (algebraic ⇒ continuous; ScottMap
 conjugation) and trichotomy for separated sums.
 
-- [Introduction](BridgeTheorems_Introduction.md)
-- [Catalog of bridge theorems](BridgeTheorems_Catalog_of_bridge_theorems.md)
+- [Introduction](BridgeTheorems/BridgeTheorems_Introduction.md)
+- [Catalog of bridge theorems](BridgeTheorems/BridgeTheorems_Catalog_of_bridge_theorems.md)
 - [Proof notes](BridgeTheorems/BridgeTheorems_Proof_notes.md)
-- [Constructivity summary](BridgeTheorems_Constructivity_summary.md)
+- [Constructivity summary](BridgeTheorems/BridgeTheorems_Constructivity_summary.md)
 - [Worked example — S-expressions / trees](BridgeTheorems/BridgeTheorems_Worked_example.md)
 
 **Lean 4**
