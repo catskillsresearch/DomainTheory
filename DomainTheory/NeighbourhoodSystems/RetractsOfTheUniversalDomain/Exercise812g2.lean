@@ -1,30 +1,12 @@
 /-ai
 This file gathers and re-exports the computable unions of U and V: list concatenation on U, with its primitive recursiveness, the decoding of appended codes, raw equality, membership, specification, existence, and decidability, and bitwise disjunction on V, with the level-set union law, the raw and canonical primitive recursiveness, the specifications, existence, and decidability.
+
+If some index presents the union of the neighbourhoods indexed by n and by m, then the canonical union index presents that same union.
+
+The numbered name example_812_g2 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Uunion
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.U_isComputableUnion
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.VunionRaw
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Vunion
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.V_isComputableUnion
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Uunion_primrec
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.decodeQPairList_appendListCode
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Uunion_eq_union
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.U_union_UX_mem
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Uunion_spec
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.U_union_exists
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.U_union_computable
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.levelSet_myUnion
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.primrec_VunionRaw
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.levelSet_VunionRaw
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.primrec_Vunion
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Vunion_spec
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.V_union_exists
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.V_union_computable
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Vunion_spec'
 
 @[expose] public section
@@ -75,5 +57,21 @@ open Domain.Recursive NeighborhoodSystem
 
 
 
+
+end DomainTheory.NeighbourhoodSystems
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem example_812_g2 : ∀ {n m : Nat},
+  (∃ (k : Nat),
+      @Eq (Set Nat) (DomainTheory.NeighbourhoodSystems.VX k)
+        (@Union.union (Set Nat) (@Set.instUnion Nat) (DomainTheory.NeighbourhoodSystems.VX n)
+          (DomainTheory.NeighbourhoodSystems.VX m))) →
+    @Eq (Set Nat) (DomainTheory.NeighbourhoodSystems.VX (DomainTheory.NeighbourhoodSystems.Vunion n m))
+      (@Union.union (Set Nat) (@Set.instUnion Nat) (DomainTheory.NeighbourhoodSystems.VX n)
+        (DomainTheory.NeighbourhoodSystems.VX m)) :=
+  @DomainTheory.NeighbourhoodSystems.Vunion_spec'
 
 end DomainTheory.NeighbourhoodSystems

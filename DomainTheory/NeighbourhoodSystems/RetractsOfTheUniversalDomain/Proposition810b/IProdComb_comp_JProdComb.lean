@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Pro
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b.IProdComb
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b.JProdComb
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.prodComb_eq
 @[expose] public section
 
 set_option linter.unusedSectionVars false

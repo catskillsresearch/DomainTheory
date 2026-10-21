@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82.retractionOfSubsystem
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82.retractionOfSubsystem_rel
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.proj_comp_inj
 @[expose] public section
 
 set_option linter.unusedSectionVars false

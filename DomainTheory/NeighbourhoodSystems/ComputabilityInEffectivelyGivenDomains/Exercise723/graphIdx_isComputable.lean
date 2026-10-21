@@ -15,6 +15,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.mem_GraphIdx_iff
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.forall_rel_iff_subset_step
 
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.Xenum_singleton
 @[expose] public section
 
 

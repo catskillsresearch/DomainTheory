@@ -1,11 +1,23 @@
 /-ai
-This file gathers and re-exports the basic development of Exercise 4.22, monotonicity of the generating operator, the fixed-point equation for the carved-out set, and the existence of a Peano submodel.
+If zero is never a successor and successor is injective, the carved-out subtype carries a Peano model.
+
+The numbered name example_422 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.Basic
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.genOp_monotone
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.genOp_nats
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.exists_peano_submodel
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise422
+
+set_option linter.unusedVariables false
+
+theorem example_422.{u_1} : ∀ {M : Type u_1} (zero : M) (succ : M → M),
+  (∀ (n : M), @Ne M zero (succ n)) →
+    @Function.Injective M M succ →
+      Nonempty
+        (DomainTheory.NeighbourhoodSystems.PeanoModel (@DomainTheory.NeighbourhoodSystems.Exercise422.Nat' M zero succ)) :=
+  @DomainTheory.NeighbourhoodSystems.Exercise422.exists_peano_submodel
+
+end DomainTheory.NeighbourhoodSystems.Exercise422

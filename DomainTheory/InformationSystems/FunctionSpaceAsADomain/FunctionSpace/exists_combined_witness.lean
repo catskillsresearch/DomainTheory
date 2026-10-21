@@ -21,6 +21,10 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.entSet_inputUnion_of_ent
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funInputUnion_con_of_ent
 
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_ii
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_iv
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_v
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_vi
 @[expose] public section
 
 set_option linter.unusedSectionVars false

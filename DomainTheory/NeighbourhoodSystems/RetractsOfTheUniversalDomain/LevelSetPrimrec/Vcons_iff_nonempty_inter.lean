@@ -18,6 +18,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Lev
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.VinterRaw
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.levelSet_VinterRaw
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.V_no_minimal
 @[expose] public section
 
 set_option linter.unusedSectionVars false

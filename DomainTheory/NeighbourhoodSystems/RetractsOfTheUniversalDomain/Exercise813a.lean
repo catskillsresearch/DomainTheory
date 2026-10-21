@@ -1,23 +1,20 @@
 /-ai
-This file gathers and re-exports the basic development of Exercise 8.13(a), the bit-reduction lemmas, nonemptiness and the level-set form of a generator, membership of generators and of complements in V, generation of affine classes, their unions, and level sets, the equivalence of V-membership with generation by the generators, independence of the generators, and the isomorphism of U with V.
+U is isomorphic to V as domains.
+
+The numbered name example_813_a is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.testBit_mod_two_pow
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.testBit_mod_two_pow_succ
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.generator_nonempty
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.generator_eq_levelSet
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.V_mem_generator
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.levelSet_compl
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.V_compl_mem
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.generatedBy_generator_imp
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.affine_eq_biInter
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.generatedBy_affine
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.generatedBy_biUnion_affine
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.generatedBy_levelSet
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.V_mem_iff_generatedBy
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.generators_independent
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.exercise813a
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem example_813_a : @DomainTheory.NeighbourhoodSystems.Isomorphic Rat Nat DomainTheory.NeighbourhoodSystems.U
+  DomainTheory.NeighbourhoodSystems.V :=
+  DomainTheory.NeighbourhoodSystems.exercise813a
+
+end DomainTheory.NeighbourhoodSystems

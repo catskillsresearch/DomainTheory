@@ -8,6 +8,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.Basic
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.proj_comp_inj
 @[expose] public section
 
 

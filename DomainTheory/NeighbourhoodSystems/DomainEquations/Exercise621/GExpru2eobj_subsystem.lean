@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.Basi
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusTok_subsystem
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesTok_subsystem
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.sumTok_subsystem
 @[expose] public section
 
 

@@ -1,24 +1,201 @@
 /-ai
-This file gathers and re-exports the free-semigroup calculation of Exercise 5.15. It re-exports associativity and both distributivity laws for the pointwise product, membership in the star and the unfolding equation of the star, the fixed-point identity and the prefix lemma for a star product, and Arden's lemma. It also re-exports the powers and the star of a singleton, the least solution of the single linear equation on a monoid and on the free monoid of binary words, the two component equations of David Park's solution, and the existence and leastness of that solution.
+The least fixed point of the map sending w to the product of the singleton of e with w, united with the singleton of e', equals the product of the star of the singleton of e with the singleton of e'. Any solution (x, y) of David Park's system lies above the proposed solution (x₀, y₀). The pair (x₀, y₀) solves David Park's system: x₀ equals a · x₀ ∪ b · y₀ ∪ c, and y₀ equals b · x₀ ∪ a · y₀ ∪ d.
+
+The numbered name example_515 is the conjunction of these statements. The proof is that conjunction.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.Basic
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.smul_assoc
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.sunion_mul
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.smul_union
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.mem_star
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.star_eq
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.star_mul_isFixed
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.star_mul_subset_prefixed
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.arden
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.mem_kpow_singleton
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.mem_star_singleton
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.part1
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.part1_freeMonoid
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.parkX_eq
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.parkY_eq
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.park_solves
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.park_least
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.park_solves
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise515
+
+set_option linter.unusedVariables false
+
+theorem example_515.{u_1} : And
+  (And
+    (∀ {S : Type u_1} [inst : Monoid S] (e e' : S),
+      @Eq (Set S)
+        (@DomainTheory.NeighbourhoodSystems.Exercise414.lfpSet S fun (w : Set S) =>
+          @Union.union (Set S) (@Set.instUnion S)
+            (@HMul.hMul (Set S) (Set S) (Set S)
+              (@instHMul (Set S)
+                (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+              (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e) w)
+            (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e'))
+        (@HMul.hMul (Set S) (Set S) (Set S)
+          (@instHMul (Set S) (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+          (@DomainTheory.NeighbourhoodSystems.Exercise515.star S inst
+            (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e))
+          (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e')))
+    (∀ {S : Type u_1} [inst : Monoid S] (a b c d : Set S) {x y : Set S},
+      @Eq (Set S) x
+          (@Union.union (Set S) (@Set.instUnion S)
+            (@Union.union (Set S) (@Set.instUnion S)
+              (@HMul.hMul (Set S) (Set S) (Set S)
+                (@instHMul (Set S)
+                  (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                a x)
+              (@HMul.hMul (Set S) (Set S) (Set S)
+                (@instHMul (Set S)
+                  (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                b y))
+            c) →
+        @Eq (Set S) y
+            (@Union.union (Set S) (@Set.instUnion S)
+              (@Union.union (Set S) (@Set.instUnion S)
+                (@HMul.hMul (Set S) (Set S) (Set S)
+                  (@instHMul (Set S)
+                    (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                  b x)
+                (@HMul.hMul (Set S) (Set S) (Set S)
+                  (@instHMul (Set S)
+                    (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                  a y))
+              d) →
+          And (@LE.le (Set S) (@Set.instLE S) (@DomainTheory.NeighbourhoodSystems.Exercise515.parkX S inst a b c d) x)
+            (@LE.le (Set S) (@Set.instLE S) (@DomainTheory.NeighbourhoodSystems.Exercise515.parkY S inst a b c d) y)))
+  (∀ {S : Type u_1} [inst : Monoid S] (a b c d : Set S),
+    And
+      (@Eq (Set S) (@DomainTheory.NeighbourhoodSystems.Exercise515.parkX S inst a b c d)
+        (@Union.union (Set S) (@Set.instUnion S)
+          (@Union.union (Set S) (@Set.instUnion S)
+            (@HMul.hMul (Set S) (Set S) (Set S)
+              (@instHMul (Set S)
+                (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+              a (@DomainTheory.NeighbourhoodSystems.Exercise515.parkX S inst a b c d))
+            (@HMul.hMul (Set S) (Set S) (Set S)
+              (@instHMul (Set S)
+                (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+              b (@DomainTheory.NeighbourhoodSystems.Exercise515.parkY S inst a b c d)))
+          c))
+      (@Eq (Set S) (@DomainTheory.NeighbourhoodSystems.Exercise515.parkY S inst a b c d)
+        (@Union.union (Set S) (@Set.instUnion S)
+          (@Union.union (Set S) (@Set.instUnion S)
+            (@HMul.hMul (Set S) (Set S) (Set S)
+              (@instHMul (Set S)
+                (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+              b (@DomainTheory.NeighbourhoodSystems.Exercise515.parkX S inst a b c d))
+            (@HMul.hMul (Set S) (Set S) (Set S)
+              (@instHMul (Set S)
+                (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+              a (@DomainTheory.NeighbourhoodSystems.Exercise515.parkY S inst a b c d)))
+          d))) :=
+  @And.intro
+  (And
+    (∀ {S : Type u_1} [inst : Monoid S] (e e' : S),
+      @Eq (Set S)
+        (@DomainTheory.NeighbourhoodSystems.Exercise414.lfpSet S fun (w : Set S) =>
+          @Union.union (Set S) (@Set.instUnion S)
+            (@HMul.hMul (Set S) (Set S) (Set S)
+              (@instHMul (Set S)
+                (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+              (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e) w)
+            (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e'))
+        (@HMul.hMul (Set S) (Set S) (Set S)
+          (@instHMul (Set S) (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+          (@DomainTheory.NeighbourhoodSystems.Exercise515.star S inst
+            (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e))
+          (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e')))
+    (∀ {S : Type u_1} [inst : Monoid S] (a b c d : Set S) {x y : Set S},
+      @Eq (Set S) x
+          (@Union.union (Set S) (@Set.instUnion S)
+            (@Union.union (Set S) (@Set.instUnion S)
+              (@HMul.hMul (Set S) (Set S) (Set S)
+                (@instHMul (Set S)
+                  (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                a x)
+              (@HMul.hMul (Set S) (Set S) (Set S)
+                (@instHMul (Set S)
+                  (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                b y))
+            c) →
+        @Eq (Set S) y
+            (@Union.union (Set S) (@Set.instUnion S)
+              (@Union.union (Set S) (@Set.instUnion S)
+                (@HMul.hMul (Set S) (Set S) (Set S)
+                  (@instHMul (Set S)
+                    (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                  b x)
+                (@HMul.hMul (Set S) (Set S) (Set S)
+                  (@instHMul (Set S)
+                    (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                  a y))
+              d) →
+          And (@LE.le (Set S) (@Set.instLE S) (@DomainTheory.NeighbourhoodSystems.Exercise515.parkX S inst a b c d) x)
+            (@LE.le (Set S) (@Set.instLE S) (@DomainTheory.NeighbourhoodSystems.Exercise515.parkY S inst a b c d) y)))
+  (∀ {S : Type u_1} [inst : Monoid S] (a b c d : Set S),
+    And
+      (@Eq (Set S) (@DomainTheory.NeighbourhoodSystems.Exercise515.parkX S inst a b c d)
+        (@Union.union (Set S) (@Set.instUnion S)
+          (@Union.union (Set S) (@Set.instUnion S)
+            (@HMul.hMul (Set S) (Set S) (Set S)
+              (@instHMul (Set S)
+                (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+              a (@DomainTheory.NeighbourhoodSystems.Exercise515.parkX S inst a b c d))
+            (@HMul.hMul (Set S) (Set S) (Set S)
+              (@instHMul (Set S)
+                (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+              b (@DomainTheory.NeighbourhoodSystems.Exercise515.parkY S inst a b c d)))
+          c))
+      (@Eq (Set S) (@DomainTheory.NeighbourhoodSystems.Exercise515.parkY S inst a b c d)
+        (@Union.union (Set S) (@Set.instUnion S)
+          (@Union.union (Set S) (@Set.instUnion S)
+            (@HMul.hMul (Set S) (Set S) (Set S)
+              (@instHMul (Set S)
+                (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+              b (@DomainTheory.NeighbourhoodSystems.Exercise515.parkX S inst a b c d))
+            (@HMul.hMul (Set S) (Set S) (Set S)
+              (@instHMul (Set S)
+                (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+              a (@DomainTheory.NeighbourhoodSystems.Exercise515.parkY S inst a b c d)))
+          d)))
+  (@And.intro
+    (∀ {S : Type u_1} [inst : Monoid S] (e e' : S),
+      @Eq (Set S)
+        (@DomainTheory.NeighbourhoodSystems.Exercise414.lfpSet S fun (w : Set S) =>
+          @Union.union (Set S) (@Set.instUnion S)
+            (@HMul.hMul (Set S) (Set S) (Set S)
+              (@instHMul (Set S)
+                (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+              (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e) w)
+            (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e'))
+        (@HMul.hMul (Set S) (Set S) (Set S)
+          (@instHMul (Set S) (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+          (@DomainTheory.NeighbourhoodSystems.Exercise515.star S inst
+            (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e))
+          (@Singleton.singleton S (Set S) (@Set.instSingletonSet S) e')))
+    (∀ {S : Type u_1} [inst : Monoid S] (a b c d : Set S) {x y : Set S},
+      @Eq (Set S) x
+          (@Union.union (Set S) (@Set.instUnion S)
+            (@Union.union (Set S) (@Set.instUnion S)
+              (@HMul.hMul (Set S) (Set S) (Set S)
+                (@instHMul (Set S)
+                  (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                a x)
+              (@HMul.hMul (Set S) (Set S) (Set S)
+                (@instHMul (Set S)
+                  (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                b y))
+            c) →
+        @Eq (Set S) y
+            (@Union.union (Set S) (@Set.instUnion S)
+              (@Union.union (Set S) (@Set.instUnion S)
+                (@HMul.hMul (Set S) (Set S) (Set S)
+                  (@instHMul (Set S)
+                    (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                  b x)
+                (@HMul.hMul (Set S) (Set S) (Set S)
+                  (@instHMul (Set S)
+                    (@Set.mul S (@MulOne.toMul S (@MulOneClass.toMulOne S (@Monoid.toMulOneClass S inst)))))
+                  a y))
+              d) →
+          And (@LE.le (Set S) (@Set.instLE S) (@DomainTheory.NeighbourhoodSystems.Exercise515.parkX S inst a b c d) x)
+            (@LE.le (Set S) (@Set.instLE S) (@DomainTheory.NeighbourhoodSystems.Exercise515.parkY S inst a b c d) y))
+    @DomainTheory.NeighbourhoodSystems.Exercise515.part1 @DomainTheory.NeighbourhoodSystems.Exercise515.park_least)
+  @DomainTheory.NeighbourhoodSystems.Exercise515.park_solves
+
+end DomainTheory.NeighbourhoodSystems.Exercise515

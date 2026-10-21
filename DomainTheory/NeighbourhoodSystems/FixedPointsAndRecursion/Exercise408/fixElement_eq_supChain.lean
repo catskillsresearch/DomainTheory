@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.mem_supChain
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.iterElem_monotone
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.mem_iterElem
 @[expose] public section
 
 

@@ -9,6 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.Basic
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixMap_fixed
 @[expose] public section
 
 

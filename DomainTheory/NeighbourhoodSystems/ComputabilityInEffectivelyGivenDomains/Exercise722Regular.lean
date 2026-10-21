@@ -1,17 +1,21 @@
 /-ai
-This file gathers and re-exports the basic regular-event development together with soundness and completeness of denotation for membership in S, the two characterizations of S by nonempty denotations, emptiness and intersection as language equivalence, membership of every word in the universal language, the identity that concatenating the universal language with itself yields the universal language, and the separation of the universal language from the language of words that contain a zero.
+The denotation of the expression sigma is distinct from the denotation of containsZero. The one-letter word whose entry is true lies in the former and not in the latter.
+
+The numbered name example_722_regular is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.Basic
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.InS_denote_of_nonempty
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.InS_exists_denote
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.inS_iff_exists_denote
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.inS_eq_range_denote
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.empty_iff_equiv_emptyExpr
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.interEq_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.mem_denote_sigma
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.denote_catSigmaSigma
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.sigma_ne_containsZero
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise722
+
+set_option linter.unusedVariables false
+
+theorem example_722_regular : @Ne (Set (List Bool))
+  (DomainTheory.NeighbourhoodSystems.Exercise722.denote DomainTheory.NeighbourhoodSystems.Exercise722.SExpr.sigma)
+  (DomainTheory.NeighbourhoodSystems.Exercise722.denote DomainTheory.NeighbourhoodSystems.Exercise722.containsZero) :=
+  DomainTheory.NeighbourhoodSystems.Exercise722.sigma_ne_containsZero
+
+end DomainTheory.NeighbourhoodSystems.Exercise722

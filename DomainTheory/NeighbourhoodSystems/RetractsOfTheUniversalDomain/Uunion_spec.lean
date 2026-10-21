@@ -12,6 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Uun
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Uunion_eq_union
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.U_union_UX_mem
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.UnionClosed
 @[expose] public section
 
 set_option linter.unusedSectionVars false

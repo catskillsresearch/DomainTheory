@@ -13,6 +13,7 @@ public import DomainTheory.BridgeTheorems.basicOpen_empty
 public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
 public import DomainTheory.BridgeTheorems.toNeighborhoodSystem
 
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen_inter
 @[expose] public section
 
 set_option linter.unusedSectionVars false

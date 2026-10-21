@@ -27,6 +27,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.u
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCategoryInfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCartesianMonoidalCategoryInfoSysObj
 
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.uncurry_curryMap
 @[expose] public section
 
 set_option linter.unusedSectionVars false

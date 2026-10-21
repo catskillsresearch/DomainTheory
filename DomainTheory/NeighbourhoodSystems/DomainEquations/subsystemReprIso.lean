@@ -12,6 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.subFam_sUnion_me
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611Inst16
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.subIso
 
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.reprIso
 @[expose] public section
 
 set_option linter.unusedSectionVars false

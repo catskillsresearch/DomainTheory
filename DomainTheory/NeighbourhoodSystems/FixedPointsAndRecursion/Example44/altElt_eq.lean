@@ -9,6 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44.Basic
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.toElementMap_fixElement
 @[expose] public section
 
 

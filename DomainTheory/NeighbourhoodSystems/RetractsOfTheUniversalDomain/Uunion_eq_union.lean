@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Lev
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Uunion
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.decodeQPairList_appendListCode
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.UnionClosed
 @[expose] public section
 
 set_option linter.unusedSectionVars false

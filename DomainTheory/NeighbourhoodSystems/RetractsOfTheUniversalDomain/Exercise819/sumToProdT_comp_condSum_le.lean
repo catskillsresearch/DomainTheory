@@ -20,6 +20,8 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.TD_trichotomy
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.toElementMap_sumToProdT
 
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.condSum_false
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.condSum_true
 @[expose] public section
 
 

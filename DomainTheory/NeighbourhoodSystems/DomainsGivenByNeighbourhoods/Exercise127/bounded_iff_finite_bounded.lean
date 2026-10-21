@@ -10,6 +10,7 @@ public import Mathlib.Tactic
 import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.Basic
 
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.subset_leastFilter
 @[expose] public section
 
 

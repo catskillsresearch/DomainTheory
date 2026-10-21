@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b.Basic
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b.finitary_sumComb
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isProjection_sumComb
 @[expose] public section
 
 

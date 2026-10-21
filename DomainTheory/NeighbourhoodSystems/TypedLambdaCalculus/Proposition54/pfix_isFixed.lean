@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition5
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.sectionu2082_apply
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.pfix_apply
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.toElementMap_fixElement
 @[expose] public section
 
 

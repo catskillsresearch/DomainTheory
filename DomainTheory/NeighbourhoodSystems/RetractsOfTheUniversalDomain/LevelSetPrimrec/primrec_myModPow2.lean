@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Lev
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.primrec_myDivPow2
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.myModPow2
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.V_no_minimal
 @[expose] public section
 
 set_option linter.unusedSectionVars false

@@ -12,6 +12,8 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.nonempty_finiteApproximants
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.directed_finiteApproximants
 
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.directedSup_le
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closure_le_element
 @[expose] public section
 
 

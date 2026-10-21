@@ -1,27 +1,12 @@
 /-ai
 This file gathers and re-exports Proposition 6.11, that the subsystems of a neighbourhood system form a domain. It brings together the representing family of neighbourhood-sets, closure of that family under nonempty intersection and under directed union, the intersection and union systems, the order isomorphism of the subdomain relation with inclusion, the partial order of subsystems, and the representation of that poset as a domain.
+
+The neighbourhood system rebuilt from a subdomain neighbourhood-set is a subsystem of E.
+
+The numbered name theorem_611 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.subFam
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.interSys
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.unionSys
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.ofMem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.subIso
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.subsystemReprIso
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.subFam_master_mem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.subFam_mem_E
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.subFam_inter_closed
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.subFam_nonempty
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.interSys_subsystem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.interSys_nbset
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.subFam_sInter_mem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.unionSys_subsystem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.unionSys_nbset
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.subFam_sUnion_mem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611Inst16
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.ofMem_subsystem
 
 @[expose] public section
@@ -99,5 +84,18 @@ variable {α : Type*}
 
 
 
+
+end DomainTheory.NeighbourhoodSystems.Proposition611
+
+namespace DomainTheory.NeighbourhoodSystems.Proposition611
+
+set_option linter.unusedVariables false
+
+theorem theorem_611.{u_1} : ∀ {α : Type u_1} (E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (𝒮 : Set (Set α))
+  (h :
+    @Membership.mem (Set (Set α)) (Set (Set (Set α))) (@Set.instMembership (Set (Set α)))
+      (@DomainTheory.NeighbourhoodSystems.Proposition611.subFam α E) 𝒮),
+  @DomainTheory.NeighbourhoodSystems.Subsystem α (@DomainTheory.NeighbourhoodSystems.Proposition611.ofMem α E 𝒮 h) E :=
+  @DomainTheory.NeighbourhoodSystems.Proposition611.ofMem_subsystem
 
 end DomainTheory.NeighbourhoodSystems.Proposition611

@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.Basic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.inclMap_toElementMap
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.relMap_toElementMap_embed
 @[expose] public section
 
 

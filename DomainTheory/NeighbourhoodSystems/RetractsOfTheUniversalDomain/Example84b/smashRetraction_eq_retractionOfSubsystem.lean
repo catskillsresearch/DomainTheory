@@ -14,6 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exa
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.mem_toElementMap_retractionOfSubsystem_smash
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.exists_smash_witness
 
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510.smash_mem_iff
 @[expose] public section
 
 

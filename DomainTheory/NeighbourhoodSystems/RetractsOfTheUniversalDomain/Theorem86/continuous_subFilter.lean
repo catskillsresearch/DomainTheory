@@ -14,6 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.subFilter_iSupDirected
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.subFilter_monotone
 
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.continuous_of_monotone_iSupDirected
 @[expose] public section
 
 set_option linter.unusedSectionVars false

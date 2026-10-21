@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.Basic
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.B_subsystem_C
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Subsystemu2etrianglelefteq
 @[expose] public section
 
 

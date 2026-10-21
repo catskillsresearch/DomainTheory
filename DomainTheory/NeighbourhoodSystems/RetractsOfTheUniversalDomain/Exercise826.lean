@@ -1,12 +1,24 @@
 /-ai
-This file gathers and re-exports Exercise 8.26: the basic setup of self-application, self-abstraction, and the abstraction recipe, the faithfulness of applying a self-hosted abstraction, the identity case of that recipe, the sandwich equation for a translated abstraction, and the type-soundness of translated application.
+Translating the identity map between a and b yields b composed with a.
+
+The numbered name example_826 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.Uapply_Ulam
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.translateAbs_sandwich
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.translateApp_hasType
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.translateAbs_idMap
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem example_826.{u} : ∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+  {a b : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
+  @Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
+    (@DomainTheory.NeighbourhoodSystems.translateAbs α E a b
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap α E))
+    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α α α E E E b a) :=
+  @DomainTheory.NeighbourhoodSystems.translateAbs_idMap
+
+end DomainTheory.NeighbourhoodSystems

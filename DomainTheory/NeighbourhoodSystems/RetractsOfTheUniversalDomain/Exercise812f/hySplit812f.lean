@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBi
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.VDiff
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812f.Basic
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e.splitFromBisection_isSplitSpecu27
 @[expose] public section
 
 

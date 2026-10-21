@@ -1,4 +1,6 @@
 /-ai
+This file's example is example_25.
+
 Scott's second example is an information system whose tokens are strict integer intervals, read as open bounds on a rational, together with a least-informative token read as always true. Consistency means that some rational satisfies every token of the finite set, and entailment means that every rational satisfying the set satisfies the token. The example builds that system from the satisfaction relation, using that the least token is always satisfied and that every token is satisfiable.
 ai-/
 module
@@ -48,7 +50,7 @@ end Token
 
 
 /-- **Factoid 2.5.** Interval information system of Scott 1982, §2. -/
-example : InfoSys Token :=
+def example_25 : InfoSys Token :=
   ofSatisfaction Sat Token.bot (fun _ => trivial) sat_sing
 
 end Factoid25

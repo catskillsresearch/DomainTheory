@@ -11,6 +11,7 @@ public import Mathlib.Tactic
 import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.Basic
 
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111.le_iUnion
 @[expose] public section
 
 

@@ -1,11 +1,20 @@
 /-ai
-This file gathers and re-exports the setting of Exercise 8.12(g)(1)(b), the nonemptiness of V's master neighbourhood, the emptiness of the zero level set, and the fact that index 0 presents V's master.
+Index 0 presents V's master neighbourhood.
+
+The numbered name example_812_g1b is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.V_master_nonempty
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.levelSet_zero_zero
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1b.VX_zero
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem example_812_g1b : @Eq (Set Nat) (DomainTheory.NeighbourhoodSystems.VX (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
+  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master Nat DomainTheory.NeighbourhoodSystems.V) :=
+  DomainTheory.NeighbourhoodSystems.VX_zero
+
+end DomainTheory.NeighbourhoodSystems

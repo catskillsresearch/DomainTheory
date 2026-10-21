@@ -12,6 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.Basic
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.gMap_isComputable
 
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.curry_isComputable
 @[expose] public section
 
 

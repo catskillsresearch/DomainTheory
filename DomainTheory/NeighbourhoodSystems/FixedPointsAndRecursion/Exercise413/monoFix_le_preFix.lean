@@ -9,6 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exe
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.Basic
 
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.sInf_le
 @[expose] public section
 
 

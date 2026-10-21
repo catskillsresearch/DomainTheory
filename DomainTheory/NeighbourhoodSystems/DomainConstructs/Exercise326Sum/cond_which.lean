@@ -14,6 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.inMapu2081_outMapu2081_eq_of_right
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.sum_element_trichotomy
 
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.cond_toElementMap_mem
 @[expose] public section
 
 

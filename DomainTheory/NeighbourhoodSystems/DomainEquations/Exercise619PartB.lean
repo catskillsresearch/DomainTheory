@@ -1,27 +1,23 @@
 /-ai
-This file gathers and re-exports the Part B development of Exercise 6.19. It includes the basic setup; strictness, identity, and composition for the token-level sum and product actions on maps; the same three laws for functor expressions; monotonicity of the sum action, the product action, and the expression action; the subsystem laws for the token sum, the token product, and the object action; and continuity of the object action and of the map action, both the forward direction and the full equivalence.
+The concrete product carries the subsystem relation componentwise.
+
+The numbered name example_619_part_b is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.sumMapTok_isStrict
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.prodMapTok_isStrict
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.sumMapTok_id
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.sumMapTok_comp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.prodMapTok_id
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.prodMapTok_comp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpru2emap_isStrict
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpru2emap_id
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpru2emap_comp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.sumMapTok_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.prodMapTok_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpru2emap_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.sumTok_subsystem
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.prodTok_subsystem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpru2eobj_subsystem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpru2eobj_continuous_mp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpru2eobj_continuous
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpru2emap_continuous_mp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpru2emap_continuous
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise619
+
+set_option linter.unusedVariables false
+
+theorem example_619_part_b : ∀ {A₀ A₁ B₀ B₁ : DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys},
+  @DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str A₀.sys B₀.sys →
+    @DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str A₁.sys B₁.sys →
+      @DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str (A₀.prod A₁).sys
+        (B₀.prod B₁).sys :=
+  @DomainTheory.NeighbourhoodSystems.Exercise619.prodTok_subsystem
+
+end DomainTheory.NeighbourhoodSystems.Exercise619

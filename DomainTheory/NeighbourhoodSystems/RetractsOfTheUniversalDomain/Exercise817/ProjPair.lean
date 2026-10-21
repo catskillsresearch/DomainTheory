@@ -11,6 +11,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g4
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Subsystemu2etrianglelefteq
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.proj_comp_inj
 @[expose] public section
 
 universe u v w

@@ -1,12 +1,21 @@
 /-ai
-This file gathers and re-exports the limit elements of infinite paths in the binary system, the characterization of the cones that belong to a branch, the approximation of a branch by its finite prefixes, the comparability of prefixes whose cones belong to a common element, and the totality of each branch.
+Each infinite binary path determines a total element of the binary system.
+
+The numbered name example_113 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.branch_mem_iff
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.branchSeq_le_branch
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.prefix_comparable_of_mem
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.branch_isTotal
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise113
+
+set_option linter.unusedVariables false
+
+theorem example_113 : ∀ (p : Nat → Bool),
+  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsTotal DomainTheory.NeighbourhoodSystems.ExampleB.Str
+    DomainTheory.NeighbourhoodSystems.ExampleB.B (DomainTheory.NeighbourhoodSystems.Exercise113.branch p) :=
+  DomainTheory.NeighbourhoodSystems.Exercise113.branch_isTotal
+
+end DomainTheory.NeighbourhoodSystems.Exercise113

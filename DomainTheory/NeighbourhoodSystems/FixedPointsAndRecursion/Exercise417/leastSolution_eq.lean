@@ -15,6 +15,7 @@ import all Mathlib.Algebra.Group.Nat.Defs
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.Basic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.F_monotone
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_isFixed
 @[expose] public section
 
 

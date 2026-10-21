@@ -8,6 +8,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.Basic
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixMap_fixed
 @[expose] public section
 
 

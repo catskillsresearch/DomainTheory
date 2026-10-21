@@ -1,40 +1,1523 @@
 /-ai
-This file gathers and re-exports the first half of Proposition 8.10. It includes the elementwise identities for a left inverse, for a composite below the identity, for a map below the identity, and for a retraction; the product, lambda, and arrow combinators with their elementwise actions; the retraction and below-identity halves, and hence the projection property, for the product and the arrow; the disjointness of the two copies of a sum, the reach of the two injections, the fact that a left inverse sends bottom to bottom and so does the sum extraction, the sum combinator with its elementwise membership and its left, right, and master cases; and the retraction, below-identity, and projection properties of the sum, together with the joint statement that the sum, product, and arrow of projections are projections.
+If two self-maps of the universal domain are projections, then so is their arrow combinator. If two self-maps of the universal domain are projections, then so are their sum, their product, and their arrow. If two self-maps of the universal domain are projections, then so is their product combinator. If two self-maps of the universal domain are projections, then so is their sum combinator. If two self-maps of the universal domain are retractions, then so is their arrow combinator. If two self-maps of the universal domain are retractions, then so is their lambda combinator. If two self-maps of the universal domain are retractions, then so is their product combinator. If two self-maps of the universal domain are retractions, then so is their sum combinator. If two self-maps of the universal domain lie below the identity, then so does their arrow combinator. If two self-maps of the universal domain lie below the identity, then their lambda combinator lies below the identity of the function space. If two self-maps of the universal domain lie below the identity, then so does their product combinator. If two self-maps of the universal domain lie below the identity, then so does their sum combinator.
+
+The numbered name theorem_810 is the conjunction of these statements. The proof is that conjunction.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_of_comp_eq_idMap
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_le_of_comp_le_idMap
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_le_self_of_le_idMap
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_idem_of_isRetraction
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.prodComb_eq
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_prodComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isRetraction_prodComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.le_idMap_prodComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isProjection_prodComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.lamComb_eq
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toApproxMap_toElementMap_lamComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isRetraction_lamComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.le_idMap_lamComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.arrowComb_eq
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_arrowComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isRetraction_arrowComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.le_idMap_arrowComb
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isProjection_arrowComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.not_sum_reaches_both
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.inMapu2080_toElementMap_reaches_left
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.inMapu2081_toElementMap_reaches_right
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_bot_eq_bot_of_comp_eq_idMap
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.jPlus_bot_eq_bot
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.sumComb_eq
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_sumComb_mem
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_sumComb_of_left
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_sumComb_of_right
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.toElementMap_sumComb_of_neither
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isRetraction_sumComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.le_idMap_sumComb
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isProjection_sumComb
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isProjection_combinators
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isProjection_prodComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isProjection_sumComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isRetraction_arrowComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isRetraction_lamComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isRetraction_prodComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isRetraction_sumComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.le_idMap_arrowComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.le_idMap_lamComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.le_idMap_prodComb
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.le_idMap_sumComb
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem theorem_810 : And
+  (And
+    (And
+      (And
+        (And
+          (And
+            (And
+              (And
+                (And
+                  (And
+                    (And
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
+                    (∀
+                      {a b :
+                        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                          DomainTheory.NeighbourhoodSystems.U},
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                            (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+                  (∀
+                    {a b :
+                      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U},
+                    @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                          (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+                (∀
+                  {a b :
+                    @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U},
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                        (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
+              (∀
+                {a b :
+                  @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U},
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                      (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (DomainTheory.NeighbourhoodSystems.lamComb a b)))
+            (∀
+              {a b :
+                @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U},
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                    (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+          (∀
+            {a b :
+              @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U},
+            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+        (∀
+          {a b :
+            @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U},
+          @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                    DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+              a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+            @LE.le
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@Preorder.toLE
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@PartialOrder.toPreorder
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                      DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+                b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+              @LE.le
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@Preorder.toLE
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@PartialOrder.toPreorder
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                      DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+                (DomainTheory.NeighbourhoodSystems.arrowComb a b)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U)))
+      (∀
+        {a b :
+          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U},
+        @LE.le
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@Preorder.toLE
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@PartialOrder.toPreorder
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                  DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+            a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+          @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                    DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+              b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+            @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U))
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U))
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U))
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U))))
+              (DomainTheory.NeighbourhoodSystems.lamComb a b)
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U))))
+    (∀
+      {a b :
+        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+          DomainTheory.NeighbourhoodSystems.U},
+      @LE.le
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U)
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+          a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+        @LE.le
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@Preorder.toLE
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@PartialOrder.toPreorder
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                  DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+            b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+          @LE.le
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@Preorder.toLE
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@PartialOrder.toPreorder
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                  DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+            (DomainTheory.NeighbourhoodSystems.prodComb a b)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U)))
+  (∀
+    {a b :
+      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+        DomainTheory.NeighbourhoodSystems.U},
+    @LE.le
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+          DomainTheory.NeighbourhoodSystems.U)
+        (@Preorder.toLE
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U)
+          (@PartialOrder.toPreorder
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+              DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+        a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+      @LE.le
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U)
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+          b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+        @LE.le
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U)
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+          (DomainTheory.NeighbourhoodSystems.sumComb a b)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U)) :=
+  @And.intro
+  (And
+    (And
+      (And
+        (And
+          (And
+            (And
+              (And
+                (And
+                  (And
+                    (And
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
+                    (∀
+                      {a b :
+                        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                          DomainTheory.NeighbourhoodSystems.U},
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                            (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+                  (∀
+                    {a b :
+                      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U},
+                    @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                          (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+                (∀
+                  {a b :
+                    @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U},
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                        (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
+              (∀
+                {a b :
+                  @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U},
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                      (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (DomainTheory.NeighbourhoodSystems.lamComb a b)))
+            (∀
+              {a b :
+                @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U},
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                    (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+          (∀
+            {a b :
+              @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U},
+            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+        (∀
+          {a b :
+            @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U},
+          @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                    DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+              a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+            @LE.le
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@Preorder.toLE
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@PartialOrder.toPreorder
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                      DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+                b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+              @LE.le
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@Preorder.toLE
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@PartialOrder.toPreorder
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                      DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+                (DomainTheory.NeighbourhoodSystems.arrowComb a b)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U)))
+      (∀
+        {a b :
+          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U},
+        @LE.le
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@Preorder.toLE
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@PartialOrder.toPreorder
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                  DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+            a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+          @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                    DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+              b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+            @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U))
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U))
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U))
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U))))
+              (DomainTheory.NeighbourhoodSystems.lamComb a b)
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U))))
+    (∀
+      {a b :
+        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+          DomainTheory.NeighbourhoodSystems.U},
+      @LE.le
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U)
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+          a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+        @LE.le
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@Preorder.toLE
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@PartialOrder.toPreorder
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                  DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+            b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+          @LE.le
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@Preorder.toLE
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@PartialOrder.toPreorder
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                  DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+            (DomainTheory.NeighbourhoodSystems.prodComb a b)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U)))
+  (∀
+    {a b :
+      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+        DomainTheory.NeighbourhoodSystems.U},
+    @LE.le
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+          DomainTheory.NeighbourhoodSystems.U)
+        (@Preorder.toLE
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U)
+          (@PartialOrder.toPreorder
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+              DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+        a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+      @LE.le
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U)
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+          b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+        @LE.le
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U)
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+          (DomainTheory.NeighbourhoodSystems.sumComb a b)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U))
+  (@And.intro
+    (And
+      (And
+        (And
+          (And
+            (And
+              (And
+                (And
+                  (And
+                    (And
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
+                    (∀
+                      {a b :
+                        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                          DomainTheory.NeighbourhoodSystems.U},
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                            (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+                  (∀
+                    {a b :
+                      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U},
+                    @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                          (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+                (∀
+                  {a b :
+                    @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U},
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                        (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
+              (∀
+                {a b :
+                  @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U},
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                      (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (DomainTheory.NeighbourhoodSystems.lamComb a b)))
+            (∀
+              {a b :
+                @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U},
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                    (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+          (∀
+            {a b :
+              @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U},
+            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+        (∀
+          {a b :
+            @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U},
+          @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                    DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+              a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+            @LE.le
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@Preorder.toLE
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@PartialOrder.toPreorder
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                      DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+                b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+              @LE.le
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@Preorder.toLE
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@PartialOrder.toPreorder
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                      DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+                (DomainTheory.NeighbourhoodSystems.arrowComb a b)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U)))
+      (∀
+        {a b :
+          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U},
+        @LE.le
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@Preorder.toLE
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@PartialOrder.toPreorder
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                  DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+            a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+          @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                    DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+              b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+            @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U))
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U))
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U))
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U))))
+              (DomainTheory.NeighbourhoodSystems.lamComb a b)
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U))))
+    (∀
+      {a b :
+        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+          DomainTheory.NeighbourhoodSystems.U},
+      @LE.le
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U)
+          (@Preorder.toLE
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@PartialOrder.toPreorder
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+          a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+        @LE.le
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@Preorder.toLE
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@PartialOrder.toPreorder
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                  DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+            b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+          @LE.le
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@Preorder.toLE
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@PartialOrder.toPreorder
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                  DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+            (DomainTheory.NeighbourhoodSystems.prodComb a b)
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U))
+    (@And.intro
+      (And
+        (And
+          (And
+            (And
+              (And
+                (And
+                  (And
+                    (And
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
+                    (∀
+                      {a b :
+                        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                          DomainTheory.NeighbourhoodSystems.U},
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                            (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+                  (∀
+                    {a b :
+                      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U},
+                    @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                          (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+                (∀
+                  {a b :
+                    @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U},
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                        (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
+              (∀
+                {a b :
+                  @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U},
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                      (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (DomainTheory.NeighbourhoodSystems.lamComb a b)))
+            (∀
+              {a b :
+                @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U},
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                    (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+          (∀
+            {a b :
+              @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U},
+            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+        (∀
+          {a b :
+            @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U},
+          @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                    DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+              a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+            @LE.le
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@Preorder.toLE
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@PartialOrder.toPreorder
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                      DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+                b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+              @LE.le
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@Preorder.toLE
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@PartialOrder.toPreorder
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                      DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+                (DomainTheory.NeighbourhoodSystems.arrowComb a b)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U)))
+      (∀
+        {a b :
+          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+            DomainTheory.NeighbourhoodSystems.U},
+        @LE.le
+            (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U)
+            (@Preorder.toLE
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@PartialOrder.toPreorder
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                  DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+            a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+          @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                    DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+              b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+            @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U))
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U))
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U))
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U))))
+              (DomainTheory.NeighbourhoodSystems.lamComb a b)
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)))
+      (@And.intro
+        (And
+          (And
+            (And
+              (And
+                (And
+                  (And
+                    (And
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
+                    (∀
+                      {a b :
+                        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                          DomainTheory.NeighbourhoodSystems.U},
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                            (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+                  (∀
+                    {a b :
+                      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U},
+                    @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                          (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+                (∀
+                  {a b :
+                    @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U},
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                        (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
+              (∀
+                {a b :
+                  @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U},
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                      (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (DomainTheory.NeighbourhoodSystems.lamComb a b)))
+            (∀
+              {a b :
+                @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U},
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                    (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+          (∀
+            {a b :
+              @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U},
+            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+        (∀
+          {a b :
+            @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+              DomainTheory.NeighbourhoodSystems.U},
+          @LE.le
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U)
+              (@Preorder.toLE
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@PartialOrder.toPreorder
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                    DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+              a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+            @LE.le
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@Preorder.toLE
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@PartialOrder.toPreorder
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                      DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+                b (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U) →
+              @LE.le
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U)
+                (@Preorder.toLE
+                  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U)
+                  (@PartialOrder.toPreorder
+                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U)
+                    (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap Rat Rat
+                      DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.U)))
+                (DomainTheory.NeighbourhoodSystems.arrowComb a b)
+                (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap Rat DomainTheory.NeighbourhoodSystems.U))
+        (@And.intro
+          (And
+            (And
+              (And
+                (And
+                  (And
+                    (And
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
+                    (∀
+                      {a b :
+                        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                          DomainTheory.NeighbourhoodSystems.U},
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                            (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+                  (∀
+                    {a b :
+                      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U},
+                    @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                          (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+                (∀
+                  {a b :
+                    @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U},
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                        (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
+              (∀
+                {a b :
+                  @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U},
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                      (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (DomainTheory.NeighbourhoodSystems.lamComb a b)))
+            (∀
+              {a b :
+                @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U},
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                    (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+          (∀
+            {a b :
+              @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                DomainTheory.NeighbourhoodSystems.U},
+            @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                  (DomainTheory.NeighbourhoodSystems.sumComb a b))
+          (@And.intro
+            (And
+              (And
+                (And
+                  (And
+                    (And
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
+                    (∀
+                      {a b :
+                        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                          DomainTheory.NeighbourhoodSystems.U},
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                            (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+                  (∀
+                    {a b :
+                      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U},
+                    @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                          (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+                (∀
+                  {a b :
+                    @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U},
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                        (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
+              (∀
+                {a b :
+                  @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U},
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                      (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (DomainTheory.NeighbourhoodSystems.lamComb a b)))
+            (∀
+              {a b :
+                @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                  DomainTheory.NeighbourhoodSystems.U},
+              @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                    (DomainTheory.NeighbourhoodSystems.prodComb a b))
+            (@And.intro
+              (And
+                (And
+                  (And
+                    (And
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
+                    (∀
+                      {a b :
+                        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                          DomainTheory.NeighbourhoodSystems.U},
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                            (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+                  (∀
+                    {a b :
+                      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U},
+                    @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                          (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+                (∀
+                  {a b :
+                    @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U},
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                        (DomainTheory.NeighbourhoodSystems.arrowComb a b)))
+              (∀
+                {a b :
+                  @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                    DomainTheory.NeighbourhoodSystems.U},
+                @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction
+                      (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U)
+                      (DomainTheory.NeighbourhoodSystems.lamComb a b))
+              (@And.intro
+                (And
+                  (And
+                    (And
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
+                    (∀
+                      {a b :
+                        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                          DomainTheory.NeighbourhoodSystems.U},
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                            (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+                  (∀
+                    {a b :
+                      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U},
+                    @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                          (DomainTheory.NeighbourhoodSystems.sumComb a b)))
+                (∀
+                  {a b :
+                    @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                      DomainTheory.NeighbourhoodSystems.U},
+                  @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U a →
+                    @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U b →
+                      @DomainTheory.NeighbourhoodSystems.IsRetraction Rat DomainTheory.NeighbourhoodSystems.U
+                        (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                (@And.intro
+                  (And
+                    (And
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
+                    (∀
+                      {a b :
+                        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                          DomainTheory.NeighbourhoodSystems.U},
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                            (DomainTheory.NeighbourhoodSystems.prodComb a b)))
+                  (∀
+                    {a b :
+                      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                        DomainTheory.NeighbourhoodSystems.U},
+                    @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                          (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                  (@And.intro
+                    (And
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b)))))
+                    (∀
+                      {a b :
+                        @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                          DomainTheory.NeighbourhoodSystems.U},
+                      @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                            (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                    (@And.intro
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                              (DomainTheory.NeighbourhoodSystems.arrowComb a b))
+                      (∀
+                        {a b :
+                          @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+                            DomainTheory.NeighbourhoodSystems.U},
+                        @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+                          @DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U b →
+                            And
+                              (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                (DomainTheory.NeighbourhoodSystems.sumComb a b))
+                              (And
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.prodComb a b))
+                                (@DomainTheory.NeighbourhoodSystems.IsProjection Rat DomainTheory.NeighbourhoodSystems.U
+                                  (DomainTheory.NeighbourhoodSystems.arrowComb a b))))
+                      @DomainTheory.NeighbourhoodSystems.isProjection_arrowComb
+                      @DomainTheory.NeighbourhoodSystems.isProjection_combinators)
+                    @DomainTheory.NeighbourhoodSystems.isProjection_prodComb)
+                  @DomainTheory.NeighbourhoodSystems.isProjection_sumComb)
+                @DomainTheory.NeighbourhoodSystems.isRetraction_arrowComb)
+              @DomainTheory.NeighbourhoodSystems.isRetraction_lamComb)
+            @DomainTheory.NeighbourhoodSystems.isRetraction_prodComb)
+          @DomainTheory.NeighbourhoodSystems.isRetraction_sumComb)
+        @DomainTheory.NeighbourhoodSystems.le_idMap_arrowComb)
+      @DomainTheory.NeighbourhoodSystems.le_idMap_lamComb)
+    @DomainTheory.NeighbourhoodSystems.le_idMap_prodComb)
+  @DomainTheory.NeighbourhoodSystems.le_idMap_sumComb
+
+end DomainTheory.NeighbourhoodSystems

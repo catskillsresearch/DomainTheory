@@ -15,6 +15,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.instPartialOrderApproximableMap
 
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mem_approxMap_toElement
 @[expose] public section
 
 set_option linter.unusedSectionVars false

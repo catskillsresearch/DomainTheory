@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem4
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.Basic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.monoFix_le_preFix
 
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.le_sInf
 @[expose] public section
 
 

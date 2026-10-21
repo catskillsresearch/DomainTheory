@@ -1,42 +1,16 @@
 /-ai
 This file gathers and re-exports the abstract representation theorem of Exercise 2.22: tokens and their closure, the representation neighbourhood system, the passage from an ideal element to a member of the family and back, and the order isomorphism between them.
+
+Applying ofC to the set represented by an ideal element recovers that element.
+
+The numbered name example_222 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
-public import Mathlib.Data.Set.Finite.Basic
 import all Mathlib.Data.Set.Finite.Basic
-public import Mathlib.Data.Set.Lattice.Bounded
 import all Mathlib.Data.Set.Lattice.Bounded
-public import Mathlib.Data.Set.Lattice.Disjoint
 import all Mathlib.Data.Set.Lattice.Disjoint
-public import Mathlib.Order.Directed
 import all Mathlib.Order.Directed
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Cl
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.IsTok
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.nbhd
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.botTok
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.reprSystem
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.famC
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.toC
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofC
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.reprIso
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.subset_Cl
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Cl_subset
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Tok
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Cl_mem
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.mem_nbhd
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.nbhd_subset_iff
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.nbhd_empty
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.mem_reprSystem
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.reprSystem_master
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.mem_toC
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.directed_step
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.mem_nbhd_bot
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.exists_tok_of_finite_subset
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.mem_nbhd_iff
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.toC_ofC
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.toC_mem
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofC_toC
 
 @[expose] public section
@@ -115,5 +89,38 @@ variable (hDir : ∀ 𝒮 : Set (Set τ), 𝒮.Nonempty → 𝒮 ⊆ C → Direc
 
 /-! ### The representation isomorphism. -/
 
+
+end DomainTheory.NeighbourhoodSystems.Exercise222
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise222
+
+set_option linter.unusedVariables false
+
+theorem example_222.{u_1} : ∀ {τ : Type u_1} (C : Set (Set τ))
+  (hInter :
+    ∀ (𝒮 : Set (Set τ)),
+      @Set.Nonempty (Set τ) 𝒮 →
+        @LE.le (Set (Set τ)) (@Set.instLE (Set τ)) 𝒮 C →
+          @Membership.mem (Set τ) (Set (Set τ)) (@Set.instMembership (Set τ)) C (@Set.sInter τ 𝒮))
+  (hne : @Set.Nonempty (Set τ) C)
+  (hDir :
+    ∀ (𝒮 : Set (Set τ)),
+      @Set.Nonempty (Set τ) 𝒮 →
+        @LE.le (Set (Set τ)) (@Set.instLE (Set τ)) 𝒮 C →
+          @DirectedOn (Set τ) (fun (x1 x2 : Set τ) => @LE.le (Set τ) (@Set.instLE τ) x1 x2) 𝒮 →
+            @Membership.mem (Set τ) (Set (Set τ)) (@Set.instMembership (Set τ)) C (@Set.sUnion τ 𝒮))
+  (x :
+    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+      (@DomainTheory.NeighbourhoodSystems.Exercise222.Tok τ C)
+      (@DomainTheory.NeighbourhoodSystems.Exercise222.reprSystem τ C hInter hne)),
+  @Eq
+    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
+      (@DomainTheory.NeighbourhoodSystems.Exercise222.Tok τ C)
+      (@DomainTheory.NeighbourhoodSystems.Exercise222.reprSystem τ C hInter hne))
+    (@DomainTheory.NeighbourhoodSystems.Exercise222.ofC τ C hInter hne
+      (@DomainTheory.NeighbourhoodSystems.Exercise222.toC τ C hInter hne x)
+      (@DomainTheory.NeighbourhoodSystems.Exercise222.toC_mem τ C hInter hne hDir x))
+    x :=
+  @DomainTheory.NeighbourhoodSystems.Exercise222.ofC_toC
 
 end DomainTheory.NeighbourhoodSystems.Exercise222

@@ -19,6 +19,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Yidx_subset_master
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.exists_inter_index_of_dmem
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Subsystemu2etrianglelefteq
 @[expose] public section
 
 set_option linter.unusedSectionVars false

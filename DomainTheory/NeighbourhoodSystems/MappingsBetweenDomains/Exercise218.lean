@@ -1,14 +1,105 @@
 /-ai
-This file gathers and re-exports the spacing construction, the identity that the left inverse undoes spacing on finite strings, the values of both maps on principal cones, the proof that the composite of the left inverse with the spacing map is the identity, and the proofs that the left inverse is not injective and the spacing map is not surjective.
+The element map of the spacing map is not surjective. The composite of the left inverse with the spacing map is the identity on the binary-string domain. The element map of the left inverse is not injective.
+
+The numbered name example_218 is the conjunction of these statements. The proof is that conjunction.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.Basic
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.kOut_hOut
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.toElementMap_hMap_cone
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.toElementMap_kMap_cone
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.hMap_not_surjective
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.kMap_comp_hMap
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.kMap_not_injective
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.hMap_not_surjective
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise218
+
+set_option linter.unusedVariables false
+
+theorem example_218 : And
+  (And
+    (Not
+      (@Function.Surjective
+        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.B)
+        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.B)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.B
+          DomainTheory.NeighbourhoodSystems.ExampleB.B DomainTheory.NeighbourhoodSystems.Exercise218.hMap)))
+    (@Eq
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.B
+        DomainTheory.NeighbourhoodSystems.ExampleB.B)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.B DomainTheory.NeighbourhoodSystems.ExampleB.B
+        DomainTheory.NeighbourhoodSystems.ExampleB.B DomainTheory.NeighbourhoodSystems.Exercise218.kMap
+        DomainTheory.NeighbourhoodSystems.Exercise218.hMap)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.B)))
+  (Not
+    (@Function.Injective
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.B)
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.B)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.B
+        DomainTheory.NeighbourhoodSystems.ExampleB.B DomainTheory.NeighbourhoodSystems.Exercise218.kMap))) :=
+  @And.intro
+  (And
+    (Not
+      (@Function.Surjective
+        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.B)
+        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.B)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.B
+          DomainTheory.NeighbourhoodSystems.ExampleB.B DomainTheory.NeighbourhoodSystems.Exercise218.hMap)))
+    (@Eq
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.B
+        DomainTheory.NeighbourhoodSystems.ExampleB.B)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.B DomainTheory.NeighbourhoodSystems.ExampleB.B
+        DomainTheory.NeighbourhoodSystems.ExampleB.B DomainTheory.NeighbourhoodSystems.Exercise218.kMap
+        DomainTheory.NeighbourhoodSystems.Exercise218.hMap)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.B)))
+  (Not
+    (@Function.Injective
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.B)
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.B)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.B
+        DomainTheory.NeighbourhoodSystems.ExampleB.B DomainTheory.NeighbourhoodSystems.Exercise218.kMap)))
+  (@And.intro
+    (Not
+      (@Function.Surjective
+        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.B)
+        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.B)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.B
+          DomainTheory.NeighbourhoodSystems.ExampleB.B DomainTheory.NeighbourhoodSystems.Exercise218.hMap)))
+    (@Eq
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.B
+        DomainTheory.NeighbourhoodSystems.ExampleB.B)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.B DomainTheory.NeighbourhoodSystems.ExampleB.B
+        DomainTheory.NeighbourhoodSystems.ExampleB.B DomainTheory.NeighbourhoodSystems.Exercise218.kMap
+        DomainTheory.NeighbourhoodSystems.Exercise218.hMap)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.B))
+    DomainTheory.NeighbourhoodSystems.Exercise218.hMap_not_surjective
+    DomainTheory.NeighbourhoodSystems.Exercise218.kMap_comp_hMap)
+  DomainTheory.NeighbourhoodSystems.Exercise218.kMap_not_injective
+
+end DomainTheory.NeighbourhoodSystems.Exercise218

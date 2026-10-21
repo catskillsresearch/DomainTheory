@@ -1,10 +1,21 @@
 /-ai
-This file gathers and re-exports the development of Exercise 1.16 on cofinite subsets of the natural numbers, the theorem that every cofinite filter lies below the filter of all excluded points, and the theorem that this filter is total.
+The filter of excluded points equal to the whole set of natural numbers is a total element of the cofinite system.
+
+The numbered name example_116 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise116.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise116.le_ofExcluded_univ
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise116.ofExcluded_univ_isTotal
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Cofinite
+
+set_option linter.unusedVariables false
+
+theorem example_116 : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsTotal Nat
+  DomainTheory.NeighbourhoodSystems.Cofinite.cofiniteSystem
+  (DomainTheory.NeighbourhoodSystems.Cofinite.ofExcluded (@Set.univ Nat)) :=
+  DomainTheory.NeighbourhoodSystems.Cofinite.ofExcluded_univ_isTotal
+
+end DomainTheory.NeighbourhoodSystems.Cofinite

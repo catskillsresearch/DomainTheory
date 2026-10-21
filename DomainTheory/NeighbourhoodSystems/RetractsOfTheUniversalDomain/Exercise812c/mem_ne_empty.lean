@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Int
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.NoMinimal
 
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71.IsEffectivelyGiven
 @[expose] public section
 
 set_option linter.unusedSectionVars false

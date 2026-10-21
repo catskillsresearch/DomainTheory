@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise626.lift
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise626.mem_liftBot
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise626.mem_liftUp
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusTok_mem_embF_inv
 @[expose] public section
 
 set_option linter.unusedSectionVars false

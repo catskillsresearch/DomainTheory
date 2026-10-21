@@ -16,6 +16,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise626.toSu
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise626.fromSumLift_mem_embFF
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise626.fromSumLift_mem_embTF
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesTok_mem_prod_inv
 @[expose] public section
 
 set_option linter.unusedSectionVars false

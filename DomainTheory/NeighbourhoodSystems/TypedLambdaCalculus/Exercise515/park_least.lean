@@ -16,6 +16,7 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.smul_union
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.arden
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_subset
 @[expose] public section
 
 

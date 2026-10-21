@@ -23,6 +23,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Lev
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.myUpsampleStep
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec.mod_eq_sub_of_le_of_lt_two_mul
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.V_no_minimal
 @[expose] public section
 
 set_option linter.unusedSectionVars false

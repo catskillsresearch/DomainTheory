@@ -11,6 +11,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplu
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesMapTok_comp
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2emap_isStrict
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.prodMapTok_comp
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.sumMapTok_comp
 @[expose] public section
 
 

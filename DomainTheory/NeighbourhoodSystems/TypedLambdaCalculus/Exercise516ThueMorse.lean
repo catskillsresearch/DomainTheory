@@ -1,32 +1,92 @@
 /-ai
-This file gathers and re-exports the Thue–Morse development: the basic definitions, distributivity of the substitution over append, the partial flag of an interleaving, the weave identity for a head bit, the operator on a partial element and its agreement with the substitution, the zero and successor laws for approximants, the cons form of substitution iterates, the identification of bottom with the empty partial element, the successor approximant as a substitution iterate, the even and odd recurrences, the successor, length, and nesting laws for prefixes, the substitution step on prefixes and the iterate bridge, the unfolding of t, cone membership for partial elements, the characterization of the universal cone, the comparison of approximants with the least fixed point, and the prefix, cone, and digit forms of the characterization of t.
+The (k + 1)-st approximant of the least fixed point of the Thue–Morse operator is the partial element of the k-fold substitution iterate of the singleton string of false. The element t unfolds as 0 consed onto the merge of the negation of t with the tail of t.
+
+The numbered name example_516_thue_morse is the conjunction of these statements. The proof is that conjunction.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.Basic
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.expand_append
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.mergeVal_snd_false
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.weave_head
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmOp_strBot
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmOp_strBot_expand
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.iterElem_zerou27
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.iterElem_succ
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.iterate_expand_cons
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.strBot_nil
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.iterElem_succ_eq
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tm_two_mul
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tm_two_mul_add_one
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmList_succ
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmList_length
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmList_prefix
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.expand_tmList
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.expand_iterate_eq
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tElt_unfold
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.strBot_mem_cone
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.cone_univ_iff
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.iterElem_le_fixElement
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tmList_le_tElt
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tElt_mem_cone_iff
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tElt_digit
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise516
+
+set_option linter.unusedVariables false
+
+theorem example_516_thue_morse : And
+  (∀ (k : Nat),
+    @Eq
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.Example44.C)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.iterElem DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise516.tmOp
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) k (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (DomainTheory.NeighbourhoodSystems.Example44.strBot
+        (@Nat.iterate DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.Exercise516.expand k (@List.cons Bool Bool.false (@List.nil Bool)))))
+  (@Eq
+    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+      DomainTheory.NeighbourhoodSystems.Example44.C)
+    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+      DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example44.C
+      DomainTheory.NeighbourhoodSystems.Example44.C (DomainTheory.NeighbourhoodSystems.Example44.consMap Bool.false)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+        (Sum DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str)
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        (@DomainTheory.NeighbourhoodSystems.prod DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example44.C
+          DomainTheory.NeighbourhoodSystems.Example44.C)
+        DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise516.mergeMap
+        (@DomainTheory.NeighbourhoodSystems.pair DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example44.C
+          DomainTheory.NeighbourhoodSystems.Example44.C
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str
+            DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Example44.C
+            DomainTheory.NeighbourhoodSystems.Exercise516.negMap DomainTheory.NeighbourhoodSystems.Exercise516.tElt)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str
+            DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Example44.C
+            DomainTheory.NeighbourhoodSystems.Exercise516.tailMap DomainTheory.NeighbourhoodSystems.Exercise516.tElt))))
+    DomainTheory.NeighbourhoodSystems.Exercise516.tElt) :=
+  @And.intro
+  (∀ (k : Nat),
+    @Eq
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.Example44.C)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.iterElem DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise516.tmOp
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) k (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (DomainTheory.NeighbourhoodSystems.Example44.strBot
+        (@Nat.iterate DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.Exercise516.expand k (@List.cons Bool Bool.false (@List.nil Bool)))))
+  (@Eq
+    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.ExampleB.Str
+      DomainTheory.NeighbourhoodSystems.Example44.C)
+    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
+      DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example44.C
+      DomainTheory.NeighbourhoodSystems.Example44.C (DomainTheory.NeighbourhoodSystems.Example44.consMap Bool.false)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+        (Sum DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str)
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        (@DomainTheory.NeighbourhoodSystems.prod DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example44.C
+          DomainTheory.NeighbourhoodSystems.Example44.C)
+        DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise516.mergeMap
+        (@DomainTheory.NeighbourhoodSystems.pair DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example44.C
+          DomainTheory.NeighbourhoodSystems.Example44.C
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str
+            DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Example44.C
+            DomainTheory.NeighbourhoodSystems.Exercise516.negMap DomainTheory.NeighbourhoodSystems.Exercise516.tElt)
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
+            DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str
+            DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Example44.C
+            DomainTheory.NeighbourhoodSystems.Exercise516.tailMap DomainTheory.NeighbourhoodSystems.Exercise516.tElt))))
+    DomainTheory.NeighbourhoodSystems.Exercise516.tElt)
+  DomainTheory.NeighbourhoodSystems.Exercise516.iterElem_succ_eq
+  DomainTheory.NeighbourhoodSystems.Exercise516.tElt_unfold
+
+end DomainTheory.NeighbourhoodSystems.Exercise516

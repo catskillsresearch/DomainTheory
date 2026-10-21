@@ -14,6 +14,7 @@ public import Mathlib.Computability.PartrecBasis
 import all Mathlib.Computability.PartrecBasis
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.Basic
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.iterElem_eq_iterate
 @[expose] public section
 
 

@@ -9,6 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example4
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419.Basic
 
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.cond_toElementMap_mem
 @[expose] public section
 
 

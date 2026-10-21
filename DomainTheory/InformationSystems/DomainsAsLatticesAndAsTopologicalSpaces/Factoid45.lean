@@ -1,14 +1,25 @@
 /-ai
-This file gathers and re-exports the setting of Factoid 4.5 together with the identification of the bottom element with the closure of the empty set, nonemptiness and directedness of the finite approximants, the expression of an element as the directed supremum of its finite approximants, and compactness of the closure of a consistent finite set.
-ai-/
+Every element is the directed supremum of its finite approximants.
 
+The numbered name theorem_45 is that statement.
+ai-/
 module
 
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.Basic
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.botElement_eq_closure_empty
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.nonempty_finiteApproximants
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.directed_finiteApproximants
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.eq_directedSup_finiteApproximants
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.compact_closure
 
 @[expose] public section
+
+namespace DomainTheory.InformationSystems.InfoSys
+
+set_option linter.unusedVariables false
+
+theorem theorem_45.{u_1} : ∀ {α : Type u_1} [inst : DecidableEq α] (sys : @DomainTheory.InformationSystems.InfoSys α inst)
+  (x : @DomainTheory.InformationSystems.InfoSys.Element α inst sys),
+  @Eq (@DomainTheory.InformationSystems.InfoSys.Element α inst sys) x
+    (@DomainTheory.InformationSystems.InfoSys.directedSup α inst sys
+      (@DomainTheory.InformationSystems.InfoSys.finiteApproximants α inst sys x)
+      (@DomainTheory.InformationSystems.InfoSys.nonempty_finiteApproximants α inst sys x)
+      (@DomainTheory.InformationSystems.InfoSys.directed_finiteApproximants α inst sys x)) :=
+  @DomainTheory.InformationSystems.InfoSys.eq_directedSup_finiteApproximants
+
+end DomainTheory.InformationSystems.InfoSys

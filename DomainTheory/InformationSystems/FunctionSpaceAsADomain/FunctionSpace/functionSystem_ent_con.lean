@@ -28,6 +28,8 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.insert_filter_ne
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.filter_ne_subset_of_subset_insert
 
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_ii
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_v
 @[expose] public section
 
 set_option linter.unusedSectionVars false

@@ -1,50 +1,78 @@
 /-ai
-This file gathers and re-exports the Factoid 8.2 interface: staged consistency and its monotonicity, emptiness, atom and function projections, function-clause witnesses, and insertion of bottom and of entailed atoms or bottom; unstaged consistency of the empty set, of singletons, of subsets, and of a forgotten singleton; the forgetful-finset lemmas; staged and unstaged entailment of bottom and of members, together with entailment for tokens; the consistency axioms of the lambda system; unions of atom finsets; emptiness of bundled consistency; and the unfoldings of bottom and of atoms, with the equality of the lambda right-hand side and the sum of A with the function space.
+The lambda right-hand side of an information system A equals the sum of A with the function space of the lambda system of A with itself.
+
+The numbered name theorem_82 is that statement.
 ai-/
 module
 
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.Basic
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_mono
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamCon_empty
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamCon_singleton_bot
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamCon_singleton_atom
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamCon_subset
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.mem_lamForgetFinset
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamForgetFinset_empty
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamForgetFinset_singleton
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_empty
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamCon_singleton_funTok
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamCon_of_forget_singleton
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamTokenCon_empty
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamTokenCon_singleton
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamTokenCon_subset
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntN_mono
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEnt_bot
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntN_con
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEnt_con
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_fun_empty
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_atom_empty
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_atom_con
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_fun_wf
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_fun_FunCon_right
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_exists_FunCon
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_down_atom
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_FunCon_mono_atom
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_fun_FunCon_atom
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEntN_of_mem
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamEnt_of_mem
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamTokenEnt_bot
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamTokenEnt_of_mem
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_insert_bot
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_insert_of_ent_atom
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamConN_insert_of_ent_bot
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamForgetFinset_insert
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lambdaSystem_con_axioms
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamAtomFinset_funion
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamDForgetFinset_empty
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamDCon_empty
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamUnfold_bot
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamUnfold_atom
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamRhs_eq_sum_function
 
 @[expose] public section
+
+namespace DomainTheory.InformationSystems.InfoSys
+
+set_option linter.unusedVariables false
+
+theorem theorem_82.{u_1} : ∀ {α : Type u_1} [inst : DecidableEq α] (A : @DomainTheory.InformationSystems.InfoSys α inst),
+  @Eq
+    (@DomainTheory.InformationSystems.InfoSys
+      (DomainTheory.InformationSystems.InfoSys.SumToken α
+        (@DomainTheory.InformationSystems.InfoSys.FunToken (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A)))
+      fun
+        (a b :
+          DomainTheory.InformationSystems.InfoSys.SumToken α
+            (@DomainTheory.InformationSystems.InfoSys.FunToken
+              (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+              (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+              (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+              (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+              (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A)
+              (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A))) =>
+      @DomainTheory.InformationSystems.InfoSys.instDecidableEqSumToken α
+        (@DomainTheory.InformationSystems.InfoSys.FunToken (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A))
+        inst
+        (@DomainTheory.InformationSystems.InfoSys.instDecidableEqFunToken
+          (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A)
+          (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A))
+        a b)
+    (@DomainTheory.InformationSystems.InfoSys.lamRhs α inst A)
+    (@DomainTheory.InformationSystems.InfoSys.sumSystem α
+      (@DomainTheory.InformationSystems.InfoSys.FunToken (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A))
+      inst
+      (@DomainTheory.InformationSystems.InfoSys.instDecidableEqFunToken
+        (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A))
+      A
+      (@DomainTheory.InformationSystems.InfoSys.functionSystem
+        (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.LamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.instDecidableEqLamDToken α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A)
+        (@DomainTheory.InformationSystems.InfoSys.lambdaSystem α inst A))) :=
+  @DomainTheory.InformationSystems.InfoSys.lamRhs_eq_sum_function
+
+end DomainTheory.InformationSystems.InfoSys

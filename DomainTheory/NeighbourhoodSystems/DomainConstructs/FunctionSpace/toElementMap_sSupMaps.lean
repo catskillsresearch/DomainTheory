@@ -12,6 +12,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.l
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.toElementMap_sSupMaps_principal
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.le_sSupMaps
 
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.le_sSup
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.sSup_le
 @[expose] public section
 
 

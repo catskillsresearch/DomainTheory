@@ -7,6 +7,9 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Fun_mono
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.num_succ_left_gt
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.tag_injective
 
 @[expose] public section
 

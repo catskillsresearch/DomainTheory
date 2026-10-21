@@ -1,116 +1,108 @@
 /-ai
-This file gathers and re-exports Theorem 8.8: the classical splitting choice; the reindexed embedding of a countable neighbourhood system as a subsystem of U, with the isomorphism; the effective re-pointing of a presentation at the master index and the emptiness law for generated atoms; the effective givenness of the embedded system; the primitive-recursive coding of unions, states, atoms, and the sequence of embedded neighbourhoods, with the emptiness, disjointness, and membership laws of those codes; the coded isomorphism and its effective givenness; the computable injection, projection, and projection pair of the coded system; the effective clause of the theorem; the recursively enumerable character of the diagonal of fixed neighbourhoods; the fold that searches that diagonal and its primitive-recursive code; the surjective enumeration of the fixed system; the computable consistency and intersection characters of that enumeration; the intersection specification of the folded neighbourhoods; the effective givenness of a fixed-neighbourhood system; and the computable injection and projection of the isomorphism, including the strengthened effective clause.
+Every countable neighbourhood system D is isomorphic to some neighbourhood system D' of subsets of the rationals, and D' is a subsystem of the universal system U. If D is effectively given, there is a neighbourhood system of sets of rationals which is itself effectively given, isomorphic to D, and a subsystem of the universal system, and whose injection into the universal system and projection back are computable relative to the two presentations. Theorem 8.8(c) of Scott (1981, PRG-19).
+
+The numbered name theorem_88 is the conjunction of these statements. The proof is that conjunction.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.splitChoice_isSplitSpec
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_nonempty
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.idxSet_eq_iff
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.isomorphic_DprimeU
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8_a
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.theorem_8_8
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.eIdx_zero
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.he0
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.hcover
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.genAtom_empty_iff
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88c.DprimeU_isEffectivelyGiven
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.mem_decodeQPairList_appendCode
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.presentedIntervals_decodeQPairList_appendCode
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_unionUX
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.U_mem_union_UX
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.UX_unionUX
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_wY
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_wState
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_stateRem
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_statePos
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_stateNeg
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_stateCode
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_atomBase
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_atomStep
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_datomDec
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.datomDec_eq_zero
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_atomUCodeState
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_atomUPos
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_atomUNeg
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_atomUCode
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUEmpty_congr
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_mem
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.deltaOf_mod_two_pow_of_lt
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_atomUEmpty
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_yFoldStep
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.yFold_zero
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.yFold_succ
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_yFold
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUEmpty_zero_or_one
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.yFoldStep_eq
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.yFold_found_le_one
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.yFold_found_iff
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.yFold_mem_iff
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.yFold_two_pow_found
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.primrec_YseqCode
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.mem_UX_YseqCode_iff
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_succ_true
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.eq_of_deltaOf_agree_of_lt_two_pow
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_disjoint_YseqCode_of_posTwin_empty
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCodeState_congr_twin
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_succ_false
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.DAtom_union
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_eq_genAtomYseqCode
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_inter_succ_empty_of_junk
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.genAtom_Yc_empty_iff
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.isomorphic_DprimeUCode
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.DprimeUCode_isEffectivelyGiven
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_inj_isComputableMap
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_proj_isComputableMap
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.DprimeUCode_projectionPair_isComputable
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88g.Basic
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88g.theorem_8_8_b
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_iff_fixedNbhd_mem
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_isREPred
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.diagFixed_exists_qChar
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFold_cons
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.diagFixed_masterIdx
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myStep_diagFixed_of_diagFixed
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFold_diagFixed_of_diagFixed
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFold_diagFixed
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.myFoldCode_eq
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.primrec_myStepCode
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.primrec_myFoldCode
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.diagFixed_myFoldCode
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.D_X_mem
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.D_X_of_diagFixed
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.D_X_surj
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_cons_iff
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_interEq_computable
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.D_X_cons_computable
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.myStep_subset
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.myFoldl_subset
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.myFoldl_inter_of_le
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.D_inter_primrec
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.D_X_inter_eq
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.D_X_inter_spec
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88m.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88m.fixedNbhd_isEffectivelyGiven
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88m.theorem_8_8_c
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoProj_comp_isoInj
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoInj_comp_isoProj
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoInj_rel_iff_incl
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoProj_rel_iff_incl
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoInj_isComputableMap
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.isoProj_isComputableMap
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.theorem_8_8_b_strong
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem theorem_88.{u, u_1} : And
+  (And
+    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
+      [Countable (@Subtype (Set α) fun (S : Set α) => @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D S)],
+      ∃ (D' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem Rat),
+        And (@DomainTheory.NeighbourhoodSystems.Isomorphic α Rat D D')
+          (@DomainTheory.NeighbourhoodSystems.Subsystem Rat D' DomainTheory.NeighbourhoodSystems.U))
+    (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D),
+      ∃ (D' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem Rat) (P' :
+        @DomainTheory.NeighbourhoodSystems.ComputablePresentation Rat D') (h :
+        @DomainTheory.NeighbourhoodSystems.Subsystem Rat D' DomainTheory.NeighbourhoodSystems.U),
+        And (@DomainTheory.NeighbourhoodSystems.Isomorphic α Rat D D')
+          (And
+            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat D' DomainTheory.NeighbourhoodSystems.U P'
+              DomainTheory.NeighbourhoodSystems.UComputablePresentation
+              (@DomainTheory.NeighbourhoodSystems.Subsystem.inj Rat D' DomainTheory.NeighbourhoodSystems.U h))
+            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U D'
+              DomainTheory.NeighbourhoodSystems.UComputablePresentation P'
+              (@DomainTheory.NeighbourhoodSystems.Subsystem.proj Rat D' DomainTheory.NeighbourhoodSystems.U h)))))
+  (∀
+    {a :
+      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+        DomainTheory.NeighbourhoodSystems.U},
+    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+      @DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+          DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.UComputablePresentation
+          DomainTheory.NeighbourhoodSystems.UComputablePresentation a →
+        And
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven Rat
+            (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U a))
+          (@DomainTheory.NeighbourhoodSystems.Subsystem Rat
+            (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U a)
+            DomainTheory.NeighbourhoodSystems.U)) :=
+  @And.intro
+  (And
+    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
+      [Countable (@Subtype (Set α) fun (S : Set α) => @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D S)],
+      ∃ (D' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem Rat),
+        And (@DomainTheory.NeighbourhoodSystems.Isomorphic α Rat D D')
+          (@DomainTheory.NeighbourhoodSystems.Subsystem Rat D' DomainTheory.NeighbourhoodSystems.U))
+    (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D),
+      ∃ (D' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem Rat) (P' :
+        @DomainTheory.NeighbourhoodSystems.ComputablePresentation Rat D') (h :
+        @DomainTheory.NeighbourhoodSystems.Subsystem Rat D' DomainTheory.NeighbourhoodSystems.U),
+        And (@DomainTheory.NeighbourhoodSystems.Isomorphic α Rat D D')
+          (And
+            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat D' DomainTheory.NeighbourhoodSystems.U P'
+              DomainTheory.NeighbourhoodSystems.UComputablePresentation
+              (@DomainTheory.NeighbourhoodSystems.Subsystem.inj Rat D' DomainTheory.NeighbourhoodSystems.U h))
+            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U D'
+              DomainTheory.NeighbourhoodSystems.UComputablePresentation P'
+              (@DomainTheory.NeighbourhoodSystems.Subsystem.proj Rat D' DomainTheory.NeighbourhoodSystems.U h)))))
+  (∀
+    {a :
+      @DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+        DomainTheory.NeighbourhoodSystems.U},
+    @DomainTheory.NeighbourhoodSystems.IsFinitaryProjection Rat DomainTheory.NeighbourhoodSystems.U a →
+      @DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U
+          DomainTheory.NeighbourhoodSystems.U DomainTheory.NeighbourhoodSystems.UComputablePresentation
+          DomainTheory.NeighbourhoodSystems.UComputablePresentation a →
+        And
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven Rat
+            (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U a))
+          (@DomainTheory.NeighbourhoodSystems.Subsystem Rat
+            (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U a)
+            DomainTheory.NeighbourhoodSystems.U))
+  (@And.intro
+    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
+      [Countable (@Subtype (Set α) fun (S : Set α) => @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D S)],
+      ∃ (D' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem Rat),
+        And (@DomainTheory.NeighbourhoodSystems.Isomorphic α Rat D D')
+          (@DomainTheory.NeighbourhoodSystems.Subsystem Rat D' DomainTheory.NeighbourhoodSystems.U))
+    (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D),
+      ∃ (D' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem Rat) (P' :
+        @DomainTheory.NeighbourhoodSystems.ComputablePresentation Rat D') (h :
+        @DomainTheory.NeighbourhoodSystems.Subsystem Rat D' DomainTheory.NeighbourhoodSystems.U),
+        And (@DomainTheory.NeighbourhoodSystems.Isomorphic α Rat D D')
+          (And
+            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat D' DomainTheory.NeighbourhoodSystems.U P'
+              DomainTheory.NeighbourhoodSystems.UComputablePresentation
+              (@DomainTheory.NeighbourhoodSystems.Subsystem.inj Rat D' DomainTheory.NeighbourhoodSystems.U h))
+            (@DomainTheory.NeighbourhoodSystems.IsComputableMap Rat Rat DomainTheory.NeighbourhoodSystems.U D'
+              DomainTheory.NeighbourhoodSystems.UComputablePresentation P'
+              (@DomainTheory.NeighbourhoodSystems.Subsystem.proj Rat D' DomainTheory.NeighbourhoodSystems.U h))))
+    @DomainTheory.NeighbourhoodSystems.theorem_8_8_a @DomainTheory.NeighbourhoodSystems.theorem_8_8_b)
+  @DomainTheory.NeighbourhoodSystems.theorem_8_8_c
+
+end DomainTheory.NeighbourhoodSystems

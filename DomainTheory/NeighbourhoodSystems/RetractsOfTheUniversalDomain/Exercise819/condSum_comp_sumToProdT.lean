@@ -12,6 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.Basic
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.toElementMap_sumToProdT
 
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.cond_which
 @[expose] public section
 
 

@@ -21,6 +21,7 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions.assembleSum
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.not_left_mem_sum_botElement
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.not_right_mem_sum_botElement
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.not_mem_right_of_mem_left
 @[expose] public section
 
 set_option linter.unusedSectionVars false

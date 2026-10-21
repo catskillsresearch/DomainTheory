@@ -1,17 +1,24 @@
 /-ai
-This file gathers and re-exports the backward half of Scott's Theorem 2.12: the fixed-point set of a Scott-continuous idempotent as a continuous lattice, the Scott topology of that fixed-point lattice, the backward direction and the full equivalence, preservation of way-below by an order isomorphism and the resulting equivalence, transfer of continuous-lattice structure along an order isomorphism, the exact-order form of the backward direction, and Lemma 3.9.
+Scott 1972, Theorem 2.12. A T₀-space is injective if and only if it is homeomorphic to a continuous lattice carrying its Scott topology.
+
+The numbered name theorem_212 is that statement.
 ai-/
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212.Basic
-public import DomainTheory.ContinuousLattice.Theorem212.idemFix_isContinuousLattice
-public import DomainTheory.ContinuousLattice.Theorem212.idemFix_scottTopology
-public import DomainTheory.ContinuousLattice.Theorem212.theorem_2_12_backward
 public import DomainTheory.ContinuousLattice.Theorem212.theorem_2_12
-public import DomainTheory.ContinuousLattice.Theorem212.orderIso_wayBelow
-public import DomainTheory.ContinuousLattice.Theorem212.orderIso_wayBelow_iff
-public import DomainTheory.ContinuousLattice.Theorem212.IsContinuousLatticeu2eorderIso
-public import DomainTheory.ContinuousLattice.Theorem212.theorem_2_12_backward_exact
-public import DomainTheory.ContinuousLattice.Theorem212.lemma_3_9
 
 @[expose] public section
+
+namespace DomainTheory.ContinuousLattice
+
+set_option linter.unusedVariables false
+
+theorem theorem_212.{u} : ∀ {D : Type u} [inst : TopologicalSpace.{u} D] [@T0Space.{u} D inst],
+  Iff (@IsInjectiveSpace.{u, u} D inst)
+    (∃ (E : Type u) (inst_2 : CompleteLattice.{u} E),
+      And (@DomainTheory.ContinuousLattice.IsContinuousLattice.{u} E inst_2)
+        (Nonempty.{u + 1}
+          (@Homeomorph.{u, u} D E inst (@DomainTheory.ContinuousLattice.scottTopologicalSpace.{u} E inst_2)))) :=
+  @DomainTheory.ContinuousLattice.theorem_2_12.{u}
+
+end DomainTheory.ContinuousLattice

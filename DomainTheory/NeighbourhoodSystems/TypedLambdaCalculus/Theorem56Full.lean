@@ -1,64 +1,24 @@
 /-ai
-This file gathers and re-exports the results of the full form of Scott's Theorem 5.6, that every partial recursive function is λ-definable: the component and stack lemmas, the strict guards, the λ-definitions of zero, successor, projection, composition, primitive recursion, and minimization, the search equations and the divergence argument, and the one-argument corollary.
+Every partial recursive function of finitely many natural numbers has a very strict λ-definition: an approximable map from the universal argument domain to N that returns the function's value on total arguments, returns bottom where the function is undefined, and returns bottom on any argument-like input with bottom among its first coordinates.
+
+The numbered name theorem_56_full is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.Basic
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.T_bot_eq
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.eq_of_component_eq
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.argElem_argLike
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.component_push_zero
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.component_push_succ
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.guard1_apply
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.guard1_total
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.guard1_bot
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.guard1_inner_bot
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.strictGuardN_total
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.strictGuardN_strict
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.tupleMap_succ
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.component_tupleMap
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.component_vecElem_lt
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.vecElem_totals
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.component_argElem_none
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.lamDef_of_inner
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.lamDef_total
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.lamDef_zero
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.lamDef_succ
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.lamDef_get
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.lamDef_congr
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.realizer_value
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.component_bot
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.tupleMap_zero
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.component_tupleMap_ge
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.tupleMap_vecElem_eq
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.tupleMap_argLike
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.mem_mOfFn
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.lamDef_comp
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.lamDef_coe_val
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.lamDef_primComp
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.push_natElem_vecElem
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.precBody_apply
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.recMap_rec
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.recMap_eval
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.lamDef_prec
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.primrec_lamDef
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.findBody_apply
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.searchMap_rec
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.findMap_vecElem
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.searchMap_step_found
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.searchMap_step_next
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.searchMap_climb
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.toApproxMap_bot
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.evalAt_apply
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.findOp_iterElem_zero
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.iterVal_zero
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.iterVal_succ
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.iterVal_bot
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.searchMap_diverge
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.lamDef_rfind
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.partrec_lamDef
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.oneArg_natElem
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.oneArg_bot
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.partrec_one
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Theorem56Full
+
+set_option linter.unusedVariables false
+
+theorem theorem_56_full : ∀ {n : Nat} {f : PFun (List.Vector Nat n) Nat},
+  @Nat.Partrec' n f →
+    ∃ (φ :
+      @DomainTheory.NeighbourhoodSystems.ApproximableMap (Prod Nat Nat) Nat
+        DomainTheory.NeighbourhoodSystems.Theorem56Full.𝒩 DomainTheory.NeighbourhoodSystems.Example43.N),
+      @DomainTheory.NeighbourhoodSystems.Theorem56Full.LamDef n φ f :=
+  @DomainTheory.NeighbourhoodSystems.Theorem56Full.partrec_lamDef
+
+end DomainTheory.NeighbourhoodSystems.Theorem56Full

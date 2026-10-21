@@ -14,6 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.star_mul_isFixed
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.star_mul_subset_prefixed
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_least
 @[expose] public section
 
 

@@ -1,20 +1,22 @@
 /-ai
-This file gathers and re-exports the coercion of finite accept states, the coercions of the finite start set, the single-state step, the step from a finite set, the folded step, and finite evaluation, the characterization of denotation by the finite evaluation, evaluation of the difference automaton from a singleton pair and on a word, the criterion that the difference automaton accepts the set difference of the two languages, the short witness of a failure of inclusion, and the correctness of the bounded inclusion and equality tests.
+interEqB reports true if and only if the two expressions denote the same language.
+
+The numbered name example_722_equiv is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.Basic
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.coe_startFin
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.coe_stepFinSingle
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.coe_stepFin
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.coe_foldl_stepFin
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.coe_evalFin
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.denote_iff_evalFin
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.diffNFA_evalFrom
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.diffNFA_eval
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.diffNFA_mem_accepts_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.exists_diff_word_short
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.subsetB_iff
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.interEqB_iff
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise722
+
+set_option linter.unusedVariables false
+
+theorem example_722_equiv : ∀ (e1 e2 : DomainTheory.NeighbourhoodSystems.Exercise722.SExpr),
+  Iff (@Eq Bool (DomainTheory.NeighbourhoodSystems.Exercise722.interEqB e1 e2) Bool.true)
+    (@Eq (Set (List Bool)) (DomainTheory.NeighbourhoodSystems.Exercise722.denote e1)
+      (DomainTheory.NeighbourhoodSystems.Exercise722.denote e2)) :=
+  DomainTheory.NeighbourhoodSystems.Exercise722.interEqB_iff
+
+end DomainTheory.NeighbourhoodSystems.Exercise722

@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem4
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.Basic
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.mapBody_apply
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.toElementMap_fixElement
 @[expose] public section
 
 

@@ -11,6 +11,8 @@ import all Mathlib.Order.GaloisConnection.Basic
 public import DomainTheory.ContinuousLattice.InverseLimits.Basic
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_coordinate_continuous
 
+public import DomainTheory.ContinuousLattice.Theorem212.IsContinuousLatticeu2eorderIso
+public import DomainTheory.ContinuousLattice.Theorem212.lemma_3_9
 @[expose] public section
 
 

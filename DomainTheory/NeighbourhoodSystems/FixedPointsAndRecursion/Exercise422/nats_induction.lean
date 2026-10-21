@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem4
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.genOp
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.nats
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_subset
 @[expose] public section
 
 set_option linter.unusedSectionVars false

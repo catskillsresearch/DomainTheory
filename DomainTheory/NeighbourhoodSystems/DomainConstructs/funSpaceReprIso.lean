@@ -12,6 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.C_inter
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.C_dir
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.graphEquiv
 
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.reprIso
 @[expose] public section
 
 set_option linter.unusedSectionVars false

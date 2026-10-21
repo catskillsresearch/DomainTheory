@@ -1,14 +1,62 @@
 /-ai
-This file gathers and re-exports the token-level sum and product of Exercise 6.19, the master and nonemptiness lemmas for the concrete sum, the isomorphism of that sum with the abstract separated sum, the master equation for a product neighbourhood, the nonemptiness of the concrete product, and the isomorphism of that product with the abstract product.
+The concrete token product of Exercise 6.19 is isomorphic, as a domain, to the abstract product. The concrete token sum of Exercise 6.19 is isomorphic, as a domain, to the abstract separated sum.
+
+The numbered name example_619 is the conjunction of these statements. The proof is that conjunction.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.sumTok_mem_master
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.sumTok_nonempty
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.sumTok_iso_sum
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.prodTokNbhd_master_eq
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.prodTok_nonempty
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.prodTok_iso_prod
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.sumTok_iso_sum
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise619
+
+set_option linter.unusedVariables false
+
+theorem example_619 : And
+  (∀ {D₀ D₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem DomainTheory.NeighbourhoodSystems.ExampleB.Str},
+    @DomainTheory.NeighbourhoodSystems.Isomorphic DomainTheory.NeighbourhoodSystems.ExampleB.Str
+      (Sum DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str)
+      (DomainTheory.NeighbourhoodSystems.Exercise619.prodTok D₀ D₁)
+      (@DomainTheory.NeighbourhoodSystems.prod DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str D₀ D₁))
+  (∀ {D₀ D₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem DomainTheory.NeighbourhoodSystems.ExampleB.Str}
+    {h₀ :
+      ∀ (X : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem DomainTheory.NeighbourhoodSystems.ExampleB.Str D₀ X →
+          @Set.Nonempty DomainTheory.NeighbourhoodSystems.ExampleB.Str X}
+    {h₁ :
+      ∀ (Y : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem DomainTheory.NeighbourhoodSystems.ExampleB.Str D₁ Y →
+          @Set.Nonempty DomainTheory.NeighbourhoodSystems.ExampleB.Str Y},
+    @DomainTheory.NeighbourhoodSystems.Isomorphic DomainTheory.NeighbourhoodSystems.ExampleB.Str
+      (Option (Sum DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str))
+      (DomainTheory.NeighbourhoodSystems.Exercise619.sumTok D₀ D₁ h₀ h₁)
+      (@DomainTheory.NeighbourhoodSystems.sum DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str D₀ D₁ h₀ h₁)) :=
+  @And.intro
+  (∀ {D₀ D₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem DomainTheory.NeighbourhoodSystems.ExampleB.Str},
+    @DomainTheory.NeighbourhoodSystems.Isomorphic DomainTheory.NeighbourhoodSystems.ExampleB.Str
+      (Sum DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str)
+      (DomainTheory.NeighbourhoodSystems.Exercise619.prodTok D₀ D₁)
+      (@DomainTheory.NeighbourhoodSystems.prod DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str D₀ D₁))
+  (∀ {D₀ D₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem DomainTheory.NeighbourhoodSystems.ExampleB.Str}
+    {h₀ :
+      ∀ (X : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem DomainTheory.NeighbourhoodSystems.ExampleB.Str D₀ X →
+          @Set.Nonempty DomainTheory.NeighbourhoodSystems.ExampleB.Str X}
+    {h₁ :
+      ∀ (Y : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem DomainTheory.NeighbourhoodSystems.ExampleB.Str D₁ Y →
+          @Set.Nonempty DomainTheory.NeighbourhoodSystems.ExampleB.Str Y},
+    @DomainTheory.NeighbourhoodSystems.Isomorphic DomainTheory.NeighbourhoodSystems.ExampleB.Str
+      (Option (Sum DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str))
+      (DomainTheory.NeighbourhoodSystems.Exercise619.sumTok D₀ D₁ h₀ h₁)
+      (@DomainTheory.NeighbourhoodSystems.sum DomainTheory.NeighbourhoodSystems.ExampleB.Str
+        DomainTheory.NeighbourhoodSystems.ExampleB.Str D₀ D₁ h₀ h₁))
+  @DomainTheory.NeighbourhoodSystems.Exercise619.prodTok_iso_prod
+  @DomainTheory.NeighbourhoodSystems.Exercise619.sumTok_iso_sum
+
+end DomainTheory.NeighbourhoodSystems.Exercise619

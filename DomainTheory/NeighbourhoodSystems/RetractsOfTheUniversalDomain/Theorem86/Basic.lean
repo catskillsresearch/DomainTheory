@@ -31,6 +31,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.continuous_subFilter
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.toElementMap_subApprox
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.subsystemReprIso
 @[expose] public section
 
 /-!

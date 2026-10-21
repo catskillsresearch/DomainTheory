@@ -11,6 +11,7 @@ import all Mathlib.Order.GaloisConnection.Basic
 public import DomainTheory.ContinuousLattice.InverseLimits.Basic
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_scottTopology_eq_induced_pi
 
+public import DomainTheory.ContinuousLattice.Theorem212.IsContinuousLatticeu2eorderIso
 @[expose] public section
 
 

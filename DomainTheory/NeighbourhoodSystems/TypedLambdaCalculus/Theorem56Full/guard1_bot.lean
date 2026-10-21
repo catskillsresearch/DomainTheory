@@ -16,6 +16,7 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Ful
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.T_bot_eq
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.guard1_apply
 
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.cond_bot
 @[expose] public section
 
 

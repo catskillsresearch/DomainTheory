@@ -10,6 +10,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.Basi
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusMapTok_mono
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesMapTok_mono
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.prodMapTok_mono
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.sumMapTok_mono
 @[expose] public section
 
 

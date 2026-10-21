@@ -10,6 +10,7 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid34
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.Basic
 
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.mem_closure_iff
 @[expose] public section
 
 

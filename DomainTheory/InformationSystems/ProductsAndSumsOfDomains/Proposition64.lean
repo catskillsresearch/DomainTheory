@@ -1,26 +1,62 @@
 /-ai
-This file gathers and re-exports the remaining results of Scott's Proposition 6.4: consistency of the left and right sum lifts, the two composites of copairing with the injections, the equation sending the bottom element to the bottom element under copairing, the exclusion of a right token from an element that already contains a left token, the identification of a sum element with the image of its left or right copy under the corresponding injection, the characterization of the bottom element in the absence of both injections, the emptiness dichotomies for the two projections, entailment from a one-sided lift, the inclusion of a projection-empty set in the bottom element, empty entailment from a bottom-like relation, the two witness entailments for the injections, and uniqueness of copairing.
+An approximable map h from the separated sum to C that composes with the left injection to give f, composes with the right injection to give g, and sends the bottom element to the bottom element of C, equals the copairing of f and g. This is the uniqueness clause of Scott's Proposition 6.4.
+
+The numbered name theorem_64 is that statement.
 ai-/
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.Basic
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.SumCon_liftSumLeft
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.SumCon_liftSumRight
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.comp_copairMap_inlMap
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.comp_copairMap_inrMap
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.copairMap_botElement
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.not_mem_right_of_mem_left
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inlMap_toElement_sumElementLft
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inrMap_toElement_sumElementRht
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.eq_botElement_of_no_injections
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.lftFinset_eq_empty_or_mem
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.rhtFinset_eq_empty_or_mem
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_liftLft_of_left_only
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_liftRht_of_right_only
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.subset_botElement_of_projections_empty
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_empty_of_rel_bot_like
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_u_of_inl_witness
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_u_of_inr_witness
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.copairMap_unique
 
 @[expose] public section
+
+namespace DomainTheory.InformationSystems.InfoSys.ApproximableMap
+
+set_option linter.unusedVariables false
+
+theorem theorem_64.{u_1, u_2, u_3} : ∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} [inst : DecidableEq α] [inst_1 : DecidableEq β] [inst_2 : DecidableEq γ]
+  (A : @DomainTheory.InformationSystems.InfoSys α inst) (B : @DomainTheory.InformationSystems.InfoSys β inst_1)
+  {C : @DomainTheory.InformationSystems.InfoSys γ inst_2}
+  (f : @DomainTheory.InformationSystems.InfoSys.ApproximableMap α γ inst inst_2 A C)
+  (g : @DomainTheory.InformationSystems.InfoSys.ApproximableMap β γ inst_1 inst_2 B C)
+  (h :
+    @DomainTheory.InformationSystems.InfoSys.ApproximableMap (DomainTheory.InformationSystems.InfoSys.SumToken α β) γ
+      (fun (a b : DomainTheory.InformationSystems.InfoSys.SumToken α β) =>
+        @DomainTheory.InformationSystems.InfoSys.instDecidableEqSumToken α β inst inst_1 a b)
+      inst_2 (@DomainTheory.InformationSystems.InfoSys.sumSystem α β inst inst_1 A B) C),
+  @Eq (@DomainTheory.InformationSystems.InfoSys.ApproximableMap α γ inst inst_2 A C)
+      (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.comp α
+        (DomainTheory.InformationSystems.InfoSys.SumToken α β) γ inst
+        (fun (a b : DomainTheory.InformationSystems.InfoSys.SumToken α β) =>
+          @DomainTheory.InformationSystems.InfoSys.instDecidableEqSumToken α β inst inst_1 a b)
+        inst_2 A (@DomainTheory.InformationSystems.InfoSys.sumSystem α β inst inst_1 A B) C h
+        (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.inlMap α β inst inst_1 A B))
+      f →
+    @Eq (@DomainTheory.InformationSystems.InfoSys.ApproximableMap β γ inst_1 inst_2 B C)
+        (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.comp β
+          (DomainTheory.InformationSystems.InfoSys.SumToken α β) γ inst_1
+          (fun (a b : DomainTheory.InformationSystems.InfoSys.SumToken α β) =>
+            @DomainTheory.InformationSystems.InfoSys.instDecidableEqSumToken α β inst inst_1 a b)
+          inst_2 B (@DomainTheory.InformationSystems.InfoSys.sumSystem α β inst inst_1 A B) C h
+          (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.inrMap α β inst inst_1 A B))
+        g →
+      @Eq (@DomainTheory.InformationSystems.InfoSys.Element γ inst_2 C)
+          (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.toElement
+            (DomainTheory.InformationSystems.InfoSys.SumToken α β) γ
+            (fun (a b : DomainTheory.InformationSystems.InfoSys.SumToken α β) =>
+              @DomainTheory.InformationSystems.InfoSys.instDecidableEqSumToken α β inst inst_1 a b)
+            inst_2 (@DomainTheory.InformationSystems.InfoSys.sumSystem α β inst inst_1 A B) C h
+            (@DomainTheory.InformationSystems.InfoSys.botElement (DomainTheory.InformationSystems.InfoSys.SumToken α β)
+              (fun (a b : DomainTheory.InformationSystems.InfoSys.SumToken α β) =>
+                @DomainTheory.InformationSystems.InfoSys.instDecidableEqSumToken α β inst inst_1 a b)
+              (@DomainTheory.InformationSystems.InfoSys.sumSystem α β inst inst_1 A B)))
+          (@DomainTheory.InformationSystems.InfoSys.botElement γ inst_2 C) →
+        @Eq
+          (@DomainTheory.InformationSystems.InfoSys.ApproximableMap
+            (DomainTheory.InformationSystems.InfoSys.SumToken α β) γ
+            (fun (a b : DomainTheory.InformationSystems.InfoSys.SumToken α β) =>
+              @DomainTheory.InformationSystems.InfoSys.instDecidableEqSumToken α β inst inst_1 a b)
+            inst_2 (@DomainTheory.InformationSystems.InfoSys.sumSystem α β inst inst_1 A B) C)
+          h (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.copairMap α β γ inst inst_1 inst_2 A B C f g) :=
+  @DomainTheory.InformationSystems.InfoSys.ApproximableMap.copairMap_unique
+
+end DomainTheory.InformationSystems.InfoSys.ApproximableMap

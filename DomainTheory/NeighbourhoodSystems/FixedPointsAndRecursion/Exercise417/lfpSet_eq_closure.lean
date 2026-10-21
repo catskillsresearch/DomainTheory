@@ -17,6 +17,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.b_mem_F
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.leastSolution_eq
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_subset
 @[expose] public section
 
 

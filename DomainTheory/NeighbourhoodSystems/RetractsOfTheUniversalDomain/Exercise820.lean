@@ -1,22 +1,60 @@
 /-ai
-This file gathers and re-exports the embeddings of a factor into a product beside bottom, the two product retracts, the separation of those embeddings off bottom, evaluation at bottom and the constant-function embedding, the function-space retract, and the two specializations that every domain is a retract of its product with itself and of its function space.
+For any domain D, D is a retract of the product of D with itself, and D is a retract of the function space from D to D. Every domain D is a retract of the function space from D to D. Every domain D is a retract of the product of D with itself.
+
+The numbered name example_820 is the conjunction of these statements. The proof is that conjunction.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.proju2080_comp_embedFst
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.embedFst_comp_proju2080_le
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.proju2081_comp_embedSnd
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.embedSnd_comp_proju2081_le
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.trianglelefteq_prod_fst
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.trianglelefteq_prod_snd
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.embedFst_ne_embedSnd_of_ne_bot
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.toElementMap_evalBotMap
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.evalBotMap_comp_constFunMap
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.constFunMap_comp_evalBotMap_le
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.trianglelefteq_funSpace_const
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.D_trianglelefteq_prod
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.D_trianglelefteq_funSpace
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.exercise_8_20
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.D_trianglelefteq_funSpace
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.D_trianglelefteq_prod
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem example_820.{u} : And
+  (And
+    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+      And
+        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Sum α α) D
+          (@DomainTheory.NeighbourhoodSystems.prod α α D D))
+        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
+          (@DomainTheory.NeighbourhoodSystems.funSpace α α D D)))
+    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+      @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
+        (@DomainTheory.NeighbourhoodSystems.funSpace α α D D)))
+  (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+    @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Sum α α) D (@DomainTheory.NeighbourhoodSystems.prod α α D D)) :=
+  @And.intro
+  (And
+    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+      And
+        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Sum α α) D
+          (@DomainTheory.NeighbourhoodSystems.prod α α D D))
+        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
+          (@DomainTheory.NeighbourhoodSystems.funSpace α α D D)))
+    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+      @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
+        (@DomainTheory.NeighbourhoodSystems.funSpace α α D D)))
+  (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+    @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Sum α α) D (@DomainTheory.NeighbourhoodSystems.prod α α D D))
+  (@And.intro
+    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+      And
+        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Sum α α) D
+          (@DomainTheory.NeighbourhoodSystems.prod α α D D))
+        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
+          (@DomainTheory.NeighbourhoodSystems.funSpace α α D D)))
+    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+      @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
+        (@DomainTheory.NeighbourhoodSystems.funSpace α α D D))
+    @DomainTheory.NeighbourhoodSystems.exercise_8_20 @DomainTheory.NeighbourhoodSystems.D_trianglelefteq_funSpace)
+  @DomainTheory.NeighbourhoodSystems.D_trianglelefteq_prod
+
+end DomainTheory.NeighbourhoodSystems

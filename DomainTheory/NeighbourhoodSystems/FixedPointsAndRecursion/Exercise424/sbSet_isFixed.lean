@@ -12,6 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise424.sbOp_monotone
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise424.sbSet
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_isFixed
 @[expose] public section
 
 set_option linter.unusedSectionVars false

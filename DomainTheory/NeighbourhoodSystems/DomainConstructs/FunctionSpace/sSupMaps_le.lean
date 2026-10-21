@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exe
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.le_iff_toElementMap_le
 
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.sSup_le
 @[expose] public section
 
 

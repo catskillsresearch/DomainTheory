@@ -1,18 +1,254 @@
 /-ai
-This file gathers and re-exports the basic development of Exercise 7.24, the case analysis of the token set Γ, the primitive-recursive subset characteristic of the enumeration of the neighbourhood system L together with its bound by one and the equivalence of enumerated inclusion with that characteristic equaling one, the recursive decidability of enumerated inclusion, the theorem that L is effectively given, injectivity of the embedding of binary strings, the criterion for the equality characteristic on the three-point truth domain, and the theorem that the three-point domain is effectively given.
-ai-/
+The LUCID neighbourhood system is effectively given. The digit map from bits to natural numbers is injective. The elements of L are exactly the finite or infinite sequences of natural numbers: the map from sequences to elements is bijective.
 
+The numbered name example_724 is the conjunction of these statements. The proof is that conjunction.
+ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Basic
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Gamma_cases
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.primrec_LenumSubsetChar
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.LenumSubsetChar_le_one
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Lenum_subset_char_eq_one_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Lenum_subset_recDecidable
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.L_isEffectivelyGiven
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.embStr_injective
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.TeqChar_eq_one_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.T_isEffectivelyGiven
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.Basic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.toElement_bijective
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise724
+
+set_option linter.unusedVariables false
+
+theorem example_724 : And
+  (And
+    (And
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven
+        DomainTheory.NeighbourhoodSystems.Exercise724.Gamma DomainTheory.NeighbourhoodSystems.Exercise724.L)
+      (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        DomainTheory.NeighbourhoodSystems.Exercise724.LTpres DomainTheory.NeighbourhoodSystems.Exercise724.LTpres
+        (@DomainTheory.NeighbourhoodSystems.Exercise724.postcompose DomainTheory.NeighbourhoodSystems.Example12.Token
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example23.T
+          DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Exercise724.notT)))
+    (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+      (Sum
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T))
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+        DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+        DomainTheory.NeighbourhoodSystems.Example23.T)
+      (@DomainTheory.NeighbourhoodSystems.prod
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T))
+      (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+        DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+        DomainTheory.NeighbourhoodSystems.Example23.T)
+      (@DomainTheory.NeighbourhoodSystems.prodPresentation
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        DomainTheory.NeighbourhoodSystems.Exercise724.LTpres DomainTheory.NeighbourhoodSystems.Exercise724.LTpres)
+      DomainTheory.NeighbourhoodSystems.Exercise724.LTpres
+      (@DomainTheory.NeighbourhoodSystems.Exercise724.pointwiseBin DomainTheory.NeighbourhoodSystems.Example12.Token
+        DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example12.Token
+        DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Example23.T
+        DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Exercise724.andT)))
+  (@Function.Bijective DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+      DomainTheory.NeighbourhoodSystems.Exercise724.L)
+    DomainTheory.NeighbourhoodSystems.Exercise724.toElement) :=
+  @And.intro
+  (And
+    (And
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven
+        DomainTheory.NeighbourhoodSystems.Exercise724.Gamma DomainTheory.NeighbourhoodSystems.Exercise724.L)
+      (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        DomainTheory.NeighbourhoodSystems.Exercise724.LTpres DomainTheory.NeighbourhoodSystems.Exercise724.LTpres
+        (@DomainTheory.NeighbourhoodSystems.Exercise724.postcompose DomainTheory.NeighbourhoodSystems.Example12.Token
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example23.T
+          DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Exercise724.notT)))
+    (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+      (Sum
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T))
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+        DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+        DomainTheory.NeighbourhoodSystems.Example23.T)
+      (@DomainTheory.NeighbourhoodSystems.prod
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T))
+      (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+        DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+        DomainTheory.NeighbourhoodSystems.Example23.T)
+      (@DomainTheory.NeighbourhoodSystems.prodPresentation
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        DomainTheory.NeighbourhoodSystems.Exercise724.LTpres DomainTheory.NeighbourhoodSystems.Exercise724.LTpres)
+      DomainTheory.NeighbourhoodSystems.Exercise724.LTpres
+      (@DomainTheory.NeighbourhoodSystems.Exercise724.pointwiseBin DomainTheory.NeighbourhoodSystems.Example12.Token
+        DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example12.Token
+        DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Example23.T
+        DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Exercise724.andT)))
+  (@Function.Bijective DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+      DomainTheory.NeighbourhoodSystems.Exercise724.L)
+    DomainTheory.NeighbourhoodSystems.Exercise724.toElement)
+  (@And.intro
+    (And
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven
+        DomainTheory.NeighbourhoodSystems.Exercise724.Gamma DomainTheory.NeighbourhoodSystems.Exercise724.L)
+      (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        DomainTheory.NeighbourhoodSystems.Exercise724.LTpres DomainTheory.NeighbourhoodSystems.Exercise724.LTpres
+        (@DomainTheory.NeighbourhoodSystems.Exercise724.postcompose DomainTheory.NeighbourhoodSystems.Example12.Token
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example23.T
+          DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Exercise724.notT)))
+    (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+      (Sum
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T))
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+        DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+        DomainTheory.NeighbourhoodSystems.Example23.T)
+      (@DomainTheory.NeighbourhoodSystems.prod
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T))
+      (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+        DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+        DomainTheory.NeighbourhoodSystems.Example23.T)
+      (@DomainTheory.NeighbourhoodSystems.prodPresentation
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        DomainTheory.NeighbourhoodSystems.Exercise724.LTpres DomainTheory.NeighbourhoodSystems.Exercise724.LTpres)
+      DomainTheory.NeighbourhoodSystems.Exercise724.LTpres
+      (@DomainTheory.NeighbourhoodSystems.Exercise724.pointwiseBin DomainTheory.NeighbourhoodSystems.Example12.Token
+        DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example12.Token
+        DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Example23.T
+        DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Exercise724.andT))
+    (@And.intro
+      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven
+        DomainTheory.NeighbourhoodSystems.Exercise724.Gamma DomainTheory.NeighbourhoodSystems.Exercise724.L)
+      (@DomainTheory.NeighbourhoodSystems.IsComputableMap
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        (@DomainTheory.NeighbourhoodSystems.funSpace DomainTheory.NeighbourhoodSystems.Exercise724.Gamma
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise724.L
+          DomainTheory.NeighbourhoodSystems.Example23.T)
+        DomainTheory.NeighbourhoodSystems.Exercise724.LTpres DomainTheory.NeighbourhoodSystems.Exercise724.LTpres
+        (@DomainTheory.NeighbourhoodSystems.Exercise724.postcompose DomainTheory.NeighbourhoodSystems.Example12.Token
+          DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example23.T
+          DomainTheory.NeighbourhoodSystems.Example23.T DomainTheory.NeighbourhoodSystems.Exercise724.notT))
+      DomainTheory.NeighbourhoodSystems.Exercise724.L_isEffectivelyGiven
+      DomainTheory.NeighbourhoodSystems.Exercise724.notT_lifted_isComputable)
+    DomainTheory.NeighbourhoodSystems.Exercise724.andT_lifted_isComputable)
+  DomainTheory.NeighbourhoodSystems.Exercise724.toElement_bijective
+
+end DomainTheory.NeighbourhoodSystems.Exercise724

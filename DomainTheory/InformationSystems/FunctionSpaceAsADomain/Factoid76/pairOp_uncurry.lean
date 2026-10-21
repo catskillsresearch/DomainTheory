@@ -9,6 +9,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.Basic
 
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.uncurry_curryMap
 @[expose] public section
 
 

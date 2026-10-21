@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem4
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.Basic
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixElement_mem_iff_chain
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixMap_toElementMap
 @[expose] public section
 
 

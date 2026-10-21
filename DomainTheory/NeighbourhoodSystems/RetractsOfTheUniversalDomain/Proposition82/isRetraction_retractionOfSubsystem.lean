@@ -9,6 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Def
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82.Basic
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.proj_comp_inj
 @[expose] public section
 
 

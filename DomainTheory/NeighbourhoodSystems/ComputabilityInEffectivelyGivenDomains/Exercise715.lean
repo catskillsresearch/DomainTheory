@@ -1,23 +1,75 @@
 /-ai
-This file gathers and re-exports Exercise 7.15: effective givenness of a neighbourhood system in the sense of a bare presentation, effective givenness of the smash product and the computability of its two projections, its strict pairing, and its functorial action, the membership law and effective givenness of the coalesced sum and the computability of its two injections, its two projections, and its functorial action, effective givenness of the infinite iterate, and computability of its coordinate projections.
+The infinite iterate of an effectively given neighbourhood system is effectively given. If both neighbourhood systems are effectively given, and every neighbourhood of each is nonempty, their coalesced sum is effectively given in Scott's sense. If both neighbourhood systems are effectively given, their smash product is effectively given in Scott's sense.
+
+The numbered name example_715 is the conjunction of these statements. The proof is that conjunction.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.Basic
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.NeighborhoodSystemu2eIsEffectivelyGivenu2etoS
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.smash_isEffectivelyGivenS
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.smashMap_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.smashProju2080_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.smashProju2081_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.smashPaired_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.osum_mem_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.osum_isEffectivelyGivenS
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.osumInMapu2080_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.osumInMapu2081_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.osumOutMapu2080_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.osumOutMapu2081_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.osumMap_isComputable
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.iterSys_isEffectivelyGiven
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.projN_isComputable
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.osum_isEffectivelyGivenS
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.smash_isEffectivelyGivenS
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem example_715.{u_1, u_2} : And
+  (And
+    (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α V →
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven (Prod Nat α)
+          (@DomainTheory.NeighbourhoodSystems.iterSys α V))
+    (∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+      (h₀ : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V₀ X → @Set.Nonempty α X)
+      (h₁ : ∀ (Y : Set β), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β V₁ Y → @Set.Nonempty β Y),
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α V₀ →
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven β V₁ →
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGivenS (Option (Sum α β))
+            (@DomainTheory.NeighbourhoodSystems.osum α β V₀ V₁ h₀ h₁)))
+  (∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+    {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β},
+    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α V₀ →
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven β V₁ →
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGivenS (Sum α β)
+          (@DomainTheory.NeighbourhoodSystems.Exercise510.smash α β V₀ V₁)) :=
+  @And.intro
+  (And
+    (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α V →
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven (Prod Nat α)
+          (@DomainTheory.NeighbourhoodSystems.iterSys α V))
+    (∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+      (h₀ : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V₀ X → @Set.Nonempty α X)
+      (h₁ : ∀ (Y : Set β), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β V₁ Y → @Set.Nonempty β Y),
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α V₀ →
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven β V₁ →
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGivenS (Option (Sum α β))
+            (@DomainTheory.NeighbourhoodSystems.osum α β V₀ V₁ h₀ h₁)))
+  (∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+    {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β},
+    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α V₀ →
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven β V₁ →
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGivenS (Sum α β)
+          (@DomainTheory.NeighbourhoodSystems.Exercise510.smash α β V₀ V₁))
+  (@And.intro
+    (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α V →
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven (Prod Nat α)
+          (@DomainTheory.NeighbourhoodSystems.iterSys α V))
+    (∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+      {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+      (h₀ : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V₀ X → @Set.Nonempty α X)
+      (h₁ : ∀ (Y : Set β), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β V₁ Y → @Set.Nonempty β Y),
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α V₀ →
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven β V₁ →
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGivenS (Option (Sum α β))
+            (@DomainTheory.NeighbourhoodSystems.osum α β V₀ V₁ h₀ h₁))
+    @DomainTheory.NeighbourhoodSystems.iterSys_isEffectivelyGiven
+    @DomainTheory.NeighbourhoodSystems.osum_isEffectivelyGivenS)
+  @DomainTheory.NeighbourhoodSystems.smash_isEffectivelyGivenS
+
+end DomainTheory.NeighbourhoodSystems

@@ -1,13 +1,12 @@
 /-ai
 The instance decidableSsysCons decides, for indices n and m, whether some enumerated neighbourhood is contained in the intersection of the nth and the mth. It decides the Boolean consistency test and transports the answer along the equivalence with the consistency characteristic.
+
+The consistency decision on two indices is true if and only if some neighbourhood of the system is contained in the intersection of the neighbourhoods at those indices.
+
+The numbered name example_722_presentation_inst47 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.ConsistencyPresentation
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.SsysX
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.ssysConsistentB
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.ssys_cons_char_iff
 
 @[expose] public section
@@ -29,3 +28,18 @@ instance decidableSsysCons (n m : ℕ) :
 end Exercise722
 
 end DomainTheory.NeighbourhoodSystems
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise722
+
+set_option linter.unusedVariables false
+
+theorem example_722_presentation_inst47 : ∀ (n m : Nat),
+  Iff (@Eq Bool (DomainTheory.NeighbourhoodSystems.Exercise722.ssysConsistentB n m) Bool.true)
+    (∃ (k : Nat),
+      @LE.le (Set (List Bool)) (@Set.instLE (List Bool)) (DomainTheory.NeighbourhoodSystems.Exercise722.SsysX k)
+        (@Inter.inter (Set (List Bool)) (@Set.instInter (List Bool))
+          (DomainTheory.NeighbourhoodSystems.Exercise722.SsysX n)
+          (DomainTheory.NeighbourhoodSystems.Exercise722.SsysX m))) :=
+  DomainTheory.NeighbourhoodSystems.Exercise722.ssys_cons_char_iff
+
+end DomainTheory.NeighbourhoodSystems.Exercise722

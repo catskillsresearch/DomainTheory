@@ -12,6 +12,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.component_bot
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.prodObj
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.prodMapHom
 
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.prodMap_comp
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.prodMap_id
 @[expose] public section
 
 set_option linter.unusedSectionVars false

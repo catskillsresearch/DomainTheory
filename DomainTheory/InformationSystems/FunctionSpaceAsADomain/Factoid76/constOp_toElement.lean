@@ -11,6 +11,9 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.B
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.pairMap_comp_fst_snd_toElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.constOp_uncurry
 
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.constMap_unique
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.applyMap_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.fstMap_pairElements
 @[expose] public section
 
 

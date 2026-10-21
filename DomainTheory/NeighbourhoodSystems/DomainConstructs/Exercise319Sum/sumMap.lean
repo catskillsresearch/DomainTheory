@@ -10,6 +10,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.not_inj₀_subset_inj₁
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.not_inj₁_subset_inj₀
 
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318.inju2080_injective
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318.inju2081_injective
 @[expose] public section
 
 set_option linter.unusedSectionVars false

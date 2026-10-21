@@ -1,15 +1,44 @@
 /-ai
-This file gathers and re-exports the setting of Factoid 3.6 together with monotonicity of closure under entailment and under inclusion, the inequality of a finite approximation below the element it approximates, the membership form and the carrier form of the approximation identity, and directedness of the closures contained in an element.
-ai-/
+The carrier of an element equals the union of the closures of the consistent finite sets contained in it. A token lies in an element if and only if it lies in the closure of some consistent finite set contained in the element.
 
+The numbered name theorem_36 is the conjunction of these statements. The proof is that conjunction.
+ai-/
 module
 
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.Basic
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closure_le_of_entSet
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closure_le_of_subset
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closure_le_element
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.mem_element_iff_mem_closure
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.element_eq_approxUnion
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closures_directed
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.mem_element_iff_mem_closure
 
 @[expose] public section
+
+namespace DomainTheory.InformationSystems.InfoSys
+
+set_option linter.unusedVariables false
+
+theorem theorem_36.{u_1} : And
+  (∀ {α : Type u_1} [inst : DecidableEq α] (sys : @DomainTheory.InformationSystems.InfoSys α inst)
+    (x : @DomainTheory.InformationSystems.InfoSys.Element α inst sys),
+    @Eq (Set α) (@DomainTheory.InformationSystems.InfoSys.Element.carrier α inst sys x)
+      (@DomainTheory.InformationSystems.InfoSys.approxUnion α inst sys x))
+  (∀ {α : Type u_1} [inst : DecidableEq α] (sys : @DomainTheory.InformationSystems.InfoSys α inst)
+    (x : @DomainTheory.InformationSystems.InfoSys.Element α inst sys) (a : α),
+    Iff
+      (@Membership.mem α (Set α) (@Set.instMembership α)
+        (@DomainTheory.InformationSystems.InfoSys.Element.carrier α inst sys x) a)
+      (@Membership.mem α (Set α) (@Set.instMembership α)
+        (@DomainTheory.InformationSystems.InfoSys.approxUnion α inst sys x) a)) :=
+  @And.intro
+  (∀ {α : Type u_1} [inst : DecidableEq α] (sys : @DomainTheory.InformationSystems.InfoSys α inst)
+    (x : @DomainTheory.InformationSystems.InfoSys.Element α inst sys),
+    @Eq (Set α) (@DomainTheory.InformationSystems.InfoSys.Element.carrier α inst sys x)
+      (@DomainTheory.InformationSystems.InfoSys.approxUnion α inst sys x))
+  (∀ {α : Type u_1} [inst : DecidableEq α] (sys : @DomainTheory.InformationSystems.InfoSys α inst)
+    (x : @DomainTheory.InformationSystems.InfoSys.Element α inst sys) (a : α),
+    Iff
+      (@Membership.mem α (Set α) (@Set.instMembership α)
+        (@DomainTheory.InformationSystems.InfoSys.Element.carrier α inst sys x) a)
+      (@Membership.mem α (Set α) (@Set.instMembership α)
+        (@DomainTheory.InformationSystems.InfoSys.approxUnion α inst sys x) a))
+  @DomainTheory.InformationSystems.InfoSys.element_eq_approxUnion
+  @DomainTheory.InformationSystems.InfoSys.mem_element_iff_mem_closure
+
+end DomainTheory.InformationSystems.InfoSys

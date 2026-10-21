@@ -12,6 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.inclMap_bot
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.inclMap_intertwine
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise410.relMap_unique_fixed
 @[expose] public section
 
 

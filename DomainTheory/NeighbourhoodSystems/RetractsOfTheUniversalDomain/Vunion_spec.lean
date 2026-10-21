@@ -12,6 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Vun
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.levelSet_VunionRaw
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Vunion
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.UnionClosed
 @[expose] public section
 
 set_option linter.unusedSectionVars false

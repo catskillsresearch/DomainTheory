@@ -1,14 +1,20 @@
 /-ai
-This file gathers and re-exports the singleton-stack embedding of a domain into its infinite power: the basic development, the element action of the embedding, the head and later coordinates of the embedded element, the two laws of the projection pair with the head, and the resulting subdomain embedding.
+Every domain is a subdomain of its infinite power. Specialized to the universal domain, this is Scott's embedding of the universal domain into its infinite power.
+
+The numbered name example_825_embed is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.toElementMap_embedIntoPow
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.component_embedIntoPow_zero
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.component_embedIntoPow_succ
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.head_comp_embedIntoPow
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.embedIntoPow_comp_head_le
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Embed.trianglelefteq_iterSys
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem example_825_embed.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
+  @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Prod Nat α) V (@DomainTheory.NeighbourhoodSystems.iterSys α V) :=
+  @DomainTheory.NeighbourhoodSystems.trianglelefteq_iterSys
+
+end DomainTheory.NeighbourhoodSystems

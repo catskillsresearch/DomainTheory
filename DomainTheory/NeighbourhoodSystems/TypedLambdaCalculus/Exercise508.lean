@@ -1,14 +1,27 @@
 /-ai
-This file gathers and re-exports the development of Exercise 5.8: the round trip from an approximable map through its function-space element, the defining equation of the combinator S, the value equations of I, K, and S, and the combinatory-completeness theorem for bracket abstraction.
+The denotation of the bracket abstraction of an open term, applied to any element, equals the denotation of the term at that element. Thus every lambda-abstraction is denoted by a variable-free expression built from I, K, S, and the constants of the term, using only application.
+
+The numbered name example_508 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Basic
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.toApproxMap_toFilter
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Smap_apply
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Ielem_apply
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Kelem_apply
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Selem_apply
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.bracket_spec
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise508
+
+set_option linter.unusedVariables false
+
+theorem example_508 : ∀ {X A : DomainTheory.NeighbourhoodSystems.Exercise508.Dom} (t : DomainTheory.NeighbourhoodSystems.Exercise508.Poly X A)
+  (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element X.carrier X.sys),
+  @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element A.carrier A.sys)
+    (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap X.carrier A.carrier X.sys A.sys
+      (@DomainTheory.NeighbourhoodSystems.toApproxMap X.carrier A.carrier X.sys A.sys
+        (@DomainTheory.NeighbourhoodSystems.Exercise508.CL.denote (X.arrow A)
+          (@DomainTheory.NeighbourhoodSystems.Exercise508.bracket X A t)))
+      x)
+    (@DomainTheory.NeighbourhoodSystems.Exercise508.Poly.denote X A t x) :=
+  @DomainTheory.NeighbourhoodSystems.Exercise508.bracket_spec
+
+end DomainTheory.NeighbourhoodSystems.Exercise508

@@ -1,28 +1,57 @@
 /-ai
-This file gathers and re-exports the basic development of Theorem 5.6 together with the identification of the bottom of the truth domain, the strict identity on numerals and at bottom, the strict first projection and its values on numerals and at bottom in either argument, the primitive-recursion body and the recursion, zero, successor, and bottom equations, the μ-body and the recursion, found, step, and bottom equations, the μ-map on numerals, the climbing equation, and the identification of the μ-map with the least zero.
+If n₀ is the least zero of f at the numeral m, in the sense that f at the numerals n₀ and m is the numeral 0 and f at each smaller numeral and m is a positive numeral, then the minimization at the numeral m is the numeral n₀.
+
+The numbered name theorem_56 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.Basic
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.T_bot_eq
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictId_natElem
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictId_bot
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictProju2080_apply
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictProju2080_natElem
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictProju2080_bot_right
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.strictProju2080_bot_left
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primBody_apply
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primRec_rec
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primRec_zero
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primRec_succ
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.primRec_bot
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muBody_apply
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muRec_rec
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muRec_found
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muRec_step
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muRec_bot
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muMap_natElem
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muRec_climb
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.muMap_eq_least
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Theorem56
+
+set_option linter.unusedVariables false
+
+theorem theorem_56 : ∀
+  (f :
+    @DomainTheory.NeighbourhoodSystems.ApproximableMap (Sum Nat Nat) Nat
+      (@DomainTheory.NeighbourhoodSystems.prod Nat Nat DomainTheory.NeighbourhoodSystems.Example43.N
+        DomainTheory.NeighbourhoodSystems.Example43.N)
+      DomainTheory.NeighbourhoodSystems.Example43.N)
+  {m n₀ : Nat},
+  @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Nat DomainTheory.NeighbourhoodSystems.Example43.N)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap (Sum Nat Nat) Nat
+        (@DomainTheory.NeighbourhoodSystems.prod Nat Nat DomainTheory.NeighbourhoodSystems.Example43.N
+          DomainTheory.NeighbourhoodSystems.Example43.N)
+        DomainTheory.NeighbourhoodSystems.Example43.N f
+        (@DomainTheory.NeighbourhoodSystems.pair Nat Nat DomainTheory.NeighbourhoodSystems.Example43.N
+          DomainTheory.NeighbourhoodSystems.Example43.N (DomainTheory.NeighbourhoodSystems.Example43.natElem n₀)
+          (DomainTheory.NeighbourhoodSystems.Example43.natElem m)))
+      (DomainTheory.NeighbourhoodSystems.Example43.natElem (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))) →
+    (∀ (i : Nat),
+        @LT.lt Nat instLTNat i n₀ →
+          ∃ (j : Nat),
+            @Eq
+              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Nat
+                DomainTheory.NeighbourhoodSystems.Example43.N)
+              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap (Sum Nat Nat) Nat
+                (@DomainTheory.NeighbourhoodSystems.prod Nat Nat DomainTheory.NeighbourhoodSystems.Example43.N
+                  DomainTheory.NeighbourhoodSystems.Example43.N)
+                DomainTheory.NeighbourhoodSystems.Example43.N f
+                (@DomainTheory.NeighbourhoodSystems.pair Nat Nat DomainTheory.NeighbourhoodSystems.Example43.N
+                  DomainTheory.NeighbourhoodSystems.Example43.N (DomainTheory.NeighbourhoodSystems.Example43.natElem i)
+                  (DomainTheory.NeighbourhoodSystems.Example43.natElem m)))
+              (DomainTheory.NeighbourhoodSystems.Example43.natElem
+                (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) j
+                  (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))) →
+      @Eq
+        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Nat
+          DomainTheory.NeighbourhoodSystems.Example43.N)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap Nat Nat
+          DomainTheory.NeighbourhoodSystems.Example43.N DomainTheory.NeighbourhoodSystems.Example43.N
+          (DomainTheory.NeighbourhoodSystems.Theorem56.muMap f) (DomainTheory.NeighbourhoodSystems.Example43.natElem m))
+        (DomainTheory.NeighbourhoodSystems.Example43.natElem n₀) :=
+  DomainTheory.NeighbourhoodSystems.Theorem56.muMap_eq_least
+
+end DomainTheory.NeighbourhoodSystems.Theorem56

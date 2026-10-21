@@ -1,24 +1,24 @@
 /-ai
-This file gathers and re-exports the token-level results of Exercise 6.24: membership of the empty string in the two token maps, their monotonicity and single-stage additivity, the inclusions of the iteration stages in the two colimits, the two fixed-point equations, existence of the double fixed point, the masters of the two solution systems, the two subsystem facts, and the simultaneous existence of those subsystems.
+There exist systems D and E such that D is a subsystem of D summed with the product of D and E, and E is a subsystem of the sum of D and E, simultaneously.
+
+The numbered name example_624 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.nil_mem_gTok
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.nil_mem_fTok
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.gTok_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.fTok_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.mem_gTok_iUnion
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.mem_fTok_iUnion
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.pIter_fst_subset_GammaD
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.pIter_snd_subset_GammaE
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.fTok_GammaD_GammaE
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.gTok_GammaD_GammaE
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.exists_double_fixedPoint
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.master_Fsol
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.master_Gsol
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Dsol_subsystem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Esol_subsystem
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.exists_simultaneous_subsystems
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise624
+
+set_option linter.unusedVariables false
+
+theorem example_624 : ∃ (D : DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys) (E :
+  DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys),
+  And
+    (@DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str D.sys
+      (D.sum (D.prod E)).sys)
+    (@DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str E.sys (D.sum E).sys) :=
+  DomainTheory.NeighbourhoodSystems.Exercise624.exists_simultaneous_subsystems
+
+end DomainTheory.NeighbourhoodSystems.Exercise624

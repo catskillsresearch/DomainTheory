@@ -1,15 +1,184 @@
 /-ai
-This file gathers and re-exports the basic development of Exercise 6.29 together with membership of a cylinder in the indexed product, nonemptiness of a tagged copy, disjointness of tagged copies at distinct indices, trichotomy for elements of the indexed separated sum, uniqueness of the summand reached by a sum element, and the two theorems that an infinite smash product has only its master and therefore a subsingleton element domain.
+Over an infinite index, every neighbourhood of the indexed smash product equals its master. Over an infinite index, the element domain of the indexed smash product has at most one element. An element of the indexed separated sum that meets tagged copies at two indices meets them at the same index. Every element of the indexed separated sum either contains the tagged copy of some neighbourhood or contains only the master.
+
+The numbered name example_629 is the conjunction of these statements. The proof is that conjunction.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.iprod_mem_iprodNbhd
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.injI_nonempty
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.injI_inter_ne
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.isum_trichotomy
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.isum_summand_unique
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.iotimes_only_master
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.iotimes_subsingleton
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.isum_summand_unique
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.isum_trichotomy
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise629
+
+set_option linter.unusedVariables false
+
+theorem example_629.{u, v} : And
+  (And
+    (And
+      (∀ {ι : Type u} {α : ι → Type v} [inst : Infinite ι]
+        (D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i))
+        (W : Set (@Sigma ι fun (i : ι) => α i)),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem (@Sigma ι fun (i : ι) => α i)
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+              (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D)
+            W →
+          @Eq (Set (@Sigma ι fun (i : ι) => α i)) W
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master (@Sigma ι fun (i : ι) => α i)
+              (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+                (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D)))
+      (∀ {ι : Type u} {α : ι → Type v} [inst : Infinite ι]
+        (D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i)),
+        Subsingleton
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (@Sigma ι fun (i : ι) => α i)
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+              (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D))))
+    (∀ {ι : Type u} {α : ι → Type v} {D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i)}
+      {hne :
+        ∀ (i : ι) (X : Set (α i)),
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem (α i) (D i) X → @Set.Nonempty (α i) X}
+      (z :
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Option (@Sigma ι fun (i : ι) => α i))
+          (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne))
+      {i j : ι} {X : Set (α i)} {Y : Set (α j)},
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem (Option (@Sigma ι fun (i : ι) => α i))
+          (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne) z
+          (@DomainTheory.NeighbourhoodSystems.Exercise629.injI ι α i X) →
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem (Option (@Sigma ι fun (i : ι) => α i))
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne) z
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.injI ι α j Y) →
+          @Eq ι i j))
+  (∀ {ι : Type u} {α : ι → Type v} {D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i)}
+    {hne :
+      ∀ (i : ι) (X : Set (α i)),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem (α i) (D i) X → @Set.Nonempty (α i) X}
+    (z :
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Option (@Sigma ι fun (i : ι) => α i))
+        (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne)),
+    Or
+      (∃ (i : ι) (X : Set (α i)),
+        And (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem (α i) (D i) X)
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem (Option (@Sigma ι fun (i : ι) => α i))
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne) z
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.injI ι α i X)))
+      (∀ (W : Set (Option (@Sigma ι fun (i : ι) => α i))),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem (Option (@Sigma ι fun (i : ι) => α i))
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne) z W →
+          @Eq (Set (Option (@Sigma ι fun (i : ι) => α i))) W
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master (Option (@Sigma ι fun (i : ι) => α i))
+              (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne)))) :=
+  @And.intro
+  (And
+    (And
+      (∀ {ι : Type u} {α : ι → Type v} [inst : Infinite ι]
+        (D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i))
+        (W : Set (@Sigma ι fun (i : ι) => α i)),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem (@Sigma ι fun (i : ι) => α i)
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+              (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D)
+            W →
+          @Eq (Set (@Sigma ι fun (i : ι) => α i)) W
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master (@Sigma ι fun (i : ι) => α i)
+              (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+                (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D)))
+      (∀ {ι : Type u} {α : ι → Type v} [inst : Infinite ι]
+        (D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i)),
+        Subsingleton
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (@Sigma ι fun (i : ι) => α i)
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+              (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D))))
+    (∀ {ι : Type u} {α : ι → Type v} {D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i)}
+      {hne :
+        ∀ (i : ι) (X : Set (α i)),
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem (α i) (D i) X → @Set.Nonempty (α i) X}
+      (z :
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Option (@Sigma ι fun (i : ι) => α i))
+          (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne))
+      {i j : ι} {X : Set (α i)} {Y : Set (α j)},
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem (Option (@Sigma ι fun (i : ι) => α i))
+          (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne) z
+          (@DomainTheory.NeighbourhoodSystems.Exercise629.injI ι α i X) →
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem (Option (@Sigma ι fun (i : ι) => α i))
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne) z
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.injI ι α j Y) →
+          @Eq ι i j))
+  (∀ {ι : Type u} {α : ι → Type v} {D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i)}
+    {hne :
+      ∀ (i : ι) (X : Set (α i)),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem (α i) (D i) X → @Set.Nonempty (α i) X}
+    (z :
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Option (@Sigma ι fun (i : ι) => α i))
+        (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne)),
+    Or
+      (∃ (i : ι) (X : Set (α i)),
+        And (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem (α i) (D i) X)
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem (Option (@Sigma ι fun (i : ι) => α i))
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne) z
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.injI ι α i X)))
+      (∀ (W : Set (Option (@Sigma ι fun (i : ι) => α i))),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem (Option (@Sigma ι fun (i : ι) => α i))
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne) z W →
+          @Eq (Set (Option (@Sigma ι fun (i : ι) => α i))) W
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master (Option (@Sigma ι fun (i : ι) => α i))
+              (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne))))
+  (@And.intro
+    (And
+      (∀ {ι : Type u} {α : ι → Type v} [inst : Infinite ι]
+        (D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i))
+        (W : Set (@Sigma ι fun (i : ι) => α i)),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem (@Sigma ι fun (i : ι) => α i)
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+              (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D)
+            W →
+          @Eq (Set (@Sigma ι fun (i : ι) => α i)) W
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master (@Sigma ι fun (i : ι) => α i)
+              (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+                (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D)))
+      (∀ {ι : Type u} {α : ι → Type v} [inst : Infinite ι]
+        (D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i)),
+        Subsingleton
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (@Sigma ι fun (i : ι) => α i)
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+              (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D))))
+    (∀ {ι : Type u} {α : ι → Type v} {D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i)}
+      {hne :
+        ∀ (i : ι) (X : Set (α i)),
+          @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem (α i) (D i) X → @Set.Nonempty (α i) X}
+      (z :
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Option (@Sigma ι fun (i : ι) => α i))
+          (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne))
+      {i j : ι} {X : Set (α i)} {Y : Set (α j)},
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem (Option (@Sigma ι fun (i : ι) => α i))
+          (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne) z
+          (@DomainTheory.NeighbourhoodSystems.Exercise629.injI ι α i X) →
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem (Option (@Sigma ι fun (i : ι) => α i))
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.isum ι α D hne) z
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.injI ι α j Y) →
+          @Eq ι i j)
+    (@And.intro
+      (∀ {ι : Type u} {α : ι → Type v} [inst : Infinite ι]
+        (D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i))
+        (W : Set (@Sigma ι fun (i : ι) => α i)),
+        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem (@Sigma ι fun (i : ι) => α i)
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+              (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D)
+            W →
+          @Eq (Set (@Sigma ι fun (i : ι) => α i)) W
+            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master (@Sigma ι fun (i : ι) => α i)
+              (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+                (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D)))
+      (∀ {ι : Type u} {α : ι → Type v} [inst : Infinite ι]
+        (D : (i : ι) → DomainTheory.NeighbourhoodSystems.NeighborhoodSystem (α i)),
+        Subsingleton
+          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (@Sigma ι fun (i : ι) => α i)
+            (@DomainTheory.NeighbourhoodSystems.Exercise629.iotimes ι α
+              (@Nontrivial.to_nonempty ι (@Infinite.instNontrivial ι inst)) D)))
+      @DomainTheory.NeighbourhoodSystems.Exercise629.iotimes_only_master
+      @DomainTheory.NeighbourhoodSystems.Exercise629.iotimes_subsingleton)
+    @DomainTheory.NeighbourhoodSystems.Exercise629.isum_summand_unique)
+  @DomainTheory.NeighbourhoodSystems.Exercise629.isum_trichotomy
+
+end DomainTheory.NeighbourhoodSystems.Exercise629

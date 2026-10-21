@@ -23,6 +23,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.P
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.mapsBounded_principal
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.supOnPrincipal
 
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.le_sSup
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.sSup_le
 @[expose] public section
 
 set_option linter.unusedSectionVars false

@@ -13,6 +13,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.opStep
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.botStrict_rel
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.lambek
 @[expose] public section
 
 

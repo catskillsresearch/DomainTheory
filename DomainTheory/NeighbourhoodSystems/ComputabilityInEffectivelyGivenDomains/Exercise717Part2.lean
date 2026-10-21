@@ -1,26 +1,33 @@
 /-ai
-This file gathers and re-exports the second part of Exercise 7.17: the action of the universal strict map on an injection and on a pairing, its strictness, the monotonicity laws for numerical pairing and the bounds on decoded certificate components, the three clauses of the certificate step, the evaluator equation, memo-table lookup, the output of the evaluator, primitive recursiveness of the step, and the soundness, completeness, and computability of the map.
+If the target is effectively given and the two algebra maps are computable, then the universal strict map is a computable map from the sharp presentation into the presentation of the target.
+
+The numbered name example_717_part2 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.Basic
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gMap_in
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gMap_pair
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gMap_strict
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.pair_lt_pair_left
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.pair_le_pair_right
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.pair_lt_pair_of_lt_le
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.unpair_snd_snd_fst_le
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.unpair_snd_snd_snd_le
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gStep_gamma
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gStep_leaf
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gStep_node
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gEval_pair
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.listGet_rtbl_gEval
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gEval_out
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.primrec_gStep
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gEval_sound
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gEval_complete
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.gMap_isComputable
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise717
+
+set_option linter.unusedVariables false
+
+theorem example_717_part2.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+  {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+  {u : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β D E}
+  {v :
+    @DomainTheory.NeighbourhoodSystems.ApproximableMap (Sum β β) β (@DomainTheory.NeighbourhoodSystems.prod β β E E) E}
+  (hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X)
+  (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D)
+  (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β E),
+  @DomainTheory.NeighbourhoodSystems.IsComputableMap α β D E P Q u →
+    @DomainTheory.NeighbourhoodSystems.IsComputableMap (Sum β β) β (@DomainTheory.NeighbourhoodSystems.prod β β E E) E
+        (@DomainTheory.NeighbourhoodSystems.prodPresentation β β E E Q Q) Q v →
+      @DomainTheory.NeighbourhoodSystems.IsComputableMap (Prod (List Bool) α) β
+        (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD) E
+        (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD) Q
+        (@DomainTheory.NeighbourhoodSystems.Exercise717.gMap α β D E u v hD) :=
+  @DomainTheory.NeighbourhoodSystems.Exercise717.gMap_isComputable
+
+end DomainTheory.NeighbourhoodSystems.Exercise717

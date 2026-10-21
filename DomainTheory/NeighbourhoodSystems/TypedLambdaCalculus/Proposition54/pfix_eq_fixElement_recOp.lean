@@ -12,6 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition5
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.recOp_apply
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.pfix_isFixed
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.toElementMap_fixElement
 @[expose] public section
 
 

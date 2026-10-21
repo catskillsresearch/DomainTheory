@@ -11,6 +11,8 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516O
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.tmList_getElemu3f
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.append_three_period
 
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.strBot_mem_cone
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.tElt_mem_cone_iff
 @[expose] public section
 
 

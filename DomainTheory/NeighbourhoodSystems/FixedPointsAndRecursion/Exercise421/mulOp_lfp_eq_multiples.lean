@@ -11,6 +11,8 @@ import all Mathlib.Tactic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.Basic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.mulOp_monotone
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_isFixed
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_subset
 @[expose] public section
 
 

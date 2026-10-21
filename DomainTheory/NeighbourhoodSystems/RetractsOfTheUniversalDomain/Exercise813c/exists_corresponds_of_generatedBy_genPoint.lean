@@ -14,6 +14,7 @@ public import Mathlib.Topology.Clopen
 import all Mathlib.Topology.Clopen
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813c.Basic
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.generatedBy_iff_exists_evalSet
 @[expose] public section
 
 

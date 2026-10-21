@@ -13,6 +13,7 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 public import DomainTheory.BridgeTheorems.funion_singleton_eq_insert
 
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen_inter
 @[expose] public section
 
 set_option linter.unusedSectionVars false

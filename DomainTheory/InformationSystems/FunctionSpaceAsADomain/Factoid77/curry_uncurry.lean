@@ -15,6 +15,7 @@ public import Mathlib.CategoryTheory.Adjunction.Basic
 import all Mathlib.CategoryTheory.Adjunction.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.InfoSysObj
 
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.curryMap_unique
 @[expose] public section
 
 set_option linter.unusedSectionVars false

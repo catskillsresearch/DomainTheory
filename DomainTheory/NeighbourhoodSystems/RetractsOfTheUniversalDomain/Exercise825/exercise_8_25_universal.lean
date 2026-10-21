@@ -9,6 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825.Basic
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.U_trianglelefteq_Dsol
 @[expose] public section
 
 

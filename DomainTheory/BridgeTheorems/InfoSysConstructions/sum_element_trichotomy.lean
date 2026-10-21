@@ -13,6 +13,9 @@ public import Mathlib.Order.WithBot
 import all Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.eq_botElement_of_no_injections
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inlMap_toElement_sumElementLft
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inrMap_toElement_sumElementRht
 
 @[expose] public section
 

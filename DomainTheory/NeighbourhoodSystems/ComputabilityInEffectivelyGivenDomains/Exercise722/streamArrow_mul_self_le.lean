@@ -12,6 +12,7 @@ import all Mathlib.Data.Set.Insert
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722.Basic
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722.prependMap_iterElem_mul_streamArrow_le
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.mem_iterElem
 @[expose] public section
 
 

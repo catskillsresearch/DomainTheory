@@ -1,19 +1,28 @@
 /-ai
-This module gathers and re-exports Factoid 4.1, the inf-semilattice structure on the elements of an information system: the binary meet by intersection, the two inequalities of a meet, the universal property of the meet, the criterion that the order is equality with a meet, idempotence, commutativity, associativity, and monotonicity of the meet, and the two laws making the bottom element a zero for the meet.
+Factoid 4.1 states that one element lies below another if and only if their meet equals the smaller element.
+
+The numbered name theorem_41 is that statement.
 ai-/
 module
 
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.Basic
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf_le_left
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf_le_right
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.le_inf
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf_le_iff
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.le_iff_inf_eq
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf_idem
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf_comm
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf_assoc
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf_mono
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.botElement_inf
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf_botElement
 
 @[expose] public section
+
+namespace DomainTheory.InformationSystems.InfoSys
+
+set_option linter.unusedVariables false
+
+theorem theorem_41.{u_1} : ∀ {α : Type u_1} [inst : DecidableEq α] (sys : @DomainTheory.InformationSystems.InfoSys α inst)
+  {x y : @DomainTheory.InformationSystems.InfoSys.Element α inst sys},
+  Iff
+    (@LE.le (@DomainTheory.InformationSystems.InfoSys.Element α inst sys)
+      (@Preorder.toLE (@DomainTheory.InformationSystems.InfoSys.Element α inst sys)
+        (@PartialOrder.toPreorder (@DomainTheory.InformationSystems.InfoSys.Element α inst sys)
+          (@DomainTheory.InformationSystems.InfoSys.instPartialOrderElement α inst sys)))
+      x y)
+    (@Eq (@DomainTheory.InformationSystems.InfoSys.Element α inst sys)
+      (@DomainTheory.InformationSystems.InfoSys.inf α inst sys x y) x) :=
+  @DomainTheory.InformationSystems.InfoSys.le_iff_inf_eq
+
+end DomainTheory.InformationSystems.InfoSys

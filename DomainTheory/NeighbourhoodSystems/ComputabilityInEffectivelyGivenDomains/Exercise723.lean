@@ -1,81 +1,76 @@
 /-ai
-This module gathers and re-exports the results of Exercise 7.23 on the powerset domain PN. It re-exports the basic development, the reversal nbhd_subset_iff_myLor_eq, the relational and computability theorems for the intersection and union maps, the membership lemmas for the Minkowski sum and for complements of neighbourhoods, the bit tests of the running bitwise disjunction and of plusIdx, and the identity for the complement of the neighbourhood of plusIdx. It re-exports the primitive recursiveness of plusStep, its four unpairing laws and its iteration specification, the primitive recursiveness of plusIdx, the reversal between neighbourhood inclusion and complement inclusion, and the relational and computability theorems for the Minkowski-sum map. It re-exports the primitive recursiveness of the triangular numbers, of numbering, and of the tagging step, the fold descriptions and specification of tag codes, the membership lemma for the coded bit list, the specification and primitive recursiveness of tagging a bit set, the primitive recursiveness and equation of the cell step, and the specifications and primitive recursiveness of the two components of unnumbering. It re-exports the zero and successor laws and the round trip for the reference untagging, the primitive recursiveness of the untagging step together with its termination and iteration laws, the specification and primitive recursiveness of the untagging state, the primitive recursiveness of the untagged list and value, and the decoding identities that relate them to the reference decoder. It re-exports the relational description of the Fun map, the decoded and bounded criteria for membership in Fun of two neighbourhood complements, the decidability lemmas that feed those criteria, the bounded subset test against Fun, the computability of the Fun map and of its currying, the injectivity of list decoding, the decoded membership criterion for GraphIdx, the rewriting of a universal relation as inclusion in a step neighbourhood, the recursive enumerability of GraphIdx membership, the bounded subset test against an arbitrary set, and the relational description and computability of the graph map.
+The graph map is computable from an arbitrary valid function-space presentation of PNpres into PNpres. Its neighbourhood relation reduces to a bounded quantification over the excluded set of the output neighbourhood, which is recursively enumerable.
+
+The numbered name example_723 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.Basic
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.nbhd_subset_iff_myLor_eq
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.capMap_rel_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.capMap_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.cupMap_rel_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.cupMap_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.mem_sumSet
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.mem_compl_nbhd
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.testBit_orUpTo
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.testBit_orUpTo_self
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusIdx_testBit
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.compl_nbhd_plusIdx
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_plusStep
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusStep_unpair11
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusStep_unpair12
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusStep_unpair21
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusStep_unpair22
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusStep_iter_spec
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_plusIdx
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.nbhd_subset_iff_compl_subset_compl
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusMap_rel_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.plusMap_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_tri
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_num
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_tagStep
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.tag_eq_foldr
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.tag_eq_foldl_reverse
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.tagCode_spec
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_tagCode
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.mem_bitsCodeList
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.tagOfBits_spec
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_tagOfBits
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_nextCellStep
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.nextCellStep_eq
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.unnumPair_spec
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_unnumPair
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.unnum1_spec
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.unnum2_spec
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_unnum1
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_unnum2
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagRef_zero_case
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagRef_succ_case
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.tag_untagRef
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_untagStep
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagStep_done
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagStep_of_done_iterate
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagStep_halt
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagStep_cont
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagStep_iter_spec
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagState_spec
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_untagState
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_untagList
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.primrec_untagVal
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.decodeList_untagList
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagVal_spec
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.tag_untagList_untagVal
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.gMap_rel_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.mem_Fun_compl_nbhd_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.mem_Fun_compl_nbhd_iffu27
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.bitAt_swap_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagList_bitAt_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.untagVal_and_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.mem_Fun_compl_nbhd_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.testBit_imp_mem_Fun_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.compl_nbhd_subset_Fun_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.gMap_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.funMap_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.decodeList_injective
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.mem_GraphIdx_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.forall_rel_iff_subset_step
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.graphIdx_isComputable
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.compl_nbhd_subset_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.graphMap_rel_iff
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.graphMap_isComputable
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise723
+
+set_option linter.unusedVariables false
+
+theorem example_723 : ∀ (gN incl0 incl1 eq1 : Nat → Nat)
+  (hgN :
+    ∀ (c : Nat),
+      Iff (@Eq Nat (gN c) (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+        (@Set.Nonempty
+          (@DomainTheory.NeighbourhoodSystems.ApproximableMap Nat Nat DomainTheory.NeighbourhoodSystems.Example78.PN
+            DomainTheory.NeighbourhoodSystems.Example78.PN)
+          (@DomainTheory.NeighbourhoodSystems.stepFun Nat Nat DomainTheory.NeighbourhoodSystems.Example78.PN
+            DomainTheory.NeighbourhoodSystems.Example78.PN
+            (@DomainTheory.NeighbourhoodSystems.funListOf Nat Nat DomainTheory.NeighbourhoodSystems.Example78.PN
+              DomainTheory.NeighbourhoodSystems.Example78.PN DomainTheory.NeighbourhoodSystems.Example78.PNpres
+              DomainTheory.NeighbourhoodSystems.Example78.PNpres (Domain.Recursive.decodeList c)))))
+  (hgNp : Nat.Primrec gN)
+  (hincl0 :
+    ∀ (s : Nat),
+      Iff (@Eq Nat (incl0 s) (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+        (@LE.le (Set Nat) (@Set.instLE Nat)
+          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X Nat
+            DomainTheory.NeighbourhoodSystems.Example78.PN DomainTheory.NeighbourhoodSystems.Example78.PNpres
+            (@Prod.fst Nat Nat (Nat.unpair s)))
+          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X Nat
+            DomainTheory.NeighbourhoodSystems.Example78.PN DomainTheory.NeighbourhoodSystems.Example78.PNpres
+            (@Prod.snd Nat Nat (Nat.unpair s)))))
+  (hincl0p : Nat.Primrec incl0)
+  (hincl1 :
+    ∀ (s : Nat),
+      Iff (@Eq Nat (incl1 s) (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+        (@LE.le (Set Nat) (@Set.instLE Nat)
+          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X Nat
+            DomainTheory.NeighbourhoodSystems.Example78.PN DomainTheory.NeighbourhoodSystems.Example78.PNpres
+            (@Prod.fst Nat Nat (Nat.unpair s)))
+          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X Nat
+            DomainTheory.NeighbourhoodSystems.Example78.PN DomainTheory.NeighbourhoodSystems.Example78.PNpres
+            (@Prod.snd Nat Nat (Nat.unpair s)))))
+  (hincl1p : Nat.Primrec incl1)
+  (heq1 :
+    ∀ (s : Nat),
+      Iff (@Eq Nat (eq1 s) (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+        (@Eq (Set Nat)
+          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X Nat
+            DomainTheory.NeighbourhoodSystems.Example78.PN DomainTheory.NeighbourhoodSystems.Example78.PNpres
+            (@Prod.fst Nat Nat (Nat.unpair s)))
+          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X Nat
+            DomainTheory.NeighbourhoodSystems.Example78.PN DomainTheory.NeighbourhoodSystems.Example78.PNpres
+            (@Prod.snd Nat Nat (Nat.unpair s)))))
+  (heq1p : Nat.Primrec eq1),
+  @DomainTheory.NeighbourhoodSystems.IsComputableMap
+    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Nat Nat DomainTheory.NeighbourhoodSystems.Example78.PN
+      DomainTheory.NeighbourhoodSystems.Example78.PN)
+    Nat
+    (@DomainTheory.NeighbourhoodSystems.funSpace Nat Nat DomainTheory.NeighbourhoodSystems.Example78.PN
+      DomainTheory.NeighbourhoodSystems.Example78.PN)
+    DomainTheory.NeighbourhoodSystems.Example78.PN
+    (@DomainTheory.NeighbourhoodSystems.funPresentation Nat Nat DomainTheory.NeighbourhoodSystems.Example78.PN
+      DomainTheory.NeighbourhoodSystems.Example78.PN DomainTheory.NeighbourhoodSystems.Example78.PNpres
+      DomainTheory.NeighbourhoodSystems.Example78.PNpres gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p hincl1 hincl1p heq1
+      heq1p)
+    DomainTheory.NeighbourhoodSystems.Example78.PNpres DomainTheory.NeighbourhoodSystems.Exercise723.graphMap :=
+  DomainTheory.NeighbourhoodSystems.Exercise723.graphMap_isComputable
+
+end DomainTheory.NeighbourhoodSystems.Exercise723

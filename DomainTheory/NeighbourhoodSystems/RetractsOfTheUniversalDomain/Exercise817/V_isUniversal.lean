@@ -15,6 +15,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.U_isUniversal
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.isUniversal_of_isomorphic
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Subsystemu2etrianglelefteq
 @[expose] public section
 
 

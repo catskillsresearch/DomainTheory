@@ -1,42 +1,18 @@
 /-ai
 This file gathers and re-exports the one-one pairing of Exercise 5.13. It re-exports the triangular numbers with their successor, product, comparison, and monotonicity laws, the pairing num with value zero at the origin and the two successor recurrences, the bound of a value by the next triangular number, and injectivity of the pairing. It also re-exports the diagonal step, the inverse decoding, the equivalence between pairs of natural numbers and natural numbers, transport of power-set domains along a bijection of index types, and the order isomorphisms among the power set of the natural numbers, the power set of pairs, and the product of two power sets.
+
+The diagonal iterate inverts the pairing function: iterating the pairing value of a cell returns that cell.
+
+The numbered name example_513 is that statement.
 ai-/
 module
 
-public import Mathlib.Logic.Equiv.Nat
 import all Mathlib.Logic.Equiv.Nat
-public import Mathlib.Order.Hom.Set
 import all Mathlib.Order.Hom.Set
-public import Mathlib.Data.Set.Image
 import all Mathlib.Data.Set.Image
-public import Mathlib.Algebra.Ring.Parity
 import all Mathlib.Algebra.Ring.Parity
-public import Mathlib.Tactic.Ring
 import all Mathlib.Tactic.Ring
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.tri
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.numP
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.nextCell
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.unnum
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.numEquiv
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.setCongr
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.PN_orderIso_PNN
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.PN_orderIso_prod
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.PNN_orderIso_prod
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.two_dvd_mul_succ
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.tri_mul_two
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.tri_succ
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.tri_le_succ
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.tri_mono
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num_zero_zero
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num_succ_right
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num_succ_left
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num_lt_tri_succ
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num_injective
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.numP_nextCell
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.numP_unnum
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.unnum_numP
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.numEquiv_apply
 
 @[expose] public section
 
@@ -131,5 +107,16 @@ variable {α β : Type*}
 
 
 
+
+end DomainTheory.NeighbourhoodSystems.Exercise513
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise513
+
+set_option linter.unusedVariables false
+
+theorem example_513 : ∀ (c : Prod Nat Nat),
+  @Eq (Prod Nat Nat)
+    (DomainTheory.NeighbourhoodSystems.Exercise513.unnum (DomainTheory.NeighbourhoodSystems.Exercise513.numP c)) c :=
+  DomainTheory.NeighbourhoodSystems.Exercise513.unnum_numP
 
 end DomainTheory.NeighbourhoodSystems.Exercise513

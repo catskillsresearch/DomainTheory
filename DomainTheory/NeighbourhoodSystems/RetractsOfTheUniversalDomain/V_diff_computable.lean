@@ -13,6 +13,9 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.pri
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.levelSet_VdiffRaw
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Vdiff_iff_nonempty
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.mem_ne_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.union_mem_or_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.UnionClosed
 @[expose] public section
 
 set_option linter.unusedSectionVars false

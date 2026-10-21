@@ -12,6 +12,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.val
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.leastMapVals_bounded
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.leastMap_toElementMap_le_of_ub
 
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.le_sSup
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.sSup_le
 @[expose] public section
 
 

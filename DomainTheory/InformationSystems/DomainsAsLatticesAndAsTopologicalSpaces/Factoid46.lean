@@ -1,13 +1,26 @@
 /-ai
-This file gathers and re-exports the setting of Factoid 4.6 together with membership in a basic open, the intersection law for basic opens, separation of elements by basic opens, and the recovery of a Scott-continuous map as the element map of the approximable relation it induces.
-ai-/
+The element map of the approximable relation induced by a Scott-continuous map agrees with that map.
 
+The numbered name theorem_46 is that statement.
+ai-/
 module
 
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.Basic
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.mem_basicOpen
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen_inter
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.eq_of_basicOpen_eq
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.toElement_ofScottContinuous
 
 @[expose] public section
+
+namespace DomainTheory.InformationSystems.InfoSys.ApproximableMap
+
+set_option linter.unusedVariables false
+
+theorem theorem_46.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} [inst : DecidableEq α] [inst_1 : DecidableEq β]
+  {A : @DomainTheory.InformationSystems.InfoSys α inst} {B : @DomainTheory.InformationSystems.InfoSys β inst_1}
+  (g : @DomainTheory.InformationSystems.InfoSys.ScottContinuous α β inst inst_1 A B)
+  (x : @DomainTheory.InformationSystems.InfoSys.Element α inst A),
+  @Eq (@DomainTheory.InformationSystems.InfoSys.Element β inst_1 B)
+    (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.toElement α β inst inst_1 A B
+      (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.ofScottContinuous α β inst inst_1 A B g) x)
+    (@DomainTheory.InformationSystems.InfoSys.ScottContinuous.toFun α β inst inst_1 A B g x) :=
+  @DomainTheory.InformationSystems.InfoSys.ApproximableMap.toElement_ofScottContinuous
+
+end DomainTheory.InformationSystems.InfoSys.ApproximableMap

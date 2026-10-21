@@ -1,12 +1,24 @@
 /-ai
-This file gathers and re-exports the alphabet-generic half of Exercise 6.17: the basic development of finite or infinite sequences over an alphabet, the lemmas that a letter embedding is nonempty and distinct from the other neighbourhood shapes, and the domain equations identifying that domain with the unit summed with one copy for each letter, both for a general alphabet and for the finite alphabet Fin (n + 1).
+The generic sequence domain over a decidable inhabited alphabet is isomorphic, as a domain, to the unit summed with one copy of itself for each letter.
+
+The numbered name example_617_gen is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.embA_nonempty
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.embA_ne
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.Cn_domain_equation
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.Cfin_domain_equation
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
+
+set_option linter.unusedVariables false
+
+theorem example_617_gen : ∀ (A : Type) [inst : DecidableEq A] [Inhabited A],
+  @DomainTheory.NeighbourhoodSystems.Isomorphic (DomainTheory.NeighbourhoodSystems.Exercise617Gen.Strn A)
+    (DomainTheory.NeighbourhoodSystems.Exercise617Gen.SigTok A
+      (DomainTheory.NeighbourhoodSystems.Exercise617Gen.Strn A))
+    (@DomainTheory.NeighbourhoodSystems.Exercise617Gen.Cn A inst)
+    (@DomainTheory.NeighbourhoodSystems.Exercise617Gen.CCn A inst) :=
+  DomainTheory.NeighbourhoodSystems.Exercise617Gen.Cn_domain_equation
+
+end DomainTheory.NeighbourhoodSystems.Exercise617Gen

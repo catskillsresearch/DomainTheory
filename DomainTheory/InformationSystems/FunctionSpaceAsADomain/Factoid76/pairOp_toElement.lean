@@ -12,6 +12,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.p
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.pairOp_uncurry
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.pairOpUncurry_toElement
 
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.applyMap_toElement
 @[expose] public section
 
 

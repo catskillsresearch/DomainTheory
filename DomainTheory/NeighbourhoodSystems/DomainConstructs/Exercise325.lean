@@ -1,17 +1,12 @@
 /-ai
 This file gathers and re-exports the correspondence of Exercise 3.25 between open sets of a domain and approximable maps into Sierpiński space: the map of an open set and its relation, including the empty case, the open set of a map and its openness, and the two order isomorphisms.
+
+The set of elements sent to the top by an approximable map into the Sierpiński domain is an open set of elements.
+
+The numbered name example_325 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.sierpinski
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.mapOfOpen
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.openOfMap
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.openIso
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.opensReprIso
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.mapOfOpen_rel
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.mapOfOpen_rel_empty
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.openOfMap_isOpen
 
 @[expose] public section
@@ -58,5 +53,20 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 /-! ### The order-isomorphism `Opens(|𝒟|) ≃o (𝒟 → 𝒪)`. -/
 
 
+
+end DomainTheory.NeighbourhoodSystems.Exercise325
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise325
+
+set_option linter.unusedVariables false
+
+theorem example_325.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
+  (f :
+    @DomainTheory.NeighbourhoodSystems.ApproximableMap α Unit V
+      DomainTheory.NeighbourhoodSystems.Exercise325.sierpinski),
+  @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
+    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V)
+    (@DomainTheory.NeighbourhoodSystems.Exercise325.openOfMap α V f) :=
+  @DomainTheory.NeighbourhoodSystems.Exercise325.openOfMap_isOpen
 
 end DomainTheory.NeighbourhoodSystems.Exercise325

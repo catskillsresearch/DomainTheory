@@ -12,6 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.Basic
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88n.theorem_8_8_b_strong
 @[expose] public section
 
 

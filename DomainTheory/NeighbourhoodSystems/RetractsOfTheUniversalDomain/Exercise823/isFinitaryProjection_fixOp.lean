@@ -16,6 +16,8 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.iterElem_succu27
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.iterElem_zerou27
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.iterElem_mono
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.mem_iterElem
 @[expose] public section
 
 

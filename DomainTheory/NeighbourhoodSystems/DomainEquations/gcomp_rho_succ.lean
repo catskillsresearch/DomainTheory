@@ -16,6 +16,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.imap
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.descOp
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.descSeq
 
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.prodMap_comp
 @[expose] public section
 
 set_option linter.unusedSectionVars false

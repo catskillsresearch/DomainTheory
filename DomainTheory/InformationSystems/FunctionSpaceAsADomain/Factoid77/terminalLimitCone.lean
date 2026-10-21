@@ -16,6 +16,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.I
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.unit
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCategoryInfoSysObj
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65.approxMap_to_unit_eq_const
 @[expose] public section
 
 set_option linter.unusedSectionVars false

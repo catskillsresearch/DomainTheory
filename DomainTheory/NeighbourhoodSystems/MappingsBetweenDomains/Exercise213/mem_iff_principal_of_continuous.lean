@@ -9,6 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approxima
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.Basic
 
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122.isOpen_basicOpen
 @[expose] public section
 
 

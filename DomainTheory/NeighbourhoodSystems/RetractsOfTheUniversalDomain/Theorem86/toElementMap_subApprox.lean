@@ -14,6 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.continuous_subFilter
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.subApprox
 
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.toElementMap_ofContinuous
 @[expose] public section
 
 set_option linter.unusedSectionVars false

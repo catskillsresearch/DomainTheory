@@ -26,6 +26,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.p
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCategoryInfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCartesianMonoidalCategoryInfoSysObj
 
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.applyMap_toElement
 @[expose] public section
 
 set_option linter.unusedSectionVars false

@@ -1,19 +1,38 @@
 /-ai
-This file gathers and re-exports the basic layer of Exercise 8.12, nonemptiness of a residue class whose remainder lies below the modulus, emptiness of a residue class whose remainder is at least the modulus, the nonemptiness criterion for a level set, the identification of a residue class with a one-bit level set, the decomposition of a level set as a finite union of residue classes, intersection and union of level sets at one common level, the splitting of every neighbourhood of V into two proper pieces, closure of V under binary and finite unions, and the characterization of the neighbourhoods of V as the nonempty finite unions of residue classes.
+A set of natural numbers is a neighbourhood of V if and only if it is nonempty and equal to a finite union of residue classes 2^k ℕ + ℓ with ℓ < 2^k.
+
+The numbered name example_812 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.Basic
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.affine_nonempty
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.affine_eq_empty_of_ge
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.levelSet_nonempty_iff
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.affine_eq_levelSet
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.levelSet_eq_biUnion
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.levelSet_inter_same_level
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.levelSet_union_same_level
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.V_no_minimal
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.V_union_mem
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.V_iUnion_mem
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.V_mem_iff_finiteUnion
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem example_812 : ∀ {X : Set Nat},
+  Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem Nat DomainTheory.NeighbourhoodSystems.V X)
+    (∃ (F : Finset (Prod Nat Nat)),
+      And
+        (∀ (p : Prod Nat Nat),
+          @Membership.mem (Prod Nat Nat) (Finset (Prod Nat Nat))
+              (@SetLike.instMembership (Finset (Prod Nat Nat)) (Prod Nat Nat) (@Finset.instSetLike (Prod Nat Nat))) F
+              p →
+            @LT.lt Nat instLTNat (@Prod.snd Nat Nat p)
+              (@HPow.hPow Nat Nat Nat (@instHPow Nat Nat (@NPow.toPow Nat (@Monoid.toNPow Nat Nat.instMonoid)))
+                (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) (@Prod.fst Nat Nat p)))
+        (And
+          (@Eq (Set Nat) X
+            (⋃ (p : Prod Nat Nat),
+              ⋃ (_ :
+                @Membership.mem (Prod Nat Nat) (Finset (Prod Nat Nat))
+                  (@SetLike.instMembership (Finset (Prod Nat Nat)) (Prod Nat Nat) (@Finset.instSetLike (Prod Nat Nat)))
+                  F p),
+                DomainTheory.NeighbourhoodSystems.affine (@Prod.fst Nat Nat p) (@Prod.snd Nat Nat p)))
+          (@Set.Nonempty Nat X))) :=
+  @DomainTheory.NeighbourhoodSystems.V_mem_iff_finiteUnion
+
+end DomainTheory.NeighbourhoodSystems

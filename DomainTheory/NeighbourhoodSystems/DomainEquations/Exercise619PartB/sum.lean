@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.ScottSys
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.FExpr
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.sumTok_nonempty
 @[expose] public section
 
 set_option linter.unusedSectionVars false

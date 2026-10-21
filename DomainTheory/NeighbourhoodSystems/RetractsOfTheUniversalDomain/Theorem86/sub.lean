@@ -8,6 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.fixedNbhd_subsystem
 @[expose] public section
 
 set_option linter.unusedSectionVars false

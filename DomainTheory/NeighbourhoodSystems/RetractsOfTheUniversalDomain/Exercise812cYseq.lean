@@ -2,6 +2,10 @@
 For an abstract atomless neighbourhood system E and a split satisfying the split specification, the E-side atom obeys the successor equation and is unchanged by altering the sign sequence at or beyond the current depth. At every depth the generic atom on the carrier is empty exactly when the E-side atom is empty, the E-side atom is empty or a neighbourhood, and atoms of sign sequences that disagree below that depth are disjoint. The atom shrinks with depth, lies in the master, and its successor is the previous atom intersected with the abstract Y-sequence or with the complement of that sequence in the master. The positive split piece equals the atom meet the Y-sequence. The E-side atom coincides with the generic atom built on the Y-sequence and the master. A finite Boolean combination of the enumerated sets is nonempty in the carrier exactly when the same combination of Y-sequence sets is nonempty in the master, and the same correspondence holds for containment, empty intersection, triple containment, and equality of an intersection. The Y-sequence at zero is the master when the zero enumerated set is the carrier. The Y-sequence is empty or a neighbourhood, and it is nonempty whenever a point of the carrier lies in the enumerated set.
 
 The successor equation is definitional, and congruence is induction through the generic-atom congruence and the shared bit. The invariant is induction: at zero both sides are the nonempty carrier and the master; at a successor the split specification gives matching emptiness and membership for each bit, and disjointness splits into agreement below the previous depth, where the two split pieces are disjoint, and disagreement, where both successor atoms sit inside the previous disjoint atoms. Shrinking reads that subset of a split piece, and containment in the master follows by induction. The intersection formula compares the positive piece with the atom meet the Y-sequence by routing the history updated to true through its finite restriction, and in the other direction uses either agreement of the padded sign with the history or disjointness of disagreeing atoms. The closed form takes the positive piece from that formula and recovers the negative piece from the union and disjointness clauses of the specification, then inserts the master by the containment. Coincidence with the generic atom is induction on the closed form. Finite-constraint transfer runs the generic transfer both ways along the invariant and that coincidence. Containment, empty intersection, and triple containment rewrite the constraint set as a difference or an intersection and negate nonemptiness, and equality reassembles the three containments. The zero law forces the negative piece, for the true padding of the empty prefix, to be empty because the carrier minus itself is empty, so the positive piece is the master and that atom sits in the union. The empty-or-neighbourhood alternative for the Y-sequence is the finite-union law applied to the atom pieces. Nonemptiness from a point uses the sign sequence that records which enumerated sets contain the point, so the point lies in the generic atom meet the enumerated set, the positive split piece is nonempty, and a finite restriction of that sign carries the nonempty atom into the union.
+
+For an abstract atomless neighbourhood system E and a split satisfying the split specification, the E-side atom obeys the successor equation and is unchanged by altering the sign sequence at or beyond the current depth. At every depth the generic atom on the carrier is empty exactly when the E-side atom is empty, the E-side atom is empty or a neighbourhood, and atoms of sign sequences that disagree below that depth are disjoint. The atom shrinks with depth, lies in the master, and its successor is the previous atom intersected with the abstract Y-sequence or with the complement of that sequence in the master. The positive split piece equals the atom meet the Y-sequence. The E-side atom coincides with the generic atom built on the Y-sequence and the master. A finite Boolean combination of the enumerated sets is nonempty in the carrier exactly when the same combination of Y-sequence sets is nonempty in the master, and the same correspondence holds for containment, empty intersection, triple containment, and equality of an intersection. The Y-sequence at zero is the master when the zero enumerated set is the carrier. The Y-sequence is empty or a neighbourhood, and it is nonempty whenever a point of the carrier lies in the enumerated set.
+
+The numbered name example_812_c_yseq is that statement.
 ai-/
 module
 
@@ -11,6 +15,17 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ato
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.YseqE
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.atomE_zero
 
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71.IsEffectivelyGiven
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.DAtom_eq_empty_iff
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_disjoint_YseqCode_of_posTwin_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.atomUCode_succ_true
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.hcoreIdxYc
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.transfer_dir_idxYc
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.iUnion_mem_or_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.mem_ne_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.union_mem_or_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.Basic
 @[expose] public section
 
 /-!
@@ -488,5 +503,22 @@ theorem YseqE_nonempty_of_mem {n : ℕ} {x : α} (hxΔ : x ∈ Δ) (hxn : x ∈ 
     rw [hδ2_eq, ← hI_eq_atomE]
     exact Set.nonempty_iff_ne_empty.mpr hIne
   exact hne2.mono (subset_YseqE E split X Δ (restrictFin δ0 n))
+
+end DomainTheory.NeighbourhoodSystems
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem example_812_c_yseq.{u_1, u_2} : ∀ {α : Type u_1} {γ : Type u_2} (E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem γ)
+  (split : Set α → Set γ → Set α → Prod (Set γ) (Set γ)) (X : Nat → Set α) (Δ : Set α),
+  @Set.Nonempty α Δ →
+    @Set.Nonempty γ (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master γ E) →
+      @DomainTheory.NeighbourhoodSystems.SplitSpec' α γ E split →
+        ∀ {n : Nat} {x : α},
+          @Membership.mem α (Set α) (@Set.instMembership α) Δ x →
+            @Membership.mem α (Set α) (@Set.instMembership α) (X n) x →
+              @Set.Nonempty γ (@DomainTheory.NeighbourhoodSystems.YseqE α γ E split X Δ n) :=
+  @DomainTheory.NeighbourhoodSystems.YseqE_nonempty_of_mem
 
 end DomainTheory.NeighbourhoodSystems

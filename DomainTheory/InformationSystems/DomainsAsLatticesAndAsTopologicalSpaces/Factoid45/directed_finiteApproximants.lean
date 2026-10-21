@@ -10,6 +10,7 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.Basic
 
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closures_directed
 @[expose] public section
 
 

@@ -1,23 +1,46 @@
 /-ai
-This file gathers and re-exports the setting of Theorem 7.6, soundness and completeness of a chain of steps, the chain characterization of membership in a fixed-point element, enumeration of a one-entry code, the least-map relation, the chain form of the fixed-point relation, equivalence of the decidable chain predicate with those steps, agreement of the packed step with the pure step, primitive recursiveness of the packed step and of the chain characteristic, the fold equations for the last index and the flag, the read-off of the chain characteristic, and computability of the fixed-point map.
+For a computable presentation, together with primitive-recursive consistency, inclusion, and equality characteristics of the function space, the fixed-point combinator is a computable map from the function-space presentation to the presentation. Its neighbourhood relation is the recursively enumerable existential over chains of the decidable least-map step.
+
+The numbered name theorem_76 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.Basic
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.gStepsOK_sound
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.gStepsOK_complete
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixElement_mem_iff_chain
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.Xenum_codePair
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.leastMap_Xenum_rel
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixMap_rel_iff
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.chainDec_iff_gStepsOK
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixStp_eq
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.primrec_fixStp
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixChainChar_eq
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.primrec_fixChainChar
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixPStep_foldl_fst
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixPStep_foldl_snd
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixChainChar_spec
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixMap_isComputable
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem theorem_76.{u_1} : ∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+  (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V) (gN incl eq : Nat → Nat)
+  (hgN :
+    ∀ (c : Nat),
+      Iff (@Eq Nat (gN c) (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+        (@Set.Nonempty (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
+          (@DomainTheory.NeighbourhoodSystems.stepFun α α V V
+            (@DomainTheory.NeighbourhoodSystems.funListOf α α V V P P (Domain.Recursive.decodeList c)))))
+  (hgNp : Nat.Primrec gN)
+  (hincl :
+    ∀ (s : Nat),
+      Iff (@Eq Nat (incl s) (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+        (@LE.le (Set α) (@Set.instLE α)
+          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P (@Prod.fst Nat Nat (Nat.unpair s)))
+          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P (@Prod.snd Nat Nat (Nat.unpair s)))))
+  (hinclp : Nat.Primrec incl)
+  (heq :
+    ∀ (s : Nat),
+      Iff (@Eq Nat (eq s) (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+        (@Eq (Set α)
+          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P (@Prod.fst Nat Nat (Nat.unpair s)))
+          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P (@Prod.snd Nat Nat (Nat.unpair s)))))
+  (heqp : Nat.Primrec eq),
+  @DomainTheory.NeighbourhoodSystems.IsComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
+    (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
+    (@DomainTheory.NeighbourhoodSystems.funPresentation α α V V P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp
+      heq heqp)
+    P (@DomainTheory.NeighbourhoodSystems.fixMap α V) :=
+  @DomainTheory.NeighbourhoodSystems.fixMap_isComputable
+
+end DomainTheory.NeighbourhoodSystems

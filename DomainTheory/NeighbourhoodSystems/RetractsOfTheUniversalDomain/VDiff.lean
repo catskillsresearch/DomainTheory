@@ -31,6 +31,8 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.V_d
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.primrec_Vdiff
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Vdiff_spec
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.mem_ne_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.UnionClosed
 @[expose] public section
 
 /-!

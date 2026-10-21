@@ -20,6 +20,7 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.directed_idea
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.ofIdeal
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.le_ofIdeal_of_mem
 
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.compact_closure
 @[expose] public section
 
 set_option linter.unusedSectionVars false

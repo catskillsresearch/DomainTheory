@@ -1,11 +1,36 @@
 /-ai
-This file gathers and re-exports the cartesian-closed development of Factoid 7.7, the identification of the tensor product of objects with the product, and the identifications of the value of the exponential functor and of the internal hom with the exponential.
+On objects, the internal hom of the monoidal closed structure is Scott's function space, packaged as the exponential of information-system objects.
+
+The numbered name theorem_77 is that statement.
 ai-/
 module
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.Basic
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.tensorObj_eq_prod
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.expFunctor_obj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.ihom_obj_eq_exp
 
 @[expose] public section
+
+namespace DomainTheory.InformationSystems.InfoSys
+
+set_option linter.unusedVariables false
+
+theorem theorem_77.{u} : ∀ (A B : DomainTheory.InformationSystems.InfoSys.InfoSysObj.{u}),
+  @Eq.{u + 2} DomainTheory.InformationSystems.InfoSys.InfoSysObj.{u}
+    (@CategoryTheory.Functor.obj.{u, u, u + 1, u + 1} DomainTheory.InformationSystems.InfoSys.InfoSysObj.{u}
+      DomainTheory.InformationSystems.InfoSys.instCategoryInfoSysObj.{u}
+      DomainTheory.InformationSystems.InfoSys.InfoSysObj.{u}
+      DomainTheory.InformationSystems.InfoSys.instCategoryInfoSysObj.{u}
+      (@CategoryTheory.ihom.{u, u + 1} DomainTheory.InformationSystems.InfoSys.InfoSysObj.{u}
+        DomainTheory.InformationSystems.InfoSys.instCategoryInfoSysObj.{u}
+        (@CategoryTheory.SemiCartesianMonoidalCategory.toMonoidalCategory.{u, u + 1}
+          DomainTheory.InformationSystems.InfoSys.InfoSysObj.{u}
+          DomainTheory.InformationSystems.InfoSys.instCategoryInfoSysObj.{u}
+          (@CategoryTheory.CartesianMonoidalCategory.toSemiCartesianMonoidalCategory.{u, u + 1}
+            DomainTheory.InformationSystems.InfoSys.InfoSysObj.{u}
+            DomainTheory.InformationSystems.InfoSys.instCategoryInfoSysObj.{u}
+            DomainTheory.InformationSystems.InfoSys.instCartesianMonoidalCategoryInfoSysObj.{u}))
+        A (DomainTheory.InformationSystems.InfoSys.instClosedInfoSysObj.{u} A))
+      B)
+    (A.exp B) :=
+  DomainTheory.InformationSystems.InfoSys.ihom_obj_eq_exp.{u}
+
+end DomainTheory.InformationSystems.InfoSys

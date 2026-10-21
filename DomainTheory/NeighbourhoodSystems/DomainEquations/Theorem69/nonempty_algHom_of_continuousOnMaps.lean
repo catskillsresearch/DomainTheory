@@ -12,6 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.isStri
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.toStrictFilter_toStrictMap
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.homOp_apply_filter
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.toElementMap_fixElement
 @[expose] public section
 
 

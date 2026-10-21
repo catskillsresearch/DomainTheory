@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.condSumEmb_toElementMap
 
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.cond_bot
 @[expose] public section
 
 

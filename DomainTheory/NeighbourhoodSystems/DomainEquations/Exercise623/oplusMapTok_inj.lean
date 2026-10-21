@@ -20,6 +20,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.gFun
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.gFunctorMap_val
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.descRel_succ
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusTok_subsystem
 @[expose] public section
 
 set_option linter.unusedSectionVars false

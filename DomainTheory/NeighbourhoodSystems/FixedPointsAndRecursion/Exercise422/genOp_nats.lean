@@ -10,6 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem4
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.Basic
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.genOp_monotone
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_isFixed
 @[expose] public section
 
 

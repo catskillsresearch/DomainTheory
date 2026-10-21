@@ -12,6 +12,8 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.myA
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.myAndNot_eq
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.levelSet_diff_same_level
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.mem_ne_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.UnionClosed
 @[expose] public section
 
 set_option linter.unusedSectionVars false

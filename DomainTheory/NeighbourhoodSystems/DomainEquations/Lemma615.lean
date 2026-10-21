@@ -1,10 +1,32 @@
 /-ai
-This file gathers and re-exports the basic development of Lemma 6.15, the theorem that a projection pair exhibits its domain system as embedded in a subdomain of the codomain, and the theorem that a subdomain relation is itself such an embedding.
+A projection pair from a neighbourhood system D to a neighbourhood system E, with the projection composed after the injection equal to the identity on D and the injection composed after the projection contained in the identity on E, exhibits D as a subdomain of E.
+
+The numbered name theorem_615 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.trianglelefteq_of_projectionPair
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Subsystemu2etrianglelefteq
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem theorem_615.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+  {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+  (i : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β D E)
+  (j : @DomainTheory.NeighbourhoodSystems.ApproximableMap β α E D),
+  @Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α β α D E D j i)
+      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap α D) →
+    @LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap β β E E)
+        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap β β E E)
+          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.ApproximableMap β β E E)
+            (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap β β E E)))
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp β α β E D E i j)
+        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap β E) →
+      @DomainTheory.NeighbourhoodSystems.Trianglelefteq α β D E :=
+  @DomainTheory.NeighbourhoodSystems.trianglelefteq_of_projectionPair
+
+end DomainTheory.NeighbourhoodSystems

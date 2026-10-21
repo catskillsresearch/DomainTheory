@@ -9,6 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem4
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise408.Basic
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.iterElem_mono
 @[expose] public section
 
 

@@ -10,6 +10,8 @@ The packaged isomorphism of an iteration with its double iteration is a witness.
 The iteration of a neighbourhood system is isomorphic, as a domain, to the iteration of that iteration.
 
 This is the domain isomorphism underlying the effective isomorphism just obtained.
+
+The numbered name example_718 is the effective isomorphism of an iteration with the iteration of that iteration.
 ai-/
 module
 
@@ -47,6 +49,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Fmap_isComputable
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Gmap_isComputable
 
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.NeighborhoodSystemu2eIsEffectivelyGivenu2etoS
 @[expose] public section
 
 /-!
@@ -196,3 +199,19 @@ theorem iterSys_isomorphic_iterIter (P : ComputablePresentation V) :
 
 end Exercise718
 end DomainTheory.NeighbourhoodSystems
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise718
+
+set_option linter.unusedVariables false
+
+theorem example_718.{u_1} : ∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+  (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V),
+  @DomainTheory.NeighbourhoodSystems.Exercise718.EffectivelyIsomorphic (Prod Nat α) (Prod Nat (Prod Nat α))
+    (@DomainTheory.NeighbourhoodSystems.iterSys α V)
+    (@DomainTheory.NeighbourhoodSystems.iterSys (Prod Nat α) (@DomainTheory.NeighbourhoodSystems.iterSys α V))
+    (@DomainTheory.NeighbourhoodSystems.iterPresentation α V P)
+    (@DomainTheory.NeighbourhoodSystems.iterPresentation (Prod Nat α) (@DomainTheory.NeighbourhoodSystems.iterSys α V)
+      (@DomainTheory.NeighbourhoodSystems.iterPresentation α V P)) :=
+  @DomainTheory.NeighbourhoodSystems.Exercise718.iterSys_effectivelyIsomorphic_iterIter
+
+end DomainTheory.NeighbourhoodSystems.Exercise718

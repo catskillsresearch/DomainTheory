@@ -1,75 +1,12 @@
 /-ai
 This file gathers and re-exports Exercise 6.17, the proof that the domain C of finite or infinite binary sequences is the initial algebra for the functor sending a domain X to the separated sum of the unit with two copies of X. It re-exports the category of neighbourhood systems with no empty neighbourhood and of strict approximable maps, the three-way separated sum with its sum map, canonical injections, and shape lemmas, the functor and the algebra structure on C, the descent map into an arbitrary algebra and the algebra homomorphism it induces, and the commutation and uniqueness lemmas for that homomorphism, including the head recursion on cones and singletons, strictness, the identification of the bottom element, and the two composites of the domain-equation equivalence.
+
+Every algebra homomorphism out of the algebra on C equals the descent homomorphism.
+
+The numbered name example_617 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62C
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.StrictDomainObj
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sumMap3
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sinj0
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sinj1
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sinj2
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.tcMapHom
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descE
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descF
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descVal
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617.descMap
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descStrict
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617.descAlgHom
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.CisInitial
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Inst3
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.id_val
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.comp_val
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sum3_nonempty
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.tcObj
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.tcObj_sys
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.mem_subset_j0_inv
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.mem_subset_j1_inv
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.mem_subset_j2_inv
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.isStrict_sumMap3
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sumMap3_id
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sumMap3_comp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sinj0_mem_j0
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sinj1_mem_j1
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sinj2_mem_j2
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sinj1_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sinj2_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sumMap3_sinj0
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sumMap3_sinj1
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.sumMap3_sinj2
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Tc
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Tc_obj
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Tc_map_val
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.isStrict_ofIso
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Cobj
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.cStr
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Calg
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.ccEquiv_apply
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.consMap_mem_embBit
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.consMap_not_mem_embBit_ne
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.consMap_not_mem_nil
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.toCC_consMap
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.toCC_strElem_nil
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descF_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descVal_mono_z
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descVal_append
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descMap_hcone
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descMap_hsing
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descMap_strBot
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descMap_strElem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.C_bot_eq_strBot_nil
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descMap_strict
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.genKey
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.genKey0
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.genKeyBot
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.ccEquiv_symm_comp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.ccEquiv_comp_symm
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.rec_determines
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descMap_satisfiesRec
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descComm
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.descAlgHom_uniq
 
 @[expose] public section
@@ -276,5 +213,26 @@ variable (B : TAlgebra Tc)
 
 end Initial
 
+
+end DomainTheory.NeighbourhoodSystems
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem example_617 : ∀
+  (B :
+    @DomainTheory.NeighbourhoodSystems.TAlgebra DomainTheory.NeighbourhoodSystems.StrictDomainObj
+      DomainTheory.NeighbourhoodSystems.instCategoryStrictDomainObj DomainTheory.NeighbourhoodSystems.Tc)
+  (h' :
+    @DomainTheory.NeighbourhoodSystems.AlgHom DomainTheory.NeighbourhoodSystems.StrictDomainObj
+      DomainTheory.NeighbourhoodSystems.instCategoryStrictDomainObj DomainTheory.NeighbourhoodSystems.Tc
+      DomainTheory.NeighbourhoodSystems.Calg B),
+  @Eq
+    (@DomainTheory.NeighbourhoodSystems.AlgHom DomainTheory.NeighbourhoodSystems.StrictDomainObj
+      DomainTheory.NeighbourhoodSystems.instCategoryStrictDomainObj DomainTheory.NeighbourhoodSystems.Tc
+      DomainTheory.NeighbourhoodSystems.Calg B)
+    h' (DomainTheory.NeighbourhoodSystems.descAlgHom B) :=
+  DomainTheory.NeighbourhoodSystems.descAlgHom_uniq
 
 end DomainTheory.NeighbourhoodSystems

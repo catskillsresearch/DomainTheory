@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.Basic
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.toElementMap_fixElement
 @[expose] public section
 
 

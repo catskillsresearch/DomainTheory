@@ -31,6 +31,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.genKey0
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.genKeyBot
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Tc
 
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.map_ext_C
 @[expose] public section
 
 set_option linter.unusedSectionVars false

@@ -1,13 +1,134 @@
 /-ai
-This file gathers and re-exports the basic setup for Theorem 6.9, strictness of a split isomorphism, the inverse law for the strict-function-space representation, the relation and action lemmas for the post- and pre-composition operator, and the existence of a strict algebra homomorphism out of a fixed point.
+If a functor is continuous on maps and D is isomorphic to its image, then every algebra whose structure map is strict receives a strict homomorphism from D, namely the least fixed point of the operator sending h to the structure map composed with the functor applied to h, composed with the inverse isomorphism.
+
+The numbered name theorem_69 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.isStrict_of_comp_eq_id
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.toStrictFilter_toStrictMap
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.homOp_rel
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.homOp_apply_filter
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.nonempty_algHom_of_continuousOnMaps
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+
+set_option linter.unusedVariables false
+
+theorem theorem_69.{u_4} : ∀
+  (T :
+    @DomainTheory.NeighbourhoodSystems.Endofunctor.{u_4 + 1, u_4} DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+      DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4}),
+  DomainTheory.NeighbourhoodSystems.ContinuousOnMaps.{u_4} T →
+    ∀ {D : DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}}
+      (iso :
+        @DomainTheory.NeighbourhoodSystems.Iso.{u_4 + 1, u_4} DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+          DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4}
+          (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{u_4 + 1, u_4}
+            DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+            DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T D)
+          D)
+      (B :
+        @DomainTheory.NeighbourhoodSystems.TAlgebra.{u_4 + 1, u_4} DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+          DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T),
+      @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict.{u_4, u_4}
+          (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{u_4 + 1, u_4}
+              DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T
+              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{u_4 + 1, u_4}
+                DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T B)).carrier
+          (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{u_4 + 1, u_4}
+              DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T B).carrier
+          (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{u_4 + 1, u_4}
+              DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T
+              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{u_4 + 1, u_4}
+                DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T B)).sys
+          (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{u_4 + 1, u_4}
+              DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T B).sys
+          (@DomainTheory.NeighbourhoodSystems.TAlgebra.str.{u_4 + 1, u_4}
+            DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+            DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T B) →
+        Nonempty.{u_4 + 1}
+          (@Subtype.{u_4 + 1}
+            (@DomainTheory.NeighbourhoodSystems.AlgHom.{u_4 + 1, u_4} DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T
+              (@DomainTheory.NeighbourhoodSystems.TAlgebra.mk.{u_4 + 1, u_4}
+                DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T D
+                (@DomainTheory.NeighbourhoodSystems.Iso.hom.{u_4 + 1, u_4}
+                  DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4}
+                  (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{u_4 + 1, u_4}
+                    DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T D)
+                  D iso))
+              B)
+            fun
+              (g :
+                @DomainTheory.NeighbourhoodSystems.AlgHom.{u_4 + 1, u_4}
+                  DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T
+                  (@DomainTheory.NeighbourhoodSystems.TAlgebra.mk.{u_4 + 1, u_4}
+                    DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T D
+                    (@DomainTheory.NeighbourhoodSystems.Iso.hom.{u_4 + 1, u_4}
+                      DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                      DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4}
+                      (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{u_4 + 1, u_4}
+                        DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T D)
+                      D iso))
+                  B) =>
+            @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict.{u_4, u_4}
+              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{u_4 + 1, u_4}
+                  DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T
+                  (@DomainTheory.NeighbourhoodSystems.TAlgebra.mk.{u_4 + 1, u_4}
+                    DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T D
+                    (@DomainTheory.NeighbourhoodSystems.Iso.hom.{u_4 + 1, u_4}
+                      DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                      DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4}
+                      (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{u_4 + 1, u_4}
+                        DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T D)
+                      D iso))).carrier
+              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{u_4 + 1, u_4}
+                  DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T B).carrier
+              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{u_4 + 1, u_4}
+                  DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T
+                  (@DomainTheory.NeighbourhoodSystems.TAlgebra.mk.{u_4 + 1, u_4}
+                    DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T D
+                    (@DomainTheory.NeighbourhoodSystems.Iso.hom.{u_4 + 1, u_4}
+                      DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                      DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4}
+                      (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{u_4 + 1, u_4}
+                        DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T D)
+                      D iso))).sys
+              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{u_4 + 1, u_4}
+                  DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T B).sys
+              (@DomainTheory.NeighbourhoodSystems.AlgHom.hom.{u_4 + 1, u_4}
+                DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T
+                (@DomainTheory.NeighbourhoodSystems.TAlgebra.mk.{u_4 + 1, u_4}
+                  DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T D
+                  (@DomainTheory.NeighbourhoodSystems.Iso.hom.{u_4 + 1, u_4}
+                    DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4}
+                    (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{u_4 + 1, u_4}
+                      DomainTheory.NeighbourhoodSystems.DomainObj.{u_4}
+                      DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{u_4} T D)
+                    D iso))
+                B g)) :=
+  DomainTheory.NeighbourhoodSystems.nonempty_algHom_of_continuousOnMaps.{u_4}
+
+end DomainTheory.NeighbourhoodSystems

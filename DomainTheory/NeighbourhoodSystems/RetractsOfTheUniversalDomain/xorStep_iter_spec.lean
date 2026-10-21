@@ -12,6 +12,9 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.low
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.xorStep
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.xor_low_rec
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.mem_ne_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.union_mem_or_empty
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.UnionClosed
 @[expose] public section
 
 set_option linter.unusedSectionVars false

@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise2
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition611
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.sub
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.fixedNbhd_subsystem
 @[expose] public section
 
 set_option linter.unusedSectionVars false

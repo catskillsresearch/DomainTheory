@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319
 
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation.U_isEffectivelyGiven
 @[expose] public section
 
 set_option linter.unusedSectionVars false

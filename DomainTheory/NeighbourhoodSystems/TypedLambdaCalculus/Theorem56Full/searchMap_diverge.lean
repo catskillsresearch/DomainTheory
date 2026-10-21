@@ -16,6 +16,7 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Ful
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.evalAt_apply
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.iterVal_bot
 
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixElement_eq_iSupDirected
 @[expose] public section
 
 

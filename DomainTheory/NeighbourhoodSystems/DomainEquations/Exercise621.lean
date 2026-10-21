@@ -1,37 +1,51 @@
 /-ai
-This module gathers and re-exports Exercise 6.21 on the coalesced sum and the smash product. It brings together the basic development, the right-hand form of the intersection lemma, membership of the coalesced-sum master and the inverse membership lemmas for its tags and for smash-product rectangles, the componentwise subsystem laws, the strictness, identity, composition, and monotonicity laws for both map actions, the functor laws and the continuity of the extended expression algebra on maps and on domains, preservation of the rooted-constant condition by an n-ary fold, and the singleton-subsystem solutions of the four n-ary constructs.
+For every expression T and every nonempty set Γ of strings, the token-level recursion gFun T Γ equals the master of T applied to the singleton system on Γ.
+
+The numbered name example_621 is the conjunction of these statements. The proof is that conjunction.
 ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.inter_ne_of_ne_right
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusTok_mem_master
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusTok_mem_embF_inv
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusTok_mem_embT_inv
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesTok_mem_prod_inv
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusTok_subsystem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesTok_subsystem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusMapTok_isStrict
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusMapTok_id
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusMapTok_comp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusMapTok_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesMapTok_isStrict
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesMapTok_id
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesMapTok_comp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesMapTok_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2emap_isStrict
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2emap_id
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2emap_comp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2emap_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2eobj_subsystem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2eobj_continuous_mp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2eobj_continuous
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2emap_continuous_mp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2emap_continuous
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.GExpru2enaryOp_rootedConst
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.narySum_singleton_subsystem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.naryOplus_singleton_subsystem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.naryProd_singleton_subsystem
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.naryOtimes_singleton_subsystem
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise619
+
+set_option linter.unusedVariables false
+
+theorem example_621 : And
+  (∀ (T : DomainTheory.NeighbourhoodSystems.Exercise619.GExpr),
+    T.RootedConst →
+      ∃ (Γ : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str) (h :
+        @Set.Nonempty DomainTheory.NeighbourhoodSystems.ExampleB.Str Γ),
+        @DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          (DomainTheory.NeighbourhoodSystems.Exercise619.singletonSys Γ h).sys
+          (T.obj (DomainTheory.NeighbourhoodSystems.Exercise619.singletonSys Γ h)).sys)
+  (∀ (T : DomainTheory.NeighbourhoodSystems.Exercise619.GExpr),
+    T.RootedConst →
+      ∃ (Γ : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str),
+        And
+          (@Membership.mem (List Bool) (Set DomainTheory.NeighbourhoodSystems.ExampleB.Str)
+            (@Set.instMembership DomainTheory.NeighbourhoodSystems.ExampleB.Str) Γ (@List.nil Bool))
+          (@Eq (Set DomainTheory.NeighbourhoodSystems.ExampleB.Str)
+            (DomainTheory.NeighbourhoodSystems.Exercise619.gFun T Γ) Γ)) :=
+  @And.intro
+  (∀ (T : DomainTheory.NeighbourhoodSystems.Exercise619.GExpr),
+    T.RootedConst →
+      ∃ (Γ : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str) (h :
+        @Set.Nonempty DomainTheory.NeighbourhoodSystems.ExampleB.Str Γ),
+        @DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str
+          (DomainTheory.NeighbourhoodSystems.Exercise619.singletonSys Γ h).sys
+          (T.obj (DomainTheory.NeighbourhoodSystems.Exercise619.singletonSys Γ h)).sys)
+  (∀ (T : DomainTheory.NeighbourhoodSystems.Exercise619.GExpr),
+    T.RootedConst →
+      ∃ (Γ : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str),
+        And
+          (@Membership.mem (List Bool) (Set DomainTheory.NeighbourhoodSystems.ExampleB.Str)
+            (@Set.instMembership DomainTheory.NeighbourhoodSystems.ExampleB.Str) Γ (@List.nil Bool))
+          (@Eq (Set DomainTheory.NeighbourhoodSystems.ExampleB.Str)
+            (DomainTheory.NeighbourhoodSystems.Exercise619.gFun T Γ) Γ))
+  DomainTheory.NeighbourhoodSystems.Exercise619.gExists_singleton_subsystem
+  DomainTheory.NeighbourhoodSystems.Exercise619.gExists_tok_fixedPoint
+
+end DomainTheory.NeighbourhoodSystems.Exercise619

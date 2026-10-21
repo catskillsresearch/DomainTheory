@@ -1,22 +1,12 @@
 /-ai
 This file gathers and re-exports the ingredients of Exercise 3.27: graphs of approximable maps, the family of all such graphs, meets and joins of families of maps, closure of that family under nonempty intersections and directed unions, and the representation isomorphism of Exercise 2.22 together with the function-space equivalence, so the function space is presented as a domain.
+
+A nonempty directed family of members of C has its union in C.
+
+The numbered name example_327 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.graph
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.C
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.meetMap
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.joinMap
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.graphEquiv
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.funSpaceReprIso
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.mem_graph
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.graph_injective
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.C_nonempty
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.sInter_eq_graph_meetMap
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.C_inter
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.sUnion_eq_graph_joinMap
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.C_dir
 
 @[expose] public section
@@ -74,5 +64,25 @@ variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSyst
 
 /-! ### Exercise 3.27. -/
 
+
+end DomainTheory.NeighbourhoodSystems.Exercise327
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise327
+
+set_option linter.unusedVariables false
+
+theorem example_327.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+  {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β} (𝒮 : Set (Set (Prod (Set α) (Set β)))),
+  @Set.Nonempty (Set (Prod (Set α) (Set β))) 𝒮 →
+    @LE.le (Set (Set (Prod (Set α) (Set β)))) (@Set.instLE (Set (Prod (Set α) (Set β)))) 𝒮
+        (@DomainTheory.NeighbourhoodSystems.Exercise327.C α β V₀ V₁) →
+      @DirectedOn (Set (Prod (Set α) (Set β)))
+          (fun (x1 x2 : Set (Prod (Set α) (Set β))) =>
+            @LE.le (Set (Prod (Set α) (Set β))) (@Set.instLE (Prod (Set α) (Set β))) x1 x2)
+          𝒮 →
+        @Membership.mem (Set (Prod (Set α) (Set β))) (Set (Set (Prod (Set α) (Set β))))
+          (@Set.instMembership (Set (Prod (Set α) (Set β))))
+          (@DomainTheory.NeighbourhoodSystems.Exercise327.C α β V₀ V₁) (@Set.sUnion (Prod (Set α) (Set β)) 𝒮) :=
+  @DomainTheory.NeighbourhoodSystems.Exercise327.C_dir
 
 end DomainTheory.NeighbourhoodSystems.Exercise327

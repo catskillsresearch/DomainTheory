@@ -1,15 +1,34 @@
 /-ai
-This file gathers and re-exports Exercise 7.13: the inclusion structure and its supporting constructions, the four axioms, the theorem that the hint system is effectively given, the recovery of the inclusion relation from the hint presentation, and the isomorphism of a system with the system reconstructed from a computable presentation.
+The system reconstructed from a computable presentation is isomorphic to the original neighbourhood system. The hint neighbourhood system of an inclusion structure is effectively given.
+
+The numbered name example_713 is the conjunction of these statements. The proof is that conjunction.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.Basic
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.axiom_i
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.axiom_ii
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.axiom_iii
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.axiom_iv
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.toSystem_isEffectivelyGiven
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.ofPresentation_toPresentation_INCL
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.reconstruct_isomorphic
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.toSystem_isEffectivelyGiven
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise713
+
+set_option linter.unusedVariables false
+
+theorem example_713.{u_1} : And
+  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+    (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V),
+    @DomainTheory.NeighbourhoodSystems.Isomorphic Nat α
+      (@DomainTheory.NeighbourhoodSystems.Exercise713.reconstruct α V P) V)
+  (∀ (I : DomainTheory.NeighbourhoodSystems.Exercise713.InclStructure),
+    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven Nat I.toSystem) :=
+  @And.intro
+  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+    (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V),
+    @DomainTheory.NeighbourhoodSystems.Isomorphic Nat α
+      (@DomainTheory.NeighbourhoodSystems.Exercise713.reconstruct α V P) V)
+  (∀ (I : DomainTheory.NeighbourhoodSystems.Exercise713.InclStructure),
+    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven Nat I.toSystem)
+  (@DomainTheory.NeighbourhoodSystems.Exercise713.reconstruct_isomorphic)
+  DomainTheory.NeighbourhoodSystems.Exercise713.InclStructure.toSystem_isEffectivelyGiven
+
+end DomainTheory.NeighbourhoodSystems.Exercise713

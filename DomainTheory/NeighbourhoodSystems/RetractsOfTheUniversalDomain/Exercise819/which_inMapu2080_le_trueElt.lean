@@ -11,6 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.Basic
 
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.which_mem_one
 @[expose] public section
 
 

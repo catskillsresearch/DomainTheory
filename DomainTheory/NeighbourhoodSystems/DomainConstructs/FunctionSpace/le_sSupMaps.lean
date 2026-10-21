@@ -9,6 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic
 
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.le_sSup
 @[expose] public section
 
 

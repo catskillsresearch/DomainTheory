@@ -1,59 +1,12 @@
 /-ai
 This file gathers and re-exports the initial-algebra half of Exercise 6.18. It re-exports the cons isomorphism of the infinite iterate with its product, the descent sequence and the descent map, the strictness of that map and the homomorphism it determines, the truncation chain and the theorem that its supremum is the identity, the uniqueness of a strict homomorphism, and the initiality of the infinite iterate for the product functor on empty-free domains, together with the supporting lemmas on bottoms, monotonicity, and chains.
+
+The product of two strict approximable maps is strict.
+
+The numbered name example_618 is that statement.
 ai-/
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.consSeq
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.jmap
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.imap
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descOp
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descSeq
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise618.descMap
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.kHead
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.prodObj
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.prodMapHom
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.prodFunctor
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.iterObj
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.iterAlg
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise618.descAlgHom
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.iterIsInitial
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.prod_nonempty
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.iterSys_nonempty
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.iterProdIso_apply
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.consSeq_zero
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.consSeq_succ
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.iterProdIso_symm_pair
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.iterBot_eq
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.component_bot
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.pair_bot
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.isStrict_imap
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.jmap_comp_imap
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.prodMap_idMap_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.toElementMap_le_of_le
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descOp_apply
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descOp_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.constBot_le
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descSeq_mono_succ
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descSeq_mono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descSeq_dir
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descMap_toElementMap
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.chain_le_of_succ
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.succChainDir
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descSeqEltMono
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descMap_eq
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.kHead_apply
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descMap_fix
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descSeq_strict
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise618.descMap_strict
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.descMap_comm
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.rho_apply
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.iSupRho_eq_id
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.gcomp_rho_zero
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.gcomp_rho_succ
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.comm_unique
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.isStrict_prodMap
 
 @[expose] public section
@@ -209,3 +162,23 @@ The fixed domain `𝒟` is an arbitrary `StrictDomainObj`. -/
 end Exercise618
 
 end DomainTheory.NeighbourhoodSystems
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise618
+
+set_option linter.unusedVariables false
+
+theorem example_618.{u_2, u_3, u_4, u_5} : ∀ {α : Type u_2} {β : Type u_3} {α' : Type u_4} {β' : Type u_5}
+  {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
+  {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
+  {V₀' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α'}
+  {V₁' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β'}
+  {f₀ : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α' V₀ V₀'}
+  {f₁ : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β' V₁ V₁'},
+  @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict α α' V₀ V₀' f₀ →
+    @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict β β' V₁ V₁' f₁ →
+      @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict (Sum α β) (Sum α' β')
+        (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) (@DomainTheory.NeighbourhoodSystems.prod α' β' V₀' V₁')
+        (@DomainTheory.NeighbourhoodSystems.prodMap α β α' β' V₀ V₁ V₀' V₁' f₀ f₁) :=
+  @DomainTheory.NeighbourhoodSystems.Exercise618.isStrict_prodMap
+
+end DomainTheory.NeighbourhoodSystems.Exercise618

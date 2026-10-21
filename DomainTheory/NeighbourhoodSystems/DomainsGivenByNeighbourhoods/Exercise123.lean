@@ -22,6 +22,10 @@ Suppose a filter extends the greedy element and contains a neighbourhood. Surjec
 Every filter is the limit family of a sequence of neighbourhoods.
 
 The sequence takes the enumerated neighbourhood when the filter contains it, and takes the master otherwise. Each term is a neighbourhood, by the enumeration in the first case and because the master is a neighbourhood in the second. A member of the filter is some enumerated set, and that set then belongs to the filter and is contained in the member. Conversely, the chosen term belongs to the filter, so a neighbourhood above that term belongs to the filter by upward closure.
+
+Each term of the greedy sequence is a neighbourhood.
+
+The numbered name example_123 is the first of these statements.
 ai-/
 module
 
@@ -191,3 +195,17 @@ theorem filters_sequence_determined (x : V.Element) :
 end Exercise123
 
 end DomainTheory.NeighbourhoodSystems
+
+namespace DomainTheory.NeighbourhoodSystems.Exercise123
+
+set_option linter.unusedVariables false
+
+theorem example_123.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (enum : Nat → Set α)
+  [inst : @DecidablePred (Set α) (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V)],
+  (∀ (n : Nat), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (enum n)) →
+    ∀ (n : Nat),
+      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V
+        (@DomainTheory.NeighbourhoodSystems.Exercise123.Y α V enum inst) n :=
+  @DomainTheory.NeighbourhoodSystems.Exercise123.Y_prefix_consistent
+
+end DomainTheory.NeighbourhoodSystems.Exercise123

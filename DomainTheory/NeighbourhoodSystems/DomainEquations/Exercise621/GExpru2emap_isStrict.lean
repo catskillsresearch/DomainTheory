@@ -10,6 +10,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.Basi
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.oplusMapTok_isStrict
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otimesMapTok_isStrict
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.prodMapTok_isStrict
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.sumMapTok_isStrict
 @[expose] public section
 
 
