@@ -8,7 +8,3 @@ Starting from the topological point of view a certain wide class of $T_0$-spaces
 - [Function spaces](ContinuousLattice/FunctionSpaces/1972_Function_spaces.md)
 - [Inverse limits](ContinuousLattice/InverseLimits/1972_Inverse_limits.md)
 - [Correction](ContinuousLattice/MilnerCorrection/1972_Correction.md)
-
-**Lean 4**
-
-- [ContinuousLattice.lean](ContinuousLattice.lean)

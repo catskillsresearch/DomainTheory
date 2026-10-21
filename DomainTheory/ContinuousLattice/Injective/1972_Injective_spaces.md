@@ -26,5 +26,4 @@ Thus it would seem that we have a reasonably good initial grasp of the notion of
 
 **Lean 4**
 
-- [ContinuousLattice/Injective.lean](../Injective.lean)
 - [ContinuousLattice/Injective/Basic.lean](Basic.lean)
