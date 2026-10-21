@@ -2,18 +2,20 @@
 """Copy the notes under DomainTheory.md into build/, expanding Lean links.
 
 build/arxiv.md is the entry note. Every other note keeps the path it has in
-the repository, under build/. Markdown links are rewritten to start with
-build/ so a preview opened at the repository root follows the expanded
-copies. Each local Lean link is left in place and followed by a fenced copy of
-that file. The copy omits `module`, imports, `public section`, and `open`
-commands, and omits `/-!` Scott extracts. A leading `/-ai` comment is
-shown above the code as a blockquote that begins with **AI code read.**
-Lean links use the absolute path of the source file, so they open from a
-note under build/.
+the repository, under build/. Markdown links are HTML anchors whose href is a
+path relative to that generated note (no URL scheme, so the preview opens the
+file in the editor; parens in labels break `[text](url)`). Each Lean link is
+bold link text only, then an AI blockquote and a fenced copy of that file. The
+copy omits
+`module`,
+imports, `public section`, and `open` commands, and omits `/-!` Scott extracts.
+A leading `/-ai` comment is shown above the code as a blockquote that begins
+with **AI code read.**
 """
 
 from __future__ import annotations
 
+import os
 import re
 import shutil
 import sys
@@ -172,31 +174,49 @@ def link_fragment(href: str) -> str:
     return href[href.index("#") :]
 
 
-def lean_href(note: Path, href: str) -> str | None:
-    target = resolve_link(note, href, ".lean")
-    if target is None or not target.is_file():
+def html_escape(text: str) -> str:
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace('"', "&quot;")
+
+
+def md_anchor(label: str, href: str) -> str:
+    return f'<a href="{html_escape(href)}">{html_escape(label)}</a>'
+
+
+def resolve_lean_target(note: Path, href: str) -> Path | None:
+    href = href.strip()
+    if href.startswith(("http://", "https://")):
         return None
-    return target.resolve().as_posix() + link_fragment(href)
+    path = href.split("#", 1)[0]
+    if not path.endswith(".lean"):
+        return None
+    target = resolve_link(note, href, ".lean")
+    if target is not None and target.is_file():
+        return target
+    candidate = (ROOT / path).resolve()
+    if candidate.is_file():
+        return candidate
+    return None
 
 
 def build_href(note: Path, href: str, notes: dict[Path, None]) -> str | None:
     target = resolve_link(note, href, ".md")
     if target is None or target not in notes:
         return None
-    fragment = link_fragment(href)
-    if target == ENTRY.resolve():
-        return f"build/arxiv.md{fragment}"
-    return "build/" + target.relative_to(ROOT).as_posix() + fragment
+    dest = output_path(target).resolve()
+    start = output_path(note).parent.resolve()
+    relative = Path(os.path.relpath(dest, start)).as_posix()
+    return relative + link_fragment(href)
 
 
 def rewrite_note_links(note: Path, line: str, notes: dict[Path, None]) -> str:
     def replace(match: re.Match[str]) -> str:
-        href = build_href(note, match.group(2), notes)
-        if href is None:
-            href = lean_href(note, match.group(2))
-        if href is None:
+        href = match.group(2).strip()
+        if resolve_lean_target(note, href) is not None:
+            return f"**{match.group(1)}**"
+        new_href = build_href(note, href, notes)
+        if new_href is None:
             return match.group(0)
-        return f"[{match.group(1)}]({href})"
+        return md_anchor(match.group(1), new_href)
 
     return LINK.sub(replace, line)
 
@@ -204,15 +224,8 @@ def rewrite_note_links(note: Path, line: str, notes: dict[Path, None]) -> str:
 def lean_targets(note: Path, line: str) -> list[Path]:
     found: list[Path] = []
     for match in LINK.finditer(line):
-        href = match.group(2).strip()
-        target = resolve_link(note, href, ".lean")
-        if target is None or not target.is_file():
-            path = href.split("#", 1)[0]
-            if path.endswith(".lean"):
-                candidate = (ROOT / path).resolve()
-                if candidate.is_file():
-                    target = candidate
-        if target is not None and target.is_file():
+        target = resolve_lean_target(note, match.group(2))
+        if target is not None:
             found.append(target)
     return found
 
@@ -237,9 +250,10 @@ def expand(note: Path, notes: dict[Path, None]) -> tuple[str, int]:
         if in_fence:
             out.append(line)
             continue
+        leans = lean_targets(note, line)
         line = rewrite_note_links(note, line, notes)
         out.append(line)
-        for lean in lean_targets(note, line):
+        for lean in leans:
             out.append("")
             out.append(lean_block(lean))
             out.append("")
