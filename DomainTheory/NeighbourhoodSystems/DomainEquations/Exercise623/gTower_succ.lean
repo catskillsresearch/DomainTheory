@@ -1,3 +1,8 @@
+/-ai
+The successor of the n-th level of the tower is the grammar expression applied to the n-th level.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

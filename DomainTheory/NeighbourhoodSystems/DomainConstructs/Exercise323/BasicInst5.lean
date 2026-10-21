@@ -1,3 +1,6 @@
+/-ai
+This file introduces the instance that there is a unique approximable map into the one-point domain. The default map is the constant map at the default element, and every map equals it because there is at most one such map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

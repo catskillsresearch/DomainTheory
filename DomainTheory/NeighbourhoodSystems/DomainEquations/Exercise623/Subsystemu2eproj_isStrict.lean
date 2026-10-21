@@ -1,3 +1,8 @@
+/-ai
+The projection of a subsystem from the larger system onto the smaller one is strict.
+
+If the projection relates a neighbourhood, its relational description supplies a neighbourhood of the smaller system contained in it and contained in the larger master. Antisymmetry of inclusion, using that every neighbourhood of the smaller system lies in its master and that the two systems have the same master, shows that the neighbourhood is the larger master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

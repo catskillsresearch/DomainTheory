@@ -1,3 +1,8 @@
+/-ai
+The inverse output of the doubling of a finite string is the string itself.
+
+The proof is by induction on the string. The empty string is immediate. For a cons, the cons equations of doubling and of the inverse output reduce the claim to the inductive hypothesis.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

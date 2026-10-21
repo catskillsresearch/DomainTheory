@@ -1,3 +1,8 @@
+/-ai
+The repetition of a word of successor count is the word followed by the repetition of the previous count.
+
+This is the successor clause of the definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

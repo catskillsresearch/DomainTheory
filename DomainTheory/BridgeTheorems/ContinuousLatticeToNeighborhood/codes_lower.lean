@@ -1,3 +1,8 @@
+/-ai
+The set of codes of a filter is a lower set: if b lies under a code a, then b is a code.
+
+The way-below neighbourhood of a belongs to the filter. Way-below neighbourhoods reverse the order, so that neighbourhood is contained in the way-below neighbourhood of b, and the filter is closed upward under that containment.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

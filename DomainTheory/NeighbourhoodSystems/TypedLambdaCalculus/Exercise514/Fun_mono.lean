@@ -1,3 +1,8 @@
+/-ai
+Application is monotone in both arguments: if a set of codes grows and the argument set grows, the set of outputs grows.
+
+A witnessing list for an output has its entries in the smaller argument, hence in the larger one, and its tag in the smaller set of codes, hence in the larger one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513

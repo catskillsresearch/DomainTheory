@@ -1,3 +1,8 @@
+/-ai
+The intersection index of a packed equality bit, consistency bit, and intersection index is the intersection index.
+
+Unfolding the intersection index and the packing, the second pairing projection returns that component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

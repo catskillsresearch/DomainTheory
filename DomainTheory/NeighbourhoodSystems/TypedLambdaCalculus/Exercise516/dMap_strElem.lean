@@ -1,3 +1,8 @@
+/-ai
+The doubling map sends the total element named by a finite string to the total element named by the double of that string.
+
+This is the total-element clause of the lifting that defines the map, applied to the two assignments and the two monotonicity hypotheses.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

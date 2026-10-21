@@ -1,3 +1,8 @@
+/-ai
+In the space of projections of a complete lattice, the supremum of a set of projections is a least upper bound of that set.
+
+The order on projections is the order of the underlying Scott maps. Each member lies below the supremum because its underlying map lies below the supremum of the image of the set under the forgetful map. If q is any upper bound, every underlying map of a member lies below the underlying map of q, so the supremum of those underlying maps lies below the underlying map of q.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

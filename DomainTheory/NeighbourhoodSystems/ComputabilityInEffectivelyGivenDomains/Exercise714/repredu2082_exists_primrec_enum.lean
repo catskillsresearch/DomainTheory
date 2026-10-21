@@ -1,3 +1,8 @@
+/-ai
+A nonempty recursively enumerable relation on pairs of natural numbers holds of n and m if and only if some index is sent to n by one primitive-recursive function and to m by another.
+
+View the relation as a recursively enumerable set of paired codes. The pair of the given witnesses lies in that set, so a primitive-recursive function enumerates it. Take the two components of each value; both component maps are primitive recursive. A pair lies in the relation exactly when its code lies in the range, and splitting that code into components and reassembling them matches the two component equations with equality of the code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

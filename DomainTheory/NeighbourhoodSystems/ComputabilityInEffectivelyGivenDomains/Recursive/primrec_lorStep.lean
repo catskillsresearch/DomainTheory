@@ -1,3 +1,8 @@
+/-ai
+The packed bitwise-disjunction step is primitive recursive.
+
+The two current operands, the weight, and the accumulator are projections, and the low-bit disjunction of the two operands is primitive recursive by composition. Pairing the two halved operands with the pair of twice the weight and the accumulator plus the weight times that low bit agrees with the step by definition.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

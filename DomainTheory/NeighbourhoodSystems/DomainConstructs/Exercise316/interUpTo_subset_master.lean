@@ -1,3 +1,8 @@
+/-ai
+In the infinite iterate, the intersection of the first N members of a family of neighbourhoods is contained in the master neighbourhood.
+
+Proceed by induction on N. The zero case is reflexive. At a successor, rewrite the successor intersection and compose the inclusion of an intersection into its left factor with the inductive inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

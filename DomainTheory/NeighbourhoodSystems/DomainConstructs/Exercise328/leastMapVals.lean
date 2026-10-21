@@ -1,3 +1,6 @@
+/-ai
+The active values of a list of input-output pairs at an element are the principal filters of those outputs whose paired input belongs to the element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

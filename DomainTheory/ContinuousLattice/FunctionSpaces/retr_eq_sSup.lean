@@ -1,3 +1,8 @@
+/-ai
+The retraction of a continuous-lattice projection is given by Scott's formula: its value at an ambient element x' is the supremum of the set of elements whose inclusion lies below x'. This is the uniqueness half of Scott's Proposition 3.10(iv).
+
+The retraction of x' belongs to that set, because the inclusion of a retraction lies below the identity, so it lies below the supremum. Each member x of the set equals the retraction of its inclusion, which lies below the retraction of x' by monotonicity of the retraction.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

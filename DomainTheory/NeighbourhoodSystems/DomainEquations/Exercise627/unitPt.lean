@@ -1,3 +1,6 @@
+/-ai
+The one-point unit over binary strings is the singleton neighbourhood system whose only neighbourhood is the singleton of the empty string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,3 +1,6 @@
+/-ai
+The one-point neighbourhood system has the constant computable presentation that enumerates the whole token set at every index. That set is the only neighbourhood, so every index is a neighbourhood and the enumeration is surjective. Any two enumerated sets are equal and every intersection is the whole set, so both of Scott's relations hold for every index tuple and are decided by the constantly true decider. The intersection function is the constant zero, which is primitive recursive, and the master index is zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

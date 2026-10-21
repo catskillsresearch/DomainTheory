@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Proposition 6.11, that the subsystems of a neighbourhood system form a domain. It brings together the representing family of neighbourhood-sets, closure of that family under nonempty intersection and under directed union, the intersection and union systems, the order isomorphism of the subdomain relation with inclusion, the partial order of subsystems, and the representation of that poset as a domain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

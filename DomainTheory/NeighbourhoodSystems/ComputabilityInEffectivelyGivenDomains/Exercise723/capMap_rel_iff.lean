@@ -1,3 +1,8 @@
+/-ai
+On neighbourhood indices, capMap relates the product of nbhd n and nbhd m to nbhd k if and only if both nbhd n and nbhd m are contained in nbhd k.
+
+From a related triple, injectivity of product neighbourhoods recovers the two factors, and the relation supplies the two inclusions. Conversely, the three neighbourhoods themselves are the required witnesses.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

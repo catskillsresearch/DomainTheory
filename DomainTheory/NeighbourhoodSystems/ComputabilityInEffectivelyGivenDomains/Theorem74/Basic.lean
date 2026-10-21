@@ -1,3 +1,34 @@
+/-ai
+Scott's Theorem 7.4 says that the sum and the product of effectively given domains are effectively given, and that the injections, extractions, projections, and the sum and product of computable maps are computable. This file proves the sum half.
+
+The sum of two effectively given neighbourhood systems is effectively given.
+
+Unpack the two computable presentations and package them as the sum presentation.
+
+The neighbourhood assigned by the sum presentation is the neighbourhood assigned by the sum enumeration.
+
+The two sides are definitionally equal.
+
+The left injection is a computable map from the first neighbourhood system into the sum.
+
+Inclusion in the first presentation is recursively decidable, and so are the tests that the codomain tag equals zero and that it equals one. The inclusion is reindexed onto the inner component of the codomain index. The injection relation is equivalent to the tag being zero together with that inclusion, or to the tag being neither zero nor one. The tag trichotomy checks the equivalence. A left-copy codomain rewrites as inclusion of left copies. A right-copy codomain cannot contain a nonempty left copy, and both Boolean branches contradict the tag. In the remaining case the codomain is the sum master, which contains the left copy.
+
+The right injection is a computable map from the second neighbourhood system into the sum.
+
+The argument has the same shape with the two presentations and the tags exchanged. Inclusion in the second presentation and the two tag tests are recursively decidable, and the inclusion is reindexed onto the inner component. A left-copy codomain cannot contain a nonempty right copy. A right-copy codomain rewrites as inclusion of right copies. The remaining codomain is the sum master, which contains the right copy.
+
+The left extraction from the sum is a computable map into the first neighbourhood system.
+
+Choose an index of the master of the first system. Inclusion is recursively decidable, as is the test that the domain tag equals zero. Reindex the inclusion onto the left-copy component and onto the master index. The relation is tag zero with the component inclusion, or a tag other than zero with inclusion of the master. A left copy has left part equal to its component. A right copy has left part equal to the master of the first system, and so does the sum master.
+
+The right extraction from the sum is a computable map into the second neighbourhood system.
+
+Choose an index of the master of the second system. The same reindexing, now with the test for tag one, matches the extraction relation. A right copy has right part equal to its component. A left copy has right part equal to the master of the second system, and so does the sum master.
+
+If two maps are computable, then their sum is a computable map of the sums.
+
+The two relations are recursively enumerable, and the four tests that the domain or codomain tag equals zero or one are recursively decidable. Each relation is reindexed onto the inner components. The sum relation is equivalent to the codomain tag being neither zero nor one, or to both tags being zero and the first map relating the components, or to both tags being one and the second map relating the components. From a sum relation, the tag trichotomy and the separation of left copies, right copies, and the master recover the tags and the components. In the other direction, the master, left-copy, and right-copy clauses of the enumeration rebuild the three branches of the sum relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

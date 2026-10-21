@@ -1,3 +1,8 @@
+/-ai
+The first components of the generalized X-step at the two bits reunite to the parent first set.
+
+Unfolding the step, the intersection of a set with a neighbourhood, united with the difference of that set and the neighbourhood, recovers the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

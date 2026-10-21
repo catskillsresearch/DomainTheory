@@ -1,3 +1,8 @@
+/-ai
+The filter of excluded points equal to the whole set of natural numbers is a total element of the cofinite system.
+
+For any element, the comparison lemma places it below this filter, which is the totality condition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

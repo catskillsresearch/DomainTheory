@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (4.46). Applying vaalC to a tree code x equals the McCarthy conditional of the application of x to zero, with zero branch the G combinator and positive branch the application of vaalC at the left child of x to vaalC at the right child.
+
+Apply the map sending a value to its application at x to the fixed-point equation for vaalC, and rewrite the resulting application of vaalF by its application law.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+The second-index projection of a two-sided state is primitive recursive.
+
+It is the left projection of the right projection of a natural-number pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

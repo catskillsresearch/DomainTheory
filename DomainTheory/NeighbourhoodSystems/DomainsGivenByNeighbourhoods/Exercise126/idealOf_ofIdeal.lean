@@ -1,3 +1,8 @@
+/-ai
+The ideal of the filter associated with an ideal is the original ideal.
+
+By extensionality of ideals. Membership rewrites as membership of the singleton neighbourhood in the filter, then as containment of the span of the singleton in the ideal, which is membership of the element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

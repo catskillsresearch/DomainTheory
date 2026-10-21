@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood system rebuilt from a subdomain neighbourhood-set is a subsystem of E.
+
+The masters agree. Every member of the set is a neighbourhood of E, and the set is closed under intersections that lie in E.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

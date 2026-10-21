@@ -1,3 +1,6 @@
+/-ai
+The code of a list of Booleans is the list code of the numeric images of its entries.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

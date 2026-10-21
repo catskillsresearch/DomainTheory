@@ -1,3 +1,8 @@
+/-ai
+Division by 2 is primitive recursive.
+
+It is the left projection composed with the half-and-parity function. The half-and-parity specification and the first pairing projection identify that projection with the quotient.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

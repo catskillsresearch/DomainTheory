@@ -1,3 +1,8 @@
+/-ai
+The pairing map is a computable map from the product of the sharp presentation with itself into the sharp presentation.
+
+The index characterization rewrites the relation as inclusion of the sharp neighbourhood at the even index two times the source code plus two in the sharp neighbourhood of the target code. That inclusion is recursively decidable by composing the inclusion decider of the sharp presentation with the primitive-recursive reindexing to that even index, and a decidable predicate is recursively enumerable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Combinators77

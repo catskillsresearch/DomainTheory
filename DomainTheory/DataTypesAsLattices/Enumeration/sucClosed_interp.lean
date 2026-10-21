@@ -1,3 +1,9 @@
+/-ai
+Interpreting the closed successor term in any environment yields the successor combinator.
+
+Unfolding the term and the combinator, the interpretation, the environment, and the function update simplify to the same element.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

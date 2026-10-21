@@ -1,3 +1,9 @@
+/-ai
+Every element contains the bottom token.
+
+The empty set is contained in the carrier, and it entails the bottom token, so deductive closure of the element puts the bottom token in the carrier.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23

@@ -1,3 +1,8 @@
+/-ai
+The second projection of an element of the pair space is monotone.
+
+After rewriting membership in the second component, the assumed inequality supplies the second conjunct of the membership witness, and the first conjunct is unchanged.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

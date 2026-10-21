@@ -1,3 +1,6 @@
+/-ai
+The least fixed point of an approximable endomap is the element of neighbourhoods reachable from the master neighbourhood by some finite iterate. The master belongs by the identity iterate. The intersection of two such neighbourhoods belongs to the iterate whose length is the maximum of the two lengths, after each chain is extended and the outputs are intersected. An upward enlargement stays with the same iterate by monotonicity of the relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

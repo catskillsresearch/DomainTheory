@@ -1,3 +1,6 @@
+/-ai
+The function-space retract from a to b is the graph of the map sending u to the composition of b after u after a. Scott's formula (4.8) is a ∘→ b = λu. b ∘ u ∘ a.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

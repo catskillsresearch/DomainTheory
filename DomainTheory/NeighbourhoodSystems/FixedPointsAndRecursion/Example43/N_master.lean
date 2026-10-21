@@ -1,3 +1,8 @@
+/-ai
+The master neighbourhood of the natural-number system is the whole space of natural numbers.
+
+The two sides agree by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

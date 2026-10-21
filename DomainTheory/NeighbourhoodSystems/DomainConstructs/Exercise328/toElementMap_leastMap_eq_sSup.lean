@@ -1,3 +1,8 @@
+/-ai
+The least map at an element equals the supremum of the active principal filters at that element.
+
+Antisymmetry uses the two comparisons with upper bounds. The least map lies below the supremum because the supremum is an upper bound of the active values. The supremum lies below the least map because each active principal filter lies below the least map at the element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

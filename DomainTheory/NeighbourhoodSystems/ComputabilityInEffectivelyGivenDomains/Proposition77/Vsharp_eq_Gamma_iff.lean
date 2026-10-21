@@ -1,3 +1,8 @@
+/-ai
+If every neighbourhood of the underlying domain is nonempty, then an enumerated set of the section domain equals the master neighbourhood if and only if its index is 0.
+
+If the index is 0, the zero clause gives the master neighbourhood. If the sets are equal, the index is 0, an odd successor, or an even successor. The odd value is a zero embedding, which is distinct from the master neighbourhood, and the even value is a paired embedding, which is likewise distinct from it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

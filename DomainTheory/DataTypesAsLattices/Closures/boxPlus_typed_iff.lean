@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Theorem 5.4, the analogue of (4.5). If a and b are retracts, a set u is a fixed value of their boxed sum if and only if u is empty, or u is the full set, or u is a left square pair of a value fixed by the shift of a, or u is a right square pair of a value fixed by the shift of b.
+
+If u is fixed, it equals the application of the boxed sum, and the four occupancy cases give the four alternatives. The one-sided cases produce the shifted application of the inhabited component, which is fixed because the shift of a retract is a retract. Conversely, the empty set and the full set are fixed values, and the two injection lemmas supply the one-sided square pairs.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

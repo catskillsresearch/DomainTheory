@@ -1,3 +1,7 @@
+/-ai
+A filter on the LUCID system has a minimum neighbourhood when some neighbourhood belongs to it and is contained in every neighbourhood that belongs to it. This is the hallmark of Scott's finite elements.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

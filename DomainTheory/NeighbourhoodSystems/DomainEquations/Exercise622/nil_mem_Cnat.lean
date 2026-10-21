@@ -1,3 +1,8 @@
+/-ai
+The empty string belongs to the master of the two-point domain, so that domain is a rooted constant.
+
+The master is the insertion of the token 0 into the singleton of the empty string, and the empty string belongs to that singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,3 +1,8 @@
+/-ai
+The pairing equivalence sends a pair to the pairing function of its two components.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

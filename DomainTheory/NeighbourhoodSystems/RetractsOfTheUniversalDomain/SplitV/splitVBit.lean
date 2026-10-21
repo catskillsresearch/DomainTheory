@@ -1,3 +1,6 @@
+/-ai
+splitVBit n is the splitting bit: the least set bit of the upsampled mask, searched below two to the power of one more than the minimal level.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

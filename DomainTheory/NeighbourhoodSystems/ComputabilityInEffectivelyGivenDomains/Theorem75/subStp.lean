@@ -1,3 +1,6 @@
+/-ai
+One step of the step-function inclusion fold returns 0 when the running flag is off, and otherwise returns the bit that the codomain inclusion characteristic assigns to the conditional output-intersection index of the parameter against the current entry's input index, paired with the entry's output index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

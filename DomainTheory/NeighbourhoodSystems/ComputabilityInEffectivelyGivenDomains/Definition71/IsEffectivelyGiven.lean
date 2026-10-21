@@ -1,3 +1,6 @@
+/-ai
+A neighbourhood system is effectively given when it admits a computable presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

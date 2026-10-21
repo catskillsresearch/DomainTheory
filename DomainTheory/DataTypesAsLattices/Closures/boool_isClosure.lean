@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (5.3). The boolean retract boool is a closure.
+
+A closure is an expansive retract. The two components are the inclusion of the identity combinator in boool and the retract equation for boool.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

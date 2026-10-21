@@ -1,3 +1,6 @@
+/-ai
+The multiplication combinator is λx. primRec(0, K (add x)). It is written by applying S, K, the dollar combinator, the fixed-point combinator Y, the interpretation of the primitive-recursion step term, the numeral 0, and the addition combinator.
+ai-/
 module
 
 public import Mathlib.Computability.RE

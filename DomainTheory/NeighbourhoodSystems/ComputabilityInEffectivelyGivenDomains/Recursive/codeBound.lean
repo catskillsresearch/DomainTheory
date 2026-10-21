@@ -1,3 +1,6 @@
+/-ai
+An upper bound on the Gödel codes of lists with entries in {0, 1} and length at most n sends 0 to 1 and sends n + 1 to one more than the pair of 1 and the bound at n.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,3 +1,8 @@
+/-ai
+The combinator is a retraction.
+
+Unfold the claim as the square of the composite of the injection with the projection equaling that composite. Reassociate, replace the projection composed with the injection by the identity of the infinite power, and cancel the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

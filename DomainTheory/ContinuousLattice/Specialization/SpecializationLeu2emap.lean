@@ -1,3 +1,8 @@
+/-ai
+A continuous map preserves Scott's specialization order.
+
+If an open set contains the image of the smaller point, its preimage under the continuous map is open and contains that point, so specialization puts the image of the larger point in the open set.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

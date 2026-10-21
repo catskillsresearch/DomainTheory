@@ -1,3 +1,8 @@
+/-ai
+Every natural number k lies in a half-open triangular interval: some w has the triangular number of w at most k and k strictly below the triangular number of w + 1.
+
+Let P(w) say that k is strictly below the triangular number of w + 1. This holds at w = k, because the successor law writes the triangular number of k + 1 as the triangular number of k plus k + 1, which is at least k + 1. Let w be the least such number. The upper bound is the specification of that least number. If w is zero, the lower bound is immediate. If w is a successor, its predecessor fails P, so the triangular number of w is at most k.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

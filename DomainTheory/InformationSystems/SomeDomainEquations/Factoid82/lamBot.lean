@@ -1,3 +1,6 @@
+/-ai
+The bottom lambda token is the bottom raw token, which is a lambda token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

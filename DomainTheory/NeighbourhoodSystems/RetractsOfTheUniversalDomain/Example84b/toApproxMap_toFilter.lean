@@ -1,3 +1,8 @@
+/-ai
+Passing an approximable map to its filter and back to a map recovers the original map.
+
+This is the right inverse of the function-space equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

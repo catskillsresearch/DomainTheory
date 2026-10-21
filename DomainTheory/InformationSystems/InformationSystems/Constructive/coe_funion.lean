@@ -1,3 +1,8 @@
+/-ai
+The coercion of a choice-free union of finite sets to a set is the set-theoretic union of the two coercions.
+
+Extensionality is used. Membership in a set-theoretic union and membership in a finite set are rewritten by the membership law for choice-free union.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

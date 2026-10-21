@@ -1,3 +1,6 @@
+/-ai
+Two neighbourhood systems are isomorphic when a domain isomorphism from one to the other exists.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

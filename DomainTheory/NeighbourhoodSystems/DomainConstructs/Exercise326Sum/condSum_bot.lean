@@ -1,3 +1,8 @@
+/-ai
+The sum-valued conditional at bottom returns the bottom of the sum.
+
+Unfold the composite, apply the elementwise computation of the embedding, and use the bottom identity of the conditional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

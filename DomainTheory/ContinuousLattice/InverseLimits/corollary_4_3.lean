@@ -1,3 +1,8 @@
+/-ai
+Given Scott maps from the levels of an ω-system into a complete lattice that commute with the inclusions, there is a unique Scott map from the inverse limit that recovers each component by composition with the embedding of that level. It sends a compatible sequence to the supremum of the component values.
+
+The mediating map preserves directed suprema, so it is a Scott map, and factorization through the embeddings recovers the components. Another Scott map with the same factorizations agrees with it at a compatible sequence because that sequence is the supremum of the embeddings of its coordinates, the family of those embeddings is nonempty and directed, and the map preserves that supremum.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

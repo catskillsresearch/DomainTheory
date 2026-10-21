@@ -1,3 +1,8 @@
+/-ai
+The embedded neighbourhood system is a subsystem of U.
+
+The master neighbourhoods agree. A member is an embedded set, which is a neighbourhood of U. If the intersection of two embedded sets is a neighbourhood of U, its nonemptiness supplies an intersection index whose embedded set equals the intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

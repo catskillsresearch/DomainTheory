@@ -1,3 +1,8 @@
+/-ai
+If the consistency characteristic is primitive recursive, then the function sending a paired code to the intersection index of its two components is primitive recursive.
+
+Compose the characteristic with the two projections. The inner selection of the append code against the left projection, and the outer selection of that result against the right projection, are primitive recursive and agree with the paired intersection index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

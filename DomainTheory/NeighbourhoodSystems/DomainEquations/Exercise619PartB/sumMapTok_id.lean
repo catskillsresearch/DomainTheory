@@ -1,3 +1,8 @@
+/-ai
+The separated sum of the two identity maps is the identity map of the separated sum.
+
+The two approximable maps are equal because they relate the same neighbourhoods. In the forward direction the master clause uses membership of the input and the fact that every neighbourhood lies under the master, while a left or right identity inclusion becomes an inclusion of equal bit embeddings. In the backward direction a master output is the master clause. A left output whose input is the master would place the empty string in a bit embedding, a right-tagged input is an inclusion of opposite bits, and a left-tagged input unpacks the inclusion of bit embeddings. The right output is symmetric.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

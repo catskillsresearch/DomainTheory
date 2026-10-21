@@ -1,3 +1,8 @@
+/-ai
+If no neighbourhood of a system is empty, then no neighbourhood of its infinite iterate is empty.
+
+The zeroth fibre of a neighbourhood of the iterate is a neighbourhood of the original system, so it contains some element. Pairing that element with the index zero gives a point of the neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

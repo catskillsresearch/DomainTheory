@@ -1,3 +1,6 @@
+/-ai
+Atom insertion sends an atom token to insertion of the underlying atom into a finite set of atoms, and sends the bottom token and both pair constructors to the identity.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

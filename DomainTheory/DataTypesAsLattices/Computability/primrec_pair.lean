@@ -1,3 +1,8 @@
+/-ai
+The Cantor pairing function is primitive recursive in its two arguments.
+
+Pairing is recovered as the sum of the second argument with the quotient by 2 of the product of the sum of the arguments and one more than that sum, using addition, multiplication, division, and successor, and this expression is identified with pair by reflexivity.
+ai-/
 module
 
 public import Mathlib.Computability.RE

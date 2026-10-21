@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the final-segment neighbourhood system on the natural numbers, the ascending chain of its finite elements and the strict increase of that chain, the limit element together with its totality and uniqueness, and the classification of every element as a finite element or the limit.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.Basic

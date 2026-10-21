@@ -1,3 +1,8 @@
+/-ai
+A T₀-space is injective if and only if it is a retract of some power of the Sierpiński space.
+
+If the space is injective, the identity extends along its embedding into the product of one copy of the Sierpiński space for each open set, and the embedding together with that extension is a retract. Conversely, every power of the Sierpiński space is injective, and a retract of an injective space is injective.
+ai-/
 module
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski

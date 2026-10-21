@@ -1,3 +1,8 @@
+/-ai
+For v strictly below w, the entry at position w minus one minus v of the reverse memo table at w is the course-of-values value at v.
+
+The table is the code of the reverse memo list, lookup on a code is defaulted indexing, and that index of the reverse list is the value at v; the two index expressions agree.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

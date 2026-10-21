@@ -1,3 +1,8 @@
+/-ai
+If clipping a list and keeping the nondegenerate pairs yields nothing, the canonical list is the singleton of the pair zero and one.
+
+Unfold the canonical list and rewrite by that emptiness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

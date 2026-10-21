@@ -1,3 +1,6 @@
+/-ai
+The triple sequence takes the first neighbourhood at index zero, the second neighbourhood at index one, and the third neighbourhood at every other index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

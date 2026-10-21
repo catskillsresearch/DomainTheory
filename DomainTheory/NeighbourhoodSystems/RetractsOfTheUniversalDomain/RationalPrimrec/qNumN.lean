@@ -1,3 +1,6 @@
+/-ai
+The negative numerator part of a rational code is the second component of the first component of the code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

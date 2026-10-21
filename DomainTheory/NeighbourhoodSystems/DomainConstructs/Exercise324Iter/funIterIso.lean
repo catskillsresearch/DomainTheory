@@ -1,3 +1,6 @@
+/-ai
+The domain isomorphism of Exercise 3.24(ii) identifies elements of the function space into an iterate with elements of the iterate of the function space. It transports the order isomorphism on approximable maps through the function-space equivalence, the pointwise inverse function-space equivalences, and the sequence equivalence of the iterate.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,3 +1,6 @@
+/-ai
+The data objects of V are a bottom token Δ, a top token ∇, and left and right product copies of a token. Equality of these tokens is decidable.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

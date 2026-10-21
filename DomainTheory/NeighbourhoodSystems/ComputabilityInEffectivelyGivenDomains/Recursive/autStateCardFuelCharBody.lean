@@ -1,3 +1,6 @@
+/-ai
+One fuel step of state-card counting dispatches on the tag in the first component of the code: tag zero yields one, tag one yields two more than the coded length of the payload, tag two yields the sum of the previous function on the two subcodes, tag three yields their product, and any other tag yields zero.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

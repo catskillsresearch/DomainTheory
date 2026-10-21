@@ -1,3 +1,6 @@
+/-ai
+The sum extraction from the universal domain into the sum of the fixed neighbourhoods of a and b is the sum of the two subsystem projections, composed after the sum extraction of the universal domain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

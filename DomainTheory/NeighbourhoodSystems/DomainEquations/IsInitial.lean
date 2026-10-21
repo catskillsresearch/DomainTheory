@@ -1,3 +1,6 @@
+/-ai
+An initial algebra for an endofunctor is an algebra equipped with a homomorphism into every algebra for that endofunctor and with the assertion that this homomorphism is the only one.
+ai-/
 module
 
 

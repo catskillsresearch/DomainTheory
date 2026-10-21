@@ -1,3 +1,7 @@
+/-ai
+The union of a list of natural numbers is bottom when the list is empty, and otherwise the union of the numeral of the head with the union of the tail.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

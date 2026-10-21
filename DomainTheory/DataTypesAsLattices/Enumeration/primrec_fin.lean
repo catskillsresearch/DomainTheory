@@ -1,3 +1,8 @@
+/-ai
+The finite-set code fin is primitive recursive.
+
+Unfold it as the binary bit scan at the pair of the argument with one more than the argument, and use primitive recursiveness of that binary scan.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

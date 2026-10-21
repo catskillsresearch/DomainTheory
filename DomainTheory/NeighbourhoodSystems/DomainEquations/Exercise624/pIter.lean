@@ -1,3 +1,6 @@
+/-ai
+The pair iteration starts from the pair of singleton sets of the empty string. The successor of a stage applies fTok to the two coordinates in the first coordinate and gTok to them in the second.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

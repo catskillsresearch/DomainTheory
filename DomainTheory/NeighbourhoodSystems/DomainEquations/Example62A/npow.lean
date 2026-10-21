@@ -1,3 +1,6 @@
+/-ai
+For positive n, the n-fold product of a neighbourhood system V is the neighbourhood system on Fin n × β whose neighbourhoods are the proper products of families of neighbourhoods of V. Its master neighbourhood is the product of the master neighbourhoods. A consistent intersection of two such products is the product of the componentwise intersections, and every such product is contained in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

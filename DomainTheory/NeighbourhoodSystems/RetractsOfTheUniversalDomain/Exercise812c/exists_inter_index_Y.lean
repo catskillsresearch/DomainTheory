@@ -1,3 +1,8 @@
+/-ai
+If the intersection of the i-th and j-th sets of the second enumeration is a neighbourhood of D₁, then that intersection equals some set of the enumeration, and the corresponding YPseq sets have the same intersection.
+
+The covering names the intersection as some set of the enumeration. The equivalence between intersections on the two sides pushes that equation across to YPseq.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

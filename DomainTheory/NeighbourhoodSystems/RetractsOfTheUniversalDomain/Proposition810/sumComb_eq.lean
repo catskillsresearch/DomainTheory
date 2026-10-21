@@ -1,3 +1,8 @@
+/-ai
+The sum combinator of two self-maps is the conditional composed after the pairing of the which-map with the pairing of the two branches, all composed after the sum extraction. The left branch is the sum injection after the left injection after the first map after the left extraction, and the right branch is the corresponding composite with the second map and the right injection and extraction.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

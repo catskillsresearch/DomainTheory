@@ -1,3 +1,8 @@
+/-ai
+The Minkowski-sum map plusMap is a computable map from the product presentation of PNpres to PNpres. The test reduces to one computable neighbourhood inclusion against the primitive-recursive reindexing plusIdx.
+
+The presentation supplies a recursively decidable inclusion test. Pairing the two input indices and then applying plusIdx is primitive recursive, and pairing the result with the output index is primitive recursive. The inclusion test along that reindexing decides the relation of plusMap, by plusMap_rel_iff after simplifying the unpairing, and the recursively enumerable reading is computability of the map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

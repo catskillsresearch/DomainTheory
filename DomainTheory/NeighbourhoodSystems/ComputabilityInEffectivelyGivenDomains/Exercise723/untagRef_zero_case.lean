@@ -1,3 +1,9 @@
+/-ai
+If the first component of the numeral decoding of a code is zero, the reference decoder returns the empty list paired with the second component.
+
+Rewrite the definition and simplify by the zero hypothesis.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

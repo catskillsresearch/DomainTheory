@@ -1,3 +1,8 @@
+/-ai
+If both neighbourhood systems are effectively given, their smash product is effectively given in Scott's sense.
+
+The two given presentations determine a Scott presentation of the smash product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

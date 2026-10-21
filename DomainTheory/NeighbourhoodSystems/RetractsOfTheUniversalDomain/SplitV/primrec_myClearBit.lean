@@ -1,3 +1,8 @@
+/-ai
+The function sending a packed pair to myClearBit of its two components is primitive recursive.
+
+Two to the power of the right component is primitive recursive, and subtraction of that power from the left component agrees with the clear by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

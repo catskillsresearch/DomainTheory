@@ -1,3 +1,8 @@
+/-ai
+The family of Smyth power-domain neighbourhoods is closed under binary union.
+
+Concatenate the lists witnessing the two neighbourhoods. A set lies in the concatenated list when it lies in one of the two lists, and a set lies in the union of the two unions of down-sets when it lies in one of those unions. The two descriptions match by splitting on which list, or which union, contains the witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

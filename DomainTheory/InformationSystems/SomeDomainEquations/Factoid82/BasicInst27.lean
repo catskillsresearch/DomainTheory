@@ -1,3 +1,6 @@
+/-ai
+Forgetful insertion of lambda tokens is left commutative, because insertion of the two underlying raw tokens commutes.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

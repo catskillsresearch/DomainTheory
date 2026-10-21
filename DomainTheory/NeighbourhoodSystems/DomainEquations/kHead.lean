@@ -1,3 +1,6 @@
+/-ai
+Given an approximable map k from the product of V and E into E, and an element a of V, the head map in the second variable is k composed with the pairing of the constant map at a and the identity on E.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

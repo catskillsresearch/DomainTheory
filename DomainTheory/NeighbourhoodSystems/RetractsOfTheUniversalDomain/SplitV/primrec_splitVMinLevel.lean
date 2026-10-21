@@ -1,3 +1,8 @@
+/-ai
+splitVMinLevel is primitive recursive.
+
+The two components of the canonical index are primitive recursive. The minimal level of that pair agrees with splitVMinLevel after the unpair-pair identities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

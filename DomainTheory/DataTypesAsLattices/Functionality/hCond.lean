@@ -1,3 +1,6 @@
+/-ai
+The conditional clause applies the lambda retract to a conditional tested by the which combinator on the recursive call at the zeroth payload component. The matching branch is itself a conditional on elimination of that call, choosing the recursive calls at the first and second payload components, and the other branch is the recursive call at the third payload component.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

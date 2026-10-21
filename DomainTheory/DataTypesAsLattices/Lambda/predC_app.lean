@@ -1,3 +1,8 @@
+/-ai
+The predecessor combinator applied to a set equals the predecessor of that set.
+
+The beta law applies, using Scott continuity of the predecessor.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

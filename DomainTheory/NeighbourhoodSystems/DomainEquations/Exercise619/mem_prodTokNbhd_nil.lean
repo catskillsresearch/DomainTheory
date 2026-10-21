@@ -1,3 +1,8 @@
+/-ai
+The empty word belongs to every product neighbourhood.
+
+It is the word inserted at the root of the product neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

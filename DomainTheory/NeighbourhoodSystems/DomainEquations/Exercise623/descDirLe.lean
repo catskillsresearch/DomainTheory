@@ -1,3 +1,8 @@
+/-ai
+The Kleene iterates are directed in the pointwise order: any two lie below a common later iterate.
+
+The later index is the maximum of the two indices, and monotonicity of the iterates along each comparison with that maximum gives the two inequalities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

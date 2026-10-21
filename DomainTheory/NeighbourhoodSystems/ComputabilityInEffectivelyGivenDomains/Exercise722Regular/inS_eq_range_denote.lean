@@ -1,3 +1,8 @@
+/-ai
+The members of S are exactly the nonempty denotations of expressions.
+
+Extend by a language. If it lies in S, completeness supplies an expression denoting it, and membership in S supplies nonemptiness of that denotation. Conversely, a nonempty denotation lies in S by soundness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

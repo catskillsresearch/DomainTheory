@@ -1,3 +1,6 @@
+/-ai
+Upsampling rewrites a level-k mask at a level k' as the natural number whose set bits are the residues r below 2^{k'} for which the bit of r modulo 2^k is set in the original mask. It is the sum of the corresponding powers of two.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

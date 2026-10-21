@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 4.4 (ii). An element u lies in the range of a ⊗ b if and only if u is the sequence pair of its applications at the numerals 0 and 1, the zeroth component lies in the range of a, and the first component lies in the range of b.
+
+If u is fixed by the product, the application law writes u as the sequence pair of the two retracted components, and the component laws show that those components are already fixed by a and by b. Conversely, the application law together with the two typing equations rebuilds u.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

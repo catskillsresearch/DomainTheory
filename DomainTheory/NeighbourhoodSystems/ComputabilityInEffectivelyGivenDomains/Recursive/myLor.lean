@@ -1,3 +1,6 @@
+/-ai
+The iterative bitwise disjunction of a and b is the accumulator obtained by iterating the bitwise-disjunction step a + b times, enough to consume every set bit of a and of b, starting from the initial packed state.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

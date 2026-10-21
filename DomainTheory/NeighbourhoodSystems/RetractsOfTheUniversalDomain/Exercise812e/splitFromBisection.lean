@@ -1,3 +1,6 @@
+/-ai
+If a triple of sets is presented by the prober, the target, and the prober, the bisection split returns the empty set paired with the target neighbourhood when the intersection decider fires, the target neighbourhood paired with the empty set when the difference decider fires, and the two halves of the bisection otherwise. An unpresented triple is sent to the choice split.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

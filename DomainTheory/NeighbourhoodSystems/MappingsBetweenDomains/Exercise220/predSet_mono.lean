@@ -1,3 +1,8 @@
+/-ai
+The predecessor of sets of natural numbers preserves inclusion.
+
+A number whose successor lies in the smaller set has its successor in the larger set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

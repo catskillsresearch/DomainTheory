@@ -1,3 +1,8 @@
+/-ai
+Any two Kleene iterates are dominated by a later iterate: every pair related by either is related by the later one.
+
+The later index is the maximum of the two indices, and monotonicity of the iterates along each comparison with that maximum gives the two inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

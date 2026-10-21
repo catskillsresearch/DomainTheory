@@ -1,3 +1,8 @@
+/-ai
+The forward map is a left inverse of the inverse map from elements of D' to elements of C.
+
+Compare elements by membership. An encoded cone or completed cone in the forward image of the inverse image comes from the corresponding membership law for the inverse map. Conversely, the subelement law writes a neighbourhood as an encoded cone or a completed cone, and the corresponding membership law puts it back into the composite.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,3 +1,6 @@
+/-ai
+The elements of a neighbourhood system form a partial order under inclusion of the neighbourhoods they contain, Scott's approximation order.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

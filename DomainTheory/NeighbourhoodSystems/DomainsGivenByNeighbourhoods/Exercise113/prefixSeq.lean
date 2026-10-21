@@ -1,3 +1,6 @@
+/-ai
+The length-n initial segment of an infinite path of bits is the empty list when n is zero, and at a successor it is the previous segment with the next bit of the path appended.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

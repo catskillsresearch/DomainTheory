@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the terminal map into the one-point domain, the exponential adjunction, and the two instances that maps into the one-point domain form a subsingleton and that there is a unique such map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

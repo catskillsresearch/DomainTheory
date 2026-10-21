@@ -1,3 +1,8 @@
+/-ai
+In a well-order, every neighbourhood of the final-segment system is a principal final segment.
+
+A neighbourhood is a nonempty upper set, so the well-founded order supplies a least element. No member of the set lies strictly below that element, so the set is contained in the principal final segment of the least element. Every point of that segment lies above the least element, and the upper-set property returns it to the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

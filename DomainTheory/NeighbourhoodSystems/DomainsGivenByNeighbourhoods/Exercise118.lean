@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the development of Exercise 1.18 on consistent subsets and filter intersections, the two comparison theorems for the intersection of a nonempty family of filters, the two comparison theorems for the least filter containing a consistent set, the master neighbourhood of the three-point system, pairwise nonempty intersections in the three-member family, membership of the triple, emptiness of the running intersection of the triple, and the theorem that the family is not finitely consistent.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.Basic

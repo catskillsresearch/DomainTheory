@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the infinite pairing of a sequence of maps, the order isomorphism between maps into an iterate and sequences of maps, the pointwise transport of order isomorphisms, the induced domain isomorphism, the quantifier swap behind the pairing, the elementwise value of the pairing, monotonicity of projection composites, and the coordinatewise criterion for an inequality of maps into an iterate.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

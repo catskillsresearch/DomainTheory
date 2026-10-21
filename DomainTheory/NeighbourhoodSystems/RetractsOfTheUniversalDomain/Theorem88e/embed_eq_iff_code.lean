@@ -1,3 +1,8 @@
+/-ai
+Two index sets of the embedding agree if and only if the corresponding coded sets agree.
+
+Each direction is antisymmetry of the two subset comparisons between index sets and coded sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

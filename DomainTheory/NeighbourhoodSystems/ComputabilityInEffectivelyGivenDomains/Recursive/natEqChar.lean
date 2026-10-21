@@ -1,3 +1,6 @@
+/-ai
+The natural-number equality character of a and b is the {0,1}-valued quantity one minus the sum of a minus b and b minus a. It is the comparison used for tags and elements.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

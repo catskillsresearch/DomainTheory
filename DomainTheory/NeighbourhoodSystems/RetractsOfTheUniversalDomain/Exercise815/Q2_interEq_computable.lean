@@ -1,3 +1,8 @@
+/-ai
+When the enumerator is primitive recursive, it is recursively decidable whether the intersection of two enumerated neighbourhoods equals a third.
+
+Reindex the intersection-equality decision of the universal domain along the primitive recursive evaluation of the three unpaired components. After the pairing is unpacked, the two predicates agree.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

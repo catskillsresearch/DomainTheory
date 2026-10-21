@@ -1,3 +1,8 @@
+/-ai
+The product of two strict approximable maps is strict.
+
+The bottom of a product is the pair of the two bottoms. The product map sends that pair to the pair of the two images, each of which is bottom by strictness, and that pair is the bottom of the product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,3 +1,8 @@
+/-ai
+A point lies in a coordinate set if and only if its value at that coordinate is true.
+
+The two sides are definitionally the same.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

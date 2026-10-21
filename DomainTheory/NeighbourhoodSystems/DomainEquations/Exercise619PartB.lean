@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the Part B development of Exercise 6.19. It includes the basic setup; strictness, identity, and composition for the token-level sum and product actions on maps; the same three laws for functor expressions; monotonicity of the sum action, the product action, and the expression action; the subsystem laws for the token sum, the token product, and the object action; and continuity of the object action and of the map action, both the forward direction and the full equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.Basic

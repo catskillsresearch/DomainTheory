@@ -1,3 +1,6 @@
+/-ai
+Scott's G-bar is the application of the bar combinator to the combinator G.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

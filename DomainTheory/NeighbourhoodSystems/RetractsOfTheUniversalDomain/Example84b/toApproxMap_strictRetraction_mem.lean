@@ -1,3 +1,8 @@
+/-ai
+Z belongs to the application at y of the map associated with strict of φ if and only if Z is an E-neighbourhood and either Z is the master or y is not bottom and Z belongs to the application at y of the map associated with φ.
+
+Unfold curry, the composite, the pairing, the second projection, and evaluation, then apply the closed form of fade and the characterization of check containing {0}.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

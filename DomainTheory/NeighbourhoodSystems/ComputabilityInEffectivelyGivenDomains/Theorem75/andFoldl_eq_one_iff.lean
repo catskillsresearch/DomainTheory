@@ -1,3 +1,8 @@
+/-ai
+A left fold that selects the bounded characteristic of a function, started from a value at most one, returns one if and only if the start is one and the function returns one on every entry.
+
+The empty list is immediate. For a cons, the next accumulator is still at most one, so the inductive hypothesis applies. If the start is zero, the selection is zero and the conjunction fails. If the start is one, the selection is the bounded characteristic of the head, and the quantifier over the list splits into the head and the tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,3 +1,7 @@
+/-ai
+Consistency of a finite set of function-space tokens, in the sense of Scott's Definition 7.1(iii), means that every subset whose input union is consistent in the domain has output union consistent in the codomain.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

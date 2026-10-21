@@ -1,3 +1,6 @@
+/-ai
+fstTok is Scott's first component of an element of the concrete product. A neighbourhood of the component is a neighbourhood of the first factor for which the product element contains the product neighbourhood formed with the master of the second factor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

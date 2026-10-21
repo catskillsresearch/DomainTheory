@@ -1,3 +1,8 @@
+/-ai
+For each u, the map sending t to the application of u to the successor of t is Scott continuous.
+
+This is the substitution theorem applied to the continuity of application of u and the continuity of the successor.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the subsystem relation of Definition 6.10 and the infix notation for that relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

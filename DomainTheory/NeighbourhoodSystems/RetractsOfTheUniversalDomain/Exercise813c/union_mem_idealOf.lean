@@ -1,3 +1,8 @@
+/-ai
+The ideal of a set of points of Cantor space is closed under union.
+
+The union of two generated sets is generated, and the union of two subsets is a subset.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

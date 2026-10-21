@@ -1,3 +1,8 @@
+/-ai
+A filter of the strict function space contains the step-function set of a list of neighbourhood pairs exactly when it contains the step set of every pair in the list.
+
+The proof is by induction on the list. The empty step-function set is the master neighbourhood, which belongs to the filter. For a list with a head pair, that set is the intersection of the head step with the step-function set of the tail. From membership of the intersection, a witness in the intersection makes the head step a neighbourhood, and upward closure along the two inclusions puts both the head step and the tail set into the filter; the inductive hypothesis splits the tail. In the other direction the two pieces belong to the filter by the hypothesis and the inductive hypothesis, and the filter is closed under intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

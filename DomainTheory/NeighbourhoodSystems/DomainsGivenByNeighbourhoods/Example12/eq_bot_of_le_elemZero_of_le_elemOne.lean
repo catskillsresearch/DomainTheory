@@ -1,3 +1,8 @@
+/-ai
+The bottom element is the only common lower bound of the two total elements of Example 1.2.
+
+The classification puts such an element at the bottom or at one of the two total elements, and each total element fails to lie below the other.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

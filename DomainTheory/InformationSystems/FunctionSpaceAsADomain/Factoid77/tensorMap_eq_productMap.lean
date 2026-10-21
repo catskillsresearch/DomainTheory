@@ -1,3 +1,9 @@
+/-ai
+A morphism from the tensor of A and Y to the tensor of A and Y' is the same as an approximable map between the corresponding product information systems.
+
+The two types are definitionally equal.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

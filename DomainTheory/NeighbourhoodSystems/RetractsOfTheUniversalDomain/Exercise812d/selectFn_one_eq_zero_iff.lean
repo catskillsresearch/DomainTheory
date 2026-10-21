@@ -1,3 +1,8 @@
+/-ai
+Selecting 1 or a value X by a flag equals 0 if and only if the flag is 0 and X is 0.
+
+If the selection is 0, the flag is 0, because a vanishing selection forces a vanishing flag, and selection at flag 0 returns X, so X is 0. Conversely, if both are 0, selection at flag 0 returns X, which is 0.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

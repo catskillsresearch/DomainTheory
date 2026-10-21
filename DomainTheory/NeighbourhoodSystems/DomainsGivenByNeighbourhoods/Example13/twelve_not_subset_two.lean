@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood {1, 2} is not contained in {2}.
+
+If it were contained, the token 1, which belongs to {1, 2}, would belong to {2}, contradicting the definition of {2}.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

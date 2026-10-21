@@ -1,3 +1,8 @@
+/-ai
+The function sending a paired natural number to the raw difference of its two components is primitive recursive.
+
+The canonical indices of the two components, their levels and masks, and the maximum of the levels are primitive recursive by composition with the pairing projections and the maximum. Each upsampled mask is primitive recursive by composing upsampling with the level, the common level, and the mask. Their and-not is primitive recursive by composing and-not with that pair, and pairing the common level with the result agrees with the raw difference by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

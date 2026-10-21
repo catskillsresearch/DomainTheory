@@ -1,3 +1,8 @@
+/-ai
+If the empty string lies in the left copy of X, then X equals the master of D₀.
+
+The empty string is not a false-tagged string, so the remaining disjunct of the left copy forces X to be the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

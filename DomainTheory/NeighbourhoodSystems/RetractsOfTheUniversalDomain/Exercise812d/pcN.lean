@@ -1,3 +1,6 @@
+/-ai
+The depth extractor reads the middle component of an outer packed argument, a pair of a bit-source with a pair of a depth and a state. The bit-source itself is unused in the step.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

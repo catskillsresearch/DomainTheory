@@ -1,3 +1,6 @@
+/-ai
+The accompanying component of Park's solution is the pointwise product of the star of a with the union of b · x₀ and d.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

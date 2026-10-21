@@ -1,3 +1,6 @@
+/-ai
+The one-step transition reads the current index and the packed state from its argument. The bit is the remainder modulo 2. The candidate codes prepend that index to the positive list and to the negative list. Two emptiness checks test those refinements. The new state halves the remainder, selects the positive and negative codes by the bit, and selects the new U-code by the bit and the two checks: an empty refinement yields the code 0, a refinement that already exhausts the atom carries the old code, and a genuine split takes the left or right split of the old code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

@@ -1,3 +1,8 @@
+/-ai
+A rational lies in the universal neighbourhood of the coded Y sequence at n exactly when it lies in the universal neighbourhood of some non-junk depth-(n+1) atom whose bit-source is i plus two to the power n for an i below that power.
+
+This is the membership characterization of the code fold at bound two to the power n, using that the fold has found a witness by that stage.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

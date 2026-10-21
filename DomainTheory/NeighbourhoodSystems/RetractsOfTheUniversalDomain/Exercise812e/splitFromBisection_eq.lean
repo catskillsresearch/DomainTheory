@@ -1,3 +1,8 @@
+/-ai
+On a presented triple, the bisection split is the empty set paired with the target neighbourhood when the intersection decider fires, the target neighbourhood paired with the empty set when the difference decider fires, and the two bisection halves otherwise.
+
+The given indices are themselves a presentation witness. Congruence identifies the chosen witness's deciders with the given ones. The two firing branches are then immediate, and the silent branch rewrites the chosen halves by the bisection congruences.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

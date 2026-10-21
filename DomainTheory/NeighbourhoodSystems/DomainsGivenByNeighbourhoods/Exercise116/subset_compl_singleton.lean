@@ -1,3 +1,8 @@
+/-ai
+If a natural number lies outside a set, that set is contained in the complement of the singleton of that number.
+
+A point of the set cannot equal that number, or the number would belong to the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

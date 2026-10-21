@@ -1,3 +1,12 @@
+/-ai
+The characteristic deciding whether a rational-pair list code presents a nonempty set is
+primitive recursive.
+
+The nonemptiness flag of the left component is primitive recursive by composition.
+Composing the bounded existential characteristic of that flag with the pairing of the
+identity and the constant zero, then unfolding the characteristic and simplifying the
+pairing projections, matches the stated function.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

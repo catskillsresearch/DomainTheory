@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports Proposition 5.5: composition of approximable mappings, and the fact that composition acts as composition on elements.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55.Basic

@@ -1,3 +1,8 @@
+/-ai
+Any subset that contains zero and is closed under successor contains the carved-out set.
+
+That subset is a pre-fixed point of the generating operator: zero lies in it by hypothesis, and the successor of a member lies in it by the closure hypothesis. The least fixed point is therefore contained in the subset.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

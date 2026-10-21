@@ -1,3 +1,6 @@
+/-ai
+qpClipGe m p clips a rational pair up to the closed ray from m by replacing the left endpoint with the maximum of that endpoint and m, and leaving the right endpoint unchanged.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

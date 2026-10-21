@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Theorem 4.3 (ii). If a set is typed by the function space a ∘→ b and an argument is typed by a, then the value is typed by b.
+
+Typing and the function-space application law write the set as the composite of b with the composite of the set and a. Applying that equation and unfolding composition twice writes the value as b applied after the set applied after a. Typing of the argument replaces the inner application of a by the argument.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,3 +1,6 @@
+/-ai
+The element sqrtC is a combinator realizing the integer square root. It is the S combinator applied to S applied to K applied to primRecZeroC and to sqrtStepC, and then applied to S applied to K and to K.
+ai-/
 module
 
 public import Mathlib.Computability.RE

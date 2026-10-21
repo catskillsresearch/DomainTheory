@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the fixed-point theorem together with the relativized neighbourhood system below an element, the embedding and the restriction, their order isomorphism, the restricted endomap, and the membership, master, comparison, and round-trip laws for the embedding and the restriction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

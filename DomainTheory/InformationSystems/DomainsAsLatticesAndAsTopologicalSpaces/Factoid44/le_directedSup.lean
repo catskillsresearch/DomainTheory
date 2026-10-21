@@ -1,3 +1,9 @@
+/-ai
+Each member of a nonempty directed family lies below the directed supremum.
+
+Finite consistency of the union of the carriers reduces the inequality to the corresponding inequality for the family supremum.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,3 +1,7 @@
+/-ai
+The parameterized fixed-point map of a binary operation g is the graph of the map sending x to the fixed point of g at x.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

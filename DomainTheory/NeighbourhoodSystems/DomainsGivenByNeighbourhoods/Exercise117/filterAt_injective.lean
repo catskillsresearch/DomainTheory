@@ -1,3 +1,8 @@
+/-ai
+If the point filters of two reals agree, then the reals are equal.
+
+Suppose they differ, and take the case where the first is strictly smaller. Density gives a rational strictly between them and a rational strictly above the larger real. The open interval between those rationals is a rational-interval neighbourhood containing the larger real, so it belongs to the larger point filter and hence to the smaller one. Membership would require the smaller real to lie strictly above the intermediate rational, contradicting the choice of that rational. The symmetric case, with the second real strictly smaller, is the same construction with the two reals exchanged.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

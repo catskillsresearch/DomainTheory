@@ -1,3 +1,8 @@
+/-ai
+For finite sets a, b, and c of output tokens, the choice-free union satisfies a ∪' (b ∪' c) = b ∪' (a ∪' c).
+
+Extensionality reduces the equation to membership. In each direction, membership in a choice-free union is split twice, and the three alternatives are reassembled so that b is the outer summand and a is nested in the second union.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

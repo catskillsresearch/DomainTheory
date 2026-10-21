@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the isomorphism of Proposition 6.6 and the identity law for the composite of the two unique homomorphisms between initial algebras. Any two initial algebras for an endofunctor are isomorphic, and the isomorphism is assembled from the unique homomorphisms in the two directions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

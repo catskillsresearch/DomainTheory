@@ -1,3 +1,8 @@
+/-ai
+The retraction of a continuous-lattice projection sends bottom to bottom.
+
+Bottom lies below the inclusion of bottom. The retraction is monotone and inverts the inclusion, so the retraction of bottom lies below bottom. The reverse inequality is the bottom bound.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

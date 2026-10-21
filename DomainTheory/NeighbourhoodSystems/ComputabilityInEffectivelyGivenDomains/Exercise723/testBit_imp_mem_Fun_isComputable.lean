@@ -1,3 +1,9 @@
+/-ai
+The implication that guards one bit of an excluded neighbourhood is recursively decidable, jointly in the bit index, the two neighbourhood indices, and the bit word. The word is packed as the index followed by the pair of the two neighbourhood indices and the bit word.
+
+The bit test is decidable by the bit characteristic, which is primitive recursive in the packed word, and which equals one exactly on the set bits. Membership of the index in the function neighbourhood of the two complements is decidable by transporting the corresponding decider along the reindexing of the packed word. The implication is equivalent to the disjunction of the failure of the bit test with that membership. From the implication, the bit test either fails or yields membership. From the disjunction, a failed bit test contradicts a true bit, and membership is the conclusion.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

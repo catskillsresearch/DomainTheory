@@ -1,3 +1,8 @@
+/-ai
+The concrete token sum is free of the empty set: every neighbourhood is nonempty, so the sum is an object of Scott's category.
+
+This is the preceding nonemptiness lemma.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

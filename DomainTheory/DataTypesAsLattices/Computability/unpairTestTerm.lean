@@ -1,3 +1,6 @@
+/-ai
+The term unpairTestTerm applies variable 4 to the successor of unpairDeltaTerm and to unpairSqrtTerm, the comparison of one more than the unpairing remainder with the integer square root.
+ai-/
 module
 
 public import Mathlib.Computability.RE

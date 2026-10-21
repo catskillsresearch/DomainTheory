@@ -1,3 +1,8 @@
+/-ai
+A rational lies in the set presented by a list of endpoint pairs if and only if some pair on the list bounds it from the left and strictly from the right.
+
+Unfold the presented union and membership in a half-open interval.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

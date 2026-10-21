@@ -1,3 +1,8 @@
+/-ai
+The approximable map corresponding to a function-space element fixes the value of the fixed-point operator at that element.
+
+The elementwise equation rewrites the operator value as the least fixed point of that map, and the least fixed point is a fixed point.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

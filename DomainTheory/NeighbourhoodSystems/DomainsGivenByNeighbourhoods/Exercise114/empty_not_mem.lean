@@ -1,3 +1,8 @@
+/-ai
+The empty set is not a neighbourhood in the system of finite nonempty subsets of the natural numbers.
+
+Membership would require the empty set to equal the whole set of natural numbers, or to be nonempty. Both alternatives fail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

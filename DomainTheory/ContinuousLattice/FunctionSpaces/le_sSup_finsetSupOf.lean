@@ -1,3 +1,8 @@
+/-ai
+The supremum of a set lies below the supremum of the set of its finite sub-joins.
+
+Each member of the set is the join of the singleton finite set containing it, hence is a finite sub-join, and therefore lies below that supremum.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

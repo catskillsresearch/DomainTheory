@@ -1,3 +1,8 @@
+/-ai
+The lambda combinator of two self-maps is the currying of the second map composed after evaluation composed after the product of the identity on the function space with the first map.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

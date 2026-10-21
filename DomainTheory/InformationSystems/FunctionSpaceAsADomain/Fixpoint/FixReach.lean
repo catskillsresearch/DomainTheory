@@ -1,3 +1,7 @@
+/-ai
+A finite set v is reachable from the empty set by a finite w-chain when v is the value of a fix chain for w of some finite length.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

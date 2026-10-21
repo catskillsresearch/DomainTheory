@@ -1,3 +1,6 @@
+/-ai
+Doubling a finite string of bits repeats every bit. The empty string stays empty, and a string with head bit b is sent to two copies of b followed by the double of the tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

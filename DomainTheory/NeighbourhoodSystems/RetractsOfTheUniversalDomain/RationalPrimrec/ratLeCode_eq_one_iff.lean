@@ -1,3 +1,8 @@
+/-ai
+The comparison code of two rational codes equals one if and only if the first decoded rational is at most the second.
+
+Unfolding the comparison code and cancelling the pairing, the zero test equals one exactly when the truncated difference vanishes, hence when the first cross-cleared sum is at most the second. The component form of decoding and the division form of the rational constructor rewrite the rational comparison as a comparison of quotients. Both denominators are positive, so that comparison is the inequality of the cross-cleared numerators. The two directions of the resulting arithmetic comparison follow by linear arithmetic.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

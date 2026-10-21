@@ -1,3 +1,6 @@
+/-ai
+The master index is the code of the singleton list whose only pair is zero and one, a fixed index of the master neighbourhood of U.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

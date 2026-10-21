@@ -1,3 +1,8 @@
+/-ai
+If u and v are combinatory, then so is their pairing realizer.
+
+It is S applied to S applied to K applied to the pairing combinator and to u, and then to v.
+ai-/
 module
 
 public import Mathlib.Computability.RE

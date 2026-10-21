@@ -1,3 +1,6 @@
+/-ai
+A set is a token for a family C of sets when it is finite and contained in some member of C.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

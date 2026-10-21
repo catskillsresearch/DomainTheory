@@ -1,3 +1,7 @@
+/-ai
+Scott's section 2 defines the subspace FUN of graphs to be the set of those u that equal the graph of their own application.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

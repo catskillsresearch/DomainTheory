@@ -1,3 +1,8 @@
+/-ai
+The relational strictification of an approximable map lies below the map.
+
+A strictified relation projects to a relation of the original map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

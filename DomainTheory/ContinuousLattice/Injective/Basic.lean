@@ -1,3 +1,6 @@
+/-ai
+Scott's two-point Sierpiński space is the type of propositions, equipped with the Sierpiński topology.
+ai-/
 module
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski

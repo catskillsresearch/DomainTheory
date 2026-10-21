@@ -1,3 +1,6 @@
+/-ai
+The length-n Thue–Morse prefix is the list of bits at 0, 1, …, n − 1, obtained by mapping the bit function along the range of length n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

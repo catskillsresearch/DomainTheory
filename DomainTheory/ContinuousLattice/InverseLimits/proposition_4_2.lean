@@ -1,3 +1,6 @@
+/-ai
+Scott's Proposition 4.2 packages each stage as a projection of continuous lattices out of the inverse limit. The embedding is the Scott-continuous stage embedding, the retraction reads the stage coordinate, the retraction after the embedding is the identity because a component at its own stage is the original element, and the embedding after the retraction lies below the identity by the coordinatewise comparison of that embedding with the original sequence.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

@@ -1,3 +1,8 @@
+/-ai
+The bottom Scott map, the constant map with value bottom, is a projection. This is Scott's membership of the empty join in the set of projections.
+
+By the pointwise characterization it is enough that the constant bottom map be idempotent and deflationary. Its value is bottom at every argument, so applying it twice returns the same value, and that value lies below the argument.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

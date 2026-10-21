@@ -1,3 +1,9 @@
+/-ai
+If a consistent finite set entails every token of another consistent finite set, then the closure of the second lies below the closure of the first.
+
+This is transitivity of entailment.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

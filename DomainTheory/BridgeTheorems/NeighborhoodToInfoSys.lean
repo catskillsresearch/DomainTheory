@@ -1,3 +1,6 @@
+/-ai
+Given a neighbourhood system presented by a decidable index of its neighbourhoods, the tokens of the induced information system are those indices. A finite set of indices is consistent when the finite intersection of the corresponding neighbourhoods belongs to the neighbourhood family, with the empty intersection taken to be the master set, and the set entails an index when that intersection is a neighbourhood contained in the neighbourhood of the index. The abbreviation neighborhoodSystem_to_infoSys names this information system. Its domain is order-isomorphic to the original filter domain.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

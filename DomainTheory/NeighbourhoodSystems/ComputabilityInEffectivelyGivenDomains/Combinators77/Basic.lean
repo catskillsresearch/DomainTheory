@@ -1,3 +1,8 @@
+/-ai
+The first projection of the pair part relates sharp neighbourhoods W and Z if and only if both are sharp neighbourhoods and either Z is the master neighbourhood or W is the pair embedding of neighbourhoods P and Q with P contained in Z.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77

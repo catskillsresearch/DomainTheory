@@ -1,3 +1,8 @@
+/-ai
+For fixed s and u, the body of the term-level dollar step is Scott continuous in z.
+
+Binary substitution uses continuity of the conditional in its condition and in its else-branch, continuity of the identity, and continuity of the composite of application of s applied to the term shift of u with the predecessor.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,8 @@
+/-ai
+If a base element lies below another, then for every finite string the head recursion of the smaller base lies below the head recursion of the larger base.
+
+On the empty string the comparison is the given inequality. On a string that begins with a letter, the successor operation of that letter is monotone and the recursive comparison supplies the inequality of the remainders.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

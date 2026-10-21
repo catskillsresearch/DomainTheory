@@ -1,3 +1,6 @@
+/-ai
+The bottom token of V, written Δ_V, is the bottom constructor.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

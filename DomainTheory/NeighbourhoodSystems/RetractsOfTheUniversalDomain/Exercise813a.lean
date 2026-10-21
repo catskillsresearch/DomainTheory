@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic development of Exercise 8.13(a), the bit-reduction lemmas, nonemptiness and the level-set form of a generator, membership of generators and of complements in V, generation of affine classes, their unions, and level sets, the equivalence of V-membership with generation by the generators, independence of the generators, and the isomorphism of U with V.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.Basic

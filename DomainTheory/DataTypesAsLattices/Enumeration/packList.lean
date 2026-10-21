@@ -1,3 +1,6 @@
+/-ai
+The single generator of a finite tuple, written in the paper as the conditional of the packed tuple at G, sends the empty list to the bottom element and sends a cons cell to the binary sequence of its head with the packing of its tail.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+The carrier of the coalesced-sum presentation at a code is the coalesced-sum enumeration of that code.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

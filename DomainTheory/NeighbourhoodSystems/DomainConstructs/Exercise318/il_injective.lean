@@ -1,3 +1,8 @@
+/-ai
+The left tag is injective.
+
+If two left tags are equal, simplifying the definition of the left tag yields equality of the underlying tokens.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

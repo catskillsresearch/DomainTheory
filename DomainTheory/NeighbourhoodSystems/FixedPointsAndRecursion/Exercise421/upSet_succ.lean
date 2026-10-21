@@ -1,3 +1,8 @@
+/-ai
+The up-set of m + 1 is the successor image of the up-set of m.
+
+After unfolding both sides, a number at least m + 1 has predecessor at least m, and the successor of a number at least m is at least m + 1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

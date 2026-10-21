@@ -1,3 +1,6 @@
+/-ai
+The left copy of a set X is the false tag of X, united with those strings of the separated-sum master for which X equals the master of D₀. The set-builder clause keeps the definition free of a decision as to whether X is the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

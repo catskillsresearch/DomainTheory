@@ -1,3 +1,8 @@
+/-ai
+The subset character of a fuel and two expression codes is primitive recursive as a function of their packed triple.
+
+The guard, the product of the bit-string character of the candidate and the test that one minus the excess of its length over the subset bound equals 1, is primitive recursive, with the bound formed from the two automaton-state cardinalities as a product of powers of two. The two matching characters of the candidate against the two expressions are primitive recursive. Nested selection of those matches under the guard, with default 1, is primitive recursive. The parametrized bounded universal of that predicate, composed with the packing of the fuel and the two codes together with the code bound of the subset bound, agrees with the subset character after simplifying the pairing projections and unfolding the character.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

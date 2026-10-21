@@ -1,3 +1,6 @@
+/-ai
+The bottom element of Example 1.3 is the filter whose only neighbourhood is the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

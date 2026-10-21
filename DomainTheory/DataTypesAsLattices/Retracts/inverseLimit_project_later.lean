@@ -1,3 +1,8 @@
+/-ai
+Every later coordinate of a coherent inverse-limit sequence projects to an earlier one under the earlier Kleene stage.
+
+Induct along the inequality of indices. At equal indices the coordinate is fixed by its own stage. At a successor, the retract order of the stages supplies a projection equation; apply it at the successor coordinate, rewrite composition by the successor coherence equation, and use the inductive hypothesis.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

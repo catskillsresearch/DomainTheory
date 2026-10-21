@@ -1,3 +1,8 @@
+/-ai
+Decoding the list code untagList c recovers the list component of the reference untagging untagRef c. The append-code reversal inside untagList undoes the reversal built by the accumulator of the untagging step.
+
+Unfold untagList and rewrite decoding of an append code, decoding of 0, and appending nil. The specification of the untagging state identifies the accumulator with the left fold that pairs each entry onto the accumulator and adds one. An auxiliary induction on lists shows that decoding such a fold is the reversed list appended to the decoding of the starting code. Applying that identity at the starting code 0, then cancelling the empty decoding and reversing twice, yields the reference list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

@@ -1,3 +1,8 @@
+/-ai
+The comment describes inclusion of a prepended neighbourhood in a neighbourhood it refines. The declaration is the proposition true.
+
+The proof is the trivial inhabitant of true.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

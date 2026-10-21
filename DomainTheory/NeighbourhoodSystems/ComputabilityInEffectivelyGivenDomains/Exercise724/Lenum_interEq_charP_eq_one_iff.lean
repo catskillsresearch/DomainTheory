@@ -1,3 +1,9 @@
+/-ai
+The intersection of two enumerated neighbourhoods equals a third if and only if the packed intersection-equality characteristic of the three codes equals one.
+
+Unfold the packed characteristic, simplify the unpairings, rewrite by the unpacked equivalence, and apply the intersection-equality criterion.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

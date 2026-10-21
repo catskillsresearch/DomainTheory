@@ -1,3 +1,6 @@
+/-ai
+An entry of a valuation trace, a code together with a member and a time stamp, is justified when the code is zero, or else the trace records the pair of the time stamp with the member at the operator component of the unpairing of the predecessor of the code, and for every index below the time stamp plus one either that bit of the time stamp is false or the trace records the index at the argument component of that unpairing.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

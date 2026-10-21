@@ -1,3 +1,8 @@
+/-ai
+The binary test-bit function is primitive recursive.
+
+It is the decision that the remainder modulo 2 of the quotient of the first argument by two to the power of the second argument equals 1. The symmetric form of Nat.testBit_eq_decide_div_mod_eq identifies this decision with testBit.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,9 @@
+/-ai
+Scott's Theorem 3.3 (iii) follows from (i) and (ii): if val(v(n)) equals the second recursion value of val(n), then val(rec(n)) equals val(n) applied to the numeral of rec(n).
+
+Rewrite rec by its definition, then use the application equation for val, the hypothesis, equation 3.12, and the application equation for the second recursion value. An element of the resulting union is witnessed by an index belonging to the numeral of v(n), hence by that index equal to v(n). Conversely, v(n) itself belongs to that numeral and is a witness.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

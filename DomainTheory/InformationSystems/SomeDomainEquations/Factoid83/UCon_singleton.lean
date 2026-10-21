@@ -1,3 +1,8 @@
+/-ai
+Every singleton of a U-token is consistent.
+
+Rewriting the forget-finset of a singleton as the singleton of the underlying token, the claim is the lemma that a singleton of a token other than top does not V-entail top.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

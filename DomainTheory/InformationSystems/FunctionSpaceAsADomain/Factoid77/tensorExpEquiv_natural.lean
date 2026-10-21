@@ -1,3 +1,9 @@
+/-ai
+The hom-set equivalence is natural in the middle variable: the image of left tensoring by A applied to f, followed by g, equals f followed by the image of g.
+
+Injectivity of the inverse equivalence reduces the claim to an equality of uncurried maps. Unfolding the equivalence, the composition law for right uncurry applied to the curry of g, and the round trip from curry back through uncurry, identify the two sides.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

@@ -1,3 +1,8 @@
+/-ai
+Every basic neighbourhood is Scott open.
+
+The basic neighbourhood of n is the union of the family of basic neighbourhoods indexed by the singleton consisting of n.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

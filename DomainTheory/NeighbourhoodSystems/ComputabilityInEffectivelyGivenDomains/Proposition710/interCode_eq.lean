@@ -1,3 +1,8 @@
+/-ai
+The intersection code of n and m equals the left fold, along the decoded list of n and starting from 0, of the inner intersection code with parameter m.
+
+The outer step on the packed state agrees with the inner intersection code, by the outer-step equation. Unfolding the definition and rewriting by the fold-code equation therefore gives the left fold.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

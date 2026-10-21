@@ -1,3 +1,8 @@
+/-ai
+The non-positive system is not a positive neighbourhood system.
+
+Positivity applied to the two overlapping neighbourhoods would make their intersection a neighbourhood, since that intersection is nonempty. The intersection is the singleton of the middle token, which is not a neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+For each i below n, the i-th coordinate of the tuple of n scalar maps, evaluated at a stack, is the i-th map evaluated at that stack.
+
+Induct on n. No index is below zero. For a successor, the zeroth coordinate is the head of the push of the zeroth map's value onto the remaining tuple, hence that value, up to agreement of the zero indices. A later coordinate is the corresponding coordinate of the tail, which the inductive hypothesis identifies with the shifted map, and the shifted index agrees with the original index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

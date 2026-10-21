@@ -1,3 +1,6 @@
+/-ai
+The Boolean retract is the graph of the doubly strict conditional on the numerals zero and one. Scott's formula (4.3) builds the retract from that conditional.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

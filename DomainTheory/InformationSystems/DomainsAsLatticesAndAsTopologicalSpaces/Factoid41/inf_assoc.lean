@@ -1,3 +1,8 @@
+/-ai
+The meet of elements is associative.
+
+Antisymmetry uses the universal property of the meet. The left-associated meet lies below the first element and below the meet of the other two, the latter because it lies below each of them, in each case by the left or right inequality of a meet. The opposite comparison is symmetric.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33

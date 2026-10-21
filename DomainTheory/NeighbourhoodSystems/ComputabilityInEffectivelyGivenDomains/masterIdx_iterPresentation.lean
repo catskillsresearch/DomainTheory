@@ -1,3 +1,8 @@
+/-ai
+The master index of an iterated computable presentation is 0.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

@@ -1,3 +1,8 @@
+/-ai
+The inclusion of the fixed-point set into the ambient lattice preserves directed suprema.
+
+The underlying element of a directed supremum of fixed points is the endomap applied to the supremum of the underlying set. The image of a nonempty directed set of fixed points is nonempty, and it is directed because a common upper bound among the fixed points remains a common upper bound after the subtype is forgotten. Preservation of directed suprema by the endomap rewrites the left side as the supremum of the image of that underlying set under the endomap. On fixed points the endomap is the identity, so that image is the underlying set.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

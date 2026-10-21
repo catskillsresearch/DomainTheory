@@ -1,3 +1,8 @@
+/-ai
+The code of the union of two U-neighbourhoods, read from a packed pair, is primitive recursive.
+
+Unfolding the union code, appending the canonical codes of the two components is primitive recursive, and the unpairing equations show that this composite equals the stated function.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

@@ -1,3 +1,8 @@
+/-ai
+The smash product of any two approximable maps is strict.
+
+The master clause of the relation is reflexivity. A proper rectangle equates the product neighbourhood of the two masters with another product neighbourhood, so injectivity identifies a component master with a proper neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

@@ -1,3 +1,6 @@
+/-ai
+A strict map is an approximable map equipped with a proof that it is strict, with the approximation order inherited from the function space.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

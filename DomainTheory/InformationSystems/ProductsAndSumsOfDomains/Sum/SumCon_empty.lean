@@ -1,3 +1,8 @@
+/-ai
+The empty set of sum tokens is sum-consistent.
+
+Its left projection is empty, hence consistent in A, and its right projection is empty, so the left disjunct of sum consistency applies.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

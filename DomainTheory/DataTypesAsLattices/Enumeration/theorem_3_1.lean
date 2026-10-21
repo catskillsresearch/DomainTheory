@@ -1,3 +1,9 @@
+/-ai
+An element of Pω is combinatory if and only if it is generated from G.
+
+Zero is generated from G because G applied to G equals zero. The successor is generated from G by its projection from G and zero, and the numeral 1 is the successor applied to zero. Predecessor, conditional, K, and S are generated from G by their projections from G, zero, and the numeral 1. Application preserves generation from G, so every combinatory element is generated from G. Conversely, G is combinatory, and application preserves the combinatory property.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

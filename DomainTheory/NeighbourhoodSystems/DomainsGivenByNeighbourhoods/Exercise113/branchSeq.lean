@@ -1,3 +1,6 @@
+/-ai
+The stage-n approximation of an infinite binary path is the finite element of the length-n prefix of the path.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

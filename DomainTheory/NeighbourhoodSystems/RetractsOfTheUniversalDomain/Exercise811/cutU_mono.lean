@@ -1,3 +1,8 @@
+/-ai
+The Dedekind up-set is monotone in the real: if t ≤ t' and the up-set of t holds at r, then the up-set of t' holds at r. Raising t weakens the cut point 1 − t and enlarges the up-set.
+
+The bound r ≤ 1 is kept. If 1 − t is strictly below r, then 1 − t' is strictly below r as well. If r = 1, that alternative is kept.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

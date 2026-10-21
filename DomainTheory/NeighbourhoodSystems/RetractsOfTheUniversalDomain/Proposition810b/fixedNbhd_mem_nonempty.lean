@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the fixed neighbourhood system of an approximable self-map is non-empty.
+
+Such a neighbourhood is a neighbourhood of the universal domain by the subsystem inclusion, and every neighbourhood of the universal domain is non-empty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

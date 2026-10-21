@@ -1,3 +1,8 @@
+/-ai
+Two approximable maps out of the domain of binary sequences agree as soon as they agree on every partial finite element and every total finite element.
+
+Extensionality on principal neighbourhoods applies. The membership classification of that domain splits each neighbourhood into a partial cone or a total singleton, and the two hypotheses cover those cases.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports the closing results of Exercise 6.23: the basic development of the syntactic domain, the composite of the expression homomorphism with its inverse, the fixed-point property of an algebra homomorphism, the comparisons of the descending relation and of the descending map with an algebra homomorphism, and the strictness of the subsystem projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.Basic

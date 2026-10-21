@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 4.4. The product of two retracts is a retract.
+
+Unfold the retract equation and compare graphs. On an argument u, two applications of the product and the two component laws for sequence pairs reduce the value to the two retract applications.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

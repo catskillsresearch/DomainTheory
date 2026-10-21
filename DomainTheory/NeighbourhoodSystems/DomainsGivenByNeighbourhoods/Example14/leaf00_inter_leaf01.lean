@@ -1,3 +1,8 @@
+/-ai
+The intersection of the leaf 00 and the leaf 01 is empty.
+
+Extensionality reduces the equality to membership of a token. Case analysis on the seven tokens, together with the two definitions, settles each case.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

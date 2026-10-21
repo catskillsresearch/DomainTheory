@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the fixed-neighbourhood subsystem of an approximable endomap, the definition of a computable map, and the diagonal fixed-point predicate.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

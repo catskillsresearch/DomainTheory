@@ -1,3 +1,6 @@
+/-ai
+A computable set difference for the presentation of V takes the canonical difference index, together with its primitive recursiveness, its correctness whenever a representing index exists, and the recursive decidability of that existence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

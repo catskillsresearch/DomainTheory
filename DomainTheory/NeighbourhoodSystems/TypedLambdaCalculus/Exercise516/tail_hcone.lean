@@ -1,3 +1,8 @@
+/-ai
+If σ is a prefix of τ, then the partial element of the tail of σ lies below the partial element of the tail of τ.
+
+The order of partial elements is the prefix order, and a prefix relation descends to tails.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

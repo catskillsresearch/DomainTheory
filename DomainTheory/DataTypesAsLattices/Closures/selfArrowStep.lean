@@ -1,3 +1,6 @@
+/-ai
+The step of the fixed-point construction Y(λa. I ∪ (a ∘→ a)) sends a set to the union of the identity combinator with the function-space retract of the set with itself.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

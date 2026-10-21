@@ -1,3 +1,6 @@
+/-ai
+The master code is the term-algebra code formed by pairing the tag 2 with 0. It is the code that evaluates to the master index of the universal domain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

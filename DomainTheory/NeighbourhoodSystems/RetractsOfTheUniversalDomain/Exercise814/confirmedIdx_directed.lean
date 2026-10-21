@@ -1,3 +1,8 @@
+/-ai
+The confirmed compact fixed points of an element of the neighbourhood system of a closure are directed in the ambient order.
+
+Given two confirmed compacts, the element contains both principal up-sets and therefore their intersection. Its subset field supplies a compact whose up-set equals that intersection. That compact lies in its own up-set, and transporting along the equality puts it in both up-sets, hence above both compacts, and the rewritten membership confirms it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

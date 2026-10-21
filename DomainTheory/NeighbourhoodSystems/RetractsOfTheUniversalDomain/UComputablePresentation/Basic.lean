@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the constructions assembling a computable presentation of the neighbourhood system U: clipping of rational pairs, canonical presenting lists and their codes, the enumeration, intersection and the master index, the presentation itself, and the supporting facts on presented intervals, decoding, primitive recursiveness, membership, surjectivity, and Scott's two relations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

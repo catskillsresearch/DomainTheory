@@ -1,3 +1,8 @@
+/-ai
+Prepending a fixed string preserves inclusion of sets of strings.
+
+A witness string for a member of the smaller prepend remains a witness in the larger set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

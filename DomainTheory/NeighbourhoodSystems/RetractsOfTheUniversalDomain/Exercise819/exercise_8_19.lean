@@ -1,3 +1,8 @@
+/-ai
+If every neighbourhood of E is nonempty, the truth-value domain embeds in E, and the function space of E with itself embeds in E, then both the sum of E with itself and the product of E with itself embed in E.
+
+The sum embedding is the sum comparison under these hypotheses, and the product embedding is the product comparison under these hypotheses.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

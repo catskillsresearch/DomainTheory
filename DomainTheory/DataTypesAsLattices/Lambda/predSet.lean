@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, Table 2: the predecessor of a set is the set of those n for which n + 1 belongs to the set.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

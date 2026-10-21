@@ -1,3 +1,6 @@
+/-ai
+The second right-hand side sends systems D and E to their sum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

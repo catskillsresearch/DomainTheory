@@ -1,3 +1,6 @@
+/-ai
+A finite element of an information system is an element that equals the closure of some consistent finite set of tokens.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

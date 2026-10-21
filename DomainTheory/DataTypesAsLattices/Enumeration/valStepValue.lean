@@ -1,3 +1,6 @@
+/-ai
+The application selected by one Gödel code from a value v is bottom at code zero, and at a positive code p + 1 is the application of v at the numeral of the left unpairing component of p to the application of v at the numeral of the right component.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

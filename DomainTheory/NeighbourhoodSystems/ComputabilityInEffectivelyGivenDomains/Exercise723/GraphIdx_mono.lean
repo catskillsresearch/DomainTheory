@@ -1,3 +1,8 @@
+/-ai
+GraphIdx is antitone in the set of maps: if W' is contained in W, then GraphIdx W is contained in GraphIdx W'. Shrinking the set of maps can only add guaranteed content.
+
+A code witnessed by n, m₀, and m for the larger set is witnessed by the same data for the smaller set, because the universal quantifier over maps is restricted along the inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

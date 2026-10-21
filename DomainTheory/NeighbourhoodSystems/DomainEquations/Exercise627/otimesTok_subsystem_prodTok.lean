@@ -1,3 +1,8 @@
+/-ai
+The smash product is a subsystem of the product.
+
+The masters agree by reflexivity. A smash neighbourhood is the product of the two masters or a product neighbourhood of two proper neighbourhoods, and both are product neighbourhoods. Intersecting the master with a proper product neighbourhood leaves that neighbourhood, because each factor lies below the corresponding master. Intersecting two proper product neighbourhoods yields the product of the intersections, and each intersection stays proper.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

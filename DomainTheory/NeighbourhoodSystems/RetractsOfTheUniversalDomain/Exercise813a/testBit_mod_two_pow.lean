@@ -1,3 +1,8 @@
+/-ai
+The i-th bit of a natural number modulo 2 to the k equals that number's i-th bit when i is below k, and is false otherwise.
+
+The remainder is below 2 to the k. The bit formula for a multiple of that power plus a remainder, rewritten by the division algorithm, preserves the bits below k. A bit at or above k of a number below 2 to the k is false.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

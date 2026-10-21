@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the unit system is nonempty.
+
+A neighbourhood of the unit system is the universe, and the universe is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

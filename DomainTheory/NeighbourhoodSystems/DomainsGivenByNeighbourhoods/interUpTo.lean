@@ -1,3 +1,6 @@
+/-ai
+The intersection of the first n sets of a sequence is the master neighbourhood when n is zero, and is the previous intersection met with the next set when n is a successor.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

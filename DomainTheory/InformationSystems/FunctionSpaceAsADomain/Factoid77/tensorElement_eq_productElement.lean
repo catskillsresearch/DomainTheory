@@ -1,3 +1,9 @@
+/-ai
+The type of elements of the monoidal tensor of information-system objects A and Y equals the type of elements of their product information system.
+
+The two types are definitionally equal.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

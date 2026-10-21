@@ -1,3 +1,6 @@
+/-ai
+Relative to computable presentations of the domain and codomain, an approximable map is computable when the relation holding of indices n and m precisely when the n-th neighbourhood is related by the map to the m-th neighbourhood is recursively enumerable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

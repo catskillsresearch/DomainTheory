@@ -1,3 +1,6 @@
+/-ai
+The product neighbourhood of sets X and Y, over the disjoint union of the token sets, is the union of the left copy of X and the right copy of Y.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

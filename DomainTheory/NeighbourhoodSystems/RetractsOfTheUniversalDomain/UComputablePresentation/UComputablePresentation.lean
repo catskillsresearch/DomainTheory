@@ -1,3 +1,6 @@
+/-ai
+A computable presentation of the neighbourhood system U is the enumeration of canonicalized rational-pair codes, together with membership in U, surjectivity onto the neighbourhoods of U, recursive decidability of intersection equality and of consistency, a primitive-recursive intersection index, and a master index for the master neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

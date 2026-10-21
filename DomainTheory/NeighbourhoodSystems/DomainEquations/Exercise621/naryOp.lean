@@ -1,3 +1,6 @@
+/-ai
+The right-nested n-ary fold of a binary expression constructor, applied to a head and a list, returns the head when the list is empty and otherwise applies the constructor to the head and the fold of the tail. Instantiated at separated sum, separated product, coalesced sum, or smash product, this is the corresponding n-ary operation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

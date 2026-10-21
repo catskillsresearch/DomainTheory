@@ -1,3 +1,8 @@
+/-ai
+A Scott-continuous retract of a continuous lattice is a continuous lattice. This is Scott's Proposition 2.10(a).
+
+Every element way below d lies below d. For the reverse bound, d is rewritten as the supremum of the retractions of the ambient elements way below the inclusion of d, and each such retraction is way below d, so it lies below any upper bound of the set of elements way below d.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

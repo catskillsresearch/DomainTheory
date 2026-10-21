@@ -1,3 +1,8 @@
+/-ai
+Bitmask selection of the empty list is empty.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

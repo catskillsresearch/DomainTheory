@@ -1,3 +1,8 @@
+/-ai
+Applying the empty string leaves an element of the binary system unchanged.
+
+Compare elements by membership. After prepending the empty string does nothing, a witnessing inclusion gives membership by upward closure. Conversely, the neighbourhood itself is a witness, again because prepending the empty string does nothing.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

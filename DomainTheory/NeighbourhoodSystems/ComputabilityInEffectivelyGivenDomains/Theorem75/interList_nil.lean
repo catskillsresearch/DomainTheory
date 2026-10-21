@@ -1,3 +1,8 @@
+/-ai
+The intersection of the empty list inside a base set equals the base.
+
+This is reflexivity from the definition of interList.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

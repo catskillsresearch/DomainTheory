@@ -1,3 +1,6 @@
+/-ai
+The j-th fiber index of an infinite-iterate code is the j-th entry of the list coded by that code, or the master index when j lies past the coded length.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

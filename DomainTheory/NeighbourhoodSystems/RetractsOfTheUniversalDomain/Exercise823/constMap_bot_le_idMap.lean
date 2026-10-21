@@ -1,3 +1,8 @@
+/-ai
+The constant-bottom map lies below the identity map.
+
+A pair related by the constant-bottom map is a neighbourhood together with the master as output. The identity relates them because that neighbourhood is contained in the master and the master is a neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

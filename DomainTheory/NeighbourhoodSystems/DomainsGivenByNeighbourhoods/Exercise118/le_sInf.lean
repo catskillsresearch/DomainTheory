@@ -1,3 +1,8 @@
+/-ai
+The infimum of a nonempty family of filters is a greatest lower bound: any filter that approximates every member of the family approximates the infimum.
+
+A neighbourhood of such a lower bound belongs to every member of the family, and those are the neighbourhoods of the infimum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

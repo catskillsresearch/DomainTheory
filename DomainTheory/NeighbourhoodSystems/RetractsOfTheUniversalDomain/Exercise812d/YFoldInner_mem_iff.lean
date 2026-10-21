@@ -1,3 +1,8 @@
+/-ai
+Once the found flag of the inner Y-fold is 1, a point lies in the image of the running code if and only if it lies in some non-junk half-step atom below that stage at the fixed bit.
+
+The argument is induction on the stage. Zero contradicts the flag. At a successor the step is unfolded. If the current atom is non-junk and the previous flag is 0, the new code is that atom. If the previous flag is 1, the running image and the new atom are genuine, their union has a presentation code, and the union-index specification together with the inductive hypothesis splits the witness. If the current atom is junk, the accumulator is unchanged and the new index is impossible.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

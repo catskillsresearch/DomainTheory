@@ -1,3 +1,8 @@
+/-ai
+The empty word belongs to the master of the concrete token sum.
+
+It is the word inserted at the root of that master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

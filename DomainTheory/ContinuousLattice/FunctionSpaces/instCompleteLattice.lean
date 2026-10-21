@@ -1,3 +1,6 @@
+/-ai
+The type of projections on a complete lattice D carries a complete-lattice structure, obtained by supplying suprema and deriving the remaining operations from them. Suprema are those of the function space of Scott maps. This is Scott's Proposition 3.12.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

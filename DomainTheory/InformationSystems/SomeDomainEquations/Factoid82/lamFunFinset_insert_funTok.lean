@@ -1,3 +1,8 @@
+/-ai
+Inserting a function token into a finite set of raw lambda tokens inserts its input-output pair into the function set.
+
+By extensionality and the membership rule for the function set, membership splits into the inserted token or membership in the original set. The inserted token is the given function token by injectivity of the function-token constructor, and the two directions match these cases.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,3 +1,8 @@
+/-ai
+Zero does not belong to the two-fold application of the conditional combinator. Zero is the pair of zeros, and the conditional of the zero neighborhood is bottom.
+
+Rewrite the application by the two-argument law for the conditional combinator. A witnessing pair equal to zero is the pair of zeros, and the zero neighborhood together with the conditional set excludes the membership.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

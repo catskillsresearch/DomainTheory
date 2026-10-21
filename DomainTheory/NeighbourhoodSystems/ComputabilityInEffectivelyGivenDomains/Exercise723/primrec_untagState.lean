@@ -1,3 +1,9 @@
+/-ai
+The state iterator untagState is primitive recursive.
+
+The base map, which pairs its argument with the triple of zeros, is primitive recursive by pairing the identity with constant zero. The step, which applies untagStep to the second component of the second component, is primitive recursive by composing the primitive recursiveness of untagStep with two right projections. Primitive recursion of that base and step, composed with the pairing of the identity and successor, agrees with untagState: the unpaired form simplifies, the constant-iteration equation rewrites the recursion, and unfolding untagState leaves the successor iterate.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

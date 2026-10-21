@@ -1,3 +1,8 @@
+/-ai
+A token x lies in the left projection of a finite set of product tokens if and only if some token of the set has least second component and first component x.
+
+Unfolding the projection, the fold-membership lemma supplies a token of the filtered multiset whose first component is x. Membership in that filter is membership in the original set together with the least-second-component test, and the converse packages those data back into the filter.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

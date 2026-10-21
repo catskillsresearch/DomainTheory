@@ -1,3 +1,8 @@
+/-ai
+The right subtree belongs to the neighbourhood family of the binary tree.
+
+Unfold membership, the family, and the master, the two subtrees, and the four leaves, and close by simplification.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+The equation M congruent to {{Λ}} + M has a solution: some nonempty set Γ of strings has its singleton system as a subsystem of the lazy-naturals expression applied to that singleton system. This is the domain of lazy natural numbers.
+
+The general singleton-subsystem solution applies to the lazy-naturals expression, using that the expression is rooted.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

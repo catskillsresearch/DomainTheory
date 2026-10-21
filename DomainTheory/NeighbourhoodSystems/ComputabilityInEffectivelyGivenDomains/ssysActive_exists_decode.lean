@@ -1,3 +1,8 @@
+/-ai
+An active index decodes to some expression.
+
+Unfold activity and split on decoding. Failure contradicts activity, and success supplies the expression.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

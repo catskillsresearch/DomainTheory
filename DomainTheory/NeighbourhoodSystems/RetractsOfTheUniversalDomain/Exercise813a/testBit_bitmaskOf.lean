@@ -1,3 +1,8 @@
+/-ai
+The i-th bit of the bitmask of a finite set is set exactly when i belongs to the set.
+
+This is the bit test for a sum of distinct powers of two.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

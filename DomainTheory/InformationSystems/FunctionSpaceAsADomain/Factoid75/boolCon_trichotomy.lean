@@ -1,3 +1,9 @@
+/-ai
+A consistent finite set of BOOL tokens is empty-entailed, or entails the true token, or entails the false token.
+
+Consistency supplies a BOOL point that satisfies every token of the set. The undefined point satisfies only the bottom token, and every point satisfies the bottom token, so the set is empty-entailed. If the point is true and the true token belongs to the set, the set entails true; if the true token does not belong, satisfaction rules out false and the remaining bottom token is empty-entailed as before. If the point is false, the same split is made on membership of the false token.
+ai-/
+
 module
 
 public import Mathlib.Data.Multiset.MapFold

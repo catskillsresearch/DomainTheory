@@ -1,3 +1,6 @@
+/-ai
+The sum injection from the sum of the fixed neighbourhoods of a and b into the universal domain is the sum injection of the universal domain composed after the sum of the two subsystem injections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

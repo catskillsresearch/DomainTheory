@@ -1,3 +1,8 @@
+/-ai
+An element belongs to the codes of a filter if and only if its way-below neighbourhood belongs to the filter.
+
+The two sides are the same proposition by the definition of the set of codes.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

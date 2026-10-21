@@ -1,3 +1,6 @@
+/-ai
+The function-space domain isomorphism identifies approximable maps from an information system A to an information system B with elements of the function-space system. It sends a map to its associated element and an element to its associated approximable map. The two composites are the identities given by the round trips of Theorem 7.2, and the forward map reflects the pointwise order by the comparison of associated elements.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

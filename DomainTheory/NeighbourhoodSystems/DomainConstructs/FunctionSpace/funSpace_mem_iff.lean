@@ -1,3 +1,8 @@
+/-ai
+A set of approximable maps is a function-space neighborhood if and only if it is nonempty and equals the step neighborhood of a finite list of neighborhood pairs.
+
+This is the defining clause of the function space.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,3 +1,6 @@
+/-ai
+The neighbourhood b is the set consisting of the last two tokens.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

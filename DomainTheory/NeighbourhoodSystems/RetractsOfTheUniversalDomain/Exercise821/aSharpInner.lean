@@ -1,3 +1,6 @@
+/-ai
+The inner sharp of an endomap a of the universal domain is the catamorphism on its tree algebra that applies a on leaves and the tree algebra's own pairing on nodes.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

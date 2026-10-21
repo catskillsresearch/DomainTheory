@@ -1,3 +1,8 @@
+/-ai
+The code-level pullback of the code-level pushforward of an element of the first system is that element.
+
+By extensionality of elements it is enough to compare membership of an arbitrary neighbourhood. If the neighbourhood is the basic neighbourhood of a Y-sequence code m whose basic neighbourhood equals that of an X-sequence code n met by the element, the cross-parity equality transports the identification, and the element meets the resulting basic neighbourhood of n. Conversely, if the element meets the neighbourhood, surjectivity names it as a basic neighbourhood of some index n, and the same equality at n and its own X-sequence code supplies the Y-sequence witness, with the remaining equations holding by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

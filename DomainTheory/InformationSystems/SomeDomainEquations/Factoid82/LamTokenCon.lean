@@ -1,3 +1,6 @@
+/-ai
+A finite set of lambda tokens is consistent when the finite set of its underlying raw tokens is consistent.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

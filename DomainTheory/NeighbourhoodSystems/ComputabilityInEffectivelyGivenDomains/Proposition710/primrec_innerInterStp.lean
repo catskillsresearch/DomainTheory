@@ -1,3 +1,8 @@
+/-ai
+If the consistency function is primitive recursive, then the inner intersection step is primitive recursive.
+
+The three unpairing projections are primitive recursive, as are the pairing of the outer index with the current index, the consistency test of that pair, and the intersection index of that pair, the last by the presentation's primitive-recursive intersection after the pairing identity. The successor of the pair of that intersection index with the accumulator is primitive recursive. The step is the primitive-recursive selection between this prepended code and the accumulator according to whether the consistency value is one, and that selection is the inner step.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

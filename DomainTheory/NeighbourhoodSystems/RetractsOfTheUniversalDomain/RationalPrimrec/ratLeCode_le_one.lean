@@ -1,3 +1,8 @@
+/-ai
+Every comparison code is at most one.
+
+The comparison code is a zero test, and a zero test is at most one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

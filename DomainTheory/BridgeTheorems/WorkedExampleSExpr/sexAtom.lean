@@ -1,3 +1,6 @@
+/-ai
+The atom element for a natural number n is the closure, in the S-expression system, of the singleton whose token is the atom n.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

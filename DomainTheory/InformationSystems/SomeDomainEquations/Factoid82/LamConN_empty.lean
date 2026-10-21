@@ -1,3 +1,8 @@
+/-ai
+The empty finset of raw lambda tokens is consistent at every stage.
+
+Induct on the stage. At stage zero both projections are empty, and the empty set is consistent in A. At a successor stage, the left alternative of the successor clause applies.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

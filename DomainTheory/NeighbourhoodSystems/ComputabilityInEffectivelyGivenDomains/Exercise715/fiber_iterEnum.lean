@@ -1,3 +1,8 @@
+/-ai
+The j-th fiber of the infinite-iterate neighbourhood coded by t is the neighbourhood indexed by the j-th fiber index of t.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

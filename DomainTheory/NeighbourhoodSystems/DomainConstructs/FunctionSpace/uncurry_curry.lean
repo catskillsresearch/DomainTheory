@@ -1,3 +1,8 @@
+/-ai
+Theorem 3.12 of Scott (1981, PRG-19) states that uncurrying the curry of an approximable map g recovers g.
+
+The two maps have the same relation. If the uncurried curry relates a neighbourhood W to an output, the product-neighbourhood preimage identity rewrites that relation as the relation of g. Conversely, the domain of the relation of g is a product neighbourhood whose left and right slices are neighbourhoods, and the relation of g on the product of those preimages is the original relation by the same identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

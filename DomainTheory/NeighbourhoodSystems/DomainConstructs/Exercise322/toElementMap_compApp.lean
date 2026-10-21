@@ -1,3 +1,8 @@
+/-ai
+The uncurried composition sends the paired element of a pair of maps with an element to the outer map applied to the inner map applied to that element.
+
+Unfold the definition and simplify by the element maps of composition, pairing, and the two projections, the two components of a pair, and the evaluation identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

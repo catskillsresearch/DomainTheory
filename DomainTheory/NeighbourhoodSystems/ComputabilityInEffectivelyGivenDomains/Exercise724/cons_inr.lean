@@ -1,3 +1,8 @@
+/-ai
+Prepending an index to an infinite sequence is the corresponding stream prepend.
+
+The equation is the defining clause.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

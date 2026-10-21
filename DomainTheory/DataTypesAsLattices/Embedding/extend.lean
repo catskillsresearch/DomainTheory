@@ -1,3 +1,6 @@
+/-ai
+The extension of Scott 1976, Theorem 1.5, sends a point y of an ambient space to the union, over all opens U containing y, of the intersection of the values of f on the trace of U in the subspace.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

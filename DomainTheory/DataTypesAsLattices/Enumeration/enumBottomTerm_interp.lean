@@ -1,3 +1,8 @@
+/-ai
+Interpreting the bottom term in any environment yields the bottom element.
+
+Simplify by the term, interpretation, environment extension, function update, and equation (2.14).
+ai-/
 module
 
 public import Mathlib.Computability.Halting

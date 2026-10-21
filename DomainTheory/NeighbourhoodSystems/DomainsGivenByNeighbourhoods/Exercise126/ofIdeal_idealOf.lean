@@ -1,3 +1,8 @@
+/-ai
+The filter of the ideal of a filter equals the original filter.
+
+By extensionality of elements. If the neighbourhood is I(F) and the span of F lies in the ideal of the filter, then each member of F lies in that span and hence in the ideal, so the singleton neighbourhoods belong to the filter, and the finite-intersection lemma puts I(F) in the filter. Conversely, the subfamily law writes the neighbourhood as I(F). The span lies in the ideal because each member of F has its singleton neighbourhood in the filter, by upward closure along the inclusion from the inclusion criterion, since the member lies in the span of F.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

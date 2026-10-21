@@ -1,3 +1,8 @@
+/-ai
+Every enumerated infinite-iterate set is a neighbourhood of the infinite iterate.
+
+Each fiber is a neighbourhood of the original system, because it is an enumerated neighbourhood. From the code onward the fiber index is the master index, so the fiber is the master neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

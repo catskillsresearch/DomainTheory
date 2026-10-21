@@ -1,3 +1,8 @@
+/-ai
+An approximable map out of the system of cones and singletons that equals the composite of the algebra structure, the indexed sum of the map, and the comparison isomorphism is the descent map of the algebra.
+
+Induction on the string, after rewriting by the recursion and unfolding the two composites and the isomorphism, shows that the map and the descent valuation agree on every partial element: the empty string uses the bottom key, and a longer string uses the key at the partial element of the tail together with the cons action on partial elements and the inductive value. The same induction, with the zero key and the cons action on total elements, gives agreement on every total element. The extension lemma, together with the descent formulas on partial and total elements, yields equality of the two maps.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

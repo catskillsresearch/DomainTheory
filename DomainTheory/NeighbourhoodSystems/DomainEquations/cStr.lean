@@ -1,3 +1,6 @@
+/-ai
+The algebra structure map of the domain C is the inverse of the domain-equation isomorphism of Example 6.2, from the sum of the unit system with two copies of C back to C, realized as an approximable map by the isomorphism construction and strict by the strictness of that construction. It sends the terminator to the lifted empty string and each bit-copy of an element to the corresponding successor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

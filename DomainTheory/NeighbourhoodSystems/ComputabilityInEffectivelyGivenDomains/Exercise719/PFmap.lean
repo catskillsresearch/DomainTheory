@@ -1,3 +1,6 @@
+/-ai
+The power-domain action of an approximable map f relates a neighbourhood A of the power domain of the source to a neighbourhood B of the power domain of the target when every neighbourhood in A is related by f to some neighbourhood in B. The master neighbourhoods are related because f sends everything under the master into the master. An intersection of targets is related because f is closed under intersection of its target and the witness intersection lands back in both targets by downward closure. A smaller source and a larger target remain related because the condition only quantifies over membership.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

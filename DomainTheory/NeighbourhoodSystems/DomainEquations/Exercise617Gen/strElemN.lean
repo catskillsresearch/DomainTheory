@@ -1,3 +1,6 @@
+/-ai
+The total element of a string is the principal element of the system of cones and singletons on the singleton of that string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

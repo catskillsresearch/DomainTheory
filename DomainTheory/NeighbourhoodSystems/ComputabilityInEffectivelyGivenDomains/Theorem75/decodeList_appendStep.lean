@@ -1,3 +1,8 @@
+/-ai
+Decoding an append step yields the entry followed by the decoding of the accumulator.
+
+Unfold the step and apply the successor clause of decoding together with the pair projections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

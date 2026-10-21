@@ -1,3 +1,8 @@
+/-ai
+If a finset is consistent at stage n and contains a function token, then its atom finset is empty.
+
+Induct on the stage. Stage zero has no function tokens, a contradiction. At a successor stage, the left alternative uses the inductive hypothesis, and the right alternative gives emptiness of the atom finset directly.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

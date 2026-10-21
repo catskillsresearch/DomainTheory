@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the development of Scott continuity on Pω: the basic notions, Scott-open sets and the fact that they are upper sets, membership in a Scott union, monotonicity of Scott-continuous maps, finite covers by basic elements, Theorem 1.1, determination of a Scott-continuous map by its values, openness of the sets of elements containing a fixed finite piece, the expression of a basic neighborhood as an intersection, openness and binary intersection of basic neighborhoods together with the zero neighborhood, the equality of those membership opens with basic neighborhoods, the existence of a basic neighborhood inside a generated open, the equivalence of Scott-open and topologically open sets, and the equivalence of Scott continuity with topological continuity.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Continuous.Basic

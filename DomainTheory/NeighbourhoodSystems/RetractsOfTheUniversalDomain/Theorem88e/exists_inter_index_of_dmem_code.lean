@@ -1,3 +1,8 @@
+/-ai
+If the intersection of two embedded neighbourhoods belongs to D, then some index presents that intersection both as an embedded neighbourhood and as a coded set.
+
+The cover supplies an index of the embedded intersection, and the intersection-equation transfer, applied to the index-set form of that equality, supplies the coded equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

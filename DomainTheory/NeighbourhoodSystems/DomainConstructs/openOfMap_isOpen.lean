@@ -1,3 +1,8 @@
+/-ai
+The set of elements sent to the top by an approximable map into the Sierpiński domain is an open set of elements.
+
+If an element lies in the set, some neighbourhood of it is related to the empty set, and every element of that neighbourhood lies in the set by the same relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122

@@ -1,3 +1,8 @@
+/-ai
+An element of a neighbourhood system that differs from bottom contains some neighbourhood other than the master.
+
+Otherwise every neighbourhood of the element equals the master. Extensionality against bottom then identifies the element with bottom: a neighbourhood of the element is the master and so belongs to bottom, and a neighbourhood of bottom is the master and so belongs to the element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

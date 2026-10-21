@@ -1,3 +1,8 @@
+/-ai
+If two approximable maps are computable in Scott's sense, their coalesced sum is a computable map between the coalesced-sum presentations.
+
+Tag and properness tests on the domain and codomain codes are recursively decidable, and the two maps' relations on the indexed neighbourhoods are recursively enumerable. The coalesced relation holds when the codomain code is improper, in which case it enumerates the master, or when both codes are proper left copies and the first map relates them, or when both codes are proper right copies and the second map relates them. A proper left codomain cannot come from the master or from a right copy, because those sets meet a nonempty left injection emptily or fail to be a left injection, and a proper right codomain is symmetric. This combination is recursively enumerable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

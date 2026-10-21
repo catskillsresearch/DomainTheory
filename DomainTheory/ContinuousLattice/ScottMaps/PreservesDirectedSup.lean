@@ -1,3 +1,6 @@
+/-ai
+A map between complete lattices preserves directed suprema when, for every nonempty directed set, the image of the supremum equals the supremum of the image.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

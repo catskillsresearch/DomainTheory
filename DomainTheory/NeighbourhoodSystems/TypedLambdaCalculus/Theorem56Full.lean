@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the results of the full form of Scott's Theorem 5.6, that every partial recursive function is λ-definable: the component and stack lemmas, the strict guards, the λ-definitions of zero, successor, projection, composition, primitive recursion, and minimization, the search equations and the divergence argument, and the one-argument corollary.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.Basic

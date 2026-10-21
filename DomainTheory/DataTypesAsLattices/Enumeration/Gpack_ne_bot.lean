@@ -1,3 +1,8 @@
+/-ai
+The packed combinator is distinct from bottom.
+
+If it were bottom, applying both sides to the numeral 0 and using the left projection of a pair sequence would make successor equal the application of bottom at that numeral. The number 1 lies in the application of successor to the numeral 0, and simplifying the application of bottom contradicts that membership.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

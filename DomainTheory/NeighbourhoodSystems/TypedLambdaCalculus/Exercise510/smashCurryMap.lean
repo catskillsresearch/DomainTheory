@@ -1,3 +1,6 @@
+/-ai
+The strict curry of a strict map out of the smash product relates a neighbourhood X to a strict-function neighbourhood exactly when the section of the map at X, which is strict, belongs to that neighbourhood. The domain, codomain, and master clauses are membership of X, membership of the neighbourhood, and the two master neighbourhoods. Intersection on the right uses closure of the strict function space under nonempty intersection, and monotonicity uses upward closure of its neighbourhoods together with monotonicity of the section in X. If X is the master, every output in the step list is the master, because the section collapses the smash pair to bottom and strictness of the original map forces that output, so the neighbourhood is the set of all strict maps.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

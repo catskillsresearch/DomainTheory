@@ -1,3 +1,8 @@
+/-ai
+In a continuous lattice, way-below interpolates: if a is way below c, some b satisfies a way below b and b way below c.
+
+Let M be the set of elements m for which some x is way above m and way below c. The set M is directed. Given two such witnesses, directedness of the elements way below c produces a common upper bound still way below c, and directedness of the elements way below that bound, after the original elements are pushed up by monotonicity on the right, produces a common upper bound in M. The set M is nonempty because bottom is way below a and a is way below c. Its supremum is c: every member lies below c because way-below implies the order, while continuity writes c as the supremum of the elements way below it and each of those as the supremum of the elements way below it, all of which lie in M. Thus a is way below the supremum of the nonempty directed set M, so a is way below some member of M. That member is way below some x that is way below c, and monotonicity on the right gives a way below x.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

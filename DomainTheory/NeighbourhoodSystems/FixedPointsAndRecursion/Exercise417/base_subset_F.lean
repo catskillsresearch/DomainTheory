@@ -1,3 +1,8 @@
+/-ai
+The union of the unit with the two generators is contained in the image of every subset under the monoid power-set operator.
+
+That union is the left-hand summand of the union that defines the operator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

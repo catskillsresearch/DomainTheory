@@ -1,3 +1,8 @@
+/-ai
+The master neighbourhood differs from the neighbourhood one.
+
+The token 0 belongs to the master neighbourhood. The supposed equality would place it in the neighbourhood one, which simplification of that membership rejects.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,8 @@
+/-ai
+The zeroth approximant of the search returns bottom at every stack.
+
+The zeroth approximant is the bottom map, and the approximable map associated with the bottom element returns bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

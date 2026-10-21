@@ -1,3 +1,8 @@
+/-ai
+The zero test applied to the numeral of 0 yields the numeral of 1.
+
+Unfold the test and rewrite by the three-argument β-rule for the conditional and the zero clause of equation (2.7).
+ai-/
 module
 
 public import Mathlib.Computability.RE

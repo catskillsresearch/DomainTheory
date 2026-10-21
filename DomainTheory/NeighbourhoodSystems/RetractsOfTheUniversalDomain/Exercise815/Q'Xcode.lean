@@ -1,3 +1,6 @@
+/-ai
+The raw index of a list code is the fold, starting from the master index of the universal domain, of the step that intersects the running accumulator with the enumerator at the next decoded entry.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

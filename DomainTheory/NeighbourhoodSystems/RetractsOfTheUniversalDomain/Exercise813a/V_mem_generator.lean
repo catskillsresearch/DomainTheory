@@ -1,3 +1,8 @@
+/-ai
+Every generator is a V-neighbourhood.
+
+The generator equals a level set, and that level set is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,3 +1,8 @@
+/-ai
+The n-th fiber of the pinning of copy n to a set X is X itself.
+
+Extensionality and simplification of the fiber and the pinning give the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

@@ -1,3 +1,6 @@
+/-ai
+The nonempty branch of the list-equality step returns a new flag and a new remainder. The flag is the equality of the current head with the head of the remaining code when the old flag is set, and is 0 otherwise. The remainder is the tail of that remaining code.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

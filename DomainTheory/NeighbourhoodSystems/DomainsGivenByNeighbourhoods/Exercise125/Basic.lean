@@ -1,3 +1,20 @@
+/-ai
+Every element of the final-segment system approximates the filter of all neighbourhoods.
+
+A neighbourhood belonging to the element is a neighbourhood, so it belongs to the filter of all neighbourhoods.
+
+The filter of all neighbourhoods is total.
+
+Any element above it remains below it, by the comparison of an arbitrary element with that filter.
+
+A total element equals the filter of all neighbourhoods.
+
+The element lies below that filter, and totality applied to the filter, which lies above the element, gives the reverse comparison.
+
+If the token order has no greatest element, the filter of all neighbourhoods is distinct from the principal filter of every principal final segment.
+
+Given a point strictly above the generator of such a segment, the principal final segment of the higher point belongs to the filter of all neighbourhoods, hence to that principal filter, so the lower segment is contained in the higher one. A strict increase rules out that containment.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

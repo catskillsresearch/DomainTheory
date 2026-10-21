@@ -1,3 +1,6 @@
+/-ai
+The fixed point of an approximable self-map of the function space is the approximable map read from the fixed element of that self-map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

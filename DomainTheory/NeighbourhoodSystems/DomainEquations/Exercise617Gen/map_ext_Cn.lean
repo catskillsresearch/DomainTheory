@@ -1,3 +1,8 @@
+/-ai
+Two approximable maps out of the system of cones and singletons are equal once they agree on every partial element and every total element.
+
+Equality of maps follows from agreement on principal elements. A neighbourhood of the system is a cone or a singleton, and the two maps agree on the corresponding partial or total element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

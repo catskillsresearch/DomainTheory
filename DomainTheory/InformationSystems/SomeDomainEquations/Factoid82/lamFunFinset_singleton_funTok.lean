@@ -1,3 +1,8 @@
+/-ai
+The function set of a singleton function token is the singleton of its input-output pair.
+
+By extensionality and the membership rules for the function set and for a singleton, the unique function token is the given one, and injectivity of the function-token constructor identifies its pair. Conversely, substituting that pair recovers the function token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,3 +1,6 @@
+/-ai
+The infimum of a nonempty family of filters is the filter of neighbourhoods that belong to every member of the family. Any member of the family witnesses that such a neighbourhood is a neighbourhood. The master belongs to every member. Binary intersections and upward closure hold in each member, and therefore hold in the infimum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

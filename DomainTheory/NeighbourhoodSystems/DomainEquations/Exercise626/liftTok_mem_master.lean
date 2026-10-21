@@ -1,3 +1,8 @@
+/-ai
+The lift master is a neighbourhood of the lift of D.
+
+Membership is the left disjunct, by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

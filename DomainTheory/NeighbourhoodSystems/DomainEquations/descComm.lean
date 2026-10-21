@@ -1,3 +1,8 @@
+/-ai
+The descent map composed with the inverse domain-equation equivalence equals the structure map composed with the triple sum of the identity on the unit system and two copies of the descent map.
+
+Rewrite the descent map by the recursion it satisfies, associate the composite, and cancel the equivalence composed with its inverse, which is the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

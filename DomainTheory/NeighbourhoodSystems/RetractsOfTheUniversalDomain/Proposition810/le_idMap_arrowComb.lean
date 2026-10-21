@@ -1,3 +1,8 @@
+/-ai
+If two self-maps of the universal domain lie below the identity, then so does their arrow combinator.
+
+Compare elements. The elementwise form of the arrow combinator and monotonicity of the arrow injection reduce the inequality to the lambda combinator lying below the identity on the extracted element, which holds by the below-identity half of the lambda combinator. The arrow injection after the arrow extraction then lies below the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

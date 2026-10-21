@@ -1,3 +1,6 @@
+/-ai
+The list lookup of a code c at an index i is the second component of the fold, over c, of the indexing step, started from the pair of i plus one and zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

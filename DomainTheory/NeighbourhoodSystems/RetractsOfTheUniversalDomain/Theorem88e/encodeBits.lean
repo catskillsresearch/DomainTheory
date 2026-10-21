@@ -1,3 +1,6 @@
+/-ai
+The length-n bit encoding of a sign sequence is zero at length zero, and at a successor length is the shorter encoding plus two to the current length when the sequence's new bit is true.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

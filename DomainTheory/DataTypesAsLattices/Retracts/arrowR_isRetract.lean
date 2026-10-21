@@ -1,3 +1,8 @@
+/-ai
+If a and b are retracts, then the function space from a to b is a retract.
+
+Graph extensionality reduces the retract equation to an equality of values. That equality is the first clause of Theorem 4.3, rewritten by the application law for the function-space retract.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,3 +1,6 @@
+/-ai
+The values of a set of fixed points of a map on Pω are the image of that set under the inclusion of the fixed-point subtype into Pω.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

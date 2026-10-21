@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (5.21). Every set a is contained in V(a), the application of the closure combinator to a.
+
+The application law rewrites the right-hand side as the graph of V(a). The inclusion of a in the graph of its own application, followed by the pointwise reverse inclusion of application of a in V(a), gives the containment.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,3 +1,8 @@
+/-ai
+If an element of the reconstructed system confirms every generator of a finite index list by some witness list, then one witness list confirmed by the element has finitely generated subsystem containing that of the original list.
+
+Proceed by induction on the list. The empty list is witnessed by the empty list, using membership of the master neighbourhood. For a head and a tail, concatenate the witness of the head with the inductive witness of the tail. The element contains the up-set of the concatenation because it contains both up-sets and is closed under intersection. The concatenated system contains the head generator and the tail system by monotonicity along the two sides of the concatenation, using the characterization of inclusion by membership of the generators.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

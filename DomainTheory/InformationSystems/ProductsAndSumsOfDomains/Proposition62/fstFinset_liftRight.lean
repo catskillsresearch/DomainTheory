@@ -1,3 +1,8 @@
+/-ai
+The first projection of the right lift of a finite set of tokens of B is contained in the singleton of the bottom token of A.
+
+A member of that first projection comes from a right-tagged token of the lift, and the projection equation forces the member to be the bottom token of A.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

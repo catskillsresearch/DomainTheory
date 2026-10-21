@@ -1,3 +1,6 @@
+/-ai
+The one-point domain is the singleton neighbourhood system on the singleton of the empty string, the terminal object of Scott's category.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

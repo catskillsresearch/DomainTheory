@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, §4. The retract order a ⊑ b holds when a equals both composites a ∘ b and b ∘ a.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

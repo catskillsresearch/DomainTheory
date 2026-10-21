@@ -1,3 +1,6 @@
+/-ai
+The coordinatewise infimum of a set of compatible sequences, before the compatibility proof is packaged, is the function whose value at stage n is the infimum of the n-th coordinates of the members of the set.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

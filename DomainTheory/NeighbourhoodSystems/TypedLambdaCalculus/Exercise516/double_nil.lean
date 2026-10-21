@@ -1,3 +1,8 @@
+/-ai
+Doubling the empty string yields the empty string.
+
+This is the empty-string clause of the definition of doubling, by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

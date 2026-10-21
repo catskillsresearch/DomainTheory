@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic development of Exercise 6.29 together with membership of a cylinder in the indexed product, nonemptiness of a tagged copy, disjointness of tagged copies at distinct indices, trichotomy for elements of the indexed separated sum, uniqueness of the summand reached by a sum element, and the two theorems that an infinite smash product has only its master and therefore a subsingleton element domain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.Basic

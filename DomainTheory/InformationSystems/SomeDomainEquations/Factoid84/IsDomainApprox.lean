@@ -1,3 +1,6 @@
+/-ai
+An approximable map from the powerset system P to itself satisfies Scott's conditions (1) through (5) when it is reflexive and idempotent, contains the finite element of 0 in the image of the bottom element, sends the finite element of 1 to the top element, and does not contain the finite element of 1 in the image of the finite element of 0.
+ai-/
 module
 
 

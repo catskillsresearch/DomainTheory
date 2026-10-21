@@ -1,3 +1,6 @@
+/-ai
+The two-way combination of packed found-flag and code pairs returns the second pair when the first found nothing, returns the first pair when only the first found something, and returns found flag 1 paired with the union of the two codes when both found something.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

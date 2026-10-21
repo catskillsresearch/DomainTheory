@@ -1,3 +1,9 @@
+/-ai
+Scott's discussion after equation (4.38) states that if x and y are typed by the tree retract, then the pair of the numeral 1 with the pair of x and y is typed by the tree retract.
+
+Rewrite by equation (4.38). The right typing rule for the sum applies once the tensor typing says that the inner pair is typed by the tensor product of the tree retract with itself.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,6 @@
+/-ai
+The embedding of stage n into the inverse limit, as a bare function, sends x to the compatible sequence whose m-th coordinate climbs from x when m is at least n and descends from x when m is below n.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

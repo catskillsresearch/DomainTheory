@@ -1,3 +1,6 @@
+/-ai
+The strict bottom token of the strict function space from A to B is the ordinary bottom function token, together with the proof that empty entailment of an input yields empty entailment of the output because the empty set is empty-entailing.
+ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

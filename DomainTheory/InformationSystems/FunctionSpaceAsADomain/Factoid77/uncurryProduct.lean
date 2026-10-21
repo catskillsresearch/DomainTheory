@@ -1,3 +1,7 @@
+/-ai
+The product uncurry of a morphism from Y into the exponential of A and Z is the approximable map from the product of A and Y to Z obtained by swapping the factors and then applying the function-space uncurry.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

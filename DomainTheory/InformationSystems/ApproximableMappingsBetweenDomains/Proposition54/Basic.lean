@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports approximable mappings and the identity approximable mapping, as the setting for Proposition 5.4 of Scott 1982, which identifies the identity relation with entailment and shows that the identity acts as the identity on elements.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable

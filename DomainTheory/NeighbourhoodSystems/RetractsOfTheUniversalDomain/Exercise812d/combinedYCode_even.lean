@@ -1,3 +1,8 @@
+/-ai
+At an even index 2k, combinedYCode equals the second presentation applied to XPseqCode at k.
+
+Unfold combinedYCode. The index is even, so the conditional takes the recovered-piece branch, and dividing by two recovers k.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

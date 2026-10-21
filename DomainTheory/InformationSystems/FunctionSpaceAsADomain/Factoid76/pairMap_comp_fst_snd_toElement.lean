@@ -1,3 +1,8 @@
+/-ai
+Pairing the composite of a map k with the first projection and the second projection, and evaluating at the pair of an element p with an element y, yields the pair of the value of k at p with y.
+
+The two sides have equal first projections and equal second projections, by the projection laws for a pairing, for composition, and for a paired element.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

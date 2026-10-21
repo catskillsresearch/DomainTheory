@@ -1,3 +1,8 @@
+/-ai
+The intersection of the basic open of a singleton token a with the basic open of a finite set s is the basic open of s with a inserted.
+
+The intersection of two basic opens is the basic open of their formal union, and the formal union of a singleton with s is insertion of the token.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

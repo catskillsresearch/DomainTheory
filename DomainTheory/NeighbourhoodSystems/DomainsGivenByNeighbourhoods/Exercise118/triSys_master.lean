@@ -1,3 +1,8 @@
+/-ai
+The master neighbourhood of the three-token system is the whole three-element token set.
+
+The two sides agree by the definition of the system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,6 @@
+/-ai
+The term predClosed is the closed combinator λx. pred x, with the bound argument at variable 4.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

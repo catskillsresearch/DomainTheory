@@ -1,3 +1,8 @@
+/-ai
+The constant-bottom map is a projection.
+
+It is a retraction, and it lies below the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

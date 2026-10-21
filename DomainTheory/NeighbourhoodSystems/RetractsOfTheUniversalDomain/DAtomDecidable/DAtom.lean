@@ -1,3 +1,6 @@
+/-ai
+The atom of a positive list and a negative list of indices is the set of indices that lie in every positive index set and in none of the negative index sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Lemma 6.15, Proposition 6.12, the order embedding of elements induced by a projection pair, and the predicate that a neighbourhood system has finitely many neighbourhoods, as the shared preliminaries for Exercise 6.28.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615

@@ -1,3 +1,8 @@
+/-ai
+The strict identity sends each numeral to itself.
+
+Unfold the definition and simplify the element maps of composition, pairing, and the identity. If the numeral is zero, the zero test is true and the conditional returns the first branch. If it is a successor, the zero test is false and the conditional returns the second branch. Both branches are the original numeral.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

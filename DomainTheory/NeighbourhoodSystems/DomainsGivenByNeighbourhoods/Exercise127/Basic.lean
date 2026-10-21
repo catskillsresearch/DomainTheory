@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports boundedness of a set of elements, the family of upper bounds, the least upper bound, the two-term sequence, and the nonemptiness of the upper bounds of a bounded set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

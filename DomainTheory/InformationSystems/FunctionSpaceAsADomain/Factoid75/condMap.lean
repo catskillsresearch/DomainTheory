@@ -1,3 +1,6 @@
+/-ai
+The conditional map of elements x and y is the approximable map from the Boolean system that relates a consistent Boolean set u to a consistent set v when empty entailment of u implies empty entailment of v, entailment of true implies that v lies in x, and entailment of false implies that v lies in y. The empty relation holds because the empty set entails neither true nor false. Unions and monotonicity are checked by the trichotomy of a consistent Boolean set into the empty, true, and false cases, using that one Boolean point cannot satisfy both true and false.
+ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

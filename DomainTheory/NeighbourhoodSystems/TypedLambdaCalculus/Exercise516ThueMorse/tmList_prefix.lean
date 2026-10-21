@@ -1,3 +1,8 @@
+/-ai
+Thue–Morse prefixes are nested: if n is at most m, then the length-n prefix is a prefix of the length-m prefix.
+
+Induction on m. If m is zero, then n is zero and the prefixes agree. If m is a successor, either n is strictly below m + 1, in which case the inductive hypothesis and the successor law give a prefix of the extended prefix, or n equals m + 1 and the prefix relation holds by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

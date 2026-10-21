@@ -1,3 +1,6 @@
+/-ai
+The space of projections of a complete lattice D, Scott's J_D from Definition 3.11, is the subtype of Scott maps from D to D that are projections.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

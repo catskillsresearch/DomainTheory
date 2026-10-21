@@ -1,3 +1,6 @@
+/-ai
+The uncurried product of d is an approximable map from the product of the function space with the universal domain into the universal domain. It evaluates the pair whose first component decodes sub of d of sub of the second projection, and whose second component evaluates the first projection at sub of the second projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

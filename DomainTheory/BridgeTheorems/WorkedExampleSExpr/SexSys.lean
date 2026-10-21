@@ -1,3 +1,6 @@
+/-ai
+The S-expression system is the tree information system over the lower-bound system on the natural numbers.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

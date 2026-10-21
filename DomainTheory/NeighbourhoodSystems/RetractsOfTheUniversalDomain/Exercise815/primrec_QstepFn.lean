@@ -1,3 +1,8 @@
+/-ai
+If the basic-neighbourhood enumeration is primitive recursive, then the step that intersects a running index with the value of the enumeration is primitive recursive.
+
+Unfold the step. The running index and the enumerated value of the list entry are primitive recursive, and their universal-domain intersection is primitive recursive.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

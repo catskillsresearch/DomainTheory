@@ -1,3 +1,8 @@
+/-ai
+The right projection of a finite set of sum tokens is empty, or else it contains some token. The argument avoids a decision procedure for equality of finite sets.
+
+Induction on the finite set. The empty set has empty right projection. Inserting a right token puts that token into the right projection. Inserting a left token or the sum bottom leaves the right projection unchanged, so the inductive alternative applies.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

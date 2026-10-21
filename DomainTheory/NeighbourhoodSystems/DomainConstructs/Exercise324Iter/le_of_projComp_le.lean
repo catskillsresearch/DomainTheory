@@ -1,3 +1,8 @@
+/-ai
+A map into an iterate lies below another whenever each composite with a coordinate projection lies below the corresponding composite.
+
+On elements, the values are compared by their components. The inequality of the projection composites, rewritten through composition and the projection, is the inequality of those components.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,3 +1,8 @@
+/-ai
+If a binary relation is recursively enumerable, then so is the predicate of a packed parameter and list code which says that the relation holds of the parameter and every entry of the decoded list.
+
+The paired form of the relation is recursively enumerable, so the unparameterised bounded universal quantification of that predicate over a decoded list is recursively enumerable, and reindexing along the pair-map of codes preserves enumerability. Decoding the mapped code is the reverse of the list of pairs, so an entry of the mapped list is the pair of the parameter with an entry of the original list, and both directions of the quantifier rewrite by that correspondence.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

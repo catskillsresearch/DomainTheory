@@ -1,3 +1,8 @@
+/-ai
+A predicate on binary strings that holds of the empty string and is preserved by both successors holds of every string.
+
+Induction on the string uses the empty-string hypothesis at the base and the successor hypothesis at a cons cell.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

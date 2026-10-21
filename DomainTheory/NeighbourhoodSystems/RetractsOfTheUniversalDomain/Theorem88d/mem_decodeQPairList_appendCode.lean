@@ -1,3 +1,8 @@
+/-ai
+A rational pair lies in the decoding of an appended code exactly when it lies in the decoding of one of the two codes.
+
+Membership is the existence of a code in the decoded list. Append splits that list membership into the two lists, and each direction reassembles the witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

@@ -1,3 +1,8 @@
+/-ai
+The enumerated neighbourhood of a concatenation code is the intersection of the two enumerated neighbourhoods.
+
+Decoding a concatenation code concatenates the decoded lists, and the principal up-set of a concatenation is the intersection of the principal up-sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

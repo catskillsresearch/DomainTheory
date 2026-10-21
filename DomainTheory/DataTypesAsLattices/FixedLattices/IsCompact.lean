@@ -1,3 +1,6 @@
+/-ai
+An element of a complete lattice is compact, in the sense internal to that lattice, when it is way-below itself.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Defs

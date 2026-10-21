@@ -1,3 +1,6 @@
+/-ai
+The left sum lift of a finite set v of tokens of A is the finite set of sum tokens obtained by folding insertion of the left constructor of each token of v, starting from the empty set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

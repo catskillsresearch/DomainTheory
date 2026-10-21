@@ -1,3 +1,8 @@
+/-ai
+The map of a set U of elements relates a neighbourhood X to the empty set if and only if X is a neighbourhood and the basic open of X is contained in U.
+
+Unfolding the relation, the alternative that the output is the whole token set is impossible for the empty set, so the remaining alternative is the basic-open inclusion. Conversely, that inclusion is the empty-output alternative of the relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122

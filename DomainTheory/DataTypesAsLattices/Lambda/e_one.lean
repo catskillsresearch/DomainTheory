@@ -1,3 +1,8 @@
+/-ai
+The finite set coded by 1 is the singleton {0}.
+
+This is the power-of-two coding of finite sets at exponent 0.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

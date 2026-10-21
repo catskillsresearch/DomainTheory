@@ -1,3 +1,8 @@
+/-ai
+The embedded set of index n is empty or a neighbourhood of U.
+
+This is the empty-or-neighbourhood law of Scott's sequence, applied to the index sets, the nonempty set of all indices, and the splitting specification of the total choice.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

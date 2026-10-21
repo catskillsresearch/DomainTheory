@@ -1,3 +1,6 @@
+/-ai
+The left subtree is the set of tokens {1, 3, 4}, corresponding to the nodes 0, 00, and 01.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,6 @@
+/-ai
+The fixed embedding of the sum of the universal domain with itself into the universal domain is a chosen map from the strong form of the embedding theorem applied to the fixed presentation of that sum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

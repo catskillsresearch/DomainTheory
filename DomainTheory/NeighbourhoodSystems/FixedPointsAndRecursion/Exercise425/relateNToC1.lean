@@ -1,3 +1,6 @@
+/-ai
+The map from the flat naturals to the unary sequence system is the strict lift that sends each numeral to the total element of that length.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

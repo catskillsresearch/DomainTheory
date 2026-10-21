@@ -1,3 +1,8 @@
+/-ai
+The element map of the inclusion sends a strict element to its element-level inclusion.
+
+Element extensionality compares an arbitrary neighbourhood. Membership through the element map gives an intermediate neighbourhood of the strict element and an inclusion witness that the neighbourhood is a strict step of some finite piece. Each pair of that step has a strict-map relation whose neighbourhood is contained in the intermediate neighbourhood, and upward closure puts the step in the element-level inclusion. Conversely, a strict step in the element-level inclusion has its strict-step neighbourhood in the strict element by the step-membership characterization. That step witnesses the element map: downward closure supplies the intermediate membership, and each pair is the downward closure of the strict-map relation together with the step relation itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

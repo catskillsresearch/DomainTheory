@@ -1,3 +1,8 @@
+/-ai
+The numerical evaluator sends the first Myhill case code of n and m to the intersection of its value at n with the set of j such that no stage at most j enumerates m.
+
+Unfold the code, apply the application law for the evaluator twice, replace the intersection code by the intersection combinator, and rewrite by equation (2.17) and the evaluation of the Myhill filter code.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+Applying the curried form of a binary map f twice recovers f(x, y).
+
+The outer graph reduces by the beta law, because the inner graph is Scott continuous in x. The inner graph then reduces by the beta law for continuity in y.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

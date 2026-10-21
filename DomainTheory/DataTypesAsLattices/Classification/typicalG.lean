@@ -1,3 +1,7 @@
+/-ai
+The typical 𝔊 set is the set of elements x of Pω such that 0 belongs to x.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

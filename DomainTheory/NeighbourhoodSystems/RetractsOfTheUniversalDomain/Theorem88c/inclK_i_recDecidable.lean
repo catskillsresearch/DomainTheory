@@ -1,3 +1,8 @@
+/-ai
+Inclusion of the neighbourhood at the third index in the neighbourhood at the first index is recursively decidable in a triple, independently of the middle index.
+
+The map sending a triple code to the pair of its third and first components is primitive recursive. Compose the inclusion decider of the re-pointed presentation with that map. Unpairing shows that the composed predicate is the required inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

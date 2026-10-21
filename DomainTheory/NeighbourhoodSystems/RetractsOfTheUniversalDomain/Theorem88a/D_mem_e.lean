@@ -1,3 +1,8 @@
+/-ai
+Every set in an enumeration of the neighbourhoods of D is a neighbourhood of D.
+
+The covering hypothesis says that the enumerated set equals itself at its own index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

@@ -1,3 +1,8 @@
+/-ai
+Finite sets that contain each other are equal.
+
+Antisymmetry of inclusion is applied to the two inclusions.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

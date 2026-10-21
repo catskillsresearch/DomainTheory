@@ -1,3 +1,7 @@
+/-ai
+This file gathers and re-exports the basic vocabulary of Scott's section 1 on graphs of continuous functions: the graph of a map, application as in Table 2, the graph predicate, abstraction, and the infix notation for application.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Continuous

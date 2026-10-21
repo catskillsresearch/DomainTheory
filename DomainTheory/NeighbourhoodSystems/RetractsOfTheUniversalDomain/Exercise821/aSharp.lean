@@ -1,3 +1,6 @@
+/-ai
+The sharp of an endomap a of the universal domain is the conjugate of its inner recursive extension by the projection pair of the tree algebra of the universal domain into the universal domain: embed into the tree algebra, apply the inner extension, and project back.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

@@ -1,3 +1,8 @@
+/-ai
+Each subbasic open of elements containing a fixed natural number k is open in the positive topology.
+
+That set belongs to the family of generators of the topology.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

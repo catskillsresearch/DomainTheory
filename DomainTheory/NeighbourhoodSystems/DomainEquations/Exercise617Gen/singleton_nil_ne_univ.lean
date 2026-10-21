@@ -1,3 +1,8 @@
+/-ai
+The singleton of the empty string is not the set of all strings.
+
+Equality would place the one-letter string of the default letter in the singleton, and simplification rules that membership out.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

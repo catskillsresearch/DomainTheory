@@ -1,3 +1,6 @@
+/-ai
+The infinite-iterate intersection of codes n and m is the code of the list of length n + m obtained by tabulating the coordinate-wise intersection generator at the code of (n + m, (n, m)).
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

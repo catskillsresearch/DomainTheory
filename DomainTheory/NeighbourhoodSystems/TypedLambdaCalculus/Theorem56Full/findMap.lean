@@ -1,3 +1,6 @@
+/-ai
+The starting map of the search runs the search on the stack obtained by pushing the numeral 0 onto the input. It is the search composed with the push of the constant numeral 0 and the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

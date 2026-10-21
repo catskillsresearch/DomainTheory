@@ -1,3 +1,6 @@
+/-ai
+Scott's Theorem 7.2 sends an element of the function space A → B to the approximable map that relates finite sets u and v when both are consistent and the function token they determine lies in the element. Domain, codomain, the empty relation, closure under output union, and monotonicity are the corresponding lemmas.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,3 +1,8 @@
+/-ai
+Negation after cons of false equals cons of true after negation, as approximable maps: negating a string headed by 0 heads the negated string by 1.
+
+By extension on finite elements of C, rewrite both sides on a partial string by composition, the partial clause of cons, and the partial clause of negation; the two sides agree by reflexivity. The total case is the same with the total clauses.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

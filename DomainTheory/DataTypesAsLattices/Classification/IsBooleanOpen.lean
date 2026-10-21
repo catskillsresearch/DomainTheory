@@ -1,3 +1,6 @@
+/-ai
+The Boolean-open subsets of Pω are the smallest class that contains every Scott-open set and is closed under binary union, binary intersection, and complement.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

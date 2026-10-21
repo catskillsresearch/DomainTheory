@@ -1,3 +1,6 @@
+/-ai
+The intersection-emptiness decider sends a code to one minus the intersection-existence decider, the complementary flag of that existence test.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

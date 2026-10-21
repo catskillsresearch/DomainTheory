@@ -1,3 +1,8 @@
+/-ai
+If the relation recovered from a function-space element holds of an input set and an output set, then the input set is consistent.
+
+The consistency witness is read off the existential hypothesis.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

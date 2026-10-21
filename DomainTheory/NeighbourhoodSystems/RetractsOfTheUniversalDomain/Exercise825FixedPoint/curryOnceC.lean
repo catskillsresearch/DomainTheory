@@ -1,3 +1,6 @@
+/-ai
+The first curry of the joint evaluator peels off the varying map and leaves the remaining pair bundled. It is a map from the function space of the universal domain into the function space of the product of that function space with the universal domain, and it is the curry of the joint evaluator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

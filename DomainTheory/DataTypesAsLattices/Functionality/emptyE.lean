@@ -1,3 +1,6 @@
+/-ai
+The empty restricted equivalence is the relation that never holds. Symmetry and transitivity follow by eliminating a false hypothesis.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

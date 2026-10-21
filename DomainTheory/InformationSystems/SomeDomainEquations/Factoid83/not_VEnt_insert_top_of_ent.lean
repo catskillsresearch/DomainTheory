@@ -1,3 +1,8 @@
+/-ai
+Adding a token other than top that is already entailed cannot create an entailment of top.
+
+An entailment of top after the insertion would, by the insertion implication, already be an entailment of top from the original set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

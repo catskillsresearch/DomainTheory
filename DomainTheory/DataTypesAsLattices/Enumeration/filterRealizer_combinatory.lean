@@ -1,3 +1,8 @@
+/-ai
+The filter realizer is combinatory.
+
+This is the first half of the specification of the element chosen as a realizer of the primitive recursive function filterNum.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

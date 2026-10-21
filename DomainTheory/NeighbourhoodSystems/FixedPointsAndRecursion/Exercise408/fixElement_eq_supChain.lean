@@ -1,3 +1,8 @@
+/-ai
+The least fixed point of an approximable endomap f equals the supremum of the monotone chain of its approximants from bottom.
+
+Extensionality of elements reduces the equality to membership of an arbitrary neighbourhood. Membership in the supremum and membership in the least fixed point are each the existence of an index, and the membership law for approximants converts a witness in either direction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

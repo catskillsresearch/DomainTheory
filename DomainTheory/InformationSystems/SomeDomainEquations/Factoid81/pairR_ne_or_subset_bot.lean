@@ -1,3 +1,8 @@
+/-ai
+If every right-pair payload of u is tree-entailed by v as a right pair, then either v has some right-pair payload, or every right-pair payload of u is bottom.
+
+Induct on the payload finset of u. The empty finset is contained in the singleton of bottom. For an inserted payload y, the entailment of y supplies either a nonempty payload finset of v, or the identification of y with bottom. The inductive hypothesis on the remainder is again one of the two alternatives, and in the subset alternative bottom together with that remainder is still contained in the singleton of bottom.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

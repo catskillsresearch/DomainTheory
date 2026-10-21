@@ -1,3 +1,8 @@
+/-ai
+The full set is a fixed value of the boxed sum of a and b.
+
+This is the symmetric form of the evaluation of the boxed sum at the full set.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

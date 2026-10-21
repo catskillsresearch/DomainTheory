@@ -1,3 +1,6 @@
+/-ai
+The shift of a sequence u is the graph of the map sending z to the sequence revaluation of u at the successor of z. It is the abstraction of the tail λt. u_{t+1}.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

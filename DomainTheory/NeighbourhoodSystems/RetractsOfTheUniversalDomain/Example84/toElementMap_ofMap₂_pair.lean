@@ -1,3 +1,8 @@
+/-ai
+The elementwise action of the one-variable map associated with a two-variable approximable map, applied to a pair, equals the two-variable elementwise action.
+
+The bridge lemma relating the two actions, applied to the associated one-variable map, rewrites by the round trip from a two-variable map to its one-variable form, and reversing the resulting equation gives the claim.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

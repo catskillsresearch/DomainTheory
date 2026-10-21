@@ -1,3 +1,8 @@
+/-ai
+The k-fold iterate of the Thue–Morse substitution on the singleton string of false is the Thue–Morse prefix of length 2 to the power k.
+
+Induction on k. The zero iterate holds by reflexivity. For a successor, the iterate steps, the inductive hypothesis and the substitution step on prefixes give the prefix of length twice 2 to the power k, which equals 2 to the power k + 1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

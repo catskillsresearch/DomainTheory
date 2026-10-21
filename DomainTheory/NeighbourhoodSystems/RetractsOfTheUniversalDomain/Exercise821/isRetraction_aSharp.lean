@@ -1,3 +1,8 @@
+/-ai
+If the inner sharp of an endomap of the universal domain is a retraction, then the sharp of that endomap is a retraction.
+
+Compare the two maps on elements. Unfolding the sharp twice, cancelling the tree-algebra projection after the embedding, and using idempotence of the inner sharp shows that the sharp composed with itself agrees with the sharp.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

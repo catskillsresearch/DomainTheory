@@ -1,3 +1,6 @@
+/-ai
+U has a computable difference. The index is the canonical difference code, which is primitive recursive, presents the difference whenever that difference is a neighbourhood, and for which presentability of a difference is recursively decidable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

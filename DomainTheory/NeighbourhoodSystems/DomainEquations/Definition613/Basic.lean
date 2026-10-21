@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the pointwise data of monotonicity on domains, the predicate of being monotone on domains, the target-side neighbourhood family of an image subsystem, and the predicate of being continuous on domains.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

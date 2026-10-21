@@ -1,3 +1,8 @@
+/-ai
+The least fixed point of the map sending w to the product of the singleton of e with w, united with the singleton of e', equals the product of the star of the singleton of e with the singleton of e'.
+
+That map is definitionally the operator of Arden's lemma at those two singletons, so Arden's lemma is the claim.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

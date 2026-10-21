@@ -1,3 +1,8 @@
+/-ai
+If one doubly indexed set is contained in another, then every double fiber of the first is contained in the corresponding double fiber of the second.
+
+A token of the double fiber lies in the first set, hence in the second.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

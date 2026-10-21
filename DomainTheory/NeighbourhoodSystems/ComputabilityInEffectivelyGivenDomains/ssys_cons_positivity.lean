@@ -1,3 +1,8 @@
+/-ai
+Some neighbourhood of the system is contained in the intersection of the neighbourhoods at two indices if and only if that intersection is nonempty.
+
+A contained neighbourhood is itself nonempty, so the intersection is nonempty. Conversely, a nonempty intersection of two neighbourhoods of the system belongs to the system by positivity, and surjectivity of the enumeration supplies an index whose neighbourhood is contained in the intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

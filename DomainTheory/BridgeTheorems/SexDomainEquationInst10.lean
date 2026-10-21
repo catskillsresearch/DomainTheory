@@ -1,3 +1,6 @@
+/-ai
+This instance records that insertion of an unfolded tree token commutes on the left. Inserting the unfoldings of two tokens in either order gives the same finite set, by commutativity of insertion.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

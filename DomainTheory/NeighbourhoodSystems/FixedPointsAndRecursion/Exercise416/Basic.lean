@@ -1,3 +1,6 @@
+/-ai
+This file states Exercise 4.16. For a nonempty set of fixed points of a monotone endomap of a domain, the image of the infimum lies below the infimum, because it lies below the image of each member and each member equals its image. The monotone construction of Exercise 4.13 therefore yields a least fixed point below the infimum and below every member. Each member is an upper bound of that fixed point, so the fixed point is consistent with every member of the set. The file imports the constructions of Exercises 4.13 and 4.15, the optimal fixed point, and the infimum inequality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413

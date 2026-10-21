@@ -1,3 +1,88 @@
+/-ai
+If H is a retraction of the function space of the universal domain, then i-arrow composed with H composed with j-arrow is a retraction of the universal domain.
+
+The composite of that conjugate with itself is rewritten by associativity, by the identity j-arrow composed with i-arrow, by cancellation of the identity, and by the retraction equation for H.
+
+If H lies below the identity on the function space, then the same conjugate lies below the identity on the universal domain.
+
+Monotonicity of composition puts the conjugate below i-arrow composed with the identity composed with j-arrow. That composite is i-arrow composed with j-arrow, which lies below the identity.
+
+If H is a projection of the function space, then the conjugate is a projection of the universal domain.
+
+It is the pair of the retraction and the identity comparison just obtained.
+
+The combinator sub on the universal domain is a projection.
+
+This is the conjugation theorem applied to the projection property of subApprox.
+
+The combinator sub on the universal domain is finitary.
+
+Finitariness of subApprox supplies a domain and an order isomorphism of its elements with the fixed points of subApprox. Transport that isomorphism along the order isomorphism of the fixed points of sub with the fixed points of subApprox.
+
+The combinator sub on the universal domain is a finitary projection.
+
+It is the pair of the projection and finitariness theorems.
+
+If a is a retraction, then a fixes the value at any element z of a composed with g composed with a.
+
+Rewrite by the composition law for element maps and by the retraction equation for a.
+
+If d is a polymorphic type, then sub fixes the value of d at every element z.
+
+The sandwich lemma for the retraction sub, applied to d, rewrites by the polymorphism equation.
+
+If sub fixes an element w, then the approximable map decoded from j-arrow of w is a finitary projection.
+
+Apply the criterion that a self-map equal to its sub is a finitary projection. Transport of the fixed point says that subApprox fixes j-arrow of w. Applying the passage to approximable maps and rewriting by the element-map formula for subApprox and the approximable-map formula for the sub-filter gives that self-equality.
+
+For every element z, the approximable map decoded from j-arrow of sub of z is a finitary projection.
+
+The retraction sub fixes sub of z, so the previous theorem applies.
+
+The uncurried product of d, evaluated at a pair of a function-space element and an element t, equals the type decoded from sub of d of sub of t, applied to the underlying map of that function-space element at sub of t.
+
+Simplify by the element-map laws for composition, pairing, and the two projections, by the two pair equations, and by the evaluation law.
+
+The closed form of the product of d at a self-map f, evaluated at t, equals that same decoded type applied to f at sub of t.
+
+Simplify by the element-map laws for composition and pairing and by the evaluation law.
+
+Transporting the function-space product of d through the function-space equivalence recovers the closed form of the product at the underlying map.
+
+Compare element maps. At an element t, unfold the product and rewrite by the currying law, the uncurried evaluation formula, and the closed-form evaluation formula.
+
+The function-space product relates a set X of approximable maps to a set W if and only if both are neighbourhoods of the function space and the section of the uncurried product at X lies in W.
+
+This is the currying relation law.
+
+The section of the uncurried product at a neighbourhood X relates a neighbourhood Y to a set Z if and only if the closed form of the product, at the approximable map of the principal of X, sends the principal of Y into Z.
+
+Rewrite by the section relation, by the principal form of the relation at the product neighbourhood, by the identification of the pair of principals with the principal of the product neighbourhood, and by the uncurried and closed-form evaluation formulae.
+
+The image of a function-space element x under the product lies in a set Y if and only if Y is a neighbourhood and the closed form of the product at the approximable map of x lies in Y.
+
+Replace the image element by the filter of its approximable map. Membership in that filter is membership of the transported map, and the transport theorem identifies the map with the closed form.
+
+If Y is a neighbourhood, x lies in X, X is contained in Y, and the product relates X to itself, then the image of x lies in Y.
+
+This is the general membership lemma for a self-related neighbourhood, applied to the product.
+
+If sub relates a neighbourhood T to itself, then sub fixes the principal element of T.
+
+The two inequalities are antisymmetry. The inequality toward the principal is the identity comparison for the projection sub. The reverse inequality is the principal bound coming from the membership form of the self-relation.
+
+If t is fixed by sub and a neighbourhood T0 lies in t, then some neighbourhood T is self-related by sub, lies in t, and is contained in T0.
+
+The fixed-point hypothesis puts T0 in the image of t. The step-closure formula for the finitary projection sub supplies the neighbourhood T.
+
+The principal elements of the self-consistent family of a sub-fixed element t are directed.
+
+At the intersection of the two neighbourhoods, which lies in t, the previous existence theorem supplies a self-related neighbourhood contained in that intersection and still in t. Its principal bounds both given principals by the principal comparison and the two inclusions in the intersection.
+
+A sub-fixed element t is the directed supremum of the principals of its self-consistent family.
+
+Compare membership of a neighbourhood Z. If Z lies in t, the existence theorem supplies a self-related neighbourhood in t contained in Z, and its principal witnesses the directed-sup membership. Conversely, a witness principal contributes a neighbourhood contained in Z that lies in t, and upward closure of t puts Z in t.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

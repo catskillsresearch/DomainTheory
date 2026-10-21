@@ -1,3 +1,7 @@
+/-ai
+The transport from an element of the monoidal tensor of information-system objects A and Y to an element of their product information system is the cast along the equality of those element types.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

@@ -1,3 +1,6 @@
+/-ai
+The state extractor reads the current packed remainder-and-state component of an outer packed argument.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,8 @@
+/-ai
+The element determined by an infinite sequence determines the sequence: two sequences with the same stream element are equal.
+
+Equality of the stream elements yields equality of every finite prefix. The prefixes of length one more than n agree, and cancelling the common prefix of length n shows that the two sequences agree at n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

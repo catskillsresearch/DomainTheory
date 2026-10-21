@@ -1,3 +1,8 @@
+/-ai
+The universal neighbourhood of the union code of two codes is the union of their universal neighbourhoods.
+
+The intervals presented by the appended canonical codes form a neighbourhood of the universal system, by the interval equation for an appended code and by membership of the union. Unfolding the union code, rewriting by the canonical presentation of a code, by the fixing of a canonical list on that membership, and by the interval equation again, gives the union of the two neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

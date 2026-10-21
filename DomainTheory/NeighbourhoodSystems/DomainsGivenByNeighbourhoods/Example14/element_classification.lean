@@ -1,3 +1,8 @@
+/-ai
+Every element of Example 1.4 is the bottom element, the partial element at node 0, the partial element at node 1, or one of the four total leaf elements.
+
+If the element contains the leaf 00, 01, 10, or 11, the corresponding recognition lemma identifies it. If it contains none of those leaves but contains the left branch, it is the partial element at node 0, and if it contains the right branch, it is the partial element at node 1. Otherwise extensionality shows that its only neighbourhood is the master neighbourhood: every neighbourhood of the element is one of the seven, the six proper neighbourhoods are excluded by the case hypotheses, and the master neighbourhood belongs by the master axiom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

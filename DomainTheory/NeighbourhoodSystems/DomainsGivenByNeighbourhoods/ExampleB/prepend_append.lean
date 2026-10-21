@@ -1,3 +1,8 @@
+/-ai
+Prepending one finite binary string and then another agrees with prepending their concatenation.
+
+Compare the two sets by extensionality. A string in the iterated prepend is the first string concatenated with a concatenation of the second string with a member of the set, and associativity reassociates it. Conversely, a concatenation of the combined string with a member splits as the first string followed by the second string concatenated with that member.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

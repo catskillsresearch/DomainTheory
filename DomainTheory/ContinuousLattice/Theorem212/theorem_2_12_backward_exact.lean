@@ -1,3 +1,8 @@
+/-ai
+If an injective T₀ topology on a specified complete lattice has that lattice order as its specialization order, then the lattice is continuous and the given topology is its Scott topology.
+
+The backward direction of Theorem 2.12 supplies a homeomorphism with the Scott topology of some continuous lattice. The homeomorphism is an order isomorphism. In one direction a lattice inequality is Scott specialization, continuous maps preserve specialization, and specialization in the Scott topology of the target is its lattice order. In the other direction the inverse homeomorphism and the specialization hypothesis run the same comparison backwards. Continuous-lattice structure transfers across this order isomorphism. The Scott topology of the source is the topology induced by the order isomorphism from the Scott topology of the target, and the given topology is the topology induced by the homeomorphism from that same Scott topology.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

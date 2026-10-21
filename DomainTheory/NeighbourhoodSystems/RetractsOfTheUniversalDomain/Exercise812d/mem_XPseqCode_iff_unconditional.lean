@@ -1,3 +1,8 @@
+/-ai
+A point lies in the enumerated neighbourhood of XPseqCode at n exactly when it lies in some genuine half-step atom of index below four to the n.
+
+The fold has found a witness by stage four to the n, so the conditional characterization applies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

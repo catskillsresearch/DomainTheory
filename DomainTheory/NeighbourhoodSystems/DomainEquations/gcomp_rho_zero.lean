@@ -1,3 +1,8 @@
+/-ai
+For a strict approximable map g, the composite of g with the zeroth truncation is the constant map at the bottom of the codomain.
+
+The two maps agree on elements. The zeroth truncation is the constant map at the bottom of the infinite iterate, and strictness sends that bottom to the bottom of the codomain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

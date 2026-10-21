@@ -1,3 +1,8 @@
+/-ai
+The nonemptiness test of a level and a mask is at most one.
+
+It is the corresponding bound for the bounded existential.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

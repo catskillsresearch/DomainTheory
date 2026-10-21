@@ -1,3 +1,8 @@
+/-ai
+The sum-valued conditional at true returns the left injection of the first argument.
+
+Unfold the composite, apply the elementwise computation of the embedding, and use the true identity of the conditional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

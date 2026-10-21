@@ -1,3 +1,8 @@
+/-ai
+The outer fold of the inner intersection code along a list, with parameter m, returns the union of the accumulator neighbourhood with the intersection of the finite union of down-sets of that list and the neighbourhood coded by m, whenever cons decides consistency.
+
+Induct on the list. On the empty list the fold is the accumulator, the finite union of down-sets is empty, and the empty intersection and the empty union give the claim. On a cons cell, rewrite by the inductive hypothesis and the inner-intersection-code identity at the head, then apply the cons law for the finite union of down-sets and distribute that intersection across the union.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

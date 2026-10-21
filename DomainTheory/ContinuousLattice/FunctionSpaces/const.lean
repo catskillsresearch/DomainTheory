@@ -1,3 +1,6 @@
+/-ai
+The constant Scott map with value c sends every argument to c. On a nonempty set the constant value equals its value at any element of the set, so it lies below the supremum of the image, and every element of the image equals c, so that supremum lies below the constant value. The constant map therefore preserves directed suprema, and a map that preserves directed suprema is continuous.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

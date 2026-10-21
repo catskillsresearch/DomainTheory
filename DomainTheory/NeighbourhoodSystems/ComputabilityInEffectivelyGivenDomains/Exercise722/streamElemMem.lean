@@ -1,3 +1,6 @@
+/-ai
+A language satisfies the stream membership predicate of a word when the language lies in Scott's family and contains every finite repetition of the word.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

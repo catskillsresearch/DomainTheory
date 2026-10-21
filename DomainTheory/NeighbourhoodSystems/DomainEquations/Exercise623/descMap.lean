@@ -1,3 +1,6 @@
+/-ai
+The evaluation map from the syntactic domain of expressions to the carrier of an algebra is the relational union of the Kleene iterates of the operator sending h to the structure map composed with T(h) composed with the inverse structure map. Directedness of the iterates makes the union an approximable map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

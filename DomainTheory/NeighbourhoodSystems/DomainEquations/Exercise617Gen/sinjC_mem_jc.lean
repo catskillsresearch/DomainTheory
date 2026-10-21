@@ -1,3 +1,8 @@
+/-ai
+The letter-copy injection of an element contains the copy of a neighbourhood at that letter when the element contains the neighbourhood.
+
+If the recorded neighbourhood were the master, the empty token would lie in the copy. If it is a copy of another set, injectivity of copies returns the membership. Conversely, the copy of the neighbourhood is one of the defining neighbourhoods of the injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

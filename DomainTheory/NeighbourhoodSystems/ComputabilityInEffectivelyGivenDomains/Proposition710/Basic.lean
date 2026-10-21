@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the development of Scott's Proposition 7.10. It includes the Smyth power domain as a neighbourhood system, with its membership and master; the finite unions of down-sets and the enumeration of power-domain neighbourhoods by codes of finite lists of indices; closure of those neighbourhoods under intersection; the nested primitive-recursive intersection code and its correctness; the equality of two enumerated neighbourhoods as a bounded quantification, together with the inclusion, equality, and intersection-equality deciders; and the assembled computable presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

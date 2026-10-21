@@ -1,3 +1,8 @@
+/-ai
+Composition of morphisms in the category of domains is composition of the underlying approximable maps.
+
+The equality is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

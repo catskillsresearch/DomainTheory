@@ -1,3 +1,8 @@
+/-ai
+The way-below neighbourhood of the bottom element is the whole carrier.
+
+Every member of the neighbourhood lies in the carrier, and bottom is way-below every element.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,3 +1,8 @@
+/-ai
+Every set in the positive system equals the enumerated set at some index.
+
+Membership supplies an expression whose denotation is the set and is nonempty. The index of that expression is the witness. Unfolding the enumeration, decoding inverts indexing, nonemptiness of the denotation makes the nonemptiness decision true, and simplification yields the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

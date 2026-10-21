@@ -1,3 +1,8 @@
+/-ai
+The doubling encoding distributes over concatenation.
+
+Induct on the first string. The empty case simplifies. In the cons case, simplification uses the inductive hypothesis.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

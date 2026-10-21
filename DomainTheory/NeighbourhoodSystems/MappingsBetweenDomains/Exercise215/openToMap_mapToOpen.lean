@@ -1,3 +1,8 @@
+/-ai
+The approximable map of the open set of an approximable map into O is the original map.
+
+Equality of approximable maps reduces to agreement of their element maps on principal elements. For a neighbourhood, O_ext compares those element maps after rewriting membership of the empty set through the principal characterization of the reconstructed map, the definition of the open set, and the characterization of the top element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

@@ -1,3 +1,8 @@
+/-ai
+A number m belongs to the application of an element u to the numeral of n if and only if the pair of 0 with m belongs to u, or the pair of 2 raised to n with m belongs to u.
+
+From membership in the application, the witnessing code is contained in the numeral of n, so that code is 0 or 2 raised to n, and the corresponding pair lies in u. Conversely, the code 0 is contained in the numeral and the code 2 raised to n is the numeral of n, so either pair membership is membership in the application.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

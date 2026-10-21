@@ -1,3 +1,6 @@
+/-ai
+The deletion scan sends the empty string to the empty string, drops a leading one and continues on the tail, and on a leading zero returns the whole remaining string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

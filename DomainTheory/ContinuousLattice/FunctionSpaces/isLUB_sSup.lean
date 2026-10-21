@@ -1,3 +1,8 @@
+/-ai
+In the pointwise order on Scott maps, the supremum of a set of Scott maps is a least upper bound of that set.
+
+Each member lies below the supremum because, at each argument, its value lies below the pointwise supremum. If g is any upper bound, then at each argument every member's value lies below the value of g, so the pointwise supremum does too.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

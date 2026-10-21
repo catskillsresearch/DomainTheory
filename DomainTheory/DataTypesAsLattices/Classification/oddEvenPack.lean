@@ -1,3 +1,7 @@
+/-ai
+The odd-even packing of two maps f and g at x places each member n of f(x) at the odd number 2n + 1 and each member n of g(x) at the even number 2n.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

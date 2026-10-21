@@ -1,3 +1,8 @@
+/-ai
+One tagged tuple is contained in another with the same tag if and only if every component is contained in the corresponding component.
+
+In the forward direction, prefix a component element and send it into the larger tuple; uniqueness of slot prefixes recovers the index and the remainder. In the reverse direction, a slot witness of the smaller tuple stays in the same slot of the larger tuple by the component inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,3 +1,6 @@
+/-ai
+Two neighbourhood systems, possibly over different token types, determine isomorphic domains when there is an order isomorphism between their elements. This is Scott's Definition 1.9.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

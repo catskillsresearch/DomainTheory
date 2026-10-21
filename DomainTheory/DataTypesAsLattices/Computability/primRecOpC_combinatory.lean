@@ -1,3 +1,8 @@
+/-ai
+The curried primitive-recursion operator primRecOpC is combinatory.
+
+Unfold primRecOpC and apply the completeness law theorem_2_4_complete. The interpreted term is combinatory by ofComb_combinatory, because every value of the environment primRecOpEnv is combinatory.
+ai-/
 module
 
 public import Mathlib.Computability.RE

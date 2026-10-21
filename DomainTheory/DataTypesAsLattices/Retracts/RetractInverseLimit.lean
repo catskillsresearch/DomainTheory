@@ -1,3 +1,6 @@
+/-ai
+The inverse limit of an endomap F consists of the sequences in which every coordinate is typed by the corresponding iterate of F from the empty set, and each coordinate equals the application of that iterate to the next coordinate.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

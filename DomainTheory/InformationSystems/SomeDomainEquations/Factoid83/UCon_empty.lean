@@ -1,3 +1,8 @@
+/-ai
+The empty finite set of U-tokens is consistent.
+
+Simplifying consistency and the emptiness of the forget-finset reduces the claim to the fact that the empty set of V-tokens does not entail top.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

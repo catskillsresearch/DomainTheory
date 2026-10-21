@@ -1,3 +1,9 @@
+/-ai
+The typical 𝔊 set is Scott open.
+
+The first half of the 𝔊 theorem says that the set of x with 0 in f(x) is Scott open whenever f is Scott continuous. Applied to the identity, this is the set of x with 0 in x.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

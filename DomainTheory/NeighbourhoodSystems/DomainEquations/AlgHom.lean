@@ -1,3 +1,6 @@
+/-ai
+A homomorphism of algebras for an endofunctor, from an algebra with structure map k to an algebra with structure map m, is a morphism hom such that hom composed after k equals m composed after the image of hom under the endofunctor.
+ai-/
 module
 
 

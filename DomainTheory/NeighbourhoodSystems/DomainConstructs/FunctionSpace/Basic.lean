@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the function space of two neighborhood systems: the order on approximable maps, step sets and their finite intersections, the function-space neighborhood system and its equivalence with approximable maps, the least map of a consistent neighborhood, pointwise boundedness and suprema, evaluation, sections, and currying.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

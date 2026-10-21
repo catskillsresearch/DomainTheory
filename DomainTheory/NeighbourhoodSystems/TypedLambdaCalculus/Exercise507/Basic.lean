@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the function-space constructions and the three-variable abstraction, and records Scott's Exercise 5.7. Two-variable abstraction and application are to be defined from the one-variable binder and application to one argument at a time, with the projections and pairing doing the bookkeeping, and then generalized to many variables. In the neighbourhood-system framework this is the curry and uncurry isomorphism together with surjective pairing.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

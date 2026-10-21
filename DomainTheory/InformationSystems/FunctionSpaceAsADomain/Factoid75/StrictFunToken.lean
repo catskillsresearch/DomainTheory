@@ -1,3 +1,7 @@
+/-ai
+A strict function token is a function-space token that satisfies the strict-token condition.
+ai-/
+
 module
 
 public import Mathlib.Data.Multiset.MapFold

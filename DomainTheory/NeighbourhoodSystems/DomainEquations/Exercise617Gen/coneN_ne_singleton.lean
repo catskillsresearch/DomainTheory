@@ -1,3 +1,8 @@
+/-ai
+The cone of a finite A-string is never equal to the singleton of a finite A-string.
+
+Equality would include the cone in the singleton, which not_coneN_subset_singleton forbids.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

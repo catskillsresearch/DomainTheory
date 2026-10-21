@@ -1,3 +1,7 @@
+/-ai
+Scott's table u, given on {⊥, 0, ⊤} and extended continuously to all of Pω, sends a pair (x, y) to the set of k such that either k is 0 and x or y is nonempty, or k is 1 and either 0 lies in x while some successor lies in y, or some successor lies in x while 0 lies in y.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

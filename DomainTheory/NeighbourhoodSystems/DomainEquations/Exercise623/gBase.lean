@@ -1,3 +1,8 @@
+/-ai
+The one-point generator on the fixed-point token set is a subsystem of its image under a rooted grammar expression. This is the base of the tower.
+
+The master of the image equals the token image of the fixed-point set, which equals the fixed-point set, so the masters agree. A neighbourhood of the generator is that master, hence a neighbourhood of the image, and the intersection of two such neighbourhoods is the fixed-point set again.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

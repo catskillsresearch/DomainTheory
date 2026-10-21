@@ -1,3 +1,8 @@
+/-ai
+The left fold that accumulates the maximum of the accumulator and the raw depth of each token is at least its initial value.
+
+The proof inducts on the list, keeping the initial value general. The empty fold is the initial value. A nonempty fold raises the initial value to a maximum, and the inductive hypothesis preserves the inequality.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports the while combinator of Exercise 5.12, the application of its body, the application of the loop operator, the defining recursion, the clauses for a true test, a false test, and a bottom test, and the leastness of the loop.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise512.Basic

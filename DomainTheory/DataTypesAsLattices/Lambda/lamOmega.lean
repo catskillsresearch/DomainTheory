@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (2.26): the abstraction over ω of a sequence of sets is the dollar combinator applied to the graph of the union of those values of the sequence whose indices lie in the argument.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

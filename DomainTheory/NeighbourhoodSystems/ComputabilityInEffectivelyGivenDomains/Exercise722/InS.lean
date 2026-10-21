@@ -1,3 +1,6 @@
+/-ai
+A language lies in Scott's family when it is the set of all binary words, a singleton, the concatenation of two languages already in the family, or a nonempty intersection of two languages already in the family.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

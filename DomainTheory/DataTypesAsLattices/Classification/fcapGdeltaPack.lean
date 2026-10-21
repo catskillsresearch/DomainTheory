@@ -1,3 +1,7 @@
+/-ai
+The packing of two maps f and g at an element x of Pω contains 0 precisely when 0 belongs to f(x), and contains a successor n + 1 precisely when n belongs to g(x).
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

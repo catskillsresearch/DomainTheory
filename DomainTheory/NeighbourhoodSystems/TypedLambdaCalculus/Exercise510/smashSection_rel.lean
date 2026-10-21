@@ -1,3 +1,8 @@
+/-ai
+The section at a neighbourhood X relates a set Y to a set Z exactly when Y is a neighbourhood and the image of the strict pairing of the principal filter of X with the principal filter of Y contains Z.
+
+The two sides agree by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

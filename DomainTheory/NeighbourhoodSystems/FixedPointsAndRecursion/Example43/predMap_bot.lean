@@ -1,3 +1,8 @@
+/-ai
+The predecessor sends bottom to bottom.
+
+This is the strictness rule of the constant lift, applied to the predecessor table.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,3 +1,8 @@
+/-ai
+The pairing map relates a neighbourhood of the product of the sharp domain with itself to a neighbourhood of the sharp domain exactly when the source is the product of two sharp neighbourhoods whose paired embedding is contained in the target.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Combinators77

@@ -1,3 +1,7 @@
+/-ai
+One fixed Gödel code for the binary union operator is a natural number chosen, by surjectivity of Scott's enumeration, so that its value is the combinatory graph of binary union.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

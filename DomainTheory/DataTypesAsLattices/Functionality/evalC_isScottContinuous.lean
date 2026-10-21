@@ -1,3 +1,8 @@
+/-ai
+The map sending u to the application of the zeroth component of u to the first component of u is Scott-continuous.
+
+The binary continuity package applies to left continuity of application and to continuity of application in the function, with the two arguments the left continuities of application at the numerals 0 and 1.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

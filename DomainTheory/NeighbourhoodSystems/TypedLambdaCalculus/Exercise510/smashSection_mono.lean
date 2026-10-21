@@ -1,3 +1,8 @@
+/-ai
+The section of a map out of the smash grows as the neighbourhood shrinks: if one neighbourhood is contained in another, the section at the larger neighbourhood lies below the section at the smaller one.
+
+A relation of the section at the larger neighbourhood is membership of the output in the image of the smash pair of the two principal filters. The principal filter of the larger neighbourhood lies below the principal filter of the smaller one, so monotonicity of the pairing and of the image transfers that membership to the section at the smaller neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,3 +1,8 @@
+/-ai
+Any approximable self-map of the binary system that satisfies the four run equations agrees with the output scan on principal elements: its value at the principal element of a string is the principal element of the output of that string.
+
+The argument recurses on the string. For the empty string the output is empty, so removing the empty shift leaves bottom on the right; monotonicity along bottom below the single one, the equation sending that element to bottom, and the leastness of bottom give equality. The singleton one has empty output and is that same equation. A one followed by a zero rewrites the output, splits off the two-token prefix, and applies the one-zero equation. Two leading ones rewrite the output, split off that prefix, apply the one-one equation, and recurse on the tail that still begins with one. A leading zero rewrites the output, splits off that token, applies the zero equation, and recurses on the tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

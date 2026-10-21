@@ -1,3 +1,8 @@
+/-ai
+The basic neighbourhood of the code 0 is the whole of Pω.
+
+Extensionality and the fact that the finite set coded by 0 is empty give the equality.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

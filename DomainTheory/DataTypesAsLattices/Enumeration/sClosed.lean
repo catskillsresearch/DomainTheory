@@ -1,3 +1,7 @@
+/-ai
+The closed term for the combinator S is the abstraction, in binders 4, 5, and 6, of the application of the first variable to the third, applied to the application of the second variable to the third.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

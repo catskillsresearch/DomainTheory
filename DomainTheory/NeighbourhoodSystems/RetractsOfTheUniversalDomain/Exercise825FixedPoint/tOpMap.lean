@@ -1,3 +1,6 @@
+/-ai
+The continuous operator of an endomap of the universal domain conjugates the output of the second curry by the fixed projection pair between the universal domain and its function space, through the exponential of that pair. It is that exponential composed with the second curry.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

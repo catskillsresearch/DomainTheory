@@ -1,3 +1,8 @@
+/-ai
+A filter that contains the basis neighbourhood of every index in a finite set contains the folded intersection of those neighbourhoods.
+
+The proof is by induction on the finite set. The empty intersection is the master set, which belongs to every filter. At an insertion of a fresh index, the new intersection is the neighbourhood of that index cut with the old intersection, the filter contains the new neighbourhood by hypothesis, and it contains the old intersection by the inductive hypothesis, so it contains their intersection.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

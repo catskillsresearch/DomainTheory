@@ -1,3 +1,8 @@
+/-ai
+The product of two bits, read as natural numbers at most 1, equals 0 or equals 1.
+
+The product is at most 1, so the dichotomy is arithmetic.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

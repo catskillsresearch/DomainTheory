@@ -1,3 +1,7 @@
+/-ai
+The joint upsampling step sends a code of a level and a mask to the code of the
+successor level and the one-step upsampling of that mask.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

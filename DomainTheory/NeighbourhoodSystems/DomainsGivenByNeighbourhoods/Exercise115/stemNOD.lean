@@ -1,3 +1,8 @@
+/-ai
+Stem membership is nested or disjoint.
+
+For each natural number m, the singleton {m} is contained in {0, 1} or meets it emptily. The first alternative holds when m is 0 or 1, by simplification. Otherwise extensionality shows that a common element would be a member of the pair and equal to m, which simplification rejects. The main argument cases on the three forms of each neighbourhood. The whole set contains every neighbourhood and is contained in itself. The pair is contained in the whole set and equals itself. Against a singleton, the preliminary alternative gives inclusion or an empty intersection, and the symmetric case swaps the intersection. Two singletons are equal, hence nested, or distinct, hence disjoint.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

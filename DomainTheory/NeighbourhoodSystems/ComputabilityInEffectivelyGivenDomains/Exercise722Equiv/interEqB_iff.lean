@@ -1,3 +1,8 @@
+/-ai
+interEqB reports true if and only if the two expressions denote the same language.
+
+Unfold the conjunction, rewrite each inclusion test by its correctness criterion, and use that mutual inclusion is equality of sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

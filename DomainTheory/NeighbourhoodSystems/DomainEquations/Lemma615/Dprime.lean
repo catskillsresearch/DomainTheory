@@ -1,3 +1,6 @@
+/-ai
+The image subdomain determined by a pair of approximable maps is the neighbourhood system on the codomain token type whose neighbourhoods are the sets that generate some set under those maps, and whose master is the master of the codomain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

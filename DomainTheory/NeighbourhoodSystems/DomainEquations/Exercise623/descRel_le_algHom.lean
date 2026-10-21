@@ -1,3 +1,8 @@
+/-ai
+Every Kleene iterate lies below the underlying map of any homomorphism from Exp to the algebra, so the evaluation map, their union, is the least homomorphism. The zero iterate is bottom, and the operator is monotone while the homomorphism is a fixed point of it.
+
+The comparison is by induction on the iterate. The zero case is the inequality of the constant bottom map with any map. At a successor, rewrite the iterate by the successor clause and the homomorphism by its fixed-point equation, and apply monotonicity of composition to the functor image of the inductive inequality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

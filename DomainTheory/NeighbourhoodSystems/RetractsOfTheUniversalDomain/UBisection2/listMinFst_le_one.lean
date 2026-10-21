@@ -1,3 +1,8 @@
+/-ai
+The minimum first component of any list of rational pairs is at most one.
+
+Apply the comparison of the minimum fold with its seed, at seed one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

@@ -1,3 +1,8 @@
+/-ai
+Doubling a string that starts with a bit writes that bit, then false, then the doubling of the tail.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

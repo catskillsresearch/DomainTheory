@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the product neighbourhood and the product system of Scott's Definition 3.1, the first and second components and the pairing of elements, the order isomorphism of Proposition 3.2, the projections and the paired map of Definition 3.3 and Proposition 3.4, the constant maps of Lemma 3.6, and the equivalence of Theorem 3.5 between joint and two-variable approximable maps, together with the membership, preimage, intersection, inclusion, injectivity, splitting, and round-trip lemmas that support them.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

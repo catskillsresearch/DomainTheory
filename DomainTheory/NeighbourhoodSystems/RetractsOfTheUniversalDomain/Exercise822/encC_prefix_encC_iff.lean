@@ -1,3 +1,8 @@
+/-ai
+The completed encoding of one string is a prefix of the completed encoding of another if and only if the two strings are equal.
+
+In the forward direction, induct on the first string. If it is empty and the second is empty, they agree. If it is empty and the second is not, the marker would be a prefix of a doubled block, and the two successive bit equations are impossible by deciding the booleans. If it is nonempty and the second is empty, the length inequality contradicts the length formula. If both are nonempty, two prefix steps peel the doubled bit and the inductive hypothesis equates the tails. In the reverse direction, a string is a prefix of itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

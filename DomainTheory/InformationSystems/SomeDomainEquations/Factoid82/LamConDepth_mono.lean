@@ -1,3 +1,8 @@
+/-ai
+A subset of a depth-consistent finset of raw lambda tokens is depth-consistent.
+
+Atom and function-token projections preserve inclusions. If the larger finset has no function tokens, neither does the subset, and its atom projection is a consistent subset. If the larger finset has function tokens and the subset has none, the atom projection of the subset is empty, hence consistent. If both have function tokens, the atom projection of the subset is empty, well-formedness passes along the function-token projection, and the function clause restricts to subcollections of the subset.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

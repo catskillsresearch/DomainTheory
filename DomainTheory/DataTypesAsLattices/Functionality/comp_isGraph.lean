@@ -1,3 +1,8 @@
+/-ai
+The composite of u and v equals the graph of its own application.
+
+Graph extensionality reduces the equality to a pointwise check, and the reverse of the application rule for composition supplies the agreement at each argument.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

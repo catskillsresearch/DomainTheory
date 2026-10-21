@@ -1,3 +1,8 @@
+/-ai
+If a family of sets is closed under union, then its dual is closed under intersection.
+
+The complements of the two sets lie in the family, so their union does. That union is the complement of the intersection, which is membership of the intersection in the dual.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

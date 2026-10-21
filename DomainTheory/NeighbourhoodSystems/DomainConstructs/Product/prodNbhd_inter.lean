@@ -1,3 +1,8 @@
+/-ai
+Scott's identity (2) states that the intersection of two product neighbourhoods is the product of the intersections of the corresponding components.
+
+The two sets have the same left tokens and the same right tokens by the membership lemmas for intersection and for product neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

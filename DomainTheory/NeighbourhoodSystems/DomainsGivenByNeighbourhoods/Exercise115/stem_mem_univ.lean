@@ -1,3 +1,8 @@
+/-ai
+The whole set of natural numbers is a neighbourhood of the stem domain.
+
+It is the left disjunct of stem membership.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+If an approximable map j after a map i is the identity, then j after i returns every element of the domain.
+
+Rewrite the double application as the composite, substitute the identity composite, and apply the identity map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

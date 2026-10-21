@@ -1,3 +1,8 @@
+/-ai
+A left token belongs to the product neighbourhood of X and Y if and only if it belongs to X.
+
+This is the membership unfolding of a product neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

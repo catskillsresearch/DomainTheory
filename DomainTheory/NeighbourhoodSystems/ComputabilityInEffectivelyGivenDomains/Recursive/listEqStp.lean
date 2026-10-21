@@ -1,3 +1,6 @@
+/-ai
+The list-equality fold step carries a state pairing a flag with the remaining second code. It returns the pair of zeros when that remaining code is zero, and otherwise takes the nonempty branch. The step consumes one head of the first code and peels one cons cell from the remaining second code.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

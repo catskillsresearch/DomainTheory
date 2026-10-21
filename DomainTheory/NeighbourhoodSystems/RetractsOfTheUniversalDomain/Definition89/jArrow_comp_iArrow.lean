@@ -1,3 +1,8 @@
+/-ai
+Applying the function-space embedding and then the function-space projection yields the identity of the function space.
+
+This identity is the retraction component of the projection pair chosen for the function space.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

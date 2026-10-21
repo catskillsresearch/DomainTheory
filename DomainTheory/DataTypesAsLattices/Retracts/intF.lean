@@ -1,3 +1,6 @@
+/-ai
+The integer functional sends f to the graph of the map which, by the doubly strict conditional, returns the numeral zero, or else the conditional of the application of f to the predecessor against the input itself. Scott's clause (4.7) is int(u) = u ⊒ 0, (int(u − 1) ⊒ u, u).
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

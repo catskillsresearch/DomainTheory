@@ -1,3 +1,6 @@
+/-ai
+The limit element of the final-segment system is the filter of all neighbourhoods of the system. A member is already a neighbourhood, and the master belongs to the system. The intersection of the tails of two indices is the tail of the larger index, hence a neighbourhood. A neighbourhood above a member is itself a member.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

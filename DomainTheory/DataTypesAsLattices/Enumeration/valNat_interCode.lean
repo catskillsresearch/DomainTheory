@@ -1,3 +1,8 @@
+/-ai
+The numerical evaluator sends the intersection code to the intersection combinator.
+
+The equality is the specification of the witness chosen by the surjectivity clause of Theorem 3.2 for the combinatory intersection combinator.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

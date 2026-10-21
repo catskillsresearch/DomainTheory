@@ -1,3 +1,6 @@
+/-ai
+Scott's bar notation sends a natural number n to the singleton finite set whose only token is n.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

@@ -1,3 +1,6 @@
+/-ai
+The elements of D are order-isomorphic to the elements of the embedded neighbourhood system, by the map into the embedded system with inverse the map back to D. In one round trip, a neighbourhood of the composite is an index whose embedded set equals the neighbourhood and a second index at which the enumerated neighbourhoods agree as embedded sets; equality of the embeddings rewrites membership of the second enumerated neighbourhood. Conversely, the cover writes a neighbourhood of the original element as an enumerated set, and the same index serves on both sides. The other round trip is the same argument with the equality of embeddings read in the opposite direction, the index now coming from membership in the embedded element. If the images are ordered, a neighbourhood of the smaller element is an enumerated set, the image inequality supplies a later index whose enumerated neighbourhood belongs to the larger element, and equality of embeddings rewrites it. An inequality of elements sends the enumerated witness of an embedded neighbourhood to a witness of the same index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

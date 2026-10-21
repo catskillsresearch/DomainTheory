@@ -1,3 +1,8 @@
+/-ai
+The map from the Lindenbaum algebra to sets of natural numbers is injective.
+
+Induct on both quotient classes, reducing to formulas. Equality of their images is semantic equivalence, by the agreement of semantic equivalence with equality of evaluation sets, and the quotient relation identifies the classes.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

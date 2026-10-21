@@ -1,3 +1,8 @@
+/-ai
+The strict pairing of two computable maps is a computable map into the smash presentation.
+
+The relation holds when the codomain code is improper, in which case its enumeration is the master, or when the codomain code is proper and both maps relate the domain neighbourhood to the raw codomain factors. Codomain properness is recursively decidable and the two relations are recursively enumerable, so this combination is recursively enumerable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

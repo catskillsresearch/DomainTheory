@@ -1,3 +1,8 @@
+/-ai
+The right projection preserves constructive union.
+
+A token witnessing membership in the projection of a constructive union lies in one summand, and the same token witnesses membership in the corresponding projected summand. Conversely, a witness in either projected summand is a token of that summand, hence of the union, and it still has least first component.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,3 +1,8 @@
+/-ai
+The basepoint lies outside every tagged middle copy.
+
+A membership witness would be a middle tag equal to the basepoint, and simplification of the middle tag makes that equality absurd.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

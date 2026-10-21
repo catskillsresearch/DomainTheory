@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of V is nonempty.
+
+Membership supplies a level-set presentation together with a nonemptiness witness, and that witness is the claim.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

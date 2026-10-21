@@ -1,3 +1,8 @@
+/-ai
+The bit test of a position in a natural number is the remainder modulo two of that
+number divided by two to the power of the position, a value in {0, 1} agreeing with the
+characterization of the test bit as the decision that this remainder equals one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

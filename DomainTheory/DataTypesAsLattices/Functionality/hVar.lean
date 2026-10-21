@@ -1,3 +1,7 @@
+/-ai
+The variable clause sends an expression e and an environment t to the application of t to the payload of e.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

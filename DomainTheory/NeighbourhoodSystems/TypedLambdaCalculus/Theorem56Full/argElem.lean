@@ -1,3 +1,6 @@
+/-ai
+The argument element of a finite family of optional numerals is the stack whose coordinate i is the optional numeral at i when i lies below the length, and bottom otherwise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

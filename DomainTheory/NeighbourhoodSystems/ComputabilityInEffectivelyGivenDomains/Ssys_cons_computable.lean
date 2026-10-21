@@ -1,3 +1,8 @@
+/-ai
+The consistency clause of Definition 7.1, the existence of an enumerated set contained in the intersection of two enumerated sets, is recursively decidable.
+
+This is the conditional closure applied to the primitive recursion of the consistency character.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

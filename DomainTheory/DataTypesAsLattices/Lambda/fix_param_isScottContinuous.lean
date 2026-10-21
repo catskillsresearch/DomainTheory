@@ -1,3 +1,8 @@
+/-ai
+If a binary operation is Scott continuous in each argument separately, then the least fixed point of its first-argument slice is Scott continuous in that argument.
+
+Membership in the fixed point is membership in some bottom iterate. Continuity of that iterate in the parameter supplies a Scott-union witness, and the same iteration index makes it a witness for the union of the iterates. Conversely, a Scott-union witness and an iteration index, together with monotonicity of the continuous iterate, return the element to the fixed point.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

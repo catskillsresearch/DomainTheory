@@ -1,3 +1,9 @@
+/-ai
+The code tagCode of a list code and a value equals tag of the decoded list at that value.
+
+Unfold the code and rewrite the fold by its equation. The step that feeds tagStep the pair of an entry with the pair of the accumulator and zero is the map sending the accumulator and the entry to the numeral of the successor of the entry and the accumulator, by unfolding tagStep and cancelling the pairings. Decoding the appended code and the zero code cancels the empty append, and the reverse left-fold equation for tag gives the claim.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

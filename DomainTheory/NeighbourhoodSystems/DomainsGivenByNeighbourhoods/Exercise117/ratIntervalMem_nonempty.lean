@@ -1,3 +1,8 @@
+/-ai
+Every rational-interval neighbourhood is nonempty.
+
+The whole real line contains zero. An open interval with rational endpoints is nonempty because the left endpoint is strictly below the right endpoint.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

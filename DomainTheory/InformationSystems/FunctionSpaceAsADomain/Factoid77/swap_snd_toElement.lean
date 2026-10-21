@@ -1,3 +1,9 @@
+/-ai
+The second projection of the swapped product, applied to the swap of a product element, equals the first projection of that element.
+
+The elementwise composition law rewrites the left-hand side as the composite of the swap with the second projection, and that composite is the first projection.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

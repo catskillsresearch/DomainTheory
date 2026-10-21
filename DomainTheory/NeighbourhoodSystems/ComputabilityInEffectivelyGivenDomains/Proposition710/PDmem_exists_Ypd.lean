@@ -1,3 +1,8 @@
+/-ai
+Every power-domain neighbourhood equals the enumerated neighbourhood of some code.
+
+A power-domain neighbourhood is a finite union of down-sets of neighbourhoods, and the auxiliary enumeration supplies a code for that union.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

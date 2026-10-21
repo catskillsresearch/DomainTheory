@@ -1,3 +1,8 @@
+/-ai
+The first component of the second component of the second component of a code is at most the code.
+
+Each unpairing of a first or second component does not increase the code, and the three inequalities compose.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

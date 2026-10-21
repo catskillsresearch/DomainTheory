@@ -1,3 +1,6 @@
+/-ai
+Unfolding is the approximable map from an iteration to the product of the neighbourhood system with the iteration, induced by the product isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

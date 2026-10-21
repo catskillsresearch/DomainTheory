@@ -1,3 +1,8 @@
+/-ai
+If neither coordinate of a product element z is bottom, then every neighbourhood Z of z contains a proper smash neighbourhood that still belongs to z.
+
+Take non-master neighbourhoods of the two coordinates. The preimages of Z under the two sum inclusions form a product neighbourhood equal to Z, and each coordinate of z meets the corresponding preimage. Intersect those preimages with the chosen non-master neighbourhoods. The intersections remain neighbourhoods and remain distinct from the masters, so their product is a proper smash neighbourhood of z, and it is contained in Z.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

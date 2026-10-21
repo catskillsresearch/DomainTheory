@@ -1,3 +1,8 @@
+/-ai
+In a computable presentation, inclusion of enumerated neighbourhoods is recursively decidable from their indices, and so is equality of enumerated neighbourhoods.
+
+A neighbourhood is contained in another exactly when their intersection equals the first neighbourhood. The presentation decides that ternary relation, and the reindexing that repeats the first index as the third component is primitive recursive, being the pairing of the first projection with the pairing of the second projection and the first. Equality is mutual inclusion. The swap of the two indices of a pair code is primitive recursive, and conjoining the inclusion decider with the same decider after that swap decides equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

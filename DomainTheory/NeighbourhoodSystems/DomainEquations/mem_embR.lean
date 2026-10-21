@@ -1,3 +1,8 @@
+/-ai
+A tagged point lies in the right embedding of a set Q exactly when its boolean list begins with false and the point with the remaining list lies in Q.
+
+The equivalence is the definition of the right embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,3 +1,8 @@
+/-ai
+The finitely generated subsystem on a list is a subsystem of the original neighbourhood system.
+
+The masters agree. Every member is a neighbourhood of the original system. The intersection of two members is the partial meet of the combined sub-selection, and that partial meet equals the intersection of the two partial meets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

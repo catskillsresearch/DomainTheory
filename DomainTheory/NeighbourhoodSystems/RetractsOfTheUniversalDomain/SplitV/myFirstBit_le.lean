@@ -1,3 +1,8 @@
+/-ai
+myFirstBit m N is at most N.
+
+The specification says the value is either strictly below N or equal to the sentinel N.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

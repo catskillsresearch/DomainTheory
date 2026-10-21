@@ -1,3 +1,8 @@
+/-ai
+The map from finite or infinite sequences to elements of L is surjective. The infinite case chooses the witness stream by classical choice.
+
+If the element has a minimum neighbourhood, that neighbourhood is the neighbourhood of a finite list and the element is the corresponding principal filter. If it has none, the stream extracted from the element is sent to it: a neighbourhood of the stream element contains a prefix neighbourhood of that stream, which lies in the element, so upward closure puts it in the element, and a neighbourhood of the element contains some finite prefix of the extracted stream.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

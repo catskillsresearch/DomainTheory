@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (5.18). If a is already a closure, V(a) applied to x is contained in a applied to x.
+
+The value a(x) contains x by left monotonicity of application and the identity action of the identity combinator, and it contains a applied to itself by the retract equation. It is therefore one of the sets whose intersection defines V(a)(x).
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

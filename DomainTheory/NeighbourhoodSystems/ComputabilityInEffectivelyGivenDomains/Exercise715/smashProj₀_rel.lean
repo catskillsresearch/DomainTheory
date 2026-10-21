@@ -1,3 +1,8 @@
+/-ai
+The left smash projection relates W to X' exactly when both are neighbourhoods and the left preimage of W is contained in X'.
+
+The two sides are the same proposition by definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

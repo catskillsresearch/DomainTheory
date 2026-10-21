@@ -1,3 +1,8 @@
+/-ai
+The map that reads a function on the three-point domain sends it to the pair of its values at true and at false.
+
+Unfold the pairing into the two evaluations at the constant elements true and false.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

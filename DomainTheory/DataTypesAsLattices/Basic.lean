@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the enumeration, classification, and closure developments from Scott's Data Types as Lattices.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Enumeration

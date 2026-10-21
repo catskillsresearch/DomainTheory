@@ -1,3 +1,6 @@
+/-ai
+The token-level master recursion computes, from a set of tokens alone, the token set of a construct applied to the one-neighbourhood system on that set. A constant returns the master of the constant system, the identity returns the set itself, and a sum or a product returns the empty word together with the false-tagged copy of the first component and the true-tagged copy of the second.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

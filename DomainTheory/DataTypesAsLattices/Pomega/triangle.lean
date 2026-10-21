@@ -1,3 +1,6 @@
+/-ai
+The triangular number of w is half the product of w and one more than w.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

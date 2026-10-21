@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the monoid power-set operator of Exercise 4.17, its monotonicity, membership of the two generators, the fixed-point equation for the least solution, the identification of that solution with the generated submonoid, the fixed-point laws for the whole set and for the singleton of one, and the existence of two distinct fixed points.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise417.Basic

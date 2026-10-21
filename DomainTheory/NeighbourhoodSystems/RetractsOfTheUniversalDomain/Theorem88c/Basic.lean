@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the effective presentation of the subsystem from Theorem 8.8(a): the codes of the two-element positive list and the singleton negative list, the equations and primitive recursiveness of those codes, the characterization of an index-set intersection by a D-atom, the recursive decidability of the two inclusions and of the two-point D-atom, the recursive decidability of the intersection and consistency relations for the transferred neighbourhoods, the transferred intersection index, and the computable presentation of that subsystem.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

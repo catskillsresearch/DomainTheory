@@ -1,3 +1,8 @@
+/-ai
+Applying the function-space retract from a to b to u returns the composition of b after u after a.
+
+This is β-conversion, from Scott continuity of that composition map.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

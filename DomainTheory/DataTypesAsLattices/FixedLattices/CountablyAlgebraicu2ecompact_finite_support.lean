@@ -1,3 +1,8 @@
+/-ai
+If a compact basis element of a countable algebraic lattice lies below the supremum of the basis elements indexed by a set, then some finite subset of that set already has the same basis element below the supremum of its basis elements.
+
+The supremum of the indexed basis elements equals the supremum of the finite-basis suprema, so the hypothesis is a bound by that directed supremum. Compactness of the basis element extracts one finite-basis supremum, indexed by a finite set contained in the given set, that already lies above it.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Defs

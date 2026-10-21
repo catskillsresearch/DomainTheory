@@ -1,3 +1,6 @@
+/-ai
+The code of the representing closure is the graph of the representing closure operation.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

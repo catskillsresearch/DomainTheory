@@ -1,3 +1,8 @@
+/-ai
+The inverse of the product equivalence sends a pair of elements to their pairing.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

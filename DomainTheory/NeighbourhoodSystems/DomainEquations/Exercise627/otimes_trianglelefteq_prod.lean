@@ -1,3 +1,8 @@
+/-ai
+The smash product embeds as a subdomain of the product.
+
+The smash product is a subsystem of the product, and every subsystem embeds.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,3 +1,6 @@
+/-ai
+The consistency characteristic of a packed mask and list code is the final flag of the code fold of the consistency step, started from the master index with flag one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

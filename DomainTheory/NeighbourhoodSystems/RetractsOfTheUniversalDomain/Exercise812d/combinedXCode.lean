@@ -1,3 +1,6 @@
+/-ai
+The interleaved family on the first neighbourhood system takes, at an even index, the presentation image of half that index, and at an odd index the image of YPseqCode at half that index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

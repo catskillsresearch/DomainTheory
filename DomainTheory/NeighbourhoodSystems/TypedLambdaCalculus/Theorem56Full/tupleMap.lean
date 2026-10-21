@@ -1,3 +1,6 @@
+/-ai
+The tuple of length n places a family of n approximable maps into successive coordinates of the universal argument domain, with bottom from coordinate n onward. Length 0 is the constant bottom map. Length n + 1 pushes the zeroth map in front of the tuple of the remaining maps.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

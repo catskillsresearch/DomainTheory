@@ -1,3 +1,6 @@
+/-ai
+The encoding map from the binary system to the infinite iterate of the truth system relates a set X to a set W when X is the cone of a string whose encoding is contained in the iterate neighbourhood W. The domain and codomain laws are cone membership and iterate membership. The masters are related by the empty string. Two related codomain neighbourhoods determine the same string, because cones determine their strings, and the intersection remains above the encoding. A smaller cone is the cone of a longer prefix, and encoding reverses prefixes.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

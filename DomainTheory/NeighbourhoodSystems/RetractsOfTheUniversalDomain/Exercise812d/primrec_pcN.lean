@@ -1,3 +1,8 @@
+/-ai
+The depth extractor is primitive recursive.
+
+It is the primitive-recursive middle-component projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

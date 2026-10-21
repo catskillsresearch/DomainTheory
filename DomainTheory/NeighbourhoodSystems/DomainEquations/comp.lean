@@ -1,3 +1,6 @@
+/-ai
+Composition of homomorphisms of T-algebras sends a homomorphism from B to C and a homomorphism from A to B to the homomorphism whose underlying morphism is the composite of the underlying morphisms. The homomorphism square holds because the squares of the two factors, functoriality of T on a composite, and associativity of composition rearrange the composite square.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

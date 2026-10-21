@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the ingredients of Exercise 3.27: graphs of approximable maps, the family of all such graphs, meets and joins of families of maps, closure of that family under nonempty intersections and directed unions, and the representation isomorphism of Exercise 2.22 together with the function-space equivalence, so the function space is presented as a domain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222

@@ -1,3 +1,8 @@
+/-ai
+The graph of the body of interC is Scott continuous in the first argument.
+
+This is the lemma that a graph is continuous when its body is. Continuity of the body is the tuple form of Theorem 1.3, from continuity of the conditional in its left and right arguments, continuity of the identity, and continuity of the else branch.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

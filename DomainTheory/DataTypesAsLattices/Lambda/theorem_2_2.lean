@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Theorem 2.2 (The conversion theorem). The principles (α), (β), and (ξ) are valid in the model. Renaming a bound variable preserves the interpretation of an abstraction when the bodies agree after the rename. Applying an abstraction to y interprets the body in the environment updated at that variable. If two bodies agree at every value of the bound variable, their abstractions have the same interpretation.
+
+The three conjuncts are the α, β, and ξ clauses of the conversion theorem.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,8 @@
+/-ai
+The lift of a cone valuation and a singleton valuation sends the partial element of a string to the cone valuation of that string.
+
+Two elements are compared neighbourhood by neighbourhood. A neighbourhood of the image that comes from a cone contained in the cone of the string comes from a prefix, and the cone valuation is monotone along prefixes. A neighbourhood that comes from a singleton cannot sit inside that cone. In the other direction the cone of the string itself is a neighbourhood of the partial element and is related by the cone clause.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

@@ -1,3 +1,8 @@
+/-ai
+When the conditional output intersection of the list decoded from a against the domain neighbourhood at k is a codomain neighbourhood, the neighbourhood at interYsIdx of a and k equals that intersection.
+
+Unfold the index and rewrite the fold as a list fold. The packed step equals conditional intersection on the unpacked entry, by the selection law for isOne. Rewrite the conditional output intersection as the conditional set, and apply the specification of the conditional fold at the master index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

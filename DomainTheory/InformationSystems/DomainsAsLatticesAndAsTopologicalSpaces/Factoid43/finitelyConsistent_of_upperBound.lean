@@ -1,3 +1,8 @@
+/-ai
+If an element bounds every member of a family, then the union of their carriers is finitely consistent.
+
+A finite subset of the union is contained in the upper bound, because each of its tokens belongs to some member lying below that bound, and the upper bound is consistent.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

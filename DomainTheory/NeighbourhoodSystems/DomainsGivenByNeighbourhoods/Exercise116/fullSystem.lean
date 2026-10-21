@@ -1,3 +1,6 @@
+/-ai
+The neighbourhood system of all subsets of the natural numbers declares every set to be a neighbourhood, with the whole set as master neighbourhood. The master is nonempty. Membership of the master and closure under intersection hold outright, and every set is contained in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

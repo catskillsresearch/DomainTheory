@@ -1,3 +1,8 @@
+/-ai
+Whenever some enumerated neighbourhood equals the union of two enumerated neighbourhoods, the neighbourhood at the union index equals that union. The existence hypothesis is left unused, because the concatenated list already presents a neighbourhood of U, so canonicalizing it leaves the presented set unchanged.
+
+The decoded union index presents a neighbourhood because its presented intervals are the union. The canonical code realizes the canonical list, canonicalization fixes that neighbourhood, and the union index presents the union.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

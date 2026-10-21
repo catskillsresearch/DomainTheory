@@ -1,3 +1,8 @@
+/-ai
+The head value of a binary string beginning with false is the false-bit constant.
+
+The equation is the corresponding clause of the head-value definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

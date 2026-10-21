@@ -1,3 +1,8 @@
+/-ai
+If an element u is generated from G, then applying the bar combinator to u lies in the generated semigroup.
+
+Induct on the generation of u. The generator G is the bar generator of the semigroup. At an application, rewrite by equation (3.17) read from right to left, and form the semigroup composite of the first inductive image with the composite of the second inductive image and R.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,6 @@
+/-ai
+The step-function set of a list of pairs is the set of strict maps that relate the first component of every pair in the list to its second component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

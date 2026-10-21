@@ -1,3 +1,6 @@
+/-ai
+The left content of a set of sum tokens, relative to the first neighbourhood system, is the preimage of that set under the left tag, united with every token of the first master whenever the set contains a right tag or the basepoint.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

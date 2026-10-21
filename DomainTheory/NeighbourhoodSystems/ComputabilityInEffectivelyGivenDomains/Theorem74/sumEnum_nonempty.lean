@@ -1,3 +1,8 @@
+/-ai
+Every enumerated sum neighbourhood is nonempty.
+
+Unfold the enumeration and split. A left copy of a nonempty neighbourhood is nonempty, a right copy of a nonempty neighbourhood is nonempty, and the master contains the empty option.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

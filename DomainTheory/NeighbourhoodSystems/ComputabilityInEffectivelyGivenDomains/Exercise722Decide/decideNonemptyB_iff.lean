@@ -1,3 +1,8 @@
+/-ai
+decideNonemptyB e is true if and only if the language of e is nonempty.
+
+Simplify the bounded search, the meaning of a successful search through a list, and the short-word characterization of a nonempty denotation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

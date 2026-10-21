@@ -1,3 +1,6 @@
+/-ai
+The lifted pair of finite sets u and v is the choice-free union of the left lift of u and the right lift of v.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

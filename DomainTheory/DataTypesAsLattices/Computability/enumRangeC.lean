@@ -1,3 +1,6 @@
+/-ai
+The range enumerator of an element r of Pω is the dollar combinator applied to r and then to the top element.
+ai-/
 module
 
 public import Mathlib.Computability.RE

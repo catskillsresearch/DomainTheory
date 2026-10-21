@@ -1,3 +1,6 @@
+/-ai
+A bundled complete lattice is a type together with a complete-lattice structure. The bundle lets the function-space tower be defined by recursion on the natural numbers, with each successor level depending on the lattice structure of the preceding level.
+ai-/
 module
 
 

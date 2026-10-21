@@ -1,3 +1,9 @@
+/-ai
+The LUCID neighbourhood system is effectively given.
+
+The presentation of its enumeration is a witness.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

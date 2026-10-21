@@ -1,3 +1,8 @@
+/-ai
+Two elements of the neighbourhood system R that contain the same intervals [0, r) are equal.
+
+Apply element extensionality. If a set belongs to the first element, the subproperty writes it as some [0, r), and the hypothesis transfers that membership to the second element. The converse is the same argument with the two elements exchanged.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

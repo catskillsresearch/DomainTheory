@@ -1,3 +1,8 @@
+/-ai
+The stem domain contains a strict three-element chain: the principal filter of the whole set of natural numbers, then the principal filter of {0, 1}, then the principal filter of {0}.
+
+The first step is the strict comparison of principal filters along the inclusion of {0, 1} in the whole set. Equality of those sets would put 2 in {0, 1}. The second step is the strict comparison along the inclusion of {0} in {0, 1}. Equality of those sets would put 1 in {0}.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+If an approximable map h commutes with endomaps f and g, then g applied to the image under h of the least fixed point of f lies below that image.
+
+Commutation of composition with evaluation rewrites the left-hand side as h applied to f of the fixed point, and Proposition 7.4(ii) replaces f of the fixed point by the fixed point itself.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint

@@ -1,3 +1,8 @@
+/-ai
+The minimal extension of a union is the union of the minimal extensions.
+
+Extensionality simplifies the indexed union and splits the disjunction of membership.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

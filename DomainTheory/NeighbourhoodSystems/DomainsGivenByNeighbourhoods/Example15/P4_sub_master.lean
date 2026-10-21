@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of Example 1.5 is contained in the master neighbourhood.
+
+Every set of the four tokens is contained in the set of all four tokens.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

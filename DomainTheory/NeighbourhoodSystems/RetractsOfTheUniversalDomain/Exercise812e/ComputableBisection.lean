@@ -1,3 +1,6 @@
+/-ai
+A computable canonical bisection of a presentation assigns to each index two primitive-recursive indices whose neighbourhoods are disjoint, reunite to the original neighbourhood, and depend only on that neighbourhood as a set.
+ai-/
 module
 
 

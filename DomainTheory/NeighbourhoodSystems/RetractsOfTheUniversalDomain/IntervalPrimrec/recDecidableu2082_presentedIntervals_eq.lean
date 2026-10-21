@@ -1,3 +1,10 @@
+/-ai
+Equality of the sets presented by two rational-pair list codes is recursively decidable.
+
+Unfolding the two-argument decision predicate, the conjunction of recursive decidability
+of inclusion with its swap decides the paired predicate, and antisymmetry of inclusion
+identifies equality of the presented sets with mutual inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

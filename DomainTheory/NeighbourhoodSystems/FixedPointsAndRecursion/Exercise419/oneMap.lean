@@ -1,3 +1,6 @@
+/-ai
+The test one from the sequence domain to the truth domain is the approximable map obtained by lifting head values that send the empty string and a false-headed string to false and a true-headed string to true, with bottom in place of the empty-string value on partial elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

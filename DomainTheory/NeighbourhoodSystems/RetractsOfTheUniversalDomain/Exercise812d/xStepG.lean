@@ -1,3 +1,6 @@
+/-ai
+The generalized X-step splits the second component by an abstract split while directly refining the first component. It is the two-sided step specialized to that split.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

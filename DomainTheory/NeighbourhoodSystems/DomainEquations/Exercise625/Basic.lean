@@ -1,3 +1,8 @@
+/-ai
+An element y lies in the upper set of an element x precisely when x lies below the image of y under the projection.
+
+The two sides are the defining membership condition, so the equivalence holds by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

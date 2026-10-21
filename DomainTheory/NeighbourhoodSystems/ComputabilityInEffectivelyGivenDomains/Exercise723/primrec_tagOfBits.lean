@@ -1,3 +1,8 @@
+/-ai
+The map sending a paired number to tagOfBits of its two components is primitive recursive.
+
+The bit code of the left component against itself is primitive recursive. Applying tagCode to that code paired with the right component is identified with tagOfBits after simplifying the unpairing.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

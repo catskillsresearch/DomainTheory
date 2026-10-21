@@ -1,3 +1,6 @@
+/-ai
+The map toElement sends a filter of a neighbourhood basis to the information-system element whose carrier consists of those indices whose basis neighbourhood belongs to the filter. A finite set of such indices is consistent because the filter meets their folded intersection. If the set entails a further index, upward closure along the inclusion of that intersection in the neighbourhood of the index puts the index in the carrier.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

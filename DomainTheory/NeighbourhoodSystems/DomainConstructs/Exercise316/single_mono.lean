@@ -1,3 +1,8 @@
+/-ai
+If X is contained in X', then the pinning of a copy to X is contained in the pinning of that copy to X'.
+
+On a pair, unfold the pinning. When the index is the pinned copy, the token inclusion is the hypothesis. Otherwise both sides ask for membership in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

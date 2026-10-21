@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Theorem 2.2 (β). Applying the interpretation of an abstraction to y equals the interpretation of the body in the environment updated by y at the bound variable.
+
+This is the β-law, using the continuity theorem for the body in that variable.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

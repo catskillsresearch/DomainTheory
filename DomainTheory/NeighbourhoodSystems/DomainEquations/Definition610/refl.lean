@@ -1,3 +1,8 @@
+/-ai
+The subsystem relation is reflexive.
+
+The masters are the same neighbourhood. A neighbourhood of the system is a neighbourhood of the system, and an intersection assumed to be a neighbourhood of the system is a neighbourhood of the system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

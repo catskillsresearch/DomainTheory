@@ -1,3 +1,6 @@
+/-ai
+Forgetting a U-token returns its underlying V-token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

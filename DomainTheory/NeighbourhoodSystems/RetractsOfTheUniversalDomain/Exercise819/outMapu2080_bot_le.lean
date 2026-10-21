@@ -1,3 +1,8 @@
+/-ai
+The left projection of the bottom element of a sum lies below the bottom element of the left summand.
+
+The general inequality for the image of a bottom element reduces the claim to a neighbourhood of that image. One inclusion is the containment of that neighbourhood in the master. The other is the containment of the left part of the sum master in the neighbourhood, rewritten as the master of the left summand.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

@@ -1,3 +1,8 @@
+/-ai
+XPseq n is not empty.
+
+If it were empty, the emptiness transfer would make the enumerated set X n empty, contradicting that X n is not empty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

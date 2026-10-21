@@ -1,3 +1,6 @@
+/-ai
+This instance orders the Scott-continuous maps between the domains of two information systems by the pointwise order of their underlying functions. Reflexivity and transitivity are the corresponding properties of that pointwise order. Antisymmetry combines the two pointwise inequalities at each element and applies extensionality of Scott-continuous maps.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

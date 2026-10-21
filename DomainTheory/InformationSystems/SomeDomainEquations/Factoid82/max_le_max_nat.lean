@@ -1,3 +1,8 @@
+/-ai
+If a is at most c and b is at most d, then the maximum of a and b is at most the maximum of c and d.
+
+The first hypothesis and the left bound for a maximum give a at most the maximum of c and d, and the second hypothesis and the right bound give b at most that same maximum, so the maximum of a and b is at most the maximum of c and d.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

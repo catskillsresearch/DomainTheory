@@ -1,3 +1,6 @@
+/-ai
+IsComputableSplit says that a split of sets is computable relative to two presentations. It provides primitive-recursive indices, in the second presentation, of the two output sets of the split applied to three input neighbourhoods, and each index is correct whenever the corresponding output is nonempty.
+ai-/
 module
 
 

@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (4.4). The doubly strict conditional is z ⊒ x, y = z ⊃ (z ⊃ x, ⊤), (z ⊃ ⊤, y).
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

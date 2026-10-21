@@ -1,3 +1,6 @@
+/-ai
+The second argument is the approximable map that selects the argument pair and then takes its second factor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

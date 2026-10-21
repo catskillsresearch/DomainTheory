@@ -1,3 +1,6 @@
+/-ai
+A set of rationals lies in the universal family when it equals the union presented by some finite list of endpoint pairs, is nonempty, and is contained in the half-open unit interval.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

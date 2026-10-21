@@ -1,3 +1,7 @@
+/-ai
+This file gathers and re-exports totality, all-consistency, and the top element as the setting for Scott's Factoid 3.4. A top element need not exist. It exists precisely when every finite set of tokens is consistent, in which case its carrier is the whole token set, and it is then the unique total element, that is, the unique maximal element of the domain.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

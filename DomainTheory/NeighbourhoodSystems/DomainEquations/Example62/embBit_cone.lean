@@ -1,3 +1,8 @@
+/-ai
+Tagging the cone of a finite binary string by a boolean yields the cone of that boolean followed by the string.
+
+The tagging is the prepend of the one-bit list, and prepending that bit to a cone is the cone of the longer prefix.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

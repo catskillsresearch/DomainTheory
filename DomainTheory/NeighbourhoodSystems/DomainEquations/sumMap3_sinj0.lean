@@ -1,3 +1,8 @@
+/-ai
+The element map of the three-fold sum of approximable maps sends the left injection of an element to the left injection of its image under the first map.
+
+The two elements contain the same neighbourhoods. A relating neighbourhood may be the master, which is kept. If it is a left copy, injectivity of the left embedding identifies the two left neighbourhoods and the first map's relation is read in the codomain. A middle or right copy is impossible: the master token does not lie in those copies, and a token of the nonempty left neighbourhood lies in the left copy but in neither of the others. Conversely the master relates to the master, and a left neighbourhood of the image is related through the same left neighbourhood of the original element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

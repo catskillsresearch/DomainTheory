@@ -1,3 +1,8 @@
+/-ai
+If f is Scott continuous and every member of a finite set s of natural numbers lies in f of some finite subset of x, then one finite code N has its finite set contained in x and the whole of s contained in f of that finite set.
+
+The argument is an induction on s. The empty set is realized by the code 0. When k is inserted, the inductive code N is combined by bitwise or with a code n that realizes k. Each of those finite sets is contained in the finite set of the combined code, so monotonicity of the Scott continuous map f puts both k and the rest of s into f of the combined finite set.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

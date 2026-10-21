@@ -1,3 +1,9 @@
+/-ai
+The consistency characteristic is at most one.
+
+Unfold the arithmetic disjunction and case on each prefix characteristic being zero or one. Simplification gives the bound.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

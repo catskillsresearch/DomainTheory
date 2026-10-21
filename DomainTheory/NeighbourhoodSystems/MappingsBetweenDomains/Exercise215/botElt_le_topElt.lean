@@ -1,3 +1,8 @@
+/-ai
+The bottom element lies below the top element.
+
+The bottom element of O lies below every element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

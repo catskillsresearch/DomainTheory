@@ -1,3 +1,8 @@
+/-ai
+The function sending a paired natural number to the raw union of its two components is primitive recursive.
+
+The canonical indices of the two components, their levels and masks, and the maximum of the levels are primitive recursive by composition with the pairing projections and the maximum. Each upsampled mask is primitive recursive by composing upsampling with the level, the common level, and the mask. Their bitwise disjunction is primitive recursive by composing that operation with the pair of upsamplings, and pairing the common level with the result agrees with the raw union by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

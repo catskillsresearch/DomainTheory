@@ -1,3 +1,8 @@
+/-ai
+An element belongs to the set of pre-fixed points of an endomap f if and only if f sends it below itself.
+
+This is the defining equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

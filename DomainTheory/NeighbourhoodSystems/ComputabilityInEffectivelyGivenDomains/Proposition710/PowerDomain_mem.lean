@@ -1,3 +1,8 @@
+/-ai
+A set of sets is a neighbourhood of the Smyth power domain if and only if it is a power-domain neighbourhood.
+
+The two sides are the same by the definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

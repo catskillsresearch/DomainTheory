@@ -1,3 +1,6 @@
+/-ai
+The filter of the token system fixed by an element is the filter of all brackets of neighbourhoods belonging to that element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110

@@ -1,3 +1,8 @@
+/-ai
+Reconstructing an iterate element from the sequence of its components returns the original element.
+
+By element extensionality, if a neighbourhood belongs to the reconstruction, its cofinite bound supplies a finite intersection of pinnings of its fibers, which the element contains, and upward closure along the reconstruction inclusion returns the neighbourhood. Conversely, the neighbourhood belongs to the element, and each of its fibers belongs to the corresponding component because the element lies above the neighbourhood inside the pinning of that fiber.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

@@ -1,3 +1,6 @@
+/-ai
+This instance decides equality of product tokens by decidable equality of the underlying subtype of pairs.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

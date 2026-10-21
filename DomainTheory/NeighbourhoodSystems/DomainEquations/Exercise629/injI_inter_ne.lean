@@ -1,3 +1,8 @@
+/-ai
+Tagged copies at distinct indices are disjoint.
+
+A token of the intersection is not the basepoint, which lies in no tagged copy, and a tagged token would force the two indices to agree.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

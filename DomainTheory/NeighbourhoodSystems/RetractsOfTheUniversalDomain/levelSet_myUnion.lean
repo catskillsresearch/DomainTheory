@@ -1,3 +1,8 @@
+/-ai
+The union of two level sets equals the level set, at the maximum of the two levels, of the bitwise disjunction of the two masks upsampled to that level.
+
+On the left-hand side, replace each level set by its upsampling to the maximum level. Then apply the same-level union formula and the equation for the bitwise disjunction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

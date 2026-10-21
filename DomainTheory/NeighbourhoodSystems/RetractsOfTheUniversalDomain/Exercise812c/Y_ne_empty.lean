@@ -1,3 +1,8 @@
+/-ai
+The enumerated set Y n is not empty.
+
+This is the nonemptiness lemma for an atomless neighbourhood system, applied to the second system and the neighbourhood Y n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

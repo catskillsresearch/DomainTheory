@@ -1,3 +1,8 @@
+/-ai
+Applying the projection j_∞ to the embedding i_∞(x) returns the supremum over n of the level-(n+1) embeddings of the components x_{n+1}.
+
+Expand j_∞ as the supremum of its summands. For each n, the formula for i_∞ and the passage of conjugation inside a monotone supremum rewrite the n-th summand at i_∞(x) as the level-(n+1) embedding of a supremum of conjugates of the summands of i_∞. That conjugated family is monotone, so the embedding passes inside the supremum and produces a double family g(n, m). Each row of g is monotone by monotonicity of the embedding, of conjugation, and of the summands of i_∞. Each column increases at successors: the successor formula for the embedding and the inequality between successive conjugates reduce the step to monotonicity of the embedding. The double supremum therefore equals the diagonal supremum, and each diagonal term simplifies to the embedding of the corresponding component of x.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

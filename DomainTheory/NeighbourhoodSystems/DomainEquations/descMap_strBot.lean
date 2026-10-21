@@ -1,3 +1,8 @@
+/-ai
+The descent map sends the bottom-string element of a finite string to the recursive value of bottom along that string.
+
+This is the bottom-string clause of the lifting along C.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

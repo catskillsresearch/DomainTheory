@@ -1,3 +1,8 @@
+/-ai
+The second projection is a computable endomap of the sharp presentation.
+
+By the index characterization, the relation holds when the target code is zero, or the source code is even and nonzero and the sharp neighbourhood of the right component of its halved predecessor is contained in the target neighbourhood. Equality with zero, evenness, and inequality with zero are recursively decidable, and the reindexed inclusion is decidable by composing the inclusion decider with that primitive-recursive reindexing. The resulting disjunction is decidable, hence recursively enumerable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Combinators77

@@ -1,3 +1,8 @@
+/-ai
+The relation that every index in the decoded list of c lies below some index in the decoded list of k is recursively decidable.
+
+Swap the computable inclusion relation and close it under bounded existence over a decoded list, deciding existence of a lower index. Swap again and close under bounded universality over a decoded list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

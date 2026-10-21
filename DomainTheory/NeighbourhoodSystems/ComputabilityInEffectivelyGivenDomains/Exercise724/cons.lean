@@ -1,3 +1,6 @@
+/-ai
+Prepending a natural number i to a finite sequence places i at the head of the list, and prepending it to an infinite sequence uses the corresponding stream constructor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

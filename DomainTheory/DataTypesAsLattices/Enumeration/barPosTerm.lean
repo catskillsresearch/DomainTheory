@@ -1,3 +1,6 @@
+/-ai
+The positive-branch term conses the successor of zero onto the sequencing of variable 1 with the application of variable 2 to the successor of zero. It is the term for the positive branch of Scott's bar operator, the triple of 1, u, and the first tail of x.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

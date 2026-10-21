@@ -1,3 +1,8 @@
+/-ai
+The right copy of a neighbourhood is contained in the sum master.
+
+A token of that copy lies in the right copy of the second master, because the neighbourhood is contained in the master and the right copy preserves inclusion. That copy is the right summand of the union inside the sum master, so the token lies in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

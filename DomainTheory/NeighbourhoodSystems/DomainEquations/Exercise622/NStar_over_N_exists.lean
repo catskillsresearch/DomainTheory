@@ -1,3 +1,8 @@
+/-ai
+The solution of the vertical-naturals equation is itself a rooted domain, so the stream equation has a solution over that very domain.
+
+The token fixed point of the vertical-naturals expression supplies a set Γ₁ containing the empty string. The singleton system on Γ₁ therefore has the empty string in its master, and the stream solution theorem applied to that system is the required solution.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

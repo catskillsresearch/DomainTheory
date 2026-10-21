@@ -1,3 +1,7 @@
+/-ai
+A combinatory expression is a variable, one of the six constants zero, successor, predecessor, conditional, K, and S, or an application of two combinatory expressions.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

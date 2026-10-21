@@ -1,3 +1,8 @@
+/-ai
+The homomorphism operator applied to a map f sends an element z to the structure map applied to the pair of the zeroth component of z and f applied to the tail sequence of z.
+
+Unfold the operator and the projection. The element map of the composite is the structure map after the product map after the isomorphism, the isomorphism sends z to the pair of its head and its tail, and the product map acts as the identity on the head and as f on the tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

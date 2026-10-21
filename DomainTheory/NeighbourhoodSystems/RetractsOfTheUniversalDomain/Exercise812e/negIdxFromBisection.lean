@@ -1,3 +1,6 @@
+/-ai
+The negative index of the bisection split returns the middle index when either emptiness decider of the prober fires, and the right half of the bisection otherwise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

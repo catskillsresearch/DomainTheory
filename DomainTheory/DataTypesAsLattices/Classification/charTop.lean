@@ -1,3 +1,6 @@
+/-ai
+The top characteristic map of a set U sends an element x to the set of every index whenever some finite piece of x lies in U, and to the empty set otherwise.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

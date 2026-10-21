@@ -1,3 +1,8 @@
+/-ai
+The zeroth pointwise power of a set is the unit set.
+
+This is the zero clause of the definition of the powers, by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

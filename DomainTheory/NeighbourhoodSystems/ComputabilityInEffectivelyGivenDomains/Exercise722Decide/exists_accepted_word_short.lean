@@ -1,3 +1,8 @@
+/-ai
+If a finite-state automaton accepts some word, then it accepts a word shorter than the number of states.
+
+If there are no states, acceptance of a word is impossible. Otherwise take an accepted word and recurse on its length. When that length is already below the number of states, the word itself is the witness. When it is not, the shortening step produces a strictly shorter accepted word, and the inductive hypothesis applies to that word.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

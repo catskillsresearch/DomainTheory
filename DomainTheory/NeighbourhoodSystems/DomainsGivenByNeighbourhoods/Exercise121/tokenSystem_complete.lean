@@ -1,3 +1,8 @@
+/-ai
+The token system is complete. Every filter is fixed by the element whose neighbourhoods are those whose brackets belong to the filter, and by no other element.
+
+A neighbourhood of the token system is a bracket of some neighbourhood, and that bracket belongs to the filter if and only if the recovered element lies in the bracket. If another element fixes the same filter, the two elements contain the same sets: when the set is a neighbourhood, the fixing property at its bracket transfers membership either way, and when the set is not a neighbourhood, neither element contains it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110

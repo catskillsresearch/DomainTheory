@@ -1,3 +1,8 @@
+/-ai
+If Y is a neighbourhood of C, then fromCC s contains the 1-copy of Y if and only if s contains the second C-copy of Y.
+
+In the forward direction the membership clause is the set of all strings, the singleton of the empty string, a 0-copy, or a 1-copy. The first contradicts a bit copy not being the whole set of strings. The singleton clause contradicts that singleton differing from a bit copy. The 0-copy clause contradicts distinct bits giving distinct copies, using that the underlying neighbourhood is nonempty. The 1-copy clause uses injectivity of embBit. The reverse direction is the 1-copy disjunct.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

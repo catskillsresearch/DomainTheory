@@ -1,3 +1,8 @@
+/-ai
+The system reconstructed from a computable presentation is isomorphic to the original neighbourhood system.
+
+The inverse of the order isomorphism between their elements is a domain isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

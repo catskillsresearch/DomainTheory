@@ -1,3 +1,8 @@
+/-ai
+Any fixed point of an approximable endomap f that lies below the least fixed point of f equals that least fixed point.
+
+A fixed point satisfies the pre-fixed-point inequality, so minimality of the least fixed point places it below the given fixed point, and the two inequalities give equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

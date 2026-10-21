@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (2.16). The top recursion step sends x to the union of the numeral 0 with the successor of x. The top element is the least fixed point of this step.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

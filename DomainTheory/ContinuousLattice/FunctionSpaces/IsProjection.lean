@@ -1,3 +1,6 @@
+/-ai
+A projection on a complete lattice D, in the sense of Scott's Definition 3.11, is a Scott map j from D to D such that j equals j composed with itself and j lies below the identity.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

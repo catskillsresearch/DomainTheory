@@ -1,3 +1,6 @@
+/-ai
+The combination code of two natural codes is the cross combination, by the pair-combination operation, of those codes.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

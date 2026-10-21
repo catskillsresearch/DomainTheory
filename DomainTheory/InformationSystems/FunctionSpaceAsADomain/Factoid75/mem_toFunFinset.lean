@@ -1,3 +1,8 @@
+/-ai
+An ordinary function token lies in the underlying set of a finite set of strict tokens if and only if it is the value of some member of that set.
+
+Unfolding the underlying set as the multiset image under the coercion from strict tokens, this is the membership rule for a mapped multiset in both directions.
+ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

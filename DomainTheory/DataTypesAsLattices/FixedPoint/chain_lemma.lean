@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, the appendix lemma. A Scott-continuous endomap of Pω sends the union of an ascending chain to the union of the images of the stages.
+
+In the forward direction, a code k in the image of the union gives the singleton finite set of two to the power k inside that image. Theorem 1.1 supplies a finite witness contained in the union, so every element of that finite set lies in some stage. Finiteness and the finite-index lemma place the witness inside a single later stage, and monotonicity of the map places k in the image of that stage. In the reverse direction, monotonicity along the inclusion of each stage in the union places each image code in the image of the union.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph

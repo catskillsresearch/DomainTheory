@@ -1,3 +1,9 @@
+/-ai
+The typical 𝔉 set lies in 𝔉.
+
+By the 𝔉 theorem, a set lies in 𝔉 when it is the set of x at which some Scott-continuous map takes the value ⊥. The identity is Scott continuous, and it takes the value ⊥ exactly at ⊥.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

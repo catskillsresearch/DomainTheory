@@ -1,3 +1,8 @@
+/-ai
+If x is strictly less than i and y is strictly less than j, then the pairing of x and y is strictly less than the pairing of i and j.
+
+The pairing of x and y lies strictly below the square of one more than the maximum of x and y: the successor-square identity expands that square, and the two branches of the pairing definition give the bound. The square of the maximum of i and j is at most the pairing of i and j, again by the two branches. One more than the maximum of x and y is at most the maximum of i and j, so the squares compare, and the three comparisons chain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

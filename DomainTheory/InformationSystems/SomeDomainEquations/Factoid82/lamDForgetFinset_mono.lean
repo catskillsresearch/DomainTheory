@@ -1,3 +1,8 @@
+/-ai
+Forgetting a finite set of depth tokens preserves inclusion.
+
+A raw token in the forget of the smaller set is the underlying token of a depth token of that set, hence of the larger set, and therefore lies in the forget of the larger set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

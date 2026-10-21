@@ -1,3 +1,8 @@
+/-ai
+The master neighbourhood of the coalesced sum is the separated-sum master.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

@@ -1,3 +1,8 @@
+/-ai
+Evaluation from the product of the function space with the domain into the codomain is computable.
+
+Inclusion of enumerated function-space neighbourhoods is recursively decidable. Reindex it so that the right-hand code is the one-entry code of the domain factor of the product index with the codomain index. The singleton enumeration is the corresponding step neighbourhood, the product presentation reads as the product of the enumerated neighbourhood with the domain neighbourhood, and evaluation on that product neighbourhood is containment in the step.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

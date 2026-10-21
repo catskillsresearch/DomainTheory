@@ -1,3 +1,8 @@
+/-ai
+Mutual order embeddings between two finite partially ordered types yield an order isomorphism.
+
+Working classically, both types are finite types. Each embedding is injective, so the two finite cardinalities agree, and the first embedding is bijective. That bijection, together with the order law of the embedding, is an order isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615

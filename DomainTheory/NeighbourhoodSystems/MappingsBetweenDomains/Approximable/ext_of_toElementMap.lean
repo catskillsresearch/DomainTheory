@@ -1,3 +1,8 @@
+/-ai
+Two approximable maps that induce the same function on elements are equal.
+
+Extensionality of the relation splits on whether the input is a neighbourhood. When it is, each relation is membership of the output in the elementwise image of the corresponding principal element, and those images agree. When it fails to be a neighbourhood, neither relation holds, because a related input is a neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

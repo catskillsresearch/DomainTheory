@@ -1,3 +1,8 @@
+/-ai
+The zero test is combinatory.
+
+It is the conditional combinator applied to the numerals 1 and 0.
+ai-/
 module
 
 public import Mathlib.Computability.RE

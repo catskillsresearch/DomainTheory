@@ -1,3 +1,8 @@
+/-ai
+Every enumerated set lies in the positive system.
+
+Unfolding the enumeration and splitting on the decoding, a failure simplifies to the universal set, which lies in the system. If decoding yields an expression and nonemptiness is decided true, the denotation of a nonempty expression lies in the system by the decision criterion. Otherwise the value is again the universal set, which lies in the system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

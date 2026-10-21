@@ -1,3 +1,8 @@
+/-ai
+The underlying map of any homomorphism from Exp to an algebra equals the evaluation map, so the evaluation homomorphism is the unique homomorphism.
+
+The composite of the homomorphism with the union of the projections equals the evaluation map: by extensionality, a factorisation through some projection is a pair in the corresponding Kleene iterate, using that the homomorphism after that projection equals the iterate, and conversely. The homomorphism equals that composite because the union of the projections is the identity on Exp.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

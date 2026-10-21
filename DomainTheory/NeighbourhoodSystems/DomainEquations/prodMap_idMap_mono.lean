@@ -1,3 +1,8 @@
+/-ai
+Forming the product of the identity on the left with an approximable map is monotone in that map.
+
+A witness that two neighbourhoods are related by the smaller product remains a witness for the larger product: the identity component is unchanged, and monotonicity of composition preserves the right-hand relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

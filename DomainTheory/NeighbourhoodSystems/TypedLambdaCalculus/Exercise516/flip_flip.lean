@@ -1,3 +1,8 @@
+/-ai
+Flipping a finite string twice returns the original string.
+
+The argument is induction on the string. The empty string is reflexive. For a nonempty string, simplifying the two flips and applying the inductive hypothesis cancels the complements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

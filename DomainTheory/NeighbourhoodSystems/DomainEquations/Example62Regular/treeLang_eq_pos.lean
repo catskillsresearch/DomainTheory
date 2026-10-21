@@ -1,3 +1,8 @@
+/-ai
+The language of a total tree is the set of words whose selected subtree has positive root label.
+
+The root-label law for selected subtrees is applied, and the two sides then agree by reflexivity.
+ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

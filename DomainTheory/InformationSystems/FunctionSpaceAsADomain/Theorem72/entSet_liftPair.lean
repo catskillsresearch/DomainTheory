@@ -1,3 +1,8 @@
+/-ai
+If a consistent set entails another in each factor, then the product system entails the lifted pair of the entailing sets by the lifted pair of the entailed sets.
+
+The source lifted pair is product-consistent. A token of the target pair is either a left lift of a member of the first target, in which case the first component of the source contains the entailing set and entailment transitivity gives the first-component entailment while the second component is the bottom token, or a right lift of a member of the second target, in which case the first component is the bottom token and the second component of the source contains the entailing set, so entailment transitivity gives the second-component entailment.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

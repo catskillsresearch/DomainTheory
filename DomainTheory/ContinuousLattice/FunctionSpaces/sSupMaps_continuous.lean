@@ -1,3 +1,8 @@
+/-ai
+The function sending each element to the supremum of the values of a fixed set of Scott maps at that element is Scott-continuous.
+
+That function preserves directed suprema, and preservation of directed suprema yields Scott continuity.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

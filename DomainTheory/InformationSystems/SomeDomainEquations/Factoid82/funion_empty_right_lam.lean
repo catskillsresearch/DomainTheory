@@ -1,3 +1,8 @@
+/-ai
+The finitary union of a finite set of raw lambda tokens with the empty set is the original set.
+
+By extensionality, membership in the union is membership in the set or membership in the empty set, and the empty set contributes no token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

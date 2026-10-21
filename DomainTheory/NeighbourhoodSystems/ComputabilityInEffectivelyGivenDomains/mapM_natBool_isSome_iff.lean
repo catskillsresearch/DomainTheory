@@ -1,3 +1,8 @@
+/-ai
+Interpreting every entry of a list of natural numbers as a boolean succeeds if and only if every entry is 0 or 1.
+
+Induction on the list. The empty list succeeds. For a head and a tail, success forces the head to interpret as a boolean, hence to be 0 or 1, and the tail satisfies the inductive claim. Conversely, the hypothesis makes the head interpretation and the tail map succeed, so a failed head or tail contradicts it and the successful case simplifies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

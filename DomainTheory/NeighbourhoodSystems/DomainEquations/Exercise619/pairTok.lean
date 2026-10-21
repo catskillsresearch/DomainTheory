@@ -1,3 +1,6 @@
+/-ai
+pairTok is the element of the concrete product that pairs two elements. A neighbourhood of the pair is the product neighbourhood of some neighbourhood of the first element and some neighbourhood of the second.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

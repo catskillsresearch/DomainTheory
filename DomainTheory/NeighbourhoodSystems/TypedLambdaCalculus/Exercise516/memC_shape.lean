@@ -1,3 +1,8 @@
+/-ai
+For every Boolean tag and every finite string, the corresponding shape is a neighbourhood of the domain of binary sequences.
+
+The total tag is the singleton neighbourhood of the string, and the partial tag is the cone neighbourhood of the string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

@@ -1,3 +1,8 @@
+/-ai
+A set of natural numbers is recursively enumerable if and only if it is combinatory.
+
+One direction is the theorem that every recursively enumerable set is combinatory, and the other is the theorem that every combinatory set is recursively enumerable.
+ai-/
 module
 
 public import Mathlib.Computability.RE

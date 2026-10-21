@@ -1,3 +1,8 @@
+/-ai
+The doubly strict conditional is Scott continuous in its middle argument.
+
+The outer conditional is Scott continuous in its middle argument, and the inner conditional that supplies that argument is Scott continuous in its middle argument, so the composite is Scott continuous.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

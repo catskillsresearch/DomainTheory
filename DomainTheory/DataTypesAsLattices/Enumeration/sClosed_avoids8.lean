@@ -1,3 +1,9 @@
+/-ai
+The closed term for S avoids the variable 8.
+
+Unfolding the term and the avoidance predicate, the claim simplifies directly.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

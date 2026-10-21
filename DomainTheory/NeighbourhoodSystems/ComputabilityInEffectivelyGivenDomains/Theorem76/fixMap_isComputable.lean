@@ -1,3 +1,8 @@
+/-ai
+For a computable presentation, together with primitive-recursive consistency, inclusion, and equality characteristics of the function space, the fixed-point combinator is a computable map from the function-space presentation to the presentation. Its neighbourhood relation is the recursively enumerable existential over chains of the decidable least-map step.
+
+The function-space presentation supplies a primitive-recursive inclusion characteristic of enumerated neighbourhoods. Search for a list code whose chain characteristic has second component 1 and whose last index is accepted by the domain inclusion characteristic. That predicate is decidable because the chain characteristic and the inclusion characteristic are primitive recursive, by composing projections and comparing with the constant 1. It enumerates the relation because the chain form of the relation, the round trip of list coding, the read-off of the chain characteristic, and the equivalence of the decidable chain predicate with the least-map steps match a witnessing chain with its code and a witnessing code with its decoded chain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

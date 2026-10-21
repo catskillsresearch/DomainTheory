@@ -1,3 +1,9 @@
+/-ai
+An element lies in the basic open of a finite token set if and only if that set is contained in its carrier.
+
+The equivalence is the definition of the basic open.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable

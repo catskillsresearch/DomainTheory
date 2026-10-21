@@ -1,3 +1,6 @@
+/-ai
+Element-level strictification sends a function-space element to the strict filter of the relational strictification of its approximable map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

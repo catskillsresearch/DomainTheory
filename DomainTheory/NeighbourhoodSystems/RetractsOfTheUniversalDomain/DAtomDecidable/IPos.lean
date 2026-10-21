@@ -1,3 +1,6 @@
+/-ai
+The positive index set of a list of indices is the set of indices whose neighbourhood is contained in the neighbourhood of every index in the list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

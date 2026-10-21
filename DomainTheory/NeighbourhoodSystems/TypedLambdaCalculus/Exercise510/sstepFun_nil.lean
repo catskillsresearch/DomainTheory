@@ -1,3 +1,8 @@
+/-ai
+The step-function set of the empty list is the set of all strict maps.
+
+Extensionality and simplification of membership in the empty list give the equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

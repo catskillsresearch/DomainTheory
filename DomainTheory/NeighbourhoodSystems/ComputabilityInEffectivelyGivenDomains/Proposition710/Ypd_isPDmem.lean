@@ -1,3 +1,8 @@
+/-ai
+Every coded neighbourhood is a power-domain neighbourhood, witnessed by the list of enumerated neighbourhoods of the codes in its decoded list.
+
+Each entry of that list is an enumerated neighbourhood, hence a neighbourhood of the original system. A set lies in the coded neighbourhood exactly when it lies in the down-set of some decoded code, and it lies in the power-domain union of the list exactly when it lies in the down-set of the enumerated neighbourhood of such a code. The two descriptions match by sending each code to its enumerated neighbourhood and back.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,6 @@
+/-ai
+The inclusion reindexing sends the pair code of indices n and m to the code of the triple n, m, n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

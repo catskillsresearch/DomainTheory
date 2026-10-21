@@ -1,3 +1,8 @@
+/-ai
+If a bound is positive and every token in a multiset of raw lambda tokens has raw depth strictly below that bound, then the right fold that accumulates the maximum of the raw depth and the accumulator, starting from zero, is strictly below the bound.
+
+The proof inducts on the multiset. The empty fold is zero, which lies below the positive bound. A nonempty fold is the maximum of the head's raw depth and the fold of the tail, and both lie strictly below the bound.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

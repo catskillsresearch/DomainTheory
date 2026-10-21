@@ -1,3 +1,9 @@
+/-ai
+Inclusion of enumerated neighbourhoods is recursively decidable. The prefix characteristic supplies the decider.
+
+Apply the constructor of a paired zero-one characteristic to the primitive-recursive subset characteristic, the bound that forces its value to be zero or one, and the equivalence of inclusion with that characteristic equaling one.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

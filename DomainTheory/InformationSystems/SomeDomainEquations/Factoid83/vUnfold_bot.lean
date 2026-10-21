@@ -1,3 +1,8 @@
+/-ai
+Unfolding the bottom token of V yields the bottom token of the product V × V.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

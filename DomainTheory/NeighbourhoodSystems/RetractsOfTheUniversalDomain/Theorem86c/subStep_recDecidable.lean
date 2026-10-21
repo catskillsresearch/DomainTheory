@@ -1,3 +1,8 @@
+/-ai
+The predicate of a code that packages a witness index, an enumeration index, and a step, asserting that the enumerated neighbourhood is contained in the enumerated neighbourhood of the witness paired with itself and that the two presented neighbourhoods of the step bracket the witness, is recursively decidable.
+
+The witness index, the enumeration index, and the two halves of the step are primitive recursive, as is the code of the witness paired with itself. Each of the three inclusions is decided by composing the corresponding inclusion character with the pairing of those projections, and the three decidable predicates are conjoined.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

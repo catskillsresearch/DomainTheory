@@ -1,3 +1,8 @@
+/-ai
+Application is preserved by the tower embeddings: for f in D_{n+1} and x in D_n, the level-n embedding of f(x) equals the level-(n+1) embedding of f applied to the level-n embedding of x.
+
+The successor formula for the inclusion expands the right-hand side as the level-n embedding of f applied to the retraction of the level-n embedding of x, and the retraction law cancels that retraction against the embedding.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

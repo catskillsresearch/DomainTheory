@@ -1,3 +1,6 @@
+/-ai
+The tail of a natural number is the set of natural numbers at least that large.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

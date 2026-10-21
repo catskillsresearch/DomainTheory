@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (3.8): applying G to itself returns zero.
+
+G is distinct from bottom. If it were bottom, applying both sides to the numeral 0 and using the evaluation of G at zero would make the packed combinators equal the application of bottom, which simplifies to bottom, contradicting that the packed combinators are not bottom. The application law for G, followed by the clause of the conditional for an element distinct from bottom that does not contain zero, therefore returns zero.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

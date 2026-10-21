@@ -1,3 +1,8 @@
+/-ai
+Some sharp neighbourhood lies in an embedded pair of sets A and B exactly when some sharp neighbourhood lies in A and some sharp neighbourhood lies in B.
+
+If a sharp neighbourhood lies in the embedded pair, that neighbourhood is itself an embedded pair of two sets in the sharp family, each of which is some sharp neighbourhood, and the two inclusions transfer. Conversely, the embedded pair of the two witnessing sharp neighbourhoods is again a sharp neighbourhood, and the embedded pair is monotone in each component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

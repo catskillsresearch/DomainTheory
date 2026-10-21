@@ -1,3 +1,8 @@
+/-ai
+The master of the concrete product is the product neighbourhood of the two factor masters.
+
+The two sides are definitionally the same.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

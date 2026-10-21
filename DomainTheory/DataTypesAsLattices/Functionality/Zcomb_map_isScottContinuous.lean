@@ -1,3 +1,8 @@
+/-ai
+The map sending a function to the graph of its iterator at a fixed stage is Scott continuous.
+
+The constant-graph lemma, using continuity of the iterator in the function argument.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

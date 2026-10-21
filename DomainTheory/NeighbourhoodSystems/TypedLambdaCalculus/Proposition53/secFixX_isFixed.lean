@@ -1,3 +1,8 @@
+/-ai
+The value of τ at the pair of the nested fixed-point map of τ at y with y equals that nested value.
+
+Rewrite by the application law of the nested map, the application law of the section, and the fixed-point equation of the section.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

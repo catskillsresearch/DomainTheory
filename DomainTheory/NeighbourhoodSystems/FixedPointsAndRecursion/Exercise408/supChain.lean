@@ -1,3 +1,6 @@
+/-ai
+The supremum of a monotone chain of elements indexed by the natural numbers is their directed union. For any two indices the maximum is an upper bound, by monotonicity of the chain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

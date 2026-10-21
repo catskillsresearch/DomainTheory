@@ -1,3 +1,6 @@
+/-ai
+An element of the domain of domains is an approximable map from the powerset system P to itself that satisfies Scott's conditions (1) through (5).
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

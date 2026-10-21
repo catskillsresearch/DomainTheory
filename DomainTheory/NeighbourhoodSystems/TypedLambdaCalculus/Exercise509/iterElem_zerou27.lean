@@ -1,3 +1,8 @@
+/-ai
+The zero-th iterate of an approximable endomap from the bottom element is the bottom element.
+
+Rewrite the iterate as function iteration. The zero-fold iterate is the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407

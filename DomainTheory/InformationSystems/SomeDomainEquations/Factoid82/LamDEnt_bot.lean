@@ -1,3 +1,8 @@
+/-ai
+A bundled-consistent finset entails the bottom token of the lambda system.
+
+This is the bottom clause of depth entailment, applied to the underlying depth consistency.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

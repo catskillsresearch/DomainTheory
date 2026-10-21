@@ -1,3 +1,8 @@
+/-ai
+The intersection of the singleton of false with the singleton of true is empty.
+
+An element of both singletons would be equal to false and equal to true.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

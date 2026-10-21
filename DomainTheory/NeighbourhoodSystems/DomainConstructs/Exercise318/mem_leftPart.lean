@@ -1,3 +1,8 @@
+/-ai
+A token lies in the left content of a sum set when its left tag lies in the set, or the token lies in the first master and the set contains a right tag or the basepoint.
+
+Unfold the left content as a union of a preimage and a set defined by a predicate; the two sides are the same membership statement.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

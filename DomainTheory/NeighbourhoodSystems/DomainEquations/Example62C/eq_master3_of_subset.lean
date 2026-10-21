@@ -1,3 +1,8 @@
+/-ai
+A set that contains the three-way master and is contained in it is equal to the master.
+
+This is antisymmetry of the two inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

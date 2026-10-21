@@ -1,3 +1,8 @@
+/-ai
+The bit successor on the carrier of an algebra is monotone in its element argument.
+
+When the bit is false, monotonicity of the structure map and of the first sum injection give the inequality. When the bit is true, the same argument uses the second sum injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

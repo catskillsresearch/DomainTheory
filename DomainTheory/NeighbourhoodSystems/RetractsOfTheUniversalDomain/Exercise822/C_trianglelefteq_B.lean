@@ -1,3 +1,8 @@
+/-ai
+C stands in the projection relation to B.
+
+The witness is the image system D', its literal subsystem relation into B, and the domain isomorphism of C with D'.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

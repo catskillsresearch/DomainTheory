@@ -1,3 +1,6 @@
+/-ai
+The fold-shaped pair-map step reads the parameter, the accumulator, and the head from the packed word and applies one pair-map step, threading the parameter through the parameter slot of the code fold.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

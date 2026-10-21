@@ -1,3 +1,6 @@
+/-ai
+The computable presentation of T enumerates neighbourhoods by Tenum, with membership and surjectivity of that enumeration and with the recursively decidable intersection-equality and consistency relations. The intersection of two indices is their intersection code after truncation at 2. That operation is primitive recursive because the intersection code of the two truncations at 2 is primitive recursive, up to a definitional equation. On a consistent pair, the specification rewrites the enumerated intersection by the intersection-code formula and selects the nonempty branch by the consistency criterion. The master index is 0, by the defining equation of the enumeration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

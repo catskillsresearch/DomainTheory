@@ -1,3 +1,6 @@
+/-ai
+Membership in the neighbourhood system of Example 1.4 is membership in the set of its seven neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

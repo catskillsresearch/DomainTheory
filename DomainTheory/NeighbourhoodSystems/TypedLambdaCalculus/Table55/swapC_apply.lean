@@ -1,3 +1,8 @@
+/-ai
+The swap sends the pair of x and y to the pair of y and x.
+
+Rewrite by the definition of the swap, the pairing law, the two projections, and the two components of a pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

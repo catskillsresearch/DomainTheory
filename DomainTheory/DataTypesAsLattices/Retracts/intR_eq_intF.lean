@@ -1,3 +1,8 @@
+/-ai
+The integer functional fixes the integer retract.
+
+This is the first component of Theorem 1.4 applied to Scott continuity of the integer functional.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

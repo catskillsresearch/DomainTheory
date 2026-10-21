@@ -1,3 +1,6 @@
+/-ai
+The function-space tower, packaged as complete lattices, begins with the given lattice D_0. The successor of level n is the complete lattice of Scott maps from the carrier of level n to itself.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

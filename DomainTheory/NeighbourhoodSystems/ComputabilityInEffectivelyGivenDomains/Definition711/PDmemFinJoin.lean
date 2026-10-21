@@ -1,3 +1,6 @@
+/-ai
+A set W satisfies the finite-join membership predicate of elements x indexed by a finite set of positions when there are representatives X of those elements such that W is a power-domain neighbourhood and every down-set of an X is contained in W.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

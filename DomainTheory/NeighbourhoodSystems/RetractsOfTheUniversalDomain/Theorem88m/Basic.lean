@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports shrinking of one gated step and of a fold, the refolding intersection lemma, primitive recursiveness of the list-code intersection, the intersection equation and specification for the induced enumeration, and the computable presentation of the universal domain, for the assembly of Theorem 8.8(c).
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.Basic

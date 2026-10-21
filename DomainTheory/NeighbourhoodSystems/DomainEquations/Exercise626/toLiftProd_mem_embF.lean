@@ -1,3 +1,8 @@
+/-ai
+For neighbourhoods X of D and Y of E, the image of a smash element under the forward map contains the false tag of the product neighbourhood of X and Y if and only if the smash element contains the product of the two false tags.
+
+A master in the image differs from that false tag. A witnessing pair of neighbourhoods is identified with X and Y by injectivity of tagging and of product neighbourhoods. The converse records X, Y, and the given smash membership as the right disjunct.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,3 +1,6 @@
+/-ai
+The product curry of a map from the product of A and Y into Z is the curry of that map precomposed, in diagrammatic order, with the swap of Y and A, regarded as a morphism from Y into the exponential of Z by A.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

@@ -1,3 +1,8 @@
+/-ai
+A finite element belongs to the ideal associated with an element x if and only if it lies under x.
+
+Membership in that ideal is membership among the finite approximants of x, which holds if and only if the finite element lies under x.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

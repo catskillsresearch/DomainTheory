@@ -1,3 +1,8 @@
+/-ai
+Climbing from a stage to itself returns the original element.
+
+Unfolding the climb leaves the recursion at the same index, which is the identity.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

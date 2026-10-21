@@ -1,3 +1,6 @@
+/-ai
+The mediating map of a cocone of Scott maps into a complete lattice sends a compatible sequence to the supremum, over all levels, of the values of the component maps at the corresponding coordinates.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

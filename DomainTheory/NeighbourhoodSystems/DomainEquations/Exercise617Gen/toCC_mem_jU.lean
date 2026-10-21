@@ -1,3 +1,8 @@
+/-ai
+The forward image of an element contains the unit copy when the element contains the singleton of the empty string.
+
+The master alternative would place the empty token in the unit copy. A letter-copy alternative would place the unit token in that copy. The remaining alternative is the unit copy, and it is available in the other direction whenever the element contains the singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

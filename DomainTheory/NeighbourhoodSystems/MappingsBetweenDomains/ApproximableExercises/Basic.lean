@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood belongs to the two-variable elementwise image of a pair of elements if and only if some neighbourhood of the first element and some neighbourhood of the second are jointly related to it.
+
+This equivalence is the defining membership of the two-variable elementwise image.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

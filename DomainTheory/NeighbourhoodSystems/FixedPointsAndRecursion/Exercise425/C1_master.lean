@@ -1,3 +1,8 @@
+/-ai
+The master neighbourhood of the unary sequence system is the set of all naturals.
+
+The equality holds by definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

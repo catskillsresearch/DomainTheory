@@ -1,3 +1,8 @@
+/-ai
+The map sending u to the set of codes m for which some finite set e n contained in e m has index n in u is Scott continuous.
+
+Membership of m is compared with membership in the Scott union. A witness n contributes the code two to the n, using the power-of-two description of the finite sets and the singleton containment coming from n lying in u. Conversely, a Scott-union witness supplies an index n whose finite set sits in e m and whose code lies in u.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

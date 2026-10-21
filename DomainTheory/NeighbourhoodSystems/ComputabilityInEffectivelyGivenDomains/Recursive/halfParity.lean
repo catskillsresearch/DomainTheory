@@ -1,3 +1,6 @@
+/-ai
+The half-parity of a natural is the pair of its quotient by 2 and its residue modulo 2. It is built by recursion from 0, and the value at the next number is the pair of the old quotient plus the old residue and of 1 minus the old residue, the carry from an odd number to the next even number.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,3 +1,8 @@
+/-ai
+Every Kleene iterate of the evaluation operator is strict.
+
+The zero iterate is the constant bottom map, which is strict. The successor iterate is a composite of the structure map, the functor image of the previous iterate, and the inverse structure map; each factor is strict, and a composite of strict maps is strict.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

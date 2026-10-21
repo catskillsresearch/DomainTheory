@@ -1,3 +1,8 @@
+/-ai
+Depth entailment weakens along a subset when the larger finite set of raw lambda tokens stays in the function world, with empty atom set.
+
+The proof cases on the entailment. The bottom token is the bottom clause for the larger set. An atom entailment would place an atom of the smaller set into the empty atom set of the larger set. A function-token entailment reuses its input and output data and pushes the witness subset along the monotone function set. The nonempty function world of the smaller set follows because a function pair of that set would otherwise land in the empty function set of the larger set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

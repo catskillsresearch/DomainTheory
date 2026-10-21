@@ -1,3 +1,6 @@
+/-ai
+The comparison combinator is λn λm. isZero(n − m). It is written as S applied to K applied to S applied to K applied to the zero test, and then to the subtraction combinator.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the diagonal fixed-point predicate, its agreement with membership in the fixed-neighbourhood subsystem, its recursive enumerability, the primitive-recursive witness characteristic extracted from that enumerability, the gated fold and its one-step function, their code-level versions, and the fact that the fold of the empty list is the master index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic

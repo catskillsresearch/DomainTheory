@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Exercise 7.20: Scott's finite formula for the flattening combinator, the characterization of that combinator on power-domain codes, and its computability.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise720.Basic

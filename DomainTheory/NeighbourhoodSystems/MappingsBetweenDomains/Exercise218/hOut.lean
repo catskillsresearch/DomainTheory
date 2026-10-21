@@ -1,3 +1,6 @@
+/-ai
+The doubled output of a finite string is empty on the empty string, and on a string starting with a bit it writes that bit, then false, then the doubled output of the tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

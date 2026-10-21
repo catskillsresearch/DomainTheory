@@ -1,3 +1,6 @@
+/-ai
+The enumeration induced by the qChar-gated fold sends a list code to the neighbourhood presented at the raw index returned by the code-level fold.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.Basic

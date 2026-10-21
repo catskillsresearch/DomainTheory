@@ -1,3 +1,6 @@
+/-ai
+Decidability of the predicate of being a U-token is introduced by cases on whether the token is top. The predicate fails when the token is top, and holds by the resulting inequality otherwise.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

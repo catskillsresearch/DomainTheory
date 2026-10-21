@@ -1,3 +1,6 @@
+/-ai
+The curry combinator of Table 5.5 (Scott 1981, PRG-19) is the approximable map from the function space of a product to the iterated function space, obtained from the order isomorphism between those function-space domains.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

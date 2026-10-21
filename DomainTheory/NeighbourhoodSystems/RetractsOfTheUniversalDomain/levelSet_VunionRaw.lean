@@ -1,3 +1,8 @@
+/-ai
+The level set coded by the raw union of n and m is the union of the neighbourhoods indexed by n and by m.
+
+Unfold the raw union, project the paired code, and apply the symmetric form of the upsampled union formula to the levels and masks of the two canonical indices.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

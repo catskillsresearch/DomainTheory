@@ -1,3 +1,8 @@
+/-ai
+Prepending an index to a finite list is the finite list with that index at its head.
+
+The equation is the defining clause.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

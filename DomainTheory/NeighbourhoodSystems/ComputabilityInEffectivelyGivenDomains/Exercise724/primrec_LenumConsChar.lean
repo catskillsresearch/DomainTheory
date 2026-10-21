@@ -1,3 +1,8 @@
+/-ai
+The consistency characteristic of the enumeration of L, read on the two components of an unpaired natural number, is primitive recursive.
+
+The prefix test in each argument order is primitive recursive. Their sum minus their product is primitive recursive, and simplification of the definition shows that this combination is the consistency characteristic.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

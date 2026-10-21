@@ -1,3 +1,8 @@
+/-ai
+The successor sends the total element of length n to the total element of length n + 1.
+
+Compare the two elements on an arbitrary neighbourhood. A witness for the image supplies a neighbourhood contained in the singleton of n whose shift lies in the output; monotonicity of shift and the law that this singleton shifts to the next singleton put that next singleton inside the output. Conversely the singleton of n, contained in itself, is a witness, and the same shift law rewrites containment of the next singleton as containment of the shift.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

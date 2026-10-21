@@ -1,3 +1,6 @@
+/-ai
+Two indices are consistent when some index is included in both of them.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

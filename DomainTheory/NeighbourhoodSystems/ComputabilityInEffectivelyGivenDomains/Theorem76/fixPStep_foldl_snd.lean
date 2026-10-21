@@ -1,3 +1,8 @@
+/-ai
+If the starting flag is at most 1, then the second component of the left fold of the pure step equals 1 if and only if the starting flag equals 1 and the decidable chain predicate holds along the list.
+
+Induct on the list. On the empty list the second component is the starting flag and the chain predicate holds. On a cons the new flag is the selection of the one-entry inclusion bit by the old flag, hence is at most 1. The inductive hypothesis splits the remaining fold into that new flag together with the tail predicate, and the new flag equals 1 precisely when the old flag equals 1 and the inclusion characteristic accepts the one-entry code. Reassociating the conjunction gives the cons clause of the chain predicate.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

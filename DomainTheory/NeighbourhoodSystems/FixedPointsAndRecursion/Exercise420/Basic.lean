@@ -1,3 +1,6 @@
+/-ai
+This file states Exercise 4.20. For approximable endomaps f and g of a domain, the least fixed point of f composed with g equals f applied to the least fixed point of g composed with f. The latter element is a fixed point of the first composite, and the symmetric comparison gives the reverse inequality. The file imports the least-fixed-point operator of Theorem 4.1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

@@ -1,3 +1,8 @@
+/-ai
+A retraction is idempotent on elements: applying it twice to an element yields the same element as applying it once.
+
+The element map of the composite is the composite of the element maps, and a retraction equals its composite with itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

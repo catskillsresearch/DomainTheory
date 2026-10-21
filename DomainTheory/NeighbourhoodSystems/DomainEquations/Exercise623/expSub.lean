@@ -1,3 +1,8 @@
+/-ai
+Each finite level of the tower, the n-fold application of the expression functor to the one-point generator, is a subsystem of the syntactic domain of expressions.
+
+This is the general comparison of a tower level with the colimit, specialised to the expression functor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

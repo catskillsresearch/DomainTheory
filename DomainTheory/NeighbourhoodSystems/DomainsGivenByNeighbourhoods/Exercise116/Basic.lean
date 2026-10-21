@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the cofinite neighbourhood system, the filter of an excluded-point set, the excluded-point set of a filter, the order isomorphism with the power set of the natural numbers, the neighbourhood system of all subsets, the membership simplifications, membership of singleton complements and of complements of finite sets, inclusion in a singleton complement, and the two theorems inverting the excluded-point correspondence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

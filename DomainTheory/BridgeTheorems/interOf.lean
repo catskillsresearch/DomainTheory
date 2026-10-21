@@ -1,3 +1,6 @@
+/-ai
+The intersection coded by a finite set of neighbourhood indices is the fold of binary intersection over the indexed neighbourhoods, starting from the master set, so that the empty intersection is the master set.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

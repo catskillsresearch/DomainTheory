@@ -1,3 +1,8 @@
+/-ai
+The fresh bottom lies below every element of the lift.
+
+Its only neighbourhood is the master, and the master belongs to every element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the Thue–Morse development: the basic definitions, distributivity of the substitution over append, the partial flag of an interleaving, the weave identity for a head bit, the operator on a partial element and its agreement with the substitution, the zero and successor laws for approximants, the cons form of substitution iterates, the identification of bottom with the empty partial element, the successor approximant as a substitution iterate, the even and odd recurrences, the successor, length, and nesting laws for prefixes, the substitution step on prefixes and the iterate bridge, the unfolding of t, cone membership for partial elements, the characterization of the universal cone, the comparison of approximants with the least fixed point, and the prefix, cone, and digit forms of the characterization of t.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.Basic

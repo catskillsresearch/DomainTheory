@@ -1,3 +1,6 @@
+/-ai
+The meet of two elements of the power domain contains a neighbourhood exactly when both elements contain it. A neighbourhood of the meet is a neighbourhood of the first element, the master neighbourhood is the pair of the two master neighbourhoods, an intersection is taken componentwise, and an upper neighbourhood of a neighbourhood of the meet is an upper neighbourhood of each component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

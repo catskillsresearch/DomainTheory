@@ -1,3 +1,8 @@
+/-ai
+The code of the representing closure of a countably algebraic lattice is a closure operation.
+
+A pair from the identity combinator has its second component in a finite set, and expansiveness of the representing closure puts that component into the representing closure of the finite set, so the pair lies in the code. The code equals the graph of its own iterate because applying the code twice is the representing closure applied twice, which equals one application by idempotence.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

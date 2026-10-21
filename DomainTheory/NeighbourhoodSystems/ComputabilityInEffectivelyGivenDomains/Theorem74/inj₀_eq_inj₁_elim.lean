@@ -1,3 +1,8 @@
+/-ai
+A nonempty left copy is never equal to a right copy.
+
+An element of the left set lies in the left copy, and the equality would place it in the right copy, which is impossible.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

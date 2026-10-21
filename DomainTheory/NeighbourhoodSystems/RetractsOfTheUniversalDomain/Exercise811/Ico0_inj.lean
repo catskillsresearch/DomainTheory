@@ -1,3 +1,8 @@
+/-ai
+On positive rationals, the parametrization r ↦ [0, r) is injective.
+
+If r < s, then r lies in [0, s) and not in [0, r). If s < r, then s lies in [0, r) and not in [0, s). Equality of the endpoints is the remaining case of trichotomy.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

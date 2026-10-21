@@ -1,3 +1,8 @@
+/-ai
+An order isomorphism of elements sends each principal element to a principal element.
+
+Let w be the image of the principal element on a neighbourhood X, and let S be the set of inverse images of the principal elements on neighbourhoods belonging to w. The master neighbourhood of the codomain belongs to w, so S is nonempty. S is directed because the intersection of two members of w belongs to w and its principal lies above both. The directed union z of S lies below the principal on X, since each member of S lies below the inverse image of w, which is that principal. Conversely w lies below the image of z, because each neighbourhood of w belongs to the image of the corresponding member of S and that member lies below z, so the principal on X lies below z. Thus z equals that principal, and X belongs to the inverse image of the principal on some neighbourhood Y of w. The principal on X then lies below that inverse image, so w lies below the principal on Y, while the principal on Y lies below w because Y belongs to w.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

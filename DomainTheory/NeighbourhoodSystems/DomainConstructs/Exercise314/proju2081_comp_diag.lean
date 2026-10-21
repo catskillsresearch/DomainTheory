@@ -1,3 +1,8 @@
+/-ai
+Postcomposing the diagonal with the second projection returns the identity map.
+
+The identity is the corresponding fact for the pairing of the identity with itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

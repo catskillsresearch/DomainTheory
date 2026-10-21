@@ -1,3 +1,8 @@
+/-ai
+A valuation trace records a code and a member if and only if some entry of the trace has that code as its first component and that member as its second component.
+
+A witnessing time stamp determines such an entry. Conversely, the third component of such an entry is a witnessing time stamp, after decomposing the entry and rewriting the two component equations.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

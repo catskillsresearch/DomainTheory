@@ -1,3 +1,8 @@
+/-ai
+Distinct singleton subsets of the natural numbers are disjoint.
+
+Extensionality reduces the claim to membership. A common element would equal both indices, contradicting the hypothesis that the indices differ.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

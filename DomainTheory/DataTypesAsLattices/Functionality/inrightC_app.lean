@@ -1,3 +1,9 @@
+/-ai
+Application of the right injection to x is the sequence pair of one with x.
+
+This is β-conversion for the graph of sequence pairing in the right argument at the constant one, which is Scott continuous.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

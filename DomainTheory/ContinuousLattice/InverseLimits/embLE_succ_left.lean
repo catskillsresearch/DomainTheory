@@ -1,3 +1,8 @@
+/-ai
+Climbing the inclusion of x from stage n+1 up to a later stage m equals climbing x itself from stage n.
+
+Unfolding the climb, the recursion consumes the first inclusion.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

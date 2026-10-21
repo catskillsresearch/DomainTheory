@@ -1,3 +1,8 @@
+/-ai
+Primitive recursion from the numeral 0 with step sqrtStepC applied to the numeral n, run for k steps, equals the numeral sqrtIter n k.
+
+The case k = 0 is reflexivity. For a successor, the recursive clause of primRecVal is rewritten as the double application of that step at the numeral k to the value at k. The inductive hypothesis and sqrtStepC_app finish the equality.
+ai-/
 module
 
 public import Mathlib.Computability.RE

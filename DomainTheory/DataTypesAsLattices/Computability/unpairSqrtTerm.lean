@@ -1,3 +1,6 @@
+/-ai
+The term unpairSqrtTerm is the application of variable 1 to variable 0, the integer square root of the input in the unpairing environment.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the definitions and theorems of Scott 1976, section 4, on retracts and data types: composition, retracts, the projection order, the function-space, product, and sum constructions, and Theorems 4.1 through 4.6.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

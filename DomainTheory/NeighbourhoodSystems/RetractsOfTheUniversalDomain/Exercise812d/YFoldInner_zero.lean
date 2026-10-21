@@ -1,3 +1,8 @@
+/-ai
+The inner Y-fold at stage 0 is the pair of zeros.
+
+This is the base clause of the recursion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

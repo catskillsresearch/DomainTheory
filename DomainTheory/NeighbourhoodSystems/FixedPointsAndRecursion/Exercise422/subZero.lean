@@ -1,3 +1,6 @@
+/-ai
+The zero of the carved-out subtype is the ambient zero, which lies in the carved-out set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

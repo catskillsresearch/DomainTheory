@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the concrete token sum is nonempty.
+
+The master contains the empty word. A false-tagged copy of a neighbourhood of the first system is nonempty because that neighbourhood is nonempty, and a true-tagged copy of a neighbourhood of the second system is nonempty for the same reason.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

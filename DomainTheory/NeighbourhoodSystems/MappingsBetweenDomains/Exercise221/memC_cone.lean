@@ -1,3 +1,8 @@
+/-ai
+The cone of any finite binary string is a neighbourhood of the system C.
+
+It is the left disjunct of membership in C, witnessed by that string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

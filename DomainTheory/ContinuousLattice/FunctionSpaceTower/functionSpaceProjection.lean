@@ -1,3 +1,6 @@
+/-ai
+The diagonal specialization of Scott's Proposition 3.7 turns a continuous-lattice projection from D into D' into a continuous-lattice projection from [D → D] into [D' → D']. The inclusion is f ↦ i ∘ f ∘ j and the retraction is g ↦ j ∘ g ∘ i, each bundled with its outer continuity. The retraction-inclusion identity and the inclusion-retraction inequality are the corresponding facts for this diagonal construction.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

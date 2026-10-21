@@ -1,3 +1,8 @@
+/-ai
+The cone of a string is a neighbourhood of the system of cones and singletons.
+
+It is the cone alternative in the membership predicate, witnessed by that string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

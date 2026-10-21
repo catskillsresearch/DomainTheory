@@ -1,3 +1,6 @@
+/-ai
+The term unpairDeltaTerm applies variable 2 to variable 0 and then to unpairSquareTerm, the difference between the input and the square of its integer square root in the unpairing environment.
+ai-/
 module
 
 public import Mathlib.Computability.RE

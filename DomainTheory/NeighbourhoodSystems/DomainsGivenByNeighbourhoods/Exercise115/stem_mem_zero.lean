@@ -1,3 +1,8 @@
+/-ai
+The singleton {0} is a neighbourhood of the stem domain.
+
+It is the right-hand disjunct of stem membership, witnessed by 0.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

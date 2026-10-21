@@ -1,3 +1,7 @@
+/-ai
+This file gathers and re-exports Proposition 2.3 as the setting for Scott's Factoid 3.2, that every element contains the least informative token, because that proposition is true of every element.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23

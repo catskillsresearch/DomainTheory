@@ -1,3 +1,6 @@
+/-ai
+The product presentation enumerates, at each code, the product neighbourhood of the two component neighbourhoods read off by unpairing. Every such set is a product neighbourhood, and every product neighbourhood arises by pairing indices of its factors. Equality of an intersection of two enumerated neighbourhoods with a third, and consistency of a pair, are the conjunctions of the two factors' corresponding decidable relations after primitive-recursive reindexing; the consistency equivalence packs and unpacks a paired index. The intersection code pairs the factors' intersection codes and is primitive recursive because each factor's intersection is. On a consistent pair it equals the intersection, by splitting the product inclusion and applying each factor's intersection specification. The master code is the pair of the two master codes, and it enumerates the product of the two masters.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

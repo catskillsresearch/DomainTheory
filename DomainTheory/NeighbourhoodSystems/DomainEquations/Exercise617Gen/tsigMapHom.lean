@@ -1,3 +1,6 @@
+/-ai
+On morphisms, the strict indexed-sum functor sends a strict map to the indexed sum of its underlying approximable map, which is strict.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

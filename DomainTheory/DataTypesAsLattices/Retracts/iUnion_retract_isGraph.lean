@@ -1,3 +1,8 @@
+/-ai
+A union of retracts is a graph: if a pair lies in the union and the finite-set index is enlarged, the new pair still lies in the union.
+
+The original pair lies in some summand. That summand is a graph, because a retract is a graph and Theorem 1.2(iii) turns the graph property into this closure. The enlarged index therefore remains in the same summand, and hence in the union.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

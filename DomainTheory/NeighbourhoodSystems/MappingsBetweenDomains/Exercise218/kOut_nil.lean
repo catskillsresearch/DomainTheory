@@ -1,3 +1,8 @@
+/-ai
+The inverse output of the empty string is the empty string.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

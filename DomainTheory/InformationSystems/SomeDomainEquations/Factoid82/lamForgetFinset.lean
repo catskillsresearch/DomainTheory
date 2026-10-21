@@ -1,3 +1,6 @@
+/-ai
+Forgetting a finite set of lambda tokens returns the finite set of underlying raw tokens. It is the right fold of lambda-token insertion, starting from the empty set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

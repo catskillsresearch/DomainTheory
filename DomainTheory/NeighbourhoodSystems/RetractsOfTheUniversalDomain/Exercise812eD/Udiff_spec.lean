@@ -1,3 +1,8 @@
+/-ai
+Whenever the difference of two U-neighbourhoods is itself a neighbourhood, the canonical neighbourhood at the difference index equals that difference.
+
+The raw intervals of the difference index equal the difference, so they form a neighbourhood. Canonicalizing a list that already presents a neighbourhood leaves the presented intervals unchanged.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

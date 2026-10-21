@@ -1,3 +1,9 @@
+/-ai
+If V(a)(x) equals a(x) for every x, then a is expansive: x is contained in a(x). Scott's Theorem 5.5 uses this, together with idempotence, once a is already a graph retract.
+
+Equation (5.16) puts x inside V(a)(x), and the hypothesis replaces that universe value by a(x).
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

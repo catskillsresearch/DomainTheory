@@ -1,3 +1,6 @@
+/-ai
+The second-system index of the X half-step atom at depth n and bit-source i is the second index of the packed state of that atom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

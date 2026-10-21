@@ -1,3 +1,6 @@
+/-ai
+The carrier D_n of the function-space tower is the underlying type of the n-th bundled complete lattice in the tower.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

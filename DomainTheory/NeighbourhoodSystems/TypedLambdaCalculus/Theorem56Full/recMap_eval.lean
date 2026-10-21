@@ -1,3 +1,8 @@
+/-ai
+On the argument element of a counter d followed by a vector u, the recursion map returns the numeral for the natural-number recursion that starts from the base function on u and applies the step function, carrying the previous counter and the previous value, through d steps.
+
+Induct on d. At zero, rewrite the argument as a push, apply the recursion equation, compute the head and tail of a push, take the true branch of the conditional because the zero-test of the numeral zero succeeds, and use the value clause of the λ-definition of the base. At a successor, the same rewriting takes the false branch because the zero-test of a successor numeral fails, and the predecessor, two further pushes, and the inductive hypothesis reduce the call to the value clause of the λ-definition of the step.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

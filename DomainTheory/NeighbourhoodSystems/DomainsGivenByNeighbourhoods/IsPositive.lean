@@ -1,3 +1,6 @@
+/-ai
+A neighbourhood system is positive when, for any two neighbourhoods, their intersection is a neighbourhood if and only if the intersection is nonempty.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

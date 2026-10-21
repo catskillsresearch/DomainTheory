@@ -1,3 +1,6 @@
+/-ai
+The exponential functor at an information-system object A is the right adjoint of left tensoring with A induced by the tensor-exponential equivalence. The naturality required by that construction is the naturality of the equivalence.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

@@ -1,3 +1,8 @@
+/-ai
+Right curry is a left inverse of right uncurry.
+
+Unfolding both operations, the tensor-to-product transport of the product-to-tensor transport of the product uncurry is the product uncurry itself. The swap composed diagrammatically with the opposite swap and that uncurry equals the uncurry: diagrammatic composition associates, a swap composed with the opposite swap is the identity, and the identity is a left unit. Currying that uncurry recovers the original map.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

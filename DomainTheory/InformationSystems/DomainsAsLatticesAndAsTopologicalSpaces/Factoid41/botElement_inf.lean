@@ -1,3 +1,8 @@
+/-ai
+The bottom element is a left zero for the meet: its meet with any element is the bottom element.
+
+The criterion that the order is equality with a meet applies to the inequality of the bottom element below the given element.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33

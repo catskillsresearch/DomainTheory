@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the uncurried composition map and the curried composition mapping of Exercise 3.22, built from evaluation and curry so that composition of approximable maps is itself approximable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

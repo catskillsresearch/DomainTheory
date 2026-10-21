@@ -1,3 +1,8 @@
+/-ai
+The singleton of true is a neighbourhood of the flat two-point domain.
+
+It is the second clause of the membership definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

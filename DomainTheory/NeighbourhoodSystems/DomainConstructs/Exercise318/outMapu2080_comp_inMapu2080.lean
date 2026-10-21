@@ -1,3 +1,8 @@
+/-ai
+The composite of the left projection after the left injection is the identity map of the first neighbourhood system.
+
+Two approximable maps agree when they relate the same pairs. If the composite relates X to Z, some sum neighbourhood receives the left copy of X and has left content contained in Z, so X is contained in that left content and hence in Z. Conversely, if X is contained in Z, the left copy of X is a sum neighbourhood related to X by the injection and to Z by the projection, because the left content of that copy is X.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

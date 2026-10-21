@@ -1,3 +1,8 @@
+/-ai
+If clipping a list and keeping the nondegenerate pairs yields a head and tail, the canonical list equals that list.
+
+Unfold the canonical list and rewrite by that equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

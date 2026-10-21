@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the comparison of products and sums with function spaces and truth values used in Exercise 8.19. It brings together monotonicity of the exponential in its domain argument, the embedding of function spaces induced by an embedding of the domain, the product and sum embeddings, the bottom element and trichotomy of the truth-value domain, the pairing, tagging, and conditional maps with their round trips, and the assembled exercise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise819.Basic

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the product projections and pairing of Scott's Proposition 6.2: membership for the left and right lifts, the two projections of each lift, preservation of product consistency by the lifts, equality of product elements that have the same two projections, the identities for composing a pairing with either projection, and uniqueness of the pairing.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.Basic

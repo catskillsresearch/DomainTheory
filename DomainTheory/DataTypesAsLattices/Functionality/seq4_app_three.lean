@@ -1,3 +1,9 @@
+/-ai
+The four-way sequence of a, b, c, and d sends the numeral 3 to d.
+
+Rewrite by the application law, then by the successor law for the conditional, the successor law for the predecessor, the successor law for the conditional again, the successor law for the predecessor again, the law for the conditional at the numeral 1, the lemma that the predecessor iterated on its own numeral is the numeral 0, and the law for the conditional at the numeral 0.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

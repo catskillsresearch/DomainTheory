@@ -1,3 +1,8 @@
+/-ai
+The Myhill filter code is primitive recursive.
+
+It is the application of the constant filter-operator code to the numeral code, and application of codes is primitive recursive.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

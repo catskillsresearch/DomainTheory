@@ -1,3 +1,8 @@
+/-ai
+The binary intersection code, read on the two components of a packed argument, is primitive recursive.
+
+The function equals the function that pairs the constant tag 1 with its argument, by the definition of the intersection code and the node code together with cancellation of packing. Pairing a constant with the identity is primitive recursive.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

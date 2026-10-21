@@ -1,3 +1,8 @@
+/-ai
+Applying filterC to the numeral of m yields the set of j such that the shifted halting enumerator differs from m at every index up to j.
+
+Unfold filterC and filterTerm. Simplifying the interpretation in filterEnv by equation 2.25 shows that filterC is the graph of the predecessor of the sequence, taken at the top element, of the graph of the map sending an index to the filter realizer applied to the pairing combinator at the argument and that index. Theorem 1.3 gives Scott continuity of this body, from continuity of the predecessor, continuity of sequencing on the left at the top element, and continuity of the filter sequence, so the beta law computes the application at the numeral of m. A second beta law, from continuity of application of the filter realizer and of the pairing combinator, together with the pairing law and the fact that the filter realizer realizes filterNum, identifies the sequence value at the numeral of i with the numeral of filterNum on the pair of m and i. Extensionality then splits in two directions. If j lies in the predecessor, then j + 1 lies in the sequence, so some i has filterNum of the pair of m and i equal to j + 1. Failure of beforeHalt on that pair would make the value 0, so beforeHalt holds, and the same computation forces i = j, which is the enumerator condition up to j. Conversely, the enumerator condition gives beforeHalt at m and j, so filterNum of that pair is j + 1, and j + 1 lies in the sequence at the index j.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

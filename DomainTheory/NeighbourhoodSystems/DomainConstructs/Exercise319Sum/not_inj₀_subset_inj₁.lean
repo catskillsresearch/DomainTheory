@@ -1,3 +1,8 @@
+/-ai
+A nonempty left copy is not contained in a right copy.
+
+A token of the nonempty set has its left tag in the left copy and hence in the right copy, but no left tag lies in a right copy.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318

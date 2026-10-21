@@ -1,3 +1,8 @@
+/-ai
+Complement is antitone on the direction needed here: if X is contained in Y, then the complement of Y is contained in the complement of X. This direction is constructive contraposition.
+
+A point of the complement of Y that also lay in X would lie in Y by the inclusion, contradicting that it lies in the complement.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

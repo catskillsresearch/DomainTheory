@@ -1,3 +1,8 @@
+/-ai
+If p is strictly less than j, then application of the finite element e p to the union of u with the singleton of the pair of j and m equals application of e p to u.
+
+Antisymmetry of inclusion. From the left, a witness index in the union lies in u or is the fresh pair. The fresh case forces j to be at most that index, from membership in a finite element, and that index to be at most p, from the output pair, contradicting p < j. From the right, application is monotone in its argument along the left inclusion of the union.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

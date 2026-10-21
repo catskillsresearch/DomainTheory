@@ -1,3 +1,7 @@
+/-ai
+This module gathers and re-exports the development of closure operations in Scott 1976, §5: the equations from (5.1) onward, Theorems 5.1 through 5.6, and the lemmas on products, sums, the universe combinator, the boolean and open closures, and isolated elements.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Closures.Basic

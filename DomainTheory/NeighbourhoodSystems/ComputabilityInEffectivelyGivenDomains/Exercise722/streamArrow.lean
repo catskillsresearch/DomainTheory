@@ -1,3 +1,6 @@
+/-ai
+The infinite word of a binary word is the least fixed point, in the domain, of the approximable map that prepends that word.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+If the second injection is injective, Tarski's map is surjective.
+
+For an element of the codomain, split on whether its image under the second injection lies in the fixed set. If it does, rewrite by the fixed-point equation: the complement-of-range alternative contradicts that this image lies in the range, and the image alternative supplies an element of the fixed set whose image under both maps has the same image under the second injection, so injectivity recovers the codomain element and the map agrees with the first injection there. If it does not, the map at that image is a preimage, and injectivity of the second injection applied to the preimage equation recovers the codomain element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

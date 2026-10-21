@@ -1,3 +1,6 @@
+/-ai
+The outer operator of τ and σ is the approximable endomap of the second domain sending y to the value of σ at the pair of the nested fixed-point map of τ at y with y, realized as σ composed with the pairing of that nested map and the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

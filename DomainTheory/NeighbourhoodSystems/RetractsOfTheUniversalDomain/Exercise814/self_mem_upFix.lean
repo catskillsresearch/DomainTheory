@@ -1,3 +1,8 @@
+/-ai
+Every compact fixed point lies in its own principal up-set.
+
+The underlying element is less than or equal to itself, which is membership in the up-set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,9 @@
+/-ai
+Under those same hypotheses on z, there is an index n for which z equals the combinator Z at n.
+
+The index is the common iterate count. On each finite element, the graph of its application is a fixed graph of the empty retract, by extensionality of graphs and the symmetric normalized finite application law, with the third membership clause vacuous. Theorem 7.1 therefore makes application of z to that graph a fixed graph, and the eta equation transfers the fixed-graph equation to the finite element. Extensionality of graphs against the application law for Z compares the two sides: continuity of Z on the right and continuity of application, together with agreement on finite arguments from the finite form of the theorem, give agreement everywhere by determination of continuous maps. For a general argument the same pattern uses beta reduction of a continuous application in place of the finite normalization. Continuity in the function argument is Theorem 1.3 for left application composed with application of z, on the one side, and continuity of Z on the left, on the other, so agreement on finite elements extends again by determination. Extensionality of graphs against the graph law for Z, using the graph equation for z on the empty retract, yields the equality.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

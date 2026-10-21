@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of T occurs in the enumeration.
+
+Membership in T splits into the master neighbourhood, the neighbourhood zero, and the neighbourhood one, which are the values at 0, 1, and 2.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

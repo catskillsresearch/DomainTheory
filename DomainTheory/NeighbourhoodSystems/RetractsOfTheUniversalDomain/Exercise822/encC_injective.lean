@@ -1,3 +1,8 @@
+/-ai
+The completed encoding is injective.
+
+Equal completed encodings give a prefix relation by reflexivity, and the prefix law for completed encodings returns equality of the original strings.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

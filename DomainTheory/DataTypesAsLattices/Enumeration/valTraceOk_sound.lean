@@ -1,3 +1,8 @@
+/-ai
+If a valuation trace is well formed, then every entry of the trace has its member in the numerical value of its code.
+
+The proof is by strong induction on the code. Structural well-formedness justifies the entry. At zero, the G clause and the zero law for the evaluator give membership in the G combinator. At a successor, the zero-code alternative of the justification is impossible. The remaining alternative, after the predecessor and unpairing identities, gives an operator membership of the pair of the time stamp with the member and witnesses for the set bits of the time stamp. Both unpairing components are strictly smaller, so the inductive hypothesis places the pair in the operator value and each set bit in the argument value. Membership of the member in the application of those two values rewrites, by the successor law, as membership at the successor code.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

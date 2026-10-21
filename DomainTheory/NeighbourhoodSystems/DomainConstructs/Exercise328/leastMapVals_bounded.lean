@@ -1,3 +1,8 @@
+/-ai
+The set of active values at an element is bounded, with the least map at that element as an upper bound.
+
+Each active principal filter lies below the least map at the element, by the comparison of active values with the least map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

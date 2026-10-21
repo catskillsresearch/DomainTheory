@@ -1,3 +1,8 @@
+/-ai
+The entry at position p of the reverse memo list at w, for p strictly below w, is the course-of-values value at w minus one minus p.
+
+The zero list has no such position. On a successor list, position zero is the head, which is the value at the predecessor, and a later position is the corresponding entry of the tail, shifted by one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

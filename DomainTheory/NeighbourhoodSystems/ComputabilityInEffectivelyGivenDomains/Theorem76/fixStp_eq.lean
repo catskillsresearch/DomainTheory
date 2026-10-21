@@ -1,3 +1,8 @@
+/-ai
+The packed fixed-point step on the pairing of the current index with the pairing of the accumulator and the parameter equals the pure step.
+
+Unfold both sides and unpack the nested pairing.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

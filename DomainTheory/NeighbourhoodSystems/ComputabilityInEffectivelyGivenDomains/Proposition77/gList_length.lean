@@ -1,3 +1,8 @@
+/-ai
+The reverse memo list of a step at w has length w.
+
+At zero the list is empty. At a successor the list is a cons, so the length is one more than the inductive length.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

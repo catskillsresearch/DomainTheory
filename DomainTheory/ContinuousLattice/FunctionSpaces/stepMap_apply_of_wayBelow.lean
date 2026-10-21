@@ -1,3 +1,8 @@
+/-ai
+If e is way below x, then the step map of e and e' sends x to e'.
+
+This is the corresponding evaluation of the underlying step function.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,3 +1,8 @@
+/-ai
+The map of a function-space element φ sends the value of the fixed-point combinator at φ back to that same value.
+
+Rewrite by the definition of the combinator and apply the fixed-point equation of the fixed-point map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

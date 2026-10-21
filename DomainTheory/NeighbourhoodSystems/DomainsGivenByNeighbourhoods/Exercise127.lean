@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic development of Exercise 1.27, the two least-upper-bound laws, the computation of the intersection of the two-term sequence, the equivalence of consistency of a pair with boundedness of the two principal filters, and the theorem that a set of elements is bounded exactly when every finite subset is bounded.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.Basic

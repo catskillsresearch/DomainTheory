@@ -1,3 +1,8 @@
+/-ai
+At depth zero the junk flag is 0 for every bit-source.
+
+Unfolding the code state gives the base state, which stores the flag 0.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

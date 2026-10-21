@@ -1,3 +1,8 @@
+/-ai
+If a finite set lies in an element x, then its left lift lies in the paired element of x with any element y.
+
+A token of the left lift is the left token of a member of the set, hence of x. The first-projection law places that member in the first projection of the pair, so it comes from a product set inside the pair that entails its singleton. Closure of the paired element under that entailment, with the second component sent to the bottom token, yields the left token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

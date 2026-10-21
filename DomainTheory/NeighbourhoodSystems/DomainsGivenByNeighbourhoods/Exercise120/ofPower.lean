@@ -1,3 +1,6 @@
+/-ai
+The filter of the original system corresponding to a filter of the power system consists of the neighbourhoods whose up-sets belong to that filter. A subset of such a neighbourhood is a neighbourhood. The master belongs because its up-set is the master of the power system. If the up-sets of two neighbourhoods belong to the filter, so does their intersection, which is the up-set of the intersection; a consistency witness for that up-set is a neighbourhood contained in both factors, so the intersection is a neighbourhood of the original system. A larger neighbourhood is admitted because containment of neighbourhoods yields containment of their up-sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

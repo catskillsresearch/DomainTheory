@@ -1,3 +1,8 @@
+/-ai
+The value of τ at the pair of x with the left-hand map of τ at x equals that left-hand value.
+
+Rewrite by the application law of the left-hand map, the application law of the section, and the fixed-point equation of the section.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

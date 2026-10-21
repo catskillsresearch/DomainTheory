@@ -1,3 +1,8 @@
+/-ai
+The subset characteristic of the enumeration of L is primitive recursive.
+
+It is the swapped prefix test, rewritten by the definition of the subset characteristic.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

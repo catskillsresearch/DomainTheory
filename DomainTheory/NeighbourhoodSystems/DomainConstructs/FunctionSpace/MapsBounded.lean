@@ -1,3 +1,6 @@
+/-ai
+A set of approximable maps is bounded when some approximable map lies above every member of the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,3 +1,8 @@
+/-ai
+The product combinator of two self-maps is the product injection composed after the product of the two maps composed after the product extraction.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

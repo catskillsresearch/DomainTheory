@@ -1,3 +1,8 @@
+/-ai
+The nullary constant zero is λ-defined by the constant map with value the numeral 0, wrapped in the strict guard of arity zero.
+
+Apply the total-function constructor. The constant map evaluates to the numeral 0.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

@@ -1,3 +1,8 @@
+/-ai
+The union of a set with the empty set on the right is the set itself.
+
+This is the empty-union law.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

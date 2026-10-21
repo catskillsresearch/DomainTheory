@@ -1,3 +1,6 @@
+/-ai
+The low-bit or of two naturals is 1 minus the truncated difference of 1 and the sum of their residues modulo 2. It is the arithmetic {0, 1}-valued form of the residue modulo 2 of their bitwise or, and it equals that residue.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

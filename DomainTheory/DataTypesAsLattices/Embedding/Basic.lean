@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports the continuous-extension map and the embedding into Pω used for Theorems 1.5 and 1.6 of Scott 1976, §1, together with the topological background those constructions depend on.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

@@ -1,3 +1,8 @@
+/-ai
+The tag of a right injection lies below the element false. A right-injected element never receives the tag true.
+
+A neighbourhood of the tag is one of the three neighbourhoods of the three-point domain. The master belongs to false, and the one neighbourhood is the neighbourhood of false. The zero neighbourhood cannot occur, because it would require a right injection to be contained in a left injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

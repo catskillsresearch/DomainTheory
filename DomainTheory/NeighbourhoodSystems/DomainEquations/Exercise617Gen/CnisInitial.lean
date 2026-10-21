@@ -1,3 +1,6 @@
+/-ai
+CnisInitial A records that the Tsig-algebra Cnalg A is initial. Its descent homomorphism is descAlgHom, and uniqueness of a homomorphism into any other Tsig-algebra is descAlgHom_uniq. That descent is the closed-form head recursion sending the empty string to the distinguished point of the target and sending a letter followed by a string to the corresponding successor operation, built without choice by liftCn, so the string system is the initial algebra of the functor sending X to the sum of a unit and a copy of X for each letter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

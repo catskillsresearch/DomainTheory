@@ -1,3 +1,8 @@
+/-ai
+If the true tag of the false tag of W is a neighbourhood of the coalesced sum of the lifts of D and E, then W is a neighbourhood of E.
+
+Invert the coalesced-sum membership of a true tag, then invert the lift membership of the resulting false tag, using that neighbourhoods of E are nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

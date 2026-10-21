@@ -1,3 +1,8 @@
+/-ai
+If a product token does not have least second component, inserting it leaves the left projection unchanged.
+
+A witness in the projection of the inserted set cannot be the inserted token, since that token fails the least-second-component test, so the witness already belongs to the original set. A witness for the original projection remains one after insertion.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

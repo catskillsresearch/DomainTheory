@@ -1,3 +1,6 @@
+/-ai
+The right projection of a finite set of sum tokens, Scott's right part in the separated sum, is the finite set obtained by folding right insertion over the underlying multiset, starting from the empty set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

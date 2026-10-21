@@ -1,3 +1,6 @@
+/-ai
+The binary operator induced by an approximable map out of the pair space sends two approximable maps to the map read from the image of the pair of their filters.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

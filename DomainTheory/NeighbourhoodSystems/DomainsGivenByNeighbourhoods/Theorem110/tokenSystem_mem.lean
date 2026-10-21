@@ -1,3 +1,8 @@
+/-ai
+A set of elements is a neighbourhood of the element-token system if and only if it equals the bracket of some neighbourhood.
+
+The equivalence holds by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

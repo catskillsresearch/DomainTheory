@@ -1,3 +1,8 @@
+/-ai
+If each term of a sequence lies below the corresponding term of another sequence, then the iterate element of the first sequence lies below the iterate element of the second.
+
+A neighbourhood of the first element is an iterate neighbourhood whose fibers lie in the first sequence, and the termwise inequality places those fibers in the second sequence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

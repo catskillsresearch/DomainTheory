@@ -1,3 +1,8 @@
+/-ai
+If one approximable endomap lies below another, each iterate of the smaller map lies below the corresponding iterate of the larger map.
+
+The proof is induction on the stage. Both zeroth iterates are the identity. A successor iterate is a composite, and composition is monotone in both arguments.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

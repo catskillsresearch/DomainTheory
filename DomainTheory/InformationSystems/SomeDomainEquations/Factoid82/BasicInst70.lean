@@ -1,3 +1,6 @@
+/-ai
+Equality of depth-well-formed lambda tokens is decidable, by the decidable equality of a subtype.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

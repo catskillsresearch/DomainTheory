@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the development of Scott's equation A ≅ Aⁿ + Aⁿ: the flat n-fold product and its proper products, the inductive family MemA and the neighbourhood system Asys, the slot encoding embTuple, the maps toAA and fromAA, and the order isomorphism aaEquiv, together with the lemmas that support them.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

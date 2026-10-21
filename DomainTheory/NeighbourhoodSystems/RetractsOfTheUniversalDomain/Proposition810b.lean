@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the second half of Proposition 8.10: finitariness from a projection pair, finitariness of the product, sum, and arrow combinators, the finitary-projection property of each combinator and of all three together, and the assembled proposition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b.Basic

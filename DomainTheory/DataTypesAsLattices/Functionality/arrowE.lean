@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (7.6). The function space of restricted equivalences A and B relates two elements when each equals the graph of its own application and B relates the applications whenever A relates the arguments. Symmetry swaps the two graph equations and applies symmetry of B to the symmetrically related arguments. Transitivity keeps the graph equations of the outer maps and composes the relations in B, using symmetry and transitivity of A to relate the middle argument to itself.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

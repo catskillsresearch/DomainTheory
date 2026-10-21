@@ -1,3 +1,6 @@
+/-ai
+A fixed point of a closure operator is compact when, for every nonempty directed family of fixed points, lying under the directed supremum of the family in the ambient system yields lying under some single member of the family.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

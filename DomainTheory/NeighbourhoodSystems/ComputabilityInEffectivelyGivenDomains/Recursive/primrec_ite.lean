@@ -1,3 +1,8 @@
+/-ai
+If a condition and two branches are primitive recursive, then so is selection of the first branch or the second according to the {0,1} value of the condition.
+
+This is the primitive recursion of selection applied to the three functions.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

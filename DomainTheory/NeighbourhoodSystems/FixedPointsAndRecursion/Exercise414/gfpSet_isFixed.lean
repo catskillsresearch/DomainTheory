@@ -1,3 +1,8 @@
+/-ai
+The greatest fixed-point set of a monotone operator on subsets is a fixed point of that operator.
+
+The set is contained in its image by the post-fixed-point inclusion for the greatest fixed-point set. The image is contained in the set because monotonicity makes the image a post-fixed point, and every post-fixed point is contained in the greatest fixed-point set. The two inclusions give equality.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

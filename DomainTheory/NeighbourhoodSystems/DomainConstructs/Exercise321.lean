@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Scott's Exercise 3.21 on when a function-space step determines its endpoints: the least single-step map, its membership, its minimality, and the neighbourhoods it relates; the identification of a step with master output with the whole function space; equality of least maps of equal steps; determination of the endpoints when the output is not the master; and the general criterion for equality of two steps.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.Basic

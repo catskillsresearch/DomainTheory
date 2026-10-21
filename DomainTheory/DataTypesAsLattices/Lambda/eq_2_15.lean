@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (2.15). The union x ∪ y equals the conditional (λz. 0) ⊃ x, y.
+
+The graph of the constant numeral 0 contains both 0 and 1. The left branch of the conditional therefore copies x, and the right branch copies y.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

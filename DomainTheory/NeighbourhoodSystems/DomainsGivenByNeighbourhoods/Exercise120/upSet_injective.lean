@@ -1,3 +1,8 @@
+/-ai
+Neighbourhoods with the same up-set are equal.
+
+Each up-set is contained in the other, and the inclusion law for up-sets turns those containments into the two inclusions between the neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

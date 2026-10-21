@@ -1,3 +1,7 @@
+/-ai
+The intersection index of two codes is the canonicalization of their raw intersection
+code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

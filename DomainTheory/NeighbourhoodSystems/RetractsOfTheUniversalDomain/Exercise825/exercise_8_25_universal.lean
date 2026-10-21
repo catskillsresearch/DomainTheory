@@ -1,3 +1,8 @@
+/-ai
+The universal domain embeds as a subdomain of the solution domain of Exercise 8.25, so that solution is universal.
+
+The proof is the subdomain embedding of the universal domain into the solution.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Unit

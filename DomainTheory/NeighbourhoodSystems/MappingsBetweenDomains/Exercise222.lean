@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the abstract representation theorem of Exercise 2.22: tokens and their closure, the representation neighbourhood system, the passage from an ideal element to a member of the family and back, and the order isomorphism between them.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

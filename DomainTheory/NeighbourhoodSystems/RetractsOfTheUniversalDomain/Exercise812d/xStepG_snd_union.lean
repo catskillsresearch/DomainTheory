@@ -1,3 +1,8 @@
+/-ai
+If a split satisfies the split specification, the two sides are empty together, and the second side is empty or genuine, then the second components of the generalized X-step at the two bits reunite to the parent second set.
+
+The split specification equates the union of the two branches with the parent second set, and unfolding the step is that identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

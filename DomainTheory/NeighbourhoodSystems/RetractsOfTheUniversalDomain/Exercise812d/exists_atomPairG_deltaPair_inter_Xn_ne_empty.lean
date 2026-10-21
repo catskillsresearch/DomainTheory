@@ -1,3 +1,8 @@
+/-ai
+For every code n there is a bit-source below four to the n whose first atom-pair component meets the enumerated neighbourhood of n.
+
+That neighbourhood is nonempty, so it has a point, and the point lies in the master. The covering theorem places the point in the first component of the atom pair of some bit-source below four to the n, and that point witnesses a nonempty intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

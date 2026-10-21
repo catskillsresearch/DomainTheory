@@ -1,3 +1,6 @@
+/-ai
+The principal filter of a neighbourhood X consists of the neighbourhoods that contain X. The master belongs because X is contained in the master. The intersection of two members contains X, and X witnesses that this intersection is a neighbourhood. A neighbourhood containing a member still contains X.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

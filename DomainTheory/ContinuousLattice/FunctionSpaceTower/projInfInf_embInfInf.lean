@@ -1,3 +1,8 @@
+/-ai
+For every element x of the inverse limit D_∞, applying the projection j_∞ to the embedding i_∞(x) returns x.
+
+The composite identity j_∞ ∘ i_∞ = id, evaluated at x, is simplified by the formulas for composition and for the identity Scott map.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

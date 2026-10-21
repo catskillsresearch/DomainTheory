@@ -1,3 +1,8 @@
+/-ai
+The c9b5 Gödel encoding of an S-expression equals the encoding of the expression.
+
+Induct on the expression. The sigma case is reflexivity. A singleton simplifies by the equality of the boolean-list encodings. Concatenation and intersection simplify by the inductive hypotheses on the two subexpressions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

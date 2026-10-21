@@ -1,3 +1,8 @@
+/-ai
+Every term, interpreted in the constantly bottom environment, denotes a combinatory element.
+
+The completeness form of the combinator theorem rewrites the interpretation as the value of the erased combinator. The combinatory lemma for erased combinators reduces the claim to combinatory status of every variable value, and each of those values is bottom. Bottom equals the application of the predecessor combinator to the zero combinator, by the predecessor application law and equation (2.6), and that application of two combinatory constants is combinatory.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

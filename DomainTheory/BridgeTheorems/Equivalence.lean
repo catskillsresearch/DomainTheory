@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the cross-presentation maps between Scott's continuous lattices, neighbourhood systems, and information systems: neighbourhood systems to information systems and back, continuous lattices to neighbourhood systems by an order isomorphism with the round filters, information systems to ideal completions, algebraic complete lattices to continuous lattices, the equivalence of the presentation domains, the product, separated-sum, and function-space constructions, and the Scott-map bridge.
+ai-/
 module
 
 public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys

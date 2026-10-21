@@ -1,3 +1,6 @@
+/-ai
+The activity characteristic of a coded index is the product of the fuel-bounded decode characteristic and the nonemptiness characteristic of the stored code, both taken at fuel one more than the stored depth.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

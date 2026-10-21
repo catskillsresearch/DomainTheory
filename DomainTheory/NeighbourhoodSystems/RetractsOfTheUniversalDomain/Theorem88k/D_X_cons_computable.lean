@@ -1,3 +1,8 @@
+/-ai
+Under the characteristic and consistency hypotheses, and primitive recursiveness of both tests, consistency of two list codes for the induced enumeration is recursively decidable.
+
+The code-level fold is primitive recursive, and so is the pairing of the folds of the two components of a pair. Transfer recursive decidability of consistency for the presentation along that reindexing. After simplifying the unpairing of a pair, the consistency equivalence for the induced enumeration supplies the agreement.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.Basic

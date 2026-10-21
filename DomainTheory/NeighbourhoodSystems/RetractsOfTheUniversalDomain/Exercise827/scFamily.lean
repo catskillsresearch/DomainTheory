@@ -1,3 +1,6 @@
+/-ai
+The self-consistent family of an element t of the universal domain consists of the rational sets that sub relates to themselves and that lie in t.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

@@ -1,3 +1,8 @@
+/-ai
+The pairing operator sends the pair of approximable maps f and g to the element of the function space corresponding to the pairing of f and g.
+
+The approximable map recovered from that element equals the pairing. At an element x its value equals the uncurried pairing at the pair of that pair with x, by the pairing identity for a curried map and the equality of the operator's uncurrying with the uncurried pairing, and the uncurried pairing evaluates to the pairing at x. Passing back from the recovered map to an element gives the result.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

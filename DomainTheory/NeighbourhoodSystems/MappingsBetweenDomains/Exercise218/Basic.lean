@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the spacing construction on the binary-string domain. The output of the spacing map doubles a finite string by writing a zero after each bit, and the output of its left inverse keeps the first bit of every complete pair and drops a trailing unpaired bit. Both outputs preserve prefixes, the two approximable maps are read off those outputs on cones, and the left inverse recovers every finite string after spacing.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

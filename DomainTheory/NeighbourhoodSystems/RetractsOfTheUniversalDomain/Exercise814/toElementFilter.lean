@@ -1,3 +1,6 @@
+/-ai
+The forward map sends a fixed point to the element of the reconstructed domain whose neighbourhoods are the principal up-sets of compact fixed points lying below it. A confirmed up-set is a neighbourhood of the system by its compact generator. The master neighbourhood is the up-set of the bottom compact, which lies below every fixed point. The intersection of two confirmed up-sets is the up-set of their join, which still lies below the fixed point. An upper neighbourhood of a confirmed up-set is the up-set of a larger compact, and that compact lies below the fixed point because the original compact belongs to the upper up-set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

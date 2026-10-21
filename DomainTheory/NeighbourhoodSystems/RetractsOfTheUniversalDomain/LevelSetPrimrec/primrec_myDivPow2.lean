@@ -1,3 +1,8 @@
+/-ai
+Iterated halving is primitive recursive. On a paired code it divides the first component by two raised to the second component, by repeating division by two.
+
+Halving the inner second component is primitive recursive, by composing the primitive-recursive half with the right projection twice. Primitive recursion from the identity with that step is primitive recursive. Unfolding the iterated division and simplifying the pairing identities shows that this recursion is the iterated division.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

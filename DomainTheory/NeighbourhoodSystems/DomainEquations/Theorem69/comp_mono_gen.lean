@@ -1,3 +1,8 @@
+/-ai
+Composition of approximable maps is monotone in both arguments.
+
+A composite witness is an intermediate neighbourhood related by both factors. Monotonicity of each factor sends those relations to the larger maps, which is a composite witness for the larger composite.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

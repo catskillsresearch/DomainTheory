@@ -1,3 +1,8 @@
+/-ai
+Applying the minimization body to a function-space element k and a pair of elements x and y yields the conditional on the zero test of f at that pair, the value x, and k applied at the successor of x and at y.
+
+Unfold the body and simplify the element maps of composition, pairing, the two projections, the argument selectors, and evaluation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

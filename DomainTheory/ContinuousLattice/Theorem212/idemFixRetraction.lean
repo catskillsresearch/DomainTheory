@@ -1,3 +1,6 @@
+/-ai
+The fixed-point set of a Scott-continuous idempotent, with the ambient-supremum-corrected lattice structure, is a retract of the ambient lattice. The inclusion and the corestriction of the endomap preserve directed suprema, hence are Scott-continuous, and the fixed-point equation says that the corestriction followed by the inclusion is the identity.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

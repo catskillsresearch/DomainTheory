@@ -1,3 +1,8 @@
+/-ai
+Sending a strict element to its strict map and back returns the element.
+
+This is the right inverse law of the strict-function equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

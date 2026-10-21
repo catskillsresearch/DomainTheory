@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the fixed-point solution of the auxiliary equation in Exercise 8.25: the basic development, the inequality of the injection after the projection, the retraction, projection, finitary, and finitary-projection laws for the combinator, the isomorphism of its fixed neighbourhood with the infinite power, the element action of the joint evaluator, the recovery of the exponential by the second curry, the identity of the continuous operator with the arrow combinator, preservation of finitary projections, the fixed-set correspondence for the arrow domain, the solution isomorphism, the product isomorphism of the fixed neighbourhood, the main isomorphism of the solution with its own function space, and the embedding of the universal domain into the solution.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.Basic

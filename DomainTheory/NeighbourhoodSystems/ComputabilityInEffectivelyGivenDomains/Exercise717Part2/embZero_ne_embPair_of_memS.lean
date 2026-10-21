@@ -1,3 +1,8 @@
+/-ai
+A zero embedding is distinct from the paired embedding of a neighbourhood that belongs to the sharp domain.
+
+A paired embedding of a nonempty neighbourhood is nonempty. Transporting an element into the zero embedding forces its path to be empty, while an element of the paired embedding lies in one of the two tagged parts, whose paths are not empty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

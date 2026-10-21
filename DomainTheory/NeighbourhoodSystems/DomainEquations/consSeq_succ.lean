@@ -1,3 +1,8 @@
+/-ai
+The value of a cons sequence at index k + 1 is the k-th component of the tail.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

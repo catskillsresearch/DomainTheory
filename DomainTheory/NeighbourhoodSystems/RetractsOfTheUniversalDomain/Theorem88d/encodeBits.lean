@@ -1,3 +1,6 @@
+/-ai
+The encoding of a sign sequence is defined by recursion on the length of the prefix. The empty prefix encodes as 0. The prefix of length n+1 adds two to the power n when the new sign is true, and adds nothing when the new sign is false.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

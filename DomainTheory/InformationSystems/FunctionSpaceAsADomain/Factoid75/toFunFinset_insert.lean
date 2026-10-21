@@ -1,3 +1,8 @@
+/-ai
+The underlying function-token set of an insertion is the insertion of the underlying token.
+
+Both directions of extensionality use the membership characterization of the underlying set and the membership rule for insertion.
+ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

@@ -1,3 +1,8 @@
+/-ai
+The minimal mask of a paired code is primitive recursive.
+
+The right component and the minimal level are primitive recursive, and so is two to the power of that level. Composing the primitive-recursive truncation with their pairing, and unfolding the minimal mask together with the pairing identities, shows that this composition is the minimal mask.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

@@ -1,3 +1,8 @@
+/-ai
+If two operators on pairs of self-maps send finitary projections to finitary projections, and two finitary projections each lie above the corresponding operator applied to the pair, then the fixed neighbourhood system of the first simultaneous component is a literal subsystem of the first projection's fixed neighbourhood system, and likewise for the second component.
+
+Transport each inequality across the order equivalence of the function space, so that each operator applied to the pair of filters lies below the corresponding filter. Pairing those inequalities shows that the paired operator applied to the pair of filters lies below that pair. Minimality of the fixed element puts the fixed element below the pair. Monotonicity of the two projections puts the two components of the fixed element below the two filters. Reading maps back puts the simultaneous components below the two projections. The order criterion for finitary projections converts those inequalities into the two subsystem relations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

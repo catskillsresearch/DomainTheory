@@ -1,3 +1,8 @@
+/-ai
+If a set is nonempty, its zero embedding is nonempty.
+
+A point of the set, paired with the empty path, lies in the zero embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

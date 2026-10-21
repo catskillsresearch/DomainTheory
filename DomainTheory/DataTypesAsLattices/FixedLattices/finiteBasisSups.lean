@@ -1,3 +1,6 @@
+/-ai
+The finite-basis suprema of an indexed family along a set of indices are the suprema of the family on the finite subsets of that set of indices.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Defs

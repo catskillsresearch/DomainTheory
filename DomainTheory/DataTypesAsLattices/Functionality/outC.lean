@@ -1,3 +1,7 @@
+/-ai
+Scott 1976, (4.31). The untagged-payload combinator is the second projection.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,8 @@
+/-ai
+Proposition 5.6(i) states that the constant mapping of value b sends every element to b.
+
+A token of the image belongs to a finite set contained in b. Conversely, the empty set is contained in the element and is consistent, and the singleton of a token of b is contained in b.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53

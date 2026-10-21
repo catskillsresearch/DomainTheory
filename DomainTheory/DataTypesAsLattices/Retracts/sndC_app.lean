@@ -1,3 +1,8 @@
+/-ai
+The second-component combinator sends a set to the value of that set at the singleton one.
+
+This is the beta law for the Scott-continuous map that evaluates at the singleton one.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

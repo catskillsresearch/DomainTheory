@@ -1,3 +1,6 @@
+/-ai
+The paired element of elements x and y is the product element whose tokens lie in x whenever the second component is the bottom token and lie in y whenever the first component is the bottom token. A subset is consistent because its first and second components lie in x and y. A product entailment gives entailments of the two components, so closure follows from closure of x and of y.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

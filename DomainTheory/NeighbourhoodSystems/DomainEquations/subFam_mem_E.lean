@@ -1,3 +1,8 @@
+/-ai
+Every member of a subdomain neighbourhood-set is a neighbourhood of E.
+
+The set is the neighbourhood collection of a subsystem, and every neighbourhood of a subsystem is a neighbourhood of E.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

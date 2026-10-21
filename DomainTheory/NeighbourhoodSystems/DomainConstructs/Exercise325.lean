@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the correspondence of Exercise 3.25 between open sets of a domain and approximable maps into Sierpiński space: the map of an open set and its relation, including the empty case, the open set of a map and its openness, and the two order isomorphisms.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122

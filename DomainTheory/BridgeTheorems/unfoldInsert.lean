@@ -1,3 +1,6 @@
+/-ai
+The map unfoldInsert, at a tree token, inserts the tree unfold of that token into a finite set of sum tokens.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

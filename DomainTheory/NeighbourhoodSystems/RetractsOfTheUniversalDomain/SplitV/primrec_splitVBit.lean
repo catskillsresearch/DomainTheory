@@ -1,3 +1,8 @@
+/-ai
+splitVBit is primitive recursive.
+
+The successor of the minimal level is primitive recursive, hence so is two to that power. The least-set-bit search on the upsampled mask bounded by that power agrees with the splitting bit after the unpair-pair identities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

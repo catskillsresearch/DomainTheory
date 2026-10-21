@@ -1,3 +1,9 @@
+/-ai
+The coproduct mediator of f and g equals the graph of its own application.
+
+Graph extensionality reduces the equation to the application law for the mediator, read in the reverse direction.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

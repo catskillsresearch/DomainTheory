@@ -1,3 +1,6 @@
+/-ai
+The approximable mapping of a continuous function acts on the principal element of a neighbourhood by applying the function, and extends that assignment by the monotone-extension construction. Monotonicity of the assignment is monotonicity of a continuous function together with the reversal of inclusion by principal elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

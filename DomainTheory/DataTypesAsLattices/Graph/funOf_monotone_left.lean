@@ -1,3 +1,9 @@
+/-ai
+If u is contained in v, then the application of u at x is contained in the application of v at x.
+
+A witnessing code and pair for membership in the application of u remain a witness for v, because the pair lies in v.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Continuous

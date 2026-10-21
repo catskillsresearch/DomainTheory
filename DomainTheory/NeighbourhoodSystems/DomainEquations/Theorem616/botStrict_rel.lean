@@ -1,3 +1,8 @@
+/-ai
+The strict map represented by the bottom element of the strict function space relates a set X to a set Y exactly when X is a neighbourhood and Y is the master neighbourhood.
+
+Rewrite the relation through the strict representation, membership of bottom, and the master of the strict function space. If that membership holds, the constant-bottom strict map lies in the step neighbourhood, and the step and constant-map characterizations give the two conditions. If X is a neighbourhood and Y is the master, the step neighbourhood with master codomain contains the map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69

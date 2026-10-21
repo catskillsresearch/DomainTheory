@@ -1,3 +1,8 @@
+/-ai
+Intersecting from a set along a concatenated list is the intersection of the two intersections along the concatenated pieces.
+
+Extensionality reduces the claim to membership. The membership characterization of the intersection, together with the splitting of a universal quantifier over a concatenated list, makes the two sides the same proposition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

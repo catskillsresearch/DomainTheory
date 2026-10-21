@@ -1,3 +1,6 @@
+/-ai
+This file re-exports the right pair projection of a finite set of V-tokens, the set of Y such that the right pair (Δ, Y) belongs to the set, together with the criterion that Y lies in the projection exactly when that right pair belongs to the set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPairRFinset

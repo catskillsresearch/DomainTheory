@@ -1,3 +1,6 @@
+/-ai
+A finite sequence of neighbourhoods is consistent when some neighbourhood of the system is contained in their finite intersection.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

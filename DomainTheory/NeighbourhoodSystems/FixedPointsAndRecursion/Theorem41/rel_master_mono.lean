@@ -1,3 +1,8 @@
+/-ai
+If n is at most m and the n-th iterate relates the master neighbourhood to a set, then the m-th iterate does as well.
+
+The proof is induction along the inequality. The reflexive step is the hypothesis. Each one-step increase is the one-step extension of a chain from the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

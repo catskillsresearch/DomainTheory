@@ -1,3 +1,6 @@
+/-ai
+The top element of the domain of O is the principal filter of the empty neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

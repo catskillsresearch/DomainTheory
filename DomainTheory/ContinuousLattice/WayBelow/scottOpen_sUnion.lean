@@ -1,3 +1,8 @@
+/-ai
+An arbitrary union of Scott-open sets is Scott-open.
+
+A union of upper sets is an upper set. If a nonempty directed set has supremum in the union, the supremum lies in some Scott-open member of the family, and that member supplies an element of the directed set already in the union.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

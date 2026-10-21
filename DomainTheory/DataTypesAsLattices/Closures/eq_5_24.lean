@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (5.24). The function space of closures is a closure, so a value typed by the closure combinator is closed under the function-space constructor.
+
+The typing hypotheses convert to closure hypotheses, the function-space theorem produces a closure, and that closure converts back to a typing.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

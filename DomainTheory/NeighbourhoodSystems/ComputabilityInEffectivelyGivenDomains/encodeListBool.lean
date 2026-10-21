@@ -1,3 +1,6 @@
+/-ai
+The boolean-list code of a list of booleans is the list code of the image of the list under the boolean-to-natural encoding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

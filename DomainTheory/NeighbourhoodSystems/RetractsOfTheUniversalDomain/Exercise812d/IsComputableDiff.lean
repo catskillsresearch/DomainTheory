@@ -1,3 +1,6 @@
+/-ai
+IsComputableDiff says that set difference is computable relative to a presentation. It provides a primitive-recursive index of the difference of the n-th and m-th neighbourhoods whenever that difference is itself some neighbourhood of the presentation, together with a recursive decider for that side condition.
+ai-/
 module
 
 

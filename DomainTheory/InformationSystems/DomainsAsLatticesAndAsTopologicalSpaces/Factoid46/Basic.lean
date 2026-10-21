@@ -1,3 +1,7 @@
+/-ai
+This file gathers and re-exports approximable maps, algebraicity, Scott-continuous maps, basic opens, the passages between approximable maps and Scott-continuous maps, monotonicity, and preservation of directed suprema, as the setting for Scott's Factoid 4.6. The basic opens of finite token sets are the sets of elements containing those tokens, the domain of elements is T₀, an approximable map induces a Scott-continuous function on elements, and a Scott-continuous map arises from the approximable relation that holds when the output finite set is contained in the image of the closure of the input.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable

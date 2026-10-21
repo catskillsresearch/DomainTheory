@@ -1,3 +1,6 @@
+/-ai
+The curried form of a binary map f is the graph of the map sending x to the graph of y ↦ f(x, y).
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

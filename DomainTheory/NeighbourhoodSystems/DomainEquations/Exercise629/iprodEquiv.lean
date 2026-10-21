@@ -1,3 +1,6 @@
+/-ai
+iprodEquiv is the order isomorphism between the elements of the indexed product and the pointwise product of the factor element domains, sending a product element to its family of projections and a family of elements to the product element assembled from them.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

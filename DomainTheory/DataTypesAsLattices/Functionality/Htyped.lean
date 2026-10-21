@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (4.45). The typed interpretation of a lambda term is the arrow retract from environments to lambda values applied to the graph of the interpretation of the term.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

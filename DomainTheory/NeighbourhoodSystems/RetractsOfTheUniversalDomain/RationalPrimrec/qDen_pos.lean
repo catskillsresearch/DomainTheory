@@ -1,3 +1,8 @@
+/-ai
+The denominator of every rational code is positive.
+
+The denominator is a successor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

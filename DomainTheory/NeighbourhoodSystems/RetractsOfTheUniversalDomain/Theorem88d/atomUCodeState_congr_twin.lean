@@ -1,3 +1,8 @@
+/-ai
+The positive twin of a bit-source at depth n, namely its residue modulo two to the power n plus that power, has the same positive code, the same negative code, and the same U-code as the original bit-source.
+
+The twin agrees with the original on every bit below n, because adding the power preserves those bits and reduction modulo the power preserves them as well. The state congruence therefore applies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

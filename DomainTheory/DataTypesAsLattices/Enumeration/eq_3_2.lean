@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (3.2): applying the conditional of x and y to the zero combinator yields x.
+
+Rewrite by the three-argument beta law, identify the zero combinator with the numeral 0, and apply the zero case of the conditional (2.7).
+ai-/
 module
 
 public import Mathlib.Computability.Halting

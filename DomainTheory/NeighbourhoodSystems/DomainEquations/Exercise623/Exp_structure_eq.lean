@@ -1,3 +1,8 @@
+/-ai
+The domain equation Exp ≅ N ⊕ ((Exp × Exp) + (Exp × Exp)) holds as an equality of systems: applying the expression functor to Exp yields Exp itself, so the structure map is the identity.
+
+The equality is the general identity that a rooted grammar expression applied to the colimit of its tower equals that colimit, specialised to the expression functor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

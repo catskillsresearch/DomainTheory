@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (5.12). The boxed product of a and b unfolds as the graph of the map sending u to the square pair of a applied to the first square component and b applied to the second.
+
+The equality is the definition.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic development of Exercise 4.22, monotonicity of the generating operator, the fixed-point equation for the carved-out set, and the existence of a Peano submodel.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.Basic

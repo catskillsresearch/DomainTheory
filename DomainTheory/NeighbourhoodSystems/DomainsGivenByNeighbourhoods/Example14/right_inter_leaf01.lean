@@ -1,3 +1,8 @@
+/-ai
+The right subtree is disjoint from the leaf 01.
+
+Compare the two sets by extensionality, case-split on the seven tokens, and simplify the membership definitions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

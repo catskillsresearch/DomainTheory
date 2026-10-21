@@ -1,3 +1,8 @@
+/-ai
+If two self-maps of the universal domain are retractions, then so is their lambda combinator.
+
+Compare elements of the function space, and apply the function-space equivalence, which is injective. Transporting the lambda combinator through that equivalence sends a map to the second map composed after it composed after the first. Associativity and the two retraction equations then cancel the two extra factors.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

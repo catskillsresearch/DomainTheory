@@ -1,3 +1,6 @@
+/-ai
+The nonemptiness character is a {0, 1}-valued bounded search over valid bit-list codes. At a fuel bound and a target code, it searches up to the code bound of the automaton-state cardinality for a candidate whose first component is a string of binary digits and whose second component matches the target at that fuel. The candidate and the target pass through the parameter of the bounded search, with the target as the parameter, so the primitive-recursive nonemptiness character is that search applied directly.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

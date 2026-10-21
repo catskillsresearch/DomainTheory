@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Exercise 7.15: effective givenness of a neighbourhood system in the sense of a bare presentation, effective givenness of the smash product and the computability of its two projections, its strict pairing, and its functorial action, the membership law and effective givenness of the coalesced sum and the computability of its two injections, its two projections, and its functorial action, effective givenness of the infinite iterate, and computability of its coordinate projections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715.Basic

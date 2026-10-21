@@ -1,3 +1,6 @@
+/-ai
+The flat map is the approximable map on the powerset system P whose relation is the flat relation. Every finite set is consistent, so the domain and codomain conditions hold outright, and the empty set is related to the empty set. The relation is closed under union on the right: a domain set containing 1 remains so for the union, and otherwise a token of the united codomain sets lies in one summand, where it equals 0 or lies in the domain set, while 1 in the union would lie in a summand from which it is excluded. It is monotone. If 1 lies in the smaller domain set, the domain entailment puts 1 in the larger domain set, and 1 is not entailed as the bottom token. Otherwise a token of the larger codomain set equals 0 or lies in the smaller codomain set, hence equals 0 or lies in the smaller domain set, and the domain entailment preserves that alternative. If 1 belonged to the larger codomain set, the codomain entailment would put it in the smaller codomain set or identify it with 0, and the smaller relation excludes it while 0 is impossible.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

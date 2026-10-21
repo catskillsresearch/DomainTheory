@@ -1,3 +1,8 @@
+/-ai
+The depth-n union fold, read from a packed pair of the depth and the number of steps, is primitive recursive.
+
+It is primitive recursion from the constant accumulator that pairs zero with zero, using the primitive-recursive fold step, and that recursion equals the fold.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

@@ -1,3 +1,9 @@
+/-ai
+If every finite set of tokens is consistent, there is a unique total element.
+
+The top element is total, and every total element equals the top element.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

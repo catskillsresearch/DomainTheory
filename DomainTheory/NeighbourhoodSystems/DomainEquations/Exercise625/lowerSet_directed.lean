@@ -1,3 +1,8 @@
+/-ai
+Any two members of the lower set of an element y have a common upper bound that still lies in the set.
+
+The projection of y lies in the set because the injection of that projection lies below y, and both members lie below the projection by the Galois connection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

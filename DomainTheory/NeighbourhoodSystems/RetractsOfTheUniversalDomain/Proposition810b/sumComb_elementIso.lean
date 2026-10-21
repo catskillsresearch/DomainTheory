@@ -1,3 +1,6 @@
+/-ai
+The element isomorphism for the sum case of Proposition 8.10 identifies an element of the sum of the fixed neighbourhood systems of two finitary projections with a fixed point of their sum combination. It is the order isomorphism of the sum injection and sum projection, using that the projection composed with the injection is the identity and that reversing the identity for the injection composed with the projection matches the sum combination.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

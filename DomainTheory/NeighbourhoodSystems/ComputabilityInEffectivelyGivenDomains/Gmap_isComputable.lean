@@ -1,3 +1,8 @@
+/-ai
+The inverse reindexing map is computable, and in fact recursively decidable. On codes, its relation is a single bounded universal quantification of the inclusion decider.
+
+The two iterated index expressions compared by inclusion are primitive recursive, so the inclusion predicate is recursively decidable. Bounded universal quantification over the codomain code remains recursively decidable. Rewriting by the enumeration presentation and the bounded characterisation of the relation shows that this predicate decides the relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

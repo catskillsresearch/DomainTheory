@@ -1,3 +1,8 @@
+/-ai
+Every construct preserves composition of approximable maps: the image of a composite equals the composite of the images.
+
+The proof is by induction on the construct. A constant sends every map to the identity, and the identity composed with itself is the identity. The identity variable is definitionally the composite. A sum rewrites the two components by the inductive hypotheses and applies the composition law for the sum action. A product does the same with the composition law for the product action.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

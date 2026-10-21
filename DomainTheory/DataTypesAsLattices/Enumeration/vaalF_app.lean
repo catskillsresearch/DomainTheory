@@ -1,3 +1,8 @@
+/-ai
+Applying vaalF v to x equals the McCarthy conditional of the application of x to zero, with zero branch the G combinator and positive branch the application of v at the left child of x to the application of v at the right child.
+
+This is the beta law for the Scott-continuous body of vaalF at the parameter v.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+Proposition 2.3(ii), proved by inserting into v first. If u is depth-consistent, every member of v is depth-entailed by u, each such token has maximum depth with u strictly below M, and inserting any entailed token of maximum depth below M preserves depth consistency, then the union of u and v is depth-consistent.
+
+Strengthen the claim to every v and induct on v. The union with the empty finset is u. When a is inserted into a remainder t, the insertion hypothesis makes the insertion of a into u depth-consistent. The remaining entailments weaken to that larger finset, and their depth bounds stay below M by the depth inequality for an insertion and the associativity of maximum. The inductive hypothesis gives depth consistency of the union of that insertion with t, and membership shows that this union equals the union of u with the insertion of a into t.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

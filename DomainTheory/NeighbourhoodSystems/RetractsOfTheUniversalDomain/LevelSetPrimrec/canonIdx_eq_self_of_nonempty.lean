@@ -1,3 +1,9 @@
+/-ai
+If the level set of a code is nonempty, canonicalization leaves the code unchanged.
+
+Unfolding canonicalization, the nonemptiness test equals one, and selection on one
+returns the code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

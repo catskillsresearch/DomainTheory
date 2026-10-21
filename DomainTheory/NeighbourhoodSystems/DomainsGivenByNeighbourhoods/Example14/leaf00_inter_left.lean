@@ -1,3 +1,8 @@
+/-ai
+The intersection of the leaf 00 and the left branch equals the leaf 00.
+
+Commute the intersection and apply the identity for the left branch intersected with the leaf 00.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

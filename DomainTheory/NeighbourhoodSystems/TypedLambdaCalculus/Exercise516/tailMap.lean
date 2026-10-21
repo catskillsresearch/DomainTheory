@@ -1,3 +1,6 @@
+/-ai
+The tail map on C is the approximable map built by the head-test combinator so that a partial element of σ is sent to the partial element of the list tail, and a total element of σ is sent to the total tail value, with the tail of the empty string equal to bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

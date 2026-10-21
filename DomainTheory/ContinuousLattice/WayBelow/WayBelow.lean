@@ -1,3 +1,6 @@
+/-ai
+Scott 1972, §2. An element x is way below an element y when some Scott-open neighbourhood of y is contained in the principal upset of x.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

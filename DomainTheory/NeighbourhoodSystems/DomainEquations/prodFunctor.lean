@@ -1,3 +1,6 @@
+/-ai
+For a fixed empty-free domain, the product endofunctor sends an object X to the product of that domain with X and sends a strict map f to the product of the identity on the domain with f. It preserves identities because the product of identity maps is the identity, and it preserves composition because a product of composites is the composite of the products.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

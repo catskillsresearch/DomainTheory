@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports Propositions 5.3 and 5.5 together with the constant approximable mapping, as the setting for Proposition 5.6 of Scott 1982. For a fixed element there is a unique approximable mapping with that constant value, and composition absorbs a constant mapping on either side.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53

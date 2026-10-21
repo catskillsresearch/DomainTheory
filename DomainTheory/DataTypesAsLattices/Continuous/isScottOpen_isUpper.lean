@@ -1,3 +1,8 @@
+/-ai
+A Scott open set is an upper set: if x lies in U and x is contained in y, then y lies in U.
+
+Write U as a union of basic neighbourhoods. Membership of x selects a code whose finite set is contained in x. Transitivity of inclusion puts that finite set inside y, so y lies in the same basic neighbourhood.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

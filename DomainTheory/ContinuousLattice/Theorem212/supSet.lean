@@ -1,3 +1,6 @@
+/-ai
+The supremum of a set of fixed points of an idempotent endomap is the endomap applied to the ambient supremum of the underlying set.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

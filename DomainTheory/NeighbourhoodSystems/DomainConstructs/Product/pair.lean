@@ -1,3 +1,6 @@
+/-ai
+Definition 3.1 of Scott (1981, PRG-19) pairs elements x and y as the product element whose neighbourhoods are the product neighbourhoods of a neighbourhood of x and a neighbourhood of y. Such a product is a product neighbourhood. The intersection of two of them is the product of the intersections, and a larger product neighbourhood enlarges each component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

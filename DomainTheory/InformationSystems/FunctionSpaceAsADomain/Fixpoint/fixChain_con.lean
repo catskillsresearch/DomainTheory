@@ -1,3 +1,9 @@
+/-ai
+Every value of a fix chain is a consistent set.
+
+The argument is by cases on the length. A chain of length zero is the empty set, which is consistent. A chain of positive length is packaged with a consistency witness for its value.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

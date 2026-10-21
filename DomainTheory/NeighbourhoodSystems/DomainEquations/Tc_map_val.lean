@@ -1,3 +1,8 @@
+/-ai
+The underlying approximable map of the image of a strict map under this endofunctor is the three-way sum of the identity on the unit system with the map and the map again.
+
+The equality is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

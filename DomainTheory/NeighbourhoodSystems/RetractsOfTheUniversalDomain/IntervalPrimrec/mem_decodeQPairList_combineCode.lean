@@ -1,3 +1,8 @@
+/-ai
+A rational pair lies in the decoding of a combination code if and only if it is the join of the left endpoints and the meet of the right endpoints of a pair from each decoded list.
+
+Unfold the decoding and the combination code. A preimage in the cross combination supplies two codes, one from each list, and decoding the combination operation yields the join-meet pair. Conversely, mapped membership supplies the two codes, and cross-combination membership together with the decoding of the operation restores the preimage.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

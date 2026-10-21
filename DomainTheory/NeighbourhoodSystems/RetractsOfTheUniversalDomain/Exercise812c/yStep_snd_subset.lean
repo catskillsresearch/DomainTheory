@@ -1,3 +1,8 @@
+/-ai
+The second output of yStep is contained in the incoming second set.
+
+If the bit is true, the output is the intersection with the test set. If the bit is false, the output is the difference. Both are contained in the incoming set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

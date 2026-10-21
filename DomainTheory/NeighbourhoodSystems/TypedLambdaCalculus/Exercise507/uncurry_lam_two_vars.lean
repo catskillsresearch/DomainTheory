@@ -1,3 +1,8 @@
+/-ai
+Uncurrying the two-variable abstraction of a map returns the original map.
+
+This is the equation that uncurry is a left inverse of curry.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

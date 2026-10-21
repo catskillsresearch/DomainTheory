@@ -1,3 +1,8 @@
+/-ai
+The graph map is computable from an arbitrary valid function-space presentation of PNpres into PNpres. Its neighbourhood relation reduces to a bounded quantification over the excluded set of the output neighbourhood, which is recursively enumerable.
+
+The joint enumerability of GraphIdx membership supplies, by the list form of bounded universal quantification, enumerability of the assertion that every entry of a decoded list lies in GraphIdx of the enumerated set. Reindexing by pairing the input code with bitsCode of the output index against itself is primitive recursive. After composition, the index criterion for graphMap and the bounded form of complement inclusion match this quantification: a decoded bit lies strictly below the index, and a set bit lies on the decoded bit list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

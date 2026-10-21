@@ -1,3 +1,6 @@
+/-ai
+The category of information-system objects has approximable maps as morphisms, the identity approximable map as the identity morphism, and diagrammatic composition as composition. The left and right identity laws and the associativity law are the corresponding laws of diagrammatic composition.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

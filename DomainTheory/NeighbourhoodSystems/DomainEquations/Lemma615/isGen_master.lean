@@ -1,3 +1,8 @@
+/-ai
+The master of the domain system and the master of the codomain system generate each other.
+
+The two relations are the master relations of the forward and backward approximable maps.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

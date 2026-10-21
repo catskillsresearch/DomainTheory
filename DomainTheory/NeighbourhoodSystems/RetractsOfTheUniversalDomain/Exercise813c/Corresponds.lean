@@ -1,3 +1,6 @@
+/-ai
+A set of natural numbers and a set of points of Cantor space correspond when they are the two evaluations of one common formula.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

@@ -1,3 +1,6 @@
+/-ai
+A valuation trace is well formed when every entry is justified in the trace and every zero-code entry has its member in the G combinator.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

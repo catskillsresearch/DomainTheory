@@ -1,3 +1,6 @@
+/-ai
+Domains and approximable maps form a category. A morphism is an approximable map between the underlying neighbourhood systems, the identity morphism is the identity approximable map, and the composite of two morphisms is the project's composite in the order of the first morphism followed by the second. The two identity laws are the identity laws for approximable maps, and associativity is the associativity law for approximable maps read in that order.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

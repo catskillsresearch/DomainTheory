@@ -1,3 +1,7 @@
+/-ai
+Scott's modified boolean closure, equation (5.3), is the graph of the map sending u to the conditional of u on the singleton {0} and on ⊤ + 1.
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

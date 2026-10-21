@@ -1,3 +1,8 @@
+/-ai
+For every finite set F, the neighbourhood I(F) belongs to the ring system.
+
+The witness is F, by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+Example 8.4(a): whenever u is not bottom, a u is a retraction.
+
+Extensionality of the elementwise action, together with the action of a composite, reduces the retraction equation to an equality on elements. If the input is bottom, both sides rewrite by a_bot. If the input is not bottom, both sides rewrite by a_of_ne_bot, using that u is not bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

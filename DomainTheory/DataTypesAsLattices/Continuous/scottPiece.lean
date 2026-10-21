@@ -1,3 +1,6 @@
+/-ai
+The Scott piece of a map f at an element x along a code n consists of those natural numbers k for which the finite set coded by n is contained in x and k lies in f of that finite set.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

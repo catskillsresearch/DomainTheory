@@ -1,3 +1,7 @@
+/-ai
+The combinatory sets of Theorem 2.4 are the smallest class containing the six constants zero, successor, predecessor, conditional, K, and S, and closed under application.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

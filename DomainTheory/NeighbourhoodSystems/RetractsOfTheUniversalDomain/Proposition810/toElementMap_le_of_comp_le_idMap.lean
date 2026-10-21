@@ -1,3 +1,8 @@
+/-ai
+If a composite of approximable maps lies below the identity, then applying the two maps in that order lies below the element.
+
+The order of maps is the order of their actions on elements. Rewrite the composite and the identity on elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

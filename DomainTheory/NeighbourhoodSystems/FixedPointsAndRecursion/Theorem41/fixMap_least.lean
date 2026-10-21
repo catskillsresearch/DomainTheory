@@ -1,3 +1,8 @@
+/-ai
+If the approximable map corresponding to a function-space element sends an element below itself, then the value of the fixed-point operator at that function-space element lies below it.
+
+The elementwise equation rewrites the operator value as the least fixed point of that map, which lies below every pre-fixed point.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

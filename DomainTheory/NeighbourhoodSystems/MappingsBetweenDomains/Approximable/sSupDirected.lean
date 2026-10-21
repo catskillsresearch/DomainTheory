@@ -1,3 +1,6 @@
+/-ai
+The directed union of a nonempty directed family of elements is the element whose neighbourhoods are the neighbourhoods of members of the family. The master belongs to any chosen member. The intersection of neighbourhoods from two members belongs to a common upper bound in the family. An upward enlargement stays in the same member.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

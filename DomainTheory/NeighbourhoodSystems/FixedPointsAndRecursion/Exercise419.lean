@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the Peano axioms for binary strings, the conditional law at bottom in the truth domain, and the equation defining the test one on partial elements and on total elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419.Basic

@@ -1,3 +1,6 @@
+/-ai
+The cap code of two naturals is the pair of 3 and the pair of those naturals, the tag-3 code used for an intersection by the S-expression encoding and by the Gödel encoding.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

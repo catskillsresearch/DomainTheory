@@ -1,3 +1,8 @@
+/-ai
+The product neighbourhood of a proper left neighbourhood and a proper right neighbourhood belongs to the smash product.
+
+It is the proper-rectangle clause of the membership definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

@@ -1,3 +1,8 @@
+/-ai
+For a projection pair, the injection of an element x lies below an element y if and only if x lies below the projection of y.
+
+In one direction, monotonicity of the projection applied to the inequality, rewritten by the identity that the projection of the injection of x equals x, gives the result. In the other direction, monotonicity of the injection applied to the inequality, composed with the injection of the projection of y lying below y, gives the result.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

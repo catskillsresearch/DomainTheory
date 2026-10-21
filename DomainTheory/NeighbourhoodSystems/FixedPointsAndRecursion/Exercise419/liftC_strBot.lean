@@ -1,3 +1,8 @@
+/-ai
+The lift sends each partial element to the prescribed partial value.
+
+Extensionality reduces the equality to membership of a codomain neighbourhood. Such a neighbourhood is related to a domain neighbourhood that contains the cone of the partial element. If that neighbourhood is a cone, it is the cone of a prefix, and monotonicity of the partial values carries the membership. If it is a singleton, the cone would be contained in that singleton, which is impossible. Conversely, the cone of the string contains itself, is a neighbourhood of the partial element, and is related to every neighbourhood of the prescribed value.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

@@ -1,3 +1,8 @@
+/-ai
+The embedded set of index n is a neighbourhood of U.
+
+The empty alternative of the empty-or-neighbourhood law fails because the embedded set is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

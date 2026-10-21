@@ -1,3 +1,6 @@
+/-ai
+The order relation on the naturals, viewed as a subset of pairs, consists of those pairs whose first component is at most the second.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

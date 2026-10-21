@@ -1,3 +1,8 @@
+/-ai
+The relation of papplyEval holds of neighbourhoods Φ, A, and B if and only if they are power-domain neighbourhoods and every function neighbourhood in Φ and every argument neighbourhood in A admit a result neighbourhood in B related by evaluation.
+
+The two sides are the same proposition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719

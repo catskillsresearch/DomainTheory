@@ -1,3 +1,8 @@
+/-ai
+A set of tokens is a neighbourhood if and only if it is the master or one of the two overlapping neighbourhoods.
+
+Membership in the three-element set of neighbourhoods unfolds as that disjunction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

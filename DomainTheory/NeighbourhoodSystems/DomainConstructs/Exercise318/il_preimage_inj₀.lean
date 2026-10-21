@@ -1,3 +1,8 @@
+/-ai
+The preimage of a left copy under the left tag is the original set.
+
+The left tag is injective, and the preimage of the image of an injective function is the set itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,3 +1,6 @@
+/-ai
+The one-element sequence of a set is the graph of the conditional that returns that set on zero and the bottom element otherwise.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

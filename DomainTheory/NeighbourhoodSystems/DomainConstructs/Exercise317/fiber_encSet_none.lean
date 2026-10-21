@@ -1,3 +1,8 @@
+/-ai
+If a string is undefined at an index, the fiber of its encoding at that index is the universal set.
+
+By extensionality, every token satisfies the encoding condition there: a bit constraint would make the string defined at that index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

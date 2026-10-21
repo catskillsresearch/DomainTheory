@@ -1,3 +1,6 @@
+/-ai
+The unknown function is the first projection from the product of the function space of N times N into N with N times N onto that function space.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

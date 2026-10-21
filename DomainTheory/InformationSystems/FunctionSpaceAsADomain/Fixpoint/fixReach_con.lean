@@ -1,3 +1,9 @@
+/-ai
+A finite set reachable by a fix chain is consistent.
+
+Reachability supplies a chain of some length, and every value of a fix chain is consistent.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

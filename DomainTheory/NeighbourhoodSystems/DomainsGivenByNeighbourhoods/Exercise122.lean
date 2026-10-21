@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the topology on the elements of a neighbourhood system, together with the identification of openness with the open-filter condition, openness of basic neighbourhoods, upward closure of open sets, the characterization of open sets by upward closure and basic neighbourhoods, recovery of the approximation order from open sets, and the identification of approximation with the specialization preorder.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122.Basic

@@ -1,3 +1,6 @@
+/-ai
+The term funRetractTerm is the closed term λu. λx. u(x) for Scott's function-space retract, with the two bound arguments at variables 0 and 1.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

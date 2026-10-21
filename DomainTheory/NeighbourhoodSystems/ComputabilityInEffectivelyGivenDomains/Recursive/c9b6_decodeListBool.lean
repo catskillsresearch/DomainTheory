@@ -1,3 +1,6 @@
+/-ai
+The boolean list decoded from a code is the list of naturals decoded from that code, with each entry replaced by the decision that the entry equals 1.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,3 +1,8 @@
+/-ai
+Multiplication of domain elements is monotone in the right argument.
+
+A neighbourhood of the smaller right-hand element is a neighbourhood of the larger one, so the same concatenation witness serves.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

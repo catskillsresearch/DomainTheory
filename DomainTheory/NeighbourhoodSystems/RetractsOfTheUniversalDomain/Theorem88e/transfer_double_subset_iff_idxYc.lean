@@ -1,3 +1,8 @@
+/-ai
+The intersection of the whole natural numbers with two index sets is contained in a third index set if and only if the intersection of the universal master with the two corresponding coded sets is contained in the third coded set.
+
+The emptiness transfer for the constraints that the first two indices are positive and the third is negative equates nonemptiness of the two constrained sets. Extensionality identifies those sets with the two differences, and a difference is empty exactly when the corresponding inclusion holds.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

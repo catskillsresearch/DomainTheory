@@ -1,3 +1,9 @@
+/-ai
+If terms a and b both avoid the variable 8, then interpreting their term-level binary sequence constructor in an environment yields the binary sequence constructor of the two interpretations.
+
+Unfolding the term and the constructor, the graphs agree. For each argument, the interpretations of a and of b are unchanged when the environment is updated at 8, because those terms avoid 8, and the bottom term interprets as bottom; the conditional and predecessor clauses then match.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

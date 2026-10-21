@@ -1,3 +1,8 @@
+/-ai
+On a packed input whose first index is zero, the sharp decider step returns the pack of one minus j, one, and j.
+
+Unfolding the step and the pairing projections, the outer selection on one minus zero takes that pack.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

@@ -1,3 +1,6 @@
+/-ai
+The dollar combinator is the graph of the map sending a sequence u to the graph of x ↦ seq(u)(x).
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

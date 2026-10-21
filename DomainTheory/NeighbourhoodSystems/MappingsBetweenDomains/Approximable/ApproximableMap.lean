@@ -1,3 +1,6 @@
+/-ai
+An approximable map between neighbourhood systems is a relation on sets such that related sets are neighbourhoods, the two master neighbourhoods are related, an input related to two outputs is related to their intersection, and the relation persists when the input is replaced by a smaller neighbourhood and the output by a larger neighbourhood.
+ai-/
 module
 
 

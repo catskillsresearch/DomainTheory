@@ -1,3 +1,8 @@
+/-ai
+A consistent finite set of U-tokens entails each of its members.
+
+Consistency is the first component. The member's underlying token lies in the forget-finset, so the membership clause of V-entailment supplies the second component.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

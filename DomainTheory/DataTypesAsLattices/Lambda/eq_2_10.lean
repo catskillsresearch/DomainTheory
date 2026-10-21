@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (2.10). Abstraction distributes over union: the union of the graphs of τ and σ is the graph of their pointwise union.
+
+A pair code in either graph is a pair code whose value lies in the corresponding disjunct, and a pair code whose value lies in one disjunct lies in the corresponding graph.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

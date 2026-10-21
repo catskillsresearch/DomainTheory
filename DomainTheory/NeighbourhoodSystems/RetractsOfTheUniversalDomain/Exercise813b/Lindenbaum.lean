@@ -1,3 +1,6 @@
+/-ai
+The Lindenbaum algebra is the quotient of the formulas by the setoid of semantic equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

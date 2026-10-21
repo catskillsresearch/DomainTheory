@@ -1,3 +1,8 @@
+/-ai
+Inserting a token that is bundled-entailed by a finset of depth-well-formed lambda tokens preserves bundled consistency.
+
+Rewriting bundled consistency along forgetful insertion reduces the claim to preservation of depth consistency under insertion of a depth-entailed raw token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

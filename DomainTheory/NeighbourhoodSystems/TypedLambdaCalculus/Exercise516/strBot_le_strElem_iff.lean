@@ -1,3 +1,8 @@
+/-ai
+The partial element of σ lies below the total element of τ if and only if σ is a prefix of τ.
+
+Rewrite the order as the principal order. Containment of a singleton in a cone is the prefix relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

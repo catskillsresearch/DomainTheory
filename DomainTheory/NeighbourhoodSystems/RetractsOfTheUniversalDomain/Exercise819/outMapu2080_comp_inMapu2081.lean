@@ -1,3 +1,8 @@
+/-ai
+The left projection after the right injection is the constant map whose value is the bottom element of the left summand.
+
+Compare the relations. In one direction a witness contains the right injection of the input neighbourhood, so the left part of that injection is contained in the left part of the witness and hence in the output neighbourhood. The left part of a right injection is the master, so the output neighbourhood equals the master, and the input is a neighbourhood. In the other direction the right injection of the input itself is the witness, by the right-injection clause of sum membership and the same computation of its left part.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

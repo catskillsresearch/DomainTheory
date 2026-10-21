@@ -1,3 +1,8 @@
+/-ai
+The universe is Scott-open.
+
+The universe is an upper set. A nonempty set meets the universe in any one of its elements.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

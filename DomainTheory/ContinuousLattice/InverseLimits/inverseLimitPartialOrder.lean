@@ -1,3 +1,6 @@
+/-ai
+The inverse limit carries the coordinatewise partial order inherited from the product of the stages. The order and the strict order are the coordinatewise relations, and reflexivity, transitivity, the characterization of the strict order, and antisymmetry are the corresponding properties of those relations.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

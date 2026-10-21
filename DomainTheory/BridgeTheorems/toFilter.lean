@@ -1,3 +1,6 @@
+/-ai
+The map toFilter sends an information-system element to the filter of those basic opens that come from a consistent finite set contained in the element's carrier. Such a basic open belongs to the neighbourhood system by its witnessing set. The master set is the basic open of the empty set. The intersection of two such basic opens is the basic open of their fused union, which is consistent because it is contained in the carrier. If the basic open of one consistent set is contained in the basic open of another, each token of the second is entailed by the first and therefore lies in the carrier by closure.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

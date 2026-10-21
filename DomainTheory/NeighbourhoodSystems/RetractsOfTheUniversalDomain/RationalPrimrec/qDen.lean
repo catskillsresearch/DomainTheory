@@ -1,3 +1,6 @@
+/-ai
+The denominator of a rational code is one more than the second component of the code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

@@ -1,3 +1,6 @@
+/-ai
+The and-not of a and b is the iterative exclusive disjunction of a with the iterative conjunction of a and b, which clears from a the bits set in b.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

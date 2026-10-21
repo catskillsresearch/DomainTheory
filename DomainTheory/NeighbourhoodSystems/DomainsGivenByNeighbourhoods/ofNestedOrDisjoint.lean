@@ -1,3 +1,6 @@
+/-ai
+A family that contains its master neighbourhood, lies in the power set of that master, and is pairwise nested or disjoint is a neighbourhood system. The intersection of two members equals the left-hand one when the right-hand one contains it, equals the right-hand one when the left-hand one contains it, and is empty when the two are disjoint; in the last case a consistency witness contained in the intersection is empty, so the intersection equals that witness.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

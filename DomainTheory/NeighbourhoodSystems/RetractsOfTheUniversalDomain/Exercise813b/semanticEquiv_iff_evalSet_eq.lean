@@ -1,3 +1,8 @@
+/-ai
+Two formulas are semantically equivalent if and only if they have the same evaluation set.
+
+If they agree under every valuation, extending a natural number and rewriting membership by the bit bridge shows that the two evaluation sets contain the same numbers. Conversely, given a valuation, some natural number matches it on the variables of either formula. Agreement on those variables identifies each truth value with the value under the bits of that number, and equality of the evaluation sets makes those two bit-values true together. Comparing the four combinations of Boolean values gives equality of the original truth values.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

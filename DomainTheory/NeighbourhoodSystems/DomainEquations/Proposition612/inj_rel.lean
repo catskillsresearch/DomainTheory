@@ -1,3 +1,8 @@
+/-ai
+The relation of the injection holds of X and Y exactly when X belongs to D, Y belongs to E, and X is contained in Y.
+
+The two sides are definitionally equivalent.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

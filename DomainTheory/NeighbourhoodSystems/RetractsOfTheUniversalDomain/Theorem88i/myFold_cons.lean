@@ -1,3 +1,8 @@
+/-ai
+The qChar-gated fold of a cons cell is the fold of the tail, starting from one gated step applied to the master index and the head.
+
+Unfold the fold and rewrite by the cons equation for left folds.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic

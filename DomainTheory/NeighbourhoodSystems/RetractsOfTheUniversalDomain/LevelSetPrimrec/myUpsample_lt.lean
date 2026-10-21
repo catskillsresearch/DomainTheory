@@ -1,3 +1,9 @@
+/-ai
+The mask produced by upsampling to level k' is strictly below two to the power two to
+the k', whether or not a genuine upsampling step occurs.
+
+It is the bound on the power remainder used in the final truncation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

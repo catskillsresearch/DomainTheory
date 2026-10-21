@@ -1,3 +1,6 @@
+/-ai
+The product injection from the product of the fixed neighbourhoods of a and b into the universal domain is the product injection of the universal domain composed after the product of the two subsystem injections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

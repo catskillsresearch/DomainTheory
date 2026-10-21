@@ -1,3 +1,8 @@
+/-ai
+Every Thue–Morse prefix is a prefix of t: the partial element of the length-n prefix lies below t.
+
+The length-n prefix is a prefix of the n-fold substitution iterate of the singleton of false, because that iterate is the prefix of length 2 to the power n and n is strictly below that power, so the prefixes nest. The partial element of the shorter string therefore lies below the partial element of the iterate. That partial element is the (n + 1)-st approximant, which lies below the least fixed point.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

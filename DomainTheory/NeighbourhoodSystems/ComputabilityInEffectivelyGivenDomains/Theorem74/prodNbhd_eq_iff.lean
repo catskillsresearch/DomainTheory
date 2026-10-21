@@ -1,3 +1,8 @@
+/-ai
+Two product neighbourhoods are equal if and only if their two factors agree.
+
+One direction is injectivity of the product neighbourhood. The other substitutes the two equalities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the finitary half of Proposition 8.10, that the sum, product, and arrow combinators preserve finitary projections and that the fixed-point set of each is isomorphic to the corresponding construct on the domains determined by the two projections, as the background for Exercise 8.18.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

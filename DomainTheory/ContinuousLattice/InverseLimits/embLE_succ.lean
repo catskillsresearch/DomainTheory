@@ -1,3 +1,8 @@
+/-ai
+Climbing from stage n to stage m+1 is the inclusion at stage m applied after climbing from n to m.
+
+Unfolding the climb, the successor step of the recursion is that inclusion.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

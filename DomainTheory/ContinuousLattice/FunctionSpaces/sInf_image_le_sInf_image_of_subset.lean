@@ -1,3 +1,8 @@
+/-ai
+If a set S is contained in a set T, then the infimum of the image of T under a function lies below the infimum of the image of S.
+
+The image of S is contained in the image of T, because every member of S belongs to T, and infima reverse inclusions.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,3 +1,8 @@
+/-ai
+Disjoint pairing of sets of natural numbers is injective.
+
+Equal pairings have equal first projections and equal second projections. Each first projection recovers the first component, and each second projection recovers the second component, so both components agree.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,3 +1,8 @@
+/-ai
+Scott's domain C of finite or infinite binary sequences is isomorphic to the three-way separated sum of the one-point domain with two copies of C. A sequence is bottom, the finished empty sequence, or begins with 0 or with 1.
+
+The isomorphism is ccEquiv.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

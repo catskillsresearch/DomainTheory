@@ -1,3 +1,8 @@
+/-ai
+An approximable endomap commutes with each of its iterates: composition on the left equals composition on the right.
+
+The proof is induction on the iterate. At zero both sides reduce to the map by the two identity laws. At a successor, associativity regroups the right-hand composite and the inductive hypothesis replaces the inner commutation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

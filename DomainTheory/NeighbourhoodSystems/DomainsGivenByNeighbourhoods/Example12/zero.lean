@@ -1,3 +1,6 @@
+/-ai
+The neighbourhood {0} of Example 1.2 is the singleton of the token 0.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

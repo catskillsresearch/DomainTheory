@@ -1,3 +1,8 @@
+/-ai
+The forward map of the identity isomorphism induced by an equality of neighbourhood systems X and Y relates A and E if and only if A is a neighbourhood of X, E is a neighbourhood of Y, and A is contained in E. Across the equality this map is the identity map.
+
+Substitute the equality so that the two objects coincide, and apply the relational description of the identity map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

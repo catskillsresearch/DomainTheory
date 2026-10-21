@@ -1,3 +1,6 @@
+/-ai
+The tagging of a set of binary strings by a boolean is the set of strings that begin with that boolean and whose remaining suffix lies in the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,3 +1,8 @@
+/-ai
+Decoding the code-level minimum of first components equals the list-level minimum of first components of the decoded pair list.
+
+Unfold both minima and the decoded list. Rewrite by the code-fold equation. The code-level step, after the state is paired, agrees with the rational minimum of the accumulator and the first component, by simplifying the unpairing of a pair. Rewrite by that agreement, the decoding bridge for the minimum fold, and decoding of the one code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

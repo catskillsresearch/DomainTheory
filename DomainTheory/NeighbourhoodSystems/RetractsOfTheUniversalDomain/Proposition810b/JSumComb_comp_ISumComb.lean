@@ -1,3 +1,8 @@
+/-ai
+The sum extraction composed after the sum injection is the identity of the sum of the two fixed neighbourhoods.
+
+Unfold both maps. Associativity, the identity that the sum extraction after the sum injection is the identity, the composition law of the sum of maps, the two subsystem identities that the projection after the injection is the identity, and the identity law of the sum of maps give the equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

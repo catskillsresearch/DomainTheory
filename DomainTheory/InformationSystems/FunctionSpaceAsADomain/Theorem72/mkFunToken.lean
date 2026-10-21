@@ -1,3 +1,6 @@
+/-ai
+A pair of consistent finite sets is packaged as the function token with those sets as input and output. The consistency proof is the conjunction of the two consistency hypotheses.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

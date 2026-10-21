@@ -1,3 +1,8 @@
+/-ai
+Any two stages of the descent chain lie below a common later stage.
+
+The maximum of the two indices is such a stage, because the chain is monotone and each index is at most the maximum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

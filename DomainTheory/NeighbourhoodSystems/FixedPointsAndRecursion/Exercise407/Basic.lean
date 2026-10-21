@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the setting for Exercise 4.7: the fixed-point theorem, the approximable-map exercises, the iteration of an approximable endomap from a base element, the directed union of that iteration above a pre-fixed point, and the zero, successor, one-step, and monotonicity laws for the iteration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

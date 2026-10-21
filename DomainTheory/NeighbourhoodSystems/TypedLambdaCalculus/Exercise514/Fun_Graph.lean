@@ -1,3 +1,8 @@
+/-ai
+For an approximable map f and any set x, applying the graph of f to x returns f(x).
+
+The two inclusions are proved separately. If an output comes from a list of entries in x whose tag lies in the graph, injectivity of the tag matches that list and output with a witness that the output belongs to f of those entries, and monotonicity of f lifts the inclusion of the entries into x. Conversely, finite approximation supplies a list of entries from x on which f already produces the output, and that same tag lies in the graph.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513

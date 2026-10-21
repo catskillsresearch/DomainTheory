@@ -1,3 +1,6 @@
+/-ai
+Given a retraction of D0 into D0' and a retraction of D1 into D1', the function-space construction produces a retraction of the corresponding function spaces of Scott maps. This is the retraction half of Scott's Proposition 3.7.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,3 +1,8 @@
+/-ai
+The way-below neighbourhood of a belongs to the principal filter of x if and only if a is way-below x.
+
+Membership supplies a code b whose neighbourhood equals that of a and which is way-below x, and rewriting the membership of x along that equality gives the claim. Conversely, a itself is the required code.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

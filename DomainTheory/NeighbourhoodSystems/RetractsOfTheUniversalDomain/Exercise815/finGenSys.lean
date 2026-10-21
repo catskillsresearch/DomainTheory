@@ -1,3 +1,6 @@
+/-ai
+The finitely generated subsystem on a list, regarded as a neighbourhood system, has the same master as the original system, and a set belongs to it precisely when it belongs to that finitely generated collection. The master belongs to the collection. The intersection of two members, when it contains a third member, is the partial meet of the combined sub-selection, which is still a sublist. Every member is contained in the master, because every partial meet is.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

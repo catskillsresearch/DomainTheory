@@ -1,3 +1,8 @@
+/-ai
+The folded intersection of any finite set of basis neighbourhoods is contained in the master set.
+
+A point of the folded intersection lies in the master set by the membership criterion for folded intersections.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

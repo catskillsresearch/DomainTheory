@@ -1,3 +1,9 @@
+/-ai
+The second recursion operator is combinatory.
+
+It is obtained by applying S and K to the application combinator and to the substitution combinator, each of which is combinatory.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

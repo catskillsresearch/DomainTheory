@@ -1,3 +1,6 @@
+/-ai
+Insertion of a right sum token into a finite set of sum tokens is left-commutative, because insertion of two such tokens commutes.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

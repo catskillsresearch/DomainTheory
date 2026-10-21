@@ -1,3 +1,6 @@
+/-ai
+The principal up-set of y is the set of elements above y. This is the upper subbasic set of Scott's March 1972 correction.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

@@ -1,3 +1,8 @@
+/-ai
+The function space of the universal domain with itself embeds in the universal domain.
+
+The arrow injection and arrow projection of Definition 8.9 are a projection pair, and a projection pair determines an embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

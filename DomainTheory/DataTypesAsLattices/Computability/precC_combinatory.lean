@@ -1,3 +1,8 @@
+/-ai
+If f and g are combinatory, then so is the primitive recursion built from them.
+
+Rewrite by the completeness half of Theorem 2.4, and apply the combinatory interpretation of the recursion term in the environment of f and g.
+ai-/
 module
 
 public import Mathlib.Computability.RE

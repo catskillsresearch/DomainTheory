@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the development of Exercise 4.21: monotonicity of the order operator, the fixed-point law for the order relation, agreement of an arbitrary fixed point with that relation, uniqueness of the fixed point, the upset of zero, the successor law for upsets, uniqueness of the upset function, the addition law of the addition isomorphism together with its zero and successor laws, monotonicity of the multiplication operator, and the identification of its least fixed point with the set of multiples.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.Basic

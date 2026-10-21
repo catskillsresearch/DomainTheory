@@ -1,3 +1,8 @@
+/-ai
+For every natural number n, the conditional set of the numeral n + 1, with branches x and y, equals y.
+
+Membership extensionality and the definitions of the conditional set and of the numeral give the equality.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

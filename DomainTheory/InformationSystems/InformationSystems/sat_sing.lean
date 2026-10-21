@@ -1,3 +1,8 @@
+/-ai
+Every token is satisfied by some rational.
+
+The least-informative token is satisfied by zero. An interval token is satisfied by the midpoint of its endpoints.
+ai-/
 module
 
 public import Mathlib.Algebra.Order.Field.Rat

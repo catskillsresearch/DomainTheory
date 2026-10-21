@@ -1,3 +1,6 @@
+/-ai
+A finite set of U-tokens is consistent when the finset of underlying V-tokens does not entail the top token ∇, as in Scott's clause (9).
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

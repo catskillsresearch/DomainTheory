@@ -1,3 +1,6 @@
+/-ai
+A topology tau is coarser than or equal to the Scott topology when every set open in tau is Scott-open. In the order on topologies this is the inequality of the Scott topology below tau. This is the hypothesis of Scott's March 1972 correction.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

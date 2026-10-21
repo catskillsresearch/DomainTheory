@@ -1,3 +1,8 @@
+/-ai
+Bottom approximates every element.
+
+A neighbourhood of bottom equals the master neighbourhood, and every element contains the master neighbourhood.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

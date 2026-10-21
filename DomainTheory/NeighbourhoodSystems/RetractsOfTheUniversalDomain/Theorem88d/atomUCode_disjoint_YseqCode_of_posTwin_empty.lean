@@ -1,3 +1,8 @@
+/-ai
+If a bit-source is non-junk at depth n, but its positive twin at depth n+1 is junk, then its universal neighbourhood at depth n is disjoint from the neighbourhood of the coded Y sequence at n.
+
+A point of both would lie in some genuine depth-(n+1) atom whose bit-source is i plus two to the power n. Let j be the residue of the given bit-source modulo that power. If i equals j, the atom is the twin, which was assumed junk. If i differs from j, the two residues below the power disagree on some bit below n. The depth-n neighbourhoods are then disjoint, but the point survives from the depth-(n+1) atom into the depth-n atom and also lies in the neighbourhood of the given bit-source.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

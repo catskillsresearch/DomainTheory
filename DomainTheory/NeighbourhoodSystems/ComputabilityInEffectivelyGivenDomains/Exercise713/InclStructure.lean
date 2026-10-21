@@ -1,3 +1,6 @@
+/-ai
+An inclusion structure is a binary relation on the natural numbers, a primitive-recursive binary meet function, and a master index, such that the relation, the existence of a common lower index, and the universal meet condition are recursively decidable. The relation is reflexive and transitive, the master index is an upper bound for every index, and on a consistent pair the meet function returns an index that is a binary meet.
+ai-/
 module
 
 

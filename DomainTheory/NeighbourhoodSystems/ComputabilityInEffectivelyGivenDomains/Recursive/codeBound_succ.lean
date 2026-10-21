@@ -1,3 +1,8 @@
+/-ai
+The code bound at n + 1 equals one more than the pair of 1 and the code bound at n.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

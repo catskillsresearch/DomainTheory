@@ -1,3 +1,6 @@
+/-ai
+The graph of a map f is the set of codes that equal the tag of some finite list together with an output belonging to f of the set of entries of that list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513

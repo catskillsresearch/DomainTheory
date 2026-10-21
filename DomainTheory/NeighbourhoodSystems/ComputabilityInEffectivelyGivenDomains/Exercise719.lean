@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Exercise 7.19: membership of the elements of a power-domain neighbourhood, Scott's finite formula for the power functor, preservation of identities and of composition, the choice-free gathering of composition witnesses, preservation of recursive enumerability by a bounded existential quantifier over a coded list, the characterization and computability of the power functor on codes, the gathering of step witnesses, and the faithfulness of the combinator sending a map to its power action.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719.Basic

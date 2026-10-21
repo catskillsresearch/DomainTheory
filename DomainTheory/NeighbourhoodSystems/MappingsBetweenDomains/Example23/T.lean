@@ -1,3 +1,6 @@
+/-ai
+The codomain T is the two-token neighbourhood system of Example 1.2.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

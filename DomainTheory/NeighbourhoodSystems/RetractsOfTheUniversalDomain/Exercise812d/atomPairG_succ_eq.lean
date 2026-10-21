@@ -1,3 +1,8 @@
+/-ai
+The generalized atom pair at depth n + 1 is the Y step, at the second bit, of the two components of the X step of the depth-n pair at the first bit.
+
+This is the defining successor clause.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

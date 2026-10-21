@@ -1,3 +1,8 @@
+/-ai
+The product neighbourhood of a tuple of neighbourhoods is contained in the slice of each of its coordinates.
+
+The slice is the product neighbourhood of the one-coordinate update, so inclusion is coordinatewise. At the chosen index the update equals the coordinate set. At every other index the update is the master, which contains that coordinate set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

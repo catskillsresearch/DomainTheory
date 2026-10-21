@@ -1,3 +1,8 @@
+/-ai
+The retraction of the subspace-extension infimum of g lies below the subspace-extension infimum of the pointwise retraction of g.
+
+The infimum of g lies below each value of g on the preimage of U, and the retraction is monotone, so the retraction of the infimum lies below each value of the pointwise retraction.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

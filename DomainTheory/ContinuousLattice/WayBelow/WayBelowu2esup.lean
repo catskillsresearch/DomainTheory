@@ -1,3 +1,8 @@
+/-ai
+Scott 1972, Proposition 2.2(ii). If x and y are both way below z, then their join is way below z.
+
+The intersection of the two witnessing Scott-open neighbourhoods of z is Scott-open and contains z. A point of the intersection lies above both x and y, hence above their join.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

@@ -1,3 +1,8 @@
+/-ai
+The approximants of an approximable endomap, starting from bottom, form a monotone chain indexed by the natural numbers.
+
+Monotonicity is the comparison of approximants already given for an inequality of indices.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

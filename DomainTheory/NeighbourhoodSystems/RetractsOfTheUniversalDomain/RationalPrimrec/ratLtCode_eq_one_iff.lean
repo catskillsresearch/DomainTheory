@@ -1,3 +1,8 @@
+/-ai
+The strict comparison code of two rational codes equals one if and only if the first decoded rational is strictly less than the second.
+
+Unfolding the strict comparison and cancelling the pairing, the swapped comparison code is at most one, so one minus that code equals one exactly when the swapped comparison equals zero, and that happens exactly when the swapped comparison differs from one. The comparison code equals one exactly on the weak order, so failure of the swapped weak order is the strict order.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

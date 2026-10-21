@@ -1,3 +1,8 @@
+/-ai
+The singleton of a finite binary string σ and the cone of a finite binary string τ are nested or disjoint.
+
+If τ is a prefix of σ, the singleton is contained in the cone. Otherwise the intersection is empty, because a common element would equal σ and would have τ as a prefix.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

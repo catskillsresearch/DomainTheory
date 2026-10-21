@@ -1,3 +1,8 @@
+/-ai
+The singleton of zero is a neighbourhood of the two-point system.
+
+It is the left disjunct of membership.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

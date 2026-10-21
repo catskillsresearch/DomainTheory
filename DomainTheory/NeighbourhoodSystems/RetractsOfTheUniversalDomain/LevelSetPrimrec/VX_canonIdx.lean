@@ -1,3 +1,9 @@
+/-ai
+Canonicalizing the argument of the enumeration of V does not change the enumerated
+neighbourhood.
+
+Unfolding the enumeration, the claim is idempotence of canonicalization.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,3 +1,6 @@
+/-ai
+A primitive recursive enumerator of the index set of a subsystem of the universal domain determines a computable presentation of that subsystem. The enumeration is term-algebra evaluation, every enumerated set is a neighbourhood and every neighbourhood arises, intersection-equality and consistency are recursively decidable, the intersection operation is the node constructor and is primitive recursive and correct on consistent pairs, and the master index is the master code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

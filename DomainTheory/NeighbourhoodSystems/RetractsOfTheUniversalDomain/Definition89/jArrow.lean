@@ -1,3 +1,6 @@
+/-ai
+The fixed projection from the universal domain onto the function space of the universal domain with itself is the second component of the projection pair chosen with the function-space embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

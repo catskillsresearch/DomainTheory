@@ -1,3 +1,8 @@
+/-ai
+Every pair decoded from a canonical list code has left endpoint strictly less than its right endpoint.
+
+Membership supplies a source pair whose clip is nondegenerate and equals the given pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

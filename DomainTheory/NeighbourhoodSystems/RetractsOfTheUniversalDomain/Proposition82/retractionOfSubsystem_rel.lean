@@ -1,3 +1,8 @@
+/-ai
+The subsystem retraction relates neighbourhoods X and Z if and only if both belong to the ambient system and some neighbourhood Y of the subsystem lies between them.
+
+Unfolding the retraction as the composite of the injection and the projection, and unfolding those two relations, a composite witness is a neighbourhood Y carrying the ambient memberships and the two inclusions, and the two directions repackage that same witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition81

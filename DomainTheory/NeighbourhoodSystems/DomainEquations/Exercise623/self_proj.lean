@@ -1,3 +1,8 @@
+/-ai
+On a subsystem of a neighbourhood system in itself, the projection is the identity map of that system.
+
+By extensionality of approximable maps it is enough to rewrite the projection relation and the identity relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

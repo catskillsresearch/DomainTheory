@@ -1,3 +1,12 @@
+/-ai
+The iterative bitwise conjunction equals the bitwise conjunction.
+
+Unfolding the iteration, the accumulator clause of the iteration invariant at a number
+of steps equal to the sum of the arguments is used. Each argument divided by two to that
+power is zero, because each is strictly below two to its own power and that power is at
+most two to the power of the sum. Substituting those zeros, simplification leaves the
+conjunction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

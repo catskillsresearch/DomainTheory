@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the unit obstruction and the fixed-point construction of Exercise 8.25. The commentary records Scott's request for a non-trivial domain isomorphic to its own function space, the failure of the one-point start, the reduction through the countable power of the universal domain, the construction of the solution and the embedding of the universal domain, the closing argument, and the informal reason the solution is effectively given.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Unit

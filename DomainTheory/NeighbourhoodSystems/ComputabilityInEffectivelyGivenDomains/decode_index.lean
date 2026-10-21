@@ -1,3 +1,8 @@
+/-ai
+Decoding the index of an expression recovers the expression.
+
+Unfold decoding and the index. The index pairs the Gödel code with the depth, and fuel-bounded decoding inverts encoding at fuel one more than the depth.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

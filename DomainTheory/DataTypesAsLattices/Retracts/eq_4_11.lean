@@ -1,3 +1,8 @@
+/-ai
+Applying the function space from a to b to the application of the function space from a' to b' at u equals b composed after b' composed after u composed after a', and then after a. This is Scott's computation (4.11).
+
+Both applications are rewritten by the application law for function-space retracts.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

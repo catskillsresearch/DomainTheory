@@ -1,3 +1,9 @@
+/-ai
+If x lies in the range of a, then the sequence pair of the numeral 0 with x lies in the range of a ⊕ b.
+
+Unfold the range equation and the application of the sum. The component laws give the numeral 0 and the payload x, the double conditional on the numeral 0 selects the left branch, and the hypothesis returns x.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

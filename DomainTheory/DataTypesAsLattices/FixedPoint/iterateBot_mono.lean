@@ -1,3 +1,8 @@
+/-ai
+If f is Scott continuous, each iterate of f from the bottom element is contained in the next iterate.
+
+The inclusion at zero is emptiness of the bottom element. The successor inclusion is monotonicity of f applied to the inductive inclusion.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph

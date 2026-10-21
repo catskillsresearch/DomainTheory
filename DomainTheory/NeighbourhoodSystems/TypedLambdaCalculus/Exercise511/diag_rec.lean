@@ -1,3 +1,8 @@
+/-ai
+The constant stack of an element equals that element pushed onto the constant stack of the element.
+
+Unfolding the composite, the fixed-point equation for the curried push at the element, rewritten by the application of curry, is that push, read in the opposite direction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

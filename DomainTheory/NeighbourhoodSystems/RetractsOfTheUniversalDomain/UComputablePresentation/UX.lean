@@ -1,3 +1,6 @@
+/-ai
+The enumeration of U sends an index to the set of intervals presented by the rational-pair list decoded from its canonical code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

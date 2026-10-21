@@ -1,3 +1,12 @@
+/-ai
+The level set of the raw intersection code of two indices equals the intersection of the
+corresponding enumerated neighbourhoods. The equality is unconditional, so consistency
+for V is automatic.
+
+Unfolding the raw code and applying the pairing projections, the identity is the
+symmetric form of the computable intersection formula for the two canonicalized levels
+and masks.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

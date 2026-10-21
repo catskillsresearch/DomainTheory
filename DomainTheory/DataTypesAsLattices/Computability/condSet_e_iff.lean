@@ -1,3 +1,8 @@
+/-ai
+A number m lies in the conditional of the finite sets coded by n₂, n₀, and n₁ if and only if either bit m of n₀ and bit 0 of n₂ are set, or bit m of n₁ is set and 2 ≤ n₂.
+
+In one direction, membership lies in the zero branch or the positive branch. The bit characterization of finite sets translates the zero branch, and the same characterization together with the criterion for a bit past position 0 translates the positive branch. The converse repacks those bit conditions into the two branches of the conditional.
+ai-/
 module
 
 public import Mathlib.Computability.RE

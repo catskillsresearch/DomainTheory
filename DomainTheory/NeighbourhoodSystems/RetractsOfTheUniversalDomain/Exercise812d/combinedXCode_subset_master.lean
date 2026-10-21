@@ -1,3 +1,8 @@
+/-ai
+Every value of the interleaved first-system family is contained in the master neighbourhood of the first neighbourhood system.
+
+After unfolding, both branches of the parity split are presentation images, and every presentation image lies in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

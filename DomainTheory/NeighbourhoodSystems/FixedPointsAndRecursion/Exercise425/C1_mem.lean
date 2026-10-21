@@ -1,3 +1,8 @@
+/-ai
+A set is a neighbourhood of the unary sequence system if and only if it is a tail or a singleton.
+
+The equivalence holds by definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

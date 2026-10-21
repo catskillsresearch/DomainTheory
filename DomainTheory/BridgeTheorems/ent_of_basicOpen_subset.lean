@@ -1,3 +1,8 @@
+/-ai
+If a consistent finite set w has its basic open contained in the basic open of a finite set u, and a token a belongs to u, then w entails a.
+
+The closure of w lies in the basic open of w and hence in the basic open of u, so a belongs to that closure.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

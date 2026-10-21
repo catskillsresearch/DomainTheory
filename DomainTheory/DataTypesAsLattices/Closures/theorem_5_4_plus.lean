@@ -1,3 +1,8 @@
+/-ai
+Scott's sum theorem says that the boxed sum of two closures is a closure.
+
+The identity combinator is contained in the boxed sum, and the boxed sum of the underlying retracts is a retract.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

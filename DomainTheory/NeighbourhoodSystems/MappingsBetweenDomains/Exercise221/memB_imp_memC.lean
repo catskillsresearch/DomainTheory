@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the binary system is a neighbourhood of the system C.
+
+A neighbourhood of the binary system is the cone of some finite binary string, and every cone is a neighbourhood of C.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

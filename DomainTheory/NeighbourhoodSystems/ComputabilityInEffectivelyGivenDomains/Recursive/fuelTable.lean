@@ -1,3 +1,6 @@
+/-ai
+The fuel table of a body lookup, a bound, and a fuel is the coded list of values, at every code from 0 through the bound, of the recursion with value 0 at fuel 0 and with that lookup as its step. Fuel 0 tabulates the zero function for one more entry than the bound, and each later fuel applies one fuel-table step to the previous table.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

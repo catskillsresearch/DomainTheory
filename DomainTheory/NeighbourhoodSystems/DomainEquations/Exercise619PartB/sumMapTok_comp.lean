@@ -1,3 +1,8 @@
+/-ai
+The separated sum of maps preserves composition: the sum of g₀ ∘ f₀ and g₁ ∘ f₁ equals the composite of the sums g₀ + g₁ and f₀ + f₁.
+
+The two approximable maps are equal because they relate the same neighbourhoods. In the forward direction the master clause uses the sum master of the middle systems as an intermediate neighbourhood, a left-tagged composite uses the false tag of the intermediate component, and a right-tagged composite uses the true tag. In the backward direction a master first leg forces a master second leg, since a tagged second leg would place the empty string of the sum master in a bit embedding. A left-tagged first leg and a master second leg return the master clause of the composite, with input the false tag of the domain of f₀; a second left tag composes the component relations after injectivity of the bit embedding; a right tag equates opposite bits. The right-tagged first leg is symmetric.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

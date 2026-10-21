@@ -1,3 +1,6 @@
+/-ai
+The auxiliary list-to-tree map embeds a list of indices into a term-algebra code by a left fold. The empty list returns the accumulator, and a head j continues from the node whose children are the accumulator and the leaf code of j. The fold has the same shape as the intersection-index fold, with node and leaf codes in place of the universal intersection and the basic-neighbourhood enumeration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

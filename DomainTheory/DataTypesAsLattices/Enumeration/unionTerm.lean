@@ -1,3 +1,7 @@
+/-ai
+A closed term for binary union is the abstraction, in binders 0 and 1, of the conditional of the constant-zero abstraction between the first variable and the second. Keeping this term explicit avoids making the finite-set code choose a fresh code separately for every finite set.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+The pointwise order on Scott maps is reflexive.
+
+At each argument, the order of the codomain is reflexive.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,3 +1,8 @@
+/-ai
+One finite element of the final-segment system approximates another if and only if the first index is at most the second.
+
+Unfold the finite elements, rewrite the order of principal filters as inclusion of tails, and rewrite that inclusion as the numerical comparison.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+A set of elements is bounded if and only if every finite subset is bounded.
+
+A bound of the whole set bounds every subset. Conversely, let C be the set of neighbourhoods that belong to some member of the given set. Each member of C is a neighbourhood by the subfamily law. Each term of a finite sequence from C belongs to some element of the set, and the chosen elements form a finite subset, which has a bound by hypothesis. That bound contains every term of the sequence and therefore their running intersection, so the running intersection is a neighbourhood contained in itself and witnesses finite consistency. The least filter of C then lies above every member of the set, because each neighbourhood of such a member belongs to C and hence to the least filter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

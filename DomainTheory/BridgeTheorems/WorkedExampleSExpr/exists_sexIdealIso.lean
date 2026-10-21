@@ -1,3 +1,8 @@
+/-ai
+There is an order isomorphism between the elements of the S-expression system and the ideals of its finite elements.
+
+The ideal isomorphism of the worked example is a witness.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

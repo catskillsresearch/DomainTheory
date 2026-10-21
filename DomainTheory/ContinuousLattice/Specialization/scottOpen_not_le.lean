@@ -1,3 +1,8 @@
+/-ai
+The set of elements that fail to lie below a fixed element L is Scott-open.
+
+If a fails to lie below L and a lies below b, then b fails to lie below L, since otherwise a would lie below L. If the supremum of a set lies in this set, some member does too: if every member lay below L, the supremum would lie below L.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

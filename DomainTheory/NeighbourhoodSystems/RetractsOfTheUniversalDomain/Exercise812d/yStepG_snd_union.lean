@@ -1,3 +1,8 @@
+/-ai
+The true and false second components of a generalized Y-step reunite to its direct-refine input.
+
+Unfolding the definition, the union of a set with a neighbourhood and the same set minus that neighbourhood is the set itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

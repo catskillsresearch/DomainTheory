@@ -1,3 +1,9 @@
+/-ai
+The combinator Y is combinatory.
+
+The closed case of Theorem 2.4 applies to the Y term, and the interpretation of that term rewrites the result.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

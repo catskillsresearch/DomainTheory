@@ -1,3 +1,6 @@
+/-ai
+A strict domain object is a token type together with a neighbourhood system on it in which every neighbourhood is nonempty.
+ai-/
 module
 
 

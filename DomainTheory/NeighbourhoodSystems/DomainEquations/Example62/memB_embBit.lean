@@ -1,3 +1,8 @@
+/-ai
+Tagging a neighbourhood of the binary-sequence domain by a boolean yields a neighbourhood of that domain.
+
+The tagging equals the prepend of a one-bit list, and prepending a finite string to a neighbourhood yields a neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

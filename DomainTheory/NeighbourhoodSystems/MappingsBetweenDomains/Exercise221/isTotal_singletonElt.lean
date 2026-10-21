@@ -1,3 +1,8 @@
+/-ai
+The principal element on the terminator singleton of a finite binary string σ is a total element of the system C.
+
+Let an element y lie above that principal element, and let Z belong to y. The singleton of σ belongs to y, so its intersection with Z belongs to y and is a neighbourhood of C. A neighbourhood of C contained in a singleton equals that singleton, so the intersection equals the singleton of σ. Hence Z is a neighbourhood of C, and rewriting the equality shows that the singleton is contained in Z.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

@@ -1,3 +1,6 @@
+/-ai
+The inclusion shuffle sends the code of a pair (n, m) to the code of the triple (n, m, n).
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

@@ -1,3 +1,8 @@
+/-ai
+The corestriction of a Scott-continuous idempotent to its fixed-point set preserves directed suprema.
+
+Equality of fixed points reduces to equality of underlying elements. The underlying supremum in the fixed-point set is the endomap applied to the supremum of the image of the set under the corestriction, and that image is the image under the endomap. The image of a nonempty directed set under the monotone endomap is nonempty and directed. Preservation of directed suprema rewrites both sides as the endomap applied to a supremum of an image under the endomap. Idempotence says those two images agree.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

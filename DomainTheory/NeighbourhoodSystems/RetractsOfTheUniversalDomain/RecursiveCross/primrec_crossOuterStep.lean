@@ -1,3 +1,8 @@
+/-ai
+If bop is primitive recursive, then crossOuterStep bop is primitive recursive.
+
+The head, the accumulator, and the fixed list are primitive recursive projections. The inner cross of the head with the fixed list is primitive recursive by composing the inner-cross recursion with that pairing and simplifying the unpair-pair identities. Appending that result to the accumulator is primitive recursive by composing append-code recursion with the pairing, and unfolding the outer step reduces to the same identities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

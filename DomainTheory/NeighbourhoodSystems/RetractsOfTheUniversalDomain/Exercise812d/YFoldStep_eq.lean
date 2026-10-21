@@ -1,3 +1,8 @@
+/-ai
+On a packed argument, the Y-fold step equals the selection on the atom's junk flag described by its definition.
+
+The equation is the definition after the pair projections are simplified.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,8 @@
+/-ai
+For strict outer maps g₀ and g₁, the coalesced sum of g₀ ∘ f₀ and g₁ ∘ f₁ equals the composite of the coalesced sums. Strictness stops an intermediate master from being expanded again, which is why the coalesced sum is functorial on the strict-map category.
+
+The two approximable maps are equal because they relate the same neighbourhoods. In the forward direction the master clause uses the sum master of the middle systems as an intermediate neighbourhood. A proper left composite uses the false tag of the intermediate component, which is proper because a master intermediate would be sent by the strict left map to the master. The proper right composite is symmetric. In the backward direction a master first leg forces a master second leg, since a tagged second leg would place the empty string in a bit embedding. A proper left first leg and a master second leg return the master clause, with the input supplied by membership of a proper false tag; a second left tag composes the component relations after injectivity of the bit embedding; a right tag equates opposite bits. The proper right first leg is symmetric.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

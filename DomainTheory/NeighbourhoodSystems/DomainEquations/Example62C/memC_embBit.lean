@@ -1,3 +1,8 @@
+/-ai
+Prepending a bit to a neighbourhood of C yields a neighbourhood of C.
+
+The bit embedding is rewritten as prepending, and the one-letter prepend of a neighbourhood remains a neighbourhood of C.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

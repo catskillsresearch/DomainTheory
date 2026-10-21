@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports the identity approximable mapping and composition of approximable mappings, as the setting for Proposition 5.5 of Scott 1982, which defines composition by an intermediate finite set and shows that a composite acts as composition on elements.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54

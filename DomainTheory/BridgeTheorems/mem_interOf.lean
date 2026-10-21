@@ -1,3 +1,8 @@
+/-ai
+A point lies in the folded intersection of the basis neighbourhoods indexed by a finite set if and only if it lies in the master set and in every neighbourhood indexed by a member of the set.
+
+The proof is by induction on the finite set. The empty intersection is the master set. At an insertion, the new intersection is the neighbourhood of the new index cut with the old intersection, and membership in the enlarged index set splits into the new index and the old set.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

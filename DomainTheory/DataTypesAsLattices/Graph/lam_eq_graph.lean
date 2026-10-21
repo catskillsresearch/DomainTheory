@@ -1,3 +1,9 @@
+/-ai
+Abstraction of tau equals the graph of tau.
+
+The two sides are definitionally identical.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Continuous

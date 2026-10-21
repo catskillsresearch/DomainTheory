@@ -1,3 +1,8 @@
+/-ai
+Every fiber of the master neighbourhood of the infinite iterate is the master neighbourhood of the original system.
+
+The identity is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

@@ -1,3 +1,8 @@
+/-ai
+The identity approximable map is computable relative to any computable presentation.
+
+The identity relation is equivalent to inclusion of the enumerated neighbourhoods: the relation yields the inclusion, and an inclusion rebuilds the relation because both enumerated sets are neighbourhoods. Inclusion is recursively decidable for the presentation, and a recursively decidable predicate is recursively enumerable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

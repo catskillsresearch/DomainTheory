@@ -1,3 +1,6 @@
+/-ai
+The i-th generator is the set of natural numbers whose i-th binary digit is 1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

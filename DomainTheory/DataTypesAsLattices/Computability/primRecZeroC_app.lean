@@ -1,3 +1,8 @@
+/-ai
+Applying primRecZeroC to a step f yields primRecComb of the numeral 0 and f.
+
+Unfold primRecZeroC and apply the composition law SK_comp twice. The resulting expression is definitionally the primitive-recursion combinator.
+ai-/
 module
 
 public import Mathlib.Computability.RE

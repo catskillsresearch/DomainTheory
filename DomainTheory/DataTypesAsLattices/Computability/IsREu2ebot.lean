@@ -1,3 +1,8 @@
+/-ai
+The empty set is recursively enumerable.
+
+The empty predicate is recursively enumerable, and it agrees with membership in the empty set.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,6 @@
+/-ai
+The tree bottom, written Δ_T, is the bottom tree token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

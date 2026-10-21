@@ -1,3 +1,6 @@
+/-ai
+The fixed points of the approximable map a on R are order-isomorphic to the closed unit interval of real numbers. A fixed point is sent to its cut point, which lies between 0 and 1, and a real t in that interval is sent to the cut element of t, which is fixed by a. These maps invert one another because a fixed point equals the cut element of its cut point, and because cut elements are injective once the cut element of t is recovered from the cut point of that fixed cut element. One cut point is at most another exactly when the corresponding elements are ordered that way, by the order criterion for cut elements rewritten along those recovery identities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,7 @@
+/-ai
+The fixed-point approximant of the universe operation at a and x is the least fixed point of the step sending y to the union of x with a(y).
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

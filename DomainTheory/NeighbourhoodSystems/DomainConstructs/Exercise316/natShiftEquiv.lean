@@ -1,3 +1,6 @@
+/-ai
+The shift is an order isomorphism from sequences in a preorder to the product of that preorder with the sequences: a sequence is sent to its value at zero paired with its tail, and a pair is sent back by cases on zero and successor. The left inverse is by cases on the index, the right inverse is reflexive, and order is preserved and reflected by splitting a pointwise inequality into the value at zero and the tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

@@ -1,3 +1,6 @@
+/-ai
+The way-below neighbourhood basis on a complete lattice with decidable equality takes the way-below neighbourhood system, indexes neighbourhoods by elements through the principal way-below neighbourhoods, and takes bottom as the index of the master neighbourhood. Each principal way-below neighbourhood is a neighbourhood, witnessed by its element, and every neighbourhood of the system is the way-below neighbourhood of the element that presents it. The way-below neighbourhood of bottom is the master neighbourhood.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

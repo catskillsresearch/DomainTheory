@@ -1,3 +1,8 @@
+/-ai
+A retraction of a neighbourhood system is an approximable self-map equal to its composite with itself, and the identity map is a retraction.
+
+The identity composite law, applied to the identity map, gives that equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

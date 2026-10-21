@@ -1,3 +1,8 @@
+/-ai
+The first component of the generalized atom pair only shrinks from depth n to depth n + 1.
+
+The successor is a Y step after an X step. The first component of the Y step sits inside the first component of the X step, which sits inside the previous first component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

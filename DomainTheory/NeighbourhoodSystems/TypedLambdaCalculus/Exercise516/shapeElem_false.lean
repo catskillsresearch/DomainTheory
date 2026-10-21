@@ -1,3 +1,8 @@
+/-ai
+The shape element of the partial tag and a string σ is the partial element of σ.
+
+The equation holds by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

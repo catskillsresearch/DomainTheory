@@ -1,3 +1,8 @@
+/-ai
+A word beginning with false lies in the product neighbourhood of X and Y if and only if its tail lies in X.
+
+Unfolding the product neighbourhood, membership is the empty word, a false-tagged word from X, or a true-tagged word from Y. The empty word is not a cons. A true tag disagrees with false. A false tag identifies the tail with a member of X. Conversely, the word itself is that false-tagged member.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

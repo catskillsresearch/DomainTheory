@@ -1,3 +1,8 @@
+/-ai
+The one-argument embedding sends the bottom of the flat naturals to the bottom stack.
+
+Unfold the embedding and simplify the element maps of composition, pairing, the identity, and the constant map. The two stacks are equal because their components agree: the zeroth component is the pushed bottom, hence the zeroth component of the bottom stack, and each later component is a component of the bottom stack, hence bottom, matching the bottom stack.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

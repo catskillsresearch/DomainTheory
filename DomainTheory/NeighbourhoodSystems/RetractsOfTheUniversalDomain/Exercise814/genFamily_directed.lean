@@ -1,3 +1,8 @@
+/-ai
+The generating family of a fixed point is directed.
+
+For any two neighbourhood indices, the family of principal approximants supplies a common upper index, and the element map of the closure is monotone.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

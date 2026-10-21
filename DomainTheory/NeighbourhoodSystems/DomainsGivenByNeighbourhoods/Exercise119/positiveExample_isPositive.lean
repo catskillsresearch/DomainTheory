@@ -1,3 +1,8 @@
+/-ai
+The positive example is a positive neighbourhood system.
+
+For any two neighbourhoods, membership of their intersection is the same condition as nonemptiness of the intersection, so the biconditional is reflexive.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

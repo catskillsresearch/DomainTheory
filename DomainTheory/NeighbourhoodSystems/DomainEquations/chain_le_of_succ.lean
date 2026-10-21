@@ -1,3 +1,8 @@
+/-ai
+A chain of elements that increases at each successor is increasing for every pair of indices.
+
+Induct on the inequality between the indices. Equal indices give reflexivity. A successor step combines the inductive hypothesis with the successor inequality by transitivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

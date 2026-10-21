@@ -1,3 +1,8 @@
+/-ai
+On the code of zero paired with a certificate, and on any memo table, the certificate step returns the pair of the master guard on the certificate's output component and the master index, with that output component.
+
+Unpairing selects the zero branch of the first selector, which returns that pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

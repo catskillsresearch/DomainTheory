@@ -1,3 +1,6 @@
+/-ai
+A rational satisfies the least-informative token outright, and it satisfies a strict integer interval when it lies strictly between the two endpoints, read as rationals.
+ai-/
 module
 
 public import Mathlib.Algebra.Order.Field.Rat

@@ -1,3 +1,8 @@
+/-ai
+The one-indicator of a natural equals 1 exactly when the natural equals 1.
+
+Unfold the indicator. Each direction follows by arithmetic.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

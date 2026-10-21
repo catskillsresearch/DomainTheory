@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the concrete product is nonempty, so the product is again free of the empty set.
+
+A neighbourhood is a product neighbourhood, and every product neighbourhood contains the empty word.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

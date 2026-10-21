@@ -1,3 +1,6 @@
+/-ai
+The forward map from an element of C to an element of D' contains the cone of a doubled encoding when the element contains the cone of the original string, and contains the cone of a completed encoding when the element contains the singleton of the original string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

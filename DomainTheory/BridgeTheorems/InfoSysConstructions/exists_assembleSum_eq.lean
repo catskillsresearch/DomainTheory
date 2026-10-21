@@ -1,3 +1,8 @@
+/-ai
+Every element of the separated-sum system is the assembly of some bottom-adjoined disjoint-sum code.
+
+By the trichotomy for sum elements, the element is the bottom element, the left image of some element, or the right image of some element, and these are the three clauses of assembly.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

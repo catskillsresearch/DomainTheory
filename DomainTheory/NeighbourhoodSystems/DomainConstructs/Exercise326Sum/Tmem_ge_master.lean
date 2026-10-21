@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood of the truth domain that contains the master neighbourhood equals the master neighbourhood.
+
+Every neighbourhood is contained in the master, so the two inclusions agree.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

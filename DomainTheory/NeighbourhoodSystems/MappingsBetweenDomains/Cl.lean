@@ -1,3 +1,6 @@
+/-ai
+The closure of a set F relative to a family C is the intersection of all members of C that contain F.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

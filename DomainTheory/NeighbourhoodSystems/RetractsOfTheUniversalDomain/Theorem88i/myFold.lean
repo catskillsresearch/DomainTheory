@@ -1,3 +1,6 @@
+/-ai
+The qChar-gated fold of a list of natural numbers is the left fold of the gated step, starting from the master index of the presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic

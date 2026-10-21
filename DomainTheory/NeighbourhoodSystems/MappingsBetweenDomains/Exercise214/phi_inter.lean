@@ -1,3 +1,8 @@
+/-ai
+If two neighbourhoods are consistent, so that their intersection is a neighbourhood, then phi of the intersection equals the intersection of the two phi values.
+
+The principals of the two neighbourhoods lie below the principal of the intersection because principal elements reverse inclusion, and that principal is their least upper bound: an element above both contains both neighbourhoods, hence their intersection, and upward closure finishes the comparison. The defining equation rewrites the images as principals of the phi values. Monotonicity of the isomorphism puts phi of the intersection inside each phi value, hence inside the intersection, which is a neighbourhood by the intersection law. Each phi principal lies below the principal of that intersection. The inverse isomorphism and the least-upper-bound property put the principal of the domain intersection below the inverse image; applying the isomorphism and the defining equation yields the reverse inclusion. The two inclusions agree.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

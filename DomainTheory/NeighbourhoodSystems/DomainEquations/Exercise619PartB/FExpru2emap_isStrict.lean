@@ -1,3 +1,8 @@
+/-ai
+If an approximable map is strict, then its image under a construct is strict.
+
+The proof is by induction on the construct. A constant image is the identity map, which is strict. The identity variable is the given map. A sum image is strict by the strictness lemma for the sum action, which does not consult strictness of the given map. A product image is strict by the strictness lemma for the product action, applied to the two inductive strictness results.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

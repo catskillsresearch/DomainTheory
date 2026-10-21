@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the constructions of Lemma 6.15: the subdomain-embedding relation and its notation, the generator predicate, the image subdomain and the proof that it is a subdomain, the two directions of the correspondence of elements and the resulting order isomorphism, and the lemmas that generators exist, are monotone in each direction, are unique in each argument, are closed under intersection, and include the pair of masters, together with membership in the image subdomain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

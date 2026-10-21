@@ -1,3 +1,8 @@
+/-ai
+The intersection of two neighbourhoods of the powerset system is a neighbourhood.
+
+The complement of an intersection is the union of the complements, and the union of two finite sets is finite.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

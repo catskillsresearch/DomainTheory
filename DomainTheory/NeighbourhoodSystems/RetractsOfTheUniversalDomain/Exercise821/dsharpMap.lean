@@ -1,3 +1,6 @@
+/-ai
+The functorial action of the tree algebra on a map from one neighbourhood system to another is the catamorphism that applies the map on leaves and the pairing of the target tree algebra on nodes.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

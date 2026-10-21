@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the computable bisection, the positive and negative index functions, the classical split built from a bisection, the proof that this split is computable, the set-congruence of the two emptiness deciders, the primitive recursiveness of the two index functions, and the unfolding of the split on a presented triple.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

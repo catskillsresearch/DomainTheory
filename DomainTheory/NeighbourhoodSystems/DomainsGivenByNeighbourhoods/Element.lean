@@ -1,3 +1,6 @@
+/-ai
+An element of a neighbourhood system is a filter of neighbourhoods: a family contained in the system, containing the master, closed under binary intersection, and upward closed within the system. This is Scott's Definition 1.6.
+ai-/
 module
 
 

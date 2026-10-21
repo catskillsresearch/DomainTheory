@@ -1,3 +1,6 @@
+/-ai
+An element of level n+1 of the function-space tower is viewed as the Scott map from level n to itself that it definitionally is.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

@@ -1,3 +1,8 @@
+/-ai
+A set belongs to the limit element of the final-segment system if and only if it is a neighbourhood of that system.
+
+The two sides are definitionally the same.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

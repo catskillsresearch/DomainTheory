@@ -1,3 +1,8 @@
+/-ai
+A function-space element contains the step neighborhood of a list of neighborhood pairs if and only if it contains each individual step.
+
+The argument inducts on the list. The empty step neighborhood is the master, which every element contains. A cons cell is the intersection of the head step and the tail. Upward closure separates membership of that intersection into the two factors, the tail remains a neighborhood because the intersection is nonempty, and the inductive hypothesis handles the tail. In the other direction the element contains both factors, hence their intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

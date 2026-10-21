@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports computability of the injection and projection of the coded copy into the universal domain, computability of that projection pair, and the two approximable directions of the code-level isomorphism, for the strengthened Theorem 8.8(b).
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic

@@ -1,3 +1,8 @@
+/-ai
+The image of the colimit under T equals the colimit as domain objects.
+
+Extensionality of domain objects applies to the carrier identification and to the equality of the transported system with the colimit.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

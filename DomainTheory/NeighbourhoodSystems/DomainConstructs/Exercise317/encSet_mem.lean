@@ -1,3 +1,8 @@
+/-ai
+The encoding of any binary string is a neighbourhood of the infinite iterate of the truth system.
+
+At an index where the string is undefined, the fiber is the universal set, hence the master; where the string has a bit, the fiber is that bit neighbourhood. From the length of the string onward the string is undefined, so every such fiber equals the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,3 +1,11 @@
+/-ai
+The map sending a paired natural number to the difference-all code of its two components
+is primitive recursive.
+
+It is the primitive-recursive fold of the difference-all step, with constant zero, the
+successor of the left projection paired with zero, and the right projection. That fold
+agrees with the stated map by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

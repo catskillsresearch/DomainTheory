@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the results of Exercise 8.23: the lemma that an approximable map relates every neighbourhood to the master, the identification of the map of the function-space bottom with the constant-bottom map, the retraction, below-identity, projection, and finitary-projection facts for that constant map, the comparison of the induced operator with reading a map, the zero and successor laws for iterates, the theorem that the fixed point is a finitary projection, the fixed-point equation, the solution of the domain equation, and initiality of its fixed neighbourhood system among projections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823.Basic

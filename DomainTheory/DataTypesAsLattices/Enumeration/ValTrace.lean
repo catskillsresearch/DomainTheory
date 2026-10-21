@@ -1,3 +1,6 @@
+/-ai
+A value trace is a finite list of triples of natural numbers. It records a finite derivation that a member belongs to the value of a code, with the application witness stored on positive codes.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

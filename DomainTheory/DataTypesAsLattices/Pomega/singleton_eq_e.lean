@@ -1,3 +1,8 @@
+/-ai
+The singleton of a natural number k equals the finite set coded by the power of two with exponent k.
+
+This is the reverse of the identity that the bit-set of that power of two is the singleton of k.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

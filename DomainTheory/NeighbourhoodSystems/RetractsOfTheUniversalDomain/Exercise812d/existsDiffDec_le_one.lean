@@ -1,3 +1,8 @@
+/-ai
+The difference-existence decider never exceeds one.
+
+It is a one-indicator, and every one-indicator is at most one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

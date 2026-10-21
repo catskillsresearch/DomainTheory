@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports the stack combinators of Exercise 5.11, the two round trips of folding and unfolding, the component formula for the tail, the three stack laws, the recursion and component formula for the constant stack, the application of the map body, and the recursion and component formula for the map combinator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.Basic

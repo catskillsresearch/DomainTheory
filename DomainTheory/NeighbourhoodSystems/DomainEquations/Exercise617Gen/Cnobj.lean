@@ -1,3 +1,6 @@
+/-ai
+Cnobj A is the empty-free domain object whose tokens are the finite A-strings, whose neighbourhood system is Cn A, and whose proof that every neighbourhood is nonempty is Cn_nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

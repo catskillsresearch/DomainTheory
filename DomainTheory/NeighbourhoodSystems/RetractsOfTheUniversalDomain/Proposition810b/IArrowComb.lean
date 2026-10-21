@@ -1,3 +1,6 @@
+/-ai
+The arrow injection from the function space of the fixed neighbourhood of a into the fixed neighbourhood of b, into the universal domain, is the arrow injection of the universal domain composed after the exponential that places the subsystem projection of a in the contravariant slot and the subsystem injection of b in the covariant slot.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

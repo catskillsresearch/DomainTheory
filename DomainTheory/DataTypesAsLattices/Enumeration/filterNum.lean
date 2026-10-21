@@ -1,3 +1,6 @@
+/-ai
+The function filterNum sends a natural number q to one more than the second component of its unpairing when beforeHalt holds of the two unpaired components, and sends q to 0 otherwise.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

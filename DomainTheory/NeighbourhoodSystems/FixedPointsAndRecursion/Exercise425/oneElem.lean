@@ -1,3 +1,6 @@
+/-ai
+The total element of length n in the unary sequence system is the principal element of the singleton of n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

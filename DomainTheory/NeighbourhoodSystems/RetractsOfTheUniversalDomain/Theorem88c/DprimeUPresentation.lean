@@ -1,3 +1,6 @@
+/-ai
+The computable presentation of the subsystem DprimeU enumerates the transferred neighbourhoods of the re-pointed enumeration. The neighbourhood at n belongs by the index n, and every neighbourhood of the subsystem arises in this way. Equality of an intersection with a third neighbourhood is the decidable intersection relation, and consistency of a pair is the decidable consistency relation. The intersection index is the intersection index of the re-pointed presentation, which is primitive recursive and correct for the transferred neighbourhoods. The master index is 0.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

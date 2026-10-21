@@ -1,3 +1,6 @@
+/-ai
+The numeric image of a Boolean is one when the Boolean is true and zero when it is false. The function is exposed so a later presentation can bridge it to its own Boolean coding without an import cycle.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

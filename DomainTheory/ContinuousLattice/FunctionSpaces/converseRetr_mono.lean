@@ -1,3 +1,8 @@
+/-ai
+Scott's candidate retraction is monotone.
+
+If a ≤ b, every x with i(x) ≤ a satisfies i(x) ≤ b, so the set whose supremum is the retraction of a is contained in the set whose supremum is the retraction of b.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

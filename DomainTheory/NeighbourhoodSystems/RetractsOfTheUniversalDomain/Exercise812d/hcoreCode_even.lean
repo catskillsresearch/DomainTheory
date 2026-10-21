@@ -1,3 +1,8 @@
+/-ai
+At every even depth 2n, the generated atom of combinedXCode is empty exactly when the generated atom of combinedYCode is empty.
+
+De-interleave the sign and rewrite both generated atoms as the two sides of the atom pair at depth n. The invariant of the atom pair equates emptiness of those two sides.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

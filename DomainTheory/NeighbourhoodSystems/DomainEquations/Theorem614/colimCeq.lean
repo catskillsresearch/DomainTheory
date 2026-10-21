@@ -1,3 +1,8 @@
+/-ai
+The carrier of the image under T of the colimit is the token type.
+
+Monotonicity on domains, applied to the inclusion of the zeroth level in the colimit, identifies the carrier of that image with the carrier of the zeroth level, and the zeroth level has carrier the token type.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

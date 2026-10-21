@@ -1,3 +1,8 @@
+/-ai
+A point of Cantor space lies in the Cantor-space evaluation of a formula if and only if the formula is true when the point is read as a valuation.
+
+The proof is by induction on the formula. At a variable, at falsehood, and at truth, the two sides simplify together. At a negation, conjunction, or disjunction, the inductive hypotheses match the set operations with the Boolean operations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

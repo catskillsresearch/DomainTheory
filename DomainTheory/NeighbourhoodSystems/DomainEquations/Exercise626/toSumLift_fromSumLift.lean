@@ -1,3 +1,8 @@
+/-ai
+Composing the forward map to the separated sum with its inverse returns the original element.
+
+Element extensionality compares an arbitrary set. The master, a left tag, and a right tag in the composite are the corresponding memberships of the original, by the two tag characterizations of the inverse. Conversely, downward closure of the original splits into those three cases, and each is rebuilt by the same characterizations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

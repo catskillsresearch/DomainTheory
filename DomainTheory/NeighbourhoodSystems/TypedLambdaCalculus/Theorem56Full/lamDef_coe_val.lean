@@ -1,3 +1,8 @@
+/-ai
+A realiser of a total function, evaluated on the stack of a vector, returns the numeral given by the function at that vector.
+
+Apply the definedness clause at the value of the function. That value lies in the coerced partial function, because the coercion of a total function is defined and has that value.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

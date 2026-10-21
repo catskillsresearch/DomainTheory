@@ -1,3 +1,6 @@
+/-ai
+The equality characteristic of two enumeration codes selects mutual inclusion when both codes are consistent, the triviality test of the consistent code when exactly one is consistent, and one when both are inconsistent.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

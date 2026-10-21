@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the smash product, the strict pairing and the collapse of bottom elements, the strict function space, and the strict curry and uncurry of Exercise 5.10. It records Scott's request to show that the smash product is a neighbourhood system, that the elements of the strict function space are exactly the strict maps, and that strict maps into a strict function space correspond to strict maps out of the smash product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

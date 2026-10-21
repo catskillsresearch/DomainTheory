@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the bracket of a neighbourhood and membership in a bracket, the identification of the bracket of the master with the whole set of elements, membership of a principal filter in its bracket, the intersection and inclusion laws for brackets, injectivity of the bracket, the element-token system and its membership law, the two translations between elements, and the induced order isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

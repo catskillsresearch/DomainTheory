@@ -1,3 +1,8 @@
+/-ai
+Theorem 8.6 states that if E is effectively given, then sub, packaged as an endomap of the function space, is computable.
+
+A computable presentation of E supplies primitive recursive characters for inclusion, equality, and consistency. Reindexing the inclusion and equality characters to pairs, and reading the consistency character through its specification, supplies the function-space presentation, and the computability of the packaged map applies to that presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

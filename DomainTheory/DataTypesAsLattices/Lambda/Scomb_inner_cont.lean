@@ -1,3 +1,9 @@
+/-ai
+For fixed u and v, the map sending x to the application of u at x applied to v at x is Scott continuous.
+
+The tuple form of Theorem 1.3 combines left continuity of application, continuity of application, continuity of application of u, and continuity of application of v.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

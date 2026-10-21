@@ -1,3 +1,8 @@
+/-ai
+The family of all master neighbourhoods is finitely supported.
+
+The empty list is a support, since every coordinate is already the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

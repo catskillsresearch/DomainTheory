@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the reconstructed system equals some enumerated set.
+
+A neighbourhood is the principal up-set of some list, and encoding that list decodes back to the same list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

@@ -1,3 +1,8 @@
+/-ai
+The family of infima that defines the canonical Scott extension at a point is nonempty.
+
+The whole codomain is an open neighbourhood of the point, and the infimum of the map on its preimage belongs to the family.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

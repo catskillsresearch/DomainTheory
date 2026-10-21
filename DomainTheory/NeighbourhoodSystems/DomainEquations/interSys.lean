@@ -1,3 +1,6 @@
+/-ai
+The intersection subdomain of a nonempty family of subdomain neighbourhood-sets of E is the neighbourhood system whose neighbourhoods are the sets belonging to every member of the family, with the same master as E.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

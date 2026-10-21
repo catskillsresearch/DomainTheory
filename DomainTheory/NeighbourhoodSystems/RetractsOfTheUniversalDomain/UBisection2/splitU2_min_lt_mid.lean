@@ -1,3 +1,8 @@
+/-ai
+The minimum left endpoint of the canonical presenting list of an index is strictly less than the decoded midpoint.
+
+Rewrite the decoded midpoint, then compare a left-hand summand with its average using the inequality of the minimum left endpoint and the maximum right endpoint.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

@@ -1,3 +1,8 @@
+/-ai
+The evaluation map sending a pair (f, x), with f a Scott map and x an element of the domain, to f(x) is continuous for the Scott topologies.
+
+A map that preserves directed suprema is Scott-continuous, and evaluation preserves directed suprema.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

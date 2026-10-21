@@ -1,3 +1,8 @@
+/-ai
+A string lies in the tag-i tuple of X if and only if it is the slot prefix of some index j followed by a string in the component X j.
+
+The equivalence is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

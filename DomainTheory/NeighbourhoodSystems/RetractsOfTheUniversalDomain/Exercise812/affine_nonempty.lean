@@ -1,3 +1,8 @@
+/-ai
+If ℓ is strictly less than 2^k, the residue class of ℓ modulo 2^k is nonempty.
+
+The residue ℓ itself lies in the class, because its remainder modulo 2^k is ℓ.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

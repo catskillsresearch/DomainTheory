@@ -1,3 +1,8 @@
+/-ai
+If the interval [0, s) is an R-neighbourhood, then 0 < s ≤ 1.
+
+Membership supplies a positive rational r at most 1 with [0, s) equal to [0, r). The interval is nonempty, so s is positive, and injectivity of the parametrization forces s = r.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

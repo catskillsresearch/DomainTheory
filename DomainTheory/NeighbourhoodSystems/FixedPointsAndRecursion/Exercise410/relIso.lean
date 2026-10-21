@@ -1,3 +1,6 @@
+/-ai
+The order isomorphism between filters of the relativized system below an element a and elements of the original system that lie below a sends a filter to its embedding and an element below a to its restriction. The two composites are the restriction of an embedding and the embedding of a restriction. The order is reflected by the comparison of embeddings and preserved by monotonicity of the embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

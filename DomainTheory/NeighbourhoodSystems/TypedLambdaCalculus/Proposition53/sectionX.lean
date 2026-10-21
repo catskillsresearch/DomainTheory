@@ -1,3 +1,6 @@
+/-ai
+The section of an approximable map τ from a product of neighbourhood systems into the first factor, at a fixed element y of the second factor, is the approximable endomap of the first factor obtained by applying, to y, the curry of τ after a coordinate swap.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

@@ -1,3 +1,6 @@
+/-ai
+An endofunctor on a category assigns an object to each object and a morphism between the image objects to each morphism, sends identity morphisms to identity morphisms, and sends a composite to the composite of the images.
+ai-/
 module
 
 

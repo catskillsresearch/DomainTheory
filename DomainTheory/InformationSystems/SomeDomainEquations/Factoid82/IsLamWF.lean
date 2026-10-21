@@ -1,3 +1,6 @@
+/-ai
+A raw lambda token is well formed for the information system when it is bottom or an atom, or when it is a function token whose two argument lists, read as finsets, are both depth-consistent. The earlier staged well-formedness predicate remains scaffolding.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

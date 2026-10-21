@@ -1,3 +1,8 @@
+/-ai
+The universal strict map sends the sharp pairing of two elements to the image, under the node algebra map, of the pair of the images of those elements.
+
+A neighbourhood of the image comes from a neighbourhood of the pairing. The master case forces the target to be the master, which the node map reaches from the master of the product. A paired neighbourhood inverts to relations of the two factors and a relation of the node map on their product. Conversely, a neighbourhood of the pair of the images is a product of neighbourhoods of those images, and the node clause relates the paired embedding of their sources to the target.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

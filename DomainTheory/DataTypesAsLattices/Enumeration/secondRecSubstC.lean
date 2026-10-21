@@ -1,3 +1,7 @@
+/-ai
+The substitution combinator is an element of Pω chosen so that it realizes the primitive recursive function m ↦ apply(m)(num(m)).
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

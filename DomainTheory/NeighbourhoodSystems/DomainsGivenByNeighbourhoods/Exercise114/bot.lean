@@ -1,3 +1,6 @@
+/-ai
+The bottom element of the neighbourhood system of finite nonempty subsets of the natural numbers is the least element of that system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

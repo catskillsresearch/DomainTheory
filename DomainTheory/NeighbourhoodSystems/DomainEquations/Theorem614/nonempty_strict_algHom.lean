@@ -1,3 +1,8 @@
+/-ai
+There is a strict algebra homomorphism from the colimit algebra into any T-algebra whose structure map is strict.
+
+This is the existence theorem for a functor continuous on maps, applied to the colimit isomorphism and the strict structure map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

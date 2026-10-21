@@ -1,3 +1,8 @@
+/-ai
+A cone of binary strings is never contained in a singleton.
+
+The string and the same string extended by true both lie in the cone, hence in the singleton, so they would be equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

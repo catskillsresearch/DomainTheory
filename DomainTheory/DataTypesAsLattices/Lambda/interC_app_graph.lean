@@ -1,3 +1,8 @@
+/-ai
+The application of interC to an argument is the graph of the conditional that returns zero on a zero second argument and otherwise the successor of interC at the two predecessors.
+
+The fixed-point equation unfolds interC, and the beta law is applied to continuity of the body in the first argument.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

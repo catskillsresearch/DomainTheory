@@ -1,3 +1,6 @@
+/-ai
+The projection from the universal domain onto its tree algebra is the projection chosen by the strong form of Theorem 8.8 for the effective presentation of that tree algebra.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

@@ -1,3 +1,8 @@
+/-ai
+Scott's Theorem 7.2: currying is the unique approximable map from A into the function space B → C whose uncurrying equals a given approximable map from the product A × B into C.
+
+The hypothesis and the uncurry-curry equation show that the two maps have the same uncurrying. Extensionality reduces the claim to an element x of A. For each element y of B, the pairing of either map after the first projection with the second projection, evaluated on the pair of x and y, equals the pair of the image of x with y, because the two components agree by the projection-composition laws and the projection laws for paired elements. Uncurrying evaluates application on that pair, so the common uncurrying and the evaluation law for application identify the maps recovered from the two images of x. The round trip from a function-space element through the recovered approximable map and back then identifies the two images.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

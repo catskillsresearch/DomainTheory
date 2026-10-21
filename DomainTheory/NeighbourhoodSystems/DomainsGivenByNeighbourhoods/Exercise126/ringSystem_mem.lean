@@ -1,3 +1,8 @@
+/-ai
+A set of finite subsets belongs to the ring system if and only if it equals I(F) for some finite set F.
+
+The equivalence holds by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

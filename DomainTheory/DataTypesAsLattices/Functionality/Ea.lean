@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (7.4). The restricted equivalence of a retract a relates x to y exactly when both are typed by a and they are equal. Symmetry swaps the typing hypotheses and reverses the equality. Transitivity keeps the typing of the outer elements and composes the equalities.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

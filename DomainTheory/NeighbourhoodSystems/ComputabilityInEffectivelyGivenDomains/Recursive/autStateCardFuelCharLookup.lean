@@ -1,3 +1,6 @@
+/-ai
+The table form of one state-card fuel step applies the body to the function that reads the code from the table in the first component of the input, at the second component of the input.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

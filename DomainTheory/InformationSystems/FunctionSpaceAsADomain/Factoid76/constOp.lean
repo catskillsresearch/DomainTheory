@@ -1,3 +1,6 @@
+/-ai
+The constant operator from B into the function space from A to B is the currying of the first projection from the product of B and A.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

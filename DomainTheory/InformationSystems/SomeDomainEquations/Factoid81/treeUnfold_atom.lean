@@ -1,3 +1,8 @@
+/-ai
+Unfolding an atom is the left injection of that atom.
+
+The two sides are definitionally the same.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

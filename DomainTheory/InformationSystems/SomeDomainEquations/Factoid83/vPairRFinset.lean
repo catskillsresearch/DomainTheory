@@ -1,3 +1,10 @@
+/-ai
+The right projection of a finite set of tokens of the information system V is the set of payloads of the right-pair tokens in that set. It is the fold, starting from the empty set, of the operation that inserts the payload of a right-pair token and acts as the identity on the bottom token, the top token, and a left-pair token. That operation is left-commutative: the two tokens are compared, insertion commutes when both insert, and otherwise the two orders agree definitionally.
+
+A token t belongs to the right projection of a finite set u if and only if the right-pair token with payload t belongs to u.
+
+Membership in the fold is characterized by induction on the multiset. Both sides fail for the empty multiset. If the head is a right-pair token, membership after insertion is equality with the payload or membership in the tail, matching a witness that is the head or lies in the tail. If the head is the bottom token, the top token, or a left-pair token, the fold is unchanged and that head cannot be the witness, so membership reduces to the tail.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

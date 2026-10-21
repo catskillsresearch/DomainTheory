@@ -1,3 +1,8 @@
+/-ai
+Passing a neighbourhood-system element through toElement and then ofElement returns the original element.
+
+By extensionality of filters, a neighbourhood in the composite contains a basis neighbourhood already in the original filter, so upward closure returns it to that filter. Conversely, exhaustiveness writes a neighbourhood of the original filter as a basis neighbourhood, which witnesses membership in the composite.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

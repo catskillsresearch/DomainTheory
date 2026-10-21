@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (5.1). Every set u is contained in the graph of its own application.
+
+This is the second clause of Theorem 1.2.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

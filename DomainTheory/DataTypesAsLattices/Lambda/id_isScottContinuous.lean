@@ -1,3 +1,8 @@
+/-ai
+The identity function on Pω is Scott continuous.
+
+If a number lies in a set, the singleton finite set of that number is contained in the set and contains the number, so the number lies in the Scott union. Conversely, a Scott-union witness is a finite set contained in the original set that already contains the number.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

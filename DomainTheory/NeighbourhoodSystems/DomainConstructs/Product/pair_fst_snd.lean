@@ -1,3 +1,8 @@
+/-ai
+Every product element is the pairing of its first and second components.
+
+The two elements contain the same neighbourhoods. A product of neighbourhoods of the two components, each recording a master slice of the original element, reassembles by the splitting law. Conversely, any neighbourhood of the element is a product neighbourhood, and the splitting law puts the two slices into the two components.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

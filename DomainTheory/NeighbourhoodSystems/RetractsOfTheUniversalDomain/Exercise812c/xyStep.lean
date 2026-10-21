@@ -1,3 +1,6 @@
+/-ai
+xyStep, given a split, a first set, a second set, a test set, and a Boolean, returns the pair whose first component is the first set meet the test set or the first set minus the test set according to the Boolean, and whose second component is the first or second piece of the split according to the same Boolean.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

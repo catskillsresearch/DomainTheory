@@ -1,3 +1,8 @@
+/-ai
+For a fixed element x, the positive bar branch is Scott continuous in its first argument.
+
+The substitution theorem composes right continuity of sequence cons at the numeral 1 with left continuity of sequencing at the application of x to the numeral 1.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

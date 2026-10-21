@@ -1,3 +1,6 @@
+/-ai
+The function set of a finite set of raw lambda tokens is the finite set of input-output list pairs of its function tokens. It is the right fold of function insertion, starting from the empty set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

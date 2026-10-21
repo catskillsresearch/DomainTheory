@@ -1,3 +1,8 @@
+/-ai
+If X is a neighbourhood of the first factor and Y is a neighbourhood of the second, their product neighbourhood is a neighbourhood of the concrete product.
+
+It is the product neighbourhood of those two neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,3 +1,6 @@
+/-ai
+A formula is a propositional formula in countably many variables indexed by the natural numbers: a variable, falsehood, truth, a negation, a conjunction, or a disjunction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

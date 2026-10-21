@@ -1,3 +1,6 @@
+/-ai
+The shifted enumerator of the halting set sends t to one more than the first component of its unpairing when step-bounded evaluation, for the number of steps given by the second component, of the code decoded from the first component on input 0 returns a value, and sends t to 0 otherwise. The value 0 is the miss marker.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

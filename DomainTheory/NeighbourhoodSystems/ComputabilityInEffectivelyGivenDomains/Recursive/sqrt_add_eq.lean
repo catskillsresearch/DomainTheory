@@ -1,3 +1,8 @@
+/-ai
+The square root of the square of q plus a equals q whenever a is at most twice q.
+
+The square of q is at most the sum. The square of q plus 1 expands as the square of q plus q plus q plus 1, so arithmetic places the sum strictly below that square, and the square-root characterization applies.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

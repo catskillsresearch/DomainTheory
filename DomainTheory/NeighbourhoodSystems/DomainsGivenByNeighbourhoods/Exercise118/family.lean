@@ -1,3 +1,6 @@
+/-ai
+The three-member family is the set consisting of A, B, and Cc.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

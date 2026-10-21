@@ -1,3 +1,8 @@
+/-ai
+The triple product of the infinite word of a word equals the infinite word.
+
+Rewrite twice by the equation that the infinite word equals its square.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Scott's sum of two neighbourhood systems: the left and right tags, the tagged copies and their membership, intersection, nonemptiness, inclusion, and disjointness lemmas, the sum master and the sum system, the left and right contents of a sum set, and the injections and projections together with the identities in which each projection retracts the corresponding injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

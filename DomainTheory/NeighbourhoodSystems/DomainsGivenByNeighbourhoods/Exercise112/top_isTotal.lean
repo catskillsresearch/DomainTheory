@@ -1,3 +1,8 @@
+/-ai
+The limit element of the final-segment system is total.
+
+Any element above the limit still lies below the limit.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

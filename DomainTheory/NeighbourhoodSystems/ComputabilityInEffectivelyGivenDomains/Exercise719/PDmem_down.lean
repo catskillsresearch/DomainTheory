@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood of the power domain is downward closed. If it contains a neighbourhood Z and X is a neighbourhood contained in Z, then it contains X.
+
+A power-domain neighbourhood is a union of principal up-sets. The member Z lies under some generator of that union, and the smaller neighbourhood X still lies under the same generator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

@@ -1,3 +1,8 @@
+/-ai
+Two left copies are equal if and only if their underlying sets are equal.
+
+The forward direction is injectivity of the left copy. The reverse direction substitutes the equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

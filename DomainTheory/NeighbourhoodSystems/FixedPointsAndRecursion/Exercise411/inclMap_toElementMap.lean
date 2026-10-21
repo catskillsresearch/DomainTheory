@@ -1,3 +1,8 @@
+/-ai
+The elementwise action of the inclusion of the relativized system below an element a is the embedding of the relativized filter.
+
+Extensionality compares membership. A witness that a neighbourhood belongs to the image under the inclusion is a neighbourhood of the filter, belonging to a and contained in the target, which is a witness for the embedding, and conversely.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407

@@ -1,3 +1,8 @@
+/-ai
+Every coded set Yc P n is contained in the universal master.
+
+This is the master-inclusion component of the fact that the U-neighbourhood of the Y-sequence code belongs to the universal system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

@@ -1,3 +1,8 @@
+/-ai
+If two approximable maps on the universal domain are projections, then so are their sum, product, and arrow combinators. If the two maps are finitary projections, then so are those three combinators.
+
+The first claim is the preservation of projections by the three combinators. The second is the preservation of finitary projections by the three combinators.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

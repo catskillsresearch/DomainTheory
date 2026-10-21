@@ -1,3 +1,8 @@
+/-ai
+The step neighbourhood of a pair of neighbourhoods equals the step neighbourhood of another pair if and only if both outputs are the master neighbourhood, or the two pairs coincide.
+
+If the steps are equal and the first output is the master, the first step is the whole function space, so the second step is the whole space and its output is the master. If the first output is not the master, equality of steps forces the two inputs and the two outputs to agree. Conversely, when both outputs are the master both steps are the whole space, and when the pairs coincide the steps are the same neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

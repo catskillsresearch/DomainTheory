@@ -1,3 +1,8 @@
+/-ai
+The intersection of the copies of two sets prefixed by the same letter is the prefixed copy of the intersection of the sets.
+
+A string in both copies begins with that letter, and the two decompositions agree on the remaining string, which therefore lies in both sets. Conversely, a string whose remainder lies in both sets lies in both copies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

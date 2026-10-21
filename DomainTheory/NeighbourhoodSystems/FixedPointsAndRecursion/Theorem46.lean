@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports symmetry of the graph between two models of Peano's axioms, inversion of that graph at zero and at a successor, uniqueness of the related element on each side, and the isomorphism of any two such models.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.Basic

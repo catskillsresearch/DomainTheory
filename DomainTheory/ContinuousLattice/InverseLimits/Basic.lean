@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the ingredients of the inverse limit of an ω-system of continuous lattices: compatibility and the inverse-limit type, its order and complete-lattice structure, pointwise infima and directed suprema, the tower embeddings, projections, and their composites, preservation of directed suprema, the Galois connection of a projection, Proposition 4.2, and the mediating cocone of Corollary 4.3.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

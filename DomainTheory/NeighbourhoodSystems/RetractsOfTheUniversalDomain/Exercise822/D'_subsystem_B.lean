@@ -1,3 +1,8 @@
+/-ai
+D' is a literal subsystem of B.
+
+The masters agree by reflexivity. Each D'-neighbourhood is a cone, hence a B-neighbourhood. If the intersection of two D'-neighbourhoods is a B-neighbourhood, the nested-or-disjoint law gives nesting one way, nesting the other way, or disjointness. In the nested cases the intersection is one of the two neighbourhoods. In the disjoint case the intersection is empty, which cannot be a B-neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

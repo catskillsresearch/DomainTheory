@@ -1,3 +1,6 @@
+/-ai
+A finite set of tree tokens entails a tree token when the set is consistent and the entailment payload of the set holds at that token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

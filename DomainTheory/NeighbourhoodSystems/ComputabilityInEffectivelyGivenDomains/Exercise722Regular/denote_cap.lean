@@ -1,3 +1,8 @@
+/-ai
+The denotation of an intersection expression is the intersection of the two denotations.
+
+The two sides agree by the definition of denotation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

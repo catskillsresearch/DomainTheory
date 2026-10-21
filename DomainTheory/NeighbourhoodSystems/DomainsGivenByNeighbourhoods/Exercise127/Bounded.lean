@@ -1,3 +1,6 @@
+/-ai
+A set of elements of a neighbourhood system is bounded when some element lies above every member of the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

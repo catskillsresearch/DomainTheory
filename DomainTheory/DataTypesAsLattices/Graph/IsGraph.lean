@@ -1,3 +1,7 @@
+/-ai
+Scott's Theorem 1.2 (iii) takes a set u to be a graph when it is downward closed in the finite-set argument: if the pair of k and m lies in u and the basic element coded by k is contained in the basic element coded by n, then the pair of n and m lies in u.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Continuous

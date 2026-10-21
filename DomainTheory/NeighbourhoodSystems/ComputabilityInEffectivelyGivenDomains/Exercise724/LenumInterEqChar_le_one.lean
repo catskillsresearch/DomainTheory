@@ -1,3 +1,9 @@
+/-ai
+The intersection-equality characteristic is at most one.
+
+Unfold the arithmetic disjunction and case on each product of bits being zero or one, using that the prefix characteristics and the list-equality characteristics are at most one. Simplification gives the bound.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

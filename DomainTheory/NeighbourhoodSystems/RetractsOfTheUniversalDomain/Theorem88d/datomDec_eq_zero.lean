@@ -1,3 +1,8 @@
+/-ai
+If the D-atom decoded from a pair of list codes is nonempty, the extracted decider reads 0 on that pair.
+
+The decider is at most 1, and it does not read 1, because a reading of 1 would mean that the atom is empty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

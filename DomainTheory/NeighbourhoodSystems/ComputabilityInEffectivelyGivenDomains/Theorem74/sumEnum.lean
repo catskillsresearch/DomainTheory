@@ -1,3 +1,6 @@
+/-ai
+The sum enumeration sends a code to the left copy of the first presentation's neighbourhood when the tag is zero, to the right copy of the second presentation's neighbourhood when the tag is one, and to the sum master otherwise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

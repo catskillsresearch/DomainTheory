@@ -1,3 +1,8 @@
+/-ai
+Once the fuel exceeds the code, the fuel-indexed evaluator no longer depends on which larger fuel is used.
+
+Proceed by strong induction on the code. Both fuels are successors, so the claim is equality of one fuel step at the two preceding fuels. If the tag is zero, the first selector equals one and both steps return the enumerator value. If the tag is positive, both children are strictly smaller than the code, and the code is at most each preceding fuel, so the inductive hypothesis makes the preceding fuels agree at the children and locality of the step gives the equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

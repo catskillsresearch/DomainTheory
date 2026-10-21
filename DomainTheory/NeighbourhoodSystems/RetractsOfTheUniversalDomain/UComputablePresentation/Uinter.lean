@@ -1,3 +1,6 @@
+/-ai
+The intersection index of two indices is the combined code of their canonical codes. Lookup through the enumeration canonicalizes again, so no further canonicalization is applied here.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

@@ -1,3 +1,6 @@
+/-ai
+The basic open of a set is the set of elements that contain the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

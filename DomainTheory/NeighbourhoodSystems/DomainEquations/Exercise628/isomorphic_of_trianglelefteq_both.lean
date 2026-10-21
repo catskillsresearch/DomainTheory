@@ -1,3 +1,8 @@
+/-ai
+If the element domains of two neighbourhood systems are finite and each system embeds as a subdomain of the other, then the systems are isomorphic.
+
+Each embedding supplies an order embedding of element domains, and those two embeddings form an order isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615

@@ -1,3 +1,8 @@
+/-ai
+For a compatible sequence y and m at most n, descending the n-th coordinate down to level m recovers the m-th coordinate.
+
+The argument is by induction along m at most n. At the base, descent is the identity. At a successor, one retraction is peeled off and compatibility of y supplies the inductive step.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

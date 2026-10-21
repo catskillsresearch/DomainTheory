@@ -1,3 +1,6 @@
+/-ai
+The depth of an S-expression is 1 for sigma and for a singleton, and one more than the maximum of the two subexpression depths for a concatenation and for an intersection.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

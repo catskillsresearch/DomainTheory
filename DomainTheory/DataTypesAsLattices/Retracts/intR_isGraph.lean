@@ -1,3 +1,8 @@
+/-ai
+The integer retract equals the graph of its own application.
+
+Rewrite by the symmetric form of the equation identifying the integer retract with the integer functional applied to it, then compare graphs. At each argument the two sides agree by the symmetric application law.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

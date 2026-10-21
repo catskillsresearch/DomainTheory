@@ -1,3 +1,8 @@
+/-ai
+The doubly strict conditional is Scott continuous in its test.
+
+It is the McCarthy conditional of the test, of the conditional of the test on the left argument and ⊤, and of the conditional of the test on ⊤ and the right argument. The McCarthy conditional is Scott continuous in each argument, the test is copied by the identity, and each inner conditional is Scott continuous in the test.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

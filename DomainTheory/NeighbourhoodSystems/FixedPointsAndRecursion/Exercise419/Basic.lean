@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the verification of Example 4.4: the truth domain and the notations for its true and false elements, the head-value function and its equations, the disjointness of cones and singletons, the lift of head data to an approximable map and its values on partial and total elements, the tests empty, zero, and one with their value equations, the expression defining one from emptiness, zero, and the conditional, and the conditional law at bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

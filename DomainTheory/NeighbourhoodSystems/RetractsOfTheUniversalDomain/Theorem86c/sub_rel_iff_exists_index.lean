@@ -1,3 +1,8 @@
+/-ai
+The map sub f relates the presented neighbourhoods of indices a and b exactly when some presented neighbourhood is related to itself by f and lies between them.
+
+Both presented sets are neighbourhoods. A witness neighbourhood of the relation of sub is some presented set by surjectivity of the presentation. Conversely, a presented witness is a neighbourhood together with the self-relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

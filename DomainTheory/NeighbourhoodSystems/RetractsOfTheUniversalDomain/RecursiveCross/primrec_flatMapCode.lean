@@ -1,3 +1,8 @@
+/-ai
+If f is primitive recursive, then the function sending a packed pair to flatMapCode f of its two components is primitive recursive.
+
+It is the primitive recursive fold of the flat-map step of f, with the left projection, the constant zero, and the right projection, and that fold agrees with flatMapCode by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

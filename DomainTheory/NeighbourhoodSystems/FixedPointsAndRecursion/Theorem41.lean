@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the fixed-point equation for the least fixed point of an approximable endomap, minimality among pre-fixed points, membership and monotonicity of the iterates from the bottom together with their agreement with iteration of the elementwise map, the directed-supremum form of the least fixed point, the fixed-point operator on principal elements, factorization of a finite chain through one finite approximant, the elementwise equation for the operator, the fixed-point and least-pre-fixed-point laws, the directed-supremum formula, the operator applied to the filter of a map, and uniqueness of an operator satisfying those laws.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.Basic

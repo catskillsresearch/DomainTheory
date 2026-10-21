@@ -1,3 +1,6 @@
+/-ai
+A domain is a token type equipped with a neighbourhood system on that type. The arrow of two domains is the domain whose carrier is the type of approximable maps between their systems and whose system is the function space of those systems.
+ai-/
 module
 
 

@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (7.18). For a common tag j, the m-fold iterate of the graph of the tagged successor at j, started at the singleton of the pair (j, 0), equals the singleton of the pair (j, m).
+
+Induction on m. The zero step is reflexivity. The successor step unfolds the iterate, applies the tagged successor, rewrites by the inductive hypothesis, and uses the singleton successor rule.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,8 @@
+/-ai
+The subspace inverse-limit topology is T0, because the inclusion into the product of the stage Scott spaces is an embedding.
+
+Each stage Scott topology is T0. The inclusion into their product is an embedding, so the inverse limit is T0.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

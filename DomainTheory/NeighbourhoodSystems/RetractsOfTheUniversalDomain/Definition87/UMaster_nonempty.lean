@@ -1,3 +1,8 @@
+/-ai
+The half-open unit interval of rationals is nonempty.
+
+Zero belongs to it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Theorem 2.4 (The combinator theorem). The six constants zero, successor, predecessor, conditional, K, and S are combinatory.
+
+Each constant is one of the six combinatory constructors.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

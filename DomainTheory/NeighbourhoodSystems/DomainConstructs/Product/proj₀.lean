@@ -1,3 +1,6 @@
+/-ai
+Definition 3.3 of Scott (1981, PRG-19) defines the first projection from the product to the first system: it relates a product neighbourhood W to an output neighbourhood X' when W is a product neighbourhood, X' is a neighbourhood, and the left preimage of W is contained in X'. Right intersection intersects the output neighbourhoods and the left-preimage inclusions. Monotonicity composes the preimage of the smaller input with the two inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

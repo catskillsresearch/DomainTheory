@@ -1,3 +1,8 @@
+/-ai
+The principal filter of the neighbourhood determined by a finite list has a minimum neighbourhood.
+
+That neighbourhood itself is a member of the filter and is contained in itself, and every member of the principal filter contains it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

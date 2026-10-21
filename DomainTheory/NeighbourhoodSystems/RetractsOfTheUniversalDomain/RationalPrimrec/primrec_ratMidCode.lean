@@ -1,3 +1,8 @@
+/-ai
+The midpoint code is primitive recursive.
+
+The left and right components of a code are primitive recursive, and so are the two cross-cleared numerator sums and one less than twice the product of the denominators. Pairing the two sums and then pairing the result with that denominator expression is primitive recursive, and simplifying the expression recovers the midpoint code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

@@ -1,3 +1,9 @@
+/-ai
+The code tagOfBits of a bound and a value equals tag of the decoded bit list of that bound against itself, at the value.
+
+This is the specification of tagCode at the bit-list code and the value.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

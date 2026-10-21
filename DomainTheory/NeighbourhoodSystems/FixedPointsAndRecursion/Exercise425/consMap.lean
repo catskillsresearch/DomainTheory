@@ -1,3 +1,6 @@
+/-ai
+The successor on the unary sequence system relates neighbourhoods X and Y when both are neighbourhoods and the shift of X is contained in Y. The domain and codomain of a related pair are the two membership hypotheses, the master is related to itself because a shift is contained in the set of all naturals, a pair of output containments intersects because the intersection of the outputs is a neighbourhood once it contains the shift of a neighbourhood, and a smaller input and a larger output remain related because the shift of the smaller input is contained in the shift of the original input and hence in the larger output.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

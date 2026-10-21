@@ -1,3 +1,6 @@
+/-ai
+The supremum operation on Scott maps is the pointwise supremum of sets of Scott maps.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

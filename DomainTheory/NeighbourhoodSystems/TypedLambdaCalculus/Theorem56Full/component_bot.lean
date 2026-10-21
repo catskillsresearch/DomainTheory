@@ -1,3 +1,8 @@
+/-ai
+Every coordinate of the bottom stack is bottom.
+
+The bottom stack equals the sequence that is constantly bottom: bottom lies below that sequence, and the sequence lies below bottom because each of its components is bottom and hence lies below the corresponding component of bottom. The component of that sequence is bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

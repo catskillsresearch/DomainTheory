@@ -1,3 +1,8 @@
+/-ai
+Compactness of an element k implies that the principal upper set of k is Scott-open, and a compact element is way-below every element above it. An algebraic complete lattice, in which every element is the directed supremum of the compact elements below it, is therefore a continuous lattice in Scott's sense. The abbreviation idealCompletion_to_continuousLattice names this implication.
+
+The principal upper set is an upper set, and if a directed set has supremum above a compact element then compactness yields a member already above it. That Scott-open set, containing an element y above k and contained in itself, witnesses that k is way-below y. For the algebraicity implication, the compact elements below y are nonempty and directed with supremum y. Every element way-below y lies under y, and any upper bound of all elements way-below y bounds every compact element below y, because each such compact is way-below y, and therefore bounds their supremum y.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

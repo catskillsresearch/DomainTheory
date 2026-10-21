@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports Factoid 4.1, the inf-semilattice structure on the elements of an information system: the binary meet by intersection, the two inequalities of a meet, the universal property of the meet, the criterion that the order is equality with a meet, idempotence, commutativity, associativity, and monotonicity of the meet, and the two laws making the bottom element a zero for the meet.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.Basic

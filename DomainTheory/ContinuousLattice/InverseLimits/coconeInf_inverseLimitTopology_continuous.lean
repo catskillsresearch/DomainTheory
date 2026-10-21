@@ -1,3 +1,8 @@
+/-ai
+The mediating map of a cocone is continuous from the inverse-limit topology into the Scott topology of the codomain, whenever each level is a continuous lattice.
+
+The inverse-limit topology agrees with the Scott topology of the inverse limit, and the mediating map preserves directed suprema, so it is continuous for that Scott topology.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

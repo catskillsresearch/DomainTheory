@@ -1,3 +1,8 @@
+/-ai
+The sum of the universal domain with itself is effectively given.
+
+Apply preservation of effective givenness under sums to the effective givenness of the universal domain on both summands.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Exercise 6.17, the proof that the domain C of finite or infinite binary sequences is the initial algebra for the functor sending a domain X to the separated sum of the unit with two copies of X. It re-exports the category of neighbourhood systems with no empty neighbourhood and of strict approximable maps, the three-way separated sum with its sum map, canonical injections, and shape lemmas, the functor and the algebra structure on C, the descent map into an arbitrary algebra and the algebra homomorphism it induces, and the commutation and uniqueness lemmas for that homomorphism, including the head recursion on cones and singletons, strictness, the identification of the bottom element, and the two composites of the domain-equation equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

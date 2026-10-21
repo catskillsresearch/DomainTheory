@@ -1,3 +1,8 @@
+/-ai
+Applying the enumerator step at v to the numeral of p + 1 equals the application of v at the numeral of the left unpairing component of p to the application of v at the numeral of the right component.
+
+Rewrite by the application law for the step and by equation (2.7) at a successor, then simplify the minimal extension, the selected application, and the numeral.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

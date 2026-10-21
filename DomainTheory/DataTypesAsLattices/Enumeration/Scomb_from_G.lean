@@ -1,3 +1,8 @@
+/-ai
+The combinator S equals G applied to the zero combinator and then four times to the numeral 1.
+
+Identify the zero combinator with the numeral 0, and simplify by the zero application of G, the application of the G-pack to the numeral 1, and three uses of sequencing applied to the numeral 1.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

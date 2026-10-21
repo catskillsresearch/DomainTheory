@@ -1,3 +1,8 @@
+/-ai
+For every Boolean sequence and every depth, the generic atom of combinedX started from the master of D₀ is empty if and only if the generic atom of combinedY started from the master of D₁ is empty.
+
+The proof splits on the parity of the depth. An even depth equals twice its half, and the even case applies. An odd depth equals twice its half plus one, and the odd case applies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,3 +1,7 @@
+/-ai
+The tokens of BOOL are the bottom token, the true token, and the false token, and equality of these tokens is decidable.
+ai-/
+
 module
 
 public import Mathlib.Data.Multiset.MapFold

@@ -1,3 +1,13 @@
+/-ai
+The map sending a paired natural number to the difference code of its two components is
+primitive recursive.
+
+Unfolding the difference code, the swapped application of the difference-all code is
+primitive recursive by composing that code with the pairing of the right and left
+projections and simplifying the pairing projections. Composing the primitive-recursive
+flat-map code of that function with the same swapped pairing, and simplifying again,
+matches the unfolded difference code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

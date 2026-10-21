@@ -1,3 +1,6 @@
+/-ai
+The code-level maximum of second components folds the rational maximum of the accumulator with the second component of each pair code, with parameter zero and seed the zero code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

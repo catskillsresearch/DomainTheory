@@ -1,3 +1,8 @@
+/-ai
+Inserting the sum bottom into a finite set of sum tokens leaves the left projection unchanged.
+
+By extensionality, a left token in the inserted set cannot be the bottom, so it already belongs to the original set, and a left token of the original set remains after insertion.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

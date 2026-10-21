@@ -1,3 +1,8 @@
+/-ai
+The intersection of the first three terms of the triple sequence is empty.
+
+Unfolding the recursive intersection and the master reduces the claim to an equality of sets of tokens. Each of the three tokens is checked by simplification against the triple and the three neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

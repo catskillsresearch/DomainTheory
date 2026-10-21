@@ -1,3 +1,6 @@
+/-ai
+The extracted emptiness decider sends a code to the zero-one wrapper of the chosen primitive recursive D-atom decider of the re-pointed presentation. The wrapper makes the result literally 0 or 1, so the later selections on an emptiness check take their zero branch exactly on the nonempty side.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

@@ -1,3 +1,8 @@
+/-ai
+The bottom element is a right zero for the meet: the meet of any element with the bottom element is the bottom element.
+
+Commutativity of the meet rewrites the claim as the left-zero law.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33

@@ -1,3 +1,6 @@
+/-ai
+The successor consMapN a is the approximable endomap of Cn A that prepends the letter a. Its relation holds between neighbourhoods X and Y exactly when both are neighbourhoods of Cn and the set obtained by prepending a to the strings of X is contained in Y. The domain and codomain of a related pair are the first and second conjuncts. The master neighbourhood is related to itself because it is the cone of the empty string, which is the whole token set, and the inclusion of its prefixed copy is immediate. If two codomain neighbourhoods both contain the prefixed copy of X, so does their intersection; that prefixed copy is a neighbourhood, so the intersection law of Cn makes the intersection a neighbourhood. A smaller domain neighbourhood and a larger codomain neighbourhood remain related because prepending a preserves inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

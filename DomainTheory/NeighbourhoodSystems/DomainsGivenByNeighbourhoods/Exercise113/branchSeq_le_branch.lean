@@ -1,3 +1,8 @@
+/-ai
+Each finite approximation along an infinite binary path approximates the branch of that path.
+
+This is the general fact that each term of a monotone sequence lies below its ascending union, applied to the finite approximations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,3 +1,8 @@
+/-ai
+The strict pairing of two elements is the bottom of the smash exactly when one of the two elements is bottom.
+
+If the pairing is bottom and neither element is, each has a proper neighbourhood, and their product belongs to the pairing. Bottom contains only the master, so that product would be the product of the masters and a factor would be a master. If either element is bottom, an element with no proper neighbourhood is bottom: the master case is the master, and a proper product would put a non-master neighbourhood into that bottom element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

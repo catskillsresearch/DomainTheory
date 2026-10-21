@@ -1,3 +1,8 @@
+/-ai
+The singleton of zero in the truth domain is distinct from the master neighbourhood.
+
+Extensionality at the token one, simplified in the two sets, is contradictory.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

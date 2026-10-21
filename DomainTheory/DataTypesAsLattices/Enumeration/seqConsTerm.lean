@@ -1,3 +1,7 @@
+/-ai
+The term-level sequence cons of a term a with a term xs is the abstraction, binding variable 7, of the conditional of that variable between a and the application of xs to its predecessor.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

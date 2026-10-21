@@ -1,3 +1,8 @@
+/-ai
+The cone of a string is distinct from the singleton of a string.
+
+The string and the same string followed by the bit true both lie in the cone. Equality with a singleton would force those two strings to be equal, which simplification rejects.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

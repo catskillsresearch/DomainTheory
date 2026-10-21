@@ -1,3 +1,8 @@
+/-ai
+Every T₀-space embeds into a power of the Sierpiński space by the map that records membership of a point in each open set.
+
+This is the embedding half of Proposition 1.5.
+ai-/
 module
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski

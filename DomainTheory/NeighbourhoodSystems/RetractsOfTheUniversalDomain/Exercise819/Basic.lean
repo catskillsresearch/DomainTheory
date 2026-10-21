@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Exercise 8.17, the finitary combinators of Proposition 8.10, the sum and conditional constructions of Exercises 3.26 and 3.15, and the comparison maps that swap a product with a truth value, turn a pair into a function, turn a function into a pair, and tag a sum by a truth value, as the background for Exercise 8.19.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

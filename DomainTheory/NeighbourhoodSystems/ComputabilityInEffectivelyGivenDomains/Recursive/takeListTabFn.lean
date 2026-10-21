@@ -1,3 +1,6 @@
+/-ai
+The tabulation lookup for coded take, whose parameter pairs a count n with a list code, returns the entry of that list at the current index, with default 0.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

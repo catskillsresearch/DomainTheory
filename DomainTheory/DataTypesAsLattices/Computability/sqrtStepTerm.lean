@@ -1,3 +1,6 @@
+/-ai
+The term sqrtStepTerm is the term λn. λ_. λa. if (a + 1) squared is at most n then a + 1 else a. It abstracts variables 0, 1, and 2 from the conditional whose test applies variable 3 to the product, under variable 4, of the two successors of variable 2 and to variable 0, whose zero branch is variable 2, and whose successor branch is the successor of variable 2.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood system D is isomorphic, as a domain, to the system DprimeU built from the enumeration e.
+
+The isomorphism is the domain isomorphism associated with D, e, the covering, and the convention that e 0 is the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

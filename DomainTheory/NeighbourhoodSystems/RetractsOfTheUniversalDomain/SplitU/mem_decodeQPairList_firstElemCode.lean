@@ -1,3 +1,8 @@
+/-ai
+If a list code is nonzero, the rational pair decoded from its head code lies in the decoded list.
+
+Write the code as a successor. The head code is the first component of the predecessor, and decoding the successor list puts the image of that head in the mapped list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

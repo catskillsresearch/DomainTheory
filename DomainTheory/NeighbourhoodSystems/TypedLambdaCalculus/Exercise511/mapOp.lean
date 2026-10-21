@@ -1,3 +1,6 @@
+/-ai
+The map operator is the curry of the map body, sending a function of a stack of functions and a point to the function that pushes the head function applied to the point onto the recursive value at the tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

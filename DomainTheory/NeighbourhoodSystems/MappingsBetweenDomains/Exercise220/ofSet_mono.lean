@@ -1,3 +1,8 @@
+/-ai
+The filter of a set of natural numbers grows when the set grows.
+
+A cofinite neighbourhood whose complement lies in the smaller set still has its complement in the larger set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

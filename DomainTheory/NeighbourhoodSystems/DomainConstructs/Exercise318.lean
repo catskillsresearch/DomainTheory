@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic development of the sum in Exercise 3.18, together with injectivity of both injections and the two identities that each output map composed with the matching input map is the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318.Basic

@@ -1,3 +1,6 @@
+/-ai
+The set of elements associated with an approximable map into the Sierpiński domain consists of those elements that have a neighbourhood related by the map to the empty set. These are the elements the map sends to the top.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122

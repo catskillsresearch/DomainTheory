@@ -1,3 +1,8 @@
+/-ai
+If a strict map relates two sets, their step set is a neighbourhood of the strict function space.
+
+The one-element list of that pair consists of the domain and codomain of the relation, its step-function set is the step set, and the witnessing map shows that the set is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

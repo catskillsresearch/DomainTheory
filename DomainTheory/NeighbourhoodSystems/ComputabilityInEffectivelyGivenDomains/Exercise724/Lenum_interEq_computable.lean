@@ -1,3 +1,9 @@
+/-ai
+Equality of the intersection of two enumerated neighbourhoods with a third is recursively decidable. This is clause (i) of the effective presentation.
+
+Apply the constructor of a triple zero-one characteristic to the primitive-recursive packed intersection-equality characteristic, the bound that forces its value to be zero or one, and the equivalence of the intersection equality with that characteristic equaling one.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

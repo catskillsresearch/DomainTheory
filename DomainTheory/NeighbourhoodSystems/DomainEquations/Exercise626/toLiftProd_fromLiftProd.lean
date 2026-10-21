@@ -1,3 +1,8 @@
+/-ai
+Composing the forward map from the smash of the lifts with its inverse returns the original element of the lift of the product.
+
+Element extensionality compares an arbitrary set. The master in the composite is the master of the original element, and a false-tagged product neighbourhood belongs to the original by the product characterization of the inverse. Conversely, downward closure splits a neighbourhood into the master or the false tag of a product neighbourhood of some pair, and the latter is rebuilt by that same characterization.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,3 +1,7 @@
+/-ai
+The bottom element is the set of tokens entailed by the singleton of the bottom token. A finite set of such tokens is consistent because that singleton is consistent and entails the finite set, so Proposition 2.3 makes the union consistent and the finite set is a subset of the union. The set is deductively closed because any finite set drawn from it is consistent by the same proposition, and entailment from the singleton through that finite set is transitive.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32

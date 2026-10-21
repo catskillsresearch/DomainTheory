@@ -1,3 +1,8 @@
+/-ai
+For arbitrary indices, the intersection of two enumerated neighbourhoods equals a third if and only if the intersection code of the indices truncated at 2 equals the third index truncated at 2.
+
+Rewrite each enumerated neighbourhood by the canonicalization at the minimum with 2, and apply the canonical characterization, using that each minimum is at most 2.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

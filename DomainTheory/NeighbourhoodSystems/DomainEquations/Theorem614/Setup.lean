@@ -1,3 +1,6 @@
+/-ai
+A setup for Theorem 6.14 consists of an endofunctor that is continuous on maps and monotone and continuous on domains, a generating neighbourhood system over a token type, an identification of the carrier of the image of that system with the token type, and the subdomain relation of the generating system in the transported image.
+ai-/
 module
 
 

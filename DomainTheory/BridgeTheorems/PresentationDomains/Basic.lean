@@ -1,3 +1,10 @@
+/-ai
+For an information system, the domain, the filters of its basic-open neighbourhood system, and the ideal completion of its finite elements determine the same ordered set. The abbreviation presentation_domains_equiv_infoSys names the order isomorphism from those neighbourhood filters to the ideal completion. The same triangle, starting from the filter domain, is available for a neighbourhood system with a decidable basis. The points of a continuous lattice correspond to its round way-below filters. When equality on the lattice is decidable, the way-below neighbourhood system has a basis indexed by the carrier, and the round filters correspond to the round elements of the induced information system, which then enter the ideal-completion triangle. The full filter domain and the full information-system domain properly contain these round parts.
+
+A continuous lattice is order-isomorphic to the round elements of the information system induced by its way-below neighbourhood basis.
+
+The presentation-domains equivalence is a witness.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,3 +1,8 @@
+/-ai
+The coalesced left injection is a computable map from the Scott presentation of the left system into the coalesced-sum presentation.
+
+The relation holds exactly when the left injection of the domain neighbourhood is contained in the enumerated codomain. Equality of tags, properness, and inclusion are recursively decidable. On a proper left code the inclusion is inclusion of left neighbourhoods. On a proper right code it fails, because a point of the nonempty domain neighbourhood lies in the left injection and not in the right injection. On the master it holds, because every left injection is contained in the separated-sum master. That decidable combination is recursively enumerable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

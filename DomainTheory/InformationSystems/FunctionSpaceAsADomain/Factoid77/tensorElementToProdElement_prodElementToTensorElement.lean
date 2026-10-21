@@ -1,3 +1,9 @@
+/-ai
+Transporting a product element to a tensor element and back returns the original product element.
+
+Unfold both transports and simplify the resulting casts.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

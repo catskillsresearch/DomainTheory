@@ -1,3 +1,8 @@
+/-ai
+Each member of an indexed directed family of elements lies below the indexed directed union.
+
+A neighbourhood of the member belongs to the union, with that index as the witness in the membership rule.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

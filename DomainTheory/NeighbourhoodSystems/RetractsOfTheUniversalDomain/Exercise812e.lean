@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic development of Exercise 8.12(e), the set-congruence of the positive and negative bisection indices, and the proof that the split built from a bisection satisfies the split specification.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e.Basic

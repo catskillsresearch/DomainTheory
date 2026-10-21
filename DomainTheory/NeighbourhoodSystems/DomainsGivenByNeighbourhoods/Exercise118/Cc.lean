@@ -1,3 +1,6 @@
+/-ai
+The set Cc is the subset {0, 2} of the three-element set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

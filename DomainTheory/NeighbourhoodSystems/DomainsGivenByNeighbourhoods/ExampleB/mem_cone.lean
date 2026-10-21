@@ -1,3 +1,8 @@
+/-ai
+A finite binary string lies in the cone of a prefix if and only if that prefix is an initial segment of the string.
+
+The two sides are definitionally the same.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

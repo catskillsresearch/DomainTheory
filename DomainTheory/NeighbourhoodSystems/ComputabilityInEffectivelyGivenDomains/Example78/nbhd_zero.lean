@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood indexed by zero is the set of all natural numbers.
+
+Zero has every bit unset, so every natural number satisfies the membership condition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

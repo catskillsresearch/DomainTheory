@@ -1,3 +1,8 @@
+/-ai
+The strict map represented by an element of the strict function space is monotone in the element.
+
+A relation of the smaller map is membership of the corresponding step neighbourhood in the smaller element, which passes to the larger element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

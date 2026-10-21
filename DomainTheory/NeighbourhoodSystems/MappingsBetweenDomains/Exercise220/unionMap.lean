@@ -1,3 +1,6 @@
+/-ai
+Union on the powerset domain is the approximable map of two variables that relates neighbourhoods X, Y, and Z when the intersection of X and Y is contained in Z. The master neighbourhoods are related because the intersection of the universe with itself is contained in the universe. The intersection law intersects the two output neighbourhoods. Monotonicity composes the intersection of the sharper input inclusions with the output inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

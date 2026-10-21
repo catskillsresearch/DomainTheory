@@ -1,3 +1,6 @@
+/-ai
+The Gödel code of an S-expression mirrors the encoding of an S-expression. Sigma is the pair of 0 and 0, a singleton boolean list is the pair of 1 and the code of that list, a concatenation is the pair of 2 and the pair of the two subcodes, and an intersection is the pair of 3 and the pair of the two subcodes.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

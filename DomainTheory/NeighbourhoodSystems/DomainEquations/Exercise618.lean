@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the initial-algebra half of Exercise 6.18. It re-exports the cons isomorphism of the infinite iterate with its product, the descent sequence and the descent map, the strictness of that map and the homomorphism it determines, the truncation chain and the theorem that its supremum is the identity, the uniqueness of a strict homomorphism, and the initiality of the infinite iterate for the product functor on empty-free domains, together with the supporting lemmas on bottoms, monotonicity, and chains.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

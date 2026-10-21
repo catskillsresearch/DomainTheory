@@ -1,3 +1,8 @@
+/-ai
+A sum token lies in the fold that inserts the right constructor of each member of a multiset s if and only if it is the right constructor of some member of s.
+
+Induction on the multiset. The empty multiset yields the empty set, which has no members and supplies no witness. For a cons cell, membership after insertion is the head equation or membership in the inductive fold, and membership in the cons multiset is the head or membership in the tail, and the two disjunctions correspond in both directions.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

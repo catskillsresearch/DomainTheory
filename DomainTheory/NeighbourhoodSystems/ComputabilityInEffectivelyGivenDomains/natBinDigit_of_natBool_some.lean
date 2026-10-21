@@ -1,3 +1,8 @@
+/-ai
+If a natural number interprets as some boolean, then the number is 0 or 1.
+
+Match the number. The values 0 and 1 interpret successfully and give the two alternatives. Every larger value fails to interpret.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

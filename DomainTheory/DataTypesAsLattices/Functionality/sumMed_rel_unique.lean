@@ -1,3 +1,9 @@
+/-ai
+Coproduct mediators are unique up to the codomain restricted equivalence. If h lies in the function space from the sum of A and B to C, and h agrees with f on left injections and with g on right injections in the sense of C, then h is related to the mediator of f and g in the function space from that sum to C.
+
+The two graph equations are the given membership of h and the graph law for the mediator. On a related pair in the sum, each application is rewritten along the common tag, and the left or right agreement hypothesis supplies the relation in C.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

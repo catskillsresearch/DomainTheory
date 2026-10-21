@@ -1,3 +1,6 @@
+/-ai
+The U-code at depth n for a bit-source is the code component of the packed state at the pair of that bit-source and the depth. It denotes the matching universal neighbourhood when the accumulated D-atom is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

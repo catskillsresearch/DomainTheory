@@ -1,3 +1,8 @@
+/-ai
+The unit neighbourhood and the tagged copy of a set by any index are disjoint.
+
+A token of the unit neighbourhood is the unit token, and the unit token does not belong to a tagged copy.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

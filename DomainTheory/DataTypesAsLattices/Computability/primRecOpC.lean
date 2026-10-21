@@ -1,3 +1,6 @@
+/-ai
+The primitive-recursion operator is the interpretation of its term in its environment.
+ai-/
 module
 
 public import Mathlib.Computability.RE

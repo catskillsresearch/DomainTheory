@@ -1,3 +1,8 @@
+/-ai
+Packing an entry and an accumulator and then taking the packed append step yields the append step of the accumulator and the entry.
+
+Unfold the packed step and simplify the pair projections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

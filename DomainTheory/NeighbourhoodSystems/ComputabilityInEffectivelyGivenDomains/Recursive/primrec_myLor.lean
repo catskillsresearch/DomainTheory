@@ -1,3 +1,8 @@
+/-ai
+Bitwise disjunction, as a function of a pair code, is primitive recursive.
+
+The initial state, pairing the two operands with weight 1 and accumulator 0, is primitive recursive, as is the step that applies the bitwise-disjunction step to the previous state. Primitive recursion from that base, run for the sum of the two components and then reading the accumulator, agrees with the iterative disjunction after simplifying the unpaired projections and the identity and rewriting the constant recursion as iteration.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

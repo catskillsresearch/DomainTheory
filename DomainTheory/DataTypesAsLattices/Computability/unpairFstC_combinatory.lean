@@ -1,3 +1,8 @@
+/-ai
+The first unpairing projection unpairFstC is combinatory.
+
+Unfold unpairFstC and apply theorem_2_4_complete. The interpreted term is combinatory by ofComb_combinatory, because every value of unpairEnv is combinatory.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,6 @@
+/-ai
+The embedded sequence at index n is Scott's sequence, built with the total splitting choice, of the index sets of the enumeration relative to the set of all indices.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

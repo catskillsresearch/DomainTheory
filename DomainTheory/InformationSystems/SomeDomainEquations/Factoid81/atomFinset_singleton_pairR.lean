@@ -1,3 +1,8 @@
+/-ai
+The atom projection of the singleton consisting of a right-pair token is empty.
+
+An atom token in that projection would belong to the singleton and hence be a right-pair token, which is impossible, and the empty set has no members.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

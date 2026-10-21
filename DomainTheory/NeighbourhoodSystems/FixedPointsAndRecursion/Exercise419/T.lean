@@ -1,3 +1,6 @@
+/-ai
+The truth domain is the neighbourhood system of the truth values from Example 2.3.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

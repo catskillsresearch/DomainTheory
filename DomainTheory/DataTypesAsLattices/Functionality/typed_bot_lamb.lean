@@ -1,3 +1,9 @@
+/-ai
+Bottom is typed by the lambda retract.
+
+Rewrite by equation (4.39), then apply the bottom typing rule for the sum retract.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

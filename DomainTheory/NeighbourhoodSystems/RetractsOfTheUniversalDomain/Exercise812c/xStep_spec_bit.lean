@@ -1,3 +1,8 @@
+/-ai
+The X-step specification holds at an arbitrary bit, for any sign history.
+
+The padding of the restriction of the history is updated at the current depth so that the first component there is the arbitrary bit. Below that depth the updated history agrees with the original, so the atoms agree, and the first component at the current depth is the chosen bit. Transporting the specification along that agreement and that bit yields the claim.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

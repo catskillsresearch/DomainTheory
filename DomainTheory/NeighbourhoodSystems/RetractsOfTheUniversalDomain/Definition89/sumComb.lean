@@ -1,3 +1,6 @@
+/-ai
+The sum combinator of two self-maps of the universal domain applies the conditional to the pairing of the which-map with the pairing of the sum embedding after the left injection of the first map after the left extraction, and the sum embedding after the right injection of the second map after the right extraction, and composes that with the sum projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

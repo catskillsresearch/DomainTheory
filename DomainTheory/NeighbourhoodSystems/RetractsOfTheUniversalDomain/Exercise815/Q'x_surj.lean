@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the subsystem equals some value of the list-indexed enumeration.
+
+The neighbourhood is the partial meet of a consistent sublist of a finite system belonging to the element. Every index of that sublist has an enumerator preimage, so the sublist is the image of some list. Encoding that list and applying the index-chain specification recovers the neighbourhood, because the partial meet is a neighbourhood of the universal domain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

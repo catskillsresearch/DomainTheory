@@ -1,3 +1,8 @@
+/-ai
+One zero embedding is contained in another exactly when the underlying set is contained in the other.
+
+From a containment, a point of the smaller set paired with the empty path lies in the larger embedding, so the point lies in the larger set. From an inclusion of sets, a point of the smaller embedding has empty path and a value in the smaller set, hence in the larger set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

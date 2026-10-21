@@ -1,3 +1,9 @@
+/-ai
+The map lambF is Scott continuous.
+
+It is the composite of the sum with the integer retract in the right argument and the diagonal of the function-space retract, and both factors are Scott continuous.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

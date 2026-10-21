@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (5.23). The boxed sum of closures is a closure, so a value typed by the closure combinator is closed under boxed sum.
+
+The typing hypotheses convert to closure hypotheses, the sum theorem produces a closure, and that closure converts back to a typing.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

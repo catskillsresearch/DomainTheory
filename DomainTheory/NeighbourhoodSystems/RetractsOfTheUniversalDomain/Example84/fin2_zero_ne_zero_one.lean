@@ -1,3 +1,8 @@
+/-ai
+The singleton {0} is distinct from the set {0, 1} in Fin 2.
+
+If the two sets were equal, 1 would belong to {0}. It does not.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

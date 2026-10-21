@@ -1,3 +1,8 @@
+/-ai
+The map min sends a Scott map f to the value of f at bottom.
+
+The equality holds by the definition of min.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

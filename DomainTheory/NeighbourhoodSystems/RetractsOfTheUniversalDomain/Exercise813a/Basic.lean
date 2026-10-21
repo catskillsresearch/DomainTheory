@@ -1,3 +1,8 @@
+/-ai
+A natural number lies in the i-th generator if and only if its i-th binary digit is set.
+
+Membership in the generator is defined to be that bit test.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,3 +1,8 @@
+/-ai
+The complement of a V-neighbourhood is empty or itself a V-neighbourhood.
+
+A neighbourhood is a level set, and the complement of a level set is the level set of the complementary mask. That set is empty or nonempty, and the nonempty case is a neighbourhood at the same height.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

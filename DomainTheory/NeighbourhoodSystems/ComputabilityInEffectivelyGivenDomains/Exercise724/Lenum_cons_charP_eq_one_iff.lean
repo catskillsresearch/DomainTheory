@@ -1,3 +1,9 @@
+/-ai
+Two enumerated neighbourhoods have a common enumerated lower bound if and only if the packed consistency characteristic of their codes equals one.
+
+Unfold the packed characteristic, cancel the pairing, rewrite by the unpacked equivalence of the characteristic with the disjunction of the prefix characteristics, and apply the consistency criterion.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

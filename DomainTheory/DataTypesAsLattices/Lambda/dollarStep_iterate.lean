@@ -1,3 +1,8 @@
+/-ai
+The n-th iterate of the dollar step from ⊥, applied to u and then to z, equals sequence revaluation of u at z truncated below n.
+
+The zeroth iterate agrees with the empty stage by the application of ⊥ and the zero clause of the truncation. At a successor, the double application is the step body, the induction hypothesis replaces the recursive call, and the successor clause of the truncation matches that body.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

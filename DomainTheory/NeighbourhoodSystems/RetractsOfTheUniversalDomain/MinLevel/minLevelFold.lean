@@ -1,3 +1,6 @@
+/-ai
+The minimal-level fold is the same bounded search as the minimal level, stopped at an arbitrary bound rather than at one more than the level, so the inductive specification can range over every bound.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

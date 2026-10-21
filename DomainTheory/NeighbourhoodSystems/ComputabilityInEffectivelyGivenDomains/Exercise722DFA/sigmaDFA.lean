@@ -1,3 +1,6 @@
+/-ai
+The universal automaton has one state, remains there on every letter, and accepts that state.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular

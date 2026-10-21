@@ -1,3 +1,7 @@
+/-ai
+The fold step tagStep sends a packed word to the numeral of the successor of its first component and the first component of its second component. As a step for the code of tag, it sends an accumulator and an entry to the numeral of the successor of the entry and the accumulator. The parameter slot is unused.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

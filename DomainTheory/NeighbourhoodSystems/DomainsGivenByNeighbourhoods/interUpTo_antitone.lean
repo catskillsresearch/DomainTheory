@@ -1,3 +1,8 @@
+/-ai
+A longer finite intersection is contained in a shorter one.
+
+The proof is by induction on the longer index. If it is zero, the shorter index is zero as well. If it is a successor equal to the shorter index, the two sides agree. If the shorter index is strictly smaller, the successor intersection is contained in the previous intersection, and that is contained in the shorter one by the inductive hypothesis.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,6 @@
+/-ai
+The pairing term is λa λb. (b − a) ⊃ (a·a + a + b), (b·b + a), with addition, multiplication, and subtraction free.
+ai-/
 module
 
 public import Mathlib.Computability.RE

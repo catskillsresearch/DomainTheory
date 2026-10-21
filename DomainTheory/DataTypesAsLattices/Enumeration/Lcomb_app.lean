@@ -1,3 +1,8 @@
+/-ai
+Applying L to x returns the application of x at the numeral 1, applied to the application of x at the numeral 2.
+
+This is the beta law for the graph of that map. Its Scott continuity is the tuple form of Theorem 1.3 applied to continuity of application in the function argument, continuity of application, and continuity of application to the fixed numerals 1 and 2.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

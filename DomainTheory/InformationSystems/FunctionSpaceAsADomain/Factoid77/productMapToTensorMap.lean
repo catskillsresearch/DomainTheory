@@ -1,3 +1,6 @@
+/-ai
+The transport of a map between products to a morphism between the corresponding tensor products is the cast along the identification of tensor maps with product maps.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

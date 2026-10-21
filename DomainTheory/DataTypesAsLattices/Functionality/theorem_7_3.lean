@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 7.3, the functionality theorem. The combinator I lies in every function space A → A, K lies in every function space A → (B → A), and S lies in every function space (A → (B → C)) → ((A → B) → (A → C)). Any combinator with the functionality of I equals I, any combinator with the functionality of K equals K, and any combinator with the functionality of S that is extensional in its first argument and whose application is extensional in the second argument equals S.
+
+The six conjuncts are the three functionality lemmas and the three uniqueness lemmas.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

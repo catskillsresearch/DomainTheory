@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the encoding of binary strings into the infinite iterate of the truth system: the truth system and its tokens, bit neighbourhoods, the encoding set and its fiber and monotonicity lemmas, and the encoding and decoding maps.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

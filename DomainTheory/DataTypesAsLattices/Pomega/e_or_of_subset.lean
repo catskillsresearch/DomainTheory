@@ -1,3 +1,8 @@
+/-ai
+If the finite sets coded by n and by m are both contained in x, then the finite set coded by their bitwise disjunction is contained in x.
+
+Rewrite by the disjunction law for codes and combine the two inclusions.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

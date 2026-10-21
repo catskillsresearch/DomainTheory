@@ -1,3 +1,8 @@
+/-ai
+The automaton for a single word accepts the denotation of the corresponding singleton expression.
+
+Rewrite by exactness of the automaton for that singleton, and reverse the denotation of a singleton expression.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular

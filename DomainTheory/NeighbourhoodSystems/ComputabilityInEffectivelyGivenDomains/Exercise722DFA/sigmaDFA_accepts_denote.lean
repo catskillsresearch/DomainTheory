@@ -1,3 +1,8 @@
+/-ai
+The universal automaton accepts the denotation of the full-language expression.
+
+Rewrite by the theorem that the automaton accepts every word and by the denotation of that expression.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular

@@ -1,3 +1,8 @@
+/-ai
+A member lies in the numerical value of a code if and only if some well-formed valuation trace records that code and that member.
+
+Completeness of well-formed traces produces a trace from the membership. In the other direction, soundness reads a recorded triple of a well-formed trace and returns the membership.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

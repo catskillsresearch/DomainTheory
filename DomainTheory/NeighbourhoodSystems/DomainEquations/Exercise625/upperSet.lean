@@ -1,3 +1,6 @@
+/-ai
+The upper set of an element x is the set of elements y such that x lies below the projection of y.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

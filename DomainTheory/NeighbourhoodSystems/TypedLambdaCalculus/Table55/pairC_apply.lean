@@ -1,3 +1,8 @@
+/-ai
+The map recovered from the pairing combinator at x sends y to the pair of x and y.
+
+Rewrite by the definition of the combinator, the curried application law, and the identity map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

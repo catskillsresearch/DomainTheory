@@ -1,3 +1,9 @@
+/-ai
+The empty set is reachable by a fix chain for any finite set of function tokens.
+
+It is the value of the chain of length zero.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

@@ -1,3 +1,8 @@
+/-ai
+The intersection of P meet Q with P minus Q is empty.
+
+Extensionality and the membership rules reduce the claim to the impossibility of lying in Q and outside Q at once.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

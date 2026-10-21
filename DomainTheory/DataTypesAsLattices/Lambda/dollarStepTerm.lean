@@ -1,3 +1,6 @@
+/-ai
+The paper term for the dollar step is λs λu λz. z ⊃ u(0), s(λt. u(t + 1))(z − 1).
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

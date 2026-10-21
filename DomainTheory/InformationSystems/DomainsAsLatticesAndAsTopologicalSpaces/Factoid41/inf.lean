@@ -1,3 +1,6 @@
+/-ai
+Factoid 4.1 defines the binary meet of two elements to be the element whose carrier is their intersection. A finite subset of the intersection is a finite subset of each element, so it is consistent, and both elements contribute the closure under entailment.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33

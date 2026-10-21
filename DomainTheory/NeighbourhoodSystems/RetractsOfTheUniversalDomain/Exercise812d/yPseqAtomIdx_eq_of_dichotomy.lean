@@ -1,3 +1,8 @@
+/-ai
+If a point lies in the first component of the generalized X-step at a bit-source i and a bit b, and also in a non-junk Y half-step atom at a bit-source i' and a bit b', both bit-sources below 4 to the power n, and the atom at i and b is not junk, then the point lies in that atom.
+
+If the bit-sources and the bits agree, the witness membership is the claim. If the bit-sources agree and the bits differ, the subset lemma puts the point in the first component of the X-step at the other bit; the generated pair satisfies the invariant, so the two X-steps are disjoint. If the bit-sources differ, both atom-pair junk flags vanish, and a distinguishing digit makes the atom-pair codes disjoint on the first side. Code-state correctness and the parent subset put the point in the first atom-pair neighbourhood at i, and the widening lemma puts it in the one at i'.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

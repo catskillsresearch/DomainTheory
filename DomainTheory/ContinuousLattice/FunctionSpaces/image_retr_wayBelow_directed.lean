@@ -1,3 +1,8 @@
+/-ai
+For a continuous-lattice retraction and an element d of the retract, the image under the retraction of the set of ambient elements way below the inclusion of d is directed.
+
+Given the retractions of two such ambient elements a and b, the retraction of their join lies in the image, because the way-below relation is closed under binary joins. Monotonicity of the retraction places each of the two images below that join.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

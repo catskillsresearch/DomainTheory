@@ -1,3 +1,8 @@
+/-ai
+A member of a bundled-consistent finset is bundled-entailed by that finset.
+
+Depth entailment of members applies to the underlying raw token, which belongs to the forgetful image.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,3 +1,8 @@
+/-ai
+The universal-domain product of d sends an element w to i-arrow of the function-space product applied to j-arrow of w.
+
+Unfold the definition and apply the composition law for element maps twice.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

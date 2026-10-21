@@ -1,3 +1,8 @@
+/-ai
+Pushing the head of a stack onto its tail returns the stack.
+
+The head and the tail are composites, their projections reassemble the pair of the two components of the unfolding, and folding after unfolding cancels.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

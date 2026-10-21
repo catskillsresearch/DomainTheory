@@ -1,3 +1,8 @@
+/-ai
+The projection of an element y equals the supremum of the set of elements x such that the injection of x lies below y.
+
+The projection of y lies below that supremum because it belongs to the set, by the inequality that the injection of the projection of y lies below y. The supremum lies below the projection of y because every member does, by the Galois connection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

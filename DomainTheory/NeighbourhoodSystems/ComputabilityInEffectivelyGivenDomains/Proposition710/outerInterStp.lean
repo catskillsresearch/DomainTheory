@@ -1,3 +1,6 @@
+/-ai
+One step of the outer fold reads the packed state as the current outer index, the accumulator, and the parameter m, and returns the inner intersection code of those three values.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

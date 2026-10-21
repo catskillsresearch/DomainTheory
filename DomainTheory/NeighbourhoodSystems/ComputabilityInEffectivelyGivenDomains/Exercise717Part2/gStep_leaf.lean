@@ -1,3 +1,8 @@
+/-ai
+On an odd code two times a plus one, paired with a certificate, the certificate step returns the pair of the leaf guard on the certificate's witness, a, and the output component, with that output component.
+
+The first selector sees a positive code and takes its second branch. The second selector sees remainder one and takes its first branch, and division by two recovers a.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

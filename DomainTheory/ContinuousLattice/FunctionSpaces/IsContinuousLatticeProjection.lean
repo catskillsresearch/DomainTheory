@@ -1,3 +1,6 @@
+/-ai
+A projection of continuous lattices, in the sense of Scott's Definition 3.6, is a retraction of continuous lattices together with the inequality that the inclusion after the retraction lies below the identity.
+ai-/
 module
 
 

@@ -1,3 +1,8 @@
+/-ai
+The least map of a list belongs to the step neighborhood of that list.
+
+For each pair in the list, the intersection of relevant outputs at the pair's input is contained in the pair's output, which is the least-map relation for that pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

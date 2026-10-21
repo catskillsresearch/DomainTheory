@@ -1,3 +1,6 @@
+/-ai
+A split of an automaton path at a position records an intermediate state, the path along the prefix of that length, the path along the complementary suffix, and the agreement of the intermediate state with the state of the original path at that position.
+ai-/
 module
 
 

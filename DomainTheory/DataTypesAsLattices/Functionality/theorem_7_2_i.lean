@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 7.2 (i). The relation E_a holds of x and y if and only if both lie in the range of a and x equals y.
+
+The equivalence is definitional.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

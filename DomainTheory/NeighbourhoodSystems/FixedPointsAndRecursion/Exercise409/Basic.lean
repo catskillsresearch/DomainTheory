@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the fixed-point theorem and the definition of the operator Ψ on the higher-order function space.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

@@ -1,3 +1,8 @@
+/-ai
+Every domain D is a retract of the function space from D to D.
+
+Specialize the retract that embeds an element as a constant function and retracts by evaluation at bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

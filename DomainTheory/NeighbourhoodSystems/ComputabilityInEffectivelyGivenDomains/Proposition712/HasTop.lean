@@ -1,3 +1,6 @@
+/-ai
+A neighbourhood system has a greatest element when some element lies above every element of its element lattice.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

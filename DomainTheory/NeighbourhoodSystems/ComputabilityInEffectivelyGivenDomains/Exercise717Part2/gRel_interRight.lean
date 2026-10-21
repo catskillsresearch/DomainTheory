@@ -1,3 +1,8 @@
+/-ai
+The catamorphism is closed under intersection of the target.
+
+The argument inducts on the first relation. At the master, inversion forces the second target to be the master as well, so the intersection is the master. At a zero embedding, inversion recovers a relation of the leaf map, and the intersection law of that map supplies the leaf clause. At a paired embedding, inversion of the second relation supplies a second pair of intermediate neighbourhoods. The inductive hypotheses intersect them, and the monotonicity and intersection laws of the node map, applied to the product of the intersections, supply the node clause.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

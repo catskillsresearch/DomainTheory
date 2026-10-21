@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the consistency equivalence for the induced enumeration and the recursive decidability of its intersection equality and consistency, together with the list-code intersection, for Theorem 8.8(c), part 5.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.Basic

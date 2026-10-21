@@ -1,3 +1,6 @@
+/-ai
+The singleton-stack embedding of a domain into its infinite power sends an element to the stack with that element at the head and the bottom afterwards. It is the push composed with the pairing of the identity and the constant map at the bottom of the infinite power.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511

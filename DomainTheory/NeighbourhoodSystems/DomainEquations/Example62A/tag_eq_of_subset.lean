@@ -1,3 +1,8 @@
+/-ai
+For positive n, if every component of a tagged tuple belongs to MemA and the tuple is contained in a tuple of another tag, then the two tags agree.
+
+Take a nonempty witness in the component at index zero, send its prefixed word into the larger tuple, and read the tag from uniqueness of slot prefixes.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

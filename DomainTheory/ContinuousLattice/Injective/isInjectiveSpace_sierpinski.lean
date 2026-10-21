@@ -1,3 +1,8 @@
+/-ai
+The Sierpiński space of propositions is injective.
+
+A continuous map into this space has open truth set. Along an embedding, that open set is the preimage of an open set V. Membership in V is a continuous map into the Sierpiński space, and it extends the original map because membership of an image point in V is the truth of the original value.
+ai-/
 module
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski

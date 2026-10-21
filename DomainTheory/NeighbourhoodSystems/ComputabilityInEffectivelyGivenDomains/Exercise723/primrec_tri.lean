@@ -1,3 +1,8 @@
+/-ai
+The triangular-number map, sending k to k times (k + 1) divided by 2, is primitive recursive. The product k times (k + 1) is an exact multiple of 2, so the division is the primitive-recursive division by 2.
+
+Dividing the product of the identity with the successor by 2 is identified with the triangular-number map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

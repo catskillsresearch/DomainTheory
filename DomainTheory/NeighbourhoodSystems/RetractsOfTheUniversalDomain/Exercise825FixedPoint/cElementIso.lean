@@ -1,3 +1,6 @@
+/-ai
+The infinite power of the universal domain is order-isomorphic to the fixed set of the combinator. The isomorphism is the element isomorphism of the projection pair given by the injection and the projection, using that the projection composed with the injection is the identity, together with a definitional identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

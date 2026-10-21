@@ -1,3 +1,8 @@
+/-ai
+Occupancy test of (5.13). If the left square component of u is empty and the right component is inhabited, applying the boxed sum of a and b to u yields the square pair of the empty set with the shifted application of b to the right component.
+
+A member of the right component makes its occupancy tag the singleton one. The left tag is empty, the union is that singleton, and the double conditional of the one tag selects the right branch.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

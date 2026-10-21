@@ -1,3 +1,8 @@
+/-ai
+The singleton of a natural number is recursively enumerable.
+
+Equality with that number is a computable predicate, because boolean equality of the identity with the constant value is primitive recursive, and that predicate agrees with membership in the singleton.
+ai-/
 module
 
 public import Mathlib.Computability.RE

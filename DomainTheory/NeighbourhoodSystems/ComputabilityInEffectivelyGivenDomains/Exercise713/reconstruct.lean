@@ -1,3 +1,6 @@
+/-ai
+The system reconstructed from a computable presentation is the hint neighbourhood system of the inclusion structure read off that presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

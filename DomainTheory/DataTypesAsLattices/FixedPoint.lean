@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the fixed-point development: the basic imports, the diagonal, composition, unary, binary, and ternary forms of the substitution theorem, monotonicity of chains, the finite-index lemma, the chain lemma, monotonicity of iteration from the bottom element, and the fixed-point theorem.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedPoint.Basic

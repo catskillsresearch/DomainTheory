@@ -1,3 +1,8 @@
+/-ai
+The strict first projection of a pair of elements x and y equals the conditional on the zero test of y and two copies of x.
+
+Unfold the definition and simplify the element maps of composition, pairing, and the two projections, using that the components of a pair are its factors.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

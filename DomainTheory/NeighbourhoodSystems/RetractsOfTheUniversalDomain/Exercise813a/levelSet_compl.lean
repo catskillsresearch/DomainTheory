@@ -1,3 +1,8 @@
+/-ai
+The complement of a level set is the level set of the same height whose mask selects the residues below 2 to the height that the original mask does not select.
+
+Failing the original bit test is the same as having residue below 2 to the height and failing the mask's bit test, which is membership in the complementary mask.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

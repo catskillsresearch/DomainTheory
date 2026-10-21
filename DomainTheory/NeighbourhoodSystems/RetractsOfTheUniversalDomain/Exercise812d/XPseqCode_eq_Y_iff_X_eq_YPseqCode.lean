@@ -1,3 +1,8 @@
+/-ai
+The second presentation sends the code XPseqCode j to the same set as the code k if and only if the first presentation sends j to the same set as YPseqCode k.
+
+Each direction is antisymmetry of inclusion. One inclusion is the cross-parity comparison of a first-system code with a YPseqCode image, and the other is the reverse comparison of a YPseqCode image with an XPseqCode image, each applied to a subset and to the subset obtained by swapping the two sides.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

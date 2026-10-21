@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the separated sum Aⁿ + Aⁿ is nonempty.
+
+The membership is the sum master, a left injection, or a right injection. The master contains the basepoint. A left injection is nonempty by apowNe, and a right injection is nonempty by apowNe.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

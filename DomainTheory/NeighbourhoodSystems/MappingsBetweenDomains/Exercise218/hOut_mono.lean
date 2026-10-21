@@ -1,3 +1,8 @@
+/-ai
+Doubling preserves the prefix order.
+
+A prefix is a concatenation with some tail, and doubling grows under that concatenation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

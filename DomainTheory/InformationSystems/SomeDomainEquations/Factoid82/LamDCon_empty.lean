@@ -1,3 +1,8 @@
+/-ai
+The empty finset of depth-well-formed lambda tokens is bundled-consistent.
+
+Its forgetful image is empty, and the empty finset of raw tokens is depth-consistent.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

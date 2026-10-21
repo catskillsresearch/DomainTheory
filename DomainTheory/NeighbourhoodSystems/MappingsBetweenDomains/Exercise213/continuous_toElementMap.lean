@@ -1,3 +1,8 @@
+/-ai
+The elementwise function of an approximable mapping is continuous.
+
+For an open containing the image of an element, openness supplies a neighbourhood of the image contained in the open. Membership of that neighbourhood unfolds to a neighbourhood of the element related to it. Any element of the corresponding basic neighbourhood has the same relation, so its image lies in the open.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

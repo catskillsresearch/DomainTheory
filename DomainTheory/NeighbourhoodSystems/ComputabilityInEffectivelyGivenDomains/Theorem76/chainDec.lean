@@ -1,3 +1,6 @@
+/-ai
+The decidable chain predicate, relative to an inclusion characteristic and a function-space code, holds of any start index on the empty list. On a cons it holds when the characteristic accepts the function-space code paired with the one-entry code of the current index and the head, and the predicate holds of the head on the tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

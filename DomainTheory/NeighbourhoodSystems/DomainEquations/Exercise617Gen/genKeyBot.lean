@@ -1,3 +1,8 @@
+/-ai
+Applying the structure map of a Tsig-algebra to the sum map of an approximable map, at the image under toCC of the partial element named by the empty string, yields the bottom element of the carrier.
+
+That partial element is the bottom element of the string system, so its image under the isomorphism is the bottom element of the sum system. The sum map is strict, so it sends that bottom element to the bottom element of the sum, and the structure map is strict, so it sends that bottom element to the bottom element of the carrier.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

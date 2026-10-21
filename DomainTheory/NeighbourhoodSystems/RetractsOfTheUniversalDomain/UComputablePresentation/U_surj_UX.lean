@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of U is the enumerated neighbourhood of some index. A neighbourhood already has a Scott presenting list, and canonicalizing that list leaves the presented set unchanged.
+
+From membership, take a presenting list whose presented intervals equal the neighbourhood. That presented set is a neighbourhood of U. Encoding the list, decoding it back, and applying the fixed point of canonicalization recovers the neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

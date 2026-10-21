@@ -1,3 +1,9 @@
+/-ai
+The strictification of an approximable map is strict.
+
+A token in the image of the bottom element comes from an input contained in the bottom element, hence empty-entailed. The strictification alternative is either empty entailment of the output token, which places it in the bottom element, or a denial of empty entailment of the input, which contradicts the previous step. The bottom element lies below every element.
+ai-/
+
 module
 
 public import Mathlib.Data.Multiset.MapFold

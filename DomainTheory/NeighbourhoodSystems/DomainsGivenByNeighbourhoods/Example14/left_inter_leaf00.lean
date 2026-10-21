@@ -1,3 +1,8 @@
+/-ai
+The intersection of the left branch and the leaf 00 equals the leaf 00.
+
+Extensionality reduces the equality to membership of a token. Case analysis on the seven tokens, together with the two definitions, settles each case.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+The cone of the empty string is the set of all finite binary strings.
+
+Compare the two sets by extensionality and simplify the definition of a cone.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

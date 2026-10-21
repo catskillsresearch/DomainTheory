@@ -1,3 +1,8 @@
+/-ai
+The left projection after a pairing is the left factor, and the right projection after a pairing is the right factor.
+
+The two identities are the corresponding lemmas on a projection after a pairing.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

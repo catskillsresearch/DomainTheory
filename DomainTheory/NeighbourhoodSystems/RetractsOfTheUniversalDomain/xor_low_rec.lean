@@ -1,3 +1,8 @@
+/-ai
+The exclusive disjunction of x and y equals twice the exclusive disjunction of their halves, plus their low-bit exclusive disjunction.
+
+The quotient of the exclusive disjunction by 2 equals the exclusive disjunction of the quotients, by comparing bits: the bit at position i of the quotient is the bit at position i + 1 of the exclusive disjunction, which splits as the exclusive disjunction of the bits at position i + 1 and hence of the bits at position i of the two quotients. The low-bit operation equals the exclusive disjunction modulo 2. Rewriting the left-hand side by the division-remainder decomposition modulo 2, and then by these two identities, gives the claim.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

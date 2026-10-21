@@ -1,3 +1,8 @@
+/-ai
+The supremum of a set equals the supremum of the set of its finite sub-joins.
+
+Antisymmetry combines the inequality of the supremum of the set below the supremum of its finite sub-joins with the reverse inequality.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

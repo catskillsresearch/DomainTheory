@@ -1,3 +1,8 @@
+/-ai
+The infimum of the pre-fixed points of a monotone endomap f is a fixed point of f.
+
+The image of the infimum lies below the infimum. Monotonicity then makes that image a pre-fixed point, so the infimum lies below its image. The two inequalities give equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

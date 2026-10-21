@@ -1,3 +1,8 @@
+/-ai
+Some sharp neighbourhood lies in the leaf embedding of a set Y of tokens exactly when some neighbourhood of the presentation lies in Y.
+
+A sharp neighbourhood contained in a leaf embedding is itself a leaf embedding of a neighbourhood of D, and surjectivity of the presentation supplies the index. Conversely, the odd index of that neighbourhood is its leaf embedding, which lies in the leaf embedding of Y.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

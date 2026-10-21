@@ -1,3 +1,8 @@
+/-ai
+The complement of a singleton is a cofinite neighbourhood.
+
+Rewriting membership and cancelling the double complement leaves finiteness of the singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+The binary finite join of x and y equals the meet of the singleton of x and the singleton of y.
+
+By extensionality, after unfolding meet membership, singleton membership, and the binary finite join, a join witness is a two-component family of neighbourhoods, a power-domain neighbourhood, and component inclusions, and its two components are the two singleton witnesses. Conversely the two singleton witnesses, the first of which supplies the power-domain neighbourhood, assemble into that family, and both the neighbourhood condition and the inclusions hold by cases on the two indices.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

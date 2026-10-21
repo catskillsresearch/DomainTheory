@@ -1,3 +1,6 @@
+/-ai
+The action of an expression on objects sends a constant to that constant and the variable to the given system. Separated sum, separated product, coalesced sum, and smash product act by the corresponding operation on the two recursive objects.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

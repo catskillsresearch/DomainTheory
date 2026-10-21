@@ -1,3 +1,8 @@
+/-ai
+A number lies in the numeral n if and only if it equals n.
+
+The equivalence is the definition of the numeral.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

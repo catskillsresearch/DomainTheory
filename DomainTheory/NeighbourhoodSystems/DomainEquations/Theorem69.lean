@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic setup for Theorem 6.9, strictness of a split isomorphism, the inverse law for the strict-function-space representation, the relation and action lemmas for the post- and pre-composition operator, and the existence of a strict algebra homomorphism out of a fixed point.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69.Basic

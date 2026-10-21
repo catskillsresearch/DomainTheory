@@ -1,3 +1,8 @@
+/-ai
+The value of a cons sequence at index zero is the head element.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

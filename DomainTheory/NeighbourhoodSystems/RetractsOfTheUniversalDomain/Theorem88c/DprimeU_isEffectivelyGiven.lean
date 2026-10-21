@@ -1,3 +1,8 @@
+/-ai
+If D is effectively given, then the subsystem built from the re-pointed enumeration is effectively given.
+
+The witness is the computable presentation of that subsystem.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

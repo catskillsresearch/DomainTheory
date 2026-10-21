@@ -1,3 +1,8 @@
+/-ai
+Truncation to a power of two is primitive recursive. On a paired code it returns the first component minus the product of its iterated division by two to the power of the second component with that same power.
+
+Two to the power of the right component and the iterated division are primitive recursive. Subtracting their product from the left component is primitive recursive, and that difference agrees with the truncation by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

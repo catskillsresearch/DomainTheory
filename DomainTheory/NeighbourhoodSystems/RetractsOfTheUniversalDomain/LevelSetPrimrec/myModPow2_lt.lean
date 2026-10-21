@@ -1,3 +1,9 @@
+/-ai
+The derived remainder of m by two to the power s is strictly below that power.
+
+Rewriting by the correctness of the remainder, it is the bound on a remainder modulo a
+positive power of two.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

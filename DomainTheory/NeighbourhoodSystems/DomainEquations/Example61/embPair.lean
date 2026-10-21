@@ -1,3 +1,6 @@
+/-ai
+The paired tagging of two sets of path-token pairs is the union of the left tagging of the first set and the right tagging of the second set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

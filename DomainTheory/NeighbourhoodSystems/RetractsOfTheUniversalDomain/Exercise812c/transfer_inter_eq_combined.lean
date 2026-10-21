@@ -1,3 +1,8 @@
+/-ai
+If combinedX at i and combinedX at k lie in the master of D₀, then combinedX at i meet combinedX at j equals combinedX at k if and only if combinedY at i meet combinedY at j equals combinedY at k.
+
+Three transferred containments, of the set at k in the set at i, of the set at k in the set at j, and of the intersection of the sets at i and j in the set at k, come from the subset transfer and the double-subset transfer after the masters are cancelled by the subset hypotheses and the master bound on combinedY. Equality is the two containments of an intersection. Each direction reads the three containments off the assumed equality and rebuilds them on the other side.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

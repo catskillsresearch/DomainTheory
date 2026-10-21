@@ -1,3 +1,6 @@
+/-ai
+The joint evaluator of an endomap c of the universal domain sends a packaged triple consisting of two maps and a point to c applied after the second map applied after the first map. It is c composed with evaluation of the first component of the inner pair against the evaluation of the outer first component at the second component of the inner pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

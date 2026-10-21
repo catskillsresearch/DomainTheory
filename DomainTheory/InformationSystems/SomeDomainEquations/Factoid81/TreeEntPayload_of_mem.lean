@@ -1,3 +1,8 @@
+/-ai
+A token that belongs to a consistent finite set of tree tokens lies in the entailment payload of that set.
+
+Induct on the token. The bottom payload holds outright. An atom of the set lies in the atom projection, so that projection is nonempty and the atom information system reflects the atom from the consistent atom projection. A left-pair token of the set has its inner token in the left pair projection, which is therefore nonempty, so the atom projection is empty and both pair projections are consistent, and the inductive hypothesis gives the payload on the left pair projection. The right-pair case is symmetric.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

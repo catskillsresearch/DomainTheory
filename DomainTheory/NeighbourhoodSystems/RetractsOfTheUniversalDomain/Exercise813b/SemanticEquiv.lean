@@ -1,3 +1,6 @@
+/-ai
+Two formulas are semantically equivalent when they take the same truth value under every valuation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

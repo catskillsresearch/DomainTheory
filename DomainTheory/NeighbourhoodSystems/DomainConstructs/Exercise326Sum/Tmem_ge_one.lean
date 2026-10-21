@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood of the truth domain that contains the singleton of one is that singleton or the master.
+
+Of the three neighbourhoods, the master is the second alternative, the singleton of zero cannot contain one, and the singleton of one is the first alternative.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

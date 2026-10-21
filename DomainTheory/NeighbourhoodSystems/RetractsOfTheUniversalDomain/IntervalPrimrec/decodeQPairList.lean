@@ -1,3 +1,6 @@
+/-ai
+Decoding a natural number as a list of rational pairs is the list decoding of the number, with each entry decoded as a rational pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

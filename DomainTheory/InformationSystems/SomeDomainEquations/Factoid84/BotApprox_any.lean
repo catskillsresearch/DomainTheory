@@ -1,3 +1,8 @@
+/-ai
+Every approximable map from the powerset system P to itself satisfies Scott's bottom condition.
+
+A token of the finite element of 0 equals 0. Membership of 0 in the image of the bottom element is witnessed by the empty set, which is contained in the bottom element because it has no members. The map relates the empty set to itself. The empty set entails itself, and it entails the singleton of 0 because the only token of that singleton is the bottom token. Monotonicity, whose consistency side conditions hold outright, turns that empty relation into the required relation.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

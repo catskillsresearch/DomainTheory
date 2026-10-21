@@ -1,3 +1,9 @@
+/-ai
+A token lies in the closure of a consistent finite set if and only if that set entails the token.
+
+The equivalence is the definition of the closure.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23

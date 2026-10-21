@@ -1,3 +1,8 @@
+/-ai
+The map sending a set u to the conditional set that tests u and returns the singleton zero or the successor of the full set is Scott continuous.
+
+This is the left continuity of conditional sets, applied to those two constant branches.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

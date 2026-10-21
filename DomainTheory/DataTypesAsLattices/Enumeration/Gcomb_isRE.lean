@@ -1,3 +1,8 @@
+/-ai
+The combinator G is recursively enumerable.
+
+Apply the lemma that every combinatory element is recursively enumerable to the fact that G is combinatory.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

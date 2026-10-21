@@ -1,3 +1,8 @@
+/-ai
+Extraction of approximable maps from elements of the function space is injective.
+
+Each element is the filter of its extracted map, so equal extractions give equal elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

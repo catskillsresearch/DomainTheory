@@ -1,3 +1,9 @@
+/-ai
+Right uncurry preserves precomposition on the left: the uncurry of f followed by g equals left tensoring of f followed by the uncurry of g.
+
+The two sides are compared on elements. For a tensor element p, let p' be its product image and let q be the tensor image of the pairing of the first projection with the second projection composed with f, applied to p'. The elementwise formula for right uncurry, cancellation of the product–tensor round trip, the swap formulas for both projections, and the elementwise formulas for that pairing show that uncurrying the composite at p agrees with uncurrying g at q. The description of left tensoring as that pairing, and the elementwise formula for a product map followed by a tensor map, identify the remaining side with the composite.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

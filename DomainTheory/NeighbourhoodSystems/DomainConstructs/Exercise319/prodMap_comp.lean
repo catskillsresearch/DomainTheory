@@ -1,3 +1,8 @@
+/-ai
+The product of approximable maps preserves composition: the product of two composites equals the composite of the two products.
+
+Two maps agree when they induce the same map of elements. Rewrite by the element formula for a product of maps, by the element formula for composition, and by the two components of a pair, so that both sides send a product element to the pair of the two iterated images of its components.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

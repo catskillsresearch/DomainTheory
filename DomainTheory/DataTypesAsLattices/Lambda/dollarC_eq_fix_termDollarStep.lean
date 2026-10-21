@@ -1,3 +1,8 @@
+/-ai
+The dollar combinator is the least fixed point of the functional defined by the dollar step term.
+
+That functional fixes its least fixed point. At the fixed point the body equals sequence revaluation, because two applications of the functional unfold to two applications of the fixed point, which equal the revaluation. The functional at the fixed point is therefore the nested graph of the revaluation, and the fixed-point equation identifies that graph with the fixed point.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

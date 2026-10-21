@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the remaining results of Scott's Proposition 6.4: consistency of the left and right sum lifts, the two composites of copairing with the injections, the equation sending the bottom element to the bottom element under copairing, the exclusion of a right token from an element that already contains a left token, the identification of a sum element with the image of its left or right copy under the corresponding injection, the characterization of the bottom element in the absence of both injections, the emptiness dichotomies for the two projections, entailment from a one-sided lift, the inclusion of a projection-empty set in the bottom element, empty entailment from a bottom-like relation, the two witness entailments for the injections, and uniqueness of copairing.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.Basic

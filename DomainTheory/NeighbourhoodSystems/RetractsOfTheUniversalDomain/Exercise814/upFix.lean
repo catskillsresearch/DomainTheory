@@ -1,3 +1,6 @@
+/-ai
+The principal up-set of a compact fixed point is the set of compact fixed points whose underlying elements lie above it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,6 @@
+/-ai
+The term primRecOpTerm is the lambda term binding variables 0 and 1 whose body applies variable 2 to the application of variable 3 to the application of variable 4 to variable 0 and then to variable 1, the curried body of the primitive-recursion operator.
+ai-/
 module
 
 public import Mathlib.Computability.RE

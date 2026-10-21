@@ -1,3 +1,10 @@
+/-ai
+This file gathers and re-exports the constructions and lemmas of Exercise 7.15: bare presentations and their inclusion and equality decidability, the smash enumeration and presentation together with properness, membership, and the projection and pairing relations, the coalesced enumeration and presentation together with the master and membership lemmas, and the iterate coding, fibrewise intersection, and primitive-recursive lemmas.
+
+The neighbourhood assigned to a code by the iterate presentation is the neighbourhood assigned by the iterate enumeration.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

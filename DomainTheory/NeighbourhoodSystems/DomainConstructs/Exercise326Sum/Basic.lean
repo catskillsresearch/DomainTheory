@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the embedding and the sum-valued conditional, the discriminator and its guard, the three containment lemmas for neighbourhoods of the truth domain, the closure of the zero family and the one family under intersection, and the three guard lemmas for the discriminator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

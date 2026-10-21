@@ -1,3 +1,8 @@
+/-ai
+If j is at least n + m, the j-th fiber index of the tabulated intersection of n and m is the master index.
+
+Reading a tabulated code at or past its length returns the default value.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

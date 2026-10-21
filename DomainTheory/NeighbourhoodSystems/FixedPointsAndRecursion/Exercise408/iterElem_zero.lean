@@ -1,3 +1,8 @@
+/-ai
+The zero-th approximant of an approximable endomap is the bottom element.
+
+It is the elementwise action of the identity map at bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

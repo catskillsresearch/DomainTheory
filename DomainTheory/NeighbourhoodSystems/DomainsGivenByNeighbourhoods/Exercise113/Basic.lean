@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the ingredients of the infinite paths in the binary system: the binary system and the ascending-union theorem, the finite prefixes of a path together with their length, the successor step, and monotonicity, and the finite approximations along a path together with their monotonicity and the branch they determine.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

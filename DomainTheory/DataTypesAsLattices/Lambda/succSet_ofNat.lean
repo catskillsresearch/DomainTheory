@@ -1,3 +1,8 @@
+/-ai
+The successor of the numeral j is the numeral j + 1.
+
+Extensionality and the definitions of the successor and of the numeral give the equality.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

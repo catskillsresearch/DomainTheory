@@ -1,3 +1,6 @@
+/-ai
+The initial packed state at depth 0 stores the two master indices with the junk flag off, and leaves the bit-source remainder untouched.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

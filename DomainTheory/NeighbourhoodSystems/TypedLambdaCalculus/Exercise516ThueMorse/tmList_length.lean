@@ -1,3 +1,8 @@
+/-ai
+The length of the length-n Thue–Morse prefix is n.
+
+The prefix is the map of the bit function along the range of length n, and that range has length n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

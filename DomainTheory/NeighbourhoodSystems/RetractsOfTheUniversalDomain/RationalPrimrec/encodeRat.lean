@@ -1,3 +1,6 @@
+/-ai
+A rational is encoded as the pair of the encoding of its numerator and one less than its denominator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

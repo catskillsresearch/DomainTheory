@@ -1,3 +1,8 @@
+/-ai
+The lambda right-hand side of an information system A equals the sum of A with the function space of the lambda system of A with itself.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

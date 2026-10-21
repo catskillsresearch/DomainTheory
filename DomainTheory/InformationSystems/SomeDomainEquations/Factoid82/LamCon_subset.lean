@@ -1,3 +1,8 @@
+/-ai
+Consistency of a finset of raw lambda tokens passes to every subset.
+
+Take a stage witnessing consistency and induct on that stage. At stage zero, the atom projection of the subset is a consistent subset and the function-token projection remains empty. At a successor stage, the left alternative uses the inductive hypothesis. The right alternative gives an empty atom projection, well-formedness along the function-token projection, and the function clause restricted to the subset.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

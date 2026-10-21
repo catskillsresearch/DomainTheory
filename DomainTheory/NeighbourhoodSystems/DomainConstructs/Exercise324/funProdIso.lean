@@ -1,3 +1,6 @@
+/-ai
+The domain isomorphism of Exercise 3.24(i) identifies elements of the function space into a product with elements of the product of the two function spaces. It transports the order isomorphism on approximable maps through the function-space equivalence, the two inverse function-space equivalences, and the product equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

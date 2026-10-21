@@ -1,3 +1,8 @@
+/-ai
+A number j lies in Fun of the complements of nbhd n and nbhd m if and only if some code c on the decoded bit list of n has untagged value j, and every entry of the list decoded from the untagged list of c lies in the complement of nbhd m. Injectivity of tagging forces the witnessing list to be exactly that decoded untagged list.
+
+From a witnessing list, the tag of that list with j lies on the decoded bit list, because it lies in the complement of nbhd n. The round trip through untagging and injectivity of tagging recover the value j and replace the list condition by the decoded untagged list. Conversely, the decoded untagged list is the witnessing list, and the tag round trip together with the bit-list membership place the tag in the complement of nbhd n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

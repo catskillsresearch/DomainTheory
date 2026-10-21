@@ -1,3 +1,8 @@
+/-ai
+An element that lies below every member of a nonempty family lies below the meet of the family.
+
+A token of that element belongs to every member, hence belongs to the intersection.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41

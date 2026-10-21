@@ -1,3 +1,9 @@
+/-ai
+Bottom is typed by bottom.
+
+Unfold the typing as the equality of bottom with the application of bottom to itself, then rewrite by the application law for bottom.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

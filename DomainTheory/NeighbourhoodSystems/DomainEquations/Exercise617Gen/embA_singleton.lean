@@ -1,3 +1,8 @@
+/-ai
+The letter-prefixed copy of the singleton of a finite string σ is the singleton of that letter followed by σ.
+
+The prefixed copy equals the set obtained by prepending the one-letter string, and prepending that letter to the singleton yields the singleton of the longer string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

@@ -1,3 +1,8 @@
+/-ai
+Occupancy test of (5.13). If both square components of u are inhabited, applying the boxed sum of a and b to u yields the full set, by the mixed test (4.4).
+
+Members of the two components make the occupancy tags the singletons zero and one. The double conditional of a test containing both zero and a positive integer is the full set.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,3 +1,6 @@
+/-ai
+The elements fixed by the packaged map subApprox are order-isomorphic to the approximable endomaps fixed by sub. The forward map extracts the approximable map of a fixed element, and the backward map sends a fixed endomap to its filter. A fixed element has filter transport equal to itself, so extracting maps shows that sub of the extracted map equals the extracted map. The filter of a fixed endomap is fixed because the filter transport of that filter is the filter of sub of the map. The two round trips are the round trips of the function-space equivalence, and the order is the order of that equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

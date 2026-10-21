@@ -1,3 +1,9 @@
+/-ai
+The application at the numeral 1 of the application of a ⊕ b to u equals the double conditional of the application of u at the numeral 0, choosing the application of a or of b to the application of u at the numeral 1.
+
+Rewrite by the application law for the sum, by interchange of application with the double conditional, and by the first-component law for sequence pairs on both branches.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,9 @@
+/-ai
+When every finite set of tokens is consistent, every total element equals the top element.
+
+Every element lies below the top element, and totality turns that inequality into the reverse inequality.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

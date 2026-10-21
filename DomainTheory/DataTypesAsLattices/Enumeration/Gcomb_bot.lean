@@ -1,3 +1,8 @@
+/-ai
+Applying G to bottom returns bottom.
+
+Rewrite by the application law for G and by the bottom clause of the conditional.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

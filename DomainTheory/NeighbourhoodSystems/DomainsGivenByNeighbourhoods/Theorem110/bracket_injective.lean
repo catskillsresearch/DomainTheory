@@ -1,3 +1,8 @@
+/-ai
+If two neighbourhoods have equal brackets, then the neighbourhoods are equal.
+
+Each inclusion follows from the inclusion law for brackets applied to one of the two inclusions of the equal sets of elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

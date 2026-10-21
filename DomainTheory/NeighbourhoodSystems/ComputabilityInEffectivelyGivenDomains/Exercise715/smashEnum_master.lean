@@ -1,3 +1,8 @@
+/-ai
+If the two factors of a code are not both proper, the smash enumeration returns the product of the two masters.
+
+This is the negative branch of the enumeration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

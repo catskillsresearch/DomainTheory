@@ -1,3 +1,8 @@
+/-ai
+The embedding of the empty bit-string is the empty list.
+
+The equation is the defining clause.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,8 @@
+/-ai
+Every value of the enumeration of T is a neighbourhood of T.
+
+Case on the index. The value at 0 is the master neighbourhood, the value at 1 is the neighbourhood zero, and every larger value is the neighbourhood one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

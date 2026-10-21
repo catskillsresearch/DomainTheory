@@ -1,3 +1,6 @@
+/-ai
+An integer is encoded as the pair of the truncation of the integer and the truncation of its negation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

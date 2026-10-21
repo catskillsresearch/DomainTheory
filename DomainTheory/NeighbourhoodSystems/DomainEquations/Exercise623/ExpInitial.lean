@@ -1,3 +1,6 @@
+/-ai
+Exp is the initial T-algebra. For every algebra B there is a unique homomorphism from Exp to B, Scott's evaluation of an expression. Existence is the homomorphism built from the union of the Kleene iterates, and uniqueness is the projection-chain argument: any homomorphism has the same underlying map as that evaluation map, so the two homomorphisms agree.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

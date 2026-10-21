@@ -1,3 +1,8 @@
+/-ai
+The master neighborhood of the function space is the set of all approximable maps.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

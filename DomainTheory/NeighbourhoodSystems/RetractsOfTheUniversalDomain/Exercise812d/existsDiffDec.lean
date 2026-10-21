@@ -1,3 +1,6 @@
+/-ai
+The extracted difference-existence decider sends a code to the one-indicator of the chosen computable difference predicate.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

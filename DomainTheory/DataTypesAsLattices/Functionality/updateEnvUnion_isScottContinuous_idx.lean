@@ -1,3 +1,9 @@
+/-ai
+For fixed t and x, the index-continuous environment update is Scott continuous in the index.
+
+It is the minimal extension of the single-index updates, and that extension is Scott continuous.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

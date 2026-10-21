@@ -1,3 +1,8 @@
+/-ai
+The meet of an element with itself equals that element.
+
+The criterion that the order is equality with a meet applies to reflexivity of the order.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33

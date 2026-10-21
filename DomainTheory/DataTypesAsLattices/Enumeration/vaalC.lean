@@ -1,3 +1,6 @@
+/-ai
+The element vaalC is the least fixed point of the functional vaalF.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the Galois connection of a projection pair from Exercise 6.25, the two comparisons of injection with projection, boundedness and directedness of the lower set, the supremum formula for the projection, non-emptiness of the upper set, the infimum formula for the injection, and preservation of bounded sets and of least upper bounds by the injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.Basic

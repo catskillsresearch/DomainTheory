@@ -1,3 +1,8 @@
+/-ai
+Folding the unfolding of an element of an iteration returns the element.
+
+Both maps act by the product isomorphism and its inverse, and the inverse cancels the isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,3 +1,8 @@
+/-ai
+The strict identity sends the bottom of the flat naturals to bottom.
+
+Unfold the definition and simplify the element maps of composition, pairing, and the identity. The zero test of bottom is the bottom of the truth domain, which equals Example23.botElt, and the conditional on that bottom is bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

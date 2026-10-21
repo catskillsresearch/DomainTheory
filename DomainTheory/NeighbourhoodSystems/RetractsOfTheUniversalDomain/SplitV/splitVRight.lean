@@ -1,3 +1,6 @@
+/-ai
+splitVRight n is the code of the right half, the level set one level above the minimal level whose mask is the upsampled mask with the splitting bit cleared. Clearing stands for exclusive or because that bit is set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

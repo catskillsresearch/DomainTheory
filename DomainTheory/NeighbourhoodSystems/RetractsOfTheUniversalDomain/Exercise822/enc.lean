@@ -1,3 +1,6 @@
+/-ai
+The doubling encoding of a finite binary string repeats every bit: the empty string is sent to the empty string, and a string beginning with a bit is sent to that bit twice, followed by the encoding of the remaining string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

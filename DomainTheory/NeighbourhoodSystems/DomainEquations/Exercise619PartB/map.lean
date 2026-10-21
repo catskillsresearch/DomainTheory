@@ -1,3 +1,6 @@
+/-ai
+The action of a functor expression on approximable maps sends a constant to the identity map of that constant, the identity expression to the map itself, a sum to the sum of the two component actions, and a product to the product of the two component actions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

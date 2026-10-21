@@ -1,3 +1,6 @@
+/-ai
+An element u of Pω realizes a number-theoretic function p on numerals when, for every natural number n, applying u to the numeral of n yields the numeral of p(n).
+ai-/
 module
 
 public import Mathlib.Computability.RE

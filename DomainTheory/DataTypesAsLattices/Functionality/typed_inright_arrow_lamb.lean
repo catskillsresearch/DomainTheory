@@ -1,3 +1,9 @@
+/-ai
+If x is typed by the function retract from the lambda retract to itself, then the right injection of x is typed by the lambda retract.
+
+Rewrite by equation (4.39) and the application law for the right injection, then apply the right typing rule for the sum retract.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

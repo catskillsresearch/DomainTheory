@@ -1,3 +1,8 @@
+/-ai
+Two approximable maps that agree on every principal element are equal. Both sides of a relation already carry domain membership, so the comparison does not split on an undecidable membership test.
+
+Compare relations. If the first map relates X to Y, that relation supplies membership of X, and the principal characterization rewrites the relation through the assumed equality of the two principal images. The converse rewrites in the same way from the second map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

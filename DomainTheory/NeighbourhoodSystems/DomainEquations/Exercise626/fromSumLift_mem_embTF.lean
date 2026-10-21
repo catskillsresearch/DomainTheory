@@ -1,3 +1,8 @@
+/-ai
+The image under the inverse sum comparison contains the true-then-false tag of a right neighbourhood Y if and only if the source contains the single true tag of Y.
+
+The master case conflicts with a true tag differing from the sum master. A false-side witness conflicts with inequality of the two tags on a nonempty set. A true-side witness rewrites by injectivity of tagging. The converse records the right clause of the definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

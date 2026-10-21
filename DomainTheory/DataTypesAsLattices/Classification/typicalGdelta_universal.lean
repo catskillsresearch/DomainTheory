@@ -1,3 +1,9 @@
+/-ai
+Scott's Table 3 and Theorem 6.3 state that 𝔊δ is the class of continuous preimages of {⊤}: a set is a Scott Gδ set if and only if it is the set of x whose image under some Scott-continuous f lies in the typical set.
+
+The statement is the 𝔊δ theorem, because membership in the singleton {⊤} is equality with ⊤.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

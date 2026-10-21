@@ -1,3 +1,8 @@
+/-ai
+The copairing relates a sum neighbourhood to an output neighbourhood exactly when the output is the master, or the input is a left copy related by the first map, or the input is a right copy related by the second map.
+
+The two sides are the defining relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum

@@ -1,3 +1,8 @@
+/-ai
+If every element of a finite set of natural numbers has its singleton complement in an element of the powerset domain, then the complement of that finite set belongs to the element.
+
+The proof inducts on the finite set. The complement of the empty set is the universe, which is the master neighbourhood of the element. The complement of a set with one element inserted is the intersection of the corresponding singleton complement with the complement of the remaining set, and an element is closed under intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

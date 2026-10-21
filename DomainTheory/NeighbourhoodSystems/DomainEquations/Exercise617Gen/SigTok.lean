@@ -1,3 +1,6 @@
+/-ai
+SigTok A β is the token type of the indexed sum of a unit and a copy of β for each letter of A. A token is an optional value, and a present value is either the unit summand or a pair of a letter and an element of β.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

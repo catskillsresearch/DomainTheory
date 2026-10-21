@@ -1,3 +1,8 @@
+/-ai
+The left copy of a nonempty set is nonempty.
+
+It is the image of that set under the left tag.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

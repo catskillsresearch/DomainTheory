@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood system Cn A is empty-free: every neighbourhood is nonempty.
+
+A neighbourhood is either the cone of a finite string or the singleton of a finite string. In the cone case the string is a prefix of itself, so it belongs to the cone. In the singleton case the string belongs to the singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

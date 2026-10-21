@@ -1,3 +1,8 @@
+/-ai
+The pair of one more than the maximum of p and q with any code does not belong to the m-fold iterator of the finite set coded by p started at the finite set coded by q.
+
+A supposed membership is bounded by the finite bound. The inequality for the left component of a pair then makes the successor of the maximum less than or equal to the maximum, which is impossible.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

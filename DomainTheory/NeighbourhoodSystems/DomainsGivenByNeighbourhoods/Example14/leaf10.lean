@@ -1,3 +1,6 @@
+/-ai
+The leaf 10 is the singleton consisting of the token 5.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

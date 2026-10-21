@@ -1,3 +1,6 @@
+/-ai
+The search operator is the currying of the search body. Its least fixed point is the running search.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

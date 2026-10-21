@@ -1,3 +1,6 @@
+/-ai
+The fixed-point set of an endomap of Pω is the set of elements that the map sends to themselves.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,3 +1,8 @@
+/-ai
+The zero iterate of a self-map of the function space is the bottom element of the function space.
+
+The zero iterate is the identity of the function space applied to the bottom, and the identity acts as the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

@@ -1,3 +1,8 @@
+/-ai
+The infimum of the pre-fixed points of f lies below the given pre-fixed point a.
+
+This is the comparison of that infimum with the pre-fixed point a.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

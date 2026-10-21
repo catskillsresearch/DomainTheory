@@ -1,3 +1,8 @@
+/-ai
+The directed union of a nonempty directed family lies below any element that lies above every member of the family.
+
+A neighbourhood of the union belongs to some member, and that member lies below the upper bound.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

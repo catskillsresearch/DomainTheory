@@ -1,3 +1,8 @@
+/-ai
+Applying j-arrow after i-arrow returns every element of the function space of the universal domain.
+
+The composite of the two element maps is the element map of the composite. That composite is the identity, and the identity acts as itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

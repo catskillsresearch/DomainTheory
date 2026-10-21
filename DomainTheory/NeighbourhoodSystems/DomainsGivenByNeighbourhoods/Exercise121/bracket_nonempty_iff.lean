@@ -1,3 +1,8 @@
+/-ai
+The bracket of a set is nonempty if and only if the set is a neighbourhood.
+
+An element of the bracket contains the set, so the set is a neighbourhood. Conversely, the principal filter of a neighbourhood lies in the bracket of that neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110

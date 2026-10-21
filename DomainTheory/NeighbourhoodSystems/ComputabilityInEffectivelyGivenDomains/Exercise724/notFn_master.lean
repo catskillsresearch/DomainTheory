@@ -1,3 +1,8 @@
+/-ai
+Pointwise negation fixes the master neighbourhood of T.
+
+Unfold the definition. The master neighbourhood is distinct from zero and from one, so both conditionals take the remaining branch, which is the master neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

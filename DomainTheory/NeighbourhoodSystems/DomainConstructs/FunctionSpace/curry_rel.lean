@@ -1,3 +1,8 @@
+/-ai
+A curried map relates an input to a function-space neighborhood exactly when the input is a neighborhood, the function-space set is a neighborhood, and the section at that input lies in it.
+
+This is the defining clause of currying.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

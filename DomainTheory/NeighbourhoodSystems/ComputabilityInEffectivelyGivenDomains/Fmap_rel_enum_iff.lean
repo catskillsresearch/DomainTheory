@@ -1,3 +1,8 @@
+/-ai
+On enumerated neighbourhoods, the relation of the forward reindexing map is a bounded double inclusion. Beyond the coded fiber lengths every fiber is the master neighbourhood, so only outer indices below the outer code and inner indices below the inner iterated index matter.
+
+Both enumerated sets are neighbourhoods. An unrestricted fiber inclusion rewrites, by the fiber laws for the enumerations, into the bounded inclusion. Conversely, inside both bounds the hypothesis applies. If the inner index meets or passes the inner length, the right-hand neighbourhood is the master, which contains every neighbourhood. If the outer index meets or passes the outer length, the inner code is zero and the right-hand neighbourhood is again the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

@@ -1,3 +1,6 @@
+/-ai
+The target-side neighbourhood family of the image of a subsystem D of E is the set of those subsets of the carrier of the image of E whose transport along the equality of the image carriers is a neighbourhood of the image of D.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

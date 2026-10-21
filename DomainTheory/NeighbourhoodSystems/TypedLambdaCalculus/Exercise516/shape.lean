@@ -1,3 +1,6 @@
+/-ai
+The neighbourhood of a tagged string is the singleton of the string when the tag is total, and the cone of the string when the tag is partial.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

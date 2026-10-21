@@ -1,3 +1,8 @@
+/-ai
+The underlying approximable map of the functorial image of a strict map is the grammar expression applied to the underlying map.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,3 +1,8 @@
+/-ai
+Reading a packed triple and applying the negative bisection index is primitive recursive.
+
+The three projections and the pairing of the outer indices are primitive recursive. The intersection and difference deciders, the right half, and the two selections are primitive recursive by composition, and the resulting function equals the index function.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

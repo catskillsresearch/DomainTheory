@@ -1,3 +1,9 @@
+/-ai
+The second component of an element pair is the right argument.
+
+This is the one-place application equation for the two-place sequence.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

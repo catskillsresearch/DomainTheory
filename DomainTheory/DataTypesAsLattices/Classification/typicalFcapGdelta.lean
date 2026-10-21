@@ -1,3 +1,7 @@
+/-ai
+The typical 𝔉 ∩ 𝔊δ set is the singleton whose only element is ⊤ + 1.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

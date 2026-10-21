@@ -1,3 +1,8 @@
+/-ai
+Reducing a bit-source modulo two to the power n does not change bits strictly below n.
+
+Rewrite both sides as test bits and apply the test-bit lemma for reduction modulo a power of two. The hypothesis that the position lies below n simplifies the result.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

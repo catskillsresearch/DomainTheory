@@ -1,3 +1,8 @@
+/-ai
+The coalesced sum embeds as a subdomain of the separated sum.
+
+The coalesced sum is a subsystem of the separated sum, and every subsystem embeds.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

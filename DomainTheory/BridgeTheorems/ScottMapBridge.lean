@@ -1,3 +1,6 @@
+/-ai
+Conjugation along the round way-below filters identifies the Scott maps between continuous lattices with the pointwise-ordered maps of those filters, and the abbreviation scottMap_roundFilter_iso names that order isomorphism of function spaces. Conjugation along the round elements of the way-below information systems does the same for that presentation, and scottMap_roundInfoSys_iso names it. The namespace infoSys_constructions_equiv packages these two conjugations with the product, separated-sum, and function-space domain isomorphisms of information systems and with the Factoid 4.6 equivalence of approximable maps and Scott-continuous maps.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,3 +1,8 @@
+/-ai
+A set unequal to the empty set has a member.
+
+If it had none, extensionality together with the characterization of membership in the empty set would force the set to be empty.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

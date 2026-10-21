@@ -1,3 +1,8 @@
+/-ai
+An element other than the bottom element contains some neighbourhood other than the master.
+
+Suppose every neighbourhood it contains is the master. Then the element equals the bottom element, contradicting the hypothesis. One inequality is that the bottom element lies below every element. For the other, membership in the bottom element follows because a neighbourhood of the element cannot differ from the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,3 +1,6 @@
+/-ai
+Folding insertion sends a sum token and a finite set of tree tokens to that finite set with the tree fold of the sum token inserted.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

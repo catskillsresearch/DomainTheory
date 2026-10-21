@@ -1,3 +1,8 @@
+/-ai
+The smash product of maps is monotone in both arguments.
+
+The order of approximable maps is inclusion of relations. A master clause remains a master clause. A proper rectangle applies both inequalities and keeps the properness conditions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

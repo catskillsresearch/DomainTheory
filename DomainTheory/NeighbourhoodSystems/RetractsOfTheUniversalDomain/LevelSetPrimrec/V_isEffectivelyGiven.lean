@@ -1,3 +1,9 @@
+/-ai
+The neighbourhood system V is effectively given, which is Exercise 8.12(b) of Scott
+1981, PRG-19.
+
+The computable presentation of V is the witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

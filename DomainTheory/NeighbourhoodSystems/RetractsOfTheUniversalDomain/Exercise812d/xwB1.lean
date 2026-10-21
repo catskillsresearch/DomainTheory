@@ -1,3 +1,6 @@
+/-ai
+The bit component of an X-sub-step word is the left component of its right component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

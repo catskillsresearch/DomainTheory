@@ -1,3 +1,6 @@
+/-ai
+firstElemCode c is the code of the head of a nonempty list code c, the first component of the unpairing of c minus one. On the empty code it returns the junk value of unpairing zero, and it is applied only when the canonical code is nonzero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

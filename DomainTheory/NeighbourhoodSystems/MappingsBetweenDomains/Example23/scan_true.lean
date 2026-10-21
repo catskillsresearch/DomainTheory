@@ -1,3 +1,8 @@
+/-ai
+The scan of a string beginning with true is some true.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

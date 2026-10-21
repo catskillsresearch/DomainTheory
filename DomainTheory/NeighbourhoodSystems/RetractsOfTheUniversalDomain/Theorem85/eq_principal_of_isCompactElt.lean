@@ -1,3 +1,8 @@
+/-ai
+A compact element is principal.
+
+Algebraicity puts the element below the directed supremum of its own principal approximants. Compactness supplies one approximant above it, and that principal element already lies below the element, so the two agree.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

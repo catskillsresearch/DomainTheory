@@ -1,3 +1,8 @@
+/-ai
+The list code of a two-element list equals one more than the pair of the first entry with one more than the pair of the second entry with zero.
+
+The equality is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

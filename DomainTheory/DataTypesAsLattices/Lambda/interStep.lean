@@ -1,3 +1,6 @@
+/-ai
+The least operator solving the (2.17) recursion sends a functional to the graph of the map which, at each first argument, is the graph of the conditional returning zero when both arguments are zero and otherwise the successor of the functional applied to the two predecessors.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,8 @@
+/-ai
+A principal element is compact: if it lies below a directed supremum of elements, then it lies below some single stage.
+
+The generating neighbourhood belongs to the principal, hence to the directed supremum, so it belongs to some stage, and upward closure of that stage gives the inequality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

@@ -1,3 +1,8 @@
+/-ai
+A λ-definition transports along pointwise equality of the realised partial functions.
+
+Definedness and undefinedness of the new function are the corresponding clauses of the given λ-definition after rewriting by the pointwise equality. Strictness is the strictness already given.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

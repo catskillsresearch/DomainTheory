@@ -1,3 +1,8 @@
+/-ai
+The exponential functor at an object A sends an object Z to the exponential of Z by A.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

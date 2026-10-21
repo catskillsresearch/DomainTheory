@@ -1,3 +1,8 @@
+/-ai
+The tower retraction at level n+1 sends the conjugate of a Scott map f on D_∞ by the level-(n+1) projection and embedding to the conjugate of f by the level-n projection and embedding.
+
+Extensionality of Scott maps reduces the equality to an evaluation at an arbitrary y. The successor formula for the inverse-limit embedding rewrites the argument of f, and the inverse-limit coherence of the resulting value identifies the retracted (n+1)-st component with the n-th component.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

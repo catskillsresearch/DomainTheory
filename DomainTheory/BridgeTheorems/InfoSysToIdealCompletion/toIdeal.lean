@@ -1,3 +1,6 @@
+/-ai
+The ideal associated with an element x is the ideal of finite elements whose carrier is the set of finite approximants of x. That set is a lower set, it is nonempty, and it is directed.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,3 +1,8 @@
+/-ai
+The descent map applied to an element is the directed supremum of the descent chain applied to that element.
+
+Compare neighbourhoods. Membership under the descent map is membership under some stage of the chain, which is membership in the directed supremum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

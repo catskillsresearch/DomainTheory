@@ -1,3 +1,8 @@
+/-ai
+If a fuel-bounded decode of a code recovers an expression, then the code is the Gödel code of that expression.
+
+Induction on the fuel. Zero fuel never succeeds. At a successor, match the tag. Tag 0 with payload zero forces the code to be the pairing of zero with zero, the code of sigma, by inverting pairing; any other payload fails. Tag 1 recovers a boolean list, and the payload equals the boolean-list code of that list. Tags 2 and 3 recover both subexpressions by the inductive hypothesis and reassemble the nested pairing, again by inverting pairing. A tag of the form t + 4 fails.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

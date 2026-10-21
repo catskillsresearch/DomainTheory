@@ -1,3 +1,8 @@
+/-ai
+The induced operator, applied to the map read from an element of the function space, is the map read from the image of that element.
+
+Unfold the operator and cancel the filter of a read map against the element it came from.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

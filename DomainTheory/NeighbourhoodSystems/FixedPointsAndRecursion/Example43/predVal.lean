@@ -1,3 +1,6 @@
+/-ai
+The predecessor table sends zero to bottom and sends k + 1 to the total element at k.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

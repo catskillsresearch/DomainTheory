@@ -1,3 +1,6 @@
+/-ai
+The zero-injection into the three-way sum sends an element to the sum element whose neighbourhoods are the master together with the zero-copies of that element's neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

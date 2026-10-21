@@ -1,3 +1,8 @@
+/-ai
+The one-token system is closed under intersection.
+
+A neighbourhood is the whole set or the empty set. Intersection with the whole set returns the other neighbourhood. Intersection with the empty set returns the empty set, which is a neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

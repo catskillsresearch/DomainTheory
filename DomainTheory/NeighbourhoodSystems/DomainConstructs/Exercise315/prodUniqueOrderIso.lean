@@ -1,3 +1,6 @@
+/-ai
+When the second factor has a unique element, projection to the first factor is an order isomorphism from the product onto that factor, with inverse pairing an element with the default. The left inverse uses that every second component equals the default, and product order reduces to order of the first components because any two second components are equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

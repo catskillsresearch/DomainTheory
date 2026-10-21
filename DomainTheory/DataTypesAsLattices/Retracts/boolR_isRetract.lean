@@ -1,3 +1,8 @@
+/-ai
+The Boolean retract is a retract.
+
+Graph extensionality and two uses of the application law reduce the retract equation to idempotence of the doubly strict conditional on the numerals zero and one.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,3 +1,8 @@
+/-ai
+If the domain inclusion characteristic is primitive recursive, then the conditional output-intersection step is primitive recursive.
+
+The four unpacked projections of the packed state are primitive recursive. The inclusion test is the characteristic on the input index paired with the entry's input index, and the intersection is the presentation's intersection on the running index and the entry's output index. Selection of those agrees with the step after unpacking.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

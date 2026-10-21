@@ -1,3 +1,6 @@
+/-ai
+The evaluation combinator of Table 5.5 (Scott 1981, PRG-19) is the evaluation map from a product of a function space with its domain into the codomain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

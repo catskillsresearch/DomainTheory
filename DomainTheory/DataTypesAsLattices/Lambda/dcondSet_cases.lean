@@ -1,3 +1,8 @@
+/-ai
+Every element of Pω contains 0 and no positive number, omits 0 and contains a positive number, contains both, or contains neither.
+
+These are the two cases for membership of 0, each split by whether a positive number belongs to the set.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

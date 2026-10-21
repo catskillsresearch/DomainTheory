@@ -1,3 +1,8 @@
+/-ai
+Applying the term shift of u to t equals applying u to the successor of t.
+
+This is the β-law for that body, which is Scott continuous.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

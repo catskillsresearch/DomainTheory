@@ -1,3 +1,6 @@
+/-ai
+pathStateAtAux is the state reached after reading n symbols along a path, for n at most the length of the word. The empty path contributes its state at position zero, and a positive position on the empty path is impossible. A path that begins with one step contributes its starting state at position zero, and at a later position continues on the remaining path with the index decreased by one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

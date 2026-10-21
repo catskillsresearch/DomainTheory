@@ -1,3 +1,8 @@
+/-ai
+The positive index set of a list with a given head and tail is the intersection of the index set of the head with the positive index set of the tail.
+
+By extensionality, a constraint for every member of the extended list is a constraint for the head together with a constraint for every member of the tail, and conversely.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

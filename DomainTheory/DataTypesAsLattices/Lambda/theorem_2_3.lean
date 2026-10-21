@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Theorem 2.3 (The reduction theorem). Any Scott continuous function of finitely many variables is represented by an element of Pω via iterated application.
+
+The finite curry of the function is such an element, by the application law for finite currying.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

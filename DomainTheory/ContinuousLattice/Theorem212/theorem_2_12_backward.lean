@@ -1,3 +1,8 @@
+/-ai
+Scott 1972, Theorem 2.12, backward direction. Every injective T₀-space is homeomorphic to a continuous lattice equipped with its Scott topology.
+
+Corollary 1.6 writes the space as a retract of a power of the Sierpiński space. The composite of the section with the retraction is idempotent, because the retraction-section identity can be applied to the retracted element. A power of the Sierpiński space is a continuous lattice. The composite is continuous for the Scott topology because that topology agrees with the product topology and the section and retraction are continuous, so the composite preserves directed suprema. The fixed-point set of the composite is therefore a continuous lattice. Its Scott topology equals the subspace topology inherited from the product topology of the power. The section lands in the fixed-point set, the retraction inverts it there by the retraction-section identity and the fixed-point equation, and both directions are continuous.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

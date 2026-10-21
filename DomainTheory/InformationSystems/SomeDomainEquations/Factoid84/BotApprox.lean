@@ -1,3 +1,6 @@
+/-ai
+Scott's bottom condition on an approximable map r from the powerset system P to itself says that the finite element of 0 is contained in the image of the bottom element. The token 0 plays the rôle of the bottom token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

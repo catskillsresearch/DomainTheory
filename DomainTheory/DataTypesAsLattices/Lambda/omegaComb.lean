@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (2.8): the omega combinator of a set u is the graph of the map sending x to the application of u to the self-application of x.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

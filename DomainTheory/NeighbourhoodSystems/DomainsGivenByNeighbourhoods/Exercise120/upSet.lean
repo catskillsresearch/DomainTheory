@@ -1,3 +1,6 @@
+/-ai
+The up-set of a set is the set of neighbourhoods contained in it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

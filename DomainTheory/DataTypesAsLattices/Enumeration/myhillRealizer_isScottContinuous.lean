@@ -1,3 +1,8 @@
+/-ai
+The Myhill realizer of any function is Scott continuous.
+
+It is an application map, and application is Scott continuous.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

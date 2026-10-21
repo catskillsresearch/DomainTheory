@@ -1,3 +1,8 @@
+/-ai
+The first projection of the paired element of two elements is the first element.
+
+Both inclusions are checked. A token in the projection comes from a product set inside the pair, and the first component of that set lies in the first element, so closure applies. Conversely, the left lift of the singleton of a token of the first element lies in the pair, because each such token records that token in the first element and, by Factoid 3.2, the bottom token in the second element. The first component of the left lift is the singleton, which entails itself by Proposition 2.3(iii).
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

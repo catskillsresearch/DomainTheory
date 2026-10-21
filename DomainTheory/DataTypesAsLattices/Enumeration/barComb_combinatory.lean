@@ -1,3 +1,8 @@
+/-ai
+The bar combinator is combinatory.
+
+Interpreting the bar step term in the constantly bottom environment and applying the Y combinator recovers the bar combinator, by that interpretation together with the first recursion theorem for the Scott-continuous bar step. Substituting the equality, the bar combinator is an application of the combinatory Y combinator to the combinatory interpretation of the closed bar step term given by theorem 2.4.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

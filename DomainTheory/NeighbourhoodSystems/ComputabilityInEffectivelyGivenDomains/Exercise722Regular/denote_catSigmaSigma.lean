@@ -1,3 +1,8 @@
+/-ai
+Concatenating the universal language with itself yields the universal language again.
+
+Extend by a word and simplify the concatenation and the universal denotation. The empty prefix and the word itself both lie in the universal language, and they concatenate to the word.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

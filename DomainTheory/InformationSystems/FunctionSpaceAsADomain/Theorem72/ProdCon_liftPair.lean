@@ -1,3 +1,8 @@
+/-ai
+The lifted pair of two consistent finite sets is a consistent set of product tokens.
+
+The first component of the lift is the first set united with the first component of the right lift. That component is the singleton of the bottom token, which the first set entails, so Proposition 2.3(ii) gives consistency. The second component is the second component of the left lift united with the second set. After commutativity of the union, Proposition 2.3(ii) applies because the second set entails that left-lift component, which is the singleton of the bottom token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

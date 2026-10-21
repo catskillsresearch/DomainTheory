@@ -1,3 +1,6 @@
+/-ai
+From a predicate U on the rationals that holds at 1, holds only for positive rationals at most 1, and is upward closed inside (0, 1], one builds an element of R whose neighbourhoods are the intervals [0, r) for which U holds. The subproperty is the positivity and upper bound of such an r. The master interval [0, 1) belongs to the element because U holds at 1. The intersection of two such intervals is the interval at the smaller endpoint, which still satisfies U. A neighbourhood above such an interval is again an interval [0, s) with r ≤ s ≤ 1, so upward closure of U includes it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,6 @@
+/-ai
+The zero combinator is the numeral 0.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

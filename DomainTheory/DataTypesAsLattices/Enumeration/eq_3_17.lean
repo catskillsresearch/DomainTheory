@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (3.17): composing the bar of u with the composition of the bar of v and R yields the bar of the application of u to v.
+
+Rewrite the right side by the unfolding (3.15), unfold composition, and compare graphs. At an element x, beta reduction applies by the substitution theorem, composing continuity of application of the bar of v with continuity of application of R. Rewrite the resulting application by the action of the bar on R, the action of the bar on a positive branch at R, and the two-argument application of the bar.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

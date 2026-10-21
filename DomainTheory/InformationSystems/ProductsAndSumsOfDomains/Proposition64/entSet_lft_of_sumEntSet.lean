@@ -1,3 +1,8 @@
+/-ai
+If the separated sum entails a finite set u' from a finite set u, then A entails the left projection of u' from the left projection of u.
+
+A token of the left projection of u' comes from a left sum token of u', and the entailment component of the sum entailment of that token is the required entailment in A.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the ingredients of the map that deletes the first run of ones: the four run equations, the deletion scan and the output scan together with their clauses, growth of both scans under extension, prefix-monotonicity of the output, and the approximable run map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

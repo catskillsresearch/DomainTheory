@@ -1,3 +1,8 @@
+/-ai
+Every nonempty set of natural numbers has a least member.
+
+Strong induction shows that if n belongs to the set, then some k at most n belongs to the set and no smaller index does: either n itself is such a least member, or some smaller index belongs and the inductive hypothesis applies. The nonempty hypothesis supplies an n, and that claim yields the least member.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

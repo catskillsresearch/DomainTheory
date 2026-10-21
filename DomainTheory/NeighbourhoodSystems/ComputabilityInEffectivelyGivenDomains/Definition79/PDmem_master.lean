@@ -1,3 +1,8 @@
+/-ai
+The down-set of the master neighbourhood is a neighbourhood of the Smyth power domain.
+
+Apply the fact that the down-set of any neighbourhood is a power-domain neighbourhood to the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

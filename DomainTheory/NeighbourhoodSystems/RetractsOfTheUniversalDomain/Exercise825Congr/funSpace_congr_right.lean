@@ -1,3 +1,8 @@
+/-ai
+An isomorphism of codomains induces an isomorphism of the function spaces with a fixed domain and that codomain.
+
+Apply the two-sided congruence to the identity isomorphism of the domain and the given isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

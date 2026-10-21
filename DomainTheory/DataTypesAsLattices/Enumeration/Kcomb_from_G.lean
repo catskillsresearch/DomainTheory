@@ -1,3 +1,8 @@
+/-ai
+The combinator K equals the application of G to zero, then three times to the numeral 1, then to zero.
+
+Identify zero with the numeral 0 and simplify by the evaluation of G at zero, the evaluation of the packed sequence at one, and the left and right projection laws for the remaining pair sequences.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

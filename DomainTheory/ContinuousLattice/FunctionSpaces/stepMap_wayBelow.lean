@@ -1,3 +1,8 @@
+/-ai
+If e' is way below the value of a Scott map f at e, then the step map of e and e' is way below f in the function space.
+
+The witness is the set of Scott maps g such that e' is way below g at e. It is an upper set because the order of Scott maps is pointwise. It is inaccessible by directed suprema because those suprema are computed pointwise and the way-below relation passes inside a nonempty directed supremum at e. The step map lies in the set by hypothesis, and every member of the set lies above the step map.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

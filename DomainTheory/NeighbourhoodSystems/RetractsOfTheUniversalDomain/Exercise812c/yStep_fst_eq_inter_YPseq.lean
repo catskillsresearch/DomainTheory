@@ -1,3 +1,8 @@
+/-ai
+The first output of the true-bit Y-step, applied after the X-step at the first sign bit of the history, equals that post-X first value intersected with YPseq at n.
+
+The bit-general specification of the X-step gives matching emptiness and the empty-or-neighbourhood alternative for the post-X pair. For one inclusion, the output lies in the post-X first value, and it lies in YPseq because the padding of the restricted history agrees with the history below n, so the atoms agree and the corresponding summand contains the output. For the other inclusion, an element of the intersection belongs to some summand, for some prefix and some bit. If the padded prefix agrees with the history below n and the bit equals the first sign bit, the atoms agree and the element is the output. If the histories agree below n but the bits differ, the two first outputs of the X-step are disjoint, while the element lies in both because the Y-output sits inside its X-step first output. If the histories disagree below n, the two first components of atomPair are disjoint, while the element lies in both: the foreign Y-output sits inside the foreign X-step output and hence inside the foreign atom, and the home element sits inside the home atom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,3 +1,6 @@
+/-ai
+The pairing combinator of Table 5.5 (Scott 1981, PRG-19) is the curried approximable map from the first factor into the function space from the second factor to the product, obtained by currying the identity of the product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

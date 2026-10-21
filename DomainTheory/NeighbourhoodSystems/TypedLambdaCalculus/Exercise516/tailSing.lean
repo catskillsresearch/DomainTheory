@@ -1,3 +1,6 @@
+/-ai
+The total tail of a string is the bottom element on the empty string, and the total element of the remaining string on a cons.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

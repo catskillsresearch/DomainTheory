@@ -1,3 +1,8 @@
+/-ai
+Evaluating a function-space element at a fixed stack returns the element map of that element at the stack.
+
+Unfold evaluation at the stack and simplify the element maps of composition, pairing, the identity, the constant map, and evaluation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

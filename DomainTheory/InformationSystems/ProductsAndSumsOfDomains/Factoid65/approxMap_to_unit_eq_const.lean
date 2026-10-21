@@ -1,3 +1,8 @@
+/-ai
+Every approximable map from A into the unit system equals the constant map at the least element of the unit.
+
+Uniqueness of constant maps applies because the image of every element under the map is the least element of the unit.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56

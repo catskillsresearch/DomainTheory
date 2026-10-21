@@ -1,3 +1,8 @@
+/-ai
+A number k belongs to the Myhill set of a valuation at a function f if and only if the second component of the computational unpairing of k belongs to the value of f at the finite code of the first component.
+
+From membership, k is the pair of some j and m with m in that value, and the computational unpairing of the pair is the pair (j, m). Conversely, k equals the pair of the two components of its computational unpairing, so those components witness membership.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

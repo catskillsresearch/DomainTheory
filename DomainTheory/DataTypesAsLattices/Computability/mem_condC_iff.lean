@@ -1,3 +1,8 @@
+/-ai
+A natural number lies in the conditional combinator if and only if it is a nested pair (n₀, (n₁, (n₂, m))) such that either bit m of n₀ and bit 0 of n₂ are set, or bit m of n₁ is set and 2 ≤ n₂.
+
+Membership unfolds as three nested pair witnesses, and the payload is rewritten by the bit criterion for the conditional on finite sets. The converse repacks the nested pair and applies that same criterion.
+ai-/
 module
 
 public import Mathlib.Computability.RE

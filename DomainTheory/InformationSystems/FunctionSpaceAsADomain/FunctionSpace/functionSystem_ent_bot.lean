@@ -1,3 +1,9 @@
+/-ai
+The bottom token of the function space is entailed by every consistent finite set of function-space tokens.
+
+The empty subset is the witness. It is contained in the set, it imposes no input conditions, and its output union is empty, so it entails the empty output of the bottom token.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

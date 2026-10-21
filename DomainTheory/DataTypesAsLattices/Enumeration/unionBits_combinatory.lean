@@ -1,3 +1,9 @@
+/-ai
+For every list of natural numbers, the union of its numerals is combinatory.
+
+The empty union is bottom, which is combinatory. The union of a head with the union of the tail is combinatory because binary union preserves the combinatory property, the numeral of the head is combinatory, and the tail is combinatory by induction.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

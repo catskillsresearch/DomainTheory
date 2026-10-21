@@ -1,3 +1,8 @@
+/-ai
+The supremum of all finite suprema of finite subsets of a set S is at most the supremum of S.
+
+Every member of the family is the supremum of some finite subset T of S, and each element of T lies below the supremum of S, so the finite supremum does as well.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,3 +1,8 @@
+/-ai
+At every depth, the two components of the generalized atom pair are empty together, and each is either empty or a genuine neighbourhood.
+
+The argument is induction on the depth. At depth zero both components are masters, hence genuine, and one master is empty exactly when the other is, since each emptiness contradicts the corresponding nonempty hypothesis. At a successor the X-split specification, together with membership of an intersection or a difference, gives the same facts for the intermediate pair, and the Y-split specification repeats them for the pair at depth n + 1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

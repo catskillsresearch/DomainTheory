@@ -1,3 +1,8 @@
+/-ai
+The function space into a product is isomorphic, as a domain, to the product of the two function spaces.
+
+The isomorphism is the domain order isomorphism of the function-space product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

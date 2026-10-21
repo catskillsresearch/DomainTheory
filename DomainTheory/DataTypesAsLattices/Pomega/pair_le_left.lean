@@ -1,3 +1,8 @@
+/-ai
+The first component n is at most the pair of n and m.
+
+The triangular number of n + m is at least n. This is immediate when n is zero. When n is a successor, the product of n with 2 is at most (n + m)(n + m + 1), because n is at most n + m and 2 is at most n + m + 1, and dividing by 2 is the triangular number. Adding the second component only increases the value, and the pair is that sum.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

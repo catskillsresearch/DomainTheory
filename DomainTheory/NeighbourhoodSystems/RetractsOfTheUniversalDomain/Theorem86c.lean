@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the unfolded relation of the packaged map sub, that relation on enumerated neighbourhoods, the reindexing of the defining existential of sub over presentation indices, the same existential for the least map of an enumerated neighbourhood in the form of an enumerated inclusion, the recursive decidability of a single sub-step, the computability of the packaged map relative to the function-space presentation, and the computability of sub when the domain is effectively given.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86c.Basic

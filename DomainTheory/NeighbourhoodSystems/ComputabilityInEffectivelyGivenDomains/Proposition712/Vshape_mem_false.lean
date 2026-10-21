@@ -1,3 +1,8 @@
+/-ai
+The singleton of false is a neighbourhood of the flat two-point domain.
+
+It is the third clause of the membership definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

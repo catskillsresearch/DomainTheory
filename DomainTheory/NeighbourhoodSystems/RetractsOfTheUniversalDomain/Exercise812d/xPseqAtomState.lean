@@ -1,3 +1,6 @@
+/-ai
+The packed state of the X half-step atom at depth n and bit-source i is the X sub-step applied to n, the forced bit 1, and the packed depth-n atom-pair state at i. The bit 1 selects the positive branch of the sub-step.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,8 @@
+/-ai
+The projection composed after the injection equals the identity on D. Both relations hold of X and Z exactly when X and Z belong to D and X is contained in Z.
+
+Relational extensionality reduces the claim to the relations. A composite witness gives an intermediate neighbourhood and two inclusions, which compose. An inclusion of neighbourhoods of D factors through the larger endpoint as the intermediate neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

@@ -1,3 +1,6 @@
+/-ai
+The bottom compact fixed point is the bottom fixed point, together with the proof that the bottom fixed point is compact.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

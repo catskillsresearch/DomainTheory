@@ -1,3 +1,6 @@
+/-ai
+The descent chain of a structure map begins with the constant-bottom map out of the infinite iteration, and each successor stage is the homomorphism operator applied to the previous stage.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

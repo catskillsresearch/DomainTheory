@@ -1,3 +1,8 @@
+/-ai
+Forgetting a single well-formed lambda token yields a consistent finset of raw tokens.
+
+The forgetful image of a singleton is the singleton of the underlying raw token. Matching on bottom, an atom, or a function token uses the corresponding singleton consistency, and the function-token case takes the two component consistencies from well-formedness.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

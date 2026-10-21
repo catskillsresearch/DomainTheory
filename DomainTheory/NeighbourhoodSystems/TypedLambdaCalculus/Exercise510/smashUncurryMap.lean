@@ -1,3 +1,6 @@
+/-ai
+The strict uncurry of a strict map into the strict function space relates a smash neighbourhood to an output exactly when the map relates the left preimage of the neighbourhood to the step set of its right preimage and the output. The domain clause is membership of the neighbourhood, and the codomain is the codomain of a witness in that step. On the smash master, the preimages are the two masters and the step of the second master is everything, so the relation is the master relation of the map. Intersection on the right rewrites the intersection of two steps as the step of the intersection of the outputs, using witnesses for the two codomains. For monotonicity, the smaller smash neighbourhood has product form, the preimage inclusions pass to the map, and a witness map inside the step is monotone. On the smash master, strictness makes the step of the second master the universe, and the constantly bottom strict map in that universe forces the output to be the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

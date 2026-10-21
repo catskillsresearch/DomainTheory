@@ -1,3 +1,8 @@
+/-ai
+The function-space retract is combinatory.
+
+Rewrite it as the interpretation of the closed function-retract term, and apply the closed case of theorem 2.4.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

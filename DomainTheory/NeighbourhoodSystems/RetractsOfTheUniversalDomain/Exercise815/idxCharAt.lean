@@ -1,3 +1,6 @@
+/-ai
+Given a consistency step fc and a code w whose components are a bit mask and a list code, idxCharAt fc w is the running intersection index produced by the same fold as the consistency character. It is the index component of the fold of the consistency step, started from the master index and run for the length coded by the second component of w.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

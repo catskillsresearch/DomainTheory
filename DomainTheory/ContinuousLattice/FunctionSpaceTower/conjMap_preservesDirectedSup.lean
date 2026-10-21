@@ -1,3 +1,8 @@
+/-ai
+Conjugation of Scott endomaps preserves directed suprema.
+
+The two sides agree at an arbitrary point. Evaluation at the image of that point under the inner map preserves directedness of the family. The supremum of the family, evaluated there, is the supremum of those values; the outer map preserves that directed supremum; and the supremum of the conjugated family is computed pointwise.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

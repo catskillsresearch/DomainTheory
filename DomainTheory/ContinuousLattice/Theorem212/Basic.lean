@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the ingredients of the backward direction of Theorem 2.12: the fixed-point set of an endomap, the supremum operation that applies the endomap to the ambient supremum of the underlying set, the complete-lattice structure on the fixed points, the least-upper-bound property of that supremum and the computation of its underlying element, the retraction of the ambient lattice onto the fixed points, preservation of directed suprema by the inclusion and by the corestriction of the endomap, the homeomorphism of Scott topologies induced by an order isomorphism, and the pullback of Scott-open sets along an order isomorphism.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

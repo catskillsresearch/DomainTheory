@@ -1,3 +1,8 @@
+/-ai
+Decoding the pair-combination of a paired code is the pair whose left component is the join of the two left endpoints and whose right component is the meet of the two right endpoints.
+
+Unfold the operation and the decoding, simplify unpairing, and rewrite the rational maximum and minimum codes.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

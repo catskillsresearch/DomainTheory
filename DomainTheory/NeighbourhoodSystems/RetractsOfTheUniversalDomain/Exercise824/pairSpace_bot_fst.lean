@@ -1,3 +1,8 @@
+/-ai
+The first component of the bottom of the pair space is the bottom of the function space.
+
+Rewrite by the pairing of the two bottoms and by the first projection of a pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

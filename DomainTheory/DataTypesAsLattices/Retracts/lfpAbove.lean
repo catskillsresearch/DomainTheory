@@ -1,3 +1,6 @@
+/-ai
+The least upper bound of the iterates of f above a set x is the union over n of the n-fold iterate of f starting at x.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

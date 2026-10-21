@@ -1,3 +1,8 @@
+/-ai
+If i preserves the way-below relation and the domain is a continuous lattice, then Scott's candidate retraction preserves directed suprema.
+
+For a nonempty directed set S', compare the retraction of the supremum with the supremum of the retractions. Monotonicity of the retraction puts each retraction of a member below the retraction of the supremum. In the other direction, take x with i(x) below the supremum of S'. Continuity of the domain writes x as the supremum of the elements z way below x. For each such z, way-below preservation puts i(z) way below the supremum of S', so i(z) lies below some member x' of S'. Thus z lies below the retraction of x' and hence below the supremum of the retractions, and therefore so does x.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

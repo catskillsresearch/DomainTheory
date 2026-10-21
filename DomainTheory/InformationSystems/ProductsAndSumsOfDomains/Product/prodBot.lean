@@ -1,3 +1,6 @@
+/-ai
+The least token of a product is the pair of the two least tokens. That pair is a product token because its first component is least.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

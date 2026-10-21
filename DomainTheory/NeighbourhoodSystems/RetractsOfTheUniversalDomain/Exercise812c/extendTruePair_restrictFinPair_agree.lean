@@ -1,3 +1,8 @@
+/-ai
+Padding the restriction of a total sequence of Boolean pairs to length n agrees with the original sequence at every index below n.
+
+The one-bit agreement lemma, applied to each component, gives the two Boolean equalities, and rewriting them identifies the pairs.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

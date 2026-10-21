@@ -1,3 +1,8 @@
+/-ai
+The carrier of the image under T of the n-th system of the tower is the token type of the generating system.
+
+This is the carrier component of the iteration at that level.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

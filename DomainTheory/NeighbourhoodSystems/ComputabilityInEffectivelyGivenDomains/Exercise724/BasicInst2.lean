@@ -1,3 +1,7 @@
+/-ai
+The token set Γ of finite and infinite sequences of natural numbers is nonempty. The empty finite sequence is a witness.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

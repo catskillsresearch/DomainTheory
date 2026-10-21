@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood presented by the positive bisection index depends only on the three presented sets.
+
+The two deciders are unchanged by the set equalities, and each is 0 or 1. When both are 0, the left-half congruence applies. In every other combination both sides present the middle neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

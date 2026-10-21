@@ -1,3 +1,8 @@
+/-ai
+An automaton whose state type has cardinality zero accepts no word.
+
+An accepted word would yield a start state and a run to an accept state, but a type of cardinality zero has no element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

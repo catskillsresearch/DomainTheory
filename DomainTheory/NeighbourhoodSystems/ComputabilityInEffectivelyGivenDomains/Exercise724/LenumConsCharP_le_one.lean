@@ -1,3 +1,9 @@
+/-ai
+The packed consistency characteristic is at most one.
+
+This is the unpacked bound, applied to the two components.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

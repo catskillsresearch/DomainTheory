@@ -1,3 +1,9 @@
+/-ai
+The extracted value of a code equals the value component of the reference decoder.
+
+Unfold the extractor, rewrite by the specification of the iterated state, and simplify the unpairings.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

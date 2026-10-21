@@ -1,3 +1,6 @@
+/-ai
+The first right-hand side sends systems D and E to the sum of D with the product of D and E.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

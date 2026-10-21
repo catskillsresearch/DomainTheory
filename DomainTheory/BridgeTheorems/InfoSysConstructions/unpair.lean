@@ -1,3 +1,6 @@
+/-ai
+Unpairing splits an element of a product of information systems into the pair of its images under the first and second projections.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,3 +1,8 @@
+/-ai
+Prepending a bit to the partial element at a string yields the partial element at the concatenated string.
+
+By extensionality of elements, a neighbourhood of the image is witnessed by a set contained in the cone of the original string, and monotonicity of prepending puts the prepend of that cone inside the output; the prepend of a cone is the cone of the concatenation. Conversely, the cone itself belongs to the partial element, and its prepend is the cone of the concatenation, which is contained in the output.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

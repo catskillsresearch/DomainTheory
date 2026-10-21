@@ -1,3 +1,6 @@
+/-ai
+A pre-fixed point of the monoid power-set operator is the carrier of a submonoid. The unit belongs to the image and hence to the set, and the product of two members belongs to the pointwise square, hence to the image, and hence to the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

@@ -1,3 +1,8 @@
+/-ai
+The packaged map subApprox lies below the identity of the function space.
+
+The elementwise characterization of the order reduces the inequality to the filter transport of an element lying below that element. The filter transport is the filter of sub of the extracted map, which lies below the filter of the extracted map because sub lies below the identity, and that filter is the original element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

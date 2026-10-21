@@ -1,3 +1,7 @@
+/-ai
+This file gathers and re-exports the finite approximants of an element, the directed suprema of Factoid 4.4, and Factoid 3.6, as the setting for Scott's Factoid 4.5, in which finite elements are compact and every element is the directed least upper bound of the finite elements below it.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36

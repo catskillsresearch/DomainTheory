@@ -1,3 +1,8 @@
+/-ai
+If a topology is coarser than the Scott topology, then every set open in it is Scott-open.
+
+The inequality of topologies sends opens of the coarser topology to Scott-topology opens, and those are exactly the Scott-open sets.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

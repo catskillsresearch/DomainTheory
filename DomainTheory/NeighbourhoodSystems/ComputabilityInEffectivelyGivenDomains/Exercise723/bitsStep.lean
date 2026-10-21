@@ -1,3 +1,6 @@
+/-ai
+The step bitsStep advances the packed state (n, N, acc) of the bitsCode iteration. It leaves n unchanged, replaces N by N + 1, and replaces the accumulator by the cons of N onto acc when the N-th bit of n is set, and by acc otherwise. The cons is coded by pairing N with acc and adding one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

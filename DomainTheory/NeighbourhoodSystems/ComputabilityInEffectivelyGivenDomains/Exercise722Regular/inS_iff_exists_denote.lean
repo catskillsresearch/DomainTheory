@@ -1,3 +1,8 @@
+/-ai
+A language lies in S if and only if it is the nonempty denotation of some expression.
+
+If the language lies in S, completeness supplies an expression denoting it and membership supplies nonemptiness. Conversely, soundness sends a nonempty denotation back into S.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

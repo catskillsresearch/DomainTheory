@@ -1,3 +1,8 @@
+/-ai
+A set belongs to the iterate element determined by a sequence exactly when the set is an iterate neighbourhood and each term of the sequence contains the corresponding fiber.
+
+The identity is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

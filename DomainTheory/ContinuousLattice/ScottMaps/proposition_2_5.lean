@@ -1,3 +1,8 @@
+/-ai
+Scott continuity of a map between complete lattices is equivalent to preservation of directed suprema. This is Scott's Proposition 2.5.
+
+One direction is the theorem that a Scott-continuous map preserves directed suprema. The other is the theorem that preservation of directed suprema yields Scott continuity.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

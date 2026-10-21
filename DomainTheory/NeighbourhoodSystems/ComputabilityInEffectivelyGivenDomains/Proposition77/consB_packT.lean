@@ -1,3 +1,8 @@
+/-ai
+The consistency bit of a packed equality bit, consistency bit, and intersection index is the consistency bit.
+
+Unfolding the consistency bit and the packing, the pairing projections return that middle component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

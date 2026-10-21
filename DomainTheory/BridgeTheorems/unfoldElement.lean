@@ -1,3 +1,6 @@
+/-ai
+The map unfoldElement sends a tree-system element to the element of the sum-and-product system whose carrier is the image of the tree carrier under tree unfolding. A finite set of sum tokens is consistent because its fold lies in the tree element, tree consistency of that fold transports to sum consistency of the unfold, and unfolding after folding restores the set. If the set entails a sum token, the fold of the set entails the fold of the token, so the tree element contains that fold, and unfolding it recovers the token.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,3 +1,8 @@
+/-ai
+The empty input set and the empty output set determine a function token that lies in every function-space element. That token is the bottom token of the function space.
+
+The empty consistency witnesses are used, and Factoid 3.2 places the bottom token in the carrier.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

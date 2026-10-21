@@ -1,3 +1,6 @@
+/-ai
+Forget-insertion sends a U-token and a finite set of V-tokens to the insertion of the forgotten token into that set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,3 +1,9 @@
+/-ai
+The successor combinator equals G applied to zero and then to zero again. The six constants are recovered from G and 0 by projection.
+
+Zero is definitionally the numeral 0. Simplifying by the zero equation for G and the zero equation for the packed generator yields the successor.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

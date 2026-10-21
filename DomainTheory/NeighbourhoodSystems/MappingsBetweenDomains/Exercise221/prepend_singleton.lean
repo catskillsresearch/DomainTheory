@@ -1,3 +1,8 @@
+/-ai
+Prepending a finite binary string σ to the singleton of a finite binary string ρ yields the singleton of σ followed by ρ.
+
+By extensionality, a string in the prepend is σ followed by ρ, and σ followed by ρ arises by taking ρ from the singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

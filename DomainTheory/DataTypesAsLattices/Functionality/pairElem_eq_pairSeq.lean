@@ -1,3 +1,9 @@
+/-ai
+Element pairing agrees with sequence pairing.
+
+The two sides are definitionally equal.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

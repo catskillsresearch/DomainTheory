@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (2.15), as a combinator. The conditional applied to x, then to y, then to K applied to zero, equals the union of x and y.
+
+Rewrite by the three-argument β-law for the conditional and the β-law for K, then apply equation (2.15).
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

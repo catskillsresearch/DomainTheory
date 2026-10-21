@@ -1,3 +1,8 @@
+/-ai
+The two-element sequence of two sets, applied to an argument, equals the conditional that returns the first set on a zero argument and otherwise the conditional of the predecessor that returns the second set or the bottom element.
+
+The beta law applies, using continuity of that body.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

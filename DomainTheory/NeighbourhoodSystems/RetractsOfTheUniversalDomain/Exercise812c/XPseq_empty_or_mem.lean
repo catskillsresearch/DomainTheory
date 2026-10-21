@@ -1,3 +1,8 @@
+/-ai
+XPseq n is empty or a neighbourhood of the second system.
+
+Apply finite-union closure in that system. For each finite sign sequence, the atom-pair invariant of the padded sequence gives the emptiness agreement and the membership alternative on the second side, and the first clause of the splitting specification for the choice split of that system against X n is the required empty-or-membership alternative.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

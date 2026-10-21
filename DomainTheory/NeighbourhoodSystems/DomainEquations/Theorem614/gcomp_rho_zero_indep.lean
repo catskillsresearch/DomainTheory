@@ -1,3 +1,8 @@
+/-ai
+Any two strict maps out of the colimit agree after composition with the zeroth projection, when every neighbourhood of the generating system is its master.
+
+Relational extensionality applies, and both relations are rewritten by the description of the composite with the zeroth projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

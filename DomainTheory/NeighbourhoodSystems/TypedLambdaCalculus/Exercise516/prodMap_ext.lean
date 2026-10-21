@@ -1,3 +1,8 @@
+/-ai
+Two approximable maps from the product of C with itself to C are equal once they agree on every pair of finite shape elements.
+
+Agreement of element maps on principal elements reduces the claim to an arbitrary neighbourhood of the product. That neighbourhood is a product of two neighbourhoods of C, and each is a shape neighbourhood, so it is a product of two shapes. The principal element of that product neighbourhood is the pair of the corresponding shape elements, and the hypothesis applies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

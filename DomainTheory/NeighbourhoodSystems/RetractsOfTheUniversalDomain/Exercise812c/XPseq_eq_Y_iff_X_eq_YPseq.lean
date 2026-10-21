@@ -1,3 +1,8 @@
+/-ai
+XPseq j equals the enumerated set Y k if and only if the enumerated set X j equals YPseq k.
+
+If the first equality holds, the two cross-inclusion facts give both inclusions between X j and YPseq k. If the second equality holds, the same two facts in the other direction give both inclusions between XPseq j and Y k. Each pair of inclusions is antisymmetry.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

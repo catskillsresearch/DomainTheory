@@ -1,3 +1,8 @@
+/-ai
+The McCarthy conditional on the numeral k + 1 returns its right argument.
+
+Unfolding the conditional and the numeral leaves only the right branch.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

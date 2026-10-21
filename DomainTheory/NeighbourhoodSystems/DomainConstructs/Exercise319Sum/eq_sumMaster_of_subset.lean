@@ -1,3 +1,8 @@
+/-ai
+A sum neighbourhood that contains the sum master is equal to the sum master.
+
+Every sum neighbourhood is contained in the sum master, so that inclusion together with the given inclusion yields equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318

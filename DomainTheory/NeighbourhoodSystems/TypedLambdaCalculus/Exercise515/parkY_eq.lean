@@ -1,3 +1,8 @@
+/-ai
+Park's second component y₀ satisfies the equation y = b · x ∪ a · y ∪ d.
+
+The fixed-point identity for the star product rewrites y₀ as a · y₀ united with (b · x₀ ∪ d). Reassociating and commuting the unions yields b · x₀ ∪ a · y₀ ∪ d.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

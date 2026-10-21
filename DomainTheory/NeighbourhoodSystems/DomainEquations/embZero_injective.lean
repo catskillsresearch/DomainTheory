@@ -1,3 +1,8 @@
+/-ai
+Equal zero embeddings have equal arguments.
+
+Equality gives mutual inclusions, the subset characterization turns them into inclusions of the underlying sets, and antisymmetry equates the sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

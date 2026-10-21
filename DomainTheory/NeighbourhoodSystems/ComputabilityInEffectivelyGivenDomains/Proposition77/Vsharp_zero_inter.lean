@@ -1,3 +1,8 @@
+/-ai
+The intersection of the enumerated set at 0 with the enumerated set at m equals the enumerated set at m.
+
+The value at 0 is the master neighbourhood, and the value at m is a section neighbourhood, hence contained in the master neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

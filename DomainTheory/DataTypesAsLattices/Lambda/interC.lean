@@ -1,3 +1,6 @@
+/-ai
+The combinator interC is the least fixed point of the operator interStep.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

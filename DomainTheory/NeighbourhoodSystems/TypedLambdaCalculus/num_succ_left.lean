@@ -1,3 +1,8 @@
+/-ai
+The pairing value of n + 1 and 0 is one more than the pairing value of 0 and n.
+
+Unfold the pairing function, rewrite the sums (n + 1) + 0 and 0 + n, apply the triangular recurrence, and compare.
+ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

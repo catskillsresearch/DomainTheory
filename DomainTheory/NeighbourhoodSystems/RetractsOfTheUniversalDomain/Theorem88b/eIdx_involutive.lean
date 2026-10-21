@@ -1,3 +1,8 @@
+/-ai
+The index swap is an involution.
+
+Unfold the definition and case-split on the comparisons with 0 and with the master index. Each case returns the original input.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable

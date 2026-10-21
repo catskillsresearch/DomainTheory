@@ -1,3 +1,6 @@
+/-ai
+The set of natural numbers represented by an element of the powerset domain consists of those numbers whose singleton complement belongs to the element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

@@ -1,3 +1,8 @@
+/-ai
+The element map of the spacing map is not surjective.
+
+Assume a preimage of the principal cone of the string false followed by true. The composite of the left inverse with the spacing map is the identity, so that preimage is the left inverse of this cone. Substituting the cone formulas for both maps identifies two principal cones. Principal injectivity and cone injectivity turn that identification into an equality of strings, which simplifies to a contradiction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

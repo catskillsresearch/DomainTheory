@@ -1,3 +1,6 @@
+/-ai
+The length fold step ignores the head and the parameters and returns one more than the accumulator.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

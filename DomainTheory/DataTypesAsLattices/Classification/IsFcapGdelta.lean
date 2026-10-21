@@ -1,3 +1,6 @@
+/-ai
+A set is a closed-and-Gδ intersection when it is the intersection of a Scott-closed set and a countable intersection of Scott-open sets.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

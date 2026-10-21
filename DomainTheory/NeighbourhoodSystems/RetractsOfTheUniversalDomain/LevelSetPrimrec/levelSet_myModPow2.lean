@@ -1,3 +1,12 @@
+/-ai
+Truncating a mask to its low two-to-the-k bits does not change the level set it presents
+at level k.
+
+By extensionality, membership rewrites by the level-set membership law, the correctness
+of the power remainder, and the test-bit law for remainder by a power of two. The
+remainder of the point by two to the k is strictly below that power, which simplifies
+the truncated test.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

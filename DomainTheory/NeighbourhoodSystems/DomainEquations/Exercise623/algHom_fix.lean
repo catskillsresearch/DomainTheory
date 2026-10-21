@@ -1,3 +1,8 @@
+/-ai
+Every homomorphism g from Exp to an algebra is a fixed point of the operator sending h to the structure map composed with T(h) composed with the inverse structure map. This is the homomorphism square, rearranged by the identity that the structure map composed with its inverse is the identity on Exp.
+
+Rewrite g as g composed with the identity on Exp, replace that identity by the structure map composed with its inverse, reassociate, substitute the homomorphism square, and reassociate once more.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

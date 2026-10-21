@@ -1,3 +1,8 @@
+/-ai
+Evaluation of the master code returns the master index of the universal domain.
+
+The tag of the master code is two, so both selectors equal zero and the fuel step returns the master index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

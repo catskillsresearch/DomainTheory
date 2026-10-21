@@ -1,3 +1,6 @@
+/-ai
+Example 8.4(a) packages an order isomorphism between the elements of O and the fixed-point set of a at a non-bottom element u of D. It sends t to fixOfO u t, and it sends a fixed point y back to the elementwise action of check on y.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

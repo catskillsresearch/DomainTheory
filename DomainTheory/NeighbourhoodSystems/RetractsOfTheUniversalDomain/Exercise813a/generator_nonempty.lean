@@ -1,3 +1,8 @@
+/-ai
+Every generator is nonempty.
+
+The power of two at the generator's index has that bit set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

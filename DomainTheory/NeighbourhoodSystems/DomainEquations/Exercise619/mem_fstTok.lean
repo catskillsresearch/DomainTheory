@@ -1,3 +1,8 @@
+/-ai
+A set belongs to the first component of a product element if and only if it is a neighbourhood of the first factor and the element contains the product neighbourhood of that set with the master of the second factor.
+
+The two sides are definitionally the same.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

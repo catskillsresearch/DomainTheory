@@ -1,3 +1,6 @@
+/-ai
+The second component Gamma_E of the double fixed point is the union, over all stages, of the second coordinate of the pair iteration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

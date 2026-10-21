@@ -1,3 +1,8 @@
+/-ai
+The image of the colimit under T equals the colimit as neighbourhood systems.
+
+Extensionality of neighbourhood systems applies. A neighbourhood of the image belongs to the colimit by the continuity inclusion, and a neighbourhood of the colimit belongs to the image by the reverse inclusion. The masters agree by the two master computations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

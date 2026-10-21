@@ -1,3 +1,6 @@
+/-ai
+Scott 1972, Definition 2.3. A complete lattice is a continuous lattice when every element is the least upper bound of the set of elements way below it.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

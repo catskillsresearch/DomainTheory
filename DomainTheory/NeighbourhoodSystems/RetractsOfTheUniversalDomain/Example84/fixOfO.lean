@@ -1,3 +1,6 @@
+/-ai
+For an element u of D, fixOfO sends an element t of O to the element of D whose neighbourhoods Z are the D-neighbourhoods for which Z is the master, or t contains {0} and u contains Z. The filter is assembled directly from that membership condition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

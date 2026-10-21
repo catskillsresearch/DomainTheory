@@ -1,3 +1,8 @@
+/-ai
+The master neighbourhood of the Smyth power domain is the down-set of the master neighbourhood of the original system.
+
+The two sides are the same by the definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

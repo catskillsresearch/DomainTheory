@@ -1,3 +1,8 @@
+/-ai
+The left copy of the bottom token of A belongs to the carrier of the left image of every element of A.
+
+The witness is the singleton of that bottom token. Its only token is the bottom token, which belongs to every element. The singleton is consistent in the sum by the left clause, because its left part is the consistent singleton of the bottom token and its right part is empty, and the entailment of the left bottom token is the entailment, in A, of that consistent singleton.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

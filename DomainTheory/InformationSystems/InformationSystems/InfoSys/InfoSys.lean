@@ -1,3 +1,6 @@
+/-ai
+An information system on a token type with decidable equality consists of a least-informative token, a collection of consistent finite sets, and an entailment relation from finite sets to tokens, subject to Scott's six axioms. Consistency is downward closed under inclusion, and every singleton is consistent. If a finite set entails a token, inserting that token preserves consistency. Every consistent set entails the least token, and a consistent set entails each of its members. If a consistent set entails every member of another consistent set, then it entails whatever that second set entails.
+ai-/
 module
 
 

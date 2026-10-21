@@ -1,3 +1,6 @@
+/-ai
+A binary relation is recursively enumerable when the unary predicate of its pairing code is recursively enumerable.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

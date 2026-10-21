@@ -1,3 +1,8 @@
+/-ai
+The intersection of the tagged middle copies of Y and of Y' equals the tagged middle copy of Y ∩ Y'.
+
+Extensionality reduces the claim to a token, which is split into the basepoint and the three summands, and membership is simplified in the middle copy, the middle tag, and the intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

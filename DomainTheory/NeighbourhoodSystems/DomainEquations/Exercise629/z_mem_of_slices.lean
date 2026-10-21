@@ -1,3 +1,8 @@
+/-ai
+An element of the indexed product that contains every slice of a finitely supported tuple of neighbourhoods contains the product neighbourhood of that tuple.
+
+Take a support list. Each set is contained in the corresponding master, so the element contains the product neighbourhood of the restriction to that list. The restriction equals the original tuple: on the list it keeps the sets, and off the list both sides are the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

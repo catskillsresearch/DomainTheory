@@ -1,3 +1,8 @@
+/-ai
+The inverse map is a left inverse of the forward map from elements of C to elements of D'.
+
+Compare elements by membership. A cone or singleton in the inverse image of the forward image comes from the corresponding membership law for the forward map. Conversely, the subelement law writes a neighbourhood as a cone or a singleton, and the corresponding membership law puts it back into the composite.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

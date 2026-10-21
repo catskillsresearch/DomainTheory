@@ -1,3 +1,8 @@
+/-ai
+The forget-finset of a finite set of U-tokens with one token inserted is the forget-finset of the original set with the underlying V-token inserted.
+
+Extensionality uses the membership criterion for the forget-finset. A forgotten token comes from a member of the insertion: the inserted token contributes its value, and an original member contributes a member of the original forget-finset. Conversely, the inserted value comes from the inserted token, and a member of the original forget-finset comes from a member that remains after insertion.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

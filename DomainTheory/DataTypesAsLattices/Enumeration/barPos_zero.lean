@@ -1,3 +1,8 @@
+/-ai
+Applying the positive bar branch of u and x to the numeral 0 yields the numeral 1.
+
+Simplify by the definition of the positive branch, equation (2.22), and the zero case of the conditional (2.7).
+ai-/
 module
 
 public import Mathlib.Computability.Halting

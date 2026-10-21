@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (7.15) and (7.16). The iterator at stage zero returns its value argument. At the successor of a stage it applies the function argument to the iterator at the previous stage.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

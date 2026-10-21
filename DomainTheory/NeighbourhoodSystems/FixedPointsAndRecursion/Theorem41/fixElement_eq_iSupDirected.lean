@@ -1,3 +1,8 @@
+/-ai
+The least fixed point equals the directed supremum of the iterates from the bottom, indexed by the natural numbers and directed by passing to a common maximum.
+
+Extensionality of elements and the membership rule for a directed supremum reduce the equality to a neighbourhood lying in some iterate. Membership in the n-th iterate is the relation from the master that defines the least fixed point, in both directions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

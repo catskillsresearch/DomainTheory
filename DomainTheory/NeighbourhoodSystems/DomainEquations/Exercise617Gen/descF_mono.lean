@@ -1,3 +1,8 @@
+/-ai
+The successor operation of a letter on a Tsig-algebra is monotone.
+
+The element action of the structure map preserves order, and it is applied to the monotonicity of the tagged injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

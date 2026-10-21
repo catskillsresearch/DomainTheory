@@ -1,3 +1,6 @@
+/-ai
+pathAppend concatenates two paths that meet at a common middle state, yielding a path on the concatenated word. A trivial path on the empty word is dropped, and a one-step path is rebuilt on the appended word with the recursively appended continuation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

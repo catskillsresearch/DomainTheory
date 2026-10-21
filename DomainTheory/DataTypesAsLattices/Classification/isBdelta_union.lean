@@ -1,3 +1,9 @@
+/-ai
+The union of two Bδ sets is a Bδ set.
+
+Write the two sets as countable intersections of Boolean-open sets. The unions of a set from the first family with a set from the second, indexed by unpairing, are Boolean open. An element of either intersection lies in every such union. If an element lies in every such union but fails to lie in every set of the first family, some set of that family excludes it, and reading the indexed union at the pairs with that first index forces the element into every set of the second family.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

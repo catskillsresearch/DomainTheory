@@ -1,3 +1,9 @@
+/-ai
+The intersection-equality characteristic equals one if and only if either the first address extends the second and the third code decodes to the first address, or the second address extends the first and the third code decodes to the second address.
+
+The arithmetic form equals one if and only if one of the two products of bits equals one, by casing each product as zero or one. The product criterion and the list-equality criterion then rewrite each product as a prefix characteristic equal to one conjoined with agreement of the decoded lists.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

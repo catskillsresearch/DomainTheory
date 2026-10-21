@@ -1,3 +1,6 @@
+/-ai
+The operator induced by an approximable self-map of the function space sends an approximable map to the map read from the image of that map's filter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

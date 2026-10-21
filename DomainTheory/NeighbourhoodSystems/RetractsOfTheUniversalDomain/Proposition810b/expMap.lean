@@ -1,3 +1,6 @@
+/-ai
+The exponential of an approximable map h into the domain of a function space and an approximable map k out of its codomain is the currying of k composed after evaluation composed after the product of the identity on the function space with h. On elements it sends a map f to k composed after f composed after h.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

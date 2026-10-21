@@ -1,3 +1,8 @@
+/-ai
+The right-hand code of the canonical split is primitive recursive.
+
+It is clipping from a midpoint onward, applied to the pair of the midpoint code and the canonical code. That composition equals the right-hand split once the paired arguments are unpacked.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

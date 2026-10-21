@@ -1,3 +1,8 @@
+/-ai
+Interpreting the closed step term for vaal in the constantly bottom environment equals the graph of vaalF.
+
+Unfold both definitions. Interpretation of an abstraction is a graph, so two congruences for the graph constructor, with extensionality in the bound value and in the argument, reduce the claim to equality of the two conditionals. Rewrite the closed term for G by its interpretation, and simplify interpretation, environment update, and the successor of a numeral.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

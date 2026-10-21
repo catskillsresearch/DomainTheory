@@ -1,3 +1,6 @@
+/-ai
+A splitting operation satisfies the specification when, whenever emptiness of a set A matches emptiness of a set B of rationals and B is empty or a neighbourhood of U, both outputs on the next set are empty or neighbourhoods of U, emptiness of the first output matches emptiness of A met with that set, emptiness of the second output matches emptiness of the difference, the two outputs are disjoint, and their union is B.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

@@ -1,3 +1,6 @@
+/-ai
+The step pair of a code e is the pair whose first component is the domain neighbourhood indexed by the first half of the unpairing of e and whose second component is the codomain neighbourhood indexed by the second half.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

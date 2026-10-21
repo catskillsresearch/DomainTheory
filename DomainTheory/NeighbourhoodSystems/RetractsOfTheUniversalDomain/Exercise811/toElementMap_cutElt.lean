@@ -1,3 +1,8 @@
+/-ai
+For every real t at most 1, the cut element of t is a fixed point of a.
+
+Compare membership of intervals [0, s) by the endpoint extensionality of R. Membership after applying a means that some interval [0, r) in the cut is related by a to [0, s). The relation is either a strict step r < s or the diagonal r = s = 1. A strict step from a strict cut witness pushes the cut inequality forward to s, while a strict step from the endpoint r = 1 would force 1 < s, contradicting s ≤ 1. The diagonal case puts s = 1 in the cut. Conversely, a strict cut witness at s is preceded, by density of the rationals, by a positive rational r at most 1 with 1 − t < r < s, and [0, r) is then strictly related to [0, s). If s = 1, the interval [0, 1) lies in the cut and is diagonally related to itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

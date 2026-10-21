@@ -1,3 +1,8 @@
+/-ai
+The combinator G is combinatory.
+
+Rewrite G as the application of the conditional to the packed combinators and then to zero, and close under application from the conditional, the packed combinators, and zero.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

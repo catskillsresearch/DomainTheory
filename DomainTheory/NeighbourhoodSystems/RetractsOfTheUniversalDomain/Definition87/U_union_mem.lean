@@ -1,3 +1,8 @@
+/-ai
+The union of two sets of rationals, each empty or a neighbourhood of the universal system, is empty or itself a neighbourhood.
+
+If both sets are empty, the union is empty. If exactly one is empty, the union is the other set. If both are neighbourhoods, concatenating their presenting lists presents the union, nonemptiness passes from the first set along the left inclusion, and both inclusions in the unit interval pass to the union.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

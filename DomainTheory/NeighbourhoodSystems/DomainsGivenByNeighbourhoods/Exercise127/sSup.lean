@@ -1,3 +1,6 @@
+/-ai
+The least upper bound of a bounded set of elements is the infimum of the family of its upper bounds, which is nonempty because the set is bounded.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

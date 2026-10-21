@@ -1,3 +1,8 @@
+/-ai
+XPseq n is a neighbourhood of the second system.
+
+The empty-or-membership alternative for XPseq n is resolved by the fact that XPseq n is not empty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,3 +1,6 @@
+/-ai
+The indexed separated sum of a family of neighbourhood systems, assuming every neighbourhood is nonempty, is the neighbourhood system on optional dependent pairs whose neighbourhoods are the sum master and the tagged copies of the neighbourhoods of the summands, and whose own master is the sum master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

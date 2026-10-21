@@ -1,3 +1,8 @@
+/-ai
+The pointwise binary join of two Scott maps preserves directed suprema.
+
+Let S be a nonempty directed set. Each map preserves the directed supremum of S, so the join of the values at the supremum equals the join of the two image suprema. Each of those image suprema lies below the supremum of the pointwise joins, and each pointwise join on S lies below that join of image suprema.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

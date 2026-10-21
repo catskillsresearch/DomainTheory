@@ -1,3 +1,8 @@
+/-ai
+The tail of a bit consed onto a partial element of σ is again that partial element.
+
+Rewrite by the partial clause of cons and the partial clause of tail; the equation holds by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

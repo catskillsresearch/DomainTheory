@@ -1,3 +1,8 @@
+/-ai
+For a code strictly below another, the memo table of the certificate step at the larger code stores, at the corresponding earlier position, the value of the evaluator at the smaller code.
+
+This is the memo-table lookup law for the course-of-values iteration, applied to the certificate step.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

@@ -1,3 +1,88 @@
+/-ai
+If the i-th bit of n is set, then i is strictly smaller than n.
+
+Assume the contrary. Then n is at most i, hence strictly smaller than 2 to the power i. The bit hypothesis rewrites by the lemma that a number below that power has the bit false, and decide rejects the resulting Boolean contradiction.
+
+Iterating integer halving one further time halves the already halved value: halfIter n (k + 1) equals halfIter of n divided by 2, taken k times.
+
+Unfold halfIter and apply the successor law for function iteration.
+
+The map sending a paired natural number to halfIter of its two components is primitive recursive.
+
+Division by 2 of the twice-projected right component is primitive recursive. Primitive recursion from the identity with that step equals, after simplifying the unpairing, the constant-iterator form of repeated division by 2.
+
+The map sending a paired natural number to bitAt of its two components is primitive recursive.
+
+It is remainder modulo 2, composed with the primitive-recursive half-iteration map.
+
+The value bitAt n k is at most 1.
+
+Unfold bitAt and close the inequality with omega.
+
+The value bitAt n k equals 1 if and only if the k-th bit of n is set.
+
+Induct on k, keeping n general. At zero the claim is that n modulo 2 equals 1 if and only if the zeroth bit is set, rewritten by the zeroth-bit lemma and the decision of Boolean truth. At a successor, the successor law for half-iteration and the successor law for test bits reduce the claim to the inductive hypothesis at n divided by 2.
+
+The complement of the neighbourhood nbhd n is the set of positions at which a bit of n is set.
+
+Extend the two sets in the position and simplify the definition of nbhd.
+
+If every entry of a finite list L is witnessed by some neighbourhood of a PN-element x whose index has that entry as a set bit, then one neighbourhood of x witnesses every entry of L at once.
+
+The argument is structural recursion on L. The empty list is witnessed by the index 0, using that nbhd 0 is the master neighbourhood and that x contains the master. For a head k and a tail, take the witness for k and the recursive witness for the tail, and combine their indices by myLor. The combined neighbourhood lies in x because the intersection of neighbourhoods is the neighbourhood of myLor and x is closed under intersection. Each requested bit of the combined index is the Boolean disjunction of the two indices' bits, so it holds either by the head witness or by the recursive witness.
+
+A position k lies in bitsList n if and only if the k-th bit of n is set.
+
+Unfold bitsList and rewrite membership in a filtered initial segment. The forward direction is the filter predicate. The reverse direction adds the bound that a set bit lies strictly below n.
+
+An element x of PN contains the neighbourhood nbhd n if and only if the complement of that neighbourhood is contained in elemSet x.
+
+Rewrite the complement by its bit description. In the forward direction the same index n witnesses each of its set bits. In the reverse direction the combined-witness lemma, applied to bitsList n, produces one neighbourhood of x whose set bits cover those of n. That neighbourhood is contained in nbhd n, because a point it excludes has the corresponding bit of n either false, which is the required membership, or true, which contradicts the covering bit. Upward closure of x then yields membership of nbhd n.
+
+If x is a computable element of the presentation PNpres, then membership in elemSet x is recursively enumerable.
+
+Computability says that membership of nbhd n in x is recursively enumerable. The bit test on the two components of a paired number is recursively decidable by bitAt, its primitive recursiveness, and the correctness of bitAt. Conjoining that test with membership of the left component, and projecting away the pair, matches the existential definition of membership in elemSet after the unpairing identities.
+
+A number k lies in the list decoded from bitsCode n N if and only if k is strictly below N and the k-th bit of n is set.
+
+Recurse on N. At zero both sides simplify by the zero clauses of bitsCode and of list decoding. At a successor, split on whether the N-th bit of n is set. If it is, bitAt equals 1, the selector takes the cons branch, and decoding a successor code is cons; the inductive hypothesis and a split of the successor bound by omega give both directions. If it is not, bitAt differs from 1 and is at most 1, hence equals 0 by omega, the selector keeps the old accumulator, and the inductive hypothesis again splits the successor bound, with the new index contradicting the failed bit.
+
+The step bitsStep is primitive recursive.
+
+The three components of the packed state are primitive recursive, as are the bitAt test, the cons code given by pairing the counter with the accumulator and adding one, and the selector between that cons and the old accumulator. Packing the unchanged first component with the incremented counter and the selected accumulator is identified with bitsStep.
+
+The first component of bitsStep s equals the first component of s.
+
+Unfold bitsStep and cancel the outer pairing.
+
+The counter component of bitsStep s is one greater than the counter component of s.
+
+Unfold bitsStep and cancel the pairings that expose the counter.
+
+The accumulator component of bitsStep s is the selector that conses the current counter onto the accumulator when the corresponding bit is set, and otherwise leaves the accumulator unchanged.
+
+Unfold bitsStep and cancel the pairings that expose the accumulator.
+
+Iterating bitsStep k times from the packing of n with a zero counter and a zero accumulator leaves n unchanged, sets the counter to k, and sets the accumulator to bitsCode n k.
+
+Induct on k. The zero iteration is the identity on the initial packing, whose accumulator is the zero clause of bitsCode. At a successor, the three component lemmas for bitsStep transport the inductive state, and the accumulator equation is the defining clause of bitsCode.
+
+The map sending a paired number to bitsCode of its two components is primitive recursive.
+
+Primitive recursion starts from the packing of the left component with a zero counter and a zero accumulator, and steps by bitsStep on the accumulator, with the iteration count equal to the right component. The constant-iterator form of that recursion, read through the iteration specification of bitsStep, is the accumulator bitsCode.
+
+If membership in elemSet x is recursively enumerable, then x is a computable element of PNpres.
+
+Universal quantification of that predicate over the entries of a decoded list is recursively enumerable, and the diagonal sending n to bitsCode n n is primitive recursive. After composition, rewrite by the neighbourhood-membership criterion and the bit description of the complement. A set bit of n lies on that decoded diagonal list, using that a set bit is strictly below n, and conversely a decoded entry whose bit is set is a set bit of n.
+
+An element x of PN is a computable element of PNpres if and only if membership in elemSet x is recursively enumerable.
+
+One direction passes from a computable element to an enumerable positive set, and the other is the converse just proved.
+
+If the first component of unnum c is a successor k + 1, then the second component is strictly smaller than c.
+
+The round trip through numbering, rewritten by the successor hypothesis, says that numbering that successor with the second component recovers c. The strict growth of numbering in a positive left argument, together with omega, gives the decrease.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

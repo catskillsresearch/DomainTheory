@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of O is contained in the universe.
+
+Every set is contained in the universe.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

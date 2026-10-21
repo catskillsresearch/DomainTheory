@@ -1,3 +1,7 @@
+/-ai
+Abstraction of a map tau, in the sense of Table 2, is the graph of tau.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Continuous

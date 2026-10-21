@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the identity endofunctor, the predicate of being continuous on maps, and the lemmas that the identity endofunctor fixes objects and morphisms.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

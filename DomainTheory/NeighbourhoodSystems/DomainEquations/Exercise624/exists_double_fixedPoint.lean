@@ -1,3 +1,8 @@
+/-ai
+There is a pair of token sets, both containing the empty string, that solve the two coupled token equations at once: the token set of D summed with the product of D and E equals the first set, and the token set of the sum of D and E equals the second.
+
+The two sets are Gamma_D and Gamma_E, using membership of the empty string in each and the two fixed-point equations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

@@ -1,3 +1,6 @@
+/-ai
+Canonicalizing a list of rational pairs clips every pair into the half-open unit interval and discards degenerate pairs. If nothing survives, the result is the singleton list of the pair zero and one, which presents the master neighbourhood of U; otherwise it is the surviving list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

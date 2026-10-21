@@ -1,3 +1,8 @@
+/-ai
+If a set is nonempty, then its tagged copy at any index is nonempty.
+
+A token of the set tags to a token of the copy.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

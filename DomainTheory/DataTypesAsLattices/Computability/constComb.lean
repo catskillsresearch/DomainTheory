@@ -1,3 +1,6 @@
+/-ai
+The constant combinator for a natural number k is K applied to the numeral of k.
+ai-/
 module
 
 public import Mathlib.Computability.RE

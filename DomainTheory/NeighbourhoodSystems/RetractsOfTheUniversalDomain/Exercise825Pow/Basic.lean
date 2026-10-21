@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the infinite iterate of Exercise 3.16, the bijection of a sum of two copies of the natural numbers with the natural numbers, reindexing of function types, the sum-arrow order isomorphism, interleaving of sequences, and the product order isomorphism of an infinite power. The commentary records that interleaving transports along the sequence equivalence of the infinite iterate to an isomorphism of an infinite power with its product, and in particular for the universal domain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

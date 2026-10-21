@@ -1,3 +1,9 @@
+/-ai
+Application of a seven-way sum to the injection of x at tag 0 is the injection at tag 0 of the application of the first summand to x.
+
+Rewrite by the application equation, the body, the zero and one clauses of tagged injection, and the double conditional at the numeral zero.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,8 @@
+/-ai
+If the consistency character equals one, the enumeration is the step neighbourhood of the decoded entry list.
+
+This is the positive branch of the conditional in the enumeration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

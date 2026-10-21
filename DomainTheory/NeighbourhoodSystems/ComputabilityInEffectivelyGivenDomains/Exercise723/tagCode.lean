@@ -1,3 +1,7 @@
+/-ai
+The code tagCode of a list code and a value is the left fold of tagStep, started at zero, with parameter the numeral of zero and that value, over the code obtained by appending the list code to zero. Appending to zero reverses the decoded list, so the left fold computes the right fold that defines tag.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

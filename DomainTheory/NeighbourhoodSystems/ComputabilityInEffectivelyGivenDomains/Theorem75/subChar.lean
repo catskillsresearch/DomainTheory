@@ -1,3 +1,6 @@
+/-ai
+The step-function inclusion characteristic of codes a and b, correct when a is consistent, is the fold of the inclusion step with parameter a and start value 1 over the list coded by b.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

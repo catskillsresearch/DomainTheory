@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 4.4. If a, b, and c are retracts, f is a map from c to a, and g is a map from c to b, then the product mediator of f, g, and c is a map from c to a ⊗ b, its composite with the first projection is f, and its composite with the second projection is g.
+
+The function-space equation is compared as graphs after unfolding the arrow and the mediator. Typing of f and of g, evaluated at c(x) and combined with the retract law for c, shows that a and b fix those applications. The diagonal and one product application compute one side, and the retract law for c, the diagonal, and two product applications compute the other, so the fixed-point equations identify them. Each projection equation is a graph comparison: the component laws, the diagonal, and the product application reduce it to the restriction of the typed arrow along c.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

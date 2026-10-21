@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports the extension and embedding results of Scott 1976, §1: membership and openness for the continuous extension, Theorem 1.5 and the agreement of that extension with a continuous map on the subspace, the facts that the embedding is inducing, injective, and continuous, and Theorem 1.6 together with injectivity and continuity of the embedding.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding.Basic

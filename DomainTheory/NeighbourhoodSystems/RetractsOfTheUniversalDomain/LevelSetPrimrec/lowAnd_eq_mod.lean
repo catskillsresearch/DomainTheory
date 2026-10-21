@@ -1,3 +1,13 @@
+/-ai
+The low-bit conjunction equals the remainder modulo two of the bitwise conjunction.
+
+The remainder of the conjunction is one if and only if both low bits are one, by the
+test-bit law for conjunction at index zero, rewritten through the zero test bits and the
+decision form of conjunction. Unfolding the low-bit conjunction, the four combinations
+of the two remainders modulo two are considered. In each case where a factor is zero,
+the remainder of the conjunction is not one, so arithmetic gives zero on both sides.
+When both remainders are one, the characterization gives remainder one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

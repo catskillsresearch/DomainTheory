@@ -1,3 +1,6 @@
+/-ai
+Encoding sends the empty list to 0 and a cons cell of an entry onto a list to one more than the pair of that entry and the encoding of the list. The successor keeps the empty list, coded by 0, distinct from every nonempty list.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,3 +1,8 @@
+/-ai
+Theorem 3.13(iii) of Scott (1981, PRG-19) states that when a family of approximable maps is bounded in the sense of MapsBounded, the value of its supremum at an element x equals the supremum of the values of its members at x.
+
+The boundedness hypothesis is rewritten as pointwise boundedness, and the identity is the corresponding identity for pointwise bounded families.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

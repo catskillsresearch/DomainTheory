@@ -1,3 +1,8 @@
+/-ai
+The numeral zero is not the successor of any numeral.
+
+The successor of a numeral is the numeral of the successor, and that numeral is distinct from the numeral zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

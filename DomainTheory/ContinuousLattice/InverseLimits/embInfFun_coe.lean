@@ -1,3 +1,8 @@
+/-ai
+The underlying sequence of the bare stage embedding of x is the climbing-and-descending sequence iComp at that stage.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

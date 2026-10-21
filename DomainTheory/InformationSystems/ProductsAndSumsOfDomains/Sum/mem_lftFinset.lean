@@ -1,3 +1,8 @@
+/-ai
+An element belongs to the left projection of a finite set of sum tokens if and only if its left token belongs to the set.
+
+Unfold the projection and rewrite by the membership lemma for the fold of left insertion. A witness token equal to the left token may be replaced by that left token, and the left token itself is a witness.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

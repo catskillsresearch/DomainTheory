@@ -1,3 +1,6 @@
+/-ai
+The order homomorphism underlying a Scott map from a complete lattice to itself is the underlying function together with its monotonicity, in the form used to take least fixed points.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

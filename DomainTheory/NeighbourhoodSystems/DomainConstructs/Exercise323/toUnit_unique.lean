@@ -1,3 +1,8 @@
+/-ai
+Every approximable map into the one-point domain equals the named terminal map.
+
+There is at most one such map, so the two maps coincide.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

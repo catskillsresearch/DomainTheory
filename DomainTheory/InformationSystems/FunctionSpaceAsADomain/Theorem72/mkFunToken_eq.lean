@@ -1,3 +1,8 @@
+/-ai
+Repackaging a function token from its input set, its output set, and its consistency data returns the same token.
+
+The underlying pairs agree definitionally, so extensionality of subtypes applies.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

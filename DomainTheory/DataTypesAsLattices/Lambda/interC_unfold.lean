@@ -1,3 +1,8 @@
+/-ai
+The combinator interC equals the step interStep applied to interC.
+
+This is the symmetry of the fixed-point equation in Theorem 1.4, using Scott continuity of interStep.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

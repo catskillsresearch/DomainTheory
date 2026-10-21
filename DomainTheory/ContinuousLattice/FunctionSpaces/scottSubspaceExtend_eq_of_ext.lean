@@ -1,3 +1,8 @@
+/-ai
+If two maps from X agree at every point, then their subspace extensions agree at every point of Y.
+
+The families of infimum terms being supremized are equal, because the subspace-extension infima of the two maps agree on every Scott-open set.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,3 +1,8 @@
+/-ai
+If m lies in the G combinator, then the one-entry trace with code zero, member m, and time stamp zero is well formed, and it records membership of m at code zero.
+
+The only entry is that triple. Its code is zero, so the structural clause holds, and the hypothesis that m lies in the G combinator gives the G clause. The same triple is the recorded membership.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

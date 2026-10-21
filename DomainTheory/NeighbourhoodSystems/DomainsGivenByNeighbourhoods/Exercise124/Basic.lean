@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the union of a nonempty chain of filters.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

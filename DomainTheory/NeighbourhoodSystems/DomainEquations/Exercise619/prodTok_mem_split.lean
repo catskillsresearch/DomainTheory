@@ -1,3 +1,8 @@
+/-ai
+An element of the concrete product contains the product neighbourhood of X and Y if and only if it contains both slices: the product neighbourhood of X with the master of the second factor, and the product neighbourhood of the master of the first factor with Y.
+
+From the joint membership, each slice contains the joint neighbourhood, because the other component shrinks only to a subset of its master, and upward closure supplies the slice. Conversely, the intersection of the two slices is the product neighbourhood of the componentwise intersections, and those intersections recover X and Y because each neighbourhood lies below the corresponding master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

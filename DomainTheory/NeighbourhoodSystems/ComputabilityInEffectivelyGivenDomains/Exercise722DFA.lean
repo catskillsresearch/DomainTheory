@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the deterministic automata for languages of binary words: agreement of the universal automaton with the denotation of the full language, the sink law and the prefix-evaluation law for the single-word automaton, exact recognition of a singleton and agreement with the singleton denotation, componentwise evaluation of a product automaton, and exact recognition of an intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.Basic

@@ -1,3 +1,8 @@
+/-ai
+The list chosen at length n + 1 is the list chosen at length n with the value of the associated stream at n appended.
+
+The equation is the successor clause of the recursion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

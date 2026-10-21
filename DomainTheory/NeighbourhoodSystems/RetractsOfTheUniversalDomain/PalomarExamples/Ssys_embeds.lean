@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood system S embeds into the universal domain.
+
+Apply the first sentence of Theorem 8.8 to S. Countability of its neighbourhoods is the instance already recorded for S.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

@@ -1,3 +1,6 @@
+/-ai
+A raw lambda token is well formed in the sense of Scott's clauses (1) through (3) when it is bottom or an atom, or when it is a function token whose two argument lists, read as finsets, are both consistent.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,3 +1,8 @@
+/-ai
+Selection with condition 0 returns the second argument.
+
+This is simplification of the definition of selection.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

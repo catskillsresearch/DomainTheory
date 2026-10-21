@@ -1,3 +1,7 @@
+/-ai
+The characteristic bundle used to present the function space from the LUCID system to the three-point truth domain is the bundle extracted from the presentation of that truth domain.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,8 @@
+/-ai
+The safe-predecessor combinator safePredC is combinatory.
+
+This is theorem_2_4_closed applied to its defining term.
+ai-/
 module
 
 public import Mathlib.Computability.RE

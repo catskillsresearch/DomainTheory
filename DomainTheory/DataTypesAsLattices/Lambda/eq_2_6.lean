@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (2.6). The predecessor of the numeral 0 is ⊥.
+
+Unfolding the predecessor and the numeral leaves no elements.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

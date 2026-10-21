@@ -1,3 +1,7 @@
+/-ai
+Scott's equation (5.14) presents the universe value V(a)(x) as the least fixed point of the step sending y to the union of x with a(y). This step is that map.
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,3 +1,8 @@
+/-ai
+The down-sets of X and Y have nonempty intersection if and only if some neighbourhood is contained in the intersection of X and Y.
+
+Rewrite the intersection of the down-sets as the down-set of the intersection. In each direction the same neighbourhood is the witness of nonempty membership and of the existential statement.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

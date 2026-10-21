@@ -1,3 +1,8 @@
+/-ai
+The product D0 × (D1 × D2) is isomorphic to (D0 × D1) × D2.
+
+The isomorphism is the associativity order isomorphism of the element types.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,3 +1,7 @@
+/-ai
+The paired numeral decoding of a natural number is the iterate, that many times, of the next-cell step, started from the pair of zero with zero. It codes the two components of the decoding as one natural-number pair.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

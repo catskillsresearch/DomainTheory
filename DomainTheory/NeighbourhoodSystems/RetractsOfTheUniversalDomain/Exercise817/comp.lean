@@ -1,3 +1,6 @@
+/-ai
+Projection pairs compose. The composite injection is the second injection after the first, and the composite projection is the first projection after the second. The projection-after-injection law is the associative cancellation of the second pair and then of the first. The injection-after-projection inequality is the same association, followed by monotonicity of composition to replace the first pair's composite by the identity, cancellation of that identity, and the second pair's inequality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

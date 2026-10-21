@@ -1,3 +1,8 @@
+/-ai
+The least fixed point vaalC is recursively enumerable.
+
+A combinatory element is recursively enumerable, and vaalC is combinatory.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+A set W belongs to the empty finite join if and only if W is the master neighbourhood of the power domain.
+
+Rewrite the empty join as the bottom element and rewrite bottom membership by the identification of the power-domain master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

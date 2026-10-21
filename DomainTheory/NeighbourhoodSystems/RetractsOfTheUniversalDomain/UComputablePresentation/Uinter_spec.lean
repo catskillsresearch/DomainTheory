@@ -1,3 +1,8 @@
+/-ai
+If some enumerated neighbourhood is contained in the intersection of two enumerated neighbourhoods, the neighbourhood at their intersection index equals that intersection.
+
+The hypothesis makes the intersection nonempty. The set presented by the combined canonical codes is then a neighbourhood of U, since it equals the intersection and lies in the unit interval. Unfolding the index, the canonical code realizes the canonical list, canonicalization leaves that neighbourhood unchanged, and the combined codes present the intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

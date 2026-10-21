@@ -1,3 +1,16 @@
+/-ai
+Updating one coordinate of a point of a product preserves directed suprema.
+
+At the updated coordinate the update is the identity, so the image of a set is the set itself. At every other coordinate the update is constant, equal to the original point, so the image is a singleton and its supremum is that constant value. The two sides therefore agree coordinatewise.
+
+If an element is way-below a point of a product, then each of its coordinates is way-below the corresponding coordinate of the point.
+
+A Scott-open witness for the product relation pulls back along the update of the given coordinate of the point. The pullback is Scott-open because that update preserves directed suprema. It contains the coordinate of the point, and any value in it has update above the original element, hence is above that element in the chosen coordinate.
+
+A way-below element of a product is bottom off a finite set of coordinates.
+
+The finite truncations of the point, equal to the point on a finite set of coordinates and bottom elsewhere, are monotone, directed, and have the point as supremum. Way-below therefore places the element below some truncation, which forces it to be bottom off that finite set.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

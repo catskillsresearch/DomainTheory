@@ -1,3 +1,8 @@
+/-ai
+Every argument element is arg-like.
+
+At each index, rewrite by the component formula and split on the bound. Below the length, the optional numeral is either none, hence bottom, or some numeral. At or beyond the length, the component is bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

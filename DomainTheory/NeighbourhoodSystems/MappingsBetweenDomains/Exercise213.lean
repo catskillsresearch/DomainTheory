@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Exercise 2.13: the basic setup, continuity of the elementwise map of an approximable mapping, the union formula for a continuous map, directedness of the principal approximants of an element, the expression of an element as their directed supremum, continuity of a monotone map that preserves directed suprema, and the round trip from a continuous function through the approximable mapping it determines.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.Basic

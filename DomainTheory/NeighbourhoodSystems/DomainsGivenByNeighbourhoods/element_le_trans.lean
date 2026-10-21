@@ -1,3 +1,8 @@
+/-ai
+Approximation of elements is transitive.
+
+A neighbourhood of the first element belongs to the second by the first hypothesis and then to the third by the second hypothesis.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

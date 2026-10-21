@@ -1,3 +1,8 @@
+/-ai
+The input union of the empty finite set of input-output pairs is empty.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,3 +1,8 @@
+/-ai
+Every member of a bounded set of elements lies below the least upper bound of the set.
+
+Apply the lower-bound law of the infimum to the family of upper bounds. The member lies below every upper bound.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

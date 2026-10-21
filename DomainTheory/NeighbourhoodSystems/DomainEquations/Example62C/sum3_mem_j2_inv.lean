@@ -1,3 +1,8 @@
+/-ai
+If the tagged right copy of Y is a neighbourhood of the three-way sum of the unit system with two copies of C, then Y is a neighbourhood of C.
+
+The four shapes of such a neighbourhood are examined. The master would place the basepoint in the right copy. A left copy would place a point of its nonempty unit neighbourhood, read through the left tag, in the right copy. A middle copy would place a point of its nonempty neighbourhood of C, read through the middle tag, in the right copy. A right copy equals the given copy, so injectivity identifies Y with a neighbourhood of C. Each mismatched token is excluded by the corresponding non-membership lemma.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

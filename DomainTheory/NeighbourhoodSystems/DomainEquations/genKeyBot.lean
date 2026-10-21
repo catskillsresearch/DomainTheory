@@ -1,3 +1,8 @@
+/-ai
+The structure map of a Tc-algebra, applied to the three-way sum of the identity, g, and g at the image under toCC of the empty structured bottom, equals the bottom of the carrier.
+
+That image is the bottom of the three-way sum, because the bottom of C is the empty structured bottom and the order isomorphism preserves bottoms. The three-way sum map is strict, so it sends this bottom to the bottom of the codomain sum, and the structure map is strict, so it sends that bottom to the bottom of the carrier.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

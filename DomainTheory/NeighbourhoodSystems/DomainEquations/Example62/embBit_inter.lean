@@ -1,3 +1,8 @@
+/-ai
+The intersection of the taggings of two sets by the same boolean is the tagging of their intersection.
+
+A string in both taggings begins with that boolean, and the two suffixes agree because prefixing a bit is injective, so the suffix lies in both sets. A string whose suffix lies in the intersection lies in each tagging.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,3 +1,6 @@
+/-ai
+The code fold of a step, a parameter, an initial accumulator, and a code is the accumulator component of iterating the fold step as many times as the code, starting from the pair of the code and the initial accumulator.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,3 +1,6 @@
+/-ai
+The pairing equivalence is the bijection from pairs of natural numbers to natural numbers whose forward map is the uncurried pairing function and whose inverse is the diagonal iterate, with the two round trips given by the corresponding cancellation lemmas.
+ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

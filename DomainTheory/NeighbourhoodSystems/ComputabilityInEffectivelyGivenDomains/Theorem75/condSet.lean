@@ -1,3 +1,6 @@
+/-ai
+The conditional set of a base along an entry list, relative to a domain index, is the set of points of the base that lie in each output whose input contains the neighbourhood at that index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

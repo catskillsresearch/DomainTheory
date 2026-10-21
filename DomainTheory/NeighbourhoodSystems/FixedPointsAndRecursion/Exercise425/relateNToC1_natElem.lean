@@ -1,3 +1,8 @@
+/-ai
+The map from the flat naturals sends the numeral n to the total unary element of length n.
+
+Apply the numeral law of the strict lift.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

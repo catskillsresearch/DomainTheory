@@ -1,3 +1,8 @@
+/-ai
+The singletons of two finite binary strings are nested or disjoint.
+
+If the two strings are equal, the singletons coincide. If they are not, the intersection is empty, because a common element would force the two strings to be equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

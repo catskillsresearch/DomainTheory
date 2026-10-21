@@ -1,3 +1,6 @@
+/-ai
+The packaged map subApprox is the approximable endomap of the function space obtained by packaging the continuous filter transport of sub.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

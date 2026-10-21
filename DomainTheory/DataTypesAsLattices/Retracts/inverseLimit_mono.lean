@@ -1,3 +1,8 @@
+/-ai
+A coherent inverse-limit sequence is increasing in the ambient powerset order: each coordinate is contained in the next.
+
+Rewrite the earlier coordinate by the successor coherence equation. Consecutive Kleene stages are nested, and applying the earlier stage on the left is monotone, so the fixed-coordinate equation at the next stage yields the inclusion.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

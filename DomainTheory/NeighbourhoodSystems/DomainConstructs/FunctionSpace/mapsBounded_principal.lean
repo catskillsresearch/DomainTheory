@@ -1,3 +1,8 @@
+/-ai
+If a set of approximable maps is pointwise bounded, then the set of its values at the principal filter of any neighborhood is bounded.
+
+Pointwise boundedness applied to that principal element is the claim.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

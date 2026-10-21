@@ -1,3 +1,6 @@
+/-ai
+An element of the information system induced by the way-below neighbourhood basis is round when the filter corresponding to it under the inverse domain isomorphism is a round filter.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

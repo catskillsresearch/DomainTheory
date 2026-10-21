@@ -1,3 +1,8 @@
+/-ai
+The one-point neighbourhood system is effectively given.
+
+The trivial presentation is a computable presentation of it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

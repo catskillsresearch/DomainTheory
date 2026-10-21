@@ -1,3 +1,6 @@
+/-ai
+The neighbourhood of a set is the set of tokens whose closure contains the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

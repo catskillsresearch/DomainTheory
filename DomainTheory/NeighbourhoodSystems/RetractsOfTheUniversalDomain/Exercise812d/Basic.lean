@@ -1,3 +1,8 @@
+/-ai
+The index recorded on either side of the coded atom pair is always a neighbourhood of that side. Containment of the coded Y-sequences at two indices is equivalent to containment of the corresponding neighbourhoods of the second presentation. The two neighbourhood systems are isomorphic as domains, and the two computable presentations are effectively isomorphic.
+
+Both index laws are the unconditional membership of a presentation index. The containment rewrites the subset transfer at the two odd indices by the odd clauses of the combined codes, then cancels the masters because each set lies under its master. The domain isomorphism is the coded order isomorphism, and the effective isomorphism is the coded effective isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

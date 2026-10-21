@@ -1,3 +1,8 @@
+/-ai
+Shift preserves inclusion.
+
+A successor witness in the smaller set is a successor witness in the larger set by the assumed inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

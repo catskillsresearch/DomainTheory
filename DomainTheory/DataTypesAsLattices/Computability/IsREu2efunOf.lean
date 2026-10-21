@@ -1,3 +1,8 @@
+/-ai
+The application of two recursively enumerable sets is recursively enumerable.
+
+The predicate of a pair that the finite set coded by the first component is contained in the argument and that the pair lies in the operator is recursively enumerable, by the finite-inclusion predicate and the paired-membership predicate. Existentially quantifying the finite index yields exactly membership in the application.
+ai-/
 module
 
 public import Mathlib.Computability.RE

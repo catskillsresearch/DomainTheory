@@ -1,3 +1,6 @@
+/-ai
+The open subsets of the domain of a neighbourhood system stand in bijection with the approximable maps into O. An open set is sent to its approximable map, and an approximable map is sent to the set of elements mapped to the top element, which is open. The two constructions invert each other by the membership round trip and by the equality of the reconstructed map with the original map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

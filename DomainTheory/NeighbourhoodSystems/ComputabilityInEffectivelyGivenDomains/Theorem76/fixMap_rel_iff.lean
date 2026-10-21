@@ -1,3 +1,8 @@
+/-ai
+The fixed-point map relates the enumerated neighbourhood of a code to the neighbourhood at an index if and only if some valid least-map chain from the master index ends inside that neighbourhood. This is Scott's characterization of the neighbourhood relation of fix by a finite sequence of steps.
+
+The relation is membership of the enumerated neighbourhood in the principal filter. The fixed-point map sends that filter to the fixed-point element, and the chain characterization of membership applies at the master index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

@@ -1,3 +1,8 @@
+/-ai
+The map sending a paired number to tagCode of its two components is primitive recursive.
+
+The zero-case value, numbering 0 with the right component, is primitive recursive, and the code argument, appending a code 0 in front of the left component, is primitive recursive. Folding the tagging step from the constant 0 along that code is identified with tagCode.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

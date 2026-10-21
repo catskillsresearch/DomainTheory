@@ -1,3 +1,8 @@
+/-ai
+If an approximable map from a product relates the lifted pair of a consistent set with the input of each token of a finite set to the output of that token, and the input union of the tokens is consistent, then the map relates the lifted pair of that set with the input union to the output union.
+
+The proof is by induction on the tokens. The empty case follows by monotonicity from the empty relation, using product consistency of the lifted pair with the empty set. When a token is inserted, the induction hypothesis applies to the remainder. Monotonicity extends the token's relation and the remainder's relation along the entailment of lifted pairs induced by reflexivity on each summand of the input union. The right-union law combines them.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

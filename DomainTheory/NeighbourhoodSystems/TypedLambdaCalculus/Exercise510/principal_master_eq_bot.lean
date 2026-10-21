@@ -1,3 +1,8 @@
+/-ai
+The principal filter of a neighbourhood equal to the master is the bottom element.
+
+Substituting that equality leaves the two sides identical.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

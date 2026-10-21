@@ -1,3 +1,9 @@
+/-ai
+The paired numeral decoding equals the pair of the two components of the decoding.
+
+Unfold the definition and induct on the argument. Zero is reflexive. At a successor, the successor iterate, the inductive hypothesis, and the equation for the next-cell step give the pair.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

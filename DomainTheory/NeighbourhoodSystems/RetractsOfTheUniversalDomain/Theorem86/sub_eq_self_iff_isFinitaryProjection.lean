@@ -1,3 +1,8 @@
+/-ai
+Theorem 8.6 states that sub f equals f exactly when f is a finitary projection.
+
+A fixed point of sub is a finitary projection, and a finitary projection is a fixed point of sub.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

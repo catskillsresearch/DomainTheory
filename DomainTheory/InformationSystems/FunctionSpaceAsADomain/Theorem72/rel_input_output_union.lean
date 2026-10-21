@@ -1,3 +1,8 @@
+/-ai
+If every token of a finite set lies in the relation of an approximable map and the input union is consistent, then the map relates that input union to the output union.
+
+The proof is by induction on the finite set. The empty unions are related by the empty relation. When a token is inserted, the induction hypothesis applies to the remainder because its input union is contained in the full input union. Monotonicity extends the token's relation and the remainder's relation from the union of the token's input with the remainder's input union, using reflexivity on each summand. The right-union law combines the two relations, and the input and output unions of an insertion are those combined unions.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

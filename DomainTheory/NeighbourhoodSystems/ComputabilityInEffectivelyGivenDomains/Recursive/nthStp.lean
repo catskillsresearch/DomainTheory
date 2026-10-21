@@ -1,3 +1,6 @@
+/-ai
+The fold-shaped indexing step reads a packed state whose result slot is a pair of a counter and a current result, together with a target index. It increments the counter and overwrites the result exactly when the counter equals the index, using the {0,1} equality bit one minus the sum of the two truncated differences of the counter and the index.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

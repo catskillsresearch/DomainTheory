@@ -1,3 +1,6 @@
+/-ai
+Unfolding a tree token into the carrier of the sum of A with the product of the tree system with itself sends bottom to the sum bottom, an atom to the left injection of that atom, a left pair of t to the right injection of the pair (t, tree bottom), and a right pair of t to the right injection of the pair (tree bottom, t).
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

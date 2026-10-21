@@ -1,3 +1,8 @@
+/-ai
+Any two sets in the image family are nested or disjoint.
+
+Each image set is the cone of a doubled encoding or the cone of a completed encoding. In each of the four combinations, trichotomy of those cones gives nesting or disjointness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

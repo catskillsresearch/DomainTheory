@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the code-driven subsystem D'', its domain isomorphism with D and its effective presentation, together with the definition of a computable map and the projection pair of a subsystem.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.Basic

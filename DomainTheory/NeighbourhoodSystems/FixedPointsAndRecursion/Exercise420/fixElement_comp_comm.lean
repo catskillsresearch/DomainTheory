@@ -1,3 +1,8 @@
+/-ai
+For approximable endomaps f and g of a domain, the least fixed point of f composed with g equals f applied to the least fixed point of g composed with f.
+
+The right-hand side is a fixed point of f composed with g, so the least fixed point lies below it. In the other direction, the same fact with the maps exchanged places the least fixed point of g composed with f below g applied to the least fixed point of f composed with g. Monotonicity of f, the composition law, and the fixed-point equation of f composed with g then place the right-hand side below the left-hand side.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

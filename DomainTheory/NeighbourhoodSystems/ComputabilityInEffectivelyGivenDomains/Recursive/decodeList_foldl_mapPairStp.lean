@@ -1,3 +1,8 @@
+/-ai
+Decoding the left fold, along a list, of the step that pairs the current entry on the left with a fixed parameter and then applies the pair-map step to the accumulator, equals the reverse of that list with each entry paired on the left with the parameter, appended to the decoding of the starting accumulator.
+
+The proof is by induction on the list, generalizing the accumulator. The empty list simplifies. For a cons cell, rewrite the fold, apply the inductive hypothesis, and rewrite by the pair-step equation, the decoding of one pair step, and the cons, reverse, and append identities.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

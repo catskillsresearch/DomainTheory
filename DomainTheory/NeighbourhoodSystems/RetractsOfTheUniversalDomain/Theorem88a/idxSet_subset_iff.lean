@@ -1,3 +1,8 @@
+/-ai
+The index set of i is contained in the index set of j if and only if e i is contained in e j.
+
+A containment of index sets sends the self-membership of i to the inclusion e i ⊆ e j. Conversely, if e i ⊆ e j, then any neighbourhood contained in e i is contained in e j.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

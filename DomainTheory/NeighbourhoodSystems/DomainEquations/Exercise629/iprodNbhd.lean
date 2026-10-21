@@ -1,3 +1,6 @@
+/-ai
+The product neighbourhood of a family of sets is the set of dependent pairs whose second component lies in the set indexed by the first component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

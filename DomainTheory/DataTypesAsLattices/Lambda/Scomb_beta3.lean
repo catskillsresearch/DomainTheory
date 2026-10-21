@@ -1,3 +1,9 @@
+/-ai
+A third application of S, at x, equals the application of f at x applied to g at x.
+
+Rewrite by the second beta law for S, then beta-reduce, using Scott continuity of the inner map at f and g.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

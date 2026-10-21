@@ -1,3 +1,8 @@
+/-ai
+Two approximable maps that agree on every principal element are equal.
+
+By extensionality of approximable maps, if the first relates X to Y then X is a neighbourhood, and the relation criterion for the second at the principal element of X, rewritten by the agreement and by the same criterion for the first, yields the relation. The converse is the symmetric argument.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

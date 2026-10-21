@@ -1,3 +1,6 @@
+/-ai
+The map from an element of the domain of a closure back to a fixed point sends the element to the directed supremum of the underlying elements of its confirmed compact indices. That supremum is fixed because the element map of the closure preserves a directed supremum of fixed points.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

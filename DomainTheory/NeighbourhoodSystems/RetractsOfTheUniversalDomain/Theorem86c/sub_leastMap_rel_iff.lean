@@ -1,3 +1,8 @@
+/-ai
+The map sub of the least map of the enumerated neighbourhood of index n relates the presented neighbourhoods of a and b exactly when some index y has the enumerated neighbourhood of n contained in the enumerated neighbourhood of y paired with itself, and the presented neighbourhood of y lies between those of a and b.
+
+The reindexed existential of sub rewrites the self-relation of the least map on a presented neighbourhood as that enumerated inclusion, by the relation of a least map on a code pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

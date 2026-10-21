@@ -1,3 +1,8 @@
+/-ai
+If two families of sets have the same generated-atom emptiness at every sign sequence and every depth, then a nonempty finite pattern of membership constraints on the first family, at indices below that depth, yields a nonempty pattern of the same constraints on the second family.
+
+From a point of the first constrained set, the sign sequence recording membership in the first family puts that point in the first generated atom, so the atom is nonempty. The emptiness core makes the second generated atom nonempty. A point of it lies in the second master, and for each constraint the forward property of the generated atom, after the recorded sign is rewritten to the constraint's sign, is the required membership equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

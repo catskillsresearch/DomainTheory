@@ -1,3 +1,9 @@
+/-ai
+Scott's 𝔊δ theorem (1976, Theorem 6.3) states that a set U is a Scott Gδ set if and only if U is the set of x at which some Scott-continuous f takes the value ⊤.
+
+If U is the intersection of Scott-open sets, the pair-indexed packing of their top characteristics is Scott continuous, and that packing equals ⊤ at x exactly when every top characteristic equals ⊤ at x, which is membership in every set of the intersection. Conversely, if U is the set of x with f(x) equal to ⊤, then U is the intersection of the Scott-open sets of x with n in f(x), and x lies in all of them exactly when f(x) is ⊤.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

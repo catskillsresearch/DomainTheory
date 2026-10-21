@@ -1,3 +1,8 @@
+/-ai
+The concatenation of two nonempty languages is nonempty.
+
+Concatenate a word chosen from each language.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

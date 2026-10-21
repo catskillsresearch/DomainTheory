@@ -1,3 +1,8 @@
+/-ai
+The function filterNum is primitive recursive.
+
+The conditional that tests beforeHalt on the two components of the unpairing, returns one more than the second component when the test holds, and returns 0 otherwise, is primitive recursive and agrees with filterNum. The equivalence between the two formulations of primitive recursiveness on the natural numbers transports the result.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

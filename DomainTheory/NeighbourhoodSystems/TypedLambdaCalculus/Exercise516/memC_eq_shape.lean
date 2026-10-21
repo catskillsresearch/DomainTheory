@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the domain of binary sequences equals the shape of some Boolean tag and some finite string.
+
+The membership classification splits a neighbourhood into a partial cone, which receives the partial tag, or a total singleton, which receives the total tag.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

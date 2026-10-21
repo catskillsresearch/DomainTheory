@@ -1,3 +1,8 @@
+/-ai
+The zero level of the tower is the one-point generator.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

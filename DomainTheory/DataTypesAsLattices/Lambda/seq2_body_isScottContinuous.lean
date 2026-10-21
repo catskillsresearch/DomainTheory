@@ -1,3 +1,8 @@
+/-ai
+With the two entries fixed, the body of the two-element sequence is Scott continuous.
+
+The diagonal case of Theorem 1.3 applies to the conditional that reads the test from one argument and the predecessor from the other, using continuity of the conditional in its left argument and, in the remaining argument, Theorem 1.3 applied to continuity of the conditional in its right argument composed with continuity of the inner conditional in its left argument and continuity of the predecessor. Membership is transferred between the set and the Scott union by that diagonal union.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

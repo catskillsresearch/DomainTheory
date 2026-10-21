@@ -1,3 +1,8 @@
+/-ai
+Proposition 3.2(i) of Scott (1981, PRG-19) states that the pairing of x and y lies below the pairing of x' and y' if and only if x lies below x' and y lies below y'.
+
+If the pairings are ordered, a neighbourhood of x padded by the second master belongs to the lower pairing and hence to the upper one, and injectivity of product neighbourhoods returns it to x'; the symmetric argument with the first master gives the inequality for y. Conversely, a product of neighbourhoods of x and y is a product of neighbourhoods of x' and y' by the two inequalities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,3 +1,8 @@
+/-ai
+Inserting the right token of an element into a finite set of sum tokens adjoins that element to the right projection.
+
+By extensionality, a right token in the inserted set is either the inserted right token, and the right constructor is injective, or a right token of the original set. Conversely, the inserted element is recovered as that right token, and an element of the original right projection is a right token of the original set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

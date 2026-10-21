@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the generic bisection split, the canonical bisection of U, the computable difference on V, the concrete split of V against U, and the proof that this split is computable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

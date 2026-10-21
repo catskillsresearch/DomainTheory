@@ -1,3 +1,8 @@
+/-ai
+The second recursion substitution is primitive recursive.
+
+It is the application of the identity to the numeral code, and application of codes is primitive recursive.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

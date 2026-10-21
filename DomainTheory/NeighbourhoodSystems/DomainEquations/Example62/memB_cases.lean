@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the binary-sequence domain is the master, the false-bit tagging of a neighbourhood, or the true-bit tagging of a neighbourhood.
+
+A neighbourhood is the cone of a finite binary string. The cone of the empty string is the master. A string beginning with false has cone equal to the false-bit tagging of the cone of its tail, and a string beginning with true has cone equal to the true-bit tagging of the cone of its tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

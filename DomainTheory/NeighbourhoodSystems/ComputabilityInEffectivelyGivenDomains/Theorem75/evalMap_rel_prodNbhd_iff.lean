@@ -1,3 +1,8 @@
+/-ai
+Evaluation relates a product of a function-space neighbourhood with a domain neighbourhood to a codomain neighbourhood if and only if the function-space neighbourhood is contained in the step between those two neighbourhoods.
+
+Rewrite the two preimages of the product neighbourhood. One direction applies the evaluation relation at each member of the function-space neighbourhood. The other restores product membership and turns containment in the step back into the evaluation relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

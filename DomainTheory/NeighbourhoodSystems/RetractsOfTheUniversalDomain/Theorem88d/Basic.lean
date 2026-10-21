@@ -1,3 +1,128 @@
+/-ai
+The extracted decider reads 1 on a pair of list codes exactly when the D-atom of the re-pointed presentation on the decoded lists is empty.
+
+Unfold the decider and rewrite a reading of 1 by the zero-one test. The specification of the chosen D-atom decider, after unpairing, is that biconditional.
+
+The extracted decider is at most 1.
+
+Unfold it. The zero-one wrapper is at most 1.
+
+Prepending an index to the positive list intersects the D-atom with the index set of that index.
+
+Unfold the atom, rewrite the positive part by its cons clause, and reassociate the intersection.
+
+Prepending an index to the negative list intersects the D-atom with the complement of the index set of that index.
+
+Extensionality: a point satisfies the positive constraints and avoids every negative index, including the new one, exactly when it avoids the new index set, satisfies the positive constraints, and avoids the remaining negative indices.
+
+The packed state at depth n+1 for a bit-source is the one-step transition applied to the state at depth n.
+
+Unfold the state recursion and simplify the unpairing.
+
+The unconsumed remainder at depth n is the bit-source divided by two to the power n.
+
+Induct on the depth. At depth 0 the base state keeps the bit-source. At a successor, unfold the step, apply the inductive hypothesis, and combine the successive divisions into division by the next power of two.
+
+The bit predicate reads true at position i exactly when the bit-source divided by two to the power i is odd.
+
+Unfold the definition and simplify.
+
+The positive code at depth n+1 selects, by the bit at n, either the code with n prepended or the previous positive code.
+
+Unfold the positive code, replace the state by its successor, unfold the step, and simplify. The remainder at depth n is the shifted bit-source.
+
+The negative code at depth n+1 selects, by the same bit, either the previous negative code or the code with n prepended.
+
+The same unfolding, reading the negative component of the packed step.
+
+The generated atom of the index sets of the re-pointed enumeration, taken against the universe along the bits of a bit-source, equals the D-atom of the re-pointed presentation on the decoded positive and negative codes.
+
+Induct on the depth. At depth 0 both sides are the full set of indices. At a successor, if the bit is true the generated atom meets the index set of the current index, the positive code prepends that index, and the cons clause for a positive constraint matches after the intersection is commuted. If the bit is false the generated atom meets the complement of that index set, the negative code prepends the index, and the cons clause for a negative constraint matches the same way.
+
+The emptiness flag reads 1 exactly when that D-atom is empty.
+
+This is the specification of the decider on the pair of the two codes.
+
+The emptiness flag reads 1 exactly when the generated atom along the bits of the bit-source is empty.
+
+Rewrite by the previous equivalence and by the agreement of the generated atom with the D-atom.
+
+The emptiness flag reads 0 exactly when that generated atom is nonempty.
+
+The flag is at most 1. A reading of 0 cannot be the reading 1 that emptiness would force, and any reading other than 0 is 1, which is emptiness.
+
+At depth 0 the positive code is 0.
+
+Simplify the base state.
+
+At depth 0 the negative code is 0.
+
+Simplify the base state.
+
+At depth 0 the U-code is the master index of the universal system.
+
+Simplify the base state.
+
+The U-code at depth n+1 is the nested selection on the bit at n and on the two one-step emptiness checks: each bit selects 0 when its own refinement is empty, and otherwise selects the old code or the corresponding split of the old code according to the other check.
+
+Unfold the code and the two list codes, replace the state by its successor, unfold the step, and simplify the projections. The remainder at depth n supplies the bit.
+
+The emptiness flag at depth n+1 equals the positive-refinement check when the bit is 1 and the negative-refinement check when the bit is 0.
+
+Unfold the flag, rewrite both list codes by their successor equations, and simplify on the two possible values of the bit.
+
+Bit-sources that agree on the first n bits have the same positive code, the same negative code, and the same U-code at depth n.
+
+Induct on the depth. At depth 0 all three components are independent of the bit-source. At a successor the inductive hypothesis gives agreement at the previous depth, and the bits at that depth agree because the sign predicates agree. The three successor formulas then agree.
+
+The generated atom at depth n+1 is contained in the generated atom at depth n.
+
+The successor atom is the left factor of an intersection.
+
+If the emptiness flag reads 1 at depth n, it reads 1 at depth n+1.
+
+Rewrite both readings as emptiness of generated atoms. The successor atom is contained in the earlier atom, so emptiness persists.
+
+If the emptiness flag reads 0 at depth n+1, it reads 0 at depth n.
+
+Otherwise the flag at depth n, being at most 1, would read 1, and the monotonicity of the flag would force the successor to read 1.
+
+Once the emptiness flag reads 1, the U-code at the next depth is 0.
+
+Emptiness of the D-atom gives emptiness of both one-step refinements, since each is an intersection with that atom, so both emptiness checks read 1. The successor formula for the code then selects 0 on either bit.
+
+If the emptiness flag reads 0 at depth n+1, the neighbourhood of the new U-code is contained in the neighbourhood of the old one.
+
+Rewrite the flag and the code by their successor formulas. On bit 0 the negative-refinement check reads 0, and the positive-refinement check either reads 0, so the code is the right split and that neighbourhood is contained in the old one, or reads 1, so the code is unchanged. On bit 1 the positive-refinement check reads 0, and the negative-refinement check either reads 0, so the code is the left split, or reads 1, so the code is unchanged.
+
+If two bit-sources are both non-junk at depth n and disagree on some bit below n, their universal neighbourhoods are disjoint.
+
+Induct on the depth. Depth 0 admits no bit below it. At depth n+1, if the sources agree below n, the disagreement is at bit n, and congruence identifies the depth-n data. The two selected emptiness checks then read 0, and the two codes are the two sides of one split, which are disjoint. If the sources already disagree below n, the inductive hypothesis gives disjointness at depth n, both flags there read 0, and both neighbourhoods shrink, so the intersection at the next depth stays empty.
+
+The bit predicate is the standard test of a binary digit.
+
+This is the symmetry of the equation identifying the bit predicate with the test bit.
+
+Adding two to the power n does not change bits strictly below n.
+
+Rewrite both sides as test bits and apply the lemma on adding a higher power of two.
+
+If m is strictly below two to the power n, then m plus that power has bit n set.
+
+Rewrite the bit predicate as a test bit. Adding the power sets that bit, and m itself has the bit unset.
+
+The encoding of any finite sign prefix is strictly below two to the power of its length.
+
+Induct on the length. The empty prefix encodes as 0. At a successor the inductive bound and the positivity of the previous power give the bound whether or not the new sign contributes that power, because the next power is twice the previous one.
+
+The encoding of a sign sequence reproduces that sequence on every bit strictly below the encoded length.
+
+Induct on the length. At a successor, split on the new sign. When it contributes the power of two, a lower bit is preserved by adding that power and agrees by the inductive hypothesis, while the top bit is set. When the added term vanishes, a lower bit agrees by the inductive hypothesis, and the top bit of a number below that power is unset.
+
+For every depth n there is an index i below two to the power n such that the bit-source i plus that power is non-junk at depth n+1.
+
+Let the sign at j record whether n belongs to the index set of j. The sign at n is true, because n belongs to its own index set, so the generated atom at depth n+1 is the atom at depth n met with that index set. The index n belongs to the atom at depth n and to its own index set, so the atom at depth n+1 is nonempty. Encode the first n signs. The sum of that code with two to the power n lies in the required range and agrees with the signs through bit n: below n by preservation under the encoding and under adding the power, and at n because the sum sets that bit. Congruence of generated atoms carries the nonempty atom to this bit-source, and the flag reads 0 exactly when that atom is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

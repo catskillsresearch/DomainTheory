@@ -1,3 +1,8 @@
+/-ai
+If a lies below a' and b lies below b' in the retract order, then the function space from a to b lies below the function space from a' to b'.
+
+Each projection equation is the composition law for function spaces. One side rewrites the composed retracts by the equations a = a' ∘ a and b = b ∘ b'. The other side rewrites them by a = a ∘ a' and b = b' ∘ b.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

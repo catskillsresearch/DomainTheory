@@ -1,3 +1,8 @@
+/-ai
+If a consistent finite set w has its basic open contained in the basic open of a finite set u, then u is consistent.
+
+Every token of u is entailed by w. The second clause of Proposition 2.3 therefore puts the formal union of w with u among the consistent sets, and u is contained in that formal union.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

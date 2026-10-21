@@ -1,3 +1,6 @@
+/-ai
+The code of the union of two U-neighbourhoods is the concatenation of their canonical codes.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

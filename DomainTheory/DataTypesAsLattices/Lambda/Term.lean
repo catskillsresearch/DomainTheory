@@ -1,3 +1,7 @@
+/-ai
+Scott's Table 2 defines a LAMBDA term to be a variable, the constant zero, a successor, a predecessor, a conditional of three terms, an application of two terms, or an abstraction of a term in a variable.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

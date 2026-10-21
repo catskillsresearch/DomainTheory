@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of D-sharp is contained in the master.
+
+Induction on the neighbourhood gives the three cases. The master is contained in itself. A zero-copy is contained in the master. A pair is contained in the master once both of its sides are.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

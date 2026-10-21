@@ -1,3 +1,28 @@
+/-ai
+In Example 1.3 the neighbourhood {1, 2} is distinct from the master neighbourhood.
+
+If they were equal, the token 0 would belong to {1, 2}, because it belongs to the master.
+
+The neighbourhood {2} is distinct from the master neighbourhood.
+
+If they were equal, the token 0 would belong to {2}, because it belongs to the master.
+
+The neighbourhood {2} is distinct from {1, 2}.
+
+If they were equal, the token 1 would belong to {2}, because it belongs to {1, 2}.
+
+The neighbourhood {2} is contained in {1, 2}.
+
+Each of the three tokens is checked, and a token of {2} is a token of {1, 2}.
+
+An element that contains {2} is the total element.
+
+The two elements contain the same neighbourhoods. A neighbourhood of the given element is the master, {1, 2}, or {2}, all of which belong to the total element. Conversely the master belongs to every element, {1, 2} is recovered by upward closure from {2} along the inclusion of {2} in {1, 2}, and {2} is the given membership.
+
+An element that contains {1, 2} but not {2} is the intermediate element.
+
+The two elements contain the same neighbourhoods. A neighbourhood of the given element is the master or {1, 2}. It cannot be {2}, because the intersection of {1, 2} with {2} is {2}. Conversely the master belongs to every element, and {1, 2} is the given membership.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

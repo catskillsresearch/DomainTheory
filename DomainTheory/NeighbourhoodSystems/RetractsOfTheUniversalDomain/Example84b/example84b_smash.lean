@@ -1,3 +1,8 @@
+/-ai
+Example 8.4(b)(ii): smashRetraction is a projection on the product of D and E, and its fixed-point set is order-isomorphic to the smash product of D and E.
+
+Rewrite smash by its identification with the subsystem retraction of the smash subsystem. That retraction is a projection, and the subsystem supplies an order isomorphism from the smash elements onto the fixed points.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic development of function-space congruence, the two-sided congruence, its specializations in the domain and codomain slots, and currying as a domain isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Congr.Basic

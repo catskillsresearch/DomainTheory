@@ -1,3 +1,9 @@
+/-ai
+If a is a retract, then x is related by the kernel of a to the application of a to x.
+
+The symmetric form of the retract application equation says that a applied to x equals a applied to a applied to x.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

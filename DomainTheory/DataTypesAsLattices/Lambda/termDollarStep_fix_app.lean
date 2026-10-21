@@ -1,3 +1,8 @@
+/-ai
+Applying the least fixed point of the term-level dollar step first to u and then to z equals the sequence revaluation of u at z.
+
+The fixed point is the directed union of the iterates from bottom, and application preserves that union, so the left-hand side is the union over n of the double application of the n-th iterate. The sequence revaluation is the union of its finite stages. Extensionality identifies the two unions because the iterate theorem equates each double application with the corresponding finite stage.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,8 @@
+/-ai
+A disjoint union of token sets is empty-entailing if and only if each summand is.
+
+In one direction a token of either summand is a token of the union. In the other direction a token of the union lies in one of the two summands.
+ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

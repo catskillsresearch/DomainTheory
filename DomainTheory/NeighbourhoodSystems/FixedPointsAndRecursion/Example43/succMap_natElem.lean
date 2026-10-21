@@ -1,3 +1,8 @@
+/-ai
+The successor sends the total element at n to the total element at n + 1.
+
+This is the computation rule of the constant lift on total elements, applied to the successor values.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

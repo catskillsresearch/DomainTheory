@@ -1,3 +1,6 @@
+/-ai
+The primitive-recursion operator is the currying of the primitive-recursion body, so it sends a function k to the map taking x and y to the conditional of the zero test of x, the value f at y, and g at the predecessor of x, at y, and at k applied to that predecessor and y.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

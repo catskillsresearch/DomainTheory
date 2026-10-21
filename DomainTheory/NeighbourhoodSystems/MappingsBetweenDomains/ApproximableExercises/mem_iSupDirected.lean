@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood belongs to an indexed directed union if and only if it belongs to some member of the family.
+
+Membership in the underlying directed union is membership in some value of the family. In the other direction that value is a member of the range.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

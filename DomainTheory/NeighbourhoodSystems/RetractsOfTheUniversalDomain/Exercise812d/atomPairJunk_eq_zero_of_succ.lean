@@ -1,3 +1,8 @@
+/-ai
+If the junk flag at depth n + 1 is 0, then it was already 0 at depth n.
+
+The successor step is unfolded. The junk equation of the Y sub-step, together with the fact that a selection equal to 0 forces its selector to be 0, makes the X sub-step non-junk, and the same fact applied to the X sub-step makes the incoming flag 0.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

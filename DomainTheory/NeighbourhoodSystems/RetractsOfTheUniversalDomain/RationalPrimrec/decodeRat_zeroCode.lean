@@ -1,3 +1,8 @@
+/-ai
+The code of zero decodes to the rational zero.
+
+The component form of decoding, evaluated on the code of zero after cancelling its pairing, equals zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

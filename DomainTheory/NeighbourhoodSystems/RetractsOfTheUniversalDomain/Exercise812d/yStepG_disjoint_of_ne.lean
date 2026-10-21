@@ -1,3 +1,8 @@
+/-ai
+If the abstract split satisfies the split specification, emptiness of the second input is equivalent to emptiness of the first, the first input is empty or a neighbourhood, and the two boolean bits differ, then the two generalized Y-steps are disjoint on both components.
+
+The corresponding disjointness for the joint step supplies the two empty intersections in swapped order, and swapping that pair restores the Y-step order.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

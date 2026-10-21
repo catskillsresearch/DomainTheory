@@ -1,3 +1,8 @@
+/-ai
+Decoding the append of two list codes yields the append of the two decoded lists.
+
+Unfolding the append, the tabulated code decodes to the mapped range of the append lookup, and the two length characters are the decoded lengths. The two lists then agree at every defaulted index. Inside the combined length, the lookup reads the first list below the cut and the second list past it, and those entries agree with defaulted lookup in the append. Past the combined length both sides are the default.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

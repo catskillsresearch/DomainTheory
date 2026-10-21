@@ -1,3 +1,8 @@
+/-ai
+Looking up index i in the code of a list returns the defaulted entry of that list at i.
+
+Unfolding the lookup, the fold of a code equals the corresponding list fold, and that fold reads off the entry.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

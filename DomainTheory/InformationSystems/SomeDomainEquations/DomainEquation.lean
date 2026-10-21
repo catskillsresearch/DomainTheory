@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the first two constructions of Scott's Section 8. Factoid 8.1 is the tree information system solving the equation of a domain with the separated sum of an atom system and the product of the domain with itself. Factoid 8.2 is the lambda information system solving the equation of a domain with the separated sum of an atom system and the function space of the domain into itself.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81

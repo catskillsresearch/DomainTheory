@@ -1,3 +1,6 @@
+/-ai
+A net in a complete lattice is monotone when its underlying function is a monotone map.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

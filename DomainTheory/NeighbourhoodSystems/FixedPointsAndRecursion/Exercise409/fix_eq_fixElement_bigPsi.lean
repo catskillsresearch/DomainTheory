@@ -1,3 +1,8 @@
+/-ai
+The fixed-point operator equals the least fixed point of Ψ.
+
+The least fixed point of Ψ is a pre-fixed point, so the least-pre-fixed-point property of the fixed-point operator places that operator below it. The fixed-point equation for the operator says that Ψ fixes it, so minimality of the least fixed point of Ψ places that least fixed point below the operator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

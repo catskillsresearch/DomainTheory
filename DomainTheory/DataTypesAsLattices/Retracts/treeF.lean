@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (4.38). The tree functor sends a retract z to the sum of the bottom element with the product of z with itself.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

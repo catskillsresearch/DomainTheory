@@ -1,3 +1,6 @@
+/-ai
+The approximable map gMap from the product of PN with itself to PN interprets the operation Fun on positive information. A product neighbourhood of X and Y is related to Z when X, Y, and Z are neighbourhoods and the complement of Z is contained in Fun of the complements of X and Y. Domain and codomain membership are the product and the output neighbourhood. The master case uses that the complement of the whole set is empty. The intersection of two related outputs rewrites by the complement of a neighbourhood intersection and takes the union of the two Fun inclusions. Monotonicity shrinks the output by antitonicity of complement, keeps the original Fun inclusion, and enlarges the Fun set by monotonicity of Fun applied to the complemented input inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

@@ -1,3 +1,8 @@
+/-ai
+The function sending a paired natural number to the canonical difference of its two components is primitive recursive.
+
+It is the canonical-index function composed with the raw difference, and the composite agrees with the definition by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

@@ -1,3 +1,6 @@
+/-ai
+One step of the fuel recursion on a term-algebra code returns the enumerator at the payload when the tag is zero, the universal intersection of the previous values at the two children when the tag is one, and the master index of the universal domain for every other tag.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

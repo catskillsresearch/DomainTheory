@@ -1,3 +1,6 @@
+/-ai
+The partial element of length n in the unary sequence system is the principal element of the tail of length n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

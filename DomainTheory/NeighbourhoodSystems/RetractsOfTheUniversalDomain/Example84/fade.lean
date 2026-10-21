@@ -1,3 +1,6 @@
+/-ai
+The fade combinator is the approximable map from the product of the two-point system with a neighbourhood system into that system, obtained by packaging the two-variable fade relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

@@ -1,3 +1,6 @@
+/-ai
+The copairing of two approximable maps is the map out of the separated sum that relates a sum neighbourhood to an output neighbourhood when the output is the master, or the input is a left copy related by the first map, or the input is a right copy related by the second map. The master relates by the master output. For intersection, a master disjunct is absorbed by the other, two copies of the same side are identified by injectivity of that injection and passed to the corresponding map, and a left copy cannot equal a right copy because a nonempty left copy is not contained in a right copy. For monotonicity, a master output stays the master after the codomain shrinks, and a left or right copy shrinks to a smaller copy of the same side, to which the corresponding map's monotonicity applies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum

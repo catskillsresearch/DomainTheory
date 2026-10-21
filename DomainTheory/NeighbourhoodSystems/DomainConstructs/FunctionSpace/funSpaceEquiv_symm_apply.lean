@@ -1,3 +1,8 @@
+/-ai
+The inverse of the function-space isomorphism sends an approximable map to the filter of neighborhoods containing it.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

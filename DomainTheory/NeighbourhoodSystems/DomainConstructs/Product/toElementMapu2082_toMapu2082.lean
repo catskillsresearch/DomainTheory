@@ -1,3 +1,8 @@
+/-ai
+Theorem 3.5 of Scott (1981, PRG-19), read on elements, states that the two-variable value of the two-variable restriction of a joint map f, at elements x and y, equals the value of f at the pairing of x and y.
+
+The two elements contain the same neighbourhoods. A pair of neighbourhoods of x and y related by f is the product neighbourhood of the pairing, with the same relation, and a product neighbourhood of the pairing splits back into such a pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

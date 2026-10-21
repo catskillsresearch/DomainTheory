@@ -1,3 +1,6 @@
+/-ai
+Scott maps from one complete lattice to another form a partial order under the pointwise order and the pointwise strict order. Reflexivity, transitivity, and antisymmetry are the corresponding pointwise facts, and the strict order holds exactly when the first map lies below the second and the second does not lie below the first.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,3 +1,6 @@
+/-ai
+The addition combinator is λx. primRec(x, K suc). It is written as S applied to K applied to the dollar combinator, and to S applied to K applied to the fixed-point combinator Y, and to S applied to the interpretation of the primitive-recursion step term at bottom and to K applied to the successor step.
+ai-/
 module
 
 public import Mathlib.Computability.RE

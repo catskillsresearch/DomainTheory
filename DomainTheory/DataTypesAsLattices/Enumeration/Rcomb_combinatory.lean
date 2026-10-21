@@ -1,3 +1,8 @@
+/-ai
+The combinator R is combinatory.
+
+Rewrite by the interpretation of the closed term Rterm, and apply theorem 2.4, which says that the interpretation of any closed term in the constantly bottom environment is combinatory.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

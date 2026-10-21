@@ -1,3 +1,9 @@
+/-ai
+If q realizes p on values, in the sense that val(p(n)) equals q applied to val(n) for every n, then that same equation holds for every n. This is the realizer form of Scott's completeness theorem for definability (Theorem 3.5).
+
+The conclusion is the hypothesis.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+The head value of the empty binary string is the empty-string constant.
+
+The equation is the corresponding clause of the head-value definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

@@ -1,3 +1,6 @@
+/-ai
+The code-level positive meet-fold of a list code is the coded fold of the coded meet step, starting from the code of success paired with the master index, with unused parameter zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

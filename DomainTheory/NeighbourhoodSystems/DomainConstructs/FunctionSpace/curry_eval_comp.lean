@@ -1,3 +1,8 @@
+/-ai
+Currying the composite of evaluation with the pairing of a map into the function space after the left projection and the right projection recovers that map.
+
+The composite is rewritten as the uncurry of the map, and currying an uncurry is the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

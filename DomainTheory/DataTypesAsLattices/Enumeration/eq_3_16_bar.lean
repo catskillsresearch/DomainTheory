@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (3.16): applying L to the result of applying the bar combinator of u to R of x yields the application of u to x.
+
+Rewrite by the two-argument application of the bar combinator, unfold the bar step body, and use that R applied to x and then to the numeral 0 is the numeral 0, so the zero case of the conditional (2.7) selects the first branch. Equation (3.16) then gives the application of u to x.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

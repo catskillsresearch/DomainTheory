@@ -1,3 +1,9 @@
+/-ai
+The graph of σ_j, applied to x, equals σ_j(x).
+
+Theorem 1.2 (i), applied to Scott continuity of σ_j, identifies the graph with the map, and both sides are then evaluated at x.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

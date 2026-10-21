@@ -1,3 +1,6 @@
+/-ai
+FixSet a is the fixed-point set of an approximable endomap a, the subtype of elements sent to themselves, matching the witness type of a finitary map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

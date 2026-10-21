@@ -1,3 +1,6 @@
+/-ai
+The family of neighbourhood-sets of the subdomains of a neighbourhood system E consists of those collections of sets that are exactly the neighbourhoods of some subsystem of E.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

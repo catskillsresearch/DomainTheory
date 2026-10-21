@@ -1,3 +1,8 @@
+/-ai
+If two neighbourhood systems are finite and each embeds as a subdomain of the other, then the two systems are isomorphic.
+
+Finiteness of each system gives finiteness of its element domain, and the mutual subdomain embeddings then supply the isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615

@@ -1,3 +1,8 @@
+/-ai
+If a set X of finite strings is nonempty and its copy prefixed by a letter a equals the copy of a set X' prefixed by a letter a', then a equals a' and X equals X'.
+
+A string of X gives a string in the a-prefixed copy, hence in the a'-prefixed copy. That membership forces the first letter to be a', so the letters agree. The remaining equality of the sets is injectivity of prefixing by that letter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

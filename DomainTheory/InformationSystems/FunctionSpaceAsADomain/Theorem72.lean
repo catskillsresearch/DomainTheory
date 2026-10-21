@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Scott's Theorem 7.2: the equality of repackaging a function token, membership in the element of an approximable map, the two inverse comparisons of approximable maps with function-space elements, the union laws for the left and right lifts, the projection laws for paired elements, membership of first and second components of a subset of a pair, the subset lemmas for left, right, and paired lifts, the evaluation law for application, the uncurry-curry equation, uniqueness of currying, and the statement that approximable maps are exactly the elements of the function space.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.Basic

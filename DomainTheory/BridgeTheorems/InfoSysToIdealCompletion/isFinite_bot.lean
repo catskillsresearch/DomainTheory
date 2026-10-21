@@ -1,3 +1,8 @@
+/-ai
+The bottom element of an information system is the closure of some consistent finite set of tokens.
+
+The empty set is consistent, and the bottom element is the closure of the empty set.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

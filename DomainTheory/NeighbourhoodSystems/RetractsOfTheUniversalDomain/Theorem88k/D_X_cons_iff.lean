@@ -1,3 +1,8 @@
+/-ai
+Under the characteristic and consistency hypotheses, two list codes are consistent for the induced enumeration if and only if the raw indices returned by the code-level fold are consistent for the presentation.
+
+Name the two fold outputs. In the forward direction, the fold of a witnessing code is a raw witness of the same inclusion. In the reverse direction, both fold outputs are diagonally fixed. Their intersection is a neighbourhood by the intersection specification and membership of presented neighbourhoods, and it lies in the fixed neighbourhood by intersection closure. The intersection index is therefore diagonally fixed. The hitting lemma supplies a code whose enumerated neighbourhood equals that intersection, by the intersection specification and the definition of the enumeration, and the resulting equality is the required inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.Basic

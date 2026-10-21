@@ -1,3 +1,6 @@
+/-ai
+A set of natural numbers is closed lambda-definable when some term interprets to it in the environment that sends every variable to the empty set.
+ai-/
 module
 
 public import Mathlib.Computability.RE

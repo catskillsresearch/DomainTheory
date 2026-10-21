@@ -1,3 +1,9 @@
+/-ai
+The binary sequence constructor of x and y equals the combinator S(S(K(cond x))(S(K(cond y zero)) pred)) I, where I is S K K.
+
+The inner combinator S(K(cond(y)(zero))) pred is the graph of z ↦ cond(pred z, y, ⊥), by the two-place S equation, the two-place K equation, two uses of the predecessor equation, the definitional equality of zero with the numeral 0, equation 2.6, and the three-place conditional equation. Applying S(K(cond x)) to that combinator yields the graph of z ↦ cond(x) at cond(pred z, y, ⊥), by the two-place S equation, the previous identity, the two-place K equation, and the β-equation, using Scott continuity of the left conditional composed with continuity of predecessor. The outer S of this graph applied to S K K then reduces by the two-place S equation, that identity, and S K K = I. Pointwise, the identity graph acts as the identity by continuity of the identity, the remaining graph β-reduces by continuity of application of cond(x) composed with continuity of the left conditional of y and bottom composed with continuity of predecessor, and the three-place conditional equation is the binary sequence constructor.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

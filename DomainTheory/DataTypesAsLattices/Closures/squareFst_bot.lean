@@ -1,3 +1,8 @@
+/-ai
+The first projection of the empty set is empty.
+
+Both sides are empty by the definitions of the first projection and of the empty set.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

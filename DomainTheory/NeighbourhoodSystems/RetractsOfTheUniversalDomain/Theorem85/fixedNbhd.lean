@@ -1,3 +1,6 @@
+/-ai
+The fixed neighbourhood system of an approximable endomap a consists of those neighbourhoods of E that a relates to themselves. Its master neighbourhood is the master neighbourhood of E, which belongs because a relates the master neighbourhood to itself. The intersection of two members that is contained in a third neighbourhood of E belongs to E, and monotonicity sends each self-relation to that intersection, so the right-intersection law of a supplies the self-relation. Every member is contained in the master neighbourhood because it is a neighbourhood of E.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

@@ -1,3 +1,8 @@
+/-ai
+Every element of the domain of Example 1.2 is a fixed point of the identity map.
+
+The elementwise action of the identity map is the identity on elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

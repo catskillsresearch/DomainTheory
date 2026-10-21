@@ -1,3 +1,8 @@
+/-ai
+From a finite list of neighbourhoods, each of which has a composite witness in a fixed target, one finite list of intermediate neighbourhoods can be chosen so that every source neighbourhood is related to some entry by the first map and every entry is related into the target by the second map.
+
+The argument is induction on the list. The empty list is covered by the empty list of witnesses. For a nonempty list, a witness for the head is taken from the hypothesis and the inductive hypothesis covers the tail, and the witness is placed at the head of that list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

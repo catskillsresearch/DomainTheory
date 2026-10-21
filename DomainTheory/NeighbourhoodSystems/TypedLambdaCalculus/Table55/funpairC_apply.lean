@@ -1,3 +1,8 @@
+/-ai
+The map recovered from the function-pairing combinator at φ and ψ sends x to the pair of the value of φ at x with the value of ψ at x.
+
+Rewrite by the definition of the combinator and the curried application law twice, then by the uncurried body, and simplify pairing, composition, the two projections, the two components of a pair, and evaluation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

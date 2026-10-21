@@ -1,3 +1,8 @@
+/-ai
+If every token of a list of raw lambda tokens is well formed, then forgetting the finite set of depth tokens read from the list recovers the finite set of the list.
+
+By extensionality, a forgotten token is the underlying token of a depth token of that set, hence a member of the list. Conversely a list member packages as a depth token by the given well-formedness, and forgetting it returns the member.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

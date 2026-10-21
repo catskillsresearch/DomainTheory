@@ -1,3 +1,8 @@
+/-ai
+If y lies in a subset U of Y, then the infimum of the image of U under a Scott map f' is at most the value of f' at y.
+
+The value at y belongs to the image of U.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,3 +1,6 @@
+/-ai
+The intersection-chain index of a list of indices is the left fold of the presentation's intersection operation, starting from the master index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

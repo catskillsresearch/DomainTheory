@@ -1,3 +1,6 @@
+/-ai
+The subbasic sets of the pointwise topology on Scott maps from D to D' are the sets of maps that send a fixed element of D into a fixed Scott-open subset of D'.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

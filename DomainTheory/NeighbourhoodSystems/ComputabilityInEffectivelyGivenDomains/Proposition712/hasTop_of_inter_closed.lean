@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood system that is unconditionally closed under intersection has a greatest element.
+
+The improper filter of all neighbourhoods is an element, and every element lies below it, because every neighbourhood of an element is a neighbourhood of the system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

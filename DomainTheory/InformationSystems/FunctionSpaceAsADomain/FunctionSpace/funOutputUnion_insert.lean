@@ -1,3 +1,9 @@
+/-ai
+The output union of the insertion of a function-space token p into a finite set s is the finitary union of the output of p with the output union of s.
+
+Insertion of p is the finitary union of the singleton of p with s. The output union splits across that union, and the output union of a singleton is the output of the token.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

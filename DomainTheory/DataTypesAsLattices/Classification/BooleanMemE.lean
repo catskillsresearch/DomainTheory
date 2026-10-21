@@ -1,3 +1,6 @@
+/-ai
+A set admits a Boolean membership witness when a Scott-continuous map sends every element into the numbers below a fixed bound, and the set is the preimage of a finite collection of elements that themselves lie below that bound.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

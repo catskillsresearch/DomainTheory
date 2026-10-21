@@ -1,3 +1,8 @@
+/-ai
+Scott 1972, Theorem 2.12. A T₀-space is injective if and only if it is homeomorphic to a continuous lattice carrying its Scott topology.
+
+The direction from injectivity is the backward half of the theorem. In the other direction, the homeomorphism exhibits the space as a retract of the continuous lattice. A continuous lattice is injective, and a retract of an injective space is injective.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

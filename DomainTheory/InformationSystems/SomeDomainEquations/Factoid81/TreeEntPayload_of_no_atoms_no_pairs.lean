@@ -1,3 +1,8 @@
+/-ai
+If a finite set of tree tokens has empty atom projection and empty left and right pair projections, the only token in its entailment payload is the bottom.
+
+Case on the token. The bottom case is reflexivity. An atom in the payload would require a nonempty atom projection. A left-pair token in the payload requires a nonempty left pair projection or a nonempty right pair projection. A right-pair token requires a nonempty right pair projection or a nonempty left pair projection.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

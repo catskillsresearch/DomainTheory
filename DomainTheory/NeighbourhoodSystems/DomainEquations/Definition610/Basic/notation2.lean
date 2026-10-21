@@ -1,3 +1,6 @@
+/-ai
+This file introduces the infix notation ◁ for the subsystem relation between neighbourhood systems on the same token type.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

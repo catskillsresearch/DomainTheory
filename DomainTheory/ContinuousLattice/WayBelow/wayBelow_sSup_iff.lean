@@ -1,3 +1,8 @@
+/-ai
+Scott 1972, Proposition 2.2(vii). For a nonempty directed set, an element is way below the supremum if and only if it is way below some member of the set.
+
+A witnessing Scott-open neighbourhood of the supremum meets the directed set, and the meeting point inherits that neighbourhood. Conversely, way-below is monotone on the right, and each member lies below the supremum.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

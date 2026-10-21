@@ -1,3 +1,6 @@
+/-ai
+The packed state of a pair of a bit-source and a depth is the primitive recursion that starts from the base state of the bit-source and iterates the one-step transition, using the extracted emptiness decider, once for each depth.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

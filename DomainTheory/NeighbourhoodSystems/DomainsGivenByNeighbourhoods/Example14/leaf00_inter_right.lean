@@ -1,3 +1,8 @@
+/-ai
+The intersection of the leaf 00 and the right branch is empty.
+
+Commute the intersection and apply the identity for the right branch intersected with the leaf 00.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

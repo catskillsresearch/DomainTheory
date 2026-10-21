@@ -1,3 +1,8 @@
+/-ai
+The discriminator of a sum element contains the zero token if and only if the element reaches a left-copy neighborhood.
+
+In the forward direction a witnessing sum neighborhood and guard is a left copy, which supplies the witness, a right copy, whose truth value is the master or one, or the sum master, whose truth value is the master. The master and one are distinct from zero. In the reverse direction the left injection itself is a sum neighborhood related to zero by the left clause of the guard.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

@@ -1,3 +1,8 @@
+/-ai
+Tagging by one fixed boolean is injective on sets of binary strings.
+
+Equality of the tagged sets yields inclusion in each direction, and one tagging by that boolean is contained in the other exactly when the underlying sets are so contained.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

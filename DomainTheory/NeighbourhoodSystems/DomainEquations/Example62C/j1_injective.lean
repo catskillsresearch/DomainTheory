@@ -1,3 +1,8 @@
+/-ai
+If the tagged middle copies of Y and of Y' are equal as sets of tokens in Option (α ⊕ β ⊕ γ), then Y equals Y'.
+
+The two inclusions of the equality are turned into inclusions of Y and Y' by the subset criterion for middle copies, and those inclusions are combined by antisymmetry.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

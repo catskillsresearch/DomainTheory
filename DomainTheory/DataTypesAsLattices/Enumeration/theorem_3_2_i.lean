@@ -1,3 +1,9 @@
+/-ai
+The conditional of the numeral 0 between G and bottom equals G. This is Scott's Theorem 3.2 (i): the zero test selects G.
+
+Comparing elements, the first clause of the conditional is membership in G. The second clause simplifies to a contradiction at the numeral 0. Every member of G satisfies the first clause.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

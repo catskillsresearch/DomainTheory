@@ -1,3 +1,8 @@
+/-ai
+The left projection of the singleton consisting of the left token of an element is the singleton of that element.
+
+After the membership characterization, membership in the projection is equality of left tokens. The left constructor is injective, and an equality of elements substitutes to an equality of left tokens.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

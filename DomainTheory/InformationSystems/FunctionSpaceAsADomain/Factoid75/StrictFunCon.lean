@@ -1,3 +1,7 @@
+/-ai
+A finite set of strict function tokens is consistent when the underlying function tokens are consistent and every subset whose combined input is empty-entailed has empty-entailed combined output.
+ai-/
+
 module
 
 public import Mathlib.Data.Multiset.MapFold

@@ -1,3 +1,8 @@
+/-ai
+The first component of the lifted pair of finite sets u and v equals u united with the first component of the right lift of v.
+
+The lifted pair is unfolded as the union of the left lift of u and the right lift of v, and the union law for first components and the first-component law for a left lift are applied.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

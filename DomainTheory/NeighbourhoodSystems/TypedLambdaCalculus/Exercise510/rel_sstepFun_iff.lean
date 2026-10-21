@@ -1,3 +1,8 @@
+/-ai
+An approximable map into the strict function space relates a neighbourhood to the step-function set of a list of neighbourhood pairs exactly when it relates that neighbourhood to the step set of every pair in the list.
+
+The proof is by induction on the list. The empty step-function set is the master of the strict function space, and the map relates the neighbourhood to that master. For a list with a head pair, the set is an intersection. A relation to the intersection supplies a witness in the intersection; monotonicity along the two inclusions gives a relation to the head step and to the tail set, and the inductive hypothesis splits the tail. In the other direction the two relations combine by intersection on the right.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

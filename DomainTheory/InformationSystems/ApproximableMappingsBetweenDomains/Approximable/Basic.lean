@@ -1,3 +1,8 @@
+/-ai
+A token belongs to the image of an element under an approximable mapping if and only if some finite set of tokens contained in the element is related to the singleton of that token.
+
+The two sides are the same membership condition in the carrier of the image, so the equivalence is definitional.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,3 +1,8 @@
+/-ai
+A nonempty finite directed subset of a complete lattice contains its supremum.
+
+Finiteness supplies a maximal element. Directedness makes that element an upper bound, hence the least upper bound, and therefore the supremum.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

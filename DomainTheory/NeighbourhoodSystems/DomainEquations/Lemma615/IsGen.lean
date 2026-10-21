@@ -1,3 +1,6 @@
+/-ai
+A set Y generates a set X, relative to approximable maps i and j, when i relates X to Y and j relates Y to X.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

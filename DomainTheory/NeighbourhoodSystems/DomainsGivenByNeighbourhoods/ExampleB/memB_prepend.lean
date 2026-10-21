@@ -1,3 +1,8 @@
+/-ai
+Prepending a finite binary string to a neighbourhood of the binary system yields a neighbourhood.
+
+The neighbourhood is the cone of some string, and prepending the given string to that cone is the cone of the concatenation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,6 @@
+/-ai
+fromSum is the inverse half of the isomorphism from the abstract separated sum to the concrete token sum, a token-level analogue of the map fromBB of Example 6.2. A neighbourhood of the image of an abstract element is the concrete sum master, or a false-tagged copy of a neighbourhood of the first system whose left injection belongs to the element, or a true-tagged copy of a neighbourhood of the second system whose right injection belongs to the element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

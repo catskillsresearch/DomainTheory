@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the retract of the infinite iterate of the truth system onto the binary system: a token outside each bit neighbourhood, recovery of a prefix from an inclusion of encodings, the two retraction laws, and injectivity of the encoding map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise317.Basic

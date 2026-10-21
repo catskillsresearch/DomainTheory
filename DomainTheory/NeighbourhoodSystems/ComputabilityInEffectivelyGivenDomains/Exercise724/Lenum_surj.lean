@@ -1,3 +1,9 @@
+/-ai
+Every neighbourhood of a finite address is enumerated by some code.
+
+A neighbourhood is the neighbourhood of some finite list. The code of that list enumerates it, because decoding an encoded list returns the list.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

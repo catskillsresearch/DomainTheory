@@ -1,3 +1,8 @@
+/-ai
+The reverse memo table at w is the code of the reverse memo list at w.
+
+At zero both sides are zero. At a successor, the table is one more than the pair of the step at the previous table, and the list code is the code of the course-of-values value consed onto the previous list, which agrees by the inductive hypothesis.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

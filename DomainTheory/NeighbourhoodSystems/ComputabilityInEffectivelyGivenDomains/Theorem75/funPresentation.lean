@@ -1,3 +1,6 @@
+/-ai
+The function-space presentation, given primitive-recursive characteristics for consistency, domain inclusion, codomain inclusion, and codomain equality, enumerates neighbourhoods by Xenum of the consistency characteristic. Surjectivity codes a nonempty step-function neighbourhood by a preimage list under funListOf. Intersection-equality is decided by interEqChar, consistency of a pair of codes by consPairChar, and the intersection index is interIdx. The master index is 0, and its enumerated set is the whole function space because the zero code decodes to the empty step list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

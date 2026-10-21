@@ -1,3 +1,8 @@
+/-ai
+The McCarthy conditional is Scott continuous in its right argument.
+
+An element of the fixed left branch lies in the Scott union at the empty finite set. An element of the varying branch, together with a positive number in the test, lies in the Scott union at the singleton finite set of that element. Conversely, a left-hand witness is unchanged, and a right-hand witness pulls its element back along the finite inclusion.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

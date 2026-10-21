@@ -1,3 +1,8 @@
+/-ai
+Unfolding the lambda bottom token yields the sum bottom.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

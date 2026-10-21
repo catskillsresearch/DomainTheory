@@ -1,3 +1,8 @@
+/-ai
+Applying G to the numeral of k + 1 returns zero.
+
+Rewrite by the application law for G and by the successor clause of the conditional.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

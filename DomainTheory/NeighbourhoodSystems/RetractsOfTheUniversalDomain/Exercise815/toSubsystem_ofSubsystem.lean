@@ -1,3 +1,8 @@
+/-ai
+Starting from a subsystem, inducing its filter and then reconstructing the subsystem returns the original subsystem.
+
+The reconstructed neighbourhood system has the same neighbourhoods as the original subsystem, and the two masters agree by the subsystem relation, so the packaged subsystems are equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

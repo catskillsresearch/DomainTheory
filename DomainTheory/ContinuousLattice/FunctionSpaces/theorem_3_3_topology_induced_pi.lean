@@ -1,3 +1,8 @@
+/-ai
+If D and D' are continuous lattices, the Scott topology on the space of Scott maps is the topology induced from the product topology on the underlying functions.
+
+The Scott topology equals the pointwise topology by Theorem 3.3, and the pointwise topology equals the induced product topology.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

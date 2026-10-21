@@ -1,3 +1,8 @@
+/-ai
+The sequence of finite elements of the final-segment system is strictly increasing.
+
+If the first index is strictly smaller than the second, the comparison of finite elements gives the weak inequality. Equality of the two finite elements would reverse the comparison, and the resulting equality of the indices contradicts the strict inequality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

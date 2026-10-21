@@ -1,3 +1,8 @@
+/-ai
+Applying the function-space projection and then the function-space embedding yields a self-map of the universal domain lying under the identity.
+
+This inequality is the corresponding component of the projection pair chosen for the function space.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

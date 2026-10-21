@@ -1,3 +1,8 @@
+/-ai
+The least fixed-point set of a monotone operator on subsets is a fixed point of that operator.
+
+The image is contained in the set by the pre-fixed-point inclusion for the least fixed-point set. The set is contained in its image because monotonicity makes the image a pre-fixed point, and the least fixed-point set is contained in every pre-fixed point. The two inclusions give equality.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

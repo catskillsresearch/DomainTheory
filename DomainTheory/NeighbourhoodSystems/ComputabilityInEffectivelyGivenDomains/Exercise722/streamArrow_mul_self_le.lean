@@ -1,3 +1,8 @@
+/-ai
+The square of the infinite word of a word lies below the infinite word.
+
+A neighbourhood of the first factor comes from some finite iterate of prepending, by the membership criterion for the least fixed point. The same concatenation witness then lies in the infinite word by the bound for that iterate.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

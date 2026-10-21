@@ -1,3 +1,6 @@
+/-ai
+The powerset information system P has the natural numbers as tokens and 0 as bottom token, every finite set is consistent, and a finite set entails a token when the token is 0 or belongs to the set. The consistency obligations hold outright. The bottom token is entailed because it equals 0, and a member of a set is entailed by that set. For transitivity, a token equal to 0 is entailed outright, and a token belonging to the intermediate set is entailed by the original set through the intermediate entailments.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

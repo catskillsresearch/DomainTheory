@@ -1,3 +1,8 @@
+/-ai
+U is isomorphic to V as domains.
+
+The effective isomorphism of U with V converts to a domain isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

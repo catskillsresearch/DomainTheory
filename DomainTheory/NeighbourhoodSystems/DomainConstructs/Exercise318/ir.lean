@@ -1,3 +1,6 @@
+/-ai
+The right tag of a token is the sum token formed by applying the option constructor to the right injection of that token into the disjoint sum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

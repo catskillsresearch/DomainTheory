@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the Factoid 8.2 interface: staged consistency and its monotonicity, emptiness, atom and function projections, function-clause witnesses, and insertion of bottom and of entailed atoms or bottom; unstaged consistency of the empty set, of singletons, of subsets, and of a forgotten singleton; the forgetful-finset lemmas; staged and unstaged entailment of bottom and of members, together with entailment for tokens; the consistency axioms of the lambda system; unions of atom finsets; emptiness of bundled consistency; and the unfoldings of bottom and of atoms, with the equality of the lambda right-hand side and the sum of A with the function space.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.Basic

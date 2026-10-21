@@ -1,3 +1,8 @@
+/-ai
+XPseq at stage 0 equals the master of the second system.
+
+The forward inclusion is the general containment of XPseq in that master. For the reverse, the two masters are empty together, and the master of the second system is a neighbourhood. Splitting it against X 0, whose difference from the master of the first system is empty by the convention that X 0 is that master, forces the second output of the split to be empty. The two outputs union to the master, so the first output is the master. That output is the second component of the positive X-step on the two masters, and the empty sign sequence includes it in XPseq 0.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

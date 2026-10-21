@@ -1,3 +1,8 @@
+/-ai
+The inverse structure map is strict.
+
+It is the strictness component of the inverse morphism of the structure isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

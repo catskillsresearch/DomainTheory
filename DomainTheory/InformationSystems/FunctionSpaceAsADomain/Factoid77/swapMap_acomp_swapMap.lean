@@ -1,3 +1,9 @@
+/-ai
+Composing the swap from A times B to B times A with the swap in the opposite direction yields the identity on the product of A and B.
+
+The composite agrees with the identity on both projections. Associativity of composition, together with the identities that swap followed by the first projection is the second projection and swap followed by the second projection is the first, reduces each projection of the composite to the corresponding projection. Uniqueness of pairing identifies both the composite and the identity with the pairing of those two projections.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

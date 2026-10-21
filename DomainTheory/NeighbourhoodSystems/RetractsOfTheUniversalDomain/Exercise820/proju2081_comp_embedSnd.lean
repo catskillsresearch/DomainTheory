@@ -1,3 +1,8 @@
+/-ai
+The second projection after the second embedding is the identity on B.
+
+Both inequalities reduce to the same computation: the second component of the pair of bottom with an element is that element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

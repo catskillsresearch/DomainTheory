@@ -1,3 +1,6 @@
+/-ai
+The sum of two Scott systems is the concrete token sum of their underlying neighbourhood systems, using their nonemptiness hypotheses, and the resulting system is again free of the empty set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

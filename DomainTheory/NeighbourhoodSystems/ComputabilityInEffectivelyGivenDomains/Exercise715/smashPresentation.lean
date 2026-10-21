@@ -1,3 +1,6 @@
+/-ai
+A Scott presentation of the smash product enumerates neighbourhoods by the smash enumeration. The master is the code of the two master indices, and a proper product is the code of indices of its two factors. Intersection-equality rewrites each of the three codes, by properness deciders and selection, as a product of effective indices, and is then the conjunction of the two component intersection-equality predicates on those indices. Consistency holds when either code is improper, taking the other code as witness because an improper enumeration is the master and every enumerated set lies under the master, or when both codes are proper and both components are consistent, in which case indices of the two component intersections form a code of a neighbourhood contained in the intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

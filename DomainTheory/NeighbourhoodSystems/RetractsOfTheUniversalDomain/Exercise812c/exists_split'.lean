@@ -1,3 +1,8 @@
+/-ai
+Given an atomless neighbourhood system, sets A and B that are empty together, with B empty or a neighbourhood, and a test set, there are sets I and J, each empty or a neighbourhood, such that A meets the test set emptily exactly when I is empty, A minus the test set is empty exactly when J is empty, I and J are disjoint, and their union is B.
+
+If A meets the test set emptily, take I empty and J equal to B. Then A minus the test set equals A, so emptiness matches through the given correspondence. If A minus the test set is empty, take I equal to B and J empty. Then A meets the test set in A, and emptiness matches the same way. If both pieces of A are nonempty, A is nonempty and therefore B is nonempty, so B is a neighbourhood. The absence of a minimal neighbourhood splits B into two nonempty disjoint neighbourhoods whose union is B, and those pieces are I and J. Both emptiness correspondences are then false on both sides.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

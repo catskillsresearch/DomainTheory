@@ -1,3 +1,8 @@
+/-ai
+The catamorphism is monotone in its leaf map and its node map.
+
+Compare the neighbourhood relations and apply monotonicity of the graph relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

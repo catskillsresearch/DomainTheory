@@ -1,3 +1,8 @@
+/-ai
+If a predicate on elements holds at bottom, is preserved by the elementwise action of an approximable endomap f, and is closed under suprema of monotone chains, then it holds at the least fixed point of f.
+
+The approximants form a monotone chain. By induction on the index, using the zero law at bottom and then the successor law with preservation under f, the predicate holds at every approximant. The least fixed point equals the supremum of that chain, so closure under that supremum gives the predicate there.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

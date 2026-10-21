@@ -1,3 +1,8 @@
+/-ai
+Applying the least fixed point of the dollar step to u and then to z yields the sequence revaluation of u at z.
+
+The fixed point is the union of the iterates from ⊥, and application preserves that union, so the double application is the union of the double applications of the iterates. Sequence revaluation is the union of its finite stages, and each iterate agrees with the stage of the same index.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

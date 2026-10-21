@@ -1,3 +1,7 @@
+/-ai
+This file gathers and re-exports the constructions of Scott's Factoid 7.5 on strict approximable maps, the strictify operator, the strict function space, flat BOOL, and the conditional isomorphism of a product with the strict maps out of BOOL, together with the tokens, satisfaction, consistency, entailment, elements, and supporting lemmas those constructions use.
+ai-/
+
 module
 
 public import Mathlib.Data.Multiset.MapFold

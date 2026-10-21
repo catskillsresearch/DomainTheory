@@ -1,3 +1,8 @@
+/-ai
+A token lies in the i-th fiber of a set of pairs exactly when the pair of i with that token lies in the set.
+
+The identity is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

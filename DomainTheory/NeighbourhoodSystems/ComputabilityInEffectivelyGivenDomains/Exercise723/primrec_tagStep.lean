@@ -1,3 +1,8 @@
+/-ai
+The tagging step tagStep is primitive recursive.
+
+Numbering one more than the left component with the left part of the right component is primitive recursive, and simplifying the unpairing identifies that composition with tagStep.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

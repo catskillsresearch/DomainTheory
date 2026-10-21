@@ -1,3 +1,6 @@
+/-ai
+The element of the element-token system corresponding to an element x consists of the brackets of neighbourhoods that belong to x. The subfamily law keeps the underlying neighbourhood. The master is the bracket of the master neighbourhood, using the master law and the identification of that bracket with the whole set. The intersection of the brackets of two neighbourhoods belonging to x is the bracket of their intersection, which belongs to x by the intersection law. Upward closure from the bracket of one neighbourhood to the bracket of another uses the inclusion law for brackets and upward closure in x.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

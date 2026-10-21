@@ -1,3 +1,8 @@
+/-ai
+An element of the domain of O contains the empty set if and only if it is the top element.
+
+If it contains the empty set, it equals the principal filter of the empty set, because the empty set is contained in every neighbourhood. In the other direction the top element is that principal filter, and the empty set is a neighbourhood contained in itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

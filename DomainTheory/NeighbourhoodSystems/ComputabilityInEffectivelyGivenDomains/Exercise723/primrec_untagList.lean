@@ -1,3 +1,8 @@
+/-ai
+The list code untagList is primitive recursive.
+
+It is appendCode composed with the pairing of the constant 0 and the left component of the twice-projected right component of the untagging state. Unfolding untagList and simplifying the unpairing identifies that composition with untagList.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

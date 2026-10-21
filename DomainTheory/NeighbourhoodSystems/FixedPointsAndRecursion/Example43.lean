@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the computation rules of the natural-number domain: membership of bottom, the neighbourhoods of a total element, and the values of the strict lift, the successor, the predecessor, and the zero test on bottom and on total elements, including that the predecessor undoes the successor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43.Basic

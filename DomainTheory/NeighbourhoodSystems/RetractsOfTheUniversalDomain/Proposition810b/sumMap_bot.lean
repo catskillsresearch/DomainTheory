@@ -1,3 +1,8 @@
+/-ai
+The sum map of two approximable maps sends the bottom element of the source sum to the bottom element of the target sum.
+
+Extensionality of elements and the membership rule for the bottom reduce the claim to an equivalence for a neighbourhood of the target. If the image meets that neighbourhood, the witnessing source neighbourhood belongs to the bottom and hence is the master. The relating clause is then equality of the two masters, which is the goal, or a left injection of the master, which would put the token none in the master and in a left injection, or a right injection, which would put the token none in the master and in a right injection. If the target neighbourhood is the master, the master of the source, which belongs to the bottom and is a neighbourhood, together with the master of the target and equality of the masters, witnesses the relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

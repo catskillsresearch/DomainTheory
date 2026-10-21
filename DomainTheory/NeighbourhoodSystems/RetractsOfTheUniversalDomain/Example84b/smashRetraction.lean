@@ -1,3 +1,6 @@
+/-ai
+Example 8.4(b)(ii)'s smash combinator is the approximable map on the product given by fade of check of the first coordinate applied to fade of check of the second coordinate applied to the pair. It is fade on the product, composed with the pairing of check after the first projection and the inner fade.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

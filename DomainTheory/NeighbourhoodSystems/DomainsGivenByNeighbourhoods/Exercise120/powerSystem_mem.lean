@@ -1,3 +1,8 @@
+/-ai
+A set of neighbourhoods is a neighbourhood of the power system if and only if it is the up-set of some neighbourhood.
+
+The two sides are the defining condition of the power system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

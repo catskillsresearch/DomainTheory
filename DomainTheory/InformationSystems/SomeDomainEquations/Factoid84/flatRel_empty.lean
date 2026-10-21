@@ -1,3 +1,8 @@
+/-ai
+The empty set of tokens is flat-related to itself.
+
+The containment clause holds because the empty set has no members, and 1 does not belong to the empty set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

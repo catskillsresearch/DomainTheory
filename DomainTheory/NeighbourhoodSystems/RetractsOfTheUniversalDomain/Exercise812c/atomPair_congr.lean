@@ -1,3 +1,8 @@
+/-ai
+If two sign sequences agree at every position strictly below n, they determine the same atom pair at depth n.
+
+At depth zero both pairs are the pair of masters. At a successor, the inductive hypothesis identifies the pairs at depth n, and agreement at position n identifies the two bits used by the two sub-steps, so the successor expressions agree.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

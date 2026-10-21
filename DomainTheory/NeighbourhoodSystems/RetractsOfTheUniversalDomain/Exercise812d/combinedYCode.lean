@@ -1,3 +1,6 @@
+/-ai
+The interleaved family testing the second domain is the code-level analogue of combinedY. At an even index it is the second presentation applied to the D₁-side piece recovered by XPseqCode; at an odd index it is the second presentation's own enumeration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the product of neighbourhood systems and the product of a pair of approximable maps, as the setting for Scott's Exercises 3.19 and 3.20.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

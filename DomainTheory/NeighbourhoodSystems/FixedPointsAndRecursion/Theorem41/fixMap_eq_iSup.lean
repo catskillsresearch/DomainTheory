@@ -1,3 +1,8 @@
+/-ai
+The value of the fixed-point operator at a function-space element equals the directed supremum of the iterates, from the bottom, of the approximable map corresponding to that element.
+
+The elementwise equation rewrites the operator value as the least fixed point of that map, and the least fixed point is that directed supremum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,3 +1,9 @@
+/-ai
+The transition untagStep is primitive recursive.
+
+The done flag, the reversed accumulator, and the carried value are primitive-recursive projections, as are the two components of unnum of the code and the zero test of the first. The halt branch pairs the second component with the flag one, the reversed accumulator, and that second component. The continuation pairs it with the flag zero, the successor of the pairing of the predecessor of the first component with the reversed accumulator, and the carried value. Selection on the zero test, then selection of the identity against that inner branch on the done flag, is primitive recursive and equals untagStep by reflexivity.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

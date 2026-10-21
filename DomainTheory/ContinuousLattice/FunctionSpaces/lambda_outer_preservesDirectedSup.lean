@@ -1,3 +1,8 @@
+/-ai
+For a Scott map f from a product D × D' into D'', the map sending x to the Scott map y ↦ f(x, y) preserves directed suprema. Equality in the function space is pointwise and reduces to preservation by the other curry.
+
+At a point y, extensionality leaves f of the pair whose first coordinate is the supremum of the directed set. The pointwise formula for suprema of Scott maps rewrites the other side, and preservation of directed suprema by the curry in the left variable identifies the two sides.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

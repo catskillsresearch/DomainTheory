@@ -1,3 +1,8 @@
+/-ai
+Decoding the encoding of a rational pair returns that pair.
+
+Unfold both sides and cancel unpairing together with rational encoding and decoding on each component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

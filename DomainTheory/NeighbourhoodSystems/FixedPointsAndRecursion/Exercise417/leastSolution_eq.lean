@@ -1,3 +1,8 @@
+/-ai
+The least fixed-point set of the monoid power-set operator solves the operator equation.
+
+The operator is monotone, and the least-fixed-point construction sends a monotone operator to a fixed point.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

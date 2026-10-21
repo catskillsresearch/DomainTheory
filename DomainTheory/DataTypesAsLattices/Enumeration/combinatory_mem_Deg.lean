@@ -1,3 +1,8 @@
+/-ai
+Every combinatory element lies in the enumeration degree of an arbitrary element a.
+
+Theorem 3.1 converts the combinatory hypothesis into generation from G. Induct on that generation. The generator belongs to the degree because the degree is a subalgebra, and an application belongs to the degree by closure of that subalgebra under application.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+The continuous operator of a finitary projection sends finitary projections to finitary projections.
+
+Rewrite the operator by the identity that it implements the arrow combinator, and apply the finitary-projection law of the arrow combinator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

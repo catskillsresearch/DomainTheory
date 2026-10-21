@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the setup of Exercise 7.21 together with the step witness for the evaluation lift, the recursive enumerability of its bounded quantifier over codes, the characterization of the evaluation lift on power-domain codes, and the computability of that lift.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise721.Basic

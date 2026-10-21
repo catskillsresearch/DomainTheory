@@ -1,3 +1,6 @@
+/-ai
+The element safePredC is the interpretation, in the constantly bottom environment, of the term sending x to the conditional x ⊃ 0, x − 1, so that numerals are sent to numerals.
+ai-/
 module
 
 public import Mathlib.Computability.RE

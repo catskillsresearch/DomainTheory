@@ -1,3 +1,8 @@
+/-ai
+Every singleton is a neighbourhood of the flat domain.
+
+It is the right-hand disjunct of flat membership, witnessed by its own element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

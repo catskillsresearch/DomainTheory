@@ -1,3 +1,8 @@
+/-ai
+The loop body evaluates on a pair (w, x) as the conditional of p(x), the value of w at f(x), and x.
+
+Rewrite the body as that composite and rewrite composition of element maps. Simplifying pairing, composition, both projections, the two components of a pair, and evaluation yields the conditional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

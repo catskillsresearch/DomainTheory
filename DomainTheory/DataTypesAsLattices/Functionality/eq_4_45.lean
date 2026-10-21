@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (4.45). The encoding of a term is typed by the expression retract, its typed interpretation is typed as an arrow from the environment retract to the lambda retract, and the continuous combinator applied to the encoding returns that typed interpretation.
+
+The first two conjuncts are the typing of encodings and the typing of the typed interpretation. The third rewrites by the combinator application rule, substitutes the typing of the encoding, and uses the decoding rule for the interpretation, after which the two sides are identical.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

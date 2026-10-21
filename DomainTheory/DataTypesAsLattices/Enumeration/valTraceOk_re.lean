@@ -1,3 +1,8 @@
+/-ai
+The predicate that a valuation trace is well formed is recursively enumerable.
+
+It is the conjunction of the primitive recursive structural predicate, read as a recursively enumerable predicate, and the recursively enumerable G predicate. The conjunction agrees with well-formedness.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

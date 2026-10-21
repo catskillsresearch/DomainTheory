@@ -1,3 +1,8 @@
+/-ai
+The tuple of length n + 1 is the push of the zeroth map paired with the tuple of the maps at the successor indices.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

@@ -1,3 +1,8 @@
+/-ai
+If two self-maps of the universal domain are projections, then so are their sum, their product, and their arrow.
+
+Pair the three projection theorems for the sum, the product, and the arrow.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

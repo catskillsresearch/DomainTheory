@@ -1,3 +1,8 @@
+/-ai
+The X-sequence code is primitive recursive.
+
+Exponentiation by four is primitive recursive. Composing the primitive-recursive fold with the pair of the index and four to that index, then taking the second component, equals the sequence code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

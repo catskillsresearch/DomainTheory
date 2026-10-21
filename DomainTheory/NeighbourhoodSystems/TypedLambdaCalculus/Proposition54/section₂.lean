@@ -1,3 +1,6 @@
+/-ai
+The section of an approximable map τ from a product of a neighbourhood system with itself, at a fixed element x, is the approximable endomap obtained by applying the curry of τ to x.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

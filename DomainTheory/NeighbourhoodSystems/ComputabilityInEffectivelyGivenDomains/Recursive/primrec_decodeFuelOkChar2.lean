@@ -1,3 +1,8 @@
+/-ai
+The success flag for fuel-bounded decoding is jointly primitive recursive in the fuel and the code.
+
+The fuel table of the decode lookup is primitive recursive. Swapping the two components and composing produces the table at the code and the fuel, and indexing that table at the code with default 0 is primitive recursive. The fuel-table equation at equal indices says that this entry is the success flag.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

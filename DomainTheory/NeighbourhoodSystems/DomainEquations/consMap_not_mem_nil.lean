@@ -1,3 +1,8 @@
+/-ai
+The image of an element under a bit-successor map is disjoint from the singleton of the empty string.
+
+A membership witness would supply a point of a neighbourhood of the element whose prepended copy is the empty string, and a cons cell is inhabited by a head bit.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

@@ -1,3 +1,8 @@
+/-ai
+Stage-n entailment of a raw lambda token persists at every later stage.
+
+The proof inducts on the inequality of stages. At equal stages the entailment is unchanged. A successor step places the inductive result in the previous-stage disjunct of the successor clause.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

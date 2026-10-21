@@ -1,3 +1,6 @@
+/-ai
+The intersection of a sequence of elements consists of the sets of tokens that belong to every term. Such a set is a neighbourhood because it belongs to the zeroth term. The master belongs to every term. The intersection of two such sets belongs to every term by the intersection law at that term. A neighbourhood containing one of them belongs to every term by upward closure at that term.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

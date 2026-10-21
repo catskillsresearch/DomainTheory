@@ -1,3 +1,6 @@
+/-ai
+The fixed-point set of a closure operator is order-isomorphic to the set of elements of the neighbourhood system reconstructed from that closure. The forward map sends a fixed point to the filter of principal up-sets of compact fixed points below it, the inverse is the directed supremum of the confirmed compact indices, each composite is the identity, and one fixed point lies below another exactly when its filter lies below the other filter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

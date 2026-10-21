@@ -1,3 +1,6 @@
+/-ai
+The constant-function embedding from B into the function space from A to B sends an element b to the function that ignores its argument and returns b. It is the curry of the first projection from the product of B with A.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

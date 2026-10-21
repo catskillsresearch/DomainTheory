@@ -1,3 +1,8 @@
+/-ai
+The double fiber of the reindexing of a singly indexed neighbourhood, at i and j, is the fiber of that neighbourhood at the pairing of i and j.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

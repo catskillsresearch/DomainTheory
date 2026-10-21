@@ -1,3 +1,8 @@
+/-ai
+A fixed point of sub is a finitary projection.
+
+Rewriting by the fixed-point equation, the map is the retraction of its fixed neighbourhood system, and the retraction of a subsystem is a finitary projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

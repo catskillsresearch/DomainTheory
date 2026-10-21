@@ -1,3 +1,6 @@
+/-ai
+The non-positive system is the neighbourhood system on the three tokens whose neighbourhoods are the master and the two overlapping sets. The master is the whole token set, which is nonempty and a neighbourhood, and every neighbourhood is contained in it. The intersection of two neighbourhoods is the master, one of the two overlapping sets, or the singleton of the middle token. The first three of these are neighbourhoods, and the last case cannot occur because no neighbourhood is contained in that singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

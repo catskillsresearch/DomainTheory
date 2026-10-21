@@ -1,3 +1,7 @@
+/-ai
+The approximable relation recovered from a Scott-continuous map holds of consistent finite sets u and v when v is contained in the image of the closure of u. The domain and codomain lie in the consistent sets by that witness. The empty set is related to itself because both empty sets are consistent and the empty set of tokens is contained in every carrier. A union of related outputs is related because both outputs sit in the same image element, which is consistent and contains the union. If the inputs and outputs are enlarged by entailment, the closure of the input rises, the Scott-continuous map is monotone, and the image element is closed under the output entailment.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable

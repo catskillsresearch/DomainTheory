@@ -1,3 +1,8 @@
+/-ai
+If a stem neighbourhood Y is a proper subset of a stem neighbourhood X, then the principal filter of X is strictly below the principal filter of Y.
+
+The inequality of principal filters is the subset relation. The two filters are distinct because principal filters are injective and X differs from Y.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

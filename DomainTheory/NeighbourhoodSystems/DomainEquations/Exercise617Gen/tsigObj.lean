@@ -1,3 +1,6 @@
+/-ai
+On objects, the strict indexed-sum functor sends an empty-free domain to the indexed sum of a unit with one copy for each letter, carried by the sum tokens, and that system is empty-free.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

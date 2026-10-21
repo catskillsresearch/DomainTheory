@@ -1,3 +1,6 @@
+/-ai
+The two-bits-per-depth sign sequence of a bit-source k sends each depth i to the pair of boolean digits read from the base-four place i: whether that place is odd, and whether the next bit of that place is set. These are the two bits peeled from the remainder at each depth.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,8 @@
+/-ai
+The triangular number at k + 1 equals the triangular number at k plus k + 1.
+
+The doubling identity supplies twice the value at k and twice the value at k + 1. Expanding twice the sum of the value at k and k + 1, and rewriting by those identities, shows that this product equals twice the value at k + 1. Cancelling the factor 2 on the right yields the recurrence.
+ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

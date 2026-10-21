@@ -1,3 +1,8 @@
+/-ai
+The pairing value of n and m is strictly below the triangular number of n + m + 1.
+
+Rewrite the successor triangular number by its recurrence, unfold the pairing function, and compare.
+ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

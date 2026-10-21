@@ -1,3 +1,6 @@
+/-ai
+The consistency decision on two indices is true when either index is inactive. When both are active it is the consistency of the two decoded expressions, and it is true if either decode fails.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

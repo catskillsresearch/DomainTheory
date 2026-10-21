@@ -1,3 +1,6 @@
+/-ai
+One step of the positive meet-fold takes an accumulator coding a success bit and an index, together with a next index. If the accumulator is successful and the consistency function accepts the pair of the current index with the next index, the step returns success paired with their intersection index; otherwise it returns failure paired with the current index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

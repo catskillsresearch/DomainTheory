@@ -1,3 +1,9 @@
+/-ai
+σ_j of the singleton of the code of (j, m) is the singleton of the code of (j, m + 1).
+
+Extensionality. A witness in the singleton has index m by injectivity of pairing, so the element is the successor code. That successor code is witnessed by the index m.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

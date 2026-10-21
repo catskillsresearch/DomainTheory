@@ -1,3 +1,6 @@
+/-ai
+The right-hand side of the tree domain equation is the sum of A with the product of the tree system of A with itself.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,3 +1,6 @@
+/-ai
+The argument domain of the map combinator is the product of the iterated function space with the underlying neighbourhood system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

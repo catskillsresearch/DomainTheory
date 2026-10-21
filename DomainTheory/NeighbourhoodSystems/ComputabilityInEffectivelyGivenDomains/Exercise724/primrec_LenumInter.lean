@@ -1,3 +1,8 @@
+/-ai
+The intersection code of the enumeration of L, read on the two components of an unpaired natural number, is primitive recursive.
+
+Selection between the left and right projections, decided by the swapped prefix test, is primitive recursive, and simplification shows that this selection is the intersection code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

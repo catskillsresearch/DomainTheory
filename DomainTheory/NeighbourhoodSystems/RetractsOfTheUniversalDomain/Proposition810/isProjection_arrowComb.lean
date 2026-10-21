@@ -1,3 +1,8 @@
+/-ai
+If two self-maps of the universal domain are projections, then so is their arrow combinator.
+
+A projection is a retraction lying below the identity. Pair the retraction half and the below-identity half of the arrow combinator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

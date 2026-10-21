@@ -1,3 +1,8 @@
+/-ai
+The retraction of a subsystem is a fixed point of sub.
+
+Unfolding sub, the two retractions agree because the fixed neighbourhood system of a retraction is the subsystem itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,8 @@
+/-ai
+The union of down-sets indexed by a list of codes is the union of the down-sets of the neighbourhoods named by those codes.
+
+The two sides are the same by the definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

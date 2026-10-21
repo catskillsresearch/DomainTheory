@@ -1,3 +1,8 @@
+/-ai
+Unfolding the fold of an element of the sum-and-product system returns that element.
+
+The two carriers are compared by antisymmetry. A token of the composite carrier is the unfold of a token already in the original element. Conversely, each token of the original element is the unfold of its fold, and that fold lies in the folded element because unfolding it returns the original token.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

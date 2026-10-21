@@ -1,3 +1,8 @@
+/-ai
+If f at the numerals n and m is the numeral 0, the binary search at that pair returns the numeral n.
+
+Unfold the defining recursion, substitute the hypothesis, and use that the zero test of the numeral 0 is true and that the conditional then returns its first branch.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

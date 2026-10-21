@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the cons equation, the diagonal fixedness of the master index, of one gated step, and of the list and code folds, the agreement of the code fold with the list fold, and the primitive recursiveness of the code-level step and fold, together with the induced enumeration of the fixed neighbourhood, for Theorem 8.8(c), part 3.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.Basic

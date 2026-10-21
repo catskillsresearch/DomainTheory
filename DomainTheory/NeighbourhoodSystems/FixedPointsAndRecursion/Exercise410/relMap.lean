@@ -1,3 +1,6 @@
+/-ai
+When an approximable endomap f fixes an element a, its restriction to the relativized system below a relates neighbourhoods X and Y when X belongs to a and f relates X to Y. The domain condition is membership in a. The codomain condition uses that the principal element of X lies below a, so its image lies below f(a), which equals a, and therefore Y belongs to a. The master pair is the master pair of f together with membership of the master in a. Closure under intersection on the right and monotonicity are the corresponding properties of f, kept inside the neighbourhoods of a.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

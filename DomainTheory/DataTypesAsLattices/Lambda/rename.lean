@@ -1,3 +1,6 @@
+/-ai
+Renaming sends free occurrences of a variable to a fresh variable. It leaves zero unchanged, passes through successor, predecessor, conditional, and application, and stops at an abstraction that binds the variable being renamed.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

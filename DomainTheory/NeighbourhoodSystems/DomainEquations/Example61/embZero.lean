@@ -1,3 +1,6 @@
+/-ai
+The zero tagging of a set of tokens is the set of pairs whose path is empty and whose token lies in that set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

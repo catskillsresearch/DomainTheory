@@ -1,3 +1,8 @@
+/-ai
+If m lies strictly below unpairWRec k n, then k fails to lie strictly below triangle (m + 1).
+
+The proof is by induction on n, with m kept general. At zero the hypothesis contradicts the clause defining unpairWRec. At a successor the argument splits on whether k lies strictly below triangle (n + 1). When it does, the successor equation reduces the hypothesis to the inductive hypothesis. When it does not, that equation gives m at most n, and a supposed bound k < triangle (m + 1) contradicts the case assumption by monotonicity of triangle.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

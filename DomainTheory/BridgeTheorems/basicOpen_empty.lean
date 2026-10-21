@@ -1,3 +1,8 @@
+/-ai
+The basic open of the empty set of tokens is the set of all elements of the information system.
+
+Every element of that basic open is an element. Conversely, the empty set is contained in every element, because no token belongs to the empty set.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

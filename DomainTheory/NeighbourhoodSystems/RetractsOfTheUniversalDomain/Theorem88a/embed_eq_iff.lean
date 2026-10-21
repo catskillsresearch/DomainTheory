@@ -1,3 +1,8 @@
+/-ai
+Two enumerated neighbourhoods are equal exactly when the corresponding embedded sets are equal.
+
+Each equality is the two inclusions, and each inclusion transfers between the enumeration and the embedded sequence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

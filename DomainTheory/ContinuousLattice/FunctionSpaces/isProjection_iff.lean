@@ -1,3 +1,8 @@
+/-ai
+A Scott map is a projection if and only if it is pointwise idempotent and pointwise deflationary.
+
+From the composite form of idempotence, evaluation through the formula for composition gives pointwise idempotence. From the inequality against the identity, evaluation through the formula for the identity map gives pointwise deflation. Conversely, the pointwise identities reassemble by extensionality into the composite equation and the inequality against the identity.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

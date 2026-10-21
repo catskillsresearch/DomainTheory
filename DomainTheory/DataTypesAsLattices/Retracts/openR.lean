@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (4.6). The open-set retract is the graph of the map sending a set u to the set of codes m for which some code n has the finite set e n contained in e m and n belonging to u.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

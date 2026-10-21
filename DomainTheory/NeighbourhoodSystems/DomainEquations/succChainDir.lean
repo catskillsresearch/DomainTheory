@@ -1,3 +1,8 @@
+/-ai
+A sequence of elements in which each term lies below the next is a directed family.
+
+For any two indices, the term at their maximum lies above both, because each term of a successor-increasing chain lies below every later term.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,3 +1,8 @@
+/-ai
+The approximable map corresponding to the bottom element of the function space from the universal argument domain to N evaluates to bottom at every argument.
+
+Antisymmetry with the leastness of bottom reduces the claim to an inequality. Monotonicity of the function-space equivalence, applied because bottom lies below the inverse image of the constant bottom map, and rewriting by the inverse law and the action of the equivalence, shows that the bottom map lies below the constant bottom map. Evaluating that inequality and rewriting the constant map gives bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

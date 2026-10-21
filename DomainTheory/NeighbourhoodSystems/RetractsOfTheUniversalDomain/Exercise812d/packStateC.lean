@@ -1,3 +1,6 @@
+/-ai
+The persistent state packs a bit-source remainder together with the current two-sided inner state by a natural-number pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,8 @@
+/-ai
+The empty binary string is not a successor.
+
+The list constructors separate the empty string from a cons cell.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

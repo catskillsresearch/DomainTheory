@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the cofinite neighbourhood system on the natural numbers, the order isomorphism between its domain and the powerset of the natural numbers, the successor and predecessor maps, and union and intersection as approximable maps of two variables. Neighbourhoods are the cofinite sets, a finite set is represented by the principal filter of its complement, and the four maps act by adding one, subtracting one, taking unions, and taking intersections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

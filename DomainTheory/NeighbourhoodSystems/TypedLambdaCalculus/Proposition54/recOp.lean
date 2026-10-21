@@ -1,3 +1,6 @@
+/-ai
+The recursion operator of Proposition 5.4 is the approximable endomap of the function space sending a map g to the map x ↦ τ(x, g(x)), realized as the curry of τ composed with the pairing of the argument projection and evaluation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

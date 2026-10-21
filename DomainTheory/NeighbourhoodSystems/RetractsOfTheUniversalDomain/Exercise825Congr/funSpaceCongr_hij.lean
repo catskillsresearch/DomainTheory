@@ -1,3 +1,8 @@
+/-ai
+The exponential of the inverse isomorphism on the domain and the forward isomorphism on the codomain, composed with the exponential of the forward isomorphism on the domain and the inverse on the codomain, is the identity of the target function space.
+
+Rewrite by the composite law for the exponential, the two identities that an isomorphism composed with its inverse is the identity, and the exponential of the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

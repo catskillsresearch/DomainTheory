@@ -1,3 +1,8 @@
+/-ai
+Scott's operator on subsets of pairs of naturals is monotone.
+
+A diagonal pair remains diagonal. A successor pair keeps its witness, which passes from the smaller set to the larger set by the assumed inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

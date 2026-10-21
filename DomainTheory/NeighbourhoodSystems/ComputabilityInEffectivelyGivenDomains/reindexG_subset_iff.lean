@@ -1,3 +1,8 @@
+/-ai
+The reindexing of a doubly indexed neighbourhood is contained in a singly indexed set if and only if, for every index, the double fiber at the two components of the unpairing of that index is contained in the fiber at that index.
+
+A containment of sets induces a containment of fibers, and the fiber of the reindexing is that double fiber. Conversely, a fiberwise containment yields the set containment.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

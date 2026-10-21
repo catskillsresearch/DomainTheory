@@ -1,3 +1,6 @@
+/-ai
+The union index of two indices is the code of the concatenation of their canonical presenting lists. Lookup through the enumeration canonicalizes again, so the inputs receive no further canonicalization here.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

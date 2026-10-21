@@ -1,3 +1,8 @@
+/-ai
+The empty list of endpoint pairs presents the empty set.
+
+Extensionality and simplification of the empty union give the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

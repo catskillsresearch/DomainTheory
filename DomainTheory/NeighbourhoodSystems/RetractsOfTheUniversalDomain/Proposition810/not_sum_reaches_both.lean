@@ -1,3 +1,8 @@
+/-ai
+No element of a sum meets both the left copy and the right copy.
+
+Take a left neighbourhood and a right neighbourhood that the element meets. Their intersection is met as well. The intersection of a left copy and a right copy is empty, and no sum element meets the empty set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

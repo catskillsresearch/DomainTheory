@@ -1,3 +1,8 @@
+/-ai
+The left projection of the singleton consisting of the sum bottom is empty.
+
+A left token in that projection would belong to the singleton and hence be the bottom, which is impossible, and the empty set has no members.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

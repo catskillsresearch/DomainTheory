@@ -1,3 +1,6 @@
+/-ai
+Juxtaposition is the approximable map of two variables on the system C relating neighbourhoods X, Y, and Z when Y and Z are neighbourhoods of C and either X is a cone contained in Z or X is the terminator singleton of some string σ whose prepend to Y is contained in Z. The domain and codomain conditions read these facts off the relation, and the master is related to itself because the cone of the empty string is the master. The intersection of two related outputs stays related by splitting on the two forms of X, using that equal cones have the same prefix, that a cone is never a singleton, and that equal singletons have the same string. Monotonicity splits the same way: a cone contained in a smaller cone transports the inclusion, a cone contained in a singleton has a longer prefix whose prepend still lands in the original cone, and a singleton contained in a smaller neighbourhood equals that neighbourhood, after which prepending is monotone in the second argument.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

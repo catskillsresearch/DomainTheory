@@ -1,3 +1,8 @@
+/-ai
+Bundled consistency passes from a finset of depth-well-formed lambda tokens to every subset.
+
+The forgetful image preserves the inclusion, and depth consistency is monotone.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

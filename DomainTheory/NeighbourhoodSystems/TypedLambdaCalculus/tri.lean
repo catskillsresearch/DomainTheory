@@ -1,3 +1,6 @@
+/-ai
+The k-th triangular number is k times k + 1, divided by 2.
+ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

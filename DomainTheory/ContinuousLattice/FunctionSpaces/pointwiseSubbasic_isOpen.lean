@@ -1,3 +1,8 @@
+/-ai
+If U is open in the Scott topology of D', then for each element x the set of Scott maps whose value at x lies in U is open in the pointwise topology on the function space.
+
+That set is one of the subbasic sets that generate the pointwise topology.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

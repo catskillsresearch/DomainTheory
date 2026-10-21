@@ -1,3 +1,8 @@
+/-ai
+The loop operator applied to a function, and then to an element, is the conditional of the predicate at that element, the function at the updated element, and the element itself.
+
+Curry application rewrites the operator as the loop body, and the application of the body is that conditional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

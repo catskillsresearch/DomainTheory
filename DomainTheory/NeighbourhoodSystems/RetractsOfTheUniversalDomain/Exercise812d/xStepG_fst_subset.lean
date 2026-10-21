@@ -1,3 +1,8 @@
+/-ai
+The first component of a generalized X-step is contained in the parent first set.
+
+If the bit is true, the step intersects with the neighbourhood, and an intersection is contained in its left factor. If the bit is false, the step takes a difference, which is contained in the set being cut.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

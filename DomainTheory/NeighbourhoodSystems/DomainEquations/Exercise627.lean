@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the results of Exercise 6.27. It re-exports the basic development, the proof that the smash product is a subsystem of the product and therefore embeds in it, the first-factor projection pair and the embedding of a domain in its product, the proof that the coalesced sum is a subsystem of the separated sum and therefore embeds in it, the strictification inequalities, the representation identities for approximable maps, filters, strict maps, and strict filters, the element-map computations for inclusion and strictification, the projection-pair laws and the embedding of the strict function space in the function space, extensionality from agreement on principal inputs, and the collapse of the smash with the one-point unit, which shows that a domain need not embed in a smash product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise627.Basic

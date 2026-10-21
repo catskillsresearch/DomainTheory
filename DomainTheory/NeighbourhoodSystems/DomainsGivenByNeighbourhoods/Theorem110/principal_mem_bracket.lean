@@ -1,3 +1,8 @@
+/-ai
+The principal filter of a neighbourhood belongs to the bracket of that neighbourhood.
+
+The principal filter contains the neighbourhood by reflexivity of inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

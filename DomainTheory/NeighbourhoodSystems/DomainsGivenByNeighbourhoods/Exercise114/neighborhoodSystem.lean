@@ -1,3 +1,6 @@
+/-ai
+The neighbourhood system of Exercise 1.14 has as neighbourhoods the whole set of natural numbers and the finite nonempty subsets, with the whole set as master neighbourhood. The master is nonempty and is a neighbourhood. In the intersection law, a neighbourhood contained in the intersection keeps the intersection nonempty. If the first set is the whole set, the intersection is the second neighbourhood. If the second set is the whole set, the intersection is the first, which is finite and nonempty. If both are finite, the intersection is finite and nonempty. Every neighbourhood is contained in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

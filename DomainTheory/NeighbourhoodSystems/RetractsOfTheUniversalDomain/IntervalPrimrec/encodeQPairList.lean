@@ -1,3 +1,6 @@
+/-ai
+Encoding a list of rational pairs as a natural number is the list encoding of the list of encoded pairs.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

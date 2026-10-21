@@ -1,3 +1,8 @@
+/-ai
+If the empty string belongs to the master of the variable domain N, then the grammar expression Texp N is rooted.
+
+Rootedness packages that membership for the constant summand with the rootedness of the two products of the variable, both of which hold outright.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

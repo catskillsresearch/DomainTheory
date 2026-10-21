@@ -1,3 +1,8 @@
+/-ai
+Whether the difference of two U-neighbourhoods is again a U-neighbourhood is recursively decidable.
+
+The decider for nonempty presented intervals, composed with the difference index, decides it, because presentability is equivalent to nonemptiness and the intervals presented by the difference index are the set difference.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

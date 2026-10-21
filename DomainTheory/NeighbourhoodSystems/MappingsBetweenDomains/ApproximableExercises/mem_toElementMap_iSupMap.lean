@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood belongs to the elementwise image under a pointwise union of approximable maps if and only if it belongs to the elementwise image under some member of the family.
+
+A witness is an input neighbourhood together with an index at which the relation holds, and the two directions exchange the order of the index and the input neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,3 +1,6 @@
+/-ai
+The strictification element of an element of the function space from A to B is the element of the strict function space obtained by strictifying the approximable map that corresponds to that element.
+ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

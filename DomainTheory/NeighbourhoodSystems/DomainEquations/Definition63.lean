@@ -1,3 +1,8 @@
+/-ai
+The underlying morphism of the identity homomorphism of a T-algebra is the identity morphism of its carrier, and the underlying morphism of a composite of algebra homomorphisms is the composite of the underlying morphisms.
+
+Both equalities hold by the definitions of the identity algebra homomorphism and of composition of algebra homomorphisms.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

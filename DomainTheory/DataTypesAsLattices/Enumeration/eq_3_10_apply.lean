@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (3.10), the application calculation: code application of 3 to 1 equals 12.
+
+Simplify by the definition of code application and by pairing.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

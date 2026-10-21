@@ -1,3 +1,6 @@
+/-ai
+The first embedding sends an element a of A to the pair of a with the bottom of B.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

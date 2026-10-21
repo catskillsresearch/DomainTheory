@@ -1,3 +1,8 @@
+/-ai
+The fold-shaped pair-map step on the pair of an entry and the pair of an accumulator and a parameter equals the pair-map step of that parameter, accumulator, and entry.
+
+Unfold the step and simplify by the two unpairing equations.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

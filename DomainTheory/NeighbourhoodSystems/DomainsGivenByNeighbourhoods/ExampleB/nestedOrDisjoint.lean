@@ -1,3 +1,8 @@
+/-ai
+The family of cones is pairwise nested or disjoint.
+
+Two members of the family are cones of prefixes, and any two cones are nested or disjoint.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

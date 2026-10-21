@@ -1,3 +1,8 @@
+/-ai
+At an even index twice k, the interleaved first-system family is the presentation image of k.
+
+The index is even and its half is k.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

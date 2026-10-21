@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood of the last two tokens is a neighbourhood.
+
+The classification of neighbourhoods supplies the disjunct that identifies this set with itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,6 @@
+/-ai
+Erasure of a tag j from an element u is the set of members of u that are not equal to the pair of j with any index.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

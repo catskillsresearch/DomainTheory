@@ -1,3 +1,6 @@
+/-ai
+T is the three-element truth neighbourhood system of Example 1.2.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

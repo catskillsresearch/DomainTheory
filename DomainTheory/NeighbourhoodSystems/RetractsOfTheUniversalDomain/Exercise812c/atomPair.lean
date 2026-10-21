@@ -1,3 +1,6 @@
+/-ai
+The atom pair of a sign sequence is, at depth zero, the pair of masters of the two neighbourhood systems. At depth n + 1 it splits the current second component against the enumerated set X n, keeps the intersection or the difference of the first component with X n according to the first bit, and keeps the matching half of that split. It then splits the resulting first component against the enumerated set Y n, keeps the intersection or the difference of the resulting second component with Y n according to the second bit, and keeps the matching half of that split.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

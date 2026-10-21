@@ -1,3 +1,8 @@
+/-ai
+The closed predecessor term avoids index 8.
+
+Simplify the avoidance predicate on the definition of the term.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

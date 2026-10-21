@@ -1,3 +1,8 @@
+/-ai
+Climbing the tower of inclusions from stage n to stage m preserves directed suprema, as a composite of the stage inclusions.
+
+The argument is by induction along n at most m. At the base, climbing is the identity, which preserves directed suprema. At a successor, climbing one stage further is the next inclusion composed with the climb already constructed, and preservation of directed suprema passes through that composite.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

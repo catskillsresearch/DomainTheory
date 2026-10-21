@@ -1,3 +1,8 @@
+/-ai
+Tree entailment is transitive. If two finite sets of tree tokens are consistent, every token of the intermediate set is entailed by the stronger set, and the intermediate set entails a token, then the stronger set entails that token.
+
+The consistency component is the consistency of the stronger set, and the payload component is transitivity of the entailment payload applied to the payload of the given entailment.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

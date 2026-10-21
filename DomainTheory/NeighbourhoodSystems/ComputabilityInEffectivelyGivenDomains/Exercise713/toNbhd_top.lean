@@ -1,3 +1,8 @@
+/-ai
+The hint neighbourhood of the master index is the set of all natural numbers.
+
+Every index is included in the master index, so every index lies in that neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

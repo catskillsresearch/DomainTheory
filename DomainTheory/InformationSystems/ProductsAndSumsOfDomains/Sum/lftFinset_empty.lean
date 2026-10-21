@@ -1,3 +1,8 @@
+/-ai
+The left projection of the empty set of sum tokens is empty.
+
+A member of that projection would be a left token belonging to the empty set, which is impossible, and the empty set has no members.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,3 +1,6 @@
+/-ai
+The distinguished point of a target algebra is the image, under its structure map, of the unit injection of the bottom element of the unit system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

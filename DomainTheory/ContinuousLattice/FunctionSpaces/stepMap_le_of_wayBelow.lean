@@ -1,3 +1,8 @@
+/-ai
+If e' is way below the value of a Scott map g at e, then the step map of e and e' lies below g.
+
+The comparison is pointwise. Where e is way below the argument, the step map takes the value e', which lies below g at e and hence, by monotonicity of g, below g at the argument. Where e is not way below the argument, the step function takes the value bottom, which lies below g.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

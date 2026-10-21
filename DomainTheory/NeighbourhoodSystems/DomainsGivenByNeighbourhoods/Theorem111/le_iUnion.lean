@@ -1,3 +1,8 @@
+/-ai
+Each term of an ascending sequence of elements lies below the union of the sequence.
+
+A set belonging to the term belongs to the union at that index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

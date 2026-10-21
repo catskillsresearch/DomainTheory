@@ -1,3 +1,8 @@
+/-ai
+The one-argument embedding sends the numeral for a natural number a to the argument element of the length-one vector whose only entry is a.
+
+Rewrite the embedding by the element-map rules for composition, pairing, the identity, and a constant map. The bottom of the argument domain equals the argument element of the empty vector, because the two elements agree on every component, and pushing the numeral for a in front of that empty argument gives the length-one vector.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

@@ -1,3 +1,8 @@
+/-ai
+The meet of a nonempty family lies below every member of the family.
+
+A token of the meet belongs to every member, hence belongs to the given member.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41

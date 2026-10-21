@@ -1,3 +1,8 @@
+/-ai
+Every element of Example 1.2 is the bottom filter, the filter of {0}, or the filter of {1}.
+
+If the element contains {0}, it is the filter of {0}. If it contains {1}, it is the filter of {1}. Otherwise the two filters contain the same neighbourhoods: every neighbourhood is the master, {0}, or {1}, the last two are excluded, and the master belongs to every element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

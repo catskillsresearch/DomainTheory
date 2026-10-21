@@ -1,3 +1,8 @@
+/-ai
+The intersection-emptiness decider is primitive recursive.
+
+It is subtraction of the primitive-recursive intersection-existence decider from the constant one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

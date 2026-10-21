@@ -1,3 +1,8 @@
+/-ai
+If sub on the universal domain fixes an element w, then subApprox fixes j-arrow of w.
+
+Unfold the element map of sub. Apply j-arrow to both sides and cancel j-arrow after i-arrow.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

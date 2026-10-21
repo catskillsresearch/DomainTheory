@@ -1,3 +1,6 @@
+/-ai
+The total element at the leaf 11 consists of the master neighbourhood, the right branch, and the leaf 11. Each of these is a neighbourhood, the master neighbourhood belongs to the element, the intersection of any two is again one of the three, and a neighbourhood containing one of them is again one of the three, by the master-subset lemma and the subset cases for the right branch and for the leaf 11.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

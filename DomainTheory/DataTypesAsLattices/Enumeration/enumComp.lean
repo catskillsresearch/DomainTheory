@@ -1,3 +1,6 @@
+/-ai
+Composition in the semigroup FUN sends elements u and v to the graph of the map taking x to the application of u to the application of v to x.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

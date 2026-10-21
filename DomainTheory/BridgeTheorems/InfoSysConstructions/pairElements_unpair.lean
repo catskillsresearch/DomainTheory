@@ -1,3 +1,8 @@
+/-ai
+Pairing the first and second projections of a product element recovers that element.
+
+A product element is determined by its two projections, and the projections of this pairing are the projections of the original element.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

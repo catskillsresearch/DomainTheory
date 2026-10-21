@@ -1,3 +1,8 @@
+/-ai
+The relation of the successor map that prepends a letter a holds between sets X and Y if and only if both are neighbourhoods of Cn and the set obtained by prepending a to the strings of X is contained in Y.
+
+The two sides are definitionally the same condition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

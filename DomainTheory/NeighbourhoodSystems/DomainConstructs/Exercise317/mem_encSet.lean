@@ -1,3 +1,8 @@
+/-ai
+A pair lies in the encoding of a string exactly when every bit defined at its index forces the token into the corresponding bit neighbourhood.
+
+The identity is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

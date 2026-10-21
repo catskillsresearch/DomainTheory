@@ -1,3 +1,8 @@
+/-ai
+The intersection-existence decider is primitive recursive.
+
+It is the one-indicator composed with the chosen primitive-recursive consistency predicate, and that composite equals the decider.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

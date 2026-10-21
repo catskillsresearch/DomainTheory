@@ -1,3 +1,6 @@
+/-ai
+A filter of the system of finitely generated subsystems determines a neighbourhood system on the original token type. A set is a neighbourhood when it belongs to the finitely generated family of some list whose generated neighbourhood is confirmed by the filter. The master is the master of the original system, and it is a neighbourhood by the empty list. The intersection of neighbourhoods is witnessed by concatenating the first two generating lists and combining their selected sublists; the concatenated intersection splits as the intersection of the two selected intersections. Every such neighbourhood is contained in the master because every member of a finitely generated family is.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

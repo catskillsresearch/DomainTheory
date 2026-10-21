@@ -1,3 +1,7 @@
+/-ai
+The transport from a morphism out of the monoidal tensor of A and Y to an approximable map out of their product information system is the cast along the equality of those hom-types.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

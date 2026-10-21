@@ -1,3 +1,6 @@
+/-ai
+A product neighbourhood of two sets of binary words is the empty word together with the false-tagged copy of the first set and the true-tagged copy of the second.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

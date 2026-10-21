@@ -1,3 +1,8 @@
+/-ai
+The inner continuation of a continuation packed from a remainder and an inner state is the inner state.
+
+Unfolding the inner component and the packing, the right component of a pair is its second argument.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

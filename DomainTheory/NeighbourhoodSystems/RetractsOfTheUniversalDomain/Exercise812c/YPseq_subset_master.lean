@@ -1,3 +1,8 @@
+/-ai
+YPseq n is contained in the master of the first system.
+
+For each finite sign sequence and each Boolean, the bit-general X-step specification gives the hypotheses of the following Y-step. The first output of that Y-step is contained in the first output of the X-step, which is contained in the first component of the padded atom pair, which is contained in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

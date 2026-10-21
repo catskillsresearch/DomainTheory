@@ -1,3 +1,8 @@
+/-ai
+A string lies in the cone of a second string when the second string is a prefix of the first.
+
+The equivalence is the defining equation of the cone.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

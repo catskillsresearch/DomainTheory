@@ -1,3 +1,8 @@
+/-ai
+The fixed point of a self-map of the function space is a fixed point of the induced operator.
+
+Unfold both sides. The filter of the map read from the fixed element is that element, and the self-map fixes its fixed element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

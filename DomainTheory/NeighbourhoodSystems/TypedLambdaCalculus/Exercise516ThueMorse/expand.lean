@@ -1,3 +1,6 @@
+/-ai
+The Thue–Morse substitution acts letterwise. The empty string is sent to the empty string, and a bit b followed by σ is sent to b, then the negation of b, then the substitution of σ.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

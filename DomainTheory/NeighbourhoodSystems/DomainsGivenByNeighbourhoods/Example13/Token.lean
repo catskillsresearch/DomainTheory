@@ -1,3 +1,6 @@
+/-ai
+The tokens of Scott's Example 1.3 are the three-element set {0, 1, 2}.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+The difference of two U-neighbourhoods is presentable if and only if it is nonempty.
+
+A presenting index is a genuine neighbourhood, hence nonempty. Conversely the difference is empty or a neighbourhood; emptiness contradicts the hypothesis, and a neighbourhood is hit by the presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

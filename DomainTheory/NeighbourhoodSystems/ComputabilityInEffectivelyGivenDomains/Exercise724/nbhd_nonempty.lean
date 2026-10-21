@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood determined by a finite list of natural numbers is nonempty.
+
+The empty list has the basepoint as a member. For a nonempty list, the cons-set of a nonempty set is nonempty, and the tail neighbourhood is nonempty by induction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

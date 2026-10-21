@@ -1,3 +1,8 @@
+/-ai
+An element of the final-segment system is total if and only if it equals the limit element.
+
+A total element lies below the limit, and totality applied to the limit, which lies above the element, gives the reverse inequality. Conversely, the limit element is total.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

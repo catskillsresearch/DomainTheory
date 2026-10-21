@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Theorem 8.8: the classical splitting choice; the reindexed embedding of a countable neighbourhood system as a subsystem of U, with the isomorphism; the effective re-pointing of a presentation at the master index and the emptiness law for generated atoms; the effective givenness of the embedded system; the primitive-recursive coding of unions, states, atoms, and the sequence of embedded neighbourhoods, with the emptiness, disjointness, and membership laws of those codes; the coded isomorphism and its effective givenness; the computable injection, projection, and projection pair of the coded system; the effective clause of the theorem; the recursively enumerable character of the diagonal of fixed neighbourhoods; the fold that searches that diagonal and its primitive-recursive code; the surjective enumeration of the fixed system; the computable consistency and intersection characters of that enumeration; the intersection specification of the folded neighbourhoods; the effective givenness of a fixed-neighbourhood system; and the computable injection and projection of the isomorphism, including the strengthened effective clause.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

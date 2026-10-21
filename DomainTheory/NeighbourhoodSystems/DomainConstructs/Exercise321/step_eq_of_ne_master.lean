@@ -1,3 +1,8 @@
+/-ai
+If the output neighbourhood is not the master, equality of step neighbourhoods determines both endpoints.
+
+The second output is not the master either: otherwise its step would be the whole space, the first step would be the whole space, and the first output would be the master. Equality of the steps gives equality of the least steps, so each least step relates the other pair's input to its output. Unfolding those relations, failure of one input to sit inside the other would force the corresponding output to be the master, and otherwise each output sits inside the other. The two inclusions in each coordinate give the equalities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

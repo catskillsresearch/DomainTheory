@@ -1,3 +1,8 @@
+/-ai
+The interpreter step at a tag-four injection of an element equals the conditional clause at that same tagged expression.
+
+Unfold the step and the expression tag. Definite conditionals at positive numerals take the second branch. Three predecessors of four are one, the predecessor of one is zero, and the conditional at zero selects the conditional clause.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

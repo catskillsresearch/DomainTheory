@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood belongs to the pairing of elements x and y if and only if it is the product neighbourhood of some neighbourhood of x and some neighbourhood of y.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

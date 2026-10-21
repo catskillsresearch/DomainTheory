@@ -1,3 +1,8 @@
+/-ai
+If a neighbourhood system is closed under unions, then for any two basic neighbourhoods there is a basic neighbourhood equal to their union.
+
+The union of two genuine neighbourhoods is genuine by union closure, and surjectivity of the presentation supplies an index for it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood zero is distinct from the neighbourhood one.
+
+The token 0 lies in zero. Transporting a supposed equality would place it in one, which simplification rules out.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

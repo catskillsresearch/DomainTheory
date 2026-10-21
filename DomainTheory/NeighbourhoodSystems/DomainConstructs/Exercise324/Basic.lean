@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the order isomorphism between approximable maps into a product and pairs of approximable maps, and the induced isomorphism of the underlying domains.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

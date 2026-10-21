@@ -1,3 +1,6 @@
+/-ai
+Selection on a {0,1} condition c between a and b is the arithmetic combination of c times a and one minus c times b. It returns a when c is 1 and b when c is 0.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

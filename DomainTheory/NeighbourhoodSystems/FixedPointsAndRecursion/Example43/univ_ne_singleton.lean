@@ -1,3 +1,8 @@
+/-ai
+The whole space of natural numbers is not a singleton.
+
+If it equalled the singleton of n, then n + 1 would belong to that singleton, contradicting that a successor differs from its argument.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,3 +1,8 @@
+/-ai
+Upsampling a mask from level k to a finer level k' does not change the level set it represents.
+
+A number lies in the upsampled level set when the upsampled mask has the bit of its remainder modulo 2^{k'} set. That bit test is the original mask's test at the coarser remainder, and the coarser remainder of the finer remainder is the remainder modulo 2^k.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

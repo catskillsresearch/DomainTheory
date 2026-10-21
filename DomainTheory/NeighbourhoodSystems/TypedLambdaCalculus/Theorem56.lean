@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic development of Theorem 5.6 together with the identification of the bottom of the truth domain, the strict identity on numerals and at bottom, the strict first projection and its values on numerals and at bottom in either argument, the primitive-recursion body and the recursion, zero, successor, and bottom equations, the μ-body and the recursion, found, step, and bottom equations, the μ-map on numerals, the climbing equation, and the identification of the μ-map with the least zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.Basic

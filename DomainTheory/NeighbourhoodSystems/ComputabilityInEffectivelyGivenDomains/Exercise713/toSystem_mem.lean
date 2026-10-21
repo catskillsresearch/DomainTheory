@@ -1,3 +1,8 @@
+/-ai
+A set of natural numbers is a neighbourhood of the hint system if and only if it equals the hint neighbourhood of some index.
+
+This is the defining membership condition, so the equivalence is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

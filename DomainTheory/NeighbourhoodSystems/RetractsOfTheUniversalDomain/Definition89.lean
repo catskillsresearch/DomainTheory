@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the sum, product, and function-space combinators on self-maps of the universal domain, the six fixed embedding and projection maps, and the laws that each projection after the corresponding embedding is the identity, that each embedding after the corresponding projection lies under the identity, and that all six maps are computable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89.Basic

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the product order-isomorphism helpers, the commutativity and associativity maps, the terminal domain and its two unit laws, uniqueness of the terminal element, and congruence of the product under order isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,3 +1,6 @@
+/-ai
+Given a total function f of one more argument than a vector v, the zero predicate sends each k to the boolean decision of whether f at k followed by v equals zero, packaged as a partial boolean so that unbounded search is well-typed without unfolding the partial-function abbreviation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

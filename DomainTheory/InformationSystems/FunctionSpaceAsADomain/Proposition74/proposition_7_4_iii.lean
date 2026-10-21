@@ -1,3 +1,8 @@
+/-ai
+Scott's Proposition 7.4(iii): if an approximable map h commutes with endomaps f and g and sends the bottom element to the bottom element, then h sends the least fixed point of f to the least fixed point of g.
+
+Antisymmetry is used. One comparison, using strictness, places the image of the fixed point of f below the fixed point of g. The other comparison, using the commuting equation, places the fixed point of g below that image.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint

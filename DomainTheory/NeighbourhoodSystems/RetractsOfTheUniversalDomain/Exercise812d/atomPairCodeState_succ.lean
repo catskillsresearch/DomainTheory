@@ -1,3 +1,8 @@
+/-ai
+The atom-pair code state at depth n + 1 is one atom-pair step applied to the state at depth n for the same bit-source.
+
+This is the recursion unfolded, after the pair projections are simplified.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

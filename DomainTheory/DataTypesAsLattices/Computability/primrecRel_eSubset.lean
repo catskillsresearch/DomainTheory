@@ -1,3 +1,8 @@
+/-ai
+Inclusion of finite sets coded by natural numbers, the relation e n ⊆ e b, is primitive recursive.
+
+The bit relation which says that bit k of the first component of a packed pair is false or bit k of the second component is true is primitive recursive, as a disjunction of two boolean test-bit predicates rewritten by Bool.not_eq_true. Bounded universal quantification of that relation, composed with the first projection and Cantor pairing, is primitive recursive, and the symmetric form of eSubset_e_iff together with Nat.unpair_pair identifies it with inclusion.
+ai-/
 module
 
 public import Mathlib.Computability.RE

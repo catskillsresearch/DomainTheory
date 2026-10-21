@@ -1,3 +1,8 @@
+/-ai
+Every singleton is a unary neighbourhood.
+
+It is the singleton clause of the neighbourhood predicate at that index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

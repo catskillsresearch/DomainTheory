@@ -1,3 +1,8 @@
+/-ai
+The binary join of two Scott maps, as derived from the complete-lattice supremum, is computed pointwise.
+
+The join is the supremum of the two-element set of maps. Suprema of Scott maps are evaluated pointwise, the image of a pair is the pair of values, and the supremum of a pair of values is their join.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

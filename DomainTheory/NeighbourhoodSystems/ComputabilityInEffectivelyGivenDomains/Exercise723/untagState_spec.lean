@@ -1,3 +1,9 @@
+/-ai
+The untagging state of a code pairs the value component of the reference decoder with the flag one, the left fold of the decoded list that pairs each entry onto the accumulator and adds one, started from zero, and that same value.
+
+This is the iteration invariant of the transition at fuel equal to the code, with reversed accumulator zero and value zero, using that the code is at most itself.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

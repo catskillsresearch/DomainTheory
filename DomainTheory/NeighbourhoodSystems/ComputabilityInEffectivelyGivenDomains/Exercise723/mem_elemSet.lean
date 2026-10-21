@@ -1,3 +1,8 @@
+/-ai
+A number k lies in elemSet x if and only if some neighbourhood nbhd n of x has its k-th bit set.
+
+The equivalence is definitional from the definition of elemSet.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

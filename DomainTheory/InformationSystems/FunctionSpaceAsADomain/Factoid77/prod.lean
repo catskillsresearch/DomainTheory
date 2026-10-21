@@ -1,3 +1,6 @@
+/-ai
+The product of information-system objects A and B is the object whose tokens are the product tokens of their underlying systems and whose information system is their product system.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

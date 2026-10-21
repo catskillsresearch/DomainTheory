@@ -1,3 +1,6 @@
+/-ai
+The predecessor combinator is the graph of the predecessor operation.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,9 @@
+/-ai
+The universe value V(a)(x) contains both x and a of that value. Scott's Theorem 5.6 and equation (5.15) record this closedness.
+
+Equation (5.16) puts x inside the universe value. The universe value is a prefixpoint of the step y ↦ x ∪ a(y), so a of the universe value is contained in it as well. Their union is therefore contained in the universe value.
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

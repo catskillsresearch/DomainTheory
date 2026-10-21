@@ -1,3 +1,8 @@
+/-ai
+The rational minimum code is primitive recursive.
+
+It selects, by the comparison code, the left component of its argument or the right component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

@@ -1,3 +1,6 @@
+/-ai
+The pullback of a filter of the code-driven subsystem D'' is the filter of D whose neighbourhoods are the embedded sets e P n for which the given filter contains the coded set Yc P n. Such a set is a neighbourhood of D. The master is the zero embedding, which the filter contains because the zero-depth coded set is the master of D''. An intersection of two such embedded sets is the embedded set of an intersection index of the corresponding coded sets, obtained because their intersection belongs to the universal system along the subsystem relation. An upward step uses the raw embedding comparison to enlarge the coded set inside the given filter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

@@ -1,3 +1,6 @@
+/-ai
+A pair is a product token when its first component is the least token of the first system or its second component is the least token of the second system.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

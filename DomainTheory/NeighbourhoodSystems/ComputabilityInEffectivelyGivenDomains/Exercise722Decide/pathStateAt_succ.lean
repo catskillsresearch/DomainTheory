@@ -1,3 +1,8 @@
+/-ai
+After the first step of a path, the state n + 1 symbols along the whole path equals the state n symbols along the remaining path.
+
+Both sides reduce to the same clause of the auxiliary recursion on path states.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

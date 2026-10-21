@@ -1,3 +1,8 @@
+/-ai
+The low-bit exclusive disjunction of x and y equals their bitwise exclusive disjunction modulo 2.
+
+Unfold the arithmetic form, rewrite by the formula for exclusive disjunction modulo 2, and use the symmetric form of addition modulo 2.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

@@ -1,3 +1,6 @@
+/-ai
+The class Scott F is the class of Scott-closed subsets of Pω, the complements of the Scott-open sets.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

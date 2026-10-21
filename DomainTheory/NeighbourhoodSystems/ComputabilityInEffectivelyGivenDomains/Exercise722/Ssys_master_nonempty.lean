@@ -1,3 +1,8 @@
+/-ai
+The set of all binary words is nonempty.
+
+The empty word belongs to it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

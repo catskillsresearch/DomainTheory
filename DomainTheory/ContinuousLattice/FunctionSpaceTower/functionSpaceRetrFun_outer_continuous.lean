@@ -1,3 +1,8 @@
+/-ai
+For a continuous-lattice projection from D into D', the assignment g ↦ j ∘ g ∘ i is continuous for the Scott topologies on the function spaces [D' → D'] and [D → D].
+
+The assignment agrees with conjugation by the pair (j, i). Agreement of the underlying functions is extensionality of Scott maps, and conjugation is continuous.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

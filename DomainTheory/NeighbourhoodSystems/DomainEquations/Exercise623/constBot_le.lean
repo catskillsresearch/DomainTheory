@@ -1,3 +1,8 @@
+/-ai
+The constant bottom map lies below every approximable map. It relates each domain neighbourhood only to the codomain master, which every map produces by monotonicity from the master relation.
+
+A pair related by the constant map consists of a domain neighbourhood and the codomain master. Monotonicity applied to the master relation, using that the domain neighbourhood is contained in the domain master, yields the same pair for the given map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

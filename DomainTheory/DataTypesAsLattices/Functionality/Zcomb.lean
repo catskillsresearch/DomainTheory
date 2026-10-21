@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (7.15) and (7.16). The combinator Z at a stage is the graph of the map sending a function to the graph of its iterator at that stage.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

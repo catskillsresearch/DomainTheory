@@ -1,3 +1,6 @@
+/-ai
+The consistency bit of a packed triple is the first component of the second component of the natural.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

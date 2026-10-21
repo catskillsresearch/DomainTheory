@@ -1,3 +1,8 @@
+/-ai
+Applying the three-variable abstraction of a map to x, then to y, then to z equals applying the map to the nested pair of x, y, and z.
+
+Rewrite by the definition of the three-variable abstraction as a double curry, and apply the curry equation twice.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,3 +1,7 @@
+/-ai
+The term-level binary sequence constructor of terms a and b is the abstraction, binding variable 8, of the conditional of that variable between a and the conditional of its predecessor between b and the bottom term.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

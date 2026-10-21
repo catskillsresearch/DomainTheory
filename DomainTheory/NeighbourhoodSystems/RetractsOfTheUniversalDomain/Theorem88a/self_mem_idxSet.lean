@@ -1,3 +1,8 @@
+/-ai
+Every index n belongs to its own index set.
+
+Membership unfolds to the inclusion of e n in itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

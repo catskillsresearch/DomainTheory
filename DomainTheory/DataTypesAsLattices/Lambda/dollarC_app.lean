@@ -1,3 +1,8 @@
+/-ai
+Applying the dollar combinator to a sequence u yields the graph of x ↦ seq(u)(x).
+
+This is the beta law for that graph, using Scott continuity of sequence revaluation in the sequence.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,8 @@
+/-ai
+The truncated difference of 1 and a equals 1 when a is 0 and equals 0 otherwise.
+
+Split on whether a is 0, and close both cases by arithmetic.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

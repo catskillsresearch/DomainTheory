@@ -1,3 +1,6 @@
+/-ai
+A domain isomorphism determines a projection pair. The injection is the approximable map of the isomorphism, and the projection is the approximable map of its inverse. On elements, the projection after the injection and the injection after the projection agree with the corresponding identities, by the element formula for composition and for the map of an isomorphism together with the two round trips. The order characterization of inequality of approximable maps therefore gives equality in the first case, by antisymmetry, and the required inequality in the second.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

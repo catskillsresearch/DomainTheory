@@ -1,3 +1,8 @@
+/-ai
+The second component of atomPair at depth n equals the generic atom of the interleaved family combinedY, started from the master of D₁ and read along the interleaved signs, at depth 2n.
+
+The proof is by induction on n. Depth zero is definitional. At a successor the odd half-step identity rewrites the atom through depth 2n+1, and the successor law of the generic atom together with the odd clauses of the interleaved family and of the interleaved signs reduces the claim to the direct second-component output of the Y-step. One bit is the intersection with the current Y-set. The other bit is an intersection with the complement in the master, which the subset law turns into the plain difference, using that the intermediate second component lies in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

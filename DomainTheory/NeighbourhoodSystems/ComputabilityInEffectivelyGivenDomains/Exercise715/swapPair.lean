@@ -1,3 +1,6 @@
+/-ai
+Swapping a coded pair exchanges its two components.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

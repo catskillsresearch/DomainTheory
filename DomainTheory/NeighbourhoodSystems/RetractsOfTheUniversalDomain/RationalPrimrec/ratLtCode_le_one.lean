@@ -1,3 +1,8 @@
+/-ai
+Every strict comparison code is at most one.
+
+Unfolding the definition, the code is one minus a natural number.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

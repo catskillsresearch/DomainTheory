@@ -1,3 +1,8 @@
+/-ai
+If the product system entails a finite set v from a finite set u, then B entails the second projection of v from the second projection of u.
+
+A token of the second projection of v comes from a product token of v that meets the second-projection condition, and the second component of the product entailment of that token is the required entailment in B.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

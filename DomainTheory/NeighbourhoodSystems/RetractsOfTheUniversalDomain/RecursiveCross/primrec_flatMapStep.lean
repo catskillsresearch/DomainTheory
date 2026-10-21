@@ -1,3 +1,8 @@
+/-ai
+If f is primitive recursive, then flatMapStep f is primitive recursive.
+
+The popped element, the accumulator, and the fixed parameter are primitive recursive projections. Appending f of the pair of the fixed parameter and the popped element onto the accumulator is primitive recursive, and unfolding the step reduces to the unpair-pair identities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

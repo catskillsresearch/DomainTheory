@@ -1,3 +1,8 @@
+/-ai
+The map sending each natural number to the principal filter of its singleton in the flat domain is injective.
+
+Equality of those principal filters gives equality of the singletons, by injectivity of principal filters, and equal singletons have equal elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

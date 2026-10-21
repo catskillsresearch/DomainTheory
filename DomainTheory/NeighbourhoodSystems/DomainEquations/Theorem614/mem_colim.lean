@@ -1,3 +1,8 @@
+/-ai
+A set belongs to the colimit exactly when it belongs to some level of the tower.
+
+The equivalence is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

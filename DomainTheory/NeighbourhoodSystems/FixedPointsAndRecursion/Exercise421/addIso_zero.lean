@@ -1,3 +1,8 @@
+/-ai
+The addition equivalence sends zero to the distinguished element m of the up-set of m.
+
+Simplify the definition of the equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

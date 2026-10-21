@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (2.1). The maximal extension of ⊥ along a family p is the intersection of all the values p(n).
+
+Membership through the empty clause is membership in every p(n). The numeral clause would require ⊥ to equal a numeral, and the residual clause would require ⊥ to be nonempty.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

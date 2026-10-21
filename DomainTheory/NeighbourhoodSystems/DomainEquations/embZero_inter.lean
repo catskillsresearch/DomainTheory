@@ -1,3 +1,8 @@
+/-ai
+The intersection of two zero embeddings is the zero embedding of the intersection of the underlying sets.
+
+After unfolding membership, both sides say that the path is empty and the value lies in both sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

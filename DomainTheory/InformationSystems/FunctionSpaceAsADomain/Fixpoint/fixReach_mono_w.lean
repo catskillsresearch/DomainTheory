@@ -1,3 +1,9 @@
+/-ai
+If w' entails w in the function-space system and both sets are consistent, then every set reachable by a w-chain is reachable by a w'-chain.
+
+A witnessing chain of some length transfers to w' by monotonicity of fix chains in the token set.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

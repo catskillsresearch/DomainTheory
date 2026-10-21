@@ -1,3 +1,8 @@
+/-ai
+The retraction of a subsystem is a projection.
+
+The proof pairs the fact that this map is a retraction with the fact that it lies under the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82

@@ -1,3 +1,8 @@
+/-ai
+Membership in the G combinator along a finite valuation trace is recursively enumerable, through a single stage of the staged evaluator.
+
+Membership in the G combinator, packaged as the partial value zero, is partial recursive, so it has a program code. The relation that an entry has nonzero code, or else that code has halted on the member by a given stage, is primitive recursive, and so is the relation that every entry of a trace satisfies the alternative. Existential quantification over the stage is therefore recursively enumerable, and it agrees with the G condition. From a witnessing stage, a zero-code entry has a successful evaluation, which is sound for the coded partial function and therefore lies in the asserted membership. Conversely, induct on the trace. The empty trace is witnessed by stage zero. For a nonempty trace the inductive stage covers the tail. A zero-code head has a halting stage by completeness of staged evaluation, and the maximum of that stage with the inductive stage covers the head and the tail by monotonicity of staged evaluation. A head of nonzero code is covered by the inductive stage.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

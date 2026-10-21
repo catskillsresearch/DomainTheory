@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the computable splits of Exercises 8.12(e) and 8.12(f), the master-neighbourhood facts for U and V, the computable unions, and the effective isomorphism of U with V.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812eD

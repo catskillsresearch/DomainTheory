@@ -1,3 +1,6 @@
+/-ai
+The universal argument domain is the infinite iteration of the neighbourhood system N. Every function of finitely many natural numbers is realised as an approximable map out of this domain that depends only on an initial segment of coordinates.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

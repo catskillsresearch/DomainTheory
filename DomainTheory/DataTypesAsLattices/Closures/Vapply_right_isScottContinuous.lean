@@ -1,3 +1,9 @@
+/-ai
+For each fixed a, the map sending x to V(a)(x) is Scott continuous.
+
+Equation (5.14) identifies V(a)(x) with the least fixed point of the step y ↦ x ∪ a(y). The fixed-point operator is Scott continuous in a parameter when the body is Scott continuous in each variable separately. The map x ↦ x ∪ a(y) is Scott continuous by union on the left, and each step in y is Scott continuous.
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

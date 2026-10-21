@@ -1,3 +1,6 @@
+/-ai
+The composition of elements u and v of Pω is the combinator S applied to K applied to u, and then to v.
+ai-/
 module
 
 public import Mathlib.Computability.RE

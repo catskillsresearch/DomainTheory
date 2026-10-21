@@ -1,3 +1,8 @@
+/-ai
+For primitive-recursive index functions, equality of the two indexed neighbourhoods of the first presentation is recursively decidable.
+
+Inclusion in that presentation is recursively decidable. Equality is the conjunction of the two inclusions, one direction taking subsets and the other using antisymmetry, after pairing the index functions in each order.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

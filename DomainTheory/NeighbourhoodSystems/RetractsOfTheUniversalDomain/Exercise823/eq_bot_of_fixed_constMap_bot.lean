@@ -1,3 +1,8 @@
+/-ai
+A fixed point of the constant-bottom map is the bottom element.
+
+Unfold the action of the constant map. The resulting equality is the claim read in the other direction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

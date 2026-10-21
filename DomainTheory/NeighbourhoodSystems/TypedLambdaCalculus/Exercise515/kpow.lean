@@ -1,3 +1,6 @@
+/-ai
+The n-th pointwise power of a set z is defined by iteration: the zeroth power is the unit set, and the successor power is the pointwise product of z with the preceding power.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

@@ -1,3 +1,8 @@
+/-ai
+The elementwise image under a composite of approximable maps equals the composite of the elementwise images.
+
+Extensionality of elements reduces the equality to membership of a neighbourhood. Either side contributes an input neighbourhood and an intermediate neighbourhood, and the two directions reassociate those witnesses.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

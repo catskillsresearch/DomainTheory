@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood belongs to the elementwise image under the pointwise intersection of two approximable maps if and only if it belongs to both elementwise images.
+
+A witness for the intersection gives both maps the same input neighbourhood. In the other direction the two input neighbourhoods are intersected. That intersection belongs to the element, and monotonicity of each map replaces its input by the intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

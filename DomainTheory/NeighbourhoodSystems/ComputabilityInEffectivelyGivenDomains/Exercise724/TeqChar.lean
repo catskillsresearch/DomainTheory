@@ -1,3 +1,6 @@
+/-ai
+The equality characteristic of two natural numbers is the zero test of the sum of their two truncated differences. The value 1 records that the two numbers are equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,6 @@
+/-ai
+The successor is the strict lift of the map sending each natural number to the total element at its successor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

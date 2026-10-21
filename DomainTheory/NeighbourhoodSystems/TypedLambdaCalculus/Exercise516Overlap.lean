@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the overlap-freeness results for the Thue–Morse element: the basic setup, the inequality of an even-indexed bit with its successor, the oddness of an index of equal consecutive bits, the absence of three consecutive equal symbols, the even and odd index reductions of the bit function, the absence of overlaps and of cubes, the reading of a bit of a prefix, the period of a triple concatenation, and the cube-freeness of t.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.Basic

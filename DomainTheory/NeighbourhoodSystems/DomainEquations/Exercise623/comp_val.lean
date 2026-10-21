@@ -1,3 +1,8 @@
+/-ai
+The underlying approximable map of a composite of strict morphisms is the composite of the underlying maps.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

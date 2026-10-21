@@ -1,3 +1,8 @@
+/-ai
+If every component of a family X belongs to MemA, then the proper product of X is a neighbourhood of the n-fold power of A.
+
+The product witness is X itself, with the given component memberships.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

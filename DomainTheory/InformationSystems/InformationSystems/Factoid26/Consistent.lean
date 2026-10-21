@@ -1,3 +1,6 @@
+/-ai
+A finite set of tokens is consistent when any two graph atoms in the set that share a first component have equal second components. The condition quantifies only over graph atoms.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

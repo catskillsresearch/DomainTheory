@@ -1,3 +1,8 @@
+/-ai
+The cut point of an element x is at least 0.
+
+The master [0, 1) belongs to x, so 1 lies in the cut set and the infimum is at most 1. Subtracting that infimum from 1 leaves a nonnegative value.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

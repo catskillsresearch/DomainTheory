@@ -1,3 +1,8 @@
+/-ai
+A set belongs to D if and only if it equals the re-pointed enumeration at some index.
+
+If the set belongs to D, surjectivity of the presentation names an index, and applying the index swap twice, which is the identity, shows that the set equals the re-pointed enumeration at the swapped index. Conversely, every value of the re-pointed enumeration is a neighbourhood of the re-pointed presentation, hence belongs to D.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable

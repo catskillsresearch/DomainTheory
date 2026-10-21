@@ -1,3 +1,8 @@
+/-ai
+A set lies in the neighbourhood coded by c if and only if it lies in the down-set of the enumerated neighbourhood of some index in the decoded list of c.
+
+This is the membership rule for the finite union of down-sets, applied to that decoded list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

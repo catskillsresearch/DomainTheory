@@ -1,3 +1,8 @@
+/-ai
+A rational pair lies in the combination of two lists if and only if it is the pair of the join of the left endpoints and the meet of the right endpoints of some pair from each list.
+
+Unfold the combination, rewrite by flat-map membership, and simplify membership in the mapped list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

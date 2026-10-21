@@ -1,3 +1,9 @@
+/-ai
+Application of the right projection to u is the conditional set of the first component of u, with bottom as the zero branch and the second component as the positive branch.
+
+This is β-conversion, using Scott continuity of that conditional map.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

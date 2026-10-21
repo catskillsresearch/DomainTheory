@@ -1,3 +1,8 @@
+/-ai
+The projection of the injection of an element x equals x.
+
+The composite of the two element maps is the element map of the composite. The first projection-pair law replaces that composite by the identity, and the element map of the identity is the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

@@ -1,3 +1,8 @@
+/-ai
+The letter-prefixed copy of the cone of a finite string σ is the cone of that letter followed by σ.
+
+The prefixed copy equals the set obtained by prepending the one-letter string, and prepending that letter to the cone of σ yields the cone of the longer string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

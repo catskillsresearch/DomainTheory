@@ -1,3 +1,8 @@
+/-ai
+Applying ofC to the set represented by an ideal element recovers that element.
+
+Compare membership of a neighbourhood. If it belongs to ofC of the represented set, some token contained in that set has its neighbourhood contained in the given neighbourhood. The membership identity puts that token neighbourhood in the element, and upward closure puts the given neighbourhood in the element. Conversely, a neighbourhood of the element is the neighbourhood of some token, and that token is contained in the represented set, so it witnesses membership.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

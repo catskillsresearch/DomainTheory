@@ -1,3 +1,6 @@
+/-ai
+This file introduces the instance that there is at most one approximable map into the one-point domain: any two such maps agree on elements because the element set of that domain is a subsingleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

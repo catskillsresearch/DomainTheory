@@ -1,3 +1,8 @@
+/-ai
+If some term-algebra code has neighbourhood contained in the intersection of two enumerated neighbourhoods, the neighbourhood of their node code equals that intersection.
+
+Evaluation at a node is the universal intersection of the two evaluations, and the intersection specification of the universal domain applies to the evaluation of the witnessing code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

@@ -1,3 +1,8 @@
+/-ai
+Sending an approximable map to its filter and back returns the map.
+
+This is the left inverse law of the function-space equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

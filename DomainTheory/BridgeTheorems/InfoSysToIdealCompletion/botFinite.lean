@@ -1,3 +1,6 @@
+/-ai
+The bottom finite element of an information system is its bottom element, packaged by the proof that the bottom element is finite.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

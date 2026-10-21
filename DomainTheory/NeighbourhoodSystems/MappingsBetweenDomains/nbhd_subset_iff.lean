@@ -1,3 +1,8 @@
+/-ai
+For a token, its neighbourhood is contained in the neighbourhood of a set if and only if that set is contained in the closure of the token.
+
+If the neighbourhoods are nested, the token lies in its own neighbourhood because it is contained in its closure, hence lies in the other neighbourhood. Conversely, if a token lies in the first neighbourhood and the set is contained in the closure of the original token, the closure of the new token belongs to the family and contains the original token, so it contains that closure and therefore contains the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

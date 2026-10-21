@@ -1,3 +1,8 @@
+/-ai
+The enumerated sets X i and X j meet emptily if and only if XPseq i and XPseq j meet emptily.
+
+Specialize the combined intersection-emptiness transfer to the even indices 2i and 2j. At those indices the interleaved families are the enumeration X and the recovered sets XPseq. Intersecting with the masters does not change them, because X i lies in the master of the first system and XPseq i lies in the master of the second.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

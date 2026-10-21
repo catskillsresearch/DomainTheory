@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the element description of the lifting in Exercise 6.26, strictness of the action on maps, preservation of identities and of composition, and the isomorphisms of the coalesced sum of two lifts with the separated sum and of the smash of two lifts with the lift of the product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise626.Basic

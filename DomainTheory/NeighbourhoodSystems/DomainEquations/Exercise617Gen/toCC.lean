@@ -1,3 +1,6 @@
+/-ai
+The forward comparison sends an element of the system of cones and singletons to the element of the concrete indexed sum that contains the master, contains the unit copy when the element contains the singleton of the empty string, and contains a letter-copy of a neighbourhood when the element contains the embedding of that neighbourhood. Downward closure is the membership clause of the sum. Intersections of masters and of unit copies stay in these clauses. A unit copy is disjoint from an embedding, two embeddings of one letter meet in the embedding of an intersection, and embeddings of distinct letters are disjoint. A neighbourhood enlarges only to the master, or, from the unit copy, to the unit copy, or, from a letter-copy, to a copy at the same letter, by injectivity of copy tokens and upward closure of the element along embeddings.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

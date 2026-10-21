@@ -1,3 +1,8 @@
+/-ai
+The enumerated set at index 2n+1 is the zero embedding of the enumerated neighbourhood of n.
+
+Apply the successor clause. The index is odd, so the first branch applies, and half of 2n equals n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

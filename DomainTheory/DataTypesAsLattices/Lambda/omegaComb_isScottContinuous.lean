@@ -1,3 +1,8 @@
+/-ai
+The omega combinator is Scott continuous.
+
+This is graph continuity for the body that applies the functional to a self-application, using continuity of application in the function argument.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

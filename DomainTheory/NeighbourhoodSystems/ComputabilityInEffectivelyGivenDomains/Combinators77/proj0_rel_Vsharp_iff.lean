@@ -1,3 +1,8 @@
+/-ai
+The first projection relates the sharp neighbourhood of index m to the sharp neighbourhood of index k if and only if k is 0, or m is even and nonzero and the sharp neighbourhood indexed by the left component of m/2 − 1 is contained in the sharp neighbourhood of index k.
+
+Both enumerated sets are sharp neighbourhoods, so the relation reduces to its disjunction, and the codomain equals the master neighbourhood exactly when its index is 0. The shape of m has three cases. The index 0 enumerates the master neighbourhood, which is never a pair embedding, while the numerical side requires m to be nonzero. An odd index enumerates a zero-embedding, which is never a pair embedding, and an odd index is not divisible by 2. An even index of the form 2a + 2 enumerates the pair embedding of the two sharp neighbourhoods coded by a, and halving identifies a with the left-child index. Injectivity of pair embeddings matches the left component with the required inclusion, and the converse is that same pair decomposition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77

@@ -1,3 +1,7 @@
+/-ai
+Scott's section 1 defines the graph of a map f to be the set of pairs of n and m such that m lies in f at the basic element coded by n.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Continuous

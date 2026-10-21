@@ -1,3 +1,8 @@
+/-ai
+Decoding a natural number as a list of booleans succeeds if and only if the all-binary-digits characteristic of the number equals 1.
+
+Unfold the decoder and rewrite by the corresponding criterion for mapping the natural-to-boolean interpretation, together with the characteristic criterion for binary digits.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

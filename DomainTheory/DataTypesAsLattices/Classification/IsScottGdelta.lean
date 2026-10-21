@@ -1,3 +1,6 @@
+/-ai
+A set is a Scott Gδ set when it is a countable intersection of Scott-open sets.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

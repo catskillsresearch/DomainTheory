@@ -1,3 +1,8 @@
+/-ai
+On a partial element, the zero test returns the partial head value that is true on a false-headed string and false on a true-headed string.
+
+The equality is the partial-element equation of the lift, applied to the head data of the zero test.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

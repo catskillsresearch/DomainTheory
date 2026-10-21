@@ -1,3 +1,8 @@
+/-ai
+If a valuation trace is well formed, a new entry is justified in the trace extended by that entry, and a zero code on the new entry forces its member into the G combinator, then the extended trace is well formed.
+
+An entry of the extension is the new entry, justified by hypothesis, or an old entry, whose justification transfers because every membership recorded by the original trace remains recorded after the new entry is consed. The G condition holds for the new entry by hypothesis and for an old entry by well-formedness of the original trace.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

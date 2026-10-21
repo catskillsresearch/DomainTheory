@@ -1,3 +1,8 @@
+/-ai
+The nested fixed-point map of τ sends y to the least fixed point of the section of τ at y.
+
+Rewrite by the definition of the nested map, the composition law, the fixed-point map on elements, and the definition of the section.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

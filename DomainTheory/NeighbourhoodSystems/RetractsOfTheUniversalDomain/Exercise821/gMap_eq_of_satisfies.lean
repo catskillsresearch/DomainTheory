@@ -1,3 +1,8 @@
+/-ai
+A strict map from the tree algebra of a neighbourhood system to another that agrees with a given catamorphism on leaves and on nodes is equal to that catamorphism.
+
+The neighbourhood relation of the map agrees with the graph relation of the catamorphism, by induction on membership in the tree algebra, generalized over the output neighbourhood. At the master, strictness gives one direction and the master clause forces the output to be master. At a leaf, the leaf equation at the principal element, rewritten by the principal-leaf identity, matches the two relations. At a node, the pairing equation and the principal-node identity do the same, and the inductive hypotheses identify the recursive outputs. Off the tree algebra neither relation holds, and extensionality of approximable maps finishes the argument.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

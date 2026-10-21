@@ -1,3 +1,8 @@
+/-ai
+The left pair projection of the singleton consisting of a right-pair token is empty.
+
+A left-pair token in that projection would belong to the singleton and hence be a right-pair token, which is impossible, and the empty set has no members.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

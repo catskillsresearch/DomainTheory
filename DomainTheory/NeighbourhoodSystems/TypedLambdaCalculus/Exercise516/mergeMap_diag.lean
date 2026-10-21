@@ -1,3 +1,8 @@
+/-ai
+For every element x of C, merging x with itself equals the doubling map of Example 4.4 applied to x.
+
+Merge after the pairing of the identity with itself equals the doubling map, by extension on finite elements of C. On a partial string, the pair of partial elements is the pair of partial shape elements, merge acts by its pair clause, the diagonal of the interleaved element is doubling, and the partial shape element is the partial element, matching doubling on partial elements. The total case is the same with total elements. Evaluating both maps at x and simplifying the identity and the pairing gives the equation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

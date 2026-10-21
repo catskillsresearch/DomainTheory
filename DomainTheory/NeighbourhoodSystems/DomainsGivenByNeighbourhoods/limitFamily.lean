@@ -1,3 +1,6 @@
+/-ai
+The limit family of a sequence of sets is the family of neighbourhoods that contain some term of the sequence.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

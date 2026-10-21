@@ -1,3 +1,8 @@
+/-ai
+For a difference-closed system with no minimal neighbourhood, the set difference of two enumerated neighbourhoods is itself an enumerated neighbourhood exactly when that difference is nonempty.
+
+A code for the difference cannot enumerate the empty set, since no neighbourhood is empty. Conversely, difference closure says the difference is empty or a neighbourhood, so a nonempty difference is a neighbourhood and the enumeration supplies a code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

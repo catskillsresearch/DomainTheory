@@ -1,3 +1,8 @@
+/-ai
+For a continuous-lattice retraction of D' onto D, and an element d of the retract, the supremum in D of the retraction of the set of elements way below the inclusion of d equals d.
+
+The way-below set of the inclusion is nonempty and directed. The retraction preserves its directed supremum, continuity of D' replaces that supremum by the inclusion of d, and the retraction of the inclusion is d.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

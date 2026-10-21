@@ -1,3 +1,8 @@
+/-ai
+Composing the swap map diagrammatically with the second projection yields the first projection.
+
+Unfold diagrammatic composition and the swap map, and apply the law that the second projection of a pairing equals the second paired map.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

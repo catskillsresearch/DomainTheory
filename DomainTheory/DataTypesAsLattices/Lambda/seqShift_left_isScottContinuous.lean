@@ -1,3 +1,8 @@
+/-ai
+The sequence shift, as a map of its sequence argument, is Scott continuous.
+
+It is the graph of a family that is Scott continuous in the sequence: for each z, the right-hand sequence map is Scott continuous at the successor of z.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

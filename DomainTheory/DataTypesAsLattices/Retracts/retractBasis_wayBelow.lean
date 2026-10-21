@@ -1,3 +1,8 @@
+/-ai
+Every finite-image basis element of a fixed point of a retract is way below that fixed point. The retract hypothesis is not used.
+
+Let a directed set of fixed points have supremum above the point. The basis witness is a finite set e n contained in the point, with the basis element equal to the retract applied to e n. The underlying supremum is the union of the underlying values, so e n is contained in that union. The finite-cover lemma for directed unions, using finiteness of e n, yields a member containing e n, and monotonicity of application together with the fixed-point equation for that member puts the basis element below it.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

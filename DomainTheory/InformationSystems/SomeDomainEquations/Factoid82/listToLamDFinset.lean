@@ -1,3 +1,6 @@
+/-ai
+A raw list of tokens, each assumed depth-well-formed, lifts to a finset of depth-well-formed lambda tokens. The empty list gives the empty finset, and a cons inserts the head, witnessed by the given hypothesis, into the lift of the tail.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

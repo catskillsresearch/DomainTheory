@@ -1,3 +1,6 @@
+/-ai
+The relation beforeHalt of a natural number m and an index j asserts that every index strictly below j + 1 has halt enumeration different from m.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

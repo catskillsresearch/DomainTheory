@@ -1,3 +1,8 @@
+/-ai
+The lower set of an element y is bounded.
+
+The projection of y is an upper bound, because the Galois connection turns the defining inequality into membership below that projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

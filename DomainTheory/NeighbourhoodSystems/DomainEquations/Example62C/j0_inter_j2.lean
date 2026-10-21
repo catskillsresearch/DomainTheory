@@ -1,3 +1,8 @@
+/-ai
+A left copy and a right copy are disjoint.
+
+Extensionality splits a token into the basepoint and the three sum tags, and simplification by the definitions of the two copies and their tags leaves the empty set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

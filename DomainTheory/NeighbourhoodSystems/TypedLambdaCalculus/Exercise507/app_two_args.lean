@@ -1,3 +1,8 @@
+/-ai
+Applying a map out of a product to a pair equals applying its curried form to the first component and then to the second. The right-hand side uses only application to one argument.
+
+Rewrite by the equation for the element map of a curry.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

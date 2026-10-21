@@ -1,3 +1,8 @@
+/-ai
+The base state of the atom-pair recursion is primitive recursive.
+
+It pairs the bit-source with the constant base state built from the two master indices, which is the packed base.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

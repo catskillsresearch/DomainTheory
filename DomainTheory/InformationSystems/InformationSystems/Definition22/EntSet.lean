@@ -1,3 +1,6 @@
+/-ai
+Set-level entailment holds of finite sets u and v when u entails every token that belongs to v.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

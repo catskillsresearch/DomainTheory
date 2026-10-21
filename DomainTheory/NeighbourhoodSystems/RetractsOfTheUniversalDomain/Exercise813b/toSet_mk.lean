@@ -1,3 +1,8 @@
+/-ai
+The map from the Lindenbaum algebra sends the class of a formula to the evaluation set of that formula.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

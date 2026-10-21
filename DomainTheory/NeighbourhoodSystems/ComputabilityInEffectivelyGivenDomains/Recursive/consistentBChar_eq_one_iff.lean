@@ -1,3 +1,8 @@
+/-ai
+If the depth of the intersection of two S-expressions is at most the fuel, the consistency character of their Gödel codes equals 1 exactly when the denotation of that intersection is nonempty.
+
+Rewrite the consistency character as the nonemptiness character of the Gödel code of the intersection, and apply the characterization of that character.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

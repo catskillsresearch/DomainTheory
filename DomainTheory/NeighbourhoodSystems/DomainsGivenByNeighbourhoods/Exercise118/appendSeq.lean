@@ -1,3 +1,6 @@
+/-ai
+The concatenation of two sequences of sets, cut after a given length, takes its earlier entries from the first sequence and its later entries from the second sequence, shifted by that length.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+Prepending a bit b to the singleton of a string σ yields the singleton of b followed by σ.
+
+Rewrite by the identification of embBit with prepending and by the singleton law for prepending, then use reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

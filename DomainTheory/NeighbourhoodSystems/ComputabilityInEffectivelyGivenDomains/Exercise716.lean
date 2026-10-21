@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the setup for Exercise 7.16, the application of the curry isomorphism, membership of principal neighbourhoods for the induced approximable map, the neighbourhood relation of the curry combinator, primitive recursiveness of the curry step code, recursive decidability of that relation, and computability of the curry combinator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.Basic

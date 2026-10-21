@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood system V is atomless.
+
+The existing splitting of a neighbourhood of V supplies two neighbourhoods that are disjoint and union to the original set. Each piece is nonempty because every neighbourhood of V is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

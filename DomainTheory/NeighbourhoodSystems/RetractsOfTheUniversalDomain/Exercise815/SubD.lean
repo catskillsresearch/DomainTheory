@@ -1,3 +1,6 @@
+/-ai
+The reconstructed neighbourhood system has finite index lists as tokens. A set of lists is a neighbourhood when it is the principal up-set of the finitely generated subsystem of some list. The master neighbourhood is the up-set of the empty list, which contains the empty list. The intersection of the up-sets of two lists is the up-set of their concatenation. Every such up-set contains the master, because the empty list is a sublist, the finitely generated subsystem grows along sublists, and the up-set therefore shrinks.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

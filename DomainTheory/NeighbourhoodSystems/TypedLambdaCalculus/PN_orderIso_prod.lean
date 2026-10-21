@@ -1,3 +1,6 @@
+/-ai
+The power set of the natural numbers is order-isomorphic to the product of two such power sets, by transporting along the inverse of the bijection of the naturals with their disjoint sum and then applying the sum decomposition of power sets.
+ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

@@ -1,3 +1,22 @@
+/-ai
+Two elements are equal when their carriers are equal.
+
+The proof matches the two element structures and substitutes the equality of the carriers.
+
+The carrier of an element is included in itself.
+
+This is reflexivity of inclusion.
+
+Inclusion of carriers is transitive.
+
+This is transitivity of inclusion.
+
+If each of two elements contains the carrier of the other, the elements are equal.
+
+Antisymmetry of inclusion equates the carriers, and extensionality of elements equates the elements.
+
+This instance orders elements by inclusion of their carriers, with the three preceding facts as reflexivity, transitivity, and antisymmetry. That inclusion is Scott's ordering of the domain determined by the information system.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

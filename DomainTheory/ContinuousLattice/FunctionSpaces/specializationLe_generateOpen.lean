@@ -1,3 +1,8 @@
+/-ai
+If a continuous map f specializes pointwise to a continuous map g, then every set generated as an open from the evaluation subbasis that contains f also contains g.
+
+The argument follows the generation of the set. A subbasic evaluation cylinder contains g by the specialization inequality at its point. The whole space contains g when it contains f. An intersection contains g when each factor does, and a union contains g when some member that contains f contains g.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

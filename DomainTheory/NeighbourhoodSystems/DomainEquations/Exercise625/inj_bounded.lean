@@ -1,3 +1,8 @@
+/-ai
+The injection of a projection pair sends a bounded set of elements to a bounded set.
+
+If an element bounds the set, its image bounds the image of the set, because the injection is monotone on elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

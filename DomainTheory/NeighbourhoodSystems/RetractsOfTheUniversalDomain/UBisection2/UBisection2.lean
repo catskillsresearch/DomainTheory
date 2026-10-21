@@ -1,3 +1,6 @@
+/-ai
+The computable canonical bisection of the universal presentation takes as its left and right maps the presentation-independent splits, together with their primitive recursiveness, disjointness, union, and the two congruence laws.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

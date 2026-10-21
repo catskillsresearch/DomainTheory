@@ -1,3 +1,8 @@
+/-ai
+On neighbourhood indices, cupMap relates the product of nbhd n and nbhd m to nbhd k if and only if the neighbourhood of myLor n m is contained in nbhd k.
+
+Rewrite the claimed inclusion by the intersection law for neighbourhoods. From a related triple, injectivity of product neighbourhoods recovers the factors, and the relation is the intersection inclusion. Conversely, the three neighbourhoods themselves witness the relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

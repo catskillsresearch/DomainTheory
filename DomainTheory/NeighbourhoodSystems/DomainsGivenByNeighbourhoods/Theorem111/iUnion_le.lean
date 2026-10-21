@@ -1,3 +1,8 @@
+/-ai
+If an element lies above every term of an ascending sequence, it lies above the union of the sequence.
+
+A set belonging to the union belongs to some term, and that term lies below the element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

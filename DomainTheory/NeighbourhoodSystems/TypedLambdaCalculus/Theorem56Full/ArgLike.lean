@@ -1,3 +1,6 @@
+/-ai
+An element of the universal argument domain is arg-like when every coordinate is bottom or a numeral.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

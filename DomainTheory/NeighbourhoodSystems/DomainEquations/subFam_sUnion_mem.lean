@@ -1,3 +1,8 @@
+/-ai
+The family of subdomain neighbourhood-sets is closed under directed unions.
+
+The union system of a nonempty directed family of subdomain neighbourhood-sets is a subsystem of E, and the collection of its neighbourhoods is the union of the family.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

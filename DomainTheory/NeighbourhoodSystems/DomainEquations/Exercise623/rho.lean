@@ -1,3 +1,6 @@
+/-ai
+The stage-n retraction rho on the exponential of N is the composite of the injection and the projection of the subsystem cut out by the n-th stage of the exponential tower.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

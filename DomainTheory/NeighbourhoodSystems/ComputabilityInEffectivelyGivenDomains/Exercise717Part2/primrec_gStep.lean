@@ -1,3 +1,8 @@
+/-ai
+If the three guard functions are primitive recursive, then so is the certificate step built from them and a fixed master index.
+
+Each decoded component of the input is primitive recursive by composition of unpairing. The child index, the two table positions, and the two table lookups are primitive recursive by subtraction, pairing, division by two, and list lookup. The three result branches are primitive recursive by composition with the guard functions and by multiplication. The step is the nesting of two selectors on these branches, and it agrees with that expression by definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

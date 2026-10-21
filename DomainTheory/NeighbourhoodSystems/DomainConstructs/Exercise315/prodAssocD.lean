@@ -1,3 +1,6 @@
+/-ai
+The associativity order isomorphism identifies the elements of a product D0 × (D1 × D2) with the elements of (D0 × D1) × D2, by passing through the product equivalence, the product of order isomorphisms, the cartesian associator, and back.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

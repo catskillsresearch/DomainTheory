@@ -1,3 +1,6 @@
+/-ai
+The tagged right copy of a set Z of elements of γ is the set of tokens t2 c, in Option (α ⊕ β ⊕ γ), for which c lies in Z.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

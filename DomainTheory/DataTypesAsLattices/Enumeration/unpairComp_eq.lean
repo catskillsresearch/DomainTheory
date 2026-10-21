@@ -1,3 +1,9 @@
+/-ai
+The computable unpairing of k equals Scott's unpairing of k.
+
+Let w be the least number such that k is less than the (w + 1)-st triangular number. Then k lies strictly below that triangular number, and the w-th triangular number is at most k: this is immediate when w is zero, and when w is a successor the minimality of the search excludes every smaller candidate. The difference of k and the w-th triangular number is at most w, because k is less than that triangular number plus w + 1 by the successor equation for triangular numbers. The two components of the computable unpairing therefore sum to w, and the pairing equation shows that their pair equals k. Unpairing that pair recovers the computable unpairing.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

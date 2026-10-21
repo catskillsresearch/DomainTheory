@@ -1,3 +1,6 @@
+/-ai
+The currying combinator is the graph of the map sending u to the double graph of the application of u to the sequential pair of its two arguments. Scott records this combinator as (4.23).
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

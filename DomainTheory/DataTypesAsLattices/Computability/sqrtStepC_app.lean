@@ -1,3 +1,8 @@
+/-ai
+Applying sqrtStepC to the numerals n, i, and a yields the numeral a + 1 when (a + 1) · (a + 1) is at most n, and the numeral a otherwise.
+
+Unfold sqrtStepC and sqrtStepTerm and apply the beta law theorem_2_2_beta three times. Simplifying the interpretation shows that indices 3 and 4 in the updated environment are the comparison and multiplication entries of sqrtEnv. The successor law succSet_ofNat and the realizations mulC_realizes2 and leC_realizes2 reduce the conditional. When the inequality holds, eq_2_7_succ selects the successor of a. When it fails, eq_2_7_zero selects a.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,8 @@
+/-ai
+If two indices present the same neighbourhood of U, their midpoint codes decode to the same rational. The midpoint used by the left and right splits depends only on the presented set.
+
+The common neighbourhood means the two canonical presenting lists present the same intervals. The minimum left endpoint and the maximum right endpoint of those nonempty lists of nondegenerate bounded pairs therefore agree. Rewriting both decoded midpoints by the midpoint formula substitutes those two equalities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

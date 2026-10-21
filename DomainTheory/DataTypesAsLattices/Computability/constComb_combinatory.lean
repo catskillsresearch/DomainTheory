@@ -1,3 +1,8 @@
+/-ai
+The constant combinator for any natural number is combinatory.
+
+It is the application of K to a numeral, and numerals are combinatory.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,8 @@
+/-ai
+The left-hand map of τ sends x to the least fixed point of the section of τ at x.
+
+Rewrite by the definition of that map, the composition law, the fixed-point map on elements, and the definition of the section.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

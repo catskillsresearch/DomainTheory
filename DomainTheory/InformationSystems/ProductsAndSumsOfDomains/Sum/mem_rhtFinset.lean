@@ -1,3 +1,8 @@
+/-ai
+An element belongs to the right projection of a finite set of sum tokens if and only if its right token belongs to the set.
+
+Unfold the projection and rewrite by the membership lemma for the fold of right insertion. A witness token equal to the right token may be replaced by that right token, and the right token itself is a witness.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

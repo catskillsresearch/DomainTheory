@@ -1,3 +1,6 @@
+/-ai
+The catamorphism relation of an approximable map u from the base domain into the target and an approximable map v from the product of the target with itself into the target holds in one of three ways. The master neighbourhood of the sharp domain is related only to the master neighbourhood of the target. The zero embedding of a neighbourhood X is related to Z when u relates X to Z. The paired embedding of P and Q is related to Z when P is related to some Z₁, Q is related to some Z₂, and v relates the product of Z₁ and Z₂ to Z.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the constructions of Exercise 7.13: the inclusion structure, consistency and meet, the hint neighbourhoods and the hint system and its presentation, the inclusion structure of a computable presentation, reconstruction of elements in both directions and their order isomorphism, and the membership, inclusion, intersection, and meet lemmas used to relate them.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

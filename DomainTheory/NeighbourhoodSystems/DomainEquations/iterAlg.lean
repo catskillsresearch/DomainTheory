@@ -1,3 +1,6 @@
+/-ai
+The infinite iterate of a strict domain, with the cons map as structure map, is a T-algebra for the product endofunctor. The structure map is strict.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

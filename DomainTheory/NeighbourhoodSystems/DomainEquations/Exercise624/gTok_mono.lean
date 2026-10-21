@@ -1,3 +1,8 @@
+/-ai
+The token map gTok is monotone in both arguments.
+
+A member is the empty string, which remains the inserted element, or a false-tagged token, which remains by the first inclusion, or a true-tagged token, which remains by the second inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

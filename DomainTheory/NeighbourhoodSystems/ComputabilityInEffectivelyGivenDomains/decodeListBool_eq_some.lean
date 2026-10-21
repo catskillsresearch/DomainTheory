@@ -1,3 +1,8 @@
+/-ai
+If decoding a natural number as a list of booleans yields a list, then the number is the boolean-list code of that list.
+
+The hypothesis means that the underlying list decode is the list mapped by the boolean-to-natural encoding. The number equals the list code of its list decode, which equals the list code of that image, which is the boolean-list code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

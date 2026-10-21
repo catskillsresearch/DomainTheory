@@ -1,3 +1,8 @@
+/-ai
+The Tarski set is a fixed point of Tarski's operator.
+
+Apply the least-fixed-point law to the monotone operator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

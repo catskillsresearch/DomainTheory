@@ -1,3 +1,8 @@
+/-ai
+An element that lies below every term of a sequence lies below the intersection of the sequence.
+
+A set belonging to the element belongs to every term.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+Every chain of elements is upward directed.
+
+Given two members of a chain, one lies below the other. The larger of the two is a common upper bound and belongs to the family.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

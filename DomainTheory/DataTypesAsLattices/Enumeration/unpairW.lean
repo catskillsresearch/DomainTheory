@@ -1,3 +1,7 @@
+/-ai
+The least w such that k is less than the (w + 1)-st triangular number, computed by bounded recursion, is the bounded scan of k run for k steps.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

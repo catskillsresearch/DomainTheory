@@ -1,3 +1,7 @@
+/-ai
+The Plotkin relation at p, q, and j holds of u and v when, for some m, one of them is the iterate Z m (e p) (e q) and the other is that iterate with the singleton pair of j and m adjoined.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

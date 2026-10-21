@@ -1,3 +1,6 @@
+/-ai
+The cone of a finite binary string is the set of all strings of which it is a prefix.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

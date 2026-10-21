@@ -1,3 +1,6 @@
+/-ai
+The leaf 00 is the singleton consisting of the token 3.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

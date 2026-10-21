@@ -1,3 +1,8 @@
+/-ai
+If a map out of a product is computable, its currying into the function space is computable.
+
+Reindex the recursively enumerable relation of the map so that it relates the product of the domain neighbourhood with the input half of an entry to the output half. The bounded universal of that relation over the decoded list is recursively enumerable, as is failure of the consistency character. Their disjunction matches the currying relation, which is the implication from consistency of the code to that universal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

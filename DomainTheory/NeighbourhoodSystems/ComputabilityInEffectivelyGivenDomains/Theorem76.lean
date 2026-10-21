@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the setting of Theorem 7.6, soundness and completeness of a chain of steps, the chain characterization of membership in a fixed-point element, enumeration of a one-entry code, the least-map relation, the chain form of the fixed-point relation, equivalence of the decidable chain predicate with those steps, agreement of the packed step with the pure step, primitive recursiveness of the packed step and of the chain characteristic, the fold equations for the last index and the flag, the read-off of the chain characteristic, and computability of the fixed-point map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.Basic

@@ -1,3 +1,8 @@
+/-ai
+For a strict map out of the colimit, the composite with the zeroth projection relates a set X to a set Z exactly when X is a neighbourhood of the colimit and Z is the master of the target, when every neighbourhood of the generating system is its master.
+
+Unfolding composition, an intermediate set related by the zeroth projection is the master of the colimit, and strictness sends that master only to the master of the target. In the other direction the master of the colimit is the intermediate, related by the zeroth projection and by the master clause of the map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

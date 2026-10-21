@@ -1,3 +1,8 @@
+/-ai
+If a restricted equivalence is preserved by a pair of maps, and it relates two values, then it relates the iterates of those maps at those values.
+
+Induct on the stage. Stage zero is the given relation. A successor applies the preservation hypothesis to the inductive relation.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

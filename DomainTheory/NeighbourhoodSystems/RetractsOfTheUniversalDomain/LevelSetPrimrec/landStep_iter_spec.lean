@@ -1,3 +1,19 @@
+/-ai
+After k steps of the bitwise-conjunction iteration from the initial state coding the two
+arguments, weight one, and accumulator zero, the two arguments are those numbers divided
+by two to the k, the weight is two to the k, and the accumulator plus two to the k times
+the conjunction of those quotients equals the conjunction of the original arguments.
+
+The proof is by induction on k. At zero the iteration is the initial state, and the
+powers and products simplify. At a successor, the inductive hypothesis and one further
+iteration are used. Division by two to the successor is division by two of the previous
+quotient. Unfolding the step and applying the pairing projections gives the halved
+arguments, the doubled weight, and the updated accumulator. The first three conclusions
+rewrite by those equations and the power laws. The accumulator equation rewrites by the
+same projections, the two division identities, the successor power, the inductive
+accumulator equation, the one-step recursion for conjunction on the low bit, and the
+ring law.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

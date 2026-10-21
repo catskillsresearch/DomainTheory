@@ -1,3 +1,6 @@
+/-ai
+The terminal domain is the neighbourhood system on the unit type whose only neighbourhood is the universal set, taken also as the master neighbourhood. The master is nonempty, an intersection of neighbourhoods is again the universal set, and every neighbourhood is contained in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

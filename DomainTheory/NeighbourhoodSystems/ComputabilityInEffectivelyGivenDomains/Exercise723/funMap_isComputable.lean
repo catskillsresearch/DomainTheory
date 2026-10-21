@@ -1,3 +1,8 @@
+/-ai
+The curried map funMap is computable relative to an arbitrary valid function-space presentation of PNpres with PNpres. The deciders gN, incl0, incl1, and eq1 are the nonempty, inclusion, and equality witnesses required by that presentation, each primitive recursive and correct on the stated equations.
+
+The result is the generic currying theorem of Theorem 7.5, applied to the computability of gMap.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

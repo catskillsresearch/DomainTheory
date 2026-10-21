@@ -1,3 +1,8 @@
+/-ai
+The Scott topology of a complete lattice is a T₀ topology.
+
+Equip the lattice with that topology, and take inseparable points. Each of the two lattice inequalities rewrites as Scott specialization. An open set containing one point contains the other because inseparability equates membership in open sets, so each point lies below the other.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

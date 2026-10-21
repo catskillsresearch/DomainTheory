@@ -1,3 +1,8 @@
+/-ai
+splitURight is primitive recursive.
+
+It is the upward list clip composed with the pairing of the midpoint code and the canonical code, and that composite agrees with the right half after the unpair-pair identities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

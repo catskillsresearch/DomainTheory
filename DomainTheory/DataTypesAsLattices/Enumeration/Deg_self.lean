@@ -1,3 +1,8 @@
+/-ai
+Every element a belongs to its own enumeration degree.
+
+The identity combinator built by applying S to K and then to K is combinatory, and applying it to a returns a.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

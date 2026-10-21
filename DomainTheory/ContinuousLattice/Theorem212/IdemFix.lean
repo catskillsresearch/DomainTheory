@@ -1,3 +1,6 @@
+/-ai
+The fixed-point set of an endomap is the subtype of elements that the endomap leaves unchanged.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

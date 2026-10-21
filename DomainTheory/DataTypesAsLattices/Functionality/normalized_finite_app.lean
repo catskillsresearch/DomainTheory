@@ -1,3 +1,9 @@
+/-ai
+Application of the graph of application of the finite set e p equals application of e p itself.
+
+This is β-conversion, since application of e p is Scott continuous.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

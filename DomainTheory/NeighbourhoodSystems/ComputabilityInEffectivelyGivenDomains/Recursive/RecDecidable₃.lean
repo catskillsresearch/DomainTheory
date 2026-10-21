@@ -1,3 +1,6 @@
+/-ai
+A ternary relation is recursively decidable when the unary predicate of the nested pairing of its three arguments is recursively decidable.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

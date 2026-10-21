@@ -1,3 +1,8 @@
+/-ai
+A sum token lies in the right sum lift of a finite set w if and only if it is the right constructor of some member of w.
+
+Rewrite the lift as the corresponding fold and apply the fold membership theorem.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

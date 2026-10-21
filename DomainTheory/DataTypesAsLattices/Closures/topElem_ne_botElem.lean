@@ -1,3 +1,8 @@
+/-ai
+The full set of natural numbers is distinct from the empty set.
+
+If the two were equal, zero would belong to the empty set, and it does not.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

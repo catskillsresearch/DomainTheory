@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Theorem 8.6 and Theorem 8.8, the order isomorphism of finitary projections with subsystems and the effective givenness of the fixed neighbourhood of a computable map, as the background for Exercise 8.16.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

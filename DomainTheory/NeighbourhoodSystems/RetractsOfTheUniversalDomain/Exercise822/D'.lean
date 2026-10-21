@@ -1,3 +1,6 @@
+/-ai
+The image neighbourhood system D' consists of the sets in the image family, with master the set of all strings. The empty string witnesses that the master is the whole token set. The master belongs to the image family because it is the cone of the empty doubled encoding. Any two image sets are nested or disjoint, and every image set is contained in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

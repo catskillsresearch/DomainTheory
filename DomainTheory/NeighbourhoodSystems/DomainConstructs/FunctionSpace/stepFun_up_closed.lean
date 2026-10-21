@@ -1,3 +1,8 @@
+/-ai
+A step neighborhood is upward closed in the order of approximable maps.
+
+If a map relates every pair of the list and lies below another map, the larger map relates those same pairs.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

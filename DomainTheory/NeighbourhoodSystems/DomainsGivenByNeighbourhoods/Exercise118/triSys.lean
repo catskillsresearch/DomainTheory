@@ -1,3 +1,6 @@
+/-ai
+The three-token system is the positive neighbourhood system on a three-element token set whose neighbourhoods are the nonempty subsets and whose master is the whole token set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

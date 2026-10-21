@@ -1,3 +1,6 @@
+/-ai
+The enumeration of the neighbourhood system T sends 0 to the master neighbourhood, sends 1 to the neighbourhood zero, and sends every larger index to the neighbourhood one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

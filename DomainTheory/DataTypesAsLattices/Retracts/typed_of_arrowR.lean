@@ -1,3 +1,8 @@
+/-ai
+A set typed by a function space equals the composite of the codomain retract with the composite of the set and the domain retract.
+
+Unfold typing and the function-space application law.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

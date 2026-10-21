@@ -1,3 +1,8 @@
+/-ai
+The forward image of the total element of the empty string is the unit injection.
+
+The master and the unit copy are neighbourhoods of the injection. A letter-copy clause would, from the empty string belonging to its singleton, produce a member of an embedding, and the empty string lies in no embedding. Conversely, the master belongs to the forward image, and the unit copy belongs to it because the total element contains the singleton of the empty string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

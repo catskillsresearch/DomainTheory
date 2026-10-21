@@ -1,3 +1,7 @@
+/-ai
+Membership of x in a restricted equivalence A means that x is related to itself by A.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

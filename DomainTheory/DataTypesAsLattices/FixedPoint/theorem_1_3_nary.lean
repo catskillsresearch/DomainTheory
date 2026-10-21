@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Theorem 1.3, ternary substitution. If a map of three arguments is Scott continuous in each argument, and three endomaps are Scott continuous, then substituting those endomaps into the three arguments preserves Scott continuity.
+
+The diagonal substitution theorem is applied to the map that feeds the first two substituted maps to one variable and the third to the other. Continuity in the first variable is binary substitution, and continuity in the second is unary substitution. A code in the resulting union of finite approximants is rewritten as a code in the Scott union, and conversely.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph

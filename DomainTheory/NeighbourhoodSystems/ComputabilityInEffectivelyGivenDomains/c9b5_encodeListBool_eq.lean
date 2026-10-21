@@ -1,3 +1,8 @@
+/-ai
+The c9b5 encoding of a list of booleans equals the boolean-list encoding.
+
+Unfold both encodings and compare them by congruence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

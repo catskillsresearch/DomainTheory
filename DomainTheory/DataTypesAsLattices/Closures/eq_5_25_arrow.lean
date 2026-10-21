@@ -1,3 +1,8 @@
+/-ai
+If the identity combinator is contained in the function space of dEq with itself, then dEq equals that function space.
+
+One inclusion rewrites dEq by its fixed-point equation and absorbs the union by the hypothesis. The other rewrites the right-hand copy of dEq by the same equation and takes the right summand of the union.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

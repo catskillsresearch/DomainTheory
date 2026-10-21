@@ -1,3 +1,8 @@
+/-ai
+Applying the Boolean retract to u returns the doubly strict conditional of u on the numerals zero and one.
+
+This is β-conversion, from Scott continuity of the conditional in its test argument.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

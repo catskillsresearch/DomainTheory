@@ -1,3 +1,8 @@
+/-ai
+If the test contains 0 and is not the numeral 0, the McCarthy conditional equals the union of its two branches.
+
+Some positive number then belongs to the test, since otherwise the test would equal {0}. Both branches are therefore available, and membership splits as the union.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

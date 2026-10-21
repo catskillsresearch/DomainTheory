@@ -1,3 +1,8 @@
+/-ai
+The union of the down-sets of the sets in the empty list is empty.
+
+Membership in that union would require a member of the empty list, so the two sides have the same elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

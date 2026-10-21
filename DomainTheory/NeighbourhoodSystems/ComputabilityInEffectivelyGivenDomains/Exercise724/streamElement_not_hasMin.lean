@@ -1,3 +1,8 @@
+/-ai
+The element determined by an infinite sequence has no minimum neighbourhood. Any neighbourhood in the filter contains a prefix neighbourhood, and the next prefix neighbourhood is still in the filter and strictly smaller.
+
+Suppose a neighbourhood contains the prefix neighbourhood of length n and is contained in every member. The prefix neighbourhood of length n + 1 is a member, so the supposed minimum is contained in it. With the shrinking of prefix neighbourhoods the two prefix neighbourhoods are equal, so their lists are equal by injectivity of the neighbourhood map, and the lengths n and n + 1 agree, which is impossible.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

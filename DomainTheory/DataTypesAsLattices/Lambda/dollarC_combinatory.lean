@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (2.24). The dollar combinator is combinatory: it is Y applied to λs λu λz. z ⊃ u(0), s(λt. u(t + 1))(z − 1).
+
+Y applied to the interpretation of that term in the bottom environment equals the dollar combinator, by the interpretation equation, the fixed-point theorem for the continuous functional of the term, and the identification of the dollar combinator with that fixed point. Y is combinatory and the term is closed, so the application is combinatory.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

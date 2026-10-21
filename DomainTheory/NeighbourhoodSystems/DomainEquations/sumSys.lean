@@ -1,3 +1,6 @@
+/-ai
+The right-hand side of Scott's domain equation is the sum of a neighbourhood system D with the product of two copies of the sharp system of D.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

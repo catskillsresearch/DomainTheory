@@ -1,3 +1,8 @@
+/-ai
+If an approximable endomap is computable, then its diagonal fixed-point predicate is recursively enumerable.
+
+The computable map gives a recursively enumerable relation on packed pairs of indices. Composing with the primitive-recursive pairing of an index with itself, and using the unpairing equations, restricts that relation to the diagonal predicate.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

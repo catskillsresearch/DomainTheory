@@ -1,3 +1,8 @@
+/-ai
+If a bit code is at most 1, then the junk flag of the Y half-step atom at a depth, a bit-source, and that bit code is at most 1.
+
+Unfolding the flag and the atom state, the Y-sub-step junk formula and selection at bit 1 leave a selection of 1 and an emptiness decision, gated by the junk flag of the inner X sub-step. That inner flag is a selection of 1 and a bit-selected emptiness decision, gated by the atom-pair junk flag. The atom-pair junk flag, the emptiness decisions, and the bit are at most 1, so each selection is at most 1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

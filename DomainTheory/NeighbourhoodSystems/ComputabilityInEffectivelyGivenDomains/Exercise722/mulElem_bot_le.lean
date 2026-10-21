@@ -1,3 +1,8 @@
+/-ai
+The product of the bottom element with any domain element lies below that element.
+
+The only neighbourhood of the bottom element is the master neighbourhood, the set of all words. Upward closure of the other element then applies, because every word of its witnessing neighbourhood is the empty word followed by itself, and that concatenation lies in the product witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+For a nonempty finite family, a set W belongs to the successor join if and only if some choice of representatives has W a power-domain neighbourhood and the union of their down-sets contained in W.
+
+Rewrite successor-join membership as the pointwise down-set condition. One direction assembles the pointwise inclusions into one inclusion of the indexed union. The other direction splits an inclusion of the indexed union into a pointwise family of inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

@@ -1,3 +1,8 @@
+/-ai
+If a set is nonempty, so is each of its prefixed copies.
+
+An element of the set yields, after prepending the index, an element of the copy.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

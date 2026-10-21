@@ -1,3 +1,6 @@
+/-ai
+This notation introduces the infix ∪' for the choice-free binary union of finite sets.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

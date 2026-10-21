@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports Exercise 6.22 on the three domain equations. It brings together membership of the empty string in the masters of the two-point domain and the one-point domain, rootedness of the three functor expressions, the three solution theorems, and the existence of the stream solution over the solution of the vertical-naturals equation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.Basic

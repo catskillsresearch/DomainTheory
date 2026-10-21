@@ -1,3 +1,8 @@
+/-ai
+For every neighbourhood of the infinite iterate and every bound N, some list of length N reproduces, under the enumeration, the first N fibers of that neighbourhood.
+
+The proof is by induction on N. The empty list covers length zero. At a successor the inductive list is extended by an index of the next fiber, which exists because the enumeration is surjective. A position before the old length still reads the old list, and the last position reads the appended index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

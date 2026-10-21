@@ -1,3 +1,8 @@
+/-ai
+A canonical code is never the zero code of the empty list.
+
+If it were zero, its decoded rational-pair list would be empty, since zero decodes to the empty list, contradicting nonemptiness of a decoded canonical code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

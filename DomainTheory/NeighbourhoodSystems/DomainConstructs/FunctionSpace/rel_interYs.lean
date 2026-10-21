@@ -1,3 +1,8 @@
+/-ai
+A map in the step neighborhood of a list relates an input neighborhood to the intersection of those outputs whose inputs contain that input.
+
+The argument inducts on the list. The empty intersection is the output master, and the map relates the input to the master by monotonicity from the master relation. For a head and a tail, the tail relation is the inductive hypothesis. If the input is contained in the head input, the head relation pushes down to that input and intersects the tail relation, matching the unfolded intersection. Otherwise the head constraint is vacuous and the intersection equals the tail intersection. The split on inclusion is classical.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

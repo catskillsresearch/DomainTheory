@@ -1,3 +1,8 @@
+/-ai
+The scan of the empty string is none.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,3 +1,6 @@
+/-ai
+The exponential adjunction of Exercise 3.23 identifies approximable maps from a product into a domain with approximable maps from the first factor into the function space of the second factor and the codomain, by the curry equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

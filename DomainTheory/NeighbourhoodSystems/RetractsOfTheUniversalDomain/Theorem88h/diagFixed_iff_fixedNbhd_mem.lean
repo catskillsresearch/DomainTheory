@@ -1,3 +1,8 @@
+/-ai
+The diagonal fixed-point predicate holds at an index if and only if the presented neighbourhood at that index belongs to the fixed-neighbourhood subsystem.
+
+The fixed-neighbourhood condition is the conjunction of neighbourhood membership with the diagonal relation, and every presented set is already a neighbourhood, so the conjunction is the diagonal relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

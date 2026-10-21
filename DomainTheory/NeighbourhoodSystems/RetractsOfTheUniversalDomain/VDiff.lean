@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the development of a computable set difference for V: the choice-free bitwise xor and the and-not built from it, the raw and canonical difference indices, the instance of a computable difference, and the lemmas on primitive recursiveness, bit iteration, level sets, nonemptiness, recursive decidability, and the specification of the difference index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

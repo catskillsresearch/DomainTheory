@@ -1,3 +1,8 @@
+/-ai
+Every element of the domain of O is the bottom element or the top element.
+
+If the element contains the empty set, it is the top element. Otherwise the two elements contain the same neighbourhoods. A neighbourhood of the given element is the universe or the empty set: the universe belongs to the bottom element, and the empty set was excluded. A neighbourhood of the bottom element is the master neighbourhood, which belongs to every element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

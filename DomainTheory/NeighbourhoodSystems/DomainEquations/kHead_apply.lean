@@ -1,3 +1,8 @@
+/-ai
+The head map at an element a sends an element u to the value of k on the pair of a and u.
+
+Unfolding the composite, the pairing evaluates the constant map at a and the identity at u.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

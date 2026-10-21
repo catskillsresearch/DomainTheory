@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood predicate memO is nested or disjoint.
+
+Each of the two sets is the universe or the empty set. Equal sets are included in each other by reflexivity, and the empty set is included in the universe.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

@@ -1,3 +1,8 @@
+/-ai
+A set of rationals is an R-neighbourhood if and only if it equals [0, r) for some rational r with 0 < r ≤ 1.
+
+This is the defining membership condition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

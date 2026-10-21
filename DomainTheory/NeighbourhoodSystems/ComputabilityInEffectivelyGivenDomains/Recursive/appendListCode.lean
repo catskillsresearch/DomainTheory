@@ -1,3 +1,6 @@
+/-ai
+The append of two list codes is the tabulation, of length the sum of the two coded lengths, of the append lookup whose parameters are the two codes and the first length.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

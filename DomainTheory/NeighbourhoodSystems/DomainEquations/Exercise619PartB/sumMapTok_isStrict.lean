@@ -1,3 +1,8 @@
+/-ai
+The separated sum of any two approximable maps is strict: the master input, the only neighbourhood containing the empty string, relates only to the output master.
+
+The master clause of the relation is reflexivity. A left-tagged or right-tagged clause equates the sum master with a bit embedding, so the empty string of the master would belong to that embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

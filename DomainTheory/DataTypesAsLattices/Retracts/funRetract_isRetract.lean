@@ -1,3 +1,8 @@
+/-ai
+The function retract is a retract.
+
+Two graph extensionalities and two applications of the function retract reduce the equation to the reverse of β-conversion for application of u.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

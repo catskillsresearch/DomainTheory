@@ -1,3 +1,6 @@
+/-ai
+The expression retract is the application of the Y combinator to the graph of the abstract-syntax functor, the least fixed point of that functor in Scott's formula (4.44).
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

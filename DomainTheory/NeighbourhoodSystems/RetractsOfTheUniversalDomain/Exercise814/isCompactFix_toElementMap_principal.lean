@@ -1,3 +1,8 @@
+/-ai
+For any neighbourhood, the image of its principal element under a closure operator is compact among fixed points.
+
+If that image lies below a directed supremum of fixed points, inflation puts the principal element itself below the same supremum. Compactness of the principal element yields an index at which the family lies above it. Monotonicity of the element map and the fixed-point equation for that family value place the image below it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

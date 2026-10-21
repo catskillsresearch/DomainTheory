@@ -1,3 +1,8 @@
+/-ai
+The bottom element is distinct from the top element.
+
+The empty set belongs to the top element, because it is a neighbourhood contained in itself. If the two elements were equal, membership in the bottom element would force the empty set to be the universe, and the universe is not empty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

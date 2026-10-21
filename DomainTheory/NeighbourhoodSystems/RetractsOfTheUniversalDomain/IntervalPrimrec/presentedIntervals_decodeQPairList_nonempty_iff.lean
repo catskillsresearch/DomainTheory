@@ -1,3 +1,8 @@
+/-ai
+The presentation of a decoded list of rational pairs is nonempty if and only if the nonemptiness character of the code equals one.
+
+Rewrite by the criterion that a presentation is nonempty exactly when some pair is nondegenerate, and by the criterion that the character equals one. A nondegenerate pair in the decoded list is the decoding of a code in the list, and the decoding of such a code is a nondegenerate pair in the decoded list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

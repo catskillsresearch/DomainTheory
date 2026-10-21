@@ -1,3 +1,12 @@
+/-ai
+Inclusion of the set presented by one rational-pair list code in the set presented by
+another is recursively decidable.
+
+Unfolding the two-argument decision predicate, the negation of the nonemptiness decision
+composed with the primitive-recursive difference code decides the paired predicate, and
+the characterization of presented inclusion, applied to the two components, is the
+decision equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

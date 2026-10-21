@@ -1,3 +1,6 @@
+/-ai
+The combination of two lists of endpoint pairs consists of every pairwise interval whose left endpoint is the supremum of the two left endpoints and whose right endpoint is the infimum of the two right endpoints.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+If i composed with j lies below the identity on the codomain, then i sends the bottom of the domain to the bottom of the codomain.
+
+Antisymmetry compares the two bottoms. Monotonicity of i and the fact that the domain bottom lies below the image of the codomain bottom under j give one inequality, and the hypothesis on the composition puts that image below the codomain bottom. The codomain bottom lies below the image of the domain bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

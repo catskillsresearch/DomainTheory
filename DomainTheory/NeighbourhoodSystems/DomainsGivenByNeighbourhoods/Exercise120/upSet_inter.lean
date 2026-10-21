@@ -1,3 +1,8 @@
+/-ai
+The intersection of the up-sets of two sets is the up-set of their intersection.
+
+A neighbourhood lies in both up-sets if and only if it is contained in both sets, which is containment in the intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

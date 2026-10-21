@@ -1,3 +1,8 @@
+/-ai
+The boolean map boool is a retract.
+
+Extensionality of graphs reduces the retract equation to an equality of values. Two applications of the boolean action, followed by the idempotence of that conditional set, give the equality.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

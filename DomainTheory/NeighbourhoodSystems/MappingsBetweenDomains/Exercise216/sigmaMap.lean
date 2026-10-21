@@ -1,3 +1,6 @@
+/-ai
+The prefixing map of a finite string relates neighbourhoods X and Y of the binary-string domain when the string obtained by prepending that finite string to X is contained in Y. The master neighbourhoods are related because the prefixed master neighbourhood is still contained in the universe. The intersection law uses that the prefixed neighbourhood lies in both output neighbourhoods, so it witnesses that their intersection is a neighbourhood. Monotonicity composes the inclusion preserved by prepending with the given input and output inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

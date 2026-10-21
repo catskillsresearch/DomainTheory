@@ -1,3 +1,8 @@
+/-ai
+The number m + 1 lies in the range of the shifted halting enumerator if and only if evaluation of the code decoded from m on input 0 is defined.
+
+If the enumerator returns m + 1 at an argument t, the step-bounded evaluation of the decoded first component of t on input 0, for the number of steps given by the second component, must return a value, since otherwise the enumerator would return 0. The enumerator is then one more than that first component, so the first component equals m, and soundness of step-bounded evaluation puts the returned value in the domain of evaluation. Conversely, if evaluation is defined, completeness of step-bounded evaluation supplies a stage at which the value appears, and the pair of m with that stage is a preimage under the enumerator.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

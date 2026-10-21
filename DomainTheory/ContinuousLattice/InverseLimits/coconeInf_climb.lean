@@ -1,3 +1,8 @@
+/-ai
+If each component of a cocone equals the next component after the inclusion, then applying a later component after climbing the embeddings from level n returns the value of the component at level n.
+
+The argument inducts along the inequality of levels. At the base, the embedding along a reflexivity is the identity. At a successor, the embedding is the inclusion after the embedding already reached, and the cocone equation replaces the next component by the current one.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

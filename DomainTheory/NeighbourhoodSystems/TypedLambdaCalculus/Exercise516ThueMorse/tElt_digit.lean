@@ -1,3 +1,8 @@
+/-ai
+The n-th digit of t is the Thue–Morse bit at n: the partial element of the length-n prefix followed by that bit lies below t.
+
+The prefix of length n + 1 lies below t, and the successor law rewrites it as the length-n prefix followed by the bit at n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

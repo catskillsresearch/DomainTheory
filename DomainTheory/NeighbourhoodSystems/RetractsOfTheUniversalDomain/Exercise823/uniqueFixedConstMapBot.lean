@@ -1,3 +1,6 @@
+/-ai
+The fixed-point set of the constant-bottom map is a singleton type. Its default element is the bottom, which is fixed because the constant map sends the bottom to the bottom, and every fixed point equals the bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

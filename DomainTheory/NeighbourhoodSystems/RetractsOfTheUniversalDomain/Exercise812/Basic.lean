@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the residue-class, level-set, upsampling, and neighbourhood-system definitions of Exercise 8.12, together with their membership lemmas, the identification of the level-zero unit mask with the set of all natural numbers, preservation of bits and of level sets under upsampling, and the intersection formula for level sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

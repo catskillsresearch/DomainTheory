@@ -1,3 +1,6 @@
+/-ai
+The tagged copy of a set by an index is the set of sum tokens equal to the tagged token of that index and of some element of the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

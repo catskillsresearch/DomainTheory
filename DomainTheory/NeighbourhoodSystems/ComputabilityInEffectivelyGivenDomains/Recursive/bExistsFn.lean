@@ -1,3 +1,6 @@
+/-ai
+The bounded-exists indicator of a function g at n and N is the natural recursion of length N that starts at zero and at stage i selects one if the accumulator is already set and otherwise the one-test of g at the pair of i and n.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

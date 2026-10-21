@@ -1,3 +1,6 @@
+/-ai
+The zero test from the sequence domain to the truth domain is the approximable map obtained by lifting head values that send a false-headed string to true and the empty string and a true-headed string to false, with bottom in place of the empty-string value on partial elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

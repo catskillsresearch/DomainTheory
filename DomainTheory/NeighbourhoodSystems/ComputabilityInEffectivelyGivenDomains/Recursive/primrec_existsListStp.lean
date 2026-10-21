@@ -1,3 +1,8 @@
+/-ai
+If g is primitive recursive, then so is the disjunctive fold step of the bounded existential character.
+
+The accumulator, the head, and the parameter are projections, and the equality-to-one test of g at the pair of the head and the parameter is primitive recursive. Selection of the constant 1 when the accumulator is set, and of that test otherwise, agrees with the step by definition.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

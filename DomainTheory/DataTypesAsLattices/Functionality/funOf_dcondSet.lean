@@ -1,3 +1,8 @@
+/-ai
+Application distributes over the disjoint conditional set.
+
+The proof unfolds the disjoint conditional, then applies the distribution rule for the conditional three times and the rule that application of the top element is the top element.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

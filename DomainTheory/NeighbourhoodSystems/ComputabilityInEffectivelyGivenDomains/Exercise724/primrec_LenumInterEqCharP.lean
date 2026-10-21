@@ -1,3 +1,8 @@
+/-ai
+The paired form of the intersection-equality characteristic of the enumeration of L is primitive recursive.
+
+It is the uncurried characteristic, rewritten by the definition of the paired form.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

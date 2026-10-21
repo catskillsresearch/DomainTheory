@@ -1,3 +1,8 @@
+/-ai
+The intersection of two enumerated neighbourhoods is empty when the intersection code of the indices truncated at 2 equals 3, and otherwise equals the neighbourhood enumerated by that code.
+
+Rewrite both sides of the enumeration by canonicalization at the minimum with 2, and apply the canonical form, using that each minimum is at most 2.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,8 @@
+/-ai
+The doubling encoding of a string beginning with a bit is that bit twice, followed by the encoding of the remaining string.
+
+The equality is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

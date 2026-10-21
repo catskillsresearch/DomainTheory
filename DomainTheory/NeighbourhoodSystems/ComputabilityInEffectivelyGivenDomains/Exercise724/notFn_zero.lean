@@ -1,3 +1,8 @@
+/-ai
+Pointwise negation sends the neighbourhood zero to the neighbourhood one.
+
+Unfold the definition. The first conditional holds because zero equals zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

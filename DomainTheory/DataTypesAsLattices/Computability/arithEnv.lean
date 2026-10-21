@@ -1,3 +1,6 @@
+/-ai
+The arithmetic environment sends index 0 to the addition combinator, index 1 to the multiplication combinator, index 2 to the subtraction combinator, and every other index to bottom.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,8 @@
+/-ai
+Classifying the assembly of a separated-sum code recovers that code.
+
+Assembly is injective, and assembling the classification of an assembly returns that assembly.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

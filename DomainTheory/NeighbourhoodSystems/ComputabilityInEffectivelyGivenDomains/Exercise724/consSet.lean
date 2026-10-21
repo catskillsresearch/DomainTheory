@@ -1,3 +1,6 @@
+/-ai
+The i-prefixed copy of a set X consists of the sequences obtained by prepending i to an element of X.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

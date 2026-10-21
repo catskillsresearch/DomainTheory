@@ -1,3 +1,8 @@
+/-ai
+Folding the unfolding of a tree element returns the original element.
+
+The two carriers are compared by antisymmetry. A token in the fold is the fold of the unfolding of some token of the original element, and closure saturates the element under folding after unfolding, so the fold of the unfolding of the token lies in the element. That fold is either the token itself or, when the token is one of the two product-bottom encodings, the other encoding, in which case closure under those two bottom pair tokens puts the token in the element. Conversely, every token of the element is the fold of its own unfolding.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

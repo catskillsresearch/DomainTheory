@@ -1,3 +1,8 @@
+/-ai
+The course-of-values value of a step at w equals the step applied to the pair of w and the reverse memo table at w.
+
+The two sides are the same by definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

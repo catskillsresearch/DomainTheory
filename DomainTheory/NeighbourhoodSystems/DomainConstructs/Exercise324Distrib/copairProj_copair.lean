@@ -1,3 +1,8 @@
+/-ai
+The product of the two function spaces is a retract of the function space out of the sum: the copairing section of the comparison recovers the original pair of maps.
+
+The comparison of a copairing is the pair of its composites with the two injections, and those composites are the two maps.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum

@@ -1,3 +1,8 @@
+/-ai
+If the n-th iterate of a map relates the neighbourhood at a start index to the neighbourhood at a target index, then some valid chain from the start ends at a neighbourhood contained in the target. The intermediate neighbourhoods are named by the presentation, and the final condition is an inclusion, which covers the zero iterate.
+
+Induct on the number of iterations. At zero the identity relation supplies an inclusion, realised by the empty chain. At a successor the iterate is the previous iterate composed with the map, so the relation factors through an intermediate neighbourhood, named by a presentation index. The inductive hypothesis supplies a chain from that index, and consing the index gives the chain from the start.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

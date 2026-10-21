@@ -1,3 +1,6 @@
+/-ai
+The code that subtracts the rational-pair list coded by one natural from the list coded by another is the flat map that sends each argument to the whole-list difference of its two unpaired components, with the subtracted list as the parameter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

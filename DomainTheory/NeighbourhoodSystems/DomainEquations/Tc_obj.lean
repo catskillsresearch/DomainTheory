@@ -1,3 +1,8 @@
+/-ai
+The object part of this endofunctor sends a strict domain to the three-way sum of the unit domain with that domain and itself.
+
+The equality is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

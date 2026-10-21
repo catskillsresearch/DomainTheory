@@ -1,3 +1,8 @@
+/-ai
+If a Scott system is the union of a nonempty directed family of subsystems, then a set is a neighbourhood of the image of the union under a construct if and only if it is a neighbourhood of the image of some member.
+
+The forward direction is the forward continuity lemma. Conversely, a neighbourhood of the image of a member is a neighbourhood of the image of the union, because the construct preserves the subsystem relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

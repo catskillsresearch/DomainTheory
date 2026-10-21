@@ -1,3 +1,8 @@
+/-ai
+The optimal fixed point of a nonempty set of fixed points lies below every member of the set.
+
+It lies below the infimum of the set, and the infimum lies below the member.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413

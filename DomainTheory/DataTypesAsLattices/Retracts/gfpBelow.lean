@@ -1,3 +1,6 @@
+/-ai
+The greatest postfixed point, below an element b, of the map sending z to the intersection of the image of z with b is the union of all sets contained in that intersection.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

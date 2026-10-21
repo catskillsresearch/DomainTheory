@@ -1,3 +1,8 @@
+/-ai
+The occupancy test of the boxed sum, sending u to the union of the tag of the left square component at zero and the tag of the right square component at one, is Scott continuous.
+
+The paired continuity theorem applies to continuity of union in each argument and to the two composites of a continuous occupancy tag with a continuous square projection.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

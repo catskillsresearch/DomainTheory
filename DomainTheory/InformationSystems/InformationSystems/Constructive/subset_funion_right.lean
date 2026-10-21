@@ -1,3 +1,8 @@
+/-ai
+A finite set is contained in the choice-free union of any finite set with it.
+
+A member of the second set is a right-hand member of the union by the membership law.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

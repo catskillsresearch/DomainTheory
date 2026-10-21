@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood lies in the meet of two power-domain elements if and only if it lies in both elements.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

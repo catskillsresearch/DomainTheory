@@ -1,3 +1,7 @@
+/-ai
+The graph associated with a binary map g at an element f is the graph of the map sending x to g at x and at the application of f to x.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

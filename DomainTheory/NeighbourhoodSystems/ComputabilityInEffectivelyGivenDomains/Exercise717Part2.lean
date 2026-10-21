@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the second part of Exercise 7.17: the action of the universal strict map on an injection and on a pairing, its strictness, the monotonicity laws for numerical pairing and the bounds on decoded certificate components, the three clauses of the certificate step, the evaluator equation, memo-table lookup, the output of the evaluator, primitive recursiveness of the step, and the soundness, completeness, and computability of the map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2.Basic

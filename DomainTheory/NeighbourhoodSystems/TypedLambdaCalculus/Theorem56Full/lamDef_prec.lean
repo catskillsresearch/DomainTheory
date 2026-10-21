@@ -1,3 +1,8 @@
+/-ai
+If the base function and the step function are λ-defined, then so is primitive recursion on the head of a vector, with the parameters carried in the tail. The realiser is the recursion map wrapped in the strict guard of arity one more than the number of parameters.
+
+Apply the master constructor. The realised function is the coercion of a total function, so it is defined on every vector. A value is that total value. The argument vector is a head consed onto a tail, and the evaluation lemma for the recursion map supplies the numeral.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

@@ -1,3 +1,8 @@
+/-ai
+If z is distinct from bottom, the conditional set of z with both branches equal to x equals x.
+
+If 0 belongs to z and z is the numeral 0, the zero case of the conditional (2.7) returns x. If 0 belongs to z but z is distinct from the numeral 0, the mixed case returns the union of x with itself, which simplifies to x. If 0 does not belong to z, the remaining case of (2.7) returns the second branch, using that z is distinct from bottom.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

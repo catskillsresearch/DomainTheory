@@ -1,3 +1,9 @@
+/-ai
+If w' entails w in the function-space system and both sets are consistent, then every fix chain for w is a fix chain for w' of the same length and value.
+
+The argument is by induction on the length. A chain of length zero is unchanged. At a successor step the inductive hypothesis carries the preceding set, and transitivity of function-space entailment carries the last step from w to w'.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

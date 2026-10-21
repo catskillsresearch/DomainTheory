@@ -1,3 +1,8 @@
+/-ai
+The right smash projection is a computable map from the smash presentation to the Scott presentation of the right system.
+
+The relation says that the right preimage of the enumerated smash neighbourhood is contained in the target. Rewriting the enumeration as the product of its effective factors, that preimage is the effective right neighbourhood, so the relation is right inclusion at a primitive-recursive index. That inclusion is recursively decidable, and the resulting predicate is recursively enumerable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

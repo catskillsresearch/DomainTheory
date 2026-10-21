@@ -1,3 +1,6 @@
+/-ai
+The successor of a set of natural numbers is the image of the set under adding one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

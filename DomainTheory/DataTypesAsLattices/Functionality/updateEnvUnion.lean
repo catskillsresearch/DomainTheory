@@ -1,3 +1,7 @@
+/-ai
+The index-continuous environment update of t by x along an index is the minimal extension of the map sending each n to the update of t by x at n. On a singleton numeral this is the single update, and on a larger index it is the union of the corresponding updates.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,6 @@
+/-ai
+An index k is a meet of indices n and m when, for every index j, j is included in k if and only if j is included in both n and m.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

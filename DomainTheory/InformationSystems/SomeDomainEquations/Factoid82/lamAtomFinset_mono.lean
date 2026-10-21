@@ -1,3 +1,8 @@
+/-ai
+The atom set grows along inclusion of finite sets of raw lambda tokens.
+
+An atom of the smaller set is an atom token of that set, hence of the larger set, and therefore an atom of the larger atom set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

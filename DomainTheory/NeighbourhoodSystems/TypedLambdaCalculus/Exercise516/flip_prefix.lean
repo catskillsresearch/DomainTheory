@@ -1,3 +1,8 @@
+/-ai
+Flipping preserves the prefix order on finite strings.
+
+Mapping the prefix witness along the strings carries the prefix to the flipped strings.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

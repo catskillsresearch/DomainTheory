@@ -1,3 +1,6 @@
+/-ai
+Each level of the function-space tower carries the complete-lattice structure of the bundled lattice at that level.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

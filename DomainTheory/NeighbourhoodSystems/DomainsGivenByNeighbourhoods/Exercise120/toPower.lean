@@ -1,3 +1,6 @@
+/-ai
+The filter of the power system corresponding to a filter consists of the up-sets of neighbourhoods belonging to that filter. The neighbourhood itself is a consistency witness for its up-set. The up-set of the master arises from the master neighbourhood of the filter. The intersection of two such up-sets is the up-set of the intersection of the neighbourhoods, which belongs to the filter. If the up-set of one neighbourhood is contained in the up-set of another, the first neighbourhood is contained in the second, so upward closure puts the second neighbourhood in the filter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,6 @@
+/-ai
+A unary predicate on the naturals is recursively enumerable when it is the projection of a recursively decidable relation: the predicate holds at n exactly when the relation holds at the pair of some search index and n.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

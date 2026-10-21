@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the development of Exercise 5.7: surjective pairing, application of an uncurried map to a pair, two-argument application through the curried form, the equation for two-variable abstraction, the recovery of a two-variable map by uncurrying its abstraction, and the equation for the three-variable abstraction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.Basic

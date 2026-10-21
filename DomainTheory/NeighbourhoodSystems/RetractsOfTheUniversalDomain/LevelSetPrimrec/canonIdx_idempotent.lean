@@ -1,3 +1,9 @@
+/-ai
+Canonicalization is idempotent.
+
+The level set of a canonicalized code is nonempty, so a second canonicalization leaves
+that code unchanged.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

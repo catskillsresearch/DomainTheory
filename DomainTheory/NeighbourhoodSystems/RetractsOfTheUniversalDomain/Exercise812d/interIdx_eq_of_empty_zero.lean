@@ -1,3 +1,8 @@
+/-ai
+If the intersection-emptiness decider reads zero, the computed intersection index enumerates the intersection of the two enumerated neighbourhoods.
+
+Apply the intersection specification. The existence decider is at most one, and an emptiness reading of zero forces it to read one, which the existence specification turns into a genuine intersection witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

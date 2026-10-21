@@ -1,3 +1,8 @@
+/-ai
+Negation sends the total element of σ to the total element of the bit-flipped string.
+
+This is the total clause of the head-test construction of negation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

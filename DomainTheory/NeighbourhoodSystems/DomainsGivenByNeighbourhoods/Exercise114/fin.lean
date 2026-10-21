@@ -1,3 +1,6 @@
+/-ai
+The finite element determined by a neighbourhood is the principal filter of that neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

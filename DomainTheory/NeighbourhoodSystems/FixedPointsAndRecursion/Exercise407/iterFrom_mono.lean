@@ -1,3 +1,8 @@
+/-ai
+If a lies below f(a), then the iterates of f from a are monotone in the index: whenever n is at most m, the n-th iterate lies below the m-th.
+
+The comparison is proved by induction along the inequality of indices. Equal indices give reflexivity. At a successor step the inductive comparison is composed with the one-step inequality from an iterate to the next.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

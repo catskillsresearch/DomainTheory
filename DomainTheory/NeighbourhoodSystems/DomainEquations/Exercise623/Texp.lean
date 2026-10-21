@@ -1,3 +1,6 @@
+/-ai
+The functor of Exercise 6.23 is the grammar expression T(X) = N ⊕ ((X × X) + (X × X)). The coalesced sum with the constant system N carries the variables, and the two products of the variable, combined by separated sum, carry the two binary operation symbols.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

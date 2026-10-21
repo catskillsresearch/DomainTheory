@@ -1,3 +1,8 @@
+/-ai
+A valid chain from an index realises the iterate relation whose length is the length of the chain, from the neighbourhood at the start to the neighbourhood at the last index.
+
+Induct on the list. The empty chain is the identity relation of the starting neighbourhood with itself. On a cons the successor iterate is the tail iterate composed with the map, and the head relation together with the inductive hypothesis on the tail supply the composite.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

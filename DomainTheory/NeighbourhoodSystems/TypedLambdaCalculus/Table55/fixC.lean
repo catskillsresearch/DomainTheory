@@ -1,3 +1,6 @@
+/-ai
+The fixed-point combinator of Table 5.5 (Scott 1981, PRG-19) is the least-fixed-point map from the endomorphism space of a neighbourhood system into that system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

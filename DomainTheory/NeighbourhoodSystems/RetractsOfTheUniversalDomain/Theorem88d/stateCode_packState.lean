@@ -1,3 +1,8 @@
+/-ai
+The U-code of a state packed from a remainder, a positive code, a negative code, and a U-code is that U-code.
+
+Unfolding the projection and the packing, the right-unpairing equation yields the fourth component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

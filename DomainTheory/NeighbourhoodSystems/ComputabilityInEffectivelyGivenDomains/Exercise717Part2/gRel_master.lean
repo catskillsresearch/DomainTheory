@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the sharp domain is related by the catamorphism to the master neighbourhood of the target.
+
+The argument inducts on membership in the sharp domain. The master neighbourhood is the master clause. A zero embedding is the leaf clause, because the leaf map relates every neighbourhood in its domain to the master. A paired embedding is the node clause, because the inductive hypotheses relate the children to the master and the node map relates the master of the product, which is the product of the masters, to the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

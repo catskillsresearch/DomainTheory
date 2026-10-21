@@ -1,3 +1,9 @@
+/-ai
+Scott's beta law for a continuous map tau states that the application of the abstraction of tau at y equals tau(y).
+
+Unfold abstraction and apply Theorem 1.2 (i).
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Continuous

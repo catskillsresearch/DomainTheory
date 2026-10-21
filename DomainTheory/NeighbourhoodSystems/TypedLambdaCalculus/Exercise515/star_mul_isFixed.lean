@@ -1,3 +1,8 @@
+/-ai
+The product of the star of z with a set v is a fixed point of the operator sending w to z · w ∪ v.
+
+Unfold the star on the right-hand side. Distribute the product on the right over the union, cancel the unit factor, reassociate the product, and commute the two unions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

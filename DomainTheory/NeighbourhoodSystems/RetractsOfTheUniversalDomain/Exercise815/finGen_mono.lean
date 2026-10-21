@@ -1,3 +1,8 @@
+/-ai
+Extending an index list along a sublist enlarges its finitely generated subsystem.
+
+A sublist that witnesses membership for the smaller list remains a sublist of the larger list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

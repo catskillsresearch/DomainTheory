@@ -1,3 +1,6 @@
+/-ai
+The index of an expression is the pairing of its Gödel code with its depth.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

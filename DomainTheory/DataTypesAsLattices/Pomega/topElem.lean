@@ -1,3 +1,6 @@
+/-ai
+The greatest element of Pω is the set of all natural numbers. In Scott's notation after (2.2), this top element is ω.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

@@ -1,3 +1,6 @@
+/-ai
+The map nextCellStep is the pairing code of the cell step on pairs of natural numbers. On a packed pair it sends (0, m) to the packing of (m + 1, 0), and it sends (n + 1, m) to the packing of (n, m + 1). The zero test on the first component selects the two branches.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood Y belongs to the second component of a product element z if and only if Y is a neighbourhood and the product of the master of the first system with Y belongs to z.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

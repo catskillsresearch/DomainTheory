@@ -1,3 +1,8 @@
+/-ai
+The meet of elements is commutative.
+
+Each side lies below both arguments by the left and right inequalities with the arguments exchanged, and the universal property of the meet supplies both halves of the antisymmetry.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33

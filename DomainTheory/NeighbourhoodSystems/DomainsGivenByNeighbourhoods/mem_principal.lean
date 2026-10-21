@@ -1,3 +1,8 @@
+/-ai
+A set belongs to the principal filter of a neighbourhood X if and only if it is a neighbourhood containing X.
+
+The two sides agree by reflexivity of equivalence.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

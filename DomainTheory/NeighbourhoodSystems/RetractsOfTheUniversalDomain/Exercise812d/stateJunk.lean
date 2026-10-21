@@ -1,3 +1,6 @@
+/-ai
+The junk flag of a packed state is the right component of the right component of its code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

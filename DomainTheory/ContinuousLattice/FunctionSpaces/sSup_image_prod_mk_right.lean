@@ -1,3 +1,8 @@
+/-ai
+For an element y and a nonempty set S, the supremum of the pairs with right coordinate y and left coordinate in S equals the pair of the supremum of S with y.
+
+The set of such pairs is the product of S with the singleton of y. The supremum of that singleton is y, because every member equals y and y belongs to the singleton. The supremum of a product of nonempty sets is the pair of the suprema.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

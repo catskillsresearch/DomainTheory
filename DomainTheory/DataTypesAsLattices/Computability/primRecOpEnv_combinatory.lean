@@ -1,3 +1,8 @@
+/-ai
+Every value of the environment primRecOpEnv is combinatory.
+
+At index 2 the value is combinatory by dollarC_combinatory, at index 3 by Ycomb_combinatory, and at index 4 by theorem_2_4_closed applied to primRecStepTerm. At indices 0 and 1, and at every index of the form n + 5, it is combinatory by botElem_combinatory.
+ai-/
 module
 
 public import Mathlib.Computability.RE

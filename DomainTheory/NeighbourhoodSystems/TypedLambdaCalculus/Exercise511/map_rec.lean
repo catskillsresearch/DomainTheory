@@ -1,3 +1,8 @@
+/-ai
+The map combinator applied to a stack of functions and an element pushes the head function applied to the element onto the map combinator applied to the tail of the stack and the same element.
+
+The fixed-point equation of the map operator, rewritten by curry application at the fixed point and the pair, is the application of the body, and the body computation is that push.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

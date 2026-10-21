@@ -1,3 +1,6 @@
+/-ai
+A valuation trace is structurally justified when every one of its entries is justified in that trace.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

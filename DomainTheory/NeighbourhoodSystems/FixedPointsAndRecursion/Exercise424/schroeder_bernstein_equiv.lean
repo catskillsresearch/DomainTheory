@@ -1,3 +1,6 @@
+/-ai
+The Schröder–Bernstein correspondence is the equivalence obtained from Tarski's map once the first injection makes that map injective and the second injection makes it surjective.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

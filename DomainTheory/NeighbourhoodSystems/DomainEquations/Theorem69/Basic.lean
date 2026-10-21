@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Definition 6.8, the fixed-point theorem, monotonicity of composition, strictness of a composite, monotonicity of the strict representation and of the strict filter, and the strict composite together with its monotonicity and its approximable extension, the ingredients of Scott's Theorem 6.9: if a functor is continuous on maps and D is isomorphic to its image, then every algebra receives a homomorphism from D.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

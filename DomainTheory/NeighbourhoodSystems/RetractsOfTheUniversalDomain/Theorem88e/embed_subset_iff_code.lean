@@ -1,3 +1,8 @@
+/-ai
+One index set of the embedding is contained in another if and only if the corresponding coded set is contained in the other coded set.
+
+The subset transfer, rewritten so that intersection with the whole natural numbers disappears and the coded set is already contained in the master, is this comparison.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

@@ -1,3 +1,8 @@
+/-ai
+The addition equivalence preserves successor: the image of n + 1 under addition by m is one more than the image of n.
+
+Rewrite both sides by the addition formula and compare the resulting sums by arithmetic.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

@@ -1,3 +1,6 @@
+/-ai
+toNFA sends an expression to an automaton on its state type. The universal language and a singleton word use their deterministic automata converted to nondeterministic form, an intersection uses the product automaton of the two recursive automata, and a concatenation uses the epsilon-concatenation of the two recursive automata, converted back to an ordinary automaton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

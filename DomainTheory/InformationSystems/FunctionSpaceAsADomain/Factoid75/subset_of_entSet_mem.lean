@@ -1,3 +1,8 @@
+/-ai
+If a token set contained in an element entails a second token set, then the second set is contained in the element.
+
+Each token of the second set is entailed by the first, and an element is deductively closed.
+ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

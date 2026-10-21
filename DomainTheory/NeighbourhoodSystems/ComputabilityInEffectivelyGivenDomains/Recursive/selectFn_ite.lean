@@ -1,3 +1,8 @@
+/-ai
+Selection on the number that is 1 when a proposition holds and 0 otherwise equals the corresponding choice between two natural numbers.
+
+Splitting on the proposition, both sides simplify by the definition of selection.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

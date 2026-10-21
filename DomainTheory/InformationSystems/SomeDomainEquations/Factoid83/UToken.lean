@@ -1,3 +1,6 @@
+/-ai
+A U-token is a V-token satisfying the U-token predicate, hence a V-token distinct from top.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

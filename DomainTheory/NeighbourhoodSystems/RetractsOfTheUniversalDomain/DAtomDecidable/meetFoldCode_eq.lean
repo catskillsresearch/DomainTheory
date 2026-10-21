@@ -1,3 +1,8 @@
+/-ai
+The code-level meet-fold of a list code equals the set-level meet-fold of the decoded list.
+
+After unpacking a pair, the coded step agrees with the meet step. The equation for the coded fold then rewrites it as the list fold.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

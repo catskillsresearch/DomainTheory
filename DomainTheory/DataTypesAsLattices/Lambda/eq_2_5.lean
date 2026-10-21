@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (2.5). The successor of {6} ∪ {10} is {7} ∪ {11}.
+
+Successor sends 6 to 7 and 10 to 11, and those are the only elements on either side.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,8 @@
+/-ai
+If X' is a neighbourhood of D and Y' is a neighbourhood of E, then the false tag of the product neighbourhood of X' and Y' is a neighbourhood of the lift of the product.
+
+That product neighbourhood belongs to the product. Its false tag is a lift neighbourhood by the general tagging lemma for the lift, using that neighbourhoods of the product are nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,3 +1,8 @@
+/-ai
+The pointwise intersection of two finitely supported families is finitely supported.
+
+Concatenate the two support lists. Off that concatenation both families equal the master, so their intersection equals the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

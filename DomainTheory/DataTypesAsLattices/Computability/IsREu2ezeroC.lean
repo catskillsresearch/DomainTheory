@@ -1,3 +1,8 @@
+/-ai
+The zero numeral is recursively enumerable.
+
+It is the numeral of 0.
+ai-/
 module
 
 public import Mathlib.Computability.RE

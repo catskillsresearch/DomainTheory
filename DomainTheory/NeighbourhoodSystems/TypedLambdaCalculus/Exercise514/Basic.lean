@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the coding and the two maps of the graph model of Exercise 5.14: the sequence tag with its empty-list and cons equations, the set of entries of a list and membership in that set, the application of a coded function, the graph of a map, and the approximability predicate.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513

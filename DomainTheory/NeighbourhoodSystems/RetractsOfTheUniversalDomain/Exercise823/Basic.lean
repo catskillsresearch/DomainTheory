@@ -1,3 +1,6 @@
+/-ai
+The fixed-point set of an approximable self-map is the subtype of those elements that the map sends to themselves.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

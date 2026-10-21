@@ -1,3 +1,8 @@
+/-ai
+Any two strict homomorphisms from the colimit algebra into the same algebra are equal, when every neighbourhood of the generating system is its master.
+
+Extensionality of algebra homomorphisms applies, because their underlying maps agree.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

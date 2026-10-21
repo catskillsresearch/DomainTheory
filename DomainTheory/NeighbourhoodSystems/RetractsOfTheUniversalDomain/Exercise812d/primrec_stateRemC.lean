@@ -1,3 +1,8 @@
+/-ai
+The unconsumed remainder of a continuation state is primitive recursive.
+
+It is the left component of the code, which is primitive recursive.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,6 @@
+/-ai
+Decoding a natural number as a list of booleans decodes it as a list of natural numbers and interprets each entry as a boolean, failing if any entry is not a binary digit.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

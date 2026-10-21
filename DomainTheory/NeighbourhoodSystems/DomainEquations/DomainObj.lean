@@ -1,3 +1,6 @@
+/-ai
+An object of the category of domains is a token type together with a neighbourhood system on that type.
+ai-/
 module
 
 

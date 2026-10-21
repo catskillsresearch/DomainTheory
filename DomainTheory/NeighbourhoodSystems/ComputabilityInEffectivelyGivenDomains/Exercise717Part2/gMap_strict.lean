@@ -1,3 +1,8 @@
+/-ai
+The universal strict map is strict: it sends the bottom element to the bottom element.
+
+A relation out of the master neighbourhood forces the target to be the master neighbourhood, by inversion at the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

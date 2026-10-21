@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood of the strict function space that contains a strict map contains every larger strict map.
+
+The neighbourhood is a step-function set, and that set is upward closed.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

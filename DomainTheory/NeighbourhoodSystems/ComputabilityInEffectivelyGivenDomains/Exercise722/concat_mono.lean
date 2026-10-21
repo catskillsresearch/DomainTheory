@@ -1,3 +1,8 @@
+/-ai
+Concatenation of languages is monotone in both arguments.
+
+A witnessing split of a word in the smaller concatenation remains a witnessing split after the two inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

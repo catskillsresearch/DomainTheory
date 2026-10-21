@@ -1,3 +1,6 @@
+/-ai
+A term avoids an environment slot i when a variable occurrence is some other index, the constant zero avoids every slot, successor and predecessor preserve avoidance, a conditional or an application avoids i when each immediate subterm does, and an abstraction avoids i when its bound variable is i or its body avoids i.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

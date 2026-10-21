@@ -1,3 +1,8 @@
+/-ai
+The empty set is not a neighbourhood of Example 1.2.
+
+By the classification it would be the master, {0}, or {1}, and the empty set equals none of them.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

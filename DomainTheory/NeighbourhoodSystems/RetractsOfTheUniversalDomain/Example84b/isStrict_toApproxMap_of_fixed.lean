@@ -1,3 +1,8 @@
+/-ai
+If a function-space element is fixed by strict, the associated approximable map is strict.
+
+Strictness is equivalent to sending bottom to bottom. The application of strict at bottom is bottom, and the fixed-point equation rewrites that application as the application of the original element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

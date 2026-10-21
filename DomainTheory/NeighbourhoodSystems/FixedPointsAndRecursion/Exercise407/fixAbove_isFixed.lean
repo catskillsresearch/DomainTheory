@@ -1,3 +1,8 @@
+/-ai
+The directed union x of the iterates of an approximable endomap f, starting from a pre-fixed point a, is a fixed point of f.
+
+For f(x) below x, the image of the directed union is the directed union of the images, the image of the n-th iterate is the next iterate, and each successor iterate lies below the union. For x below f(x), each iterate lies below the next by monotonicity of the iteration, the next iterate is the image of the previous one, and that image lies below f(x) because the previous iterate lies below the union and f is monotone.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

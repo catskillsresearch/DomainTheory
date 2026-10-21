@@ -1,3 +1,8 @@
+/-ai
+The enumerated neighbourhood of the code of the empty list is the master neighbourhood of the reconstructed system.
+
+Decoding the code of the empty list yields the empty list, whose principal up-set is the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

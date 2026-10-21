@@ -1,3 +1,9 @@
+/-ai
+The primitive-recursive second component of a numeral decoding equals the second component of the decoding.
+
+Unfold the definition, rewrite by the specification of the paired decoding, and take the second component of the pairing.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

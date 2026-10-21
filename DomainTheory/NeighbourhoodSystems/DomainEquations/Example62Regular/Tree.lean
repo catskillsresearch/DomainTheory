@@ -1,3 +1,6 @@
+/-ai
+A total tree over the n-letter alphabet Fin n is a function from finite words on that alphabet to a Boolean sign, so that every node, addressed by a finite selector, carries a genuine label.
+ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

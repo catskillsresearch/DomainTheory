@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the continuous-lattice development: injectivity, the way-below relation, specialization, Scott maps, the Milner correction, the constructions of §§2–3, function spaces, Theorem 2.12, inverse limits, and the function-space tower.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Injective

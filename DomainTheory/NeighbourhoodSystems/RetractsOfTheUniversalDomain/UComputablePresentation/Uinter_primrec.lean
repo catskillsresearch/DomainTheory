@@ -1,3 +1,8 @@
+/-ai
+The intersection index of a paired natural number is primitive recursive.
+
+Unfold the index. Combining the canonical codes of the two components is primitive recursive, and that composition equals the unfolded index once the pair is unpacked.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

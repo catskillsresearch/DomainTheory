@@ -1,3 +1,8 @@
+/-ai
+If the consistency function is primitive recursive, then the index character is primitive recursive.
+
+The code fold of the primitive-recursive consistency step, started from the packed master index, is primitive recursive, and the index character is the index component of that fold.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

@@ -1,3 +1,8 @@
+/-ai
+The negative numerator part of a rational code is primitive recursive.
+
+It is the right component of the left component of the code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

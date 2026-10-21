@@ -1,3 +1,9 @@
+/-ai
+The tree retract is a fixed point of the tree functional.
+
+This is the symmetric form of equation (4.38), simplified by the definition of the functional.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

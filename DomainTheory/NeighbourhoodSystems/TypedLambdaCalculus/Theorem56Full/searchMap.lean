@@ -1,3 +1,6 @@
+/-ai
+Given a map φf, the search map is the approximable map from the universal argument domain to N obtained by converting the least fixed point of the search operator of φf back into an approximable map. The counter lives in coordinate 0.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

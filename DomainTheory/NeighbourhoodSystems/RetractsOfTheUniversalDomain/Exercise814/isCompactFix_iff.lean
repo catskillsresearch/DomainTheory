@@ -1,3 +1,8 @@
+/-ai
+A fixed point of a closure operator is compact if and only if it equals the image of the principal element of a single neighbourhood.
+
+If it is compact, compactness applied to the generating family, whose directed supremum is the fixed point, yields one neighbourhood whose image lies above the fixed point. The principal element of that neighbourhood lies below the fixed point, so monotonicity of the element map and the fixed-point equation give the reverse inequality. Conversely, the image of the principal element of any neighbourhood is compact among fixed points.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

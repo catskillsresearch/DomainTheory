@@ -1,3 +1,6 @@
+/-ai
+The infinite-iterate enumeration sends a code t to the set of pairs whose second component lies in the neighbourhood indexed by the fiber index of t at the first component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

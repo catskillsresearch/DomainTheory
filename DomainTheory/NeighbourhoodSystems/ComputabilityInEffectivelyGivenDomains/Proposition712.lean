@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Proposition 7.12: extensionality of power-domain elements and agreement of approximable maps on principal elements, the action of the singleton map and principality of singletons of finite elements, the binary intersection law in element and membership form, the action and relation of the binary join and the action of the product join, the code form of singleton membership, computability of the singleton map and of the binary join, greatest elements of intersection-closed systems, of their subsystems, and of power domains, transport of a greatest element across an isomorphism and along a subdomain of a power domain, and the counterexample that the flat two-point domain has no greatest element and is not a subdomain of its power domain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition712.Basic

@@ -1,3 +1,8 @@
+/-ai
+If each entry of a vector w lies in the value of the corresponding partial function at a total vector v, and each map in the family is a λ-definition of that partial function, then the tuple of those maps, evaluated at the argument element of v, equals the argument element of w.
+
+The two elements agree on every component. Below the tuple length, the component of the tuple is the defined value of the corresponding λ-definition, hence the numeral for the corresponding entry of w. At or beyond the tuple length both components are bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

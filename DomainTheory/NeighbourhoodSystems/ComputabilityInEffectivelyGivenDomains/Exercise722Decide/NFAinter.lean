@@ -1,3 +1,6 @@
+/-ai
+The product automaton recognising an intersection has pairs of states. A pair steps on a letter, is a start state, or is an accept state exactly when both components do.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

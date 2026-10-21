@@ -1,3 +1,6 @@
+/-ai
+Scott’s equation (2.27) packaged as a combinator: the dollar combinator applied to the fixed-point combinator Y applied to the interpretation of the primitive-recursion step term at a base a and a step f.
+ai-/
 module
 
 public import Mathlib.Computability.RE

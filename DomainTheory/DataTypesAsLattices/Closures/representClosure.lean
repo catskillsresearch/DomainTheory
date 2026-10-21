@@ -1,3 +1,6 @@
+/-ai
+For a countably algebraic complete lattice, the representing closure of a set of indices is the set of indices whose compact element lies below the supremum of the compact elements indexed by that set.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

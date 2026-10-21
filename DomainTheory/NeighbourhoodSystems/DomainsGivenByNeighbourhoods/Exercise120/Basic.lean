@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the up-set of a set, the power system, the two directions between filters of a system and filters of its power system, the induced order isomorphism, membership in an up-set, the intersection and inclusion laws for up-sets, injectivity of the up-set operation, and membership in the power system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

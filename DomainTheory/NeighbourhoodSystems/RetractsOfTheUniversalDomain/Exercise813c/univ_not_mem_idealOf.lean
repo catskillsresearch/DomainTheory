@@ -1,3 +1,8 @@
+/-ai
+If a set of points of Cantor space is distinct from the whole space, then the whole space does not belong to its ideal.
+
+Membership would require the whole space to be contained in the set, and a set containing the whole space is the whole space.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

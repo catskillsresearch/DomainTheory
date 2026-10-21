@@ -1,3 +1,8 @@
+/-ai
+The graph relation of a catamorphism is monotone in the leaf map and the node map.
+
+Induct on the derivation. The master clause is unchanged. A leaf clause is preserved because the leaf map has grown. A node clause is preserved by the inductive hypotheses and because the node map has grown.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

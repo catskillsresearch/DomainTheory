@@ -1,3 +1,6 @@
+/-ai
+The master neighbourhood of Example 1.2 is the set of all tokens {0, 1}.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

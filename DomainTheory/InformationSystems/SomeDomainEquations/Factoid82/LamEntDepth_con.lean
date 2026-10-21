@@ -1,3 +1,8 @@
+/-ai
+If a finite set of raw lambda tokens depth-entails a raw token, then the set is depth-consistent.
+
+The proof cases on the entailment. The bottom, atom, and function-token clauses each carry the consistency of the set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

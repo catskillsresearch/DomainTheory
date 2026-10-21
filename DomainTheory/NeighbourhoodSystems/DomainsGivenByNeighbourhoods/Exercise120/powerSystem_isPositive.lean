@@ -1,3 +1,8 @@
+/-ai
+The power system is positive: the intersection of two of its neighbourhoods is again a neighbourhood if and only if the intersection is nonempty.
+
+The intersection of the up-sets of two neighbourhoods is the up-set of their intersection. If that up-set equals the up-set of some neighbourhood, the neighbourhood itself lies in it. Conversely, a neighbourhood contained in the intersection is a consistency witness, so the intersection is a neighbourhood and its up-set is a neighbourhood of the power system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+If f and g are primitive recursive, then so is the pointwise maximum of their values.
+
+Selection on the comparison of f n with g n, choosing g n when the comparison holds and f n otherwise, is primitive recursive. Unfolding selection, the zero test, and the maximum, if f n is at most g n then the truncated difference is zero and the maximum is g n. Otherwise g n is strictly less than f n, so the difference is positive, its minimum with 1 is 1, and the maximum is f n.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

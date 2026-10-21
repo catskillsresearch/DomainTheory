@@ -1,3 +1,6 @@
+/-ai
+The pairing combinator is the interpretation of the pairing term in the arithmetic environment.
+ai-/
 module
 
 public import Mathlib.Computability.RE

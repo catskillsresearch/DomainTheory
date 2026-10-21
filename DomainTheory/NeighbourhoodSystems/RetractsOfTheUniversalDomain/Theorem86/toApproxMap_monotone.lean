@@ -1,3 +1,8 @@
+/-ai
+Extraction of approximable maps from elements of the function space is monotone.
+
+The function-space equivalence is monotone, and simplification is that monotonicity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

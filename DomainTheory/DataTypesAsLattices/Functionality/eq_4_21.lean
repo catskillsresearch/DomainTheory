@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (4.21). Second projection composed with the tensor of f and f' equals f' composed with second projection.
+
+The proof unfolds composition, then uses graph extensionality, the second-projection rule, the tensor rule, the one projection, and the second-projection rule again.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

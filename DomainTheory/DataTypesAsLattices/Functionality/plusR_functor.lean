@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 4.5 (iv). The sum is a covariant functor: if f has type a → b and f' has type a' → b', then the sum of f and f' has type the arrow from the sum of a and a' to the sum of b and b'.
+
+Unfolding function-space application turns the typing equation into a composite. The two arrow typings supply the composite equations for f and f'. Two uses of equation (4.13) move the sum inside those composites, and substituting the typing equations returns the sum of f and f'.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

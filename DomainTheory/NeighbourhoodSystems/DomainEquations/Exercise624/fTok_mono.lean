@@ -1,3 +1,8 @@
+/-ai
+The token map fTok is monotone in both arguments.
+
+The inclusion is monotonicity of gTok applied to the first inclusion and to monotonicity of gTok on both inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

@@ -1,3 +1,6 @@
+/-ai
+The projection from the inverse limit onto stage n, as a bare function, reads the n-th coordinate of a compatible sequence.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

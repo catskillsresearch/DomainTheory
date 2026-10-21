@@ -1,3 +1,8 @@
+/-ai
+For a single step whose output is a neighbourhood, if the input is contained in the step input, the intersection of the relevant outputs is that output.
+
+A token of the intersection lies in the output of every listed step whose input contains the given input, and the single step is such a step. Conversely, a token of the output lies in the master, and it is the output required of the only step on the list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

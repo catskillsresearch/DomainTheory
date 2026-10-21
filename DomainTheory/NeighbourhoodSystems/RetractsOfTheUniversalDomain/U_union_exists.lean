@@ -1,3 +1,8 @@
+/-ai
+The union of two enumerated neighbourhoods of U equals some enumerated neighbourhood.
+
+The union is a neighbourhood of U, so surjectivity of the enumeration supplies an index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

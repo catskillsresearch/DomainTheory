@@ -1,3 +1,6 @@
+/-ai
+Raising an endpoint pair at a rational replaces the left endpoint by its supremum with that rational and leaves the right endpoint unchanged.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

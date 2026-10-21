@@ -1,3 +1,9 @@
+/-ai
+A combinator that lies in every function space A → A equals the combinator I.
+
+The empty equivalence supplies the graph equation. Graph comparison with I reduces the claim to values at an argument a. The closure theorem, applied to the singleton equivalence of a, shows that the value lies in that singleton, hence equals a, which is the application law for I.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

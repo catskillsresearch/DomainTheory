@@ -1,3 +1,6 @@
+/-ai
+The finset depth of a finite set of raw lambda tokens is the maximum of their raw depths. It is the right fold, starting from zero, of the operation that replaces an accumulator by the maximum of a token's raw depth and the accumulator.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

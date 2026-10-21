@@ -1,3 +1,6 @@
+/-ai
+The root label of a total tree is the Boolean value that the tree assigns to the empty word.
+ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

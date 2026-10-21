@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports membership of the induced enumeration in the fixed neighbourhood, the hitting of every diagonally fixed index, and surjectivity onto the fixed neighbourhood, for Theorem 8.8(c), part 4.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.Basic

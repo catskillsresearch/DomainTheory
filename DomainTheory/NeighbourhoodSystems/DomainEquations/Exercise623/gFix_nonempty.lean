@@ -1,3 +1,8 @@
+/-ai
+The fixed-point token set of a grammar expression is nonempty.
+
+The empty string is an element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

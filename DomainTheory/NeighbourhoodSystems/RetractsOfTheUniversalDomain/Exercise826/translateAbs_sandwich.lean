@@ -1,3 +1,8 @@
+/-ai
+If a and b are retractions, then b composed with the translated abstraction composed with a equals the translated abstraction.
+
+The two sides are b composed with b composed with the body composed with a composed with a, and b composed with the body composed with a. Reassociate, replace the composite of a with itself by a, and replace the composite of b with itself by b.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

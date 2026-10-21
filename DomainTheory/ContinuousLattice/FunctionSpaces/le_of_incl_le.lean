@@ -1,3 +1,8 @@
+/-ai
+A map that preserves arbitrary suprema and is injective reflects the order. If the image of x lies below the image of y, then x lies below y.
+
+Preservation of suprema gives preservation of binary joins, so the image of the join of x and y equals the join of the images, which equals the image of y. Injectivity yields that the join equals y, which is the desired inequality.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

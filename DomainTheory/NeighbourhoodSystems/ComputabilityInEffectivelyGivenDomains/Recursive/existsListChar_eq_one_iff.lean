@@ -1,3 +1,8 @@
+/-ai
+The existence character equals 1 exactly when some entry of the decoded list, paired with the parameter, is sent to 1 by the decider.
+
+Rewrite by the fold equation for the character and by the characterization of the folded selection equaling 1, applied at accumulator 0, which is at most 1. The accumulator is not 1, so that disjunct drops.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

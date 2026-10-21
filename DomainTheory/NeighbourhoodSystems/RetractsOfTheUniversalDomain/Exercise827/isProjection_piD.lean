@@ -1,3 +1,8 @@
+/-ai
+The product of every approximable self-map d, as a self-map of the function space, is a projection.
+
+It is a retraction and it lies below the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

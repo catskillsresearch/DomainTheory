@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, §1. The finite set coded by a natural number n is the set of positions at which the binary expansion of n has digit 1.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

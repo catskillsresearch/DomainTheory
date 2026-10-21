@@ -1,3 +1,6 @@
+/-ai
+The carrier union of a family of elements is the set of tokens that belong to the carrier of some element of the family.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

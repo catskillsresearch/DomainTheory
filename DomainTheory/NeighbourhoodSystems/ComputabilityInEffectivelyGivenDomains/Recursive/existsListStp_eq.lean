@@ -1,3 +1,8 @@
+/-ai
+The existence step on the pair of an entry and the pair of an accumulator and a parameter equals selection of 1 by the one-indicator of the decider on the pair of the entry and the parameter, with the accumulator as the other branch.
+
+Unfold the step and simplify by the two unpairing equations.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,3 +1,8 @@
+/-ai
+Rebuilding an element of the binary-sequence domain from its image in the sum with itself returns the original element.
+
+The two elements contain the same neighbourhoods. A neighbourhood of the rebuilt element is the master, which belongs to the original element, or a false-bit tagging of a neighbourhood whose left injection belongs to the image, which belongs to the original by the characterization of the forward map, or the corresponding true-bit case. A neighbourhood of the original element is the master, a false-bit tagging, or a true-bit tagging, and each of these is a clause of the rebuilt membership by that same characterization.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

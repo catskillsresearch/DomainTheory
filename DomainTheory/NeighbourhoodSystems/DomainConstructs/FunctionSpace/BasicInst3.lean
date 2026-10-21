@@ -1,3 +1,6 @@
+/-ai
+Approximable maps are partially ordered by inclusion of their relations. Reflexivity keeps each related pair, transitivity composes two inclusions, and antisymmetry is extensionality of relations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

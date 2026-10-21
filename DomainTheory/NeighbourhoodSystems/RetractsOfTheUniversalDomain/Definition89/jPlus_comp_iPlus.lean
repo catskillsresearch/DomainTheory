@@ -1,3 +1,8 @@
+/-ai
+Applying the sum embedding and then the sum projection yields the identity of the sum.
+
+This identity is the retraction component of the projection pair chosen for the sum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

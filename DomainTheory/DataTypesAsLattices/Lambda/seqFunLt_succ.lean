@@ -1,3 +1,8 @@
+/-ai
+The conditional that returns the functional at the numeral zero on a zero test, and otherwise the strict stage of the shifted functional at the predecessor, equals the strict stage of the functional at the next bound.
+
+A left-branch member is the contribution of index zero below the successor bound. A right-branch member is an index below the old bound in the shifted application, which is the successor index in the unshifted stage. Conversely, index zero is the left branch and a successor index is the right branch after the shift equation for numerals.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

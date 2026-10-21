@@ -1,3 +1,9 @@
+/-ai
+The application at the numeral 1 of the tag injection of x at i equals x.
+
+This is the first-component law for sequence pairs.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,8 @@
+/-ai
+The zero-initial primitive-recursion operator primRecZeroC is combinatory.
+
+It is obtained by applying S to K applied to the combinatory application combinator, and to S applied to K applied to the combinatory fixed-point combinator and to the closed interpretation of primRecStepTerm applied to the combinatory numeral 0.
+ai-/
 module
 
 public import Mathlib.Computability.RE

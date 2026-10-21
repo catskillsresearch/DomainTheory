@@ -1,3 +1,8 @@
+/-ai
+If every neighbourhood of the underlying domain is nonempty, then every enumerated set of the section domain is nonempty.
+
+The enumerated set is a section neighbourhood, and such a neighbourhood is nonempty under that hypothesis.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

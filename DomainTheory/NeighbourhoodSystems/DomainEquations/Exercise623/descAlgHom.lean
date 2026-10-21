@@ -1,3 +1,6 @@
+/-ai
+The evaluation homomorphism from the algebra of expressions to an algebra B is the strict map whose underlying approximable map is the union of the Kleene iterates, together with the square asserting that this map commutes with the structure maps. The square is the raw commutation identity for that union.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

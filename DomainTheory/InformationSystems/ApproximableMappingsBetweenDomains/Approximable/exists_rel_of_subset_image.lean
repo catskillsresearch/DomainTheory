@@ -1,3 +1,8 @@
+/-ai
+If a finite set of tokens is contained in the set of tokens that an approximable mapping relates to some finite subset of an element, then some finite set contained in that element is related to the whole finite set.
+
+The proof is by induction on the finite set. The empty set is contained in the element, and monotonicity applied to the empty relation, with the empty entailments, relates it to the empty set. For an insertion of a token into a finite set, the hypothesis gives a finite subset related to the singleton of that token, and the inductive hypothesis gives a finite subset related to the remaining set. Their union is contained in the element, so it is consistent. Reflexivity of entailment puts each summand below the union, and monotonicity transports the two relations. Closure under union on the right, with the identity of a singleton union and insertion, gives the relation to the inserted set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the computable presentation of U used for the master-neighbourhood facts of Exercise 8.12(g)(1)(a).
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

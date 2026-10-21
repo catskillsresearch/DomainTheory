@@ -1,3 +1,6 @@
+/-ai
+The Scott topological space of a complete lattice is the Scott topology of the whole universe.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

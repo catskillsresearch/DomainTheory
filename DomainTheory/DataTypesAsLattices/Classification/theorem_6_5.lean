@@ -1,3 +1,9 @@
+/-ai
+Scott's 𝔉 ∩ 𝔊δ theorem (1976, Theorem 6.5) states that a set U is an intersection of a Scott-closed set and a Scott Gδ set if and only if U is the set of x at which some Scott-continuous f takes the value ⊤ + 1.
+
+If U is C ∩ G with C Scott closed and G a Scott Gδ set, the 𝔊δ theorem supplies a Scott-continuous map equal to ⊤ exactly on G. Packing the top characteristic of the complement of C with that map is Scott continuous. At each x the characteristic is ⊥ or ⊤, and the packing equals ⊤ + 1 exactly when the characteristic is ⊥ and the second map equals ⊤, which is membership in C ∩ G. Conversely, if U is the set of x with f(x) equal to ⊤ + 1, take the set of x whose value is contained in ⊤ + 1 and the set of x whose value contains ⊤ + 1. The complement of the first equals the set of x with 0 in the value, because a number outside ⊤ + 1 must be 0 and 0 itself lies outside ⊤ + 1, and that set is Scott open. The second set is the intersection of the Scott-open sets of x with n + 1 in the value. The two sets meet in U.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Theorem 1.1, the characterization theorem: a map f is Scott continuous if and only if, for every x and every finite code m, the finite set coded by m is contained in f(x) exactly when some finite code n already has its finite set contained in x and the finite set coded by m contained in f of that finite set.
+
+If f is Scott continuous and the finite set coded by m lies in f(x), each of its members lies in the Scott union, so is realized on some finite subset of x. Finiteness assembles those witnesses into one code. The opposite inclusion is monotonicity of f. Conversely, membership of k in f(x) is compared with membership in the Scott union by passing through the singleton finite set coded by 2^k and applying the stated finite-subset criterion in both directions.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

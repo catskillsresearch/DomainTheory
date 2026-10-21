@@ -1,3 +1,8 @@
+/-ai
+The nonemptiness test of a level and a mask is the value in {0, 1} deciding whether the
+corresponding level set is nonempty. It is the bounded existential, up to two to the
+power of the level, of the bit test of the mask.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

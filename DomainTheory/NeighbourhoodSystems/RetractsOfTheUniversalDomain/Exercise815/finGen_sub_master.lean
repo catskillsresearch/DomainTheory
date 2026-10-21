@@ -1,3 +1,8 @@
+/-ai
+Every member of the finitely generated family Fin(js) is contained in the master neighbourhood of D.
+
+The neighbourhood is already known to be a neighbourhood of D, and every neighbourhood of D is contained in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

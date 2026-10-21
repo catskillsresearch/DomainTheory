@@ -1,3 +1,8 @@
+/-ai
+If a pair belongs to a finite set of input-output list pairs, then inserting that pair into the subset that filters the pair out recovers the original set.
+
+An element of the insertion is the pair itself, which belongs to the set, or a filtered element, which belongs to the set. An element of the set equal to the pair is the inserted copy, and an element distinct from the pair belongs to the filter.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

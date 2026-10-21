@@ -1,3 +1,8 @@
+/-ai
+If every entry of a list of natural numbers has a preimage under a function, then the list is the direct image of some list.
+
+Proceed by induction on the list. The empty list is the image of the empty list. For a head and a tail, take a preimage of the head and an inductive preimage of the tail, and place the head's preimage at the front.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

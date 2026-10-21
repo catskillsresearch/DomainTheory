@@ -1,3 +1,8 @@
+/-ai
+A retraction acts idempotently on elements: applying it twice returns the same element as applying it once.
+
+Rewrite the double application as the composite, and use the retraction equation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

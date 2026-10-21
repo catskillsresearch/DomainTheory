@@ -1,3 +1,8 @@
+/-ai
+Prepending a string to a singleton yields the singleton of the concatenation.
+
+By extensionality of sets, a member of the prepend is the concatenation of the prefix with the unique element of the singleton, and the concatenation arises by taking that element from the singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

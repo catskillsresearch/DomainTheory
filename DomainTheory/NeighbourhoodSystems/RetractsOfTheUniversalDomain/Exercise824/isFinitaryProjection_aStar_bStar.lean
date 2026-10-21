@@ -1,3 +1,8 @@
+/-ai
+If two approximable maps from the pair space into the function space send pairs of finitary projections to finitary projections, then both components of their simultaneous fixed point are finitary projections.
+
+The chain of approximants consists of finitary projections. For each index, the subfilter of either component of the iterate equals that component, because conversion to an approximable map is injective and a finitary projection equals its own sub. The first components of the iterates are directed by passing to the maximum index and using monotonicity of the first projection on the monotone iterates, and likewise for the second components; rewriting by those subfilter identities gives the same directedness for the subfilters. Element extensionality, through membership in a component, in the fixed element, and in a directed supremum, identifies each component of the fixed element with the directed supremum of the corresponding components. The subfilter of a directed supremum, together with the same identities, shows that each component of the fixed element equals its own subfilter. The criterion that a map equal to its own sub is a finitary projection, rewritten through the approximable map of the subfilter, yields both components.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

@@ -1,3 +1,6 @@
+/-ai
+The map into the terminal one-point domain is the default approximable map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

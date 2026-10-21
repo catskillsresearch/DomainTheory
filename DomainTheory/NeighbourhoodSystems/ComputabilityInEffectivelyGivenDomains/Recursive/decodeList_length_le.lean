@@ -1,3 +1,8 @@
+/-ai
+The list decoded from a code is no longer than the code.
+
+The proof is by strong induction on the code. Zero simplifies by the decoding of zero. For a successor, the length of a cons cell is one more than the length of the tail. The second component of the predecessor is at most the predecessor, so the inductive hypothesis applies strictly below the successor, and arithmetic gives the inequality.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,3 +1,6 @@
+/-ai
+The map from the tree algebra of the fixed neighbourhood of an endomap a into the universal domain is the composite of the embedding of the tree algebra of the universal domain with the functorial action of the tree algebra on the subsystem injection of that fixed neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

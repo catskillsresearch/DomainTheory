@@ -1,3 +1,8 @@
+/-ai
+If the function-space inclusion characteristic is primitive recursive, then the function sending a paired code to the chain characteristic of its two components is primitive recursive.
+
+That characteristic is the fold of the primitive-recursive packed step, with the left projection as parameter, the constant pairing of the master index with 1 as the start, and the right projection as the list code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

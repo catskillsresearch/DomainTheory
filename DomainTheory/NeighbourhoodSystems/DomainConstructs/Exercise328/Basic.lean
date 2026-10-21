@@ -1,3 +1,6 @@
+/-ai
+This file gathers the function space, the supremum of bounded sets of elements from Exercise 1.27, and the set of active values, and records Exercise 3.28: the least map of a finite step neighborhood sends an element to the least upper bound of the principal filters of those outputs whose inputs belong to the element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

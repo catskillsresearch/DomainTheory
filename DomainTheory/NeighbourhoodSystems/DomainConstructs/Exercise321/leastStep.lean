@@ -1,3 +1,6 @@
+/-ai
+The least single-step map from a neighbourhood Y to a neighbourhood Z is the least approximable map of the one-element list containing the pair of Y and Z. The only pair on that list is this pair of neighbourhoods, and consistency of the list is consistency of a single step.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,3 +1,8 @@
+/-ai
+The total element at the leaf 00 is maximal: any element above it equals it.
+
+The leaf 00 belongs to the larger element, so the recognition lemma for that leaf applies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

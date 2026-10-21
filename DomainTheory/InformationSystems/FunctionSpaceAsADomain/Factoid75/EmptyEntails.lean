@@ -1,3 +1,7 @@
+/-ai
+The empty set entails a finite set of tokens when it entails every member of that set.
+ai-/
+
 module
 
 public import Mathlib.Data.Multiset.MapFold

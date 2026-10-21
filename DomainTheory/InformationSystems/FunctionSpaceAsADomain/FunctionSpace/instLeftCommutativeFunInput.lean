@@ -1,3 +1,6 @@
+/-ai
+This instance registers left commutativity of the operation that unions a function token's input set onto a finite set of input tokens. The witness is the left-commutativity law for choice-free union of those input sets.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

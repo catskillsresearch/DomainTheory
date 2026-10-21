@@ -1,3 +1,6 @@
+/-ai
+The neighbourhood indexed by a natural number n is the set of positions k at which the k-th bit of n is unset.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

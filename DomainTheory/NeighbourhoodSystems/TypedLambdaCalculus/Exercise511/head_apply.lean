@@ -1,3 +1,8 @@
+/-ai
+The head of a stack is its component of index zero.
+
+The head is a composite, unfolding applies the product isomorphism, that isomorphism is the pair of the zeroth component and the shifted sequence, and the first projection of the pair is the zeroth component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

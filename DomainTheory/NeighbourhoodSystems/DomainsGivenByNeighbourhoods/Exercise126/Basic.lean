@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the neighbourhoods I(F) of finite subsets of a commutative ring, the ring neighbourhood system and its membership law, the ideal of a filter and the filter of an ideal with both round trips, the membership, inclusion, intersection, and generated-ideal comparison laws, and the order isomorphism between the domain and the ideals ordered by inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

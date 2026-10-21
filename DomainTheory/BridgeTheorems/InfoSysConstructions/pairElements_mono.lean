@@ -1,3 +1,8 @@
+/-ai
+If x₁ lies under x₂ and y₁ lies under y₂, the paired product element of x₁ and y₁ lies under the paired product element of x₂ and y₂.
+
+A product token of the first pair lies in the second pair because its left component is carried by the inequality of the elements of A and its right component by the inequality of the elements of B.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

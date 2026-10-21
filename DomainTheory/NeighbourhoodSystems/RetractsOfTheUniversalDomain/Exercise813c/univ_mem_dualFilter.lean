@@ -1,3 +1,8 @@
+/-ai
+If a family of sets contains the empty set, then its dual contains the whole carrier.
+
+Simplifying the definition of the dual, the complement of the whole carrier is empty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

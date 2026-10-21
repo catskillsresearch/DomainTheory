@@ -1,3 +1,9 @@
+/-ai
+The graph of application of e p, and the union of that graph with the graph of sigmaJ at the fresh index max(p, q) + 1, are related in the function space of the Plotkin equivalence at that index with itself.
+
+Graph extensionality and the symmetric β-equation for application of e p show that the plain graph is the graph of its own application. Equation (2.10) writes the union as the graph of the pointwise union, and equation (2.9), the normalized finite application, and the application equation for sigmaJ show that the union is the graph of its own application. When two arguments are related, erasure of the fresh tag equates the underlying iterates, hence their successors under application of e p. In each of the four combinations of a plain iterate and a tagged iterate, the left value is the next plain iterate, by the normalized finite application or its fresh form, and the right value is the next plain iterate or the next tagged iterate, by the corresponding finite-sigma application. The results are related by reflexivity when the right result is plain, and by a generating step of the Plotkin relation when the right result is tagged.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

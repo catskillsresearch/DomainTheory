@@ -1,3 +1,8 @@
+/-ai
+Inserting an atom that is depth-entailed by a finset preserves depth consistency.
+
+The entailment is an atom entailment, so the inserted finset still has an empty function-token projection. Its atom projection is the insertion of the atom into the old atom projection, which remains consistent because entailment in A preserves consistency.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

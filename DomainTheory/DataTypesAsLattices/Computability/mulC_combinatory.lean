@@ -1,3 +1,8 @@
+/-ai
+The multiplication combinator is combinatory.
+
+It is assembled by applications of S, K, the dollar combinator, Y, the closed interpretation of the primitive-recursion step term, the numeral 0, and the addition combinator.
+ai-/
 module
 
 public import Mathlib.Computability.RE

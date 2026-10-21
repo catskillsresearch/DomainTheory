@@ -1,3 +1,6 @@
+/-ai
+The tag of a finite list together with an output m is built from the pairing function. The empty list is paired as the pairing of 0 with m, and a list with head n is paired as the pairing of n + 1 with the tag of the tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513

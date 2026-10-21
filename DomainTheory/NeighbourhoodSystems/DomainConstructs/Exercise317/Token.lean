@@ -1,3 +1,6 @@
+/-ai
+The token type of the truth system is the two-element token type of Example 1.2.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

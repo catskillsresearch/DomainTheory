@@ -1,3 +1,8 @@
+/-ai
+If the sets U n form a topological basis, the embedding along U is continuous as a map into Pω.
+
+Continuity into the generated topology reduces to openness of the preimage of each subbasic open. That preimage is the corresponding basis element U n, which is open because it belongs to the basis.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

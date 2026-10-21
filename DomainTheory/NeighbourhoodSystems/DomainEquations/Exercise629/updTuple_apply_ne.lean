@@ -1,3 +1,8 @@
+/-ai
+At an index other than i, the updated tuple at i equals the master of the system at that index.
+
+Unfolding the update gives the off-diagonal value of a function update.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

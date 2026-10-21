@@ -1,3 +1,7 @@
+/-ai
+Scott 1976, (7.7). The product of restricted equivalences A and B relates u and v when each equals the pair of its own applications at the numerals 0 and 1, the zeroth components are related by A, and the first components are related by B. Symmetry and transitivity are the corresponding properties of A and of B, applied to those components.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

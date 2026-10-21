@@ -1,3 +1,6 @@
+/-ai
+The level set of a level k and a mask m is the set of natural numbers whose remainder modulo 2^k has its bit set in m. It is the union of the residue classes at that level selected by the bits of m.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

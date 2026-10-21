@@ -1,3 +1,6 @@
+/-ai
+The term gClosed abstracts variable 3 and returns the conditional of that variable between the packed closed term gpackClosed and zero.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

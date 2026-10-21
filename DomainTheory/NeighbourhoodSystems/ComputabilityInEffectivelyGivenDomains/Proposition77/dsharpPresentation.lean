@@ -1,3 +1,6 @@
+/-ai
+Given a computable presentation of a neighbourhood system D in which every neighbourhood is nonempty, dsharpPresentation is the computable presentation of the sharp system whose tokens are the sharp neighbourhoods, whose consistency decider and whose equality-of-intersection decider are the consistency bit and the product of that bit with an equality bit of the course-of-values value of the sharp decider step built from D's deciders, whose intersection index is the intersection component of that value computed with dummy consistency and equality functions, and whose master index is zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

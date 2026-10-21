@@ -1,3 +1,8 @@
+/-ai
+Currying one argument of a finitely Scott-continuous map yields a Scott-continuous map into nested graphs.
+
+When one argument remains, this is the given continuity in that coordinate. When more remain, the result is the graph of a map continuous in the next argument. The induction hypothesis supplies that continuity after the two cons operations are reassociated, using continuity of the original map in each coordinate.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

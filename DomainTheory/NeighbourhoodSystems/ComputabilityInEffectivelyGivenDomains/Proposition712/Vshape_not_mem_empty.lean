@@ -1,3 +1,8 @@
+/-ai
+The empty set is not a neighbourhood of the flat two-point domain.
+
+Membership is the full set, the singleton of true, or the singleton of false, and the empty set equals none of these.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

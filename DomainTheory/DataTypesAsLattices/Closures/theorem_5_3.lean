@@ -1,3 +1,8 @@
+/-ai
+Scott's function-space theorem for algebraic lattices says that the function-space retract of two closures is a retract.
+
+The retract equation is equality with the graph of the double application. By graph extensionality it is enough to check each argument, and rewriting by idempotence of the function-space retract for the two underlying retracts, together with the application law for that retract, makes the two sides agree.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

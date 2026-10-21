@@ -1,3 +1,8 @@
+/-ai
+The inclusion of the subspace-extension infimum of f lies below the subspace-extension infimum of the pointwise inclusion of f.
+
+The infimum of f lies below each value of f on the preimage of U, and the inclusion is monotone, so the inclusion of the infimum lies below each value of the pointwise inclusion.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

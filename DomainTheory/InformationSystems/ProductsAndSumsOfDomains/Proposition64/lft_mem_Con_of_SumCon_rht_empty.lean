@@ -1,3 +1,8 @@
+/-ai
+If a finite set u of sum tokens is sum-consistent and its right projection is empty, then the left projection of u is consistent in A.
+
+Case analysis on sum consistency. The left disjunct states that the left projection is consistent. The right disjunct rewrites the left projection to the empty set, which is consistent in A.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

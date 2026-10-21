@@ -1,3 +1,6 @@
+/-ai
+The head of a stack is the first projection of its unfolding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,3 +1,6 @@
+/-ai
+A set-valued map on a complete lattice is a continuous basis when, for every element x, the set assigned to x is directed, every member of that set is way-below x, and x equals the supremum of that set. Such a basis witnesses the continuous-lattice property by way-below elements.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Defs

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the existence and uniqueness results of Theorem 6.14. A functor that is continuous on maps and monotone and continuous on domains, and that carries a generating system into a system on the same tokens containing it, has an initial algebra given by the colimit of the iterated tower. The file brings together the canonical algebra and its homomorphisms, the projection chain and the identity law for its union, the fixed-point recursion for strict homomorphisms, and the uniqueness of strict homomorphisms out of the colimit.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.Basic

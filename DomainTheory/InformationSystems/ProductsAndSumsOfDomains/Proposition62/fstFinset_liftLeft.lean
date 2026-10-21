@@ -1,3 +1,8 @@
+/-ai
+The first projection of the left lift of a finite set v of tokens of A equals v.
+
+By extensionality, a member of the first projection comes from a token of the lift, hence from the left tag of some member of v, and the projection equation identifies the two tokens. Conversely, the left tag of a member of v lies in the lift and witnesses membership of that token in the first projection.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

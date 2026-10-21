@@ -1,3 +1,8 @@
+/-ai
+The minimization at the numeral m equals the binary search at the pair of the zero element and the numeral m.
+
+Unfold the minimization and simplify the element maps of composition, pairing, the identity, and the constant lift on a numeral.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

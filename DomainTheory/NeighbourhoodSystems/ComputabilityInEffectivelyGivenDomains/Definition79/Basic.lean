@@ -1,3 +1,6 @@
+/-ai
+The preparation of a neighbourhood system is the power system whose tokens are the neighbourhoods of the original system and whose neighbourhoods are their down-sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

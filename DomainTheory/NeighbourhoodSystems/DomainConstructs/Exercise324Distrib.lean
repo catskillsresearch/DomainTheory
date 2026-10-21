@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the two identities of the copairing with the sum injections and the retract equation saying that the copairing is a section of the comparison with those injections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Distrib.Basic

@@ -1,3 +1,9 @@
+/-ai
+Top lies in the range of a ⊕ b.
+
+The range equation is the reverse of the law that the sum sends top to top.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

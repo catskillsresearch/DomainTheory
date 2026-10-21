@@ -1,3 +1,8 @@
+/-ai
+In the diagonal form of Proposition 3.7, the inclusion of function spaces followed by the retraction lies below the identity: i(j(g)) ≤ g for every Scott map g on the larger lattice.
+
+The pointwise order on Scott maps reduces the inequality to the inclusion-retraction inequality of the diagonal Proposition 3.7 projection built from the given projection with itself.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

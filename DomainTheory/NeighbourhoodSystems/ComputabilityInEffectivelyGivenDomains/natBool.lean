@@ -1,3 +1,6 @@
+/-ai
+The natural-to-boolean interpretation sends 0 to false, 1 to true, and every other natural number to nothing.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

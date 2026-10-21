@@ -1,3 +1,6 @@
+/-ai
+The descent homomorphism from the initial algebra Cnalg A to a Tsig-algebra B is the algebra homomorphism whose underlying strict map is the bundled descent descStrict B. Its commuting square is the underlying equality descComm B, obtained by comparing the underlying approximable maps of the two strict composites.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

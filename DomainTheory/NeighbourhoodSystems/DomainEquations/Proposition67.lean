@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Lambek's lemma, Proposition 6.7: the structure map of an initial algebra is an isomorphism from the image of the carrier to the carrier. It brings together the algebra obtained by applying the endofunctor to the structure map, the homomorphism property of that structure map, and the identity law for its composite with the homomorphism given by initiality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

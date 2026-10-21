@@ -1,3 +1,6 @@
+/-ai
+Prepending a word is the approximable self-map on the domain that relates two neighbourhoods when both lie in Scott's family and the concatenation of the singleton of the word with the first neighbourhood is contained in the second. The two copies of the set of all words are related. The intersection of two codomain neighbourhoods is related because the same concatenation sits in both and is nonempty. The relation is monotone because concatenation is monotone in its right argument and inclusion is transitive.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

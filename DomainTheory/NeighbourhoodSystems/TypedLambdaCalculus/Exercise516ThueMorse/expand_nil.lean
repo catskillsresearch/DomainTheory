@@ -1,3 +1,8 @@
+/-ai
+The Thue–Morse substitution sends the empty string to the empty string.
+
+The equation holds by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

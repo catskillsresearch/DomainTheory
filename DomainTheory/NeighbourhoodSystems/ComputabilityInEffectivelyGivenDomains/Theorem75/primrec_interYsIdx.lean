@@ -1,3 +1,8 @@
+/-ai
+If the domain inclusion characteristic is primitive recursive, then the function sending a paired code to the conditional output-intersection index of its two components is primitive recursive.
+
+That index is the fold of the primitive-recursive step, with the right projection as parameter, the master index as the constant start, and the left projection as the list code, and the fold agrees with the paired index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

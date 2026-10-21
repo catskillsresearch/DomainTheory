@@ -1,3 +1,8 @@
+/-ai
+If n is at most m, the length-n prefix of a stream is a prefix of the length-m prefix.
+
+Induce on the inequality. Equal lengths give the reflexive prefix. A successor step composes the inductive prefix with the one-step prefix extension.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,8 @@
+/-ai
+A ring element belongs to the ideal of a filter if and only if I of its singleton belongs to the filter.
+
+The equivalence holds by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

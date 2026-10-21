@@ -1,3 +1,6 @@
+/-ai
+The projection of an element of the indexed product at an index i is the element of the i-th system whose neighbourhoods are those sets U for which U is a neighbourhood of that system and the product element contains the slice of U at i.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

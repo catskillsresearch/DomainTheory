@@ -1,3 +1,6 @@
+/-ai
+The while-loop element of the function space is the least fixed point of the operator Wop built from the test p and the body f.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

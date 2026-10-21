@@ -1,3 +1,8 @@
+/-ai
+Every combinatory element lies in every subalgebra.
+
+Theorem 3.1 converts the combinatory hypothesis into generation from G. Induct on that generation. The generator belongs to the subalgebra, and an application belongs to it by closure under application.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

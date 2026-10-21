@@ -1,3 +1,8 @@
+/-ai
+Composing an approximable map on the right with the identity map returns the original map.
+
+Extensionality of the relation splits the equality. A composite witness is an inclusion, and monotonicity sharpens the input of the map along that inclusion. In the other direction the input neighbourhood itself is an identity witness for the relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

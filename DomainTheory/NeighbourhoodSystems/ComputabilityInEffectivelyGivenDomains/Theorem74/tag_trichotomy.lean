@@ -1,3 +1,8 @@
+/-ai
+Every natural number equals zero, or equals one, or equals neither.
+
+Decide equality with zero. If it fails, decide equality with one. The three outcomes are the three disjuncts.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

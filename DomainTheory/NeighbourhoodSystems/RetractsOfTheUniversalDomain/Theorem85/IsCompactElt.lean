@@ -1,3 +1,6 @@
+/-ai
+An element is compact when, whenever it lies below a directed supremum indexed in the neighbourhood system's own universe, it already lies below some summand. By algebraicity this is the same as being principal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

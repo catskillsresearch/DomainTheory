@@ -1,3 +1,8 @@
+/-ai
+The approximable map induced by an order isomorphism of domain elements is strict.
+
+Strictness means that the map sends bottom to bottom. The induced map acts as the order isomorphism, which preserves bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

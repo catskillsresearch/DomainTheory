@@ -1,3 +1,8 @@
+/-ai
+The tag of a list with head n equals the pairing of n + 1 with the tag of the tail.
+
+This is the cons clause of the definition of the tag, by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513

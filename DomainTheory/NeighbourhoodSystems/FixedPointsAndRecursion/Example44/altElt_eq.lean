@@ -1,3 +1,8 @@
+/-ai
+Prepending true and then false fixes the alternating element.
+
+The fixed-point theorem supplies that the composite of these two maps fixes the element. Rewriting by the action of a composite turns that equality into the composite of the two element maps.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,3 +1,8 @@
+/-ai
+Unfolding one fold step at an explicit depth, index, and accumulator selects on emptiness of the atom at the index shifted by two to that depth, and on the found flag selects between the union of the accumulated code with the new atom code and the new atom code alone.
+
+Unfolding the fold step, the unpairing equations give that expression.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

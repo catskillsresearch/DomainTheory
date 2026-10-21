@@ -1,3 +1,8 @@
+/-ai
+decideEmptyB e is true if and only if the language of e is empty.
+
+Unfold the decision as the negation of decideNonemptyB, rewrite Boolean negation, apply the nonempty criterion, and use that a set is empty exactly when it is not nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

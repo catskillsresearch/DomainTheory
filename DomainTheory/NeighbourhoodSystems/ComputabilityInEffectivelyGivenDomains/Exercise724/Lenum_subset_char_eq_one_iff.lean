@@ -1,3 +1,9 @@
+/-ai
+One enumerated neighbourhood is contained in another if and only if the subset characteristic of the pair of their codes equals one.
+
+Unfold the characteristic, cancel the pairing, and apply the subset criterion.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

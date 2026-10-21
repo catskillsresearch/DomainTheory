@@ -1,3 +1,6 @@
+/-ai
+The computable presentation of the powerset enumerates the cofinite neighbourhoods by their indices, and every neighbourhood arises in this way. Equality of an intersection of two enumerated neighbourhoods with a third is equivalent to equality of the bitwise disjunction of the first two indices with the third: neighbourhood equality and the intersection law give index equality by injectivity, and index equality gives neighbourhood equality by the intersection law. That index equality is recursively decidable as equality of primitive-recursive functions. Any two indices are consistent, witnessed by their bitwise disjunction, whose neighbourhood is their intersection. The intersection function is that primitive-recursive disjunction, and it specifies the intersection. The master index is zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

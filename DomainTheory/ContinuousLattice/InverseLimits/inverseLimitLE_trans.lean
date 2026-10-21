@@ -1,3 +1,8 @@
+/-ai
+The coordinatewise order on compatible sequences is transitive.
+
+At every stage, the coordinate inequality is transitive.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

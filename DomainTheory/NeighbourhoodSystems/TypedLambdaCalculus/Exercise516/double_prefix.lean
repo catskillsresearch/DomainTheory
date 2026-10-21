@@ -1,3 +1,8 @@
+/-ai
+Doubling preserves the prefix order on finite strings.
+
+A prefix witness writes the longer string as a concatenation. Doubling that concatenation splits into the doubles of the two parts, which is a prefix witness for the doubled strings.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

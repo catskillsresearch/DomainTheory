@@ -1,3 +1,8 @@
+/-ai
+The function sending a pair code to the code of the concatenation of the two decoded lists is primitive recursive.
+
+The lengths of the two coded lists and their sum are primitive recursive. Packing the sum with the pair of the first code, the second code, and the first length, and using the sum again as the tabulation length, the tabulation of the concatenation lookup composed with this packing agrees with the concatenation code after unfolding it and simplifying the pairing projections.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

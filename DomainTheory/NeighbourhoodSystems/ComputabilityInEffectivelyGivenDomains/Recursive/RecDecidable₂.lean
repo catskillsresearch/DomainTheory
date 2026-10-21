@@ -1,3 +1,6 @@
+/-ai
+A binary relation is recursively decidable when the unary predicate of its pairing code is recursively decidable.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

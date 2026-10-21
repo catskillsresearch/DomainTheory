@@ -1,3 +1,8 @@
+/-ai
+For each fuel bound, the function of a pair code that returns the cap-consistency character of the two components is primitive recursive.
+
+It is the non-emptiness decider at that fuel, composed with the pairing of the constant 3 and the pair of the two components.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

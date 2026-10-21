@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the two-point neighbourhood system, the check and fade combinators, the retraction built from an element, the fixed-point elements and their order, and the order isomorphism between the two-point system and the fixed-point set, together with the membership and comparison lemmas used to construct them.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

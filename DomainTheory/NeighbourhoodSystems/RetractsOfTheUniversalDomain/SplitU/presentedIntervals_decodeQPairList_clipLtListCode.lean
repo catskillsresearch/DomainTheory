@@ -1,3 +1,8 @@
+/-ai
+The intervals presented by the decoded downward list clip are the intervals presented by the source list, cut to the open ray below the decoded midpoint.
+
+Rewrite by the rational downward-clip lemma and compare presented intervals. Membership of a pair in the clipped decoding is membership of its preimage under the clip in the source list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

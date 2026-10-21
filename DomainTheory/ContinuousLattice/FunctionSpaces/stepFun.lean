@@ -1,3 +1,6 @@
+/-ai
+The step function determined by elements e and e' sends x to e' when e is way below x, and sends x to the bottom element otherwise.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

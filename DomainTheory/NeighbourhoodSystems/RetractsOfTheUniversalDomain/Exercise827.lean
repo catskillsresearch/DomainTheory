@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Exercise 8.27: the basic development, the simplified element map of product application, the retraction and identity comparison for the product on the function space, the projection laws on the function space and on the universal domain, the transport of finitariness from the function-space product to the universal-domain product, the step-closure criterion and its corollary for the universal-domain product, the self-relation of the product, the element map of the type map, finitariness and monotonicity of the type at an element, the restated element map of product application, the existence of a self-related neighbourhood from a single step and from a step function, the hard and full directions of the step-closure formula, and finitariness of both products.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise827.Basic

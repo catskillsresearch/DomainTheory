@@ -1,3 +1,8 @@
+/-ai
+The singleton of one string is contained in the cone of another when the second string is a prefix of the first.
+
+Singleton inclusion is membership of the element, and membership in the cone is the prefix relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

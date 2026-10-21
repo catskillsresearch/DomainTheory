@@ -1,3 +1,6 @@
+/-ai
+The fixed points of a Scott-continuous endomap form a complete lattice. The supremum of a family is the least fixed point above the union of its underlying values, the infimum is the greatest postfixed point below the intersection of those values, and the least element is the least fixed point of the map. The supremum and infimum laws are the universal properties of those two constructions, and the bottom inequality is the least-fixed-point property.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

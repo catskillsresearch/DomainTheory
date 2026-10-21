@@ -1,3 +1,8 @@
+/-ai
+The type of compact fixed points confirmed by an element of the neighbourhood system of a closure is nonempty.
+
+The bottom compact is confirmed, because the master neighbourhood belongs to the element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

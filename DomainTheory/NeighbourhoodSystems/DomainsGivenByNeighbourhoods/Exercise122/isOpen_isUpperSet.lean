@@ -1,3 +1,8 @@
+/-ai
+Every open set of elements is upward closed under approximation.
+
+A point of an open set has a basic neighbourhood contained in the set. Any element above that point contains the same neighbourhood, so it lies in the basic neighbourhood and therefore in the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

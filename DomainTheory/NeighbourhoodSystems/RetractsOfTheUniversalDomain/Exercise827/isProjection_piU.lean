@@ -1,3 +1,8 @@
+/-ai
+The product of every d, regarded as a self-map of the universal domain, is a projection.
+
+Conjugate the projection on the function space through i-arrow and j-arrow.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

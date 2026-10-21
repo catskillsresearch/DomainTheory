@@ -1,3 +1,6 @@
+/-ai
+The carved-out carrier is the subtype of elements of the ambient type that lie in the least fixed point of the generating operator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

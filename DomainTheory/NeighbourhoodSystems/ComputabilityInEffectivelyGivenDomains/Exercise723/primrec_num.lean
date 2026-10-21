@@ -1,3 +1,8 @@
+/-ai
+The numbering num of the two components of a paired natural number is primitive recursive. Explicitly, num n m equals the triangular number of n + m, plus m.
+
+Add the right component to the triangular number of the sum of the two components. That composition is identified with num.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

@@ -1,3 +1,6 @@
+/-ai
+The dual of a family of sets is the family of those sets whose complements belong to the original family.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

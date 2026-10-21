@@ -1,3 +1,6 @@
+/-ai
+The projection tower in the recursion immediately before Theorem 4.4 is anchored at a continuous-lattice projection j_0 from [D_0 → D_0] onto D_0, and the successor of level n is the function-space projection induced by the projection at level n. At each successor the maps and the projection laws are the diagonal specialization of Proposition 3.7.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

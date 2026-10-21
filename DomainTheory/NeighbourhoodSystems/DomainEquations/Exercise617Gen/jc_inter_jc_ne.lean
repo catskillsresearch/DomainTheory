@@ -1,3 +1,8 @@
+/-ai
+If two indices are distinct, the tagged copy of a set by the first index and the tagged copy of a set by the second index are disjoint.
+
+A token in both copies is tagged by both indices. Injectivity of tagging forces the indices to agree.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

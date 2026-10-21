@@ -1,3 +1,8 @@
+/-ai
+Adjacent Kleene stages of a strictness-preserving, retract-monotone retract functor stand in the retract order.
+
+The zero stage lies below the next stage because that next stage is strict, so the bottom retract lies below it. A successor step applies the monotonicity hypothesis to the retract and strictness facts for the two adjacent stages and to the inductive inequality.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

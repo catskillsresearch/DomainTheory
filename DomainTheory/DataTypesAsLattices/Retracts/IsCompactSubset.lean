@@ -1,3 +1,6 @@
+/-ai
+A fixed point is compact for inclusion when every directed set of fixed points whose union of values contains it already has some member whose value contains it.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

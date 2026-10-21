@@ -1,3 +1,6 @@
+/-ai
+The subsystems of a neighbourhood system, ordered by the subdomain relation, form a partial order. Reflexivity, transitivity, and antisymmetry are the corresponding laws of the subdomain relation, and antisymmetry is equality of the underlying systems.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

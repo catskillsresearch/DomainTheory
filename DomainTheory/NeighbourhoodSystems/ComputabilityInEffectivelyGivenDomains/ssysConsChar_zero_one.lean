@@ -1,3 +1,8 @@
+/-ai
+The consistency characteristic of any paired index is 0 or 1.
+
+It is a boolean-to-natural encoding, which takes only those two values.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

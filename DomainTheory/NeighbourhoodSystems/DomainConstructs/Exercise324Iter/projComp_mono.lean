@@ -1,3 +1,8 @@
+/-ai
+Composition with a coordinate projection is monotone in the map.
+
+A composite relation factors through an intermediate neighbourhood, and the inequality supplies the relation of the larger map on that neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

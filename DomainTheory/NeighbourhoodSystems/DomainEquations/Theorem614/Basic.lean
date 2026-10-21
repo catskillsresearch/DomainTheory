@@ -1,3 +1,8 @@
+/-ai
+The colimit of the iterated tower is a T-algebra whose structure map is the isomorphism from the image of the colimit to the colimit. As category objects over the token type, the colimit is that system and the n-th level is the n-th system of the tower. The image under T of the n-th projection is the induced endomorphism of the image of the colimit.
+
+The zeroth level of the tower is the generating system. The equality is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

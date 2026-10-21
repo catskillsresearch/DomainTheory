@@ -1,3 +1,6 @@
+/-ai
+This instance registers left commutativity of insertion of an element into a finite set. The witness is the choice-free commutativity of insertion.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

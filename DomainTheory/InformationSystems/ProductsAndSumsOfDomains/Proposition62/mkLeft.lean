@@ -1,3 +1,6 @@
+/-ai
+The left tag of a token x of A is the product token with components x and the bottom token of B, witnessed by the right disjunct of the product-token condition. Scott writes this token as (X, Δ_B).
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

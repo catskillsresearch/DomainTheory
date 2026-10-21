@@ -1,3 +1,8 @@
+/-ai
+An approximable map from the binary-string domain into the truth-value domain that satisfies the three parity equations equals the parity map.
+
+Extensionality reduces the equality to agreement of relations. If the input neighbourhood is a cone, the relation of the given map is membership in the element map at the corresponding principal element; rewriting the principal element as a prefixed bottom element, the recursive core replaces that element map by the scan of the string, and the parity map relates the cone by that same scan. If the input is not a neighbourhood, each relation would require it to be a neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

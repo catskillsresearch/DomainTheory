@@ -1,3 +1,8 @@
+/-ai
+The function sending a pair code to the code of the list obtained by pairing its first component with each entry of the list coded by its second component is primitive recursive.
+
+The map is the fold of the pairing step, with the first projection as the parameter, the constant 0 as the starting value, and the second projection as the list code, and that fold agrees with the map by definition.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

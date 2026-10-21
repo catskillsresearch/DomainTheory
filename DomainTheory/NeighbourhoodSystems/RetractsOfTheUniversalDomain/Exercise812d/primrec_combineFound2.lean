@@ -1,3 +1,8 @@
+/-ai
+Combining two found-pairs by a computable union is primitive recursive.
+
+The two inputs and their found and value components are projections, and the union index of the two values is primitive recursive. Selection on the second found flag between the updated union and the first input, then selection on the first found flag between that result and the second input, equals the combination.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

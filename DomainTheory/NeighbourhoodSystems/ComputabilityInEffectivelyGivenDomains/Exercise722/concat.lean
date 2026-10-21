@@ -1,3 +1,6 @@
+/-ai
+The concatenation of two languages is the set of words that split as a word of the first language followed by a word of the second.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

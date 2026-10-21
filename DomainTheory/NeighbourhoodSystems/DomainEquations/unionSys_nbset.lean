@@ -1,3 +1,8 @@
+/-ai
+The set of neighbourhoods of the union subdomain is the set-theoretic union of the family.
+
+Extensionality reduces the claim to the symmetric form of membership in a union of sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

@@ -1,3 +1,8 @@
+/-ai
+The completed encoding of the empty string is the two-bit marker whose bits are true and then false.
+
+The equality is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,3 +1,6 @@
+/-ai
+The inverse-limit topology is the subspace topology induced on compatible sequences by the product of the Scott topologies of the stages.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

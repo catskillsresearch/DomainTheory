@@ -1,3 +1,8 @@
+/-ai
+The disjoint pairing of two empty sets is empty.
+
+Both sides are empty by the definitions of disjoint pairing and of the empty set.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

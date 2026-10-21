@@ -1,3 +1,8 @@
+/-ai
+Applying a concatenated finite binary string to an element agrees with applying the second string and then the first.
+
+Compare elements by membership of a neighbourhood. A witness for the combined application, prepended with the second string, witnesses the inner application, and associativity of prepending transports the inclusion. Conversely, a witness that itself comes from an inner neighbourhood transports the inclusion by monotonicity of prepending and associativity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+For each element u of Pω, the map sending x to the sequence revaluation of u along the members of x is Scott continuous.
+
+Fix x and a natural number k. If k lies in the union of the values of u at the numerals of members of x, the witness index i has the singleton coded by 2^i contained in x, and k lies in that Scott piece of the union. Conversely, membership in the Scott union supplies a code whose finite set is contained in x together with a witness index in that finite set; the same index still lies in x, so k lies in the original union.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

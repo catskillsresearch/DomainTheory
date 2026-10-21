@@ -1,3 +1,8 @@
+/-ai
+The projection from the inverse limit onto stage n is continuous from the subspace inverse-limit topology into the Scott topology of that stage. This is the coordinate continuity of the projection in Scott's Proposition 4.2.
+
+The projection is the coordinate projection, which is continuous.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

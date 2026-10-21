@@ -1,3 +1,8 @@
+/-ai
+Every recursively enumerable set of natural numbers is combinatory.
+
+The partial function that returns zero on members of the set is partial recursive, so it has a code. A primitive recursive enumeration of that code is realized by a combinator. The predecessor of the enumerated range equals the set. A predecessor witness is a stage at which the enumerator returns the successor of the number; the corresponding evaluation is defined, its input is the number, and the code evaluates to a successful assertion of membership. Conversely, membership supplies the value zero of the code, completed at some evaluation stage, and the enumerator records the successor of the number at the pair of the number with that stage. The predecessor combinator applied to the range combinator is therefore combinatory, and that application equals the set.
+ai-/
 module
 
 public import Mathlib.Computability.RE

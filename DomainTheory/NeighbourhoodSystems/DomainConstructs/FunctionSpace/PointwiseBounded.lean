@@ -1,3 +1,6 @@
+/-ai
+A set of approximable maps is pointwise bounded when, for every input element, the set of images of that element under the maps is a bounded set of output elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

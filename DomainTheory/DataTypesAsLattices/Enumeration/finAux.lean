@@ -1,3 +1,6 @@
+/-ai
+The auxiliary finAux j k scans the first k bits of j. At stage 0 it returns the bottom code. At stage k + 1, if bit k of j is set it applies the union code to the numeral of k and then to the value at stage k, and otherwise it returns the value at stage k.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

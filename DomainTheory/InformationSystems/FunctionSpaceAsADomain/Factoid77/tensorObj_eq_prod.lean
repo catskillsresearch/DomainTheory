@@ -1,3 +1,9 @@
+/-ai
+The monoidal tensor of two information-system objects equals their product object.
+
+The two sides are definitionally equal.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

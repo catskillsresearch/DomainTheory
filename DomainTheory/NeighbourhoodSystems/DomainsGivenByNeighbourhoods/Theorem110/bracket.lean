@@ -1,3 +1,6 @@
+/-ai
+The bracket of a set of tokens is the set of elements that contain the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

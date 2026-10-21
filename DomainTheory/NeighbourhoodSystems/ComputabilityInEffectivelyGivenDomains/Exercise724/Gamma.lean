@@ -1,3 +1,7 @@
+/-ai
+Scott's token set Γ is the terminal solution of the equation that an element is either the basepoint or a pair of a natural number with another element. It is realized as the sum of the finite sequences of natural numbers and the infinite streams of natural numbers.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

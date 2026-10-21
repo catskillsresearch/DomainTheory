@@ -1,3 +1,6 @@
+/-ai
+The inverse from an element of D' to an element of C contains the cone of a string when the element contains the cone of that string's doubled encoding, and contains the singleton of a string when the element contains the cone of that string's completed encoding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

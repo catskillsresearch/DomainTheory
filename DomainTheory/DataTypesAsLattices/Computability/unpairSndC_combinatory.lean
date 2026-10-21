@@ -1,3 +1,8 @@
+/-ai
+The second unpairing projection unpairSndC is combinatory.
+
+Unfold unpairSndC and apply theorem_2_4_complete. The interpreted term is combinatory by ofComb_combinatory, because every value of unpairEnv is combinatory.
+ai-/
 module
 
 public import Mathlib.Computability.RE

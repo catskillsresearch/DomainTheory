@@ -1,3 +1,8 @@
+/-ai
+The successor map that prepends a letter a sends the total element named by a finite string σ to the total element named by a followed by σ.
+
+The two elements are compared by membership of an arbitrary neighbourhood Y. If the image contains Y, the relation supplies a neighbourhood containing the singleton of σ whose prepended copy is contained in Y. The singleton of a followed by σ equals the prepended copy of the singleton of σ, which is contained in that prepended neighbourhood and hence in Y. Conversely, if the singleton of a followed by σ is contained in Y, the singleton of σ witnesses the relation, because its prepended copy is that singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

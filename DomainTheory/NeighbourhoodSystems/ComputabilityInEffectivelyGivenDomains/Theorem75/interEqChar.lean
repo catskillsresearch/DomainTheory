@@ -1,3 +1,6 @@
+/-ai
+The intersection-equality characteristic of codes n, m, and k selects the enumerated-equality characteristic of the intersection index of n and m against k when the consistency characteristic of the pair n, m accepts, and returns 0 otherwise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

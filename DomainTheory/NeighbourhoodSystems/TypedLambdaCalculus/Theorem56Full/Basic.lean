@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the definitions for the full form of Scott's Theorem 5.6, that every partial recursive function is λ-definable by a very strict approximable map from the universal argument domain into the flat naturals: the λ-definability predicate, the strictifier guards, the tuple map, the primitive-recursion and minimization combinators, evaluation at a stack, and the component computations for argument and vector elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

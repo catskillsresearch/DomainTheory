@@ -1,3 +1,8 @@
+/-ai
+Flipping the empty string yields the empty string.
+
+This is mapping along the empty list, by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

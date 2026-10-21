@@ -1,3 +1,8 @@
+/-ai
+A rational pair lies in the decoded list of the upward list clip if and only if it is the upward clip, at the decoded midpoint, of some pair in the decoded source list.
+
+Unfold the list clip and rewrite by flat-map membership. From a source code, singleton decoding and the clip-decoding lemma recover the clipped pair, which lies in the source list. Conversely, a source pair is the decoding of some list element, and the same two lemmas put the clipped pair back into the singleton decoding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

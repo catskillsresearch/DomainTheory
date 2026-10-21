@@ -1,3 +1,6 @@
+/-ai
+The order isomorphism of Proposition 8.2 identifies an element of the subsystem with its image under the injection, which is a fixed point of the subsystem retraction, and identifies a fixed point with its image under the projection. The left inverse rewrites the projection of an injected element as the composite of the projection after the injection, which is the identity, so the element map of the identity returns the element. The right inverse uses that a fixed point equals the composite of the injection after the projection applied to it, which is the injection of its projection. If the injected images are ordered, monotonicity of the projection and the same identity recover the order of the elements; if the elements are ordered, monotonicity of the injection preserves the order.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition81

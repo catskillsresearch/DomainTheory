@@ -1,3 +1,8 @@
+/-ai
+The second component of a Cantor pair is at most the pair.
+
+The pair is a sum whose right-hand summand is that component, and a natural number is at most any such sum.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

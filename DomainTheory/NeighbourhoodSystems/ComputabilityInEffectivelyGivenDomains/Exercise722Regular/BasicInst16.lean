@@ -1,3 +1,6 @@
+/-ai
+The instance decidableMemDenote decides whether a word belongs to the language of an expression. It decides the Boolean matcher and transports the answer along the equivalence between matcher acceptance and denotation membership.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

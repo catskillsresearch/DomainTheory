@@ -1,3 +1,6 @@
+/-ai
+The function sqrtIter n is the bounded iteration used to compute the integer square root of n. It sends 0 to 0, and from the value a at k it sends k + 1 to a + 1 when (a + 1) · (a + 1) is at most n and to a otherwise.
+ai-/
 module
 
 public import Mathlib.Computability.RE

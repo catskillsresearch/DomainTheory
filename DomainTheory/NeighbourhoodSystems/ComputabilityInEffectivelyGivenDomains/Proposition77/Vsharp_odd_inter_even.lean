@@ -1,3 +1,8 @@
+/-ai
+The intersection of the enumerated set at 2a+1 with the enumerated set at 2b+2 is empty.
+
+Rewrite the two sets by the odd clause and the even clause, and apply the law that a zero embedding meets a paired embedding in the empty set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

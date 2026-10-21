@@ -1,3 +1,8 @@
+/-ai
+The head coordinate of the singleton stack of an element is that element.
+
+Rewrite by the element action of the embedding, the head applied to a component, and the head of a push.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511

@@ -1,3 +1,6 @@
+/-ai
+The completed encoding of a string is its doubled encoding followed by the two-bit marker whose bits are true and then false.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

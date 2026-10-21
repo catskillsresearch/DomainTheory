@@ -1,3 +1,8 @@
+/-ai
+Pushing the numeral for a in front of the argument element of a vector u yields the argument element of a cons u.
+
+The two elements agree on every component. At coordinate 0 both sides are the numeral for a. At a later coordinate k, if k lies below the length of u then both sides are the numeral for the corresponding entry of u, and otherwise both sides are bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

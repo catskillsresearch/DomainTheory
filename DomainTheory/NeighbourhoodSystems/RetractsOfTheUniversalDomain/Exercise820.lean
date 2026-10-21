@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the embeddings of a factor into a product beside bottom, the two product retracts, the separation of those embeddings off bottom, evaluation at bottom and the constant-function embedding, the function-space retract, and the two specializations that every domain is a retract of its product with itself and of its function space.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.Basic

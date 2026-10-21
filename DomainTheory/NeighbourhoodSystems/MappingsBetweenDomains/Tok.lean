@@ -1,3 +1,6 @@
+/-ai
+The tokens of a family C are the finite sets contained in some member of C.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,3 +1,8 @@
+/-ai
+Applying the raw fixed point first to an environment and then to a term yields one step of that fixed point.
+
+Congruence of double application along the fixed-point equation for HF, rewritten by the double application of HF.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

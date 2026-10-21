@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports the elements of an information system and their binary meet by intersection, as the setting for Factoid 4.1. The set of elements is an inf-semilattice under intersection, the order is equality with a meet, the meet is idempotent, commutative, and associative, and the bottom element is a zero for the meet.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33

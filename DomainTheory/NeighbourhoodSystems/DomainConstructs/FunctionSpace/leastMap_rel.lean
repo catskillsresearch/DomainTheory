@@ -1,3 +1,8 @@
+/-ai
+The least map relates an input to an output exactly when both are neighborhoods and the intersection of the relevant outputs is contained in the output.
+
+This is the defining clause of the least map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

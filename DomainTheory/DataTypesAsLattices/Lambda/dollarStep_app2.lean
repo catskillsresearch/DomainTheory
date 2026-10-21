@@ -1,3 +1,8 @@
+/-ai
+Applying the dollar step at s to u and then to z yields the body at s, u, and z.
+
+The first application is the graph of the body in z, and the beta law for Scott continuity of the body in z gives the value.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

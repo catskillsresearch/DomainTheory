@@ -1,3 +1,6 @@
+/-ai
+The argument element of a vector of natural numbers is the element of the universal argument domain whose coordinates are the entries of that vector.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

@@ -1,3 +1,6 @@
+/-ai
+The finite piece of an element x coded by n, as used in directed unions, is the set of members of the finite set coded by n, taken only when that finite set is contained in x.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

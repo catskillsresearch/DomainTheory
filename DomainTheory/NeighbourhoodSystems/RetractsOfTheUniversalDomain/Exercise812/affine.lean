@@ -1,3 +1,6 @@
+/-ai
+The residue class affine k ℓ is the set of natural numbers congruent to ℓ modulo 2^k.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

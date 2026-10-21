@@ -1,3 +1,8 @@
+/-ai
+If the tag is neither zero nor one, the sum enumeration yields the sum master.
+
+Unfold the definition and take the negative branch of each conditional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

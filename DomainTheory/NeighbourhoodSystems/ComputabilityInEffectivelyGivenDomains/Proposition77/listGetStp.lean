@@ -1,3 +1,6 @@
+/-ai
+One step of the list-indexing fold decrements the countdown in the state and, when the countdown is one, replaces the carried value by the current element; otherwise it keeps the carried value.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

@@ -1,3 +1,6 @@
+/-ai
+The cone of a finite A-string σ is the set of all finite A-strings of which σ is a prefix.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the constructions from Scott's account of continuous lattices: attainment of suprema by nonempty finite directed sets, Propositions 2.8, 2.9, 2.11, and 3.8, the canonical Scott extension together with its directedness, continuity, agreement on an embedded subspace, and maximality, the reconstruction of a continuous map by infima over open neighbourhoods, continuity of the two-point lattice and of its powers, the identification of their Scott topologies with the Sierpiński topologies, and the forward, Sierpiński, and injectivity forms of Theorem 2.12.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions.Basic

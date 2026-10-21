@@ -1,3 +1,8 @@
+/-ai
+If a combinatory element realizes a function p, then the Myhill set of the natural valuation and p is recursively enumerable.
+
+The predicate of pairs (j, m) for which m lies in the natural value of p at the finite code of j is recursively enumerable. In an extra parameter c, the conjunction of membership of c in the application of the realizer to the numeral of the finite code of j and of membership of m in the natural value of c is recursively enumerable: the first factor uses recursive enumerability of application to a numeral for a combinatory element, composed with the primitive recursive finite-code map, and the second uses recursive enumerability of membership in natural values. Existential quantification over c agrees with the realization identity. Composing with computational unpairing and rewriting by the membership law for the Myhill set gives recursive enumerability of the set.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

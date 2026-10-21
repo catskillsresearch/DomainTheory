@@ -1,3 +1,8 @@
+/-ai
+The minimum left endpoint of the canonical presenting list of an index is strictly less than its maximum right endpoint.
+
+The decoded list is nonempty, so it contains some pair. The minimum left endpoint is at most that pair's left endpoint, which is strictly less than its right endpoint, which is at most the maximum right endpoint.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

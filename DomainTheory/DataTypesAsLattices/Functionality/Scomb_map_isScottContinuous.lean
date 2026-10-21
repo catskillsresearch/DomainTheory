@@ -1,3 +1,8 @@
+/-ai
+The map sending a function to the graph of a second function mapped to the graph of their pointwise application is Scott continuous.
+
+Two applications of the constant-graph lemma. Continuity in the outer function of the innermost body is substitution of application at the inner value into application at the argument.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

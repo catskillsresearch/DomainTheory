@@ -1,3 +1,6 @@
+/-ai
+The positive-list code of a triple code is the list code of the two-element list whose entries are the first component of the triple and the first component of its second component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

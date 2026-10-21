@@ -1,3 +1,8 @@
+/-ai
+A defaulted reading of an append, at an index strictly before the length of the left list, agrees with the defaulted reading of the left list.
+
+The proof is by induction on the left list. The empty list admits no such index. For a cons cell, index 0 agrees by the two cons readings, and a successor index rewrites both readings and applies the inductive hypothesis after the lengths are compared.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

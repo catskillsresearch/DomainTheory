@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (2.9). Application distributes over binary union.
+
+A finite witness whose pair code lies in one disjunct witnesses the corresponding application, and a witness for either application witnesses the application of the union.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,8 @@
+/-ai
+The intersection of any two neighbourhoods is the master, the neighbourhood of the first two tokens, the neighbourhood of the last two tokens, or the singleton of the middle token.
+
+Each neighbourhood is the master or one of those two sets. The nine combinations are identified by extensionality on the three tokens.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

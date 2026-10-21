@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (7.12). The finite discrete space of size k is the restricted equivalence relating an element to another when the first is a numeral strictly below k and the two are equal. Symmetry transports the bound along the equality and reverses the equality. Transitivity keeps the bound on the first element and composes the equalities.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

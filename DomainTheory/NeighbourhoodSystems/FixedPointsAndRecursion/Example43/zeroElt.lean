@@ -1,3 +1,6 @@
+/-ai
+The zero element of the natural-number domain is the total element at zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,3 +1,6 @@
+/-ai
+The least element, bottom, is the principal filter of the master neighbourhood. Scott reads it as the singleton consisting of that neighbourhood.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

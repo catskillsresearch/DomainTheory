@@ -1,3 +1,8 @@
+/-ai
+A finite string σ is a prefix of t if and only if σ is the Thue–Morse prefix of length equal to the length of σ. The n-th digit of t is therefore the bit at n, the parity of the binary digits of n.
+
+If the cone of σ is a neighbourhood of t, rewrite t as the directed supremum of the approximants, so the cone is a neighbourhood of some approximant. The zeroth approximant forces σ empty, which is the empty prefix. A later approximant is the partial element of a substitution iterate of the singleton of false, so σ is a prefix of the Thue–Morse prefix of a power of two. Both σ and the prefix of its own length are the initial segment of that longer prefix of the same length, so they agree. Conversely, the prefix of that length lies below t, and the cone of σ is a neighbourhood of the corresponding partial element once σ is that prefix.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

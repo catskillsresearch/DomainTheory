@@ -1,3 +1,8 @@
+/-ai
+If the right-hand set is nonempty, a left copy differs from the right copy.
+
+An equality would place an element of the right-hand set in the left copy, which is impossible.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

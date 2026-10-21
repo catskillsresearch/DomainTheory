@@ -1,3 +1,6 @@
+/-ai
+The function-space enumeration at a code is the step neighbourhood of the decoded entry list when the consistency character returns one, and the whole space of maps otherwise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

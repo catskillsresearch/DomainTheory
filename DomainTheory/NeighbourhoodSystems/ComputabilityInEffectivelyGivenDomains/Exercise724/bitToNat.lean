@@ -1,3 +1,6 @@
+/-ai
+The numerical reading of a bit sends true to 1 and false to 0.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

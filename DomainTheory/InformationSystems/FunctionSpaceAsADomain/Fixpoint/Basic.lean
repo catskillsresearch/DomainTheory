@@ -1,3 +1,9 @@
+/-ai
+A function token that belongs to a finite set contained in the element corresponding to an approximable endomap f lies in the relation of f.
+
+Membership of a function token in that element is the relation of f, so the subset hypothesis gives the relation.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

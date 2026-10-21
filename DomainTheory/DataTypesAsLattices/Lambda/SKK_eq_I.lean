@@ -1,3 +1,9 @@
+/-ai
+The combinator S applied to K and then to K equals the graph of the identity.
+
+The second beta law for S rewrites the double application. Congruence of graphs and function extensionality reduce the body, and the second beta law for K simplifies it to the identity.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

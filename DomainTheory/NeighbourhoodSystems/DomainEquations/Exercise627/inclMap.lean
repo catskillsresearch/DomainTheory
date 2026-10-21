@@ -1,3 +1,6 @@
+/-ai
+The inclusion of the strict function space into the function space is the approximable map induced by sending each principal element to its element-level inclusion. The assignment is monotone because inclusion is monotone and the order of principal elements is inclusion of neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

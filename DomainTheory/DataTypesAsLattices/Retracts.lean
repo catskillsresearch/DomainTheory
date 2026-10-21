@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the retract calculus for Scott's data types: composition, the function, function-space, integer, and Boolean retracts, fixed-point lattices and retract bases, graph and continuity lemmas, and Theorems 4.1 through 4.6.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts.Basic

@@ -1,3 +1,8 @@
+/-ai
+The integer retract is a closure.
+
+A closure is an expansive retract. The two components are the inclusion of the identity combinator in the integer retract and the retract equation for that retract.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,3 +1,6 @@
+/-ai
+The composition combinator of Table 5.5 (Scott 1981, PRG-19) is the approximable map from a pair of function spaces into the composite function space, given by currying the uncurried map that sends a pair of maps and an argument to the outer map applied to the inner map at that argument.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

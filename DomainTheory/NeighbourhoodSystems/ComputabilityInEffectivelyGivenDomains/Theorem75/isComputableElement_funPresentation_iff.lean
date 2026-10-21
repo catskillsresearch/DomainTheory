@@ -1,3 +1,8 @@
+/-ai
+An element of the function-space presentation is a computable element if and only if the approximable map it determines is a computable map of the two component presentations. This is Theorem 7.5 packaged for funPresentation.
+
+The equivalence is the corresponding characterization for the enumerated neighbourhoods of the presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

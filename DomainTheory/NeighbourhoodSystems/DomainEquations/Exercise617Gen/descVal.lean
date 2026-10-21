@@ -1,3 +1,6 @@
+/-ai
+The head recursion started at a base element sends the empty string to that base element, and sends a string that begins with a letter to the successor operation of that letter applied to the recursion on the remaining string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

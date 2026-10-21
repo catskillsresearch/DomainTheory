@@ -1,3 +1,8 @@
+/-ai
+Scott 1972, Proposition 2.1. A monotone net with least upper bound L converges to y in the Scott topology if and only if y lies below L.
+
+The forward implication is the forward half of the proposition, and the backward implication is the backward half.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

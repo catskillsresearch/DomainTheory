@@ -1,3 +1,8 @@
+/-ai
+The two-injection of an element contains the two-copy of a neighbourhood Z exactly when the element contains Z.
+
+If the copy belongs to the injection, it is not the master, because the master contains the point none and a two-copy does not. It is therefore a two-copy of some set, and injectivity of two-copies forces that set to be Z. Conversely, the two-copy of Z is one of the neighbourhoods recorded by the injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

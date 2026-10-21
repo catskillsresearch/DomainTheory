@@ -1,3 +1,8 @@
+/-ai
+The c9b5 depth of an S-expression equals its depth.
+
+Induct on the expression. The sigma and single cases are reflexivity. For concatenation and for intersection, simplify both depth definitions and use the inductive hypotheses on the two subexpressions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

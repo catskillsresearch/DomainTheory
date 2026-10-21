@@ -1,3 +1,6 @@
+/-ai
+The inner cross of a binary operation at a fixed first argument and a list code is the fold of the inner step, with that argument as parameter and with accumulator zero, over the list code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

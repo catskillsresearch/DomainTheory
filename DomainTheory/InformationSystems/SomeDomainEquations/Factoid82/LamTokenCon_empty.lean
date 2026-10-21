@@ -1,3 +1,8 @@
+/-ai
+The empty finite set of lambda tokens is consistent.
+
+Forgetting the empty set yields the empty set of raw tokens, and that empty set is consistent.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

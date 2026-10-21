@@ -1,3 +1,8 @@
+/-ai
+If a set is recursively enumerable, then the predicate that zero lies in it is recursively enumerable.
+
+It is the recursively enumerable membership predicate composed with the constant function with value zero.
+ai-/
 module
 
 public import Mathlib.Computability.RE

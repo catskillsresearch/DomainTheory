@@ -1,3 +1,6 @@
+/-ai
+A neighbourhood system on a token type consists of a predicate selecting the neighbourhoods and a master neighbourhood. The master is nonempty and is a neighbourhood. Whenever two sets are neighbourhoods and a third neighbourhood is contained in their intersection, the intersection is a neighbourhood. Every neighbourhood is contained in the master.
+ai-/
 module
 
 

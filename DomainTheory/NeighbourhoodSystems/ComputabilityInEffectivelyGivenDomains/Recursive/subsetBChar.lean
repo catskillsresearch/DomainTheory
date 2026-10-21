@@ -1,3 +1,6 @@
+/-ai
+The subset character of a fuel bound and two expression codes is the bounded universal, up to the code bound of the subset bound, of the predicate that under the subset guard selects the matching character of the second expression when the first matches and 1 otherwise, and selects 1 when the guard fails.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

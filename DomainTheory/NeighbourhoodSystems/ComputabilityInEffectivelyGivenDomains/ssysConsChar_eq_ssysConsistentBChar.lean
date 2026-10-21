@@ -1,3 +1,8 @@
+/-ai
+The consistency characteristic of a paired index equals the consistency characteristic of its two components.
+
+Both values are at most 1, so it is enough that each equals 1 under the same condition, namely the consistency decision on the two components.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

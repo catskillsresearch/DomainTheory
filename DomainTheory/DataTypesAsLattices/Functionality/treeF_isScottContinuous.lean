@@ -1,3 +1,9 @@
+/-ai
+The tree functional is Scott continuous.
+
+Theorem 1.3 composes right continuity of the sum retract at the bottom element with continuity of the diagonal tensor product.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,8 @@
+/-ai
+The intersection of the step sets of one domain neighbourhood with two codomain neighbourhoods equals the step set of that domain neighbourhood with the intersection of the two codomains.
+
+A map in both steps relates the domain neighbourhood to the intersection by intersection on the right. A map relating the domain neighbourhood to the intersection relates it to each factor by monotonicity along the two inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

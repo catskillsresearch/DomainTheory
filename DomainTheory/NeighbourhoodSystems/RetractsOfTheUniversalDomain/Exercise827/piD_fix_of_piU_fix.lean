@@ -1,3 +1,8 @@
+/-ai
+If the universal-domain product of d fixes an element w, then the function-space product fixes j-arrow of w.
+
+Unfold the element map of the universal-domain product. Apply j-arrow to both sides and cancel j-arrow after i-arrow.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

@@ -1,3 +1,8 @@
+/-ai
+Every coordinate past the head of the singleton stack is the bottom.
+
+Rewrite by the element action of the embedding, the tail of a component, the tail of a push, and the components of the bottom sequence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511

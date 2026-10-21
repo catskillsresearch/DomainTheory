@@ -1,3 +1,8 @@
+/-ai
+If the test contains neither 0 nor any positive number, the doubly strict conditional is ⊥.
+
+A member of either branch of the conditional would require 0 or a positive number in the test. The bottom element has no members.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

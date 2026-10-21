@@ -1,3 +1,8 @@
+/-ai
+If a neighbourhood is contained in the folded intersection of a finite set of basis neighbourhoods, then that folded intersection is itself a neighbourhood.
+
+The proof is by induction on the finite set. The empty intersection is the master set. At an insertion of a fresh index, the intersection is the neighbourhood of that index cut with the intersection of the remaining set. The inductive hypothesis, applied to the containment in the second factor, makes the remaining intersection a neighbourhood, and the system closes under cutting the neighbourhood of the new index with that set, using the given neighbourhood as the lower bound.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

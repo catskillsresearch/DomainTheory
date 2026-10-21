@@ -1,3 +1,6 @@
+/-ai
+Restriction of a family of sets to a list of indices keeps the set at each index on the list and replaces every other index by the master of its system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

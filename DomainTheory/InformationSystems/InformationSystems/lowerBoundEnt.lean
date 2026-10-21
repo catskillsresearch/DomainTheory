@@ -1,3 +1,6 @@
+/-ai
+In the lower-bound system, a finite set of natural numbers entails m when m is zero or some member of the set is at least m.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

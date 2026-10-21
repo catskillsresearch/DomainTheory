@@ -1,3 +1,6 @@
+/-ai
+The product of two order isomorphisms acts on pairs by applying each isomorphism to its component, and inverts by the two inverse isomorphisms. Both round trips are immediate, and the map preserves and reflects order because each factor does.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

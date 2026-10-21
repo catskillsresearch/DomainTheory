@@ -1,3 +1,8 @@
+/-ai
+There is an index that includes every index.
+
+The master index, with the datum that it is an upper bound, is a witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

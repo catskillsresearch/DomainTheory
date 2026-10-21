@@ -1,3 +1,8 @@
+/-ai
+A three-way sum of approximable maps is strict: it sends the bottom of the sum to the bottom of the codomain.
+
+A neighbourhood of the image of the bottom comes from the master or from one of the three tagged copies. The master case is the codomain master. Each tagged case would place the point none of the domain master inside a tagged copy, which is impossible.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

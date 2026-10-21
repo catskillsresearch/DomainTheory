@@ -1,3 +1,8 @@
+/-ai
+A coalesced neighbourhood that contains the left injection of the left master equals the separated-sum master.
+
+The master case is immediate. A proper left copy would contain the left master and therefore equal it. A right copy cannot contain that injection, because a point of the nonempty left master lies in the left injection and not in the right injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

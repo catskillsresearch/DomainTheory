@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the constant, pairing, and composition operators of Factoid 7.6, together with their uncurried forms and the function-space and approximable-map background. Once function spaces exist as domains, these combinators are approximable operators, each obtained by currying a composite of application, the projections, and pairing: the constant operator sends an element to the corresponding constant map, the pairing operator pairs two maps with a common domain, and the composition operator composes two maps.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

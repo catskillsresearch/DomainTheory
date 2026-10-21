@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the definitions of a projection, a finitary retraction, and a finitary projection on an approximable self-map of a neighbourhood system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82

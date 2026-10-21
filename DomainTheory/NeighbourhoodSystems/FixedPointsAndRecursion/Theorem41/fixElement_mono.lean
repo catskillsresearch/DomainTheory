@@ -1,3 +1,8 @@
+/-ai
+If one approximable endomap lies below another, its least fixed point lies below the least fixed point of the other.
+
+A neighbourhood of the smaller fixed point is reached by some iterate from the master, and monotonicity of iteration in the map places it in the corresponding iterate of the larger map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

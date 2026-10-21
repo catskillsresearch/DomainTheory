@@ -1,3 +1,6 @@
+/-ai
+The list-indexed enumeration of neighbourhoods of a subsystem of the universal domain sends a code to the universal neighbourhood of the raw index obtained by folding the universal intersection along the enumerator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

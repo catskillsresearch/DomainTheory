@@ -1,3 +1,8 @@
+/-ai
+A natural number lies in the S combinator if and only if it is a nested pair (n₀, (n₁, (n₂, m))) with m in the application of e(n₀) to e(n₂), applied again to the application of e(n₁) to e(n₂).
+
+Membership unfolds as three nested pair witnesses. One direction reassembles them into a single nested pair, and the other splits that pair back into the three witnesses.
+ai-/
 module
 
 public import Mathlib.Computability.RE

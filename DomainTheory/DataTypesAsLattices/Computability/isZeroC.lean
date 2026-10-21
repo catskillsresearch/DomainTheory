@@ -1,3 +1,6 @@
+/-ai
+The zero test is the conditional combinator applied to the numeral 1 and then to the numeral 0. On the numeral 0 it returns 1, and on a positive numeral it returns 0.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,8 @@
+/-ai
+Evaluation of a paired function-space element and input element equals the approximable map of that function-space element applied to the input.
+
+Unfolding evaluation as the conversion of the two-variable map, the conversion cancels, and the two-variable evaluation identity gives the claim.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,3 +1,8 @@
+/-ai
+A monotone endomap of the elements of a domain has a least fixed point.
+
+A maximal fixed point is a pre-fixed point. The monotone construction applied to it is a fixed point, and that construction lies below every fixed point.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124

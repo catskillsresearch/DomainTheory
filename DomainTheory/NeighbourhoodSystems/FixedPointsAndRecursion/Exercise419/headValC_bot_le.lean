@@ -1,3 +1,8 @@
+/-ai
+Along a prefix of binary strings, the partial head value lies below any head value that uses the same bit constants.
+
+On the empty string the partial value is bottom, which lies below every element. On a nonempty string, extending it by the remainder of the longer string preserves the first bit, so both sides are the same bit constant.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

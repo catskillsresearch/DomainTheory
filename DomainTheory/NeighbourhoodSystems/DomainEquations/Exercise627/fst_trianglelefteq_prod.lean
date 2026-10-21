@@ -1,3 +1,8 @@
+/-ai
+D₀ embeds as a subdomain of the product of D₀ and D₁.
+
+The first-factor injection and projection form a projection pair by the two composite laws, and a projection pair yields the subdomain embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

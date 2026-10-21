@@ -1,3 +1,8 @@
+/-ai
+If a finset is consistent at stage n and its atom finset is nonempty, then it contains no function tokens.
+
+Induct on the stage. At stage zero the function-token projection is the second component of consistency. At a successor stage, the left alternative uses the inductive hypothesis, and the right alternative has an empty atom finset, contradicting nonemptiness.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

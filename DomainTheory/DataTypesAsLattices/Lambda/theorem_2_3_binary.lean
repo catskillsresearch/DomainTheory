@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Theorem 2.3 (The reduction theorem), binary case. A binary map that is Scott continuous in each argument separately is represented by an element u of Pω: applying u first to x and then to y recovers the map.
+
+The binary curry of the map is such an element, by the binary application law.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

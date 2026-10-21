@@ -1,3 +1,8 @@
+/-ai
+At every odd depth 2n+1, the generated atom of combinedXCode is empty exactly when the generated atom of combinedYCode is empty.
+
+De-interleave the sign. The odd-depth half-step identities, fed by the even-depth closed forms, rewrite both generated atoms as the two outputs of the X-substep, and the specification of that substep equates their emptiness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,8 @@
+/-ai
+Scott's Theorem 8.8: for every countable neighbourhood system D, the universal system U satisfies D ⊴ U.
+
+The auxiliary form supplies a neighbourhood system D' of subsets of the rationals, an isomorphism from D to D', and a subsystem embedding of D' into U. The relation D ⊴ U is that data.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

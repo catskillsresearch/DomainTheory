@@ -1,3 +1,8 @@
+/-ai
+The search map obeys its recursion equation. At an argument z it conditions on the zero-test of the given map at z, returning the head of z when the test succeeds and otherwise continuing the search at the argument obtained by pushing the successor of that head in front of the tail.
+
+The least fixed point of the search operator is fixed by the operator's element map. Currying the search body and evaluating at that fixed point and at z, then rewriting by the definition of the operator and by this fixed-point equation, gives the claim after the element-map form of the body.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

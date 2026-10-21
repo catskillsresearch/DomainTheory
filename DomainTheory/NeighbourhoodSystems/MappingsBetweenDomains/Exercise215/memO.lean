@@ -1,3 +1,6 @@
+/-ai
+A set of a one-element type is a neighbourhood of O when it is the universe or the empty set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

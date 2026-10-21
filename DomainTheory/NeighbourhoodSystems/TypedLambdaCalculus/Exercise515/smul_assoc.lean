@@ -1,3 +1,8 @@
+/-ai
+Pointwise multiplication of subsets of a monoid is associative.
+
+Extensionality reduces the claim to membership in a product. A factorization through (p · q) · w reassembles as a factorization through p · (q · w) by the associative law of the monoid, and conversely.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

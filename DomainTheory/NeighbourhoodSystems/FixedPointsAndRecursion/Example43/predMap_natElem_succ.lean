@@ -1,3 +1,8 @@
+/-ai
+The predecessor sends the total element at k + 1 to the total element at k.
+
+This is the computation rule of the constant lift on total elements, applied to the predecessor table at k + 1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

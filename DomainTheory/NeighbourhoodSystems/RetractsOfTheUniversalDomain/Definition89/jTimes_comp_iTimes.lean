@@ -1,3 +1,8 @@
+/-ai
+Applying the product embedding and then the product projection yields the identity of the product.
+
+This identity is the retraction component of the projection pair chosen for the product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

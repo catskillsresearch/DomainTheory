@@ -1,3 +1,6 @@
+/-ai
+A finite set of lambda tokens entails a lambda token when the finite set of underlying raw tokens entails the underlying raw token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

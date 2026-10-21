@@ -1,3 +1,8 @@
+/-ai
+Passing an approximable map through the filter representation of a function-space element and back returns the original map.
+
+The function-space equivalence identifies the two directions on that map. Rewriting by those two directions gives the claim.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

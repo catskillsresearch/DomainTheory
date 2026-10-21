@@ -1,3 +1,8 @@
+/-ai
+The intersection of the neighbourhoods one and zero is empty.
+
+Extensionality and a case split on the two tokens, simplified by the definitions of zero and one, give the equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

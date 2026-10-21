@@ -1,3 +1,6 @@
+/-ai
+A computable presentation of the infinite iterate enumerates the infinite-iterate neighbourhoods. Every neighbourhood arises by encoding a finite list of indices for its fibers up to the stage after which they equal the master, with the master index used past that list. Intersection-equality is the bounded quantification, up to the sum of the three codes, of the original intersection-equality predicate on the three primitive-recursive fiber-index projections, and consistency is the same bounded quantification of the original consistency predicate on the two fiber indices. The intersection operation tabulates the coordinate-wise generator and is primitive recursive by composition with tabulation; on a consistent pair it agrees with the intersection because below the sum of the codes its fiber is the component intersection, while beyond that sum every fiber is the master. The master index is 0, and every fiber of that code is the master neighbourhood of the original system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

@@ -1,3 +1,8 @@
+/-ai
+There is an order isomorphism between the elements of the S-expression system and the filters of its basic-open neighbourhood system.
+
+The neighbourhood isomorphism of the worked example is a witness.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

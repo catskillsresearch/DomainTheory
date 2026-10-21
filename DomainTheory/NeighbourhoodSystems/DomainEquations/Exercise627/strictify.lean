@@ -1,3 +1,6 @@
+/-ai
+The strictification of an approximable map, regarded as a strict map, is the pair of its relational strictification and the proof that the result is strict.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

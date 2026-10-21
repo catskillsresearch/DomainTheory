@@ -1,3 +1,6 @@
+/-ai
+The inverse limit carries the complete-lattice structure obtained from its coordinatewise partial order by taking infima to be greatest lower bounds.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

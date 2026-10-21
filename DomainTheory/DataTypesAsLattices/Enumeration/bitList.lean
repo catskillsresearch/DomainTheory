@@ -1,3 +1,6 @@
+/-ai
+The bit list of a natural number j is the list of those indices k at most j for which the k-th binary digit of j is set, obtained by filtering the initial range of length j + 1.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

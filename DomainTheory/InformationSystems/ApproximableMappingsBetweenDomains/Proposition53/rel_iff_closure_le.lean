@@ -1,3 +1,8 @@
+/-ai
+Proposition 5.3(v) states that, for consistent finite sets, an approximable mapping relates them if and only if the closure of the codomain set is contained in the image of the closure of the domain set.
+
+If the relation holds, a token of the closure of the codomain set is reached by monotonicity, using reflexivity of entailment on the domain set and the entailment of that token, and the domain set is contained in its own closure. Conversely, the assumed inclusion puts the codomain set inside the image of that closure, so some finite set contained in the closure is related to it. Entailment of that finite set from the original domain set, with reflexivity of entailment on the codomain set, and monotonicity give the relation.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable

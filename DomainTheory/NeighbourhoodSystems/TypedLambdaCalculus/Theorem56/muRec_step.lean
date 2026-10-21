@@ -1,3 +1,8 @@
+/-ai
+If f at the numerals n and m is a positive numeral, the binary search at that pair equals the search at n plus 1 and m.
+
+Unfold the defining recursion, substitute the hypothesis, and use that the zero test of a positive numeral is false, that the conditional then takes its second branch, and that the successor of the numeral n is the numeral n plus 1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

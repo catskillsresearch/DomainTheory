@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Proposition 8.10(b), Exercise 3.24, the combinators of Table 5.5, the order isomorphism induced by exact mutual inverses, the two identities for an isomorphism and its inverse, the two composite identities for the exponential, and the induced order isomorphism of function spaces. The commentary records that these give congruence of the function space for domain isomorphism and currying as a domain isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

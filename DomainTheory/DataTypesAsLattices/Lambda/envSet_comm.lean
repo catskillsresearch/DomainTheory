@@ -1,3 +1,8 @@
+/-ai
+Environment updates at distinct indices commute.
+
+At the second index, the update written there is the value on either side. At the first index, the update written there remains. At every other index, both sides read the original environment.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

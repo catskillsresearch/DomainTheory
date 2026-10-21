@@ -1,3 +1,6 @@
+/-ai
+The code-level qChar-gated fold of a list code is the code fold of the code-level gated step, with parameter zero and seed the master index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic

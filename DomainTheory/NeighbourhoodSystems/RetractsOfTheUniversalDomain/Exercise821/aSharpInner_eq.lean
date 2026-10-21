@@ -1,3 +1,8 @@
+/-ai
+The inner sharp of an endomap a equals the catamorphism that composes the leaf embedding with a and uses the pairing of the tree algebra of the universal domain.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

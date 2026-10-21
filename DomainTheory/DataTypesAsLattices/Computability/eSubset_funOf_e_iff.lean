@@ -1,3 +1,8 @@
+/-ai
+The finite set coded by k is contained in the application of the finite sets coded by a and b if and only if, for every i < k, bit i of k is unset or i lies in that application.
+
+If the inclusion holds and the bit is set, the element lies in the application; if the bit is unset, that is the other disjunct. Conversely, an element of the finite set coded by k lies strictly below k and has its bit set, so the hypothesis places it in the application.
+ai-/
 module
 
 public import Mathlib.Computability.RE

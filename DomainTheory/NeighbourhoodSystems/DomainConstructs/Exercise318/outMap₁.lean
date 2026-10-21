@@ -1,3 +1,6 @@
+/-ai
+The right projection is the approximable map from the sum to the second neighbourhood system that relates a sum neighbourhood W to a neighbourhood Y when the right content of W is contained in Y. The sum master is related to the second master because the right content of the sum master is the second master. Intersection on the right uses that the right content of a sum neighbourhood is a neighbourhood, and monotonicity uses that the right content preserves inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

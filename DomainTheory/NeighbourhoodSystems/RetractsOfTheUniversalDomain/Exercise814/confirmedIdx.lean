@@ -1,3 +1,6 @@
+/-ai
+A confirmed index of an element of the neighbourhood system of a closure is a compact fixed point whose principal up-set belongs to that element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

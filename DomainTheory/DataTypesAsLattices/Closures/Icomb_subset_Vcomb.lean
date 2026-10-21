@@ -1,3 +1,9 @@
+/-ai
+The identity combinator is contained in the universe combinator.
+
+A pair (n, m) in the identity has m in the finite set en. Equation (5.21) puts m in the application of the universe combinator to en, and the application formula says that this application is the graph of x ↦ V(en)(x). The same pair therefore lies in the universe combinator.
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

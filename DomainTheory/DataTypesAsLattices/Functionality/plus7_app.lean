@@ -1,3 +1,9 @@
+/-ai
+Application of a seven-way sum to u equals the body of that sum at u.
+
+This is β-conversion, since the body is Scott continuous.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

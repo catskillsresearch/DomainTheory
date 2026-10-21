@@ -1,3 +1,6 @@
+/-ai
+The code-level injection is the approximable map from the neighbourhood system to its coded copy obtained by applying the isomorphism construction of Theorem 2.7 to the code-level domain isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic

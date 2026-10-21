@@ -1,3 +1,9 @@
+/-ai
+The empty pair is a function-space token: the empty finite set is consistent in the domain and in the codomain.
+
+Both information systems have a consistent empty set.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,3 +1,8 @@
+/-ai
+The total element of Example 1.2 determined by the singleton of 0 does not lie below the total element determined by the singleton of 1.
+
+The singleton of 0 belongs to the first element. If the inequality held, that singleton would belong to the second element, hence would equal the master or equal the singleton of 1, contradicting the two distinctness facts.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

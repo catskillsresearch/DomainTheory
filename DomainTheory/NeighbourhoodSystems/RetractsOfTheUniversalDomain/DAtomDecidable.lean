@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the decision procedure for emptiness of a D-side atom: membership in positive index sets and atoms, the master index set, the meet step and its bound and specification, the meet-fold together with its recursive equations and specification, the emptiness criterion, the code-level fold and its agreement with the set-level fold, primitive recursiveness of the coded step, fold, and emptiness characteristic, and the packaged recursive decidability.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable.Basic

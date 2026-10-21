@@ -1,3 +1,8 @@
+/-ai
+If both arguments of a pair embedding are contained in Gamma, the embedding is contained in Gamma.
+
+A point of the embedding has its tail in one argument, hence in Gamma, and membership in Gamma depends only on the value.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

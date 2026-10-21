@@ -1,3 +1,8 @@
+/-ai
+Equal singletons of natural numbers have equal elements.
+
+The element of the first singleton belongs to it, and after rewriting by the equality it belongs to the second singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

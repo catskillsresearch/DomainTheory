@@ -1,3 +1,6 @@
+/-ai
+The element determined by an ideal of finite elements is the directed supremum of the underlying elements of the members of the ideal.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

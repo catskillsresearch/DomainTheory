@@ -1,3 +1,8 @@
+/-ai
+The second component of a generalized Y-step is contained in its direct-refine input.
+
+The true branch is the intersection of that input with the refining neighbourhood, and the false branch is their difference.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,8 @@
+/-ai
+The combinator Z at a stage equals the graph of its own application.
+
+Extensionality of graphs, rewritten by the application equation.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

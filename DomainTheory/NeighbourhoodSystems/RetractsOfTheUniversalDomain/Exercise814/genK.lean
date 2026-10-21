@@ -1,3 +1,6 @@
+/-ai
+The compact generator of a neighbourhood is the fixed point obtained by applying the closure to the principal element of that neighbourhood. Idempotence of the closure makes the image a fixed point, and the image of a principal element is compact among fixed points.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,8 @@
+/-ai
+The left pair projection of the singleton consisting of an atom token is empty.
+
+A left-pair token in that projection would belong to the singleton and hence be an atom token, which is impossible, and the empty set has no members.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

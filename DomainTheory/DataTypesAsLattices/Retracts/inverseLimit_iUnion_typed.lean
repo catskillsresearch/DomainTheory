@@ -1,3 +1,8 @@
+/-ai
+The union of a coherent inverse-limit sequence is typed by the least fixed point of the functor: the union equals the least fixed point applied to the union.
+
+Unfold the least fixed point and the application of a union, and match coordinates. Each coordinate equation is the projection of the union at that stage.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

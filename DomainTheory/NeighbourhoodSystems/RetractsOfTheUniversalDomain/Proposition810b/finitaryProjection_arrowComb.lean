@@ -1,3 +1,8 @@
+/-ai
+If two self-maps of the universal domain are finitary projections, then so is their arrow combinator. In particular its fixed elements are order-isomorphic to the function space of the two fixed neighbourhoods.
+
+A finitary projection is a projection that is finitary. Pair the projection property of the arrow combinator with its finitariness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

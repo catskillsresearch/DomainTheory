@@ -1,3 +1,6 @@
+/-ai
+Scott 1972, §2. A set is Scott-open when it is an upper set and inaccessible by suprema of nonempty directed sets: whenever a nonempty directed set has its supremum in the set, some member of the set already lies in it.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

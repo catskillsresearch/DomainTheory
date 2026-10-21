@@ -1,3 +1,8 @@
+/-ai
+Two maps that agree at every element have the same graph.
+
+Simplifying the definition of the graph by that pointwise equality gives the identity.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

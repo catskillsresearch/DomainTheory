@@ -1,3 +1,8 @@
+/-ai
+Swapping the two components of a coded pair is primitive recursive.
+
+It pairs the right projection with the left projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

@@ -1,3 +1,6 @@
+/-ai
+The two-element sequence of two sets is the graph of the conditional that returns the first set on zero and otherwise the conditional of the predecessor that returns the second set on zero and the bottom element otherwise.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

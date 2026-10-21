@@ -1,3 +1,8 @@
+/-ai
+The right projection of finite sets of tokens of V is monotone.
+
+A token of the right projection of the smaller set has its right-pair token in that set, hence in the larger set, and therefore lies in the right projection of the larger set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

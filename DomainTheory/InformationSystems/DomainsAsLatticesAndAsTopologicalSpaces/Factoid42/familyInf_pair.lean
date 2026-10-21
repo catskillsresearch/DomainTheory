@@ -1,3 +1,8 @@
+/-ai
+The meet of the two-element family consisting of two elements equals their binary meet.
+
+The family meet lies below both members, so the universal property of the binary meet puts it below the binary meet. The binary meet lies below each member of the family, by the left inequality for the first member and the right inequality after the other member is identified with the second element, so the universal property of the family meet gives the opposite inequality.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41

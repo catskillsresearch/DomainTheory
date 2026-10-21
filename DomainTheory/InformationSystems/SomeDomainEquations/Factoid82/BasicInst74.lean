@@ -1,3 +1,6 @@
+/-ai
+Forgetful insertion of depth-well-formed lambda tokens is left commutative, because insertion of the two underlying raw tokens commutes.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

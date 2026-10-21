@@ -1,3 +1,11 @@
+/-ai
+If the level set of a code is empty, canonicalization sends the code to the pair of zero
+and one.
+
+Unfolding canonicalization, the nonemptiness test is at most one, and it is not one,
+because equality to one would mean the level set is nonempty. Arithmetic therefore
+forces the test to be zero, and selection on zero returns the master code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

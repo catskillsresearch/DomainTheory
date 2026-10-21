@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the binary neighbourhood system on finite binary strings, together with injectivity of cones, monotonicity of prepending, prepending to the set of all strings, associativity of prepending, the agreement of the finite-element order with the prefix order, membership of the least element in a cone, the identities for the empty prefix, the least element, and concatenation, and the representation of every element by its finite approximations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB.Basic

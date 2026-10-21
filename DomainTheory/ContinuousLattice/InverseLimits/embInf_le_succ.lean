@@ -1,3 +1,8 @@
+/-ai
+For a compatible sequence x, the stage embeddings of its coordinates are monotone: the embedding of the n-th coordinate lies below the embedding of the next coordinate.
+
+The recursion equation rewrites the earlier embedding as the later embedding of the inclusion of x_n. Monotonicity of that later embedding applies once the inclusion of x_n lies below x at stage n+1. Compatibility replaces the inclusion of x_n by the inclusion of the retraction of x at stage n+1, and an inclusion after a retraction lies below the identity.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

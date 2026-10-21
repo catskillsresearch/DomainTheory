@@ -1,3 +1,7 @@
+/-ai
+Bracket abstraction of a combinatory expression in the variable i replaces an occurrence of that variable by S applied to K applied to K, replaces every other variable and each of the six constants by K applied to it, and replaces an application by S applied to the two abstracted subexpressions.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,8 @@
+/-ai
+If two neighbourhoods lie in the tree algebra and the first is contained in the second, then they are related by the graph relation of the leaf embedding and the pairing.
+
+Induct on the membership of the input. If the input is the master neighbourhood, every tree neighbourhood is contained in the master, so the output equals the master and the master clause applies. A leaf is a leaf clause whose data are the two memberships and the containment. A node reuses the memberships of its children at reflexivity of containment, and packages the original containment as the pairing premise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

@@ -1,3 +1,6 @@
+/-ai
+The fuel-bounded match character is the {0, 1} mirror of the match predicate. It is 0 at fuel 0, and at the next fuel it is one step of the match body whose previous matches are the character at the previous fuel on the two components of the packed argument.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

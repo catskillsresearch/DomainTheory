@@ -1,3 +1,8 @@
+/-ai
+The middle tag of b lies in the tagged middle copy of Y if and only if b lies in Y.
+
+From a membership witness, simplification of the option, right-sum, and left-sum injections identifies the underlying element with b, and membership transports. Conversely, b itself is a witness that its middle tag lies in the copy.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

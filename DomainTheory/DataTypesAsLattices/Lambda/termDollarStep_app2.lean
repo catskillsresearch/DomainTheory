@@ -1,3 +1,8 @@
+/-ai
+Applying the term-level dollar step at s first to u and then to z equals the body at s, u, and z.
+
+Rewrite by the one-argument application law, then apply the β-law to the continuity of the body in z.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,8 @@
+/-ai
+Recovering an approximable map from the function-space element associated with it returns the original map.
+
+Extensionality of relations is used. A pair related by the recovered map has, as its membership witness, the original relation. A pair related by the original map is consistent on both sides by the domain and codomain laws, and that same relation is the membership witness in the associated element.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

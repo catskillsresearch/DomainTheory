@@ -1,3 +1,8 @@
+/-ai
+If f and g are primitive recursive, then so is the function sending n to the power of f n with exponent g n.
+
+It is exponentiation composed with the pairing of f and g, and the two sides agree after simplifying the unpaired projections.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

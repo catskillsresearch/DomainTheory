@@ -1,3 +1,8 @@
+/-ai
+The image of the empty sequence under the isomorphism with the three-way sum is the left injection of the bottom element of the unit system.
+
+The two elements contain the same neighbourhoods. In one direction the master is kept, the empty-sequence neighbourhood is the full token set of the unit bottom element, and neither bit-tagged neighbourhood belongs to the empty sequence. In the other direction the master is kept, and a neighbourhood of the unit bottom element is the full token set, which is the empty-sequence neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

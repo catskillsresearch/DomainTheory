@@ -1,3 +1,8 @@
+/-ai
+The intersection of the master neighbourhood with any set of tokens equals that set.
+
+Rewrite the master neighbourhood as the whole token set and apply the identity for the intersection of the whole set with a set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

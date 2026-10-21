@@ -1,3 +1,8 @@
+/-ai
+For every fuel bound, the fuel-bounded automaton-state cardinality of a Gödel code is primitive recursive.
+
+At fuel 0 the function is the constant 0. At a successor fuel, the body of the cardinality, applied to the function already primitive recursive at the previous fuel, is primitive recursive, and simplification identifies it with the successor clause.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

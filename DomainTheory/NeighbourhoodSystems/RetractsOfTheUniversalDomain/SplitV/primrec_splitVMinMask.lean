@@ -1,3 +1,8 @@
+/-ai
+splitVMinMask is primitive recursive.
+
+The two components of the canonical index are primitive recursive. The minimal mask of that pair agrees with splitVMinMask after the unpair-pair identities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

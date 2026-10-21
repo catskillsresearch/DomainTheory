@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the elementwise action of the embedding used by the sum-valued conditional, the three identities of that conditional, the fact that the empty set is not a sum neighbourhood, the membership criteria for the discriminator, the round-trip identities of the injections and projections on left and right elements, the trichotomy of sum elements, and Scott's identity for the discriminator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.Basic

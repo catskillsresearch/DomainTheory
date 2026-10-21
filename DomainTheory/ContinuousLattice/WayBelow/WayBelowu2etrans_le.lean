@@ -1,3 +1,8 @@
+/-ai
+Scott 1972, Proposition 2.2(iii). If x is way below y and y lies below z, then x is way below z.
+
+The same Scott-open neighbourhood of y contains z, because a Scott-open set is an upper set, and it remains contained in the principal upset of x.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

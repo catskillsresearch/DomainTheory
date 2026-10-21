@@ -1,3 +1,6 @@
+/-ai
+The tokens of the binary system are the finite binary strings, represented as lists of booleans, with the empty list as the empty string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,9 @@
+/-ai
+There is no index k such that val(k) is the set of i with v(i) in the set of indices whose value is bottom, whenever val(v(k)) equals the intersection of the numeral of k with val(k). This is the diagonal contradiction of Scott's Theorem 3.4.
+
+For such a k, membership of k in val(k) is equivalent to membership of v(k) in that set of indices, by the hypothesized equality. The intersection equation makes val(v(k)) equal bottom exactly when k fails to lie in val(k): a common member of the numeral of k and of val(k) would be k, which cannot lie in bottom, and nothing lies in bottom. Membership of v(k) in the set of indices denoting bottom is exactly that equality. Chaining the three equivalences, k lies in val(k) if and only if it does not, and either case contradicts the other.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

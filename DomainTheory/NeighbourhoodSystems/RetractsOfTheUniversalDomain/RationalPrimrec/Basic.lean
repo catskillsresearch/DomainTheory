@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the encoding and decoding of integers and rationals, the positive and negative numerator parts and the denominator of a rational code, the comparison, strict comparison, maximum, minimum, and midpoint codes, the codes of zero and one, the integer and rational round trips, the component form of rational decoding, and the decoding of the codes of zero and one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

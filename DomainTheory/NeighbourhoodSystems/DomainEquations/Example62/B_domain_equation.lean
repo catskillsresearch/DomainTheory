@@ -1,3 +1,8 @@
+/-ai
+The binary-sequence domain is isomorphic, as a domain, to the sum of that domain with itself.
+
+The witnessing isomorphism of elements is the order equivalence between the domain and the sum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

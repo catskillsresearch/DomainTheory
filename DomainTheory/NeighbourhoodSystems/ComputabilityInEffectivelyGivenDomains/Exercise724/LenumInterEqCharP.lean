@@ -1,3 +1,7 @@
+/-ai
+The packed intersection-equality characteristic applies the intersection-equality characteristic to the first component of a paired word and the two components of its second component.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

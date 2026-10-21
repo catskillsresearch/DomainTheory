@@ -1,3 +1,9 @@
+/-ai
+Given at least as much fuel as the code, one more iteration than the fuel of the untagging transition, started from that code with flag zero and arbitrary reversed accumulator and value, freezes with flag one. The reversed accumulator holds the decoded list consed onto the starting accumulator by pairing and adding one, and the value holds the decoded value.
+
+The proof is strong induction on the code. Unpack the four components of the starting state and take one iteration. If the first component of the numeral decoding is zero, the halt equation and the two component specifications produce a done state, further iteration fixes a done state, the zero case of the decoder gives the empty list, and the left fold of the empty list is the starting accumulator. If the first component is a successor, the continuation equation produces the state whose code is the second component, whose reversed accumulator is the successor of the pairing of the predecessor with the old accumulator, and whose value is unchanged. That second component is strictly smaller than the code. Zero fuel contradicts the fuel bound, since the code is at least one. Otherwise the inductive hypothesis at the smaller code, the remaining fuel, and the updated accumulator, together with the successor case of the decoder and the cons equation of the left fold, gives the result.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

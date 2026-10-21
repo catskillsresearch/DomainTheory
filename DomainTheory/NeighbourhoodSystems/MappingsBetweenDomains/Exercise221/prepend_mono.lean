@@ -1,3 +1,8 @@
+/-ai
+Prepending a fixed finite binary string is monotone in the set being prepended to.
+
+An element of the prepend of the smaller set is the string followed by a member of that set, and that member still belongs to the larger set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

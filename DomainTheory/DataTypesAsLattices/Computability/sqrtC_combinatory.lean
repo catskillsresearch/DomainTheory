@@ -1,3 +1,8 @@
+/-ai
+The integer-square-root combinator sqrtC is combinatory.
+
+It is built by applying S to the application of S to K applied to the combinatory element primRecZeroC and to the combinatory element sqrtStepC, and to the application of S to K and to K.
+ai-/
 module
 
 public import Mathlib.Computability.RE

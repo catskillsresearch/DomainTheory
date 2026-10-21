@@ -1,3 +1,6 @@
+/-ai
+The subbasic open associated with a natural number k is the set of elements x of Pω such that k belongs to x.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

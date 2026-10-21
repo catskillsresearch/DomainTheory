@@ -1,3 +1,8 @@
+/-ai
+Applying the function represented by the bottom element to any argument yields the bottom element.
+
+Extensionality and the definitions of application and the bottom element give the equality.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

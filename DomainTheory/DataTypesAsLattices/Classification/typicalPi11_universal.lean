@@ -1,3 +1,9 @@
+/-ai
+Scott's Table 3 states that Π₁¹ is the class of continuous preimages of the set of u such that for every y there is a z with u(y)(z) equal to {0}.
+
+In both directions the witness is copied unchanged: a continuous h exhibits U as a Π₁¹ set exactly when U is the preimage of the typical set under h.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

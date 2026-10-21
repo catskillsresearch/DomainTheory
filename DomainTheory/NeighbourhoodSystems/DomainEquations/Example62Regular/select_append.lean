@@ -1,3 +1,8 @@
+/-ai
+Selecting by a concatenation σ followed by τ equals selecting first by σ and then by τ.
+
+Function extensionality reduces the trees to a continuation, and simplification uses associativity of append.
+ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

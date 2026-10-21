@@ -1,3 +1,8 @@
+/-ai
+The identity endofunctor is continuous on maps.
+
+The witnessing approximable map is the identity of the strict function space. The action of the identity on elements is the identity, and converting a strict map to a filter and back returns the original strict map, so the underlying map is the original one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

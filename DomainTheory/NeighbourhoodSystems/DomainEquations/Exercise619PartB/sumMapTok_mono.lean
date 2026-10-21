@@ -1,3 +1,8 @@
+/-ai
+The separated sum of maps is monotone in both arguments.
+
+The order of approximable maps is inclusion of relations. A master clause remains a master clause. A left-tagged clause applies the inequality of the left maps, and a right-tagged clause applies the inequality of the right maps.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

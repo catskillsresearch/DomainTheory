@@ -1,3 +1,8 @@
+/-ai
+The combinator unpairFstC realizes the first component of Nat.unpair.
+
+Unfold the combinator and its term and apply the beta law theorem_2_2_beta. Simplifying the interpretation places the square-root, subtraction, multiplication, and comparison combinators of unpairEnv at the free indices. The realization lemmas for those combinators, together with succSet_ofNat, reduce the body. Unfold Nat.unpair and split on whether n minus the square of its integer square root lies strictly below that square root. In the positive case the successor of the difference is at most the square root, and eq_2_7_succ closes the goal. In the other case that bound fails, and eq_2_7_zero closes the goal.
+ai-/
 module
 
 public import Mathlib.Computability.RE

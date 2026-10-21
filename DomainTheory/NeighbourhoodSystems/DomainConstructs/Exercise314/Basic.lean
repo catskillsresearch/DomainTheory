@@ -1,3 +1,8 @@
+/-ai
+The diagonal relates a neighbourhood Z to a product neighbourhood P exactly when P belongs to the product and the identity relates Z to both the left and the right preimage of P. On elements, the diagonal sends x to the pair of x with itself.
+
+The relation identity is definitional. The element identity rewrites the diagonal as the pairing of the identity with itself, then uses the element map of a paired map and the element map of the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

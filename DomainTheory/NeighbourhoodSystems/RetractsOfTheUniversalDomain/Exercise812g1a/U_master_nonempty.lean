@@ -1,3 +1,8 @@
+/-ai
+U's master neighbourhood, the half-open unit interval, is nonempty.
+
+Zero belongs to it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

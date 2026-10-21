@@ -1,3 +1,8 @@
+/-ai
+Neighbourhoods X and Y are related by a two-variable approximable map to Z if and only if Z belongs to the elementwise image of the two corresponding principal elements.
+
+In one direction each neighbourhood belongs to its own principal element. In the other direction the witnessing neighbourhoods of those principals contain X and Y, and joint monotonicity replaces both inputs by X and Y.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

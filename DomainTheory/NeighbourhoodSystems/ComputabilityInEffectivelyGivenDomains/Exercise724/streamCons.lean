@@ -1,3 +1,6 @@
+/-ai
+Prepending a natural number to an infinite stream sends zero to that number and sends each successor to the value of the original stream at the predecessor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

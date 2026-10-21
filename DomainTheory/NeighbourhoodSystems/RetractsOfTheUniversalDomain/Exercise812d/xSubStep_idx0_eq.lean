@@ -1,3 +1,8 @@
+/-ai
+If the junk flag formed from the incoming junk flag and the bit-selected emptiness decision is 0, then the first index of the X sub-step is the bit-selected intersection or difference index of the incoming first index with the neighbourhood index.
+
+Unfolding the sub-step and projecting the word components, the hypothesis and selection at flag 0 erase the junk sentinel and leave the direct index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

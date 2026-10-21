@@ -1,3 +1,8 @@
+/-ai
+The second component of any pair in a list of rational pairs is at most the left fold of the maximum of second components from any seed.
+
+Induct on the list, generalizing the seed. The empty list has no members. For a cons cell, rewrite the fold. If the pair is the head, its second component is at most the maximum with the seed, and that maximum is at most the remaining fold by the seed inequality. If the pair lies in the tail, the inductive hypothesis at the updated seed applies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

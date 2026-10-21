@@ -1,3 +1,6 @@
+/-ai
+Scott's negation on C is the approximable map built by the head-test combinator so that the partial element of σ is sent to the partial element of the bit-flipped string, and the total element of σ is sent to the total element of the bit-flipped string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

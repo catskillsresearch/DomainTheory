@@ -1,3 +1,8 @@
+/-ai
+If the consistency function and the inclusion function are primitive recursive, then so is the emptiness characteristic read from the two components of an unpaired argument.
+
+The coded meet-fold composed with the left projection is primitive recursive, and so are its two unpaired components. The inclusion test with its arguments exchanged is primitive recursive. The bounded search through the right component, at the meet index, is primitive recursive by composing the existence combinator with the pairing of the right projection and the meet index, up to the pairing equations. Selection among the success test, that search, and the constant one is primitive recursive and agrees with the characteristic.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

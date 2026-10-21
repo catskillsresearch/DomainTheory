@@ -1,3 +1,8 @@
+/-ai
+Inserting bottom that is entailed at stage n preserves consistency at stage n.
+
+Entailment of bottom gives consistency of the original finset, and inserting bottom preserves that consistency.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

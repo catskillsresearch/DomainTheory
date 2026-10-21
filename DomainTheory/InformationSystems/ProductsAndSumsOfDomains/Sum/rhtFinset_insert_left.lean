@@ -1,3 +1,8 @@
+/-ai
+Inserting a left token into a finite set of sum tokens leaves the right projection unchanged.
+
+By extensionality, a right token in the inserted set cannot be the inserted left token, so it already belongs to the original set, and a right token of the original set remains after insertion.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

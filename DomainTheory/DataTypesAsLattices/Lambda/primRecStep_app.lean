@@ -1,3 +1,8 @@
+/-ai
+The primitive-recursion step of a base, a step, and a functional, applied to an argument, equals the conditional that returns the base on zero and otherwise applies the step and then the functional to the predecessor.
+
+The beta law applies, using continuity of the step body in the argument.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

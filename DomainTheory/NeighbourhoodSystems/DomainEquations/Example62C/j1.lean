@@ -1,3 +1,6 @@
+/-ai
+The tagged middle copy of a set Y of elements of β is the set of tokens t1 b, in Option (α ⊕ β ⊕ γ), for which b lies in Y.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,3 +1,7 @@
+/-ai
+Scott's universe operation, equations (5.14) and (5.15), sends a pair (a, x) to the intersection of all y such that x is contained in y and a(y) is contained in y.
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

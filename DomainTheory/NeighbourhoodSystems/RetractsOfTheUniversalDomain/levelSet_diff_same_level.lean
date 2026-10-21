@@ -1,3 +1,8 @@
+/-ai
+At one common level, the set difference of two level sets is the level set whose mask is the first mask with the bits of the second mask cleared.
+
+Extend the equality over an index and simplify the definition of a level set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

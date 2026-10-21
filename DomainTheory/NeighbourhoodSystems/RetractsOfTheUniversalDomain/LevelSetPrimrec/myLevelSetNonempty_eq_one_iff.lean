@@ -1,3 +1,10 @@
+/-ai
+The nonemptiness test equals one if and only if the level set is nonempty.
+
+Unfolding the test and rewriting by the characterization of the bounded existential and
+by the characterization of level-set nonemptiness, simplification identifies the body
+with the bit test through the pairing projections and the characterization of that test.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

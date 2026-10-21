@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the ingredients of Example 7.8: the cofinite neighbourhoods, membership in them, the neighbourhood of index zero, their intersection law, injectivity of the enumeration, the powerset neighbourhood system, and its computable presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

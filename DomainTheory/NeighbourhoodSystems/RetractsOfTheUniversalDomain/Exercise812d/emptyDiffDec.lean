@@ -1,3 +1,6 @@
+/-ai
+The difference-emptiness decider sends a code to one minus the difference-existence decider, so it reads one exactly when the existence decider reads zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

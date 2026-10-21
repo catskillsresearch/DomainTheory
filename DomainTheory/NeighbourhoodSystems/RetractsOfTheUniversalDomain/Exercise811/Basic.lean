@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the construction for Exercise 8.11: the chain neighbourhood system R, Scott's relation and approximable map, the lemmas on half-open intervals, the up-set presentation of elements, and the Dedekind-cut elements, cut sets, and cut points used to match fixed points of the map with reals in the unit interval.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

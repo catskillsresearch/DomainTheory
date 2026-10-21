@@ -1,3 +1,8 @@
+/-ai
+Every member of S is the denotation of some expression.
+
+Induction on membership in S sends the universal language to the universal expression and a singleton language to the singleton expression. A concatenation is the concatenation of the expressions given by the inductive hypotheses, and an intersection is the intersection of those expressions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

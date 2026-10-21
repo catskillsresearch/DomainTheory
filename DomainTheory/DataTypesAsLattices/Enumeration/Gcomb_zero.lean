@@ -1,3 +1,8 @@
+/-ai
+Applying G to the numeral 0 returns the packed combinators.
+
+Rewrite by the application law for G and by the zero clause of the conditional.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+A sum neighbourhood contained in a left copy is itself the left copy of a neighbourhood.
+
+Split on the three forms of a sum neighbourhood. The master contains the basepoint, which lies in no left copy. A left copy is already of the required form. A right copy of a neighbourhood is nonempty, so it contains a right tag, which lies in no left copy.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318

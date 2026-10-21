@@ -1,3 +1,8 @@
+/-ai
+For any finite sign prefix of length n, the second output of the true-bit X-step on atomPair at the padded prefix and at depth n is contained in XPseq at n.
+
+XPseq is the union of those second outputs over all finite prefixes, so each summand is contained in the union.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

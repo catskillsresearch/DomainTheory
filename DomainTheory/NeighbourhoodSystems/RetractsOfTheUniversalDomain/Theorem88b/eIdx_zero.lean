@@ -1,3 +1,8 @@
+/-ai
+The index swap sends 0 to the master index.
+
+The conditional whose guard is the equality of 0 with itself returns the master index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable

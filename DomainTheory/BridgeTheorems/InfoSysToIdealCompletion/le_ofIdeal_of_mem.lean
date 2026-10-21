@@ -1,3 +1,8 @@
+/-ai
+A finite element of an ideal lies under the element determined by that ideal.
+
+The element determined by the ideal is the directed supremum of the ideal's carrier, and the finite element is a member of that carrier.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

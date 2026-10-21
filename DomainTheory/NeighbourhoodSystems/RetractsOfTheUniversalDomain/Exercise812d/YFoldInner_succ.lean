@@ -1,3 +1,8 @@
+/-ai
+The inner Y-fold at stage N + 1 is the fold step applied to the packed depth, bit, stage, and previous value.
+
+This is the defining equation of the recursion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

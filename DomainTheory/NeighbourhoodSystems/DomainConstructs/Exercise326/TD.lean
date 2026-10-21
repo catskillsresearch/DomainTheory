@@ -1,3 +1,6 @@
+/-ai
+The truth domain is the neighbourhood system of Example 1.2, whose neighbourhoods are the master set, the singleton of zero, and the singleton of one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

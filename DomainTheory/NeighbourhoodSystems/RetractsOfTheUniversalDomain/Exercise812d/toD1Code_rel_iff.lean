@@ -1,3 +1,8 @@
+/-ai
+The relation of the code-level domain isomorphism, at a basic neighbourhood of index n in the first system and one of index m in the second, holds exactly when the second neighbourhood equals the basic neighbourhood of some X-sequence code k and the first neighbourhood is contained in the basic neighbourhood of index k.
+
+The isomorphism sends an element to its code-level pushforward, so the relation unfolds to membership of the principal element on the first neighbourhood. Simplifying pushforward membership and principal membership, one direction drops the redundant genuineness hypotheses from a witness index and an inclusion, and the other restores them because every basic neighbourhood is genuine.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

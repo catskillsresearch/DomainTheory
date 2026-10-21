@@ -1,3 +1,8 @@
+/-ai
+If a set u is consistent and an approximable map from the product relates the lifted pair of u with the input of each token of a finite set to the output of that token, then the finite set is consistent in the function space.
+
+For a subset whose input union is consistent, the pointwise relations are assembled into a relation of the product map from the lifted pair of u with that input union to the output union, and the codomain law places the output union in the consistency predicate.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

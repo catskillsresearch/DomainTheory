@@ -1,3 +1,8 @@
+/-ai
+Inserting a right-pair token into a finite set of tokens of V does not change its left projection.
+
+Extensionality and the membership criterion for the left projection reduce the claim to membership in an inserted set. A left-pair token is never a right-pair token, so a witness in the inserted set already lies in the original set, and a witness in the original set remains a witness after insertion.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

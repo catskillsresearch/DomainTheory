@@ -1,3 +1,8 @@
+/-ai
+The infimum of a nonempty family of filters approximates every member of the family.
+
+A neighbourhood of the infimum belongs to every member of the family, and so belongs to the given member.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

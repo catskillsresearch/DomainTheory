@@ -1,3 +1,8 @@
+/-ai
+A continuous function between domains is monotone for the approximation order.
+
+The order is recovered from the topology: an element lies below another when every open containing the first contains the second. The preimage of an open under a continuous map is open, and an open is an upper set, so membership passes upward.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

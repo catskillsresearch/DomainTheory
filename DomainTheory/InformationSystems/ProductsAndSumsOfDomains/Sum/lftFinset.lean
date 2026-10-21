@@ -1,3 +1,6 @@
+/-ai
+The left projection of a finite set of sum tokens, Scott's left part in the separated sum, is the finite set obtained by folding left insertion over the underlying multiset, starting from the empty set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

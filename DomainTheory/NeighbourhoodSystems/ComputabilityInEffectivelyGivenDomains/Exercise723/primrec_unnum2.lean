@@ -1,3 +1,8 @@
+/-ai
+The second component unnum2 of the primitive-recursive unnumbering is primitive recursive.
+
+It is the right projection of the primitive-recursive packed unnumbering.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

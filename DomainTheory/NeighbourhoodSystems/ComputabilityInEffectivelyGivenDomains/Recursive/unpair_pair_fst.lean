@@ -1,3 +1,8 @@
+/-ai
+The first component of the unpairing of the pair of a and b is a.
+
+This is rewriting by the identity that unpairing inverts pairing.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,3 +1,8 @@
+/-ai
+The inclusion of the relativized system below an element a sends the bottom element of that system to the bottom element of the original system.
+
+The elementwise action of the inclusion is the embedding, so extensionality compares membership, rewritten by the membership law for bottom. A neighbourhood of the embedded bottom comes from a neighbourhood of the relativized bottom, which is the master, and containment of every neighbourhood in the master forces that neighbourhood to be the master. Conversely, the master is witnessed by the master neighbourhood, which belongs to a and to the relativized bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407

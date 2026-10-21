@@ -1,3 +1,8 @@
+/-ai
+Scott's definability theorem in the unary case: if f is a Scott-continuous endomorphism of Pω, then f is computable if and only if its graph is recursively enumerable, that graph is recursively enumerable if and only if it is combinatory, and the graph is lambda-definable if and only if it is combinatory.
+
+A computable map contributes the recursive enumerability of its graph, and recursive enumerability together with the continuity hypothesis hf restores computability. The second equivalence is IsRE.iff_combinatory. A lambda definition by a term t is combinatory by theorem_2_4_closed after rewriting by the defining equation, and a combinatory element is lambda-definable by combinatory_isLambdaDefinable.
+ai-/
 module
 
 public import Mathlib.Computability.RE

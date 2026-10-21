@@ -1,3 +1,6 @@
+/-ai
+The tail of a stack is the second projection of its unfolding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

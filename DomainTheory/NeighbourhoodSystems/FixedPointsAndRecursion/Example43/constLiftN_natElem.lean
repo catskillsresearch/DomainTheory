@@ -1,3 +1,8 @@
+/-ai
+The strict lift sends the total element at n to the chosen value at n.
+
+By extensionality of elements, a neighbourhood of the image is witnessed by an input belonging to that total element, hence the whole space or the singleton of n. The blunt clause yields the master of the chosen value. A singleton witness must be that same singleton, and then the output belongs to the value. Conversely, the singleton of n belongs to the total element and is related to any neighbourhood of the value.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

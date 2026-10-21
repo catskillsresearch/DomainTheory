@@ -1,3 +1,8 @@
+/-ai
+The map from the flat naturals sends bottom to the bottom of the unary sequence system.
+
+Apply the bottom law of the strict lift.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

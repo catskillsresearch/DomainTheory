@@ -1,3 +1,6 @@
+/-ai
+The guard at a coordinate j of an approximable map φ sends a stack to the conditional of the zero test of the j-th component and two copies of φ at the stack. It is the conditional composed with the pairing of the zero test of the j-th projection and two copies of φ.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

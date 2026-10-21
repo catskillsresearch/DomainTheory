@@ -1,3 +1,6 @@
+/-ai
+Depth consistency of a finset of raw lambda tokens is defined by recursion on the maximum token depth, using decidable equality of finsets so that the empty branch does not invoke choice. If the finset contains no function tokens, it is consistent exactly when its atom finset is consistent in A. If it contains function tokens, its atom finset is empty, every function token has depth-consistent input and output finsets, and every subcollection of function tokens whose input union is depth-consistent has a depth-consistent output union. Each recursive call is on a finset of strictly smaller depth.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

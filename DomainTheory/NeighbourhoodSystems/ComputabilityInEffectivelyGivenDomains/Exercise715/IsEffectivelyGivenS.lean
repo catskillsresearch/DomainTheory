@@ -1,3 +1,6 @@
+/-ai
+A neighbourhood system is effectively given in Scott's sense when it has a Scott presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

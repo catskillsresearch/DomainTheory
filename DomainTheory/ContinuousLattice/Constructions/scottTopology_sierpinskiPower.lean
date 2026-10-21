@@ -1,3 +1,8 @@
+/-ai
+The Scott topology on a power of the two-point lattice coincides with the product topology on that power.
+
+By the product theorem, the Scott topology of a product of continuous lattices is the product of the Scott topologies, and the Scott topology of each two-point factor is the Sierpiński topology.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

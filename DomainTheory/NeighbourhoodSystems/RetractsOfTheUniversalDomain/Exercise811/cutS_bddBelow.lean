@@ -1,3 +1,8 @@
+/-ai
+The cut set of an element x is bounded below.
+
+Zero is a lower bound, because every rational r with [0, r) belonging to x is positive.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

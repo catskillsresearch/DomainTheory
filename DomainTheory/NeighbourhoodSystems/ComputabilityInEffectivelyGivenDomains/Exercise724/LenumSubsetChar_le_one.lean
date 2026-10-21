@@ -1,3 +1,9 @@
+/-ai
+The subset characteristic is at most one.
+
+This is the bound for the prefix characteristic.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

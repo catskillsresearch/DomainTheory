@@ -1,3 +1,6 @@
+/-ai
+deinterleaveδ reads a Boolean sequence two values at a time. Its value at k is the pair consisting of the sequence at 2k and the sequence at 2k+1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

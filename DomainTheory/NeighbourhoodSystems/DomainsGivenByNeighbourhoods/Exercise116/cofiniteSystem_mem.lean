@@ -1,3 +1,8 @@
+/-ai
+A set belongs to the cofinite neighbourhood system exactly when its complement is finite.
+
+The two sides are definitionally identical.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

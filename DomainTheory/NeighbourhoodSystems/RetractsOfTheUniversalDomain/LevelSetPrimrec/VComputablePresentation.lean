@@ -1,3 +1,10 @@
+/-ai
+The computable presentation of the neighbourhood system V, for Exercise 8.12(b),
+enumerates neighbourhoods by the canonical level-set enumeration, with the membership
+and surjectivity lemmas, the recursive decidability of intersection equality and of
+consistency, the intersection index with its primitive recursiveness and its
+specification, and the master index with its specification.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

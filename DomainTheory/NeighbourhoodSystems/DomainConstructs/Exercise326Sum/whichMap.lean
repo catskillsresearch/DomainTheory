@@ -1,3 +1,6 @@
+/-ai
+The discriminator is the approximable map from the sum of two neighborhood systems to the truth domain that relates a sum neighborhood W to a truth neighborhood C precisely when the guard holds. It relates the two masters. On the right, the intersection of two truth values stays inside the guard by the zero-set and one-set intersection lemmas, or collapses to the master when both neighborhoods are the sum master. It is monotone because a smaller sum neighborhood is again a left copy, a right copy, or the master, while a larger truth neighborhood is the master or the same token, by the comparison lemmas for truth neighborhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

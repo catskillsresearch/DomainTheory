@@ -1,3 +1,8 @@
+/-ai
+For indices at most 2, the intersection of two enumerated neighbourhoods is the second when the first index is 0, the first when the second index is 0, the common neighbourhood when the indices agree, and the empty set otherwise.
+
+Case on both indices in that range, and simplify by the definition of the enumeration, the master neighbourhood, intersection with the universe, intersection of a set with itself, and the two intersections of the neighbourhoods zero and one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

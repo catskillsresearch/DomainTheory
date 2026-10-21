@@ -1,3 +1,8 @@
+/-ai
+For each stage and each function, the iterator is Scott continuous in the value argument.
+
+Induct on the stage. Stage zero is the identity. A successor is substitution of application of the function into the inductive map.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

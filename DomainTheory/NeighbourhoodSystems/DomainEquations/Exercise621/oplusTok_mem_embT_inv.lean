@@ -1,3 +1,8 @@
+/-ai
+If the true tag of W belongs to the coalesced sum, then W belongs to the right system.
+
+The master clause would place the empty string in a bit embedding. A left tag equates opposite bits. A right tag gives W by injectivity of the bit embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

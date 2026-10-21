@@ -1,3 +1,8 @@
+/-ai
+Every n-ary construct has a solution Γ = tok(T({Γ})), so the singleton system on Γ is a subsystem of T applied to that singleton and Theorem 6.14 applies. The argument is given for the n-ary separated sum, and the same argument applies to the n-ary separated product, coalesced sum, and smash product.
+
+The general singleton-subsystem solution applies to this fold. Rootedness of the fold is the preservation lemma for n-ary folds, using that rootedness of a separated sum is definitionally the conjunction of rootedness of its two arguments.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

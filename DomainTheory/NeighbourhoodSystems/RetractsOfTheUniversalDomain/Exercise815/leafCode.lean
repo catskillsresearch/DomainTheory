@@ -1,3 +1,6 @@
+/-ai
+The leaf code of an index j is the term-algebra code formed by pairing the tag 0 with j. It is the code that evaluates to the basic neighbourhood named by j.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

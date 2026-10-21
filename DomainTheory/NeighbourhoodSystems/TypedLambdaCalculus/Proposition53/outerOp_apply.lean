@@ -1,3 +1,8 @@
+/-ai
+The outer operator of τ and σ sends y to the value of σ at the pair of the nested fixed-point map of τ at y with y.
+
+Rewrite by the definition of the outer operator, the composition law, the pairing law, and the identity map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

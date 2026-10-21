@@ -1,3 +1,8 @@
+/-ai
+The retraction of a subsystem is finitary.
+
+The witnessing neighbourhood system is the subsystem itself, and the order isomorphism is the inverse of the element isomorphism between the subsystem and the fixed-point set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82

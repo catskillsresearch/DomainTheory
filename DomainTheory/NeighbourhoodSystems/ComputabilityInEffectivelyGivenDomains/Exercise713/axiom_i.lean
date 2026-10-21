@@ -1,3 +1,8 @@
+/-ai
+The inclusion relation of an inclusion structure is reflexive.
+
+This is the reflexivity datum of the structure.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

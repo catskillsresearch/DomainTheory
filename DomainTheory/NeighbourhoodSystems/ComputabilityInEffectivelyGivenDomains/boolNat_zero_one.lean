@@ -1,3 +1,8 @@
+/-ai
+The boolean numeral of a boolean is either 0 or 1.
+
+Split into the two boolean cases and simplify the definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

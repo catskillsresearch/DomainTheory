@@ -1,3 +1,6 @@
+/-ai
+GraphIdx W is the set of codes that record positive information guaranteed by every approximable map in W. A code c lies in it when c equals tagOfBits n m for some n, m₀, and m, every map in W relates the neighbourhood nbhd n to nbhd m₀, and the m-th bit of m₀ is set. The argument list decoded from bitsCode n n is exactly the finite set excluded by nbhd n, so the codes range over those finite sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

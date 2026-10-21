@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, Table 2. The successor of a set x is the set of all n + 1 for n in x.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

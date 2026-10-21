@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic set and monotonicity libraries together with the union of the post-fixed points and the intersection of the pre-fixed points of a monotone endomap of a power set.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

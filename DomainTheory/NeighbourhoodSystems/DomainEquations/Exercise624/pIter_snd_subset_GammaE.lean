@@ -1,3 +1,8 @@
+/-ai
+The second component of each stage of the pair iteration is included in the colimit Gamma_E.
+
+A member of the m-th second component lies in the union at index m.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

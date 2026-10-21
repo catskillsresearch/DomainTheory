@@ -1,3 +1,6 @@
+/-ai
+The embedding into the doubled sum pairs the truth projection with the pairing of the left injection of the left value and the right injection of the right value, leaving the truth slot fixed.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

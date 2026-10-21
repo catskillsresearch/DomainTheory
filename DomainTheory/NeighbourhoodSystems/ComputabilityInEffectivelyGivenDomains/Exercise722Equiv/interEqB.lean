@@ -1,3 +1,6 @@
+/-ai
+interEqB decides language equivalence of two expressions, as relation (i) on the syntax. It is the conjunction of the two inclusion decisions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

@@ -1,3 +1,6 @@
+/-ai
+The letter-prefixed copy of a set of finite A-strings is the set of strings that begin with that letter and whose remaining string lies in the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

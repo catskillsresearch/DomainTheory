@@ -1,3 +1,8 @@
+/-ai
+The conditional set of the numeral 0, with branches x and y, equals x.
+
+Membership extensionality and the definitions of the conditional set and of the numeral give the equality.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

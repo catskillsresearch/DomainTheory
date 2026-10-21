@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the first half of Proposition 8.10. It includes the elementwise identities for a left inverse, for a composite below the identity, for a map below the identity, and for a retraction; the product, lambda, and arrow combinators with their elementwise actions; the retraction and below-identity halves, and hence the projection property, for the product and the arrow; the disjointness of the two copies of a sum, the reach of the two injections, the fact that a left inverse sends bottom to bottom and so does the sum extraction, the sum combinator with its elementwise membership and its left, right, and master cases; and the retraction, below-identity, and projection properties of the sum, together with the joint statement that the sum, product, and arrow of projections are projections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.Basic

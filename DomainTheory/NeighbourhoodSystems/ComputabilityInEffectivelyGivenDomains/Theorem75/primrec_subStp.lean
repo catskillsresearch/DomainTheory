@@ -1,3 +1,8 @@
+/-ai
+If both inclusion characteristics are primitive recursive, then the step-function inclusion step is primitive recursive.
+
+The flag, the parameter code, the input index, and the output index are primitive-recursive projections. The conditional output-intersection index of the parameter and the input index is primitive recursive by pairing those projections, and the codomain inclusion characteristic of that index against the output index is primitive recursive. Selection of the flag against that bit agrees with the step.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

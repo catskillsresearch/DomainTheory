@@ -1,3 +1,8 @@
+/-ai
+Applying the structure map of a Tsig-algebra to the sum map of an approximable map g, at the image under toCC of the successor of an element by a letter a, yields the successor operation of a applied to the image of that element under g.
+
+The isomorphism sends that successor to the a-tagged injection of the element, and the sum map sends the tagged injection to the tagged injection of the image. The resulting expression is the definition of the successor operation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

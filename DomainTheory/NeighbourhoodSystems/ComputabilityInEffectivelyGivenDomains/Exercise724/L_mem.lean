@@ -1,3 +1,9 @@
+/-ai
+A set of tokens is a neighbourhood of the LUCID system if and only if it satisfies the neighbourhood predicate of finite addresses.
+
+The equivalence is definitional.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

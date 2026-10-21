@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, §4. A set u is typed by a retract a when u equals a applied to u.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

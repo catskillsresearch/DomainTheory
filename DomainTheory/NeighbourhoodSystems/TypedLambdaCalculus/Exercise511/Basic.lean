@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports the unfolding and folding of an iterated neighbourhood system, the stack combinators head, tail, and push, the constant stack, the body, operator, and fixed point of the map combinator, the reading of the product isomorphism, the head and tail computations, and the argument domain of map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,3 +1,8 @@
+/-ai
+The starting search at the stack of a vector equals the running search at the stack of the vector with 0 consed on.
+
+Unfold the starting map and simplify the element maps of the two compositions, the pairing, the constant map, and the identity, then use that pushing a numeral onto a vector stack is the stack of the consed vector.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

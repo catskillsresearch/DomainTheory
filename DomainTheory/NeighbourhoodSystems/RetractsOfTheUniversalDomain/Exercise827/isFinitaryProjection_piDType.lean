@@ -1,3 +1,8 @@
+/-ai
+The type of d at any element s is a finitary projection.
+
+Unfold the type, rewrite its element map by the element-map formula for the type map, and apply the decoding theorem at d of s.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

@@ -1,3 +1,8 @@
+/-ai
+One embedded neighbourhood is contained in another if and only if the corresponding coded set is contained in the other coded set.
+
+Rewriting by the criterion that embedded neighbourhoods are nested exactly when their index sets are nested, the claim is the index-set comparison.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

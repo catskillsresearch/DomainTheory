@@ -1,3 +1,6 @@
+/-ai
+The order isomorphism of Exercise 1.16 sends each cofinite filter to its set of excluded points and sends each set of excluded points to the filter of cofinite neighbourhoods whose complements lie in that set. The two inversion theorems supply the inverse laws. Filter inclusion holds exactly when the excluded sets are included. If the excluded set of the first filter is contained in that of the second and a neighbourhood belongs to the first, its finite complement consists of excluded points of the second, so the reconstruction lemma returns the neighbourhood itself to the second filter. Conversely, an excluded point is membership of a singleton complement, which the filter inclusion carries across.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+Z belongs to the two-variable action of fade₂ on t and y if and only if Z is a D-neighbourhood and either Z is the master or t contains {0} and y contains Z.
+
+A witnessing pair of neighbourhoods gives either Z equal to the master, or an input equal to {0} belonging to t together with an output contained in Z and belonging to y. Conversely, the two masters witness the master case, and the pair consisting of {0} and Z witnesses the other case.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

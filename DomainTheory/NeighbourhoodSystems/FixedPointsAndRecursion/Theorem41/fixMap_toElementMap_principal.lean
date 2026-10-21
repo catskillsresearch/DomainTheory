@@ -1,3 +1,8 @@
+/-ai
+On a principal element of the function space, the fixed-point operator returns the least fixed point of the least approximable map of that principal.
+
+This is the principal-element clause of the extension of a monotone action on finite elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

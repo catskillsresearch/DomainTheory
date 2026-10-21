@@ -1,3 +1,6 @@
+/-ai
+For a retraction of a complete lattice D into an ambient complete lattice D' and a subset S of D, the ambient supremum of S is the supremum in D' of the image of S under the inclusion. In the March 1972 correction this is the supremum of S computed in the ambient lattice.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

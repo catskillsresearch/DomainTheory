@@ -1,3 +1,7 @@
+/-ai
+The finite approximants of an element are the closures of the consistent finite sets of tokens contained in its carrier.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36

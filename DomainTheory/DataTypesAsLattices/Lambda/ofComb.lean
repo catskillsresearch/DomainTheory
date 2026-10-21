@@ -1,3 +1,6 @@
+/-ai
+The interpretation of a combinatory term in an environment reads a variable from the environment, sends zero, successor, predecessor, conditional, K, and S to the corresponding combinators, and interprets an application as application of the interpretations.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

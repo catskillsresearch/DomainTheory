@@ -1,3 +1,8 @@
+/-ai
+The successor of a tower projection has inclusion equal to conjugation by the inclusion and retraction of the previous level, and retraction equal to conjugation by the retraction and inclusion of the previous level.
+
+Both equalities are definitional.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

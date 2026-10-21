@@ -1,3 +1,6 @@
+/-ai
+The forward map from an element of the coalesced sum of the lifts to an element of the separated sum deletes the inner false tag. A set belongs when it is the sum master, or it is the false tag of a neighbourhood of D and the source contains the double false tag, or it is the true tag of a neighbourhood of E and the source contains the true tag of that false tag. Downward closure is the corresponding separated-sum membership, and the master belongs. Intersections with the master reduce by the master-intersection laws. Two left tags, or two right tags, intersect in the source, and the factor is recovered by the inverse double-tag lemmas. A left tag meeting a right tag is empty, because the tags differ, while a neighbourhood of the coalesced sum is nonempty. A set above the master equals the master. A set above a left tag stays on the left by the subset law for tags, and the false tag of a nonempty set is not contained in a true tag. The right-hand case is symmetric.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

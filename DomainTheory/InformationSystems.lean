@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports the theory of information systems: the constructive presentation and the information-system structure, Definition 2.2, Proposition 2.3, and Factoids 2.4 through 2.6; the elements of a system in Factoids 3.2 through 3.6; domains as lattices and as topological spaces in Factoids 4.1 through 4.6; approximable mappings and Propositions 5.3 through 5.6; products and sums, Propositions 6.2 and 6.4, and Factoid 6.5; the function space, Theorem 7.2, the fixpoint construction, Proposition 7.4, and Factoids 7.5 through 7.7; and domain equations in Factoids 8.1 through 8.4 together with the domain-equation construction.
+ai-/
 module
 
 -- Information systems

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the approximable-mapping development together with the neighbourhood correspondence of a domain isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

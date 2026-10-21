@@ -1,3 +1,8 @@
+/-ai
+An enumerated sum neighbourhood intersected with the sum master equals that neighbourhood.
+
+The enumerated neighbourhood is contained in the master, so the intersection equals its left argument.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

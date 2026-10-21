@@ -1,3 +1,8 @@
+/-ai
+A code z lies in the decoded list of flatMapCode f x c if and only if z lies in the decoded list of f of the pair of x and some y from the decoded list of c.
+
+Unfold flatMapCode, rewrite by the fold equation and the auxiliary membership lemma at the decoded list of c with empty accumulator, and drop the empty-list disjunct.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

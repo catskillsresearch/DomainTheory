@@ -1,3 +1,8 @@
+/-ai
+The intervals presented by the difference index are the set difference of the two neighbourhoods.
+
+This is the correctness of the code-level difference on the two canonical codes.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

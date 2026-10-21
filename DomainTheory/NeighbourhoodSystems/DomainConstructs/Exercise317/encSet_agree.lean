@@ -1,3 +1,8 @@
+/-ai
+If one neighbourhood of the infinite iterate of the truth system is contained in the encodings of two strings, then those strings agree at every index where both are defined.
+
+The fiber at that index is a nonempty truth neighbourhood, so it contains a token, and the two inclusions place that token in both bit neighbourhoods. If the bits differed, case analysis on the two bits and simplification of the bit neighbourhoods would be contradictory.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

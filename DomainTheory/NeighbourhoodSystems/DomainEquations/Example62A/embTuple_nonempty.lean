@@ -1,3 +1,8 @@
+/-ai
+If some component of a tagged tuple is nonempty, then the tuple is nonempty.
+
+Prefix a witness from that component by the slot prefix of its index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

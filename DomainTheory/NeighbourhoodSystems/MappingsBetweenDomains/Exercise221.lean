@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic development of the neighbourhood system C of Exercise 2.21, the inclusion of the binary neighbourhoods in C, nonemptiness of those neighbourhoods, totality of the singleton elements, the inequality of the bottom element below the total empty sequence, and the juxtaposition identities for cones and for terminator singletons.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.Basic

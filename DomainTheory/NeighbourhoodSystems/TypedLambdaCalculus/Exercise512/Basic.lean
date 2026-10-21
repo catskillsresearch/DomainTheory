@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports the body of the while recursion, the loop operator, the least fixed point of that operator, and the approximable map denoted by that fixed point.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

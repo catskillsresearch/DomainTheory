@@ -1,3 +1,8 @@
+/-ai
+The two-injection into the three-way sum is monotone.
+
+The master neighbourhood is preserved. A two-copy of a neighbourhood of the smaller element is a two-copy of a neighbourhood of the larger element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

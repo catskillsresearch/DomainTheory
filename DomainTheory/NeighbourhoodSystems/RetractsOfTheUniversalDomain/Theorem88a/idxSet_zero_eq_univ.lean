@@ -1,3 +1,8 @@
+/-ai
+If every neighbourhood e m is contained in e n0, then the index set of n0 is the universe.
+
+The hypothesis says that every natural number belongs to that index set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

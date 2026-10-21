@@ -1,3 +1,9 @@
+/-ai
+Application of the graph of application of e p, at the union of the iterate Z m (e p) (e q) with the singleton pair of max(p, q) + 1 and m, equals the next iterate Z (m + 1) (e p) (e q).
+
+Rewrite by the normalized finite application and by the fresh-union clause for application of e, using that the fresh index is strictly above p. The two sides are then identical.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

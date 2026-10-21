@@ -1,3 +1,8 @@
+/-ai
+If bop is primitive recursive, then crossInnerStep bop is primitive recursive.
+
+The head, the accumulator, and the fixed parameter are primitive recursive projections. Successor after pairing bop of the fixed parameter with the head together with the accumulator agrees with the inner step by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

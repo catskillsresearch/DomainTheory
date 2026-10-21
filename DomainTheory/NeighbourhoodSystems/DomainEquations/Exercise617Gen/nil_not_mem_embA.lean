@@ -1,3 +1,8 @@
+/-ai
+The empty string does not lie in the embedding of one letter.
+
+Membership would display the empty string as a string beginning with that letter, which simplification rules out.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

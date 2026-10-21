@@ -1,3 +1,8 @@
+/-ai
+If D and D' are continuous lattices, then the space of Scott maps from D to D' is a continuous lattice, and its Scott topology equals the topology of pointwise convergence.
+
+The two conjuncts are the order-theoretic and topological parts of Scott's Theorem 3.3.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

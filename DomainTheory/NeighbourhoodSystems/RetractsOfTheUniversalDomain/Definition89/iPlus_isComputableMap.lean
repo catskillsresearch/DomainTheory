@@ -1,3 +1,8 @@
+/-ai
+The sum embedding is a computable map from the fixed presentation of the sum to the presentation of the universal domain.
+
+This computability is the corresponding component of the projection pair chosen for the sum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

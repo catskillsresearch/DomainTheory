@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the core of Scott's induced topology: the predicate of being Scott-open, the way-below relation, the predicate of being a continuous lattice, and the infix notation for way-below.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

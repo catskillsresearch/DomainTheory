@@ -1,3 +1,8 @@
+/-ai
+No cone of strings is contained in a singleton.
+
+The string itself and the string with the default letter appended both lie in the cone, hence in the singleton, so the two strings are equal. Simplification rules that equality out.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

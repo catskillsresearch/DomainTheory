@@ -1,3 +1,8 @@
+/-ai
+The second component of deltaPair at depth i is the bit of k at position 2i+1.
+
+Rewrite the successive divisions as one division, then compare with the test bit, using that four to the i times two equals two to the 2i+1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

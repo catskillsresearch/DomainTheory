@@ -1,3 +1,8 @@
+/-ai
+The left copy of the master of D₀ equals the separated-sum master.
+
+A false-tagged string of the master lies in the sum master, and a string of the sum master remains there. Conversely, every string of the sum master lies in the second summand, because the master equality holds by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,3 +1,6 @@
+/-ai
+The maximum code selects, according to the comparison code, the second component of its argument or the first.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

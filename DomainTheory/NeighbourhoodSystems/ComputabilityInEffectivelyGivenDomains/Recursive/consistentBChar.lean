@@ -1,3 +1,6 @@
+/-ai
+The cap-consistency character, a {0, 1}-valued decider on Gödel codes, sends a fuel bound and two codes to the nonemptiness character of their cap code at that fuel.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

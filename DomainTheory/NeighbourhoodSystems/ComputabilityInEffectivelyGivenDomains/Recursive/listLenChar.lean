@@ -1,3 +1,6 @@
+/-ai
+The coded length of a code is the fold of the length step, with parameter 0 and initial accumulator 0. It equals the length of the decoded list.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,3 +1,6 @@
+/-ai
+Evaluation at bottom sends a function from A to B to its value at the bottom of A. It is the evaluation map composed with the pairing of the identity and the constant map at that bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

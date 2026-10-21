@@ -1,3 +1,8 @@
+/-ai
+The Scott topology of the fixed-point lattice of a Scott-continuous idempotent is the subspace topology induced by the inclusion from the Scott topology of the ambient lattice.
+
+The fixed-point set is a retract of the ambient continuous lattice, and Proposition 2.10(b) identifies the Scott topology of such a retract with the induced topology.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

@@ -1,3 +1,7 @@
+/-ai
+Scott's definition in §5 says that an element a of Pω is a closure operation when the identity combinator is contained in a and a is a retract, that is, when the identity is contained in a and a equals a composed with itself.
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

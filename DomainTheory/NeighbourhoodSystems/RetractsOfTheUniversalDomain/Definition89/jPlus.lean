@@ -1,3 +1,6 @@
+/-ai
+The fixed projection from the universal domain onto the sum of the universal domain with itself is the second component of the projection pair chosen with the sum embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

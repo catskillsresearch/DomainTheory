@@ -1,3 +1,8 @@
+/-ai
+The negative-list code is primitive recursive.
+
+Pairing the third component of a triple code with zero and then adding one is primitive recursive. The equation for the list code of a singleton shows that this function is the negative-list code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

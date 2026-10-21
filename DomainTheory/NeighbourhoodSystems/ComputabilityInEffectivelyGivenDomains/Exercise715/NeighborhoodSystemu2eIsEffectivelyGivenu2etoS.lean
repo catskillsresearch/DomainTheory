@@ -1,3 +1,8 @@
+/-ai
+If a neighbourhood system is effectively given, then it is effectively given in Scott's sense.
+
+Eliminate the given computable presentation and take its underlying Scott presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

@@ -1,3 +1,6 @@
+/-ai
+The union index of two natural numbers is the canonical index of their raw union code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

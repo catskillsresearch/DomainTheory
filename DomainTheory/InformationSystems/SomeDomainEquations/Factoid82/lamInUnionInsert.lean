@@ -1,3 +1,6 @@
+/-ai
+Input-union insertion unions the finite set of the input list of an input-output pair into an accumulator finite set of raw lambda tokens.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

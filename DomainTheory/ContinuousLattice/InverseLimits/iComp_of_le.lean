@@ -1,3 +1,8 @@
+/-ai
+When n is at most m, the m-th coordinate of the stage embedding of x is the climb of x up to stage m.
+
+The defining split on the comparison of n and m takes the climb branch.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

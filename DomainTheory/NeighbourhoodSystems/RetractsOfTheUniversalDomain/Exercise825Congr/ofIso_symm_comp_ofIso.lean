@@ -1,3 +1,8 @@
+/-ai
+The approximable map of the inverse of an order isomorphism of element types, composed with the map of the isomorphism, is the identity of the source neighbourhood system.
+
+Extensionality on elements rewrites the composite, the two maps of the isomorphism, and the identity, and uses that applying the inverse after the isomorphism is the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

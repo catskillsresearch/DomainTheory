@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports function-space congruence and the product of function spaces from Exercise 3.15. The commentary records the abstract closing argument: an isomorphism of a domain D with the function space into a domain V, together with an isomorphism of the product of V with itself with V, yields an isomorphism of the product of D with itself with D and then an isomorphism of D with its own function space, by the two displayed chains of product, currying, and function-space congruences.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Congr

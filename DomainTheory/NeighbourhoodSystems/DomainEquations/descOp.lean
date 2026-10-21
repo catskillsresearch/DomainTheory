@@ -1,3 +1,6 @@
+/-ai
+The homomorphism operator of a structure map k sends an approximable map f out of the infinite iteration to k composed with the product of the identity and f, composed with the projection from the iteration onto the product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

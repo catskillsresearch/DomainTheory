@@ -1,3 +1,9 @@
+/-ai
+If z is extensional in its function argument and lies in every iterator functionality, and if for every j the application of z to the graph of σ_j sends the singleton of the code of (j, 0) to the singleton of the code of (j, n), then the double application of z to the finite sets e_p and e_q equals the n-fold iterate of e_p at e_q.
+
+Let j be one more than the maximum of p and q, let one graph be the graph of application of e_p, and let the other be its union with the graph of σ_j. These graphs are related by the Plotkin equivalence, so functionality relates their images under z, and the pair of e_q with e_q union the singleton of (j, 0) is related, hence so are the two double applications. Plotkin's lemma writes each as some iterate. The graph law for the iterator makes the left value the pure iterate of e_p at e_q, and finite separation writes the right value as an iterate union the singleton of (j, m). Erasing the tag j, by the two erasure lemmas, identifies the pure iterates. Monotonicity of application places the tagged value of the pure σ_j branch inside the right-hand value, so the tag n equals m, either because a tag inside the pure iterate is excluded or because injectivity of pairing reads the singleton. Extensionality then replaces e_p by its graph, and the iterates agree at n.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

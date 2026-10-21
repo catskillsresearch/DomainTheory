@@ -1,3 +1,8 @@
+/-ai
+The universal domain is universal.
+
+For a countable neighbourhood system, Theorem 8.8(a) supplies a subsystem of the universal domain isomorphic to it, and that pair of data is an embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

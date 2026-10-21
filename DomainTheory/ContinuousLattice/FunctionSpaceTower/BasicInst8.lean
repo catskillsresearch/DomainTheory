@@ -1,3 +1,6 @@
+/-ai
+An element of the successor level of the function-space tower may be applied as a map from the preceding level to itself. The coercion is the underlying map of that level.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

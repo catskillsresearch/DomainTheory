@@ -1,3 +1,8 @@
+/-ai
+The principal elements of the neighbourhoods of an element form a directed family.
+
+The intersection of two such neighbourhoods still belongs to the element. Each principal lies below the principal of the intersection, because each neighbourhood contains the intersection and principal elements reverse inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

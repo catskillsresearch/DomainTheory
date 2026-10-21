@@ -1,3 +1,7 @@
+/-ai
+This file gathers and re-exports the setting of Factoid 3.6 together with monotonicity of closure under entailment and under inclusion, the inequality of a finite approximation below the element it approximates, the membership form and the carrier form of the approximation identity, and directedness of the closures contained in an element.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.Basic

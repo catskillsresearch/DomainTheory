@@ -1,3 +1,6 @@
+/-ai
+Scott's functional abstraction sends a Scott map f from the product of D and D' into D'' to the Scott map that carries x to the curried Scott map y mapped to f of the pair (x, y). The outer map preserves directed suprema, so the abstraction is a Scott map.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

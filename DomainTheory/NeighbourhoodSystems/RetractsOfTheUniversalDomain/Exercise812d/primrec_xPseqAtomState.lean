@@ -1,3 +1,8 @@
+/-ai
+The map sending a paired code to the packed state of the X half-step atom at its two components is primitive recursive.
+
+The left component is primitive recursive, as are the two atom-pair indices and the atom-pair junk flag at the two components. Packing those three values is primitive recursive, and pairing the constant 1 with that pack is primitive recursive. Composing the primitive-recursive X sub-step with the pair of the left component and that inner code, and identifying the result by reflexivity, gives the claim.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

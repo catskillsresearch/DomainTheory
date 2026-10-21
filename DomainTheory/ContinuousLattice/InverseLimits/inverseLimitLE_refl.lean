@@ -1,3 +1,8 @@
+/-ai
+The coordinatewise order on compatible sequences is reflexive.
+
+At every stage, the coordinate lies below itself.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

@@ -1,3 +1,9 @@
+/-ai
+A Scott-continuous map is monotone on elements.
+
+Monotonicity is the monotone field of the Scott-continuous map.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable

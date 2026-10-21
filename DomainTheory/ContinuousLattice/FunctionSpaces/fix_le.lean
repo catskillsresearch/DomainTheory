@@ -1,3 +1,8 @@
+/-ai
+The value fix f lies below every pre-fixed point of f. If f x is below x, then fix f is below x.
+
+This is the least-pre-fixed-point property of the least fixed point of the order homomorphism associated with f.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,3 +1,8 @@
+/-ai
+The family of the three-token system is not finitely consistent.
+
+Finite consistency applied to the length-three sequence of the three neighbourhoods would supply a neighbourhood contained in their intersection. That intersection is empty, so the neighbourhood would be empty, while membership in the system is nonemptiness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

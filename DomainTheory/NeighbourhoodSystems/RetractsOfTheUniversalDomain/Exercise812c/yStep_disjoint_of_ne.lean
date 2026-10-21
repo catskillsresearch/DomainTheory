@@ -1,3 +1,8 @@
+/-ai
+The two outputs of yStep at two different sign bits are pairwise disjoint on each side.
+
+The generic disjointness of the paired step at the split specification, with the sides exchanged, gives the two empty intersections, and swapping them restores the original order of the components.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

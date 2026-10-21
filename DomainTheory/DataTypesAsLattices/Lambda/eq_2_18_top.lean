@@ -1,3 +1,8 @@
+/-ai
+Top is the graph of the constant map with value ⊤.
+
+Every number is some pair code, and the constant value contains its right component. Every element of a graph lies in ⊤.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

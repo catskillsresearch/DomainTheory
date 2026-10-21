@@ -1,3 +1,8 @@
+/-ai
+The empty string belongs to the lift master.
+
+Membership is the inserted element of the set insertion that defines the lift master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

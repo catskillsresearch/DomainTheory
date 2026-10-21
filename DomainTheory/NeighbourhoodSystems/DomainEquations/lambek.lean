@@ -1,3 +1,6 @@
+/-ai
+Lambek's lemma packages the structure map of an initial T-algebra as an isomorphism from the image of the carrier under T back to the carrier, with inverse the descent homomorphism into the algebra whose structure map is T of the original structure map. One composite is the identity by the lemma that the structure map after that descent is the identity. The other composite equals T of that identity, because the descent is a homomorphism, the two algebra structures agree, and T preserves composition and identities.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

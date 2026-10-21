@@ -1,3 +1,9 @@
+/-ai
+Application of a sequence pair at one returns the right argument.
+
+This is the one-place application equation for the two-place sequence.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

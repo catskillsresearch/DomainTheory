@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 4.5 (ii). If a and b are retracts, then u lies in the range of a ⊕ b if and only if u is bottom, or u is top, or u is the sequence pair of the numeral 0 with an element of the range of a, or u is the sequence pair of the numeral 1 with an element of the range of b.
+
+If u is fixed by the sum, the application law writes u as the double conditional of its application at the numeral 0. The four cases of that conditional are the left injection, the right injection, the mixed value top, and the empty value bottom, and the retract laws recover the payloads of the injections. In the other direction the four alternatives are the range lemmas for bottom, for top, for a left injection, and for a right injection.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

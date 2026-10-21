@@ -1,3 +1,8 @@
+/-ai
+Evaluating the embedding i_∞ at an element x of D_∞ returns the supremum over n of the values of the summands iInfTerm n at x.
+
+The indexed supremum is the supremum of the range of iInfTerm. Evaluating a supremum of Scott maps is pointwise, the image of that range is the range of the composite which applies each summand to x, and the supremum of that range is the indexed supremum of the values.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

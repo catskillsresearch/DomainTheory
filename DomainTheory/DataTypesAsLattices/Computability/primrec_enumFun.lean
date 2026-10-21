@@ -1,3 +1,8 @@
+/-ai
+For each partial-recursive code c, the stage-bounded enumerator enumFun c is primitive recursive.
+
+The bounded evaluation of the second unpaired component at c on the first unpaired component is primitive recursive by composing primrec_evaln. The function which returns one more than the first unpaired component when that evaluation is defined, and returns 0 otherwise, is primitive recursive by a conditional, rewritten by the successor equation. The characterization Nat.Primrec follows by nat_iff and a reflexive rewriting.
+ai-/
 module
 
 public import Mathlib.Computability.RE

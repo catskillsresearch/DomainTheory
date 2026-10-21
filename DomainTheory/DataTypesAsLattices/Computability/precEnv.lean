@@ -1,3 +1,6 @@
+/-ai
+The environment for the primitive-recursion constructor of the primitive recursive functions sends index 3 to the recursion operator, index 4 to f, index 5 to g, index 6 to the first unpairing combinator, index 7 to the second unpairing combinator, index 8 to the pairing combinator, and every other index to bottom.
+ai-/
 module
 
 public import Mathlib.Computability.RE

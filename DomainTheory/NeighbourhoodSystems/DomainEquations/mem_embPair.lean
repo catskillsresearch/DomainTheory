@@ -1,3 +1,8 @@
+/-ai
+A tagged point lies in the pair embedding of P and Q exactly when its list begins with true and the rest lies in P, or it begins with false and the rest lies in Q.
+
+The equivalence is the definition of the pair embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

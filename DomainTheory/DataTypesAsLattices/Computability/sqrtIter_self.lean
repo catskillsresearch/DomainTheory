@@ -1,3 +1,8 @@
+/-ai
+Running the square-root iteration for n steps on n yields the integer square root of n.
+
+Rewrite by sqrtIter_eq_min. The minimum of n and the square root is the square root, because Nat.sqrt_le_self says that the square root is at most n.
+ai-/
 module
 
 public import Mathlib.Computability.RE

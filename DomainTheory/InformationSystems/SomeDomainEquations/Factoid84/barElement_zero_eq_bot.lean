@@ -1,3 +1,8 @@
+/-ai
+The finite element of 0 equals the bottom element of the powerset system P.
+
+The two elements are compared by antisymmetry. A token of the finite element of 0 equals 0, whether by the bottom clause or by equality with 0, and 0 belongs to the bottom element. A token of the bottom element equals 0, and 0 belongs to the finite element of 0 by the bottom clause of its membership criterion.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

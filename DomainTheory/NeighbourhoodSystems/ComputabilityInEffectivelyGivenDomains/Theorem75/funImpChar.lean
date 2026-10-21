@@ -1,3 +1,6 @@
+/-ai
+The per-mask implication character selects the output consistency characteristic when the input consistency characteristic equals one, and returns one otherwise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

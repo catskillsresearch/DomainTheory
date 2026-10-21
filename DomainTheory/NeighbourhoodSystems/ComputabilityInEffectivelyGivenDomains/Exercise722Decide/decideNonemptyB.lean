@@ -1,3 +1,6 @@
+/-ai
+decideNonemptyB searches the words bounded by autStateCard e and returns true when the matcher accepts one of them.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

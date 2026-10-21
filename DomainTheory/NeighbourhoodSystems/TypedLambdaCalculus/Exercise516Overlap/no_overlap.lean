@@ -1,3 +1,8 @@
+/-ai
+No overlap of any period occurs at any offset in the Thue–Morse bit sequence.
+
+The argument is strong induction on the period. An overlap supplies the period relations and a period at least 1, and the period is even or odd. If the period is twice q, then q is at least 1. An even offset reduces the even positions, by the even recurrence, to an overlap of period q, and an odd offset does the same after the odd recurrence and cancellation of the two negations; either contradicts the inductive hypothesis. If the period is one more than twice q and q is zero, the relations at steps 0 and 1 contradict the absence of three consecutive equal bits. If the offset is even and q is positive, the relations at steps 0 through 3 rewrite by the even and odd recurrences and contradict the absence of three consecutive equal bits, by cases on the bits involved. If the offset is odd and q is 1, the relations at steps 0 through 3 are impossible by cases on the four bits. If the offset is odd and q is at least 2, the relations at steps 1 through 4 likewise contradict the absence of three consecutive equal bits.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse

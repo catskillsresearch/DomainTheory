@@ -1,3 +1,6 @@
+/-ai
+The coded meet step reads its argument as a pair of the next index with a pair of the accumulator and an unused parameter, and applies the meet step to that accumulator and that index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

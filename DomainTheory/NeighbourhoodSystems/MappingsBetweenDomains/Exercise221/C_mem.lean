@@ -1,3 +1,8 @@
+/-ai
+A set of finite binary strings is a neighbourhood of the system C if and only if it satisfies memC.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

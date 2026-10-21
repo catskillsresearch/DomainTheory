@@ -1,3 +1,6 @@
+/-ai
+pathStateAt returns the state reached after reading the first n symbols of a concrete path, by calling the auxiliary recursion pathStateAtAux.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

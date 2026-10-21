@@ -1,3 +1,8 @@
+/-ai
+A nonempty denotation belongs to S.
+
+The proof is by induction on the expression. The universal language and a singleton are the corresponding generators of S. A nonempty concatenation splits as a word from each factor, so both factors are nonempty, and the inductive hypotheses with the concatenation generator close the argument. A nonempty intersection has nonempty factors because each factor contains the intersection, and the inductive hypotheses with the intersection generator close the argument.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

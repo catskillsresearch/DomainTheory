@@ -1,3 +1,8 @@
+/-ai
+The flat domain admits no strictly increasing sequence of elements indexed by the natural numbers.
+
+The first three terms of such a sequence would form a strict three-element chain, since strict monotonicity applies at the two successor steps among 0, 1, and 2.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

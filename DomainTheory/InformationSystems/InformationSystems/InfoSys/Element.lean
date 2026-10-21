@@ -1,3 +1,6 @@
+/-ai
+An element of an information system is a set of tokens such that every finite subset is consistent and the set is closed under entailment.
+ai-/
 module
 
 

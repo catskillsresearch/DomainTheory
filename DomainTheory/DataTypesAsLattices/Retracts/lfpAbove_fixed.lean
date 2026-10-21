@@ -1,3 +1,8 @@
+/-ai
+If a Scott-continuous map lies above a set x, the least upper bound of the iterates above x is a fixed point.
+
+The chain lemma rewrites the image of the union as the union of the successor iterates. An element of a successor iterate lies in the full union one index later. Conversely, an element of the starting iterate lies in the image by the hypothesis that the starting set lies below its image, and an element of a successor iterate is already a member of that same summand of the image union.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

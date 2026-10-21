@@ -1,3 +1,8 @@
+/-ai
+For an approximable map from a neighbourhood system into O, the set of elements sent to the top element is open.
+
+That set is the preimage of the basic open of the empty set under the element map, because the image is the top element exactly when it contains the empty set. The basic open of the empty set is open, and the element map of an approximable map is continuous, so the preimage is open.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

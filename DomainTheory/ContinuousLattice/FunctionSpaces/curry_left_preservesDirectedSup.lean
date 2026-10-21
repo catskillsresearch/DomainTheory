@@ -1,3 +1,8 @@
+/-ai
+For a Scott map f on a product and a fixed second coordinate y, the curried map x ↦ f(x, y) preserves directed suprema.
+
+The image of a nonempty directed set S under x ↦ (x, y) is nonempty, and it is directed because a common upper bound c of two indices gives the pair (c, y) above both image pairs. The value of the curried map at the supremum of S is f at the pair (⊔ S, y). That pair is the supremum of the image, the Scott map f preserves the directed supremum of the image, and the image of the curried map is the image of that composite.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

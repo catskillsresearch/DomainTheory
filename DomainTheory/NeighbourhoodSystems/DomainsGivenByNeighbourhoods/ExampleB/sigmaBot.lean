@@ -1,3 +1,6 @@
+/-ai
+The finite element determined by a finite binary string is the principal filter of the cone of that string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

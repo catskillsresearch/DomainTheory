@@ -1,3 +1,8 @@
+/-ai
+The up-set of zero is the set of all naturals.
+
+Extend an arbitrary natural and simplify the defining inequality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

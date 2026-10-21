@@ -1,3 +1,6 @@
+/-ai
+The combined sub-selection of an index list, relative to two further lists, retains those entries that lie in the first list or the second.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

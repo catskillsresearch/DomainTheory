@@ -1,3 +1,6 @@
+/-ai
+The slice of a set U at an index i is the product neighbourhood of the tuple that equals U at i and equals the master at every other index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,3 +1,9 @@
+/-ai
+If the done flag is one, the untagging transition returns its state.
+
+Unfold the transition and rewrite the selection by the flag one.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

@@ -1,3 +1,8 @@
+/-ai
+The least single-step map from Y to Z lies in the step from Y to Z.
+
+The least map of the one-element list of neighbourhoods lies in the step function of that list, and the step function of a one-element list is the step neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

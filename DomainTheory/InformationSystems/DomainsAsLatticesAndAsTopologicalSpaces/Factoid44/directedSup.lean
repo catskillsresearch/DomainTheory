@@ -1,3 +1,6 @@
+/-ai
+Factoid 4.4 defines the supremum of a nonempty directed family of elements to be the join of the family, using that the union of the carriers of a nonempty directed family is finitely consistent.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

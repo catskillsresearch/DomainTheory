@@ -1,3 +1,6 @@
+/-ai
+The constant-map embedding and the map min exhibit a complete lattice D as a projection of the function space of Scott maps on D. The composite of min after the embedding is the identity, because the least value of a constant map is that constant. The composite of the embedding after min lies below the identity, because the constant function with value f at bottom lies below f at every argument by monotonicity of f. This is Scott's Proposition 3.13.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

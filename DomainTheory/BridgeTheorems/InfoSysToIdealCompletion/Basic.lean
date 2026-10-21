@@ -1,3 +1,6 @@
+/-ai
+The domain of an information system is the ideal completion of its poset of finite elements, the closures of consistent finite sets of tokens. The abbreviation infoSys_to_idealCompletion names the order isomorphism between the elements of the system and the ideals of those finite elements.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

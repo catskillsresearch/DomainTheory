@@ -1,3 +1,8 @@
+/-ai
+The concatenation of the singleton of one word with the singleton of another is the singleton of their concatenation.
+
+By extensionality and the membership criterion for concatenation, a split in the concatenation is forced to be the two words, and those two words witness the concatenated word.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+The intersection of the hint neighbourhoods of n and m equals the hint neighbourhood of k if and only if k is a meet of n and m.
+
+Unfold the meet condition and rewrite equality of sets as agreement at every index. Membership in a hint neighbourhood is inclusion, and the resulting equivalence is the meet condition with the two sides exchanged.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the opening of Exercise 2.13: the approximable-mapping exercises, the topology of a domain from Exercise 1.22, the approximable mapping determined by a continuous function, monotonicity of a continuous function, and the nonempty instance for the neighbourhoods of an element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

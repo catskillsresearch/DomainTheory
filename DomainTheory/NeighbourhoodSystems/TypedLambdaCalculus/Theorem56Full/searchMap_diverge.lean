@@ -1,3 +1,8 @@
+/-ai
+If f has no zero along the vectors with tail v, the search returns bottom from every counter.
+
+Antisymmetry with the leastness of bottom reduces the claim to an inequality. Rewrite the search through evaluation at the argument, express the least fixed point as the directed supremum of its approximants, and push the element map through that supremum. Each approximant, evaluated at the argument element of the counter followed by v, equals bottom, so the supremum lies below bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

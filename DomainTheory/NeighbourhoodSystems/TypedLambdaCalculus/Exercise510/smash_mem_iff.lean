@@ -1,3 +1,8 @@
+/-ai
+A set is a neighbourhood of the smash product exactly when it is the product of the two master neighbourhoods or a proper smash neighbourhood.
+
+The two sides agree by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

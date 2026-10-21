@@ -1,3 +1,8 @@
+/-ai
+The prefix characteristic of two codes is at most 1.
+
+It is a list-equality characteristic, and every list-equality characteristic is at most 1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

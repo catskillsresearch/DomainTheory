@@ -1,3 +1,8 @@
+/-ai
+For every real number t, the rational 1 lies in the cut up-set cutU t.
+
+The bound 1 ≤ 1 holds by reflexivity, and the second clause of the cut holds because the rational equals 1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,8 @@
+/-ai
+A set belongs to the lift of an element x if and only if it is the lift master or the false tag of a neighbourhood of x.
+
+The equivalence is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

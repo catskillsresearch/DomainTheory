@@ -1,3 +1,8 @@
+/-ai
+If σ is a prefix of τ, then the tail of σ is a prefix of the tail of τ.
+
+Decompose the prefix as an append of a remainder. The empty case simplifies. For a cons, the tail of σ followed by the remainder is a prefix of the tail of the concatenation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

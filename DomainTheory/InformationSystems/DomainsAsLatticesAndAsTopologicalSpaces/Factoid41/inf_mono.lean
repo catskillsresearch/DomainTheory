@@ -1,3 +1,8 @@
+/-ai
+The meet is monotone in each argument.
+
+The meet of the smaller elements lies below each larger element by transitivity of a meet inequality with the given inequality, and the universal property of the meet assembles the two bounds.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33

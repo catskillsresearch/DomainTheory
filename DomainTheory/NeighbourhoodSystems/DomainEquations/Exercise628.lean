@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic material of Exercise 6.28, the order embedding of element domains induced by a subdomain embedding, the order isomorphism obtained from mutual order embeddings of finite partial orders, the theorem that finite element domains which embed in each other as subdomains are isomorphic, the theorem that a system with finitely many neighbourhoods has finitely many elements, and the theorem that finite neighbourhood systems which embed in each other as subdomains are isomorphic.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.Basic

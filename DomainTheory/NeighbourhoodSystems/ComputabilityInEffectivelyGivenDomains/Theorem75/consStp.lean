@@ -1,3 +1,6 @@
+/-ai
+The packed consistency step applies the consistency update to the state in the inner first half of the second projection and the entry in the first projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

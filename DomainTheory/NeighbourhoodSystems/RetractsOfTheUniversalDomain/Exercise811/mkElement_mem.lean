@@ -1,3 +1,8 @@
+/-ai
+A set belongs to the element built from a predicate U if and only if it is an interval [0, r) for some rational r satisfying U.
+
+The two sides are the membership clause in the definition of that element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,8 @@
+/-ai
+The square-root step combinator sqrtStepC is combinatory.
+
+Unfold sqrtStepC and apply the completeness law theorem_2_4_complete. The interpreted term is combinatory by ofComb_combinatory, because every value of the environment sqrtEnv is combinatory.
+ai-/
 module
 
 public import Mathlib.Computability.RE

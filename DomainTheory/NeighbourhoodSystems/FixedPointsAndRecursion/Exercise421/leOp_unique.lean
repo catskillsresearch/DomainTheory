@@ -1,3 +1,8 @@
+/-ai
+Any fixed point of Scott's operator on subsets of pairs of naturals equals the order relation.
+
+Extend an arbitrary pair and rewrite membership by the pointwise fixed-point law. The resulting statement is the definition of the order relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

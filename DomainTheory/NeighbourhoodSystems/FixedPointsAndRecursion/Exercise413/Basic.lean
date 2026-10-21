@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the infimum of a nonempty family of filters, the fixed-point theorem, the set of pre-fixed points and its membership law, and the construction of the least fixed point of a monotone map as that infimum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

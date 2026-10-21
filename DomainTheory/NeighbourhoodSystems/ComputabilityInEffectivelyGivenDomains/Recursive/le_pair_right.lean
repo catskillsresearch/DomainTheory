@@ -1,3 +1,8 @@
+/-ai
+The right component of a pair is at most the pair.
+
+The component is at most its own square: the zero case simplifies, and a positive component is bounded by multiplying on the left by itself. Unfold the pairing function and split; arithmetic closes both branches.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

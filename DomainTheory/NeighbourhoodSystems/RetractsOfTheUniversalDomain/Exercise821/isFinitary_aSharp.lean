@@ -1,3 +1,8 @@
+/-ai
+If an endomap of the universal domain is a finitary projection, then its sharp is finitary.
+
+Apply the finitariness lemma for a projection pair to the transported embedding and projection of the fixed neighbourhood: one composite is the identity, and the other is the sharp.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

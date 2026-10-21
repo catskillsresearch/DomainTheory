@@ -1,3 +1,8 @@
+/-ai
+If an approximable endomap is computable, there is a primitive-recursive characteristic such that the diagonal fixed-point predicate holds at an index if and only if the characteristic equals one on the pair of some witness with that index.
+
+Enumerability of the diagonal supplies a decidable witness predicate, and that predicate supplies a primitive-recursive characteristic. The enumerability equivalence and the characteristic equivalence, the latter at each witness, compose to the stated characterization.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,9 @@
+/-ai
+The value of p at the fin-code of j is contained in the Myhill operator of val and p applied to the finite set coded by j. This is the appendix inclusion of Theorem 3.5.
+
+If m lies in that value, the index j is a finite piece of the finite set, and the pair of j and m lies in the operator after rewriting by the value of fin.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+Membership of a basic neighbourhood in the finitely generated family of a decoded list is recursively decidable. It holds exactly when some bit mask below two to the power of the list code selects a consistent sublist whose intersection equals that basic neighbourhood. The conjunct that the basic neighbourhood itself is a neighbourhood is always true, so it does not enter the decidable content.
+
+Take the computable consistency function of the presentation. The folded consistency test decides whether a bit-selected intersection is a neighbourhood, and the primitive-recursive index character together with decidable equality of basic neighbourhoods decides whether that intersection equals the given generator. Bounded search up to two to the power of the list code decides the existential. In one direction a Fin witness is a sublist, which a bit mask below the decoded length represents, and the index character together with the specification of the intersection index recovers the equality. In the other direction the bit-selected sublist is a sublist, the generator is a neighbourhood, and the same two facts recover the equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

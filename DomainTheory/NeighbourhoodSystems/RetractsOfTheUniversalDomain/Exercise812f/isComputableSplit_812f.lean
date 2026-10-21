@@ -1,3 +1,6 @@
+/-ai
+The concrete split of V against U is a computable split. It is the general bisection split applied to V's computable difference, U's canonical bisection, and V's positivity, lack of minimal neighbourhoods, and closure under difference.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

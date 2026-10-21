@@ -1,3 +1,9 @@
+/-ai
+Application of the untagged-payload combinator to u is application of u to the natural number one.
+
+This is the application equation for the second projection.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

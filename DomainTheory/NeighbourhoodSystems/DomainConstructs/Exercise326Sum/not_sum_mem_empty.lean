@@ -1,3 +1,8 @@
+/-ai
+The empty set is not a neighbourhood of a separated sum.
+
+A sum neighbourhood is the sum master, a left copy, or a right copy. The sum master contains the token none, and a left or right copy contains an element because its source neighbourhood is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

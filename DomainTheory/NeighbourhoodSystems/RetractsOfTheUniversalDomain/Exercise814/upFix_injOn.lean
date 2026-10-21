@@ -1,3 +1,8 @@
+/-ai
+If two compact fixed points have the same principal up-set, their underlying elements are equal.
+
+Each compact belongs to its own up-set, hence to the other up-set, and the two inequalities give equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

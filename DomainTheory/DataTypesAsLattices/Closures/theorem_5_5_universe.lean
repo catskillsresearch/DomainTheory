@@ -1,3 +1,8 @@
+/-ai
+Scott's theorem on the universe says that the universe combinator is itself a closure, and that its typed points are exactly the closure operations.
+
+The universe combinator contains the identity combinator and is a retract. A set is a closure exactly when it equals the application of the universe combinator, and that equality is the typing equation read in either direction.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,3 +1,6 @@
+/-ai
+The domain C of finite and infinite binary sequences is an object of the category of neighbourhood systems with nonempty neighbourhoods, on the token type of binary strings, using that every neighbourhood of C is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

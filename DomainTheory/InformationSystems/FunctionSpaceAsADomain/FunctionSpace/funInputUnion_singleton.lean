@@ -1,3 +1,9 @@
+/-ai
+The input union of a singleton function-space token is the input component of that token.
+
+Membership is compared in both directions. A member of the input union belongs to the input of the unique token of the singleton, and conversely that input is recovered from singleton membership.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,3 +1,8 @@
+/-ai
+Every natural number n is at most the square of its square root plus twice that square root.
+
+The number n is strictly less than the square of one more than its square root, and that square expands as the square of the root plus the root plus the root plus 1, so arithmetic gives the bound.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

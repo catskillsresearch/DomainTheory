@@ -1,3 +1,8 @@
+/-ai
+If a set X is nonempty, then its left copy is nonempty.
+
+Send a witness a in X to the token t0 a.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

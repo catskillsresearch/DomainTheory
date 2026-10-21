@@ -1,3 +1,8 @@
+/-ai
+If an approximable map is computable, then its power-domain action is a computable map between the canonical power-domain presentations built from primitive-recursive consistency deciders.
+
+This is the recursive enumerability of the relation on power-domain codes.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

@@ -1,3 +1,8 @@
+/-ai
+The product equivalence sends a product element to the pair of its first and second components.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

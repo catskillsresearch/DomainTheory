@@ -1,3 +1,6 @@
+/-ai
+A token of V is a token of U precisely when it is distinct from the top token ∇, as in Scott's clause (7).
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

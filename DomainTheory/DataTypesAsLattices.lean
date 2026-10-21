@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Scott's development of data types as lattices: the graph model Pω, continuous maps, graphs, fixed points, embeddings, the λ-calculus, computability, enumeration, retracts, closures, the classification of subsets, and functionality.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Pomega

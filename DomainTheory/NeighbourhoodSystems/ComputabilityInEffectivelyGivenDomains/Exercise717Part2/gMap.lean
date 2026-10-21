@@ -1,3 +1,6 @@
+/-ai
+The universal strict map determined by the two algebra maps is the approximable map from the sharp domain to the target whose relation is their catamorphism relation. Its domain, codomain, intersection, and monotonicity laws are the corresponding laws of that relation, and its master relation is the master clause.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

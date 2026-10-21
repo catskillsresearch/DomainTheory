@@ -1,3 +1,6 @@
+/-ai
+TOT is the set of elements of Pω that equal their own application of the dollar combinator and send every numeral to some numeral. In Scott 1976 these are the graphs of total number-theoretic functions: dollar-invariant and integer-valued on integers.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+The canonical list code is primitive recursive.
+
+The filter step of the right projection is primitive recursive. The flat map of that function, fed the pair of the constant zero and the input, equals the canonical list code once the pair is unpacked.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

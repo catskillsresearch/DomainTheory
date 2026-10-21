@@ -1,3 +1,8 @@
+/-ai
+The image of an element under the injection consists of those neighbourhoods of E that contain some neighbourhood of the element.
+
+A membership witness in the image is a neighbourhood of the element contained in the target neighbourhood, and such a neighbourhood is a witness in the other direction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

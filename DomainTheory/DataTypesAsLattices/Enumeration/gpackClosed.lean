@@ -1,3 +1,6 @@
+/-ai
+The term gpackClosed is the nested binary sequencing of the closed successor term, the closed predecessor term, the closed conditional term, the closed K term, and the closed S term.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

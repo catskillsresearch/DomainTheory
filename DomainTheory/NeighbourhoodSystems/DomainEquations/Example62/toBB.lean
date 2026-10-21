@@ -1,3 +1,6 @@
+/-ai
+The forward half of Scott's isomorphism B ≅ B + B sends an element x of B to the element of the separated sum that contains the sum master, contains the left injection of a neighbourhood X of B precisely when x contains the 0-copy embBit false X, and contains the right injection of a neighbourhood Y of B precisely when x contains the 1-copy embBit true Y.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

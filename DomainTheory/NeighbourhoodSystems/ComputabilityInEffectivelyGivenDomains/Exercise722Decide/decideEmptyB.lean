@@ -1,3 +1,6 @@
+/-ai
+decideEmptyB decides emptiness of the language of an expression. It returns the negation of the bounded nonempty search decideNonemptyB.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

@@ -1,3 +1,9 @@
+/-ai
+Scott's enumeration theorem (Theorem 3.2) asserts that the recursively enumerable elements are the values val(n) for n a natural number, with val(0) = G and val(apply(n)(m)) = val(n) applied to val(m). Formally, every val(n) is recursively enumerable, val(0) equals G, and the value of an application code is the application of the values.
+
+The three clauses are the combinatory character of every value, the zero equation for val, and the application equation for val.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

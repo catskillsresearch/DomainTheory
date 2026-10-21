@@ -1,3 +1,8 @@
+/-ai
+If a finite string σ is a prefix of a finite string τ, the head recursion started at the bottom element of the carrier is smaller at σ than at τ.
+
+The prefix exhibits τ as σ followed by a suffix. Appending rewrites the value at τ as the recursion, started at the value of the suffix, evaluated on σ. Monotonicity in the base point, using that the bottom element lies below the value of the suffix, gives the comparison.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

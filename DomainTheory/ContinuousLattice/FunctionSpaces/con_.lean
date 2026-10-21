@@ -1,3 +1,6 @@
+/-ai
+The map of Proposition 3.13 sends an element x to the constant Scott map with value x. It preserves directed suprema: by extensionality of Scott maps it is enough to evaluate at an arbitrary point, the pointwise formula for the supremum of Scott maps and the formula for a constant map turn the image of the constants into the original set, and the resulting supremum is the constant map at the supremum of that set. A map that preserves directed suprema is continuous, so the assignment is a Scott map.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

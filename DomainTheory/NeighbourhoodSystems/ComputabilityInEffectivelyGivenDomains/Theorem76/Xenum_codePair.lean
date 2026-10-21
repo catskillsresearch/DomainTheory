@@ -1,3 +1,8 @@
+/-ai
+The enumerated neighbourhood of the one-entry code of indices a and b is the step neighbourhood from the neighbourhood at a to the neighbourhood at b.
+
+This is the singleton case of the enumeration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

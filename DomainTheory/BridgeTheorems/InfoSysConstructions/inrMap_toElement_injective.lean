@@ -1,3 +1,8 @@
+/-ai
+The element map of the right inclusion of information systems is injective.
+
+If the images of x and y agree, both inequalities transport tokens through the right-sum extraction. A token of x is a token of the extracted right element of the image of x, hence is the underlying token of a right token of that image; after rewriting by the equality of images it is a token of the extracted right element of the image of y, which equals y. The opposite inequality is the same argument with x and y exchanged.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

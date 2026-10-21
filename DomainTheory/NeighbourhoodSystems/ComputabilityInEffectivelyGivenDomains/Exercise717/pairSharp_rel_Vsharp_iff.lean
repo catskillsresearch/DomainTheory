@@ -1,3 +1,8 @@
+/-ai
+The pairing map relates the product neighbourhood coded by t to the sharp neighbourhood coded by k exactly when the sharp neighbourhood at the even index two times t plus two is contained in the sharp neighbourhood coded by k.
+
+The even-index law says that this sharp neighbourhood is the paired embedding of the two factors of the product neighbourhood. One direction reads off that inclusion after the factors are identified. The other direction supplies the product of those factors, the membership of the target, and the given inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Combinators77

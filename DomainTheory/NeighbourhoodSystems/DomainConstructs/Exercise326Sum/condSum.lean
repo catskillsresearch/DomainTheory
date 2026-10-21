@@ -1,3 +1,6 @@
+/-ai
+The sum-valued conditional is the composite of the conditional on the separated sum with the embedding that injects the two value slots into that sum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

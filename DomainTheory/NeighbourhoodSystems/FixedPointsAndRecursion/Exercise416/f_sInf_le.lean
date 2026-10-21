@@ -1,3 +1,8 @@
+/-ai
+For a nonempty set of fixed points of a monotone endomap, the image of the infimum lies below the infimum.
+
+It is enough to lie below each member of the set. Monotonicity places the image of the infimum below the image of the member, and the fixed-point equation replaces that image by the member.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413

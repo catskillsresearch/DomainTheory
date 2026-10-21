@@ -1,3 +1,6 @@
+/-ai
+The bottom token of U is the bottom token of V, as in Scott's clause (8), packaged as a U-token.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

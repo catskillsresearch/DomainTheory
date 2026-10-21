@@ -1,3 +1,8 @@
+/-ai
+An appendix lemma for Theorem 2.1 states that the interpretation of a term is Scott continuous in any one coordinate of the environment.
+
+The proof is by induction on the term. A variable is the identity or a constant, according as its index is the varied coordinate. Zero is a constant. Successor and predecessor compose the inductive hypothesis with continuity of those operations by Theorem 1.3. For a conditional, each branch of a membership is split into Scott-union witnesses for the chosen branch and for the test, and the join of those finite sets is a witness; conversely, monotonicity restores the branch. For an application, continuity of the function part and a finite cover of the argument finite set, drawn from continuity of the argument part, join to a Scott-union witness, and conversely monotonicity of both parts restores the pair. An abstraction that binds the varied index is constant in that index. An abstraction that binds a different index reduces, after the two environment updates are commuted, to graph continuity and the inductive hypothesis.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

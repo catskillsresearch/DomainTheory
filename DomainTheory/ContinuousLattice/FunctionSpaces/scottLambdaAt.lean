@@ -1,3 +1,6 @@
+/-ai
+Currying a Scott map f from the product of D and D' in the second variable, at a fixed element x of D, yields the Scott map sending y to f of the pair (x, y). Right currying preserves directed suprema, so the result is a Scott map.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

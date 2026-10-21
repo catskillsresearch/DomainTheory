@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, before (4.44). The four-fold product by expanded indices is the graph of the map that applies the four retracts to the zeroth through third components of the argument and packs the four values as a four-place sequence. The construction uses those expanded indices for the product.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

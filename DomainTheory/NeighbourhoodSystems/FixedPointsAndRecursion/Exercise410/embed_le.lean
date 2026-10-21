@@ -1,3 +1,8 @@
+/-ai
+The embedding of a relativized filter below an element a lies below a.
+
+A neighbourhood of the embedding contains a neighbourhood of a, and upward closure of a puts that neighbourhood in a.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

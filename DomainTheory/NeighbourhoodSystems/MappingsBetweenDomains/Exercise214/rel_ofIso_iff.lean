@@ -1,3 +1,8 @@
+/-ai
+For a neighbourhood X, the approximable relation of a domain isomorphism holds between X and a set Y exactly when Y is a neighbourhood and the phi-image of X is contained in Y.
+
+A relation witness is membership of Y in the image of the principal element of X. The defining equation rewrites that image as the principal element of the phi-image, whose membership is the neighbourhood condition together with the inclusion. The converse rebuilds the relation from that membership.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

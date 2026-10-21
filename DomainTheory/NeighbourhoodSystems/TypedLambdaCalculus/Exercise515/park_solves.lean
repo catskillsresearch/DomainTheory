@@ -1,3 +1,8 @@
+/-ai
+The pair (x₀, y₀) solves David Park's system: x₀ equals a · x₀ ∪ b · y₀ ∪ c, and y₀ equals b · x₀ ∪ a · y₀ ∪ d.
+
+The two equations are the component identities already proved for these two sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

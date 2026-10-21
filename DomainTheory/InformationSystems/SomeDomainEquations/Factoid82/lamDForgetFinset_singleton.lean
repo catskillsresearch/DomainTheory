@@ -1,3 +1,8 @@
+/-ai
+Forgetting a singleton depth token yields the singleton of its underlying raw token.
+
+By extensionality, a raw token in the forget comes from the unique member of the singleton, which is the given token. Conversely the given token is that unique member, and forgetting it returns the raw token of the singleton.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

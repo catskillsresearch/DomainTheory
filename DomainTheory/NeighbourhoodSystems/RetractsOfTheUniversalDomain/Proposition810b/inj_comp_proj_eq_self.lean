@@ -1,3 +1,8 @@
+/-ai
+For a finitary projection, the injection of its fixed neighbourhood system composed with the projection equals the finitary projection.
+
+The equality is the identity that a finitary projection equals that composition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

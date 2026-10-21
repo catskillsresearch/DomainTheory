@@ -1,3 +1,8 @@
+/-ai
+The combinator H is typed by the arrow from the expression retract to the arrow from the environment retract to the lambda retract.
+
+Apply the typing lemma for a retract to the arrow retract built from the expression, environment, and lambda retracts.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

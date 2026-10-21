@@ -1,3 +1,8 @@
+/-ai
+The left projection of finite sets of tokens of V is monotone.
+
+A token of the left projection of the smaller set has its left-pair token in that set, hence in the larger set, and therefore lies in the left projection of the larger set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

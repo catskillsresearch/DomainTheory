@@ -1,3 +1,8 @@
+/-ai
+If the source is a T₀ space and the sets U n form a topological basis, the embedding along U is injective.
+
+Equal images mean that the two points lie in exactly the same basis elements. They are then inseparable: any open neighbourhood of one contains a basis element around that point, and the other point lies in the same basis element, hence in the open. Inseparable points of a T₀ space are equal.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

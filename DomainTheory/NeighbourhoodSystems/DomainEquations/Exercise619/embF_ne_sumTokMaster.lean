@@ -1,3 +1,8 @@
+/-ai
+The false-bit embedding of a set of strings is distinct from the master of the concrete sum.
+
+Equality would carry the empty string from the master into the embedding, and the empty string lies in no bit embedding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

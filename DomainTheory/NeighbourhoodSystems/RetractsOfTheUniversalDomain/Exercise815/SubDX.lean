@@ -1,3 +1,6 @@
+/-ai
+The enumeration of the reconstructed neighbourhood system sends a natural number to the principal up-set of the finitely generated subsystem of its decoded list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

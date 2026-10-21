@@ -1,3 +1,6 @@
+/-ai
+The tag injection used by the expanded sum of Scott 1976, (4.44), pairs a natural-number tag, as a singleton, with a set.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

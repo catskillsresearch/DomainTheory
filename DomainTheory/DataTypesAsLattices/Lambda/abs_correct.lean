@@ -1,3 +1,9 @@
+/-ai
+The combinatory interpretation of the abstraction of c in the variable i, in an environment rho, equals the graph of the map sending v to the interpretation of c in the environment updated by v at i.
+
+The proof is by induction on c. If the variable equals i, the abstraction is S K K, and the identity law for S K K together with the environment update gives the graph of the updated interpretation. If the variable is different from i, the abstraction is K applied to that variable, and the first beta law for K leaves the interpretation unchanged by the update. Each constant is likewise K applied to itself, and the same beta law applies. For an application, the second beta law for S and the two inductive hypotheses reduce the claim to a congruence of graphs, and Theorem 1.2 (i), using continuity of combinatory interpretation under environment update, removes the graphs on each side.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

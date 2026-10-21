@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood containing the leaf 11 is the master neighbourhood, the right branch, or the leaf 11.
+
+Classify the neighbourhood. The master neighbourhood, the right branch, and the leaf 11 are the three stated cases. In each of the other four cases the token 6, which belongs to the leaf 11, fails to belong to the neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

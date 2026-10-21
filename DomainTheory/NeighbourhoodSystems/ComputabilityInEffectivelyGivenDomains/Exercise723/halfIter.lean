@@ -1,3 +1,6 @@
+/-ai
+The value halfIter n k is the k-fold iteration of integer division by 2, applied to n. It is the primitive-recursive core of the binary digit test.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

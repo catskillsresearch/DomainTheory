@@ -1,3 +1,8 @@
+/-ai
+The slice of a set U at an index i equals the product neighbourhood of the one-coordinate update of U at i.
+
+This is the definition of the slice.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

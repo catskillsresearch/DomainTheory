@@ -1,3 +1,8 @@
+/-ai
+Doubling distributes over concatenation of finite strings.
+
+The argument is induction on the first string. The empty string is reflexive. For a nonempty string, simplifying the doubling equation and applying the inductive hypothesis gives the concatenated doubles.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

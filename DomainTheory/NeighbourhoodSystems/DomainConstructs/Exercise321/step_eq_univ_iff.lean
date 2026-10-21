@@ -1,3 +1,8 @@
+/-ai
+A step neighbourhood is the whole function space if and only if its output is the master neighbourhood.
+
+If the step is the whole space, the least map of the empty list lies in it. That map relates the input only to the master, so the master is contained in the output, and the output, already contained in the master, equals the master. If the output is the master, the step is the whole space.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

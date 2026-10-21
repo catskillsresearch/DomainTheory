@@ -1,3 +1,8 @@
+/-ai
+If y is not bottom, the approximable map associated with strict of φ agrees at y with the approximable map associated with φ.
+
+A neighbourhood of the strict application is either the master, which belongs to the original application, or a neighbourhood that already belongs to it. A neighbourhood of the original application is an E-neighbourhood and falls under the clause that y is not bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

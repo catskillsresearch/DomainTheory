@@ -1,3 +1,8 @@
+/-ai
+If n is at most m, the first n entries of the length-m prefix are the length-n prefix.
+
+Unfold the prefix, move the initial segment inside the map of the range, and use that the first n entries of the range of m are the range of n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

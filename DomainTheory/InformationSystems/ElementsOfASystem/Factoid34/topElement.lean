@@ -1,3 +1,7 @@
+/-ai
+When every finite set of tokens is consistent, the top element is the element whose carrier is the whole token set. Consistency of a finite set is the all-consistency hypothesis, and every token belongs to the carrier, so the element is deductively closed.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

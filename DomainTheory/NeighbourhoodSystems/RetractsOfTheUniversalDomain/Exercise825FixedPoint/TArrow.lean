@@ -1,3 +1,6 @@
+/-ai
+The abstract correspondence of Exercise 8.23 sends an endomap of the universal domain to the function space from the fixed neighbourhood of that map to the fixed neighbourhood of the combinator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

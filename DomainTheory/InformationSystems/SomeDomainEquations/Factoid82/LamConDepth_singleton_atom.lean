@@ -1,3 +1,8 @@
+/-ai
+The singleton of an atom is depth-consistent.
+
+Its function-token projection is empty, because an atom is not a function token and the empty finset has no members. Its atom projection is the singleton of that atom, which is consistent by the singleton axiom of A.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

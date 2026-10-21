@@ -1,3 +1,8 @@
+/-ai
+Revaluation along a fixed set is Scott continuous in the functional argument.
+
+A value contributed by an index in the set lies in the application of the functional to the corresponding numeral, so continuity of application in the function argument supplies a Scott-union witness for the revaluation. Conversely, a Scott-union witness contains such an application, and monotonicity of that continuous application returns the value to the revaluation.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

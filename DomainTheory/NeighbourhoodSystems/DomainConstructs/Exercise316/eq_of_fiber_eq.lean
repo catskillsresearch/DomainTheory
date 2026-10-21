@@ -1,3 +1,8 @@
+/-ai
+Two sets of index-token pairs that have the same fiber at every index are equal.
+
+Extensionality on a pair reduces to extensionality of the fiber at its index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

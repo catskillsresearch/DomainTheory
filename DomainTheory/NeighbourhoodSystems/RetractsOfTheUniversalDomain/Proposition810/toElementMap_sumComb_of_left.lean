@@ -1,3 +1,8 @@
+/-ai
+If the sum extraction of an element meets the left copy, then the sum combinator sends the element to the sum injection of the left injection of the first map applied to the left extraction of that extracted element.
+
+The which-map then meets zero, and it cannot meet one, because an element cannot meet both copies. Compare neighbourhoods. The membership law of the sum combinator has three alternatives: the zero alternative is the left branch, the one alternative is impossible, and the master is met by every element. Conversely, the zero alternative holds because the which-map meets zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

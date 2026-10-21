@@ -1,3 +1,8 @@
+/-ai
+In the sharp presentation built from a computable presentation of D, the neighbourhood enumerated at an index is the sharp neighbourhood of that index.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77

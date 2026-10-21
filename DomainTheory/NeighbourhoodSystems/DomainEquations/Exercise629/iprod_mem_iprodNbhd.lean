@@ -1,3 +1,8 @@
+/-ai
+If each set of a family is a neighbourhood and the family is finitely supported, then the product neighbourhood of the family is a neighbourhood of the indexed product.
+
+The family itself is the witnessing tuple.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

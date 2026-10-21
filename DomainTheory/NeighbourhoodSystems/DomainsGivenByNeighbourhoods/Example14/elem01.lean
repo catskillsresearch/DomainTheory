@@ -1,3 +1,6 @@
+/-ai
+The total element at the leaf 01 consists of the master neighbourhood, the left branch, and the leaf 01. Each of these is a neighbourhood, the master neighbourhood belongs to the element, the intersection of any two is again one of the three, and a neighbourhood containing one of them is again one of the three, by the master-subset lemma and the subset cases for the left branch and for the leaf 01.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

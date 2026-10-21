@@ -1,3 +1,8 @@
+/-ai
+The least fixed-point set of an operator on subsets is contained in every pre-fixed point.
+
+A member of the least fixed-point set lies in every pre-fixed point, and the argument applies that property to the given pre-fixed point.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

@@ -1,3 +1,8 @@
+/-ai
+A function-space neighborhood is upward closed in the order of approximable maps.
+
+The neighborhood is the step neighborhood of a list, and step neighborhoods are upward closed.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

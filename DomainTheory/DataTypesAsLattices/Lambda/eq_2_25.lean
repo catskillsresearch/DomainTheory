@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (2.25). Applying the dollar combinator to u and then to x yields the union of the values uᵢ for i ∈ x.
+
+The first application is the graph of sequence revaluation in its right argument, and the beta law for continuity in that argument gives the value.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

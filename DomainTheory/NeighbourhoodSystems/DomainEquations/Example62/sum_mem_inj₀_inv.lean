@@ -1,3 +1,8 @@
+/-ai
+If the left injection of a set X of strings is a neighbourhood of the sum BB, then X is a neighbourhood of B.
+
+The membership splits into the sum master, a left summand, or a right summand. The master case is impossible because the basepoint belongs to the master and not to a left injection. The left-summand case uses injectivity of the left injection. The right-summand case takes a nonempty witness in B and produces a right-injection token, which cannot lie in a left injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

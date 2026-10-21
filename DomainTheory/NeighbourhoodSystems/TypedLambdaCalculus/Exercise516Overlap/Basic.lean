@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the Thue–Morse development and the overlap predicate, as the setting for overlap-freeness of the element t: t has no factor of the form u·a·a·a·v for a nonempty finite block a.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse

@@ -1,3 +1,6 @@
+/-ai
+Bitmask selection keeps those entries of a list whose position has the corresponding bit set, the low bit governing the head, and continues on the shifted mask.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

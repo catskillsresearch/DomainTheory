@@ -1,3 +1,6 @@
+/-ai
+The computable presentation of the Smyth power domain built from an explicit primitive-recursive consistency decider for the original system enumerates neighbourhoods by finite unions of down-sets, intersects them by the intersection code of that decider, and takes as master index the code of the singleton list containing the original master index. Surjectivity is the enumeration theorem, intersection-equality is the computed decider, consistency holds of every code because the empty union is contained in every neighbourhood, and the intersection and master-index specifications are the corresponding correctness lemmas.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

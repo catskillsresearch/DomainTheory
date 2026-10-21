@@ -1,3 +1,8 @@
+/-ai
+The empty set of product tokens is product-consistent.
+
+Both projections of the empty set are empty, and the empty set is consistent in each factor.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

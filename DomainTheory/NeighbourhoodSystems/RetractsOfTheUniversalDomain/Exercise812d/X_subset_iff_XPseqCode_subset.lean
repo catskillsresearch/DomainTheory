@@ -1,3 +1,8 @@
+/-ai
+One code of the first presentation is contained in another if and only if the image of the first code's XPseqCode is contained in the image of the second.
+
+The combined-code subset transfer is instantiated at the even indices twice i and twice j. The even clauses rewrite the combined sets, and the intersections with the masters cancel because both sides already lie in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

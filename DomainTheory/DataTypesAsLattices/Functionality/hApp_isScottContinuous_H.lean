@@ -1,3 +1,8 @@
+/-ai
+For a fixed code and environment, the application clause is Scott-continuous in the candidate interpretation.
+
+The ternary continuity package uses the three separate continuities of the conditional. The test is Theorem 1.3 of continuity of application of the which combinator and continuity of the recursive call in the candidate. The middle argument is the constant bottom. The third argument is the binary continuity package of left continuity of application and continuity of application, fed by Theorem 1.3 of continuity of application of elimination with continuity of the recursive call in the candidate, and by that same continuity of the recursive call.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

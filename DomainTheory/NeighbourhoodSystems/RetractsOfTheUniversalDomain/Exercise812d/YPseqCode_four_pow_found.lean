@@ -1,3 +1,8 @@
+/-ai
+The found flag of the outer combination that defines YPseqCode is 1.
+
+Both inner flags at stage 4 to the n are at most 1, so the combination's found-flag equivalence applies to the fact that at least one of those two flags equals 1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

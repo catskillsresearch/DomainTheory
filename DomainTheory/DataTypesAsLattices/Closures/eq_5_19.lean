@@ -1,3 +1,8 @@
+/-ai
+Applying the closure combinator V twice to a set a equals applying it once.
+
+The graph of V(a) is a closure. The characterization of closures says that this graph is fixed by V. The application law for V identifies the single application with that graph, so the fixed-point equation is the claim.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

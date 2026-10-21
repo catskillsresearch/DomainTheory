@@ -1,3 +1,6 @@
+/-ai
+The diagonal combinator of Table 5.5 (Scott 1981, PRG-19) is the approximable map from a neighbourhood system to its product with itself given by pairing the identity with itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

@@ -1,3 +1,8 @@
+/-ai
+If a finite set is contained in the deductive closure of a finitely consistent set, then some finite subset of that set entails every member of the finite set.
+
+The proof is by induction on the finite set. The empty set is entailed by the empty set. For an insertion of a token into a finite set, one finite subset entails the inserted token and, by the inductive hypothesis, another entails every member of the remaining set. Their union is contained in the original set, hence consistent. Transitivity of entailment along the reflexive entailment of each summand from the union yields the required entailment.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

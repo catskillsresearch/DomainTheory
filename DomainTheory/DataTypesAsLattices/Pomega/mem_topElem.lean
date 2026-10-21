@@ -1,3 +1,8 @@
+/-ai
+Every natural number belongs to the top element.
+
+This is membership in the universal set.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

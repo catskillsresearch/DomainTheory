@@ -1,3 +1,8 @@
+/-ai
+Every point of the master neighbourhood of the first neighbourhood system lies, at depth n, in the first component of the generalized atom pair for some Boolean history of length n.
+
+The argument is induction on n. At depth zero the empty history and the point itself suffice. At a successor the point lies in some depth-n history, and the four-way reunion places it in one of the four one-step extensions. Updating that history at position n by the chosen bits, then restricting to length n + 1, agrees with the updated history below n + 1, so congruence and the successor equation place the point in the extended component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

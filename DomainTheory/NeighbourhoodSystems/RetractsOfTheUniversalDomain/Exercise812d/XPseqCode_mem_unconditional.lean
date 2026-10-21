@@ -1,3 +1,8 @@
+/-ai
+The image of XPseqCode n is a genuine neighbourhood of the second neighbourhood system.
+
+The conditional genuineness fact is applied to the unconditional witness that the found flag equals 1 at stage 4 to the n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

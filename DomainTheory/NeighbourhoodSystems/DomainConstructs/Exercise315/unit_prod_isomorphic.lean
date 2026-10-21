@@ -1,3 +1,8 @@
+/-ai
+The product of the terminal domain with a domain is isomorphic to that domain.
+
+The isomorphism is the left-unit order isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

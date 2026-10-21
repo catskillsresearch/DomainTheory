@@ -1,3 +1,6 @@
+/-ai
+The coalesced-sum enumeration of a code is the left injection of the indexed left neighbourhood when the tag is 0 and that neighbourhood is proper, the right injection of the indexed right neighbourhood when the tag is 1 and that neighbourhood is proper, and the separated-sum master otherwise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

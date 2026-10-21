@@ -1,3 +1,8 @@
+/-ai
+The finset of right-pair payloads of a singleton bottom token is empty.
+
+Bottom contributes no right-pair payload, and the empty finset has no members.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

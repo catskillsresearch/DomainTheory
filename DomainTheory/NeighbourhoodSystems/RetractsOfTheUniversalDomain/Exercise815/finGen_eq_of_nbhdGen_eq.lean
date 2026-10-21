@@ -1,3 +1,8 @@
+/-ai
+If two finite index lists determine the same principal up-set, they generate the same finitely generated subsystem.
+
+Each list belongs to its own up-set, so equality of the up-sets puts each list in the other's up-set, and the two inclusions give equality of the generated subsystems.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

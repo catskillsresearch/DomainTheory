@@ -1,3 +1,8 @@
+/-ai
+The intersection of the master neighbourhood with the unit copy is the unit copy.
+
+The unit copy is contained in the master, so intersecting the master on the left leaves the unit copy unchanged.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

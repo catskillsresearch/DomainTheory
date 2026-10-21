@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (4.39). The lambda functor sends a retract z to the sum of the integer retract with the function space of z into itself.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

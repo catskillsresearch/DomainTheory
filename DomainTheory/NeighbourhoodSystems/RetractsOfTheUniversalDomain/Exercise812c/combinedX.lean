@@ -1,3 +1,6 @@
+/-ai
+combinedX is the interleaved family on the carrier of D₀. At an even index it is the set of the first enumeration at half that index, and at an odd index it is the recovered first-side piece YPseq at half that index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

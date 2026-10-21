@@ -1,3 +1,8 @@
+/-ai
+If an approximable map is the pointwise union of a nonempty directed family of maps, then the image of the union under a construct relates two neighbourhoods if and only if the image of some member does.
+
+The forward direction is the forward continuity lemma. Conversely, if some member's image relates the neighbourhoods, that member lies below the union, because every relation of the member is a relation of the union, and monotonicity of the construct carries the relation to the image of the union.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

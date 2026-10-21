@@ -1,3 +1,6 @@
+/-ai
+The fixed embedding of the function space of the universal domain into the universal domain is a chosen map from the strong form of the embedding theorem applied to the fixed presentation of that function space.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

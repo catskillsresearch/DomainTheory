@@ -1,3 +1,8 @@
+/-ai
+The separated sum carries the subsystem relation componentwise: if each system is a subsystem of the corresponding system, then the separated sum is a subsystem of the separated sum.
+
+The masters agree by unfolding the sum master and rewriting the two component masters. Membership sends the master to the master, a false tag along the left subsystem, and a true tag along the right subsystem. For intersections, two masters remain the master, and a master meeting a tag reduces by the intersection of the sum master with that tag, commuting the intersection when the tag comes first. Two false tags intersect by the bit-embedding intersection, and the left subsystem closes the component intersection after the inverse membership lemma for false tags. Opposite bits have empty intersection, which contradicts nonemptiness of the neighbourhood. Two true tags are symmetric, using the inverse membership lemma for true tags.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

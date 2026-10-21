@@ -1,3 +1,8 @@
+/-ai
+A continuous map into a continuous lattice, taken with its Scott topology, sends a point to the supremum of the infima of the map over the open neighbourhoods of the point.
+
+For the lower bound, write the value as the supremum of the elements way-below it. The preimage of the Scott-open set of points way-above such an element is an open neighbourhood of the point, and the element lies below every value on that preimage, hence below the infimum. For the upper bound, each such infimum lies below the value because the point belongs to the neighbourhood.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

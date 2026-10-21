@@ -1,3 +1,9 @@
+/-ai
+Applying the single generator of a list to zero yields the packed list.
+
+This is equation 3.2 applied to the packed list and to G.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

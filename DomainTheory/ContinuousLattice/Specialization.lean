@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the specialization order and the Scott topology: antisymmetry of specialization, its agreement with the specializes relation, preservation of the specialization order by continuous maps, the equivalence of Scott-open sets with inaccessibility of directed suprema, the equivalences between openness and Scott-openness for the Scott topology, both directions of Proposition 2.1 together with the formulation by convergence, Scott-openness of the set of elements not below a given element, the specialization order of the Scott topology, and the T0 separation of that topology.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization.Basic

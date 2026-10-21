@@ -1,3 +1,8 @@
+/-ai
+The element map of the left inverse is not injective.
+
+The cone formula sends the principal cones of the two singleton strings to the same element. Injectivity would identify those principal elements, and principal injectivity together with cone injectivity would identify the two strings, which simplifies to a contradiction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

@@ -1,3 +1,8 @@
+/-ai
+The union of down-sets indexed by the empty list is empty.
+
+By extensionality and the membership law for the union, no code lies in the empty list, so no set lies in the union.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,8 @@
+/-ai
+Projecting, at an index i, the element assembled from a tuple of components recovers the i-th component.
+
+Extensionality of elements reduces the claim to a neighbourhood U. If the projection contains U, the assembled element contains the corresponding slice, which means the component contains U. If the component contains U, then U is a neighbourhood and the assembled element contains the slice.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

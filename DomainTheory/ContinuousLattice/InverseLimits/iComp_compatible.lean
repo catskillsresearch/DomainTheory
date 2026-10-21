@@ -1,3 +1,8 @@
+/-ai
+The climbing-and-descending sequence of an element x at stage n is compatible, so it is a point of the inverse limit.
+
+At coordinate m, if n is at most m then both the m-th and the next component climb, one inclusion peels off, and a retraction after an inclusion is the identity. If n is not at most m but n is at most m+1, then n equals m+1; the later component is the identity climb and the earlier component is one descent, which is the identity on that stage. If n is not at most m+1, both components descend, and peeling the last retraction matches the shorter descent.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

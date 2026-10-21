@@ -1,3 +1,8 @@
+/-ai
+If some natural number k lies in z, then the conditional set of z with both branches equal to x equals x.
+
+Membership extensionality. An element of the conditional lies in one of the two branches, hence in x. Conversely, an element of x is placed in the left branch when k is zero and in the right branch when k is a successor, using the membership of k in z.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

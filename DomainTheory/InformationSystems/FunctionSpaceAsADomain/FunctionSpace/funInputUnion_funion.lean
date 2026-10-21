@@ -1,3 +1,9 @@
+/-ai
+The input union of a finitary union of two finite sets of function-space tokens is the finitary union of the two input unions.
+
+Membership is compared in both directions. A member of the input union of the combined set lies in the input of a token from one side or the other, and conversely a member of either input union arises from a token of the corresponding side of the combined set.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

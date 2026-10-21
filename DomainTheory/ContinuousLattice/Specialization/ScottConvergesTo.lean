@@ -1,3 +1,6 @@
+/-ai
+A net in a complete lattice converges to an element in the Scott sense when every Scott-open set containing the limit contains a tail of the net.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

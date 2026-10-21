@@ -1,3 +1,8 @@
+/-ai
+The solution domain, the fixed neighbourhood of the fixed point of the continuous operator of the combinator, is isomorphic to its own function space.
+
+Apply the abstract closing argument to the isomorphism of the solution with the function space into the fixed neighbourhood of the combinator and to the product isomorphism of that fixed neighbourhood with itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

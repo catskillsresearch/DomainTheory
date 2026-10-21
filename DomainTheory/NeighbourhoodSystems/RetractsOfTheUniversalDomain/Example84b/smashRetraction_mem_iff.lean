@@ -1,3 +1,8 @@
+/-ai
+smash of z contains Z if and only if Z is a product neighbourhood and either Z is the product master or both coordinates of z are not bottom and z contains Z. Thus smash leaves z fixed when neither coordinate is bottom, and otherwise collapses to bottom.
+
+Combine the membership law for smash with the membership law for the inner fade. A master arising from either law remains a master, and the remaining case is both coordinates not bottom with Z belonging to z. The converse rebuilds the inner disjunction from that case.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

@@ -1,3 +1,6 @@
+/-ai
+The payload of an abstract-syntax code is its application at the numeral 1.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

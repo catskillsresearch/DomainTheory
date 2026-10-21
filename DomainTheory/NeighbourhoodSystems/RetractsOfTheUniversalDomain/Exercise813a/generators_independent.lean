@@ -1,3 +1,8 @@
+/-ai
+For any finite set of generator indices and any boolean assignment, the intersection of the assigned generators and complements is nonempty.
+
+The number whose set bits are exactly the indices assigned true lies in each factor, because its i-th bit is set precisely for those indices.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

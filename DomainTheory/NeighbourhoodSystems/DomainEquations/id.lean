@@ -1,3 +1,6 @@
+/-ai
+The identity homomorphism of a T-algebra is the identity morphism of its carrier. The homomorphism equation holds because composing with the identity on either side, and using that the endofunctor preserves identities, leaves the structure map unchanged.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

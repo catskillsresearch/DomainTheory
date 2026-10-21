@@ -1,3 +1,8 @@
+/-ai
+A singleton and a tail are nested or disjoint.
+
+If the tail starts at or before the element of the singleton, that singleton is contained in the tail. Otherwise their intersection is empty, because a common element would be the element of the singleton and would lie at or after the start of the tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

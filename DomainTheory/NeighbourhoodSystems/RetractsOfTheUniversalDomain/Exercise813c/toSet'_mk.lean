@@ -1,3 +1,8 @@
+/-ai
+The map from the Lindenbaum algebra into Cantor space sends the class of a formula to the Cantor-space evaluation of that formula.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

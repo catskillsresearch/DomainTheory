@@ -1,3 +1,9 @@
+/-ai
+The carrier of an element equals the union of the closures of the consistent finite sets contained in it.
+
+Extensionality reduces the equality to the membership form of this identity.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

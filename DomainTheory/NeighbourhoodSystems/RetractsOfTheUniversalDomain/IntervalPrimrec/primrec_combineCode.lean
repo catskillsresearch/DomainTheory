@@ -1,3 +1,9 @@
+/-ai
+The map sending a paired natural number to the combine code of its two components is
+primitive recursive.
+
+It is the cross combination of the primitive-recursive rational-pair combine operation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Table 1, records that the eta law fails, because not every element is a graph. There is an element unequal to the graph of the function it represents.
+
+The witness is the singleton of the pair of 1 and 0. If that singleton equalled the graph of its function, Theorem 1.2 (iii) would make it a graph. The finite set coded by 1 is contained in the finite set coded by 3, since every member of the former is 0. The graph property would then put the pair of 3 and 0 into the singleton, so that pair would equal the pair of 1 and 0, which it does not.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

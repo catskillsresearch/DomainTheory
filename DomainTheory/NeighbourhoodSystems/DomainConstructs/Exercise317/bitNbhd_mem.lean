@@ -1,3 +1,8 @@
+/-ai
+Each bit neighbourhood belongs to the truth system.
+
+Case on the bit: the zero neighbourhood and the one neighbourhood are neighbourhoods of the truth system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

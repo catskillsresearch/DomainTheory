@@ -1,3 +1,8 @@
+/-ai
+The right tag is injective.
+
+If two right tags are equal, simplifying the definition of the right tag yields equality of the underlying tokens.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

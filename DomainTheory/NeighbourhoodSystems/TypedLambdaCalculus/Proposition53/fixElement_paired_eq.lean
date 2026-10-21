@@ -1,3 +1,8 @@
+/-ai
+Proposition 5.3 (Scott 1981, PRG-19), Bekić's theorem, states that the least fixed point of the paired map of τ and σ is the pair whose first coordinate is the nested fixed-point map of τ at the least fixed point of the outer operator, and whose second coordinate is that least fixed point.
+
+Let ystar be the least fixed point of the outer operator and xstar the nested map at ystar. The fixed-point equation of the outer operator, rewritten by its application law, gives the value of σ at the pair of xstar and ystar equal to ystar, and the nested fixed-point identity gives the value of τ at that pair equal to xstar, so the pair is a fixed point of the paired map and the least fixed point lies below it. Conversely, write the least fixed point as the pair of its components a and b. The fixed-point equation of the paired map, decomposed on the two components, gives τ at the pair of a and b equal to a and σ at that pair equal to b. The nested map at b lies below a, because the section at b fixes a. The outer operator at b then lies below b by its application law, monotonicity of σ, and that bound. Hence ystar lies below b, and xstar lies below a by monotonicity of the nested map together with the previous bound, so the pair of xstar and ystar lies below the pair of a and b.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

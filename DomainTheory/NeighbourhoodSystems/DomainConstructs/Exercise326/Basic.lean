@@ -1,3 +1,8 @@
+/-ai
+The conditional relates an input neighbourhood to an output neighbourhood exactly when the input is a neighbourhood of the product of the truth domain with two copies of the codomain, the output is a neighbourhood, and the conditional guard holds.
+
+The two sides are the defining relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

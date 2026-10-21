@@ -1,3 +1,8 @@
+/-ai
+The subset character of a fuel bound and two codes is at most 1.
+
+Unfolding the character, this is the bound that every value of the bounded universal is at most 1.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

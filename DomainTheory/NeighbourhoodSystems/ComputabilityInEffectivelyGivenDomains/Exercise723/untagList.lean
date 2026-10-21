@@ -1,3 +1,7 @@
+/-ai
+The extracted list code of a code is the code obtained by appending zero to the reversed-accumulator component of the iterated untagging state. It is the append-reversed code of the list component of the reference decoder, and the construction is primitive recursive.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

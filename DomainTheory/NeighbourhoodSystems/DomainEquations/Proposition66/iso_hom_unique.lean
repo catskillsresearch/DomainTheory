@@ -1,3 +1,8 @@
+/-ai
+The homomorphism from an initial algebra A to an algebra B that realises their isomorphism is the only homomorphism from A to B.
+
+It is the unique homomorphism supplied by initiality of A.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

@@ -1,3 +1,8 @@
+/-ai
+The finite set coded by 0 is empty.
+
+Extensionality and the definition of the coding give the equality.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

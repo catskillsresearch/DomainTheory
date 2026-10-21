@@ -1,3 +1,8 @@
+/-ai
+The base state is primitive recursive.
+
+The nested pairing of the identity with the constants 0, 0, and the master index is primitive recursive, and unfolding the packing shows that it is the base state.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

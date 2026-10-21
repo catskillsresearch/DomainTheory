@@ -1,3 +1,9 @@
+/-ai
+The application at the numeral 0 of the tag injection of x at i equals the numeral i.
+
+This is the zeroth-component law for sequence pairs.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

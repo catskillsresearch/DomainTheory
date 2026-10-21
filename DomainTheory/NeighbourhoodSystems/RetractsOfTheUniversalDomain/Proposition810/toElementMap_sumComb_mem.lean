@@ -1,3 +1,8 @@
+/-ai
+An element lies in a neighbourhood after the sum combinator if and only if either the which-map of the sum extraction meets zero and the left branch meets the neighbourhood, or the which-map meets one and the right branch meets the neighbourhood, or the neighbourhood is the master of the universal domain. The left branch is the sum injection after the left injection after the first map after the left extraction, and the right branch is the corresponding composite for the second map.
+
+Rewrite by the composite form of the sum combinator, the elementwise laws of composition and of pairing, and the elementwise law of the conditional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

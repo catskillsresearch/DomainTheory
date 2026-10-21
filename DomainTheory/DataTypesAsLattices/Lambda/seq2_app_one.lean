@@ -1,3 +1,8 @@
+/-ai
+The two-element sequence of two sets, applied to the numeral one, equals the second set.
+
+The application law for the two-element sequence is followed by extensionality and simplification of the conditional, the predecessor, the numeral, and the bottom element.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

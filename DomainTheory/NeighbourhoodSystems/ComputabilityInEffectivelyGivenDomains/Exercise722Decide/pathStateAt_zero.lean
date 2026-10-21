@@ -1,3 +1,8 @@
+/-ai
+The state zero symbols along a path is the path's starting state.
+
+Case on the word. On the empty word the path is empty and the definitions reduce. On a nonempty word the path begins with a step, and the zero clause of the auxiliary recursion is the starting state.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

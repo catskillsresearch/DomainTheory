@@ -1,3 +1,8 @@
+/-ai
+The triviality characteristic of a code equals 1 if and only if the step-function neighbourhood of its decoded list is the whole space of maps.
+
+That neighbourhood is the whole space precisely when every decoded output neighbourhood is the master neighbourhood. The characteristic unfolds as a fold whose step tests the equality characteristic of the output index against the master index, and the fold equals 1 precisely when every entry passes. The equality specification and the master-index specification turn each test into equality with the master neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

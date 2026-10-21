@@ -1,3 +1,6 @@
+/-ai
+Application of a coded function sends a set u of codes and an argument set x to the set of outputs m for which some finite list, with every entry in x, has its tag with m belonging to u.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513

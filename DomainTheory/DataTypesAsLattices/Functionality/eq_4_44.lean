@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (4.44). The expression retract is the least fixed point of the seven-tag syntax functor, hence equals the functor applied to the expression retract.
+
+Theorem 2.5, from Scott continuity of the functor, identifies the expression retract with the fixed point of the functor. Theorem 1.4 says that fixed point is fixed, so the functor returns the expression retract. The reverse of that equality is the claim.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

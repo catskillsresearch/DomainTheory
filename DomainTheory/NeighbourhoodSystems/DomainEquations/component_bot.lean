@@ -1,3 +1,8 @@
+/-ai
+The component at any index of the bottom element of the infinite iteration is the bottom element of the underlying neighbourhood system.
+
+The bottom of the iteration is the constant bottom sequence, and the component of a sequence element is the term at that index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

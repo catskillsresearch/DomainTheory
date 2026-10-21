@@ -1,3 +1,6 @@
+/-ai
+The instance decidableSsysCons decides, for indices n and m, whether some enumerated neighbourhood is contained in the intersection of the nth and the mth. It decides the Boolean consistency test and transports the answer along the equivalence with the consistency characteristic.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,8 @@
+/-ai
+The descent chain is monotone in its index.
+
+Induct on the inequality of indices. Equal indices give reflexivity. A successor step combines the inductive hypothesis with the successor inequality by transitivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

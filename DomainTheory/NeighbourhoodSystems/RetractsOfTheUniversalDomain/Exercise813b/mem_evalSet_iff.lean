@@ -1,3 +1,8 @@
+/-ai
+A natural number lies in the evaluation set of a formula if and only if the formula is true under the valuation that reads the bits of that number.
+
+The proof is by induction on the formula. At a variable, at falsehood, and at truth, the two sides simplify to the same condition. At a negation, conjunction, or disjunction, the inductive hypotheses match the set operations with the Boolean operations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

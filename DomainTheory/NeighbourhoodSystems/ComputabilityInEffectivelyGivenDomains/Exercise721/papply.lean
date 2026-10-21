@@ -1,3 +1,6 @@
+/-ai
+The combinator from the power domain of a function space to the function space of the power domains is the curry of the product form of the evaluation lift.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719

@@ -1,3 +1,8 @@
+/-ai
+The map sending u to the composition of b after u after a is Scott continuous.
+
+Theorem 1.3 substitutes left composition with b, which is Scott continuous, into right composition with a, which is Scott continuous.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

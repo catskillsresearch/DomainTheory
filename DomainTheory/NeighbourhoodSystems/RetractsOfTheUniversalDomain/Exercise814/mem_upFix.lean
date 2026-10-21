@@ -1,3 +1,8 @@
+/-ai
+A compact fixed point lies in the principal up-set of another if and only if the underlying element of the first lies below the underlying element of the second.
+
+Membership in the up-set is defined to be that inequality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

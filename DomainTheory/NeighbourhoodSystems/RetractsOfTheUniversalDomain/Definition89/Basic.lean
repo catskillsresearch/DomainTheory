@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the fixed computable projection pairs for the sum, product, and function space of the universal domain with itself, the three combinators built from those pairs, and the effective presentations of the three constructs.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

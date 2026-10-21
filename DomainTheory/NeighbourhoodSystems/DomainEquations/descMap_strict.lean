@@ -1,3 +1,8 @@
+/-ai
+The descent map on C is strict.
+
+Strictness means the map sends bottom to bottom. The bottom of C is the bottom-string of the empty string, and the descent map sends that element to the recursive value of bottom along the empty string, which is bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

@@ -1,3 +1,8 @@
+/-ai
+If P and Q are disjoint, then the set selected from them by one Boolean is disjoint from the set selected by a different Boolean.
+
+The proof cases on the two Booleans. The hypothesis that they differ leaves the two crossed selections, which are P meet Q and Q meet P.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

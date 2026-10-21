@@ -1,3 +1,8 @@
+/-ai
+If the product neighbourhood of the false tags of X' and Y' is a neighbourhood of the smash product of the two lifts, then X' is a neighbourhood of D and Y' is a neighbourhood of E.
+
+The smash inverse, using that the left false tag differs from the lift master of D, splits the membership into two lift memberships. Each of those inverts to a membership in the underlying system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

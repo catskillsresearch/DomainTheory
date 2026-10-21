@@ -1,3 +1,8 @@
+/-ai
+The combinator sending a map to its power-domain action relates a neighbourhood of the function space to a neighbourhood of the function space of the power domains exactly when both are neighbourhoods of those function spaces and every map in the source has its power-domain action in the target.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

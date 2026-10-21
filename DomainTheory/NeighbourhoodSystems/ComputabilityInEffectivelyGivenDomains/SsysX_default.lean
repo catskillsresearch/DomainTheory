@@ -1,3 +1,6 @@
+/-ai
+The default neighbourhood for codes that are junk or have empty syntax is the master set of all bit lists.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

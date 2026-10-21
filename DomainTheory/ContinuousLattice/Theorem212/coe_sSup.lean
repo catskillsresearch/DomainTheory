@@ -1,3 +1,8 @@
+/-ai
+In the fixed-point lattice, the underlying element of a supremum is the endomap applied to the ambient supremum of the underlying set.
+
+The equality is the definition of that supremum.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

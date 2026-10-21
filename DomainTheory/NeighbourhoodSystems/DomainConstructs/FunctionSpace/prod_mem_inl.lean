@@ -1,3 +1,8 @@
+/-ai
+The left preimage of a product neighborhood is a neighborhood of the left factor.
+
+A product neighborhood is the product of a left neighborhood and a right neighborhood, and the left preimage is that left factor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

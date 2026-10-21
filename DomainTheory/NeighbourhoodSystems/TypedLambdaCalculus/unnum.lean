@@ -1,3 +1,6 @@
+/-ai
+The inverse enumeration sends 0 to the origin and sends each successor to one diagonal step from the value at the predecessor, so the value at v is the v-fold iterate of the diagonal step starting at the origin.
+ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

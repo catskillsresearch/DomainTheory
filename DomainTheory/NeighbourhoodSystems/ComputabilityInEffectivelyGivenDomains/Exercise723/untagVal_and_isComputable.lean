@@ -1,3 +1,9 @@
+/-ai
+The joint condition that the extracted value equals a proposed value and that every index of the decoded extracted list is a set bit of a proposed word is recursively decidable. The word is packed as the code, then the proposed value, then the bit word.
+
+Conjoin the decidable equality of the primitive-recursive extracted value of the first component with the first component of the second component, and the decidable list bit test.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

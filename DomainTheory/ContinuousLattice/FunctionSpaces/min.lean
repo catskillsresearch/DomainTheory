@@ -1,3 +1,6 @@
+/-ai
+The map min, from the function space of Scott maps on a complete lattice D into D, sends each Scott map to its value at bottom. It preserves directed suprema because the supremum of a set of Scott maps is computed pointwise, so its value at bottom is the supremum of the values at bottom. This is Scott's Proposition 3.13.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

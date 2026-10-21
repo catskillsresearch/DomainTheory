@@ -1,3 +1,6 @@
+/-ai
+Given a sum element z and a left token of z, the left copy is the element of A whose carrier is the set of tokens of A whose left constructors lie in z. A finite subset Y of that carrier is consistent because the left lift of Y lies in z, so z makes the lift sum-consistent, the right projection of the lift is empty, and the resulting consistency of the left projection rewrites to consistency of Y. The carrier is closed under entailment from Y. If Y is empty, entailment transitivity through the given left token produces an entailment from that singleton, which is a sum entailment of the left constructor, and closure of z applies. If Y is nonempty, the same closure applies to the left lift of Y, whose left projection equals Y.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

@@ -1,3 +1,7 @@
+/-ai
+Satisfaction of a BOOL token by a BOOL point holds for the bottom token at every point, for the true token only at the true point, and for the false token only at the false point. The undefined point satisfies only the bottom token.
+ai-/
+
 module
 
 public import Mathlib.Data.Multiset.MapFold

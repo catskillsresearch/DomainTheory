@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the development of Exercise 8.22: the doubling encoding and the completed encoding, their cons, nil, append, length, prefix, injectivity, and separation lemmas, the image family and the neighbourhood system D' with its master, membership, nested-or-disjoint law, and subsystem relation into B, the cone-subset translations and the separation of a cone from a singleton, the maps between elements of C and of D' with their membership and inverse laws, the order isomorphism of C with D', and the nonemptiness of every C-neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,3 +1,6 @@
+/-ai
+A set of natural numbers is a stem neighbourhood when it is the whole set of natural numbers, or the pair {0, 1}, or a singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

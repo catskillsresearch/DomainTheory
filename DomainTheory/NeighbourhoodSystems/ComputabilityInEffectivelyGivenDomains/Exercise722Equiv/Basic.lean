@@ -1,3 +1,8 @@
+/-ai
+The underlying set of the finite accept set of an expression equals the accept set of its automaton.
+
+The proof follows the expression. For the universal language both sides are the whole one-point state set. For a singleton word both sides are the singleton of the final state of the deterministic automaton. For an intersection the underlying set of a product is the product of the underlying sets, and the inductive hypotheses match the accept set of the product automaton. For a concatenation the underlying set of the right injection of the second accept set is the right image of the accept set of the second automaton, by the inductive hypothesis.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

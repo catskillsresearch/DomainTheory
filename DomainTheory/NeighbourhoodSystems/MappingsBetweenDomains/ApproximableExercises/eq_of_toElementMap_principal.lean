@@ -1,3 +1,8 @@
+/-ai
+If two approximable maps agree on the principal element of every neighbourhood, then they are equal.
+
+Extensionality of the relation splits on whether the input is a neighbourhood. When it is, each relation is membership in the elementwise image of that principal, and those images agree. When it fails to be a neighbourhood, neither relation holds, because a related input is a neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

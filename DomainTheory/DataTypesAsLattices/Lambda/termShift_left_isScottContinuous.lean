@@ -1,3 +1,8 @@
+/-ai
+The term shift, as a map of its argument u, is Scott continuous.
+
+It is the graph of a family that is Scott continuous in u: for each t, left application at the successor of t is Scott continuous.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

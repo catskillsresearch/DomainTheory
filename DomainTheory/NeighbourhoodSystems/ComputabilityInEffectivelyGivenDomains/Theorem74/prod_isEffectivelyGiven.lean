@@ -1,3 +1,8 @@
+/-ai
+The product of two effectively given neighbourhood systems is effectively given.
+
+Unpack the two computable presentations and package them as the product presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

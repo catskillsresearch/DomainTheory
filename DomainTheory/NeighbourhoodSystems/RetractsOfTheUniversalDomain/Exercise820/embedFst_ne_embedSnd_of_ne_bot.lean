@@ -1,3 +1,8 @@
+/-ai
+If a domain has an element distinct from bottom, the embedding that pairs an element with bottom on the right is distinct from the embedding that pairs bottom with an element on the left.
+
+If the two maps agreed, their values at that element would agree. Those values are the pair of the element with bottom and the pair of bottom with the element, and their first components are the element and bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

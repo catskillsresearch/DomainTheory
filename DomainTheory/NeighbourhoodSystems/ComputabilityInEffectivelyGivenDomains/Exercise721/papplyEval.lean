@@ -1,3 +1,6 @@
+/-ai
+The approximable map papplyEval sends a power-domain neighbourhood of the function space and a power-domain neighbourhood of the domain to a power-domain neighbourhood of the codomain when every function neighbourhood in the first and every argument neighbourhood in the second admit a result neighbourhood related to them by evaluation. The three master neighbourhoods are related, because neighbourhoods drawn from them evaluate into the master neighbourhood of the codomain. An intersection of result neighbourhoods is related by intersecting the two evaluation witnesses. Smaller input neighbourhoods and a larger output neighbourhood remain related, because the same evaluation witness is still available.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719

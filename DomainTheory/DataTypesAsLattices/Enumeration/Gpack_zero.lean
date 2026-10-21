@@ -1,3 +1,8 @@
+/-ai
+Applying the packed combinator to the numeral 0 returns successor.
+
+Unfold the packed sequence and apply the left-projection law for a pair sequence.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

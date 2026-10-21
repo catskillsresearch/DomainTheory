@@ -1,3 +1,8 @@
+/-ai
+smashRetraction is a retraction on the product.
+
+Extensionality and the action of a composite reduce the claim to an equality on elements. If the first coordinate is bottom, both the input and the image collapse to bottom, the image because the first coordinate of the product bottom is bottom. If the second coordinate is bottom, both collapse in the same way. If neither coordinate is bottom, both applications equal the input.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

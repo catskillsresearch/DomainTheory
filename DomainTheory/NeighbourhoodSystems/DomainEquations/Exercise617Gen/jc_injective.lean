@@ -1,3 +1,8 @@
+/-ai
+If the tagged copies of two sets by the same index coincide, then the two sets are equal.
+
+Each inclusion of tagged copies is an inclusion of the underlying sets, and the two inclusions give equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

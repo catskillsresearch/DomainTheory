@@ -1,3 +1,8 @@
+/-ai
+If n is at most m, then the stage-n retraction is included in the stage-m retraction: a relation of the earlier retraction between neighbourhoods A and E is also a relation of the later one.
+
+Unfolding the relational description, the witness neighbourhood lies in the n-th tower stage and therefore in the m-th stage, while the same inclusions of A and E remain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

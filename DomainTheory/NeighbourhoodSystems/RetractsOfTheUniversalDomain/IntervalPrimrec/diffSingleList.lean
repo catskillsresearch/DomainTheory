@@ -1,3 +1,6 @@
+/-ai
+Subtracting one rational pair from a presenting list is the flat map of the one-pair difference over that list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

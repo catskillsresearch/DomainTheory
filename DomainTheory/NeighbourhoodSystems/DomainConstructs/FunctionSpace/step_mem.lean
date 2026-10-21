@@ -1,3 +1,8 @@
+/-ai
+The step set of two neighborhoods is a neighborhood of the function space.
+
+It equals the step neighborhood of the singleton list of that pair, and it contains the constant map at the principal filter of the output, which relates the input neighborhood to the output neighborhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

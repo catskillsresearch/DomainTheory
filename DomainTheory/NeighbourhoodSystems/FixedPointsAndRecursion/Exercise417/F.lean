@@ -1,3 +1,6 @@
+/-ai
+On the power set of a monoid, the operator associated with two elements sends a subset to the union of the singleton of the unit, the set of those two elements, and the pointwise product of the subset with itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

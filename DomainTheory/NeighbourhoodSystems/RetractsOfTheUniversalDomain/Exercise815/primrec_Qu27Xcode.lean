@@ -1,3 +1,8 @@
+/-ai
+If the basic-neighbourhood enumeration is primitive recursive, then the code that folds that enumeration into a universal-domain index is primitive recursive.
+
+It is the code fold of the primitive-recursive intersection step, with zero as the auxiliary function, the master index as the starting value, and the identity as the list code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

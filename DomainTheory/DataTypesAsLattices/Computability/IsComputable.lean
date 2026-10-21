@@ -1,3 +1,6 @@
+/-ai
+A continuous unary map on the lattice of sets of natural numbers is computable when its graph is recursively enumerable.
+ai-/
 module
 
 public import Mathlib.Computability.RE

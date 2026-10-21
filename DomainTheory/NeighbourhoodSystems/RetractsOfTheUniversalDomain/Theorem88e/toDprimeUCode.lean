@@ -1,3 +1,6 @@
+/-ai
+The pushforward of a filter of D is the filter of the code-driven subsystem D'' whose neighbourhoods are the coded sets Yc P n for which the given filter contains the embedded neighbourhood e P n. Such a coded set is a neighbourhood of D''. The master is the zero-depth coded set, which the filter contains because the zero embedding is the master of D. An intersection of two such coded sets is the coded set of an intersection index of the corresponding embedded neighbourhoods, which the filter contains. An upward step uses the raw embedding comparison to enlarge the embedded neighbourhood inside the given filter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

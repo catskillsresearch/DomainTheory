@@ -1,3 +1,8 @@
+/-ai
+The left copy of a neighbourhood X of D₀ is a neighbourhood of the coalesced sum. The argument splits on whether X equals the master.
+
+If X is the master, the left copy is the sum master, which is a neighbourhood. If X is distinct from the master, the left copy is the false tag of X, which is a proper left neighbourhood of the coalesced sum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

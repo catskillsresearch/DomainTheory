@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (5.25). The least solution dEq equals the union of the identity combinator with the function space of dEq with itself.
+
+This is the symmetric form of the fixed-point equation for the Scott-continuous self-arrow step.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,3 +1,8 @@
+/-ai
+If X is a neighbourhood, then the pinning of copy n to X is a neighbourhood of the infinite iterate.
+
+The fiber at n is X, and every other fiber is the master, so every fiber is a neighbourhood. From n + 1 onward the index differs from n, so the fiber equals the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

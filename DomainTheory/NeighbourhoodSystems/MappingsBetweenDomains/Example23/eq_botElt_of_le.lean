@@ -1,3 +1,8 @@
+/-ai
+An element of T that lies below both true and false equals bottom.
+
+The proof is the corresponding fact for the two-token neighbourhood system: an element below both total elements is the bottom element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

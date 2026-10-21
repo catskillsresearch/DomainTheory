@@ -1,3 +1,7 @@
+/-ai
+The restricted equivalence iterateE f x is the identity on the orbit of the iterates Z n f x: u is related to v when u equals some iterate and u equals v. Symmetry transports the orbit witness along the equality, and transitivity keeps the witness from the first link and composes the equalities.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,8 @@
+/-ai
+Each infinite binary path determines a total element of the binary system.
+
+Let an element lie above the branch, and let one of its neighbourhoods be the cone of a prefix. The cone of the path prefix of that same length belongs to the branch, because that path prefix is an initial segment of itself, and therefore belongs to the element. The two prefixes are comparable. If the neighbourhood prefix is an initial segment of the path prefix, that witnesses membership of the cone in the branch. If the path prefix is an initial segment of the neighbourhood prefix, the path prefix has that length, so the two strings are equal, and the cone belongs to the branch.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

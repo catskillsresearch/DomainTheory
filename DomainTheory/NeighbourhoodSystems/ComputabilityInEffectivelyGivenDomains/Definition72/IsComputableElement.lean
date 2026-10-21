@@ -1,3 +1,6 @@
+/-ai
+An element y of a neighbourhood system with computable presentation Q is computable when the set of indices m for which the m-th enumerated neighbourhood belongs to y is recursively enumerable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

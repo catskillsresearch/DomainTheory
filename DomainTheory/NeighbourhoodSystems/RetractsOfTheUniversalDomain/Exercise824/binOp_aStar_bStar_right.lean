@@ -1,3 +1,8 @@
+/-ai
+Applying the second operator to the two components of the simultaneous fixed point returns the second component.
+
+Unfold the operator and the two components. The filters of the maps read from the components recover those components, the pair of the components is the fixed element, and the second-component form of the fixed-element equation gives the result.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

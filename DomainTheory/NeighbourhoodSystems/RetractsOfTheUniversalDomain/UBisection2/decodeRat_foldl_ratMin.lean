@@ -1,3 +1,8 @@
+/-ai
+Decoding the left fold that takes rational minima of an accumulator with the first components of a list of codes equals the left fold of the minimum of the first components of the decoded pairs, started at the decoded seed.
+
+Induct on the list, generalizing the seed. The empty list is reflexive. For a cons cell, rewrite both folds and the mapped list by the cons equations, apply the inductive hypothesis, and rewrite by decoding of the rational minimum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

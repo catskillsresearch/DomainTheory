@@ -1,3 +1,8 @@
+/-ai
+The successor of the n-th tower system is a subdomain of the image of the colimit under T.
+
+Monotonicity on domains, applied to the inclusion of the n-th level in the colimit, produces a subdomain relation on the image. Transport along the carrier identification of that level moves the relation to the token type, and the lemma on successive transports rewrites the double cast.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

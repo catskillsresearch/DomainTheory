@@ -1,3 +1,9 @@
+/-ai
+The modified boolean closure applied to u equals the conditional of u on the singleton {0} and on ⊤ + 1.
+
+The body of the closure is Scott continuous, so the β rule evaluates its graph at u as that conditional.
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

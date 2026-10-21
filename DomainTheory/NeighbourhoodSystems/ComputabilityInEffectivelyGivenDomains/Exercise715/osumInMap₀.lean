@@ -1,3 +1,6 @@
+/-ai
+The coalesced left injection relates a left neighbourhood X to a coalesced neighbourhood W when the left injection of X is contained in W. The master is related because the left injection of the left master lies under the coalesced master. If X is the left master, both related codomain neighbourhoods equal the coalesced master, so their intersection does too; otherwise that intersection is a coalesced neighbourhood containing the injection. The relation is monotone because left injection preserves inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

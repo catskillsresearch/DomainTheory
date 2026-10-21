@@ -1,3 +1,8 @@
+/-ai
+When the intersection of two enumerated neighbourhoods is nonempty, the enumeration at the intersection index equals that intersection.
+
+Unfold the intersection index and rewrite the selection. If both characters equal one, both enumerations are the step neighbourhoods, the append code is consistent because that intersection is nonempty, and the enumeration of the append equals the intersection. If the second character is not one, the second enumeration is the whole space, and intersection on the right with the whole space is the first enumeration. If the first character is not one, the first enumeration is the whole space, and intersection on the left with the whole space is the second enumeration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

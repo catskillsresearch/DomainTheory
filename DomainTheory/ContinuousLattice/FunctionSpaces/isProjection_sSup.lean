@@ -1,3 +1,8 @@
+/-ai
+The set of projections is closed under arbitrary suprema in the function space. This is the join-closure half of Scott's Proposition 3.12.
+
+The supremum of a set of projections equals the directed supremum of its finite sub-joins. That set of finite sub-joins is directed and contains the empty join, and each finite sub-join of projections is a projection. Closure under directed joins therefore applies.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

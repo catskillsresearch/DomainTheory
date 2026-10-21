@@ -1,3 +1,8 @@
+/-ai
+The nonemptiness character of any fuel and any code is at most 1.
+
+The bound is the corresponding bound for the bounded search.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

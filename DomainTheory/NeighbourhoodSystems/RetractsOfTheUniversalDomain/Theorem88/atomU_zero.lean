@@ -1,3 +1,8 @@
+/-ai
+The U-side atom of depth zero is the master neighbourhood of U.
+
+This is the zero clause of the U-side atom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

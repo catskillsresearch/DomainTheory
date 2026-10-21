@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the computable unions of U and V: list concatenation on U, with its primitive recursiveness, the decoding of appended codes, raw equality, membership, specification, existence, and decidability, and bitwise disjunction on V, with the level-set union law, the raw and canonical primitive recursiveness, the specifications, existence, and decidability.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

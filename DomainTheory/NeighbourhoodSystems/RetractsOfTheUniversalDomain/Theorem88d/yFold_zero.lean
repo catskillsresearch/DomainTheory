@@ -1,3 +1,8 @@
+/-ai
+The depth-n union fold of length zero is the pair of zero with zero.
+
+The proof is the base equation of the fold.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

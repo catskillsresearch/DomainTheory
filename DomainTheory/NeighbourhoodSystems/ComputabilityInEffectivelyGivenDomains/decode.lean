@@ -1,3 +1,6 @@
+/-ai
+Decoding a natural number unpairs it into a code and a fuel value and runs the fuelled decoder on the code with one more than that fuel. On a valid index the fuel is the depth of the expression.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

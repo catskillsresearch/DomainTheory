@@ -1,3 +1,8 @@
+/-ai
+A set belongs to the final-segment system if and only if it is the tail of some index.
+
+The two sides are definitionally the same.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

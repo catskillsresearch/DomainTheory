@@ -1,3 +1,8 @@
+/-ai
+If two bit-sources are both non-junk at depth n and their bit histories differ somewhere below n, then the indexed neighbourhoods are disjoint on both sides.
+
+Both pairs of indexed sets are rewritten by the correctness theorem, and the disjointness of the generalized atom pair applies to the two bit histories.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

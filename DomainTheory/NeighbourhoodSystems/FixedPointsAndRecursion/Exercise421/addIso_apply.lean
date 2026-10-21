@@ -1,3 +1,8 @@
+/-ai
+The addition equivalence sends the pair of naturals m and n to m + n.
+
+The equality holds by definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

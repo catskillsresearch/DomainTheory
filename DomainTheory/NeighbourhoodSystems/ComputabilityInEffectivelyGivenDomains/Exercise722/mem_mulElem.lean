@@ -1,3 +1,8 @@
+/-ai
+A language belongs to the product of two domain elements if and only if it lies in Scott's family and contains the concatenation of some neighbourhood of the first with some neighbourhood of the second.
+
+The two sides are the definition of multiplication.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+A left copy of a neighbourhood X of D lies in the forward image of an element z if and only if the zero embedding of X lies in z.
+
+Such a membership is not the master, because the master token does not lie in a left copy, and it is not a right copy, because a token of X lies in the left copy and not in the right. Injectivity of the left embedding then matches the zero embedding. The converse records that zero-embedding membership as a left copy.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

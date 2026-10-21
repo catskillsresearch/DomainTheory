@@ -1,3 +1,8 @@
+/-ai
+The infinite iterate of a domain is isomorphic to the product of that domain with the iterate.
+
+The isomorphism is the order isomorphism between the iterate and that product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

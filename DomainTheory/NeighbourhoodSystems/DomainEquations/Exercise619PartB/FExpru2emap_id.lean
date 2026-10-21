@@ -1,3 +1,8 @@
+/-ai
+Every construct preserves identity maps: the image of the identity on a Scott system is the identity on the image system.
+
+The proof is by induction on the construct. A constant and the identity variable are definitionally the identity. A sum rewrites the two components by the inductive hypotheses and applies the identity law for the sum action. A product does the same with the identity law for the product action.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

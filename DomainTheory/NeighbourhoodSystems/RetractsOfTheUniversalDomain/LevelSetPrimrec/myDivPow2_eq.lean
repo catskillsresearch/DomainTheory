@@ -1,3 +1,11 @@
+/-ai
+Iterated halving equals division by two to the power of the count.
+
+Unfolding the iteration and simplifying the unpaired pairing, the proof is by induction
+on the count. The zero case simplifies. The successor is one further halving, which the
+inductive hypothesis and the law for successive division rewrite as division by two to
+the successor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

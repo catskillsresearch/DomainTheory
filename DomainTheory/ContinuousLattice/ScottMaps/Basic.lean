@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the specialization order, Scott continuity, the Scott topology, and preservation of directed suprema, as the common setting for Scott-continuous maps in Scott's sections 2.5 through 2.7.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

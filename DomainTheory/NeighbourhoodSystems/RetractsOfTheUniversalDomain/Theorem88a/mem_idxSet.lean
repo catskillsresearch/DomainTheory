@@ -1,3 +1,8 @@
+/-ai
+An index m belongs to the index set of n if and only if e m is contained in e n.
+
+The equivalence is the definition of membership in the index set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

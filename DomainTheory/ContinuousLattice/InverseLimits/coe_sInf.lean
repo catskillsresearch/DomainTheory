@@ -1,3 +1,8 @@
+/-ai
+The underlying sequence of an infimum in the inverse limit is the pointwise infimum of the underlying sequences.
+
+The equality is the definition of the infimum.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

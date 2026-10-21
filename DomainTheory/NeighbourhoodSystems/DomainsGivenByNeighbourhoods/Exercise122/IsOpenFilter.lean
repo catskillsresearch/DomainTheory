@@ -1,3 +1,6 @@
+/-ai
+A set of elements is an open filter when every element of the set contains a neighbourhood whose basic open is contained in the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

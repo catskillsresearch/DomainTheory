@@ -1,3 +1,8 @@
+/-ai
+On a partial element whose string begins with false, Φ acts as the Thue–Morse morphism expand.
+
+Rewrite by the value of Φ on a partial element. Simplify the flip and the tail of a cons and the expansion of a cons, then rewrite by the head-weave identity at the negated false bit.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

@@ -1,3 +1,6 @@
+/-ai
+The sum action on approximable maps relates a neighbourhood of the domain sum to the codomain sum master, or relates a false-tagged copy to a false-tagged copy by the first component map, or relates a true-tagged copy to a true-tagged copy by the second component map. The master input is related to the master output, intersections of related outputs stay related, and a sharper input with a blunter output stays related, with a change of tag ruled out because a nonempty tagged copy cannot sit inside a copy of the other tag.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

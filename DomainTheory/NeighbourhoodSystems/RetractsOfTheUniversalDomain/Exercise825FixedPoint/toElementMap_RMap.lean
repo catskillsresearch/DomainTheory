@@ -1,3 +1,8 @@
+/-ai
+The joint evaluator sends the pair of a map with the pair of a second map and a point to the given endomap applied to the second map applied to the first map applied to the point.
+
+Simplify by the definition of the evaluator and by the element actions of composition, pairing, the two projections, the components of a pair, and evaluation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

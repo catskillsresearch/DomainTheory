@@ -1,3 +1,8 @@
+/-ai
+An element of Example 1.2 that is neither total element is the bottom element.
+
+The classification of elements gives the bottom element or one of the two total elements, and the two total alternatives are excluded by hypothesis.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

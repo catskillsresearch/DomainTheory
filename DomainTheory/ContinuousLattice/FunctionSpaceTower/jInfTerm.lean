@@ -1,3 +1,6 @@
+/-ai
+The n-th summand of the projection j_∞ is the Scott map from [D_∞ → D_∞] to D_∞ sending f to the level-(n+1) embedding of the conjugate j_{∞n} ∘ f ∘ i_{n∞}. It is conjugation by the pair (j_{∞n}, i_{n∞}), with values in D_{n+1}, followed by the embedding of level n+1.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

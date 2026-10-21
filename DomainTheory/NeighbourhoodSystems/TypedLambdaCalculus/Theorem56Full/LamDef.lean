@@ -1,3 +1,6 @@
+/-ai
+An approximable map from the universal argument domain into the flat naturals is a very strict λ-definition of an n-ary partial function when it returns the function's value on the stack of a total argument vector, returns bottom where the function is undefined, and returns bottom on any arg-like stack with bottom among its first n coordinates.
+ai-/
 module
 
 

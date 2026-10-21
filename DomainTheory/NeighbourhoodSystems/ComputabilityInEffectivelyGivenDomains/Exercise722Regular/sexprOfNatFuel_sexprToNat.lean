@@ -1,3 +1,8 @@
+/-ai
+Decoding the code of an expression with fuel strictly above that code returns the expression.
+
+Induction on the expression. With no fuel the strict bound is impossible. For the universal expression and for a singleton, one unit of fuel and unpairing recover the constructor, and a singleton also inverts the encoding of its word. For a concatenation and for an intersection, each subexpression code is at most the paired code of the two subexpressions, that paired code is strictly below the whole code because the constructor tag is positive, and the inductive hypotheses at the smaller fuel reassemble the constructor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

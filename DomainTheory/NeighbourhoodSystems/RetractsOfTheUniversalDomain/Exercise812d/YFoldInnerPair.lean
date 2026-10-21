@@ -1,3 +1,6 @@
+/-ai
+YFoldInnerPair is the same recursion as the inner Y-fold, but with the depth and the bit already packed into the single parameter expected by primitive recursion. It starts from the pair of zeros and applies the Y-fold step at each stage.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,8 @@
+/-ai
+A pair lies in the proper product of a family X if and only if its second component lies in the set indexed by its first component.
+
+The equivalence is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

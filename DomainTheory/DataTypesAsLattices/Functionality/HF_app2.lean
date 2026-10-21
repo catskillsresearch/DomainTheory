@@ -1,3 +1,8 @@
+/-ai
+Applying the operator HF at an interpreter first to an environment and then to a term yields one step of that interpreter.
+
+Rewrite by the one-argument application of HF, then apply beta reduction for continuity of the step in the term.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

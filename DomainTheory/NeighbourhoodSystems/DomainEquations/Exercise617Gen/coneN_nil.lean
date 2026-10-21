@@ -1,3 +1,8 @@
+/-ai
+The cone of the empty string is the set of all finite A-strings.
+
+Extensionality and simplification of membership in the cone give the equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

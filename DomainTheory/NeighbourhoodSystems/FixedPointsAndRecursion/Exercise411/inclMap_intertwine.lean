@@ -1,3 +1,8 @@
+/-ai
+The inclusion of the relativized system intertwines the restriction of an endomap f with f: the inclusion of the image of a filter under the restriction equals the image under f of the inclusion of that filter.
+
+Both sides are rewritten by the elementwise action of the inclusion, and the action of the restriction under the embedding gives the equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407

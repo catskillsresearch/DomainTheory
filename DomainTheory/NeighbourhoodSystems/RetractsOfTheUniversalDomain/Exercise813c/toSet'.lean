@@ -1,3 +1,6 @@
+/-ai
+The map from the Lindenbaum algebra to sets of points of Cantor space sends the class of a formula to its Cantor-space evaluation. The quotient lift is well-defined because semantically equivalent formulas have equal Cantor-space evaluations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

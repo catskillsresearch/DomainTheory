@@ -1,3 +1,8 @@
+/-ai
+A family of elements has a least upper bound if and only if the union of their carriers is finitely consistent.
+
+An upper bound of the family makes that union finitely consistent. If the union is finitely consistent, the family join lies above every member and below every upper bound.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

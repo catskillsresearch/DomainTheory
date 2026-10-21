@@ -1,3 +1,8 @@
+/-ai
+A right copy is never the sum master.
+
+The equality would place the empty option, which belongs to the sum master, in the right copy.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

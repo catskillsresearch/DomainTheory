@@ -1,3 +1,8 @@
+/-ai
+Diagonal application x ↦ x(x) is Scott continuous.
+
+Application is Scott continuous in each argument separately, so the diagonal composition theorem identifies x(x) with the union, over finite sets eₙ contained in x, of (eₙ)(eₙ). Each stage of that union is a Scott-union witness, and every Scott-union witness arises as one of those stages.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

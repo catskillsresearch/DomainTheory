@@ -1,3 +1,8 @@
+/-ai
+The application of the shift of a to any set is nonempty.
+
+Zero lies in every such application. An empty application would exclude zero.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

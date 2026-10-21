@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the coercion of finite accept states, the coercions of the finite start set, the single-state step, the step from a finite set, the folded step, and finite evaluation, the characterization of denotation by the finite evaluation, evaluation of the difference automaton from a singleton pair and on a word, the criterion that the difference automaton accepts the set difference of the two languages, the short witness of a failure of inclusion, and the correctness of the bounded inclusion and equality tests.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.Basic

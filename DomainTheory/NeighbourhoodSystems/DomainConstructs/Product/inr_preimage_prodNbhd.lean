@@ -1,3 +1,8 @@
+/-ai
+The right preimage of the product neighbourhood of X and Y is Y.
+
+The two sets have the same members by the membership lemmas for product neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

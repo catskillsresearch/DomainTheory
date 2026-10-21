@@ -1,3 +1,9 @@
+/-ai
+Scott's Table 3 records that the singleton {⊤} is a Gδ set: it equals the intersection over n of the sets of x in Pω such that n belongs to x.
+
+If x is ⊤, then every n belongs to x. If every n belongs to x, then x contains every natural number, so x is ⊤.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

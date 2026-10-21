@@ -1,3 +1,8 @@
+/-ai
+Primitive recursion from the numeral k with step subStepC, run for n steps, equals the numeral of the truncated difference k − n.
+
+The case n = 0 is the definition of primRecVal. For a successor, the recursive clause unfolds the value, and the definition of subStepC together with Kcomb_beta2 replaces the step by safePredC. The inductive hypothesis replaces the previous value by the numeral k − n. If that difference is zero, then k − (n + 1) is zero and safePredC_zero gives the numeral 0. If it is a successor k′, then k − (n + 1) equals k′ and safePredC_succ gives that numeral.
+ai-/
 module
 
 public import Mathlib.Computability.RE

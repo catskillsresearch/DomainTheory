@@ -1,3 +1,6 @@
+/-ai
+The order isomorphism from the fixed points of sub on the universal domain to the approximable self-maps fixed by sub is the composite of the isomorphism with the fixed points of subApprox and the isomorphism of Theorem 8.6(b) from those fixed points to the self-maps fixed by sub.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

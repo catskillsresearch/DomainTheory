@@ -1,3 +1,8 @@
+/-ai
+If the tag of a code is 1, then one extra unit of fuel decodes it as the singleton of the boolean list decoded from the payload.
+
+Unfold the decoder and substitute the tag.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,8 @@
+/-ai
+The principal filter of the principal upper set of a lies below the principal filter of the principal upper set of b if and only if a is at most b.
+
+Rewrite by the comparison of principal filters and by the comparison of principal upper sets.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

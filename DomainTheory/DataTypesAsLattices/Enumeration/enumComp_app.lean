@@ -1,3 +1,8 @@
+/-ai
+Applying the composition of u and v to x yields the application of u to the application of v to x.
+
+This is beta reduction. Continuity of the abstracted map is the substitution theorem applied to continuity of application of u and continuity of application of v.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

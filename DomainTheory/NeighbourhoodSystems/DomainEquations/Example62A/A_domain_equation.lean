@@ -1,3 +1,8 @@
+/-ai
+For positive n, Scott's domain A over {0,1}* is isomorphic to the separated sum of two copies of its n-fold cartesian power. A non-bottom element of A is a left or right copy of an n-tuple of elements of A.
+
+The isomorphism is aaEquiv.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

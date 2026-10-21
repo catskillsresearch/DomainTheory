@@ -1,3 +1,6 @@
+/-ai
+This instance records that the neighbourhoods belonging to an element form a nonempty family, witnessed by the master neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

@@ -1,3 +1,6 @@
+/-ai
+The set of pre-fixed points of an endomap f of the elements is the set of elements x such that f(x) lies below x.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

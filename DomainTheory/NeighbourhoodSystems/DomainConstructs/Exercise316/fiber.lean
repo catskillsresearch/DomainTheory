@@ -1,3 +1,6 @@
+/-ai
+The i-th fiber of a set of index-token pairs is the set of tokens that appear with copy index i.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

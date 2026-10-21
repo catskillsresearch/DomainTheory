@@ -1,3 +1,7 @@
+/-ai
+The least fixed point of an approximable endomap f, as an element, is the value of the fixed-point operator on the function-space element corresponding to f.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

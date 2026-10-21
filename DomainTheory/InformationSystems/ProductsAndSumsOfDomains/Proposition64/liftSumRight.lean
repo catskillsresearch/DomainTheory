@@ -1,3 +1,6 @@
+/-ai
+The right sum lift of a finite set w of tokens of B is the finite set of sum tokens obtained by folding insertion of the right constructor of each token of w, starting from the empty set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

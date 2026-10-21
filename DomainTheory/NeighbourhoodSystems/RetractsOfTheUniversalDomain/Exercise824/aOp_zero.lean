@@ -1,3 +1,8 @@
+/-ai
+The zero first approximant is the constant-bottom map.
+
+The zero iterate of the paired operator is the bottom of the pair space, its first component is the bottom of the function space, and the map read from that bottom is the constant-bottom map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Theorem 4.4 (ii), in pairing form. A pair, regarded as a function, projects to its first component at the singleton zero and to its second component at the singleton one.
+
+These are the zero and one application laws for the two-place sequence.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

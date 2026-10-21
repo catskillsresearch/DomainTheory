@@ -1,3 +1,8 @@
+/-ai
+The finset depth of the output list of a function token is strictly below the raw depth of that function token.
+
+The finset depth of the list is at most the left fold of raw depths along the output list, and that fold is at most the maximum of the input fold and the output fold. The raw depth of the function token is one more than that maximum.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

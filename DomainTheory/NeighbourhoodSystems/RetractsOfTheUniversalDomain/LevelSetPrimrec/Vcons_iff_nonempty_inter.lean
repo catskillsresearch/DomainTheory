@@ -1,3 +1,13 @@
+/-ai
+For two codes, Scott's consistency condition holds if and only if the intersection of
+the corresponding enumerated neighbourhoods is nonempty.
+
+If some enumerated neighbourhood is contained in the intersection, that neighbourhood is
+nonempty, so the intersection is nonempty. Conversely, if the intersection is nonempty,
+the realization of the intersection by the raw code makes the raw level set nonempty, so
+the intersection is a neighbourhood of V, and surjectivity of the enumeration supplies
+an index at which the enumeration equals the intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

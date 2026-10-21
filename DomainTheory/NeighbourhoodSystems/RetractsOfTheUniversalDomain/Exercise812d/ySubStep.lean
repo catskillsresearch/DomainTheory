@@ -1,3 +1,6 @@
+/-ai
+The Y-sub-step reads a depth, a bit, and a packed state. It refines the second index by intersection or difference according to the bit, and the first index by the matching half of the abstract split. The new junk bit is set when the incoming state is junk or the chosen refinement is empty, and a junk result packs zero indices.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,6 @@
+/-ai
+The consistency characteristic of two coded indices selects the consistency characteristic of their stored codes, at fuel the sum of the two stored depths plus two, when both activity characteristics are on, and selects 1 otherwise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

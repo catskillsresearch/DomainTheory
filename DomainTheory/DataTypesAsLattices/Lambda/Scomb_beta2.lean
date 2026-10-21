@@ -1,3 +1,9 @@
+/-ai
+A second application of S, at g, is the graph of the map sending x to the application of f at x applied to g at x.
+
+Rewrite by the first beta law for S, then beta-reduce, using Scott continuity of the middle map at f.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

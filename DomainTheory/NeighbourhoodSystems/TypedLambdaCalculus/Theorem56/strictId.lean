@@ -1,3 +1,6 @@
+/-ai
+Scott's strict identity is the approximable map on the flat naturals sending x to the conditional of the zero test of x and two copies of x. It is the conditional composed with the pairing of the zero test and two copies of the identity, and it acts as the identity on numerals while sending bottom to bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

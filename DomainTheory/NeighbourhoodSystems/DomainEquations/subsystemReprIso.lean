@@ -1,3 +1,6 @@
+/-ai
+The subsystems of a neighbourhood system E, ordered by the subsystem relation, form a domain: they are order-isomorphic to the domain of elements of the representation system built from the family of subdomain neighbourhood-sets. The isomorphism composes the correspondence between subsystems and their neighbourhood-sets with the inverse of the representation isomorphism for that family, using that the family is nonempty and closed under nonempty intersections and directed unions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

@@ -1,3 +1,8 @@
+/-ai
+If the product system entails a finite set v from a finite set u, then A entails the first projection of v from the first projection of u.
+
+A token of the first projection of v comes from a product token of v that meets the first-projection condition, and the first component of the product entailment of that token is the required entailment in A.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

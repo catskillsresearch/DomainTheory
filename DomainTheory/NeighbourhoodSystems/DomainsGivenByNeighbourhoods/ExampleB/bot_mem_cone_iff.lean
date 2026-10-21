@@ -1,3 +1,8 @@
+/-ai
+The least element of the binary system belongs to the cone of a prefix if and only if that prefix is empty.
+
+Rewrite membership of the least element as equality with the master neighbourhood, and rewrite the master as the cone of the empty string. Equality of cones gives equality of prefixes, and the converse rewrites by the hypothesis.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

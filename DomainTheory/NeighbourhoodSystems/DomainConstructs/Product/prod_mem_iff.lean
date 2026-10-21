@@ -1,3 +1,8 @@
+/-ai
+A set is a neighbourhood of the product system if and only if it is the product of a neighbourhood of the first system and a neighbourhood of the second.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,3 +1,8 @@
+/-ai
+When a finite list of step pairs is consistent, its step neighborhood is contained in the step set of an input and an output if and only if the intersection of those outputs whose inputs contain the given input is contained in the output.
+
+If the step neighborhood is contained in the step, the least map lies in the step neighborhood and hence in the step, and that membership is the inclusion of the intersection. Conversely, a map in the step neighborhood relates the input to the intersection, and monotonicity enlarges the output.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,3 +1,8 @@
+/-ai
+The cone of σ is a neighbourhood of the partial element of τ if and only if σ is a prefix of τ.
+
+Rewrite membership in the principal element. Containment of the cone of σ in the cone of τ is the prefix relation, and the cone of σ is a neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

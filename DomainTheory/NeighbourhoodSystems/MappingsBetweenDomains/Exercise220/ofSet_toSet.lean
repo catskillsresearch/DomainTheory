@@ -1,3 +1,8 @@
+/-ai
+The filter of the set represented by an element is the element itself.
+
+Two elements are equal when they contain the same neighbourhoods. If a cofinite neighbourhood has its complement contained in the represented set, every member of that complement has its singleton complement in the element, so the finite-complement lemma puts the neighbourhood itself in the element. Conversely, a neighbourhood of the element remains a neighbourhood, and each member of its complement has its singleton complement above that neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

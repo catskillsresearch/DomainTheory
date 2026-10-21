@@ -1,3 +1,6 @@
+/-ai
+sexprOfNat decodes a natural number as an optional expression by running the fuel-bounded decoder at that number with fuel one greater than the number.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

@@ -1,3 +1,8 @@
+/-ai
+Existence of an index whose transferred neighbourhood is contained in the intersection of two given transferred neighbourhoods is recursively decidable in the pair of indices.
+
+Transport the consistency decider of the re-pointed presentation along the equivalence that rewrites a double inclusion of transferred neighbourhoods, by the embedding rule twice, as a double inclusion of enumerated neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

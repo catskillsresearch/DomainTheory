@@ -1,3 +1,8 @@
+/-ai
+Two embedded neighbourhoods agree if and only if the corresponding coded sets agree.
+
+Rewriting by the criterion that embedded neighbourhoods agree exactly when their index sets agree, the claim is the index-set comparison.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

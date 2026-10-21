@@ -1,3 +1,6 @@
+/-ai
+This instance orders Scott maps conjugated along a pair of order isomorphisms by the pointwise order of the conjugated functions. Reflexivity and transitivity are the corresponding properties of that pointwise order. If two conjugated maps lie below one another, the pointwise inequalities rewrite as inequalities of the underlying Scott maps, and extensionality of conjugated maps from equality of those Scott maps gives antisymmetry.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

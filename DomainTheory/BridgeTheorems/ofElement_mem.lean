@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood belongs to the filter produced by ofElement from an information-system element if and only if it belongs to the system and contains the basis neighbourhood of some token in that element's carrier.
+
+The two sides are the same by the definition of membership in that filter.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

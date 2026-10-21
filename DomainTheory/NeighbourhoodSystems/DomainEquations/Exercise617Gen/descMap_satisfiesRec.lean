@@ -1,3 +1,8 @@
+/-ai
+The descent map equals the composite of the structure map of the target algebra, the sum map of the descent, and the isomorphism ccEquiv.
+
+The two approximable maps are compared on partial elements and on total elements. Composition, the action of the isomorphism, and the descent on partial or total elements unfold. On the empty partial element, the bottom key identifies the composite with the bottom element. On a partial element that begins with a letter, the isomorphism and the partial successor equality put the composite into the form of the successor key, which matches the descent of the longer partial element. On the empty total element, the distinguished-point key gives the comparison. On a total element that begins with a letter, the total successor equality and the successor key give the comparison in the same way.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

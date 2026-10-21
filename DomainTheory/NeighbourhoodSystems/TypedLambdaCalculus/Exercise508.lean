@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the development of Exercise 5.8: the round trip from an approximable map through its function-space element, the defining equation of the combinator S, the value equations of I, K, and S, and the combinatory-completeness theorem for bracket abstraction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.Basic

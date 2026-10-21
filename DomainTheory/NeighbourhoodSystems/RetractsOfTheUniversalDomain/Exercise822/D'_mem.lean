@@ -1,3 +1,8 @@
+/-ai
+A set of strings is a D'-neighbourhood if and only if it belongs to the image family.
+
+The equivalence is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

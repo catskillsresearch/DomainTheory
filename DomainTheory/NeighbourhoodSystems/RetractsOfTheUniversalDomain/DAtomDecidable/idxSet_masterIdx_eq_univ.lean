@@ -1,3 +1,8 @@
+/-ai
+The index set of the master index is the set of all indices.
+
+For every index, its neighbourhood is contained in the master neighbourhood, and the master index names that neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

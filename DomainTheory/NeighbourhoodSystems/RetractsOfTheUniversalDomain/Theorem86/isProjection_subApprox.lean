@@ -1,3 +1,8 @@
+/-ai
+The packaged map subApprox is a projection on the function space.
+
+It is a retraction, and it lies below the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

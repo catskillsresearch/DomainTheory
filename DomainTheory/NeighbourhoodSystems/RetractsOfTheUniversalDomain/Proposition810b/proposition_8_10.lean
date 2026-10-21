@@ -1,3 +1,8 @@
+/-ai
+Scott's Proposition 8.10 says that if a and b are finitary projections on the universal domain, then so are their sum, product, and arrow combinations, and the elements of the sum, the product, and the function space of their fixed neighbourhood systems are order-isomorphic to the fixed-point sets of those combinations.
+
+The conjunction assembles the three finitary-projection results for the sum, the product, and the arrow combination with the three element isomorphisms of those combinations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

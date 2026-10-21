@@ -1,3 +1,8 @@
+/-ai
+The ideal of finite approximants of the element determined by an ideal I of finite elements is I itself.
+
+By extensionality of ideals it is enough to compare carriers. If a finite element y is a finite approximant of the element determined by I, then y lies under that element. Writing y as the closure of a consistent finite set, compactness of closures against the nonempty directed carrier of I supplies a member of that carrier above the closure. That member is a finite element of I, and the lower-set property of I puts y in I. Conversely, a member of I lies under the element determined by I, so it is a finite approximant of that element.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

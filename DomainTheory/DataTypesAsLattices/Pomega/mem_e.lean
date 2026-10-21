@@ -1,3 +1,8 @@
+/-ai
+A natural number k belongs to the finite set coded by n if and only if the binary digit of n in position k is set.
+
+This is the definition of the coding.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

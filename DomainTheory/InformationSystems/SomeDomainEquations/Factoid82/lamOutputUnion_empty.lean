@@ -1,3 +1,8 @@
+/-ai
+The output union of the empty finite set of raw-token list pairs is empty.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

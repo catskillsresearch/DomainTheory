@@ -1,3 +1,6 @@
+/-ai
+One step of the fuel-bounded decode-ok test, with the previous fuel level supplied as a function, selects on the tag of the code. Tag 0 yields 1 when the second component is 0 and yields 0 otherwise. Tag 1 yields the binary-digit character of the second component. Tags 2 and 3 yield the product of the previous character on the two subcodes. Every other tag yields 0.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

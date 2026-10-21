@@ -1,3 +1,6 @@
+/-ai
+The cut point of an element x of R is one minus the infimum of the cut set of x.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

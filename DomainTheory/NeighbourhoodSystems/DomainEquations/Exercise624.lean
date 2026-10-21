@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the token-level results of Exercise 6.24: membership of the empty string in the two token maps, their monotonicity and single-stage additivity, the inclusions of the iteration stages in the two colimits, the two fixed-point equations, existence of the double fixed point, the masters of the two solution systems, the two subsystem facts, and the simultaneous existence of those subsystems.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.Basic

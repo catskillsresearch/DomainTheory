@@ -1,3 +1,8 @@
+/-ai
+If an operator on self-maps sends finitary projections to finitary projections, and a correspondence identifies the fixed-point set of the operator at each finitary projection with the domain assigned to that projection, then the fixed-point set of the fixed point of the operator is order-isomorphic to the domain assigned to that fixed point.
+
+Instantiate the correspondence at the fixed point, which is a finitary projection, and rewrite the operator there by the fixed-point equation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

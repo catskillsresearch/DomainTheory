@@ -1,3 +1,6 @@
+/-ai
+The minimum first component of a list of rational pairs is the left fold of the minimum of the first components, seeded at one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

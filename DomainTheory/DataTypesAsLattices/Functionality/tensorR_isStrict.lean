@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 4.4 (i). The product of two strict maps is strict.
+
+The product applied to bottom is the sequence pair of the two applications at bottom. Strictness makes both applications bottom, and the sequence pair of two bottoms is bottom.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

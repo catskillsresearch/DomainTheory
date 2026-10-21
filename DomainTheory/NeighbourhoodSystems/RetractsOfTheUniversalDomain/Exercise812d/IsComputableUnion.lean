@@ -1,3 +1,6 @@
+/-ai
+IsComputableUnion says that set union is computable relative to a presentation. It provides a primitive-recursive index of the union of the n-th and m-th neighbourhoods whenever that union is itself some neighbourhood of the presentation, together with a recursive decider for that side condition.
+ai-/
 module
 
 

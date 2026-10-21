@@ -1,3 +1,6 @@
+/-ai
+The bar step term is the closed term that abstracts three variables and conditions on the application of the third variable to zero. The first branch is the positive-branch term. The second branch applies the first variable to the application of the second variable to the application of the third variable to the successor of zero, and then to the application of the third variable to the double successor of zero. It is a closed term for the functional whose least fixed point is the bar combinator.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

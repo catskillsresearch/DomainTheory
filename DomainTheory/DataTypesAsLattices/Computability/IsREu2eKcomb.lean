@@ -1,3 +1,8 @@
+/-ai
+The K combinator is recursively enumerable.
+
+Its graph is the graph of the operation sending a set to the graph of the corresponding constant map, so the graph theorem for recursively enumerable relations applies. The predicate that an unpacked index satisfies the constant-graph equation and the corresponding bit test is primitive recursive, by equality of pairs and a boolean test-bit predicate. Existential quantification makes that predicate recursively enumerable. Transport along pairing, using the constant-graph characterization, is membership in the K combinator.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,6 @@
+/-ai
+The encoding of a binary string is the set of index-token pairs such that, whenever the string defines a bit at that index, the token lies in the bit neighbourhood of that bit.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,3 +1,8 @@
+/-ai
+Applying the combinator H to the encoding of a lambda term yields the typed interpretation of that term.
+
+This is the third component of equation (4.45).
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

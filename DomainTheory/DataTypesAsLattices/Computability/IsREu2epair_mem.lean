@@ -1,3 +1,8 @@
+/-ai
+If a set is recursively enumerable, then the predicate that the pair of two numbers lies in the set is recursively enumerable.
+
+It is the recursively enumerable membership predicate composed with the primitive recursive pairing function.
+ai-/
 module
 
 public import Mathlib.Computability.RE

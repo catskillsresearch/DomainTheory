@@ -1,3 +1,8 @@
+/-ai
+The repetition of a word of count zero is the empty word.
+
+This is the zero clause of the definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

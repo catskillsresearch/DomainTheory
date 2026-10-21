@@ -1,3 +1,6 @@
+/-ai
+The packed append step reads the entry as the first projection and the accumulator as the first half of the second projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

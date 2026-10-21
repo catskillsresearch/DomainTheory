@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the development of the token system in Theorem 1.10, together with the completeness predicate for a neighbourhood system and the filter of the token system fixed by an element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110

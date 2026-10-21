@@ -1,3 +1,8 @@
+/-ai
+On objects, the internal hom of the monoidal closed structure is Scott's function space, packaged as the exponential of information-system objects.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

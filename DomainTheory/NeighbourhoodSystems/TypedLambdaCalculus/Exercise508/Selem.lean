@@ -1,3 +1,6 @@
+/-ai
+The combinator S, as an element, is the filter of its curried approximable map, in the arrow domain from the arrow of X into the arrow of A into B, into the arrow from the arrow of X into A, into the arrow of X into B.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

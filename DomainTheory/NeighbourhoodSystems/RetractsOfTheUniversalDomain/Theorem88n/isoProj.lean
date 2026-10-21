@@ -1,3 +1,6 @@
+/-ai
+The code-level projection is the approximable map from the coded copy back to the neighbourhood system obtained by applying the isomorphism construction of Theorem 2.7 to the inverse code-level domain isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic

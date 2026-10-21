@@ -1,3 +1,8 @@
+/-ai
+If the tag is zero, the sum enumeration is the left copy of the first component.
+
+Unfold the definition and take the positive branch of the first conditional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

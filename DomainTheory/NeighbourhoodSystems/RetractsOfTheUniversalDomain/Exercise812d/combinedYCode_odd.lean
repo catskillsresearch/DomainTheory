@@ -1,3 +1,8 @@
+/-ai
+At an odd index 2k+1, combinedYCode equals the second presentation applied to k.
+
+Unfold combinedYCode. The index is odd, so the conditional takes the presentation's own enumeration, and dividing by two recovers k.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,8 @@
+/-ai
+Applying the S combinator to a function yields the graph of the map sending a second function to the graph of the pointwise application of the first function to the second.
+
+This is beta reduction for continuity of the outer S map.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

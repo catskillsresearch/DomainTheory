@@ -1,3 +1,8 @@
+/-ai
+The expression functor applied to the n-th projection equals the injection of the image subsystem composed with its projection. The image is the subsystem obtained by applying the functor to the n-th level inside the syntactic domain.
+
+Unfold the projection as the injection of the level composed with its projection. The functor preserves this composite because the injection is strict, and it carries the injection and the projection to those of the image subsystem.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

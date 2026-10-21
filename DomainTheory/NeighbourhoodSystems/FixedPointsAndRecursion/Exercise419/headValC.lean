@@ -1,3 +1,6 @@
+/-ai
+The head value of a binary string in a neighbourhood system is one chosen element on the empty string, a second on a string beginning with false, and a third on a string beginning with true.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

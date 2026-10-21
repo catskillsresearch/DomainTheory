@@ -1,3 +1,6 @@
+/-ai
+A finite set of product tokens entails a product token when the set is product-consistent, the first system entails the first component from the left projection whenever the second component is least, and the second system entails the second component from the right projection whenever the first component is least.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

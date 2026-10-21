@@ -1,3 +1,6 @@
+/-ai
+The distinguished point of a Tsig-algebra B is the image, under the structure map of B, of the unit injection into the sum neighbourhood system of the carrier.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

@@ -1,3 +1,6 @@
+/-ai
+Classification sends an element of the separated-sum system to a bottom-adjoined disjoint-sum code by choosing, classically, a code that assembles to it.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

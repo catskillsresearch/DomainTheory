@@ -1,3 +1,6 @@
+/-ai
+The depth-zero state packs the two master indices with junk flag 0, so the first neighbourhood is the master of the first system, the second neighbourhood is the master of the second system, and the state is never junk.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

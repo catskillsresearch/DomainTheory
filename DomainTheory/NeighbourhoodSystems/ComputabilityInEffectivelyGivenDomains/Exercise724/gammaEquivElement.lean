@@ -1,3 +1,6 @@
+/-ai
+The equivalence between Gamma and the elements of L is the bijection induced by the map from sequences to elements. The inverse uses the choice already present in surjectivity of that map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

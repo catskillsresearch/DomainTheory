@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Theorem 6.9, Proposition 6.7, Lemma 6.15, and Exercise 4.08, the ingredients of Scott's Theorem 6.16: if a functor on domains and strict approximable maps is continuous on maps and D is an initial algebra, then D embeds in every solution of the domain equation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69

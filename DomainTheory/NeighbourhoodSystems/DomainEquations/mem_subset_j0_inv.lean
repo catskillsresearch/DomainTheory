@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood of the three-way sum that is contained in a zero-copy is itself a zero-copy.
+
+The master contains the point none, which does not lie in a zero-copy. A zero-copy is already of the required form. A one-copy and a two-copy each contain a point of their own tag, and that point does not lie in a zero-copy.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

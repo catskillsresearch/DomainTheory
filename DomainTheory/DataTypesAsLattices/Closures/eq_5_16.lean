@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (5.16). Every set x is contained in V(a) applied to x.
+
+A member of x belongs to every set that contains x and is closed under application of a.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

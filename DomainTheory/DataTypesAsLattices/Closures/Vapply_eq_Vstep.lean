@@ -1,3 +1,9 @@
+/-ai
+The universe value V(a)(x) equals the step x ∪ a(V(a)(x)) applied to that value.
+
+The set x ∪ a(V(a)(x)) belongs to the family whose intersection is the universe value. It contains x. Closedness says that this union is contained in the universe value, so monotonicity of application puts a of the union inside a of the universe value, and that lies in the union. Every member of the intersection therefore lies in the union. The opposite inclusion is closedness of the universe value.
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

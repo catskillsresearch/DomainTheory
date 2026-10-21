@@ -1,3 +1,8 @@
+/-ai
+Applying the combinator Z at a stage first to a function and then to a value yields the iterator of that function at that value.
+
+Rewrite by the one-argument application, then apply beta reduction for continuity of the iterator in the value.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

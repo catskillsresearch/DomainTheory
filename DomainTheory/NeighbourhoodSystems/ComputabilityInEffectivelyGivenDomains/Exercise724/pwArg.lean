@@ -1,3 +1,6 @@
+/-ai
+The shared-argument projection of the pointwise-binary domain is the projection from the product of a pair of function spaces with L onto L.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

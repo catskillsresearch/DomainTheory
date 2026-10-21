@@ -1,3 +1,8 @@
+/-ai
+Off the Tarski fixed set, the second injection sends the value of Tarski's map back to the element.
+
+Rewrite the map by the branch for non-membership and apply the specification of the chosen preimage.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

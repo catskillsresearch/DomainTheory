@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the presentation-independent canonical bisection of the universal domain: the minimum of first components and the maximum of second components of a presenting list, their code-level folds, the midpoint code and the left and right splits, the bounds, attainment, tightness, lower and upper estimates, and congruence lemmas, the decoding bridges and primitive recursiveness, the neighbourhood identities, disjointness, union, and congruence of the splits, and the packaged computable bisection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

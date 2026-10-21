@@ -1,3 +1,8 @@
+/-ai
+The step plusStep is primitive recursive.
+
+The four components of the packed state are primitive recursive. The bitAt test of the n component at the counter is primitive recursive, and the shift of the m component by the counter is primitive recursive because a left shift is multiplication by a power of two. Selecting that shift or zero, disjoining the result with the accumulator, and packing the unchanged n and m with the incremented counter and the new accumulator is identified with plusStep.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

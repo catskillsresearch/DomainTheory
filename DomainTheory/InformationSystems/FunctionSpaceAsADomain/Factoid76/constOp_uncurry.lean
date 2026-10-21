@@ -1,3 +1,8 @@
+/-ai
+Uncurrying the constant operator recovers the first projection from the product of B and A.
+
+This is the definition of the operator as a currying of that projection, together with the identity that uncurrying a currying returns the original map.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

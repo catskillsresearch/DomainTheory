@@ -1,3 +1,6 @@
+/-ai
+The filter transport of sub sends an element of the function space to the filter of sub applied to the approximable map extracted from that element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

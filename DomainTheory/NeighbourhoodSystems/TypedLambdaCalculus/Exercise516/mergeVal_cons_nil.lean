@@ -1,3 +1,8 @@
+/-ai
+Interleaving a cons a :: σ tagged b₀ with the empty string tagged b₁ returns the singleton of a with tag false.
+
+This is the cons-nil clause of the interleaving value, so the equation holds by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

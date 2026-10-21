@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports approximable mappings and their inclusion order, as the setting for Proposition 5.3 of Scott 1982. The proposition records the singleton reduction, the closure bridge between a relation and inclusion of images of closures, the pointwise order, and extensionality through elements, after the image of an element and its monotonicity.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable

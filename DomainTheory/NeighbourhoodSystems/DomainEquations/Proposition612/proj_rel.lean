@@ -1,3 +1,8 @@
+/-ai
+The relation of the projection holds of Y and X exactly when Y belongs to E, X belongs to D, and Y is contained in X.
+
+The two sides are definitionally equivalent.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

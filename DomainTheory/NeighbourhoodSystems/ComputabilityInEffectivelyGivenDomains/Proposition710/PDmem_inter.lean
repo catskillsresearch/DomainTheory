@@ -1,3 +1,8 @@
+/-ai
+The family of power-domain neighbourhoods is closed under binary intersection.
+
+Write the first neighbourhood as a finite union of down-sets. Its intersection with the second neighbourhood is a power-domain neighbourhood by the lemma on intersections with such a union.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

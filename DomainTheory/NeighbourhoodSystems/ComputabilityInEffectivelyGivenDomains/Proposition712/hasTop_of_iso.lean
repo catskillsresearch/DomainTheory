@@ -1,3 +1,8 @@
+/-ai
+Having a greatest element is preserved by an order isomorphism of element lattices, from the target system back to the source.
+
+If t is greatest in the target, its inverse image is greatest in the source: for any element x, the isomorphism reflects the inequality of the image of x below t, and that inequality holds because t is greatest.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

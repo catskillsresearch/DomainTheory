@@ -1,3 +1,6 @@
+/-ai
+The inner application of Scott's smash is the approximable map on the product sending z to fade of the pair consisting of check of the second coordinate and z itself. It is fade on the product, composed with the pairing of check after the second projection and the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

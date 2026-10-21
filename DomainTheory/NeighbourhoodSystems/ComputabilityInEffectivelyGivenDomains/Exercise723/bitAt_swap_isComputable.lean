@@ -1,3 +1,8 @@
+/-ai
+The relation sending a pair (i, m) to the assertion that bitAt m i equals 1 is recursively decidable. The argument order is swapped relative to bitAt, so that the relation can be fed to a bounded universal quantifier over lists.
+
+The deciding function reads the two components in reverse order and applies bitAt. That function is primitive recursive by composing the primitive-recursive bitAt map with the swapped pairing of the two projections, and the deciding equation is reflexivity after simplifying the unpairing.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

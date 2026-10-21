@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports concatenation of finite sequences, finite consistency, the intersection of a nonempty family of filters, the least filter containing a consistent set, the three-point neighbourhood system together with the sets A, B, and Cc, the three-member family, and the triple, membership of entries of a concatenation, containment of a running intersection in the master neighbourhood, and the two identities for running intersections along a concatenation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

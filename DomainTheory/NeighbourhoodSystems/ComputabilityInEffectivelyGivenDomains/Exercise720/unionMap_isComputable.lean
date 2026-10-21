@@ -1,3 +1,8 @@
+/-ai
+If the base domain is effectively given, the flattening combinator is a computable map from the canonical presentation of the double power domain into the canonical presentation of the power domain.
+
+The inner consistency decider is the constant function with value one, which is primitive recursive, and it is correct because the empty union, coded by zero, is contained in every neighbourhood. The nested bounded quantification expressing inclusion of codes is recursively decidable by one bounded universal quantification over the decidable subcode relation. The characterization on codes identifies that predicate with the relation of the combinator, and a decidable predicate is recursively enumerable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

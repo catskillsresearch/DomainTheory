@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the first part of Exercise 7.17: the equation for the second projection on a sharp pairing, the index characterization and computability of that projection, the equation for the pairing map on a pair of elements, and the index characterization and computability of the pairing.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717.Basic

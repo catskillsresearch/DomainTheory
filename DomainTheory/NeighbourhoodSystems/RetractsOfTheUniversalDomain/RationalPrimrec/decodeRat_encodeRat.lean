@@ -1,3 +1,8 @@
+/-ai
+Decoding the encoding of a rational returns that rational.
+
+Unfolding the two maps and cancelling the pairing, the integer round trip restores the numerator. The denominator is nonzero, so subtracting one and then adding one restores it, and the rational constructor on the numerator and denominator of a rational returns that rational.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

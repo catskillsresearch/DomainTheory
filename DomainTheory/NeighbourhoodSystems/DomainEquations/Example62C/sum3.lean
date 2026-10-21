@@ -1,3 +1,6 @@
+/-ai
+The three-way separated sum of neighbourhood systems V₀, V₁, and V₂, assuming that no neighbourhood of any factor is empty, is the system on Option (α ⊕ β ⊕ γ) whose neighbourhoods are the three-way master, a tagged left copy of a neighbourhood of V₀, a tagged middle copy of a neighbourhood of V₁, or a tagged right copy of a neighbourhood of V₂, and whose master is that three-way master. The master contains the basepoint and is itself a neighbourhood. Every neighbourhood is contained in the master, by reflexivity on the master and by the three copy-inclusion lemmas on the copies. For the intersection law, each of the four shapes is nonempty, by the basepoint on the master and by the three nonempty-copy lemmas from the standing hypotheses. The shapes of the two neighbourhoods and of a neighbourhood contained in their intersection are then examined: a master meets a copy in that copy, two copies of the same tag meet in the copy of the intersection of the underlying neighbourhoods once a witness of another tag has been excluded by a token that simplification keeps out of the intersection, and a mixed-tag intersection is empty, so it cannot contain a point of the nonempty witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,3 +1,8 @@
+/-ai
+A projection pair from a neighbourhood system D to a neighbourhood system E, with the projection composed after the injection equal to the identity on D and the injection composed after the projection contained in the identity on E, exhibits D as a subdomain of E.
+
+The witness is the prime system built from the two maps, the fact that this prime system is a subsystem, and the equivalence of that prime system with D.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

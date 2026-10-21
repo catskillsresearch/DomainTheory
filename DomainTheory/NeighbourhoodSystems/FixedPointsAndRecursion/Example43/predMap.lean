@@ -1,3 +1,6 @@
+/-ai
+The predecessor is the strict lift of the table that sends zero to bottom and sends a successor to the total element at the preceding number.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

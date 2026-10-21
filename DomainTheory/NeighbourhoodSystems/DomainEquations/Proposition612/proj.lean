@@ -1,3 +1,6 @@
+/-ai
+The projection of a subdomain D of E is the approximable map from E to D relating a set Y to a set X exactly when Y belongs to E, X belongs to D, and Y is contained in X. Intersection on the right uses the consistency clause of the subdomain relation, and monotonicity is transitivity of inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

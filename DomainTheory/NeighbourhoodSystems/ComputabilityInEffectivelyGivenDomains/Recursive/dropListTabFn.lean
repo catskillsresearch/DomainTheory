@@ -1,3 +1,6 @@
+/-ai
+The tabulation lookup for coded drop, whose parameters are the pair of a drop count and a code, reads that code at the index equal to the step plus the drop count, with default 0.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

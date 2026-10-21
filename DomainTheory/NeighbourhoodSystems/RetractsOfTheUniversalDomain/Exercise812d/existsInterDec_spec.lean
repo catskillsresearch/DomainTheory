@@ -1,3 +1,8 @@
+/-ai
+The intersection-existence decider reads one on a pair exactly when some enumerated neighbourhood is contained in the intersection of the two codes.
+
+Unfold the decider and rewrite by the one-indicator. The chosen specification of the consistency predicate, after the pair is unpacked, is that equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

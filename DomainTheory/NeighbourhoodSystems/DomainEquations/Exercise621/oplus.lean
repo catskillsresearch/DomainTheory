@@ -1,3 +1,6 @@
+/-ai
+The coalesced sum of two Scott systems is the Scott system whose neighbourhood system is the coalesced-sum system of their underlying systems, using the proof that every neighbourhood of that system is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

@@ -1,3 +1,8 @@
+/-ai
+The accumulator component of plusStep s is the bitwise disjunction of the old accumulator with the selected shift: the shift of the m component by the counter when the corresponding bit of n is set, and 0 otherwise.
+
+Unfold plusStep and cancel the pairings that expose the accumulator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

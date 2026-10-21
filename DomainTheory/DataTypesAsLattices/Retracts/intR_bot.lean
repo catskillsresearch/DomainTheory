@@ -1,3 +1,8 @@
+/-ai
+The integer retract sends the bottom element to the bottom element.
+
+Rewrite the application by the application law for the integer retract, then use that the doubly strict conditional on the bottom element is the bottom element.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

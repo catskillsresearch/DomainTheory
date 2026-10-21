@@ -1,3 +1,6 @@
+/-ai
+The sum master is the basepoint inserted into the union of the left copy of the first master and the right copy of the second master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

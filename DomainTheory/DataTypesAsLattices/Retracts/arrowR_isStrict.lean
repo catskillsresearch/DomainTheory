@@ -1,3 +1,8 @@
+/-ai
+If b is strict, then the function space from a to b is strict.
+
+The application law writes the value at the empty set as b composed after the empty set composed after a. The inner composition unfolds to the graph of a constant empty map, which equals the empty set. The outer composition is then the graph of the constant value of b at the empty set, and strictness of b together with the constant-empty graph makes that value the empty set.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

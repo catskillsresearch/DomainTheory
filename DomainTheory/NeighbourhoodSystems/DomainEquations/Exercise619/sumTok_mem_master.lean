@@ -1,3 +1,8 @@
+/-ai
+The master of the concrete token sum is a neighbourhood of that sum.
+
+It is the master clause of the membership definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

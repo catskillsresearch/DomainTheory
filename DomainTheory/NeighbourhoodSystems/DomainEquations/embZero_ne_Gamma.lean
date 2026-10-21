@@ -1,3 +1,8 @@
+/-ai
+A zero embedding is distinct from Gamma.
+
+The master is nonempty, so a point whose path is the singleton list true lies in Gamma. Membership in a zero embedding requires the empty path.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,3 +1,6 @@
+/-ai
+The left tag of a token is the sum token formed by applying the option constructor to the left injection of that token into the disjoint sum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

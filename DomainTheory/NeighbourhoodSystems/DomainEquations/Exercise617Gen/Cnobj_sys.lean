@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood system carried by the empty-free object Cnobj A is Cn A.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

@@ -1,3 +1,8 @@
+/-ai
+A natural number x belongs to the finite element named by n if and only if x equals 0 or x equals n.
+
+Membership in the closure of the singleton of n is entailment by that singleton, which says that x equals 0 or x belongs to the singleton. Conversely, both alternatives are entailments of the singleton, hence both lie in the closure.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

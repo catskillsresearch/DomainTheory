@@ -1,3 +1,6 @@
+/-ai
+The neighbourhoods of Scott's Example 1.5, the nonempty subsets of a four-element token set, form a countable family. Countability is supplied by type-class inference from the finite powerset.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

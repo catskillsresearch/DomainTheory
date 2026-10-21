@@ -1,3 +1,8 @@
+/-ai
+The filter transport of sub is continuous.
+
+Continuity follows from monotonicity together with preservation of directed suprema.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,7 @@
+/-ai
+The second recursion value of an element u is the graph of the map sending x to the union, over m in x, of u applied to the numeral of apply(m)(num(m)). In Scott's Theorem 3.3 (i) this is the set denoted by the code v(n).
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,6 @@
+/-ai
+The strict composite sends a strict map g from T(D) to T(E) to the strict map k composed with g composed with j from D to E. Its strictness is the strictness of a composite of k, of g, and of j.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

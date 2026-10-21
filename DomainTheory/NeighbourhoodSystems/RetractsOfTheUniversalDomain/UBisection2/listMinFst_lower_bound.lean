@@ -1,3 +1,8 @@
+/-ai
+The minimum first component of a list is at most every point of the intervals presented by the list.
+
+A presented point is at least the first component of some pair of the list, and the minimum is at most that first component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

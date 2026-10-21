@@ -1,3 +1,8 @@
+/-ai
+The universal neighbourhood of the left presentation-independent split is the intersection of the original neighbourhood with the open ray below the decoded midpoint.
+
+The presented intervals of the decoded left split form a universal neighbourhood: they are the intervals of the canonical list clipped below the midpoint. The clipping identity rewrites them as the image of that list under clipping below the decoded midpoint. The minimum first component lies in the presented intervals, by nonemptiness of the canonical list, the strict inequalities, and the unit-interval bounds, and it lies strictly below the midpoint. The intersection is contained in the master neighbourhood because the left factor is. The canonical presentation of the left split therefore agrees with the clipped list, and the clipping identity is the intersection with the open ray.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

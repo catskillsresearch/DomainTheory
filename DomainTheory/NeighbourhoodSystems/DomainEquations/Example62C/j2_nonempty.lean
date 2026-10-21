@@ -1,3 +1,8 @@
+/-ai
+If Z is nonempty, then its tagged right copy is nonempty.
+
+An element c of Z supplies the token t2 c, which is the right tag of c and lies over a member of Z.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

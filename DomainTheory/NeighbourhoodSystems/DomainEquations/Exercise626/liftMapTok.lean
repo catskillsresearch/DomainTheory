@@ -1,3 +1,6 @@
+/-ai
+The lift of an approximable map relates the source master only to the target master, and relates a false-tagged neighbourhood to a false-tagged neighbourhood whenever the underlying map relates the untagged neighbourhoods. The approximable-map laws are the domain, codomain, master, intersection, and monotonicity laws of the underlying map, together with absorption of a false tag by the lift master and exclusion of the empty string from a tag.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,3 +1,8 @@
+/-ai
+The course-of-values function of a step is primitive recursive whenever the step is.
+
+It is the step composed with the pairing of the identity and the primitive-recursive memo table, and that composite agrees with the definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

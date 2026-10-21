@@ -1,3 +1,8 @@
+/-ai
+The union of a family of fixed points of a Scott-continuous map is contained in the image of that union.
+
+An element of the union lies in some member. That member equals its image, so the element lies in the image of the member, and monotonicity along the inclusion of the member in the union puts the element in the image of the union.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

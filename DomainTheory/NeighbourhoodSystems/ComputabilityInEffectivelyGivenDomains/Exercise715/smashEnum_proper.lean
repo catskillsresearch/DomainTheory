@@ -1,3 +1,8 @@
+/-ai
+If both factors of a code are proper, the smash enumeration returns their product neighbourhood.
+
+This is the positive branch of the enumeration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

@@ -1,3 +1,8 @@
+/-ai
+If an approximable self-map of an effectively given neighbourhood system is computable, then its fixed neighbourhood is effectively given.
+
+Obtain a primitive-recursive characteristic of diagonal fixedness, and a primitive-recursive consistency test from the presentation. Reindex the consistency equivalence at pairs and simplify the unpairing of a pair. Package the induced enumeration, its membership and surjectivity, recursive decidability of intersection equality and consistency, the list-code intersection with its primitive recursiveness and specification, and master index zero. The enumerated neighbourhood at zero is the master neighbourhood: the code-level fold of zero is the list fold of the empty list by the code-fold equation and decoding of zero, that fold is the master index, and the master-index specification identifies it with the master neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88l.Basic

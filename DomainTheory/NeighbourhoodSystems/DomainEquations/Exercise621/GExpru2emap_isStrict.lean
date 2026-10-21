@@ -1,3 +1,8 @@
+/-ai
+Every expression preserves strictness: if f is strict, then T(f) is strict.
+
+A constant acts by the identity map, which is strict. The variable is the hypothesis. The separated sum, the coalesced sum, and the smash product are strict for any component maps. The separated product uses the inductive strictness of its two components.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

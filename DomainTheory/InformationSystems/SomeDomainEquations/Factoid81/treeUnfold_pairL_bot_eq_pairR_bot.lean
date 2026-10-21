@@ -1,3 +1,8 @@
+/-ai
+Unfolding the left pair of the tree bottom equals unfolding the right pair of the tree bottom.
+
+The two sides are definitionally the same.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

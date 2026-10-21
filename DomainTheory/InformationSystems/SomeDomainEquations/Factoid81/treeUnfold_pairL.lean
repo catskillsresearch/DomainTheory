@@ -1,3 +1,8 @@
+/-ai
+Unfolding the left pair of t is the right injection of the pair (t, tree bottom).
+
+The two sides are definitionally the same.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

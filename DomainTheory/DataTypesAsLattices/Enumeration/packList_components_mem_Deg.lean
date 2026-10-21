@@ -1,3 +1,8 @@
+/-ai
+If the packing of a list lies in the degree of an element a, then every component of the list lies in that degree.
+
+The empty list contributes no component. For a cons cell, the numerals 0 and 1 are combinatory, so they lie in the degree. The subalgebra operation of the degree, applied to the packing and to 0, recovers the head by the zero law for binary sequencing, and applied to the packing and to 1 it recovers the packed tail by the one law. The head therefore lies in the degree, and the inductive hypothesis places every remaining component in the degree.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

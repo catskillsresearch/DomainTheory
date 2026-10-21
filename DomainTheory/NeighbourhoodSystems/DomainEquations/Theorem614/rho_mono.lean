@@ -1,3 +1,8 @@
+/-ai
+If n is at most m, every pair related by the n-th projection is related by the m-th projection.
+
+The relational description supplies an intermediate neighbourhood of the n-th level lying between the two sets. The chain inclusion places that neighbourhood in the m-th level, with the same two inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

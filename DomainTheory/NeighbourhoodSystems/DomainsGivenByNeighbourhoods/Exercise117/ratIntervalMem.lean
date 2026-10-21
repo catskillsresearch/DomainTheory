@@ -1,3 +1,6 @@
+/-ai
+A set of reals is a rational-interval neighbourhood when it is the whole real line, or when it is a nonempty open interval with rational endpoints.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

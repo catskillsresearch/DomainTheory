@@ -1,3 +1,8 @@
+/-ai
+Applying the bar combinator to u and then to the positive branch of v at R applied to x equals applying the bar combinator to the application of u to v, and then to x.
+
+Rewrite by the two-argument application of the bar combinator and unfold the bar step body. The positive branch applied to the numeral 0 is the numeral 1, so the successor case of the conditional (2.7) selects the second branch. The projections of the positive branch at the numerals 1 and 2, the application law for R, and sequencing at the numeral 1 then match the two sides.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

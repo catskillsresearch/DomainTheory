@@ -1,3 +1,6 @@
+/-ai
+The uncurried body of the combinator S sends a nested pair consisting of maps F and G and an element x to the application of F at x to G at x. It is evaluation composed with the pairing of two further evaluations, one applying the first projection of the outer pair to the second component and the other applying the second projection of the outer pair to the second component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

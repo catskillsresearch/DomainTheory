@@ -1,3 +1,18 @@
+/-ai
+The domain of the counterexample is the neighbourhood system of Scott's Example 1.2 on the two-token set.
+
+The singleton of the token 1 is distinct from the singleton of the token 0.
+
+Extensionality of those singletons would force the token 1 to equal the token 0, which is false.
+
+The singleton of the token 1 is distinct from the master neighbourhood.
+
+Extensionality against the master, which contains every token, would put the token 0 into the singleton of 1, which is false.
+
+The singleton of the token 0 is distinct from the master neighbourhood.
+
+Extensionality against the master would put the token 1 into the singleton of 0, which is false.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

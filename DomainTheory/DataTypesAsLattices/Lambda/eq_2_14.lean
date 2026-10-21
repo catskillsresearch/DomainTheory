@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (2.14). Bottom is the self-application (λx. x(x))(λx. x(x)).
+
+The ω combinator of the identity graph is the graph of self-application, because application of the identity leaves a finite set unchanged. The first recursion theorem writes that self-application as the union of the iterates of the identity from ⊥. Each iterate is ⊥, so the union is ⊥, and the opposite inclusion is vacuous.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

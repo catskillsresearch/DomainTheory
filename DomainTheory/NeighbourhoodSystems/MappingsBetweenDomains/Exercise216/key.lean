@@ -1,3 +1,8 @@
+/-ai
+An approximable map satisfying the three parity equations sends the principal element of every finite string to the value of the scan of that string.
+
+The argument recurses on the string. For the empty string, monotonicity along the inequalities from the bottom element, together with the first two equations, places the image of the bottom element below both true and false, so the flatness lemma makes it the bottom element. For a singleton false, the empty-string case identifies the image of the bottom element; the single false lies below a double false, and monotonicity with the double-zero equation squeezes its image between the bottom element and that image, so antisymmetry gives the scan value. A leading true, and a leading false followed by true, are rewritten as concatenations and discharged by the corresponding equation and the scan of that prefix. A leading pair of zeros reduces, by the append equation, the double-zero equation, and the scan of a double zero, to the recursive call on the tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,3 +1,9 @@
+/-ai
+The master neighbourhood of the LUCID system is the whole set of tokens.
+
+The equation is definitional.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

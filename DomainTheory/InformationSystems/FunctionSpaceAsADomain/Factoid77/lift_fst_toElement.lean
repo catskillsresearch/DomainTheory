@@ -1,3 +1,8 @@
+/-ai
+The first projection, after the pairing of the first projection with the composite of the second projection and a map f, recovers the first projection of the input element.
+
+That pairing composed diagrammatically with the first projection equals the first projection, by the first-projection law for pairings. The value of the composite is the second map applied to the value of the first, so the two sides agree.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

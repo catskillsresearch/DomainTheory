@@ -1,3 +1,6 @@
+/-ai
+The coalesced sum of two neighbourhood systems, assuming every neighbourhood is nonempty, is the neighbourhood system on the optional disjoint sum whose neighbourhoods are the separated-sum master, a left injection of a proper neighbourhood of the first system, or a right injection of a proper neighbourhood of the second. The master is the separated-sum master, which contains the empty option, and every neighbourhood sits under it by the corresponding injection inclusion. An intersection stays in the system by cases: the master absorbs an injection, two injections on the same side intersect as the injection of the intersection, and injections on opposite sides meet emptily, which cannot contain the nonempty intersection witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

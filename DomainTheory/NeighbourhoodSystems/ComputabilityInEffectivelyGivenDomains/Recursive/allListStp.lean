@@ -1,3 +1,6 @@
+/-ai
+The and-step of a list fold sends the accumulator to the selection of the accumulator, the one-test of g at the pair of the current head and the parameter, and zero.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

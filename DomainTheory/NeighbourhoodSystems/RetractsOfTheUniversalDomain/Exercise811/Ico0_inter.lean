@@ -1,3 +1,8 @@
+/-ai
+The intersection of [0, r) and [0, s) is [0, min(r, s)).
+
+The intersection of two initial half-open intervals runs from the supremum of the left endpoints to the minimum of the right endpoints, and the supremum of 0 and 0 is 0.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

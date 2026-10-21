@@ -1,3 +1,8 @@
+/-ai
+Element-level strictification is monotone.
+
+A neighbourhood of the image of a smaller element is a strict step of some finite piece. Monotonicity of the function-space equivalence orders the underlying approximable maps, so the step relation transfers, and the strictness witness of each pair is kept from the smaller element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

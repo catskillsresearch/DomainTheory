@@ -1,3 +1,6 @@
+/-ai
+The operator associated with sets z and v sends a set w to the pointwise product of z with w, united with v.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

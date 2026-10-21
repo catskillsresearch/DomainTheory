@@ -1,3 +1,8 @@
+/-ai
+For a family of continuous lattices, the Scott topology of the product coincides with the product of the Scott topologies of the factors.
+
+The product is a continuous lattice. Its product topology is coarser than the Scott topology because each projection preserves directed suprema and is therefore Scott-continuous. Conversely, if a Scott-open set contains a point, the way-below basis supplies an element way-below that point whose principal upset lies in the open set. The element has finite support and is way-below the point in each coordinate. The finite box cut out by the chosen coordinate neighbourhoods is product-open, contains the point, and lies inside the upset, hence inside the open set.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

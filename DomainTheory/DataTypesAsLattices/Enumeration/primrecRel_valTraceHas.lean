@@ -1,3 +1,8 @@
+/-ai
+The relation that a value trace records a given code and value is primitive recursive.
+
+Existence, among the entries of the trace, of an entry whose first component equals the code and whose second component's first part equals the value is primitive recursive, as a list-bounded existence of a conjunction of equalities. That existence agrees with the characterization of the recording relation.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

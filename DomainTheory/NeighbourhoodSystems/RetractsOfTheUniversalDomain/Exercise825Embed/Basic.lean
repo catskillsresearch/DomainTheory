@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the stack combinators of Exercise 5.11, the bottom sequence of Exercise 6.18, the projection-pair criterion of Lemma 6.15, and the singleton-stack embedding. The commentary records that every domain embeds into its infinite power as the stack with the element at the head and bottom afterwards, with the head as a retraction, and that the universal domain therefore embeds into its infinite power.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511

@@ -1,3 +1,8 @@
+/-ai
+No right-tagged token lies in a left copy.
+
+A supposed membership equates a left tag with the right tag, and simplification of the two tags rejects that equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

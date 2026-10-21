@@ -1,3 +1,6 @@
+/-ai
+The successor image of a set of naturals is the set of numbers one greater than a member of the set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

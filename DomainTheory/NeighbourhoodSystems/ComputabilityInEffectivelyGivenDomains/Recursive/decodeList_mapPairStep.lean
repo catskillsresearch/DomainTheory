@@ -1,3 +1,8 @@
+/-ai
+Decoding one pair-map step equals the pair of the parameter and the entry consed onto the decoding of the accumulator.
+
+Unfold the step and rewrite by the successor clause of decoding and the two unpairing equations for a pair.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

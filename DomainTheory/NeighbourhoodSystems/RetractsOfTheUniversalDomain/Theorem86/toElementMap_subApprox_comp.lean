@@ -1,3 +1,8 @@
+/-ai
+The element map of the composite of the packaged map subApprox with itself equals the element map of subApprox.
+
+The element map of a composite is the composite of the element maps, both of which are the filter transport of sub, and that transport is idempotent.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

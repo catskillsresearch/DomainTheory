@@ -1,3 +1,8 @@
+/-ai
+One i-prefixed copy is contained in another if and only if the underlying sets are so related.
+
+In the forward direction, apply the inclusion to the prepend of an element of the smaller set. Injectivity of prepending returns that element to the larger set. The reverse direction is the direct inclusion of prefixed copies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

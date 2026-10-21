@@ -1,3 +1,8 @@
+/-ai
+Equal copy tokens have the same letter and the same underlying token.
+
+Unfolding the copy token, injectivity of the option constructor, of the right injection, and of pairing yields the two components.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

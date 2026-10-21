@@ -1,3 +1,6 @@
+/-ai
+The code-level minimum of first components folds the rational minimum of the accumulator with the first component of each pair code, with parameter zero and seed the one code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

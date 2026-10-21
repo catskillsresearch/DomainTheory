@@ -1,3 +1,8 @@
+/-ai
+The master of the sum of the singleton solutions equals gTok of Gamma_D and Gamma_E.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

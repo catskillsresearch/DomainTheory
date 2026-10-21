@@ -1,3 +1,8 @@
+/-ai
+If e is way below x, then the step function of e and e' takes the value e' at x.
+
+The defining supremum is indexed by a true condition, so it equals e'.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

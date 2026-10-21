@@ -1,3 +1,8 @@
+/-ai
+A word lies in the language of a total tree if and only if the tree labels that word true.
+
+The two sides are the same by reflexivity of equivalence.
+ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

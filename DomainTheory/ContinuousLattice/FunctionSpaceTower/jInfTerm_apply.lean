@@ -1,3 +1,8 @@
+/-ai
+The n-th summand of j_∞ at a Scott map f equals the level-(n+1) embedding of the conjugate of f by the level-n projection and the level-n embedding.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

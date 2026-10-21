@@ -1,3 +1,8 @@
+/-ai
+The minimal level of a paired code is primitive recursive.
+
+On the code whose shape is the parameter paired with the recursion index and the accumulator, the four components, the difference of the index and the accumulator, the periodicity test of the parameter at the index, and the successor of the index are primitive recursive. The selector that keeps the accumulator once a hit is recorded, and otherwise returns the index or its successor according to the periodicity test, is primitive recursive. Primitive recursion from the constant zero with that step, applied to the input paired with one more than its left component, is primitive recursive. Simplifying the pairing identities shows that this recursion is the minimal level.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

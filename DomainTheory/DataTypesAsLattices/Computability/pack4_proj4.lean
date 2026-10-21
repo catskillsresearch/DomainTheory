@@ -1,3 +1,6 @@
+/-ai
+The fourth projection of a fourfold pair packing is the second component of the unpairing of the second component of the unpairing of the second component.
+ai-/
 module
 
 public import Mathlib.Computability.RE

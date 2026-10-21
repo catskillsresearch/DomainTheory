@@ -1,3 +1,8 @@
+/-ai
+If the embedding of one relativized filter lies below the embedding of another, then the first filter lies below the second.
+
+A neighbourhood of the first filter belongs to a, so it is a neighbourhood of the first embedding and hence of the second. The witness for that membership is a neighbourhood of the second filter contained in the original neighbourhood, and upward closure of the second filter, using that the original neighbourhood belongs to a, returns it to that filter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

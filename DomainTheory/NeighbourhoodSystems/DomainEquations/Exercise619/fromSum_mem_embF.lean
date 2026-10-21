@@ -1,3 +1,8 @@
+/-ai
+For a neighbourhood X of the first system, the false-tagged copy of X belongs to the inverse image of an abstract sum element if and only if the left injection of X belongs to that element.
+
+In the forward direction the master clause is impossible, because a false-tagged copy is not the sum master, and the true-tagged clause is impossible, because the two tags differ on a nonempty set. The remaining clause is a false-tagged copy of some neighbourhood, and injectivity of the tagging identifies it with X. Conversely, the false-tagged clause of the inverse image applies directly.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,3 +1,8 @@
+/-ai
+For a fixed subexpression and environment, the recursive call is Scott-continuous in the candidate.
+
+The proof is Theorem 1.3 of left continuity of application at the environment and left continuity of application at the subexpression.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,6 @@
+/-ai
+The seven neighbourhoods of Example 1.4 are the master neighbourhood, the left branch, the right branch, and the four leaves.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

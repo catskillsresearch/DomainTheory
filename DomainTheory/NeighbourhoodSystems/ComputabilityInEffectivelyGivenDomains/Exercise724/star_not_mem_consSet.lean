@@ -1,3 +1,8 @@
+/-ai
+The basepoint does not lie in the cons-set of a natural number and a set of sequences.
+
+A membership witness would exhibit the basepoint as a cons, contradicting the inequality of the basepoint with every cons.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

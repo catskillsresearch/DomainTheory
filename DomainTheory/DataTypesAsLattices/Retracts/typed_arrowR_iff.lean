@@ -1,3 +1,8 @@
+/-ai
+A set is typed by the function space of a retract a with a retract b exactly when the set equals its composite with a and sends every a-typed set to a b-typed set. The retract hypothesis on b is not used.
+
+Typing gives the restriction equation and, for each a-typed argument, the value condition of Theorem 4.3 (ii). Conversely, rewrite the desired typing equation by the function-space application law and the restriction equation, and compare graphs. At each argument, the application of a is typed by a because a retract is idempotent, so the value hypothesis identifies the two sides after composition.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

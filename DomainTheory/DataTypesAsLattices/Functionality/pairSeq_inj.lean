@@ -1,3 +1,9 @@
+/-ai
+Sequence pairing is injective in both arguments.
+
+Evaluating both sides of an equality of pairs at zero, and rewriting by the zero-place equation, gives equality of the left arguments. Evaluating at one, and rewriting by the one-place equation, gives equality of the right arguments.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

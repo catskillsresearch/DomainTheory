@@ -1,3 +1,6 @@
+/-ai
+The finite element at a natural number is the principal filter of the tail of that number.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports a model of Peano's axioms and the inductively generated graph relating two such models.
+ai-/
 module
 
 public import Mathlib.Tactic

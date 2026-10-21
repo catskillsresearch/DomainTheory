@@ -1,3 +1,8 @@
+/-ai
+The finite set coded by a natural number n is a finite set.
+
+It is contained in the initial segment of length n + 1, because membership forces the element to be at most n and hence strictly below n + 1.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

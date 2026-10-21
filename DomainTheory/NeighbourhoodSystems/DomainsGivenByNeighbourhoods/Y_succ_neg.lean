@@ -1,3 +1,8 @@
+/-ai
+If the condition fails at stage n, the greedy sequence at the next stage equals the greedy sequence at stage n.
+
+Unfold both sides as first components of states, rewrite the successor state, and take the right branch of the conditional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

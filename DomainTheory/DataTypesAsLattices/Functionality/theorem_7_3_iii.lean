@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 7.3 (iii). The combinator S lies in the function space from A → (B → C) to (A → B) → (A → C).
+
+S, its first application, and its second application are graphs. On a related triple, preservation by the function arguments produces a related pair in B and then a related pair of maps from B to C, and the triple application law returns the resulting relation in C.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,6 @@
+/-ai
+Element-level inclusion sends an element of the strict function space to the filter of the underlying approximable map of its strict map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

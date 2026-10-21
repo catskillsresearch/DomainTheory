@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 4.6 applied to (4.39). The lambda retract is a retract.
+
+Theorem 4.6 is applied to the Scott continuity of lambF and to the fact that a retract a is sent to the sum of the integer retract with the function space of a with itself, which is a retract. The retract component of that result is the claim.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

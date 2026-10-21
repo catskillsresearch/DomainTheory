@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the concatenation automaton: the description of its epsilon-closure, the closed form of its evaluation, and the theorem that it accepts the concatenation of the two languages.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat.Basic

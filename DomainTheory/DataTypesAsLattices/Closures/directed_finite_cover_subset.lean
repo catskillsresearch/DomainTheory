@@ -1,3 +1,8 @@
+/-ai
+If a family of fixed points is a directed subset, and a finite set is contained in the union of their underlying sets, then some member of the family contains that finite set.
+
+A directed subset is a directed set by copying its pairwise upper bounds. The finite-cover lemma for directed sets of values, transported along the underlying-set coercion, gives the member.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

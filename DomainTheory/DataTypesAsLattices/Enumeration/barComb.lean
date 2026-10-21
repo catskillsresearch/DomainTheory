@@ -1,3 +1,6 @@
+/-ai
+The bar combinator is the least fixed point of the bar step. This is the bar combinator of Scott 1976, (3.15).
+ai-/
 module
 
 public import Mathlib.Computability.Halting

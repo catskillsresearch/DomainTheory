@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the ingredients of the double fixed point in Exercise 6.24: the token maps of the two right-hand sides, the pair iteration from the bottom pair, the two colimit token sets, the singleton solution systems and the two right-hand sides, and the facts that the empty string lies in both colimits.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

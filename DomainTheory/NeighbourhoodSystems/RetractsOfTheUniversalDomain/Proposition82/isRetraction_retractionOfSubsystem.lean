@@ -1,3 +1,8 @@
+/-ai
+The retraction associated with a subsystem is a retraction: composing it with itself returns it.
+
+The double composite is reassociated so that the projection composed with the injection stands in the middle. That composite is the identity on the subsystem, and composing with the identity leaves the retraction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition81

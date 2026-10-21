@@ -1,3 +1,8 @@
+/-ai
+The reverse memo table equals the natural recursion that starts at zero and at each step pairs the step's value with the previous value and adds one.
+
+At zero both sides are zero. At a successor the table equation matches the recursive clause by the inductive hypothesis.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

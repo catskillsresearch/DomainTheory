@@ -1,3 +1,8 @@
+/-ai
+Any power of the two-point lattice is a continuous lattice.
+
+The two-point lattice is a continuous lattice, and a product of continuous lattices is a continuous lattice.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

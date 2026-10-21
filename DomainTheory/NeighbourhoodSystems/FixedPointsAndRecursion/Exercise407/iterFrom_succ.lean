@@ -1,3 +1,8 @@
+/-ai
+The iterate of f from a at a successor index equals the elementwise action of f on the preceding iterate.
+
+Unfolding the definition, the successor iterate of a function is that function after the preceding iterate.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

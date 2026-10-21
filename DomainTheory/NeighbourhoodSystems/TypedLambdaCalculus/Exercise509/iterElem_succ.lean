@@ -1,3 +1,8 @@
+/-ai
+The successor iterate of an approximable endomap from the bottom element is the element map applied to the preceding iterate.
+
+Rewrite both iterates as function iteration and apply the successor law for iteration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407

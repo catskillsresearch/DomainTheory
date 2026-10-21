@@ -1,3 +1,8 @@
+/-ai
+The image of the colimit under T has the same master as the generating system.
+
+The subdomain relation of the first successor level in that image identifies the two masters, and that successor level has the generating master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

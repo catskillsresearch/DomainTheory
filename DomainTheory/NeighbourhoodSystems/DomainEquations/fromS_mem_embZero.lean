@@ -1,3 +1,8 @@
+/-ai
+An element of the sum system contains the zero-injection of a neighbourhood X of D if and only if its image under fromS contains the zero-embedding of X.
+
+If that image contains the zero-embedding, the three clauses of fromS apply. The master clause is impossible because a zero-embedding is not the master, and the pair clause is impossible because a zero-embedding is not a pair embedding. The remaining clause is a zero-copy, and injectivity of the zero-embedding recovers membership of the zero-injection. Conversely, membership of the zero-injection is exactly that zero-copy clause.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,3 +1,6 @@
+/-ai
+A fixed computable presentation of the sum of the universal domain with itself is a chosen witness that this sum is effectively given.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

@@ -1,3 +1,8 @@
+/-ai
+Every member of Scott's family is contained in the set of all binary words.
+
+Every set of words is contained in that set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

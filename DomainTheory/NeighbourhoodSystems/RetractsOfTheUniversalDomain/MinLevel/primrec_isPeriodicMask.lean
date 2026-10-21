@@ -1,3 +1,8 @@
+/-ai
+The periodicity test of a triple code is primitive recursive.
+
+The three components are projections. Truncating the mask at two to the power of the middle component, and at two to the power of the outer component, is primitive recursive by composing the primitive-recursive truncation with those powers; the pairing identities match the arguments. Upsampling the first truncation from the middle level to the outer level is primitive recursive by the same packing. The zero-test of the sum of the two truncated differences is primitive recursive, and it agrees with the periodicity test by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

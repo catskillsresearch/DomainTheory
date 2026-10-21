@@ -1,3 +1,6 @@
+/-ai
+The enumeration of the Smyth power domain sends a natural-number code to the union of the down-sets of the neighbourhoods whose indices are the finite list decoded from that code. The empty code gives the empty union.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,8 @@
+/-ai
+A nonempty finite set of tree tokens contained in the singleton of the bottom equals that singleton.
+
+By extensionality, every member of the set lies in the singleton. Conversely the only candidate element is the bottom. Nonemptiness supplies some element of the set, the inclusion forces that element to be the bottom, and therefore the bottom belongs to the set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

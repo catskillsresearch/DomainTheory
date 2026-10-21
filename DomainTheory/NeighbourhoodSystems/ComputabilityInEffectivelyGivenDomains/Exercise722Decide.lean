@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the decision layer for fragment expressions: the consistency bit and nonempty intersection of denotations, the comparison of the number of automaton states with the cardinality of the state type, nonemptiness of an accepted language, emptiness of a denotation, the last state along a path, the short-word criterion for nonemptiness, and the agreement of the consistency bit with the neighbourhood system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.Basic

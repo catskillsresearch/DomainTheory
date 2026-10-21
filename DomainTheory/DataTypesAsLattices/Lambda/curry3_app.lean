@@ -1,3 +1,8 @@
+/-ai
+Applying the curried form of a ternary map f three times recovers f(x, y, z).
+
+The first application reduces by the beta law, because the remaining nested graph is Scott continuous in x. The second reduces by the beta law for continuity in y. The third reduces by the beta law for continuity in z.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

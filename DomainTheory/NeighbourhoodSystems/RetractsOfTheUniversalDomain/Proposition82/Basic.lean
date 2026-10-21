@@ -1,3 +1,6 @@
+/-ai
+This file gathers Definition 8.1 and Proposition 6.12 and re-exports the subsystem retraction, the order isomorphism between the elements of a subsystem and the fixed points of that retraction, the neighbourhood relation of the retraction, and the fact that the retraction fixes the image of the injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition81

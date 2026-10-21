@@ -1,3 +1,6 @@
+/-ai
+The combinator is the composite of the injection of the infinite power of the universal domain into the universal domain with the projection back. It is the finitary projection witnessing that infinite power inside the universal domain.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

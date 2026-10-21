@@ -1,3 +1,6 @@
+/-ai
+Depth-token insertion inserts the underlying raw token of a depth token into a finite set of raw tokens.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

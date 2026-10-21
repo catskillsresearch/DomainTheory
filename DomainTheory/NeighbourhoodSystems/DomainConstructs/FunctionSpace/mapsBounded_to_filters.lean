@@ -1,3 +1,8 @@
+/-ai
+The filters of the members of a bounded set of approximable maps form a bounded set of function-space elements.
+
+The filter of an upper bound is an upper bound of those filters, because the order of filters agrees with the order of maps.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

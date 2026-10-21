@@ -1,3 +1,6 @@
+/-ai
+The order isomorphism of Exercise 3.24(ii) sends a map into an iterate to the sequence of its composites with the coordinate projections, and sends a sequence of maps back by the infinite pairing. Pairing the projections recovers the original map because the value of the pairing is the sequence of components of the original value. Projecting a pairing recovers the sequence because the coordinate of the paired value is the value of that coordinate map. An inequality of all projection composites implies the inequality of the maps, and an inequality of maps passes to each projection composite.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

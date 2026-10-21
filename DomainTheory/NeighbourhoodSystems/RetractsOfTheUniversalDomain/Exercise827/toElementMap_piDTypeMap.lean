@@ -1,3 +1,8 @@
+/-ai
+The type map of d sends an element s to j-arrow of sub of d of s.
+
+Unfold the type map and apply the composition law for element maps twice.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

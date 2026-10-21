@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (4.19). If a is a retract, then the diagonal combinator composed with a is typed as an arrow from a to the tensor of a with itself.
+
+Typedness unfolds to the arrow equation, which rewrites by the arrow rule. Graph extensionality and simplification by composition, the diagonal application rule, and the retract equation of a are followed by the tensor rule, both pair projections, and the retract equation of a again.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

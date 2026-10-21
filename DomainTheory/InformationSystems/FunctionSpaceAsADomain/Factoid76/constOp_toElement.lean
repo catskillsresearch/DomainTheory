@@ -1,3 +1,8 @@
+/-ai
+The constant operator sends an element b to the element of the function space corresponding to the constant map with value b.
+
+The approximable map recovered from that element equals the constant map, by uniqueness of constant maps. Its value at an arbitrary element x equals the uncurrying of the operator at the pair of b and x, which is the first projection of that pair and therefore b. Passing back from the recovered map to an element gives the result.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

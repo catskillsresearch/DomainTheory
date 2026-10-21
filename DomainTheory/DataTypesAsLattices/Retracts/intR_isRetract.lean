@@ -1,3 +1,8 @@
+/-ai
+The integer retract is a retract.
+
+The retract equation says that the integer retract equals the graph of applying it twice. Rewrite by the graph equation and compare graphs. At each argument the two sides agree by the symmetric idempotence law.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,3 +1,8 @@
+/-ai
+If every neighbourhood of a system D is nonempty, then Gamma D is nonempty.
+
+A token of the master of D pairs with the empty list, and that pair lies in Gamma D.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

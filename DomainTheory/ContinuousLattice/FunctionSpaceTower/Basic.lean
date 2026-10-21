@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the function-space tower used for Scott's Theorem 4.4: the bundled complete lattices and the recursively defined levels, conjugation of Scott maps, the inclusion and retraction of a function space and the tower projections, the inverse limit and its function space, the summands of the two limit maps, and the comparison, monotonicity, and inverse lemmas that identify the limit with its function space. It also registers the complete-lattice structure carried by a bundled lattice as a type-class instance.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

@@ -1,3 +1,8 @@
+/-ai
+A single step whose output is a neighbourhood is consistent: for every neighbourhood input, the intersection of the relevant outputs is a neighbourhood.
+
+If the input is contained in the step input, that intersection equals the output neighbourhood. Otherwise it equals the codomain master, which is a neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,3 +1,6 @@
+/-ai
+The updated tuple at an index i with value U is the family of master neighbourhoods with the value at i replaced by U.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

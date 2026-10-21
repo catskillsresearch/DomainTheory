@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood system U is effectively given.
+
+The computable presentation of U is a witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

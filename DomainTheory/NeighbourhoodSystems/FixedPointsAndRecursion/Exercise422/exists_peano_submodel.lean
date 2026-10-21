@@ -1,3 +1,8 @@
+/-ai
+If zero is never a successor and successor is injective, the carved-out subtype carries a Peano model.
+
+The Peano structure already constructed on that subtype is a witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

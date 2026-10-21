@@ -1,3 +1,6 @@
+/-ai
+The element primRecZeroC is primitive recursion with initial value zero, viewed as an operator on its step. It is the S combinator applied to K applied to the application combinator dollarC, and to S applied to K applied to the fixed-point combinator Ycomb and to the interpretation of primRecStepTerm in the constantly bottom environment applied to the numeral 0.
+ai-/
 module
 
 public import Mathlib.Computability.RE

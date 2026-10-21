@@ -1,3 +1,8 @@
+/-ai
+The qChar-gated fold of the empty list is the master index.
+
+Both sides are the master index by the definition of the fold.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic

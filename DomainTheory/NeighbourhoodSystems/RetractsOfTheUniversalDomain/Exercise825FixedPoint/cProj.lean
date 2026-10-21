@@ -1,3 +1,6 @@
+/-ai
+The projection from the universal domain onto its infinite power is the second witness chosen by the strong form of Theorem 8.8(b) applied to a computable presentation of that power.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

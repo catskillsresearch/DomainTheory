@@ -1,3 +1,8 @@
+/-ai
+If the product of d on the function space satisfies the step-closure formula, then the product regarded as a self-map of the universal domain is finitary.
+
+The formula gives finitariness of the function-space product, and that finitariness transports to the universal-domain product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

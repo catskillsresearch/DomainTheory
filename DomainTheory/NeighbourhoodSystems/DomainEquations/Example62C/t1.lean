@@ -1,3 +1,6 @@
+/-ai
+The middle tag of an element b is the token some (inr (inl b)) in Option (α ⊕ β ⊕ γ).
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

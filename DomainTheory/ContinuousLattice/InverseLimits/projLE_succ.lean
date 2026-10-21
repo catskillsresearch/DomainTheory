@@ -1,3 +1,8 @@
+/-ai
+Descending from stage n+1 down to stage m is the descent from stage n applied after the retraction at stage n.
+
+Unfolding the descent, the successor step of the recursion is that retraction.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

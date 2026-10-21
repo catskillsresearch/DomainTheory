@@ -1,3 +1,8 @@
+/-ai
+The doubling encoding of the empty string is the empty string.
+
+The equality is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

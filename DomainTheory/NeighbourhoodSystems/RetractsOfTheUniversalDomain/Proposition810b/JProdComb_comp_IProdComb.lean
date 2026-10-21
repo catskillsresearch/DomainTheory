@@ -1,3 +1,8 @@
+/-ai
+The product extraction composed after the product injection is the identity of the product of the two fixed neighbourhoods.
+
+Unfold both maps. Associativity, the identity that the product extraction after the product injection is the identity, the composition law of the product of maps, the two subsystem identities that the projection after the injection is the identity, and the identity law of the product of maps give the equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

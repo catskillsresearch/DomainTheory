@@ -1,3 +1,8 @@
+/-ai
+If a Scott-continuous map has a family of fixed points, the least upper bound of the iterates above their union is again a fixed point.
+
+The union of fixed points lies below its image, so the fixed-point lemma for least upper bounds of iterates applies.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

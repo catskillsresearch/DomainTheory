@@ -1,3 +1,8 @@
+/-ai
+Applying the order isomorphism ccEquiv to an element x of Cn A yields toCC x.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

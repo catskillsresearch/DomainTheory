@@ -1,3 +1,8 @@
+/-ai
+The packaged map relates the enumerated neighbourhood of index n to the enumerated neighbourhood of index m exactly when, whenever m is consistent, sub of the least map of the enumerated neighbourhood of n relates every coded step of m.
+
+The unfolded relation, together with membership of the enumerated neighbourhood of m, is the membership criterion of an enumerated neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

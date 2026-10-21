@@ -1,3 +1,8 @@
+/-ai
+The empty token does not lie in the unit copy.
+
+Simplification of the unit copy and the unit token gives the exclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

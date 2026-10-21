@@ -1,3 +1,6 @@
+/-ai
+This file gathers Mathlib's category class together with the notations for the identity morphism and for composition in Scott's after-order, and re-exports the category class. The composite g ⊚ f is f followed by g.
+ai-/
 module
 
 public import Mathlib.CategoryTheory.Category.Basic

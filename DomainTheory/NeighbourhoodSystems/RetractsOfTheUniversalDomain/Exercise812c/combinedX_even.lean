@@ -1,3 +1,8 @@
+/-ai
+combinedX at the index 2k equals the k-th set of the first enumeration.
+
+Unfolding the definition, the index is even, so the first branch of the conditional is taken, and dividing by two returns k.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

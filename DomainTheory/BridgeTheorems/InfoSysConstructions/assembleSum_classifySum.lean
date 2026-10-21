@@ -1,3 +1,8 @@
+/-ai
+Assembling the classification of a sum-domain element recovers that element.
+
+The classification is a chosen separated-sum code that assembles to the element, and the chosen witness is exactly this equality.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

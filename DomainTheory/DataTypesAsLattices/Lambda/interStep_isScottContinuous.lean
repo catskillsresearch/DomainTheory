@@ -1,3 +1,8 @@
+/-ai
+The step interStep is Scott continuous.
+
+Graph continuity reduces the claim to continuity of the inner graph, and a second use of graph continuity reduces that to continuity of the conditional body. Theorem 1.3 applies continuity of the conditional in its right argument, then continuity of successor, then continuity of application in the function argument at each of the two predecessors.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

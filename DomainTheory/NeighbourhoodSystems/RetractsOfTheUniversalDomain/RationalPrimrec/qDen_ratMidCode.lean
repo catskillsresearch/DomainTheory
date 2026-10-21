@@ -1,3 +1,8 @@
+/-ai
+The denominator of the midpoint of two rational codes is twice the product of their denominators.
+
+Each denominator is positive, so twice their product is positive and hence at least one. After the midpoint is unfolded and the pairing is cancelled, the stored second component is that product minus one, and adding one cancels the subtraction. Reordering the factors gives the stated product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

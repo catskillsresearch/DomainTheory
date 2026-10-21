@@ -1,3 +1,8 @@
+/-ai
+Any two models of Peano's axioms admit a bijection of their underlying types that sends zero to zero and commutes with the successor.
+
+Using classical choice, send each left-hand element to the unique right-hand element related to it by the graph, and each right-hand element to the unique left-hand element related to it. The two uniqueness statements make these maps mutually inverse. The zero equation is uniqueness of the partner of zero, using that the zeros are related. The successor equation is uniqueness of the partner of a successor, using that a related pair remains related after both successors.
+ai-/
 module
 
 public import Mathlib.Tactic

@@ -1,3 +1,8 @@
+/-ai
+At a successor index, the enumeration returns the zero embedding of the enumerated neighbourhood of half the predecessor when the index is odd, and otherwise the paired embedding of the two earlier values at the components of the unpairing of half the predecessor of the predecessor.
+
+This is the successor clause of the definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

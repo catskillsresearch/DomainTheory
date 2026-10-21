@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the token set, the master neighbourhood, the two overlapping neighbourhoods, the set of neighbourhoods and membership in it, the classification of neighbourhoods, membership of the master and of each overlapping neighbourhood, the exclusion of neighbourhoods contained in the singleton of the middle token, the classification of binary intersections, the positive example, and the non-positive system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+Theorem 5.2, tuple case (Scott 1981, PRG-19), states that the map recovered from the curry of a pairing, at a context element and at x, equals the pair of the two maps recovered from the curries of the two components at that same context element and at x.
+
+Rewrite by the curried application law, the pairing law, and the curried application law on each component.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

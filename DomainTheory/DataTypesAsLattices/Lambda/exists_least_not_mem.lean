@@ -1,3 +1,8 @@
+/-ai
+If some natural number lies outside a set, then there is a least such number, and every smaller index lies in the set.
+
+Strong induction shows that if n lies outside the set, then some k at most n lies outside and every smaller index lies in the set: either n itself is least, or some smaller index lies outside and the inductive hypothesis applies. The hypothesis supplies an n, and that claim yields the least missing number.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

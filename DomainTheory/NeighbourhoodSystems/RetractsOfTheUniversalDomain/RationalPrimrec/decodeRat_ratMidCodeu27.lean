@@ -1,3 +1,8 @@
+/-ai
+The midpoint of an arbitrary code decodes to the arithmetic mean of the rationals decoded from its two components.
+
+The paired midpoint equation at those two components, rewritten by pairing them back into the original code, is the claim.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

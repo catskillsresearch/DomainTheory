@@ -1,3 +1,8 @@
+/-ai
+The cone of the completed encoding of one string is contained in the cone of the completed encoding of another if and only if the two strings are equal.
+
+Rewrite containment of cones as a prefix of their roots, apply the comparison of completed encodings, and commute the resulting equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

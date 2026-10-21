@@ -1,3 +1,6 @@
+/-ai
+Exercise 8.11's neighbourhood system R on the rationals has as neighbourhoods the half-open intervals [0, r) for rationals r with 0 < r ≤ 1, and has master [0, 1). Comparing endpoints shows that any two such intervals are nested, so the nested-or-disjoint constructor applies, and each neighbourhood is contained in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,8 @@
+/-ai
+Whenever some coded set is contained in the intersection of two coded sets, the base presentation's intersection index is an index of that same intersection on the coded side.
+
+The raw embedding comparison turns the hypothesis into a base neighbourhood contained in the intersection of the two base neighbourhoods, so the base intersection specification applies. The index-set form of that equality transfers to equality of the coded intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

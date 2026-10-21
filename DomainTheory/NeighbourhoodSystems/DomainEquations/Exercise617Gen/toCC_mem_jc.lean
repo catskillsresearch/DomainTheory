@@ -1,3 +1,8 @@
+/-ai
+The forward image of an element contains the letter-copy of a neighbourhood when the element contains the embedding of that neighbourhood.
+
+The master alternative would place the empty token in the copy. The unit-copy alternative would place a copy token of a nonempty neighbourhood in the unit copy. A letter-copy alternative agrees with the given copy by equality of copies. Conversely, the letter-copy clause records the embedding membership.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

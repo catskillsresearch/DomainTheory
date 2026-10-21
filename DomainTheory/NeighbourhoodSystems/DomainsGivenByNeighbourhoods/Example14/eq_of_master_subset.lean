@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood of Example 1.4 that contains the master neighbourhood equals the master neighbourhood.
+
+By the membership classification the neighbourhood is the master neighbourhood, the left branch, the right branch, or one of the four leaves. The master case is immediate. In each of the other six cases the token 0, which belongs to the master neighbourhood, fails to belong to the neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

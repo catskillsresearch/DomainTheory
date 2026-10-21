@@ -1,3 +1,8 @@
+/-ai
+If two approximable maps are computable in Scott's sense, their smash is a computable map between the smash presentations.
+
+Properness deciders determine primitive-recursive effective indices, and each smash code equals the product of its component neighbourhoods at those indices. The relation holds when the codomain code is improper, in which case its enumeration is the master, or when the codomain code is proper and both maps relate the effective domain factors to the raw codomain factors. Codomain properness is recursively decidable and the two relations are recursively enumerable, so this combination is recursively enumerable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

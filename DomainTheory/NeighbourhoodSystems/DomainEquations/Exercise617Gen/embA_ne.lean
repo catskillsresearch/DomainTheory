@@ -1,3 +1,8 @@
+/-ai
+If two letters are distinct and a set of finite strings is nonempty, its copy prefixed by the first letter differs from the copy of any set prefixed by the second letter.
+
+A string of the nonempty set gives a string in the first prefixed copy, hence, by the assumed equality, in the second. That membership forces the two letters to be equal, contradicting the hypothesis that they differ.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

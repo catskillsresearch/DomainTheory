@@ -1,3 +1,8 @@
+/-ai
+The re-pointed enumeration sends 0 to the master neighbourhood of D.
+
+That value is the original neighbourhood at the swap of 0. The swap sends 0 to the master index, and the master index enumerates the master neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable

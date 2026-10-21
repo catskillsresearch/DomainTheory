@@ -1,3 +1,8 @@
+/-ai
+For neighbourhoods X and Y, the intersection of their brackets equals the bracket of their intersection.
+
+By extensionality of sets. An element that contains both neighbourhoods contains the intersection by the intersection law. An element that contains the intersection contains each neighbourhood by upward closure along the two inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

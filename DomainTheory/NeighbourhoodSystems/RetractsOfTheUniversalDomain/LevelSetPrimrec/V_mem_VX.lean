@@ -1,3 +1,9 @@
+/-ai
+Every value of the enumeration of V is a neighbourhood of V.
+
+It is the level set of the level and mask of the canonicalized code, and that level set
+is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

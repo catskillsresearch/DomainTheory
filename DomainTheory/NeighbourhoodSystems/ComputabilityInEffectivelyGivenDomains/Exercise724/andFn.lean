@@ -1,3 +1,6 @@
+/-ai
+Sequential conjunction of neighbourhoods X and Y returns Y when X is the neighbourhood zero, returns the neighbourhood one when X is the neighbourhood one, and returns the master neighbourhood otherwise. This is the left-strict conjunction in which zero names true and one names false.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

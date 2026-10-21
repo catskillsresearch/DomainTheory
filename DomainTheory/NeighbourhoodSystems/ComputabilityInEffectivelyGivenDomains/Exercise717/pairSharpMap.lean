@@ -1,3 +1,6 @@
+/-ai
+The pairing map from the product of the sharp domain with itself into the sharp domain relates a product neighbourhood to a sharp neighbourhood when the source is the product of two sharp neighbourhoods and the paired embedding of those neighbourhoods is contained in the target. The domain and codomain are those two memberships. The master neighbourhood of the product is related to the master neighbourhood, witnessed by the pair of master neighbourhoods. Intersection of targets uses injectivity of a product neighbourhood to match the witnesses and then intersects the inclusions. A smaller source has smaller factors, and those factors remain included after the target is enlarged.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Combinators77

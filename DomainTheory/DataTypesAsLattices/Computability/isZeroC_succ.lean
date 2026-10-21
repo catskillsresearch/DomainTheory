@@ -1,3 +1,8 @@
+/-ai
+The zero test applied to the numeral of n + 1 yields the numeral of 0.
+
+Unfold the test, rewrite by the three-argument β-rule for the conditional, and apply the successor clause of equation (2.7).
+ai-/
 module
 
 public import Mathlib.Computability.RE

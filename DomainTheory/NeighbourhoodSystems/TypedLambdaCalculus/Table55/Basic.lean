@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the combinators of Table 5.5 (Scott 1981, PRG-19), each realized as an approximable map: the two binary projections, curried pairing, the diagonal, argument swap, evaluation, the constant combinator, the curry isomorphism and the curry combinator, the uncurried composition body and the composition combinator, the uncurried function-pairing body and the function-pairing combinator, and the least-fixed-point combinator, together with the value equations for the projections, the diagonal, and the swap.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

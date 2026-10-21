@@ -1,3 +1,6 @@
+/-ai
+The fold of a finite set of right-hand-side tokens is the finite set of tree tokens obtained by inserting, through a choice-free fold, the tree fold of each token into the empty set.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

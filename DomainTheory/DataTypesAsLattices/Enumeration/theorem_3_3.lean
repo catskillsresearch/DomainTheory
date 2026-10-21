@@ -1,3 +1,9 @@
+/-ai
+Scott's second recursion theorem (Theorem 3.3) asserts that there is a primitive recursive function v such that the associated rec is primitive recursive, val(v(n)) equals the second recursion value of val(n), rec(n) equals the application of v(n) to the numeral of v(n), and val(rec(n)) equals val(n) applied to the numeral of rec(n).
+
+Take v to be the second recursion function. It is primitive recursive, and so is rec of it. The value clause is Theorem 3.3 (i), the application clause is Theorem 3.3 (ii), and the fixed-point clause is the derivation of (iii) from (i) at this v.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

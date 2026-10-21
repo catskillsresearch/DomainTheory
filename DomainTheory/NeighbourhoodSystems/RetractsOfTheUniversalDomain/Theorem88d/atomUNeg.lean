@@ -1,3 +1,6 @@
+/-ai
+The negative code at depth n for a bit-source is the negative-list component of the packed state at the pair of that bit-source and the depth.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

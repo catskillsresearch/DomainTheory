@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the subsystem embedding of B in C, the retract of B in C, the isomorphism of C with D', and the retract of C in B.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.Basic

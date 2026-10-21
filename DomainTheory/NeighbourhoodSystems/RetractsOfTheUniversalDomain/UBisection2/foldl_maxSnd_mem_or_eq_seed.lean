@@ -1,3 +1,8 @@
+/-ai
+The left fold of the maximum of second components from a seed equals the seed, or equals the second component of some pair in the list.
+
+Induct on the list, generalizing the seed. The empty fold equals the seed. For a cons cell, compare the head's second component with the seed. If the head is at most the seed, the maximum is the seed and the inductive hypothesis yields the seed or a tail witness. If the seed is at most the head, the maximum is the head and the inductive hypothesis yields the head itself or a tail witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

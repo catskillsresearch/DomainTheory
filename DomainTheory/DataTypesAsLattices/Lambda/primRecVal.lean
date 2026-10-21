@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (2.27), defines primitive recursion as a distributive function of a base and a step. The value at zero is the base, and the value at a successor is the step applied to the preceding numeral and then to the preceding value.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

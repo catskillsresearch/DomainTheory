@@ -1,3 +1,6 @@
+/-ai
+The Sierpiński domain is the neighbourhood system on a one-point token type whose neighbourhoods are the full token set and the empty set, with the full set as master. The unique token lies in the master, the master is a neighbourhood, the intersection of any two of these neighbourhoods is again one of them, and every neighbourhood is contained in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122

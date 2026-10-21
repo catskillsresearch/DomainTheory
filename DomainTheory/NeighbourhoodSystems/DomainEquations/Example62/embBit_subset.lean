@@ -1,3 +1,8 @@
+/-ai
+For a fixed boolean, the tagging of one set of binary strings is contained in the tagging of another if and only if the first set is contained in the second.
+
+If the taggings are so contained and a string lies in the first set, the string preceded by the boolean lies in the second tagging, and injectivity of prefixing a bit returns the string to the second set. If the sets are so contained, a tagged string whose suffix lies in the first set has its suffix in the second set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

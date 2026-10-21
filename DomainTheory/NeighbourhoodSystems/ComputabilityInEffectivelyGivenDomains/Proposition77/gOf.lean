@@ -1,3 +1,6 @@
+/-ai
+The course-of-values value of a step at w is the step applied to the pair of w and the reverse memo table of the step at w.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

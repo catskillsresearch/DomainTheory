@@ -1,3 +1,8 @@
+/-ai
+If two Boolean histories differ somewhere below depth n, then both components of the generalized atom pair are pairwise disjoint at that depth.
+
+The argument is induction on n. Depth zero admits no earlier disagreement. At a successor, if the histories agree below n then they differ at n. When only the second bits differ, congruence identifies the depth-n pairs and the Y-step is disjoint. When the first bits differ, the X-step components are disjoint, and each depth n + 1 component sits inside the corresponding X-step component. If the histories already differ below n, the inductive hypothesis gives disjointness at depth n, and both components only shrink, so the intersections at depth n + 1 remain empty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

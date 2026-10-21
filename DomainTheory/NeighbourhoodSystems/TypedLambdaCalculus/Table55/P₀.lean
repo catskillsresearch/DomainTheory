@@ -1,3 +1,6 @@
+/-ai
+The combinator P₀ of Table 5.5 (Scott 1981, PRG-19) is the first projection from a product of neighbourhood systems to the first factor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

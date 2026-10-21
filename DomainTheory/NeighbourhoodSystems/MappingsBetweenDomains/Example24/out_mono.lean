@@ -1,3 +1,8 @@
+/-ai
+If one string is a prefix of another, the output of the shorter string is a prefix of the output of the longer string.
+
+Write the longer string as the shorter one followed by a tail, and apply growth of the output under extension.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

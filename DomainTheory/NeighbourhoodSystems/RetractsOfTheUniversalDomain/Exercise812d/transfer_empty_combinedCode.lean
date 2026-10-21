@@ -1,3 +1,8 @@
+/-ai
+For a finite list of index-and-sign constraints whose indices lie below a bound, the set of master points of the first system obeying those constraints on the combined X-codes is nonempty if and only if the corresponding set for the second system and the combined Y-codes is nonempty.
+
+The core comparison says that a generated atom on the Y side is empty exactly when the generated atom on the X side is empty. The two directions are then the general transfer lemma, applied once from the X side to the Y side and once from the Y side to the X side.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

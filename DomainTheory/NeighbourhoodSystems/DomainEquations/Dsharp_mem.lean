@@ -1,3 +1,8 @@
+/-ai
+A set of path-token pairs is a neighbourhood of the tree algebra if and only if it belongs to the inductive family of tree-algebra neighbourhoods.
+
+The two sides are identical by the definition of the tree algebra.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

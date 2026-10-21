@@ -1,3 +1,6 @@
+/-ai
+Two approximable maps that compose to the identity in both directions determine an order isomorphism of element types, with forward and inverse maps given by their element actions. Each round trip rewrites as the element action of the corresponding composite and then as the identity action. An inequality of forward images pulls back by monotonicity of the inverse action and that identity composite, and an inequality of elements pushes forward by monotonicity of the forward action.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

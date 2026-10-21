@@ -1,3 +1,8 @@
+/-ai
+If a family of sets excludes the whole carrier, then its dual excludes the empty set.
+
+Simplifying the definition of the dual, membership of the empty set would be membership of the whole carrier.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

@@ -1,3 +1,6 @@
+/-ai
+The cofinite neighbourhood system on the natural numbers takes as neighbourhoods the sets whose complements are finite, with the whole set as master neighbourhood. The complement of the master is empty, hence finite. The complement of an intersection is the union of the complements, so the intersection of two neighbourhoods is a neighbourhood. Every neighbourhood is contained in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

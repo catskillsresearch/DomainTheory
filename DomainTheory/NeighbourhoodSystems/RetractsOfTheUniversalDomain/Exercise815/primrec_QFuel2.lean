@@ -1,3 +1,8 @@
+/-ai
+If the basic-neighbourhood enumeration is primitive recursive, then the fuel-bounded tree evaluation is jointly primitive recursive in the fuel bound and the code.
+
+The fuel table of the lookup step is primitive recursive. Packing the code before the fuel and reading the code's entry of that table by the coded list lookup produces the same value as the fuel-bounded evaluation at that fuel and code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

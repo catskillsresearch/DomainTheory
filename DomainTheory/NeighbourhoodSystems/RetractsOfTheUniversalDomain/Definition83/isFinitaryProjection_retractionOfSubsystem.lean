@@ -1,3 +1,8 @@
+/-ai
+The retraction of a subsystem is a finitary projection.
+
+The proof pairs the fact that this retraction is a projection with the fact that it is finitary.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82

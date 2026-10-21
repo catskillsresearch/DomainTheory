@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood system of the functor applied to an empty-free domain is the indexed sum of its system.
+
+The two sides are the same by definition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

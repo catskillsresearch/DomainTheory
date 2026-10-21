@@ -1,3 +1,8 @@
+/-ai
+The rational-pair list decoded from a canonical code is never empty. It contains at least the fallback pair zero and one, or a genuine clipped pair.
+
+Unfold the canonical code. If the list code is zero, the zero test selects the master-pair singleton, which decodes to a nonempty list. Otherwise the zero test reads zero, since a reading of one would make the list code zero, and the filter branch is selected. An empty decoding of that branch would make the underlying list code zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

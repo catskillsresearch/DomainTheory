@@ -1,3 +1,8 @@
+/-ai
+Scanning a leading zero, then a one, then any tail, returns some false.
+
+Unfolding the append, the false clause and the true clause compute that value.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

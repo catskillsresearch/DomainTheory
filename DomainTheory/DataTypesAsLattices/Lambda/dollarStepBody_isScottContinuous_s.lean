@@ -1,3 +1,8 @@
+/-ai
+The dollar step body is Scott continuous in the step argument.
+
+The else branch composes application to the predecessor with application to the shifted sequence, so it is Scott continuous in the step. The conditional is Scott continuous in its right argument, and the left branch does not depend on the step.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

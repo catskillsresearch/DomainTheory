@@ -1,3 +1,8 @@
+/-ai
+The junk flag of a packed state is primitive recursive.
+
+It is the right component of the right component of the code, and that projection is primitive recursive.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports transitivity of the embedding relation, the embeddings of the sum, product, and function space of the universal domain into the universal domain, the universality of the universal domain, transport of universality along isomorphism, and the universality of the domain constructed in Exercise 8.12.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.Basic

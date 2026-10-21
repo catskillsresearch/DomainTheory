@@ -1,3 +1,6 @@
+/-ai
+Given an approximable map from a product of neighbourhood systems into a third, pointwise application produces the map that sends a pair of L-indexed sequences to the sequence whose value at a shared argument is the given map applied to the pair of values. It is the curry of that map composed with the pairing of the two evaluations, each evaluation using the corresponding projection of the sequence pair together with the projection of the shared argument.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

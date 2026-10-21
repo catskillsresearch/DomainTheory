@@ -1,3 +1,6 @@
+/-ai
+The guard of depth n tests coordinates 0 through n - 1. At depth 0 it is the underlying map. At depth n + 1 it is the one-coordinate guard at index n applied to the guard of depth n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

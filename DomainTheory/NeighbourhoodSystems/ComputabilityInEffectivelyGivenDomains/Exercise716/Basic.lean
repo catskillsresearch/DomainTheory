@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Theorem 7.5, the table of typed combinators, and the curry step code, as the setup for writing the curry combinator as a relation between neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

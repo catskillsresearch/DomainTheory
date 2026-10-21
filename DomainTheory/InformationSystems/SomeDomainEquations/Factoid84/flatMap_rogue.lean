@@ -1,3 +1,8 @@
+/-ai
+The flat map sends the finite element of 1 to the top element of the powerset system P.
+
+The token 1 belongs to that finite element, and the flat map sends every element containing 1 to the top element.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

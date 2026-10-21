@@ -1,3 +1,8 @@
+/-ai
+Every basic open is an open set.
+
+An element of the basic open of a set contains that set, and the basic open is contained in itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

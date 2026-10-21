@@ -1,3 +1,8 @@
+/-ai
+The embedding of one letter applied to a neighbourhood is again a neighbourhood of the system of cones and singletons.
+
+The embedding is prepending the one-letter string, and prepending a string preserves membership.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

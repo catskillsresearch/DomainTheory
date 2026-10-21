@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the development of Scott's equation C ≅ {{Λ}} + C + C: the three-way separated sum and its master, the tagged copies, the maps toCC and fromCC, and the order isomorphism ccEquiv, together with the lemmas that support them.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

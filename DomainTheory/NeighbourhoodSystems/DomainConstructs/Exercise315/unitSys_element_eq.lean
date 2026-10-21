@@ -1,3 +1,8 @@
+/-ai
+Every element of the terminal domain equals the bottom element.
+
+By element extensionality. If a neighbourhood belongs to the element, rewrite membership in the bottom element and apply the element's subfamily law. If it belongs to the bottom element, that membership rewrites to an equality, and substitution leaves the master, which belongs to the element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,3 +1,6 @@
+/-ai
+The difference index of two indices is the canonical index of their raw difference code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

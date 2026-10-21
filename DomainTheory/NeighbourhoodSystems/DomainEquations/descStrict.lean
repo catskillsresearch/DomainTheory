@@ -1,3 +1,6 @@
+/-ai
+The strict morphism from the domain C to the carrier of a T-algebra is the descent map packaged with the proof that the descent map is strict.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

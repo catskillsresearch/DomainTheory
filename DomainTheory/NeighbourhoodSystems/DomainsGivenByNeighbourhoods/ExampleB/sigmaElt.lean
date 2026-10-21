@@ -1,3 +1,6 @@
+/-ai
+Applying a finite binary string to an element of the binary system yields the element whose neighbourhoods are the neighbourhoods Y for which some neighbourhood X of the element has the prepend of the string to X contained in Y. A neighbourhood of the result is already a neighbourhood of the system. The master belongs because the master belongs to the element and the prepend of the string to the master is contained in the master. For an intersection, the intersection of the two witnessing neighbourhoods belongs to the element, the prepend of the string to that intersection is contained in both targets and is itself a neighbourhood, and it is the consistency witness. Upward closure reuses the same witnessing neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,9 @@
+/-ai
+For any terms a and b, the term-level binary sequence constructor of a and b avoids the variable 8.
+
+Avoidance holds by its first clause, which is definitionally the binding of 8.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+The empty string belongs to fTok of any two token sets.
+
+It is the element inserted by the definition of that token map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

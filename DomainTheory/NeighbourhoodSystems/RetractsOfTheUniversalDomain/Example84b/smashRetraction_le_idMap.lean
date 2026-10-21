@@ -1,3 +1,8 @@
+/-ai
+smashRetraction lies below the identity on the product.
+
+On elements, a neighbourhood of smash of z is either the product master, which belongs to z, or a neighbourhood that already belongs to z.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

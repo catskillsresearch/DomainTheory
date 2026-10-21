@@ -1,3 +1,8 @@
+/-ai
+No neighbourhood is contained in the singleton of the middle token.
+
+A neighbourhood is the master or one of the two overlapping sets. The master and the first overlapping set both contain the first token, and the second overlapping set contains the last token, so none of them is contained in the singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

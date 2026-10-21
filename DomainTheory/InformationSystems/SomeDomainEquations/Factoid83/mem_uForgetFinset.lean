@@ -1,3 +1,8 @@
+/-ai
+A V-token lies in the forget-finset of a finite set of U-tokens if and only if some member has that value.
+
+Simplifying the definition of the forget-finset reduces the equivalence to the membership lemma for the right fold of forget-insertion on the underlying multiset.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

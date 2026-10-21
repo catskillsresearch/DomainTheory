@@ -1,3 +1,8 @@
+/-ai
+The pairing value of 0 and 0 is 0.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

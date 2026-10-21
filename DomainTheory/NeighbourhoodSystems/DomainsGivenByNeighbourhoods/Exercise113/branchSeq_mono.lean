@@ -1,3 +1,8 @@
+/-ai
+The finite approximations along an infinite binary path increase with the stage.
+
+If the first stage is at most the second, the corresponding prefixes stand in the prefix relation, and that relation is the approximation order of their finite elements.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

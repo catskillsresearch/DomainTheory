@@ -1,3 +1,8 @@
+/-ai
+A set is Scott-open if and only if it is an upper set and inaccessible by directed suprema.
+
+If the set is Scott-open, the upper-set property is its first component. Directed-supremum inaccessibility follows by rewriting membership of the supremum through the identity of a least upper bound with the supremum, and then applying the inaccessibility clause of Scott-openness. Conversely, the upper-set property is the first component of the hypothesis. The inaccessibility clause of Scott-openness is directed-supremum inaccessibility applied to the least upper bound given by the supremum.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

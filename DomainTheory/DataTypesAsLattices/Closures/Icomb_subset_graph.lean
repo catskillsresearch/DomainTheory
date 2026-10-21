@@ -1,3 +1,9 @@
+/-ai
+The identity combinator is contained in the graph of a map f if and only if f is expansive on every finite set en.
+
+A pair (n, m) lies in the identity when m lies in en, and it lies in the graph of f when m lies in f(en). Pairing codes are injective, so the two containment statements describe the same pairs.
+ai-/
+
 module
 
 public import Mathlib.Algebra.Ring.Parity

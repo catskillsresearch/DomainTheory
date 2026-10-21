@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the domain of finite and infinite binary sequences: the neighbourhood predicate, cones and singletons and their comparisons, monotonicity of prepending and its action on singletons, closure of neighbourhoods under prepending, the system with its membership and master, the partial and total elements, the maps that prepend a bit, and the alternating fixed-point element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

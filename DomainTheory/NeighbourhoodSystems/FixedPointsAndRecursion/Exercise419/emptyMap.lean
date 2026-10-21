@@ -1,3 +1,6 @@
+/-ai
+The emptiness test from the sequence domain to the truth domain is the approximable map obtained by lifting head values that send the empty string to true on a total element and to bottom on a partial element, and send every nonempty string to false.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

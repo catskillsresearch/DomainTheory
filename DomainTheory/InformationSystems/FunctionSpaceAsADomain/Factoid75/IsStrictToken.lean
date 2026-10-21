@@ -1,3 +1,7 @@
+/-ai
+A function-space token is strict when empty entailment of its input finite set implies empty entailment of its output finite set.
+ai-/
+
 module
 
 public import Mathlib.Data.Multiset.MapFold

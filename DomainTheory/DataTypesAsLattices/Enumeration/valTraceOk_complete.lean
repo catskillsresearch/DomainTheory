@@ -1,3 +1,8 @@
+/-ai
+If a member lies in the numerical value of a code, then some well-formed valuation trace records that code and that member.
+
+The proof is by strong induction on the code. At zero, the zero clause of the evaluator places the member in the G combinator, and the one-entry trace with that member is well formed and records the membership. At a successor, both unpairing components are strictly smaller. The successor clause supplies a time stamp, an operator membership of the pair of that time stamp with the member, and a containment of the finite set of its set bits in the argument value. The inductive hypothesis gives a well-formed trace for the operator membership, and a concatenation of traces gives a well-formed trace recording each set bit of the time stamp at the argument code. Appending those traces preserves well-formedness and the recorded memberships. Consing the successor entry is justified by the transferred operator witness and bit witnesses, after the predecessor and unpairing identities, and the new code is a successor, so the extended trace is well formed and records the membership at that time stamp.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

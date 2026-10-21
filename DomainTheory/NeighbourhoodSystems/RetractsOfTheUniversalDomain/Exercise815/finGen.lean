@@ -1,3 +1,6 @@
+/-ai
+The finitely generated subsystem on a finite index list is the set of neighbourhoods that arise as the partial meet, starting from the master neighbourhood, of some sublist of that list.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

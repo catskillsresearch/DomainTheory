@@ -1,3 +1,8 @@
+/-ai
+The denotation of the safe active decode of any index is nonempty.
+
+If decoding fails, the safe decode is sigma and its denotation is the whole set of tokens. If decoding succeeds and the nonemptiness decision holds, the safe decode is that expression and the decision supplies a nonempty denotation. If the decision fails, the safe decode is again sigma.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

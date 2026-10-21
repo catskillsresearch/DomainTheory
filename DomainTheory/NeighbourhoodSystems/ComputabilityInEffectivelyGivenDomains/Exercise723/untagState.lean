@@ -1,3 +1,7 @@
+/-ai
+The untagging state of a code is the iterate of the transition, one more time than the code, started from the fresh state that pairs the code with the flag zero, the reversed accumulator zero, and the value zero.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

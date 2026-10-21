@@ -1,3 +1,8 @@
+/-ai
+The enumerated neighbourhood of an index equals the intervals presented by the canonical list of the rational-pair list decoded from that index.
+
+This is the realization of the canonical code at the level of presented intervals.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

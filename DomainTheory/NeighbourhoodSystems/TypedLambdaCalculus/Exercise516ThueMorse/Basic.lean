@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the domain of Exercise 5.16, the binary-digit library, the Thue–Morse substitution with its empty and cons clauses, the operator sending x to 0 consed onto the merge of the negation of x with the tail of x, the parity bit function with its zero clause, the prefixes with their zero clause, and the least fixed point t of that operator, as the setting for the digit characterization of t.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

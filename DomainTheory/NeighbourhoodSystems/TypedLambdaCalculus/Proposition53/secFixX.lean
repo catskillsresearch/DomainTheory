@@ -1,3 +1,6 @@
+/-ai
+The nested fixed-point map of τ is the approximable map sending y to the least fixed point in the first coordinate of τ at y, realized as the fixed-point operator composed with the curry of τ after swapping the two coordinates.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

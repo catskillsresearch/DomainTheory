@@ -1,3 +1,8 @@
+/-ai
+Interpreting the primitive-recursion step term in the constantly bottom environment and applying the result to a base, a step, a functional, and an argument yields the conditional that returns the base on zero and otherwise applies the step and then the functional to the predecessor.
+
+Four uses of the beta clause of Theorem 2.2 are followed by simplification of interpretation and environment update.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

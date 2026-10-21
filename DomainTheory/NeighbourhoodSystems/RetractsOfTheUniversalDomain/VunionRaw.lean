@@ -1,3 +1,6 @@
+/-ai
+The raw level-and-mask code for the union of the neighbourhoods indexed by n and by m, before canonical reindexing, upsamples both canonically indexed masks to the maximum of the two levels and takes their bitwise disjunction. It is the disjunctive form of the raw intersection code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

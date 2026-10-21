@@ -1,3 +1,8 @@
+/-ai
+Interpreting the closed predecessor term in any environment yields the predecessor combinator.
+
+Unfold both sides and simplify the interpretation and the environment update.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

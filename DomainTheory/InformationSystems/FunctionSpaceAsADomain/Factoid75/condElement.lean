@@ -1,3 +1,6 @@
+/-ai
+The conditional element of a pair in the product of an information system with itself is the element of the strict function space from the Boolean system determined by the conditional map of the pair's first and second components.
+ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

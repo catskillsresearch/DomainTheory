@@ -1,3 +1,8 @@
+/-ai
+If the forward map composed with the backward map lies below the identity on the codomain, then two generators of the same neighbourhood are equal.
+
+Monotonicity of generators in the other direction, applied both ways to the equality of the neighbourhood with itself, gives both inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

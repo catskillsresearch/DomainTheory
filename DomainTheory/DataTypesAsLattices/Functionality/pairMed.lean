@@ -1,3 +1,7 @@
+/-ai
+Scott 1976, Theorem 4.4. The product mediator of f, g, and c is the composite of the tensor of f and g with the composite of the diagonal and c.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

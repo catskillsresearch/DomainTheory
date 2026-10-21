@@ -1,3 +1,8 @@
+/-ai
+If a ternary relation on natural numbers is recursively enumerable in paired codes, then so is the predicate which says that every entry of the first decoded list and every entry of the second decoded list admit an entry of the third decoded list satisfying the relation.
+
+A primitive-recursive reindexing moves the hypothesis to the pairing of the first two arguments against the third. The bounded existential lemma then quantifies over a decoded list. A further reindexing and the bounded universal lemma close under the quantifier over the second variable, and the same two steps close under the quantifier over the first variable. A final primitive-recursive reindexing matches the input word with the three lists.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719

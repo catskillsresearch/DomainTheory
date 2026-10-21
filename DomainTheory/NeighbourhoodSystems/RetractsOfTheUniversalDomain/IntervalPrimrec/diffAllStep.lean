@@ -1,3 +1,6 @@
+/-ai
+The fold step for a whole-list difference reads the subtracted code and the accumulator code out of its argument and applies the single-difference code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

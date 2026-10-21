@@ -1,3 +1,8 @@
+/-ai
+Applying the combinator K to a constant and then to an element returns the constant.
+
+Rewrite by the definition of K and the round trip from a filter back to an approximable map. The curry equation for the first projection, rewritten by the action of that projection and the first component of a pair, is the required equality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

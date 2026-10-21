@@ -1,3 +1,8 @@
+/-ai
+An isolated point typed by a closure equals the value of the closure on some finite set.
+
+Isolation writes the point as a finite set, and substituting that equality into the typing equation gives the value of the closure on that finite set.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

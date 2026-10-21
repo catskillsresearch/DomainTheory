@@ -1,3 +1,8 @@
+/-ai
+The approximable map of the code-level domain isomorphism is a left inverse of the approximable map of its inverse, and their composite is the identity map of the second system.
+
+By extensionality of element maps, evaluate the composite at an arbitrary element. The element map of a composite is the composite of the element maps, each of which is the underlying order isomorphism or its inverse, and applying an order isomorphism after its inverse is the identity, which is the element map of the identity approximable map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

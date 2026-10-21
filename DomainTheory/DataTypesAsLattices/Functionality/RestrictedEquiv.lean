@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, section 7. A restricted equivalence is a symmetric and transitive relation on Pω, given by a binary relation together with symmetry and transitivity.
+ai-/
 module
 
 

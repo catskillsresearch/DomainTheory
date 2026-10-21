@@ -1,3 +1,8 @@
+/-ai
+Decoding the code-level maximum of second components equals the list-level maximum of second components of the decoded pair list.
+
+Unfold both maxima and the decoded list. Rewrite by the code-fold equation. The code-level step, after the state is paired, agrees with the rational maximum of the accumulator and the second component, by simplifying the unpairing of a pair. Rewrite by that agreement, the decoding bridge for the maximum fold, and decoding of the zero code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

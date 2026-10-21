@@ -1,3 +1,6 @@
+/-ai
+The left tag of an element a is the token some (inl a) in Option (α ⊕ β ⊕ γ).
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

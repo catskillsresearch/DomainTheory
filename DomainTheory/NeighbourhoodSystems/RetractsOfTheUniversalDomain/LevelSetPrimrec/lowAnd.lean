@@ -1,3 +1,7 @@
+/-ai
+The low-bit conjunction of two natural numbers is the product of their remainders modulo
+two, hence equals one precisely when both low bits are one.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

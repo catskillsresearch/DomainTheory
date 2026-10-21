@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the fixed-point theorem, the approximable-map exercises, and the supremum of a monotone chain of elements, as the common setting for fixed-point induction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

@@ -1,3 +1,6 @@
+/-ai
+The infinite unary sequence is the least fixed point of the successor map on the unary sequence system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

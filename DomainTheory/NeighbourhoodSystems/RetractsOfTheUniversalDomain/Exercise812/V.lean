@@ -1,3 +1,6 @@
+/-ai
+V is the neighbourhood system on the natural numbers whose neighbourhoods are the nonempty level sets. The master neighbourhood is the set of all natural numbers, presented as the level-zero mask with bit 0 set. The intersection of two level sets is the level set, at the maximum of the two levels, of the bitwise conjunction of the two masks upsampled to that level, and a nonempty subset of a neighbourhood remains a neighbourhood. Every neighbourhood is contained in the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

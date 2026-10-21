@@ -1,3 +1,9 @@
+/-ai
+Application of a seven-way sum to bottom is bottom.
+
+Rewrite by the application equation, the body, application at bottom, and the double conditional at bottom.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

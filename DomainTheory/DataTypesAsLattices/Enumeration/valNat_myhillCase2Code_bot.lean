@@ -1,3 +1,8 @@
+/-ai
+The numerical evaluator sends the second Myhill case code of j, n, and the bottom code to the finite set coded by j.
+
+Rewrite by the second-case evaluation and the evaluation of the bottom code, apply equation (2.7) at bottom, and simplify the bottom element.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

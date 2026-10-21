@@ -1,3 +1,6 @@
+/-ai
+A neighbourhood system is universal when every countable neighbourhood system embeds in it. Countability means that the set of its neighbourhoods is countable.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

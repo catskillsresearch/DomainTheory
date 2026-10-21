@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Theorem 8.5 on finitary projections: the algebraicity and section-map lemmas, the fixed-neighbourhood subsystem, compactness of principal elements and the converse, membership from a self-related neighbourhood, both directions between the step-closure formula and being a finitary projection, idempotence of the element map, distribution of the fixed-point isomorphism over directed suprema, the principal form of a reflected principal element, and the full equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.Basic

@@ -1,3 +1,6 @@
+/-ai
+The Myhill realizer of a function p is application of the Myhill set of the natural valuation and p.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

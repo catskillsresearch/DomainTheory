@@ -1,3 +1,8 @@
+/-ai
+The embedding i_∞ from D_∞ to [D_∞ → D_∞] preserves directed suprema.
+
+Proposition 2.5 converts Scott-continuity of the bundled Scott map i_∞ into preservation of directed suprema.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

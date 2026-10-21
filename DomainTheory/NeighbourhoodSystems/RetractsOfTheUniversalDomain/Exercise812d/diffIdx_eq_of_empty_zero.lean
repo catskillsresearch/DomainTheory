@@ -1,3 +1,8 @@
+/-ai
+If the difference-emptiness decider reads zero, the computed difference index enumerates the set difference of the two enumerated neighbourhoods.
+
+Apply the difference-index specification. The existence decider is at most one, and an emptiness reading of zero forces it to read one, which the existence specification turns into a genuine difference.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

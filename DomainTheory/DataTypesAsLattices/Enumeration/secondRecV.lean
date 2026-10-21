@@ -1,3 +1,7 @@
+/-ai
+Scott's primitive recursive function v of Theorem 3.3 sends n to the application of the second recursion operator code to n.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

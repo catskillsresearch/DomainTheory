@@ -1,3 +1,6 @@
+/-ai
+Primitive-recursive indexing into a coded list sends a code c, an index i, and a default d to the second component of the fold of the indexing step, run for i steps from the pair of 0 and d on the code c. That value is the entry of the decoded list at i, or d if the index is out of range.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

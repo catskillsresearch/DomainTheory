@@ -1,3 +1,6 @@
+/-ai
+Minimal entailment on the natural numbers, with 0 as the bottom token, holds between a finite set and a token when the token equals 0 or belongs to the set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

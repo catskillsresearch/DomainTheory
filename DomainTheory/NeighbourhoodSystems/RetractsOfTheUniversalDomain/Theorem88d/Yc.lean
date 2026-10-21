@@ -1,3 +1,6 @@
+/-ai
+The set-valued family underlying the coded sequence sends m to the universal neighbourhood denoted by the code of Scott's Y sequence at m.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

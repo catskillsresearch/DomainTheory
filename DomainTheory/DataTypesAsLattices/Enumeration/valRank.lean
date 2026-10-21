@@ -1,3 +1,6 @@
+/-ai
+The rank of a code is a stage by which the finite application tree it codes has appeared in the least-fixed-point construction of valC. The rank of zero is one, and the rank of a successor p + 1 is one more than the larger of the ranks of the two unpairing components of p. Each component is strictly smaller than the paired code, so the recursion is well founded.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

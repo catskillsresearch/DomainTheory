@@ -1,3 +1,8 @@
+/-ai
+Some neighbourhood of the system is contained in the intersection of the neighbourhoods at two indices if and only if the safe active decodes of those indices are consistent.
+
+Rewrite by the equivalence of the containment with nonemptiness of the intersection, and by the equivalence of that nonemptiness with consistency of the safe decodes.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

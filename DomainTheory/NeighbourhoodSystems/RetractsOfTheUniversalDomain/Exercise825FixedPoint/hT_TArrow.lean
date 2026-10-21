@@ -1,3 +1,8 @@
+/-ai
+For a finitary projection, the fixed set of the continuous operator applied to that projection is order-isomorphic to the element type of its arrow domain.
+
+Rewrite the operator by the identity that it implements the arrow combinator, and take the reverse of the element isomorphism of the arrow combinator of the projection with the combinator, using that both are finitary projections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

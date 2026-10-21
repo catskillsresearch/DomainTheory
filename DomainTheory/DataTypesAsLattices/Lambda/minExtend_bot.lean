@@ -1,3 +1,8 @@
+/-ai
+The minimal extension of any sequence at the bottom element is the bottom element.
+
+The equality is the definitions of the minimal extension and the bottom element.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,3 +1,7 @@
+/-ai
+The enumeration of the LUCID neighbourhoods sends a code to the neighbourhood of its decoded list. Decoding after encoding hits every neighbourhood of a finite address.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

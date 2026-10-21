@@ -1,3 +1,8 @@
+/-ai
+Prepending a bit to the total element at a string yields the total element at the concatenated string.
+
+By extensionality of elements, a neighbourhood of the image is witnessed by a set contained in the singleton of the original string, and monotonicity of prepending puts the prepend of that singleton inside the output; the prepend of a singleton is the singleton of the concatenation. Conversely, the singleton itself belongs to the total element, and its prepend is the singleton of the concatenation, which is contained in the output.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

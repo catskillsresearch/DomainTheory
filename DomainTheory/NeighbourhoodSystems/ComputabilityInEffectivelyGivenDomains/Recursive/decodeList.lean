@@ -1,3 +1,6 @@
+/-ai
+Decoding inverts list encoding. It sends 0 to the empty list and a successor code to the first component of the predecessor consed onto the decoding of the second component. The recursion is well founded because that second component is at most the predecessor, hence strictly smaller than the successor code.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

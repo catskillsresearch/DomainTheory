@@ -1,3 +1,8 @@
+/-ai
+The predicate valTraceStruct on value traces is primitive recursive.
+
+Justification of an entry by a trace is a primitive recursive relation. Quantifying that relation over every entry of the trace, and identifying the two arguments, yields the predicate.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

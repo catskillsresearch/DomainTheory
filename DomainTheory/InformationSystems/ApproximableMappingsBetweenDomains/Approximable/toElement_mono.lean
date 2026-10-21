@@ -1,3 +1,8 @@
+/-ai
+The image of an element under an approximable mapping is monotone.
+
+A token of the image is witnessed by a finite set contained in the element and related to the singleton of that token. The same finite set is contained in any larger element, so the token belongs to the image of the larger element.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

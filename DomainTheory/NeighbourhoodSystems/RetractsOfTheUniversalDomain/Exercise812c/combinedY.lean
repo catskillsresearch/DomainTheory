@@ -1,3 +1,6 @@
+/-ai
+combinedY is the interleaved family on the carrier of D₁. At an even index it is the recovered second-side piece XPseq at half that index, and at an odd index it is the set of the second enumeration at half that index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

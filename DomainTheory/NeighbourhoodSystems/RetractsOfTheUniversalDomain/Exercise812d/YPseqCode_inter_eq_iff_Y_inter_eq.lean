@@ -1,3 +1,8 @@
+/-ai
+The images of YPseqCode at three indices satisfy the intersection equation in the first neighbourhood system if and only if the three original codes satisfy it in the second.
+
+The combined-code intersection transfer is instantiated at the odd indices twice i plus one, twice j plus one, and twice k plus one, using that those combined codes lie in the master, and the odd clauses rewrite both sides.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

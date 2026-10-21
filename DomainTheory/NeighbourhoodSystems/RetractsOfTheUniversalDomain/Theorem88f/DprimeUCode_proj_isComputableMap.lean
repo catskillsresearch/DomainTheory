@@ -1,3 +1,8 @@
+/-ai
+The projection from the universal system onto the code-driven subsystem D'' is a computable map of the two presentations.
+
+Pairing the first component with the Y-sequence code of the second component is primitive recursive, and the universal presentation's inclusion decider composed with it decides inclusion of the corresponding U-neighbourhoods. That decidable predicate is recursively enumerable. The projection relation unfolds to this inclusion together with the two membership facts, which hold because the U-neighbourhood of a code belongs to the universal system and a coded set is the neighbourhood of its index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.Basic

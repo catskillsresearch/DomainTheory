@@ -1,3 +1,8 @@
+/-ai
+A finite set u set-entails the singleton of a token X if and only if u entails X.
+
+From set-entailment of the singleton, the token X belongs to its own singleton, so u entails X. Conversely, any member of the singleton equals X, and substituting that equality turns the entailment of X into set-entailment of the singleton.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

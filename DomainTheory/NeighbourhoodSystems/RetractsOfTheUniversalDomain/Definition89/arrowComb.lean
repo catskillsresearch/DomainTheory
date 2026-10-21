@@ -1,3 +1,6 @@
+/-ai
+The function-space combinator of two self-maps of the universal domain is the function-space embedding composed after the lambda combinator of the two maps composed after the function-space projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

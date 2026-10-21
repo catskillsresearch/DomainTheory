@@ -1,3 +1,6 @@
+/-ai
+The flat map, paired with the proof that it satisfies Scott's conditions (1) through (5), is an element of the domain of domains, and so those conditions are inhabited.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

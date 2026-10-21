@@ -1,3 +1,6 @@
+/-ai
+The three-way sum of three approximable maps is the approximable map that sends each tagged copy through the corresponding map and relates every neighbourhood of the domain sum to the master of the codomain sum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

@@ -1,3 +1,8 @@
+/-ai
+The predecessor sends the total element at zero to bottom.
+
+This is the computation rule of the constant lift on total elements, applied to the predecessor table at zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

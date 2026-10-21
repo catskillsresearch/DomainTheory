@@ -1,3 +1,8 @@
+/-ai
+If the neighbourhoods of two tokens both belong to an ideal element of the representation system, then some token has its neighbourhood in that element and the closures of the two tokens are both contained in its closure.
+
+The intersection of the two neighbourhoods belongs to the element, so it is a neighbourhood of the representation system and equals the neighbourhood of some token. That token lies in its own neighbourhood, hence in the intersection, so each of the original tokens is contained in its closure. Since that closure belongs to the family, the closure operation preserves the two inclusions.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

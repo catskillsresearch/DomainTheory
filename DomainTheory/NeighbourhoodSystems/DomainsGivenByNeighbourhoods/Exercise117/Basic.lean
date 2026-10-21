@@ -1,3 +1,8 @@
+/-ai
+A set belongs to the point filter at a real exactly when it is a rational-interval neighbourhood and contains that real.
+
+The two sides are definitionally identical.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

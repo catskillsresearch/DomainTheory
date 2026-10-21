@@ -1,3 +1,8 @@
+/-ai
+The set of finite approximants of an element x is a lower set in the poset of finite elements.
+
+If a finite element lies under a finite approximant of x, it lies under x, and every finite element below x is a finite approximant of x.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

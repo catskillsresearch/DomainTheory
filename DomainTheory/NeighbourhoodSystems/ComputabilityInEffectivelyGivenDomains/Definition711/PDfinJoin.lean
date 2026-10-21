@@ -1,3 +1,6 @@
+/-ai
+The finite join of a family of n elements, as an element of the power domain, is the empty join when n is zero and the successor join otherwise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

@@ -1,3 +1,6 @@
+/-ai
+An element x of a complete lattice is way-below an element y when every directed set whose supremum lies above y has some member lying above x. The relation is phrased using directed suprema.
+ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Defs

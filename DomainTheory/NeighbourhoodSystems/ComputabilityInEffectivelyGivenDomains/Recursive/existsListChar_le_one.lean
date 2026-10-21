@@ -1,3 +1,8 @@
+/-ai
+The existence character is at most 1.
+
+Any left fold of the existence step that starts from an accumulator at most 1 remains at most 1. The empty fold is the accumulator. A cons cell applies the inductive bound to the updated accumulator, which the step equation and the split of the old accumulator into 0 or 1 bound by the one-indicator or by selection of 1. Unfold the character, rewrite by the fold-code equation, and apply this to the decoded list at accumulator 0.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

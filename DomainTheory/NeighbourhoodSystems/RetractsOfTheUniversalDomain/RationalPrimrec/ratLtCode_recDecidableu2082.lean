@@ -1,3 +1,8 @@
+/-ai
+Strict comparison of decoded rationals is recursively decidable as a binary relation on codes.
+
+The strict comparison code is a primitive-recursive characteristic function with values in zero and one, and reversing its correctness theorem shows that it equals one exactly when the decoded rationals are strictly ordered. The constructor for a recursively decidable binary relation packages that characteristic function.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

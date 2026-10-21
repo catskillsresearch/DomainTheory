@@ -1,3 +1,6 @@
+/-ai
+The abstraction clause is the right injection of the graph of those x for which the recursive call, on the first payload component, is taken in the environment updated by the value x at the zeroth payload component.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,8 @@
+/-ai
+Applying the Thue–Morse substitution to the length-m prefix yields the length-2m prefix.
+
+Induction on m. The zero case holds by reflexivity. For a successor, the prefix of length 2(m + 1) equals the prefix of length 2m followed by the bit at m and its negation: rewrite the length as two successors, apply the successor law twice, the odd and even recurrences, and associativity, and the equation holds by reflexivity. The successor law, the append law, the inductive hypothesis, that identification, and the cons and nil clauses of the substitution then match the two sides.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

@@ -1,3 +1,8 @@
+/-ai
+Inserting an atom that is entailed at stage n preserves consistency at stage n. Consistency under insertion of an entailed function token remains separate.
+
+Induct on the stage. At stage zero, the atom projection gains the entailed atom and stays consistent because entailment in A preserves consistency, while the function-token projection is unchanged. At a successor stage, the left alternative of the entailment uses the inductive hypothesis, and the right alternative is a stage-zero witness, which monotonicity lifts from stage zero.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

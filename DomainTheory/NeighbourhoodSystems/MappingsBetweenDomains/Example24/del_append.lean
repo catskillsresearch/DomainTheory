@@ -1,3 +1,8 @@
+/-ai
+The deletion scan of a string is a prefix of the deletion scan of any extension.
+
+The proof is by induction on the string. The empty case simplifies. A leading one reduces to the inductive hypothesis. A leading zero copies the remaining input, and the appended tail witnesses the prefix.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

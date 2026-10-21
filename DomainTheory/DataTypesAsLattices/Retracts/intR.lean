@@ -1,3 +1,6 @@
+/-ai
+The integer retract is the least fixed point of the integer functional, as in Scott's clause (4.7).
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

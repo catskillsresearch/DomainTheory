@@ -1,3 +1,8 @@
+/-ai
+The second generator belongs to the image of every subset under the monoid power-set operator.
+
+It belongs to the union of the unit with the two generators, and that union is contained in the image.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

@@ -1,3 +1,8 @@
+/-ai
+The n-th iterate of an approximable endomap from the bottom element lies below its least fixed point.
+
+Rewrite the least fixed point as the directed supremum of the iterates. The n-th iterate lies below that supremum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407

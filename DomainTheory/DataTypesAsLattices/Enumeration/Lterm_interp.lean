@@ -1,3 +1,8 @@
+/-ai
+Interpreting the term for L in the constantly bottom environment yields the combinator L.
+
+Unfold the term and the combinator, then simplify the interpretation, the updated environment, and the successor of the zero numeral.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,3 +1,8 @@
+/-ai
+If two finite sets are equal, then it is impossible that they fail to contain each other.
+
+Substituting the equality, each set is a subset of itself, which contradicts the failure of mutual inclusion.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

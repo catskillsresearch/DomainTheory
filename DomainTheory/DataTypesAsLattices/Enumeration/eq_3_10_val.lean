@@ -1,3 +1,8 @@
+/-ai
+The value of code 12 is the successor combinator.
+
+Code 12 equals the code application of 3 to 1. The value law for code application, together with the values of codes 3 and 1, reduces the claim to the application of the G-pack to the numeral 0, after identifying the zero combinator with that numeral.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

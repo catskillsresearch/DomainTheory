@@ -1,3 +1,8 @@
+/-ai
+The product projection is a computable map from the presentation of the universal domain to the fixed presentation of the product.
+
+This computability is the corresponding component of the projection pair chosen for the product.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

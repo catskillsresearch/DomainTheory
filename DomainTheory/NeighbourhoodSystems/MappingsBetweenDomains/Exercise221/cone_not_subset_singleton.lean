@@ -1,3 +1,8 @@
+/-ai
+The cone of a finite binary string σ is never contained in the singleton of a finite binary string τ.
+
+If it were, both σ and the string formed by appending false to σ would lie in the singleton, hence both would equal τ and therefore each other. Comparing lengths, the appended string is longer by one, which is impossible.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

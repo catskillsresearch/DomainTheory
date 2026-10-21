@@ -1,3 +1,8 @@
+/-ai
+The sigma expression is consistent with the safe decoding of an active index.
+
+Rewrite by the consistency criterion, the denotation of an intersection, and the denotation of sigma, then cancel the universe intersection. The safe decoding denotes a nonempty set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

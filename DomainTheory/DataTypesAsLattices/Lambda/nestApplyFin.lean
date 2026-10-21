@@ -1,3 +1,6 @@
+/-ai
+Iterated application of a nested-graph representative returns the element on the empty tuple, and on a nonempty tuple applies the element to the head and recurses on the tail.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

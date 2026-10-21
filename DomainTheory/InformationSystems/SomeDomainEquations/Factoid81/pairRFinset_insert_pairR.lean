@@ -1,3 +1,8 @@
+/-ai
+Inserting the right pair of a token t inserts t into the finset of right-pair payloads.
+
+Membership in the new payload finset is either the inserted right pair, whose payload is t, or an old payload. Conversely, t is the payload of the inserted right pair, and every old payload remains.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

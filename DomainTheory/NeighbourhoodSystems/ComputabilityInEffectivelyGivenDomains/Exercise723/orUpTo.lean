@@ -1,3 +1,6 @@
+/-ai
+The value orUpTo n m N is the running bitwise disjunction, over set bits a strictly below N of n, of the shift of m by a places. The zero bound contributes 0. A successor bound disjoins the previous value with the shift of m by the current index when bitAt reports that the bit is set, and with 0 otherwise. This structural recursion is the reference specification of plusIdx.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

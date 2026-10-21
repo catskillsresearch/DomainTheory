@@ -1,3 +1,6 @@
+/-ai
+The code of a finite set of natural numbers is the bit-mask code of the list of its elements.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

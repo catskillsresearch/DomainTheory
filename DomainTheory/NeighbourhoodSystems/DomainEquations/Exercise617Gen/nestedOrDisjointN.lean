@@ -1,3 +1,8 @@
+/-ai
+Any two neighbourhoods of the system of cones and singletons are nested or disjoint.
+
+Two cones fall under the cone trichotomy. A singleton set against a cone falls under the singleton-cone trichotomy, and the intersection is commuted when the cone stands on the left. Two equal singletons coincide by reflexivity of inclusion. Two distinct singletons are disjoint, because a common member would be both strings.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

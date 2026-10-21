@@ -1,3 +1,8 @@
+/-ai
+The intersection of a tagged middle copy of a set of β-elements and a tagged right copy of a set of γ-elements is empty.
+
+Extensionality reduces the claim to a token, which is split into the basepoint and the three summands, and membership is simplified in the two copies, the two tags, and the intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,3 +1,8 @@
+/-ai
+The universe is a neighbourhood of O.
+
+It is the left disjunct of the membership alternative, by reflexivity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

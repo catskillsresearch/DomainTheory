@@ -1,3 +1,8 @@
+/-ai
+The intersection of the enumerated set at 2a+2 with the enumerated set at 2b+1 is empty.
+
+Commute the intersection and apply the law for the intersection of an odd index with an even index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

@@ -1,3 +1,8 @@
+/-ai
+In the concatenation of three copies of a list a, an index m strictly below twice the length of a carries the same entry as the index shifted by the length of a.
+
+If m lies below the length, the left side reads the first copy and the shifted index reads the second copy at the same place. If m is at least the length, the left side reads the second copy and the shifted index reads the third copy at the same place.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse

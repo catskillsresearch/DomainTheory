@@ -1,3 +1,8 @@
+/-ai
+B stands in the projection relation to C.
+
+The relation is the one induced by the literal subsystem inclusion of B in C.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

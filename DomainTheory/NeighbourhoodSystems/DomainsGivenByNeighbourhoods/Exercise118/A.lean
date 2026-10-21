@@ -1,3 +1,6 @@
+/-ai
+The set A is the subset {0, 1} of the three-element set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+If an approximable map sends the master input only to the master output, then it sends bottom to a value below bottom.
+
+A neighbourhood of the image of bottom is related to the master input. The hypothesis forces that neighbourhood to be the master, so it belongs to bottom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

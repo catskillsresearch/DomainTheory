@@ -1,3 +1,8 @@
+/-ai
+When every neighbourhood of the generating system is its master, the colimit algebra admits a unique strict homomorphism into every T-algebra whose structure map is strict.
+
+Existence supplies one strict homomorphism. Any other strict homomorphism equals it by uniqueness of strict homomorphisms out of the colimit.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

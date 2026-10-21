@@ -1,3 +1,8 @@
+/-ai
+Applying the addition combinator to an element x yields the primitive recursion of x at the successor step.
+
+Simplify the definitions of the addition combinator and of primitive recursion by the β-rules for S and K.
+ai-/
 module
 
 public import Mathlib.Computability.RE

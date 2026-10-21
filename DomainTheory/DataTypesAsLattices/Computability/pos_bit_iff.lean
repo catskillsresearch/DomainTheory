@@ -1,3 +1,8 @@
+/-ai
+A natural number n has a set bit at some position at least 1 if and only if 2 ≤ n.
+
+A set bit at position k + 1 gives 2^(k + 1) ≤ n, and 2^1 ≤ 2^(k + 1). Conversely, if every bit at a positive position is unset, the high-bit bound yields n < 2. The position 0 is excluded from that bound because it is below 1, so the hypothesis that the index is at least 1 is impossible there.
+ai-/
 module
 
 public import Mathlib.Computability.RE

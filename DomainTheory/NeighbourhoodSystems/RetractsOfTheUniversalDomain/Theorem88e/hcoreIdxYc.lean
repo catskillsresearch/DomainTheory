@@ -1,3 +1,8 @@
+/-ai
+For an arbitrary sign sequence, the generated atom of the index sets inside the whole natural numbers is empty at depth n if and only if the generated atom of the coded sets inside the universal master is empty at that depth.
+
+The length-n encoding agrees with the sign sequence below n, so both generated atoms may be rewritten along that agreement. The emptiness comparison of the coded atom with the index-set atom, passed through the one-valued emptiness test, is the claimed equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

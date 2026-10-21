@@ -1,3 +1,8 @@
+/-ai
+The doubled output of a finite string is a prefix of the doubled output of any extension of that string.
+
+The proof is by induction on the prefix. The empty prefix is immediate after simplification. For a cons, the cons equation for doubling extends the inductive prefix witness by the same two bits.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

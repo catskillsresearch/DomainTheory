@@ -1,3 +1,8 @@
+/-ai
+For every homomorphism g, the composite of g with the zero projection equals the zero Kleene iterate, the constant bottom map. The identity does not depend on which homomorphism is chosen.
+
+Extensionality and the relational form of composition reduce the claim to pairs. A factorisation through the zero projection has middle neighbourhood equal to the master of Exp, and strictness of g sends it to the master of the carrier, which is the constant-bottom relation. Conversely, a constant-bottom pair is witnessed by the master of Exp, which the zero projection relates to the source, together with the master relation of g.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

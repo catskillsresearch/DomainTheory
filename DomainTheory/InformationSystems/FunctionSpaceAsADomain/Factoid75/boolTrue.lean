@@ -1,3 +1,6 @@
+/-ai
+The Boolean element true is the deductive closure, in the Boolean information system, of the singleton consisting of the token true.
+ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

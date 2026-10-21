@@ -1,3 +1,6 @@
+/-ai
+The inverse output of a finite string is empty on the empty string and on a singleton, and on a string that starts with two bits it keeps the first bit and continues on the remaining tail.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

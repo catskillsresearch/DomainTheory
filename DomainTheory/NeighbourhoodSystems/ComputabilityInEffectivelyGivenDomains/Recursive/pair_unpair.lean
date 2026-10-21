@@ -1,3 +1,8 @@
+/-ai
+Pairing the two components of the unpairing of n recovers n.
+
+The square of the square root of n, added to the remainder n minus that square, equals n, because that square is at most n. The bound that n is at most the square plus twice the square root is also in hand. Unfolding unpairing, if the remainder is strictly less than the square root then pairing returns the remainder with the square root, and the corresponding pairing clause together with arithmetic yields n. Otherwise the remainder is at least the square root, the complementary strict inequality fails, and pairing returns the square root with the remainder minus the square root, which arithmetic again identifies with n.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

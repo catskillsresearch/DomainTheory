@@ -1,3 +1,8 @@
+/-ai
+The empty finset of raw lambda tokens is depth-consistent.
+
+Rewriting depth consistency along the empty function-token projection reduces the claim to consistency of the empty atom finset, which holds because the empty set is consistent in A.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

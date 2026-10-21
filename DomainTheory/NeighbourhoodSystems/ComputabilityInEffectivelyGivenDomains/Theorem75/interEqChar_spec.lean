@@ -1,3 +1,8 @@
+/-ai
+The intersection-equality characteristic of n, m, and k equals 1 if and only if the enumerated neighbourhoods of n and m intersect in the enumerated neighbourhood of k.
+
+Unfold the characteristic. Selection equals 1 precisely when the consistency characteristic of the pair and the enumerated-equality characteristic of the intersection index both equal 1. If both hold, the intersection is nonempty, so the intersection index enumerates the intersection, which equals the enumerated set of k. Conversely, equality of the intersection with the enumerated set of k makes the intersection nonempty, so the pair is consistent and the intersection index enumerates that same set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

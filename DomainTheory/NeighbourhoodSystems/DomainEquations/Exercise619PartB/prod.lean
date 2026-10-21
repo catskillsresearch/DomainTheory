@@ -1,3 +1,6 @@
+/-ai
+The product of two Scott systems is the concrete token product of their underlying neighbourhood systems, which is free of the empty set and hence again a Scott system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

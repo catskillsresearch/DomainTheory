@@ -1,3 +1,6 @@
+/-ai
+Proposition 3.2 of Scott (1981, PRG-19) is the order isomorphism between elements of the product and pairs of elements. It sends a product element to its two components and a pair of elements to their pairing. The two round trips are the recovery of an element from its components and the component laws for a pairing. It preserves and reflects order because a neighbourhood of the lower element splits into slices of the components, which the componentwise inequalities return to the upper element, and conversely those inequalities reassemble by applying the order to the slices.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

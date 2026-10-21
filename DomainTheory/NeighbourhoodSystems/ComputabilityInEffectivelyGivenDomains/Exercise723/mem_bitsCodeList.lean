@@ -1,3 +1,8 @@
+/-ai
+The list decoded from bitsCode n n consists exactly of the positions at which a bit of n is set. It is the canonical witness list for the finite set excluded by nbhd n.
+
+Rewrite by the membership lemma for a decoded bitsCode. One direction forgets the bound, and the other restores the bound that a set bit lies strictly below n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

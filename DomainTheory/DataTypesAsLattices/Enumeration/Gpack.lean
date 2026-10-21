@@ -1,3 +1,6 @@
+/-ai
+The packed combinator of Theorem 2.4 is the nested pair sequence of successor, predecessor, the conditional, K, and S.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

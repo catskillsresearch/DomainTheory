@@ -1,3 +1,6 @@
+/-ai
+The colimit of the tower of a rooted grammar expression is the neighbourhood system over strings whose neighbourhoods are the neighbourhoods of some finite level and whose master is the fixed-point token set. The master is nonempty and is a neighbourhood because it is the master of the zero level. A consistent intersection of neighbourhoods from three levels lies in the level at the maximum of those indices, since the tower is a chain, and that level is closed under consistent intersection. Every neighbourhood is contained in the master because each level has that same master, and no neighbourhood is empty because none is empty at its level.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

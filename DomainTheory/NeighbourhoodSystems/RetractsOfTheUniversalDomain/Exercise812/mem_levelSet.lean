@@ -1,3 +1,8 @@
+/-ai
+A natural number lies in the level set of level k and mask m if and only if the bit of its remainder modulo 2^k is set in m.
+
+The two sides are the defining membership condition of the level set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

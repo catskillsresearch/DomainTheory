@@ -1,3 +1,8 @@
+/-ai
+Under the characteristic and consistency hypotheses, the qChar-gated fold of every list, started at the master index, is diagonally fixed.
+
+Apply the fold invariant to the master index, which is diagonally fixed.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic

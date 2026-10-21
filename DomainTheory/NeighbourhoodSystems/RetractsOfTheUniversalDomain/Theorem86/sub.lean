@@ -1,3 +1,6 @@
+/-ai
+The combinator sub sends an approximable endomap f to the retraction of the subsystem of neighbourhoods that f relates to themselves.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood nbhd a is contained in nbhd b if and only if the complement of nbhd b is contained in the complement of nbhd a. Membership in these neighbourhoods is decided by a test bit, so the reverse direction needs only a Boolean case split.
+
+The forward direction is antitonicity of complement. Conversely, take a point of nbhd a and rewrite membership. If the corresponding bit of b is false, the point lies in nbhd b by definition. If that bit is true, the point lies in the complement of nbhd b and hence in the complement of nbhd a, which contradicts the rewritten membership.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

@@ -1,3 +1,6 @@
+/-ai
+The low-bit exclusive disjunction of two natural numbers is the sum of their residues modulo 2, reduced again modulo 2.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

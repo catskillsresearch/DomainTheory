@@ -1,3 +1,8 @@
+/-ai
+The tagging of a nonempty set of binary strings by a boolean is nonempty.
+
+Preceding a member of the set by that boolean produces a member of the tagging.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

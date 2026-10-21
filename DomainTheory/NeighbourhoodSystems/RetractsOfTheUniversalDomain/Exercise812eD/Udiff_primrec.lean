@@ -1,3 +1,8 @@
+/-ai
+The difference index of an unpacked pair is primitive recursive.
+
+It is the code-level difference composed with canonicalization of each projection, and that composite agrees with the difference index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

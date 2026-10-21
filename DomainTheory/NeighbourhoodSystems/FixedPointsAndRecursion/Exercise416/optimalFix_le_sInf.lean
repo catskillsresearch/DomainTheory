@@ -1,3 +1,8 @@
+/-ai
+The optimal fixed point of a nonempty set of fixed points lies below the infimum of the set.
+
+The monotone construction places its result below the pre-fixed point to which it is applied, and that pre-fixed point is the infimum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413

@@ -1,3 +1,6 @@
+/-ai
+This instance equips the approximable maps from an information system A to an information system B with the partial order of pointwise inclusion of their relations. Reflexivity keeps each related pair, transitivity composes the inclusions, and antisymmetry is extensionality of approximable maps from the two inclusions.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

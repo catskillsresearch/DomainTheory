@@ -1,3 +1,6 @@
+/-ai
+The map toNeighborhoodSystem turns an information system into the neighbourhood system on its elements whose neighbourhoods are the basic opens of consistent finite sets, with the set of all elements as master set. The master set is the basic open of the empty set, and it contains the closure of the empty set. The intersection of two basic opens is the basic open of their fused union; that union is consistent whenever a third basic open lies inside the intersection, because that third open is then contained in the basic open of the union. Every neighbourhood is contained in the master set.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

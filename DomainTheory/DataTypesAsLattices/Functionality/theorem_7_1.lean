@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 7.1, the closure theorem. Membership in the function space from A to B is being a graph of one's own application and preserving relatedness. Such a map sends an element of A to an element of B. Membership in the product is being the pair of one's own components, with those components in A and in B. Membership in the sum is being a left injection of an element of A or a right injection of an element of B.
+
+Each equivalence is unpacked from the definitions. A function-space element gives the graph equation and the preservation clause, and the converse repeats the graph equation. Preservation on a pair related to itself gives the action on elements. A product element is the pair of its components, and the converse repeats the pair equation. A sum element keeps one tag and its component relation, and the converse repeats the injection equation.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

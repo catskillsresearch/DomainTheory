@@ -1,3 +1,8 @@
+/-ai
+For a residue r strictly below 2^{k'}, the bit r of an upsampled mask is set if and only if the bit of r modulo 2^k is set in the original mask.
+
+Unfold the sum-of-powers definition of upsampling. The bit r is set exactly when r is a bit index of that sum, hence when r lies in the finite set of residues below 2^{k'} whose coarser bit is set. The bound on r places it in that range, leaving the coarser bit test.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

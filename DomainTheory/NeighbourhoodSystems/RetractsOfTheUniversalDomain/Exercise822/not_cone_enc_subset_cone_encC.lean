@@ -1,3 +1,8 @@
+/-ai
+The cone of a doubled encoding is not contained in the cone of a completed encoding.
+
+Rewrite containment of cones as a prefix of their roots, and apply the separation of a completed encoding from a doubled encoding.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

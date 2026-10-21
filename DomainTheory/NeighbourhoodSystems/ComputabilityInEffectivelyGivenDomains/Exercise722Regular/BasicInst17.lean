@@ -1,3 +1,6 @@
+/-ai
+The instance of countability of expressions is inferred from the instances already available for that type.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

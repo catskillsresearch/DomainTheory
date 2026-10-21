@@ -1,3 +1,8 @@
+/-ai
+The cone of a finite binary string σ is never equal to the singleton of a finite binary string τ.
+
+An equality would make the cone a subset of the singleton, contradicting the fact that no cone is contained in a singleton.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

@@ -1,3 +1,8 @@
+/-ai
+Precomposing a recursively enumerable predicate with a computable function yields a recursively enumerable predicate.
+
+This is composition of partial recursive functions.
+ai-/
 module
 
 public import Mathlib.Computability.RE

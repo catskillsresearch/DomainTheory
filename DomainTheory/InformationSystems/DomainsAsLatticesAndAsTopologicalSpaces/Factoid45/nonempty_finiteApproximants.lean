@@ -1,3 +1,9 @@
+/-ai
+The finite approximants of an element form a nonempty set.
+
+The bottom element is the closure of the empty set, and the empty set is contained in the carrier.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36

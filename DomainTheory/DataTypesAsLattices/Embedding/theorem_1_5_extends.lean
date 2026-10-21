@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, Theorem 1.5, the extension property: if f is continuous, the extension of f agrees with f at every point of the subspace.
+
+If k lies in the extension at a subspace point x, the membership criterion supplies an open containing x on which every subspace value of f, including f(x), contains k. Conversely, if k lies in f(x), continuity makes the preimage of the subbasic open of k open in the subspace topology, so that preimage is the trace of an ambient open U. The trace relation puts x in U and puts k into f at every subspace point of U, so the membership criterion puts k in the extension.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

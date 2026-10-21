@@ -1,3 +1,8 @@
+/-ai
+The image of an element under the projection consists of the neighbourhoods of that element which already belong to the subdomain.
+
+A witness in the image is a neighbourhood of the element contained in a neighbourhood of the subdomain, and upward closure returns that neighbourhood of the subdomain as a neighbourhood of the element. A neighbourhood of the subdomain that already belongs to the element is related to itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

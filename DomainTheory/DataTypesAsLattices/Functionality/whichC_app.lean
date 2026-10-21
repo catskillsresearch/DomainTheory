@@ -1,3 +1,9 @@
+/-ai
+Application of the summand tag to u is the application of u at the numeral 0.
+
+This is the application law for the first projection.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

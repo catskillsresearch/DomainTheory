@@ -1,3 +1,6 @@
+/-ai
+The product enumeration sends a code to the product neighbourhood whose factors are the neighbourhoods of the two presentations at the two halves of the code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

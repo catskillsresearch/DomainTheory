@@ -1,3 +1,8 @@
+/-ai
+A set belongs to the element obtained by prepending a string to the run map's value exactly when the set is a neighbourhood and some cone of the element has the cone of that string followed by the output of the cone contained in the set.
+
+Membership in the shifted element gives a neighbourhood of the run-map value and an inclusion. The membership criterion supplies a cone whose output cone sits in that neighbourhood, and prepending the string preserves the inclusion. Conversely the output cone belongs to the run-map value, and prepending the string turns the concatenated inclusion into the shifted membership.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

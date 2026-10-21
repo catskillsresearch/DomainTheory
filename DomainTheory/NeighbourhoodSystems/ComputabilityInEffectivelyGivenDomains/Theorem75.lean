@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Scott's Theorem 7.5: the development of the function-space presentation, containment of a list intersection in its base, consistency through the intersection chain, appending of coded step lists, membership in the enumeration, the equivalence of computable elements with computable maps and the same equivalence for the function-space presentation, the one-entry enumeration of a step, the evaluation relation on a product neighbourhood and the computability of evaluation, membership of an enumeration read through a map, and the currying relation together with the computability of currying.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.Basic

@@ -1,3 +1,6 @@
+/-ai
+The junk flag of the Y half-step atom at depth n, bit-source i, and bit code bx is the junk component of the packed state of that atom.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

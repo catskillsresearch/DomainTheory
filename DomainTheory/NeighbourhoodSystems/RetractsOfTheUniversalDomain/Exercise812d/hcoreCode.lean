@@ -1,3 +1,8 @@
+/-ai
+For every boolean sign and every depth, the generated atom of combinedXCode is empty exactly when the generated atom of combinedYCode is empty.
+
+Split on the parity of the depth. An even depth reduces to the even case of the core, and an odd depth reduces to the odd case.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

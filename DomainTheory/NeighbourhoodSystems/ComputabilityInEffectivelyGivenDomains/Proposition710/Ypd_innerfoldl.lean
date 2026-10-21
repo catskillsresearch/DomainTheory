@@ -1,3 +1,8 @@
+/-ai
+The inner fold adds, on top of the enumeration of the starting accumulator, the intersection of the down-set of a fixed index with the union of the down-sets indexed by the list.
+
+Induction on the list. The empty fold leaves the accumulator, and the intersection with the empty union is empty. For a cons cell, the inductive hypothesis, the one-step law, and the cons law for the union, with intersection distributing over union, give the equation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

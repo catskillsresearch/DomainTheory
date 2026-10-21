@@ -1,3 +1,8 @@
+/-ai
+Applying the combinator Z at a stage to a function yields the graph of the iterator of that function at that stage.
+
+This is beta reduction for continuity of the combinator map.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,6 @@
+/-ai
+Given a projection pair, dprimeEquiv is the order isomorphism between the elements of the domain system and the elements of the image subdomain, sending an element to the generators of its members and an image element back to the sets those generators come from.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

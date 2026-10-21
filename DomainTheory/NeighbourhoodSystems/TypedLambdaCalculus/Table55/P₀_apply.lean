@@ -1,3 +1,8 @@
+/-ai
+The first projection sends the pair of x and y to x.
+
+Rewrite by the definition of the projection combinator, the first-projection map, and the first component of a pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

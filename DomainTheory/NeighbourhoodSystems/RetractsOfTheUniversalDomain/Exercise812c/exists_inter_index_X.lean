@@ -1,3 +1,8 @@
+/-ai
+If the intersection of the i-th and j-th sets of the first enumeration is a neighbourhood of D₀, then that intersection equals some set of the enumeration, and the corresponding XPseq sets have the same intersection.
+
+The covering names the intersection as some set of the enumeration. The equivalence between intersections on the two sides pushes that equation across to XPseq.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

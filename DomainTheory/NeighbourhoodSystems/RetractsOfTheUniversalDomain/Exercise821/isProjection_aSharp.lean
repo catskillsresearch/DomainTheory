@@ -1,3 +1,8 @@
+/-ai
+If an endomap of the universal domain is a projection, then its sharp is a projection.
+
+The retraction half transports idempotence of the inner sharp, which follows from idempotence of the endomap, through the projection pair of the tree algebra. The inequality below the identity is the corresponding inequality for the endomap.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

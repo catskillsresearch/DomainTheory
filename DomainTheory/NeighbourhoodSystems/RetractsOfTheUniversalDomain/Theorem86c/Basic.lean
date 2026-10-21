@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Theorem 8.6 and Theorem 7.6 as the setting of the computability of sub. The module comment records Scott's third clause, that sub is computable when the domain is effectively given: the neighbourhood relation of the packaged map unfolds to containment of sub of a least map, and on enumerated neighbourhoods that containment is a finite conjunction, guarded by the consistency character, of an unbounded existential of a recursively decidable inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

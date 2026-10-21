@@ -1,3 +1,8 @@
+/-ai
+If the basic-neighbourhood enumeration is primitive recursive, then evaluation of a term-algebra code is primitive recursive.
+
+Fuel-bounded evaluation of a packed pair is primitive recursive, and packing one more than the code with the code itself is primitive recursive. Fuel-bounded evaluation at fuel one more than the code is evaluation of the code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

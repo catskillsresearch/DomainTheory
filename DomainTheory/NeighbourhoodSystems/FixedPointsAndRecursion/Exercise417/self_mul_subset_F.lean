@@ -1,3 +1,8 @@
+/-ai
+The pointwise square of a subset is contained in its image under the monoid power-set operator.
+
+The square is the right-hand summand of the union that defines the operator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

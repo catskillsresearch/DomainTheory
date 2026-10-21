@@ -1,3 +1,8 @@
+/-ai
+The value of the supremum of a pointwise bounded family of approximable maps, at the principal element of a neighbourhood X, equals the principal supremum of the family at X.
+
+This is the principal case of the element map of a monotone operation, applied to the monotonicity of the principal supremum.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

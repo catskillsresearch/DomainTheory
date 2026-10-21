@@ -1,3 +1,8 @@
+/-ai
+If the letter-copy of a set of strings is a neighbourhood of the concrete indexed sum built on the system of cones and singletons, then that set is a neighbourhood of the system.
+
+A neighbourhood of the concrete sum is the master, the unit copy, or a letter-copy. The master contains the empty token, which lies in no letter-copy. The unit copy contains the unit token, which lies in no letter-copy. When the letters agree, injectivity of copies returns the membership. When they differ, a nonempty neighbourhood supplies a copy token that lies in no copy at the other letter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

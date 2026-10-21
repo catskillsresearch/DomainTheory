@@ -1,3 +1,8 @@
+/-ai
+The intersection of the singleton of the empty word with a bit embedding is empty.
+
+Extensionality and simplification of intersection, singleton, embedding, and emptiness reduce the claim to showing that the empty word is not an embedded word. An embedded word equal to the empty word is absurd by simplification.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

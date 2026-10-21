@@ -1,3 +1,6 @@
+/-ai
+The lower set of a filter in the final-segment system is the set of tokens whose principal upper set belongs to the filter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

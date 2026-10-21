@@ -1,3 +1,7 @@
+/-ai
+An element u is Plotkin-good for p, q, and j when, for some m, it equals the iterate Z m (e p) (e q), or that iterate with the singleton pair of j and m adjoined.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

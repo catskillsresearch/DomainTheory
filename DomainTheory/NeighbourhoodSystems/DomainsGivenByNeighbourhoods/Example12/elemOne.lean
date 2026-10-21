@@ -1,3 +1,6 @@
+/-ai
+The total element of Example 1.2 determined by {1} is the filter whose neighbourhoods are the master and {1}.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+At every even depth 2n, the generic atom of combinedX along a Boolean sequence is empty if and only if the generic atom of combinedY along the same sequence is empty.
+
+The sequence is replaced by the re-interleaving of its de-interleaving. The even closed forms rewrite the two atoms as the two components of atomPair at the de-interleaved signs and at depth n. The matching-emptiness clause of the invariant is that equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

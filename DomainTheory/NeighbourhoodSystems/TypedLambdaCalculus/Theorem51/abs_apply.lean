@@ -1,3 +1,8 @@
+/-ai
+Theorem 5.1, abstraction case (Scott 1981, PRG-19), states that the map recovered from the curry of an approximable map g at a context element v, applied at x, equals g at the pair of v and x.
+
+This is the curried application law.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

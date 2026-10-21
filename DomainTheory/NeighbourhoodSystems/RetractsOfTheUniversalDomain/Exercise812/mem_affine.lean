@@ -1,3 +1,8 @@
+/-ai
+A natural number lies in the residue class of ℓ modulo 2^k if and only if it is congruent to ℓ modulo 2^k.
+
+The two sides are the defining membership condition of the residue class.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

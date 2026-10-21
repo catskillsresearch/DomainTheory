@@ -1,3 +1,8 @@
+/-ai
+On a left element of a separated sum, one that meets some left copy, the left injection after the left projection is the identity.
+
+If an output belongs to the round trip, an intermediate left neighbourhood comes from a sum neighbourhood of the element whose left content sits in that intermediate set, and the left copy of the intermediate set sits in the output. Intersecting with the given left copy produces a smaller left copy inside the output, so the output belongs to the element. Conversely, a neighbourhood of the element is the sum master, a left copy, or a right copy. The master is reached from the left master through the sum master, a left copy is reached from itself, and a right copy meets the given left copy in the empty set, which is not a sum neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

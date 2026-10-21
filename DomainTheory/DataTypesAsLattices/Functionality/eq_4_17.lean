@@ -1,3 +1,8 @@
+/-ai
+Scott 1976, (4.17). If a and b are retracts, then first projection composed with the tensor of a and b is typed as an arrow from that tensor to a.
+
+Typedness unfolds to the arrow equation, which rewrites by the arrow rule. Graph extensionality uses the retract equation of the tensor, then simplification by composition, the first-projection combinator, and the retract equation, followed by the tensor rule, the zero projection, and the retract equation of a.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

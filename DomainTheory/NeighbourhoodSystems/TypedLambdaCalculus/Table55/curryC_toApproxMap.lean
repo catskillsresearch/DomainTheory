@@ -1,3 +1,8 @@
+/-ai
+The map recovered from the curry combinator at a function-space element φ is the curry of the map of φ.
+
+Rewrite by the definition of the combinator and the element map of an isomorphism. The resulting filter of that curry converts back to the curry by the round trip of the function-space equivalence.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

@@ -1,3 +1,8 @@
+/-ai
+A set of finite strings is a neighbourhood of the system Cn A if and only if it satisfies the predicate memCn.
+
+The two sides are definitionally the same condition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

@@ -1,3 +1,6 @@
+/-ai
+The Myhill filter code of m is the code obtained by applying the filter operator code to the numeral of m.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

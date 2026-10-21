@@ -1,3 +1,6 @@
+/-ai
+Proposition 5.6 defines the constant approximable mapping of value an element b to relate a consistent finite set to a finite set of the codomain exactly when that codomain set is contained in b. The codomain set is consistent because b is. The empty set is contained in b. A union of sets contained in b is contained in b. Monotonicity uses closure of b under entailment.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53

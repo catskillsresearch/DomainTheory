@@ -1,3 +1,8 @@
+/-ai
+An element belongs to the set represented by an ideal element if and only if it belongs to the closure of some token whose neighbourhood belongs to the ideal element.
+
+Unfold the represented set as the union of the associated family. A member of that union lies in some set of the family, which is the closure of such a token. Conversely, that closure itself belongs to the family.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

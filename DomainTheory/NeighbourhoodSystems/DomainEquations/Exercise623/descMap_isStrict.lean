@@ -1,3 +1,8 @@
+/-ai
+The evaluation map is strict, being a union of strict maps.
+
+If the union relates a neighbourhood, some iterate does, and that iterate is strict.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

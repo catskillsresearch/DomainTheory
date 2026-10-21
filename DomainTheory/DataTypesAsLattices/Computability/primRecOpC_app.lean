@@ -1,3 +1,8 @@
+/-ai
+Applying the curried primitive-recursion operator primRecOpC to an initial value a and a step f yields the primitive-recursion combinator primRecComb a f.
+
+Unfold primRecOpC and primRecOpTerm, and apply the beta law theorem_2_2_beta twice. Simplifying the interpretation, the environment update, primRecOpEnv, and primRecComb gives the equality.
+ai-/
 module
 
 public import Mathlib.Computability.RE

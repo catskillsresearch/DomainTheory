@@ -1,3 +1,6 @@
+/-ai
+The effective isomorphism between the iterated presentation of a computable presentation and the iteration of that iterated presentation has forward map the reindexing from the iteration to the double iteration and inverse map the reindexing in the other direction. Both maps are computable, and the two composite laws are the mutual inverse laws of those reindexings.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

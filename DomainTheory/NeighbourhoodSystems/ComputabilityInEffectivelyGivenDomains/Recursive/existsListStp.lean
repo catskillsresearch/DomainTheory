@@ -1,3 +1,6 @@
+/-ai
+The existence step, in the shape required by the code fold, replaces the accumulator by the disjunction of the accumulator and the one-indicator of the decider on the pair of the head and the parameters.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

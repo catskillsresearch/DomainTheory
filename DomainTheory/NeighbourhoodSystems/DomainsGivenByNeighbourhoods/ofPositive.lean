@@ -1,3 +1,6 @@
+/-ai
+A positive neighbourhood system is a neighbourhood system. From membership of the master, inclusion in the power set of the master, and the axiom that the intersection of two neighbourhoods is a neighbourhood exactly when it is nonempty, the intersection condition follows: a consistency witness meets itself, so it is nonempty, and the intersection that contains it is therefore nonempty and is a neighbourhood.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

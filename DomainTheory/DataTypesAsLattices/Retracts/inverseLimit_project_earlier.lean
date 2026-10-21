@@ -1,3 +1,8 @@
+/-ai
+An earlier coordinate of a coherent inverse-limit sequence is fixed by every later Kleene projection.
+
+The Kleene stages between the two indices stand in the retract order, so the earlier stage equals the composite of the later stage with the earlier stage. The earlier coordinate is fixed by its own stage. Apply that composite equation at the earlier coordinate and simplify composition.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,3 +1,9 @@
+/-ai
+Two enumerated neighbourhoods have a common enumerated lower bound if and only if one address is a prefix of the other. If they are nested, the more specific is itself a witness. A common lower bound forces nestedness, because a disjoint pair has no nonempty common lower bound and every enumerated neighbourhood is nonempty.
+
+From a common lower bound, the nested-or-disjoint property gives one inclusion, the other inclusion, or an empty intersection. An inclusion is a prefix characteristic equal to one. An empty intersection cannot contain a point of the nonempty neighbourhood of the witness. Conversely, if one prefix characteristic is one, the corresponding enumerated neighbourhood is contained in the intersection by the subset criterion.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

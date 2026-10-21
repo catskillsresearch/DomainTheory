@@ -1,3 +1,8 @@
+/-ai
+The output of a string beginning with one is the deletion scan of the tail.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

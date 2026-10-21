@@ -1,3 +1,8 @@
+/-ai
+The double fiber, at i and j, of the m-th enumerated neighbourhood of the iterated presentation is the basic neighbourhood of the presentation at the twice iterated index of m, i, and j.
+
+Unfold the double fiber. Rewrite the outer fiber by the enumeration equation for the iterated presentation, then the neighbourhood component of that presentation, then the inner fiber by the same enumeration equation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

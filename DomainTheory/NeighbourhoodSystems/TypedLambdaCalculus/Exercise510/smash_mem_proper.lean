@@ -1,3 +1,8 @@
+/-ai
+The product of two proper neighbourhoods is a neighbourhood of the smash product.
+
+It is the proper-product clause of membership in the smash.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,3 +1,6 @@
+/-ai
+The n-th approximant of an approximable endomap is the elementwise image of the bottom element under the n-fold iterate of the map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,3 +1,8 @@
+/-ai
+Every singleton of a natural number is a neighbourhood of Exercise 1.14.
+
+A singleton is finite, and it is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

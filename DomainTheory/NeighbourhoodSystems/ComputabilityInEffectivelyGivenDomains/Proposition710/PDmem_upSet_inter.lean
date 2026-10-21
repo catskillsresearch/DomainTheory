@@ -1,3 +1,8 @@
+/-ai
+The intersection of the down-sets of two neighbourhoods is a power-domain neighbourhood. By the intersection law for down-sets it is the down-set of the intersection. If that intersection is a neighbourhood, the result is the down-set of a neighbourhood; otherwise the down-set is empty, since no neighbourhood lies below the intersection. The case split on membership of the intersection is the classical step.
+
+Rewrite by the down-set intersection law. If the intersection is a neighbourhood, its down-set is a power-domain neighbourhood. If it is not, the down-set is empty, because a neighbourhood contained in the intersection would witness membership of the intersection by closure under intersection, and the empty set is a power-domain neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

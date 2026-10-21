@@ -1,3 +1,13 @@
+/-ai
+The enumeration of V is surjective onto the neighbourhoods of V. Every neighbourhood of
+V is the level set of some nonempty level-and-mask pair, and canonicalization does not
+change the code of such a pair.
+
+Given a neighbourhood presented as the level set of a nonempty pair, take the code of
+that pair. The level set of its unpaired components is nonempty by the pairing
+projections. Unfolding the enumeration, canonicalization leaves the code unchanged, and
+the unpaired components are the original level and mask.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

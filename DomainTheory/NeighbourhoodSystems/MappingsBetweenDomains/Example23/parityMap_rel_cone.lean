@@ -1,3 +1,8 @@
+/-ai
+The parity map relates the cone of a string to a neighbourhood exactly when that neighbourhood belongs to the element selected by scanning the string.
+
+A relation witness is some prefix with the same cone, and cones determine their prefixes, so the witness is the given string. Conversely that string is a witness.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

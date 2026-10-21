@@ -1,3 +1,8 @@
+/-ai
+The product of a family of continuous lattices is a continuous lattice, and its Scott topology is the product of the Scott topologies of the factors.
+
+The two claims are the order-theoretic and topological halves of Proposition 2.9.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

@@ -1,3 +1,8 @@
+/-ai
+If some enumerated neighbourhood of V equals the difference of two enumerated neighbourhoods, the neighbourhood at the difference index equals that difference.
+
+The representing neighbourhood is nonempty, so the level set of the raw difference is nonempty. Unfolding the difference index, the enumeration of the canonical index is the level set of that index, a nonempty raw code is fixed by canonicalization, and that level set is the difference.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

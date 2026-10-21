@@ -1,3 +1,8 @@
+/-ai
+If every bit of n at a position at least k is unset, then n < 2^k.
+
+Proceed by binary recursion on n, keeping k general. The claim holds for zero. For a bit b appended to a tail, the case k = 0 forces b to be unset and every bit of the tail to be unset, so the tail is zero. For k = ℓ + 1, the inductive hypothesis on the tail, with the bit test shifted by one, gives the bound for the tail, and that is the bound for one appended bit.
+ai-/
 module
 
 public import Mathlib.Computability.RE

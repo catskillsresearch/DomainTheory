@@ -1,3 +1,8 @@
+/-ai
+The copairing composed on the right with the right injection is the second of the two maps.
+
+If the composite relates an input to an output, an intermediate sum neighbourhood is a right copy of that input and is related by the copairing. A master output is the master relation of the second map, a left copy cannot contain the right copy, and a right copy shrinks to the given relation. Conversely, the right copy of the input is an intermediate neighbourhood whose copairing clause is that same right copy.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum

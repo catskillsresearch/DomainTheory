@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Proposition 8.10(b), self-application inside the universal domain, self-abstraction inside the universal domain, and Scott's translation recipe for a lambda abstraction.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

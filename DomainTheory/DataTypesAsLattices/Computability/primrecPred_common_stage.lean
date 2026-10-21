@@ -1,3 +1,8 @@
+/-ai
+For a partial-recursive code c, the common-stage predicate on a pair p, which holds when every k below p.1 has either test bit k of p.1 false or the bounded evaluation evaln p.2 c k defined, is primitive recursive.
+
+The evaluation of the second and first components at the fixed code c is primitive recursive by composing primrec_evaln. The relation on an index k and a packed argument which says that the corresponding test bit is false or that this evaluation is defined is primitive recursive, as a disjunction of two boolean primitive-recursive predicates rewritten by Bool.not_eq_true. Bounded universal quantification of that relation, composed with the first projection and Cantor pairing, is primitive recursive, and Nat.unpair_pair identifies it with the stated predicate.
+ai-/
 module
 
 public import Mathlib.Computability.RE

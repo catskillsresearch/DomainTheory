@@ -1,3 +1,8 @@
+/-ai
+If a finite set of strict function tokens is contained in the insertion of a token p into a set w, then the members other than p lie in w.
+
+Such a member lies in the insertion and is distinct from p, so the alternative that it equals p is impossible and it lies in w.
+ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

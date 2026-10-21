@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the results of Exercise 8.24: monotonicity of the two product projections, the bottom of the pair space and its two components, the zero and successor iterates of the paired operator and the splitting of an iterate into a pair, the zero and successor laws for the two approximant chains, the finitary-projection facts for the approximants and for the simultaneous fixed point, the two component forms of the fixed-element equation, the two fixed-point equations for the binary operators, the solution of the mutual domain equations, and initiality of the two fixed neighbourhood systems.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise824.Basic

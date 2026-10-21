@@ -1,3 +1,8 @@
+/-ai
+If an element of L has no least neighbourhood, then the neighbourhood of each finite prefix of its stream belongs to the element.
+
+Rewrite the prefix as the list chosen by the data construction, and use the membership component of that chosen data.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

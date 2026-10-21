@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Theorem 7.5 and the fixed-point construction, together with the last index of a chain, the consecutive-step predicate, the one-entry code, the decidable chain predicate, the packed and pure fold steps, and the chain fold, as the setting of Theorem 7.6.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

@@ -1,3 +1,8 @@
+/-ai
+The first component a is at most the pair of a and b.
+
+Unfolding the pairing function, both branches of the comparison of a and b give the inequality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

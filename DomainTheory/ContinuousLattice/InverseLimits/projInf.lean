@@ -1,3 +1,6 @@
+/-ai
+The projection from the inverse limit onto stage n is the Scott-continuous map whose underlying function reads the n-th coordinate, with continuity coming from preservation of directed suprema.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

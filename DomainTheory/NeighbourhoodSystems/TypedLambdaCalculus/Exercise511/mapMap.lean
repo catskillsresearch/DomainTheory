@@ -1,3 +1,6 @@
+/-ai
+The map combinator is the approximable map denoted by the least fixed point of the map operator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

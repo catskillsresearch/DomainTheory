@@ -1,3 +1,6 @@
+/-ai
+The join of two compact fixed points that lie below a common fixed point is the image of their supremum under the closure. The common fixed point witnesses that the two points are bounded, idempotence makes the image a fixed point, and the image of a supremum of two bounded compact fixed points is compact.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

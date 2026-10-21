@@ -1,3 +1,8 @@
+/-ai
+A subdomain relation transports along an equality of the carrier type.
+
+Cases on the equality leave the original relation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

@@ -1,3 +1,8 @@
+/-ai
+The left projection is monotone for inclusion of finite sets of product tokens.
+
+A token witnessing membership in the projection of the smaller set belongs to the larger set by the inclusion, and it remains a witness there.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,3 +1,8 @@
+/-ai
+Every cone is a neighbourhood of the binary-sequence system.
+
+It is the first disjunct of the neighbourhood predicate, witnessed by its string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

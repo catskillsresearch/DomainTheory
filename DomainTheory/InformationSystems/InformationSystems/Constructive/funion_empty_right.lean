@@ -1,3 +1,8 @@
+/-ai
+The choice-free union of a finite set with the empty finite set equals the original set.
+
+Extensionality, the membership law, and emptiness of the empty set reduce membership in the union to membership in the first set.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

@@ -1,3 +1,6 @@
+/-ai
+The left-associative infix operator written with a superscript s, at precedence 65, is notation for the Minkowski sum sumSet, and it inherits the documentation of sumSet.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

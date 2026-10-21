@@ -1,3 +1,6 @@
+/-ai
+The approximable map funMap from PN to the function space from PN to PN is the currying of gMap. It is the fun combinator of the exercise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

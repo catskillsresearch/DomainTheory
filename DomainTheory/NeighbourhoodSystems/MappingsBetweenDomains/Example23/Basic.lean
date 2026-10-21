@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the ingredients of the parity map from the binary neighbourhood system to the two-token domain: the codomain, the elements true, false, and bottom, the comparison of bottom with every element, the parity scanner and its clauses, stability of a committed scan under extension, the element selected by a scan value and its monotonicity under longer prefixes, and the approximable parity map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

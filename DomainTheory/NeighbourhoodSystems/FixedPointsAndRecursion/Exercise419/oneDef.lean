@@ -1,3 +1,6 @@
+/-ai
+The defining expression for the test one sends an element of the sequence domain to the conditional of the emptiness test, false, and the conditional of the zero test, false, and true.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

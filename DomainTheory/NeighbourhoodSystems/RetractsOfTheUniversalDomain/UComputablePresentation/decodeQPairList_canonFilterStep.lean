@@ -1,3 +1,8 @@
+/-ai
+Decoding the filter step as rational pairs yields the singleton of the clipped decoded pair when that pair is nondegenerate, and the empty list otherwise.
+
+Unfold the pair-list decoding, rewrite by the list decoding of the filter step, and simplify both branches by the decoding of the clipped pair code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

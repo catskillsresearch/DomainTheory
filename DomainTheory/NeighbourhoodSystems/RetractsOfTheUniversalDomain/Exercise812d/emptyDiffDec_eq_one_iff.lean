@@ -1,3 +1,8 @@
+/-ai
+For a difference-closed system with no minimal neighbourhood, the difference-emptiness decider reads one on a pair exactly when the set difference of the two enumerated neighbourhoods is empty.
+
+Unfold the emptiness decider. The existence decider is at most one and reads zero exactly on an empty difference, so arithmetic converts a reading of one into a reading of zero and conversely.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

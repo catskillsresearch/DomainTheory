@@ -1,3 +1,6 @@
+/-ai
+One step of the diagonal walk sends the cell (n + 1, m) to (n, m + 1), and sends the cell (0, m) to (m + 1, 0), the first cell of the next diagonal.
+ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

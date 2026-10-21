@@ -1,3 +1,8 @@
+/-ai
+For each natural n, the multiplication operator is monotone.
+
+The zero clause is unchanged. A sum witness in the smaller set is a sum witness in the larger set by the assumed inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

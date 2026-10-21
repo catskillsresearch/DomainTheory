@@ -1,3 +1,8 @@
+/-ai
+A map that preserves directed suprema is monotone.
+
+If x lies below y, the pair of x and y is nonempty and directed, and its supremum is y. Preservation rewrites the image of y as the supremum of the pair of images, so the image of x lies below the image of y.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

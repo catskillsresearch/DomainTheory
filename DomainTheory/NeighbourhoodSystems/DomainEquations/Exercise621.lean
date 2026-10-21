@@ -1,3 +1,6 @@
+/-ai
+This module gathers and re-exports Exercise 6.21 on the coalesced sum and the smash product. It brings together the basic development, the right-hand form of the intersection lemma, membership of the coalesced-sum master and the inverse membership lemmas for its tags and for smash-product rectangles, the componentwise subsystem laws, the strictness, identity, composition, and monotonicity laws for both map actions, the functor laws and the continuity of the extended expression algebra on maps and on domains, preservation of the rooted-constant condition by an n-ary fold, and the singleton-subsystem solutions of the four n-ary constructs.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.Basic

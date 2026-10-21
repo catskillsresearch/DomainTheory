@@ -1,3 +1,7 @@
+/-ai
+A finite set of strict function tokens entails a strict function token when the set is consistent in the strict sense and the underlying function tokens entail the underlying function token.
+ai-/
+
 module
 
 public import Mathlib.Data.Multiset.MapFold

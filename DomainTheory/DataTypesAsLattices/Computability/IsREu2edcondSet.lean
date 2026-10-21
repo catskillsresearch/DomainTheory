@@ -1,3 +1,8 @@
+/-ai
+The doubly strict conditional of three recursively enumerable sets is recursively enumerable.
+
+It is the conditional whose two branches are themselves conditionals, with the full set in the unused inner branch of each, and the conditional theorem applies to those recursively enumerable sets.
+ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,3 +1,8 @@
+/-ai
+If two compact fixed points of a closure operator are bounded above, the image of their supremum is again a compact fixed point.
+
+Suppose that image lies below a directed supremum of fixed points. Inflation puts the supremum of the two points below the same directed supremum, and each of the two points lies below that supremum. Compactness supplies an index for each, and directedness supplies a common index above both. The supremum is the least upper bound of the two points, so it lies below the family value at that index. Monotonicity of the element map and the fixed-point equation for that value place the image below it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

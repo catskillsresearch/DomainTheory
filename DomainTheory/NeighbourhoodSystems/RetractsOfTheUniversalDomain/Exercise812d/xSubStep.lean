@@ -1,3 +1,6 @@
+/-ai
+The X sub-step reads a neighbourhood index, a bit, and a packed state. It refines the first index by intersection or difference with that neighbourhood according to the bit, and replaces the second index by the matching positive or negative split index. If the incoming state is junk, or that direct refinement is empty, both indices become the sentinel 0 and the junk flag becomes 1; otherwise the junk flag is the emptiness decision of the refinement.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

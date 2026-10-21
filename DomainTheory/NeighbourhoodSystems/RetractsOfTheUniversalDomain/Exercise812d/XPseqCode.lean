@@ -1,3 +1,6 @@
+/-ai
+XPseqCode at depth n is the code component of the X-fold stopped at stage 4 to the n, the code of the union of the genuine half-step atoms among those bit-sources.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

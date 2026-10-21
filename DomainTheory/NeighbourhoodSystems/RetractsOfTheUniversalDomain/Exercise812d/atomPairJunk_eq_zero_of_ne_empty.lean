@@ -1,3 +1,8 @@
+/-ai
+If the first component of the generalized atom pair is nonempty, then the recorded junk flag is 0.
+
+Otherwise the flag, which is at most 1 and not 0, equals 1, and a junk flag forces that first component to be empty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

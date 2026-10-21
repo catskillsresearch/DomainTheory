@@ -1,3 +1,6 @@
+/-ai
+The product of two approximable maps is the pairing of the first map after the left projection with the second map after the right projection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

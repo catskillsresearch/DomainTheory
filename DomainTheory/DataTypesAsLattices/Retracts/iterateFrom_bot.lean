@@ -1,3 +1,8 @@
+/-ai
+Iterating a map from the bottom element agrees with the Kleene approximants of that map.
+
+The zero stages agree by definition. At a successor, both recursive clauses and the inductive hypothesis give the same value.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

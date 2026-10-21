@@ -1,3 +1,6 @@
+/-ai
+The left lift of a finite set v of tokens of A is the finite set of product tokens obtained by folding insertion of the left tag of each token of v, starting from the empty set.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

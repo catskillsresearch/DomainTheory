@@ -1,3 +1,8 @@
+/-ai
+The indexed sum of a map sends the letter-copy injection of an element to the letter-copy injection of its image.
+
+Neighbourhoods of the two elements are compared. A related neighbourhood that is the master belongs to the image injection. One that is the unit copy cannot arise from the master or from a letter-copy of a neighbourhood of the element. One that is a letter-copy arises from a letter-copy of a neighbourhood of the element, and equality of copies puts the image neighbourhood in the image injection. Conversely, the master is related to the master, and a letter-copy belonging to the image comes from a neighbourhood of the element related by the map, which belongs to the source injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

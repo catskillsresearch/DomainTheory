@@ -1,3 +1,9 @@
+/-ai
+The set of Gödel numbers denoting bottom is not recursively enumerable. This is Scott's incompleteness theorem (Theorem 3.4).
+
+If that set were recursively enumerable, its preimage under the primitive recursive diagonal code would be recursively enumerable. Surjectivity of the enumeration would supply a combinatory index for that preimage. The diagonal contradiction, applied to val, to the diagonal code, and to the value of that code, would then be false.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

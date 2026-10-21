@@ -1,3 +1,8 @@
+/-ai
+The value of atomPair at depth n+1 is the Y-step applied to the two outputs of the X-step on the depth-n pair, the current set of the first enumeration, and the first sign bit, using the current set of the second enumeration and the second sign bit.
+
+The two sides unfold to the same pair, so the equality is definitional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

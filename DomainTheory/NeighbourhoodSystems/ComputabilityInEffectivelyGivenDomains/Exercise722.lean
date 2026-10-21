@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the algebraic core of the neighbourhood system on binary words: singleton concatenation, the master neighbourhood and positivity of that system, the embedding of a word as a homomorphism and as an injection, agreement of prepending with multiplication, the fixed-point equation of an infinite word, monotonicity of multiplication on the right, left annihilation by the bottom element, both inequalities between an infinite word and its square, the bound on finite iterates of prepending, equality of an infinite word with its square and with its triple product, the same square equation for a word ending in true, the fourfold product of the infinite word on the word false-then-true, the successor law for repeated words, and concatenation of a power language with itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722.Basic

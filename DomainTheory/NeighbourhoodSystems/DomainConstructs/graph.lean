@@ -1,3 +1,6 @@
+/-ai
+The graph of an approximable map is the set of neighbourhood pairs that the map relates.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222

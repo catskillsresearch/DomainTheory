@@ -1,3 +1,6 @@
+/-ai
+An integer code is decoded by reading it as a pair of naturals and subtracting the second component from the first.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the setting of Theorem 5.2 (Scott 1981, PRG-19), the β-conversion rule that applying an abstraction to arguments equals substitution of those arguments. In one variable the rule is the computation law of curry and evaluation, and the inductive helpers are the tuple identity and the double-abstraction identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

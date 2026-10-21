@@ -1,3 +1,6 @@
+/-ai
+The second component of a product element z, Scott's z₁, consists of the neighbourhoods Y such that the product of the master neighbourhood of the first system with Y belongs to z. It is a filter because the intersection of two such slices is again a product neighbourhood, whose second component is recovered by uniqueness of the product representation, and because a larger neighbourhood enlarges the product neighbourhood componentwise.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

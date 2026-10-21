@@ -1,3 +1,6 @@
+/-ai
+The current depth carried by a step input, a pair of the bit-source with a pair of the depth and the state, is the left component of that inner pair.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

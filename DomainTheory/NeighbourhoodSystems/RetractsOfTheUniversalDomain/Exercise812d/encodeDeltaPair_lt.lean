@@ -1,3 +1,8 @@
+/-ai
+The encoding of a sign sequence of length n is strictly less than four to the n.
+
+The zero case simplifies. At a successor the inductive bound and each of the four possible digits, checked by cases on the two booleans, keep the sum below four to the n+1.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

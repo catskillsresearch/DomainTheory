@@ -1,3 +1,8 @@
+/-ai
+Every neighbourhood of the indexed sum is nonempty.
+
+The master contains the empty token, the unit copy is nonempty, and a letter-copy of a nonempty neighbourhood is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

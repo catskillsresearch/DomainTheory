@@ -1,3 +1,6 @@
+/-ai
+The setoid of formulas is semantic equivalence. It is reflexive because a truth value equals itself, symmetric because equality of truth values reverses, and transitive because equality of truth values composes, at each valuation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

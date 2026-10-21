@@ -1,3 +1,8 @@
+/-ai
+The relation which holds when test bit k of n is true is primitive recursive.
+
+It is primrecPred_bool applied to the primitive-recursive binary function primrec_testBit.
+ai-/
 module
 
 public import Mathlib.Computability.RE

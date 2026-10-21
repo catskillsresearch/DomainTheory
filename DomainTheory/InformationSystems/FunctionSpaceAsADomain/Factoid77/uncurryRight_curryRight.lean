@@ -1,3 +1,9 @@
+/-ai
+Right uncurry is a left inverse of right curry: uncurrying the curry of a morphism from the tensor of A and Y to Z returns that morphism.
+
+Unfold both operations together with the product curry and uncurry. The product uncurry–curry identity, associativity of composition, the fact that swap composed with itself is the identity, and the left unit law for composition reduce the composite to the original map once the product–tensor hom casts are simplified.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

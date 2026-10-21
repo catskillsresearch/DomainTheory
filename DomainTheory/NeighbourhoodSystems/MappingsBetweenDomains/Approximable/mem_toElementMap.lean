@@ -1,3 +1,8 @@
+/-ai
+A neighbourhood belongs to the elementwise image of an element under an approximable map if and only if some neighbourhood of the element is related to it.
+
+This equivalence is the defining membership of the elementwise image.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

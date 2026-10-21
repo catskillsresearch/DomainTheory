@@ -1,3 +1,6 @@
+/-ai
+The pullback of a filter y of DprimeU is the D-filter of those neighbourhoods that equal e n for some n whose transferred neighbourhood Yidx e n belongs to y. Each such neighbourhood belongs to D. The master belongs, because e 0 is the master and the transferred neighbourhood of 0 is the master of DprimeU. The intersection of two such neighbourhoods belongs to DprimeU, so the subsystem supplies a nonempty intersection of transferred neighbourhoods and the unwitnessed index lemma names a common index, which y contains. A larger neighbourhood of D equals some e j, the inclusion transfers to the Yidx neighbourhoods, and y is upward closed.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

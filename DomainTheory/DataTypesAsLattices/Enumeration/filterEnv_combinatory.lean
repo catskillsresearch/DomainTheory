@@ -1,3 +1,8 @@
+/-ai
+Every value of the environment filterEnv is combinatory.
+
+Index 3 is the filter realizer, index 4 the pairing combinator, index 5 the dollar combinator, index 6 the predecessor, and index 7 the top element. Indices 0, 1, and 2, and every index of the form n + 8, take the bottom element.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

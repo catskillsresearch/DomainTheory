@@ -1,3 +1,6 @@
+/-ai
+A finite set u of sum tokens entails a sum token p, in the sense of Scott's Definition 6.3(iv') through (iv'''), when u is sum-consistent and the condition on p is trivial for the sum bottom, the left projection of u is nonempty and A entails the component from that projection for a left token, and the right projection of u is nonempty and B entails the component from that projection for a right token. Sum consistency is included so that the entailment-consistency law can update the projections.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

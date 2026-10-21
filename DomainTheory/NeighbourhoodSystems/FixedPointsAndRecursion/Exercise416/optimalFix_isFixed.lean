@@ -1,3 +1,8 @@
+/-ai
+The optimal fixed point of a nonempty set of fixed points is a fixed point.
+
+It is obtained from the monotone construction, and that construction produces a fixed point.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413

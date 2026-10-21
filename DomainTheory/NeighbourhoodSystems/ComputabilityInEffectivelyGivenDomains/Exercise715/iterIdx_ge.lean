@@ -1,3 +1,8 @@
+/-ai
+If t is at most j, the j-th fiber index of t is the master index.
+
+The fiber index is a defaulted lookup in the decoded list. That list has length at most t, so the lookup at j returns the default, which is the master index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

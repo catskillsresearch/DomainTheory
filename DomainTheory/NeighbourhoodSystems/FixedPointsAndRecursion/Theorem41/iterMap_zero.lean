@@ -1,3 +1,8 @@
+/-ai
+The zeroth iterate of an approximable endomap is the identity map.
+
+This equality is the zero clause in the definition of iteration.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,3 +1,8 @@
+/-ai
+If a family of sets is closed under nonempty intersections, and some member contains a set F, then the closure of F belongs to the family.
+
+The closure is that intersection. The given member shows the family of members containing F is nonempty, every such member belongs to the family, and the intersection hypothesis applies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

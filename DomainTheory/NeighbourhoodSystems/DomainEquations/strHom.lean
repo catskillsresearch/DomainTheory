@@ -1,3 +1,6 @@
+/-ai
+The structure map of a T-algebra is a homomorphism from the algebra whose structure map is the image of that map under T to the original algebra. Both paths of the homomorphism square are the structure map composed with its own image under T.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

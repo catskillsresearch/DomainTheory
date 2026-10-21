@@ -1,3 +1,6 @@
+/-ai
+The injection of the infinite power of the universal domain into the universal domain is the first witness chosen by the strong form of Theorem 8.8(b) applied to a computable presentation of that power.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

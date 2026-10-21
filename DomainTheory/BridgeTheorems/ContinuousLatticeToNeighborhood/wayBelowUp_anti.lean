@@ -1,3 +1,8 @@
+/-ai
+If a lies under b, the way-below neighbourhood of b is contained in the way-below neighbourhood of a.
+
+If b is way-below an element and a lies under b, then a is way-below that element.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,3 +1,6 @@
+/-ai
+The intersection-equality characteristic of a packed triple of indices is the intersection-equality characteristic, at fuel the sum of the three stored depths plus three, of the intersection code of the canonical codes of the first two indices against the canonical code of the third. The triple is packed as the pairing of the first index with the pairing of the second and the third.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,3 +1,8 @@
+/-ai
+The principal filter of a singleton {n} is a total element of the neighbourhood system of finite nonempty subsets: any element above it lies below it.
+
+Let an element lie above this principal filter, and let a set belong to that element. Then {n} belongs to the element, and the set is a neighbourhood because it belongs to an element. If {n} failed to be contained in the set, extensionality would make their intersection empty. That empty intersection would belong to the element, and passing to a subneighbourhood would make the empty set a neighbourhood. Thus {n} is contained in the set, which is membership in the principal filter.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,3 +1,8 @@
+/-ai
+Every Scott map is a monotone function of its underlying map.
+
+Scott continuity of the underlying function is equivalent to preservation of directed suprema, and a map that preserves directed suprema is monotone.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap

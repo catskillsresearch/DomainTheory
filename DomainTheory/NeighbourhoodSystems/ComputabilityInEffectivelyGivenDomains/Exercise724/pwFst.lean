@@ -1,3 +1,6 @@
+/-ai
+The projection that extracts the first sequence from the pointwise-binary domain is the first projection of the two function spaces, composed with the projection that forgets the argument L.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

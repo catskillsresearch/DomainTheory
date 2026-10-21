@@ -1,3 +1,8 @@
+/-ai
+Applying the element S to F, then to G, then to x equals applying F to x and then applying the result to G applied to x.
+
+Rewrite by the definition of the element and the round trip from a filter back to an approximable map, and apply the defining equation of the curried map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

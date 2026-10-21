@@ -1,3 +1,9 @@
+/-ai
+Tag of a list at a value equals the left fold, over the reversed list, of the map sending an accumulator and an entry to the numeral of the successor of the entry and the accumulator, starting from the numeral of zero and the value.
+
+Rewrite by the identity that turns a left fold of a reversed list into a right fold, and apply the right-fold equation for tag.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

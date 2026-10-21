@@ -1,3 +1,6 @@
+/-ai
+A fixed computable presentation of the product of the universal domain with itself is a chosen witness that this product is effectively given.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

@@ -1,3 +1,6 @@
+/-ai
+Insertion of left-tagged product tokens is left-commutative, because insertion of two such tokens into a finite set commutes.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

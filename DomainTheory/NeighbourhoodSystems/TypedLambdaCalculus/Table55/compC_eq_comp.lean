@@ -1,3 +1,8 @@
+/-ai
+The map recovered from the composition combinator at a pair of function-space elements is the composition of the two corresponding approximable maps.
+
+Extend by values. At each element, rewrite by the composition law and the application law of the combinator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

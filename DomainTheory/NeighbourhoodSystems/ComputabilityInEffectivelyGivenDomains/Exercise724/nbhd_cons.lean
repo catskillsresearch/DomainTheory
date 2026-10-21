@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood of a nonempty list is the prefixed copy, by its head, of the neighbourhood of its tail.
+
+The equation is the defining clause.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

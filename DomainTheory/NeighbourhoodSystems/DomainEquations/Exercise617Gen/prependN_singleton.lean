@@ -1,3 +1,8 @@
+/-ai
+Prepending a string to a singleton yields the singleton of the concatenation.
+
+A member of the prepend is the concatenation of the two strings. The concatenation itself is that member, witnessed by the second string.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

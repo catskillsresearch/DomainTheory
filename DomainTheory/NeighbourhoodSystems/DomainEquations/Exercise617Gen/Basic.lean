@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the alphabet-generic development of Exercise 6.17, in which the two-letter domain of finite or infinite binary sequences is replaced by the domain of finite or infinite sequences over a decidable alphabet. It re-exports the neighbourhood system of cones and singletons, the partial and total elements, and the letter-prepending successors; the separated sum of the unit with one copy for each letter, its injections, sum map, and endofunctor; the letter embeddings and the isomorphism with that sum; the lift of approximable maps out of the domain; the unique algebra homomorphism into any algebra for the functor; and the specialisation in which the alphabet is a finite initial segment.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

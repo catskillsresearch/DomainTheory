@@ -1,3 +1,8 @@
+/-ai
+The image under T of the n-th projection is heterogeneously equal to the next projection.
+
+Functoriality writes the image of the projection as the composite of the images of the injection and the projection of the inclusion of the n-th level in the colimit. The carrier-transport lemma is applied to the carrier identifications, the monotonicity data for that inclusion, the successor and colimit equalities, and the heterogeneous injection and projection supplied by monotonicity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

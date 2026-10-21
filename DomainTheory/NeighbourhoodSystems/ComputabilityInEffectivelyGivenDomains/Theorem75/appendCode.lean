@@ -1,3 +1,6 @@
+/-ai
+The append code of two codes is the code fold of the append step, started at zero, of the list coded by the second code onto the first.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

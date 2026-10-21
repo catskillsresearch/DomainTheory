@@ -1,3 +1,6 @@
+/-ai
+The distributive extension of primitive recursion at a base value, a step, and an argument set is the union of the primitive-recursive values at the indices that belong to the argument.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

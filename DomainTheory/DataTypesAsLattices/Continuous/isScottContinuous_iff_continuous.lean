@@ -1,3 +1,8 @@
+/-ai
+A map f from Pω to Pω is Scott continuous if and only if it is continuous for the positive topology.
+
+If f is Scott continuous, continuity into the generated topology reduces to showing that the preimage of each subbasic open is open, and Scott opens coincide with opens. The preimage of the subbasic open of k is the union of the basic neighbourhoods of those codes n for which k lies in f of the finite set coded by n: membership of k in f(x) is membership in the Scott union, which supplies such a code, and the converse uses monotonicity. If instead f is topologically continuous, compare membership of k in f(x) with membership in the Scott union. The preimage of the subbasic open of k is open, hence Scott open. If k lies in f(x), that preimage contains a basic neighbourhood of some finite subset of x, and evaluating at the finite set itself puts k in f of that finite set. If k lies in the Scott union, the witnessing finite set lies in the preimage, and a Scott open is an upper set, so x lies in the preimage.
+ai-/
 module
 
 public import Mathlib.Topology.Bases

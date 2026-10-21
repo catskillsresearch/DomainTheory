@@ -1,3 +1,6 @@
+/-ai
+Scott 1976, (4.9). The product of two retracts is the graph of the map that pairs the first retract applied to the zeroth component with the second retract applied to the first component.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

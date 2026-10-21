@@ -1,3 +1,8 @@
+/-ai
+If two elements each equal the graph of their own application, and they agree under application at every argument, then they are equal.
+
+The proof rewrites by the two graph equations and applies graph extensionality to the pointwise agreement.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

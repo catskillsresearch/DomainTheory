@@ -1,3 +1,6 @@
+/-ai
+sumTokEquiv is the order isomorphism between elements of the concrete token sum and elements of the abstract separated sum. The forward map is toSum and the inverse is fromSum, and the two round trips are the corresponding identity theorems. The map preserves and reflects order by cases on the three kinds of neighbourhood: the master is shared, and a tagged copy on one side is the matching injection on the other, transported by the membership criteria for the two injections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,3 +1,8 @@
+/-ai
+The product of two composite maps equals the composite of the two product maps.
+
+Two approximable maps agree when they have the same relation. A product relation of the composites supplies intermediate neighbourhoods, and the product neighbourhood of those intermediates witnesses the composite of the products. Conversely, a composite of products supplies an intermediate product neighbourhood; injectivity of product neighbourhoods aligns its components with those intermediates, and the component composites are the product relation of the composites.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

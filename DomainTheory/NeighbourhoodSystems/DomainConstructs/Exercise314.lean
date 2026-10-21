@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the diagonal of a neighbourhood system, the relation criterion and the elementwise pairing equation for that diagonal, and the two laws that postcomposing the diagonal with either projection returns the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise314.Basic

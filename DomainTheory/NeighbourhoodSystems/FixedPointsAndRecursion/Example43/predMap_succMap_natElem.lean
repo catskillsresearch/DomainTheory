@@ -1,3 +1,8 @@
+/-ai
+On a total element, the predecessor undoes the successor.
+
+The successor computation rule is rewritten, and then the predecessor computation rule on a successor.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

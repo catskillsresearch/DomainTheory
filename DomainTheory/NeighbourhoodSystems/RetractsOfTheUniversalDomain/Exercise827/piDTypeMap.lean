@@ -1,3 +1,6 @@
+/-ai
+The type map of d sends an element of the universal domain to a function-space element by composing j-arrow with sub composed with d.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

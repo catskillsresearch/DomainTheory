@@ -1,3 +1,8 @@
+/-ai
+For every element x of C, negating twice returns x.
+
+The composition of negation with itself is the identity map, so the double application rewrites as that composition and then as the identity.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

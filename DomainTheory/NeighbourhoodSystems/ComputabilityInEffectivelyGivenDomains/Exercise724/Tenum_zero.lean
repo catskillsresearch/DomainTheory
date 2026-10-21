@@ -1,3 +1,8 @@
+/-ai
+The enumeration of T sends 0 to the master neighbourhood.
+
+The equation is the defining clause.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

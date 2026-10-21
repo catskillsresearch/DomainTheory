@@ -1,3 +1,6 @@
+/-ai
+The encoding of a sign sequence of boolean pairs is zero at length zero. At each successor it appends a base-four digit whose two low bits are the two boolean components at that position.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

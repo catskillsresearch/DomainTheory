@@ -1,3 +1,8 @@
+/-ai
+The set of neighbourhoods of the intersection subdomain is the intersection of the family.
+
+A set is a neighbourhood of the intersection system exactly when it belongs to every member of the family, which is membership in that intersection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

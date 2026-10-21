@@ -1,3 +1,6 @@
+/-ai
+Scott's Theorem 7.2 sends an approximable map to the element of the function space whose carrier is the set of function tokens whose input and output lie in the relation of the map. Consistency and deductive closure of that carrier are the corresponding lemmas.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

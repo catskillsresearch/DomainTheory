@@ -1,3 +1,6 @@
+/-ai
+The class Scott G is the class of Scott-open subsets of Pω.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

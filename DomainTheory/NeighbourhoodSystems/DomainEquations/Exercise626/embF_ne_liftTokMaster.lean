@@ -1,3 +1,8 @@
+/-ai
+A false-bit embedding of a set of strings is distinct from the master of the lift.
+
+Equality would place the empty string, which belongs to the lift master, inside a tagged bit.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

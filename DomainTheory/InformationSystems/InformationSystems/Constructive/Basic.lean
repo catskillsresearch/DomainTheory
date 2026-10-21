@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports a choice-free finite-set prelude, replacing the choice-dependent finite-set union and decidable equality of Mathlib. Binary union is the fold of insertion over an underlying multiset, and equality of finite sets is decided by mutual inclusion. The remaining re-exports are commutativity of insertion, the left-commutative instance for insertion, the union notation, membership in a folded insertion and in a union, the empty-right law, and the two lemmas that turn mutual inclusion into equality or into a contradiction.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

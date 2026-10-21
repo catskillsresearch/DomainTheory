@@ -1,3 +1,6 @@
+/-ai
+The term topRecTerm is Scott's equation (2.16), the combinator for the map sending x to the union of the numeral 0 with the successor of x. It abstracts the conditional whose test is an abstraction of the zero term, whose zero branch is zero, and whose successor branch is the successor of the bound variable.
+ai-/
 module
 
 public import Mathlib.Computability.RE

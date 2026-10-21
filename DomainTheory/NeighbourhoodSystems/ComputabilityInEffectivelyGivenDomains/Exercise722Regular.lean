@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic regular-event development together with soundness and completeness of denotation for membership in S, the two characterizations of S by nonempty denotations, emptiness and intersection as language equivalence, membership of every word in the universal language, the identity that concatenating the universal language with itself yields the universal language, and the separation of the universal language from the language of words that contain a zero.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular.Basic

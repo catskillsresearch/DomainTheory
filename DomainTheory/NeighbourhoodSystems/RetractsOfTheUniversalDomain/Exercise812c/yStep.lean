@@ -1,3 +1,6 @@
+/-ai
+yStep is the Y-sub-step. It applies the generic paired step to the split chosen for D₀, with the two sides exchanged, and swaps the resulting pair so that the first component is again the side belonging to D₀.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,3 +1,8 @@
+/-ai
+If the tag of a code is one, its evaluation is the universal intersection of the evaluations of its two children.
+
+The first selector equals zero and the second equals one. The second component of the code is strictly smaller because the tag is positive, so both children are strictly smaller than the code. The fuel step returns the universal intersection of the fuel values at the children, which agree with the fuel-free evaluations.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

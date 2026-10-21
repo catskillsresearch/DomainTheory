@@ -1,3 +1,8 @@
+/-ai
+The composition operator sends the pair of approximable maps g and f to the element of the function space corresponding to their composite.
+
+The approximable map recovered from that element equals the composite. At an element x its value equals the uncurried composition at the pair of that pair with x, by the pairing identity for a curried map and the equality of the operator's uncurrying with the uncurried composition, and the uncurried composition evaluates to the composite at x. Passing back from the recovered map to an element gives the result.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

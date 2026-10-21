@@ -1,3 +1,8 @@
+/-ai
+If a code has tag 1 and indexes a proper right neighbourhood, the coalesced-sum enumeration returns the right injection of that neighbourhood.
+
+The tag cannot also be 0, so the first conditional fails and the second conditional is the right-injection branch.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

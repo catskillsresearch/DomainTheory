@@ -1,3 +1,6 @@
+/-ai
+Folding is the approximable map from the product of a neighbourhood system with its iteration back to the iteration, induced by the inverse of the product isomorphism.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

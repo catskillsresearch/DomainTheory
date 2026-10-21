@@ -1,3 +1,8 @@
+/-ai
+The diagonal sends an element x to the pair of x with itself.
+
+Rewrite by the definition of the diagonal, the pairing law, and the identity map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

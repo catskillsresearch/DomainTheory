@@ -1,3 +1,8 @@
+/-ai
+The empty set does not entail the false token in the Boolean system.
+
+An entailment witness, applied to the undefined Boolean point and to the vacuous condition on the empty set, is contradictory.
+ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

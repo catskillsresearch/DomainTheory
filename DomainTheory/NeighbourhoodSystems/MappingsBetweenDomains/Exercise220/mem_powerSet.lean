@@ -1,3 +1,8 @@
+/-ai
+A set of natural numbers is a neighbourhood of the powerset system if and only if its complement is finite.
+
+The two sides are definitionally the same proposition.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

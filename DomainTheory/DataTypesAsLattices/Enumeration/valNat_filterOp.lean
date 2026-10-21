@@ -1,3 +1,8 @@
+/-ai
+The numerical evaluator sends the filter-operator code to the filter combinator.
+
+The equality is the specification of the witness chosen by the surjectivity clause of Theorem 3.2 for the combinatory filter combinator.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

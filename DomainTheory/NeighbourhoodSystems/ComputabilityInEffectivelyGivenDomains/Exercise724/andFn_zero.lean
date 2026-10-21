@@ -1,3 +1,8 @@
+/-ai
+Sequential conjunction of the neighbourhood zero with a neighbourhood Y returns Y.
+
+Unfold the definition and take the first branch of the conditional.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

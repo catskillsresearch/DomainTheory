@@ -1,3 +1,6 @@
+/-ai
+The raw level-and-mask code for the difference of two enumerated neighbourhoods of V, before re-canonicalization, pairs the maximum of their canonical levels with the and-not of the two masks after both have been upsampled to that common level.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

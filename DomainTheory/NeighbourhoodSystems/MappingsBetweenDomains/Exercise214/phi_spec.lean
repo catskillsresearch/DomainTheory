@@ -1,3 +1,8 @@
+/-ai
+Applying a domain isomorphism to the principal element of a neighbourhood yields the principal element of the neighbourhood selected by phi.
+
+This is the specification of the chosen witness that the image of a principal element is principal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

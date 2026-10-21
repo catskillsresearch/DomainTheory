@@ -1,3 +1,12 @@
+/-ai
+The computable re-expression of a level-k mask at a level k' is the truncation, to the
+low two-to-the-k' bits, of the mask component obtained by iterating the joint upsampling
+step, a number of times equal to k' minus k, from the pair of k and the mask. When k' is
+at least k this agrees at the level-set level with upsampling and is bounded; the final
+truncation does not change the presented set, but it supplies the bound when the two
+levels are equal and the iteration takes no steps. When k' is strictly below k the
+returned value is junk.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

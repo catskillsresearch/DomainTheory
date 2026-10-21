@@ -1,3 +1,6 @@
+/-ai
+The diagonal fixed-point predicate holds of a computable presentation, an approximable endomap, and an index when the presented neighbourhood at that index stands in the map's relation to itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

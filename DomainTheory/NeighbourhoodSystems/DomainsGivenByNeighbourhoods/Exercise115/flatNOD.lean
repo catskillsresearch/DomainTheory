@@ -1,3 +1,8 @@
+/-ai
+Flat membership is nested or disjoint.
+
+The argument cases on whether each of the two sets is the whole set or a singleton. The whole set contains every neighbourhood and is contained in itself. Two singletons are equal, hence nested, or distinct, hence disjoint.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

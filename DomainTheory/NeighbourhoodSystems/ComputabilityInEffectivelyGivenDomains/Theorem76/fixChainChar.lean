@@ -1,3 +1,6 @@
+/-ai
+The chain characteristic of a function-space code and a list code is the fold of the packed fixed-point step, with that function-space code as parameter, starting from the pairing of the master index with 1, over the list coded by the list code. The result pairs the last index with a flag.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic development of the positive and non-positive neighbourhood systems, together with positivity of the positive example, the intersection of the two overlapping neighbourhoods, the exclusion of the singleton of the middle token, and the failure of positivity for the non-positive system.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.Basic

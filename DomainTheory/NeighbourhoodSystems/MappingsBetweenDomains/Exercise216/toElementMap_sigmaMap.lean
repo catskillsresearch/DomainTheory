@@ -1,3 +1,8 @@
+/-ai
+The element map of the prefixing map of a finite string is Scott's prefixing operation on elements.
+
+Two elements are equal when they contain the same neighbourhoods. A neighbourhood of the element map consists of an input neighbourhood of the element, an output neighbourhood, and a prefixed inclusion, and dropping the containment in the element leaves a neighbourhood of the prefixed element. The converse reassembles the same data, using that the input neighbourhood belongs to the element.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

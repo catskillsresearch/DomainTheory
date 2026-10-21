@@ -1,3 +1,6 @@
+/-ai
+Scott's injection sends an element x of D to the element of D-sharp whose neighbourhoods are the master together with the zero-embeddings of the neighbourhoods of x.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

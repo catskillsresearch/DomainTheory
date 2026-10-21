@@ -1,3 +1,6 @@
+/-ai
+XFoldStep reads a packed depth, index, and accumulator. If the half-step atom at that depth and index is junk, the accumulator is returned unchanged. Otherwise, if the found flag is already set, the result is the found flag together with the union index of the accumulated code and the atom index, and if the flag is unset, the result is the found flag together with the atom index itself.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

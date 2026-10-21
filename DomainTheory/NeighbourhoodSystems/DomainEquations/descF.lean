@@ -1,3 +1,6 @@
+/-ai
+The successor operation for a bit on the carrier of a target algebra sends an element to the image, under the structure map, of the second sum injection of that element when the bit is true, and of the first sum injection when the bit is false.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

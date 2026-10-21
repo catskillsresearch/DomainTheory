@@ -1,3 +1,8 @@
+/-ai
+If both inclusion characteristics are primitive recursive, then the function sending a paired code to the step-function inclusion characteristic of its two components is primitive recursive.
+
+That characteristic is the fold of the primitive-recursive inclusion step, with the left projection as parameter, the constant 1 as the start, and the right projection as the list code.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

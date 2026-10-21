@@ -1,3 +1,6 @@
+/-ai
+The two-term sequence of sets U and W returns U at index zero and W at every other index.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

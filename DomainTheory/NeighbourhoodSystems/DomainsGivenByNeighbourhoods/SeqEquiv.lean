@@ -1,3 +1,6 @@
+/-ai
+Two sequences of neighbourhoods are equivalent when each term of either sequence contains some term of the other.
+ai-/
 module
 
 public import Mathlib.Data.Set.Basic

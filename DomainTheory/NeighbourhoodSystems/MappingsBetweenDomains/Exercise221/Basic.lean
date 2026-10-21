@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the construction of the neighbourhood system C of Exercise 2.21: membership, the system itself, the total finite sequences and the total empty sequence, juxtaposition, the nested-or-disjoint comparisons of cones and singletons, and the lemmas on prepending a string to a neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

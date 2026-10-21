@@ -1,3 +1,8 @@
+/-ai
+An always-true binary relation is recursively decidable by the constant decider 1.
+
+On a pair code the relation of the two components is always true by the hypothesis, so the unary theorem for always-true predicates supplies the decision.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,3 +1,8 @@
+/-ai
+Tagging a set of binary strings by a boolean equals the prepend of the corresponding one-bit list.
+
+A string lies in the tagging when it is the boolean followed by a member of the set, and it lies in the prepend when it is that one-bit list followed by a member of the set. The two descriptions match by reordering those conjuncts.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,3 +1,9 @@
+/-ai
+Scott 1976, Theorem 4.5 (iii). The sum preserves the retract ordering: if a ⊑ a' and b ⊑ b', then a ⊕ b ⊑ a' ⊕ b'.
+
+Each identity required by the ordering of the sums is equation (4.13), reversed. Before that equation is applied, the composites of the factors are replaced by the corresponding identities from a ⊑ a' and from b ⊑ b'.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

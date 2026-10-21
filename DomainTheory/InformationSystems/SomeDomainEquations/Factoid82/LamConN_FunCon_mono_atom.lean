@@ -1,3 +1,8 @@
+/-ai
+A stage-k function clause applies at every later stage m when the input union contains no function tokens.
+
+The input union drops to stage zero, hence is consistent at stage k by monotonicity from stage zero. The function clause then gives stage-k consistency of the output union, and monotonicity lifts that consistency to stage m.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

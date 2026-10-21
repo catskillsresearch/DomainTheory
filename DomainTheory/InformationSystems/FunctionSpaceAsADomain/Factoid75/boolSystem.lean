@@ -1,3 +1,7 @@
+/-ai
+The flat BOOL information system is the information system produced by Factoid 2.5 from BOOL satisfaction, taking the bottom token as the distinguished token, using that every point satisfies the bottom token and that every token is satisfied by some point.
+ai-/
+
 module
 
 public import Mathlib.Data.Multiset.MapFold

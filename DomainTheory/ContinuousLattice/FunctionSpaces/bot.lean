@@ -1,3 +1,6 @@
+/-ai
+The bottom Scott map from one complete lattice to another is the constant Scott map whose value is the bottom element.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,3 +1,8 @@
+/-ai
+If a term avoids an index i, then updating an environment at i leaves the interpretation of the term unchanged.
+
+The proof is by induction on the term. A variable that avoids i differs from i, so the update does not affect it. Zero is unchanged. Successor and predecessor pass the equality to the subterm. A conditional rewrites its three subterms, and an application rewrites both of its subterms. For an abstraction the graphs agree pointwise. If the bound index equals i, the inner environment update absorbs the outer one. If the body avoids i and the bound index differs from i, the two updates commute and the inductive hypothesis applies in the environment already updated at the bound index.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

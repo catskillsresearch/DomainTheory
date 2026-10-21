@@ -1,3 +1,8 @@
+/-ai
+The second component of the lifted pair of finite sets u and v equals the second component of the left lift of u, united with v.
+
+The lifted pair is unfolded as the union of the left lift of u and the right lift of v, and the union law for second components and the second-component law for a right lift are applied.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

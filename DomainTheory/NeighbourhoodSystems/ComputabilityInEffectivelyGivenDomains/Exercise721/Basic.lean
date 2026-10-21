@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the evaluation lift on the power domains, its relation, the form of that lift as a map out of a product, and the curried combinator from the power domain of a function space to the function space of the power domains.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719

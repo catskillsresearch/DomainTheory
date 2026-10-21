@@ -1,3 +1,15 @@
+/-ai
+The image of a nonempty set under a function is nonempty.
+
+This is the image of a nonempty set.
+
+A monotone map sends a directed family of elements to a directed family.
+
+Two elements of the image come from two elements of the family. Directedness supplies a common upper bound, and monotonicity sends it to a common upper bound of the two image elements.
+
+A Scott-continuous map between information systems is a monotone function on elements that sends the directed supremum of a nonempty directed family to the directed supremum of the image family.
+ai-/
+
 module
 
 

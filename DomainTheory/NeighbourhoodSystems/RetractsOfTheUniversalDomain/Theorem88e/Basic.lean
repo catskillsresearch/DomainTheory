@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the code-level atom recursion and Y-sequence code, the bit encoding of a finite sign prefix, the coded sets and the neighbourhood system D'' they generate, the pushforward, pullback, and order isomorphism with D, the emptiness core and finite-constraint transfer lemmas between index sets and those coded sets, the embedding comparisons and intersection-index lemmas, the subsystem relation into the universal system, and the decidability and intersection data of the computable presentation of D''.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the sum of two approximable maps and the two identities that recover each map as a projection after the sum map after the corresponding injection.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.Basic

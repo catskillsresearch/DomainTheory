@@ -1,3 +1,6 @@
+/-ai
+Scott maps from one complete lattice to another form a complete lattice. The structure is the complete lattice determined by declaring the pointwise supremum to be a least upper bound.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

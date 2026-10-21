@@ -1,3 +1,8 @@
+/-ai
+A pair of a boolean list and an element lies in the master of D-sharp exactly when the element lies in the master of D.
+
+The equivalence is the definition of that master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

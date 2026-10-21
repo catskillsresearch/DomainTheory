@@ -1,3 +1,8 @@
+/-ai
+Inserting the bottom token into a finite set of tokens of V does not change its right projection.
+
+Extensionality and the membership criterion for the right projection reduce the claim to membership in an inserted set. A right-pair token is never the bottom token, so a witness in the inserted set already lies in the original set, and a witness in the original set remains a witness after insertion.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

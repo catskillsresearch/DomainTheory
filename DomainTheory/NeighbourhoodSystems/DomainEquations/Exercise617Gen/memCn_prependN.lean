@@ -1,3 +1,8 @@
+/-ai
+Prepending a string to a neighbourhood of the system of cones and singletons yields a neighbourhood.
+
+A cone becomes the cone of the concatenation, and a singleton becomes the singleton of the concatenation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

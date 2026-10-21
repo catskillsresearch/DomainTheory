@@ -1,3 +1,8 @@
+/-ai
+The true and false first components of a generalized Y-step reunite to its first input.
+
+The split specification says the two pieces of the split reunite to that input, and those pieces are the two first components.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

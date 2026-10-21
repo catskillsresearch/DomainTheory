@@ -1,3 +1,9 @@
+/-ai
+Scott's Theorem 4.6, applied to equation (4.38), states that the tree retract is a retract.
+
+The second component of Theorem 4.6 is applied to the Scott continuity of the tree functional, using that the sum of the bottom retract with the tensor product of a retract with itself is a retract.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

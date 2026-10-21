@@ -1,3 +1,8 @@
+/-ai
+The first child of a node code is strictly smaller than the node code.
+
+The tag of a node code is positive, so its payload is strictly smaller than the code. The first child is at most that payload, and the two comparisons give the strict inequality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

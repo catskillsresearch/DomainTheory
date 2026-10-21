@@ -1,3 +1,8 @@
+/-ai
+Once the combined found flag is 1, membership in the combined code is membership in the first code when its flag is 1, or membership in the second code when its flag is 1, assuming each code is genuine when its own flag is 1.
+
+The combination is unfolded. A zero first flag returns the second result, and the first disjunct is impossible. A first flag of 1 and a zero second flag return the first result. Both flags equal to 1 give two genuine images, surjectivity supplies a code for their union, and the union-index specification rewrites membership as that union.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

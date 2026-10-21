@@ -1,3 +1,8 @@
+/-ai
+On enumerated neighbourhoods, the relation of the inverse reindexing map is a single bounded inclusion. Only indices below the codomain code matter, because the codomain fiber is the master neighbourhood at every larger index.
+
+Both enumerated sets are neighbourhoods. An unrestricted fiber inclusion rewrites, by the fiber laws for the enumerations, into the bounded inclusion. Conversely, inside the bound the hypothesis applies, and at or beyond the bound the codomain neighbourhood is the master, which contains every neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

@@ -1,3 +1,9 @@
+/-ai
+A second application of K, at y, returns x.
+
+Rewrite by the first beta law for K, then beta-reduce the constant map with value x.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

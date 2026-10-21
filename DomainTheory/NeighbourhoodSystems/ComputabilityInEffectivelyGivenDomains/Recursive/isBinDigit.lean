@@ -1,3 +1,6 @@
+/-ai
+The binary-digit character is the {0, 1} flag that equals 1 exactly when its argument is 0 or 1, computed by selecting on the one-indicators of one minus the argument and of two minus the argument.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

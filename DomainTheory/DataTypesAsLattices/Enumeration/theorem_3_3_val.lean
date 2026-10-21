@@ -1,3 +1,9 @@
+/-ai
+The value of the recursion code of n equals the value of n applied to the value of that same recursion code.
+
+Rewrite the recursion code as application of the Y-code, use the application equation for val and the value of the Y-code, and apply the unfolding equation of the Y combinator to val(n).
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

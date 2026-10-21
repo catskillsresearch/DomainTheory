@@ -1,3 +1,6 @@
+/-ai
+The running intersection of a set A along a list of indices is A on the empty list, and on a cons it is the running intersection, along the tail, of A intersected with the neighbourhood at the head.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

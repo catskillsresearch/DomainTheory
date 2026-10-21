@@ -1,3 +1,11 @@
+/-ai
+The map sending a paired natural number to the single-difference code of its two
+components is primitive recursive.
+
+Unfolding the single-difference code, composing the primitive-recursive flat-map of the
+one-interval difference code with the pairing of the right and left projections, and
+simplifying the pairing projections, matches the unfolded map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

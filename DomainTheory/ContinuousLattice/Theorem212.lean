@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the backward half of Scott's Theorem 2.12: the fixed-point set of a Scott-continuous idempotent as a continuous lattice, the Scott topology of that fixed-point lattice, the backward direction and the full equivalence, preservation of way-below by an order isomorphism and the resulting equivalence, transfer of continuous-lattice structure along an order isomorphism, the exact-order form of the backward direction, and Lemma 3.9.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212.Basic

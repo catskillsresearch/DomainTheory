@@ -1,3 +1,8 @@
+/-ai
+The value unpairWRec k (n + 1) equals unpairWRec k n when k lies strictly below triangle (n + 1), and equals n + 1 otherwise.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import Mathlib.Computability.Halting

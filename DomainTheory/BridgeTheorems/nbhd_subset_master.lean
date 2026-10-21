@@ -1,3 +1,8 @@
+/-ai
+Each basis neighbourhood is contained in the master set of the neighbourhood system.
+
+The neighbourhood belongs to the system, and every neighbourhood of the system is contained in the master set.
+ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

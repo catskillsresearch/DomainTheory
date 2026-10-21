@@ -1,3 +1,9 @@
+/-ai
+The reference decoder is a right inverse of tag. Tag of its list component at its value component returns the original code.
+
+The proof is strong induction on the code, in the pattern of the surjectivity of tag. If the first component of the numeral decoding is zero, the zero case of the decoder and the pairing equation for numerals reduce the claim, after the empty-list equation for tag, to the round trip of the numeral coding. If that first component is a successor, the successor case of the decoder applies. The pairing equation recovers the code as the numeral of that successor and the second component, and the successor bound on numerals makes the second component strictly smaller. The cons equation for tag, the inductive hypothesis, and that recovery close the step.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

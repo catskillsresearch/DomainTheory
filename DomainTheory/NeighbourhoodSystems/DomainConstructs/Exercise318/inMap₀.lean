@@ -1,3 +1,6 @@
+/-ai
+The left injection is the approximable map from the first neighbourhood system to the sum that relates a neighbourhood X to a sum neighbourhood W when the left copy of X is contained in W. The masters are related because a left copy of a neighbourhood lies in the sum master. Intersection on the right intersects the sum neighbourhoods, with the left copy of X as the consistency witness, and monotonicity uses that the left copy preserves inclusion.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,3 +1,6 @@
+/-ai
+The neighbourhood systems U and V of Exercise 8.12 are effectively isomorphic. The isomorphism is assembled from their computable presentations, their computable differences and unions, the two computable splitting operations and their specifications, positivity, closure under difference, absence of minimal neighbourhoods, the nonempty masters, and the zero neighbourhoods.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812eD

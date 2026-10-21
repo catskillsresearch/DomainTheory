@@ -1,3 +1,6 @@
+/-ai
+The subbasis for Scott's function-space topology of pointwise convergence consists of the sets of continuous maps from X to Y that send a fixed point into a fixed open set of Y.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

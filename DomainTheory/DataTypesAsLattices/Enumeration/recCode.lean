@@ -1,3 +1,7 @@
+/-ai
+The recursion code of a natural number n is the application of the Y-code to n. In Scott's Theorem 3.3 (iii) the value of this code satisfies val(rec(n)) = val(n)(rec(n)) through the fixed-point combinator Y; the paper's packaging of v and num is the companion function recNat.
+ai-/
+
 module
 
 public import Mathlib.Computability.Halting

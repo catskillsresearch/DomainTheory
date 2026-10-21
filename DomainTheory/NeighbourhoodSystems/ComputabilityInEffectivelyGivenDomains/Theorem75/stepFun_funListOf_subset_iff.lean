@@ -1,3 +1,8 @@
+/-ai
+If every conditional output intersection of a presented list against a domain neighbourhood is a codomain neighbourhood, then the step-function neighbourhood of that list is contained in the step-function neighbourhood of a second list if and only if, for every entry of the second list, the conditional output intersection against that entry's input neighbourhood is contained in the entry's output neighbourhood.
+
+The least map of the first list lies in its step-function neighbourhood, so containment puts it in the second neighbourhood and its relation on each entry yields the inclusion. Conversely, a map in the first neighbourhood relates each input of the second list to the corresponding conditional intersection, and monotonicity along the assumed inclusion gives the relation required for the second neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

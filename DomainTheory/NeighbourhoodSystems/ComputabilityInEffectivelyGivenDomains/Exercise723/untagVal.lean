@@ -1,3 +1,7 @@
+/-ai
+The extracted value of a code is the value component of the iterated untagging state. It is the value component of the reference decoder, and the construction is primitive recursive.
+ai-/
+
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

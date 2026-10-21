@@ -1,3 +1,8 @@
+/-ai
+Inserting the least-informative token into a consistent finite set preserves consistency.
+
+A graph atom in the enlarged set is distinct from the inserted least token, so both graph atoms already belong to the original set, and the original consistency equates their values.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

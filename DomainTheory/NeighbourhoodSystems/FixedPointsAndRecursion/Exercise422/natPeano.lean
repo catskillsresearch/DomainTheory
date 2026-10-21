@@ -1,3 +1,6 @@
+/-ai
+The standard naturals, with zero and successor, form a Peano model. Zero differs from every successor, successor is injective, and a subset containing zero and closed under successor contains every natural by induction on that natural.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

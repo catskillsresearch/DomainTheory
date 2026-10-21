@@ -1,3 +1,8 @@
+/-ai
+The element lattice of a power domain always has a greatest element.
+
+The power domain is unconditionally closed under intersection, so the theorem on intersection-closed systems applies.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

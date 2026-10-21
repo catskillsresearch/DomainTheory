@@ -1,3 +1,8 @@
+/-ai
+If one function-space element lies below another, then the filter transport of sub preserves the inequality.
+
+The order of filters is the order of the extracted maps. Extraction is monotone, and sub preserves the resulting inequality.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

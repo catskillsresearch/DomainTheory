@@ -1,3 +1,8 @@
+/-ai
+The code-driven subsystem D'' is a subsystem of the universal neighbourhood system.
+
+The masters agree. Every coded neighbourhood is a universal neighbourhood of its Y-sequence code. An intersection of two coded sets that belongs to the universal system has an intersection index by the nonempty-intersection lemma, and that index witnesses closure under intersections.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

@@ -1,3 +1,8 @@
+/-ai
+If n is at most m, the n-th approximant of an approximable endomap lies below the m-th approximant.
+
+Membership in an approximant is the relation of the corresponding iterate from the master neighbourhood, and that relation is monotone in the number of steps.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

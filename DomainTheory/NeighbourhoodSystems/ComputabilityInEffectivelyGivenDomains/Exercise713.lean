@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports Exercise 7.13: the inclusion structure and its supporting constructions, the four axioms, the theorem that the hint system is effectively given, the recovery of the inclusion relation from the hint presentation, and the isomorphism of a system with the system reconstructed from a computable presentation.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.Basic

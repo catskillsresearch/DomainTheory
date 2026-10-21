@@ -1,3 +1,8 @@
+/-ai
+If the starting lattice D_0 is a continuous lattice, then the inverse limit D_∞ of the recursively defined tower of function spaces is a continuous lattice, and D_∞ is homeomorphic to its function space [D_∞ → D_∞]. The inverse limit carries the subspace topology induced from the product, and the function space carries the pointwise topology of Definition 3.1.
+
+Every level of the tower is a continuous lattice by induction on the level: the starting level is the hypothesis, and a successor level is a function space of continuous lattices, hence a continuous lattice by Theorem 3.3. Proposition 4.1 then makes the inverse limit a continuous lattice, and the source-topology form of the Theorem 4.4 homeomorphism supplies the homeomorphism.
+ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

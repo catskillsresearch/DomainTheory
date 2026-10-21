@@ -1,3 +1,8 @@
+/-ai
+Applying the identity combinator to an element returns that element.
+
+This is β-conversion for the identity map, which is Scott continuous.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,3 +1,6 @@
+/-ai
+The depth of a raw lambda token is zero for bottom and for an atom. The depth of a function token is one plus the maximum of the folded maximum depths of its two argument lists.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

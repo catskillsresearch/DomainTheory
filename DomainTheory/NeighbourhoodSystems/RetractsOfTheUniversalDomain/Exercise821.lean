@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports monotonicity of the graph relation and of the catamorphism, the projection pair of the tree algebra of the universal domain into that domain and the computability of its two maps, computability of the sharp operator, the inequality of the sharp of a map below the identity, the inner extension and its idempotence for a retraction, the one-step unfolding of the sharp operator, and the retraction, projection, finitariness, and finitary-projection laws for that operator.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821.Basic

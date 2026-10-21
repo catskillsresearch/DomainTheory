@@ -1,3 +1,8 @@
+/-ai
+If the Y half-step atom at depth n, bit-source i, and bit b is not junk, then the basic neighbourhood of its first-system index is contained in the first component of the generalized X-step of the generated pair at that bit-source, the basic neighbourhood of n, and b.
+
+Pack the depth-n atom-pair state and run the X sub-step at bit b. The junk hypothesis is the junk flag of the Y sub-step on that output at bit 1, so selection at bit 1 and a vanishing selection make the X sub-step non-junk, and the atom-pair is not junk. Code-state correctness identifies the packed indices with the generated pair, which satisfies the invariant, and correctness of the X sub-step identifies its output with the generalized X-step. The first component of that step is genuine because it is a basic neighbourhood, and the split specification gives the emptiness link of the two components. Correctness of the Y sub-step at the forced true bit identifies the half-step neighbourhood with the first component of the generalized Y-step on that output, and that component is contained in the parent first set.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

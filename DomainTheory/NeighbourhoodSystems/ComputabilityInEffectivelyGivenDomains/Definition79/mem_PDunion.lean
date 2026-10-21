@@ -1,3 +1,8 @@
+/-ai
+A set lies in the union of the down-sets of the neighbourhoods in a list if and only if it lies in the down-set of some neighbourhood in that list.
+
+Rewrite indexed-union membership so that the list membership of the witness is explicit.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

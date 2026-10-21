@@ -1,3 +1,6 @@
+/-ai
+The identity combinator is the graph of the identity endomap of Pω. In Scott's notation it is λu. u, the largest retract.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,3 +1,6 @@
+/-ai
+YPseqCode at depth n is the code component of the two-way combination of the inner Y-folds at bits 0 and 1, each run to stage 4 to the n.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

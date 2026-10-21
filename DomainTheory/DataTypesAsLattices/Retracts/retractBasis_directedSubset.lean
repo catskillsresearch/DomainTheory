@@ -1,3 +1,8 @@
+/-ai
+The finite-image basis of a fixed point of a retract is a directed subset.
+
+The basis is a directed set, so it is nonempty and any two of its elements have a common upper bound in the set.
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

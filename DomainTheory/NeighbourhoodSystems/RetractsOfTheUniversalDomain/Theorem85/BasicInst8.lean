@@ -1,3 +1,6 @@
+/-ai
+For any element of a neighbourhood system, the subtype of neighbourhoods belonging to that element is nonempty, witnessed by the master neighbourhood.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

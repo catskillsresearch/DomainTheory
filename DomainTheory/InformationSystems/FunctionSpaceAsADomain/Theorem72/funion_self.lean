@@ -1,3 +1,8 @@
+/-ai
+Choice-free union of a finite set of tokens of the first carrier with itself equals that set.
+
+Extensionality is used. Membership in the union is membership in either copy, hence in the set. Membership in the set is membership in the left copy of the union.
+ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,3 +1,8 @@
+/-ai
+The while-loop satisfies the recursion w(x) = cond(p(x), w(f(x)), x).
+
+The element map of the operator Wop fixes the least fixed point. The operator identity at that fixed point and at x is the displayed recursion, and rewriting by the fixed-point equation yields it.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

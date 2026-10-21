@@ -1,3 +1,8 @@
+/-ai
+If an approximable map sends the stack of every vector to the numeral given by a total function, then wrapping the map in the strict guard λ-defines that total function, viewed as a partial function.
+
+Apply the master constructor. A value of the coerced function is the total value, so the evaluation hypothesis gives definedness. The coerced function is defined on every vector, so there is no undefined input.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

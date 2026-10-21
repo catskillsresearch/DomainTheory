@@ -1,3 +1,8 @@
+/-ai
+The equality character of a and b equals 1 if and only if a equals b.
+
+Unfolding the definition, the equivalence is arithmetic.
+ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

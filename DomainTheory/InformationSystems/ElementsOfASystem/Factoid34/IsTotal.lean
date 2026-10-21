@@ -1,3 +1,7 @@
+/-ai
+An element is total when it is maximal under inclusion: every element above it is below it.
+ai-/
+
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

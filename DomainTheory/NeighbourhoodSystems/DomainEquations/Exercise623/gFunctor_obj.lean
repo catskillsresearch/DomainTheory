@@ -1,3 +1,8 @@
+/-ai
+The endofunctor of a grammar expression acts on objects by the expression's own action on neighbourhood systems.
+
+The two sides are definitionally equal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

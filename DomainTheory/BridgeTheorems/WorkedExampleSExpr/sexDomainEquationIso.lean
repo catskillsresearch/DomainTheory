@@ -1,3 +1,6 @@
+/-ai
+The S-expression fixed-point isomorphism identifies the elements of the S-expression system with the elements of the right-hand side, the sum of the lower-bound system with the product of the S-expression system with itself. It is the tree domain isomorphism of the lower-bound system, induced by unfolding and folding tokens.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

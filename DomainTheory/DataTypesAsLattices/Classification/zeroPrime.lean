@@ -1,3 +1,7 @@
+/-ai
+Scott's auxiliary value 0′, used in the many-valued tables of Theorem 6.7, is the union of the singletons {0} and {1}. The transcribed equation 0′ = 0 ∪ ⊥ equals 0 and would collapse the tables, so the point distinct from ⊥, 0, and ⊤ is taken to be {0, 1}.
+ai-/
+
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,3 +1,8 @@
+/-ai
+Union on the left with a fixed set is Scott continuous.
+
+The map agrees with union on the right with the same fixed set, by commutativity of union, and that map is Scott continuous.
+ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

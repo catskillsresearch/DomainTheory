@@ -1,3 +1,6 @@
+/-ai
+The evaluation combinator is the graph of the map sending u to the application of the value of u at the numeral zero to the value of u at the numeral one. Scott records it as (4.22).
+ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

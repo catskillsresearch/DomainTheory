@@ -1,3 +1,8 @@
+/-ai
+The neighbourhood selected by phi belongs to the codomain neighbourhood system.
+
+It is the neighbourhood component of the chosen witness that the image of the principal element is itself principal.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

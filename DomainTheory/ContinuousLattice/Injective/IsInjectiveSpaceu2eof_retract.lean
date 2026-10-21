@@ -1,3 +1,8 @@
+/-ai
+A retract of an injective space is injective.
+
+Given an embedding and a continuous map into the retract, compose the map with the section into the injective space, extend the composite along the embedding, and compose the extension with the retraction. The retraction-section identity recovers the original map on the image of the embedding.
+ai-/
 module
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski

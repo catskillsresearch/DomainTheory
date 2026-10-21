@@ -1,3 +1,6 @@
+/-ai
+This file gathers and re-exports the basic development of Theorem 8.6, together with the equality of the fixed neighbourhood system of sub f and of f, the inequality of sub below the identity and the idempotence of sub, both directions and the equivalence between being a fixed point of sub and being a finitary projection, the fact that every value of sub is a finitary projection, the idempotence of the filter transport of sub, the equality of the element map of the packaged map with the element map of its composite with itself, and the retraction, the inequality below the identity, the projection, and the finitary projection of that packaged map.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.Basic

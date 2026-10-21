@@ -1,3 +1,8 @@
+/-ai
+The left image of an element x lies under the left image of an element y if and only if x lies under y.
+
+If the images are ordered and a token belongs to x, the round trip through left-sum extraction puts the corresponding left token in the image of x, hence in the image of y, and transporting back through the extraction for y puts the token in y. The converse is monotonicity of the element map of the left inclusion.
+ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

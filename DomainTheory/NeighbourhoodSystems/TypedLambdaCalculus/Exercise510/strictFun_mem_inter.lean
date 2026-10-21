@@ -1,3 +1,8 @@
+/-ai
+The intersection of two neighbourhoods of the strict function space is a neighbourhood whenever the intersection is nonempty.
+
+Each neighbourhood is a step-function set of a list of neighbourhood pairs, the intersection is the step-function set of the concatenated lists, and the given witness shows that the intersection is nonempty.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

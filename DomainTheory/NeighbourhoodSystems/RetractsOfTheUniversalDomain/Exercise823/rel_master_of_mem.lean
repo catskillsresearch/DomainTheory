@@ -1,3 +1,8 @@
+/-ai
+An approximable self-map relates every neighbourhood to the master neighbourhood.
+
+Apply monotonicity to the relation of the master with itself, narrowing the input from the master down to the given neighbourhood and leaving the output equal to the master.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

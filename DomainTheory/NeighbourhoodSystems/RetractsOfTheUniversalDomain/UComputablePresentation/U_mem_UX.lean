@@ -1,3 +1,8 @@
+/-ai
+Every set in the enumeration of U is a neighbourhood of U.
+
+Rewrite the enumerated set as the intervals presented by a canonical list, which form a neighbourhood of U.
+ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec
