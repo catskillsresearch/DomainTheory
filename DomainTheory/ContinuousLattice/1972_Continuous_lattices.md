@@ -1,38 +1,6 @@
 # Continuous lattices
 
-The lattice approach to injective spaces gives a completely "internal" characterization of them: in the first place the lattices are complete. Next we can define lattice theoretically:
-
-$$
-x \ll y \quad \text{iff} \quad \text{whenever } y \sqsubseteq \bigsqcup Z \text{ and } Z \subseteq D \text{ is directed,}
-$$
-
-then $x \sqsubseteq z$ for some $z \in Z$.
-
-Finally we assume that for all $y \in D$:
-
-$$y = \bigsqcup  x \in D : x \ll y .$$
-
-That makes $D$ a continuous lattice with the sets $ y \in D : x \ll y $ as a basis for the topology. Such $T_0$-spaces are injective and every injective space can be obtained in this way with the lattice structure being uniquely determined by the topology. Furthermore, as we have seen, the injective property can be exhibited, as in the proof of 2.11, by an explicit formula for extending functions.
-
-The retract approach to injective spaces should also be considered. The Cartesian powers $\mathbb{O}^I$ are very simple spaces; indeed, as lattices these are just the Boolean algebras of *all subsets* of $I$ (that is, isomorphic thereto). The topology has as a basis the classes of sets containing given finite sets (the *weak topology*, cf. Nerode (1959)). A continuous function
-
-$$j : \mathcal{P}I \to \mathcal{P}I$$
-
-is one of "finite character" so that
-
-$$j(X) = \bigcup  j(F) : F \subseteq X $$
-
-where $X \subseteq I$ and $F$ ranges over *finite sets*. Such a function $j$ is a *retraction* iff it is an *idempotent*:
-
-$$j \circ j = j,$$
-
-which means that the range of $j$ is the set of fixed points of $j$. As we have seen
-
-$$D =  X \in \mathcal{P}I : j(X) = X $$
-
-is a continuous lattice (under $\subseteq$ in this case), and *every* continuous lattice is isomorphic to one obtained in this way. This provides a representation theorem of sorts for continuous lattices, but it does not seem to be of too much help in proving theorems.
-
-The reader should not forget that any space (any *given* number of spaces $X$, $Y$, $\ldots$) can be found as a *subspace* of a continuous lattice $D$. Since $D$ is injective any continuous function $f : X \to Y$ can be extended to a continuous function $\bar{f} : D \to D$. Thus the continuous functions from $D$ into $D$ are a rich totality including *all* the structure of continuous functions on *all* the subspaces. And this remark brings us to the study of function spaces.
+The internal characterization of an injective space is developed in this order: a complete lattice, the way-below relation, a continuous lattice, the agreement of that notion with an injective space, a retract, and a subspace. Each of those discussions sits with the Lean source that formalizes it. The subspace extension then leads to [function spaces](FunctionSpaces/1972_Function_spaces.md).
 
 - [Specialization](Specialization/1972_Specialization.md)
 - [Proposition 2.1](Specialization/1972_Proposition_2_1.md)

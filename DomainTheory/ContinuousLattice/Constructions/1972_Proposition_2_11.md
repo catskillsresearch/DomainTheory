@@ -50,6 +50,8 @@ $$d \sqsubseteq \sqcap f(x'') : x'' \in X \cap U ,$$
 
 and so $d \sqsubseteq \bar{f}(x')$. Since $d \ll f(x')$ always implies $d \sqsubseteq \bar{f}(x')$, we see that $f(x') \sqsubseteq \bar{f}(x')$ follows by the continuity of $D$, and the proof is complete. $\square$
 
+Furthermore, as we have seen, the injective property can be exhibited, as in the proof of 2.11, by an explicit formula for extending functions. That formula is `scottExtend`. [Theorem 2.12](../Theorem212/1972_Theorem_2_12.md) proves that every injective space arises in this way.
+
 **Lean 4**
 
 - [ContinuousLattice/WayBelow/wayBelow_interpolate.lean](../WayBelow/wayBelow_interpolate.lean)

@@ -8,6 +8,8 @@ $$
 
 gives the definition.
 
+**Complete lattice.** There is no local definition. `WayBelow`, defined below, and `IsContinuousLattice` in [Definition 2.3](1972_Definition_2_3.md) assume Mathlib’s `CompleteLattice` typeclass, as do the propositions of this section. That is the “lattices are complete” sentence.
+
 Given a complete lattice $D$ we define
 
 $$
@@ -33,6 +35,16 @@ The primary purpose of introducing it is to provide a simple definition for the 
 (vi) $x \ll x$ iff $z \in D : x \sqsubseteq z$ is open;
 
 (vii) if $S \subseteq D$ is directed, then $x \ll \bigsqcup S$ iff $x \ll y$ for some $y \in S$. $\square$
+
+The lattice approach to injective spaces gives a completely "internal" characterization of them: in the first place the lattices are complete. Next we can define lattice theoretically:
+
+$$
+x \ll y \quad \text{iff} \quad \text{whenever } y \sqsubseteq \bigsqcup Z \text{ and } Z \subseteq D \text{ is directed,}
+$$
+
+then $x \sqsubseteq z$ for some $z \in Z$.
+
+`WayBelow` is the interior definition above. Clause (vii) is `wayBelow_sSup_iff`. The equation that turns this relation into a continuous lattice is [Definition 2.3](1972_Definition_2_3.md).
 
 **Lean 4**
 

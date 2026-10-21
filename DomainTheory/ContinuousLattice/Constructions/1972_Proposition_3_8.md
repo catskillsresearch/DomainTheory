@@ -26,6 +26,22 @@ $$
 
 which establishes that $f' \sqsubseteq \bar{f}$. $\square$
 
+The reader should not forget that any space (any *given* number of spaces $X$, $Y$, $\ldots$) can be found as a *subspace* of a continuous lattice $D$. Since $D$ is injective any continuous function $f : X \to Y$ can be extended to a continuous function $\bar{f} : D \to D$. Thus the continuous functions from $D$ into $D$ are a rich totality including *all* the structure of continuous functions on *all* the subspaces. And this remark brings us to the study of [function spaces](../FunctionSpaces/1972_Function_spaces.md).
+
+**Subspace.** There is no separate subspace type. A subspace is Mathlib’s `IsEmbedding`. `IsRetractSubspace` requires its section to be an embedding, and this proposition extends a continuous map along an embedding into a continuous lattice by `scottExtend`. The function-space development writes the same formula as `scottSubspaceExtend`.
+
 **Lean 4**
 
 - [ContinuousLattice/Constructions/proposition_3_8.lean](proposition_3_8.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtend.lean](../FunctionSpaces/scottSubspaceExtend.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf.lean](../FunctionSpaces/scottSubspaceExtendInf.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_eq_of_comp.lean](../FunctionSpaces/scottSubspaceExtendInf_eq_of_comp.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_eq_of_ext.lean](../FunctionSpaces/scottSubspaceExtendInf_eq_of_ext.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_le_of_mem.lean](../FunctionSpaces/scottSubspaceExtendInf_le_of_mem.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_mono.lean](../FunctionSpaces/scottSubspaceExtendInf_mono.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_mono_incl.lean](../FunctionSpaces/scottSubspaceExtendInf_mono_incl.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_mono_incl_apply.lean](../FunctionSpaces/scottSubspaceExtendInf_mono_incl_apply.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf_mono_retr.lean](../FunctionSpaces/scottSubspaceExtendInf_mono_retr.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtend_eq_of_ext.lean](../FunctionSpaces/scottSubspaceExtend_eq_of_ext.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtend_maximal.lean](../FunctionSpaces/scottSubspaceExtend_maximal.lean)
+- [ContinuousLattice/FunctionSpaces/scottSubspaceExtend_mono.lean](../FunctionSpaces/scottSubspaceExtend_mono.lean)
