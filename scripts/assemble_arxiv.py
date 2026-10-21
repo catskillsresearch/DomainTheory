@@ -2,9 +2,11 @@
 """Copy the notes under DomainTheory.md into build/, expanding Lean links.
 
 build/arxiv.md is the entry note. Every other note keeps the path it has in
-the repository, under build/. Markdown links are HTML anchors whose href is a
-path relative to that generated note (no URL scheme, so the preview opens the
-file in the editor; parens in labels break `[text](url)`). Each Lean link is
+the repository, under build/. Markdown links point at generated notes with a
+workspace-root path (`/build/DomainTheory/...`) so Cursor/VS Code preview
+(Ctrl+Shift-V, side preview) and Ctrl+click in the source all resolve the same
+way (leading `/` = workspace folder). Labels that contain `(` use
+reference-style links so the preview parser accepts them. Each Lean link is
 bold link text only, then an AI blockquote and a fenced copy of that file. The
 copy omits `module`, imports, `public section`, and `open` commands, omits
 `/-!` Scott extracts, and omits comments/docstrings that contain `**Scott`.
@@ -206,12 +208,19 @@ def link_fragment(href: str) -> str:
     return href[href.index("#") :]
 
 
-def html_escape(text: str) -> str:
-    return text.replace("&", "&amp;").replace("<", "&lt;").replace('"', "&quot;")
+def ref_slug(label: str, used: dict[str, int]) -> str:
+    base = re.sub(r"[^a-z0-9]+", "-", label.lower()).strip("-") or "link"
+    count = used.get(base, 0)
+    used[base] = count + 1
+    return base if count == 0 else f"{base}-{count}"
 
 
-def md_anchor(label: str, href: str) -> str:
-    return f'<a href="{html_escape(href)}">{html_escape(label)}</a>'
+def format_note_link(label: str, href: str, refs: list[tuple[str, str]], used: dict[str, int]) -> str:
+    if "(" not in label:
+        return f"[{label}]({href})"
+    ref_id = ref_slug(label, used)
+    refs.append((ref_id, href))
+    return f"[{label}][{ref_id}]"
 
 
 def resolve_lean_target(note: Path, href: str) -> Path | None:
@@ -235,12 +244,20 @@ def build_href(note: Path, href: str, notes: dict[Path, None]) -> str | None:
     if target is None or target not in notes:
         return None
     dest = output_path(target).resolve()
-    start = output_path(note).parent.resolve()
-    relative = Path(os.path.relpath(dest, start)).as_posix()
-    return relative + link_fragment(href)
+    try:
+        from_root = dest.relative_to(ROOT).as_posix()
+    except ValueError:
+        return None
+    return "/" + from_root + link_fragment(href)
 
 
-def rewrite_note_links(note: Path, line: str, notes: dict[Path, None]) -> str:
+def rewrite_note_links(
+    note: Path,
+    line: str,
+    notes: dict[Path, None],
+    refs: list[tuple[str, str]],
+    used: dict[str, int],
+) -> str:
     def replace(match: re.Match[str]) -> str:
         href = match.group(2).strip()
         if resolve_lean_target(note, href) is not None:
@@ -248,7 +265,7 @@ def rewrite_note_links(note: Path, line: str, notes: dict[Path, None]) -> str:
         new_href = build_href(note, href, notes)
         if new_href is None:
             return match.group(0)
-        return md_anchor(match.group(1), new_href)
+        return format_note_link(match.group(1), new_href, refs, used)
 
     return LINK.sub(replace, line)
 
@@ -265,6 +282,8 @@ def lean_targets(note: Path, line: str) -> list[Path]:
 def expand(note: Path, notes: dict[Path, None]) -> tuple[str, int]:
     blocks = 0
     out: list[str] = []
+    ref_defs: list[tuple[str, str]] = []
+    ref_used: dict[str, int] = {}
     in_fence = False
     source = note.read_text(encoding="utf-8")
     # An opening fence with no closer, as in an ASCII diagram, must not hide
@@ -289,13 +308,17 @@ def expand(note: Path, notes: dict[Path, None]) -> tuple[str, int]:
         if lean_list is not None and resolve_lean_target(note, lean_list.group(2)) is not None:
             line = f"**{lean_list.group(1)}**"
         else:
-            line = rewrite_note_links(note, line, notes)
+            line = rewrite_note_links(note, line, notes, ref_defs, ref_used)
         out.append(line)
         for lean in leans:
             out.append("")
             out.append(lean_block(lean))
             out.append("")
             blocks += 1
+    if ref_defs:
+        out.append("")
+        for ref_id, href in ref_defs:
+            out.append(f"[{ref_id}]: {href}")
     return "\n".join(out).rstrip() + "\n", blocks
 
 

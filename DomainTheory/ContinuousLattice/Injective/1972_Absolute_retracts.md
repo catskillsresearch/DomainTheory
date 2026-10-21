@@ -1,0 +1,15 @@
+# Absolute retracts
+
+As a result of these very elementary considerations, the injective spaces could be called *absolute retracts*, if one remembers to modify the standard definitions by using *arbitrary* subspaces rather than just *closed* subspaces. Note too that it is easy to show that the only continuous maps $e: X \to Y$ for which the extension property
+
+$$
+\begin{gathered}
+X \xrightarrow{e} Y 
+X \xrightarrow{f} \mathbb{O} 
+Y \xrightarrow{\bar{f}} \mathbb{O}
+\end{gathered}
+$$
+
+could hold for *all* continuous $f: X \to \mathbb{O}$ are embeddings as subspaces.
+
+Thus it would seem that we have a reasonably good initial grasp of the notion of injective spaces, but further constructions are considerably facilitated by the introduction of the lattice structure.

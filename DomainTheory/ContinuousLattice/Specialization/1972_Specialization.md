@@ -1,12 +1,14 @@
 # Specialization
 
+Scott assumes the $T_0$ separation axiom throughout; for what that means in the paper and in Lean, see [T0 spaces](../Injective/1972_T0_spaces.md). Here we use $T_0$ only as background for the specialization order and Scott topology.
+
 Every $T_0$-space becomes a partially ordered set under the definition:
 
 $$
 x \sqsubseteq y \text{ iff whenever } x \in U \text{ and } U \text{ is open, then } y \in U.
 $$
 
-Indeed, though this relation is reflexive and transitive, the condition that it be *antisymmetric* is exactly equivalent to the $T_0$-axiom.
+Indeed, though this relation is reflexive and transitive, the condition that it be *antisymmetric* is exactly equivalent to the $T_0$-axiom (formalized in Lean as `specializationLe_antisymm`).
 
 In the converse direction, every partially ordered set $\langle X, \sqsubseteq \rangle$ can be so obtained, for we have only to define $U \subseteq X$ as being open if it satisfies the condition:
 
@@ -52,7 +54,6 @@ By a directed subset of $X$ we of course mean that it is directed in the sense o
 - [ContinuousLattice/Specialization/IsMonotoneNet.lean](IsMonotoneNet.lean)
 - [ContinuousLattice/Specialization/ScottConvergesTo.lean](ScottConvergesTo.lean)
 - [ContinuousLattice/Specialization/scottTopologicalSpace.lean](scottTopologicalSpace.lean)
-- [ContinuousLattice/Specialization/scottTopology_t0Space.lean](scottTopology_t0Space.lean)
 - [ContinuousLattice/Specialization/specializationLe_scott_iff.lean](specializationLe_scott_iff.lean)
 - [ContinuousLattice/Specialization/scottOpen_not_le.lean](scottOpen_not_le.lean)
 - [ContinuousLattice/Specialization/ScottOpen_iff_dirSupInacc.lean](ScottOpen_iff_dirSupInacc.lean)
