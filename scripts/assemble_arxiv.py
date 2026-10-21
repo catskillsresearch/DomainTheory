@@ -7,7 +7,9 @@ build/ so a preview opened at the repository root follows the expanded
 copies. Each local Lean link is left in place and followed by a fenced copy of
 that file. The copy omits `module`, imports, `public section`, and `open`
 commands, and omits `/-!` Scott extracts. A leading `/-ai` comment is
-shown above the code as a blockquote.
+shown above the code as a blockquote that begins with **AI code read.**
+Lean links use the absolute path of the source file, so they open from a
+note under build/.
 """
 
 from __future__ import annotations
@@ -139,10 +141,9 @@ def elide_declarations(text: str) -> str:
 
 def ai_box(comment: str) -> str:
     paragraphs = [part.strip() for part in re.split(r"\n\s*\n", comment) if part.strip()]
-    lines: list[str] = []
-    for index, paragraph in enumerate(paragraphs):
-        if index:
-            lines.append(">")
+    lines = ["> **AI code read.**"]
+    for paragraph in paragraphs:
+        lines.append(">")
         for line in paragraph.splitlines():
             lines.append("> " + line.strip())
     return "\n".join(lines)
@@ -165,13 +166,24 @@ def lean_block(path: Path) -> str:
     return "\n".join(parts)
 
 
+def link_fragment(href: str) -> str:
+    if "#" not in href:
+        return ""
+    return href[href.index("#") :]
+
+
+def lean_href(note: Path, href: str) -> str | None:
+    target = resolve_link(note, href, ".lean")
+    if target is None or not target.is_file():
+        return None
+    return target.resolve().as_posix() + link_fragment(href)
+
+
 def build_href(note: Path, href: str, notes: dict[Path, None]) -> str | None:
     target = resolve_link(note, href, ".md")
     if target is None or target not in notes:
         return None
-    fragment = ""
-    if "#" in href:
-        fragment = href[href.index("#") :]
+    fragment = link_fragment(href)
     if target == ENTRY.resolve():
         return f"build/arxiv.md{fragment}"
     return "build/" + target.relative_to(ROOT).as_posix() + fragment
@@ -180,6 +192,8 @@ def build_href(note: Path, href: str, notes: dict[Path, None]) -> str | None:
 def rewrite_note_links(note: Path, line: str, notes: dict[Path, None]) -> str:
     def replace(match: re.Match[str]) -> str:
         href = build_href(note, match.group(2), notes)
+        if href is None:
+            href = lean_href(note, match.group(2))
         if href is None:
             return match.group(0)
         return f"[{match.group(1)}]({href})"
@@ -190,8 +204,15 @@ def rewrite_note_links(note: Path, line: str, notes: dict[Path, None]) -> str:
 def lean_targets(note: Path, line: str) -> list[Path]:
     found: list[Path] = []
     for match in LINK.finditer(line):
-        target = resolve_link(note, match.group(2), ".lean")
-        if target is not None:
+        href = match.group(2).strip()
+        target = resolve_link(note, href, ".lean")
+        if target is None or not target.is_file():
+            path = href.split("#", 1)[0]
+            if path.endswith(".lean"):
+                candidate = (ROOT / path).resolve()
+                if candidate.is_file():
+                    target = candidate
+        if target is not None and target.is_file():
             found.append(target)
     return found
 
@@ -200,8 +221,12 @@ def expand(note: Path, notes: dict[Path, None]) -> tuple[str, int]:
     blocks = 0
     out: list[str] = []
     in_fence = False
-    for line in note.read_text(encoding="utf-8").splitlines():
-        fence = FENCE.match(line)
+    source = note.read_text(encoding="utf-8")
+    # An opening fence with no closer, as in an ASCII diagram, must not hide
+    # the Lean links that follow it.
+    respect_fences = sum(1 for line in source.splitlines() if FENCE.match(line)) % 2 == 0
+    for line in source.splitlines():
+        fence = FENCE.match(line) if respect_fences else None
         if fence is not None:
             if not in_fence:
                 in_fence = True
