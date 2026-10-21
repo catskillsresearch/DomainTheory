@@ -15,15 +15,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPai
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 /-- Empty set does not entail top (no derivation bottoms out). -/
 theorem not_VEnt_empty_top : ¬ VEnt (∅ : Finset VToken) .top := by

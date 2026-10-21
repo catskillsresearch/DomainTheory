@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarC
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (2.26).** `λn∈ω. τ` is `$` applied to a graph. -/

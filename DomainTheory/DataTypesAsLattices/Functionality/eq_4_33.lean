@@ -18,21 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.inrightC_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (4.33).** ` (a ⊕ b) ∘ inright ∘ b : b ∘→ (a ⊕ b) `. -/
 theorem eq_4_33 {a b : Pomega} (hb : IsRetract b) :
     typed (comp (plusR a b) (comp inrightC b)) (arrowR b (plusR a b)) := by

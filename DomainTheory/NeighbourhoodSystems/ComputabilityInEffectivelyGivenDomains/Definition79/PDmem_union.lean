@@ -21,7 +21,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
 /-- **Definition 7.9 — closure under finite unions.** `ℙ𝒟` is closed under binary union
 (concatenate the index lists); with `PDmem_empty` this gives closure under all finite unions,
 which is exactly how Scott defines the family. -/

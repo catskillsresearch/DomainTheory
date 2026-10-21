@@ -22,17 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e_or
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
 theorem e_or_of_subset {n m : ℕ} {x : Pomega} (hn : e n ⊆ x) (hm : e m ⊆ x) :
     e (n ||| m) ⊆ x := by
   rw [e_or]

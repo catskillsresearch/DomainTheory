@@ -18,34 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.treeF_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.6 applied to (4.38).** -/
 theorem treeR_isRetract : IsRetract treeR :=
   (theorem_4_6 treeF_isScottContinuous (fun _a ha =>

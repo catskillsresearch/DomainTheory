@@ -9,8 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Compact fixed points below `x`: the isolated points `a(e n)` contained in `x`. -/

@@ -30,8 +30,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- The `foldCode`-form step (parameter unused), used to package `reForallF` primitive-recursively. -/

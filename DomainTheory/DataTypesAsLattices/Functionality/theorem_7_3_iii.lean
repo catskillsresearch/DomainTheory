@@ -19,26 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Scomb_app2_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 7.3 (iii).**
 `S : (A → (B → C)) → ((A → B) → (A → C))`. -/
 theorem theorem_7_3_iii (A B C : RestrictedEquiv) :

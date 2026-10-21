@@ -27,13 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
 theorem argElem_argLike {n : ℕ} (a : Fin n → Option ℕ) : ArgLike (argElem a) := by
   intro j
   rw [component_argElem]

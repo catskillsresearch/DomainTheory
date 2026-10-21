@@ -17,13 +17,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.tcObj
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 @[simp] theorem tcObj_sys (D : StrictDomainObj.{w}) :
     (tcObj D).sys = sum3 unitSys D.sys D.sys Example62C.unitSys_nonempty D.nonempty D.nonempty := rfl

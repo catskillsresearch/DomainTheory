@@ -17,58 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep_iterate
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem termDollarStep_fix_app (u z : Pomega) :
     funOf (funOf (fix termDollarStep) u) z = seqFun u z := by
   have : funOf (funOf (fix termDollarStep) u) z =

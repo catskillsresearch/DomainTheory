@@ -37,10 +37,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 
 
-
-
-
-
 /-- Unfolding tokens into the sum-of-product carrier (Factoid 8.1). -/
 theorem sexUnfold_atom (n : ℕ) :
     treeUnfold lowerBoundSystem (.atom n) = SumToken.left n :=

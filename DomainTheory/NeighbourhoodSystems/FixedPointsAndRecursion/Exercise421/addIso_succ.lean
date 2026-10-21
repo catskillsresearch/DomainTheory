@@ -19,13 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise421
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
-
-
-
-
-
-
-
 /-- The isomorphism preserves the successor: `addIso m (n⁺) = (addIso m n)⁺`. -/
 theorem addIso_succ (m n : ℕ) : (addIso m (n + 1) : ℕ) = (addIso m n : ℕ) + 1 := by
   simp only [addIso_apply]; omega

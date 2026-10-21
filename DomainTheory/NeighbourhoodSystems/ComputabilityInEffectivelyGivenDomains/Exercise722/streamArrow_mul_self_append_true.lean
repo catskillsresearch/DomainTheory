@@ -22,32 +22,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott's third equation.** `σ1⃗ · σ1⃗ = σ1⃗`, where `σ1⃗ := streamArrow (σ ++ [true])` is the
 arrow of the *combined* token `σ1` (Scott's notation `σ⃗1⃗` names the infinite repetition of the
 word `σ` followed by `1`, not a product of two separate arrows — matching how the file's earlier

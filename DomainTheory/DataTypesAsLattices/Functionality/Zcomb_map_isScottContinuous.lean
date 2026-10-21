@@ -15,28 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Zcomb_map_isScottContinuous (n : ℕ) :
     IsScottContinuous (fun f => graph (fun x => Z n f x)) :=
   graph_const_isScottContinuous (fun f x => Z n f x)

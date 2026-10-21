@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (2.27).** Primitive recursion as a distributive function. -/

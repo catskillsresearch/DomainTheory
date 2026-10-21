@@ -22,14 +22,9 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
 
-
-
-
 variable {P qChar cons}
 
 variable (P qChar cons)
-
-
 
 
 theorem primrec_myStepCode (hqCharp : Nat.Primrec qChar) (hconsp : Nat.Primrec cons) :

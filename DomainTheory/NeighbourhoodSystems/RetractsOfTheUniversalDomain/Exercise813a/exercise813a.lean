@@ -17,17 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.13(a).** `U` is isomorphic to `V`'s domain of elements, and `V`'s domain of
 elements is (`V_mem_iff_generatedBy`, `generators_independent`) *by construction* the domain of
 proper filters of the free Boolean algebra on `ℵ₀` generators. No new back-and-forth argument is

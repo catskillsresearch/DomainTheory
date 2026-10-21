@@ -21,8 +21,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
 /-- **Definition 7.9 (remark 1).** "`↓X ∩ ↓Y ≠ ∅` iff `{X, Y}` is consistent in `𝒟`." The
 down-sets `↓X`, `↓Y` meet exactly when `X, Y` have a common lower neighbourhood `Z ⊆ X ∩ Y`. -/
 theorem upSet_inter_nonempty_iff {X Y : Set α} :

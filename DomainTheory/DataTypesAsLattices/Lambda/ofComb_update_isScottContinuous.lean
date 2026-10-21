@@ -17,38 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem ofComb_update_isScottContinuous (c : Comb) (ρ : ℕ → Pomega) (i : ℕ) :
     IsScottContinuous (fun v => ofComb c (envSet ρ i v)) := by
   induction c generalizing ρ i with

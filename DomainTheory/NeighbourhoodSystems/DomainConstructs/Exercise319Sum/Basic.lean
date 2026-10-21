@@ -47,10 +47,6 @@ variable {h₀' : ∀ X, V₀'.mem X → X.Nonempty} {h₁' : ∀ Y, V₁'.mem Y
 /-! ### Structural extraction lemmas for sum-neighbourhoods. -/
 
 
-
-
-
-
 /-! ### The sum mapping `f + g`. -/
 
 

@@ -85,9 +85,6 @@ types), so we bundle a small local heterogeneous analogue, `ProjPair`, purely as
 `trianglelefteq_trans` below. -/
 
 
-
-
-
 /-- **`D ⊴ E` composed with an isomorphism `D ≅ᴰ D'` on the left is still `D ⊴ E`** — immediate
 from unfolding `⊴` and composing the two `DomainIso`s (`OrderIso.trans`). -/
 theorem trianglelefteq_of_isomorphic_left {D : NeighborhoodSystem α} {D' : NeighborhoodSystem β}

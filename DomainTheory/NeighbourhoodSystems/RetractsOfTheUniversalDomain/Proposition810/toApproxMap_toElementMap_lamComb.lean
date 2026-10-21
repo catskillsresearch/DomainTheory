@@ -22,7 +22,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
 /-- **`lamComb a b`, transported through `funSpaceEquiv`, is exactly `λf. b∘f∘a`.** Chains
 `toElementMap_curry_apply` (Theorem 3.12(i)), `toElementMap_prodMap_pair`/`toElementMap_idMap`,
 and `evalMap_apply` (Theorem 3.11(i)). -/

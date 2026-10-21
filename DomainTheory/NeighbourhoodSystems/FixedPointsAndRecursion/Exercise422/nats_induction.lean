@@ -13,8 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.lfpSet_subset
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise422
 
 open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercise414

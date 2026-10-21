@@ -23,12 +23,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise510
 namespace Exercise619
 
 
-
-
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
-
 
 
 /-- **`sumMapTok` is strict** for *any* component maps: the master input `Λ` (the only neighbourhood

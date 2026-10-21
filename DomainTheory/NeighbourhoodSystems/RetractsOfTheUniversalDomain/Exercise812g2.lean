@@ -37,25 +37,7 @@ open Domain.Recursive NeighborhoodSystem
 /-! ## `U_isComputableUnion` -/
 
 
-
-
-
-
-
-
-
-
 /-! ## `V_isComputableUnion` -/
-
-
-
-
-
-
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

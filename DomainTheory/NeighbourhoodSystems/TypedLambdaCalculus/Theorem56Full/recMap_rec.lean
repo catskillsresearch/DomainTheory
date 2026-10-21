@@ -28,30 +28,9 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 section Prec
 
 variable (φf φg : ApproximableMap 𝒩 N)
-
-
 
 
 /-- The defining recursion equation. -/

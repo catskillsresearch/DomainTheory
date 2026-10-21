@@ -19,7 +19,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
 /-- **Scott 1976, Theorem 6.1 (The 𝔊 theorem).** -/
 theorem theorem_6_1 :
     (∀ f : Pomega → Pomega, IsScottContinuous f →

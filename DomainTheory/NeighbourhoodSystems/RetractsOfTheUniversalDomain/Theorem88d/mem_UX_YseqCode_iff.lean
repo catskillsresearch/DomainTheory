@@ -25,65 +25,7 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **The closed-form membership characterization of `YseqCode`** — the "Set-level closed form"

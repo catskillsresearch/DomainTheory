@@ -28,18 +28,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 5.15(2), leastness.** Any solution `(x, y)` of the system dominates `(x₀, y₀)`. Hence
 `(x₀, y₀)` is the *least* solution, and `x₀ = (a ∪ b·a*·b)*·(c ∪ b·a*·d)` as claimed. The proof is
 Gaussian elimination: solve the second equation for `y` by `arden`, substitute, apply `arden`

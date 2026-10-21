@@ -24,9 +24,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
 /-- `idxSet P.X P.masterIdx = Set.univ`: `masterIdx` indexes `D`'s master `Δ`, and every
 `D`-neighbourhood is `⊆ Δ`. -/
 theorem idxSet_masterIdx_eq_univ : idxSet P.X P.masterIdx = Set.univ :=

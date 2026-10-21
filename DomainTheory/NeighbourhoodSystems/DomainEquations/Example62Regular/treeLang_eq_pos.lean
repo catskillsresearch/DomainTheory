@@ -21,14 +21,6 @@ open Language
 variable {n : ℕ}
 
 
-
-
-
-
-
-
-
-
 /-- `L_a` is genuinely `{σ ∣ pos(aσ) = true}` as Scott writes it. -/
 theorem treeLang_eq_pos (a : Tree n) : treeLang a = {σ | pos (select a σ) = true} := by
   simp only [pos_select]; rfl

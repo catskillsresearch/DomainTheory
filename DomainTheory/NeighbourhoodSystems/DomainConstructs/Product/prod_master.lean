@@ -17,8 +17,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product.prod_me
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem

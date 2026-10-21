@@ -18,21 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example43
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Computation on the total elements.** `f(n̂) = val n`. -/
 theorem constLiftN_natElem {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element) (n : ℕ) :
     (constLiftN V val).toElementMap (natElem n) = val n := by

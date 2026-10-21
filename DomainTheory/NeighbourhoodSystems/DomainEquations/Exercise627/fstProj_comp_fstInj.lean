@@ -23,9 +23,6 @@ namespace Exercise627
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 
-
-
-
 theorem fstProj_comp_fstInj (D₀ D₁ : NeighborhoodSystem Str) :
     (fstProj D₀ D₁).comp (fstInj D₀ D₁) = idMap D₀ := by
   apply ApproximableMap.ext

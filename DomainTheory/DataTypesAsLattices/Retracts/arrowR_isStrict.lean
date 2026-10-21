@@ -16,45 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem arrowR_isStrict {a b : Pomega} (hb : IsStrict b) :
     IsStrict (arrowR a b) := by
   change funOf (arrowR a b) botElem = botElem

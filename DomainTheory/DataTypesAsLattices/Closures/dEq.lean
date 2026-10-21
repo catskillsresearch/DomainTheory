@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.selfArrowStep
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (5.25).** Least solution of `d = I ∪ (d ∘→ d)`. -/

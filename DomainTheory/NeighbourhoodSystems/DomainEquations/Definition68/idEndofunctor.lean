@@ -8,8 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510

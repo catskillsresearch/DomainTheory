@@ -20,22 +20,6 @@ variable {α β γ : Type*}
   {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `const(k)` is the constant map `constMap` of Lemma 3.6. -/
 theorem constC_eq_constMap (k : V₁.Element) :
     toApproxMap ((constC V₀ V₁).toElementMap k) = constMap V₀ k := by

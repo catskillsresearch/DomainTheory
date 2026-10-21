@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plus7Body
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Seven-way tagged sum with indices `0,...,6`, dispatching by iterated

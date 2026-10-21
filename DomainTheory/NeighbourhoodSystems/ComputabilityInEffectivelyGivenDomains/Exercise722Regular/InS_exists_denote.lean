@@ -18,15 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise722
 
 
-
-
-
-
-
-
-
-
-
 /-- **Completeness.** Every member of `S` is the denotation of some `S`-term. -/
 theorem InS_exists_denote {X : Set (List Bool)} (h : InS X) : ∃ e : SExpr, denote e = X := by
   induction h with

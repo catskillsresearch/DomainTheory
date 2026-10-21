@@ -20,9 +20,6 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
   {V₂ : NeighborhoodSystem γ}
 
 
-
-
-
 theorem primrec_curryStepCode {a e : ℕ → ℕ} (ha : Nat.Primrec a) (he : Nat.Primrec e) :
     Nat.Primrec (fun w => curryStepCode (a w) (e w)) := by
   have h1 : Nat.Primrec (fun w => (e w).unpair.1) := Nat.Primrec.left.comp he

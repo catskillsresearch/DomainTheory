@@ -25,66 +25,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_untagStep : Nat.Primrec untagStep := by
   have hdone : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
     Nat.Primrec.left.comp Nat.Primrec.right

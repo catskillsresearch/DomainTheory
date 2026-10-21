@@ -15,21 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem evalC_isScottContinuous :
     IsScottContinuous (fun u => funOf (funOf u (ofNat 0)) (funOf u (ofNat 1))) :=
   continuous_tuple

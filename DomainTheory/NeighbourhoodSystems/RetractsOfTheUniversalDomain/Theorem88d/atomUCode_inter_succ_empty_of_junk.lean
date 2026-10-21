@@ -29,67 +29,7 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **The junction lemma**: once a bit-source's atom is still non-empty at depth `n` but becomes

@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- `i` occurs anywhere in `t` (free or bound). Freshness for (α). -/

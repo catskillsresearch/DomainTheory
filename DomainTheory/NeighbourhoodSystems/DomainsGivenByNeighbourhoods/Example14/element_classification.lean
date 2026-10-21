@@ -16,65 +16,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 namespace DomainTheory.NeighbourhoodSystems.Example14
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace neighborhoodSystem
 
 open NeighborhoodSystem
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Example 1.4 classification.** Every filter is one of the seven: the bottom `⊥`, the two

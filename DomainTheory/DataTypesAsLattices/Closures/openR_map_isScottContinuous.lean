@@ -16,39 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem openR_map_isScottContinuous :
     IsScottContinuous (fun u => {m | ∃ n, e n ⊆ e m ∧ n ∈ u}) := by
   intro u

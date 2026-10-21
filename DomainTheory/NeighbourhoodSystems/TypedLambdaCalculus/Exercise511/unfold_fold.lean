@@ -19,9 +19,6 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
 theorem unfold_fold (p : (prod V (iterSys V)).Element) :
     (unfold V).toElementMap ((fold V).toElementMap p) = p := by
   rw [unfold, fold, toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply]

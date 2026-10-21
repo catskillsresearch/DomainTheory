@@ -20,16 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **`combineCode` realizes `combineIntervals` at the set level.** -/
 theorem presentedIntervals_decodeQPairList_combineCode (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList (combineCode c1 c2))

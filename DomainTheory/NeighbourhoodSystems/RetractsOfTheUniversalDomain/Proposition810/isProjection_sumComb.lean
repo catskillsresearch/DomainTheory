@@ -23,8 +23,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 /-- **Proposition 8.10 (Scott 1981, PRG-19), `+`-case.** `a, b` projections `⟹` `a + b` a
 projection. -/
 theorem isProjection_sumComb {a b : ApproximableMap U U}

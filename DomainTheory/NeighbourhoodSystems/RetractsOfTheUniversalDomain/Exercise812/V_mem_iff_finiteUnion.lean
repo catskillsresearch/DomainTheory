@@ -27,21 +27,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`V.mem` literally matches Scott's "non-empty finite unions of `2^k ℕ + ℓ`, `ℓ < 2^k`"** —
 reconciles the bookkeeping-free `levelSet` encoding with Exercise 8.12's literal description,
 mirroring `Definition87.lean`'s `U_mem_iff_scott`. -/

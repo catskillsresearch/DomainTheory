@@ -14,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.FixedPoint.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
 theorem iterateBot_mono {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     ∀ n, iterateBot f n ⊆ iterateBot f (n + 1)
   | 0 => by

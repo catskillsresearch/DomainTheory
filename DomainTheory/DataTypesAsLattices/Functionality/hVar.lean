@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.expPayload
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def hVar (e t : Pomega) : Pomega := funOf t (expPayload e)

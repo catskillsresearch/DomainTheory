@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_mono
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem inverseLimit_chain {F : Pomega → Pomega}

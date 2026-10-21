@@ -14,8 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Example12
 
 theorem master_not_subset_one : ¬master ⊆ one := by

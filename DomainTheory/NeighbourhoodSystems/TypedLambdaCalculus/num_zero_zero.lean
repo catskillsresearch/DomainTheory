@@ -19,8 +19,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 theorem num_zero_zero : num 0 0 = 0 := rfl

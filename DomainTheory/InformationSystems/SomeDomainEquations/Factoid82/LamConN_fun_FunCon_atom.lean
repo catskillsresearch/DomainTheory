@@ -23,66 +23,10 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α : Type*} [DecidableEq α]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable (A : InfoSys α)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- Full FunCon at stage `n+1` (uses `exists_FunCon` + atom-input lift).

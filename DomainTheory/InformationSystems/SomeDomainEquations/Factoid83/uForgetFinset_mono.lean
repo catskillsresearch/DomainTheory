@@ -20,15 +20,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.mem_
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem uForgetFinset_mono {u v : Finset UToken} (h : v ⊆ u) :
     uForgetFinset v ⊆ uForgetFinset u := by

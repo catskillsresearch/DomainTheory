@@ -101,7 +101,6 @@ end NeighborhoodSystem
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
 /-! ### Functoriality: `ℙ` preserves identities and composition. -/
 
 /-! ### Computability: if `f` is computable then so is `ℙf` (Scott's first question). -/

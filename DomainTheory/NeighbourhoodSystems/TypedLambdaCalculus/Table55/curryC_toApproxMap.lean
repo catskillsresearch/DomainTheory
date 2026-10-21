@@ -19,25 +19,6 @@ variable {α β γ : Type*}
   {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `curry(g)` is the curried map of Theorem 3.12. -/
 theorem curryC_toApproxMap (φ : (funSpace (prod V₀ V₁) V₂).Element) :
     toApproxMap ((curryC V₀ V₁ V₂).toElementMap φ) = curry (toApproxMap φ) := by

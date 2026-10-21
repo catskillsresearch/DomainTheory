@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (4.45).** Continuous operator whose least fixed point is

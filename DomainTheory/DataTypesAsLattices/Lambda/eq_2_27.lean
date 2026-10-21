@@ -16,51 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.primRecVal_fix
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.27).** `p̂ = Y(λu λn∈ω. n ⊃ a, f(n−1)(u(n−1)))`. -/
 theorem eq_2_27 (a f x : Pomega) :
     primRecHat a f x = funOf (funOf dollarC (fix (primRecStep a f))) x := by

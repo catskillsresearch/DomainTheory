@@ -25,39 +25,6 @@ namespace Theorem614
 variable {α : Type w}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem nonempty_strict_algHom (s : Setup.{w}) (B : TAlgebra s.T) (hk : IsStrict B.str) :
     Nonempty {g : AlgHom (colimAlg s) B // IsStrict g.hom} :=
   nonempty_algHom_of_continuousOnMaps s.T s.hmaps (colimIso s) B hk

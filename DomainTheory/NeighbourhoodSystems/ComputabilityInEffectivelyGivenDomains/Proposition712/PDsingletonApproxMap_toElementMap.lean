@@ -29,9 +29,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
 /-- **Proposition 7.12 — action of `λ x. {x}`.** `(λ x. {x})(x) = {x}` for every `x ∈ |𝒟|`. -/
 theorem PDsingletonApproxMap_toElementMap (x : V.Element) :
     (PDsingletonApproxMap (V := V)).toElementMap x = V.PDsingleton x := by

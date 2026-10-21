@@ -20,16 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.envSet_comm
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
 /-- Appendix lemma for Theorem 2.1: abstraction preserves continuity in the other variables. -/
 theorem interp_var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) :
     IsScottContinuous (fun v => interp t (envSet ρ i v)) := by

@@ -16,35 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem squareSnd_bot : squareSnd botElem = botElem := by
   ext m
   simp [squareSnd, botElem]

@@ -16,51 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.HF_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem HF_app2 (H e t : Pomega) :
     funOf (funOf (HF H) e) t = Hstep H e t := by
   rw [HF_app]

@@ -20,60 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem union_combinatory {x y : Pomega}
     (hx : IsCombinatory x) (hy : IsCombinatory y) :
     IsCombinatory (x ∪ y) := by

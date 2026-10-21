@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def plotkinRel (p q j : ℕ) (u v : Pomega) : Prop :=

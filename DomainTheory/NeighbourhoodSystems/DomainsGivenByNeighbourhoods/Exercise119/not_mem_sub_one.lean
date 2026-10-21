@@ -17,8 +17,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise119

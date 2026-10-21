@@ -17,24 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example44
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `bx` on a partial element: `b(σ⊥) = (bσ)⊥`. -/
 theorem consMap_strBot (b : Bool) (σ : Str) :
     (consMap b).toElementMap (strBot σ) = strBot (b :: σ) := by

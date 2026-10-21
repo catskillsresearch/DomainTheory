@@ -23,9 +23,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
-
 /-- **Theorem 8.5, `(ii) ⟹ (i)` (Scott 1981, PRG-19).** If `a` satisfies Scott's step-closure
 formula `a(x) = {Y ∈ E ∣ ∃X∈x, X⊆Y ∧ XaX}` for every `x ∈ |E|`, then `a` is a finitary projection.
 

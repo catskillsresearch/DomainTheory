@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hApply
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def hCond (H e t : Pomega) : Pomega :=

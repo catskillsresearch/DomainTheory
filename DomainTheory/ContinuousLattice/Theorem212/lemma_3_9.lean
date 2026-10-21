@@ -17,12 +17,6 @@ namespace DomainTheory.ContinuousLattice
 open Topology Set
 
 
-
-universe u
-
-
-
-
 section Lemma39
 
 variable {X Y D D' : Type*} [TopologicalSpace X] [TopologicalSpace Y]

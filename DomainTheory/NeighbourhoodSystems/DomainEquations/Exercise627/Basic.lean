@@ -90,7 +90,6 @@ product neighbourhood `prodTokNbhd X Δ₁` (pair `X` with all of `ℰ`); the em
 two refinement relations against that neighbourhood, exactly as in Proposition 6.12. -/
 
 
-
 /-! ## (3) `(𝒟 ⊕ ℰ) ◁ (𝒟 + ℰ)` — the coalesced sum is literally a subsystem of the sum
 
 `oplusTok` drops the improper copies `0Δ₀`, `1Δ₁` of `sumTok`; what remains is a sub-family, and
@@ -109,16 +108,6 @@ neighbourhood; consequently the single lemma `oplus_mem_leftN` — and only it �
 This is genuinely unavoidable at this level of generality (Scott's tokens are concrete and decidable,
 but we work over arbitrary `NeighborhoodSystem`s), so `inl_trianglelefteq_oplus` depends on
 `Classical.choice` (called out in the axiom audit). Every other part of Exercise 6.27 is choice-free. -/
-
-
-
-
-
-
-
-
-
-
 
 
 theorem inlProj_comp_inlInj :
@@ -158,14 +147,6 @@ strictification, then identify their element maps using the representations `fun
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-
-
-
-
-
-
-
 
 
 end Part5

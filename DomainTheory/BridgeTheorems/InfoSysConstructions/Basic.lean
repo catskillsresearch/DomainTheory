@@ -69,36 +69,10 @@ namespace InfoSysConstructions
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
 
-
-
-
-
 /-! ## Separated sum `|A + B| ≃o WithBot (|A| ⊕ |B|)` -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ## Function space `|A → B| ≃o ApproximableMap A B` -/
-
-
 
 
 end InfoSysConstructions

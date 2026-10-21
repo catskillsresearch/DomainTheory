@@ -18,58 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.27(b)(3), in full: `piD d` satisfies Scott's step-closure formula (ii), for *any*
 `d` at all** (`d`'s polymorphism is not needed). Combines the reduction (b)(3)(a) with the easy
 (`hii_easy_direction`) and now-closed hard (`hii_hard_direction`) halves. -/

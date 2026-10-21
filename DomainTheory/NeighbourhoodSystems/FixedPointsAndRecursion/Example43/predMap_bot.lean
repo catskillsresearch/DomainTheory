@@ -18,26 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example43
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `pred(⊥) = ⊥`. -/
 theorem predMap_bot : predMap.toElementMap N.bot = N.bot :=
   constLiftN_bot N predVal

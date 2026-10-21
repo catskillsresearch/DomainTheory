@@ -17,10 +17,9 @@ public import DomainTheory.ContinuousLattice.Injective.isInjectiveSpace_sierpins
 @[expose] public section
 
 
-
 open Topology TopologicalSpace
 
-universe u v w
+universe u
 
 
 /-- **Scott 1972, Proposition 1.5.** Every `T₀`-space embeds into a power of 𝕆, and that

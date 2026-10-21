@@ -10,8 +10,6 @@ import all Mathlib.Data.Finset.Basic
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Pin `≤` / `sSup` to the `CompleteLattice` instance path so Challenge and

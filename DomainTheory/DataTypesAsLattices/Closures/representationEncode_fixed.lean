@@ -16,8 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representationDecode_enc
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem representationEncode_fixed

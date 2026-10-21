@@ -16,34 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_38
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem treeR_fixedPoint : treeF treeR = treeR := by
   simpa [treeF] using eq_4_38.symm
 

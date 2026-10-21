@@ -23,17 +23,6 @@ namespace Exercise824
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.24, Claim 2 (the domain equations).** Given any correspondences `S, T` (bundling,
 for each pair of maps, a type and a domain over it) with `Fix(binOp s a b) ≅ S(a,b)` and
 `Fix(binOp t a b) ≅ T(a,b)` for every pair of finitary projections `a, b` (Scott's hypotheses

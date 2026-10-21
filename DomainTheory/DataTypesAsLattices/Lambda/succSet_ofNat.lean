@@ -14,51 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem succSet_ofNat (j : ℕ) : succSet (ofNat j) = ofNat (j + 1) := by
   ext k
   simp [succSet, ofNat]

@@ -22,20 +22,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 4.10 (Scott 1981, PRG-19).** With `a = fix(f)`, the restricted map `f'` has *exactly
 one* fixed point: the top element of `D_{fix f}`, namely `restrict (fix f)` of `fix f` itself. Every
 `Dₐ`-fixed point `g` of `f'` satisfies `embed a g = fix f`, hence is this top element. -/

@@ -15,13 +15,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.pair_bot
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 namespace Exercise618
 

@@ -18,39 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.openR_expansive
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem openR_idem (u : Pomega) :
     funOf openR (funOf openR u) = funOf openR u := by
   apply subset_antisymm

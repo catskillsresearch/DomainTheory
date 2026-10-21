@@ -19,8 +19,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 
-
-
 /-- **Soundness of a chain.** A valid `g`-chain from `a` realises the iterate relation
 `(gᵏ).rel (X_a) (X_{last})` with `k` the chain length. -/
 theorem gStepsOK_sound (g : ApproximableMap V V) (P : ComputablePresentation V) :

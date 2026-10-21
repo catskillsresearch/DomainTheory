@@ -19,16 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example23
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **`parityMap`'s elementwise value, read off cone-by-cone.** `f(x).mem Y` iff *some* cone
 `σΣ* ∈ x` already witnesses `Y ∈ valElt(scan σ)` — every neighbourhood of `x` is a cone
 (`Element.sub`), and `parityMap`'s relation is exactly `parityMap_rel_cone`. -/

@@ -27,21 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- A coordinate that an `argElem` sets to `none` is `⊥`. -/
 theorem component_argElem_none {n : ℕ} (a : Fin n → Option ℕ) (i : Fin n) (hi : a i = none) :
     component (argElem a) (i : ℕ) = N.bot := by

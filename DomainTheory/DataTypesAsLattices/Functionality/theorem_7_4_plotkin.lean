@@ -17,29 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z_graph_funOf
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Plotkin: if `z` is typed as an iterator and is extensional in its first
 argument, then `z(f)(x)` is some iterate `fⁿ(x)`. -/
 theorem theorem_7_4_plotkin (z : Pomega)

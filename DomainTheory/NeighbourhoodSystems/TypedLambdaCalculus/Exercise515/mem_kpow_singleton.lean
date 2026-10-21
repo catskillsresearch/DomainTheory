@@ -23,13 +23,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
-
-
-
-
 /-- `{e}ⁿ = {eⁿ}` at the membership level (choice-free). -/
 theorem mem_kpow_singleton (e s : S) (n : ℕ) : s ∈ kpow ({e} : Set S) n ↔ s = e ^ n := by
   induction n generalizing s with

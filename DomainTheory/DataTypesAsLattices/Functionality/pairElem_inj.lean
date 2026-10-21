@@ -16,7 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_inj
 namespace DomainTheory.DataTypesAsLattices
 
 
-
 theorem pairElem_inj {x y x' y' : Pomega} (h : pairElem x y = pairElem x' y') :
     x = x' ∧ y = y' :=
   pairSeq_inj h

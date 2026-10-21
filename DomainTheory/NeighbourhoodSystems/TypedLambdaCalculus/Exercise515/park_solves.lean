@@ -25,18 +25,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 5.15(2), existence.** `(x₀, y₀)` solves David Park's system. -/
 theorem park_solves (a b c d : Set S) :
     parkX a b c d = a * parkX a b c d ∪ b * parkY a b c d ∪ c ∧

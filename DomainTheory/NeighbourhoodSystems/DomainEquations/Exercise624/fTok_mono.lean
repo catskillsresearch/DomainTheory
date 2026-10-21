@@ -20,8 +20,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
-
-
 /-- `fTok` is monotone in both arguments. -/
 theorem fTok_mono {p p' q q' : Set Str} (hp : p ⊆ p') (hq : q ⊆ q') : fTok p q ⊆ fTok p' q' :=
   gTok_mono hp (gTok_mono hp hq)

@@ -16,37 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.condC_map_cont
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem condC_beta (x : Pomega) :
     funOf condC x = graph (fun y => graph (fun z => condSet z x y)) :=
   beta condC_map_cont x

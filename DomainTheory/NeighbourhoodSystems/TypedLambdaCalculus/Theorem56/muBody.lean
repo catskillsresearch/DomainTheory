@@ -13,8 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56.ar
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Theorem56
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap

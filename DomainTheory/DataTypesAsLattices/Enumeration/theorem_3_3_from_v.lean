@@ -22,53 +22,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 3.3 (iii)** from (i) and (ii):
 `val(rec(n)) = val(n)(rec(n))`. -/
 theorem theorem_3_3_from_v (v : ℕ → ℕ) (n : ℕ)

@@ -265,7 +265,6 @@ stronger than the `left_congr`/`right_congr` fields actually demand) — depend 
 set, delivering `ComputableBisection.left_congr`/`right_congr` for `(e)(d)(iii)`. -/
 
 
-
 /-- `(splitVMinLevel n, splitVMinMask n)` presents the same set as `canonIdx n`'s own pair, i.e.
 `VX n` itself. -/
 theorem levelSet_splitVMin (n : ℕ) : levelSet (splitVMinLevel n) (splitVMinMask n) = VX n :=
@@ -293,9 +292,6 @@ duplicates every set bit of `m` into a matching pair at level `k+1`, so *any* se
 genuine "twin" — `(e)(b)(iv)`'s job to make precise). `splitVLeft`/`splitVRight` then package `Y :=
 levelSet (k+1) (2^ℓ₀)` / `Z := levelSet (k+1) (M ^^^ 2^ℓ₀)` (`V_no_minimal`'s own `Y`/`Z`) as codes,
 using `myClearBit` (`(e)(b)(ii)`) as the computable stand-in for `^^^`. -/
-
-
-
 
 
 /-! ## 8.12(e)(b)(iv): correctness — `VX_splitVLeft`/`VX_splitVRight`, `splitV_disjoint`,

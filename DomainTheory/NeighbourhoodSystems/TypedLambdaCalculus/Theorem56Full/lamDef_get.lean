@@ -29,22 +29,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `get i : Vector ℕ n → ℕ`, the `i`-th projection. -/
 theorem lamDef_get {n : ℕ} (i : Fin n) :
     LamDef (strictGuardN n (projN N i))

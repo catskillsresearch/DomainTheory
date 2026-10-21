@@ -9,8 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 5.2, construction.**

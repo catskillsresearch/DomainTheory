@@ -22,14 +22,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 
-
-
-
-
-
-
-
-
 /-- **`funSpace` is a congruence for `≅ᴰ`.** `𝒟₀ ≅ᴰ 𝒟₀'`, `𝒟₁ ≅ᴰ 𝒟₁'` `⟹`
 `(𝒟₀ → 𝒟₁) ≅ᴰ (𝒟₀' → 𝒟₁')`. -/
 theorem funSpace_congr (h0 : V₀ ≅ᴰ V₀') (h1 : V₁ ≅ᴰ V₁') :

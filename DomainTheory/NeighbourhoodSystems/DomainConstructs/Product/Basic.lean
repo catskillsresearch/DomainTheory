@@ -93,35 +93,13 @@ open NeighborhoodSystem
 variable {α β γ δ : Type*}
 
 
-
-
-
-
-
-
-
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-
 
 
 /-! ### Projections of an element (Scott's `z₀`, `z₁`). -/
 
 
-
-
-
-
 /-! ### Definition 3.1 — the element pairing `⟨x, y⟩`. -/
-
-
-
-
-
-
-
-
 
 
 /-! ### Definition 3.3 / Proposition 3.4 — projections and pairing of maps. -/
@@ -131,26 +109,10 @@ variable {V₂ : NeighborhoodSystem γ}
 open ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
 /-! ### Lemma 3.6 — constant maps. -/
 
 
-
-
 /-! ### Theorem 3.5 — joint vs. separate approximability. -/
-
-
-
-
-
 
 
 /-! ### Proposition 3.7 — closure under substitution. -/

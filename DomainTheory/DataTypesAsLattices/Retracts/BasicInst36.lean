@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.fixpointsCompleteLattice
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 noncomputable instance fixpointsFunOfCompleteLattice (a : Pomega) :

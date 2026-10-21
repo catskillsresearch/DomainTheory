@@ -45,18 +45,10 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
 /-! ### The meet of a non-empty family of maps. -/
 
 
-
-
 /-! ### The join of a directed family of maps. -/
-
-
 
 
 /-! ### `C ≅ Hom(𝒟₀, 𝒟₁) ≅ |𝒟₀ → 𝒟₁|`. -/

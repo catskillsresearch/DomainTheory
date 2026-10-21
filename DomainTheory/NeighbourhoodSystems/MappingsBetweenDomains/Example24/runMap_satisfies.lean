@@ -22,16 +22,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example24
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **`runMap` satisfies its own defining equations.** `zero`/`oneOne`/`oneZero` are direct
 instances of the two "shift formulas" (`runMap_toElementMap_sigmaElt` on the input side,
 `sigmaElt_runMap_toElementMap` on the output side), using that the output of a leading `0`

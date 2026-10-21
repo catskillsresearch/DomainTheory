@@ -20,45 +20,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
-
-
-
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem funListOf_append (la lb : List ℕ) :

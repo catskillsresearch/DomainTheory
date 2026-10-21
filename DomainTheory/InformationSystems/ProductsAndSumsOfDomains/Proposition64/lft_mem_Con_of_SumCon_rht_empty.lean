@@ -14,8 +14,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -25,8 +23,6 @@ namespace InfoSys
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 
 variable (A : InfoSys α) (B : InfoSys β)
-
-set_option linter.unusedSectionVars false
 
 theorem lft_mem_Con_of_SumCon_rht_empty {u : Finset (SumToken α β)}
     (hu : SumCon A B u) (_hr : rhtFinset u = ∅) : lftFinset u ∈ A.Con := by

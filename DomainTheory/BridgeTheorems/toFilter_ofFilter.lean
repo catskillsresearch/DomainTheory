@@ -18,8 +18,6 @@ public import DomainTheory.BridgeTheorems.mem_basicOpen_iff
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.NeighbourhoodSystems

@@ -24,13 +24,11 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
 
 
-
 namespace Counterexample712C
 
 open NeighborhoodSystem
 
 variable {γ δ : Type*}
-
 
 
 /-- A subsystem of an unconditionally ∩-closed system is itself unconditionally ∩-closed: the

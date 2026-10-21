@@ -18,14 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
 theorem mem_decodeQPairList_clipGeListCode (m c : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList (clipGeListCode m c) ↔
       ∃ p0 ∈ decodeQPairList c, p = qpClipGe (decodeRat m) p0 := by

@@ -18,53 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.typed_apply_retract
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Hcomb_typed :
     typed Hcomb (arrowR expR (arrowR envR lambR)) :=
   typed_apply_retract

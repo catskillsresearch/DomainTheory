@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.tagInj
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Body of the seven-way tagged sum of (4.44). -/

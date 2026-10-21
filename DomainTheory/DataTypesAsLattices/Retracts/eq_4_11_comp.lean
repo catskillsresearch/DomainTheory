@@ -17,45 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (4.11).** Composition of function-space retracts. -/
 theorem eq_4_11_comp (a b a' b' : Pomega) :
     comp (arrowR a b) (arrowR a' b') = arrowR (comp a' a) (comp b b') := by

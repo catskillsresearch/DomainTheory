@@ -21,7 +21,6 @@ namespace InclStructure
 variable (I : InclStructure)
 
 
-
 /-- **Axiom (iv).** Consistent pairs have a meet. -/
 theorem axiom_iv (n m : ℕ) (h : I.CONS n m) : ∃ k, I.MEET n m k :=
   ⟨I.meetIdx n m, I.meetIdx_spec h⟩

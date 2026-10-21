@@ -20,15 +20,6 @@ namespace Exercise824
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
 /-- The `n`-th approximant of `⟨s, t⟩` is exactly the pairing of `aOp`'s and `bOp`'s `n`-th
 approximants (`Product.lean`'s `pair_fst_snd`, transported through the `toFilter`/`toApproxMap`
 round trip). -/

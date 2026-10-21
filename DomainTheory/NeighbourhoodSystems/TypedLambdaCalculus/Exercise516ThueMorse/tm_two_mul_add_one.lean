@@ -18,15 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
-
-
-
 /-- The odd recurrence `tm (2n+1) = ¬ tm n` (appending a `1`-digit flips the parity). -/
 theorem tm_two_mul_add_one (n : ℕ) : tm (2 * n + 1) = !tm n := by
   simp only [tm, Nat.bit1_bits n, List.foldr_cons, Bool.true_xor]

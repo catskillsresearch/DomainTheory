@@ -58,17 +58,12 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exampl
 /-! ### The Thue–Morse morphism `expand` (`0 ↦ 01`, `1 ↦ 10`). -/
 
 
-
-
 /-! ### `Φ` on a partial element computes by interleaving — and equals `expand`. -/
 
 
 /-! ### The finite approximants of the least fixed point are the morphism iterates. -/
 
 /-! ### The parity bit-function `tm` and its prefixes. -/
-
-
-
 
 
 /-! ### Step 0 — the element `t` and its unfolding. -/

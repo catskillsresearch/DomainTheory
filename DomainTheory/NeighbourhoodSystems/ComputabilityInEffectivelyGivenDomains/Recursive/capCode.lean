@@ -29,8 +29,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 set_option maxHeartbeats 800000 in

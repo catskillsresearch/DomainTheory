@@ -20,61 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem unionBits_eq : ∀ ks : List ℕ, unionBits ks = {n | n ∈ ks}
   | [] => by simp [unionBits, botElem]
   | k :: ks => by

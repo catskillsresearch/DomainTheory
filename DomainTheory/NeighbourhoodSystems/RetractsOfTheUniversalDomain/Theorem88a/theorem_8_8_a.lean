@@ -24,13 +24,6 @@ open NeighborhoodSystem
 variable {α : Type*}
 
 
-
-
-
-
-
-
-
 /-- **First sentence of Theorem 8.8 (Scott 1981, PRG-19, Lecture VIII).** `𝒰` is universal: every *countable*
 neighbourhood system `D` embeds, up to isomorphism, as a subsystem of `𝒰`.
 

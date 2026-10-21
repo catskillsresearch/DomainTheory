@@ -19,8 +19,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 @[simp] theorem mem_dualFilter {α : Type*} {x : Set (Set α)} {Y : Set α} :

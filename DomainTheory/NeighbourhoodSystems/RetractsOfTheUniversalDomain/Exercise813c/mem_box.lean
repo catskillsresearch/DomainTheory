@@ -17,8 +17,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 @[simp] theorem mem_box {I : Finset ℕ} {f x : ℕ → Bool} :

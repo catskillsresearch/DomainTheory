@@ -23,11 +23,6 @@ namespace Proposition77
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
 
-
-
-
-
-
 /-- The index characterization of `pairSharpMap` against the product/`Vsharp` enumerations:
 `(V⁰_{p t} ∪ V¹_{q t}) pair V_k ↔ V_{2·t+2} ⊆ V_k` (since `V_{2t+2} = 1·V_{p t} ∪ 2·V_{q t}`). -/
 theorem pairSharp_rel_Vsharp_iff (P : ComputablePresentation D) (t k : ℕ) :

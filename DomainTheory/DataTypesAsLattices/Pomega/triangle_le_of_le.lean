@@ -21,23 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem triangle_le_of_le {a b : ℕ} (h : a ≤ b) : triangle a ≤ triangle b := by
   induction h with
   | refl => exact le_rfl

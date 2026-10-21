@@ -8,8 +8,6 @@ public meta import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyG
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722

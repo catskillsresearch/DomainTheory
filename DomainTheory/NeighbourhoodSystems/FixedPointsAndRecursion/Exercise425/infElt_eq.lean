@@ -18,31 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise425
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `1^∞ = 1·1^∞`: the infinite sequence is fixed by the successor. -/
 theorem infElt_eq : consMap.toElementMap infElt = infElt :=
   toElementMap_fixElement consMap

@@ -9,8 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.P
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap

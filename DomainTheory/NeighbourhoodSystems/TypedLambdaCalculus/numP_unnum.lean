@@ -23,8 +23,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.unnum
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 theorem numP_unnum (v : ℕ) : numP (unnum v) = v := by

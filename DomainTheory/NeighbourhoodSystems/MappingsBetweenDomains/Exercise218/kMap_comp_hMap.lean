@@ -18,19 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise218
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 2.18 — `k ∘ h = I_𝔹`.** The composite recovers the identity: reading `kOut (hOut σ) = σ`
 through the cone relations. -/
 theorem kMap_comp_hMap : kMap.comp hMap = idMap B := by

@@ -24,30 +24,7 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
 namespace Sub8_6
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Theorem 8.6(b), in full.** `subApprox` is a finitary projection on `(E → E)`. -/

@@ -16,35 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem predSet_succSet (x : Pomega) : predSet (succSet x) = x := by
   ext k
   constructor

@@ -23,26 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eta2_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem theorem_7_3_S_unique (s : Pomega)
     (hη1 : ∀ f, funOf s f =
       funOf s (graph (fun x => graph (fun y => funOf (funOf f x) y))))

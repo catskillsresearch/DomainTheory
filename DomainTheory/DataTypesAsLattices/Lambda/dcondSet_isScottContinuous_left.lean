@@ -18,13 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
 theorem dcondSet_isScottContinuous_left (x y : Pomega) :
     IsScottContinuous (fun z => dcondSet z x y) :=
   theorem_1_3_nary

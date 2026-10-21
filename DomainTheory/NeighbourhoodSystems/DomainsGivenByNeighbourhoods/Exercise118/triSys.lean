@@ -9,8 +9,6 @@ import all Mathlib.Tactic
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems

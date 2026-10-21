@@ -26,15 +26,6 @@ universe u v w
 variable {α : Type u} {β : Type v} {γ : Type w}
 
 
-
-
-
-
-
-
-
-
-
 /-- **`𝒰` is universal** (restating Theorem 8.8(a) in `⊴`-shape). -/
 theorem U_isUniversal : IsUniversal.{u} U := by
   intro α D _

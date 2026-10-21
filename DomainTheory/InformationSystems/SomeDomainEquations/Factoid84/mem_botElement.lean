@@ -23,13 +23,6 @@ open ApproximableMap
 namespace Factoid84
 
 
-
-
-
-
-
-
-
 theorem mem_botElement (x : ℕ) : x ∈ botElement.carrier ↔ x = 0 := by
   constructor
   · intro hx

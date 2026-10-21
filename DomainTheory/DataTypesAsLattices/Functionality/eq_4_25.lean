@@ -21,21 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.curryC_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (4.25).**
 `curry ∘ ((a ⊗ b) ∘→ c) : ((a ⊗ b) ∘→ c) ∘→ (a ∘→ (b ∘→ c))`. -/
 theorem eq_4_25 {a b c : Pomega}

@@ -25,27 +25,10 @@ open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exer
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 
-
-
-
-
-
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 8.21(b), assembled.** `a` a projection of `U` `⟹` `a§` a projection: the `≤ I` half

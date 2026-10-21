@@ -16,19 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_12
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.4 (iii).** `⊗` preserves `⊑`. -/
 theorem tensorR_retractLe {a b a' b' : Pomega}
     (hab : retractLe a a') (hbb : retractLe b b') :

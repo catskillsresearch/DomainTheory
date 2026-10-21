@@ -23,15 +23,6 @@ open Sum Set
 variable {σ₁ σ₂ : Type}
 
 
-
-
-
-
-
-
-
-
-
 theorem autStateCard_le_card (e : SExpr) : autStateCard e ≤ Fintype.card (autState e) := by
   induction e with
   | sigma =>

@@ -15,55 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termShift_isScottContinuou
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem termShift_app (u t : Pomega) :
     funOf (termShift u) t = funOf u (succSet t) :=
   beta (termShift_isScottContinuous u) t

@@ -18,36 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`Π(d)` is a retraction, for any `d`.** -/
 theorem isRetraction_piD (d : ApproximableMap U U) : IsRetraction (piD d) := by
   apply ApproximableMap.ext_of_toElementMap

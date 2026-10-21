@@ -21,15 +21,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UEnt
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem UEnt_bot {u : Finset UToken} (hu : UCon u) : UEnt u uBot :=
   ⟨hu, VEnt.bot⟩

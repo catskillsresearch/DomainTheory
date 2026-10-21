@@ -24,8 +24,6 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 variable {P qChar cons}
 
 
-
-
 variable (P qChar cons)
 
 theorem D_inter_primrec : Nat.Primrec (fun t => D_inter t.unpair.1 t.unpair.2) :=

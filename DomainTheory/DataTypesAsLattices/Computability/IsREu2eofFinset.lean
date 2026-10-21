@@ -21,8 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 theorem IsRE.ofFinset (s : Finset ℕ) : IsRE (s : Set ℕ) := by
   induction s using Finset.induction with
   | empty =>

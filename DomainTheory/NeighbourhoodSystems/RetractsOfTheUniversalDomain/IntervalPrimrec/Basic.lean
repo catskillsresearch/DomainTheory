@@ -111,13 +111,7 @@ open Domain.Recursive
 /-! ### Encoding `List (ℚ × ℚ)` -/
 
 
-
-
-
-
-
 /-! ### `combineIntervals` at the code level -/
-
 
 
 /-- Two lists with the same **elements** present the same set. -/
@@ -177,7 +171,6 @@ theorem presentedIntervals_diffSingleList (L : List (ℚ × ℚ)) (q : ℚ × �
       Set.union_sdiff_distrib]
 
 
-
 /-! ### The code level: `diffOneCode`/`diffSingleCode`/`diffAllCode`/`diffCode` -/
 
 
@@ -218,7 +211,6 @@ theorem presentedIntervals_decodeQPairList_diffSingleCode (accL q : ℕ) :
     presentedIntervals (decodeQPairList (diffSingleCode accL q))
       = presentedIntervals (decodeQPairList accL) \ Set.Ico (decodeRatPair q).1 (decodeRatPair q).2 := by
   rw [presentedIntervals_congr (mem_decodeQPairList_diffSingleCode accL q), presentedIntervals_diffSingleList]
-
 
 
 theorem diffAllStep_eq (acc x : ℕ) : diffAllStep (Nat.pair x (Nat.pair acc 0)) = diffSingleCode acc x := by

@@ -20,12 +20,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
 /-- **Exercise 1.20 — `𝒟'` is positive.** `↑X ∩ ↑Y = ↑(X∩Y)` is a neighbourhood iff it is
 non-empty: a witness `Z ⊆ X ∩ Y` gives `X ∩ Y ∈ 𝒟`; conversely `↑W` always contains `W`. -/
 theorem powerSystem_isPositive : V.powerSystem.IsPositive := by

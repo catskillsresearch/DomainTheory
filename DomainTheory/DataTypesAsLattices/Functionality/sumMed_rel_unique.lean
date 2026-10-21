@@ -18,19 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.sumMed_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Coproduct mediators are unique up to the codomain restricted
 equivalence, which is categorical arrow equality in this presentation. -/
 theorem sumMed_rel_unique {A B C : RestrictedEquiv} {f g h : Pomega}

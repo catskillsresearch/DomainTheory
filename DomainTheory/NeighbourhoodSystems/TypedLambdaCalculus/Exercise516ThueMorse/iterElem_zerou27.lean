@@ -19,12 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
 /-- The base of the iterated bottom element: `f⁰(⊥) = ⊥`. -/
 theorem iterElem_zero' {α : Type*} {V : NeighborhoodSystem α} (f : ApproximableMap V V) :
     f.iterElem 0 = V.bot := by

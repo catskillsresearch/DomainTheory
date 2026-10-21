@@ -216,10 +216,6 @@ theorem isProjection_subU : IsProjection subU :=
   isProjection_conjArrow Sub8_6.isProjection_subApprox
 
 
-
-
-
-
 /-- **`subU` is finitary.** Composes `subUFixIso` with Theorem 8.6(b)(ii)'s `isFinitary_subApprox`. -/
 theorem isFinitary_subU : IsFinitary subU := by
   obtain ⟨β, F, ⟨iso⟩⟩ := Sub8_6.isFinitary_subApprox (E := U)
@@ -292,7 +288,6 @@ theorem toElementMap_piDUncurried (d : ApproximableMap U U) (φ : (funSpace U U)
     toElementMap_proj₁, fst_pair, snd_pair, evalMap_apply]
 
 
-
 theorem toElementMap_piDApply (d f : ApproximableMap U U) (t : U.Element) :
     (piDApply d f).toElementMap t =
       (toApproxMap (jArrow.toElementMap (subU.toElementMap (d.toElementMap
@@ -322,9 +317,6 @@ Mirrors Step 1's `subUFixIso` verbatim, substituting `piD d`/`piU d` for `subApp
 (both are built by the identical `i_→∘(-)∘j_→` conjugation recipe, so every step transfers
 unchanged). Reduces "`piU d` is finitary" to "`piD d` is finitary" — the target of Exercise
 8.27(b)(1) onward — exactly as `isFinitary_subU` was obtained from `isFinitary_subApprox`. -/
-
-
-
 
 
 /-! ## Exercise 8.27(b)(1): reduce finitariness of `piD d` to Theorem 8.5's step-closure formula
@@ -480,8 +472,6 @@ theorem exists_rel_self_subset_of_mem {t : U.Element} (ht : subU.toElementMap t 
   exact ⟨T, hTT, hTt, hTT₀⟩
 
 
-
-
 /-- **`scFamily t`'s principals form a directed family.** Given `i, j`, apply
 `exists_rel_self_subset_of_mem` at the common refinement `i.1 ∩ j.1` (valid via `t.inter_mem`). -/
 theorem scFamily_directed {t : U.Element} (ht : subU.toElementMap t = t) :
@@ -507,7 +497,6 @@ theorem eq_iSupDirected_scPrincipal {t : U.Element} (ht : subU.toElementMap t = 
   · rintro ⟨i, hi⟩
     obtain ⟨hZmem, hTZ⟩ := (U.mem_principal _).mp hi
     exact t.up_mem i.2.2 hZmem hTZ
-
 
 
 /-! ## Discussion: "why does this equation mean that `x` is in the product?"

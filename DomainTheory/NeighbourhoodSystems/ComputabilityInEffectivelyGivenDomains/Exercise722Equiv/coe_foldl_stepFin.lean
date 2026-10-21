@@ -20,12 +20,6 @@ open scoped Computability
 open Sum Set
 
 
-
-
-
-
-
-
 theorem coe_foldl_stepFin (e : SExpr) (w : List Bool) (S : Finset (autState e)) :
     (↑(w.foldl (stepFin e) S) : Set (autState e)) = (toNFA e).evalFrom ↑S w := by
   induction w generalizing S with

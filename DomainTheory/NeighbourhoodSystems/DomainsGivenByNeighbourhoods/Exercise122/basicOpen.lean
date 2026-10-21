@@ -9,8 +9,6 @@ import all Mathlib.Topology.Inseparable
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace NeighborhoodSystem

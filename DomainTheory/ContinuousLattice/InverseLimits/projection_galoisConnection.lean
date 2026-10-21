@@ -11,8 +11,6 @@ import all Mathlib.Order.GaloisConnection.Basic
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Set

@@ -19,8 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.BasicInst12
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Bit-mask code of a finite list of naturals. -/

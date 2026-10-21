@@ -30,8 +30,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 @[simp] theorem isOne_zero : isOne 0 = 0 := by unfold isOne; omega

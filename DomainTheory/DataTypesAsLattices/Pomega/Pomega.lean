@@ -14,8 +14,6 @@ import all Mathlib.Data.Set.Lattice.Disjoint
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, §1.** `Pω = {x | x ⊆ ω}`. -/

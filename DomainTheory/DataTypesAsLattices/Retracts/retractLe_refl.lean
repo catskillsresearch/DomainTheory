@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem retractLe_refl {a : Pomega} (ha : IsRetract a) : retractLe a a :=

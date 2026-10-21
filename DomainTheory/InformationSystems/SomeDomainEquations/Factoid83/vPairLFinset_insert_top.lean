@@ -17,29 +17,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem vPairLFinset_insert_top (u : Finset VToken) :
     vPairLFinset (insert (.top : VToken) u) = vPairLFinset u := by
   ext t; simp only [mem_vPairLFinset, Finset.mem_insert]

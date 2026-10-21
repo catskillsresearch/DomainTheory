@@ -20,14 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
 theorem primrec_qpCombineBop : Nat.Primrec qpCombineBop := by
   have h11 : Nat.Primrec (fun t : ℕ => t.unpair.1.unpair.1) :=
     Nat.Primrec.left.comp Nat.Primrec.left

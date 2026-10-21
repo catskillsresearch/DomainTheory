@@ -16,12 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example78
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- **Example 7.8 (Scott 1981, PRG-19).** The powerset domain `PN` is effectively given. -/
 theorem PN_isEffectivelyGiven : PN.IsEffectivelyGiven := ⟨PNpres⟩
 

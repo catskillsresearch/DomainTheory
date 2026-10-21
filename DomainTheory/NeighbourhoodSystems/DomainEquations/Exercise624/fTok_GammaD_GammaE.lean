@@ -24,16 +24,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **First equation of the double fixed point:** `fTok Γ_D Γ_E = Γ_D`, i.e. `tok(D + (D×E)) = Γ_D`
 for `D = {Γ_D}`, `E = {Γ_E}`. -/
 theorem fTok_GammaD_GammaE : fTok GammaD GammaE = GammaD := by

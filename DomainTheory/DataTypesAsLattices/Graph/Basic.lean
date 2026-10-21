@@ -22,7 +22,4 @@ public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
 end DomainTheory.DataTypesAsLattices

@@ -18,16 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
 theorem mem_combineIntervals {L1 L2 : List (ℚ × ℚ)} {p : ℚ × ℚ} :
     p ∈ combineIntervals L1 L2 ↔ ∃ p1 ∈ L1, ∃ p2 ∈ L2, p = (p1.1 ⊔ p2.1, p1.2 ⊓ p2.2) := by
   unfold combineIntervals

@@ -9,8 +9,6 @@ import all Mathlib.Tactic
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Example13
 
 /-- Tokens for Example 1.3: `Δ = {0, 1, 2}`. -/

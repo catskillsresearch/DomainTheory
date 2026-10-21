@@ -17,14 +17,6 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
 theorem sSup_finiteBasisSups {α : Type u} [CompleteLattice α]
     (d : ℕ → α) (x : Set ℕ) :
     sSup (finiteBasisSups d x) = sSup (d '' x) := by

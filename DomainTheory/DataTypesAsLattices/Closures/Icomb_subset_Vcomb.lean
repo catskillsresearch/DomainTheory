@@ -19,36 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_21
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Icomb_subset_Vcomb : Icomb ⊆ Vcomb := by
   intro p hp
   rcases hp with ⟨n, m, rfl, hm⟩

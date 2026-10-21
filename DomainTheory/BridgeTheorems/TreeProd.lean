@@ -9,8 +9,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

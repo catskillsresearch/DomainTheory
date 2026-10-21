@@ -65,23 +65,10 @@ open NeighborhoodSystem ApproximableMap Exercise326
 /-! ## `𝒰`-nonemptiness, and the three effectively-given constructs -/
 
 
-
-
-
-
-
-
 /-! ## Definition 8.9 — the six fixed computable projection pairs -/
 
 
-
-
-
-
-
 /-! ## Definition 8.9 — the three combinators -/
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

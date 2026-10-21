@@ -23,7 +23,6 @@ variable {αx αa αb : Type*}
   {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 
-
 /-- The defining equation of `S`: `S(F)(G)(x) = F(x)(G(x))`. -/
 theorem Smap_apply (F : (funSpace Vx (funSpace Va Vb)).Element) (G : (funSpace Vx Va).Element)
     (x : Vx.Element) :

@@ -50,14 +50,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise112
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
 /-! ### Finite elements: the principal filters `fin n = ↑(tail n)`. -/
 
 

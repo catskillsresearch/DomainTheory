@@ -20,36 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_one
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plus7_app_tag6 (a0 a1 a2 a3 a4 a5 a6 x : Pomega) :
     funOf (plus7 a0 a1 a2 a3 a4 a5 a6) (tagInj 6 x) = tagInj 6 (funOf a6 x) := by
   rw [plus7_app, plus7Body, tagInj_zero, tagInj_one, dcondSet_ofNat_succ,

@@ -20,19 +20,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : N
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem unit_prod_isomorphic : prod unitSys V₀ ≅ᴰ V₀ := ⟨unitProdD V₀⟩
 
 end DomainTheory.NeighbourhoodSystems

@@ -17,18 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise221
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`𝔹 ⊆ 𝒞`.** Every neighbourhood of `𝔹` is a neighbourhood of `𝒞`. -/
 theorem memB_imp_memC {X : Set Str} (hX : B.mem X) : C.mem X := by
   obtain ⟨σ, rfl⟩ := hX; exact memC_cone σ

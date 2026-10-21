@@ -18,40 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem interStep_isScottContinuous :
     IsScottContinuous interStep := by
   refine graph_const_isScottContinuous

@@ -20,12 +20,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise619
 
 
-
-
-
-
-
-
 theorem NExpr_rooted : NExpr.RootedConst := ⟨nil_mem_Cnat, trivial⟩
 
 end Exercise619

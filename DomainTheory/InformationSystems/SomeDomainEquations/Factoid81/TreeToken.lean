@@ -14,7 +14,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
 universe u
 
 /-- Tokens of the tree system: sum tagging of atoms and product left/right copies. -/

@@ -20,18 +20,7 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
-
-
 section Strict
-
-
-
-
-
-
 
 
 theorem strictRetraction_le_idMap : strictRetraction (D := D) (E := E) ≤ idMap (funSpace D E) := by

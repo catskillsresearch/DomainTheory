@@ -14,15 +14,13 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.p
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 variable {A : Type} [DecidableEq A]
+
+omit [DecidableEq A] in
 
 @[simp] theorem mem_prependN {σ : Strn A} {X : Set (Strn A)} {w : Strn A} :
     w ∈ prependN σ X ↔ ∃ τ, τ ∈ X ∧ w = σ ++ τ := Iff.rfl

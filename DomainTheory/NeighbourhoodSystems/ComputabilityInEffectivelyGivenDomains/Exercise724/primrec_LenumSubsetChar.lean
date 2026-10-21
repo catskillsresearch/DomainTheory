@@ -19,52 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise724
 open NeighborhoodSystem Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_LenumSubsetChar : Nat.Primrec LenumSubsetChar :=
   primrec_isPrefixChar_swap.of_eq fun t => by simp only [LenumSubsetChar]
 

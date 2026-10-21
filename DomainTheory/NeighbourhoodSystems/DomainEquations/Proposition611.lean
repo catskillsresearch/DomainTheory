@@ -62,27 +62,13 @@ variable {α : Type*}
 /-! ### The representing family of neighbourhood-sets. -/
 
 
-
-
-
-
 /-! ### Closure under non-empty intersection. -/
-
-
-
 
 
 /-! ### Closure under directed union (Scott's remark). -/
 
 
-
-
-
 /-! ### The poset of subsystems and its representation. -/
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems.Proposition611

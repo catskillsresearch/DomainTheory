@@ -17,47 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqFun_eq_iUnion_lt
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem dollarStep_fix_app (u z : Pomega) :
     funOf (funOf (fix dollarStep) u) z = seqFun u z := by
   have : funOf (funOf (fix dollarStep) u) z =

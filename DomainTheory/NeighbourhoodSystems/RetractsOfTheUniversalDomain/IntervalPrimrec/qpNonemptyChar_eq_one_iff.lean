@@ -24,44 +24,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem qpNonemptyChar_eq_one_iff (c : ℕ) :
     qpNonemptyChar c = 1 ↔ ∃ e ∈ decodeList c, (decodeRatPair e).1 < (decodeRatPair e).2 := by
   unfold qpNonemptyChar

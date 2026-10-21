@@ -19,41 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.condSet_isScottContinuous_
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem interC_then_else_isScottContinuous (x : Pomega) :
     IsScottContinuous (fun y =>
       condSet x (condSet y (ofNat 0) botElem)

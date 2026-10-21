@@ -21,18 +21,7 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
-
-
 section Strict
-
-
-
-
-
-
 
 
 theorem isRetraction_strictRetraction : IsRetraction (strictRetraction (D := D) (E := E)) := by

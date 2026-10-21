@@ -21,7 +21,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace NeighborhoodSystem
 
 
-
 /-- `optimalFix S` is a fixed point. -/
 theorem optimalFix_isFixed (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Element)
     (hS : S.Nonempty) (hfix : ∀ s ∈ S, f s = s) :

@@ -56,13 +56,4 @@ open DomainTheory.NeighbourhoodSystems
 /-! ### A non-positive system over `Δ = {0,1,2}`. -/
 
 
-
-
-
-
-
-
-
-
-
 end DomainTheory.NeighbourhoodSystems.Exercise119

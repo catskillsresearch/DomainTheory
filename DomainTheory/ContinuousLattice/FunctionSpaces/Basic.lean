@@ -151,7 +151,6 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-universe u v
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
@@ -159,8 +158,6 @@ variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
 
 /-! ### Definition 3.1 -/
-
-
 
 
 /-- Scott's notation `[X → Y]`: continuous maps with the pointwise (product) topology. -/
@@ -183,14 +180,6 @@ theorem continuous (f : ScottMap D D') :
   f.2
 
 
-
-
-
-
-
-
-
-
 /-! ### The complete lattice `[D → D']` (Theorem 3.3, order content)
 
 The pointwise order makes `ScottMap D D'` a partial order; `sSupMaps` gives suprema (pointwise,
@@ -199,26 +188,9 @@ since directed *and* arbitrary suprema of Scott maps are computed pointwise — 
 warning); `completeLatticeOfSup` derives them as `sSup` of lower bounds. -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end ScottMap
 
 /-! ### Theorem 3.3 (core) -/
-
 
 
 /-! ### Theorem 3.3 (`[D → D']` is a continuous lattice)
@@ -228,10 +200,6 @@ Scott's *step functions* `ē[e, e']` are the building blocks: `ē[e,e'](x) = e'`
 otherwise), avoiding any decidability assumption. Each step function is Scott-continuous (the
 way-above set `{x | e ≪ x}` is Scott-open), is way below `f` whenever `e' ≪ f e`, and `f` is the
 supremum of the step functions below it — whence `[D → D']` is a continuous lattice. -/
-
-
-
-
 
 
 /-! ### Theorem 3.3(b): the lattice topology = the topology of pointwise convergence
@@ -244,18 +212,9 @@ lattice: `φ ≪ g` forces `φ ≤ ⊔ᵢ ē[eᵢ,eᵢ']` for finitely many pair
 finite intersection `⋂ᵢ {h | eᵢ' ≪ h eᵢ}` is a pointwise-open neighbourhood of `g` inside `↟φ`. -/
 
 
-
-
 /-! ### Corollary 3.4 -/
 
 /-! ### Proposition 3.5 (currying) -/
-
-
-
-
-
-
-
 
 
 /-! ### Definition 3.6 -/
@@ -271,7 +230,6 @@ end IsContinuousLatticeRetraction
 /-! ### Proposition 3.7 -/
 
 
-
 /-! ### Proposition 3.10 -/
 
 section Proposition310
@@ -279,11 +237,6 @@ section Proposition310
 open Finset
 
 namespace IsContinuousLatticeProjection
-
-
-
-
-
 
 
 theorem directedOn_wayBelow (a : D) : DirectedOn (· ≤ ·) { z | z ≪ a } := by
@@ -300,14 +253,6 @@ Given a map `i : D → D'` satisfying (i)–(iii), Scott's formula (iv)
 variable {i : D → D'}
 
 
-
-
-
-
-
-
-
-
 end Proposition310
 
 /-! ### Proposition 3.8 -/
@@ -317,7 +262,6 @@ section SubspaceExtension
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [CompleteLattice Y]
 
 
-
 end SubspaceExtension
 
 /-! ### Definition 3.11 / Proposition 3.12: the lattice of projections `J_D` -/
@@ -325,16 +269,7 @@ end SubspaceExtension
 section Projections
 
 
-
-
-
-
-
-
-
 namespace Projections
-
-
 
 
 end Projections
@@ -346,21 +281,11 @@ end Projections
 namespace Proposition313
 
 
-
-
-
-
 end Proposition313
 
 /-! ### Proposition 3.14: the fixed-point operator `fix : [D → D] → D` -/
 
 namespace Proposition314
-
-
-
-
-
-
 
 
 @[simp] theorem fixMap_apply (f : ScottMap D D) : (fixMap f : D) = fix f := rfl

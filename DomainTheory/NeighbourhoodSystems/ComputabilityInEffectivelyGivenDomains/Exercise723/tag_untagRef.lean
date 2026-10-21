@@ -25,63 +25,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`untagRef` is a genuine right-inverse of `tag`.** Strong induction on `c`, mirroring
 `tag_surjective`. -/
 theorem tag_untagRef (c : ℕ) : tag (untagRef c).1 (untagRef c).2 = c := by

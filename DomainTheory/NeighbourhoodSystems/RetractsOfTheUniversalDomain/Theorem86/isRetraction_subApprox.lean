@@ -24,27 +24,7 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
 namespace Sub8_6
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **`subApprox` is a retraction**: `subApprox ∘ subApprox = subApprox`, from `subFilter`'s own

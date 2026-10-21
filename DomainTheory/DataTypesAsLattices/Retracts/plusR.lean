@@ -9,8 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (4.10), modified.** The displayed equation writes the

@@ -20,19 +20,17 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.fold
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
+
+omit [DecidableEq α] in
 
 theorem foldl_list_le_of_mem {t : RawLamToken α} {u : List (RawLamToken α)}
     (ht : t ∈ u) :

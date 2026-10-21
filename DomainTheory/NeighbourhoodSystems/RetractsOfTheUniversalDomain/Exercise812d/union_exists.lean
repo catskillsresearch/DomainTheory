@@ -20,59 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace IsComputableUnion
 
 variable {α : Type*} {V : NeighborhoodSystem α} {P : ComputablePresentation V}

@@ -25,53 +25,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 3.3 (The second recursion theorem).**
 The functions `v` and `rec` are primitive recursive and satisfy clauses
 (i)--(iii) of the paper. -/

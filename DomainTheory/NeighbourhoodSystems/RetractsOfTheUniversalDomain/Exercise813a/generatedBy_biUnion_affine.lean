@@ -18,15 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
 theorem generatedBy_biUnion_affine (k : ℕ) (s : Finset ℕ) (hs : ∀ ℓ ∈ s, ℓ < 2 ^ k) :
     GeneratedBy generator (⋃ ℓ ∈ s, affine k ℓ) := by
   induction s using Finset.induction_on with

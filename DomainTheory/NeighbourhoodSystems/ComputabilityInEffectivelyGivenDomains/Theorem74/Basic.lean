@@ -102,9 +102,6 @@ variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
 /-! ## The sum (`+`) half of Theorem 7.4
 
 The sum `𝒟₀ + 𝒟₁` (`Exercise318.lean`, over `Option (α ⊕ β)`) has *three* kinds of neighbourhood —
@@ -122,23 +119,7 @@ variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y →
 variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
 
 
-
-
-
-
 /-! ### Distinctness of the three neighbourhood kinds (uses non-emptiness). -/
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 include h₀ h₁

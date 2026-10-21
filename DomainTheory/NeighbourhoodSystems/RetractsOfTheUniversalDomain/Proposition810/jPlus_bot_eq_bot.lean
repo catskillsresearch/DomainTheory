@@ -22,8 +22,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 theorem jPlus_bot_eq_bot :
     jPlus.toElementMap U.bot = (sum U U U_mem_nonempty U_mem_nonempty).bot :=
   toElementMap_bot_eq_bot_of_comp_eq_idMap jPlus_comp_iPlus

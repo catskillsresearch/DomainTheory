@@ -67,48 +67,4 @@ Table 2, equations (2.1)–(2.28), Theorems 2.1–2.5.
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end DomainTheory.DataTypesAsLattices

@@ -21,11 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
 theorem e_zero : e 0 = ∅ := by
   ext k
   simp [e]

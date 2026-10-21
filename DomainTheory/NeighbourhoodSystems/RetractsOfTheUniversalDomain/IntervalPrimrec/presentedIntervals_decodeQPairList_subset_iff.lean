@@ -18,44 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Subset between `presentedIntervals`-coded sets reduces to non-emptiness of `diffCode`.** -/
 theorem presentedIntervals_decodeQPairList_subset_iff (c1 c2 : ℕ) :
     presentedIntervals (decodeQPairList c1) ⊆ presentedIntervals (decodeQPairList c2) ↔

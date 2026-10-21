@@ -36,20 +36,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem exists_sexNeighborhoodIso :
     Nonempty (SexSys.Element ≃o
       (InfoSysToNeighborhood.toNeighborhoodSystem SexSys).Element) :=

@@ -24,8 +24,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 /-- **`sub` is idempotent: `sub (sub f) = sub f`** (sharper than Scott's stated `sub(f) ⊆
 sub(sub(f))`, Theorem 8.6's projection clause for `sub` itself). Both sides are
 `retractionOfSubsystem` of the *same* subsystem `fixedNbhd f` (`fixedNbhd_sub`), so they coincide

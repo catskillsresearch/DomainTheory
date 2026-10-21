@@ -14,27 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Z_isScottContinuous_right (n : ℕ) (f : Pomega) :
     IsScottContinuous (fun x => Z n f x) := by
   induction n with

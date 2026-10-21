@@ -13,15 +13,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vSys
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 /-- Right-hand side of Scott’s equation `V ≅ V × V`. -/
 def vRhs : InfoSys (ProdToken vSystem vSystem) :=

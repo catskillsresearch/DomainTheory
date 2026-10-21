@@ -15,21 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.2 (The partial ordering theorem).** -/
 theorem theorem_4_2 {a b c : Pomega} :
     (IsRetract a → retractLe a a) ∧

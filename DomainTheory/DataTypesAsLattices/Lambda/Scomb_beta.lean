@@ -16,37 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Scomb_map_cont
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Scomb_beta (f : Pomega) :
     funOf Scomb f =
       graph (fun v => graph (fun x => funOf (funOf f x) (funOf v x))) :=

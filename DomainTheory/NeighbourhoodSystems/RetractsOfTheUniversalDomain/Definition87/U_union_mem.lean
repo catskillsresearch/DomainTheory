@@ -35,30 +35,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`U` is closed under binary union**, as long as the result is non-empty: if `X` and `Y` are
 each either empty or `U`-neighbourhoods, so is `X ∪ Y`. Unlike intersection (Definition 8.7's
 `inter_mem`), this needs no consistency witness — `U`'s neighbourhoods are *by definition* finite

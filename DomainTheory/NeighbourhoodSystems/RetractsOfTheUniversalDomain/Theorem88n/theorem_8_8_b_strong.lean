@@ -25,11 +25,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
-
 /-- **`theorem_8_8_b`, strengthened.** For any effectively given `D` (via `P`), there is a
 *single* computable projection pair `i : D → U`, `j : U → D` directly (no intermediate isomorphic
 copy): compose `isoInj`/`isoProj` (the code-level iso, computable) with `DprimeUCode`'s own projection pair

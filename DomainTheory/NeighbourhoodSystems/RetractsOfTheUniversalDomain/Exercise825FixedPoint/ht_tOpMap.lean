@@ -25,21 +25,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`t` sends finitary projections to finitary projections** (Exercise 8.23's hypothesis `ht`),
 via `tOp_tOpMap` and Proposition 8.10(b)'s `finitaryProjection_arrowComb`. -/
 theorem ht_tOpMap (c : ApproximableMap U U) (hc : IsFinitaryProjection c) :

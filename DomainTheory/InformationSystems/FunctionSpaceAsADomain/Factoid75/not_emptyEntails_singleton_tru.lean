@@ -23,54 +23,13 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-
-
-
 
 
 variable (A : InfoSys α) (B : InfoSys β)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open ApproximableMap
-
-
-
-
-
-
-
-
-
-
 
 
 theorem not_emptyEntails_singleton_tru :

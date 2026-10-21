@@ -23,8 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.triangle_succ
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem exists_triangle_bucket (k : ℕ) :

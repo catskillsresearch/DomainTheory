@@ -14,27 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Rec
 namespace Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem mem_decodeList_flatMapCode {f : ℕ → ℕ} (x c z : ℕ) :
     z ∈ decodeList (flatMapCode f x c) ↔ ∃ y ∈ decodeList c, z ∈ decodeList (f (Nat.pair x y)) := by
   unfold flatMapCode

@@ -24,6 +24,4 @@ powerset.
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 end DomainTheory.DataTypesAsLattices

@@ -21,39 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 3.2 (The enumeration theorem).**
 `RE = {val n | n ∈ ω}`, with `val(0) = G` and
 `val(apply(n)(m)) = val n (val m)`. -/

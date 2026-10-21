@@ -31,15 +31,6 @@ universe u v w
 variable {α : Type u} {β : Type v} {γ : Type w}
 
 
-
-
-
-
-
-
-
-
-
 /-- **Universality transports along isomorphism.** If `W` is universal and `W ≅ᴰ W'`, then `W'` is
 universal too: every countable `D` embeds in `W` (`D ⊴ W`), and `W ⊴ W'` (take `D' := W'` in `⊴`'s
 definition, using `Subsystem.refl` and the given isomorphism), so `trianglelefteq_trans` finishes. -/

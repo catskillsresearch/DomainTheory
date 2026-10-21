@@ -18,30 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representClosure_idem
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem representClosureCode_isClosure
     {α : Type u} [CompleteLattice α] (D : CountablyAlgebraic α) :
     IsClosure (representClosureCode D) := by

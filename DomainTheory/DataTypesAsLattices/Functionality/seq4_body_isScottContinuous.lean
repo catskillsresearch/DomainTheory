@@ -16,36 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seq4_body_isScottContinuous (a b c d : Pomega) :
     IsScottContinuous (fun z =>
       condSet z a

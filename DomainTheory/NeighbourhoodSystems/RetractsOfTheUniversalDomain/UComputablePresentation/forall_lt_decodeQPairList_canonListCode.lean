@@ -17,32 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Every pair in `decodeQPairList (canonListCode c)` is already non-degenerate (this is
 `canonFilterStep`'s whole point). -/
 theorem forall_lt_decodeQPairList_canonListCode (c : ℕ) :

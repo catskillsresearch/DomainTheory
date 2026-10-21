@@ -15,36 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem arrowR_diag_isScottContinuous :
     IsScottContinuous (fun z => arrowR z z) := by
   apply graph_const_isScottContinuous

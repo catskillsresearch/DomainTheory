@@ -23,63 +23,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem untagRef_zero_case {c : ℕ} (h : (unnum c).1 = 0) :
     untagRef c = ([], (unnum c).2) := by
   rw [untagRef]; simp [h]

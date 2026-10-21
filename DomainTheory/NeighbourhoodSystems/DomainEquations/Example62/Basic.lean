@@ -71,40 +71,19 @@ namespace Example62
 /-! ### Prepending a single bit: `bX = {bw' ∣ w' ∈ X}`. -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### `B` is positive (no empty neighbourhood) and its neighbourhood-shape classification. -/
-
 
 
 /-! ### The sum target `B + B` and its inversion lemmas. -/
 
 
-
-
-
 /-! ### The forward half `toBB : |B| → |B + B|`. -/
-
-
 
 
 /-! ### The inverse half `fromBB : |B + B| → |B|`. -/
 
 
-
-
 /-! ### The two halves are mutually inverse. -/
-
 
 
 /-! ### The domain equation `B ≅ B + B`. -/

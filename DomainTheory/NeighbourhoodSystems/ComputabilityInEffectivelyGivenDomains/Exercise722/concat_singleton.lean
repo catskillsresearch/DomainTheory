@@ -21,12 +21,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
 /-- `{a}{b} = {a ++ b}`: concatenation of singletons is the singleton of the concatenation. -/
 theorem concat_singleton (a b : List Bool) : concat {a} {b} = {a ++ b} := by
   ext w

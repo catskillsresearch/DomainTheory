@@ -16,8 +16,6 @@ import all Mathlib.Tactic.Ring
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-- The `k`-th triangular number `T(k) = k(k+1)/2`. -/

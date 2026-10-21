@@ -17,17 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
 theorem listMinFst_le_one (L : List (ℚ × ℚ)) : listMinFst L ≤ 1 := foldl_minFst_le_seed L 1
 
 end DomainTheory.NeighbourhoodSystems

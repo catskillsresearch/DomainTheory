@@ -145,8 +145,6 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 
-
-
 /-! ## Uniqueness of the catamorphism (Exercise 8.21(b), step 1)
 
 Scott's own justification for idempotence-transport ("`g` is unique because the values on finite
@@ -159,8 +157,6 @@ equations at the principal element of each `MemS`-shape. Two small "principal of
 the constructor of principals" identities do the bridging work (`inSharp_principal`,
 `pairSharp_principal`); the general `pair_principal_eq_principal_prodNbhd` (about `prod`, not
 `Dsharp` specifically) underlies the second one. -/
-
-
 
 
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
@@ -220,11 +216,7 @@ theorem gMap_selfComp_eq_of_isRetraction {a : ApproximableMap D D} (ha : IsRetra
 /-! ## `U§ ⊴ U` -/
 
 
-
-
 /-! ## The operator `λa. a§` -/
-
-
 
 
 /-! ## Idempotence of `a§` (Exercise 8.21(b)) -/
@@ -247,10 +239,6 @@ variable (hD₀ : ∀ X, D₀.mem X → X.Nonempty) (hD₁ : ∀ X, D₁.mem X �
   {hD₂ : ∀ X, D₂.mem X → X.Nonempty}
 
 
-
-
-
-
 end DsharpFunctor
 
 /-! ## Exercise 8.21(c): `D_{a§} ≅ (D_a)§`
@@ -266,9 +254,6 @@ finitary projection) into `I ∘ J = a§` — exactly `aSharp`'s own definition,
 `elementIsoOfProjectionPair` (`Proposition810b.lean`) then hands us the isomorphism directly, in
 the same "domain of a projection = its `toElementMap`-fixed-point set" convention already used
 throughout `Proposition810b.lean` for `D_{a+b} ≅ D_a+D_b` etc. -/
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

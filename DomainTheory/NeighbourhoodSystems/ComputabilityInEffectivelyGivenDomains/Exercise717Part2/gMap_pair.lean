@@ -22,21 +22,7 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 namespace Exercise717
 
 
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **`g(pair y z) = v(⟨g y, g z⟩)`.** The product summand folds via `v` applied to the recursive

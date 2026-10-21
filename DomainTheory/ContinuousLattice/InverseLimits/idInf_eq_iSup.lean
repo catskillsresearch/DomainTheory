@@ -26,52 +26,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1972, §4 (functional equation, "the remark following 4.2").** The identity of `D_∞` is
 the directed lub of the approximating projections `rₙ = i_{n∞} ∘ j_{∞n}`:
 `id = ⨆ₙ i_{n∞} ∘ j_{∞n}`. This is the algebraic identity at the heart of Theorem 4.4. -/

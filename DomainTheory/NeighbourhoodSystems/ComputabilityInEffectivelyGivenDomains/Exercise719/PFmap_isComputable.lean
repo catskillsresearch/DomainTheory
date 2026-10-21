@@ -24,9 +24,6 @@ variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
-
-
 /-- **Exercise 7.19 (Scott's first question), packaged.** `ℙf` is a computable map between the
 canonical effective presentations `ℙ𝒟`, `ℙℰ` (Proposition 7.10) whenever `f` is computable. -/
 theorem PFmap_isComputable (P : ComputablePresentation V) (Q : ComputablePresentation W)

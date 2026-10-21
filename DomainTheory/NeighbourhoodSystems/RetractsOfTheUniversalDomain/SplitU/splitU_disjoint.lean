@@ -18,21 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Theorem 8.8(b) Part 4, disjointness**: `splitULeft`/`splitURight` cover disjoint pieces. -/
 theorem splitU_disjoint (n : ℕ) : UX (splitULeft n) ∩ UX (splitURight n) = ∅ := by
   rw [UX_splitULeft, UX_splitURight]

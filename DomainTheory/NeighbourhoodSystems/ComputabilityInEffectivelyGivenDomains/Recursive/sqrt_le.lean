@@ -24,8 +24,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- `sqrt n` squared is `≤ n` (choice-free; mathlib's `Nat.sqrt_le` is classical). -/

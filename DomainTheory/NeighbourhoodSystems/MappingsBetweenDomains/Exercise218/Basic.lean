@@ -54,17 +54,10 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableM
 /-! ### The doubling output `hOut` and its monotonicity. -/
 
 
-
-
-
 /-! ### The inverse output `kOut` and its monotonicity. -/
 
 
-
-
-
 /-! ### The approximable maps `hMap` and `kMap`. -/
-
 
 
 /-! ### `k ∘ h = I`, `k` not injective, `h` not surjective. -/

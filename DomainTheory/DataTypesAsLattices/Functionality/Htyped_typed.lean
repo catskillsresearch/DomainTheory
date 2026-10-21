@@ -17,38 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.typed_apply_retract
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Htyped_typed (τ : LambTerm) :
     typed (Htyped τ) (arrowR envR lambR) :=
   typed_apply_retract

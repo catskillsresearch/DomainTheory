@@ -21,7 +21,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
 /-- **`fixedNbhd a ◁ E`, unconditionally.** The consistency clause is the same monotonicity +
 intersectivity calculation as `fixedNbhd`'s own `inter_mem`, just without needing the extra
 consistency witness `Z`. -/

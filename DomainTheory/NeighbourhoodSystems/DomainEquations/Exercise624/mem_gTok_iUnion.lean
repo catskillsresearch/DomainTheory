@@ -20,9 +20,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
-
-
-
 /-- **Additivity of `gTok`.** Every token of `gTok (⋃ₙ aₙ) (⋃ₙ bₙ)` already lies in some
 `gTok aₙ bₙ` — each token references at most one coordinate. -/
 theorem mem_gTok_iUnion {a b : ℕ → Set Str} {w : Str}

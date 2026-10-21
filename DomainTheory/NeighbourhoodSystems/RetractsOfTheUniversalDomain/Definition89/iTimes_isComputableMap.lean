@@ -22,18 +22,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap Exercise326
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 theorem iTimes_isComputableMap :
     IsComputableMap prodUUPresentation UComputablePresentation iTimes :=
   (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose_spec.2.2.1

@@ -24,10 +24,6 @@ open Topology Set
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
-
 section InjectiveExtension
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] {E : Type*} [CompleteLattice E]

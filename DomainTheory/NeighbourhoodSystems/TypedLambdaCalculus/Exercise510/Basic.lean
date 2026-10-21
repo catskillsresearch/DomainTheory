@@ -118,24 +118,11 @@ variable {α β γ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
 /-! ### The smash collapses bottoms: the strict pairing `⟨x, y⟩⊗`.
 
 The smash identifies all elements that have a `⊥` in either coordinate. We realise this by the *strict
 pairing* `smashPair x y`: when both `x, y` are non-`⊥` it is the genuine pair `⟨x, y⟩`, and when either
 is `⊥` it collapses to `⊥` (`smashPair_eq_bot_iff`). Every element of `|𝒟₀ ⊗ 𝒟₁|` arises this way. -/
-
-
-
-
-
-
-
-
 
 
 /-! ### The strict function space `(𝒟₀ →⊥ 𝒟₁)`.
@@ -150,34 +137,6 @@ crucial point — making `|𝒟₀ →⊥ 𝒟₁|` consist *exactly* of the str
 `[Δ₀, Y]` with `Y ≠ Δ₁` contains *no* strict map, so it is empty, hence never a neighbourhood; thus no
 filter can force a non-strict value at `⊥`. The representation `strictFunEquiv` then mirrors
 Theorem 3.10. -/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-! ### The adjunction `(𝒟₀ →⊥ (𝒟₁ →⊥ 𝒟₂)) ≅ ((𝒟₀ ⊗ 𝒟₁) →⊥ 𝒟₂)`.
@@ -195,18 +154,7 @@ the master output — exactly the gluing the smash performs. -/
 variable {V₂ : NeighborhoodSystem γ}
 
 
-
-
-
-
-
-
-
-
 /-! ### The roundtrip identities and the adjunction isomorphism. -/
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems.Exercise510

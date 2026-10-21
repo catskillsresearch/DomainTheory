@@ -15,50 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem dcondSet_same_ofNat (n : ℕ) (x : Pomega) :
     dcondSet (ofNat n) x x = x :=
   match n with

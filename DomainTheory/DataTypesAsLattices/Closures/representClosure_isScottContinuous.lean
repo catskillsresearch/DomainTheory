@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representClosure_mono
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem representClosure_isScottContinuous

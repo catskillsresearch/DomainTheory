@@ -17,50 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.predSet_eq_ofNat_of_no_z
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, after (4.7).** `int(u) = ⊤` when `u` is not `⊥` and not a
 singleton integer. -/
 theorem intR_top_of_nonsingleton :

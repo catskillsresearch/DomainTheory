@@ -23,28 +23,7 @@ namespace Exercise627
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 
-
-
-
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- If a system's only neighbourhood is its master, its element lattice is a single point (`⊥`). -/

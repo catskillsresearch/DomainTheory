@@ -71,7 +71,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 /-! ### Strict starting functions (`λx. cond(zero x, x, x)`). -/
 
 
-
 /-! ### Primitive recursion.
 
 Given `f : N → N` and `g : N × N × N → N` (with `N³` modelled as `N × (N × N)`), the primitive
@@ -84,14 +83,9 @@ The recursion bodies live over `prod F Q` with `F = funSpace (N×N) N` (the unkn
 (the argument pair). We name the four selectors once to keep the body terms readable. -/
 
 
-
-
-
 section PrimRec
 
 variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)
-
-
 
 
 end PrimRec
@@ -104,8 +98,6 @@ Given `f : N × N → N`, the minimization `h̄(m) = μn. f(n, m) = 0` is obtain
 section Mu
 
 variable (f : ApproximableMap (prod N N) N)
-
-
 
 
 end Mu

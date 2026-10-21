@@ -80,68 +80,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise724
 open NeighborhoodSystem Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 
 variable {β γ δ : Type*}

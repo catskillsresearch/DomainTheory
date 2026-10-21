@@ -23,8 +23,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
 /-- `pfix τ` is a fixed point of `recOp τ` (pointwise: `τ(x, pfix τ x) = pfix τ x`). -/
 theorem pfix_isFixed (τ : ApproximableMap (prod V V) V) (x : V.Element) :
     τ.toElementMap (pair x ((pfix τ).toElementMap x)) = (pfix τ).toElementMap x := by

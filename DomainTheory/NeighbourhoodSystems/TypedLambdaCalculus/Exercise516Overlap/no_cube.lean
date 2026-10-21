@@ -17,10 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
 /-- **The Thue–Morse sequence is cube-free.** A cube of period `p ≥ 1` (the factor `a·a·a` with
 `|a| = p`) is in particular an overlap, so none exists. -/
 theorem no_cube (i p : ℕ) (hp : 1 ≤ p) :

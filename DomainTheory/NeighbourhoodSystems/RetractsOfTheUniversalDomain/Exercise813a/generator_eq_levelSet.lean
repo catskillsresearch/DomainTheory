@@ -18,12 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- Every `generator i` is a `V`-neighbourhood: `generator i = levelSet (i+1) M` for the bitmask
 `M` selecting exactly the residues `< 2^(i+1)` whose own bit `i` is set. -/
 theorem generator_eq_levelSet (i : ℕ) :

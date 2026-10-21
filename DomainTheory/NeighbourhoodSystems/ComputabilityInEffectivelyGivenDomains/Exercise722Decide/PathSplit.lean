@@ -25,7 +25,6 @@ variable {σ : Type}
 variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
 
 
-
 structure PathSplit {s t : σ} {x : List Bool} (p : M.Path s t x) (n : ℕ) (hn : n ≤ x.length) where
   u : σ
   hp : M.Path s u (x.take n)

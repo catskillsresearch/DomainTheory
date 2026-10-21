@@ -19,8 +19,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
 theorem le_topElement (h : sys.AllConsistent) (x : sys.Element) :
     x ≤ sys.topElement h := fun _ _ => trivial
 

@@ -23,34 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plotkin_function_re
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem theorem_7_4_finite (z : Pomega)
     (hη : ∀ f, funOf z f = funOf z (graph (fun y => funOf f y)))
     (hz : ∀ A, (arrowE (arrowE A A) (arrowE A A)).mem z)

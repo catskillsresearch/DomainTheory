@@ -23,28 +23,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`orUpTo`'s bit-by-bit characterization.** Bit `k` of `orUpTo n m N` is set exactly when some
 `a < N` is a set bit of `n` with `a ≤ k` and `k - a` a set bit of `m`. -/
 theorem testBit_orUpTo (n m : ℕ) : ∀ N k,

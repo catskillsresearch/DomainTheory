@@ -18,35 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `canonCode c` is never the `0` (empty-list) code. -/
 theorem canonCode_ne_zero (c : ℕ) : canonCode c ≠ 0 := by
   intro h

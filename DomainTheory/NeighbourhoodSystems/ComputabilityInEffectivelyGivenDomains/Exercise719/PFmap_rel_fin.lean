@@ -23,7 +23,6 @@ variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
 /-- **Exercise 7.19 — Scott's displayed formula.** On generators (finite lists of down-sets)
 `(ℙf).rel (⋃_{X∈L₁} ↓X) (⋃_{Y∈L₂} ↓Y) ↔ ∀ X ∈ L₁, ∃ Y ∈ L₂, X f Y`, exactly Scott's
 `∀ i < n ∃ j < m. Xᵢ f Yⱼ`. (`→` reads off the generators `Xᵢ`; `←` extends to all members by `mono`

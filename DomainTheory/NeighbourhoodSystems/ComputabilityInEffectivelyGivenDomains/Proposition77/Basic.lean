@@ -107,14 +107,10 @@ namespace Proposition77
 /-! ### A left bound for `Nat.unpair` (local, to keep `Recursive.lean`'s cache warm). -/
 
 
-
-
 /-! ### `Nat.pair` is strictly monotone on strict componentwise order.
 
 Needed so the node∩node recursive child code `pair (a.1) (b.1)` is `< pair (2a+2) (2b+2)`, hence
 present in the memo table. Proof via `max² ≤ pair _ _ < (max+1)²`. -/
-
-
 
 
 /-! ### The enumeration `V : ℕ → 𝒫(List Bool × α)`. -/
@@ -123,12 +119,7 @@ present in the memo table. Proof via `max² ≤ pair _ _ < (max+1)²`. -/
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
 /-! ### `mem_X`, `surj`, nonemptiness. -/
-
-
 
 
 /-! ### Per-parity intersection identities.
@@ -144,21 +135,12 @@ These are the choice-free heart of Scott's "the reader has to check that 7.1(i)�
   are strictly smaller (case (3)). -/
 
 
-
-
-
-
-
 /-! ### `MemS`-subset inversions and the consistency-via-subset equivalences.
 
 A nonempty `D^§`-neighbourhood contained in `embZero Y` must itself be an `embZero` (its tokens have
 empty `{1,2}`-path); contained in `embPair A B`, an `embPair`. These give the bridge between Scott's
 consistency relation on `D^§` (`∃ l, V_l ⊆ V_n ∩ V_m`) and the recursive sub-checks: `embZero`
 consistency reduces to `D`'s, and `embPair` consistency to the two components'. -/
-
-
-
-
 
 
 /-! ### A primitive-recursive course-of-values memo evaluator.
@@ -172,23 +154,6 @@ built by a single `Nat.Primrec.prec` whose step is a cons. To read `g v` for `v 
 we look up position `w-1-v` of the reverse table via `listGet`. All choice-free. -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### The combined `D^§` decider step (`eq`/`cons`/`inter` triple).
 
 All three `D^§` deciders recurse the same way on `(i, j)`, so we compute them together as a packed
@@ -199,16 +164,7 @@ The combined index is `w = Nat.pair i j`; in the node∩node case the children's
 the memo table by `listGet`. -/
 
 
-
-
 variable (fcons feq finter : ℕ → ℕ)
-
-
-
-
-
-
-
 
 
 /-! ### Correctness of the decider step (strong induction on the combined code).
@@ -218,8 +174,6 @@ the packed triple `gOf (dsharpStep …)` correctly decides `D^§`-consistency, c
 `D^§`-intersection index, and decides `D^§`-equality. Proved together by strong induction on the
 combined code `Nat.pair i j`; the node∩node case recurses to strictly smaller codes (present in the
 memo table by `pair_lt_pair_of_lt`). -/
-
-
 
 
 /-! ### Proposition 7.7: `D^§` is effectively given.

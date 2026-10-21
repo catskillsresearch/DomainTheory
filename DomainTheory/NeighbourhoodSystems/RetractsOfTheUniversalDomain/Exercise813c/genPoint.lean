@@ -13,8 +13,6 @@ import all Mathlib.Topology.Clopen
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 /-- The `i`-th coordinate-projection basic clopen of Cantor space `ℕ → Bool`: the literal

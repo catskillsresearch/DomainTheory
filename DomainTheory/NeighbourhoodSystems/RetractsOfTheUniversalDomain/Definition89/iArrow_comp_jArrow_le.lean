@@ -21,20 +21,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap Exercise326
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem iArrow_comp_jArrow_le : iArrow.comp jArrow ≤ idMap U :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose_spec.choose_spec.2.1
 

@@ -85,7 +85,6 @@ library, not of Scott’s argument; the constructive core of the formalization i
 unaffected.
 -/
 
-universe u
 
 namespace DomainTheory.InformationSystems
 
@@ -104,24 +103,11 @@ attribute [instance] InfoSysObj.decEq
 namespace InfoSysObj
 
 
-
-
 end InfoSysObj
 
 /-! ## Diagrammatic composition (`f.acomp g` = apply `f` then `g` = `f ≫ g`) -/
 
 namespace ApproximableMap
-
-
-
-
-
-
-
-
-
-
-
 
 
 end ApproximableMap
@@ -134,17 +120,6 @@ open ApproximableMap
 attribute [instance] instCategoryInfoSysObj
 
 /-! ## Finite products -/
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem productMapToTensorMap_toElement (A Y Y' : InfoSysObj.{u})
@@ -163,25 +138,10 @@ theorem productMapToTensorMap_toElement (A Y Y' : InfoSysObj.{u})
   rfl
 
 
-
-
-
 /-! ## Braided curry (Mathlib convention) -/
 
 
-
-
-
-
-
 /-! ## Left naturality of uncurry / MonoidalClosed -/
-
-
-
-
-
-
-
 
 
 noncomputable instance (A : InfoSysObj.{u}) : Closed A where

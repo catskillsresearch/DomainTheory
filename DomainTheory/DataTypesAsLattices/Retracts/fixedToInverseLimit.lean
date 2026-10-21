@@ -19,8 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- A point of the fixed-point range determines its sequence of finite

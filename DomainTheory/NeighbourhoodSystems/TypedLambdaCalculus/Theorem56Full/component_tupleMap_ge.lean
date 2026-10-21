@@ -31,23 +31,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Coordinates `≥ n` of the tuple are `⊥`. -/
 theorem component_tupleMap_ge : ∀ (n : ℕ) (gs : Fin n → ApproximableMap 𝒩 N) (z : 𝒩.Element)
     (i : ℕ), n ≤ i → component ((tupleMap n gs).toElementMap z) i = N.bot

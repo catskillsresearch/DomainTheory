@@ -22,13 +22,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Tc_map_val
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 namespace Example62C
 

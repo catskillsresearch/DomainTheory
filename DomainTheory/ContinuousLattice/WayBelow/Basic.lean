@@ -47,6 +47,4 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
 end DomainTheory.ContinuousLattice

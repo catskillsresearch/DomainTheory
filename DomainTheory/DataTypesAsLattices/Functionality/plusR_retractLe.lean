@@ -16,25 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_13
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.5 (iii).** `⊕` preserves `⊑`. -/
 theorem plusR_retractLe {a b a' b' : Pomega}
     (hab : retractLe a a') (hbb : retractLe b b') :

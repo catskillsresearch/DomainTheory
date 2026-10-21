@@ -18,15 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise421
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
-
-
-
-
-
-
-
-
-
 theorem mulOp_monotone (n : ℕ) : Monotone (mulOp n) := by
   rintro u v huv k (hk | ⟨m, hm, rfl⟩)
   · exact Or.inl hk

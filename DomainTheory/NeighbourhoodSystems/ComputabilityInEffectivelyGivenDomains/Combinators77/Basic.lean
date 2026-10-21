@@ -55,7 +55,6 @@ variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 /-! ### `λx. x^§ : D → D^§` (Example 6.1's `inSharp`). -/
 
 
-
 /-! ### `proj₀ : D^§ → D^§` (first projection of the pair part). -/
 
 

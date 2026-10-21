@@ -21,11 +21,7 @@ section FixedPoints
 variable {L : Type*} [CompleteLattice L]
 
 
-
-
 variable {e : L → L}
-
-
 
 
 /-- **Fixed points of a Scott-continuous idempotent form a continuous lattice.** Combine the

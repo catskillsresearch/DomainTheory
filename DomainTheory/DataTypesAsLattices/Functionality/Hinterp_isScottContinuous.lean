@@ -16,37 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Hinterp_isScottContinuous (τ : LambTerm) :
     IsScottContinuous (Hinterp τ) := by
   induction τ with

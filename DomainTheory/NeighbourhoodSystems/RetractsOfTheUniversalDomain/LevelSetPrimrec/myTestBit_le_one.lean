@@ -18,15 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
 theorem myTestBit_le_one (m ℓ : ℕ) : myTestBit m ℓ ≤ 1 := by
   unfold myTestBit
   rcases Nat.mod_two_eq_zero_or_one (myDivPow2 m ℓ) with h | h <;> omega

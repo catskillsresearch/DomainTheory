@@ -17,29 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`decodeRat_ratMidCode`, un-paired**: lets callers apply it to an arbitrary code `e`
 (typically itself obtained by decoding a list, e.g. `firstElemCode`) without first having to
 rewrite `e` as `Nat.pair e.unpair.1 e.unpair.2` in the ambient goal — doing that rewrite directly

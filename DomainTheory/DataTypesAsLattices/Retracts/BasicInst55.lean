@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 instance (F : Pomega → Pomega) : PartialOrder (RetractInverseLimit F) where

@@ -21,45 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.typed_comp
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.3 (The function space theorem).** -/
 theorem theorem_4_3 {a b a' b' c : Pomega}
     (ha : IsRetract a) (hb : IsRetract b) (_ha' : IsRetract a')

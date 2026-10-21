@@ -20,13 +20,7 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
-
-
 section Strict
-
 
 
 theorem toApproxMap_injective {a b : (funSpace D E).Element} (h : toApproxMap a = toApproxMap b) :

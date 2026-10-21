@@ -17,10 +17,7 @@ public import DomainTheory.ContinuousLattice.Injective.isInjectiveSpace_sierpins
 @[expose] public section
 
 
-
 open Topology TopologicalSpace
-
-universe u v w
 
 
 theorem proposition_1_2 : IsInjectiveSpace.{u} Sierpinski :=

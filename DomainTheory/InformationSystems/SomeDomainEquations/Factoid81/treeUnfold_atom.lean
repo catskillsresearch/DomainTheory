@@ -18,85 +18,11 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
-universe u
-
-
-
 
 variable {α : Type*} [DecidableEq α]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable (A : InfoSys α)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem treeUnfold_atom (x : α) : treeUnfold A (.atom x) = SumToken.left x := rfl

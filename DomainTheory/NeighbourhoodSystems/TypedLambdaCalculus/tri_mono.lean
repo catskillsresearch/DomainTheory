@@ -20,8 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.tri_le_succ
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-- `T` is monotone (proved by hand on `≤` to stay choice-free). -/

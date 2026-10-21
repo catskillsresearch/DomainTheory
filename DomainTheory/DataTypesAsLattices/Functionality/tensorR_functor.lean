@@ -16,19 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_12
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.4 (iv).** `⊗` is a functor on maps. -/
 theorem tensorR_functor {a b a' b' f f' : Pomega}
     (_ha : IsRetract a) (_hb : IsRetract b)

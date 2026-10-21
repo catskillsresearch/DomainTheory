@@ -53,9 +53,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
 /-! ### The least solution. -/
 
 

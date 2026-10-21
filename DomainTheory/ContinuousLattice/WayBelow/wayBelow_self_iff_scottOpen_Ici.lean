@@ -23,8 +23,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
 /-- **Scott 1972, Proposition 2.2(vi).** `x ≪ x` iff the principal up-set `{z | x ⊑ z}` (i.e.
 `Set.Ici x`) is Scott-open. This characterizes the *compact* (finite, isolated) elements:
 `x` is compact exactly when `↑x` is open. -/

@@ -21,62 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem e_combinatory (j : ℕ) : IsCombinatory (e j) := by
   simpa [e_eq_unionBits] using unionBits_combinatory (bitList j)
 

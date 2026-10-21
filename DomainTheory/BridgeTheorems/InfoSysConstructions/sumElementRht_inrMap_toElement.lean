@@ -18,8 +18,6 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions.right_bot_mem_inr
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

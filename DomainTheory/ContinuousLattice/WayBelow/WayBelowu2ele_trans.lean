@@ -23,8 +23,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
 /-- **Scott 1972, Proposition 2.2(iv).** `x ≤ y` and `y ≪ z` imply `x ≪ z` (monotone on the
 left). -/
 theorem WayBelow.le_trans {x y z : D} (hxy : x ≤ y) (h : y ≪ z) : x ≪ z := by

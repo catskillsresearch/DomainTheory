@@ -16,8 +16,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.acc
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise123

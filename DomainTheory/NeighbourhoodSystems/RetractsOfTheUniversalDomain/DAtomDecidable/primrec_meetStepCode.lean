@@ -24,17 +24,7 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
 variable (cons : ℕ → ℕ)
-
-
-
-
-
-
 
 
 theorem primrec_meetStepCode (hconsp : Nat.Primrec cons) : Nat.Primrec (meetStepCode P cons) := by

@@ -24,8 +24,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
 /-- Auxiliary: the up-set `{z | x ≪ z}` is itself Scott-open. (This is *not* Scott's
 Proposition 2.2(vi) — see `wayBelow_self_iff_scottOpen_Ici` for that — but it is a standard
 and useful fact, the openness of the sets `↟x`.) -/

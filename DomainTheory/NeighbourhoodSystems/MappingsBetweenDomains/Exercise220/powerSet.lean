@@ -9,8 +9,6 @@ import all Mathlib.Data.Set.Finite.Basic
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise220
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem

@@ -17,15 +17,11 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.E
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 

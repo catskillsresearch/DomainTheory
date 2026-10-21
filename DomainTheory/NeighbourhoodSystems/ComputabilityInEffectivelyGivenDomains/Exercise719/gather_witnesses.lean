@@ -23,10 +23,6 @@ variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
-
-
-
 /-- **Choice-free witness gathering (single list).** From `∀ X ∈ L₁, ∃ Y ∈ L₂, f.rel X Y`, build one
 list `M` of `(X, Y)` pairs, each drawn from `L₁ × L₂` and `f`-related, that *covers* `L₁`: every
 `X ∈ L₁` has a matching `Y` with `(X, Y) ∈ M`. (The one-map analogue of `comp_witness`.) -/

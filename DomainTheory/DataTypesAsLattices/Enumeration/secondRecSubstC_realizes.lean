@@ -20,48 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem secondRecSubstC_realizes : Realizes secondRecSubstC secondRecSubst :=
   (primrec_realized (Primrec.nat_iff.mp primrec_secondRecSubst)).choose_spec.2
 

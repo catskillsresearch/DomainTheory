@@ -16,11 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe u
-
-
-
-
 
 /-- `toStrictMap ∘ toStrictFilter = id` (the right inverse of the strict-function-space
 representation, Exercise 5.10). -/

@@ -22,11 +22,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.n
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -37,6 +33,8 @@ section SumSig
 universe v
 
 variable {β : Type v} {γ : Type v}
+
+omit [DecidableEq A] in
 
 @[simp] theorem tu_not_mem_jc {a : A} {X : Set β} : (tu : SigTok A β) ∉ jc a X := by
   rintro ⟨t, heq, -⟩; exact absurd heq (by simp [tu, tc])

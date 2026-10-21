@@ -18,8 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.mem_botElem
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 @[simp] theorem mem_topElem (n : ℕ) : n ∈ topElem := Set.mem_univ n

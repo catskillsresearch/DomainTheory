@@ -19,8 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.mem_e
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem le_two_pow (k : ℕ) : k ≤ 2 ^ k := by

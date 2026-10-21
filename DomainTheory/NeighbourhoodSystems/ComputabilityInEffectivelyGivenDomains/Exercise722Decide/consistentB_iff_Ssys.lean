@@ -24,31 +24,7 @@ open Sum Set
 variable {σ₁ σ₂ : Type}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 variable {σ : Type}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Definition 7.1 (ii) for encoded neighbourhoods:** when `denote a`, `denote b ∈ S`,

@@ -21,8 +21,6 @@ universe u
 variable {α : Type u} {D E : NeighborhoodSystem α}
 
 
-
-
 namespace Subsystem
 
 variable {h : D ◁ E}

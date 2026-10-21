@@ -68,26 +68,10 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 /-! ### Tails, singletons, and the shift. -/
 
 
-
-
-
-
-
-
 /-! ### The neighbourhood system `C₁`. -/
 
 
-
-
-
-
-
-
-
-
-
 /-! ### Elements: `1ⁿ` (total) and `1ⁿ⊥` (partial). -/
-
 
 
 /-! ### The successor `x ↦ 1x`. -/

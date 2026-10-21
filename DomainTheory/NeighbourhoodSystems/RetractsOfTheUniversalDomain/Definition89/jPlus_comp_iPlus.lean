@@ -21,16 +21,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap Exercise326
 
 
-
-
-
-
-
-
-
-
-
-
 theorem jPlus_comp_iPlus : jPlus.comp iPlus = idMap _ :=
   (theorem_8_8_b_strong sumUUPresentation).choose_spec.choose_spec.1
 

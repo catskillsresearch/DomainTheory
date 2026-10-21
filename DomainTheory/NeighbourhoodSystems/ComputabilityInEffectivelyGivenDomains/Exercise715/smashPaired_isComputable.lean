@@ -20,12 +20,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 
 
-
-
-
-
-
-
 open Exercise510
 
 section Smash
@@ -37,24 +31,7 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {P₀ P₁}
 
 
-
-
-
-
-
 variable (P₀ P₁)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **The strict pairing `⟨a, b⟩⊗` is computable.** `Zₙ ⟨a,b⟩⊗ (smashEnum m) ↔` either `m` improper

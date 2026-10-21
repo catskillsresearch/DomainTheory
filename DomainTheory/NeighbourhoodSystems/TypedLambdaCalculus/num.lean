@@ -17,8 +17,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.tri
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-- The pairing function `num n m = (n+m)(n+m+1)/2 + m` (Cantor's diagonal enumeration). -/

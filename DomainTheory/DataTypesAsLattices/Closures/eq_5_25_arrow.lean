@@ -17,38 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_25
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem eq_5_25_arrow (hI : Icomb ⊆ arrowR dEq dEq) :
     dEq = arrowR dEq dEq := by
   apply subset_antisymm

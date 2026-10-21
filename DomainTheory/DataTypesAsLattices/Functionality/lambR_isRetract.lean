@@ -17,36 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.lambF_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.6 applied to (4.39).** -/
 theorem lambR_isRetract : IsRetract lambR :=
   (theorem_4_6 lambF_isScottContinuous (fun _a ha =>

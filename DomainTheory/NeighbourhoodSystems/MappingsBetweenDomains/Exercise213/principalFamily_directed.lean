@@ -24,7 +24,6 @@ variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Neigh
 namespace NeighborhoodSystem
 
 
-
 theorem principalFamily_directed (x : V₀.Element) :
     ∀ i j : {X : Set α // x.mem X}, ∃ k : {X : Set α // x.mem X},
       V₀.principal (x.sub i.2) ≤ V₀.principal (x.sub k.2) ∧

@@ -16,13 +16,11 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Pro
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.inMapu2081_toElementMap_reaches_right
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
-universe u v
+universe u
 
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 

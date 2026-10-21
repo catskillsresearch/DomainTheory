@@ -18,12 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
 theorem mem_decodeQPairList (c : ℕ) (p : ℚ × ℚ) :
     p ∈ decodeQPairList c ↔ ∃ e ∈ decodeList c, p = decodeRatPair e := by
   unfold decodeQPairList; rw [List.mem_map]; simp [eq_comm]

@@ -14,8 +14,6 @@ public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun_coe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Set

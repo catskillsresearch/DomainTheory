@@ -19,8 +19,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.PN_orderIso_
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 variable {α β : Type*}

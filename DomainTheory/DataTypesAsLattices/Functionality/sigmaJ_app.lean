@@ -16,30 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_isScottConti
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sigmaJ_app (j : ℕ) (x : Pomega) :
     funOf (graph (sigmaJ j)) x = sigmaJ j x := by
   simpa using congrArg (fun g => g x) (theorem_1_2_i (sigmaJ_isScottContinuous j))

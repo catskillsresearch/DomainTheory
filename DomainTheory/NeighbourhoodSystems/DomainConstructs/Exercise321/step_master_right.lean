@@ -18,12 +18,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
-
 /-- **Exercise 3.21.** If the output is the master, `[Y, Δ₂]` is the whole function space. -/
 theorem step_master_right (Y : Set α) (hY : V₀.mem Y) :
     (step Y V₁.master : Set (ApproximableMap V₀ V₁)) = Set.univ := by

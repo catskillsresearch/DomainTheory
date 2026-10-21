@@ -248,7 +248,6 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
 /-! ### `interList` — the intersection of a finite list of neighbourhoods (with a base). -/
 
 
-
 theorem interList_cons (base : Set β) (Y : Set β) (M : List (Set β)) :
     interList base (Y :: M) = Y ∩ interList base M := rfl
 
@@ -314,9 +313,6 @@ builds the least map `leastMap`; its consistency hypothesis is discharged input-
 `P₀`, so it stays `⊆ {propext, Quot.sound}`. -/
 
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-
 
 
 /-- **Proposition 3.9(i) (Scott 1981, PRG-19), over coded entry-lists — choice-free.** The
@@ -475,7 +471,6 @@ universal statement over sublists is a *bounded* universal statement over bitmas
 recursively decidable (`RecDecidable.bForall`). All choice-free. -/
 
 
-
 theorem bitSelect_cons (e : ℕ) (L : List ℕ) (b : ℕ) :
     bitSelect (e :: L) b =
       if b % 2 = 1 then e :: bitSelect L (b / 2) else bitSelect L (b / 2) := rfl
@@ -607,7 +602,6 @@ theorem consUpd_foldl_spec (projFn fc : ℕ → ℕ)
             hfce
     · rw [ite_eq_right hb, show b % 2 = 0 by omega, selectFn_zero]
       exact ih (b / 2) a
-
 
 
 theorem consCharAt_spec (projFn fc : ℕ → ℕ)
@@ -773,14 +767,6 @@ fold one code onto another (prepending each entry), giving `appendCode a b` whos
 duplicate-invariant), this codes `X a ∩ X b` regardless of the reversal. All choice-free. -/
 
 
-
-
-
-
-
-
-
-
 /-! ### Milestone 5 — the function-space inclusion characterization (choice-free).
 
 `stepFun La ⊆ stepFun Lb ⟺ ∀ (X',Y') ∈ Lb, ⋂{Y ∣ X' ⊆ X, (X,Y)∈La} ⊆ Y'` (Scott, via the least map
@@ -788,9 +774,6 @@ duplicate-invariant), this codes `X a ∩ X b` regardless of the reversal. All c
 needs `f.rel X' (interYs Δ₁ La X')` for arbitrary `f ∈ stepFun La` — the library `rel_interYs` proves
 this *classically* (`by_cases X' ⊆ Xᵢ`), so we **re-prove it choice-free** for the presented list
 `funListOf el`, replacing the case split by `P₀.incl_computable`'s recursive decidability (`.em`). -/
-
-
-
 
 
 /-! ### Milestone 5b — the function-space inclusion / equality / consistency deciders.
@@ -801,7 +784,6 @@ function-space presentation. Two small generic facts first; then the `interYs`-i
 deciders themselves. All choice-free. -/
 
 
-
 /-! #### The `interYs`-index fold: a conditional `inter`-chain over `𝒟₁`.
 
 For a presented list `funListOf (decodeList a)` and a `𝒟₀`-index `k`, the set
@@ -810,18 +792,6 @@ entries `e` of `decodeList a` whose input dominates `X₀_k` (`X₀_k ⊆ X₀_{
 it by folding `P₁.inter` over `decodeList a`, intersecting at an entry exactly when the (decidable)
 inclusion test fires. `condSet k A el` is the running set; `interYsFoldl_spec` is the index
 correctness (when the result is consistent), mirroring `interFrom_eq_of_foldl`. -/
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-! #### A concrete `{0,1}` characteristic function for function-space consistency.
@@ -837,7 +807,6 @@ theorem selectFn_one_iff_imp {A B : ℕ} (hA : A ≤ 1) :
   rcases (show A = 0 ∨ A = 1 by omega) with h | h <;> subst h
   · rw [selectFn_zero]; simp
   · rw [selectFn_one]; simp
-
 
 
 theorem funConsChar_spec (fc0 fc1 : ℕ → ℕ)
@@ -879,42 +848,13 @@ theorem primrec_funConsChar (fc0 fc1 : ℕ → ℕ) (hfc0p : Nat.Primrec fc0) (h
 /-! #### A generic list-`AND` and the `stepFun`-inclusion decider `subChar`. -/
 
 
-
-
-
-
-
-
 /-! #### The trivial test: `stepFun (funListOf el) = univ ⟺ every output is `Δ₁`. -/
-
-
-
-
-
-
-
 
 
 /-! #### The function-space enumeration `Xenum` and its consistency-pair decider. -/
 
 
-
-
-
-
-
-
-
-
-
-
 /-! #### The equality decider `eqEnumChar` and Scott's relation (i) `interEqChar`. -/
-
-
-
-
-
-
 
 
 /-! ### Milestone 6 — assembling the function-space presentation.
@@ -924,7 +864,6 @@ theorem primrec_funConsChar (fc0 fc1 : ℕ → ℕ) (hfc0p : Nat.Primrec fc0) (h
 (the empty step-list, whose neighbourhood is `univ = Δ`). The concrete characteristic functions are
 obtained choice-free from the component presentations' relations *inside* the `Nonempty` proof of
 `funSpace_isEffectivelyGiven` (extraction into a `Prop` goal needs no choice). -/
-
 
 
 /-- **Theorem 7.5 (existence part) (Scott 1981, PRG-19).** If `𝒟₀` and `𝒟₁` are effectively given,

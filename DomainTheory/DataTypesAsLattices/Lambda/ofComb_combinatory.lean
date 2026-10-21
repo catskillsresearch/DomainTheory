@@ -14,38 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem ofComb_combinatory (c : Comb) (ρ : ℕ → Pomega)
     (hρ : ∀ i, IsCombinatory (ρ i)) :
     IsCombinatory (ofComb c ρ) := by

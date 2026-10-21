@@ -20,14 +20,6 @@ namespace Exercise824
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
 theorem pair_bot_bot : pair ((funSpace E E).bot) ((funSpace E E).bot) = (PairSpace (E := E)).bot := by
   apply Element.ext
   intro W

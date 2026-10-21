@@ -19,8 +19,6 @@ public import DomainTheory.BridgeTheorems.ScottMapBridgeInst9
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closure_le_element
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

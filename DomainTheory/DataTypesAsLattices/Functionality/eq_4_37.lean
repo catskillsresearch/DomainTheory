@@ -15,25 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_isRetract
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (4.37).** `a ∘ out ∘ (a ⊕ a) : (a ⊕ a) ∘→ a`. -/
 theorem eq_4_37 {a : Pomega} (ha : IsRetract a) :
     typed (comp a (comp outC (plusR a a))) (arrowR (plusR a a) a) := by

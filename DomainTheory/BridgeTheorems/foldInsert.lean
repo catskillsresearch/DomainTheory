@@ -11,8 +11,6 @@ public import DomainTheory.BridgeTheorems.SexDomainEquationInst10
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

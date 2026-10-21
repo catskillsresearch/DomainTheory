@@ -21,12 +21,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 
-
-
-
-
 variable (P : ComputablePresentation V)
-
 
 
 /-- `chainDec` is equivalent to `gStepsOK` of the least map, via the inclusion char's spec and

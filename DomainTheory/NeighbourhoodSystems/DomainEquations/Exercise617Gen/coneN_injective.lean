@@ -13,15 +13,13 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.c
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 variable {A : Type} [DecidableEq A]
+
+omit [DecidableEq A] in
 
 theorem coneN_injective {σ τ : Strn A} (h : coneN σ = coneN τ) : σ = τ := by
   have h1 : τ <+: σ := coneN_subset_coneN.mp (le_of_eq h)

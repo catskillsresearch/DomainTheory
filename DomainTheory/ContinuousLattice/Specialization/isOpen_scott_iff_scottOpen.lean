@@ -29,10 +29,6 @@ universe u
 variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 
 
-
-
-
-
 /-- Scott-open sets in our sense agree with mathlib's Scott topology (alias). -/
 theorem isOpen_scott_iff_scottOpen {U : Set D} :
     @IsOpen D (Topology.scott D univ) U ↔ ScottOpen U :=

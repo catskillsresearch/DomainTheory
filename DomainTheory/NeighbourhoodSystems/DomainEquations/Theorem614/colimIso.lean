@@ -15,8 +15,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.colim
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510

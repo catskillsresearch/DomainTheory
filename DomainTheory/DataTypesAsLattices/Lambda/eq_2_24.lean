@@ -15,44 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqShift_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.24).** `seq(u)(x) = x ⊃ u_0, seq(λt. u_{t+1})(x−1)`. -/
 theorem eq_2_24 (u x : Pomega) :
     seqFun u x =

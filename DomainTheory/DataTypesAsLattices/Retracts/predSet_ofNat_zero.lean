@@ -15,50 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem predSet_ofNat_zero : predSet (ofNat 0) = botElem := by
   ext k
   simp [predSet, ofNat, botElem]

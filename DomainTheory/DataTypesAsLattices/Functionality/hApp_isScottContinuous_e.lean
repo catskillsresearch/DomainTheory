@@ -17,51 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hApply_payload_isSc
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem hApp_isScottContinuous_e (H t : Pomega) :
     IsScottContinuous (fun e => hApp H e t) :=
   continuous_nary

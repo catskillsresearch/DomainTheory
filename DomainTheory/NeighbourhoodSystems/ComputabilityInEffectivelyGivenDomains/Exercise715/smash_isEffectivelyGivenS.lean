@@ -20,12 +20,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 
 
-
-
-
-
-
-
 open Exercise510
 
 section Smash
@@ -37,14 +31,7 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {P₀ P₁}
 
 
-
-
-
-
-
 variable (P₀ P₁)
-
-
 
 
 /-- **Exercise 7.15 (Scott 1981, PRG-19) — the smash product `𝒟₀ ⊗ 𝒟₁` is effectively given.**

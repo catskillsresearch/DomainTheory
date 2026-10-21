@@ -84,17 +84,7 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 /-! ## Packaging `DAtom (P0 P) [i, j] [k] = ∅` as a `RecDecidable₃` -/
 
 
-
-
-
-
-
-
 /-! ## `Yidx`'s index relations are decidable -/
-
-
-
-
 
 
 /-! ## Assembling the `ComputablePresentation` -/

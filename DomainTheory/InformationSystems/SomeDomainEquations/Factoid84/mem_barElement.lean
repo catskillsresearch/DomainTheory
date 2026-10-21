@@ -13,8 +13,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.IsDo
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.mem_closure_iff
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive

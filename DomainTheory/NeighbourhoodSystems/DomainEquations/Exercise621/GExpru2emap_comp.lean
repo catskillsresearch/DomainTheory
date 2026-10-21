@@ -27,33 +27,13 @@ namespace Exercise619
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 
-
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
 
 variable {C₀ C₁ : ScottSys}
-
-
-
-
-
-
 
 
 /-- **Functor law 2 — `T(g ∘ f) = T(g) ∘ T(f)` for strict `g`.** Together with `map_id`, *these are

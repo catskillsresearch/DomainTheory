@@ -24,8 +24,6 @@ namespace Proposition77
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
 
-
-
 /-- **Exercise 7.17 (Scott 1981, PRG-19) — `proj₁` is computable.**
 `V_m proj₁ V_k ↔ k = 0 ∨ (m even, m ≠ 0, V_{q(m/2-1)} ⊆ V_k)`: a disjunction of the equality and
 inclusion deciders with primitive-recursive parity/right-child reindexings, hence r.e. -/

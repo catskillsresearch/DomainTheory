@@ -39,12 +39,6 @@ namespace DomainTheory.InformationSystems
 namespace Factoid26
 
 
-
-
-
-
-
-
 example : InfoSys (Token ℕ Bool) := partialFunctionSystem ℕ Bool
 end Factoid26
 end DomainTheory.InformationSystems

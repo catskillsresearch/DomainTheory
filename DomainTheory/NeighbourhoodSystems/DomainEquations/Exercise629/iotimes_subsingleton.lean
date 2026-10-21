@@ -27,30 +27,7 @@ universe u v
 variable {ι : Type u} {α : ι → Type v}
 
 
-
-
-
-
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 6.29 — the infinite smash collapses to one point.** Its element domain is a

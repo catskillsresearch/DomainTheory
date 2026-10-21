@@ -16,36 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.predSet_iterate_ofN
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem predSet_iterate_self (k : ℕ) :
     predSet^[k] (ofNat k) = ofNat 0 := by
   simpa using predSet_iterate_ofNat k 0

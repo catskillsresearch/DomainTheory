@@ -10,8 +10,6 @@ public import DomainTheory.BridgeTheorems.unfoldInsert
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

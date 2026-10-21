@@ -19,12 +19,6 @@ namespace DomainTheory.InformationSystems.Constructive
 variable {α : Type*} [DecidableEq α]
 
 
-
-
-
-
-
-
 /-- Universal property of the union: `u ∪' v ⊆ w` iff both `u ⊆ w` and `v ⊆ w`. -/
 theorem funion_subset_iff {u v w : Finset α} : u ∪' v ⊆ w ↔ u ⊆ w ∧ v ⊆ w := by
   constructor

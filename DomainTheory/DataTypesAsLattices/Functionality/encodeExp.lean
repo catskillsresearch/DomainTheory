@@ -9,8 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (4.44).** Abstract-syntax encoding of a `LambTerm`. -/

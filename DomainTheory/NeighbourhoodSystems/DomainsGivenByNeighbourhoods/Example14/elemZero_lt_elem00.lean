@@ -16,66 +16,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 namespace DomainTheory.NeighbourhoodSystems.Example14
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace neighborhoodSystem
 
 open NeighborhoodSystem
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem elemZero_lt_elem00 : elemZero < elem00 := by

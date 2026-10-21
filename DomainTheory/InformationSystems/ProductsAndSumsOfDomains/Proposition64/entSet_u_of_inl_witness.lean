@@ -23,36 +23,9 @@ namespace InfoSys
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
 
-set_option linter.unusedSectionVars false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
-
-
-
-
-
-
-
 
 
 theorem entSet_u_of_inl_witness {u u' : Finset (SumToken α β)} {v : Finset α}

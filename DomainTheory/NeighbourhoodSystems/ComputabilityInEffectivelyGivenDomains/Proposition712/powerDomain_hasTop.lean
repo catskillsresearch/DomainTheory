@@ -25,13 +25,11 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
 
 
-
 namespace Counterexample712C
 
 open NeighborhoodSystem
 
 variable {γ δ : Type*}
-
 
 
 /-- **`ℙ𝒟` is unconditionally closed under intersection** (`PDmem_inter`; the empty union always

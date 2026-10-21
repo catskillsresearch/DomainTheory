@@ -21,11 +21,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
-
 theorem he0 : e P 0 = D.master := by
   show P.X (eIdx P 0) = D.master
   rw [eIdx_zero]; exact P.masterIdx_spec

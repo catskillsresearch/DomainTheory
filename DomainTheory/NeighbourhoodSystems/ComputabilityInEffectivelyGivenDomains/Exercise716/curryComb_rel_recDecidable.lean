@@ -25,9 +25,6 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
   {V₂ : NeighborhoodSystem γ}
 
 
-
-
-
 /-- **Exercise 7.16 — `curry` is a *recursive* set.** Relative to the function-space presentations
 `PA` of `(𝒟₀×𝒟₁→𝒟₂)` and `PB` of `(𝒟₀→(𝒟₁→𝒟₂))` (and the inner one `Pc` of `(𝒟₁→𝒟₂)`) built by
 Theorem 7.5, the `curry` combinator's neighbourhood relation is **recursively decidable**:

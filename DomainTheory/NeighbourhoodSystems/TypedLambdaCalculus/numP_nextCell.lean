@@ -22,8 +22,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.nextCell
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 theorem numP_nextCell (c : ℕ × ℕ) : numP (nextCell c) = numP c + 1 := by

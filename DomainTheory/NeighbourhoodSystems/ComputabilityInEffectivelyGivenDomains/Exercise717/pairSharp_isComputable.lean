@@ -24,11 +24,6 @@ namespace Proposition77
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
 
-
-
-
-
-
 /-- **Exercise 7.17 (Scott 1981, PRG-19) — the pairing `pair : D^§ × D^§ → D^§` is computable.**
 Its index relation is exactly `V_{2·⟨a,b⟩+2} ⊆ V_k`, a recursive slice of `D^§`'s inclusion decider
 (`dsharpPresentation.incl_computable`) reindexed by the primitive-recursive node map

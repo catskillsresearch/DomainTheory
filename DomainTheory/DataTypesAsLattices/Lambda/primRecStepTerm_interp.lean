@@ -15,59 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2_beta
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primRecStepTerm_interp (a f u n : Pomega) :
     funOf (funOf (funOf (funOf (interp primRecStepTerm (fun _ => botElem)) a) f) u) n =
       condSet n a (funOf (funOf f (predSet n)) (funOf u (predSet n))) := by

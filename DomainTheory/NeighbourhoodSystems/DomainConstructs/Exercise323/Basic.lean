@@ -43,8 +43,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : N
 /-! ### The terminal domain. -/
 
 
-
-
 /-! ### The exponential adjunction (cartesian closure). -/
 
 end DomainTheory.NeighbourhoodSystems

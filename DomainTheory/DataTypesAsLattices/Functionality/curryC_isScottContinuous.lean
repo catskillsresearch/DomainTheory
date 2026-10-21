@@ -14,21 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem curryC_isScottContinuous :
     IsScottContinuous (fun u =>
       graph (fun x => graph (fun y => funOf u (pairSeq x y)))) :=

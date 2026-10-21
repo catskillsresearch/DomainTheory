@@ -16,8 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
 /-- **Faithfulness (`β`-soundness) of the self-hosted encoding.** Applying the self-hosted
 abstraction of `f` recovers `f` itself: `Uapply (Ulam f) x = f(x)`. The internal `λ`-calculus of
 `𝒰` literally computes the same thing as the "outside" one it is modelling — this is the actual

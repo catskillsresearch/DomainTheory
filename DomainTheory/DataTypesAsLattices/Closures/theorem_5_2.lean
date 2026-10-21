@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode_isC
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.2 (The representation theorem).**
 The constructed code is a continuous closure operation and its fixed-point
 range is order-isomorphic to the source lattice. -/

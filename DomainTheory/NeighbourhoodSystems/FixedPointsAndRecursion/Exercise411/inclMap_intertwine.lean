@@ -23,8 +23,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
 /-- The inclusion intertwines `f'` with `f`: `ι ∘ f' = f ∘ ι` (from `relMap_toElementMap_embed`). -/
 theorem inclMap_intertwine (f : ApproximableMap V V) {a : V.Element} (ha : f.toElementMap a = a)
     (g : (relSystem a).Element) :

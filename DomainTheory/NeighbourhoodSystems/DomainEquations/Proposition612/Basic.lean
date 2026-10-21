@@ -62,11 +62,5 @@ namespace Subsystem
 variable {D E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
 end Subsystem
 end DomainTheory.NeighbourhoodSystems

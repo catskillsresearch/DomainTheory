@@ -21,31 +21,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `(prependMap σ).toElementMap y = σ · y`: the approximable-map action agrees with Scott's
 multiplication `mulElem`, using `{σ} ⊆ X` (any valid witness `X` for `emb σ` contains `σ`) to
 tighten the witness set to `{σ}` without loss. -/

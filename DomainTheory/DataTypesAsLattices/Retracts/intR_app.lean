@@ -17,50 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.intR_eq_intF
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem intR_app (u : Pomega) :
     funOf intR u =
       dcondSet u (ofNat 0) (dcondSet (funOf intR (predSet u)) u u) := by

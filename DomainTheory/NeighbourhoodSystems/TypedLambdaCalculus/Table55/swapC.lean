@@ -10,8 +10,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55.diag
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap

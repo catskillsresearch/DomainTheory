@@ -18,13 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise421
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
-
-
-
-
-
-
-
 /-- The isomorphism is given by addition: `addIso m n = m + n`. -/
 theorem addIso_apply (m n : ℕ) : (addIso m n : ℕ) = m + n := rfl
 

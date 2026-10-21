@@ -21,62 +21,10 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α : Type*} [DecidableEq α]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable (A : InfoSys α)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem LamTokenCon_singleton (p : LamToken A) : LamTokenCon A {p} :=

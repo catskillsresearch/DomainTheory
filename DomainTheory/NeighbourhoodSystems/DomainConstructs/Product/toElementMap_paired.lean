@@ -19,47 +19,12 @@ open NeighborhoodSystem
 variable {α β γ δ : Type*}
 
 
-
-
-
-
-
-
-
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 variable {V₂ : NeighborhoodSystem γ}
 
 open ApproximableMap
-
-
-
-
-
-
-
-
 
 
 /-- **Proposition 3.4(iv) (Scott 1981, PRG-19).** `⟨f, g⟩(w) = ⟨f(w), g(w)⟩`. -/

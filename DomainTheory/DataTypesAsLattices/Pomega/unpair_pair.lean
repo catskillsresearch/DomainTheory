@@ -23,26 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair_unpair
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem unpair_pair (n m : ℕ) : unpair (pair n m) = (n, m) := by
   have h := pair_unpair (pair n m)
   exact Prod.ext (pair_inj h).1 (pair_inj h).2

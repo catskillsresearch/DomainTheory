@@ -19,7 +19,6 @@ namespace DomainTheory.ContinuousLattice
 open Topology Set
 
 
-
 universe u
 
 /-- **Scott 1972, Theorem 2.12 (backward direction).** Every injective `T₀`-space is homeomorphic

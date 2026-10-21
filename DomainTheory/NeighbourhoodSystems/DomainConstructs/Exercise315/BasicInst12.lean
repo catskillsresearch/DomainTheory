@@ -9,8 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315.uni
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem

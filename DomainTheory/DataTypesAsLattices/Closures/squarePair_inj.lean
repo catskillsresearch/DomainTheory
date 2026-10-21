@@ -18,35 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_10
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem squarePair_inj {x x' y y' : Pomega}
     (h : squarePair x y = squarePair x' y') : x = x' ∧ y = y' :=
   ⟨(eq_5_9 x y).symm.trans ((congrArg squareFst h).trans (eq_5_9 x' y')),

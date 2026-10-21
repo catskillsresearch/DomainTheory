@@ -18,11 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise421
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
-
-
-
-
-
 /-- `[m⁺] = [m]⁺`: the recursion step of 4.13(3). -/
 theorem upSet_succ (m : ℕ) : upSet (m + 1) = succImage (upSet m) := by
   ext k

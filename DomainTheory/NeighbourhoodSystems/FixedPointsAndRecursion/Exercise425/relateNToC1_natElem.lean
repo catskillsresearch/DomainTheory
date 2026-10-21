@@ -18,33 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise425
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `relateNToC1(n̂) = 1ⁿ`. -/
 theorem relateNToC1_natElem (n : ℕ) :
     relateNToC1.toElementMap (Example43.natElem n) = oneElem n :=

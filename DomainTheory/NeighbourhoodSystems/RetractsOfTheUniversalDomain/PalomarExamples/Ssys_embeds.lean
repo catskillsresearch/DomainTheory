@@ -13,7 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Pal
 @[expose] public section
 
 
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
 
 

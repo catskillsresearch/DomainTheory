@@ -183,41 +183,12 @@ prepending the letter `a`. Everything is the alphabet-generic copy of `Example44
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
 
-set_option linter.unusedSectionVars false
-
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 variable {A : Type} [DecidableEq A]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Prepending a letter: the successors `x ↦ a·x`. -/
-
-
-
-
-
-
-
-
-
 
 
 /-! ## Stage 2: the `A`-indexed separated sum `Tsig(X) = 𝟙 + Σ_{a:A} X`
@@ -234,39 +205,10 @@ universe v
 variable {β : Type v} {γ : Type v}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable (V : NeighborhoodSystem β)
 
 
 variable {V}
-
-
-
-
-
-
-
-
-
 
 
 /-! ### Shape lemmas: no nesting through the wrong tag. -/
@@ -274,12 +216,7 @@ variable {V}
 variable {h : ∀ X, V.mem X → X.Nonempty}
 
 
-
 /-! ### The canonical injections `𝟙 ↪ 𝟙+Σ_a V` and `V ↪ 𝟙+Σ_a V` (the `a`-th copy). -/
-
-
-
-
 
 
 end SumSig
@@ -296,21 +233,9 @@ variable {β₀ β₁ β₂ : Type v}
   {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty}
 
 
-
-
-
-
-
-
 end SumMapSig
 
 /-! ## The endofunctor `Tsig(X) = 𝟙 + Σ_a X` on the `∅`-free category. -/
-
-
-
-
-
-
 
 
 /-! ## Stage 3: the domain equation `Cₐ ≅ 𝟙 + Σ_a Cₐ`.
@@ -324,48 +249,19 @@ section Iso
 variable {A : Type} [DecidableEq A] [Inhabited A]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### The sum target `𝟙 + Σ_a Cₐ` and its inversion lemmas. -/
-
 
 
 /-! ### The forward half `toCC : |Cₐ| → |𝟙 + Σ_a Cₐ|`. -/
 
 
-
-
-
 /-! ### The inverse half `fromCC : |𝟙 + Σ_a Cₐ| → |Cₐ|`. -/
-
-
 
 
 /-! ### The two halves are mutually inverse. -/
 
 
-
-
-
 /-! ### Bridging the isomorphism to the successors `consMapN`. -/
-
-
-
-
 
 
 end Iso
@@ -377,9 +273,6 @@ section Algebra
 variable {A : Type} [DecidableEq A] [Inhabited A]
 
 
-
-
-
 end Algebra
 
 /-! ## The `liftCn` combinator: an approximable map out of `Cₐ` (generic `Exercise419.liftC`). -/
@@ -387,11 +280,6 @@ end Algebra
 section Lift
 
 variable {A : Type} [DecidableEq A] [Inhabited A] {β : Type}
-
-
-
-
-
 
 
 end Lift
@@ -403,29 +291,7 @@ section Initial
 variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### The homomorphism square and uniqueness. -/
-
-
-
-
-
-
-
-
-
 
 
 end Initial

@@ -27,8 +27,6 @@ section Reencode
 variable (e : ℕ → Set α)
 
 
-
-
 theorem idxSet_nonempty (n : ℕ) : (idxSet e n).Nonempty := ⟨n, self_mem_idxSet e n⟩
 
 end Reencode

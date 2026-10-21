@@ -18,23 +18,13 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
 
 
 variable (A : InfoSys α) (B : InfoSys β)
 
 
-
-
-
-
-
-
-
-
+omit [DecidableEq β] in
 
 
 theorem lftFinset_empty : lftFinset (∅ : Finset (SumToken α β)) = ∅ := by

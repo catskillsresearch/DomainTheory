@@ -16,8 +16,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
@@ -31,6 +29,8 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
+
+omit [DecidableEq β] in
 
 theorem lftFinset_singleton_right (y : β) :
     lftFinset ({SumToken.right y} : Finset (SumToken α β)) = ∅ := by

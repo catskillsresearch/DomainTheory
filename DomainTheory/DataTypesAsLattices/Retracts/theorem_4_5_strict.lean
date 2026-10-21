@@ -15,50 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.5 (i), strictness of sums.** The zero summand
 is always selected on `⊥`. -/
 theorem theorem_4_5_strict (a b : Pomega) :

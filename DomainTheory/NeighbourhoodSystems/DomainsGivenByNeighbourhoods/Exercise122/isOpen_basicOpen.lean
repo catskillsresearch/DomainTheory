@@ -20,11 +20,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
 /-- **Exercise 1.22.** Each basic neighbourhood `[X]` is open. -/
 theorem isOpen_basicOpen (X : Set α) : IsOpen (V.basicOpen X) :=
   fun _ hx => ⟨X, hx, subset_rfl⟩

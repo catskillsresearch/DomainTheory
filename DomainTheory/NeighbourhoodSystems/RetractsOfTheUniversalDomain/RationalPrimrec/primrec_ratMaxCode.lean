@@ -17,23 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_ratMaxCode : Nat.Primrec ratMaxCode :=
   primrec_selectFn primrec_ratLeCode Nat.Primrec.right Nat.Primrec.left
 

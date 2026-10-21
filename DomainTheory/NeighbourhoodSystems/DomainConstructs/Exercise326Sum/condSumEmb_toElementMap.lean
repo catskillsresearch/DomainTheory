@@ -21,8 +21,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
 
-
-
 theorem condSumEmb_toElementMap (t : TD.Element) (x : V₀.Element) (y : V₁.Element) :
     (condSumEmb V₀ V₁ h₀ h₁).toElementMap (pair t (pair x y))
       = pair t (pair ((inMap₀ (h₀ := h₀) (h₁ := h₁)).toElementMap x)

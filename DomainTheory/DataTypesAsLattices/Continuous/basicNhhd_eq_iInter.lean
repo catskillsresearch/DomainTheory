@@ -20,12 +20,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
-
-
 /-- A basic neighbourhood is a finite intersection of subbasic opens. -/
 theorem basicNhhd_eq_iInter (n : ℕ) :
     basicNhhd n = ⋂ k ∈ e n, memOpen k := by

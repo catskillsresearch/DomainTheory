@@ -22,15 +22,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UEnt
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem UEnt_trans {u v : Finset UToken} {c : UToken}
     (hv : UCon v) (_hu : UCon u)

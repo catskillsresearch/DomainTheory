@@ -24,18 +24,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `y₀` satisfies the second equation `y = b·x ∪ a·y ∪ d`. -/
 theorem parkY_eq (a b c d : Set S) :
     parkY a b c d = b * parkX a b c d ∪ a * parkY a b c d ∪ d := by

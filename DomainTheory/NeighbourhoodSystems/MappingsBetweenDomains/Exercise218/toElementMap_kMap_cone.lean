@@ -17,18 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise218
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The elementwise value of `kMap` on the finite element `↑(σΣ*)` is `↑((kOut σ)Σ*)`. -/
 theorem toElementMap_kMap_cone (σ : Str) :
     kMap.toElementMap (B.principal (memB_cone σ)) = B.principal (memB_cone (kOut σ)) := by

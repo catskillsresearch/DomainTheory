@@ -19,25 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_app_top
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (4.13).** `(a ⊕ b) ∘ (a' ⊕ b') = (a ∘ a') ⊕ (b ∘ b')`. -/
 theorem eq_4_13 (a b a' b' : Pomega) :
     comp (plusR a b) (plusR a' b') = plusR (comp a a') (comp b b') := by

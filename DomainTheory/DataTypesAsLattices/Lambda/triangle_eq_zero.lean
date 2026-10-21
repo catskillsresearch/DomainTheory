@@ -14,41 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem triangle_eq_zero {w : ℕ} (h : triangle w = 0) : w = 0 := by
   match w with
   | 0 => rfl

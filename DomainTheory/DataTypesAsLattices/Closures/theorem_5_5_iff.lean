@@ -21,36 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vcomb_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (5.18).** `a = V(a)` iff `a` is a closure. -/
 theorem theorem_5_5_iff (a : Pomega) :
     IsClosure a ↔ funOf Vcomb a = a := by

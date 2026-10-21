@@ -17,10 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
-universe w
-
-
-
 
 /-- The **identity functor is monotone on domains**: it fixes objects and maps, so `T(D) ◁ T(E)` is
 just `D ◁ E` and the projection pair is unchanged. -/

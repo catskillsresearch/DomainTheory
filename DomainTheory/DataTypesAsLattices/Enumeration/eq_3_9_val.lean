@@ -21,38 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem eq_3_9_val : valNat 3 = Gpack := by
   have : valNat 3 = valNat (applyNat 0 1) := by simp [eq_3_9_apply]
   rw [this, valNat_apply, valNat_zero, eq_3_8_val]

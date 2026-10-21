@@ -21,10 +21,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
 theorem isScottContinuous_monotone {f : Pomega → Pomega}
     (hf : IsScottContinuous f) {x y : Pomega} (h : x ⊆ y) : f x ⊆ f y := by
   intro m hm

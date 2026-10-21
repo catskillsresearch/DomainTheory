@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem representClosureCode_app {α : Type u} [CompleteLattice α]

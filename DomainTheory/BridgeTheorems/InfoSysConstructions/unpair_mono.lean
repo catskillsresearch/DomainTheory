@@ -30,9 +30,6 @@ namespace InfoSysConstructions
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
 
-
-
-
 theorem unpair_mono {z₁ z₂ : (productSystem A B).Element} (hz : z₁ ≤ z₂) :
     unpair A B z₁ ≤ unpair A B z₂ := by
   constructor

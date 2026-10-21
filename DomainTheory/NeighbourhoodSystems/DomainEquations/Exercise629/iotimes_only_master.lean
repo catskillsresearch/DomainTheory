@@ -26,30 +26,7 @@ universe u v
 variable {ι : Type u} {α : ι → Type v}
 
 
-
-
-
-
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 6.29 — `⊗` does not generalize.** Over an infinite index, the smash product has only

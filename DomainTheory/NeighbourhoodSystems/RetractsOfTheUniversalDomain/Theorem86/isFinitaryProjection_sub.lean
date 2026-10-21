@@ -25,8 +25,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 /-- **`sub` is itself a finitary projection on `E → E`'s range** (Theorem 8.6's remark that `sub`
 restricted to its own range is the identity, i.e. `sub` "is" a projection onto the finitary
 projections): applying `sub` twice is the same as once (`sub_sub`), and every `sub f` is already a

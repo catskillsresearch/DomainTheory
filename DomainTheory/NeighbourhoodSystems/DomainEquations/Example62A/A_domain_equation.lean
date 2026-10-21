@@ -22,56 +22,7 @@ open NeighborhoodSystem ApproximableMap ExampleB
 variable {β : Type*} {n : ℕ}
 
 
-
-
-
-
-
-
-
-
-
-
-
 variable {n : ℕ}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Example 6.2 (Scott 1981, PRG-19) — the domain equation `A ≅ Aⁿ + Aⁿ`.** Scott's "simple, yet

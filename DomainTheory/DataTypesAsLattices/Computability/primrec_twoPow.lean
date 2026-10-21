@@ -19,8 +19,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 theorem primrec_twoPow : Primrec fun k : ℕ => 2 ^ k :=
   (Primrec.nat_rec' (f := id) (g := fun _ => (1 : ℕ))
     (h := fun (_ : ℕ) (p : ℕ × ℕ) => p.2 * 2)

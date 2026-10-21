@@ -29,8 +29,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- Packed iteration state `pair (pair curA curB) (pair weight acc)` for the bitwise-OR fold. -/

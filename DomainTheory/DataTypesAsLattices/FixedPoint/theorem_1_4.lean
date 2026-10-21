@@ -16,7 +16,6 @@ public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot_mono
 namespace DomainTheory.DataTypesAsLattices
 
 
-
 /-- **Scott 1976, Theorem 1.4 (The fixed-point theorem).** -/
 theorem theorem_1_4 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     f (fix f) = fix f ∧ ∀ x, f x = x → fix f ⊆ x := by

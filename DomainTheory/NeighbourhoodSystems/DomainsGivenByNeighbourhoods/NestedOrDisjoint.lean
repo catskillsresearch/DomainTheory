@@ -12,8 +12,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Ele
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 /-- Scott's *"very special circumstance"* (the prose after Examples 1.2–1.4): a family `𝒟`

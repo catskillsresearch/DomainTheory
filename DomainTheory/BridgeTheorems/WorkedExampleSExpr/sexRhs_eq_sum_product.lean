@@ -36,10 +36,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 
 
-
-
-
-
 theorem sexRhs_eq_sum_product :
     SexRhs = sumSystem lowerBoundSystem (productSystem SexSys SexSys) :=
   treeRhs_eq_sum_product lowerBoundSystem

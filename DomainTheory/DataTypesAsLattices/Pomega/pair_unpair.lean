@@ -21,26 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem pair_unpair (k : ℕ) : pair (unpair k).1 (unpair k).2 = k :=
   (exists_pair k).choose_spec.choose_spec
 

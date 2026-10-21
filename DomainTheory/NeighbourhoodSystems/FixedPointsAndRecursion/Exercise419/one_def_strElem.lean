@@ -18,27 +18,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise419
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
 
 
-
-
-
-
 variable {β : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 4.19 (Scott 1981, PRG-19).** `one` is definable from `empty`, `zero`, `cond`: the

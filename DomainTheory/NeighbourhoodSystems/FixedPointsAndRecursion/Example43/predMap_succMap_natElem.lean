@@ -19,31 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example43
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `pred(succ(n̂)) = n̂`: the predecessor undoes the successor on total elements. (A sample of the
 "recursion" reasoning Scott highlights; cf. the iterated-summation example.) -/
 theorem predMap_succMap_natElem (n : ℕ) :

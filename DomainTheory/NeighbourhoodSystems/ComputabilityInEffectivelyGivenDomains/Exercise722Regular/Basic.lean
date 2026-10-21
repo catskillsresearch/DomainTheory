@@ -92,16 +92,7 @@ namespace Exercise722
 This encoding is the public replacement: constructor tag in `Nat.pair`'s first component. -/
 
 
-
-
-
-
-
-
 /-! ## Decidable word membership (the computational core of "regular event") -/
-
-
-
 
 
 /-! ## Soundness and completeness: the syntax captures exactly `S` -/
@@ -123,7 +114,6 @@ such codes, Scott's two recursive-decidability obligations of Definition 7.1 bec
 
 We show **both** are instances of *deciding language equivalence of two `SExpr`s* — and that emptiness
 alone is therefore **not** enough (relation (i) needs the full equivalence test). -/
-
 
 
 /-! ## Why an emptiness decider is *not* enough (the concrete obstruction)

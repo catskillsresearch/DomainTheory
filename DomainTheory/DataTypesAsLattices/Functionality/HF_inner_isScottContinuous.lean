@@ -15,51 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem HF_inner_isScottContinuous (H : Pomega) :
     IsScottContinuous (fun e => graph (fun t => Hstep H e t)) :=
   graph_const_isScottContinuous (fun e t => Hstep H e t)

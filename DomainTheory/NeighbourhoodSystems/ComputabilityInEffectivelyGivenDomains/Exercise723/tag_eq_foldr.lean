@@ -23,54 +23,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`tag` reformulated as a left fold over the reversed list.** `tag`'s recursion is a `foldr`;
 `List.foldl_reverse` bridges it to the `foldl`-shaped `foldCode`. -/
 theorem tag_eq_foldr (ns : List ℕ) (m : ℕ) :

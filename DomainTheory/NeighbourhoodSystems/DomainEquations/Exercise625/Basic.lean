@@ -65,7 +65,6 @@ namespace Subsystem.ProjectionPair
 /-! ### First extremal formula: `h(y) = ⊔ {x ∣ g(x) ⊑ y}`. -/
 
 
-
 /-! ### Second extremal formula: `g(x) = ⊓ {y ∣ x ⊑ h(y)}`. -/
 
 

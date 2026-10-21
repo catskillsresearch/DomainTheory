@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_tag_ne
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (7.8).** Sum of restricted equivalences. -/

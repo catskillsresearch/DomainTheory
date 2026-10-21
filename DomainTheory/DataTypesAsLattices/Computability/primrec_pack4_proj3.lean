@@ -19,12 +19,9 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 
 theorem primrec_pack4_proj3 : Primrec pack4_proj3 :=

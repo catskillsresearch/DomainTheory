@@ -14,27 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.9).** Application distributes over unions. -/
 theorem eq_2_9 (f g x : Pomega) :
     funOf (f ∪ g) x = funOf f x ∪ funOf g x := by

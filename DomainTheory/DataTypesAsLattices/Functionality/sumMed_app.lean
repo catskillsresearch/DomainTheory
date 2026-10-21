@@ -16,19 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.sumMed_body_isScott
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sumMed_app (f g u : Pomega) :
     funOf (sumMed f g) u =
       condSet (funOf u (ofNat 0))

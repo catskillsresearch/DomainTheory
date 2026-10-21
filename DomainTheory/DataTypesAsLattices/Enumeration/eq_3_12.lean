@@ -21,53 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (3.12).** `val(num(n)) = n`. -/
 theorem eq_3_12 : ∀ n, valNat (num n) = ofNat n
   | 0 => eq_3_8_val

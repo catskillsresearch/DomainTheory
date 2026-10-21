@@ -20,8 +20,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
 theorem topElement_isTotal (h : sys.AllConsistent) :
     sys.IsTotal (sys.topElement h) := fun y _ => sys.le_topElement h y
 

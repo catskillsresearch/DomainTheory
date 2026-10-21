@@ -259,7 +259,6 @@ atom-emptiness test — getting the entire invariant/transfer apparatus below "f
 need to reprove any of it. -/
 
 
-
 /-- **A splitting operation's first output is a subset of `B`** (`I ⊆ B`, from `I ∪ J = B`) —
 a corollary of `SplitSpec` alone, needing no facts about the specific `split`. -/
 theorem split_fst_subset {split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ} (hsplit : SplitSpec split)
@@ -399,7 +398,6 @@ A genuine `Fintype` index (`Fin n → Bool`) is used *only* here, to state a bon
 `extendTrue` promotes a length-`n` sign sequence to a full `δ : ℕ → Bool` by padding with `true`
 (the padding value is irrelevant beyond position `n`, and *must* be `true` at position `n` itself,
 to select the "+"-branch of the split there). -/
-
 
 
 omit hΔ hsplit in

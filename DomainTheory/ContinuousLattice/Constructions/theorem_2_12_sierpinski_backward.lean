@@ -22,11 +22,6 @@ open Topology Set
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
-
-
 /-- **Scott 1972, Theorem 2.12 (backward, Sierpiński base case).** `Prop` is a continuous
 lattice (`isContinuousLattice_prop`), so its injectivity (Proposition 1.2) is an instance of the
 equivalence. -/

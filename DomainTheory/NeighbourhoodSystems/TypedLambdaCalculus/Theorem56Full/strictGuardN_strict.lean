@@ -29,17 +29,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- If some coordinate `i < n` is `⊥` (and `z` is arg-like), the guard forces `⊥`. -/
 theorem strictGuardN_strict (n : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Element)
     (hz : ArgLike z) {i : ℕ} (hi : i < n) (hb : component z i = N.bot) :

@@ -17,8 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.iterateBot_isStrict
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Projection-order monotonicity gives adjacent projection equations for

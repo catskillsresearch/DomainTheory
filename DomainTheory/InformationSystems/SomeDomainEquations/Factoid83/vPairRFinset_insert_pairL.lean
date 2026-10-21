@@ -15,15 +15,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.mem_
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem vPairRFinset_insert_pairL (u : Finset VToken) (t : VToken) :
     vPairRFinset (insert (.pairL t) u) = vPairRFinset u := by

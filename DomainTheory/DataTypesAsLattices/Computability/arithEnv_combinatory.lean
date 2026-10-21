@@ -21,30 +21,12 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
 
 
-
 attribute [local irreducible] pack4_proj1 pack4_proj2 pack4_proj3 pack4_proj4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem arithEnv_combinatory : ∀ i, IsCombinatory (arithEnv i)

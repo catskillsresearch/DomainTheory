@@ -17,7 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 variable {α : Type*}
 
 
-
 namespace Subsystem
 
 /-- The subsystem relation is **antisymmetric**: `D ◁ E` and `E ◁ D` force `D = E`. (Mutual `sub`

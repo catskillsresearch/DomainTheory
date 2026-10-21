@@ -18,22 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise722
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`denote` is far from injective: `Σ · Σ = Σ`.** A nontrivial language identity (with distinct
 syntax), so relation (i) `Xₙ∩Xₘ = X_k` is *not* syntactic equality of codes — it is genuine
 regular-language equivalence, the whole difficulty of the exercise. -/

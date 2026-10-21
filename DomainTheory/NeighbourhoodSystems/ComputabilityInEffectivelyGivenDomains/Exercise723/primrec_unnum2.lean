@@ -23,61 +23,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_unnum2 : Nat.Primrec unnum2 := Nat.Primrec.right.comp primrec_unnumPair
 
 end DomainTheory.NeighbourhoodSystems.Exercise723

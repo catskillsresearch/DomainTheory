@@ -20,7 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise114
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
 theorem mem_singleton (n : ℕ) : mem {n} :=
   Or.inr ⟨Set.finite_singleton n, Set.singleton_nonempty n⟩
 

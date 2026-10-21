@@ -20,36 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vapply_right_isScottCont
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (5.19).** `V(a)` is always a closure, so `V(V(a)) = V(a)`. -/
 theorem Vapply_graph_isClosure (a : Pomega) :
     IsClosure (graph (fun x => Vapply a x)) := by

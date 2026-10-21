@@ -14,8 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.openOfMap_isOpe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise325
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set

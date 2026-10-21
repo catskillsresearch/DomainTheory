@@ -85,56 +85,16 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
 
 
 variable {V₀ V₁}
 
 
-
-
-
-
-
 /-! ### The injections `inᵢ` and projections `outᵢ`. -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

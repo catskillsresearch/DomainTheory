@@ -19,43 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_qpNonemptyBop : Nat.Primrec qpNonemptyBop :=
   primrec_ratLtCode.comp (Nat.Primrec.left.pair Nat.Primrec.right)
 

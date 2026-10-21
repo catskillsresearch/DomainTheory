@@ -18,23 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example43
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `succ(⊥) = ⊥`. -/
 theorem succMap_bot : succMap.toElementMap N.bot = N.bot :=
   constLiftN_bot N (fun n => natElem (n + 1))

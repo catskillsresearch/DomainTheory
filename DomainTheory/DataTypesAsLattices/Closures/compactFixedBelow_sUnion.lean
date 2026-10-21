@@ -16,22 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem compactFixedBelow_sUnion {a : Pomega} (ha : IsClosure a)
     (x : Fixpoints (funOf a)) :
     (x : Pomega) = ⋃₀ (Subtype.val '' compactFixedBelow a x) := by

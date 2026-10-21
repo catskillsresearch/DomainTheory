@@ -17,8 +17,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-- Its uncurried form, the actual `N × N → N` of the exercise. -/

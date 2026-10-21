@@ -28,47 +28,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 namespace Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **From a primitive-recursive `{0,1}` characteristic to `RecDecidable`.** This is the standard
 bridge when an executable Bool decider has already been realized as a numeric `{0,1}` function; the
 logical equivalence is supplied separately (do not reprove the mathematics). -/

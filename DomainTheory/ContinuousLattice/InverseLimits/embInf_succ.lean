@@ -26,52 +26,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1972, §4 (recursion equation).** `i_{n∞} = i_{(n+1)∞} ∘ iₙ`. -/
 theorem embInf_succ (n : ℕ) (x : D n) :
     embInf D P (n + 1) ((P n).incl x) = embInf D P n x := by

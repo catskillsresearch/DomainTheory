@@ -19,51 +19,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem valNat_secondRecOperatorCode :
     valNat secondRecOperatorCode = secondRecOperator :=
   (theorem_3_2_surjective secondRecOperator_combinatory).choose_spec

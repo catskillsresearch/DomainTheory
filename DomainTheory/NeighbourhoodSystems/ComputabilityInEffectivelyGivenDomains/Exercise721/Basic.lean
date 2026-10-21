@@ -102,9 +102,6 @@ variable {α β : Type*}
 /-! ### The combinator `papply` as the Smyth power-domain lift of `eval`. -/
 
 
-
-
-
 /-! ### Computability: `papply` is computable whenever `eval` is.
 
 The base predicate "`eval` is recursively enumerable on codes" is Theorem 7.5's `evalMap_isComputable`

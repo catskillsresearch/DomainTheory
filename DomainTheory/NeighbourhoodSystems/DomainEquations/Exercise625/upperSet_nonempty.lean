@@ -21,11 +21,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem.ProjectionPair
 
 
-
-
-
-
-
 /-- **Exercise 6.25 — "check that the set on the right is non-empty".** `g(x)` itself lies in
 `{y ∣ x ⊑ h(y)}`, since `x ⊑ h(g(x)) = x`. -/
 theorem upperSet_nonempty (P : ProjectionPair D E) (x : D.Element) :

@@ -23,13 +23,9 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
 section AtomCode
 
 variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
-
-
 
 
 theorem primrec_wY : Nat.Primrec wY := Nat.Primrec.left.comp Nat.Primrec.right

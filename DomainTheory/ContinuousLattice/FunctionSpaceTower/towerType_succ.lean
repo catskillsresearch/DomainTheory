@@ -17,13 +17,8 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.Basic
 
 namespace DomainTheory.ContinuousLattice
 
-universe u
-
 
 attribute [instance] CLat.str
-
-
-
 
 
 /-- `D_{n+1}` is *definitionally* the function space `[Dₙ → Dₙ]`. -/

@@ -15,8 +15,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.ofMem
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Proposition611
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set DomainTheory.NeighbourhoodSystems.Exercise222

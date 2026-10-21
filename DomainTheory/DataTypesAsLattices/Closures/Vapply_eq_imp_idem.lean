@@ -18,15 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_17
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
 theorem Vapply_eq_imp_idem {a : Pomega}
     (h : ∀ x, Vapply a x = funOf a x) (x : Pomega) :
     funOf a (funOf a x) = funOf a x := by

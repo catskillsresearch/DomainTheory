@@ -17,42 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.27(b)(1).** If `piD d` satisfies Scott's step-closure formula (ii), it is a
 finitary projection — a direct specialization of `Theorem85.lean`'s general
 `isFinitaryProjection_of_formula`, no new proof needed beyond the specialization itself. -/

@@ -23,8 +23,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem.ProjectionPair
 
 
-
-
 /-- **Exercise 6.25, first extremal formula.** `h(y) = ⊔ {x ∈ |𝒟| ∣ g(x) ⊑ y}`.
 
 `h(y)` is the *greatest* member of the set (`g(h(y)) ⊑ y`, so `h(y)` is in it; every member is

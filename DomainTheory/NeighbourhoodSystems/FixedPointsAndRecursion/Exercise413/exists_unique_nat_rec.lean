@@ -21,10 +21,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace NeighborhoodSystem
 
 
-
-
-
-
 /-- **Exercise 4.13(3) (Scott 1981, PRG-19).** For any structured set `⟨Z, z, ·⟩` (`z : Z`,
 `op : Z → Z`) there is a *unique* `s : ℕ → Z` with `s(0) = z` and `s(n⁺) = (s n)·`. This is the
 choice-free recursion principle (`Nat.rec`); together with 4.13(1) it eliminates the circularity in

@@ -18,16 +18,5 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise115
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
 theorem stem_mem_pair : stem.mem {0, 1} := Or.inr (Or.inl rfl)
 end DomainTheory.NeighbourhoodSystems.Exercise115

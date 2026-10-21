@@ -21,20 +21,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `fⁿ(⊥)` agrees with the iterated elementwise function `(f(·))^[n] ⊥` — Scott's `fⁿ(⊥)`. -/
 theorem iterElem_eq_iterate (f : ApproximableMap V V) (n : ℕ) :
     f.iterElem n = (f.toElementMap)^[n] V.bot := by

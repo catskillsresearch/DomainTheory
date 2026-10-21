@@ -23,8 +23,6 @@ public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_ge
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Set

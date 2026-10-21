@@ -25,55 +25,13 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-
-
-
 
 
 variable (A : InfoSys α) (B : InfoSys β)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open ApproximableMap
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- Every strict BOOL-map is `cond` of its values at true and false. -/

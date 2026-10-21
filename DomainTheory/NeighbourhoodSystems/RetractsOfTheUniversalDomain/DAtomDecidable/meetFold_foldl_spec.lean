@@ -26,13 +26,7 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
 variable (cons : ℕ → ℕ)
-
-
 
 
 /-- **The meet-fold invariant, folded across a whole list.** Generalizes `meetStep_spec` from one

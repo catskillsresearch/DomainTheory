@@ -20,17 +20,6 @@ namespace Exercise824
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
-
-
 theorem toElementMap_fixElement_fst (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     s.toElementMap (paired s t).fixElement = (paired s t).fixElement.fst := by
   have h : (paired s t).toElementMap (paired s t).fixElement = (paired s t).fixElement :=

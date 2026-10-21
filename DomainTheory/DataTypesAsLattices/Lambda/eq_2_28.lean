@@ -14,30 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.28).** Least-fixed-point unfolding `Y(g(x)) = g(x)(Y(g(x)))`. -/
 theorem eq_2_28 {g : Pomega → Pomega → Pomega}
     (hgy : ∀ x, IsScottContinuous (fun y => g x y)) (x : Pomega) :

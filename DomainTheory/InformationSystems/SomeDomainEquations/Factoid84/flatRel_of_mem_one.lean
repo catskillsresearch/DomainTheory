@@ -22,28 +22,6 @@ open ApproximableMap
 namespace Factoid84
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem flatRel_of_mem_one {u v : Finset ℕ} (h : 1 ∈ u) : flatRel u v :=
   Or.inl h
 

@@ -19,7 +19,6 @@ variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
 /-- The combinator `σ(x, y)` (apply `σ : D₀ × D₁ → D₂` to two arguments) is expressed through the
 *one-variable* curried form: `σ(⟨x, y⟩) = (curry σ)(x)(y)`. The right-hand side uses only
 single-variable application. -/

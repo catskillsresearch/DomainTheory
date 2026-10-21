@@ -24,8 +24,6 @@ variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
-
 /-- **Exercise 7.19 — `ℙ` preserves identity maps.** `ℙ(I_D) = I_{ℙD}`. The body
 `∀ X ∈ A, ∃ Y ∈ B, X ⊆ Y` is equivalent to `A ⊆ B` by downward closure of `B`. -/
 theorem PFmap_idMap (V : NeighborhoodSystem α) : PFmap (idMap V) = idMap V.PowerDomain := by

@@ -15,8 +15,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.graphEquiv
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.reprIso
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise327
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap

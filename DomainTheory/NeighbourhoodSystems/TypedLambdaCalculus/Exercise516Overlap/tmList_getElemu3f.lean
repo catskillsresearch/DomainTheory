@@ -16,10 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
 open Example44 ExampleB NeighborhoodSystem
 
 /-- The `j`-th bit of the length-`n` Thue–Morse prefix is `tm j`. -/

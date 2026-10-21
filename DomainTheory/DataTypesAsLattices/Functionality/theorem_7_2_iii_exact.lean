@@ -16,26 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_4_typed
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 7.2 (iii).**
 The printed identity `E_{a ⊗ b} = E_a × E_b`, for arbitrary representatives. -/
 theorem theorem_7_2_iii_exact (a b u v : Pomega) :

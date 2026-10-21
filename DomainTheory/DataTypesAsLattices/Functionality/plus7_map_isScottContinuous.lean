@@ -17,36 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_isScottConti
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plus7_map_isScottContinuous (a0 a1 a2 a3 a4 a5 a6 : Pomega) :
     IsScottContinuous (plus7Body a0 a1 a2 a3 a4 a5 a6) := by
   have htag (i : ℕ) (a : Pomega) :

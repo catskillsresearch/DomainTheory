@@ -25,16 +25,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 
-
-
-
-
-
-
-
-
-
-
 /-- Every coordinate projection from the explicit product/subspace inverse-limit topology is
 continuous. -/
 theorem inverseLimit_coordinate_continuous (n : ℕ) :

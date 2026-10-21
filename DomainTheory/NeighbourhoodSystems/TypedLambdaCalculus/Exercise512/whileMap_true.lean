@@ -22,9 +22,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
   (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 
-
-
-
 /-- If the test holds (`p(x) = true`), the loop runs the body: `w(x) = w(f(x))`. -/
 theorem whileMap_true {x : V.Element} (hx : p.toElementMap x = Example23.trueElt) :
     (whileMap V p f).toElementMap x = (whileMap V p f).toElementMap (f.toElementMap x) := by

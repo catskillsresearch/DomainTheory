@@ -45,23 +45,4 @@ Ground truth: `sources/Data_Types_as_Lattices_vision.md`, pages 5–7.
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end DomainTheory.DataTypesAsLattices

@@ -55,14 +55,7 @@ open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercis
 variable {M : Type*} (zero : M) (succ : M → M)
 
 
-
-
-
-
 /-! ### The carved-out structure is a model of Peano's Axioms. -/
-
-
-
 
 
 /-! ### Existence of `N*` (axiom of infinity): the standard `ℕ`. -/

@@ -9,15 +9,12 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Category.notatio
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 export CategoryTheory (Category)
 
 open scoped CategoryTheory
 
-universe u v
 
 scoped infixr:80 " ⊚ " => compAfter
 

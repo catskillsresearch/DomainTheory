@@ -16,35 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem predSet_union (x y : Pomega) :
     predSet (x ∪ y) = predSet x ∪ predSet y := by
   ext k; simp [predSet]

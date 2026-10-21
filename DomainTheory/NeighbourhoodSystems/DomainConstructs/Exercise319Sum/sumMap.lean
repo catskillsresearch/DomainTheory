@@ -14,8 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318.inj
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318.inju2081_injective
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap

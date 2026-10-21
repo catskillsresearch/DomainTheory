@@ -54,9 +54,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 /-! ### The order relation as a unique fixed point. -/
 
 
-
 /-! ### The function `[·] : ℕ → P ℕ` of 4.13(3): the up-sets. -/
-
 
 
 /-! ### The isomorphism `⟨ℕ, 0, ⁺⟩ ≅ ⟨[m], m, ⁺⟩` is addition. -/

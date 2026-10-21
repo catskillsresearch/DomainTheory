@@ -22,14 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.lt_two_powu27
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
 /-- **Scott 1976, §1.** `k ∈ e_n` implies `k < n`. -/
 theorem mem_e_lt {n k : ℕ} (h : k ∈ e n) : k < n := by
   have hle := mem_e_le h

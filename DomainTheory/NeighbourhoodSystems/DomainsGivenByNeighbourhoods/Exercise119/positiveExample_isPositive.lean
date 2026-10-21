@@ -20,7 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise119
 open DomainTheory.NeighbourhoodSystems
 
 
-
 theorem positiveExample_isPositive : positiveExample.IsPositive := by
   intro X Y _ _
   exact Iff.rfl

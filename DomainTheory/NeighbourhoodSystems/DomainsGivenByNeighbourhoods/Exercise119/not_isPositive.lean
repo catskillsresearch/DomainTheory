@@ -22,19 +22,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise119
 open DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 1.19 — the example is not positive.** `{0,1}` and `{1,2}` are neighbourhoods whose
 intersection `{1}` is non-empty but is *not* a neighbourhood, contradicting (ii′). -/
 theorem not_isPositive : ¬ notPositiveSystem.IsPositive := by

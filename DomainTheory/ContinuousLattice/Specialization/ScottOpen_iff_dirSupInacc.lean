@@ -28,10 +28,6 @@ universe u
 variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 
 
-
-
-
-
 theorem ScottOpen_iff_dirSupInacc {U : Set D} : ScottOpen U ↔ IsUpperSet U ∧ DirSupInacc U := by
   constructor
   · intro ⟨hU, hU'⟩

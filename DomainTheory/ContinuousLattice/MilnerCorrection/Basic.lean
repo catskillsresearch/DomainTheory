@@ -44,7 +44,6 @@ variable {D D' : Type*} [CompleteLattice D] [CompleteLattice D']
 /-! ### Extreme `T₀`-topologies inducing the order -/
 
 
-
 /-! ### Milner hypothesis for 2.9, 2.10, 3.3 -/
 
 end DomainTheory.ContinuousLattice

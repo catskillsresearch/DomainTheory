@@ -22,20 +22,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Property (a), prefix form.** Every Thue–Morse parity prefix is a prefix of `t`:
 `(tmList n)⊥ ⊑ t` for all `n`. -/
 theorem tmList_le_tElt (n : ℕ) : strBot (tmList n) ≤ tElt := by

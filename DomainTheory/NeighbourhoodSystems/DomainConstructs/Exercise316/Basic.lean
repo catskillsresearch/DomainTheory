@@ -82,10 +82,6 @@ variable {α : Type*}
 /-! ### Fibers of a set of `(copy index, token)` pairs. -/
 
 
-
-
-
-
 theorem subset_of_fiber_subset {W W' : Set (ℕ × α)} (h : ∀ i, fiber W i ⊆ fiber W' i) :
     W ⊆ W' := fun ⟨i, _⟩ ha => h i ha
 
@@ -97,35 +93,16 @@ variable (V : NeighborhoodSystem α)
 variable {V}
 
 
-
-
-
 /-! ### The system `𝒟^∞`. -/
-
-
-
-
-
-
-
-
 
 
 /-! ### Components and sequences. -/
 
 
-
-
-
-
 /-! ### The two round-trips. -/
 
 
-
-
 /-! ### Scott's two conclusions. -/
-
-
 
 
 /-! ### The coordinate projections `𝒟^∞ → 𝒟` (used in Exercise 3.24(ii)). -/

@@ -81,21 +81,14 @@ namespace Exercise624
 /-! ## The two token recursions `gTok` and `fTok` -/
 
 
-
 /-! ## Token-level continuity over a chain: a membership reaches a single finite stage -/
 
 /-! ## The simultaneous Kleene iteration `Φⁿ({Λ}, {Λ})` -/
 
 
-
-
-
-
 /-! ## The double fixed point -/
 
 /-! ## The two solution systems and the simultaneous subsystem facts -/
-
-
 
 
 end Exercise624

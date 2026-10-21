@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem pairElem_tag_ne (x y : Pomega) :

@@ -20,31 +20,12 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
-
-
-
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
-
-
-
-
-
 
 
 section ConsChain
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
-
-
-
-
-
-
 
 
 /-- **Consistency via the `inter`-chain (choice-free).** A finite index set `js` is consistent — i.e.

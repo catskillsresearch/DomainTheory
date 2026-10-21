@@ -26,14 +26,7 @@ universe u v
 variable {ι : Type u} {α : ι → Type v}
 
 
-
-
-
-
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
-
 
 
 section IndexedProduct

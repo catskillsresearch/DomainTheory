@@ -16,42 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_map_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem arrowR_app (a b u : Pomega) :
     funOf (arrowR a b) u = comp b (comp u a) :=
   beta (arrowR_map_isScottContinuous a b) u

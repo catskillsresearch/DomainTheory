@@ -19,35 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxShift_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxShift_isRetract {a : Pomega} (ha : IsRetract a) :
     IsRetract (boxShift a) := by
   change boxShift a =

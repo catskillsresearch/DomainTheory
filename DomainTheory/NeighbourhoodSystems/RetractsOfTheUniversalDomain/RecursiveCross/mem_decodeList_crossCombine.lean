@@ -14,22 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Rec
 namespace Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem mem_decodeList_crossCombine {bop : ℕ → ℕ} (c1 c2 z : ℕ) :
     z ∈ decodeList (crossCombine bop c1 c2) ↔
       ∃ x ∈ decodeList c1, ∃ y ∈ decodeList c2, z = bop (Nat.pair x y) := by

@@ -20,66 +20,7 @@ open NeighborhoodSystem ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {V₂ : NeighborhoodSystem γ}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- `uncurry` is the composition `eval ∘ ⟨h ∘ p₀, p₁⟩`. -/

@@ -29,9 +29,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
-
 /-- **Interpolation property of `≪`.** In a continuous lattice, the way-below relation
 interpolates: `a ≪ c` implies there is some `b` with `a ≪ b ≪ c`.
 

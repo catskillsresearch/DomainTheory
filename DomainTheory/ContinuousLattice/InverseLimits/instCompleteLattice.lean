@@ -13,8 +13,6 @@ public import DomainTheory.ContinuousLattice.InverseLimits.isGLB_sInf'
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Set

@@ -24,11 +24,6 @@ open Topology Set
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
-
-
 /-- **Scott 1972, Proposition 2.11.** Every continuous lattice is an injective space under its
 induced (Scott) topology. The witness is `scottExtend`, which extends any continuous `f` along
 any embedding `e` (`scottExtend_eq_of_continuous`) and is itself continuous

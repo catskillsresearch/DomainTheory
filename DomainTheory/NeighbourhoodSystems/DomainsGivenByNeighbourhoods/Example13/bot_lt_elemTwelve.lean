@@ -16,34 +16,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 namespace DomainTheory.NeighbourhoodSystems.Example13
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace neighborhoodSystem
 
 open NeighborhoodSystem
-
-
-
-
-
 
 
 theorem bot_lt_elemTwelve : bot < elemTwelve := by

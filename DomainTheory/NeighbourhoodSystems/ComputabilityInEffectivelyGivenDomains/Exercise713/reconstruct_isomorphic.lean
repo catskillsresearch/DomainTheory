@@ -16,19 +16,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise713
 open NeighborhoodSystem Domain.Recursive
 
 
-
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 7.13 (⇒, "essentially any effectively given system").** The system reconstructed from

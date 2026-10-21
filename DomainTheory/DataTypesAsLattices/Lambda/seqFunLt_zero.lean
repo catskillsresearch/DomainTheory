@@ -15,47 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_seqFunLt
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seqFunLt_zero (u z : Pomega) : seqFunLt u z 0 = botElem := by
   ext k
   simp [mem_seqFunLt, botElem]

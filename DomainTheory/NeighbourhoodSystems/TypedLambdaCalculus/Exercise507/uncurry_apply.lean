@@ -19,7 +19,6 @@ variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
 /-- **One-argument-at-a-time application.** For `h : D₀ → (D₁ → D₂)`, applying the uncurried map to
 a `pair` is the same as applying `h` to `x` and then to `y`:
 `(uncurry h)(⟨x, y⟩) = h(x)(y)`. -/

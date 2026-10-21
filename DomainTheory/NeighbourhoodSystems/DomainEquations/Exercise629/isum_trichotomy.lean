@@ -26,26 +26,7 @@ universe u v
 variable {ι : Type u} {α : ι → Type v}
 
 
-
-
-
-
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 6.29 — sum trichotomy.** Every element of `∑_i D_i` either reaches into some summand

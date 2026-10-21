@@ -22,7 +22,6 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
   {V₂ : NeighborhoodSystem γ}
 
 
-
 /-- **Exercise 7.16 — `curry` written out as a relation between neighbourhoods.** The combinator
 relates a neighbourhood `G` of `(𝒟₀×𝒟₁→𝒟₂)` to a neighbourhood `H` of `(𝒟₀→(𝒟₁→𝒟₂))` exactly when
 `curry g ∈ H` for every `g ∈ G`. -/

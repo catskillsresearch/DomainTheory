@@ -15,30 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sigmaJ_succ_singleton (j m : ℕ) :
     sigmaJ j {pair j m} = ({pair j (m + 1)} : Pomega) := by
   ext p

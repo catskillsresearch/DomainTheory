@@ -22,11 +22,6 @@ namespace Exercise722
 open scoped Computability
 
 
-
-
-
-
-
 /-- The dead state `none` is a sink. -/
 theorem singleDFA_evalFrom_none (σ : List Bool) (w : List Bool) :
     (singleDFA σ).evalFrom none w = none := by

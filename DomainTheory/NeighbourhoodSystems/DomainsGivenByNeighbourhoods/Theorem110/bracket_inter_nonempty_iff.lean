@@ -18,12 +18,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
 /-- **Theorem 1.10 (2).** `X, Y` are consistent in `𝒟` (have a common lower bound `Z ∈ 𝒟`,
 `Z ⊆ X ∩ Y`) iff `[X] ∩ [Y] ≠ ∅`. `→` uses `↑Z` (which lies in both `[X]` and `[Y]`); `←` reads a
 witness off any common element. -/

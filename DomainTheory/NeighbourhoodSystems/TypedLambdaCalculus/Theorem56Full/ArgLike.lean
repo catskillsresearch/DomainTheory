@@ -14,8 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Ful
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Theorem56Full
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap

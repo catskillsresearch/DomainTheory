@@ -22,11 +22,8 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm_apply
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
-universe u
 
 attribute [instance] CLat.str
 

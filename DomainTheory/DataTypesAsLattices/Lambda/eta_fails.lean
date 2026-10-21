@@ -15,33 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.e_one
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Table 1 (η) fails.** Not every element is a graph. -/
 theorem eta_fails : ∃ u, graph (funOf u) ≠ u := by
   refine ⟨{pair 1 0}, ?_⟩

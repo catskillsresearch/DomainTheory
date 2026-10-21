@@ -18,23 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem decodeRat_ratMinCode (c1 c2 : ℕ) :
     decodeRat (ratMinCode (Nat.pair c1 c2)) = min (decodeRat c1) (decodeRat c2) := by
   unfold ratMinCode

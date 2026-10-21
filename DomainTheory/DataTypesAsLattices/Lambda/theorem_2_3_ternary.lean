@@ -15,20 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.curry3_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 2.3, ternary case** (the usual reduction of `k`). -/
 theorem theorem_2_3_ternary {f : Pomega → Pomega → Pomega → Pomega}
     (hf0 : ∀ y z, IsScottContinuous (fun x => f x y z))

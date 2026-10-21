@@ -15,41 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.interC_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.17).** `x ∩ y = Y(λf λx λy. x ⊃ (y ⊃ 0, ⊥), f(x−1)(y−1)+1)(x)(y)`. -/
 theorem eq_2_17 (x y : Pomega) :
     funOf (funOf interC x) y = x ∩ y := by

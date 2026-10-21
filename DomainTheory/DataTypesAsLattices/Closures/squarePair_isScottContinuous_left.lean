@@ -16,35 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem squarePair_isScottContinuous_left (y : Pomega) :
     IsScottContinuous (fun x => squarePair x y) := by
   intro x

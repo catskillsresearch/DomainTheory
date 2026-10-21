@@ -17,13 +17,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.tcObj_sys
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 section ShapeLemmas
 

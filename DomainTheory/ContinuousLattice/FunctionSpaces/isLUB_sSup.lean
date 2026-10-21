@@ -30,8 +30,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace

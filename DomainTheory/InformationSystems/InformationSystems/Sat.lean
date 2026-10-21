@@ -15,8 +15,6 @@ public import DomainTheory.InformationSystems.InformationSystems.instDecidableEq
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 namespace Factoid25

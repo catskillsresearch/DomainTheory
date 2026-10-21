@@ -18,24 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vapply_eq_Vstep
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (5.14) = (5.15).** -/
 theorem eq_5_14 (a x : Pomega) : VapplyY a x = Vapply a x := by
   have hfix : Vstep a x (VapplyY a x) = VapplyY a x :=

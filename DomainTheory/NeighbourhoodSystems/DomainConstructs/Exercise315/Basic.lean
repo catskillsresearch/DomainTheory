@@ -48,8 +48,6 @@ variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 /-! ### Order-iso helpers for cartesian products. -/
 
 
-
-
 /-! ### (i) Commutativity. -/
 
 
@@ -57,10 +55,6 @@ variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 
 /-! ### The product of no factors — the terminal (one-point) domain. -/
-
-
-
-
 
 
 /-! ### (iii) Functoriality of `≅`. -/

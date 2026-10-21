@@ -22,14 +22,9 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
 
-
-
-
 variable {P qChar cons}
 
 variable (P qChar cons)
-
-
 
 
 theorem myFoldCode_eq (c : ℕ) : myFoldCode P qChar cons c = myFold P qChar cons (decodeList c) := by

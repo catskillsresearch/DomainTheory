@@ -9,17 +9,12 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.Tree
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
-universe u
 
 variable {α : Type*} [DecidableEq α]
 

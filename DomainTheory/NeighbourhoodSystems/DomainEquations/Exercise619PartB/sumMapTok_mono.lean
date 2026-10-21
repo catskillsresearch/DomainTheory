@@ -23,20 +23,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise510
 namespace Exercise619
 
 
-
-
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
-
-
-
-
-
-
-
-
-
 
 
 /-- `sumMapTok` is monotone in both arguments. -/

@@ -14,18 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Table 1 (α).** Bound variables may be renamed when the
 bodies agree after the rename (Scott: "`x` is a bound variable"). -/
 theorem theorem_2_2_alpha (i j : ℕ) (body : Term) (ρ : ℕ → Pomega)

@@ -21,8 +21,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 theorem sumComb_eq (a b : ApproximableMap U U) :
     sumComb a b = (cond U).comp
       ((paired (whichMap U U U_mem_nonempty U_mem_nonempty)

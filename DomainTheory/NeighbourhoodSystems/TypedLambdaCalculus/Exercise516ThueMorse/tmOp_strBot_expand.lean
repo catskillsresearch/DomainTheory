@@ -20,11 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
 /-- **The Thue–Morse trajectory.** On a partial element whose string starts with `0`, `Φ` acts as the
 Thue–Morse morphism `expand`. -/
 theorem tmOp_strBot_expand (ρ : Str) :

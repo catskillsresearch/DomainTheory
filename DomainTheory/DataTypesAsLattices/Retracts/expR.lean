@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.expF
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (4.44).** `exp` as the least fixed point of the seven-tag

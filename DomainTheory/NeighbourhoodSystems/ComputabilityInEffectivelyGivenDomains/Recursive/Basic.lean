@@ -173,21 +173,10 @@ mathlib's `Nat.sqrt.iter_sq_le` / `Nat.sqrt.lt_iter_succ_sq` are the heart of `N
 correctness, but they use `grind` / `lia` (classical). We reprove them with `omega`. -/
 
 
-
-
-
-
-
-
-
 /-! ## Choice-free pairing round-trip
 
 `Nat.pair`/`Nat.unpair` are themselves choice-free *definitions*; only mathlib's `unpair_pair`
 *lemma* (via `sqrt_add_eq`) is classical. We reprove the round-trip on our choice-free `sqrt`. -/
-
-
-
-
 
 
 /-! ## Choice-free primitive-recursive arithmetic
@@ -289,8 +278,6 @@ theorem primrec_sub₂ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primre
     simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
 
 
-
-
 /-- `selectFn` of primitive-recursive `c, a, b` is primitive recursive. -/
 theorem primrec_selectFn {c a b : ℕ → ℕ} (hc : Nat.Primrec c) (ha : Nat.Primrec a)
     (hb : Nat.Primrec b) : Nat.Primrec (fun n => selectFn (c n) (a n) (b n)) :=
@@ -303,8 +290,6 @@ A predicate is recursively decidable when it has a primitive-recursive `{0,1}`-v
 function. Tuples are coded by `Nat.pair`. These are the building blocks Scott's Definition 7.1 needs
 (relations on indices), and the closure lemmas (`of_iff`, `comp` = reindex, `and`) let us derive the
 inclusion- and equality-deciders. All choice-free. -/
-
-
 
 
 /-- Recursive decidability transfers across a pointwise logical equivalence. -/
@@ -394,7 +379,6 @@ standard equivalent of Scott's prose description — "there is a primitive recur
 identically false), exactly as r.e. sets require. Every recursively decidable predicate is r.e.
 (`RecDecidable.re`, dropping the search variable), and r.e.-ness transfers across pointwise
 equivalence (`REPred.of_iff`). All choice-free. -/
-
 
 
 /-- **Every recursively decidable predicate is recursively enumerable.** Use the decider as the
@@ -708,8 +692,6 @@ choice-free, via an explicit `Nat.rec` fold of the `{0,1}` indicator. -/
 theorem isOne_le_one (v : ℕ) : isOne v ≤ 1 := by unfold isOne; omega
 
 
-
-
 theorem isOne_of_ne_one {v : ℕ} (h : v ≠ 1) : isOne v = 0 := by
   unfold isOne
   omega
@@ -870,8 +852,6 @@ The "computable elements = computable maps" half of Theorem 7.5 needs r.e.-ness 
 `∀ e ∈ decodeList c, p e` for an r.e. `p`. Classically this is the standard "bounded `∀` of r.e. is
 r.e."; choice-free we realise the search for the finite tuple of witnesses as a *single* code `w`
 whose decoded list supplies one witness per list entry, threaded through a `foldCode`. -/
-
-
 
 
 theorem reForallStp_eq (qc : ℕ → ℕ) (acc x : ℕ) :
@@ -1053,8 +1033,6 @@ list of pairs `⟨n, e⟩` (order is irrelevant under `∀ ∈`), so the paramet
 plain `fun s => p s.1 s.2` over the re-coded list. -/
 
 
-
-
 /-! ## Choice-free primitive-recursive bitwise OR (for Example 7.8, the powerset `PN`)
 
 Scott's Example 7.8 enumerates the finite subsets of `ℕ` by `Eₙ = {k ∣ n.testBit k}` and presents the
@@ -1089,7 +1067,6 @@ theorem lowOr_eq_mod (x y : ℕ) : lowOr x y = (x ||| y) % 2 := by
     rw [key.mpr (Or.inl hx)]
   · -- x%2=1, y%2=1
     rw [key.mpr (Or.inl hx)]
-
 
 
 /-- One recursion step for `Nat.lor` on the low bit: `x ||| y = 2 (x/2 ||| y/2) + lowOr x y`. -/
@@ -1167,9 +1144,6 @@ no witness threading. These are exactly what Scott's Smyth power-domain equality
 `(∀ a ∈ A, ∃ b ∈ B, …) ∧ (∀ b ∈ B, ∃ a ∈ A, …)`, a nested bounded ∀/∃ over coded lists. All
 choice-free. The list is coded by the *first* argument; the *second* argument is a free parameter
 threaded through the `foldCode` `params` slot. -/
-
-
-
 
 
 theorem allListStp_eq (g : ℕ → ℕ) (acc x p : ℕ) :
@@ -1456,7 +1430,6 @@ always `≤ c` (chains of `Nat.unpair` projections), a table covering `[0, c]` i
 throughout the whole recursion — no growing/re-tabulating needed as fuel increases. -/
 
 
-
 /-- Tag-dispatch on `e.unpair.1 ∈ {0,1,2,3}` (else `fdef e`). -/
 theorem primrec_tagCase4 {f0 f1 f2 f3 fdef : ℕ → ℕ}
     (hf0 : Nat.Primrec f0) (hf1 : Nat.Primrec f1) (hf2 : Nat.Primrec f2) (hf3 : Nat.Primrec f3)
@@ -1605,7 +1578,6 @@ Synchronized `foldCode` over `c1` threading remainder-code of `c2` (**7.22i(b)3*
 search — decidable elementwise equality only. -/
 
 
-
 theorem natEqChar_le_one (a b : ℕ) : natEqChar a b ≤ 1 := by unfold natEqChar; omega
 
 theorem natEqChar_eq_zero_or_one (a b : ℕ) : natEqChar a b = 0 ∨ natEqChar a b = 1 := by
@@ -1615,8 +1587,6 @@ theorem primrec_natEqChar : Nat.Primrec (fun t => natEqChar t.unpair.1 t.unpair.
   (primrec_sub₂ (Nat.Primrec.const 1)
     (primrec_add₂ (primrec_sub₂ Nat.Primrec.left Nat.Primrec.right)
       (primrec_sub₂ Nat.Primrec.right Nat.Primrec.left))).of_eq fun _ => rfl
-
-
 
 
 theorem listEqStp_acc (flag rem x : ℕ) :
@@ -1779,11 +1749,6 @@ theorem primrec_listEqChar : Nat.Primrec (fun t => listEqChar t.unpair.1 t.unpai
 
 Built via `tabCode` + `nthCode`/`listLenChar` (no snoc/reverse fold). Correctness goes through
 `tabCode_nth_lt`/`tabCode_nth_ge` + `nthCode_eq` only. -/
-
-
-
-
-
 
 
 /-- Two lists agree when every `getD` index does. (Choice-free: `by_contra`/`Classical.choice` is
@@ -1996,9 +1961,6 @@ open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
 
-
-
-
 private theorem c9b5_decodeList_encodeListBool (σ : List Bool) :
     decodeList (c9b5_encodeListBool σ) = σ.map c9b5_boolNat := by
   simp [c9b5_encodeListBool, decodeList_encodeList]
@@ -2148,8 +2110,6 @@ theorem autStateCardFuelCharBody_local (f g : ℕ → ℕ) (c : ℕ) (h : ∀ c'
   have h1 : c.unpair.2.unpair.1 ≤ c := le_trans (unpair_left_le c.unpair.2) (unpair_snd_le c)
   have h2 : c.unpair.2.unpair.2 ≤ c := le_trans (unpair_snd_le c.unpair.2) (unpair_snd_le c)
   rw [h _ h1, h _ h2]
-
-
 
 
 theorem matchesBCharBody_eq (prev : ℕ → ℕ) (c cw : ℕ) :
@@ -2360,7 +2320,6 @@ theorem matchesBCharBody_local (f g : ℕ → ℕ) (c cw : ℕ)
   | _ + 4 => rfl
 
 
-
 /-! ## Exercise 7.22 C9b6 — `decideNonemptyBChar`, `consistentBChar`
 
 Bounded index search over valid bit-list codes (via `codeBound`) instead of materializing
@@ -2483,7 +2442,6 @@ acceptance does). That construction is cited here **only** for its length bound
 **not** re-encode `Finset (autState e)` at all — `interEqB`'s own definition is just a bounded
 search calling `matchesB`, which already has a joint `(fuel, code)`-primitive-recursive mirror
 (`matchesBChar`, C9b5/C9b8). Only the *bound formula* and the *bounded-forall* wiring are new. -/
-
 
 
 theorem subsetGuardChar_le_one (fuel c1 c2 i : ℕ) : subsetGuardChar fuel c1 c2 i ≤ 1 :=

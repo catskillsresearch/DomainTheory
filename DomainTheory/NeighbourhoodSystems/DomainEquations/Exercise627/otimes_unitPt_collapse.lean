@@ -23,30 +23,7 @@ namespace Exercise627
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 
-
-
-
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- With the unit second factor, the smash `twoPt ⊗ 𝟙` collapses to its master. -/

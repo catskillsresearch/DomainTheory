@@ -16,25 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem outrightC_isScottContinuous :
     IsScottContinuous (fun u =>
       condSet (funOf u (ofNat 0)) botElem (funOf u (ofNat 1))) :=

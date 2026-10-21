@@ -16,8 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
 theorem presentedIntervals_map_qpClipGe (m : ℚ) (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map (qpClipGe m)) = presentedIntervals L ∩ Set.Ici m := by
   ext x

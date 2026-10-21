@@ -20,9 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise412
 open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
 
 
-
-
-
 /-- **Exercise 4.12 (Scott 1981, PRG-19).** `I_T` has no *greatest* (hence no maximum) fixed point:
 the two total elements `elemZero`, `elemOne` are both fixed points, are incomparable, and no element
 dominates both. -/

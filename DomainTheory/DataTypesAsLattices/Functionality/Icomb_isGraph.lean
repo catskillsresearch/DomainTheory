@@ -14,26 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Icomb_isGraph : Icomb = graph (fun x => funOf Icomb x) := by
   apply graph_ext
   intro x

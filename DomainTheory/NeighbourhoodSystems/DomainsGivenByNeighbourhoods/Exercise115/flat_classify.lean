@@ -20,12 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise115
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- **Flat classification.** Every element is `⊥` or an atom `↑{n}`. *Classical.* -/
 theorem flat_classify (x : flat.Element) :
     x = flat.bot ∨ ∃ n, x = flat.principal (flat_mem_singleton n) := by

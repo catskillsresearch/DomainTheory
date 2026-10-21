@@ -11,8 +11,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.bar
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 namespace Factoid84

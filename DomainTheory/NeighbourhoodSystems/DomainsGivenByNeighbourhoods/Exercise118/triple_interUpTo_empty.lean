@@ -19,13 +19,7 @@ set_option linter.unusedSimpArgs false
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
 namespace triSys
-
-
 
 
 theorem triple_interUpTo_empty : triSys.interUpTo triple 3 = (∅ : Set (Fin 3)) := by

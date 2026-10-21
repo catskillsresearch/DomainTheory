@@ -21,8 +21,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
 /-- `isoProj ∘ isoInj = I_D` (Theorem 2.7's `toElementMap_ofIso`, both ways, plus `OrderIso.symm_apply_apply`). -/
 theorem isoProj_comp_isoInj : (isoProj P).comp (isoInj P) = idMap D := by
   apply ext_of_toElementMap

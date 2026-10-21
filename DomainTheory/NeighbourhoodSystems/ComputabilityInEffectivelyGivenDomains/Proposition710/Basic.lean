@@ -108,14 +108,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 /-! ### Part A — `ℙ𝒟` is a neighbourhood system. -/
 
 
-
-
-
-
-
-
-
-
 /-! ### Part B — `ℙ𝒟` is effectively given.
 
 Throughout, `P : ComputablePresentation 𝒟`. We enumerate `ℙ𝒟`-neighbourhoods by codes of finite lists
@@ -124,45 +116,13 @@ of `𝒟`-indices. -/
 variable (P : ComputablePresentation V)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-! #### The equality decider (Scott's relation (i)). -/
-
-
-
-
 
 
 /-! #### The primitive-recursive intersection function (the nested filtered product fold). -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! #### Primitive recursivity of `interCode`. -/
-
-
-
 
 
 /-! #### Assembling the `ℙ𝒟` presentation. -/

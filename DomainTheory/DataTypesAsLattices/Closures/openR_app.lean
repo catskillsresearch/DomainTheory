@@ -17,39 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.openR_map_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem openR_app (u : Pomega) :
     funOf openR u = {m | ∃ n, e n ⊆ e m ∧ n ∈ u} :=
   beta openR_map_isScottContinuous u

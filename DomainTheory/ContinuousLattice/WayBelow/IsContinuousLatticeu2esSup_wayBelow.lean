@@ -23,9 +23,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
-
 /-- In a continuous lattice, `y` is the actual supremum of `{x | x ≪ y}`. -/
 theorem IsContinuousLattice.sSup_wayBelow (h : IsContinuousLattice D) (y : D) :
     sSup {x | x ≪ y} = y :=

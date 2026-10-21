@@ -16,15 +16,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VEnt
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 /-- **Scott (1)–(6).** The information system `V` (all finite sets consistent). -/
 def vSystem : InfoSys VToken where

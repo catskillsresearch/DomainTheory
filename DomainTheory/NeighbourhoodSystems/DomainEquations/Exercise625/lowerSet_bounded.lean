@@ -21,8 +21,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem.ProjectionPair
 
 
-
-
 /-- The set `{x ∣ g(x) ⊑ y}` is bounded: `h(y)` is an upper bound (it is in fact the top). -/
 theorem lowerSet_bounded (P : ProjectionPair D E) (y : E.Element) :
     D.Bounded (P.lowerSet y) :=

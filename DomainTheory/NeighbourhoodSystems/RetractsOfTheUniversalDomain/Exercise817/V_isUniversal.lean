@@ -28,15 +28,6 @@ universe u v w
 variable {α : Type u} {β : Type v} {γ : Type w}
 
 
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.17, Part 3.** Exercise 8.12's `V` (a `NeighborhoodSystem ℕ`, built from `2^kℕ+ℓ` —
 literally a *different* neighbourhood system from `U : NeighborhoodSystem ℚ`, not merely a
 relabelling) is a universal domain, since it is effectively isomorphic to `𝒰` (`effectiveIso812_UV`,

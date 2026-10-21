@@ -21,8 +21,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-- The value `num n m` sits in the half-open diagonal block `[T(n+m), T(n+m+1))`: the upper bound. -/

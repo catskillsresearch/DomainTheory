@@ -18,13 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
-universe w
-
-
-
-
-
-
 
 /-- The **identity functor is continuous on domains**: `targetFam` reduces to the plain neighbourhood
 family, so directed-union preservation is exactly the hypothesis `hU` that `U` is the union. -/

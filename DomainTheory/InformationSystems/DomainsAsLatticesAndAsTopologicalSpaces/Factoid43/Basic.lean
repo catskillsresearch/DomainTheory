@@ -32,9 +32,5 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
-
-
 end InfoSys
 end DomainTheory.InformationSystems

@@ -39,7 +39,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 /-! ### Completeness: every filter is fixed by a unique point. -/
 
 
-
 /-! ### Consistency ⟺ non-empty intersection of brackets. -/
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems

@@ -25,13 +25,7 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
 variable (cons : ℕ → ℕ)
-
-
 
 
 /-- **One-step transfer of the meet-fold invariant**: if `init` codes `(ok, idx)` faithfully

@@ -21,14 +21,7 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
 section Smash
-
-
-
-
 
 
 theorem smashRetraction_of_ne_bot {z : (prod D E).Element} (hx : z.fst ≠ D.bot)

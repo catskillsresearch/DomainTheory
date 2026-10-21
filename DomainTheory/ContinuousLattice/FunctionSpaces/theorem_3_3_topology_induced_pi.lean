@@ -27,34 +27,11 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-universe u v
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- The literal product/subspace form of Theorem 3.3: the Scott lattice topology on `[D → D']`

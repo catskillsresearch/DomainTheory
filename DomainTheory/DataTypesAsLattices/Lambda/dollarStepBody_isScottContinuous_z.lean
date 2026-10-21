@@ -18,46 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem dollarStepBody_isScottContinuous_z (s u : Pomega) :
     IsScottContinuous (fun z => dollarStepBody s u z) :=
   theorem_1_3_tuple

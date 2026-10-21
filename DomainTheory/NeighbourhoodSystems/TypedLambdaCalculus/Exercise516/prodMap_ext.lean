@@ -19,62 +19,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {β : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- Two maps `C × C → C` agree as soon as they agree on every pair of finite elements. -/

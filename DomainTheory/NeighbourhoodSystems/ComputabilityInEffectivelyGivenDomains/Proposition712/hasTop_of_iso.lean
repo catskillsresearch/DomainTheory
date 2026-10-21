@@ -24,13 +24,11 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
 
 
-
 namespace Counterexample712C
 
 open NeighborhoodSystem
 
 variable {γ δ : Type*}
-
 
 
 /-- **`HasTop` transports across domain isomorphisms.** An order-iso `|D| ≃o |D'|` carries the

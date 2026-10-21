@@ -13,15 +13,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vSys
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 /-- Unfold product-shaped tokens into `V × V`. Top `∇` has no single product-token
 image (it generates the top *element*); we send it to `(∇, Δ)` as a left witness. -/

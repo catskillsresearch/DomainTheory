@@ -22,8 +22,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 theorem down_mem_idealOf {O Y Z : Set (ℕ → Bool)} (hY : Y ∈ idealOf O)

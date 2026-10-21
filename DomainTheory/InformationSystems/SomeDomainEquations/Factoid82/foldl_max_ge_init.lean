@@ -18,19 +18,17 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.rawD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
+
+omit [DecidableEq α] in
 
 theorem foldl_max_ge_init (u : List (RawLamToken α)) (init : ℕ) :
     init ≤ List.foldl (fun d t => Nat.max d (rawDepth t)) init u := by

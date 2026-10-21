@@ -18,8 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUn
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- The union of a coherent sequence lies in the range of the least fixed

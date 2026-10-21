@@ -16,8 +16,6 @@ public import DomainTheory.BridgeTheorems.mem_closed_pair_bots
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

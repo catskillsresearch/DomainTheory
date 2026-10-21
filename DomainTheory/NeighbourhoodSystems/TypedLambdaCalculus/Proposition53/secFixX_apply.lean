@@ -20,7 +20,6 @@ variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSyst
 namespace ApproximableMap
 
 
-
 theorem secFixX_apply (τ : ApproximableMap (prod V₀ V₁) V₀) (y : V₁.Element) :
     (secFixX τ).toElementMap y = (sectionX τ y).fixElement := by
   rw [secFixX, toElementMap_comp, fixMap_toElementMap, sectionX]

@@ -17,19 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_isScottCont
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plusR_map_isScottContinuous (a b : Pomega) :
     IsScottContinuous (fun u =>
       dcondSet (funOf u (ofNat 0))

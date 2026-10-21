@@ -19,26 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Icomb_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem theorem_7_3_I_unique (i : Pomega)
     (hi : ∀ A, (arrowE A A).mem i) : i = Icomb := by
   have hgraph : i = graph (fun x => funOf i x) := (hi emptyE).1

@@ -24,17 +24,11 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
 
 
-
 namespace Counterexample712C
 
 open NeighborhoodSystem
 
 variable {γ δ : Type*}
-
-
-
-
-
 
 
 theorem Vshape_mem_true : Vshape.mem {true} := Or.inr (Or.inl rfl)

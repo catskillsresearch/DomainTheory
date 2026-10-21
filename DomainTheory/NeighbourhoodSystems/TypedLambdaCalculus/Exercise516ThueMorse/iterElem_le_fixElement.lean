@@ -19,20 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Each approximant is below the least fixed point. -/
 theorem iterElem_le_fixElement {α : Type*} {V : NeighborhoodSystem α} (f : ApproximableMap V V)
     (n : ℕ) : f.iterElem n ≤ f.fixElement := by

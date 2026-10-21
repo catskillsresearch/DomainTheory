@@ -16,15 +16,13 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.m
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 variable {A : Type} [DecidableEq A]
+
+omit [DecidableEq A] in
 
 theorem prependN_coneN (σ ρ : Strn A) : prependN σ (coneN ρ) = coneN (σ ++ ρ) := by
   ext w

@@ -20,15 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise722
 
 
-
-
-
-
-
-
-
-
-
 /-- **Characterization of `S` as the regular events of this fragment.** A language `X` is in `S`
 exactly when it is the *non-empty* denotation of some `Σ`/`{σ}`/`·`/`∩` expression. This is the
 precise content of Scott's "the sets in `S` are each regular events". -/

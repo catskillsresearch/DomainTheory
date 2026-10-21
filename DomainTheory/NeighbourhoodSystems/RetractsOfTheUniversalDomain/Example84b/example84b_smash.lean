@@ -22,14 +22,7 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
 section Smash
-
-
-
-
 
 
 /-- **Example 8.4(b)(ii) (Scott 1981, PRG-19).** `smashRetraction` is a projection on `D × E`

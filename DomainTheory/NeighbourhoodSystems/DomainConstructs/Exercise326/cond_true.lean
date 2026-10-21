@@ -19,21 +19,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α : Type*}
 
 
-
-
-
-
-
-
-
-
 variable (V : NeighborhoodSystem α)
-
-
-
-
-
-
 
 
 /-- **Exercise 3.26(i) (Scott 1981, PRG-19).** `cond(true, x, y) = x`. -/

@@ -22,12 +22,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise114
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- **Exercise 1.14 (total elements).** The principal filter of a *singleton* `{n}` is a total
 (maximal) element: any `y` it approximates approximates it back. (A `y ⊋ ↑{n}` would contain some
 `W ∌ n`; then `{n} ∩ W = ∅ ∈ y ⊆ 𝒟`, impossible.) These are exactly the total elements. -/

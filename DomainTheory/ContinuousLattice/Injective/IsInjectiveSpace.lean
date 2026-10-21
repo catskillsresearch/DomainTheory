@@ -13,11 +13,9 @@ public import DomainTheory.ContinuousLattice.Injective.IsRetractSubspace
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 open Topology TopologicalSpace
 
-universe u v w
+universe u v
 
 /-- **Scott 1972, Definition 1.1.** A topological space `D` is *injective* when, for every
 topological embedding `e : X → Y` and every continuous `f : X → D`, there is a continuous

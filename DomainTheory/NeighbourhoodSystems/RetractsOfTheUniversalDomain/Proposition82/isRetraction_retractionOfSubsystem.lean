@@ -22,7 +22,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem
 
 
-
 /-- **Proposition 8.2, first half.** `retractionOfSubsystem h` is a retraction: `a ∘ a = a`, via
 `a ∘ a = i∘(j∘i)∘j = i∘I_D∘j = i∘j = a`. -/
 theorem isRetraction_retractionOfSubsystem (h : D ◁ E) :

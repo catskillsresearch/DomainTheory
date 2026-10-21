@@ -22,10 +22,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
 /-- **`isoProj` is computable** relative to `DprimeUCodePresentation P`/`P`: its raw-index relation is
 `DprimeUCodePresentation`'s `incl_computable` reindexed by `eIdx P` in the second argument. -/
 theorem isoProj_isComputableMap : IsComputableMap (DprimeUCodePresentation P) P (isoProj P) := by

@@ -22,21 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.comp_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, after (4.25).** `eval ∘ (curry(f) ⊗ b) = f`. -/
 theorem eval_curry {a b c f : Pomega}
     (_ha : IsRetract a) (hb : IsRetract b) (_hc : IsRetract c)

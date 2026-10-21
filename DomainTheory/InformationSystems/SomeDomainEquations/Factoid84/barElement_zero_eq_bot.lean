@@ -23,15 +23,6 @@ open ApproximableMap
 namespace Factoid84
 
 
-
-
-
-
-
-
-
-
-
 theorem barElement_zero_eq_bot : barElement 0 = botElement := by
   apply le_antisymm
   · intro x hx

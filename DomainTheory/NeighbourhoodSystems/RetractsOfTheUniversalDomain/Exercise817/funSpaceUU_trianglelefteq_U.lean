@@ -26,13 +26,6 @@ universe u v w
 variable {α : Type u} {β : Type v} {γ : Type w}
 
 
-
-
-
-
-
-
-
 /-- **Exercise 8.17, Part 1 (`→`).** `iArrow/jArrow` already are the pair `𝒰→𝒰 ⇄ 𝒰`; bonus `⊴`. -/
 theorem funSpaceUU_trianglelefteq_U : funSpace U U ⊴ U :=
   trianglelefteq_of_projectionPair iArrow jArrow jArrow_comp_iArrow iArrow_comp_jArrow_le

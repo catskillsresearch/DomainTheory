@@ -18,45 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_i
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem arrowR_isRetract {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
     IsRetract (arrowR a b) := by
   change arrowR a b =

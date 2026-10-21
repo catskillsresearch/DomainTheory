@@ -15,31 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sigmaJ_of_no_tag {j : ℕ} {u : Pomega}
     (hu : ∀ k, pair j k ∉ u) :
     sigmaJ j u = botElem := by

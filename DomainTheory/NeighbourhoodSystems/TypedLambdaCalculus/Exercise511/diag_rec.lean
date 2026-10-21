@@ -20,17 +20,6 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 5.11 (Scott 1981, PRG-19).** The recursion `diag(x) = push(x, diag(x))`. -/
 theorem diag_rec (x : V.Element) :
     (diag V).toElementMap x =

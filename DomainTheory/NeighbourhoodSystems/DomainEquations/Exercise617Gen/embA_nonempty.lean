@@ -13,69 +13,14 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.B
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
 
-set_option linter.unusedSectionVars false
-
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 variable {A : Type} [DecidableEq A]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 section Iso
 
 variable {A : Type} [DecidableEq A] [Inhabited A]
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem embA_nonempty {a : A} {X : Set (Strn A)} (hX : X.Nonempty) : (embA a X).Nonempty := by

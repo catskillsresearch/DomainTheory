@@ -26,8 +26,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst28
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace

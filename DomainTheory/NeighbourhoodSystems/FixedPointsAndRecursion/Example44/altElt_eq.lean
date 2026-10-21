@@ -18,26 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example44
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `a = 0(1a)`: `altElt` satisfies Scott's defining equation. -/
 theorem altElt_eq : (consMap false).toElementMap ((consMap true).toElementMap altElt) = altElt := by
   have h := toElementMap_fixElement ((consMap false).comp (consMap true))

@@ -19,36 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_6
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.6, combinator form.**
 `(λf : V∘→V. Y(f)) : (V∘→V) ∘→ V`. -/
 theorem theorem_5_6_combinator :

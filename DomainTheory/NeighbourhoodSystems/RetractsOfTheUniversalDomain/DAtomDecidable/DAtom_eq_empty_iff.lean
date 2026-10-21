@@ -26,14 +26,7 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
 variable (cons : ℕ → ℕ)
-
-
-
 
 
 /-- **The core emptiness characterization.** `DAtom pos neg` is empty iff either the positive

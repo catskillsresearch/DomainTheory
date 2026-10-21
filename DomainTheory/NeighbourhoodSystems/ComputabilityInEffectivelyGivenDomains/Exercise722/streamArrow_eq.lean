@@ -23,32 +23,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`σ⃗ = σ·σ⃗`** (Scott's defining equation), unconditionally. -/
 theorem streamArrow_eq (σ : List Bool) :
     mulElem (emb σ) (streamArrow σ) = streamArrow σ := by

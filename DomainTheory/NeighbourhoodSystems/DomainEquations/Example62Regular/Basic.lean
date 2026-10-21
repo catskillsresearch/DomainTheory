@@ -57,13 +57,5 @@ open Language
 variable {n : ℕ}
 
 
-
-
-
-
-
-
-
-
 end Example62Regular
 end DomainTheory.NeighbourhoodSystems

@@ -22,21 +22,7 @@ namespace Exercise619
 variable {D : NeighborhoodSystem Str}
 
 
-
-
-
-
-
-
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
-
-
-
-
 
 
 /-- `liftBot` is the least element of `𝒟_⊥`. -/

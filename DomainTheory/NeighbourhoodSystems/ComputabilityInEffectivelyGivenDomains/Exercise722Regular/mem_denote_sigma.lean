@@ -18,22 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise722
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `denote .sigma = Σ` contains every word. -/
 theorem mem_denote_sigma (w : List Bool) : w ∈ denote .sigma := Set.mem_univ w
 

@@ -30,26 +30,6 @@ namespace InfoSysConstructions
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sumElementRht_eq {z : (sumSystem A B).Element} {y0 y1 : β}
     (hy0 : SumToken.right y0 ∈ z.carrier) (hy1 : SumToken.right y1 ∈ z.carrier) :
     sumElementRht A B z y0 hy0 = sumElementRht A B z y1 hy1 := by

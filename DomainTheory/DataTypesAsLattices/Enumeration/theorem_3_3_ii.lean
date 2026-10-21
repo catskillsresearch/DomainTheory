@@ -20,53 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem theorem_3_3_ii (v : ℕ → ℕ) (n : ℕ) :
     recNat v n = applyNat (v n) (num (v n)) := rfl
 

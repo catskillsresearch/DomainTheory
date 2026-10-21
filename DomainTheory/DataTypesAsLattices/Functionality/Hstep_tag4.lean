@@ -17,52 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_zero
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Hstep_tag4 (H x t : Pomega) :
     Hstep H (tagInj 4 x) t = hCond H (tagInj 4 x) t := by
   simp only [Hstep, expTag, tagInj_zero, dcondSet_ofNat_succ,

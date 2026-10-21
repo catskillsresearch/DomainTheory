@@ -24,8 +24,6 @@ variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSyst
 namespace ApproximableMap
 
 
-
-
 /-- **Proposition 5.3 (Scott 1981, PRG-19).** Bekić's theorem: the least fixed point of
 `F = ⟨τ, σ⟩` is the pair `⟨!x.τ(x, !y.σ(x,y)-coordinate), !y.σ(!x.τ(x,y), y)⟩`. Here the second
 coordinate is `ystar = (outerOp τ σ).fixElement` and the first is `xstar = secFixX τ (ystar)`. -/

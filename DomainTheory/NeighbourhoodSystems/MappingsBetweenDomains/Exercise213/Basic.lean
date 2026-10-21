@@ -54,7 +54,6 @@ end ApproximableMap
 namespace NeighborhoodSystem
 
 
-
 end NeighborhoodSystem
 
 namespace ApproximableMap

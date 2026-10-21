@@ -68,17 +68,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 /-! ### The one-token system `𝒪`. -/
 
 
-
-
-
-
-
-
 /-! ### The two elements `⊥ ⊑ ⊤` of `|𝒪|`. -/
-
-
-
-
 
 
 /-! ### The opens of `|𝒪|`. -/
@@ -86,11 +76,6 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 /-! ### The correspondence between opens of `|𝒟|` and approximable maps `𝒟 → 𝒪`. -/
 
 variable {γ : Type*} (V : NeighborhoodSystem γ)
-
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems.Exercise215

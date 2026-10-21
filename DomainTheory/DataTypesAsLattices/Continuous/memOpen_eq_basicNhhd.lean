@@ -20,12 +20,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
-
-
 theorem memOpen_eq_basicNhhd (k : ℕ) : memOpen k = basicNhhd (2 ^ k) := by
   ext x
   simp [memOpen, basicNhhd, e_pow2, Set.singleton_subset_iff]

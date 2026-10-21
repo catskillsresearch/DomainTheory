@@ -61,9 +61,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 /-! ### Definition 7.11 — the join element. -/
 
 
-
-
-
 theorem PDmem_finJoinSucc {m : ℕ} (xs : Fin (m + 1) → V.Element) {W : Set (Set α)} :
     (V.PDfinJoinSucc xs).mem W ↔ V.PDmemFinJoin xs W := Iff.rfl
 

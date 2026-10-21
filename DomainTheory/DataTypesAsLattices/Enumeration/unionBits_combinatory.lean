@@ -21,61 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem unionBits_combinatory : ∀ ks, IsCombinatory (unionBits ks)
   | [] => bot_combinatory
   | k :: ks => union_combinatory (ofNat_combinatory k) (unionBits_combinatory ks)

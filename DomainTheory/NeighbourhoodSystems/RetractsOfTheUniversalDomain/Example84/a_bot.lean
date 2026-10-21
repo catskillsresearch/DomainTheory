@@ -17,29 +17,10 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 
-
-
-
-
-
-
-
-
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
 variable (u : D.Element) (hu : u ≠ D.bot)
-
 
 
 theorem a_bot : (a u).toElementMap D.bot = D.bot := by

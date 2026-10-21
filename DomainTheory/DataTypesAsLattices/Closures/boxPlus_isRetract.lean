@@ -18,35 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.4 (sum half), idempotence.** -/
 theorem boxPlus_isRetract {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
     IsRetract (boxPlus a b) := by

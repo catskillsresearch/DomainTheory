@@ -22,7 +22,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
 theorem toElementMap_arrowComb (a b : ApproximableMap U U) (x : U.Element) :
     (arrowComb a b).toElementMap x =
       iArrow.toElementMap ((lamComb a b).toElementMap (jArrow.toElementMap x)) := by

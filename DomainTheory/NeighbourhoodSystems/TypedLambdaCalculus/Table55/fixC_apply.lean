@@ -20,33 +20,6 @@ variable {α β γ : Type*}
   {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem fixC_apply (φ : (funSpace V V).Element) :
     (fixC V).toElementMap φ = (toApproxMap φ).fixElement := by
   rw [fixC, fixMap_toElementMap]

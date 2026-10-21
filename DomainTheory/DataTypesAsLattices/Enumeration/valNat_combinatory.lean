@@ -19,38 +19,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem valNat_combinatory : ∀ n, IsCombinatory (valNat n)
   | 0 => valNat_zero ▸ Gcomb_combinatory
   | n + 1 =>

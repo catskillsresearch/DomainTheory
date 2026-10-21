@@ -19,15 +19,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
-
-
-
-
-
-
-
-
-
 /-- Each stage sits inside the colimit `Γ_D` (choice-free; avoids `Set.subset_iUnion`). -/
 theorem pIter_fst_subset_GammaD (m : ℕ) : (pIter m).1 ⊆ GammaD :=
   fun _ hx => Set.mem_iUnion.mpr ⟨m, hx⟩

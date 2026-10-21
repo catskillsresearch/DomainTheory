@@ -21,22 +21,6 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 5.11 (Scott 1981, PRG-19).** The recursion defining `map`:
 `map(s, x) = push((head s)(x), map(tail s, x))`. -/
 theorem map_rec (s : (iterSys (funSpace V V)).Element) (x : V.Element) :

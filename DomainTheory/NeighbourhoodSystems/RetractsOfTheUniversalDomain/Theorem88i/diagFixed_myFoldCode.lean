@@ -24,14 +24,9 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
 
-
-
-
 variable {P qChar cons}
 
 variable (P qChar cons)
-
-
 
 
 /-- **Theorem 8.8(c), Part 2 of 6, headline invariant.** `myFoldCode qChar cons c` is `DiagFixed`

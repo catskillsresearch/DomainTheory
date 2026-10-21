@@ -23,54 +23,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_tagStep : Nat.Primrec tagStep := by
   have h1 : Nat.Primrec (fun w : ℕ => w.unpair.1 + 1) :=
     primrec_add₂ Nat.Primrec.left (Nat.Primrec.const 1)

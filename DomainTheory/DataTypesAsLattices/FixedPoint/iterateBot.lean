@@ -7,8 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Graph
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Iterate `f` starting from `⊥`. -/

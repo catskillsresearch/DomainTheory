@@ -20,8 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 /-- `Corresponds` also matches `⊆` — i.e. it is an order-isomorphism between the two concrete

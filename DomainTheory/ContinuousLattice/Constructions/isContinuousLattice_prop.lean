@@ -23,11 +23,6 @@ open Topology Set
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
-
-
 /-- The Sierpiński space `Prop` (Scott's `𝕆`) is a continuous lattice: it is a finite complete
 lattice, so Proposition 2.8 applies. -/
 theorem isContinuousLattice_prop : IsContinuousLattice Prop :=

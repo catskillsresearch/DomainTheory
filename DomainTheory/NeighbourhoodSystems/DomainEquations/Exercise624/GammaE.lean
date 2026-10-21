@@ -8,8 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.pIte
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.Exercise619

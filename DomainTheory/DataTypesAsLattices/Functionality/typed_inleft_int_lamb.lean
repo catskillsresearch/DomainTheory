@@ -18,37 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_39
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem typed_inleft_int_lamb {x : Pomega} (hx : typed x intR) :
     typed (funOf inleftC x) lambR := by
   rw [eq_4_39, inleftC_app]

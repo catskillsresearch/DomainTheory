@@ -19,8 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise216
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
 /-- **Exercise 2.16, second half.** `parityMap` is the *unique* approximable map `B → T`
 satisfying `f(1x)=true`, `f(01x)=false`, `f(00x)=f(x)`. Every neighbourhood of `B` is a cone
 (`memB_cone`), so `ApproximableMap.ext` reduces `g = parityMap` to matching relations on cones,

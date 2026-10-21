@@ -19,60 +19,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_diagonalInterCode : Primrec diagonalInterCode :=
   primrec_applyNat.comp
     (primrec_applyNat.comp (Primrec.const interCode) primrec_num)

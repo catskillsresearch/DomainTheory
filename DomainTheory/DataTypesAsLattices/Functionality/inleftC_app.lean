@@ -16,21 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_isScottCont
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem inleftC_app (x : Pomega) :
     funOf inleftC x = pairSeq (ofNat 0) x :=
   beta (pairSeq_isScottContinuous_right (ofNat 0)) x

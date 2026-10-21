@@ -21,14 +21,6 @@ open scoped Computability
 open Sum Set
 
 
-
-
-
-
-
-
-
-
 /-- **`diffNFA` accepts exactly `denote e₁ \ denote e₂`.** -/
 theorem diffNFA_mem_accepts_iff (e1 e2 : SExpr) (w : List Bool) :
     w ∈ (diffNFA e1 e2).accepts ↔ w ∈ denote e1 ∧ w ∉ denote e2 := by

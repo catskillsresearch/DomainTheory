@@ -49,13 +49,12 @@ Proposition 6.7 is the diagram chase in `Proposition67.lean`.
 
 namespace DomainTheory.NeighbourhoodSystems
 
-universe u v w
+universe u
 
 /-! ### The category of neighbourhood systems and approximable maps
 
 Scott's running category (prose before Definition 6.3). Objects bundle a token type with a system;
 morphisms are approximable maps; the laws are Theorem 2.5. -/
-
 
 
 variable {Obj : Type u} [Category Obj]
@@ -70,7 +69,6 @@ variable {T : Endofunctor Obj}
 
 
 namespace AlgHom
-
 
 
 @[simp] theorem id_hom (A : TAlgebra T) : (AlgHom.id A).hom = (𝟙 A.carrier) := rfl

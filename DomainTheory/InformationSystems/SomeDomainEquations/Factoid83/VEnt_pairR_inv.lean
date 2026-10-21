@@ -14,15 +14,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPai
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem VEnt_pairR_inv {v : Finset VToken} {y : VToken}
     (h : VEnt v (.pairR y)) : .top ∈ v ∨ VEnt (vPairRFinset v) y := by

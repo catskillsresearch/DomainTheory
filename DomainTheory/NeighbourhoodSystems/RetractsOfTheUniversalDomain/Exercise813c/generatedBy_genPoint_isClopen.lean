@@ -21,9 +21,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
 /-- **Easy direction**: everything `GeneratedBy genPoint` is clopen. -/
 theorem generatedBy_genPoint_isClopen {Y : Set (ℕ → Bool)} (h : GeneratedBy genPoint Y) :
     IsClopen Y := by

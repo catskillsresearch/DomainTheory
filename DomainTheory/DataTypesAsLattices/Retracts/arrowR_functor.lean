@@ -19,45 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.eq_4_11_comp
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem arrowR_functor {a b a' b' f f' : Pomega}
     (hf : typed f (arrowR a b)) (hf' : typed f' (arrowR a' b')) :
     typed (arrowR f f') (arrowR (arrowR b a') (arrowR a b')) := by

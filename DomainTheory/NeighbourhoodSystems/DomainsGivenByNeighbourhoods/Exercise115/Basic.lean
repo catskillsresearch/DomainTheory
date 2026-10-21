@@ -55,13 +55,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 /-! ## The flat domain `flat`. -/
 
 
-
-
-
-
 /-! ## The "stem" domain `stem`. -/
-
-
 
 
 @[simp] theorem stem_mem {X : Set ℕ} :

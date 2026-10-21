@@ -15,37 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.succSet_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sucC_app (x : Pomega) : funOf sucC x = succSet x :=
   beta succSet_isScottContinuous x
 

@@ -21,7 +21,6 @@ namespace InclStructure
 variable (I : InclStructure)
 
 
-
 /-- **Axiom (iii).** There is an `INCL`-greatest code. -/
 theorem axiom_iii : ∃ m, ∀ n, I.INCL n m := ⟨I.topIdx, I.topIdx_spec⟩
 

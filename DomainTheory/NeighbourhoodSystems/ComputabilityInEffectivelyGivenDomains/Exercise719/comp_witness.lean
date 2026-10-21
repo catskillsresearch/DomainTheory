@@ -23,8 +23,6 @@ variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
-
 /-- Choice-free gathering of composition witnesses along the generators of the source: from a list
 `L` of `𝒟`-neighbourhoods each admitting a `(g∘f)`-witness into `C`, build a single list `M` of
 `ℰ`-neighbourhoods covering every `X ∈ L` from the `f`-side and covered into `C` from the `g`-side.

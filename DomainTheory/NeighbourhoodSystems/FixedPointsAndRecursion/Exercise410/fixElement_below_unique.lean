@@ -20,20 +20,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 4.10 (Scott 1981, PRG-19).** Any fixed point of `f` below `fix(f)` *is* `fix(f)`:
 a fixed point is a pre-fixed point, so leastness forces `fix(f) ⊑ x`. -/
 theorem fixElement_below_unique (f : ApproximableMap V V) {x : V.Element}

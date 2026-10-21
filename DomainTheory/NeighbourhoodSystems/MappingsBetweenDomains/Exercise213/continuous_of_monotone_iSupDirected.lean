@@ -26,7 +26,6 @@ variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Neigh
 namespace NeighborhoodSystem
 
 
-
 /-- **The converse of `continuous_toElementMap`/`continuous_monotone`, in domain-theoretic form.**
 A monotone function that also preserves directed unions is topologically continuous — the standard
 "Scott continuity ⟺ order-theoretic continuity" bridge, proved directly from algebraicity rather

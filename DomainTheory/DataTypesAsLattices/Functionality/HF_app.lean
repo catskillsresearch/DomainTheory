@@ -15,51 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.HF_inner_isScottCon
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem HF_app (H e : Pomega) :
     funOf (HF H) e = graph (fun t => Hstep H e t) :=
   beta (HF_inner_isScottContinuous H) e

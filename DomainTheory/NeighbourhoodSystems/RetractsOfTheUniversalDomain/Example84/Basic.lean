@@ -85,25 +85,12 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 /-! ### The two-point domain `O = {{0},{0,1}}`. -/
 
 
-
-
-
-
-
-
-
 /-! ### `check : D → O` (Scott's `X check Y ↔ Y = {0,1} ∨ X ≠ Δ`). -/
 
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 
-
-
-
 /-! ### `fade : O × D → D` (Scott leaves the formula to the reader). -/
-
-
-
 
 
 /-! ### `a(x) = fade(check(x), u)`: the retraction. -/
@@ -111,15 +98,7 @@ variable {α : Type*} {D : NeighborhoodSystem α}
 variable (u : D.Element) (hu : u ≠ D.bot)
 
 
-
 /-! ### The range of `a` is isomorphic to `O`. -/
-
-
-
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

@@ -23,8 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.triangle
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem pair_eq_triangle (n m : ℕ) : pair n m = triangle (n + m) + m := rfl

@@ -22,13 +22,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example15
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
 /-- The neighbourhoods of Example 1.5 are exactly the non-empty subsets. -/
 theorem mem_iff_nonempty (X : Set Token) : neighborhoodSystem.mem X ↔ X.Nonempty := Iff.rfl
 

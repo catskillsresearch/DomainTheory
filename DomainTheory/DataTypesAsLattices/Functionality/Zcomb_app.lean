@@ -15,28 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_map_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Zcomb_app (n : ℕ) (f : Pomega) :
     funOf (Zcomb n) f = graph (fun x => Z n f x) :=
   beta (Zcomb_map_isScottContinuous n) f

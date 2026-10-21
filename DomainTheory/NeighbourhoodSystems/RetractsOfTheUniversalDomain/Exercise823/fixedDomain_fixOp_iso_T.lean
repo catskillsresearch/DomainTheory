@@ -25,15 +25,6 @@ namespace Exercise823
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.23, Claim 2 (the domain equation).** Given any correspondence `T` (bundling, for
 each map, a type and a domain over it) with `Fix(t(a)) ≅ T(a)` for every finitary projection `a`
 (Scott's hypothesis `D_{t(a)} ≅ T(D_a)`), substituting the *exact* fixed point `a := ‖t‖` and using

@@ -15,54 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Yterm_interp : interp Yterm (fun _ => botElem) = Ycomb := by
   simp [Yterm, interp, Ycomb, omegaComb, envSet, Function.update]
 

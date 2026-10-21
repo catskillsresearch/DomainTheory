@@ -25,19 +25,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`lamOp c` recovers `expMap (-) c = lamComb (-) c` at every `a`.** The heart of the
 continuity argument: unwinding both curry layers (`curryC_toApproxMap`, `toElementMap_curry_apply`
 twice) and `RMap`'s value formula (`toElementMap_RMap`) against `expMap`'s own value formula

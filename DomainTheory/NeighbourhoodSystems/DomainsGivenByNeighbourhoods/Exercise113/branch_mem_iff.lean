@@ -19,12 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise113
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
 /-- `cone σ ∈ branch p` iff `σ` is an initial segment of some `p ↾ n`, i.e. `σ` lies on the path. -/
 theorem branch_mem_iff (p : ℕ → Bool) {σ : Str} :
     (branch p).mem (cone σ) ↔ ∃ n, σ <+: prefixSeq p n := by

@@ -72,11 +72,7 @@ open Domain.Recursive
 /-! ### Integers as difference-pairs of naturals -/
 
 
-
-
 /-! ### Rationals as (integer numerator code, denominator `- 1`) pairs -/
-
-
 
 
 /-! ### Primitive-recursive comparison of rational codes
@@ -87,17 +83,7 @@ writing `cᵢ` for `(aᵢ, bᵢ, dᵢ)` (so `decodeRat cᵢ = (aᵢ - bᵢ)/(d�
 term to the other side to avoid subtraction, to `a₁(d₂+1) + b₂(d₁+1) ≤ a₂(d₁+1) + b₁(d₂+1)`. -/
 
 
-
-
-
-
-
 /-! ### Max/min of rational codes, and constants -/
-
-
-
-
-
 
 
 /-! ### The midpoint of two rational codes (needed for Theorem 8.8(b) Part 4's `splitU`)

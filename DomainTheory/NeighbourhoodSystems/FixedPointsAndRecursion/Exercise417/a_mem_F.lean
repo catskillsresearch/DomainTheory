@@ -25,9 +25,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
 theorem a_mem_F (a b : S) (x : Set S) : a ∈ F a b x :=
   base_subset_F a b x (Set.mem_union_right _ (Set.mem_insert _ _))
 

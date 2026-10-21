@@ -9,8 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.str_comp_desc
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 universe u

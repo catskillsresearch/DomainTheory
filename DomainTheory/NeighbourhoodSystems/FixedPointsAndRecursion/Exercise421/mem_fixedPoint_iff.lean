@@ -18,8 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise421
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
-
-
 /-- The key step toward uniqueness: any fixed point `u` of `leOp` agrees with `≤` pointwise.
 By induction on the second coordinate `m`; the base case `m = 0` uses that the successor clause
 cannot produce a `0` on the right. -/

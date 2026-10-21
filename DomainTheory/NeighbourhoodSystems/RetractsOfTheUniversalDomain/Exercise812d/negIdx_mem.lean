@@ -20,13 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 
-
-
-
-
-
-
-
 namespace IsComputableSplit
 
 variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}

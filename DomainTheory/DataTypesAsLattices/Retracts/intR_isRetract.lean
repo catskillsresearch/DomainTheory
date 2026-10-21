@@ -18,50 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.intR_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem intR_isRetract : IsRetract intR := by
   change intR = graph (fun x => funOf intR (funOf intR x))
   refine intR_isGraph.trans ?_

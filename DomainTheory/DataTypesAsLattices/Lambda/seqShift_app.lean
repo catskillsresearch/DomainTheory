@@ -15,44 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqShift_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seqShift_app (u z : Pomega) :
     funOf (seqShift u) z = seqFun u (succSet z) :=
   beta (seqShift_isScottContinuous u) z

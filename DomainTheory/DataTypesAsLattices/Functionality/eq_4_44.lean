@@ -15,36 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.expF_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (4.44).** `exp` is the least fixed point of the seven-tag
 syntax functor. -/
 theorem eq_4_44 : expR = expF expR := by

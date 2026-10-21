@@ -17,18 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2_alpha
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 2.2 (The conversion theorem).**
 The three basic principles (α), (β), (ξ) are valid in the model. -/
 theorem theorem_2_2 (i : ℕ) (body : Term) (ρ : ℕ → Pomega) (y : Pomega) :

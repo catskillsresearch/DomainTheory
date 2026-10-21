@@ -19,8 +19,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 /-- No finitary agreement argument is needed here (contrast `8.13(b)`'s `semanticEquiv_iff_

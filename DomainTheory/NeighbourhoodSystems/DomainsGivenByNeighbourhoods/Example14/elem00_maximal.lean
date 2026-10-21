@@ -16,66 +16,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 namespace DomainTheory.NeighbourhoodSystems.Example14
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace neighborhoodSystem
 
 open NeighborhoodSystem
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem elem00_maximal (x : neighborhoodSystem.Element) (h : elem00 ≤ x) : x = elem00 :=

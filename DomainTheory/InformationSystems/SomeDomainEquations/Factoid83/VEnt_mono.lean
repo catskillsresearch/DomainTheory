@@ -16,15 +16,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPai
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem VEnt_mono {u v : Finset VToken} {c : VToken}
     (huv : u ⊆ v) (h : VEnt u c) : VEnt v c := by

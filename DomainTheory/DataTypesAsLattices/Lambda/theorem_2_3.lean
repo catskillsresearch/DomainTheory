@@ -15,23 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.curryFin_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 2.3 (The reduction theorem).**
 Any continuous function of `k` variables is represented by an element
 `u ∈ Pω` via iterated application. -/

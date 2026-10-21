@@ -18,8 +18,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 private def pairRInsert : VToken → Finset VToken → Finset VToken
   | .pairR t => insert t
   | .bot | .top | .pairL _ => id

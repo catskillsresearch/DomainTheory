@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (4.39).** `lamb = int ⊕ (lamb ∘→ lamb)`. -/

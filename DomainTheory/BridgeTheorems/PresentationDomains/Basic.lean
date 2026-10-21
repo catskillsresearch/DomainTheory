@@ -75,16 +75,10 @@ universe u
 variable {D : Type u} [CompleteLattice D] [DecidableEq D]
 
 
-
-
-
 section Continuous
 
 variable (hD : IsContinuousLattice D)
 include hD
-
-
-
 
 
 /-- The three presentations determine the same domain (round corner). -/

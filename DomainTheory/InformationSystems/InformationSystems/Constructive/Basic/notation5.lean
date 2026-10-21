@@ -9,8 +9,6 @@ public import DomainTheory.InformationSystems.InformationSystems.Constructive.fu
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems.Constructive
 
 variable {α : Type*} [DecidableEq α]

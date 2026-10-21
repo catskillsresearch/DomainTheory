@@ -73,24 +73,15 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exampl
 /-! ### Disjointness facts for `C`'s neighbourhoods (cones vs singletons). -/
 
 
-
 /-! ### The head-test value functions. -/
 
 variable {β : Type*}
 
 
-
-
 /-! ### The combinator `liftC`: an approximable map out of `C`. -/
 
 
-
-
 /-! ### The three tests `empty, zero, one : C → T`. -/
-
-
-
-
 
 
 /-! Value equations on total elements `σ` and partial elements `σ⊥`. -/

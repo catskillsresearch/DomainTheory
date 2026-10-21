@@ -25,19 +25,12 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
-
-
 section HardDirection
 
 variable {a : ApproximableMap E E}
 
 
-
 variable {β : Type u} {F : NeighborhoodSystem β} (e : FixSet a ≃o F.Element)
-
-
 
 
 /-- **Scott's compactness-reflection fact.** If `e.symm(w')` is a *principal* (finite) element of

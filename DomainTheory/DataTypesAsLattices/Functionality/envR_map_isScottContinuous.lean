@@ -14,37 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem envR_map_isScottContinuous :
     IsScottContinuous (fun t => graph (fun n => funOf lambR (funOf t n))) :=
   graph_const_isScottContinuous

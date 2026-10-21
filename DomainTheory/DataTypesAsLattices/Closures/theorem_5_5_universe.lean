@@ -19,36 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_Vcomb
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.5.** `V` itself is a closure, and its fixed
 points are exactly the closure operations. -/
 theorem theorem_5_5_universe :

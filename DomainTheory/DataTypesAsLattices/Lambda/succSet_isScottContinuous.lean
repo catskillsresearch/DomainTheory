@@ -14,13 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
 theorem succSet_isScottContinuous : IsScottContinuous succSet := by
   intro x
   ext k

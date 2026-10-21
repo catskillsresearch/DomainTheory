@@ -25,19 +25,6 @@ namespace ContinuousLatticeToNeighborhood
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem codes_lower (f : Filter (D := D)) {a b : D} (hba : b ≤ a)
     (ha : a ∈ codes f) : b ∈ codes f :=
   f.up_mem ha ⟨b, rfl⟩ (wayBelowUp_anti hba)

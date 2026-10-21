@@ -20,23 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Corresponds.unique_right {X : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}
     (h1 : Corresponds X Y₁) (h2 : Corresponds X Y₂) : Y₁ = Y₂ := by
   obtain ⟨φ, hφX, hφY⟩ := h1

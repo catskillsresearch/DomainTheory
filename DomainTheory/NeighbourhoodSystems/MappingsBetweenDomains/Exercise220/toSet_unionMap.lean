@@ -18,28 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise220
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem toSet_unionMap (x y : powerSet.Element) :
     toSet (unionMap.toElementMap₂ x y) = toSet x ∪ toSet y := by
   ext k

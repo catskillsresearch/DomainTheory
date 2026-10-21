@@ -24,9 +24,6 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
 
-
-
-
 variable {P qChar cons}
 
 /-- **Correctness of the `qChar`-gated fold, instantiated at the real starting point

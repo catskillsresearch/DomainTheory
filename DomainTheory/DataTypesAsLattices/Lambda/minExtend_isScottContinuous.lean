@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 theorem minExtend_isScottContinuous (p : ℕ → Pomega) :
     IsScottContinuous (minExtend p) := by
   intro x

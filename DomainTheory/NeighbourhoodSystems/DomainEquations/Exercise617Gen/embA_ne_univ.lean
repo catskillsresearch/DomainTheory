@@ -34,11 +34,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.n
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -47,6 +43,8 @@ variable {A : Type} [DecidableEq A]
 section Iso
 
 variable {A : Type} [DecidableEq A] [Inhabited A]
+
+omit [DecidableEq A] [Inhabited A] in
 
 theorem embA_ne_univ (a : A) (X : Set (Strn A)) : embA a X ≠ Set.univ := by
   intro h; exact nil_not_mem_embA (X := X) (a := a) (by rw [h]; trivial)

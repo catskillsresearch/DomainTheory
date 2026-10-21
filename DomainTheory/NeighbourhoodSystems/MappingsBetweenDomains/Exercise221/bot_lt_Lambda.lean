@@ -17,22 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise221
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`⊥ ⊏ Λ`.** The undefined sequence `⊥ = ↑Δ` is strictly below the total empty sequence
 `Λ = ↑{[]}`: they are distinct because `⊥` contains only `Δ`, whereas `Λ` contains `{[]} ≠ Δ`. -/
 theorem bot_lt_Lambda : C.bot < Lambda := by

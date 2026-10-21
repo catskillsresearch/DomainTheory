@@ -7,8 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise2
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise215
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem

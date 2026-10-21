@@ -15,25 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem inter_const_isScottContinuous {f : Pomega → Pomega}
     (hf : IsScottContinuous f) (b : Pomega) :
     IsScottContinuous (fun z => f z ∩ b) := by

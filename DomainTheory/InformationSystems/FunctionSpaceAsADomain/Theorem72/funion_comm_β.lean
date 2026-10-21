@@ -13,15 +13,11 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 universe u v w
 

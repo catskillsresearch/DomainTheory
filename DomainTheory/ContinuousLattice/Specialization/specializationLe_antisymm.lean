@@ -28,8 +28,6 @@ universe u
 variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 
 
-
-
 theorem specializationLe_antisymm [T0Space X] {x y : X}
     (hxy : SpecializationLe x y) (hyx : SpecializationLe y x) : x = y :=
   Inseparable.eq (inseparable_iff_specializes_and.2

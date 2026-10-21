@@ -59,16 +59,12 @@ open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 /-! ### Element builders. -/
 
 
-
-
-
 /-! ### Components through `push`. -/
 
 /-! ### The strictifier `guard1`/`strictGuardN` (Scott's `cond(zero(x),·,·)` device).
 
 `guard1 j φ z = cond(zero(zⱼ), φ z, φ z)`: equals `φ z` when `zⱼ` is total, `⊥` when `zⱼ = ⊥`.
 Composing the guards for `j = 0..n-1` makes a map *very strict* in its first `n` coordinates. -/
-
 
 
 /-! ### `tupleMap`: assemble `n` scalar maps into the first `n` coordinates of `𝒩`. -/
@@ -94,8 +90,6 @@ section Prec
 variable (φf φg : ApproximableMap 𝒩 N)
 
 
-
-
 end Prec
 
 /-! ### Closure of the primitive recursive functions. -/
@@ -117,11 +111,7 @@ section Rfind
 variable (φf : ApproximableMap 𝒩 N)
 
 
-
-
-
 /-! #### Divergence via the directed sup of approximants. -/
-
 
 
 end Rfind

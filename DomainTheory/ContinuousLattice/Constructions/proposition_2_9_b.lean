@@ -23,9 +23,6 @@ open Topology Set
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
 /-- **Scott 1972, Proposition 2.9(b).** For a family of continuous lattices, the Scott topology of
 the product coincides with the product of the Scott topologies of the factors. -/
 theorem proposition_2_9_b {ι : Type*} (E : ι → Type*) [∀ i, CompleteLattice (E i)]

@@ -26,19 +26,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise811
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.11 (second part, projection).** `a ⊑ I_R`. -/
 theorem isProjection_a : IsProjection a := by
   refine ⟨isRetraction_a, ?_⟩

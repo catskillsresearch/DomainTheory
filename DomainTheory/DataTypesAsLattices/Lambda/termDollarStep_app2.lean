@@ -16,58 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem termDollarStep_app2 (s u z : Pomega) :
     funOf (funOf (termDollarStep s) u) z = termDollarStepBody s u z := by
   rw [termDollarStep_app]

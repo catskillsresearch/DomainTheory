@@ -15,22 +15,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Headline: `Lindenbaum.toSet`'s range is exactly `Exercise813a.lean`'s free Boolean algebra on
 `ℵ₀` generators, `{X | GeneratedBy generator X}`.** Together with injectivity, `Lindenbaum.toSet`
 is a bijection `Lindenbaum ≃ {X : Set ℕ // GeneratedBy generator X}` — i.e. `Lindenbaum` *is* (a

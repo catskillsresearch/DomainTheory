@@ -59,6 +59,5 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 
 
-
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
 end DomainTheory.NeighbourhoodSystems

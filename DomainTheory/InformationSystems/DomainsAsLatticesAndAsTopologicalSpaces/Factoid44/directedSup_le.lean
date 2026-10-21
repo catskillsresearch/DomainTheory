@@ -23,11 +23,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
-
-
-
 theorem directedSup_le (S : Set sys.Element) (hne : S.Nonempty) (hdir : sys.IsDirected S)
     {z : sys.Element} (h : ∀ x ∈ S, x ≤ z) : sys.directedSup S hne hdir ≤ z :=
   sys.familySup_le S (sys.finitelyConsistent_of_directed S hne hdir) h

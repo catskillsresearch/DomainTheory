@@ -22,9 +22,6 @@ namespace Proposition77
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
 
-
-
-
 /-- **`inSharpMap` really computes `inSharp`.** Its elementwise action is Scott's `λx. x^§`. -/
 theorem inSharpMap_toElementMap (x : D.Element) :
     (inSharpMap hD).toElementMap x = inSharp D hD x := by

@@ -20,8 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.unnum_numP
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-- **Exercise 5.13.** The pairing function packaged as a bijection `ℕ × ℕ ≃ ℕ` (choice-free, via the

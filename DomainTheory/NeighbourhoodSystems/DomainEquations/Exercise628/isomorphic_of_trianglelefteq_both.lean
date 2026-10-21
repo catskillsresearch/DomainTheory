@@ -21,9 +21,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
 /-- **Exercise 6.28 (core).** If `|D|` and `|E|` are finite and `D ⊴ E ⊴ D`, then `D ≅ᴰ E`.
 The two `⊴`s give mutual order embeddings of the (finite) element domains, and
 `orderIso_of_embeddings` upgrades them to an isomorphism. -/

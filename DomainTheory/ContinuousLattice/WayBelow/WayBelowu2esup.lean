@@ -24,8 +24,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
 /-- **Scott 1972, Proposition 2.2(ii).** `x ≪ z` and `y ≪ z` imply `x ⊔ y ≪ z`. -/
 theorem WayBelow.sup {x y z : D} (hx : x ≪ z) (hy : y ≪ z) : x ⊔ y ≪ z := by
   obtain ⟨U, hU, hzU, hUsub⟩ := hx

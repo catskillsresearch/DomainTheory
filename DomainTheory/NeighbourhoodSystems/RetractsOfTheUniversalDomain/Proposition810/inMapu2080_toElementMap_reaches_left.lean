@@ -21,8 +21,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 /-- The image of `in₀` always reaches the left copy (witnessed by `V₀.master`, since `v.master_mem`
 always holds and `in₀`'s relation only needs `inj₀ X ⊆ inj₀ V₀.master`). -/
 theorem inMap₀_toElementMap_reaches_left {γ δ} {V₀ : NeighborhoodSystem γ} {V₁ : NeighborhoodSystem δ}

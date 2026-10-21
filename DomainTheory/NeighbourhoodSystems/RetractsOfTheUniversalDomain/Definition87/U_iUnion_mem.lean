@@ -35,30 +35,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`U` is closed under finite (`Fintype`-indexed) unions**, as long as the result is
 non-empty: if every `f i` is either empty or a `U`-neighbourhood, so is `⋃ i, f i` (given it is
 non-empty). Proved by folding `U_union_mem` over `Finset.univ` (`Finset.induction_on`). -/

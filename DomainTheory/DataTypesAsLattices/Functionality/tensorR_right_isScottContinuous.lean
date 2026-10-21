@@ -16,36 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_isScottCont
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem tensorR_right_isScottContinuous (a : Pomega) :
     IsScottContinuous (fun b => tensorR a b) :=
   graph_const_isScottContinuous

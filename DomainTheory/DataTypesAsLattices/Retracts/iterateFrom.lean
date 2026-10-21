@@ -8,8 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Directed iterates of `f` starting from `x` (Scott's sup construction). -/

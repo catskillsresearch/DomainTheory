@@ -22,26 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_iff
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 7.2 (iv).**
 The exact identity
 `E_{a ⊕ b} = E_a + E_b ∪ {⟨⊥,⊥⟩, ⟨⊤,⊤⟩}`. -/

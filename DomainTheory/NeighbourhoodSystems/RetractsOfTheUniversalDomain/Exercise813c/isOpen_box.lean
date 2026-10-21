@@ -22,12 +22,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
 theorem isOpen_box (I : Finset ℕ) (f : ℕ → Bool) : IsOpen (box I f) :=
   (generatedBy_genPoint_isClopen (generatedBy_genPoint_box I f)).isOpen
 

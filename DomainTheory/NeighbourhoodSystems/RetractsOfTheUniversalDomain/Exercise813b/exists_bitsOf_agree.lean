@@ -10,8 +10,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 /-- Given any (finite) target set of variables and any valuation `v`, some `n : ℕ` matches `v` on

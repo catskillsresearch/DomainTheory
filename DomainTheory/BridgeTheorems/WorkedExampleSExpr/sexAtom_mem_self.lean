@@ -36,12 +36,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 
 
-
-
-
-
-
-
 theorem sexAtom_mem_self (n : ℕ) : TreeToken.atom n ∈ (sexAtom n).carrier :=
   SexSys.subset_closure (SexSys.con_sing _) (Finset.mem_singleton_self _)
 

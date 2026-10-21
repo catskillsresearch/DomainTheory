@@ -18,35 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_18_eq
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.5 / (5.18).** `V` fixes closures on values. -/
 theorem theorem_5_5 {a : Pomega} (ha : IsClosure a) (x : Pomega) :
     Vapply a x = funOf a x ∧ Vapply a (Vapply a x) = Vapply a x :=

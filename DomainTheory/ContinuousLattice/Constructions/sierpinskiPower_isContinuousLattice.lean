@@ -24,11 +24,6 @@ open Topology Set
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
-
-
 /-- A power of Scott's two-point space `𝕆 = Prop` is a continuous lattice: `Prop` is a continuous
 lattice (`isContinuousLattice_prop`) and products of continuous lattices are continuous
 (Proposition 2.9(a)). This is the order-theoretic content of "a Cartesian power of `𝕆` is a

@@ -29,12 +29,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
 /-- **Proposition 7.12 — binary intersection law (membership form).** `{x, y}` meets `W` iff both
 singleton joins do. The general `n`-ary fold `{x₀,…,x_{n-1}} = ⋂ᵢ {xᵢ}` follows by iterating
 `PDfinJoin_pair`. -/

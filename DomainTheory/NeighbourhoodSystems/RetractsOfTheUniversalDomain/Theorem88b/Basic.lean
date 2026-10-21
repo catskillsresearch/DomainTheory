@@ -68,10 +68,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
 /-- **`e := P₀.X`, Scott's re-enumeration with `e 0 = D.master`.** -/
 noncomputable abbrev e : ℕ → Set α := (P0 P).X
 

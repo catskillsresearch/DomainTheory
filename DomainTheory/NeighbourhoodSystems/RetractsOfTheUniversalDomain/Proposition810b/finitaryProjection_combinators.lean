@@ -19,27 +19,13 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
-universe u v
+universe u
 
 
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 variable {a b : ApproximableMap U U}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Proposition 8.10(b) (Scott 1981, PRG-19), in full.** If `a, b : 𝒰 → 𝒰` are finitary

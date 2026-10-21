@@ -18,12 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise115
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- The atom `↑{n}` (a finite element). -/
 theorem flat_mem_singleton (n : ℕ) : flat.mem {n} := Or.inr ⟨n, rfl⟩
 

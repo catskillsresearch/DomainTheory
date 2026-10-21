@@ -16,15 +16,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VEnt
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem VEnt_pairRFinset_of_EntSet {u v : Finset VToken}
     (hEnts : ∀ y ∈ u, VEnt v y) :

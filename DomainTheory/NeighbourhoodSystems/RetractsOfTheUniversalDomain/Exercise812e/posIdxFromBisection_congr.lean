@@ -24,12 +24,9 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
   {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
 
-
-
 section Congr
 
 variable {n n' k k' m m' : ℕ}
-
 
 
 /-- **`posIdxFromBisection` is a well-defined function of sets**: its *output set*

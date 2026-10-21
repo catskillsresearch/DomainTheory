@@ -27,8 +27,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- Fold the list coded by `c`, threading accumulator `z` and parameter `params`. Implemented as

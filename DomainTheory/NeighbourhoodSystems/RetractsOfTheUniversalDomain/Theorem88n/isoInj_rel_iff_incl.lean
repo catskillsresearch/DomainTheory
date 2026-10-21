@@ -21,9 +21,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
 /-- **`isoInj`'s relation at raw indices reduces to a single reindexed inclusion.** `n := b` is always
 a valid witness (`Yc P b = Yc P b`), and any *other* witness `n` with `Yc P b = Yc P n` forces
 `e P b = e P n` (`embed_eq_iff_raw_code`), so it gives no new information. -/

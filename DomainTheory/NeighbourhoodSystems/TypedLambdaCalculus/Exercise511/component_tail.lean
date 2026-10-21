@@ -19,15 +19,6 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
-
-
-
 /-- `(tail z)ₙ = zₙ₊₁`. -/
 theorem component_tail (z : (iterSys V).Element) (n : ℕ) :
     component ((tail V).toElementMap z) n = component z (n + 1) := by

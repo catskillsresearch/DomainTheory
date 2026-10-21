@@ -18,14 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
 theorem presentedIntervals_decodeQPairList_clipLtListCode (m c : ℕ) :
     presentedIntervals (decodeQPairList (clipLtListCode m c)) =
       presentedIntervals (decodeQPairList c) ∩ Set.Iio (decodeRat m) := by

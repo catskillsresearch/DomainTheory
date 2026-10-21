@@ -99,15 +99,10 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 /-! ### Part A — the singleton approximable map. -/
 
 
-
-
 /-! ### Part B — the intersection law. -/
 
 
-
 /-! ### Part B continued — binary approximable join map. -/
-
-
 
 
 /-! ### Part D — computability. -/
@@ -129,9 +124,7 @@ open NeighborhoodSystem
 variable {γ δ : Type*}
 
 
-
 /-! ### The flat two-point domain `Vshape`, with no greatest element. -/
-
 
 
 end Counterexample712C

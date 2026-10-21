@@ -18,16 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example23
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **The "shift formula" for `parityMap`.** Reading off the parity of `σx` depends on `x` only
 through *some* cone `cone τ ∈ x`, via the scan of the concatenation `σ ++ τ`: any deeper cone in
 `sigmaElt`'s built-in up-closure is subsumed by monotonicity (`valElt_scan_mono`), so the longest

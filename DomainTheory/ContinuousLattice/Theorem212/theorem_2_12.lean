@@ -18,7 +18,6 @@ namespace DomainTheory.ContinuousLattice
 open Topology Set
 
 
-
 universe u
 
 /-- **Scott 1972, Theorem 2.12.** A `T₀`-space is injective iff it is (homeomorphic to) a

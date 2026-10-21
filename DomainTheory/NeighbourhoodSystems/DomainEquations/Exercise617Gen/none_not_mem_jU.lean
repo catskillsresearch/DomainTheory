@@ -19,11 +19,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.m
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -34,6 +30,8 @@ section SumSig
 universe v
 
 variable {β : Type v} {γ : Type v}
+
+omit [DecidableEq A] in
 
 @[simp] theorem none_not_mem_jU : (none : SigTok A β) ∉ (jU : Set (SigTok A β)) := by
   simp [jU, tu]

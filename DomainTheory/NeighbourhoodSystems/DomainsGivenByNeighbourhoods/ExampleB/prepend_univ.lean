@@ -18,21 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.ExampleB
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `σΣ* = σ·Σ*`: prepending `σ` to the whole space recovers the cone of `σ`. -/
 theorem prepend_univ (σ : Str) : prepend σ Set.univ = cone σ := by
   ext w

@@ -15,8 +15,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Subsyst
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.proj_comp_inj
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Subsystem

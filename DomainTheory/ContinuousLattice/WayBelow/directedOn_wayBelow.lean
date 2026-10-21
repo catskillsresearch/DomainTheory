@@ -24,9 +24,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
-
 /-- The set `{x | x ≪ y}` of elements way below `y` is directed: it is closed under binary
 joins by Proposition 2.2(ii) (`WayBelow.sup`). This holds in *any* complete lattice. -/
 theorem directedOn_wayBelow (y : D) : DirectedOn (· ≤ ·) {x | x ≪ y} :=

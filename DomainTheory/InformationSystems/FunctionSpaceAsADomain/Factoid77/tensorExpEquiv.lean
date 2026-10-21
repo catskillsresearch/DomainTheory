@@ -23,9 +23,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.i
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
-universe u
 
 namespace DomainTheory.InformationSystems
 

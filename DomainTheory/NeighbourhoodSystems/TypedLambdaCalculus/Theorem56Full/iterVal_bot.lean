@@ -32,36 +32,9 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
-
-
-
-
-
 
 
 /-- Along a *no-zero* trace, every finite approximant returns `⊥` (induction on the approximant

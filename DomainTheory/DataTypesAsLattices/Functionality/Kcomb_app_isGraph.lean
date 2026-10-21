@@ -15,26 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Kcomb_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Kcomb_app_isGraph (x : Pomega) :
     funOf Kcomb x = graph (fun y => funOf (funOf Kcomb x) y) := by
   rw [Kcomb_app]

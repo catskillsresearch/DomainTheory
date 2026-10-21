@@ -21,29 +21,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The embedding is **injective**: distinct words give distinct elements of `|S|`. (If
 `emb σ = emb τ` then `emb τ` contains `{σ}`, forcing `τ = σ`.) So `Σ` genuinely *embeds* into `|S|`. -/
 theorem emb_injective : Function.Injective emb := by

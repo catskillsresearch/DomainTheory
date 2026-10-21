@@ -21,22 +21,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Ssys_master : Ssys.master = Set.univ := rfl
 
 end Exercise722

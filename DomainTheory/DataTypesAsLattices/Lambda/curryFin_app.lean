@@ -15,23 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.curryFin_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem curryFin_app {n : ℕ} {f : (Fin n → Pomega) → Pomega}
     (hf : IsScottContinuousFin f) (xs : Fin n → Pomega) :
     nestApplyFin (curryFin f) xs = f xs := by

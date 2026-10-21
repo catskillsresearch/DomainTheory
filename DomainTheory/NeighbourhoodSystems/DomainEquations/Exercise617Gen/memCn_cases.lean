@@ -40,11 +40,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.e
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -54,6 +50,7 @@ section Iso
 
 variable {A : Type} [DecidableEq A] [Inhabited A]
 
+omit [DecidableEq A] [Inhabited A] in
 /-- **The shape of a `Cₐ`-neighbourhood.** Every neighbourhood is the master `Σ*`, the terminator
 `{Λ}`, or an `a`-copy `aX` with `X ∈ Cₐ`. -/
 theorem memCn_cases {W : Set (Strn A)} (hW : memCn W) :

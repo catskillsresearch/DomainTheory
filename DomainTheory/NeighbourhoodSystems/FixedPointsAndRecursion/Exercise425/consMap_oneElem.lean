@@ -18,29 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise425
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `1·(1ⁿ) = 1ⁿ⁺¹`. -/
 theorem consMap_oneElem (n : ℕ) : consMap.toElementMap (oneElem n) = oneElem (n + 1) := by
   apply Element.ext

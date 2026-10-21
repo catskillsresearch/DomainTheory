@@ -21,14 +21,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
-
-
-
 /-- **Exercise 3.21 (Scott 1981, PRG-19).** The simple criterion for identity of function-space
 neighbourhoods: `[Y, Z] = [Y', Z']` iff both outputs are the master `Δ₂`, or the pairs coincide. -/
 theorem step_eq_iff {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V₁.mem Z)

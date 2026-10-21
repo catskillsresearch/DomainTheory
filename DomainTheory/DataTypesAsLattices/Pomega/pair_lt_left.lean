@@ -22,26 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair_le_left
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem pair_lt_left (n m : ℕ) : n < pair n m + 1 :=
   Nat.lt_succ_of_le (pair_le_left n m)
 

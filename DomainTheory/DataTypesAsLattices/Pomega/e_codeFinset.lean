@@ -22,19 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e_codeList
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem e_codeFinset (s : Finset ℕ) : e (codeFinset s) = (s : Set ℕ) := by
   ext k
   simp [codeFinset, e_codeList]

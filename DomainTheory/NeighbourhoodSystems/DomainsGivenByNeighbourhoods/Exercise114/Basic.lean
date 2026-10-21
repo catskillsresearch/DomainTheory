@@ -42,9 +42,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise114
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
 /-! ### Finite elements (principals) and total elements (singletons). -/
 
 

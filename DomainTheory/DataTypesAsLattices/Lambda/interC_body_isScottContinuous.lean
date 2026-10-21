@@ -19,41 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.interC_else_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem interC_body_isScottContinuous :
     IsScottContinuous (fun x =>
       graph (fun y =>

@@ -18,19 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise218
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 2.18 — `k` is not one-one.** `↑(0Σ*)` and `↑(1Σ*)` are distinct finite elements that
 `k` collapses to `⊥` (a length-1 prefix is an incomplete pair, so its bit is dropped). -/
 theorem kMap_not_injective : ¬ Function.Injective kMap.toElementMap := by

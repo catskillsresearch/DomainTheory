@@ -24,18 +24,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e_or
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 theorem e_codeList (ks : List ℕ) : e (codeList ks) = {k | k ∈ ks} := by
   induction ks with
   | nil => simp [codeList, e_zero]

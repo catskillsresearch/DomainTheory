@@ -14,26 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem condSet_same_of_mem {z x : Pomega} {k : ℕ} (hk : k ∈ z) :
     condSet z x x = x := by
   ext n

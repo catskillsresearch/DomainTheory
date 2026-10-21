@@ -79,7 +79,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
 /-! ## Algebraicity and compactness
 
 General-purpose lemmas about any `NeighborhoodSystem`, needed for Theorem 8.5's hard direction

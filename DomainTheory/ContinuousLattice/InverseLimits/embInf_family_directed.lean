@@ -26,52 +26,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem embInf_family_directed (x : InverseLimit D P) :
     DirectedOn (· ≤ ·) (Set.range (fun n => embInf D P n (x.1 n))) :=
   directedOn_range.2 (monotone_nat_of_le_succ (embInf_le_succ D P x)).directed_le

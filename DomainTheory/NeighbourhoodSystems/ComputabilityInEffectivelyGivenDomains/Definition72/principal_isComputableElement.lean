@@ -19,7 +19,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 
 
-
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
 
 /-- **Every finite (principal) element is computable** (Scott's remark after 7.2: "If `y` were

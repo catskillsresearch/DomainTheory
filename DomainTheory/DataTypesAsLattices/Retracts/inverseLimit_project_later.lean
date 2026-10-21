@@ -18,8 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Repeated coherence: every later coordinate projects to an earlier one. -/

@@ -22,8 +22,6 @@ public import DomainTheory.BridgeTheorems.interOf_mem_of_lower_bound
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.NeighbourhoodSystems

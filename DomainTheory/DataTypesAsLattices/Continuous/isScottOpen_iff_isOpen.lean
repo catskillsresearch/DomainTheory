@@ -22,12 +22,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
-
-
 /-- **Scott 1976, §1.** Scott-open sets are exactly the opens of the
 positive information topology. -/
 theorem isScottOpen_iff_isOpen (U : Set Pomega) : IsScottOpen U ↔ IsOpen U := by

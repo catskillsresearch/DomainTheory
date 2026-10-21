@@ -15,51 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.primRecHat_zero
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.27).** The distributive extension agrees with the
 integer recursion on singletons. -/
 theorem primRecHat_ofNat (a f : Pomega) : ∀ n,

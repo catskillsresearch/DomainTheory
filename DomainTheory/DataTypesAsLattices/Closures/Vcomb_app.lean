@@ -18,36 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vapply_left_isScottConti
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Vcomb_app (a : Pomega) :
     funOf Vcomb a = graph (fun x => Vapply a x) :=
   beta (graph_const_isScottContinuous (fun a x => Vapply a x)

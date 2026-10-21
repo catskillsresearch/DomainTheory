@@ -32,23 +32,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Composition** (Scott's multivariate composition). If `f` and each `gᵢ` are λ-defined, so is
 `v ↦ (⟨g₀ v, …, g_{nn-1} v⟩) >>= f`. -/
 theorem lamDef_comp {m nn : ℕ} (f : List.Vector ℕ nn →. ℕ) (g : Fin nn → List.Vector ℕ m →. ℕ)

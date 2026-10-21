@@ -13,7 +13,7 @@ import all Mathlib.Topology.Sets.Opens
 
 @[expose] public section
 
-universe u v w
+universe u
 
 open Topology TopologicalSpace
 

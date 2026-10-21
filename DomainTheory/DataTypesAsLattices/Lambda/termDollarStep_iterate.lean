@@ -18,58 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep_app2
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem termDollarStep_iterate (n : ℕ) (u z : Pomega) :
     funOf (funOf (iterateBot termDollarStep n) u) z = seqFunLt u z n := by
   induction n generalizing u z with

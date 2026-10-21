@@ -24,8 +24,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
 theorem IPos_cons (i : ℕ) (rest : List ℕ) :
     IPos P (i :: rest) = idxSet P.X i ∩ IPos P rest := by
   ext m

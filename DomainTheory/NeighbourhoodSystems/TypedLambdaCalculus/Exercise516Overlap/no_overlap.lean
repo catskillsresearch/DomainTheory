@@ -19,9 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems
 
 
-
-
-
 /-- **Overlap-freeness of the Thue–Morse sequence** (Scott 1981, PRG-19; Thue 1912). No overlap
 exists at any offset and period. -/
 theorem no_overlap (p : ℕ) : ∀ i, ¬ Overlap i p := by

@@ -23,11 +23,6 @@ namespace Exercise722
 open scoped Computability
 
 
-
-
-
-
-
 theorem singleDFA_accepts_denote (σ : List Bool) : (singleDFA σ).accepts = denote (.single σ) := by
   rw [singleDFA_accepts]; exact (denote_single σ).symm
 

@@ -23,8 +23,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
 theorem affine_eq_empty_of_ge {k ℓ : ℕ} (hℓ : 2 ^ k ≤ ℓ) : affine k ℓ = ∅ := by
   ext n
   simp only [mem_affine, Set.mem_empty_iff_false, iff_false]

@@ -14,7 +14,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 /-- Token type of the separated sum `A + B` (Scott 6.3(i)–(ii)).

@@ -26,51 +26,6 @@ namespace Theorem614
 variable {α : Type w}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The base case of `g`-independence: any two strict maps agree after `∘ ρ₀`. -/
 theorem gcomp_rho_zero_indep (s : Setup.{w}) (hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master)
     (B : TAlgebra s.T) {g g' : ApproximableMap (colim s) B.carrier.sys}

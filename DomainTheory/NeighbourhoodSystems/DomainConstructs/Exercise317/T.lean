@@ -9,8 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise317
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap

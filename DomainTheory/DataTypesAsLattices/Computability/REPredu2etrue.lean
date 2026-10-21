@@ -18,8 +18,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 theorem REPred.true {α} [Primcodable α] : REPred fun _ : α => True := by
   unfold REPred
   refine (Decidable.Partrec.const' (Part.some ())).of_eq fun _ => ?_

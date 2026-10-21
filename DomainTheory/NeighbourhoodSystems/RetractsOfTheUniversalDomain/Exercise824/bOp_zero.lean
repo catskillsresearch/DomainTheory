@@ -22,15 +22,6 @@ namespace Exercise824
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
 theorem bOp_zero (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     bOp s t 0 = constMap E E.bot := by
   show toApproxMap ((paired s t).iterElem 0).snd = constMap E E.bot

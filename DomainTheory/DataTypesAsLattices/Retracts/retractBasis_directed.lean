@@ -15,42 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem retractBasis_directed {a : Pomega} (ha : IsRetract a)
     (x : Fixpoints (funOf a)) :
     IsDirectedSet (retractBasis a x) := by

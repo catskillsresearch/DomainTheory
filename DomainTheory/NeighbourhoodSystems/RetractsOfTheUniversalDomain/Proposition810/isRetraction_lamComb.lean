@@ -22,7 +22,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
 /-- **Proposition 8.10, `→`-case (the `lamComb` half), retraction.** -/
 theorem isRetraction_lamComb {a b : ApproximableMap U U} (ha : IsRetraction a)
     (hb : IsRetraction b) : IsRetraction (lamComb a b) := by

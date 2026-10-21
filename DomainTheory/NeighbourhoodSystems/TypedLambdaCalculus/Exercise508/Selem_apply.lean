@@ -25,14 +25,6 @@ variable {αx αa αb : Type*}
   {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 
-
-
-
-
-
-
-
-
 /-- `S(F)(G)(x) = F(x)(G(x))`. -/
 theorem Selem_apply (X A B : Dom)
     (F : (X.arrow (A.arrow B)).sys.Element) (G : (X.arrow A).sys.Element) (x : X.sys.Element) :

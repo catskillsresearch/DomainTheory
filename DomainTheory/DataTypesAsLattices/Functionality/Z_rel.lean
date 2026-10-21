@@ -14,27 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Z_rel (A : RestrictedEquiv) (n : ℕ) {f f' x y : Pomega}
     (hf : ∀ a b, A.rel a b → A.rel (funOf f a) (funOf f' b))
     (hxy : A.rel x y) :

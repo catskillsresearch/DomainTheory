@@ -20,12 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise115
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- **Flat: every atom is maximal (total).** -/
 theorem flat_atom_maximal (n : ℕ) (y : flat.Element)
     (hle : flat.principal (flat_mem_singleton n) ≤ y) :

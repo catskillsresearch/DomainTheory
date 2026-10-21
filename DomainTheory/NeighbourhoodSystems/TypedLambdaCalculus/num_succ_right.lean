@@ -19,8 +19,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 theorem num_succ_right (n m : ℕ) : num n (m + 1) = num (n + 1) m + 1 := by

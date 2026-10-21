@@ -18,11 +18,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α β γ : Type*}
 
 
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-
-
 
 
 theorem smash_mem_iff {W : Set (α ⊕ β)} :

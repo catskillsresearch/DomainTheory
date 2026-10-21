@@ -14,31 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem funOf_e_union_fresh (p j m : ℕ) (u : Pomega) (hpj : p < j) :
     funOf (e p) (u ∪ {pair j m}) = funOf (e p) u := by
   apply subset_antisymm

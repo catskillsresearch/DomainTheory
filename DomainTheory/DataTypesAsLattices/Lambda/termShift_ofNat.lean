@@ -16,55 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termShift_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem termShift_ofNat (u : Pomega) (i : ℕ) :
     funOf (termShift u) (ofNat i) = funOf u (ofNat (i + 1)) := by
   rw [termShift_app, succSet_ofNat]

@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_bot
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxPlus_typed_bot (a b : Pomega) :
     typed botElem (boxPlus a b) :=
   (boxPlus_app_bot a b).symm

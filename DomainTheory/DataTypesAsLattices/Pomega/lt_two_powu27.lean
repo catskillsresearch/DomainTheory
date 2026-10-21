@@ -21,13 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
 theorem lt_two_pow' (k : ℕ) : k < 2 ^ k := by
   induction k with
   | zero => decide

@@ -18,28 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise220
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem toSet_interMap₂ (x y : powerSet.Element) :
     toSet (interMap₂.toElementMap₂ x y) = toSet x ∩ toSet y := by
   ext k

@@ -50,24 +50,15 @@ open ContinuousLatticeToNeighborhood
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 
-
-
-
-
 /-! ## ScottMap conjugation along the round presentation -/
 
 variable {D E : Type*} [CompleteLattice D] [CompleteLattice E]
-
-
 
 
 namespace ConjScottMap
 
 variable {D' E' : Type*} [PartialOrder D'] [PartialOrder E']
 variable (ιD : D ≃o D') (ιE : E ≃o E')
-
-
-
 
 
 end ConjScottMap

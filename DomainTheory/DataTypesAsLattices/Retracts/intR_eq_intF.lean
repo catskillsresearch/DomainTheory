@@ -16,50 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.intF_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem intR_eq_intF : intF intR = intR :=
   (theorem_1_4 intF_isScottContinuous).1
 

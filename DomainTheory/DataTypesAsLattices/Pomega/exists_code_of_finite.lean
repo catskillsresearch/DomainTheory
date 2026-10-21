@@ -22,19 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e_codeFinset
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem exists_code_of_finite {s : Pomega} (hs : s.Finite) :
     ∃ n, e n = s := by
   obtain ⟨t, ht⟩ := hs.exists_finset_coe

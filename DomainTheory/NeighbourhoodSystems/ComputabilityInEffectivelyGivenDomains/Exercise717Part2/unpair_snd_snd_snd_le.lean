@@ -22,22 +22,7 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 namespace Exercise717
 
 
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem unpair_snd_snd_snd_le (c : ℕ) : c.unpair.2.unpair.2.unpair.2 ≤ c := by

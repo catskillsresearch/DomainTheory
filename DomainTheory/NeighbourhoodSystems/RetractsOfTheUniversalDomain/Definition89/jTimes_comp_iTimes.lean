@@ -21,18 +21,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap Exercise326
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 theorem jTimes_comp_iTimes : jTimes.comp iTimes = idMap _ :=
   (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose_spec.1
 

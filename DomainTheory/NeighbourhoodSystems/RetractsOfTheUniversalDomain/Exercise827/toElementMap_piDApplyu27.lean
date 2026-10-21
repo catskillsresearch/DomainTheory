@@ -18,58 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `piDApply`'s defining formula, restated via `piDType`/`piDTypeMap`. -/
 theorem toElementMap_piDApply' (d f : ApproximableMap U U) (t : U.Element) :
     (piDApply d f).toElementMap t =

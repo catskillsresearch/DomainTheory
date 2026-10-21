@@ -63,7 +63,6 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 /-! ## `isoInj`, `isoProj`: the code-level iso `D ≅ᴰ DprimeUCode P` as approximable maps -/
 
 
-
 /-! ## Reducing `isoInj.rel`/`isoProj.rel` to raw-index inclusion tests -/
 
 /-! ## Computability of `isoInj`, `isoProj` -/

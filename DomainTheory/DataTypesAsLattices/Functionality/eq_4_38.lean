@@ -15,34 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.treeF_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (4.38).** `tree = nil ⊕ (tree ⊗ tree)`. -/
 theorem eq_4_38 : treeR = plusR botElem (tensorR treeR treeR) := by
   have hY : treeR = fix treeF := theorem_2_5 treeF_isScottContinuous

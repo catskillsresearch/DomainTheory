@@ -16,50 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hApply_isScottConti
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem hCond_isScottContinuous_H (e t : Pomega) :
     IsScottContinuous (fun H => hCond H e t) :=
   theorem_1_3 (funOf_isScottContinuous lambR)

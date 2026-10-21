@@ -18,20 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `σΣ* = Σ*` iff `σ = Λ`. -/
 theorem cone_univ_iff {σ : Str} : cone σ = Set.univ ↔ σ = [] := by
   constructor

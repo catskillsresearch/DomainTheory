@@ -20,12 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise115
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- **Flat has no strict 3-chain** (`a ⊏ b ⊏ c` is impossible): `⊥` is least and atoms are maximal. -/
 theorem flat_no_three_chain : ¬ ∃ a b c : flat.Element, a < b ∧ b < c := by
   rintro ⟨a, b, c, hab, hbc⟩

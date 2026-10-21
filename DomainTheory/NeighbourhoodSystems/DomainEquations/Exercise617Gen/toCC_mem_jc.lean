@@ -39,11 +39,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.t
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -52,6 +48,8 @@ variable {A : Type} [DecidableEq A]
 section Iso
 
 variable {A : Type} [DecidableEq A] [Inhabited A]
+
+omit [Inhabited A] in
 
 @[simp] theorem toCC_mem_jc {x : (Cn A).Element} {a : A} {X : Set (Strn A)} (hX : (Cn A).mem X) :
     (toCC x).mem (jc a X) ↔ x.mem (embA a X) := by

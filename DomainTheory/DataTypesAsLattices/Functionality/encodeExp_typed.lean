@@ -30,37 +30,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.typed_bot_botElem
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem encodeExp_typed : ∀ τ : LambTerm, typed (encodeExp τ) expR := by
   intro τ
   induction τ with

@@ -24,9 +24,6 @@ open NeighborhoodSystem
 variable {A : Type*} [CommRing A]
 
 
-
-
-
 theorem IFamily_eq_of_span_eq {F₁ F₂ : Finset A}
     (h : Ideal.span (↑F₁ : Set A) = Ideal.span (↑F₂ : Set A)) : IFamily F₁ = IFamily F₂ := by
   apply Set.Subset.antisymm

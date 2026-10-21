@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem iterateFrom_mono {f : Pomega → Pomega} (hf : IsScottContinuous f)

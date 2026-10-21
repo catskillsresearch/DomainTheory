@@ -14,25 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem funOf_condSet (z x y w : Pomega) :
     funOf (condSet z x y) w = condSet z (funOf x w) (funOf y w) := by
   ext m

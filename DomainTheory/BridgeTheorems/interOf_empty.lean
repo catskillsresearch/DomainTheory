@@ -17,8 +17,6 @@ public import DomainTheory.BridgeTheorems.interOf
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.NeighbourhoodSystems

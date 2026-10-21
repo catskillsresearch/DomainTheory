@@ -21,60 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem valNat_diagonalInterCode (n : ℕ) :
     valNat (diagonalInterCode n) = ofNat n ∩ valNat n := by
   rw [diagonalInterCode, valNat_apply, valNat_apply, valNat_interCode,

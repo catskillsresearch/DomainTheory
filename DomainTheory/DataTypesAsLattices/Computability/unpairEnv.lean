@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Computability.sqrtC
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices

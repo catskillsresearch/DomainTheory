@@ -22,12 +22,6 @@ namespace Proposition77
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
 
-
-
-
-
-
-
 /-- The index characterization of `proj0Map` against the `Vsharp` enumeration. `V_m proj₀ V_k` iff
 `k = 0` (`V_k = Γ`) or `m` is an even node index `2a+2` with `V_{p a} ⊆ V_k` (the left child). -/
 theorem proj0_rel_Vsharp_iff (P : ComputablePresentation D) (m k : ℕ) :

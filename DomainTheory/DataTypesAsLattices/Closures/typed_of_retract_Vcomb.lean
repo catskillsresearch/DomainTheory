@@ -19,36 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vcomb_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `V` does not change already-closed points of a retract. -/
 theorem typed_of_retract_Vcomb {a x : Pomega} (hx : typed x a) :
     typed x (funOf Vcomb a) := by

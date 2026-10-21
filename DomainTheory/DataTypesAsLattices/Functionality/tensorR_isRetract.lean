@@ -18,19 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tensorR_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.4.** Products of retracts are retracts. -/
 theorem tensorR_isRetract {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
     IsRetract (tensorR a b) := by

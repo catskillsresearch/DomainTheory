@@ -26,51 +26,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Proposition 4.2's projection `j_{∞n}` is a continuous coordinate map for the explicit
 product/subspace inverse-limit topology. -/
 theorem projInf_inverseLimitTopology_continuous (n : ℕ) :

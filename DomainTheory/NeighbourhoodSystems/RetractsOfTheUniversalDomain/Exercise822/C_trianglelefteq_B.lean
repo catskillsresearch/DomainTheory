@@ -21,52 +21,6 @@ open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 namespace Exercise822
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`C ⊴ B`.** The nontrivial half of Exercise 8.22: `C` (finite-or-infinite binary sequences)
 embeds as a subdomain of `B` (infinite binary sequences) via the bit-doubling re-encoding
 `enc`/`encC` and the image subsystem `D' ◁ B`. -/

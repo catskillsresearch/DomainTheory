@@ -15,8 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.Pomega
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, after (2.2).** `⊥ = ∅`. -/

@@ -20,12 +20,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
-
-
 theorem basicNhhd_zero : basicNhhd 0 = Set.univ := by
   ext x
   simp [basicNhhd, e_zero]

@@ -21,8 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.BasicInst12
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Finite pieces of `x` used in directed unions. -/

@@ -20,16 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise119
 open DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
-
-
-
-
 /-- `{0,1} ∩ {1,2} = {1}`. -/
 theorem a_inter_b : a ∩ b = ({1} : Set Tok) := by ext x; fin_cases x <;> simp [a, b]
 

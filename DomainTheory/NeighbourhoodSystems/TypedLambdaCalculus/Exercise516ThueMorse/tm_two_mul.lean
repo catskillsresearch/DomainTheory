@@ -18,15 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
-
-
-
 /-- The even recurrence `tm (2n) = tm n` (appending a `0`-digit does not change the parity). -/
 theorem tm_two_mul (n : ℕ) : tm (2 * n) = tm n := by
   rcases Nat.eq_zero_or_pos n with rfl | hn

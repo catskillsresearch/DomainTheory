@@ -19,20 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`<` on rational codes is recursively decidable.** Packaged as `RecDecidable₂` (rather than the
 raw `{0,1}` characteristic `ratLtCode`) so it composes directly with `Recursive.lean`'s closure
 lemmas (`.not`, `.and`, `.bExistsList`, `.swap`, ...). -/

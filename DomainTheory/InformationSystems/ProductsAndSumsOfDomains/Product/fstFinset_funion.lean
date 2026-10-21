@@ -21,28 +21,7 @@ namespace InfoSys
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 
-
-
-
 variable (A : InfoSys α) (B : InfoSys β)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem fstFinset_funion (u v : Finset (ProdToken A B)) :

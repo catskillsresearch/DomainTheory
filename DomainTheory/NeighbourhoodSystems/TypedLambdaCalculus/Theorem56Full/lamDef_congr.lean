@@ -27,22 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Transport a λ-definition along pointwise equality of the realised function. -/
 theorem lamDef_congr {n : ℕ} {φ : ApproximableMap 𝒩 N} {f f' : List.Vector ℕ n →. ℕ}
     (h : ∀ v, f v = f' v) (hf : LamDef φ f) : LamDef φ f' where

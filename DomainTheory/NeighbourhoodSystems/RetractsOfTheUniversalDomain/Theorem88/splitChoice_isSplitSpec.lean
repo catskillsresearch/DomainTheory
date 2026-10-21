@@ -20,13 +20,7 @@ open NeighborhoodSystem
 variable {α : Type*}
 
 
-
-
-
-
-
 open Classical in
-
 
 
 open Classical in

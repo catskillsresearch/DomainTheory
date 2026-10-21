@@ -77,7 +77,6 @@ open NeighborhoodSystem ApproximableMap
 /-! ## Part 1 (of the exercise write-up): the end-of-lecture equations, self-hosted in `𝒰` -/
 
 
-
 /-! ## Part 2 (of the exercise write-up): the abstraction recipe, and "has the right type" -/
 
 universe u

@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Continuity of an n-ary map, taken one argument at a time from the left. -/

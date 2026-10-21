@@ -20,10 +20,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
 theorem isScottOpen_basic (n : ℕ) : IsScottOpen (basicNhhd n) :=
   ⟨{n}, by ext x; simp [basicNhhd]⟩
 

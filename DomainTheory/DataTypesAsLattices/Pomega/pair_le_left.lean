@@ -21,23 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem pair_le_left (n m : ℕ) : n ≤ pair n m := by
   have htri : n ≤ triangle (n + m) := by
     cases n with

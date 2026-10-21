@@ -23,69 +23,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`decodeList (untagList c) = (untagRef c).1`.** The `appendCode`-reversal in `untagList`
 undoes the reversal built up by `untagStep`'s accumulator. -/
 theorem decodeList_untagList (c : ℕ) : decodeList (untagList c) = (untagRef c).1 := by

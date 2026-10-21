@@ -7,8 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 universe u

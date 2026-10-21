@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Four-place sequence used by the expanded product of (4.44). -/

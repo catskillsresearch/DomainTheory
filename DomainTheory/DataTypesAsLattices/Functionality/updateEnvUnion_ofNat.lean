@@ -15,42 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem updateEnvUnion_ofNat (t x : Pomega) (n : ℕ) :
     updateEnvUnion t x (ofNat n) = updateEnv t x n := by
   ext k

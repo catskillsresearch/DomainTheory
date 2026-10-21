@@ -16,35 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem exists_mem_of_ne_bot {x : Pomega} (h : x ≠ botElem) : ∃ m, m ∈ x := by
   by_contra hc
   refine h ?_

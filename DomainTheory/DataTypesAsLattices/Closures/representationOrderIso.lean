@@ -16,8 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_fix
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- The order isomorphism in Scott's representation theorem. -/

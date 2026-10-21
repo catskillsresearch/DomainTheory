@@ -20,8 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 theorem num_succ_left (n : ℕ) : num (n + 1) 0 = num 0 n + 1 := by

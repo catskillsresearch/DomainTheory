@@ -14,30 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seq2_tag_ne (x y : Pomega) :
     seq2 (ofNat 0) x ≠ seq2 (ofNat 1) y := by
   intro h

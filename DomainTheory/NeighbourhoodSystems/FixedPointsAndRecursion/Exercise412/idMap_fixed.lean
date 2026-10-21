@@ -17,9 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise412
 open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
 
 
-
-
-
 /-- **Exercise 4.12 (Scott 1981, PRG-19).** Every element is a fixed point of the identity map
 (so `I_T` has *many* fixed points: `⊥`, `elemZero`, `elemOne`). -/
 theorem idMap_fixed (x : T.Element) : (idMap T).toElementMap x = x := toElementMap_idMap x

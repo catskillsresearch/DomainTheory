@@ -25,23 +25,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The explicit inverse-limit topology is `T₀`, since the inclusion into the product of the
 stage Scott spaces is an embedding. -/
 theorem inverseLimit_t0Space :

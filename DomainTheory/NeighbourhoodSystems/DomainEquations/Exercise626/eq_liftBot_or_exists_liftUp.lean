@@ -23,22 +23,7 @@ namespace Exercise619
 variable {D : NeighborhoodSystem Str}
 
 
-
-
-
-
-
-
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
-
-
-
-
-
 
 
 /-- **Exercise 6.26 — "describe in terms of elements".** Every element of `𝒟_⊥` is either the fresh

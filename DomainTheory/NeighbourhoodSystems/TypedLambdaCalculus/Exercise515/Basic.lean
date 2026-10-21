@@ -61,16 +61,12 @@ variable {S : Type*} [Monoid S]
 /-! ### The star `z* = ⋃ₙ zⁿ`, by explicit recursion -/
 
 
-
-
 /-! ### Arden's lemma -/
 
 
 /-! ### Part (1): the single equation `z = {e}·z ∪ {e'}` -/
 
 /-! ### Part (2): David Park's simultaneous system -/
-
-
 
 
 end DomainTheory.NeighbourhoodSystems.Exercise515

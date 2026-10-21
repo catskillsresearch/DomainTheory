@@ -21,39 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem valStage_subset : ∀ s n,
     funOf (iterateBot valStep s) (ofNat n) ⊆ valNat n
   | 0, n => by simp [iterateBot, funOf, botElem]

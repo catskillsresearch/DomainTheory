@@ -24,11 +24,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.t
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -43,6 +39,8 @@ variable {β : Type v} {γ : Type v}
 variable (V : NeighborhoodSystem β)
 
 variable {V}
+
+omit [DecidableEq A] in
 
 theorem eq_masterSig_of_subset {W : Set (SigTok A β)}
     (hsub : masterSig V ⊆ W) (hsub' : W ⊆ masterSig V) : W = masterSig V :=

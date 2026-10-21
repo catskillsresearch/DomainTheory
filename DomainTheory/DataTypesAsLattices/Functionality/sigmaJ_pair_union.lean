@@ -15,30 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sigmaJ_pair_union (j j' m : ℕ) (hne : j ≠ j') :
     sigmaJ j (({pair j m} : Pomega) ∪ {pair j' m}) =
       ({pair j (m + 1)} : Pomega) := by

@@ -15,8 +15,6 @@ import all Mathlib.Order.ConditionallyCompleteLattice.Basic
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise811
 
 open NeighborhoodSystem ApproximableMap

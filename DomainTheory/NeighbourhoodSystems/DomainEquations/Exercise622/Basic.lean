@@ -59,10 +59,7 @@ namespace Exercise619
 /-! ## The two constant domains -/
 
 
-
 /-! ## The three domain equations as `GExpr` constructs -/
-
-
 
 
 /-! ## Each equation has a solution (`Γ = tok(T({Γ}))`, so `{Γ} ◁ T({Γ})` and 6.14 applies) -/

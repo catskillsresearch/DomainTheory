@@ -17,21 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {β : Type*}
 
 /-- Two approximable maps out of `C` agree as soon as they agree on every finite element `σ⊥` and

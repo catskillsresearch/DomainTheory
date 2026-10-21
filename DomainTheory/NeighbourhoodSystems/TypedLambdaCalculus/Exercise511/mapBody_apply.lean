@@ -19,20 +19,6 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem mapBody_apply (W : (funSpace (Arg V) (iterSys V)).Element)
     (s : (iterSys (funSpace V V)).Element) (x : V.Element) :
     (mapBody V).toElementMap (pair W (pair s x)) =

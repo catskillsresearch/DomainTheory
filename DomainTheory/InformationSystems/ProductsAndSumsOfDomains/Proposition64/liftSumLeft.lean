@@ -12,8 +12,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -23,8 +21,6 @@ namespace InfoSys
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 
 variable (A : InfoSys α) (B : InfoSys β)
-
-set_option linter.unusedSectionVars false
 
 /-- Embed `A`-tokens as left sum tokens. -/
 def liftSumLeft (v : Finset α) : Finset (SumToken α β) :=

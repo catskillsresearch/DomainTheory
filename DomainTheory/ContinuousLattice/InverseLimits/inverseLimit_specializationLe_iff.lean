@@ -25,23 +25,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The specialization order of the explicit inverse-limit topology is the componentwise order. -/
 theorem inverseLimit_specializationLe_iff (x y : InverseLimit D P) :
     @SpecializationLe (InverseLimit D P) (inverseLimitTopology D P) x y ↔ x ≤ y := by

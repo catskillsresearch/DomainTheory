@@ -28,17 +28,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- On arguments whose first `n` coordinates are all total, the guard is transparent. -/
 theorem strictGuardN_total (n : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Element)
     (h : ∀ j, j < n → ∃ k, component z j = natElem k) :

@@ -17,21 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem splitU_mid_lt (n : ℕ) :
     decodeRat (splitMidCode n) < (decodeRatPair (firstElemCode (canonCode n))).2 := by
   show decodeRat (splitMidCode n) < decodeRat (firstElemCode (canonCode n)).unpair.2

@@ -69,26 +69,10 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 /-! ### The neighbourhood system `𝒞`: cones together with terminator singletons. -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Total elements: finite sequences `↑{σ}`, and `⊥ ⊏ Λ`. -/
 
 
-
 /-! ### Prepending a string to a `𝒞`-neighbourhood. -/
-
-
-
 
 
 /-! ### Juxtaposition `xy` as an approximable map of two variables. -/

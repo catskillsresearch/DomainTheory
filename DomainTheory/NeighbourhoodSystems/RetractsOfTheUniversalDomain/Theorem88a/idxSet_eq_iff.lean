@@ -27,9 +27,6 @@ section Reencode
 variable (e : ℕ → Set α)
 
 
-
-
-
 theorem idxSet_eq_iff (i j : ℕ) : idxSet e i = idxSet e j ↔ e i = e j :=
   ⟨fun h => Set.Subset.antisymm ((idxSet_subset_iff e i j).mp h.subset)
       ((idxSet_subset_iff e j i).mp h.symm.subset),

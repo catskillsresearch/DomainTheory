@@ -53,7 +53,6 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
   {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
 
-
 /-! ### 8.12(e)(c)(i): decider congruence and index-function well-definedness
 
 `emptyInterDec`/`emptyDiffDec` depend only on the *sets* `P.X n ∩ P.X k`/`P.X n \ P.X k` (via
@@ -65,7 +64,6 @@ with `left_congr`/`right_congr` above, this transports all the way up to `posIdx
 section Congr
 
 variable {n n' k k' m m' : ℕ}
-
 
 
 end Congr
@@ -82,9 +80,6 @@ triple-argument `Nat.Primrec` witness. **Deviation from the `arxiv.md` draft sig
 three hypotheses are needed only for *correctness* (`isComputableSplit_ofBisection`'s `posIdx_spec`/
 `negIdx_spec`, via `(e)(c)(i)`'s congruence lemmas), never for the definition itself, mirroring how
 `posIdxFromBisection`/`negIdxFromBisection` are themselves already hypothesis-free to *define*. -/
-
-
-
 
 
 end ComputableBisection

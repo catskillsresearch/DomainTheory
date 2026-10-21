@@ -21,14 +21,6 @@ open Language
 variable {n : ℕ}
 
 
-
-
-
-
-
-
-
-
 /-- The label function recovers the tree from its language, so `treeLang` is **one-one**: two trees
 with the same language are the same tree (a node's `±` label is recorded by whether its selector is
 in the language). -/

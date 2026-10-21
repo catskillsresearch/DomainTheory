@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, §5.** `int` is a closure: `I ⊆ int = int ∘ int`. -/
 theorem Icomb_subset_intR : Icomb ⊆ intR := by
   intro p hp

@@ -25,12 +25,6 @@ variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
 
 
-
-
-
-
-
-
 theorem ProdCon_liftRight {w : Finset β} (hw : w ∈ B.Con) :
     ProdCon A B (liftRight A B w) := by
   refine ⟨?_, ?_⟩

@@ -15,8 +15,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Example24
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB

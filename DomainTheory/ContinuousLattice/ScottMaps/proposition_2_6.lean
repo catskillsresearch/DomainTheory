@@ -23,7 +23,6 @@ open Set Topology
 variable {D D' D'' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 
-
 /-- **Scott 1972, Proposition 2.6.** A function of several variables between complete lattices is
 (Scott-)continuous jointly iff it is continuous in each variable separately. Continuity is phrased
 as preservation of directed suprema (Proposition 2.5); it suffices to treat two variables, the

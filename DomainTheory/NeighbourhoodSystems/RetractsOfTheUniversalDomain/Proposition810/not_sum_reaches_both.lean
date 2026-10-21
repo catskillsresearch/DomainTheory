@@ -21,8 +21,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 /-- No element of `𝒟₀+𝒟₁` reaches into both the left and the right copy (Exercise 3.18's
 disjointness `inj₀_inter_inj₁`, plus `not_sum_mem_empty`). -/
 theorem not_sum_reaches_both {γ δ} {V₀ : NeighborhoodSystem γ} {V₁ : NeighborhoodSystem δ}

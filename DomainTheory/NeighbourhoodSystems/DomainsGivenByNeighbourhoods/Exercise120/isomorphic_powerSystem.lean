@@ -20,16 +20,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 1.20 (statement).** `𝒟` and its power system `𝒟'` are isomorphic. -/
 theorem isomorphic_powerSystem : V ≅ᴰ V.powerSystem := ⟨V.powerIso⟩
 

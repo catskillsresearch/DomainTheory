@@ -15,42 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem comp_right_const (a : Pomega) :
     IsScottContinuous (fun u => comp u a) :=
   graph_const_isScottContinuous (fun u x => funOf u (funOf a x))

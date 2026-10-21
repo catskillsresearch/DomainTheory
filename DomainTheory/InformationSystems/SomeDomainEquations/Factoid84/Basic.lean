@@ -52,27 +52,13 @@ namespace Factoid84
 /-! ## The powerset domain `P` (Scott) -/
 
 
-
-
-
 /-! ## Scott’s conditions (1)–(5) on `r : P → P` -/
-
-
 
 
 /-! ## (3) is automatic for any approximable map -/
 
 
 /-! ## Example: flat domain map (treat `1` as rogue) -/
-
-
-
-
-
-
-
-
-
 
 
 /-! ## Identity fails (4): `I_P` is not a domain map -/

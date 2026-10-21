@@ -25,9 +25,6 @@ namespace Exercise627
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 
-
-
-
 /-- **Exercise 6.27 (2).** `𝒟 ⊴ 𝒟 × ℰ`. -/
 theorem fst_trianglelefteq_prod (D₀ D₁ : NeighborhoodSystem Str) :
     D₀ ⊴ prodTok D₀ D₁ :=

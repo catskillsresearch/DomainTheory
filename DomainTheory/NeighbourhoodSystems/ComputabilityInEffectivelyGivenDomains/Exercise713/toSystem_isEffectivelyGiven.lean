@@ -21,17 +21,6 @@ namespace InclStructure
 variable (I : InclStructure)
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 7.13 (⇐).** The hint system is effectively given. -/
 theorem toSystem_isEffectivelyGiven : I.toSystem.IsEffectivelyGiven := ⟨I.toPresentation⟩
 

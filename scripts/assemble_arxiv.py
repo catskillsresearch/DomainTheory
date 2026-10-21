@@ -6,9 +6,10 @@ the repository, under build/. Markdown links are HTML anchors whose href is a
 path relative to that generated note (no URL scheme, so the preview opens the
 file in the editor; parens in labels break `[text](url)`). Each Lean link is
 bold link text only, then an AI blockquote and a fenced copy of that file. The
-copy omits
-`module`,
-imports, `public section`, and `open` commands, and omits `/-!` Scott extracts.
+copy omits `module`, imports, `public section`, and `open` commands, omits
+`/-!` Scott extracts, and omits comments/docstrings that contain `**Scott`.
+The build drops the `**Lean 4**` heading and list bullets before each inlined
+file (only the bold library path remains).
 A leading `/-ai` comment is shown above the code as a blockquote that begins
 with **AI code read.**
 """
@@ -31,6 +32,8 @@ FENCE = re.compile(r"^\s*(`{3,})")
 IMPORT_LINE = re.compile(r"^(?:public\s+|private\s+|meta\s+)?import\b")
 PUBLIC_SECTION = re.compile(r"^(?:@\[[^\]]*\]\s*)?public\s+section\s*$")
 OPEN_LINE = re.compile(r"^open\b")
+LEAN_LIST_LINE = re.compile(r"^\s*-\s+\[([^\]]*)\]\(([^)]+)\)\s*$")
+SCOTT_IN_COMMENT = re.compile(r"\*\*Scott")
 
 
 def resolve_link(base: Path, href: str, suffix: str) -> Path | None:
@@ -119,6 +122,34 @@ def split_preamble(text: str) -> tuple[str | None, str]:
     return ai, "".join(out)
 
 
+def elide_scott_comments(text: str) -> str:
+    """Drop docstrings and block comments whose body cites Scott in bold."""
+    out: list[str] = []
+    index = 0
+    while index < len(text):
+        if text.startswith("/--", index):
+            taken = take_block(text, index, "/--", "-/")
+            if taken is not None:
+                body, end = taken
+                if not SCOTT_IN_COMMENT.search(body):
+                    out.append(text[index:end])
+                index = end
+                continue
+        if text.startswith("/-", index) and not text.startswith("/-!", index) and not text.startswith(
+            "/-ai", index
+        ):
+            taken = take_block(text, index, "/-", "-/")
+            if taken is not None:
+                body, end = taken
+                if not SCOTT_IN_COMMENT.search(body):
+                    out.append(text[index:end])
+                index = end
+                continue
+        out.append(text[index])
+        index += 1
+    return "".join(out)
+
+
 def elide_declarations(text: str) -> str:
     kept: list[str] = []
     blank = False
@@ -129,6 +160,7 @@ def elide_declarations(text: str) -> str:
             or IMPORT_LINE.match(stripped)
             or PUBLIC_SECTION.match(stripped)
             or OPEN_LINE.match(stripped)
+            or (stripped.startswith("--") and SCOTT_IN_COMMENT.search(stripped))
         ):
             continue
         if not stripped:
@@ -155,7 +187,7 @@ def lean_block(path: Path) -> str:
     if not path.is_file():
         raise FileNotFoundError(path)
     ai, source = split_preamble(path.read_text(encoding="utf-8"))
-    code = elide_declarations(source)
+    code = elide_declarations(elide_scott_comments(source))
     parts: list[str] = []
     if ai:
         parts.append(ai_box(ai))
@@ -250,8 +282,14 @@ def expand(note: Path, notes: dict[Path, None]) -> tuple[str, int]:
         if in_fence:
             out.append(line)
             continue
+        if line.strip() == "**Lean 4**":
+            continue
         leans = lean_targets(note, line)
-        line = rewrite_note_links(note, line, notes)
+        lean_list = LEAN_LIST_LINE.match(line)
+        if lean_list is not None and resolve_lean_target(note, lean_list.group(2)) is not None:
+            line = f"**{lean_list.group(1)}**"
+        else:
+            line = rewrite_note_links(note, line, notes)
         out.append(line)
         for lean in leans:
             out.append("")

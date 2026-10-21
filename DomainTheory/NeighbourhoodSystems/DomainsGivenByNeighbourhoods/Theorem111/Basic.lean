@@ -44,7 +44,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 /-! ### (i) Countable intersection. -/
 
 
-
 /-! ### (ii) Ascending countable union. -/
 
 

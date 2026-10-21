@@ -21,7 +21,6 @@ variable {α β γ δ : Type*}
 namespace Theorem51
 
 
-
 /-- **Theorem 5.1, constant case (Scott 1981, PRG-19).** A constant `k` is interpreted by the
 constant map, which is approximable with value `k`. -/
 theorem const_apply (k : V₁.Element) (x : V₀.Element) :

@@ -52,8 +52,6 @@ open NeighborhoodSystem
 /-! ### A general bit-arithmetic toolkit (not specific to `generator`) -/
 
 
-
-
 /-! ### `generator i`: the `i`-th independent propositional variable, as a subset of `ℕ` -/
 
 

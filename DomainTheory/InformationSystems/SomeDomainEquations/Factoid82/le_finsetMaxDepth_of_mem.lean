@@ -21,19 +21,17 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.fins
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
+
+omit [DecidableEq α] in
 
 theorem le_finsetMaxDepth_of_mem {u : Finset (RawLamToken α)} {t : RawLamToken α}
     (ht : t ∈ u) : rawDepth t ≤ finsetMaxDepth u := by

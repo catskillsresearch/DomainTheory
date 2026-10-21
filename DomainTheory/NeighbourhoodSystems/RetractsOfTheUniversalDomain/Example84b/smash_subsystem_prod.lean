@@ -20,14 +20,7 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
 section Smash
-
-
-
-
 
 
 /-- **The subsystem relation `Exercise510.smash D E ◁ prod D E`.** Every smash neighbourhood is a

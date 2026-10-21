@@ -18,23 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example43
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `succ(n̂) = (n+1)^`. -/
 theorem succMap_natElem (n : ℕ) : succMap.toElementMap (natElem n) = natElem (n + 1) :=
   constLiftN_natElem N (fun n => natElem (n + 1)) n

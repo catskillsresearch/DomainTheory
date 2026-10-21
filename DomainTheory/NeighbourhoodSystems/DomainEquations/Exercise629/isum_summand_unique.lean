@@ -26,26 +26,7 @@ universe u v
 variable {ι : Type u} {α : ι → Type v}
 
 
-
-
-
-
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 6.29 — a sum element reaches at most one summand.** -/

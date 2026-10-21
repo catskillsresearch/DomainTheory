@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.union_left_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem union_const_left_isScottContinuous (c : Pomega) :
     IsScottContinuous (fun x => c ∪ x) := by
   have : (fun x : Pomega => c ∪ x) = (fun x => x ∪ c) := by

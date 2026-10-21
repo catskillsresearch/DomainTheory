@@ -93,16 +93,7 @@ namespace InclStructure
 variable (I : InclStructure)
 
 
-
 /-! ### (⇐) Scott's hint system `Sₙ = {m ∣ INCL(m, n)}` -/
-
-
-
-
-
-
-
-
 
 
 end InclStructure
@@ -110,10 +101,6 @@ end InclStructure
 /-! ### (⇒) Every effectively given domain yields an `InclStructure` -/
 
 variable {α : Type*} {V : NeighborhoodSystem α}
-
-
-
-
 
 
 /-! ### Round-trip A: `INCL ↦ 𝒟 ↦ INCL` recovers `INCL` -/
@@ -124,8 +111,6 @@ Scott's "Is this essentially any effectively given system?" — the reconstructe
 domain-isomorphic to the original. The finite-element correspondence is `Xₙ ↔ Sₙ` (inclusion-
 preserving, since `Sₙ ⊆ Sₘ ↔ Xₙ ⊆ Xₘ`); we extend it to all elements (filters) via the mutually
 inverse `reconElem`/`reconElemInv`, in the style of Exercise 1.20's `powerIso`. -/
-
-
 
 
 end DomainTheory.NeighbourhoodSystems.Exercise713

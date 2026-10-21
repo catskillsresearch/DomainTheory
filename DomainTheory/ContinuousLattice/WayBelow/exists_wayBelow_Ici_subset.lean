@@ -26,9 +26,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
-
 /-- A strengthening of `exists_wayBelow_subset`: the witness `a ≪ z` can be taken with the whole
 principal up-set `Set.Ici a` (not merely `↟a`) inside `U`. The element `a` produced lies in the
 open `U`, which is upper, so `↑a ⊆ U`. -/

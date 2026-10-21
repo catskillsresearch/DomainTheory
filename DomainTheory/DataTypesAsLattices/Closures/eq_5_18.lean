@@ -16,15 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (5.18).** If `a` is already a closure, then `V(a)(x) ⊆ a(x)`. -/
 theorem eq_5_18 {a : Pomega} (ha : IsClosure a) (x : Pomega) :
     Vapply a x ⊆ funOf a x := by

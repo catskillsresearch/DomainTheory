@@ -27,8 +27,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwise_sSup_prese
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace

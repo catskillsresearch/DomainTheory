@@ -23,8 +23,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 universe u v w
 
 variable {α : Type u} {β : Type v} {γ : Type w}
@@ -32,32 +30,7 @@ variable {α : Type u} {β : Type v} {γ : Type w}
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 
-
-
-
-
 open ApproximableMap
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Theorem 7.2, first sentence (Scott 1982).** Approximable maps `A → B` are

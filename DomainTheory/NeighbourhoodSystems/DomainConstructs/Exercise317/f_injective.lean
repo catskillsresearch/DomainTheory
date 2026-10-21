@@ -19,24 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise317
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`f` is one-one.** Since `g ∘ f = I_B`, the elementwise map of `f` is injective. -/
 theorem f_injective : Function.Injective f.toElementMap := by
   intro x y hxy

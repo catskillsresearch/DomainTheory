@@ -19,8 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.vals_subset
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 @[instance_reducible]

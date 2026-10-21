@@ -44,14 +44,10 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 /-! ### From an open set to an approximable map `𝒟 → 𝒪`. -/
 
 
-
-
 /-! ### From an approximable map `𝒟 → 𝒪` to an open set. -/
 
 
-
 /-! ### The order-isomorphism `Opens(|𝒟|) ≃o (𝒟 → 𝒪)`. -/
-
 
 
 end DomainTheory.NeighbourhoodSystems.Exercise325

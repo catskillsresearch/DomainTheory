@@ -22,8 +22,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
 /-- `capMap`'s neighbourhood relation on indices: `nbhd n ∪ nbhd m` relates to `nbhd k` iff both
 `nbhd n ⊆ nbhd k` and `nbhd m ⊆ nbhd k`. -/
 theorem capMap_rel_iff (n m k : ℕ) :

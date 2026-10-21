@@ -23,11 +23,6 @@ namespace Exercise722
 open scoped Computability
 
 
-
-
-
-
-
 /-- From state `some k`, reading `w` reaches `some (k+|w|)` exactly when `w` is a prefix of the
 suffix `σ.drop k` (i.e. `w` continues `σ` from position `k` without diverging); otherwise it dies. -/
 theorem singleDFA_evalFrom (σ : List Bool) (w : List Bool) (k : Fin (σ.length + 1)) :

@@ -17,46 +17,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem vUnfold_pairL (x : VToken) :
     vUnfold (.pairL x) = ⟨(x, .bot), Or.inr rfl⟩ := rfl
 

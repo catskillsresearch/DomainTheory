@@ -19,22 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vapply_prefixpoint
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.6 / (5.15).** The universe applied to `x` is
 closed under `a` and contains `x`. -/
 theorem Vapply_closed (a x : Pomega) :

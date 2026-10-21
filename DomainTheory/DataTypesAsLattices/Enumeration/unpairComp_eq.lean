@@ -20,76 +20,9 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
 
 
 theorem unpairComp_eq (k : ℕ) : unpairComp k = unpair k := by

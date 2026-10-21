@@ -15,16 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.interp_var_isScottContinuo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 2.1 (The continuity theorem).** -/
 theorem theorem_2_1 (t : Term) (ρ : ℕ → Pomega) (i : ℕ) :
     IsScottContinuous (fun v => interp t (envSet ρ i v)) :=

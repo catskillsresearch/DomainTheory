@@ -19,35 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.squarePair_mono
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Icomb_subset_boxTensor {a b : Pomega} (ha : IsClosure a) (hb : IsClosure b) :
     Icomb ⊆ boxTensor a b := by
   intro p hp

@@ -18,11 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
-universe u
-
-
-
-
 
 /-- **`T`'s elements, named via `Example23`.** The three-way classification of `Example12`,
 restated with `Example23`'s `⊥`/`true`/`false` names (they are the *same* terms by `rfl`). -/

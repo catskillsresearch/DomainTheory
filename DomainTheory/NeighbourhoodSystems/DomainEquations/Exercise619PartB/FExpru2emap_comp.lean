@@ -25,19 +25,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise510
 namespace Exercise619
 
 
-
-
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
-
-
-
-
-
-
-
-
 
 
 /-- **Functor law 2 — `T(g ∘ f) = T(g) ∘ T(f)`.** Every construct `T` preserves composition; together

@@ -15,18 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.continuous_on_diag
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 theorem continuous_tuple {F : Pomega → Pomega → Pomega}
     (h1 : ∀ y, IsScottContinuous (fun x => F x y))
     (h2 : ∀ x, IsScottContinuous (fun y => F x y))

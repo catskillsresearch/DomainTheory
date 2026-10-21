@@ -22,8 +22,6 @@ universe u
 variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
 namespace ApproximableMap
 
 

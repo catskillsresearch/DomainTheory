@@ -320,17 +320,6 @@ section StepGen
 variable {α β : Type*}
 
 
-
-
-
-
-
-
-
-
-
-
-
 end StepGen
 
 /-! ### `atomPair`, generalized over an abstract split pair
@@ -350,20 +339,8 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
 
 
-
 variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 include hD₀pos hD₀diff hySplit hD₁pos hD₁diff hxSplit hXmem hYmem hD₀mne hD₁mne
-
-
-
-
-
-
-
-
-
-
-
 
 
 end AtomPairGen
@@ -457,32 +434,12 @@ section DirectDec
 variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 
-
-
-
-
-
-
-
-
 variable (hDiff : IsComputableDiff P)
-
-
-
-
-
-
-
-
 
 
 end DirectDec
 
 /-! ### The two-sided packed state `(idx0, idx1, junk)` -/
-
-
-
-
 
 
 /-! ### The `X`-sub-step
@@ -497,9 +454,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
   (hDiff0 : IsComputableDiff P₀)
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
-
-
-
 
 
 end XSubStep
@@ -524,13 +478,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
 
 
-
 end YSubStep
 
 /-! ### The outer `(bit-source, depth, state)` wrapping and the full recursion -/
-
-
-
 
 
 section AtomPairCode
@@ -540,19 +490,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 end AtomPairCode
@@ -577,9 +514,6 @@ analogue, needed below to reuse `Nat.eq_of_testBit_eq`/`Nat.testBit_lt_two_pow` 
 avoiding a bespoke induction on `4 ^ n`). -/
 
 
-
-
-
 /-! ### `encodeDeltaPair`: realizing a prescribed finite `Bool × Bool` sign-prefix as a bit-source
 
 **8.12(d)(4)(c)(iii).** The two-sided, base-`4` analogue of `Theorem88d.lean`'s `encodeBits`
@@ -589,10 +523,6 @@ match `δ`'s first `n` values exactly. Builds up one base-`4` digit (rather than
 packing `(δ n).1`/`(δ n).2` into that digit's two bits exactly as `atomPairStep` unpacks them
 (`rem % 2`, `(rem / 2) % 2`). Purely a `Prop`-level existence tool, never claimed `Nat.Primrec` —
 same status as `encodeBits`. -/
-
-
-
-
 
 
 section AtomPairGenDelta
@@ -606,7 +536,6 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 
-
 end AtomPairGenDelta
 
 section AtomPairCorrect
@@ -616,7 +545,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hDiff0 : IsComputableDiff P₀) (hDiff1 : IsComputableDiff P₁)
   (splitX : Set α → Set β → Set α → Set β × Set β) (hSplitX : IsComputableSplit P₀ P₁ splitX)
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
-
 
 
 /-! ### Unconditional per-step algebra for `xSubStep`/`ySubStep`
@@ -629,16 +557,7 @@ readout to be `0`, which is connected to genuine set (in)equality unconditionall
 `existsInterDec_spec`/`existsDiffDec_spec` + `P.inter_spec`/`hDiff.diffIdx_spec`). -/
 
 
-
-
-
-
-
-
-
-
 end AtomPairCorrect
-
 
 
 section AtomPairCorrect2
@@ -655,12 +574,9 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 
 
-
-
 /-! ## 8.12(d)(3)(e): the junk invariant and validity
 
 Mirrors `Theorem88d.lean`'s `atomUEmpty_mono`/`atomUCode_mem`. -/
-
 
 
 /-- **Validity**: `atomPairIdx0`/`atomPairIdx1`'s recorded indices are always genuine `D₀`-side/
@@ -717,7 +633,6 @@ mirroring `IsComputableDiff` (`(d)(3)(a)`)'s shape verbatim but for `∪` instea
 structure again serves **both** `P₀` and `P₁` symmetrically. -/
 
 
-
 namespace IsComputableUnion
 
 variable {α : Type*} {V : NeighborhoodSystem α} {P : ComputablePresentation V}
@@ -772,31 +687,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion1 : IsComputableUnion P₁)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end XPseqCode
 
 section AtomPairCorrect4
@@ -839,9 +729,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hySplit : SplitSpec' D₀ splitY)
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
-
-
-
 
 
 end AtomPairCorrect5
@@ -891,9 +778,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion1 : IsComputableUnion P₁)
 
 
-
-
-
 end XPseqCodeUnconditional
 
 /-! ## 8.12(d)(4)(d): `YPseqCode`, the code-level `Y`-side union fold
@@ -909,10 +793,6 @@ into a single `2·4ⁿ`-element fold, this is built as an **outer `2`-way union 
 alongside it costs nothing. -/
 
 
-
-
-
-
 section YPseqCode
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
@@ -922,32 +802,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (splitY : Set β → Set α → Set β → Set α × Set α) (hSplitY : IsComputableSplit P₁ P₀ splitY)
   (hD₀pos : D₀.IsPositive) (hD₀diff : D₀.DiffClosed) (hD₀nomin : D₀.NoMinimal)
   (hUnion0 : IsComputableUnion P₀)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 end YPseqCode
@@ -976,11 +830,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₁pos : D₁.IsPositive) (hD₁diff : D₁.DiffClosed) (hD₁nomin : D₁.NoMinimal)
   (hySplit : SplitSpec' D₀ splitY)
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty) (hUnion0 : IsComputableUnion P₀)
-
-
-
-
-
 
 
 end YPseqCodeUnconditional
@@ -1023,9 +872,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
   (hX0 : P₀.X 0 = D₀.master) (hY0 : P₁.X 0 = D₁.master)
-
-
-
 
 
 end XYPseqCodeZero
@@ -1132,11 +978,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
 
 
-
-
-
-
-
 end CombinedCode
 
 /-! ### Exercise 8.12(d)(5)(b)(iv): the headline transfer theorems
@@ -1169,11 +1010,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
 
 
-
-
-
-
-
 /-! ### The headline facts: specializing `transfer_*_combinedCode` to even/even and odd/odd
 indices
 
@@ -1199,7 +1035,6 @@ theorem YPseqCode_subset_iff_Y_subset (i j : ℕ) :
   exact key
 
 
-
 end CombinedCodeTransfer
 
 /-! ### Exercise 8.12(d)(5)(c): cross-family order and equality facts
@@ -1223,8 +1058,6 @@ variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSyst
   (hySplit : SplitSpec' D₀ splitY)
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hUnion0 : IsComputableUnion P₀) (hUnion1 : IsComputableUnion P₁)
-
-
 
 
 end CombinedCodeCrossFamily

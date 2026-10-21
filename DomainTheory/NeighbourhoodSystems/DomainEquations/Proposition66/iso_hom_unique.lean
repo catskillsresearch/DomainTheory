@@ -18,7 +18,6 @@ universe u
 variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj} {A B : TAlgebra T}
 
 
-
 /-- The isomorphism of Proposition 6.6 is **unique**: the homomorphism `A → B` realising it is the
 only homomorphism between the two initial algebras. -/
 theorem iso_hom_unique (hA : IsInitial A) (h : AlgHom A B) : h = hA.desc B :=

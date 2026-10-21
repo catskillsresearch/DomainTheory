@@ -20,11 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise421
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
-
-
-
-
-
 /-- **Exercise 4.21 / 4.13(3) (Scott 1981, PRG-19).** `[·] = upSet` is the *unique* function with
 `[0] = ℕ` and `[m⁺] = [m]⁺`. -/
 theorem upSet_unique (s : ℕ → Set ℕ) (h0 : s 0 = Set.univ)

@@ -16,15 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (5.16).** `x ⊆ V(a)(x)`. -/
 theorem eq_5_16 (a x : Pomega) : x ⊆ Vapply a x := by
   intro k hk y hy

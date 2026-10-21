@@ -22,22 +22,7 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 namespace Exercise717
 
 
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- `Nat.pair` is monotone in its second argument (first argument fixed). -/

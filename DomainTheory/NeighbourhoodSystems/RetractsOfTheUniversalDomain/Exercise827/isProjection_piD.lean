@@ -19,36 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott's own hint, in full: `Π(d)` is a projection, for every `d`.** -/
 theorem isProjection_piD (d : ApproximableMap U U) : IsProjection (piD d) :=
   ⟨isRetraction_piD d, le_idMap_piD d⟩

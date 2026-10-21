@@ -16,42 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.3 (ii).** `u : a ∘→ b` means `u` is restricted
 to `a` and takes values in `b`. -/
 theorem theorem_4_3_ii {a b u x : Pomega}

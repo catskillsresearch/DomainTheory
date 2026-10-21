@@ -11,8 +11,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 /-- Semantic entailment: `φ ⊨ ψ` iff every valuation satisfying `φ` satisfies `ψ`. -/

@@ -19,21 +19,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The master (token set) of `D + (D×E)` is `fTok Γ_D Γ_E` — definitionally, the sum/product
 masters expand to the tagged-union shape `gTok`/`fTok`. -/
 theorem master_Fsol : (Fsol Dsol Esol).sys.master = fTok GammaD GammaE := rfl

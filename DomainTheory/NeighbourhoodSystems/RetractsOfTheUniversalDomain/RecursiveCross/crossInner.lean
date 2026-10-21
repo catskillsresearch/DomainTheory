@@ -8,8 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Rec
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- `crossInner bop x c2` codes `[bop (x, y) ∣ y ∈ decodeList c2]` (up to order). -/

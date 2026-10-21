@@ -28,10 +28,6 @@ namespace ApproximableMap
 variable {A : InfoSys α} {B : InfoSys β}
 
 
-
-
-
-
 theorem toElement_mono (f : ApproximableMap A B) {x y : A.Element} (hxy : x ≤ y) :
     f.toElement x ≤ f.toElement y := by
   intro Y ⟨u, hu, hrel⟩

@@ -23,32 +23,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`σ⃗ ≤ σ⃗·σ⃗`**: `σ⃗·σ⃗` is itself a fixed point of `x ↦ σ·x` (by associativity and `σ⃗ = σ·σ⃗`),
 and `σ⃗` is the *least* such fixed point (`fixElement_le_of_toElementMap_le`). -/
 theorem streamArrow_le_mul_self (σ : List Bool) :

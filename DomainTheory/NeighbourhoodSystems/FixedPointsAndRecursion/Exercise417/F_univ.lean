@@ -25,12 +25,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
-
-
-
 /-- In any monoid, `Set.univ` is a fixed point of `F a b`: `s = 1 · s ∈ univ · univ`. -/
 theorem F_univ (a b : S) : F a b (Set.univ : Set S) = Set.univ := by
   apply Set.Subset.antisymm (Set.subset_univ _)

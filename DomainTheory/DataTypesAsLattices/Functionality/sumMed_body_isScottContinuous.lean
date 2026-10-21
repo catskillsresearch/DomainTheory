@@ -16,19 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sumMed_body_isScottContinuous (f g : Pomega) :
     IsScottContinuous (fun u =>
       condSet (funOf u (ofNat 0))

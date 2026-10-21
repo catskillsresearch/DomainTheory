@@ -18,19 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.sumMed_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sumMed_rel {A B C : RestrictedEquiv} {f g : Pomega}
     (hf : (arrowE A C).mem f) (hg : (arrowE B C).mem g) :
     (arrowE (sumE A B) C).mem (sumMed f g) := by

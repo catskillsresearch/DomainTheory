@@ -40,11 +40,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.C
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -54,6 +50,7 @@ section Lift
 
 variable {A : Type} [DecidableEq A] [Inhabited A] {β : Type}
 
+omit [Inhabited A] in
 /-- Two maps out of `Cₐ` agree once they agree on every `σ⊥` and `σ` (generic `Exercise516.map_ext_C`). -/
 theorem map_ext_Cn {V : NeighborhoodSystem β} {f g : ApproximableMap (Cn A) V}
     (hbot : ∀ σ, f.toElementMap (strBotN σ) = g.toElementMap (strBotN σ))

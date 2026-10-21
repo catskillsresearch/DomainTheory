@@ -23,11 +23,6 @@ namespace Proposition77
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
 
-
-
-
-
-
 /-- **`pairSharpMap` really is Example 6.1's pairing:** `pair(x, y) ↦ ⟨x, y⟩^§` (`pairSharp`). -/
 theorem pairSharpMap_toElementMap (x y : (Dsharp D hD).Element) :
     (pairSharpMap hD).toElementMap (DomainTheory.NeighbourhoodSystems.pair x y) = pairSharp D hD x y := by

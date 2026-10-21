@@ -24,12 +24,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
 /-- **Exercise 5.16 (the approximants).** The `(k+1)`-st approximant of the least fixed point is the
 partial element of the `k`-fold Thue–Morse morphism iterate of `[0]`:
 `Φᵏ⁺¹(⊥) = (expandᵏ[0])⊥`. -/

@@ -21,17 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
 theorem e_or (n m : ℕ) : e (n ||| m) = e n ∪ e m := by
   ext k
   simp [e, Nat.testBit_or]

@@ -17,9 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise412
 open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
 
 
-
-
-
 /-- The two total elements are incomparable: `elemOne ⋢ elemZero`. -/
 theorem elemOne_not_le_elemZero : ¬ elemOne ≤ elemZero := by
   intro h

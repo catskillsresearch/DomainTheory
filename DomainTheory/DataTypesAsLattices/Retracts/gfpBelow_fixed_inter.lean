@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_postfixed
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem gfpBelow_fixed_inter {f : Pomega → Pomega} (hf : IsScottContinuous f)

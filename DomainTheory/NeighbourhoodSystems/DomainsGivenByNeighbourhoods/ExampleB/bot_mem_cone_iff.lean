@@ -19,25 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.ExampleB
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`⊥` sits only in the cone of the empty prefix.** `⊥.mem(σΣ*) ↔ σ = Λ`: `⊥`'s only
 neighbourhood is `Δ = ΛΣ*` (`cone_nil`), and a cone determines its prefix (`cone_injective`).
 (Used by Exercise 2.17's base case, where `g(1)=⊥` is stated only at the input `⊥`.) -/

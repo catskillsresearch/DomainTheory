@@ -20,11 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
 theorem V_diffClosed : V.DiffClosed := fun hX hY => V_diff_mem hX hY
 
 end DomainTheory.NeighbourhoodSystems

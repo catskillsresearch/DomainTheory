@@ -18,13 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise421
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
-
-
-
-
-
-
-
 /-- The isomorphism sends `0` to the distinguished element `m` of `[m]`. -/
 theorem addIso_zero (m : ℕ) : (addIso m 0 : ℕ) = m := by simp [addIso]
 

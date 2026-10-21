@@ -24,27 +24,7 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
 namespace Sub8_6
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **`subApprox` is a projection**: `subApprox ≤ idMap`, from `subFilter φ ≤ φ`, itself

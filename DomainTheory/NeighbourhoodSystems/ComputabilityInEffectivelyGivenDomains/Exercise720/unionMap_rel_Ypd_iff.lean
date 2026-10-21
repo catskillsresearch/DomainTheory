@@ -20,8 +20,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*}
 
 
-
-
 /-- **Exercise 7.20 — the relation of `union` at the level of `ℙℙ𝒟`/`ℙ𝒟`-codes.** For any
 presentation `Q` of `ℙ𝒟` whose `c`-th neighbourhood is `Y_c = ⋃_{a∈dl c} ↓Xₐ` (e.g. the
 `PDPresentation` of Proposition 7.10), and the canonical enumeration `(ℙℙ𝒟).Ypd Q` of `ℙℙ𝒟`,

@@ -23,13 +23,6 @@ universe u
 attribute [instance] CLat.str
 
 
-
-
-
-
-
-
-
 section Conj
 
 open Set

@@ -19,28 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_app_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 7.4 (i).** `Zₙ : (A → A) → (A → A)`. -/
 theorem theorem_7_4_i (A : RestrictedEquiv) (n : ℕ) :
     (arrowE (arrowE A A) (arrowE A A)).mem (Zcomb n) := by

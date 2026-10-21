@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Pairing of elements of `Pω` as a graph (Table 2 / (2.21)). -/

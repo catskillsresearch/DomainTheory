@@ -17,54 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Yterm_interp
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Ycomb_combinatory : IsCombinatory Ycomb := by
   simpa [Yterm_interp] using theorem_2_4_closed Yterm
 

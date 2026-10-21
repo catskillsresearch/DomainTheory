@@ -19,51 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.primRecStep_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.27).** The fixed point of the primrec step agrees
 with integer recursion. -/
 theorem primRecVal_fix (a f : Pomega) : ∀ n,

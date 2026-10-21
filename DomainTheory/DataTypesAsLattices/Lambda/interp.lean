@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.envSet
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Table 2.** Semantics of a LAMBDA term. -/

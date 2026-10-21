@@ -20,19 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise218
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 2.18 — `h` is not an isomorphism.** It is not surjective: `↑(01Σ*)` is not in the
 range (any preimage `x` satisfies `x = k(h(x))`, forcing `h(x) = ↑(00Σ*) ≠ ↑(01Σ*)`). -/
 theorem hMap_not_surjective : ¬ Function.Surjective hMap.toElementMap := by

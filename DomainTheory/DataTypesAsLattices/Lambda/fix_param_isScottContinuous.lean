@@ -15,51 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.iterateBot_param_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem fix_param_isScottContinuous
     {g : Pomega → Pomega → Pomega}
     (hgx : ∀ y, IsScottContinuous (fun x => g x y))

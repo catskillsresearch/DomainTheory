@@ -21,22 +21,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `S` is indeed positive (Exercise 1.19's `IsPositive`). -/
 theorem Ssys_isPositive : Ssys.IsPositive := by
   intro X Y hX hY

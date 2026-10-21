@@ -16,10 +16,9 @@ public import DomainTheory.ContinuousLattice.Injective.Basic
 @[expose] public section
 
 
-
 open Topology TopologicalSpace
 
-universe u v w
+universe v w
 
 
 /-- **Scott 1972, Proposition 1.3.** Products of injective spaces are injective. -/

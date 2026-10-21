@@ -9,8 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def eraseTag (j : ℕ) (u : Pomega) : Pomega :=

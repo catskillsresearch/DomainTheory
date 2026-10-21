@@ -46,9 +46,6 @@ namespace Token
 end Token
 
 
-
-
-
 /-- **Factoid 2.5.** Interval information system of Scott 1982, §2. -/
 def example_25 : InfoSys Token :=
   ofSatisfaction Sat Token.bot (fun _ => trivial) sat_sing

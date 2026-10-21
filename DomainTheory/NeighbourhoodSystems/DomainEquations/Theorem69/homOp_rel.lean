@@ -16,23 +16,15 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe u
 
 variable {α β γ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-
-
-
-
 
 
 section HomOp
 
 variable (T : Endofunctor DomainObj) (D E : DomainObj)
   (j : ApproximableMap D.sys (T.obj D).sys)
-
-
 
 
 theorem homOp_rel {N : Set (StrictMap (T.obj D).sys (T.obj E).sys)}

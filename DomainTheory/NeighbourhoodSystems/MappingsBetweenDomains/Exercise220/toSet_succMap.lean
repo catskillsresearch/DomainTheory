@@ -18,25 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise220
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem toSet_succMap (x : powerSet.Element) :
     toSet (succMap.toElementMap x) = succSet (toSet x) := by
   ext k

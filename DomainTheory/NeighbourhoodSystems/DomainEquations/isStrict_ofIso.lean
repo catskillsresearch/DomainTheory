@@ -22,13 +22,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Tc_map_val
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 /-- The map of an order-isomorphism is strict (an iso of domains preserves `⊥`). -/
 theorem isStrict_ofIso {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}

@@ -49,14 +49,7 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
 /-! ### The isomorphism `|𝒟| ≃o |𝒟'|`. -/
-
 
 
 end NeighborhoodSystem

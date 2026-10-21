@@ -18,8 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.iterateBot_retractLe_suc
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Projection equations between arbitrary comparable Kleene stages. -/

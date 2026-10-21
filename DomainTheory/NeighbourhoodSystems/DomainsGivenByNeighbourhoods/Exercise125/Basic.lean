@@ -76,10 +76,7 @@ namespace FinalSegment
 open NeighborhoodSystem
 
 
-
 variable {Δ : Type*} [LinearOrder Δ] [Nonempty Δ]
-
-
 
 
 /-! ### Well-order: every neighbourhood is `Ici (its minimum)`. -/
@@ -88,12 +85,6 @@ variable [WellFoundedLT Δ]
 
 
 /-! ### The classification of `|𝒟|` as the non-empty lower sets (initial segments). -/
-
-
-
-
-
-
 
 
 /-! ### Total elements and finiteness (Scott's prose questions). -/

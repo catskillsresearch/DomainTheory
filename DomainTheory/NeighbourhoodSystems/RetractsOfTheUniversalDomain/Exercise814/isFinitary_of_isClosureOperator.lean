@@ -21,38 +21,9 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 section FiniteDomain
 
 variable {a : ApproximableMap E E} (h : IsClosureOperator a)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 8.14 (Scott 1981, PRG-19), the main theorem.** For any closure operator

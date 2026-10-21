@@ -23,12 +23,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 universe u
 
 
-
-
-
-
-
-
 section Sum
 
 variable {α : Type u} {E : NeighborhoodSystem α} (hE : ∀ X, E.mem X → X.Nonempty)

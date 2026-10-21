@@ -24,27 +24,7 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
 namespace Sub8_6
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem toElementMap_subApprox_comp (φ : (funSpace E E).Element) :

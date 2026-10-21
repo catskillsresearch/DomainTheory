@@ -15,8 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.filterTerm
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices

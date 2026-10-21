@@ -16,7 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
 theorem primrec_isPeriodicMask :
     Nat.Primrec (fun t => isPeriodicMask t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) := by
   have hk : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left

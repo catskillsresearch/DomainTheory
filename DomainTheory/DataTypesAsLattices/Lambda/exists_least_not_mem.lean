@@ -14,41 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 lemma exists_least_not_mem {a : Pomega} (hex : ∃ k, k ∉ a) :
     ∃ k, k ∉ a ∧ ∀ i < k, i ∈ a := by
   have : ∀ n, n ∉ a → ∃ k ≤ n, k ∉ a ∧ ∀ i < k, i ∈ a := by

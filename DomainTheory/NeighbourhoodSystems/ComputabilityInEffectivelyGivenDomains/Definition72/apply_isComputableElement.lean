@@ -19,7 +19,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 
 
-
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
 
 /-- **Proposition 7.3 (consequence) (Scott 1981, PRG-19).** "If `f : 𝒟 → ℰ` is computable and

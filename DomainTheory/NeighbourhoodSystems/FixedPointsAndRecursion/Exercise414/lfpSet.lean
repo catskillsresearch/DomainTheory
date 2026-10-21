@@ -10,8 +10,6 @@ import all Mathlib.Order.Monotone.Basic
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise414
 
 variable {A : Type*}

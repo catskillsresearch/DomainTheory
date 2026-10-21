@@ -16,14 +16,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise713
 open NeighborhoodSystem Domain.Recursive
 
 
-
-
 variable {α : Type*} {V : NeighborhoodSystem α}
-
-
-
-
-
 
 
 /-- **Round-trip A.** Starting from an abstract `InclStructure I`, building the hint system and its

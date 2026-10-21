@@ -23,8 +23,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
 theorem affine_nonempty {k ℓ : ℕ} (hℓ : ℓ < 2 ^ k) : (affine k ℓ).Nonempty :=
   ⟨ℓ, Nat.mod_eq_of_lt hℓ⟩
 

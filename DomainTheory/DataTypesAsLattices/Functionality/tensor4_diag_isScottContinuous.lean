@@ -16,36 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.seq4_comp_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem tensor4_diag_isScottContinuous :
     IsScottContinuous (fun z => tensor4 z z z z) :=
   graph_const_isScottContinuous

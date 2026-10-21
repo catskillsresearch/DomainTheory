@@ -18,26 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example43
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `pred(0̂) = ⊥`: predecessor of zero is undefined. -/
 theorem predMap_natElem_zero : predMap.toElementMap (natElem 0) = N.bot :=
   constLiftN_natElem N predVal 0

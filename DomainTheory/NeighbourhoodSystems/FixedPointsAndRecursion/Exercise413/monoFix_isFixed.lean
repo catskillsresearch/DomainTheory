@@ -23,9 +23,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace NeighborhoodSystem
 
 
-
-
-
 /-- **Exercise 4.13(1) (Scott 1981, PRG-19).** `monoFix f ha` is a fixed point: `f(b) = b`. (After
 `f(b) ⊑ b`, monotonicity gives `f(f(b)) ⊑ f(b)`, so `f(b)` is itself a pre-fixed point, whence
 `b ⊑ f(b)`.) -/

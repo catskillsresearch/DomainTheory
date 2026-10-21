@@ -24,12 +24,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
 theorem isFinitary_cCombinator : IsFinitary cCombinator :=
   isFinitary_of_projectionPair cInj cProj cProj_comp_cInj rfl
 

@@ -22,8 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.le_two_pow
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem mem_e_le {n k : ℕ} (h : k ∈ e n) : k ≤ n :=

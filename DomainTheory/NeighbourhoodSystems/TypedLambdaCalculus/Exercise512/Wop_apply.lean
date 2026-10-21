@@ -22,7 +22,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
   (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 
-
 /-- `Wop(w)(x) = cond(p(x), w(f(x)), x)`. -/
 theorem Wop_apply (w : (funSpace V V).Element) (x : V.Element) :
     (toApproxMap ((Wop V p f).toElementMap w)).toElementMap x =

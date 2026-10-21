@@ -12,8 +12,6 @@ import all Mathlib.Basic.Countable.Defs
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem

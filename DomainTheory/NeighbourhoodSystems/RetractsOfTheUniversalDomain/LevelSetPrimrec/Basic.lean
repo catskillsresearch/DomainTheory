@@ -142,29 +142,11 @@ open Domain.Recursive NeighborhoodSystem
 /-! ### Bit extraction: `myDivPow2`, `myModPow2`, `myTestBit` -/
 
 
-
-
-
-
-
-
-
-
-
 /-! ### Choice-free primitive-recursive bitwise AND (`myLand`)
 
 Mirrors `myLor` (`Recursive.lean`) bit-for-bit, swapping `Nat.testBit_lor`/`lowOr` for
 `Nat.testBit_and`/`lowAnd`. Needed because `levelSet_inter`'s formula combines two upsampled masks
 with `&&&`, and mathlib's `Nat.land` is (like `Nat.lor`) not itself exposed as `Nat.Primrec`. -/
-
-
-
-
-
-
-
-
-
 
 
 /-! ### `myUpsample`: a computable version of `Exercise812.lean`'s `upsample`
@@ -177,29 +159,11 @@ formula correct regardless of any "junk" bits `m` may carry at positions `≥ 2^
 truncation bound `myModPow2_lt`. -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Non-emptiness of `levelSet k m` is recursively decidable
 
 `levelSet_nonempty_iff` phrases `(levelSet k m).Nonempty` as a bounded `∃ ℓ < 2 ^ k, m.testBit ℓ`;
 this is exactly what the existing `bExistsFn` combinator (`Recursive.lean`) decides, with
 `myTestBit` supplying the (already primitive-recursive) body. -/
-
-
-
-
-
 
 
 /-! ### `levelSet k _` is injective on bounded masks
@@ -218,16 +182,7 @@ syntactically well-formed `levelSet` presentation, only possibly *empty* — no 
 pass is needed, just the non-emptiness check `myLevelSetNonempty` already built. -/
 
 
-
-
-
-
-
 /-! ### `V`'s enumeration `VX` -/
-
-
-
-
 
 
 /-! ### Scott's two relations for `V`
@@ -236,18 +191,6 @@ pass is needed, just the non-emptiness check `myLevelSetNonempty` already built.
 `levelSet`, unconditionally — mirroring `Example78.lean`'s `PN` rather than `Definition87.lean`'s
 `U`. We re-derive it computably: bridge `levelSet_inter_same_level`'s same-level `&&&`-formula
 through `myUpsample`/`myLand`. -/
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

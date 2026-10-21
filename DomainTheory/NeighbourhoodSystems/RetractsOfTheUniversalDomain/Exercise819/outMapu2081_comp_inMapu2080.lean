@@ -18,10 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
-universe u
-
-
-
 
 section SumHelpers
 

@@ -16,19 +16,17 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.mem_r
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
+
+omit [DecidableEq α] in
 
 theorem rhtFinset_mono {u v : Finset (SumToken α β)} (h : v ⊆ u) :
     rhtFinset v ⊆ rhtFinset u := by

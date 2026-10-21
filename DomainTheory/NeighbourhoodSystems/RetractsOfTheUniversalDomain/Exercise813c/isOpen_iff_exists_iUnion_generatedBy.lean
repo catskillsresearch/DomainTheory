@@ -23,13 +23,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
-
 /-- Immediate corollary: **opens** (not just clopens) of Cantor space are exactly unions of
 `GeneratedBy genPoint` clopens — the "topological basis" fact underlying the scoping row's
 candidate `(ii)`. -/

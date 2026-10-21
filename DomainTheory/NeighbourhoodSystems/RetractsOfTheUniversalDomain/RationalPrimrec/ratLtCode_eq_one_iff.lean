@@ -18,20 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem ratLtCode_eq_one_iff (c1 c2 : ℕ) :
     ratLtCode (Nat.pair c1 c2) = 1 ↔ decodeRat c1 < decodeRat c2 := by
   unfold ratLtCode

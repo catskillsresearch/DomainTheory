@@ -66,24 +66,10 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 /-! ### The neighbourhood system `𝒫` (cofinite sets). -/
 
 
-
-
-
 /-! ### The identification `|𝒫| ≃o Set ℕ`. -/
 
 
-
-
-
-
-
-
-
 /-! ### The shift maps `x + 1` and `x − 1`. -/
-
-
-
-
 
 
 /-! ### Union and intersection as two-variable approximable maps. -/

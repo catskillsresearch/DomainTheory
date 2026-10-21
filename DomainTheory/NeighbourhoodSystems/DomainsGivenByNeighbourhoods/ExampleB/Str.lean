@@ -9,8 +9,6 @@ import all Mathlib.Data.List.Infix
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.ExampleB
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem

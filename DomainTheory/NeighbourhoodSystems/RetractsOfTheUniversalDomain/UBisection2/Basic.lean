@@ -94,23 +94,6 @@ open Domain.Recursive NeighborhoodSystem
 /-! ### `listMinFst`/`listMaxSnd`: the two intrinsic quantities, at the `List (ℚ × ℚ)` level -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### `listMinFst`/`listMaxSnd`, at the code level (`listMinFstCode`/`listMaxSndCode`)
 
 Fold `ratMinCode`/`ratMaxCode` over the raw pair-code list via `Recursive.lean`'s `foldCode`,
@@ -118,32 +101,10 @@ mirroring `listMinFst`/`listMaxSnd`'s list-level folds exactly (seed `oneCode`/`
 `params` needed). -/
 
 
-
-
-
-
-
-
-
 /-! ### `splitU2`: the presentation-independent midpoint split -/
 
 
-
-
-
-
-
 /-! ### Correctness -/
-
-
-
-
-
-
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

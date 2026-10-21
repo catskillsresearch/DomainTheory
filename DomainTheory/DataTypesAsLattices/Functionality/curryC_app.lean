@@ -15,21 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.curryC_isScottConti
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem curryC_app (u : Pomega) :
     funOf curryC u = graph (fun x => graph (fun y => funOf u (pairSeq x y))) :=
   beta curryC_isScottContinuous u

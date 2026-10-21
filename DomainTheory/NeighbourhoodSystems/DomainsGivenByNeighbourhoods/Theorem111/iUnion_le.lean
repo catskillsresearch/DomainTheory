@@ -20,11 +20,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
 /-- `⋃ₙ xₙ` is the **least** upper bound: anything approximated by all `xₙ` approximates the
 union from above. -/
 theorem iUnion_le (x : ℕ → V.Element) (hmono : Monotone x) (y : V.Element)

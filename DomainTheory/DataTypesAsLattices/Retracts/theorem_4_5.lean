@@ -16,53 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_5_strict
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.5 (The sum theorem), core.** -/
 theorem theorem_4_5 :
     dcondSet botElem

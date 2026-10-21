@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Tag injection `⟨i, x⟩` used by the expanded n-ary sum of (4.44). -/

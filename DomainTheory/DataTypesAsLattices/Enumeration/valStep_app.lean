@@ -20,31 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem valStep_app (v k : Pomega) :
     funOf (valStep v) k =
       condSet k Gcomb (minExtend (valStepValue v) k) :=

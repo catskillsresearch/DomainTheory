@@ -36,11 +36,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.t
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -50,6 +46,7 @@ section Iso
 
 variable {A : Type} [DecidableEq A] [Inhabited A]
 
+omit [DecidableEq A] [Inhabited A] in
 /-- Prefixed copies determine index and set: `aX = a'X'` (with `X` non-empty) forces `a=a'`, `X=X'`. -/
 theorem embA_eq_embA {a a' : A} {X X' : Set (Strn A)} (hXne : X.Nonempty)
     (h : embA a X = embA a' X') : a = a' ∧ X = X' := by

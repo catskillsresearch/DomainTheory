@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representClosure
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem representClosure_mono {α : Type u} [CompleteLattice α]

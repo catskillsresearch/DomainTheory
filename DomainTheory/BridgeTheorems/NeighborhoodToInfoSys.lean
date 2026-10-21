@@ -58,24 +58,7 @@ namespace NbhdBasis
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-! ## Domain isomorphism -/
-
-
-
-
-
-
 
 
 end NbhdBasis

@@ -36,11 +36,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.e
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -49,6 +45,10 @@ variable {A : Type} [DecidableEq A]
 section Iso
 
 variable {A : Type} [DecidableEq A] [Inhabited A]
+
+omit [Inhabited A] in
+
+omit [DecidableEq A] in
 
 theorem memCn_embA (a : A) {X : Set (Strn A)} (hX : memCn X) : memCn (embA a X) := by
   rw [embA_eq_prependN]; exact memCn_prependN [a] hX

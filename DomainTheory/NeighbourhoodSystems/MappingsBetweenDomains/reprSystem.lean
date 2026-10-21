@@ -23,8 +23,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.botTok
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise222
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set

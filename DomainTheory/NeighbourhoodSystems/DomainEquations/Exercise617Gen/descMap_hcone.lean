@@ -42,11 +42,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.T
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -55,6 +51,8 @@ variable {A : Type} [DecidableEq A]
 section Initial
 
 variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
+
+omit [Inhabited A] in
 
 theorem descMap_hcone {σ τ : Strn A} (h : σ <+: τ) :
     descVal B B.carrier.sys.bot σ ≤ descVal B B.carrier.sys.bot τ := by

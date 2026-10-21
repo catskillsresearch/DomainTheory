@@ -24,11 +24,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.j
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -40,6 +36,7 @@ universe v
 
 variable {β : Type v} {γ : Type v}
 
+omit [DecidableEq A] in
 /-- Tagged copies determine both index and set: `aX = a'X'` (with `X` non-empty) forces `a=a'`,
 `X=X'`. -/
 theorem jc_eq_jc {a a' : A} {X X' : Set β} (hXne : X.Nonempty)

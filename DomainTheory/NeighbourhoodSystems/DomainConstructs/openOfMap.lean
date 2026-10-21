@@ -10,8 +10,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.mapOfOpen_rel
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise325
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set

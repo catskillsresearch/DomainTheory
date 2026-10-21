@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem lfpAbove_le_of_ub {f : Pomega → Pomega} (hf : IsScottContinuous f)

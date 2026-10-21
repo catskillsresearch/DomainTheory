@@ -18,30 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example43
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `zero(⊥) = ⊥`. -/
 theorem zeroMap_bot : zeroMap.toElementMap N.bot = T.bot :=
   constLiftN_bot T zeroVal

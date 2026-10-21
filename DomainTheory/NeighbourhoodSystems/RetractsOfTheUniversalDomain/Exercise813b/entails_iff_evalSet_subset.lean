@@ -14,24 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **The bijection is an order correspondence, not just a set bijection**: semantic entailment
 matches `⊆` of the corresponding `evalSet`s, by the same finitary argument as
 `semanticEquiv_iff_evalSet_eq`. -/

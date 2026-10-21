@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_top
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxPlus_typed_top (a b : Pomega) :
     typed topElem (boxPlus a b) :=
   (boxPlus_app_top a b).symm

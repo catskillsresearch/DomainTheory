@@ -23,11 +23,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
-
-
-
 theorem le_join_right (x y : sys.Element)
     (h : sys.IsFinitelyConsistent (x.carrier ∪ y.carrier)) : y ≤ sys.join x y h :=
   fun _a ha => sys.subset_deductiveClosure _ h (Or.inr ha)

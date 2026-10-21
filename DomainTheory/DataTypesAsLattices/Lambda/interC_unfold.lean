@@ -15,41 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.interStep_isScottContinuou
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem interC_unfold : interC = interStep interC :=
   (theorem_1_4 interStep_isScottContinuous).1.symm
 

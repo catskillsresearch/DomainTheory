@@ -16,36 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plus7_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plus7_app_bot (a0 a1 a2 a3 a4 a5 a6 : Pomega) :
     funOf (plus7 a0 a1 a2 a3 a4 a5 a6) botElem = botElem := by
   rw [plus7_app, plus7Body, funOf_bot, dcondSet_bot]

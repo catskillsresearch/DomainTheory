@@ -23,12 +23,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
-
-
 /-- Every open neighbourhood of `x` contains a basic neighbourhood of `x`. -/
 theorem exists_basicNhhd_subset_of_generateOpen {U : Set Pomega}
     (hU : GenerateOpen (Set.range memOpen) U) {x : Pomega} (hx : x ∈ U) :

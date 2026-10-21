@@ -18,15 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_17
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.5 (partial).** `V(a)` is always a closure of `x`,
 and `V` fixes exactly the closure operations in the sense of (5.18) on values. -/
 theorem theorem_5_5_values (a x : Pomega) :

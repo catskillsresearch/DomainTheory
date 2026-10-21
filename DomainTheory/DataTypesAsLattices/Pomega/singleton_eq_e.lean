@@ -22,16 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e_pow2
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
 theorem singleton_eq_e (k : ℕ) : ({k} : Pomega) = e (2 ^ k) := (e_pow2 k).symm
 
 end DomainTheory.DataTypesAsLattices

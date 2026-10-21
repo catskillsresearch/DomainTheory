@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_map_isScottConti
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxPlus_app (a b u : Pomega) :
     funOf (boxPlus a b) u =
       dcondSet (boxTag 0 (squareFst u) ∪ boxTag 1 (squareSnd u))

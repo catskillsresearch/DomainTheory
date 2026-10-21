@@ -23,9 +23,6 @@ variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — the paired map `⟨f, g⟩` is computable.** `Zₙ ⟨f, g⟩ (X⁰_k ∪
 X¹_l) ↔ Zₙ f X⁰_k ∧ Zₙ g X¹_l`, the conjunction of two r.e. relations. -/
 theorem paired_isComputable {V₂ : NeighborhoodSystem γ}

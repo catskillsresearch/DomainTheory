@@ -18,38 +18,7 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 
 
-
-
-
-
-
-
 variable {α β γ : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 variable (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ)
@@ -58,43 +27,7 @@ variable (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : N
 variable {V₀ V₁ V₂}
 
 
-
-
-
-
-
-
-
-
-
 namespace Example62C
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Example 6.2 (Scott 1981, PRG-19) — the domain equation `C ≅ {{Λ}} + C + C`.** Scott's domain

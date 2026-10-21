@@ -15,25 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Icomb_app (x : Pomega) : funOf Icomb x = x :=
   beta id_isScottContinuous x
 

@@ -16,50 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.intR_top_of_nonsingleton
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem intR_top : funOf intR topElem = topElem :=
   intR_top_of_nonsingleton 0 topElem (Set.mem_univ 0)
     (fun _ _ => Nat.zero_le _)

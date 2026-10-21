@@ -120,18 +120,6 @@ This is a concrete finite computation (`fin_cases`/`simp`); footprint
 namespace DomainTheory.NeighbourhoodSystems.Example14
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Distinctness of neighbourhoods (only the pairs needed below). -/
 
 theorem left_ne_master : left ≠ master := by
@@ -201,29 +189,12 @@ private theorem leaf11_subset_right : leaf11 ⊆ right := by
 /-! ### "Which neighbourhoods contain a given one" (upward classification). -/
 
 
-
-
-
-
-
-
 /-! ### Intersections. -/
-
-
-
-
-
 
 
 namespace neighborhoodSystem
 
 open NeighborhoodSystem
-
-
-
-
-
-
 
 
 /-! ### Filter classification: the seven elements. -/

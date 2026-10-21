@@ -18,46 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqShift_left_isScottConti
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem dollarStepBody_isScottContinuous_u (s z : Pomega) :
     IsScottContinuous (fun u => dollarStepBody s u z) := by
   have helse : IsScottContinuous

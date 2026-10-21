@@ -18,11 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise421
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
-
-
-
-
-
 /-- `[0] = ℕ`: the recursion base of 4.13(3). -/
 theorem upSet_zero : upSet 0 = Set.univ := by
   ext k; simp [upSet]

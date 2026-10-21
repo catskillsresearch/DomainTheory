@@ -16,35 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxTag_of_mem {x : Pomega} {m : ℕ} (hm : m ∈ x) (i : ℕ) :
     boxTag i x = ofNat i := by
   ext n

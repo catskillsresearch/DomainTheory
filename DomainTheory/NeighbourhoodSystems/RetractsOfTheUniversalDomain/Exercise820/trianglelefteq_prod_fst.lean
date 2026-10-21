@@ -26,7 +26,6 @@ section Prod
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
 
 
-
 /-- **`A ⊴ prod A B`**, via `a ↦ ⟨a, ⊥⟩` / `proj₀`. -/
 theorem trianglelefteq_prod_fst : A ⊴ prod A B :=
   trianglelefteq_of_projectionPair (embedFst A B) (proj₀ A B) (proj₀_comp_embedFst A B)

@@ -18,30 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eq_7_19
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Plotkin's independent successors force one common iterate count on all
 tagged successor tests. -/
 theorem theorem_7_4_sigma_index (z : Pomega)

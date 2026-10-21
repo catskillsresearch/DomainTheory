@@ -18,10 +18,6 @@ set_option linter.unusedSimpArgs false
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
 theorem triSys_master : triSys.master = (Set.univ : Set (Fin 3)) := rfl
 
 end DomainTheory.NeighbourhoodSystems

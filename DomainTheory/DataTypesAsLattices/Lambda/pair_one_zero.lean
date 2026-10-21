@@ -14,32 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem pair_one_zero : pair 1 0 = 1 := by simp [pair]
 
 end DomainTheory.DataTypesAsLattices

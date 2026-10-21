@@ -15,21 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem typed_isGraph {a b f : Pomega} (hf : typed f (arrowR a b)) :
     f = graph (fun x => funOf f x) := by
   have hf' := typed_of_arrowR hf

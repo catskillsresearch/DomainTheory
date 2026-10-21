@@ -20,8 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
 theorem isClopen_genPoint (i : ℕ) : IsClopen (genPoint i) :=
   (isClopen_discrete ({true} : Set Bool)).preimage (continuous_apply i)
 

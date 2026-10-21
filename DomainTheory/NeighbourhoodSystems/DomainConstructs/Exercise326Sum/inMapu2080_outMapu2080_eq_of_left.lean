@@ -22,20 +22,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- On a "left" element (one reaching into the left copy), the round-trip `in₀ ∘ out₀` is the
 identity. -/
 theorem inMap₀_outMap₀_eq_of_left {x : (sum V₀ V₁ h₀ h₁).Element}

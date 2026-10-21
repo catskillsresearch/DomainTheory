@@ -30,34 +30,9 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
-
-
-
 
 
 /-- **Search step (found).** If `f(k ::ᵥ v) = 0`, the search returns the counter `k`. -/

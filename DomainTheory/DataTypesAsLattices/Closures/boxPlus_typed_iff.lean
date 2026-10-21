@@ -25,35 +25,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_typed_inr
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.4 / analogue of 4.5.** Range of the paper sum. -/
 theorem boxPlus_typed_iff {a b u : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
     typed u (boxPlus a b) ↔

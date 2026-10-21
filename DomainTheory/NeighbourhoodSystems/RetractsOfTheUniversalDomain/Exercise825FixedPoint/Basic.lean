@@ -101,18 +101,10 @@ open NeighborhoodSystem ApproximableMap
 /-! ## Building `c`, a finitary projection with `Fix(c) ≅ 𝒰^∞` -/
 
 
-
-
-
-
-
-
 /-! ## The joint evaluator `R(ψ, φ, x) := c(φ(ψ(x)))`, built from `evalMap`/`proj`/`paired` -/
 
 
-
 /-! ## Currying `R` twice: `lamOp c : (𝒰→𝒰) → ((𝒰→𝒰) → (𝒰→𝒰))`, recovering `lamComb (-) c` -/
-
 
 
 /-! ## `t := tOpMap c`, conjugating `lamOp c` by the fixed pair `𝒰 ⇄ (𝒰→𝒰)` -/

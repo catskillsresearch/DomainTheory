@@ -16,35 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxTag_isScottContinuous (i : ℕ) : IsScottContinuous (boxTag i) := by
   have hfun : boxTag i = fun z => condSet z (ofNat i) (ofNat i) := rfl
   rw [hfun]

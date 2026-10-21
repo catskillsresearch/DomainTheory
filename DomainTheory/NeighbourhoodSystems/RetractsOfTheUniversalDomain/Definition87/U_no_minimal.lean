@@ -34,29 +34,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott's remark after Definition 8.7**: "`U` has no minimal neighbourhoods: every set in `U`
 can be written as the union of two disjoint sets in `U`." Splitting at the rational midpoint `m`
 of any interval witnessing `X`'s non-emptiness realizes `X` as `Y ⊔ Z` for `U`-neighbourhoods

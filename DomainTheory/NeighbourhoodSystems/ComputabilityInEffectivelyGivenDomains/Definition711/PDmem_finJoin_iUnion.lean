@@ -20,13 +20,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
-
 /-- **Definition 7.11 — Scott's displayed union form.** For `n ≥ 1`, membership is equivalent to
 some representatives `X_i ∈ x_i` with `⋃_{i<n} ↓X_i ⊆ W`. -/
 theorem PDmem_finJoin_iUnion {m : ℕ} (xs : Fin (m + 1) → V.Element) {W : Set (Set α)} :

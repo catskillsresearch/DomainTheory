@@ -17,11 +17,6 @@ namespace DomainTheory.InformationSystems.Constructive
 variable {α : Type*} [DecidableEq α]
 
 
-
-
-
-
-
 /-- The coercion of `u ∪' v` to a `Set` is the (choice-free) set union of the coercions. -/
 theorem coe_funion (u v : Finset α) :
     (↑(u ∪' v) : Set α) = (↑u : Set α) ∪ ↑v := by

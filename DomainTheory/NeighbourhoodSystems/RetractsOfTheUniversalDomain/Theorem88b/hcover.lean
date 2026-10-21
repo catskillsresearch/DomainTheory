@@ -20,11 +20,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
-
 theorem hcover : ∀ S, D.mem S ↔ ∃ n, S = e P n := by
   intro S
   constructor

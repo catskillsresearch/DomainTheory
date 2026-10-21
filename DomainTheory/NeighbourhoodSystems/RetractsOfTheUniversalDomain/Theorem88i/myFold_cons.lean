@@ -22,9 +22,6 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
 
-
-
-
 theorem myFold_cons (e : ℕ) (rest : List ℕ) :
     myFold P qChar cons (e :: rest) = rest.foldl (myStep P qChar cons) (myStep P qChar cons P.masterIdx e) := by
   unfold myFold; rw [List.foldl_cons]

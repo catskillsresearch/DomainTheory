@@ -20,11 +20,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
 theorem interUpTo_pairSeq (U W : Set α) :
     V.interUpTo (pairSeq U W) 2 = V.master ∩ U ∩ W := by
   simp only [interUpTo_succ, interUpTo_zero, pairSeq]

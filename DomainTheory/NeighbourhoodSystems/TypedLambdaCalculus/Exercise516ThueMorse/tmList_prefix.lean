@@ -19,17 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- Thue–Morse prefixes are nested in the prefix order. -/
 theorem tmList_prefix {n m : ℕ} (h : n ≤ m) : tmList n <+: tmList m := by
   induction m with

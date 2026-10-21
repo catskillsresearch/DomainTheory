@@ -17,16 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **The `generator i` are independent**: every finite Boolean combination — assign each `i ∈ s`
 to `generator i` (if `ε i`) or its complement (otherwise) — is non-empty. This is the standard
 combinatorial characterization of "freely generates a Boolean algebra": no relation among finitely

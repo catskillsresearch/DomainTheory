@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.completeLatticePreo
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- The way-below relation, phrased using directed suprema. -/

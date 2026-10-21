@@ -30,8 +30,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.lt_iff_le_not_ge'
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace

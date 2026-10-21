@@ -18,20 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise112
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 1.12 (classification).** Every element is either a finite element `fin n` or the
 single limit element `top`. *Classical*: it decides whether the indices present in `x` are bounded.
 (Hint realized: "there is only one limit element.") -/

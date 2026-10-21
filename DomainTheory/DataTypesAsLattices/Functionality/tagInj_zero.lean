@@ -16,36 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem tagInj_zero (i : ℕ) (x : Pomega) :
     funOf (tagInj i x) (ofNat 0) = ofNat i :=
   pairSeq_app_zero (ofNat i) x

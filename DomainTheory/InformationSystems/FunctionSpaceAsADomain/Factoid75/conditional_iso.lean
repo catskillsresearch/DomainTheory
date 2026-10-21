@@ -26,55 +26,13 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-
-
-
 
 
 variable (A : InfoSys α) (B : InfoSys β)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open ApproximableMap
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- Domain isomorphism data: `A × A ≅ (BOOL →ₛ A)` via `cond`. -/

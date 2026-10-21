@@ -30,8 +30,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- `{0,1}` flag: `1` iff `n` encodes a binary digit (`0` or `1`). -/

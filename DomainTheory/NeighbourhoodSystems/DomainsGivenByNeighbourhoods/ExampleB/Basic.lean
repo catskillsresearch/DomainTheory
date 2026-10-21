@@ -63,22 +63,7 @@ namespace DomainTheory.NeighbourhoodSystems.ExampleB
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Prepending a prefix: `σX = {στ ∣ τ ∈ X}`. -/
-
-
-
-
 
 
 /-! ### The finite elements `σ⊥` and the initial-segment factoid. -/

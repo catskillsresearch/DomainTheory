@@ -20,16 +20,6 @@ open scoped Computability
 open Sum Set
 
 
-
-
-
-
-
-
-
-
-
-
 theorem subsetB_iff (e1 e2 : SExpr) : subsetB e1 e2 = true ↔ denote e1 ⊆ denote e2 := by
   unfold subsetB
   rw [List.all_eq_true]

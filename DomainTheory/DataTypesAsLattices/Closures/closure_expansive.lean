@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.IsClosure
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem closure_expansive {a : Pomega} (ha : IsClosure a) (x : Pomega) :

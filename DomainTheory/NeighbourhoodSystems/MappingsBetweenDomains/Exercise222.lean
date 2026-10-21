@@ -51,40 +51,22 @@ variable {τ : Type*} (C : Set (Set τ))
 /-! ### Closure and tokens. -/
 
 
-
-
-
-
 variable (hInter : ∀ 𝒮 : Set (Set τ), 𝒮.Nonempty → 𝒮 ⊆ C → ⋂₀ 𝒮 ∈ C)
 
 
 /-! ### The neighbourhood system `reprSystem`. -/
 
 
-
-
-
 variable (hne : C.Nonempty)
-
-
-
 
 
 /-! ### From an element to a set of `C`: `x ↦ ⋃ {F̄ ∣ C(F) ∈ x}`. -/
 
 
-
-
-
-
-
-
 /-! ### From a set of `C` to an element: `X ↦ {C(F) ∣ F ⊆ X}`. -/
 
 
-
 variable (hDir : ∀ 𝒮 : Set (Set τ), 𝒮.Nonempty → 𝒮 ⊆ C → DirectedOn (· ⊆ ·) 𝒮 → ⋃₀ 𝒮 ∈ C)
-
 
 
 /-! ### The representation isomorphism. -/

@@ -15,19 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem pairSeq_bot : pairSeq botElem botElem = botElem := by
   have hbody : (fun z => condSet z botElem (condSet (predSet z) botElem botElem)) =
       fun _ => botElem := by

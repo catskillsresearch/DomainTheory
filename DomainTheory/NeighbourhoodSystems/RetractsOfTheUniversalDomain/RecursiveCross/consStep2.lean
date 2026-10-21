@@ -7,8 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- `foldCode`'s step for consing the popped element `x` onto the accumulator (ignoring the

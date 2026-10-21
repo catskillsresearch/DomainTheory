@@ -14,8 +14,6 @@ public import DomainTheory.InformationSystems.InformationSystems.Factoid25.Token
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 namespace Factoid25

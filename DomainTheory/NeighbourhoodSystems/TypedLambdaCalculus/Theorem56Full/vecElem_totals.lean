@@ -28,21 +28,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `vecElem v` has total coordinates throughout its arity. -/
 theorem vecElem_totals {n : ℕ} (v : List.Vector ℕ n) :
     ∀ j, j < n → ∃ k, component (vecElem v) j = natElem k :=

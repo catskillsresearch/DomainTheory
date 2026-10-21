@@ -21,14 +21,6 @@ open Language
 variable {n : ℕ}
 
 
-
-
-
-
-
-
-
-
 /-- **The subtree is the left quotient.** `L_{aσ} = σ⁻¹ L_a`: the language of the subtree reached by
 reading `σ` is exactly the *left quotient* of `L_a` by `σ` (the residual / "state after reading
 `σ`"). This is the heart of Scott's "`a` is the initial state, `aσ` the state after reading `σ`". -/

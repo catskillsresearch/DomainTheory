@@ -17,58 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep_fix_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem dollarC_eq_fix_termDollarStep : dollarC = fix termDollarStep := by
   have hfix : termDollarStep (fix termDollarStep) = fix termDollarStep :=
     (theorem_1_4 termDollarStep_isScottContinuous).1

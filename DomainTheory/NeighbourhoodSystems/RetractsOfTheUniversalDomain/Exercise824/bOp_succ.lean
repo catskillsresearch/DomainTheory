@@ -22,15 +22,6 @@ namespace Exercise824
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
 /-- **The mutual recursion on approximants**: `bOp s t (n+1) = binOp t (aOp s t n) (bOp s t n)`. -/
 theorem bOp_succ (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) (n : ℕ) :
     bOp s t (n + 1) = binOp t (aOp s t n) (bOp s t n) := by

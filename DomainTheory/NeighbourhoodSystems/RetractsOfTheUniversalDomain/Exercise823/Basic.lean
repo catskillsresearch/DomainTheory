@@ -117,10 +117,7 @@ variable {α : Type} {E : NeighborhoodSystem α}
 /-! ## The constant-bottom map is a finitary projection (base case of the induction) -/
 
 
-
-
 /-! ## `t` as a self-map of the function space, and the induced operator `tOp` on maps -/
-
 
 
 /-! ## Claim 1 — `‖t‖` is a finitary projection -/

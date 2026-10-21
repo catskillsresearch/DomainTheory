@@ -20,35 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.union_left_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Vapply_right_isScottContinuous (a : Pomega) :
     IsScottContinuous (fun x => Vapply a x) := by
   have : (fun x => Vapply a x) = (fun x => VapplyY a x) := by

@@ -29,23 +29,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Composition of total functions** (the `Nat.Primrec'.comp` shape). -/
 theorem lamDef_primComp {m nn : ℕ} (f₀ : List.Vector ℕ nn → ℕ)
     (g₀ : Fin nn → List.Vector ℕ m → ℕ)

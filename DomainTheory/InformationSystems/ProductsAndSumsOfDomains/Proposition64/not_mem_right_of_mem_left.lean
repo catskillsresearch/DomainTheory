@@ -23,36 +23,9 @@ namespace InfoSys
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
 
-set_option linter.unusedSectionVars false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
-
-
-
-
-
-
-
 
 
 theorem not_mem_right_of_mem_left (z : (sumSystem A B).Element)

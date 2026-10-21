@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem graph_const_bot : graph (fun _ => botElem) = botElem := by

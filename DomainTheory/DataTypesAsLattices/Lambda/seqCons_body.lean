@@ -18,39 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seqCons_body (x xs : Pomega) :
     IsScottContinuous (fun z => condSet z x (funOf xs (predSet z))) :=
   theorem_1_3_tuple

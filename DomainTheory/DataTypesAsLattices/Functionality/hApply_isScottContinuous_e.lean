@@ -14,51 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem hApply_isScottContinuous_e (H t : Pomega) :
     IsScottContinuous (fun e => hApply H e t) :=
   theorem_1_3 (f := fun u => funOf u t) (g := funOf H)

@@ -17,37 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_39
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem typed_bot_lamb : typed botElem lambR := by
   rw [eq_4_39]
   exact plusR_typed_bot _ _

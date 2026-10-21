@@ -21,7 +21,6 @@ namespace InclStructure
 variable (I : InclStructure)
 
 
-
 /-- **Axiom (i).** `INCL` is reflexive. -/
 theorem axiom_i (n : ℕ) : I.INCL n n := I.incl_refl n
 

@@ -21,39 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem valStage_eq_of_rank_le : ∀ n s, valRank n ≤ s →
     funOf (iterateBot valStep s) (ofNat n) = valNat n
   | 0, 0, h => by simp [valRank] at h

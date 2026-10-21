@@ -18,53 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.funOf_fix_idem
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.6 (The limit theorem).**
 Kleene iterates of a retract-preserving continuous `F` are retracts, and
 `Y(F)` is a retract by the chain-union calculation. -/

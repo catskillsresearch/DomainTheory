@@ -18,10 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.ExampleB
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
 /-- **Cones are one-one in the prefix.** `cone σ = cone τ ⟹ σ = τ`: from the two inclusions we get
 `τ <+: σ` and `σ <+: τ`, and a prefix-antisymmetry (equal lengths) finishes. Used by the approximable
 maps `B → T` / `B → B` (Examples 2.3, 2.4) to read off the unique generating prefix of a cone. -/

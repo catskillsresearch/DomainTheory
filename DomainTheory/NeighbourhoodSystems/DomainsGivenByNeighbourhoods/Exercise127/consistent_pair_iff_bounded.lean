@@ -21,11 +21,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
 /-- **Exercise 1.27 — "boundedness is for elements what consistency is for neighbourhoods".**
 For `U, W ∈ 𝒟`, the pair `⟨U, W⟩` is consistent in `𝒟` iff `{↑U, ↑W}` is bounded in `|𝒟|`.
 

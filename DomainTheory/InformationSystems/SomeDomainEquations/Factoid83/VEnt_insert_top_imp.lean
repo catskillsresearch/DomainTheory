@@ -25,15 +25,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.Basi
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 /-- If inserting a non-top `y` creates a top-entailment and `u ⊢ y`, then already `u ⊢ ∇`. -/
 theorem VEnt_insert_top_imp {u : Finset VToken} {y : VToken}

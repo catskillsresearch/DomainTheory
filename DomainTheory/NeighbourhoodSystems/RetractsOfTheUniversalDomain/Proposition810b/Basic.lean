@@ -94,12 +94,11 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
-universe u v
+universe u
 
 /-! ## A generic projection-pair `elementIso`, without requiring a literal `◁` subset relation -/
 
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-
 
 
 /-! ## Setup: `D_a := fixedNbhd a`, the concrete witnessing domain of a finitary projection `a` -/
@@ -107,16 +106,11 @@ variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β
 variable {a b : ApproximableMap U U}
 
 
-
 /-! ## The `×` case -/
 
 section ProdCase
 
 variable (a b : ApproximableMap U U)
-
-
-
-
 
 
 end ProdCase
@@ -138,15 +132,6 @@ variable {h0' : ∀ X, V0'.mem X → X.Nonempty} {h1' : ∀ Y, V1'.mem Y → Y.N
 variable {h0'' : ∀ X, V0''.mem X → X.Nonempty} {h1'' : ∀ Y, V1''.mem Y → Y.Nonempty}
 
 
-
-
-
-
-
-
-
-
-
 end SumMapLemmas
 
 /-! ## The `+` case
@@ -160,11 +145,6 @@ rest is verbatim the `×` case's algebra, now powered by `sumMap_id`/`sumMap_com
 section SumCase
 
 variable (a b : ApproximableMap U U)
-
-
-
-
-
 
 
 end SumCase
@@ -184,11 +164,6 @@ variable {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}
 variable {V0'' : NeighborhoodSystem γ''} {V1'' : NeighborhoodSystem δ''}
 
 
-
-
-
-
-
 end ExpMap
 
 /-! ## The `→` case -/
@@ -196,10 +171,6 @@ end ExpMap
 section ArrowCase
 
 variable (a b : ApproximableMap U U)
-
-
-
-
 
 
 end ArrowCase

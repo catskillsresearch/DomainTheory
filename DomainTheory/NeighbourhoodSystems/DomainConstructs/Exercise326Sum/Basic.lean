@@ -51,17 +51,7 @@ variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y →
 /-! ### The sum-valued conditional `condSum`. -/
 
 
-
 /-! ### The discriminator `which : D₀ + D₁ → T`. -/
-
-
-
-
-
-
-
-
-
 
 
 /-! ### Membership facts and the composite identity. -/

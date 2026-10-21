@@ -15,16 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
 theorem kerE_repr {a : Pomega} (ha : IsRetract a) (x : Pomega) :
     (kerE a).rel x (funOf a x) :=
   (retract_app ha x).symm

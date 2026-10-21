@@ -14,38 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.18).** Constants as graphs of constant maps. -/
 theorem eq_2_18_bot : botElem = graph (fun _ => botElem) := by
   ext p

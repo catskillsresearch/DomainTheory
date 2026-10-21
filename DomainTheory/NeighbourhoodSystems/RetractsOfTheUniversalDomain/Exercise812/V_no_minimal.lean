@@ -26,20 +26,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott's remark after Definition 8.7, transplanted to `V`**: every `V`-neighbourhood splits
 into two disjoint proper `V`-neighbourhoods. Refine to one level finer via `upsample`, which
 duplicates every set bit `ℓ` of `m` into a matching pair `(ℓ, ℓ + 2^k)`; peeling off *one*

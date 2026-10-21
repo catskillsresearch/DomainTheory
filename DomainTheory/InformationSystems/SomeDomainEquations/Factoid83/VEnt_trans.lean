@@ -17,15 +17,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VEnt
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem VEnt_trans {u v : Finset VToken} {c : VToken}
     (hEnts : ∀ y ∈ u, VEnt v y) (h : VEnt u c) : VEnt v c := by

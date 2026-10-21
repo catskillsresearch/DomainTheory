@@ -15,36 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seq4_isScottContinuous_each
     (a b c d : Pomega) :
     (IsScottContinuous fun x => seq4 x b c d) ∧

@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Classification.charTop
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace

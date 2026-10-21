@@ -20,7 +20,6 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
   {V₂ : NeighborhoodSystem γ}
 
 
-
 /-- The least map of a function-space neighbourhood `G` — `toApproxMap ↑G` — belongs to `G`. -/
 theorem toApproxMap_principal_mem {G : Set (ApproximableMap V₀ V₁)}
     (hG : (funSpace V₀ V₁).mem G) : toApproxMap ((funSpace V₀ V₁).principal hG) ∈ G := by

@@ -22,30 +22,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plusStep_unpair22 (s : ℕ) : (plusStep s).unpair.2.unpair.2 =
     myLor s.unpair.2.unpair.2 (selectFn (bitAt s.unpair.1.unpair.1 s.unpair.2.unpair.1)
       (s.unpair.1.unpair.2 <<< s.unpair.2.unpair.1) 0) := by

@@ -55,13 +55,4 @@ namespace DomainTheory.NeighbourhoodSystems.Example23
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
 end DomainTheory.NeighbourhoodSystems.Example23

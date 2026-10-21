@@ -25,13 +25,10 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwise_sup_preser
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-universe u v
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 

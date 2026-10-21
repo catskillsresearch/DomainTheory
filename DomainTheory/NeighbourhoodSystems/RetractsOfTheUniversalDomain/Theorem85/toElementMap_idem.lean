@@ -21,10 +21,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
-
-
 section HardDirection
 
 variable {a : ApproximableMap E E}

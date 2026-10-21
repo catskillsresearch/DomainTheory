@@ -16,11 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example78
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
 /-- **Any two neighbourhoods of `PN` are consistent** (Scott: "any two neighbourhoods are
 consistent"): their intersection `nbhd (n ||| m)` is itself a neighbourhood contained in both. -/
 theorem PN_consistent (n m : ℕ) : ∃ k, nbhd k ⊆ nbhd n ∩ nbhd m :=

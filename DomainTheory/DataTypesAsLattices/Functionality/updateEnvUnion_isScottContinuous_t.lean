@@ -16,42 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.updateEnv_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem updateEnvUnion_isScottContinuous_t (x idx : Pomega) :
     IsScottContinuous (fun t => updateEnvUnion t x idx) := by
   intro t

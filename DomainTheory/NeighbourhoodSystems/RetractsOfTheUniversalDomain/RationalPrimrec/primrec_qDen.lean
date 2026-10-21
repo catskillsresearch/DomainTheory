@@ -16,17 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_qDen : Nat.Primrec qDen :=
   Nat.Primrec.succ.comp Nat.Primrec.right
 

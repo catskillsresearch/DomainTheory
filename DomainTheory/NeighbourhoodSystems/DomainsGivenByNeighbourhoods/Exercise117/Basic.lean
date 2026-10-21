@@ -51,11 +51,6 @@ namespace RatInterval
 open NeighborhoodSystem
 
 
-
-
-
-
-
 @[simp] theorem mem_filterAt {t : ℝ} {X : Set ℝ} :
     (filterAt t).mem X ↔ ratIntervalMem X ∧ t ∈ X := Iff.rfl
 end RatInterval

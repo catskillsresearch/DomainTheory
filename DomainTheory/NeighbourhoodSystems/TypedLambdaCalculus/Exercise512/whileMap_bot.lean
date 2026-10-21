@@ -23,9 +23,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
   (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 
-
-
-
 /-- If the test diverges (`p(x) = ⊥`), the loop diverges: `w(x) = ⊥`. -/
 theorem whileMap_bot {x : V.Element} (hx : p.toElementMap x = Example23.botElt) :
     (whileMap V p f).toElementMap x = V.bot := by

@@ -20,12 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise113
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
 /-- Every finite approximation `(p ↾ n)⊥` approximates the limit element `branch p`. -/
 theorem branchSeq_le_branch (p : ℕ → Bool) (n : ℕ) : branchSeq p n ≤ branch p :=
   B.le_iUnion (branchSeq p) (branchSeq_mono p) n

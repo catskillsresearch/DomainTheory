@@ -21,26 +21,10 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 namespace ApproximableMap
-
-
 
 
 /-- **Theorem 7.3.** Uniqueness of the least fixed-point operator on elements. -/

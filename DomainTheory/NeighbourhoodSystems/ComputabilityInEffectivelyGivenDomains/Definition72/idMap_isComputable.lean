@@ -19,7 +19,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 
 
-
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
 
 /-- **The identity map is computable** (the identity half of Proposition 7.3). The relation

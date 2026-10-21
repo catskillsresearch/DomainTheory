@@ -21,7 +21,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
 theorem lamComb_eq (a b : ApproximableMap U U) :
     lamComb a b = curry (b.comp ((evalMap U U).comp (prodMap (idMap (funSpace U U)) a))) := rfl
 

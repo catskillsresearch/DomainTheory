@@ -44,9 +44,4 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise113
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
 end DomainTheory.NeighbourhoodSystems.Exercise113

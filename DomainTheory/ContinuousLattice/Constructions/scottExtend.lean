@@ -11,8 +11,6 @@ import all Mathlib.Order.Preorder.Finite
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Topology Set

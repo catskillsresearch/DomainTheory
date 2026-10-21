@@ -18,34 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.typed_bot_bot
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, after (4.38).** The atom `⟨0⟩ : tree`. -/
 theorem tree_atom : typed (pairSeq (ofNat 0) botElem) treeR := by
   rw [eq_4_38]

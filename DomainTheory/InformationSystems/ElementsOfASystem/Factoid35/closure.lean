@@ -9,8 +9,6 @@ public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_ii
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive

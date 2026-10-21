@@ -15,8 +15,6 @@ import all DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exampl
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Example14
 
 theorem leaf11_inter_leaf01 : leaf11 ∩ leaf01 = (∅ : Set Token) := by

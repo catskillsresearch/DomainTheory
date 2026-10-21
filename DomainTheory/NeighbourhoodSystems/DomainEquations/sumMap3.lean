@@ -18,13 +18,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.mem_subset_j2_in
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 section SumMap3
 

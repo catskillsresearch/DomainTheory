@@ -29,10 +29,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
 /-- `φ : 𝒩 → N` realises the `n`-ary partial function `f` (a *very strict* λ-definition):
 `φ` returns `f`'s value on total arguments, `⊥` where `f` is undefined, and `⊥` on *any* arg-like
 input with a `⊥` among its first `n` coordinates. -/

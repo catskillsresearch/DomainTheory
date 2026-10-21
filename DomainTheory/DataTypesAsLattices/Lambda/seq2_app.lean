@@ -15,30 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seq2_body_isScottContinuou
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seq2_app (x y z : Pomega) :
     funOf (seq2 x y) z = condSet z x (condSet (predSet z) y botElem) :=
   beta (seq2_body_isScottContinuous x y) z

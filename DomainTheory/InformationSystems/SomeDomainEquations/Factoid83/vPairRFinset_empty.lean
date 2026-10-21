@@ -17,23 +17,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem vPairRFinset_empty : vPairRFinset (∅ : Finset VToken) = ∅ := rfl
 
 end InfoSys

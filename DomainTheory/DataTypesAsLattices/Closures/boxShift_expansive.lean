@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxShift_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxShift_expansive {a : Pomega} (ha : IsClosure a) (x : Pomega) :
     x ⊆ funOf (boxShift a) x := by
   rw [boxShift_app]

@@ -61,6 +61,4 @@ variable {α : Type*} (V : NeighborhoodSystem α)
   (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 
-
-
 end DomainTheory.NeighbourhoodSystems.Exercise512

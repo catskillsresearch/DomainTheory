@@ -48,13 +48,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example15
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
 /-- The neighbourhoods of Example 1.5 are a finite family, hence countable. -/
 instance P4_countable : Countable {S : Set Token // neighborhoodSystem.mem S} :=
   inferInstance

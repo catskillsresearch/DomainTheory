@@ -17,36 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Evaluating `piDApply d f` at an already-`subU`-projected point simplifies (via `subU`'s
 idempotency) exactly to `toElementMap_piDApply`'s formula with `t` replaced by `subU.toElementMap
 t` throughout. The key computational step behind `isRetraction_piD`. -/

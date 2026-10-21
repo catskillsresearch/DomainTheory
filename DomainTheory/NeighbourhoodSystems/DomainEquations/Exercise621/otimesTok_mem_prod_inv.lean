@@ -22,20 +22,7 @@ namespace Exercise619
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 
-
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem otimesTok_mem_prod_inv {X Y : Set Str} (h : (otimesTok D₀ D₁).mem (prodTokNbhd X Y))

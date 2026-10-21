@@ -15,15 +15,13 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.m
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 variable {A : Type} [DecidableEq A]
+
+omit [DecidableEq A] in
 
 theorem prependN_singleton (σ τ : Strn A) : prependN σ {τ} = {σ ++ τ} := by
   ext w

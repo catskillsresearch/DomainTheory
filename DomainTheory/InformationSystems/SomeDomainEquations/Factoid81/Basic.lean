@@ -89,9 +89,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
-universe u
 
 /-! ## Tokens (Scott §8 (1)–(3)) -/
 
@@ -101,62 +98,9 @@ variable {α : Type*} [DecidableEq α]
 /-! ## Projections -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ## Consistency and entailment -/
 
 variable (A : InfoSys α)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-! ## Domain equation

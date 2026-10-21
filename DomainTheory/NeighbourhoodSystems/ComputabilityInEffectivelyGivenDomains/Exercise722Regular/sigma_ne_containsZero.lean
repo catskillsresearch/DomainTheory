@@ -19,22 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise722
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **The emptiness decider cannot decide relation (i).** `Σ ≠ "contains 0"`, witnessed by `[1] ∈ Σ`
 but `[1] ∉ Σ·{0}·Σ`. To *decide* this inequality one must detect a word in `Σ ∩ ("contains 0")ᶜ` —
 i.e. in the complement language `{1}*` — but `{1}*` is **not** expressible in the fragment (no

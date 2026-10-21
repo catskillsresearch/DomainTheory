@@ -30,13 +30,6 @@ namespace Exercise823
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
 /-- **Exercise 8.23, Claim 1.** Provided `t` maps finitary projections to finitary projections,
 `‖t‖ = fix(t)` really is a finitary projection. -/
 theorem isFinitaryProjection_fixOp (t : ApproximableMap (funSpace E E) (funSpace E E))

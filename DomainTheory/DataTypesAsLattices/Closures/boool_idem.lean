@@ -16,39 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boool_idem (u : Pomega) :
     condSet (condSet u (ofNat 0) (succSet topElem)) (ofNat 0) (succSet topElem) =
       condSet u (ofNat 0) (succSet topElem) := by

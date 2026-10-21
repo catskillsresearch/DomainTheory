@@ -16,8 +16,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 /-- `Y ↦ Yᶜ`, applied to a whole family: turns an ideal into (the membership predicate of) a

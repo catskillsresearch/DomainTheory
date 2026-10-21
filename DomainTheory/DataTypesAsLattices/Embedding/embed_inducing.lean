@@ -24,7 +24,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace Topology Function
 
 
-
 theorem embed_inducing {X : Type*} [TopologicalSpace X]
     (U : ℕ → Set X) (hbasis : IsTopologicalBasis (Set.range U)) :
     IsInducing (embed U) := by

@@ -20,16 +20,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 
 
-
-
-
-
-
-
 open Exercise510
-
-
-
 
 
 section Iterate
@@ -39,21 +30,7 @@ open Domain.Recursive
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 
-
 variable {P}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 7.15 (Scott 1981, PRG-19) — the infinite iterate `D^∞` is effectively given.** -/

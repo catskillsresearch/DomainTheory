@@ -72,22 +72,9 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
 section ProjectionPair
 
 variable (i : ApproximableMap D E) (j : ApproximableMap E D)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 end ProjectionPair

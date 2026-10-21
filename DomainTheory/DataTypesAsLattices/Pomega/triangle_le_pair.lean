@@ -21,23 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem triangle_le_pair (n m : ℕ) :
     triangle (n + m) ≤ pair n m ∧ pair n m < triangle (n + m + 1) := by
   constructor

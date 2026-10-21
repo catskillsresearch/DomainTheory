@@ -17,9 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2_ii
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
 theorem theorem_1_2_iii (u : Pomega) :
     graph (funOf u) = u ↔ IsGraph u := by
   constructor

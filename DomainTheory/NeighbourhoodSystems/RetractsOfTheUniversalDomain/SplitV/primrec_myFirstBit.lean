@@ -17,8 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
 theorem primrec_myFirstBit : Nat.Primrec (fun t => myFirstBit t.unpair.1 t.unpair.2) := by
   have hm : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
   have hi : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=

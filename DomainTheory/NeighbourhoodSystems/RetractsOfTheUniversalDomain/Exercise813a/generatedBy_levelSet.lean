@@ -18,15 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
 theorem generatedBy_levelSet (k m : ℕ) : GeneratedBy generator (levelSet k m) := by
   rw [levelSet_eq_biUnion]
   exact generatedBy_biUnion_affine k _ fun ℓ hℓ => (Finset.mem_filter.mp hℓ).1 |> Finset.mem_range.mp

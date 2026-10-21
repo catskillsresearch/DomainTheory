@@ -17,42 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_directedSub
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.1 (The lattice theorem).**
 Fixed points of a continuous function form a complete lattice under `⊆`;
 those of a retract form a continuous lattice. -/

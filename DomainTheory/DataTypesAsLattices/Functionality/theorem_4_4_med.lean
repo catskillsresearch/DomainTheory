@@ -22,26 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.comp_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.4.** Existence of the product mediator. -/
 theorem theorem_4_4_med {a b c f g : Pomega}
     (_ha : IsRetract a) (_hb : IsRetract b) (hc : IsRetract c)

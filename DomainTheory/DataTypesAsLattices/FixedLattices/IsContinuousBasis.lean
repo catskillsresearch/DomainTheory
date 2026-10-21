@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraic
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- A basis witnesses the continuous-lattice property by way-below elements. -/

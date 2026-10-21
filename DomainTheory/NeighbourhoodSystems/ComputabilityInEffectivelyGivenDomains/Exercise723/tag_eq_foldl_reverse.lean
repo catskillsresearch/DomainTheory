@@ -24,54 +24,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem tag_eq_foldl_reverse (ns : List ℕ) (m : ℕ) :
     tag ns m = ns.reverse.foldl (fun acc a => num (a + 1) acc) (num 0 m) := by
   rw [List.foldl_reverse]; exact tag_eq_foldr ns m

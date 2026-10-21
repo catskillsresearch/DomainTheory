@@ -68,15 +68,12 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 list `full` all hold, and `gLastOf a full` is the final index reached. -/
 
 
-
 /-! ### The least map of `Xenum c` and its decidable one-step relation. -/
 
 
 variable (P : ComputablePresentation V)
 
 /-! ### The decidable chain predicate and its primitive-recursive `foldCode`. -/
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

@@ -18,13 +18,7 @@ set_option linter.unusedSimpArgs false
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
 namespace triSys
-
-
 
 
 theorem triple_mem : ∀ i, i < 3 → triple i ∈ family := by

@@ -20,8 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.two_dvd_mul_
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-- The defining doubling identity `2·T(k) = k(k+1)` — the division is exact because `k(k+1)` is

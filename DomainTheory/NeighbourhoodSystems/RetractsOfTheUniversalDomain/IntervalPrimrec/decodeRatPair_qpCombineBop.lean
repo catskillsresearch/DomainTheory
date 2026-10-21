@@ -18,14 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
 theorem decodeRatPair_qpCombineBop (e1 e2 : ℕ) :
     decodeRatPair (qpCombineBop (Nat.pair e1 e2))
       = ((decodeRatPair e1).1 ⊔ (decodeRatPair e2).1, (decodeRatPair e1).2 ⊓ (decodeRatPair e2).2) := by

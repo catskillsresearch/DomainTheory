@@ -22,7 +22,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
 /-- **Proposition 8.10, `→`-case (the `lamComb` half), projection.** -/
 theorem le_idMap_lamComb {a b : ApproximableMap U U} (ha : a ≤ idMap U) (hb : b ≤ idMap U) :
     lamComb a b ≤ idMap (funSpace U U) := by

@@ -20,12 +20,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
-
-
 theorem isOpen_memOpen (k : ℕ) : IsOpen (memOpen k) :=
   TopologicalSpace.isOpen_generateFrom_of_mem ⟨k, rfl⟩
 

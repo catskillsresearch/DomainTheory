@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- `x : A` means `x A x`. -/

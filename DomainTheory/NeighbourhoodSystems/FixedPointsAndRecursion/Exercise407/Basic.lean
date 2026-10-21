@@ -39,9 +39,5 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
-
-
 end ApproximableMap
 end DomainTheory.NeighbourhoodSystems

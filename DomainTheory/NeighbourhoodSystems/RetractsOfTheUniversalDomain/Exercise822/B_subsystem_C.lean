@@ -20,7 +20,6 @@ open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 namespace Exercise822
 
 
-
 /-- **`B` is a literal subsystem of `C`** (Definition 6.10): every `B`-neighbourhood is already a
 `C`-neighbourhood, and consistency is inherited — if two cones intersect to a `C`-neighbourhood
 (hence nonempty), `cone_trichotomy` rules out the disjoint case, so the intersection is already the

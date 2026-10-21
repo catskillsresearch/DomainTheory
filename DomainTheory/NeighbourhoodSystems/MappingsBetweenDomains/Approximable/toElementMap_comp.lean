@@ -20,19 +20,9 @@ open NeighborhoodSystem
 variable {α β γ δ : Type*}
 
 
-
 namespace ApproximableMap
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-
-
-
-
-
-
-
-
 
 
 /-- **Proposition 2.6(ii) (Scott 1981, PRG-19).** Composition of approximable mappings becomes

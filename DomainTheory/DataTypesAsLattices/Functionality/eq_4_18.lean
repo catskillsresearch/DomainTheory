@@ -17,19 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tensorR_isRetract
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (4.18).** `snd ∘ (a ⊗ b) : (a ⊗ b) ∘→ b`. -/
 theorem eq_4_18 {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
     typed (comp sndC (tensorR a b)) (arrowR (tensorR a b) b) := by

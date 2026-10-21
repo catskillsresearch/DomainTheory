@@ -20,44 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem secondRecVal_isScottContinuous (u : Pomega) :
     IsScottContinuous (fun x =>
       ⋃ m ∈ x, funOf u (ofNat (applyNat m (num m)))) := by

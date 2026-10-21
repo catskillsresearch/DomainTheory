@@ -10,8 +10,6 @@ import all Mathlib.Data.Finset.Basic
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 abbrev completeLatticeSupSet {α : Type u} [CompleteLattice α] : SupSet α :=

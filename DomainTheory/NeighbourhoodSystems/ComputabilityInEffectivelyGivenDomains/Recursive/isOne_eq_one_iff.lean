@@ -29,8 +29,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 theorem isOne_eq_one_iff (v : ℕ) : isOne v = 1 ↔ v = 1 := by

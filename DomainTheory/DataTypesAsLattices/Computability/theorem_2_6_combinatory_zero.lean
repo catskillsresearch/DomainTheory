@@ -18,8 +18,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 /-- Combinatory elements are generated from the six constants, matching
 the LAMBDA-definable closed terms of Theorem 2.4. -/
 theorem theorem_2_6_combinatory_zero : IsLambdaDefinable zeroC :=

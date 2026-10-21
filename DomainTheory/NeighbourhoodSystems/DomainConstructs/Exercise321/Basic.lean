@@ -39,9 +39,7 @@ variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSyst
 /-! ### The intersection `interYs` of a single step. -/
 
 
-
 /-! ### The least element of a single step neighbourhood. -/
-
 
 
 /-! ### `[Y, Z]` is the whole space exactly when `Z = Δ₂`. -/

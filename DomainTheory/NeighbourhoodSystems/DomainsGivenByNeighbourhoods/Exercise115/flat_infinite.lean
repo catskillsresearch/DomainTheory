@@ -19,12 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise115
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- `flat` is infinite: the atoms `↑{n}` are pairwise distinct. -/
 theorem flat_infinite : Function.Injective (fun n => flat.principal (flat_mem_singleton n)) := by
   intro n m h

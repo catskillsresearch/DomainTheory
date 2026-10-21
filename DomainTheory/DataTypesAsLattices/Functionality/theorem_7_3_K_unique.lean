@@ -21,26 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Kcomb_app_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem theorem_7_3_K_unique (k : Pomega)
     (hk : ∀ A B, (arrowE A (arrowE B A)).mem k) : k = Kcomb := by
   have hgraph : k = graph (fun x => funOf k x) := (hk emptyE emptyE).1

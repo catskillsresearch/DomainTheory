@@ -64,7 +64,6 @@ variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 /-! ### `proj₁ : D^§ → D^§` (second projection of the pair part). -/
 
 
-
 /-! ### `pair : D^§ × D^§ → D^§` (Example 6.1's pairing constructor `⟨·, ·⟩^§`).
 
 This is a *joint* combinator, so it is an approximable map out of the product `D^§ × D^§`. On the

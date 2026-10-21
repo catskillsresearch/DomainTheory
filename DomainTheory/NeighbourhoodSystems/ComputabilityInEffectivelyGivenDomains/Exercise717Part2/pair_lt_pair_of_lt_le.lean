@@ -24,22 +24,7 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 namespace Exercise717
 
 
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- Combined: strict in the first argument, monotone in the second. -/

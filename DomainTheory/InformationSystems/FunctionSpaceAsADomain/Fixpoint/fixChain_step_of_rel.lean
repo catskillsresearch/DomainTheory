@@ -19,26 +19,10 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 namespace ApproximableMap
-
-
 
 
 /-- Extend a chain by one `f`-step using a token from `approxMap_toElement f`. -/

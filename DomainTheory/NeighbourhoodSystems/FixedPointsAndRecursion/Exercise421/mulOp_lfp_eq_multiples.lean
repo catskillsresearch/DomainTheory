@@ -21,15 +21,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise421
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
-
-
-
-
-
-
-
-
-
 /-- **Exercise 4.21 (Scott 1981, PRG-19).** The least solution of the multiplication equation
 `n·ℕ = {0} ∪ {n + m ∣ m ∈ n·ℕ}` is exactly the set of **multiples of `n`**. -/
 theorem mulOp_lfp_eq_multiples (n : ℕ) :

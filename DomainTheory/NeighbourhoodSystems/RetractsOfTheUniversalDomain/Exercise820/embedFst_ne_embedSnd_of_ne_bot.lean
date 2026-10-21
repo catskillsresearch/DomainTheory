@@ -16,8 +16,7 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
-universe u v
-
+universe u
 
 
 /-- **Multiplicity, product case.** `embedFst`/`embedSnd` (hence the two projection pairs above)

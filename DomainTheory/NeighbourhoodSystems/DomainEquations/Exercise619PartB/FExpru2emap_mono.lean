@@ -25,20 +25,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise510
 namespace Exercise619
 
 
-
-
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **`λf. T(f)` is monotone.** A sharper map `f ≤ f'` is sent to a sharper image `T(f) ≤ T(f')` —

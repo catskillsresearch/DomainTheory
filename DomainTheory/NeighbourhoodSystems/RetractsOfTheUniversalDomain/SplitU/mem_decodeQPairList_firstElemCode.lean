@@ -16,16 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
 theorem mem_decodeQPairList_firstElemCode {c : ℕ} (hc : c ≠ 0) :
     decodeRatPair (firstElemCode c) ∈ decodeQPairList c := by
   obtain ⟨c', rfl⟩ := Nat.exists_eq_succ_of_ne_zero hc

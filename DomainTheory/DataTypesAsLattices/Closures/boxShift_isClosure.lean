@@ -18,35 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_boxShift
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxShift_isClosure {a : Pomega} (ha : IsClosure a) :
     IsClosure (boxShift a) :=
   ⟨Icomb_subset_boxShift ha, boxShift_isRetract ha.2⟩

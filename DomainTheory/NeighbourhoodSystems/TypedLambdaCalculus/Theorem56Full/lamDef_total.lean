@@ -28,21 +28,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The total-function specialisation of `lamDef_of_inner`. -/
 theorem lamDef_total {n : ℕ} (ψ : ApproximableMap 𝒩 N) (g : List.Vector ℕ n → ℕ)
     (hval : ∀ v, ψ.toElementMap (vecElem v) = natElem (g v)) :

@@ -24,35 +24,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxShift_expansive
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.4 (sum half), expansiveness.** Each of the four
 occupancy cases of (5.13) is expansive: on a one-sided `u` the shift `a'`
 is expansive by `boxShift_expansive` and (5.8) rebuilds `u`, while mixed

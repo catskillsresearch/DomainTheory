@@ -21,21 +21,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 6.24 (object level).** By the double fixed-point method there exist `∅`-free systems
 `D`, `E` over `{0,1}*` such that `{D} ◁ D + (D×E)` and `{E} ◁ D + E` **simultaneously**. These two
 facts are exactly the joint hypothesis of the simultaneous Theorem 6.14, which then yields the

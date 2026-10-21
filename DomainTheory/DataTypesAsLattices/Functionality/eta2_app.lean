@@ -15,26 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eta2_map_isScottCon
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem eta2_app (f x : Pomega) :
     funOf (graph (fun z => graph (fun y => funOf (funOf f z) y))) x =
       graph (fun y => funOf (funOf f x) y) :=

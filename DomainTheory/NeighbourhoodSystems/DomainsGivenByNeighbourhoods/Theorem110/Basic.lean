@@ -53,16 +53,7 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
 /-! ### The token system `{[X]}` and the isomorphism. -/
-
-
-
 
 
 end NeighborhoodSystem

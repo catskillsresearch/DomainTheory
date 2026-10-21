@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.retractBasis_eq_compactF
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem fixed_eq_sSup_compacts {a : Pomega} (ha : IsClosure a)

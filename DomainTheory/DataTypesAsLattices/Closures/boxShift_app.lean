@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxShift_map_isScottCont
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxShift_app (a x : Pomega) :
     funOf (boxShift a) x = ofNat 0 ∪ succSet (funOf a (predSet x)) :=
   beta (boxShift_map_isScottContinuous a) x

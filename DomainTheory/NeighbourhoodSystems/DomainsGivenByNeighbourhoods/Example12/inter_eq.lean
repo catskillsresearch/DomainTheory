@@ -21,8 +21,6 @@ import all DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exampl
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Example12
 
 theorem inter_eq (X Y : Set Token) (h : mem X) (h' : mem Y) :

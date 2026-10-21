@@ -21,7 +21,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.comp
 
 @[expose] public section
 
-universe u v
 
 namespace DomainTheory.ContinuousLattice
 

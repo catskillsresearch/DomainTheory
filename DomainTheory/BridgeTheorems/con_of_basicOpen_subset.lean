@@ -16,8 +16,6 @@ public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_ii
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.NeighbourhoodSystems

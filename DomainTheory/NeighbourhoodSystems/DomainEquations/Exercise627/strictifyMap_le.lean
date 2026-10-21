@@ -23,32 +23,12 @@ namespace Exercise627
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 
-
-
-
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 section Part5
 
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
 
 
 theorem strictifyMap_le (g : ApproximableMap V₀ V₁) : strictifyMap g ≤ g := fun _ _ h => h.1

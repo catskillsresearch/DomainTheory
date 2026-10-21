@@ -22,10 +22,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
-
-
 /-- An upper bound of `S` forces the carrier-union to be finitely consistent. -/
 theorem finitelyConsistent_of_upperBound (S : Set sys.Element) {z : sys.Element}
     (h : ∀ x ∈ S, x ≤ z) : sys.IsFinitelyConsistent (sys.familyUnionCarrier S) := by

@@ -19,11 +19,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β : Type*}
 
 
-
-
-
-
-
 /-- **Exercise 7.21 — `papply`'s relation at the level of `ℙ𝒟`-codes.** Over the canonical
 presentations of Proposition 7.10 (function-space presentation `Pf`, domain `P`, codomain `Q`):
 `papplyEval.rel (Y_Φc) (Y_Ac) (Y_Bc) ↔ ∀ g ∈ dl Φc, ∀ x ∈ dl Ac, ∃ y ∈ dl Bc, eval (Pf.X g)(P.X x)(Q.X y)`. -/

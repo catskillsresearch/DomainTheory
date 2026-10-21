@@ -23,11 +23,6 @@ namespace Exercise823
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
 theorem tOp_toApproxMap (t : ApproximableMap (funSpace E E) (funSpace E E))
     (φ : (funSpace E E).Element) : tOp t (toApproxMap φ) = toApproxMap (t.toElementMap φ) := by
   unfold tOp

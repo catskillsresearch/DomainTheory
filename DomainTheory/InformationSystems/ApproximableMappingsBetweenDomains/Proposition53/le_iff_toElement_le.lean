@@ -23,7 +23,6 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable {A : InfoSys α} {B : InfoSys β}
 
 
-
 /-- **Proposition 5.3(iii).** `f ⊆ g` iff `f(x) ⊆ g(x)` for all elements `x`. -/
 theorem le_iff_toElement_le (f g : ApproximableMap A B) :
     Le f g ↔ ∀ x : A.Element, f.toElement x ≤ g.toElement x := by

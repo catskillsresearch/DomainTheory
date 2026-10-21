@@ -19,27 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.ExampleB
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`σ⊥` really is `σ` applied to `⊥`.** `sigmaElt σ ⊥ = sigmaBot σ`, justifying the `σ⊥`
 notation: applying `σ` to the least element produces the finite element `↑(σΣ*)`. -/
 theorem sigmaElt_bot (σ : Str) : sigmaElt σ B.bot = sigmaBot σ := by

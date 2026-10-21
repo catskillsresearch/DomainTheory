@@ -16,7 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 variable {α : Type*}
 
 
-
 namespace Subsystem
 
 /-- The subsystem relation is **transitive**: `D ◁ E` and `E ◁ F` give `D ◁ F`.

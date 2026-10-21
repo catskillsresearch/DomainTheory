@@ -15,27 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_le
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Appendix calculation: `d(d) = ⋃ { e_l(e_l) | e_l ⊆ d }`. -/
 theorem funOf_diag_iUnion (d : Pomega) :
     funOf d d = ⋃ l, {m | e l ⊆ d ∧ m ∈ funOf (e l) (e l)} := by

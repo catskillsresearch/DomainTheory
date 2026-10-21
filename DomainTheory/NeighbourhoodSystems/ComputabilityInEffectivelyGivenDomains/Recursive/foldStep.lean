@@ -27,8 +27,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- One step of the code-walking fold. The state `s = pair rc acc` carries the remaining code `rc`

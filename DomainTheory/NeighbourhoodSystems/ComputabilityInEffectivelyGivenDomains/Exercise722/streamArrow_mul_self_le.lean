@@ -23,32 +23,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`σ⃗·σ⃗ ≤ σ⃗`**: `σ⃗`'s membership witnesses come from *some* finite approximant `fⁿ(⊥)`
 (`mem_fixElement`/`mem_iterElem`), and every approximant satisfies the per-`n` bound above. -/
 theorem streamArrow_mul_self_le (σ : List Bool) :

@@ -22,15 +22,11 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_iv
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 universe u v
 

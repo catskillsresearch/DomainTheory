@@ -21,49 +21,7 @@ variable {α : Type*}
 namespace Proposition77
 
 
-
-
-
-
-
-
-
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem gList_length (step : ℕ → ℕ) (w : ℕ) : (gList step w).length = w := by

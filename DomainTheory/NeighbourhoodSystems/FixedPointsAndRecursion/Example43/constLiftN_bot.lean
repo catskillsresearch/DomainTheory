@@ -18,21 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example43
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Computation on bottom (strictness).** `f(⊥) = ⊥`. -/
 theorem constLiftN_bot {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element) :
     (constLiftN V val).toElementMap N.bot = V.bot := by

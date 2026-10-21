@@ -16,13 +16,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.comp_val
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 open Example62C in
 /-- Every neighbourhood of the three-way separated sum `sum3` is non-empty (so `sum3` is again an

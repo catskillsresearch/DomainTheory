@@ -15,8 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.iterates_areRetracts
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Strictness of all Kleene approximants of a strictness-preserving

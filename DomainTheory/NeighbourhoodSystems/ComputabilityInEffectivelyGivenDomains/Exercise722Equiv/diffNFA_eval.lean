@@ -20,14 +20,6 @@ open scoped Computability
 open Sum Set
 
 
-
-
-
-
-
-
-
-
 theorem diffNFA_eval (e1 e2 : SExpr) (w : List Bool) :
     (diffNFA e1 e2).eval w = {(evalFin e1 w, evalFin e2 w)} := by
   show (diffNFA e1 e2).evalFrom (diffNFA e1 e2).start w = _

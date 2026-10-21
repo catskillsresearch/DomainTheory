@@ -16,27 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.funOf_diag_iUnion
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Scott's core induction proving that `ω(graph f)(ω(graph f))` is the
 least fixed point of `f`. -/
 theorem omega_first_recursion {f : Pomega → Pomega} (hf : IsScottContinuous f) :

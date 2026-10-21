@@ -8,8 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (4.14)–(4.15).** Projections of a pair-as-function. -/

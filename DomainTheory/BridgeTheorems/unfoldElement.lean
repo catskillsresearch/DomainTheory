@@ -21,8 +21,6 @@ public import DomainTheory.BridgeTheorems.saturated_of_closed
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

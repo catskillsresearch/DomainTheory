@@ -22,9 +22,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
   (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 
-
-
-
 /-- **Leastness.** Any `w'` satisfying the `while`-recursion `w'(x) = cond(p(x), w'(f(x)), x)`
 dominates the least solution `whileMap`. -/
 theorem whileMap_least (w' : (funSpace V V).Element)

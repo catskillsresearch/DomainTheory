@@ -16,10 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
 open Example44 ExampleB NeighborhoodSystem
 
 /-- Positions differing by `|a|` inside `a ++ (a ++ a)` carry the same symbol, for indices `< 2|a|`

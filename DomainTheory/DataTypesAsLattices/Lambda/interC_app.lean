@@ -16,41 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.interC_then_else_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem interC_app (x y : Pomega) :
     funOf (funOf interC x) y =
       condSet x (condSet y (ofNat 0) botElem)

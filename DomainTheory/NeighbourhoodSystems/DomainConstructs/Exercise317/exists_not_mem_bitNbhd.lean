@@ -18,8 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise317
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
-
-
 theorem exists_not_mem_bitNbhd (b : Bool) : ∃ t : Token, t ∉ bitNbhd b := by
   cases b
   · exact ⟨1, by simp [bitNbhd, Example12.zero]⟩

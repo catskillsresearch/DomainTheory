@@ -20,8 +20,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
 /-- `⋂ₙ xₙ ⊑ xₙ`: the intersection approximates every member of the sequence. -/
 theorem iInter_le (x : ℕ → V.Element) (n : ℕ) : V.iInter x ≤ x n :=
   fun _ h => h n

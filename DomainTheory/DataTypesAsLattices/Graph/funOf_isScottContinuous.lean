@@ -15,8 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 theorem funOf_isScottContinuous (u : Pomega) : IsScottContinuous (funOf u) := by
   intro x
   ext m

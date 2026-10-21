@@ -18,11 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example23
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
 /-- **`⊥` is the unique common lower bound of `true` and `false`.** Any `a : |𝒯|` approximated by
 *both* total elements is `⊥` — `𝒯`'s flatness. (Exercise 2.16's uniqueness argument: reading no
 tokens yet is the only state consistent with committing to either verdict.) -/

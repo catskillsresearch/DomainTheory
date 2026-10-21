@@ -22,22 +22,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem inj₁_injective {Y Y' : Set β} (h : (inj₁ Y : Set (Option (α ⊕ β))) = inj₁ Y') : Y = Y' :=
   Set.Subset.antisymm (inj₁_subset_inj₁.mp h.subset) (inj₁_subset_inj₁.mp h.symm.subset)
 

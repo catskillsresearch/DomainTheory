@@ -20,12 +20,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
-
-
 theorem basicNhhd_inter (n m : ℕ) :
     basicNhhd n ∩ basicNhhd m = basicNhhd (n ||| m) := by
   ext x

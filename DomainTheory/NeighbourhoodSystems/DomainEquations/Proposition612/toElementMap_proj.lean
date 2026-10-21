@@ -23,9 +23,6 @@ namespace Subsystem
 variable {D E : NeighborhoodSystem α}
 
 
-
-
-
 /-- **Element-wise description of `j` (Scott's equation).** `j(y) = y ∩ D`: the neighbourhoods of
 `j(y)` are exactly the `D`-neighbourhoods that already belong to `y`. -/
 theorem toElementMap_proj (h : D ◁ E) (y : E.Element) {X : Set α} :

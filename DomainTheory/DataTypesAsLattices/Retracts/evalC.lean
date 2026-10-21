@@ -9,8 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (4.22).** Evaluation combinator. -/

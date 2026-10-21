@@ -24,15 +24,6 @@ variable {α γ : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem γ}
   {Q : ComputablePresentation W} (B : ComputableBisection Q) (hWnomin : W.NoMinimal)
 
 
-
-
-
-
-
-
-
-
-
 /-- **`splitFromBisection` satisfies `SplitSpec'`**, completing the concrete-construction half of
 `8.12(g)(3)`. Needs one extra hypothesis beyond `isComputableSplit_ofBisection`'s own,
 `hQne : ∀ j, Q.X j ≠ ∅` — true for both `U`/`V` (every `ComputablePresentation` index is `mem`-

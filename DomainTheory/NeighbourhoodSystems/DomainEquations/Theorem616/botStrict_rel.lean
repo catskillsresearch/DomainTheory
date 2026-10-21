@@ -18,8 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
-
 
 /-- The strict map represented by `⊥` of the strict function space relates `X` to `Y` exactly when
 `X` is a neighbourhood and `Y` is the master output: it is the constant-`⊥` (least) strict map. -/

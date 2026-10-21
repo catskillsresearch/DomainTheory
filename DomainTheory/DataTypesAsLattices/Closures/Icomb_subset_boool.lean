@@ -18,39 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boool_expansive
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Icomb_subset_boool : Icomb ⊆ boool := by
   intro p hp
   rcases hp with ⟨n, m, rfl, hm⟩

@@ -30,23 +30,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1972, Proposition 4.1.** The inverse limit is injective by the coordinatewise
 Proposition 3.8/Lemma 3.9 construction; Theorem 2.12 then gives the continuous-lattice structure
 on the existing componentwise complete lattice. -/

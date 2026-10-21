@@ -24,14 +24,6 @@ variable {αx αa αb : Type*}
   {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 
-
-
-
-
-
-
-
-
 /-- `K(c)(x) = c`. -/
 theorem Kelem_apply (A X : Dom) (c : A.sys.Element) (x : X.sys.Element) :
     (toApproxMap ((toApproxMap (Kelem A X)).toElementMap c)).toElementMap x = c := by

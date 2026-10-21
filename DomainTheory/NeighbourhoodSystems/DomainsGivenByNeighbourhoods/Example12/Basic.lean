@@ -67,14 +67,6 @@ partial element — the bottom filter `{Δ}`.
 namespace DomainTheory.NeighbourhoodSystems.Example12
 
 
-
-
-
-
-
-
-
-
 theorem zero_ne_master : zero ≠ master := by
   intro h
   have : (1 : Token) ∈ zero := h ▸ (by simp [master])
@@ -86,21 +78,9 @@ theorem one_ne_master : one ≠ master := by
   simp [one] at this
 
 
-
-
-
-
-
-
-
-
-
-
 namespace neighborhoodSystem
 
 open NeighborhoodSystem
-
-
 
 
 theorem mem_zero_of_mem (x : neighborhoodSystem.Element) (h : x.mem zero) :

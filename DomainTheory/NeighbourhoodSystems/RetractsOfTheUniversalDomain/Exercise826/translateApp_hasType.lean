@@ -16,9 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
 universe u
 
 variable {α : Type u} {E : NeighborhoodSystem α}

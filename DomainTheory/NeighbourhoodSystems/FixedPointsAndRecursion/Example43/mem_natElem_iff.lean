@@ -17,18 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example43
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- A neighbourhood belongs to `n̂` iff it is `ℕ` (the master) or the singleton `{n}`. -/
 theorem mem_natElem_iff {n : ℕ} {Y : Set ℕ} :
     (natElem n).mem Y ↔ Y = Set.univ ∨ Y = {n} := by

@@ -20,11 +20,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β : Type*}
 
 
-
-
-
-
-
 /-- **Three nested bounded quantifiers preserve recursive enumerability.** If `R` is r.e. (in the
 paired form `R g x y`) then so is `∀ g ∈ dl w.1, ∀ x ∈ dl w.2.1, ∃ y ∈ dl w.2.2, R g x y`. Built from
 the bounded-`∃` lemma `bExists_decodeList_re` (Exercise 7.19) and the parameterised bounded-`∀` lemma

@@ -19,15 +19,6 @@ open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercis
 variable {M : Type*} (zero : M) (succ : M → M)
 
 
-
-
-
-
-
-
-
-
-
 /-- **Exercise 4.22 (Scott 1981, PRG-19).** *Yes:* whenever `N*` satisfies (i) and (ii), there is a
 subset `N ⊆ N*` (carrying the inherited structure) satisfying (i), (ii), and (iii). -/
 theorem exists_peano_submodel (hzero : ∀ n, zero ≠ succ n) (hinj : Function.Injective succ) :

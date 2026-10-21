@@ -52,11 +52,6 @@ variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
 
 
-
-
-
-
-
 theorem mem_foldr_liftLeft (s : Multiset α) (p : ProdToken A B) :
     p ∈ Multiset.foldr (fun x : α => insert (mkLeft A B x)) (∅ : Finset (ProdToken A B)) s ↔
       ∃ x ∈ s, p = mkLeft A B x := by
@@ -98,11 +93,9 @@ theorem mem_foldr_liftRight (s : Multiset β) (p : ProdToken A B) :
       · exact Or.inr ⟨z, hz, hp⟩
 
 
-
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
-
 
 
 /-- Helper: `g` relates `s` to any subset of `{Δ_B}` once it relates to `∅`. -/

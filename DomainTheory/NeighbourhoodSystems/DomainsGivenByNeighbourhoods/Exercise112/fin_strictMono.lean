@@ -19,16 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise112
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
 /-- The chain `fin 0 ⊏ fin 1 ⊏ ⋯` is strictly increasing. -/
 theorem fin_strictMono : StrictMono fin := by
   intro n m hnm

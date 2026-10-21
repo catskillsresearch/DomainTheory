@@ -14,32 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem eq_2_7_zero (x y : Pomega) : condSet (ofNat 0) x y = x := by
   ext n
   simp [condSet, ofNat]

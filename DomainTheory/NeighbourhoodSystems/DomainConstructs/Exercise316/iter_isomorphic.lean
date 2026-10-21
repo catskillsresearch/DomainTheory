@@ -18,44 +18,10 @@ open NeighborhoodSystem
 variable {α : Type*}
 
 
-
-
-
-
-
-
-
 variable (V : NeighborhoodSystem α)
 
 
 variable {V}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 3.16 (Scott 1981, PRG-19).** `𝒟^∞ ≅ 𝒟 × 𝒟^∞`. -/

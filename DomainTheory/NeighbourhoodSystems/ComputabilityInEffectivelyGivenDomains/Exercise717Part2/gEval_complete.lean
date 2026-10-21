@@ -29,29 +29,12 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 namespace Exercise717
 
 
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 section Computability
 
 variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
 
 
 set_option maxHeartbeats 1000000 in

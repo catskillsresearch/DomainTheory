@@ -19,8 +19,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 theorem IsRE.bot : IsRE botElem :=
   REPred.empty.of_eq fun n => by simp [botElem]
 

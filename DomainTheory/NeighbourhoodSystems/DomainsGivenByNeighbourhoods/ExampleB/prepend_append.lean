@@ -18,23 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.ExampleB
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Prepending is associative.** `σ(τX) = (στ)X`: prepending `σ` after `τ` is the same as
 prepending the concatenation `σ ++ τ` in one step (used to compose `sigmaElt`, `Exercise216`). -/
 theorem prepend_append (σ τ : Str) (X : Set Str) :

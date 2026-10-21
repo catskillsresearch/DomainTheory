@@ -27,36 +27,9 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
-
-
-
-
-
 
 
 theorem evalAt_apply (z : 𝒩.Element) (φ : (funSpace 𝒩 N).Element) :

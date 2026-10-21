@@ -23,34 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.finite_sigma_plain_
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plotkin_function_related (p q : ℕ) :
     (arrowE
       (plotkinE p q (max p q + 1))

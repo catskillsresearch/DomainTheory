@@ -20,8 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.codeList
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 noncomputable def codeFinset (s : Finset ℕ) : ℕ := codeList s.val.toList

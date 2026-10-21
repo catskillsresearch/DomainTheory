@@ -13,8 +13,6 @@ import all Mathlib.Algebra.Group.Nat.Defs
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise417
 
 open Pointwise

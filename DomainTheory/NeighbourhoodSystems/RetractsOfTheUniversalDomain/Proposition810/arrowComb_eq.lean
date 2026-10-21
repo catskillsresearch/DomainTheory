@@ -21,7 +21,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
 theorem arrowComb_eq (a b : ApproximableMap U U) :
     arrowComb a b = iArrow.comp ((lamComb a b).comp jArrow) := rfl
 

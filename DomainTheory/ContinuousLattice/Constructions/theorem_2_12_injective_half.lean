@@ -22,11 +22,6 @@ open Topology Set
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
-
-
 /-- **Scott 1972, Theorem 2.12 (injectivity half, unconditional).** `Prop` is injective
 (Sierpiński); the continuous-lattice half is now `isContinuousLattice_prop`. -/
 theorem theorem_2_12_injective_half : IsInjectiveSpace Prop :=

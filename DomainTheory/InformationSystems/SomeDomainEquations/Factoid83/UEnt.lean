@@ -18,15 +18,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UCon
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 /-- Entailment for `U` (Scott (10)). -/
 def UEnt (u : Finset UToken) (p : UToken) : Prop :=

@@ -117,11 +117,6 @@ variable {α : Type} {E : NeighborhoodSystem α}
 /-! ## The pair space `(E → E) × (E → E)`, and the combined operator `⟨s, t⟩` -/
 
 
-
-
-
-
-
 /-! ## `.fst`/`.snd` are monotone (needed for the directed-union chase in Claim 1) -/
 
 /-! ## The bottom of the pair space splits into the two bottoms (base case of the induction) -/

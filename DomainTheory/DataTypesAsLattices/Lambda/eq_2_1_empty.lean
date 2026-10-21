@@ -14,39 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.1).** Maximal extension by cases. -/
 theorem eq_2_1_empty (p : ℕ → Pomega) :
     maxExtend p botElem = ⋂ n, p n := by

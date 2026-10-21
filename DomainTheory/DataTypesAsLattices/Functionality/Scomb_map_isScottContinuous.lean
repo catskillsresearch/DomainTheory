@@ -14,26 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Scomb_map_isScottContinuous :
     IsScottContinuous (fun u => graph (fun v =>
       graph (fun x => funOf (funOf u x) (funOf v x)))) :=

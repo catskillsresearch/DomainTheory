@@ -18,7 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise421
 open DomainTheory.NeighbourhoodSystems.Exercise414
 
 
-
 theorem leOp_monotone : Monotone leOp := by
   intro u v huv p hp
   rcases hp with hp | ⟨m, hm, hpm⟩

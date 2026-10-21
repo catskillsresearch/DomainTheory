@@ -15,13 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
 theorem funRetract_app (u : Pomega) :
     funOf funRetract u = graph (fun x => funOf u x) :=
   beta (graph_const_isScottContinuous (fun u x => funOf u x)

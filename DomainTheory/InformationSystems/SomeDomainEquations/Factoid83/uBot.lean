@@ -15,15 +15,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.Basi
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 /-- Bottom `Δ_U = Δ_V` (Scott (8)). -/
 def uBot : UToken := ⟨.bot, by decide⟩

@@ -22,32 +22,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`⊥` is a left-annihilator up to `≤`**: `⊥·y ≤ y`. (`⊥`'s only neighbourhood is `Δ = Σ`, and
 `Y ⊆ Σ·Y` via the empty-word split, so any witness collapses onto `y` itself.) -/
 theorem mulElem_bot_le (y : Ssys.Element) : mulElem Ssys.bot y ≤ y := by

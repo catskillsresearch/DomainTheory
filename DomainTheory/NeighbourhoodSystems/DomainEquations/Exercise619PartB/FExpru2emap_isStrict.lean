@@ -25,19 +25,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise510
 namespace Exercise619
 
 
-
-
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
-
-
-
-
-
-
-
-
 
 
 /-- **Every `T` preserves strictness** (so it restricts to Scott's category of strict maps): `T(f)`

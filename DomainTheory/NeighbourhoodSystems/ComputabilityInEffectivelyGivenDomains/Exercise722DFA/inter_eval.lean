@@ -22,12 +22,6 @@ namespace Exercise722
 open scoped Computability
 
 
-
-
-
-
-
-
 /-- The product DFA evaluates componentwise. (Choice-free; avoids mathlib's classical
 `accepts_inter`.) -/
 theorem inter_eval {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DFA Bool σ₂) (w : List Bool) :

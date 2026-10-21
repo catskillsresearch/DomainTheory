@@ -17,13 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
 /-- **`levelSet` is closed under complement** (within the "`∅`-or-genuine" dichotomy every closure
 fact in this development uses): the bitmask that selects exactly the residues `< 2^k` *not*
 selected by `m`. -/

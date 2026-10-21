@@ -25,8 +25,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
 /-- **Proposition 5.4 (Scott 1981, PRG-19).** `λx. !y. τ(x, y) = !g. λx. τ(x, g(x))`. -/
 theorem pfix_eq_fixElement_recOp (τ : ApproximableMap (prod V V) V) :
     pfix τ = toApproxMap (recOp τ).fixElement := by

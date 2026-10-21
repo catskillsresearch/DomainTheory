@@ -15,13 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_le
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
 theorem diagApp_isScottContinuous : IsScottContinuous (fun x => funOf x x) := by
   intro x
   have h := theorem_1_3_diag (x := x)

@@ -14,27 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.11).** One inclusion; equality needs both arguments to be graphs. -/
 theorem eq_2_11 (f g x : Pomega) :
     funOf (f ∩ g) x ⊆ funOf f x ∩ funOf g x := by

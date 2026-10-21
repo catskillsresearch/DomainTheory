@@ -33,7 +33,6 @@ namespace InfoSys
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 
-
 namespace ScottContinuous
 
 variable {A : InfoSys α} {B : InfoSys β}
@@ -44,7 +43,6 @@ end ScottContinuous
 namespace ApproximableMap
 
 variable {A : InfoSys α} {B : InfoSys β}
-
 
 
 end ApproximableMap

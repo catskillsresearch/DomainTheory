@@ -18,8 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise216
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
 /-- **The recursive core of uniqueness.** Any `g` satisfying the three equations agrees with
 `parityMap` on every principal (finite) element `σ⊥`. Recursion peels *two* tokens at a time
 (mirroring `scan`'s own recursion `scan(00τ)=scanτ`): `1τ` and `01τ` are pinned directly by

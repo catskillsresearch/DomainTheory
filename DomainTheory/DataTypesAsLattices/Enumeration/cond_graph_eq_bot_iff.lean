@@ -20,9 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
 theorem cond_graph_eq_bot_iff (x y : Pomega) :
     funOf (funOf condC x) y = botElem ↔ x = botElem ∧ y = botElem := by
   constructor

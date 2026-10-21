@@ -20,10 +20,6 @@ open scoped Computability
 open Sum Set
 
 
-
-
-
-
 theorem coe_stepFinSingle : ∀ (e : SExpr) (s : autState e) (c : Bool),
     (↑(stepFinSingle e s c) : Set (autState e)) = (toNFA e).step s c
   | .sigma, s, c => by

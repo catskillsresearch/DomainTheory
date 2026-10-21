@@ -15,37 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.predSet_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem predC_app (x : Pomega) : funOf predC x = predSet x :=
   beta predSet_isScottContinuous x
 

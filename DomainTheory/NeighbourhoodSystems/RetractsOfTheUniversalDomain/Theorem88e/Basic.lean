@@ -119,16 +119,12 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 /-! ## `Yc P`'s basic facts: subset-of-master and the zero-depth base case -/
 
 
-
 /-! ## Realizing any finite `δ`-prefix as `deltaOf k` for some `k`
 
 `genAtom_Yc_empty_iff` only relates `genAtom` at sign sequences of the special form `deltaOf k`.
 The general finite-constraint transfer lemma (`transfer_dir`, below) needs the emptiness match for
 *every* `δ : ℕ → Bool`. Since `genAtom Z M δ n` only inspects `δ 0, …, δ (n - 1)` (`genAtom_congr`),
 it suffices to realize any finite prefix of `δ` as `deltaOf k` for a suitable `k < 2 ^ n`. -/
-
-
-
 
 
 /-! ## Porting `Theorem88.lean`'s finite-constraint transfer lemma to `(idxSet (e P), Yc P)`
@@ -139,15 +135,6 @@ here (there is nothing to prove beyond what `Theorem88.lean` already established
 only the *instantiation* differs). -/
 
 
-
-
-
-
-
-
-
-
-
 /-! ## Assembling `D'' := DprimeUCode`, `D ≅ᴰ D''`, and `D'' ◁ U`
 
 Mirrors `Theorem88a.lean`'s `DprimeU`/`domainIso`/`DprimeU_subsystem`/`isomorphic_DprimeU` verbatim,
@@ -156,12 +143,7 @@ to `transfer_inter_eq_iff`/`transfer_inter_empty_iff` (generic, `Yseq`-flavoured
 `Yc`-flavoured `transfer_inter_eq_iff_idxYc`/`transfer_inter_empty_iff_idxYc` above. -/
 
 
-
-
-
 /-! ## The element-level isomorphism `D ≅ᴰ D''` -/
-
-
 
 
 /-! ## Building `ComputablePresentation D''`
@@ -173,10 +155,6 @@ generic `transfer_inter_eq_iff`/`embed_subset_iff` replaced by the `Yc`-flavoure
 unchanged** from `(P0 P)` — only the carrier family (`Yidx` ↦ `Yc P`, now genuinely code-driven)
 changes; `idxSet_inter_eq_iff_DAtom`/`DAtom_pair_recDecidable` (Theorem88c.lean, stated generically
 for any `ComputablePresentation Q`) apply verbatim to `Q := P0 P`. -/
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

@@ -16,41 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.interC_body_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem interC_app_graph (x : Pomega) :
     funOf interC x =
       graph (fun y =>

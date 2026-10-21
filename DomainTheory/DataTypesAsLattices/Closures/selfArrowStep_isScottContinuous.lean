@@ -17,37 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.arrowR_diag_isScottConti
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem selfArrowStep_isScottContinuous :
     IsScottContinuous selfArrowStep := by
   intro a

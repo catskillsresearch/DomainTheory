@@ -22,14 +22,6 @@ open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap pred
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 
 
-
-
-
-
-
-
-
-
 section PrimRec
 
 variable (f : ApproximableMap N N) (g : ApproximableMap (prod N (prod N N)) N)

@@ -16,51 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem hApp_isScottContinuous_t (H e : Pomega) :
     IsScottContinuous (fun t => hApp H e t) :=
   continuous_nary

@@ -26,12 +26,6 @@ namespace RatInterval
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- **Exercise 1.17 — `ℝ ↪ |𝒟|`.** Distinct reals give distinct point filters: between any two
 reals lies a rational interval separating them. -/
 theorem filterAt_injective {s t : ℝ} (h : filterAt s = filterAt t) : s = t := by

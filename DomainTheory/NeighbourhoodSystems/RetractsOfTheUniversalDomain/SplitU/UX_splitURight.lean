@@ -21,21 +21,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem UX_splitURight (n : ℕ) :
     UX (splitURight n) = UX n ∩ Set.Ici (decodeRat (splitMidCode n)) := by
   have hUL : U.mem (presentedIntervals (decodeQPairList (splitURight n))) := by

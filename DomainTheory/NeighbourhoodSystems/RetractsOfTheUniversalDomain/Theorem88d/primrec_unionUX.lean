@@ -23,7 +23,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
 theorem primrec_unionUX : Nat.Primrec (fun t : ℕ => unionUX t.unpair.1 t.unpair.2) := by
   unfold unionUX
   exact (primrec_appendCode.comp ((primrec_canonCode.comp Nat.Primrec.left).pair

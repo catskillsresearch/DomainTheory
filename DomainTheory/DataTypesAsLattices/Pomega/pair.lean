@@ -19,8 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.BasicInst12
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, §1.** Diagonal pairing `(n, m) = ½(n+m)(n+m+1) + m`. -/

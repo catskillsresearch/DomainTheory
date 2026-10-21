@@ -20,31 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem valStep_app_zero (v : Pomega) :
     funOf (valStep v) (ofNat 0) = Gcomb := by
   rw [valStep_app]

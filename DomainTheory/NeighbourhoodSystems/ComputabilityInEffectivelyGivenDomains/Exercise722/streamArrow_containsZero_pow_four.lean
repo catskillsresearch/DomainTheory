@@ -22,32 +22,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott's fourth equation (the concrete numeric instance).** `01⃗·01⃗·01⃗·01⃗ = 01⃗·01⃗`, for
 `01⃗ := streamArrow [false, true]`. Follows from `streamArrow_mul_self` applied twice. -/
 theorem streamArrow_containsZero_pow_four :

@@ -17,27 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.omegaComb_isScottContinuou
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Ycomb_app (u : Pomega) :
     funOf Ycomb u = funOf (omegaComb u) (omegaComb u) :=
   beta (theorem_1_3 diagApp_isScottContinuous omegaComb_isScottContinuous) u

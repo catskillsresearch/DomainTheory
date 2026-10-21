@@ -21,10 +21,6 @@ variable {α β γ δ : Type*}
 namespace Theorem51
 
 
-
-
-
-
 /-- **Theorem 5.1, abstraction case (Scott 1981, PRG-19).** If `⟦σ⟧ : Γ × 𝒟ₙ → 𝒟'` is approximable,
 then `λx.σ` is interpreted by `curry ⟦σ⟧ : Γ → (𝒟ₙ → 𝒟')` (approximable by Thm 3.12), with value
 `(λx.σ)(v)(x) = σ(v, x)`. -/

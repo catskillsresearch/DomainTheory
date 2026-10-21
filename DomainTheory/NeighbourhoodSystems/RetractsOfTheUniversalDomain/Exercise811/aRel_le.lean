@@ -24,15 +24,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise811
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
 theorem aRel_le {r s : ℚ} (h : r < s ∨ (r = 1 ∧ s = 1)) : r ≤ s := by
   rcases h with h | ⟨rfl, rfl⟩
   · exact h.le

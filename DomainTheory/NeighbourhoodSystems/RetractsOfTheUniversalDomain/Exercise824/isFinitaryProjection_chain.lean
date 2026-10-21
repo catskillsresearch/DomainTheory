@@ -24,16 +24,6 @@ namespace Exercise824
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
-
 /-- Every approximant pair `(aOp s t n, bOp s t n)` consists of finitary projections, provided
 `s`/`t` send pairs of finitary projections to finitary projections. -/
 theorem isFinitaryProjection_chain (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))

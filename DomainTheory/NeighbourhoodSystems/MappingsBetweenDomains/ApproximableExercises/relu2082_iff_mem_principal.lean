@@ -20,13 +20,9 @@ open NeighborhoodSystem
 variable {α β γ : Type*}
 
 
-
-
-
 namespace ApproximableMap₂
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
 
 
 /-- **Exercise 2.19 (recovery of the relation).** `X, Y f Z ↔ Z ∈ f(↑X, ↑Y)`, the two-variable

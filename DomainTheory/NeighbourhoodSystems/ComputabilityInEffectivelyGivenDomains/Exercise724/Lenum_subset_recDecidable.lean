@@ -23,52 +23,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise724
 open NeighborhoodSystem Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `isPrefixChar` gives a `RecDecidable₂` decider for `Lenum n ⊆ Lenum m`. -/
 theorem Lenum_subset_recDecidable : RecDecidable₂ (fun n m => Lenum n ⊆ Lenum m) :=
   RecDecidable₂.of_paired_zero_one_char primrec_LenumSubsetChar

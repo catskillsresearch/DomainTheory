@@ -16,8 +16,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Example13
 
 theorem mem_two : mem two := by simp [mem, memSet, master, twelve, two]

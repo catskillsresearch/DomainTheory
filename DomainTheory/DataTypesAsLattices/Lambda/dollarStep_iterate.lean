@@ -18,47 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqFunLt_succ
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem dollarStep_iterate (n : ℕ) (u z : Pomega) :
     funOf (funOf (iterateBot dollarStep n) u) z = seqFunLt u z n := by
   induction n generalizing u z with

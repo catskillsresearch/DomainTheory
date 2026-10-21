@@ -26,9 +26,6 @@ variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
 /-- **Theorem 7.4 (Scott 1981, PRG-19) — the product functor `f × g` is computable.** Using
 `f × g = ⟨f ∘ p₀, g ∘ p₁⟩` (Exercise 3.19) together with computability of `projᵢ` and `comp`
 (Proposition 7.3). -/

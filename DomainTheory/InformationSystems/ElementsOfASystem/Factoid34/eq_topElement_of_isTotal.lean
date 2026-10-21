@@ -20,8 +20,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
 /-- When `⊤` exists, it is the unique total element. -/
 theorem eq_topElement_of_isTotal (h : sys.AllConsistent) {x : sys.Element}
     (hx : sys.IsTotal x) : x = sys.topElement h :=

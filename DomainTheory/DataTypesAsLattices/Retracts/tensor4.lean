@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.seq4
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, before (4.44).** Four-fold product by expanded indices,

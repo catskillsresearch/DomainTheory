@@ -19,16 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example24
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **The recursive core of uniqueness.** Any `g` satisfying the four equations agrees with
 `runMap` on every principal (finite) element `σ⊥`. The recursion peels *one* token at a time,
 matching `out`'s own case split: a leading `0` recurses via `hg.zero` (`Basic decreasing case`);

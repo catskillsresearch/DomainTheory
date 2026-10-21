@@ -15,51 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem predSet_iterate_expTag_isScottContinuous (k : ℕ) :
     IsScottContinuous (fun e => predSet^[k] (expTag e)) := by
   induction k with

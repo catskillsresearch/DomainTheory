@@ -20,11 +20,6 @@ open NeighborhoodSystem
 variable {α : Type*}
 
 
-
-
-
-
-
 /-- **Exercise 8.25 (Scott 1981, PRG-19), first step: `𝒟^∞ × 𝒟^∞ ≅ 𝒟^∞`**, for any `𝒟`. Specialized
 to `𝒟 = 𝒰` this is Scott's `𝒰^∞ × 𝒰^∞ ≅ 𝒰^∞`. -/
 theorem pow_prod_isomorphic (V : NeighborhoodSystem α) :

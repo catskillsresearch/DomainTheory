@@ -16,21 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.curryC_app2
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem curryC_app3 (u x y : Pomega) :
     funOf (funOf (funOf curryC u) x) y = funOf u (pairSeq x y) := by
   rw [curryC_app2]

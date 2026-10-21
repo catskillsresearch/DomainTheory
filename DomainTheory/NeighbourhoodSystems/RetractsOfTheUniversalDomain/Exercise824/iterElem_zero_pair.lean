@@ -20,15 +20,6 @@ namespace Exercise824
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
 theorem iterElem_zero_pair (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     (paired s t).iterElem 0 = (PairSpace (E := E)).bot := by
   show (idMap (PairSpace (E := E))).toElementMap (PairSpace (E := E)).bot

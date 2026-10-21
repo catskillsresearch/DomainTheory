@@ -21,35 +21,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem repeatWord_succ (w : List Bool) (n : ℕ) :
     repeatWord w (n + 1) = w ++ repeatWord w n := rfl
 

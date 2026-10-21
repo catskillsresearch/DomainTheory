@@ -29,36 +29,9 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
-
-
-
-
-
 
 
 /-- Recursion equation for the approximant values: `S^{m+1}(⊥)` unfolds one search step using

@@ -18,24 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise317
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 3.17 — `f` is a section of `g`.** `f ∘ g ⊑ I_{T^∞}`. -/
 theorem fg_le_id : f.comp g ≤ idMap (iterSys T) := by
   intro W Z

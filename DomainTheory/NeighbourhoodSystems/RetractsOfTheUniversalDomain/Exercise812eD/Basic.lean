@@ -51,12 +51,6 @@ open Domain.Recursive NeighborhoodSystem
 /-! ## `U_isComputableDiff` -/
 
 
-
-
-
-
-
-
 /-! ## `B812e`, `splitX812e`, `isComputableSplit_812e` — the exercise's literal target
 
 Mechanical given `(e)(d)(i)`–`(ii)` and `U_isComputableDiff` above: `B812e` is a direct
@@ -64,7 +58,6 @@ field-by-field assembly from `SplitV.lean`'s already-`Pass` declarations; `split
 `isComputableSplit_812e` are one-line instantiations of `Exercise812e.lean`'s generic
 `splitFromBisection`/`isComputableSplit_ofBisection`, fed `U`'s already-`Pass`
 `IsPositive`/`NoMinimal`/`DiffClosed` facts (`Exercise812c.lean`). -/
-
 
 
 end DomainTheory.NeighbourhoodSystems

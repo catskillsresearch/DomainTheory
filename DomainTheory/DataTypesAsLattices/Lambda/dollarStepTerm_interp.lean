@@ -14,58 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem dollarStepTerm_interp :
     interp dollarStepTerm (fun _ => botElem) = graph termDollarStep := by
   unfold dollarStepTerm termDollarStep termDollarStepBody termShift interp

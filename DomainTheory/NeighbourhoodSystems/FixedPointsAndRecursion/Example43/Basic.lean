@@ -67,17 +67,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 /-! ### The neighbourhood system `N`. -/
 
 
-
-
-
-
-
-
-
-
-
 /-! ### The total elements `n̂`. -/
-
 
 
 /-! ### The strict lifting combinator `n̂ ↦ val n`, `⊥ ↦ ⊥`. -/
@@ -89,10 +79,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 /-! ### The predecessor map `pred : N → N`. -/
 
 
-
 /-! ### The test map `zero : N → T`. -/
-
-
 
 
 /-! ### `pred` undoes `succ`. -/

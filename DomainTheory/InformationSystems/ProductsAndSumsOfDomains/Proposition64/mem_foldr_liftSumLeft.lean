@@ -14,8 +14,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -25,8 +23,6 @@ namespace InfoSys
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 
 variable (A : InfoSys α) (B : InfoSys β)
-
-set_option linter.unusedSectionVars false
 
 theorem mem_foldr_liftSumLeft (s : Multiset α) (p : SumToken α β) :
     p ∈ Multiset.foldr (fun x : α => insert (SumToken.left (β := β) x))

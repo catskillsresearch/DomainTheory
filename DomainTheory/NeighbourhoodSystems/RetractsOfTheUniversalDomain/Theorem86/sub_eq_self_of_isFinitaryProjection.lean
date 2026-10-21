@@ -24,8 +24,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 /-- **The hard half of Theorem 8.6's range characterization, now unblocked by Theorem 8.5.** Every
 finitary projection is a fixed point of `sub`: `⊇` is `sub_le`; `⊆` unwinds `X f Z` via
 `rel_iff_mem_principal` into `Z ∈ f(↑X)`, and Theorem 8.5's formula

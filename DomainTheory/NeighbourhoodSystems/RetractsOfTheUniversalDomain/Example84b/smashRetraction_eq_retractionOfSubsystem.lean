@@ -25,14 +25,7 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
 section Smash
-
-
-
-
 
 
 /-- **Scott's `smash` combinator equals Proposition 8.2's canonical subsystem retraction.** Both

@@ -18,15 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise722
 
 
-
-
-
-
-
-
-
-
-
 /-- **Soundness.** A *non-empty* denotation is a member of `S`. (Non-emptiness is needed only for the
 intersection generator, where `InS.inter` demands it; it propagates down to subterms because
 `concat`/`∩` are non-empty only when their parts are.) -/

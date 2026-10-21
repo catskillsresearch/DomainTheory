@@ -28,23 +28,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1972, Proposition 4.1 (injectivity step).** Coordinatewise maximal extensions
 assemble to an extension into the inverse limit. Lemma 3.9 is exactly what supplies compatibility
 of adjacent coordinates. -/

@@ -21,44 +21,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Equality between `presentedIntervals`-coded sets is recursively decidable**, from
 `recDecidable₂_presentedIntervals_subset` in both directions (`Set.Subset.antisymm_iff`). -/
 theorem recDecidable₂_presentedIntervals_eq :

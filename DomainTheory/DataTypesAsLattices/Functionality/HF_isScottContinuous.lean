@@ -15,51 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem HF_isScottContinuous : IsScottContinuous HF :=
   graph_const_isScottContinuous
     (fun H e => graph (fun t => Hstep H e t))

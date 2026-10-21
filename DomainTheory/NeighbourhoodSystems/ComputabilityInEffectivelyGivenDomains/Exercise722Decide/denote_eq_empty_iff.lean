@@ -23,18 +23,6 @@ open Sum Set
 variable {σ₁ σ₂ : Type}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 variable {σ : Type}
 
 /-- **Definition 7.1 relation (ii) as a reachability problem.** `denote e` is empty iff no accept

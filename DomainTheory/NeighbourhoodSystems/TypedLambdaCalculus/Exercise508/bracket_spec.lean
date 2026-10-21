@@ -26,21 +26,6 @@ variable {αx αa αb : Type*}
   {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Combinatory completeness (Exercise 5.8, Scott 1981, PRG-19).** The variable-free combinator
 expression `bracket t` denotes exactly the function `λx.t`: applied to any `x`, it yields `t.denote x`.
 

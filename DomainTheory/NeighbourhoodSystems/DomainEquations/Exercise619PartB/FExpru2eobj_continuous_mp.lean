@@ -24,22 +24,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise510
 namespace Exercise619
 
 
-
-
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- Forward direction of continuity on domains: a neighbourhood of `T(U)` is a neighbourhood of some

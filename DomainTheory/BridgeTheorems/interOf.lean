@@ -14,8 +14,6 @@ public import DomainTheory.BridgeTheorems.NbhdBasis
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.NeighbourhoodSystems

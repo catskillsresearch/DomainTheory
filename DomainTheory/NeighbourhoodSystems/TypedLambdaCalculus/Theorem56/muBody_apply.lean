@@ -22,16 +22,6 @@ open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap pred
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 
 
-
-
-
-
-
-
-
-
-
-
 section Mu
 
 variable (f : ApproximableMap (prod N N) N)

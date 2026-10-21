@@ -29,22 +29,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `succ : Vector ℕ 1 → ℕ`, `v ↦ v.head + 1`. -/
 theorem lamDef_succ : LamDef (strictGuardN 1 (succMap.comp (projN N 0)))
     ((fun v => Nat.succ v.head : List.Vector ℕ 1 → ℕ) : List.Vector ℕ 1 →. ℕ) :=

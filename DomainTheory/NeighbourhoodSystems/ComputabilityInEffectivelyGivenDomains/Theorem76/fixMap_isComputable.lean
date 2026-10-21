@@ -23,15 +23,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 
-
-
-
-
 variable (P : ComputablePresentation V)
-
-
-
-
 
 
 /-- **Theorem 7.6 (Scott 1981, PRG-19) — `fix` is computable (choice-free).** For any effectively

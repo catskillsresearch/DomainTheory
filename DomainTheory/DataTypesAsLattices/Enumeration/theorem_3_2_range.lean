@@ -21,40 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 3.2.** `RE` is exactly the range of `val`. -/
 theorem theorem_3_2_range : RE = Set.range valNat := by
   ext u

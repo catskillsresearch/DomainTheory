@@ -14,7 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Rec
 namespace Domain.Recursive
 
 
-
 theorem primrec_consStep2 : Nat.Primrec consStep2 := by
   have h1 : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
   have h21 : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=

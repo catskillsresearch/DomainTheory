@@ -24,16 +24,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **Second equation of the double fixed point:** `gTok Γ_D Γ_E = Γ_E`, i.e. `tok(D + E) = Γ_E`. -/
 theorem gTok_GammaD_GammaE : gTok GammaD GammaE = GammaE := by
   apply Set.Subset.antisymm

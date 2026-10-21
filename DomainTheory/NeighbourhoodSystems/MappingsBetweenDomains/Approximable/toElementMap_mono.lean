@@ -20,12 +20,9 @@ open NeighborhoodSystem
 variable {α β γ δ : Type*}
 
 
-
 namespace ApproximableMap
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-
 
 
 /-- **Proposition 2.2(iii) (Scott 1981, PRG-19).** Approximable maps are monotone on elements:

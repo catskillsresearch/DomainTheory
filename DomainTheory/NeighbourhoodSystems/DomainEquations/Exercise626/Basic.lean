@@ -90,22 +90,10 @@ variable {D : NeighborhoodSystem Str}
 /-! ## The lifted system `𝒟_⊥` over `{0,1}*` -/
 
 
-
-
-
-
-
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 
-
 /-! ## Elements: `|𝒟_⊥| ≅ |𝒟|_⊥` -/
-
-
-
-
 
 
 /-! ## Functoriality: `(·)_⊥` is a strict functor -/
@@ -123,33 +111,12 @@ shared bottom `{Λ} ∪ 0(liftTokMaster 𝒟) ∪ 1(liftTokMaster ℰ)`. The sep
 variable {D E : ScottSys}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ## `𝒟_⊥ ⊗ ℰ_⊥ ≅ᴰ (𝒟 × ℰ)_⊥` — the answer to Scott's `??`
 
 The smash of the two lifts has proper neighbourhoods `{Λ} ∪ 0(0X') ∪ 1(0Y')` (i.e.
 `prodTokNbhd (0X') (0Y')`, with `X' ∈ 𝒟`, `Y' ∈ ℰ`). The lift of the product has proper
 neighbourhoods `0(prodTokNbhd X' Y')`. The element iso transports one rectangle presentation to the
 other. Unlike the sum there are *no* cross-tag intersections, so the proof is purely "rectangular". -/
-
-
-
-
-
-
-
-
-
 
 
 end Exercise619

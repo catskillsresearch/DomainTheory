@@ -21,15 +21,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UCon
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem UCon_subset {u v : Finset UToken}
     (hu : UCon u) (hv : v ⊆ u) : UCon v :=

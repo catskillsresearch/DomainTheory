@@ -85,48 +85,10 @@ open Domain.Recursive NeighborhoodSystem
 /-! ### List-level canonicalization -/
 
 
-
-
-
-
-
-
-
 /-! ### Code-level canonicalization: `canonCode` -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Assembling `U.ComputablePresentation` -/
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

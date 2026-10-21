@@ -21,20 +21,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Trichotomy for a sum-element: it reaches the left copy, or the right copy, or is `⊥`. -/
 theorem sum_element_trichotomy (x : (sum V₀ V₁ h₀ h₁).Element) :
     (∃ X, V₀.mem X ∧ x.mem (inj₀ X)) ∨ (∃ Y, V₁.mem Y ∧ x.mem (inj₁ Y)) ∨

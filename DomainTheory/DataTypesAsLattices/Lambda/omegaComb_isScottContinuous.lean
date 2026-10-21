@@ -16,27 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem omegaComb_isScottContinuous : IsScottContinuous omegaComb :=
   graph_const_isScottContinuous
     (fun u x => funOf u (funOf x x))

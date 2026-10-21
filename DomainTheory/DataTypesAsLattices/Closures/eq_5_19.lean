@@ -19,36 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vapply_graph_isClosure
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem eq_5_19 (a : Pomega) :
     funOf Vcomb (funOf Vcomb a) = funOf Vcomb a := by
   have hcl := Vapply_graph_isClosure a

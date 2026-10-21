@@ -14,13 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
 theorem const_isScottContinuous (c : Pomega) :
     IsScottContinuous (fun _ : Pomega => c) := by
   intro x

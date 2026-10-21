@@ -14,8 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise515.
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise515
 
 open Pointwise

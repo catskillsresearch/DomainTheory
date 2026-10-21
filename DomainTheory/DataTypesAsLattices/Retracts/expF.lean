@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (4.44).** Abstract-syntax functor. -/

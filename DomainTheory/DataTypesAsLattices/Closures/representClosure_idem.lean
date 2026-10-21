@@ -17,27 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representClosure_expansi
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem representClosure_idem {α : Type u} [CompleteLattice α]
     (D : CountablyAlgebraic α) (x : Pomega) :
     representClosure D (representClosure D x) = representClosure D x := by

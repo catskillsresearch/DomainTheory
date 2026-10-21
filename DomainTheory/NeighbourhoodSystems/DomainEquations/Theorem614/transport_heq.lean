@@ -25,49 +25,6 @@ namespace Theorem614
 variable {α : Type w}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Transport of a `Hom X X` along an object equality is heterogeneously equal to itself. -/
 theorem transport_heq {Obj : Type*} [Category Obj] {X Y : Obj} (e : X = Y)
     (f : (X ⟶ X)) : HEq (e ▸ f : (Y ⟶ Y)) f := by

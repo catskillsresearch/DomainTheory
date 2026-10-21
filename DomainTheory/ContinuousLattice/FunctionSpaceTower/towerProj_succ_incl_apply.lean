@@ -17,28 +17,8 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.Basic
 
 namespace DomainTheory.ContinuousLattice
 
-universe u
-
 
 attribute [instance] CLat.str
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 section Tower

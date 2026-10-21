@@ -24,18 +24,8 @@ namespace InfoSys
 
 open ApproximableMap
 
-set_option linter.unusedSectionVars false
-
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
-
-
-
-
-
-
-
-
 
 
 theorem compOp_toElement (g : ApproximableMap B C) (f : ApproximableMap A B) :

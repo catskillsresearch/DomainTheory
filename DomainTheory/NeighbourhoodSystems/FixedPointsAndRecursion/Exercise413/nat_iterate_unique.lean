@@ -21,11 +21,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace NeighborhoodSystem
 
 
-
-
-
-
-
 /-- **Exercise 4.13(4) (Scott 1981, PRG-19).** Specializing 4.13(3) to the structured set
 `⟨ℕ, 0, ⁺⟩`: the *unique* function `s` with `s(0) = 0` and `s(n⁺) = (s n)⁺` is the identity. This
 is the iteration `n ↦ fⁿ` underlying Theorem 4.1, now justified without circularity. -/

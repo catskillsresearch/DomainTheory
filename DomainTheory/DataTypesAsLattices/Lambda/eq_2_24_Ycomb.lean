@@ -17,47 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_24_Y
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.24).** `$ = Y(step)` as a combinator application. -/
 theorem eq_2_24_Ycomb : funOf Ycomb (graph dollarStep) = dollarC := by
   rw [theorem_2_5 dollarStep_isScottContinuous, eq_2_24_Y]

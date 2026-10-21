@@ -21,7 +21,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
 /-- **`V` is closed under set-difference of two of its own neighbourhoods** (or the difference is
 empty). -/
 theorem V_diff_mem {X Y : Set ℕ} (hX : V.mem X) (hY : V.mem Y) : X \ Y = ∅ ∨ V.mem (X \ Y) := by

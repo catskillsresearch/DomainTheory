@@ -23,9 +23,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
-
 /-- The infimum of a Scott-open neighbourhood of `y` is way below `y`: the open set is itself
 the required witness. Scott uses this in moving between Definition 2.3 and Proposition 2.4. -/
 theorem sInf_wayBelow {U : Set D} (hU : ScottOpen U) {y : D} (hy : y ∈ U) :

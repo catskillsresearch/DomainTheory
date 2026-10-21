@@ -13,8 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Nes
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 /-- **Factoid 1.4a (Scott 1981, PRG-19).** "In these systems two neighbourhoods are either

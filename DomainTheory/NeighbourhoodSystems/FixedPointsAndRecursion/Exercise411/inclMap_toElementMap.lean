@@ -21,8 +21,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
 /-- The inclusion's elementwise action is `embed a` (Exercise 4.10). -/
 theorem inclMap_toElementMap (a : V.Element) (g : (relSystem a).Element) :
     (inclMap a).toElementMap g = embed a g := by

@@ -19,35 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_empty
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxPlus_app_bot (a b : Pomega) :
     funOf (boxPlus a b) botElem = botElem :=
   boxPlus_app_empty squareFst_bot squareSnd_bot

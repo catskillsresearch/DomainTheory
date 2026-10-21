@@ -21,14 +21,9 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 section Algebraic
 
 variable {γ : Type u} {V : NeighborhoodSystem γ}
-
-
-
 
 
 /-- **Principal elements are compact**: if `↑X ⊑ ⋃ᵢ dᵢ` for a directed family, then already

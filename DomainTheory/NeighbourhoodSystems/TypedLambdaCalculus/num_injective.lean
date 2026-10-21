@@ -23,8 +23,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.num_lt_tri_s
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-- **The function is one-one.** The diagonal `s = n+m` is recovered as the unique `s` with

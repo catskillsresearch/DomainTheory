@@ -15,31 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z_finite_bound
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Z_finite_no_tag (p q m k : ℕ) :
     pair (max p q + 1) k ∉ Z m (e p) (e q) := by
   intro hk

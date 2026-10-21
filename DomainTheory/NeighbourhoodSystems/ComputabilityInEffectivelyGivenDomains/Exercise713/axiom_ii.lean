@@ -21,7 +21,6 @@ namespace InclStructure
 variable (I : InclStructure)
 
 
-
 /-- **Axiom (ii).** `INCL` is transitive. -/
 theorem axiom_ii {n m k : ℕ} (h1 : I.INCL n m) (h2 : I.INCL m k) : I.INCL n k := I.incl_trans h1 h2
 

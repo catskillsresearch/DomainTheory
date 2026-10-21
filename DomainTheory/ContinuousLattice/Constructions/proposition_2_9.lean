@@ -24,9 +24,6 @@ open Topology Set
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
 /-- **Scott 1972, Proposition 2.9 (full statement).** The product of a family of continuous lattices
 is again a continuous lattice (`proposition_2_9_a`) whose Scott topology agrees with the product
 topology (`proposition_2_9_b`). -/

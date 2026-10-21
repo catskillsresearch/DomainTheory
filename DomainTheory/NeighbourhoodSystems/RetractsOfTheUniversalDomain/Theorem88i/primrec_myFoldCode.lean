@@ -23,14 +23,9 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
 
-
-
-
 variable {P qChar cons}
 
 variable (P qChar cons)
-
-
 
 
 /-- **`myFoldCode` is primitive recursive** (Part 2's headline `Nat.Primrec` claim). -/

@@ -19,8 +19,6 @@ variable {α β γ δ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
 /-- **Two-variable abstraction.** `λx, y. τ` is `curry`, characterised by `(curry g)(x)(y) = g⟨x, y⟩`.
 It binds one variable `x` and returns the one-variable function `λy. g⟨x, y⟩`. -/
 theorem lam_two_vars (g : ApproximableMap (prod V₀ V₁) V₂) (x : V₀.Element) (y : V₁.Element) :

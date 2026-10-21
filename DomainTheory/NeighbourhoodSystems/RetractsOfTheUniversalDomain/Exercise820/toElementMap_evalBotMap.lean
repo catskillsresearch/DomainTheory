@@ -19,13 +19,9 @@ open NeighborhoodSystem ApproximableMap
 universe u v
 
 
-
-
 section FunSpace
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
-
 
 
 theorem toElementMap_evalBotMap (φ : (funSpace A B).Element) :

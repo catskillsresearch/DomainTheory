@@ -41,11 +41,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.c
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -54,6 +50,8 @@ variable {A : Type} [DecidableEq A]
 section Iso
 
 variable {A : Type} [DecidableEq A] [Inhabited A]
+
+omit [Inhabited A] in
 
 theorem consMapN_not_mem_nil {a : A} {z : (Cn A).Element} :
     ¬ ((consMapN a).toElementMap z).mem ({[]} : Set (Strn A)) := by

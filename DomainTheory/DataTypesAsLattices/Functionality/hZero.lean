@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.inleftC
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def hZero : Pomega := funOf inleftC (ofNat 0)

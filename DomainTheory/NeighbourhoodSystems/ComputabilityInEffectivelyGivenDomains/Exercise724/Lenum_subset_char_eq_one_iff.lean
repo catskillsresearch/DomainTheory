@@ -20,52 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise724
 open NeighborhoodSystem Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Lenum_subset_char_eq_one_iff (n m : ℕ) :
     Lenum n ⊆ Lenum m ↔ LenumSubsetChar (Nat.pair n m) = 1 := by
   unfold LenumSubsetChar

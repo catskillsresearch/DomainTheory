@@ -20,8 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.prod
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Example62 ExampleB

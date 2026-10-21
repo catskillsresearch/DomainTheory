@@ -22,7 +22,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace NeighborhoodSystem
 
 
-
 /-- `optimalFix S ⊑ ⋂S`. -/
 theorem optimalFix_le_sInf (f : V.Element → V.Element) (hf : Monotone f) (S : Set V.Element)
     (hS : S.Nonempty) (hfix : ∀ s ∈ S, f s = s) :

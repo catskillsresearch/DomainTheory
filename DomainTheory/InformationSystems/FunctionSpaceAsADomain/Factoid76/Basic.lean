@@ -35,8 +35,6 @@ namespace InfoSys
 
 open ApproximableMap
 
-set_option linter.unusedSectionVars false
-
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
@@ -46,7 +44,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 
 /-! ## `pair : (C → A) × (C → B) → (C → A × B)` -/
-
 
 
 /-! ## `comp : (B → C) × (A → B) → (A → C)` -/

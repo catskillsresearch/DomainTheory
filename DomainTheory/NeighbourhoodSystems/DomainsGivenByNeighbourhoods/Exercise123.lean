@@ -95,17 +95,6 @@ open NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α) (enum : ℕ → Set α) [DecidablePred V.mem]
 
 
-
-
-
-
-
-
-
-
-
-
-
 variable (henum : ∀ n, V.mem (enum n))
 include henum
 
@@ -118,7 +107,6 @@ theorem Y_mem : ∀ n, V.mem (Y V enum n) := by
     by_cases h : cond V enum n
     · rw [Y_succ_pos V enum h]; exact henum (n + 1)
     · rw [Y_succ_neg V enum h]; exact ih
-
 
 
 /-- **Exercise 1.23 — the hint.** For every `n`, the prefix `Y₀, …, Y_{n-1}` is consistent in

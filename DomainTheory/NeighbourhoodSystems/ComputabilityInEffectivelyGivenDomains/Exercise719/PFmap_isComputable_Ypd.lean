@@ -25,9 +25,6 @@ variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
-
-
 /-- **Exercise 7.19 (Scott's first question) — `ℙf` is computable when `f` is.** Stated at the level
 of the `ℙ𝒟`-codes of Proposition 7.10 (`Y_c = ⋃_{a∈dl c} ↓Xₐ`): the relation `(ℙf).rel (Y_c) (Y_d)`
 is recursively enumerable in `(c, d)`. -/

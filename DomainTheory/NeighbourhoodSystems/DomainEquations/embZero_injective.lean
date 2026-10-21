@@ -17,8 +17,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.embZero_subset
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem

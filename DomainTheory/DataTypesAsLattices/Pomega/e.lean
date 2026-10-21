@@ -17,8 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.mem_topElem
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, §1.** Finite set coded by the binary expansion of `n`. -/

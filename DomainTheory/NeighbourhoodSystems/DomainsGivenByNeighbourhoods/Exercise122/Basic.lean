@@ -64,7 +64,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
 /-- `[X ∩ Y] ⊆ [X]` whenever `X ∈ 𝒟`: a filter containing `X ∩ Y` contains `X` (upward closure).
 This (with the symmetric version) is the closure of the basic opens under finite intersection,
 i.e. `[X] ∩ [Y] = [X ∩ Y]`, the base condition behind the topology. -/

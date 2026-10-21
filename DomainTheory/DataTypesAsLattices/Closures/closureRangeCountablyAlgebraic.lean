@@ -15,8 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.fixed_eq_sSup_compacts
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Theorem 5.1 packaged as a concrete countably algebraic lattice. -/

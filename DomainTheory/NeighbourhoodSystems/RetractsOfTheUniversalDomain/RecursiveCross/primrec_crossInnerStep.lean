@@ -14,13 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Rec
 namespace Domain.Recursive
 
 
-
-
-
-
-
-
-
 theorem primrec_crossInnerStep {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
     Nat.Primrec (crossInnerStep bop) := by
   have hy : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left

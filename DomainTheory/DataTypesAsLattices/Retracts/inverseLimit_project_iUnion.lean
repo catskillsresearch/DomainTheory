@@ -20,8 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_ear
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Every stage projection of the union of a coherent sequence is its

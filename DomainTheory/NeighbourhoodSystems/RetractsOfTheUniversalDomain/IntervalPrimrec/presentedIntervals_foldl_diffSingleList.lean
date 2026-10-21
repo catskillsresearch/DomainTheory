@@ -22,23 +22,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem presentedIntervals_foldl_diffSingleList (L2 : List (ℚ × ℚ)) :
     ∀ acc : List (ℚ × ℚ),
       presentedIntervals (L2.foldl diffSingleList acc) = presentedIntervals acc \ presentedIntervals L2 := by

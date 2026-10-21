@@ -19,8 +19,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 /-- Finite `e j` is r.e. Named `of_e` so it does not shadow `e`. -/
 theorem IsRE.of_e (j : ℕ) : IsRE (e j) := by
   let s := (Finset.range (j + 1)).filter (fun k => j.testBit k)

@@ -16,17 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
 theorem qDen_pos (c : ℕ) : 0 < qDen c := Nat.succ_pos _
 
 end DomainTheory.NeighbourhoodSystems

@@ -20,17 +20,9 @@ open NeighborhoodSystem
 variable {α β γ δ : Type*}
 
 
-
 namespace ApproximableMap
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-
-
-
-
-
-
 
 
 /-- **Theorem 2.5 — left identity law.** `I_{D₁} ∘ f = f`. (`→`: a witness `Y ⊆ Z` widens the output

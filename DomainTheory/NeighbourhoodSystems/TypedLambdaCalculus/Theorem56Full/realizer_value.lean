@@ -27,22 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The value a realiser takes on a total argument is total-or-`⊥` (arg-like). -/
 theorem realizer_value {n : ℕ} {φ : ApproximableMap 𝒩 N} {f : List.Vector ℕ n →. ℕ}
     (h : LamDef φ f) (v : List.Vector ℕ n) :

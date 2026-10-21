@@ -24,19 +24,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise811
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.11 (second part, retraction).** `a ∘ a = a`. -/
 theorem isRetraction_a : IsRetraction a := by
   apply ApproximableMap.ext

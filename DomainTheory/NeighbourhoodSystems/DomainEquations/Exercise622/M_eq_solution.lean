@@ -20,13 +20,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise619
 
 
-
-
-
-
-
-
-
 /-- **`M ≅ {{Λ}} + M` has a solution** (the lazy naturals). -/
 theorem M_eq_solution :
     ∃ (Γ : Set Str) (h : Γ.Nonempty),

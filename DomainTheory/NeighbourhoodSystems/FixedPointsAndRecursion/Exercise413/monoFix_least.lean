@@ -22,9 +22,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace NeighborhoodSystem
 
 
-
-
-
 /-- **Exercise 4.13(1) (Scott 1981, PRG-19).** `monoFix f ha` is the *least* fixed point: any `y`
 with `f(y) = y` satisfies `b ⊑ y`. -/
 theorem monoFix_least (f : V.Element → V.Element) {a : V.Element} (ha : f a ≤ a)

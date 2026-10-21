@@ -78,19 +78,14 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 /-! ### Finite meets of `idxSet`s, at the `Set` level -/
 
 
-
-
 /-! ### The meet-fold: one step, threading an `{ok, idx}`-coded accumulator -/
 
 variable (cons : ℕ → ℕ)
 
 
-
-
 /-! ### `DAtom` emptiness, reduced to the meet-fold witness and a bounded negative check -/
 
 /-! ### Code-level `meetFold`, and its primitive recursivity -/
-
 
 
 /-! ### The full decision procedure and its decidability -/

@@ -19,15 +19,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.Basi
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem mem_foldr_uForget (s : Multiset UToken) (t : VToken) :
     t ∈ Multiset.foldr uForgetInsert ∅ s ↔ ∃ p ∈ s, p.val = t := by

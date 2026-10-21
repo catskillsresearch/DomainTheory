@@ -23,14 +23,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
 /-- **Exercise 8.15, first half.** If `D` is effectively given, there is an effectively given
 neighbourhood system (`SubD P`, on tokens `List ℕ`) whose elements are order-isomorphic to
 `{D' ∣ D' ◁ D}` — a *direct*, choice-free construction (Subgoals 1–4), unlike the classical route

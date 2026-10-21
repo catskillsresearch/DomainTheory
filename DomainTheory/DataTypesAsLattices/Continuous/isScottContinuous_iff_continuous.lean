@@ -25,12 +25,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
-
-
 /-- Scott continuity coincides with topological continuity `Pω → Pω`. -/
 theorem isScottContinuous_iff_continuous (f : Pomega → Pomega) :
     IsScottContinuous f ↔ Continuous f := by

@@ -17,8 +17,6 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise417
 
 open Pointwise

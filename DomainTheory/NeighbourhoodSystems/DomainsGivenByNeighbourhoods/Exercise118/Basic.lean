@@ -47,12 +47,9 @@ set_option linter.unusedSimpArgs false
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
 namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
-
-
 
 
 /-! ### Finite consistency. -/
@@ -70,7 +67,6 @@ end NeighborhoodSystem
 
 
 namespace triSys
-
 
 
 end triSys

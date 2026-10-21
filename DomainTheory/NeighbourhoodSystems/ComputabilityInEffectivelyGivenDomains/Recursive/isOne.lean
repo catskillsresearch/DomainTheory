@@ -26,8 +26,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- Indicator of `v = 1`, as a `{0,1}`-valued primitive-recursive function. -/

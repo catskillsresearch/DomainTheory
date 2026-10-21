@@ -24,27 +24,7 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
 namespace Sub8_6
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem subFilter_subFilter (φ : (funSpace E E).Element) :

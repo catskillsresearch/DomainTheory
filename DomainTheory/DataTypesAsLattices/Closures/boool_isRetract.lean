@@ -18,39 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boool_idem
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boool_isRetract : IsRetract boool := by
   apply graph_ext
   intro u

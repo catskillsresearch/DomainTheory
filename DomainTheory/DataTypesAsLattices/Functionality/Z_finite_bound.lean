@@ -14,31 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Z_finite_bound (p q m : ℕ) :
     ∀ k ∈ Z m (e p) (e q), k ≤ max p q := by
   induction m with

@@ -28,8 +28,6 @@ universe u
 variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 
 
-
-
 /-- Scott's specialization order is the reverse of Mathlib's `Specializes` convention. -/
 theorem specializationLe_iff_specializes {x y : X} :
     SpecializationLe x y ↔ y ⤳ x :=

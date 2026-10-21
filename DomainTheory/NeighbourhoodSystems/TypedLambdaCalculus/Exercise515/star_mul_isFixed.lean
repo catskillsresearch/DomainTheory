@@ -26,10 +26,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
-
 /-- `z*·v` is a fixed point of `w ↦ z·w ∪ v`: the star identity `z·(z*·v) ∪ v = z*·v`. -/
 theorem star_mul_isFixed (z v : Set S) : z * (star z * v) ∪ v = star z * v := by
   conv_rhs => rw [star_eq z]

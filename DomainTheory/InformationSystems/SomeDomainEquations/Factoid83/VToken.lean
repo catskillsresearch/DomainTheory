@@ -13,8 +13,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 /-- Data objects of `V`: bottom `Δ`, top `∇`, and product left/right copies. -/
 inductive VToken where
   | bot : VToken

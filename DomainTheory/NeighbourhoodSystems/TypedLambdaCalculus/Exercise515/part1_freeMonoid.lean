@@ -24,13 +24,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
-
-
-
-
 /-- The free semigroup `{0,1}*` of the exercise. Part (1) holds here as a special case. -/
 theorem part1_freeMonoid (e e' : FreeMonoid Bool) :
     lfpSet (fun w => ({e} : Set (FreeMonoid Bool)) * w ∪ {e'})

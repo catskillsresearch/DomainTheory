@@ -16,26 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom_bot
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem lfpAbove_bot (f : Pomega → Pomega) : lfpAbove f botElem = fix f := by
   simp [lfpAbove, fix, iterateFrom_bot]
 

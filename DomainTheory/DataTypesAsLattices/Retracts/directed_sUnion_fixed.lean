@@ -16,41 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem directed_sUnion_fixed {f : Pomega → Pomega} (hf : IsScottContinuous f)
     {A : Set (Fixpoints f)} (hA : IsDirectedSet A) :
     ⋃₀ (Fixpoints.vals A) ∈ Fixpoints f := by

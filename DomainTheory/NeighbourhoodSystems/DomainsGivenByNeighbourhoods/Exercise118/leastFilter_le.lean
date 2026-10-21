@@ -18,18 +18,9 @@ set_option linter.unusedSimpArgs false
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
 namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 1.18 — `leastFilter` is least.** Any filter `z` with `C ⊆ z` contains

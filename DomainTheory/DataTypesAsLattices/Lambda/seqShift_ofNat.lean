@@ -15,44 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqShift_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seqShift_ofNat (u : Pomega) (i : ℕ) :
     funOf (seqShift u) (ofNat i) = funOf u (ofNat (i + 1)) := by
   rw [seqShift_app]

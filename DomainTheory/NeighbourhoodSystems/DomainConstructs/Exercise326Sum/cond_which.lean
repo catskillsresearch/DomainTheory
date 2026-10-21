@@ -27,20 +27,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 3.26 (Scott 1981, PRG-19).** Scott's identity for the discriminator:
 `cond(which x, in₀(out₀ x), in₁(out₁ x)) = x` for every `x ∈ |D₀ + D₁|`. -/
 theorem cond_which (x : (sum V₀ V₁ h₀ h₁).Element) :

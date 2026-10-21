@@ -43,7 +43,6 @@ namespace DomainTheory.NeighbourhoodSystems
 variable {α : Type*}
 
 
-
 namespace Subsystem
 end Subsystem
 end DomainTheory.NeighbourhoodSystems

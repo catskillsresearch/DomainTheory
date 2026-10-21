@@ -18,8 +18,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
 theorem proj₁_comp_diag : (proj₁ V V).comp (diag V) = idMap V :=
   proj₁_comp_paired (idMap V) (idMap V)
 

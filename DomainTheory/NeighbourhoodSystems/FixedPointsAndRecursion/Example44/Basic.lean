@@ -60,24 +60,13 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exampl
 /-! ### Prepending a bit: set-level lemmas (reused from Example 1.B). -/
 
 
-
 /-! ### The neighbourhood system `C`. -/
-
-
-
-
-
-
-
-
 
 
 /-! ### Elements of `C`: `σ` (total) and `σ⊥` (partial). -/
 
 
-
 /-! ### The successor maps `x ↦ bx`. -/
-
 
 
 /-! ### A fixed-point element: the alternating sequence `a = 01a`. -/

@@ -21,8 +21,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.ipro
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem

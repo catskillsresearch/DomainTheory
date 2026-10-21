@@ -10,7 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Endofunctor
 
 @[expose] public section
 
-universe u v w
+universe u
 
 namespace DomainTheory.NeighbourhoodSystems
 

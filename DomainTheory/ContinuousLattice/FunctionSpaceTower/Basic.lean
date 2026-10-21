@@ -83,12 +83,6 @@ universe u
 attribute [instance] CLat.str
 
 
-
-
-
-
-
-
 /-! ### Conjugation used in Scott's §4 limit formulas
 
 Theorem 4.4 uses maps of the form `f ↦ post ∘ f ∘ pre`.  We bundle this operation as a Scott map;
@@ -102,19 +96,7 @@ open Set
 variable {Y Z W : Type u} [CompleteLattice Y] [CompleteLattice Z] [CompleteLattice W]
 
 
-
-
-
 end Conj
-
-
-
-
-
-
-
-
-
 
 
 section Tower
@@ -145,15 +127,6 @@ variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 
-
-
-
-
-
-
-
-
-
 /-! ### Theorem 4.4(b): `j_∞ ∘ i_∞ = id` on `D_∞`
 
 Scott's calculation (~lines 1290–1294): expand `j_∞(i_∞(x))` as a double sup, collapse the monotone
@@ -166,15 +139,6 @@ variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 
-
-
-
-
-
-
-
-
-
 /-! ### Theorem 4.4(c): `i_∞ ∘ j_∞ = id` on `[D_∞ → D_∞]`
 
 This is the converse half (Scott ~lines 1322–1335). The restrictions
@@ -183,7 +147,6 @@ This is the converse half (Scott ~lines 1322–1335). The restrictions
 `i_∞(j_∞(f))` then yields the approximation `⨆ₙ rₙ ∘ f ∘ rₙ` with `rₙ = i_{n∞} ∘ j_{∞n}`, and the
 functional equation `id = ⨆ₙ rₙ` (via `inverseLimit_eq_iSup`) plus continuity of `f` collapse this
 to `f`. -/
-
 
 
 end Thm44b
@@ -197,9 +160,6 @@ section Thm44d
 
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
-
-
-
 
 
 end Thm44d

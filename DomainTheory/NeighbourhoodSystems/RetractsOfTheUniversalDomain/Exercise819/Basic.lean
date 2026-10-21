@@ -80,8 +80,6 @@ section Prod
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 end Prod
 
 /-! ## Goal 2: `T ⊴ E` and `E → E ⊴ E` give `E + E ⊴ E` -/

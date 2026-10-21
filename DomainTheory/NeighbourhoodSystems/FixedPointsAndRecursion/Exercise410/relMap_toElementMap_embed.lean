@@ -20,19 +20,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The restriction `f'` has the same action as `f`: `embed a (f'(g)) = f(embed a g)`. -/
 theorem relMap_toElementMap_embed (f : ApproximableMap V V) {a : V.Element}
     (ha : f.toElementMap a = a) (g : (relSystem a).Element) :

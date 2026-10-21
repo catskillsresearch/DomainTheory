@@ -27,14 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
 theorem component_push_zero (x : N.Element) (s : 𝒩.Element) :
     component ((push N).toElementMap (pair x s)) 0 = x := by
   rw [← Exercise511.head_apply, Exercise511.head_push]

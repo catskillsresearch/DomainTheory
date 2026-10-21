@@ -24,13 +24,6 @@ open NeighborhoodSystem
 variable {α : Type*}
 
 
-
-
-
-
-
-
-
 /-- **First sentence of Theorem 8.8 (Scott 1981, PRG-19).** Scott's wording:
 "The system `𝒰` is universal in the sense that, for every countable neighbourhood
 system `𝒟`, we have `𝒟 ⊴ 𝒰`." This packages `theorem_8_8_a` as that relation. -/

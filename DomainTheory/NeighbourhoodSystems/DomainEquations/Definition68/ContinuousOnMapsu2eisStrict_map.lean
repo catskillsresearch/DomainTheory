@@ -16,11 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe u
-
-
-
-
 
 /-- A functor continuous on maps **preserves strictness** (so it genuinely lives on Scott's category
 of domains and strict maps): if `f` is strict then so is `T(f)`. This is automatic from the witnessing

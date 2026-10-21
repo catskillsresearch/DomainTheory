@@ -26,11 +26,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.j
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -45,6 +41,8 @@ variable {β : Type v} {γ : Type v}
 variable (V : NeighborhoodSystem β)
 
 variable {V}
+
+omit [DecidableEq A] in
 
 theorem masterSig_inter_jc {a : A} {X : Set β} (hX : V.mem X) :
     (masterSig V ∩ jc a X : Set (SigTok A β)) = jc a X :=

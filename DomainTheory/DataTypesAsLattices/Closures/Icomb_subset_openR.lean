@@ -20,39 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.openR_expansive
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Icomb_subset_openR : Icomb ⊆ openR :=
   Icomb_subset_graph.mpr fun n => by
     rw [← openR_app]

@@ -133,34 +133,10 @@ namespace Exercise822
 ### The doubling encoding `enc` and the marked encoding `encC`. -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### The image subsystem `D'` and `D' ◁ B`. -/
 
 
-
-
-
-
-
 /-! ### Subset facts for the image cones, translating `C`'s own cone/singleton facts. -/
-
-
-
 
 
 /-! ### The forward map `toD' : C.Element → D'.Element`. -/
@@ -172,12 +148,7 @@ namespace Exercise822
 /-! ### Membership characterizations, mirroring `Example62.toBB_mem_inj₀` etc. -/
 
 
-
-
-
-
 /-! ### The two halves are mutually inverse. -/
-
 
 
 /-! ### The domain isomorphism `C ≅ᴰ D'`, hence `C ⊴ B`. -/

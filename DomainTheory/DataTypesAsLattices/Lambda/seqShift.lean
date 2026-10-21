@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Shift of a sequence: `(λt. u_{t+1})`. -/

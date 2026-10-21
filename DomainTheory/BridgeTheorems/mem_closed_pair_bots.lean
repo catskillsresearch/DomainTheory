@@ -15,8 +15,6 @@ public import DomainTheory.BridgeTheorems.TreeEnt_pairR_bot_of_pairs
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

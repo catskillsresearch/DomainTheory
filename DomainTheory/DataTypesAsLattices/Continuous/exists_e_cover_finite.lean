@@ -21,10 +21,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
 /-- If each element of a finite set is realized at some `e n ⊆ x`, the
 bitwise-OR of those codes realizes the whole finite set (using monotonicity). -/
 theorem exists_e_cover_finite {f : Pomega → Pomega} (hf : IsScottContinuous f)

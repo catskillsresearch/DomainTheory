@@ -20,8 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.tri_succ
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 theorem tri_le_succ (k : ℕ) : tri k ≤ tri (k + 1) := by

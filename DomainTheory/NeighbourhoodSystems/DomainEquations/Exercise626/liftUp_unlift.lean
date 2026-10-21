@@ -22,22 +22,7 @@ namespace Exercise619
 variable {D : NeighborhoodSystem Str}
 
 
-
-
-
-
-
-
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
-
-
-
-
-
 
 
 theorem liftUp_unlift (z : (liftTok D hD).Element) (hz : z.mem (embBit false D.master)) :

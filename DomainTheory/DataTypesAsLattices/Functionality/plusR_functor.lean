@@ -16,25 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_13
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.5 (iv).** `⊕` is a covariant functor. -/
 theorem plusR_functor {a b a' b' f f' : Pomega}
     (_ha : IsRetract a) (_hb : IsRetract b)

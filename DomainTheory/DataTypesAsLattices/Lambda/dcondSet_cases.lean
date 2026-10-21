@@ -14,13 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
 theorem dcondSet_cases (z : Pomega) :
     (0 ∈ z ∧ ¬ ∃ k, k + 1 ∈ z) ∨
       (0 ∉ z ∧ ∃ k, k + 1 ∈ z) ∨

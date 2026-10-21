@@ -22,14 +22,7 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
 section Smash
-
-
-
-
 
 
 theorem isRetraction_smashRetraction : IsRetraction (smashRetraction (D := D) (E := E)) := by

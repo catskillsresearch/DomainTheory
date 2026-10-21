@@ -36,20 +36,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem exists_sexIdealIso :
     Nonempty (SexSys.Element ≃o
       Ideal (InfoSysToIdealCompletion.FiniteElement SexSys)) :=

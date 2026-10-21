@@ -12,8 +12,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.idE
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510

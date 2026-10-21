@@ -19,11 +19,9 @@ public import DomainTheory.ContinuousLattice.Injective.proposition_1_5
 @[expose] public section
 
 
-
 open Topology TopologicalSpace
 
-universe u v w
-
+universe u
 
 
 /-- **Scott 1972, Corollary 1.6.** Injective spaces are exactly retracts of powers of 𝕆. -/

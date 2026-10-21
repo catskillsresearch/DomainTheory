@@ -28,8 +28,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 @[simp] theorem selectFn_ite {c : Prop} [Decidable c] (a b : ℕ) :

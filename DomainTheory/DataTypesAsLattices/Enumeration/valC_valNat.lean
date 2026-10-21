@@ -21,39 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `valC` and the well-founded numerical evaluator denote the same
 enumeration on integer arguments. -/
 theorem valC_valNat (n : ℕ) : funOf valC (ofNat n) = valNat n := by

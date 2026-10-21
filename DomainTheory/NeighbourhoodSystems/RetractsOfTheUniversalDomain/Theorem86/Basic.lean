@@ -117,8 +117,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 /-! ## The finitary-projections-on-`E` ↔ subsystems-of-`E` order-isomorphism
 
 Needed below for `Sub8_6.isFinitary_subApprox` (Theorem 8.6(b)(ii)): the bijection `f ↦ fixedNbhd f`
@@ -127,8 +125,6 @@ Needed below for `Sub8_6.isFinitary_subApprox` (Theorem 8.6(b)(ii)): the bijecti
 order-isomorphism. Composed with Proposition 6.11's `subsystemReprIso` (the subsystems of `E`
 already form a genuine domain, from Lecture VI), this gives Theorem 8.6(b)(ii)'s witness directly —
 no new "domain of subsystems" construction is needed here. -/
-
-
 
 
 /-! ## Theorem 8.6, clause 2 (partial): `sub` is itself approximable, and a projection, on
@@ -153,19 +149,6 @@ and Lecture VI's Proposition 6.11.
 effectively given (Def 7.1 machinery), a separate prerequisite. -/
 
 namespace Sub8_6
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-! ### Theorem 8.6(b)(ii): `subApprox` is finitary

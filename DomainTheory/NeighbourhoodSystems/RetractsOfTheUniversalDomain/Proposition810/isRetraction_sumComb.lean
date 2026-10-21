@@ -29,8 +29,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 /-- **Proposition 8.10, `+`-case, retraction half.** -/
 theorem isRetraction_sumComb {a b : ApproximableMap U U} (ha : IsRetraction a)
     (hb : IsRetraction b) : IsRetraction (sumComb a b) := by

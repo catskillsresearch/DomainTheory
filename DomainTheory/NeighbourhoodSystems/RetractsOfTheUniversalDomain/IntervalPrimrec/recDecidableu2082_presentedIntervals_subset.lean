@@ -25,44 +25,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Subset between `presentedIntervals`-coded sets is recursively decidable.** -/
 theorem recDecidable₂_presentedIntervals_subset :
     RecDecidable₂ (fun c1 c2 =>

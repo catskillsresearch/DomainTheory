@@ -22,38 +22,6 @@ open ApproximableMap
 namespace Factoid84
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem not_RogueApprox_idMap : ¬ RogueApprox (idMap P) := by
   intro h
   have h2 : 2 ∈ ((idMap P).toElement (barElement 1)).carrier := by

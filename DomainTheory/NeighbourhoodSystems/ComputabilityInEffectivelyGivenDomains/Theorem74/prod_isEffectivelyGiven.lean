@@ -23,9 +23,6 @@ variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
 /-- **Theorem 7.4 (Scott 1981, PRG-19).** The product of effectively given domains is effectively
 given. -/
 theorem prod_isEffectivelyGiven (h₀ : V₀.IsEffectivelyGiven) (h₁ : V₁.IsEffectivelyGiven) :

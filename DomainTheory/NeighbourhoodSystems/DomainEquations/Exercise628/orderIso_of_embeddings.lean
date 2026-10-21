@@ -19,8 +19,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 /-- **Finite Cantor–Schröder–Bernstein (order version).** Mutual order embeddings between two
 *finite* ordered types yield an order isomorphism. The embeddings are injective, so equal finite
 cardinality forces `f` to be surjective; a surjective strictly-monotone map is an order iso. Uses

@@ -17,29 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise221
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Left-to-right bias / "`x` infinite ⟹ `xy = x`".** On a partial input `σ⊥ = ↑(σΣ*)` the
 juxtaposition returns `σ⊥` itself, *independently of `y`*. Since an infinite (total) sequence is the
 directed union of its finite approximants `σ⊥`, this says `xy = x` for total infinite `x`. -/

@@ -17,19 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Correctness of `ratLeCode`**: it is `1` exactly when the decoded rationals compare `≤`. -/
 theorem ratLeCode_eq_one_iff (c1 c2 : ℕ) :
     ratLeCode (Nat.pair c1 c2) = 1 ↔ decodeRat c1 ≤ decodeRat c2 := by

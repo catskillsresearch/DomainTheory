@@ -23,7 +23,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
 /-- `fixedNbhd (sub f) = fixedNbhd f`: `Y (sub f) Y ↔ Y f Y`, since a witness `Y ⊆ Y' ⊆ Y` forces
 `Y' = Y`. This is the key computation behind `sub`'s idempotency (`sub_sub`). -/
 theorem fixedNbhd_sub (f : ApproximableMap E E) : fixedNbhd (sub f) = fixedNbhd f := by

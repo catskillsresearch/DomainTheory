@@ -26,30 +26,11 @@ namespace DomainTheory.ContinuousLattice
 
 open Set Topology TopologicalSpace
 
-universe u v
 
 variable {X Y D D' D'' D₀ D₀' D₁ D₁' : Type*}
 variable [TopologicalSpace X] [TopologicalSpace Y]
 variable [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [CompleteLattice D₁']
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- If `e' ≪ g e` then the step function `ē[e, e']` lies below `g` (a pointwise argument). -/

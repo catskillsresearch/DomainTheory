@@ -21,32 +21,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `mulElem` is monotone in its right argument. -/
 theorem mulElem_mono_right (x : Ssys.Element) : Monotone (mulElem x) := by
   rintro y y' hyy' Z ⟨hInS, X, hX, Y, hY, hsub⟩

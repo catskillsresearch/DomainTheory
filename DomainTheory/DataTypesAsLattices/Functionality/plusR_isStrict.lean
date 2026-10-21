@@ -16,19 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_app_bot
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plusR_isStrict (a b : Pomega) : IsStrict (plusR a b) :=
   plusR_app_bot a b
 

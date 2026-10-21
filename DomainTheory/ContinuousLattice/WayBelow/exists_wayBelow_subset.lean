@@ -27,9 +27,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
-
 /-- In a continuous lattice the sets `↟a = {z | a ≪ z}` form a basis of the Scott topology:
 every Scott-open `U` containing `z` contains some basic neighbourhood `↟a` of `z`. Indeed
 `z = ⊔{a | a ≪ z}` is a directed supremum lying in the open set `U`, so some `a ≪ z` already

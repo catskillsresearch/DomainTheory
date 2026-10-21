@@ -23,20 +23,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`λx,y. x∪y` is computable.** Reduces to `PNpres.incl_computable` against the primitive
 recursive reindexing `myLor`. -/
 theorem cupMap_isComputable :

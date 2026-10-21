@@ -19,23 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_splitVUpsampled : Nat.Primrec splitVUpsampled := by
   have hk1 : Nat.Primrec (fun n : ℕ => splitVMinLevel n + 1) :=
     Nat.Primrec.succ.comp primrec_splitVMinLevel

@@ -26,52 +26,6 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, IsContinuousLatticeProjection (D n) (D (n + 1)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1972, §4.** Each `x ∈ D_∞` is the (monotone) lub of its projections:
 `x = ⨆ₙ i_{n∞}(xₙ)`. -/
 theorem inverseLimit_eq_iSup (x : InverseLimit D P) :

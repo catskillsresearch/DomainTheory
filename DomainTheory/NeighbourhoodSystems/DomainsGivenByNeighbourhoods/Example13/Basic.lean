@@ -72,13 +72,6 @@ This is a concrete finite computation (`fin_cases`/`simp`); footprint
 namespace DomainTheory.NeighbourhoodSystems.Example13
 
 
-
-
-
-
-
-
-
 theorem twelve_ne_master : twelve ≠ master := by
   intro h
   have hmem : (0 : Token) ∈ twelve := by
@@ -101,20 +94,9 @@ theorem two_ne_twelve : two ≠ twelve := by
   simp [two] at hmem
 
 
-
-
-
-
-
-
-
-
-
 namespace neighborhoodSystem
 
 open NeighborhoodSystem
-
-
 
 
 theorem two_subset_twelve : two ⊆ twelve := by

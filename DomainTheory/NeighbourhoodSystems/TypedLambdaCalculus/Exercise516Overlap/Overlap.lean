@@ -7,8 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516T
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
 open DomainTheory.NeighbourhoodSystems

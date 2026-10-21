@@ -92,18 +92,7 @@ open NeighborhoodSystem
 /-! ### Finite unions of rational intervals -/
 
 
-
-
-
-
-
 /-! ### `𝒰`, the universal neighbourhood system over `[0,1) ⊆ ℚ` -/
-
-
-
-
-
-
 
 
 /-! ### Faithfulness: `U.mem` literally matches Scott's per-pair-bounded description -/

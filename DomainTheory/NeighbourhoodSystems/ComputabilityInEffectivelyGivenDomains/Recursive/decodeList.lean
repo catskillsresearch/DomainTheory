@@ -27,8 +27,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- Decode a natural back into a list of naturals, inverting `encodeList`. Well-founded on the

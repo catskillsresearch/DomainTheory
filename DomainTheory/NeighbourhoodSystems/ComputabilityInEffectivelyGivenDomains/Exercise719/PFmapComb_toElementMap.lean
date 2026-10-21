@@ -24,12 +24,6 @@ variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
-
-
-
-
-
 /-- **Exercise 7.19 — faithfulness of `PFmapComb`.** Under the function-space correspondence of
 Theorem 3.10 (`toFilter f` is the point of `(D → E)` fixed by `f`), `PFmapComb` really does send
 `f` to `ℙf`, at **every** `f` — not merely the finite/principal points. The forward direction is

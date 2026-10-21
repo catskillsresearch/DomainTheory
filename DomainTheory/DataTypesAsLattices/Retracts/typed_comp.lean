@@ -20,45 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.typed_arrowR_range
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem typed_comp {a b c f f' : Pomega}
     (ha : IsRetract a) (hb : IsRetract b) (_hc : IsRetract c)
     (hf : typed f (arrowR a b)) (hf' : typed f' (arrowR b c)) :

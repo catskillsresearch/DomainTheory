@@ -17,34 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_4_unique
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 7.4 (The iterator theorem).**
 The functionality is both satisfied by and globally characterizes the
 iterators. -/

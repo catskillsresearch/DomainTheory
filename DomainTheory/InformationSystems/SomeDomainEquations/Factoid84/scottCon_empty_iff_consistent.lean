@@ -23,24 +23,6 @@ open ApproximableMap
 namespace Factoid84
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem scottCon_empty_iff_consistent (r : ApproximableMap P P) :
     scottCon r ∅ ↔ ConsistentApprox r := by
   simp only [scottCon, ConsistentApprox, barElement_zero_eq_bot]

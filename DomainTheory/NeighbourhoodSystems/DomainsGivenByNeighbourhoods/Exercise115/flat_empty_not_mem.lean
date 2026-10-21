@@ -18,12 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise115
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
 theorem flat_empty_not_mem : ¬ flat.mem (∅ : Set ℕ) := by
   rintro (h | ⟨n, h⟩)
   · exact Set.empty_ne_univ h

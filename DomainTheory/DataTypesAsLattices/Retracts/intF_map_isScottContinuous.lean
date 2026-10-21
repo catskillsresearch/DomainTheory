@@ -15,49 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem intF_map_isScottContinuous (f : Pomega) :
     IsScottContinuous (fun u =>
       dcondSet u (ofNat 0) (dcondSet (funOf f (predSet u)) u u)) :=

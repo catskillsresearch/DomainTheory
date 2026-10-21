@@ -133,8 +133,6 @@ namespace Exercise619
 /-! ## Objects of Scott's category: `∅`-free systems over `{0,1}*` -/
 
 
-
-
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 
@@ -150,7 +148,6 @@ variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
 *"Generate all constructs `T(X)` formed by the constants (`T(X) = 𝒟`), by the identity (`T(X) = X`),
 and by sums and products."* -/
-
 
 
 /-! ## Continuous on maps — the monotone half
@@ -201,8 +198,6 @@ restriction to `{Γ ∣ Λ ∈ Γ}` is continuous on that domain. The least fixe
 hypothesis Theorem 6.14 needs. (For the bottom to stay in the domain we need `Λ ∈ tok(C)` for the
 constant systems `C`; this is recorded by `FExpr.RootedConst`, and holds automatically for sums and
 products since their masters contain `Λ`.) -/
-
-
 
 
 /-- `mFun T Γ` is exactly the token set `tok(T({Γ})) = (T.obj {Γ}).sys.master`. -/

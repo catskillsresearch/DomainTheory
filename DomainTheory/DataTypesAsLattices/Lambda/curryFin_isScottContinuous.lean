@@ -15,23 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem curryFin_isScottContinuous {n : ℕ} :
     ∀ {f : (Fin (n + 1) → Pomega) → Pomega},
       IsScottContinuousFin f →

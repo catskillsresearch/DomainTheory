@@ -22,11 +22,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
 /-- **Exercise 1.22, condition (iii).** The approximation order is recovered from the topology:
 `x ⊑ y` iff every open set containing `x` also contains `y`.
 

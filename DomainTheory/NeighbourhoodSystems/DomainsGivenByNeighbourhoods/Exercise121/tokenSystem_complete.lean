@@ -18,7 +18,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
 /-- **Exercise 1.21 — the token system is complete.** Every filter `y` of `{[X]}` is fixed by
 the unique point `ofToken y ∈ |𝒟|`: `[W] ∈ y ↔ ofToken y ∈ [W]`. Uniqueness is `Element.ext`
 applied through the brackets. -/

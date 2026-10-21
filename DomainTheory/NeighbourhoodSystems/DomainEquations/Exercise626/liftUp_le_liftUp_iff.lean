@@ -22,21 +22,7 @@ namespace Exercise619
 variable {D : NeighborhoodSystem Str}
 
 
-
-
-
-
-
-
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
-
-
-
-
 
 
 /-- `liftUp` is an order embedding: `liftUp x ⊑ liftUp y ↔ x ⊑ y`. -/

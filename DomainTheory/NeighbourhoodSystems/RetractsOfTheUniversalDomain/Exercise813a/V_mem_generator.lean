@@ -19,12 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
 theorem V_mem_generator (i : ℕ) : V.mem (generator i) :=
   generator_eq_levelSet i ▸ ⟨i + 1, _, rfl, generator_eq_levelSet i ▸ generator_nonempty i⟩
 

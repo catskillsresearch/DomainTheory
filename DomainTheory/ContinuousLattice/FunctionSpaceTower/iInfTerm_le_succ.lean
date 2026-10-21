@@ -27,11 +27,8 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.incl_projInf_le_
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
-universe u
 
 attribute [instance] CLat.str
 

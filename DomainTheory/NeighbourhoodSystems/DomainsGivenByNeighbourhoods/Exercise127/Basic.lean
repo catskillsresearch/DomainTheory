@@ -46,9 +46,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
 /-! ### Boundedness of `{↑U, ↑W}` ⟺ consistency of `⟨U, W⟩`. -/
 
 

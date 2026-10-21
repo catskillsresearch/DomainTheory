@@ -20,12 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
 theorem generatedBy_genPoint_box (I : Finset ℕ) (f : ℕ → Bool) :
     GeneratedBy genPoint (box I f) := by
   induction I using Finset.induction_on with

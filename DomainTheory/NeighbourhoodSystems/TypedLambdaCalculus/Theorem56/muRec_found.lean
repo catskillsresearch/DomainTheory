@@ -23,22 +23,9 @@ open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap pred
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 
 
-
-
-
-
-
-
-
-
-
-
 section Mu
 
 variable (f : ApproximableMap (prod N N) N)
-
-
-
 
 
 /-- **μ, found.** If `f(n̂, m̂) = 0̂`, the search stops and returns `n̂`. -/

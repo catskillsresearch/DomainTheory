@@ -19,34 +19,7 @@ open NeighborhoodSystem
 variable {α β γ δ : Type*}
 
 
-
-
-
-
-
-
-
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 variable {V₂ : NeighborhoodSystem γ}

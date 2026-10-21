@@ -20,12 +20,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise619
 
 
-
-
-
-
-
-
 theorem MExpr_rooted : MExpr.RootedConst := ⟨nil_mem_Cone, trivial⟩
 
 end Exercise619

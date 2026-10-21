@@ -18,12 +18,7 @@ set_option linter.unusedSimpArgs false
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
 namespace triSys
-
 
 
 /-- Every pair of members of `family` has non-empty intersection, hence (in the all-non-empty

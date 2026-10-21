@@ -24,56 +24,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem tagOfBits_spec (j m : ℕ) : tagOfBits j m = tag (decodeList (bitsCode j j)) m :=
   tagCode_spec (bitsCode j j) m
 

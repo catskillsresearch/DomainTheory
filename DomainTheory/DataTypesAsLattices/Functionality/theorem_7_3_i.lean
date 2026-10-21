@@ -16,26 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Icomb_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 7.3 (i).** `I : A → A`. -/
 theorem theorem_7_3_i (A : RestrictedEquiv) :
     (arrowE A A).mem Icomb :=

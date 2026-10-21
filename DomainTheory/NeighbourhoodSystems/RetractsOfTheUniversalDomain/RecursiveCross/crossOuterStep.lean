@@ -9,8 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Rec
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- `foldCode`'s outer step: pops `x` from `c1`, appends `crossInner bop x c2` onto the

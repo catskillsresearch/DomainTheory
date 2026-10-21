@@ -43,11 +43,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.c
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -56,6 +52,7 @@ variable {A : Type} [DecidableEq A]
 section Iso
 
 variable {A : Type} [DecidableEq A] [Inhabited A]
+omit [Inhabited A] in
 
 /-- **`toCC Λ̂ = inj_𝟙`.** The finished empty sequence is the terminator (the `𝟙`-summand). -/
 theorem toCC_strElemN_nil :

@@ -17,13 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise218
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
-
-
-
-
-
-
-
 /-- **`k` inverts `h` on prefixes.** `kOut (hOut σ) = σ`. -/
 theorem kOut_hOut (σ : Str) : kOut (hOut σ) = σ := by
   induction σ with

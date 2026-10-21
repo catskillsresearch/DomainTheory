@@ -28,22 +28,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `zero : Vector ℕ 0 → ℕ`, the constant `0` (nullary). -/
 theorem lamDef_zero : LamDef (strictGuardN 0 (constMap 𝒩 (natElem 0)))
     ((fun _ => 0 : List.Vector ℕ 0 → ℕ) : List.Vector ℕ 0 →. ℕ) :=

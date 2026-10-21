@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Isolated (compact) elements of `Pω` are the finite sets `e n`. -/

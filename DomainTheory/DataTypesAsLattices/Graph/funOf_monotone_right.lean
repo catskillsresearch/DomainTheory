@@ -15,8 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 theorem funOf_monotone_right (u : Pomega) {x y : Pomega} (h : x ⊆ y) :
     funOf u x ⊆ funOf u y := by
   intro m hm

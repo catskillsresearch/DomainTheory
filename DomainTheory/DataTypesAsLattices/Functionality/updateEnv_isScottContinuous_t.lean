@@ -15,42 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem updateEnv_isScottContinuous_t (x : Pomega) (n : ℕ) :
     IsScottContinuous (fun t => updateEnv t x n) :=
   graph_const_isScottContinuous

@@ -15,41 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem directed_finite_cover {A : Set (Fixpoints f)}
     (hA : IsDirectedSet A) {t : Pomega} (ht : t.Finite)
     (hsub : t ⊆ ⋃₀ (Fixpoints.vals A)) :

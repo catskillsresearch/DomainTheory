@@ -18,8 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise216
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
 /-- **`parityMap` satisfies its own defining equations.** Each is a direct instance of the
 "shift formula" `Example23.parityMap_toElementMap_sigmaElt`, using that a leading `1` (resp. `01`,
 `00`) fixes the scan of the concatenation `σ ++ τ` regardless of the tail `τ`

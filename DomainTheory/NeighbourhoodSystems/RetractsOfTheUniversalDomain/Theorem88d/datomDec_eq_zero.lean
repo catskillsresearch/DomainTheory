@@ -23,13 +23,7 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
-
-
 
 
 /-- The complementary fact to `datomDec_spec`: whenever the `D`-side atom is *non*-empty,

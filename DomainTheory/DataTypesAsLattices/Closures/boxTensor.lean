@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.squareSnd
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (5.12).** Product of closures. -/

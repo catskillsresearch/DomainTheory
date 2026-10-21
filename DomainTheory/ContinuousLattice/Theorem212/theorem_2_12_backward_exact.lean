@@ -19,14 +19,12 @@ namespace DomainTheory.ContinuousLattice
 open Topology Set
 
 
-
 universe u
 
 
 section Theorem212Transfer
 
 variable {A B : Type u} [latticeA : CompleteLattice A] [latticeB : CompleteLattice B]
-
 
 
 /-- **Theorem 2.12, source-faithful exact-order form.** If an injective `T₀` topology on an

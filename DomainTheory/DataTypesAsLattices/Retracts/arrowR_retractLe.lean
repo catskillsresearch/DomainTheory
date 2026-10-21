@@ -16,45 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.eq_4_11_comp
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem arrowR_retractLe {a b a' b' : Pomega}
     (hab : retractLe a a') (hbb : retractLe b b') :
     retractLe (arrowR a b) (arrowR a' b') := by

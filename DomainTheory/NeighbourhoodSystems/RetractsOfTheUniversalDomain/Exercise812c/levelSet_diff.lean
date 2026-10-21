@@ -20,7 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
 /-- **`levelSet` is closed under set-difference, unconditionally** — mirrors `levelSet_inter`
 exactly, combining `upsample`-to-a-common-level with the "and-not" bit identity
 `testBit_xor_and_self` in place of plain `&&&`. -/

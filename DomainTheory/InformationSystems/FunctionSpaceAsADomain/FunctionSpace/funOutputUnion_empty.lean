@@ -19,30 +19,12 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 universe u v
 
 variable {α : Type u} {β : Type v} [DecidableEq α] [DecidableEq β]
 
 
-
 variable (A : InfoSys α) (B : InfoSys β)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem funOutputUnion_empty : funOutputUnion A B (∅ : Finset (FunToken A B)) = ∅ :=

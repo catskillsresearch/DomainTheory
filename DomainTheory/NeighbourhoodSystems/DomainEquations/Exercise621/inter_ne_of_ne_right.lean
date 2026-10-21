@@ -22,7 +22,6 @@ namespace Exercise619
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 
-
 theorem inter_ne_of_ne_right {X X' Δ : Set Str} (hX' : X' ⊆ Δ) (hne : X' ≠ Δ) : X ∩ X' ≠ Δ := by
   intro h
   exact hne (Set.Subset.antisymm hX' (by rw [← h]; exact Set.inter_subset_right))

@@ -101,39 +101,19 @@ variable {D₀ D₁ : NeighborhoodSystem Str}
 `1Y = embBit true Y`. -/
 
 
-
-
-
-
-
-
-
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-
-
-
 
 
 /-! ### Generic inversion lemmas for the abstract separated sum `sum D₀ D₁` -/
 
 
-
-
 /-! ### The forward half `toSum : |D₀ + D₁|ₜₒₖ → |D₀ + D₁|` -/
-
-
 
 
 /-! ### The inverse half `fromSum : |D₀ + D₁| → |D₀ + D₁|ₜₒₖ` -/
 
 
-
-
 /-! ### The two halves are mutually inverse, giving the isomorphism. -/
-
-
 
 
 /-! ## The concrete product `D₀ × D₁` over `{0,1}*`
@@ -142,28 +122,10 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
 the basepoint, in contrast to the sum (where a proper neighbourhood refines exactly one summand). -/
 
 
-
-
-
-
-
-
-
-
-
-
 /-! ### Components of a product element and the splitting lemma -/
 
 
-
-
-
-
 /-! ### The element pairing and the isomorphism `|D₀ × D₁|ₜₒₖ ≃o |D₀| × |D₁|`. -/
-
-
-
-
 
 
 end Exercise619

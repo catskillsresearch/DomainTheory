@@ -15,13 +15,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.id_val
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 @[simp] theorem StrictDomainObj.comp_val {D E F : StrictDomainObj}
     (g : (E ⟶ F)) (f : (D ⟶ E)) :

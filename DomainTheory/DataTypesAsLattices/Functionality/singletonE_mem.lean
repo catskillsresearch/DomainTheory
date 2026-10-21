@@ -15,11 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
 theorem singletonE_mem (a x : Pomega) : (singletonE a).mem x ↔ x = a :=
   ⟨fun h => h.1, fun hx => ⟨hx, hx⟩⟩
 

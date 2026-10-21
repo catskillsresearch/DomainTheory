@@ -22,42 +22,13 @@ namespace Exercise619
 variable {D : NeighborhoodSystem Str}
 
 
-
-
-
-
-
-
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
-
-
-
-
-
-
 
 
 variable {A B C : ScottSys}
 
 
-
 variable {D E : ScottSys}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 6.26 — `𝒟_⊥ ⊕ ℰ_⊥ ≅ 𝒟 + ℰ`.** Coalescing the fresh bottoms of the two lifts

@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.closure_expansive
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem closureCompact_isCompact {a : Pomega} (ha : IsClosure a) (n : ℕ) :

@@ -110,37 +110,7 @@ open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 Tokens are `Option (α ⊕ β ⊕ γ)`: a fresh basepoint `Λ = none` below three disjoint tagged copies. -/
 
 
-
-
-
-
-
 variable {α β γ : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 variable (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ)
@@ -149,45 +119,18 @@ variable (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : N
 variable {V₀ V₁ V₂}
 
 
-
-
-
-
-
-
-
-
 /-! ## The domain equation `C ≅ 𝟙 + C + C`. -/
 
 namespace Example62C
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### The forward half `toCC : |C| → |𝟙 + C + C|`. -/
-
-
-
 
 
 /-! ### The inverse half `fromCC : |𝟙 + C + C| → |C|`. -/
 
 
-
-
-
 /-! ### The two halves are mutually inverse. -/
-
 
 
 /-! ### The domain equation `C ≅ 𝟙 + C + C`. -/

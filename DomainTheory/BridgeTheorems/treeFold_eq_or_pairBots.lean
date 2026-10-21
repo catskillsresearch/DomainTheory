@@ -12,8 +12,6 @@ public import DomainTheory.BridgeTheorems.treeFold
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

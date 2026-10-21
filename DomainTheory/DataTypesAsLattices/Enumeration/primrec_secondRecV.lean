@@ -19,52 +19,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_secondRecV : Primrec secondRecV :=
   primrec_applyNat.comp (Primrec.const secondRecOperatorCode) Primrec.id
 

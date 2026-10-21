@@ -24,10 +24,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
 theorem cInj_comp_cProj_le : cInj.comp cProj ≤ idMap U :=
   (theorem_8_8_b_strong presentationIterU).choose_spec.choose_spec.2.1
 

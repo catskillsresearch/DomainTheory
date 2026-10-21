@@ -21,7 +21,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise414
 variable {A : Type*}
 
 
-
 /-- **Exercise 4.14 (Scott 1981, PRG-19).** `gfpSet f` is a fixed point: `f(g) = g`. -/
 theorem gfpSet_isFixed (f : Set A → Set A) (hf : Monotone f) :
     f (gfpSet f) = gfpSet f := by

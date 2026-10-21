@@ -23,20 +23,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Theorem 4.2(iii) (Scott 1981, PRG-19).** `fix(f) = ⊔ₙ fⁿ(⊥)`, here as the directed union of
 the increasing chain of approximants. -/
 theorem fixElement_eq_iSupDirected (f : ApproximableMap V V) :

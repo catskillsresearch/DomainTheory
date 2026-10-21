@@ -20,8 +20,6 @@ public import DomainTheory.BridgeTheorems.ofElement_toElement
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.NeighbourhoodSystems

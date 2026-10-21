@@ -17,37 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Kcomb_beta (x : Pomega) :
     funOf Kcomb x = graph (fun _ => x) :=
   beta (graph_const_isScottContinuous (fun x _ => x)

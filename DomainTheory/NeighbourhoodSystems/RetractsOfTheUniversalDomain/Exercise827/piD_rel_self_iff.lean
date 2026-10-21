@@ -17,45 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.27(b)(2), specialized to self-relation** (the shape Theorem 8.5's formula (ii)
 actually tests, `a.rel X X`): combines (a) and (b) into the single membership-test formula that
 Exercise 8.27(b)(3) will chain through `subU`'s and each `D'_s`'s own formula (ii). -/

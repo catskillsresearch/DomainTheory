@@ -20,50 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hLam_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Hstep_isScottContinuous_H (e t : Pomega) :
     IsScottContinuous (fun H => Hstep H e t) :=
   continuous_nary

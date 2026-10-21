@@ -16,28 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Zcomb_app2 (n : ℕ) (f x : Pomega) :
     funOf (funOf (Zcomb n) f) x = Z n f x := by
   rw [Zcomb_app]

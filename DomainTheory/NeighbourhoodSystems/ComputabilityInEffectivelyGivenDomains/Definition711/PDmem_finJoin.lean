@@ -20,13 +20,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
-
 theorem PDmem_finJoin {n : ℕ} (xs : Fin n → V.Element) {W : Set (Set α)} :
     (V.PDfinJoin n xs).mem W ↔
       if n = 0 then W = V.PowerDomain.master else V.PDmemFinJoin xs W := by

@@ -23,12 +23,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- `affine k ℓ` itself is the singleton-bitmask `levelSet`. -/
 theorem affine_eq_levelSet (k ℓ : ℕ) : affine k ℓ = levelSet k (2 ^ ℓ) := by
   ext n

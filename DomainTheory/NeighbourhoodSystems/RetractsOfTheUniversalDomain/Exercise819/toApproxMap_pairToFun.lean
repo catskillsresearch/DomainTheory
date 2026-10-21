@@ -22,14 +22,9 @@ open NeighborhoodSystem ApproximableMap Exercise326
 universe u
 
 
-
-
-
-
 section Prod
 
 variable {α : Type u} {E : NeighborhoodSystem α}
-
 
 
 theorem toApproxMap_pairToFun (x y : E.Element) (t : TD.Element) :

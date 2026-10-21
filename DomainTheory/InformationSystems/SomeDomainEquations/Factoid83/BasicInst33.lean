@@ -13,15 +13,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.IsUT
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 instance : DecidablePred IsUToken := fun t =>
   if h : t = .top then isFalse fun ht => ht h

@@ -23,18 +23,6 @@ open Sum Set
 variable {σ₁ σ₂ : Type}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 variable {σ : Type}
 
 /-- A nonempty accepted language ⟺ some accept state is reachable by reading some word. -/

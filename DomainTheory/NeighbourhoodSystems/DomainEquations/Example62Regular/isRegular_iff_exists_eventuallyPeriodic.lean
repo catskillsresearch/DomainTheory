@@ -22,15 +22,6 @@ open Language
 variable {n : ℕ}
 
 
-
-
-
-
-
-
-
-
-
 /-- The inverse half of Scott's claim: **every regular event arises** as the language of an eventually
 periodic tree. Concretely, take the tree whose root labels record membership in `L`; reading a tape
 `σ` lands on the residual language `σ⁻¹ L`, of which there are finitely many exactly when `L` is

@@ -116,12 +116,6 @@ section ClosureOperator
 variable {a : ApproximableMap E E}
 
 
-
-
-
-
-
-
 end ClosureOperator
 
 /-! ## The neighbourhood system of compact fixed points, and the order isomorphism with `Fix(a)` -/
@@ -131,34 +125,11 @@ section FiniteDomain
 variable {a : ApproximableMap E E} (h : IsClosureOperator a)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### The backward map, via directed unions of "confirmed" compacts -/
-
-
-
-
 
 
 /-! ### `E`'s own algebraicity, transported through `a`: every `y ∈ Fix(a)` is the directed union
 of the compacts `a(↑X)` for `X ∈ y`. -/
-
-
-
-
 
 
 /-! ### What are the finite elements of the fixed-point set? -/

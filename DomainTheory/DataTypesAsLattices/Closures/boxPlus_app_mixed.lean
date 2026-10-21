@@ -19,35 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Occupancy test of (5.13): both components inhabited, so (4.4) gives `⊤`. -/
 theorem boxPlus_app_mixed {a b u : Pomega} (hx : squareFst u ≠ botElem)
     (hy : squareSnd u ≠ botElem) :

@@ -17,30 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_succ_ne
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (7.18).** Distinct tags: `σ_j^{m+1}({(j',0)}) = ⊥`. -/
 theorem eq_7_18_ne (j j' m : ℕ) (hne : j ≠ j') :
     Z (m + 1) (graph (sigmaJ j)) {pair j' 0} = botElem := by

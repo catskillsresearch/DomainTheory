@@ -16,19 +16,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Rec
 namespace Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_crossOuterStep {bop : ℕ → ℕ} (hbop : Nat.Primrec bop) :
     Nat.Primrec (crossOuterStep bop) := by
   have hx : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left

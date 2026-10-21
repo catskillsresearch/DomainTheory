@@ -9,8 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.fTok
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.Exercise619

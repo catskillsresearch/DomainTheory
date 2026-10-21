@@ -19,12 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- **`V` is Positive**: `levelSet_inter` presents *any* raw intersection unconditionally, so only
 non-emptiness can obstruct `V.mem (X ∩ Y)`. -/
 theorem V_isPositive : V.IsPositive := by

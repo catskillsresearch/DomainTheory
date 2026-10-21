@@ -66,11 +66,6 @@ theorem charOpen_isScottContinuous (U : Set Pomega) :
     exact ⟨hk0, n, subset_trans hn hm, hne⟩
 
 
-
-
-
-
-
 theorem isScottOpen_univ : IsScottOpen (Set.univ : Set Pomega) :=
   (isScottOpen_iff_isOpen _).mpr isOpen_univ
 
@@ -190,7 +185,6 @@ theorem oddEvenPack_isScottContinuous {f g : Pomega → Pomega}
     rcases h with ⟨n, hk, hn⟩ | ⟨n, hk, hn⟩
     · exact Or.inl ⟨n, hk, isScottContinuous_monotone hf hp hn⟩
     · exact Or.inr ⟨n, hk, isScottContinuous_monotone hg hp hn⟩
-
 
 
 theorem evenPart_oddEven (f g : Pomega → Pomega) (x : Pomega) :
@@ -582,9 +576,6 @@ theorem closedToZero_isScottContinuous (C : Set Pomega) :
   theorem_1_3_tuple (f := fun a b => (a ∪ b : Pomega))
     union_isScottContinuous_left union_isScottContinuous_right
     (const_isScottContinuous (ofNat 0)) (charTop_isScottContinuous Cᶜ)
-
-
-
 
 
 theorem uvU_mono_left {x x' y : Pomega} (h : x ⊆ x') : uvU x y ⊆ uvU x' y := by
@@ -1270,8 +1261,6 @@ theorem seq2_pair_isScottContinuous {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
     IsScottContinuous (fun x => seq2 (f x) (g x)) :=
   theorem_1_3_tuple seq2_isScottContinuous_left seq2_isScottContinuous_right hf hg
-
-
 
 
 /-- **Scott 1976, Table 3 / Theorem 6.7.** `𝔅_δ` is the class of continuous

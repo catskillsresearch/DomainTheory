@@ -19,21 +19,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The master (token set) of `D + E` is `gTok Γ_D Γ_E`. -/
 theorem master_Gsol : (Gsol Dsol Esol).sys.master = gTok GammaD GammaE := rfl
 

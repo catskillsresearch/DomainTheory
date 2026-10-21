@@ -21,9 +21,6 @@ variable {α β γ δ : Type*}
 namespace Theorem51
 
 
-
-
-
 /-- **Theorem 5.1, application case (Scott 1981, PRG-19).** If `⟦σ₀⟧ : Γ → (𝒟₀ → 𝒟₁)` and
 `⟦σ₁⟧ : Γ → 𝒟₀` are approximable, then `σ₀(σ₁)` is interpreted by `eval ∘ ⟨⟦σ₀⟧, ⟦σ₁⟧⟩`
 (approximable by Thm 3.11 and Thm 2.5), with value `(σ₀ w)(σ₁ w)`. -/

@@ -23,8 +23,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 /-- **On a "left" point** (`jPlus x` reaches the left copy), `sumComb a b` evaluates to Scott's
 literal `i₊∘in₀∘a∘out₀` formula. -/
 theorem toElementMap_sumComb_of_left {a b : ApproximableMap U U} {x : U.Element}

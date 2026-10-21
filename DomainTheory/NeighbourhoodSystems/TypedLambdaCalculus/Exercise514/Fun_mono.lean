@@ -18,16 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise514
 open DomainTheory.NeighbourhoodSystems.Exercise513
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **`Fun` is monotone in both arguments jointly.** Needed to check the `mono` axiom of the
 neighbourhood-level approximable map built from `Fun` (Exercise 7.23). -/
 theorem Fun_mono {u u' x x' : Set ℕ} (hu : u ⊆ u') (hx : x ⊆ x') : Fun u x ⊆ Fun u' x' := by

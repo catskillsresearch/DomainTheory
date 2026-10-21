@@ -17,30 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_pair_union
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (7.19).**
 Independent successor powers advance both tagged atoms in lockstep. -/
 theorem eq_7_19 (j j' m : ℕ) :

@@ -16,58 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody_isScott
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem termDollarStep_app (s u : Pomega) :
     funOf (termDollarStep s) u = graph (fun z => termDollarStepBody s u z) :=
   beta (graph_const_isScottContinuous (fun u z => termDollarStepBody s u z)

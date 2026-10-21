@@ -18,14 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example24
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
 /-- **The "shift formula" for `runMap` (output side).** Since `g(x)`'s membership predicate is
 itself a cone-monotone family (`runMap_toElementMap_mem`), prepending `τ₀` to `g(x)` collapses the
 same way: the up-closure of neighbourhoods `Z ⊇ (out τ)Σ*` is absorbed because `(out τ)Σ*` itself

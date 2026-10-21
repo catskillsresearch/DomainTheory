@@ -24,9 +24,6 @@ namespace Exercise823
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
 theorem isFinitaryProjection_constMap_bot (E : NeighborhoodSystem α) :
     IsFinitaryProjection (constMap E E.bot) :=
   ⟨isProjection_constMap_bot E, Unit, unitSys, ⟨finitaryWitnessEquivBot E⟩⟩

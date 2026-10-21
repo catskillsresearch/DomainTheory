@@ -21,75 +21,10 @@ variable {α : Type*}
 namespace Proposition77
 
 
-
-
-
-
-
-
-
-
-
 variable {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable (fcons feq finter : ℕ → ℕ)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Proposition 7.7 (Scott 1981, PRG-19).** If `D` is effectively given, so is `D^§`. -/

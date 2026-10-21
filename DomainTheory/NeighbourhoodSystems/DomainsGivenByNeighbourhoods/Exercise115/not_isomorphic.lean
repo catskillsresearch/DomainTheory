@@ -20,18 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise115
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 1.15.** `flat` and `stem` are *not* isomorphic: an order-isomorphism would transport
 `stem`'s strict 3-chain `⊥ ⊏ ↑{0,1} ⊏ ↑{0}` back to a strict 3-chain in `flat`, which has none. -/
 theorem not_isomorphic : ¬ (flat ≅ᴰ stem) := by

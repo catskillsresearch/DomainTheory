@@ -26,17 +26,11 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
 
 
-
 namespace Counterexample712C
 
 open NeighborhoodSystem
 
 variable {γ δ : Type*}
-
-
-
-
-
 
 
 /-- **Proposition 7.12, Part C is FALSE in general.** The flat two-point domain `Vshape` is *not* a

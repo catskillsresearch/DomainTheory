@@ -17,8 +17,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.m
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive

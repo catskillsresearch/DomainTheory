@@ -17,34 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_a
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem normalized_finite_fresh_app (p q m : ℕ) :
     funOf (graph (fun y => funOf (e p) y))
         (Z m (e p) (e q) ∪ {pair (max p q + 1) m}) =

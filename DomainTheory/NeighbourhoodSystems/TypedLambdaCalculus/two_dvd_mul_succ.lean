@@ -18,8 +18,6 @@ import all Mathlib.Tactic.Ring
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-- `k(k+1)` is even (choice-free, by induction). -/

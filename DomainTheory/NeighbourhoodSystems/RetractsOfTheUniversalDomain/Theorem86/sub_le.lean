@@ -23,7 +23,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
 /-- **`sub f ≤ f`, unconditionally (Scott 1981, PRG-19).** "`X ⊆ Y, f Y ⊆ Z` always implies
 `X f Z`" — a bare narrow-input/widen-output monotonicity calculation, needing nothing about `f`. -/
 theorem sub_le (f : ApproximableMap E E) : sub f ≤ f := by

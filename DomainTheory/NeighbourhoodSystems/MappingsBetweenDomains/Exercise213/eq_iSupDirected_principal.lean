@@ -25,7 +25,6 @@ variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Neigh
 namespace NeighborhoodSystem
 
 
-
 theorem eq_iSupDirected_principal (x : V₀.Element) :
     x = iSupDirected (fun i : {X : Set α // x.mem X} => V₀.principal (x.sub i.2))
       (principalFamily_directed x) := by

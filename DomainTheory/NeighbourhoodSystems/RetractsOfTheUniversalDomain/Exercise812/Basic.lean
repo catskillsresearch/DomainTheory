@@ -119,16 +119,10 @@ open NeighborhoodSystem
 /-! ### `affine k ℓ`, Scott's `2^k ℕ + ℓ` -/
 
 
-
 /-! ### `levelSet k m`: a bookkeeping-free encoding of finite unions at a fixed level -/
 
 
-
-
 /-! ### `upsample`: re-expressing a bitmask at a finer level -/
-
-
-
 
 
 /-! ### `V`, the `ℕ`-presentation of Exercise 8.12 -/

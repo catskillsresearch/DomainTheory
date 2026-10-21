@@ -23,9 +23,6 @@ variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
-
-
 /-- **Bounded `∃` over a coded list preserves recursive enumerability.** If `R` is r.e. then so is
 `fun d a => ∃ b ∈ decodeList d, R a b`: project out `b` (`REPred.proj`) over the conjunction of the
 *recursively decidable* membership `b ∈ decodeList d` with the r.e. body `R a b`. -/

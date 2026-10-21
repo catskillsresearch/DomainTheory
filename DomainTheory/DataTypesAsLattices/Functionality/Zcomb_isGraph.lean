@@ -15,28 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Zcomb_isGraph (n : ℕ) :
     Zcomb n = graph (fun f => funOf (Zcomb n) f) := by
   apply graph_ext

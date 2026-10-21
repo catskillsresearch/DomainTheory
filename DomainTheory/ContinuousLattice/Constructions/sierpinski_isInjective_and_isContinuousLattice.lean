@@ -23,11 +23,6 @@ open Topology Set
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
-
-
 /-- The Sierpiński space `𝕆 = Prop` realizes the smallest case of Theorem 2.12: it is both
 injective (1.2) and a continuous lattice (2.8). -/
 theorem sierpinski_isInjective_and_isContinuousLattice :

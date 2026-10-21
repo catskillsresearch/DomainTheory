@@ -19,8 +19,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise619
 
 
-
-
 /-- `Λ ∈ tok(Cone)`. -/
 theorem nil_mem_Cone : ([] : Str) ∈ Cone.sys.master := rfl
 

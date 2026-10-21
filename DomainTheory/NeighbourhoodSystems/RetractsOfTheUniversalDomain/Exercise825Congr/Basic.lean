@@ -48,10 +48,7 @@ variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 /-! ### `ofIso e` and `ofIso e.symm` are exact mutual inverses -/
 
 
-
 /-! ### `funSpace` congruence -/
-
-
 
 
 /-! ### Currying, as a domain isomorphism -/

@@ -22,11 +22,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.t
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -37,6 +33,8 @@ section SumSig
 universe v
 
 variable {β : Type v} {γ : Type v}
+
+omit [DecidableEq A] in
 
 theorem jc_subset_jc {a : A} {X X' : Set β} :
     (jc a X : Set (SigTok A β)) ⊆ jc a X' ↔ X ⊆ X' := by

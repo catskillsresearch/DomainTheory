@@ -18,26 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Kcomb_app_isGraph
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 7.3 (ii).** `K : A → (B → A)`. -/
 theorem theorem_7_3_ii (A B : RestrictedEquiv) :
     (arrowE A (arrowE B A)).mem Kcomb := by

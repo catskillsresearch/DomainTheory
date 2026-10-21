@@ -53,9 +53,7 @@ open scoped Computability
 /-! ## `Σ` (the universal language) -/
 
 
-
 /-! ## A singleton `{σ}` -/
-
 
 
 /-! ## Intersection (`cap`) and complement — free from mathlib

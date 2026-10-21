@@ -20,58 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm_interp
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.24).** `$` is combinatory: `$ = Y(λs λu λz. z ⊃ u₀, s(λt. u_{t+1})(z−1))`. -/
 theorem dollarC_combinatory : IsCombinatory dollarC := by
   have hY : funOf Ycomb (interp dollarStepTerm (fun _ => botElem)) = dollarC := by

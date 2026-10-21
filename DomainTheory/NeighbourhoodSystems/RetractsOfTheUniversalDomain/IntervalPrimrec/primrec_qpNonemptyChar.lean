@@ -23,44 +23,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_qpNonemptyChar : Nat.Primrec qpNonemptyChar := by
   have hg : Nat.Primrec (fun t : ℕ => qpNonemptyBop t.unpair.1) :=
     primrec_qpNonemptyBop.comp Nat.Primrec.left

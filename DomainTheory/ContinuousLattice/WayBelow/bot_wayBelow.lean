@@ -24,8 +24,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
 /-- **Scott 1972, Proposition 2.2(i).** `⊥ ≪ x` for every `x`. -/
 theorem bot_wayBelow (x : D) : (⊥ : D) ≪ x :=
   ⟨Set.univ, scottOpen_univ, Set.mem_univ x, fun _ _ => bot_le⟩

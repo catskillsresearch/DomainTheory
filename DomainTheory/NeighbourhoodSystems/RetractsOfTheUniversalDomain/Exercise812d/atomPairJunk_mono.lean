@@ -21,62 +21,10 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 section AtomPairCorrect2
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
   (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
-
-
-
-
-
 
 
 /-- **Junk propagates forward** (once a bit-source's state is junk at depth `n`, it stays junk at

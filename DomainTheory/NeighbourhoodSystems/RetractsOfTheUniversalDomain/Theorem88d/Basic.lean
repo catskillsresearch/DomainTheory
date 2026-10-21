@@ -253,12 +253,6 @@ section AtomCode
 variable {E : NeighborhoodSystem α} (Q : ComputablePresentation E)
 
 
-
-
-
-
-
-
 end AtomCode
 
 /-! ## Instantiating at `datomDec := DAtom_recDecidable (P0 P)`'s extracted decider -/
@@ -276,7 +270,6 @@ theorem datomDec_spec (posC negC : ℕ) :
   exact h.symm
 
 theorem datomDec_le_one (n : ℕ) : datomDec P n ≤ 1 := by unfold datomDec; exact isOne_le_one _
-
 
 
 /-! ## Per-step correctness: the `D`-side atom is tracked exactly -/
@@ -719,7 +712,6 @@ theorem exists_atomUEmpty_zero (n : ℕ) : ∃ i < 2 ^ n, atomUEmpty P (n + 1) (
 `yFoldStep` is written as a function of a **single** packed argument `w = pair n (pair i acc)`
 (mirroring `atomStep`'s own convention), so that feeding it directly into `Nat.Primrec.prec` needs
 no further unpair/pair bookkeeping. -/
-
 
 
 /-! ### Correctness: `yFold`'s "found" flag and running union, by induction on `N` -/

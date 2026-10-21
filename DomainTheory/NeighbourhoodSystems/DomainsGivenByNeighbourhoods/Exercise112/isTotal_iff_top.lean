@@ -20,19 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise112
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `top` is the **unique** total element: an element is total iff it equals `top`. -/
 theorem isTotal_iff_top (x : neighborhoodSystem.Element) :
     neighborhoodSystem.IsTotal x ↔ x = top := by

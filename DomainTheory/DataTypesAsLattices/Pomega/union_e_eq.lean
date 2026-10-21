@@ -22,17 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e_pow2
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
 theorem union_e_eq (x : Pomega) : (⋃ n, eBelow x n) = x := by
   ext k
   constructor

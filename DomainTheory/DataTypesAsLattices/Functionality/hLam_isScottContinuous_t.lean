@@ -16,51 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion_isSc
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem hLam_isScottContinuous_t (H e : Pomega) :
     IsScottContinuous (fun t => hLam H e t) :=
   theorem_1_3 (f := funOf inrightC)

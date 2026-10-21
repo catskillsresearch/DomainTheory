@@ -15,8 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 /-- **Scott 1976, Theorem 1.2 (ii).** `u ⊆ graph(fun(u))`. -/
 theorem theorem_1_2_ii (u : Pomega) : u ⊆ graph (funOf u) := by
   intro p hp

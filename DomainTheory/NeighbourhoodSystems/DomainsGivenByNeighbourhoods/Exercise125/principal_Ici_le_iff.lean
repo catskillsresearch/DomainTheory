@@ -24,10 +24,7 @@ namespace FinalSegment
 open NeighborhoodSystem
 
 
-
 variable {Δ : Type*} [LinearOrder Δ] [Nonempty Δ]
-
-
 
 
 /-- The principal finite elements `↑(Ici a)`; the correspondence `a ↦ ↑(Ici a)` is

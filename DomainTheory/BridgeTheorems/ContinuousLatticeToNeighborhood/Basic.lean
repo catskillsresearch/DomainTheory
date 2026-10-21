@@ -55,30 +55,10 @@ namespace ContinuousLatticeToNeighborhood
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 section Continuous
 
 variable (hD : IsContinuousLattice D)
 include hD
-
-
-
-
 
 
 end Continuous

@@ -22,18 +22,6 @@ namespace Cofinite
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Every filter is `⊑ ofExcluded ℕ` (the whole family `𝒟`; every cofinite `Y` has `Yᶜ ⊆ ℕ`). -/
 theorem le_ofExcluded_univ (x : cofiniteSystem.Element) :
     x ≤ ofExcluded Set.univ := by

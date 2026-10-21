@@ -22,12 +22,6 @@ namespace Proposition77
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
 
-
-
-
-
-
-
 /-- **`proj0Map` really is the first projection of the pair part:** `proj₀(⟨x, y⟩^§) = x`. -/
 theorem proj0_toElementMap_pairSharp (x y : (Dsharp D hD).Element) :
     (proj0Map hD).toElementMap (pairSharp D hD x y) = x := by

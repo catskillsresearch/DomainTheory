@@ -22,32 +22,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott's second equation.** `σ⃗·σ⃗·σ⃗ = σ⃗`. -/
 theorem streamArrow_mul_self_self (σ : List Bool) :
     mulElem (mulElem (streamArrow σ) (streamArrow σ)) (streamArrow σ) = streamArrow σ := by

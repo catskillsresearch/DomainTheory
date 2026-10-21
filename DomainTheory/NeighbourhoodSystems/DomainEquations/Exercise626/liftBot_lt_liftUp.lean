@@ -23,21 +23,7 @@ namespace Exercise619
 variable {D : NeighborhoodSystem Str}
 
 
-
-
-
-
-
-
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
-
-
-
-
-
-
 
 
 /-- The fresh bottom is *strictly* below every lifted element. -/

@@ -22,19 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.e_codeFinset
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem exists_code (s : Finset ℕ) : ∃ n, e n = (s : Set ℕ) :=
   ⟨codeFinset s, e_codeFinset s⟩
 

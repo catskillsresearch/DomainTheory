@@ -16,36 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eq_4_39
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem lambR_fixedPoint : lambF lambR = lambR := by
   simpa [lambF] using eq_4_39.symm
 

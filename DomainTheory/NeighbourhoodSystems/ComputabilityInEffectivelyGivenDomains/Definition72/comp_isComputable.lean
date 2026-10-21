@@ -19,7 +19,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 
 
-
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
 
 /-- **Proposition 7.3 (Scott 1981, PRG-19) — composition of computable maps is computable.** For

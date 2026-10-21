@@ -18,20 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise722
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Definition 7.1(i), syntactically**, is *exactly language equivalence on `SExpr`*:
 `Xₙ ∩ Xₘ = X_k ↔ denote (cap eₙ eₘ) = denote e_k`. -/
 theorem interEq_iff (a b k : SExpr) :

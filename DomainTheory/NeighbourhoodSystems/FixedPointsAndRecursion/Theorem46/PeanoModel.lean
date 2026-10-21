@@ -9,7 +9,7 @@ import all Mathlib.Tactic
 
 @[expose] public section
 
-universe u v
+universe u
 
 namespace DomainTheory.NeighbourhoodSystems
 

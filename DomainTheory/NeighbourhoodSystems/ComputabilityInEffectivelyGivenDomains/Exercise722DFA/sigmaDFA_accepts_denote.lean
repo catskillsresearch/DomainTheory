@@ -22,8 +22,6 @@ namespace Exercise722
 open scoped Computability
 
 
-
-
 theorem sigmaDFA_accepts_denote : sigmaDFA.accepts = denote .sigma := by
   rw [sigmaDFA_accepts, denote_sigma]
 

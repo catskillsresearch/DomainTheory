@@ -58,16 +58,6 @@ namespace ApproximableMap
 /-! ### The relativized domain `Dₐ`. -/
 
 
-
-
-
-
-
-
-
-
-
-
 /-! ### Restricting an endomap with `f(a) = a`. -/
 
 

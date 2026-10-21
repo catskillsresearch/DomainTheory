@@ -21,26 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_3_S_uniqu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 7.3 (The functionality theorem).** -/
 theorem theorem_7_3 :
     (∀ A, (arrowE A A).mem Icomb) ∧

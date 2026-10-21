@@ -19,16 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise514
 open DomainTheory.NeighbourhoodSystems.Exercise513
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **`graph ∘ fun ⊇ λx.x`**: `u ⊆ Graph (Fun u)`. -/
 theorem id_le_Graph_Fun (u : Set ℕ) : u ⊆ Graph (Fun u) := by
   intro c hc

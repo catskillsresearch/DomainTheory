@@ -111,7 +111,6 @@ variable {α β : Type*}
 /-! ## Part 1 — the definition of *effective isomorphism* -/
 
 
-
 namespace EffectiveIso
 
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
@@ -134,18 +133,7 @@ Throughout, `V : NeighborhoodSystem α`; `D^∞ = iterSys V` over `ℕ × α`, a
 variable {V : NeighborhoodSystem α}
 
 
-
-
-
-
-
 /-! ### The reindexing constructions. -/
-
-
-
-
-
-
 
 
 /-! #### A choice-free uniform inner bound for `(D^∞)^∞`-neighbourhoods.
@@ -155,16 +143,10 @@ bound, `j` below each inner bound). We obtain a uniform inner bound `M` over `i 
 induction — no witnesses are *chosen*, so this stays choice-free. -/
 
 
-
-
 /-! ### The two approximable maps. -/
 
 
-
-
-
 /-! ### `F` and `G` are mutually inverse. -/
-
 
 
 /-! ### Computability of `F` and `G`.
@@ -176,11 +158,7 @@ We work over `iterPresentation P` (for `D^∞`) and `iterPresentation (iterPrese
 variable (P : ComputablePresentation V)
 
 
-
 variable {P}
-
-
-
 
 
 /-! ### Packaging: the effective isomorphism. -/

@@ -19,27 +19,7 @@ open NeighborhoodSystem
 variable {α β γ δ : Type*}
 
 
-
-
-
-
-
-
-
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Proposition 3.2(i) (Scott 1981, PRG-19).** `⟨x, y⟩ ⊑ ⟨x', y'⟩ ↔ x ⊑ x' ∧ y ⊑ y'`. -/

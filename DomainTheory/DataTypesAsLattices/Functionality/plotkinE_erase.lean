@@ -17,34 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag_Z_finite_u
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plotkinE_erase {p q : ℕ} {u v : Pomega}
     (h : (plotkinE p q (max p q + 1)).rel u v) :
     eraseTag (max p q + 1) u = eraseTag (max p q + 1) v := by

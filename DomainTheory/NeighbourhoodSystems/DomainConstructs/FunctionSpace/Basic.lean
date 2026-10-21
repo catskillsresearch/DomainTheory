@@ -107,41 +107,10 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
 /-! ### Definition 3.8 — step sets and the function space. -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Theorem 3.10 — the function space is complete. -/
 
 
-
-
-
-
-
-
-
-
-
 /-! ### Proposition 3.9 — the least map of a consistent neighbourhood. -/
-
-
-
-
-
-
-
 
 
 /-! ### Theorem 3.13(i) — the pointwise order. -/
@@ -149,29 +118,12 @@ variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodS
 /-! ### Theorem 3.13(ii)(iii) — pointwise boundedness and sups. -/
 
 
-
-
-
-
-
 /-! ### Theorem 3.11 — evaluation. -/
 
 variable {V₂ : NeighborhoodSystem γ}
 
 
-
 /-! ### Theorem 3.12 — currying. -/
-
-
-
-
-
-
-
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

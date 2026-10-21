@@ -36,22 +36,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sexId_toElement (x : SexSys.Element) :
     sexIdScottContinuous.toFun x = x :=
   idMap_toElement SexSys x

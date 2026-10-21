@@ -23,22 +23,6 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 5.11 (Scott 1981, PRG-19).** The `n`-th component of `map(s, x)` is `(component s n)(x)`,
 i.e. `map(⟨fₙ⟩, x) = ⟨fₙ(x)⟩ₙ`. -/
 theorem component_map (x : V.Element) :

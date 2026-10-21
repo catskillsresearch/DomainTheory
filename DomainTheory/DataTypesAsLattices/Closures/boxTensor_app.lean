@@ -20,35 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.squarePair_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxTensor_app (a b u : Pomega) :
     funOf (boxTensor a b) u =
       squarePair (funOf a (squareFst u)) (funOf b (squareSnd u)) :=

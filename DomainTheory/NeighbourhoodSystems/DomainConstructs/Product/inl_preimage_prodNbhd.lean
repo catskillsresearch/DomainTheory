@@ -13,8 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product.mem_pro
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem

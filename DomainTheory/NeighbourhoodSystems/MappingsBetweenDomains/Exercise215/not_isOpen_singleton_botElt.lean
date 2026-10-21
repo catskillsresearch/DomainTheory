@@ -17,20 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise215
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **The opens of `|𝒪|`.** `{⊥}` is not open: `⊥` is the generic point. (The basic neighbourhood of
 `⊥` is `[Δ] = |𝒪|`, which is not contained in `{⊥}` because it also contains `⊤`.) -/
 theorem not_isOpen_singleton_botElt : ¬ IsOpen ({botElt} : Set O.Element) := by

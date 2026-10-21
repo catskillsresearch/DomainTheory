@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.lambF
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def lambR : Pomega := funOf Ycomb (graph lambF)

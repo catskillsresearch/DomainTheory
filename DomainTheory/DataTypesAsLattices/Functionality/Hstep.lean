@@ -17,8 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.hLam
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- One continuous step of (4.43), dispatched on the (4.44) tags. -/

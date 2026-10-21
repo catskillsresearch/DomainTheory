@@ -23,9 +23,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
   (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 
-
-
-
 /-- If the test fails (`p(x) = false`), the loop exits: `w(x) = x`. -/
 theorem whileMap_false {x : V.Element} (hx : p.toElementMap x = Example23.falseElt) :
     (whileMap V p f).toElementMap x = x := by

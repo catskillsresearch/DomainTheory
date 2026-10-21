@@ -23,16 +23,6 @@ namespace Exercise824
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.24, Claim 1.** Provided `s`/`t` map pairs of finitary projections to finitary
 projections, the simultaneous fixed point `(aStar s t, bStar s t)` really consists of finitary
 projections. -/

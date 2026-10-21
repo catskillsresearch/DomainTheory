@@ -17,50 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_same_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, after (4.7).** `int({n}) = {n}`. -/
 theorem intR_ofNat : ∀ n, funOf intR (ofNat n) = ofNat n
   | 0 => by

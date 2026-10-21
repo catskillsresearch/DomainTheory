@@ -9,8 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Image of a set of fixed-point subtypes. -/

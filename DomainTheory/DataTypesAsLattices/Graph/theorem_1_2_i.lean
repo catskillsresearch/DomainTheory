@@ -15,8 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 /-- **Scott 1976, Theorem 1.2 (i).** `fun(graph(f)) = f` when `f` is continuous. -/
 theorem theorem_1_2_i {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     funOf (graph f) = f := by

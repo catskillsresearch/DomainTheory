@@ -39,8 +39,6 @@ variable {α : Type*}
 /-! ### Generic order-isomorphism lemmas about `Pi`/`Prod` types -/
 
 
-
-
 /-! ### `𝒟^∞ × 𝒟^∞ ≅ 𝒟^∞` for every `𝒟`, in particular for `𝒟 = 𝒰` -/
 
 end DomainTheory.NeighbourhoodSystems

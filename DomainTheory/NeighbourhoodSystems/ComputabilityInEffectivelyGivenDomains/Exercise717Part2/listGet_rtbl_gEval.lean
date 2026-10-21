@@ -22,29 +22,12 @@ variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 namespace Exercise717
 
 
-
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 section Computability
 
 variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
 
 
 /-- Memo lookup, in `gEval` form: at any earlier code `w' < w`, position `w-1-w'` of the table is

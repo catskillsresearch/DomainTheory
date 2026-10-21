@@ -18,38 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.ofComb_combinatory
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem theorem_2_4_closed (t : Term) :
     IsCombinatory (interp t (fun _ => botElem)) := by
   rw [theorem_2_4_complete]

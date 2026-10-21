@@ -21,15 +21,9 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 section Algebraic
 
 variable {γ : Type u} {V : NeighborhoodSystem γ}
-
-
-
-
 
 
 /-- **Compact elements are principal** — the converse of `principal_isCompactElt`, via

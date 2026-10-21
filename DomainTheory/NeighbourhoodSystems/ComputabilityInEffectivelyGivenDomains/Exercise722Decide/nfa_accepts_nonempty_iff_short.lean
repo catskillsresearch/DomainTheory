@@ -23,35 +23,12 @@ open Sum Set
 variable {σ₁ σ₂ : Type}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 variable {σ : Type}
 
 
 section ShortWord
 
 variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem nfa_accepts_nonempty_iff_short :

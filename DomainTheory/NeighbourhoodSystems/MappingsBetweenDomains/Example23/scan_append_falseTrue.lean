@@ -18,13 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example23
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
 /-- **A leading `01` always commits to `false`, whatever follows.** `scan([0,1]++τ) = false`, for
 *every* tail `τ`. (Exercise 2.16's second equation, at the token level.) -/
 theorem scan_append_falseTrue (τ : Str) : scan ([false, true] ++ τ) = some false := by

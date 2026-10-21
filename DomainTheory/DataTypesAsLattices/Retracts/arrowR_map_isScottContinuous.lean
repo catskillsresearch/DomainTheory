@@ -17,42 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp_right_const
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem arrowR_map_isScottContinuous (a b : Pomega) :
     IsScottContinuous (fun u => comp b (comp u a)) :=
   theorem_1_3 (comp_isScottContinuous_right b) (comp_right_const a)

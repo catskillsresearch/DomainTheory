@@ -15,11 +15,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63Inst
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
-universe u v w
+universe u
 
 variable {Obj : Type u} [Category Obj]
 

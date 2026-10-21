@@ -24,21 +24,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`V` is closed under finite (`Fintype`-indexed) unions**, as long as the result is
 non-empty — mirrors `Definition87.lean`'s `U_iUnion_mem` verbatim. -/
 theorem V_iUnion_mem {ι : Type*} [Fintype ι] {f : ι → Set ℕ} (hf : ∀ i, f i = ∅ ∨ V.mem (f i))

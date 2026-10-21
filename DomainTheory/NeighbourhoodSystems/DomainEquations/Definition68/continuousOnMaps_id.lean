@@ -17,11 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe u
-
-
-
-
 
 /-- **The identity functor is continuous on maps** — the basic witness that Definition 6.8 is
 satisfiable. The representing approximable map is the identity on `(D →⊥ E)`. -/

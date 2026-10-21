@@ -32,8 +32,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product.paired_
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem

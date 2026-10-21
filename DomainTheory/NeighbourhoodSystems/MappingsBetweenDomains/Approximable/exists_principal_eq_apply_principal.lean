@@ -22,21 +22,9 @@ open NeighborhoodSystem
 variable {α β γ δ : Type*}
 
 
-
 namespace ApproximableMap
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Theorem 2.7 (Scott 1981, PRG-19) — finite elements go to finite elements.** A domain

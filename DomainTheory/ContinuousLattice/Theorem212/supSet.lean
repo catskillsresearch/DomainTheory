@@ -9,8 +9,6 @@ public import DomainTheory.ContinuousLattice.Theorem212.IdemFix
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Topology Set

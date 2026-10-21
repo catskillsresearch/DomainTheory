@@ -24,34 +24,13 @@ namespace Exercise619
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 
-
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
 
 variable {C₀ C₁ : ScottSys}
-
-
-
-
-
-
-
 
 
 /-- **`λD. T(D)` is continuous on domains.** -/

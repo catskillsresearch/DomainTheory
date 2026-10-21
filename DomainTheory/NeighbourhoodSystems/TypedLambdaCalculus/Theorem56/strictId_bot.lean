@@ -24,7 +24,6 @@ open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap pred
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 
 
-
 theorem strictId_bot : strictId.toElementMap N.bot = N.bot := by
   rw [strictId, toElementMap_comp]
   simp only [toElementMap_paired, toElementMap_idMap]

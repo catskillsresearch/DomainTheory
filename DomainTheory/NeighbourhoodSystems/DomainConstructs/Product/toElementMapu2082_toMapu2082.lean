@@ -19,59 +19,12 @@ open NeighborhoodSystem
 variable {α β γ δ : Type*}
 
 
-
-
-
-
-
-
-
-
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 variable {V₂ : NeighborhoodSystem γ}
 
 open ApproximableMap
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Theorem 3.5 (elementwise) (Scott 1981, PRG-19).** The two-variable elementwise map of

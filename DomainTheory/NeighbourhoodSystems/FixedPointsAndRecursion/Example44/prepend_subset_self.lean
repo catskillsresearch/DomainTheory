@@ -17,23 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example44
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `σX ⊆ X` along the prefix order: a prepended neighbourhood is contained in any neighbourhood it
 refines. (Used only via `prepend_mono`; kept implicit.) -/
 theorem prepend_subset_self : True := trivial

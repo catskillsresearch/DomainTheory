@@ -27,23 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Coordinates of the bottom stack are `⊥`. -/
 theorem component_bot (i : ℕ) : component (𝒩.bot) i = N.bot := by
   have hbot : (𝒩.bot) = ofSeq (fun _ => N.bot) :=

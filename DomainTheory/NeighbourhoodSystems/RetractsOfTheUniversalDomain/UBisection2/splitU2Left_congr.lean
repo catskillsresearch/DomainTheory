@@ -13,8 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBi
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem

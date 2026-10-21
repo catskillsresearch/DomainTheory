@@ -16,15 +16,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.uFor
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 instance : LeftCommutative uForgetInsert :=
   ⟨fun p q s => insert_comm' (uForget p) (uForget q) s⟩

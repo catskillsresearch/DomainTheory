@@ -19,29 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_ratMidCode : Nat.Primrec ratMidCode := by
   have hc1 : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
   have hc2 : Nat.Primrec (fun t : ℕ => t.unpair.2) := Nat.Primrec.right

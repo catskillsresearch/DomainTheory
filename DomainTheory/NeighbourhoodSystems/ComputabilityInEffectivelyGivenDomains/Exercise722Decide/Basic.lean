@@ -80,7 +80,6 @@ section NFAinterLemmas
 variable (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂)
 
 
-
 end NFAinterLemmas
 
 /-! ## Choice-free DFA → NFA recognition
@@ -89,16 +88,11 @@ mathlib's `DFA.toNFA_correct` depends on `Classical.choice`; we reprove it choic
 automata are DFAs, so the uniform `toNFA` must convert them without pulling choice). -/
 
 
-
 /-! ## The uniform recogniser `toNFA` -/
-
-
 
 
 example : DecidableEq (autState (.sigma : SExpr)) := inferInstance
 example : DecidableEq (autState (.single [true, false] : SExpr)) := inferInstance
-
-
 
 
 /-! ## Emptiness reduces to reachability of an accept state
@@ -121,25 +115,9 @@ section ShortWord
 variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 end ShortWord
 
 /-! ## Emptiness decider (Session C5) -/
-
-
-
-
 
 
 /-! ## Consistency decider (Session C6) — Definition 7.1 relation (ii)

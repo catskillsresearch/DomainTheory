@@ -28,8 +28,6 @@ universe u
 variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 
 
-
-
 /-- Continuous maps preserve Scott's specialization order. -/
 theorem SpecializationLe.map {Y : Type*} [TopologicalSpace Y] {x y : X}
     (hxy : SpecializationLe x y) {f : X → Y} (hf : Continuous f) :

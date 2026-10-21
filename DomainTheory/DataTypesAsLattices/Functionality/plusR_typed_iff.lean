@@ -20,19 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_top
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.5 (ii).** Range of `a ⊕ b`. -/
 theorem plusR_typed_iff {a b u : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
     typed u (plusR a b) ↔

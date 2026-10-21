@@ -98,18 +98,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exampl
 /-! ### List helpers: bit-complement `flip` and bit-doubling `double`. -/
 
 
-
-
-
-
-
-
-
 /-! ### The approximation order on the finite elements `σ⊥` and `σ`. -/
-
-
-
-
 
 
 /-! ### Determination by finite elements: an equality criterion for maps `C → V`. -/
@@ -119,23 +108,10 @@ variable {β : Type*}
 /-! ### `tail : C → C` — Scott's predecessor analogue (Example 4.4). -/
 
 
-
-
-
-
-
 /-! ### `neg : C → C` — bit complement, `neg(0x)=1·neg(x)`, `neg(1x)=0·neg(x)`. -/
 
 
-
-
-
-
 /-! ### `d : C → C` — bit-doubling, `d(Λ)=Λ`, `d(0x)=00·d(x)`, `d(1x)=11·d(x)`. -/
-
-
-
-
 
 
 /-! ### `merge : C × C → C` — bit interleaving.
@@ -145,19 +121,7 @@ the *partial* `σ⊥`. We encode the corresponding neighbourhood (`shape`) and e
 the partial order between them (`SLe`), and the interleaving value function `mergeVal`. -/
 
 
-
-
-
-
-
-
-
-
-
 /-! #### The monotonicity of `mergeVal` (the crux of approximability). -/
-
-
-
 
 
 /-! #### A refinement lemma packaging both the representation and the order. -/

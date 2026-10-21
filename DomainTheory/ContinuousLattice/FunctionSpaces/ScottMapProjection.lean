@@ -21,7 +21,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 
 @[expose] public section
 
-universe u v
 
 namespace DomainTheory.ContinuousLattice
 

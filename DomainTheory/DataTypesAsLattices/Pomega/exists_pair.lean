@@ -26,8 +26,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.exists_triangle_bucket
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem exists_pair (k : ℕ) : ∃ n m, pair n m = k := by

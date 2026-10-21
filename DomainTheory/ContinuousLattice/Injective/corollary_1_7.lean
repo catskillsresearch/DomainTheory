@@ -19,11 +19,9 @@ public import DomainTheory.ContinuousLattice.Injective.proposition_1_5
 @[expose] public section
 
 
-
 open Topology TopologicalSpace
 
-universe u v w
-
+universe u
 
 
 /-- **Scott 1972, Corollary 1.7.** A space is injective iff it is a retract of every

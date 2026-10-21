@@ -17,13 +17,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.descSeq_mono_suc
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 namespace Exercise618
 

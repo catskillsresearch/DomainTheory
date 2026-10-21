@@ -15,21 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.evalC_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem evalC_app (u : Pomega) :
     funOf evalC u = funOf (funOf u (ofNat 0)) (funOf u (ofNat 1)) :=
   beta evalC_isScottContinuous u

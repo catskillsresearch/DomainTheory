@@ -16,58 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.succSet_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem ofNat_combinatory : ∀ n, IsCombinatory (ofNat n)
   | 0 => by
     simpa [zeroC] using IsCombinatory.zero

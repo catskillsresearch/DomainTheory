@@ -18,8 +18,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.setCongr
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 variable {α β : Type*}

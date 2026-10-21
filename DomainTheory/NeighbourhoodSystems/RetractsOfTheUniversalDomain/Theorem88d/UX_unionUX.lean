@@ -25,7 +25,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
 theorem UX_unionUX (n m : ℕ) : UX (unionUX n m) = UX n ∪ UX m := by
   have hmem : U.mem (presentedIntervals (decodeQPairList (appendCode (canonCode n) (canonCode m)))) := by
     rw [presentedIntervals_decodeQPairList_appendCode]; exact U_mem_union_UX n m

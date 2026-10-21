@@ -17,41 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.funOf_isScottContinuous_le
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem interC_else_isScottContinuous (y : Pomega) :
     IsScottContinuous (fun x =>
       succSet (funOf (funOf interC (predSet x)) (predSet y))) := by

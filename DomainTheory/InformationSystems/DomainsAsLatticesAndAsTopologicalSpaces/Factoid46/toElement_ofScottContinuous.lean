@@ -22,15 +22,9 @@ namespace InfoSys
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 
-
-
-
-
 namespace ApproximableMap
 
 variable {A : InfoSys α} {B : InfoSys β}
-
-
 
 
 /-- **Factoid 4.6 (←).** Scott-continuous maps recover as `toElement` of the induced

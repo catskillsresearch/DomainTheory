@@ -25,34 +25,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_4_finite
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem theorem_7_4_unique (z : Pomega)
     (hη : ∀ f, funOf z f = funOf z (graph (fun y => funOf f y)))
     (hz : ∀ A, (arrowE (arrowE A A) (arrowE A A)).mem z) :

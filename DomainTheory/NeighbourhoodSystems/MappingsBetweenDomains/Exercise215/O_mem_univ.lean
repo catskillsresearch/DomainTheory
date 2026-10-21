@@ -16,12 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise215
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
 theorem O_mem_univ : O.mem (Set.univ : Set (Fin 1)) := Or.inl rfl
 
 end DomainTheory.NeighbourhoodSystems.Exercise215

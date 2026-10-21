@@ -16,18 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 theorem continuous_nary {F : Pomega → Pomega → Pomega → Pomega}
     (hf0 : ∀ y z, IsScottContinuous (fun x => F x y z))
     (hf1 : ∀ x z, IsScottContinuous (fun y => F x y z))

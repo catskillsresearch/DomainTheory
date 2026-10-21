@@ -15,26 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Kcomb_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Kcomb_app2 (x y : Pomega) : funOf (funOf Kcomb x) y = x := by
   rw [Kcomb_app]
   exact beta (const_isScottContinuous x) y

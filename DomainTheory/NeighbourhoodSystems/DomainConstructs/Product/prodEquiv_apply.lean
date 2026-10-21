@@ -25,8 +25,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product.prodEqu
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem

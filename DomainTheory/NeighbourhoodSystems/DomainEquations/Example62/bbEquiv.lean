@@ -19,8 +19,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62.toBB_f
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap ExampleB

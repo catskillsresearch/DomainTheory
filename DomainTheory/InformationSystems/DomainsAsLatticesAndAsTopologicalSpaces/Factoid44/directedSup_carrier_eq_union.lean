@@ -22,11 +22,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
-
-
-
 /-- For directed families, the lub carrier equals the raw union (already deductively closed). -/
 theorem directedSup_carrier_eq_union (S : Set sys.Element) (hne : S.Nonempty)
     (hdir : sys.IsDirected S) :

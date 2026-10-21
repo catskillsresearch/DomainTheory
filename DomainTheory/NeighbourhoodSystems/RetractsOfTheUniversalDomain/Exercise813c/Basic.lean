@@ -89,10 +89,7 @@ namespace DomainTheory.NeighbourhoodSystems
 /-! ### `genPoint`: the coordinate-projection clopens of Cantor space -/
 
 
-
-
 /-! ### `box`: finite-support basic clopens -/
-
 
 
 /-! ### The headline: clopens are exactly `GeneratedBy genPoint` -/
@@ -117,13 +114,6 @@ of the wildly different underlying carriers `ℕ`/`ℕ → Bool`.
 -/
 
 
-
-
-
-
-
-
-
 theorem exists_corresponds_of_generatedBy_generator {X : Set ℕ} (hX : GeneratedBy generator X) :
     ∃ Y, Corresponds X Y := by
   obtain ⟨φ, hφ⟩ := generatedBy_iff_exists_evalSet.mp hX
@@ -135,10 +125,6 @@ theorem Corresponds.unique_left {X₁ X₂ : Set ℕ} {Y : Set (ℕ → Bool)}
   obtain ⟨ψ, hψX, hψY⟩ := h2
   have hse : SemanticEquiv φ ψ := semanticEquiv_iff_evalSet'_eq.mpr (hφY.trans hψY.symm)
   rw [← hφX, ← hψX, semanticEquiv_iff_evalSet_eq.mp hse]
-
-
-
-
 
 
 /-!
@@ -153,12 +139,6 @@ as a plain `Set (Set α) → Set (Set α)` operation (not a bundled structure) w
 properties as its own small lemma, so `8.13(c4)` can assemble a genuine `V.Element` term directly
 from them.
 -/
-
-
-
-
-
-
 
 
 /-!
@@ -180,10 +160,6 @@ precise hypothesis this construction needs is `O ≠ Set.univ` ("proper"), not `
 remark is informal here, consistent with the parenthetical's own looser phrasing (`arxiv.md`'s
 scoping already flagged the parallel "opens vs. closeds" imprecision).
 -/
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

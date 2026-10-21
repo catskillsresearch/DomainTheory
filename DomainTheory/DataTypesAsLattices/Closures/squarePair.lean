@@ -9,8 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (5.5)–(5.7).** Disjoint pairing on sets. -/

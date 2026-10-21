@@ -18,36 +18,7 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 
 
-
-
-
-
-
-
 variable {α β γ : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem j0_injective {X X' : Set α}

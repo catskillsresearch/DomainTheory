@@ -16,21 +16,18 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.pair
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
-universe u
 
 variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
+
+omit [DecidableEq α] in
 
 theorem eq_singleton_bot_of_subset {s : Finset (TreeToken α)}
     (hne : s ≠ ∅) (hsub : s ⊆ {.bot}) : s = {.bot} := by

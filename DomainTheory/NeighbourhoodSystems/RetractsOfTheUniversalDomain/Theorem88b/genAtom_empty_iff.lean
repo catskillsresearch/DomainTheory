@@ -20,19 +20,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Part 6c's headline result.** `genAtom`-emptiness (for the reindexed enumeration `e P`, at any
 sign sequence `δ` and depth `n`) reduces to `DAtom (P0 P)`-emptiness at the `posnegList`
 accumulator — which Part 5's `DAtom_recDecidable (P0 P)` already decides, in the codes of *any*

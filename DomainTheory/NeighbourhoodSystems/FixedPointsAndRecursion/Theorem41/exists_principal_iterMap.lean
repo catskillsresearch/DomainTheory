@@ -19,7 +19,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 
-
 open ApproximableMap
 
 

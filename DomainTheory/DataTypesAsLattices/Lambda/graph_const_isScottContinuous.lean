@@ -14,13 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
 /-- `graph (fun y => g x y)` is continuous in `x` when `g` is continuous in `x`. -/
 theorem graph_const_isScottContinuous
     (g : Pomega → Pomega → Pomega)

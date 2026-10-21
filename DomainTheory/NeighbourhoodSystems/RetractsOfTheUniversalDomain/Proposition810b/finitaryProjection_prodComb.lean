@@ -18,26 +18,18 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326
 
-universe u v
+universe u
 
 
 variable {α β : Type u} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 variable {a b : ApproximableMap U U}
-
-
 
 
 section ProdCase
 
 variable (a b : ApproximableMap U U)
-
-
-
-
 
 
 /-- **Proposition 8.10(b), `×`-case, in full.** `a, b` finitary projections `⟹` `a × b` is a

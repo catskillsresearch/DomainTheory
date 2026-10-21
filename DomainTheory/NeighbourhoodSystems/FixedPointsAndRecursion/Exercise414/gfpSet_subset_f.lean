@@ -20,7 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise414
 variable {A : Type*}
 
 
-
 /-- `gfpSet f ⊆ f (gfpSet f)`: it is a post-fixed point. -/
 theorem gfpSet_subset_f (f : Set A → Set A) (hf : Monotone f) :
     gfpSet f ⊆ f (gfpSet f) := by

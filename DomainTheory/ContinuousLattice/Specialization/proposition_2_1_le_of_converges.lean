@@ -29,13 +29,7 @@ universe u
 variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 
 
-
-
-
-
-
 variable {ι : Type u} [Preorder ι] [IsDirected ι (· ≤ ·)]
-
 
 
 variable {x : ι → D} {L y : D}

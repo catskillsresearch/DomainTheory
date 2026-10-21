@@ -16,52 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_one
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Hstep_tag0 (H x t : Pomega) :
     Hstep H (tagInj 0 x) t = funOf t x := by
   simp only [Hstep, expTag, expPayload, hVar, tagInj_zero, tagInj_one,

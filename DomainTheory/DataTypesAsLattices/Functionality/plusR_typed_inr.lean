@@ -18,19 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plusR_typed_inr {a b y : Pomega} (hy : typed y b) :
     typed (pairSeq (ofNat 1) y) (plusR a b) := by
   rw [typed, plusR_app, pairSeq_app_zero, pairSeq_app_one, dcondSet_ofNat_one,

@@ -20,35 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_mixed
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxPlus_app_top (a b : Pomega) :
     funOf (boxPlus a b) topElem = topElem :=
   boxPlus_app_mixed (by rw [squareFst_top]; exact topElem_ne_botElem)

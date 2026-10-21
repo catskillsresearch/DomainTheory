@@ -15,36 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.lambF_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (4.39).** `lamb = int ⊕ (lamb ∘→ lamb)`. -/
 theorem eq_4_39 : lambR = plusR intR (arrowR lambR lambR) := by
   have hY : lambR = fix lambF := theorem_2_5 lambF_isScottContinuous

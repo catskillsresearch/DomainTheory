@@ -25,10 +25,6 @@ variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
-
-
-
 /-- **Choice-free witness gathering (list of step constraints).** From a finite list `L` of
 `ℙD × ℙE`-neighbourhood pairs `(A, B)`, each satisfied by `ℙf` (`(ℙf).rel A B`), build a *single*
 finite list `M` of `D × E`-pairs, `f`-related and covering every generator of every `A` in `L`, such

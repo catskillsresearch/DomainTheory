@@ -21,36 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_one
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plus7_isRetract {a0 a1 a2 a3 a4 a5 a6 : Pomega}
     (h0 : IsRetract a0) (h1 : IsRetract a1) (h2 : IsRetract a2)
     (h3 : IsRetract a3) (h4 : IsRetract a4) (h5 : IsRetract a5)

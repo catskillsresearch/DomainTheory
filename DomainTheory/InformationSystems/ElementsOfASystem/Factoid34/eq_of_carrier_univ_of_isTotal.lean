@@ -19,8 +19,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
 /-- Conversely: any total element equals an element with carrier `D`. -/
 theorem eq_of_carrier_univ_of_isTotal {x t : sys.Element}
     (hx : x.carrier = Set.univ) (ht : sys.IsTotal t) : t = x :=

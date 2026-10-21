@@ -20,8 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.BasicInst11
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 instance (n m : ℕ) : Decidable (e n ⊆ e m) :=

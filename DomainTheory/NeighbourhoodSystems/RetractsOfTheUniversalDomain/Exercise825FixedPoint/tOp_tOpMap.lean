@@ -25,21 +25,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`tOp (tOpMap c) a = arrowComb a c`**, for every `a`: `t` really does implement
 `a ↦ arrowComb a c`, continuously. -/
 theorem tOp_tOpMap (c a : ApproximableMap U U) :

@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.omegaComb
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (2.8).** `Y = λ u. ω(u)(ω(u))`. -/

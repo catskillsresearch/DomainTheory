@@ -24,19 +24,12 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
-
-
 section HardDirection
 
 variable {a : ApproximableMap E E}
 
 
-
 variable {β : Type u} {F : NeighborhoodSystem β} (e : FixSet a ≃o F.Element)
-
-
 
 
 /-- **Theorem 8.5, `(i) ⟹ (ii)` (Scott 1981, PRG-19), assembled.** If `a` is a finitary projection,

@@ -123,10 +123,6 @@ on `propext`/`Quot.sound` (no `Classical.choice`).
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
 /-- The system built by `ofPositive` is indeed positive. -/
 theorem NeighborhoodSystem.ofPositive_isPositive {α : Type*} (mem : Set α → Prop)
     (master : Set α) (master_nonempty : master.Nonempty) (master_mem : mem master)
@@ -138,8 +134,6 @@ theorem NeighborhoodSystem.ofPositive_isPositive {α : Type*} (mem : Set α → 
 namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
-
-
 
 
 /-- The finite intersection is contained in each of its factors: `⋂_{i < n} Xᵢ ⊆ Xⱼ` for
@@ -195,7 +189,6 @@ theorem consistent_iff_interUpTo_mem (X : ℕ → Set α) {n : ℕ}
   · intro h; exact ⟨V.interUpTo X n, h, Set.Subset.refl _⟩
 
 
-
 /-- A filter (`Element`) is closed under the finite intersection `⋂_{i<n} Xᵢ`: if every factor
 `Xᵢ` (`i < n`) lies in the filter `x`, so does `interUpTo X n`. Used in Exercises 1.18 and 1.21.
 Base case `x.master_mem`; inductive step one `x.inter_mem`. -/
@@ -220,12 +213,6 @@ theorem Element.mem_interUpTo_iff {α : Type*} {V : NeighborhoodSystem α} (x : 
   · intro h i hi
     exact x.up_mem h (hX i hi) (V.interUpTo_subset X hi)
   · exact x.mem_interUpTo X
-
-
-
-
-
-
 
 
 /-- **Factoid 1.5b (Scott 1981, PRG-19).** "It is easy to prove that … the two families are
@@ -255,7 +242,6 @@ theorem limitFamily_eq_iff (X Y : ℕ → Set α)
     · rintro ⟨hZ, m, hm⟩
       obtain ⟨n, hn⟩ := h1 m
       exact ⟨hZ, n, hn.trans hm⟩
-
 
 
 /-- **Factoid 1.7a (Scott 1981, PRG-19) — inclusion-*reversing*.** "It is obvious that the
@@ -295,10 +281,6 @@ theorem eq_iUnion_principal (x : V.Element) {Z : Set α} :
     exact x.up_mem hX hVZ hXZ
 
 
-
-
-
-
 /-- **Factoid 1.8b (Scott 1981, PRG-19) — "Examples 1.2–1.5 revisited".** "Any explicitly given
 filter `x` is principal … the minimal `X ∈ x` tells us all we need to know." Stated honestly: if
 the filter `x` has a `⊆`-minimum member `X` (one contained in every member of `x`), then `x` is
@@ -320,8 +302,6 @@ theorem eq_principal_of_isMin (x : V.Element) {X : Set α} (hX : x.mem X)
     exact x.up_mem hX hZmem hXZ
 
 end NeighborhoodSystem
-
-
 
 
 /-- `≅ᴰ` is reflexive (`OrderIso.refl`). -/

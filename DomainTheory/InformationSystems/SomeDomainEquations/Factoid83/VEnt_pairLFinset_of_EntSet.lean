@@ -16,15 +16,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.VEnt
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 /-- Push an `EntSet` through the left projection (or absorb via top). -/
 theorem VEnt_pairLFinset_of_EntSet {u v : Finset VToken}

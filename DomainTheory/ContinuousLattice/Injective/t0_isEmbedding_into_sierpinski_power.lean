@@ -17,10 +17,9 @@ public import DomainTheory.ContinuousLattice.Injective.proposition_1_5
 @[expose] public section
 
 
-
 open Topology TopologicalSpace
 
-universe u v w
+universe u
 
 
 theorem t0_isEmbedding_into_sierpinski_power (X : Type u) [TopologicalSpace X] [T0Space X] :

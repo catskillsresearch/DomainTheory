@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.union_const_left_isScott
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxShift_map_isScottContinuous (a : Pomega) :
     IsScottContinuous (fun x => ofNat 0 ∪ succSet (funOf a (predSet x))) :=
   theorem_1_3 (union_const_left_isScottContinuous (ofNat 0))

@@ -68,14 +68,7 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-
-
-
 
 
 variable (A : InfoSys α) (B : InfoSys β)
@@ -83,29 +76,12 @@ variable (A : InfoSys α) (B : InfoSys β)
 namespace ApproximableMap
 
 
-
 end ApproximableMap
 
 /-! ## BOOL -/
 
 
-
-
-
 /-! ## Strict function space `A →ₛ B` -/
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-! ## Strict maps as elements; retract via `strictify` -/
@@ -114,15 +90,7 @@ end ApproximableMap
 open ApproximableMap
 
 
-
 /-! ## Conditional: `A × A ≅ (BOOL →ₛ A)` -/
-
-
-
-
-
-
-
 
 
 end InfoSys

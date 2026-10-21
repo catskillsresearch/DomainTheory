@@ -18,22 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_16
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `V(a)(x)` is a prefixpoint of `y ↦ x ∪ a(y)`. -/
 theorem Vapply_prefixpoint (a x : Pomega) :
     x ⊆ Vapply a x ∧ funOf a (Vapply a x) ⊆ Vapply a x := by

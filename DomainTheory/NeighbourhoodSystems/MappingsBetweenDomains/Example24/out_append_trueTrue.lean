@@ -17,12 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example24
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
 /-- **A second consecutive `1` changes nothing.** `out([1,1]++τ) = out([1]++τ)`: once inside the
 run of `1`'s, an extra `1` is simply swallowed by `del`. (Exercise 2.17's second equation, at the
 token level — the recursive step behind the uniqueness argument for `runMap`.) -/

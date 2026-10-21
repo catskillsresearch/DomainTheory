@@ -13,8 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Iso
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 @[inherit_doc] infix:25 " ≅ᴰ " => Isomorphic

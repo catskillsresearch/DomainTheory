@@ -66,21 +66,13 @@ namespace DomainTheory.NeighbourhoodSystems
 /-! ### The formula language and its two evaluations -/
 
 
-
-
-
 /-! ### Only finitely many variables matter -/
-
 
 
 /-! ### `SemanticEquiv`: the Lindenbaum equivalence relation -/
 
 
-
-
 /-! ### `Lindenbaum`, the Lindenbaum algebra of propositional calculus -/
-
-
 
 
 /-! ### The bijection also matches entailment with `⊆` -/

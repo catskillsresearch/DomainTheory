@@ -22,23 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.triangle_le_of_le
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem triangle_lt_of_lt {a b : ℕ} (h : a < b) : triangle a < triangle b := by
   have : a + 1 ≤ b := Nat.succ_le_of_lt h
   calc

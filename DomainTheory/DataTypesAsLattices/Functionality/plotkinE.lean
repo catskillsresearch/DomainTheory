@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plotkinGood
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def plotkinE (p q j : ℕ) : RestrictedEquiv where

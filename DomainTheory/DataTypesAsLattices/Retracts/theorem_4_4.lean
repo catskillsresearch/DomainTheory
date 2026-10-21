@@ -16,53 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_4_ii
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.4 (The product theorem), core.** -/
 theorem theorem_4_4 :
     (∀ x y, funOf (pairSeq x y) (ofNat 0) = x ∧

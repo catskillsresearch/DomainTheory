@@ -23,12 +23,6 @@ namespace Exercise823
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
 theorem iterElem_succ' (t : ApproximableMap (funSpace E E) (funSpace E E)) (n : ℕ) :
     t.iterElem (n + 1) = t.toElementMap (t.iterElem n) := by
   show (t.comp (t.iterMap n)).toElementMap (funSpace E E).bot = t.toElementMap (t.iterElem n)

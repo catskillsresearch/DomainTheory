@@ -22,15 +22,9 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 section Algebraic
 
 variable {γ : Type u} {V : NeighborhoodSystem γ}
-
-
-
-
 
 
 theorem principal_isCompactElt {X : Set γ} (hX : V.mem X) : IsCompactElt (V.principal hX) :=

@@ -16,50 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.intR_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem intR_bot : funOf intR botElem = botElem := by
   rw [intR_app, dcondSet_bot]
 

@@ -20,8 +20,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
 /-- `recOp τ (g) (x) = τ(x, g(x))`. -/
 theorem recOp_apply (τ : ApproximableMap (prod V V) V) (φ : (funSpace V V).Element) (x : V.Element) :
     (toApproxMap ((recOp τ).toElementMap φ)).toElementMap x

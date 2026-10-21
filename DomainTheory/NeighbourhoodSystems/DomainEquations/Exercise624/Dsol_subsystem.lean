@@ -21,21 +21,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`{Γ_D} ◁ D + (D × E)`.** The singleton system `D = {Γ_D}` is a subsystem of `D + (D×E)`: by the
 fixed point its only neighbourhood `Γ_D` is the master of `D + (D×E)`. -/
 theorem Dsol_subsystem : Dsol.sys ◁ (Fsol Dsol Esol).sys := by

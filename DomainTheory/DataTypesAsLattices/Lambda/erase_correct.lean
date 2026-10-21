@@ -18,38 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.abs_correct
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem erase_correct (t : Term) (ρ : ℕ → Pomega) :
     ofComb (erase t) ρ = interp t ρ := by
   induction t generalizing ρ with

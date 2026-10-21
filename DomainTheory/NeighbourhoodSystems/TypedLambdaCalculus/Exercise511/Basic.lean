@@ -65,21 +65,13 @@ variable {α : Type*} (V : NeighborhoodSystem α)
 /-! ### `unfold`/`fold` from the isomorphism `D^∞ ≅ D × D^∞`. -/
 
 
-
-
 /-! ### The stack combinators. -/
-
-
-
-
 
 
 /-! ### `diag : D → D^∞`, the constant stack `⟨x⟩ₙ`, by recursion `diag(x) = push(x, diag(x))`. -/
 
 
 /-! ### `map : (D → D)^∞ × D → D^∞`, `map(⟨fₙ⟩, x) = ⟨fₙ(x)⟩ₙ`, by recursion. -/
-
-
 
 
 end DomainTheory.NeighbourhoodSystems.Exercise511

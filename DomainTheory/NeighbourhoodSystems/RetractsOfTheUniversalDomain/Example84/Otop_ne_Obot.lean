@@ -17,14 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 
-
-
-
-
-
-
-
-
 theorem Otop_ne_Obot : Otop ≠ O.bot := by
   intro h
   have h1 : Otop.mem ({0} : Set (Fin 2)) := ⟨O_mem_zero, subset_rfl⟩

@@ -57,13 +57,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example24
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
 /-! ## `runMap`'s relation and elementwise value, read off cones (mirrors `Example23`). -/
 
 /-! ## Exercise 2.17, second half — `runMap` is *uniquely* determined by its equations -/

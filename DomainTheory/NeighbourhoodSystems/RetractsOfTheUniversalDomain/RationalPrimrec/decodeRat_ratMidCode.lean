@@ -18,29 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Correctness of `ratMidCode`**: it decodes to the arithmetic mean of the two decoded
 rationals. -/
 theorem decodeRat_ratMidCode (c1 c2 : ℕ) :

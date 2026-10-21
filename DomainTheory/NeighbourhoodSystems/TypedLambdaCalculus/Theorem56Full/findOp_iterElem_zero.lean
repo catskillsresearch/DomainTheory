@@ -28,36 +28,9 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 section Rfind
 
 variable (φf : ApproximableMap 𝒩 N)
-
-
-
-
-
 
 
 /-- The `0`-th approximant `S⁰(⊥)` is the bottom map. -/

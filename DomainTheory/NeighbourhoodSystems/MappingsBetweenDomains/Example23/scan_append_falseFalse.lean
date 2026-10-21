@@ -18,13 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example23
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
 /-- **Two leading `0`'s cancel.** `scan([0,0]++τ) = scan τ`: reading two extra zeros flips the
 parity twice, i.e. not at all (`Bool.not_not`). (Exercise 2.16's third equation, at the token
 level — the recursive step behind the uniqueness argument for the parity map.) -/

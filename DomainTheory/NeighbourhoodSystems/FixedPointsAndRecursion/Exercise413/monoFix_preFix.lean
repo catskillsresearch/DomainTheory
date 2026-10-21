@@ -23,9 +23,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace NeighborhoodSystem
 
 
-
-
-
 /-- The key step: `f(b) ⊑ b` where `b = monoFix f ha`, by monotonicity alone. -/
 theorem monoFix_preFix (f : V.Element → V.Element) (hf : Monotone f) {a : V.Element}
     (ha : f a ≤ a) : f (monoFix f ha) ≤ monoFix f ha := by

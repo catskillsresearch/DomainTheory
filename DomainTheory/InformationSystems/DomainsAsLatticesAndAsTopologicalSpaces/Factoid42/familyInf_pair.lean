@@ -22,7 +22,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
 /-- Binary meet agrees with the two-element family meet. -/
 theorem familyInf_pair (x y : sys.Element) :
     sys.familyInf ({x, y} : Set sys.Element) ⟨x, Set.mem_insert x {y}⟩ = sys.inf x y := by

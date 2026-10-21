@@ -19,35 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxTensor_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxTensor_isRetract {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
     IsRetract (boxTensor a b) := by
   change boxTensor a b =

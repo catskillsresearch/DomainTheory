@@ -136,7 +136,6 @@ Mirrors `SplitV.lean`'s `myFirstBit` exactly: fold over `i = 0, 1, …, k` (via 
 bound `k + 1`), carrying forward the first `i` found with `isPeriodicMask k i m = 1`. -/
 
 
-
 /-! ### `minLevel`: correctness -/
 
 

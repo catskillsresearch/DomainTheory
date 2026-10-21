@@ -18,35 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Every pair in `decodeQPairList (canonCode c)` is non-degenerate** — both branches of
 `canonCode` (the filtered list, or the `[masterPairCode]` fallback) only ever produce
 `p.1 < p.2` pairs. This is what lets `splitU` (Theorem 8.8(b) Part 4) safely pick the *first*

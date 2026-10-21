@@ -20,11 +20,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
 /-- `xₙ ⊑ ⋃ₙ xₙ`: every member of the sequence approximates the union. -/
 theorem le_iUnion (x : ℕ → V.Element) (hmono : Monotone x) (n : ℕ) :
     x n ≤ V.iUnion x hmono :=

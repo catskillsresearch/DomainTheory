@@ -27,21 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Every coordinate `j < n` of `vecElem v` is the total `v.get j`. -/
 theorem component_vecElem_lt {n : ℕ} (v : List.Vector ℕ n) {j : ℕ} (hj : j < n) :
     component (vecElem v) j = natElem (v.get ⟨j, hj⟩) := by

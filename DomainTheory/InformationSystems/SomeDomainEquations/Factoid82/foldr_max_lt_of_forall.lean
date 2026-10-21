@@ -20,19 +20,17 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.LamE
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
+
+omit [DecidableEq α] in
 
 theorem foldr_max_lt_of_forall {s : Multiset (RawLamToken α)} {b : ℕ}
     (hb : 0 < b) (h : ∀ t ∈ s, rawDepth t < b) :

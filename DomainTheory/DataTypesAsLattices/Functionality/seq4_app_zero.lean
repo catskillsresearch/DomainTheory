@@ -17,36 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seq4_app_zero (a b c d : Pomega) :
     funOf (seq4 a b c d) (ofNat 0) = a := by
   rw [seq4_app, condSet_ofNat_zero]

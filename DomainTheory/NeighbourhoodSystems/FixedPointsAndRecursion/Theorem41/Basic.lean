@@ -61,16 +61,7 @@ namespace ApproximableMap
 /-! ### The iterated map `fⁿ`. -/
 
 
-
-
-
-
-
-
-
 /-! ### Theorem 4.1 — the least fixed point. -/
-
-
 
 
 /-! ### Theorem 4.2(iii) — the iterates `fⁿ(⊥)`. -/

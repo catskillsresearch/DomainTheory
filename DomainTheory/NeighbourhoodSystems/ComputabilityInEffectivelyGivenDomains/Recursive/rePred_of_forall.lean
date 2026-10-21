@@ -29,57 +29,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 namespace Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- An always-true predicate is recursively enumerable. -/
 theorem rePred_of_forall {p : ℕ → Prop} (h : ∀ n, p n) : REPred p :=
   (recDecidable_of_forall h).re

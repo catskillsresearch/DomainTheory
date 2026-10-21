@@ -19,22 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff_subset
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.1 (The algebraic lattice theorem).**
 The compact points of a closure range are exactly the `a(e n)`, and every
 fixed point is their directed supremum. -/

@@ -20,36 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.seq4_app_three
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem tensor4_isRetract {a b c d : Pomega}
     (ha : IsRetract a) (hb : IsRetract b) (hc : IsRetract c) (hd : IsRetract d) :
     IsRetract (tensor4 a b c d) := by

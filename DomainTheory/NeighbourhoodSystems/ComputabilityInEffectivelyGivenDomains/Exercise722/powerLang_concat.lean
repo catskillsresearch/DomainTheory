@@ -21,38 +21,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem powerLang_concat (w : List Bool) :
     concat (powerLang w) (powerLang w) ⊆ powerLang w := by
   rintro u ⟨a, ⟨m, hm⟩, b, ⟨n, hn⟩, rfl⟩

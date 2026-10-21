@@ -52,7 +52,6 @@ open Order
 /-! ## S-expression system -/
 
 
-
 /-! ## Concrete finite elements -/
 
 
@@ -75,7 +74,6 @@ noncomputable abbrev sexNeighborhoodIdealIso :=
   neighborhood_ideal_iso SexSys
 
 /-! ## Domain equation at the level of domains (1982 constructions) -/
-
 
 
 /-! ## Morphisms: identity is Scott-continuous (Factoid 4.6) -/

@@ -21,12 +21,6 @@ open Language
 variable {n : ℕ}
 
 
-
-
-
-
-
-
 /-- Composing selectors: `a(στ) = (aσ)τ`. -/
 theorem select_append (a : Tree n) (σ τ : List (Fin n)) :
     select a (σ ++ τ) = select (select a σ) τ := by

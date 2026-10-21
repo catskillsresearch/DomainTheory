@@ -21,13 +21,9 @@ open NeighborhoodSystem ApproximableMap
 universe u v
 
 
-
-
 section FunSpace
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
-
 
 
 /-- **`B ⊴ funSpace A B`**, via `b ↦ (λ_. b)` / evaluation at `⊥`. -/

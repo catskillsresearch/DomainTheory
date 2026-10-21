@@ -22,56 +22,13 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
 
 
 variable {V₀ V₁}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
-
-
-
-
-
 
 
 /-- **Exercise 3.18 (Scott 1981, PRG-19).** `out₁ ∘ in₁ = I_{𝒟₁}`. -/

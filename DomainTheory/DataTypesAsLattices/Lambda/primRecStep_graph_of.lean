@@ -15,59 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2_beta
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primRecStep_graph_of (a f : Pomega) :
     graph (primRecStep a f) =
       funOf (funOf (interp primRecStepTerm (fun _ => botElem)) a) f := by

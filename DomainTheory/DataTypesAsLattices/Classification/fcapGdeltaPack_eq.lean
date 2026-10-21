@@ -20,31 +20,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem fcapGdeltaPack_eq {f g : Pomega → Pomega} {x : Pomega}
     (hfval : f x = botElem ∨ f x = topElem) :
     fcapGdeltaPack f g x = succSet topElem ↔ f x = botElem ∧ g x = topElem := by

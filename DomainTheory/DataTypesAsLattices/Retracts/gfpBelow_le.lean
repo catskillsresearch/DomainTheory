@@ -15,31 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem gfpBelow_le {f : Pomega → Pomega} (_hf : IsScottContinuous f) (b : Pomega)
     (_hb : f b ⊆ b) : gfpBelow f b ⊆ b := by
   intro k hk

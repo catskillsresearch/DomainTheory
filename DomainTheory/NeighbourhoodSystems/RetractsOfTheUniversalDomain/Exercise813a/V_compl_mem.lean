@@ -18,13 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
 theorem V_compl_mem {X : Set ℕ} (hX : V.mem X) : Xᶜ = ∅ ∨ V.mem Xᶜ := by
   obtain ⟨k, m, rfl, -⟩ := hX
   rw [levelSet_compl]

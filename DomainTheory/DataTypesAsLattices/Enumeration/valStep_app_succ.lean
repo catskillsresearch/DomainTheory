@@ -20,31 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem valStep_app_succ (v : Pomega) (p : ℕ) :
     funOf (valStep v) (ofNat (p + 1)) =
       funOf (funOf v (ofNat (unpair p).1))

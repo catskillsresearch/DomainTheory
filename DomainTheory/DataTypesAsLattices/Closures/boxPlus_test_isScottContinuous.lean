@@ -21,35 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxTag_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxPlus_test_isScottContinuous :
     IsScottContinuous (fun u => boxTag 0 (squareFst u) ∪ boxTag 1 (squareSnd u)) :=
   theorem_1_3_tuple

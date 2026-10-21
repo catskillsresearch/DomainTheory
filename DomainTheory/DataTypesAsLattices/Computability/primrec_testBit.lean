@@ -20,8 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 theorem primrec_testBit : Primrec₂ fun n k : ℕ => n.testBit k :=
   (Primrec.eq.decide.comp
     (Primrec.nat_mod.comp

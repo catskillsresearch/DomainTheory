@@ -24,8 +24,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
 /-- **Scott 1972, Proposition 2.2(vii).** For a non-empty directed set `S`, `x ≪ ⊔S` iff
 `x ≪ y` for some `y ∈ S`. The forward direction is exactly inaccessibility of a Scott-open
 set; the backward direction is monotonicity on the right. -/

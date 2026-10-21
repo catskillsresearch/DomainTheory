@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vapply
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (5.14).** The universe combinator. -/

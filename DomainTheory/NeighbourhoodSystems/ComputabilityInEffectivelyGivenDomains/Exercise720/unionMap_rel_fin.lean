@@ -20,7 +20,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*}
 
 
-
 /-- **Exercise 7.20 — Scott's displayed formula.** On generators (nested finite lists of down-sets)
 `(union).rel (⋃_{l∈LS} ↓_{ℙD}(⋃_{X∈l} ↓X)) (⋃_{Y∈LY} ↓Y) ↔ ∀ l ∈ LS, ∀ X ∈ l, ∃ Y ∈ LY, X ⊆ Y`,
 exactly Scott's `∀ i<n ∀ j<m_i ∃ k<q. X_{ij} ⊆ Y_k`. (`→` reads off the generators `X_{ij}`; `←`

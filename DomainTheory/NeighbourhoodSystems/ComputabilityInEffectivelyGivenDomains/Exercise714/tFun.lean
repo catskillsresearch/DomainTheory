@@ -7,8 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise714
 
 open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems

@@ -18,9 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2_iii
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
 /-- **Scott 1976, Theorem 1.2 (The graph theorem).** -/
 theorem theorem_1_2 {f : Pomega → Pomega} (hf : IsScottContinuous f) (u : Pomega) :
     funOf (graph f) = f ∧ u ⊆ graph (funOf u) ∧

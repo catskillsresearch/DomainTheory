@@ -18,14 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example24
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
 /-- **The "shift formula" for `runMap` (input side).** Reading off `g(σx)` depends on `x` only
 through *some* cone `cone τ ∈ x`, via the output of the concatenation `σ ++ τ`: any deeper cone in
 `sigmaElt`'s built-in up-closure is subsumed by monotonicity (`out_mono`), so the longest one —

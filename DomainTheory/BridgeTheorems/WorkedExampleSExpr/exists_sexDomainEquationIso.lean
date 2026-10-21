@@ -36,20 +36,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem exists_sexDomainEquationIso :
     Nonempty (SexSys.Element ≃o SexRhs.Element) :=
   ⟨sexDomainEquationIso⟩

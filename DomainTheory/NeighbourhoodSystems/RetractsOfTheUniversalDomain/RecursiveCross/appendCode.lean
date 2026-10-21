@@ -8,8 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Rec
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- `appendCode c1 c2` codes a list with the same **elements** as `decodeList c1 ++ decodeList c2`

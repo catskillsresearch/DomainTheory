@@ -16,8 +16,6 @@ import all Mathlib.Tactic.Ring
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-- One step of the diagonal walk: the cell holding `num c + 1`. Moving up-right within a diagonal,

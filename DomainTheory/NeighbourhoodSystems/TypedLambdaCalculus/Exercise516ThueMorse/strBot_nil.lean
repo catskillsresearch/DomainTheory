@@ -18,12 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
 /-- `⊥ = []⊥` in `C` (the cone of `Λ` is the master). -/
 theorem strBot_nil : strBot [] = C.bot := by
   apply Element.ext

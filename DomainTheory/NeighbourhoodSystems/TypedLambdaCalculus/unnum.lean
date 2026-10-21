@@ -17,8 +17,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.nextCell
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 /-- The inverse `unnum v = nextCellᵛ (0, 0)`. -/

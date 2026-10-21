@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Icomb_isClosure : IsClosure Icomb :=
   ⟨subset_rfl, Icomb_isRetract⟩
 

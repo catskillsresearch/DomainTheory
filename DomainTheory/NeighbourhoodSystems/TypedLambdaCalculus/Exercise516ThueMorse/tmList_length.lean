@@ -18,17 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
-
-
-
-
-
 theorem tmList_length (n : ℕ) : (tmList n).length = n := by
   rw [tmList, List.length_map, List.length_range]
 

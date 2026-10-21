@@ -21,11 +21,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
 /-- The approximation order `⊑` is the opposite of Mathlib's specialization preorder `⤳`:
 `y ⤳ x ↔ x ⊑ y`. (Scott's (iii) says exactly that `⊑` is the specialization order of this
 topology.) -/

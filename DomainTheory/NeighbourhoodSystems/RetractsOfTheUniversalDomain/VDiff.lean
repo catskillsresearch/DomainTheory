@@ -68,34 +68,13 @@ Mirrors `myLand` (`LevelSetPrimrec.lean`) bit-for-bit: `lowXor`/`xorStep` in pla
 `lowAnd`/`landStep`, `Nat.testBit_xor` in place of `Nat.testBit_and`. -/
 
 
-
-
-
-
-
-
-
-
-
 /-! ## The "and-not" combinator `myAndNot a b = a ^^^ (a &&& b)` -/
-
-
 
 
 /-! ## `VdiffRaw`/`Vdiff` — `V`'s computable set-difference
 
 Mirrors `VinterRaw`/`Vinter` exactly, substituting `levelSet_diff` (`Exercise812c.lean`) for
 `levelSet_myInter` and `myAndNot` for `myLand`. -/
-
-
-
-
-
-
-
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems

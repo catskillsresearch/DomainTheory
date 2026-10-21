@@ -16,8 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_eq_condC
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices

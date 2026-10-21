@@ -30,21 +30,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Master constructor.** Wrapping an `inner` map (correct on total arguments) in `strictGuardN n`
 yields a full, very strict λ-definition. The `strict` clause is then automatic. -/
 theorem lamDef_of_inner {n : ℕ} (inner : ApproximableMap 𝒩 N) (f : List.Vector ℕ n →. ℕ)

@@ -23,27 +23,12 @@ open Sum Set
 variable {σ₁ σ₂ : Type}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 variable {σ : Type}
 
 
 section ShortWord
 
 variable {σ : Type} [Fintype σ] {M : NFA Bool σ}
-
-
-
 
 
 omit [Fintype σ] in

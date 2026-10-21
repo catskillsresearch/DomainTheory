@@ -211,16 +211,10 @@ open NeighborhoodSystem Domain.Recursive
 /-! ## `Γ`: finite and infinite sequences of naturals -/
 
 
-
-
-
 /-! ## The neighbourhood system `L` -/
 
 
-
 /-! ## `L` is effectively given -/
-
-
 
 
 /-! ### The primitive-recursive intersection function
@@ -247,32 +241,7 @@ choice (build the infinite witness sequence one coordinate at a time; flagged be
 Scott's "**can be identified with**" (an existence claim, not a computable retraction). -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Surjectivity (uses choice to build the witness stream, coordinate by coordinate) -/
-
-
-
-
-
-
-
-
-
-
 
 
 /-! ## Exercise 7.24, third claim — the connection between `B` and `L`
@@ -291,10 +260,8 @@ argument as `toElement`'s `Sum.inr` case — `B`'s domain `|B|` sits inside `|L|
 "binary-valued" LUCID sequences. -/
 
 
-
 theorem bitToNat_injective : Function.Injective bitToNat := by
   intro a b h; cases a <;> cases b <;> simp_all [bitToNat]
-
 
 
 theorem embStr_cons (b : Bool) (s : ExampleB.Str) : embStr (b :: s) = bitToNat b :: embStr s := rfl
@@ -357,39 +324,7 @@ open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
 /-! ### A computable presentation of `T` (Example 1.2's three-point domain) -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### `notT` — pointwise negation on `T`, as a computable map -/
-
-
-
-
-
-
-
-
 
 
 theorem primrec_notCode {f : ℕ → ℕ} (hf : Nat.Primrec f) : Nat.Primrec (fun n => notCode (f n)) := by
@@ -432,13 +367,6 @@ theorem notT_isComputable : IsComputableMap Tpres Tpres notT := by
   exact key.re
 
 /-! ### `andT` — pointwise (sequential/left-strict) conjunction on `T`, as a computable map -/
-
-
-
-
-
-
-
 
 
 theorem primrec_andCode {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
@@ -519,9 +447,6 @@ pull concrete deciders out of `P.incl_computable`/`P.cons_computable`/`P.eq_comp
 variable {β γ δ : Type*}
 
 
-
-
-
 /-- **`postcompose` preserves computability.** If `h : V₁ → V₂` is computable, then so is
 `postcompose h : (L → V₁) → (L → V₂)`, relative to any concrete function-space presentations built
 from `LFunData` bundles: `eval` is computable (Theorem 7.5), composing with `h` stays computable
@@ -537,9 +462,6 @@ theorem postcompose_isComputable {V₁ : NeighborhoodSystem β} {V₂ : Neighbor
   exact curry_isComputable d₁.pres Lpres P₂ d₂.gN d₂.incl0 d₂.incl1 d₂.eq1
     d₂.hgN d₂.hgNp d₂.hincl0 d₂.hincl0p d₂.hincl1 d₂.hincl1p d₂.heq1 d₂.heq1p
     (comp_isComputable heval hh)
-
-
-
 
 
 /-- **`pointwiseBin` preserves computability.** If `h : V₀ × V₁ → V₂` is computable, then so is
@@ -585,7 +507,6 @@ built the same way from any other computable `T`-combinator) — however deeply 
 defines a computable map on `(L→T)`; `deMorganT_isComputable` below composes both lifted combinators
 together (`¬(¬f ∧ ¬g)`, De Morgan's law for the sequential `and`) as a concrete witness of this
 closure. -/
-
 
 
 /-- **Exercise 7.24, fourth claim, `notT` case.** LUCID's pointwise negation lifts to a computable

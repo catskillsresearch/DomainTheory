@@ -20,15 +20,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise414 Function
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 
-
-
-
-
 open Classical in
-
-
-
-
 
 
 /-- **Exercise 4.24 (Scott 1981, PRG-19) — Schröder–Bernstein.** Injections `f : A → B` and

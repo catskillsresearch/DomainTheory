@@ -18,8 +18,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
 /-- **Exercise 1.21 — tokens ↔ elements.** `toToken : |𝒟| → |{[X]}|` is a bijection (it is the
 underlying map of the order-iso `tokenIso`), so a complete system identifies tokens with
 (partial) elements under a one-one correspondence. -/

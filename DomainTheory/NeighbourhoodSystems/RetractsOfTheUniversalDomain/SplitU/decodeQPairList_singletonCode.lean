@@ -16,14 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
 theorem decodeQPairList_singletonCode (v : ℕ) :
     decodeQPairList (Nat.pair v 0 + 1) = [decodeRatPair v] := by
   unfold decodeQPairList

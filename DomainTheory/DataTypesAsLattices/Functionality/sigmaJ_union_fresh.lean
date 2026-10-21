@@ -15,31 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sigmaJ_union_fresh {j m : ℕ} {u : Pomega}
     (hu : ∀ k, pair j k ∉ u) :
     sigmaJ j (u ∪ {pair j m}) = ({pair j (m + 1)} : Pomega) := by

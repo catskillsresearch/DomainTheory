@@ -23,8 +23,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 /-- **On a "right" point**, symmetric to `toElementMap_sumComb_of_left`. -/
 theorem toElementMap_sumComb_of_right {a b : ApproximableMap U U} {x : U.Element}
     (hR : ∃ Y, U.mem Y ∧ (jPlus.toElementMap x).mem (inj₁ Y)) :

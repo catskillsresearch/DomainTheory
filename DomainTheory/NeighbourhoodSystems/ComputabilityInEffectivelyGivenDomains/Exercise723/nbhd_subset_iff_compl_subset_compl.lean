@@ -23,31 +23,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Choice-free converse of `compl_subset_compl_of_subset`, specialized to `nbhd`.** For cofinite
 neighbourhoods the excluded sets have decidable membership (`Nat.testBit`), so unlike the general
 `Set.compl_subset_compl` this direction needs only a case split on a `Bool`, not excluded middle. -/

@@ -20,13 +20,9 @@ open NeighborhoodSystem ApproximableMap
 universe u v
 
 
-
-
 section FunSpace
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
-
 
 
 /-- `const_{φ(⊥)} ≤ φ` pointwise, since `φ(⊥) ≤ φ(x)` for every `x` (monotonicity,

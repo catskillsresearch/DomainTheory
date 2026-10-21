@@ -72,18 +72,13 @@ variable {α β γ : Type*}
 /-! ### `P₀ = λx,y.x` and `P₁ = λx,y.y` — the binary projections. -/
 
 
-
-
-
 /-! ### `pair = λx λy.⟨x,y⟩` — the curried element pairing. -/
 
 
 /-! ### `diag = λx.⟨x,x⟩` — the diagonal. -/
 
 
-
 /-! ### `inv = λx,y.⟨y,x⟩` — the binary argument swap (base case of `inv_{i,j}^n`). -/
-
 
 
 /-! ### `eval = λf,x.f x` — evaluation. -/
@@ -95,13 +90,10 @@ variable {α β γ : Type*}
 /-! ### `curry = λg λx λy.g(x,y)` — currying as a combinator. -/
 
 
-
 /-! ### `comp = λg,f λx.g(f x)` — composition as a combinator. -/
 
 
-
 /-! ### `funpair = λf λg λx.⟨f x, g x⟩`. -/
-
 
 
 /-! ### `fix = λf !x.f x` — the least fixed-point operator. -/

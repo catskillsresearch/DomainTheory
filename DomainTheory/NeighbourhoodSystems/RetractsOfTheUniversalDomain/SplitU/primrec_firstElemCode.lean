@@ -16,16 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
 theorem primrec_firstElemCode : Nat.Primrec firstElemCode :=
   Nat.Primrec.left.comp primrec_pred
 

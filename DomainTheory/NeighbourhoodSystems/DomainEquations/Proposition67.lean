@@ -38,9 +38,6 @@ universe u
 variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj}
 
 
-
-
-
 end DomainTheory.NeighbourhoodSystems
 
 namespace DomainTheory.NeighbourhoodSystems

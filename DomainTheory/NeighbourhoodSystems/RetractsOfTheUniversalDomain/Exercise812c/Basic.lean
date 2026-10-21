@@ -210,8 +210,6 @@ open NeighborhoodSystem
 /-! ### Generic hypotheses for the back-and-forth lemma -/
 
 
-
-
 /-! ### `U` and `V` are Positive (Exercise 1.19) -/
 
 /-! ### Boolean atoms are automatically mem-or-empty
@@ -256,9 +254,6 @@ splitting lemma with `E := D₁` (when refining `D₁`'s side against a `D₀`-s
 (symmetrically), rather than only ever `E := U`. -/
 
 
-
-
-
 /-- **Generalization of `Theorem88.lean`'s `split_fst_subset`**: a splitting operation's first
 output is a subset of `B` (from `I ∪ J = B`). -/
 theorem split_fst_subset' {α γ : Type*} {E : NeighborhoodSystem γ}
@@ -286,17 +281,10 @@ manipulate one sub-step algebraically, rather than re-deriving `atomPair`'s defi
 by hand each time. -/
 
 
-
-
-
-
-
 /-! ### Padding/restricting `ℕ → Bool × Bool` sign sequences
 
 The two-sided analogues of `Theorem88.lean`'s `extendTrue`/`restrictFin`, built by applying them
 componentwise to each half of the pair. Needed for 8.12(c)(vi)(4)'s `XPseq`/`YPseq`. -/
-
-
 
 
 /-! ### The two named sub-steps of `atomPair`, as instances of `xyStep`
@@ -308,20 +296,12 @@ extra arguments — `xStep`/`yStep` only ever need a *single* system's data (`D�
 `xStep`, `D₀`/`hD₀nomin` for `yStep`), never the full two-sided context. -/
 
 
-
-
-
-
-
-
-
 /-! ### One-step Boolean-closure helpers
 
 The two facts that let a mem-or-∅ set stay mem-or-∅ after being intersected/subtracted by a
 *genuine* neighbourhood — the local, one-step content of `genAtom_mem_or_empty`'s induction,
 extracted for reuse in the two-sided construction (where the "tested" side alternates, so the same
 one-step fact is needed twice, once per side, rather than as a single long induction). -/
-
 
 
 /-! ### A generic union-closure fact for `IsPositive` + `DiffClosed` systems
@@ -334,8 +314,6 @@ identity `X ∪ Y = M \ ((M \ X) ∩ (M \ Y))` (valid whenever `X, Y ⊆ M`) —
 mem-or-∅ by `DiffClosed`, their intersection is mem-or-∅ by `IsPositive`, and one more `DiffClosed`
 application finishes it. This is genuinely new generic content (`U`/`V`'s own union-closure lemmas
 never needed to be derived this way), not a transcription of anything in `Theorem88.lean`. -/
-
-
 
 
 /-! ### The interleaved two-sided atom construction
@@ -357,7 +335,6 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (X : ℕ → Set α) (Y : ℕ → Set β) (hXmem : ∀ n, D₀.mem (X n)) (hYmem : ∀ n, D₁.mem (Y n))
 
 
-
 variable (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin hXmem hYmem hD₀mne hD₁mne
 
@@ -370,12 +347,6 @@ identical depth-`n` pair — no invariant needed, purely definitional) and `atom
 `atomPair_snd_subset` (each side only shrinks from depth `n` to `n+1` — *does* need the invariant,
 since the shrinking is via `split_fst_subset'`/`split_snd_subset'`, which only fire once the
 `SplitSpec'` preconditions are known to hold). -/
-
-
-
-
-
-
 
 
 /-! ### Exercise 8.12(c)(vi)(4): recovering `X n` on `D₁`'s side directly from `atomPair`
@@ -404,9 +375,6 @@ value, strictly before the following `Y`-sub-step further refines it). This is *
 agreement below `n` alone suffices. -/
 
 
-
-
-
 /-! ### Exercise 8.12(c)(vi)(4)(b)–(d): recovering `Y n` on `D₀`'s side directly from `atomPair`
 
 Symmetric to `XPseq` above, but genuinely harder: `yStep`'s own inputs (the *post*-`X`-sub-step
@@ -417,10 +385,6 @@ and relating an arbitrary such `bx` back to a concrete history's own bit needs a
 `Function.update`-style bridge ((c) below, `xStep_spec_bit`, a drop-in generalization of
 `xStep_spec` to an arbitrary bit rather than `δ n`'s own) before the "I-formula" itself ((d)) can
 go through. -/
-
-
-
-
 
 
 /-! ### Exercise 8.12(c)(vi)(5): `XPseq`/`YPseq` are always `D₁`/`D₀`-mem-or-∅
@@ -441,9 +405,6 @@ mem-or-∅, since each is a `Fintype`-indexed union of mem-or-∅ pieces (`Split
 on each `xStep`/`yStep` output). -/
 
 
-
-
-
 /-! ### Exercise 8.12(c)(vi)(5)(b): `atomPair` as a `genAtom` over an interleaved family
 
 The interleaved families `combinedX`/`combinedY` and shared sign-interleaving map `combinedδ`
@@ -457,18 +418,6 @@ families at depth `2 * n` — proved via the odd-depth half-step identities `gen
 (`yStep_fst_succ_eq`/`xStep_snd_succ_eq`) each performed once per level of `n`, as anticipated. -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Exercise 8.12(c)(vi)(5)(c)(1): de-interleaving a sign sequence, and its round trip
 
 The first of the four sub-parts of (c)'s planned `hcore` fact for `transfer_dir`. Given an
@@ -477,10 +426,6 @@ arbitrary `δ' : ℕ → Bool` (a sign sequence for the *interleaved* families `
 *paired* family `atomPair` — the inverse of `combinedδ`. `combinedδ_deinterleaveδ` confirms
 re-interleaving recovers `δ'` exactly, feeding both (c)(2)'s even-index case and (c)(3)'s
 odd-index case. -/
-
-
-
-
 
 
 /-! ### Exercise 8.12(c)(vi)(5)(d): the headline bidirectional transfer facts
@@ -495,12 +440,6 @@ Instantiates `Theorem88.lean`'s fully generic `transfer_dir` with `Z1 := combine
 statements about `X`/`XPseq` and `YPseq`/`Y`, unfolding via (b)'s `combinedX_even`/`combinedX_odd`/
 `combinedY_even`/`combinedY_odd` and discharging the `∩ master` bookkeeping with `D₀.sub_master`/
 `XPseq_subset_master`/`YPseq_subset_master`/`D₁.sub_master`. -/
-
-
-
-
-
-
 
 
 /-! ### The headline facts: specializing `transfer_*_combined` to even/even and odd/odd indices
@@ -522,9 +461,6 @@ theorem YPseq_subset_iff_Y_subset (i j : ℕ) :
   exact key
 
 
-
-
-
 /-! ### Exercise 8.12(c)(vi)(7): the bidirectional "genuine neighbourhood" glue
 
 The last ingredient (vii)'s `DomainIso` assembly needs beyond (5)'s order/intersection transfer:
@@ -534,13 +470,6 @@ neither are their `atomPair`-images `XPseq`/`YPseq`. Combined with `XPseq_empty_
 `YPseq_empty_or_mem` ((vi)(4)), this makes `XPseq n`/`YPseq n` *always genuine* neighbourhoods
 (`D₁`'s/`D₀`'s resp.), completing the correspondence: no separate "mutual extension" hypothesis
 beyond `NoMinimal` on both sides is needed. -/
-
-
-
-
-
-
-
 
 
 end AtomPair
@@ -560,16 +489,6 @@ variable {α β : Type*} (D₀ : NeighborhoodSystem α) (D₁ : NeighborhoodSyst
   (hD₀mne : D₀.master.Nonempty) (hD₁mne : D₁.master.Nonempty)
   (hXcover : ∀ S, D₀.mem S ↔ ∃ n, S = X n) (hYcover : ∀ S, D₁.mem S ↔ ∃ n, S = Y n)
   (hX0 : X 0 = D₀.master) (hY0 : Y 0 = D₁.master)
-
-
-
-
-
-
-
-
-
-
 
 
 include hD₀pos hD₀diff hD₀nomin hD₁pos hD₁diff hD₁nomin X Y hXmem hYmem hD₀mne hD₁mne hXcover

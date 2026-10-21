@@ -49,11 +49,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.T
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -62,6 +58,8 @@ variable {A : Type} [DecidableEq A]
 section Initial
 
 variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
+
+omit [Inhabited A] in
 
 theorem genKey0 (g : ApproximableMap (Cn A) B.carrier.sys) :
     B.str.1.toElementMap ((sumMapSig (A := A) (h₀ := Cn_nonempty) (h₁ := B.carrier.nonempty)

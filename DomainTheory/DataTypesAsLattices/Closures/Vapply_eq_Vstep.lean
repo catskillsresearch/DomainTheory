@@ -18,24 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vapply_closed
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Vapply_eq_Vstep (a x : Pomega) :
     Vapply a x = Vstep a x (Vapply a x) := by
   apply subset_antisymm

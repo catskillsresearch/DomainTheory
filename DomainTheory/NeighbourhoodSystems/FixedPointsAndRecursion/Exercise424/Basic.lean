@@ -58,14 +58,4 @@ open DomainTheory.NeighbourhoodSystems.Exercise414 Function
 variable {A B : Type*} {f : A → B} {g : B → A}
 
 
-
-
-
-
-
-
-
-
-
-
 end DomainTheory.NeighbourhoodSystems.Exercise424

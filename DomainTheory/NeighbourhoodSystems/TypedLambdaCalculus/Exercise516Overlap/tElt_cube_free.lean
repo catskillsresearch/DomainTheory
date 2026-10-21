@@ -21,10 +21,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
 open Example44 ExampleB NeighborhoodSystem
 
 /-- **Exercise 5.16 (Scott 1981, PRG-19) — `t` is cube-free.** Scott's literal statement: `t` is not

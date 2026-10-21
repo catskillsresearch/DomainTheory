@@ -20,15 +20,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.mem_
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem mem_uForgetFinset {u : Finset UToken} {t : VToken} :
     t ∈ uForgetFinset u ↔ ∃ p ∈ u, p.val = t := by

@@ -19,10 +19,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β : Type*}
 
 
-
-
-
-
 /-- **Exercise 7.21 — non-triviality.** For any neighbourhoods `X₀ ∈ D`, `Y₀ ∈ E`, the set of
 functions sending `X₀` into `Y₀` (the principal `ℙ(D→E)`-element `↓[X₀,Y₀]`), applied to the
 argument-set `↓X₀`, covers `↓Y₀`. So `papply` does genuine work (it is not the constant map). -/

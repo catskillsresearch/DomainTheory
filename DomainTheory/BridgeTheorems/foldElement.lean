@@ -16,8 +16,6 @@ public import DomainTheory.BridgeTheorems.TreeEnt_sumEnt
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

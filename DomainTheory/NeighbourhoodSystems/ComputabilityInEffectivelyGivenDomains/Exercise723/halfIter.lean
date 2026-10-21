@@ -13,8 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise723
 
 open DomainTheory.NeighbourhoodSystems Example78 NeighborhoodSystem Domain.Recursive

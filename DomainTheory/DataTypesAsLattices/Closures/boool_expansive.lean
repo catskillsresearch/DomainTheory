@@ -17,39 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boool_expansive (u : Pomega) :
     u ⊆ condSet u (ofNat 0) (succSet topElem) := by
   intro k hk

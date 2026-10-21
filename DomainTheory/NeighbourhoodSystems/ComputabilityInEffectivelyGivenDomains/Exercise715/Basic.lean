@@ -133,14 +133,7 @@ namespace ScottPresentation
 variable {V : NeighborhoodSystem α} (P : ScottPresentation V)
 
 
-
-
-
-
-
 end ScottPresentation
-
-
 
 
 /-! ## The smash product `𝒟₀ ⊗ 𝒟₁` is effectively given (Scott's Definition 7.1)
@@ -162,15 +155,7 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {P₀ P₁}
 
 
-
-
-
-
-
 variable (P₀ P₁)
-
-
-
 
 
 /-! ### Projections and the strict pairing for `⊗` (the `×`-analogue combinators).
@@ -181,11 +166,6 @@ member is still a product neighbourhood `prodNbhd A B`, and `Sum.inl ⁻¹' (pro
 pairing forces *proper* image factors and otherwise lands on the master. All three are computable:
 the projections by `smashEnum_eq_eff` + `incl_computable`, the pairing by `a`,`b`'s r.e. relations on
 the (raw) codomain coordinate indices together with the codomain properness tests. -/
-
-
-
-
-
 
 
 /-! ### The appropriate combinator for `⊗`: the functorial action `f ⊗ g`.
@@ -218,17 +198,10 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
 
 
-
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 
 variable {P₀ P₁}
-
-
-
-
-
-
 
 
 /-! ### The appropriate combinators for `⊕`: injections `in₀`/`in₁` and projections `out₀`/`out₁`.
@@ -240,11 +213,6 @@ relations decode, tag-by-tag, to slices of the components' `incl_computable` tog
 recursively-decidable properness tests `proper₀_dec`/`proper₁_dec`. -/
 
 variable {h₀ h₁}
-
-
-
-
-
 
 
 variable (P₀ P₁)
@@ -260,8 +228,6 @@ section CoalescedFunctor
 
 variable {α' β' : Type*} {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
   (h₀' : ∀ X, V₀'.mem X → X.Nonempty) (h₁' : ∀ Y, V₁'.mem Y → Y.Nonempty)
-
-
 
 
 end CoalescedFunctor
@@ -288,20 +254,7 @@ open Domain.Recursive
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 
-
 variable {P}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @[simp] theorem iterPresentation_X (t : ℕ) : (iterPresentation P).X t = iterEnum P t := rfl

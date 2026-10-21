@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 theorem minExtend_bot (p : ℕ → Pomega) : minExtend p botElem = botElem := by
   simp [minExtend, botElem]
 

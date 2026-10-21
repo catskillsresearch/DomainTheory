@@ -17,19 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_splitVMinMask : Nat.Primrec splitVMinMask := by
   have hk : Nat.Primrec (fun n : ℕ => (canonIdx n).unpair.1) :=
     Nat.Primrec.left.comp primrec_canonIdx

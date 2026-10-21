@@ -14,19 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 2.3, unary case.** -/
 theorem theorem_2_3_unary {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     ∃ u, ∀ x, funOf u x = f x :=

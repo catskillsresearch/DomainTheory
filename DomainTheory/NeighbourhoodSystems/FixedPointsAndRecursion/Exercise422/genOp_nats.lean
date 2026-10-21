@@ -21,7 +21,6 @@ open DomainTheory.NeighbourhoodSystems DomainTheory.NeighbourhoodSystems.Exercis
 variable {M : Type*} (zero : M) (succ : M → M)
 
 
-
 theorem genOp_nats : genOp zero succ (nats zero succ) = nats zero succ :=
   lfpSet_isFixed (genOp zero succ) (genOp_monotone zero succ)
 

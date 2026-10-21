@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Abstraction: `λ x. τ` as a graph (Table 2). -/

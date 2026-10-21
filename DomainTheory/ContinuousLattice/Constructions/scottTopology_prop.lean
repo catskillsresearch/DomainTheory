@@ -22,11 +22,6 @@ open Topology Set
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
-
-
 /-- The Scott topology on Scott's two-point space `𝕆 = Prop` is exactly the Sierpiński topology
 (`generateFrom {{True}}`). The Scott-open sets of `Prop` are the upper sets `∅`, `{True}`, `univ`,
 which are precisely the Sierpiński-open sets. This is the topological identification underlying

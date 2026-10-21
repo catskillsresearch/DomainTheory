@@ -16,19 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.tensorR_map_isScott
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem tensorR_app (a b u : Pomega) :
     funOf (tensorR a b) u =
       pairSeq (funOf a (funOf u (ofNat 0))) (funOf b (funOf u (ofNat 1))) :=

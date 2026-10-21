@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 theorem minExtend_union (p : ℕ → Pomega) (x y : Pomega) :
     minExtend p (x ∪ y) = minExtend p x ∪ minExtend p y := by
   ext k

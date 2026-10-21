@@ -26,8 +26,6 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 variable {P qChar cons}
 
 
-
-
 variable (P qChar cons)
 
 variable {P qChar cons}

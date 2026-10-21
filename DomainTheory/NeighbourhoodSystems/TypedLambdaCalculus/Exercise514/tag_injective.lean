@@ -18,10 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise514
 open DomainTheory.NeighbourhoodSystems.Exercise513
 
 
-
-
-
-
 /-- **The tag is one-one**, jointly in both arguments (induction on the list + `num_injective`). -/
 theorem tag_injective : ∀ {ns₁ ns₂ : List ℕ} {m₁ m₂ : ℕ},
     tag ns₁ m₁ = tag ns₂ m₂ → ns₁ = ns₂ ∧ m₁ = m₂ := by

@@ -22,8 +22,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
 /-- The inclusion is strict: `ι(⊥) = ⊥`. -/
 theorem inclMap_bot (a : V.Element) : (inclMap a).toElementMap (relSystem a).bot = V.bot := by
   rw [inclMap_toElementMap]

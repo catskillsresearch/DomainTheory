@@ -19,14 +19,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 
-
-
-
-
 variable (P : ComputablePresentation V)
-
-
-
 
 
 theorem fixStp_eq (fincl : ℕ → ℕ) (c acc x : ℕ) :

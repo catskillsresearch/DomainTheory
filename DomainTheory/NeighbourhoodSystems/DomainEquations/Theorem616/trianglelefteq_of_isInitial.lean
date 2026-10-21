@@ -25,7 +25,6 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exerci
 universe w
 
 
-
 /-- **Theorem 6.16 (Scott 1981, PRG-19).** If `T` is continuous on maps and `D` is an initial
 `T`-algebra, then for any system `E ≅ T(E)` we have `D ⊴ E`: the initial algebra embeds as a
 subdomain of every solution of the domain equation. -/

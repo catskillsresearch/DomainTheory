@@ -23,14 +23,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 universe u
 
 
-
-
-
-
-
-
-
-
 /-- **Exercise 8.19.** If `T ⊴ E` and `E → E ⊴ E`, then `E + E ⊴ E` and `E × E ⊴ E`. -/
 theorem exercise_8_19 {α : Type u} {E : NeighborhoodSystem α}
     (hE : ∀ X, E.mem X → X.Nonempty) (hT : TD ⊴ E) (hArrow : funSpace E E ⊴ E) :

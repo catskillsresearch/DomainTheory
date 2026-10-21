@@ -17,36 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Icomb_isClosure
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Kleene iterates of `I` under a closure-preserving operator stay closures. -/
 theorem theorem_5_6_iterates {F : Pomega → Pomega}
     (_hF : IsScottContinuous F)

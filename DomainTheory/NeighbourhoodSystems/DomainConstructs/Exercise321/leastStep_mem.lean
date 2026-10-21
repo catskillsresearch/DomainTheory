@@ -18,11 +18,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
 theorem leastStep_mem {Y : Set α} {Z : Set β} (hY : V₀.mem Y) (hZ : V₁.mem Z) :
     leastStep Y Z hY hZ ∈ step Y Z := by
   have := leastMap_mem_stepFun (V₀ := V₀) (V₁ := V₁)

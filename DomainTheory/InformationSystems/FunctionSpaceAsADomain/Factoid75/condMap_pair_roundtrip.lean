@@ -25,55 +25,13 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
-
-
-
-
-
 
 
 variable (A : InfoSys α) (B : InfoSys β)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open ApproximableMap
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- One direction of the conditional isomorphism on pairs. -/

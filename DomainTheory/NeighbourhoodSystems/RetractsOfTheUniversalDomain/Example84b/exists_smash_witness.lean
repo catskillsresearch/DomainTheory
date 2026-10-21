@@ -20,14 +20,7 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
 section Smash
-
-
-
-
 
 
 /-- **The compactness lemma.** If neither coordinate of `z` is `⊥`, some *proper* smash

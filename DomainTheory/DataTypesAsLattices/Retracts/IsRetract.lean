@@ -9,8 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, §4, Definition.** `a` is a retract iff `a = a ∘ a`. -/

@@ -78,7 +78,6 @@ namespace Domain.Recursive
 /-! ### `appendCode`: concatenation of two coded lists (up to order) -/
 
 
-
 theorem consStep2_eq (x acc params : ℕ) :
     consStep2 (Nat.pair x (Nat.pair acc params)) = Nat.pair x acc + 1 := by
   unfold consStep2; simp only [unpair_pair_fst, unpair_pair_snd]
@@ -108,7 +107,6 @@ theorem mem_decodeList_appendCode (c1 c2 z : ℕ) :
   rw [foldCode_eq', mem_decodeList_appendCode_aux (decodeList c1) c2 z]
 
 /-! ### `crossInner`: `bop x` mapped over a coded list -/
-
 
 
 theorem crossInnerStep_eq (bop : ℕ → ℕ) (y acc x : ℕ) :
@@ -145,7 +143,6 @@ theorem mem_decodeList_crossInner {bop : ℕ → ℕ} (x c2 z : ℕ) :
 /-! ### `crossCombine`: the full nested fold -/
 
 
-
 theorem crossOuterStep_eq (bop : ℕ → ℕ) (x acc c2 : ℕ) :
     crossOuterStep bop (Nat.pair x (Nat.pair acc c2)) = appendCode (crossInner bop x c2) acc := by
   unfold crossOuterStep; simp only [unpair_pair_fst, unpair_pair_snd]
@@ -179,7 +176,6 @@ code-level analogue of `l.flatMap (fun y => decodeList (f x y))`. This is the pi
 `Theorem88b`'s interval-*difference* needs: subtracting a whole interval-list from a single
 interval can produce `0`, `1`, or `2` result-pieces per step, so the per-element result is itself
 list-valued. -/
-
 
 
 theorem flatMapStep_eq (f : ℕ → ℕ) (y acc x : ℕ) :

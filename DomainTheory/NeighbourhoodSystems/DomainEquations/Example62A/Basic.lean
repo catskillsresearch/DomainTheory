@@ -101,55 +101,16 @@ open NeighborhoodSystem ApproximableMap ExampleB
 variable {β : Type*} {n : ℕ}
 
 
-
-
-
-
-
-
-
 /-! ### Scott's slot encoding `i ⋃_{j<n} 1ʲ0 X_j` over `{0,1}*`. -/
-
 
 
 variable {n : ℕ}
 
 
-
-
-
-
-
-
-
-
 /-! ### The neighbourhood system `A` solving `A ≅ Aⁿ + Aⁿ`. -/
 
 
-
-
-
-
-
-
 /-! ### The domain equation `A ≅ Aⁿ + Aⁿ`. -/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 end Example62A

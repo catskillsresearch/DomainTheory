@@ -19,36 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vcomb_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (5.21).** `a ⊆ V(a)`. -/
 theorem eq_5_21 (a : Pomega) : a ⊆ funOf Vcomb a := by
   rw [Vcomb_app]

@@ -22,8 +22,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 universe u v w
 
 variable {α : Type u} {β : Type v} {γ : Type w}
@@ -31,31 +29,7 @@ variable {α : Type u} {β : Type v} {γ : Type w}
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 
-
-
-
-
 open ApproximableMap
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- Tokens in `fstFinset s` for `s ⊆ ⟨x,y⟩` lie in `x`. -/

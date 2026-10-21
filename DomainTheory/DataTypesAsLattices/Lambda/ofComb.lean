@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def ofComb : Comb → (ℕ → Pomega) → Pomega

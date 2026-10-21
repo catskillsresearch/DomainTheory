@@ -20,15 +20,6 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
-
-
-
 /-- **Stack law.** `head(push(x, s)) = x`. -/
 theorem head_push (x : V.Element) (s : (iterSys V).Element) :
     (head V).toElementMap ((push V).toElementMap (pair x s)) = x := by

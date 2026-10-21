@@ -53,36 +53,4 @@ Theorems 5.1–5.6 and the pairing used for products of closures.
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end DomainTheory.DataTypesAsLattices

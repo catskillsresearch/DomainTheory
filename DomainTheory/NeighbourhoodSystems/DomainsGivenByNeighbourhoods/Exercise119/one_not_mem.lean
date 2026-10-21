@@ -20,16 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise119
 open DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
-
-
-
-
 /-- `{1}` is not a neighbourhood (it is neither `Δ`, `{0,1}`, nor `{1,2}`). -/
 theorem one_not_mem : ¬ mem ({1} : Set Tok) := by
   intro h

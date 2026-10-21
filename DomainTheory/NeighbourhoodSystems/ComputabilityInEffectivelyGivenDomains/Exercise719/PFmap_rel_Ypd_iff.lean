@@ -23,9 +23,6 @@ variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
-
-
 /-- **Exercise 7.19 — the relation of `ℙf` at the level of `ℙ𝒟`-codes.** Over the canonical
 presentations of Proposition 7.10, `(ℙf).rel (Y_c) (Y_d) ↔ ∀ a ∈ dl c, ∃ b ∈ dl d, Xₐ f Y_b`. -/
 theorem PFmap_rel_Ypd_iff (P : ComputablePresentation V) (Q : ComputablePresentation W)

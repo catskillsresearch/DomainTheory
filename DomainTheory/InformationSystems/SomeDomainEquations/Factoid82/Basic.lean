@@ -133,8 +133,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α : Type*} [DecidableEq α]
 
 /-! ## Raw tokens + decidable equality -/
@@ -142,29 +140,9 @@ variable {α : Type*} [DecidableEq α]
 /-! ## Projections -/
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-! ## Staged consistency -/
 
 variable (A : InfoSys α)
-
-
-
-
-
-
-
-
-
 
 
 theorem mem_foldr_lamForget (s : Multiset (LamToken A)) (t : RawLamToken α) :
@@ -185,16 +163,11 @@ theorem mem_foldr_lamForget (s : Multiset (LamToken A)) (t : RawLamToken α) :
       · exact Or.inr ⟨q, hq, hq'⟩
 
 
-
-
-
-
 /-! ## Staged entailment (Scott (8)–(11)) — definitions only
 
 Full `ent_refl` / `ent_con` / `ent_trans` for the `InfoSys` instance remain; the
 definitions below package Scott’s clauses (8)–(11) at stages matching `LamConN`.
 -/
-
 
 
 /-! ## Inversion lemmas for staged Con -/
@@ -203,24 +176,7 @@ definitions below package Scott’s clauses (8)–(11) at stages matching `LamCo
 /-! ## ent_con: inserting an entailed token preserves consistency -/
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-! ## Depth-based entailment (Scott (8)–(11), inductive FunEnt-style) -/
-
-
-
-
-
-
 
 
 /-! ### Funion / filter helpers + weaken_insert + funion_of_entSet + insert_of_ent -/
@@ -244,53 +200,13 @@ theorem funion_insert_lam (u : Finset (RawLamToken α)) (a : RawLamToken α)
       · exact mem_funion.mpr (Or.inr (Finset.mem_insert.mpr (Or.inr ht)))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Scott (8)–(11): `ent_trans` (Def 2.1) -/
 
 
 /-! ### Phase B — `lambdaSystem` (Def 2.1) on `LamConDepth` -/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Phase C — domain equation `D ≅ A + (D → D)` -/
-
-
-
-
 
 
 end InfoSys

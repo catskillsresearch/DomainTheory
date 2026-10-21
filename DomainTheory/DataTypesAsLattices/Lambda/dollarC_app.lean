@@ -16,43 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqFun_left_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem dollarC_app (u : Pomega) :
     funOf dollarC u = graph (fun x => seqFun u x) :=
   beta (graph_const_isScottContinuous (fun u x => seqFun u x)

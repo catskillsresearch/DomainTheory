@@ -30,16 +30,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
 theorem guard1_bot (j : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Element)
     (h : component z j = N.bot) : (guard1 j φ).toElementMap z = N.bot := by
   rw [guard1_apply, h, zeroMap_bot, T_bot_eq, Exercise326.cond_bot]

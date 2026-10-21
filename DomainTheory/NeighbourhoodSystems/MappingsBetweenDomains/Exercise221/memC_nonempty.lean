@@ -17,18 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise221
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Every neighbourhood of `𝒞` is nonempty (there is no empty token). -/
 theorem memC_nonempty {W : Set Str} (hW : C.mem W) : W.Nonempty := by
   rcases hW with ⟨σ, rfl⟩ | ⟨σ, rfl⟩

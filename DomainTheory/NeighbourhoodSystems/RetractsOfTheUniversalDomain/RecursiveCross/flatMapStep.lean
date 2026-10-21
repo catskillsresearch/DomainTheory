@@ -8,8 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Rec
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- `foldCode`'s step for `flatMapCode`: pops `y` from the folded list, appends `f (pair x y)`

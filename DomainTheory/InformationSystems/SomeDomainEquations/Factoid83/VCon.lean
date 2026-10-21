@@ -12,15 +12,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPai
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 /-- Scott: all finite subsets of `D_V` are consistent. -/
 def VCon (_u : Finset VToken) : Prop := True

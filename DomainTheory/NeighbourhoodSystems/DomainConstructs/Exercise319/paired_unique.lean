@@ -20,8 +20,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : N
 variable {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'}
 
 
-
-
 /-- **Exercise 3.20 (Scott 1981, PRG-19).** The universal property of the product (uniqueness):
 any `k` with `p₀ ∘ k = h₀` and `p₁ ∘ k = h₁` equals the pairing `⟨h₀, h₁⟩`. Hence `prod` with
 `proj₀`, `proj₁` is the categorical product of `𝒟₀` and `𝒟₁`. -/

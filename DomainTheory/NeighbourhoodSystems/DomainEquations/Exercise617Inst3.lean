@@ -11,13 +11,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.StrictDomainObj
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 /-- **The category of `∅`-free domains and strict maps.** Morphisms are strict approximable maps
 (`StrictMap`, Exercise 5.10); identities and associative composition come from Theorem 2.5, and

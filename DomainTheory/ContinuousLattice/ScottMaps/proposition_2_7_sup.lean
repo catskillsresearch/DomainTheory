@@ -23,8 +23,6 @@ open Set Topology
 variable {D D' D'' : Type*} [CompleteLattice D] [CompleteLattice D'] [CompleteLattice D'']
 
 
-
-
 /-- **Scott 1972, Proposition 2.7 (join).** Binary join is Scott-continuous on every complete
 lattice; this is the `⊔`-part of Scott's 2.7. -/
 theorem proposition_2_7_sup :

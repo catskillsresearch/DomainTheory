@@ -22,8 +22,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
 theorem subset_deductiveClosure (U : Set α) (hU : sys.IsFinitelyConsistent U) :
     U ⊆ (sys.deductiveClosure U hU).carrier := by
   intro a ha

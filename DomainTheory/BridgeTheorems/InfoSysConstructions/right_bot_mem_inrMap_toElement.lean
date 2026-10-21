@@ -17,8 +17,6 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions.lftFinset_singlet
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

@@ -14,13 +14,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Inst3
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 @[simp] theorem StrictDomainObj.id_val (D : StrictDomainObj) :
     ((𝟙 D) : StrictMap D.sys D.sys).1 = ApproximableMap.idMap D.sys := rfl

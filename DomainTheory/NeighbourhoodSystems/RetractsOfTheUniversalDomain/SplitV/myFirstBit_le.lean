@@ -17,11 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
 /-- **`myFirstBit` never overshoots its bound.** -/
 theorem myFirstBit_le (m N : ℕ) : myFirstBit m N ≤ N := by
   rcases myFirstBit_spec m N with ⟨h, -, -⟩ | ⟨h, -⟩ <;> omega

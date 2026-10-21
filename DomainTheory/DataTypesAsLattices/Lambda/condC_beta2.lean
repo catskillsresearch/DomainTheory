@@ -18,37 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.condC_beta
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem condC_beta2 (x y : Pomega) :
     funOf (funOf condC x) y = graph (fun z => condSet z x y) := by
   rw [condC_beta]

@@ -23,44 +23,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Non-emptiness of the set presented by a QPair-list code is recursively decidable.** -/
 theorem recDecidable_presentedIntervals_nonempty :
     RecDecidable (fun c => (presentedIntervals (decodeQPairList c)).Nonempty) :=

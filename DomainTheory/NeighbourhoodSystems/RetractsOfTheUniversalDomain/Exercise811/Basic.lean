@@ -87,16 +87,7 @@ open NeighborhoodSystem ApproximableMap
 /-! ### The chain neighbourhood system `R = {[0,r) ∣ 0 < r ≤ 1}` -/
 
 
-
-
-
-
-
 /-! ### Scott's map `a : R → R` -/
-
-
-
-
 
 
 /-! ### `a` is a retraction and a projection -/
@@ -104,29 +95,7 @@ open NeighborhoodSystem ApproximableMap
 /-! ### The fixed-point set of `a`, via "up-sets" `U : ℚ → Prop` -/
 
 
-
-
-
 /-! ### The correspondence with `Set.Icc (0 : ℝ) 1` -/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-! ### Non-finitarity -/

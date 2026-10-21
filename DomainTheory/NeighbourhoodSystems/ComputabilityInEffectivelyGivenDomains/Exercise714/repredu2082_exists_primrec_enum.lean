@@ -16,7 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise714
 open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
 
 
-
 /-- **A non-empty recursively enumerable relation is enumerated by a pair of primitive recursive
 functions** (Scott's `f = {(X_{s(i)}, Y_{r(i)}) ∣ i ∈ ℕ}`). Apply `repred_exists_primrec_range` to
 the `Nat.pair`-coded relation and split the resulting range function into its two coordinates. -/

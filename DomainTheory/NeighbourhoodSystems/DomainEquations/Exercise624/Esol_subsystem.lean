@@ -21,21 +21,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`{Γ_E} ◁ D + E`.** The singleton system `E = {Γ_E}` is a subsystem of `D + E`: by the fixed
 point its only neighbourhood `Γ_E` is the master of `D + E`. -/
 theorem Esol_subsystem : Esol.sys ◁ (Gsol Dsol Esol).sys := by

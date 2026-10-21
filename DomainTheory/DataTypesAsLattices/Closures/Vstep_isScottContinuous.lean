@@ -18,23 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.union_right_isScottConti
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Vstep_isScottContinuous (a x : Pomega) :
     IsScottContinuous (Vstep a x) :=
   union_right_isScottContinuous x (funOf_isScottContinuous a)

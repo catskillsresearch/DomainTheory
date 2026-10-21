@@ -17,54 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.8) unfolding.** `Y(u) = u(Y(u))`. -/
 theorem Ycomb_unfold (u : Pomega) :
     funOf Ycomb u = funOf u (funOf Ycomb u) := by

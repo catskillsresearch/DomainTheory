@@ -20,13 +20,9 @@ open NeighborhoodSystem ApproximableMap
 universe u v
 
 
-
-
 section FunSpace
 
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
-
-
 
 
 theorem evalBotMap_comp_constFunMap : (evalBotMap A B).comp (constFunMap A B) = idMap B := by

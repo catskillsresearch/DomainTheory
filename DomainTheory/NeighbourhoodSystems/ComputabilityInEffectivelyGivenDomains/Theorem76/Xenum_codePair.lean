@@ -20,10 +20,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 
-
-
-
-
 variable (P : ComputablePresentation V)
 
 /-- `Xenum (codePair a b) = [X_a, X_b]` (a one-entry, always-consistent function-space

@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.IsDirectedSubset
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Compactness of a fixed point under subset, without a lattice instance. -/

@@ -21,20 +21,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `which(x)` selects `false` (`{1} ∈ which x`) exactly when `x` reaches into the right copy. -/
 theorem which_mem_one {x : (sum V₀ V₁ h₀ h₁).Element} :
     ((whichMap V₀ V₁ h₀ h₁).toElementMap x).mem Example12.one

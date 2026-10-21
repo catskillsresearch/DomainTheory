@@ -16,41 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.directed_sUnion_fixed
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sSup_fixed_eq_sUnion {f : Pomega → Pomega} (hf : IsScottContinuous f)
     {A : Set (Fixpoints f)} (hA : IsDirectedSet A) :
     ((@sSup (Fixpoints f) (fixpointsCompleteLattice hf).toSupSet A :

@@ -18,39 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_openR
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (4.6) / §5.** `open` is a closure. -/
 theorem openR_isClosure : IsClosure openR :=
   ⟨Icomb_subset_openR, openR_isRetract⟩

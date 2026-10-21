@@ -18,34 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_isScottCont
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem tensorR_diag_isScottContinuous :
     IsScottContinuous (fun z => tensorR z z) :=
   graph_const_isScottContinuous

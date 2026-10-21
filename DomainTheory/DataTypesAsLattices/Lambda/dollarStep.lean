@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepBody
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def dollarStep (s : Pomega) : Pomega :=

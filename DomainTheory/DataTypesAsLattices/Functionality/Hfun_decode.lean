@@ -18,52 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hfun_interp
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Hfun_decode (τ : LambTerm) :
     funOf Hfun (encodeExp τ) = graph (Hinterp τ) := by
   have hβ : funOf Hfun (encodeExp τ) = graph (fun t => Hstep Hfun (encodeExp τ) t) := by

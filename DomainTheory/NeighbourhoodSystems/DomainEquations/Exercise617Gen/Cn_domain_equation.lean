@@ -13,61 +13,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.B
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
 
-set_option linter.unusedSectionVars false
-
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 variable {A : Type} [DecidableEq A]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 6.17 part 2 — the domain equation `Cₐ ≅ 𝟙 + Σ_a Cₐ`.** -/

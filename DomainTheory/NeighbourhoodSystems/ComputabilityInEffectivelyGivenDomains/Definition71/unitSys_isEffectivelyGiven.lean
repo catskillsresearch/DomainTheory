@@ -20,10 +20,6 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*}
 
 
-
-
-
-
 /-- **The one-point domain `𝟙` is effectively given.** -/
 theorem unitSys_isEffectivelyGiven : unitSys.IsEffectivelyGiven :=
   ⟨unitPresentation⟩

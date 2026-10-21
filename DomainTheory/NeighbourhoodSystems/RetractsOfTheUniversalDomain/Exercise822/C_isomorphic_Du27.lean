@@ -20,52 +20,6 @@ open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 namespace Exercise822
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem C_isomorphic_D' : C ≅ᴰ D' := ⟨cdEquiv⟩
 
 end Exercise822

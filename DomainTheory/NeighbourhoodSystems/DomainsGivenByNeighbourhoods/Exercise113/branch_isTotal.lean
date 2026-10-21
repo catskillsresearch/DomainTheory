@@ -21,12 +21,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise113
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
 /-- **Exercise 1.13 (total elements).** Each infinite path `p` gives a *total* (maximal) element
 `branch p`: any `y` it approximates approximates it back. (These maximal elements are exactly the
 limit nodes along the top of the binary-tree picture.) -/

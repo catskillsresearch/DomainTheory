@@ -22,9 +22,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem
 
 
-
-
-
 /-- **Proposition 8.2 (Scott 1981, PRG-19), packaged.** `D ◁ E` induces a retraction `a` on `E`
 whose fixed-point set is (order-isomorphic to) `|D|`. -/
 theorem retraction_of_subsystem (h : D ◁ E) :

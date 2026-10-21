@@ -21,16 +21,6 @@ open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSyste
 namespace Exercise624
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **The double fixed point (token level).** There is a pair of token sets `(Γ_D, Γ_E)`, both
 containing `Λ`, that solve the two coupled token equations `tok(D + (D×E)) = Γ_D` and
 `tok(D + E) = Γ_E` simultaneously. -/

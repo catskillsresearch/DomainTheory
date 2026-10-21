@@ -14,8 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62A.npow
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace Example62A

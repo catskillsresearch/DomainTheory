@@ -40,14 +40,12 @@ variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 /-! ### Specialization order -/
 
 
-
 /-! ### Scott topology from `ScottOpen` -/
 
 
 /-! ### Monotone nets and Proposition 2.1 -/
 
 variable {ι : Type u} [Preorder ι] [IsDirected ι (· ≤ ·)]
-
 
 
 variable {x : ι → D} {L y : D}

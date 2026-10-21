@@ -19,21 +19,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α : Type*}
 
 
-
-
-
-
-
-
-
-
 variable (V : NeighborhoodSystem α)
-
-
-
-
-
-
 
 
 /-- The elementwise action of `cond`, computed at a paired argument `⟨t, ⟨x, y⟩⟩`: a neighbourhood

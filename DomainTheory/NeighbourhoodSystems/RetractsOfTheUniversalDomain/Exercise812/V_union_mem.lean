@@ -24,21 +24,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`V` is closed under binary union**, as long as the result is non-empty — mirrors
 `Definition87.lean`'s `U_union_mem`, needed to reassemble Scott's literal finite unions. -/
 theorem V_union_mem {X Y : Set ℕ} (hX : X = ∅ ∨ V.mem X) (hY : Y = ∅ ∨ V.mem Y) :

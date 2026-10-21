@@ -19,51 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primRecStep_body_isScottContinuous_n (a f u : Pomega) :
     IsScottContinuous (fun n =>
       condSet n a (funOf (funOf f (predSet n)) (funOf u (predSet n)))) :=

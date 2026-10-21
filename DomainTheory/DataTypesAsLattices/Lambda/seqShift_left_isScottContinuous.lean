@@ -16,44 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqFun_left_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seqShift_left_isScottContinuous : IsScottContinuous seqShift :=
   graph_const_isScottContinuous (fun u z => seqFun u (succSet z))
     (fun z => seqFun_left_isScottContinuous (succSet z))

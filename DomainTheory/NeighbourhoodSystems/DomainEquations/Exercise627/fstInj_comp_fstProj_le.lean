@@ -23,9 +23,6 @@ namespace Exercise627
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 
-
-
-
 theorem fstInj_comp_fstProj_le (D₀ D₁ : NeighborhoodSystem Str) :
     (fstInj D₀ D₁).comp (fstProj D₀ D₁) ≤ idMap (prodTok D₀ D₁) := by
   intro W W' hr

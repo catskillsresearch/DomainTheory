@@ -17,11 +17,6 @@ namespace DomainTheory.InformationSystems.Constructive
 variable {α : Type*} [DecidableEq α]
 
 
-
-
-
-
-
 theorem subset_funion_left (u v : Finset α) : u ⊆ u ∪' v := fun _ hx => mem_funion.2 (Or.inl hx)
 
 end DomainTheory.InformationSystems.Constructive

@@ -22,8 +22,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
 /-- **On a point reaching neither copy** (in particular, `𝒰`'s own `⊥`, via `jPlus_bot_eq_bot`),
 `sumComb a b` sends it to `𝒰`'s `⊥`. -/
 theorem toElementMap_sumComb_of_neither {a b : ApproximableMap U U} {x : U.Element}

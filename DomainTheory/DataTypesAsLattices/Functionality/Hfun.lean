@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.HF
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Raw least fixed point of the (4.43) operator. -/

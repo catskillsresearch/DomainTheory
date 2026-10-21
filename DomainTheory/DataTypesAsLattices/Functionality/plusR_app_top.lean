@@ -17,19 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plusR_app_top (a b : Pomega) :
     funOf (plusR a b) topElem = topElem := by
   rw [plusR_app, funOf_top, dcondSet_top]

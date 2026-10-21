@@ -20,16 +20,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 
 
-
-
-
-
-
-
 open Exercise510
-
-
-
 
 
 section Iterate
@@ -39,21 +30,7 @@ open Domain.Recursive
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
 
 
-
 variable {P}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 theorem projN_isComputable (P : ComputablePresentation V) (n : ℕ) :

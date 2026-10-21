@@ -17,37 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem arrowR_diag_isScottContinuous :
     IsScottContinuous (fun a => arrowR a a) := by
   have hbody : ∀ u, IsScottContinuous (fun a =>

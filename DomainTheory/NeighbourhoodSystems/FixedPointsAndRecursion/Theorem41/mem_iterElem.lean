@@ -21,20 +21,6 @@ variable {α : Type*} {V : NeighborhoodSystem α}
 namespace ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `Y ∈ fⁿ(⊥) ↔ Δ fⁿ Y`: the `n`-th approximant is the family of neighbourhoods reachable from
 `Δ` in exactly the `n` steps recorded by `fⁿ`. -/
 theorem mem_iterElem (f : ApproximableMap V V) (n : ℕ) {X : Set α} :

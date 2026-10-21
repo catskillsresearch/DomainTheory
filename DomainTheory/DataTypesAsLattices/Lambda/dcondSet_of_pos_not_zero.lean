@@ -14,13 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
 theorem dcondSet_of_pos_not_zero {z x y : Pomega}
     (h0 : 0 ∉ z) (hp : ∃ k, k + 1 ∈ z) :
     dcondSet z x y = y := by

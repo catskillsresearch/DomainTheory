@@ -52,8 +52,6 @@ variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y →
 /-! ### (iv) — the copairing `[a, b] : 𝒟₀ + 𝒟₁ → 𝒟₂`. -/
 
 
-
-
 /-! ### (iii) — the canonical distribution map. -/
 
 

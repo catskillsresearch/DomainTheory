@@ -18,39 +18,10 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
 
-
-
-
-
-
-
-
-
-
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
 variable (u : D.Element) (hu : u ≠ D.bot)
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Example 8.4(a) (Scott 1981, PRG-19), final statement.** If `D` is not trivial (`u ≠ ⊥`),

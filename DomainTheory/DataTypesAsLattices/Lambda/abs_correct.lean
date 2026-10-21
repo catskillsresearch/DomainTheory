@@ -19,38 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.ofComb_update_isScottConti
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem abs_correct (i : ℕ) (c : Comb) (ρ : ℕ → Pomega) :
     ofComb (abs i c) ρ = graph (fun v => ofComb c (envSet ρ i v)) := by
   induction c generalizing ρ with

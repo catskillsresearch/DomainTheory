@@ -17,12 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example24
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
 /-- **A leading `0` always emits it and continues copying.** `out([0]++τ) = 0::out τ`, for every
 tail `τ`. (Exercise 2.17's first equation, at the token level.) -/
 theorem out_append_false (τ : Str) : out ([false] ++ τ) = false :: out τ := rfl

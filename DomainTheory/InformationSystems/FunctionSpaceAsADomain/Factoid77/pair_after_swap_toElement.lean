@@ -23,9 +23,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.f
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.sndMap_pairElements
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
-universe u
 
 namespace DomainTheory.InformationSystems
 

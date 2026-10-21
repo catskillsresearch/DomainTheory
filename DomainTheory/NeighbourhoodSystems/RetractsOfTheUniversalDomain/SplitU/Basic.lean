@@ -50,9 +50,7 @@ open Domain.Recursive NeighborhoodSystem
 /-! ### Public one-sided clips (`Definition87.lean`'s `clipLt`/`clipGe` are `private`) -/
 
 
-
 /-! ### One-sided clips, at the code level -/
-
 
 
 /-! ### Mapping a one-sided clip over a whole list, at the code level
@@ -62,13 +60,10 @@ threaded through as a *fixed* parameter — exactly what's needed here, with `x 
 computed) midpoint code and `f := fun t => [clip t]` (singleton). -/
 
 
-
 /-! ### The first pair of a non-empty list code -/
 
 
 /-! ### `splitU`: the canonical midpoint split -/
-
-
 
 
 /-! ### Correctness -/

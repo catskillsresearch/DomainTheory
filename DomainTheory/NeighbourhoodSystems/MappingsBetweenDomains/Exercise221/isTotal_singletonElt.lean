@@ -17,22 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise221
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Total finite sequences.** `↑{σ}` is a total (maximal) element of `|𝒞|`: any element above it
 must equal it, because `{σ}` is a minimal nonempty neighbourhood. This is what was *false* in `𝔹`,
 where finite sequences gave only the partial `σ⊥`. -/

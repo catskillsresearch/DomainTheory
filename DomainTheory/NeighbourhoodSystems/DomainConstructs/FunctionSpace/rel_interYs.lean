@@ -19,44 +19,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The relation `X f Y` holds for `f` in the neighbourhood `stepFun L` at the master output, and
 more importantly `f` relates `X` to the whole intersection `interYs Δ₁ L X` (finite intersectivity
 over the relevant outputs). The case split deciding `X ⊆ Xᵢ` is a documented classical step. -/

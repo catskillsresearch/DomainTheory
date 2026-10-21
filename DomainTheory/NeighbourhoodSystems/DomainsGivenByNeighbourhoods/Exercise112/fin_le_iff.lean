@@ -18,16 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise112
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
 /-- The finite elements form an ascending chain: `fin n ⊑ fin m ↔ n ≤ m`. -/
 theorem fin_le_iff (n m : ℕ) : fin n ≤ fin m ↔ n ≤ m := by
   rw [fin, fin, neighborhoodSystem.principal_le_iff, tail_subset_iff]

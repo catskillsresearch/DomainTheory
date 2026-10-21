@@ -16,37 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.envR_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem typed_env_nth {t : Pomega} (ht : typed t envR) (n : ℕ) :
     typed (funOf t (ofNat n)) lambR := by
   have ht' : t = graph (fun m => funOf lambR (funOf t m)) := by

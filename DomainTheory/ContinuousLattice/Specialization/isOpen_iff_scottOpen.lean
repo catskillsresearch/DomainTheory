@@ -29,10 +29,6 @@ universe u
 variable {X : Type*} {D : Type u} [TopologicalSpace X] [CompleteLattice D]
 
 
-
-
-
-
 theorem isOpen_iff_scottOpen {U : Set D} : @IsOpen D scottTopologicalSpace U ↔ ScottOpen U := by
   rw [ScottOpen_iff_dirSupInacc, scottTopologicalSpace]
   have hinst : @IsScott D univ _ (Topology.scott D univ) :=

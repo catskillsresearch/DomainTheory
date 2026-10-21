@@ -22,8 +22,6 @@ open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap pred
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 
 
-
-
 theorem strictProj₀_apply (x y : N.Element) :
     strictProj₀.toElementMap (pair x y) =
       (cond N).toElementMap (pair (zeroMap.toElementMap y) (pair x x)) := by

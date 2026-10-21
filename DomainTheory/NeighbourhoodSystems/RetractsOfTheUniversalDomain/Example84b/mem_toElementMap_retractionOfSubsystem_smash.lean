@@ -21,14 +21,7 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
 section Smash
-
-
-
-
 
 
 /-- The closed form of `Subsystem.retractionOfSubsystem`'s elementwise action, specialized to

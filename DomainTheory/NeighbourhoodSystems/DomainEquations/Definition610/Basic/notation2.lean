@@ -8,8 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610.Su
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 variable {α : Type*}

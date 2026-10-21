@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Classification.IsScottGdelta
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace

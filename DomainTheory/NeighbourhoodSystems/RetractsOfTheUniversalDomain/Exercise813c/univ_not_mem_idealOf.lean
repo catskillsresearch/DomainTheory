@@ -21,8 +21,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 theorem univ_not_mem_idealOf {O : Set (ℕ → Bool)} (hO : O ≠ Set.univ) : Set.univ ∉ idealOf O :=

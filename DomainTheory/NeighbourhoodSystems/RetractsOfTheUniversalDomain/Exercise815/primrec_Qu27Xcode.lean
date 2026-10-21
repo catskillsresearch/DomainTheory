@@ -24,22 +24,7 @@ open NeighborhoodSystem Domain.Recursive
 variable {α : Type*} {D : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
-
-
 section UniversalSubsystem
-
-
-
-
 
 
 theorem primrec_Q'Xcode {r : ℕ → ℕ} (hr : Nat.Primrec r) : Nat.Primrec (Q'Xcode r) :=

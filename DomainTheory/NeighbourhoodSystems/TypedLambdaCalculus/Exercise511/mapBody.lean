@@ -14,8 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise511
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap

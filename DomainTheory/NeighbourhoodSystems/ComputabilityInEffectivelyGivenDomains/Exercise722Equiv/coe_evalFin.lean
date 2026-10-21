@@ -21,12 +21,6 @@ open scoped Computability
 open Sum Set
 
 
-
-
-
-
-
-
 theorem coe_evalFin (e : SExpr) (w : List Bool) :
     (↑(evalFin e w) : Set (autState e)) = (toNFA e).eval w := by
   show (↑(w.foldl (stepFin e) (startFin e)) : Set (autState e))

@@ -15,30 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sigmaJ_succ_ne (j j' m : ℕ) (hne : j ≠ j') :
     sigmaJ j {pair j' m} = botElem := by
   ext p

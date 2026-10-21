@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.bot_isRetract
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem iterates_areRetracts {F : Pomega → Pomega}

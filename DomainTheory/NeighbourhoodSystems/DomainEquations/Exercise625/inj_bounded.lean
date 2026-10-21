@@ -20,12 +20,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem.ProjectionPair
 
 
-
-
-
-
-
-
 /-- **Exercise 6.25 — `g` maps consistent sets to consistent sets.** "Consistent" for sets of
 elements is "bounded" (Exercise 1.27). If `S` is bounded by `b`, its image `{g(s) ∣ s ∈ S}` is
 bounded by `g(b)` (monotonicity). -/

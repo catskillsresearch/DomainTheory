@@ -15,26 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Scomb_map_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Scomb_app (f : Pomega) :
     funOf Scomb f =
       graph (fun v => graph (fun x => funOf (funOf f x) (funOf v x))) :=

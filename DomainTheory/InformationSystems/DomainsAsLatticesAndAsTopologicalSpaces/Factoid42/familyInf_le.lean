@@ -18,7 +18,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
 theorem familyInf_le (S : Set sys.Element) (hne : S.Nonempty) {x : sys.Element}
     (hx : x ∈ S) : sys.familyInf S hne ≤ x :=
   fun _a ha => ha x hx

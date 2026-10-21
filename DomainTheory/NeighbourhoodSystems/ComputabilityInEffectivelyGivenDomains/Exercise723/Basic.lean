@@ -177,7 +177,6 @@ theorem lt_of_testBit_true {n i : ℕ} (h : n.testBit i = true) : i < n := by
   exact absurd h (by decide)
 
 
-
 theorem halfIter_succ (n k : ℕ) : halfIter n (k + 1) = halfIter (n / 2) k := by
   unfold halfIter; rw [Function.iterate_succ_apply]
 
@@ -217,16 +216,9 @@ per set bit of `n`. This is computed by `plusIdx`, an iterative bitwise-OR fold 
 of `m <<< a` over the set bits `a` of `n`. -/
 
 
-
-
-
 /-- The excluded set of `nbhd n`, as a set of naturals: `(nbhd n)ᶜ = {k ∣ n.testBit k}`. -/
 theorem compl_nbhd (n : ℕ) : (nbhd n)ᶜ = {k | n.testBit k = true} := by
   ext k; simp [nbhd]
-
-
-
-
 
 
 /-! ## What are the computable elements of `PN`?
@@ -244,7 +236,6 @@ so `x.mem (nbhd n) ↔ Eₙ ⊆ elemSet x` (`nbhd_mem_iff_subset_elemSet`). This
 
 I.e. **the computable elements of `PN` are exactly the recursively enumerable sets** — Scott's
 headline fact about the powerset domain. -/
-
 
 
 /-- **Finite covering (choice-free, structural induction on the witness list).** If every `k` in a
@@ -441,17 +432,12 @@ direct construction (it does not factor through `curry`/`eval`), built from the 
 /-! ### `num`/`tag` are primitive recursive -/
 
 
-
-
 /-! ### `unnum` is primitive recursive
 
 `gMap`'s computability needs to *decode* `tag`: given `c ∈ Eₙ`, recover the unique `(ns, m)` with
 `tag ns m = c` (uniqueness is `tag_injective`). Decoding peels one `unnum` layer at a time; `unnum`
 itself is `nextCell` iterated (Exercise 5.13), so we first make `unnum` primitive recursive by the
 same iterate-a-step-function device as `halfIter`/`bitsCode`/`plusIdx`. -/
-
-
-
 
 
 /-! ### `untagRef`: the (non-primitive-recursive) structural inverse of `tag`
@@ -480,18 +466,12 @@ is set and the state freezes. Since `code` strictly decreases every non-frozen s
 (`unnum_snd_lt_of_fst_succ`), `c + 1` iterations always suffice to freeze starting from `code = c`. -/
 
 
-
-
-
-
 /-! ### `gMap` is computable -/
 
 /-! ### `fun`, via currying `gMap` -/
 
 
 /-! ### `graph`, dually to `gMap` -/
-
-
 
 
 /-! ### `graph` is computable -/

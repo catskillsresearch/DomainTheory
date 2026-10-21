@@ -16,19 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_map_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plusR_app (a b u : Pomega) :
     funOf (plusR a b) u =
       dcondSet (funOf u (ofNat 0))

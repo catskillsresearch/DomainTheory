@@ -70,9 +70,6 @@ theorem coe_acceptFin : ∀ e : SExpr, (↑(acceptFin e) : Set (autState e)) = (
       rw [Finset.coe_image, coe_acceptFin b]
 
 
-
-
-
 /-! ## The "difference" automaton: `e₁` is live and `e₂` is dead
 
 Tracks `e₁`'s and `e₂`'s live-state `Finset`s *simultaneously* as one deterministic (singleton

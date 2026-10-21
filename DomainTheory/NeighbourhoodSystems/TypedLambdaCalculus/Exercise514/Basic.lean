@@ -71,12 +71,7 @@ open DomainTheory.NeighbourhoodSystems.Exercise513
 /-! ### The tag: coding `(List ℕ) × ℕ` as `ℕ` -/
 
 
-
-
 /-! ### The maps `fun` and `graph` -/
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems.Exercise514

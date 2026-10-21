@@ -82,17 +82,13 @@ variable {αx αa αb : Type*}
   {Vx : NeighborhoodSystem αx} {Va : NeighborhoodSystem αa} {Vb : NeighborhoodSystem αb}
 
 
-
 /-! ### Domains as data, and the function-domain constructor. -/
 
 
 /-! ### The three combinators as elements of the appropriate function domains. -/
 
 
-
-
 /-! ### Syntax of `λ`-bodies with one free variable, and of variable-free combinator expressions. -/
-
 
 
 /-! ### Bracket abstraction. -/

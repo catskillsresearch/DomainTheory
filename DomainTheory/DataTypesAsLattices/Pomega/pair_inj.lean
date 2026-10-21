@@ -23,23 +23,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.triangle_le_pair
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem pair_inj {n₁ m₁ n₂ m₂ : ℕ} (h : pair n₁ m₁ = pair n₂ m₂) :
     n₁ = n₂ ∧ m₁ = m₂ := by
   have h1 := triangle_le_pair n₁ m₁

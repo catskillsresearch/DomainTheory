@@ -11,7 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.TAlgebra
 
 @[expose] public section
 
-universe u v w
+universe u
 
 namespace DomainTheory.NeighbourhoodSystems
 

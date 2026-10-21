@@ -25,9 +25,6 @@ universe u
 variable {D : Type u} [CompleteLattice D]
 
 
-
-
-
 /-- **Scott 1972, Proposition 2.4.** A complete lattice is continuous iff every element is the
 supremum of the infima of its open neighbourhoods: `y = ⊔ {⊓U : y ∈ U open}`. This is Scott's
 alternate form of Definition 2.3. -/

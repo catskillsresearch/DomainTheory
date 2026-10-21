@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Comb
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 @[simp] theorem mem_ofNat {n k : ℕ} : k ∈ ofNat n ↔ k = n := by simp [ofNat]

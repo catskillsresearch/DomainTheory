@@ -16,7 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 variable {α : Type*}
 
 
-
 namespace Subsystem
 
 /-- Two neighbourhood systems with the same `mem` and the same `master` are equal (the remaining

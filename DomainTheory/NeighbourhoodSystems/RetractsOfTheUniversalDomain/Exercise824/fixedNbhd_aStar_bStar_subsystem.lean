@@ -23,17 +23,6 @@ namespace Exercise824
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.24, Claim 2 (initiality with respect to projections).** If `a, b` is *any* other
 pair of finitary projections that is a pre-fixed point of the same pair of operators
 (`binOp s a b ≤ a`, `binOp t a b ≤ b`, in particular any exact alternative solution), then

@@ -16,53 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.fix_param_isScottContinuou
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Ymap_app {g : Pomega → Pomega → Pomega}
     (hgx : ∀ y, IsScottContinuous (fun x => g x y))
     (hgy : ∀ x, IsScottContinuous (fun y => g x y)) (x : Pomega) :

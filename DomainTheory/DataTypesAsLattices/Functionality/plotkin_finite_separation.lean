@@ -19,31 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ_union_fresh
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plotkin_finite_separation (p q m : ℕ) :
     Z m
         (graph (fun y => funOf (e p) y) ∪

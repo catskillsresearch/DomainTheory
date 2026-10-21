@@ -20,14 +20,6 @@ open scoped Computability
 open Sum Set
 
 
-
-
-
-
-
-
-
-
 /-- **The shortest witness of `denote e₁ ⊄ denote e₂`, if any, is short.** Generic
 `exists_accepted_word_short` applied to `diffNFA`. -/
 theorem exists_diff_word_short {e1 e2 : SExpr} (h : ¬ denote e1 ⊆ denote e2) :

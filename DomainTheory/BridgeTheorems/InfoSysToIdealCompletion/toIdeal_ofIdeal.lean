@@ -23,8 +23,6 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.le_ofIdeal_of
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.compact_closure
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

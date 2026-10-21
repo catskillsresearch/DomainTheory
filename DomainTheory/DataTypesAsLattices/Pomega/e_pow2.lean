@@ -21,16 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
 theorem e_pow2 (k : ℕ) : e (2 ^ k) = {k} := by
   ext i
   simp [e, Nat.testBit_two_pow]

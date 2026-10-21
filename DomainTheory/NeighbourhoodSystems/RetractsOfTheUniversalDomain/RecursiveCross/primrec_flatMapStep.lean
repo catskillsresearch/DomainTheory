@@ -15,24 +15,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Rec
 namespace Domain.Recursive
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec_flatMapStep {f : ℕ → ℕ} (hf : Nat.Primrec f) : Nat.Primrec (flatMapStep f) := by
   have hy : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
   have hacc : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=

@@ -19,11 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
 theorem V_mem_nonempty {X : Set ℕ} (hX : V.mem X) : X.Nonempty := by
   obtain ⟨k, m, -, hne⟩ := hX; exact hne
 

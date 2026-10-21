@@ -22,17 +22,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise115
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- **Stem contains a strict 3-chain** `⊥ = ↑ℕ ⊏ ↑{0,1} ⊏ ↑{0}` — the structural feature that
 distinguishes it from `flat`. -/
 theorem stem_three_chain : ∃ a b c : stem.Element, a < b ∧ b < c := by

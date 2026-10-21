@@ -20,8 +20,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*}
 
 
-
-
 /-- **Exercise 8.25 (Scott 1981, PRG-19) — the obstruction `𝟙 → 𝟙 = 𝟙`.** The terminal one-point
 domain is a fixed point of `→`, carrying no information: this is why "the obvious solution by
 retracts is of no use". -/

@@ -25,49 +25,6 @@ namespace Theorem614
 variable {α : Type w}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **The carrier-transport core of `T(ρₙ) = ρₙ₊₁`.** Given the *monotone-on-domains* data for a
 subsystem (its injection `Tmi`/projection `Tmj` are heterogeneously equal to the canonical 6.12 pair
 `sub.inj`/`sub.proj` of the image subsystem `sub : Ps ◁ ce ▸ Qs`), the composite `Tmi ∘ Tmj` is —

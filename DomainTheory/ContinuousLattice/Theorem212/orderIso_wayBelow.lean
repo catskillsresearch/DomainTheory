@@ -17,7 +17,6 @@ namespace DomainTheory.ContinuousLattice
 open Topology Set
 
 
-
 universe u
 
 

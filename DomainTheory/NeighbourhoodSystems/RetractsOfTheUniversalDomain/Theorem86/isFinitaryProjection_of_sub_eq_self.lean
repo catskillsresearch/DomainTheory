@@ -24,8 +24,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 /-- **The easy half of Theorem 8.6's range characterization.** If `f` is a fixed point of `sub`,
 then `f` is a finitary projection: `sub f = f` says exactly that `f` *is*
 `retractionOfSubsystem (fixedNbhd_subsystem f)`, and Definition 8.3's corollary of Proposition 8.2

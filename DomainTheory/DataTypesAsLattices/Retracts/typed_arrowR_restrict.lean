@@ -17,45 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.typed_of_arrowR
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem typed_arrowR_restrict {a b u : Pomega}
     (ha : IsRetract a) (hu : typed u (arrowR a b)) :
     u = comp u a := by

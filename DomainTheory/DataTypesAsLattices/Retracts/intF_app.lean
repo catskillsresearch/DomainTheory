@@ -16,49 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.intF_map_isScottContinuo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem intF_app (f u : Pomega) :
     funOf (intF f) u =
       dcondSet u (ofNat 0) (dcondSet (funOf f (predSet u)) u u) :=

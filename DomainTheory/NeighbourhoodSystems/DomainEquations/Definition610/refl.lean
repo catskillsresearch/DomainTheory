@@ -16,7 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 variable {α : Type*}
 
 
-
 namespace Subsystem
 
 /-- The subsystem relation is **reflexive**: `D ◁ D`. (The `inter_closed` clause is trivial — the

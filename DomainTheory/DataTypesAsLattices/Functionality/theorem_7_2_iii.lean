@@ -19,26 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.typed_pairSeq_tenso
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 7.2 (iii).** `E_{a ⊗ b}` agrees with
 `E_a × E_b` on `pairSeq` elements. -/
 theorem theorem_7_2_iii (a b x y x' y' : Pomega) :

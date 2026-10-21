@@ -23,63 +23,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem untagRef_succ_case {c k : ℕ} (h : (unnum c).1 = k + 1) :
     untagRef c = (k :: (untagRef (unnum c).2).1, (untagRef (unnum c).2).2) := by
   have h0 : ¬ (unnum c).1 = 0 := by omega

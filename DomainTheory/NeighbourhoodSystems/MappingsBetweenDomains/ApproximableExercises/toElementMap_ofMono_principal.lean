@@ -25,7 +25,6 @@ namespace ApproximableMap
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 
-
 /-- **Exercise 2.8 (extension, computed).** The map `ofMono m` realizes `m` on finite elements:
 `(ofMono m)(↑X) = m(↑X)`. -/
 theorem toElementMap_ofMono_principal

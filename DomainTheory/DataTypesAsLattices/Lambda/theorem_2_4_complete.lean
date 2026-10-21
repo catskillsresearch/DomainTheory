@@ -15,38 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.erase_correct
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 2.4 (The combinator theorem).** Every LAMBDA
 term equals an applicative combination of the six constants and its
 free variables. -/

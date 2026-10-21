@@ -23,15 +23,6 @@ open Language
 variable {n : ℕ}
 
 
-
-
-
-
-
-
-
-
-
 /-- **Scott's closing claim, made precise (Example 6.2).** A tree's language `L_a` is a *regular
 event* of automata theory **iff** the tree is eventually periodic. This is the Myhill–Nerode theorem
 in disguise: the subtrees `aσ` are the left quotients `σ⁻¹ L_a` (`treeLang_select`), so "finitely many

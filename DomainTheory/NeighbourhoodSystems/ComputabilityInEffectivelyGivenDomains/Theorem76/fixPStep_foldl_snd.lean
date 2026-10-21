@@ -19,15 +19,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α : Type*} {V : NeighborhoodSystem α}
 
 
-
-
-
-
 variable (P : ComputablePresentation V)
-
-
-
-
 
 
 /-- The `foldCode` flag is `1` iff the start flag is `1` and the whole chain is consistent. -/

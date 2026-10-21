@@ -19,12 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise113
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
 /-- Two neighbourhoods present in a common element of `|B|` have comparable generating prefixes
 (their cones cannot be disjoint, since the intersection is a nonempty cone). -/
 theorem prefix_comparable_of_mem {σ τ : Str} (y : B.Element)

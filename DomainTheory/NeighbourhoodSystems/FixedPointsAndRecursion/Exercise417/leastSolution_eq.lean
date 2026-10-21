@@ -27,10 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
-
 /-- The least solution `lfpSet (F a b)` indeed solves Scott's equation `x = {1} ∪ {a, b} ∪ x · x`. -/
 theorem leastSolution_eq (a b : S) :
     F a b (lfpSet (F a b)) = lfpSet (F a b) :=

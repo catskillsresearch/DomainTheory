@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.zero_mem_boxShift_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxShift_app_ne_bot (a x : Pomega) : funOf (boxShift a) x ≠ botElem := by
   intro h
   have h0 := zero_mem_boxShift_app a x

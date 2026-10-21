@@ -89,11 +89,6 @@ section Reencode
 variable (e : ℕ → Set α)
 
 
-
-
-
-
-
 end Reencode
 
 /-! ## Setting up `D`'s enumeration and the induced `Yidx : ℕ → Set ℚ` -/
@@ -102,17 +97,6 @@ section Setup
 
 variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
   (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
-
-
-
-
-
-
-
-
-
-
-
 
 
 end Setup
@@ -125,9 +109,6 @@ variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
   (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
 
 
-
-
-
 end Subsystem
 
 /-! ## The element-level isomorphism `D ≅ᴰ D'` -/
@@ -136,8 +117,6 @@ section Iso
 
 variable (D : NeighborhoodSystem α) (e : ℕ → Set α)
   (hcover : ∀ S, D.mem S ↔ ∃ n, S = e n) (he0 : e 0 = D.master)
-
-
 
 
 end Iso

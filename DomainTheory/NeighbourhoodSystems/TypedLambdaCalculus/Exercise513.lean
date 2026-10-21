@@ -74,27 +74,10 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise513
 /-! ### Triangular numbers -/
 
 
-
-
-
-
-
 /-! ### The pairing function `num` -/
 
 
-
-
-
-
-
-
 /-! ### The inverse: walking the diagonals -/
-
-
-
-
-
-
 
 
 /-! ### The domain isomorphisms
@@ -103,9 +86,6 @@ The power-set domain `P A` is the complete lattice `(Set A, ⊆)` (Exercise 4.17
 index types lifts to an order-isomorphism of power-set domains. -/
 
 variable {α β : Type*}
-
-
-
 
 
 end DomainTheory.NeighbourhoodSystems.Exercise513

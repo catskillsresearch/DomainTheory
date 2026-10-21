@@ -23,22 +23,9 @@ open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap pred
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 
 
-
-
-
-
-
-
-
-
-
-
 section Mu
 
 variable (f : ApproximableMap (prod N N) N)
-
-
-
 
 
 /-- The search advances over a run of positive totals: if `f((n+i)^, m̂)` is a positive total for

@@ -15,26 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem iterateFrom_bot (f : Pomega → Pomega) (n : ℕ) :
     iterateFrom f botElem n = iterateBot f n := by
   induction n with

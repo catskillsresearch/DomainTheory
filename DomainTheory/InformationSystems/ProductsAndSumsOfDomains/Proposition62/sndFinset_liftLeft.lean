@@ -24,12 +24,6 @@ variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
 
 
-
-
-
-
-
-
 theorem sndFinset_liftLeft (v : Finset α) :
     sndFinset A B (liftLeft A B v) ⊆ ({B.bot} : Finset β) := by
   intro y hy

@@ -17,7 +17,6 @@ namespace DomainTheory.NeighbourhoodSystems
 variable {α : Type*}
 
 
-
 namespace Subsystem
 
 /-- **Scott's remark (the prose after Definition 6.10).** Once `D₀` and `D₁` both sit inside a

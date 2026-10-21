@@ -20,14 +20,7 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 
 
-
-
-
-
-
-
 open Exercise510
-
 
 
 section Coalesced
@@ -36,26 +29,13 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
 
 
-
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
 
 variable {P₀ P₁}
 
 
-
-
-
-
-
-
-
 variable {h₀ h₁}
-
-
-
-
-
 
 
 variable (P₀ P₁)

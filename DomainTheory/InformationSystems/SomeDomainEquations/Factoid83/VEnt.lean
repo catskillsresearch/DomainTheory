@@ -16,8 +16,6 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 /-- Entailment on `V` (Scott (3)–(6)). -/
 inductive VEnt : Finset VToken → VToken → Prop where
   | bot {u : Finset VToken} : VEnt u .bot

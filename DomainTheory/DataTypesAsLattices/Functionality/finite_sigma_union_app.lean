@@ -18,34 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_f
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem finite_sigma_union_app (p q m : ℕ) :
     funOf
         (graph (fun y => funOf (e p) y) ∪

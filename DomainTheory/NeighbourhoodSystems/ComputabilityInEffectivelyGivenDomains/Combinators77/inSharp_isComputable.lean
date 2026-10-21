@@ -22,9 +22,6 @@ namespace Proposition77
 variable {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
 
 
-
-
-
 /-- **Proposition 7.7 (Scott 1981, PRG-19) — `λx. x^§` is computable.**
 `Xₙ (λx.x^§) V_k ↔ V_{2n+1} ⊆ V_k` (`embZero Xₙ ⊆ V_k`), a recursive slice of the inclusion
 decider for `D^§`, hence r.e. -/

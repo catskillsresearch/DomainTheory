@@ -21,11 +21,7 @@ section FixedPoints
 variable {L : Type*} [CompleteLattice L]
 
 
-
-
 variable {e : L → L}
-
-
 
 
 /-- **Scott topology of the fixed-point lattice = subspace topology.** Proposition 2.10(b) applied

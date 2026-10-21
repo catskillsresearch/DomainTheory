@@ -29,8 +29,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace Domain.Recursive
 
 /-- The iterative bitwise OR: iterate `lorStep` `a + b` times (enough to consume every set bit of `a`

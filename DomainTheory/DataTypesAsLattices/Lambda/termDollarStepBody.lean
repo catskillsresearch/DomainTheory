@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termShift
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def termDollarStepBody (s u z : Pomega) : Pomega :=

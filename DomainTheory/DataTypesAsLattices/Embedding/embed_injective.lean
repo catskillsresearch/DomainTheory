@@ -24,7 +24,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace Topology Function
 
 
-
 theorem embed_injective {X : Type*} [TopologicalSpace X] [T0Space X]
     (U : ℕ → Set X) (hbasis : IsTopologicalBasis (Set.range U)) :
     Injective (embed U) := by

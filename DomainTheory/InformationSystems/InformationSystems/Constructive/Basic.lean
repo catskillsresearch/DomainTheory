@@ -54,12 +54,4 @@ namespace DomainTheory.InformationSystems.Constructive
 variable {α : Type*} [DecidableEq α]
 
 
-
-
-
-
-
-
-
-
 end DomainTheory.InformationSystems.Constructive

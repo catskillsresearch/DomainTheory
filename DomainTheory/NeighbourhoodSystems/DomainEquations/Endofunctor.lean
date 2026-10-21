@@ -9,7 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Category
 
 @[expose] public section
 
-universe u v w
+universe u
 
 namespace DomainTheory.NeighbourhoodSystems
 

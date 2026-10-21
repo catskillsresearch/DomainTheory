@@ -22,15 +22,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.not_
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 theorem UCon_insert_of_ent {u : Finset UToken} {p : UToken}
     (h : UEnt u p) : UCon (insert p u) := by

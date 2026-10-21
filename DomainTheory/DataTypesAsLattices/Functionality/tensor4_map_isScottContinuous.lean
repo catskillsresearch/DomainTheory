@@ -16,36 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.seq4_comp_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem tensor4_map_isScottContinuous (a b c d : Pomega) :
     IsScottContinuous (fun u =>
       seq4 (funOf a (funOf u (ofNat 0)))

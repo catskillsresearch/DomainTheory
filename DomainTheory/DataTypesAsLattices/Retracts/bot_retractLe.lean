@@ -16,8 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- The strict bottom retract is below every strict retract in Scott's

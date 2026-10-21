@@ -20,14 +20,7 @@ open NeighborhoodSystem ApproximableMap ApproximableMap₂
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
 section Smash
-
-
-
-
 
 
 theorem smashFadeInner_mem {z : (prod D E).Element} {Z : Set (α ⊕ β)} :

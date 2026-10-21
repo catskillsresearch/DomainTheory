@@ -15,25 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_fst
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (4.36).** `which ∘ (a ⊕ b) : (a ⊕ b) ∘→ bool`. -/
 theorem eq_4_36 (a b : Pomega) :
     typed (comp whichC (plusR a b)) (arrowR (plusR a b) boolR) := by

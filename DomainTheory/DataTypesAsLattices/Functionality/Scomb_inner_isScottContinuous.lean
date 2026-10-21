@@ -15,26 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Scomb_inner_isScottContinuous (u v : Pomega) :
     IsScottContinuous (fun x => funOf (funOf u x) (funOf v x)) :=
   continuous_tuple

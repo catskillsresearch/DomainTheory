@@ -16,27 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.omega_first_recursion
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 2.5 (The first recursion theorem).**
 If `u` is the graph of a continuous `f`, then `Y(u) = fix(f)`. -/
 theorem theorem_2_5 {f : Pomega → Pomega} (hf : IsScottContinuous f) :

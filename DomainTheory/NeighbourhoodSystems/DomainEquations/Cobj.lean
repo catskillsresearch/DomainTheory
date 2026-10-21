@@ -20,13 +20,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Tc_map_val
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 open Example44 Example62C ExampleB in
 /-- `C` (Example 4.4: finite-or-infinite binary sequences) as an object of the `∅`-free category. -/

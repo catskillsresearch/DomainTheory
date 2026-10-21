@@ -16,36 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.seq4_body_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seq4_app (a b c d z : Pomega) :
     funOf (seq4 a b c d) z =
       condSet z a

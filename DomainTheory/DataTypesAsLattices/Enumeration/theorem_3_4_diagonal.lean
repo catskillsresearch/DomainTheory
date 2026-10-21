@@ -20,55 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The diagonal contradiction used in Scott 1976, Theorem 3.4. -/
 theorem theorem_3_4_diagonal {val : ℕ → Pomega} {v : ℕ → ℕ} {b : Set ℕ}
     (hv : ∀ k, val (v k) = ofNat k ∩ val k)

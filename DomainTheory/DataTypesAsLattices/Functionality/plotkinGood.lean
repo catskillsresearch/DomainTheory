@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def plotkinGood (p q j : ℕ) (u : Pomega) : Prop :=

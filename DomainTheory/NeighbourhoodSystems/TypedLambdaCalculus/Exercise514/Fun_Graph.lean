@@ -19,16 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise514
 open DomainTheory.NeighbourhoodSystems.Exercise513
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **`fun ∘ graph = λf.f`** for continuous `f`: `Fun (Graph f) x = f x`. -/
 theorem Fun_Graph {f : Set ℕ → Set ℕ} (hf : IsApprox f) (x : Set ℕ) :
     Fun (Graph f) x = f x := by

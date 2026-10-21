@@ -18,35 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_boxTensor
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.4 (product half).** The boxed product of two
 closures is a closure. -/
 theorem theorem_5_4 {a b : Pomega} (ha : IsClosure a) (hb : IsClosure b) :

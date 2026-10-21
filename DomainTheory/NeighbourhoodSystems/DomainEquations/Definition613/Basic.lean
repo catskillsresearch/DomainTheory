@@ -67,7 +67,6 @@ open NeighborhoodSystem ApproximableMap
 /-! ### Monotone on domains -/
 
 
-
 /-! ### Continuous on domains -/
 
 

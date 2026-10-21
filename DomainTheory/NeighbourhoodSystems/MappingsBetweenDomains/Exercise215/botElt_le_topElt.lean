@@ -16,18 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise215
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `⊥ ⊑ ⊤`. -/
 theorem botElt_le_topElt : botElt ≤ topElt := O.bot_le _
 

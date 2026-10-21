@@ -15,7 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
 theorem pairElem_eq_pairSeq (x y : Pomega) : pairElem x y = pairSeq x y := rfl
 
 end DomainTheory.DataTypesAsLattices

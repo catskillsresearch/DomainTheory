@@ -12,8 +12,6 @@ import all DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDoma
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive Example61

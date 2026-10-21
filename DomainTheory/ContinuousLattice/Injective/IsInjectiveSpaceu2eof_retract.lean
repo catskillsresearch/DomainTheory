@@ -16,10 +16,9 @@ public import DomainTheory.ContinuousLattice.Injective.Basic
 @[expose] public section
 
 
-
 open Topology TopologicalSpace
 
-universe u v w
+universe v
 
 
 /-- **Scott 1972, Proposition 1.4.** Retracts of injective spaces are injective. -/

@@ -20,12 +20,6 @@ open scoped Computability
 open Sum Set
 
 
-
-
-
-
-
-
 /-- **`denote e` via the `Finset` simulation.** `w` matches `e` iff some live state after reading
 `w` is accepting — a decidable `Finset` intersection test. -/
 theorem denote_iff_evalFin (e : SExpr) (w : List Bool) :

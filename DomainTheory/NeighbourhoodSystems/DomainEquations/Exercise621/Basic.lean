@@ -110,7 +110,6 @@ variable {D₀ D₁ : NeighborhoodSystem Str}
 the shared `sumTokMaster`. -/
 
 
-
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 
@@ -121,15 +120,10 @@ variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y →
 than the full top `M`) are removed. -/
 
 
-
 /-! ## Repackaged as objects of Scott's category -/
 
 
-
 /-! ## Membership inversions -/
-
-
-
 
 
 /-! ## Monotone on domains: `◁` is carried componentwise -/
@@ -161,7 +155,6 @@ identity, `+`, `×`) to also include the coalesced `⊕` and the smash `⊗`. Th
 on-maps/on-domains continuity properties are re-established by induction; the `⊕`/`⊗` composition
 law carries the strictness hypothesis (Scott's category is the **strict-map** category, and that is
 exactly what makes `⊕`/`⊗` functorial). -/
-
 
 
 /-! ### Continuous on domains -/
@@ -320,9 +313,6 @@ no further work. The `naryOp` fold below packages the common right-nested n-ary 
 `⋆(a, [b, c, …]) = a ⋆ (b ⋆ (c ⋆ ⋯))` explicitly, and `naryOp_rootedConst` shows the `Λ ∈ tok`
 side-condition (needed for the 6.20 fixed point) is preserved, so every n-ary construct also has a
 solution `Γ = tok(T({Γ}))`. -/
-
-
-
 
 
 end Exercise619

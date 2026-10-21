@@ -27,23 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem tupleMap_zero (gs : Fin 0 → ApproximableMap 𝒩 N) :
     tupleMap 0 gs = constMap 𝒩 𝒩.bot := rfl
 

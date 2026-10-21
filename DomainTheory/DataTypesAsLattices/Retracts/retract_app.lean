@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem retract_app {a : Pomega} (ha : IsRetract a) (x : Pomega) :

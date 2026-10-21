@@ -17,35 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxShift_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem zero_mem_boxShift_app (a x : Pomega) : (0 : ℕ) ∈ funOf (boxShift a) x := by
   rw [boxShift_app]
   exact Or.inl (by simp [ofNat])

@@ -19,17 +19,6 @@ open NeighborhoodSystem ApproximableMap ExampleB
 namespace Example62
 
 
-
-
-
-
-
-
-
-
-
-
-
 theorem embBit_nonempty {b : Bool} {X : Set Str} (hX : X.Nonempty) : (embBit b X).Nonempty := by
   obtain ⟨w', hw'⟩ := hX; exact ⟨b :: w', w', rfl, hw'⟩
 

@@ -18,25 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise220
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem toSet_predMap (x : powerSet.Element) :
     toSet (predMap.toElementMap x) = predSet (toSet x) := by
   ext k

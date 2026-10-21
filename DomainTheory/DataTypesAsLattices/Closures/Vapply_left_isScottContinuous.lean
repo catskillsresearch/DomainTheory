@@ -20,35 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_14
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Vapply_left_isScottContinuous (x : Pomega) :
     IsScottContinuous (fun a => Vapply a x) := by
   have : (fun a => Vapply a x) = (fun a => VapplyY a x) := by

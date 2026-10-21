@@ -15,52 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.HF_isScottContinuou
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Hfun_fixed : HF Hfun = Hfun :=
   (theorem_1_4 HF_isScottContinuous).1
 

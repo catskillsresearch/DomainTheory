@@ -24,15 +24,6 @@ namespace Exercise823
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
 /-- **Exercise 8.23, Claim 2 (initiality with respect to projections).** If `a` is *any* other
 finitary projection that is a pre-fixed point of the same operator (`tOp t a ≤ a`, in particular
 any exact alternative solution `tOp t a = a`), then `‖t‖`'s domain embeds as a literal subsystem of

@@ -15,53 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem funOf_fix_idem {F : Pomega → Pomega} (hf : IsScottContinuous F)
     (hret : ∀ a, IsRetract a → IsRetract (F a)) (x : Pomega) :
     funOf (fix F) (funOf (fix F) x) = funOf (fix F) x := by

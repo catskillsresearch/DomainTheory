@@ -21,55 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem theorem_3_3_val (n : ℕ) :
     valNat (recCode n) = funOf (valNat n) (valNat (recCode n)) := by
   rw [recCode, valNat_apply, valNat_Ycode]

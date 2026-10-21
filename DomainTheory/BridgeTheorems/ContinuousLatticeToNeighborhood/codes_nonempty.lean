@@ -15,8 +15,6 @@ public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.bot_me
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.ContinuousLattice

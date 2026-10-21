@@ -20,9 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise414
 variable {A : Type*}
 
 
-
-
-
 /-- `f (lfpSet f) ⊆ lfpSet f`: it is a pre-fixed point. -/
 theorem f_subset_lfpSet (f : Set A → Set A) (hf : Monotone f) :
     f (lfpSet f) ⊆ lfpSet f := by

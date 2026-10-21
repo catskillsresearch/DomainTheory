@@ -27,23 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Membership in `mOfFn` (Part monad): a vector is produced iff each coordinate is a value. -/
 theorem mem_mOfFn : ∀ {n : ℕ} (p : Fin n → Part ℕ) (w : List.Vector ℕ n),
     w ∈ List.Vector.mOfFn p ↔ ∀ i, w.get i ∈ p i

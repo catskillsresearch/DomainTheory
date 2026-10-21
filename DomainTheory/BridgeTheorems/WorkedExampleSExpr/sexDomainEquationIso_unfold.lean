@@ -36,20 +36,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sexDomainEquationIso_unfold (x : SexSys.Element) :
     (sexDomainEquationIso x).carrier =
       treeUnfold lowerBoundSystem '' x.carrier :=

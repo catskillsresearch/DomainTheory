@@ -17,36 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vcomb_isRetract
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.6 (The limit theorem for algebraic lattices).**
 `(λf : V∘→V. Y(f)) : (V∘→V) ∘→ V`. -/
 theorem theorem_5_6 {f : Pomega} (hf : typed f (arrowR Vcomb Vcomb)) :

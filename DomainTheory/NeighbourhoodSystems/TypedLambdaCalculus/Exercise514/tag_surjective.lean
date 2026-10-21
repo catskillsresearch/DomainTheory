@@ -19,10 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise514
 open DomainTheory.NeighbourhoodSystems.Exercise513
 
 
-
-
-
-
 /-- **The tag is onto**: every `c : ℕ` decodes as some `tag ns m`. Strong induction on `c`,
 decreasing via `num_succ_left_gt`. -/
 theorem tag_surjective (c : ℕ) : ∃ ns m, tag ns m = c := by

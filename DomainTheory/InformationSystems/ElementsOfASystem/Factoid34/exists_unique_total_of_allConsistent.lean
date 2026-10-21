@@ -21,8 +21,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
 theorem exists_unique_total_of_allConsistent (h : sys.AllConsistent) :
     ∃! x : sys.Element, sys.IsTotal x :=
   ⟨sys.topElement h, ⟨sys.topElement_isTotal h, fun _ hy =>

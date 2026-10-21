@@ -27,7 +27,6 @@ open scoped DomainTheory.ContinuousLattice
 open ContinuousLatticeToNeighborhood
 
 
-
 universe u
 variable {D : Type u} [CompleteLattice D] [DecidableEq D]
 

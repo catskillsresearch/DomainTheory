@@ -18,15 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
 theorem generatedBy_affine (k ℓ : ℕ) (hℓ : ℓ < 2 ^ k) : GeneratedBy generator (affine k ℓ) := by
   rw [affine_eq_biInter k ℓ hℓ]
   induction Finset.range k using Finset.induction_on with

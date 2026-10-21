@@ -20,8 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 theorem IsRE.succSet {x : Pomega} (hx : IsRE x) : IsRE (succSet x) := by
   have heq0 : ComputablePred fun k : ℕ => k = 0 :=
     ⟨inferInstance, (Primrec.eq.decide.comp Primrec.id (Primrec.const 0)).to_comp⟩

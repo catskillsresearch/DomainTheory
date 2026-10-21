@@ -14,11 +14,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Iso
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
-universe u v w
 
 /-- **The category of domains and approximable maps** (Scott's prose preceding Definition 6.3):
 identities and associative composition come from Theorem 2.5 (`idMap_comp`, `comp_idMap`,

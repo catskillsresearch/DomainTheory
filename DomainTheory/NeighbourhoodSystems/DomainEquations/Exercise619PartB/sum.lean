@@ -13,8 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.sumTok_nonempty
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619

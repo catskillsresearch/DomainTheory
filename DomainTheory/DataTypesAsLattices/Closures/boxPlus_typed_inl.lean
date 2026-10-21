@@ -20,35 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app_left
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.4 / analogue of 4.5.** Left injection into the
 paper sum, on the shifted summand. -/
 theorem boxPlus_typed_inl {a b x : Pomega} (hx : typed x (boxShift a)) :

@@ -30,52 +30,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hstep_tag6
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Hfun_interp : ∀ τ : LambTerm, ∀ t : Pomega,
     funOf (funOf Hfun (encodeExp τ)) t = Hinterp τ t := by
   intro τ

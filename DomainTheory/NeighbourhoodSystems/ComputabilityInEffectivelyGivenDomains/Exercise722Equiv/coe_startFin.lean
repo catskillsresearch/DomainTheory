@@ -19,9 +19,6 @@ open scoped Computability
 open Sum Set
 
 
-
-
-
 theorem coe_startFin : ∀ e : SExpr, (↑(startFin e) : Set (autState e)) = (toNFA e).start
   | .sigma => by
       show (↑(Finset.univ : Finset Unit) : Set Unit) = sigmaDFA.toNFA.start

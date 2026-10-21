@@ -14,27 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.6).** `0 − 1 = ⊥`. -/
 theorem eq_2_6 : predSet (ofNat 0) = botElem := by
   ext k

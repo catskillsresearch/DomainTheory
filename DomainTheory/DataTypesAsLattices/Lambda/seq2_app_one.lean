@@ -15,30 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seq2_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seq2_app_one (x y : Pomega) : funOf (seq2 x y) (ofNat 1) = y := by
   rw [seq2_app]
   ext n

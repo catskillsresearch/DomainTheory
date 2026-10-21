@@ -23,15 +23,9 @@ open NeighborhoodSystem ApproximableMap Exercise326
 universe u
 
 
-
-
-
-
 section Prod
 
 variable {α : Type u} {E : NeighborhoodSystem α}
-
-
 
 
 /-- **`E × E ⊴ (T → E)`.** -/

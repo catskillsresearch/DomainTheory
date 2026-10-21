@@ -16,11 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
 theorem primrec_clipLtCode : Nat.Primrec clipLtCode := by
   have hm : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
   have he1 : Nat.Primrec (fun t : ℕ => t.unpair.2.unpair.1) :=

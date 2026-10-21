@@ -21,11 +21,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β : Type*}
 
 
-
-
-
-
-
 /-- **Exercise 7.21 (the computability half) — `papply` is computable when `eval` is.** Stated at the
 level of the `ℙ𝒟`-codes of Proposition 7.10: given that `eval` is recursively enumerable on codes
 (`heval` — this is Theorem 7.5's `evalMap_isComputable` transported through `funPresentation`), the

@@ -84,68 +84,19 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 /-! ## Tokens of `V` (Scott (1)–(2)) -/
-
 
 
 /-! ## Projections `{X | (X,Δ) ∈ u}` and `{Y | (Δ,Y) ∈ u}` -/
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-! ## Entailment for `V` (Scott (3)–(6)); all finite sets consistent -/
-
-
-
-
-
-
-
-
-
-
 
 
 /-! ## Domain equation `V ≅ V × V` (product-shaped tokens) -/
 
 
-
 /-! ## The universal domain `U` (Scott (7)–(10)) -/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 end InfoSys

@@ -72,12 +72,7 @@ namespace ApproximableMap
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
 
 
-
-
 /-! ### Theorem 2.5 — the category of neighbourhood systems and approximable mappings. -/
-
-
-
 
 
 /-! ### Proposition 2.6 — the functor to sets and functions. -/

@@ -17,15 +17,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.Basi
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-set_option linter.unusedSectionVars false
 
 def uForgetFinset (u : Finset UToken) : Finset VToken :=
   Multiset.foldr uForgetInsert ∅ u.1

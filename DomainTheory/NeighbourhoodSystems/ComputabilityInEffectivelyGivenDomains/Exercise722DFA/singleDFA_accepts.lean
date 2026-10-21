@@ -23,11 +23,6 @@ namespace Exercise722
 open scoped Computability
 
 
-
-
-
-
-
 /-- **The single-word DFA recognises exactly `{σ}`.** -/
 theorem singleDFA_accepts (σ : List Bool) : (singleDFA σ).accepts = {σ} := by
   ext w

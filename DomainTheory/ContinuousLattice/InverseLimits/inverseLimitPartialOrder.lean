@@ -16,8 +16,6 @@ public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLT_iff_LE
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Set

@@ -22,14 +22,6 @@ namespace Exercise619
 variable {D : NeighborhoodSystem Str}
 
 
-
-
-
-
-
-
-
-
 variable {hD : ∀ X, D.mem X → X.Nonempty}
 
 theorem liftTok_mem_master : (liftTok D hD).mem (liftTokMaster D) := Or.inl rfl

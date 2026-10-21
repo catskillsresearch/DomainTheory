@@ -104,34 +104,16 @@ variable {α : Type*}
 /-! ### Token embeddings `0X`, `1P`, `2Q` and the master `Γ`. -/
 
 
-
-
-
-
 /-! ### Intersection identities. -/
-
-
 
 
 /-! ### Subset / injectivity. -/
 
 
-
-
-
 /-! ### Nonemptiness and `⊆ Γ`. -/
 
 
-
-
-
-
 /-! ### The neighbourhood system `D^§`. -/
-
-
-
-
-
 
 
 /-! ### Inversion lemmas for `D^§`-neighbourhoods.
@@ -141,7 +123,6 @@ shape of their `{1,2}`-paths, using non-emptiness), a `D^§`-neighbourhood of a 
 have arisen from the matching constructor. -/
 
 
-
 /-! ### The domain equation `D^§ ≅ D + (D^§ × D^§)`. -/
 
 section Equation
@@ -149,22 +130,6 @@ section Equation
 variable (D : NeighborhoodSystem α) (hD : ∀ X, D.mem X → X.Nonempty)
 
 include hD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Example 6.1 (Scott 1981, PRG-19) — the domain equation `D^§ ≅ D + (D^§ × D^§)`.** The tree

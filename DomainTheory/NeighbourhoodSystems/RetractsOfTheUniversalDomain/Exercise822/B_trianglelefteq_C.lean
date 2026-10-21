@@ -22,7 +22,6 @@ open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
 namespace Exercise822
 
 
-
 /-- **`B ⊴ C`** (Exercise 8.22). The projection Scott asks us to notice: the identity inclusion
 `B ◁ C`. -/
 theorem B_trianglelefteq_C : B ⊴ C :=

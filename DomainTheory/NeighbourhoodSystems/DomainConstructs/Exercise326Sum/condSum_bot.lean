@@ -23,8 +23,6 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
 
-
-
 /-- **Exercise 3.26.** `condSum(⊥, x, y) = ⊥`. -/
 theorem condSum_bot (x : V₀.Element) (y : V₁.Element) :
     (condSum V₀ V₁ h₀ h₁).toElementMap (pair Example23.botElt (pair x y)) = (sum V₀ V₁ h₀ h₁).bot := by

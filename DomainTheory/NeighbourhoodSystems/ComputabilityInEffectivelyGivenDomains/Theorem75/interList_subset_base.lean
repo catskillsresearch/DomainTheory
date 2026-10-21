@@ -20,10 +20,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
 theorem interList_subset_base {base : Set β} {M : List (Set β)} : interList base M ⊆ base :=
   fun _ hz => (mem_interList.mp hz).1
 

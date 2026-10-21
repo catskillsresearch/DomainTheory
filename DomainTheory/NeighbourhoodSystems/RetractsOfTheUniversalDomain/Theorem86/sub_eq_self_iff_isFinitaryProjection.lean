@@ -25,8 +25,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 /-- **Theorem 8.6's range characterization, in full.** `sub f = f ↔ f` is a finitary projection. -/
 theorem sub_eq_self_iff_isFinitaryProjection {f : ApproximableMap E E} :
     sub f = f ↔ IsFinitaryProjection f :=

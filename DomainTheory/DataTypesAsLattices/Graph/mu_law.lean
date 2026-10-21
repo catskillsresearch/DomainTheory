@@ -17,8 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_monotone_left
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
 /-- **Scott 1976, (μ).** Application is monotone in both arguments. -/
 theorem mu_law {u v x y : Pomega} (hu : u ⊆ v) (hx : x ⊆ y) :
     funOf u x ⊆ funOf v y :=

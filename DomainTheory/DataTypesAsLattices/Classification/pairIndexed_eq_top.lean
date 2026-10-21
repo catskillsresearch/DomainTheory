@@ -19,28 +19,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem pairIndexed_eq_top (fs : ℕ → Pomega → Pomega) (x : Pomega) :
     pairIndexed fs x = topElem ↔ ∀ n, fs n x = topElem := by
   constructor

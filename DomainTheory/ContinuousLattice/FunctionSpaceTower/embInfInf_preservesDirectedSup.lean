@@ -17,45 +17,14 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.Basic
 
 namespace DomainTheory.ContinuousLattice
 
-universe u
-
 
 attribute [instance] CLat.str
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 section LimitMaps
 
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
-
-
-
-
-
-
-
-
-
 
 
 /-- `i_∞` is Scott-continuous (it is a bundled `ScottMap`). -/

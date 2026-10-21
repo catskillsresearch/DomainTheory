@@ -60,33 +60,4 @@ open DomainTheory.InformationSystems.InfoSys
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end DomainTheory.BridgeTheorems

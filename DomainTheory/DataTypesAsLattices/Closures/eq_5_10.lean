@@ -16,10 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
 theorem eq_5_10 (x y : Pomega) : squareSnd (squarePair x y) = y := by
   ext m
   constructor

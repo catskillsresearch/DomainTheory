@@ -18,8 +18,6 @@ public import DomainTheory.ContinuousLattice.InverseLimits.embLE_succ
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 open Set

@@ -15,36 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem predSet_iterate_ofNat :
     ∀ k i, predSet^[k] (ofNat (k + i)) = ofNat i
   | 0, i => by

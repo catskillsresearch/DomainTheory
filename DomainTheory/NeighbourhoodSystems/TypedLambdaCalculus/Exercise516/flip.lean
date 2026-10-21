@@ -8,8 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise516
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419

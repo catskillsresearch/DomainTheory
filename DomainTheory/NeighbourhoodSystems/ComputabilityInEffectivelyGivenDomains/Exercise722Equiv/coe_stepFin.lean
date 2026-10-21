@@ -20,11 +20,6 @@ open scoped Computability
 open Sum Set
 
 
-
-
-
-
-
 theorem coe_stepFin (e : SExpr) (S : Finset (autState e)) (c : Bool) :
     (↑(stepFin e S c) : Set (autState e)) = (toNFA e).stepSet ↑S c := by
   ext x

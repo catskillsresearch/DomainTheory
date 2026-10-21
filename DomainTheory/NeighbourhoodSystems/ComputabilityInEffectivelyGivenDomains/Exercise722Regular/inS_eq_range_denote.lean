@@ -20,17 +20,6 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace Exercise722
 
 
-
-
-
-
-
-
-
-
-
-
-
 theorem inS_eq_range_denote : {X | InS X} = denote '' {e | (denote e).Nonempty} := by
   ext X
   simp only [Set.mem_ofPred_eq, Set.mem_image]

@@ -21,23 +21,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem exists_corresponds_of_generatedBy_genPoint {Y : Set (ℕ → Bool)}
     (hY : GeneratedBy genPoint Y) : ∃ X, Corresponds X Y := by
   obtain ⟨φ, hφ⟩ := generatedBy_iff_exists_evalSet'.mp hY

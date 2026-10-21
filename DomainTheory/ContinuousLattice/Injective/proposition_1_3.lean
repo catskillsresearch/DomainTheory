@@ -17,10 +17,9 @@ public import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2epi
 @[expose] public section
 
 
-
 open Topology TopologicalSpace
 
-universe u v w
+universe v w
 
 
 theorem proposition_1_3 {ι : Type w} (D : ι → Type v) [∀ i, TopologicalSpace (D i)]

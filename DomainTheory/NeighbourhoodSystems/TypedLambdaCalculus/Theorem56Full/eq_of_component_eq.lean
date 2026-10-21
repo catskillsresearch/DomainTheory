@@ -27,12 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
 open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 
-
-
-
-
-
-
 /-- Two `𝒩`-elements are equal iff all components agree. -/
 theorem eq_of_component_eq {z z' : 𝒩.Element}
     (h : ∀ n, component z n = component z' n) : z = z' :=

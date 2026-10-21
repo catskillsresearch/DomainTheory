@@ -16,36 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seq4_comp_isScottContinuous
     {f g h i : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g)

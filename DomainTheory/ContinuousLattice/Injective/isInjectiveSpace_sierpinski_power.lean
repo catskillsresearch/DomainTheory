@@ -18,10 +18,9 @@ public import DomainTheory.ContinuousLattice.Injective.proposition_1_3
 @[expose] public section
 
 
-
 open Topology TopologicalSpace
 
-universe u v w
+universe w
 
 
 theorem isInjectiveSpace_sierpinski_power (ι : Type w) :

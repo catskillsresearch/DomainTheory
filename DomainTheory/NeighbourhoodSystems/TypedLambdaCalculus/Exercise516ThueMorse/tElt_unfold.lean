@@ -18,19 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise516
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 5.16 — the defining unfolding.** `t = 0·merge(neg t, tail t)`. -/
 theorem tElt_unfold :
     (consMap false).toElementMap

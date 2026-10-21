@@ -10,8 +10,6 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem4
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise511
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap

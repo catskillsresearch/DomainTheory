@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom_mono
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem lfpAbove_fixed {f : Pomega → Pomega} (hf : IsScottContinuous f)

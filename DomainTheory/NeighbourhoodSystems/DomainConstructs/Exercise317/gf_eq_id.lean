@@ -19,24 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise317
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 3.17 — `g` is a retraction of `f`.** `g ∘ f = I_B`. -/
 theorem gf_eq_id : g.comp f = idMap B := by
   apply ApproximableMap.ext

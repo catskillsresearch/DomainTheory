@@ -20,10 +20,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
 /-- Continuous functions are determined by their values on finite sets. -/
 theorem isScottContinuous_determined {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g)

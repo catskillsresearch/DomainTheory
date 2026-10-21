@@ -14,29 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Z_graph_funOf (n : ℕ) (f x : Pomega) :
     Z n (graph (fun y => funOf f y)) x = Z n f x := by
   induction n with

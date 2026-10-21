@@ -18,23 +18,15 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe u
 
 variable {α β γ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-
-
-
-
 
 
 section HomOp
 
 variable (T : Endofunctor DomainObj) (D E : DomainObj)
   (j : ApproximableMap D.sys (T.obj D).sys)
-
-
 
 
 /-- **Action lemma.** `homOp` realizes the composite `g ↦ k ∘ g ∘ j` on filters of strict maps:

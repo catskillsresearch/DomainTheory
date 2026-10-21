@@ -19,14 +19,6 @@ open scoped Computability
 open Sum Set
 
 
-
-
-
-
-
-
-
-
 theorem diffNFA_evalFrom (e1 e2 : SExpr) (w : List Bool)
     (S1 : Finset (autState e1)) (S2 : Finset (autState e2)) :
     (diffNFA e1 e2).evalFrom {(S1, S2)} w =

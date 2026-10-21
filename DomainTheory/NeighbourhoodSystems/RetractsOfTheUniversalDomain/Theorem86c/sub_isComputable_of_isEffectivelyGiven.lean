@@ -20,7 +20,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap Sub8_6
 variable {α : Type*} {E : NeighborhoodSystem α}
 
 
-
 /-- **Theorem 8.6(c) (Scott 1981, PRG-19), in full: "If `E` is effectively given, then `sub` is
 computable."** Packages `subApprox_isComputable` with the function-space presentation that Theorem
 7.5 (`funSpace_isEffectivelyGiven`'s construction, `funPresentation`) builds out of any computable

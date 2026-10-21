@@ -15,34 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Z_finite_no_tag
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem eraseTag_Z_finite (p q m : ℕ) :
     eraseTag (max p q + 1) (Z m (e p) (e q)) = Z m (e p) (e q) := by
   ext k

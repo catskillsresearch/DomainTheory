@@ -70,18 +70,10 @@ variable {α : Type*}
 /-! ### Token-level facts about `T`'s three neighbourhoods `{0}`, `{1}`, `Δ`. -/
 
 
-
-
-
-
 /-! ### The conditional relation. -/
 
 
 variable (V : NeighborhoodSystem α)
-
-
-
-
 
 
 @[simp] theorem cond_rel {W : Set (Example12.Token ⊕ (α ⊕ α))} {Z : Set α} :

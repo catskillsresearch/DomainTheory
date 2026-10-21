@@ -16,11 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 
-
-
-
-
-
 theorem decodeRatPair_clipGeCode (m e : ℕ) :
     decodeRatPair (clipGeCode (Nat.pair m e)) = qpClipGe (decodeRat m) (decodeRatPair e) := by
   unfold clipGeCode decodeRatPair qpClipGe

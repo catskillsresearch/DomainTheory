@@ -23,10 +23,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
 /-- **Scott 1976, Theorem 1.1 (The characterization theorem).**
 `f` is continuous iff `e m ⊆ f(x)` just when some finite `e n ⊆ x` already
 satisfies `e m ⊆ f(e n)`. -/

@@ -21,12 +21,8 @@ namespace InfoSys
 
 open ApproximableMap
 
-set_option linter.unusedSectionVars false
-
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
-
-
 
 
 theorem constOp_uncurry : uncurryMap B A B (constOp A B) = fstMap B A := by

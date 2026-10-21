@@ -17,47 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarStep_fix_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.24).** `$ = Y(λs λu λz. z ⊃ u₀, s(λt. u_{t+1})(z−1))`. -/
 theorem eq_2_24_Y : dollarC = fix dollarStep := by
   have hfix : dollarStep (fix dollarStep) = fix dollarStep :=

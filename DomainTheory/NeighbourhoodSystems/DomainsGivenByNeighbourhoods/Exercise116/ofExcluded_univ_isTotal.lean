@@ -23,18 +23,6 @@ namespace Cofinite
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 1.16 — the unique total element.** `ofExcluded ℕ` (matching the greatest
 element `ℕ ∈ 𝒫(ℕ)`) is total: it is `⊑`-maximal. -/
 theorem ofExcluded_univ_isTotal : cofiniteSystem.IsTotal (ofExcluded Set.univ) :=

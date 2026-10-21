@@ -24,10 +24,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
-
 /-- **Scott's unfolding** `z* = Λ ∪ z·z*`. -/
 theorem star_eq (z : Set S) : star z = (1 : Set S) ∪ z * star z := by
   apply Set.Subset.antisymm

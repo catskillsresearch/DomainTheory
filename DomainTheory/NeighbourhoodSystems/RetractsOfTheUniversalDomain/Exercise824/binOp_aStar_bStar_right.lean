@@ -21,17 +21,6 @@ namespace Exercise824
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- `(aStar s t, bStar s t)` is a *genuine* fixed point of the pair `(s, t)`. -/
 theorem binOp_aStar_bStar_right (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     binOp t (aStar s t) (bStar s t) = bStar s t := by

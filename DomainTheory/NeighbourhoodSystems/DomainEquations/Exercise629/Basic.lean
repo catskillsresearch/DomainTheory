@@ -108,13 +108,7 @@ variable {ι : Type u} {α : ι → Type v}
 /-! ## The product neighbourhood and its algebra -/
 
 
-
-
-
-
 variable {D : ∀ i, NeighborhoodSystem (α i)}
-
-
 
 
 section IndexedProduct
@@ -131,25 +125,6 @@ section Iso
 variable [DecidableEq ι]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end Iso
 
 end IndexedProduct
@@ -160,15 +135,6 @@ Tokens live in `Option (Σ i, α i)`: the `none` basepoint plus tagged copies `i
 summands. A neighbourhood constrains only a single coordinate, so — unlike the product — no
 finite-support condition is needed. We need `∅ ∉ 𝒟ᵢ` (`hne`) to keep distinct tagged copies
 disjoint. -/
-
-
-
-
-
-
-
-
-
 
 
 /-! ## `⊕` generalizes: the indexed coalesced sum

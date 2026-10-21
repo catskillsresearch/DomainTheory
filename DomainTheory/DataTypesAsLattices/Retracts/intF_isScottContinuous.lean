@@ -15,49 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem intF_isScottContinuous : IsScottContinuous intF :=
   graph_const_isScottContinuous
     (fun f u => dcondSet u (ofNat 0) (dcondSet (funOf f (predSet u)) u u))

@@ -18,35 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_boxPlus
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.4 (sum half).** If `a` and `b` are closure
 operations then so is `a ⊞ b`. -/
 theorem theorem_5_4_plus {a b : Pomega} (ha : IsClosure a) (hb : IsClosure b) :

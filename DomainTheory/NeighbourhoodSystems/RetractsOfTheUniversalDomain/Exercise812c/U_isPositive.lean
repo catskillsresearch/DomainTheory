@@ -19,12 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
 /-- **`U` is Positive**: since `combineIntervals` presents *any* raw intersection of two presented
 lists unconditionally, and `X ∩ Y ⊆ [0,1)` is automatic whenever `X ⊆ [0,1)`, only non-emptiness
 can ever obstruct `U.mem (X ∩ Y)`. -/

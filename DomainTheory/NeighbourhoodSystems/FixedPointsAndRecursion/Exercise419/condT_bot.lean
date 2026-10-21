@@ -18,26 +18,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise419
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
 
 
-
-
-
-
 variable {β : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- `cond(⊥, x, y) = ⊥` in `T`, phrased with `T.bot` (which the head-test `empty(⊥)` produces)

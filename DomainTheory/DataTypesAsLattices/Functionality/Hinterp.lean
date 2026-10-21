@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.outC
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (4.42)–(4.43).** Semantics `ℋ⟦τ⟧ : env → lamb`. -/

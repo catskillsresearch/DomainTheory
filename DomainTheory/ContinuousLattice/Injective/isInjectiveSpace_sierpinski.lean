@@ -16,10 +16,7 @@ public import DomainTheory.ContinuousLattice.Injective.Basic
 @[expose] public section
 
 
-
 open Topology TopologicalSpace
-
-universe u v w
 
 
 /-- **Scott 1972, Proposition 1.2.** The Sierpiński space is injective. -/

@@ -19,19 +19,17 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.fold
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
+
+omit [DecidableEq α] in
 
 theorem rawDepth_funTok_gt_left {u v : List (RawLamToken α)} {t : RawLamToken α}
     (ht : t ∈ u) : rawDepth t < rawDepth (.funTok u v) := by

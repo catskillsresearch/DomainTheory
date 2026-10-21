@@ -23,12 +23,6 @@ namespace Exercise823
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
 theorem iterElem_zero' (t : ApproximableMap (funSpace E E) (funSpace E E)) :
     t.iterElem 0 = (funSpace E E).bot := by
   show (idMap (funSpace E E)).toElementMap (funSpace E E).bot = (funSpace E E).bot

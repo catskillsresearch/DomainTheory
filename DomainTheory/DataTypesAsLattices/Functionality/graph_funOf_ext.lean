@@ -14,21 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem graph_funOf_ext {f g : Pomega}
     (hf : f = graph (fun x => funOf f x))
     (hg : g = graph (fun x => funOf g x))

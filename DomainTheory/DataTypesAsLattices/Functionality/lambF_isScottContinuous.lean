@@ -17,36 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.arrowR_diag_isScott
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem lambF_isScottContinuous : IsScottContinuous lambF :=
   theorem_1_3 (f := fun b => plusR intR b) (g := fun z => arrowR z z)
     (plusR_right_isScottContinuous intR)

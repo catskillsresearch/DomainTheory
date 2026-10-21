@@ -19,27 +19,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise419
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
 
 
-
-
-
-
 variable {β : Type*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 4.19 (Scott 1981, PRG-19).** The same defining equation holds on every partial

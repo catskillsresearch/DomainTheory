@@ -20,8 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 theorem Corresponds.inter {X₁ X₂ : Set ℕ} {Y₁ Y₂ : Set (ℕ → Bool)}

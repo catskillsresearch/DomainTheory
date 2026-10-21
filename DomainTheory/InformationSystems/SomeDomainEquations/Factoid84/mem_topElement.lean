@@ -12,8 +12,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.IsDo
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive

@@ -15,38 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hinterp_isScottCont
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Htyped_app (τ : LambTerm) (t : Pomega) :
     funOf (Htyped τ) t = funOf lambR (Hinterp τ (funOf envR t)) := by
   rw [Htyped, arrowR_app]

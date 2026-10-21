@@ -25,32 +25,6 @@ namespace Exercise722
 open NeighborhoodSystem ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Per-approximant bound**: `fⁿ(⊥) · σ⃗ ≤ σ⃗`, by induction using `mulElem_bot_le` (base case)
 and associativity + monotonicity + `streamArrow_eq` (step). -/
 theorem prependMap_iterElem_mul_streamArrow_le (σ : List Bool) :

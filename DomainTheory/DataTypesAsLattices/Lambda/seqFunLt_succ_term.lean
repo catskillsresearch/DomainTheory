@@ -16,58 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.termShift_ofNat
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seqFunLt_succ_term (u z : Pomega) (n : ℕ) :
     condSet z (funOf u (ofNat 0)) (seqFunLt (termShift u) (predSet z) n) =
       seqFunLt u z (n + 1) := by

@@ -100,40 +100,19 @@ namespace Theorem614
 variable {α : Type w}
 
 
-
-
-
 /-! ### The setup bundle (hypotheses of Theorem 6.14) -/
 
 
 /-! ### The iterated functor tower `Tⁿ({Γ})` -/
 
 
-
-
-
-
-
-
 /-! ### The colimit `𝒟 = ⋃ₙ Tⁿ({Γ})` -/
-
-
-
 
 
 /-! ### `T(𝒟)` and the relation `𝒟 ◁ T(𝒟)` -/
 
 
-
-
-
-
-
-
 /-! ### `𝒟` is a `T`-algebra: the iso `𝒟 ≅ T(𝒟)` is the identity -/
-
-
-
 
 
 /-- The colimit `𝒟` as a `T`-algebra, with structure map the iso `T(𝒟) → 𝒟`. -/
@@ -143,9 +122,6 @@ abbrev colimAlg (s : Setup.{w}) : TAlgebra s.T :=
 /-! ### Existence of homomorphisms (Theorem 6.9) -/
 
 /-! ### The projection chain `ρₙ = iₙ ∘ jₙ` and `⋃ₙ ρₙ = I_𝒟` -/
-
-
-
 
 
 /-! ### Theorem 6.14 — the existence half (the canonical solution and its homomorphisms) -/

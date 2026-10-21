@@ -15,47 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_seqFunLt
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seqFun_eq_iUnion_lt (u z : Pomega) :
     seqFun u z = ⋃ n, seqFunLt u z n := by
   ext k

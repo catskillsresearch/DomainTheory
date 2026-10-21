@@ -20,26 +20,10 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-set_option linter.unusedSectionVars false
-
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 namespace ApproximableMap
-
-
 
 
 /-- Uniqueness of `fix` as an approximable operator (Scott Thm 7.3). -/

@@ -22,8 +22,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.triangle
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem triangle_succ (w : ℕ) : triangle (w + 1) = triangle w + (w + 1) := by

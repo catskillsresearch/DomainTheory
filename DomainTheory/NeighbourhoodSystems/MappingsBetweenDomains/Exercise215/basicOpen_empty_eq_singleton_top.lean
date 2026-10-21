@@ -16,20 +16,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise215
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- The open point `{⊤}` is the basic open `[∅]`. -/
 theorem basicOpen_empty_eq_singleton_top : O.basicOpen ∅ = {topElt} := by
   ext x

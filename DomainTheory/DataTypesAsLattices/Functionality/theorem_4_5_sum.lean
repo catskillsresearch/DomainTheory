@@ -18,25 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_iff
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.5 (The sum theorem).** -/
 theorem theorem_4_5_sum {a b : Pomega} (ha : IsRetract a) (hb : IsRetract b) :
     IsRetract (plusR a b) ∧ IsStrict (plusR a b) ∧

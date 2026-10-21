@@ -18,35 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- Occupancy test of (5.13): neither component inhabited, so the value is `⊥`. -/
 theorem boxPlus_app_empty {a b u : Pomega} (hx : squareFst u = botElem)
     (hy : squareSnd u = botElem) :

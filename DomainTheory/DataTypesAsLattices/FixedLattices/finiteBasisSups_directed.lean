@@ -17,14 +17,6 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
 theorem finiteBasisSups_directed {α : Type u} [CompleteLattice α]
     (d : ℕ → α) (x : Set ℕ) :
     IsDirectedSet (finiteBasisSups d x) := by

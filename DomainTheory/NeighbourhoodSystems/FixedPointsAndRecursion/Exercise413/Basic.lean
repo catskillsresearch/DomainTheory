@@ -56,8 +56,6 @@ namespace NeighborhoodSystem
 /-! ### (1) The least fixed point of a monotone map via intersection. -/
 
 
-
-
 /-! ### (3) The primitive-recursion theorem (choice-free), behind 4.6. -/
 
 /-! ### (4) Specialization to `⟨ℕ, 0, ⁺⟩`. -/

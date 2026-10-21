@@ -18,42 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_directedSub
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.1, continuous-lattice half.**
 The finite-image points form a directed way-below basis for every point in
 the range of a retract. Stated with subset directedness so the compared

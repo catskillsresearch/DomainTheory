@@ -34,13 +34,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Tc
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516.map_ext_C
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe w
 
 section Initial
 

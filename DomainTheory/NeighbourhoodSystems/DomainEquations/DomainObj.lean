@@ -8,7 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approxima
 
 @[expose] public section
 
-universe u v w
+universe w
 
 namespace DomainTheory.NeighbourhoodSystems
 

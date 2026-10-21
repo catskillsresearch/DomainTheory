@@ -14,8 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.interSys_nbset
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Proposition611
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set DomainTheory.NeighbourhoodSystems.Exercise222

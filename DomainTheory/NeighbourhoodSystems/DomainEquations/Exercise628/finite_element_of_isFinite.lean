@@ -19,11 +19,6 @@ open NeighborhoodSystem ApproximableMap
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
-
-
 /-- **A finite system has a finite element domain.** A filter `x : |D|` is determined by which of
 the (finitely many) neighbourhoods it contains, so `x ↦ {p | x.mem p.1}` injects `|D|` into the
 finite powerset `Set {X // D.mem X}`. -/

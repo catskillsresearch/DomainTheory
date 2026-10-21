@@ -53,17 +53,6 @@ namespace Cofinite
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-! ### Total elements. -/
 
 /-! ### A second `∩`-closed system: all subsets. -/

@@ -22,9 +22,6 @@ variable {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
   (qChar cons : ℕ → ℕ)
 
 
-
-
-
 variable {P qChar cons}
 
 /-- **One-step preservation of `DiagFixed`.** If the accumulator `r` is already `DiagFixed` and

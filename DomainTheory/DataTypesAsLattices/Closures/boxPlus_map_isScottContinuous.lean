@@ -21,35 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxPlus_test_isScottCont
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem boxPlus_map_isScottContinuous (a b : Pomega) :
     IsScottContinuous (fun u =>
       dcondSet (boxTag 0 (squareFst u) ∪ boxTag 1 (squareSnd u))

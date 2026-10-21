@@ -18,16 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example23
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **`parityMap`'s relation on a cone, read off.** `cone σ f Y ↔ Y ∈ valElt(scan σ)` — the
 defining existential collapses since a cone has a *unique* generating prefix (`cone_injective`).
 (Used throughout Exercise 2.16's uniqueness argument.) -/

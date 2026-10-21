@@ -17,37 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Scomb_map_cont :
     IsScottContinuous (fun u => graph (fun v =>
       graph (fun x => funOf (funOf u x) (funOf v x)))) :=

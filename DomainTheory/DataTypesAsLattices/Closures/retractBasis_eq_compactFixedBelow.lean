@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem retractBasis_eq_compactFixedBelow {a : Pomega} (ha : IsClosure a)

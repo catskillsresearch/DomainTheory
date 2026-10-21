@@ -17,38 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Scomb_beta2
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem SKK_eq_I : funOf (funOf Scomb Kcomb) Kcomb = graph (fun x => x) := by
   rw [Scomb_beta2]
   apply congrArg graph

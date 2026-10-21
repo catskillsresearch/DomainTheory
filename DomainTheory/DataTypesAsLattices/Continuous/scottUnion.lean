@@ -12,8 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous.scottPiece
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace

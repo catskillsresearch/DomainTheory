@@ -23,15 +23,9 @@ open NeighborhoodSystem ApproximableMap Exercise326
 universe u
 
 
-
-
-
-
 section Prod
 
 variable {α : Type u} {E : NeighborhoodSystem α}
-
-
 
 
 /-- **Exercise 8.19, Goal 1.** `T ⊴ E` and `E → E ⊴ E` give `E × E ⊴ E`: chain `E×E ⊴ (T→E) ⊴

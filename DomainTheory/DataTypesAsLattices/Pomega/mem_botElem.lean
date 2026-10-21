@@ -17,8 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.botElem
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 @[simp] theorem mem_botElem (n : ℕ) : n ∈ botElem ↔ False := by simp [botElem]

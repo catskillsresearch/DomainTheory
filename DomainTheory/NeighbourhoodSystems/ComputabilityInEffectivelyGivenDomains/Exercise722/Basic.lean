@@ -181,15 +181,9 @@ theorem concat_assoc (X Y Z : Set (List Bool)) :
 /-! ## `S` is a positive neighbourhood system -/
 
 
-
-
-
-
-
 /-! ## Multiplication on the domain `|S|`
 
 `xy = {Z ∈ S ∣ ∃ X ∈ x ∃ Y ∈ y. XY ⊆ Z}`. We show this is again a filter (an element of `|S|`). -/
-
 
 
 /-- **Exercise 7.22 (semigroup part): multiplication on `|S|` is associative**, so `|S|` is a
@@ -214,7 +208,6 @@ theorem mulElem_assoc (x y z : Ssys.Element) :
 /-! ## The embedding of `Σ = {0,1}*` into `|S|` -/
 
 
-
 /-! ## Infinite words as genuine least fixed points (Exercise 7.22l)
 
 Scott's actual question defines `σ⃗` **as a least fixed point in the domain `|S|`**: `σ⃗ = σ·σ⃗`
@@ -226,12 +219,10 @@ condition on `InS (powerLang σ)` is needed, and (Theorem 4.1's construction bei
 `Classical.choice` is pulled in either. -/
 
 
-
 /-! ## Stream elements (Scott's infinite-word investigations)
 
 Write `wⁿ` for `w` appended to itself `n` times. **`streamElem w`** is the filter
 `Z ↦ InS Z ∧ ∀ n, wⁿ ∈ Z` (Scott's `w⃗`). -/
-
 
 
 theorem repeatWord_add (w : List Bool) (a b : ℕ) :
@@ -241,7 +232,6 @@ theorem repeatWord_add (w : List Bool) (a b : ℕ) :
   | succ a ih =>
       simp only [Nat.succ_add, repeatWord]
       rw [ih, List.append_assoc]
-
 
 
 theorem repeatWord_eq_empty (w : List Bool) (n : ℕ) (hw : w = []) :
@@ -259,7 +249,6 @@ theorem InS_powerLang_empty : InS (powerLang []) := by
     · rintro ⟨n, hn⟩; exact hn.symm.trans (repeatWord_eq_empty [] n rfl)
     · intro hu; subst hu; exact ⟨0, rfl⟩
   simpa [h] using InS.singleton []
-
 
 
 @[simp] theorem mem_streamElem {w : List Bool} {Z : Set (List Bool)} :

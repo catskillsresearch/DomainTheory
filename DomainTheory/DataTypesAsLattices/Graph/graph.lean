@@ -8,8 +8,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, §1, Definition.**

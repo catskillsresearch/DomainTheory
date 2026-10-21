@@ -29,17 +29,6 @@ namespace NeighborhoodSystem
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
-
-
-
-
-
 variable (P : ComputablePresentation V)
 
 /-- **Proposition 7.12 — the binary join map is computable.** Two independent singleton tests. -/

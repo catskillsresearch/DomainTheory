@@ -23,9 +23,6 @@ variable {α : Type*} (V : NeighborhoodSystem α)
   (p : ApproximableMap V TD) (f : ApproximableMap V V)
 
 
-
-
-
 /-- **Exercise 5.12 (Scott 1981, PRG-19).** The defining recursion of the `while`-loop:
 `w(x) = cond(p(x), w(f(x)), x)`. -/
 theorem whileMap_rec (x : V.Element) :

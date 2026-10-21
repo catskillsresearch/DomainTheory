@@ -74,18 +74,10 @@ namespace Exercise717
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
 
-
-
 /-! ### Shape inversion lemmas. -/
 
 
-
-
-
 /-! ### The `ApproximableMap` laws. -/
-
-
-
 
 
 /-! ### The two defining equations and strictness. -/
@@ -111,7 +103,6 @@ primitive-recursive `{0,1}`/index functions `fe` (`Q`-equality-to-`Δ`), `fU`/`f
 section Computability
 
 variable (fe fU fV : ℕ → ℕ) (mIdx : ℕ)
-
 
 
 end Computability

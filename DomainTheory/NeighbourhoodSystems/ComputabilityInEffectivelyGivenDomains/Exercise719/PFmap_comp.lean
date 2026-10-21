@@ -24,8 +24,6 @@ variable {α β γ : Type*}
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
 
 
-
-
 /-- **Exercise 7.19 — `ℙ` preserves composition.** `ℙ(g ∘ f) = ℙg ∘ ℙf`. The forward direction
 constructs the intermediate `ℙE`-neighbourhood from `comp_witness`; the backward direction merely
 threads the existential witnesses. -/

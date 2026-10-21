@@ -20,13 +20,7 @@ set_option linter.unusedSimpArgs false
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
 namespace triSys
-
-
 
 
 /-- **Exercise 1.18 — `family` is pairwise consistent but not consistent.** Its full triple has

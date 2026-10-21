@@ -15,16 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
 /-- The spaces of `E_a` and of `{⟨x, y⟩ | a(x) = a(y)}` are isomorphic:
 classes of the kernel are represented uniquely by range elements. -/
 theorem theorem_7_2_i_iso {a : Pomega} (ha : IsRetract a) (x y : Pomega) :

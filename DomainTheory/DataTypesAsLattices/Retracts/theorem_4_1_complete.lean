@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow_fixed_inter
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, Theorem 4.1 (The lattice theorem), complete-lattice half.**

@@ -21,9 +21,6 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
-
 /-- **The "easy" (`⟸`) half of formula (ii), isolated.** Valid for **any** approximable map
 `a : E → E` with **no hypothesis on `a` at all** — not even that `a` satisfies the rest of formula
 (ii), let alone that it is a finitary projection. Pure monotonicity + up-closure: `↑X ≤ x`

@@ -23,10 +23,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
 
-
-
-
-
 theorem le_familySup (S : Set sys.Element)
     (hU : sys.IsFinitelyConsistent (sys.familyUnionCarrier S)) {x : sys.Element}
     (hx : x ∈ S) : x ≤ sys.familySup S hU := by

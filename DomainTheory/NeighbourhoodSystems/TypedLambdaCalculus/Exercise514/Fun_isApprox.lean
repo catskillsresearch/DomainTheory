@@ -18,16 +18,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise514
 open DomainTheory.NeighbourhoodSystems.Exercise513
 
 
-
-
-
-
-
-
-
-
-
-
 /-- Every `Fun u` is itself approximable, so `fun` really lands in the continuous maps. -/
 theorem Fun_isApprox (u : Set ℕ) : IsApprox (Fun u) := by
   refine ⟨?_, ?_⟩

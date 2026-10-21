@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem retractLe_trans {a b c : Pomega}

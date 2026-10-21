@@ -23,7 +23,4 @@ export CategoryTheory (Category)
 open scoped CategoryTheory
 
 
-
-
-
 end DomainTheory.NeighbourhoodSystems

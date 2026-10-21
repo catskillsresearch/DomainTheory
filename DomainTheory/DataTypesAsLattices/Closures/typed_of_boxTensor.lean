@@ -19,35 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxTensor_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.4 / analogue of 4.4.** Projections of a
 `⊠`-typed point remain typed. -/
 theorem typed_of_boxTensor {a b u : Pomega} (hu : typed u (boxTensor a b)) :

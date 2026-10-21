@@ -18,15 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_16
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.5.** `V(a)(x) = a(x)` for every `x` implies
 `a` is expansive and idempotent on values, hence a closure once `a` is
 already a graph retract. -/

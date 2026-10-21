@@ -15,19 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.curry2_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 2.3 (The reduction theorem), binary case.** -/
 theorem theorem_2_3_binary {f : Pomega → Pomega → Pomega}
     (hfx : ∀ y, IsScottContinuous (fun x => f x y))

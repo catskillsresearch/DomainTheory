@@ -61,26 +61,16 @@ open NeighborhoodSystem
 variable {A : Type*} [CommRing A]
 
 
-
-
-
 variable [DecidableEq A]
-
-
-
 
 
 /-! ### From filters to ideals. -/
 
 
-
-
 /-! ### From ideals to filters. -/
 
 
-
 /-! ### The order isomorphism `|𝒟| ≅ (Ideals A, ⊆)`. -/
-
 
 
 end Ring

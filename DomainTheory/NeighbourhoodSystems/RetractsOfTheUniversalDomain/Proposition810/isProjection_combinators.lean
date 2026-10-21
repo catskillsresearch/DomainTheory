@@ -24,9 +24,6 @@ open NeighborhoodSystem ApproximableMap Exercise326
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 
-
-
-
 /-- **Proposition 8.10 (Scott 1981, PRG-19), first half.** If `a, b : 𝒰 → 𝒰` are projections,
 then so are `a+b`, `a×b`, and `a→b`. -/
 theorem isProjection_combinators {a b : ApproximableMap U U}

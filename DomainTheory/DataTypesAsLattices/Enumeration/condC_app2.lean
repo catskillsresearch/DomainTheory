@@ -19,9 +19,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
 theorem condC_app2 (x y : Pomega) :
     funOf (funOf condC x) y = graph (fun z => condSet z x y) :=
   condC_beta2 x y

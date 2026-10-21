@@ -17,30 +17,8 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.Basic
 
 namespace DomainTheory.ContinuousLattice
 
-universe u
-
 
 attribute [instance] CLat.str
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 section LimitMaps
@@ -49,26 +27,10 @@ variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 section Thm44d
 
 variable (D₀ : CLat.{u})
   (j₀ : IsContinuousLatticeProjection D₀.carrier (ScottMap D₀.carrier D₀.carrier))
-
-
-
-
 
 
 /-- **Scott 1972, Theorem 4.4** (`sources/ScottContinLatt1972.md`):

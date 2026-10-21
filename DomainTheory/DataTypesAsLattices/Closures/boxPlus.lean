@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.boxTag
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- **Scott 1976, (5.13).** Sum of closures:

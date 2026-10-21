@@ -13,8 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.con
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise326
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap

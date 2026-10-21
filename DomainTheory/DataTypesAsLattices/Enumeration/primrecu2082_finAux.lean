@@ -20,69 +20,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem primrec₂_finAux : Primrec fun p : ℕ × ℕ => finAux p.1 p.2 := by
   let step : (ℕ × ℕ) → (ℕ × ℕ) → ℕ := fun p q =>
     if p.1.testBit q.1 then

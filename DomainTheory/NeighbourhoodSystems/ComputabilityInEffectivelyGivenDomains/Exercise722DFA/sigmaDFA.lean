@@ -11,8 +11,6 @@ import all Mathlib.Data.Fintype.Option
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722

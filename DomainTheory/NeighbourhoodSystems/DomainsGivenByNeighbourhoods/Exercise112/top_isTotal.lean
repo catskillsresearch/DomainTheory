@@ -19,19 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise112
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- `top` is a total (maximal) element. -/
 theorem top_isTotal : neighborhoodSystem.IsTotal top :=
   fun y _ => le_top y

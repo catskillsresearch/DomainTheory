@@ -19,31 +19,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem valStep_body_isScottContinuous (v : Pomega) :
     IsScottContinuous (fun k =>
       condSet k Gcomb (minExtend (valStepValue v) k)) :=

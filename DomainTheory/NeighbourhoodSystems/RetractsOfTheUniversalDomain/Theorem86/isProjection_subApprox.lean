@@ -25,27 +25,7 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
 namespace Sub8_6
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **`sub` is itself a *projection* on the function space `(E → E)`** (half of Theorem 8.6's

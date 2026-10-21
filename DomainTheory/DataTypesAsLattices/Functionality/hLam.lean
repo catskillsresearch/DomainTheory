@@ -13,8 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 def hLam (H e t : Pomega) : Pomega :=

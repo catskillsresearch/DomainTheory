@@ -16,22 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem directed_finite_cover_subset {f : Pomega → Pomega}
     {A : Set (Fixpoints f)} (hA : IsDirectedSubset A) {t : Pomega}
     (ht : t.Finite) (hsub : t ⊆ ⋃₀ (Subtype.val '' A)) :

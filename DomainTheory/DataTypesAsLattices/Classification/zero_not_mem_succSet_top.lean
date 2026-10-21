@@ -19,31 +19,6 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem zero_not_mem_succSet_top : 0 ∉ succSet topElem := by
   intro h
   obtain ⟨n, _, hn⟩ := h

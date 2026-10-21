@@ -18,42 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis_directed
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem retractBasis_sSup {a : Pomega} (ha : IsRetract a)
     (x : Fixpoints (funOf a)) :
     x = sSup (retractBasis a x) := by

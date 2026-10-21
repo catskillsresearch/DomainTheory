@@ -22,8 +22,6 @@ variable {α : Type*} {D E : NeighborhoodSystem α}
 namespace Subsystem.ProjectionPair
 
 
-
-
 /-- **Exercise 6.25 — "check that the set on the right is directed".** Any two members of
 `{x ∣ g(x) ⊑ y}` have a common upper bound *inside the set*, namely `h(y)` itself (the down-set of
 `h(y)` has `h(y)` as a top, so it is trivially directed). -/

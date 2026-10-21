@@ -22,14 +22,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example15
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
 /-- **Factoid 1.5a (Scott 1981, PRG-19).** In Example 1.5, "sets are consistent in `𝒟` iff they
 have a non-empty intersection": a finite prefix `X₀, …, Xₙ₋₁` is consistent exactly when its
 intersection `⋂_{i<n} Xᵢ` is non-empty. -/

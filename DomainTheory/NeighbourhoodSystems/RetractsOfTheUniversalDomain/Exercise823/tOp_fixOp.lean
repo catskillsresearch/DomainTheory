@@ -24,14 +24,6 @@ namespace Exercise823
 variable {α : Type} {E : NeighborhoodSystem α}
 
 
-
-
-
-
-
-
-
-
 /-- **`‖t‖` is a genuine (not merely approximate) fixed point of `t`.** -/
 theorem tOp_fixOp (t : ApproximableMap (funSpace E E) (funSpace E E)) :
     tOp t (fixOp t) = fixOp t := by

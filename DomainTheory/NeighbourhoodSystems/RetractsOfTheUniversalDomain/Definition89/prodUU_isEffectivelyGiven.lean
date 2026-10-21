@@ -15,8 +15,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UCo
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74.prod_isEffectivelyGiven
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Exercise326

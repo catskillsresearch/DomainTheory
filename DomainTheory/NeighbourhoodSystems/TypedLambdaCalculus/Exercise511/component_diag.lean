@@ -23,17 +23,6 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 5.11 (Scott 1981, PRG-19).** Scott's emphasised property: *all* components of
 `diag(x)` equal `x`, i.e. `diag(x) = ⟨x⟩ₙ`. -/
 theorem component_diag (x : V.Element) (n : ℕ) :

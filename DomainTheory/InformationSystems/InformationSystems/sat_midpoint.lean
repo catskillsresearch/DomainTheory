@@ -18,8 +18,6 @@ public import DomainTheory.InformationSystems.InformationSystems.Sat
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 namespace Factoid25

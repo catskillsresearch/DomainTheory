@@ -19,50 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.intR_top
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem intR_idem (x : Pomega) : funOf intR (funOf intR x) = funOf intR x := by
   by_cases hbot : x = botElem
   · subst hbot

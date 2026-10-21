@@ -19,41 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.exists_least_mem
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (2.18).** `a = λx. a` iff `a = ⊥` or `a = ⊤`. -/
 theorem eq_2_18 (a : Pomega) :
     a = graph (fun _ => a) ↔ a = botElem ∨ a = topElem := by

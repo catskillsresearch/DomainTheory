@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- Paper combinator for `$`: `λs λu λz. z ⊃ u(0), s(λt. u(t+1))(z−1)`. -/

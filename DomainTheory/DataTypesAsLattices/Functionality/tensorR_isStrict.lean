@@ -17,19 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_bot
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 4.4 (i), strictness.** -/
 theorem tensorR_isStrict {a b : Pomega} (ha : IsStrict a) (hb : IsStrict b) :
     IsStrict (tensorR a b) := by

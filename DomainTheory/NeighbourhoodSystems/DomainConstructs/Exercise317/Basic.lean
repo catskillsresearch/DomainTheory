@@ -56,24 +56,13 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise317
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
 
 
-
-
-
 /-! ### The encoding set `encSet σ`. -/
-
-
-
-
-
-
 
 
 /-! ### Comparability and the prefix recovery lemma. -/
 
 
-
 /-! ### The section `f : B → T^∞` and retraction `g : T^∞ → B`. -/
-
 
 
 /-! ### `g ∘ f = I_B` and `f ∘ g ⊑ I_{T^∞}`. -/

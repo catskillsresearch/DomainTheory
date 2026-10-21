@@ -14,22 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **`Lindenbaum.toSet` is injective.** -/
 theorem Lindenbaum.toSet_injective : Function.Injective Lindenbaum.toSet := by
   intro x y

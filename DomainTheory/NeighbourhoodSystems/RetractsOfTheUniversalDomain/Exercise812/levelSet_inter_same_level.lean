@@ -23,20 +23,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem levelSet_inter_same_level (k m₁ m₂ : ℕ) :
     levelSet k m₁ ∩ levelSet k m₂ = levelSet k (m₁ &&& m₂) := by
   ext n; simp [levelSet, Nat.testBit_and]

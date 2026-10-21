@@ -18,35 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_1
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, (5.1).** Every set is below its graph, so `fun` is a closure. -/
 theorem Icomb_subset_funRetract : Icomb ⊆ funRetract := by
   intro p hp

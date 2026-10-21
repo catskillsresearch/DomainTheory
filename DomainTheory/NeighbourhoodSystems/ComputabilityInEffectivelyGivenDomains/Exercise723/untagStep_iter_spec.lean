@@ -30,66 +30,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun
   num_succ_left_gt tag_injective)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Main invariant.** Given enough fuel (`c ≤ fuel`), `fuel + 1` iterations of `untagStep` from a
 fresh `code = c` state (arbitrary carried `r`, `v`) freeze with `revAcc` holding `(untagRef c).1`
 consed onto `r` (i.e. `reverse (untagRef c).1 ++ decodeList r`, matching `appendCode`'s convention)

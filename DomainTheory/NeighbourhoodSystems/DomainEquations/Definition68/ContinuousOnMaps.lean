@@ -10,13 +10,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68.idE
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe u
 
 /-- **Definition 6.8 (Scott 1981, PRG-19).** An endofunctor `T` on the category of domains is
 *continuous on maps* when, for every pair of domains `D` and `E`, the induced action `λf. T(f)` on the

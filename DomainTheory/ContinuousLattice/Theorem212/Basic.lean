@@ -55,16 +55,11 @@ namespace IdemFix
 variable {e : L → L}
 
 
-
-
-
 end IdemFix
 
 /-! ### The fixed-point set of a Scott-continuous idempotent is a continuous lattice -/
 
 variable {e : L → L}
-
-
 
 
 end FixedPoints
@@ -83,7 +78,6 @@ exact lattice structure and its Scott topology. -/
 section Theorem212Transfer
 
 variable {A B : Type u} [latticeA : CompleteLattice A] [latticeB : CompleteLattice B]
-
 
 
 end Theorem212Transfer

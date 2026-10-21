@@ -23,11 +23,6 @@ open Topology Set
 variable {D : Type*} [CompleteLattice D]
 
 
-
-
-
-
-
 /-- **Scott 1972, Theorem 2.12 (forward direction).** Every continuous lattice is an injective
 space under its Scott topology. This is the substantial half of the equivalence "injective
 spaces = continuous lattices", and is exactly Proposition 2.11. -/

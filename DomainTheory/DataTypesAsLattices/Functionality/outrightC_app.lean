@@ -16,25 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.outrightC_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem outrightC_app (u : Pomega) :
     funOf outrightC u = condSet (funOf u (ofNat 0)) botElem (funOf u (ofNat 1)) :=
   beta outrightC_isScottContinuous u

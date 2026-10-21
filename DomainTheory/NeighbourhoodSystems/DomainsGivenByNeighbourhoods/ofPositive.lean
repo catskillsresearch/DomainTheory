@@ -12,8 +12,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Ele
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 /-- **Exercise 1.19 — a positive system is a neighbourhood system.** Scott: "*prove that a

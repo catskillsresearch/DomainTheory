@@ -16,45 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem typed_of_arrowR {a b u : Pomega} (hu : typed u (arrowR a b)) :
     u = comp b (comp u a) := by
   simpa [typed, arrowR_app] using hu

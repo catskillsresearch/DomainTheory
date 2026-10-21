@@ -8,8 +8,6 @@ public import DomainTheory.InformationSystems.InformationSystems.InfoSys
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.InformationSystems
 
 namespace InfoSys

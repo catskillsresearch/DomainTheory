@@ -18,8 +18,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.functionSpaceInc
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.ContinuousLattice
 
 universe u

@@ -30,17 +30,6 @@ open InfoSys
 open ApproximableMap
 
 
-
-
-
-
-
-
-
-
-
-
-
 /-- Scott (1)–(5): approximable maps that present entailment relations / domains. -/
 structure IsDomainApprox (r : ApproximableMap P P) : Prop where
   refl : ReflApprox r

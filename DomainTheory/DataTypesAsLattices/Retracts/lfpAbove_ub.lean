@@ -11,8 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 theorem lfpAbove_ub {f : Pomega → Pomega} {A : Set Pomega} :

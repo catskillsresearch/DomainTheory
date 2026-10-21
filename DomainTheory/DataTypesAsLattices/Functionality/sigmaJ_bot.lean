@@ -15,30 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sigmaJ_bot (j : ℕ) : sigmaJ j botElem = botElem := by
   ext p
   simp [sigmaJ, botElem]

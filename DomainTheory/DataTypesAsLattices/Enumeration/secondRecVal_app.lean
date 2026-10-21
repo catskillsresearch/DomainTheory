@@ -21,44 +21,6 @@ set_option maxHeartbeats 2000000
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem secondRecVal_app (u x : Pomega) :
     funOf (secondRecVal u) x =
       ⋃ m ∈ x, funOf u (ofNat (applyNat m (num m))) :=

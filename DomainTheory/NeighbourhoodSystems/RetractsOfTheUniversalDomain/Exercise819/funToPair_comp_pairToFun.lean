@@ -24,15 +24,9 @@ open NeighborhoodSystem ApproximableMap Exercise326
 universe u
 
 
-
-
-
-
 section Prod
 
 variable {α : Type u} {E : NeighborhoodSystem α}
-
-
 
 
 /-- **`funToPair ∘ pairToFun = I`.** `(x, y) ↦ (λt. cond(t,x,y)) ↦ (cond(true,x,y),

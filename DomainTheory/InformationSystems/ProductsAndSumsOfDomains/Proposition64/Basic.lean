@@ -52,35 +52,9 @@ namespace InfoSys
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
 
-set_option linter.unusedSectionVars false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace ApproximableMap
 
 variable {C : InfoSys γ}
-
-
-
-
-
-
 
 
 end ApproximableMap

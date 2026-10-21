@@ -27,12 +27,6 @@ open DomainTheory.NeighbourhoodSystems.Exercise414
 variable {S : Type*} [Monoid S]
 
 
-
-
-
-
-
-
 /-- **Exercise 4.17 (Scott 1981, PRG-19).** The fixed point need **not** be unique: over `S = ℕ`
 (under `·`) with `a = b = 1`, both `{1}` (the least solution) and `Set.univ` solve the equation, and
 they are distinct. -/

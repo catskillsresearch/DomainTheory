@@ -23,21 +23,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 namespace DomainTheory.NeighbourhoodSystems
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem Lindenbaum.range_toSet' :
     Set.range Lindenbaum.toSet' = {Y | GeneratedBy genPoint Y} := by
   ext Y

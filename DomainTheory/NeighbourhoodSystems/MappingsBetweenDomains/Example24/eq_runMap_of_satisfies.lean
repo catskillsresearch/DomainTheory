@@ -19,16 +19,6 @@ namespace DomainTheory.NeighbourhoodSystems.Example24
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 
-
-
-
-
-
-
-
-
-
-
 /-- **Exercise 2.17, second half.** `runMap` is the *unique* approximable map `B → B` satisfying
 `g(0x) = 0g(x)`, `g(11x) = g(1x)`, `g(10x) = 0x`, `g(1) = ⊥`. Every neighbourhood of `B` is a cone
 (`memB_cone`), so `ApproximableMap.ext` reduces `g = runMap` to matching relations on cones, which

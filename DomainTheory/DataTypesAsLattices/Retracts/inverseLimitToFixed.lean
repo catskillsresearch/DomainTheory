@@ -16,8 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_type
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- A coherent sequence determines a point of the least fixed-point range

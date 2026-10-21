@@ -16,8 +16,6 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApp
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems

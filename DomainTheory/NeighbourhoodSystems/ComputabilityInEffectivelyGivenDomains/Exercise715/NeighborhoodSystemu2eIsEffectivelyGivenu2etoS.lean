@@ -20,10 +20,6 @@ open NeighborhoodSystem Domain.Recursive ApproximableMap
 variable {α β γ : Type*}
 
 
-
-
-
-
 theorem NeighborhoodSystem.IsEffectivelyGiven.toS {V : NeighborhoodSystem α}
     (h : V.IsEffectivelyGiven) : V.IsEffectivelyGivenS :=
   h.elim fun P => ⟨P.toScott⟩

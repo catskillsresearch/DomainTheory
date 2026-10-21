@@ -21,39 +21,9 @@ universe u
 variable {α : Type u} {E : NeighborhoodSystem α}
 
 
-
-
 section FiniteDomain
 
 variable {a : ApproximableMap E E} (h : IsClosureOperator a)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /-- **Exercise 8.14, the final question, answered exactly.** `y ∈ Fix(a)` is compact (i.e. is a

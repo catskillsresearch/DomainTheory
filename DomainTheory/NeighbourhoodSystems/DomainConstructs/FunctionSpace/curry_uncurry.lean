@@ -29,8 +29,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.u
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap

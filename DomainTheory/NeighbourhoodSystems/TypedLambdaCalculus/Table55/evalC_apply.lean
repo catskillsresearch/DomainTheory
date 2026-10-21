@@ -19,20 +19,6 @@ variable {α β γ : Type*}
   {V : NeighborhoodSystem α} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem evalC_apply (φ : (funSpace V₀ V₁).Element) (x : V₀.Element) :
     (evalC V₀ V₁).toElementMap (pair φ x) = (toApproxMap φ).toElementMap x := by
   rw [evalC, evalMap_apply]

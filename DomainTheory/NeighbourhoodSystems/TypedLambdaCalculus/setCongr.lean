@@ -17,8 +17,6 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.numEquiv_app
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
 
 variable {α β : Type*}

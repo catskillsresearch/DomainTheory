@@ -10,8 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.DataTypesAsLattices
 
 /-- The canonical finite-image basis of the fixed-point lattice of a retract. -/

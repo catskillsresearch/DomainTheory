@@ -14,32 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Basic
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem funOf_iUnion (xs : ℕ → Pomega) (x : Pomega) :
     funOf (⋃ n, xs n) x = ⋃ n, funOf (xs n) x := by
   ext m

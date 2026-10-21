@@ -16,19 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.sumMed_app
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem sumMed_isGraph (f g : Pomega) :
     sumMed f g = graph (fun u => funOf (sumMed f g) u) := by
   apply graph_ext

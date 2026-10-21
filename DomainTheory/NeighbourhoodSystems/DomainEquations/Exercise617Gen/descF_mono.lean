@@ -40,11 +40,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.T
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-
-set_option linter.unusedSectionVars false
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
@@ -53,6 +49,8 @@ variable {A : Type} [DecidableEq A]
 section Initial
 
 variable {A : Type} [DecidableEq A] [Inhabited A] (B : TAlgebra (Tsig A))
+
+omit [Inhabited A] in
 
 theorem descF_mono (a : A) {y y' : B.carrier.sys.Element} (h : y ≤ y') :
     descF B a y ≤ descF B a y' :=

@@ -22,20 +22,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap Exercise326
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem jArrow_isComputableMap :
     IsComputableMap UComputablePresentation funSpaceUUPresentation jArrow :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose_spec.choose_spec.2.2.2

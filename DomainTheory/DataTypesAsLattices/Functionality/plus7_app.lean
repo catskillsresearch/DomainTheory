@@ -16,36 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plus7_map_isScottCo
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem plus7_app (a0 a1 a2 a3 a4 a5 a6 u : Pomega) :
     funOf (plus7 a0 a1 a2 a3 a4 a5 a6) u =
       plus7Body a0 a1 a2 a3 a4 a5 a6 u :=

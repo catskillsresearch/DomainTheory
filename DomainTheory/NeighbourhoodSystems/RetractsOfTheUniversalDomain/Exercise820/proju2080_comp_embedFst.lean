@@ -24,7 +24,6 @@ section Prod
 variable {α : Type u} {β : Type v} (A : NeighborhoodSystem α) (B : NeighborhoodSystem β)
 
 
-
 theorem proj₀_comp_embedFst : (proj₀ A B).comp (embedFst A B) = idMap A := by
   apply le_antisymm <;> rw [le_iff_toElementMap_le] <;> intro a <;>
     simp [embedFst, toElementMap_comp, toElementMap_idMap, toElementMap_paired, toElementMap_constMap,

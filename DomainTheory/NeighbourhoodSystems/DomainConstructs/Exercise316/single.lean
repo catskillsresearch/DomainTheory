@@ -8,8 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316.mem
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem

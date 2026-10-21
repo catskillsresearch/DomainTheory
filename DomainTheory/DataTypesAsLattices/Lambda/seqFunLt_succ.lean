@@ -16,47 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_seqFunLt
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem seqFunLt_succ (u z : Pomega) (n : ℕ) :
     condSet z (funOf u (ofNat 0)) (seqFunLt (seqShift u) (predSet z) n) =
       seqFunLt u z (n + 1) := by

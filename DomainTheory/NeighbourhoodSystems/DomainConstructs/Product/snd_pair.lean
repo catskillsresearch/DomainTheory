@@ -23,8 +23,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product.fst_pai
 
 @[expose] public section
 
-set_option linter.unusedSectionVars false
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem

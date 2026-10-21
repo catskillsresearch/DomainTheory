@@ -20,35 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.squarePair_inj
 namespace DomainTheory.DataTypesAsLattices
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /-- **Scott 1976, Theorem 5.4 / analogue of 4.4.** A boxed pair is typed
 for `⊠` iff its components are typed. -/
 theorem typed_squarePair_boxTensor (a b x y : Pomega) :
