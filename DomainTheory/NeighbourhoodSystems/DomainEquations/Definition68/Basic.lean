@@ -66,7 +66,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
-universe u
 
 
 

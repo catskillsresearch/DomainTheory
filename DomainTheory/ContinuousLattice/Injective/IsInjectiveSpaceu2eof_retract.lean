@@ -33,4 +33,3 @@ theorem IsInjectiveSpace.of_retract {D : Type v} {D' : Type v}
   show r (g (e x)) = f x
   rw [hg x]
   exact hrs (f x)
-

@@ -31,4 +31,3 @@ theorem IsInjectiveSpace.pi {ι : Type w} (D : ι → Type v) [∀ i, Topologica
   refine ⟨⟨fun y i => g i y, continuous_pi fun i => (g i).continuous⟩, fun x => ?_⟩
   funext i
   exact hg i x
-

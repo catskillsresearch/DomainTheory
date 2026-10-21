@@ -55,5 +55,4 @@ end ApproximableMap
 
 open ApproximableMap
 
-universe u
 end DomainTheory.NeighbourhoodSystems

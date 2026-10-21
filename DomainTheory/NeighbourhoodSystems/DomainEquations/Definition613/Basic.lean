@@ -63,7 +63,6 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
-universe w
 
 /-! ### Monotone on domains -/
 

@@ -31,4 +31,3 @@ theorem isInjectiveSpace_sierpinski : IsInjectiveSpace.{u} Prop := by
   refine ⟨⟨fun y => y ∈ V, continuous_Prop.2 hVopen⟩, fun x => ?_⟩
   have : (e x ∈ V) = (x ∈ {x | f x}) := by rw [← hVeq]; rfl
   simpa using this
-

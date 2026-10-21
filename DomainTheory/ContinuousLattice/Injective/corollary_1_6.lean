@@ -36,4 +36,3 @@ theorem corollary_1_6 (D : Type u) [TopologicalSpace D] [T0Space D] :
   · rintro ⟨ι, ⟨R⟩⟩
     exact IsInjectiveSpace.of_retract (isInjectiveSpace_sierpinski_power ι) R.section' R.retraction
       R.retraction_section
-

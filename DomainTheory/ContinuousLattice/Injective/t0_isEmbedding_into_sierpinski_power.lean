@@ -26,4 +26,3 @@ universe u v w
 theorem t0_isEmbedding_into_sierpinski_power (X : Type u) [TopologicalSpace X] [T0Space X] :
     IsEmbedding (productOfMemOpens X) :=
   (proposition_1_5 X).2
-

@@ -22,7 +22,6 @@ export CategoryTheory (Category)
 
 open scoped CategoryTheory
 
-universe u v
 
 
 

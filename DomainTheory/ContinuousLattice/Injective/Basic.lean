@@ -33,6 +33,3 @@ theorem) that every `T₀`-space embeds in a power of the Sierpiński space.
 abbrev Sierpinski := Prop
 
 open Topology TopologicalSpace
-
-universe u v w
-

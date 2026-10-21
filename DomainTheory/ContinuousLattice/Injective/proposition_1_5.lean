@@ -30,4 +30,3 @@ theorem proposition_1_5 (X : Type u) [TopologicalSpace X] [T0Space X] :
       IsEmbedding (productOfMemOpens X) := by
   refine ⟨?_, productOfMemOpens_isEmbedding X⟩
   exact isInjectiveSpace_sierpinski_power (Opens X)
-

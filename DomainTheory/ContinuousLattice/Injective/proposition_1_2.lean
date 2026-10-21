@@ -25,4 +25,3 @@ universe u v w
 
 theorem proposition_1_2 : IsInjectiveSpace.{u} Sierpinski :=
   isInjectiveSpace_sierpinski
-

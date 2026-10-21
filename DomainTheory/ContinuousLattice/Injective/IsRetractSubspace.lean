@@ -23,4 +23,3 @@ structure IsRetractSubspace (D' D : Type u) [TopologicalSpace D'] [TopologicalSp
   isEmbedding_section : IsEmbedding section'
   retraction : C(D, D')
   retraction_section : ∀ d, retraction (section' d) = d
-
