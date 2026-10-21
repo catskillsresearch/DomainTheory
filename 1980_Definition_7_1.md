@@ -1,0 +1,38 @@
+# Definition 7.1
+
+**DEFINITION 7.1.** A neighbourhood system $D$ has a *computable presentation* provided we can write
+
+$$D = \{ X_n \mid n \in N \},$$
+
+where the following two relations
+
+(i) $X_n \cap X_m = X_k \ ;$ and
+
+(ii) $\exists k \in N \ldotp X_k \subseteq X_n$ and $X_k \subseteq X_m$
+
+are recursively decidable (in integer indices $n, m, k$ and in $n, m$, respectively). $\square$
+
+More strictly the sequence,
+
+$$\langle X_n \rangle_{n=0}^{\infty},$$
+
+is the presentation. Even more strictly, when it is required to cope with infinitely many domains at a time, it would be necessary to give the actual Gödel numbers of the recursive relations (i) and (ii) (rather than just saying there exists some way of showing them to be recursively decidable).
+
+The intuitive idea of 7.1 is that the system is effectively given if you know how to do elementary "calculations" with neighbourhoods. The basic calculations are the forming of intersections. The neighbourhoods have to be laid out in a systematic way; and, if we are asked for an intersection of two given neighbourhoods, we have to be able to locate it in the standard sequence. Relation (ii) is the *consistency condition* , which is the necessary and sufficient condition for the intersection to exist in $D$. When (ii) is true, therefore, we have only to try $k = 0, 1, 2, \ldots$ until we discover that we have found the intersection. We are
+assuming that these basic decisions can be carried out in "finite time". Note that the obvious biconditional,
+
+$$X_n \subseteq X_m \text{ iff } X_n \cap X_m = X_n,$$
+
+assures us that the inclusion relation between neighbourhoods is itself decidable in terms of the indices. So in (ii) if $k$ exists, *then* it (or the first one) can indeed be found in finite time. The rub is that if it *does not exist*, no finite number of inclusion checks will determine that fact. That is why we have to *assume* that (ii) is always decidable. The information contained in (ii) is a fundamental part of the neighbourhood structure. (An axiomatic characterization of neighbourhood structures is given in Exercise 7.13, which may make clearer what we are assuming and what a presentation is.)
+
+**Lean 4**
+
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/Basic.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/Basic.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/ComputablePresentation.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/ComputablePresentation.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/IsEffectivelyGiven.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/IsEffectivelyGiven.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/inclShuffle.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/inclShuffle.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/reindexInvolutive.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/reindexInvolutive.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/swapPair.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/swapPair.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitPresentation.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitPresentation.lean)
+- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitSys_isEffectivelyGiven.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition71/unitSys_isEffectivelyGiven.lean)

@@ -1,0 +1,31 @@
+# Theorem 6.3
+
+**THEOREM 6.3 (The $\mathfrak{G}_\delta$ theorem).** *The countable intersections of open subsets of $\mathbf{P}\omega$ are exactly the sets of the form:*
+
+$$\{x \mid f(x) = \top\},$$
+
+*where $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is continuous.*
+
+It may not be obvious that every $\mathfrak{G}_\delta$-set has this form. Certainly, as we have remarked, every $\mathfrak{G}$-set has this form. Thus if $W$ is a $\mathfrak{G}_\delta$, we have:
+
+$$W = \bigcap \{U_n \mid n \in \omega\},$$
+
+and further,
+
+$$U_n = \{x \mid f_n(x) = \top\},$$
+
+where the $f_n$ are suitably chosen continuous functions. Define the function $g$ by the equation:
+
+$$g(x) = \{(n, m) \mid m \in f_n(x)\}.$$
+
+Clearly $g$ is continuous, and we have:
+
+$$W = \{x \mid g(x) = \top\},$$
+
+as desired.
+
+We let $\mathfrak{F} \dot{\cap} \mathfrak{G}$ denote the class of all sets of the form $C \cap U$, where $C \in \mathfrak{F}$ and $U \in \mathfrak{G}$. Similarly for $\mathfrak{F} \dot{\cap} \mathfrak{G}_\delta$. Now $\{x \mid x \subseteq 0\}$ is closed and $\{x \mid x \supseteq 0\}$ is open. Thus $\{0\} \in \mathfrak{F} \dot{\cap} \mathfrak{G}$. This set is typical.
+
+**Lean 4**
+
+- [DataTypesAsLattices/Classification/theorem_6_3.lean](DomainTheory/DataTypesAsLattices/Classification/theorem_6_3.lean)

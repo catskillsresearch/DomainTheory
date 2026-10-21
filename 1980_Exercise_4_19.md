@@ -1,0 +1,38 @@
+# Exercise 4.19
+
+**EXERCISE 4.19.** There are many unproved assertions in Example 4.4! In particular discuss "Peano's Axioms" for $\{0,1\}^*$. Show, moreover, that $\mathrm{one} : C \to T$ can be defined from the rest of the structure by a fixed-point equation.
+
+**Lean 4**
+
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic/notation14.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic/notation14.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic/notation15.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/Basic/notation15.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/T.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/T.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/condT_bot.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/condT_bot.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/cone_ne_singleton.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/cone_ne_singleton.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap_strBot.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap_strBot.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap_strElem.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/emptyMap_strElem.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_bot_le.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_bot_le.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_false.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_false.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_nil.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_nil.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_true.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/headValC_true.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC_strBot.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC_strBot.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC_strElem.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/liftC_strElem.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/not_cone_subset_singleton.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/not_cone_subset_singleton.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneDef.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneDef.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap_strBot.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap_strBot.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap_strElem.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/oneMap_strElem.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/one_def_strBot.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/one_def_strBot.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/one_def_strElem.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/one_def_strElem.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_cons_disjoint.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_cons_disjoint.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_cons_injective.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_cons_injective.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_induction.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_induction.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_nil_ne_cons.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/peano_nil_ne_cons.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap_strBot.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap_strBot.lean)
+- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap_strElem.lean](DomainTheory/NeighbourhoodSystems/FixedPointsAndRecursion/Exercise419/zeroMap_strElem.lean)

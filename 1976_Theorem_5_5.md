@@ -1,0 +1,50 @@
+# Theorem 5.5
+
+**THEOREM 5.5 (The universe theorem for algebraic lattices).** *The function $\mathbf{V}$ is a closure operation and its fixed points comprise the set of all closure operations.*
+
+Thus to say $a$ is a closure operation, write $a : \mathbf{V}$. To have a mapping on closure operations, write $f : \mathbf{V} \circ\to \mathbf{V}$. Remark that 5.5 allows us to write $\mathbf{V} : \mathbf{V}$. It all seems rather circular, but it is quite consistent. The category of separate algebraic lattices “contains itself”—if we are careful to work through retracts of $\mathbf{P}\omega$.
+
+The proof of Theorem 5.5 requires a few steps. We note first that for all $x, a \in \mathbf{P}\omega$:
+
+$$(5.16) \quad x \subseteq \mathbf{V}(a)(x),$$
+
+Let $y = \mathbf{V}(a)(x)$. This is the least $y$ with $x \cup a(y) \subseteq y$. What is the least $z$ with $y \cup a(z) \subseteq z$? The answer is of course $y$, which proves:
+
+$$(5.17) \quad \mathbf{V}(a)(\mathbf{V}(a)(x)) = \mathbf{V}(a)(x),$$
+
+Thus $\mathbf{V}(a)$ is always a closure operation. If $a$ is already a closure operation, then clearly $\mathbf{V}(a)(x) = a(x)$. Therefore we have shown:
+
+$$(5.18) \quad a = \mathbf{V}(a) \quad \text{iff} \quad a \text{ is a closure operation.}$$
+
+But then by (5.16) and (5.17) we have by (5.18):
+
+$$(5.19) \quad \mathbf{V}(a) = \mathbf{V}(\mathbf{V}(a)).$$
+
+From (5.16) by monotonicity we see:
+
+$$(5.20) \quad a(x) \subseteq a(\mathbf{V}(a)(x)) \subseteq \mathbf{V}(a)(x).$$
+
+Hence by (5.1) we can derive:
+
+$$(5.21) \quad a \subseteq \lambda x.\, a(x) \subseteq \lambda x.\, \mathbf{V}(a)(x) = \mathbf{V}(a).$$
+
+From (5.19) and (5.21) it follows that $\mathbf{V}$ itself is a closure operation.
+
+The operation $\mathbf{V}$ forms the least closure operation containing a given element, and it shows that the lattice of closure operations is not only a retract of $\mathbf{P}\omega$ but also an algebraic lattice. Since we can now use $\mathbf{V}$ as a retract, the earlier results become formulas:
+
+$$(5.22) \quad (\lambda a : \mathbf{V}.\, \lambda b : \mathbf{V}.\, a \boxtimes b) : \mathbf{V} \circ\to (\mathbf{V} \circ\to \mathbf{V});$$
+
+$$(5.23) \quad (\lambda a : \mathbf{V}.\, \lambda b : \mathbf{V}.\, a \boxplus b) : \mathbf{V} \circ\to (\mathbf{V} \circ\to \mathbf{V});$$
+
+we can also state such functorial properties as:
+
+$$(5.24) \quad (\lambda a : \mathbf{V}.\, \lambda b : \mathbf{V}.\, a \circ\to b) : \mathbf{V} \circ\to (\mathbf{V} \circ\to \mathbf{V}).$$
+
+Using this style of notation we have:
+
+**Lean 4**
+
+- [DataTypesAsLattices/Closures/theorem_5_5.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_5.lean)
+- [DataTypesAsLattices/Closures/theorem_5_5_iff.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_5_iff.lean)
+- [DataTypesAsLattices/Closures/theorem_5_5_universe.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_5_universe.lean)
+- [DataTypesAsLattices/Closures/theorem_5_5_values.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_5_values.lean)

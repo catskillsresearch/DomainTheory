@@ -1,0 +1,17 @@
+# Theorem 5.2
+
+The proof is very easy if one notes that the isolated points of $\{x \mid x = a(x)\}$, where $a$ is a closure operation, are exactly the images $a(e_n)$ of the finite sets in $\mathbf{P}\omega$. What makes Theorem 5.1 more interesting is the converse.
+
+**THEOREM 5.2 (The representation theorem for algebraic lattices).** *Every algebraic lattice with a countable number of isolated points is isomorphic to the range of some closure operation.*
+
+By Theorem 1.6 we know that the algebraic lattice is a retract, but a more direct argument makes the closure property clear. Thus, let $D$ be the algebraic lattice with $\{d_n \mid n \in \omega\}$ as the set of all isolated points with the indicated enumeration. We shall use the square notation with symbols $\sqsubseteq$ and $\sqcup$ for the lattice ordering and sup. The desired closure operation is defined by:
+
+$$a(x) = \{m \mid d_m \sqsubseteq \sqcup \{d_n \mid n \in x\}\}.$$
+
+It is an easy exercise to show that from the definition of “isolated” it follows that $a$ is continuous; and from density, it follows that $D$ is in a one-to-one order preserving correspondence with the fixed points of $a$.
+
+In the last section we introduced an algebra of retracts, much of which carries over to closure operations given the proper definitions. Without any change we can use Theorem 4.3 on function spaces, provided we check that the required retracts are closures.
+
+**Lean 4**
+
+- [DataTypesAsLattices/Closures/theorem_5_2.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_2.lean)

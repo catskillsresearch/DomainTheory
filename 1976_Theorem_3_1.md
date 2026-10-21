@@ -1,0 +1,21 @@
+# Theorem 3.1
+
+**THEOREM 3.1 (The generator theorem).** *All LAMBDA-definable elements can be obtained from* $\mathbf{G}$ *by iterated application.*
+
+A distributive function $f$ is said to be *total* iff $f(n) \in \omega$ for all $n \in \omega$. As they come from obvious primitive recursive functions, we do not stop to write out LAMBDA-definitions of these three total functions:
+
+$$(3.4) \quad \mathbf{apply} = \lambda n \in \omega.\, \lambda m \in \omega.\, (n, m) + 1$$
+
+$$(3.5) \quad \mathbf{op}((n, m)) = n$$
+
+$$(3.6) \quad \mathbf{arg}((n, m)) = m.$$
+
+The point of these auxiliary combinators concerns our Gödel numbering of the r.e. sets. The number 0 will correspond to the generator $\mathbf{G}$; while $(n, m) + 1$ will correspond to the application of the $n$th set to the $m$th. This is formalized in the combinator $\mathbf{val}$ which is defined as the least fixed point of the equation:
+
+$$(3.7) \quad \mathbf{val} = \lambda k \in \omega.\, k \supset \mathbf{G},\, \mathbf{val}(\mathbf{op}(k - 1))(\mathbf{val}(\mathbf{arg}(k - 1))).$$
+
+This function accomplishes the enumeration as follows:
+
+**Lean 4**
+
+- [DataTypesAsLattices/Enumeration/theorem_3_1.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_1.lean)

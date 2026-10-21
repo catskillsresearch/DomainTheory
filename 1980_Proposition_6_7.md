@@ -1,0 +1,48 @@
+# Proposition 6.7
+
+Slightly more interesting is the behaviour of $T$ on initial algebras.
+
+**PROPOSITION 6.7.** If $i : T(D) \to D$ is an initial $T$-algebra, then so is $T(i) : T^2(D) \to T(D)$ and $i$ is the isomorphism from $T(D)$ to $D$.
+
+**Proof:** Clearly since $T$ is a functor, the map $T(i)$ has the right mapping character to make $T(D)$ a $T$-algebra. Since $D$ is initial, we have a commuting diagram:
+$$
+\begin{array}{ccc}
+T(D) & \xrightarrow{i} & D \\
+\downarrow^{T(j)} & & \downarrow^{j} \\
+T^2(D) & \xrightarrow{T(i)} & T(D)
+\end{array}
+$$
+
+But we also have the trivial diagram:
+
+$$
+\begin{array}{ccc}
+T^2(D) & \xrightarrow{T(i)} & T(D) \\
+\downarrow^{T(i)} & & \downarrow^{i} \\
+T(D) & \xrightarrow{i} & D
+\end{array}
+$$
+
+It follows that $i \circ j$ is a homomorphism, so
+
+$$
+i \circ j = I_D.
+$$
+
+But then because $T$ is a functor we find:
+
+$$
+T(i) \circ T(j) = I_{T(D)},
+$$
+
+and, since $j$ is a homomorphism, we have
+
+$$
+j \circ i = I_{T(D)}.
+$$
+
+This shows that $i$ is an isomorphism. $\square$
+
+**Lean 4**
+
+- [NeighbourhoodSystems/DomainEquations/Proposition67.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Proposition67.lean)

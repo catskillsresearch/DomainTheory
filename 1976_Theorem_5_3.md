@@ -1,0 +1,26 @@
+# Theorem 5.3
+
+**THEOREM 5.3 (The function space theorem for algebraic lattices).** *Suppose that $a$ and $b$ are closure operations; then so is $a \circ\to b$.*
+
+The proof comes down to showing that
+
+$$(5.11) \quad u(x) \sqsubseteq b(u(a(x))),$$
+
+whenever $a$ and $b$ are closure operations. But this is easy by monotonicity. Note that (5.1) is needed.
+
+For those interested in topology, one can give a construction of the isolated points of the function space which is much more direct than just taking the functions $b \circ e_n \circ a$, which on the face of it do not tell us too much. But we shall not need this explicit construction here.
+
+The reason for changing the pairing functions is to be able to form products and sums of closure operations. In the case of products, the analogue of $\otimes$ is straightforward:
+
+$$(5.12) \quad a \boxtimes b = \lambda u.\, [a([u]_0), b([u]_1)];$$
+
+while for sums using $a' = \lambda x.\, 0 \cup a(x - 1) + 1$ and similarly for $b'$ we write:
+
+$$(5.13) \quad a \boxplus b = \lambda u.\, ([u]_0 \supset 0,\, 0) \cup ([u]_1 \supset 1,\, 1) \sqsupset [a'([u]_0), \bot],\, [\bot, b'([u]_1)].$$
+
+We can then establish with the aid of (5.8)–(5.10):
+
+**Lean 4**
+
+- [DataTypesAsLattices/Closures/theorem_5_3.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_3.lean)
+- [DataTypesAsLattices/Closures/theorem_5_3_closure.lean](DomainTheory/DataTypesAsLattices/Closures/theorem_5_3_closure.lean)

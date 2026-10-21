@@ -1,0 +1,103 @@
+# Theorem 7.3
+
+**THEOREM 7.3 (The functionality theorem).** *The combinators $\mathbf{I}$, $\mathbf{K}$, and $\mathbf{S}$ enjoy the following functionality properties which hold for all equivalence relations $A$, $B$, $C$:*
+
+(i) $\mathbf{I} : A \to A$;
+
+(ii) $\mathbf{K} : A \to (B \to A)$;
+
+(iii) $\mathbf{S} : (A \to (B \to C)) \to ((A \to B) \to (A \to C))$.
+
+*Furthermore, these combinators are uniquely determined by these properties.*
+
+Let us check that $S$ satisfies (iii). Suppose that:
+
+$$f \, (A \to (B \to C)) \, f'.$$
+
+We must show that:
+
+$$\mathbf{S}(f) \, ((A \to B) \to (A \to C)) \, \mathbf{S}(f').$$
+
+To this end suppose that:
+
+$$g \, (A \to B) \, g'.$$
+
+We must show that:
+
+$$\mathbf{S}(f)(g) \, (A \to C) \, \mathbf{S}(f')(g').$$
+
+To this end suppose that:
+
+$$x \, A \, x'.$$
+
+We must show that:
+
+$$\mathbf{S}(f)(g)(x) \, C \, \mathbf{S}(f')(g')(x').$$
+
+Now by definition of the combinator $\mathbf{S}$ we have:
+
+$$\mathbf{S}(f)(g)(x) = f(x)(g(x)),$$
+
+$$\mathbf{S}(f')(g')(x') = f'(x')(g'(x')).$$
+
+By assumptions on $g$, $g'$ and on $x$, $x'$, we know:
+
+$$g(x) \, B \, g'(x').$$
+
+By assumptions on $f$, $f'$ and on $x$, $x'$, we know:
+
+$$f(x) \, (B \to C) \, f'(x').$$
+
+The desired conclusion now follows when we note such combinations as $\mathbf{S}(f)$ and $\mathbf{S}(f)(g)$ are indeed functions. (We are using Theorem 7.1(i) several times in this case.)
+
+In the case of the converse, let us suppose by way of example that $k \in \mathbf{P}\omega$ is such that
+
+$$k : A \to (B \to A)$$
+
+holds for all equivalence relations $A$ and $B$. By specializing to, say, the identity relation we see that whatever $a \in \mathbf{P}\omega$ we take, both $k$ and $k(a)$ are functions. To establish that $k = \mathbf{K}$ we need to show that the equation:
+
+$$k(a)(b) = a$$
+
+holds for all $a, b \in \mathbf{P}\omega$. This is easy to prove, for we have only to set:
+
+$$A = \{\langle a, a \rangle\} \quad \text{and} \quad B = \{\langle b, b \rangle\},$$
+
+and the equation follows at once. Not all proofs are quite so easy, however.
+
+In the case of the combinator $\mathbf{S}$ it is not strictly true to say that Theorem 7.3(iii) determines it outright. The exact formulation is this: if $s \in \mathbf{P}\omega$ is such that
+
+$$s(f) = s(\lambda x \lambda y.\, f(x)(y)) \quad \text{and} \quad s(f)(g) = s(f)(\lambda x.\, g(x))$$
+
+for all $f, g \in \mathbf{P}\omega$; and if
+
+$$s : (A \to (B \to C)) \to ((A \to B) \to (A \to C))$$
+
+for all $A$, $B$, $C$, then $s = \mathbf{S}$. In other words, we need to know that $s$ converts its first two arguments into functions with the right number of places before we can say that its explicit functionality identifies it as being the combinator $\mathbf{S}$.
+
+In Hindley, Lercher and Seldin (1972) they show that the functionality property:
+
+$$(7.13) \quad \lambda f \lambda g.\, f \circ g : (B \to C) \to ((A \to B) \to (A \to C)),$$
+
+follows from Theorem 7.1(ii) and Theorem 7.3(ii) and (iii) in view of the identity:
+
+$$(7.14) \quad \lambda f \lambda g.\, f \circ g = \mathbf{S}(\mathbf{K}(\mathbf{S}))(\mathbf{K})$$
+
+(see Appendix A).
+
+A more interesting result concerns the *iterators* defined as follows:
+
+$$(7.15) \quad \mathbf{Z}_0 = \lambda f \lambda x.\, x,$$
+
+$$(7.16) \quad \mathbf{Z}_{n+1} = \lambda f \lambda x.\, f(\mathbf{Z}_n(f)(x)),$$
+
+In other words, $\mathbf{Z}_n(f)(x) = f^n(x)$. These natural combinators can be typed very easily, but Gordon Plotkin has shown that the obvious typing actually characterizes them.
+
+**Lean 4**
+
+- [DataTypesAsLattices/Functionality/theorem_7_3.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_3.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_3_I_unique.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_3_I_unique.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_3_K_unique.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_3_K_unique.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_3_S_unique.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_3_S_unique.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_3_i.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_3_i.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_3_ii.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_3_ii.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_3_iii.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_3_iii.lean)

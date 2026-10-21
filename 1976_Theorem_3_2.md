@@ -1,0 +1,33 @@
+# Theorem 3.2
+
+**THEOREM 3.2 (The enumeration theorem).** *The combinator* $\mathbf{val}$ *enumerates the LAMBDA-definable elements in that* $\mathbf{RE} = \{\mathbf{val}(n) \mid n \in \omega\}$. *Further:*
+
+*(i)* $\mathbf{val}(0) = \mathbf{G}$,
+
+*(ii)* $\mathbf{val}(\mathbf{apply}(n)(m)) = \mathbf{val}(n)(\mathbf{val}(m))$.
+
+As a principal application of the Enumeration Theorem we may mention the following: suppose $u$ is given as LAMBDA-definable. We look at its definition and rewrite it in terms of combinators—eventually in terms of $\mathbf{G}$ alone. Then using 0 and $\mathbf{apply}$ we write down the name of an integer corresponding to the combination—say, $n$. By Theorem 3.2 we see that we have *effectively found* from
+the definition an integer such that $\mathbf{val}\, n = u$. This remark can be strengthened by some numerology.
+
+$$(3.8) \quad \mathbf{apply}(0)(0) = 1 \quad \text{and} \quad \mathbf{val}(1) = 0;$$
+
+$$(3.9) \quad \mathbf{apply}(0)(1) = 3 \quad \text{and} \quad \mathbf{val}(3) = \langle \mathbf{suc}, \ldots \rangle;$$
+
+$$(3.10) \quad \mathbf{apply}(3)(1) = 12 \quad \text{and} \quad \mathbf{val}(12) = \mathbf{suc}.$$
+
+Thus, define $\mathbf{num}$ as the least fixed point:
+
+$$(3.11) \quad \mathbf{num} = \lambda n \in \omega.\, n \supset 1,\, \mathbf{apply}(12)(\mathbf{num}(n - 1)),$$
+
+and derive the equation for all $n \in \omega$:
+
+$$(3.12) \quad \mathbf{val}(\mathbf{num}(n)) = n.$$
+
+We note that $\mathbf{num}$ is a primitive recursive (total) function. The combinator $\mathbf{num}$ allows us now to effectively find a LAMBDA-definition, corresponding to a given LAMBDA-definable element $u$, of an element $v$ such that uniformly in the integer variable $n$ we have $\mathbf{val}(v(n)) = u(n)$. Further, $v$ is a primitive recursive (total) function. This is the technique involved in the proof of Kleene's well-known result:
+
+**Lean 4**
+
+- [DataTypesAsLattices/Enumeration/theorem_3_2.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_2.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_2_i.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_2_i.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_2_range.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_2_range.lean)
+- [DataTypesAsLattices/Enumeration/theorem_3_2_surjective.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_2_surjective.lean)

@@ -20,91 +20,15 @@ $$x = \bigcup \{e_n \mid e_n \subseteq x\}.$$
 
 To make this precise we need a rigorous definition of *open subset* of $\mathbf{P}\omega$.
 
-**DEFINITION.** A *basis* for the neighborhoods of $\mathbf{P}\omega$ consists of those sets of the form:
-
-$$\{x \in \mathbf{P}\omega \mid e_n \subseteq x\},$$
-
-for a given $e_n$. An arbitrary *open subset* is then a union of basic neighborhoods.
-
-It is easy to prove that an open subset $U \subseteq \mathbf{P}\omega$ is just a set of “finite character”; that is, a set such that for all $x \in \mathbf{P}\omega$ we have $x \in U$ if and only if some finite subset of $x$ also belongs to $U$. An alternate approach would define directly what we mean by a continuous function using the idea that such functions must preserve limits.
-
-**DEFINITION.** A function $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is *continuous* iff for all $x \in \mathbf{P}\omega$ we have:
-
-$$f(x) = \bigcup \{f(e_n) \mid e_n \subseteq x\}.$$
-
-Again it is an easy exercise to prove that a function is continuous in the sense of this definition iff it is continuous in the usual topological sense (namely: inverse images of open sets are open). For giving proofs it is even more convenient to have the usual $\varepsilon$-$\delta$ formulation of continuity.
-
-**THEOREM 1.1** (The characterization theorem). A function $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is *continuous* iff for all $x \in \mathbf{P}\omega$ and all $e_m$ we have:
-
-$$e_m \subseteq f(x) \quad \text{iff} \quad \exists e_n \subseteq x.\; e_m \subseteq f(e_n).$$
-
-Note that open sets and continuous functions have a *monotonicity property*:
-
-*whenever* $x \subseteq y$ *and* $x \in U$, *then* $y \in U$; *and*
-
-*whenever* $x \subseteq y$, *then* $f(x) \subseteq f(y)$.
-
-This gives a precise expression to the “positive” character of our topology. However, note too that openness and continuity mean rather more than just monotonicity. In particular, a continuous function is completely determined by the pairs of integers $n, m$ such that $m \in f(e_n)$, as can be seen from the definition. (Hence, there are only a continuum number of continuous functions, but more than a continuum number of monotonic functions.) This brings us to the definition of the *graph* of a continuous function.
-
-To formulate the definition, we introduce a standard enumeration $(n, m)$ of all pairs of integers. Specifically we set
-
-$$(n, m) = \tfrac{1}{2}(n + m)(n + m + 1) + m.$$
-
-This is the enumeration along the “little diagonals” going from left to right, and it produces the ordering:
-
-$$(0, 0), (1, 0), (0, 1), (2, 0), (1, 1), (0, 2), (3, 0), (2, 1), \dots.$$
-
-Note that $n \leq (n, m)$ and $m \leq (n, m)$ with equality possible only in the cases of $(0, 0)$ and $(1, 0)$. This is a one-to-one enumeration, and the inverse functions are (primitive) recursive—but we do not require at the present any notation for them.
-
-**DEFINITION.** The graph of a continuous function $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is defined by the equation:
-
-$$\mathbf{graph}(f) = \{ (n, m) \mid m \in f(e_n) \};$$
-
-while the function determined by any set $u \subseteq \omega$ is defined by the equation:
-
-$$\mathbf{fun}(u)(x) = \{ m \mid \exists e_n \subseteq x.\; (n, m) \in u \}.$$
-
-**THEOREM 1.2** (The graph theorem). *Every continuous function is uniquely determined by its graph in the sense that:*
-
-(i) $\mathbf{fun}(\mathbf{graph}(f)) = f.$
-
-*Conversely, every set of integers determines a continuous function and we have:*
-
-(ii) $u \subseteq \mathbf{graph}(\mathbf{fun}(u)),$
-
-*where equality holds just in case $u$ satisfies:*
-
-(iii) *whenever $(k, m) \in u$ and $e_k \subseteq e_n$, then $(n, m) \in u$.*
-
-Besides functions of one variable we need to consider also functions of several variables. The official definition for one variable given above can be extended simply by saying $f(x, y, \dots)$ is continuous iff it is continuous in each of $x, y, \dots$. Those familiar with the product topology can prove that for our special positive topology on $\mathbf{P}\omega$ this is equivalent to being continuous on the product space (continuous in the variables jointly). Those interested only in elementary proofs can calculate out directly from the definition (with the aid of 1.1) that continuity behaves under combinations by substitution [as in: $f(g(x, y), h(y, x, y))$].
-
-**THEOREM 1.3** (The substitution theorem). *Continuous functions of several variables on $\mathbf{P}\omega$ are closed under substitution.*
-
-The other general fact about continuous functions that we shall use constantly concerns fixed points, whose existence can be proved using a well-known method.
-
-**THEOREM 1.4** (The fixed-point theorem). *Every continuous function $f : \mathbf{P}\omega \to \mathbf{P}\omega$ has a least fixed point given by the formula:*
-
-$$\mathbf{fix}(f) = \bigcup \{ f^n(\varnothing) \mid n \in \omega \},$$
-
-*where $\varnothing$ is the empty set and $f^n$ is the $n$-fold composition of $f$ with itself.*
-
-Actually **fix** is a *functional* with continuity properties of its own. We shall not give the required definitions here because they can be more easily derived from the construction of the model given in the next section.
-
-For those familiar with the abstract theory of topological spaces we give in conclusion two general facts about continuous functions with values in $\mathbf{P}\omega$ which indicate the scope and generality of our method.
-
-**THEOREM 1.5** (The extension theorem). *Let $X$ and $Y$ be arbitrary topological spaces where $X \subseteq Y$ as a subspace. Then every continuous function $f : X \to \mathbf{P}\omega$ can be extended to a continuous function $\bar{f} : Y \to \mathbf{P}\omega$ defined by the equation:*
-
-$$\bar{f}(y) = \bigcup \{ \bigcap \{ f(x) \mid x \in X \cap U \} \mid y \in U \},$$
-
-*where $y \in Y$, and $U$ ranges over the open subsets of $Y$.*
-
-**THEOREM 1.6** (The embedding theorem). *Every $T_0$-space $X$ with a countable basis $\{U_n \mid n \in \omega\}$ for its topology can be embedded in $\mathbf{P}\omega$ by the continuous function $\varepsilon : X \to \mathbf{P}\omega$ defined by the equation:*
-
-$$\varepsilon(x) = \{ n \mid x \in U_n \}.$$
-
-Technically the $T_0$-hypothesis is what is needed to show that $\varepsilon$ is one-to-one. The upshot of these two theorems is that in looking for (reasonable) topological structures we can confine attention to the subspaces of $\mathbf{P}\omega$ and to continuous functions defined on *all* of $\mathbf{P}\omega$. Thus the emphasis on a single space is justified structurally. What we shall see in the remainder of this work is that the use of a single space is also justified practically because the required subspaces and functions can be *defined* in very simple ways by a natural method of equations.
-
-In order to make the plan of the work clearer, the proofs of the theorems have been placed in an Appendix when they are more than simple exercises.
+- [Definition (basis)](1976_Definition_basis.md)
+- [Definition (continuous)](1976_Definition_continuous.md)
+- [Theorem 1.1](1976_Theorem_1_1.md)
+- [Definition (graph)](1976_Definition_graph.md)
+- [Theorem 1.2](1976_Theorem_1_2.md)
+- [Theorem 1.3](1976_Theorem_1_3.md)
+- [Theorem 1.4](1976_Theorem_1_4.md)
+- [Theorem 1.5](1976_Theorem_1_5.md)
+- [Theorem 1.6](1976_Theorem_1_6.md)
 
 **Lean 4**
 
@@ -131,7 +55,6 @@ In order to make the plan of the work clearer, the proofs of the theorems have b
 - [DataTypesAsLattices/Continuous/mem_scottUnion.lean](DomainTheory/DataTypesAsLattices/Continuous/mem_scottUnion.lean)
 - [DataTypesAsLattices/Continuous/scottPiece.lean](DomainTheory/DataTypesAsLattices/Continuous/scottPiece.lean)
 - [DataTypesAsLattices/Continuous/scottUnion.lean](DomainTheory/DataTypesAsLattices/Continuous/scottUnion.lean)
-- [DataTypesAsLattices/Continuous/theorem_1_1.lean](DomainTheory/DataTypesAsLattices/Continuous/theorem_1_1.lean)
 - [DataTypesAsLattices/Embedding.lean](DomainTheory/DataTypesAsLattices/Embedding.lean)
 - [DataTypesAsLattices/Embedding/Basic.lean](DomainTheory/DataTypesAsLattices/Embedding/Basic.lean)
 - [DataTypesAsLattices/Embedding/embed.lean](DomainTheory/DataTypesAsLattices/Embedding/embed.lean)
@@ -141,10 +64,6 @@ In order to make the plan of the work clearer, the proofs of the theorems have b
 - [DataTypesAsLattices/Embedding/extend.lean](DomainTheory/DataTypesAsLattices/Embedding/extend.lean)
 - [DataTypesAsLattices/Embedding/isOpen_extend_mem.lean](DomainTheory/DataTypesAsLattices/Embedding/isOpen_extend_mem.lean)
 - [DataTypesAsLattices/Embedding/mem_extend.lean](DomainTheory/DataTypesAsLattices/Embedding/mem_extend.lean)
-- [DataTypesAsLattices/Embedding/theorem_1_5.lean](DomainTheory/DataTypesAsLattices/Embedding/theorem_1_5.lean)
-- [DataTypesAsLattices/Embedding/theorem_1_5_extends.lean](DomainTheory/DataTypesAsLattices/Embedding/theorem_1_5_extends.lean)
-- [DataTypesAsLattices/Embedding/theorem_1_6.lean](DomainTheory/DataTypesAsLattices/Embedding/theorem_1_6.lean)
-- [DataTypesAsLattices/Embedding/theorem_1_6_injective_continuous.lean](DomainTheory/DataTypesAsLattices/Embedding/theorem_1_6_injective_continuous.lean)
 - [DataTypesAsLattices/FixedPoint.lean](DomainTheory/DataTypesAsLattices/FixedPoint.lean)
 - [DataTypesAsLattices/FixedPoint/Basic.lean](DomainTheory/DataTypesAsLattices/FixedPoint/Basic.lean)
 - [DataTypesAsLattices/FixedPoint/chain_lemma.lean](DomainTheory/DataTypesAsLattices/FixedPoint/chain_lemma.lean)
@@ -153,12 +72,6 @@ In order to make the plan of the work clearer, the proofs of the theorems have b
 - [DataTypesAsLattices/FixedPoint/fix.lean](DomainTheory/DataTypesAsLattices/FixedPoint/fix.lean)
 - [DataTypesAsLattices/FixedPoint/iterateBot.lean](DomainTheory/DataTypesAsLattices/FixedPoint/iterateBot.lean)
 - [DataTypesAsLattices/FixedPoint/iterateBot_mono.lean](DomainTheory/DataTypesAsLattices/FixedPoint/iterateBot_mono.lean)
-- [DataTypesAsLattices/FixedPoint/theorem_1_3.lean](DomainTheory/DataTypesAsLattices/FixedPoint/theorem_1_3.lean)
-- [DataTypesAsLattices/FixedPoint/theorem_1_3_comp.lean](DomainTheory/DataTypesAsLattices/FixedPoint/theorem_1_3_comp.lean)
-- [DataTypesAsLattices/FixedPoint/theorem_1_3_diag.lean](DomainTheory/DataTypesAsLattices/FixedPoint/theorem_1_3_diag.lean)
-- [DataTypesAsLattices/FixedPoint/theorem_1_3_nary.lean](DomainTheory/DataTypesAsLattices/FixedPoint/theorem_1_3_nary.lean)
-- [DataTypesAsLattices/FixedPoint/theorem_1_3_tuple.lean](DomainTheory/DataTypesAsLattices/FixedPoint/theorem_1_3_tuple.lean)
-- [DataTypesAsLattices/FixedPoint/theorem_1_4.lean](DomainTheory/DataTypesAsLattices/FixedPoint/theorem_1_4.lean)
 - [DataTypesAsLattices/Graph.lean](DomainTheory/DataTypesAsLattices/Graph.lean)
 - [DataTypesAsLattices/Graph/Basic.lean](DomainTheory/DataTypesAsLattices/Graph/Basic.lean)
 - [DataTypesAsLattices/Graph/Basic/notation3.lean](DomainTheory/DataTypesAsLattices/Graph/Basic/notation3.lean)
@@ -174,10 +87,6 @@ In order to make the plan of the work clearer, the proofs of the theorems have b
 - [DataTypesAsLattices/Graph/mem_funOf.lean](DomainTheory/DataTypesAsLattices/Graph/mem_funOf.lean)
 - [DataTypesAsLattices/Graph/mem_graph.lean](DomainTheory/DataTypesAsLattices/Graph/mem_graph.lean)
 - [DataTypesAsLattices/Graph/mu_law.lean](DomainTheory/DataTypesAsLattices/Graph/mu_law.lean)
-- [DataTypesAsLattices/Graph/theorem_1_2.lean](DomainTheory/DataTypesAsLattices/Graph/theorem_1_2.lean)
-- [DataTypesAsLattices/Graph/theorem_1_2_i.lean](DomainTheory/DataTypesAsLattices/Graph/theorem_1_2_i.lean)
-- [DataTypesAsLattices/Graph/theorem_1_2_ii.lean](DomainTheory/DataTypesAsLattices/Graph/theorem_1_2_ii.lean)
-- [DataTypesAsLattices/Graph/theorem_1_2_iii.lean](DomainTheory/DataTypesAsLattices/Graph/theorem_1_2_iii.lean)
 - [DataTypesAsLattices/Pomega.lean](DomainTheory/DataTypesAsLattices/Pomega.lean)
 - [DataTypesAsLattices/Pomega/Basic.lean](DomainTheory/DataTypesAsLattices/Pomega/Basic.lean)
 - [DataTypesAsLattices/Pomega/BasicInst11.lean](DomainTheory/DataTypesAsLattices/Pomega/BasicInst11.lean)

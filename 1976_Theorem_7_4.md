@@ -1,0 +1,100 @@
+# Theorem 7.4
+
+**THEOREM 7.4 (The iterator theorem).** *The combinators* $\mathbf{Z}_n$ *enjoy the following functionality property which holds for all equivalence relations* $A$:
+
+(i) $\mathbf{Z}_n : (A \to A) \to (A \to A)$.
+
+*Further, if any element* $z \in \mathbf{P}\omega$ *satisfies (i) for all* $A$, *then it must be one of the iterators, provided that* $z(f) = z(\lambda x.\, f(x))$ *holds for all* $f \in \mathbf{P}\omega$.
+
+That each of the $\mathbf{Z}_n$ satisfies Theorem 7.4(i) is obvious. Suppose $z$ were another such element. Then clearly:
+
+$$z = \lambda f \lambda x.\, z(f)(x).$$
+
+Suppose $f$ and $x$ are fixed for the moment. Let:
+
+$$A = \{(f^n(x), f^n(x)) \mid n \in \omega\},$$
+
+where we can suppose in addition that:
+
+$$f = \lambda x.\, f(x).$$
+
+Then $f : A \to A$ is clear, and so $z(f) : A \to A$ also. But $x : A$, therefore $z(f)(x) = f^n(x)$, for some $n \in \omega$, because $z(f)(x) : A$. The trouble with this easy part of the argument is that the integer $n$ depends on $f$ and $x$. What we must show is that it is independent of $f$ and $x$; then $z = \mathbf{Z}_n$ will follow.
+
+Plotkin's method for this case is to introduce some independent successor functions:
+
+$$(7.17) \quad \sigma_j = \lambda x.\, \{(j, k + 1) \mid (j, k) \in x\}.$$
+
+Note that:
+
+$$(7.18) \quad \sigma_j^m((j', 0)) = \begin{cases} (j, m) & \text{if } j = j'; \\ \bot & \text{if } j \neq j'. \end{cases}$$
+
+It then follows that:
+
+$$(7.19) \quad (\sigma_j \cup \sigma_{j'})^m((j, 0) \cup (j', 0)) = (j, m) \cup (j', m).$$
+
+Having these identities, we return to the argument. From what we saw before, given $j \in \omega$, there is an $n_j$ such that:
+
+$$z(\sigma_j)((j, 0)) = \sigma_j^{n_j}((j, 0)) = (j, n_j)$$
+
+Take any two $j, j' \in \omega$. We also know there is an $n \in \omega$ where:
+
+$$z(\sigma_j \cup \sigma_{j'})((j, 0) \cup (j', 0)) = (j, n) \cup (j', n).$$
+in view of (7.19). But since $\sigma_j \subseteq \sigma_j \cup \sigma_{j'}$ and $\sigma_{j'} \subseteq \sigma_j \cup \sigma_{j'}$, we have:
+
+$$(j, n_j) \cup (j', n_{j'}) \subseteq (j, n) \cup (j', n).$$
+
+It follows that
+
+$$n_j = n = n_{j'},$$
+
+and so they are all equal. This determines the fixed $n \in \omega$ we want.
+
+Suppose that both $f$ and $x$ are finite sets in $\mathbf{P}\omega$. Choose $j > \max(f \cup x)$. Let $A$ this time be the least equivalence relation such that:
+
+$$f^m(x) \, A \, f^m(x) \cup (j, m)$$
+
+holds for all $m \in \omega$. We then check that:
+
+$$\lambda x.\, f(x) \, (A \to A) \, (\lambda x.\, f(x)) \cup \sigma_j.$$
+
+Therefore, we have:
+
+$$z(\lambda x.\, f(x)) \, (A \to A) \, z((\lambda x.\, f(x)) \cup \sigma_j),$$
+
+and since $x \, A \, x \cup (j, 0)$, we get:
+
+$$z(\lambda x.\, f(x))(x) \, A \, z((\lambda x.\, f(x)) \cup \sigma_j)(x \cup (j, 0)).$$
+
+Now there is an integer $m \in \omega$ such that:
+
+$$
+\begin{aligned}
+z((\lambda x.\, f(x)) \cup \sigma_j)(x \cup (j, 0)) &= f^m(x) \cup \sigma_j^m((j, 0)) \\
+&= f^m(x) \cup (j, m),
+\end{aligned}
+$$
+
+where we have been able to separate $f$ and $\sigma$ because $j$ is so large. But the right-hand side must contain $z(\sigma_j)(j, 0) = (j, n)$. Thus $m$ and our fixed $n$ are the same. The other element
+
+$$z(\lambda x.\, f(x))(x) = f^q(x)$$
+
+for some $q \in \omega$. Thus we have:
+
+$$f^q(x) \, A \, f^n(x) \cup (j, n).$$
+
+Again since $j$ is so large, $(j, n) \notin f^q(x)$. Thus by our choice of $A$ we must have $f^q(x) = f^n(x)$. This means then, since $n$ is fixed, that for *all finite* $f, x$:
+
+$$z(\lambda x.\, f(x))(x) = f^n(x).$$
+
+But then by continuity this equation holds for *all* $f, x$. It follows now that $z = \mathbf{Z}_n$, by the proviso of the theorem.
+
+These results bring up many questions which we leave unanswered here. For example, which combinators (i.e., pure $\lambda$-terms) have functionality as in the examples above, and can we decide when a term is one such? In particular, can the diagonal combinator $\lambda x.\, x(x)$ be typed? (The argument of Hindley, et al. (1972, p. 81) is purely formal and does not apparently apply to the model.) What about terms in LAMBDA beyond the pure $\lambda$-calculus?
+
+**Lean 4**
+
+- [DataTypesAsLattices/Functionality/theorem_7_4.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4_finite.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4_finite.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4_i.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4_i.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4_plotkin.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4_plotkin.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4_sigma_index.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4_sigma_index.lean)
+- [DataTypesAsLattices/Functionality/theorem_7_4_unique.lean](DomainTheory/DataTypesAsLattices/Functionality/theorem_7_4_unique.lean)

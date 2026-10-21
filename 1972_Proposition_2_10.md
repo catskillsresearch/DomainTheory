@@ -1,0 +1,72 @@
+# Proposition 2.10
+
+**2.10 Proposition.** A retract of a continuous lattice is a continuous lattice with the subspace topology agreeing with the induced topology.
+
+**Proof of 2.10**
+
+Let $D'$ be a continuous lattice and let $D \subseteq D'$ be a subspace which is a retract. We have for a suitable $j : D' \to D$,
+
+$$
+D =  x \in D' : j(x) = x ,
+$$
+
+where of course $j$ is continuous.
+
+*First a note of warning:* though $D$ is a subspace it is not a sublattice; that is, the partial ordering on $D$ is the restriction of that of $D'$, but the lubs of $D$ are not those of $D'$. We shall have to distinguish operations by adding a prime ($'$) for those of $D'$.
+
+Suppose $x, y \in D$. Let $z' = x \sqcup y \in D'$ (join taken in $D'$) and define $z = j(z') \in D$. Now $x \sqsubseteq z'$ and $y \sqsubseteq z'$, and $j$ is monotonic, so $x \sqsubseteq z$ and $y \sqsubseteq z$. Suppose $x \sqsubseteq w$ and $y \sqsubseteq w$ with $w \in D$. Then in $D'$ we have $x \sqcup y \sqsubseteq w$; so $z \sqsubseteq w$ also. Hence we have shown that $z = x \sqcup y$ in $D$.
+
+To show that $D$ has a least element $\bot$ (which may be larger than the $\bot' \in D'$), we need a well-known lemma about monotonic functions: Every monotonic function on a complete lattice into itself has a least fixed point. (Cf. Birkhoff (1970), p. 115.) In our case $j$ is monotonic and
+
+$$
+\bot = \sqcap \ x \in D' : j(x) \sqsubseteq x
+$$
+
+is the desired element in $D$.
+
+Thus $D$ is at least a semilattice with $\bot$ and $\sqcup$. To show that $D$ is a lattice we need to show that every directed $S \subseteq D$ has a lub in $D$. Now we know ($S' = S$, join taken in the ambient lattice $D'$):
+
+$$
+\bigsqcup S' \in D',
+$$
+
+and this is a limit of a monotone net. So by 2.1, and the continuity of $j$:
+
+$$
+\begin{aligned}
+j(\bigsqcup S') &= \bigsqcup  j(x) : x \in S  
+&= \bigsqcup S
+\end{aligned}
+$$
+
+in $D$. In this way we now know that $D$ is a complete lattice. We must
+
+still show that $D$ is continuous.
+
+Suppose $y \in D$. In $D'$ we can write:
+
+$$y = \bigsqcup  x \in D' : x \ll y '$$
+
+and this is the limit of a monotone net. Thus
+
+$$j(y) = y = \bigsqcup  j(x) : x \ll y, x \in D' ,$$
+
+where the lub is taken in $D$. Note that the sets
+
+$$U =  z \in D : x \ll z $$
+
+are open in $D$ for each $x \in D'$. Note too that if $z \in U$, then $x \sqsubseteq z$ and so $j(x) \sqsubseteq j(z) = z$. This means that
+
+$$j(x) \sqsubseteq \sqcap U$$
+
+in $D$. We can then write in $D$:
+
+$$y = \bigsqcup \sqcap U : y \in U $$
+
+where $U$ ranges over the open subsets of $D$, and so the lattice is continuous by 2.4. Inasmuch as the open sets $U$ just used were open in the subspace topology, it follows by the remark after 2.4 that the subspace and the lattice-induced topologies coincide. $\square$
+
+**Lean 4**
+
+- [ContinuousLattice/FunctionSpaces/proposition_2_10.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_2_10_a.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10_a.lean)
+- [ContinuousLattice/FunctionSpaces/proposition_2_10_b.lean](DomainTheory/ContinuousLattice/FunctionSpaces/proposition_2_10_b.lean)

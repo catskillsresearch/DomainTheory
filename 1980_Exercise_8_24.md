@@ -1,0 +1,37 @@
+# Exercise 8.24
+
+**EXERCISE 8.24.** Suppose $S$ and $T$ are two (binary-argument) constructs on domains that can be made into computable operators on projections of the universal domain. Show that we can therefore find a pair of effectively presented domains such that
+$$
+D \cong S(D, E) \quad \text{and} \quad E \cong T(D, E).
+$$
+
+**Lean 4**
+
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/Basic.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/Basic.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/PairSpace.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/PairSpace.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/aOp.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/aOp.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/aOp_succ.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/aOp_succ.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/aOp_zero.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/aOp_zero.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/aStar.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/aStar.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/bOp.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/bOp.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/bOp_succ.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/bOp_succ.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/bOp_zero.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/bOp_zero.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/bStar.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/bStar.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/binOp.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/binOp.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/binOp_aStar_bStar_left.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/binOp_aStar_bStar_left.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/binOp_aStar_bStar_right.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/binOp_aStar_bStar_right.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/fixedDomain_aStar_bStar_iso.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/fixedDomain_aStar_bStar_iso.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/fixedNbhd_aStar_bStar_subsystem.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/fixedNbhd_aStar_bStar_subsystem.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/fst_mono.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/fst_mono.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/isFinitaryProjection_aStar_bStar.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/isFinitaryProjection_aStar_bStar.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/isFinitaryProjection_chain.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/isFinitaryProjection_chain.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/iterElem_pair_eq_pair.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/iterElem_pair_eq_pair.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/iterElem_succ_pair.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/iterElem_succ_pair.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/iterElem_zero_pair.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/iterElem_zero_pair.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/pairSpace_bot_fst.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/pairSpace_bot_fst.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/pairSpace_bot_snd.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/pairSpace_bot_snd.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/pair_bot_bot.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/pair_bot_bot.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/snd_mono.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/snd_mono.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/toElementMap_fixElement_fst.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/toElementMap_fixElement_fst.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/toElementMap_fixElement_snd.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise824/toElementMap_fixElement_snd.lean)

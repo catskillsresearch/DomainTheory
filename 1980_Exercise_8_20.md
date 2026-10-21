@@ -1,0 +1,30 @@
+# Exercise 8.20
+
+**EXERCISE 8.20.** For any system we know $D \trianglelefteq D + D$, but what about
+
+$$D \trianglelefteq D \times D \quad \text{and} \quad D \trianglelefteq D \to D \ ?$$
+
+Would these projections be computable if $D$ is effectively given? Are there more than one projection pair in each case?
+
+**Lean 4**
+
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/Basic.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/Basic.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/D_trianglelefteq_funSpace.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/D_trianglelefteq_funSpace.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/D_trianglelefteq_prod.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/D_trianglelefteq_prod.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/constFunMap.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/constFunMap.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/constFunMap_comp_evalBotMap_le.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/constFunMap_comp_evalBotMap_le.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst_comp_proju2080_le.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst_comp_proju2080_le.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst_ne_embedSnd_of_ne_bot.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedFst_ne_embedSnd_of_ne_bot.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedSnd.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedSnd.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedSnd_comp_proju2081_le.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/embedSnd_comp_proju2081_le.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/evalBotMap.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/evalBotMap.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/evalBotMap_comp_constFunMap.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/evalBotMap_comp_constFunMap.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/exercise_8_20.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/exercise_8_20.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/proju2080_comp_embedFst.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/proju2080_comp_embedFst.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/proju2081_comp_embedSnd.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/proju2081_comp_embedSnd.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/toElementMap_evalBotMap.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/toElementMap_evalBotMap.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_funSpace_const.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_funSpace_const.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_prod_fst.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_prod_fst.lean)
+- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_prod_snd.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise820/trianglelefteq_prod_snd.lean)
