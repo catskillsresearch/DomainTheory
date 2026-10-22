@@ -2,9 +2,9 @@
 
 It would seem that the continuous lattices are starting to sound suspiciously like the injective spaces. Indeed, if we can prove the following, the circle will be complete.
 
-**2.11 Proposition.** Every continuous lattice is an injective space under its induced topology.
+**Proposition.** Every continuous lattice is an injective space under its induced topology.
 
-++Proof of 2.11++: Let $D$ be a continuous lattice with its induced topology, and let $X \subseteq Y$ be two $T_0$-spaces in the subspace relation. Suppose
+*Proof of 2.11*: Let $D$ be a continuous lattice with its induced topology, and let $X \subseteq Y$ be two $T_0$-spaces in the subspace relation. Suppose
 
 $$f : X \to D$$
 
@@ -54,24 +54,22 @@ Furthermore, as we have seen, the injective property can be exhibited, as in the
 
 **Lean 4**
 
-- [ContinuousLattice/WayBelow/wayBelow_interpolate.lean](../WayBelow/wayBelow_interpolate.lean)
-- [ContinuousLattice/WayBelow.lean](../WayBelow.lean)
-- [ContinuousLattice/Specialization/Basic.lean](../Specialization/Basic.lean)
-- [ContinuousLattice/Specialization.lean](../Specialization.lean)
-- [ContinuousLattice/ScottMaps/Basic.lean](../ScottMaps/Basic.lean)
-- [ContinuousLattice/ScottMaps.lean](../ScottMaps.lean)
-- [ContinuousLattice/Constructions/scottExtend.lean](scottExtend.lean)
-- [ContinuousLattice/Constructions/Basic.lean](Basic.lean)
-- [ContinuousLattice/Constructions/directedOn_finite_sSup_mem.lean](directedOn_finite_sSup_mem.lean)
-- [ContinuousLattice/Constructions/proposition_2_8.lean](proposition_2_8.lean)
-- [ContinuousLattice/Constructions/proposition_2_9_a.lean](proposition_2_9_a.lean)
-- [ContinuousLattice/Constructions/proposition_2_9_b.lean](proposition_2_9_b.lean)
-- [ContinuousLattice/Constructions/proposition_2_9.lean](proposition_2_9.lean)
-- [ContinuousLattice/Constructions/scottExtend_aux_nonempty.lean](scottExtend_aux_nonempty.lean)
-- [ContinuousLattice/Constructions/scottExtend_aux_directed.lean](scottExtend_aux_directed.lean)
-- [ContinuousLattice/Constructions/scottExtend_continuous.lean](scottExtend_continuous.lean)
-- [ContinuousLattice/Constructions/scottExtend_eq_of_continuous.lean](scottExtend_eq_of_continuous.lean)
-- [ContinuousLattice/Constructions/continuous_eq_sSup_openInfs.lean](continuous_eq_sSup_openInfs.lean)
-- [ContinuousLattice/Constructions/scottExtend_maximal.lean](scottExtend_maximal.lean)
-- [ContinuousLattice/Constructions/scottExtend_maximal_le.lean](scottExtend_maximal_le.lean)
-- [ContinuousLattice/Constructions/proposition_2_11.lean](proposition_2_11.lean)
+@import "../WayBelow/wayBelow_interpolate.lean"
+@import "../WayBelow.lean"
+@import "../Specialization/Basic.lean"
+@import "../Specialization.lean"
+@import "../ScottMaps/Basic.lean"
+@import "../ScottMaps.lean"
+@import "scottExtend.lean"
+@import "Basic.lean"
+@import "directedOn_finite_sSup_mem.lean"
+@import "proposition_2_8.lean"
+@import "proposition_2_9.lean"
+@import "scottExtend_aux_nonempty.lean"
+@import "scottExtend_aux_directed.lean"
+@import "scottExtend_continuous.lean"
+@import "scottExtend_eq_of_continuous.lean"
+@import "continuous_eq_sSup_openInfs.lean"
+@import "scottExtend_maximal.lean"
+@import "scottExtend_maximal_le.lean"
+@import "proposition_2_11.lean"

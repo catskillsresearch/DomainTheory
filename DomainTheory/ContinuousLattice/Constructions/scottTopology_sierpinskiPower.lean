@@ -10,7 +10,7 @@ public import DomainTheory.ContinuousLattice.ScottMaps
 public import DomainTheory.ContinuousLattice.Injective
 public import Mathlib.Order.Preorder.Finite
 public import DomainTheory.ContinuousLattice.Constructions.Basic
-public import DomainTheory.ContinuousLattice.Constructions.proposition_2_9_b
+public import DomainTheory.ContinuousLattice.Constructions.proposition_2_9
 public import DomainTheory.ContinuousLattice.Constructions.isContinuousLattice_prop
 public import DomainTheory.ContinuousLattice.Constructions.scottTopology_prop
 
@@ -31,7 +31,7 @@ is the Sierpiński topology). -/
 theorem scottTopology_sierpinskiPower (ι : Type*) :
     (scottTopologicalSpace : TopologicalSpace (ι → Prop)) =
       (inferInstance : TopologicalSpace (ι → Prop)) := by
-  rw [proposition_2_9_b (fun _ => Prop) (fun _ => isContinuousLattice_prop)]
+  rw [(proposition_2_9 (fun _ => Prop) (fun _ => isContinuousLattice_prop)).2]
   show (@Pi.topologicalSpace ι (fun _ => Prop) (fun _ => scottTopologicalSpace)) =
     @Pi.topologicalSpace ι (fun _ => Prop) (fun _ => sierpinskiSpace)
   congr 1

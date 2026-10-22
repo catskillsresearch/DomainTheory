@@ -6,8 +6,6 @@ module
 public import DomainTheory.ContinuousLattice.Constructions.Basic
 public import DomainTheory.ContinuousLattice.Constructions.directedOn_finite_sSup_mem
 public import DomainTheory.ContinuousLattice.Constructions.proposition_2_8
-public import DomainTheory.ContinuousLattice.Constructions.proposition_2_9_a
-public import DomainTheory.ContinuousLattice.Constructions.proposition_2_9_b
 public import DomainTheory.ContinuousLattice.Constructions.proposition_2_9
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_nonempty
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_directed

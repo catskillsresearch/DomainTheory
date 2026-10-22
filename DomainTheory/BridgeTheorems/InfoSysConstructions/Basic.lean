@@ -50,7 +50,7 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions.approxMap_toEleme
 * **Function space:** `|A → B| ≃o ApproximableMap A B` via Theorem 7.2
   `approxMap_toElement` / `element_toApproxMap`.
 
-1972 counterpart: products of continuous lattices (`proposition_2_9_a`); function space
+1972 counterpart: products of continuous lattices (`proposition_2_9`); function space
 Thm 3.3 in the sibling package.
 -/
 

@@ -10,7 +10,7 @@ public import DomainTheory.ContinuousLattice.ScottMaps
 public import DomainTheory.ContinuousLattice.Injective
 public import Mathlib.Order.Preorder.Finite
 public import DomainTheory.ContinuousLattice.Constructions.Basic
-public import DomainTheory.ContinuousLattice.Constructions.proposition_2_9_a
+public import DomainTheory.ContinuousLattice.Constructions.proposition_2_9
 public import DomainTheory.ContinuousLattice.Constructions.isContinuousLattice_prop
 
 @[expose] public section
@@ -28,6 +28,6 @@ lattice (`isContinuousLattice_prop`) and products of continuous lattices are con
 (Proposition 2.9(a)). This is the order-theoretic content of "a Cartesian power of `𝕆` is a
 continuous lattice", the construction Theorem 2.12 retracts onto. -/
 theorem sierpinskiPower_isContinuousLattice (ι : Type*) : ContinuousLattice (ι → Prop) :=
-  proposition_2_9_a (fun _ => Prop) (fun _ => isContinuousLattice_prop)
+  (proposition_2_9 (fun _ => Prop) (fun _ => isContinuousLattice_prop)).1
 
 end DomainTheory.ContinuousLattice

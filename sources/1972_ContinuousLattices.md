@@ -533,7 +533,7 @@ $$y = \bigsqcup \sqcap U : y \in U $$
 
 where $U$ ranges over the open subsets of $D$, and so the lattice is continuous by 2.4. Inasmuch as the open sets $U$ just used were open in the subspace topology, it follows by the remark after 2.4 that the subspace and the lattice-induced topologies coincide. $\square$
 
-++Proof of 2.11++: Let $D$ be a continuous lattice with its induced topology, and let $X \subseteq Y$ be two $T_0$-spaces in the subspace relation. Suppose
+*Proof of 2.11*: Let $D$ be a continuous lattice with its induced topology, and let $X \subseteq Y$ be two $T_0$-spaces in the subspace relation. Suppose
 
 $$f : X \to D$$
 
@@ -1447,7 +1447,7 @@ $$W = T + [T \times W] + [[W \times W] \to W].$$
 
 And these are only a few examples: simultaneous equations are possible, and many other operators are waiting for discovery and application.
 
-++Correction++ (Added March, 1972). Robin Milner has pointed out to me that there is an error in the remark in the paragraph immediately preceding Proposition 2.5. I was mistaken in saying that if $D$ is a $T_0$-space which becomes a complete lattice under its induced partial ordering, then every set open in the given topology is also open in the induced topology. There are many counterexamples to this statement. Let $D$ be any complete lattice. There are two extreme $T_0$-topologies which will induce the given partial ordering. The smallest such topology has as a sub-base for its open sets those sets of the form:
+*Correction* (Added March, 1972). Robin Milner has pointed out to me that there is an error in the remark in the paragraph immediately preceding Proposition 2.5. I was mistaken in saying that if $D$ is a $T_0$-space which becomes a complete lattice under its induced partial ordering, then every set open in the given topology is also open in the induced topology. There are many counterexamples to this statement. Let $D$ be any complete lattice. There are two extreme $T_0$-topologies which will induce the given partial ordering. The smallest such topology has as a sub-base for its open sets those sets of the form:
 
 $$x \in D : x \not\sqsubseteq y.$$
 
