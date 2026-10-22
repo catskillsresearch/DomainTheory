@@ -1,10 +1,13 @@
 module
-
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumSystem
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset_singleton_bot
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
+
 
 @[expose] public section
 

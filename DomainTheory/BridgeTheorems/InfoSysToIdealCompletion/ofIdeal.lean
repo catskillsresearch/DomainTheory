@@ -1,12 +1,13 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.nonempty_idealCarrier
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.directed_idealCarrier
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.directedSup
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.idealCarrier
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.nonempty_idealCarrier
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.directed_idealCarrier
 
 @[expose] public section
 

@@ -1,14 +1,15 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.sndMap_pairElements
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.fstMap_pairElements
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.pairElements
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.fstMap_pairElements
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.sndMap_pairElements
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems

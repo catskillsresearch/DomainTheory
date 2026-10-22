@@ -1,25 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.InverseLimits
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Topology.Homeomorph.Defs
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.CLat
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerType
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.BasicInst5
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerType_zero
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.BasicInst8
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerToMap_coe
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.DInf
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.embInfInf
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.embInfInf_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.projInfInf_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap_iSup
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.embInf_succ_iSup
@@ -27,6 +8,10 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conj_iInfTerm_eq
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm_monotone
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iSup₂_monotone_eq_diagonal
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap_incl_le_conjMap_succ
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf_succ
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf_monotone
+public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
+public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 
 @[expose] public section
 

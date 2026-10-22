@@ -1,10 +1,9 @@
 module
 
-public import DomainTheory.ContinuousLattice.MilnerCorrection
-public import DomainTheory.ContinuousLattice.ScottMaps
-public import DomainTheory.ContinuousLattice.Injective
-public import Mathlib.Order.Preorder.Finite
-public import DomainTheory.ContinuousLattice.Constructions.Basic
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
+public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

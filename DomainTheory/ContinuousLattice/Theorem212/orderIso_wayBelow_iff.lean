@@ -1,9 +1,10 @@
 module
-
-public import DomainTheory.ContinuousLattice.Constructions
-public import DomainTheory.ContinuousLattice.FunctionSpaces
-public import DomainTheory.ContinuousLattice.Theorem212.Basic
 public import DomainTheory.ContinuousLattice.Theorem212.orderIso_wayBelow
+public import Mathlib.Order.BourbakiWitt
+public import DomainTheory.ContinuousLattice.WayBelow.Basic.notation5
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
+
 
 @[expose] public section
 

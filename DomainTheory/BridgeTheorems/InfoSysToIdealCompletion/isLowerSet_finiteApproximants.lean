@@ -1,11 +1,13 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.le_of_mem_finiteApproximants
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_of_le
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
+public import Mathlib.Order.UpperLower.Basic
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_of_le
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.le_of_mem_finiteApproximants
 
 @[expose] public section
 

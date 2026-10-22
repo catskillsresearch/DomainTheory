@@ -29,3 +29,4 @@ rev = "v4.35.0"
 
 [[lean_lib]]
 name = "DomainTheory"
+globs = ["DomainTheory", "DomainTheory.ContinuousLattice.+"]

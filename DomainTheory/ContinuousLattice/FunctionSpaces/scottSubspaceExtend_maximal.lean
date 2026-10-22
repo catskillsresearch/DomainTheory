@@ -1,15 +1,13 @@
 module
 
-public import DomainTheory.ContinuousLattice.ScottMaps
-public import Mathlib.Data.Finset.Lattice.Fold
-public import Mathlib.Topology.ContinuousMap.Basic
-public import Mathlib.Topology.Order
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.FixedPoints
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sInf_image_le_sInf_image_of_subset
-public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMap_eq_sSup_openInfs
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtendInf_eq_of_comp
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMap_eq_sSup_openInfs
+public import DomainTheory.ContinuousLattice.FunctionSpaces.sInf_image_le_sInf_image_of_subset
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottSubspaceExtend
+public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
+public import Mathlib.Order.BourbakiWitt
+public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section
 

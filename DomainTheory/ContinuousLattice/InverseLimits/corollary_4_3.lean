@@ -1,12 +1,13 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.embInf_family_directed
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_eq_iSup
-public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf_comp_embInf
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf_preservesDirectedSup
+public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf_comp_embInf
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_eq_iSup
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf_family_directed
+public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
+public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

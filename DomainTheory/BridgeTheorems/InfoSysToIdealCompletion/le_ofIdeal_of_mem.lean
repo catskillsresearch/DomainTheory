@@ -1,11 +1,11 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.ofIdeal
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.le_directedSup
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.le_directedSup
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.ofIdeal
 
 @[expose] public section
 

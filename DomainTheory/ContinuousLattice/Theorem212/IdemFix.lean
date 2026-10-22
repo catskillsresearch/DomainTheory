@@ -1,13 +1,10 @@
 module
 
-public import DomainTheory.ContinuousLattice.Constructions
-public import DomainTheory.ContinuousLattice.FunctionSpaces
+public import Mathlib.Order.CompleteLattice.Basic
 
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
-
-open Topology Set
 
 section FixedPoints
 

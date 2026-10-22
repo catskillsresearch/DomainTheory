@@ -1,10 +1,8 @@
 module
 
-public import Mathlib.Topology.ContinuousMap.T0Sierpinski
-public import Mathlib.Topology.ContinuousMap.Basic
-public import Mathlib.Topology.Sets.Opens
-public import DomainTheory.ContinuousLattice.Injective.Basic
-public import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2epi
+public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
+public import Mathlib.Topology.Constructions
+import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2epi
 
 @[expose] public section
 

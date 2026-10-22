@@ -1,14 +1,10 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLT
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE_refl
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE_trans
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE_antisymm
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLT_iff_LE_not_GE
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

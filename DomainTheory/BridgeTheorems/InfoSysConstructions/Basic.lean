@@ -1,16 +1,16 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.productDomainIso
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.sumDomainIso
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.functionSpaceDomainIso
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.productDomainIso
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.assembleSum
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.classifySum
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.sumDomainIso
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.functionSpaceDomainIso
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair_pairElements
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.pairElements_unpair
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.pairElements_mono

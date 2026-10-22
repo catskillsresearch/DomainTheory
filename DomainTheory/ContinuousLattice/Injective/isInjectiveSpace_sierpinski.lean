@@ -1,9 +1,8 @@
 module
 
-public import Mathlib.Topology.ContinuousMap.T0Sierpinski
-public import Mathlib.Topology.ContinuousMap.Basic
-public import Mathlib.Topology.Sets.Opens
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
+public import Mathlib.Topology.Order
+import Mathlib.Topology.Maps.Basic
 
 @[expose] public section
 

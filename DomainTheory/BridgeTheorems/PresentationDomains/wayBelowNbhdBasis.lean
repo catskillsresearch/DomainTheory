@@ -1,11 +1,14 @@
 module
-
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toNeighborhoodSystem
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp_bot
+public import DomainTheory.BridgeTheorems.NbhdBasis
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.BridgeTheorems.InfoSysToNeighborhood
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion
 public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
 public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
+
 
 @[expose] public section
 

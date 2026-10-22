@@ -1,13 +1,10 @@
 module
 
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.UpperLower.Basic
-public import Mathlib.Order.Directed
-public import DomainTheory.ContinuousLattice.WayBelow.Basic
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
-public import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+import DomainTheory.ContinuousLattice.WayBelow.IsContinuousLatticeu2esSup_wayBelow
+import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
+import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
+import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
 
 @[expose] public section
 

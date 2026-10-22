@@ -1,12 +1,15 @@
 module
 
+public import DomainTheory.BridgeTheorems.PresentationDomains.neighborhood_ideal_iso
+public import DomainTheory.BridgeTheorems.PresentationDomains.RoundInfoSysElement
+public import DomainTheory.BridgeTheorems.PresentationDomains.presentation_domains_equiv
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.BridgeTheorems.InfoSysToNeighborhood
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion
 public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
 public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
-public import DomainTheory.BridgeTheorems.PresentationDomains.neighborhood_ideal_iso
 public import DomainTheory.BridgeTheorems.PresentationDomains.nbhdBasis_ideal_iso
 public import DomainTheory.BridgeTheorems.PresentationDomains.wayBelowNbhdBasis
 public import DomainTheory.BridgeTheorems.PresentationDomains.IsRoundInfoSysElement
@@ -14,9 +17,7 @@ public import DomainTheory.BridgeTheorems.PresentationDomains.roundFilter_infoSy
 public import DomainTheory.BridgeTheorems.PresentationDomains.continuousLattice_roundFilter_iso
 public import DomainTheory.BridgeTheorems.PresentationDomains.continuousLattice_roundInfoSys_iso
 public import DomainTheory.BridgeTheorems.PresentationDomains.roundInfoSys_ideal_iso
-public import DomainTheory.BridgeTheorems.PresentationDomains.presentation_domains_equiv
 public import DomainTheory.BridgeTheorems.PresentationDomains.presentation_domains_equiv_ideal
-public import DomainTheory.BridgeTheorems.PresentationDomains.RoundInfoSysElement
 
 @[expose] public section
 

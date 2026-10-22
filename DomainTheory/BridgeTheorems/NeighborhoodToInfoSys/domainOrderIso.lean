@@ -1,5 +1,9 @@
 module
 
+public import DomainTheory.BridgeTheorems.toElement_ofElement
+public import DomainTheory.BridgeTheorems.ofElement_toElement
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.BasicInst22
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
 public import Mathlib.Data.Finset.Fold
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
@@ -10,8 +14,6 @@ public import DomainTheory.BridgeTheorems.interOf_empty
 public import DomainTheory.BridgeTheorems.toInfoSys
 public import DomainTheory.BridgeTheorems.toElement
 public import DomainTheory.BridgeTheorems.ofElement
-public import DomainTheory.BridgeTheorems.toElement_ofElement
-public import DomainTheory.BridgeTheorems.ofElement_toElement
 
 @[expose] public section
 

@@ -1,9 +1,15 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.Basic
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf_succ
+public import DomainTheory.ContinuousLattice.InverseLimits.iComp_self
+public import DomainTheory.ContinuousLattice.InverseLimits.projInf
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf_monotone
+public import DomainTheory.ContinuousLattice.InverseLimits.iComp_of_ge
+public import DomainTheory.ContinuousLattice.InverseLimits.projLE_succ
+public import DomainTheory.ContinuousLattice.InverseLimits.projLE_self
+public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

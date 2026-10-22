@@ -1,12 +1,13 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.ofIdeal
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.eq_directedSup_finiteApproximants
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.idealCarrier
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.ofIdeal
 
 @[expose] public section
 

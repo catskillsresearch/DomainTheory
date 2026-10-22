@@ -10,26 +10,6 @@
 
 @import "../WayBelow/wayBelow_interpolate.lean"
 
-**ContinuousLattice/WayBelow.lean**
-
-@import "../WayBelow.lean"
-
-**ContinuousLattice/Specialization/Basic.lean**
-
-@import "../Specialization/Basic.lean"
-
-**ContinuousLattice/Specialization.lean**
-
-@import "../Specialization.lean"
-
-**ContinuousLattice/ScottMaps/Basic.lean**
-
-@import "../ScottMaps/Basic.lean"
-
-**ContinuousLattice/ScottMaps.lean**
-
-@import "../ScottMaps.lean"
-
 **ContinuousLattice/Constructions/scottExtend.lean**
 
 @import "scottExtend.lean"
@@ -85,16 +65,6 @@
 ## AI: AI-Lean to AI-English
 
 @import "../WayBelow/wayBelow_interpolate.ai_lean_to_english" {code_block=false}
-
-@import "../WayBelow.ai_lean_to_english" {code_block=false}
-
-@import "../Specialization/Basic.ai_lean_to_english" {code_block=false}
-
-@import "../Specialization.ai_lean_to_english" {code_block=false}
-
-@import "../ScottMaps/Basic.ai_lean_to_english" {code_block=false}
-
-@import "../ScottMaps.ai_lean_to_english" {code_block=false}
 
 @import "scottExtend.ai_lean_to_english" {code_block=false}
 

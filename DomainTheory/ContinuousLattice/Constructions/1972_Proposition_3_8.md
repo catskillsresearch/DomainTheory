@@ -10,10 +10,6 @@
 
 @import "proposition_3_8.lean"
 
-**ContinuousLattice/Constructions.lean**
-
-@import "../Constructions.lean"
-
 **ContinuousLattice/FunctionSpaces/scottSubspaceExtendInf.lean**
 
 @import "../FunctionSpaces/scottSubspaceExtendInf.lean"
@@ -253,8 +249,6 @@
 ## AI: AI-Lean to AI-English
 
 @import "proposition_3_8.ai_lean_to_english" {code_block=false}
-
-@import "../Constructions.ai_lean_to_english" {code_block=false}
 
 @import "../FunctionSpaces/scottSubspaceExtendInf.ai_lean_to_english" {code_block=false}
 

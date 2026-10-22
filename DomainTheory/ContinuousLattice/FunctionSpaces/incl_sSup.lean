@@ -1,14 +1,13 @@
 module
-
-public import DomainTheory.ContinuousLattice.ScottMaps
-public import Mathlib.Data.Finset.Lattice.Fold
-public import Mathlib.Topology.ContinuousMap.Basic
-public import Mathlib.Topology.Order
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.FixedPoints
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
-public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_bot
 public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_finset_sup
+public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_bot
+public import DomainTheory.ContinuousLattice.FunctionSpaces.directedOn_finsetSupOf
+public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_finsetSupOf
+public import DomainTheory.ContinuousLattice.FunctionSpaces.mem_finsetSupOf_of_mem
+public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
+public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import Mathlib.Topology.Defs.Basic
+
 
 @[expose] public section
 

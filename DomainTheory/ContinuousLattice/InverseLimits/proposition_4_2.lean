@@ -1,16 +1,10 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitPartialOrder
-public import DomainTheory.ContinuousLattice.InverseLimits.BasicInst20
-public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp_self
-public import DomainTheory.ContinuousLattice.InverseLimits.iComp_incl_le
-public import DomainTheory.ContinuousLattice.InverseLimits.embInfFun_coe
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.projInf
+public import DomainTheory.ContinuousLattice.InverseLimits.iComp_incl_le
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

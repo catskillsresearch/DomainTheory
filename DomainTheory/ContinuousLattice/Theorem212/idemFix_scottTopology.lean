@@ -1,8 +1,13 @@
 module
 
-public import DomainTheory.ContinuousLattice.Constructions
-public import DomainTheory.ContinuousLattice.FunctionSpaces
-public import DomainTheory.ContinuousLattice.Theorem212.Basic
+public import DomainTheory.ContinuousLattice.Theorem212.completeLattice
+public import DomainTheory.ContinuousLattice.Theorem212.idemFixRetraction
+public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_2_10_b
+public import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

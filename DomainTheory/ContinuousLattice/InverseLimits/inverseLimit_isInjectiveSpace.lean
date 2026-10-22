@@ -1,12 +1,14 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_coordinate_continuous
-
-public import DomainTheory.ContinuousLattice.Theorem212.IsContinuousLatticeu2eorderIso
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.Theorem212.lemma_3_9
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_coordinate_continuous
+public import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
+public import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous
+public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+public import Mathlib.Data.Set.Basic
+
 @[expose] public section
 
 

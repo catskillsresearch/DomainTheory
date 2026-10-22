@@ -1,7 +1,9 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization
-public import DomainTheory.ContinuousLattice.MilnerCorrection.Basic
+public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
+public import DomainTheory.ContinuousLattice.MilnerCorrection.CoarserThanScottTopology
+public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

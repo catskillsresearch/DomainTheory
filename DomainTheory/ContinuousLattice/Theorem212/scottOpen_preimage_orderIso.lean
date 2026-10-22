@@ -1,7 +1,11 @@
 module
+public import Mathlib.Order.BourbakiWitt
+public import Mathlib.Order.CompleteLattice.Basic
+public import Mathlib.Order.ConditionallyCompleteLattice.Basic
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Topology.Defs.Basic
+public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 
-public import DomainTheory.ContinuousLattice.Constructions
-public import DomainTheory.ContinuousLattice.FunctionSpaces
 
 @[expose] public section
 

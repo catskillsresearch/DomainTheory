@@ -1,10 +1,15 @@
 module
-
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inrMap
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inlMap
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
+public import Mathlib.Order.TypeTags
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
+
 
 @[expose] public section
 

@@ -1,9 +1,6 @@
 module
 
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.UpperLower.Basic
-public import Mathlib.Order.Directed
-public import DomainTheory.ContinuousLattice.WayBelow.Basic
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 
 @[expose] public section
 

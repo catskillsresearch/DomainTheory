@@ -10,21 +10,9 @@
 
 @import "proposition_3_14.lean"
 
-**ContinuousLattice/FunctionSpaces.lean**
-
-@import "../FunctionSpaces.lean"
-
-**ContinuousLattice/Theorem212/Basic.lean**
-
-@import "../Theorem212/Basic.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "proposition_3_14.ai_lean_to_english" {code_block=false}
-
-@import "../FunctionSpaces.ai_lean_to_english" {code_block=false}
-
-@import "../Theorem212/Basic.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

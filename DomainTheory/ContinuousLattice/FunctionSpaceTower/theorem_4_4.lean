@@ -1,9 +1,9 @@
 module
 
-public import DomainTheory.ContinuousLattice.InverseLimits
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Topology.Homeomorph.Defs
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.Basic
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.theorem_4_4_orderIso
+public import DomainTheory.ContinuousLattice.FunctionSpaceTower.theorem_4_4_sourceTopology_homeomorph
+public import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_1
+public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3_isContinuousLattice
 
 @[expose] public section
 

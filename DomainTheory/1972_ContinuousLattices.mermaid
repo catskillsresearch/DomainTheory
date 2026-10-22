@@ -1,0 +1,38 @@
+%% Direct imports among the Lean modules under DomainTheory/ContinuousLattice.
+%% Each module lists the definitions, propositions, theorems, lemmas, and
+%% corollaries whose Lean lives there. This development has no examples or factoids.
+flowchart TB
+  CL["ContinuousLattice"]
+  FST["FunctionSpaceTower<br/>Theorem 4.4"]
+  IL["InverseLimits<br/>Proposition 4.1<br/>Proposition 4.2<br/>Corollary 4.3<br/>Lemma 4.5"]
+  T212["Theorem212<br/>Theorem 2.12"]
+  FS["FunctionSpaces<br/>Proposition 2.10<br/>Definition 3.1<br/>Proposition 3.2<br/>Theorem 3.3<br/>Corollary 3.4<br/>Proposition 3.5<br/>Definition 3.6<br/>Proposition 3.7<br/>Lemma 3.9<br/>Proposition 3.10<br/>Definition 3.11<br/>Proposition 3.12<br/>Proposition 3.13<br/>Proposition 3.14"]
+  CON["Constructions<br/>Proposition 2.8<br/>Proposition 2.9<br/>Proposition 2.11<br/>Proposition 3.8"]
+  INJ["Injective<br/>Definition 1.1<br/>Proposition 1.2<br/>Proposition 1.3<br/>Proposition 1.4<br/>Proposition 1.5<br/>Corollary 1.6<br/>Corollary 1.7"]
+  MC["MilnerCorrection"]
+  SM["ScottMaps<br/>Proposition 2.5<br/>Proposition 2.6<br/>Proposition 2.7"]
+  SP["Specialization<br/>Proposition 2.1"]
+  WB["WayBelow<br/>Proposition 2.2<br/>Definition 2.3<br/>Proposition 2.4"]
+
+  CL --> INJ
+  CL --> WB
+  CL --> SP
+  CL --> SM
+  CL --> MC
+  CL --> CON
+  CL --> FS
+  CL --> T212
+  CL --> IL
+  CL --> FST
+
+  FST --> IL
+  IL --> T212
+  T212 --> CON
+  T212 --> FS
+  FS --> SM
+  CON --> INJ
+  CON --> MC
+  CON --> SM
+  MC --> SP
+  SM --> SP
+  SP --> WB

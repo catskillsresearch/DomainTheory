@@ -1,16 +1,18 @@
 module
 
-public import DomainTheory.ContinuousLattice.ScottMaps
-public import Mathlib.Data.Finset.Lattice.Fold
-public import Mathlib.Topology.ContinuousMap.Basic
-public import Mathlib.Topology.Order
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.FixedPoints
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
-public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_preservesDirectedSup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_image_retr_wayBelow
-public import DomainTheory.ContinuousLattice.FunctionSpaces.image_retr_wayBelow_nonempty
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.image_retr_wayBelow_directed
+public import DomainTheory.ContinuousLattice.FunctionSpaces.image_retr_wayBelow_nonempty
+public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_image_retr_wayBelow
+public import DomainTheory.ContinuousLattice.FunctionSpaces.incl_preservesDirectedSup
+public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
+public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
+public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
+public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

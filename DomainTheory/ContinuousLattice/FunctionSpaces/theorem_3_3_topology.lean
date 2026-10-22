@@ -1,18 +1,19 @@
 module
 
-public import DomainTheory.ContinuousLattice.ScottMaps
-public import Mathlib.Data.Finset.Lattice.Fold
-public import Mathlib.Topology.ContinuousMap.Basic
-public import Mathlib.Topology.Order
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.FixedPoints
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
-public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_wayBelow
-public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3_isContinuousLattice
-public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
-public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_isOpen
-public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_scottOpen
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_le_finset_sup_step
+public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_scottOpen
+public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_isOpen
+public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_finset_sup
+public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3_isContinuousLattice
+public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_wayBelow
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapPointwiseTopology
+public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
+public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
+public import DomainTheory.ContinuousLattice.WayBelow.scottOpen_wayBelow
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele_trans
+public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section
 

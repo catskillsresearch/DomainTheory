@@ -1,10 +1,11 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization
-public import Mathlib.Order.ScottContinuity
-public import Mathlib.Topology.Order.ScottTopology
-public import DomainTheory.ContinuousLattice.ScottMaps.Basic
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
+public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
+public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

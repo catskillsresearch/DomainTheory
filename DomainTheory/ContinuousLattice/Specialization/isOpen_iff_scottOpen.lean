@@ -1,12 +1,10 @@
 module
 
-public import DomainTheory.ContinuousLattice.WayBelow
-public import Mathlib.Topology.Inseparable
-public import Mathlib.Topology.Separation.Basic
-public import Mathlib.Topology.Order.ScottTopology
-public import Mathlib.Order.DirSupClosed
-public import DomainTheory.ContinuousLattice.Specialization.Basic
+public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.Specialization.ScottOpen_iff_dirSupInacc
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

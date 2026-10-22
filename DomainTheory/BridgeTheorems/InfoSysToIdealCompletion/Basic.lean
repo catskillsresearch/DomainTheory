@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.domainOrderIso
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
@@ -8,7 +9,6 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproxi
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.idealCarrier
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.ofIdeal
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.domainOrderIso
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.isFinite_bot
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_of_le

@@ -1,9 +1,12 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closures_directed
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
+public import Mathlib.Order.Directed
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
 
 @[expose] public section
 

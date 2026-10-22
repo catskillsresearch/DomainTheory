@@ -1,8 +1,8 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.Basic
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
+public import DomainTheory.ContinuousLattice.Specialization.scottTopology_t0Space
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

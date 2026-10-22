@@ -1,16 +1,19 @@
 module
 
+public import DomainTheory.BridgeTheorems.toFilter_ofFilter
+public import DomainTheory.BridgeTheorems.ofFilter_toFilter
+public import DomainTheory.BridgeTheorems.mem_basicOpen_singleton
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.BasicInst22
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.subset_closure
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
-public import DomainTheory.BridgeTheorems.mem_basicOpen_singleton
 public import DomainTheory.BridgeTheorems.toNeighborhoodSystem
 public import DomainTheory.BridgeTheorems.toFilter
 public import DomainTheory.BridgeTheorems.ofFilter
-public import DomainTheory.BridgeTheorems.toFilter_ofFilter
-public import DomainTheory.BridgeTheorems.ofFilter_toFilter
 
 @[expose] public section
 

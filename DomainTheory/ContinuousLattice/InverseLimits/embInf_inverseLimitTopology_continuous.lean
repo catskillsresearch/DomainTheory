@@ -1,11 +1,12 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.Basic
+public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_scottTopology_eq_induced_pi
+public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+public import Mathlib.Data.Set.Basic
 
-public import DomainTheory.ContinuousLattice.Theorem212.IsContinuousLatticeu2eorderIso
 @[expose] public section
 
 

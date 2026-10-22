@@ -1,5 +1,7 @@
 module
 
+public import DomainTheory.BridgeTheorems.toInfoSys
+public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys.domainOrderIso
 public import Mathlib.Data.Finset.Fold
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
@@ -7,10 +9,8 @@ public import DomainTheory.InformationSystems.InformationSystems.InfoSys
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 public import DomainTheory.BridgeTheorems.NbhdBasis
 public import DomainTheory.BridgeTheorems.interOf
-public import DomainTheory.BridgeTheorems.toInfoSys
 public import DomainTheory.BridgeTheorems.toElement
 public import DomainTheory.BridgeTheorems.ofElement
-public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys.domainOrderIso
 public import DomainTheory.BridgeTheorems.interOf_empty
 public import DomainTheory.BridgeTheorems.interOf_insert
 public import DomainTheory.BridgeTheorems.nbhd_subset_master

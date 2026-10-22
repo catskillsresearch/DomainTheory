@@ -1,9 +1,10 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.finiteApproximants
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
 
 @[expose] public section
 

@@ -1,10 +1,12 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
+public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.subset_closure
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
 
 @[expose] public section
 

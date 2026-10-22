@@ -1,11 +1,11 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization
-public import Mathlib.Order.ScottContinuity
-public import Mathlib.Topology.Order.ScottTopology
-public import DomainTheory.ContinuousLattice.ScottMaps.Basic
-public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.ScottMaps.meet_preservesDirectedSup
+public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

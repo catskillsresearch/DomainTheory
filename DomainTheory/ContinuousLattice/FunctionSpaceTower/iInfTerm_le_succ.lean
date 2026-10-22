@@ -1,22 +1,11 @@
 module
 
-public import DomainTheory.ContinuousLattice.InverseLimits
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Topology.Homeomorph.Defs
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.CLat
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerType
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.BasicInst5
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerType_zero
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.BasicInst8
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerToMap_coe
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.conjMap_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerProj_succ_retr_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.DInf
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.incl_projInf_le_projInf_succ
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf_succ
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf_monotone
+public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
+public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 
 @[expose] public section
 

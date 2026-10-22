@@ -22,14 +22,6 @@
 
 @import "scottPrincipalUpSet.lean"
 
-**ContinuousLattice/MilnerCorrection/Basic.lean**
-
-@import "Basic.lean"
-
-**ContinuousLattice/MilnerCorrection.lean**
-
-@import "../MilnerCorrection.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "CoarserThanScottTopology.ai_lean_to_english" {code_block=false}
@@ -39,10 +31,6 @@
 @import "scottOpen_of_coarserThanScott.ai_lean_to_english" {code_block=false}
 
 @import "scottPrincipalUpSet.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
-
-@import "../MilnerCorrection.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

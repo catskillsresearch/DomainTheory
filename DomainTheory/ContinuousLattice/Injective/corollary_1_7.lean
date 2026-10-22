@@ -1,12 +1,10 @@
 module
 
-public import Mathlib.Topology.ContinuousMap.T0Sierpinski
-public import Mathlib.Topology.ContinuousMap.Basic
-public import Mathlib.Topology.Sets.Opens
-public import DomainTheory.ContinuousLattice.Injective.Basic
-public import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2eof_retract
-public import DomainTheory.ContinuousLattice.Injective.isInjectiveSpace_sierpinski_power
-public import DomainTheory.ContinuousLattice.Injective.proposition_1_5
+public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
+public import Mathlib.Topology.Separation.Basic
+import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2eof_retract
+import DomainTheory.ContinuousLattice.Injective.isInjectiveSpace_sierpinski_power
+import DomainTheory.ContinuousLattice.Injective.proposition_1_5
 
 @[expose] public section
 

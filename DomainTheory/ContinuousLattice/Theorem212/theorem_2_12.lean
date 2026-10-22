@@ -1,9 +1,13 @@
 module
-
-public import DomainTheory.ContinuousLattice.Constructions
-public import DomainTheory.ContinuousLattice.FunctionSpaces
-public import DomainTheory.ContinuousLattice.Theorem212.Basic
 public import DomainTheory.ContinuousLattice.Theorem212.theorem_2_12_backward
+public import DomainTheory.ContinuousLattice.Constructions.theorem_2_12_forward
+public import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2eof_retract
+public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
+
 
 @[expose] public section
 

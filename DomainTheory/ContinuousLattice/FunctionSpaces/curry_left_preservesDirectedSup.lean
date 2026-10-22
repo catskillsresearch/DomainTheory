@@ -1,26 +1,11 @@
 module
 
-public import DomainTheory.ContinuousLattice.ScottMaps
-public import Mathlib.Data.Finset.Lattice.Fold
-public import Mathlib.Topology.ContinuousMap.Basic
-public import Mathlib.Topology.Order
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.FixedPoints
+public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-public import DomainTheory.ContinuousLattice.FunctionSpaces.comp
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapRetraction
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapProjection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst28
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst30
-public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
-public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.comp_apply
-public import DomainTheory.ContinuousLattice.FunctionSpaces.const_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_image_prod_mk_right
+public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

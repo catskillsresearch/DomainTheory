@@ -1,13 +1,13 @@
 module
 
-public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.nonempty_finiteApproximants
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.directed_finiteApproximants
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.isLowerSet_finiteApproximants
+public import Mathlib.Order.Hom.Basic
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
 
 @[expose] public section
 

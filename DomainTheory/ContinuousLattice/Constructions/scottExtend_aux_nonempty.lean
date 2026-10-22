@@ -1,10 +1,8 @@
 module
+public import Mathlib.Order.ConditionallyCompleteLattice.Basic
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
 
-public import DomainTheory.ContinuousLattice.MilnerCorrection
-public import DomainTheory.ContinuousLattice.ScottMaps
-public import DomainTheory.ContinuousLattice.Injective
-public import Mathlib.Order.Preorder.Finite
-public import DomainTheory.ContinuousLattice.Constructions.Basic
 
 @[expose] public section
 

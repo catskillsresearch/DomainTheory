@@ -1,12 +1,19 @@
 module
-
-public import DomainTheory.ContinuousLattice.ScottMaps
+public import Mathlib.Order.BourbakiWitt
+public import Mathlib.Order.ConditionallyCompleteLattice.Basic
+public import Mathlib.Order.CompleteLattice.Basic
+public import Mathlib.Order.UpperLower.Basic
+public import Mathlib.Order.Directed
+public import Mathlib.Topology.Inseparable
+public import Mathlib.Topology.Separation.Basic
+public import Mathlib.Topology.Order.ScottTopology
+public import Mathlib.Order.DirSupClosed
+public import Mathlib.Order.ScottContinuity
 public import Mathlib.Data.Finset.Lattice.Fold
 public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Order
-public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.FixedPoints
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
+
 
 @[expose] public section
 

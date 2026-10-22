@@ -1,10 +1,12 @@
 module
-
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.pairElements
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
+
 
 @[expose] public section
 

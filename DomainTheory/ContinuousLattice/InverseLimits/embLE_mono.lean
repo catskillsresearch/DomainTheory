@@ -1,8 +1,10 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.Basic
+public import DomainTheory.ContinuousLattice.InverseLimits.embLE
+public import DomainTheory.ContinuousLattice.InverseLimits.embLE_succ
+public import DomainTheory.ContinuousLattice.InverseLimits.embLE_self
+public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

@@ -1,12 +1,16 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.right_bot_mem_inrMap_toElement
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.lftFinset_singleton_right
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElementRht
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset_singleton_right
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_iii
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.lftFinset_singleton_right
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.right_bot_mem_inrMap_toElement
 
 @[expose] public section
 

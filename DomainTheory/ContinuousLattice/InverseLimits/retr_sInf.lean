@@ -1,9 +1,8 @@
 module
-
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
 public import DomainTheory.ContinuousLattice.InverseLimits.projection_galoisConnection
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitPartialOrder
+public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import Mathlib.Data.Set.Basic
+
 
 @[expose] public section
 

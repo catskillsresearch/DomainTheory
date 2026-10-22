@@ -1,11 +1,5 @@
 module
 
-public import DomainTheory.ContinuousLattice.InverseLimits
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Topology.Homeomorph.Defs
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.CLat
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerType
-public import DomainTheory.ContinuousLattice.FunctionSpaceTower.BasicInst5
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.towerType_zero
 
 @[expose] public section

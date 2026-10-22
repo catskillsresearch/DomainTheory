@@ -1,7 +1,7 @@
 module
+public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
+public import Mathlib.Data.Set.Basic
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
 
 @[expose] public section
 

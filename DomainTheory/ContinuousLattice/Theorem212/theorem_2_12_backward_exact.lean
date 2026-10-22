@@ -1,10 +1,16 @@
 module
-
-public import DomainTheory.ContinuousLattice.Constructions
-public import DomainTheory.ContinuousLattice.FunctionSpaces
-public import DomainTheory.ContinuousLattice.Theorem212.Basic
-public import DomainTheory.ContinuousLattice.Theorem212.theorem_2_12_backward
 public import DomainTheory.ContinuousLattice.Theorem212.IsContinuousLatticeu2eorderIso
+public import DomainTheory.ContinuousLattice.Theorem212.theorem_2_12_backward
+public import DomainTheory.ContinuousLattice.Theorem212.orderIsoScottHomeomorph
+public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
+public import DomainTheory.ContinuousLattice.Specialization.specializationLe_scott_iff
+public import DomainTheory.ContinuousLattice.Specialization.SpecializationLeu2emap
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
+public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
+
 
 @[expose] public section
 

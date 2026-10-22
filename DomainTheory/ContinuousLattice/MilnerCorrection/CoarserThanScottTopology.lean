@@ -1,6 +1,8 @@
 module
 
-public import DomainTheory.ContinuousLattice.Specialization
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

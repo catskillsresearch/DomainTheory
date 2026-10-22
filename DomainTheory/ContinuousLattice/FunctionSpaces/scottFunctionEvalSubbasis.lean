@@ -1,18 +1,18 @@
 module
-
-public import DomainTheory.ContinuousLattice.ScottMaps
+public import Mathlib.Topology.ContinuousMap.Defs
+public import Mathlib.Order.CompleteLattice.Basic
+public import Mathlib.Order.UpperLower.Basic
+public import Mathlib.Order.Directed
+public import Mathlib.Topology.Inseparable
+public import Mathlib.Topology.Separation.Basic
+public import Mathlib.Topology.Order.ScottTopology
+public import Mathlib.Order.DirSupClosed
+public import Mathlib.Order.ScottContinuity
 public import Mathlib.Data.Finset.Lattice.Fold
 public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Order
-public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.FixedPoints
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
-public import DomainTheory.ContinuousLattice.FunctionSpaces.comp
-public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeRetraction
-public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapRetraction
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMapProjection
+
 
 @[expose] public section
 

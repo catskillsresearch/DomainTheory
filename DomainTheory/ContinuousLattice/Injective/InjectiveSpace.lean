@@ -1,8 +1,8 @@
 module
 
-public import Mathlib.Topology.ContinuousMap.T0Sierpinski
-public import Mathlib.Topology.ContinuousMap.Basic
-public import Mathlib.Topology.Sets.Opens
+public import Mathlib.Topology.ContinuousMap.Defs
+public import Mathlib.Topology.Defs.Induced
+public import Mathlib.Order.CompleteLattice.Basic
 
 @[expose] public section
 

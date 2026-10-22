@@ -1,9 +1,7 @@
 module
+public import Mathlib.Order.CompleteLattice.Defs
 
 
-public import DomainTheory.ContinuousLattice.InverseLimits
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Topology.Homeomorph.Defs
 
 @[expose] public section
 

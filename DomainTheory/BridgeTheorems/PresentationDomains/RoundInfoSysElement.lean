@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.BridgeTheorems.PresentationDomains.IsRoundInfoSysElement
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.BridgeTheorems.InfoSysToNeighborhood
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion
@@ -7,7 +8,6 @@ public import DomainTheory.BridgeTheorems.NeighborhoodToInfoSys
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood
 public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
 public import DomainTheory.BridgeTheorems.PresentationDomains.wayBelowNbhdBasis
-public import DomainTheory.BridgeTheorems.PresentationDomains.IsRoundInfoSysElement
 
 @[expose] public section
 

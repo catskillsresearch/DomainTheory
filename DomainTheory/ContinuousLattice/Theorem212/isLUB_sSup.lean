@@ -1,9 +1,8 @@
 module
 
-public import DomainTheory.ContinuousLattice.Constructions
-public import DomainTheory.ContinuousLattice.FunctionSpaces
-public import DomainTheory.ContinuousLattice.Theorem212.IdemFix
 public import DomainTheory.ContinuousLattice.Theorem212.supSet
+public import Mathlib.Order.BourbakiWitt
+public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section
 

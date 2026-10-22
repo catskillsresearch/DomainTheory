@@ -1,13 +1,15 @@
 module
-
+public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_ii
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.subset_funion_right
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
-public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
 
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_ii
+
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems

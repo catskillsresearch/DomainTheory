@@ -1,9 +1,11 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.Basic
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf_family_directed
+public import DomainTheory.ContinuousLattice.InverseLimits.iComp_incl_le
+public import DomainTheory.ContinuousLattice.InverseLimits.iComp_self
+public import DomainTheory.ContinuousLattice.InverseLimits.coe_sSup_of_directed
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

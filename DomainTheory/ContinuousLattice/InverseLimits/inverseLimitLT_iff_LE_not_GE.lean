@@ -1,10 +1,7 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLT
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

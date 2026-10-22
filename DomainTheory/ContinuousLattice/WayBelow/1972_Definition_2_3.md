@@ -10,10 +10,6 @@
 
 @import "ContinuousLattice.lean"
 
-**ContinuousLattice/WayBelow/Basic.lean**
-
-@import "Basic.lean"
-
 **ContinuousLattice/WayBelow/IsContinuousLatticeu2esSup_wayBelow.lean**
 
 @import "IsContinuousLatticeu2esSup_wayBelow.lean"
@@ -25,8 +21,6 @@
 ## AI: AI-Lean to AI-English
 
 @import "ContinuousLattice.ai_lean_to_english" {code_block=false}
-
-@import "Basic.ai_lean_to_english" {code_block=false}
 
 @import "IsContinuousLatticeu2esSup_wayBelow.ai_lean_to_english" {code_block=false}
 

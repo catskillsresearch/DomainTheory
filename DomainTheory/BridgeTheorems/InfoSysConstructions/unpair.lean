@@ -1,10 +1,13 @@
 module
-
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.sndMap
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.fstMap
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
+
 
 @[expose] public section
 

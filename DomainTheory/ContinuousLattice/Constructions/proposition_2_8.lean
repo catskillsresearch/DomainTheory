@@ -1,11 +1,13 @@
 module
 
-public import DomainTheory.ContinuousLattice.MilnerCorrection
-public import DomainTheory.ContinuousLattice.ScottMaps
-public import DomainTheory.ContinuousLattice.Injective
-public import Mathlib.Order.Preorder.Finite
-public import DomainTheory.ContinuousLattice.Constructions.Basic
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.Constructions.directedOn_finite_sSup_mem
+public import Mathlib.Data.Fintype.EquivFin
+public import Mathlib.Basic.Finite.Defs
+public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_self_iff_scottOpen_Ici
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

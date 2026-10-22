@@ -1,8 +1,10 @@
 module
+public import DomainTheory.ContinuousLattice.Theorem212.scottOpen_preimage_orderIso
+public import Mathlib.Order.BourbakiWitt
+public import DomainTheory.ContinuousLattice.WayBelow.Basic.notation5
+public import Mathlib.Topology.Defs.Basic
+public import Mathlib.Data.Set.Basic
 
-public import DomainTheory.ContinuousLattice.Constructions
-public import DomainTheory.ContinuousLattice.FunctionSpaces
-public import DomainTheory.ContinuousLattice.Theorem212.Basic
 
 @[expose] public section
 

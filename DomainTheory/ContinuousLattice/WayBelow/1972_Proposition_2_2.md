@@ -10,10 +10,6 @@
 
 @import "WayBelow.lean"
 
-**ContinuousLattice/WayBelow/Basic/notation5.lean**
-
-@import "Basic/notation5.lean"
-
 **ContinuousLattice/WayBelow/bot_wayBelow.lean**
 
 @import "bot_wayBelow.lean"
@@ -49,8 +45,6 @@
 ## AI: AI-Lean to AI-English
 
 @import "WayBelow.ai_lean_to_english" {code_block=false}
-
-@import "Basic/notation5.ai_lean_to_english" {code_block=false}
 
 @import "bot_wayBelow.ai_lean_to_english" {code_block=false}
 

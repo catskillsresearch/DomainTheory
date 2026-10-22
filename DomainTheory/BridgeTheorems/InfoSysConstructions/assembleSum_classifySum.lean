@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.classifySum
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
@@ -7,7 +8,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.assembleSum
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.exists_assembleSum_eq
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.classifySum
 
 @[expose] public section
 

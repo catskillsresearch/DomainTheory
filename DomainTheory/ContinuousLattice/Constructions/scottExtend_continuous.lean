@@ -1,12 +1,15 @@
 module
 
-public import DomainTheory.ContinuousLattice.MilnerCorrection
-public import DomainTheory.ContinuousLattice.ScottMaps
-public import DomainTheory.ContinuousLattice.Injective
-public import Mathlib.Order.Preorder.Finite
-public import DomainTheory.ContinuousLattice.Constructions.Basic
-public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_nonempty
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
+public import DomainTheory.ContinuousLattice.Constructions.scottExtend
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_directed
+public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_nonempty
+public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
+public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
+public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
+public import Mathlib.Topology.Defs.Basic
 
 @[expose] public section
 

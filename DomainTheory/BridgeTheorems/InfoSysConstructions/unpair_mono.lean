@@ -1,11 +1,14 @@
 module
-
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement_mono
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.Basic
+
 
 @[expose] public section
 

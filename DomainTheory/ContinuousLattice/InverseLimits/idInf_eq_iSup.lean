@@ -1,9 +1,14 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.Basic
+public import DomainTheory.ContinuousLattice.InverseLimits.embInf
+public import DomainTheory.ContinuousLattice.InverseLimits.projInf
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_eq_iSup
+public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
+public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst30
+public import DomainTheory.ContinuousLattice.FunctionSpaces.idMap
+public import DomainTheory.ContinuousLattice.FunctionSpaces.comp
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

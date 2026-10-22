@@ -1,10 +1,16 @@
 module
-
-public import DomainTheory.ContinuousLattice.Constructions
-public import DomainTheory.ContinuousLattice.FunctionSpaces
-public import DomainTheory.ContinuousLattice.Theorem212.Basic
-public import DomainTheory.ContinuousLattice.Theorem212.idemFix_isContinuousLattice
 public import DomainTheory.ContinuousLattice.Theorem212.idemFix_scottTopology
+public import DomainTheory.ContinuousLattice.Theorem212.idemFix_isContinuousLattice
+public import DomainTheory.ContinuousLattice.Constructions.sierpinskiPower_isContinuousLattice
+public import DomainTheory.ContinuousLattice.Constructions.scottTopology_sierpinskiPower
+public import DomainTheory.ContinuousLattice.Injective.corollary_1_6
+public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
+public import DomainTheory.ContinuousLattice.ScottMaps.continuous_preservesDirectedSup
+public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Topology.Defs.Basic
+
 
 @[expose] public section
 

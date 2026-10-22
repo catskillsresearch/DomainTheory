@@ -1,13 +1,9 @@
 module
-
-public import DomainTheory.ContinuousLattice.ScottMaps
-public import Mathlib.Data.Finset.Lattice.Fold
-public import Mathlib.Topology.ContinuousMap.Basic
-public import Mathlib.Topology.Order
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.FixedPoints
-public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_isOpen
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
+public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapPointwiseTopology
+public import Mathlib.Topology.Defs.Basic
+
 
 @[expose] public section
 

@@ -1,12 +1,8 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.Compatible
-public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitPartialOrder
-public import DomainTheory.ContinuousLattice.InverseLimits.retr_sInf
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitSInfCoe
+public import DomainTheory.ContinuousLattice.InverseLimits.retr_sInf
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

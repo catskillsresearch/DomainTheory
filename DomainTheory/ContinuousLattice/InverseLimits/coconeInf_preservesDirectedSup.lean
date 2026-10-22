@@ -1,9 +1,12 @@
 module
 
-public import DomainTheory.ContinuousLattice.Theorem212
-public import Mathlib.Order.GaloisConnection.Basic
-public import DomainTheory.ContinuousLattice.InverseLimits.Basic
+public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
+public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf_apply
+public import DomainTheory.ContinuousLattice.InverseLimits.eval_preservesDirectedSup
+public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
+public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
