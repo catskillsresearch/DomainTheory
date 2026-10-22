@@ -1,8 +1,3 @@
-/-ai
-A catamorphism relation out of the master neighbourhood forces the target to be the master neighbourhood of the codomain.
-
-After generalizing the master neighbourhood, the master clause gives the equality, while the leaf and node clauses are impossible because the master is neither a zero embedding nor a paired embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

@@ -1,8 +1,3 @@
-/-ai
-The directed join of the truncations is the identity map on the infinite iterate.
-
-The maps agree on an element once they contain the same neighbourhoods. If a neighbourhood of the descent is witnessed at stage n, the n-th truncation lies below the element: rewritten as the sequence of its components, the truncation keeps those components before n and is bottom afterwards, so the neighbourhood belongs to the element. Conversely, if the neighbourhood belongs to the element, the cofinite-master condition supplies an index N beyond which every fibre is the master, and every component lies in the corresponding fibre. At stage N the truncation contains the neighbourhood, using the component before N and, from N onward, the bottom, which contains the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

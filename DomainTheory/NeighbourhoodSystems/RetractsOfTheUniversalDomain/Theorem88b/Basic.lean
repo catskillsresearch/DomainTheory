@@ -1,30 +1,3 @@
-/-ai
-The re-pointed enumeration e is the neighbourhood map of the re-pointed presentation, so its value at 0 is the master neighbourhood.
-
-At depth 0 the sign-sequence accumulator is the pair of empty lists.
-
-This is the base clause of the recursion.
-
-If the sign at n is true, the accumulator at depth n+1 appends n to the positive list and leaves the negative list unchanged.
-
-Unfold the successor clause and simplify by the sign.
-
-If the sign at n is false, the accumulator at depth n+1 appends n to the negative list and leaves the positive list unchanged.
-
-Unfold the successor clause and simplify by the sign.
-
-The positive part of a D-atom on an appended list is the intersection of the positive parts of the two lists.
-
-Induct on the first list. The empty list has full positive part. A cons rewrites both sides by the cons clause, applies the inductive hypothesis, and reassociates the intersection.
-
-The set of indices excluded by an appended negative list is the intersection of the sets excluded by the two lists.
-
-Extensionality and the append form of a universal quantifier over list membership give the equivalence.
-
-The generated atom of the index sets of e, taken against the universe along a sign sequence, equals the D-atom of the re-pointed presentation on the positive and negative lists accumulated from that sequence.
-
-Induct on the depth. At depth 0 both sides are the full set of indices. At a successor, split on the sign. If it is true, the generated atom meets the index set of the current index, the positive list gains that index, and the positive part of a singleton is that index set, so reassociation matches the D-atom. If it is false, the generated atom meets the complement of that index set, the negative list gains the index, and the negative part of a singleton is that complement, so reassociation matches again.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable
@@ -39,28 +12,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 
 @[expose] public section
 
-/-!
-# Theorem 8.8(b), Part 6 — the effective back-and-forth construction
-
-`Theorem88.lean`/`Theorem88a.lean` build Scott's back-and-forth construction generically over an
-abstract splitting operation `split` satisfying `SplitSpec`; Part 5 (`DAtomDecidable.lean`) shows
-`D`-atom emptiness is recursively decidable for any `ComputablePresentation P` of `D`. This file
-assembles the **effective** instantiation: a computable splitting operation `splitEff`, built from
-`DAtom_recDecidable` (deciding which side of a `D`-side split is non-empty) and `SplitU.lean`'s
-`splitULeft`/`splitURight` (deterministically splitting the matching `U`-side neighbourhood).
-
-## Part 6b: re-pointing `P`'s enumeration at index `0`
-
-`Theorem88a.lean`'s apparatus (`Yidx`, `DprimeU`, `domainIso`) is stated for an arbitrary
-enumeration `e : ℕ → Set α` with `e 0 = D.master` (Scott's convention `X₀ = Δ`, needed for
-`Yseq_zero_eq_master`). An arbitrary `ComputablePresentation P` need not have `P.masterIdx = 0`, so
-we re-point it: `eIdx` swaps `0` and `P.masterIdx` (a primitive-recursive involution), and
-`P.reindexInvolutive eIdx …` (Definition71.lean) transports the *entire* computable presentation
-along this swap in one step — giving a new presentation `P₀` with `P₀.X 0 = D.master` for free,
-with no need to redo any of Part 5's `DAtom` apparatus (it applies to `P₀` exactly as it did to
-`P`).
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
@@ -70,16 +21,6 @@ variable {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
 
 /-- **`e := P₀.X`, Scott's re-enumeration with `e 0 = D.master`.** -/
 noncomputable abbrev e : ℕ → Set α := (P0 P).X
-
-/-! ## Part 6c: `genAtom (idxSet e)` emptiness is decidable
-
-`Theorem88.lean`'s `genAtom` tracks the depth-`n` atom for a sign sequence `δ` as a *set*, built by
-an `if δ i then Z i else M \ Z i` intersection at each step. `DAtomDecidable.lean`'s `DAtom`, by
-contrast, tracks the *same kind* of atom (for `Z := idxSet Q.X`, `M := Set.univ`) as two explicit
-`List ℕ` accumulators (`pos`/`neg`) — the very data a primitive-recursive realization needs to
-carry. `posnegList` extracts these accumulators from `δ` by mirroring `genAtom`'s own recursion
-step-for-step, so `genAtom_eq_DAtom` (below) is a one-line induction, not a `List.range`/`filter`
-reindexing exercise. -/
 
 
 @[simp] theorem posnegList_zero (δ : ℕ → Bool) : posnegList δ 0 = ([], []) := rfl

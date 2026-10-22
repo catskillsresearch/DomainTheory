@@ -1,8 +1,3 @@
-/-ai
-The union of two enumerated neighbourhoods of V equals the enumerated neighbourhood of their union index.
-
-The union index is a witness, by the specification of that index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

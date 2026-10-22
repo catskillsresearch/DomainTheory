@@ -1,0 +1,15 @@
+A nonempty recursively enumerable set of natural numbers is the range of a primitive-recursive function.
+
+From a decider of a relation projecting onto the set and a known element of the set, send each code to the second component of the code when the decider accepts and to the known element otherwise. This function is primitive recursive. Every value lies in the set: the fallback is the known element, and an accepted code is a witness of the projected relation at its second component. An element of the set has a witnessing code, and at the pairing of that witness with the element the decider accepts, so the function returns the element.
+
+The running intersection equals the enumerated function at zero, and at a successor it equals the presentation's intersection of the previous value with the next enumerated index.
+
+Both identities are the recursion equations of the definition.
+
+Whenever the enumerated function is primitive recursive, so is the running intersection.
+
+The step that intersects the stored recursive value with the enumerated function at one more than the counter is primitive recursive, by composing the presentation's intersection with the projections and with the enumerated function after successor. Primitive recursion from the constant value at zero, reindexed by pairing a constant zero with the identity, equals the running intersection by those recursion equations.
+
+Every computable element is the union of the principal elements of a decreasing primitive-recursive chain of neighbourhoods.
+
+The index set is recursively enumerable and contains an index of the master, because the element contains the master. Enumerate the index set by a primitive-recursive function, and take its running intersection, which is primitive recursive. Any two enumerated neighbourhoods in the element have a neighbourhood contained in their intersection, by closure of the element under intersection and surjectivity. By induction, every running-intersection neighbourhood lies in the element, and the successor neighbourhood equals the intersection of the current one with the next enumerated neighbourhood. The chain therefore decreases, and each term is contained in the corresponding enumerated neighbourhood. A neighbourhood lies in the element exactly when it contains one of these: surjectivity and the enumeration supply a stage whose enumerated neighbourhood equals it and whose running intersection is contained in it, while the converse is upward closure.

@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood system of the image of a strict domain under that endofunctor is the three-way sum of the unit system with two copies of the original system.
-
-The equality is the defining equation of the object action.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

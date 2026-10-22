@@ -1,8 +1,3 @@
-/-ai
-The set of function tokens lying in the relation of an approximable map is deductively closed in the function space.
-
-An entailment of a token from such a set supplies a subset of related tokens, input entailments, and an output entailment. The input union of that subset is consistent by the input entailments and Proposition 2.3(ii). The union lemma gives that the map relates the input union to the output union, and monotonicity, first along the input entailments and then along the output entailment, shows that the map relates the input of the entailed token to its output.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

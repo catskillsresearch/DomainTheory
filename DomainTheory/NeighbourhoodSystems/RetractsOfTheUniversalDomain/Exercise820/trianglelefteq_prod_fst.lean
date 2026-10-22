@@ -1,8 +1,3 @@
-/-ai
-Any neighbourhood system A is a retract of the product of A with B, by the embedding that pairs an element with bottom and the first projection.
-
-Those two maps form a projection pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

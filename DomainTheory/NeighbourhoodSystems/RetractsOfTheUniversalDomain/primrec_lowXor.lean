@@ -1,8 +1,3 @@
-/-ai
-The function sending a paired natural number to the low-bit exclusive disjunction of its two components is primitive recursive.
-
-Reduce each component modulo 2, add the results, and reduce modulo 2. The composite agrees with the definition by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

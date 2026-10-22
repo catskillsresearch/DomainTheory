@@ -1,8 +1,3 @@
-/-ai
-Under the characteristic and consistency hypotheses, if an accumulator is diagonally fixed, then the left fold of the gated step over any list, started at that accumulator, is diagonally fixed.
-
-Induct on the list. The empty fold leaves the accumulator unchanged. For a cons cell, rewrite the fold by the cons equation and apply the inductive hypothesis to the one-step result, which remains diagonally fixed.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic

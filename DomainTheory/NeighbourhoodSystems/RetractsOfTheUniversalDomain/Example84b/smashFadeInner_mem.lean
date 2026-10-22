@@ -1,8 +1,3 @@
-/-ai
-Z belongs to the inner fade applied to z if and only if Z is a product neighbourhood and either Z is the product master or the second coordinate of z is not bottom and z contains Z.
-
-Unfold the composite, the pairing, the second projection, and the identity, then apply the closed form of fade and the characterization of check containing {0}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

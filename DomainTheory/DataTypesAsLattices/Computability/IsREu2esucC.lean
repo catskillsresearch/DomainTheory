@@ -1,8 +1,3 @@
-/-ai
-The successor combinator, the graph of the successor operation on Pω, is recursively enumerable.
-
-The relation which holds of n and m when m is nonzero and bit m − 1 of n is set is primitive recursive. It is equivalent to membership of m in the successor of the finite set coded by n: the predecessor of a positive m is that witness, and the successor of a bit of n is positive and has that bit as its predecessor. The graph of successor is therefore recursively enumerable, and it agrees with the successor combinator.
-ai-/
 module
 
 public import Mathlib.Computability.RE

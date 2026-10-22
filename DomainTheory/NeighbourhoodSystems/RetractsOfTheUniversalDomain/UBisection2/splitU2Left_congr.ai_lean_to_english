@@ -1,0 +1,3 @@
+If two indices present the same neighbourhood of U, their left-hand splits present the same set.
+
+Rewrite each split by its set description, replace the common neighbourhood, and use that the decoded midpoint depends only on that neighbourhood.

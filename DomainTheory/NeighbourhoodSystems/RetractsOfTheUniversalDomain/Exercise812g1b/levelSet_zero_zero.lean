@@ -1,8 +1,3 @@
-/-ai
-The level set of height 0 and mask 0 is empty.
-
-No bit of the zero mask is set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

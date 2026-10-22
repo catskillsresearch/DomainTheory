@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the rational-interval neighbourhood system exactly when it is a rational-interval neighbourhood.
-
-The two sides are definitionally identical.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

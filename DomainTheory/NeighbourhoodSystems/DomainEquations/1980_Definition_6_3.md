@@ -1,51 +1,61 @@
 # Definition 6.3
 
-**DEFINITION 6.3.** A *functor* on a category (into itself) associates with every domain $X$ in the category another domain $T(X)$ and to every map
+## Human-English
 
-$$
-f : X \to Y
-$$
+@import "1980_Definition_6_3.english" {code_block=false}
 
-another map
+## AI: Human-English to AI-Lean
 
-$$
-T(f) : T(X) \to T(Y)
-$$
-in such a way that identity maps and compositions are preserved:
+**NeighbourhoodSystems/DomainEquations/Definition63Inst2.lean**
 
-$$
-T(I_X) = I_{T(X)}, \text{ and}
-$$
+@import "Definition63Inst2.lean"
 
-$$
-T(g \circ f) = T(g) \circ T(f),
-$$
+**NeighbourhoodSystems/DomainEquations/comp.lean**
 
-whenever $f : X \to Y$ and $g : Y \to Z$. $\square$
+@import "comp.lean"
 
-In the example from 6.1 we have not checked how the special **T** is a functor. The hint is that whenever $f : X \to Y$, then there is a map
+**NeighbourhoodSystems/DomainEquations/id.lean**
 
-$$
-f \times f : X \times X \to Y \times Y.
-$$
+@import "id.lean"
 
-But there is also a map
+**NeighbourhoodSystems/DomainEquations/Definition63.lean**
 
-$$
-I_D + f \times f : D + (X \times X) \to D + (Y \times Y)
-$$
+@import "Definition63.lean"
 
-and this suggests the definition of $T(f)$. The details are left to the exercises. Note that the map $T(f)$ just suggested is always strict, so **T** is a functor also for the category of strict maps.
+**NeighbourhoodSystems/DomainEquations/tStr.lean**
 
-One good reason for a little of the category-theoretic language is that the next definition becomes very neat indeed.
+@import "tStr.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/DomainEquations/strHom.lean**
 
-- [NeighbourhoodSystems/DomainEquations/Definition63Inst2.lean](Definition63Inst2.lean)
-- [NeighbourhoodSystems/DomainEquations/comp.lean](comp.lean)
-- [NeighbourhoodSystems/DomainEquations/id.lean](id.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition63.lean](Definition63.lean)
-- [NeighbourhoodSystems/DomainEquations/tStr.lean](tStr.lean)
-- [NeighbourhoodSystems/DomainEquations/strHom.lean](strHom.lean)
-- [NeighbourhoodSystems/DomainEquations/str_comp_desc.lean](str_comp_desc.lean)
-- [NeighbourhoodSystems/DomainEquations/lambek.lean](lambek.lean)
+@import "strHom.lean"
+
+**NeighbourhoodSystems/DomainEquations/str_comp_desc.lean**
+
+@import "str_comp_desc.lean"
+
+**NeighbourhoodSystems/DomainEquations/lambek.lean**
+
+@import "lambek.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Definition63Inst2.ai_lean_to_english" {code_block=false}
+
+@import "comp.ai_lean_to_english" {code_block=false}
+
+@import "id.ai_lean_to_english" {code_block=false}
+
+@import "Definition63.ai_lean_to_english" {code_block=false}
+
+@import "tStr.ai_lean_to_english" {code_block=false}
+
+@import "strHom.ai_lean_to_english" {code_block=false}
+
+@import "str_comp_desc.ai_lean_to_english" {code_block=false}
+
+@import "lambek.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Definition_6_3.ai_english_concordance" {code_block=false}

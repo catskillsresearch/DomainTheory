@@ -1,8 +1,3 @@
-/-ai
-The relation of the approximable map a is Scott's relation aRel.
-
-This is the relation supplied in the definition of a.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

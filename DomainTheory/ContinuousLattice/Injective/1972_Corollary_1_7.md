@@ -1,9 +1,19 @@
 # Corollary 1.7
 
-**1.7 Corollary.** A space is injective iff it is a retract of every space of which it is a subspace.
+## Human-English
 
-**Proof:** As in the proof of 1.6, this property is obvious for injective spaces. But in view of 1.5 every such space is a retract of a power of $\mathbb{O}$ and hence is injective. $\square$
+@import "corollary_1_7.english" {code_block=false}
 
-**Lean 4**
+## AI: Human-English to AI-Lean
 
-- [ContinuousLattice/Injective/corollary_1_7.lean](corollary_1_7.lean)
+**ContinuousLattice/Injective/corollary_1_7.lean**
+
+@import "corollary_1_7.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "corollary_1_7.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "corollary_1_7.ai_english_concordance" {code_block=false}

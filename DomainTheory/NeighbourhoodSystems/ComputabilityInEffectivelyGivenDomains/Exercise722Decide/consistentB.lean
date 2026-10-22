@@ -1,6 +1,3 @@
-/-ai
-consistentB decides whether the languages of two expressions have nonempty intersection. On a pair of expressions it returns the negation of the emptiness decision for their intersection expression.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

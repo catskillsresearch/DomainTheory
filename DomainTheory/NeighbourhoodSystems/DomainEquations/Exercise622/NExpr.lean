@@ -1,6 +1,3 @@
-/-ai
-The vertical-naturals expression sends a domain X to the coalesced sum of the two-point domain with X, the right-hand side of N congruent to {{0}, {0, Λ}} ⊕ N.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

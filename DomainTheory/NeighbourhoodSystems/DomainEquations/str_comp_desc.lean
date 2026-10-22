@@ -1,8 +1,3 @@
-/-ai
-The structure map of an initial T-algebra, composed with the descent homomorphism into the algebra given by applying T to the structure map, is the identity on the carrier.
-
-The composite of the structure homomorphism with that descent is a homomorphism from the algebra to itself, and so is the identity homomorphism. Initiality supplies only one such homomorphism, so the two agree, and therefore their underlying morphisms agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

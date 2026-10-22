@@ -1,8 +1,3 @@
-/-ai
-If the Thue–Morse bit at x equals the bit at x + 1, then x is odd. Equal consecutive symbols only straddle a block boundary, and never an even-odd pair.
-
-Split x into even or odd. An even x is twice some m, and the even-indexed bit differs from its successor. An odd x is the required conclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse

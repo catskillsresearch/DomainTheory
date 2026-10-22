@@ -1,8 +1,3 @@
-/-ai
-A finite set of V-tokens entails each of its members.
-
-Induct on the member. Bottom is entailed outright, and a member equal to top is entailed by the membership clause. A left-pair member projects to a member of the left pair projection, which the inductive hypothesis entails, and the left-projection clause lifts that entailment. A right-pair member is treated symmetrically.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

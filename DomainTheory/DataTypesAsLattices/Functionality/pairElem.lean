@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, Table 2 and (2.21). The element pairing of x and y is the two-place sequence of x and y.
-ai-/
 
 module
 

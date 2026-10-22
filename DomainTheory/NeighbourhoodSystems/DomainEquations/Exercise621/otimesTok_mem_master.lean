@@ -1,8 +1,3 @@
-/-ai
-The product neighbourhood of the two masters belongs to the smash product.
-
-It is the master clause of the membership definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

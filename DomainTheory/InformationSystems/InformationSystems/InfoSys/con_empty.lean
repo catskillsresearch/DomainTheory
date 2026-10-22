@@ -1,8 +1,3 @@
-/-ai
-The empty finite set is consistent.
-
-The empty set is contained in the singleton of the least token, that singleton is consistent, and consistency is downward closed.
-ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

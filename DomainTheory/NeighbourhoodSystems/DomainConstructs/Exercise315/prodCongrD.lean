@@ -1,6 +1,3 @@
-/-ai
-Two order isomorphisms of element types induce an order isomorphism of the corresponding product domains, by the product equivalence, the product of the two order isomorphisms, and the inverse product equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

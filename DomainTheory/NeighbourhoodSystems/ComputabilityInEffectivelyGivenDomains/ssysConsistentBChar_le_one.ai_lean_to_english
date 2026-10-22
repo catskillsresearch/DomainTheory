@@ -1,0 +1,3 @@
+The consistency characteristic of any two coded indices is at most 1.
+
+The product of the two activity characteristics is 0 or 1, since each characteristic is at most 1. The selector then returns either 1 or the code consistency characteristic, which is at most 1.

@@ -1,32 +1,49 @@
 # Theorem 2.6
 
-**THEOREM 2.6 (The definability theorem).** *For a $k$-ary continuous function $f$, the following are equivalent:*
+## Human-English
 
-*(i) $f$ is computable;*
+@import "1976_Theorem_2_6.english" {code_block=false}
 
-*(ii) $\lambda x_0 \lambda x_1 \cdots \lambda x_{k-1}.\, f(x_0)(x_1) \cdots (x_{k-1})$ as a set is r.e.;*
+## AI: Human-English to AI-Lean
 
-*(iii) $\lambda x_0 \lambda x_1 \cdots \lambda x_{k-1}.\, f(x_0)(x_1) \cdots (x_{k-1})$ is LAMBDA-definable.*
+**DataTypesAsLattices/Computability/theorem_2_6.lean**
 
-As a hint for the proof we may note that the method of (2.27) shows that all primitive recursive functions $p$ have the corresponding $\hat{p}$ LAMBDA-definable. Next we remark that a nonempty r.e. set is the range of a primitive recursive function; but the range of $p$ is $\hat{p}(\top)$, which is clearly LAMBDA-definable. That any LAMBDA-definable set (graph) is r.e. is obvious from the definition of the language itself. More details are given in the Appendix.
+@import "theorem_2_6.lean"
 
-We may draw some interesting conclusions from the definability theorem. In the first place, we see that the countable collection $\mathbf{RE} \subseteq \mathbf{P}\omega$ of r.e. sets is closed under application and LAMBDA-definability. Indeed it forms a model for the $\lambda$-calculus (axioms $(\alpha)$, $(\beta)$, and $(\xi^*)$ at least) and it also contains the arithmetical combinators. (Clearly there will be many intermediate submodels.) In the second place, we can see now how very easy it is to interpret $\lambda$-calculus in ordinary arithmetical recursion theory by means of quite elementary operations on r.e. sets. Thus the equivalence of $\lambda$-definability with partial recursiveness seems not to be all that good a piece of evidence for Church's Thesis. In his 1936 paper (a footnote on p. 346) Church says about $\lambda$-definability:
+**DataTypesAsLattices/Computability/theorem_2_6_combinatory_zero.lean**
 
-> The fact, however, that two such widely different and (in the opinion of the author) equally natural definitions of effective calculability turn out to be equivalent adds to the strength of the reasons adduced below for believing that they constitute as general a characterization of this notion as is consistent with the usual intuitive understanding of it.
+@import "theorem_2_6_combinatory_zero.lean"
 
-The point never struck the present author as an especially telling one, and the reduction of $\lambda$-calculus to r.e. theory shows that the divergence between the theories is not at all wide. Of course it is a pleasant surprise to see how many complicated things can be defined in pure $\lambda$-calculus (without arithmetical combinators), but this fact cuts the wrong way as evidence for the thesis (we want stronger theories, not weaker ones). Post systems (or even first-order theories) are much better to mention in this connection, since they are obviously more inclusive in giving enumerations than Turing machines or Herbrand–Gödel recursion equations. But the equivalence proofs are all so easy! What one would like to see is a "natural" definition where the equivalence with r.e. is not just a mechanical exercise involving a few tricks of coding.
+**DataTypesAsLattices/Computability/theorem_2_6_fin.lean**
 
-In the course of the development in this section we have stated many equations which are not found in Table 1, and which involve new combinators. In conclusion we would like to mention an equation about $\mathbf{Y}$ which holds in the model, which can be stated in pure $\lambda$-calculus, and which cannot be proved by ordinary reduction (though we shall not try to justify this last statement here). In order to shorten the calculations, we note from definition (2.8) that $\mathbf{Y}(u) = \mathbf{Y}(\lambda y.\, u(y))$; so by Theorem 2.5 this also equals $u(\mathbf{Y}(u))$.
+@import "theorem_2_6_fin.lean"
 
-$$(2.28) \quad \mathbf{Y}(\lambda f \lambda x.\, g(x)(f(x))) = \lambda x.\, \mathbf{Y}(g(x)).$$
+**DataTypesAsLattices/Computability/theorem_2_6_lambda_continuous.lean**
 
-Call the left side $f'$ and the right $f''$. Now $f'' = \lambda x.\, g(x)(\mathbf{Y}(g(x))) = \lambda x.\, g(x)(f''(x))$, thus $f' \subseteq f''$, because $f'$ is a least fixed point. On the other hand $f' = \lambda x.\, g(x)(f'(x))$, so $f'(x) = g(x)(f'(x))$. Thus $f''(x) \subseteq f'(x)$, because $f''(x)$ is a least fixed point. As this holds for all $x$, we see that $f'' \subseteq f'$; and so they are equal. There must be many other such equations.
+@import "theorem_2_6_lambda_continuous.lean"
 
-**Lean 4**
+**DataTypesAsLattices/Computability/theorem_2_6_ofNat_isRE.lean**
 
-- [DataTypesAsLattices/Computability/theorem_2_6.lean](theorem_2_6.lean)
-- [DataTypesAsLattices/Computability/theorem_2_6_combinatory_zero.lean](theorem_2_6_combinatory_zero.lean)
-- [DataTypesAsLattices/Computability/theorem_2_6_fin.lean](theorem_2_6_fin.lean)
-- [DataTypesAsLattices/Computability/theorem_2_6_lambda_continuous.lean](theorem_2_6_lambda_continuous.lean)
-- [DataTypesAsLattices/Computability/theorem_2_6_ofNat_isRE.lean](theorem_2_6_ofNat_isRE.lean)
-- [DataTypesAsLattices/Computability.lean](../Computability.lean)
+@import "theorem_2_6_ofNat_isRE.lean"
+
+**DataTypesAsLattices/Computability.lean**
+
+@import "../Computability.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_2_6.ai_lean_to_english" {code_block=false}
+
+@import "theorem_2_6_combinatory_zero.ai_lean_to_english" {code_block=false}
+
+@import "theorem_2_6_fin.ai_lean_to_english" {code_block=false}
+
+@import "theorem_2_6_lambda_continuous.ai_lean_to_english" {code_block=false}
+
+@import "theorem_2_6_ofNat_isRE.ai_lean_to_english" {code_block=false}
+
+@import "../Computability.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_2_6.ai_english_concordance" {code_block=false}

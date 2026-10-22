@@ -1,0 +1,3 @@
+For indices at most 2, the intersection of two enumerated neighbourhoods equals a third if and only if the intersection code of the first two indices equals the third.
+
+Rewrite the intersection by its case formula and unfold the intersection code. In the three branches where the first index is 0, the second index is 0, or the two indices agree, injectivity of the enumeration on indices at most 2 turns equality of neighbourhoods into equality of indices, and the converse substitutes the index. In the remaining branch, equality of the empty intersection with an enumerated neighbourhood contradicts that the enumeration never returns the empty set, and equality of the code 3 with an index at most 2 is impossible by arithmetic.

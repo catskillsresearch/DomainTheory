@@ -1,8 +1,3 @@
-/-ai
-If an index is inactive, its safe active decode is sigma.
-
-Unfold both definitions and split on decoding. Failure returns sigma. A successful decode whose nonemptiness decision holds would make the index active, and a successful decode whose decision fails returns sigma.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

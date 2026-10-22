@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood coded by 0 is empty.
-
-Rewrite by the definition of the coded neighbourhood, the decoding of 0, and the empty-list law for the finite union of down-sets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

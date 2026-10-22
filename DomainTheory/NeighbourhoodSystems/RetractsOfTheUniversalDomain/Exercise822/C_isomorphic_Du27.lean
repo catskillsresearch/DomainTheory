@@ -1,8 +1,3 @@
-/-ai
-C is domain-isomorphic to the image neighbourhood system D'.
-
-The isomorphism is the order equivalence between their elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

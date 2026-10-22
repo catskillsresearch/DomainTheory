@@ -1,8 +1,3 @@
-/-ai
-Extracting the current depth from a packed step input is primitive recursive.
-
-It is the left projection after one right projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

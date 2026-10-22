@@ -1,8 +1,3 @@
-/-ai
-Functional abstraction is Scott-continuous as a map from Scott maps on a product into Scott maps valued in a function space. This is Scott's Proposition 3.5.
-
-Continuity follows because abstraction preserves directed suprema.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

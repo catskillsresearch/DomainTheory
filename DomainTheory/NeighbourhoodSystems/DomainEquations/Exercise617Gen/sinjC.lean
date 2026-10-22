@@ -1,6 +1,3 @@
-/-ai
-The letter-copy injection sends an element of a neighbourhood system to the element of the indexed sum whose neighbourhoods are the master, together with every copy at that letter of a neighbourhood belonging to the element. The set is downward closed in the sum and contains the master. It is closed under intersection by the master-intersection law and the intersection of two copies at one letter. It is upward closed because a neighbourhood contained in the master is the master, and a neighbourhood above a letter-copy is the master or a letter-copy of the same letter, the unit copy being excluded because a copy token is not the unit token.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

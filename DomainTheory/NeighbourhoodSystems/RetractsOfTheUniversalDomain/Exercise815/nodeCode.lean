@@ -1,6 +1,3 @@
-/-ai
-The node code of two term codes is the term-algebra code formed by pairing the tag 1 with the pair of those codes. It is the code that evaluates to the universal-domain intersection of the values of the two codes.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

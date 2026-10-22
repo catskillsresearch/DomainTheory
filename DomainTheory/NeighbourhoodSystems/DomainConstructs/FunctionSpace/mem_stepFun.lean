@@ -1,8 +1,3 @@
-/-ai
-An approximable map lies in the step neighborhood of a list exactly when it relates every pair in the list.
-
-This is the defining clause of a step neighborhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

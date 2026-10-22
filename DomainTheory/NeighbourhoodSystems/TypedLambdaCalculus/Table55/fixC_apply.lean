@@ -1,8 +1,3 @@
-/-ai
-The fixed-point combinator at a function-space element φ returns the least fixed point of the map of φ.
-
-Rewrite by the definition of the combinator and the fixed-point map on elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

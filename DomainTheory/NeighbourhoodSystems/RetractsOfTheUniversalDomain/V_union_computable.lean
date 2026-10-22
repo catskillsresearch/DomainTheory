@@ -1,8 +1,3 @@
-/-ai
-Existence of an enumerated neighbourhood of V equal to the union of two enumerated neighbourhoods is recursively decidable, by the constant function one.
-
-That constant is primitive recursive, and on every paired input the existence statement holds while the constant reads one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

@@ -1,8 +1,3 @@
-/-ai
-It is recursively decidable whether an enumerated right neighbourhood is distinct from the right master.
-
-Equality with the master is the equality predicate on enumerated neighbourhoods, evaluated at the code and the constant master index. Properness is the negation of that predicate.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

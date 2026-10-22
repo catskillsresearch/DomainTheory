@@ -1,8 +1,3 @@
-/-ai
-If an environment t is typed by the environment retract, then its application to the numeral n is typed by the lambda retract.
-
-The typing, rewritten by the environment retract equation, says that t equals the graph of the map sending m to the lambda retract applied to the application of t at m. Substituting that graph, beta reduction for the composite of the two continuous application maps yields that the application of t at the numeral equals the lambda retract applied to itself, which is the required typing.
-ai-/
 
 module
 

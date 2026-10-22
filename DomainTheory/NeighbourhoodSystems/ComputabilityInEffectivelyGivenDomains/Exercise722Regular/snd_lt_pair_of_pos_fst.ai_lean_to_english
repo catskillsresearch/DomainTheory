@@ -1,0 +1,3 @@
+If a is strictly positive, then b is strictly smaller than the pairing of a with b.
+
+Rewrite by the definition of pairing and split on its conditional. In the first branch, transitivity gives that b is positive, so b is at most b times b by rewriting b as 1 times b and multiplying on the right; then b times b is strictly smaller than b times b plus a, and omega closes the goal. In the other branch, a is at most a times a plus a, so that sum is positive, and omega closes the goal.

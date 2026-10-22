@@ -1,8 +1,3 @@
-/-ai
-An element lies in the finite set of a list if and only if it lies in the list.
-
-Induct on the list. The empty finset and the empty list have no members. On a cons, both sides are membership of the head or, by the inductive hypothesis, membership in the tail.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

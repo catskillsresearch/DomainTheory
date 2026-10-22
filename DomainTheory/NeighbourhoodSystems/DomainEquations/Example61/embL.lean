@@ -1,6 +1,3 @@
-/-ai
-The left tagging of a set of path-token pairs is the set of pairs whose path begins with the boolean true and whose remaining path, with the same token, lies in the original set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

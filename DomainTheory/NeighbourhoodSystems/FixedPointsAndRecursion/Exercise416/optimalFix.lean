@@ -1,6 +1,3 @@
-/-ai
-The optimal fixed point of a nonempty set of fixed points of a monotone endomap is the least fixed point, given by the monotone construction, of the pre-fixed point obtained as the infimum of the set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413

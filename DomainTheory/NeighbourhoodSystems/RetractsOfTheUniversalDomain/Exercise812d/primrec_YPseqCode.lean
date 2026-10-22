@@ -1,8 +1,3 @@
-/-ai
-The Y-sequence code is primitive recursive.
-
-Exponentiation by four is primitive recursive. The inner fold on branch zero and on branch one, each run to stage four to the index, is primitive recursive by composition with the corresponding packed argument. Combining those two results is primitive recursive, and its second component is the sequence code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

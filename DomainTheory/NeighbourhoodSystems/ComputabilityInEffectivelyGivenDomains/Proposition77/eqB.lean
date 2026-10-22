@@ -1,6 +1,3 @@
-/-ai
-The equality bit of a packed triple is its first component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

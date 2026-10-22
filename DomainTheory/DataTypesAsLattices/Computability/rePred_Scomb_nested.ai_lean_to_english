@@ -1,0 +1,3 @@
+The predicate which holds when pack4_proj4 t lies in the application of the finite set coded by pack4_proj1 t to the finite set coded by pack4_proj3 t, itself applied to the application of the finite set coded by pack4_proj2 t to the finite set coded by pack4_proj3 t, is recursively enumerable.
+
+Existentially quantify the primitive-recursive relation primrecRel_Scomb_app after swapping its arguments and passing from a computable predicate to a recursively enumerable one. The resulting predicate is identical to the stated one.

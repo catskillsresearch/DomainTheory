@@ -1,8 +1,3 @@
-/-ai
-Every enumerated sum neighbourhood is contained in the sum master.
-
-Unfold the enumeration and split. A left copy of a neighbourhood is contained in the master, a right copy of a neighbourhood is contained in the master, and the master is contained in itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

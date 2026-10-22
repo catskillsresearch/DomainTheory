@@ -1,8 +1,3 @@
-/-ai
-Left tensoring by A sends a morphism f to the pairing of the first projection with the second projection composed with f, transported from product maps to tensor maps.
-
-By uniqueness of pairing it is enough that the tensor image composed with the first projection of the target is the first projection of the source, and that it composed with the second projection is the second projection composed with f. Those are the whiskering identities for the two projections in a cartesian monoidal category.
-ai-/
 
 module
 

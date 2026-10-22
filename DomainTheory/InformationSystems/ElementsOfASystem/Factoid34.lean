@@ -1,8 +1,3 @@
-/-ai
-An element whose carrier is the whole token set exists if and only if every finite set of tokens is consistent.
-
-The numbered name theorem_34 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid34.exists_top_iff_allConsistent

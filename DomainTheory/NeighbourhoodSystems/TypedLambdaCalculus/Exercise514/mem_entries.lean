@@ -1,8 +1,3 @@
-/-ai
-A natural number belongs to the entries of a list if and only if it belongs to the list.
-
-The two sides are the same by definition of the set of entries.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513

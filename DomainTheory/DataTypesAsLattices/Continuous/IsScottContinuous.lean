@@ -1,6 +1,3 @@
-/-ai
-A map f from Pω to Pω is Scott continuous when its value at each x equals the Scott union of f at x, that is, the union of the values of f on the finite subsets of x.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

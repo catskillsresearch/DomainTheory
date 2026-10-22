@@ -1,8 +1,3 @@
-/-ai
-The exponential of h and k equals the currying of k composed after evaluation composed after the product of the identity on the function space with h.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

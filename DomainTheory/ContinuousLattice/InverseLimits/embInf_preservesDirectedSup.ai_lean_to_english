@@ -1,0 +1,3 @@
+The bare embedding of a stage into the inverse limit preserves directed suprema.
+
+The image of a nonempty directed set under the embedding is nonempty, and it is directed because the embedding is monotone. The two inverse-limit elements agree once every coordinate agrees. At coordinate m, the coordinate of the supremum of the image is the supremum of the image of the coordinate functions. That image is the image under the m-th component of the climbing-and-descending sequence, which preserves the directed supremum.

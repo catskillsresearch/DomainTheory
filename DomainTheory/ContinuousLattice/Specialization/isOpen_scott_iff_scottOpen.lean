@@ -1,8 +1,3 @@
-/-ai
-Openness in mathlib's Scott topology of the universe agrees with Scott-openness.
-
-The equivalence is the identification of openness in the Scott topological space with Scott-openness.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

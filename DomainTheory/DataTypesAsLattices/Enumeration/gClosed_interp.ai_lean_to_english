@@ -1,0 +1,3 @@
+Interpreting the term gClosed in any environment yields the combinator G.
+
+Unfold both sides. The graphs agree after rewriting by the interpretation of gpackClosed and simplifying the environment update and the zero combinator.

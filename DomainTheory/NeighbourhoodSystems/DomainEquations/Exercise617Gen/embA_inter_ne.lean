@@ -1,8 +1,3 @@
-/-ai
-If two letters are distinct, the copy of a set prefixed by the first letter and the copy of a set prefixed by the second letter are disjoint.
-
-A string in both copies would begin with both letters, so the letters would agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

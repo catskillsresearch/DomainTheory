@@ -1,6 +1,3 @@
-/-ai
-The action of a functor expression on Scott systems sends a constant to that constant, the identity expression to the system itself, a sum to the sum of the two component systems, and a product to the product of the two component systems.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

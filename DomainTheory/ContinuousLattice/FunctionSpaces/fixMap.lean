@@ -1,6 +1,3 @@
-/-ai
-The fixed-point operator is the Scott map from the function space of Scott maps on D into D whose underlying function is fix. Continuity comes from preservation of directed suprema by fix. This is Scott's Proposition 3.14.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

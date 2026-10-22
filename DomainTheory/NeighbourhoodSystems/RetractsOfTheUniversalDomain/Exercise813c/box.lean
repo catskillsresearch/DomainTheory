@@ -1,6 +1,3 @@
-/-ai
-The box determined by a finite set of coordinates and a Boolean function is the set of points of Cantor space that agree with that function on every coordinate in the set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

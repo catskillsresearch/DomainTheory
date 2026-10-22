@@ -1,6 +1,3 @@
-/-ai
-stepFin is the finite set of states reached in one step from a finite set of states on one symbol. It is the bounded union of the single-state finite steps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

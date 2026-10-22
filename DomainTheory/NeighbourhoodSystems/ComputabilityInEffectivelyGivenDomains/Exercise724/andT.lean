@@ -1,6 +1,3 @@
-/-ai
-The approximable mapping andT from the product of T with itself to T is the joint mapping associated, by the passage from a two-variable approximable mapping, with sequential conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

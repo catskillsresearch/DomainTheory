@@ -1,8 +1,3 @@
-/-ai
-Every unary primitive-recursive function p has a combinatory element that realizes it.
-
-Proceed by induction on the primitive-recursive derivation. The zero function is realized by the constant combinator constComb 0. Successor is realized by sucC, using sucC_app and succSet_ofNat. The left and right unpairing projections are realized by unpairFstC and unpairSndC. A pairing of two realized functions is realized by pairRealizer, a composition by composeC, and a primitive recursion by precC, using the corresponding combinatory and realization lemmas.
-ai-/
 module
 
 public import Mathlib.Computability.RE

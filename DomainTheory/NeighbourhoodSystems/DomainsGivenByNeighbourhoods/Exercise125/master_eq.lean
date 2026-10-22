@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the final-segment system is the set of all tokens.
-
-The equality holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

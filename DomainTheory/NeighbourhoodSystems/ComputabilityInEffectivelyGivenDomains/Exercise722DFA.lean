@@ -1,8 +1,3 @@
-/-ai
-If two deterministic automata accept the denotations of two expressions, their product automaton accepts the denotation of the intersection expression.
-
-The numbered name example_722_dfa is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA.interDFA_accepts

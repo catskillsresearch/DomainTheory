@@ -1,6 +1,3 @@
-/-ai
-The unconsumed remainder of a continuation state is the left component of its code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

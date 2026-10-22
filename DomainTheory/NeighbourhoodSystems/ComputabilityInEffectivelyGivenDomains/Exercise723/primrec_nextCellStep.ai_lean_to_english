@@ -1,0 +1,3 @@
+The cell step nextCellStep is primitive recursive.
+
+The two components of the packed input are primitive recursive. The zero test of the first component, the packing of one more than the second component with 0, and the packing of one less than the first component with one more than the second are primitive recursive. Selecting between those two packings by the zero test is identified with nextCellStep.

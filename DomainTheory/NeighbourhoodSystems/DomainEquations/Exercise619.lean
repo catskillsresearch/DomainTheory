@@ -1,8 +1,3 @@
-/-ai
-The concrete token product of Exercise 6.19 is isomorphic, as a domain, to the abstract product. The concrete token sum of Exercise 6.19 is isomorphic, as a domain, to the abstract separated sum.
-
-The numbered name example_619 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619.prodTok_iso_prod

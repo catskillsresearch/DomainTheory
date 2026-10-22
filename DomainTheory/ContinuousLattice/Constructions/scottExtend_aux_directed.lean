@@ -1,8 +1,3 @@
-/-ai
-The family of infima that defines the canonical Scott extension at a point is directed.
-
-The intersection of two open neighbourhoods of the point is again an open neighbourhood. Shrinking a neighbourhood enlarges the infimum of the map on the preimage, so each of the two infima lies below the infimum for the intersection.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

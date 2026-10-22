@@ -1,0 +1,3 @@
+For a strict map g, every expression satisfies T(g ∘ f) = T(g) ∘ T(f). Together with preservation of identities, these are the functor laws of the strict-map category. Strictness of g is required for the coalesced sum and the smash product, whose composition laws use it.
+
+The proof is by induction on T. A constant reduces to the identity law for the identity map of that constant, read in the symmetric direction. The variable is definitional. The separated sum rewrites both components by the inductive hypothesis and applies the composition law of the separated sum. The separated product does the same with the product. The coalesced sum and the smash product do the same, supplying strictness of the two component maps of g by preservation of strictness.

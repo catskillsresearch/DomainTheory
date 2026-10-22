@@ -1,0 +1,3 @@
+The cone of a string lies in the inverse image of an element of D' if and only if the cone of that string's doubled encoding lies in the element.
+
+A cone clause gives the same string by injectivity of cones. A singleton clause would make a cone equal a singleton. In the other direction, membership of the encoded cone is the cone clause.

@@ -1,8 +1,3 @@
-/-ai
-The empty valuation trace is well formed.
-
-Both the structural condition and the G condition quantify over entries of the empty list, and simplification shows that there is no such entry.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

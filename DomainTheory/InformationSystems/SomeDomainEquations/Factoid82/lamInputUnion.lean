@@ -1,6 +1,3 @@
-/-ai
-The input union of a finite set of input-output list pairs is the union of the tokens on those input lists. It is the right fold of input-union insertion, starting from the empty set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

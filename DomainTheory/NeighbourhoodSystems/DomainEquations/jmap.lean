@@ -1,6 +1,3 @@
-/-ai
-The splitting map from the infinite iterate to the product of the system with the iterate is the approximable map induced by the product isomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

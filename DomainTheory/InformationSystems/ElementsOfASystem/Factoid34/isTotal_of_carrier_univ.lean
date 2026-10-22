@@ -1,8 +1,3 @@
-/-ai
-An element whose carrier is the whole token set is total.
-
-Every token of every element lies in that carrier, so every element lies below it.
-ai-/
 
 module
 

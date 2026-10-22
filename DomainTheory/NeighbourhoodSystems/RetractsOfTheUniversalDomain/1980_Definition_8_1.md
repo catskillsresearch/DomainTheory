@@ -1,7 +1,19 @@
 # Definition 8.1
 
-**DEFINITION 8.1.** A retraction of a given domain $E$ is an approximable mapping $a : E \to E$ such that $a \circ a = a$. $\square$
+## Human-English
 
-**Lean 4**
+@import "Definition81.english" {code_block=false}
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition81.lean](Definition81.lean)
+## AI: Human-English to AI-Lean
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition81.lean**
+
+@import "Definition81.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Definition81.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "Definition81.ai_english_concordance" {code_block=false}

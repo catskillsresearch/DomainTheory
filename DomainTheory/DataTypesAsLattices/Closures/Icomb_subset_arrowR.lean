@@ -1,8 +1,3 @@
-/-ai
-If a and b are closures, the identity combinator is contained in the function space a → b. Scott's Theorem 5.3 uses this containment, together with the retract property, to conclude that the function space of two closures is a closure.
-
-A pair (n, m) in the identity has m in en. Equation (5.1) puts en below the graph of its own application, and equation (5.11) enlarges each value u(x) to b(u(a(x))). The ξ rule carries that pointwise enlargement to graphs, and the enlarged graph is the composite b ∘ en ∘ a. Thus m lies in that composite, and the pair lies in a → b.
-ai-/
 
 module
 

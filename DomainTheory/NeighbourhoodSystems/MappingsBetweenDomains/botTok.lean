@@ -1,6 +1,3 @@
-/-ai
-When the family C is nonempty, the empty set is a token, witnessed by a chosen member of C.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

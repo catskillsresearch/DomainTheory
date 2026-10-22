@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 1.4, the fixed-point theorem. If f is Scott continuous, then f fixes its least fixed point, and that least fixed point is contained in every fixed point of f.
-
-The chain lemma identifies the image of the union of the iterates from the bottom element with the union of their images. Shifting the index, and using that the zeroth iterate is empty, shows that this union equals the least fixed point. If a point is fixed and a code lies in some iterate, induction shows every iterate is contained in that point: the zeroth iterate is empty, and the successor step is monotonicity of f together with the fixed-point equation.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph

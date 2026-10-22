@@ -1,8 +1,3 @@
-/-ai
-The intersection of the empty sequence of sets is the master neighbourhood.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

@@ -1,8 +1,3 @@
-/-ai
-A map lies in the enumerated neighbourhood of a code if and only if, whenever the code is consistent, the map relates every coded step. An inconsistent code enumerates the whole space of maps.
-
-If the code is consistent, the enumerated set is the positive enumeration, and membership is the relation on every presented pair, each of which is the step pair of a coded entry. If the code is inconsistent, the enumerated set is the negative enumeration, so every map belongs to it, while a demand that the characteristic equal 1 contradicts the case.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

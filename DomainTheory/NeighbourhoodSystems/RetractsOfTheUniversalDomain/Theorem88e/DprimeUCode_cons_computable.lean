@@ -1,8 +1,3 @@
-/-ai
-Existence of a coded set contained in the intersection of two coded sets is recursively decidable in the two indices.
-
-The base consistency predicate is recursively decidable. Splitting the intersection inclusion and rewriting each inclusion by the raw embedding comparison shows that this predicate agrees with the coded one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

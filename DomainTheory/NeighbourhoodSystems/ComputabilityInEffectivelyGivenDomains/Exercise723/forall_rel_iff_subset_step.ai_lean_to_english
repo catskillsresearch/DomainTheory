@@ -1,0 +1,3 @@
+Every approximable map in a set W relates nbhd n to nbhd m₀ if and only if W is contained in the step neighbourhood of that pair of neighbourhoods. Specialised to an enumerated set of maps and a singleton step, this inclusion is the decidable inclusion of the function-space presentation.
+
+Both directions rewrite membership of a map in the step neighbourhood by mem_step.

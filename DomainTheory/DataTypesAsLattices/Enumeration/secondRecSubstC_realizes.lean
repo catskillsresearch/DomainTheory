@@ -1,8 +1,3 @@
-/-ai
-The substitution combinator realizes the function m ↦ apply(m)(num(m)).
-
-This is the realizing half of the specification of the element chosen by the realization theorem for that primitive recursive function.
-ai-/
 
 module
 

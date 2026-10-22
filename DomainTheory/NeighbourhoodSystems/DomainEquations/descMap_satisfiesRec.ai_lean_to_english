@@ -1,0 +1,3 @@
+The descent map on C equals the structure map composed with the triple sum of the identity and two copies of the descent map, composed with the domain-equation equivalence.
+
+Compare the maps on bottom-string elements and on distinguished-string elements. On a bottom-string the composite element map is the equivalence application followed by the sum map and the structure map, and the descent map is the recursive value of bottom. The empty string is the bottom key. A cons cell rewrites the equivalence application as the successor of the shorter bottom-string, and the successor key, after the bottom-string evaluation, matches. On a distinguished-string the empty string is the zero key and a cons cell is the successor key after the distinguished-string evaluation.

@@ -1,0 +1,3 @@
+The doubled encoding of one string is a prefix of the doubled encoding of another if and only if the first string is a prefix of the second.
+
+One direction is the preservation of prefixes by doubling. For the other, induct on the first string. The empty string is a prefix of every string. If the first string is nonempty and the second is empty, extracting a continuation from the prefix is impossible by simplification. If both are nonempty, two prefix steps give a common first bit and the inductive hypothesis applies to the tails.

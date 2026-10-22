@@ -1,0 +1,3 @@
+One step of the depth-n union fold is primitive recursive.
+
+The depth, the index, the accumulator, two to that depth, the shifted bit-source, the successor depth, the emptiness test, the atom code, the found flag, the running value, and the union of that value with the atom code are primitive recursive, using the unpairing equations for the paired tests. Selection on the found flag chooses between that union and the fresh atom code, and selection on emptiness chooses between the old accumulator and that choice. Unfolding the fold step shows that this composite equals the step.

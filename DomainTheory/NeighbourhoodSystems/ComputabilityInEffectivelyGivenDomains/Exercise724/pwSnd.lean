@@ -1,6 +1,3 @@
-/-ai
-The projection that extracts the second sequence from the pointwise-binary domain is the second projection of the two function spaces, composed with the projection that forgets the argument L.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

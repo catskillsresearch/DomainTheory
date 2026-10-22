@@ -1,0 +1,3 @@
+If a and b are retracts, applying the boxed sum of a and b twice to u equals applying it once.
+
+The argument splits on whether the two square components of u are empty. If both are empty, the empty occupancy case and the bottom case agree. If only the right component is inhabited, the right occupancy case applies again to the resulting right square pair; the square projections recover bottom and the shifted value, the shift of a nonempty set is nonempty, and the retract equation for the shifted b removes the second application. The case of only the left component inhabited is symmetric. If both components are inhabited, the mixed case sends u to the full set, and the boxed sum fixes the full set.

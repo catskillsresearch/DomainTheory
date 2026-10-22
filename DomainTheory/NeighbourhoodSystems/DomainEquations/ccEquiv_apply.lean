@@ -1,8 +1,3 @@
-/-ai
-The domain-equation equivalence sends an element of C to its image under the conversion into the sum system.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

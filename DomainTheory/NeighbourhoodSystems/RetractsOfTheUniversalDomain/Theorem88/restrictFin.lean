@@ -1,6 +1,3 @@
-/-ai
-The restriction of a total sign sequence to length n is the finite sequence that reads the total sequence at each index below n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

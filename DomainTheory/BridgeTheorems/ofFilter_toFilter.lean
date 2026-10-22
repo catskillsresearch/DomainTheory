@@ -1,8 +1,3 @@
-/-ai
-Passing an information-system element through toFilter and then ofFilter returns the original element.
-
-The carriers agree. A token in the composite carrier comes from a consistent set contained in the original carrier whose closure lies in the corresponding singleton basic open, so closure of the original element puts the token in that carrier. Conversely, the singleton of a token of the original carrier is consistent and contained in the carrier. Substituting the carrier equality into the two structures gives the elements.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

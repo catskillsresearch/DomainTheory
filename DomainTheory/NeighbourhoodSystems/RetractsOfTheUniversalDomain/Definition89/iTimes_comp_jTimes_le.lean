@@ -1,8 +1,3 @@
-/-ai
-Applying the product projection and then the product embedding yields a self-map of the universal domain lying under the identity.
-
-This inequality is the corresponding component of the projection pair chosen for the product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

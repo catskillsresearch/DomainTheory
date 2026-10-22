@@ -1,0 +1,3 @@
+Under matching emptiness of the incoming pair and the empty-or-neighbourhood alternative for the first set, the first output of yStep is contained in that first set.
+
+The split specification gives a union of the two split pieces equal to the first set. The true-bit output is the first piece, and the false-bit output is the second piece.

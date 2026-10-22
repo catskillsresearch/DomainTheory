@@ -1,0 +1,3 @@
+Three codes satisfy the intersection equation in the first neighbourhood system if and only if their XPseqCode images satisfy the same equation in the second.
+
+The combined-code intersection transfer is instantiated at the even indices twice i, twice j, and twice k, using that those combined codes lie in the master, and the even clauses rewrite both sides back to the original codes and to XPseqCode.

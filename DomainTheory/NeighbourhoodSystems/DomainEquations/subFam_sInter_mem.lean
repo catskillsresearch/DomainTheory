@@ -1,8 +1,3 @@
-/-ai
-The family of subdomain neighbourhood-sets is closed under nonempty intersections.
-
-The intersection system of such a family is a subsystem of E, and the collection of its neighbourhoods is the intersection of the family.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

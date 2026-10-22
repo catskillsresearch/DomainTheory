@@ -1,8 +1,3 @@
-/-ai
-The empty set of tokens is consistent.
-
-A graph atom cannot belong to the empty set, so the membership hypotheses in the definition of consistency are impossible.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

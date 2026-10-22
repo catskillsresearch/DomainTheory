@@ -1,6 +1,3 @@
-/-ai
-The accumulator of a sign sequence is the pair of lists built by recursion on the depth. At depth 0 both lists are empty. At depth n+1 the index n is appended to the positive list when the sign is true, and to the negative list when the sign is false.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable

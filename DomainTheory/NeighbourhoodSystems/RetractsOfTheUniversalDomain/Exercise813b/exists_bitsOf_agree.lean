@@ -1,8 +1,3 @@
-/-ai
-For any finite set of coordinates and any valuation, some natural number has those bits equal to the valuation on that set.
-
-Take the bitmask of the coordinates in the set at which the valuation is true. The bit test of that mask is true at a coordinate of the set exactly when the valuation is true there, by the bit test of a bitmask and membership in the filter. Comparing the two Boolean values in each of the four combinations gives the equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

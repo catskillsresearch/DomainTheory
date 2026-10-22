@@ -1,0 +1,3 @@
+Iterating plusStep k times from the packing of n, m, a zero counter, and a zero accumulator leaves n and m unchanged, sets the counter to k, and sets the accumulator to orUpTo n m k.
+
+Induct on k. The zero iteration is the identity on the initial packing, whose accumulator is the zero clause of orUpTo. At a successor, the four component lemmas for plusStep transport the inductive state, and the accumulator equation is the successor clause of orUpTo.

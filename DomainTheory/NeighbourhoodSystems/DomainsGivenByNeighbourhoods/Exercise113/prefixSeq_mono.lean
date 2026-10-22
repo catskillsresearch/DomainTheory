@@ -1,8 +1,3 @@
-/-ai
-If n is at most m, then the length-n prefix of a path is a prefix of the length-m prefix.
-
-The proof inducts along the inequality. The base case is reflexivity of the prefix relation. The successor step composes the inductive prefix with the one-step extension of the prefix.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

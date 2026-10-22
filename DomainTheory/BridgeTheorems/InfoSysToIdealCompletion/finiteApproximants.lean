@@ -1,6 +1,3 @@
-/-ai
-The finite approximants of an element x, as finite elements, are the finite elements whose underlying element is a finite approximant of x.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

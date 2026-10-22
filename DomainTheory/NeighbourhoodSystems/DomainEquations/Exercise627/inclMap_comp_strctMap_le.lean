@@ -1,8 +1,3 @@
-/-ai
-The composite of inclusion after strictification lies below the identity on the function space.
-
-The element-map form of the inequality reduces the composite to inclusion of the strictification of an arbitrary element, and that element lies below the original.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

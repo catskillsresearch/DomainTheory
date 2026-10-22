@@ -1,8 +1,3 @@
-/-ai
-The outer-right, inner-left component of plusStep s is one greater than the same component of s, which is the counter.
-
-Unfold plusStep and cancel the pairings that expose the incremented counter.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

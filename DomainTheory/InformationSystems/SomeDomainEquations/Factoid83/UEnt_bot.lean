@@ -1,8 +1,3 @@
-/-ai
-A consistent finite set of U-tokens entails the bottom token of U.
-
-Consistency is the first component of the entailment, and the bottom clause of V-entailment is the second.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,6 +1,3 @@
-/-ai
-An effective isomorphism between two computable presentations consists of approximable maps in both directions, each computable, such that each composite is the identity map of the corresponding neighbourhood system.
-ai-/
 module
 
 

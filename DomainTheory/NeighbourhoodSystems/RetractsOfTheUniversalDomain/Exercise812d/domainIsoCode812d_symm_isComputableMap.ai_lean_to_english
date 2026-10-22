@@ -1,0 +1,3 @@
+The inverse of the code-level domain isomorphism is a computable map from the second presentation to the first.
+
+The argument mirrors the forward computability proof with the presentations and the sequence codes exchanged. Pairing projections with the primitive-recursive YPseqCode makes equality of the first enumeration recursively decidable, and a pairing of projections makes inclusion of the second enumeration recursively decidable. Their conjunction is recursively enumerable, the outer quantifier is projected away, and unpacking the paired witness matches the relation criterion for the inverse translation.

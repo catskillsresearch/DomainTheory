@@ -1,0 +1,3 @@
+The set of projections is closed under binary joins. This is part of Scott's Proposition 3.12.
+
+By the pointwise characterization, each of the two projections is idempotent and deflationary, and the same must be shown for their join. The join of their values at x lies below x. Monotonicity puts each map of that join below the corresponding value, while idempotence and monotonicity give the reverse inequalities. The pointwise formula for the join of maps therefore gives idempotence, and deflation is the same bound on the join of the values.

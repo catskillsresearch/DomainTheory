@@ -1,0 +1,3 @@
+No neighbourhood of the sum of D with the product of two copies of the sharp system of D is empty.
+
+A neighbourhood of the sum is the master, which contains the token none, or a left copy of a neighbourhood of D, which is nonempty by hypothesis, or a right copy of a product neighbourhood of the two sharp systems, which is nonempty.

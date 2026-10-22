@@ -1,8 +1,3 @@
-/-ai
-The numerical reading of false is 0.
-
-The equation is the defining clause.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

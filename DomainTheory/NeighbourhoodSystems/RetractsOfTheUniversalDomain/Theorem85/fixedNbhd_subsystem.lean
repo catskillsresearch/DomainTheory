@@ -1,8 +1,3 @@
-/-ai
-The fixed neighbourhood system of an approximable endomap a is a subsystem of E.
-
-The master neighbourhoods agree, and every member belongs to E. If two members have an intersection that belongs to E, monotonicity sends each self-relation to that intersection and the right-intersection law of a combines them, so the intersection is again a member.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

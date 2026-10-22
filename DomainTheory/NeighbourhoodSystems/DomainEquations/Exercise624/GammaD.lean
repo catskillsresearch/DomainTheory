@@ -1,6 +1,3 @@
-/-ai
-The first component Gamma_D of the double fixed point is the union, over all stages, of the first coordinate of the pair iteration.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

@@ -1,6 +1,3 @@
-/-ai
-The sum presentation enumerates by tags: tag zero is a left copy of a neighbourhood of the first system, tag one is a right copy of a neighbourhood of the second, and any other tag is the sum master. Every enumerated set is a sum neighbourhood, and every sum neighbourhood arises, the master at tag two and the copies at tags zero and one from indices of the factors. Intersection-equality and consistency are recursively decidable by combining equality of enumerated neighbourhoods, the tag tests, and the factors' intersection and consistency deciders. The tag trichotomy checks the equivalences: a master factor is absorbed, two copies of the same side reduce to the corresponding factor, and opposite sides meet emptily, which cannot equal a nonempty enumerated neighbourhood or contain one. The intersection code is the primitive-recursive selection that returns the other code when one tag is a master and otherwise pairs tag zero or one with the factor intersection. Its specification follows the same split, using the factor specifications on matching copies and refuting opposite sides by nonemptiness. The master code is the pair of two and zero, which enumerates the sum master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

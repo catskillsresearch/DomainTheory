@@ -1,0 +1,3 @@
+The set represented by the predecessor of an element is the predecessor of the set represented by the element.
+
+If the singleton complement of a number belongs to the image, some neighbourhood of the element has the successor of that number in its complement, so the complement of the successor singleton lies above that neighbourhood. Conversely, the complement of the successor singleton belongs to the element, and the predecessor of its complement contains the original number.

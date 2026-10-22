@@ -1,8 +1,3 @@
-/-ai
-The half-parity of a natural equals the pair of its quotient by 2 and its residue modulo 2.
-
-The proof is by induction on the natural. The case 0 is definitional. At a successor, rewrite the recursive formula by the inductive hypothesis and the two unpairing equations; the two components then agree by arithmetic.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

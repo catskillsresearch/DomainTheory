@@ -1,6 +1,3 @@
-/-ai
-The junk flag of the X half-step atom at depth n and bit-source i is the junk component of the packed state of that atom. It records that the incoming depth-n state was already junk, or that the direct first-system refinement against the basic neighbourhood of n is empty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

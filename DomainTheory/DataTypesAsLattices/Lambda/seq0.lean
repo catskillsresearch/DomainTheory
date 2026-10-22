@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (2.19)–(2.21): the empty finite sequence, regarded as a distributive function, is the bottom element.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

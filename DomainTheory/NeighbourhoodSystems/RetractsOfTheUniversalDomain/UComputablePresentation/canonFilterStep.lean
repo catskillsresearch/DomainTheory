@@ -1,6 +1,3 @@
-/-ai
-The filter step of a pair code is the singleton list code of the clipped pair when that clipped pair is nondegenerate, and the empty list code otherwise. The choice is selection on the nonempty test of the clipped code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

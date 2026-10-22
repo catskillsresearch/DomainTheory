@@ -1,0 +1,3 @@
+An element x lies in the atom finset of a finite set of raw lambda tokens if and only if the atom token for x belongs to that set.
+
+An auxiliary claim on multisets says that x lies in the right fold of atom insertion if and only if some member equals the atom of x. Both directions fail for the empty multiset. On a cons whose head is an atom, insertion membership splits into equality of that atom or existence in the tail. If the head is bottom or a function token, insertion acts as the identity, so a witness must come from the tail and the head cannot equal the atom. Applying the auxiliary claim to the underlying multiset and converting finset membership gives the stated equivalence.

@@ -1,8 +1,3 @@
-/-ai
-For each natural number n, projection from the infinite iterate onto the n-th coordinate is a computable map from the iterate presentation to the original presentation.
-
-Inclusion of enumerated neighbourhoods is recursively decidable. Substituting the n-th coded list entry, defaulting to the master index, reduces the projection relation to that inclusion: the relation says that the n-th fiber is contained in the target, and the membership conjuncts hold because the enumerated set and the target are neighbourhoods. The resulting decidable predicate is recursively enumerable.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

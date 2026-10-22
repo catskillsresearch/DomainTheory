@@ -1,8 +1,3 @@
-/-ai
-The right-hand side of the tree domain equation equals the sum of A with the product of the tree system of A with itself.
-
-The numbered name theorem_81 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.treeRhs_eq_sum_product

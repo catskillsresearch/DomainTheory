@@ -1,8 +1,3 @@
-/-ai
-Every Kleene approximant of a retract functor that preserves strictness is strict.
-
-The zero stage is strict by the bottom application law. A successor stage is strict by the preservation hypothesis, using that the preceding stage is a retract and, inductively, strict.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

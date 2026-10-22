@@ -1,6 +1,3 @@
-/-ai
-The reverse memo list of a step at zero is empty, and at a successor it is the course-of-values value at the predecessor consed onto the list at the predecessor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

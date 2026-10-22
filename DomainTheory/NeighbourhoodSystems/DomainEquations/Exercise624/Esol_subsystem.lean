@@ -1,8 +1,3 @@
-/-ai
-The singleton system on Gamma_E is a subsystem of the sum of D and E.
-
-The master of that sum equals Gamma_E by the master computation and the second fixed-point equation. The only neighbourhood is therefore that master, and the intersection of that neighbourhood with itself is Gamma_E again.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

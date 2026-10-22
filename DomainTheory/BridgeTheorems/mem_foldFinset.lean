@@ -1,8 +1,3 @@
-/-ai
-A tree token lies in the fold of a finite set of sum tokens if and only if it is the tree fold of some member of that set.
-
-Unfold the definition of the folded finset and apply the membership rule for the multiset fold of the fold insertion, rewritten along finset membership.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

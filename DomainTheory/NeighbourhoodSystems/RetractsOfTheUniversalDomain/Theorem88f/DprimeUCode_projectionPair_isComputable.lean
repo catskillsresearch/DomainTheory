@@ -1,8 +1,3 @@
-/-ai
-Both directions of the projection pair of the code-driven subsystem D'' into the universal system are computable relative to the presentation of D'' and the presentation of the universal system.
-
-The claim is the conjunction of the computability of the injection and the computability of the projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.Basic

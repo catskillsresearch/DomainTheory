@@ -1,6 +1,3 @@
-/-ai
-The term kClosed is the closed combinator λx. λy. x, with the two bound arguments at variables 4 and 5.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,8 +1,3 @@
-/-ai
-If two numerical functions are primitive recursive, then so is the function sending an input to the curry step code of their values.
-
-The first and second components of the second function are primitive recursive. Pairing the first function with those components, pairing the result with the constant zero, and taking the successor is primitive recursive, and that expression equals the curry step code by definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

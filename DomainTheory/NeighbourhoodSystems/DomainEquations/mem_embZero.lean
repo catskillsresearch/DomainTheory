@@ -1,8 +1,3 @@
-/-ai
-A tagged point lies in the zero-embedding of a set X exactly when its boolean list is empty and the element lies in X.
-
-The equivalence is the definition of the zero-embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

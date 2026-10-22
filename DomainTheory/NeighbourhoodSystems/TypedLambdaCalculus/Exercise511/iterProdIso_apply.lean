@@ -1,8 +1,3 @@
-/-ai
-The product isomorphism sends a stack to the pair of its component of index zero and the sequence of its later components.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

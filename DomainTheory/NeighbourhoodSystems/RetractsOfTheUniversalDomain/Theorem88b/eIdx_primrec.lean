@@ -1,8 +1,3 @@
-/-ai
-The index swap is primitive recursive.
-
-The zero test is primitive recursive, and so is the test that an input equals the master index, built from subtraction, addition, and the zero test. The conditional that returns 0 or the input according to that test is primitive recursive, and the outer conditional that returns the master index or that value according to the zero test is primitive recursive. This function agrees with the swap. If the zero test reads 0, the input is nonzero: the inner test then either reads 0, so the input is not the master index and the swap returns it, or reads 1, so the input is the master index and the swap returns 0. If the zero test reads 1, the input is 0 and the swap returns the master index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable

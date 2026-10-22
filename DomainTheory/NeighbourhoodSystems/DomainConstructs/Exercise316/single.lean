@@ -1,6 +1,3 @@
-/-ai
-The pinning of copy n to a set X is the set of index-token pairs whose token lies in X when the index equals n, and in the master neighbourhood otherwise.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

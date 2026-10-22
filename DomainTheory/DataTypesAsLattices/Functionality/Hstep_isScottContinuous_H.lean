@@ -1,8 +1,3 @@
-/-ai
-For a fixed expression and environment, the interpreter step is Scott continuous in the interpreter.
-
-The argument is a nest of ternary continuity for the definite conditional. The tag tests and the variable and zero clauses are constant in the interpreter. The successor, predecessor, conditional, application, and abstraction clauses are continuous in the interpreter, and the final alternative is the constant top element.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

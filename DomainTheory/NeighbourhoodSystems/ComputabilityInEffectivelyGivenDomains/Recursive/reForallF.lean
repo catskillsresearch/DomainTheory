@@ -1,6 +1,3 @@
-/-ai
-The witness-threading fold step takes an accumulator that pairs a remaining witness code with a flag, and a list head. It replaces the remaining code by the second component of the unpairing of that code minus one, and replaces the flag by the conjunction of the old flag with the equality-to-one test of the predicate at the pair of the popped witness and the head. The popped witness is the first component of that same unpairing.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

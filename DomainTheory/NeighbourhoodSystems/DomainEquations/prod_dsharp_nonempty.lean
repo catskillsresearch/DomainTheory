@@ -1,8 +1,3 @@
-/-ai
-No neighbourhood of the product of D-sharp with itself is empty.
-
-Such a neighbourhood comes from two neighbourhoods of D-sharp. The first is nonempty, and the left injection of one of its points lies in the product neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

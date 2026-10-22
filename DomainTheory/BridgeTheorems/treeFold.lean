@@ -1,6 +1,3 @@
-/-ai
-The map treeFold is a section of tree unfolding. It sends the sum bottom to the tree bottom, a left atom to the corresponding atom token, and a right product token to pair-left of its left component when the right component is tree bottom, and to pair-right of its right component otherwise.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

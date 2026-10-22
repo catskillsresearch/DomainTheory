@@ -1,6 +1,3 @@
-/-ai
-The domain C of finite and infinite binary sequences, equipped with its structure map, is an algebra for the endofunctor that sends a domain to the unit domain summed with the domain summed with itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

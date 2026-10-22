@@ -1,6 +1,3 @@
-/-ai
-An element a of Pω is a retract when a equals the composition of a with itself. This is Scott's definition in section 4.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

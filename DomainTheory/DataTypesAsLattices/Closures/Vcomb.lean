@@ -1,6 +1,3 @@
-/-ai
-Scott's universe combinator, equation (5.14), is the graph of the map sending a to the graph of x ↦ V(a)(x).
-ai-/
 
 module
 

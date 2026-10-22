@@ -1,8 +1,3 @@
-/-ai
-The difference of two level sets is the level set, at the maximum of the two levels, whose mask is the first mask upsampled to that level with the bits of the upsampled second mask cleared.
-
-Each level set is rewritten by upsampling to the maximum level. Extensionality, the membership law for level sets, and the bitwise identity for the cleared mask identify membership in the difference with membership in that level set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

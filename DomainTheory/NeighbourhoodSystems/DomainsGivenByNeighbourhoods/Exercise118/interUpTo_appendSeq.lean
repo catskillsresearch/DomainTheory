@@ -1,8 +1,3 @@
-/-ai
-The intersection of the first n1 + j entries of a concatenated sequence equals the intersection of the first n1 entries of the first sequence with the intersection of the first j entries of the second sequence.
-
-The proof is by induction on j. At zero, the prefix identity identifies the intersection along the concatenation with the intersection of the first sequence, and intersecting with the empty intersection, which is the master neighbourhood, leaves that set unchanged. At a successor, the inductive hypothesis and the successor clause of the intersection meet the next concatenated entry. That entry equals the corresponding entry of the second sequence, and associativity matches the successor clause on the right-hand side.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

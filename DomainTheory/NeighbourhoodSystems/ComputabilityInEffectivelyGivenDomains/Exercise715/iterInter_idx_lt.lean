@@ -1,8 +1,3 @@
-/-ai
-If j is less than n + m, the j-th fiber index of the tabulated intersection of n and m equals the presentation's intersection of the j-th fiber indices of n and of m.
-
-The tabulated entry below the length is the coordinate-wise generator, and unpairing its argument recovers j, n, and m.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

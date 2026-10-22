@@ -1,6 +1,3 @@
-/-ai
-The tokens of Example 1.4 are the seven nodes of the binary tree {Λ, 0, 1, 00, 01, 10, 11}, abbreviated as Fin 7, with Λ = 0, 0 = 1, 1 = 2, 00 = 3, 01 = 4, 10 = 5, and 11 = 6.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

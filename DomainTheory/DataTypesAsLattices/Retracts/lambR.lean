@@ -1,6 +1,3 @@
-/-ai
-The lambda retract is the application of the Y combinator to the graph of the lambda functor.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

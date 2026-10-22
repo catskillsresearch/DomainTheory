@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood system V is difference-closed.
-
-The difference of two neighbourhoods of V is empty or a neighbourhood of V.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

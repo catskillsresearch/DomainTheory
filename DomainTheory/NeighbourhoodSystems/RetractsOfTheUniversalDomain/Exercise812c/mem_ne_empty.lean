@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood of a system with no minimal neighbourhood is nonempty.
-
-If the neighbourhood were empty, the absence of a minimal neighbourhood would supply a nonempty piece contained in a union equal to the empty set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

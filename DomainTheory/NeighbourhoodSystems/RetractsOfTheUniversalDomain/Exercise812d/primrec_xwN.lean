@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood index of an X-sub-step word is primitive recursive.
-
-It is the left component of the word, which is primitive recursive.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

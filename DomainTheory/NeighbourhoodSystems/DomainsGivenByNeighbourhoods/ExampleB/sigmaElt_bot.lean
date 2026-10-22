@@ -1,8 +1,3 @@
-/-ai
-Applying a finite binary string to the least element yields the finite element of that string.
-
-Compare elements by membership. A witnessing neighbourhood of the least element is the master, so the inclusion becomes containment of the cone after rewriting the prepend of the string to the set of all strings. Conversely, the master belongs to the least element, and the same rewrite turns the cone inclusion into the required inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

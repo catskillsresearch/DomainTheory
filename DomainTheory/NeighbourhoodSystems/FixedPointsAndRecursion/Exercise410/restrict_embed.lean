@@ -1,8 +1,3 @@
-/-ai
-Restricting the embedding of a relativized filter recovers that filter.
-
-Extensionality compares membership. A neighbourhood of the restricted embedding is an enlargement of a neighbourhood of the filter by a set that belongs to a, so upward closure of the filter applies. Conversely, a neighbourhood of the filter belongs to a and witnesses itself as a neighbourhood of the embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

@@ -1,6 +1,3 @@
-/-ai
-The bit-doubling map on the domain of binary sequences sends a partial string to the partial double of that string and a total string to the total double, and is the lifting of those two assignments along the cone and singleton monotonicity laws for doubling.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

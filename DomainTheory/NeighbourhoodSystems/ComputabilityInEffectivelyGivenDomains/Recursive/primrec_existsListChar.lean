@@ -1,8 +1,3 @@
-/-ai
-If g is primitive recursive, then so is the function sending a pair code to the bounded existential character of g on the second component and the list coded by the first component.
-
-The character is the fold of the corresponding existential step, with the second projection as the parameter, the constant 0 as the starting value, and the first projection as the list code, and that fold agrees with the character by definition.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

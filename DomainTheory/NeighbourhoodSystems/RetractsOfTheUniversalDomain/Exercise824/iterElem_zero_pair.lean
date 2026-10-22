@@ -1,8 +1,3 @@
-/-ai
-The zeroth iterate element of the paired map is the bottom of the pair space.
-
-Unfold the left side as the identity map of the pair space applied to that bottom, and rewrite by the element action of the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

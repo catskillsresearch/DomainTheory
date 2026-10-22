@@ -1,6 +1,3 @@
-/-ai
-An isomorphism from an object X to an object Y consists of a morphism from X to Y, a morphism from Y to X, and the two equations saying that the two composites are the identity morphisms of X and of Y.
-ai-/
 module
 
 

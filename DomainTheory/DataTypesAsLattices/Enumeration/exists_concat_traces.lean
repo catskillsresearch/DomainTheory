@@ -1,8 +1,3 @@
-/-ai
-Given a code c and a finite list of indices, if every index on the list has a valid value trace recording that code with the index, then one valid value trace records the code with every index on the list.
-
-The proof is by induction on the list. The empty list is witnessed by the empty trace, which is a valid trace, and there is no index to record. For a head index cons a tail, choose a valid trace recording the code with the head, and by the inductive hypothesis a valid trace recording the code with every index of the tail. Their concatenation is valid. The left-hand trace records the head, and the right-hand trace records each index of the tail.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

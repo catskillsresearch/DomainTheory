@@ -1,8 +1,3 @@
-/-ai
-If the X half-step atom at depth n and bit-source i is not junk, then its second-system index is the positive split index of the two atom-pair indices at n.
-
-The hypothesis is the junk flag of the X sub-step on the packed atom-pair state with bit 1, and the junk formula for the sub-step rewrites it. Unfolding the index and the atom state, the second-index formula for a non-junk sub-step, the two index projections of a packing, and selection at bit 1 give the positive split index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

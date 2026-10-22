@@ -1,8 +1,3 @@
-/-ai
-If a product token has least first component, inserting it adds its second component to the right projection.
-
-A witness in the projection of the inserted set is the inserted token, which contributes its second component, or a token of the original set, which witnesses membership in the original projection. Conversely, the inserted token witnesses its own second component, and a witness for the original projection remains a witness after insertion.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

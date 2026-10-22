@@ -1,0 +1,3 @@
+If a map i between continuous lattices preserves arbitrary suprema, is injective, and preserves the way-below relation, then some continuous retraction makes the domain a projection of the codomain along i, and the retraction sends each ambient element to the supremum of the elements whose image lies below it. This is the converse half of Scott's Proposition 3.10.
+
+The projection supplied by the converse construction has inclusion equal to i and retraction equal to that supremum, both by definition of the construction.

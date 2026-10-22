@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood belongs to the least fixed point of an approximable endomap if and only if some iterate relates the master neighbourhood to it.
-
-This equivalence is the defining membership of the least fixed point.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

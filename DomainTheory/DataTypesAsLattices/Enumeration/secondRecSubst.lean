@@ -1,6 +1,3 @@
-/-ai
-The primitive recursive numerical substitution of Theorem 3.3 sends a natural number m to the application of m to the numeral of m.
-ai-/
 
 module
 

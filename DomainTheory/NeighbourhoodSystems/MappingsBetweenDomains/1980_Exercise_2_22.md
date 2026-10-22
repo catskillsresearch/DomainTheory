@@ -1,19 +1,19 @@
 # Exercise 2.22
 
-**EXERCISE 2.22.** (For set theorists). We have remarked in Exercise 1.18 and in Exercise 2.11 that any domain $|D|$, as a family of sets (in fact, a family of subsets of the set $D$ itself), is closed under the intersection of an arbitrary non-empty sub family and under the union of any directed sub family. For those familiar with the subject matter, the example of the (proper) ideals of a commutative ring (with unit) is also seen to be such a family. What is the abstract situation? Let $\mathbf{C}$ be *any* family of sets with these closure properties. It is to be shown that $\mathbf{C}$ is inclusion-isomorphic to a domain. (Hint: Let $\Delta$ be the set of finite sets included in sets in $\mathbf{C}$. For $F \in \Delta$, define its "closure" by the equation:
+## Human-English
 
-$$\overline{F} = \bigcap \{ X \in \mathbf{C} \mid F \subseteq X \}.$$
+@import "Exercise222.english" {code_block=false}
 
-Every $\overline{F} \in \mathbf{C}$, and these will prove to be the "finite" elements of $\mathbf{C}$. The neighbourhood system $\mathcal{D}$ over $\Delta$ can be taken to be the sets of the form
+## AI: Human-English to AI-Lean
 
-$$C(F) = \{ G \in \Delta \mid F \subseteq \overline{G} \}$$
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise222.lean**
 
-for $F \in \Delta$. Notice that for all $X \in \mathbf{C}$
+@import "Exercise222.lean"
 
-$$X = \bigcup \{ \overline{F} \mid F \subseteq X \text{ and } F \in \Delta \}.$$)
+## AI: AI-Lean to AI-English
 
-Check that approximable functions on these families are just those preserving directed unions.
+@import "Exercise222.ai_lean_to_english" {code_block=false}
 
-**Lean 4**
+## AI: AI-English to Human-English Concordance
 
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise222.lean](Exercise222.lean)
+@import "Exercise222.ai_english_concordance" {code_block=false}

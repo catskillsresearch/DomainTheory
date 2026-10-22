@@ -1,8 +1,3 @@
-/-ai
-Sequential conjunction of the master neighbourhood with any neighbourhood is the master neighbourhood.
-
-Unfold the definition. The master neighbourhood differs from zero and from one, so both conditionals take the remaining branch.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

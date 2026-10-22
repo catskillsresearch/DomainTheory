@@ -1,8 +1,3 @@
-/-ai
-The function space into an iterate is isomorphic, as a domain, to the iterate of the function space.
-
-The isomorphism is the domain order isomorphism of the function-space iterate.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

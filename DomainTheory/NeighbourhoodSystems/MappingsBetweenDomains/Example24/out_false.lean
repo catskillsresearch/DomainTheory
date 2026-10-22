@@ -1,8 +1,3 @@
-/-ai
-The output of a string beginning with zero is zero followed by the output of the tail.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,8 +1,3 @@
-/-ai
-The second component of the generalized atom pair is contained in the master neighbourhood of the second neighbourhood system.
-
-The argument is induction on the depth. At depth zero the component is the master. At a successor it shrinks into the previous component, which lies in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

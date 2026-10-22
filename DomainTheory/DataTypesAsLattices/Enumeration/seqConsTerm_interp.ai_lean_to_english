@@ -1,0 +1,3 @@
+If a term a and a term xs both avoid the variable 7, then interpreting their term-level sequence cons in an environment yields the sequence cons of the two interpretations.
+
+Unfolding the term and the constructor, the graphs agree. For each argument, the interpretations of a and of xs are unchanged when the environment is updated at 7, because those terms avoid 7, and the conditional, application, and predecessor clauses then match.

@@ -1,8 +1,3 @@
-/-ai
-YPseq i meets YPseq j emptily if and only if the enumerated sets Y i and Y j meet emptily.
-
-Specialize the combined intersection-emptiness transfer to the odd indices 2i + 1 and 2j + 1. At those indices the interleaved families are YPseq and Y. Intersecting with the masters does not change them, because YPseq i lies in the master of the first system and Y i lies in the master of the second.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

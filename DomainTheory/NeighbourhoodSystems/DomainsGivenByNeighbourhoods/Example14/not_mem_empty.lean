@@ -1,8 +1,3 @@
-/-ai
-The empty set of tokens is not a neighbourhood of the binary tree.
-
-Assume that it is. The membership characterization writes it as the master, the left subtree, the right subtree, or one of the four leaves. Each of those sets contains one of the tokens 0 through 6, which cannot lie in the empty set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

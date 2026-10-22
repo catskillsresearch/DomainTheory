@@ -1,8 +1,3 @@
-/-ai
-The conditional set from the master along an entry list is the output intersection, relative to the indexed neighbourhood, of the step list coded by that entry list.
-
-Compare membership. A step pair in the coded list is the pairing of an entry, and conversely an entry of the list gives such a step pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

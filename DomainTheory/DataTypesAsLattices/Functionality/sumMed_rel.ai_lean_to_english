@@ -1,0 +1,3 @@
+If f lies in the function space from A to C and g lies in the function space from B to C, then the coproduct mediator of f and g lies in the function space from the sum of A and B to C.
+
+Both graph equations in the function-space membership are the graph law for the mediator. On a related pair in the sum, the left-injection case rewrites both applications by the left injection law and invokes preservation by f, and the right-injection case does the same with the right injection law and g.

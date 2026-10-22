@@ -1,6 +1,3 @@
-/-ai
-The inner step reads a code as an element, an accumulator, and a fixed first argument, applies the binary operation to the pair of that argument and the element, and returns one more than the pair of the result and the accumulator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

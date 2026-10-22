@@ -1,6 +1,3 @@
-/-ai
-The descent homomorphism from the initial algebra on C to a T-algebra B is the strict descent map, and its homomorphism square is the underlying commutation of that map. The square is obtained by unwrapping a subtype equality and simplifying composition of strict-domain morphisms, after which the commutation lemma applies.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

@@ -1,6 +1,3 @@
-/-ai
-The split of Exercise 8.12(f) sends a set of natural numbers, a rational set, and a set of natural numbers to a pair of rational sets by running the bisection split with V as prober against U's canonical bisection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

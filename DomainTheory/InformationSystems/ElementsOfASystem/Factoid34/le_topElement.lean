@@ -1,8 +1,3 @@
-/-ai
-When every finite set of tokens is consistent, every element lies below the top element.
-
-Every token lies in the universal carrier of the top element.
-ai-/
 
 module
 

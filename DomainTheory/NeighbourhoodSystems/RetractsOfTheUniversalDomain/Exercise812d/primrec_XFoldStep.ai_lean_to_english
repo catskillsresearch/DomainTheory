@@ -1,0 +1,3 @@
+The X-fold step is primitive recursive.
+
+Depth, stage, and accumulator are projections, and pairing depth with stage makes the atom-junk and atom-index codes primitive recursive by composition. The found and value parts of the accumulator are projections, and the union index of the value with the atom index is primitive recursive. Selection on the found flag between the updated union and the fresh atom, then selection on the junk flag between the old accumulator and that update, equals the fold step.

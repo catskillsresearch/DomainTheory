@@ -1,6 +1,3 @@
-/-ai
-The n-th component of an iterate element is the original element whose neighbourhoods are the sets X such that X is a neighbourhood and the iterate element contains the pinning of copy n to X. The subfamily law is the first conjunct. The master belongs because pinning the master yields the iterate master. An intersection of two such pinnings is the pinning of the intersection, and that intersection is a neighbourhood because its fiber at the pinned copy belongs to the iterate element. Upward closure uses monotonicity of pinning.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

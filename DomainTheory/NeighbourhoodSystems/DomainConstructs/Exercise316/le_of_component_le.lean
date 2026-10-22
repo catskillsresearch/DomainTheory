@@ -1,8 +1,3 @@
-/-ai
-If every component of an iterate element lies below the corresponding component of another, then the first element lies below the second.
-
-Monotonicity of the sequence construction gives the inequality of the reconstructed elements, and the two reconstruction identities rewrite that inequality as the desired one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

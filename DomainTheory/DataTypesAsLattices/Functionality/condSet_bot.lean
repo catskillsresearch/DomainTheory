@@ -1,8 +1,3 @@
-/-ai
-The conditional set of the bottom element, with any two branches, is bottom.
-
-Membership extensionality and the definitions of the conditional set and of bottom give the equality.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

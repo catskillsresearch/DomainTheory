@@ -1,8 +1,3 @@
-/-ai
-The image of YPseqCode i is contained in a code of the first presentation if and only if the corresponding code of the second presentation is contained in the image of XPseqCode at the other index.
-
-The combined-code subset transfer is instantiated at the mixed indices twice i plus one and twice j. The odd and even clauses rewrite the combined sets, and the intersections with the masters cancel because both sides already lie in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

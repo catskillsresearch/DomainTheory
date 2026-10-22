@@ -1,8 +1,3 @@
-/-ai
-The successor step is combinatory.
-
-It is the application of the combinators K and successor.
-ai-/
 module
 
 public import Mathlib.Computability.RE

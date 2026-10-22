@@ -1,6 +1,3 @@
-/-ai
-This file introduces the notation for the true element of the truth domain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

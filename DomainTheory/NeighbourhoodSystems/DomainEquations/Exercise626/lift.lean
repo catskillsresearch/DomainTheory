@@ -1,6 +1,3 @@
-/-ai
-The lift of a Scott system is the Scott system whose neighbourhood system is the tokenwise lift of its underlying system, using that the system is empty-free.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

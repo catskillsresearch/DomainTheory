@@ -1,8 +1,3 @@
-/-ai
-The intersection of {1} and {0} is empty.
-
-Extensionality reduces the claim to the two tokens, and neither token belongs to both singletons.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

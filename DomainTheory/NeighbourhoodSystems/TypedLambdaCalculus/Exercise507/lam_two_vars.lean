@@ -1,8 +1,3 @@
-/-ai
-Two-variable abstraction is currying: applying the curry of a map to x and then to y equals applying the map to the pair of x and y.
-
-This is the equation for the element map of a curry.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

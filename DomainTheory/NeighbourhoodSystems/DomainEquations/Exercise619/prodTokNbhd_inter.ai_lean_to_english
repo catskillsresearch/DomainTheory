@@ -1,0 +1,3 @@
+Product neighbourhoods intersect componentwise: the intersection of the product neighbourhoods of X with Y and of X' with Y' is the product neighbourhood of the intersections.
+
+Equality is checked on an arbitrary word. The empty word is handled by simplification of membership in an intersection. A word with a leading bit is handled by cases on that bit, again by simplification of membership in an intersection.

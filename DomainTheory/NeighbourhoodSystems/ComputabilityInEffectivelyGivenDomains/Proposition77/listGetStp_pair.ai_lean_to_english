@@ -1,0 +1,3 @@
+On an explicit accumulator pairing a countdown with a value, the indexing step returns the pair of the decremented countdown and the selection of the current element when the countdown is one, and of the carried value otherwise.
+
+Unfolding the step, the pairing projections expose the countdown, the value, and the current element.

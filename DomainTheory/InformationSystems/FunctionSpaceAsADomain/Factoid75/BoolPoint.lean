@@ -1,6 +1,3 @@
-/-ai
-The points of the flat BOOL domain are the undefined point, the true point, and the false point.
-ai-/
 
 module
 

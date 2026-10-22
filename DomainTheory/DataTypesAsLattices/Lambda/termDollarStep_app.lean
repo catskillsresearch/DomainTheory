@@ -1,8 +1,3 @@
-/-ai
-Applying the term-level dollar step at s to u equals the graph of the body at s and u.
-
-This is the β-law for the graph of a family that is Scott continuous in u, which follows because the body is Scott continuous in u.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

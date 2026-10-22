@@ -1,8 +1,3 @@
-/-ai
-Evaluation of the difference automaton from a singleton pair of finite sets, along a word, is the singleton of the pair of left folds of the two finite steps.
-
-Induction on the word, generalizing the two finite sets. The empty word is immediate. For a word that begins with a symbol, the step set of a singleton is the singleton of the stepped pair, and the inductive hypothesis applies to those stepped sets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

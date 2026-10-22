@@ -1,28 +1,3 @@
-/-ai
-A neighbourhood witnessing membership in an element lies below that element as a principal element.
-
-A neighbourhood of the principal element is a subneighbourhood of the witness, so upward closure puts it in the element.
-
-The principal elements on the neighbourhoods of an element form a directed family.
-
-The intersection of two such neighbourhoods belongs to the element, and each principal element lies below the principal element of the intersection because each neighbourhood contains the intersection.
-
-Every element is the directed supremum of the principal elements on its own neighbourhoods.
-
-If a neighbourhood belongs to the element, the corresponding principal element contributes it. If a principal element on a neighbourhood of the element contains the tested neighbourhood, upward closure from that subneighbourhood puts the tested neighbourhood in the element.
-
-The image under an approximable endomap of a directed supremum of fixed elements is that same supremum.
-
-Continuity rewrites the image of the supremum as the supremum of the images, and each image equals the original summand by the fixed-point hypothesis.
-
-The section induced by an order isomorphism from the fixed-point set onto another domain sends a principal element to the underlying element of the inverse image of that principal element.
-
-This is the principal clause of the monotone-map constructor.
-
-The same section sends every element to the underlying element of its inverse image.
-
-The inverse images of the principal approximants are directed, because the inverse isomorphism is monotone and intersections of neighbourhoods supply upper bounds. The section of the element equals their directed supremum: membership through a principal neighbourhood matches membership in that supremum by the principal clause. Each approximant is fixed because it lies in the fixed-point subtype. The section lies below the inverse image because each approximant does, by monotonicity of the inverse isomorphism on a principal element below the element. For the reverse, the supremum of those fixed approximants is fixed, so the section is a fixed element. Algebraicity reduces the comparison of the element with the image of the section to principal approximants, each of which lies below the section as a summand of that supremum, and the two round trips of the isomorphism recover the inequality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83
@@ -35,41 +10,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 
 @[expose] public section
 
-/-!
-# Lecture VIII — Theorem 8.5 (Scott 1981, PRG-19): finitary projections via a step-closure formula
-
-**Theorem 8.5.** For an approximable mapping `a : E → E` the following are equivalent:
-
-(i) `a` is a finitary projection;
-
-(ii) `a(x) = {Y ∈ E ∣ ∃X∈x, X⊆Y ∧ X a X}`, for all `x ∈ |E|`.
-
-## What is formalized here
-
-The **`(ii) ⟹ (i)` direction** (`isFinitaryProjection_of_formula`) is proved in full, and is what
-Theorem 8.6 actually needs: `sub`'s fixed points are *by definition* exactly the maps `a`
-satisfying formula (ii), so characterising the range of `sub` only ever needs this direction.
-
-The construction: from `a`, build `D := {X ∈ E ∣ X a X}` directly (`fixedNbhd`) — this is a genuine
-subsystem `D ◁ E` **for any approximable map `a`** (`fixedNbhd_subsystem`), no hypothesis on `a`
-needed for the neighbourhood-system axioms themselves. Formula (ii), unwound at principal elements
-via `rel_iff_mem_principal`, says exactly that `a`'s relation matches Proposition 8.2's formula for
-`D`: `a = retractionOfSubsystem (fixedNbhd_subsystem a)`. Proposition 8.2 (via Definition 8.3's
-corollaries) then hands us `FinitaryProjection a` for free.
-
-**The `(i) ⟹ (ii)` direction is *not* formalized in this file.** Scott's own proof needs a fact not
-yet in the codebase: a section/retraction pair `i ⊣ j` (`j∘i = I_D`) built from the abstract
-"isomorphic to a domain" witness of `IsFinitary` *reflects compactness* — if `i(w)` is a principal
-(finite) element of `E` then `w` is already principal in `D`. (Scott's own remark: "`i(j(↑X)) = ↑X`
-means `j(↑X)` is a finite element of `D`".) This is provable from existing machinery (`iSupDirected`/
-`toElementMap_iSupDirected` give continuity of `i`, and `D`'s general algebraicity gives that every
-element is a directed union of its principal approximants — a compact element equalling a directed
-sup must already equal one of the sup's members), but assembling it is a standalone, comparably
-sized effort to the rest of this file and is left as a documented follow-up; see `HANDOFF.md`.
-
-Everything proved here is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
@@ -78,13 +18,6 @@ universe u
 
 variable {α : Type u} {E : NeighborhoodSystem α}
 
-
-/-! ## Algebraicity and compactness
-
-General-purpose lemmas about any `NeighborhoodSystem`, needed for Theorem 8.5's hard direction
-below: every element is the directed union of its own principal ("finite"/compact) approximants
-(`eq_iSupDirected_principal`), and this makes "compact" (in the standard directed-sup sense)
-exactly synonymous with "principal" (`IsCompactElt`, `IsCompactElt.eq_principal`). -/
 
 section Algebraic
 
@@ -123,15 +56,6 @@ theorem eq_iSupDirected_principal (x : V.Element) :
 
 
 end Algebraic
-
-/-! ## Theorem 8.5, `(i) ⟹ (ii)`: the hard direction
-
-Setup: `a : E → E` is a retraction (`Retraction a`) and a projection (`a ≤ idMap E`), and its
-fixed-point set is order-isomorphic to `F.Element` for some neighbourhood system `F` (`IsFinitary
-a`, witnessed by `e`). We build the "section" `i : F → E` induced by `e` directly via `ofMono`
-(Exercise 2.8), show it realizes `e.symm` at *every* element of `F` (not just principal ones,
-`toElementMap_sectionMap`), and combine this with the algebraicity/compactness lemmas above to
-prove Scott's compactness-reflection fact and, from it, formula (ii). -/
 
 section HardDirection
 

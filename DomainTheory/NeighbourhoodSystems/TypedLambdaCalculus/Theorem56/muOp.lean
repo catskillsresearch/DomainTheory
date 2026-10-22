@@ -1,6 +1,3 @@
-/-ai
-The minimization operator is the currying of the minimization body, so it sends a function g to the map taking x and y to the conditional of the zero test of f at that pair, the value x, and g at the successor of x and at y.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

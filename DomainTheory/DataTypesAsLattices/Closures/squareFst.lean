@@ -1,6 +1,3 @@
-/-ai
-The first projection of a disjoint pairing is the set of numbers whose doubles lie in the paired set.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

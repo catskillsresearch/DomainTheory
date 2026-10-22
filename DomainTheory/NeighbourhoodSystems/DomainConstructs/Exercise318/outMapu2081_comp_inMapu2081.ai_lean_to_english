@@ -1,0 +1,3 @@
+The composite of the right projection after the right injection is the identity map of the second neighbourhood system.
+
+Two approximable maps agree when they relate the same pairs. If the composite relates Y to Z, some sum neighbourhood receives the right copy of Y and has right content contained in Z, so Y is contained in that right content and hence in Z. Conversely, if Y is contained in Z, the right copy of Y is a sum neighbourhood related to Y by the injection and to Z by the projection, because the right content of that copy is Y.

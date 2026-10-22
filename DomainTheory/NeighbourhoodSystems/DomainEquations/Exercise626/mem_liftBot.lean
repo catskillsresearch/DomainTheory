@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the lifted bottom if and only if it equals the lift master.
-
-The equivalence is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

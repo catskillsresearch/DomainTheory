@@ -1,0 +1,3 @@
+The map sending u to the graph of x mapped to the graph of y mapped to the application of u to the pair sequence of x and y is Scott-continuous.
+
+Constancy of graphs under Scott continuity reduces the claim to continuity, for each x, of the inner graph in u, and that inner graph is continuous by the same principle from left continuity of application at the pair sequence of x and y.

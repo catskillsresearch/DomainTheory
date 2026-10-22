@@ -1,8 +1,3 @@
-/-ai
-Mapping a concatenation of code lists through funListOf equals the concatenation of the two images.
-
-Simplification by the definition of funListOf and the append law for list map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

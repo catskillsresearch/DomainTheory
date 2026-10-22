@@ -1,8 +1,3 @@
-/-ai
-The approximable map of the domain-equation equivalence, composed with the approximable map of its inverse, is the identity on the triple sum of the unit system with two copies of C.
-
-Compare element maps. The element map of a composite of isomorphism maps is the composite of the equivalence applications, and the equivalence applied after its inverse is the identity, which is the element map of the identity map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

@@ -1,8 +1,3 @@
-/-ai
-If an element of a neighbourhood system differs from bottom, the associated map is a retraction, and the two-point system is order-isomorphic to its set of fixed points.
-
-The proof pairs the retraction law with the fixed-point isomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

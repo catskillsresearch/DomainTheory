@@ -1,8 +1,3 @@
-/-ai
-A natural number belongs to the bottom element if and only if the membership claim is false.
-
-This is simplification of the empty set.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

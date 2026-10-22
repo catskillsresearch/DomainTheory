@@ -1,6 +1,3 @@
-/-ai
-A set of neighbourhoods is finitely consistent when every finite sequence drawn from it is consistent in the neighbourhood system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

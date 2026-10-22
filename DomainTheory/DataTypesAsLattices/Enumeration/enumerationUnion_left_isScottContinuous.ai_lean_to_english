@@ -1,0 +1,3 @@
+For a fixed element y, union on the left is Scott continuous.
+
+Fix x and compare membership of an index n with membership in the Scott union. If n lies in x, the power 2 to the n is a witness: its enumeration is the singleton of n, contained in x, and n lies in the left summand of the union. If n lies in y, the zero enumeration is a witness, by the empty enumeration of 0, and n lies in the right summand. Conversely, a Scott-union witness contributes n from the left summand by containment of that finite enumeration in x, or from the right summand directly.

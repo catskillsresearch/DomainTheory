@@ -1,6 +1,3 @@
-/-ai
-The right subtree of the binary tree is the set of tokens {1, 10, 11}, encoded as the three-element set {2, 5, 6}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

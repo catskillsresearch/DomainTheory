@@ -1,8 +1,3 @@
-/-ai
-The intersection of two rational-interval neighbourhoods with a point in common is again a rational-interval neighbourhood.
-
-If either set is the whole real line, the intersection is the other neighbourhood. If both are open intervals with rational endpoints, the shared point gives a strict inequality from each left endpoint to the opposite right endpoint. The maximum of the left endpoints is therefore strictly below the minimum of the right endpoints. The intersection of the two intervals equals the open interval between that maximum and that minimum, whose endpoints are rational.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

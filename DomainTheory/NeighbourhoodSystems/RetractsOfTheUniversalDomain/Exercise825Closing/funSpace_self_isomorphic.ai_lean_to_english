@@ -1,0 +1,3 @@
+An isomorphism of a domain D with the function space into a domain V, together with an isomorphism of the product of V with itself with V, yields an isomorphism of D with its own function space.
+
+The product of D with itself is isomorphic to D by the first step of the closing argument. The function space of D with itself is then isomorphic to D by transporting the right slot along the given isomorphism of D, reversing currying, transporting the left slot along the product isomorphism, and reversing the given isomorphism. The claimed isomorphism is the reverse of that chain.

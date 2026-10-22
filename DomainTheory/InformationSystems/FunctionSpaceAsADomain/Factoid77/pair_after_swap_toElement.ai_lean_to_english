@@ -1,0 +1,3 @@
+Evaluating, at the swap of a product element, the pairing of a map composed with the first projection and the second projection yields the pair whose components are that map at the swapped first projection and the swapped second projection.
+
+The two sides have the same first projection and the same second projection, by the projection laws for a pairing and for a paired element.

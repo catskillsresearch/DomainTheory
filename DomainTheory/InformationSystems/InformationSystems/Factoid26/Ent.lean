@@ -1,6 +1,3 @@
-/-ai
-A finite set entails a token when the set is consistent and the token is either the least-informative token or a member of the set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

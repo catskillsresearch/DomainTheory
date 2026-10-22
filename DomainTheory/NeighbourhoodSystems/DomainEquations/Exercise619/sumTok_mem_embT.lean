@@ -1,8 +1,3 @@
-/-ai
-If Y is a neighbourhood of the second system, its true-tagged copy is a neighbourhood of the concrete sum.
-
-It is the right-copy clause of the membership definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

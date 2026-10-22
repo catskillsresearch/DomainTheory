@@ -1,6 +1,3 @@
-/-ai
-The power system of a neighbourhood system has the neighbourhoods as its tokens, and a set of those tokens is a neighbourhood when it is the up-set of some neighbourhood. The master is the up-set of the master, which contains the master. If the up-set of a neighbourhood is contained in the intersection of the up-sets of two neighbourhoods, that neighbourhood is contained in both, so their intersection is a neighbourhood and the intersection of the up-sets is the up-set of the intersection. Every up-set of a neighbourhood is contained in the up-set of the master, because the neighbourhood is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

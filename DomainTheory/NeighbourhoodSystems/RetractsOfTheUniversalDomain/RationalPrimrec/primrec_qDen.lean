@@ -1,8 +1,3 @@
-/-ai
-The denominator of a rational code is primitive recursive.
-
-It is the successor of the right component of the code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

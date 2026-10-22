@@ -1,8 +1,3 @@
-/-ai
-The packed state recursion, sending a pair of a bit-source and a depth to the depth-n atom state, is primitive recursive.
-
-It is primitive recursion from the base state, with step the atom transition driven by the primitive-recursive emptiness decider, and that recursion equals the state function.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

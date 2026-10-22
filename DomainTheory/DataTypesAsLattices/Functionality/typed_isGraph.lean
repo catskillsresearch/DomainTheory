@@ -1,8 +1,3 @@
-/-ai
-If f is typed by the function retract from a to b, then f equals the graph of its own application.
-
-The arrow typing supplies an equality. Transitivity and extensionality of graphs reduce the claim to a pointwise identity. Congruence of application along that equality writes the application of f as the application of the composite of b with the composite of f and a. Two composition laws unfold that composite to b applied to f applied to a applied to the argument, and one further composition law matches this expression.
-ai-/
 
 module
 

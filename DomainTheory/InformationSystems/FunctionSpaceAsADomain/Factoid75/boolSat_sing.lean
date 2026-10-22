@@ -1,8 +1,3 @@
-/-ai
-Every BOOL token is satisfied by some BOOL point.
-
-The undefined point satisfies the bottom token, the true point satisfies the true token, and the false point satisfies the false token.
-ai-/
 
 module
 

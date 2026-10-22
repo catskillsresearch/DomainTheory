@@ -1,8 +1,3 @@
-/-ai
-If Y is a neighbourhood of V₁, then the tagged middle copy of Y is contained in the master neighbourhood of the three-way sum of V₀, V₁, and V₂.
-
-A token of the copy is the middle tag of some b in Y. It lies in the inserted master on the right of the insertion, in the left half of the outer union, and in the right half of the inner union, because the sub-master law places b in the master of V₁ and the membership criterion places its middle tag in the middle copy of that master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the powerset system is the universe of natural numbers.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

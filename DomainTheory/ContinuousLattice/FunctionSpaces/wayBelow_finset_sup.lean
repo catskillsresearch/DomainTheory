@@ -1,8 +1,3 @@
-/-ai
-A finite supremum of elements way below an element g is itself way below g.
-
-The proof inducts on the finite supremum. The bottom element is way below g, and the join of two elements way below g is way below g.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

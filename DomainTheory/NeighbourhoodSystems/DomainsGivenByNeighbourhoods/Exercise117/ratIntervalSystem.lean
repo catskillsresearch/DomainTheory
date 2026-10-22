@@ -1,6 +1,3 @@
-/-ai
-The rational-interval neighbourhood system on the reals takes the rational-interval neighbourhoods, with the whole real line as master neighbourhood. The master is nonempty and is a neighbourhood. For the intersection law, a neighbourhood contained in an intersection of two neighbourhoods is nonempty, so that intersection is nonempty and the intersection lemma makes it a neighbourhood. Every neighbourhood is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

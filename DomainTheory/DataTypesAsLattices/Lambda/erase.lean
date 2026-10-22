@@ -1,6 +1,3 @@
-/-ai
-Erasure sends a λ-term to a combinator. Variables and zero stay as they are, successor and predecessor become applications of the corresponding combinators, a conditional becomes the conditional combinator applied to the erased left branch, then the erased right branch, then the erased test, application is preserved, and abstraction becomes combinatory abstraction at the bound index.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

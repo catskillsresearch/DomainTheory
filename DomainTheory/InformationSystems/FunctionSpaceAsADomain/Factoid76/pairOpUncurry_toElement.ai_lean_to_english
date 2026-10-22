@@ -1,0 +1,3 @@
+Uncurried pairing, evaluated at the pair of the pair of approximable maps f and g with an element x, equals the pairing of f and g evaluated at x.
+
+Comparing projections shows that the argument of the first application is the pair of f with x and the argument of the second application is the pair of g with x. The two sides of the equality then have the same first projection, namely f at x, and the same second projection, namely g at x.

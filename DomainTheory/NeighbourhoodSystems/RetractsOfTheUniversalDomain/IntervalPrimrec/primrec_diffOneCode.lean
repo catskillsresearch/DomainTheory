@@ -1,14 +1,3 @@
-/-ai
-The one-interval difference code is primitive recursive.
-
-The four components of the double unpairing are primitive recursive projections. Pairing
-the first of the second pair with the rational minimum of the second of the second pair
-and the first of the first pair is primitive recursive, as is pairing the rational
-maximum of the first of the second pair and the second of the first pair with the second
-of the second pair. The successor of the pairing of the first of these with the
-successor of the pairing of the second with the constant zero agrees with the
-one-interval difference code by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

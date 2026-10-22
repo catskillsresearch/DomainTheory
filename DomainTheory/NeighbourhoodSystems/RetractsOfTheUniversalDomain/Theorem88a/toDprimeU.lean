@@ -1,6 +1,3 @@
-/-ai
-The pushforward of a filter x of D is the DprimeU-filter of those neighbourhoods that equal Yidx e n for some n with e n belonging to x. Each such neighbourhood belongs to DprimeU. The master belongs, because the transferred neighbourhood of 0 is the master of DprimeU and e 0 is the master of D. The intersection of the two neighbourhoods of D belongs to x, so the witnessed index lemma names a common index, which x contains. A larger transferred neighbourhood corresponds to a larger neighbourhood of D, which x contains.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

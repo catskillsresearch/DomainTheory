@@ -1,8 +1,3 @@
-/-ai
-The empty set of tree tokens is consistent.
-
-It is left-consistent: the atom projection of the empty set is empty, hence consistent in the atom information system, and both pair projections of the empty set are empty.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

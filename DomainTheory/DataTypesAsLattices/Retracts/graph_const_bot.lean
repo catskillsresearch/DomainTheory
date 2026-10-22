@@ -1,8 +1,3 @@
-/-ai
-The graph of the constant map with value the empty set equals the empty set.
-
-Extensionality and the definitions of the graph and of the empty set give the equality.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

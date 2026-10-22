@@ -1,0 +1,3 @@
+Each finite approximant of an approximable endomap lies below its least fixed point.
+
+Rewrite the least fixed point as the directed supremum of the approximants. A neighbourhood of the n-th approximant is a neighbourhood of that supremum, witnessed by the index n.

@@ -1,8 +1,3 @@
-/-ai
-The doubled encoding of one string is a prefix of the completed encoding of another if and only if the first string is a prefix of the second.
-
-In the forward direction, induct on the first string. The empty string is a prefix of every string. If the first string is nonempty and the second is empty, the doubled bit cannot match the marker, by deciding the booleans. If both are nonempty, two prefix steps peel the common bit and the inductive hypothesis applies to the tails. In the reverse direction, a prefix doubles to a prefix, and the doubled encoding is a prefix of the completed encoding by the marker continuation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,8 +1,3 @@
-/-ai
-The approximable map associated with strict of a function-space element sends bottom to the bottom of E.
-
-A neighbourhood of that application is the master, which is membership in the bottom of E, or else the argument would fail to be bottom. The master belongs to the application.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

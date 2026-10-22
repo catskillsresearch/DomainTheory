@@ -1,6 +1,3 @@
-/-ai
-The filter of an ideal consists of the neighbourhoods I(F) whose generated ideal is contained in the ideal. The subfamily law forgets the containment. The master is I of the empty set, whose generated ideal is the bottom ideal and hence lies below the given ideal. The intersection of I(F₁) and I(F₂) is I of the union, and the span of a union is the supremum of the spans, which lies below the ideal when both spans do. Upward closure from I(F) to I(F') uses the inclusion criterion to place F' inside the span of F and therefore inside the ideal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

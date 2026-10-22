@@ -1,8 +1,3 @@
-/-ai
-The intersection of the tagged right copies of Z and of Z' equals the tagged right copy of Z ∩ Z'.
-
-Extensionality reduces the claim to a token, which is split into the basepoint and the three summands, and membership is simplified in the right copy, the right tag, and the intersection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

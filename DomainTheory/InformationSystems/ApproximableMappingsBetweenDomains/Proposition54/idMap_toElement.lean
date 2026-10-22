@@ -1,8 +1,3 @@
-/-ai
-Proposition 5.4(ii) states that the identity approximable mapping sends every element to itself.
-
-If a token lies in the image, it is entailed by a finite set contained in the element, so closure of the element contains the token. Conversely, the singleton of a token of the element is contained in the element, and reflexivity of entailment relates that singleton to itself.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable

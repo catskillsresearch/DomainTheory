@@ -1,6 +1,3 @@
-/-ai
-Tarski's operator on subsets of the domain sends a set to the complement of the range of the second injection, united with the image under that injection of the image of the set under the first injection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

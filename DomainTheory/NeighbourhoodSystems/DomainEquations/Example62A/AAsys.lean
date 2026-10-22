@@ -1,6 +1,3 @@
-/-ai
-AAsys is the right-hand side of Scott's equation, the separated sum of the n-fold power of A with itself, for positive n. Each copy is nonempty by apowNe.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

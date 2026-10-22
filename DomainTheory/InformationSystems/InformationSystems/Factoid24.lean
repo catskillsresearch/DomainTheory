@@ -1,28 +1,9 @@
-/-ai
-This file's example is example_24.
-
-Scott's first example equips the non-negative integers, read as lower bounds, with an information system whose least token is 0, whose consistent sets are all finite sets, and whose entailment holds of m when m is 0 or m is at most some member of the set. The consistency axioms hold because every finite set is consistent. The least token is entailed by the zero clause, and a member is entailed because it is at most itself. If u entails c by the zero clause, then v entails c by that same clause. Otherwise some member n of u is at least c, and the entailment of n by v is either the zero clause, which forces c to be zero, or a member of v at least n, in which case the inequalities compose.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys
 public import DomainTheory.InformationSystems.InformationSystems.lowerBoundEnt
 
 @[expose] public section
-
-/-!
-# Factoid 2.4 — first example: lower bounds on ℕ
-
-**Scott 1982, §2 (“A first example”).** Data objects are non-negative integers,
-read as propositions `n ≤ x`. Take `Δ = 0`, every finite set consistent, and
-
-```
-{n₀, …, nₖ₋₁} ⊢ m  iff  m = 0  ∨  ∃ i, m ≤ nᵢ.
-```
-
-Scott: “That ⊢ is an entailment relation in the sense of our axioms is clear.”
-We package this as an `example` that builds an `InfoSys ℕ` and discharges Def 2.1.
--/
 
 namespace DomainTheory.InformationSystems
 

@@ -1,8 +1,3 @@
-/-ai
-Theorem 8.6 states that the packaged map subApprox is a finitary projection on the function space.
-
-It is a projection, and it is finitary.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

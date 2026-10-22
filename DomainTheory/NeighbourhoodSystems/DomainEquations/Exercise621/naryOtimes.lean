@@ -1,6 +1,3 @@
-/-ai
-The n-ary smash product of a head expression and a list of expressions is the right-nested fold of the smash-product constructor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

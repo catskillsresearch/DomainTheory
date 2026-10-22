@@ -1,0 +1,3 @@
+The running intersection at every stage is a neighbourhood, so the greedy prefix stays consistent.
+
+The proof is by induction on the stage. At zero, the accumulator is rewritten as the master neighbourhood met with the first enumerated set, and that intersection equals the enumerated set because this set is a neighbourhood and hence contained in the master. At a successor, a successful consistency test rewrites the accumulator as its intersection with the next enumerated set, which is a neighbourhood by the test, and a failed test leaves the accumulator equal to the previous one.

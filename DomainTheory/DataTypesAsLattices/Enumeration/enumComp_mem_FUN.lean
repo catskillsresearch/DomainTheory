@@ -1,8 +1,3 @@
-/-ai
-The composition of any two elements lies in FUN.
-
-It is the graph of a Scott-continuous map, namely the substitution of application of the second element into application of the first.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

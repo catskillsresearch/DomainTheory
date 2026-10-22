@@ -1,0 +1,3 @@
+The down-set of the neighbourhood coded by a is contained in the neighbourhood coded by k if and only if some index in the decoded list of k lies above that neighbourhood.
+
+If the down-set is contained in the coded neighbourhood, then the neighbourhood itself lies in the coded neighbourhood, since it is a neighbourhood contained in itself, and membership supplies an index whose enumerated neighbourhood contains it. Conversely, if such an index exists and a set lies in the down-set, then that set is a neighbourhood contained in the neighbourhood of a and hence in the neighbourhood of the index, so it lies in the coded neighbourhood.

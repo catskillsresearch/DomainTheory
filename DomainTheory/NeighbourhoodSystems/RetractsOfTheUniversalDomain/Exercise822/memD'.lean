@@ -1,6 +1,3 @@
-/-ai
-The image family consists of the cones of doubled encodings and the cones of completed encodings.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

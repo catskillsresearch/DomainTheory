@@ -1,6 +1,3 @@
-/-ai
-The least fixed point of an endomap f of the elements, relative to a witness a with f(a) below a, is the infimum of the set of pre-fixed points. Nonemptiness of that set is witnessed by a.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

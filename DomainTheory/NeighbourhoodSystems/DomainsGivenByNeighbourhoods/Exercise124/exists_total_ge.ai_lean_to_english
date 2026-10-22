@@ -1,0 +1,3 @@
+Every element approximates some total element.
+
+Zorn's lemma, applied to the principal upper set of the element, produces a maximal element above it. Every nonempty chain in that upper set is bounded above by the union of the chain, because each member of the chain approximates the union. The maximal element is total.

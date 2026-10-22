@@ -1,8 +1,3 @@
-/-ai
-If the depth of an expression is at most the fuel, then decoding its Gödel code with that fuel recovers the expression.
-
-Induction on the expression. Fuel zero is impossible, since every constructor has positive depth. With successor fuel, sigma and a singleton recover by the encoding equations, the singleton using that boolean-list decoding inverts boolean-list encoding. A concatenation or an intersection recovers both immediate subexpressions at the strictly smaller depths given by the depth bound, then reassembles them.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-The first component of an element pair is the left argument.
-
-This is the zero-place application equation for the two-place sequence.
-ai-/
 
 module
 

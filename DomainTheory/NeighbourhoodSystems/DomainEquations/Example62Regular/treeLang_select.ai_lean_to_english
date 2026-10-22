@@ -1,0 +1,3 @@
+The language of the subtree selected by a word σ is the left quotient of the language of the tree by σ.
+
+Extensionality compares a continuation, and simplification uses language membership, the application law for the selector, and membership in a left quotient.

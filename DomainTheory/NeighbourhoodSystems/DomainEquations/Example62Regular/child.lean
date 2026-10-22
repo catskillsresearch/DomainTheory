@@ -1,6 +1,3 @@
-/-ai
-The i-th immediate subtree of a total tree is the subtree selected by the one-letter word consisting of i.
-ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

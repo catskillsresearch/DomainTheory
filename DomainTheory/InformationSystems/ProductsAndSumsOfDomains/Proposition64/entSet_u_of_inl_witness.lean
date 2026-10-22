@@ -1,8 +1,3 @@
-/-ai
-If the left projection of a sum-consistent set u is nonempty, the right projection of u is empty, the left injection relates a finite set v to a finite set u', and A entails v from the left projection of u, then the separated sum entails u' from u.
-
-The sum bottom is entailed by consistency of u. A left token of u' has its component entailed by v through the injection, and entailment transitivity in A from the left projection of u, which is consistent because the right projection is empty, gives the left clause. A right token of u' would lie in the right projection of u', which the injection witness makes empty.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

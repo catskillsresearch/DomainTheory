@@ -1,8 +1,3 @@
-/-ai
-A strict map belongs to the step set of two sets exactly when its underlying approximable map relates the first set to the second.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

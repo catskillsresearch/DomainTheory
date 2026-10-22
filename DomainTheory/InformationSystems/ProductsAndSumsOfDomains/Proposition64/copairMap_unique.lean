@@ -1,8 +1,3 @@
-/-ai
-An approximable map h from the separated sum to C that composes with the left injection to give f, composes with the right injection to give g, and sends the bottom element to the bottom element of C, equals the copairing of f and g. This is the uniqueness clause of Scott's Proposition 6.4.
-
-Extensionality is checked in both directions. If h relates a sum-consistent set u to a consistent set s, the emptiness dichotomy for the left projection splits the argument. When both projections are empty, the bottom-like relation yields empty entailment in C. When the left projection is empty and the right projection contains a token, monotonicity of h along the one-sided right entailment relates the right lift of that projection to s, so the composite hypothesis gives the relation for g and the right branch of copairing applies. When the left projection contains a token, sum consistency forces the right projection to be empty, and the same argument with the left lift gives the relation for f. Conversely, the empty-entailment alternative follows by monotonicity of h from the empty relation. A left alternative unpacks the composite hypothesis as a witness related by the left injection, and the left-witness entailment together with monotonicity of h transfers the relation. A right alternative is the same argument with the right injection and the right-witness entailment.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

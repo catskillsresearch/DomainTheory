@@ -1,8 +1,3 @@
-/-ai
-The map recovered from the constant combinator at k is the constant map with value k.
-
-Extend by values. At each element, rewrite by the application law of the combinator and the constant map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

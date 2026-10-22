@@ -1,0 +1,3 @@
+Proposition 5.3(iii) states that one approximable mapping lies below another if and only if the image of every element under the first is contained in its image under the second.
+
+If the relation of the first is contained in the relation of the second, a token of an image, witnessed by a related finite set, remains a token of the image under the second. Conversely, a related pair of consistent finite sets has the closure of the codomain set contained in the image of the closure of the domain set. The pointwise hypothesis and transitivity move that inclusion to the second mapping, and the converse of the closure bridge returns the relation.

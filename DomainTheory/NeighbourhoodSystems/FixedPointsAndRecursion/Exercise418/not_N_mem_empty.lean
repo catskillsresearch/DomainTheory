@@ -1,8 +1,3 @@
-/-ai
-The empty set is not a neighbourhood of the natural-number domain.
-
-A neighbourhood is the whole token set or a singleton, and the empty set is neither.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

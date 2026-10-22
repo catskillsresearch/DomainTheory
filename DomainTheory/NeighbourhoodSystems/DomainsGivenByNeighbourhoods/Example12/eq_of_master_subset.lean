@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood of Example 1.2 that contains the master is the master.
-
-By the classification of neighbourhoods it is the master, {0}, or {1}. The last two alternatives would contain the master in {0} or in {1}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

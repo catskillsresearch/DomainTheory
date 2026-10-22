@@ -1,8 +1,3 @@
-/-ai
-A dependent pair lies in a product neighbourhood if and only if its second component lies in the set at its first component.
-
-Both sides are the defining membership of a product neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

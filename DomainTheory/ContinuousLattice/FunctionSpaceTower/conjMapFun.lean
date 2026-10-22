@@ -1,6 +1,3 @@
-/-ai
-Conjugation by a Scott map after and a Scott map before sends a Scott endomap to the composite of the first, the endomap, and the second.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

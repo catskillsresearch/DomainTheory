@@ -1,0 +1,3 @@
+Applying the primitive-recursion combinator of a base a and a step f to the numeral of n yields the n-fold primitive-recursion value of a and f.
+
+Take the graph equation for the recursion step and the fixed-point theorem (2.5) for its Scott continuity. Rewriting by that graph, the fixed point, equation (2.27), and the evaluation of the recursion approximant on numerals gives the value.

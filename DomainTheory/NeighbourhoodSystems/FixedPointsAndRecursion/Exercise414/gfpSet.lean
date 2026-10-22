@@ -1,6 +1,3 @@
-/-ai
-The greatest fixed point of a monotone endomap f of the power set of a set is the union of the post-fixed points: the set of elements that belong to some set contained in its image under f.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

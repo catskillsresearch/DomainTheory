@@ -1,8 +1,3 @@
-/-ai
-If A is a subalgebra and x and y belong to A, then the binary sequence constructor of x and y belongs to A.
-
-The combinators S, K, cond, pred, and zero belong to A. Closing under application produces cond(x), then cond(y) applied to pred(zero), then S(K of that result) applied to pred, then S(K(cond x)) of that result, and the identity S K K. The SK equation rewrites the binary sequence constructor as S applied to the last two of these, which lies in A.
-ai-/
 
 module
 

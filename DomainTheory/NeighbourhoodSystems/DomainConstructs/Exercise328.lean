@@ -1,8 +1,3 @@
-/-ai
-The least map at an element equals the supremum of the active principal filters at that element.
-
-The numbered name example_328 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise328.toElementMap_leastMap_eq_sSup

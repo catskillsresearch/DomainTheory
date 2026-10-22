@@ -1,8 +1,3 @@
-/-ai
-The strict pairing relates Z to W exactly when both are neighbourhoods and either W is the product of the two masters or W is a proper product whose factors are related to Z by the two maps.
-
-The two sides are the same proposition by definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

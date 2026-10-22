@@ -1,8 +1,3 @@
-/-ai
-The code-level projection relates the coded neighbourhood at an index to the neighbourhood at another index if and only if the coded neighbourhood is contained in the coded neighbourhood at the involute of the second index.
-
-The relation is membership of the coded neighbourhood in the copy together with membership of the target neighbourhood in the image of its principal filter under the decoding map. The embedding of the involute of the second index is that neighbourhood, by applying the involution to the index. In the forward direction a witness with the same embedding as the involute has the same coded neighbourhood, by the agreement of embeddings with equality of coded neighbourhoods, and the inclusion transfers. In the reverse direction the involute itself is a witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic

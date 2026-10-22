@@ -1,8 +1,3 @@
-/-ai
-If x equals twice y, then the Thue–Morse bit at x equals the bit at y.
-
-Rewrite by the hypothesis and the even recurrence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse

@@ -1,6 +1,3 @@
-/-ai
-The list wordsUpTo n enumerates every word over the two Boolean letters of length at most n, without duplicates. At zero it is the singleton list containing the empty word. At a successor it appends, to the previous list, the flattening of each earlier word w into the two extensions by false and by true.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular

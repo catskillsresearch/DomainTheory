@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.11). Application of an intersection is contained in the intersection of the applications. Equality needs both arguments to be graphs.
-
-A finite set contained in the argument whose pair code lies in both sets witnesses membership in each of the two applications.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

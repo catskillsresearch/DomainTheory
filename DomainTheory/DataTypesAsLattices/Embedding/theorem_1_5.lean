@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 1.5, the extension theorem, in its continuity clause: the extension of a map from a subspace into Pω is continuous on the ambient space.
-
-Continuity into the generated topology reduces to the preimage of each subbasic open. The preimage of the subbasic open of k is open by the openness lemma for membership in the extension.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

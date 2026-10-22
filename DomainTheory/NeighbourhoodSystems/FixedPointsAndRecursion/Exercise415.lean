@@ -1,8 +1,3 @@
-/-ai
-A monotone endomap of the elements of a domain has a least fixed point. A monotone endomap of the elements of a domain has a maximal fixed point: a fixed point that agrees with every larger fixed point.
-
-The numbered name example_415 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise415.exists_least_fixedPoint

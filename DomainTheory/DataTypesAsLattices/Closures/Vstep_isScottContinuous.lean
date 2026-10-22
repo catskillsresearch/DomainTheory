@@ -1,8 +1,3 @@
-/-ai
-For fixed a and x, the step sending y to the union of x with a(y) is Scott continuous.
-
-Union on the right preserves Scott continuity, and application of the fixed element a is Scott continuous.
-ai-/
 
 module
 

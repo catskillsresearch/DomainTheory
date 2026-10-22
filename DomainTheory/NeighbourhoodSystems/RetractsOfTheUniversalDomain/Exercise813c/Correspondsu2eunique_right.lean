@@ -1,8 +1,3 @@
-/-ai
-If one set of natural numbers corresponds to two sets of points of Cantor space, those two sets are equal.
-
-Each correspondence supplies a formula. The two formulas have the same evaluation on the natural numbers, so they are semantically equivalent, and semantic equivalence equates their evaluations on Cantor space.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

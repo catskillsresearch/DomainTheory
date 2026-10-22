@@ -1,8 +1,3 @@
-/-ai
-The right element extracted from a sum element does not depend on which right token of the element is used as the witness.
-
-The two extracted elements are equal by antisymmetry, and each token of either carrier is already a token of the other.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

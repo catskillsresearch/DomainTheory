@@ -1,0 +1,3 @@
+The second equation of the double fixed point holds: gTok of Gamma_D and Gamma_E equals Gamma_E.
+
+A token of gTok of the two colimits lies, by single-stage additivity, in gTok of some stage, hence in the next second component of the iteration and so in Gamma_E. A token of Gamma_E lies at some stage. The zeroth stage is the empty string, which belongs to gTok. A later stage lies in gTok of the preceding components, and those components sit inside the colimits, so monotonicity places the token in gTok of the colimits.

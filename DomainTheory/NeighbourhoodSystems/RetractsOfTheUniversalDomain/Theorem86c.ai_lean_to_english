@@ -1,0 +1,3 @@
+Theorem 8.6 states that, relative to the function-space presentation built from a computable presentation of E, the packaged map subApprox is computable. Theorem 8.6 states that if E is effectively given, then sub, packaged as an endomap of the function space, is computable.
+
+The numbered name theorem_86_c is the conjunction of these statements. The proof is that conjunction.

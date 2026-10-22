@@ -1,8 +1,3 @@
-/-ai
-Every element of the final-segment system approximates the filter of all neighbourhoods.
-
-The numbered name example_125 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise125.Basic

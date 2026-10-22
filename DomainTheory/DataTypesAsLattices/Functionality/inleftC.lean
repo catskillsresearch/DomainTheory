@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (4.26). The left injection is the graph of the map sending x to the sequence pair of the natural number zero with x.
-ai-/
 
 module
 

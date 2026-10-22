@@ -1,0 +1,3 @@
+The zero-depth coded set equals the universal master.
+
+The zero index set is the whole of the natural numbers, so the depth-one atom of bit-source one is non-empty: its sign at zero is true and the resulting intersection is that index set. The membership characterization of the Y-sequence code then makes the zero-depth coded set the U-neighbourhood of the atom code at depth one and bit-source one, the only index below one being zero. The empty D-atom is everything. The successor step has remainder bit one; the positive emptiness query is zero, because the positive constraint at index zero is everything, and the negative emptiness query is one, because the negative constraint is empty. The code is therefore the master index, whose U-neighbourhood is the master.

@@ -1,8 +1,3 @@
-/-ai
-Zero belongs to the application of a shift combinator to any set.
-
-The application law writes that value as a union, and zero belongs to the left summand, the singleton of zero.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

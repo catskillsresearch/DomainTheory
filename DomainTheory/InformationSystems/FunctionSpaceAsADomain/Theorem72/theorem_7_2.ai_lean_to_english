@@ -1,0 +1,3 @@
+The first sentence of Scott's Theorem 7.2: the approximable maps from an information system A to an information system B are exactly the elements of the function-space system of Definition 7.1. The application and currying clauses of the same numbered theorem are not this statement.
+
+The two conversions, from an approximable map to a function-space element and back, are mutually inverse by the two inverse lemmas.

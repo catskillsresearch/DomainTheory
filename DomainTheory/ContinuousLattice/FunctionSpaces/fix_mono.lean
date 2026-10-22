@@ -1,8 +1,3 @@
-/-ai
-The operator fix is monotone. If f lies below f' as Scott maps, then fix f lies below fix f'.
-
-Pointwise comparison gives f(fix f') below f'(fix f'), and the fixed-point equation says f'(fix f') equals fix f', so fix f' is a pre-fixed point of f. The least-pre-fixed-point property then yields fix f below fix f'.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

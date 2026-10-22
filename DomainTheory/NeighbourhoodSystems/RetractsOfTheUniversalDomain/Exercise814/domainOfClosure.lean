@@ -1,6 +1,3 @@
-/-ai
-The neighbourhood system associated with a closure operator has the compact fixed points as tokens and takes as neighbourhoods the principal up-sets of those compacts, with master the up-set of the bottom compact. The master contains the bottom compact, so it is nonempty, and it is a neighbourhood by construction. Every neighbourhood is contained in the master because every up-set is contained in the up-set of the bottom compact. Given two neighbourhoods and a third neighbourhood contained in their intersection, the token of the third lies in both up-sets, and the up-set of the join of the first two compacts above that token equals the intersection, so the intersection law holds.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

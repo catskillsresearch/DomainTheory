@@ -1,6 +1,3 @@
-/-ai
-The canonical code of a list code is the canonical list code when that code is nonzero, and otherwise the singleton list code of the master pair, which presents the master neighbourhood of U. The choice is selection on the zero test of the list code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

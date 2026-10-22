@@ -1,6 +1,3 @@
-/-ai
-This instance registers left commutativity of the operation that unions a function token's output set onto a finite set of output tokens. The witness is the left-commutativity law for choice-free union of those output sets.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

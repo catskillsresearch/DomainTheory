@@ -1,8 +1,3 @@
-/-ai
-The rational comparison code is primitive recursive.
-
-The left and right components of a code are primitive recursive, and so are the two cross-cleared sums built from the primitive-recursive numerator parts and denominators by multiplication and addition. The zero test of their truncated difference is primitive recursive, and simplifying that expression recovers the comparison code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

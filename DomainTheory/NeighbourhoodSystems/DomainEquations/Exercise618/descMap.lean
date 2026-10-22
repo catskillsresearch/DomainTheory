@@ -1,6 +1,3 @@
-/-ai
-The descent map of a structure map from the product of a domain with a target into the target is the supremum of the descent sequence of that structure map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

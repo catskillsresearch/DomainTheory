@@ -1,8 +1,3 @@
-/-ai
-The function space is a congruence for domain isomorphism: isomorphic domains and isomorphic codomains give isomorphic function spaces.
-
-Eliminate the two domain isomorphisms to order isomorphisms of elements, and take the function-space order isomorphism they induce.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

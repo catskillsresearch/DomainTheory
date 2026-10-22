@@ -1,8 +1,3 @@
-/-ai
-The Thue–Morse bit of 2n + 1 is the negation of the Thue–Morse bit of n.
-
-Simplify the definition of the bit, the bits of an odd number, the fold of a cons, and exclusive-or with true.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

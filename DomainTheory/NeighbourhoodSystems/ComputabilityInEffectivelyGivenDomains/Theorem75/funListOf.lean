@@ -1,6 +1,3 @@
-/-ai
-The step list of an entry list is the list of step pairs obtained by pairing each entry.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

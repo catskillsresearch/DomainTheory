@@ -1,6 +1,3 @@
-/-ai
-In the sense of Scott 1976, (3.13) and (3.14), the semigroup generator R is the graph of the map sending x to the pair sequence of the numeral 0 with x.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

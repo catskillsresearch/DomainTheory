@@ -1,8 +1,3 @@
-/-ai
-The identity endofunctor on domains is monotone on domains.
-
-On any subsystem relation the identity leaves the carrier unchanged, the image relation is the original relation, and the injection and the projection agree with their images by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

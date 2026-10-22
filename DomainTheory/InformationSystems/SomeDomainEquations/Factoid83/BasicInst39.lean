@@ -1,6 +1,3 @@
-/-ai
-Left commutativity of forget-insertion is introduced, because inserting the forgotten values of two U-tokens into a finset commutes.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

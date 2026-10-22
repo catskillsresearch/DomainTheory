@@ -1,8 +1,3 @@
-/-ai
-The intersection of two tuples with the same tag is the tuple of the componentwise intersections.
-
-Extensionality rewrites membership by the tuple characterization. Two witnesses in the intersection have prefixes identified by uniqueness of slot prefixes, so the indices agree and the common remainder lies in both components. A witness in the componentwise intersection belongs to both tuples.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 1.3, the substitution theorem. The composite of two Scott-continuous endomaps of Pω is Scott continuous.
-
-The result is the composition case of the substitution theorem.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph

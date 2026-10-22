@@ -1,8 +1,3 @@
-/-ai
-One right copy is contained in another if and only if the underlying set is contained in the other.
-
-If the copies are nested and a token lies in the first set, its right tag lies in the first copy and hence in the second, so the token lies in the second set. Conversely, a token of the first copy is the right tag of some token of the first set, and inclusion of the sets puts that tag in the second copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

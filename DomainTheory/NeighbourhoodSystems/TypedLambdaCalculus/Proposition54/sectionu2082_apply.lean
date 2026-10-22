@@ -1,8 +1,3 @@
-/-ai
-The section of τ at x sends y to the value of τ at the pair of x and y.
-
-Rewrite by the definition of the section and the curried application law.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

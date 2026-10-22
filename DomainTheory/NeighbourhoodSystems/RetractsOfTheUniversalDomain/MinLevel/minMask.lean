@@ -1,6 +1,3 @@
-/-ai
-The minimal mask of a level and a mask is the mask truncated at two raised to the minimal level. It is the canonical mask of the level set presented by that code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

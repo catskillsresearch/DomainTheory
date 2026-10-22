@@ -1,0 +1,1 @@
+This file gathers and re-exports the setting of Theorem 5.1 (Scott 1981, PRG-19). Every typed λ-term defines an approximable function of its free variables, by the five closure cases of a variable as a projection, a constant as a constant map, a tuple as a pairing, an application as evaluation of a pair of maps, and an abstraction as a curry.

@@ -1,8 +1,3 @@
-/-ai
-In a Scott presentation, inclusion of enumerated neighbourhoods is recursively decidable.
-
-One neighbourhood is contained in another exactly when their intersection equals the first. The inclusion shuffle turns a pair of indices into the triple that asks this of the recursively decidable intersection-equality relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

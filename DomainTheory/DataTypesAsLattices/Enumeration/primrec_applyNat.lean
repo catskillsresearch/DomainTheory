@@ -1,8 +1,3 @@
-/-ai
-Binary application of natural-number codes is primitive recursive.
-
-It agrees with the successor of the pairing function.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

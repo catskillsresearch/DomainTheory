@@ -1,8 +1,3 @@
-/-ai
-Application of a fixed u is Scott continuous in the argument.
-
-Compare membership of a number m. A witness whose basic element is contained in the argument, with the corresponding pair in u, places m in the Scott union at that same code. Conversely, a member of the Scott union lies in an application at some basic element contained in the argument, and the witnessing basic element inside that one is still contained in the argument.
-ai-/
 
 module
 

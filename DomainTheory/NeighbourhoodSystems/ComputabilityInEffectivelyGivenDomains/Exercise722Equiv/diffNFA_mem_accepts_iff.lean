@@ -1,8 +1,3 @@
-/-ai
-The difference automaton accepts a word if and only if the word lies in the language of the first expression and outside the language of the second.
-
-If the automaton accepts the word, its evaluation is the singleton of the pair of finite evaluations, so that pair is accepting: the first component meets its accept set and the second is disjoint from its accept set. The first fact is membership in the first language, and membership in the second language would make the second intersection nonempty. Conversely, the pair of finite evaluations is accepting because membership in the first language makes the first intersection nonempty and failure of membership in the second language forces the second intersection to be empty, and evaluation returns exactly that singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

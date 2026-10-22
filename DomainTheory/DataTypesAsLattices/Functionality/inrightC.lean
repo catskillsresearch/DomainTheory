@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (4.27). The right injection is the graph of the map sending x to the sequence pair of the natural number one with x.
-ai-/
 
 module
 

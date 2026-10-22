@@ -1,0 +1,3 @@
+If two self-maps of the universal domain lie below the identity, then their lambda combinator lies below the identity of the function space.
+
+Compare elements, and pass across the function-space equivalence. Transporting the lambda combinator sends a map to the second map composed after it composed after the first. Monotonicity of composition in each factor, using the two inequalities below the identity, reduces this to the map composed with the two identities, which is the map itself.

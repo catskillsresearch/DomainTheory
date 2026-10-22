@@ -1,8 +1,3 @@
-/-ai
-The negative-index code of a state packed from a remainder, a positive code, a negative code, and a U-code is that negative code.
-
-Unfolding the projection and the packing, the unpairing equations yield the third component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

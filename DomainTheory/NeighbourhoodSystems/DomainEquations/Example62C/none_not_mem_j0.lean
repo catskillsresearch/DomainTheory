@@ -1,8 +1,3 @@
-/-ai
-The basepoint lies outside every tagged left copy.
-
-A membership witness would be a left tag equal to the basepoint, and simplification of the left tag makes that equality absurd.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

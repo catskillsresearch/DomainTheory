@@ -1,8 +1,3 @@
-/-ai
-The object part of the functor Tsig A sends a strict domain D to tsigObj A D.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

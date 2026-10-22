@@ -1,8 +1,3 @@
-/-ai
-The sum extraction sends the bottom of the universal domain to the bottom of the sum of the universal domain with itself.
-
-This is the general fact that a left inverse sends bottom to bottom, applied to the sum extraction after the sum injection, which is the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

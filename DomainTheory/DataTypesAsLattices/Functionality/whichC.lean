@@ -1,6 +1,3 @@
-/-ai
-Scott's equation (4.30) defines the summand tag to be the same combinator as the first projection.
-ai-/
 
 module
 

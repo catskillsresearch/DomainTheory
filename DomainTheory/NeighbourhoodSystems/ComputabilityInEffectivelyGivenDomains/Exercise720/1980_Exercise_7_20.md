@@ -1,24 +1,49 @@
 # Exercise 7.20
 
-**EXERCISE 7.20.** Show that there is a combinator
+## Human-English
 
-$$\text{union} : \mathbb{P}(\mathbb{P} D) \to \mathbb{P} D$$
+@import "1980_Exercise_7_20.english" {code_block=false}
 
-where for suitable neighbourhoods
+## AI: Human-English to AI-Lean
 
-$$\bigcup_{i < n} \downarrow \Bigl(\bigcup_{j < m_i} \downarrow X_{ij}\Bigr) \quad \text{union} \quad \bigcup_{k < q} \downarrow Y_k \quad \text{iff} \quad \forall i < n \forall j < m_i \exists k < q.\, X_{ij} \subseteq Y_k \, .$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap.lean**
 
-Is union computable if $D$ is effectively given? What is
+@import "unionMap.lean"
 
-$$\text{union}(\{\{x\}, \{y, z\}\}) = ??$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/Basic.lean**
 
-Are $\mathbb{P}(\mathbb{P} D)$ and $\mathbb{P} D$ generally isomorphic??
+@import "Basic.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_Ypd_iff.lean**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap.lean](unionMap.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_Ypd_iff.lean](unionMap_rel_Ypd_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_isComputable.lean](unionMap_isComputable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_fin.lean](unionMap_rel_fin.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720.lean](../Exercise720.lean)
+@import "unionMap_rel_Ypd_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_isComputable.lean**
+
+@import "unionMap_isComputable.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720/unionMap_rel_fin.lean**
+
+@import "unionMap_rel_fin.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise720.lean**
+
+@import "../Exercise720.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "unionMap.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "unionMap_rel_Ypd_iff.ai_lean_to_english" {code_block=false}
+
+@import "unionMap_isComputable.ai_lean_to_english" {code_block=false}
+
+@import "unionMap_rel_fin.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise720.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_7_20.ai_english_concordance" {code_block=false}

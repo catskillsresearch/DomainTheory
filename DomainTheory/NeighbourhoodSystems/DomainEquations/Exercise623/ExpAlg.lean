@@ -1,6 +1,3 @@
-/-ai
-The syntactic domain Exp is a T-algebra whose structure map is the isomorphism from T(Exp) to Exp. Since T(Exp) and Exp are the same object, that structure map is the identity. This construes the initial solution as a syntactic domain of expressions for T(X) = N ⊕ ((X × X) + (X × X)).
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

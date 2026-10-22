@@ -1,0 +1,3 @@
+The product join map relates the product neighbourhood of X and Y to W if and only if the two-variable binary join relates X and Y to W.
+
+Unfold the product map as that two-variable map. The preimages of the product neighbourhood under the two inclusions are X and Y. A related pair is a product neighbourhood together with the binary relation, and conversely the product of the two given neighbourhoods supplies that witness.

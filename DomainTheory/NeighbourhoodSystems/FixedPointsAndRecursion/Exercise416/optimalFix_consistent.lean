@@ -1,8 +1,3 @@
-/-ai
-The optimal fixed point of a nonempty set of fixed points is consistent with every member of the set: the two elements have a common upper bound.
-
-The member itself is that upper bound. It lies above the optimal fixed point, and it lies above itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413

@@ -1,6 +1,3 @@
-/-ai
-The abbreviation completeLatticePreorder selects the preorder of a complete lattice by following the instance through the complete-semilattice infimum and the partial order.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Defs

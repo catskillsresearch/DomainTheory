@@ -1,8 +1,3 @@
-/-ai
-Every finset of natural numbers is the finite set coded by some natural number.
-
-The code of the finset is such a number, by the decoding law for finite-set codes.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

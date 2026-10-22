@@ -1,8 +1,3 @@
-/-ai
-The left tag of a lies in the tagged left copy of X if and only if a lies in X.
-
-From a membership witness, simplification of the option and left-sum injections identifies the underlying element with a, and membership transports. Conversely, a itself is a witness that its left tag lies in the copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

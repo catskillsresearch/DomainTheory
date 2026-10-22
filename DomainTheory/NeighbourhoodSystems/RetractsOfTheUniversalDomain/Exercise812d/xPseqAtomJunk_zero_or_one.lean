@@ -1,8 +1,3 @@
-/-ai
-The junk flag of an X half-step atom is either 0 or 1.
-
-The flag is at most 1, so it is 0 or 1.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

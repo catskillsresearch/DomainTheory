@@ -1,8 +1,3 @@
-/-ai
-The conditional combinator is recursively enumerable.
-
-The equation that unpacks a nested pair into four components is primitive recursive, as are the two bit conditions: one test bit conjoined with a test of bit zero, and the other test bit conjoined with a lower bound of two. Their disjunction, conjoined with the unpacking equation, is primitive recursive, and existential quantification makes it recursively enumerable. A witness unpacks, by the membership characterization of the conditional combinator, to four indices satisfying one of the two bit conditions, and four such indices pack as a nested pair to a witness.
-ai-/
 module
 
 public import Mathlib.Computability.RE

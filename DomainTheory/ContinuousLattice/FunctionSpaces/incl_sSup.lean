@@ -1,8 +1,3 @@
-/-ai
-The inclusion of a continuous-lattice projection preserves arbitrary suprema. This is Scott's Proposition 3.10(i).
-
-If the set is empty, both sides are bottom, because the inclusion sends bottom to bottom. If the set is nonempty, its supremum equals the supremum of the directed set of its finite sub-joins, and the inclusion preserves that directed supremum. Each finite sub-join is sent to the finite join of the corresponding inclusions, which lies below the supremum of the image. Conversely, each member of the original set is a finite sub-join, so its inclusion lies below the supremum of the image of the finite sub-joins.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,35 +1,79 @@
 # Exercise 2.13
 
-**EXERCISE 2.13.** (For topologists.) Recall Exercise 1.22 where it was shown that any domain $|D|$ is a topological space. Prove from Exercise 2.9 that the functions $f : |D_0| \to |D_1|$ determined by approximable mappings are exactly *the continuous functions between these spaces.* (Hint: To prove continuity, remark that by 2.9
+## Human-English
 
-$$
-f^{-1}[Y] = \bigcup \{ [X] \mid Y \in f(\uparrow X) \};
-$$
+@import "1980_Exercise_2_13.english" {code_block=false}
 
-hence, the inverse image of any open set is open. In the other direction, suppose that $f : |D_0| \to |D_1|$ is topologically continuous. Argue that for all $x \in |D_0|$ and all open subsets $U \subseteq |D_1|$ we have
+## AI: Human-English to AI-Lean
 
-$$
-f(x) \in U \text{ iff } \exists X \in x.\ f(\uparrow X) \in U.
-$$
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/BasicInst8.lean**
 
-This holds because an open subset of $|D_0|$ is always a union of basic open subsets of the form $[X']$ for $X \in D_0$ and because
+@import "BasicInst8.lean"
 
-$$
-x = \bigcup \{ \uparrow X \mid X \in x \}
-$$
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_monotone.lean**
 
-for all $x \in |D_0|$.)
+@import "continuous_monotone.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_toElementMap.lean**
 
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/BasicInst8.lean](BasicInst8.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_monotone.lean](continuous_monotone.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_toElementMap.lean](continuous_toElementMap.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/mem_iff_principal_of_continuous.lean](mem_iff_principal_of_continuous.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/ofContinuous.lean](ofContinuous.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/principalFamily_directed.lean](principalFamily_directed.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/eq_iSupDirected_principal.lean](eq_iSupDirected_principal.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_of_monotone_iSupDirected.lean](continuous_of_monotone_iSupDirected.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/toElementMap_ofContinuous.lean](toElementMap_ofContinuous.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Exercise213.lean](../Exercise213.lean)
+@import "continuous_toElementMap.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/mem_iff_principal_of_continuous.lean**
+
+@import "mem_iff_principal_of_continuous.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/ofContinuous.lean**
+
+@import "ofContinuous.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/principalFamily_directed.lean**
+
+@import "principalFamily_directed.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/eq_iSupDirected_principal.lean**
+
+@import "eq_iSupDirected_principal.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/continuous_of_monotone_iSupDirected.lean**
+
+@import "continuous_of_monotone_iSupDirected.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213/toElementMap_ofContinuous.lean**
+
+@import "toElementMap_ofContinuous.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Exercise213.lean**
+
+@import "../Exercise213.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "BasicInst8.ai_lean_to_english" {code_block=false}
+
+@import "continuous_monotone.ai_lean_to_english" {code_block=false}
+
+@import "continuous_toElementMap.ai_lean_to_english" {code_block=false}
+
+@import "mem_iff_principal_of_continuous.ai_lean_to_english" {code_block=false}
+
+@import "ofContinuous.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "principalFamily_directed.ai_lean_to_english" {code_block=false}
+
+@import "eq_iSupDirected_principal.ai_lean_to_english" {code_block=false}
+
+@import "continuous_of_monotone_iSupDirected.ai_lean_to_english" {code_block=false}
+
+@import "toElementMap_ofContinuous.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise213.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_2_13.ai_english_concordance" {code_block=false}

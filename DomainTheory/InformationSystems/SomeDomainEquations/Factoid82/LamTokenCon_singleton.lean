@@ -1,8 +1,3 @@
-/-ai
-Every singleton finite set of lambda tokens is consistent.
-
-The proof applies the consistency of the forgotten singleton.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

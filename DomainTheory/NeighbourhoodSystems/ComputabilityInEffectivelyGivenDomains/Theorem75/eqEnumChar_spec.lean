@@ -1,8 +1,3 @@
-/-ai
-That characteristic equals one if and only if the two enumerated neighbourhoods are equal.
-
-If both codes are consistent, the characteristic is the conjunction of the two inclusions of step neighbourhoods, which is equality by antisymmetry. If only the first is consistent, equality with the whole space is the triviality test. If only the second is consistent, the same test read in the other order is the equality. If neither is consistent, both enumerations are the whole space.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

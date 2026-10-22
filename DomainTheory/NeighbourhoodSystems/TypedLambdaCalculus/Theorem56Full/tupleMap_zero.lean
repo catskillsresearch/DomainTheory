@@ -1,8 +1,3 @@
-/-ai
-The tuple of length zero is the constant map with value the bottom of the universal argument domain.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

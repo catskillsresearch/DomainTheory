@@ -1,8 +1,3 @@
-/-ai
-The injection preserves least upper bounds of bounded sets: the image of the supremum equals the supremum of the image.
-
-The image of the supremum lies below the supremum of the image because the Galois connection reduces that comparison to each member lying below the projection of the supremum of the image, and a second use of the Galois connection turns each image lying below that supremum into the required inequality. The supremum of the image lies below the image of the supremum because each image does, by monotonicity of the injection and the member lying below the supremum.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

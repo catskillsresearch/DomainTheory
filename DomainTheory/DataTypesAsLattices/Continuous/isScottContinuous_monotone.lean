@@ -1,8 +1,3 @@
-/-ai
-A Scott continuous map is monotone for inclusion: if x is contained in y, then f(x) is contained in f(y).
-
-If m lies in f(x), the membership characterization of the Scott union supplies a finite code whose finite set is contained in x and whose f-value contains m. That finite set is still contained in y, so m lies in f(y).
-ai-/
 module
 
 public import Mathlib.Topology.Bases

@@ -1,8 +1,3 @@
-/-ai
-The diagonal iterate inverts the pairing function: iterating the pairing value of a cell returns that cell.
-
-Injectivity of the pairing function, applied after rewriting by the fact that the pairing function inverts the iterate, identifies the two cells.
-ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

@@ -1,8 +1,3 @@
-/-ai
-A doubled encoding is distinct from every completed encoding.
-
-Equality would make the completed encoding a prefix of the doubled encoding, contradicting the separation of those two forms.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

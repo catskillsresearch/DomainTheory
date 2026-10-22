@@ -1,8 +1,3 @@
-/-ai
-The success bit returned by one meet step is at most one.
-
-Each application of the one-test yields zero or one. If the accumulator test is zero, the product is zero and selection returns the failure code, whose first component is zero. If it is one, the same split on the consistency test returns either zero or one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

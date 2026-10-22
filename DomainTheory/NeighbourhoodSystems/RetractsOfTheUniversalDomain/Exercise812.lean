@@ -1,8 +1,3 @@
-/-ai
-A set of natural numbers is a neighbourhood of V if and only if it is nonempty and equal to a finite union of residue classes 2^k ℕ + ℓ with ℓ < 2^k.
-
-The numbered name example_812 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812.V_mem_iff_finiteUnion

@@ -1,6 +1,3 @@
-/-ai
-An approximable map is strict when it relates the master neighbourhood of its domain only to the master neighbourhood of its codomain. This is the relational form of sending the bottom element to the bottom element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-If each of seven elements is a retract, their seven-way sum is a retract.
-
-The retract equation asks that the sum equal the graph of its double application. Graph extensionality and two uses of the application equation reduce the claim to an identity for the body. The body at the tagged injection of each index from 0 through 6 equals the tagged injection of the corresponding summand, the body sends the full set to the full set and bottom to bottom, and the four-way split of the double conditional, repeated along the iterated predecessor of the tag, selects one of those identities and closes by the retract equation of the chosen summand, or by the full-set or bottom identity when the tag is mixed or empty.
-ai-/
 
 module
 

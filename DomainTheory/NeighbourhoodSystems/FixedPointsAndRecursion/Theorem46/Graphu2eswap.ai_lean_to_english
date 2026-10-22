@@ -1,0 +1,3 @@
+A pair related by the graph of two models of Peano's axioms is related in the opposite order by the graph of the models with their roles exchanged.
+
+The proof is induction on the generating relation. The pair of zeros is symmetric. A successor step swaps to a successor step of the swapped relation.

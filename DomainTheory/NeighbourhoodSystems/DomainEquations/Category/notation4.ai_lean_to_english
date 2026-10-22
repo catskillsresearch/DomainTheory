@@ -1,0 +1,1 @@
+This file introduces the notation 𝟙 for the identity morphism of a category, and re-exports Mathlib's category class.

@@ -1,8 +1,3 @@
-/-ai
-If a finite set of function-space tokens has every input entailed by a set u', then u' entails the input union of those tokens.
-
-A member of the input union lies in the input of some token of the set, and that input is entailed by u'.
-ai-/
 
 module
 

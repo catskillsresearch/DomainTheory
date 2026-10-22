@@ -1,8 +1,3 @@
-/-ai
-Pointwise negation sends the neighbourhood one to the neighbourhood zero.
-
-Unfold the definition. The neighbourhood one is distinct from zero, so the first conditional is discharged, and the second conditional holds because one equals one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-A coalesced neighbourhood contained in a right injection is the right injection of a proper right neighbourhood.
-
-The master contains the empty option, which no right injection contains. A left injection of a nonempty neighbourhood is not contained in a right injection. The remaining case is already a proper right copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

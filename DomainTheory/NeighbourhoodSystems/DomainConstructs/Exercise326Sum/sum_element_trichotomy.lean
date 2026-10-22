@@ -1,8 +1,3 @@
-/-ai
-A sum element reaches a left-copy neighborhood, or a right-copy neighborhood, or else every neighborhood it contains is the master of the sum.
-
-The argument cases on left-copy membership and then on right-copy membership. In the remaining case, any neighborhood of the element is, by the sum decomposition of its neighborhoods, the master, a left injection, or a right injection. The master is the required neighborhood. A left or right injection contradicts the case assumption.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

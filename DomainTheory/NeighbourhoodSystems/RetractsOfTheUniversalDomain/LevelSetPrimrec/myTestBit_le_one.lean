@@ -1,9 +1,3 @@
-/-ai
-The bit test is at most one.
-
-Unfolding the test, the remainder modulo two of the iterated quotient is zero or one,
-and arithmetic gives the bound in both cases.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

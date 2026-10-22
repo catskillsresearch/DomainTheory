@@ -1,8 +1,3 @@
-/-ai
-The two successor operations on binary strings have disjoint ranges: a string headed by false differs from a string headed by true.
-
-The list constructors separate the two forms.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

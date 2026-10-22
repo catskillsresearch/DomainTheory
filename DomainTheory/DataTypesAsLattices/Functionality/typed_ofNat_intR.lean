@@ -1,8 +1,3 @@
-/-ai
-Every numeral is typed by the integer retract.
-
-This is the symmetric form of the numeral law for the integer retract.
-ai-/
 
 module
 

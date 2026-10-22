@@ -1,8 +1,3 @@
-/-ai
-The meet of the two-element family consisting of two elements equals their binary meet.
-
-The numbered name theorem_42 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42.familyInf_pair

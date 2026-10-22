@@ -1,8 +1,3 @@
-/-ai
-The junk flag of an X half-step atom is at most 1.
-
-By its closed form, the flag is a selection of 1 and an emptiness decision, gated by the atom-pair junk flag. The atom-pair junk flag and the emptiness decision are at most 1, and so is 1, so the selection is at most 1.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

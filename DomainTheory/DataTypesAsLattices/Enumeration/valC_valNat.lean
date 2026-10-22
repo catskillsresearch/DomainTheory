@@ -1,8 +1,3 @@
-/-ai
-Applying the least fixed point valC to the numeral of n equals the value of the numerical evaluator at n. The two denote the same enumeration on integer arguments.
-
-Unfold valC as the least fixed point and commute application with the union of the iterates from bottom. A membership in that union occurs at some stage, and the stage inclusion places it in the numerical value. Conversely, the stage given by the rank of n already equals the numerical value, so the membership lies in the union.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,8 +1,3 @@
-/-ai
-If a function token p belongs to a finite set t, then inserting p into the subset of t that excludes p recovers t.
-
-Extensionality is used. A token of the insertion is either p, which lies in t, or a token of the filter, which lies in t. A token of t equal to p lies in the insertion by that equality, and a token unequal to p lies in the filter and hence in the insertion.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

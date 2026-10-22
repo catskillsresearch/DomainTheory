@@ -1,6 +1,3 @@
-/-ai
-The finite set associated with a list is empty when the list is empty, and otherwise inserts the head into the finite set of the tail.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

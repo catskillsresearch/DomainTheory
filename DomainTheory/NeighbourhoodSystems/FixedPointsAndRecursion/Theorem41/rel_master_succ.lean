@@ -1,8 +1,3 @@
-/-ai
-If the n-th iterate of an approximable endomap relates the master neighbourhood to a set, then the successor iterate does as well.
-
-Commutation rewrites the successor iterate as the n-th iterate composed on the right with the map. The map relates the master neighbourhood to itself, and the hypothesis is the remaining step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

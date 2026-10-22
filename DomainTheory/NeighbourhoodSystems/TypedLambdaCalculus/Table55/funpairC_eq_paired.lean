@@ -1,8 +1,3 @@
-/-ai
-The map recovered from the function-pairing combinator at two function-space elements is the pairing of the two corresponding approximable maps.
-
-Extend by values. At each element, rewrite by the application law of the combinator and the pairing law.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

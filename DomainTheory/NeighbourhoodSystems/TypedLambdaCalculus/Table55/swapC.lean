@@ -1,6 +1,3 @@
-/-ai
-The argument-swap combinator of Table 5.5 (Scott 1981, PRG-19), the binary case of the inversion scheme, is the approximable map from a product to the swapped product given by pairing the second projection with the first.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

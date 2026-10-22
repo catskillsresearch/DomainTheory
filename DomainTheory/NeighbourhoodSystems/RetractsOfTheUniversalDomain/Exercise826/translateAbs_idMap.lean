@@ -1,8 +1,3 @@
-/-ai
-Translating the identity map between a and b yields b composed with a.
-
-Unfold the translation and cancel the composite of the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

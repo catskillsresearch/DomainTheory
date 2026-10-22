@@ -1,8 +1,3 @@
-/-ai
-The difference-emptiness decider is primitive recursive.
-
-It is subtraction of the primitive-recursive difference-existence decider from the constant one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

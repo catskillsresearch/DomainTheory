@@ -1,8 +1,3 @@
-/-ai
-A set of the two tokens is a neighbourhood of the two-point system if and only if it is the singleton of zero or the full two-point set.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

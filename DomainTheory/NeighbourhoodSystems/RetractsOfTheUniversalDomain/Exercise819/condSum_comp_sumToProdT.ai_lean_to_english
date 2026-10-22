@@ -1,0 +1,3 @@
+The conditional of a sum, after the map that sends a sum element to the truth value tagging its side together with the two projected values, is the identity on the sum.
+
+Compare the maps on elements. Composition, the identity, and the element formula for the tagging map reduce the composite to the embedded conditional of the tagged product, and the conditional-which identity says that this is the original sum element.

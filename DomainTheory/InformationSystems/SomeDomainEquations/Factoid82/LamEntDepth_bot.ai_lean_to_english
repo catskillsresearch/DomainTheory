@@ -1,0 +1,3 @@
+A depth-consistent finite set of raw lambda tokens depth-entails the bottom token.
+
+The entailment is the bottom clause of depth entailment, applied to the given consistency.

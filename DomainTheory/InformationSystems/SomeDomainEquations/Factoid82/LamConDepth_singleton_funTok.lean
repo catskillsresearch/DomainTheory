@@ -1,8 +1,3 @@
-/-ai
-Scott's clause (7) on a singleton: the singleton of a function token is depth-consistent whenever both of its component finsets are depth-consistent.
-
-The function-token projection is the singleton of that pair and the atom projection is empty, so the nonempty clause applies. The only function token is the given one. A subcollection either contains it, hence equals that singleton, and the output union is the output component, or it is empty, and the output union is the empty finset, which is depth-consistent.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

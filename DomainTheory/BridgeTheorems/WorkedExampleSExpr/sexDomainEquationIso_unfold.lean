@@ -1,8 +1,3 @@
-/-ai
-The carrier of the image of an S-expression element under the domain-equation isomorphism is the direct image of that element's carrier under unfolding of tokens.
-
-The two sides are identical by the definition of the isomorphism.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

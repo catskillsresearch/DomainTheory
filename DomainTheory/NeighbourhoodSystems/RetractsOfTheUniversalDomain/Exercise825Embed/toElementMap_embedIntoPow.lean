@@ -1,8 +1,3 @@
-/-ai
-The singleton-stack embedding sends an element to the push of the pair of that element with the bottom of the infinite power.
-
-Unfold the embedding and rewrite by the element actions of a composite, of a pairing, of the identity, and of a constant map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511

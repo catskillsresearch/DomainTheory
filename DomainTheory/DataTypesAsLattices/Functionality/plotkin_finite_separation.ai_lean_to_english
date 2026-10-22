@@ -1,0 +1,3 @@
+The m-fold iterate, under the union of the graph of application of e p with the graph of sigmaJ at max(p, q) + 1, of e q with the pair of that fresh index and zero adjoined, equals the plain iterate Z m (e p) (e q) with the pair of that index and m adjoined.
+
+Induction on m. The zero case is reflexivity. At a successor, rewrite by the recursive clause of Z, by equation (2.9), and by the inductive hypothesis. β-conversion, using continuity of application of e p, replaces application of the graph by application of e p. The fresh-union clause for that application, with the index strictly above p, the application equation for sigmaJ, and the fresh-union equation for sigmaJ, using that the finite iterate carries no pair at the fresh index, make the two sides identical.

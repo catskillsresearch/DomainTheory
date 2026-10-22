@@ -1,8 +1,3 @@
-/-ai
-Composing the left injection, the sum of two approximable maps, and the left projection recovers the first map.
-
-Two approximable maps agree when they relate the same pairs. If the composite relates X to Z, the intermediate output is the codomain master, a left copy related by the first map, or a right copy related by the second. The master case forces Z to be the codomain master, and monotonicity from the master relation of the first map gives the relation. The left-copy case gives an inclusion of the inputs and an inclusion of the output in Z, and monotonicity of the first map gives the relation. The right-copy case would place a nonempty left copy inside a right copy. Conversely, if the first map relates X to Z, the left copies of X and of Z witness the composite, because the left content of the left copy of Z is Z.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318

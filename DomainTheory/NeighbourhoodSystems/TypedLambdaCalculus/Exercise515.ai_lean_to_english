@@ -1,0 +1,3 @@
+The least fixed point of the map sending w to the product of the singleton of e with w, united with the singleton of e', equals the product of the star of the singleton of e with the singleton of e'. Any solution (x, y) of David Park's system lies above the proposed solution (x₀, y₀). The pair (x₀, y₀) solves David Park's system: x₀ equals a · x₀ ∪ b · y₀ ∪ c, and y₀ equals b · x₀ ∪ a · y₀ ∪ d.
+
+The numbered name example_515 is the conjunction of these statements. The proof is that conjunction.

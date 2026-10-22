@@ -1,8 +1,3 @@
-/-ai
-A product token lies in the left lift of a finite set v if and only if it is the left tag of some member of v.
-
-Unfold the left lift and apply the membership characterization of the corresponding fold.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,8 +1,3 @@
-/-ai
-The interval [0, r) belongs to the cut element of t if and only if the Dedekind up-set of t holds at r.
-
-Membership in the constructed element supplies an endpoint with the same interval. That endpoint is positive, the interval is nonempty, so r is positive, and injectivity forces the endpoint to be r. Conversely, r itself is the witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

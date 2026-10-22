@@ -1,0 +1,3 @@
+The enumeration element of j equals the union of the bits in the bit list of j.
+
+Compare membership of an index n. If n belongs to the enumeration of j, then n is at most j and the n-th bit of j is set, so n lies in the bit list and therefore in the union of those bits. Conversely, membership in the union means membership in the bit list, and simplifying the filter membership shows that the corresponding bit is set, so n belongs to the enumeration of j.

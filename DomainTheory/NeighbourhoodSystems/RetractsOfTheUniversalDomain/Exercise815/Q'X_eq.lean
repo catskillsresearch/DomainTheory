@@ -1,8 +1,3 @@
-/-ai
-The list-indexed enumeration at a code equals the universal neighbourhood of the index chain of the enumerator's image of the decoded list.
-
-The fold step unpacks to the universal intersection of the accumulator with the enumerator at the next entry. The fold-code equation, followed by folding after mapping, turns the raw index into that index chain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

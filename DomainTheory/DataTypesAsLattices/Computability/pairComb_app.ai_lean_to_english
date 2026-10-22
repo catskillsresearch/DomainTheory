@@ -1,0 +1,3 @@
+Applying the pairing combinator to the numerals of n and m yields the numeral of the pairing of n and m.
+
+Unfold the combinator and the pairing term and reduce twice by the β-rule of Theorem 2.2. Simplification in the arithmetic environment, with the realization equations for subtraction, multiplication, and addition, leaves the conditional expression for the pairing function. If n < m, then m − n is a successor and the successor clause of equation (2.7) applies. Otherwise m − n = 0 and the zero clause applies. In each case simplification matches the corresponding clause of the pairing function.

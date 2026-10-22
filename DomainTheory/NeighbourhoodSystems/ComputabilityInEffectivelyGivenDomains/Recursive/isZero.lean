@@ -1,6 +1,3 @@
-/-ai
-The zero test of a natural is 1 minus the minimum of the argument and 1. It is the {0, 1} test that the argument equals 0.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

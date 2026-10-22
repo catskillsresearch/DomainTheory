@@ -1,6 +1,3 @@
-/-ai
-The recursive call of a candidate interpretation H on a subexpression e and an environment t is the double application of H to e and then to t.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

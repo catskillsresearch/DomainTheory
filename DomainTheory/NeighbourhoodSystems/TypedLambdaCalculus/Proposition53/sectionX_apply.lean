@@ -1,8 +1,3 @@
-/-ai
-The section of τ at y sends x to the value of τ at the pair of x and y.
-
-Rewrite by the definition of the section, the curried application law, the composition law, and the swap combinator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

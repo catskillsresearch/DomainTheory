@@ -1,8 +1,3 @@
-/-ai
-If a set in the sharp family is contained in an embedded pair, then it is itself the embedded pair of two sets in the sharp family.
-
-On the master and on a leaf, nonemptiness supplies a point whose membership in the embedded pair is impossible in both branches. On a pair, the two components are the required sets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

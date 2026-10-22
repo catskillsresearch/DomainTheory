@@ -1,8 +1,3 @@
-/-ai
-If zero is never a successor and successor is injective, the carved-out subtype carries a Peano model.
-
-The numbered name example_422 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise422.exists_peano_submodel

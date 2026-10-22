@@ -1,8 +1,3 @@
-/-ai
-Every member of a nonempty chain of filters approximates the union of the chain.
-
-A neighbourhood of that member belongs to a member of the chain, namely the member itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

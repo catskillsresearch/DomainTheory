@@ -1,6 +1,3 @@
-/-ai
-The packed state of the Y-side half-step atom, at a depth, an index, and a free X-sub-step bit, is obtained by packing the atom-pair indices, running the X-sub-step at that free bit, and then running the Y-sub-step with its own bit forced to the true branch.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

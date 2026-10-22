@@ -1,8 +1,3 @@
-/-ai
-The strict pairing is monotone in both arguments.
-
-The master neighbourhood of the smaller pairing is the master of the larger pairing, and a proper product of neighbourhoods of the smaller elements is a proper product of neighbourhoods of the larger elements by the two inequalities.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

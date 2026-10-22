@@ -1,8 +1,3 @@
-/-ai
-The intersection of a left copy and a right copy is empty.
-
-A token of the intersection is the basepoint, a left tag, or a right tag. The basepoint lies in no left copy, a left tag lies in no right copy, and a right tag lies in no left copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

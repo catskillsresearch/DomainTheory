@@ -1,0 +1,3 @@
+Scott 1976, (4.33). If b is a retract, then the sum of a and b, composed with right injection composed with b, is typed as an arrow from b to that sum.
+
+Typedness unfolds to the arrow equation, which rewrites by the arrow rule. Graph extensionality and simplification by composition, the right-injection rule, and the retract equation of b are followed by two sum rules, the pair projections, the one rule for the disjoint conditional, and the retract equation of b, repeated on the inner sum.

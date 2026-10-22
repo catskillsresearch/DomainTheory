@@ -1,86 +1,271 @@
 # Exercise 3.26
 
-**EXERCISE 3.26.** Show that for every domain $D$ there is an approximable mapping
+## Human-English
 
-$$\mathrm{cond} : T \times D \times D \to D,$$
+@import "1980_Exercise_3_26.english" {code_block=false}
 
-called the *conditional operator*, satisfying
+## AI: Human-English to AI-Lean
 
-(i) $\mathrm{cond}(\mathrm{true}, x, y) = x$
+**NeighbourhoodSystems/DomainConstructs/Exercise326/TD.lean**
 
-(ii) $\mathrm{cond}(\mathrm{false}, x, y) = y$
+@import "../Exercise326/TD.lean"
 
-(iii) $\mathrm{cond}(\bot, x, y) = \bot$ .
+**NeighbourhoodSystems/DomainConstructs/Exercise326/Tmem_eq_one.lean**
 
-(Hint: Recalling that $T = \{\{0\}, \{1\}, \{0, 1\}\}$, define cond as a relation by
+@import "../Exercise326/Tmem_eq_one.lean"
 
-$$
-\begin{aligned}
-0C \cup 10X \cup 110Y\ \mathrm{cond}\ Z \quad\text{iff}\quad & 0 \in C \text{ and } X \subseteq Z \text{ or} \\
-& 1 \in C \text{ and } Y \subseteq Z \text{ or} \\
-& 0, 1 \in C \text{ and } \Delta \subseteq Z ,
-\end{aligned}
-$$
-where $C \in T$ and $X \in D$ and $Y \in D$ and where we are using the construction of Exercise 3.14.) Find a similar operator in the domain
+**NeighbourhoodSystems/DomainConstructs/Exercise326/Tmem_eq_zero.lean**
 
-$$
-T \times D_0 \times D_1 \to D_0 + D_1 .
-$$
+@import "../Exercise326/Tmem_eq_zero.lean"
 
-Show also there is an approximable mapping
+**NeighbourhoodSystems/DomainConstructs/Exercise326/condGuard.lean**
 
-$$
-\mathrm{which} : D_0 + D_1 \to T
-$$
+@import "../Exercise326/condGuard.lean"
 
-such that for all $x \in |D_0 + D_1|$
+**NeighbourhoodSystems/DomainConstructs/Exercise326/cond_components.lean**
 
-$$
-\mathrm{cond}(\mathrm{which}(x), \mathrm{in}_0(\mathrm{out}_0(x)), \mathrm{in}_1(\mathrm{out}_1(x))) = x .
-$$
+@import "../Exercise326/cond_components.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/DomainConstructs/Exercise326/one_ne_master.lean**
 
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/TD.lean](../Exercise326/TD.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/Tmem_eq_one.lean](../Exercise326/Tmem_eq_one.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/Tmem_eq_zero.lean](../Exercise326/Tmem_eq_zero.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/condGuard.lean](../Exercise326/condGuard.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/cond_components.lean](../Exercise326/cond_components.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/one_ne_master.lean](../Exercise326/one_ne_master.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/zero_ne_master.lean](../Exercise326/zero_ne_master.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/condGuard_master.lean](../Exercise326/condGuard_master.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/zero_ne_one.lean](../Exercise326/zero_ne_one.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/condGuard_one.lean](../Exercise326/condGuard_one.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/condGuard_zero.lean](../Exercise326/condGuard_zero.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/cond.lean](../Exercise326/cond.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/Basic.lean](../Exercise326/Basic.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/cond_bot.lean](../Exercise326/cond_bot.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/cond_false.lean](../Exercise326/cond_false.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/cond_toElementMap_mem.lean](../Exercise326/cond_toElementMap_mem.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326/cond_true.lean](../Exercise326/cond_true.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326.lean](../Exercise326.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/Tmem_ge_master.lean](Tmem_ge_master.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/Tmem_ge_one.lean](Tmem_ge_one.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/Tmem_ge_zero.lean](Tmem_ge_zero.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSumEmb.lean](condSumEmb.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSum.lean](condSum.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSumEmb_toElementMap.lean](condSumEmb_toElementMap.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSum_bot.lean](condSum_bot.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSum_false.lean](condSum_false.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSum_true.lean](condSum_true.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/inter_in_oneset.lean](inter_in_oneset.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/inter_in_zeroset.lean](inter_in_zeroset.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/not_sum_mem_empty.lean](not_sum_mem_empty.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/inMapu2080_outMapu2080_eq_of_left.lean](inMapu2080_outMapu2080_eq_of_left.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/inMapu2081_outMapu2081_eq_of_right.lean](inMapu2081_outMapu2081_eq_of_right.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/sum_element_trichotomy.lean](sum_element_trichotomy.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/whichGuard.lean](whichGuard.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/whichGuard_left.lean](whichGuard_left.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/whichGuard_masterC.lean](whichGuard_masterC.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/whichGuard_right.lean](whichGuard_right.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/whichMap.lean](whichMap.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/which_mem_one.lean](which_mem_one.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/which_mem_zero.lean](which_mem_zero.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum/cond_which.lean](cond_which.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise326Sum.lean](../Exercise326Sum.lean)
+@import "../Exercise326/one_ne_master.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326/zero_ne_master.lean**
+
+@import "../Exercise326/zero_ne_master.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326/condGuard_master.lean**
+
+@import "../Exercise326/condGuard_master.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326/zero_ne_one.lean**
+
+@import "../Exercise326/zero_ne_one.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326/condGuard_one.lean**
+
+@import "../Exercise326/condGuard_one.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326/condGuard_zero.lean**
+
+@import "../Exercise326/condGuard_zero.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326/cond.lean**
+
+@import "../Exercise326/cond.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326/Basic.lean**
+
+@import "../Exercise326/Basic.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326/cond_bot.lean**
+
+@import "../Exercise326/cond_bot.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326/cond_false.lean**
+
+@import "../Exercise326/cond_false.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326/cond_toElementMap_mem.lean**
+
+@import "../Exercise326/cond_toElementMap_mem.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326/cond_true.lean**
+
+@import "../Exercise326/cond_true.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326.lean**
+
+@import "../Exercise326.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/Tmem_ge_master.lean**
+
+@import "Tmem_ge_master.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/Tmem_ge_one.lean**
+
+@import "Tmem_ge_one.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/Tmem_ge_zero.lean**
+
+@import "Tmem_ge_zero.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSumEmb.lean**
+
+@import "condSumEmb.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSum.lean**
+
+@import "condSum.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSumEmb_toElementMap.lean**
+
+@import "condSumEmb_toElementMap.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSum_bot.lean**
+
+@import "condSum_bot.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSum_false.lean**
+
+@import "condSum_false.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/condSum_true.lean**
+
+@import "condSum_true.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/inter_in_oneset.lean**
+
+@import "inter_in_oneset.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/inter_in_zeroset.lean**
+
+@import "inter_in_zeroset.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/not_sum_mem_empty.lean**
+
+@import "not_sum_mem_empty.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/inMapu2080_outMapu2080_eq_of_left.lean**
+
+@import "inMapu2080_outMapu2080_eq_of_left.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/inMapu2081_outMapu2081_eq_of_right.lean**
+
+@import "inMapu2081_outMapu2081_eq_of_right.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/sum_element_trichotomy.lean**
+
+@import "sum_element_trichotomy.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/whichGuard.lean**
+
+@import "whichGuard.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/whichGuard_left.lean**
+
+@import "whichGuard_left.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/whichGuard_masterC.lean**
+
+@import "whichGuard_masterC.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/whichGuard_right.lean**
+
+@import "whichGuard_right.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/whichMap.lean**
+
+@import "whichMap.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/which_mem_one.lean**
+
+@import "which_mem_one.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/which_mem_zero.lean**
+
+@import "which_mem_zero.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum/cond_which.lean**
+
+@import "cond_which.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise326Sum.lean**
+
+@import "../Exercise326Sum.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "../Exercise326/TD.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/Tmem_eq_one.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/Tmem_eq_zero.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/condGuard.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/cond_components.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/one_ne_master.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/zero_ne_master.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/condGuard_master.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/zero_ne_one.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/condGuard_one.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/condGuard_zero.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/cond.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/Basic.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/cond_bot.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/cond_false.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/cond_toElementMap_mem.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326/cond_true.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326.ai_lean_to_english" {code_block=false}
+
+@import "Tmem_ge_master.ai_lean_to_english" {code_block=false}
+
+@import "Tmem_ge_one.ai_lean_to_english" {code_block=false}
+
+@import "Tmem_ge_zero.ai_lean_to_english" {code_block=false}
+
+@import "condSumEmb.ai_lean_to_english" {code_block=false}
+
+@import "condSum.ai_lean_to_english" {code_block=false}
+
+@import "condSumEmb_toElementMap.ai_lean_to_english" {code_block=false}
+
+@import "condSum_bot.ai_lean_to_english" {code_block=false}
+
+@import "condSum_false.ai_lean_to_english" {code_block=false}
+
+@import "condSum_true.ai_lean_to_english" {code_block=false}
+
+@import "inter_in_oneset.ai_lean_to_english" {code_block=false}
+
+@import "inter_in_zeroset.ai_lean_to_english" {code_block=false}
+
+@import "not_sum_mem_empty.ai_lean_to_english" {code_block=false}
+
+@import "inMapu2080_outMapu2080_eq_of_left.ai_lean_to_english" {code_block=false}
+
+@import "inMapu2081_outMapu2081_eq_of_right.ai_lean_to_english" {code_block=false}
+
+@import "sum_element_trichotomy.ai_lean_to_english" {code_block=false}
+
+@import "whichGuard.ai_lean_to_english" {code_block=false}
+
+@import "whichGuard_left.ai_lean_to_english" {code_block=false}
+
+@import "whichGuard_masterC.ai_lean_to_english" {code_block=false}
+
+@import "whichGuard_right.ai_lean_to_english" {code_block=false}
+
+@import "whichMap.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "which_mem_one.ai_lean_to_english" {code_block=false}
+
+@import "which_mem_zero.ai_lean_to_english" {code_block=false}
+
+@import "cond_which.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise326Sum.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_3_26.ai_english_concordance" {code_block=false}

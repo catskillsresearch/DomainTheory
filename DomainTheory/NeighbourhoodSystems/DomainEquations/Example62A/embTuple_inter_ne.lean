@@ -1,8 +1,3 @@
-/-ai
-Tuples with distinct tags have empty intersection.
-
-Extensionality rewrites membership by the tuple characterization. A word in both tuples gives two slot decompositions, and uniqueness of slot prefixes forces the tags to agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

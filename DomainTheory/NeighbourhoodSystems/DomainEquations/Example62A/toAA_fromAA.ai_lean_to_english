@@ -1,0 +1,3 @@
+Applying toAA after fromAA returns the original element of the separated sum Aⁿ + Aⁿ.
+
+Two elements agree when they contain the same neighbourhoods. If the composite contains the sum master, so does the original element. A left or right product injection in the composite belongs to the original element by the forward half of fromAA_mem_embF or fromAA_mem_embT. Conversely, a neighbourhood of the original element is the master or a product injection of one summand; unpacking that product and applying the reverse characterization shows that it belongs to the composite.

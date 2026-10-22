@@ -1,6 +1,3 @@
-/-ai
-The join of a family of elements whose carrier union is finitely consistent is the deductive closure of that union.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

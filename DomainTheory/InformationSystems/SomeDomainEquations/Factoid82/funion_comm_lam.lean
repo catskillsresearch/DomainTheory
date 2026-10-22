@@ -1,8 +1,3 @@
-/-ai
-Finitary union of finite sets of raw lambda tokens is commutative.
-
-By extensionality, membership in a union is a disjunction, and the two disjuncts are swapped in each direction.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

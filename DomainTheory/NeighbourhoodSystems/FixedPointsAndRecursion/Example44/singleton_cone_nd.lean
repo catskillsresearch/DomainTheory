@@ -1,8 +1,3 @@
-/-ai
-A singleton and a cone are nested or disjoint.
-
-If the cone's string is a prefix of the singleton's string, the singleton is contained in the cone. Otherwise their intersection is empty, because a common member would be the singleton's string and would lie in the cone, restoring the prefix relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

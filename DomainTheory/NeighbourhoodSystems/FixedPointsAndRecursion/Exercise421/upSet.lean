@@ -1,6 +1,3 @@
-/-ai
-The up-set of a natural m is the set of naturals at least m, the value of Scott's unique function of exercise 4.13(3).
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

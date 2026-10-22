@@ -1,8 +1,3 @@
-/-ai
-If the slice of a set U at an index i is a neighbourhood of the indexed product, then U is a neighbourhood of the system at i.
-
-The witnessing tuple equals the one-coordinate update of U at i, by injectivity of product neighbourhoods, and the value of that update at i is U.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,6 +1,3 @@
-/-ai
-optElem sends none to the bottom of N and sends some n to the numeral for n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

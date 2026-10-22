@@ -1,8 +1,3 @@
-/-ai
-If some index presents the union of the neighbourhoods indexed by n and by m, then the canonical union index presents that same union.
-
-The hypothesis is not used. The claim is the unconditional specification of the canonical union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

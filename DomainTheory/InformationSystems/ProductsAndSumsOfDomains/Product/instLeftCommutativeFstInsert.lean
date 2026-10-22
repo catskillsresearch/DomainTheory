@@ -1,6 +1,3 @@
-/-ai
-This instance records that inserting the first component of a product token, as an operation on finite sets of the first system, is left commutative, by the commutativity of insertion in a finite set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

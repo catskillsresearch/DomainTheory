@@ -1,8 +1,3 @@
-/-ai
-Proposition 5.5(ii) states that the image of an element under a composite equals the image under the outer mapping of the image under the inner mapping.
-
-The numbered name theorem_55 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55.comp_toElement

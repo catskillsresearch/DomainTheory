@@ -1,8 +1,3 @@
-/-ai
-If a is a retraction and a projection, the underlying element of the inverse image of a principal element of the fixed-point domain is principal in the original domain.
-
-Test compactness against an arbitrary directed family bounding that underlying element. Replace the family by its image under a. Directedness and idempotence of a retraction make the image directed and pointwise fixed, and its supremum is fixed. The underlying element equals its image under a, hence lies below a of the original supremum, which is the supremum of the image family. The isomorphism sends that bound to a bound of the principal element by the supremum of the images of the fixed family. Compactness of the principal element picks one summand, and the inverse isomorphism puts the underlying element below that image summand. The projection inequality puts the image summand below the original summand.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

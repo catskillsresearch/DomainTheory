@@ -1,6 +1,3 @@
-/-ai
-The consistency characteristic of a pair of enumeration codes selects the consistency character of their append when both codes are consistent, and returns one when either code is inconsistent.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

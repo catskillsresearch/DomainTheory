@@ -1,6 +1,3 @@
-/-ai
-The unit information system has the unique token of the unit type as its least token, takes every finite set to be consistent, and takes entailment to hold of every finite set and every token. Each of the six information-system axioms holds because its conclusion is immediate.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56

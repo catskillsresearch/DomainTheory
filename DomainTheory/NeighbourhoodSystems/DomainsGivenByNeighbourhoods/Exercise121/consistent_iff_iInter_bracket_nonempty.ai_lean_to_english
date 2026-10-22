@@ -1,0 +1,3 @@
+A finite sequence of neighbourhoods is consistent if and only if some filter lies in the bracket of every term.
+
+Consistency is rewritten as nonemptiness of the bracket of the finite intersection. An element of that bracket lies in each term's bracket by upward closure along the containment of the intersection in the term. Conversely, a filter that lies in every bracket contains every term, and therefore contains their finite intersection.

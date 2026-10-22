@@ -1,8 +1,3 @@
-/-ai
-If the languages of a and of b both lie in S, then consistentB a b is true if and only if the intersection of those languages lies in S.
-
-The numbered name example_722_decide is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide.consistentB_iff_Ssys

@@ -1,8 +1,3 @@
-/-ai
-If the characteristic and the consistency test are primitive recursive, then equality of the intersection of two enumerated neighbourhoods with a third is recursively decidable.
-
-The code-level fold is primitive recursive, and so is the nested pairing of the folds of the three components of a triple code. Transfer recursive decidability of intersection equality for the presentation along that reindexing. Unfolding the enumeration and simplifying the unpairing of pairs gives the agreement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88j.Basic

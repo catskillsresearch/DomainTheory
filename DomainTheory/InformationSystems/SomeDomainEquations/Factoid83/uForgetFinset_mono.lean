@@ -1,8 +1,3 @@
-/-ai
-The forget-finset is monotone: if v is contained in u, then the forget-finset of v is contained in the forget-finset of u.
-
-A token in the smaller forget-finset is the value of some member of v, hence of u, so the membership criterion places it in the larger forget-finset.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

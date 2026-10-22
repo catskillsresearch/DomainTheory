@@ -1,6 +1,3 @@
-/-ai
-Scott's reflexivity condition on an approximable map r from the powerset system P to itself says that every relation of the identity map of P is a relation of r.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

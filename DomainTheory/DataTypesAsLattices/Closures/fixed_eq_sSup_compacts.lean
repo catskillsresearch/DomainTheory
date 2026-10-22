@@ -1,8 +1,3 @@
-/-ai
-If a is a closure, the compact fixed points below a fixed point x form a directed set, and x is their supremum.
-
-That set is the retract basis of x. The retract basis of a retract is directed, and its supremum is the fixed point.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

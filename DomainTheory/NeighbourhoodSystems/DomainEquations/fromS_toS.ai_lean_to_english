@@ -1,0 +1,3 @@
+Composing fromS after toS returns the original element of D-sharp.
+
+Two elements agree when they contain the same neighbourhoods. A neighbourhood of the composite is the master, a zero-copy, or a pair-copy. The master belongs to the original element. A zero-copy belongs to it by the zero-membership lemma for toS, and a pair-copy belongs by the pair-membership lemma. Conversely, classifying a neighbourhood of the original element as the master, a zero-copy, or a pair-copy produces the matching clause of fromS, again by those two lemmas.

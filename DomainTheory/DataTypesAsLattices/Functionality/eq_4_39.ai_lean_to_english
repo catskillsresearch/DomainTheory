@@ -1,0 +1,3 @@
+Scott 1976, (4.39). The lambda retract equals the sum of the integer retract with the arrow of the lambda retract into itself.
+
+Theorem 2.5, from Scott continuity of the lambda functor, identifies the lambda retract with the fixed point of that functor. Theorem 1.4 says the fixed point is fixed, so the functor returns the lambda retract. The reverse of that equality is the claim.

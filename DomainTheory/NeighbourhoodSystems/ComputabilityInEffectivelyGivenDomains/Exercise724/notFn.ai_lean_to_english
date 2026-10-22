@@ -1,0 +1,1 @@
+Pointwise negation on the three neighbourhoods of T swaps the neighbourhoods zero and one and fixes the master neighbourhood. It sends zero to one, one to zero, and every other set of tokens to the master neighbourhood.

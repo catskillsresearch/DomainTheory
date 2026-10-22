@@ -1,10 +1,3 @@
-/-ai
-Transporting a map between products to a map between the corresponding tensor products, and evaluating at a tensor element, equals transporting back the evaluation of the original map at the corresponding product element.
-
-Unfold the transports. After substituting the equalities of tensor maps with product maps and of tensor elements with product elements, both sides are definitionally equal.
-
-The file also introduces the closed structure on an information-system object, with right adjoint the exponential functor and with the tensor-exponential adjunction, and the monoidal closed structure on the category of information systems in which every object is closed. This packages the cartesian closed category of information systems and approximable maps.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
@@ -67,21 +60,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.t
 
 @[expose] public section
 
-/-!
-# Factoid 7.7 — cartesian closed structure (stretch goal)
-
-**Scott 1982 (*Categories again*).** Props 6.2 and Theorem 7.2 (with unit `1` from
-Factoid 6.5) show that information systems and approximable maps form a cartesian
-closed category. This file packages that as Mathlib `Category`,
-`CartesianMonoidalCategory`, and `MonoidalClosed`.
-
-**Constructivity note.** The Scott-side data (products, curry/uncurry) is constructive.
-Wiring it through Mathlib’s `CategoryTheory` (chosen finite products / adjunction
-constructors) introduces `Classical.choice`. This is an artifact of Lean’s category
-library, not of Scott’s argument; the constructive core of the formalization is
-unaffected.
--/
-
 
 namespace DomainTheory.InformationSystems
 
@@ -92,8 +70,6 @@ open CategoryTheory.MonoidalCategory
 
 namespace InfoSys
 
-/-! ## Bundled objects -/
-
 
 attribute [instance] InfoSysObj.decEq
 
@@ -102,8 +78,6 @@ namespace InfoSysObj
 
 end InfoSysObj
 
-/-! ## Diagrammatic composition (`f.acomp g` = apply `f` then `g` = `f ≫ g`) -/
-
 namespace ApproximableMap
 
 
@@ -111,12 +85,8 @@ end ApproximableMap
 
 open ApproximableMap
 
-/-! ## Category -/
-
 
 attribute [instance] instCategoryInfoSysObj
-
-/-! ## Finite products -/
 
 
 theorem productMapToTensorMap_toElement (A Y Y' : InfoSysObj.{u})
@@ -133,12 +103,6 @@ theorem productMapToTensorMap_toElement (A Y Y' : InfoSysObj.{u})
   cases es
   cases et
   rfl
-
-
-/-! ## Braided curry (Mathlib convention) -/
-
-
-/-! ## Left naturality of uncurry / MonoidalClosed -/
 
 
 noncomputable instance (A : InfoSysObj.{u}) : Closed A where

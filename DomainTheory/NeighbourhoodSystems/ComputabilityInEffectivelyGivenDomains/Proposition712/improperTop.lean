@@ -1,6 +1,3 @@
-/-ai
-When a neighbourhood system is unconditionally closed under intersection, the family of all its neighbourhoods is an element. Subsets of members remain members, the master neighbourhood belongs to it, the intersection of two members belongs to it by the closure hypothesis, and any neighbourhood above a member is itself a member.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

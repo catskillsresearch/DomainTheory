@@ -1,8 +1,3 @@
-/-ai
-By Scott's Theorem 7.3(iii), the fixed-point element of an approximable endomap f lies below every pre-fixed point of f.
-
-A token of the fixed-point element comes from a consistent set of function tokens contained in the element of f, together with a reachable set that entails the token. That reachable set is the value of some fix chain, so it lies in the pre-fixed point. Entailment of the token and closure of the pre-fixed point then put the token in the pre-fixed point.
-ai-/
 
 module
 

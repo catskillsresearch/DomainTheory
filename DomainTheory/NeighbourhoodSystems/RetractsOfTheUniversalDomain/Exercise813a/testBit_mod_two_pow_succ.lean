@@ -1,8 +1,3 @@
-/-ai
-Reduction modulo 2 to the i + 1 does not change bit i.
-
-This is the bit formula for reduction modulo a power of two, taken at height i + 1 and simplified.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

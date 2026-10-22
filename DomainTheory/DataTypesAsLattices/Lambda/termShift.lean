@@ -1,6 +1,3 @@
-/-ai
-The term-level shift of u is the graph of the map sending t to the application of u to the successor of t. On numerals it agrees with the sequence shift.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

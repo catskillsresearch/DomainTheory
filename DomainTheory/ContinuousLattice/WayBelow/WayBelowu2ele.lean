@@ -1,8 +1,3 @@
-/-ai
-Scott 1972, Proposition 2.2(v). If x is way below y, then x lies below y.
-
-The witnessing Scott-open neighbourhood of y is contained in the principal upset of x, so y lies in that upset.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

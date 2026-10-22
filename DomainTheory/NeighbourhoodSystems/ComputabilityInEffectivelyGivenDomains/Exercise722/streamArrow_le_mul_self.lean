@@ -1,8 +1,3 @@
-/-ai
-The infinite word of a word lies below the square of that infinite word.
-
-The square is a fixed point of prepending: the action of prepending on the square rewrites as multiplication by the embedding, and associativity together with the equation of the infinite word with the product of the embedding and the infinite word returns the square. The infinite word is the least fixed point of prepending, so it lies below that square.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

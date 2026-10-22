@@ -1,8 +1,3 @@
-/-ai
-The abstract atom of depth zero is the master neighbourhood of the system.
-
-This is the zero clause of the recursive definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

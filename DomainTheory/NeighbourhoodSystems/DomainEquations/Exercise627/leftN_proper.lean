@@ -1,8 +1,3 @@
-/-ai
-If X is distinct from the master of D₀, then the left copy of X is the false tag of X.
-
-A string in the second summand would force X to equal the master. The reverse inclusion is the containment of the false tag in the left copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

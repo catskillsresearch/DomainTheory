@@ -1,96 +1,49 @@
 # Theorem 5.2
 
-We can now say more precisely what it means to call $\sigma = \tau$ a "true equation". This means that, if we employ the method of the proof of 5.1, the two terms define the *same function* of the free variables. For example,
-$$\lambda x . \tau = \lambda y . \tau [y / x]$$
+## Human-English
 
-is true, provided $y$ does not occur free in the term $\tau$, since the systematic generation of the function defined by $\lambda x . \tau$ does not depend on what the variable $x$ *looks like* but only on its *position* in the term $\tau$. Some other obviously desirable rules for generating true equations are stated in the exercises. But one rule is so basic that we state it here in full generality.
+@import "1980_Theorem_5_2.english" {code_block=false}
 
-**THEOREM 5.2.** For suitably typed $\lambda$-terms the following equation is true:
+## AI: Human-English to AI-Lean
 
-$$(\lambda x_0, \ldots, x_{n-1} \cdot \tau)(\sigma_0, \ldots, \sigma_{n-1}) = \tau [\sigma_0 / x_0, \ldots, \sigma_{n-1} / x_{n-1}].$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/Basic.lean**
 
-*Proof:* It will be sufficient to carry out the proof for $n = 1$. The proof proceeds by induction on the complexity of the term $\tau$.
+@import "Basic.lean"
 
-In case $\tau$ is a *constant* $k$, the result reads
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta.lean**
 
-$$(\lambda x . k)(\sigma) = k,$$
+@import "beta.lean"
 
-and this is a true equation.
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_abs.lean**
 
-In case $\tau$ is a *variable* (in particular, the variable $x$), the result reads
+@import "beta_abs.lean"
 
-$$(\lambda x . x)(\sigma) = \sigma,$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_tuple.lean**
 
-and again this is a true equation.
+@import "beta_tuple.lean"
 
-In case $\tau$ is a *tuple* (say, $\langle \tau_0, \tau_1 \rangle$) the result reads
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/subst_value.lean**
 
-$$(\lambda x . \langle \tau_0, \tau_1 \rangle)(\sigma) = \langle \tau_0 [\sigma / x], \tau_1 [\sigma / x] \rangle .$$
+@import "subst_value.lean"
 
-This is true, because the left-hand side can be transformed by the true equation
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem52.lean**
 
-$$(\lambda x . \langle \tau_0, \tau_1 \rangle)(\sigma) = \langle (\lambda x . \tau_0)(\sigma), (\lambda x . \tau_1)(\sigma) \rangle;$$
+@import "../Theorem52.lean"
 
-and then we apply the inductive assumption for $\tau_0$ and for $\tau_1$.
+## AI: AI-Lean to AI-English
 
-In case $\tau$ is an *application*, we want (supposing the term is $\tau_0 (\tau_1)$),
+@import "Basic.ai_lean_to_english" {code_block=false}
 
-$$(\lambda x . \tau_0 (\tau_1))(\sigma) = \tau_0 [\sigma / x] (\tau_1 [\sigma / x]) .$$
+@import "beta.ai_lean_to_english" {code_block=false}
 
-We can proceed as in the last case, noting that the left-hand side equals
-$$
-\mathrm{eval}\ ((\lambda x . \langle \tau_0 , \tau_1 \rangle)\ (\sigma))\ .
-$$
+@import "beta_abs.ai_lean_to_english" {code_block=false}
 
-In case $\tau$ is an *abstract* (say, $\lambda y . \tau_0$), we want
+@import "beta_tuple.ai_lean_to_english" {code_block=false}
 
-$$
-(\lambda x . \lambda y . \tau_0)\ (\sigma) = \lambda y . \tau_0 [\sigma / x]
-$$
+@import "subst_value.ai_lean_to_english" {code_block=false}
 
-*PROVIDED* the variable $y$ is not free in $\sigma$. For this we require the true equation
+@import "../Theorem52.ai_lean_to_english" {code_block=false}
 
-$$
-(\lambda x . \lambda y . \tau)\ (\sigma) = \lambda y . (\lambda x . \tau)\ (\sigma)\ .
-$$
+## AI: AI-English to Human-English Concordance
 
-We argue for this by letting $g$ be the function of $n + 2$ free variables defined by $\tau$. Then, by 5.1, the $\lambda$-term $\lambda x . \lambda y . \tau$ defines the function $\mathrm{curry}\ (\mathrm{curry}\ (g))$ of $n$ arguments. We can call this function $h$ for the moment. We can write
-
-$$
-h(v)\ (\sigma)\ (y) = g(v, \sigma, y)\ ,
-$$
-
-where $v$ is a list of arguments. But, with an appropriate combinator $\mathrm{inv}$, which applied to $g$ inverts the order of the last two arguments, we can write
-
-$$
-h(v)\ (\sigma)\ (y) = \mathrm{curry}\ (\mathrm{inv}\ (g))\ (v, y)\ (\sigma)\ .
-$$
-
-But, $\mathrm{curry}\ (\mathrm{inv}\ (g))$ is just the function defined by $(\lambda x . \tau)$. So what we have proved as true is
-
-$$
-(\lambda x . \lambda y . \tau)\ (\sigma)\ (y) = (\lambda x . \tau)\ (\sigma)\ .
-$$
-
-But if $y$ is not free in $\alpha$ and
-
-$$
-\alpha(y) = \beta
-$$
-
-is true, then so is
-
-$$
-\alpha = \lambda y . \beta\ .
-$$
-
-This completes the proof. $\square$
-
-**Lean 4**
-
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta.lean](beta.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_abs.lean](beta_abs.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/beta_tuple.lean](beta_tuple.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52/subst_value.lean](subst_value.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem52.lean](../Theorem52.lean)
+@import "1980_Theorem_5_2.ai_english_concordance" {code_block=false}

@@ -1,8 +1,3 @@
-/-ai
-The infimum of a Scott-open neighbourhood of an element is way below that element.
-
-The neighbourhood itself is a Scott-open set containing the element and contained in the principal upset of its infimum, because every member of the neighbourhood lies above the infimum.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

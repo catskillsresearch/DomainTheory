@@ -1,8 +1,3 @@
-/-ai
-The post- and pre-composition operator relates a neighbourhood N of strict maps from T(D) to T(E) to a neighbourhood M of strict maps from D to E exactly when N is a neighbourhood and the strict filter of the composite of the principal strict map of N belongs to M.
-
-The two sides are the defining relation of the monotone extension, so they agree definitionally.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

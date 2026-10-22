@@ -1,8 +1,3 @@
-/-ai
-The system reconstructed from a computable presentation is isomorphic to the original neighbourhood system. The hint neighbourhood system of an inclusion structure is effectively given.
-
-The numbered name example_713 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise713.reconstruct_isomorphic

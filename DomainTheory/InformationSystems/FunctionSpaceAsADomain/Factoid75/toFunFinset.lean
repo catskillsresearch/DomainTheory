@@ -1,6 +1,3 @@
-/-ai
-The underlying function-token set of a finite set of strict function tokens is the image of that set under the coercion from strict tokens to function tokens. The image is duplicate-free because the coercion is injective.
-ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

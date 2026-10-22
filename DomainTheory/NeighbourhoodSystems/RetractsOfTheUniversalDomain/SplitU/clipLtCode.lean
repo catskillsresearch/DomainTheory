@@ -1,6 +1,3 @@
-/-ai
-clipLtCode clips a rational-pair code to the open ray below the decoded midpoint. On a packed pair of the midpoint code and the pair code, it leaves the left endpoint and replaces the right endpoint by the minimum of that endpoint and the midpoint.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

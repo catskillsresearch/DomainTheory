@@ -1,0 +1,3 @@
+The master index of a computable presentation is diagonally fixed for every approximable self-map. The neighbourhood at the master index is the master neighbourhood, and every approximable map relates the master neighbourhood to itself.
+
+Unfold diagonal fixedness as the relation of the map on the neighbourhood at the master index with itself, rewrite by the master-index specification, and apply the master relation.

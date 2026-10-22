@@ -1,8 +1,3 @@
-/-ai
-The image of XPseqCode at depth 0 is the master neighbourhood of the second neighbourhood system, assuming the zero codes name the two masters.
-
-The depth-zero atom-pair state is not junk and indexes both masters. The half-step atom at bit-source 0 is not junk, because otherwise the emptiness test would say that the master meets itself emptily. Its index is the positive split index of those two masters against the master, and the split specification, using that the master differs from itself by the empty set, says that this positive piece is the second master. Antisymmetry uses the unconditional membership criterion: every point of the code lies in some non-junk atom and hence in the master, and every master point lies in the atom at index 0.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the product of two information systems: the product-token predicate and its decision procedure, product tokens and decidable equality, the product least token, the left and right projections of a finite set of product tokens together with membership, emptiness, monotonicity, insertion, and singleton laws, the left-commutativity of those insertions, product consistency, product entailment, and the product system. Scott's Definition 6.1 takes as tokens the pairs whose first component is least or whose second component is least, takes the pair of the two least tokens as least, and lets consistency and entailment act through the two projections.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
@@ -33,14 +30,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.f
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.sndFinset_singleton_right
 
 @[expose] public section
-
-/-!
-# Product of information systems — Definition 6.1
-
-**Scott 1982, Definition 6.1.** Tokens of `A × B` are pairs of the form
-`(X, Δ_B)` or `(Δ_A, Y)`, with `Δ = (Δ_A, Δ_B)`. Consistency and entailment act
-independently on the two projections `fst u` and `snd u`.
--/
 
 namespace DomainTheory.InformationSystems
 

@@ -1,8 +1,3 @@
-/-ai
-The fixed-point set of a closure operator is a finitary domain.
-
-The finite elements are the compact fixed points, the underlying neighbourhood system is the one reconstructed from the closure, and the fixed-point set is order-isomorphic to the elements of that system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

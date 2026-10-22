@@ -1,6 +1,3 @@
-/-ai
-The map back from an element of the sum of the binary-sequence domain with itself sends a sum element to the element whose neighbourhoods are the master, the false-bit taggings of those neighbourhoods whose left injection belongs to the sum element, and the true-bit taggings of those neighbourhoods whose right injection belongs to the sum element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

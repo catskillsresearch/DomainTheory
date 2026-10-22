@@ -1,8 +1,3 @@
-/-ai
-If the backward approximable map composed with the forward map is the identity, then every neighbourhood of the domain system has a generator.
-
-The identity relates that neighbourhood to itself, so the composite does as well, and a witness of the composite relation is a generator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

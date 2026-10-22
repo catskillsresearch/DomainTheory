@@ -1,8 +1,3 @@
-/-ai
-Applying the Scott-map view of an element f of level n+1 to an element x of level n returns the application of f to x.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

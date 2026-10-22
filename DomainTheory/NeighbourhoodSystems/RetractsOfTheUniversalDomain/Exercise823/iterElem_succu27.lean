@@ -1,8 +1,3 @@
-/-ai
-The successor iterate of a self-map of the function space is that self-map applied to the previous iterate.
-
-The successor is the composite of the self-map with the iteration map, applied to the bottom of the function space. The action of a composite is the composite of the actions, and the remaining equality is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

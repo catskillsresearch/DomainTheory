@@ -1,8 +1,3 @@
-/-ai
-The accepted language of a finite-state automaton is nonempty if and only if it contains a word from the list of words bounded by the number of states.
-
-If the language is nonempty, the short accepted-word lemma supplies a word shorter than the number of states, and arithmetic places that word in the bounded list. Conversely, any accepted word from that list witnesses that the language is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

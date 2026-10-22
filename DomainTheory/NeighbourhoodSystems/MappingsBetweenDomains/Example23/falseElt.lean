@@ -1,6 +1,3 @@
-/-ai
-The false element of T is the total element of the two-token system that contains the master and the singleton of one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

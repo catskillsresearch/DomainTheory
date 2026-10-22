@@ -1,0 +1,3 @@
+The intersection of two enumerated infinite-iterate neighbourhoods contains some enumerated neighbourhood exactly when, at every coordinate below the sum of the two codes, the corresponding fiber neighbourhoods are consistent.
+
+From a global witness, its fiber at each such coordinate is a fiber witness. Conversely, the tabulated intersection is contained in the intersection: below the bound its fiber is the intersection given by the presentation's intersection specification, and at and beyond the bound every fiber index is the master index, so both fibers are the master neighbourhood.

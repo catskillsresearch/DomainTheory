@@ -1,8 +1,3 @@
-/-ai
-Applying the conditional combinator to x and then to y yields bottom if and only if both x and y are bottom.
-
-If the application is bottom, apply both sides to the numeral 0 and rewrite by the three-argument beta law, the zero case of the conditional (2.7), and application of bottom, obtaining that x is bottom. Apply both sides to the numeral 1 and rewrite by the three-argument beta law, the successor case of (2.7), and application of bottom, obtaining that y is bottom. Conversely, rewrite by the two-argument application law and substitute that both arguments are bottom. Extensionality at an index splits membership in the graph into a pair whose conditional-set component simplifies at bottom to an impossible goal, while membership in bottom is eliminated as empty.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

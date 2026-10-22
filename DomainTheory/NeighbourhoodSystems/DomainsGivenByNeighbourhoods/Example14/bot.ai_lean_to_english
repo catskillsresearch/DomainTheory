@@ -1,0 +1,1 @@
+The bottom element of Example 1.4 consists of the neighbourhoods equal to the master neighbourhood. Such a neighbourhood belongs to the system, the master neighbourhood belongs to the element, the intersection of the master neighbourhood with itself is the master neighbourhood, and a neighbourhood containing the master neighbourhood equals the master neighbourhood.

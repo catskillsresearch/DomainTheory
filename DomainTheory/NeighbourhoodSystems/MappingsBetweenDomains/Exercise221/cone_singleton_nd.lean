@@ -1,8 +1,3 @@
-/-ai
-The cone of a finite binary string σ and the singleton of a finite binary string τ are nested or disjoint.
-
-Decide whether σ is a prefix of τ. If it is, the singleton is contained in the cone, since τ belongs to the cone. If it is not, the intersection is empty: an element of both would equal τ and would have σ as a prefix.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

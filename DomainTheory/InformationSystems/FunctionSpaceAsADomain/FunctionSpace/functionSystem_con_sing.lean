@@ -1,8 +1,3 @@
-/-ai
-A singleton function-space token is consistent.
-
-Any subset of the singleton has output union contained in the output of that token. The output is consistent, so the output union is consistent.
-ai-/
 
 module
 

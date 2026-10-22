@@ -1,8 +1,3 @@
-/-ai
-The typed interpretation of a lambda term has type the arrow from the environment retract to the lambda retract.
-
-Apply the typing lemma for a retract to the arrow retract built from the environment and lambda retracts.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,6 +1,3 @@
-/-ai
-Scott's consistency condition on an approximable map r from the powerset system P to itself says that the finite element of 1 is not contained in the image of the finite element of 0. The token 1 is excluded as inconsistent at the bottom.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

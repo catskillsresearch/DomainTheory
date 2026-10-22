@@ -1,6 +1,3 @@
-/-ai
-Subtracting a list of rational pairs from a single pair is the fold of the single-list difference over that list, starting from the singleton list of the pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

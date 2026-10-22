@@ -1,8 +1,3 @@
-/-ai
-A product neighbourhood is nonempty whenever neighbourhoods of the first factor are nonempty.
-
-A product neighbourhood is a product of two neighbourhoods. The first of them contributes an element, and that element, tagged as a left summand, lies in the product neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum

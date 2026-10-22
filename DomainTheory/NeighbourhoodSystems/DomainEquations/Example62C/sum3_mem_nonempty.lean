@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the three-way sum of the unit system with two copies of C is nonempty.
-
-The four shapes are examined. The master contains the basepoint. A left copy is nonempty because its unit neighbourhood is nonempty. A middle copy and a right copy are nonempty because their neighbourhoods of C are nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,8 +1,3 @@
-/-ai
-The residue class of ℓ modulo 2^k equals the level set at level k whose mask is the single power of two 2^ℓ.
-
-A number lies in the residue class when its remainder equals ℓ, and the single-bit test of that mask holds at exactly that remainder.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

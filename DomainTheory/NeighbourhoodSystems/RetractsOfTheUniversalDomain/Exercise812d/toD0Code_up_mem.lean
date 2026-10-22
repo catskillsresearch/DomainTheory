@@ -1,8 +1,3 @@
-/-ai
-If a neighbourhood belongs to the code-level pullback of an element y, a second neighbourhood of the first system is genuine, and the first is contained in the second, then the second belongs to the pullback.
-
-Write the first neighbourhood as the basic neighbourhood of a Y-sequence code i that y meets. Surjectivity names the second as a basic neighbourhood of some index k. The cross-parity inclusion turns the containment into an inclusion of the basic neighbourhood of i in the basic neighbourhood of the X-sequence code of k, and upward closure of y, using that every such code is genuine, puts y there. The cross-parity equality at k and its own X-sequence code shows that this basic neighbourhood is the Y-sequence code of that index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,6 +1,3 @@
-/-ai
-A polymorphic type is an approximable self-map d of the universal domain such that sub composed with d composed with sub equals d.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

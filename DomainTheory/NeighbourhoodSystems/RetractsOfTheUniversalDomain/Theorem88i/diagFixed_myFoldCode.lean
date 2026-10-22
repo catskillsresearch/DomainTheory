@@ -1,8 +1,3 @@
-/-ai
-For every list code, the code-level qChar-gated fold is diagonally fixed. The fold advances only through steps that the characteristic and the consistency test have checked, so the output index lies in the fixed neighbourhood.
-
-Rewrite the code-level fold as the list-level fold of the decoded list, and apply diagonal fixedness of that fold.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic

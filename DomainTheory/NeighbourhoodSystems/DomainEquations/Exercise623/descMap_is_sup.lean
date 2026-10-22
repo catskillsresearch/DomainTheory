@@ -1,8 +1,3 @@
-/-ai
-The evaluation map relates a pair of neighbourhoods if and only if some Kleene iterate does. This is the hypothesis used for continuity of the functor on maps.
-
-The two sides are definitionally the same, because the evaluation map is the relational union of the iterates.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

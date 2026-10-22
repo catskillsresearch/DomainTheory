@@ -1,8 +1,3 @@
-/-ai
-A tree token lies in the multiset fold of fold insertion over a multiset of sum tokens if and only if it is the tree fold of some member of the multiset.
-
-The proof is by induction on the multiset. The empty fold is empty, so both sides fail. At a cons cell, membership in the inserted fold is equality with the fold of the head or membership in the fold of the tail, which matches membership in the cons multiset.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

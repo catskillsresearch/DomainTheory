@@ -1,6 +1,3 @@
-/-ai
-Successor on the carved-out subtype sends an element to the successor of its underlying element, which remains in the carved-out set by closure under successor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

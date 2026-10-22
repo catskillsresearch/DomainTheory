@@ -1,8 +1,3 @@
-/-ai
-If the entries of two finite sequences lie in a set, then every entry of their concatenation, up to the sum of the lengths, lies in that set.
-
-An index below the cut is an entry of the first sequence. An index at or beyond the cut is an entry of the second sequence at the shifted index, and that shifted index lies strictly below the second length.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

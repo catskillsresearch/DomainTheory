@@ -1,0 +1,3 @@
+Scott's unfolding of equation (2.8) states that the application of Y at u equals the application of u to the application of Y at u.
+
+The application law for Y rewrites the left side as the application of omega(u) to itself. The application law for omega rewrites that as the application of u to the same diagonal. Rewriting the diagonal by the application law for Y gives the application of u to the application of Y at u.

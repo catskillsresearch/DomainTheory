@@ -1,8 +1,3 @@
-/-ai
-A finite sequence of neighbourhoods is consistent if and only if the bracket of its finite intersection is nonempty.
-
-Consistency is rewritten as membership of the finite intersection, and nonemptiness of a bracket is membership of its set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110

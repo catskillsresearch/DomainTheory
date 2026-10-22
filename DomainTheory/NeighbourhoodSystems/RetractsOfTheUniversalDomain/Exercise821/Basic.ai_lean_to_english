@@ -1,0 +1,3 @@
+If an endomap a is a retraction, then so is the catamorphism that recurses a on the leaves of the tree algebra and uses the algebra's own pairing on nodes.
+
+Write g for that catamorphism and apply uniqueness of the catamorphism to the composite of g with itself. The composite is strict. On a leaf, two applications of the leaf law together with idempotence of a show that the composite acts as the leaf map of a. On a pair, two applications of the pairing law show that the composite acts as pairing of its own values. Uniqueness therefore identifies the composite with g.

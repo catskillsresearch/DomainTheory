@@ -1,8 +1,3 @@
-/-ai
-The composite of the left projection after the left injection is the identity map of the first neighbourhood system. The composite of the right projection after the right injection is the identity map of the second neighbourhood system.
-
-The numbered name example_318 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318.outMapu2080_comp_inMapu2080

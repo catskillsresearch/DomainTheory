@@ -1,8 +1,3 @@
-/-ai
-Applying the forward map and then the inverse returns every element of the three-way sum of the unit system with two copies of C.
-
-Element extensionality compares membership of a neighbourhood W. A neighbourhood of the composite has one of the four forms in the forward map, which are the master membership of the element, the empty-word clause of the inverse, or the false or true embedding clause of the inverse. Conversely, a neighbourhood of the element has one of the four shapes of the sum; the unit neighbourhood is the universe, and each shape is sent back by the corresponding clause of the inverse.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

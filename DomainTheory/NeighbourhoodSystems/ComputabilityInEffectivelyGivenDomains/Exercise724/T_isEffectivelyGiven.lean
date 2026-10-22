@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood system T is effectively given.
-
-The witness is the computable presentation Tpres.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,6 +1,3 @@
-/-ai
-The infinite iterate of an empty-free strict domain is the strict domain whose carrier is the product of the naturals with the original carrier and whose neighbourhood system is the infinite iterate of the original system. It remains empty-free.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

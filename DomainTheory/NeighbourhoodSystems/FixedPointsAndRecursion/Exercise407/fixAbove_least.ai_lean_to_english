@@ -1,0 +1,3 @@
+The directed union of the iterates of f starting from a pre-fixed point a lies below every element z such that a lies below z and f(z) lies below z.
+
+It is enough that every iterate lies below z. The zero-th iterate is a. If the k-th iterate lies below z, the next iterate is its image under f, which lies below f(z) by monotonicity and hence below z.

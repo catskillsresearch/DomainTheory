@@ -1,8 +1,3 @@
-/-ai
-If a nonempty set of tokens is contained in an intersection, then the intersection is nonempty.
-
-The nonempty witness of the smaller set remains a witness of the intersection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

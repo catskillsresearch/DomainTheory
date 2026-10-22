@@ -1,8 +1,3 @@
-/-ai
-If the equality characteristic is primitive recursive, then the triviality step is primitive recursive.
-
-The flag and the output index are primitive-recursive projections. The equality characteristic of that output index paired with the master index is primitive recursive, and selection of the flag against that bit agrees with the step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

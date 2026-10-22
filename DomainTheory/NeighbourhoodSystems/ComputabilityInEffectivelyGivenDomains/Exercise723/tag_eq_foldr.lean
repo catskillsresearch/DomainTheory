@@ -1,8 +1,3 @@
-/-ai
-Tag of a list at a value equals the right fold of the list of the map sending an entry and an accumulator to the numeral of the successor of the entry and the accumulator, starting from the numeral of zero and the value. The recursion of tag is this right fold.
-
-The proof is induction on the list. The empty list is reflexive. At a cons cell, the cons equation for tag and the inductive hypothesis leave a reflexive equality.
-ai-/
 
 module
 

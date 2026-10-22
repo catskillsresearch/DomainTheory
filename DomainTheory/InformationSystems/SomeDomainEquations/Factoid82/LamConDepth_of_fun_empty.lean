@@ -1,8 +1,3 @@
-/-ai
-If a finset of raw lambda tokens has no function tokens, then it is depth-consistent if and only if its atom finset is consistent in A.
-
-Rewriting the definition of depth consistency selects the empty function-token branch.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

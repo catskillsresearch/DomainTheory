@@ -1,8 +1,3 @@
-/-ai
-The finite set coded by the bitwise disjunction of n and m is the union of the finite sets coded by n and by m.
-
-Extensionality and the test-bit law for disjunction give the equality.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

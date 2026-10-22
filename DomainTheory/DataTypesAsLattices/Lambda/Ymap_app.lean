@@ -1,8 +1,3 @@
-/-ai
-If g is Scott continuous in each argument separately, then the application of its parameterized fixed-point map at x is the fixed point of g at x.
-
-This is beta reduction, using Scott continuity of the parameterized fixed point.
-ai-/
 
 module
 

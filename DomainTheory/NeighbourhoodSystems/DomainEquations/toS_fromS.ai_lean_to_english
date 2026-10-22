@@ -1,0 +1,3 @@
+Composing the forward map of Example 6.1 with the reverse map is the identity on the sum.
+
+The two elements contain the same neighbourhoods. A neighbourhood of the composite is the master, which already belongs to the original element, or a left copy, recovered by the forward half of the zero-embedding characterization of the reverse map, or a right product copy, recovered by the forward half of the pair-embedding characterization. Conversely, the subfamily law splits a neighbourhood of the original element into the master, a left copy restored by the reverse half of the zero characterization, or a product neighbourhood restored by the reverse half of the pair characterization.

@@ -1,8 +1,3 @@
-/-ai
-Finitary union of finite sets of the domain is associative.
-
-Membership is compared in both directions, splitting on which summand contains the element.
-ai-/
 
 module
 

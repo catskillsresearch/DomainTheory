@@ -1,6 +1,3 @@
-/-ai
-On a code of the triple (j, n, m), the coordinate-wise intersection generator returns the presentation's intersection index of the j-th fiber index of n and the j-th fiber index of m.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

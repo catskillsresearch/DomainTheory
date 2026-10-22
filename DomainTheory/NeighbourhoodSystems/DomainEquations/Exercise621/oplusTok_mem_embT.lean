@@ -1,8 +1,3 @@
-/-ai
-The true tag of a proper neighbourhood of the right system belongs to the coalesced sum.
-
-It is the right-tag clause of the membership definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

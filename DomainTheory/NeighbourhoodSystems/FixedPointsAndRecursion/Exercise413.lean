@@ -1,8 +1,3 @@
-/-ai
-The infimum of the pre-fixed points of a monotone endomap f is a fixed point of f. For any set, any chosen element, and any unary operation, there is a unique function from the natural numbers that sends zero to the chosen element and sends each successor to the operation applied to the value at the predecessor. The infimum of the pre-fixed points of f is the least fixed point: it lies below every fixed point. The unique function on the natural numbers that sends zero to zero and commutes with successor is the identity.
-
-The numbered name example_413 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise413.monoFix_isFixed

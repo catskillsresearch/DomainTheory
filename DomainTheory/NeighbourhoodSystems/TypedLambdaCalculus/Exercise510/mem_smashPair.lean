@@ -1,8 +1,3 @@
-/-ai
-The smash pair of two elements contains a set of the disjoint sum exactly when that set is the product of the two master neighbourhoods, or the product of a proper neighbourhood of the first element and a proper neighbourhood of the second.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

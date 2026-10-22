@@ -1,8 +1,3 @@
-/-ai
-If a set of elements is bounded, its family of upper bounds is nonempty.
-
-The witness of boundedness belongs to that family.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

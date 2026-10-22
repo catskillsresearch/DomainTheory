@@ -1,8 +1,3 @@
-/-ai
-A membership recorded by the right summand of an appended valuation trace is recorded by the append.
-
-The witnessing time stamp remains an entry of the right summand, and hence of the append.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

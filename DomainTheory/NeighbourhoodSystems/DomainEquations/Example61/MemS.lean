@@ -1,6 +1,3 @@
-/-ai
-The neighbourhoods of the tree algebra are the least family of sets of path-token pairs that contains the master, contains the zero-tagged copy of every neighbourhood of the original system, and contains the union of the left-tagged copy of P and the right-tagged copy of Q whenever it contains both P and Q.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

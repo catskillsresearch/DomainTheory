@@ -1,0 +1,3 @@
+An element lies below a meet if and only if it lies below both arguments.
+
+A lower bound of the meet is a lower bound of each argument by transitivity with the left and right inequalities. A common lower bound of the two arguments is a lower bound of the meet by the universal property.

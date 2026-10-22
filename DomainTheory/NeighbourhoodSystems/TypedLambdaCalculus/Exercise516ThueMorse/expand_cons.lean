@@ -1,8 +1,3 @@
-/-ai
-The substitution of a cons b :: σ equals b followed by the negation of b followed by the substitution of σ.
-
-This is the cons clause of the substitution, so the equation holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

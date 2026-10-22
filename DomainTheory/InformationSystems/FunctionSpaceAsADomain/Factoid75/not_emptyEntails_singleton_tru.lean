@@ -1,8 +1,3 @@
-/-ai
-The singleton consisting of the true token is not empty-entailing in the Boolean system.
-
-Empty entailment of that singleton would mean that the empty set entails true.
-ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

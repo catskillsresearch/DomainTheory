@@ -1,6 +1,3 @@
-/-ai
-The {0,1} flag obtained by threading a witness code w through the list coded by c is the second component of the fold of the witness-threading step, started from the pair of w and 1.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

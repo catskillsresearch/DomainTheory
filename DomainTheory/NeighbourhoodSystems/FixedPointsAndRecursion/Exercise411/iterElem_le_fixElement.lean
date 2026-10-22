@@ -1,8 +1,3 @@
-/-ai
-Every approximant of an approximable endomap, starting from bottom, lies below the least fixed point.
-
-A neighbourhood of the approximant belongs, by the membership law for approximants, to the least fixed point at that index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407

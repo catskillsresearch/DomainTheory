@@ -1,8 +1,3 @@
-/-ai
-Applying the primitive-recursion body to a function-space element k and a pair of elements x and y yields the conditional on the zero test of x, the value f at y, and g at the predecessor of x, at y, and at k applied to that predecessor and y.
-
-Unfold the body and simplify the element maps of composition, pairing, the two projections, the argument selectors, and evaluation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

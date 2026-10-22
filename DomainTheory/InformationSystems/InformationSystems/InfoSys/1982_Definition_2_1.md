@@ -1,40 +1,19 @@
 # Definition 2.1
 
-**DEFINITION 2.1.** An *information system* is a structure
+## Human-English
 
-$$(D, \Delta, \mathrm{Con}, \vdash),$$
+@import "InfoSys.english" {code_block=false}
 
-where $D$ is a set (the set of data objects or propositions), where $\Delta$ is a distinguished member of $D$ (the least informative member), where $\mathrm{Con}$ is a set of finite subsets of $D$ (the consistent sets of objects), and where $\vdash$ is a binary relation between members of $\mathrm{Con}$ and members of $D$ (the
-entailment relation for objects). Concerning $\mathrm{Con}$, the following axioms must be satisfied for all finite subsets $u, v \subseteq D$:
+## AI: Human-English to AI-Lean
 
-(i) $u \in \mathrm{Con}$, whenever $u \subseteq v \in \mathrm{Con}$;
+**InformationSystems/InformationSystems/InfoSys/InfoSys.lean**
 
-(ii) $\{X\} \in \mathrm{Con}$, whenever $X \in D$; and
+@import "InfoSys.lean"
 
-(iii) $u \cup \{X\} \in \mathrm{Con}$, whenever $u \vdash X$.
+## AI: AI-Lean to AI-English
 
-Concerning $\vdash$, the following axioms must be satisfied for all $u, v \in \mathrm{Con}$, and all $X \in D$:
+@import "InfoSys.ai_lean_to_english" {code_block=false}
 
-(iv) $u \vdash \Delta$;
+## AI: AI-English to Human-English Concordance
 
-(v) $u \vdash X$, whenever $X \in u$; and
-
-(vi) if $v \vdash Y$ for all $Y \in u$ and $u \vdash X$, then $v \vdash X$.
-
-In words we may say of $\mathrm{Con}$ that, as a set of sets, (i) it is closed under subsets, (ii) it contains all singletons, and (iii) adjunction of an entailed object to a consistent set preserves consistency. Concerning $\vdash$, which should be viewed as a “multiary” relation, we may say that (iv) $\Delta$ is entailed by anything, (v) $\vdash$ is reflexive, and (vi) $\vdash$ is transitive. (The last two properties are both expressed in a way appropriate to a multiary relation on members of $D$.) ■
-
-The best advice is to think of the members of $D$ as consisting of finite data objects, some of which are more informative than others. The word “finite” should be taken here in the sense of “fully circumscribed”—as regards what is given in $\mathbf{A}$ these data objects can be comprehended in “one step.” It is of course possible to introduce information systems where the data objects are infinite sets, but relative to $\mathbf{A}$ they are finite as data objects.
-
-The member that provides zero information is $\Delta$. Data objects are intended to give information about possible elements of the domain to be constructed, so if we were to use $\Delta$ alone, we would be describing the least defined element usually written as $\bot$.
-
-Not just any combination of data objects will describe a possible element, however; hence, the need for the notion of consistency. If $u \in \mathrm{Con}$ is false, then the “propositions” in $u$ cannot all be applied to the same element at the same time. Finally we have to agree that, in general, the propositions to be allowed are rarely mutually independent. It follows that an entailment relation must be imposed to record the dependencies that do hold among the propositions. With these informal understandings, the axioms chosen should all be self-evident.
-
-As it is not always clear what structure is meant if we refer to a domain simply by naming its underlying set of data objects, it will be better if we use a letter to refer to an information system as a whole. We shall therefore write:
-
-$$\mathbf{A} = (D_{\mathbf{A}}, \Delta_{\mathbf{A}}, \mathrm{Con}_{\mathbf{A}}, \vdash_{\mathbf{A}})$$
-
-and say that $\mathbf{A}$ is an information system—with its parts as indicated. For a more informal discussion, the notation without subscripts can suffice, but there can be problems when several different systems are involved. ■
-
-**Lean 4**
-
-- [InformationSystems/InformationSystems/InfoSys/InfoSys.lean](InfoSys.lean)
+@import "InfoSys.ai_english_concordance" {code_block=false}

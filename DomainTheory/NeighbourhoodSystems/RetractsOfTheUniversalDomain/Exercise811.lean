@@ -1,8 +1,3 @@
-/-ai
-The approximable map a is a projection on R: it lies below the identity of R. The approximable map a is a retraction: composing it with itself yields a. The approximable map a is not finitary.
-
-The numbered name example_811 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise811.isProjection_a

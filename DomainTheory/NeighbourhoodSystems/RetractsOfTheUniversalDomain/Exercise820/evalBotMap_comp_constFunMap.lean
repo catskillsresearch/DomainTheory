@@ -1,8 +1,3 @@
-/-ai
-Evaluation at bottom after the constant-function embedding is the identity on B.
-
-Both inequalities reduce to the same computation on elements: the constant function with value b, evaluated at bottom, returns b.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

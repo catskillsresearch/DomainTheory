@@ -1,0 +1,3 @@
+For any subsystem, the finitely generated subsystem of a concatenation is contained in the subsystem if and only if the finitely generated subsystem of each factor is.
+
+Rewrite all three inclusions by the characterization through membership of the generators, and split membership in a concatenation into membership in the two factors.

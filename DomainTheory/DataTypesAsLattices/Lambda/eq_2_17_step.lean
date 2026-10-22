@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.17), the fundamental equation. The intersection x ∩ y equals the conditional x ⊃ (y ⊃ 0, ⊥), (x − 1 ∩ y − 1) + 1.
-
-Zero lies in both sets exactly on the left branch. A successor lies in both sets exactly when it is the successor of a common predecessor, which is the right branch.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,6 +1,3 @@
-/-ai
-The seven-way tagged sum of seven retracts, with indices 0 through 6, is the graph of the seven-way sum body. Dispatch is by iterated predecessor on the tag, and mixed tags collapse to the top element as in (4.4).
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

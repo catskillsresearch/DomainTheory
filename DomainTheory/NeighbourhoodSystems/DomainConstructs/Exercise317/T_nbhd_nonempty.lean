@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the truth system is nonempty.
-
-The membership criterion splits into the master, the zero neighbourhood, and the one neighbourhood, inhabited respectively by the token 0, the token 0, and the token 1.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

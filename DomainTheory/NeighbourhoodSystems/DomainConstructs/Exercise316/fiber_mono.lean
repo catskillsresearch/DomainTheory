@@ -1,8 +1,3 @@
-/-ai
-If one set of pairs is contained in another, then each fiber of the smaller set is contained in the corresponding fiber of the larger set.
-
-A token in the smaller fiber is a pair in the smaller set, hence a pair in the larger set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

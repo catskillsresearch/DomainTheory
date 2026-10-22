@@ -1,8 +1,3 @@
-/-ai
-clipLtCode is primitive recursive.
-
-The midpoint and the two endpoints are primitive recursive projections. Pairing the left endpoint with the minimum of the right endpoint and the midpoint agrees with the clip by simplification.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

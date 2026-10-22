@@ -1,0 +1,3 @@
+Every countable neighbourhood system D is isomorphic to some neighbourhood system D' of subsets of the rationals, and D' is a subsystem of the universal system U.
+
+The subtype of neighbourhoods of D is nonempty, since it contains the master. Countability therefore yields a surjection from the natural numbers onto that subtype. Enumerate by sending 0 to the master and every positive index to the value of that surjection, shifted by one. Then e 0 is the master, and a set belongs to D exactly when it equals some value of e: a member is hit by the surjection and hence appears at the next index, while the value at 0 is the master and every later value is a subtype element. The system DprimeU built from this enumeration is isomorphic to D and is a subsystem of U.

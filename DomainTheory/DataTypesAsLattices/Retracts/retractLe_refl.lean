@@ -1,8 +1,3 @@
-/-ai
-The retract order is reflexive on retracts.
-
-Both composites of a retract with itself equal the retract, by the retract equation.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

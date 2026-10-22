@@ -1,8 +1,3 @@
-/-ai
-If an operator on the function space sends finitary projections to finitary projections, then its fixed point is a finitary projection.
-
-By induction, the map read from each iterate is a finitary projection: the zero iterate is the bottom of the function space, whose map is the constant-bottom map, and the successor iterate is the operator applied to the previous iterate. Injectivity of reading maps, together with the criterion that a finitary projection equals its sub-image, shows that the transported sub operator fixes every iterate. The iterates are directed by passing to a maximum, and the same maxima remain upper bounds after applying the sub operator, because it fixes each iterate. Extensionality of elements identifies the fixed element with the directed supremum of the iterates. The sub operator commutes with that supremum, and another extensionality, using that it fixes each term, shows that it fixes the supremum. Reading the map back, equality with the sub-image yields that the fixed point is a finitary projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

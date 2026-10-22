@@ -1,8 +1,3 @@
-/-ai
-A number x lies in the complement of nbhd n if and only if the x-th bit of n is set. This is the pointwise form of the description of that complement.
-
-Rewrite by the complement description and use definitional reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

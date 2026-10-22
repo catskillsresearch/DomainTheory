@@ -1,54 +1,127 @@
 # Theorem 8.5
 
-**THEOREM 8.5.** For an approximable mapping $a : E \to E$ the following are equivalent:
+## Human-English
 
-(i) $a$ is a finitary projection;
+@import "1980_Theorem_8_5.english" {code_block=false}
 
-(ii) $a(x) = \{Y \in E \mid \exists X \in x.\, X \subseteq Y \land X \ a \ X\}$, for all $x \in |E|$.
+## AI: Human-English to AI-Lean
 
-*Proof:* Suppose $a$ satisfies (ii) first. Inasmuch as $X \in x$ and $X \subseteq Y$ always imply $Y \in x$, for all $x \in |E|$, we see $a(x) \subseteq x$ must always hold. Moreover, it is obvious that $X \in x$ and $X \ a \ X$ always imply $X \in a(x)$; therefore, $a(x) \subseteq a(a(x))$ for all $x \in |E|$. This shows that $a$
-is indeed a projection.
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/FixSet.lean**
 
-Let $D = \{X \in E \mid X \ a \ X\}$, then it is easy to check that $D \triangleleft E$ and that $a$ is determined from $D$ exactly as in 8.2; thus, the fixed-point set of $a$ is isomorphic to a domain, by what we have already proved. So we have shown (ii) implies (i).
+@import "FixSet.lean"
 
-In the converse direction, assume that $a$ is a finitary projection. And let the system $D$ be isomorphic to the fixed-point set of $a$. We have the situation of Theorem 6.15. There is a projection pair,
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd.lean**
 
-$$i : D \to E \quad \text{and} \quad j : E \to D,$$
+@import "fixedNbhd.lean"
 
-where the connection with $a$ gives:
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd_mem.lean**
 
-$$j \circ i = I_D \quad \text{and} \quad i \circ j = a \subseteq I_E.$$
+@import "fixedNbhd_mem.lean"
 
-By 6.15, $D \cong D' \triangleleft E$, and we want to identify $D'$ in terms of $a$ as follows:
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/BasicInst8.lean**
 
-$$D' = \{X \in E \mid X \ a \ X\}.$$
+@import "BasicInst8.lean"
 
-Now from a reading of the proof of 6.15 the neighbourhoods of $D'$ are just those corresponding to the finite elements of $D$. But any such element is a fixed point of $a$. We have
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/IsCompactElt.lean**
 
-$$X \in D' \quad \text{implies} \quad a(\uparrow X) = \uparrow X \quad \text{implies} \quad X \ a \ X.$$
+@import "IsCompactElt.lean"
 
-Conversely, if $X \ a \ X$ holds, then $\uparrow X \subseteq a(\uparrow X)$. But $a$ is a projection, so $\uparrow X$ is a fixed point. But $i(j(\uparrow X)) = \uparrow X$ means $j(\uparrow X)$ is a finite element of $|D|$. So $X \in D'$, and we have $D'$ identified as desired.
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/sectionMap.lean**
 
-Finally, if we calculate $a = i \circ j$ by the formulae of 6.12 (with $D'$ for $D$, of course), we obtain our formula (ii). $\square$
+@import "sectionMap.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/Basic.lean**
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/FixSet.lean](FixSet.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd.lean](fixedNbhd.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd_mem.lean](fixedNbhd_mem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/BasicInst8.lean](BasicInst8.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/IsCompactElt.lean](IsCompactElt.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/sectionMap.lean](sectionMap.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/e_apply_iSupDirected_fixed.lean](e_apply_iSupDirected_fixed.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/eq_principal_of_isCompactElt.lean](eq_principal_of_isCompactElt.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd_subsystem.lean](fixedNbhd_subsystem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/mem_of_exists_rel_self.lean](mem_of_exists_rel_self.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/isFinitaryProjection_of_formula.lean](isFinitaryProjection_of_formula.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/principal_compact.lean](principal_compact.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/principal_isCompactElt.lean](principal_isCompactElt.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/toElementMap_idem.lean](toElementMap_idem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/exists_principal_eq_of_isRetraction_le_idMap.lean](exists_principal_eq_of_isRetraction_le_idMap.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/formula_of_isFinitaryProjection.lean](formula_of_isFinitaryProjection.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/finitaryProjection_iff_formula.lean](finitaryProjection_iff_formula.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85.lean](../Theorem85.lean)
+@import "Basic.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/e_apply_iSupDirected_fixed.lean**
+
+@import "e_apply_iSupDirected_fixed.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/eq_principal_of_isCompactElt.lean**
+
+@import "eq_principal_of_isCompactElt.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/fixedNbhd_subsystem.lean**
+
+@import "fixedNbhd_subsystem.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/mem_of_exists_rel_self.lean**
+
+@import "mem_of_exists_rel_self.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/isFinitaryProjection_of_formula.lean**
+
+@import "isFinitaryProjection_of_formula.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/principal_compact.lean**
+
+@import "principal_compact.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/principal_isCompactElt.lean**
+
+@import "principal_isCompactElt.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/toElementMap_idem.lean**
+
+@import "toElementMap_idem.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/exists_principal_eq_of_isRetraction_le_idMap.lean**
+
+@import "exists_principal_eq_of_isRetraction_le_idMap.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/formula_of_isFinitaryProjection.lean**
+
+@import "formula_of_isFinitaryProjection.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85/finitaryProjection_iff_formula.lean**
+
+@import "finitaryProjection_iff_formula.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem85.lean**
+
+@import "../Theorem85.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "FixSet.ai_lean_to_english" {code_block=false}
+
+@import "fixedNbhd.ai_lean_to_english" {code_block=false}
+
+@import "fixedNbhd_mem.ai_lean_to_english" {code_block=false}
+
+@import "BasicInst8.ai_lean_to_english" {code_block=false}
+
+@import "IsCompactElt.ai_lean_to_english" {code_block=false}
+
+@import "sectionMap.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "e_apply_iSupDirected_fixed.ai_lean_to_english" {code_block=false}
+
+@import "eq_principal_of_isCompactElt.ai_lean_to_english" {code_block=false}
+
+@import "fixedNbhd_subsystem.ai_lean_to_english" {code_block=false}
+
+@import "mem_of_exists_rel_self.ai_lean_to_english" {code_block=false}
+
+@import "isFinitaryProjection_of_formula.ai_lean_to_english" {code_block=false}
+
+@import "principal_compact.ai_lean_to_english" {code_block=false}
+
+@import "principal_isCompactElt.ai_lean_to_english" {code_block=false}
+
+@import "toElementMap_idem.ai_lean_to_english" {code_block=false}
+
+@import "exists_principal_eq_of_isRetraction_le_idMap.ai_lean_to_english" {code_block=false}
+
+@import "formula_of_isFinitaryProjection.ai_lean_to_english" {code_block=false}
+
+@import "finitaryProjection_iff_formula.ai_lean_to_english" {code_block=false}
+
+@import "../Theorem85.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Theorem_8_5.ai_english_concordance" {code_block=false}

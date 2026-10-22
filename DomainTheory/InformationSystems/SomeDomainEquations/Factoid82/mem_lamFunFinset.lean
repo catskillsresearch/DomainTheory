@@ -1,8 +1,3 @@
-/-ai
-A pair of raw-token lists lies in the function finset of a finite set of raw lambda tokens if and only if the function token of those two lists belongs to the set.
-
-An auxiliary claim on multisets says that the pair lies in the right fold of function insertion if and only if some member equals that function token. Both directions fail for the empty multiset. On a cons whose head is a function token, insertion membership splits into equality of the pair or existence in the tail. If the head is bottom or an atom, insertion acts as the identity, so a witness must come from the tail and the head cannot equal the function token. Applying the auxiliary claim to the underlying multiset and converting finset membership gives the stated equivalence.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

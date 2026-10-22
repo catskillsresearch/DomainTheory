@@ -1,8 +1,3 @@
-/-ai
-The head of an element pushed onto a stack is that element.
-
-The head is a composite, unfolding after folding cancels, and the first projection of the resulting pair is the element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

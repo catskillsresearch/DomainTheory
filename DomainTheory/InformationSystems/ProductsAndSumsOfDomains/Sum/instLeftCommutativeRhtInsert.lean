@@ -1,6 +1,3 @@
-/-ai
-Right insertion of a sum token into a finite set of elements of the right summand is left commutative. Casing on the two tokens, insertion of the underlying elements commutes when both tokens are right tokens, and in every other case the two orders of insertion are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

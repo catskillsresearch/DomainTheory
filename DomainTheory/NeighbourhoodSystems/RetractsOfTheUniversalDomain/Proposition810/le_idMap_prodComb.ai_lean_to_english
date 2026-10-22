@@ -1,0 +1,3 @@
+If two self-maps of the universal domain lie below the identity, then so does their product combinator.
+
+Compare elements. The elementwise form of the product combinator pairs the two maps applied to the two components of the extracted element. Each component inequality follows from the map lying below the identity, so the pair lies below the pair of the two components, which is the extracted element. Monotonicity of the product injection and the inequality of the product injection after the product extraction below the identity finish the comparison.

@@ -1,8 +1,3 @@
-/-ai
-A bit of the bounded bitwise sum orUpTo is set exactly when some strictly smaller index is a set bit of the first argument, lies at most at the tested position, and leaves a set bit of the second argument in the difference.
-
-The proof is induction on the bound. The zero bound simplifies from the definition. At a successor, the tested bit is the bit of the bitwise disjunction of the previous value with the selection, according to the bit characteristic of the first argument at the bound, of the left shift of the second argument or of zero. The disjunction equation for bits and the inductive hypothesis rewrite it. If that bit of the first argument is set, the characteristic is one, the selection is the shift, and the shift-bit equation splits a witness into one below the bound or one equal to the bound, the latter read from the shift condition. If the bit is unset, the characteristic is not one, hence zero by its bound of one, the selection is zero, and the zero bit is false, so a witness lies strictly below the bound. A witness equal to the bound would be a set bit.
-ai-/
 
 module
 

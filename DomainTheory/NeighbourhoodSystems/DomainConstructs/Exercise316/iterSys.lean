@@ -1,6 +1,3 @@
-/-ai
-The infinite iterate of a neighbourhood system is the system on index-token pairs in which a set is a neighbourhood when every fiber is a neighbourhood and all but finitely many fibers equal the master. The master consists of the pairs whose token lies in the original master; it is nonempty because the original master is, and it is a neighbourhood with cofinite bound zero. Intersection acts by intersecting fibers and taking the maximum of the two bounds. Every neighbourhood is contained in the master because each of its fibers is.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

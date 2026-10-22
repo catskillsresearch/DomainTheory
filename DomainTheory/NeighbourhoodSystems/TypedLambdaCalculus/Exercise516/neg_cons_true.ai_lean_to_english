@@ -1,0 +1,3 @@
+Negation after cons of true equals cons of false after negation, as approximable maps: negating a string headed by 1 heads the negated string by 0.
+
+By extension on finite elements of C, rewrite both sides on a partial string by composition, the partial clause of cons, and the partial clause of negation; the two sides agree by reflexivity. The total case is the same with the total clauses.

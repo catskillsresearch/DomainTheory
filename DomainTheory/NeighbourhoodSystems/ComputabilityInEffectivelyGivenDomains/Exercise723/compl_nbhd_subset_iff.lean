@@ -1,8 +1,3 @@
-/-ai
-For an arbitrary target set S, the complement of nbhd k is contained in S if and only if every j strictly below k whose bit in k is set lies in S. This is the same bounded-quantifier form as the test against Fun, with the target left arbitrary.
-
-From the inclusion, a set bit is a point of the complement and therefore lies in S. Conversely, a point of the complement has its bit set, hence lies strictly below k, and the bounded hypothesis applies.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

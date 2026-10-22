@@ -1,6 +1,3 @@
-/-ai
-The combinator sub, regarded as a self-map of the universal domain, is i-arrow composed with subApprox composed with j-arrow.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

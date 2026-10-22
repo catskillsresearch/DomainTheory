@@ -1,8 +1,3 @@
-/-ai
-The intersection of two right copies is the right copy of the intersection.
-
-Extensionality reduces the claim to an arbitrary sum token. For the basepoint, a left tag, and a right tag, simplification of intersection membership, the right tag, and the right copy makes the two sides agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

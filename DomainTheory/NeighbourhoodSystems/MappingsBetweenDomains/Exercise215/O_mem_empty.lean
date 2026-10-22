@@ -1,8 +1,3 @@
-/-ai
-The empty set is a neighbourhood of O.
-
-It is the right disjunct of the membership alternative, by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

@@ -1,8 +1,3 @@
-/-ai
-The map recovered from the constant combinator at k sends every element to k.
-
-Rewrite by the definition of the combinator, the curried application law, the first projection, and the first component of a pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

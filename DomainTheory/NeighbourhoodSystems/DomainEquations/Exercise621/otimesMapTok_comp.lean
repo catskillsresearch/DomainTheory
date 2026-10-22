@@ -1,8 +1,3 @@
-/-ai
-For strict outer maps g₀ and g₁, the smash product of g₀ ∘ f₀ and g₁ ∘ f₁ equals the composite of the smash products.
-
-The two approximable maps are equal because they relate the same neighbourhoods. In the forward direction the master clause uses the product neighbourhood of the middle masters as an intermediate neighbourhood. A proper rectangle uses the product neighbourhood of the intermediate components, each of which is proper because a master intermediate would be sent by the corresponding strict map to the master. In the backward direction a master first leg forces a master second leg, because a proper second leg and injectivity of product neighbourhoods would identify a component master with a proper neighbourhood. A proper first leg and a master second leg return the master clause, with the input a proper rectangle. Two proper legs compose the component relations after injectivity of product neighbourhoods.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

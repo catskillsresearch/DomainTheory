@@ -1,8 +1,3 @@
-/-ai
-The product action on maps is monotone in both arguments.
-
-Order of approximable maps is inclusion of relations. A product relation of the smaller maps has two component relations, and the two inequalities carry those relations to the larger maps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

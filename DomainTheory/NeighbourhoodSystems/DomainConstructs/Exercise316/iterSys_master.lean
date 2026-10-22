@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the infinite iterate is the set of index-token pairs whose token lies in the original master.
-
-The identity is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

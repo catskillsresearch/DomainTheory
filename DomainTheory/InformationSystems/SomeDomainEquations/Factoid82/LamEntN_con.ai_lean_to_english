@@ -1,0 +1,3 @@
+Stage-n entailment of a raw lambda token implies stage-n consistency of the finite set.
+
+The proof matches on the stage and the token. At stage zero, entailment of bottom is the consistency, entailment of an atom projects its consistency component, and entailment of a function token is impossible. At a successor stage, the previous-stage disjunct reduces by a recursive call at that stage, and the new disjunct projects the consistency component of bottom, of an atom, or of a function token.

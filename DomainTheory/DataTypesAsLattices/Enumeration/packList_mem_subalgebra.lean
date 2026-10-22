@@ -1,8 +1,3 @@
-/-ai
-If A is a subalgebra and every component of a list lies in A, then the packing of the list lies in A.
-
-The empty packing is the bottom element, which is combinatory and therefore lies in A. The packing of a cons cell is the binary sequence of the head with the packed tail. The head lies in A by hypothesis, the packed tail lies in A by the inductive hypothesis, and binary sequencing preserves membership in a subalgebra.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

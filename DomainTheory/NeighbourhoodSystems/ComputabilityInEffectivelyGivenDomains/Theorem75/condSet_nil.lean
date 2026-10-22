@@ -1,8 +1,3 @@
-/-ai
-The conditional set of the empty list equals the base.
-
-Extend the sets and simplify the empty quantifier.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

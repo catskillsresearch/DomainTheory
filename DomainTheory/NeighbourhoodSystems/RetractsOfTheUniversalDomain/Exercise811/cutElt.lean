@@ -1,6 +1,3 @@
-/-ai
-The element of R associated with a real t at most 1 is the element whose up-set is the Dedekind up-set of t. It is built by the element constructor from the lemmas that this up-set contains 1, takes values in (0, 1], and is upward closed.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

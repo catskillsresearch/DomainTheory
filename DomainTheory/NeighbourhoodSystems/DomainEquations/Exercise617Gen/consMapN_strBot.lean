@@ -1,8 +1,3 @@
-/-ai
-The successor map that prepends a letter a sends the partial element named by a finite string σ to the partial element named by a followed by σ.
-
-The two elements are compared by membership of an arbitrary neighbourhood Y. If the image contains Y, the relation supplies a neighbourhood containing the cone of σ whose prepended copy is contained in Y. The cone of a followed by σ equals the prepended copy of the cone of σ, which is contained in that prepended neighbourhood and hence in Y. Conversely, if the cone of a followed by σ is contained in Y, the cone of σ witnesses the relation, because its prepended copy is that cone.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

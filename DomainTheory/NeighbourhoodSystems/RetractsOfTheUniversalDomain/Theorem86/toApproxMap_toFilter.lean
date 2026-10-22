@@ -1,8 +1,3 @@
-/-ai
-Extracting the approximable map of the filter of a map recovers the map.
-
-This is the right inverse of the function-space equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

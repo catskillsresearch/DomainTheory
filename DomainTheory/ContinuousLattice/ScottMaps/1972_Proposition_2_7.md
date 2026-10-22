@@ -1,38 +1,37 @@
 # Proposition 2.7
 
-One of the justifications (by euphony at least) of the term *continuous lattice* is the fact that such spaces allow for so many continuous functions. One indication of this is the result:
+## Human-English
 
-**2.7 Proposition.** *In a continuous lattice $D$ the finitary lattice operations $\sqcup$ and $\sqcap$ are continuous.*
+@import "1972_Proposition_2_7.english" {code_block=false}
 
-**Proof:** It is trivial to show that $\sqcup$ is continuous in every complete lattice; this is not so for $\sqcap$. In view of 2.6 we need only show
+## AI: Human-English to AI-Lean
 
-$$
-x \sqcap \bigsqcup S = \bigsqcup x \sqcap y : y \in S
-$$
+**ContinuousLattice/ScottMaps/meet_preservesDirectedSup.lean**
 
-for every directed $S \subseteq D$. In fact it is enough to show
+@import "meet_preservesDirectedSup.lean"
 
-$$
-x \sqcap \bigsqcup S \sqsubseteq \bigsqcup x \sqcap y : y \in S
-$$
+**ContinuousLattice/ScottMaps/proposition_2_7_inf_left.lean**
 
-because the opposite inequality is valid in all complete lattices. In view of the fact that $D$ is continuous, it is enough to show that
+@import "proposition_2_7_inf_left.lean"
 
-$$
-t \ll x \sqcap \bigsqcup S \text{ implies } t \sqsubseteq \bigsqcup x \sqcap y : y \in S.
-$$
+**ContinuousLattice/ScottMaps/proposition_2_7_inf_right.lean**
 
-So assume $t \ll x \sqcap \bigsqcup S$. Then $t \sqsubseteq x \sqcap \bigsqcup S \sqsubseteq x$. Also $t \ll \bigsqcup S$ because $x \sqcap \bigsqcup S \sqsubseteq \bigsqcup S$. Thus $t \ll y$ for some $y \in S$ since the set
+@import "proposition_2_7_inf_right.lean"
 
-$$
-z \in D : t \ll z
-$$
+**ContinuousLattice/ScottMaps/proposition_2_7_sup.lean**
 
-is open. But then $t \sqsubseteq y$, and so $t \sqsubseteq x \sqcap y$, and the result follows. $\square$
+@import "proposition_2_7_sup.lean"
 
-**Lean 4**
+## AI: AI-Lean to AI-English
 
-- [ContinuousLattice/ScottMaps/meet_preservesDirectedSup.lean](meet_preservesDirectedSup.lean)
-- [ContinuousLattice/ScottMaps/proposition_2_7_inf_left.lean](proposition_2_7_inf_left.lean)
-- [ContinuousLattice/ScottMaps/proposition_2_7_inf_right.lean](proposition_2_7_inf_right.lean)
-- [ContinuousLattice/ScottMaps/proposition_2_7_sup.lean](proposition_2_7_sup.lean)
+@import "meet_preservesDirectedSup.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_7_inf_left.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_7_inf_right.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_7_sup.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Proposition_2_7.ai_english_concordance" {code_block=false}

@@ -1,6 +1,3 @@
-/-ai
-The inverse limit of an ω-system of complete lattices is the type of sequences that are compatible with the given projections.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

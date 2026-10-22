@@ -1,6 +1,3 @@
-/-ai
-The U-side atom of an enumeration, a master set, and a sign sequence is the master neighbourhood of U at depth zero. At a successor depth it is the first or second output of splitting the generated atom and the previous U-side atom against the next enumerated set, according as the sign is true or false.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

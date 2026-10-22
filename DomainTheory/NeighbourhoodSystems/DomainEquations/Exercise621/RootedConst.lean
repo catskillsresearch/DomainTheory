@@ -1,6 +1,3 @@
-/-ai
-An expression is rooted when the empty string belongs to the master of every constant occurring in it. A constant is rooted when the empty string belongs to its master, the variable is rooted outright, and each binary constructor is rooted when both immediate subexpressions are rooted.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

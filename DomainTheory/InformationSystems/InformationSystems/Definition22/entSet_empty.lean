@@ -1,8 +1,3 @@
-/-ai
-Every finite set of tokens set-entails the empty set.
-
-A token of the empty set cannot exist, so the required entailments hold by eliminating that impossible membership.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

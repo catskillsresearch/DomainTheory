@@ -1,8 +1,3 @@
-/-ai
-The zeroth iterated bottom element of an approximable endomap is the bottom element.
-
-The approximant rewrites as an iterate of the element map, and the zero iterate is the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

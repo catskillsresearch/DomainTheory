@@ -1,23 +1,19 @@
 # Proposition 3.12
 
-**3.12 Proposition.** For a continuous lattice $D$ the space $J_D$ of projections forms a complete lattice as a $\bigsqcup$-closed subspace of $[D \to D]$.
+## Human-English
 
-**Proof:** The constant function $\bot \in J_D$ obviously, so $J_D$ contains $\bigsqcup \emptyset$. Suppose $j, k \in J_D$. We wish to show that $j \sqcup k \in J_D$. Compute:
+@import "proposition_3_12.english" {code_block=false}
 
-$$(j \sqcup k)((j \sqcup k)(x)) = j(j(x) \sqcup k(x)) \sqcup k(j(x) \sqcup k(x)).$$
+## AI: Human-English to AI-Lean
 
-But note:
+**ContinuousLattice/FunctionSpaces/proposition_3_12.lean**
 
-$$j(x) \sqsubseteq j(j(x)) \sqsubseteq j(j(x) \sqcup k(x)) \sqsubseteq j(x),$$
+@import "proposition_3_12.lean"
 
-because $j(x) \sqcup k(x) \sqsubseteq x$. Similarly for $k(x)$. Therefore, we find that $(j \sqcup k) \circ (j \sqcup k) = j \sqcup k \sqsubseteq \mathrm{id}$.
+## AI: AI-Lean to AI-English
 
-Suppose finally that $S \subseteq J_D$ is directed. We wish to show that $\bigsqcup S \in J_D$. Clearly $\bigsqcup S \sqsubseteq \mathrm{id}$, so compute by continuity of $\circ$:
+@import "proposition_3_12.ai_lean_to_english" {code_block=false}
 
-$$\bigsqcup S \circ \bigsqcup S = \bigsqcup j \circ j : j \in S = \bigsqcup j : j \in S = \bigsqcup S.$$
+## AI: AI-English to Human-English Concordance
 
-It follows that $J_D$ is $\bigsqcup$-closed and hence is a complete lattice. $\square$
-
-**Lean 4**
-
-- [ContinuousLattice/FunctionSpaces/proposition_3_12.lean](proposition_3_12.lean)
+@import "proposition_3_12.ai_english_concordance" {code_block=false}

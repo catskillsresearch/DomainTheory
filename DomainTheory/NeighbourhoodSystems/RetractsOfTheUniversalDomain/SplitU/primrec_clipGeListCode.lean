@@ -1,8 +1,3 @@
-/-ai
-The function sending a packed pair to clipGeListCode of its two components is primitive recursive.
-
-The map sending a pair code to the singleton list code of its upward clip is primitive recursive, as successor of that clip paired with zero. The flat map of that function agrees with the unpaired list clip by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

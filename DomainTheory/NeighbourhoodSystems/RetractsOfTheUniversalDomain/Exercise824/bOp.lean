@@ -1,6 +1,3 @@
-/-ai
-The second approximant at stage n is the map read from the second component of the n-th iterate of the operator that pairs the two given maps out of the pair space.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

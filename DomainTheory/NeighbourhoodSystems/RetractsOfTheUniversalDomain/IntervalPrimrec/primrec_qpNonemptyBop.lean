@@ -1,9 +1,3 @@
-/-ai
-The nonemptiness flag of a rational-pair code is primitive recursive.
-
-It is the composition of the primitive-recursive strict comparison of rational codes
-with the pairing of the left and right projections.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

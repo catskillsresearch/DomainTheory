@@ -1,8 +1,3 @@
-/-ai
-If a and b are retracts, their boxed product is a retract.
-
-The retract equation is equality with the graph of double application. Graph extensionality and two unfoldings of the product reduce the coordinates by the square-projection equations, and the retract equations for a and b remove the second applications.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

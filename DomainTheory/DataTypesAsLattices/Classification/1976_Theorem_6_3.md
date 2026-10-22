@@ -1,33 +1,31 @@
 # Theorem 6.3
 
-**THEOREM 6.3 (The $\mathfrak{G}_\delta$ theorem).** *The countable intersections of open subsets of $\mathbf{P}\omega$ are exactly the sets of the form:*
+## Human-English
 
-$$\{x \mid f(x) = \top\},$$
+@import "1976_Theorem_6_3.english" {code_block=false}
 
-*where $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is continuous.*
+## AI: Human-English to AI-Lean
 
-It may not be obvious that every $\mathfrak{G}_\delta$-set has this form. Certainly, as we have remarked, every $\mathfrak{G}$-set has this form. Thus if $W$ is a $\mathfrak{G}_\delta$, we have:
+**DataTypesAsLattices/Classification/theorem_6_3.lean**
 
-$$W = \bigcap \{U_n \mid n \in \omega\},$$
+@import "theorem_6_3.lean"
 
-and further,
+**DataTypesAsLattices/Classification/typicalGdelta_isScottGdelta.lean**
 
-$$U_n = \{x \mid f_n(x) = \top\},$$
+@import "typicalGdelta_isScottGdelta.lean"
 
-where the $f_n$ are suitably chosen continuous functions. Define the function $g$ by the equation:
+**DataTypesAsLattices/Classification/typicalGdelta_universal.lean**
 
-$$g(x) = \{(n, m) \mid m \in f_n(x)\}.$$
+@import "typicalGdelta_universal.lean"
 
-Clearly $g$ is continuous, and we have:
+## AI: AI-Lean to AI-English
 
-$$W = \{x \mid g(x) = \top\},$$
+@import "theorem_6_3.ai_lean_to_english" {code_block=false}
 
-as desired.
+@import "typicalGdelta_isScottGdelta.ai_lean_to_english" {code_block=false}
 
-We let $\mathfrak{F} \dot{\cap} \mathfrak{G}$ denote the class of all sets of the form $C \cap U$, where $C \in \mathfrak{F}$ and $U \in \mathfrak{G}$. Similarly for $\mathfrak{F} \dot{\cap} \mathfrak{G}_\delta$. Now $\{x \mid x \subseteq 0\}$ is closed and $\{x \mid x \supseteq 0\}$ is open. Thus $\{0\} \in \mathfrak{F} \dot{\cap} \mathfrak{G}$. This set is typical.
+@import "typicalGdelta_universal.ai_lean_to_english" {code_block=false}
 
-**Lean 4**
+## AI: AI-English to Human-English Concordance
 
-- [DataTypesAsLattices/Classification/theorem_6_3.lean](theorem_6_3.lean)
-- [DataTypesAsLattices/Classification/typicalGdelta_isScottGdelta.lean](typicalGdelta_isScottGdelta.lean)
-- [DataTypesAsLattices/Classification/typicalGdelta_universal.lean](typicalGdelta_universal.lean)
+@import "1976_Theorem_6_3.ai_english_concordance" {code_block=false}

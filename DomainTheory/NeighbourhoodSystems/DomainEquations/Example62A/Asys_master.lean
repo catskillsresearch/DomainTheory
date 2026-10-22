@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of Asys is the set of all strings.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

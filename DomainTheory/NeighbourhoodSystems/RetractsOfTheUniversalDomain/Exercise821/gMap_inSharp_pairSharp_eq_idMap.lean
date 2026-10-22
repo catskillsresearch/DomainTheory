@@ -1,8 +1,3 @@
-/-ai
-The catamorphism of the leaf embedding and the pairing is the identity on the tree algebra.
-
-Both inequalities are comparisons of relations. A graph-related pair is identity-related, and an identity-related pair is graph-related.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

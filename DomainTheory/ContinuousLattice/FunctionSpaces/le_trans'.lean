@@ -1,8 +1,3 @@
-/-ai
-The pointwise order on Scott maps is transitive.
-
-At each argument, the order of the codomain is transitive.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,8 +1,3 @@
-/-ai
-The outer map of the conditional combinator, sending x to the graph of the map sending y to the graph of the map sending z to the conditional of z, x, and y, is Scott continuous.
-
-It is a graph of continuous components. For each y the inner graph is continuous because, for each z, the conditional is Scott continuous in its middle argument.
-ai-/
 
 module
 

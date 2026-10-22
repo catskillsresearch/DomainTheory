@@ -1,8 +1,3 @@
-/-ai
-The master of the colimit system is the fixed-point token set.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

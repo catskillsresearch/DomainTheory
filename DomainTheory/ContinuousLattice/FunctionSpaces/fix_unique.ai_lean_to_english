@@ -1,0 +1,3 @@
+A value that is a fixed point of a Scott map f and lies below every pre-fixed point of f equals fix f. The least fixed point is unique.
+
+Such a value lies below fix f because fix f is a fixed point, hence a pre-fixed point. The value fix f lies below it because a fixed point is a pre-fixed point and fix lies below every pre-fixed point.

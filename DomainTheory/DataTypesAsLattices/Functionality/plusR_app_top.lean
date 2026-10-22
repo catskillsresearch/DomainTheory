@@ -1,8 +1,3 @@
-/-ai
-Application of a sum to the full set is the full set.
-
-Rewrite by the application equation, application of the full set, and the double conditional at the full set.
-ai-/
 
 module
 

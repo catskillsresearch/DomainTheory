@@ -1,8 +1,3 @@
-/-ai
-The positive index set of the empty list is the set of all indices.
-
-By extensionality, the condition of belonging to every index set named by the empty list holds for every index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

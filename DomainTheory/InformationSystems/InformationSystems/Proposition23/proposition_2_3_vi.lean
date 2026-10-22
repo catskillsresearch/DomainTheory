@@ -1,8 +1,3 @@
-/-ai
-If a finite set set-entails both v and v', then it set-entails their constructive union.
-
-A token of the union lies in v or in v', and the corresponding set-entailment supplies the entailment.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

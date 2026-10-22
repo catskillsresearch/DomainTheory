@@ -1,8 +1,3 @@
-/-ai
-For a difference-closed system with no minimal neighbourhood, the difference-existence decider reads zero on a pair exactly when the set difference is empty.
-
-The decider is at most one, reads one exactly when a genuine difference exists, and a genuine difference exists exactly when the difference is nonempty. A zero reading therefore rules out a nonempty difference, and an empty difference rules out a reading of one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

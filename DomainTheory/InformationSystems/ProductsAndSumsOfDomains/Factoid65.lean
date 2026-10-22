@@ -1,8 +1,3 @@
-/-ai
-Evaluating the constant map at an element b on the least element of the unit returns b.
-
-The numbered name theorem_65 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65.toElement_constMap_bot

@@ -1,0 +1,1 @@
+For each natural m, addition by m is an equivalence between the naturals and the subtype of numbers at least m. It sends n to m + n, which lies in the up-set because m is at most m + n, and it sends such a number k back to k minus m. Subtracting m from m + n returns n, and adding m back to k minus m returns k whenever m is at most k.

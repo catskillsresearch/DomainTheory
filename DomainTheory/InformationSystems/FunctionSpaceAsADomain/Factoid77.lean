@@ -1,8 +1,3 @@
-/-ai
-On objects, the internal hom of the monoidal closed structure is Scott's function space, packaged as the exponential of information-system objects.
-
-The numbered name theorem_77 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.ihom_obj_eq_exp

@@ -1,8 +1,3 @@
-/-ai
-Unpairing of product elements is monotone.
-
-An inequality of product elements is preserved by the element maps of the first and second projections.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

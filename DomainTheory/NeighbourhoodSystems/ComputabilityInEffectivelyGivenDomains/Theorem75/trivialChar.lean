@@ -1,6 +1,3 @@
-/-ai
-The triviality characteristic of a code, the characteristic of the step-function neighbourhood of its decoded list being the whole space of maps, is the fold of the triviality step with parameter 0 and start value 1 over the list coded by that code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

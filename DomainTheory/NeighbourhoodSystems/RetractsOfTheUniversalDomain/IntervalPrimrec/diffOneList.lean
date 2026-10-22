@@ -1,6 +1,3 @@
-/-ai
-The difference of one rational pair by another is the two-element list whose first pair meets the right endpoint with the subtracted left endpoint and whose second pair joins the left endpoint with the subtracted right endpoint.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

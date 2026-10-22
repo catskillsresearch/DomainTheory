@@ -1,8 +1,3 @@
-/-ai
-The bottom fixed point of a closure operator lies under every fixed point.
-
-The bottom element lies under the underlying element of the fixed point, so monotonicity of the element map sends the image of the bottom under the image of that element, and the fixed-point equation rewrites the image as the fixed point itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

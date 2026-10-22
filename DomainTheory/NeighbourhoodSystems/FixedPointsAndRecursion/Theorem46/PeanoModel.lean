@@ -1,6 +1,3 @@
-/-ai
-A model of Peano's axioms on a type consists of a zero element and a successor operation such that zero is never a successor, the successor is injective, and every subset that contains zero and is closed under the successor contains every element.
-ai-/
 module
 
 

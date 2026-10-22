@@ -1,0 +1,3 @@
+Scott 1976, Theorem 7.2 (iii). On sequence pairs, relatedness in E of a ⊗ b agrees with relatedness in the product of E_a and E_b.
+
+If the two pairs are related by E of the product, injectivity of sequence pairing forces the components to agree, and the typing characterization of the product splits into typings for a and for b, which are the two component relations. Conversely, the component relations give those typings, the product typing rebuilds both pairs as elements of the product, and the component equalities give equality of the pairs.

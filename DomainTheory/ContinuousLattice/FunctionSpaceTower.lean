@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the function-space tower: the tower development, the successor type, application of conjugation, the successor projection and the inclusion laws for the projections, preservation of directed suprema by the limit embedding and the limit projection, the order law for the limit embedding, the inverse laws, and Theorem 4.4.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.Basic

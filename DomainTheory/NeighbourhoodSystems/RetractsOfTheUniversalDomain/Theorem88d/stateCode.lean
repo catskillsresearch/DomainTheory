@@ -1,6 +1,3 @@
-/-ai
-The U-code of a packed atom state is the rightmost component of the nested pairing of the remainder, the positive code, the negative code, and the U-code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

@@ -1,8 +1,3 @@
-/-ai
-The underlying set of the finite evaluation of a word equals the automaton's evaluation of that word.
-
-Finite evaluation is the left fold of the finite step from the finite start set, and automaton evaluation is evaluation from the start set. The fold coercion and the start-set coercion identify the two sides.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

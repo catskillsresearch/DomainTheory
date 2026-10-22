@@ -1,6 +1,3 @@
-/-ai
-The structure isomorphism from T(Exp) to Exp is the identity isomorphism induced by the equality of those two objects.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

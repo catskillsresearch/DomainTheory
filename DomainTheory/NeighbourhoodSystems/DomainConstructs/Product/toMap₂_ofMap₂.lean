@@ -1,8 +1,3 @@
-/-ai
-Converting a two-variable approximable map to a joint map and back recovers the two-variable map.
-
-The relations agree by two-variable extensionality. After the preimage laws, the product-neighbourhood hypothesis may be dropped in one direction, and in the other it is restored because the two domains of the relation make that product a neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

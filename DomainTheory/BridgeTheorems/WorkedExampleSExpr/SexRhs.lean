@@ -1,6 +1,3 @@
-/-ai
-The right-hand side of the S-expression domain is the official right-hand side of the tree system built on the lower-bound system. Its tokens are sum tokens over the product of the S-expression system with itself.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,6 +1,3 @@
-/-ai
-The decoding map from the infinite iterate of the truth system to the binary system relates W to X when W is an iterate neighbourhood and X is the cone of a string whose encoding contains W. The domain and codomain laws are that membership and cone membership. The masters are related by the empty string. For an intersection of two cones, agreement of the encodings makes the strings comparable, and the intersection is the smaller cone. A smaller cone is a shorter prefix, and encoding reverses prefixes, so the smaller neighbourhood remains inside the shorter encoding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,6 +1,3 @@
-/-ai
-A map on the power set of the natural numbers is approximable when it preserves inclusion and every output is already produced by the set of entries of some finite list drawn from the input. Preservation of inclusion is stated directly, so that the predicate does not pass through the choice-dependent lattice order on sets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513

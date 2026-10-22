@@ -1,6 +1,3 @@
-/-ai
-The element unpairFstC is the interpretation of the first-projection term unpairFstTerm in the unpairing environment unpairEnv.
-ai-/
 module
 
 public import Mathlib.Computability.RE

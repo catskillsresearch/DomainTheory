@@ -1,8 +1,3 @@
-/-ai
-Correspondence is preserved by intersection.
-
-Each correspondence supplies a formula, and the conjunction of those formulas evaluates to the intersection on the natural numbers and to the intersection on Cantor space.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

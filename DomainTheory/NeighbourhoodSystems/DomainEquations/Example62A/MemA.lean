@@ -1,6 +1,3 @@
-/-ai
-MemA n is Scott's least family of sets of strings containing the set of all strings and every tag-i tuple embTuple i X whose components already belong to the family. The tag selects the left or right copy of an n-tuple.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

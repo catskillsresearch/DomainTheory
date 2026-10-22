@@ -1,8 +1,3 @@
-/-ai
-The k-fold predecessor of the numeral k is the numeral 0.
-
-This is the iteration law for the predecessor on numerals, taken at the second argument 0.
-ai-/
 
 module
 

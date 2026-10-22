@@ -1,8 +1,3 @@
-/-ai
-The bottom element of the domain C of finite and infinite binary sequences equals the strict bottom element named by the empty list.
-
-Elements are compared by their neighbourhoods. A neighbourhood lies in the bottom when it belongs to C and contains the master, and it lies in the strict bottom of the empty list when it belongs to C and contains the cone of the empty list. Rewriting the master of C and that empty cone identifies the two conditions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

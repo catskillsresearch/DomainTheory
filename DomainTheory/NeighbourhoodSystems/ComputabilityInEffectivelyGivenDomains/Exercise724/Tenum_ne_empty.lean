@@ -1,8 +1,3 @@
-/-ai
-The enumeration of T never returns the empty set.
-
-If the value at an index were empty, transporting membership of that value in T would place the empty set in T.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

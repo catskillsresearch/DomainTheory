@@ -1,0 +1,3 @@
+Every element of the generated semigroup lies in the intersection of the recursively enumerable elements and the functional elements.
+
+The proof is by induction on the generation. The generators R, L, and G-bar are each combinatory and functional. A composite of two such elements is combinatory by the combinatory property of enumeration composition, and functional by the functional property of that composition.

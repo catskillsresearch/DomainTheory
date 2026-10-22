@@ -1,6 +1,3 @@
-/-ai
-The solution system E is the singleton neighbourhood system on the token set Gamma_E, which contains the empty string.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

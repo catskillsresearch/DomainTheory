@@ -1,6 +1,3 @@
-/-ai
-Example 8.4(b)(i) gives an order isomorphism between the fixed points of strict and the strict approximable maps from D to E. It sends a fixed function-space element to its associated approximable map, and it sends a strict map back to its filter.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

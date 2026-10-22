@@ -1,8 +1,3 @@
-/-ai
-The pair of 1 and 0 equals 1.
-
-The equality is the definition of pairing.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

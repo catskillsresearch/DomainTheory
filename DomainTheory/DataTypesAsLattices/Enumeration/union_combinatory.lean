@@ -1,8 +1,3 @@
-/-ai
-The union of two combinatory elements is combinatory.
-
-Binary union equals the conditional of the two elements applied to K of zero, and conditional, K, and zero are combinatory, so the application is combinatory.
-ai-/
 
 module
 

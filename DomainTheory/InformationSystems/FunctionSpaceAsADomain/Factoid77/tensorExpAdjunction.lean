@@ -1,6 +1,3 @@
-/-ai
-The tensor–exponential adjunction of an information-system object A exhibits left tensoring by A as left adjoint to the exponential functor of A. It is the adjunction induced by the hom-set equivalence of right curry with right uncurry, and the naturality required by that construction is the naturality of the equivalence.
-ai-/
 
 module
 

@@ -1,8 +1,3 @@
-/-ai
-On a total element, the test one returns the total head value that is false on the empty string and on a false-headed string, and true on a true-headed string.
-
-The equality is the total-element equation of the lift, applied to the head data of the test one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

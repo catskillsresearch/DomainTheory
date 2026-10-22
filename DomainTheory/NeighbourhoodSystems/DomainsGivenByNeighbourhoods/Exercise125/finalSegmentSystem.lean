@@ -1,6 +1,3 @@
-/-ai
-The final-segment neighbourhood system on a nonempty linear order consists of the nonempty upper sets, with the whole token set as master. It is obtained from the nested-or-disjoint construction. The whole set is a nonempty upper set. Any two upper sets are nested, and that nesting supplies the nested-or-disjoint law. Every such set is contained in the whole set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

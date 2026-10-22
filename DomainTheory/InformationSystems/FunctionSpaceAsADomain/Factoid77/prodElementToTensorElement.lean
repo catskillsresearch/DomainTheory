@@ -1,6 +1,3 @@
-/-ai
-The transport of a product element to an element of the corresponding tensor product is the cast along the identification of tensor elements with product elements.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

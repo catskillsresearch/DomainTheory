@@ -1,6 +1,3 @@
-/-ai
-The second component of the numeral decoding of a natural number, in primitive-recursive form, is the second component of the unpairing of the paired decoding.
-ai-/
 
 module
 

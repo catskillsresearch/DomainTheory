@@ -1,0 +1,1 @@
+This module gathers and re-exports the definitions for Scott 1976, §5, on closure operations and algebraic lattices: closures and isolated elements, the square pairing, products and sums of closures, the universe combinator and its step, and the representation of a closure, together with the supporting continuity, fixed-point, and expansiveness lemmas.

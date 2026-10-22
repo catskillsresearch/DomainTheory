@@ -1,8 +1,3 @@
-/-ai
-Every element u of Pω is contained in the conditional of u on the singleton {0} and on ⊤ + 1.
-
-If 0 belongs to u, the zero clause of the conditional returns it. If a successor k + 1 belongs to u, then k belongs to ⊤, so the successor clause of the conditional returns k + 1.
-ai-/
 
 module
 

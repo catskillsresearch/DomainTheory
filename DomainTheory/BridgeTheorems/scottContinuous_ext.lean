@@ -1,8 +1,3 @@
-/-ai
-Two Scott-continuous maps are equal whenever they agree as functions.
-
-Destructure both structures. Function extensionality equates the underlying functions, and after that substitution the structures are identical.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

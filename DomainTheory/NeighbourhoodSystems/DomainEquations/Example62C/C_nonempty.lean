@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of C is nonempty.
-
-A neighbourhood of C is a cone or a singleton. A cone on a string contains that string, and a singleton contains its element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

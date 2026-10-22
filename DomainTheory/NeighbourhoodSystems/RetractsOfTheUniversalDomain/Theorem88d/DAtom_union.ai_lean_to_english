@@ -1,0 +1,3 @@
+The D-atom on a positive list and a negative list is the union of the atom with a new index prepended to the positive list and the atom with that index prepended to the negative list.
+
+Extensionality and simplification of membership reduce the claim to a split on whether the neighbourhood at the tested index refines the neighbourhood at the new index. The two sides then match.

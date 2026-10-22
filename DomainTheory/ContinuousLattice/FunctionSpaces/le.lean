@@ -1,6 +1,3 @@
-/-ai
-The relation le on Scott maps from D to D' holds when the first map lies below the second at every argument, in the order of D'.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

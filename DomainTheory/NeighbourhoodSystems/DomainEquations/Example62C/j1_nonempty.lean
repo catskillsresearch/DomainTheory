@@ -1,8 +1,3 @@
-/-ai
-If Y is nonempty, then its tagged middle copy is nonempty.
-
-An element b of Y supplies the token t1 b, which is the middle tag of b and lies over a member of Y.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

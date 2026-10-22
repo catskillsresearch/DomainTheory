@@ -1,6 +1,3 @@
-/-ai
-The cons map from the product of a neighbourhood system with its infinite iterate into the iterate is the approximable map induced by the inverse of the product isomorphism. It is the structure map of the corresponding T-algebra.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

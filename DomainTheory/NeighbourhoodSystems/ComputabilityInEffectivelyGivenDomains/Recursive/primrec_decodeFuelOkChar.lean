@@ -1,8 +1,3 @@
-/-ai
-For every fuel bound, the {0,1} flag that fuel-bounded decoding of an S-expression succeeds on a code is primitive recursive.
-
-At fuel 0 the function is the constant 0. At a successor fuel, the body of the flag, applied to the function already primitive recursive at the previous fuel, is primitive recursive, and simplification identifies it with the successor clause.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

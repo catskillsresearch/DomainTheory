@@ -1,0 +1,1 @@
+The stage-bounded enumerator of a partial-recursive code c at a stage t returns one more than the first component of the unpairing of t when the bounded evaluation of c at that input, for the number of steps given by the second component, is defined, and returns 0 otherwise.

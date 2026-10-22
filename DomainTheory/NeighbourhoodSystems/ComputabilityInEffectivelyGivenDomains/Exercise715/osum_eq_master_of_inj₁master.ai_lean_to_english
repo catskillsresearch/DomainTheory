@@ -1,0 +1,3 @@
+A coalesced neighbourhood that contains the right injection of the right master equals the separated-sum master.
+
+The master case is immediate. A left copy cannot contain that injection, because a point of the nonempty right master lies in the right injection and not in the left injection. A proper right copy would contain the right master and therefore equal it.

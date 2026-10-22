@@ -1,8 +1,3 @@
-/-ai
-The automaton of an expression accepts exactly the language denoted by the expression.
-
-The proof follows the expression. For the universal language and for a singleton word, the deterministic automaton accepts the denoted language and conversion to nondeterministic form preserves acceptance. For an intersection, a word is accepted by the product automaton exactly when both factors accept it, which by the inductive hypotheses is membership in both languages and hence in their intersection. For a concatenation, removing epsilon transitions preserves acceptance, the concatenation automaton accepts the concatenation of the two accepted languages, and the inductive hypotheses together with the concatenation equation replace that concatenation by the denoted language.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

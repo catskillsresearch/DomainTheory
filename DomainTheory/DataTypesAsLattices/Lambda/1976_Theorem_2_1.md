@@ -1,7 +1,19 @@
 # Theorem 2.1
 
-**THEOREM 2.1** (The continuity theorem). *All LAMBDA definable functions are continuous.*
+## Human-English
 
-**Lean 4**
+@import "theorem_2_1.english" {code_block=false}
 
-- [DataTypesAsLattices/Lambda/theorem_2_1.lean](theorem_2_1.lean)
+## AI: Human-English to AI-Lean
+
+**DataTypesAsLattices/Lambda/theorem_2_1.lean**
+
+@import "theorem_2_1.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_2_1.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "theorem_2_1.ai_english_concordance" {code_block=false}

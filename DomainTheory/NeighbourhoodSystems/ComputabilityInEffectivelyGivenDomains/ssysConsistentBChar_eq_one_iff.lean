@@ -1,8 +1,3 @@
-/-ai
-The consistency characteristic of two coded indices equals 1 if and only if their consistency decision is true.
-
-If both indices are active, both activity characteristics equal 1, so the selector returns the code consistency characteristic. The decodes exist, soundness identifies the stored codes, and the depth bound puts the intersection of the two expressions within the fuel given by the sum of the stored depths plus two. That characteristic equals 1 exactly when the expressions are consistent, and with both indices active the decision reduces to the same consistency. If either index is inactive, its activity characteristic is 0, the product is 0, the selector returns 1, and the decision takes the inactive branch and is true.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-A set of tokens is a neighbourhood of Example 1.4 exactly when it equals the master neighbourhood, the left branch, the right branch, or one of the four leaves.
-
-In one direction, unfold membership and the set of neighbourhoods. In the other direction, each of the seven equalities is the corresponding membership lemma.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

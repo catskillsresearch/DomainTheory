@@ -1,0 +1,3 @@
+Two nonempty, nondegenerate, unit-interval-bounded presenting lists of the same set of intervals have the same maximum second component.
+
+If the two maxima differ, one is strictly smaller. Tight approach from the larger maximum supplies a point of its presented intervals strictly above the smaller maximum. That point lies in the other presented set by the equality, contradicting the strict upper bound.

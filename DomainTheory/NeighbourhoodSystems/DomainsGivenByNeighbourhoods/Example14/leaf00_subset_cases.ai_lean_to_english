@@ -1,0 +1,3 @@
+A neighbourhood containing the leaf 00 is the master neighbourhood, the left branch, or the leaf 00.
+
+Classify the neighbourhood. The master neighbourhood, the left branch, and the leaf 00 are the three stated cases. In each of the other four cases the token 3, which belongs to the leaf 00, fails to belong to the neighbourhood.

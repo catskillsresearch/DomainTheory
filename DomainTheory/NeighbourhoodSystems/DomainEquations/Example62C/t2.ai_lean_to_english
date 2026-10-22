@@ -1,0 +1,1 @@
+The right tag of an element c is the token some (inr (inr c)) in Option (α ⊕ β ⊕ γ).

@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, §1. If k belongs to the finite set coded by n, then k < n.
-
-The weak membership bound gives k ≤ n. If k equals n, then k < 2^k together with the digit bound 2^k ≤ n yields k < k, which is impossible. Otherwise the inequality is already strict.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

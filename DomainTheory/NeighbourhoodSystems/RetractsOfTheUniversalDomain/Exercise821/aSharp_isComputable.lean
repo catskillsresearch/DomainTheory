@@ -1,8 +1,3 @@
-/-ai
-If an endomap a of the universal domain is computable, then its sharp is computable.
-
-The composite of the leaf embedding with a is computable because both factors are. The inner sharp is then computable by the computability of the catamorphism, using computability of pairing. Composing on either side with the computable projection and embedding of the tree algebra yields computability of the sharp.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

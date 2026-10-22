@@ -1,6 +1,3 @@
-/-ai
-The tag of a seven-sum abstract-syntax code is its application at the numeral 0.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,6 +1,3 @@
-/-ai
-An infix notation of precedence 70, associating to the left, is introduced for application.
-ai-/
 
 module
 

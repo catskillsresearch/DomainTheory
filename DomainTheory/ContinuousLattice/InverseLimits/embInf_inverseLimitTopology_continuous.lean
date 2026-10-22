@@ -1,8 +1,3 @@
-/-ai
-The stage embedding into the inverse limit is continuous from the Scott topology on the stage into Scott's subspace inverse-limit topology, the topology inherited from the product of the stages.
-
-Once every stage is a continuous lattice, that subspace topology equals the Scott topology on the inverse limit, so continuity is the continuity of the Scott map.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

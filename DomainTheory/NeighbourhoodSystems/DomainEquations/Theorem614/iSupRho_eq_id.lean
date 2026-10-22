@@ -1,8 +1,3 @@
-/-ai
-The union of the projections equals the identity map on the colimit.
-
-Relational extensionality applies. A witness at some level gives two neighbourhoods with an intermediate set between them, so the first is contained in the second. If the first neighbourhood is contained in the second and belongs to some level, that same set is the intermediate neighbourhood at that level.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

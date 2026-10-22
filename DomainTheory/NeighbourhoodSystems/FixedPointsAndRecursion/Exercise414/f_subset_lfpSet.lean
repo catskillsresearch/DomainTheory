@@ -1,8 +1,3 @@
-/-ai
-The image under a monotone endomap f of the intersection of the pre-fixed points is contained in that intersection.
-
-An element of the image, tested against a pre-fixed point x, lies in f(x) because monotonicity and the containment of the intersection in x put the image inside f(x), and the pre-fixed-point inclusion then puts it in x.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

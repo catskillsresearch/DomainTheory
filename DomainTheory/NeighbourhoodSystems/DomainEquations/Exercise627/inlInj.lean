@@ -1,6 +1,3 @@
-/-ai
-The left injection of D₀ into the coalesced sum relates X to W when X is a neighbourhood of D₀, W is a coalesced-sum neighbourhood, and the left copy of X is contained in W. The masters are related because the left copy of the master is contained in the coalesced-sum master. An intersection on the right uses the coalesced-sum intersection law at the neighbourhood given by the left copy of X, and the two inclusions combine. If X' lies below X, the left copy of X' is contained in the left copy of X, so the inclusions compose.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

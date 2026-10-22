@@ -1,8 +1,3 @@
-/-ai
-If the step-function neighbourhood of a presented list is nonempty, then for every domain neighbourhood the conditional output intersection of that list against the neighbourhood is a codomain neighbourhood.
-
-Name the domain neighbourhood by a presentation index and take a map in the step-function neighbourhood. That map relates the named neighbourhood to the conditional output intersection, so the intersection is a codomain neighbourhood as the codomain of a relation of the map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

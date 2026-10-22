@@ -1,8 +1,3 @@
-/-ai
-The enumeration of T at n agrees with its value at the minimum of n and 2.
-
-The cases n = 0 and n = 1 are the defining equations. For a larger index the minimum with 2 equals 2 by arithmetic, and both sides are the neighbourhood one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

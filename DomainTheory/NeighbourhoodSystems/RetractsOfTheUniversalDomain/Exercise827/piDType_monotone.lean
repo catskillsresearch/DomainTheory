@@ -1,8 +1,3 @@
-/-ai
-The type of d at an element s lies below the type of d at any larger element.
-
-The type map is monotone on elements, and passage from function-space elements to approximable maps preserves the resulting inequality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

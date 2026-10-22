@@ -1,8 +1,3 @@
-/-ai
-Conjugation commutes with the supremum of a monotone family of Scott endomaps of the inverse limit, indexed by the natural numbers.
-
-A monotone family has directed range. Conjugation is a Scott map, so it preserves that directed supremum, and the image of the range is the range of the conjugated family.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

@@ -1,8 +1,3 @@
-/-ai
-A finite union of sets of natural numbers, each empty or a neighbourhood of V, is a neighbourhood of V whenever the union is nonempty.
-
-By induction on a finite set of indices, the union over that set is empty or a neighbourhood of V: the empty index set gives the empty union, and inserting an index uses binary union. The full union equals the union over the universal finite set of indices, so nonemptiness rules out the empty alternative.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

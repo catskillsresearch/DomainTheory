@@ -1,0 +1,3 @@
+Once the found flag of the inner Y-fold is 1, the image of the running code is a genuine neighbourhood of the first neighbourhood system.
+
+The argument is induction on the stage. Zero contradicts the flag. At a successor, a fresh non-junk atom with previous flag 0 contributes that atom, which is genuine. If the previous flag is already 1, surjectivity supplies a code for the union of the two genuine neighbourhoods and the union-index specification returns it. A junk atom leaves the accumulator unchanged.

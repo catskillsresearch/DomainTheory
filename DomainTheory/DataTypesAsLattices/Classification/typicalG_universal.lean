@@ -1,8 +1,3 @@
-/-ai
-Scott's Table 3 and Theorem 6.1 state that 𝔊 is the class of continuous preimages of the typical open set of x with 0 in x: a set U is Scott open if and only if U is the set of x whose image under some Scott-continuous f lies in that typical set.
-
-If U is Scott open, the 𝔊 theorem supplies a Scott-continuous f for which U is the set of x with 0 in f(x), which is membership of f(x) in the typical set. Conversely, if U has that form, the first half of the 𝔊 theorem says that U is Scott open.
-ai-/
 
 module
 

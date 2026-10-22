@@ -1,6 +1,3 @@
-/-ai
-The uncurried function-pairing body of Table 5.5 is the approximable map, over a pair of function-space elements together with an argument, that returns the pair of the two evaluations at that argument, built from projections, pairing, and evaluation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

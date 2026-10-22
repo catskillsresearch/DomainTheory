@@ -1,0 +1,3 @@
+If a list of rational pairs is nonempty and every first component is strictly below one, then some pair has first component equal to the minimum first component of the list.
+
+The fold from seed one equals one or equals the first component of some pair. The first alternative contradicts the strict bound on a pair given by nonemptiness, using that the minimum is at most every first component. The second alternative is the required pair.

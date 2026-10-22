@@ -1,141 +1,571 @@
 # Theorem 7.5
 
-Products give us a way of providing an immediate meaning to the notion of a computable function of several variables. Note that the proof of 3.7 is “effective” and shows that substitution of computable functions of several variables into each other always gives computable functions. We turn next to the function spaces.
+## Human-English
 
-**THEOREM 7.5.** If $\mathcal{D}_0$ and $\mathcal{D}_1$ are effectively given, then so is $(\mathcal{D}_0 \to \mathcal{D}_1)$. The combinators eval and curry are computable, provided all the domains involved are effectively given. The computable elements $f \in |\mathcal{D}_0 \to \mathcal{D}_1|$ are exactly the computable maps $f : \mathcal{D}_0 \to \mathcal{D}_1$.
+@import "1980_Theorem_7_5.english" {code_block=false}
 
-*Proof:* The proofs of 3.9, 3.11, and 3.12 were set up with this theorem in mind. If
-$$
-\mathcal{D}_0 = \{ X_n \mid n \in \mathbf{N} \} \quad \text{and} \quad \mathcal{D}_1 = \{ Y_m \mid m \in \mathbf{N} \}
-$$
-are two effectively given neighbourhood systems, then the neighbourhoods of $(\mathcal{D}_0 \to \mathcal{D}_1)$, by Definition 3.8, are non-empty intersections like
-$$
-\bigcap_{i < q} [X_{n_i}, Y_{m_i}],
-$$
-where $\langle n_0, n_1, \ldots, n_{q-1} \rangle$ and $\langle m_0, m_1, \ldots, m_{q-1} \rangle$ are two finite sequences of integers determining the choice of the function-space neighbourhood. In 3.9(i) the test for nonemptiness is given. Assuming the decidability of relations in $\mathcal{D}_0$ and $\mathcal{D}_1$, one remarks that the consistency of *finite sequences* of neighbourhoods is also decidable. (Hint: Test the first *two*, then form their intersection. Next test the third given neighbourhood against this one set; if consistent, form the intersection, and carry on.) By 3.9(i) at most $2 \cdot 2^q$ such sequential checks must be carried out to determine whether the function-space neighbourhood is non empty.
-It may not be fun, but the checks can be carried out in finite time. Owing to this decidability, we can therefore enumerate in a systematic way *all* the pairs of finite sequences $\langle n_0, \ldots \rangle$ and $\langle m_0, \ldots \rangle$ that determine neighbourhoods: that is the way that $(\mathcal{D}_0 \to \mathcal{D}_1)$ obtains its enumeration.
+## AI: Human-English to AI-Lean
 
-Concerning the decidability of the required relations on $(\mathcal{D}_0 \to \mathcal{D}_1)$, we remark first off that consistency is more of the same: to test two finite intersections against each other, just form one big intersection and test it for non-emptiness as before. Secondly, the testing for intersection comes down in the end to testing one typical intersection of $[X, Y]$-neighbourhoods for equality with another. But equality amounts to two inclusions; inclusion in an intersection amounts to inclusion in each term. Therefore, what we need to do is to check a finite number of statements of the form:
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interList.lean**
 
-$$\bigcap_{i < q} [X_{n_i}, Y_{m_i}] \subseteq [X_k, Y_\ell].$$
+@import "interList.lean"
 
-As we pointed out after the proof of 3.9, this inclusion is equivalent to
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interList_nil.lean**
 
-$$\bigcap \{ Y_{m_i} \mid X_k \subseteq X_{n_i} \} \subseteq Y_\ell.$$
+@import "interList_nil.lean"
 
-By decidability in $\mathcal{D}_0$, we can effectively find the $n_i$ that are needed. Then in $\mathcal{D}_1$, we form the intersection of the corresponding $Y_{m_i}$. Finally, we check the inclusion. Again, one check in $(\mathcal{D}_0 \to \mathcal{D}_1)$ requires a whole sequence of checks in $\mathcal{D}_0$ and in $\mathcal{D}_1$, but the process is finite. So we have argued that $(\mathcal{D}_0 \to \mathcal{D}_1)$ is effectively given.
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funPair.lean**
 
-In showing that the combinators are computable, we refer first to the proof of 3.11. The typical pair of neighbourhoods possibly belonging to eval is
+@import "funPair.lean"
 
-$$\bigcap_{i < q} [X_{n_i}, Y_{m_i}], \ X_k \text{ eval } Y_\ell.$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funPair_fst.lean**
 
-As we needed not to be so specific, we expressed the holding of this relationship in terms of *all* the functions in the function-
-space neighbourhood. But we know that the neighbourhood, by 3.9(ii), has a minimal element; it is then sufficient to test for the holding of $X_k f_0 Y_\ell$ at this minimal function $f_0$. But this test, we have already seen, is decidable. So the pairs in eval actually form a recursive set, not just a recursively enumerable set; thus, eval is a computable function.
+@import "funPair_fst.lean"
 
-The case of curry involves three domains and is a bit more messy. But again, if the required neighbourhoods are written out in full, it will be seen that curry, too, is computable. We leave this minor struggle to the exercises.
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funPair_snd.lean**
 
-The final statement is an easy consequence of the fundamental connection between approximable $f : \mathcal{D}_0 \to \mathcal{D}_1$ as relations and as elements. Recall, as in the proof of 3.10, that we have
+@import "funPair_snd.lean"
 
-$$f \in [X, Y] \text{ iff } X f Y,$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/bitSelect.lean**
 
-for all $X \in \mathcal{D}_0$ and $Y \in \mathcal{D}_1$. Therefore,
+@import "bitSelect.lean"
 
-$$f \in \bigcap_{i < q} [X_{n_i}, Y_{m_i}] \text{ iff } \forall i < q.\, X_{n_i} f Y_{m_i}.$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/bitSelect_nil.lean**
 
-It follows that if $f$ is recursively enumerable as a set of pairs, then, by forming all the non-empty intersections (as shown), we get an enumeration of all the neighbourhoods to which $f$ belongs; and this is the same as the filter corresponding to $f$ as an element of the function space. The converse direction is clear. $\square$
+@import "bitSelect_nil.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/andFoldl_eq_one_iff.lean**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interList.lean](interList.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interList_nil.lean](interList_nil.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funPair.lean](funPair.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funPair_fst.lean](funPair_fst.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funPair_snd.lean](funPair_snd.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/bitSelect.lean](bitSelect.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/bitSelect_nil.lean](bitSelect_nil.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/andFoldl_eq_one_iff.lean](andFoldl_eq_one_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/andFoldl_one.lean](andFoldl_one.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/appendStep.lean](appendStep.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/appendStp.lean](appendStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/appendCode.lean](appendCode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/appendStp_eq.lean](appendStp_eq.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/botMap.lean](botMap.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/botMap_rel.lean](botMap_rel.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet.lean](condSet.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet_nil.lean](condSet_nil.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet_subset.lean](condSet_subset.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consPairChar.lean](consPairChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consUpd.lean](consUpd.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consStp.lean](consStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consCharAt.lean](consCharAt.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/decodeList_appendStep.lean](decodeList_appendStep.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/decodeList_encodeList.lean](decodeList_encodeList.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/decodeList_foldl_appendStp.lean](decodeList_foldl_appendStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/decodeList_appendCode.lean](decodeList_appendCode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funImpChar.lean](funImpChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funConsChar.lean](funConsChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funListOf.lean](funListOf.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum.lean](Xenum.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_neg.lean](Xenum_neg.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_pos.lean](Xenum_pos.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funListOf_cons.lean](funListOf_cons.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/exists_funListOf.lean](exists_funListOf.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funListOf_valid.lean](funListOf_valid.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_mem.lean](Xenum_mem.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_nonempty.lean](Xenum_nonempty.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/idxchain.lean](idxchain.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interFrom.lean](interFrom.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interIdx.lean](interIdx.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interYsStp.lean](interYsStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interYsIdx.lean](interYsIdx.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/mem_condSet.lean](mem_condSet.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet_cons_neg.lean](condSet_cons_neg.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet_cons_pos.lean](condSet_cons_pos.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condFoldl_spec.lean](condFoldl_spec.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet_eq_interYs.lean](condSet_eq_interYs.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_appendCode.lean](primrec_appendCode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_consPairChar.lean](primrec_consPairChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_interIdx.lean](primrec_interIdx.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_interYsStp.lean](primrec_interYsStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_interYsIdx.lean](primrec_interYsIdx.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/rel_interYs_funList.lean](rel_interYs_funList.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interYs_funList_mem_of_nonempty.lean](interYs_funList_mem_of_nonempty.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/selectFn_isOne.lean](selectFn_isOne.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interYsIdx_spec.lean](interYsIdx_spec.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/selectFn_mul_iff.lean](selectFn_mul_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/stepFun_funListOf_appendCode.lean](stepFun_funListOf_appendCode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_inter_eq.lean](Xenum_inter_eq.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consPairChar_spec.lean](consPairChar_spec.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/stepFun_funListOf_eq_univ_iff.lean](stepFun_funListOf_eq_univ_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/stepFun_funListOf_subset_iff.lean](stepFun_funListOf_subset_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/subStp.lean](subStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_subStp.lean](primrec_subStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/subChar.lean](subChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_subChar.lean](primrec_subChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/subChar_spec.lean](subChar_spec.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/trivStp.lean](trivStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_trivStp.lean](primrec_trivStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/trivialChar.lean](trivialChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/eqEnumChar.lean](eqEnumChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interEqChar.lean](interEqChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_trivialChar.lean](primrec_trivialChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_eqEnumChar.lean](primrec_eqEnumChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_interEqChar.lean](primrec_interEqChar.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/trivialChar_spec.lean](trivialChar_spec.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/eqEnumChar_spec.lean](eqEnumChar_spec.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interEqChar_spec.lean](interEqChar_spec.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funPresentation.lean](funPresentation.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_singleton.lean](Xenum_singleton.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consChain_iff.lean](consChain_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/evalMap_rel_prodNbhd_iff.lean](evalMap_rel_prodNbhd_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/evalMap_isComputable.lean](evalMap_isComputable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funListOf_append.lean](funListOf_append.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interList_subset_base.lean](interList_subset_base.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/mem_Xenum_iff.lean](mem_Xenum_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_isComputableElement_iff.lean](Xenum_isComputableElement_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/isComputableElement_funPresentation_iff.lean](isComputableElement_funPresentation_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/mem_Xenum_iff_map.lean](mem_Xenum_iff_map.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/curry_rel_Xenum_iff.lean](curry_rel_Xenum_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/curry_isComputable.lean](curry_isComputable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75.lean](../Theorem75.lean)
+@import "andFoldl_eq_one_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/andFoldl_one.lean**
+
+@import "andFoldl_one.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/appendStep.lean**
+
+@import "appendStep.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/appendStp.lean**
+
+@import "appendStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/appendCode.lean**
+
+@import "appendCode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/appendStp_eq.lean**
+
+@import "appendStp_eq.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/botMap.lean**
+
+@import "botMap.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/botMap_rel.lean**
+
+@import "botMap_rel.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet.lean**
+
+@import "condSet.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet_nil.lean**
+
+@import "condSet_nil.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet_subset.lean**
+
+@import "condSet_subset.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consPairChar.lean**
+
+@import "consPairChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consUpd.lean**
+
+@import "consUpd.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consStp.lean**
+
+@import "consStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consCharAt.lean**
+
+@import "consCharAt.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/decodeList_appendStep.lean**
+
+@import "decodeList_appendStep.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/decodeList_encodeList.lean**
+
+@import "decodeList_encodeList.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/decodeList_foldl_appendStp.lean**
+
+@import "decodeList_foldl_appendStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/decodeList_appendCode.lean**
+
+@import "decodeList_appendCode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funImpChar.lean**
+
+@import "funImpChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funConsChar.lean**
+
+@import "funConsChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funListOf.lean**
+
+@import "funListOf.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum.lean**
+
+@import "Xenum.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_neg.lean**
+
+@import "Xenum_neg.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_pos.lean**
+
+@import "Xenum_pos.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funListOf_cons.lean**
+
+@import "funListOf_cons.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/exists_funListOf.lean**
+
+@import "exists_funListOf.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funListOf_valid.lean**
+
+@import "funListOf_valid.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_mem.lean**
+
+@import "Xenum_mem.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_nonempty.lean**
+
+@import "Xenum_nonempty.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/idxchain.lean**
+
+@import "idxchain.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interFrom.lean**
+
+@import "interFrom.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interIdx.lean**
+
+@import "interIdx.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interYsStp.lean**
+
+@import "interYsStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interYsIdx.lean**
+
+@import "interYsIdx.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/mem_condSet.lean**
+
+@import "mem_condSet.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet_cons_neg.lean**
+
+@import "condSet_cons_neg.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet_cons_pos.lean**
+
+@import "condSet_cons_pos.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condFoldl_spec.lean**
+
+@import "condFoldl_spec.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/condSet_eq_interYs.lean**
+
+@import "condSet_eq_interYs.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_appendCode.lean**
+
+@import "primrec_appendCode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_consPairChar.lean**
+
+@import "primrec_consPairChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_interIdx.lean**
+
+@import "primrec_interIdx.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_interYsStp.lean**
+
+@import "primrec_interYsStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_interYsIdx.lean**
+
+@import "primrec_interYsIdx.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/rel_interYs_funList.lean**
+
+@import "rel_interYs_funList.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interYs_funList_mem_of_nonempty.lean**
+
+@import "interYs_funList_mem_of_nonempty.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/selectFn_isOne.lean**
+
+@import "selectFn_isOne.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interYsIdx_spec.lean**
+
+@import "interYsIdx_spec.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/selectFn_mul_iff.lean**
+
+@import "selectFn_mul_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/stepFun_funListOf_appendCode.lean**
+
+@import "stepFun_funListOf_appendCode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_inter_eq.lean**
+
+@import "Xenum_inter_eq.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consPairChar_spec.lean**
+
+@import "consPairChar_spec.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/stepFun_funListOf_eq_univ_iff.lean**
+
+@import "stepFun_funListOf_eq_univ_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/stepFun_funListOf_subset_iff.lean**
+
+@import "stepFun_funListOf_subset_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/subStp.lean**
+
+@import "subStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_subStp.lean**
+
+@import "primrec_subStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/subChar.lean**
+
+@import "subChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_subChar.lean**
+
+@import "primrec_subChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/subChar_spec.lean**
+
+@import "subChar_spec.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/trivStp.lean**
+
+@import "trivStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_trivStp.lean**
+
+@import "primrec_trivStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/trivialChar.lean**
+
+@import "trivialChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/eqEnumChar.lean**
+
+@import "eqEnumChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interEqChar.lean**
+
+@import "interEqChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_trivialChar.lean**
+
+@import "primrec_trivialChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_eqEnumChar.lean**
+
+@import "primrec_eqEnumChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/primrec_interEqChar.lean**
+
+@import "primrec_interEqChar.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/trivialChar_spec.lean**
+
+@import "trivialChar_spec.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/eqEnumChar_spec.lean**
+
+@import "eqEnumChar_spec.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interEqChar_spec.lean**
+
+@import "interEqChar_spec.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funPresentation.lean**
+
+@import "funPresentation.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_singleton.lean**
+
+@import "Xenum_singleton.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/consChain_iff.lean**
+
+@import "consChain_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/evalMap_rel_prodNbhd_iff.lean**
+
+@import "evalMap_rel_prodNbhd_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/evalMap_isComputable.lean**
+
+@import "evalMap_isComputable.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/funListOf_append.lean**
+
+@import "funListOf_append.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/interList_subset_base.lean**
+
+@import "interList_subset_base.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/mem_Xenum_iff.lean**
+
+@import "mem_Xenum_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/Xenum_isComputableElement_iff.lean**
+
+@import "Xenum_isComputableElement_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/isComputableElement_funPresentation_iff.lean**
+
+@import "isComputableElement_funPresentation_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/mem_Xenum_iff_map.lean**
+
+@import "mem_Xenum_iff_map.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/curry_rel_Xenum_iff.lean**
+
+@import "curry_rel_Xenum_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75/curry_isComputable.lean**
+
+@import "curry_isComputable.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem75.lean**
+
+@import "../Theorem75.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "interList.ai_lean_to_english" {code_block=false}
+
+@import "interList_nil.ai_lean_to_english" {code_block=false}
+
+@import "funPair.ai_lean_to_english" {code_block=false}
+
+@import "funPair_fst.ai_lean_to_english" {code_block=false}
+
+@import "funPair_snd.ai_lean_to_english" {code_block=false}
+
+@import "bitSelect.ai_lean_to_english" {code_block=false}
+
+@import "bitSelect_nil.ai_lean_to_english" {code_block=false}
+
+@import "andFoldl_eq_one_iff.ai_lean_to_english" {code_block=false}
+
+@import "andFoldl_one.ai_lean_to_english" {code_block=false}
+
+@import "appendStep.ai_lean_to_english" {code_block=false}
+
+@import "appendStp.ai_lean_to_english" {code_block=false}
+
+@import "appendCode.ai_lean_to_english" {code_block=false}
+
+@import "appendStp_eq.ai_lean_to_english" {code_block=false}
+
+@import "botMap.ai_lean_to_english" {code_block=false}
+
+@import "botMap_rel.ai_lean_to_english" {code_block=false}
+
+@import "condSet.ai_lean_to_english" {code_block=false}
+
+@import "condSet_nil.ai_lean_to_english" {code_block=false}
+
+@import "condSet_subset.ai_lean_to_english" {code_block=false}
+
+@import "consPairChar.ai_lean_to_english" {code_block=false}
+
+@import "consUpd.ai_lean_to_english" {code_block=false}
+
+@import "consStp.ai_lean_to_english" {code_block=false}
+
+@import "consCharAt.ai_lean_to_english" {code_block=false}
+
+@import "decodeList_appendStep.ai_lean_to_english" {code_block=false}
+
+@import "decodeList_encodeList.ai_lean_to_english" {code_block=false}
+
+@import "decodeList_foldl_appendStp.ai_lean_to_english" {code_block=false}
+
+@import "decodeList_appendCode.ai_lean_to_english" {code_block=false}
+
+@import "funImpChar.ai_lean_to_english" {code_block=false}
+
+@import "funConsChar.ai_lean_to_english" {code_block=false}
+
+@import "funListOf.ai_lean_to_english" {code_block=false}
+
+@import "Xenum.ai_lean_to_english" {code_block=false}
+
+@import "Xenum_neg.ai_lean_to_english" {code_block=false}
+
+@import "Xenum_pos.ai_lean_to_english" {code_block=false}
+
+@import "funListOf_cons.ai_lean_to_english" {code_block=false}
+
+@import "exists_funListOf.ai_lean_to_english" {code_block=false}
+
+@import "funListOf_valid.ai_lean_to_english" {code_block=false}
+
+@import "Xenum_mem.ai_lean_to_english" {code_block=false}
+
+@import "Xenum_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "idxchain.ai_lean_to_english" {code_block=false}
+
+@import "interFrom.ai_lean_to_english" {code_block=false}
+
+@import "interIdx.ai_lean_to_english" {code_block=false}
+
+@import "interYsStp.ai_lean_to_english" {code_block=false}
+
+@import "interYsIdx.ai_lean_to_english" {code_block=false}
+
+@import "mem_condSet.ai_lean_to_english" {code_block=false}
+
+@import "condSet_cons_neg.ai_lean_to_english" {code_block=false}
+
+@import "condSet_cons_pos.ai_lean_to_english" {code_block=false}
+
+@import "condFoldl_spec.ai_lean_to_english" {code_block=false}
+
+@import "condSet_eq_interYs.ai_lean_to_english" {code_block=false}
+
+@import "primrec_appendCode.ai_lean_to_english" {code_block=false}
+
+@import "primrec_consPairChar.ai_lean_to_english" {code_block=false}
+
+@import "primrec_interIdx.ai_lean_to_english" {code_block=false}
+
+@import "primrec_interYsStp.ai_lean_to_english" {code_block=false}
+
+@import "primrec_interYsIdx.ai_lean_to_english" {code_block=false}
+
+@import "rel_interYs_funList.ai_lean_to_english" {code_block=false}
+
+@import "interYs_funList_mem_of_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "selectFn_isOne.ai_lean_to_english" {code_block=false}
+
+@import "interYsIdx_spec.ai_lean_to_english" {code_block=false}
+
+@import "selectFn_mul_iff.ai_lean_to_english" {code_block=false}
+
+@import "stepFun_funListOf_appendCode.ai_lean_to_english" {code_block=false}
+
+@import "Xenum_inter_eq.ai_lean_to_english" {code_block=false}
+
+@import "consPairChar_spec.ai_lean_to_english" {code_block=false}
+
+@import "stepFun_funListOf_eq_univ_iff.ai_lean_to_english" {code_block=false}
+
+@import "stepFun_funListOf_subset_iff.ai_lean_to_english" {code_block=false}
+
+@import "subStp.ai_lean_to_english" {code_block=false}
+
+@import "primrec_subStp.ai_lean_to_english" {code_block=false}
+
+@import "subChar.ai_lean_to_english" {code_block=false}
+
+@import "primrec_subChar.ai_lean_to_english" {code_block=false}
+
+@import "subChar_spec.ai_lean_to_english" {code_block=false}
+
+@import "trivStp.ai_lean_to_english" {code_block=false}
+
+@import "primrec_trivStp.ai_lean_to_english" {code_block=false}
+
+@import "trivialChar.ai_lean_to_english" {code_block=false}
+
+@import "eqEnumChar.ai_lean_to_english" {code_block=false}
+
+@import "interEqChar.ai_lean_to_english" {code_block=false}
+
+@import "primrec_trivialChar.ai_lean_to_english" {code_block=false}
+
+@import "primrec_eqEnumChar.ai_lean_to_english" {code_block=false}
+
+@import "primrec_interEqChar.ai_lean_to_english" {code_block=false}
+
+@import "trivialChar_spec.ai_lean_to_english" {code_block=false}
+
+@import "eqEnumChar_spec.ai_lean_to_english" {code_block=false}
+
+@import "interEqChar_spec.ai_lean_to_english" {code_block=false}
+
+@import "funPresentation.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "Xenum_singleton.ai_lean_to_english" {code_block=false}
+
+@import "consChain_iff.ai_lean_to_english" {code_block=false}
+
+@import "evalMap_rel_prodNbhd_iff.ai_lean_to_english" {code_block=false}
+
+@import "evalMap_isComputable.ai_lean_to_english" {code_block=false}
+
+@import "funListOf_append.ai_lean_to_english" {code_block=false}
+
+@import "interList_subset_base.ai_lean_to_english" {code_block=false}
+
+@import "mem_Xenum_iff.ai_lean_to_english" {code_block=false}
+
+@import "Xenum_isComputableElement_iff.ai_lean_to_english" {code_block=false}
+
+@import "isComputableElement_funPresentation_iff.ai_lean_to_english" {code_block=false}
+
+@import "mem_Xenum_iff_map.ai_lean_to_english" {code_block=false}
+
+@import "curry_rel_Xenum_iff.ai_lean_to_english" {code_block=false}
+
+@import "curry_isComputable.ai_lean_to_english" {code_block=false}
+
+@import "../Theorem75.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Theorem_7_5.ai_english_concordance" {code_block=false}

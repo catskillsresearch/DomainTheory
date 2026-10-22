@@ -1,8 +1,3 @@
-/-ai
-Every value of the enumeration of V is nonempty.
-
-It is the nonemptiness of the level set presented by a canonicalized code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

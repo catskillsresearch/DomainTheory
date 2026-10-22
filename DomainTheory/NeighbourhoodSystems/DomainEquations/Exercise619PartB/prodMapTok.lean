@@ -1,6 +1,3 @@
-/-ai
-The product action on approximable maps sends a product neighbourhood to another when the first component map relates the first components and the second component map relates the second components.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

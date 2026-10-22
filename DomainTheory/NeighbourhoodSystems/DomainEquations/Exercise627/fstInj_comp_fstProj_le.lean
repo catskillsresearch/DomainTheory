@@ -1,8 +1,3 @@
-/-ai
-The composite of the first-factor injection after the first-factor projection lies below the identity on the product.
-
-A composite relation supplies an intermediate neighbourhood of D₀ and two inclusions of product neighbourhoods. The composite of those inclusions, together with the two product memberships, is the identity relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

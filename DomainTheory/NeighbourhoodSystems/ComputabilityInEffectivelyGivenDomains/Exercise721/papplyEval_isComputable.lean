@@ -1,8 +1,3 @@
-/-ai
-If evaluation is recursively enumerable on codes of computable presentations of the function space, the domain, and the codomain, then the relation of papplyEval on the corresponding power-domain codes is recursively enumerable.
-
-The coded relation is rewritten by the equivalence between papplyEval on power-domain codes and the bounded quantifiers over decoded lists, and those quantifiers preserve recursive enumerability of the evaluation predicate.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise719

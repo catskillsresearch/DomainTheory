@@ -1,8 +1,3 @@
-/-ai
-An element lies in the open set of the approximable map of an open set if and only if it lies in that open set. The approximable map of the open set of an approximable map into O is the original map.
-
-The numbered name example_215 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise215.mem_mapToOpen_openToMap

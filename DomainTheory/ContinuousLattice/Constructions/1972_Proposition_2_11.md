@@ -1,75 +1,127 @@
 # Proposition 2.11
 
-It would seem that the continuous lattices are starting to sound suspiciously like the injective spaces. Indeed, if we can prove the following, the circle will be complete.
+## Human-English
 
-**Proposition.** Every continuous lattice is an injective space under its induced topology.
+@import "1972_Proposition_2_11.english" {code_block=false}
 
-*Proof of 2.11*: Let $D$ be a continuous lattice with its induced topology, and let $X \subseteq Y$ be two $T_0$-spaces in the subspace relation. Suppose
+## AI: Human-English to AI-Lean
 
-$$f : X \to D$$
-
-is continuous. Define
-
-$$\bar{f} : Y \to D$$
-
-by the formula:
-
-$$\bar{f}(y) = \bigsqcup \sqcap f(x) : x \in X \cap U : y \in U ,$$
-
-where $U$ ranges over the open subsets of $Y$. We need to show that $\bar{f}$ extends $f$ and that it is continuous.
-
-First, the continuity: Suppose that $d \in D$ and $d \ll \bar{f}(y)$; that is, $\bar{f}(y)$ belongs to a typical basic open subset of $D$. Since $D$ is continuous, we can also find
-
-$$d \ll d' \ll \bar{f}(y)$$
-
-with $d' \in D$. From the definition of $\bar{f}$ it follows that
-
-$$d' \sqsubseteq \sqcap f(x) : x \in X \cap U $$
-
-for some open $U \subseteq Y$ with $y \in U$. Thus
-
-$$d' \sqsubseteq \bar{f}(y')$$
-
-for all $y' \in U$ by virtue of the definition of $\bar{f}$. Since $d \ll d'$, we have also
-
-$$d \ll \bar{f}(y')$$
-
-for all $y' \in U$; in other words, the inverse image of the open subset of $D$ determined by $d$ under $\bar{f}$ is indeed open in $Y$, and $\bar{f}$ is thus continuous.
-
-Next, the extension property: Note that the relationship
-
-$$\bar{f}(x') \sqsubseteq f(x')$$
-
-for all $x' \in X$ comes directly out of the definition of $\bar{f}$. For the converse, suppose $d \ll f(x')$ where $d \in D$. By assumption $f : X \to D$ is continuous, so
-
-$$d \ll f(x'')$$
-
-for all $x'' \in X \cap U$ where $U$ is a suitable open subset of $Y$ with $x' \in U$. In particular we have:
-
-$$d \sqsubseteq \sqcap f(x'') : x'' \in X \cap U ,$$
-
-and so $d \sqsubseteq \bar{f}(x')$. Since $d \ll f(x')$ always implies $d \sqsubseteq \bar{f}(x')$, we see that $f(x') \sqsubseteq \bar{f}(x')$ follows by the continuity of $D$, and the proof is complete. $\square$
-
-Furthermore, as we have seen, the injective property can be exhibited, as in the proof of 2.11, by an explicit formula for extending functions. That formula is `scottExtend`. [Theorem 2.12](../Theorem212/1972_Theorem_2_12.md) proves that every injective space arises in this way.
-
-**Lean 4**
+**ContinuousLattice/WayBelow/wayBelow_interpolate.lean**
 
 @import "../WayBelow/wayBelow_interpolate.lean"
+
+**ContinuousLattice/WayBelow.lean**
+
 @import "../WayBelow.lean"
+
+**ContinuousLattice/Specialization/Basic.lean**
+
 @import "../Specialization/Basic.lean"
+
+**ContinuousLattice/Specialization.lean**
+
 @import "../Specialization.lean"
+
+**ContinuousLattice/ScottMaps/Basic.lean**
+
 @import "../ScottMaps/Basic.lean"
+
+**ContinuousLattice/ScottMaps.lean**
+
 @import "../ScottMaps.lean"
+
+**ContinuousLattice/Constructions/scottExtend.lean**
+
 @import "scottExtend.lean"
+
+**ContinuousLattice/Constructions/Basic.lean**
+
 @import "Basic.lean"
+
+**ContinuousLattice/Constructions/directedOn_finite_sSup_mem.lean**
+
 @import "directedOn_finite_sSup_mem.lean"
+
+**ContinuousLattice/Constructions/proposition_2_8.lean**
+
 @import "proposition_2_8.lean"
+
+**ContinuousLattice/Constructions/proposition_2_9.lean**
+
 @import "proposition_2_9.lean"
+
+**ContinuousLattice/Constructions/scottExtend_aux_nonempty.lean**
+
 @import "scottExtend_aux_nonempty.lean"
+
+**ContinuousLattice/Constructions/scottExtend_aux_directed.lean**
+
 @import "scottExtend_aux_directed.lean"
+
+**ContinuousLattice/Constructions/scottExtend_continuous.lean**
+
 @import "scottExtend_continuous.lean"
+
+**ContinuousLattice/Constructions/scottExtend_eq_of_continuous.lean**
+
 @import "scottExtend_eq_of_continuous.lean"
+
+**ContinuousLattice/Constructions/continuous_eq_sSup_openInfs.lean**
+
 @import "continuous_eq_sSup_openInfs.lean"
+
+**ContinuousLattice/Constructions/scottExtend_maximal.lean**
+
 @import "scottExtend_maximal.lean"
+
+**ContinuousLattice/Constructions/scottExtend_maximal_le.lean**
+
 @import "scottExtend_maximal_le.lean"
+
+**ContinuousLattice/Constructions/proposition_2_11.lean**
+
 @import "proposition_2_11.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "../WayBelow/wayBelow_interpolate.ai_lean_to_english" {code_block=false}
+
+@import "../WayBelow.ai_lean_to_english" {code_block=false}
+
+@import "../Specialization/Basic.ai_lean_to_english" {code_block=false}
+
+@import "../Specialization.ai_lean_to_english" {code_block=false}
+
+@import "../ScottMaps/Basic.ai_lean_to_english" {code_block=false}
+
+@import "../ScottMaps.ai_lean_to_english" {code_block=false}
+
+@import "scottExtend.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "directedOn_finite_sSup_mem.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_8.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_9.ai_lean_to_english" {code_block=false}
+
+@import "scottExtend_aux_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "scottExtend_aux_directed.ai_lean_to_english" {code_block=false}
+
+@import "scottExtend_continuous.ai_lean_to_english" {code_block=false}
+
+@import "scottExtend_eq_of_continuous.ai_lean_to_english" {code_block=false}
+
+@import "continuous_eq_sSup_openInfs.ai_lean_to_english" {code_block=false}
+
+@import "scottExtend_maximal.ai_lean_to_english" {code_block=false}
+
+@import "scottExtend_maximal_le.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_11.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Proposition_2_11.ai_english_concordance" {code_block=false}

@@ -1,8 +1,3 @@
-/-ai
-Every singleton of a finite string is a neighbourhood of the binary-sequence system.
-
-It is the second disjunct of the neighbourhood predicate, witnessed by its string.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

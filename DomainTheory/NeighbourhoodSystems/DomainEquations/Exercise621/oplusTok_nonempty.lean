@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the coalesced sum is nonempty.
-
-The master contains the empty string. A false tag is nonempty by the left-hand hypothesis, and a true tag is nonempty by the right-hand hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

@@ -1,8 +1,3 @@
-/-ai
-For positive n, every set in MemA is nonempty.
-
-Induction on the membership. The set of all strings contains the empty string. A tagged tuple is nonempty by embTuple_nonempty at index zero, using the inductive hypothesis on that component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

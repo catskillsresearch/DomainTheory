@@ -1,6 +1,3 @@
-/-ai
-A set is a closed-and-open intersection when it is the intersection of a Scott-closed set and a Scott-open set.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

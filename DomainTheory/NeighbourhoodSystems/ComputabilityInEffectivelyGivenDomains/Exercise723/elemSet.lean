@@ -1,6 +1,3 @@
-/-ai
-The set elemSet x is the subset of the natural numbers positively described by an element x of PN. It consists of those k for which some neighbourhood nbhd n contained in x has its k-th bit set, equivalently the union of the finite sets excluded by the neighbourhoods that x contains.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

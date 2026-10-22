@@ -1,6 +1,3 @@
-/-ai
-Postcomposition with an approximable map sends every L-indexed sequence into the codomain of that map to the sequence obtained by composing with the map. It is the curry of the map composed with evaluation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

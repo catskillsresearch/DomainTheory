@@ -1,8 +1,3 @@
-/-ai
-The singleton of the empty word is distinct from the set of all words.
-
-An equality would place the one-letter word true in the singleton. Singleton membership would force that word to be empty, which simplification rules out.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

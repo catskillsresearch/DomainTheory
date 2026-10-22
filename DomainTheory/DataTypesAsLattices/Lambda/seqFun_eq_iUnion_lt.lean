@@ -1,8 +1,3 @@
-/-ai
-Revaluation of a functional along a set is the union over all bounds of the strict stages.
-
-A value at an index in the set lies in the stage whose bound is one more than that index. Conversely, a value in some stage lies at an index in the set, and therefore in the revaluation.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

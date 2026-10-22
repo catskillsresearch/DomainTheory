@@ -1,8 +1,3 @@
-/-ai
-The bit component of an X-sub-step word is primitive recursive.
-
-It is the left component of the right component of the word, and that projection is primitive recursive.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

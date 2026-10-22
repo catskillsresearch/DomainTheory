@@ -1,8 +1,3 @@
-/-ai
-The functional vaalF is Scott continuous.
-
-The graph of a family is Scott continuous in the functional argument once each body is. For a fixed tree code, Theorem 1.3 combines continuity of the conditional in its positive branch, at the application of the code to zero and the G combinator, with the continuous pairing of application in the function and application in the argument at the two children of the code.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

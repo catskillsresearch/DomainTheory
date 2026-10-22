@@ -1,8 +1,3 @@
-/-ai
-The lift of a composite of approximable maps equals the composite of the lifts.
-
-By extensionality, a master step of the lifted composite factors through the intermediate master, and a proper step factors through the intermediate false tag. In the other direction, passage through the intermediate master yields a master relation, while a second step from that master to a tag would put the empty string in a tag. Passage through a false tag yields a master relation when the second map sends that tag to the master, and yields a proper step of the composite when both steps are proper and the tags agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

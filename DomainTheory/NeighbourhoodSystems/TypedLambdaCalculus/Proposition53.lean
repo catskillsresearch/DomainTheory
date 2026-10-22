@@ -1,8 +1,3 @@
-/-ai
-Proposition 5.3 (Scott 1981, PRG-19), Bekić's theorem, states that the least fixed point of the paired map of τ and σ is the pair whose first coordinate is the nested fixed-point map of τ at the least fixed point of the outer operator, and whose second coordinate is that least fixed point.
-
-The numbered name theorem_53 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition53.fixElement_paired_eq

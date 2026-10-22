@@ -1,8 +1,3 @@
-/-ai
-The master of E belongs to every subdomain neighbourhood-set.
-
-The set is the neighbourhood collection of a subsystem. A subsystem has the same master as E, and that master is a neighbourhood of the subsystem.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

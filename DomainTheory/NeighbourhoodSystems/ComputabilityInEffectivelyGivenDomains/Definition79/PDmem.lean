@@ -1,6 +1,3 @@
-/-ai
-A set of neighbourhoods belongs to the Smyth power domain when it is the union of the down-sets of the neighbourhoods appearing in some finite list. The empty list gives the empty union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

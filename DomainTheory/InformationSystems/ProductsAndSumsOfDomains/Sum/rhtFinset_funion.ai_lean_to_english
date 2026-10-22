@@ -1,0 +1,3 @@
+The right projection of the union of two finite sets of sum tokens is the union of their right projections.
+
+By extensionality, an element of the right projection of the union has its right token in the union, hence in one of the two sets, and so lies in the corresponding right projection. Conversely, an element of either right projection has its right token in that set, hence in the union, and so lies in the right projection of the union.

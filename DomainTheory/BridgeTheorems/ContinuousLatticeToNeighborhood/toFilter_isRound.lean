@@ -1,8 +1,3 @@
-/-ai
-If a complete lattice D is continuous, the principal filter of an element x is round.
-
-Membership of the neighbourhood of a means a is way-below x. Interpolation of the way-below relation supplies b with a way-below b and b way-below x, so the neighbourhood of b belongs to the principal filter.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,8 +1,3 @@
-/-ai
-The set {0} is a neighbourhood of Example 1.2.
-
-It belongs to the set whose members are the master, {0}, and {1}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

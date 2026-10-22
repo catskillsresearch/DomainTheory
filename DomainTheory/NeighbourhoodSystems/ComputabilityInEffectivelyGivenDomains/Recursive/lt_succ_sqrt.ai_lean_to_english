@@ -1,0 +1,3 @@
+Every natural n is strictly less than the square of one more than its square root.
+
+If 1 is strictly less than n, the square root is the iteration at the guess given by shifting 1 left by one more than half the base-two logarithm of n. That guess equals the corresponding power of two, and its square equals the power of two with twice the exponent. Then n lies strictly below the next power of two after its logarithm, that power is at most the square of the guess, and that square is at most the square of the guess plus one, so the iteration bound applies. Otherwise the square root is zero, and n is strictly less than n + 1, which is at most the square of n + 1.

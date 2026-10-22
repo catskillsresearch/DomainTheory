@@ -1,8 +1,3 @@
-/-ai
-For every set u of codes, the application of u is an approximable map.
-
-The numbered name example_514 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise514.Fun_isApprox

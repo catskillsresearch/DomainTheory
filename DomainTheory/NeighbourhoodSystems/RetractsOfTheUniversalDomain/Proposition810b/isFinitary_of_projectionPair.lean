@@ -1,8 +1,3 @@
-/-ai
-An endomap equal to the composition of the two maps of a projection pair is finitary.
-
-The witness is the index type and neighbourhood system of the domain of the injection, together with the order isomorphism of the projection pair taken in the reverse direction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

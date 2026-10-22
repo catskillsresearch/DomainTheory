@@ -1,6 +1,3 @@
-/-ai
-The set presented by a list of endpoint pairs is the union, over the pairs on the list, of the corresponding half-open rational intervals.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

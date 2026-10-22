@@ -1,8 +1,3 @@
-/-ai
-An element lies in the bracket of a set if and only if the set belongs to the element.
-
-The equivalence holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

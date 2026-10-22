@@ -1,8 +1,3 @@
-/-ai
-Applying G to an element z returns the conditional of z on the packed combinators and on zero.
-
-This is the beta law for the graph of that conditional, which is Scott continuous in the tested argument.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

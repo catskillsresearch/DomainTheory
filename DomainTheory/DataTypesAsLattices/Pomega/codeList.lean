@@ -1,6 +1,3 @@
-/-ai
-The bit-mask code of a finite list of natural numbers is 0 for the empty list, and the bitwise disjunction of 2^k with the code of the tail for a list headed by k.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

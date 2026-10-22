@@ -1,6 +1,3 @@
-/-ai
-The three-valued characteristic of a set C sends each x in Pω to the singleton {0} united with the top characteristic of the complement of C. On a Scott-closed set this returns {0}, and off that set it returns ⊤.
-ai-/
 
 module
 

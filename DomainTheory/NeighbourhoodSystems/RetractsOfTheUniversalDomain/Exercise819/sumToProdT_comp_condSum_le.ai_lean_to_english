@@ -1,0 +1,3 @@
+The composite of the tagging embedding after the conditional sum lies below the identity on the product of the three-point domain with the product of E with itself.
+
+Compare elements by splitting a triple into its tag and its two components, and split the tag into bottom, true, and false. At bottom the conditional is the bottom of the sum, whose tag and outputs lie below the given components. At true it is the left injection, whose tag lies below true, whose left output recovers the component, and whose right output is bottom. At false it is the right injection, with the symmetric bounds.

@@ -1,8 +1,3 @@
-/-ai
-The map sending u to the sequence pair of a applied to the zeroth component of u and b applied to the first component is Scott continuous.
-
-The tuple theorem pairs left and right continuity of sequence pairing. Each component is Theorem 1.3 applied to application of one factor and to left application at the corresponding numeral.
-ai-/
 
 module
 

@@ -1,6 +1,3 @@
-/-ai
-A neighbourhood system is difference-closed when the set difference of any two of its neighbourhoods is empty or again a neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

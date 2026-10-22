@@ -1,0 +1,1 @@
+The safe active decode of an index is the decoded expression when decoding succeeds and that expression denotes a nonempty set, and is sigma otherwise.

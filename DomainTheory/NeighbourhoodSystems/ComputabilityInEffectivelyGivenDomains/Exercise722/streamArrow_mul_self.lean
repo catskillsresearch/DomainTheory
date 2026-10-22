@@ -1,8 +1,3 @@
-/-ai
-The infinite word of a word equals its square.
-
-The square lies below the infinite word, and the infinite word lies below the square.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

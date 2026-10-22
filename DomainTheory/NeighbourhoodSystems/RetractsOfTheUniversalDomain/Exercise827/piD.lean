@@ -1,6 +1,3 @@
-/-ai
-The product of an approximable self-map d, as a self-map of the function space of the universal domain, is the currying of the uncurried product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

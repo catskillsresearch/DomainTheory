@@ -1,8 +1,3 @@
-/-ai
-For j strictly below n, the j-th entry of the length-n Thue–Morse prefix is the bit at j.
-
-Unfold the prefix as the map of the bit function along the range, read the entry of the range, and the resulting equation holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse

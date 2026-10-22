@@ -1,8 +1,3 @@
-/-ai
-The first component of the left fold of the pure step along a list is the last index reached from the starting index.
-
-Induct on the list. On the empty list the first component of the paired start is the starting index. On a cons the step advances the index to the head, and the inductive hypothesis says the remaining fold ends at the last index of the tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

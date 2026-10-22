@@ -1,8 +1,3 @@
-/-ai
-The left content of a left copy is the underlying set.
-
-The membership criterion, simplified by the facts that a left tag lies in the copy exactly on the underlying set and that neither a right tag nor the basepoint lies in a left copy, leaves membership in the set or a false alternative. The false alternative is discarded, and membership in the set is restored as the left alternative.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

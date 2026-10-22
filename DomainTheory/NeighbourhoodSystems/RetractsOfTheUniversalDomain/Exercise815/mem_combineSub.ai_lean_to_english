@@ -1,0 +1,3 @@
+An index lies in the combination of two sublists inside js exactly when it lies in js and in at least one of the two sublists.
+
+Unfold the combination, which filters js by membership in either sublist, and rewrite filter membership by the truth of the deciding predicate.

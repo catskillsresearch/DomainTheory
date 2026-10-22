@@ -1,6 +1,3 @@
-/-ai
-The conditional combinator is the graph of the curried McCarthy conditional, sending x and y and z to the conditional of z, x, and y.
-ai-/
 
 module
 

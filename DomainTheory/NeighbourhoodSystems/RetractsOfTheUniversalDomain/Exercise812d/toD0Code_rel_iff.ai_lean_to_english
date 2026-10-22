@@ -1,0 +1,3 @@
+The relation of the inverse of the code-level domain isomorphism, at a basic neighbourhood of index m in the second system and one of index n in the first, holds exactly when the second neighbourhood equals the basic neighbourhood of some Y-sequence code k and the first neighbourhood is contained in the basic neighbourhood of index k.
+
+The inverse sends an element to its code-level pullback, so the relation unfolds to membership of the principal element on the first neighbourhood. Simplifying pullback membership and principal membership, one direction drops the redundant genuineness hypotheses from a witness index and an inclusion, and the other restores them because every basic neighbourhood is genuine.

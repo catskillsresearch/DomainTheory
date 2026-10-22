@@ -1,8 +1,3 @@
-/-ai
-The element t unfolds as 0 consed onto the merge of the negation of t with the tail of t.
-
-The least fixed point of the operator is fixed by its element map. Unfolding the operator and rewriting composition and pairing gives the equation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

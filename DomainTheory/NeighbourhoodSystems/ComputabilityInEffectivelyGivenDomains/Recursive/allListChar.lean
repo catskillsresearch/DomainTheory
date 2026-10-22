@@ -1,6 +1,3 @@
-/-ai
-The list-universal character of a function g, a parameter, and a code is the fold over that code of the and-step of g, started from one, with the parameter held fixed.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

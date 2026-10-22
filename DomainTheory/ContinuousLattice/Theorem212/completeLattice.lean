@@ -1,6 +1,3 @@
-/-ai
-The fixed points of an idempotent monotone endomap form a complete lattice whose suprema are the least upper bounds of the ambient-then-endomap supremum operation.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

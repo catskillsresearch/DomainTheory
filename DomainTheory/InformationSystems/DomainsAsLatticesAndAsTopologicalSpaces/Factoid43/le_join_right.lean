@@ -1,8 +1,3 @@
-/-ai
-The right argument of a binary join lies below the join, when the union of the carriers is finitely consistent.
-
-A token of the right argument lies in the union, and a finitely consistent set is contained in its deductive closure.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

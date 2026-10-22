@@ -1,0 +1,3 @@
+If a is a finitary projection of the universal domain, the composite of the map into the universal domain after the map out of it equals the sharp of a.
+
+Unfold both maps and reassociate. Replace the composite of the two functorial actions by the functorial action of the composite, replace the composite of the subsystem injection after the subsystem projection by a, and replace the functorial action of a by the inner sharp. The result is the defining composite of the sharp of a.

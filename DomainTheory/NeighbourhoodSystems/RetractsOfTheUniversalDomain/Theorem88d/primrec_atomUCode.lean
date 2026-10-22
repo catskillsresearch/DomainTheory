@@ -1,8 +1,3 @@
-/-ai
-The depth-n U-side code, read from a packed pair of the depth and the bit-source, is primitive recursive.
-
-It is the code projection of the state recursion applied to the pair of the second component and the first, and that composite equals the stated function.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

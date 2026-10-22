@@ -1,6 +1,3 @@
-/-ai
-This module gathers and re-exports the core of Factoid 8.4. Finite information about a domain is an approximable map on the powerset information system of the natural numbers, with 0 as bottom and 1 reserved as a rogue, and the maps satisfying Scott's conditions (1) through (5) are the elements of the domain of domains. The module re-exports that predicate, the type of such domain approximants, Scott's consistency remark, the flat relation and the flat map that treats 1 as a rogue, the proofs that the flat map is reflexive, idempotent, rogue, consistent, and a domain approximant, the general bottom condition, and membership in the finite element and the top element.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
@@ -25,22 +22,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.flat
 
 @[expose] public section
 
-/-!
-# Factoid 8.4 — a domain of domains (Scott’s sketch)
-
-**Scott 1982, §8 (final remark).** Scott is deliberately sketchy: finite information
-about a domain is packaged as an approximable map `r : P → P` on the powerset
-domain `P` of the non-negative integers (with `0` as `Δ` and `1` as a reserved
-rogue like `∇`). The maps satisfying (1)–(5) below are exactly the *elements* of
-the domain of domains; the token-level InfoSys is said to arise from
-`(P → P)` by a construction “similar to” `U` from `V`, with details deferred.
-
-We formalize `P`, state (1)–(5) on `ApproximableMap P P`, package
-`DomainApprox`, record Scott’s consistency remark, and exhibit one inhabitant
-(the “flat” map that treats `1` as rogue). Functors-as-approximable-maps and
-powerdomains are left external, as in the source.
--/
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -49,18 +30,6 @@ open ApproximableMap
 
 namespace Factoid84
 
-/-! ## The powerset domain `P` (Scott) -/
 
-
-/-! ## Scott’s conditions (1)–(5) on `r : P → P` -/
-
-
-/-! ## (3) is automatic for any approximable map -/
-
-
-/-! ## Example: flat domain map (treat `1` as rogue) -/
-
-
-/-! ## Identity fails (4): `I_P` is not a domain map -/
 end Factoid84
 end DomainTheory.InformationSystems

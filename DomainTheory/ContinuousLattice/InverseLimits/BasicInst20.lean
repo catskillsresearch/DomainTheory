@@ -1,6 +1,3 @@
-/-ai
-The infimum of a set of elements of the inverse limit is the pointwise infimum of their underlying sequences, which remains a compatible sequence.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

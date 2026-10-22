@@ -1,6 +1,3 @@
-/-ai
-The closed term for Y binds the variable 0 and applies, to one another, two copies of the abstraction in the variable 1 of variable 0 applied to variable 1 applied to itself.
-ai-/
 
 module
 

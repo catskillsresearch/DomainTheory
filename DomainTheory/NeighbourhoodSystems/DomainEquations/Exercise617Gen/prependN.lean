@@ -1,6 +1,3 @@
-/-ai
-The prepend of a string to a set of strings is the set of concatenations of that string with a member of the set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

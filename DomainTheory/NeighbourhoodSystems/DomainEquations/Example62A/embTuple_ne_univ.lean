@@ -1,8 +1,3 @@
-/-ai
-A tagged tuple is never the set of all strings.
-
-If it were, the empty string would belong to it, contradicting nil_not_mem_embTuple.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

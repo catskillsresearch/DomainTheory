@@ -1,0 +1,3 @@
+Applying the boxed product of a and b to u equals the square pair of a applied to the first square component and b applied to the second.
+
+This is the beta law for a Scott-continuous map assembled as a pair. Each coordinate is a continuous square pairing of an application of a or b, and the two inputs are the continuous square projections.

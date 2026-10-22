@@ -1,8 +1,3 @@
-/-ai
-The prefixed copy of the empty set is empty.
-
-The two sets have the same elements by extensionality and simplification of membership in a prefixed copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

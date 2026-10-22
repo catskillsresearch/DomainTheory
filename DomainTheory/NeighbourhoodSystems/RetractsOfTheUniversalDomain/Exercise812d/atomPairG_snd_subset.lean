@@ -1,8 +1,3 @@
-/-ai
-The second component of the generalized atom pair only shrinks from depth n to depth n + 1.
-
-The successor is a Y step after an X step. The second component of the Y step sits inside the second component of the X step, and the invariant's split preconditions put that X-step component inside the previous second component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

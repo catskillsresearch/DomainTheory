@@ -1,6 +1,3 @@
-/-ai
-The instance instDecidableEqAutState decides equality of automaton states of an expression. The universal language uses equality on a one-point type, a singleton word uses equality on an optional finite index, an intersection uses equality on the product of the two state types, and a concatenation uses equality on their sum, each from the standard instance after the recursive instances on the subexpressions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

@@ -1,6 +1,3 @@
-/-ai
-The false element of the BOOL information system is the entailment closure of the singleton of the false token.
-ai-/
 
 module
 

@@ -1,6 +1,3 @@
-/-ai
-The unit token is the left-hand sum token on the unique value of the unit type.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

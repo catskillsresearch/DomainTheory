@@ -1,8 +1,3 @@
-/-ai
-For neighbourhoods X and Y, the intersection of their brackets is nonempty if and only if some neighbourhood is contained in X ∩ Y. For neighbourhoods X and Y, the intersection of their brackets equals the bracket of their intersection. Every neighbourhood system is isomorphic to its element-token system. The principal filter of a neighbourhood belongs to the bracket of that neighbourhood.
-
-The numbered name theorem_110 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110.bracket_inter_nonempty_iff

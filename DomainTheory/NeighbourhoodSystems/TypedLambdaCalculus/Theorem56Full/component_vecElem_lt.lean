@@ -1,8 +1,3 @@
-/-ai
-Each coordinate j below the length of a vector is, on the stack of that vector, the numeral given by the vector's j-th entry.
-
-Rewrite by the component formula for vector elements. The bound selects the numeral branch.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

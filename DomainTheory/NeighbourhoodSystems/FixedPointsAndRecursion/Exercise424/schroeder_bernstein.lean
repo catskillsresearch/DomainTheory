@@ -1,8 +1,3 @@
-/-ai
-Injections from A to B and from B to A yield a bijective map from A to B.
-
-Tarski's map is a witness: it is injective because the first map is injective, and surjective because the second map is injective.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

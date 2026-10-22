@@ -1,8 +1,3 @@
-/-ai
-The pairing map sends the pair of two elements of the sharp domain to the sharp pairing of those elements.
-
-Elements agree when they contain the same neighbourhoods. A neighbourhood of the image comes from a product neighbourhood of the two elements, and injectivity of the product neighbourhood identifies the factors, so upward closure puts the neighbourhood in the sharp pairing. The master neighbourhood of the sharp pairing is reached from the product of the two master neighbourhoods, and a paired neighbourhood is reached from the product of its factors.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Combinators77

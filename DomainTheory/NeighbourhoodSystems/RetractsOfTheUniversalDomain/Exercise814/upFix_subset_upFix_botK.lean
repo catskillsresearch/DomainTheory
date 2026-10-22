@@ -1,8 +1,3 @@
-/-ai
-The principal up-set of any compact fixed point is contained in the principal up-set of the bottom compact.
-
-Every fixed point lies above the bottom fixed point.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

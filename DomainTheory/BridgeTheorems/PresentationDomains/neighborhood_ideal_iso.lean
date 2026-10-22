@@ -1,6 +1,3 @@
-/-ai
-The order isomorphism from the basic-open neighbourhood filters of an information system to the ideal completion of its finite elements is the composite of the inverse domain isomorphism, from filters back to elements, and the ideal-completion isomorphism.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

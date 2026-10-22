@@ -1,8 +1,3 @@
-/-ai
-Prepending a natural number to a stream does not change the value of the stream at any later position: the value at a successor is the original value at the predecessor.
-
-This is the successor clause of the definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

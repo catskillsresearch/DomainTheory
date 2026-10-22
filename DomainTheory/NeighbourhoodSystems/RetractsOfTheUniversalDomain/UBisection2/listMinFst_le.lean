@@ -1,8 +1,3 @@
-/-ai
-The minimum first component of a list is at most the first component of any pair in the list.
-
-Apply the corresponding inequality for the left fold at seed one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

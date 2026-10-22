@@ -1,8 +1,3 @@
-/-ai
-The strict function space embeds as a subdomain of the function space, for arbitrary neighbourhood systems.
-
-Inclusion and strictification form a projection pair by the identity composite and the inequality composite, and a projection pair yields the subdomain embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,0 +1,12 @@
+Scott's relation 7.1(i) for V, equality of the intersection of two enumerated
+neighbourhoods with a third, is recursively decidable.
+
+Unfolding the three-argument decision predicate, the raw intersection of the first
+component with the left half of the second, its level and mask, the canonicalization of
+the right half of the second and that code's level and mask, and the maximum of the two
+levels, are primitive recursive by the stated compositions, with the pairing projections
+simplified where a composition is identified. The two upsamplings of the masks to that
+joint level are primitive recursive in the same way. Equality of natural numbers decides
+those two upsamplings. The decision equivalence rewrites by the realization of the
+intersection by the raw code and by the reduction of level-set equality to equality of
+the upsampled masks, after which the two sides agree by reflexivity.

@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.18). An element a equals the graph of the constant map with value a if and only if a is ⊥ or a is ⊤.
-
-If a equals that graph and a is ⊤, the claim holds. Otherwise a least missing number k exists. Writing k as a pair, its right component is also missing, hence equals k, so the pair equals its right component and that component is 0. Thus 0 is missing. If a is ⊥, the claim holds. Otherwise a least member exists, and the same pairing argument puts 0 in a, a contradiction. Conversely, the companion lemmas identify ⊥ and ⊤ with the graphs of the corresponding constant maps.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,0 +1,3 @@
+Every iterate of the Thue–Morse substitution starting from the singleton string of false begins with the bit false.
+
+Induction on the iteration count. The zero iterate is that singleton. A successor applies the substitution to a string headed by false, and the cons clause yields false followed by true followed by the substitution of the tail.

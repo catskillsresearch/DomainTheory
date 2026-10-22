@@ -1,8 +1,3 @@
-/-ai
-The sink state of the single-word automaton stays the sink after every word.
-
-The proof is by induction on the word. The empty word leaves the state unchanged. A longer word rewrites by the cons equation for evaluation and applies the inductive hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular

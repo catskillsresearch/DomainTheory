@@ -1,8 +1,3 @@
-/-ai
-If the tag of a code is 0 and the payload is nonzero, then one extra unit of fuel decodes the code as nothing.
-
-Unfold the decoder and substitute the tag and the nonzero payload.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

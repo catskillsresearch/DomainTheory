@@ -1,8 +1,3 @@
-/-ai
-Every set in the family combinedYCode is contained in the master neighbourhood of the second system.
-
-Unfold combinedYCode and split on the parity conditional. In either branch the set is an enumerated neighbourhood of the second presentation, hence contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

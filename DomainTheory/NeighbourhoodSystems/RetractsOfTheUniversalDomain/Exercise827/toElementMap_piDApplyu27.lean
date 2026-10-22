@@ -1,8 +1,3 @@
-/-ai
-The closed form of the product of d at f, evaluated at t, equals the type of d at sub of t applied to f at sub of t.
-
-Rewrite by the element-map formula for the closed form, by the definition of the type, and by the element map of the type map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

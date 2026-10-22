@@ -1,8 +1,3 @@
-/-ai
-The paired inner Y-fold, read on a paired argument and stage, is primitive recursive.
-
-It is primitive recursion from the constant initial pair of zeros along the primitive-recursive fold step, and that recursion equals the paired fold.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

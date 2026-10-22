@@ -1,6 +1,3 @@
-/-ai
-An order isomorphism of complete lattices is a homeomorphism of their Scott topologies. The underlying equivalence is the order isomorphism. Each direction is continuous because the preimage of a Scott-open set under an order isomorphism is Scott-open, and openness in the Scott topology is Scott-openness.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

@@ -1,8 +1,3 @@
-/-ai
-Inserting the bottom token into a finite set of raw lambda tokens leaves the atom set unchanged.
-
-By extensionality and the membership rule for the atom set, membership in the insertion is the inserted token or membership in the original set. The inserted bottom token is not an atom, so membership is membership in the original atom set, and every original atom embeds into the insertion.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

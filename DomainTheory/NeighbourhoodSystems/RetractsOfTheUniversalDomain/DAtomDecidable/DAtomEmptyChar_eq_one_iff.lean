@@ -1,8 +1,3 @@
-/-ai
-If the consistency function decides witnessed inclusion in a binary intersection and the inclusion function decides inclusion of neighbourhoods, then the emptiness characteristic of two list codes equals one if and only if the atom of the decoded lists is empty.
-
-Rewrite by the emptiness criterion and by agreement of the coded meet-fold with the set-level fold. When the success bit equals one, selection returns the bounded-existence characteristic, which equals one exactly when some decoded negative index passes the inclusion test, and the inclusion specification converts that test into containment of neighbourhoods. When the success bit is not one, selection returns one, matching the failing disjunct of the emptiness criterion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

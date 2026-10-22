@@ -1,8 +1,3 @@
-/-ai
-The least fixed-point set of an operator on subsets is contained in every fixed point.
-
-A fixed point satisfies the pre-fixed inclusion, and the least fixed-point set is contained in every pre-fixed point.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

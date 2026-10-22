@@ -1,8 +1,3 @@
-/-ai
-A monotone function that preserves directed suprema is continuous.
-
-Continuity is tested on an open containing the image of an element. The principal elements of the neighbourhoods of that element form a directed family, and monotonicity directs their images. The element equals the directed supremum of those principals, so preservation of directed suprema writes the image as the directed supremum of the images. Openness supplies a neighbourhood of that supremum contained in the open, belonging to some image. The token of that principal approximant is then a basic neighbourhood of the preimage: an element of the basic neighbourhood lies above the principal element, and monotonicity moves the neighbourhood into its image.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

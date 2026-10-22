@@ -1,8 +1,3 @@
-/-ai
-The constant-bottom map is a finitary projection.
-
-It is a projection, and the unit type with the terminal neighbourhood system witnesses finitariness through the order isomorphism of its fixed-point set with the terminal system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

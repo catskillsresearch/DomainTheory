@@ -1,8 +1,3 @@
-/-ai
-Any approximable mapping that sends every element to a fixed element equals the constant mapping of that value.
-
-Extensionality through images reduces the equality to an identity at each element. Rewriting by the constant-value hypothesis and by the value of the constant mapping gives that identity.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53

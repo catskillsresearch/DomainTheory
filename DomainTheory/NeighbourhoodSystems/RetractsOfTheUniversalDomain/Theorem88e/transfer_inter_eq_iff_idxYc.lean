@@ -1,8 +1,3 @@
-/-ai
-The intersection of two index sets equals a third index set if and only if the intersection of the two corresponding coded sets equals the third coded set.
-
-The comparisons of inclusion of the third set in each of the first two, and of the intersection in the third, the last simplified because the coded set lies in the master, turn the three inclusions read off an equality into the two inclusions of the corresponding equality, in each direction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

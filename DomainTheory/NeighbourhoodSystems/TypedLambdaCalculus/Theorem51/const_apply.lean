@@ -1,8 +1,3 @@
-/-ai
-Theorem 5.1, constant case (Scott 1981, PRG-19), states that the constant map with value k sends every element to k.
-
-This is the value law of the constant map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

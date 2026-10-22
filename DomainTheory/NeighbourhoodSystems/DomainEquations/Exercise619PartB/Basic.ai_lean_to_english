@@ -1,0 +1,47 @@
+The token-level master computed by the recursion on a nonempty set equals the master of the construct applied to the one-neighbourhood system on that set.
+
+The proof is by induction on the construct. A constant and the identity are definitionally that master. For a sum or a product both sides are the empty word adjoined to the false-tagged copy of the first component and the true-tagged copy of the second, and the inductive hypotheses rewrite the two components.
+
+If a set of words is contained in a larger set and a second set is contained in a larger second set, then the empty word adjoined to the false-tagged copy of the smaller set and the true-tagged copy of the smaller second set is contained in the same construction on the two larger sets.
+
+The empty word is preserved. A false-tagged word has its tail in the smaller set, hence in the larger set, and a true-tagged word has its tail in the smaller second set, hence in the larger second set.
+
+If one set of tokens is contained in another, the token-level master of a construct on the smaller set is contained in the master on the larger set.
+
+The proof is by induction on the construct. A constant is unchanged. The identity is the given inclusion. A sum or a product applies the tagged-union inclusion to the two inductive inclusions.
+
+For a nonempty family of sets, if membership in the first operation on a union is membership in that operation on some member, and likewise for the second operation, then a word lies in the empty word adjoined to the false-tagged first operation and the true-tagged second operation on the union if and only if it lies in that construction for some member.
+
+The empty word belongs to every such set, and the family is nonempty, so any member witnesses it. A false-tagged word has its tail in the first operation on the union, hence on some member, and that member witnesses the tagged word; the true tag is the same for the second operation. Conversely, a tagged word coming from some member has its tail in the corresponding operation on that member, hence on the union.
+
+For a nonempty directed family of sets of tokens whose union is U, a word lies in the token-level master of a construct on U if and only if it lies in the master of that construct on some member of the family.
+
+The proof is by induction on the construct, and the directedness hypothesis is not used. A constant value belongs to the image for every set, and the family is nonempty, so membership does not depend on which set is chosen. The identity is the given description of the union. A sum or a product is the tagged-union continuity lemma applied to the two inductive equivalences.
+
+If every constant in a construct has the empty word in its master, and the empty word lies in a set of tokens, then the empty word lies in the token-level master of the construct on that set.
+
+A constant uses the hypothesis on its master. The identity uses the hypothesis on the set. A sum or a product contains the empty word by the inserted root.
+
+If every constant in a construct has the empty word in its master, then the empty word lies in every Kleene iterate of the token-level master, starting from the singleton of the empty word.
+
+The zeroth iterate is that singleton. Each successor applies the previous lemma to the inductive hypothesis.
+
+If every constant in a construct has the empty word in its master, each Kleene iterate is contained in the next.
+
+The zeroth iterate is the singleton of the empty word, which the root lemma places in the first iterate. Each later step is monotonicity of the token-level master applied to the previous inclusion.
+
+If every constant in a construct has the empty word in its master and one index is at most another, then the earlier Kleene iterate is contained in the later one.
+
+The proof is by induction on the inequality. Equal indices give the same set. A successor step applies the one-step inclusion.
+
+If every constant in a construct has the empty word in its master, the token-level master of the union of the Kleene iterates equals that union.
+
+The range of the iterates is nonempty because it contains the zeroth iterate, and it is directed because the iterate at the maximum of two indices contains both. A word lies in the union exactly when it lies in some iterate. Continuity of the token-level master therefore equates membership in the master of the union with membership in the master of some iterate, which is the next iterate. In the other direction a word of the union lies in some iterate, and the one-step inclusion places that word in the master of the same iterate.
+
+If every constant in a construct has the empty word in its master, some set of tokens contains the empty word and is fixed by the token-level master of the construct.
+
+The union of the Kleene iterates contains the empty word because the zeroth iterate does, and the previous lemma says this union is a fixed point.
+
+If every constant in a construct has the empty word in its master, some nonempty set of tokens has its one-neighbourhood system as a subsystem of the construct applied to that system.
+
+The fixed-point lemma supplies a set containing the empty word and fixed by the token-level master, so the set is nonempty. Equality of that master with the neighbourhood-system master says the master of the construct on the one-neighbourhood system is that set, so the two systems have the same master. The only neighbourhood of the one-neighbourhood system equals this master, hence is a neighbourhood of the construct. The intersection of its two neighbourhoods is the set intersected with itself.

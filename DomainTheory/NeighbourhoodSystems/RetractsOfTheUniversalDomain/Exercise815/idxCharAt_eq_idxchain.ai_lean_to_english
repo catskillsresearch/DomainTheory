@@ -1,0 +1,3 @@
+The index character idxCharAt fc w equals the intersection index of the sublist of the decoded list selected by the bit mask in w.
+
+Unfold both sides. The code fold is a list fold, and the packed consistency step is the update used by the intersection-index fold. The index component of that fold, started at the master index with the identity projection, is the intersection index, and mapping by the identity does not change the selected list.

@@ -1,10 +1,3 @@
-/-ai
-The bit test equals one if and only if the corresponding test bit is true.
-
-Unfolding the test and rewriting the iterated quotient, the claim is the
-characterization of the test bit as the decision that the remainder modulo two equals
-one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

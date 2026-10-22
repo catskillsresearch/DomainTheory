@@ -1,8 +1,3 @@
-/-ai
-If the junk selector against the direct emptiness decider is zero, the second output index of the Y-sub-step is the bit's choice of the intersection index or the difference index.
-
-Unfolding the sub-step, the pair projections and the packed second component reduce by that hypothesis to the chosen index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

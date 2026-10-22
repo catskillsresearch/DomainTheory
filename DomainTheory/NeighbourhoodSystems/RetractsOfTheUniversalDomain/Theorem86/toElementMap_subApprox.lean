@@ -1,8 +1,3 @@
-/-ai
-The element map of the packaged map subApprox is the filter transport of sub.
-
-This is the element map of the continuous packaging of that transport.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

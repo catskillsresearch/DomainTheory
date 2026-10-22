@@ -1,0 +1,21 @@
+A great advantage of the combinators from the formal point of view is that (bound) variables are eliminated in favor of “algebraic” combinations. The disadvantage is that the algebra is not all that pretty, as the combinations tend to get rather long and general laws are rather few. Nevertheless as a technical device it is mildly remarkable that we can have a notation for all r.e. sets requiring so few primitives. In the model defined here the reduction to one combinator rests on a lemma about conditionals:
+
+$$(3.1) \quad \mathbf{cond}(x)(y)(\mathbf{cond}(x)(y)) = y.$$
+
+Recall that $\mathbf{cond}$ (or $\supset$) is a test for zero, so that:
+
+$$(3.2) \quad \mathbf{cond}(x)(y)(0) = x.$$
+
+This suggests that we lump all combinators of Theorem 2.4 into this one:
+
+$$(3.3) \quad \mathbf{G} = \mathbf{cond}(\langle \mathbf{suc}, \mathbf{pred}, \mathbf{cond}, \mathbf{K}, \mathbf{S} \rangle)(0).$$
+
+We can then readily prove:
+
+- [Theorem 3.1](1976_Theorem_3_1.md)
+- [Theorem 3.2](1976_Theorem_3_2.md)
+- [Theorem 3.3](1976_Theorem_3_3.md)
+- [Theorem 3.4](1976_Theorem_3_4.md)
+- [Theorem 3.5](1976_Theorem_3_5.md)
+- [Theorem 3.6](1976_Theorem_3_6.md)
+- [Theorem 3.7](1976_Theorem_3_7.md)

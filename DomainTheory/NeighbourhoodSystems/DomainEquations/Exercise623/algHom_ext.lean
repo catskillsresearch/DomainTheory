@@ -1,8 +1,3 @@
-/-ai
-Two algebra homomorphisms between the same T-algebras are equal once their underlying maps are equal.
-
-Destructure both homomorphisms and the equality of their underlying maps; the remaining data agree definitionally.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

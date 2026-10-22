@@ -1,6 +1,3 @@
-/-ai
-For a function v on the natural numbers, the recursion code rec(n) is the application of v(n) to the numeral of v(n). This is clause (ii) of Scott's Theorem 3.3.
-ai-/
 
 module
 

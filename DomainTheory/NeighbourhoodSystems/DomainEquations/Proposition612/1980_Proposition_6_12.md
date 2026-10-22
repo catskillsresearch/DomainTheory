@@ -1,38 +1,85 @@
 # Proposition 6.12
 
-The subdomain relationship implies a mapping relationship between the domains.
+## Human-English
 
-**PROPOSITION 6.12.** If $D \triangleleft E$, then there exists a projection pair of approximable mappings:
+@import "1980_Proposition_6_12.english" {code_block=false}
 
-$$
-i : D \to E \quad \text{and} \quad j : E \to D
-$$
+## AI: Human-English to AI-Lean
 
-where $j \circ i = I_D$ and $i \circ j \subseteq I_E$, which are determined as element-wise functions by these equations:
+**NeighbourhoodSystems/DomainEquations/Proposition612/ProjectionPair.lean**
 
-$$
-i(x) = \{Y \in E \mid \exists X \in x.\, X \subseteq Y\},
-$$
+@import "ProjectionPair.lean"
 
-and
+**NeighbourhoodSystems/DomainEquations/Proposition612/inj.lean**
 
-$$
-j(y) = y \cap D,
-$$
+@import "inj.lean"
 
-for all $x \in |D|$ and $y \in |E|$. $\square$
+**NeighbourhoodSystems/DomainEquations/Proposition612/inj_rel.lean**
 
-**Lean 4**
+@import "inj_rel.lean"
 
-- [NeighbourhoodSystems/DomainEquations/Proposition612/ProjectionPair.lean](ProjectionPair.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition612/inj.lean](inj.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition612/inj_rel.lean](inj_rel.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition612/proj.lean](proj.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition612/proj_rel.lean](proj_rel.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition612/inj_comp_proj_le.lean](inj_comp_proj_le.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition612/proj_comp_inj.lean](proj_comp_inj.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition612.lean](../Proposition612.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition612/projectionPair.lean](projectionPair.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition612/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition612/toElementMap_inj.lean](toElementMap_inj.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition612/toElementMap_proj.lean](toElementMap_proj.lean)
+**NeighbourhoodSystems/DomainEquations/Proposition612/proj.lean**
+
+@import "proj.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition612/proj_rel.lean**
+
+@import "proj_rel.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition612/inj_comp_proj_le.lean**
+
+@import "inj_comp_proj_le.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition612/proj_comp_inj.lean**
+
+@import "proj_comp_inj.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition612.lean**
+
+@import "../Proposition612.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition612/projectionPair.lean**
+
+@import "projectionPair.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition612/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition612/toElementMap_inj.lean**
+
+@import "toElementMap_inj.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition612/toElementMap_proj.lean**
+
+@import "toElementMap_proj.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "ProjectionPair.ai_lean_to_english" {code_block=false}
+
+@import "inj.ai_lean_to_english" {code_block=false}
+
+@import "inj_rel.ai_lean_to_english" {code_block=false}
+
+@import "proj.ai_lean_to_english" {code_block=false}
+
+@import "proj_rel.ai_lean_to_english" {code_block=false}
+
+@import "inj_comp_proj_le.ai_lean_to_english" {code_block=false}
+
+@import "proj_comp_inj.ai_lean_to_english" {code_block=false}
+
+@import "../Proposition612.ai_lean_to_english" {code_block=false}
+
+@import "projectionPair.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "toElementMap_inj.ai_lean_to_english" {code_block=false}
+
+@import "toElementMap_proj.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Proposition_6_12.ai_english_concordance" {code_block=false}

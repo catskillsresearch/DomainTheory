@@ -1,0 +1,3 @@
+The finset depth of a finite set of raw lambda tokens with one token inserted is at most the maximum of that token's raw depth and the finset depth of the set.
+
+Every token of the folded insertion is the inserted token, whose raw depth is the left argument of the maximum, or a member of the original set, whose raw depth is at most the original finset depth. The right-fold bound for a uniform estimate then applies.

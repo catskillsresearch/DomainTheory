@@ -1,8 +1,3 @@
-/-ai
-If u realizes p and v realizes q, then their pairing realizer realizes the function sending n to the pair of p(n) and q(n).
-
-Rewrite by the definition, the β-rules for S and K, the two realization hypotheses, and the application equation for the pairing combinator.
-ai-/
 module
 
 public import Mathlib.Computability.RE

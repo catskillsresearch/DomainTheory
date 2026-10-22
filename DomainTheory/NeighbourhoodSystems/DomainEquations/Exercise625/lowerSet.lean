@@ -1,6 +1,3 @@
-/-ai
-The lower set of an element y is the set of elements x such that the injection of x lies below y.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

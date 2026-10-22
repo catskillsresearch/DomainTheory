@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the flat neighbourhood system exactly when it is the whole set of natural numbers or a singleton.
-
-The two sides are definitionally identical.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

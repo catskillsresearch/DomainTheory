@@ -1,0 +1,3 @@
+The four-way sequence is Scott continuous in each of its four arguments separately.
+
+Each conjunct is continuity of the graph in that argument. For the first argument, middle continuity of the outer conditional carries the dependence. For the second, third, and fourth arguments, Theorem 1.3 pushes the dependence through the outer conditionals until middle continuity of the conditional that carries the varying argument.

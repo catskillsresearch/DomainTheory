@@ -1,6 +1,3 @@
-/-ai
-botCode is a natural number chosen, by the surjectivity in theorem 3.2 applied to the combinatory bottom element, as a code of bottom.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

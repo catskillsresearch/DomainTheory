@@ -1,8 +1,3 @@
-/-ai
-Applying fromCC after toCC returns the original element of C.
-
-Two elements agree when they contain the same neighbourhoods. If the composite contains the set of all strings, the empty singleton, a 0-copy, or a 1-copy, the original element contains it by its master membership or by the forward half of toCC_mem_j0, toCC_mem_j1, or toCC_mem_j2. Conversely, the classification of neighbourhoods of C splits a neighbourhood into those four shapes, and each belongs to the composite by the corresponding reverse characterization.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

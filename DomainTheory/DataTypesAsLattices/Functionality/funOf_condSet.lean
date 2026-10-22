@@ -1,8 +1,3 @@
-/-ai
-Application distributes over the conditional set: applying the conditional of z, x, and y to w equals the conditional of z on the two applications of x and of y to w.
-
-Membership extensionality. A witness for the application lies in one branch of the conditional and reassembles as a witness in that branch after application. Conversely, a branch witness pulls the application witness back into that branch.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

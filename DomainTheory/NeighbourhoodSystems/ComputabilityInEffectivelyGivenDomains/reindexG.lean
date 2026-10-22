@@ -1,6 +1,3 @@
-/-ai
-The reindexing of a doubly indexed neighbourhood is the singly indexed set whose token at an index lies in the double fiber of the neighbourhood at the two components of the unpairing of that index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

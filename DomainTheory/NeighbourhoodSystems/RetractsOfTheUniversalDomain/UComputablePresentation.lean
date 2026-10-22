@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the basic development of the computable presentation of U, the strict inequalities for pairs decoded from canonical list codes and from canonical codes, the nonemptiness of a decoded canonical code, the fact that a canonical code is never zero, and the theorem that U is effectively given.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation.Basic

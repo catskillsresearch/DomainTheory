@@ -1,8 +1,3 @@
-/-ai
-The descent map sends the partial element named by a finite string σ to the head recursion started at the bottom element of the carrier and evaluated at σ.
-
-This is the partial-element clause of the construction liftCn.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

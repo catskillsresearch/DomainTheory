@@ -1,44 +1,133 @@
 # Exercise 4.21
 
-$$
-\mathrm{fix}(f \circ g) = f(\mathrm{fix}(g \circ f)).
-$$
+## Human-English
 
-**EXERCISE 4.21.** Show that the less-than-or-equal-to relation $\ell \subseteq \mathbf{N} \times \mathbf{N}$ is uniquely determined by the fixed point equation
+@import "1980_Exercise_4_21.english" {code_block=false}
 
-$$
-\ell = \{(n,n) \mid n \in \mathbf{N}\} \cup \{(n, m^+) \mid (n, m) \in \ell\}.
-$$
+## AI: Human-English to AI-Lean
 
-Consider the structured set $\langle P\mathbf{N}, \mathbf{N}, {}^+ \rangle$ where, as before, $x^+ = \{n^+ \mid n \in x\}$.
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/leOp.lean**
 
-What is the unique function $[\cdot] : \mathbf{N} \to P\mathbf{N}$ given by 4.13(3)? Prove that the structures $\langle \mathbf{N}, 0, {}^+ \rangle$ and $\langle [m], m, {}^+ \rangle$ are uniquely isomorphic for each $m \in \mathbf{N}$, and connect the isomorphism with ordinary addition of integers. Can the same be done for multiplication? (Hint: Consider the fixed-point equation
+@import "leOp.lean"
 
-$$
-n \cdot \mathbf{N} = \{0\} \cup \{n + m \mid m \in n \cdot \mathbf{N}\},
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/leRel.lean**
 
-where $n \in \mathbf{N}$ is fixed.)
+@import "leRel.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/mulOp.lean**
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/leOp.lean](leOp.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/leRel.lean](leRel.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/mulOp.lean](mulOp.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/succImage.lean](succImage.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/upSet.lean](upSet.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/addIso.lean](addIso.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/addIso_apply.lean](addIso_apply.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/addIso_succ.lean](addIso_succ.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/addIso_zero.lean](addIso_zero.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/leOp_monotone.lean](leOp_monotone.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/leRel_isFixed.lean](leRel_isFixed.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/mem_fixedPoint_iff.lean](mem_fixedPoint_iff.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/leOp_unique.lean](leOp_unique.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/mulOp_monotone.lean](mulOp_monotone.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/mulOp_lfp_eq_multiples.lean](mulOp_lfp_eq_multiples.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/upSet_succ.lean](upSet_succ.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/upSet_zero.lean](upSet_zero.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/upSet_unique.lean](upSet_unique.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421.lean](../Exercise421.lean)
+@import "mulOp.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/succImage.lean**
+
+@import "succImage.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/upSet.lean**
+
+@import "upSet.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/addIso.lean**
+
+@import "addIso.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/addIso_apply.lean**
+
+@import "addIso_apply.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/addIso_succ.lean**
+
+@import "addIso_succ.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/addIso_zero.lean**
+
+@import "addIso_zero.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/leOp_monotone.lean**
+
+@import "leOp_monotone.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/leRel_isFixed.lean**
+
+@import "leRel_isFixed.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/mem_fixedPoint_iff.lean**
+
+@import "mem_fixedPoint_iff.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/leOp_unique.lean**
+
+@import "leOp_unique.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/mulOp_monotone.lean**
+
+@import "mulOp_monotone.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/mulOp_lfp_eq_multiples.lean**
+
+@import "mulOp_lfp_eq_multiples.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/upSet_succ.lean**
+
+@import "upSet_succ.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/upSet_zero.lean**
+
+@import "upSet_zero.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421/upSet_unique.lean**
+
+@import "upSet_unique.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise421.lean**
+
+@import "../Exercise421.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "leOp.ai_lean_to_english" {code_block=false}
+
+@import "leRel.ai_lean_to_english" {code_block=false}
+
+@import "mulOp.ai_lean_to_english" {code_block=false}
+
+@import "succImage.ai_lean_to_english" {code_block=false}
+
+@import "upSet.ai_lean_to_english" {code_block=false}
+
+@import "addIso.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "addIso_apply.ai_lean_to_english" {code_block=false}
+
+@import "addIso_succ.ai_lean_to_english" {code_block=false}
+
+@import "addIso_zero.ai_lean_to_english" {code_block=false}
+
+@import "leOp_monotone.ai_lean_to_english" {code_block=false}
+
+@import "leRel_isFixed.ai_lean_to_english" {code_block=false}
+
+@import "mem_fixedPoint_iff.ai_lean_to_english" {code_block=false}
+
+@import "leOp_unique.ai_lean_to_english" {code_block=false}
+
+@import "mulOp_monotone.ai_lean_to_english" {code_block=false}
+
+@import "mulOp_lfp_eq_multiples.ai_lean_to_english" {code_block=false}
+
+@import "upSet_succ.ai_lean_to_english" {code_block=false}
+
+@import "upSet_zero.ai_lean_to_english" {code_block=false}
+
+@import "upSet_unique.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise421.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_4_21.ai_english_concordance" {code_block=false}

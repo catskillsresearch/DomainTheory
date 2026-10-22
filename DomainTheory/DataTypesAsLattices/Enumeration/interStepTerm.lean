@@ -1,6 +1,3 @@
-/-ai
-The term interStepTerm is a closed term for the body of binary intersection. It abstracts three variables. The conditional on the second variable returns, on its zero branch, the conditional of the third variable between zero and the self-application of ω, where ω is the term λv. v v, and on its positive branch the successor of the recursive application of the first variable to the predecessors of the second and third variables.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

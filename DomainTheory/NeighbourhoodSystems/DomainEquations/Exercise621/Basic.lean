@@ -1,44 +1,3 @@
-/-ai
-For every expression T and every nonempty set Γ of strings, the token-level recursion gFun T Γ equals the master of T applied to the singleton system on Γ.
-
-The proof is by induction on T. A constant and the variable are definitional. For each of the separated sum, the separated product, the coalesced sum, and the smash product, both sides are the insertion of the empty string into the union of the false-tagged and true-tagged recursive values, and the inductive hypotheses rewrite those two recursive calls.
-
-The token-level recursion is monotone: if Γ is contained in Γ', then gFun T Γ is contained in gFun T Γ'.
-
-The proof is by induction on T. A constant is unchanged. The variable is the given inclusion. Each binary constructor applies the monotonicity of tagged insertion to the two inductive inclusions.
-
-Membership in gFun T of the pointwise union of a nonempty family of sets of strings is equivalent to membership in gFun T of some member of the family.
-
-The proof is by induction on T. For a constant, nonemptiness supplies a witness one way, and the other way is the same membership. The variable is the given characterization of the union. Each binary constructor applies continuity of tagged insertion to nonemptiness and the two inductive equivalences.
-
-If T is rooted and the empty string belongs to Γ, then the empty string belongs to gFun T Γ.
-
-A rooted constant has the empty string in its master. The variable returns Γ. Each binary constructor inserts the empty string.
-
-For a rooted expression, the empty string belongs to every stage of the Kleene iteration that starts from the singleton of the empty string.
-
-Stage zero is that singleton. A successor stage applies the previous lemma to the inductive stage.
-
-For a rooted expression, each Kleene stage is contained in the next stage.
-
-At stage zero a member is the empty string, which rootedness places in the next stage. A later stage applies monotonicity of gFun to the inductive inclusion.
-
-For a rooted expression, an earlier Kleene stage is contained in a later stage.
-
-The proof inducts on the inequality between the indices. Equal indices give the same set. A successor step applies the one-step inclusion to the inductive inclusion.
-
-The union of the Kleene stages is a fixed point of the token-level recursion.
-
-The range of the iteration is nonempty, witnessed by stage zero, and directed, because the stage indexed by the maximum of two indices lies above both by the monotonicity just proved. A string lies in the union exactly when it lies in some stage. Extensionality and continuity of gFun therefore turn the equation into two inclusions: a string in the recursion at stage n lies in stage n + 1, and a string in stage n lies in the recursion at stage n by the one-step inclusion.
-
-For any rooted expression there is a set Γ of strings which contains the empty string and equals gFun T Γ.
-
-The union of the Kleene stages contains the empty string at stage zero, and the previous paragraph says that the recursion fixes that union.
-
-For any rooted expression there is a nonempty set Γ such that the singleton system on Γ is a subsystem of T applied to that singleton system. Theorem 6.14 therefore applies to every construct built from constants, the identity, separated sum, separated product, coalesced sum, and smash product.
-
-The token fixed point supplies Γ, which is nonempty because it contains the empty string. The master of T on that singleton system equals Γ by the agreement of gFun with the master and by the fixed-point equation. The subsystem master equality is the symmetric equation. A neighbourhood of the singleton system equals Γ, hence equals that master, which belongs to T. The intersection of two such neighbourhoods equals Γ because both factors equal Γ.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB
@@ -70,30 +29,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.otim
 
 @[expose] public section
 
-/-!
-# Exercise 6.21 (Scott 1981, PRG-19, §6) — the *separated* sum `⊕` and product `⊗`
-
-> **EXERCISE 6.21.** Do the same as 6.19 and 6.20 when the functors are also allowed to be generated
-> by the operations
-> `D₀ ⊕ D₁ = {{Λ} ∪ 0Δ₀ ∪ 1Δ₁} ∪ {0X ∣ X ∈ D₀ ∖ {Δ₀}} ∪ {1Y ∣ Y ∈ D₁ ∖ {Δ₁}}`,
-> `D₀ ⊗ D₁ = {{Λ} ∪ 0Δ₀ ∪ 1Δ₁} ∪ {{Λ} ∪ 0X ∪ 1Y ∣ X ∈ D₀ ∖ {Δ₀} and Y ∈ D₁ ∖ {Δ₁}}`.
-> Generalize all of `+`, `×`, `⊕`, `⊗` to combinations of several terms, not just the binary sums and
-> products.
-
-This module extends Exercise 6.19 Part B (`Exercise619PartB.lean`) with the two *coalesced*
-operations. The difference from the *separated* sum `+`/product `×` of 6.19 is that `⊕`/`⊗` **delete
-the improper tagged copies** `0Δ₀` and `1Δ₁`: in domain terms this **identifies the two bottoms**
-(`⊕` is the coalesced sum, `⊗` the smash product), whereas `+`/`×` keep them apart. Both share the
-*same master* `{Λ} ∪ 0Δ₀ ∪ 1Δ₁` as `+`/`×`.
-
-## Contents (this stage: objects)
-
-* `oplusTok`/`otimesTok` — the two token-level systems over `Str = {0,1}*`, each `∅`-free.
-* `ScottSys.oplus`/`ScottSys.otimes` — the same, repackaged as objects of Scott's category.
-
-Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
@@ -104,71 +39,13 @@ namespace Exercise619
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
-/-! ## The coalesced sum `D₀ ⊕ D₁` over `{0,1}*`
-
-`D₀ ⊕ D₁ = {M} ∪ {0X ∣ X ∈ 𝒟₀, X ≠ Δ₀} ∪ {1Y ∣ Y ∈ 𝒟₁, Y ≠ Δ₁}`, where `M = {Λ} ∪ 0Δ₀ ∪ 1Δ₁` is
-the shared `sumTokMaster`. -/
-
 
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
 
-/-! ## The smash product `D₀ ⊗ D₁` over `{0,1}*`
-
-`D₀ ⊗ D₁ = {M} ∪ {{Λ} ∪ 0X ∪ 1Y ∣ X ∈ 𝒟₀, X ≠ Δ₀, Y ∈ 𝒟₁, Y ≠ Δ₁}`, where again
-`M = {Λ} ∪ 0Δ₀ ∪ 1Δ₁ = prodTokNbhd Δ₀ Δ₁`. The improper rectangles touching a top coordinate (other
-than the full top `M`) are removed. -/
-
-
-/-! ## Repackaged as objects of Scott's category -/
-
-
-/-! ## Membership inversions -/
-
-
-/-! ## Monotone on domains: `◁` is carried componentwise -/
-
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
-/-! ## The functorial action of the coalesced sum on (strict) maps
-
-The relation has the same shape as `sumMapTok` but with two changes forced by *coalescence*: proper
-tagged copies require the components to be proper (`X ≠ Δ₀`, `X' ≠ Δ₀'`), and the **master/collapse
-row** `(W ∈ 𝒟₀⊕𝒟₁ ∧ W' = M)` sends *every* neighbourhood to the top `M` (which is always valid, the
-top being the least informative output, and is exactly what handles `f₀(X) = Δ₀'` collapsing back to
-the shared bottom). -/
-
 variable {C₀ C₁ : ScottSys}
-
-
-/-! ## The functorial action of the smash product on (strict) maps
-
-As `prodMapTok`, but proper rectangles require both components proper, and a **master/collapse row**
-absorbs a boundary hit `f₀(X) = Δ₀'` (or `f₁(Y) = Δ₁'`) into the top `M`. -/
-
-
-/-! ## The extended functor-expression algebra `GExpr`
-
-Scott's *"do the same as 6.19 and 6.20 when the functors are also allowed to be generated by the
-operations `⊕`, `⊗`"*: the closed family of constructs is enlarged from `FExpr` (constants,
-identity, `+`, `×`) to also include the coalesced `⊕` and the smash `⊗`. The functor laws and the
-on-maps/on-domains continuity properties are re-established by induction; the `⊕`/`⊗` composition
-law carries the strictness hypothesis (Scott's category is the **strict-map** category, and that is
-exactly what makes `⊕`/`⊗` functorial). -/
-
-
-/-! ### Continuous on domains -/
-
-/-! ### Continuous on maps -/
-
-/-! ## Exercise 6.20 for the extended algebra — `λΓ. tok(T({Γ}))` is continuous, so a fixed point
-exists
-
-The masters of `⊕`/`⊗` coincide with those of `+`/`×` (all four equal `{Λ} ∪ 0Δ₀ ∪ 1Δ₁`), so the
-token-level recursion `gFun` has the **same** tagged-union body in all four binary cases. The 6.20
-argument (continuity of `λΓ. tok(T({Γ}))` and existence of `Γ = tok(T({Γ}))`, whence
-`{Γ} ◁ T({Γ})` and Theorem 6.14 applies) goes through verbatim, reusing the generic helpers
-`singletonSys`, `insertTag_mono`, `insertTag_continuous` of Exercise 6.19 Part B. -/
 
 
 /-- `gFun T Γ = tok(T({Γ}))`. -/
@@ -299,20 +176,6 @@ theorem gExists_singleton_subsystem (T : GExpr) (hT : T.RootedConst) :
   · intro X Y hX hY _
     show X ∩ Y = Γ
     rw [show X = Γ from hX, show Y = Γ from hY, Set.inter_self]
-
-/-! ## Generalizing `+`, `×`, `⊕`, `⊗` to combinations of several terms
-
-> Generalize all of `+`, `×`, `⊕`, `⊗` to combinations of several terms, not just the binary sums
-> and products.
-
-Because `GExpr` is **closed** under the binary operations, every finite combination of several terms
-`T₀ ⋆ T₁ ⋆ ⋯ ⋆ Tₙ` (for any `⋆ ∈ {+, ×, ⊕, ⊗}`, in any nesting) is itself a `GExpr` — so the
-results already proved (`map_id`, `map_comp`, `map_mono`, `map_continuous`, `obj_subsystem`,
-`obj_continuous`, and the 6.20 fixed point `gExists_singleton_subsystem`) apply to *all* of them with
-no further work. The `naryOp` fold below packages the common right-nested n-ary constructs
-`⋆(a, [b, c, …]) = a ⋆ (b ⋆ (c ⋆ ⋯))` explicitly, and `naryOp_rootedConst` shows the `Λ ∈ tok`
-side-condition (needed for the 6.20 fixed point) is preserved, so every n-ary construct also has a
-solution `Γ = tok(T({Γ}))`. -/
 
 
 end Exercise619

@@ -1,0 +1,3 @@
+The predecessor combinator is recursively enumerable.
+
+The relation that bit m + 1 of n is set is primitive recursive, by a boolean test of the test-bit function on the successor of the second argument. That relation agrees in both directions with membership of m in the predecessor of the finite set e n, by the bit characterization of e. The graph of the predecessor operation is therefore recursively enumerable, and that graph is the predecessor combinator.

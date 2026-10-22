@@ -1,8 +1,3 @@
-/-ai
-The S combinator equals the graph of its own application.
-
-Extensionality of graphs, rewritten by the application equation for S.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

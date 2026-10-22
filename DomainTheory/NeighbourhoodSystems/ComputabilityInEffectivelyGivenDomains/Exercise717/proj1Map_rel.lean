@@ -1,8 +1,3 @@
-/-ai
-The second projection relates neighbourhoods W and Z exactly when both belong to the sharp domain and either Z is the master neighbourhood or W is a paired embedding whose right-hand neighbourhood is contained in Z.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Combinators77

@@ -1,8 +1,3 @@
-/-ai
-Evaluating the constant map at an element b on the least element of the unit returns b.
-
-This is the evaluation identity for constant maps, applied at the least element of the unit.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56

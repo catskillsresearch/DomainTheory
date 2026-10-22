@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the flat domain is the whole set of natural numbers.
-
-The equality is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

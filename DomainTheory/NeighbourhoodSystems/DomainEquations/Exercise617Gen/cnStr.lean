@@ -1,6 +1,3 @@
-/-ai
-The algebra structure map cnStr of the string system is the strict morphism from Tsig A applied to Cnobj A into Cnobj A whose underlying approximable map is the inverse of the domain-equation isomorphism ccEquiv. That inverse is strict because it comes from an order isomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

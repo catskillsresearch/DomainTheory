@@ -1,8 +1,3 @@
-/-ai
-Evaluating the tree obtained by folding node codes from an accumulator along a list equals folding the universal intersection of the enumerator along that list, starting from the evaluation of the accumulator.
-
-Proceed by induction on the list. The empty list leaves the accumulator. For a head and a tail, the inductive hypothesis together with the node equation and the leaf equation identifies the two folds.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

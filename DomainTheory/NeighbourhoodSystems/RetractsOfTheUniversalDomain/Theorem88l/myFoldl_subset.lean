@@ -1,8 +1,3 @@
-/-ai
-Under the consistency hypothesis, folding the gated step only shrinks the presented neighbourhood: the neighbourhood at the fold is contained in the neighbourhood at the starting index.
-
-Induct on the list. The empty fold is the starting index. For a cons cell, rewrite by the cons equation for left folds and compose the inductive hypothesis with shrinking of one step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.Basic

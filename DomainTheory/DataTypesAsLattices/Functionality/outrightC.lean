@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (4.29). The right projection of a tagged sum is the graph of the conditional set of the first component of u, with bottom as the zero branch and the second component as the positive branch.
-ai-/
 
 module
 

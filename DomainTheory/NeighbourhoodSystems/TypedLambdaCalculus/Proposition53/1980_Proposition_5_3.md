@@ -1,57 +1,73 @@
 # Proposition 5.3
 
-We note that if $\tau'$ is the term $\lambda x, y . \tau$, then $\tau'(x, y)$ means the same as $\tau$. This gives a convenient way of indicating free variables: we just write $\sigma(x, y)$ — where $x, y$ are not free in $\sigma$ — and this will have the same values as any term $\tau$ which does involve the extra free variables $x$ and $y$. We use this notational device in the next theorem.
+## Human-English
 
-**PROPOSITION 5.3.** The least fixed point of $\lambda x, y.\ \langle \tau(x, y), \sigma(x, y) \rangle$ is the pair with coordinates
+@import "1980_Proposition_5_3.english" {code_block=false}
 
-$! x.\ \tau(x,\ ! y.\ \sigma(x, y))$ and
+## AI: Human-English to AI-Lean
 
-$! y.\ \sigma(! x.\ \tau(x, y), y)$.
+**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/outerOp_apply.lean**
 
-**Proof:** (We are assuming that $x$ and $y$ are not free in $\tau$ and $\sigma$.) The purpose of the fixed-point search is to find the least solution of the pair of equations $x = \tau(x, y)$ and $y = \sigma(x, y)$. In other words, we are generalizing the fixed-point equation from one to two variables—and, of course, we could go much further to any number of variables. To this end, let
+@import "outerOp_apply.lean"
 
-$y_* = ! y.\ \sigma(! x.\ \tau(x, y), y)$, and
+**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX.lean**
 
-$x_* = ! x.\ \tau(x, y_*)$.
+@import "secFixX.lean"
 
-Then
+**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/outerOp.lean**
 
-$x_* = \tau(x_*, y_*)$,
+@import "outerOp.lean"
 
-and
+**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX_apply.lean**
 
-$y_* = \sigma(! x.\ \tau(x, y_*), y_*)$
+@import "secFixX_apply.lean"
 
-$= \sigma(x_*, y_*)$.
+**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/sectionX.lean**
 
-This proves that $\langle x_*, y_* \rangle$ is one fixed-point pair.
+@import "sectionX.lean"
 
-Suppose, then, that $\langle x_0, y_0 \rangle$ is the least solution. (Why does a least solution have to exist? Hint: Consider a suitable mapping of type $D_0 \times D_1 \to D_0 \times D_1$, where $D_0$ is the type of $x$ and $D_1$ the type of $y$.) Then we know $x_0 = \tau(x_0, y_0)$ and $y_0 = \sigma(x_0, y_0)$, and also $x_0 \sqsubseteq x_*$ and $y_0 \sqsubseteq y_*$. But from
+**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/Basic.lean**
 
-$\tau(x_0, y_0) \sqsubseteq x_0$,
+@import "Basic.lean"
 
-it follows that
+**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/sectionX_apply.lean**
 
-$! x.\ \tau(x, y_0) \sqsubseteq x_0$.
-Consequently,
+@import "sectionX_apply.lean"
 
-$$\sigma(! x . \tau(x, y_0), y_0) \sqsubseteq \sigma(x_0, y_0) \sqsubseteq y_0.$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX_isFixed.lean**
 
-By the fixed-point definition of $y_*$, we have $y_* \sqsubseteq y_0$, so $y_* = y_0$; whence,
+@import "secFixX_isFixed.lean"
 
-$$x_* = ! x . \tau(x, y_*) = ! x . \tau(x, y_0) \sqsubseteq x_0.$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/fixElement_paired_eq.lean**
 
-So also $x_* = x_0$. $\square$ We have the right formula for $y_0$, and a similar argument gives $x_0$.
+@import "fixElement_paired_eq.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/TypedLambdaCalculus/Proposition53.lean**
 
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/outerOp_apply.lean](outerOp_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX.lean](secFixX.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/outerOp.lean](outerOp.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX_apply.lean](secFixX_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/sectionX.lean](sectionX.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/sectionX_apply.lean](sectionX_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/secFixX_isFixed.lean](secFixX_isFixed.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53/fixElement_paired_eq.lean](fixElement_paired_eq.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Proposition53.lean](../Proposition53.lean)
+@import "../Proposition53.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "outerOp_apply.ai_lean_to_english" {code_block=false}
+
+@import "secFixX.ai_lean_to_english" {code_block=false}
+
+@import "outerOp.ai_lean_to_english" {code_block=false}
+
+@import "secFixX_apply.ai_lean_to_english" {code_block=false}
+
+@import "sectionX.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "sectionX_apply.ai_lean_to_english" {code_block=false}
+
+@import "secFixX_isFixed.ai_lean_to_english" {code_block=false}
+
+@import "fixElement_paired_eq.ai_lean_to_english" {code_block=false}
+
+@import "../Proposition53.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Proposition_5_3.ai_english_concordance" {code_block=false}

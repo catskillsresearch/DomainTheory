@@ -1,8 +1,3 @@
-/-ai
-Two elements with the same membership predicate are equal.
-
-Both elements are destructured. Their membership functions agree by function extensionality and propositional extensionality of the hypothesis, and after that substitution the elements agree by reflexivity.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

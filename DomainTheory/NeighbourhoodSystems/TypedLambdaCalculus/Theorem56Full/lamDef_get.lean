@@ -1,8 +1,3 @@
-/-ai
-The projection that reads a chosen entry of a vector is λ-defined by the corresponding coordinate projection wrapped in the strict guard of that arity.
-
-Apply the total-function constructor. On the stack of a vector, the projection reads that component, which is the numeral of the chosen entry.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

@@ -1,59 +1,19 @@
 # Proposition 2.9
 
-**2.9 Proposition.** The Cartesian product of any number of continuous lattices is a continuous lattice with the induced topology agreeing with the product topology.
+## Human-English
 
-**Proof of 2.9**
+@import "proposition_2_9.english" {code_block=false}
 
-Let $D_i$ for $i \in I$ be a system of continuous lattices. The product
+## AI: Human-English to AI-Lean
 
-$$
-D^* = \prod_{i \in I} D_i
-$$
-
-is a complete lattice in the usual way and has its induced topology. Suppose $y \in D^*$ and let $i \in I$. Then $y_i \in D_i$. Since $D_i$ is a continuous lattice
-
-$$
-y_i = \bigsqcup x \in D_i : x \ll y_i.
-$$
-
-For $x \in D_i$, let $[x]^i \in D^*$ be defined by:
-
-$$
-[x]^i_j = \begin{cases} x & \text{if } i = j,  \perp & \text{if } i \neq j. \end{cases}
-$$
-
-Note that since $D_i$ is continuous we have:
-
-$$
-[y_i]^i = \bigsqcup [x]^i : x \ll y_i,
-$$
-
-and
-
-$$
-y = \bigsqcup [y_i]^i : i \in I.
-$$
-
-It follows that
-
-$$
-y = \bigsqcup \bigcap \{ z : z_i \in U \text{ for all } i \in I,\, y_i \in U \},
-$$
-
-where $i$ ranges over $I$ and $U$ over the open subsets of $D_i$, because
-
-$$
-[x]^i \sqsubseteq \bigcap  z : z_i \in U , \quad \text{where } U =  u \in D_i : x \ll u .
-$$
-
-But the sets $ z : z_i \in U $ are open in the product sense, and so
-
-$$
-y = \bigsqcup  \bigcap U : y \in U ,
-$$
-
-where $U$ ranges now over the open subsets of the product topology on $D^*$. By the remark following 2.4 we conclude that $D^*$ is continuous with the lattice-induced topology being the product topology. $\square$
-
-**Lean**
+**DomainTheory/ContinuousLattice/Constructions/proposition_2_9.lean**
 
 @import "proposition_2_9.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "proposition_2_9.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "proposition_2_9.ai_english_concordance" {code_block=false}

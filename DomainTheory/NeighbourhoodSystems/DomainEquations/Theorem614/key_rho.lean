@@ -1,8 +1,3 @@
-/-ai
-The next projection equals the structure isomorphism of the colimit composed after the image under T of the current projection composed after the inverse isomorphism.
-
-The two components of the colimit isomorphism are the components of the identity isomorphism of the object equality. Conjugation by that isomorphism is transport along the equality. Heterogeneous equality then identifies the transport with the next projection, using the heterogeneous equality of the image of the projection with the next projection and the lemma that transport along an object equality is a heterogeneous equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

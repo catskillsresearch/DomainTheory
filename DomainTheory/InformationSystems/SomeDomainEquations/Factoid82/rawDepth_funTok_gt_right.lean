@@ -1,8 +1,3 @@
-/-ai
-A raw token occurring in the right argument list of a function token has depth strictly less than the depth of that function token.
-
-The fold bound for list membership, together with the right argument of a maximum being at most the maximum, places the token's depth at most at the maximum of the two folded depths. Unfolding the depth of the function token, that maximum is strictly less than one plus itself.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

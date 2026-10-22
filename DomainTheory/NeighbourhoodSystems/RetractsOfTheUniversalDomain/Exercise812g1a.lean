@@ -1,8 +1,3 @@
-/-ai
-Index 0 presents U's master neighbourhood.
-
-The numbered name example_812_g1a is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812g1a.UX_zero

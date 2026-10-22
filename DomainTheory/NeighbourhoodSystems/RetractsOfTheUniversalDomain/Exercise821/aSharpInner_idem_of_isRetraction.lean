@@ -1,8 +1,3 @@
-/-ai
-If an endomap a of the universal domain is a retraction, then its inner sharp is a retraction.
-
-Unfold the inner sharp and apply the general idempotence of a catamorphism built from a retraction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

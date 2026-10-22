@@ -1,6 +1,3 @@
-/-ai
-A set of naturals is a unary neighbourhood when it equals some tail or some singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

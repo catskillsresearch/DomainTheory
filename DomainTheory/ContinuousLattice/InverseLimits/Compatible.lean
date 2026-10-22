@@ -1,6 +1,3 @@
-/-ai
-A sequence with values in the lattices of an ω-system is compatible when each projection sends the next term to the current term.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

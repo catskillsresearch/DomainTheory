@@ -1,8 +1,3 @@
-/-ai
-The singleton map relates a neighbourhood X to a power-domain neighbourhood W if and only if the singleton of the principal element of X contains W.
-
-Unfold the map as the monotone extension. A related pair supplies membership in that singleton, and conversely that membership is the relation at the given neighbourhood X.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

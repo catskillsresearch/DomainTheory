@@ -1,8 +1,3 @@
-/-ai
-The second index of a state packed from three numbers a, b, and c is b.
-
-Unfolding the index and the packing, the left component of the right component of the nested pair is b.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

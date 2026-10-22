@@ -1,6 +1,3 @@
-/-ai
-splitMidCode n is the code of the midpoint of the first rational pair in the presenting list of the canonical code of n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

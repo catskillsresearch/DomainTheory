@@ -1,8 +1,3 @@
-/-ai
-Every element is the directed supremum of its finite approximants.
-
-The numbered name theorem_45 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.eq_directedSup_finiteApproximants

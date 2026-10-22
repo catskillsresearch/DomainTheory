@@ -1,8 +1,3 @@
-/-ai
-The product of a domain with the terminal domain is isomorphic to the original domain.
-
-The isomorphism is the right-unit order isomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

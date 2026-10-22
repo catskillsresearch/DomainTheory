@@ -1,8 +1,3 @@
-/-ai
-Scott's Theorem 1.2 (ii) states that every u is contained in the graph of its application.
-
-Every code is a pair of n and m, and that pair lies in the application at the basic element coded by n by reflexivity of inclusion, hence lies in the graph.
-ai-/
 
 module
 

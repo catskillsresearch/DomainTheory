@@ -1,8 +1,3 @@
-/-ai
-Every continuous lattice is an injective space under its Scott topology.
-
-Given an embedding and a continuous map into the lattice, the canonical Scott extension of the map along the embedding is continuous and agrees with the map on the image of the embedding.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

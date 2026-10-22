@@ -1,8 +1,3 @@
-/-ai
-The three-way sum of the three identity maps is the identity map of the three-way sum.
-
-A sum relation is either containment in the master, which holds because every neighbourhood is contained in the master, or a same-tag inclusion coming from an identity relation on that summand. Conversely, if the first neighbourhood is contained in the second, matching tags give the identity relation on that tag. If the first neighbourhood is the master, the containment forces the second to be the master as well. Distinct tags are impossible, because a point of one tag does not lie in a copy of another tag.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

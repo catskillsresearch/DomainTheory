@@ -1,6 +1,3 @@
-/-ai
-Scott's basepoint is the empty, already-terminated sequence, the left injection of the empty list into the type of finite or infinite sequences.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-The empty finite set of U-tokens is consistent.
-
-The numbered name theorem_83 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UCon_empty

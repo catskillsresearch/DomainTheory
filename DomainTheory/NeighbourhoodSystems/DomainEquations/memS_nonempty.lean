@@ -1,8 +1,3 @@
-/-ai
-If no neighbourhood of D is empty, then no neighbourhood of D-sharp is empty.
-
-Induction on the neighbourhood gives the three cases. The master is nonempty. A zero-copy is nonempty because the underlying neighbourhood of D is nonempty. A pair is nonempty because one of its sides is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

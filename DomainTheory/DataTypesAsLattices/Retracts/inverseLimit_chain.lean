@@ -1,8 +1,3 @@
-/-ai
-The coordinates of a coherent inverse-limit sequence for a Scott-continuous map form a chain: an earlier coordinate is contained in a later one.
-
-This is the chain monotonicity lemma applied to the successive inclusions of the coordinates.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

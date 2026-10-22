@@ -1,8 +1,3 @@
-/-ai
-The singleton of an atom is consistent.
-
-Stage zero is a witness. The atom projection equals that singleton, which is consistent by the singleton axiom of A, and the function-token projection is empty because an atom is not a function token.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

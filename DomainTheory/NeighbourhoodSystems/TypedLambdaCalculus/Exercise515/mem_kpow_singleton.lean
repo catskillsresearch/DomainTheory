@@ -1,8 +1,3 @@
-/-ai
-A point lies in the n-th power of the singleton of e if and only if it equals the n-th monoid power of e.
-
-The argument is induction on n. At zero, the zeroth power is the unit and the zeroth monoid power is the identity, so membership in the unit decides the claim. At a successor, membership in a product and the successor law for monoid powers reduce both directions to the inductive hypothesis on the second factor, using that the first factor of a singleton product is e.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

@@ -1,8 +1,3 @@
-/-ai
-Sending a function-space element to its approximable map and back returns the element.
-
-This is the right inverse law of the function-space equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

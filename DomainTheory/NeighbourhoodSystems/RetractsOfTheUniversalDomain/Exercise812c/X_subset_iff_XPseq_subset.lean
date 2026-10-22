@@ -1,8 +1,3 @@
-/-ai
-The enumerated set X i is contained in X j if and only if XPseq i is contained in XPseq j.
-
-Specialize the combined inclusion transfer to the even indices 2i and 2j. Intersecting with the masters does not change the sets, because X i lies in the master of the first system and XPseq i lies in the master of the second.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

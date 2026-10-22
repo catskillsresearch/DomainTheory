@@ -1,8 +1,3 @@
-/-ai
-A strict approximable map, viewed as a function-space element, is fixed by strict.
-
-Strictness means the map sends bottom to bottom. The approximable map associated with strict of that element agrees with the original map: at bottom both sides are bottom, and off bottom the strict application agrees with the original application and the filter round trip recovers the map. The other round trip then yields the fixed-point equation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

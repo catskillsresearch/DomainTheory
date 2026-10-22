@@ -1,8 +1,3 @@
-/-ai
-The basic neighbourhood of the first-system index of a Y half-step atom is always a genuine neighbourhood of the first system.
-
-Every basic neighbourhood of a computable presentation is genuine.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,8 +1,3 @@
-/-ai
-The tagging embedding sends a sum element to the pair of its tag with the pair of its two outputs.
-
-Unfold the nested pairing that defines the embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

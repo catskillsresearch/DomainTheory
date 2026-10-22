@@ -1,8 +1,3 @@
-/-ai
-A strict approximable map relates the master of its domain to a set exactly when that set is the master of its codomain.
-
-Strictness gives one direction. In the other direction the master clause of the map, rewritten along the equality, supplies the relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

@@ -1,6 +1,3 @@
-/-ai
-A finset of depth-well-formed lambda tokens bundled-entails a token when the finset of underlying raw tokens depth-entails the underlying raw token.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

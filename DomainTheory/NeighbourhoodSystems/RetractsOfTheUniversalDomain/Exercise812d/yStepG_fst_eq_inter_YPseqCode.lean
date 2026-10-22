@@ -1,8 +1,3 @@
-/-ai
-The true branch of the generalized Y-step, applied to the output of a generalized X-step at an arbitrary bit on the atom pair of an arbitrary history, has first component equal to that X-step's first component intersected with the neighbourhood coded by the Y-sequence at that depth.
-
-The length-n prefix of the history is encoded as a code below 4 to the n, and the atom pair depends only on that prefix. If the X-step's first component is empty, the split specification forces the true Y-branch to be empty, so both sides are empty. If it is nonempty, the atom pair is non-junk and its packed state presents the pair. A zero Y-atom junk code makes the X-sub-step and then the Y-sub-step correct, and the Y-atom index equals the intersection with the Y-sequence code. A junk code of 1 still leaves the X-sub-step non-junk, so the emptiness comes from the direct refinement; the true branch is empty, and so is its intersection with the Y-sequence code, because a member would be a non-junk Y-atom whose X-step piece is disjoint from the given component, either by differing bits at the same code or by disjoint atom-pair states at different codes.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

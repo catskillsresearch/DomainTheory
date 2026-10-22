@@ -1,8 +1,3 @@
-/-ai
-The folded intersection of a singleton index is the basis neighbourhood of that index.
-
-Folding a singleton cuts the neighbourhood with the master set, and the neighbourhood is contained in the master set, so the cut is the neighbourhood itself.
-ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

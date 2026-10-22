@@ -1,8 +1,3 @@
-/-ai
-If f and g are combinatory, then every value of their primitive-recursion environment is combinatory.
-
-Index 3 is the recursion operator, indices 4 and 5 are f and g, indices 6 and 7 are the unpairing combinators, and index 8 is the pairing combinator. Indices 0, 1, and 2, and every index at least 9, are bottom.
-ai-/
 module
 
 public import Mathlib.Computability.RE

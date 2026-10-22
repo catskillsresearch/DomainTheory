@@ -1,8 +1,3 @@
-/-ai
-Every partial recursive function of finitely many natural numbers has a very strict λ-definition: an approximable map from the universal argument domain to N that returns the function's value on total arguments, returns bottom where the function is undefined, and returns bottom on any argument-like input with bottom among its first coordinates.
-
-The numbered name theorem_56_full is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem56Full.partrec_lamDef

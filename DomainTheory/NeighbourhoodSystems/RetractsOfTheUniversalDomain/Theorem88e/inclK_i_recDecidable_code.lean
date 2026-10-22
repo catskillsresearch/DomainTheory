@@ -1,8 +1,3 @@
-/-ai
-Inclusion of the third base neighbourhood in the first, ignoring the middle index, is recursively decidable in the three indices.
-
-The rearrangement pairing the third component with the first is primitive recursive, and the base inclusion decider composed with it decides the predicate. The unpairing equations show that the composite is this inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

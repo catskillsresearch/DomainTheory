@@ -1,8 +1,3 @@
-/-ai
-The inner-state projection of a packed remainder-and-state pair is primitive recursive.
-
-It is the right projection of a natural-number pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

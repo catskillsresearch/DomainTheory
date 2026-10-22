@@ -1,8 +1,3 @@
-/-ai
-The packaged map subApprox is a retraction: its composite with itself equals itself.
-
-Antisymmetry gives the two inequalities. Each is the elementwise characterization of the order, and at every element the element map of the composite equals the element map of subApprox, so each direction of that equality is one inequality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

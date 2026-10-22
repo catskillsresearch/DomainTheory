@@ -1,8 +1,3 @@
-/-ai
-Pointwise negation sends neighbourhoods of T to neighbourhoods of T.
-
-By the trichotomy for neighbourhoods of T, the set is the master neighbourhood, zero, or one. Negation fixes the master neighbourhood, sends zero to one, and sends one to zero, and each of those is a neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

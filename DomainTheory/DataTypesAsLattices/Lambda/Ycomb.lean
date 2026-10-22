@@ -1,6 +1,3 @@
-/-ai
-Scott's equation (2.8) defines the combinator Y to be the graph of the map sending u to the application of omega(u) to itself.
-ai-/
 
 module
 

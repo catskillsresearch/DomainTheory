@@ -1,8 +1,3 @@
-/-ai
-The fresh bottom lies strictly below the lift of every element.
-
-It lies below that lift because the bottom is least. Equality would put the false-tagged master into the bottom, and a false-tagged set differs from the lift master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

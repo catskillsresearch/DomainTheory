@@ -1,0 +1,3 @@
+The total element determined by {1} does not lie below the total element determined by {0}.
+
+If it did, {1} would belong to the filter of {0}, so {1} would be the master or equal to {0}.

@@ -1,8 +1,3 @@
-/-ai
-Inserting a left-pair token into a finite set of tree tokens adjoins its inner token to the left pair projection.
-
-By extensionality and the membership characterization, membership in the inserted projection is equality of the corresponding left-pair tokens or membership of the left-pair token in the original set, set against equality of the inner tokens or membership in the original projection. Equality of left-pair tokens yields equality of the inner tokens by injectivity, equality of the inner tokens yields equality of left-pair tokens by substitution, and membership in the original set is common to both sides.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

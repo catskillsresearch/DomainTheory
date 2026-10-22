@@ -1,8 +1,3 @@
-/-ai
-Interleaving a tagged string (s, σ) with itself returns the doubled string of σ with the same tag s.
-
-Induction on σ. The empty case holds by reflexivity. For a cons, the cons-cons clause and the inductive hypothesis simplify the equation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

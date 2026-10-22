@@ -1,6 +1,3 @@
-/-ai
-Insertion into the finset of function-token pairs is left commutative. Comparing the two orders cases on both raw tokens and uses commutativity of finset insertion, or reflexivity when the two sides agree.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

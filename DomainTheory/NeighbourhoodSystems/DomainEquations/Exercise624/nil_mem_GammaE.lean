@@ -1,8 +1,3 @@
-/-ai
-The empty string belongs to Gamma_E.
-
-It belongs to the zeroth stage, hence to the union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

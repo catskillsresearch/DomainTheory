@@ -1,8 +1,3 @@
-/-ai
-Every natural number k satisfies k < 2^k.
-
-Proceed by induction on k. The zero case is immediate. For a successor, the inductive hypothesis gives k + 1 ≤ 2^k, and 2^k is strictly below 2^k + 2^k, which is 2^{k+1}.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

@@ -1,6 +1,3 @@
-/-ai
-The function space of the inverse limit is the space of Scott maps from that limit to itself.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

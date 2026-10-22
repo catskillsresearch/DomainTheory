@@ -1,6 +1,3 @@
-/-ai
-The environment retract is the graph of the map sending t to the graph of the map sending n to the application of the lambda retract to the application of t at n. Scott's formula (4.40) is λt. lamb ∘ seq(t).
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,8 +1,3 @@
-/-ai
-The found flag of the X-fold at stage N is 1 if and only if some index i below N has a non-junk half-step atom.
-
-The argument is induction on N. At zero the fold is the pair of zeros, so the flag is not 1 and no such i exists. At a successor the step is unfolded and the current atom is either non-junk or junk. If it is non-junk, the previous flag is 0 or 1, and in both cases the selected flag is 1, so N itself is the witness. If it is junk, the accumulator is unchanged, the inductive hypothesis moves the bound up by one, and the case i equal to N is impossible because that atom is junk.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

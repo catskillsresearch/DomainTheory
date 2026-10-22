@@ -1,6 +1,3 @@
-/-ai
-The typical 𝔊δ set is the singleton whose only element is ⊤.
-ai-/
 
 module
 

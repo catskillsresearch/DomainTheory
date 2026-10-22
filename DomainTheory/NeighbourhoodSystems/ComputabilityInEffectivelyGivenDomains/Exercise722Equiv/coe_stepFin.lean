@@ -1,8 +1,3 @@
-/-ai
-The underlying set of one finite step from a finite set of states equals the automaton's step set from the underlying set.
-
-Extend by a state and unfold the finite step as a bounded union of single-state steps. In both directions a source state, transported by the single-state coercion, matches membership in the step set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

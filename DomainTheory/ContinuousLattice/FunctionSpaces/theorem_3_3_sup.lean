@@ -1,6 +1,3 @@
-/-ai
-The binary join supplied by Scott's Theorem 3.3 is the pointwise join of two Scott maps, which is again Scott-continuous.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

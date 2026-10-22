@@ -1,6 +1,3 @@
-/-ai
-The greedy sequence at stage n is the first component of the state at that stage.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

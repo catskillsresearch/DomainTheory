@@ -1,6 +1,3 @@
-/-ai
-The fold step for the list-indexed enumeration returns the universal intersection of the packed accumulator with the enumerator applied to the packed list entry.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

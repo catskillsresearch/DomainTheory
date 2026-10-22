@@ -1,8 +1,3 @@
-/-ai
-If a finite set v is consistent in A, then the left sum lift of v is consistent in the separated sum of A and B.
-
-The left projection of the lift equals v, and the right projection of the lift is empty, so the left disjunct of sum consistency applies.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

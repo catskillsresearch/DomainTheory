@@ -1,8 +1,3 @@
-/-ai
-The family C is nonempty.
-
-It contains the graph of the constant approximable map whose value is the bottom neighbourhood of the second system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222

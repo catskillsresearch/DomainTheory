@@ -1,6 +1,3 @@
-/-ai
-The argument component of a natural number is the second component of its unpairing.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

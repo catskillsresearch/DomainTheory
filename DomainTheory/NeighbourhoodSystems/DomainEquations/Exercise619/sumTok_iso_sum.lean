@@ -1,8 +1,3 @@
-/-ai
-The concrete token sum of Exercise 6.19 is isomorphic, as a domain, to the abstract separated sum.
-
-The isomorphism is the order isomorphism between their elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

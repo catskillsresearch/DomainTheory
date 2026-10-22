@@ -1,6 +1,3 @@
-/-ai
-The intersection of a list of sets inside a base set is the base on the empty list, and on a cons it is the head intersected with the intersection of the tail. The empty intersection is the base, matching the convention that the empty intersection is the master neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-The filter step is primitive recursive.
-
-The clip code is primitive recursive, and selection on its nonempty test, between the successor of its pairing with zero and the constant zero, equals the filter step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

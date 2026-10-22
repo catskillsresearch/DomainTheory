@@ -1,8 +1,3 @@
-/-ai
-The structure map of a T-algebra, viewed as a raw approximable map, is strict.
-
-It is the strictness component of the algebra's structure morphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

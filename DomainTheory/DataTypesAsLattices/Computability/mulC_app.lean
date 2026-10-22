@@ -1,8 +1,3 @@
-/-ai
-Applying the multiplication combinator to x yields the primitive recursion of the numeral 0 at the step K applied to addition applied to x.
-
-Rewrite the definitions of multiplication and of primitive recursion by the composition identity for S and K, four times.
-ai-/
 module
 
 public import Mathlib.Computability.RE

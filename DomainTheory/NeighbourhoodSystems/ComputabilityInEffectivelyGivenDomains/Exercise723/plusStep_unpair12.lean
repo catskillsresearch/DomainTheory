@@ -1,8 +1,3 @@
-/-ai
-The outer-left, inner-right component of plusStep s equals the same component of s, which is the m component of the packed state.
-
-Unfold plusStep and cancel the pairings that expose that component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

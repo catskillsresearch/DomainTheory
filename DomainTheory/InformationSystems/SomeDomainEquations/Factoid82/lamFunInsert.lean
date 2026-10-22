@@ -1,6 +1,3 @@
-/-ai
-Function insertion sends a function token to insertion of its input-output pair, and sends the bottom token and every atom token to the identity on finite sets of such pairs.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

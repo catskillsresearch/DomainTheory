@@ -1,8 +1,3 @@
-/-ai
-The least filter containing a finitely consistent family approximates every filter that contains the family. The family of the three-token system is not finitely consistent.
-
-The numbered name example_118 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118.leastFilter_le

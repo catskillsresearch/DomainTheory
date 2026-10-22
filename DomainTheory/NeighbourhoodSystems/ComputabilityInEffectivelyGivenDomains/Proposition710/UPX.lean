@@ -1,6 +1,3 @@
-/-ai
-The union of down-sets indexed by a finite list of codes is the union, over the codes in the list, of the down-set of the neighbourhood named by that code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

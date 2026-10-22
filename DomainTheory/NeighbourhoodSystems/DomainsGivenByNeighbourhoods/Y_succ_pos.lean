@@ -1,8 +1,3 @@
-/-ai
-If the condition holds at stage n, the greedy sequence at the next stage equals the enumerated set at n + 1.
-
-Unfold the left side as the first component of the successor state, rewrite the successor state, and take the left branch of the conditional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

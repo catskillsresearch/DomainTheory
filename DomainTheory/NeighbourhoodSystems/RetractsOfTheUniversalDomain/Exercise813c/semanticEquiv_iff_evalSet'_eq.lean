@@ -1,8 +1,3 @@
-/-ai
-Two formulas are semantically equivalent if and only if they have the same Cantor-space evaluation.
-
-If they agree under every valuation, extending a point and rewriting membership by the bridge between Cantor-space evaluation and truth shows that the two evaluations contain the same points. Conversely, equality of the evaluations makes an arbitrary valuation lie in one evaluation if and only if it lies in the other. The bridge turns that into a comparison of truth values, and the four combinations of Boolean values give equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

@@ -1,0 +1,3 @@
+The composite of the map into the tree algebra of the fixed neighbourhood of a after the map out of it is the identity on that tree algebra, with no finitariness hypothesis on a.
+
+Unfold both maps and reassociate. Cancel the projection of the universal tree algebra after its embedding, replace the composite of the two functorial actions by the functorial action of the subsystem projection after the subsystem injection, and replace that action of the identity by the identity.

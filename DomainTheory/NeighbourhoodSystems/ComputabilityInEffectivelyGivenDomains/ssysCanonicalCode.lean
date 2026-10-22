@@ -1,6 +1,3 @@
-/-ai
-The canonical code of an index selects the stored code when the activity characteristic is on, and selects the Gödel code of sigma otherwise.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

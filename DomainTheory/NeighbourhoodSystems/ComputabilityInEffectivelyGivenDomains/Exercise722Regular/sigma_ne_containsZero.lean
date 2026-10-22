@@ -1,8 +1,3 @@
-/-ai
-The denotation of the expression sigma is distinct from the denotation of containsZero. The one-letter word whose entry is true lies in the former and not in the latter.
-
-If the denotations agreed, that word would belong to the denotation of sigma by mem_denote_sigma, and rewriting by the agreement would place it in the denotation of containsZero, which decide rejects.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

@@ -1,8 +1,3 @@
-/-ai
-If evaluation is recursively enumerable on codes of computable presentations of the function space, the domain, and the codomain, then the relation of papplyEval on the corresponding power-domain codes is recursively enumerable. Over computable presentations of the function space, the domain, and the codomain, papplyEval relates the power-domain neighbourhoods coded by three natural numbers if and only if every code in the first decoded list and every code in the second admit a code in the third such that evaluation relates the three presented neighbourhoods. For neighbourhoods X₀ and Y₀, papplyEval relates the upset of the step neighbourhood of functions sending X₀ into Y₀, the upset of X₀, and the upset of Y₀.
-
-The numbered name example_721 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise721.papplyEval_isComputable

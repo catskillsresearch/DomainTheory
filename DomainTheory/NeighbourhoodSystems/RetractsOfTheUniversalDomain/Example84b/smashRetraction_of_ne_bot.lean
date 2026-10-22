@@ -1,8 +1,3 @@
-/-ai
-If neither coordinate of z is bottom, smash of z equals z.
-
-A neighbourhood of the image is either the product master, which belongs to z, or a neighbourhood that already belongs to z. A neighbourhood of z is a product neighbourhood and falls under the clause for two non-bottom coordinates.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

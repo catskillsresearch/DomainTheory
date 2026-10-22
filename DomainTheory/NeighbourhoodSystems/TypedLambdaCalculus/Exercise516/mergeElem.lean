@@ -1,6 +1,3 @@
-/-ai
-Interleaving two tagged strings produces the element of the sequence domain whose tag and string are the two components of the interleaving value of those tags and strings.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

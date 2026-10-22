@@ -1,6 +1,3 @@
-/-ai
-The certificate evaluator, for the guard functions and the master index, is the course-of-values iteration of the certificate step built from those data.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

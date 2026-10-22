@@ -1,8 +1,3 @@
-/-ai
-For finitary projections, one lies below the other exactly when the fixed neighbourhood of the first is a subsystem of the fixed neighbourhood of the second.
-
-A finitary projection is fixed by the operation that sends a map to its finitary part, so the two maps are points of the subtype of maps fixed by that operation. The forward inequality is preserved by the order isomorphism of that subtype with the subsystems. In the reverse direction the subsystem inequality is an inequality of the images, the inverse isomorphism is monotone, and the two round trips restore the original maps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

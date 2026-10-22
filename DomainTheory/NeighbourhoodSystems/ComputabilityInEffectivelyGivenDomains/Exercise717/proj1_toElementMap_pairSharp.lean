@@ -1,8 +1,3 @@
-/-ai
-The second projection sends the sharp pairing of two elements to the second element.
-
-A neighbourhood of the image comes from a neighbourhood of the pairing. The master neighbourhood forces the target to be the master of the second element, since a paired embedding is not the master. A paired neighbourhood either again yields the master or, by injectivity of the paired embedding, has right-hand child taken from the second element, and upward closure applies. Conversely, a neighbourhood of the second element is reached from the paired embedding of the master neighbourhood with that neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Combinators77

@@ -1,8 +1,3 @@
-/-ai
-The consistency character of any fuel and any two codes is at most 1.
-
-The bound is the corresponding bound for the nonemptiness character.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,0 +1,1 @@
+Exercise 8.11's approximable map a from R to R is the map whose relation is Scott's relation on half-open intervals. Related sets are R-neighbourhoods, the master is related to itself by the endpoint clause r = s = 1, outputs are closed under intersection by the endpoint form of that clause, and the relation is monotone by comparing endpoints of nested intervals.

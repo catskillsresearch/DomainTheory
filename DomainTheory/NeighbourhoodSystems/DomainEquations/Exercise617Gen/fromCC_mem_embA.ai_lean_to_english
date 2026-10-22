@@ -1,0 +1,3 @@
+The element fromCC s contains the letter-prefixed copy of a neighbourhood X of the string system if and only if s contains the tagged copy of that letter and of X.
+
+Membership under fromCC is the whole token set, the singleton of the empty string, or some prefixed copy. The prefixed copy is neither the whole token set nor the empty-string singleton. If it equals another prefixed copy, the letter and the set agree because X is nonempty, so the tagged membership is the required one. Conversely, the prefixed-copy clause of the definition records that tagged membership.

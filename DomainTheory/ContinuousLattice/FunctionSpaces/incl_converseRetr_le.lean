@@ -1,8 +1,3 @@
-/-ai
-If a map i preserves arbitrary suprema, then i composed with the converse retraction of i lies below the identity. The converse retraction of x' is the supremum of the set of x with i x below x'.
-
-Preservation of suprema rewrites i of that supremum as the supremum of the image of the set, and every member of the image lies below x' by the defining inequality of the set.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

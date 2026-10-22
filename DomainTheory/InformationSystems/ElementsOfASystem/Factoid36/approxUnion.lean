@@ -1,6 +1,3 @@
-/-ai
-The approximation union of an element is the set of tokens that lie in the closure of some consistent finite set contained in the element.
-ai-/
 
 module
 

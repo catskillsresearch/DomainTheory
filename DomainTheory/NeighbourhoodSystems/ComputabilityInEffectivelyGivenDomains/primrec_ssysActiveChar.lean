@@ -1,8 +1,3 @@
-/-ai
-The activity characteristic of a coded index is primitive recursive.
-
-The map pairing one more than the second unpaired component with the first unpaired component is primitive recursive. Composing the primitive-recursive fuel-bounded decode characteristic and the primitive-recursive nonemptiness characteristic with that packing gives the two factors, and their bit product is the activity characteristic.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

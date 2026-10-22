@@ -1,8 +1,3 @@
-/-ai
-Factoid 4.1 states that one element lies below another if and only if their meet equals the smaller element.
-
-If the inequality holds, the meet lies below the smaller element by the left inequality, and every token of the smaller element lies in the larger one, hence in the intersection. If the meet equals the smaller element, the carriers agree, so a token of the smaller element lies in the intersection and therefore in the larger element.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33

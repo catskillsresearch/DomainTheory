@@ -1,8 +1,3 @@
-/-ai
-The closure of the empty consistent set of an information system is the bottom element. This is the empty-closure fact used for Scott's Proposition 7.4.
-
-Antisymmetry is used. A token entailed by the empty set is entailed by the singleton of the bottom token, because the empty set is entailed by that singleton. A token entailed by the singleton of the bottom token is entailed by the empty set, because the unique member of that singleton is the bottom token and the bottom token is entailed by the empty consistent set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint
@@ -12,16 +7,6 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 
 @[expose] public section
-
-/-!
-# Proposition 7.4 — Plotkin’s equational characterization of `fix`
-
-**Scott 1982, Proposition 7.4.** The least fixed-point operator is uniquely
-determined by:
-(i) `fix_A : (A → A) → A` for every system `A`;
-(ii) `fix(f) = f(fix(f))`;
-(iii) `h(fix_A(f)) = fix_B(g)` whenever `h ∘ f = g ∘ h` and `h(⊥_A) = ⊥_B`.
--/
 
 namespace DomainTheory.InformationSystems
 

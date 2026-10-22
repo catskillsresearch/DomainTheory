@@ -1,8 +1,3 @@
-/-ai
-A retract is idempotent on elements: applying it twice yields the same set as applying it once.
-
-Apply the retract equation at the argument and simplify composition.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

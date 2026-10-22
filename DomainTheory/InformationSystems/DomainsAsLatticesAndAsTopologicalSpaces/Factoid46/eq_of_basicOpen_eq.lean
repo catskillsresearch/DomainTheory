@@ -1,8 +1,3 @@
-/-ai
-Two elements that belong to exactly the same basic opens are equal.
-
-If a token belongs to the first element, that element lies in the basic open of the singleton of the token, hence so does the second element, and the token belongs to the second. The same argument with the elements exchanged gives the other inclusion.
-ai-/
 
 module
 

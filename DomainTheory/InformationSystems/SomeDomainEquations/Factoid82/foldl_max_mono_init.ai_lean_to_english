@@ -1,0 +1,3 @@
+Raising the initial value of the left fold that accumulates the maximum of the accumulator and the raw depth of each token raises the value of the fold.
+
+The proof inducts on the list, keeping both initial values general. The empty fold is the assumed inequality. A nonempty fold applies the inductive hypothesis to the two maxima, which preserve the inequality of the initial values.

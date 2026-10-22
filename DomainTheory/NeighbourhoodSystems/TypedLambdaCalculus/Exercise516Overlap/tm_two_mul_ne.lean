@@ -1,8 +1,3 @@
-/-ai
-An even-indexed Thue–Morse bit differs from its successor: the bit at twice x differs from the bit at twice x plus one.
-
-Rewrite by the even and odd recurrences, and case on the bit at x.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse

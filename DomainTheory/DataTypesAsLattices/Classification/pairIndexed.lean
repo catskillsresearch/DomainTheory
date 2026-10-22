@@ -1,6 +1,3 @@
-/-ai
-The pair-indexed packing of a sequence of maps at x is the set of codes of pairs (n, m) for which m belongs to the nth map applied to x.
-ai-/
 
 module
 

@@ -1,0 +1,3 @@
+Whenever some transferred neighbourhood sits inside the intersection of two transferred neighbourhoods, the transferred neighbourhood at the intersection index of the re-pointed presentation equals that intersection.
+
+The witness transfers, by the embedding rule twice, to a witness for the enumerated neighbourhoods. The intersection specification of the re-pointed presentation therefore equates the enumerated neighbourhood at the intersection index with the intersection of the two enumerated neighbourhoods. The corresponding index sets are equal, and the intersection-transfer lemma, using containment in the universe, pushes the equation to the transferred neighbourhoods.

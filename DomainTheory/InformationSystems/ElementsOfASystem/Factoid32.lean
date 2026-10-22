@@ -1,8 +1,3 @@
-/-ai
-Every element contains the bottom token.
-
-The numbered name theorem_32 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32.factoid_3_2

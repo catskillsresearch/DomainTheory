@@ -1,0 +1,3 @@
+The composite of the second embedding after the second projection lies below the identity on the product.
+
+On a pair, the composite returns the pair of bottom with the second component. That pair lies below the original pair because bottom lies below the first component and the second components agree.

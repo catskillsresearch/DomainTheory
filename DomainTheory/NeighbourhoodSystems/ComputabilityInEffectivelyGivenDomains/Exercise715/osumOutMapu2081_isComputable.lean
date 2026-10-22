@@ -1,8 +1,3 @@
-/-ai
-The coalesced right projection is a computable map from the coalesced-sum presentation to the Scott presentation of the right system.
-
-The relation holds exactly when the right part of the enumerated neighbourhood is contained in the target. On a proper right code the right part is the indexed right neighbourhood. On a proper left code or the master, the right part is the right master, and inclusion of the master is inclusion against an index of the master, which exists by surjectivity. The tag test, properness, and these inclusions are recursively decidable, so the relation is recursively decidable and hence recursively enumerable.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

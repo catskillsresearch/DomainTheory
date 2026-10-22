@@ -1,0 +1,3 @@
+If every neighbourhood of D is nonempty, then every neighbourhood of the lift of D is nonempty.
+
+A lift neighbourhood is the lift master or the false-tagged copy of a neighbourhood of D. The master contains the empty string. The false-tagged copy of a nonempty neighbourhood is nonempty.

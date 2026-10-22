@@ -1,6 +1,3 @@
-/-ai
-The bottom of the separated sum of two information systems is the bottom sum token, Scott's pair of the two bottoms.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

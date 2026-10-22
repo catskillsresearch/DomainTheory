@@ -1,8 +1,3 @@
-/-ai
-combinedδ at the index 2k+1 equals the second component of the k-th sign pair.
-
-Unfolding the definition, the index is odd, so the second branch of the conditional is taken, and dividing by two returns k.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

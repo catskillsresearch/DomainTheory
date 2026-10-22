@@ -1,0 +1,3 @@
+Every value of combinedY is contained in the master of D₁.
+
+The proof splits on the parity of the index. An even index equals twice its half, so the value is an XPseq set, already known to lie under the master. An odd index equals twice its half plus one, so the value is a set of the second enumeration, and every neighbourhood lies under the master.

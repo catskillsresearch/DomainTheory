@@ -1,8 +1,3 @@
-/-ai
-If two self-maps of the universal domain are finitary projections, then so are their sum, their product, and their arrow. The fixed elements of each combinator are order-isomorphic to the corresponding combinator of the fixed neighbourhoods.
-
-Pair the three finitary-projection theorems for the sum, the product, and the arrow.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

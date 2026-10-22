@@ -1,6 +1,3 @@
-/-ai
-The right curry of a morphism from the tensor product of A and Y into Z is a morphism from Y into the exponential of Z by A. It is the product curry of that morphism transported from a tensor hom to a map out of the product, which is Scott's curry after the swap.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

@@ -1,6 +1,3 @@
-/-ai
-This module gathers and re-exports the definitions for Scott 1976, §5, on closure operations and algebraic lattices: closures and isolated elements, the square pairing, products and sums of closures, the universe combinator and its step, and the representation of a closure, together with the supporting continuity, fixed-point, and expansiveness lemmas.
-ai-/
 
 module
 
@@ -42,12 +39,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representationDecode_enc
 public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_fixed
 
 @[expose] public section
-
-/-!
-# Scott 1976, §5 — closure operations and algebraic lattices
-
-Theorems 5.1–5.6 and the pairing used for products of closures.
--/
 
 namespace DomainTheory.DataTypesAsLattices
 

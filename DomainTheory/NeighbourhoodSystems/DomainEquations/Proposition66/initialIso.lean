@@ -1,6 +1,3 @@
-/-ai
-The isomorphism between the carriers of two initial algebras is the underlying map of the unique homomorphism from the first to the second, with inverse the underlying map of the unique homomorphism in the other direction. Each inverse law is obtained by applying the underlying-map operation to the identity law for the corresponding composite of homomorphisms.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

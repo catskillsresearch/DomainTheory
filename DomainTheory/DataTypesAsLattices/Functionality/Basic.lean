@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the definitions for Scott 1976, section 7, on restricted equivalences and functionality, Theorems 7.1 through 7.4: restricted equivalences and lambda terms, pairing and the finite type constructors, the iterators Z, the Plotkin and sigma constructions, and the clauses of the syntax-directed interpreter.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts
@@ -55,12 +52,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hcomb
 public import DomainTheory.DataTypesAsLattices.Functionality.pairElem_tag_ne
 
 @[expose] public section
-
-/-!
-# Scott 1976, §7 — restricted equivalences and functionality
-
-Theorems 7.1–7.4.
--/
 
 namespace DomainTheory.DataTypesAsLattices
 

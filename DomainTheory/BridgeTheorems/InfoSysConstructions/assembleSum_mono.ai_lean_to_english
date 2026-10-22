@@ -1,0 +1,3 @@
+Assembly of separated-sum codes is monotone.
+
+Bottom lies under every sum element, and a proper code does not lie under bottom. For two proper codes, the inequality reduces to an inequality of the disjoint sum. Left codes compare by monotonicity of the left inclusion, right codes by monotonicity of the right inclusion, and a left code does not lie under a right code or the other way around.

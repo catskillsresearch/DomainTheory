@@ -1,8 +1,3 @@
-/-ai
-The intersection of two Bδ sets is a Bδ set.
-
-Write the two sets as countable intersections of Boolean-open sets. The intersections of a set from the first family with a set from the second, indexed by unpairing a natural number into a pair, are Boolean open. An element lies in every such intersection precisely when it lies in every set of both families, by evaluating at the pairs (n, 0) and (0, m) and using that unpairing inverts pairing.
-ai-/
 
 module
 

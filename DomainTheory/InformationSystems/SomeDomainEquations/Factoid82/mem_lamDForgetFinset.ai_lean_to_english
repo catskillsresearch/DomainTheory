@@ -1,0 +1,3 @@
+A raw token lies in the forget-finset of a finite set of depth-well-formed lambda tokens if and only if some member has that raw value.
+
+Simplifying the definition of the forget-finset reduces the equivalence to the membership lemma for the right fold of forget-insertion.

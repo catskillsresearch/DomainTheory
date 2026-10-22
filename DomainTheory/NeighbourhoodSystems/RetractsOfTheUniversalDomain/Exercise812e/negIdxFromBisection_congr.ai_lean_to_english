@@ -1,0 +1,3 @@
+The neighbourhood presented by the negative bisection index depends only on the three presented sets.
+
+The two deciders are unchanged by the set equalities, and each is 0 or 1. When both are 0, the right-half congruence applies. In every other combination both sides present the middle neighbourhood.

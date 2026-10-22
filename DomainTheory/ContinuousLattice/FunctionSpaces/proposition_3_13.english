@@ -1,0 +1,35 @@
+The significance of the above result becomes clearer if we consider the connection between projections and subspaces. Let us write:
+
+$$D(j) = x \in D : j(x) = x.$$
+
+For $j \in J_D$, each $D(j)$ is a projection of $D$ onto a subspace. We show first that
+
+$$j \sqsubseteq k \quad \text{iff} \quad D(j) \subseteq D(k).$$
+
+Because if $j \sqsubseteq k$, then $j \sqsubseteq j \circ j \sqsubseteq k \circ j \sqsubseteq \mathrm{id} \circ j = j$. Therefore if $j(x) = x$, then $k(x) = k(j(x)) = j(x) = x$, which means that $D(j) \subseteq D(k)$. On the other hand, if $D(j) \subseteq D(k)$, then since $j(D) \subseteq D(j)$, we see that $k \circ j = j$, and so $j \sqsubseteq k \circ \mathrm{id} = k$. Hence $J_D$ is isomorphic to the partially ordered set of subspaces of $D$ that are projections. We thus conclude that these subspaces form a lattice. In fact, it is easy to show that
+
+$$D(j \sqcup k) = x \sqcup y : x \in D(j), y \in D(k).$$
+
+Similarly, if $S$ is a directed set of $J_D$, then $D(\bigsqcup S)$ is the $\bigsqcup$-closure in $D$ of the subset:
+
+$$\bigcup D(j) : j \in S.$$
+
+These are not very deep facts, but their proofs were very much facilitated by the introduction of $J_D$ and the utilization of the lattice structure of $[D \to D]$. Along the same line we can define for $j, k \in J_D$ a function $(j \to k) \in [D \to D] \to [D \to D]$ by the equation
+
+$$(j \to k)(f) = k \circ f \circ j.$$
+
+It is very easy to show that $(j \to k) \in J_{[D \to D]}$, that $(j \to k)$ is continuous in $j$ and $k$, and that $[D \to D](j \to k)$ is isomorphic to $[D(j) \to D(k)]$. There are many other interesting operations on projections corresponding to other constructs besides these. And, just as with $(j \to k)$, the operations are continuous. This makes it possible to prove existence theorems about subspaces by using results like the fixed-point theorem for continuous functions. It would be even nicer if $J_D$ turns out to be a continuous lattice itself, but as far as I can tell this is not likely to be the case.
+
+Before we turn to the iterated function-space construction by inverse limits, there are a couple of other connections between spaces and function spaces that are useful to know.
+
+**3.13 Proposition.** Every continuous lattice $D$ is a projection of its function space $[D \to D]$.
+
+**Proof:** Consider the following pair of mappings $\mathrm{con} : D \to [D \to D]$ and $\mathrm{min} : [D \to D] \to D$ where
+
+$$\mathrm{con}(x)(y) = x$$
+
+and
+
+$$\mathrm{min}(f) = f(\bot)$$
+
+for all $x, y \in D$ and $f \in [D \to D]$. They are obviously continuous. The map $\mathrm{con}$ matches every element of $D$ with the corresponding *constant* function in $[D \to D]$. The map $\mathrm{min}$ associates to every function in $[D \to D]$ its *minimum* value in the partial ordering. The proof that this pair forms a projection is trivial. $\square$

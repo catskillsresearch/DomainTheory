@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the system C is nonempty.
-
-A cone of a string contains that string, and a singleton of a string contains that string.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

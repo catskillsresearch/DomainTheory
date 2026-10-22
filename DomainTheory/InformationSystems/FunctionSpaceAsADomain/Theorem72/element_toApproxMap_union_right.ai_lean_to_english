@@ -1,0 +1,3 @@
+If a function-space element contains the tokens for one input and two outputs, then it contains the token for that input and the choice-free union of the two outputs.
+
+The two tokens form a consistent set in the element. Their input union is the input united with itself, hence the input, so function consistency yields consistency of the output union after commutativity. The same two-token set entails the combined token: each input is entailed by reflexivity and Proposition 2.3(iii), and the output union of the set commutes to the combined output, which is entailed by reflexivity. Closure of the element supplies the token.

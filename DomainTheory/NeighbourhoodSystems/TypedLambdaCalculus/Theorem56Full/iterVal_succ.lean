@@ -1,8 +1,3 @@
-/-ai
-The value of the next approximant of the search at a stack unfolds one search step, using the previous approximant as the continuation. It is the conditional on the zero test of the function at the stack, the head, and the previous approximant applied to the push of the successor of that head onto the tail.
-
-The next approximant is the search operator applied to the previous one, by writing approximants as iterates and using the successor law for iteration. Currying the body at the previous approximant and the stack, then rewriting by the definition of the operator and the application lemma for the body, gives the conditional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

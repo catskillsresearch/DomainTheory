@@ -1,8 +1,3 @@
-/-ai
-The union of down-sets of a cons list is the down-set of the head neighbourhood, united with the union of down-sets of the tail.
-
-By extensionality and the membership law for the union, a witnessing code in the cons list is either the head or a member of the tail, and conversely a member of either summand supplies a code in the cons list.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

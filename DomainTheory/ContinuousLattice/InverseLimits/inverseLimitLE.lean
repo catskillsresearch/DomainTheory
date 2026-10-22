@@ -1,6 +1,3 @@
-/-ai
-The coordinatewise order on compatible sequences holds when every coordinate of the first sequence lies below the corresponding coordinate of the second. The abbreviation is reducible, so it agrees definitionally with that pointwise relation.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

@@ -1,8 +1,3 @@
-/-ai
-If two self-maps of the universal domain are retractions, then so is their product combinator.
-
-Compare elements. The elementwise form of the product combinator, applied twice, the identity that the product extraction after the product injection is the identity, and the two component projections of a pair, reduce the claim to idempotence of each retraction on elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

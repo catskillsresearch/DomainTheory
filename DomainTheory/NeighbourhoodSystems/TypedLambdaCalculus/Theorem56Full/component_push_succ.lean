@@ -1,8 +1,3 @@
-/-ai
-The coordinate one past j of the stack obtained by pushing an element x onto a stack s equals the j-th coordinate of s.
-
-Rewrite the shifted component as the corresponding component of the tail, and use that the tail of a push is the original stack.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

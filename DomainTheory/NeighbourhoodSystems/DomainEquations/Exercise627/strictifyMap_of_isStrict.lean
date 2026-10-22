@@ -1,8 +1,3 @@
-/-ai
-Strictifying an approximable map that is already strict leaves the map unchanged.
-
-Compare relations. A strictified relation forgets the extra clause and is a relation of the original map. An original relation gains the clause: when the input equals the master, strictness forces the output to equal the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,6 +1,3 @@
-/-ai
-The intersection code of two indices is the second index when the first is 0, the first index when the second is 0, the common index when the two indices agree, and the junk value 3 otherwise. The first three clauses name the intersection of the corresponding enumerated neighbourhoods, and 3 marks the inconsistent intersection of the neighbourhoods zero and one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

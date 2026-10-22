@@ -1,8 +1,3 @@
-/-ai
-The master of the first system, cut by the combined X-code of i, is contained in the combined X-code of j if and only if the master of the second system, cut by the combined Y-code of i, is contained in the combined Y-code of j.
-
-The emptiness transfer, applied to the sign list that marks i positively and j negatively, at one more than the maximum of the two indices, equates nonemptiness of the corresponding master slices; each index lies strictly below that bound. Extensionality and propositional simplification identify each slice with the set difference of the cut master against the code of j. A difference is empty exactly when the inclusion holds, so negating both sides of the nonemptiness equivalence yields the two inclusions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

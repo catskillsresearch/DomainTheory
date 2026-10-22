@@ -1,25 +1,61 @@
 # Theorem 3.5
 
-**THEOREM 3.5 (The completeness theorem for definability).** *If a (total) extensional mapping $p$ is LAMBDA-definable, then there is a LAMBDA-definable $q$ such that $\mathbf{val}(p(n)) = q(\mathbf{val}(n))$ for all $n \in \omega$.*
+## Human-English
 
-Of course $q$ is uniquely determined (because the values of $q$ are given at least on the finite sets). Thus any attempt to define something *new* by means of some strange mapping on Gödel numbers is bound to fail as long as it is *effective* and *extensional*. The main part of the argument is concentrated on showing these mappings to be *continuous*; that is why $q$ exists.
+@import "1976_Theorem_3_5.english" {code_block=false}
 
-The preceding results indicate that the expected results on r.e. sets are forthcoming in a smooth and unified manner in this setting. Some knowledge of r.e. theory was presupposed, but analysis shows that the knowledge required is slight. The notion of primitive recursive functions should certainly be well understood together with standard examples. Partial functions need not be introduced separately since they are naturally incorporated into LAMBDA (the theory of multiple-valued functions). As a working definition of r.e. one can take either “empty or the range of a primitive recursive function” or, more uniformly, “a set of the form $\{m \mid \exists n.\, m + 1 = p(n)\}$ where $p$ is primitive recursive”. A few obvious closure properties of r.e. sets should then be proved, and then an adequate foundation for the discussion of LAMBDA will have been provided.
+## AI: Human-English to AI-Lean
 
-The point of introducing LAMBDA is that further closure properties are more easily expressed in a theory where equations can be variously interpreted as involving numbers, functionals, etc., without becoming too heavily involved in intricate Gödel numbering and encodings. Another useful feature of the present theory concerns the ease with which we can introduce *relative recursiveness*.
-As we have seen, $\{\mathbf{val}(n) \mid n \in \omega\}$ is an enumeration of all r.e. sets. Suppose we add a new set $a$ as a new constant. What are the sets enumerable in $a$? Answer: $\{\mathbf{val}(n)(a) \mid n \in \omega\}$, since in combinatory logic a parameter can always be factored out as an extra argument. Another way to put the point is this: for $b$ to be enumeration reducible to $a$ it is necessary and sufficient that $b = u(a)$ where $u \in \mathbf{RE}$. This is *word for word* the definition given by Rogers (1967, pp. 146–147). What we have done is to put the theory of enumeration operators (Friedberg–Rogers and Myhill–Shepherdson) into a general setting in which the language LAMBDA not only provides definitions but also the basis of a calculus for demonstrating properties of the operators defined. The algebraic style of this language throws a little light on the notion of enumeration degree. In the first place we can identify the degree of an element with the set of all objects reducible to it (rather than just those equivalent to it) and write
+**DataTypesAsLattices/Enumeration/theorem_3_5_case1.lean**
 
-$$\mathbf{Deg}(a) = \{u(a) \mid u \in \mathbf{RE}\}.$$
+@import "theorem_3_5_case1.lean"
 
-The set-theoretical inclusion is then the same as the partial ordering of degrees. What kind of a partially ordered set do we have?
+**DataTypesAsLattices/Enumeration/theorem_3_5_case2.lean**
 
-**Lean 4**
+@import "theorem_3_5_case2.lean"
 
-- [DataTypesAsLattices/Enumeration/theorem_3_5_case1.lean](theorem_3_5_case1.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5_case2.lean](theorem_3_5_case2.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5_of_realizer.lean](theorem_3_5_of_realizer.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5_q.lean](theorem_3_5_q.lean)
-- [DataTypesAsLattices/Enumeration/myhillQ_app.lean](myhillQ_app.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5.lean](theorem_3_5.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5_q_app.lean](theorem_3_5_q_app.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_5_unique.lean](theorem_3_5_unique.lean)
+**DataTypesAsLattices/Enumeration/theorem_3_5_of_realizer.lean**
+
+@import "theorem_3_5_of_realizer.lean"
+
+**DataTypesAsLattices/Enumeration/theorem_3_5_q.lean**
+
+@import "theorem_3_5_q.lean"
+
+**DataTypesAsLattices/Enumeration/myhillQ_app.lean**
+
+@import "myhillQ_app.lean"
+
+**DataTypesAsLattices/Enumeration/theorem_3_5.lean**
+
+@import "theorem_3_5.lean"
+
+**DataTypesAsLattices/Enumeration/theorem_3_5_q_app.lean**
+
+@import "theorem_3_5_q_app.lean"
+
+**DataTypesAsLattices/Enumeration/theorem_3_5_unique.lean**
+
+@import "theorem_3_5_unique.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_3_5_case1.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_5_case2.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_5_of_realizer.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_5_q.ai_lean_to_english" {code_block=false}
+
+@import "myhillQ_app.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_5.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_5_q_app.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_5_unique.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_3_5.ai_english_concordance" {code_block=false}

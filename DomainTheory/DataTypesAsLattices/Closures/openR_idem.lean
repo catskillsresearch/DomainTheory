@@ -1,8 +1,3 @@
-/-ai
-Applying the open retract twice to u equals applying it once.
-
-One inclusion unfolds both applications. A witness n for the outer code and a witness k for n compose by transitivity of inclusion of finite sets. The opposite inclusion is expansiveness of the open retract at the single application.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

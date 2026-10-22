@@ -1,0 +1,3 @@
+Scott's Proposition 7.4, uniqueness: an element that is fixed by an approximable endomap and lies below every pre-fixed point equals the least fixed point. The fixed-point equation is Plotkin's clause (ii), and leastness is the least-fixed-point property of Theorem 7.3.
+
+The fixed-point equality is turned into the pre-fixed-point inequality, and that inequality together with the leastness hypothesis is passed to the uniqueness lemma for the least fixed point.

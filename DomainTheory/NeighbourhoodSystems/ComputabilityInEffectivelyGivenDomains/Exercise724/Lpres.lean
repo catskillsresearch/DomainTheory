@@ -1,6 +1,3 @@
-/-ai
-The computable presentation of the neighbourhood system L enumerates neighbourhoods by Lenum. Membership and surjectivity are the enumeration lemmas for L, intersection equality and consistency are the two computable relations of that enumeration, the intersection operation is the primitive-recursive operation LenumInter with its specification, and the master index is 0.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

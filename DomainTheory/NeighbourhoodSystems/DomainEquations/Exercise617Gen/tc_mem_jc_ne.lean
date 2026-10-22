@@ -1,8 +1,3 @@
-/-ai
-A copy token at one letter does not lie in the copy of a set at a different letter.
-
-Membership would give equal copy tokens, and injectivity would force the letters to agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

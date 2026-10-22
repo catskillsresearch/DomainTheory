@@ -1,8 +1,3 @@
-/-ai
-The composite of the first embedding after the first projection lies below the identity on the product.
-
-On a pair, the composite returns the pair of the first component with bottom. That pair lies below the original pair because the first components agree and bottom lies below the second component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

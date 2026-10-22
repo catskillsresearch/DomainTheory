@@ -1,9 +1,19 @@
 # Corollary 1.6
 
-**1.6 Corollary.** The injective spaces are exactly the retracts of the Cartesian powers of $\mathbb{O}$.
+## Human-English
 
-**Proof:** Such a retract is injective by 1.4. If $D$ is injective, then it is (homeomorphic to) a subspace of a power of $\mathbb{O}$. But since $D$ is injective the identity function on the subspace to itself can be extended to the whole of the power of $\mathbb{O}$ providing the required retraction. $\square$
+@import "corollary_1_6.english" {code_block=false}
 
-**Lean 4**
+## AI: Human-English to AI-Lean
 
-- [ContinuousLattice/Injective/corollary_1_6.lean](corollary_1_6.lean)
+**ContinuousLattice/Injective/corollary_1_6.lean**
+
+@import "corollary_1_6.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "corollary_1_6.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "corollary_1_6.ai_english_concordance" {code_block=false}

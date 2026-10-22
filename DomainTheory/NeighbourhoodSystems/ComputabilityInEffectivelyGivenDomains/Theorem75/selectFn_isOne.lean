@@ -1,8 +1,3 @@
-/-ai
-Selection driven by isOne of a value returns the first branch when the value equals 1 and the second branch when it does not.
-
-If the value equals 1, then isOne of 1 equals 1 and selection on 1 returns the first branch. Otherwise isOne of the value is 0 or 1 because it is at most 1, and it cannot be 1, so it is 0, and selection on 0 returns the second branch.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

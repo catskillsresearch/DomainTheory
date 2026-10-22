@@ -1,8 +1,3 @@
-/-ai
-The n-th projection relates two sets exactly when both are neighbourhoods of the colimit and some neighbourhood of the n-th level lies between them.
-
-Unfolding the composite, an intermediate neighbourhood contributes the two inclusions and the two memberships in the colimit. In the other direction that same neighbourhood is the intermediate of the composite.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

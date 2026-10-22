@@ -1,13 +1,3 @@
-/-ai
-Bitwise conjunction satisfies the one-step recursion that the conjunction of two numbers
-equals twice the conjunction of their halves plus their low-bit conjunction.
-
-The quotient by two of the conjunction equals the conjunction of the quotients, because
-the two sides have the same test bits after shifting the index by one and using the
-test-bit law for conjunction. The low-bit conjunction equals the remainder of the
-conjunction modulo two. Rewriting the left side by division and remainder, and
-substituting those two identities, gives the recursion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

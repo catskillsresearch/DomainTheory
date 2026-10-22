@@ -1,7 +1,3 @@
-/-ai
-The body of the bounded existential for level-set nonemptiness sends a code of a bit
-index and a mask to the test of that bit of the mask.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

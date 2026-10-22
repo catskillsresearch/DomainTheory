@@ -1,6 +1,3 @@
-/-ai
-restrictFinPair cuts a sequence of Boolean pairs down to the finite initial segment of a given length, reading the sequence at the underlying index of each finite position.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

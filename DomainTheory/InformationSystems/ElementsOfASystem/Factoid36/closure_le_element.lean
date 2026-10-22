@@ -1,8 +1,3 @@
-/-ai
-The closure of a consistent finite set contained in an element lies below that element.
-
-Deductive closure of the element applies the entailment that defines membership in the closure.
-ai-/
 
 module
 

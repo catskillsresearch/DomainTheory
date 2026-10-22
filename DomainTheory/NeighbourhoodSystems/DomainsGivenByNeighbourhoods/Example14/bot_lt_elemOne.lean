@@ -1,8 +1,3 @@
-/-ai
-The bottom element is strictly below the partial element at node 1.
-
-Every neighbourhood of the bottom element is the master neighbourhood, which belongs to the partial element. The two elements are unequal because the right branch belongs to the partial element and is distinct from the master neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

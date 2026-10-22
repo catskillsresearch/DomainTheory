@@ -1,8 +1,3 @@
-/-ai
-The left projection of the right sum lift of a finite set of tokens of B is empty.
-
-By extensionality, a member of the left projection would be a token of the lift equal to a left constructor, which the membership characterization of the right lift excludes, and the empty set contributes no members.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

@@ -1,8 +1,3 @@
-/-ai
-A rational pair lies in the list decoded from a canonical list code if and only if it is the nondegenerate clip of some pair decoded from the original code. The canonical list code realizes the clip-and-filter pass.
-
-Unfold the list code and rewrite membership through the flat map. A witness code has second component in the filter step, hence equal to the nondegenerate clip of its decoded pair, and that decoded pair lies in the original list. Conversely, a source pair is the decoding of some code in the original list, and that code's second component lies in the filter step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

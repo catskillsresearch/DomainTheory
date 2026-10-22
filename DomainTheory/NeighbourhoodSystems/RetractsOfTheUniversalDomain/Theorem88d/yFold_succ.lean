@@ -1,8 +1,3 @@
-/-ai
-The depth-n union fold at a successor count is one fold step applied to the depth, the previous count, and the previous accumulator.
-
-The proof is the recursion equation of the fold.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

@@ -1,0 +1,1 @@
+The choice-free binary union of finite sets u and v is the fold of insertion over the underlying multiset of v, starting from u. It has the same elements as the ordinary union and does not depend on classical choice.

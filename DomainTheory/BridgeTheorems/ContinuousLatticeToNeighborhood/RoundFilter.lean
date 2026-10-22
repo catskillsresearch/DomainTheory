@@ -1,6 +1,3 @@
-/-ai
-Assuming a complete lattice D is a continuous lattice, a round filter is a filter of its way-below neighbourhood system that is round.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

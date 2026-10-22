@@ -1,8 +1,3 @@
-/-ai
-Extracting the packed atom state from a step input is primitive recursive.
-
-It is two successive right projections.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

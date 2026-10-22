@@ -1,6 +1,3 @@
-/-ai
-The Thue–Morse bit at n is the parity of the number of ones in the binary expansion of n, the right fold of exclusive or over the binary digits of n, starting from false.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

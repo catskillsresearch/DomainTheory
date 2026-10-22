@@ -1,6 +1,3 @@
-/-ai
-The pairing function sends natural numbers n and m to the triangular number of n + m, plus m.
-ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

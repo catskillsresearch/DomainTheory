@@ -1,0 +1,3 @@
+The map sending a triply paired code to the first-system index of the Y half-step atom at its three components is primitive recursive.
+
+That index is the first index of the half-step atom state. Composing the primitive-recursive first-index projection with the primitive-recursive atom-state map, and identifying the result by reflexivity, gives the claim.

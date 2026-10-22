@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (3.15): applying the bar combinator to u yields the graph of the bar step body at the bar combinator and u.
-
-The fixed-point theorem says that the Scott-continuous bar step fixes the bar combinator. The application law for the bar step at the bar combinator and u then rewrites by that fixed-point equation.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

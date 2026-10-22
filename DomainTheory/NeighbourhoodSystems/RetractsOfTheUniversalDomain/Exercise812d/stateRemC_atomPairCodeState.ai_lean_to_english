@@ -1,0 +1,3 @@
+The unconsumed remainder of the atom-pair code state at the pair of a bit-source k and a depth n is k divided by 4 to the power n.
+
+At depth 0 the code state is the base state, and the claim simplifies. At a successor depth, the successor clause, unfolded through the atom-pair step and the word projections, reduces the remainder to the previous remainder divided once more. The inductive hypothesis and the rule for iterated division give division by 4 to the successor power.

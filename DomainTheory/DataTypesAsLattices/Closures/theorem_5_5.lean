@@ -1,8 +1,3 @@
-/-ai
-Scott's theorem on the universe operator says that, on a closure, the operator agrees with the closure on every argument and is idempotent on those values.
-
-The agreement is the equation that the universe operator fixes closures on values, and the idempotence is the corresponding idempotence equation.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

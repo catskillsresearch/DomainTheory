@@ -1,8 +1,3 @@
-/-ai
-Each of the first three terms of the triple sequence belongs to the family.
-
-Membership in the family is a three-way disjunction of equalities. The index is zero, one, or two, and each case matches the corresponding disjunct.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

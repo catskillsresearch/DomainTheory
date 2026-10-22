@@ -1,8 +1,3 @@
-/-ai
-The half-open unit interval lies in the universal family.
-
-It is presented by the one-element list whose pair is the endpoints zero and one, after the cons and nil identities. Zero witnesses nonemptiness, and the set is contained in itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

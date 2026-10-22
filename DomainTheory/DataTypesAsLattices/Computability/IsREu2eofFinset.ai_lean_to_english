@@ -1,0 +1,3 @@
+Every finite set of natural numbers is recursively enumerable.
+
+The proof is by induction on the finite set. The empty set is the bottom element, which is recursively enumerable. Inserting a number is the union of the singleton of that number with the remaining finite set, and both the singleton and the remaining set are recursively enumerable, so their union is.

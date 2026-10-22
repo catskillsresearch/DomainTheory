@@ -1,8 +1,3 @@
-/-ai
-The cut set of an element x is nonempty.
-
-The master of R is [0, 1), which belongs to x, so the real 1 lies in the cut set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

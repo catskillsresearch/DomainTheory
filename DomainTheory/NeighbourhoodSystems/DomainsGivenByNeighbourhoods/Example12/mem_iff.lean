@@ -1,8 +1,3 @@
-/-ai
-A set is a neighbourhood of Example 1.2 if and only if it is the master, {0}, or {1}.
-
-Membership in the three-element set of neighbourhoods splits into those three equalities, and each of those three sets belongs to the set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

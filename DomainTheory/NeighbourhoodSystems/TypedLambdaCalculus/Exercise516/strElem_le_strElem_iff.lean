@@ -1,8 +1,3 @@
-/-ai
-The total element of σ lies below the total element of τ if and only if σ equals τ.
-
-Rewrite the order as the principal order. Containment of singletons is membership of the first string in the second singleton, and commuting the equality gives equality of the strings.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

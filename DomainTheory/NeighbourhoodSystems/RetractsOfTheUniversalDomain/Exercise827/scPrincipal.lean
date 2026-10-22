@@ -1,6 +1,3 @@
-/-ai
-The principal element of a member of the self-consistent family of t is the principal element of that neighbourhood, using that the neighbourhood lies in t.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

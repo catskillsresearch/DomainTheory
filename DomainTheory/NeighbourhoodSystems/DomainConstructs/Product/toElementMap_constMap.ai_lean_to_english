@@ -1,0 +1,3 @@
+The value of the constant map at an element b, at any input, is b.
+
+The two elements contain the same neighbourhoods. A neighbourhood of the constant value is a neighbourhood of b. Conversely, the master neighbourhood of the input belongs to every element and witnesses that a neighbourhood of b belongs to the constant value.

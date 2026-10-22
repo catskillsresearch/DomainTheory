@@ -1,8 +1,3 @@
-/-ai
-The n-th component of the iterate element determined by a sequence is the n-th term of the sequence.
-
-By element extensionality, membership in the component gives a fiber condition at n, and the n-th fiber of the pinning is the neighbourhood itself. Conversely, the term contains the neighbourhood, the pinning is an iterate neighbourhood, and the fiber check holds at n by that neighbourhood and at every other index because the fiber is the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

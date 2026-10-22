@@ -1,8 +1,3 @@
-/-ai
-Each level of the tower is a subsystem of the next level.
-
-The zero step is the comparison of the generator with its image. The successor step applies monotonicity of the grammar expression on subsystems to the inductive comparison.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

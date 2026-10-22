@@ -1,35 +1,31 @@
 # Theorem 6.4
 
-**THEOREM 6.4 (The $\mathfrak{F} \dot{\cap} \mathfrak{G}$ theorem).** *The sets that are intersections of closed sets with open sets are exactly the sets of the form:*
+## Human-English
 
-$$\{x \mid f(x) = 0\},$$
+@import "1976_Theorem_6_4.english" {code_block=false}
 
-*where $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is continuous.*
+## AI: Human-English to AI-Lean
 
-Again it may not be obvious that every $\mathfrak{F} \dot{\cap} \mathfrak{G}$ set has this form. We can write:
+**DataTypesAsLattices/Classification/theorem_6_4.lean**
 
-$$C = \{x \mid f(x) = \bot\},$$
+@import "theorem_6_4.lean"
 
-and
+**DataTypesAsLattices/Classification/typicalFcapG_isFcapG.lean**
 
-$$U = \{x \mid g(x) = 0\},$$
+@import "typicalFcapG_isFcapG.lean"
 
-where $C \in \mathfrak{F}$ and $U \in \mathfrak{G}$ and the continuous $f$ and $g$ are suitably chosen. Define
+**DataTypesAsLattices/Classification/typicalFcapG_universal.lean**
 
-$$h(x) = \{2n + 1 \mid n \in f(x)\} \cup \{2n \mid n \in g(x)\},$$
+@import "typicalFcapG_universal.lean"
 
-and remark that $h$ is continuous. We have:
+## AI: AI-Lean to AI-English
 
-$$C \cap U = \{x \mid h(x) = 0\},$$
+@import "theorem_6_4.ai_lean_to_english" {code_block=false}
 
-as desired.
+@import "typicalFcapG_isFcapG.ai_lean_to_english" {code_block=false}
 
-It is easy to see that $\{e\} \in \mathfrak{F} \dot{\cap} \mathfrak{G}$ if $e$ is finite, but in general $\{a\} \notin \mathfrak{F} \dot{\cap} \mathfrak{G}_\delta$.
+@import "typicalFcapG_universal.ai_lean_to_english" {code_block=false}
 
-In case $a$ is infinite but not equal to $\top$ (say, $a = \{n \mid n > 0\} = \top + 1$), then $\{a\}$ is typical in its class.
+## AI: AI-English to Human-English Concordance
 
-**Lean 4**
-
-- [DataTypesAsLattices/Classification/theorem_6_4.lean](theorem_6_4.lean)
-- [DataTypesAsLattices/Classification/typicalFcapG_isFcapG.lean](typicalFcapG_isFcapG.lean)
-- [DataTypesAsLattices/Classification/typicalFcapG_universal.lean](typicalFcapG_universal.lean)
+@import "1976_Theorem_6_4.ai_english_concordance" {code_block=false}

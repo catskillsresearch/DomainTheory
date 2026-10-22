@@ -1,8 +1,3 @@
-/-ai
-Decoding the left fold that takes rational maxima of an accumulator with the second components of a list of codes equals the left fold of the maximum of the second components of the decoded pairs, started at the decoded seed.
-
-Induct on the list, generalizing the seed. The empty list is reflexive. For a cons cell, rewrite both folds and the mapped list by the cons equations, apply the inductive hypothesis, and rewrite by decoding of the rational maximum.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

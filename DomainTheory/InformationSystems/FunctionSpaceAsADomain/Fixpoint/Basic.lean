@@ -1,8 +1,3 @@
-/-ai
-A function token that belongs to a finite set contained in the element corresponding to an approximable endomap f lies in the relation of f.
-
-Membership of a function token in that element is the relation of f, so the subset hypothesis gives the relation.
-ai-/
 
 module
 
@@ -26,17 +21,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fi
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mem_approxMap_toElement
 @[expose] public section
-
-/-!
-# Least fixed-point operator — Theorem 7.3
-
-**Scott 1982, Theorem 7.3.** Unique approximable `fix : (A → A) → A` such that
-for every approximable `f : A → A`:
-(ii) `f(fix(f)) ⊆ fix(f)` (in fact equality);
-(iii) if `f(x) ⊆ x` then `fix(f) ⊆ x`.
-
-`w (fix) v` means some `w`-chain from `∅` reaches a set that entails `v`.
--/
 
 namespace DomainTheory.InformationSystems
 

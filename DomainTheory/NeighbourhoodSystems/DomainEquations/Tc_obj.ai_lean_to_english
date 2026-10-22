@@ -1,0 +1,3 @@
+The object part of this endofunctor sends a strict domain to the three-way sum of the unit domain with that domain and itself.
+
+The equality is definitional.

@@ -1,8 +1,3 @@
-/-ai
-The term-algebra enumeration at the master code is the master neighbourhood of the subsystem.
-
-Evaluation of the master code is the master index of the universal domain, and the universal neighbourhood of that index is the master neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

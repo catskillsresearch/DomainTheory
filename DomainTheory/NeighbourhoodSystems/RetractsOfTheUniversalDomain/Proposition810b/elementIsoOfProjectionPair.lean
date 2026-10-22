@@ -1,6 +1,3 @@
-/-ai
-An approximable injection i from a neighbourhood system D into a neighbourhood system E, together with an extraction j such that j after i is the identity of D, and a self-map g of E equal to i after j, determine an order isomorphism from the elements of D onto the elements of E fixed by g. The forward map sends an element to its image under i, which is fixed because j after i is the identity. The inverse applies j. The two round trips are the elementwise forms of j after i and of i after j. The forward map reflects the order because j is monotone and j after i is the identity, and it preserves the order because i is monotone.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

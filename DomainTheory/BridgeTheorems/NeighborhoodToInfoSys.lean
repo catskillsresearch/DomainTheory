@@ -1,6 +1,3 @@
-/-ai
-Given a neighbourhood system presented by a decidable index of its neighbourhoods, the tokens of the induced information system are those indices. A finite set of indices is consistent when the finite intersection of the corresponding neighbourhoods belongs to the neighbourhood family, with the empty intersection taken to be the master set, and the set entails an index when that intersection is a neighbourhood contained in the neighbourhood of the index. The abbreviation neighborhoodSystem_to_infoSys names this information system. Its domain is order-isomorphic to the original filter domain.
-ai-/
 module
 
 public import Mathlib.Data.Finset.Fold
@@ -31,20 +28,6 @@ public import DomainTheory.BridgeTheorems.ofElement_toElement
 
 @[expose] public section
 
-/-!
-# Neighbourhood systems → information systems (1980 → 1982)
-
-Scott (1982) notes that neighbourhood systems and information systems are equivalent
-in a precise sense. This module realises one direction: given a neighbourhood system
-presented with a **decidable index of its neighbourhoods** (a constructive coding of
-`𝒟`), build an information system on those indices whose domain is order-isomorphic
-to the original filter domain.
-
-Tokens of the information system are indices of neighbourhoods; consistency is
-membership of the finite intersection in `𝒟` (Scott’s empty intersection = `Δ`);
-entailment is “the intersection is a neighbourhood and is contained in the target.”
--/
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.NeighbourhoodSystems
@@ -54,9 +37,6 @@ open DomainTheory.InformationSystems
 namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)
-
-
-/-! ## Domain isomorphism -/
 
 
 end NbhdBasis

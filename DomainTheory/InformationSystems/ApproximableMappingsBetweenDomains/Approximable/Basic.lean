@@ -1,8 +1,3 @@
-/-ai
-A token belongs to the image of an element under an approximable mapping if and only if some finite set of tokens contained in the element is related to the singleton of that token.
-
-The two sides are the same membership condition in the carrier of the image, so the equivalence is definitional.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
@@ -14,13 +9,6 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.exists_rel_of_subset_image
 
 @[expose] public section
-
-/-!
-# Approximable mappings — Definitions 5.1 and 5.2
-
-Adapted from the PRG-19 approximable-map pattern, rewritten for Scott 1982
-information systems (relations on `Con × Con`).
--/
 
 namespace DomainTheory.InformationSystems
 

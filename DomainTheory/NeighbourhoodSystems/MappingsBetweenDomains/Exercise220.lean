@@ -1,8 +1,3 @@
-/-ai
-The set represented by the union of two elements is the union of the sets they represent.
-
-The numbered name example_220 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise220.toSet_unionMap

@@ -1,6 +1,3 @@
-/-ai
-The subtree of a total tree selected by a word σ sends each continuation τ to the label of the original tree at σ appended to τ.
-ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

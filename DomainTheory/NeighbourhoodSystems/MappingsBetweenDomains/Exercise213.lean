@@ -1,8 +1,3 @@
-/-ai
-The elementwise function of an approximable mapping is continuous. For a continuous function and an element, a neighbourhood belongs to the image exactly when it belongs to the image of the principal element of some neighbourhood of the element. The approximable mapping determined by a continuous function induces that same function on elements.
-
-The numbered name example_213 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213.continuous_toElementMap

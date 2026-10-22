@@ -1,6 +1,3 @@
-/-ai
-Left insertion of a sum token into a finite set of elements of the left summand inserts the underlying element when the token is a left token, and acts as the identity when the token is a right token or the sum bottom.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

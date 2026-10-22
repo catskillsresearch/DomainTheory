@@ -1,8 +1,3 @@
-/-ai
-Level 0 of the function-space tower is definitionally the carrier of the starting lattice.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

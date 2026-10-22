@@ -1,6 +1,3 @@
-/-ai
-The language of a total tree is the set of words that the tree labels true, equivalently the set of selectors that land on a positive node.
-ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

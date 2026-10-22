@@ -1,8 +1,3 @@
-/-ai
-If no enumerated neighbourhood is contained in the intersection of the neighbourhoods coded by a and by b, then the intersection of their down-sets is empty.
-
-Rewrite the intersection of the down-sets by the down-set intersection law. A neighbourhood in both down-sets would be a neighbourhood contained in that intersection. Surjectivity of the enumeration supplies a code for it, and rewriting by that equality puts the corresponding enumerated neighbourhood inside the intersection, contradicting the hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

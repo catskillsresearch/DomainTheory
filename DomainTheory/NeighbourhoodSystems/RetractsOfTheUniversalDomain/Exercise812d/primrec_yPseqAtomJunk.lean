@@ -1,8 +1,3 @@
-/-ai
-The map sending a triply paired code to the junk flag of the Y half-step atom at its three components is primitive recursive.
-
-That flag is the junk component of the half-step atom state. Composing the primitive-recursive junk projection with the primitive-recursive atom-state map, and identifying the result by reflexivity, gives the claim.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

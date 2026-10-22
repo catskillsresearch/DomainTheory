@@ -1,0 +1,1 @@
+The token map gTok sends sets p and q to the empty string inserted into the union of the false-bit embedding of p and the true-bit embedding of q. For the singleton systems on p and q, that tagged union is the token set of their sum, and it is also the master shape of their product.

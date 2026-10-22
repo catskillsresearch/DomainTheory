@@ -1,8 +1,3 @@
-/-ai
-Let c be a code for the partial function that asserts membership in an element x of Pω and returns 0. Then the finite set coded by n is contained in x if and only if some stage s has, for every k < n, either bit k of n unset or the stage-s evaluation of c at k defined.
-
-From the inclusion, each set bit k below n has, by completeness of the bounded evaluator, a stage at which the code returns 0, and the supremum of those stages over k < n serves for every such bit, while an unset bit is recorded directly. Conversely, an element of the finite set has a set bit below n, so the bounded evaluation is defined at the given stage. Soundness places the value in the evaluation of the code, whose equation asserts membership in x.
-ai-/
 module
 
 public import Mathlib.Computability.RE

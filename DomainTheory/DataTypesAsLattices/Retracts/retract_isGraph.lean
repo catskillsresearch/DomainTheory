@@ -1,8 +1,3 @@
-/-ai
-A retract equals the graph of its own application.
-
-A code pair in the graph has its value in the application to the corresponding finite set. The retract equation rewrites the retract as the graph of the double application, and idempotence puts the value in that double application, so the pair lies in the retract. The other inclusion is the second clause of Theorem 1.2.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,6 +1,3 @@
-/-ai
-The evaluation of a formula as a set of natural numbers sends a variable to the corresponding generator, falsehood to the empty set, truth to every natural number, negation to the complement, conjunction to the intersection, and disjunction to the union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

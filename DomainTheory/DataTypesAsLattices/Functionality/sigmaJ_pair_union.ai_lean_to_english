@@ -1,0 +1,3 @@
+If j and j' are distinct, then σ_j of the union of the singleton of the code of (j, m) and the singleton of the code of (j', m) is the singleton of the code of (j, m + 1).
+
+Extensionality. A witness from the first singleton forces the index to be m, hence the element to be the successor code. A witness from the second singleton forces j = j' by injectivity of pairing, which is excluded. The successor code itself is recovered from the first singleton at the index m.

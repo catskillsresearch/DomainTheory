@@ -1,9 +1,3 @@
-/-ai
-The joint upsampling step equals the pairing of the successor of the level component
-with the one-step upsampling of the mask component.
-
-The equation is definitional, so rewriting replaces a single outer occurrence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

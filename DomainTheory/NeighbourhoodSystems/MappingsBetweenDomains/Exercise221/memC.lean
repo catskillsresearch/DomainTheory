@@ -1,6 +1,3 @@
-/-ai
-A set of finite binary strings satisfies memC when it is the cone of some string or the singleton of some string.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

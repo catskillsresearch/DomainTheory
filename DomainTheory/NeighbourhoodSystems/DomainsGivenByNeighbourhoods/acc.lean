@@ -1,6 +1,3 @@
-/-ai
-The running intersection at stage n is the second component of the state at that stage.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

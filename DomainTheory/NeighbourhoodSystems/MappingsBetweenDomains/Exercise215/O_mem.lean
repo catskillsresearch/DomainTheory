@@ -1,8 +1,3 @@
-/-ai
-A set of a one-element type is a neighbourhood of O if and only if it satisfies memO.
-
-The two sides are definitionally the same proposition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

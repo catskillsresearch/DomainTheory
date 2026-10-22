@@ -1,6 +1,3 @@
-/-ai
-Clipping a rational pair into the half-open unit interval replaces its left endpoint by the maximum with zero and its right endpoint by the minimum with one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

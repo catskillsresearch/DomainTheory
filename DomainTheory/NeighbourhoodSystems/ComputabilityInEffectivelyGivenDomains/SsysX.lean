@@ -1,6 +1,3 @@
-/-ai
-The enumeration of Definition 7.1 sends an index to the denotation of the S-expression decoded from that index when the denotation is decided nonempty, and otherwise, including on codes that do not decode, to the default neighbourhood, the set of all bit lists. Every index therefore names a member of the positive system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-If a and c are distinct letters, the image of an element under the successor map that prepends a does not contain the c-prefixed copy of any set of strings.
-
-A witnessing neighbourhood of the relation is nonempty, so it contains some string. Rewriting the inclusion as an inclusion of prefixed copies puts the a-prefixed form of that string into the c-prefixed copy, so the string begins with both letters, and those letters agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

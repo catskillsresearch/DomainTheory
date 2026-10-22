@@ -1,8 +1,3 @@
-/-ai
-A rational pair lies in a decoded list if and only if it is the decoding of some entry of the decoded code.
-
-Unfold the decoding, rewrite by membership in a mapped list, and commute the equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

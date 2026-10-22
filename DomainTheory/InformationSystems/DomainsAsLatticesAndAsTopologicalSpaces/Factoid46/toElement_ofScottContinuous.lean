@@ -1,8 +1,3 @@
-/-ai
-The element map of the approximable relation induced by a Scott-continuous map agrees with that map.
-
-A token of the induced element comes from a finite input contained in the argument whose closure is sent into the value, and monotonicity of the Scott-continuous map puts the token in the value. In the other direction, algebraicity writes the argument as the directed supremum of its finite approximants, so the value is the directed supremum of their images. A token of the value therefore lies in the image of the closure of some consistent finite set contained in the argument, and that set is related to the singleton of the token.
-ai-/
 
 module
 

@@ -1,8 +1,3 @@
-/-ai
-The conditional at true returns the first argument. The conditional at bottom returns bottom. The conditional at false returns the second argument.
-
-The numbered name example_326 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326.cond_true

@@ -1,0 +1,3 @@
+Composing the identity map on the left with an approximable map returns the original map.
+
+Extensionality of the relation splits the equality. A composite witness is an inclusion of the intermediate neighbourhood in the output, and monotonicity enlarges the output of the map along that inclusion. In the other direction the output neighbourhood itself is an identity witness.

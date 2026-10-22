@@ -1,8 +1,3 @@
-/-ai
-The binary join relates neighbourhoods X and Y to a power-domain neighbourhood W if and only if the binary finite join of the two principal elements contains W.
-
-The relation is the conjunction of the two singleton relations. Each singleton relation is membership of W in the singleton of the corresponding principal element, and the binary intersection law says that the join contains W if and only if both singletons do. Both directions rewrite by these two facts.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

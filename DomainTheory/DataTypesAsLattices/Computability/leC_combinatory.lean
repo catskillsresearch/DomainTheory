@@ -1,8 +1,3 @@
-/-ai
-The comparison combinator is combinatory.
-
-It is built by applying S and K to the zero test and the subtraction combinator.
-ai-/
 module
 
 public import Mathlib.Computability.RE

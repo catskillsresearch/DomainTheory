@@ -1,8 +1,3 @@
-/-ai
-Two natural numbers strictly below two to the power n that agree on every bit below n are equal.
-
-Compare test bits. Below n the bit predicates agree. At and above n both numbers lie below two to that power, because they lie below two to the power n and the exponential is monotone, so both test bits are false.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

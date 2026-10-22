@@ -1,8 +1,3 @@
-/-ai
-The zero test sends bottom to the bottom of the truth domain.
-
-This is the strictness rule of the constant lift, applied to the zero table.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,6 +1,3 @@
-/-ai
-The extended functor-expression algebra has six constructors: a constant Scott system, the identity variable, and binary separated sum, separated product, coalesced sum, and smash product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

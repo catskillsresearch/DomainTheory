@@ -1,6 +1,3 @@
-/-ai
-A neighbourhood system D is a subsystem of a neighbourhood system E when the two systems have the same master neighbourhood, every neighbourhood of D is a neighbourhood of E, and the intersection of two neighbourhoods of D is a neighbourhood of D whenever it is a neighbourhood of E.
-ai-/
 module
 
 

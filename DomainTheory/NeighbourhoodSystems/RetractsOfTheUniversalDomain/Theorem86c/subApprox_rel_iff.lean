@@ -1,8 +1,3 @@
-/-ai
-When F is a neighbourhood of the function space, the packaged map relates F to G exactly when G is a neighbourhood of the function space and contains sub of the least map of the principal neighbourhood of F.
-
-One direction retains the membership of G and the containment. The other direction restores the given membership of F.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

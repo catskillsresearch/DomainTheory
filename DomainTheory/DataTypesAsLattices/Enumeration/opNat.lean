@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (3.5)–(3.6). The operator component of a pair code k is the first component of the unpairing of k.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

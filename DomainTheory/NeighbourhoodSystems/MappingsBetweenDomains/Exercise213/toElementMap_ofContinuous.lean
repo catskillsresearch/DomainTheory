@@ -1,8 +1,3 @@
-/-ai
-The approximable mapping determined by a continuous function induces that same function on elements.
-
-Elements that contain the same neighbourhoods are equal. The approximable union formula and the continuous union formula both express membership by a neighbourhood of the element whose principal image contains it. On principal elements the monotone extension evaluates to the continuous function, so the witnesses agree in both directions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

@@ -1,8 +1,3 @@
-/-ai
-If a and b are finitary projections, then their product combination is a finitary projection.
-
-The proof pairs the projection property of the product combination, obtained from the projection properties of a and b, with the finitary property of that product combination.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

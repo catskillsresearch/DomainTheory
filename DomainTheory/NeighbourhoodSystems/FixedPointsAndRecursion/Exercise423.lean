@@ -1,8 +1,3 @@
-/-ai
-If an approximable endomap admits a sequence of approximable maps that is constantly bottom at stage zero, has each element as the least upper bound of the values of the sequence there, and satisfies the commutation that the next approximant after the map equals the next approximant after the map after the current approximant, then the endomap has a unique fixed point.
-
-The numbered name example_423 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise423.f_unique_fixedPoint

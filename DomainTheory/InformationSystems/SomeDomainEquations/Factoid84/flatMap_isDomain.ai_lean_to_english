@@ -1,0 +1,3 @@
+The flat map satisfies all five of Scott's conditions on a domain approximant.
+
+Reflexivity, idempotence, the rogue condition, and the consistency condition are the corresponding properties of the flat map, and the bottom condition is the general fact that every approximable map on the powerset system satisfies it.

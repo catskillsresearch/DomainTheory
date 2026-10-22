@@ -1,8 +1,3 @@
-/-ai
-Scott's 𝔊 theorem (1976, Theorem 6.1) states that for every Scott-continuous f the set of x with 0 in f(x) is Scott open, and that every Scott-open set has this form for some Scott-continuous f.
-
-If f is Scott continuous, that set is the Scott-open set whose basis consists of the finite sets en with 0 in f(en). Membership of 0 in f(x) is membership in the Scott union of f along x, so some en contained in x already has 0 in f(en), and the converse is monotonicity of f. Conversely, the open characteristic of a Scott-open set U is Scott continuous. If x lies in U, some basis element en contained in x lies in U and witnesses that 0 lies in the characteristic at x. If 0 lies in the characteristic at x, some en contained in x lies in U, and U is an upper set, so x lies in U.
-ai-/
 
 module
 

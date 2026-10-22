@@ -1,8 +1,3 @@
-/-ai
-The bare embedding of a stage into the inverse limit is monotone.
-
-Underlying sequences are compared coordinatewise, and each coordinate of the climbing-and-descending sequence is monotone.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

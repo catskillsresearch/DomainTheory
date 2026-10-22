@@ -1,8 +1,3 @@
-/-ai
-If a split satisfies the split specification, the two sides are empty together, and the second side is empty or genuine, then the second component of a generalized X-step is contained in the parent second set.
-
-The split specification equates the union of the two branches with the parent second set. The true bit selects the positive branch and the false bit selects the negative branch, and each branch is contained in that union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

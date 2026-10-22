@@ -1,6 +1,3 @@
-/-ai
-The emptiness characteristic of two coded constraint lists selects, on whether the success component of the coded positive meet-fold equals one, between the bounded search through the negative list for an index whose inclusion test accepts the pair of the meet index with that index, and the constant one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

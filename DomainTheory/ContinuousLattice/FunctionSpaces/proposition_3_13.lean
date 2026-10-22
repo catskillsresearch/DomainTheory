@@ -1,8 +1,3 @@
-/-ai
-Every continuous lattice D is a projection of its function space of Scott maps from D to D. This is Scott's Proposition 3.13.
-
-The constant-map embedding paired with evaluation at bottom is such a projection.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

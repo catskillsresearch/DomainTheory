@@ -1,8 +1,3 @@
-/-ai
-If the tag of a natural-number code is positive, then its payload is strictly smaller than the code.
-
-The payload is at most the code formed by pairing zero with the payload. That code is strictly smaller than the code formed by pairing the positive tag with the payload. Restoring the original code by cancellation of packing, and combining the two comparisons, gives the strict inequality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

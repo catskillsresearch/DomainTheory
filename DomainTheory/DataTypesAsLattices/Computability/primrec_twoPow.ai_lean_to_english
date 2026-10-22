@@ -1,0 +1,3 @@
+The function sending k to 2 raised to the power k is primitive recursive.
+
+It is obtained by primitive recursion, with base value 1 and with step multiplying the previous value by 2. Equality with exponentiation is checked by induction on k. The zero case is immediate, and the successor case rewrites the recursive value by the inductive hypothesis and uses the successor law for powers together with commutativity of multiplication.

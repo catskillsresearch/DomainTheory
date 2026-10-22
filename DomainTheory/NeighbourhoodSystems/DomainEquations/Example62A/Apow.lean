@@ -1,6 +1,3 @@
-/-ai
-Apow is the n-fold product of Scott's neighbourhood system A, for positive n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

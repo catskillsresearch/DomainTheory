@@ -1,8 +1,3 @@
-/-ai
-The bottom term avoids every index i.
-
-Unfold the term. For each of the two identical subterms, either the bound index 9 equals i, giving the left avoidance disjunct, or both occurrences of 9 differ from i, giving the right avoidance disjunct.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

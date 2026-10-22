@@ -1,8 +1,3 @@
-/-ai
-Evaluating the closed form of the product of d at f on sub of t equals the type decoded from sub of d of sub of t, applied to f at sub of t.
-
-Rewrite by the element-map formula for the closed form and by idempotence of the retraction sub.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

@@ -1,8 +1,3 @@
-/-ai
-The two-point lattice of propositions is an injective space.
-
-This is Proposition 1.2.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

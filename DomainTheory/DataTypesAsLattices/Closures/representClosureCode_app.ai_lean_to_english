@@ -1,0 +1,3 @@
+Applying the code of the representing closure to a set of indices yields the representing closure of that set.
+
+This is the beta law for the representing closure, which is Scott continuous.

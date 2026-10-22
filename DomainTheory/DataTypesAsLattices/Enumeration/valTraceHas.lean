@@ -1,6 +1,3 @@
-/-ai
-A valuation trace records a code and a member when the triple of that code, that member, and some time stamp occurs among the entries of the trace.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,6 +1,3 @@
-/-ai
-The computable presentation of the function space from the LUCID system to the three-point truth domain is the presentation carried by that characteristic bundle.
-ai-/
 
 module
 

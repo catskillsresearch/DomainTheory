@@ -1,8 +1,3 @@
-/-ai
-The Kleene iterates increase: the n-th iterate lies below the next.
-
-The zero iterate is the constant bottom map, which lies below every map. At a successor, rewrite both sides by the successor clause and apply monotonicity of composition to the functor image of the inductive inequality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,8 +1,3 @@
-/-ai
-If the two inner Y-folds, once combined, have found a witness by stage four to the n, a point lies in the enumerated neighbourhood of YPseqCode at n exactly when it lies in some genuine half-step atom on either boolean branch, of index below four to the n.
-
-Both inner found-flags are at most one, and a found flag yields membership in the corresponding inner fold. The code is the value component of the combined pair, so combined membership splits into the two branches. On each branch the inner membership and found-flag characterizations convert a found fold into an atom, and an atom forces the fold to be found.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

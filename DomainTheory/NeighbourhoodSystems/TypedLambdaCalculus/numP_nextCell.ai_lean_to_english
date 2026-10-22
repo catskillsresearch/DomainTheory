@@ -1,0 +1,3 @@
+One step of the diagonal walk increases the pairing value by one.
+
+Split the cell into its two coordinates and case on the first. If it is zero, use that the pairing value of a successor and zero is one more than the pairing value of zero and that number. If it is a successor, use that raising the second coordinate by one increases the pairing value by one more than raising the first.

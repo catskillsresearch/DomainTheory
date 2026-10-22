@@ -1,0 +1,3 @@
+The set represented by the filter of a set of natural numbers is the set itself.
+
+If the singleton complement of a number belongs to the filter, the singleton is contained in the set, so the number belongs to the set. Conversely, the singleton complement is a neighbourhood, and the singleton of a member is contained in the set.

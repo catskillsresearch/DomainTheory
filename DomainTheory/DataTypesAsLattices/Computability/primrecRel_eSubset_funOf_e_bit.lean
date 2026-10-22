@@ -1,8 +1,3 @@
-/-ai
-The relation which holds when test bit i of the first component of a packed pair kq is false, or i lies in the application of the two finite sets coded by the components of the second component, is primitive recursive.
-
-It is the disjunction of the negated boolean test-bit predicate with membership given by primrecRel_mem_funOf_e, composed with unpairing of the second component, and rewritten by Bool.not_eq_true.
-ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,0 +1,3 @@
+If X and Y are each empty or a neighbourhood of a positive difference-closed system, then their union is empty or a neighbourhood.
+
+If either set is empty, the union is the other set. If both are neighbourhoods, both lie under the master. If the master minus X is empty, then X is the master and the union is the master, and the same holds with Y in place of X. Otherwise both complements are neighbourhoods. The union identity rewrites the union as the master minus the intersection of the two complements. That intersection is empty, in which case the difference is the master, or nonempty, in which case positivity makes the intersection a neighbourhood and difference-closure makes the difference a neighbourhood.

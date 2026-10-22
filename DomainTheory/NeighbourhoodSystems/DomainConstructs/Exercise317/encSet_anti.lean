@@ -1,8 +1,3 @@
-/-ai
-A longer prefix encodes to a smaller set: if one string is a prefix of another, the encoding of the longer string is contained in the encoding of the shorter one.
-
-Write the longer string as the shorter string followed by a continuation. A bit constraint of the shorter string occurs at an index below its length, so the appended string carries the same bit there.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

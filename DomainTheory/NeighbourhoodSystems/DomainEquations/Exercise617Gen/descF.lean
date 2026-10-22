@@ -1,6 +1,3 @@
-/-ai
-The successor operation of a letter a on a Tsig-algebra B sends an element of the carrier to the image, under the structure map of B, of the a-tagged injection of that element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

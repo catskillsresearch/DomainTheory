@@ -1,6 +1,3 @@
-/-ai
-A family of token sets has finite support when some list of indices contains every index at which the set fails to be the master of its system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

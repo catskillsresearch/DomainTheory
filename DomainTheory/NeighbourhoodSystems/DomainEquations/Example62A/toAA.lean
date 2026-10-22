@@ -1,6 +1,3 @@
-/-ai
-The forward half of A ≅ Aⁿ + Aⁿ sends an element z of A to the element of the separated sum that contains the sum master, contains the left injection of the proper product of X precisely when z contains the false-tagged tuple of X, and contains the right injection of the proper product of Y precisely when z contains the true-tagged tuple of Y.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

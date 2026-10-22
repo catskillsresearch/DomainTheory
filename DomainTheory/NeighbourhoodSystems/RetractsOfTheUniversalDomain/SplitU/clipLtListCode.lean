@@ -1,6 +1,3 @@
-/-ai
-clipLtListCode m c clips every rational pair in the list code c into the open ray below the rational decoded by m. It flat-maps the list with m held fixed, sending each pair code to the singleton list code of its clip.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

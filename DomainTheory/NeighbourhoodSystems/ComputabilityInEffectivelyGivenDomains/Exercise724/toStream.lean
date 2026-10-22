@@ -1,6 +1,3 @@
-/-ai
-The infinite sequence extracted from an element of L with no minimum neighbourhood has, at each position, a chosen one-step extension of the finite data built for that element at that stage.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

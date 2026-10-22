@@ -1,6 +1,3 @@
-/-ai
-The second projection of a disjoint pairing is the set of numbers whose double plus one lies in the paired set.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

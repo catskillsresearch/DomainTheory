@@ -1,0 +1,3 @@
+The successor sends the partial element of length n to the partial element of length n + 1.
+
+Compare the two elements on an arbitrary neighbourhood. A witness for the image supplies a neighbourhood contained in the tail of length n whose shift lies in the output; monotonicity of shift and the law that this tail shifts to the next tail put that next tail inside the output. Conversely the tail of length n, contained in itself, is a witness, and the same shift law rewrites containment of the next tail as containment of the shift.

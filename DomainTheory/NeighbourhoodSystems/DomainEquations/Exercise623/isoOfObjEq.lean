@@ -1,6 +1,3 @@
-/-ai
-An equality of two objects of any category determines the identity isomorphism between them. After substituting the equality, both legs are the identity morphism, and both composites are the identity by the unit law for composition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

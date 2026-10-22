@@ -1,0 +1,1 @@
+The strictification retraction from the function space to the strict function space is the approximable map induced by strictifying each principal element. The assignment is monotone because element-level strictification is monotone and the order of principal elements is inclusion of neighbourhoods.

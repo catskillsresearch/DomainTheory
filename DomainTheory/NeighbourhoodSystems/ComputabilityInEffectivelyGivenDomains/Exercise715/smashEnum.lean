@@ -1,6 +1,3 @@
-/-ai
-The smash enumeration of a code is the product neighbourhood of the two indexed component neighbourhoods when both are proper, and the product of the two masters otherwise.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

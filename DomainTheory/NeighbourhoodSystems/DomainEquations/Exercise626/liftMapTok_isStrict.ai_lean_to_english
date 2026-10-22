@@ -1,0 +1,3 @@
+The lift of any approximable map is strict: a relation out of the master has the master as its target.
+
+The master clause of the relation says so. A proper clause would require the master to equal a false tag, which would put the empty string in a tag.

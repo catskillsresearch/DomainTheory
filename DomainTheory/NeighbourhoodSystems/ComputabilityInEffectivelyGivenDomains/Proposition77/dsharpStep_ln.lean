@@ -1,8 +1,3 @@
-/-ai
-On an odd index 2a+1 and an even index 2b+2, the sharp decider step returns the zero pack.
-
-Both outer selections see zero. The first parity is one and the second is zero, so the selection returns the zero pack.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

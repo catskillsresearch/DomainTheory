@@ -1,8 +1,3 @@
-/-ai
-Every element is the directed supremum of its finite approximants.
-
-Every token of the element lies in some finite approximation, and the carrier of the directed supremum is the union of the carriers, so the element lies below the supremum. Each finite approximant lies below the element, so the supremum lies below the element.
-ai-/
 
 module
 

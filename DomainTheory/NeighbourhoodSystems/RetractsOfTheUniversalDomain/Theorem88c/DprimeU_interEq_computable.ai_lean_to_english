@@ -1,0 +1,3 @@
+Equality of the intersection of two transferred neighbourhoods with a third is recursively decidable in the three indices.
+
+Conjoin the two inclusion deciders with the two-point D-atom decider. The intersection-transfer lemma, using that every index set is contained in the universe, converts the equation of transferred neighbourhoods into the equation of index sets, and the D-atom characterization converts that equation into the two neighbourhood inclusions together with emptiness of the D-atom on the lists [i, j] and [k].

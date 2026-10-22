@@ -1,8 +1,3 @@
-/-ai
-One tail is contained in another if and only if the second index is at most the first.
-
-The first index lies in its own tail, hence in the second tail. Conversely, a lower bound of an element of the first tail remains a lower bound of that element by transitivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,8 +1,3 @@
-/-ai
-Primitive recursion at bottom and the numeral m is bottom.
-
-Unfold the defining recursion and use that the zero test of bottom is the bottom of the truth domain, that this equals Example23.botElt, and that the conditional on that bottom is bottom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

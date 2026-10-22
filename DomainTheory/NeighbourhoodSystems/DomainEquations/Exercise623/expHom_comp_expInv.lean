@@ -1,8 +1,3 @@
-/-ai
-The structure map composed with its inverse is the identity map on Exp.
-
-This is the underlying-map form of the inverse-then-forward identity of the structure isomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

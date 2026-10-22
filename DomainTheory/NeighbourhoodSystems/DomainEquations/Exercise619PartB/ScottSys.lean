@@ -1,6 +1,3 @@
-/-ai
-A Scott system is an object of the category of Exercise 6.19: a neighbourhood system on binary words together with the condition that every neighbourhood is nonempty.
-ai-/
 module
 
 

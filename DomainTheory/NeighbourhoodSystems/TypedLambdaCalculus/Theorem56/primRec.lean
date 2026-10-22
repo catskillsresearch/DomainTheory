@@ -1,6 +1,3 @@
-/-ai
-The primitive recursion of f and g is the approximable map associated with the least fixed point of the primitive-recursion operator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

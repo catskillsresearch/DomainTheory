@@ -1,8 +1,3 @@
-/-ai
-The injection from the code-driven subsystem D'' into the universal system is a computable map of the two presentations.
-
-Pairing the Y-sequence code of the first component with the second component is primitive recursive, and the universal presentation's inclusion decider composed with it decides inclusion of the corresponding U-neighbourhoods. That decidable predicate is recursively enumerable. The injection relation unfolds to this inclusion together with the two membership facts, which hold because a coded set is the neighbourhood of its index and the U-neighbourhood of a code belongs to the universal system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.Basic

@@ -1,8 +1,3 @@
-/-ai
-The image subdomain of a pair of approximable maps is a subdomain of the codomain system.
-
-The masters agree by definition. A generating set is a neighbourhood of the codomain because the forward map relates something to it. If two generators have an intersection that is a neighbourhood of the codomain, that intersection generates the intersection of the two generated sets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

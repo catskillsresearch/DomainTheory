@@ -1,0 +1,3 @@
+A number m lies in the application of the finite set coded by a to the finite set coded by b if and only if some n < 2^(b + 1) has its finite set contained in the finite set coded by b and has bit pair(n, m) of a set.
+
+An application witness n is contained in the finite set coded by b, hence lies below 2^(b + 1), and the paired code lies in the finite set coded by a. Conversely, such an n and bit are an application witness.

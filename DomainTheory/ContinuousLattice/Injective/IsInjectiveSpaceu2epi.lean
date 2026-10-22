@@ -1,8 +1,3 @@
-/-ai
-A product of injective spaces is injective.
-
-Given an embedding and a continuous map into the product, extend each coordinate map along the embedding by injectivity of the corresponding factor, and reassemble the extensions as a map into the product. The extension agrees with the original map because the coordinates agree.
-ai-/
 module
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski

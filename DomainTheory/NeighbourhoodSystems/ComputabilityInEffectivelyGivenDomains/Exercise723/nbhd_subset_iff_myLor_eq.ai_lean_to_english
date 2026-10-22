@@ -1,0 +1,3 @@
+The neighbourhood nbhd n is contained in nbhd k if and only if myLor n k equals n. Inclusion of neighbourhoods is equality of n with the index of the intersection, and that index is myLor n k.
+
+From the inclusion, injectivity of nbhd, the intersection law, and the criterion that an intersection with a larger set is the smaller set give the equality. Conversely, rewriting the inclusion by the intersection law leaves the right-hand factor of an intersection.

@@ -1,8 +1,3 @@
-/-ai
-If A is a subalgebra and every entry of a list belongs to A, then the single generator of the list belongs to A.
-
-The conditional combinator belongs to A, the packed list belongs to A, and G belongs to A because A is a subalgebra. Two applications put the generator in A.
-ai-/
 
 module
 

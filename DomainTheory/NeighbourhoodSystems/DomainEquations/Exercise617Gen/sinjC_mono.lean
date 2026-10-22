@@ -1,8 +1,3 @@
-/-ai
-The letter-copy injection is monotone.
-
-The master is a neighbourhood of the larger image. A letter-copy that belongs to the smaller element belongs to the larger element by the assumed inequality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

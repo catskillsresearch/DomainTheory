@@ -1,8 +1,3 @@
-/-ai
-A word is accepted by the product automaton if and only if both component automata accept it.
-
-An accepting product state splits, by the evaluation criterion, into accepting runs of the two components. Conversely, a pair of accepting runs is an accepting run of the product by that same criterion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

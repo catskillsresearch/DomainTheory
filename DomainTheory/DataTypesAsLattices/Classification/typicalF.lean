@@ -1,6 +1,3 @@
-/-ai
-The typical 𝔉 set is the singleton whose only element is ⊥.
-ai-/
 
 module
 

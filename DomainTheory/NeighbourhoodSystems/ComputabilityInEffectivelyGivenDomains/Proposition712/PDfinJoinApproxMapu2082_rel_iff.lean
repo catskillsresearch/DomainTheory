@@ -1,8 +1,3 @@
-/-ai
-The binary join relates X and Y to W if and only if both singleton maps relate their argument to W.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

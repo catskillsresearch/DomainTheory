@@ -1,8 +1,3 @@
-/-ai
-The second component of any pair in a list is at most the maximum second component of the list.
-
-Apply the corresponding inequality for the left fold at seed zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

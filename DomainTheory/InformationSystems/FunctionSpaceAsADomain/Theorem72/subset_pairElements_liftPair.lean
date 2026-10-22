@@ -1,8 +1,3 @@
-/-ai
-If a finite set lies in an element x and a finite set lies in an element y, then their lifted pair lies in the paired element of x and y.
-
-A token of the lifted pair lies in the left lift or the right lift, and the two subset lemmas place it in the paired element.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

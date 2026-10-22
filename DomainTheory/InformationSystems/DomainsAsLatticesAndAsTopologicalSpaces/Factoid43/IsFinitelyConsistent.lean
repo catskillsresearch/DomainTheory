@@ -1,6 +1,3 @@
-/-ai
-A set of tokens is finitely consistent when every finite subset of it is a consistent set of the information system.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

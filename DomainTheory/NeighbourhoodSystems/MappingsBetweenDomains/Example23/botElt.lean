@@ -1,6 +1,3 @@
-/-ai
-The bottom element of T is the bottom element of the two-token system, the partial element whose only neighbourhood is the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

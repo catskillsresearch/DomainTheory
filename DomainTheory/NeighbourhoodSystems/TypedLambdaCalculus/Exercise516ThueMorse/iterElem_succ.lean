@@ -1,8 +1,3 @@
-/-ai
-The iterated bottom element satisfies f to the power n + 1 of bottom equals f applied to f to the power n of bottom.
-
-Both sides rewrite as iterates of the element map, and the successor law of iteration at the bottom element gives the equation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

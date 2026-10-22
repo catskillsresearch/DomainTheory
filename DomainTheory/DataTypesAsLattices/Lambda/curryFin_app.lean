@@ -1,8 +1,3 @@
-/-ai
-Iterated application of the nested-graph representative of a finitely Scott-continuous n-ary map recovers the map.
-
-At arity zero both sides are the value on the empty tuple. At a successor arity the outer graph reduces by the beta law, the induction hypothesis applies to the tail, and consing the head back onto that tail restores the original tuple.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

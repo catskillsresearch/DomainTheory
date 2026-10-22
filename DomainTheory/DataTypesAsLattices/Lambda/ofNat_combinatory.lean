@@ -1,8 +1,3 @@
-/-ai
-Every numeral is combinatory.
-
-The numeral zero is the zero combinator. The numeral of a successor is the application of the successor combinator to the preceding numeral, rewritten by the successor application law and the equation for the successor of a numeral.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

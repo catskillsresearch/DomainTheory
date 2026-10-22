@@ -1,8 +1,3 @@
-/-ai
-One element specializes to another if and only if the second approximates the first.
-
-Specialization rewrites as the requirement that every open set containing the second element contains the first, and that requirement is the approximation of the first by the second.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

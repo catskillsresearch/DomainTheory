@@ -1,8 +1,3 @@
-/-ai
-YPseq n is empty or a neighbourhood of the first system.
-
-Apply finite-union closure twice, once over the finite sign sequences and once over the free Boolean. For each pair, the bit-general X-step specification supplies the reversed emptiness agreement and the membership alternative on the first side, and the first clause of the splitting specification for the choice split of the first system against Y n is the required empty-or-membership alternative.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

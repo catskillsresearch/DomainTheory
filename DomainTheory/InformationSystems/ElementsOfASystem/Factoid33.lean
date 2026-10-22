@@ -1,8 +1,3 @@
-/-ai
-The bottom element lies below every element.
-
-The numbered name theorem_33 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement_le

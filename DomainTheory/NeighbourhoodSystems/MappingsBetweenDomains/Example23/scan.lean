@@ -1,6 +1,3 @@
-/-ai
-The parity scanner sends the empty string to none. A string beginning with true scans to some true. A string beginning with false scans to the negation of the scan of its tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

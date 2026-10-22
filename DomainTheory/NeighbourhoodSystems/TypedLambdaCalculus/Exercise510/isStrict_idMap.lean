@@ -1,8 +1,3 @@
-/-ai
-The identity map is strict.
-
-Unpack the relation witness. Antisymmetry of inclusion, using that the witnessed neighbourhood lies in the master and that the witness supplies the other inclusion, shows that the output equals the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

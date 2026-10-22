@@ -1,8 +1,3 @@
-/-ai
-A consistent finite set of raw lambda tokens entails every raw token it contains.
-
-Consistency at some stage and membership yield stage entailment of that member, which is entailment.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

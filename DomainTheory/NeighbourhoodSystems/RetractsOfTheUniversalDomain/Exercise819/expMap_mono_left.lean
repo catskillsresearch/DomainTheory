@@ -1,8 +1,3 @@
-/-ai
-With the map in the codomain argument held fixed, the function-space combinator is monotone in its contravariant domain argument.
-
-Compare the resulting maps on elements. The order isomorphism of a function space with its approximable maps turns the inequality into an inequality of those maps, the element formula for the combinator rewrites both sides as precomposition, and monotonicity of composition applies the given inequality in the precomposition slot.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

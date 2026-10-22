@@ -1,6 +1,3 @@
-/-ai
-The category of empty-free domains over the token type of strings has strict approximable maps as morphisms. The identity is the identity approximable map, which is strict. Composition is composition of the underlying approximable maps, with the second map applied after the first, and strictness of a composite is the strictness lemma for composition. The left and right identity laws and associativity are the corresponding laws of approximable maps, transported along the subtype of strict maps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

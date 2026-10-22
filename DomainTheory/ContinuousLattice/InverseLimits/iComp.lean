@@ -1,6 +1,3 @@
-/-ai
-The m-th coordinate of the stage embedding of x climbs from x by the tower of inclusions when m is at least n, and descends from x by the tower of retractions when m is below n.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

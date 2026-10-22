@@ -1,0 +1,1 @@
+An approximable self-map of the binary system satisfies the run equations when prepending a zero commutes with the map, prepending two ones leaves the value unchanged, prepending one and then zero emits a zero and then the input, for every element, and the map sends the principal element of a single one to bottom.

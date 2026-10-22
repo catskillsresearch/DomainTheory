@@ -1,6 +1,3 @@
-/-ai
-The code of the rational zero is the pair whose first component is the pair of zero and zero and whose second component is zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

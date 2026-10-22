@@ -1,0 +1,5 @@
+If a deterministic automaton accepts the denotation of an expression, its complement automaton accepts the complement of that denotation.
+
+Cancel the hypothesis and compare membership. Acceptance by the complement automaton is definitionally failure of acceptance by the original automaton.
+
+The unit type is finite, and equality of its elements is decidable. The state type of the single-word automaton is finite, and equality of its states is decidable. A product of finite types is finite, and a product of types with decidable equality has decidable equality.

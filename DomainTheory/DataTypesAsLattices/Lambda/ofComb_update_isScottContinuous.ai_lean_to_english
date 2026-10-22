@@ -1,0 +1,3 @@
+The interpretation of a combinatory term is Scott continuous in any one coordinate of the environment.
+
+The proof is by induction on the combinator. A variable is the identity or a constant, according as its index is the varied coordinate. Each constant combinator is continuous as a constant. An application is the tuple form of Theorem 1.3, using continuity of application in each argument and the two inductive hypotheses.

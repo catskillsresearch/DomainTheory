@@ -1,6 +1,3 @@
-/-ai
-The fuel-bounded state-card character is zero at fuel zero, and at one more unit of fuel it is the state-card body applied to the character at the previous fuel.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,8 +1,3 @@
-/-ai
-If a filter f is round, the principal filter of its retraction equals f.
-
-The two filters are compared neighbourhood by neighbourhood. A way-below neighbourhood in the principal filter has code way-below the retraction, hence belongs to f by the round-filter characterization. Conversely, every neighbourhood in f is the way-below neighbourhood of some code, and that membership means the code is way-below the retraction, so the neighbourhood belongs to the principal filter.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

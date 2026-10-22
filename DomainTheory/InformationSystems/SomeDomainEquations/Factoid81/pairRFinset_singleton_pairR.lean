@@ -1,8 +1,3 @@
-/-ai
-The finset of right-pair payloads of the singleton right pair of t is the singleton of t.
-
-A token is such a payload exactly when the corresponding right pairs are equal, and right pairs are equal exactly when their payloads are equal.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

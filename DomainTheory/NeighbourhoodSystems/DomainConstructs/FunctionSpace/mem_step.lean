@@ -1,8 +1,3 @@
-/-ai
-An approximable map lies in the step set of an input and an output exactly when it relates that input to that output.
-
-This is the defining clause of a step set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

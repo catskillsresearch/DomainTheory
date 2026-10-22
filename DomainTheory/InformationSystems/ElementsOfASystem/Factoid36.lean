@@ -1,8 +1,3 @@
-/-ai
-The carrier of an element equals the union of the closures of the consistent finite sets contained in it. A token lies in an element if and only if it lies in the closure of some consistent finite set contained in the element.
-
-The numbered name theorem_36 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.element_eq_approxUnion

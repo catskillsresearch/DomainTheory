@@ -1,8 +1,3 @@
-/-ai
-Uncurried composition, evaluated at the pair of the pair of approximable maps g and f with an element x, equals the composite of g and f evaluated at x.
-
-Comparing projections shows that the inner pairing produces the pair of f with x, so application yields f at x. Comparing projections again shows that the outer pairing produces the pair of g with that value, so the final application yields g at the value of f, which is the composite at x.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

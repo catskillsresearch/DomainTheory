@@ -1,8 +1,3 @@
-/-ai
-If the conditional guard holds and the truth component is the master, the master of the codomain is contained in the output.
-
-The zero clause would identify the master with the singleton of zero, and the one clause would identify it with the singleton of one. The remaining clause is the master inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

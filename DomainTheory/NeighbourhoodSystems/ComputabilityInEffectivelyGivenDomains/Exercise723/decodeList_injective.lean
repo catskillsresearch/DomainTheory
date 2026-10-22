@@ -1,8 +1,3 @@
-/-ai
-Decoding a list code is injective: equal decoded lists come from equal codes. The decoder has a left inverse, namely encodeList.
-
-Apply encodeList to the equality of decoded lists and rewrite both sides by the round trip encodeList_decodeList.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

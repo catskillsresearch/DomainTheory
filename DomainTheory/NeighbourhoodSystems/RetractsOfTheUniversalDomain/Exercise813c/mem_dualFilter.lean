@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the dual of a family if and only if its complement belongs to the family.
-
-The two sides are definitionally the same.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

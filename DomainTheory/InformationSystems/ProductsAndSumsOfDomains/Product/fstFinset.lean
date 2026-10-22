@@ -1,6 +1,3 @@
-/-ai
-The left projection of a finite set of product tokens is the set of first components of those tokens whose second component is the least token of the second system, obtained by folding insertion over that filtered multiset, starting from the empty set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,8 +1,3 @@
-/-ai
-The occupancy tag at a fixed index is Scott continuous.
-
-The tag is the conditional set with both branches equal to the singleton of that index, and a conditional set is Scott continuous in the tested set.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

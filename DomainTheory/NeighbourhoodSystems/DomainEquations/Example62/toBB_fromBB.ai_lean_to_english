@@ -1,0 +1,3 @@
+Applying toBB after fromBB returns the original element of the sum BB.
+
+Two elements agree when they contain the same neighbourhoods. If the composite contains the sum master, so does the original element. If it contains a left or right injection, the corresponding characterization of fromBB returns that membership. Conversely, every neighbourhood of the original element is the master or a left or right injection, and each of those belongs to the composite by the reverse characterization.

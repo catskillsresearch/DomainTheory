@@ -1,8 +1,3 @@
-/-ai
-When every finite set of tokens is consistent, an element is total if and only if it equals the top element.
-
-Totality yields equality with the top element. Equality with the top element yields totality because the top element is total.
-ai-/
 
 module
 

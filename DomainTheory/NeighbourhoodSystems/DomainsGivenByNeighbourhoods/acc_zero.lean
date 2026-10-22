@@ -1,8 +1,3 @@
-/-ai
-The running intersection at stage 0 is the master neighbourhood met with the first enumerated set.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

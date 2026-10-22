@@ -1,20 +1,3 @@
-/-ai
-A product token lies in the fold that inserts left injections of a multiset of tokens of the first system, starting from the empty set, if and only if it is the left injection of some member of the multiset.
-
-The proof is by induction on the multiset. For the empty multiset, both a member of the empty set and a member of the multiset are impossible. At a cons cell, membership in the inserted fold is equality with the injected head or membership in the fold of the tail, and the inductive equivalence matches that alternative with membership of the witness in the cons.
-
-A product token lies in the fold that inserts right injections of a multiset of tokens of the second system, starting from the empty set, if and only if it is the right injection of some member of the multiset.
-
-The proof is the same induction, with the right injection in place of the left injection.
-
-If an approximable map relates a consistent finite set s to the empty set, then it relates s to every finite set contained in the singleton of the least token.
-
-That finite set is consistent by downward closure of the consistent singleton. The empty set set-entails it, because each of its members equals the least token and the empty set entails the least token. Monotonicity of the approximable relation then enlarges the empty related set, using reflexivity of set-entailment on s.
-
-The same statement holds with the roles of the two factors exchanged: a map that relates s to the empty set of the first system relates s to every subset of the singleton of that system's least token.
-
-The argument is the same, with consistency, entailment of the least token, and monotonicity taken in the first system.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product
@@ -34,13 +17,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.entSet_snd_of_prodEntSet
 
 @[expose] public section
-
-/-!
-# Proposition 6.2 — product projections and pairing
-
-**Scott 1982, Proposition 6.2.** Approximable `fst`, `snd`, and unique pairing
-`⟨f, g⟩` with `fst ∘ ⟨f, g⟩ = f` and `snd ∘ ⟨f, g⟩ = g`.
--/
 
 namespace DomainTheory.InformationSystems
 

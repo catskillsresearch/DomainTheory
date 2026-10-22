@@ -1,6 +1,3 @@
-/-ai
-The embedding of the tree algebra of the universal domain into the universal domain is the embedding chosen by the strong form of Theorem 8.8 for the effective presentation of that tree algebra.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

@@ -1,8 +1,3 @@
-/-ai
-If an approximable map sends the bottom element of the domain of an endomap f₀ to the bottom element of the domain of an endomap f₁, and intertwines f₀ with f₁, then it sends the least fixed point of f₀ to the least fixed point of f₁. Any assignment of an element to every neighbourhood system and every approximable endomap, such that the assigned element is a fixed point and the assignment is uniform along maps that preserve bottom and intertwine the endomaps, agrees with the least fixed point.
-
-The numbered name example_411 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise411.fixElement_uniform

@@ -1,6 +1,3 @@
-/-ai
-The composition mapping of Exercise 3.22 is the currying of the uncurried composition, an approximable map from the product of the two function spaces into the function space from the first domain to the third.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

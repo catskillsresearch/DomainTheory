@@ -1,6 +1,3 @@
-/-ai
-Bracket abstraction sends an open term with one free variable to a variable-free combinator expression. The variable becomes the constant identity combinator, a constant becomes the K combinator applied to that constant, and an application becomes the S combinator applied to the abstractions of the function and of the argument.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

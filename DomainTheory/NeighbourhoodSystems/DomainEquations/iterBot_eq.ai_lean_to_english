@@ -1,0 +1,3 @@
+The bottom element of the infinite iterate is the sequence that is bottom at every index.
+
+A neighbourhood belongs to the bottom exactly when it is the master. The master has every fibre equal to the master of the original system, and that master belongs to the bottom, so the all-bottom sequence contains the master. Conversely, if every fibre of a neighbourhood belongs to the bottom, each fibre equals the master, so the neighbourhood is the master of the iterate.

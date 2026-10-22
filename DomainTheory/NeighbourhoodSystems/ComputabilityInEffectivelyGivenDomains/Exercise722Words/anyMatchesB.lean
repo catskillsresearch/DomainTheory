@@ -1,6 +1,3 @@
-/-ai
-The Boolean anyMatchesB e ws is true when some word of the finite list ws is accepted by the matcher matchesB e. It is the list quantifier any applied to that matcher. Evaluating it on sigma and wordsUpTo 0 is the example that should return true, because the empty word lies in sigma.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular

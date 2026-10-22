@@ -1,6 +1,3 @@
-/-ai
-One approximable mapping lies below another when every pair of finite sets related by the first is related by the second.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable

@@ -1,8 +1,3 @@
-/-ai
-Every continuous lattice is an injective space under its Scott topology.
-
-This direction of Theorem 2.12 is the proposition that continuous lattices are injective in the Scott topology.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

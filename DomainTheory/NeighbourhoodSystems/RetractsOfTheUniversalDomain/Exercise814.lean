@@ -1,8 +1,3 @@
-/-ai
-A fixed point of a closure operator is compact if and only if it equals the image of the principal element of a single neighbourhood. The fixed-point set of a closure operator is a finitary domain.
-
-The numbered name example_814 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise814.isCompactFix_iff

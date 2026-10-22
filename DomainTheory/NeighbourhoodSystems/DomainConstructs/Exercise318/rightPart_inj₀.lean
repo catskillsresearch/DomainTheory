@@ -1,8 +1,3 @@
-/-ai
-If a set of left tokens is nonempty, the right content of its left copy is the master of the second system.
-
-Simplification removes the right-tag clause and the basepoint clause, since neither lies in a left copy, and leaves membership in the second master together with a left tag in the copy. One direction forgets the tag. The other takes a token of the nonempty set and tags it on the left.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

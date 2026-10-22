@@ -1,0 +1,3 @@
+Scott 1976, (2.27): the distributive extension of primitive recursion agrees with the integer recursion on numerals.
+
+At zero this is the zero case of the extension. At a successor, a member of the union lies at the unique index in the numeral, namely the successor itself, where the value is the recursive value, and conversely membership at that index is membership in the union.

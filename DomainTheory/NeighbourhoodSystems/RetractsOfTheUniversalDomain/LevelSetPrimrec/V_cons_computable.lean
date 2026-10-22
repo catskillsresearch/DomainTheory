@@ -1,17 +1,3 @@
-/-ai
-Scott's consistency condition 7.1(ii) for V, the existence of an enumerated
-neighbourhood contained in the intersection of two enumerated neighbourhoods, is
-recursively decidable.
-
-The raw intersection of an unpaired pair is primitive recursive, and so is the
-nonemptiness test of its level and mask, by composing the primitive-recursive
-nonemptiness test with the two projections of that code and simplifying the pairing. The
-paired zero-one characteristic of this test decides the predicate. The test is at most
-one, so arithmetic supplies the bound. For the decision equivalence, the pairing
-projections, the reduction of consistency to nonemptiness of the intersection, the
-realization of that intersection by the raw code, and the characterization of the
-nonemptiness test are rewritten in turn.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,8 +1,3 @@
-/-ai
-An explicit right-hand witness at stage n+1 gives the function clause at stage n: stage-n consistency of the input union of a subcollection of function tokens yields stage-n consistency of the output union.
-
-The witness is applied to that subcollection and its input hypothesis.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

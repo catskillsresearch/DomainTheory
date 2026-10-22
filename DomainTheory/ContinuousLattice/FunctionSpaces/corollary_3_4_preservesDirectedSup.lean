@@ -1,8 +1,3 @@
-/-ai
-Evaluation (f, x) ↦ f(x), from the product of the Scott-map space with the domain into the codomain, preserves directed suprema.
-
-Proposition 2.6 reduces preservation on the product to the two separate preservations. In the function variable, the supremum of a set of Scott maps, evaluated at a fixed argument, is the pointwise supremum. In the argument variable, Proposition 2.5 converts continuity of the fixed Scott map into preservation of directed suprema.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

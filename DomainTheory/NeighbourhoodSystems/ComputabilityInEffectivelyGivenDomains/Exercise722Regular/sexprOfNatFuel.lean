@@ -1,6 +1,3 @@
-/-ai
-sexprOfNatFuel decodes a natural number as an optional expression with an explicit fuel bound, so the recursion is structural. With no fuel it fails. With fuel remaining, the first component of the unpaired code selects the constructor: zero yields the universal expression, one decodes a word and wraps it as a singleton, two and three recursively decode the two second-component codes and rebuild a concatenation or an intersection when both succeed, and any other tag fails.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

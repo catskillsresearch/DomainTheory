@@ -1,6 +1,3 @@
-/-ai
-Semantic entailment of one formula by another means that every valuation making the first formula true also makes the second formula true.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

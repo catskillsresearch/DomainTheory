@@ -1,8 +1,3 @@
-/-ai
-The intersection of the sets presented by two lists of endpoint pairs equals the set presented by their pairwise combination.
-
-A point of both unions lies in one interval from each list, hence in the interval whose left endpoint is the supremum of the two left endpoints and whose right endpoint is the infimum of the two right endpoints. Conversely, a point of such a combined interval lies in each of the two original intervals.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

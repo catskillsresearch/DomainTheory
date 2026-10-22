@@ -1,8 +1,3 @@
-/-ai
-A code p lies in the graph of f if and only if p is a pair of n and m with m in f at the basic element coded by n.
-
-The equivalence is the definitional membership clause.
-ai-/
 
 module
 

@@ -1,6 +1,3 @@
-/-ai
-The computable presentation of the code-driven subsystem D'' enumerates the coded sets Yc P n. Every such set is a neighbourhood, and every neighbourhood arises in this way. Intersection equality and consistency are the transferred decidable predicates, the intersection index and its primitive recursiveness are those of the base presentation, and the master index is zero because the zero-depth coded set is the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

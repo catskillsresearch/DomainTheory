@@ -1,6 +1,3 @@
-/-ai
-The midpoint code of an index is the code of the rational midpoint of the pair formed by the minimum left endpoint and the maximum right endpoint of its canonical presenting list.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

@@ -1,6 +1,3 @@
-/-ai
-The iteration sends each natural number to a neighbourhood system over the token type, an identification of the carrier of its image under T with the token type, and the subdomain relation of the system in the transported image. Level zero is the generating system with its given identification and subdomain relation. The successor transports the image of the previous system, obtains the next carrier identification by composing the identification from monotonicity on domains with the previous identification, and transports the subdomain relation, rewriting the successive casts.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

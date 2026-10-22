@@ -1,0 +1,3 @@
+For finitary projections a and b, the arrow injection into the universal domain composed after the arrow extraction equals the arrow combinator of a and b.
+
+Unfold both maps. Associativity, the composition law of the exponential, the identities that each subsystem injection after its projection is the finitary projection, the agreement of the exponential with the lambda combinator, and the composite form of the arrow combinator give the equality.

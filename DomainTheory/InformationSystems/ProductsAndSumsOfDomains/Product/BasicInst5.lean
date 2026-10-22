@@ -1,6 +1,3 @@
-/-ai
-This instance decides whether a pair is a product token. The pair qualifies when its first component is the least token of the first system, and otherwise when its second component is the least token of the second system. If neither component is least, both alternatives fail.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

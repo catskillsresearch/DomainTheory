@@ -1,8 +1,3 @@
-/-ai
-The graph of the primitive-recursion step in a base and a step equals the interpretation of the step term in the constantly bottom environment, applied to the base and then to the step.
-
-Two uses of the beta clause of Theorem 2.2 are followed by congruence of the graph constructor and simplification of interpretation and environment update on the body.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

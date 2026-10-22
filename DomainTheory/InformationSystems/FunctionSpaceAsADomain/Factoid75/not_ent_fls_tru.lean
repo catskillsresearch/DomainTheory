@@ -1,8 +1,3 @@
-/-ai
-The singleton false token does not entail the true token in the Boolean system.
-
-An entailment witness would be a Boolean point satisfied by false and required to satisfy true, and every case of the point makes one of those two facts absurd.
-ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

@@ -1,8 +1,3 @@
-/-ai
-Prepending the same two bits to both strings preserves the approximation order on tagged strings.
-
-If the first tag is total, the hypothesis forces the tags and the strings to agree, so the extended strings still agree. If the first tag is partial, the prefix relation is preserved by consing each of the two bits.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

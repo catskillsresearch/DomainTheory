@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the presentation-independent bisection of the universal domain, the comparison of the minimum first component with one, and the comparison of zero with the maximum second component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UBisection2.Basic

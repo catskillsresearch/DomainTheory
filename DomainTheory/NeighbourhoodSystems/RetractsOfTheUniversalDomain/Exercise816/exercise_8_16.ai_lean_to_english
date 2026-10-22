@@ -1,0 +1,3 @@
+For finitary projections on a neighbourhood system, one lies below the other exactly when the fixed neighbourhood of the first is a subsystem of the fixed neighbourhood of the second. If a map is computable relative to a computable presentation, then its fixed neighbourhood is effectively given.
+
+The comparison is the finitary case of the order isomorphism between projections and subsystems. Effective givenness is the corresponding clause of Theorem 8.8.

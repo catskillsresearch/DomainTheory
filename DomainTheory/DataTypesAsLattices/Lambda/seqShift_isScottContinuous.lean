@@ -1,8 +1,3 @@
-/-ai
-For each u, the map sending z to the sequence revaluation of u at the successor of z is Scott continuous.
-
-This is the substitution theorem applied to the Scott continuity of the right-hand sequence map at u and the Scott continuity of the successor.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

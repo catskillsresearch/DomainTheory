@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the binary system is the set of all finite binary strings.
-
-The equality is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

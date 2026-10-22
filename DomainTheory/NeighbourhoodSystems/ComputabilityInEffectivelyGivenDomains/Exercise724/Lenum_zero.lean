@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood enumerated by zero is the whole set of tokens. Zero decodes to the empty address, whose neighbourhood is the master neighbourhood.
-
-Unfold the enumeration and rewrite the decoding of zero. The remaining equality is reflexive.
-ai-/
 
 module
 

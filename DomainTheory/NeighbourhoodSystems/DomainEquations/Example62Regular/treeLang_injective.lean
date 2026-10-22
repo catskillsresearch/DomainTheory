@@ -1,8 +1,3 @@
-/-ai
-The language determines the tree: trees with the same language are equal.
-
-If the languages agree, function extensionality compares the labels at a word. Membership of that word in the two languages agrees by rewriting the equality, and the membership law turns the agreement into an agreement of Boolean values. Splitting on the value of each tree at the word, simplification closes every case.
-ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

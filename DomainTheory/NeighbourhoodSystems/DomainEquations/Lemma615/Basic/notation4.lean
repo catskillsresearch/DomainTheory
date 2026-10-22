@@ -1,6 +1,3 @@
-/-ai
-The infix notation ⊴ is introduced for the subdomain-embedding relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

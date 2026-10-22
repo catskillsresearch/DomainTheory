@@ -1,6 +1,3 @@
-/-ai
-The inverse limit of the function-space tower is the inverse limit of its levels along the tower projections.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

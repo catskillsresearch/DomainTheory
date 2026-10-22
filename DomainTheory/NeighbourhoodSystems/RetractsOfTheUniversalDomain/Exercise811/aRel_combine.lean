@@ -1,8 +1,3 @@
-/-ai
-If r < s or r = s = 1, and r < s' or r = s' = 1, with s and s' at most 1, then r < min(s, s') or r and that minimum both equal 1.
-
-If both inequalities are strict, r lies below the minimum. A strict inequality on one side together with the endpoint clause on the other would put 1 strictly below an endpoint that is at most 1. If both sides are the endpoint clause, the minimum of 1 and 1 is 1.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

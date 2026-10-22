@@ -1,8 +1,3 @@
-/-ai
-Applying the function retract to u returns the graph of application of u.
-
-This is β-conversion. Continuity of graph formation, using Scott continuity of application in the function argument, supplies the continuity hypothesis.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

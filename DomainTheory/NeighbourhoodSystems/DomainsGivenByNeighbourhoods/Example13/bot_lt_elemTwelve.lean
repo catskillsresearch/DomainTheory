@@ -1,8 +1,3 @@
-/-ai
-The bottom element of Example 1.3 is strictly below the intermediate element.
-
-A neighbourhood of the bottom element is the master, which belongs to the intermediate element. The reverse inequality would put {1, 2} in the bottom filter, forcing {1, 2} to equal the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

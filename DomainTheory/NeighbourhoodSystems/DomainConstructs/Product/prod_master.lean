@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the product system is the product of the two master neighbourhoods.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

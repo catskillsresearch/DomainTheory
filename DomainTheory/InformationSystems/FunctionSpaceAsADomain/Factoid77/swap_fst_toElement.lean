@@ -1,8 +1,3 @@
-/-ai
-The first projection of the swapped product, applied to the swap of a product element, equals the second projection of that element.
-
-The elementwise composition law rewrites the left-hand side as the composite of the swap with the first projection, and that composite is the second projection.
-ai-/
 
 module
 

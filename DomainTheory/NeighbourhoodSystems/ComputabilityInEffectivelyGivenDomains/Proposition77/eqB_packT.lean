@@ -1,8 +1,3 @@
-/-ai
-The equality bit of a packed equality bit, consistency bit, and intersection index is the equality bit.
-
-Unfolding the equality bit and the packing, the first pairing projection returns that component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

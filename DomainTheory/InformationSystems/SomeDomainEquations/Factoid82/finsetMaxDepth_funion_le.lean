@@ -1,8 +1,3 @@
-/-ai
-The finset depth of a finitary union of finite sets of raw lambda tokens is at most the maximum of the two finset depths.
-
-Every token of the folded union lies in one of the two sets, so its raw depth is at most that set's finset depth and hence at most the maximum of the two. The right-fold bound for a uniform raw-depth estimate then applies.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-The basepoint does not lie in a right copy.
-
-A supposed membership equates a right tag with the basepoint, and simplification of the right tag rejects that equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

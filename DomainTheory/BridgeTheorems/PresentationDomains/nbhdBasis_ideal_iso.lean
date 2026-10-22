@@ -1,6 +1,3 @@
-/-ai
-For a neighbourhood system with a decidable basis, the order isomorphism from its filter domain to the ideal completion of the finite elements of the induced information system is the composite of the domain isomorphism with that information system and the ideal-completion isomorphism.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

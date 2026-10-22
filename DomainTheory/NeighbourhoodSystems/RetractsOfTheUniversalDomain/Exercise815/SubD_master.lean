@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the reconstructed system is the principal up-set of the empty list.
-
-This is the defining equation of that master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

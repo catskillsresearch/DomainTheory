@@ -1,8 +1,3 @@
-/-ai
-Every natural number belongs to the top element of the powerset system P.
-
-Membership holds outright.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

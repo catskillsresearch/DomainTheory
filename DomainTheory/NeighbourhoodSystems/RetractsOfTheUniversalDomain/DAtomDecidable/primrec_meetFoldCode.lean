@@ -1,8 +1,3 @@
-/-ai
-If the consistency function is primitive recursive, then so is the code-level meet-fold.
-
-It is the coded-fold combinator applied to the primitive-recursive coded meet step, the constant zero, the constant initial accumulator, and the identity, and that combinator agrees with the fold.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

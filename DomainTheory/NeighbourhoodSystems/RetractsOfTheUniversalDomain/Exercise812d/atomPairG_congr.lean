@@ -1,8 +1,3 @@
-/-ai
-If two Boolean histories agree at every position strictly below n, then the generalized atom pair agrees at depth n.
-
-The argument is induction on n. Depth zero is reflexive. At a successor the inductive hypothesis gives agreement at depth n, the histories agree at position n, and rewriting both sides as the same step makes them identical.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

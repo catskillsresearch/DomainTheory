@@ -1,8 +1,3 @@
-/-ai
-Each triangular number is at most the next one.
-
-Rewrite by the triangular recurrence and compare.
-ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

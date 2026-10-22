@@ -1,6 +1,3 @@
-/-ai
-The loop operator is the curry of the loop body for a predicate and an update, so that its value at a function is the function sending an element to the conditional of the predicate, the function applied after the update, and the element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

@@ -1,0 +1,3 @@
+The universal automaton accepts every binary word.
+
+Every word is accepted, because the state it reaches lies in the accept set of all states.

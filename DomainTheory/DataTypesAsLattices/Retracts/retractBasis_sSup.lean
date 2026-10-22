@@ -1,8 +1,3 @@
-/-ai
-A fixed point of a retract equals the supremum of its finite-image basis.
-
-Compare underlying sets. The supremum in the fixed-point lattice has underlying set equal to the union of the basis values, by Scott continuity of application and directedness of the basis. Typing of the fixed point and the interpolation law rewrite the point as the union of those indices that lie in the retract applied to some finite set contained in the point. Such an index belongs to the corresponding basis value, and an index of a basis value lies in that interpolated union.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

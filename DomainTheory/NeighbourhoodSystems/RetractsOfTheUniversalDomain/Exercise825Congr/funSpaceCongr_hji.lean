@@ -1,8 +1,3 @@
-/-ai
-The exponential of the forward isomorphism on the domain and the inverse isomorphism on the codomain, composed with the exponential of the inverse on the domain and the forward isomorphism on the codomain, is the identity of the source function space.
-
-Rewrite by the composite law for the exponential, the two identities that an inverse composed with the isomorphism is the identity, and the exponential of the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

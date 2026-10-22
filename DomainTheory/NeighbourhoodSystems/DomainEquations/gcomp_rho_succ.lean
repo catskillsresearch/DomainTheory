@@ -1,8 +1,3 @@
-/-ai
-If g composed with the cons map equals k composed with the product of the identity and g, then g composed with the successor truncation equals the descent operator of k applied to g composed with the previous truncation.
-
-The successor truncation unfolds as the cons map after the product of the identity with the previous truncation, after the splitting map. The assumed equation replaces g after the cons map by k after that product. Reassociating, using that a product of composites is the composite of the products, and using that the identity composed with itself is the identity, gives the descent operator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

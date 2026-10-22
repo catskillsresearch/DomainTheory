@@ -1,6 +1,3 @@
-/-ai
-The right content of a set of sum tokens, relative to the second neighbourhood system, is the preimage of that set under the right tag, united with every token of the second master whenever the set contains a left tag or the basepoint.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

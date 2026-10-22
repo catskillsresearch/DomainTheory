@@ -1,6 +1,3 @@
-/-ai
-The maximum second component of a list of rational pairs is the left fold of the maximum of the second components, seeded at zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

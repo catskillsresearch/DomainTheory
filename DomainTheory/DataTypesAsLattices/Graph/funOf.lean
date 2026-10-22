@@ -1,6 +1,3 @@
-/-ai
-Scott's section 1 and Table 2 define application of u to x to be the set of m for which some basic element contained in x has its code paired with m inside u.
-ai-/
 
 module
 

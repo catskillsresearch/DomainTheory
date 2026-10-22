@@ -1,6 +1,3 @@
-/-ai
-YFoldInner at depth n, bit bx, and stage N is the recursion of length N that starts from the pair of zeros and at each step applies the Y-fold step to the packed parameters n, bx, the step index, and the accumulator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

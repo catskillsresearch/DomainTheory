@@ -1,8 +1,3 @@
-/-ai
-Element pairing is injective in both arguments.
-
-This is injectivity of sequence pairing applied to the same equality.
-ai-/
 
 module
 

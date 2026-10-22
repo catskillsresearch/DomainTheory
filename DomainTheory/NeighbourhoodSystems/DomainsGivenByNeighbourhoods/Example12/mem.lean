@@ -1,6 +1,3 @@
-/-ai
-A set of tokens is a neighbourhood of Example 1.2 when it belongs to the set of the three neighbourhoods.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

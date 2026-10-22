@@ -1,8 +1,3 @@
-/-ai
-If the function-space product of d fixes a function-space element, then the universal-domain product fixes its image under i-arrow.
-
-Unfold the element map of the universal-domain product, cancel j-arrow after i-arrow, and use the fixed-point hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

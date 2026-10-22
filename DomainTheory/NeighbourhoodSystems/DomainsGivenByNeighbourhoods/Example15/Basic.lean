@@ -1,6 +1,3 @@
-/-ai
-The neighbourhoods of Scott's Example 1.5, the nonempty subsets of a four-element token set, form a countable family. Countability is supplied by type-class inference from the finite powerset.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
@@ -17,28 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example15.P4_sub_master
 
 @[expose] public section
-
-/-!
-# Example 1.5 (Scott 1981, PRG-19, §1)
-
-Scott's fourth worked example: tokens `Δ = {0, 1, 2, 3}` and `𝒟` the family of **all non-empty
-subsets** of `Δ`.
-
-> This system is a direct generalization of Example 1.2 … The verification that the present `𝒟`
-> is a neighbourhood system rests on nothing more than the remark that sets are consistent in `𝒟`
-> iff they have a non-empty intersection.
-
-We encode tokens as `Fin 4`, take `mem X := X.Nonempty`, and `master := Set.univ`. Condition (ii)
-of Definition 1.1 is immediate: a consistency witness `Z ⊆ X ∩ Y` that is itself non-empty makes
-`X ∩ Y` non-empty.
-
-* **Example 1.5** — `neighborhoodSystem`.
-* **Factoid 1.5a** — `consistent_iff_inter_nonempty`: a finite prefix is consistent in `𝒟` iff its
-  intersection is non-empty (Scott's "remark").
-
-Unlike Examples 1.2–1.4 this construction needs no `fin_cases`/`decide`: it is `Set.Nonempty`
-bookkeeping, so it audits **constructive** (`[propext, Quot.sound]`).
--/
 
 namespace DomainTheory.NeighbourhoodSystems.Example15
 

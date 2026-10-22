@@ -1,8 +1,3 @@
-/-ai
-Applying fromCC after toCC returns the original element of the string neighbourhood system.
-
-The two elements are compared by membership of an arbitrary neighbourhood. If the round trip contains the neighbourhood, then the neighbourhood is the whole token set, the singleton of the empty string, or a letter-prefixed copy. The whole set belongs to every element, and the other two cases are the corresponding membership lemmas for toCC. Conversely, if the original element contains the neighbourhood, the classification of neighbourhoods of the string system makes it the whole set, the empty-string singleton, or a prefixed copy, and each case is one clause of membership under fromCC, using the converse membership lemmas for toCC.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

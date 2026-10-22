@@ -1,8 +1,3 @@
-/-ai
-Scott's relation (i) for the power domain, at the level of codes: equality of two coded neighbourhoods is recursively decidable.
-
-Conjoin the subset-code decider with its swap. The resulting two-place decider decides equality because of the criterion that relates equality of the two coded neighbourhoods to that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

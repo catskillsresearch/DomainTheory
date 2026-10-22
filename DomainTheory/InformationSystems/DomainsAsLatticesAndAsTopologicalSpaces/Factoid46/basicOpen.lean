@@ -1,6 +1,3 @@
-/-ai
-The basic open determined by a finite set of tokens is the set of elements whose carrier contains that set.
-ai-/
 
 module
 

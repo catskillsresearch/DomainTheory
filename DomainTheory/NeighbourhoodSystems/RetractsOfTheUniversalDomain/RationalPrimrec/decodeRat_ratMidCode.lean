@@ -1,8 +1,3 @@
-/-ai
-The midpoint code of two rational codes decodes to the arithmetic mean of the two decoded rationals.
-
-The positive numerator part of the midpoint is the cross-cleared sum of the positive parts, and the negative part is the cross-cleared sum of the negative parts, both by unfolding the midpoint and cancelling the pairing. The component form of decoding, the denominator of the midpoint, and the division form of the rational constructor, applied also to the two inputs, are substituted. Both denominators are positive, so clearing them reduces the identity to a polynomial equality, which holds by the ring laws.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

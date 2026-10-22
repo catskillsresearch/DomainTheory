@@ -1,0 +1,1 @@
+Scott's Table 2 defines the McCarthy conditional of z, x, and y to be the union of those members of x for which 0 lies in z and those members of y for which some successor lies in z.

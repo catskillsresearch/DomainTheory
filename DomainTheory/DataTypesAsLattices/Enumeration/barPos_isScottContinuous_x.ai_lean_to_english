@@ -1,0 +1,3 @@
+For a fixed element u, the positive bar branch is Scott continuous in its second argument.
+
+The substitution theorem composes right continuity of sequence cons at the numeral 1 with the composite, again by substitution, of right continuity of sequencing at u and left continuity of application at the numeral 1.

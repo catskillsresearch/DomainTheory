@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the development of a computable set difference for V: the choice-free bitwise xor and the and-not built from it, the raw and canonical difference indices, the instance of a computable difference, and the lemmas on primitive recursiveness, bit iteration, level sets, nonemptiness, recursive decidability, and the specification of the difference index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
@@ -35,46 +32,9 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d.UnionClosed
 @[expose] public section
 
-/-!
-# Exercise 8.12(f), prerequisite — `V` has a computable set-difference (`IsComputableDiff`)
-
-`Exercise812d.lean`'s `IsComputableDiff` (`(d)(3)(a)`) has so far only been instantiated for `U`
-(`Exercise812eD.lean`'s `U_isComputableDiff`/`Udiff`). This file supplies the missing `V`-side
-instance, `V_isComputableDiff`, needed by `8.12(f)`'s `splitFromBisection VComputablePresentation
-… UComputableBisection` (`V` is the *prober* for `(f)`, symmetric to `U` being the prober for
-`(e)`).
-
-## Design
-
-Mirrors `LevelSetPrimrec.lean`'s `VinterRaw`/`Vinter` exactly, substituting `Exercise812c.lean`'s
-`levelSet_diff` for `levelSet_myInter` as the driving mathematical fact. `levelSet_diff`'s formula
-combines two upsampled masks via the bitwise "and-not" identity `a ^^^ (a &&& b)`
-(`testBit_xor_and_self`) instead of plain `&&&` — so the one new piece of `Nat.Primrec`
-infrastructure needed is a computable version of that combinator. Rather than re-deriving the
-"and-not" identity arithmetically, we build a fresh choice-free primitive-recursive bitwise XOR
-(`myXor`), mirroring `myLand`/`myLor` bit-for-bit (`lowXor`/`xorStep`, `Nat.testBit_xor` in place of
-`Nat.testBit_and`/`Nat.testBit_lor`), and simply compose it with the already-`Pass` `myLand`:
-`myAndNot a b := myXor a (myLand a b)` realizes `a ^^^ (a &&& b)` for free from
-`myXor_eq_xor`/`myLand_eq_land`, no new arithmetic identity needed.
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
-
-/-! ## A choice-free primitive-recursive bitwise XOR (`myXor`)
-
-Mirrors `myLand` (`LevelSetPrimrec.lean`) bit-for-bit: `lowXor`/`xorStep` in place of
-`lowAnd`/`landStep`, `Nat.testBit_xor` in place of `Nat.testBit_and`. -/
-
-
-/-! ## The "and-not" combinator `myAndNot a b = a ^^^ (a &&& b)` -/
-
-
-/-! ## `VdiffRaw`/`Vdiff` — `V`'s computable set-difference
-
-Mirrors `VinterRaw`/`Vinter` exactly, substituting `levelSet_diff` (`Exercise812c.lean`) for
-`levelSet_myInter` and `myAndNot` for `myLand`. -/
 
 
 end DomainTheory.NeighbourhoodSystems

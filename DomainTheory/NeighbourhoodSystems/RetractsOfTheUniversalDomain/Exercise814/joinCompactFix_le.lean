@@ -1,8 +1,3 @@
-/-ai
-The join of two compact fixed points lying below a common fixed point still lies below that fixed point.
-
-The common fixed point bounds the two points, so their supremum lies below it. Monotonicity of the element map and the fixed-point equation carry the inequality to the image.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

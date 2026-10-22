@@ -1,6 +1,3 @@
-/-ai
-The zero table sends zero to the true element of the truth domain and sends every successor to the false element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

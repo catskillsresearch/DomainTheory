@@ -1,8 +1,3 @@
-/-ai
-The bit test is primitive recursive. On a paired code it is the residue modulo 2 of the iterated division of the first component by two to the power of the second.
-
-The residue modulo 2, composed with the primitive-recursive iterated division, is primitive recursive, and it agrees with the bit test by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

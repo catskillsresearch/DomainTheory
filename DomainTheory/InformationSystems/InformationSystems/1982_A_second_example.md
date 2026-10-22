@@ -1,15 +1,55 @@
 # A second example
 
-**A second example.** The first example is possibly misleading because all (finite) sets of data objects were allowed to be consistent. The example can be modified in a natural way so this is not so; of course, quite a different system will be obtained. The idea is to let $D$ be the set of all pairs $(n, m)$ of integers with $n < m$, where such a pair stands now for the proposition $n < x < m$. Clearly the two data objects $(0, 2)$ and $(3, 7)$ taken together are inconsistent. (Why?)
+## Human-English
 
-Oh, I see, I have left out $\Delta$ from $D$; we must therefore include the somewhat artificial pair $(0, \infty)$ with the obvious interpretation. When I say “obvious interpretation” here I mean that $u \in \mathrm{Con}$ can be defined by saying that there must be an integer satisfying all the “propositions” in $u$. Further, $u \vdash X$ can be defined by saying that whenever an integer satisfies all the propositions in $u$, then it must satisfy $X$. The notion of “satisfy” really should be obvious from the intuitive reading given to the data objects, and the reader can verify easily that all the axioms hold for this example of an information system. ■
+@import "1982_A_second_example.english" {code_block=false}
 
-**Lean 4**
+## AI: Human-English to AI-Lean
 
-- [InformationSystems/InformationSystems/Factoid25/Token.lean](Factoid25/Token.lean)
-- [InformationSystems/InformationSystems/instDecidableEq.lean](instDecidableEq.lean)
-- [InformationSystems/InformationSystems/Sat.lean](Sat.lean)
-- [InformationSystems/InformationSystems/sat_midpoint.lean](sat_midpoint.lean)
-- [InformationSystems/InformationSystems/sat_sing.lean](sat_sing.lean)
-- [InformationSystems/InformationSystems/ofSatisfaction.lean](ofSatisfaction.lean)
-- [InformationSystems/InformationSystems/Factoid25.lean](Factoid25.lean)
+**InformationSystems/InformationSystems/Factoid25/Token.lean**
+
+@import "Factoid25/Token.lean"
+
+**InformationSystems/InformationSystems/instDecidableEq.lean**
+
+@import "instDecidableEq.lean"
+
+**InformationSystems/InformationSystems/Sat.lean**
+
+@import "Sat.lean"
+
+**InformationSystems/InformationSystems/sat_midpoint.lean**
+
+@import "sat_midpoint.lean"
+
+**InformationSystems/InformationSystems/sat_sing.lean**
+
+@import "sat_sing.lean"
+
+**InformationSystems/InformationSystems/ofSatisfaction.lean**
+
+@import "ofSatisfaction.lean"
+
+**InformationSystems/InformationSystems/Factoid25.lean**
+
+@import "Factoid25.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Factoid25/Token.ai_lean_to_english" {code_block=false}
+
+@import "instDecidableEq.ai_lean_to_english" {code_block=false}
+
+@import "Sat.ai_lean_to_english" {code_block=false}
+
+@import "sat_midpoint.ai_lean_to_english" {code_block=false}
+
+@import "sat_sing.ai_lean_to_english" {code_block=false}
+
+@import "ofSatisfaction.ai_lean_to_english" {code_block=false}
+
+@import "Factoid25.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1982_A_second_example.ai_english_concordance" {code_block=false}

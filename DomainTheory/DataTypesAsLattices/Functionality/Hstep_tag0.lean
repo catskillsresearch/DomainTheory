@@ -1,8 +1,3 @@
-/-ai
-The interpreter step at a tag-zero injection of x, on an environment, equals the application of that environment to x.
-
-Unfold the step, the expression tag and payload, and the variable clause. The tag of a zero injection is the numeral zero, so the definite conditional selects its first branch, and the payload of the injection is x.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

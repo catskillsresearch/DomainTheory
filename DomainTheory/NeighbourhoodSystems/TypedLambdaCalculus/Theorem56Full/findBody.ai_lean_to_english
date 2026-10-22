@@ -1,0 +1,1 @@
+The search body sends a function k and a stack z to the conditional of the zero test of f at z, the head of z, and k applied to the stack obtained by pushing the successor of that head onto the tail. It is the conditional composed with the pairing of that zero test, the head, and the evaluation of the unknown function at that pushed stack.

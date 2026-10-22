@@ -1,8 +1,3 @@
-/-ai
-The interleaved element is monotone in both tagged arguments. If each tagged string lies below another in the element order, the interleaved element lies below the interleaving of the larger arguments.
-
-The element order on shapes is the approximation order on tagged strings. Monotonicity of the interleaving value in that order, applied to the two hypotheses, gives the comparison of the interleaved elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

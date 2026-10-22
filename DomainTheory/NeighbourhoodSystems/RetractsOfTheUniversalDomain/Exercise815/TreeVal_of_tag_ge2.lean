@@ -1,8 +1,3 @@
-/-ai
-If the tag of a code is at least two, its evaluation is the master index of the universal domain.
-
-Both selectors equal zero, because subtracting the tag from one and from two yields zero, so the fuel step returns the master index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

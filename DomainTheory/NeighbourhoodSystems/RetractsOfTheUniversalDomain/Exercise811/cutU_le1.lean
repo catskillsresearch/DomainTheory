@@ -1,8 +1,3 @@
-/-ai
-If the Dedekind up-set of t holds at r, then r ≤ 1.
-
-That bound is the first conjunct of the definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

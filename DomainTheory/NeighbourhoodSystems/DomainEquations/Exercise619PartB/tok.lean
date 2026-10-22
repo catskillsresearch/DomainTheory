@@ -1,6 +1,3 @@
-/-ai
-The token set of a Scott system is the master neighbourhood of its underlying neighbourhood system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

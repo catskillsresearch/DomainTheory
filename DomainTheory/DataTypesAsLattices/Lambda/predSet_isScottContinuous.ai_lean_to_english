@@ -1,0 +1,3 @@
+The predecessor operation is Scott continuous.
+
+If k + 1 belongs to a set, the singleton finite set of k + 1 is contained in the set and its predecessor contains k, so k lies in the Scott union. Conversely, a Scott-union witness is a finite set contained in the original set whose predecessor already contains k.

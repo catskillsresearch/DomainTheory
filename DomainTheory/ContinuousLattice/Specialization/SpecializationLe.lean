@@ -1,6 +1,3 @@
-/-ai
-Scott's specialization order holds of two points of a space when every open set containing the first also contains the second.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

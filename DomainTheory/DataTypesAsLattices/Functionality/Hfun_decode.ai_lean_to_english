@@ -1,0 +1,3 @@
+Applying the raw fixed point to the encoding of a lambda term yields the graph of the interpretation of that term.
+
+Congruence of application along the fixed-point equation, rewritten by the one-argument application of HF, identifies the value with the graph of the step at the encoding. Transitivity, congruence of the graph, and function extensionality, rewritten by the double application, replace each step by the interpretation equation.

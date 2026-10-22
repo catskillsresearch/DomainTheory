@@ -1,0 +1,3 @@
+When u is not bottom, fixOfO u t is not bottom if and only if t contains {0}.
+
+If t does not contain {0}, every neighbourhood of fixOfO u t is the master, so the element is bottom. If t contains {0} and the element were bottom, a non-master neighbourhood of u would belong to it and therefore would be the master.

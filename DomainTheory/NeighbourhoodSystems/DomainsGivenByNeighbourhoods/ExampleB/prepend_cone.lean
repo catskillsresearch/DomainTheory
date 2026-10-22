@@ -1,8 +1,3 @@
-/-ai
-Prepending a finite binary string to a cone yields the cone of the concatenated string.
-
-Compare the two sets by extensionality. A concatenation of the first string with an extension of the second is an extension of the concatenation. Conversely, an extension of the concatenation splits, after the first string, as the second string followed by a remainder, and associativity restores the original string.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,8 +1,3 @@
-/-ai
-Theorem 8.6 states that sub f equals f exactly when f is a finitary projection. Theorem 8.6 states that the packaged map subApprox on the function space is finitary: its fixed elements are order-isomorphic to a domain. Theorem 8.6 states that the packaged map subApprox is a finitary projection on the function space.
-
-The numbered name theorem_86 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86.sub_eq_self_iff_isFinitaryProjection

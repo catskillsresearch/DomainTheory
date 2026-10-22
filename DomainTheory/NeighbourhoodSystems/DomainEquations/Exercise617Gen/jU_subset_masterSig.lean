@@ -1,8 +1,3 @@
-/-ai
-The unit neighbourhood is contained in the master neighbourhood of the indexed sum.
-
-The only token of the unit neighbourhood is the unit token, which belongs to the master neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

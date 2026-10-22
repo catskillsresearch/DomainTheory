@@ -1,0 +1,3 @@
+Element-level inclusion of strict elements is monotone.
+
+A neighbourhood of the image of a smaller element is a strict step of some finite piece. Monotonicity of the strict-function equivalence orders the underlying approximable maps, so the step relation of the smaller element transfers to the larger one, and the same step belongs to the image of the larger element.

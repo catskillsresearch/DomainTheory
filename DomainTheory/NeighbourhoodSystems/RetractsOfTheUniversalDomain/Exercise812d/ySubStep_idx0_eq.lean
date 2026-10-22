@@ -1,8 +1,3 @@
-/-ai
-If the junk selector against the direct emptiness decider is zero, the first output index of the Y-sub-step is the bit's choice of the positive or negative split index.
-
-Unfolding the sub-step, the pair projections and the packed first component reduce by that hypothesis to the chosen split index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

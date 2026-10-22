@@ -1,8 +1,3 @@
-/-ai
-The unique function on the natural numbers that sends zero to zero and commutes with successor is the identity.
-
-The equality is proved by induction. The zero case is the given equation, and the successor case rewrites by the successor equation and the inductive hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

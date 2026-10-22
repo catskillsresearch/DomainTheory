@@ -1,8 +1,3 @@
-/-ai
-Every member of a pointwise-bounded set of approximable maps lies below the supremum of that set.
-
-A related pair of a member is membership of the output in that member at the principal filter of the input. That value lies below the pointwise supremum at the same principal filter, and that membership is the relation of the supremum map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

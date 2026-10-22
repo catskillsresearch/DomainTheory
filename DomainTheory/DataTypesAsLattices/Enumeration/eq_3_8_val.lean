@@ -1,8 +1,3 @@
-/-ai
-The value of code 1 is the zero combinator.
-
-Code 1 equals the code application of 0 to 0. The value law for code application and the value of code 0 reduce the claim to the self-application of G.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

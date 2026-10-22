@@ -1,8 +1,3 @@
-/-ai
-The map sending a pair of natural numbers to finAux of its two components is primitive recursive.
-
-The step that, on input p and q, returns the application of the union code to the numeral of the first component of q and then to the second component of q when that bit of the first component of p is set, and otherwise returns the second component of q, is primitive recursive by primitive recursion of bit testing, application, numerals, and definition by cases. Primitive recursion on the second component, starting from the bottom code, is therefore primitive recursive. It agrees with finAux by induction on that component: the zero case is definitional, and the successor case rewrites the recursive step by the definition of finAux.
-ai-/
 
 module
 

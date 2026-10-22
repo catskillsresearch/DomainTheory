@@ -1,8 +1,3 @@
-/-ai
-An approximable map sends an indexed directed union to the indexed directed union of the images.
-
-The image family is directed because the elementwise action is monotone and the original family is directed. Extensionality of elements, with the membership rules for an elementwise image and for an indexed directed union, matches a neighbourhood of either side with an index, an input neighbourhood of that member, and a relation of the map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

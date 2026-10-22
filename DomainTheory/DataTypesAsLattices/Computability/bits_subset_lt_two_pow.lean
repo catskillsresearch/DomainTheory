@@ -1,8 +1,3 @@
-/-ai
-If the finite set coded by n is contained in the finite set coded by b, then n < 2^(b + 1).
-
-Apply the high-bit bound. A set bit of n at a position j at least b + 1 would lie in the finite set coded by b, hence would be at most b.
-ai-/
 module
 
 public import Mathlib.Computability.RE

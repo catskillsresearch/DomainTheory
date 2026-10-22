@@ -1,6 +1,3 @@
-/-ai
-The inverse limit of an endomap of Pω is partially ordered by pointwise inclusion of coordinates. Reflexivity and transitivity are those of inclusion, and antisymmetry is extensionality of the sequence, obtained from mutual inclusion at each index.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

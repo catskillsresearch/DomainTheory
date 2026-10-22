@@ -1,8 +1,3 @@
-/-ai
-A language is a neighbourhood of the system on binary words if and only if it lies in Scott's family.
-
-The two sides are the same proposition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

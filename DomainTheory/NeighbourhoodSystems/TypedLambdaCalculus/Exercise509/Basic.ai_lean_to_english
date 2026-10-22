@@ -1,0 +1,1 @@
+This file gathers the fixed-point results of Exercise 4.7 and records Scott's Exercise 5.9. If two approximable endomaps commute, they have a least common fixed point. If they also agree at the bottom element, their least fixed points coincide. In particular, the least fixed point of a map equals the least fixed point of its composite with itself.

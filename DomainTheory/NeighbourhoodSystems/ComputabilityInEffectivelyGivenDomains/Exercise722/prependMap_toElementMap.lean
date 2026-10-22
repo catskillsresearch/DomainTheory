@@ -1,8 +1,3 @@
-/-ai
-The action of prepending a word on a domain element is the product of the embedding of that word with the element.
-
-A neighbourhood witnessing the action of the approximable map, together with the singleton of the word, witnesses the product. Conversely, any neighbourhood of the embedding contains the word, so monotonicity of concatenation shrinks the left factor of the product witness to that singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

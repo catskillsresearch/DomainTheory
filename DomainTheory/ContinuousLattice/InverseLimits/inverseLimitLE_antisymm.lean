@@ -1,8 +1,3 @@
-/-ai
-The coordinatewise order on compatible sequences is antisymmetric.
-
-If each sequence lies below the other, then at every stage the two coordinates are equal, so the underlying functions agree and the sequences are equal.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

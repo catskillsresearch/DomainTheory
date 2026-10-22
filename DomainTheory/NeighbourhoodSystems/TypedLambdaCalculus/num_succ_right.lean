@@ -1,8 +1,3 @@
-/-ai
-The pairing value of n and m + 1 is one more than the pairing value of n + 1 and m.
-
-Unfold the pairing function, rewrite n + (m + 1) as (n + 1) + m, and compare.
-ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

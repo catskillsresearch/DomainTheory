@@ -1,8 +1,3 @@
-/-ai
-Strictness is downward closed: a map below a strict map is itself strict.
-
-A relation of the smaller map is a relation of the larger map, and strictness of the larger map applies to it.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

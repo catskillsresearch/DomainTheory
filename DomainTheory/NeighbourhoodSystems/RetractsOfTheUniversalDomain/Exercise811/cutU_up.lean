@@ -1,8 +1,3 @@
-/-ai
-If r lies in cutU t, r ≤ s, and s ≤ 1, then s lies in cutU t.
-
-The bound s ≤ 1 is the hypothesis. If the second clause for r is the strict inequality 1 − t < r, cast r ≤ s to the reals and combine the inequalities. If instead r = 1, then s = 1 by antisymmetry, so the second clause holds by equality with 1.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

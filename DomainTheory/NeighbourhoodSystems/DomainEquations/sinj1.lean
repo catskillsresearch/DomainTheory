@@ -1,6 +1,3 @@
-/-ai
-The one-injection into the three-way sum sends an element of the middle summand to the sum element whose neighbourhoods are the master together with the one-copies of that element's neighbourhoods.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

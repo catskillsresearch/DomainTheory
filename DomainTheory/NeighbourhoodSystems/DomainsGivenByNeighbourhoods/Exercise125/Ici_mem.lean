@@ -1,8 +1,3 @@
-/-ai
-Each principal final segment is a neighbourhood of the final-segment system.
-
-The segment contains its generator, and it is an upper set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

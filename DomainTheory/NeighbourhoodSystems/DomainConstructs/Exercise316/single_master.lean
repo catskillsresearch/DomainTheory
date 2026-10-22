@@ -1,8 +1,3 @@
-/-ai
-Pinning any copy to the master neighbourhood yields the master neighbourhood of the infinite iterate.
-
-Compare fibers with those of the iterate master, each of which is the original master. At the pinned index the fiber is the master, and at every other index the pinned fiber is already the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

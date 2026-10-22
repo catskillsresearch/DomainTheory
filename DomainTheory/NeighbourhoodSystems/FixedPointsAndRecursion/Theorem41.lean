@@ -1,8 +1,3 @@
-/-ai
-If an approximable endomap sends an element below itself, then the least fixed point of the map lies below that element. The elementwise image of the least fixed point of an approximable endomap is the least fixed point itself.
-
-The numbered name theorem_41 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41.fixElement_le_of_toElementMap_le

@@ -1,8 +1,3 @@
-/-ai
-The code-level injection relates the neighbourhood at a raw index to the coded neighbourhood at another index if and only if the first neighbourhood is contained in the neighbourhood at the involute of the second index.
-
-The relation is membership of the first neighbourhood together with membership of the coded neighbourhood in the image of its principal filter under the coding map into the copy. Simplify membership in a principal filter. The embedding of the second index is the neighbourhood at its involute. In the forward direction a witness index with the same coded neighbourhood rewrites, by the agreement of embeddings with equality of coded neighbourhoods, to the inclusion in that involute neighbourhood. In the reverse direction the second index itself is a witness, using membership of the presented neighbourhood and of the coded neighbourhood, and the identification of the embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic

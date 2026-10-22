@@ -1,8 +1,3 @@
-/-ai
-The filter transport of sub is idempotent.
-
-Unfolding the transport, extraction of a filter recovers the map, and sub is idempotent.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,8 +1,3 @@
-/-ai
-If Y is a neighbourhood of the second system, the intersection of the concrete sum master with the true-tagged copy of Y equals that copy.
-
-The true-tagged copy of Y is already contained in the sum master, so intersecting with the master leaves it unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

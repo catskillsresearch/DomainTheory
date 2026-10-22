@@ -1,0 +1,3 @@
+The i-th binary digit of the sum of the powers of two indexed by a finite set of natural numbers is set if and only if that index belongs to the set.
+
+Rewrite the digit test as membership in the list of bit indices, then as membership in the finset of that list, and apply the identity that this finset, for the sum of those powers of two, is the index set itself.

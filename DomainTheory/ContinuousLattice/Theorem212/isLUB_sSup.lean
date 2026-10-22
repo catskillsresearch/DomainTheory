@@ -1,8 +1,3 @@
-/-ai
-For a monotone idempotent endomap, the ambient-then-endomap supremum is a least upper bound in the fixed-point set.
-
-A fixed point k of the set lies below the candidate because its underlying element equals the endomap applied to itself, and monotonicity carries that element up to the endomap applied to the ambient supremum of the underlying set. If w is an upper bound, each underlying member of the set lies below the underlying element of w, so the ambient supremum does too. Monotonicity of the endomap and the fixed-point equation for w put the candidate below w.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

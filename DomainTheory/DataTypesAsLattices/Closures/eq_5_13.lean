@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (5.13). The boxed sum of a and b unfolds as the graph of the double conditional of the union of the two occupancy conditionals on the square components, with branches the left square pair of the shifted application of a and the right square pair of the shifted application of b.
-
-The equality is the definition.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,8 +1,3 @@
-/-ai
-If a neighbourhood is other than the master, its intersection with any set is still other than the master.
-
-If the intersection equalled the master, the neighbourhood would equal the master: it is contained in the master, and rewriting the master as the intersection shows that the intersection is contained in the neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

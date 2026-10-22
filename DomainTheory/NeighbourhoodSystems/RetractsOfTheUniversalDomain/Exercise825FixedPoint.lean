@@ -1,8 +1,3 @@
-/-ai
-The solution domain, the fixed neighbourhood of the fixed point of the continuous operator of the combinator, is isomorphic to its own function space.
-
-The numbered name example_825_fixed_point is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825FixedPoint.exercise_8_25_main

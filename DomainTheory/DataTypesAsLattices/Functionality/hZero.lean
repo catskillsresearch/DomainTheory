@@ -1,6 +1,3 @@
-/-ai
-The numeral zero is the left injection of the natural number zero.
-ai-/
 
 module
 

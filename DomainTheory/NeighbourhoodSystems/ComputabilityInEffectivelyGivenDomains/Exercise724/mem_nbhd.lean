@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood of any finite list belongs to the system L.
-
-The list itself is the witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

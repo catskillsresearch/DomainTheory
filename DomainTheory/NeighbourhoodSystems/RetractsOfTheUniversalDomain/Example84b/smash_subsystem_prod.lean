@@ -1,8 +1,3 @@
-/-ai
-The smash neighbourhood system of Exercise 5.10 is a subsystem of the product of D and E.
-
-The masters agree. A smash neighbourhood is a product neighbourhood, whether it is the master or a proper product of neighbourhoods. An intersection of a smash neighbourhood with a product neighbourhood that lands back in the product is again a smash neighbourhood: intersection with the master leaves the other side, and the intersection of two proper product neighbourhoods keeps both factors distinct from the masters.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

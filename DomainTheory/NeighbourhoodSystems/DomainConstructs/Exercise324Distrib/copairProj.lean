@@ -1,6 +1,3 @@
-/-ai
-The comparison of a map out of a separated sum with maps out of the two summands sends the map to the pair of its composites with the two injections.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum

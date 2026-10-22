@@ -1,8 +1,3 @@
-/-ai
-Reading a word from the state that has matched a prefix of a given length reaches the state of that length plus the length of the word when the word is a prefix of the remaining suffix, and reaches the sink otherwise.
-
-The proof is by induction on the word. The empty word is a prefix and leaves the indexed state unchanged. For a letter followed by a remainder, if the index still lies inside the target, the remaining suffix begins with the character at that index, and the whole word is a prefix exactly when the letter equals that character and the remainder is a prefix of the tail. A matching letter steps to the next index and the inductive hypothesis finishes the remainder. A mismatched letter steps to the sink, which stays the sink, and the word is not a prefix. If the index is already past the end of the target, the step is the sink and the remaining suffix is empty, so the longer word is not a prefix.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular

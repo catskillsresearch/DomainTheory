@@ -1,8 +1,3 @@
-/-ai
-The intersection of relevant outputs over the empty list is the master set supplied to the intersection.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

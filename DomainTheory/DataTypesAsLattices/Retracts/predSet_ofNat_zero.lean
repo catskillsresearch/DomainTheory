@@ -1,8 +1,3 @@
-/-ai
-The predecessor of the singleton zero is the bottom element.
-
-This is extensionality, simplified by the definitions of the predecessor set, the singleton, and the bottom element.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

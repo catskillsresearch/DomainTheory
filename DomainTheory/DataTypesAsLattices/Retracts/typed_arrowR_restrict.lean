@@ -1,8 +1,3 @@
-/-ai
-If a set is typed by the function space of a retract a with a set b, then the set equals its composite with a.
-
-The typing equation writes the set as the composite of b with the composite of the set and a. Composing that expression on the right with a does not change it, by comparing graphs and using idempotence of a. Substituting the rewritten form into the composite of the set with a and chaining these equalities gives the restriction equation.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

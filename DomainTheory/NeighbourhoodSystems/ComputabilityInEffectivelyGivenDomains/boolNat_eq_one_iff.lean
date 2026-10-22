@@ -1,8 +1,3 @@
-/-ai
-The boolean numeral of a boolean equals 1 if and only if the boolean is true.
-
-Split into the two boolean cases and simplify the definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

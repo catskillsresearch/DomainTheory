@@ -1,8 +1,3 @@
-/-ai
-Every finite subset of the natural numbers is the finite set coded by some natural number.
-
-Choose a finset with the same underlying set and take its code. The decoding law, transported along the equality of the two sets, gives the result.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

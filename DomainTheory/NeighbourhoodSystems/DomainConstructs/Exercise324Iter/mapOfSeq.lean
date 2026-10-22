@@ -1,6 +1,3 @@
-/-ai
-The infinite pairing of a sequence of approximable maps relates an input neighbourhood to an iterate neighbourhood when every coordinate map relates the input to the corresponding fibre. The master relates because every fibre of the iterate master is the master. The fibres of an intersection are the intersections of the fibres, with nontrivial fibres bounded by the maximum of the two bounds. Monotonicity passes each fibre relation along the smaller input and the smaller fibre.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

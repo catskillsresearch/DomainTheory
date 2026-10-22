@@ -1,8 +1,3 @@
-/-ai
-The run map relates the cone of a string to a set exactly when that set is a neighbourhood and contains the cone of the output of the string.
-
-A relation witness is some prefix with the same cone, and cones determine their prefixes. Conversely the given string is a witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

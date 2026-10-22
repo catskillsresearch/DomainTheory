@@ -1,0 +1,3 @@
+For a continuous-lattice retraction and a nonempty directed subset S of the retract, the retraction of the supremum of the image of S in the ambient lattice equals the supremum of S. This is the March 1972 correction to Scott's Proposition 2.10.
+
+The image of S under the inclusion is nonempty and directed, because the inclusion is monotone. The retraction preserves that directed supremum. Composing further with the inclusion and using that the retraction inverts the inclusion returns S.

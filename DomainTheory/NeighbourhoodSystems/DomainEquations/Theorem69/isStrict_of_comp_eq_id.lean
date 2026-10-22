@@ -1,8 +1,3 @@
-/-ai
-If the composite of a with b is the identity, then a is strict.
-
-Strictness means that a sends bottom to bottom. Bottom in the codomain of b lies below b applied to bottom, so monotonicity puts a of that bottom below a of b of bottom. The composite element map is the identity on bottom, hence bottom, and bottom is least.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

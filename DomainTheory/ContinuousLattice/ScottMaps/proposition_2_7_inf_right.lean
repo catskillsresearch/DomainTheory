@@ -1,8 +1,3 @@
-/-ai
-On a continuous lattice, meet on the right with a fixed element is Scott-continuous.
-
-Continuity follows from preservation of directed suprema by that meet.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

@@ -1,8 +1,3 @@
-/-ai
-The tail of a bit consed onto a total element of σ is again that total element.
-
-Rewrite by the total clause of cons and the total clause of tail; the equation holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

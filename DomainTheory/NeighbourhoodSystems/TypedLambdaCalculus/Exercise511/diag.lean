@@ -1,6 +1,3 @@
-/-ai
-The constant stack is the composite of the fixed-point combinator on the iteration with the curry of push, so that its value at an element is the least stack equal to that element pushed onto itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

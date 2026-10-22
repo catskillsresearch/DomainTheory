@@ -1,0 +1,3 @@
+The conditional body of the coproduct mediator, reading the tag of u and applying f or g to the payload, is Scott continuous.
+
+The continuity theorem for an operation of three arguments is applied to the three continuity lemmas for the conditional, to left continuity of application at the numeral 0, and to the two payload branches. Each branch is Theorem 1.3 applied to application of f, or of g, and to left application at the numeral 1.

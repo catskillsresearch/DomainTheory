@@ -1,0 +1,1 @@
+The combinator S, as an approximable map, is the double curry of its uncurried body. It sends a map from the domain into a function space to a map from a function space into a function space, so that S of F of G of x is F of x applied to G of x.

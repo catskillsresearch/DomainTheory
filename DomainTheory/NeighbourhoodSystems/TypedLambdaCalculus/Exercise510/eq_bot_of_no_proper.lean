@@ -1,8 +1,3 @@
-/-ai
-If every neighbourhood contained in an element is the master neighbourhood, then the element is the bottom element.
-
-By antisymmetry. A neighbourhood of the element is the master, which is membership in the bottom element, and the bottom element lies below every element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

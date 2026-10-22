@@ -1,6 +1,3 @@
-/-ai
-Scott's integer convention takes the numeral n to be the singleton whose only member is n, as an element of Pω.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

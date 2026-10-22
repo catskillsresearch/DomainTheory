@@ -1,8 +1,3 @@
-/-ai
-The code bound at 0 equals 1.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

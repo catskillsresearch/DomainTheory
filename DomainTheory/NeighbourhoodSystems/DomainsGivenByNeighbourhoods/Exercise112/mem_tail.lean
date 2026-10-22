@@ -1,8 +1,3 @@
-/-ai
-A natural number lies in the tail of an index if and only if it is at least that index.
-
-The two sides are definitionally the same.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,8 +1,3 @@
-/-ai
-Each infinite binary path determines a total element of the binary system.
-
-The numbered name example_113 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise113.branch_isTotal

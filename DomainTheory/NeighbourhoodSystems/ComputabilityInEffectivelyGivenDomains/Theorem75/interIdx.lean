@@ -1,6 +1,3 @@
-/-ai
-The intersection index of codes n and m is the append code of n and m when both consistency characteristics equal 1, the code n when n is consistent and m is not, and the code m when n is not consistent.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

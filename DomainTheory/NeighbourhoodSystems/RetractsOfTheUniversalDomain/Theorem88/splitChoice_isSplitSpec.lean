@@ -1,8 +1,3 @@
-/-ai
-The total splitting choice satisfies the splitting specification.
-
-Under the hypotheses of the specification the conditional takes the chosen branch, and the chosen pair satisfies the existential conclusion of the splitting step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

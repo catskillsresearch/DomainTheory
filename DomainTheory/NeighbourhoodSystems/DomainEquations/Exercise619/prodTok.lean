@@ -1,6 +1,3 @@
-/-ai
-prodTok is the concrete product system of Exercise 6.19 over binary words. Its neighbourhoods are the sets formed by the empty word together with the false-tagged copy of a neighbourhood of the first factor and the true-tagged copy of a neighbourhood of the second, and its master is that construction on the two masters. Consistent intersection is componentwise, by the inclusion and intersection laws for product neighbourhoods together with the intersection laws of the factors.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

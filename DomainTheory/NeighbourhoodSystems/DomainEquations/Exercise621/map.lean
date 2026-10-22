@@ -1,6 +1,3 @@
-/-ai
-The action of an expression on maps sends a constant to the identity map of that constant and the variable to the given map. Separated sum, separated product, coalesced sum, and smash product act by the corresponding operation on the two recursive actions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

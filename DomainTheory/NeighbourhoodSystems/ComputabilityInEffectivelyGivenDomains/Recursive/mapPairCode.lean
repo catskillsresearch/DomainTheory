@@ -1,6 +1,3 @@
-/-ai
-The pair-map code of a parameter and a code is the fold of the pair-map step with that parameter and initial accumulator 0. It codes the reverse of the decoded list with each entry paired on the left with the parameter.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

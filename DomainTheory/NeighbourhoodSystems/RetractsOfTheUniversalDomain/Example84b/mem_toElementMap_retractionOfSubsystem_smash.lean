@@ -1,8 +1,3 @@
-/-ai
-Z belongs to the subsystem retraction of the smash subsystem, applied to z, if and only if Z is a product neighbourhood and some smash neighbourhood Y of z is contained in Z.
-
-A relational witness supplies a smash neighbourhood between a neighbourhood of z and Z, and upward closure of z moves membership onto that smash neighbourhood. Conversely, that smash neighbourhood is itself the relational witness, with the inclusion of it in itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

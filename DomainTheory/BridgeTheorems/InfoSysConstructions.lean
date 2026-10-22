@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the product, separated-sum, and function-space constructions on information systems, together with monotonicity of unpairing and the independence of the left and right sum-element extractions from the choice of witnessing token.
-ai-/
 module
 
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.Basic

@@ -1,8 +1,3 @@
-/-ai
-Application of a seven-way sum to the injection of x at tag 5 is the injection at tag 5 of the application of the sixth summand to x.
-
-Rewrite by the application equation, the body, the zero and one clauses of tagged injection, the double conditional at a successor, the predecessor of a successor numeral, the double conditional at a successor, the predecessor of a successor numeral, the double conditional at a successor, three iterations of the predecessor sending the numeral 5 to the numeral 2, the double conditional at a successor, four iterations of the predecessor sending the numeral 5 to the numeral 1, the double conditional at one, iteration of the predecessor sending the numeral 5 to zero, and the double conditional at zero.
-ai-/
 
 module
 

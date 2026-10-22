@@ -1,8 +1,3 @@
-/-ai
-The forward comparison is a left inverse of the inverse comparison on elements of the concrete indexed sum.
-
-A master neighbourhood of the forward image is a neighbourhood of the original element. A unit-copy neighbourhood comes from the inverse image containing the singleton of the empty string, which matches the element containing the unit copy. A letter-copy comes from the inverse image containing the embedding, which matches the element containing that copy. Conversely, downward closure writes a neighbourhood of the element as the master, the unit copy, or a letter-copy, and each shape is a neighbourhood of the forward image by the corresponding membership law of the inverse.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

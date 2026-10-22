@@ -1,6 +1,3 @@
-/-ai
-The round information-system elements are the elements of the information system induced by the way-below neighbourhood basis that satisfy the transported roundness condition.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

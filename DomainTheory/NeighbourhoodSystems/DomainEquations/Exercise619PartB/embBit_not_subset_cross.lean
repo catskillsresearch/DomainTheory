@@ -1,8 +1,3 @@
-/-ai
-A nonempty copy tagged by one bit cannot be contained in a copy tagged by the other bit.
-
-Take a token of the nonempty set. Its tagged word lies in the other copy, so the two leading bits agree, contradicting the hypothesis that the bits differ.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

@@ -1,8 +1,3 @@
-/-ai
-An approximable map preserves directed suprema of elements.
-
-A token in the image of the supremum is related to a finite input contained in the supremum, hence in the union of the carriers, hence in a single member, so the token lies in the image of that member and therefore in the union that is the carrier of the supremum of the images. Each image of a member lies below the image of the supremum by monotonicity of the element map.
-ai-/
 
 module
 

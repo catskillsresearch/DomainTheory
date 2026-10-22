@@ -1,8 +1,3 @@
-/-ai
-Every component of the constant stack of an element equals that element. The component of index n of the map combinator applied to a stack of functions and an element is the function of index n in the stack applied to the element. The constant stack of an element equals that element pushed onto the constant stack of the element. The map combinator applied to a stack of functions and an element pushes the head function applied to the element onto the map combinator applied to the tail of the stack and the same element.
-
-The numbered name example_511 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511.component_diag

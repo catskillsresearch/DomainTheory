@@ -1,0 +1,3 @@
+The second projection of the product is a computable map.
+
+Inclusion in the second presentation is recursively decidable. Reindex it so that the domain index is the second factor of the product code. That predicate matches the projection relation, because the right preimage of a product neighbourhood is the second factor: one direction reads the inclusion, and the other restores product membership together with the codomain neighbourhood.

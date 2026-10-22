@@ -1,8 +1,3 @@
-/-ai
-A zero embedding is disjoint from every pair embedding.
-
-A common point would have empty path from the zero embedding and a cons path from one of the two tagged copies of the pair embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

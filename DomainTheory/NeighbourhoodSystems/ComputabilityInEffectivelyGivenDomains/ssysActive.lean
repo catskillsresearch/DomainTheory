@@ -1,6 +1,3 @@
-/-ai
-The activity bit of an index is false when decoding fails, and otherwise is the decision that the decoded expression denotes a nonempty set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-When every stage is a continuous lattice, the inverse limit is a continuous lattice. This is Scott's Proposition 4.1: the inverse limit is injective by the coordinatewise extension, and Theorem 2.12 then gives the continuous-lattice structure on the componentwise complete lattice.
-
-Equip the inverse limit with the subspace inverse-limit topology and its T0 separation. The first component of the backward direction of Theorem 2.12, applied to injectivity and to the agreement of specialization with the lattice order, is that continuous-lattice structure.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

@@ -1,6 +1,3 @@
-/-ai
-The conjugate of a Scott map along order isomorphisms of its domain and codomain is the original map, precomposed with the inverse isomorphism of the domain and postcomposed with the forward isomorphism of the codomain.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

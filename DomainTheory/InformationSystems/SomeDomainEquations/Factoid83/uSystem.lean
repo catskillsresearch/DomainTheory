@@ -1,6 +1,3 @@
-/-ai
-Scott's clauses (7) through (10) package the universal-domain information system U. Its least token is the U-bottom, its consistent sets are the U-consistent finite sets, and its entailment is U-entailment. The subset, singleton, entailment-consistency, bottom, reflexivity, and transitivity axioms are the corresponding lemmas for U-consistency and U-entailment.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

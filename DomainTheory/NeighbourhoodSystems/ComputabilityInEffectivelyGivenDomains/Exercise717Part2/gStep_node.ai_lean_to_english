@@ -1,0 +1,3 @@
+On an even code two times a plus two, paired with a certificate, the certificate step returns the pair whose first component is the product of the success bits of the two children read from the table and of the node guard on the witness, the children's outputs, and the output component, and whose second component is that output component.
+
+The first selector sees a code greater than one and takes its second branch. The second selector sees remainder zero and takes its second branch, and the identity for half of the code minus one recovers the child index used to address the table.

@@ -1,8 +1,3 @@
-/-ai
-The binary finite join of x and y contains a power-domain neighbourhood W if and only if both singleton joins do.
-
-Rewrite by the membership law of the meet of the two singletons and by the elementwise law that the binary join equals that meet.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

@@ -1,8 +1,3 @@
-/-ai
-If the point filters of two reals agree, then the reals are equal. The intersection of two rational-interval neighbourhoods with a point in common is again a rational-interval neighbourhood.
-
-The numbered name example_117 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise117.filterAt_injective

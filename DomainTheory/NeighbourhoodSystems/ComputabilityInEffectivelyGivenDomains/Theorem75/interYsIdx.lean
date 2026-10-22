@@ -1,6 +1,3 @@
-/-ai
-The index of the conditional output intersection of the list decoded from a against the domain neighbourhood at k is the fold of the interYs step, with parameter k, starting from the codomain master index, over the list coded by a.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

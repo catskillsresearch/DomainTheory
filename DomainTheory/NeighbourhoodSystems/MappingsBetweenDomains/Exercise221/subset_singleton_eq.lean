@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood of the system C contained in the singleton of a finite binary string σ equals that singleton.
-
-A cone cannot be contained in a singleton. A singleton contained in the singleton of σ has its unique element equal to σ, so the two singletons agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

@@ -1,6 +1,3 @@
-/-ai
-The endofunctor of the strict-map category associated with Exercise 6.23 sends a neighbourhood system X to N ⊕ ((X × X) + (X × X)), the action of the grammar expression Texp.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

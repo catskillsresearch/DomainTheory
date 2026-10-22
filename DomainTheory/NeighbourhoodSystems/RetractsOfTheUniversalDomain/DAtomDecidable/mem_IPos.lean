@@ -1,8 +1,3 @@
-/-ai
-An index lies in the positive index set of a list if and only if its neighbourhood is contained in the neighbourhood of every index in the list.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

@@ -1,8 +1,3 @@
-/-ai
-The element map of the approximable relation induced by a Scott-continuous map agrees with that map.
-
-The numbered name theorem_46 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.toElement_ofScottContinuous

@@ -1,8 +1,3 @@
-/-ai
-The strict first projection of two numerals is the first numeral.
-
-Rewrite by the application lemma and split on the second numeral. If it is zero the zero test is true, and if it is a successor the zero test is false. In both cases the conditional returns the first argument.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

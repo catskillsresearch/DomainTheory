@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the construction for Exercise 8.11: the chain neighbourhood system R, Scott's relation and approximable map, the lemmas on half-open intervals, the up-set presentation of elements, and the Dedekind-cut elements, cut sets, and cut points used to match fixed points of the map with reals in the unit interval.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85
@@ -46,53 +43,9 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 
 @[expose] public section
 
-/-!
-# Exercise 8.11 (Scott 1981, PRG-19, Lecture VIII)
-
-> Let `Q` be the set of rational numbers and define a neighbourhood system by the equation
-> `R = {[0,r) ∣ r ∈ Q and 0 < r ≤ 1}`. Show that the following defines an approximable map
-> `a : R → R`: `[0,r) a [0,s) iff r < s or r = s = 1`. Show in addition that `a` is a projection
-> where the fixed-point set of `a` is in a one-one correspondence with the real numbers between
-> `0` and `1` inclusive. (Hint: recall Dedekind cuts and show `≤` matches `⊑`.) Conclude that `a`
-> is *not* finitary. (Hint: aside from `1`, there are no finite elements for `{x ∣ x = a(x)}`.)
-
-## Contents
-
-* `R` — the chain neighbourhood system `{[0,r) ∣ 0 < r ≤ 1}` over `ℚ` (`ofNestedOrDisjoint`, since
-  the intervals are literally nested by `r`).
-* `a` — Scott's map (`aRel`), shown approximable (`Exercise811.a`).
-* `isRetraction_a` / `isProjection_a` — the two closure facts Scott asks for.
-* `fixOrderIso` — the order isomorphism `Fix(a) ≃o Set.Icc (0:ℝ) 1` realizing Scott's Dedekind-cut
-  correspondence (`c := 1 - t` is the "cut point", `t` the represented real, chosen so that `≤`
-  literally matches `⊑`, i.e. `fixOrderIso` is monotone both ways by construction).
-* `not_isFinitary_a` — `a` is *not* finitary: if it were, `Fix(a) ≃o Set.Icc (0:ℝ) 1` would transport
-  to *some* domain `F`'s element poset, but every non-bottom element of `Set.Icc (0:ℝ) 1` fails
-  Theorem 8.5's algebraic-compactness test (only `0`, matching Scott's lone finite element `⊥`, is
-  compact) — contradicting that `F` (being a domain) has a non-bottom *principal* element as soon as
-  it has more than one element.
-
-Everything here inherits the ambient `Classical.choice` taint of Mathlib's `ℚ`/`ℝ` order
-instances (as with `Definition87.lean`'s `𝒰`); no *further* choice is introduced beyond that and
-one genuine classical case split (`by_contra`) used for the compactness contradiction.
--/
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise811
 
 open NeighborhoodSystem ApproximableMap
 
-/-! ### The chain neighbourhood system `R = {[0,r) ∣ 0 < r ≤ 1}` -/
 
-
-/-! ### Scott's map `a : R → R` -/
-
-
-/-! ### `a` is a retraction and a projection -/
-
-/-! ### The fixed-point set of `a`, via "up-sets" `U : ℚ → Prop` -/
-
-
-/-! ### The correspondence with `Set.Icc (0 : ℝ) 1` -/
-
-
-/-! ### Non-finitarity -/
 end DomainTheory.NeighbourhoodSystems.Exercise811

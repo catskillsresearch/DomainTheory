@@ -1,6 +1,3 @@
-/-ai
-The code of a one-pair difference, from a natural whose unpaired components are the subtracted pair and the original pair, is the list code of the two endpoint combinations given by the rational minimum of the original right endpoint with the subtracted left endpoint and the rational maximum of the original left endpoint with the subtracted right endpoint.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

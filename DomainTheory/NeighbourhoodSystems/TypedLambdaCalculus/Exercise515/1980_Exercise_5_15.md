@@ -1,64 +1,175 @@
 # Exercise 5.15
 
-**EXERCISE 5.15.** (For algebraists.) We can regard $\langle \{0,1\}^*, \Lambda, \cdot \rangle$ as the free semigroup on two generators $0$ and $1$. The powerset $P\{0,1\}^*$ is taken as a domain as in Exercise 4.17. For "words" $e \in \{0,1\}^*$ define
+## Human-English
 
-$$
-e^* = \{\Lambda, e, e^2, e^3, \ldots, e^n, \ldots\}.
-$$
+@import "1980_Exercise_5_15.english" {code_block=false}
 
-Show that the least fixed point of
+## AI: Human-English to AI-Lean
 
-$$
-z = \{e\} \cdot z \cup \{e'\}
-$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow.lean**
 
-in $P\{0,1\}^*$ is $z = e^* \cdot \{e'\}$.
+@import "kpow.lean"
 
-Show further (as suggested by David Park) that the least solution of
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow_zero.lean**
 
-$$
-\begin{aligned}
-x &= a \cdot x \cup b \cdot y \cup c, \\
-y &= b \cdot x \cup a \cdot y \cup d
-\end{aligned}
-$$
+@import "kpow_zero.lean"
 
-has
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow_succ.lean**
 
-$$
-x = (a \cup b \cdot a^* \cdot b)^* \cdot (c \cup b \cdot a^* \cdot d),
-$$
+@import "kpow_succ.lean"
 
-where the $\{\cdot\}$ has been dropped off $\{a\}$, $\{b\}$ etc., and where the $^*$-notation has been extended to the whole domain, so that $z^* = \Lambda \cup z^* \cdot z$.
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/G.lean**
 
-(Hint: Apply 5.3.)
+@import "G.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_kpow_singleton.lean**
 
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow.lean](kpow.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow_zero.lean](kpow_zero.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/kpow_succ.lean](kpow_succ.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/G.lean](G.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_kpow_singleton.lean](mem_kpow_singleton.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_star.lean](mem_star.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_star_singleton.lean](mem_star_singleton.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/smul_assoc.lean](smul_assoc.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/smul_union.lean](smul_union.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star.lean](star.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkA.lean](parkA.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkC.lean](parkC.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkX.lean](parkX.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkY.lean](parkY.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_eq.lean](star_eq.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_mul_subset_prefixed.lean](star_mul_subset_prefixed.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/sunion_mul.lean](sunion_mul.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_mul_isFixed.lean](star_mul_isFixed.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/arden.lean](arden.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkX_eq.lean](parkX_eq.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkY_eq.lean](parkY_eq.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/park_least.lean](park_least.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/park_solves.lean](park_solves.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/part1.lean](part1.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515.lean](../Exercise515.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/part1_freeMonoid.lean](part1_freeMonoid.lean)
+@import "mem_kpow_singleton.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_star.lean**
+
+@import "mem_star.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/mem_star_singleton.lean**
+
+@import "mem_star_singleton.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/smul_assoc.lean**
+
+@import "smul_assoc.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/smul_union.lean**
+
+@import "smul_union.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star.lean**
+
+@import "star.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkA.lean**
+
+@import "parkA.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkC.lean**
+
+@import "parkC.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkX.lean**
+
+@import "parkX.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkY.lean**
+
+@import "parkY.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_eq.lean**
+
+@import "star_eq.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_mul_subset_prefixed.lean**
+
+@import "star_mul_subset_prefixed.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/sunion_mul.lean**
+
+@import "sunion_mul.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/star_mul_isFixed.lean**
+
+@import "star_mul_isFixed.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/arden.lean**
+
+@import "arden.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkX_eq.lean**
+
+@import "parkX_eq.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/parkY_eq.lean**
+
+@import "parkY_eq.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/park_least.lean**
+
+@import "park_least.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/park_solves.lean**
+
+@import "park_solves.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/part1.lean**
+
+@import "part1.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515.lean**
+
+@import "../Exercise515.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise515/part1_freeMonoid.lean**
+
+@import "part1_freeMonoid.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "kpow.ai_lean_to_english" {code_block=false}
+
+@import "kpow_zero.ai_lean_to_english" {code_block=false}
+
+@import "kpow_succ.ai_lean_to_english" {code_block=false}
+
+@import "G.ai_lean_to_english" {code_block=false}
+
+@import "mem_kpow_singleton.ai_lean_to_english" {code_block=false}
+
+@import "mem_star.ai_lean_to_english" {code_block=false}
+
+@import "mem_star_singleton.ai_lean_to_english" {code_block=false}
+
+@import "smul_assoc.ai_lean_to_english" {code_block=false}
+
+@import "smul_union.ai_lean_to_english" {code_block=false}
+
+@import "star.ai_lean_to_english" {code_block=false}
+
+@import "parkA.ai_lean_to_english" {code_block=false}
+
+@import "parkC.ai_lean_to_english" {code_block=false}
+
+@import "parkX.ai_lean_to_english" {code_block=false}
+
+@import "parkY.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "star_eq.ai_lean_to_english" {code_block=false}
+
+@import "star_mul_subset_prefixed.ai_lean_to_english" {code_block=false}
+
+@import "sunion_mul.ai_lean_to_english" {code_block=false}
+
+@import "star_mul_isFixed.ai_lean_to_english" {code_block=false}
+
+@import "arden.ai_lean_to_english" {code_block=false}
+
+@import "parkX_eq.ai_lean_to_english" {code_block=false}
+
+@import "parkY_eq.ai_lean_to_english" {code_block=false}
+
+@import "park_least.ai_lean_to_english" {code_block=false}
+
+@import "park_solves.ai_lean_to_english" {code_block=false}
+
+@import "part1.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise515.ai_lean_to_english" {code_block=false}
+
+@import "part1_freeMonoid.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_5_15.ai_english_concordance" {code_block=false}

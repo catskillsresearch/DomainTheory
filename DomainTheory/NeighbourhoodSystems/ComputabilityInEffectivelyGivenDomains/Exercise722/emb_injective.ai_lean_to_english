@@ -1,0 +1,3 @@
+The embedding of binary words into the domain is injective.
+
+If the embeddings of two words agree, the singleton of the first belongs to the embedding of the first and hence to the embedding of the second, so the second word equals the first.

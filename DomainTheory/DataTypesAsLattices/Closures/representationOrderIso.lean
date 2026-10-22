@@ -1,6 +1,3 @@
-/-ai
-Scott's representation order isomorphism sends an element of a countably algebraic lattice to the fixed point given by its encoding, and the inverse decodes a fixed point. Decoding after encoding is the identity. Encoding after decoding is the representing closure of the fixed point, which equals the point because applying the representing-closure code is that closure and the point is fixed by the code. The encoding of one element is contained in the encoding of another exactly when the first lies below the second: the forward comparison decodes both encodings and lifts each compact element below the first along the inclusion of indices, and the reverse comparison uses that a compact element below the first remains below the second.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,6 +1,3 @@
-/-ai
-The domain of an information system is the ideal completion of its poset of finite elements, the closures of consistent finite sets of tokens. The abbreviation infoSys_to_idealCompletion names the order isomorphism between the elements of the system and the ideals of those finite elements.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
@@ -27,16 +24,6 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal_ofIde
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal_mono
 
 @[expose] public section
-
-/-!
-# Information systems → ideal completion (1982 → algebraic dcpo)
-
-The domain `|A|` of an information system is the **ideal completion** of its
-poset of finite elements `ū` (closures of consistent finite token sets):
-`A.Element ≃o Order.Ideal (FiniteElement A)`.
-
-Packaging of Factoids 4.4–4.5 (`directedSup`, algebraicity, `compact_closure`).
--/
 
 namespace DomainTheory.BridgeTheorems
 

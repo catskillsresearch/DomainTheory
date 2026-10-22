@@ -1,6 +1,3 @@
-/-ai
-Forgetting a finite set of depth tokens returns the finite set of underlying raw tokens. It is the right fold of depth-token insertion, starting from the empty set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

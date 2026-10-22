@@ -1,0 +1,3 @@
+Every element of the lift is either the fresh bottom or the lift of some element of the original system.
+
+Split on whether the element contains the false-tagged master. If it does, the element is the lift of its unlift. If it does not, extensionality shows that its only neighbourhood is the master: a proper tagged neighbourhood would, by upward closure along its inclusion in the false-tagged master, put that master tag into the element, while the master itself belongs to the element.

@@ -1,6 +1,3 @@
-/-ai
-The top token of V, Scott's rogue token, is the token top.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

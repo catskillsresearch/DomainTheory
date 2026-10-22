@@ -1,6 +1,3 @@
-/-ai
-The bitmask of a finite set of positions is the sum of the corresponding powers of two.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

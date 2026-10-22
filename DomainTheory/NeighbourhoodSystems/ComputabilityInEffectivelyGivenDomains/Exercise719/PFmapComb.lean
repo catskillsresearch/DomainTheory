@@ -1,6 +1,3 @@
-/-ai
-The combinator sending an approximable map to its power-domain action is the approximable map from the function space into the function space of the power domains which relates neighbourhoods Φ and Ψ when every map in Φ has its power-domain action in Ψ. The master neighbourhoods are related because the master target contains every map. An intersection of targets is the step neighbourhood of the concatenated generator lists, and a map in the source lies in both targets. A smaller source and a larger target remain related by transporting membership.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

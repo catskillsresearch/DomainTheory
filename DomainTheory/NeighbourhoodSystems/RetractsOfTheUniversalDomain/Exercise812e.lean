@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood presented by the negative bisection index depends only on the three presented sets.
-
-The numbered name example_812_e is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e.negIdxFromBisection_congr

@@ -1,8 +1,3 @@
-/-ai
-The cone of the completed encoding of a string is contained in the cone of the doubled encoding of another string if and only if the second string is a prefix of the first.
-
-Rewrite containment of cones as a prefix of their roots, and apply the comparison of a doubled encoding with a completed encoding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

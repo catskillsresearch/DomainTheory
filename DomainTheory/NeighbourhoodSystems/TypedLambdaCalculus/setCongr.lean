@@ -1,6 +1,3 @@
-/-ai
-A bijection from α to β determines an order isomorphism of power sets by direct image, inverted by the direct image under the inverse bijection. The round trips are the image laws of an equivalence. Inclusion holds in one direction because a member of a direct image comes from a member of the source set, using injectivity, and in the other because the direct image of a subset lands in the direct image.
-ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

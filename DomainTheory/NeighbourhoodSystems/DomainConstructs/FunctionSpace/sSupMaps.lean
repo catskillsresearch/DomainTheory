@@ -1,6 +1,3 @@
-/-ai
-The supremum of a pointwise-bounded set of approximable maps is the approximable map that sends each neighborhood to the supremum of the values of the members at the principal filter of that neighborhood, obtained by extending that monotone action from neighborhoods to elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

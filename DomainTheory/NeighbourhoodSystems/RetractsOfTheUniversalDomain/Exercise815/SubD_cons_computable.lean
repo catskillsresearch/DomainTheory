@@ -1,8 +1,3 @@
-/-ai
-It is recursively decidable whether some enumerated neighbourhood is contained in the intersection of two others, because the relation holds for every pair.
-
-The concatenation of the two codes is always a witness, since the enumerated neighbourhood of a concatenation equals the intersection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

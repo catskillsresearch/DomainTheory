@@ -1,8 +1,3 @@
-/-ai
-The fixed neighbourhood system of sub f equals the fixed neighbourhood system of f.
-
-Extensionality reduces the claim to membership. A self-relation of sub f supplies a witness squeezed by both inclusions, so the witness equals the set and carries the self-relation of f. A self-relation of f is a reflexive witness for the relation of sub f. The master neighbourhoods agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

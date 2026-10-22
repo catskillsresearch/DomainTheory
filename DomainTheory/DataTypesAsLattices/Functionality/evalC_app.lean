@@ -1,8 +1,3 @@
-/-ai
-Application of the evaluation combinator at u equals the application of the zeroth component of u to the first component of u.
-
-This is the beta rule for the Scott continuity of evaluation, evaluated at u.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

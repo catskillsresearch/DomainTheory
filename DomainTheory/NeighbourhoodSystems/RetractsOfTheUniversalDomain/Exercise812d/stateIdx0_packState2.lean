@@ -1,8 +1,3 @@
-/-ai
-The first index of a state packed from three numbers a, b, and c is a.
-
-Unfolding the index and the packing, the left component of a pair is its first argument.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

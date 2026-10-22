@@ -1,0 +1,3 @@
+Under the characteristic and consistency hypotheses, every neighbourhood of the fixed neighbourhood equals the induced enumeration at some list code.
+
+Split fixed-neighbourhood membership into neighbourhood membership and the fixedness relation. Surjectivity of the presentation supplies a raw index presenting the neighbourhood. That index is diagonally fixed by unfolding diagonal fixedness and rewriting the presentation. The diagonal-fixed hitting lemma supplies a code, and rewriting by the presentation equation gives the neighbourhood.

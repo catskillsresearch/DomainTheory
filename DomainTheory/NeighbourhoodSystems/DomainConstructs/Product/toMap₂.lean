@@ -1,6 +1,3 @@
-/-ai
-Theorem 3.5 of Scott (1981, PRG-19), in the direction from joint to separate approximability, restricts a joint approximable map to the two-variable map that relates X, Y, and Z exactly when the joint map relates the product neighbourhood of X and Y to Z. The domain components are the components of that product neighbourhood. The master and right-intersection laws are those of the joint map. Monotonicity enlarges the product neighbourhood componentwise and then uses monotonicity of the joint map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

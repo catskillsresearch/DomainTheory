@@ -1,8 +1,3 @@
-/-ai
-The label of the subtree selected by σ, read at a continuation τ, equals the label of the original tree at σ appended to τ.
-
-The two sides are the same by reflexivity.
-ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

@@ -1,6 +1,3 @@
-/-ai
-Forgetting a lambda token returns its underlying raw lambda token.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

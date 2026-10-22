@@ -1,8 +1,3 @@
-/-ai
-The injection of an element x equals the infimum of the set of elements y such that x lies below the projection of y.
-
-The injection of x lies below that infimum because the Galois connection places it below every member of the set. The infimum lies below the injection of x because that image belongs to the set, by the identity that the projection of the injection of x equals x.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

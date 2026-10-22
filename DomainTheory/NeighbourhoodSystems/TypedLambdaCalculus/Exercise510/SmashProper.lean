@@ -1,6 +1,3 @@
-/-ai
-A set is a proper product neighbourhood of the smash product when it is the product neighbourhood of a neighbourhood of the first system other than its master and a neighbourhood of the second system other than its master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

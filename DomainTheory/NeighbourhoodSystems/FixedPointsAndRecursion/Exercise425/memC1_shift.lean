@@ -1,8 +1,3 @@
-/-ai
-The shift of a unary neighbourhood is a unary neighbourhood.
-
-A tail shifts to the next tail, and a singleton shifts to the next singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

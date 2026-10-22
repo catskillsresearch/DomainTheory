@@ -1,0 +1,3 @@
+The right lift of a choice-free union equals the choice-free union of the right lifts.
+
+Extensionality is used. A right-lifted token of the union comes from one summand and is reassembled as a member of the corresponding lifted union. A token of the union of the lifts is a right lift from one summand, and that membership is reassembled as membership in the union before lifting.

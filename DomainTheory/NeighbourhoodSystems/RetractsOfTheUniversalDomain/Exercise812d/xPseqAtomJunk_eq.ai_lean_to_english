@@ -1,0 +1,3 @@
+The junk flag of the X half-step atom at depth n and bit-source i equals the selection, by the atom-pair junk flag, of 1 or the emptiness decision for the intersection of the atom-pair's first index with n.
+
+Unfolding the junk flag and the atom state, the junk formula for the X sub-step, the two projections of the packed atom-pair state, and selection at bit 1 give that expression.

@@ -1,6 +1,3 @@
-/-ai
-This module gathers the domain isomorphisms for the product, the separated sum, and the function space of information systems and re-exports them under blueprint names. The product identifies the elements of the product system with the product of the element domains by pairing and the two projections. The separated sum identifies the elements of the sum system with the bottom-adjoined disjoint sum of the element domains by the left and right inclusions, with classification using a classical case split on token polarity. The function space identifies the elements of the function-space system with the approximable maps, by the two directions of Theorem 7.2.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
@@ -40,20 +37,6 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions.approxMap_toEleme
 
 @[expose] public section
 
-/-!
-# Construction equivalence — products, separated sums, and function spaces
-
-* **Product:** `|A × B| ≃o |A| × |B|` via `pairElements` / projections (Prop 6.2).
-* **Separated sum:** `|A + B| ≃o WithBot (|A| ⊕ |B|)` via `inl`/`inr` (Prop 6.4).
-  Classification of sum elements uses classical case-split on token polarity
-  (`Classical.choice` in the footprint).
-* **Function space:** `|A → B| ≃o ApproximableMap A B` via Theorem 7.2
-  `approxMap_toElement` / `element_toApproxMap`.
-
-1972 counterpart: products of continuous lattices (`proposition_2_9`); function space
-Thm 3.3 in the sibling package.
--/
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
@@ -64,12 +47,6 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 namespace InfoSysConstructions
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
-
-
-/-! ## Separated sum `|A + B| ≃o WithBot (|A| ⊕ |B|)` -/
-
-
-/-! ## Function space `|A → B| ≃o ApproximableMap A B` -/
 
 
 end InfoSysConstructions

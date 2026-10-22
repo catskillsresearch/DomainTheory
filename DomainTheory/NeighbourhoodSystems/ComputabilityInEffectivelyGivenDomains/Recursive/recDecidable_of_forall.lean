@@ -1,8 +1,3 @@
-/-ai
-An always-true predicate is recursively decidable by the constant decider 1.
-
-The witnessing function is the constant 1, which is primitive recursive. For each argument the equivalence with equaling 1 holds because the constant equals 1 by reflexivity and the predicate holds by hypothesis.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

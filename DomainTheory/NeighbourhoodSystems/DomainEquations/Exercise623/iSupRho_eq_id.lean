@@ -1,8 +1,3 @@
-/-ai
-The union of the projections onto the finite levels of the tower is the identity map on the syntactic domain of expressions.
-
-Extensionality and the relational form of the identity reduce the claim to pairs. A pair related by some projection comes with a neighbourhood of that level lying between the two sets, so the source is contained in the target. Conversely, if the source is a neighbourhood contained in the target, it belongs to some level, and that same neighbourhood witnesses the relational form of the projection at that level.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

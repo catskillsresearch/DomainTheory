@@ -1,6 +1,3 @@
-/-ai
-The retraction associated with a subsystem is the composition of the subsystem injection with the subsystem projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition81

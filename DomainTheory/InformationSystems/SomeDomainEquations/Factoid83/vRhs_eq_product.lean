@@ -1,8 +1,3 @@
-/-ai
-The right-hand side of Scott's equation V ≅ V × V equals the product of the information system V with itself.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

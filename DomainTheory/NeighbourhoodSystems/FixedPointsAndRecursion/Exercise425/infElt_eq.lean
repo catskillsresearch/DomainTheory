@@ -1,8 +1,3 @@
-/-ai
-The infinite unary sequence is fixed by the successor.
-
-Apply the fixed-point law of the least fixed point of the successor map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

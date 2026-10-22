@@ -1,8 +1,3 @@
-/-ai
-Every smash-enumerated set is contained in the product of the two masters.
-
-It is a smash neighbourhood, so it is contained in the smash master, and that master is this product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

@@ -1,8 +1,3 @@
-/-ai
-If A embeds in B, then the function space from A into C embeds in the function space from B into C.
-
-Turn the embedding into a projection pair by composing its isomorphism part with its subsystem part. Placing the projection and the injection of that pair in the contravariant argument of the function-space combinator, with the identity on C in the covariant argument, yields a projection pair of function spaces. The projection-after-injection composite is the identity by the composition law for the combinator, the projection-pair law, and the combinator on identities. The other composite lies below the identity by the composition law, monotonicity in the contravariant argument, cancellation of the identity, and the combinator on identities. A projection pair determines an embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

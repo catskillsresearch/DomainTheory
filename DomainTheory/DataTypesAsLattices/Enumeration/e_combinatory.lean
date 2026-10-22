@@ -1,8 +1,3 @@
-/-ai
-The enumeration element of a natural number j is combinatory.
-
-Simplify by the equality of that element with the union of the bits in the bit list of j, and apply that this union of bits is combinatory.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

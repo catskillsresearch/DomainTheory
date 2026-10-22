@@ -1,8 +1,3 @@
-/-ai
-Choice-free union of finite sets of tokens of the second carrier is commutative.
-
-Extensionality is used. In each direction, membership in a union is membership in one summand or the other, and the two cases are exchanged.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

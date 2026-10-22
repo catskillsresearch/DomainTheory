@@ -1,8 +1,3 @@
-/-ai
-A singleton of a natural number is not the whole space.
-
-An equality the other way would contradict the inequality of the whole space with that singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

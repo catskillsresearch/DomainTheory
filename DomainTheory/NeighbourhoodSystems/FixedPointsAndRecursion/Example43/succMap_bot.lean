@@ -1,8 +1,3 @@
-/-ai
-The successor sends bottom to bottom.
-
-This is the strictness rule of the constant lift, applied to the successor values.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

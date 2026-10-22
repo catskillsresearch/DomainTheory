@@ -1,8 +1,3 @@
-/-ai
-The emptiness flag at any depth and bit-source is either 0 or 1.
-
-The flag is the extracted decider on the pair of codes, and that decider is at most 1, so arithmetic gives the disjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

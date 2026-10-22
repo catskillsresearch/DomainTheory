@@ -1,6 +1,3 @@
-/-ai
-The run map relates a binary neighbourhood X to a neighbourhood Y when X is the cone of a string, Y is a neighbourhood, and the cone of the output of that string is contained in Y. Domain and codomain membership are the cone and the neighbourhood clause. The empty string has empty output, so the master cone is related to itself. On the right, a cone has one prefix, the two output inclusions meet in the intersection, and the system is closed under that intersection. For monotonicity, the smaller domain neighbourhood is a longer cone, prefix-monotonicity of the output shrinks the output cone, and that inclusion composes with the original output inclusion and the enlargement of the codomain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

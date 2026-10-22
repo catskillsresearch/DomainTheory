@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the filter of an excluded-point set E exactly when its complement is finite and contained in E.
-
-The two sides are definitionally identical.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,26 +1,3 @@
-/-ai
-This file proves the choice-free recursion theory for Scott's Lecture VII. A predicate is recursively decidable when it has a primitive-recursive characteristic function, and recursively enumerable when it is the projection of a recursively decidable relation. The arguments use the primitive-recursive constructors, the choice-free pairing round-trip, and arithmetic discharged by omega.
-
-Identity is the pairing of the two projections, rewritten by the round-trip. Addition, multiplication, predecessor, and truncated subtraction are primitive recursions whose recursors compute the operations by induction or by cases, and the pointwise sum, product, difference, and selection are those operations composed through pairing. A product of naturals is one exactly when both factors are one, by divisibility. Recursive decidability transfers across a pointwise equivalence by reusing the characteristic function, reindexes by composition, and is closed under conjunction by multiplying the deciders. Equality of two primitive-recursive functions has characteristic one minus the sum of the two truncated differences. Negation uses the same truncated-subtraction characteristic. Excluded middle is the case split on whether the decider returns one, and disjunction rewrites through De Morgan using that split. Every recursively decidable predicate is recursively enumerable by reading the decider on the second component of the pair and taking witness zero. Recursive enumerability transfers across equivalence, reindexes by pairing the search variable with the image, is closed under conjunction by pairing the two search variables, under existential projection by folding the new variable into the search code, and under disjunction by tagging the witness with zero or one.
-
-The first component of a pair is at most the pair, by unfolding the pairing function. The length of a list is at most its code, by induction using that the tail code is at most the paired code. A fold step fixes the state on remaining code zero and, on a nonempty code, pops the head and applies the step. A counter-independent natural recursion is function iteration. After at least as many iterations as the length, the accumulator equals the list fold, by induction on the iteration count. Folding the code of a list is therefore that list fold, and folding an arbitrary code is the fold of its decoded list, because encoding after decoding is the identity by strong induction on the zero and successor equations of decoding, and decoding after encoding is the identity by induction on the list. The packed fold step and the fold of primitive-recursive inputs are primitive recursive by composition and one primitive recursion, rewritten to the iteration form.
-
-The one-test and zero-test are at most one and primitive recursive by truncated subtraction, and the zero-test equals one exactly at zero. The bounded-forall indicator is at most one and equals one exactly when every paired value in range is one, by induction on the bound and case analysis of the selection. The bounded-exists indicator is at most one, depends on the function only on the search range, and equals one exactly when some paired value in range is one, by the same induction. Both indicators, including the variant that threads an external parameter, are primitive recursive by a primitive recursion whose step selects the one-test. The re-forall step agrees with the accumulator function by unfolding, the character is the second component of the list fold of that function, and that fold is one exactly when the start flag is one and each witness entry satisfies the decidable body, by induction that splits the head off the coded witness list. The step and character are primitive recursive by the fold engine. Bounded universal quantification of a recursively enumerable predicate over a coded list is recursively enumerable: the forward direction builds a witness list by induction and encodes it, and the reverse direction reads the witness at the index supplied by membership.
-
-The low bit of a bitwise or depends only on the two residues modulo two, by the test-bit law at position zero and a case split. One or step peels those low bits. After k iterations the running arguments, the weight, and the accumulator satisfy the division and weighted-or invariant, by induction on k. Iterating one more than the sum of the arguments therefore computes the or, because both arguments have been divided down to zero.
-
-The list-and step is the selection of the decider, the character equals the corresponding list fold, and that fold is one exactly when the accumulator starts at one and every entry passes, by induction on the list. The character is therefore one exactly on membership in the decoded list, is at most one by the same fold, and the step is primitive recursive. A number is a binary digit exactly when its digit characteristic is one, by matching zero, one, and the remaining successor, so the all-binary-digits flag is one exactly when every decoded entry is zero or one, is at most one, and is primitive recursive by the fold.
-
-Indexing returns the defaulted entry: the step increments a counter and captures the element when the counter meets the index, and the fold computes that conditional by induction. Tabulation after K steps decodes to the mapped range of the last K indices, so the full table decodes to the mapped initial range. In-range defaulted lookup is the element and out-of-range lookup is the default, by induction on the list, and lookup in a mapped range is the function value. The tabulation step and the table code are primitive recursive by composition and primitive recursion. Four-way tag dispatch is primitive recursive by nested selections of the one-test.
-
-The fuel-ok body matches tags zero through three, by simplifying each selection, and is primitive recursive when the previous fuel function is. It depends on that function only at the two unpair projections, which are at most the code. List length is the fold of a successor counter, which equals the length by an auxiliary induction, and the step and character are primitive recursive. The numeric equality character is at most one and primitive recursive by truncated subtraction. The list-equality fold is one with a zero remainder exactly when the flag started at one and the list equals the decoded remainder, by induction, using that a zero remainder collapses the flag. Hence the equality character is one exactly when the two codes decode equally, it is at most one, and it is primitive recursive by the fold and the bit product.
-
-Two lists with equal defaulted entries are equal, by comparing lengths through two distinct defaults and then comparing elements. Defaulted lookup of a take is lookup of the source in range, and lookup of a drop shifts the index, by induction on the drop count. The append tabulation reads the first code below the cut and the second code past it. Take and drop of a code decode to take and drop of the decoded list, by comparing defaulted entries with the tabulated lookup. Encoding a take or a drop does not increase the code, by induction and monotonicity of pairing, so those codes are at most the original code. Minimum and the take and drop codes are primitive recursive by selection, indexing, and tabulation.
-
-The state-card body matches tags zero through three. When the fuel is at least the expression depth, the fuel-bounded state card of the Gödel code equals the state card, by induction on the expression, using the length of the encoded Boolean list in the single case. The body is primitive recursive when the previous function is, and it depends on that function only at the two unpair projections. The matches body matches the four tags, with a bounded search on concatenation and a bit product on intersection. When the fuel meets the depth, its character is one exactly when the Boolean matcher accepts: the unit and the single word are direct, concatenation searches a cut and uses take and drop of the encoded word, and intersection multiplies the recursive calls. The body is primitive recursive by multiplication, bounded search, and tag selection, the character is at most one by induction on fuel, and the body depends on the previous function only at codes at most the packed input, using that take and drop codes do not increase.
-
-Every binary-digit code of length at most n lies strictly below the code bound, by induction on n and monotonicity of pairing, so a short encoded Boolean word lies below the bound, and encoding the decoding of an all-binary code recovers the code. When the fuel meets the depth, the nonempty decider is one exactly when the denoted language is nonempty, transporting a witness code to an accepted word and a short accepted word to a code below the bound. The cap code is the Gödel code of a cap. The subset guard is at most one. When the fuel meets both depths, the subset character is one exactly when the first language is contained in the second: the numeric bound equals the product of the powerset cardinalities by the state-card agreement, and the bounded-forall characteristic is compared with the Boolean subset test by transporting words across the Boolean encoding.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt
@@ -134,51 +111,8 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-/-!
-# A choice-free recursion theory for Lecture VII (Scott 1981, PRG-19)
-
-**Why this file exists — we roll our own and reject mathlib's recursion theory here.**
-Lecture VII ("Computability in effectively given domains") needs the notions *recursively
-decidable* and *recursively enumerable*. mathlib *has* these (`Computable`, `ComputablePred`,
-`REPred`, `Primrec`, `Partrec`), but in mathlib `v4.30.0` essentially every *correctness lemma* of
-that development is proved with tactics (`grind`, `lia`) or wrapper lemmas that **open
-`Classical`** — e.g. `Computable.const`, `Primrec.const`, `Nat.unpair_pair`, `Nat.sqrt_le`, and
-`Nat.Primrec.add`/`mul` all audit with `Classical.choice` in their axiom set. This project's
-discipline is to keep *data* (and as much as possible) **choice-free** (`⊆ {propext, Quot.sound}`),
-so we deliberately decline mathlib's classical recursion theory and instead build the slice we need
-on the genuinely choice-free foundations: the raw inductives `Nat.Primrec` / `Nat.Partrec` (whose
-*constructors* are choice-free) and `Nat.sqrt` / `Nat.pair` / `Nat.unpair` (whose *definitions* are
-choice-free). The only tactic we lean on for arithmetic is `omega`, which is choice-free here
-(unlike `grind`/`lia`).
-
-The pattern: a relation on integer indices is *recursive* (decidable) when it has a
-**primitive-recursive characteristic function** (`Nat.Primrec`, lifted to `Nat.Partrec` for the
-recursive/`REPred` analogues). Tuples are encoded with `Nat.pair` (choice-free), and we reprove the
-pairing round-trips (`unpair_pair'`, `pair_unpair'`) choice-free here.
-
-Everything in this file is `⊆ {propext, Quot.sound}`.
--/
-
 namespace Domain.Recursive
 
-/-! ## Choice-free `Nat.sqrt` correctness
-
-mathlib's `Nat.sqrt.iter_sq_le` / `Nat.sqrt.lt_iter_succ_sq` are the heart of `Nat.sqrt`'s
-correctness, but they use `grind` / `lia` (classical). We reprove them with `omega`. -/
-
-
-/-! ## Choice-free pairing round-trip
-
-`Nat.pair`/`Nat.unpair` are themselves choice-free *definitions*; only mathlib's `unpair_pair`
-*lemma* (via `sqrt_add_eq`) is classical. We reprove the round-trip on our choice-free `sqrt`. -/
-
-
-/-! ## Choice-free primitive-recursive arithmetic
-
-mathlib's `Nat.Primrec.id/add/mul` are proved with `by simp`, which silently applies the *classical*
-`@[simp] Nat.unpair_pair`; so they audit with `Classical.choice`. We reprove the few we need using
-the choice-free round-trips above. The *constructors* of `Nat.Primrec`
-(`zero/succ/left/right/pair/comp/prec`) are choice-free and used directly. -/
 
 /-- `id` is primitive recursive (choice-free). -/
 theorem primrec_id : Nat.Primrec id :=
@@ -246,13 +180,6 @@ theorem nat_mul_eq_one {a b : ℕ} : a * b = 1 ↔ a = 1 ∧ b = 1 := by
   refine ⟨fun h => ⟨Nat.dvd_one.mp ⟨b, h.symm⟩, Nat.dvd_one.mp ⟨a, ?_⟩⟩, fun h => by rw [h.1, h.2]⟩
   rw [Nat.mul_comm] at h; exact h.symm
 
-/-! ## Pointwise primitive-recursive arithmetic combinators
-
-`primrec_add`/`mul`/`sub` are `Nat.unpaired` forms; the `₂` variants below take two primitive
-recursive functions `f, g` and build `fun n => f n ⋆ g n` directly (composing through `Nat.pair`).
-These cut the `Nat.pair`/`unpair` plumbing in larger constructions (sum's intersection function and
-the list-fold engine). All choice-free. -/
-
 /-- `fun n => f n + g n` is primitive recursive. -/
 theorem primrec_add₂ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => f n + g n) :=
@@ -276,14 +203,6 @@ theorem primrec_sub₂ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primre
 theorem primrec_selectFn {c a b : ℕ → ℕ} (hc : Nat.Primrec c) (ha : Nat.Primrec a)
     (hb : Nat.Primrec b) : Nat.Primrec (fun n => selectFn (c n) (a n) (b n)) :=
   primrec_add₂ (primrec_mul₂ hc ha) (primrec_mul₂ (primrec_sub₂ (Nat.Primrec.const 1) hc) hb)
-
-
-/-! ## "Recursively decidable" predicates (Scott's notion, Definition 7.1)
-
-A predicate is recursively decidable when it has a primitive-recursive `{0,1}`-valued characteristic
-function. Tuples are coded by `Nat.pair`. These are the building blocks Scott's Definition 7.1 needs
-(relations on indices), and the closure lemmas (`of_iff`, `comp` = reindex, `and`) let us derive the
-inclusion- and equality-deciders. All choice-free. -/
 
 
 /-- Recursive decidability transfers across a pointwise logical equivalence. -/
@@ -362,18 +281,6 @@ theorem RecDecidable.or {p q : ℕ → Prop} (hp : RecDecidable p) (hq : RecDeci
       · exact Or.inr hq'
       · exact absurd ⟨hp', hq'⟩ h
 
-/-! ## "Recursively enumerable" predicates (Scott's notion, Definition 7.2)
-
-Scott's Definition 7.2 asks for the neighbourhood relation `Xₙ f Yₘ` to be *recursively
-enumerable*. We model "recursively enumerable" choice-free as a **projection of a recursively
-decidable relation**: `p` is r.e. iff there is a recursively decidable `q` with
-`p n ↔ ∃ i, q ⟨i, n⟩` (the search variable `i` is paired with `n` via `Nat.pair`). This is the
-standard equivalent of Scott's prose description — "there is a primitive recursive `r` with
-`y = {Y_{r(i)} ∣ i ∈ ℕ}`": the projection form additionally represents the empty set (take `q`
-identically false), exactly as r.e. sets require. Every recursively decidable predicate is r.e.
-(`RecDecidable.re`, dropping the search variable), and r.e.-ness transfers across pointwise
-equivalence (`REPred.of_iff`). All choice-free. -/
-
 
 /-- **Every recursively decidable predicate is recursively enumerable.** Use the decider as the
 relation `q ⟨i, n⟩ := p n` (a reindex of `p` along `unpair.2`, dropping the search variable `i`); the
@@ -391,13 +298,6 @@ theorem RecDecidable₂.re {r : ℕ → ℕ → Prop} (hr : RecDecidable₂ r) :
 theorem REPred.of_iff {p q : ℕ → Prop} (h : ∀ n, q n ↔ p n) (hp : REPred p) : REPred q := by
   obtain ⟨r, hr, hre⟩ := hp
   exact ⟨r, hr, fun n => (h n).trans (hre n)⟩
-
-/-! ### Closure properties of r.e. predicates (for Proposition 7.3 and Theorem 7.4)
-
-The projection-of-decidable form makes r.e.-ness closed under primitive-recursive **reindexing**
-(`REPred.comp`), **conjunction** (`REPred.and`, pairing the two search variables), and
-**existential projection** over `ℕ` (`REPred.proj`, absorbing the projected variable into the search
-variable). These are exactly the moves Scott's `g ∘ f` needs: `X (g∘f) Z ↔ ∃ Y, X f Y ∧ Y g Z`. -/
 
 /-- **Reindexing.** If `p` is r.e. and `g` is primitive recursive, then `fun n => p (g n)` is r.e.
 (absorb `g` into the decidable relation along `unpair.2`). -/
@@ -476,21 +376,6 @@ theorem REPred.or {p q : ℕ → Prop} (hp : REPred p) (hq : REPred q) :
       rcases hw with ⟨hi, _⟩ | ⟨hi, _⟩
       · exact Or.inl ⟨w.unpair.2, hi⟩
       · exact Or.inr ⟨w.unpair.2, hi⟩
-
-/-! ## A choice-free primitive-recursive fold engine over `Nat`-coded lists
-
-Scott's function-space deciders (Theorem 7.5) range over *finite lists* of neighborhood indices.
-To stay choice-free we encode such a list as a single natural via `encodeList` and process it with a
-genuinely primitive-recursive `foldCode`. The key results are:
-
-* `encodeList`            — `List ℕ → ℕ`, with `l.length ≤ encodeList l` (`encodeList_length_le`);
-* `foldCode stp p z c`    — folds the list coded by `c`, threading an accumulator and a fixed
-                            parameter `p`, with `stp` the (coded) step function;
-* `foldCode_eq`           — `foldCode` on `encodeList l` equals the corresponding `List.foldl`;
-* `primrec_foldCode`      — `foldCode` is primitive recursive in all of its (primrec) inputs.
-
-`foldStep` walks one entry: the state is `pair remainingCode accumulator`; an empty remaining code
-(`= 0`) is a fixed point, otherwise it pops the head and applies `stp`. -/
 
 
 /-- `a ≤ pair a b` (choice-free). -/
@@ -661,27 +546,6 @@ theorem primrec_foldCode {stp : ℕ → ℕ} (hstp : Nat.Primrec stp)
   rw [rec_const_iterate]
   rfl
 
-/-! ## Primitive-recursive exponentiation (for the `2^q` subset bound)
-
-The funSpace consistency decider quantifies over all `2^q` subsets of a `q`-element step-list, so it
-needs `2^q` as a primitive-recursive bound. Choice-free (mathlib's `Nat.Primrec` lemmas for `^` route
-through classical `simp`). -/
-
-/-! ## Halving (`/2`, `%2`) for per-subset bit extraction
-
-The funSpace consistency fold walks a step-list while consuming a subset bitmask `b` one bit at a
-time: at each entry it reads `b % 2` (is this entry in the subset?) and recurses on `b / 2`. Only
-division/modulus by the literal `2` is needed — which `omega` discharges directly — so this stays
-choice-free without a general `div`/`mod`. Computed jointly by `halfParity n = pair (n/2) (n%2)`. -/
-
-
-/-! ## Bounded quantifiers for recursively decidable predicates
-
-Scott's function-space consistency decider (Theorem 7.5) is a *bounded universal* statement: a list of
-step-pairs is consistent iff for **every** subset (coded by a bitmask `b < 2^q`) a component condition
-holds. Bounded quantification of a recursively decidable predicate is again recursively decidable —
-choice-free, via an explicit `Nat.rec` fold of the `{0,1}` indicator. -/
-
 
 theorem isOne_le_one (v : ℕ) : isOne v ≤ 1 := by unfold isOne; omega
 
@@ -839,13 +703,6 @@ theorem decodeList_encodeList : ∀ l : List ℕ, decodeList (encodeList l) = l
   | [] => by rw [encodeList, decodeList_zero]
   | a :: l => by
     rw [encodeList, decodeList_succ, unpair_pair_fst, unpair_pair_snd, decodeList_encodeList l]
-
-/-! ## Bounded universal quantification of an r.e. predicate over a coded list
-
-The "computable elements = computable maps" half of Theorem 7.5 needs r.e.-ness closed under
-`∀ e ∈ decodeList c, p e` for an r.e. `p`. Classically this is the standard "bounded `∀` of r.e. is
-r.e."; choice-free we realise the search for the finite tuple of witnesses as a *single* code `w`
-whose decoded list supplies one witness per list entry, threaded through a `foldCode`. -/
 
 
 theorem reForallStp_eq (qc : ℕ → ℕ) (acc x : ℕ) :
@@ -1018,28 +875,6 @@ theorem REPred.forall_mem_decodeList {p : ℕ → Prop} (hp : REPred p) :
     have := hw k hk
     rwa [hek] at this
 
-/-! ### Bounded `∀` over a coded list with a parameter (for `curry`, Theorem 7.5)
-
-`curry`'s neighbourhood relation is a bounded `∀ e ∈ decodeList c, p n e` whose body depends on a
-*parameter* `n` (the `𝒟₀`-index) as well as the list entry `e`. We reduce this to
-`REPred.forall_mem_decodeList` by primitively-recursively re-coding the list `decodeList c` into the
-list of pairs `⟨n, e⟩` (order is irrelevant under `∀ ∈`), so the parameterised body becomes the
-plain `fun s => p s.1 s.2` over the re-coded list. -/
-
-
-/-! ## Choice-free primitive-recursive bitwise OR (for Example 7.8, the powerset `PN`)
-
-Scott's Example 7.8 enumerates the finite subsets of `ℕ` by `Eₙ = {k ∣ n.testBit k}` and presents the
-powerset domain `PN` with neighbourhoods `ℕ ∖ Eₙ`. The intersection of two neighbourhoods is
-`(ℕ ∖ Eₙ) ∩ (ℕ ∖ Eₘ) = ℕ ∖ (Eₙ ∪ Eₘ) = ℕ ∖ E_{n ||| m}` (bitwise OR), and Scott notes that the
-relation `Eₙ ∪ Eₘ = E_k` is *recursive*. The presentation therefore needs `(n, m) ↦ n ||| m` as a
-**primitive-recursive** intersection function.
-
-mathlib's `Nat.lor` is defined through `Nat.bitwise`/`binaryRec`, none of which is exposed as a
-`Nat.Primrec`. We build it choice-free by *iterating* a fixed step `lorStep` (which strips the low
-bit of each argument, ORs them, and accumulates with a doubling weight). The result coincides with
-`Nat.lor` (`myLor_eq_lor`), so all the set-level facts can use mathlib's clean `Nat.testBit_lor`. -/
-
 
 /-- `lowOr x y = (x ||| y) % 2`: both sides depend only on the low bits `x % 2`, `y % 2`. -/
 theorem lowOr_eq_mod (x y : ℕ) : lowOr x y = (x ||| y) % 2 := by
@@ -1127,17 +962,6 @@ theorem myLor_eq_lor (a b : ℕ) : myLor a b = a ||| b := by
       (Nat.le_add_left b a)))
   rw [ha0, hb0] at hAcc
   simpa using hAcc
-
-/-! ## Bounded quantifiers over a coded list preserving recursive *decidability*
-
-`reForallChar`/`REPred.forall_mem_decodeList` above handle bounded `∀` over `decodeList` for *r.e.*
-predicates (which need a witness search). When the body is already recursively *decidable* the story
-is simpler: fold the `{0,1}` decider over the list with a Boolean `AND` (for `∀`) or `OR` (for `∃`),
-no witness threading. These are exactly what Scott's Smyth power-domain equality relation
-(Proposition 7.10) needs: equality of two finite unions of down-sets unfolds to
-`(∀ a ∈ A, ∃ b ∈ B, …) ∧ (∀ b ∈ B, ∃ a ∈ A, …)`, a nested bounded ∀/∃ over coded lists. All
-choice-free. The list is coded by the *first* argument; the *second* argument is a free parameter
-threaded through the `foldCode` `params` slot. -/
 
 
 theorem allListStp_eq (g : ℕ → ℕ) (acc x p : ℕ) :
@@ -1248,14 +1072,6 @@ theorem primrec_allBinDigitsChar : Nat.Primrec allBinDigitsChar := by
   exact (primrec_foldCode (primrec_allListStp (primrec_isBinDigit.comp Nat.Primrec.left))
     (Nat.Primrec.const 0) (Nat.Primrec.const 1) primrec_id).of_eq fun _ => rfl
 
-/-! ## Random access and tabulation of coded lists (for the iterate `𝒟^∞`, Exercise 7.15)
-
-`𝒟^∞`-neighbourhoods are finitely-supported sequences of `𝒟`-neighbourhoods, coded as a list of
-component indices. The presentation's relations index *positions* of the list, so we need
-primitive-recursive list **indexing** `nthCode c i d = (decodeList c).getD i d` and a **tabulation**
-`tabCode g p B` coding `[g⟨0,p⟩, …, g⟨B-1,p⟩]` (used for the intersection function). Both choice-free,
-both built from the existing `foldCode`/`Nat.Primrec.prec` engine. -/
-
 
 theorem nthStp_val (i x s r : ℕ) :
     nthStp (Nat.pair x (Nat.pair (Nat.pair s r) i))
@@ -1345,13 +1161,6 @@ theorem decodeList_tabCode (g : ℕ → ℕ) (B p : ℕ) :
   rw [Nat.sub_self, ← List.range_eq_range'] at h
   exact h
 
-/-! ### Choice-free `List.getD` facts.
-
-Mathlib's `List.getD_eq_getElem`/`List.getD_eq_default`/`getD_append`(`_right`) are proved by `grind`,
-which pulls `Classical.choice`. We re-prove the slice we need by structural induction (using only the
-choice-free `getD_nil`/`getD_cons_zero`/`getD_cons_succ`), so the `D^∞` presentation stays
-`⊆ {propext, Quot.sound}`. -/
-
 /-- Choice-free `getD`-as-`getElem` in range. -/
 theorem getD_eq_getElem_cf {β : Type*} (l : List β) (d : β) :
     ∀ {n : ℕ} (h : n < l.length), l.getD n d = l[n] := by
@@ -1408,21 +1217,6 @@ theorem primrec_tabCode {g : ℕ → ℕ} (hg : Nat.Primrec g) :
   (Nat.Primrec.prec (Nat.Primrec.const 0) (primrec_tabStep hg)).of_eq fun t => by
     simp only [Nat.unpaired]; rfl
 
-/-! ## Course-of-values fuel recursion → joint primitive recursiveness
-
-`decodeFuelOkChar`, `matchesBChar`, `autStateCardFuelChar` are each defined by structural
-recursion on a `fuel : ℕ` parameter, where the recursive step (`decodeFuelOkCharBody`, etc.)
-applies the *previous* fuel level's function `prev : ℕ → ℕ` at sub-codes of its own input `c`
-(via `Nat.unpair`), not merely at `c` decremented. Each is only known `Nat.Primrec` *for a fixed
-external `fuel`* (`∀ fuel, Nat.Primrec (fun c => F fuel c)`) — that is not enough once `fuel`
-itself must vary with the input (as it does for `ssysActiveChar`, C9b7, where `fuel := n.unpair.2
-+ 1`). Getting a genuinely joint `Nat.Primrec (fun t => F t.unpair.1 t.unpair.2)` needs
-course-of-values recursion: tabulate `F fuel` at every code up to a bound as a coded list
-(`tabCode`/`nthCode`), and iterate that *table transform* via `Nat.rec` on `fuel`, mirroring
-`tabCode`'s own already-established proof pattern. Since `Body`'s sub-queries at code `c` are
-always `≤ c` (chains of `Nat.unpair` projections), a table covering `[0, c]` is self-sufficient
-throughout the whole recursion — no growing/re-tabulating needed as fuel increases. -/
-
 
 /-- Tag-dispatch on `e.unpair.1 ∈ {0,1,2,3}` (else `fdef e`). -/
 theorem primrec_tagCase4 {f0 f1 f2 f3 fdef : ℕ → ℕ}
@@ -1447,11 +1241,6 @@ theorem primrec_tagCase4 {f0 f1 f2 f3 fdef : ℕ → ℕ}
     (primrec_selectFn h12 hf1
       (primrec_selectFn h23 hf2
         (primrec_selectFn h34 hf3 hfdef)))).of_eq fun e => rfl
-
-/-! ## Exercise 7.22 C9b1 — fuel-bounded `SExpr` decode ok flag
-
-Mirrors tag dispatch on `c.unpair.1 ∈ {0,1,2,3}`; at `fuel + 1` recurses at `fuel` on sub-codes
-for `.cat`/`.cap`. Shallow link **7.22i(b)1(d–e)** uses dispatch lemmas from **7.22i(b)1(c)**. -/
 
 
 theorem mulBit_eq_one_iff (a b : ℕ) : mulBit a b = 1 ↔ a = 1 ∧ b = 1 := by
@@ -1521,23 +1310,12 @@ theorem primrec_decodeFuelOkCharBody {prev : ℕ → ℕ} (hprev : Nat.Primrec p
     primrec_allBinDigitsChar.comp Nat.Primrec.right
   exact primrec_tagCase4 hf0 hf1 hsub hsub (Nat.Primrec.const 0)
 
-/-! ### `decodeFuelOkChar` jointly primitive recursive in `(fuel, code)`
-
-Instantiates the generic course-of-values machinery above: `decodeFuelOkCharBody`'s only
-recursive calls are at `c.unpair.2.unpair.1`/`c.unpair.2.unpair.2`, both `≤ c`
-(`unpair_left_le`/`unpair_snd_le`), so `hlocal` holds. -/
-
 theorem decodeFuelOkCharBody_local (f g : ℕ → ℕ) (c : ℕ) (h : ∀ c' ≤ c, f c' = g c') :
     decodeFuelOkCharBody f c = decodeFuelOkCharBody g c := by
   rw [decodeFuelOkCharBody_eq, decodeFuelOkCharBody_eq]
   have h1 : c.unpair.2.unpair.1 ≤ c := le_trans (unpair_left_le c.unpair.2) (unpair_snd_le c)
   have h2 : c.unpair.2.unpair.2 ≤ c := le_trans (unpair_snd_le c.unpair.2) (unpair_snd_le c)
   rw [h _ h1, h _ h2]
-
-
-/-! ## Exercise 7.22 C9b2 — coded list length
-
-`listLenChar c` = `(decodeList c).length`, via a `foldCode` counter (**7.22i(b)2**). -/
 
 
 theorem listLenStp_eq (acc x p : ℕ) :
@@ -1565,11 +1343,6 @@ theorem primrec_listLenChar : Nat.Primrec listLenChar := by
   unfold listLenChar
   exact (primrec_foldCode primrec_listLenStp (Nat.Primrec.const 0) (Nat.Primrec.const 0)
     primrec_id).of_eq fun _ => rfl
-
-/-! ## Exercise 7.22 C9b3 — coded list equality
-
-Synchronized `foldCode` over `c1` threading remainder-code of `c2` (**7.22i(b)3**). No witness
-search — decidable elementwise equality only. -/
 
 
 theorem natEqChar_le_one (a b : ℕ) : natEqChar a b ≤ 1 := by unfold natEqChar; omega
@@ -1738,11 +1511,6 @@ theorem primrec_listEqChar : Nat.Primrec (fun t => listEqChar t.unpair.1 t.unpai
     Nat.Primrec.right.comp hfold
   exact (primrec_mulBit.comp (hflag.pair (primrec_isZero.comp hrem))).of_eq fun t => by
     simp [listEqChar]
-
-/-! ## Exercise 7.22 C9b4 — coded list append / take / drop
-
-Built via `tabCode` + `nthCode`/`listLenChar` (no snoc/reverse fold). Correctness goes through
-`tabCode_nth_lt`/`tabCode_nth_ge` + `nthCode_eq` only. -/
 
 
 /-- Two lists agree when every `getD` index does. (Choice-free: `by_contra`/`Classical.choice` is
@@ -1945,12 +1713,6 @@ theorem primrec_dropCode : Nat.Primrec (fun t => dropCode t.unpair.1 t.unpair.2)
   refine ((primrec_tabCode primrec_dropListTabFn).comp hr).of_eq fun t => by
     simp [dropCode]
 
-/-! ## Exercise 7.22 C9b5 — `autStateCardFuelChar`, `matchesBChar`
-
-Fuel-bounded numeric mirrors of `autStateCard` / `matchesB` with tag dispatch like
-`decodeFuelOkCharBody`. Gödel coding matches `SExpr.encode` in `Exercise722Presentation.lean`
-(tags `0..3`, payloads at `c.unpair.2` / nested pairs). -/
-
 open DomainTheory.NeighbourhoodSystems Exercise722
 open DomainTheory.NeighbourhoodSystems.Exercise722
 
@@ -2092,11 +1854,6 @@ theorem primrec_autStateCardFuelCharBody {prev : ℕ → ℕ} (hprev : Nat.Primr
   have hmul := primrec_mul₂ hleft hright
   have hf1 := primrec_add₂ (primrec_listLenChar.comp Nat.Primrec.right) (Nat.Primrec.const 2)
   exact primrec_tagCase4 (Nat.Primrec.const 1) hf1 hadd hmul (Nat.Primrec.const 0)
-
-/-! ### `autStateCardFuelChar` jointly primitive recursive in `(fuel, code)`
-
-Same course-of-values instantiation as `decodeFuelOkChar` above: `autStateCardFuelCharBody`'s only
-recursive calls are at `c.unpair.2.unpair.1`/`c.unpair.2.unpair.2`, both `≤ c`. -/
 
 theorem autStateCardFuelCharBody_local (f g : ℕ → ℕ) (c : ℕ) (h : ∀ c' ≤ c, f c' = g c') :
     autStateCardFuelCharBody f c = autStateCardFuelCharBody g c := by
@@ -2280,13 +2037,6 @@ theorem matchesBChar_le_one : ∀ fuel c cw, matchesBChar fuel c cw ≤ 1
       exact mulBit_le_one (matchesBChar_le_one fuel _ _) (matchesBChar_le_one fuel _ _)
     | _ + 4 => simp
 
-/-! ### `matchesBChar` jointly primitive recursive in `(fuel, code)`, `code := pair c cw`
-
-Harder than `decodeFuelOkChar`/`autStateCardFuelChar`: the cat branch's recursive calls are at
-`pair a.unpair.2.unpair.1 (takeCode i cw)` / `pair a.unpair.2.unpair.2 (dropCode i cw)` — the word
-half is a *derived* code (`takeCode`/`dropCode`), not a plain `Nat.unpair` projection, so
-`hlocal` additionally needs `takeCode_le`/`dropCode_le` (proved above) alongside `pair_le_pair`. -/
-
 theorem matchesBCharBody_local (f g : ℕ → ℕ) (c cw : ℕ)
     (h : ∀ p ≤ Nat.pair c cw, f p = g p) : matchesBCharBody f c cw = matchesBCharBody g c cw := by
   rw [matchesBCharBody_eq, matchesBCharBody_eq]
@@ -2312,12 +2062,6 @@ theorem matchesBCharBody_local (f g : ℕ → ℕ) (c cw : ℕ)
       pair_le_pair (le_trans (unpair_snd_le c.unpair.2) (unpair_snd_le c)) (le_refl cw)
     rw [h _ h1, h _ h2]
   | _ + 4 => rfl
-
-
-/-! ## Exercise 7.22 C9b6 — `decideNonemptyBChar`, `consistentBChar`
-
-Bounded index search over valid bit-list codes (via `codeBound`) instead of materializing
-`wordsUpToCode`. -/
 
 
 /-- `Nat.pair 0 t < Nat.pair 1 b` whenever `t < b`, via mathlib's `Nat.pair` monotonicity
@@ -2416,26 +2160,6 @@ theorem decideNonemptyBChar_eq_one_iff {fuel : ℕ} {e : SExpr}
 theorem c9b6_sexprGodelEncode_cap (a b : SExpr) :
     c9b5_sexprGodelEncode (.cap a b) = capCode (c9b5_sexprGodelEncode a) (c9b5_sexprGodelEncode b) :=
   rfl
-
-
-/-! ### `decideNonemptyBChar`/`consistentBChar` jointly primitive recursive in `(fuel, code)`
-
-Both are built from `matchesBChar`/`autStateCardFuelChar` via `bExistsFn`/`codeBound`, so once
-those two are jointly primitive recursive (above), only the parametrized `bExistsFn` bridge
-(`primrec_bExistsFn_param`, threading `fuel` through the search) is needed — no new
-course-of-values machinery. -/
-
-/-! ## Exercise 7.22k (Session C7b, optional) — `subsetBChar`, `interEqChar`
-
-`Exercise722Equiv.lean` builds a *Bool-level* decider `interEqB` for language equivalence
-(`denote e₁ = denote e₂`), via a choice-free `Finset`-valued subset-construction simulation of
-`toNFA e` (needed since `.cat` makes `toNFA e` genuinely nondeterministic — "e₂ rejects w" is a
-universal statement over nondeterministic paths, which doesn't pump the way existential
-acceptance does). That construction is cited here **only** for its length bound
-(`exists_diff_word_short`, wrapped in `subsetB_iff`/`interEqB_iff`); the numeric mirror below does
-**not** re-encode `Finset (autState e)` at all — `interEqB`'s own definition is just a bounded
-search calling `matchesB`, which already has a joint `(fuel, code)`-primitive-recursive mirror
-(`matchesBChar`, C9b5/C9b8). Only the *bound formula* and the *bounded-forall* wiring are new. -/
 
 
 theorem subsetGuardChar_le_one (fuel c1 c2 i : ℕ) : subsetGuardChar fuel c1 c2 i ≤ 1 :=

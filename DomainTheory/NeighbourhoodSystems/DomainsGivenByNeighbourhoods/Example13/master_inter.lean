@@ -1,8 +1,3 @@
-/-ai
-The intersection of the master neighbourhood with any set of tokens is the set itself.
-
-The master is the set of all tokens, and intersecting the full set with a set leaves that set unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

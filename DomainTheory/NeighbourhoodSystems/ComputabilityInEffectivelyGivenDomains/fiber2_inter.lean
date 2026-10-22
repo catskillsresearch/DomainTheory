@@ -1,8 +1,3 @@
-/-ai
-The double fiber of an intersection is the intersection of the double fibers.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

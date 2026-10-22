@@ -1,8 +1,3 @@
-/-ai
-The clip code is primitive recursive.
-
-The two components of a pair code are primitive recursive, and pairing the rational maximum of the first with the code of zero and the rational minimum of the second with the code of one equals the clip code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

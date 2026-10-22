@@ -1,8 +1,3 @@
-/-ai
-Occupancy test of (5.13). If both square components of u are empty, applying the boxed sum of a and b to u yields the empty set.
-
-The application unfolds, both occupancy tags of the empty set are empty, their union is empty, and the double conditional of the empty test is empty.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

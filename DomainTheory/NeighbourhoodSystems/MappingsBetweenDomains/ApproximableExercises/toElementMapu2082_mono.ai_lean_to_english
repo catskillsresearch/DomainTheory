@@ -1,0 +1,3 @@
+The elementwise map of a two-variable approximable mapping is monotone in both arguments together: if the first argument rises and the second argument rises, the value rises.
+
+A neighbourhood of the value at the smaller pair comes from a neighbourhood of each argument related by the mapping. The two inequalities move those neighbourhoods into the larger arguments, and the same relation remains a witness.

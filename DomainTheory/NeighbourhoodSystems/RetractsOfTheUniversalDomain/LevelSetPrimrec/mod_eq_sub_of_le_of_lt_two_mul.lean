@@ -1,11 +1,3 @@
-/-ai
-If s is at most j and j is strictly below twice s, then the remainder of j modulo s
-equals j minus s.
-
-Then j equals the sum of j minus s and s, by arithmetic. The remainder is unchanged by
-that rewriting, adding s on the right does not change the remainder, and the difference
-is strictly below s by arithmetic, so the remainder is the difference.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

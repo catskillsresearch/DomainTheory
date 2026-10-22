@@ -1,6 +1,3 @@
-/-ai
-The consistency test at stage n holds when the running intersection through n, met with the next enumerated set, is a neighbourhood. The test is an abbreviation so that decidability of neighbourhood membership is found through it.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

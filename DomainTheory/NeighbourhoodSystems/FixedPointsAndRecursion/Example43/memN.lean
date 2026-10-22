@@ -1,6 +1,3 @@
-/-ai
-A set of natural numbers is a neighbourhood of the natural-number system when it is the whole space or a singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,8 +1,3 @@
-/-ai
-If r < s, or r = s = 1, then r ≤ s.
-
-A strict inequality weakens to the corresponding weak inequality, and equal endpoints give reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

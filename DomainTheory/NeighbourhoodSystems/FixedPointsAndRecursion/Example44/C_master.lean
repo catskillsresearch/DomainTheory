@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the binary-sequence system is the set of all finite strings.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

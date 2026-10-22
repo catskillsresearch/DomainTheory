@@ -1,8 +1,3 @@
-/-ai
-The set of underlying elements of an ideal of finite elements is directed.
-
-Two members of the carrier come from finite elements of the ideal. The ideal is directed, so those finite elements lie under a third finite element of the ideal, whose underlying element is a common upper bound in the carrier.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

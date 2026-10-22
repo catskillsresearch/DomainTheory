@@ -1,0 +1,3 @@
+The S combinator is recursively enumerable.
+
+Membership of the fourth component of a packed index in the indicated double application of finite sets is recursively enumerable, by composing the nested S-combinator predicate with projection to the second component. Conjoining the primitive recursive equation that unpacks a packed quadruple and existentially quantifying the index makes the predicate recursively enumerable. A witness unpacks, by the membership characterization of the S combinator, to four indices with the required application, and four such indices pack to a witness.

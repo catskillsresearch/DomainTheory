@@ -1,8 +1,3 @@
-/-ai
-Decoding the filter step yields the singleton list of the clipped pair code when the clipped decoded pair is nondegenerate, and the empty list otherwise.
-
-Unfold the filter step. If the nonempty test reads one, the singleton branch is selected, the test is the strict inequality of the decoded clipped pair, and a successor paired with zero decodes to that singleton. If the test does not read one, the bound of one forces it to read zero, the inequality fails, and zero decodes to the empty list.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

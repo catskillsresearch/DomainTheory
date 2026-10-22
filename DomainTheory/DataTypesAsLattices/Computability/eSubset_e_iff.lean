@@ -1,8 +1,3 @@
-/-ai
-The finite set coded by n is contained in the finite set coded by b if and only if, for every k < n, bit k of n is unset or bit k of b is set.
-
-If the inclusion holds and bit k of n is set, then k lies in the finite set coded by b, so that bit of b is set; if the bit of n is unset, that is the other disjunct. Conversely, an element k of the finite set coded by n lies strictly below n and has its bit set in n, so the hypothesis forces the bit in b.
-ai-/
 module
 
 public import Mathlib.Computability.RE

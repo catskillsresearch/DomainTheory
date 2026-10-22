@@ -1,6 +1,3 @@
-/-ai
-The combinator I, the identity, is the element of the arrow domain from X to X given by the filter of the identity map on the system of X.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-For neighbourhoods X and X' of D₀, the left copy of X is contained in the left copy of X' if and only if X is contained in X'.
-
-The forward inclusion, restricted to the false tag of X and using that X lies below the master, yields the containment of X in X' by the subset lemma. Conversely, a false-tagged string of X is a false-tagged string of X'. A sum-master string witnessing that X is the master forces X' to equal the master, by antisymmetry of the master inclusion of X' with the transported inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,6 +1,3 @@
-/-ai
-The unary sequence system on the naturals is the nested-or-disjoint neighbourhood system whose neighbourhoods are the tails and the singletons, whose master is the set of all naturals, and in which every neighbourhood is contained in that master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

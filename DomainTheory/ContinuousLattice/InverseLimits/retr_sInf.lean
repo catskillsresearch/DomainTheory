@@ -1,8 +1,3 @@
-/-ai
-The retraction of a continuous-lattice projection preserves arbitrary infima, because it is the upper adjoint of the inclusion.
-
-The Galois connection sends the infimum to the infimum of the image, and the infimum of the image of the retraction is that same value.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

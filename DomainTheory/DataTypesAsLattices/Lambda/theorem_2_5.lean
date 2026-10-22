@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 2.5 (The first recursion theorem). If f is Scott continuous, then applying the Y combinator to the graph of f equals the least fixed point of f.
-
-Rewrite by the application law for Y, then apply the first recursion theorem for the omega combinator.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

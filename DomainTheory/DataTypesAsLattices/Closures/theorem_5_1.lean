@@ -1,8 +1,3 @@
-/-ai
-Scott's algebraic lattice theorem says that, for a closure, a fixed point is compact exactly when it is the value of the closure on some finite set, and every fixed point is the directed supremum of the compact fixed points below it.
-
-The compactness criterion is the previously proved characterization of compact fixed points, and the directed supremum is the previously proved directedness of the compact fixed points below a fixed point together with the decomposition of the fixed point as their union.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

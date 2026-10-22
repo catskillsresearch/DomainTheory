@@ -1,6 +1,3 @@
-/-ai
-The combinator K, which returns its first argument, is the element of the arrow from A into the arrow from X to A given by the filter of the curry of the first projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

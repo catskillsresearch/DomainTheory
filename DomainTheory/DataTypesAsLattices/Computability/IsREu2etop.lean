@@ -1,8 +1,3 @@
-/-ai
-The top element of Pω, the set of all natural numbers, is recursively enumerable.
-
-The constantly true predicate is recursively enumerable, and simplification shows that it is membership in the top element.
-ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,8 +1,3 @@
-/-ai
-If u and v are related by the Plotkin equivalence at the fresh tag max(p, q) + 1, then erasing that tag from u and from v gives the same set.
-
-Discard the goodness hypotheses and induct on the generated equivalence. A generating step, for some m, identifies the plain iterate with the iterate that has the fresh pair adjoined, in either order, and the two erasure lemmas agree on those sets. Reflexivity is the identity, symmetry reverses the inductive equality, and transitivity composes the two inductive equalities.
-ai-/
 
 module
 

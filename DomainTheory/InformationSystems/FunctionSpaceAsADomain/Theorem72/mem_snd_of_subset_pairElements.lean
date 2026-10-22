@@ -1,8 +1,3 @@
-/-ai
-If a set of product tokens lies in the paired element of x and y, then every token of its second component lies in y.
-
-Consistency of the paired element makes the set product-consistent. Reflexivity of entailment places the token in the second projection of the pair, and the second-projection law rewrites that projection as y.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

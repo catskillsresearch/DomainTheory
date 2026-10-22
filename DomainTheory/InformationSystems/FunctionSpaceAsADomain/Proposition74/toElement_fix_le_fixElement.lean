@@ -1,8 +1,3 @@
-/-ai
-If an approximable map h commutes with endomaps f and g and sends the bottom element to the bottom element, then the image under h of the least fixed point of f lies below the least fixed point of g.
-
-A token of the image comes from a finite set in the fixed point of f and a relation witness. The fixed-point map supplies a finite set of tokens of f and a stage of a fixed-point chain that entails that finite set. The chain estimate places the image under h of the closure of that stage below the least fixed point of g. Monotonicity of h relates the stage to the singleton of the token, so the token lies in that image.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint

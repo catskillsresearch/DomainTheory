@@ -1,8 +1,3 @@
-/-ai
-If a neighbourhood is contained in the domain set and the codomain set is contained in a neighbourhood, the step set of the original pair is contained in the step set of the new pair.
-
-A strict map relating the original pair relates the new pair by monotonicity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-The least map of a list lies below every approximable map that belongs to the step neighborhood of the list.
-
-If the least map relates an input to an output, the given map relates that input to the intersection of the relevant outputs, and monotonicity enlarges the output.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

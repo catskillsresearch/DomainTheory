@@ -1,8 +1,3 @@
-/-ai
-The output of a leading zero followed by a tail is zero followed by the output of the tail.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

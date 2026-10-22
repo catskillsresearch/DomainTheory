@@ -1,6 +1,3 @@
-/-ai
-A projection pair from a neighbourhood system D to a neighbourhood system E consists of an approximable injection from D to E and an approximable projection from E to D such that the projection composed after the injection is the identity on D and the injection composed after the projection is contained in the identity on E.
-ai-/
 module
 
 

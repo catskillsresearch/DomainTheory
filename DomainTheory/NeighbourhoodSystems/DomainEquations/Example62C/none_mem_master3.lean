@@ -1,8 +1,3 @@
-/-ai
-The basepoint belongs to the master neighbourhood of the three-way sum.
-
-It is the element inserted into that master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

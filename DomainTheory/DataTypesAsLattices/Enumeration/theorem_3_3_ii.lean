@@ -1,8 +1,3 @@
-/-ai
-For any function v, the recursion code of n equals the application of v(n) to the numeral of v(n).
-
-This is the definition of the recursion code.
-ai-/
 
 module
 

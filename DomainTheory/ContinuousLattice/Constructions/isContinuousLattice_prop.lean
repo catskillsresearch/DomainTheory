@@ -1,8 +1,3 @@
-/-ai
-The two-point lattice of propositions is a continuous lattice.
-
-It is a finite complete lattice, so Proposition 2.8 applies.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

@@ -1,8 +1,3 @@
-/-ai
-The emptiness test of the accumulated D-side atom, read from a packed pair of the depth and the bit-source, is primitive recursive.
-
-It is the emptiness decider composed with the pair of the accumulated positive code and the accumulated negative code, and that composite equals the stated function.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

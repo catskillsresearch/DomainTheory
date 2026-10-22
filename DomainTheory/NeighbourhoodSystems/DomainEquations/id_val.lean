@@ -1,8 +1,3 @@
-/-ai
-The underlying approximable map of the identity strict map on a strict domain is the identity approximable map.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

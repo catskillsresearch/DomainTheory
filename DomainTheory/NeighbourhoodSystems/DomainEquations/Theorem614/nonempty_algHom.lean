@@ -1,8 +1,3 @@
-/-ai
-There is an algebra homomorphism from the colimit algebra into any T-algebra whose structure map is strict.
-
-The first component of the strict homomorphism supplied by the strict existence result is such a homomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

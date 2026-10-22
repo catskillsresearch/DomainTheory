@@ -1,8 +1,3 @@
-/-ai
-A product neighbourhood determines its components: if the product of X and Y equals the product of X' and Y', then X equals X' and Y equals Y'.
-
-Each component is the corresponding preimage of the product neighbourhood, so equal products have equal preimages.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

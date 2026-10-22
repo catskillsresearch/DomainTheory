@@ -1,0 +1,3 @@
+The bisection split satisfies the split specification whenever every neighbourhood of the target presentation is nonempty.
+
+If the input is presented, unfold the split at that triple. An empty intersection makes the difference the whole prober set, and the empty-union and empty-intersection identities give the specification; an empty difference is symmetric. If neither decider fires, both halves are nonempty target neighbourhoods, and the bisection supplies the union and the disjointness. If the input is not presented, the definition is the choice split, which satisfies the specification.

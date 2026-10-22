@@ -1,8 +1,3 @@
-/-ai
-Juxtaposition of the principal element on the cone of a finite binary string σ with any second element is again that principal element.
-
-Compare membership of a set Z. If Z belongs to the juxtaposition, the witnessing first neighbourhood is contained in the cone of σ, so it cannot be a singleton and must be a cone contained in Z. Conversely, if the cone of σ is contained in a neighbourhood Z, that cone, the master neighbourhood, and the cone disjunct of the relation witness membership of Z.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

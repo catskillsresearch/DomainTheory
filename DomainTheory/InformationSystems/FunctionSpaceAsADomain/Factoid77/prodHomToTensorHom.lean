@@ -1,6 +1,3 @@
-/-ai
-The transport of a map out of a product to a morphism out of the corresponding tensor product is the cast along the identification of tensor homs with product maps.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

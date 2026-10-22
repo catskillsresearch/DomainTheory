@@ -1,8 +1,3 @@
-/-ai
-If f lies pointwise below g, then the subspace extension of f lies pointwise below the subspace extension of g.
-
-Each infimum term of f on a Scott-open neighborhood of the point lies below the corresponding infimum term of g, and that term of g belongs to the family whose supremum is the extension of g.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,8 +1,3 @@
-/-ai
-The coalesced-sum map constructor carries the projections of two subsystems to the projection of the coalesced-sum subsystem.
-
-Every neighbourhood of the larger coalesced sum is contained in the master of the smaller one: the masters agree, and an embedded neighbourhood of either large summand is contained in the embedding of that summand's master, which sits inside the smaller master. Extensionality and the relational form of the projection then match the two relations by the same case split as for the injection. Matching masters and matching embeddings are related, while a master element inside an embedding and embeddings of opposite bits are excluded.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,8 +1,3 @@
-/-ai
-A consistent finite set set-entails itself.
-
-Each of its tokens is entailed by reflexivity of entailment.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,8 +1,3 @@
-/-ai
-The product combinator sends an element to the product injection of the pair whose components are the two maps applied to the two components of the product extraction of the element.
-
-Rewrite by the composite form of the product combinator and the elementwise laws of composition and of the product of maps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

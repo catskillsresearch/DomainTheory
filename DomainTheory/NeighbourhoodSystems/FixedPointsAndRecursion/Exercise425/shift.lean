@@ -1,6 +1,3 @@
-/-ai
-The shift of a set of naturals is the set of successors of its members.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

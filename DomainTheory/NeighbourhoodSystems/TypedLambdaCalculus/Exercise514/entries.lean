@@ -1,6 +1,3 @@
-/-ai
-The entries of a finite list of natural numbers are the set of numbers that occur in the list.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513

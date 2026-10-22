@@ -1,6 +1,3 @@
-/-ai
-evalFin is the finite set of states live after reading a word. It is the left fold of the finite step, beginning from the finite start set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

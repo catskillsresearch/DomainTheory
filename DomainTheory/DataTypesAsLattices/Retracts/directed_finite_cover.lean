@@ -1,8 +1,3 @@
-/-ai
-If A is a directed set of fixed points and a finite set of natural numbers is contained in the union of the underlying values of A, then some member of A contains that finite set.
-
-The proof inducts on the finite set. The empty set is contained in any member, and directedness provides one. When an index is inserted, the inductive member covers the remainder and the union provides a member containing the new index. Directedness supplies a member of A above both, and that member contains the inserted set.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

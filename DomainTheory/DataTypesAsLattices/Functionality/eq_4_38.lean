@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (4.38). The tree retract equals the sum of bottom with the tensor of the tree retract with itself.
-
-Theorem 2.5, from Scott continuity of the tree functor, identifies the tree retract with the fixed point of that functor. Theorem 1.4 says the fixed point is fixed, so the functor returns the tree retract. The reverse of that equality is the claim.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

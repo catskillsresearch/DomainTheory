@@ -1,8 +1,3 @@
-/-ai
-Application of the left projection to u is the conditional set of the first component of u, with the second component as the zero branch and bottom as the positive branch.
-
-This is β-conversion, using Scott continuity of that conditional map.
-ai-/
 
 module
 

@@ -1,6 +1,3 @@
-/-ai
-The strict map represented by a filter of the strict function space relates two sets when their step set belongs to the filter. The domain and codomain are those of a witness in the step. The step of the two masters is the universe, which belongs to the filter. Intersection on the right rewrites the step of an intersection of outputs as the intersection of the two steps, using the codomains of two witnesses. Monotonicity produces a witness relation on the smaller domain and larger codomain and pushes the original step up to the new step. Strictness is the strictness of a witness in the step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

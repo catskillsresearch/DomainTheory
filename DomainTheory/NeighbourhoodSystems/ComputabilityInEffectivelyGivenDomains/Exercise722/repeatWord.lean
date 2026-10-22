@@ -1,6 +1,3 @@
-/-ai
-The repetition of a word of count zero is the empty word, and the repetition of count one more than n is the word followed by its repetition of count n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

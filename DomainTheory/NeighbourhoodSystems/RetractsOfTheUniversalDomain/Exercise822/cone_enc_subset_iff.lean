@@ -1,8 +1,3 @@
-/-ai
-The cone of the doubled encoding of one string is contained in the cone of the doubled encoding of another if and only if the second string is a prefix of the first.
-
-Rewrite containment of cones as a prefix of their roots, and apply the prefix law for the doubling encoding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,6 +1,3 @@
-/-ai
-The boolean numeral of a boolean is 1 when the boolean is true and 0 when the boolean is false.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,6 +1,3 @@
-/-ai
-The cartesian monoidal category structure on information-system objects is the structure induced by the chosen terminal limit cone and the chosen binary-product limit cones.
-ai-/
 module
 
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic

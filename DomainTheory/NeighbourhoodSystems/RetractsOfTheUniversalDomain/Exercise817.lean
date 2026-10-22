@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood system constructed in Exercise 8.12 is universal. The function space of the universal domain with itself embeds in the universal domain. The product of the universal domain with itself embeds in the universal domain. The sum of the universal domain with itself embeds in the universal domain.
-
-The numbered name example_817 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817.V_isUniversal

@@ -1,6 +1,3 @@
-/-ai
-The embedding of a filter of the relativized system below an element a is the element of the original system whose neighbourhoods are the original neighbourhoods containing some neighbourhood of a that belongs to the filter. The master neighbourhood is witnessed by the master. The intersection of two such neighbourhoods is witnessed by the intersection of their witnesses, using closure of both filters under intersection. An enlargement is witnessed by the same witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

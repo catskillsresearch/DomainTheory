@@ -1,8 +1,3 @@
-/-ai
-If D is effectively given, there is a neighbourhood system of sets of rationals which is itself effectively given, isomorphic to D, and a subsystem of the universal system, and whose injection into the universal system and projection back are computable relative to the two presentations.
-
-The witness is the code-driven subsystem, its computable presentation, its subsystem relation, its domain isomorphism with D, and the two computability theorems for the injection and the projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic

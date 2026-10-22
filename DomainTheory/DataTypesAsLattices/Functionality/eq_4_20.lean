@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (4.20). First projection composed with the tensor of f and f' equals f composed with first projection.
-
-The proof unfolds composition, then uses graph extensionality, the first-projection rule, the tensor rule, the zero projection, and the first-projection rule again.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

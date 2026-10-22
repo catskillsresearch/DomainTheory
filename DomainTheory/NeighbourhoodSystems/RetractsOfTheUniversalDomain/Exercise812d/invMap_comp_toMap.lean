@@ -1,8 +1,3 @@
-/-ai
-The inverse of the code-level domain isomorphism, as an approximable map, is a left inverse of the forward map.
-
-Extensionality reduces equality of maps to a pointwise equality of elements. The element map of a composite is the composite of the element maps, each isomorphism map acts as the isomorphism, and an isomorphism followed by its inverse is the identity, which is the element map of the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

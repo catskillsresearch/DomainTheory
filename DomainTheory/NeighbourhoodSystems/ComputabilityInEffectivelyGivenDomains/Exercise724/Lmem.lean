@@ -1,6 +1,3 @@
-/-ai
-A set of elements of Gamma lies in Scott's neighbourhood system L when it equals the neighbourhood coded by some finite list.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

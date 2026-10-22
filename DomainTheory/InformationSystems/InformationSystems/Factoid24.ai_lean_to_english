@@ -1,0 +1,3 @@
+This file's example is example_24.
+
+Scott's first example equips the non-negative integers, read as lower bounds, with an information system whose least token is 0, whose consistent sets are all finite sets, and whose entailment holds of m when m is 0 or m is at most some member of the set. The consistency axioms hold because every finite set is consistent. The least token is entailed by the zero clause, and a member is entailed because it is at most itself. If u entails c by the zero clause, then v entails c by that same clause. Otherwise some member n of u is at least c, and the entailment of n by v is either the zero clause, which forces c to be zero, or a member of v at least n, in which case the inequalities compose.

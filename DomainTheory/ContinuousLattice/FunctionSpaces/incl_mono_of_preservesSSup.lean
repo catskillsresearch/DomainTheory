@@ -1,8 +1,3 @@
-/-ai
-A map that preserves arbitrary suprema is monotone.
-
-If x lies below y, then the join of x and y equals y. Preservation of suprema yields preservation of binary joins, so the image of that join equals the join of the images and therefore equals the image of y. The image of x then lies below the image of y.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

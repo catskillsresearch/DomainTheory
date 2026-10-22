@@ -1,24 +1,85 @@
 # Exercise 1.27
 
-**EXERCISE 1.27.** Further closure properties of domains can be proved for bounded sets. We say $X \subseteq |\mathcal{D}|$ is *bounded* iff for some $y \in |\mathcal{D}|$ we have $x \subseteq y$ for all $x \in X$. This $y$ is called an *upper bound*. We let
+## Human-English
 
-$$
-\bigsqcup X = \bigcap \{y \in |\mathcal{D}| \mid x \subseteq y \text{ all } x \in X\}.
-$$
+@import "1980_Exercise_1_27.english" {code_block=false}
 
-Prove that if $X$ is bounded, then $\bigsqcup X$ is the *least upper bound* for $X$ in $|\mathcal{D}|$. Prove also: if $U, V \in \mathcal{D}$ are neighbourhoods, then $\{U, V\}$ is consistent in $\mathcal{D}$ iff $\{\uparrow U, \uparrow V\}$ is bounded in $|\mathcal{D}|$. (That is, boundedness is for elements what consistency is for neighbourhoods.) Prove finally with the aid of 1.18 that $X \subseteq |\mathcal{D}|$ is bounded iff every finite subset of $X$ is bounded.
+## AI: Human-English to AI-Lean
 
-**Lean 4**
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/Bounded.lean**
 
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/Bounded.lean](Bounded.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/bounded_iff_finite_bounded.lean](bounded_iff_finite_bounded.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/interUpTo_pairSeq.lean](interUpTo_pairSeq.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/consistent_pair_iff_bounded.lean](consistent_pair_iff_bounded.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/le_sSup.lean](le_sSup.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/pairSeq.lean](pairSeq.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/sSup_le.lean](sSup_le.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127.lean](../Exercise127.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/upperBounds.lean](upperBounds.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/upperBounds_nonempty.lean](upperBounds_nonempty.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/sSup.lean](sSup.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/Basic.lean](Basic.lean)
+@import "Bounded.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/bounded_iff_finite_bounded.lean**
+
+@import "bounded_iff_finite_bounded.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/interUpTo_pairSeq.lean**
+
+@import "interUpTo_pairSeq.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/consistent_pair_iff_bounded.lean**
+
+@import "consistent_pair_iff_bounded.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/le_sSup.lean**
+
+@import "le_sSup.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/pairSeq.lean**
+
+@import "pairSeq.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/sSup_le.lean**
+
+@import "sSup_le.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127.lean**
+
+@import "../Exercise127.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/upperBounds.lean**
+
+@import "upperBounds.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/upperBounds_nonempty.lean**
+
+@import "upperBounds_nonempty.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/sSup.lean**
+
+@import "sSup.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise127/Basic.lean**
+
+@import "Basic.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Bounded.ai_lean_to_english" {code_block=false}
+
+@import "bounded_iff_finite_bounded.ai_lean_to_english" {code_block=false}
+
+@import "interUpTo_pairSeq.ai_lean_to_english" {code_block=false}
+
+@import "consistent_pair_iff_bounded.ai_lean_to_english" {code_block=false}
+
+@import "le_sSup.ai_lean_to_english" {code_block=false}
+
+@import "pairSeq.ai_lean_to_english" {code_block=false}
+
+@import "sSup_le.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise127.ai_lean_to_english" {code_block=false}
+
+@import "upperBounds.ai_lean_to_english" {code_block=false}
+
+@import "upperBounds_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "sSup.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_1_27.ai_english_concordance" {code_block=false}

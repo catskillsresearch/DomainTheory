@@ -1,8 +1,3 @@
-/-ai
-The dual of the dual of a family of sets is the family itself.
-
-Extending a set and simplifying the definition of the dual cancels the two complements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

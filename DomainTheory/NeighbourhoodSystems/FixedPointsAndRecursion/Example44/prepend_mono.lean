@@ -1,8 +1,3 @@
-/-ai
-Prepending a finite string preserves inclusion.
-
-A member of the prepend of the smaller set is the concatenation of the prefix with an element of that set, and that element belongs to the larger set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

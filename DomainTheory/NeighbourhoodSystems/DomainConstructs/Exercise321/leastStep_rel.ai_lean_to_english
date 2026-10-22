@@ -1,0 +1,3 @@
+The least single-step map from Y to Z relates neighbourhoods Y' and Z' if and only if the single-step output intersection at Y' is contained in Z'.
+
+Unfolding the least step, the relation of the least map is neighbourhood membership of both sets together with that inclusion. Each direction keeps or restores the given membership hypotheses around the inclusion.

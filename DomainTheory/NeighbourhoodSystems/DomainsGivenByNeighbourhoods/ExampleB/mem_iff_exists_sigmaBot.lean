@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood belongs to an element of the binary system if and only if it belongs to the finite element of some cone that itself belongs to the element.
-
-If the neighbourhood belongs to the element, it equals some cone; that cone belongs to the element, and the neighbourhood belongs to the principal filter of the cone by reflexivity of inclusion. Conversely, upward closure lifts a cone belonging to the element together with membership of the neighbourhood in the principal filter of that cone.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

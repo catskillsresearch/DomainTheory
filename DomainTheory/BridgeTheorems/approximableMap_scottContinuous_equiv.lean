@@ -1,6 +1,3 @@
-/-ai
-Factoid 4.6 gives the order isomorphism between the approximable maps from an information system to another and the Scott-continuous maps of their domains. It sends an approximable map to the associated Scott-continuous map and conversely, and the two composites are the identity. One approximable map lies under another exactly when the associated Scott-continuous map does, because the order of approximable maps is the order of the elements they determine.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

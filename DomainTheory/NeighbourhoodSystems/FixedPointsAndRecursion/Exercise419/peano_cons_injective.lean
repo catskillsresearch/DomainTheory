@@ -1,8 +1,3 @@
-/-ai
-Each successor operation on binary strings is injective.
-
-Injectivity of the list constructor equates the tails.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

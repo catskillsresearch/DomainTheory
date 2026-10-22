@@ -1,8 +1,3 @@
-/-ai
-Applying the conditional combinator to x and then to y yields the graph of the map sending z to the conditional set of z with branches x and y.
-
-This is the two-argument beta law for the conditional combinator.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,8 +1,3 @@
-/-ai
-A retract of a continuous lattice is a continuous lattice, and the Scott topology of the retract agrees with the subspace topology induced along the inclusion. This is Scott's Proposition 2.10.
-
-The two conjuncts are the continuous-lattice statement for the retract and the agreement of the two topologies.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

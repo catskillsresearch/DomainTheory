@@ -1,0 +1,3 @@
+If an element lies in the Tarski fixed set, then its image under the first injection followed by the second lies in that set.
+
+Rewrite by the fixed-point equation and take the image clause whose witness is the image of the element under the first injection.

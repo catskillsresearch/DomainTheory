@@ -1,8 +1,3 @@
-/-ai
-If V(a)(x) equals a(x) for every x, then a is idempotent on values: a(a(x)) equals a(x).
-
-Equation (5.17) says that the universe operation is idempotent. Rewriting both the outer and the inner universe value by the hypothesis yields a(a(x)) = a(x).
-ai-/
 
 module
 

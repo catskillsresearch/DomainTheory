@@ -1,8 +1,3 @@
-/-ai
-Strictifying the inclusion of a strict element returns that element.
-
-The composite is the strict filter of the relational strictification of the approximable map underlying the strict map of the element. That relational strictification equals the original strict map, because the underlying map is already strict, and the strict-filter representation then returns the element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,6 +1,3 @@
-/-ai
-The code-driven subsystem D'' consists of those sets of rationals equal to a coded set Yc P n, with the universal master. The master belongs because the zero-depth coded set is the master, and every coded set is contained in the master. If a coded set is contained in the intersection of two coded sets, the raw embedding comparison gives the same inclusions for the embedded neighbourhoods of D, and the intersection-index lemma returns a coded set equal to that intersection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

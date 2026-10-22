@@ -1,8 +1,3 @@
-/-ai
-Upsampling a mask from one level to a higher level is primitive recursive on a triple code. It iterates the joint upsampling step for the difference of the levels and then truncates the resulting mask to two to the power of the target level.
-
-The joint step, read from the inner right component, is primitive recursive, and so is primitive recursion from the identity with that step. Pairing the outer component with the inner mask, subtracting the outer level from the middle level, and raising two to the middle level are primitive recursive. Composing the primitive-recursive truncation with the pairing of the iterated right component and that power is primitive recursive. Simplifying the pairing identities, unfolding the upsample, and rewriting primitive recursion on a constant step as iteration identifies this composition with the upsample.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

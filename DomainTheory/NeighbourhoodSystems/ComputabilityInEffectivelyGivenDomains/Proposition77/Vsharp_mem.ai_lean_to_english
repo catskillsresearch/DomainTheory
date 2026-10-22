@@ -1,0 +1,3 @@
+Every enumerated set is a neighbourhood of the section domain.
+
+Proceed by strong induction on the index. At 0 the value is the master neighbourhood. A positive index is odd, of the form 2n+1, or even, of the form 2n+2, according to its remainder modulo 2. The odd value is the zero embedding of an enumerated neighbourhood of the underlying domain. The even value is the paired embedding of two earlier enumerated sets, which are neighbourhoods by the inductive hypothesis, because each component of the unpairing is strictly smaller than the index.

@@ -1,8 +1,3 @@
-/-ai
-The conjunction of two recursively enumerable predicates on a primcodable type is recursively enumerable.
-
-Bind the second predicate, precomposed with the first projection, to the partial function for the first. Extensionality and the characterization of assertion show that the result asserts the conjunction.
-ai-/
 module
 
 public import Mathlib.Computability.RE

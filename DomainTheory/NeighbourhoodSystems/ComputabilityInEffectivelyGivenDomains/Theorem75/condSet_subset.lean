@@ -1,8 +1,3 @@
-/-ai
-The conditional set is contained in its base.
-
-A member satisfies the first conjunct, which is membership in the base.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

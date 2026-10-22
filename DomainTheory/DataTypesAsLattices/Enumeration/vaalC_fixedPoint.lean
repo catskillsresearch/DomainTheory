@@ -1,8 +1,3 @@
-/-ai
-The functional vaalF fixes its least fixed point vaalC.
-
-This is the fixed-point identity in Theorem 1.4, applied to Scott continuity of vaalF.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

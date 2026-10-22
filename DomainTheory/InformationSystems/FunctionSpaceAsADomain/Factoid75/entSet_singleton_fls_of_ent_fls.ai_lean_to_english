@@ -1,0 +1,3 @@
+If a consistent Boolean set entails the false token, then the singleton false token entails every token of that set.
+
+The entailment of false supplies a Boolean point that holds of the set and satisfies false. The undefined and true points do not satisfy false. The false point holds of the token in question, so that token is bottom or false, and in each of those cases the singleton false token entails it by a false-point witness. The token cannot be true.

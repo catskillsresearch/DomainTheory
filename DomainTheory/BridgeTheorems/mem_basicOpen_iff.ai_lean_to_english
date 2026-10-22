@@ -1,0 +1,3 @@
+A filter in the neighbourhood system of an information system meets the basic open of a consistent finite set if and only if that set is contained in the carrier of the information-system element recovered from the filter.
+
+If the filter meets the basic open, then for each token of the set the basic open is contained in the basic open of the corresponding singleton, so upward closure puts the token in the recovered carrier. Conversely, containment in the recovered carrier means the filter meets each singleton basic open, and the lemma on singletons yields membership in the basic open of the whole set.

@@ -1,8 +1,3 @@
-/-ai
-If an accepting path visits the same state at two positions, the word obtained by deleting the segment between those positions is still accepted.
-
-Split the path at each position. The intermediate states agree, because each equals the path state at its position and those path states are equal. Appending the prefix path to the suffix path is an accepting path for the shortened word.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

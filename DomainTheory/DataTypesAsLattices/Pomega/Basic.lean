@@ -1,6 +1,3 @@
-/-ai
-This module gathers and re-exports the basic ingredients of the universal domain Pω in Scott 1976, §1: bitwise arithmetic, finiteness and the lattice structure of sets of natural numbers, the bottom and top elements, the coded finite sets and the finite pieces below an element, list and finite-set codes, pairing, triangular numbers, and unpairing, together with the membership lemmas, the power-of-two bounds, the decidability instances, and the existence of a triangular bucket and of a pair.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise
@@ -31,12 +28,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.exists_triangle_bucket
 public import DomainTheory.DataTypesAsLattices.Pomega.exists_pair
 
 @[expose] public section
-
-/-!
-# Scott 1976, §1 — the universal domain `Pω`
-
-Ground truth: `sources/Data_Types_as_Lattices_vision.md`, pages 5–7.
--/
 
 namespace DomainTheory.DataTypesAsLattices
 

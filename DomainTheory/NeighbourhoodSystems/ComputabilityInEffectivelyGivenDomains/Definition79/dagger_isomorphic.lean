@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood system is isomorphic to its preparation by down-sets.
-
-The isomorphism is the isomorphism of a system with its power system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,8 +1,3 @@
-/-ai
-The independent successor σ_j is Scott continuous.
-
-Extensionality matches membership in σ_j(x) with membership in the Scott union of the images of the finite approximants. If the code of (j, k) lies in x, the finite approximant given by the power of two at that code lies below x, and the same index witnesses the successor code in the image of that approximant. Conversely, a finite approximant below x and a witness index return that pair code as an element of x.
-ai-/
 
 module
 

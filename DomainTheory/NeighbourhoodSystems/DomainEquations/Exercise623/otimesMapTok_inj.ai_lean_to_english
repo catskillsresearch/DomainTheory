@@ -1,0 +1,3 @@
+The smash product carries the injection. If one neighbourhood system is a subsystem of another and a second pair stands in the same relation, the smash-product map of the two injections equals the injection of the smash-product subsystem.
+
+By extensionality of approximable maps it is enough to compare relations. A master step is sent to the master of the larger smash, with the inclusion given by the master equalities or by the factor inclusions, and a proper smash step is the product-token inclusion of the two factor inclusions. In the other direction a master target is the master case. A proper target against a master source would force a proper factor to equal its master. Two proper neighbourhoods split the product-token inclusion into the two factor inclusions.

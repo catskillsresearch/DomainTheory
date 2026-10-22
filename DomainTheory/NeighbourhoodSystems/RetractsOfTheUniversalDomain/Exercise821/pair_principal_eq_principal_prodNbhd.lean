@@ -1,8 +1,3 @@
-/-ai
-The pair of the principal elements of two neighbourhoods is the principal element of their product neighbourhood.
-
-Compare membership in an arbitrary neighbourhood. A product neighbourhood contained in the pair is a pair of neighbourhoods above the two given neighbourhoods, hence a product neighbourhood contained in their product, and conversely.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

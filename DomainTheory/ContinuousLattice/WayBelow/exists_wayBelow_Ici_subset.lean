@@ -1,8 +1,3 @@
-/-ai
-In a continuous lattice, a Scott-open set containing z contains the whole principal upset of some element way below z.
-
-The set of elements way below z is nonempty, because bottom is way below z, and its supremum equals z, hence lies in the open set. Directedness and Scott-openness supply an element of that set already in the open set. The open set is an upper set, so the principal upset of this element is contained in it.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

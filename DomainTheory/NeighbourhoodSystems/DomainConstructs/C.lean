@@ -1,6 +1,3 @@
-/-ai
-Scott's family C of two neighbourhood systems is the set of graphs of approximable maps from the first system to the second.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222

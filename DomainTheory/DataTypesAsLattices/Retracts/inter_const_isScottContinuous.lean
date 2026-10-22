@@ -1,8 +1,3 @@
-/-ai
-Intersection with a fixed set preserves Scott continuity.
-
-Compare membership of an index in the two sides of the continuity equation. If the index lies in the value of the continuous map and in the fixed set, continuity puts it in the Scott union, so some finite set e n contained in the argument carries it, and it remains in the intersection. Conversely, membership in the Scott union of the intersected map supplies such a finite set together with membership in the fixed set, and monotonicity of the continuous map returns the index to the value.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

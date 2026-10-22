@@ -1,6 +1,3 @@
-/-ai
-The step plusStep advances the packed state (n, m, a, acc) of the bitwise-disjunction fold. It leaves n and m unchanged, replaces a by a + 1, and replaces the accumulator by its bitwise disjunction with the shift of m by a places when the a-th bit of n is set, and with 0 otherwise.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

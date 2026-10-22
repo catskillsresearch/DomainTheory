@@ -1,8 +1,3 @@
-/-ai
-The conditional at bottom returns bottom.
-
-If an output neighbourhood belongs to the value, the witnessing input splits as a product whose truth component belongs to bottom, hence is the master. The zero and one clauses of the guard contradict that, so the master of the codomain is contained in the output and the output is the master. Conversely, the product of the three master neighbourhoods lies in the paired argument and satisfies the master clause of the guard.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

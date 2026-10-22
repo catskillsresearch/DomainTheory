@@ -1,8 +1,3 @@
-/-ai
-The integer functional is Scott continuous.
-
-Continuity of graph formation reduces the claim to continuity in the functional argument. Theorem 1.3 substitutes the outer conditional, continuous in its third argument, into the inner conditional. A second use of Theorem 1.3 substitutes that inner conditional, continuous in its first argument, into application in the function argument at the predecessor.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

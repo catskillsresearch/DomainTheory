@@ -1,8 +1,3 @@
-/-ai
-A set of tokens is a neighbourhood of the representation system if and only if it equals the neighbourhood of some token.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

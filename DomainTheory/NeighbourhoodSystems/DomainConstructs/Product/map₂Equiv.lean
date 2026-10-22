@@ -1,6 +1,3 @@
-/-ai
-Theorem 3.5 of Scott (1981, PRG-19) is the equivalence between joint approximable maps out of a product and two-variable approximable maps. It sends a joint map to its two-variable restriction and a two-variable map to the induced joint map, with the two round trips as inverse operations.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

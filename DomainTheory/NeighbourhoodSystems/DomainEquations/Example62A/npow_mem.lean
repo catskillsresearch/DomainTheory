@@ -1,8 +1,3 @@
-/-ai
-A set is a neighbourhood of the n-fold product of V if and only if it is the proper product of a family of neighbourhoods of V.
-
-The equivalence is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

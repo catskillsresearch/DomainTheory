@@ -1,8 +1,3 @@
-/-ai
-Applying the operator HF at an interpreter to an environment yields the graph of one step of that interpreter in the term.
-
-This is beta reduction for the inner Scott-continuous map.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

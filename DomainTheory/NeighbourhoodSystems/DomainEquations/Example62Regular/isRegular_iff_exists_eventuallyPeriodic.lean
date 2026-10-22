@@ -1,8 +1,3 @@
-/-ai
-A language over the n-letter alphabet is regular if and only if it is the language of some eventually periodic total tree.
-
-Classically, if the language is regular, the tree that decides membership of each word in the language has that language, by extensionality and the decision equality, and is eventually periodic because eventual periodicity is equivalent to regularity for this language. Conversely, a language equal to the language of an eventually periodic tree is regular by the same equivalence.
-ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

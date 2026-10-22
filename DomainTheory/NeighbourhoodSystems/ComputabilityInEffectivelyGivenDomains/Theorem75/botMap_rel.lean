@@ -1,8 +1,3 @@
-/-ai
-The bottom map relates two sets if and only if both are neighbourhoods and the master of the codomain is contained in the output.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

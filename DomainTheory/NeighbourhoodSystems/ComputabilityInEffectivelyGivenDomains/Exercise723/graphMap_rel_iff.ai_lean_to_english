@@ -1,0 +1,3 @@
+On indices, graphMap relates the enumerated set of maps coded by c to the neighbourhood nbhd m if and only if the complement of nbhd m is contained in GraphIdx of that enumerated set. The decider gN is the nonempty test of the function-space presentation.
+
+A related triple contains the inclusion. Conversely, the enumerated set is a neighbourhood by the enumeration lemma for gN, nbhd m is a neighbourhood, and the hypothesis is the inclusion.

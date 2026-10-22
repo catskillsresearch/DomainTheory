@@ -1,6 +1,3 @@
-/-ai
-The right-hand side of the domain equation A + (D → D) is the sum information system of A with the function space of the lambda system of A with itself.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

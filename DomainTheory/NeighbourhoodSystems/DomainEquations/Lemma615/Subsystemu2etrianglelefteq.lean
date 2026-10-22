@@ -1,8 +1,3 @@
-/-ai
-A subdomain relation yields a subdomain embedding.
-
-The subdomain itself, together with the identity isomorphism of that system, is the witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

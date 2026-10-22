@@ -1,8 +1,3 @@
-/-ai
-The element pair of zero with x is distinct from the element pair of one with y.
-
-This is the separation of those two tags for two-place sequences.
-ai-/
 
 module
 

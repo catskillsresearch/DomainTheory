@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 4.3 (i). On elements, the function space a ∘→ b acts as b ∘ − ∘ a, and that action is idempotent when a and b are retracts.
-
-Rewrite both applications by the function-space application law and compare graphs. At each argument, composition and the two retract application laws give the equality.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

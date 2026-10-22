@@ -1,8 +1,3 @@
-/-ai
-If the catamorphism relates the sharp neighbourhood coded by n to a neighbourhood Z, then some certificate makes the evaluator succeed at the pair of n with that certificate, and the neighbourhood coded by the certificate's output component equals Z, assuming the guard functions decide equality with the master and the relations of the two algebra maps.
-
-The argument is strong induction on n, split into the three shapes of a code. At zero, inversion forces the target to be the master, and the certificate built from the master index is accepted by the master clause. At an odd code, inversion yields a relation of the leaf map, a code for its target is taken by surjectivity, and a witness of the leaf guard is accepted by the leaf clause. At an even code, inversion yields the two children and a relation of the node map. The inductive hypothesis supplies certificates at the strictly smaller child indices. A code for the node target and a witness of the node guard are packed with those certificates. Mixed monotonicity of pairing makes the child codes smaller than the combined code, so the memo table returns the children's evaluations, and the node clause accepts the witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

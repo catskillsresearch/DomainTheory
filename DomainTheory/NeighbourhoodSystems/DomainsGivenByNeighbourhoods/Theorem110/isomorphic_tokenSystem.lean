@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood system is isomorphic to its element-token system.
-
-The witness is the token isomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

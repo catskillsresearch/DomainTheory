@@ -1,6 +1,3 @@
-/-ai
-The reindexing of a singly indexed neighbourhood is the doubly indexed set whose token at outer index i and inner index j lies in the fiber of the neighbourhood at the pairing of i and j.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

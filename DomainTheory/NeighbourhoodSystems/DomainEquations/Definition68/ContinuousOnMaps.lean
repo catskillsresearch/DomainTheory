@@ -1,6 +1,3 @@
-/-ai
-An endofunctor on domains is continuous on maps when, for every pair of domains, some approximable map between the corresponding strict function spaces acts on elements by sending each strict map to the image of that map under the endofunctor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

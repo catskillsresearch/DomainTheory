@@ -1,8 +1,3 @@
-/-ai
-Primitive recursion from the numeral 0, whose step is the K combinator applied to addition of the numeral k, run for n steps, equals the numeral k · n.
-
-The case n = 0 is the definition of primRecVal. For a successor, the recursive clause unfolds the value, and Kcomb_beta2 together with the inductive hypothesis replaces it by addition of the numeral k to the numeral k · n. The realization addC_realizes2 gives the numeral k + k · n, and the successor law for multiplication together with commutativity of addition gives the numeral k · (n + 1).
-ai-/
 module
 
 public import Mathlib.Computability.RE

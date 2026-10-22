@@ -1,6 +1,3 @@
-/-ai
-The filter element filterC is the interpretation of the term filterTerm in the environment filterEnv.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

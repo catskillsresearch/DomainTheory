@@ -1,8 +1,3 @@
-/-ai
-For a continuous-lattice retraction and an element d of the retract, the image under the retraction of the set of ambient elements way below the inclusion of d is nonempty.
-
-The bottom element of the ambient lattice is way below the inclusion of d, so its image under the retraction belongs to the set.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,8 +1,3 @@
-/-ai
-Unpairing the Cantor pair of n and m returns the ordered pair (n, m).
-
-Pairing the components of that unpairing returns the original pair. Injectivity of pairing forces the two components to be n and m.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

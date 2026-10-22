@@ -1,0 +1,3 @@
+If a set of right tokens is nonempty, the left content of its right copy is the master of the first system.
+
+Simplification removes the left-tag clause and the basepoint clause, since neither lies in a right copy, and leaves membership in the first master together with a right tag in the copy. One direction forgets the tag. The other takes a token of the nonempty set and tags it on the right.

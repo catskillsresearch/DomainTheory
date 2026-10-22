@@ -1,6 +1,3 @@
-/-ai
-The approximable map induced by an order isomorphism of elements relates a neighbourhood X to a neighbourhood Y when Y belongs to the image of the principal element on X. The master neighbourhoods are related because the image of the bottom element contains the master. An intersection of outputs belongs to that image because the image is a filter. When the input is replaced by a smaller neighbourhood, the principal on the smaller neighbourhood lies above the original principal, monotonicity of the isomorphism carries the output into the new image, and the filter enlarges the output.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

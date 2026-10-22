@@ -1,8 +1,3 @@
-/-ai
-The intersection of a list of sets inside a base set is contained in the base.
-
-A point of the intersection lies in the base by the first component of the membership characterization of interList.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

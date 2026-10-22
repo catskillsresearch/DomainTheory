@@ -1,8 +1,3 @@
-/-ai
-firstElemCode is primitive recursive.
-
-It is the left projection composed with the predecessor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

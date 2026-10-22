@@ -1,6 +1,3 @@
-/-ai
-The computable presentation of the function space from L associated with a bundle of function-space data is the function-space presentation built from that bundle's consistency, inclusion, and equality deciders and from their specifications.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

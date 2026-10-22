@@ -1,0 +1,3 @@
+The fuel-bounded automaton-state cardinality is jointly primitive recursive in the fuel and the code.
+
+The fuel table of the cardinality lookup is primitive recursive. Swapping the two components and composing produces the table at the code and the fuel, and indexing that table at the code with default 0 is primitive recursive. The fuel-table equation at equal indices says that this entry is the cardinality.

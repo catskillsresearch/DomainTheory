@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood indexed by the canonical union of n and m is the union of the neighbourhoods indexed by n and by m.
-
-The level set coded by the raw union is nonempty, because it equals that union and the neighbourhood indexed by n is nonempty. Unfolding the canonical union and rewriting by the canonical-index formula, the canonical index acts as the identity on this nonempty code, and the level-set formula for the raw union gives the union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

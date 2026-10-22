@@ -1,0 +1,3 @@
+Two elements of the one-token system that agree on membership of the empty set are equal.
+
+If the empty set belongs to the first element, the membership criterion makes both elements top. Otherwise each element is bottom or top. Taking the first to be top would put the empty set in it, and taking the second to be top would carry empty membership back to the first by the agreement hypothesis, so both equal bottom.

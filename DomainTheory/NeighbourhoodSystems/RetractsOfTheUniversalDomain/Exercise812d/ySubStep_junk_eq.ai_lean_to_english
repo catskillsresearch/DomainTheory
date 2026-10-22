@@ -1,0 +1,3 @@
+The junk output of the Y-sub-step is 1 when the incoming state is junk, and otherwise the bit's choice of the intersection or difference emptiness decider.
+
+Unfolding the sub-step reduces the packed junk component to that selector.

@@ -1,8 +1,3 @@
-/-ai
-The pointwise supremum of a set of Scott maps, evaluated at an element, is the supremum of the values of the members at that element.
-
-The equality holds by the definition of the pointwise supremum.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

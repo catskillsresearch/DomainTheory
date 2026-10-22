@@ -1,8 +1,3 @@
-/-ai
-The singleton of the middle token is not a neighbourhood.
-
-If it were a neighbourhood, it would equal the master or one of the two overlapping neighbourhoods. The master and the first overlapping neighbourhood contain the first token, and the second contains the last token, and none of those tokens lies in the singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

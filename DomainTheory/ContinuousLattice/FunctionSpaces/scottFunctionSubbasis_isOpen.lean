@@ -1,8 +1,3 @@
-/-ai
-If U is open in Y, then for each point x of X the set of continuous maps from X to Y that send x into U is open in the Scott function topology.
-
-That set belongs to the subbasis from which the Scott function topology is generated.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

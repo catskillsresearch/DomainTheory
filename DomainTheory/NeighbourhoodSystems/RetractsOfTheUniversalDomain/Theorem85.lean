@@ -1,8 +1,3 @@
-/-ai
-Theorem 8.5, from a finitary projection to Scott's step-closure formula, states that if a is a finitary projection, then a neighbourhood Y belongs to a of an element x exactly when Y belongs to E and some neighbourhood X of x is contained in Y and is related to itself by a. An approximable endomap is a finitary projection if and only if a neighbourhood belongs to the image of an element exactly when it is a neighbourhood and some neighbourhood of the element is contained in it and related to itself by the map. Theorem 8.5, from Scott's step-closure formula to a finitary projection, states that if a neighbourhood Y belongs to a of x exactly when Y belongs to E and some neighbourhood of x is contained in Y and related to itself by a, then a is a finitary projection.
-
-The numbered name theorem_85 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85.formula_of_isFinitaryProjection

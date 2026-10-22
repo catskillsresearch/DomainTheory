@@ -1,8 +1,3 @@
-/-ai
-The right copy of a nonempty set is nonempty.
-
-It is the image of that set under the right tag.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

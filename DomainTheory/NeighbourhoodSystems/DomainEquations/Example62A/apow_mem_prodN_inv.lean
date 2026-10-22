@@ -1,8 +1,3 @@
-/-ai
-If the proper product of a family X is a neighbourhood of the n-fold power of A, then every component of X belongs to MemA.
-
-Unpack the product witness and the equality of products, then rewrite each component by injectivity of prodN.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

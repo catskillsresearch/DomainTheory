@@ -1,6 +1,3 @@
-/-ai
-The least fixed-point operator of Scott's Theorem 7.3 is the approximable map from the function space of A into A relating a finite set w of function tokens to a finite set v when both are consistent and some set reachable from the empty set by a w-chain entails v. The empty set is related to the empty set because it is reachable and entails itself. The relation is closed under union on the right because reachability and entailment are closed under union, and it is monotone because reachability is monotone in the token set and entailment composes.
-ai-/
 
 module
 

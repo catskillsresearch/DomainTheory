@@ -1,8 +1,3 @@
-/-ai
-Unfolding the folding of a pair returns the pair.
-
-Both maps act by the product isomorphism and its inverse, and the isomorphism cancels the inverse.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

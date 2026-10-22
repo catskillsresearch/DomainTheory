@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood belongs to the supremum of a monotone chain of elements if and only if it belongs to some term of the chain.
-
-This is the membership law for the directed union that defines the supremum.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

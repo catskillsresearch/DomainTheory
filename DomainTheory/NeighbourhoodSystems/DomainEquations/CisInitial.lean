@@ -1,6 +1,3 @@
-/-ai
-The algebra of finite and infinite binary sequences is an initial algebra for the endofunctor that sends a domain to the unit domain summed with the domain summed with itself. The homomorphism into an arbitrary algebra is the descent homomorphism, given by head recursion on sequences, and every algebra homomorphism equals that descent homomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

@@ -1,8 +1,3 @@
-/-ai
-The intersection of the step sets of one input with two outputs equals the step set of that input with the intersection of the outputs.
-
-A map relating the input to both outputs relates it to their intersection. A map relating the input to the intersection relates it to each factor by monotonicity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

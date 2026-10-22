@@ -1,8 +1,3 @@
-/-ai
-The step neighborhood of a list with a head pair is the step set of that pair intersected with the step neighborhood of the tail.
-
-A map relates the head and every tail pair exactly when it lies in both sets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

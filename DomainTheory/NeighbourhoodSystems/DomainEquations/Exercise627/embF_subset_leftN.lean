@@ -1,8 +1,3 @@
-/-ai
-The false tag of X is contained in the left copy of X.
-
-The left copy is the union of that false tag with a second set, so the false tag is contained in the union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

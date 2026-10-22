@@ -1,6 +1,3 @@
-/-ai
-A finset of raw lambda tokens entails a raw token, in the unstaged sense, when it entails that token at some finite stage.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

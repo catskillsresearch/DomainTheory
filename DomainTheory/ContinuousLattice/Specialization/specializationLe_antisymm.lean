@@ -1,8 +1,3 @@
-/-ai
-In a T₀-space, points that specialize to each other in Scott's order are equal.
-
-Each specialization hypothesis is Mathlib's specializes relation, by the characterization through open sets. The two directions together are inseparability, and inseparable points of a T₀-space are equal.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

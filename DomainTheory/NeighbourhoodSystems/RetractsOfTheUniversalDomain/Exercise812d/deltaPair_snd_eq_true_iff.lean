@@ -1,8 +1,3 @@
-/-ai
-The second component of deltaPair at depth i is true exactly when the next bit of the base-four digit of k at place i is set.
-
-Unfold deltaPair and simplify.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

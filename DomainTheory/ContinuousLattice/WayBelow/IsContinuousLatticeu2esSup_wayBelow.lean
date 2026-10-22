@@ -1,8 +1,3 @@
-/-ai
-In a continuous lattice, an element equals the supremum of the elements way below it.
-
-The continuous-lattice hypothesis says that the element is the least upper bound of that set, and a least upper bound equals the supremum.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

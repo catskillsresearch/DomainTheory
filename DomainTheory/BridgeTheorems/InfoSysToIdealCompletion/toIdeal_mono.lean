@@ -1,8 +1,3 @@
-/-ai
-If an element x lies under an element y, then the ideal of finite approximants of x is contained in the ideal of finite approximants of y.
-
-A finite approximant of x lies under x and hence under y, and a finite element lying under y is a finite approximant of y.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

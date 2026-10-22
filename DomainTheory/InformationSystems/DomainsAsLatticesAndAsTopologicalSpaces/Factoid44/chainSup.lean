@@ -1,6 +1,3 @@
-/-ai
-The supremum of a nonempty chain is the directed supremum of that chain, using that every chain is directed.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

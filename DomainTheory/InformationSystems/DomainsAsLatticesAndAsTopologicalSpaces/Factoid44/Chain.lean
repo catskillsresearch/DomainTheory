@@ -1,6 +1,3 @@
-/-ai
-A family of elements is a chain when any two of its members are comparable.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

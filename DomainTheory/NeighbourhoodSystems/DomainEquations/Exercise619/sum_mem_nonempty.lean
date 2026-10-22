@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the abstract separated sum is nonempty.
-
-The master contains the untagged token. A left injection of a nonempty neighbourhood is nonempty, and a right injection of a nonempty neighbourhood is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

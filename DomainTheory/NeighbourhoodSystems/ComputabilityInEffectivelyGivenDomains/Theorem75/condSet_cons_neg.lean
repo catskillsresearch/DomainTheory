@@ -1,8 +1,3 @@
-/-ai
-If the indexed neighbourhood is not contained in the head input, the conditional set of a cons equals the conditional set of the tail.
-
-Compare membership. The head obligation is impossible under the failed inclusion, so it drops out of the quantifier over the cons.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

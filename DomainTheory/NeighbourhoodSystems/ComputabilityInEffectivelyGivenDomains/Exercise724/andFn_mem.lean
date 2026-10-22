@@ -1,8 +1,3 @@
-/-ai
-Sequential conjunction of two neighbourhoods of T is a neighbourhood of T.
-
-Membership of the first neighbourhood splits into the master neighbourhood, zero, and one. Rewrite by the corresponding computation of sequential conjunction, and use membership of the master neighbourhood, of the second neighbourhood, or of one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

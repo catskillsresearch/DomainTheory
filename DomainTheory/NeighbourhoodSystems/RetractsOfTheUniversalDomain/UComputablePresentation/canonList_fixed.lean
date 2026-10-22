@@ -1,8 +1,3 @@
-/-ai
-If a list already presents a neighbourhood of U, canonicalizing it leaves the presented set unchanged.
-
-Membership gives nonemptiness and containment in the unit interval. The clipped filtered list cannot be empty, or the presented set cut by the unit interval would be empty and the presented set itself would be empty. On the remaining head and tail, the canonical list is that list, and filtering nondegenerate pairs after clipping leaves a set already contained in the unit interval unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

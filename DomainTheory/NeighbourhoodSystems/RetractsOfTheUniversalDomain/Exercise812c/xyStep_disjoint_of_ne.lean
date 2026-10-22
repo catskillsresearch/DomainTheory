@@ -1,8 +1,3 @@
-/-ai
-At two different sign bits, the two direct outputs of xyStep are disjoint and the two split outputs are disjoint.
-
-The direct branches are an intersection and a difference of the same two sets, which meet emptily, and the swap lemma gives disjointness of the selections. The two split pieces meet emptily by the split specification, and the same lemma applies.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

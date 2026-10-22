@@ -1,8 +1,3 @@
-/-ai
-The identity combinator is a retract.
-
-The retract equation asks that it equal the graph of applying it twice. Two applications are the identity, by the application law, so that graph is the combinator itself.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

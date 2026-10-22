@@ -1,6 +1,3 @@
-/-ai
-The arrow extraction from the universal domain into the function space of the fixed neighbourhood of a and the fixed neighbourhood of b is the exponential that places the subsystem injection of a in the contravariant slot and the subsystem projection of b in the covariant slot, composed after the arrow extraction of the universal domain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

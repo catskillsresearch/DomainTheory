@@ -1,6 +1,3 @@
-/-ai
-Two sequences indexed by the natural numbers merge, by an order isomorphism, into one such sequence. The isomorphism is the reverse of the sum-arrow isomorphism composed with reindexing along the bijection of the sum of two copies of the natural numbers with the natural numbers.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

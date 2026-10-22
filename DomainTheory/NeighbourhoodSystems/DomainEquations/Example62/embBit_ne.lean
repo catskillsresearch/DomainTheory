@@ -1,8 +1,3 @@
-/-ai
-If two booleans are distinct and a set of binary strings is nonempty, the tagging of that set by the first boolean is distinct from the tagging of any set by the second boolean.
-
-A member of the nonempty set, preceded by the first boolean, lies in the first tagging and therefore in the second, which forces the two booleans to agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the ingredients of the backward direction of Theorem 2.12: the fixed-point set of an endomap, the supremum operation that applies the endomap to the ambient supremum of the underlying set, the complete-lattice structure on the fixed points, the least-upper-bound property of that supremum and the computation of its underlying element, the retraction of the ambient lattice onto the fixed points, preservation of directed suprema by the inclusion and by the corestriction of the endomap, the homeomorphism of Scott topologies induced by an order isomorphism, and the pullback of Scott-open sets along an order isomorphism.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions
@@ -18,46 +15,10 @@ public import DomainTheory.ContinuousLattice.Theorem212.scottOpen_preimage_order
 
 @[expose] public section
 
-/-!
-# Theorem 2.12: injective spaces are exactly the continuous lattices
-
-Scott's Theorem 2.12 states that a `T₀`-space is injective iff it is a continuous lattice under
-its Scott topology. The forward direction (continuous lattice ⟹ injective) is
-`theorem_2_12_forward` (= Proposition 2.11) in `Constructions.lean`.
-
-This file supplies the **backward** direction. The argument (Scott 1972, §2) is:
-
-* an injective space is a retract of a power of the Sierpiński space `𝕆 = Prop` (Corollary 1.6);
-* a power of `𝕆` is a continuous lattice whose Scott topology is its product topology
-  (`sierpinskiPower_isContinuousLattice`, `scottTopology_sierpinskiPower`);
-* a retract of a continuous lattice is a continuous lattice (Proposition 2.10).
-
-The retraction `r : 𝕆^I → D` with section `s : D → 𝕆^I` makes `e := s ∘ r` a Scott-continuous
-idempotent on `𝕆^I`, whose fixed-point set is a continuous lattice (Proposition 2.10) and is
-homeomorphic to `D`. Hence every injective space is homeomorphic to a continuous lattice under
-its Scott topology.
-
-The order-theoretic core is the construction `IdemFix`: the fixed points of a Scott-continuous
-idempotent on a complete lattice form a complete lattice (`IdemFix.completeLattice`).
--/
-
 namespace DomainTheory.ContinuousLattice
 
 open Topology Set
 
-/-! ### The fixed-point set of a Scott-continuous idempotent is a continuous lattice -/
-
-/-! ### Theorem 2.12, backward direction -/
-
 universe u
-
-/-! ### Theorem 2.12 on a pre-existing complete lattice
-
-The backward direction above initially supplies a homeomorphic continuous lattice.  When the
-specialization order of the given topology is already a specified complete-lattice order, the
-homeomorphism is automatically an order isomorphism.  The following transport lemmas recover that
-exact lattice structure and its Scott topology. -/
-
-/-! ### Lemma 3.9: compatibility of maximal extensions with a projection on the range -/
 
 end DomainTheory.ContinuousLattice

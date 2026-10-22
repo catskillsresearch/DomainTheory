@@ -1,6 +1,3 @@
-/-ai
-Scott's operator on subsets of pairs of naturals sends a set to the diagonal pairs, together with the pairs whose second component is one more than the second component of a pair already in the set with the same first component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

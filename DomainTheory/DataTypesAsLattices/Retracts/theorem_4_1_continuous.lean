@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 4.1, the continuous-lattice half. For a retract, the finite-image basis of each fixed point is a directed subset, the point is the union of the underlying sets of the basis, and every basis element lies below some member of any directed subset of fixed points whose underlying union lies above the point. The statement uses subset directedness so that the type does not mention a complete-lattice instance.
-
-Directedness and the union equation are the corresponding basis lemmas. A basis element comes from a finite set e n contained in the point, so that finite set is contained in the underlying union of the directed subset. The subset is a directed set, and the finite-cover lemma supplies a member containing e n. Monotonicity of application together with that member's fixed-point equation puts the basis element below the member.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

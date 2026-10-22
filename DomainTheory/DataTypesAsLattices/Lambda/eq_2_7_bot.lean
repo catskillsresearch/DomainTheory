@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.7). The McCarthy conditional on ⊥ is ⊥.
-
-Unfolding the conditional and ⊥ leaves no elements.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

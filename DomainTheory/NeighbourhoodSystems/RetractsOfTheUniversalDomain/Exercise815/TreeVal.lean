@@ -1,6 +1,3 @@
-/-ai
-The fuel-free evaluation of a term-algebra code is the fuel-indexed evaluator run at fuel one greater than the code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

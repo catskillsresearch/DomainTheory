@@ -1,6 +1,3 @@
-/-ai
-The way-below neighbourhood of an element a of a complete lattice is the set of elements way-below which a lies.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

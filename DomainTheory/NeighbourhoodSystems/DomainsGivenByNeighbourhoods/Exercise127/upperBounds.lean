@@ -1,6 +1,3 @@
-/-ai
-The upper bounds of a set of elements are the elements that lie above every member of the set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

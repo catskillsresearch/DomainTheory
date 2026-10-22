@@ -1,0 +1,3 @@
+For each v, the body of the enumerator step is Scott continuous. That body sends a code k to the McCarthy conditional of k, with zero branch the G combinator and positive branch the minimal extension of the application selected by v at k.
+
+The binary substitution form of Theorem 1.3 combines continuity of the conditional in its test and in its positive branch with continuity of the identity and continuity of minimal extension at the applications selected by v.

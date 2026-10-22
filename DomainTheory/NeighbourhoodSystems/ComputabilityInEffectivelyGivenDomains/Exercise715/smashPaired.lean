@@ -1,6 +1,3 @@
-/-ai
-The strict pairing of two approximable maps into a smash product relates a domain neighbourhood Z to a smash neighbourhood W when W is the product of the two masters, or W is a proper product whose factors are related to Z by the two maps. Intersecting on the right absorbs a master and intersects two proper products by the two maps, and the result is the smash master or a proper smash neighbourhood. If the related neighbourhood is the master, a larger neighbourhood equals the master, because it contains the master and every smash neighbourhood is contained in the master. If it is a proper product, a larger neighbourhood is the master or a proper product, and in the latter case the factor inclusions and monotonicity of the two maps give the relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

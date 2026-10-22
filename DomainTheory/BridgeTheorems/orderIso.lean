@@ -1,6 +1,3 @@
-/-ai
-Along a pair of order isomorphisms, the Scott maps between two complete lattices are order-isomorphic to the Scott maps conjugated by those isomorphisms. The isomorphism wraps a Scott map as a conjugate and forgets the wrapping in the other direction. Both composites are the identity, and one conjugate lies below another exactly when the underlying Scott maps are so ordered.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

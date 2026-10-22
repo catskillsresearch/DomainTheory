@@ -1,6 +1,3 @@
-/-ai
-A set of finite strings is a neighbourhood of the binary-sequence system when it is a cone or a singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

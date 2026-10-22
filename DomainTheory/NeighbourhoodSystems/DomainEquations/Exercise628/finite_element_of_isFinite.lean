@@ -1,8 +1,3 @@
-/-ai
-If a neighbourhood system has finitely many neighbourhoods, then its element domain is finite.
-
-The neighbourhood subtype is finite by hypothesis. Sending an element to the set of neighbourhoods it contains injects the element domain into the powerset of that subtype. Two elements with the same image agree on every token set: when the set is a neighbourhood, extensionality of the images gives the same membership, and when it is not a neighbourhood, neither element contains it, since containment would force the set to be a neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615

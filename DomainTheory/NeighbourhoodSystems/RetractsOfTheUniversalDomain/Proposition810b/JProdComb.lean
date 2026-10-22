@@ -1,6 +1,3 @@
-/-ai
-The product extraction from the universal domain into the product of the fixed neighbourhoods of a and b is the product of the two subsystem projections, composed after the product extraction of the universal domain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

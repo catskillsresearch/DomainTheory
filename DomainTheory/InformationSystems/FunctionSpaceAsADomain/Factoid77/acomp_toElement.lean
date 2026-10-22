@@ -1,8 +1,3 @@
-/-ai
-Diagrammatic composition evaluates by applying the second map to the value of the first.
-
-This is the evaluation law for ordinary composition with the two maps in the opposite order.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

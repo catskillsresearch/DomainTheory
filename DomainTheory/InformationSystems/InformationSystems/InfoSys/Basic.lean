@@ -1,22 +1,3 @@
-/-ai
-Two elements are equal when their carriers are equal.
-
-The proof matches the two element structures and substitutes the equality of the carriers.
-
-The carrier of an element is included in itself.
-
-This is reflexivity of inclusion.
-
-Inclusion of carriers is transitive.
-
-This is transitivity of inclusion.
-
-If each of two elements contains the carrier of the other, the elements are equal.
-
-Antisymmetry of inclusion equates the carriers, and extensionality of elements equates the elements.
-
-This instance orders elements by inclusion of their carriers, with the three preceding facts as reflexivity, transitivity, and antisymmetry. That inclusion is Scott's ordering of the domain determined by the information system.
-ai-/
 module
 
 public import Mathlib.Data.Finset.Basic
@@ -25,40 +6,6 @@ public import DomainTheory.InformationSystems.InformationSystems.InfoSys.InfoSys
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 
 @[expose] public section
-
-/-!
-# Scott Information Systems
-
-Following Dana Scott, *"Domains for Denotational Semantics"* (ICALP 1982) and the
-compact presentation in Glynn Winskel, *The Formal Semantics of Programming
-Languages*, Chapter 8.
-
-Following Scott's **Definition 2.1**, an information system is a structure
-`(P, Δ, Con, ⊢)` where
-
-* `P` is a set of *data objects* / *propositions* (our token type `α`);
-* `Δ ∈ P` is a distinguished *least informative* object (here the field `bot`);
-* `Con` is a set of finite subsets of `P`, the *consistent* sets; and
-* `⊢` (entailment, here `Ent`) relates a finite set to a token it forces.
-
-Scott's six axioms (Def. 2.1) are, for finite `u, v ⊆ P` and `X ∈ P`:
-
-* (i)   `u ∈ Con` whenever `u ⊆ v ∈ Con`              — `con_subset`
-* (ii)  `{X} ∈ Con`                                    — `con_sing`
-* (iii) `u ∪ {X} ∈ Con` whenever `u ⊢ X`               — `ent_con`
-* (iv)  `u ⊢ Δ`                                         — `ent_bot`
-* (v)   `u ⊢ X` whenever `X ∈ u`                        — `ent_refl`
-* (vi)  if `v ⊢ Y` for all `Y ∈ u` and `u ⊢ X` then `v ⊢ X` — `ent_trans`
-
-The **domain** determined by an information system is the poset of its *elements*
-(a.k.a. *ideals*): sets of tokens that are consistent on every finite subset and
-closed under entailment, ordered by inclusion. This file sets up the structure, the
-notion of element, and the partial order; later files build the function, product,
-and sum spaces.
-
-This is the **1982** presentation; the development is kept choice-free (constructive),
-matching Scott's emphasis on the constructive nature of the definitions.
--/
 
 namespace DomainTheory.InformationSystems
 

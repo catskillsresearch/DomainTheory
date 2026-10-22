@@ -1,6 +1,3 @@
-/-ai
-The indexed smash product of a family of neighbourhood systems over a nonempty index is the neighbourhood system on dependent pairs whose neighbourhoods are the product neighbourhood of the masters and the product neighbourhoods of finitely supported tuples that are non-master neighbourhoods at every index, and whose own master is the product neighbourhood of the masters.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

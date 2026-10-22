@@ -1,0 +1,3 @@
+The component of index n of the map combinator applied to a stack of functions and an element is the function of index n in the stack applied to the element.
+
+The proof is by induction on the index, for an arbitrary stack. The zeroth component is the head, and the recursion for map together with the head-of-push law and the head computation returns the head function applied to the element. At a successor, the tail of the mapped stack is map applied to the tail of the function stack and the same element, by the recursion and the tail-of-push law, and the inductive hypothesis together with the component formula for the tail reads the next function.

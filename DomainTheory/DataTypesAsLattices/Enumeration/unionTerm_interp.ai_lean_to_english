@@ -1,0 +1,3 @@
+Interpreting the closed union term in the constantly bottom environment yields the graph of x ↦ (the graph of y ↦ x ∪ y).
+
+Unfolding the term, the interpretation at the updated environment has body equal to the conditional of the graph of the constant zero between x and y. The three-place conditional equation and the K equation rewrite the union-via-conditional identity as that double graph.

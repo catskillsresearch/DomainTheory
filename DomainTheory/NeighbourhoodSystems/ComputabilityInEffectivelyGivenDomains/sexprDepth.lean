@@ -1,6 +1,3 @@
-/-ai
-The depth of sigma is 1, the depth of a singleton is 1, and the depth of a concatenation or an intersection is one more than the maximum of the depths of its two immediate subexpressions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

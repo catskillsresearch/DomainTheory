@@ -1,8 +1,3 @@
-/-ai
-The principal element of a neighbourhood is a compact element.
-
-Compactness is the theorem that a principal element below a directed supremum already lies below some stage.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

@@ -1,8 +1,3 @@
-/-ai
-Z belongs to a u applied to x if and only if Z is a D-neighbourhood and either Z is the master or x is not bottom and u contains Z.
-
-The map a is fade composed with the pairing of check and the constant map at u. Rewriting the elementwise action through composition, pairing, and the constant map, then using that fade is the one-variable form of fade₂, the pair bridge, the closed form of fade₂, and the closed form of check, leaves a case split. The alternative that the check-neighbourhood equals {0, 1} is impossible, and a non-bottom x is returned to the check alternative because {0} is an O-neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

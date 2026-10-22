@@ -1,8 +1,3 @@
-/-ai
-The denotation of the universal expression is the set of all words.
-
-The two sides agree by the definition of denotation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

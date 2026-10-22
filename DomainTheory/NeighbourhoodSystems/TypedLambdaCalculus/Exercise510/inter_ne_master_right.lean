@@ -1,8 +1,3 @@
-/-ai
-If a neighbourhood of the second system is other than its master, its intersection with any set is still other than the master.
-
-This is the preceding intersection law applied to the second system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

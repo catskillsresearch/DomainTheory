@@ -1,8 +1,3 @@
-/-ai
-The spacing map sends the principal cone of a finite string to the principal cone of the doubling of that string.
-
-Two elements are equal when they contain the same neighbourhoods. Membership in the image is the spacing relation on the cone, which supplies a prefix equal to the string and an inclusion of the doubled cone, and that inclusion is membership in the principal cone of the doubling. The converse uses the string itself as the witness prefix.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

@@ -1,8 +1,3 @@
-/-ai
-Passing the filter of the fixed-point map back through the function-space equivalence recovers the fixed-point map.
-
-This is the round-trip law of that equivalence, rewritten in the forms of its two directions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

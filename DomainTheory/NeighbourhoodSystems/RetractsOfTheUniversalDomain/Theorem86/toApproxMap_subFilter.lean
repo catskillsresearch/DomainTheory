@@ -1,8 +1,3 @@
-/-ai
-Extracting the approximable map of the filter transport of an element recovers sub of the map extracted from that element.
-
-Extraction after passage to a filter is the identity on approximable maps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

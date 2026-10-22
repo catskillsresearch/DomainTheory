@@ -1,8 +1,3 @@
-/-ai
-The numerical evaluator sends the Myhill filter code of m to the set of j such that no stage at most j enumerates m.
-
-Unfold the code, apply the application law for the evaluator, replace the filter-operator code by the filter combinator, and rewrite by equation (3.12) and the application law for the filter combinator.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

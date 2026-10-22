@@ -1,8 +1,3 @@
-/-ai
-The composition operator sends the pair of approximable maps g and f to the element of the function space corresponding to their composite.
-
-The numbered name theorem_76 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.compOp_toElement

@@ -1,0 +1,107 @@
+The generated atom of depth n is contained in the master set.
+
+The proof is by induction on the depth. At zero the atom is the master set. At a successor the intersection is contained in the previous atom, which is contained in the master set.
+
+Changing the sign sequence at or beyond depth n leaves the generated atom of depth n unchanged.
+
+The proof is by induction on the depth. At zero both sides are the master set. At a successor the inductive hypothesis equates the previous atoms and the hypothesis equates the sign at that depth, so the intersections agree.
+
+A point of the generated atom of depth n has, at every index below n, sign true exactly when it belongs to the corresponding set of the family.
+
+The proof is by induction on the depth. No index lies below zero. At a successor the point lies in the previous atom and in the last clause. An earlier index uses the inductive hypothesis. At the last index, the true sign makes the clause membership in the set, and the false sign makes the clause membership in the complement, so each direction of the equivalence is that clause.
+
+A point of the master set belongs, at every depth, to the generated atom of the sign sequence that records its own membership in the family.
+
+The proof is by induction on the depth. At zero the point belongs to the master set. At a successor the inductive hypothesis gives the previous atom, and the last clause is the set or its complement in the master according as the point belongs to the next set.
+
+The first output of a splitting operation is contained in the neighbourhood being split.
+
+That output is contained in the union of the two outputs, and the splitting specification says that the union equals the neighbourhood being split.
+
+The second output of a splitting operation is contained in the neighbourhood being split.
+
+That output is contained in the union of the two outputs, and the splitting specification says that the union equals the neighbourhood being split.
+
+The U-side atom of depth n + 1 is the first output of the split when the sign at n is true, and the second output when the sign is false.
+
+This is the successor clause of the U-side atom.
+
+Changing the sign sequence at or beyond depth n leaves the U-side atom of depth n unchanged.
+
+The proof is by induction on the depth. At zero both sides are the master neighbourhood of U. At a successor the inductive hypothesis equates the previous U-side atoms, the generated atoms agree by the same agreement of signs, and the sign at that depth agrees, so the successor clause agrees.
+
+At every depth, emptiness of the generated atom matches emptiness of the U-side atom, every U-side atom is empty or a neighbourhood of U, and U-side atoms whose sign sequences disagree below that depth are disjoint.
+
+The master neighbourhood of U is nonempty. The proof is by induction on the depth. At zero the master of the enumeration is empty exactly against the nonempty master of U, every atom is that master neighbourhood, and no index lies below zero. At a successor the splitting specification, applied to the inductive matching and membership, gives the output laws. The true sign selects the intersection law. The false sign rewrites the generated successor as the set difference, using that the previous generated atom is contained in the master, and selects the difference law. Membership of each successor atom is the corresponding output of the specification. If the signs agree below the previous depth, they disagree at the new index, the previous atoms agree, and the two outputs of one split are disjoint, which gives the empty intersection in each combination of signs. If the signs disagree earlier, the inductive disjointness and the two successor inclusions, each an output inclusion, make the intersection empty.
+
+The U-side atom of depth n + 1 is contained in the U-side atom of depth n.
+
+The invariant supplies matching and membership at depth n. The true branch is the inclusion of the first output, and the false branch is the inclusion of the second output.
+
+Below length n, the true padding of a finite sign sequence agrees with that sequence.
+
+This is simplification of the padding.
+
+Below length n, the true padding of the restriction of a total sign sequence recovers the original signs.
+
+This is simplification of the padding and the restriction.
+
+The U-side atom of depth n + 1 of a true-padded sign sequence of length n is contained in the set Y at n.
+
+That atom is one term of the union that defines Y at n.
+
+The first output of splitting the depth-n atom against the next enumerated set equals the intersection of that U-side atom with Y at n.
+
+The invariant supplies matching, membership, and disjointness. The sign sequence that sets position n true has the same generated atom and the same U-side atom up to n, and its successor atom is the first output. The true padding of its restriction agrees with it through n, so that padded atom is the first output. The first output is therefore contained in Y at n, and the first-output inclusion puts it in the atom. Conversely, a point of the atom and of Y lies in some padded successor atom. If that padding agrees with the original sign below n, its successor atom is the first output. If it disagrees, the successor inclusion puts the point in both previous U-side atoms, contradicting their disjointness.
+
+Every U-side atom is contained in the master neighbourhood of U.
+
+The proof is by induction on the depth. At zero the atom is the master neighbourhood. A successor is contained in the previous atom, which is contained in the master neighbourhood.
+
+The U-side atom of depth n + 1 equals the previous U-side atom met with Y at n when the sign is true, and met with the complement of Y at n in the master neighbourhood when the sign is false.
+
+The splitting specification and the identification of the first output with the intersection against Y are available. The true branch is that identification. The false branch rewrites the second output as the difference with Y: a point of the second output lies in the atom and, because the outputs are disjoint, outside the first output, hence outside Y; a point of the atom outside Y cannot lie in the first output, so the union law puts it in the second output. Meeting that difference with the master neighbourhood does not change it, because the previous atom is contained in the master neighbourhood.
+
+The U-side atom equals the generated atom of the sequence Y relative to the master neighbourhood of U.
+
+At depth zero both sides are the master neighbourhood. At a successor the closed form of the U-side atom and the inductive hypothesis are the successor clause of the generated atom.
+
+If the generated atoms of two families match in emptiness, then a finite Boolean constraint realized in the first master set is realized in the second.
+
+The realizing point determines the sign sequence of its membership, and it lies in its own generated atom, which is nonempty. Matching emptiness makes the second atom nonempty. A point of that atom lies in the second master set, and the forward reading of the atom, together with the agreement of the sign sequence with the constraint, gives the constraint.
+
+A finite Boolean constraint on the enumerated sets is realized in the master set exactly when the same constraint on the sequence Y is realized in the master neighbourhood of U.
+
+The emptiness clause of the invariant, rewritten by the identification of the U-side atom with the generated atom of Y, matches emptiness in both directions. Each direction of the realization is the one-sided transfer.
+
+Inside the master set, the enumerated set of index i is contained in the enumerated set of index j exactly when, inside the master neighbourhood of U, the set Y at i is contained in the set Y at j.
+
+The two-point constraint of membership at i and nonmembership at j has realization equal to the corresponding difference. The transfer equates those realizations, and an inclusion is the emptiness of the difference, which is the negation of its nonemptiness.
+
+The intersection of the enumerated sets of indices i and j is empty inside the master set exactly when the intersection of the sets Y at those indices is empty inside the master neighbourhood of U.
+
+The two-point constraint of membership at both indices has realization equal to that intersection. The transfer equates the realizations, and emptiness is the negation of nonemptiness.
+
+Inside the master set, the intersection of the enumerated sets of indices i and j is contained in the enumerated set of index k exactly when the same inclusion holds for the sequence Y inside the master neighbourhood of U.
+
+The three-point constraint of membership at i and j and nonmembership at k has realization equal to the corresponding difference. The transfer equates the realizations, and the inclusion is the emptiness of the difference.
+
+The set Y at n is contained in the master neighbourhood of U.
+
+It is a union of successor U-side atoms, and each of those atoms is contained in the master neighbourhood.
+
+If the enumeration begins with the master set, then the set Y at zero is the master neighbourhood of U.
+
+The unique sign sequence of length zero pads to true at zero. Splitting the depth-zero atoms, which are the two master sets, against the master set makes the second output empty by the difference law, so the union law makes the first output the master neighbourhood of U. The successor U-side atom of that sign is that output, hence is contained in Y at zero, and Y at zero is contained in the master neighbourhood.
+
+If three enumerated sets are contained in the master set, then the intersection of the sets of indices i and j equals the set of index k exactly when the same equation holds for the sequence Y.
+
+The two inclusions of the third set and the inclusion of the intersection each transfer. On the enumerated side the master set cancels by the containments, and on the Y side the master neighbourhood of U cancels because Y is contained in it. Each equation is those inclusions, so each direction transports them.
+
+The set Y at n is empty or a neighbourhood of U.
+
+If it is nonempty, it is the union of the successor atoms of the true-padded sign sequences, each of which is empty or a neighbourhood by the invariant, and that union is a neighbourhood. If it is empty, the empty alternative holds.
+
+A point of the master set that lies in the enumerated set of index n makes the set Y at n nonempty.
+
+The sign sequence of that point is true at n, and the point lies in its generated atom and in the enumerated set, so the intersection is nonempty. The splitting specification makes the first output nonempty, and that output is the successor U-side atom of the point's sign. The true padding of the restriction of that sign agrees with it through depth n + 1, so the padded successor atom is the same nonempty set, and that atom is contained in Y at n.

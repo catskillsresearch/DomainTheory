@@ -1,8 +1,3 @@
-/-ai
-Decoding the downward clip of a packed midpoint and pair code yields the downward clip of the decoded midpoint and the decoded pair.
-
-Unfold the code clip, pair decoding, and the rational clip, and simplify by the unpair-pair identities and decoding of the minimum code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

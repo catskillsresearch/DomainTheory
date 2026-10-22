@@ -1,8 +1,3 @@
-/-ai
-Each coordinate set is clopen in Cantor space.
-
-It is the preimage of the clopen singleton of true, in discrete Bool, under the continuous evaluation of that coordinate.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

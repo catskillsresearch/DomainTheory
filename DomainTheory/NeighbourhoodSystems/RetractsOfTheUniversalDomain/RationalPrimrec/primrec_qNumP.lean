@@ -1,8 +1,3 @@
-/-ai
-The positive numerator part of a rational code is primitive recursive.
-
-It is the left component of the left component of the code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

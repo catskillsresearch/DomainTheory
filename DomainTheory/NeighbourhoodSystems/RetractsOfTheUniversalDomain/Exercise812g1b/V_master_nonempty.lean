@@ -1,8 +1,3 @@
-/-ai
-V's master neighbourhood, the set of all natural numbers, is nonempty.
-
-The universe is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

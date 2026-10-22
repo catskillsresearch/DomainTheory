@@ -1,8 +1,3 @@
-/-ai
-Evaluating the conditional map of elements x and y at the Boolean element false yields y.
-
-For the inclusion into y, a token of the image comes from a related Boolean set, and the Boolean trichotomy applies. An empty-entailing set contributes a token of the bottom element, which lies in y. Entailment of true is impossible, because the witnessing token lies under the false element and a Boolean point cannot satisfy both false and true. Entailment of false puts the token in y. For the reverse inclusion, the singleton false token is related to the singleton of the given token of y: that singleton is not empty-entailing, it does not entail true, and its false entailment returns the token.
-ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

@@ -1,8 +1,3 @@
-/-ai
-The cut element is injective on the unit interval.
-
-The order characterization supplies both inequalities between the two reals, and antisymmetry gives equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

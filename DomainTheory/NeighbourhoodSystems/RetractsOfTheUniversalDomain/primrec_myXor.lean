@@ -1,8 +1,3 @@
-/-ai
-The function sending a paired natural number to the iterative exclusive disjunction of its two components is primitive recursive.
-
-The initial packed state, pairing the two components with the constants 1 and 0, is primitive recursive, as is the step that applies the exclusive-disjunction step to the accumulator component. Primitive recursion on that base and step is primitive recursive, and so is the iteration count given by the sum of the components. Projecting the accumulator from that recursion on the identity and the count, and rewriting the constant-step recursion as iteration, matches the definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

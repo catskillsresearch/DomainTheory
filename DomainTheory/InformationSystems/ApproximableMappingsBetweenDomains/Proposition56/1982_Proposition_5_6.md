@@ -1,30 +1,55 @@
 # Proposition 5.6
 
-In other words, composition of input/output relations is effected by putting the input into the first, getting some output, and then putting that in as input to the second. The correctness of this
-recipe on elements (i.e. formula 5.5(ii)) follows from the basic formula 5.3(v). Because the class of all sets and arbitrary mappings forms a category—in the formal meaning of the word—the above three propositions show that the totality of information systems and approximable mappings also forms a category: a sub-category of the category of sets. We have given a special representation to the category by our use of data objects and consistent sets, and we have thereby put the elements into a secondary position—for a good reason. But the elements are there to use. The axioms for a category could also be verified directly using the basic definitions like 5.4(i) and 5.5(i); the details are bland. The more interesting topic is: what are the closure conditions on our domains; how do we construct new domains given old ones?
+## Human-English
 
-Before we go on to the first basic constructs of sums and products of domains, we remark on some other easy examples of approximable mappings: constant maps.
+@import "1982_Proposition_5_6.english" {code_block=false}
 
-**PROPOSITION 5.6.** *Given information systems $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, and $\mathbf{D}$, and given a fixed element $b \in |\mathbf{B}|$, then there is a unique approximable mapping $\mathrm{const}\ b : \mathbf{A} \to \mathbf{B}$ such that:*
+## AI: Human-English to AI-Lean
 
-(i) $\quad (\mathrm{const}\ b)(x) = b,$
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean**
 
-*for all $x \in |\mathbf{A}|$. Moreover, we have:*
+@import "constMap.lean"
 
-(ii) $\quad f \circ (\mathrm{const}\ b) = \mathrm{const}\ f(b),$
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/Basic.lean**
 
-*for all approximable mappings $f : \mathbf{B} \to \mathbf{C}$; and*
+@import "Basic.lean"
 
-(iii) $\quad (\mathrm{const}\ b) \circ g = \mathrm{const}\ b,$
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_toElement.lean**
 
-*for all approximable mappings $g : \mathbf{D} \to \mathbf{A}$.* $\blacksquare$
+@import "constMap_toElement.lean"
 
-**Lean 4**
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean**
 
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean](constMap.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/Basic.lean](Basic.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_toElement.lean](constMap_toElement.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean](comp_constMap.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_comp.lean](constMap_comp.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean](../Proposition56.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_unique.lean](constMap_unique.lean)
+@import "comp_constMap.lean"
+
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_comp.lean**
+
+@import "constMap_comp.lean"
+
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean**
+
+@import "../Proposition56.lean"
+
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap_unique.lean**
+
+@import "constMap_unique.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "constMap.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "constMap_toElement.ai_lean_to_english" {code_block=false}
+
+@import "comp_constMap.ai_lean_to_english" {code_block=false}
+
+@import "constMap_comp.ai_lean_to_english" {code_block=false}
+
+@import "../Proposition56.ai_lean_to_english" {code_block=false}
+
+@import "constMap_unique.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1982_Proposition_5_6.ai_english_concordance" {code_block=false}

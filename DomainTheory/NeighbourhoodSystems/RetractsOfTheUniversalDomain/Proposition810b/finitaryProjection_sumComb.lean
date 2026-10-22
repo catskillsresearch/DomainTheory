@@ -1,8 +1,3 @@
-/-ai
-If a and b are finitary projections, then their sum combination is a finitary projection.
-
-The proof pairs the projection property of the sum combination, obtained from the projection properties of a and b, with the finitary property of that sum combination.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

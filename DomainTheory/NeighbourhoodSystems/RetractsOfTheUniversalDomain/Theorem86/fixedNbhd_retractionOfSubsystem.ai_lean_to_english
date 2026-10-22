@@ -1,0 +1,3 @@
+The fixed neighbourhood system of the retraction of a subsystem is the subsystem itself.
+
+Extensionality of neighbourhood systems reduces membership to the retraction relation. A self-relation supplies a witness neighbourhood squeezed by both inclusions, so the witness equals the set and belongs to the subsystem. A member of the subsystem is a neighbourhood of E and witnesses its own self-relation with both inclusions reflexive. The master neighbourhoods agree by the subsystem.

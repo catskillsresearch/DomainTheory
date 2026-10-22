@@ -1,8 +1,3 @@
-/-ai
-Proposition 5.5(ii) states that the image of an element under a composite equals the image under the outer mapping of the image under the inner mapping.
-
-A token of the composite image is witnessed by a finite set contained in the element and an intermediate set related to the singleton of the token. Monotonicity cuts the inner relation down to each singleton from the intermediate set, so that set is contained in the inner image. Conversely, a finite set contained in the inner image and related to the singleton is the image of some finite subset of the element under the inner relation, by the subset-image lemma, and that subset witnesses the composite.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54

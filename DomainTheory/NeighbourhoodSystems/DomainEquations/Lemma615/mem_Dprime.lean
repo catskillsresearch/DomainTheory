@@ -1,8 +1,3 @@
-/-ai
-A set is a neighbourhood of the image subdomain if and only if it generates some set.
-
-Both sides are the defining membership of the image subdomain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

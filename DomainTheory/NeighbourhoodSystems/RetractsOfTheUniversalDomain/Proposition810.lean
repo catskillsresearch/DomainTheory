@@ -1,8 +1,3 @@
-/-ai
-If two self-maps of the universal domain are projections, then so is their arrow combinator. If two self-maps of the universal domain are projections, then so are their sum, their product, and their arrow. If two self-maps of the universal domain are projections, then so is their product combinator. If two self-maps of the universal domain are projections, then so is their sum combinator. If two self-maps of the universal domain are retractions, then so is their arrow combinator. If two self-maps of the universal domain are retractions, then so is their lambda combinator. If two self-maps of the universal domain are retractions, then so is their product combinator. If two self-maps of the universal domain are retractions, then so is their sum combinator. If two self-maps of the universal domain lie below the identity, then so does their arrow combinator. If two self-maps of the universal domain lie below the identity, then their lambda combinator lies below the identity of the function space. If two self-maps of the universal domain lie below the identity, then so does their product combinator. If two self-maps of the universal domain lie below the identity, then so does their sum combinator.
-
-The numbered name theorem_810 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810.isProjection_arrowComb

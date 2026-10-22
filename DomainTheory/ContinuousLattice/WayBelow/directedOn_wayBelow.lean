@@ -1,8 +1,3 @@
-/-ai
-In any complete lattice, the set of elements way below a fixed element is directed.
-
-The join of two elements way below the given element is again way below it, by the binary-join clause of Proposition 2.2, and that join lies above both.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

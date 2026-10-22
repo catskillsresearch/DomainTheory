@@ -1,6 +1,3 @@
-/-ai
-The initial recursion state of a bit-source packs that bit-source as the unconsumed remainder, the empty-list code for both the positive and the negative constraints, and the master index of the universal system as the U-code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

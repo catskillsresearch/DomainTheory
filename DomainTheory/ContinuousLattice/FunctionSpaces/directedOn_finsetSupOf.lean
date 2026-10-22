@@ -1,8 +1,3 @@
-/-ai
-For a subset S of a complete lattice, the set finsetSupOf S of joins of finite subsets of S is directed.
-
-Two such joins, of finite subsets T1 and T2 of S, lie below the join of T1 with T2. That union is still a finite subset of S, and its join equals the binary join of the two given joins.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

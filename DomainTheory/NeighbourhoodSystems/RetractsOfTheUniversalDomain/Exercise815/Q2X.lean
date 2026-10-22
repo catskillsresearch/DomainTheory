@@ -1,6 +1,3 @@
-/-ai
-The term-algebra enumeration of neighbourhoods of a subsystem sends a code to the universal neighbourhood of the fuel-free evaluation of that code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

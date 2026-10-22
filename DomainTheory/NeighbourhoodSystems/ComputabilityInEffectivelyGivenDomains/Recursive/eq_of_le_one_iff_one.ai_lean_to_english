@@ -1,0 +1,3 @@
+If two naturals are at most 1 and each equals 1 exactly when the other does, then they are equal.
+
+If the first equals 1, the agreement forces the second to equal 1, and arithmetic gives equality. If the first does not equal 1, the second does not either, since otherwise the agreement would force the first to equal 1, and arithmetic again gives equality.

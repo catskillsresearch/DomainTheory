@@ -1,8 +1,3 @@
-/-ai
-A natural number lies in the predecessor of a set if and only if its successor lies in the set.
-
-The two sides are definitionally the same proposition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

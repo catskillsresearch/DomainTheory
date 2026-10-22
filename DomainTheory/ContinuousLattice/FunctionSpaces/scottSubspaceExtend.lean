@@ -1,6 +1,3 @@
-/-ai
-Scott's subspace extension of a map f along e, evaluated at a point y, is the supremum of the infima of the values of f on the preimages of the Scott-open neighborhoods of y.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

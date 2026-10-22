@@ -1,8 +1,3 @@
-/-ai
-Any two neighbourhood systems whose element posets each have a unique element determine isomorphic domains.
-
-The domain isomorphism is the order isomorphism between those unique element posets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

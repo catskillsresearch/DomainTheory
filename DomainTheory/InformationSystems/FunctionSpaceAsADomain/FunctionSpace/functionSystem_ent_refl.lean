@@ -1,8 +1,3 @@
-/-ai
-Function-space entailment is reflexive on members: a consistent finite set of function-space tokens entails each of its members.
-
-The singleton of the member is the witness. It is contained in the set, its input is entailed by the member's own input, and the output union of the singleton is the member's output, which entails itself.
-ai-/
 
 module
 

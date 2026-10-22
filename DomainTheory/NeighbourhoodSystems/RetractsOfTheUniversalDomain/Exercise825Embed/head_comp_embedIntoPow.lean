@@ -1,8 +1,3 @@
-/-ai
-The head retracts the singleton-stack embedding: their composite is the identity of the domain.
-
-Extensionality on elements rewrites the composite and the identity, applies the head, and uses that the head coordinate of the singleton stack is the element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511

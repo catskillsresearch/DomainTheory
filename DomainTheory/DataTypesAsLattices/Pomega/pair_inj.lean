@@ -1,8 +1,3 @@
-/-ai
-Pairing is injective: if the pair of n₁ and m₁ equals the pair of n₂ and m₂, then n₁ equals n₂ and m₁ equals m₂.
-
-The triangular bounds place each pair at least at the triangular number of its component sum and strictly below the triangular number of that sum plus one. The two sums are equal, because a strict inequality either way would push one pair strictly below itself by monotonicity of the triangular numbers. Equality of the pairs and of the sums then cancels the common triangular number, so the second components agree, and cancellation in the sums gives the first components.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

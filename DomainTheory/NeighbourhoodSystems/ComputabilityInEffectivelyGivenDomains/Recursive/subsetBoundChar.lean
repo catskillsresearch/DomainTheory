@@ -1,6 +1,3 @@
-/-ai
-The subset bound of a fuel and two codes is 2 raised to the fuel-bounded automaton-state cardinality of the first code, times 2 raised to the same cardinality of the second code. It is the numeric mirror of the cardinality of the product of the two finite sets of automaton states.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

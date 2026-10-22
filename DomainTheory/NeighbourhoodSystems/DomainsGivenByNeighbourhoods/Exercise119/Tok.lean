@@ -1,6 +1,3 @@
-/-ai
-The token set of the three-point example is a three-element set of tokens.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

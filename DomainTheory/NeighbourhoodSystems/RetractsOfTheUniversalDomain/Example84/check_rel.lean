@@ -1,8 +1,3 @@
-/-ai
-The check relation holds of a domain set and a two-point set exactly when both are neighbourhoods and either the two-point set is the full set or the domain set differs from the master.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

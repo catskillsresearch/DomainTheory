@@ -1,6 +1,3 @@
-/-ai
-The inner continuation of a continuation state is the right component of its code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

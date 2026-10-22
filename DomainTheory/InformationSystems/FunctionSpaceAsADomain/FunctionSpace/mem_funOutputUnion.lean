@@ -1,8 +1,3 @@
-/-ai
-An output token lies in the output union of a finite set of function tokens if and only if it lies in the output of some token of that set.
-
-Unfolding the output union, the claim is the membership law for the fold of output-union applied to the underlying multiset of the set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the one-token system is the whole token set.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

@@ -1,6 +1,3 @@
-/-ai
-One step of the code-walking fold acts on a state pairing a remaining code with an accumulator. If the remaining code is 0, the state is unchanged. Otherwise the predecessor splits into a head and a tail, the remaining code becomes the tail, and the accumulator becomes the step applied to the pair of the head and the pair of the old accumulator and the parameters. The two branches are selected by the truncated difference of 1 and the remaining code.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

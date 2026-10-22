@@ -1,8 +1,3 @@
-/-ai
-Homomorphisms obey the same recursion as the Kleene iterates: g composed with the next projection equals the structure map composed with T of (g composed with the current projection) composed with the inverse structure map.
-
-Rewrite the next projection as the structure map composed with T of the current projection composed with the inverse. Reassociate, replace g composed with the structure map by the algebra structure composed with T(g) using the homomorphism square, reassociate, and replace the composite of the two functor images by the functor image of the composite, using strictness of g.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

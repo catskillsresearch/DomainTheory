@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the three-way separated sum is nonempty, so the sum is again an object of the empty-free category.
-
-The master contains the point none. A zero-copy, a one-copy, and a two-copy are nonempty because the corresponding neighbourhood of the summand is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

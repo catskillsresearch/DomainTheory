@@ -1,8 +1,3 @@
-/-ai
-The elementwise action of Ψ at an operator θ, evaluated at a map f, equals f applied to θ(f). The fixed-point operator, regarded as an element of the higher-order function space, is a fixed point of Ψ. If Ψ sends an operator θ below θ, then the fixed-point operator lies below θ. The fixed-point operator equals the least fixed point of Ψ.
-
-The numbered name example_409 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise409.bigPsi_apply

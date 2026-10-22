@@ -1,8 +1,3 @@
-/-ai
-Every component of a finite list of elements of Pω lies in the degree of the single generator of that list.
-
-Theorem 3.6 supplies, as its first component, the hypothesis required by the theorem that the components of a packed list lie in a degree.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

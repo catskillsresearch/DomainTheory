@@ -1,8 +1,3 @@
-/-ai
-One cone is contained in another if and only if the second prefix is an initial segment of the first.
-
-From the inclusion, the first prefix lies in its own cone and therefore in the second cone. Conversely, an initial-segment relation composes with membership in the smaller cone.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

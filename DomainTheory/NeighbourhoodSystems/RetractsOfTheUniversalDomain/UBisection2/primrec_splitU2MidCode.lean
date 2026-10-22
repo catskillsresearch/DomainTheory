@@ -1,8 +1,3 @@
-/-ai
-The presentation-independent midpoint code is primitive recursive.
-
-Compose the primitive-recursive rational midpoint with the pair of the minimum-first code and the maximum-second code, each composed with the canonical code, and identify the result with the midpoint code by its definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

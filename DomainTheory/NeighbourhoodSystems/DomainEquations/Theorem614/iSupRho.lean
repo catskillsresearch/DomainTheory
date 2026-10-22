@@ -1,6 +1,3 @@
-/-ai
-The union of the projections is the directed supremum of the family of maps given by the n-th projection on the colimit. For any two indices the projection at their maximum contains both, because the projection chain is increasing.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

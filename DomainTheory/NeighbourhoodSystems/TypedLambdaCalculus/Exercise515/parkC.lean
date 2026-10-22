@@ -1,6 +1,3 @@
-/-ai
-The feedback constant of David Park's eliminated system is the union of c with the pointwise product b · a* · d.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

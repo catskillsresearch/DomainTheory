@@ -1,8 +1,3 @@
-/-ai
-The disjunction of two recursively enumerable predicates on a primcodable type is recursively enumerable.
-
-Merge the two partial functions and map the merged result to the unit by a constant computable function. A value in the image comes from one side of the merge, and assertion extracts that side’s predicate as a disjunct. Conversely, either disjunct makes the merged computation defined, so the unit lies in the image.
-ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,8 +1,3 @@
-/-ai
-The infimum of the pre-fixed points of f is the least fixed point: it lies below every fixed point.
-
-A fixed point satisfies the pre-fixed-point inequality, so the comparison with pre-fixed points applies.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

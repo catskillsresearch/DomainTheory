@@ -1,6 +1,3 @@
-/-ai
-The iterative bitwise exclusive disjunction of a and b is the accumulator obtained by iterating the exclusive-disjunction step a + b times from the state whose arguments are a and b, whose weight is 1, and whose accumulator is 0.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

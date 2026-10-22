@@ -1,8 +1,3 @@
-/-ai
-For any domain, the product of its infinite power with itself is isomorphic to that infinite power. Specialized to the universal domain, this is Scott's isomorphism of the infinite power with its product.
-
-The witness is the product order isomorphism of the infinite power.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,8 +1,3 @@
-/-ai
-The consistency decision on two indices is true if and only if the safe active decodes of those indices are consistent.
-
-If both indices are active, both decodes succeed and are nonempty, so the safe decodes are those expressions, and unfolding the decision shows that it equals their consistency. If the second index is inactive, its safe decode is sigma, which is consistent with the safe decode of the first, and the decision is true. If the first index is inactive, its safe decode is sigma, which is consistent with the safe decode of the second, and the decision is true.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-Every list belongs to the neighbourhood it generates.
-
-By the membership criterion for generated neighbourhoods, this is the reflexive inclusion of the finitely generated family of the list in itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

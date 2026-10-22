@@ -1,6 +1,3 @@
-/-ai
-The term-level dollar step at s is the graph of the map sending u to the graph of the map sending z to the body of the dollar step at s, u, and z.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the smash of the two-point domain with the one-point unit equals the master of that smash.
-
-The master case is reflexivity. A proper smash neighbourhood would require a neighbourhood of the unit distinct from the unit master, but membership in the unit is equality with its master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

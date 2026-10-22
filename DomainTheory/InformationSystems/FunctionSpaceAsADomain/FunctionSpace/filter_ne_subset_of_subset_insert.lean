@@ -1,8 +1,3 @@
-/-ai
-If a finite set t of function-space tokens is contained in the insertion of a token p into w, then the subset of t consisting of tokens other than p is contained in w.
-
-A token of that filtered set lies in the insertion and is distinct from p, so the insertion clause places it in w.
-ai-/
 
 module
 

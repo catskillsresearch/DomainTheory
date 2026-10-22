@@ -1,8 +1,3 @@
-/-ai
-If a functor on domains is continuous on maps and D is an initial algebra, then the carrier of D is a subdomain of every domain E isomorphic to its image under the functor.
-
-Lambek's proposition makes the structure map of D an isomorphism, and the four structure maps are strict because each splits an identity. Continuity supplies approximable witnesses on the three strict function spaces, and the three operators of Theorem 6.9 have approximant chains H, G, and K, with zeroth stage the bottom map and successors given by the per-step computation. The chains H and G are monotone. The identity law for the inverse on D gives the composite calculation (u composed with a composed with j) composed with (i composed with b composed with v) equals u composed with (a composed with b) composed with v, and the functor preserves composition, so induction yields that H at n composed with G at n equals K at n: at zero the three relations are the constant-bottom relation, and a successor rewrites by the recursion equations. Each least fixed point relates a pair of neighbourhoods exactly when some approximant does, so the fixed points satisfy h composed with g equal to k, using maxima of indices, monotonicity, and the ladder. The identity on E is a fixed point of the operator for k, because the per-step computation, preservation of identities, and the inverse law on E fix the filter of the identity, and the least fixed point lies below every fixed point. The fixed-point equations rearrange by the inverse laws into homomorphism squares, and initiality forces g composed with h to be the identity on D. The projection-pair form of Lemma 6.15 then gives the subdomain relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem69

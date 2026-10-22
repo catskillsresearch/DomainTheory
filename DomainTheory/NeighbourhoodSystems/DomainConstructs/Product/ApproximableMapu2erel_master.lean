@@ -1,8 +1,3 @@
-/-ai
-An approximable map relates every input neighbourhood to the master neighbourhood of the codomain.
-
-Monotonicity applied to the master relation enlarges the master input to the given neighbourhood and keeps the master output.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

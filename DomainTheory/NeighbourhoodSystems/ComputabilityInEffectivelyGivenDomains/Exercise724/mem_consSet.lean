@@ -1,8 +1,3 @@
-/-ai
-A sequence lies in the i-prefixed copy of a set if and only if it is the prepend of an element of that set.
-
-The equivalence is the defining membership condition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

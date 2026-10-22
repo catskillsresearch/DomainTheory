@@ -1,6 +1,3 @@
-/-ai
-An equality of objects induces the identity isomorphism. Both directions are the identity morphism, and the two inverse laws are the laws that composing with the identity leaves a morphism unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

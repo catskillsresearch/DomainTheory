@@ -1,0 +1,3 @@
+When the base element is the least fixed point of f, every fixed point of the restricted map is the restriction of that least fixed point to itself.
+
+The embedding of such a fixed point is fixed by f, because the action of the restriction under the embedding and the fixed-point equation identify its image with itself, and the embedding lies below the least fixed point, so uniqueness below the least fixed point makes the embedding equal that least fixed point. Restricting the embedding recovers the original filter. The restriction of the embedding and the restriction of the least fixed point agree by extensionality once those underlying elements agree. Composing these equalities gives the claim.

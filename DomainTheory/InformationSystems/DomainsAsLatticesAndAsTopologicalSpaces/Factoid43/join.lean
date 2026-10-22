@@ -1,6 +1,3 @@
-/-ai
-The binary join of two elements, when the union of their carriers is finitely consistent, is the deductive closure of that union.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

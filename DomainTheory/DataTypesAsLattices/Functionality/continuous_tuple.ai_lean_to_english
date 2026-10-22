@@ -1,0 +1,3 @@
+If a binary operation is Scott-continuous in each argument separately, and two maps are Scott-continuous, then the operation along those two maps is Scott-continuous.
+
+Diagonal continuity applies. The first factor is Theorem 1.3 of continuity in the first argument with continuity of the first map, and the second factor is Theorem 1.3 of continuity in the second argument with continuity of the second map.

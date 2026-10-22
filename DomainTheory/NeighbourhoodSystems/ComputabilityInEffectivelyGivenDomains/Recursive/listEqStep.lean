@@ -1,6 +1,3 @@
-/-ai
-One unpacked list-equality step on a state and an entry is the packed equality step of the pair of the entry and the pair of the state and 0.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,0 +1,3 @@
+The finset union of a singleton with a finite set equals the insertion of the singleton's element into that finite set.
+
+Extensionality reduces the claim to membership. A member of the union lies in the singleton or in the finite set, and in either case it lies in the insertion. A member of the insertion is the inserted element, hence lies in the singleton and in the union, or else lies in the finite set and therefore in the union.

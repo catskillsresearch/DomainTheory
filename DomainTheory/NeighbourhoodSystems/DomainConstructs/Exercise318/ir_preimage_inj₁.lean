@@ -1,8 +1,3 @@
-/-ai
-The preimage of a right copy under the right tag is the original set.
-
-The right tag is injective, and the preimage of the image of an injective function is the set itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,8 +1,3 @@
-/-ai
-Scanning a leading one followed by any tail returns some true.
-
-This is the true clause of the scanner.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

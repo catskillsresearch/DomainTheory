@@ -1,6 +1,3 @@
-/-ai
-A compact fixed point of a closure operator is a fixed point that is compact with respect to directed unions taken in the fixed-point set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,8 +1,3 @@
-/-ai
-The inclusion of a continuous-lattice retraction preserves directed suprema, so it is a Scott map.
-
-The inclusion is a Scott map, and the claim is its directed-supremum equation on a nonempty directed set.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

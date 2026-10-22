@@ -1,8 +1,3 @@
-/-ai
-If a family of approximable maps is pointwise bounded and X' is contained in the neighbourhood X, then the principal supremum of the family at X lies below its principal supremum at X'.
-
-The supremum at X is an upper bound comparison: each value at the principal element of X lies below the value at the principal element of X', because principal elements reverse inclusion, and that value lies below the supremum at X'.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

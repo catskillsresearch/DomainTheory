@@ -1,6 +1,3 @@
-/-ai
-combinedδ interleaves the two bits of a sequence of Boolean pairs. At an even index it reads the first component of the pair at half that index, and at an odd index it reads the second component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

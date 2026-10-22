@@ -1,8 +1,3 @@
-/-ai
-Applying the K combinator to an element equals the graph of its further applications.
-
-Rewrite by the one-argument application, then use extensionality of graphs. At each argument the equality is the symmetric form of beta reduction for the constant function with that value.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

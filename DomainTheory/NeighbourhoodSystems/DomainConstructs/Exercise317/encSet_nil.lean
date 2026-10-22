@@ -1,8 +1,3 @@
-/-ai
-The encoding of the empty string is the universal set.
-
-Extensionality and simplification of the encoding give the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

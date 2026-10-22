@@ -1,8 +1,3 @@
-/-ai
-Every singleton token set is consistent.
-
-Both graph atoms extracted from the singleton equal the unique token. If that token is least-informative, the equality with a graph atom is impossible. If it is a graph atom, the two equalities identify the values.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

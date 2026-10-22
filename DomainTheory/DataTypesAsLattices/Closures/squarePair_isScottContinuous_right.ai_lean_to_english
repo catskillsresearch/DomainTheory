@@ -1,0 +1,3 @@
+Disjoint pairing is Scott continuous in the second argument, for a fixed first argument.
+
+An even member, coming from the fixed first set, lies in the Scott union at the empty finite set. An odd member, coming from the varying second set, lies in the Scott union at the finite set whose only member is that element. Conversely, an even Scott-union witness is unchanged, and an odd witness pulls its second component back along the finite inclusion.

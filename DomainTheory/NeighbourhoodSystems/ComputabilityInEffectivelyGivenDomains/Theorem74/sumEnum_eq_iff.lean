@@ -1,8 +1,3 @@
-/-ai
-Two enumerated sum neighbourhoods are equal if and only if both tags lie off zero and one, or both tags are zero and the first components agree, or both tags are one and the second components agree.
-
-Split both tags by the trichotomy. Two left copies reduce to equality of the components by injectivity of the left copy, and the other Boolean branches contradict the tags. Two right copies do the same for the right copy. Two masters are equal outright. A left copy differs from a right copy because the second presentation's neighbourhood is nonempty, and each copy differs from the master. In every mixed case the Boolean branches contradict the tags.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

@@ -1,8 +1,3 @@
-/-ai
-Currying, as in Theorem 3.12, is a domain isomorphism: the function space from a product is isomorphic to the iterated function space.
-
-The numbered name example_825_congr is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Congr.curry_isomorphic

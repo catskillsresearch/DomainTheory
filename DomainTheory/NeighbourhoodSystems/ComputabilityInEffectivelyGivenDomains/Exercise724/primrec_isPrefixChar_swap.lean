@@ -1,8 +1,3 @@
-/-ai
-The prefix test on the two components of an unpaired natural number, with the components exchanged, is primitive recursive.
-
-Compose the unswapped prefix test with the pairing of the right and left projections, and rewrite by the unpairing equations.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

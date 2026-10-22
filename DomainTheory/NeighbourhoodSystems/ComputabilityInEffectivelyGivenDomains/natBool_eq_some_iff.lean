@@ -1,8 +1,3 @@
-/-ai
-A natural number interprets as a given boolean if and only if the number equals the boolean-to-natural encoding of that boolean.
-
-Match the number against 0, 1, and every larger value, and match the boolean. The values 0 and 1 agree with the two encodings, and every larger value fails on both sides.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

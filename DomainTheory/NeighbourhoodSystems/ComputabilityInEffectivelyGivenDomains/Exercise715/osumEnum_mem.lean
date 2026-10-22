@@ -1,8 +1,3 @@
-/-ai
-Every value of the coalesced-sum enumeration is a coalesced neighbourhood.
-
-A proper left code is the left injection of an enumerated neighbourhood, a proper right code is the right injection of an enumerated neighbourhood, and every remaining code is the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

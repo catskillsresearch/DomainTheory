@@ -1,6 +1,3 @@
-/-ai
-The indexed product of a family of neighbourhood systems over a nonempty index is the neighbourhood system on dependent pairs whose neighbourhoods are the product neighbourhoods of finitely supported tuples of neighbourhoods, and whose master is the product neighbourhood of the family of masters.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

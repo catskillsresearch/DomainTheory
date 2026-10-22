@@ -1,8 +1,3 @@
-/-ai
-The double application of the S combinator equals the graph of its further applications.
-
-Rewrite by the double-application equation, then use extensionality of graphs. At each argument the equality is the symmetric form of beta reduction for continuity of the inner map.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,8 +1,3 @@
-/-ai
-Equal left copies come from equal underlying sets.
-
-Each inclusion of left copies is equivalent to the corresponding inclusion of sets, so the two inclusions obtained from an equality of copies give equality of the sets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

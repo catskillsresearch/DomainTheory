@@ -1,0 +1,3 @@
+A neighbourhood belongs to the total element at n if and only if it is the whole space or the singleton of n.
+
+The total element is unfolded and membership is rewritten as membership in the principal filter of that singleton. In the forward direction the neighbourhood is the whole space or a singleton, and in the singleton case the inclusion of the singleton of n forces the two elements to agree. In the reverse direction the whole space is a neighbourhood containing every set, and the singleton of n is a neighbourhood equal to itself.

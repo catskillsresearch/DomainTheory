@@ -1,0 +1,3 @@
+Scott's 𝔉 theorem (1976, Theorem 6.2) states that a set U lies in 𝔉 if and only if U is the set of x at which some Scott-continuous f takes the value ⊥.
+
+If U lies in 𝔉, the top characteristic of its complement is Scott continuous and equals ⊥ exactly on U. Conversely, if U is the set of x with f(x) equal to ⊥, its complement is the union over k of the sets of x with k in f(x). The value f(x) differs from ⊥ precisely when some k belongs to it, and no k belongs to ⊥. Each of those sets is Scott open by continuity of f, and a union of Scott-open sets is Scott open, so U lies in 𝔉.

@@ -1,8 +1,3 @@
-/-ai
-The intersection of two neighbourhoods of Example 1.3 is the master, {1, 2}, or {2}.
-
-The proof is the nine-case analysis of the two classifications. The master absorbs either factor, a neighbourhood meets itself, and the intersection of {1, 2} with {2} is {2}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,6 +1,3 @@
-/-ai
-The filter associated with an arbitrary set E of excluded points consists of the cofinite sets whose complements are contained in E. The complement of the master neighbourhood is empty, so it is finite and contained in E. The complement of an intersection is the union of the complements, which stays finite and contained in E. A larger neighbourhood has a smaller complement, so upward closure preserves containment in E.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

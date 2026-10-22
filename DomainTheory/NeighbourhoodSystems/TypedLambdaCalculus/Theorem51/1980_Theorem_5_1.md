@@ -1,59 +1,61 @@
 # Theorem 5.1
 
-**THEOREM 5.1.** Every typed $\lambda$-term $\tau$ defines an approximable function of its free variables.
+## Human-English
 
-*Proof:* We argue by an induction on the complexity of $\tau$; there will only be a few cases to consider since the "syntax" of $\lambda$-terms is limited — even though terms can be of any length.
+@import "1980_Theorem_5_1.english" {code_block=false}
 
-If $\tau$ is a variable or a constant there is nothing to prove. We already know that
+## AI: Human-English to AI-Lean
 
-$$x \mapsto x \qquad \text{and} \qquad x \mapsto k$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/Basic.lean**
 
-are approximable functions.
+@import "Basic.lean"
 
-Suppose $\tau$ has the form
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/abs_apply.lean**
 
-$$\langle \sigma_0, \dots, \sigma_{n-1} \rangle .$$
+@import "abs_apply.lean"
 
-Then the $\sigma_i$ are less complex terms, and so we can assume — as our induction hypothesis — that they define approximable functions of the free variables. Having said this, we just apply the already
-proved 3.4 to conclude (after a suitable generalization to the multivariate case) that $\tau$, which takes on tuples as values, also defines an approximable function.
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/app_apply.lean**
 
-Next, suppose $\tau$ has the form
+@import "app_apply.lean"
 
-$$\sigma_0(\sigma_1),$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/const_apply.lean**
 
-where we are sure that the types of all the terms match properly. Again we can assume the $\sigma_i$ to be well behaved. But the values we seek can also be written as
+@import "const_apply.lean"
 
-$$\mathrm{eval}(\sigma_0, \sigma_1).$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/tuple_apply.lean**
 
-Since eval is approximable by 3.11, we just have to invoke an instance of 3.7 to gain the desired conclusion.
+@import "tuple_apply.lean"
 
-Finally, suppose that $\tau$ has the form
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/var_fst.lean**
 
-$$\lambda x . \sigma.$$
+@import "var_fst.lean"
 
-By a judicious choice of the order of the variables in $\sigma$ (including $x$), we can assume that $\sigma$ defines an approximable function
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51.lean**
 
-$$g : D_0 \times \cdots \times D_{n-1} \times D_n \to D'$$
+@import "../Theorem51.lean"
 
-where $D'$ is the type of $\sigma$, $D_n$ is the type of $x$, and $D_0, \dots, D_{n-1}$ are the types of the remaining free variables of $\sigma$. We apply 3.12 and obtain an approximable function
+**NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/var_snd.lean**
 
-$$\mathrm{curry}(g) : D_0 \times \cdots \times D_{n-1} \to (D_n \to D').$$
+@import "var_snd.lean"
 
-But, this is just exactly the function defined by $\tau$.
+## AI: AI-Lean to AI-English
 
-We leave as an exercise the more general case of a term $\tau$ of the form
+@import "Basic.ai_lean_to_english" {code_block=false}
 
-$$\lambda x_0, \dots, x_{k-1} . \sigma,$$
+@import "abs_apply.ai_lean_to_english" {code_block=false}
 
-which has a string of bound variables. $\square$
+@import "app_apply.ai_lean_to_english" {code_block=false}
 
-**Lean 4**
+@import "const_apply.ai_lean_to_english" {code_block=false}
 
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/abs_apply.lean](abs_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/app_apply.lean](app_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/const_apply.lean](const_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/tuple_apply.lean](tuple_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/var_fst.lean](var_fst.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem51.lean](../Theorem51.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Theorem51/var_snd.lean](var_snd.lean)
+@import "tuple_apply.ai_lean_to_english" {code_block=false}
+
+@import "var_fst.ai_lean_to_english" {code_block=false}
+
+@import "../Theorem51.ai_lean_to_english" {code_block=false}
+
+@import "var_snd.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Theorem_5_1.ai_english_concordance" {code_block=false}

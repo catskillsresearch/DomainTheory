@@ -1,6 +1,3 @@
-/-ai
-The code bitsCode n N represents the list of positions k strictly below N at which the k-th bit of n is set. The code of the empty bound is 0. At a successor bound, the selector conses the current index onto the previous code when bitAt reports that the bit is set, and otherwise keeps the previous code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

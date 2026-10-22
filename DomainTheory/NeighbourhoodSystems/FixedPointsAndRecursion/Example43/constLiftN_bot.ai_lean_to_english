@@ -1,0 +1,3 @@
+The strict lift of any value table sends bottom to bottom.
+
+By extensionality of elements, a neighbourhood of the image is witnessed by an input belonging to bottom, hence equal to the whole space. The blunt clause makes the output the master of the codomain, so the output belongs to bottom there, while a singleton clause would make the whole space a singleton. Conversely, the master of the codomain belongs to its bottom, and the whole space belongs to bottom and is related to that master by the blunt clause.

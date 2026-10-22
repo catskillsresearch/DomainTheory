@@ -1,8 +1,3 @@
-/-ai
-The enumeration of the successor of a pairing code is the down-set of the neighbourhood named by the first component, united with the enumeration of the second component.
-
-Rewrite by the definition of the enumeration, the successor decoding equation and the unpairing equations, the cons law for unions of down-sets, and the definition again.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

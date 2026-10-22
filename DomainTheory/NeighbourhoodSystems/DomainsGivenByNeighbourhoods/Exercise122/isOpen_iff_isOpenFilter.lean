@@ -1,8 +1,3 @@
-/-ai
-A set of elements is open if and only if it is an open filter.
-
-Openness in this topology is defined to be the open-filter condition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

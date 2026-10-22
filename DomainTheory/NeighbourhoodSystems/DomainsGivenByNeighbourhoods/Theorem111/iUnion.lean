@@ -1,6 +1,3 @@
-/-ai
-The union of an ascending sequence of elements consists of the sets of tokens that belong to some term. Such a set is a neighbourhood of that term. The master belongs to the zeroth term. If one set belongs to the term at n and another to the term at m, monotonicity places both in the term at the maximum of n and m, and the intersection law at that term applies. Upward closure remains at the same term.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,8 +1,3 @@
-/-ai
-If the finite set coded by j is contained in the numerical value of n, and the numerical value of m is distinct from bottom, then the numerical evaluator sends the second Myhill case code of j, n, and m to its value at n.
-
-Rewrite by the second-case evaluation. The conditional with equal branches and a test distinct from bottom equals the common branch, and the union of a set with a subset on the left equals the larger set.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

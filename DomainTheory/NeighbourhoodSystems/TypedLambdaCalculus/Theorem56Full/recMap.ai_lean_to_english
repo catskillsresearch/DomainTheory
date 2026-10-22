@@ -1,0 +1,1 @@
+Given maps φf and φg, the recursion map is the approximable map from the universal argument domain to N obtained by converting the least fixed point of their primitive-recursion operator back into an approximable map, before that map is made strict.

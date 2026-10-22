@@ -1,8 +1,3 @@
-/-ai
-A finite element is a finite approximant of an element x if and only if it lies under x.
-
-One direction is that every finite approximant lies under x, and the other is that every finite element below x is a finite approximant.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

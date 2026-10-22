@@ -1,8 +1,3 @@
-/-ai
-The remainder projection of a packed atom state is primitive recursive.
-
-It is the left projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

@@ -1,0 +1,3 @@
+For endpoints in the range from just above 0 through 1, Scott's relation holds of [0, r) and [0, s) if and only if r < s or r = s = 1.
+
+A witnessing pair of endpoints equals r and s by injectivity of the interval parametrization. Conversely, r and s themselves witness the relation.

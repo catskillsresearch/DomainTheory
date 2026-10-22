@@ -1,8 +1,3 @@
-/-ai
-A string lies in the prepend of a string to a set when it is the concatenation of that string with a member of the set.
-
-The equivalence is the defining equation of prepending.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

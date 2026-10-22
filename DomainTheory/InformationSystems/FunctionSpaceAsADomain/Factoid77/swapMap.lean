@@ -1,6 +1,3 @@
-/-ai
-The swap map from the product of information systems A and B to the product of B and A is the pairing of the second projection with the first projection.
-ai-/
 
 module
 

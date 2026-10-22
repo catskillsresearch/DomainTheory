@@ -1,8 +1,3 @@
-/-ai
-Applying the value of the composition map at a pair of maps to an element yields the outer map applied to the inner map applied to that element.
-
-Unfold the curried composition and rewrite by the curry computation and the elementwise identity for the uncurried composition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

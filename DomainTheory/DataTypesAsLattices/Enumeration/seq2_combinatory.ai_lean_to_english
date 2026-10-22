@@ -1,0 +1,3 @@
+If x and y are combinatory, then the binary sequence constructor of x and y is combinatory.
+
+The conditional of y against predecessor of zero is combinatory, and so is its composition on the left with S(K ·) and on the right with predecessor. The outer combination of S(K(cond x)) with that result is combinatory, as is the identity S K K. Their application under S is combinatory, and the SK equation for the binary sequence constructor identifies it with seq2 of x and y.

@@ -1,8 +1,3 @@
-/-ai
-The strict map represented by a filter relates two sets exactly when their step set belongs to the filter.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

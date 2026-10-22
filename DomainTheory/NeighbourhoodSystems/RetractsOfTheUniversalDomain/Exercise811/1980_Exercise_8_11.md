@@ -1,97 +1,265 @@
 # Exercise 8.11
 
-Well, this was a lot of work, but the pay-off is rather handsome. What we have done is transpose all the
+## Human-English
 
-$$D_a \triangleleft U$$
+@import "1980_Exercise_8_11.english" {code_block=false}
 
-over to finitary projections $a : U \to U$. This transposition is an isomorphism, because
+## AI: Human-English to AI-Lean
 
-$$D_a \triangleleft D_b \text{ iff } a \sqsubseteq b.$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/R.lean**
 
-Moreover, by the method of 8.9 and 8.10, all our favourite constructs have been made into *combinators*, that is, approximable — even computable — maps on the domain of finitary projections. *ALL APPROXIMABLE (COMPUTABLE) MAPS HAVE (COMPUTABLE) FIXED POINTS.* And there you are! The standard fixed-point method is available to obtain computable (i.e. effectively given) solutions to *all* domain equations (even sets of equations) where the constructs can be reworked in *this* way to be defined on projections. Examples are suggested in the exercises.
+@import "R.lean"
 
-Another pay-off concerns the $\lambda$-calculus itself. Inasmuch as
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/R_mem_iff.lean**
 
-$$U + U, \quad U \times U, \quad U \to U \triangleleft U,$$
+@import "R_mem_iff.lean"
 
-we might just as well forget the outside world and regard all these useful domains as being part of $U$. For example, on the left we have the new notation and on the right the old notation:
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/R_master.lean**
 
-$$
-\begin{aligned}
-\mathrm{which}(z) &= \mathrm{which}(j_+(z)) ; \\
-\mathrm{in}_i(x) &= i_+(\mathrm{in}_i(x)), \quad i = 0, 1 ; \\
-\mathrm{out}_i(x) &= \mathrm{out}_i(j_+(x)), \quad i = 0, 1 ; \\
-\langle x, y \rangle &= i_\times(\langle x, y \rangle) ; \\
-\mathrm{proj}_i(z) &= \mathrm{proj}_i(j_\times(z)), \quad i = 0, 1 ; \\
-u(x) &= j_\to(u)(x) ; \\
-\lambda x.\,\tau &\cong i_\to(\lambda x.\,\tau) .
-\end{aligned}
-$$
+@import "R_master.lean"
 
-And, there is no reason to stop here. The system
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/Ico0_inj.lean**
 
-$$T \cong \{\{0, 1/2\}, \{1/2, 1\}, \{0, 1\}\} \triangleleft U,$$
+@import "Ico0_inj.lean"
 
-so we might as well think of
-$$\text{true, false} \in |U|$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/Ico0_inter.lean**
 
-and think of $\mathrm{cond} : U \times U \times U \to U$. No! that is wrong: under the new regime *EVERYTHING IS AN ELEMENT OF U*. With the new meaning of $\lambda$, all functions, all pairs, all combinators, all constructs become elements of $U$.
+@import "Ico0_inter.lean"
 
-It takes a little time to get used to "universal conscription" with all elements doing (at least) double duty in the same domain, but there are many advantages, both notational and conceptual.
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/Ico0_le_of_subset.lean**
 
-**EXERCISES**
+@import "Ico0_le_of_subset.lean"
 
-**EXERCISE 8.11.** Let $\mathbb{Q}$ be the set of rational numbers and define a neighbourhood system by the equation
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/aRel.lean**
 
-$$R = \{[0, r) \mid r \in \mathbb{Q} \text{ and } 0 < r \le 1\}.$$
+@import "aRel.lean"
 
-Show that the following defines an approximable map $a : R \to R$:
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/aRel_combine.lean**
 
-$$[0, r) \ a \ [0, s) \quad \text{iff} \quad r < s \text{ or } r = s = 1.$$
+@import "aRel_combine.lean"
 
-Show in addition that $a$ is a projection where the fixed-point set of $a$ is in a one-one correspondence with the *real* numbers between 0 and 1 inclusive. (Hint: Recall Dedekind cuts and show $\subseteq$ matches $\le$.) Conclude that $a$ is *NOT* finitary. (Hint: Aside from $\bot$ there are no finite elements for $\{x \mid x = a(x)\}$.)
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/a.lean**
 
-**Lean 4**
+@import "a.lean"
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/R.lean](R.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/R_mem_iff.lean](R_mem_iff.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/R_master.lean](R_master.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/Ico0_inj.lean](Ico0_inj.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/Ico0_inter.lean](Ico0_inter.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/Ico0_le_of_subset.lean](Ico0_le_of_subset.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/aRel.lean](aRel.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/aRel_combine.lean](aRel_combine.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/a.lean](a.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/aRel_iff.lean](aRel_iff.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/aRel_le.lean](aRel_le.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/a_rel.lean](a_rel.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/ext_U.lean](ext_U.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/isRetraction_a.lean](isRetraction_a.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/isProjection_a.lean](isProjection_a.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/mkElement.lean](mkElement.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/mkElement_mem.lean](mkElement_mem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/R_mem_Ico0.lean](R_mem_Ico0.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU.lean](cutU.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU_le1.lean](cutU_le1.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU_one.lean](cutU_one.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU_pos.lean](cutU_pos.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU_up.lean](cutU_up.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutElt.lean](cutElt.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutElt_mem.lean](cutElt_mem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutS.lean](cutS.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutPoint.lean](cutPoint.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutS_bddBelow.lean](cutS_bddBelow.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutPoint_nonneg.lean](cutPoint_nonneg.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutS_nonempty.lean](cutS_nonempty.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutPoint_le_one.lean](cutPoint_le_one.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutElt_cutPoint.lean](cutElt_cutPoint.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU_mono.lean](cutU_mono.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/le_iff_U.lean](le_iff_U.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutElt_le_iff.lean](cutElt_le_iff.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutElt_injective.lean](cutElt_injective.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/not_isCompactElt_pos.lean](not_isCompactElt_pos.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/not_isFinitary_a.lean](not_isFinitary_a.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811.lean](../Exercise811.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/toElementMap_cutElt.lean](toElementMap_cutElt.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/fixOrderIso.lean](fixOrderIso.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/Basic.lean](Basic.lean)
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/aRel_iff.lean**
+
+@import "aRel_iff.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/aRel_le.lean**
+
+@import "aRel_le.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/a_rel.lean**
+
+@import "a_rel.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/ext_U.lean**
+
+@import "ext_U.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/isRetraction_a.lean**
+
+@import "isRetraction_a.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/isProjection_a.lean**
+
+@import "isProjection_a.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/mkElement.lean**
+
+@import "mkElement.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/mkElement_mem.lean**
+
+@import "mkElement_mem.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/R_mem_Ico0.lean**
+
+@import "R_mem_Ico0.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU.lean**
+
+@import "cutU.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU_le1.lean**
+
+@import "cutU_le1.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU_one.lean**
+
+@import "cutU_one.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU_pos.lean**
+
+@import "cutU_pos.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU_up.lean**
+
+@import "cutU_up.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutElt.lean**
+
+@import "cutElt.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutElt_mem.lean**
+
+@import "cutElt_mem.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutS.lean**
+
+@import "cutS.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutPoint.lean**
+
+@import "cutPoint.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutS_bddBelow.lean**
+
+@import "cutS_bddBelow.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutPoint_nonneg.lean**
+
+@import "cutPoint_nonneg.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutS_nonempty.lean**
+
+@import "cutS_nonempty.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutPoint_le_one.lean**
+
+@import "cutPoint_le_one.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutElt_cutPoint.lean**
+
+@import "cutElt_cutPoint.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutU_mono.lean**
+
+@import "cutU_mono.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/le_iff_U.lean**
+
+@import "le_iff_U.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutElt_le_iff.lean**
+
+@import "cutElt_le_iff.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/cutElt_injective.lean**
+
+@import "cutElt_injective.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/not_isCompactElt_pos.lean**
+
+@import "not_isCompactElt_pos.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/not_isFinitary_a.lean**
+
+@import "not_isFinitary_a.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811.lean**
+
+@import "../Exercise811.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/toElementMap_cutElt.lean**
+
+@import "toElementMap_cutElt.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/fixOrderIso.lean**
+
+@import "fixOrderIso.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise811/Basic.lean**
+
+@import "Basic.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "R.ai_lean_to_english" {code_block=false}
+
+@import "R_mem_iff.ai_lean_to_english" {code_block=false}
+
+@import "R_master.ai_lean_to_english" {code_block=false}
+
+@import "Ico0_inj.ai_lean_to_english" {code_block=false}
+
+@import "Ico0_inter.ai_lean_to_english" {code_block=false}
+
+@import "Ico0_le_of_subset.ai_lean_to_english" {code_block=false}
+
+@import "aRel.ai_lean_to_english" {code_block=false}
+
+@import "aRel_combine.ai_lean_to_english" {code_block=false}
+
+@import "a.ai_lean_to_english" {code_block=false}
+
+@import "aRel_iff.ai_lean_to_english" {code_block=false}
+
+@import "aRel_le.ai_lean_to_english" {code_block=false}
+
+@import "a_rel.ai_lean_to_english" {code_block=false}
+
+@import "ext_U.ai_lean_to_english" {code_block=false}
+
+@import "isRetraction_a.ai_lean_to_english" {code_block=false}
+
+@import "isProjection_a.ai_lean_to_english" {code_block=false}
+
+@import "mkElement.ai_lean_to_english" {code_block=false}
+
+@import "mkElement_mem.ai_lean_to_english" {code_block=false}
+
+@import "R_mem_Ico0.ai_lean_to_english" {code_block=false}
+
+@import "cutU.ai_lean_to_english" {code_block=false}
+
+@import "cutU_le1.ai_lean_to_english" {code_block=false}
+
+@import "cutU_one.ai_lean_to_english" {code_block=false}
+
+@import "cutU_pos.ai_lean_to_english" {code_block=false}
+
+@import "cutU_up.ai_lean_to_english" {code_block=false}
+
+@import "cutElt.ai_lean_to_english" {code_block=false}
+
+@import "cutElt_mem.ai_lean_to_english" {code_block=false}
+
+@import "cutS.ai_lean_to_english" {code_block=false}
+
+@import "cutPoint.ai_lean_to_english" {code_block=false}
+
+@import "cutS_bddBelow.ai_lean_to_english" {code_block=false}
+
+@import "cutPoint_nonneg.ai_lean_to_english" {code_block=false}
+
+@import "cutS_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "cutPoint_le_one.ai_lean_to_english" {code_block=false}
+
+@import "cutElt_cutPoint.ai_lean_to_english" {code_block=false}
+
+@import "cutU_mono.ai_lean_to_english" {code_block=false}
+
+@import "le_iff_U.ai_lean_to_english" {code_block=false}
+
+@import "cutElt_le_iff.ai_lean_to_english" {code_block=false}
+
+@import "cutElt_injective.ai_lean_to_english" {code_block=false}
+
+@import "not_isCompactElt_pos.ai_lean_to_english" {code_block=false}
+
+@import "not_isFinitary_a.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise811.ai_lean_to_english" {code_block=false}
+
+@import "toElementMap_cutElt.ai_lean_to_english" {code_block=false}
+
+@import "fixOrderIso.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_8_11.ai_english_concordance" {code_block=false}

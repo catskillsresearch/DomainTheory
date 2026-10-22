@@ -1,0 +1,3 @@
+Consistency of two enumerated neighbourhoods of U, the existence of an enumerated neighbourhood contained in their intersection, is recursively decidable.
+
+The code that combines the two canonical codes is primitive recursive. Recursive decidability of nonemptiness of presented intervals, composed with that code, decides the predicate: consistency is nonemptiness of the intersection, and the intersection is the set presented by the combined codes.

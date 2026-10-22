@@ -1,8 +1,3 @@
-/-ai
-If a is a closure, the shift of a is a closure.
-
-A closure is an expansive retract. The two components are the inclusion of the identity combinator in the shift and the retract equation for the shift of the retract part of a.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

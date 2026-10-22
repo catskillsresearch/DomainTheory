@@ -1,8 +1,3 @@
-/-ai
-The n-th coordinate of the stage embedding of x is x itself.
-
-That coordinate is the climb along n at most n, and climbing from a stage to itself is the identity.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

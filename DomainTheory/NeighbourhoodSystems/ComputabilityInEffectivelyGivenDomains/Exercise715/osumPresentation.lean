@@ -1,6 +1,3 @@
-/-ai
-A Scott presentation of the coalesced sum enumerates neighbourhoods by the coalesced-sum enumeration. The master is a code of tag 2. A proper left neighbourhood is tag 0 on an index of that neighbourhood, and a proper right neighbourhood is tag 1 on an index of that neighbourhood. Intersection-equality reduces to the separated-sum presentation along a primitive-recursive normalization, built from the properness deciders, that sends a proper left code to tag 0 on its index, a proper right code to tag 1 on its index, and every other code to a fixed master code. Consistency is the disjunction of either code enumerating the master, in which case the other code is a witness, with both codes being proper on the same side and consistent in that component, in which case a component witness that stays proper is retagged to that side; codes on opposite sides have empty intersection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

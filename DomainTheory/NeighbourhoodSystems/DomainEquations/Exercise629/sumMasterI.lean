@@ -1,6 +1,3 @@
-/-ai
-The sum master of a family of neighbourhood systems is the set of optional dependent pairs obtained by inserting the basepoint into the set of tags of tokens from the product neighbourhood of the family of masters.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

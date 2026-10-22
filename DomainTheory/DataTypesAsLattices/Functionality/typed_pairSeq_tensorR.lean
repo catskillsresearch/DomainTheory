@@ -1,8 +1,3 @@
-/-ai
-The pair of x and y is typed by the tensor retract of a and b if and only if x is typed by a and y is typed by b.
-
-From a tensor typing, the tensor equation and the two projection laws for pair sequences rewrite the pair as the pair of the two retracted components, and injectivity of pair sequences splits the typings. Conversely, those same rewrites, read against the two typing equations, give the tensor typing.
-ai-/
 
 module
 

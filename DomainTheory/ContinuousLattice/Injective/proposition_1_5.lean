@@ -1,8 +1,3 @@
-/-ai
-For every T₀-space, the power of the Sierpiński space indexed by its open sets is injective, and the map sending each point to the family of its memberships in those open sets is a topological embedding.
-
-The power is injective because every power of the Sierpiński space is injective, and the membership map is an embedding.
-ai-/
 module
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski

@@ -1,8 +1,3 @@
-/-ai
-The shape element of the total tag and a string σ is the total element of σ.
-
-The equation holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

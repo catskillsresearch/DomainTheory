@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood containing the leaf 01 is the master neighbourhood, the left branch, or the leaf 01.
-
-Classify the neighbourhood. The master neighbourhood, the left branch, and the leaf 01 are the three stated cases. In each of the other four cases the token 4, which belongs to the leaf 01, fails to belong to the neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

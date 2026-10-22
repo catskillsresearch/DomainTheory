@@ -1,8 +1,3 @@
-/-ai
-The structure map relates neighbourhoods A and E if and only if A is a neighbourhood of T(Exp), E is a neighbourhood of Exp, and A is contained in E.
-
-This is the relational description of the forward map of the identity isomorphism induced by the equality of T(Exp) and Exp.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

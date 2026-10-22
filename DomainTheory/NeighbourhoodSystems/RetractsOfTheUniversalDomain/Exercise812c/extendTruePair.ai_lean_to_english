@@ -1,0 +1,1 @@
+extendTruePair extends a finite sequence of Boolean pairs to a sequence on all natural numbers by padding each component separately, filling every index at or beyond the finite length with the true bit.

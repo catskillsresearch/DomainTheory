@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the basic definitions of the computability section: recursive enumerability, computability of continuous maps, closed lambda-definability, the packing of four numbers, the combinatory terms and realizability predicates used for primitive recursion, and computability for finitely many arguments.
-ai-/
 module
 
 public import Mathlib.Computability.RE
@@ -58,16 +55,6 @@ public import DomainTheory.DataTypesAsLattices.Computability.ComputableFin
 
 @[expose] public section
 
-/-!
-# Scott 1976, §2 — computability and the definability theorem
-
-Theorem 2.6: for a continuous `f`, computability (the graph is r.e.) is
-equivalent both to combinatory definability of its graph and to closed
-LAMBDA-definability.  The appendix proves the key converse
-`IsRE u → IsCombinatory u` by realizing primitive recursion and enumerating
-an arbitrary r.e. set.
--/
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
@@ -76,9 +63,6 @@ namespace DomainTheory.DataTypesAsLattices
 open Encodable
 open Nat.Partrec (Code)
 open Nat.Partrec.Code
-
-
-/-! ### The appendix converse: primitive-recursive realizability -/
 
 
 end DomainTheory.DataTypesAsLattices

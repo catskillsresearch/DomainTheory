@@ -1,8 +1,3 @@
-/-ai
-The letter-prefixed copy of a set of finite strings is never the set of all finite strings.
-
-If the two sets were equal, the empty string would belong to the prefixed copy, contradicting the fact that the empty string belongs to no prefixed copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

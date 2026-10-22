@@ -1,6 +1,3 @@
-/-ai
-The projection pair of a subdomain is its injection and its projection, together with the two laws that the projection composed after the injection is the identity on the subdomain and the injection composed after the projection is contained in the identity on the larger system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

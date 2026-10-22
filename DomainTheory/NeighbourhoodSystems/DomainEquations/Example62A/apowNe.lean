@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the n-fold power of A is nonempty.
-
-This is npow_nonempty, using memA_nonempty to know that every component neighbourhood is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

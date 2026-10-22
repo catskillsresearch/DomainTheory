@@ -1,0 +1,3 @@
+A Boolean function belongs to every box that pins coordinates to its own values.
+
+At each pinned coordinate the required equality holds definitionally.

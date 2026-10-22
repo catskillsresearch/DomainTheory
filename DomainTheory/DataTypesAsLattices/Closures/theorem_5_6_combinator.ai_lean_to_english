@@ -1,0 +1,3 @@
+In combinator form, Scott's limit theorem says that the composite of the fixed-point combinator with the function space of the universe combinator with itself is typed by the function space from that function space into the universe combinator.
+
+After the typing equation and the application law, the two sides are graphs, so it is enough that they agree on each argument. The universe combinator is a closure, so its function space with itself is a retract. The retract equation types the retracted argument by that function space, the limit theorem types the fixed-point combinator applied to that argument by the universe combinator, and rewriting by the retract equation is the required value of the composite.

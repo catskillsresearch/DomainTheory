@@ -1,8 +1,3 @@
-/-ai
-Interleaving a cons a :: σ tagged b₀ with a cons b :: τ tagged b₁ returns the string a :: b followed by the recursive string, with the recursive tag.
-
-This is the cons-cons clause of the interleaving value, so the equation holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

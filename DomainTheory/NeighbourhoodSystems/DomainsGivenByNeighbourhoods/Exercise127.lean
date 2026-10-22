@@ -1,8 +1,3 @@
-/-ai
-A set of elements is bounded if and only if every finite subset is bounded. For neighbourhoods U and W, the two-term sequence is consistent at length 2 if and only if the set of the two principal filters is bounded. Every member of a bounded set of elements lies below the least upper bound of the set. The least upper bound of a bounded set of elements lies below any element that lies above every member of the set.
-
-The numbered name example_127 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise127.bounded_iff_finite_bounded

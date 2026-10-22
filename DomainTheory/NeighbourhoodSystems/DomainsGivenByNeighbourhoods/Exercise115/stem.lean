@@ -1,6 +1,3 @@
-/-ai
-The stem domain of Exercise 1.15 is the nested-or-disjoint neighbourhood system on the natural numbers whose neighbourhoods are the whole set, the pair {0, 1}, and the singletons. The master neighbourhood is the whole set, which is nonempty and is a neighbourhood. Nested-or-disjointness is the stem comparison lemma, and every neighbourhood is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

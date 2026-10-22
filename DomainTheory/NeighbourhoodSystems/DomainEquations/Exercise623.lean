@@ -1,8 +1,3 @@
-/-ai
-The evaluation map lies below the underlying map of every algebra homomorphism from Exp.
-
-The numbered name example_623 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise623.descMap_le_algHom

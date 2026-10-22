@@ -1,0 +1,8 @@
+The map sending a paired natural number to the raw intersection code of its two
+components is primitive recursive.
+
+Canonicalization of each component, the level and mask of each, and the maximum of the
+two levels are primitive recursive. Each upsampling of a canonicalized mask to that
+joint level is primitive recursive by composition, identified by simplifying the pairing
+projections, and so is their bitwise conjunction. Pairing the joint level with that
+conjunction agrees with the raw intersection code by reflexivity.

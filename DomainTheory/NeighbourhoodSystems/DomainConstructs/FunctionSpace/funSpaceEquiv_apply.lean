@@ -1,8 +1,3 @@
-/-ai
-Applying the function-space isomorphism to an element yields the approximable map determined by that element.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

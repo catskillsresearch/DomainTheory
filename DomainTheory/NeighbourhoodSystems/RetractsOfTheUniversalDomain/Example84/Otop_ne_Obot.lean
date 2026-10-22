@@ -1,8 +1,3 @@
-/-ai
-The top element of the two-point system is distinct from its bottom element.
-
-If they agreed, the singleton of zero would belong to the bottom and hence equal the master, the full two-point set. One would then belong to the singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

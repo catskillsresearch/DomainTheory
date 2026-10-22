@@ -1,9 +1,3 @@
-/-ai
-The rational-pair combine operation sends a code of two rational pairs to the code of
-the pair whose first component is the maximum of the two first components and whose
-second component is the minimum of the two second components, realizing the pointwise
-combination of the corresponding intervals.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

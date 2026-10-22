@@ -1,8 +1,3 @@
-/-ai
-If an approximable map is computable, then the relation of its power-domain action on the canonical power-domain codes is recursively enumerable.
-
-The relation of the map on codes is recursively enumerable. A bounded existential quantifier over a coded list preserves that property, and a bounded universal quantifier over a coded list preserves it again. Swapping the two code components and applying the characterization of the action on codes identifies the result with the desired relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

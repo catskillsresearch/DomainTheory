@@ -1,6 +1,3 @@
-/-ai
-The intersection code of two enumerated neighbourhoods selects the first code or the second according to the prefix characteristic of the second address against the first.
-ai-/
 
 module
 

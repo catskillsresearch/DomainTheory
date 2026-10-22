@@ -1,8 +1,3 @@
-/-ai
-Two approximable maps with the same relation are equal.
-
-The two relations are equal as functions by functional extensionality and propositional extensionality. Substituting that equality makes the remaining data agree, so the structures are identical.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,6 +1,3 @@
-/-ai
-The neighbourhood {1, 2} is the set obtained by inserting the token 2 into the singleton {1}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

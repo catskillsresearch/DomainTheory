@@ -1,8 +1,3 @@
-/-ai
-If a sum-consistent finite set has nonempty right projection, then that right projection is consistent in B.
-
-The left disjunct of sum consistency says that the right projection is empty, which contradicts the hypothesis. The right disjunct gives the consistency.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

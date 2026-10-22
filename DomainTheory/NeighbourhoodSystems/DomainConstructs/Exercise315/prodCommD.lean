@@ -1,6 +1,3 @@
-/-ai
-The commutativity order isomorphism identifies the elements of D0 × D1 with the elements of D1 × D0, by the product equivalence, the cartesian swap, and the inverse product equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

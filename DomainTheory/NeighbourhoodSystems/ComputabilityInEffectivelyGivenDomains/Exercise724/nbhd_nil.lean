@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood of the empty list is all of Gamma.
-
-The equation is the defining clause.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

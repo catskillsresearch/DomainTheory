@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, §1. The diagonal pairing of natural numbers n and m is one half of (n + m)(n + m + 1), plus m.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

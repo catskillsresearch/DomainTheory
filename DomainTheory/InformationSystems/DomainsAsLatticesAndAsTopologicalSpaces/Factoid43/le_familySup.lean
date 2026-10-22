@@ -1,8 +1,3 @@
-/-ai
-Every member of a family lies below the join of the family, when the carrier union is finitely consistent.
-
-A token of the member belongs to the carrier union, and a finitely consistent set is contained in its deductive closure.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

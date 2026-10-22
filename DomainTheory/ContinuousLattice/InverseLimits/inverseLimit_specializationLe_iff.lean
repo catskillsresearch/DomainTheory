@@ -1,8 +1,3 @@
-/-ai
-The specialization order of the subspace inverse-limit topology is the componentwise order.
-
-The inclusion of the inverse limit into the product is a topological embedding. Specialization is the specializes relation, which transfers along that embedding and splits over the product. At each coordinate, specializes agrees with the specialization order of the Scott topology, which is the lattice order.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

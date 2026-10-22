@@ -1,0 +1,3 @@
+If each member of a finitely indexed family of sets of rationals is empty or a neighbourhood of the universal system, and the union is nonempty, then the union is a neighbourhood.
+
+By induction on finite sets, the union over any finite index set is empty or a neighbourhood, using binary closure at each insertion of an index. The full union equals the union over the universal finite set, so nonemptiness excludes emptiness.

@@ -1,8 +1,3 @@
-/-ai
-If a function p on the natural numbers is realized by a combinatory element and is extensional with respect to val, then some combinatory q satisfies val(p(n)) = q(val(n)) for every n. This is Scott's completeness theorem for definability (Theorem 3.5).
-
-Take q to be the Myhill operator of val and p; it is combinatory because that operator is recursively enumerable. After the application equation for the operator, compare elements. If k lies in val(p(n)) but not in the application, extensionality forbids k from lying in the value of p at the fin-code of any finite set equal to val(n), so val(n) is not finite, and no finite set contained in val(n) has that membership either. The first case yields a contradiction. If k lies in the application but not in val(p(n)), the witnessing finite set contained in val(n) is distinct from val(n), or extensionality would put k in val(p(n)), and the second case yields a contradiction.
-ai-/
 
 module
 

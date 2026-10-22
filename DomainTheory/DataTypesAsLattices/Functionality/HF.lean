@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (4.45). The continuous operator HF at an interpreter H is the graph of the map sending an environment to the graph of one step of that interpreter in the term.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

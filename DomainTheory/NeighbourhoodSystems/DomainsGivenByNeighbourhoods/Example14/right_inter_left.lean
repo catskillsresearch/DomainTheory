@@ -1,8 +1,3 @@
-/-ai
-The right subtree is disjoint from the left subtree.
-
-Commute the intersection, and appeal to the intersection of the left subtree with the right subtree being empty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

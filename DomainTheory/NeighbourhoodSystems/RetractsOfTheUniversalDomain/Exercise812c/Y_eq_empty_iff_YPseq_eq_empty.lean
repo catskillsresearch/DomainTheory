@@ -1,8 +1,3 @@
-/-ai
-The enumerated set Y n is empty if and only if YPseq n is empty.
-
-Specialize the intersection-emptiness transfer to the pair of indices (n, n), rewrite both intersections as the sets themselves, and reverse the resulting equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

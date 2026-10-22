@@ -1,8 +1,3 @@
-/-ai
-The composite of the code-level injection after the code-level projection is the identity map on the coded copy.
-
-Compare the maps by their actions on elements. The element map of a composite is the composite of the element maps. Unfolding both maps, the element map of the isomorphism construction, applied after the element map of the inverse, is the identity by the order-isomorphism law, which is the element map of the identity map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic

@@ -1,6 +1,3 @@
-/-ai
-Scott's partial element determined by a finite string σ is the principal element of the neighbourhood system C on the cone of sequences that begin with σ.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

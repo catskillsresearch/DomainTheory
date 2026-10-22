@@ -1,8 +1,3 @@
-/-ai
-The remainder of a continuation packed from a number a and an inner state b is a.
-
-Unfolding the remainder and the packing, the left component of a pair is its first argument.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

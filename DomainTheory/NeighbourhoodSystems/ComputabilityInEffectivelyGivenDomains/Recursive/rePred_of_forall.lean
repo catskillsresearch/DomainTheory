@@ -1,8 +1,3 @@
-/-ai
-An always-true predicate is recursively enumerable.
-
-Recursive enumerability is the enumerability of the recursive decision supplied by the constant decider for an always-true predicate.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

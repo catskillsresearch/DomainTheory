@@ -1,8 +1,3 @@
-/-ai
-The set of all naturals is a unary neighbourhood.
-
-It equals the tail of length zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

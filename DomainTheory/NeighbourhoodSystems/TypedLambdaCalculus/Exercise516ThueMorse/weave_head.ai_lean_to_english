@@ -1,0 +1,3 @@
+The first component of the merge of h followed by the flip of ρ with ρ, both with second component false, equals h followed by the expansion of ρ.
+
+Proceed by induction on ρ. The empty string is reflexivity. For a cons, simplify the flip of a cons, the merge of two conses, and the expansion of a cons, then rewrite by the inductive hypothesis at the negated head bit.

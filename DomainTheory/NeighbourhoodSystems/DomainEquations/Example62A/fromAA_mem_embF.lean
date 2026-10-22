@@ -1,8 +1,3 @@
-/-ai
-If every component of X belongs to MemA, then fromAA s contains the false-tagged tuple of X if and only if s contains the left injection of the proper product of X.
-
-In the forward direction the membership clause is the set of all strings, a false-tagged tuple, or a true-tagged tuple. The first contradicts the tuple not being the whole set of strings. The false clause uses injectivity of embTuple. The true clause contradicts distinct tags giving distinct tuples, using a nonempty witness from memA_nonempty at index zero. The reverse direction is the false disjunct.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,8 +1,3 @@
-/-ai
-Applying the sequence shift of u to z equals the sequence revaluation of u at the successor of z.
-
-This is the β-law for that body, which is Scott continuous.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

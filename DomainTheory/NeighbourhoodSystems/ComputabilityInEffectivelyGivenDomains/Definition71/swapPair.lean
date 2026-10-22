@@ -1,6 +1,3 @@
-/-ai
-Swapping a pair code of natural numbers exchanges its two components.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

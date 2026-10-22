@@ -1,8 +1,3 @@
-/-ai
-The second projection pack4_proj2 of a fourfold Cantor packing is primitive recursive.
-
-It is the first projection of the unpairing of the second projection of an unpairing.
-ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,6 +1,3 @@
-/-ai
-A neighbourhood system is finite when the type of its neighbourhoods is a finite type.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615

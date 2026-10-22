@@ -1,12 +1,3 @@
-/-ai
-The enumeration of V at the master index equals the master neighbourhood of V.
-
-The level set of the unpaired components of the pair of zero and one is nonempty,
-because those components are zero and one and the level set of zero and one is the
-universe. Unfolding the enumeration and the master index, canonicalization leaves that
-pair unchanged, the components are again zero and one, and the level set of zero and one
-is the universe, which matches the master by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

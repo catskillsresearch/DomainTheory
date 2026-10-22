@@ -1,8 +1,3 @@
-/-ai
-For a fixed environment t, the map sending e to the variable clause hVar e t is Scott continuous.
-
-It is the composite of application of the constant t with the payload projection, and both factors are Scott continuous.
-ai-/
 
 module
 

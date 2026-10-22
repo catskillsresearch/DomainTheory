@@ -1,8 +1,3 @@
-/-ai
-If a code is neither a proper left copy nor a proper right copy, the coalesced-sum enumeration returns the separated-sum master.
-
-Both conditionals in the enumeration take their negative branch.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

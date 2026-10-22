@@ -1,6 +1,3 @@
-/-ai
-A space D is injective when every continuous map into D extends along every topological embedding: for an embedding of X into Y and a continuous map from X to D, some continuous map from Y to D agrees with it on the image of the embedding.
-ai-/
 module
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski

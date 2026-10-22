@@ -1,8 +1,3 @@
-/-ai
-There exist systems D and E such that D is a subsystem of D summed with the product of D and E, and E is a subsystem of the sum of D and E, simultaneously.
-
-The numbered name example_624 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise624.exists_simultaneous_subsystems

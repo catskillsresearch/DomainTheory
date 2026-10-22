@@ -1,8 +1,3 @@
-/-ai
-If A is a retract of B, then the product of any neighbourhood system C with A is a retract of the product of C with B.
-
-Commute the product so that the varying factor stands on the left, apply the left-hand functoriality of the retract relation, and commute back. The three retracts compose.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

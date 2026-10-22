@@ -1,8 +1,3 @@
-/-ai
-The combinator is a finitary projection.
-
-It is a projection, and it is finitary.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

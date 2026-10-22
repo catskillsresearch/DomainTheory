@@ -1,8 +1,3 @@
-/-ai
-The X sub-step is primitive recursive.
-
-The neighbourhood index, the bit, and the packed state of a word are primitive recursive, and so are the two indices and the junk flag of that state. Intersection and difference of the first index with the neighbourhood index are primitive recursive, as are the emptiness decisions for those two operations and the positive and negative split indices, after simplifying the unpairing of the paired arguments. Selection on the bit therefore yields primitive-recursive direct indices, emptiness decisions, and split indices. Selecting the constant 1 when the incoming junk flag is set, and otherwise the direct emptiness decision, is primitive recursive, and selecting the constant 0 on that new flag, and otherwise the direct or split index, is primitive recursive. Pairing the resulting first index, second index, and junk flag, and unfolding the sub-step and the state packing, identifies this composition with the sub-step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

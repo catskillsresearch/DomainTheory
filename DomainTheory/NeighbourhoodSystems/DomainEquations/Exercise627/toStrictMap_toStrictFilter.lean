@@ -1,8 +1,3 @@
-/-ai
-Sending a strict map to its strict filter and back returns the map.
-
-This is the left inverse law of the strict-function equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

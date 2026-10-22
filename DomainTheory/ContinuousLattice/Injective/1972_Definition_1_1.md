@@ -1,17 +1,19 @@
 # Definition 1.1
 
-A $T_0$-space $D$ is *injective* iff for arbitrary spaces $X$ and $Y$ if $X \subseteq Y$ as a subspace, then every continuous function $f: X \to D$ can be extended to a continuous function $\bar{f}: Y \to D$. As a diagram we have:
+## Human-English
 
-$$
-\begin{gathered}
-X \subseteq Y 
-X \xrightarrow{f} D 
-Y \xrightarrow{\bar{f}} D
-\end{gathered}
-$$
+@import "InjectiveSpace.english" {code_block=false}
 
-Some people will object to this terminology because we use the subspace relationship rather than a monomorphism in the category of $T_0$-spaces and continuous maps. However, only the trivial 1-point space is injective in the sense of monomorphisms in that category, and so the notion is uninteresting.  As we shall see these spaces have very strong retraction properties.
+## AI: Human-English to AI-Lean
 
-**Injective space.** `InjectiveSpace` is this definition: every continuous map into the space extends along every topological embedding. [Proposition 2.11](../Constructions/1972_Proposition_2_11.md) proves a continuous lattice is injective, and [Theorem 2.12](../Theorem212/1972_Theorem_2_12.md) proves the two notions coincide.
+**DomainTheory/ContinuousLattice/Injective/InjectiveSpace.lean**
 
-- [ContinuousLattice/Injective/InjectiveSpace.lean](InjectiveSpace.lean)
+@import "InjectiveSpace.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "InjectiveSpace.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "InjectiveSpace.ai_english_concordance" {code_block=false}

@@ -1,8 +1,3 @@
-/-ai
-Currying, as in Theorem 3.12, is a domain isomorphism: the function space from a product is isomorphic to the iterated function space.
-
-The witness is the currying order isomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

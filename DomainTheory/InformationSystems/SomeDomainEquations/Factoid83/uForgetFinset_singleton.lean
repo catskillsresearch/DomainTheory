@@ -1,8 +1,3 @@
-/-ai
-The forget-finset of a singleton U-token is the singleton of its underlying V-token.
-
-Extensionality uses the membership criterion. A forgotten token comes from the unique member, so it equals that member's value. Conversely, that value is forgotten from the unique member.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

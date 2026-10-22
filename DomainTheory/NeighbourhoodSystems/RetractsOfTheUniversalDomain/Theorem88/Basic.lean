@@ -1,112 +1,3 @@
-/-ai
-The generated atom of depth n is contained in the master set.
-
-The proof is by induction on the depth. At zero the atom is the master set. At a successor the intersection is contained in the previous atom, which is contained in the master set.
-
-Changing the sign sequence at or beyond depth n leaves the generated atom of depth n unchanged.
-
-The proof is by induction on the depth. At zero both sides are the master set. At a successor the inductive hypothesis equates the previous atoms and the hypothesis equates the sign at that depth, so the intersections agree.
-
-A point of the generated atom of depth n has, at every index below n, sign true exactly when it belongs to the corresponding set of the family.
-
-The proof is by induction on the depth. No index lies below zero. At a successor the point lies in the previous atom and in the last clause. An earlier index uses the inductive hypothesis. At the last index, the true sign makes the clause membership in the set, and the false sign makes the clause membership in the complement, so each direction of the equivalence is that clause.
-
-A point of the master set belongs, at every depth, to the generated atom of the sign sequence that records its own membership in the family.
-
-The proof is by induction on the depth. At zero the point belongs to the master set. At a successor the inductive hypothesis gives the previous atom, and the last clause is the set or its complement in the master according as the point belongs to the next set.
-
-The first output of a splitting operation is contained in the neighbourhood being split.
-
-That output is contained in the union of the two outputs, and the splitting specification says that the union equals the neighbourhood being split.
-
-The second output of a splitting operation is contained in the neighbourhood being split.
-
-That output is contained in the union of the two outputs, and the splitting specification says that the union equals the neighbourhood being split.
-
-The U-side atom of depth n + 1 is the first output of the split when the sign at n is true, and the second output when the sign is false.
-
-This is the successor clause of the U-side atom.
-
-Changing the sign sequence at or beyond depth n leaves the U-side atom of depth n unchanged.
-
-The proof is by induction on the depth. At zero both sides are the master neighbourhood of U. At a successor the inductive hypothesis equates the previous U-side atoms, the generated atoms agree by the same agreement of signs, and the sign at that depth agrees, so the successor clause agrees.
-
-At every depth, emptiness of the generated atom matches emptiness of the U-side atom, every U-side atom is empty or a neighbourhood of U, and U-side atoms whose sign sequences disagree below that depth are disjoint.
-
-The master neighbourhood of U is nonempty. The proof is by induction on the depth. At zero the master of the enumeration is empty exactly against the nonempty master of U, every atom is that master neighbourhood, and no index lies below zero. At a successor the splitting specification, applied to the inductive matching and membership, gives the output laws. The true sign selects the intersection law. The false sign rewrites the generated successor as the set difference, using that the previous generated atom is contained in the master, and selects the difference law. Membership of each successor atom is the corresponding output of the specification. If the signs agree below the previous depth, they disagree at the new index, the previous atoms agree, and the two outputs of one split are disjoint, which gives the empty intersection in each combination of signs. If the signs disagree earlier, the inductive disjointness and the two successor inclusions, each an output inclusion, make the intersection empty.
-
-The U-side atom of depth n + 1 is contained in the U-side atom of depth n.
-
-The invariant supplies matching and membership at depth n. The true branch is the inclusion of the first output, and the false branch is the inclusion of the second output.
-
-Below length n, the true padding of a finite sign sequence agrees with that sequence.
-
-This is simplification of the padding.
-
-Below length n, the true padding of the restriction of a total sign sequence recovers the original signs.
-
-This is simplification of the padding and the restriction.
-
-The U-side atom of depth n + 1 of a true-padded sign sequence of length n is contained in the set Y at n.
-
-That atom is one term of the union that defines Y at n.
-
-The first output of splitting the depth-n atom against the next enumerated set equals the intersection of that U-side atom with Y at n.
-
-The invariant supplies matching, membership, and disjointness. The sign sequence that sets position n true has the same generated atom and the same U-side atom up to n, and its successor atom is the first output. The true padding of its restriction agrees with it through n, so that padded atom is the first output. The first output is therefore contained in Y at n, and the first-output inclusion puts it in the atom. Conversely, a point of the atom and of Y lies in some padded successor atom. If that padding agrees with the original sign below n, its successor atom is the first output. If it disagrees, the successor inclusion puts the point in both previous U-side atoms, contradicting their disjointness.
-
-Every U-side atom is contained in the master neighbourhood of U.
-
-The proof is by induction on the depth. At zero the atom is the master neighbourhood. A successor is contained in the previous atom, which is contained in the master neighbourhood.
-
-The U-side atom of depth n + 1 equals the previous U-side atom met with Y at n when the sign is true, and met with the complement of Y at n in the master neighbourhood when the sign is false.
-
-The splitting specification and the identification of the first output with the intersection against Y are available. The true branch is that identification. The false branch rewrites the second output as the difference with Y: a point of the second output lies in the atom and, because the outputs are disjoint, outside the first output, hence outside Y; a point of the atom outside Y cannot lie in the first output, so the union law puts it in the second output. Meeting that difference with the master neighbourhood does not change it, because the previous atom is contained in the master neighbourhood.
-
-The U-side atom equals the generated atom of the sequence Y relative to the master neighbourhood of U.
-
-At depth zero both sides are the master neighbourhood. At a successor the closed form of the U-side atom and the inductive hypothesis are the successor clause of the generated atom.
-
-If the generated atoms of two families match in emptiness, then a finite Boolean constraint realized in the first master set is realized in the second.
-
-The realizing point determines the sign sequence of its membership, and it lies in its own generated atom, which is nonempty. Matching emptiness makes the second atom nonempty. A point of that atom lies in the second master set, and the forward reading of the atom, together with the agreement of the sign sequence with the constraint, gives the constraint.
-
-A finite Boolean constraint on the enumerated sets is realized in the master set exactly when the same constraint on the sequence Y is realized in the master neighbourhood of U.
-
-The emptiness clause of the invariant, rewritten by the identification of the U-side atom with the generated atom of Y, matches emptiness in both directions. Each direction of the realization is the one-sided transfer.
-
-Inside the master set, the enumerated set of index i is contained in the enumerated set of index j exactly when, inside the master neighbourhood of U, the set Y at i is contained in the set Y at j.
-
-The two-point constraint of membership at i and nonmembership at j has realization equal to the corresponding difference. The transfer equates those realizations, and an inclusion is the emptiness of the difference, which is the negation of its nonemptiness.
-
-The intersection of the enumerated sets of indices i and j is empty inside the master set exactly when the intersection of the sets Y at those indices is empty inside the master neighbourhood of U.
-
-The two-point constraint of membership at both indices has realization equal to that intersection. The transfer equates the realizations, and emptiness is the negation of nonemptiness.
-
-Inside the master set, the intersection of the enumerated sets of indices i and j is contained in the enumerated set of index k exactly when the same inclusion holds for the sequence Y inside the master neighbourhood of U.
-
-The three-point constraint of membership at i and j and nonmembership at k has realization equal to the corresponding difference. The transfer equates the realizations, and the inclusion is the emptiness of the difference.
-
-The set Y at n is contained in the master neighbourhood of U.
-
-It is a union of successor U-side atoms, and each of those atoms is contained in the master neighbourhood.
-
-If the enumeration begins with the master set, then the set Y at zero is the master neighbourhood of U.
-
-The unique sign sequence of length zero pads to true at zero. Splitting the depth-zero atoms, which are the two master sets, against the master set makes the second output empty by the difference law, so the union law makes the first output the master neighbourhood of U. The successor U-side atom of that sign is that output, hence is contained in Y at zero, and Y at zero is contained in the master neighbourhood.
-
-If three enumerated sets are contained in the master set, then the intersection of the sets of indices i and j equals the set of index k exactly when the same equation holds for the sequence Y.
-
-The two inclusions of the third set and the inclusion of the intersection each transfer. On the enumerated side the master set cancels by the containments, and on the Y side the master neighbourhood of U cancels because Y is contained in it. Each equation is those inclusions, so each direction transports them.
-
-The set Y at n is empty or a neighbourhood of U.
-
-If it is nonempty, it is the union of the successor atoms of the true-padded sign sequences, each of which is empty or a neighbourhood by the invariant, and that union is a neighbourhood. If it is empty, the empty alternative holds.
-
-A point of the master set that lies in the enumerated set of index n makes the set Y at n nonempty.
-
-The sign sequence of that point is true at n, and the point lies in its generated atom and in the enumerated set, so the intersection is nonempty. The splitting specification makes the first output nonempty, and that output is the successor U-side atom of the point's sign. The true padding of the restriction of that sign agrees with it through depth n + 1, so the padded successor atom is the same nonempty set, and that atom is contained in Y at n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87
@@ -123,73 +14,11 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 
 @[expose] public section
 
-/-!
-# Theorem 8.8 (Scott 1981, PRG-19, Lecture VIII) — `U` is universal
-
-Following Dana Scott, *Lectures on a Mathematical Theory of Computation*, PRG-19, Theorem 8.8:
-
-> The system `U` is universal in the sense that, for every countable neighbourhood system `D`, we
-> have `D ⊴ U`. Moreover, if `D` is effectively given, then the projection pair making the
-> embedding can be taken as computable. Indeed there is a correspondence between effectively
-> presented domains and the computable, finitary projections of `U`.
-
-This file works towards **Theorem 8.8(a)**, the general (non-effective) half of the theorem: every
-*countable* `D` embeds as a subsystem of `U`, up to isomorphism.
-
-## Scott's construction
-
-Enumerate `D = {Xₙ ∣ n ∈ ℕ}` (with `X₀ = Δ = D.master`). Scott builds `Yₙ ∈ U` recursively so
-that, for every `n` and every `δ ∈ {+,-}ⁿ`, writing `δX := X` if `δ = +` and `Δ \ X` if `δ = -`,
-the **atom** `⋂_{i<n} δᵢXᵢ` is empty iff the corresponding atom `⋂_{i<n} δᵢYᵢ` is empty — call this
-invariant `(■)`. Once built, matching `Xᵢ ↦ Yᵢ` realizes the embedding.
-
-## This file's encoding
-
-Rather than track the atoms via dependent `Fin n → Bool` tuples, we track them as a `List (Set α ×
-Set ℚ)` of matching *pairs* `(A, B)` (the `D`-side atom and its paired `U`-side atom), which
-doubles in length at each step — this is exactly `(■)` unpacked into `List` bookkeeping (matching
-this codebase's usual idiom for finite combinatorial data, e.g. `presentedIntervals`'s own `List`
-representation), avoiding `Fin`-indexed dependent recursion entirely.
-
-**The key local step (`exists_split`)**: given one matching pair `(A, B)` and a new target `Xₙ`,
-produce the two refined pairs for `A ∩ Xₙ` and `A \ Xₙ`. Remarkably, all three of Scott's cases are
-handled *without* ever needing a general "`U`-neighbourhoods are closed under set difference"
-lemma:
-
-* `A ∩ Xₙ = ∅`: the new pairs are `(∅, ∅)` and `(A, B)` (unchanged) — no computation needed.
-* `A \ Xₙ = ∅` (i.e. `A ⊆ Xₙ`): the new pairs are `(A, B)` (unchanged) and `(∅, ∅)`.
-* otherwise (`A` is genuinely split by `Xₙ`): both `A ∩ Xₙ` and `A \ Xₙ` are non-empty, so (by the
-  matching invariant on the old pair) `B` is a genuine, non-empty `U`-neighbourhood — split it via
-  **Definition 8.7's `U_no_minimal`** into disjoint proper non-empty pieces `Y, Z` with `Y ∪ Z = B`;
-  take `I := Y`, and `B \ I = Z` comes *for free* from `U_no_minimal`'s own conclusion, again with
-  no separate set-difference-closure lemma required.
-
-**Remaining work** (tracked in `arxiv.md`, not yet in this file): package `exists_split` into the
-`List`-of-pairs recursive construction of the full sequence `Y : ℕ → Set ℚ`, derive the inclusion
-correspondence `Xᵢ ⊆ Xⱼ ↔ Yᵢ ⊆ Yⱼ` from the atom invariant, and assemble the final `∃ D' : Neighbo
-rhoodSystem ℚ, D ≅ᴰ D' ∧ D' ◁ U` statement. `Classical.choice` is expected and acceptable throughout
-this file's `Theorem 8.8(a)` development: it is a genuinely non-constructive `Prop`-level existence
-statement for an *arbitrary* countable `D` (Scott's own remark that the effective case needs the
-*additional* `𝒟 ≅ 𝒟†` preparation, absent here, to make the case-splits decidable rather than merely
-classical, is the substance of the follow-up Theorem 8.8(b)).
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
 variable {α : Type*}
-
-
-/-! ### Boolean atoms, indexed by `δ : ℕ → Bool`
-
-The recursion below tracks the atom `⋂_{i<n} δᵢZᵢ` for a *sign sequence* `δ : ℕ → Bool` and a
-family `Z : ℕ → Set β` relative to a master set `M` (Scott's `Δ` on the `D`-side, `U.master` on
-the `U`-side). We deliberately index by *all* of `ℕ → Bool` rather than `Fin n → Bool`: since
-`genAtom Z M δ n` only ever inspects `δ 0, …, δ (n-1)` (`genAtom_congr` below), this sidesteps
-`Fin`-indexed dependent bookkeeping entirely for every *characterization* lemma, at the cost of
-harmless redundancy (many `δ` present the same atom). A genuine finite index type (`Fin n → Bool`)
-only reappears once, locally, when a *finite union* is actually needed (`Yseq`, below). -/
 
 
 theorem genAtom_subset {β : Type*} (Z : ℕ → Set β) (M : Set β) (δ : ℕ → Bool) (n : ℕ) :
@@ -244,19 +73,6 @@ theorem genAtom_self {β : Type*} (Z : ℕ → Set β) (M : Set β) {x : β} (hx
     · simp [h]
     · simp [h, hx]
 
-/-! ### Packaging `exists_split` as a total choice function
-
-**Generalization for Theorem 8.8(b).** Everything from `atomU` onward in this file is stated
-relative to an *abstract* splitting operation `split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ`
-satisfying `SplitSpec` — exactly `exists_split`'s conclusion, packaged as a total function rather
-than a dependent existential. Theorem 8.8(a) (`Theorem88a.lean`) instantiates this with the
-classical `splitChoice` below (via `Classical.choice` on `exists_split`'s existential — the *only*
-place non-constructivity enters this file). Theorem 8.8(b)'s effective refinement
-(`DAtomDecidable.lean` onward) instantiates the *same* generic theorems with a **computable**
-`splitEff`, built from `SplitU.lean`'s deterministic `splitU` and `DAtomDecidable.lean`'s decidable
-atom-emptiness test — getting the entire invariant/transfer apparatus below "for free", with no
-need to reprove any of it. -/
-
 
 /-- **A splitting operation's first output is a subset of `B`** (`I ⊆ B`, from `I ∪ J = B`) —
 a corollary of `SplitSpec` alone, needing no facts about the specific `split`. -/
@@ -270,14 +86,6 @@ theorem split_snd_subset {split : Set α → Set ℚ → Set α → Set ℚ × S
     {A : Set α} {B : Set ℚ} (hAB : A = ∅ ↔ B = ∅)
     (hBU : B = ∅ ∨ U.mem B) (Xn : Set α) : (split A B Xn).2 ⊆ B :=
   Set.subset_union_right.trans_eq (hsplit hAB hBU Xn).2.2.2.2.1
-
-/-! ### The `U`-side atoms, built via an abstract splitting operation
-
-Fix the enumeration `X : ℕ → Set α` of `D` and its master `Δ := D.master`, and a splitting
-operation `split` satisfying `SplitSpec`. The `D`-side atom at depth `n` for sign sequence `δ` is
-simply `genAtom X Δ δ n` (no new definition needed). The `U`-side atom `atomU split X Δ δ n` is
-built by recursion, splitting the *previous* atom via `split` against the *next* target `X n`,
-taking the `δ n`-side of the split. -/
 
 variable (split : Set α → Set ℚ → Set α → Set ℚ × Set ℚ)
 
@@ -303,8 +111,6 @@ theorem atomU_congr {δ δ' : ℕ → Bool} {n : ℕ} (h : ∀ i < n, δ i = δ'
       genAtom_congr X Δ (fun i hi => h i (Nat.lt_succ_of_lt hi))
     have hn := h n (Nat.lt_succ_self n)
     rw [atomU_succ, atomU_succ, hA, hprev, hn]
-
-/-! ### The core invariant: emptiness-matching, `U.mem`-or-empty, and pairwise disjointness -/
 
 variable (hΔ : Δ.Nonempty) (hsplit : SplitSpec split)
 include hΔ hsplit
@@ -390,13 +196,6 @@ theorem atomU_succ_subset (δ : ℕ → Bool) (n : ℕ) :
   by_cases hδ : δ n = true
   · simp only [hδ, ite_true]; exact split_fst_subset hsplit (hmatch δ) (hmem δ) (X n)
   · simp only [hδ]; exact split_snd_subset hsplit (hmatch δ) (hmem δ) (X n)
-
-/-! ### `Yseq`: Scott's `Yₙ`, the union of the "+"-pieces of all depth-`n` atoms
-
-A genuine `Fintype` index (`Fin n → Bool`) is used *only* here, to state a bona fide finite union;
-`extendTrue` promotes a length-`n` sign sequence to a full `δ : ℕ → Bool` by padding with `true`
-(the padding value is irrelevant beyond position `n`, and *must* be `true` at position `n` itself,
-to select the "+"-branch of the split there). -/
 
 
 omit hΔ hsplit in
@@ -513,14 +312,6 @@ theorem atomU_eq_genAtom (δ : ℕ → Bool) :
   | 0 => rfl
   | (n + 1) => by
       rw [atomU_succ_eq split X Δ hΔ hsplit, atomU_eq_genAtom δ n]; rfl
-
-/-! ### The general finite-constraint transfer lemma
-
-This is the payoff of the whole apparatus above: *any* finite conjunction of membership/
-non-membership constraints against `X 0, X 1, …` is non-empty iff the corresponding constraint
-against `Y 0 := Yseq 0, Y 1 := Yseq 1, …` is non-empty. Subset- and intersection-transfer facts
-(needed for `D'`'s `NeighborhoodSystem` axioms and the element-level isomorphism) both drop out as
-one-line corollaries by unfolding the constraint set. -/
 
 -- One-directional half of the transfer lemma, stated fully generically (over two independent
 -- carrier types related only by a shared `genAtom`-emptiness correspondence `hcore`) so that it
@@ -712,8 +503,6 @@ theorem transfer_inter_eq_iff (i j k : ℕ) (hi : X i ⊆ Δ) (_hj : X j ⊆ Δ)
     have hkj : Yseq split X Δ k ⊆ Yseq split X Δ j := heq ▸ Set.inter_subset_right
     have hijk : Yseq split X Δ i ∩ Yseq split X Δ j ⊆ Yseq split X Δ k := heq ▸ subset_rfl
     exact Set.Subset.antisymm (h3.mpr hijk) (Set.subset_inter (h1.mpr hki) (h2.mpr hkj))
-
-/-! ### `Yseq` is non-empty (and a genuine `U`-neighbourhood) whenever `X n` is non-empty -/
 
 /-- `Yseq split X Δ n` is always either empty or a genuine `U`-neighbourhood: it is a finite union
 (`Fin n → Bool`) of `atomU` pieces, each of which is `∅` or `U.mem` by `atomU_invariant`. -/

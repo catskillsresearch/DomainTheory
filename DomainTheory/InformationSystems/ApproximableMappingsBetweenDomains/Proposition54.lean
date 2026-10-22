@@ -1,8 +1,3 @@
-/-ai
-Proposition 5.4(ii) states that the identity approximable mapping sends every element to itself.
-
-The numbered name theorem_54 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54.idMap_toElement

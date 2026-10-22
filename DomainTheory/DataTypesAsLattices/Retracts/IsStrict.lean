@@ -1,6 +1,3 @@
-/-ai
-An element a of Pω is strict when applying a to the empty set returns the empty set.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,8 +1,3 @@
-/-ai
-If X is a neighbourhood of D, then the set of strings obtained by prefixing the bit false to the strings of X is a neighbourhood of the lift of D.
-
-Lift membership is the right disjunct, witnessed by X, the given membership, and reflexivity of equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

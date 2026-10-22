@@ -1,8 +1,3 @@
-/-ai
-The four second components at depth n + 1, one for each pair of Boolean choices, reunite exactly to the second component at depth n.
-
-The invariant supplies the preconditions of the X split. Each pair of Y steps reunites on the second component, and the two resulting X-step second components reunite to the parent.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

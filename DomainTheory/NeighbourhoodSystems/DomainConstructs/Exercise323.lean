@@ -1,8 +1,3 @@
-/-ai
-Every approximable map into the one-point domain equals the named terminal map.
-
-The numbered name example_323 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise323.toUnit_unique

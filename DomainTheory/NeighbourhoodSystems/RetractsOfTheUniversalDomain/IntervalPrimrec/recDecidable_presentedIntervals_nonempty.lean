@@ -1,10 +1,3 @@
-/-ai
-Nonemptiness of the set presented by a rational-pair list code is recursively decidable.
-
-The zero-one characteristic is the primitive-recursive nonempty-presentation flag. That
-flag is at most one, so arithmetic supplies the zero-one bound, and the characterization
-of presented nonemptiness is the decision equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

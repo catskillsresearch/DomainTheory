@@ -1,8 +1,3 @@
-/-ai
-For a fixed function, the map sending a second function to the graph of their pointwise application is Scott continuous.
-
-The constant-graph lemma, whose body is substitution of application of the fixed function into application at the argument.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

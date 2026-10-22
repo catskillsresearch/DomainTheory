@@ -1,6 +1,3 @@
-/-ai
-Scott's Thue–Morse element t is the least fixed point of the operator sending x to 0 consed onto the merge of the negation of x with the tail of x.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

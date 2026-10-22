@@ -1,8 +1,3 @@
-/-ai
-Diagrammatic composition on the left with the identity map leaves an approximable map unchanged.
-
-The two sides agree on every element, because diagrammatic composition evaluates by applying the second map to the value of the first and the identity map evaluates as the identity.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

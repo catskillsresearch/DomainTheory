@@ -1,6 +1,3 @@
-/-ai
-The category of empty-free domains has a strict approximable map as each morphism. The identity is the identity approximable map, which is strict, and composition is composition of the underlying maps, which preserves strictness. The unit and associativity laws are the corresponding laws of approximable maps, carried across the subtype of strict maps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

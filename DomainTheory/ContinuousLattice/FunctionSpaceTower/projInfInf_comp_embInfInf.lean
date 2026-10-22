@@ -1,8 +1,3 @@
-/-ai
-The composite of the projection j_∞ with the embedding i_∞ is the identity Scott map on the inverse limit D_∞.
-
-Extensionality of Scott maps reduces the identity to an equality at an element x. The sequence of level embeddings of the components of x is monotone, because each embedded component lies below the next. The expansion of j_∞(i_∞(x)) as the supremum of the embeddings of the shifted components, together with the agreement of a monotone supremum over the natural numbers with its tail from index 1, rewrites the composite as the supremum of the embedded components. That supremum is x by the inverse-limit approximation.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

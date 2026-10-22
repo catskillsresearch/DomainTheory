@@ -1,6 +1,3 @@
-/-ai
-A retract subspace consists of a continuous section of D' into D that is a topological embedding, together with a continuous retraction of D onto D' that is a left inverse of the section.
-ai-/
 module
 
 

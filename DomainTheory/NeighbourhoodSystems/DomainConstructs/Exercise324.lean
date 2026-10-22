@@ -1,8 +1,3 @@
-/-ai
-The function space into a product is isomorphic, as a domain, to the product of the two function spaces.
-
-The numbered name example_324 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324.funProd_isomorphic

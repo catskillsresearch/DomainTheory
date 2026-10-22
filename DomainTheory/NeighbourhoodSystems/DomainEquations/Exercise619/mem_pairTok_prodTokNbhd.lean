@@ -1,8 +1,3 @@
-/-ai
-The pairing of two elements contains the product neighbourhood of X and Y if and only if the first element contains X and the second contains Y.
-
-If the pair contains that neighbourhood, the definition supplies neighbourhoods whose product neighbourhood equals it, and injectivity of product neighbourhoods identifies the components. Conversely, those two memberships are exactly the data of the pairing.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

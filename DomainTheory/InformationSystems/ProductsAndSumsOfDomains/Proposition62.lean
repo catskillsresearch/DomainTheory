@@ -1,8 +1,3 @@
-/-ai
-An approximable map h from C to the product of A and B that satisfies the two projection equations, first projection composed with h equal to f and second projection composed with h equal to g, equals the pairing of f and g. This is the uniqueness clause of Scott's Proposition 6.2.
-
-The numbered name theorem_62 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.pairMap_unique

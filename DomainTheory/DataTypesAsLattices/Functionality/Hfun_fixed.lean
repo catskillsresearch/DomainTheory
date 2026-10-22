@@ -1,8 +1,3 @@
-/-ai
-The operator HF fixes the raw least fixed point.
-
-This is the fixed-point half of the fixed-point theorem, applied to continuity of HF.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

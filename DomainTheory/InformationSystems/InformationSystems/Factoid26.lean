@@ -1,8 +1,3 @@
-/-ai
-The empty set of tokens is consistent.
-
-The numbered name theorem_26 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Factoid26.consistent_empty

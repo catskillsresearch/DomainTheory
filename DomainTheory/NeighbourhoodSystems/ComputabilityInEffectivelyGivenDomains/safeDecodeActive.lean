@@ -1,6 +1,3 @@
-/-ai
-The safe active decode of an index is the decoded expression when decoding succeeds and that expression denotes a nonempty set, and is sigma otherwise.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

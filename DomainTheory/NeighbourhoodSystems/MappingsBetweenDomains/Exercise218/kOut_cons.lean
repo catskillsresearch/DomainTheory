@@ -1,8 +1,3 @@
-/-ai
-The inverse output of a string that starts with two bits keeps the first bit and continues on the tail.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

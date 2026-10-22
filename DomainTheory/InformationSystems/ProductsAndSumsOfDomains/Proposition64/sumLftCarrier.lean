@@ -1,6 +1,3 @@
-/-ai
-The left carrier of a sum element z is the set of tokens of A whose left sum constructors lie in the carrier of z.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

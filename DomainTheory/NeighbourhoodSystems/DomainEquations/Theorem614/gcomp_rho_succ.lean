@@ -1,8 +1,3 @@
-/-ai
-The composite of a homomorphism from the colimit algebra with the next projection equals the structure map of the target, composed after the image under T of the previous composite, composed after the inverse of the colimit isomorphism.
-
-The next projection is replaced, by the key identity, with the structure isomorphism composed after the image of the current projection composed after the inverse. Associativity moves the structure isomorphism beside the homomorphism, the homomorphism square replaces that pair by the structure map of the target composed after the image of the homomorphism, and a further association together with functoriality of T reassembles the image of the composite with the projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

@@ -1,0 +1,3 @@
+The universe value V(a)(x) is a prefixpoint of the step y ↦ x ∪ a(y): x is contained in it, and a of it is contained in it.
+
+Equation (5.16) gives the first inclusion. For the second, any y that contains x and is closed under a also contains the universe value, because the universe value is the intersection of all such y. Monotonicity of application then carries a of the universe value into a(y), hence into y, and therefore into the intersection.

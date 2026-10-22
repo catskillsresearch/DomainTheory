@@ -1,8 +1,3 @@
-/-ai
-The empty string does not lie in the bit copy embBit b X.
-
-A membership witness equates the empty string with a word that begins with the bit, and simplification rejects that equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

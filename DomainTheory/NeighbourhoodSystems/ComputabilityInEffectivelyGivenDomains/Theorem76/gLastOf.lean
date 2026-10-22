@@ -1,6 +1,3 @@
-/-ai
-The last index of a chain is the starting index on the empty list, and on a cons it is the last index of the tail starting from the head.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

@@ -1,6 +1,3 @@
-/-ai
-An information system is all-consistent when every finite set of tokens is consistent.
-ai-/
 
 module
 

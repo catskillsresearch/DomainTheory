@@ -1,8 +1,3 @@
-/-ai
-If two left copies are equal, then the underlying sets are equal.
-
-Each inclusion is the subset characterization of j0 applied to one direction of the equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

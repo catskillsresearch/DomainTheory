@@ -1,0 +1,3 @@
+The intervals presented by an appended code are the union of the intervals presented by the two codes.
+
+A point lies in an interval from a pair in the appended decoding, and that pair lies in one of the two decodings. Conversely, a pair from either decoding lies in the appended decoding.

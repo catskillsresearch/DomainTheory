@@ -1,0 +1,3 @@
+Evaluation at a fixed element x is continuous as a map from the space of Scott-continuous maps from D to D', with the function-space topology, into D' with the Scott topology.
+
+The preimage of a Scott-open set is open in the function-space topology because it is a subbasic set of maps that send x into that open set.

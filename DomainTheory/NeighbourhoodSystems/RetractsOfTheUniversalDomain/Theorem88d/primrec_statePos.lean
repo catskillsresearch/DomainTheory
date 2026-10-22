@@ -1,8 +1,3 @@
-/-ai
-The positive-code projection of a packed atom state is primitive recursive.
-
-It is the left projection after one right projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

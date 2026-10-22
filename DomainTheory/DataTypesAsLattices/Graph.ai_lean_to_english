@@ -1,0 +1,1 @@
+This file gathers and re-exports the graph development of Scott's section 1: the basic vocabulary, membership in a graph and in an application, monotonicity of application on each side, the monotonicity law, Scott continuity of application, the three clauses and the combined statement of Theorem 1.2, the equality of abstraction with the graph, and the beta law.

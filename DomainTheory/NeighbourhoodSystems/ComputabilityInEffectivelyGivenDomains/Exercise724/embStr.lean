@@ -1,6 +1,3 @@
-/-ai
-The embedding of a finite bit-string into a list of natural numbers reads each bit numerically.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

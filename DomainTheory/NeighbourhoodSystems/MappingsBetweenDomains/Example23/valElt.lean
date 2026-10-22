@@ -1,6 +1,3 @@
-/-ai
-A parity reading selects an element of T: none selects bottom, some true selects true, and some false selects false.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

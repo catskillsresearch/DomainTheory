@@ -1,6 +1,3 @@
-/-ai
-Forgetting a depth token returns its underlying raw lambda token.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

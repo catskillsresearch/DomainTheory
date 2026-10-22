@@ -1,8 +1,3 @@
-/-ai
-The rational maximum code is primitive recursive.
-
-It selects, by the comparison code, the right component of its argument or the left component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

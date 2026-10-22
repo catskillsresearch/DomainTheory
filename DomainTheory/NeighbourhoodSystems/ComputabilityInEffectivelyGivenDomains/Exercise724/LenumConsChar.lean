@@ -1,6 +1,3 @@
-/-ai
-The consistency characteristic of two enumerated neighbourhoods is the arithmetic disjunction of the two prefix characteristics, the sum minus the product. It is a single arithmetic combinator with values in zero and one.
-ai-/
 
 module
 

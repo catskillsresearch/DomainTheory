@@ -1,8 +1,3 @@
-/-ai
-The formal union of a singleton token a with a finite set s is the insertion of a into s.
-
-A token of the formal union lies in the singleton, hence is a, or already lies in s. A token of the insertion is a, hence lies in the singleton side, or lies in s, hence lies in the other side.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

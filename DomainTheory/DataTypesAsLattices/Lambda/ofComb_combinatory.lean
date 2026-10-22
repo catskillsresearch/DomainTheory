@@ -1,8 +1,3 @@
-/-ai
-If every value of an environment is combinatory, then the interpretation of any combinatory term in that environment is combinatory.
-
-The proof is by induction on the combinator. A variable uses the hypothesis on the environment. Zero, successor, predecessor, conditional, K, and S are the corresponding combinatory constructors. An application is the application constructor applied to the two inductive results.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

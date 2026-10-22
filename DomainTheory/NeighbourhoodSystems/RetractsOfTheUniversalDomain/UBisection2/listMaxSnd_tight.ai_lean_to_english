@@ -1,0 +1,3 @@
+If a list of rational pairs is nonempty, nondegenerate, and bounded in the unit interval, then every rational strictly below the maximum second component is strictly below some point of the presented intervals.
+
+Every second component is positive, because it lies strictly above the first component and the first component is at least zero. Some pair attains the maximum second component. If the given rational lies below that pair's first component, the first component itself belongs to the presented intervals. Otherwise the average of the rational and the second component belongs to the pair's interval and lies strictly above the rational.

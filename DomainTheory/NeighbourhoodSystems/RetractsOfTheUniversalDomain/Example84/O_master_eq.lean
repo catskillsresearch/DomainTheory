@@ -1,8 +1,3 @@
-/-ai
-The master of the two-point system is the full two-point set.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

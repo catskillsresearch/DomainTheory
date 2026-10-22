@@ -1,8 +1,3 @@
-/-ai
-The junk flag of a state packed from three numbers a, b, and c is c.
-
-Unfolding the junk flag and the packing, the right component of the right component of the nested pair is c.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

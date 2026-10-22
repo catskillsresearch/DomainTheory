@@ -1,6 +1,3 @@
-/-ai
-An element of Pω is three-valued when it is the bottom element, the singleton of zero, or the top element.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,8 +1,3 @@
-/-ai
-The whole space of natural numbers is a neighbourhood of the natural-number system.
-
-It is the first disjunct of the neighbourhood predicate.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

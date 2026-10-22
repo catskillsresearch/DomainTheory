@@ -1,8 +1,3 @@
-/-ai
-The fuel step at a code depends on the previous function only through its values at the two children of the code.
-
-Rewriting the step and substituting the two agreed values gives the equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

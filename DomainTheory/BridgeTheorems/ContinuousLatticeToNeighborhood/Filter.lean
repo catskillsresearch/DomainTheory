@@ -1,6 +1,3 @@
-/-ai
-A filter of a complete lattice D is an element of the neighbourhood system whose neighbourhoods are the way-below neighbourhoods on D.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

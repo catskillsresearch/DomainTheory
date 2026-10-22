@@ -1,6 +1,3 @@
-/-ai
-The value bitAt n k is the remainder modulo 2 of the k-fold halving of n. It is the primitive-recursive proxy, with values in {0, 1}, for the k-th binary digit of n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

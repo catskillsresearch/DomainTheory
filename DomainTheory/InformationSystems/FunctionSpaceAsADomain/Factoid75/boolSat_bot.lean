@@ -1,8 +1,3 @@
-/-ai
-Every BOOL point satisfies the bottom token.
-
-The three points are checked separately, and each case holds immediately.
-ai-/
 
 module
 

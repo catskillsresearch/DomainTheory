@@ -1,8 +1,3 @@
-/-ai
-The sharp of an endomap a equals the composite of the embedding of the tree algebra of the universal domain, the inner sharp of a, and the projection back onto that tree algebra.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

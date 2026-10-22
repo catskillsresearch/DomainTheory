@@ -1,0 +1,3 @@
+Inserting an element a and then an element b into a finite set equals inserting b and then a. This choice-free commutativity is what permits folding insertion over a multiset.
+
+Extensionality is used. Membership is a three-way disjunction, and the two outer cases are exchanged while membership in the original set is left unchanged.

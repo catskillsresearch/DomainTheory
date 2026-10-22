@@ -1,8 +1,3 @@
-/-ai
-Inserting the tree bottom into a consistent finite set of tree tokens preserves consistency.
-
-Case on the consistency constructor. In the left-consistent case, the insert-bottom lemmas leave the atom projection and both pair projections unchanged, so the same data witness left consistency of the inserted set. In the right-consistent case, the same rewrites leave the empty atom projection and the two consistent pair projections unchanged.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,8 +1,3 @@
-/-ai
-Every smash-enumerated set is a neighbourhood of the smash product.
-
-If both factors are proper, their product is a proper smash neighbourhood. Otherwise the enumeration is the smash master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

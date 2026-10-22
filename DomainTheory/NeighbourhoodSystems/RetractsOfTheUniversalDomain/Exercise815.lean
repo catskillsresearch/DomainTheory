@@ -1,8 +1,3 @@
-/-ai
-If a neighbourhood system is effectively given, then some effectively given neighbourhood system on lists of natural numbers has elements order-isomorphic to its subsystems.
-
-The numbered name example_815 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise815.subsystem_isEffectivelyGiven_of_isEffectivelyGiven

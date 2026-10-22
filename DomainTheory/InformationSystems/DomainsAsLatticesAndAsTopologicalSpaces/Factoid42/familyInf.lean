@@ -1,6 +1,3 @@
-/-ai
-Factoid 4.2 defines the meet of a nonempty family of elements to be the element whose carrier is the set of tokens belonging to every member. A finite subset of that intersection is contained in any chosen member, hence consistent. It is closed under entailment because each member is closed and contains the finite set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41

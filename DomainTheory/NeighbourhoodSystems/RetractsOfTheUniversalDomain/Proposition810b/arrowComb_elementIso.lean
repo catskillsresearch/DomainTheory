@@ -1,6 +1,3 @@
-/-ai
-For finitary projections a and b, the elements of the function space from the fixed neighbourhood of a to the fixed neighbourhood of b are order-isomorphic to the elements of the universal domain fixed by the arrow combinator of a and b. The isomorphism is the element isomorphism of the arrow projection pair, using that the extraction after the injection is the identity and that the injection after the extraction is the arrow combinator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

@@ -1,8 +1,3 @@
-/-ai
-The master token set of Example 1.5 is nonempty.
-
-The token 0 belongs to the set of all four tokens.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

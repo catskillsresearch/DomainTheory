@@ -1,8 +1,3 @@
-/-ai
-The length of the doubled encoding of a string is twice the length of the string.
-
-Induct on the string. The empty case simplifies. In the cons case, simplification uses the inductive hypothesis and the arithmetic is the ring law.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

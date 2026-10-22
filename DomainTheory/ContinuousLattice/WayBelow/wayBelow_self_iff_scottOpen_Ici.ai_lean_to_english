@@ -1,0 +1,3 @@
+Scott 1972, Proposition 2.2(vi). An element is way below itself if and only if its principal upset is Scott-open.
+
+If the element is way below itself, a witnessing Scott-open neighbourhood contained in the principal upset equals that upset: the upset is contained in the neighbourhood because the neighbourhood is an upper set and contains the element. Conversely, a Scott-open principal upset is a neighbourhood of the element contained in itself.

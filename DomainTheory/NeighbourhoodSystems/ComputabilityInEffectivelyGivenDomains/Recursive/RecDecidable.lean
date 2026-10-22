@@ -1,6 +1,3 @@
-/-ai
-A unary predicate on the naturals is recursively decidable when some primitive-recursive function returns one exactly on the numbers that satisfy the predicate.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

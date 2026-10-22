@@ -1,0 +1,23 @@
+The code of a singleton list is a primitive recursive function of its entry.
+
+It equals the successor of the pairing of that entry with zero, because the code of the empty list is zero, and pairing with a constant followed by successor is primitive recursive.
+
+An element of the reconstructed subsystem domain is computable for its presentation if and only if the set of presentation indices whose neighbourhoods lie in the corresponding subsystem is recursively enumerable.
+
+Membership in the enumerated neighbourhood of a code is equivalent to every decoded index lying in that set. In one direction the computable predicate is transported along this equivalence and reindexed by the primitive recursive singleton code, using that decoding a singleton code recovers its entry. In the other direction the recursively enumerable predicate of universal membership over decoded lists is transported back along the same equivalence.
+
+Such an element is computable if and only if that index set is the range of a primitive recursive function.
+
+Rewrite the claim by the previous equivalence. If the index set is recursively enumerable, the master index belongs to it, because the neighbourhood named by the master index is the master neighbourhood of the subsystem, and a recursively enumerable predicate containing a known point is the range of a primitive recursive function. Conversely, the range of a primitive recursive function is recursively enumerable and agrees with the index set by the stated specification.
+
+Folding the universal intersection, from an index that already names a neighbourhood of the subsystem and along a list of such indices, still names a neighbourhood of the subsystem.
+
+The empty list leaves the accumulator. For a longer list, the dichotomy of the universal intersection either returns the master neighbourhood, which belongs to the subsystem, or returns the intersection of the two neighbourhoods. In that case the witnessing finite systems are appended, the element is closed under intersection of neighbourhoods, and the partial meet of the appended list is the intersection of the two partial meets. The inductive hypothesis then continues along the tail.
+
+Every value of the list-indexed enumeration is a neighbourhood of the subsystem.
+
+After rewriting the enumeration as the universal neighbourhood of the fold of the universal intersection along the image of the decoded list, the fold lemma applies. The master index names the master neighbourhood, and each image entry belongs to the subsystem because the range specification supplies the index itself as a witness.
+
+If an element of the reconstructed domain of the universal domain is computable, the corresponding subsystem is effectively given.
+
+The computability criterion supplies a primitive recursive enumerator of its index set, and the term-algebra presentation built from that enumerator is a computable presentation of the subsystem.

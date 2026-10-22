@@ -1,6 +1,3 @@
-/-ai
-Encoding an element of a countably algebraic lattice is the set of indices whose compact element lies below that element.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

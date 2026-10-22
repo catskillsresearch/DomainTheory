@@ -1,6 +1,3 @@
-/-ai
-A set of natural numbers is a neighbourhood of the final-segment system when it equals the tail of some index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

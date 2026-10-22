@@ -1,0 +1,1 @@
+myFirstBit m N is the least index strictly below N at which m has a set bit, or the sentinel N if no such index exists. It recurs on N: a witness already found is kept, and otherwise bit i is tested and becomes the witness if set, or the new sentinel if not.

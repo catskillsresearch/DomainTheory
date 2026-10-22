@@ -1,6 +1,3 @@
-/-ai
-The consistency characteristic of a paired index is the boolean-to-natural encoding of the consistency decision on its two unpaired components.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

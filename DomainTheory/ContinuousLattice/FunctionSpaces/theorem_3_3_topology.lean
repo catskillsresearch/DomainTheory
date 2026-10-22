@@ -1,8 +1,3 @@
-/-ai
-If D and D' are continuous lattices, the Scott topology on the space of Scott maps from D to D' equals the topology of pointwise convergence.
-
-The function space is a continuous lattice. Each pointwise subbasic set is Scott-open, so the pointwise topology is coarser than the Scott topology. Conversely, a Scott-open set containing a map g contains the principal upper set of some map way below g, and that map lies below a finite join of step maps whose second components are way below g at the first components. The finite intersection of the pointwise subbasic sets of maps way above those second components is a pointwise-open neighborhood of g contained in the Scott-open set, because a map in the intersection lies above each step map, hence above their finite join and above the chosen map.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

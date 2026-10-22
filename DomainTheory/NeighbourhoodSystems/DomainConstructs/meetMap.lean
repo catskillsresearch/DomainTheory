@@ -1,6 +1,3 @@
-/-ai
-The pointwise meet of a nonempty family of graphs of approximable maps relates neighbourhoods X and Y when the pair lies in every member of the family. The domain, codomain, and master laws are inherited from a member of the family. Right intersection and monotonicity are the corresponding laws of each member.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222

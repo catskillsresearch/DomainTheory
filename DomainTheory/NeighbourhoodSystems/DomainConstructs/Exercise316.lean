@@ -1,8 +1,3 @@
-/-ai
-The infinite iterate of a domain is isomorphic to the product of that domain with the iterate.
-
-The numbered name example_316 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316.iter_isomorphic

@@ -1,8 +1,3 @@
-/-ai
-No left token belongs to the carrier of the bottom element of a separated sum.
-
-Such a membership would be an entailment of the left token by the singleton of the sum bottom, and that entailment requires the left part of the singleton to be nonempty, whereas the left part of the singleton of the sum bottom is empty.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

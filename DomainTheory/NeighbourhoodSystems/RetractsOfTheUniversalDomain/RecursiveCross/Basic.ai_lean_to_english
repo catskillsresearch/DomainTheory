@@ -1,0 +1,41 @@
+The cross-combine of two coded lists, and the flat-map of a list-valued operation on codes, are developed through step equations and membership characterizations.
+
+The cons step on a paired element, accumulator, and parameter equals one more than the pair of the element and the accumulator.
+
+Unfolding the cons step and cancelling the pairing gives the equation.
+
+A natural belongs to the list decoded from the left fold that conses the elements of a list onto an accumulator if and only if it belongs to that list or to the list decoded from the accumulator.
+
+The proof is by induction on the list. The empty list is immediate. At a cons cell, the fold equation and the cons-step equation replace the accumulator by one more than the pair of the head and the previous accumulator. The inductive hypothesis and the successor rule for decoding split membership into the tail, the head, or the previous accumulator, and the two directions rearrange those three cases.
+
+A natural belongs to the list decoded from the append of two codes if and only if it belongs to the list decoded from the first code or the list decoded from the second.
+
+Unfolding append and rewriting the fold by its list equation, the auxiliary membership lemma applies to the list decoded from the first code with the second code as accumulator.
+
+The inner step of a binary operation, on a paired element, accumulator, and fixed argument, equals one more than the pair of the operation on that argument and the element with the accumulator.
+
+Unfolding the inner step and cancelling the pairing gives the equation.
+
+A natural belongs to the list decoded from the left fold of the inner step at a fixed first argument if and only if it equals the operation on that argument and some element of the list, or it belongs to the list decoded from the accumulator.
+
+The proof is by induction on the list. The empty list is immediate. At a cons cell, the fold equation and the inner-step equation replace the accumulator, the inductive hypothesis applies, and the successor rule for decoding splits membership. The two directions rearrange the witness in the tail, the head, and the previous accumulator.
+
+A natural belongs to the list decoded from the inner cross of a binary operation at a first argument and a list code if and only if it equals the operation on that argument and some element of the decoded list.
+
+Unfolding the inner cross and rewriting the fold by its list equation, the auxiliary membership lemma at the empty accumulator applies, and the empty decoded list contributes no element.
+
+The outer step of a binary operation, on a paired element, accumulator, and list code, equals the append of the inner cross at that element and code with the accumulator.
+
+Unfolding the outer step and cancelling the pairing gives the equation.
+
+A natural belongs to the list decoded from the left fold of the outer step if and only if it equals the operation on some element of the list and some element of the decoded second code, or it belongs to the list decoded from the accumulator.
+
+The proof is by induction on the list. The empty list is immediate. At a cons cell, the fold equation and the outer-step equation replace the accumulator by an append of an inner cross. The inductive hypothesis, membership for append, and membership for the inner cross split the cases, and the two directions rearrange the witness in the tail, at the head, and in the previous accumulator.
+
+The flat-map step of a list-valued operation, on a paired element, accumulator, and fixed argument, equals the append of the list coded by the operation on that argument and the element with the accumulator.
+
+Unfolding the flat-map step and cancelling the pairing gives the equation.
+
+A natural belongs to the list decoded from the left fold of the flat-map step at a fixed first argument if and only if it belongs to the list decoded from the operation on that argument and some element of the list, or it belongs to the list decoded from the accumulator.
+
+The proof is by induction on the list. The empty list is immediate. At a cons cell, the fold equation and the flat-map-step equation replace the accumulator by an append. The inductive hypothesis and membership for append split the cases, and the two directions rearrange the witness in the tail, in the image of the head, and in the previous accumulator.

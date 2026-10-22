@@ -1,26 +1,37 @@
 # Theorem 2.4
 
-**THEOREM 2.4** (The combinator theorem). *The LAMBDA-definable functions* can be generated (*from variables*) by iterated application with the aid of these six constants:
+## Human-English
 
-$$\mathbf{0} = 0$$
+@import "1976_Theorem_2_4.english" {code_block=false}
 
-$$\mathbf{suc} = \lambda x.\, x + 1$$
+## AI: Human-English to AI-Lean
 
-$$\mathbf{pred} = \lambda x.\, x - 1$$
+**DataTypesAsLattices/Lambda/theorem_2_4.lean**
 
-$$\mathbf{cond} = \lambda x \lambda y \lambda z.\, z \supset x, y$$
+@import "theorem_2_4.lean"
 
-$$\mathbf{K} = \lambda x \lambda y.\, x$$
+**DataTypesAsLattices/Lambda/theorem_2_4_complete.lean**
 
-$$\mathbf{S} = \lambda u \lambda v \lambda x.\, u(x)(v(x))$$
+@import "theorem_2_4_complete.lean"
 
-But the result that makes all this model building and combinatory logic mathematically interesting concerns the so-called *paradoxical combinator* defined by the equation:
+**DataTypesAsLattices/Lambda/theorem_2_4_closed.lean**
 
-$$(2.8) \quad \mathbf{Y} = \lambda u.\, (\lambda x.\, u(x(x)))(\lambda x.\, u(x(x))).$$
+@import "theorem_2_4_closed.lean"
 
-**Lean 4**
+**DataTypesAsLattices/Lambda/Ycomb_combinatory.lean**
 
-- [DataTypesAsLattices/Lambda/theorem_2_4.lean](theorem_2_4.lean)
-- [DataTypesAsLattices/Lambda/theorem_2_4_complete.lean](theorem_2_4_complete.lean)
-- [DataTypesAsLattices/Lambda/theorem_2_4_closed.lean](theorem_2_4_closed.lean)
-- [DataTypesAsLattices/Lambda/Ycomb_combinatory.lean](Ycomb_combinatory.lean)
+@import "Ycomb_combinatory.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_2_4.ai_lean_to_english" {code_block=false}
+
+@import "theorem_2_4_complete.ai_lean_to_english" {code_block=false}
+
+@import "theorem_2_4_closed.ai_lean_to_english" {code_block=false}
+
+@import "Ycomb_combinatory.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_2_4.ai_english_concordance" {code_block=false}

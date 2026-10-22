@@ -1,8 +1,3 @@
-/-ai
-If an operator on self-maps sends finitary projections to finitary projections, and a finitary projection lies above its image under the operator, then the fixed neighbourhood system of the operator's fixed point is a literal subsystem of the fixed neighbourhood system of that projection.
-
-Rewrite the inequality so that the right-hand side is the map read from the filter of the projection, and transport it across the order equivalence of the function space to an inequality of elements. Minimality of the fixed element puts that element below the filter. Monotonicity of reading maps, after rewriting the projection as the map of its own filter, puts the fixed point below the projection. The order criterion for finitary projections converts that inequality into the subsystem relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

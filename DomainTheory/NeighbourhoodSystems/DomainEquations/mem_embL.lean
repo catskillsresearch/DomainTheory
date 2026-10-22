@@ -1,8 +1,3 @@
-/-ai
-A tagged point lies in the left embedding of a set P exactly when its boolean list begins with true and the point with the remaining list lies in P.
-
-The equivalence is the definition of the left embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

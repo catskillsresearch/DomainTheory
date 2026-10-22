@@ -1,6 +1,3 @@
-/-ai
-The iterates of an endomap f of Pω, starting from the bottom element, send zero to the bottom element and send the successor of n to f applied to the n-th iterate.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph

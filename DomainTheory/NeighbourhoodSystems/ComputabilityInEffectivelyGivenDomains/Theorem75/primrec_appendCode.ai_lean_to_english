@@ -1,0 +1,3 @@
+The function sending a paired code to the append code of its two components is primitive recursive.
+
+The append step is primitive recursive as addition of a pairing of the left projection with the left of the right projection and the constant 1. The append code is the fold of that step from the constant 0, and the fold agrees with the paired append code.

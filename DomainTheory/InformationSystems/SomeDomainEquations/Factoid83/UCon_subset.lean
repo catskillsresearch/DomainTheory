@@ -1,8 +1,3 @@
-/-ai
-A subset of a consistent finite set of U-tokens is consistent.
-
-A V-entailment of top from the forget-image of the subset would, by monotonicity of V-entailment along the inclusion of forget-images, be a V-entailment of top from the larger forget-image, contradicting consistency of the larger set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

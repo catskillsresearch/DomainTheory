@@ -1,8 +1,3 @@
-/-ai
-The basepoint is never a cons of a natural number with a sequence.
-
-Case analysis on the sequence, simplified by the definitions of the basepoint and of cons, gives the inequality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

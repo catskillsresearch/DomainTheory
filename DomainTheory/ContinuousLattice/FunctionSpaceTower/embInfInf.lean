@@ -1,6 +1,3 @@
-/-ai
-The embedding i_∞ from the inverse limit D_∞ into the function space [D_∞ → D_∞] is the supremum of the Scott maps iInfTerm n. On an element x it is the supremum over n of i_{n∞} composed with the (n+1)-st component of x and then with j_{∞n}. The supremum is taken in the function space, where suprema of Scott maps are pointwise, so the resulting map is Scott-continuous.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

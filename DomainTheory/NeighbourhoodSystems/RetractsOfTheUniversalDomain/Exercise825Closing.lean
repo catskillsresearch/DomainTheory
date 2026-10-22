@@ -1,8 +1,3 @@
-/-ai
-An isomorphism of a domain D with the function space into a domain V, together with an isomorphism of the product of V with itself with V, yields an isomorphism of D with its own function space.
-
-The numbered name example_825_closing is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Closing.funSpace_self_isomorphic

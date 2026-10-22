@@ -1,0 +1,3 @@
+Each element of the left-hand model of Peano's axioms is related by the graph to exactly one element of the right-hand model.
+
+The induction principle of the left-hand model is applied to the set of elements that have a unique partner. Zero is related to the right-hand zero, and inversion at zero excludes every other partner. If an element has unique partner n, its successor is related to the successor of n, and inversion at a successor says every partner of the successor arises from a partner of the element, so the uniqueness hypothesis forces that partner to be n.

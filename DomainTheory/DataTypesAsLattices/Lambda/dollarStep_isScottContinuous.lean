@@ -1,8 +1,3 @@
-/-ai
-The dollar step is Scott continuous.
-
-It is the graph of a graph of the body. The body is Scott continuous in the step, so the inner graph is Scott continuous in the step, and therefore the outer graph is as well.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

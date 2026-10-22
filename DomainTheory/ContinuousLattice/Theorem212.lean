@@ -1,8 +1,3 @@
-/-ai
-Scott 1972, Theorem 2.12. A T₀-space is injective if and only if it is homeomorphic to a continuous lattice carrying its Scott topology.
-
-The numbered name theorem_212 is that statement.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212.theorem_2_12

@@ -1,8 +1,3 @@
-/-ai
-Applying safePredC to the numeral 0 yields the numeral 0.
-
-Unfold safePredC and apply the beta law theorem_2_2_beta. Simplifying the interpretation and the environment update, using eq_2_7_zero, gives the numeral 0.
-ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,8 +1,3 @@
-/-ai
-A sum element reaches neither copy if and only if it is the bottom element of the sum.
-
-In the forward direction, extensionality of elements and the membership rule for the bottom reduce the claim to the two directions of that rule: every neighbourhood of the element is the master neighbourhood, by the neither hypothesis, and the master neighbourhood belongs to the element. In the reverse direction, the element is the bottom, so membership of a neighbourhood rewrites as equality with the master neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

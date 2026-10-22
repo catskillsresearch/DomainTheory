@@ -1,8 +1,3 @@
-/-ai
-If a set is nonempty, then its tagged copy by any index is nonempty.
-
-An element of the set yields the tagged token of the index and of that element, which belongs to the copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

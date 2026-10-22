@@ -1,8 +1,3 @@
-/-ai
-The intersection of two enumerated infinite-iterate neighbourhoods equals a third exactly when the fiber neighbourhoods agree at every coordinate below the sum of the three codes.
-
-Applying the fiber operation to the equality gives one direction. Conversely the two sides have the same fibers: below the bound by the hypothesis, and beyond it because each fiber index is the master index, so both sides equal the master neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

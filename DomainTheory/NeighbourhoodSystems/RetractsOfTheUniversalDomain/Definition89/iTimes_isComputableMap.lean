@@ -1,8 +1,3 @@
-/-ai
-The product embedding is a computable map from the fixed presentation of the product to the presentation of the universal domain.
-
-This computability is the corresponding component of the projection pair chosen for the product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

@@ -1,8 +1,3 @@
-/-ai
-If a sum element z contains a left token, the image of its left copy under the left injection equals z.
-
-Both inclusions of the element order are checked. A token in the image is witnessed by a set related by the left injection. The sum bottom belongs to every element by factoid 3.2. A left token is closed in the left copy because the injection entailment, rewritten along the left projection of its singleton, is an entailment in A. A right token is impossible because the right projection of its singleton is a singleton, while the injection requires that projection to be empty. Conversely, the sum bottom is related by the empty set, which is consistent, has empty right projection as the singleton of the sum bottom, and is entailed from the empty set. A left token of z is related by its singleton: that singleton lies in the left copy, the right projection of the singleton is empty, and proposition 2.3(iii) gives the entailment of the left projection. A right token of z is impossible once a left token is present.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

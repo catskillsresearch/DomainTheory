@@ -1,8 +1,3 @@
-/-ai
-If one approximable map lies below another, then its value at any element lies below the other's value at that element.
-
-A neighbourhood of the smaller value is related by some neighbourhood of the argument, and the same relation belongs to the larger map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

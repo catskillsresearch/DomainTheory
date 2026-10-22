@@ -1,8 +1,3 @@
-/-ai
-A pair of sets belongs to the graph of an approximable map if and only if the map relates the first component to the second.
-
-The two sides are the same by the definition of the graph.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222

@@ -1,8 +1,3 @@
-/-ai
-A word belongs to the accepted language whenever a path on that word runs from a start state to an accept state.
-
-Rewrite acceptance as the existence of such a path, and supply the given start state, accept state, and path.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

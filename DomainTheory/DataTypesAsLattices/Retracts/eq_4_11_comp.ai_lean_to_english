@@ -1,0 +1,3 @@
+The composition of the function space from a to b after the function space from a' to b' equals the function space from a' after a to b after b'. This is the composite form of Scott's equation (4.11).
+
+Graph extensionality reduces the equality to values. The application law writes the left-hand value as a nested composition, the inner application is rewritten by the same law, and a second graph extensionality matches the two associations by the application law for composition.

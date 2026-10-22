@@ -1,8 +1,3 @@
-/-ai
-An order isomorphism of element types, viewed as an approximable map, composed with the map of its inverse, is the identity of the target neighbourhood system.
-
-Extensionality on elements rewrites the composite, the two maps of the isomorphism, and the identity, and uses that applying the isomorphism after its inverse is the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

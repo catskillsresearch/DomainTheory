@@ -1,8 +1,3 @@
-/-ai
-The denotation of the bracket abstraction of an open term, applied to any element, equals the denotation of the term at that element. Thus every lambda-abstraction is denoted by a variable-free expression built from I, K, S, and the constants of the term, using only application.
-
-The numbered name example_508 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise508.bracket_spec

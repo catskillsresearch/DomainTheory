@@ -1,8 +1,3 @@
-/-ai
-The representing closure is monotone.
-
-If one set of indices is contained in another and a compact element lies below the supremum of the compact elements indexed by the smaller set, each of those compact elements lies below the supremum indexed by the larger set, so the index lies in the representing closure of the larger set.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

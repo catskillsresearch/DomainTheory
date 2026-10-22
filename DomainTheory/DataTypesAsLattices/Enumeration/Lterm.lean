@@ -1,6 +1,3 @@
-/-ai
-The term denoting L is the abstraction of a variable applied to the numeral one, with a further argument equal to the application of that same variable to the numeral two.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,8 +1,3 @@
-/-ai
-Any two models of Peano's axioms admit a bijection of their underlying types that sends zero to zero and commutes with the successor.
-
-The numbered name theorem_46 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem46.peano_models_isomorphic

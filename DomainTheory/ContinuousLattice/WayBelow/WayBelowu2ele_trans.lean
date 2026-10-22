@@ -1,8 +1,3 @@
-/-ai
-Scott 1972, Proposition 2.2(iv). If x lies below y and y is way below z, then x is way below z.
-
-A Scott-open neighbourhood of z contained in the principal upset of y is contained in the principal upset of x, because a point above y is above x.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

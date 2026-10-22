@@ -1,6 +1,3 @@
-/-ai
-The code tagOfBits of a bound and a value is tagCode of the bit list of that bound against itself, at the value. It therefore codes tag of the decoded bit list at the value, and the construction is primitive recursive in the pair of the bound and the value.
-ai-/
 
 module
 

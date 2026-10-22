@@ -1,6 +1,3 @@
-/-ai
-The step set of an input and an output is the set of approximable maps that relate that input to that output.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

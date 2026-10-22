@@ -1,0 +1,3 @@
+Occupancy test of (5.13). If the left square component of u is inhabited and the right component is empty, applying the boxed sum of a and b to u yields the square pair of the shifted application of a to the left component with the empty set.
+
+A member of the left component makes its occupancy tag the singleton zero. The right tag is empty, the union is that singleton, and the double conditional of the zero tag selects the left branch.

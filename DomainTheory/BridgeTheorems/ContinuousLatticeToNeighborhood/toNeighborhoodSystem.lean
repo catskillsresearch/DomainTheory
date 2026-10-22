@@ -1,6 +1,3 @@
-/-ai
-The neighbourhood system on a complete lattice D consists of all way-below neighbourhoods. Its master neighbourhood is the whole carrier, which contains bottom and equals the way-below neighbourhood of bottom. The intersection of the neighbourhoods of a and of b is the neighbourhood of their join, and every neighbourhood is contained in the master neighbourhood.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

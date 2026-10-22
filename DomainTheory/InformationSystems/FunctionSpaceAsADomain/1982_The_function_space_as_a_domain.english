@@ -1,0 +1,9 @@
+Functions or mappings between domains are of basic importance for our theory, since it is through them that we most easily transform data and relate the structures into which the elements defined by the data objects enter. There are many possible functions, and large groups of them can be treated in a uniform manner. For instance, if the source and target domains match properly, any pair of functions can be composed—composition is an operation on functions of general significance. Now, if in the theory we could combine functions into domains themselves, then an operation like composition might become a mapping of the theory. Indeed, this is exactly what happens: suitably construed, composition is an approximable mapping of two arguments. Of course, for each configuration of linked source and target domains, there is a separate composition operation.
+
+In order to make approximable mappings elements of a suitable domain, we have to discover first what their appropriate data objects are. In Section 5 this was hinted at already. To determine an approximable mapping $f : \mathbf{A} \to \mathbf{B}$, we have to say which pairs $(u, v)$ with $u \in D_{\mathbf{A}}$ and $v \in D_{\mathbf{B}}$ stand in the mapping relation $u\ f\ v$. One such pair gives a certain (finite) amount of information about the possible functions that contain it, and an approximable mapping is
+completely determined by such pairs. Therefore, if there are appropriate notions of consistency and entailment for these pairs, we will be able to form a domain having functions as elements. Let us try out a formal definition first, and then look to an explanation of how it works.
+
+- [Definition 7.1](1982_Definition_7_1.md)
+- [Theorem 7.2](Theorem72/1982_Theorem_7_2.md)
+- [Theorem 7.3](1982_Theorem_7_3.md)
+- [Proposition 7.4](Proposition74/1982_Proposition_7_4.md)

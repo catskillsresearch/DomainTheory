@@ -1,8 +1,3 @@
-/-ai
-The concrete split of V against U satisfies the split specification on U.
-
-It is the general bisection-split specification applied to V's presentation and computable difference, U's bisection, and the standing closure hypotheses, using that every U-neighbourhood is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

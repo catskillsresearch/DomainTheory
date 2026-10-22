@@ -1,6 +1,3 @@
-/-ai
-The binary join of two Scott maps is their pointwise join. The pointwise join preserves directed suprema, so the result is a Scott map.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

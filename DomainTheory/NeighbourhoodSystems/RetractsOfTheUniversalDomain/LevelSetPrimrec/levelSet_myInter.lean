@@ -1,11 +1,3 @@
-/-ai
-The intersection of two level sets is the level set, at the maximum of the two levels,
-of the bitwise conjunction of the two masks upsampled to that level.
-
-Each factor is rewritten by preservation of the level set under upsampling to the
-corresponding side of the maximum. The same-level intersection formula and the
-correctness of the iterative bitwise conjunction give the result.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

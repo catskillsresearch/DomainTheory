@@ -1,8 +1,3 @@
-/-ai
-Proposition 3.4(i) of Scott (1981, PRG-19) states that the second projection composed with the pairing of approximable maps f and g equals g.
-
-The maps agree on element maps. Composition, the element map of a pairing, and the element map of the second projection reduce the claim to the second component of a pairing.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

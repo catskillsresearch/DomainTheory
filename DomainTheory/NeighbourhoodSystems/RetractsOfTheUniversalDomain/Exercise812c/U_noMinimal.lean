@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood system U is atomless.
-
-The existing splitting of a neighbourhood of U supplies two neighbourhoods that are disjoint and union to the original set. Each piece is nonempty because membership in U includes nonemptiness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

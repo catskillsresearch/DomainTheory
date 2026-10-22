@@ -1,0 +1,3 @@
+For bits ε and δ and elements x and y of C, merging the pair of ε consed onto x and δ consed onto y equals ε consed onto δ consed onto the merge of the pair (x, y).
+
+The approximable map given by merge after the pairing of cons ε on the first projection with cons δ on the second projection equals cons ε after cons δ after merge. Extension to pairs of finite shape elements reduces the two sides by composition, pairing, the projections, the cons clause on shape elements, the pair clause of merge, and the cons-cons clause of the interleaving value. Evaluating that map identity at the pair (x, y) and simplifying the projections gives the element equation.

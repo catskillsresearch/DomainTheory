@@ -1,8 +1,3 @@
-/-ai
-At one common level, the intersection of two level sets is the level set of the bitwise conjunction of the masks.
-
-Membership in the intersection is the conjunction of the two bit tests, which is the bit test of the bitwise conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

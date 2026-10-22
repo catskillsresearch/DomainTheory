@@ -1,8 +1,3 @@
-/-ai
-Unfolding the fold of a finite set of sum tokens returns that set.
-
-By extensionality, a sum token in the composite is the unfold of a tree token that is the fold of some member, and unfolding after folding restores that member. Conversely, the fold of a member unfolds back to the member, so the member lies in the composite.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,8 +1,3 @@
-/-ai
-The infinite iterate of an effectively given neighbourhood system is effectively given.
-
-A computable presentation of the system determines the computable presentation of its infinite iterate.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

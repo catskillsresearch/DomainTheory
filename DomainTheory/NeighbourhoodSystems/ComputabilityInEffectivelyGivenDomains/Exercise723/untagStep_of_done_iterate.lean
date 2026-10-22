@@ -1,8 +1,3 @@
-/-ai
-Once the done flag is one, every iterate of the untagging transition fixes the state.
-
-The proof is induction on the number of iterations. Zero iterations are reflexive. A successor iterate rewrites by the inductive hypothesis and the one-step equation for a done state.
-ai-/
 
 module
 

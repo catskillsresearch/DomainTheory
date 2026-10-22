@@ -1,8 +1,3 @@
-/-ai
-Theorem 5.1, tuple case (Scott 1981, PRG-19), states that the pairing of two approximable maps sends an element to the pair of their values at that element.
-
-This is the pairing law on elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

@@ -1,8 +1,3 @@
-/-ai
-Every member of a family A is contained in the least upper bound of the iterates of f above the union of A.
-
-An element of such a member lies in the zero iterate, because that member is one of the sets being united.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

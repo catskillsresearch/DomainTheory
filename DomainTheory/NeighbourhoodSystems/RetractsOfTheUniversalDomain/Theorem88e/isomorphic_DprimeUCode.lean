@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood system D is isomorphic, as a domain, to the code-driven subsystem D''.
-
-The order isomorphism between their elements is the witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

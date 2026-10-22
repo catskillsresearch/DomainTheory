@@ -1,8 +1,3 @@
-/-ai
-Uncurrying the pairing operator recovers the uncurried pairing map.
-
-This is the definition of the operator as a currying, together with the identity that uncurrying a currying returns the original map.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

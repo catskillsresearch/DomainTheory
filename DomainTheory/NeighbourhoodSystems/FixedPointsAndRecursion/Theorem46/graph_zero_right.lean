@@ -1,8 +1,3 @@
-/-ai
-If zero of the left-hand model is related by the graph to k, then k is zero of the right-hand model.
-
-The left-hand zero is generalized to a variable and the generating relation is split into cases. The base constructor yields the right-hand zero. The step constructor would make zero a successor, which is excluded.
-ai-/
 module
 
 public import Mathlib.Tactic

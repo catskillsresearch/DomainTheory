@@ -1,8 +1,3 @@
-/-ai
-If an approximable endomap sends an element below itself, then the least fixed point of the map lies below that element.
-
-Every neighbourhood of the least fixed point is reached by a chain from the master, and every neighbourhood on such a chain belongs to the given element. At length zero the related neighbourhood is the master, which belongs to the element. At a successor the intermediate neighbourhood belongs to the element by the inductive hypothesis, and the last step places the target in the image of the element, hence in the element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-The atom-pair code state is primitive recursive.
-
-It is primitive recursion of the primitive-recursive base along the primitive-recursive step, and that recursion equals the state.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

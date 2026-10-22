@@ -1,8 +1,3 @@
-/-ai
-A product of injective spaces is injective.
-
-This is the preservation of injectivity by products.
-ai-/
 module
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski

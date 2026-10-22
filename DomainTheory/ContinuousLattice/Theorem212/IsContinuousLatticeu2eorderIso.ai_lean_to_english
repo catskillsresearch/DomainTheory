@@ -1,0 +1,3 @@
+Continuous-lattice structure transfers across an order isomorphism: if the codomain is a continuous lattice, so is the domain.
+
+Every element way below a given element lies below it. If an element b lies above every element way below y, the order isomorphism reduces y ≤ b to the corresponding inequality of images. Continuity of the codomain says the image of y lies below the image of b once every element way below the image of y does. The inverse image of such an element is way below y, by preservation of way-below under the inverse isomorphism, hence lies below b, and monotonicity of the isomorphism returns the desired inequality.

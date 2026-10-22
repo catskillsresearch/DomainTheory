@@ -1,8 +1,3 @@
-/-ai
-For fixed H and e, the map sending an environment t to the predecessor clause hPred H e t is Scott continuous.
-
-The ternary continuity theorem applies to the three continuity lemmas for the conditional set. The test is application of the tag combinator composed with application of the constant value of H at the payload of e, which is Scott continuous in t. The zero branch is the left injection of the predecessor of the untagged payload of that same application. The positive branch is the constant bottom.
-ai-/
 
 module
 

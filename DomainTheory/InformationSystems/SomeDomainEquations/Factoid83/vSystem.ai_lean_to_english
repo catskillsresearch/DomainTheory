@@ -1,0 +1,1 @@
+Scott's information system V takes every finite set of tokens to be consistent. Its bottom token is the bottom of V, its consistency predicate is VCon, and its entailment is VEnt. The consistency obligations hold outright. The bottom token is entailed, a member of a finite set is entailed by that set, and entailment is transitive.

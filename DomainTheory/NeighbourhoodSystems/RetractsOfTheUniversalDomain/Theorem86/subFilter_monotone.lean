@@ -1,8 +1,3 @@
-/-ai
-The filter transport of sub is a monotone operation on the function space.
-
-Monotonicity is the inequality of the filter transport under an inequality of elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

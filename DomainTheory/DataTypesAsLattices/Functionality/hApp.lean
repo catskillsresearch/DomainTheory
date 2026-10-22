@@ -1,6 +1,3 @@
-/-ai
-The application clause of a candidate interpretation sends a candidate H, a code e, and an environment t to the conditional, tested by the which combinator on the recursive call at the zeroth payload component, of bottom and of the application of the elimination of that same call to the recursive call at the first payload component.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,0 +1,3 @@
+Scott's consistency relation for T is recursively decidable: some enumerated neighbourhood is contained in the intersection of two enumerated neighbourhoods.
+
+The intersection code of the two components of an unpaired index, each truncated at 2, is primitive recursive. Inequality of that value with 3 is recursively decidable by negating primitive-recursive equality with the constant 3. The consistency criterion identifies that inequality with the consistency relation of the two components.

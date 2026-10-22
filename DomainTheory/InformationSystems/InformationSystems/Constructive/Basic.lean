@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports a choice-free finite-set prelude, replacing the choice-dependent finite-set union and decidable equality of Mathlib. Binary union is the fold of insertion over an underlying multiset, and equality of finite sets is decided by mutual inclusion. The remaining re-exports are commutativity of insertion, the left-commutative instance for insertion, the union notation, membership in a folded insertion and in a union, the empty-right law, and the two lemmas that turn mutual inclusion into equality or into a contradiction.
-ai-/
 module
 
 public import Mathlib.Data.Finset.Basic
@@ -16,37 +13,6 @@ public import DomainTheory.InformationSystems.InformationSystems.Constructive.de
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.decidableEq_finset_false_of_ne
 
 @[expose] public section
-
-/-!
-# A choice-free `Finset` prelude
-
-One of the project's goals (Goal 3) is to certify that the *information-system*
-presentation of Scott domains can be developed in a **purely constructive** fragment of
-Lean: every result must have a `#print axioms` footprint contained in
-`[propext, Quot.sound]`, with **no `Classical.choice`** and no use of the law of excluded
-middle.
-
-This is harder than it looks, because several of mathlib's `Finset` *operations* and even
-a few basic *lemmas* transitively depend on `Classical.choice` (through the
-`Multiset.dedup` / quotient machinery), in version `v4.30.0`:
-
-* tainted operations: `(· ∪ ·)`, `Finset.image`, `(· ×ˢ ·)`, `Finset.biUnion`, `(· \ ·)`,
-  and mathlib's `Finset.decidableEq` (via `Multiset` quotients);
-* tainted lemmas: e.g. `Finset.insert_comm`, `Finset.singleton_subset_iff`;
-* tainted *tactics*: `tauto`, `aesop` (they close goals via classical reasoning).
-
-By contrast the following are choice-free and form our working toolkit: `insert`,
-`(· ∩ ·)`, `Finset.filter`, `Finset.fold`, `Multiset.foldr`, the membership/subset lemmas
-(`Finset.mem_insert`, `Finset.mem_singleton`, `Finset.subset_iff`, `Finset.mem_coe`,
-`Finset.coe_subset`, `Finset.mem_inter`, `Finset.ext`), set-level unions/intersections,
-and explicit term-mode/`rintro`/`constructor` proofs.
-
-This file provides the finite-set operations the development needs but mathlib only
-offers in choice-tainted form: a **binary union of `Finset`s**, built choice-free by
-folding `insert`, and a **decidable equality** for `Finset` via subset antisymmetry.
-Every declaration here is audited to depend only on
-`[propext, Quot.sound]`.
--/
 
 namespace DomainTheory.InformationSystems.Constructive
 

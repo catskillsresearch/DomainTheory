@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (7.19). The m-fold iterate of the union of the graphs of the tagged successors at j and at j', started at the union of the singletons of (j, 0) and (j', 0), equals the union of the singletons of (j, m) and (j', m).
-
-If the tags agree, the unions collapse and the claim is the equal-tag rule. If the tags differ, the argument inducts on m. The zero step is reflexivity. The successor step rewrites the iterate by equation (2.9), uses the inductive hypothesis and two applications of the tagged successor, then the union rule for distinct tags and the symmetric union rule with the union commuted.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

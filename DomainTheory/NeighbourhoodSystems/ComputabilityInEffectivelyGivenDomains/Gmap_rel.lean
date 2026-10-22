@@ -1,8 +1,3 @@
-/-ai
-The inverse reindexing map relates two neighbourhoods exactly when both are neighbourhoods of the corresponding iterated systems and every double fiber at an unpairing is contained in the corresponding fiber.
-
-The two sides are the same by the definition of the relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

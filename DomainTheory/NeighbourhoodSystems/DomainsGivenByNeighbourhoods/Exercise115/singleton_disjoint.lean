@@ -1,8 +1,3 @@
-/-ai
-If n and m are distinct natural numbers, the intersection of the singletons {n} and {m} is empty.
-
-By extensionality, an element of the intersection would equal both n and m.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

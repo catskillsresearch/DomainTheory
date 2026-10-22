@@ -1,14 +1,3 @@
-/-ai
-The basic open of an intersection is contained in the basic open of the left factor whenever that factor is a neighbourhood.
-
-A filter containing the intersection contains the left factor by upward closure along the left inclusion.
-
-The basic open of an intersection is contained in the basic open of the right factor whenever that factor is a neighbourhood.
-
-A filter containing the intersection contains the right factor by upward closure along the right inclusion.
-
-The elements carry the topology whose open sets are the open filters. The whole space is open because every element contains the master and the basic open of the master is contained in the whole space. The intersection of two open sets is open because a common point has a basic neighbourhood inside each, and the basic open of the intersection of those neighbourhoods is contained in both. A union of open sets is open because a point of the union lies in some member, and a basic neighbourhood of that point inside the member is contained in the union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
@@ -18,43 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exe
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122.mem_basicOpen
 
 @[expose] public section
-
-/-!
-# Exercise 1.22 (Scott 1981, PRG-19, §1) — the topology on `|𝒟|`
-
-> **EXERCISE 1.22.** (For topologists). Show that the neighbourhoods `[X]` for `X ∈ 𝒟` make
-> `|𝒟|` into a topological space where the open subsets `𝒰 ⊆ |𝒟|` can be characterized by the
-> following two conditions:
->
-> (i)  whenever `x ∈ 𝒰` and `x ⊑ y ∈ |𝒟|`, then `y ∈ 𝒰`; and
-> (ii) whenever `x ∈ 𝒰`, then `[X] ⊆ 𝒰` for some `X ∈ x`.
->
-> Prove also that the inclusion relation on `|𝒟|` can be defined topologically as:
->
-> (iii) `x ⊑ y` iff for all open `𝒰 ⊆ |𝒟|`, if `x ∈ 𝒰` then `y ∈ 𝒰`.
-
-Here `[X] = {x ∈ |𝒟| ∣ X ∈ x}` (Scott's notation from Theorem 1.10): the set of elements
-(filters) of which `X` is a member. We call it `basicOpen X`.
-
-## What is proved
-
-* `basicOpen` — Scott's `[X]`, with `mem_basicOpen` the membership unfolding.
-* `instTopologicalSpaceElement` — the topology on `V.Element`: `𝒰` is open iff every point of
-  `𝒰` has a basic neighbourhood `[X]` (`X ∈ x`) contained in `𝒰`. This is condition (ii); the
-  three topology axioms are verified directly (the basic opens are closed under finite `∩`, with
-  `[Δ] = |𝒟|` the whole space, so they form a base).
-* `isOpen_basicOpen` — each `[X]` is open.
-* `isOpen_iff_upper_basic` — the characterization: `IsOpen 𝒰 ↔ (i) ∧ (ii)`. Note (ii) already
-  pins down openness; (i) (upward closure under `⊑`) is a *consequence* of (ii), recorded
-  separately as `isOpen_isUpperSet`. We keep both to match Scott's statement.
-* `le_iff_isOpen_imp` — condition (iii): `x ⊑ y ↔ ∀ 𝒰 open, x ∈ 𝒰 → y ∈ 𝒰`. This says `⊑` is
-  the (opposite of the) specialization preorder; `specializes_iff_le` makes the bridge to
-  Mathlib's `⤳` explicit.
-
-The space is **T₀** but not in general **T₁**/Hausdorff (the specialization order `⊑` is a genuine
-partial order, recoverable from the topology by (iii)); the open-ended limit-point questions of the
-exercise need Definition 1.7 (`↑X`) and are deferred.
--/
 
 namespace DomainTheory.NeighbourhoodSystems
 

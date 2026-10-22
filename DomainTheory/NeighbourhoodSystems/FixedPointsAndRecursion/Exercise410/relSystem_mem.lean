@@ -1,8 +1,3 @@
-/-ai
-A set is a neighbourhood of the relativized system below an element a if and only if it belongs to the filter a.
-
-This is the defining equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

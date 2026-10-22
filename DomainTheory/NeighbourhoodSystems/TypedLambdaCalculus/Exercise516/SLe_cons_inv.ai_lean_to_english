@@ -1,0 +1,3 @@
+If a tagged string whose string begins with a bit a lies below another tagged string, then the second string begins with a, and the tails remain in the approximation order.
+
+If the first tag is total, the two strings are equal, so the tail of the second string is the tail of the first. If the first tag is partial, the second string is nonempty, and the prefix law for cons gives the common head and the prefix relation on the tails.

@@ -1,45 +1,85 @@
 # Example 1.5
 
-EXAMPLE 1.5. Let $\Delta = \{0, 1, 2, 3\}$ and let $\mathcal{D}$ be the family of all non-empty subsets of $\Delta$.
+## Human-English
 
-This system is a direct generalization of Example 1.2., which was special owing to the small number of tokens. (The other examples were special by virtue of the choice of neighbourhoods.) The verification that the present $\mathcal{D}$ is a neighbourhood system rests on nothing more than the remark that sets are consistent in $\mathcal{D}$ iff they have a non-empty intersection. Clearly the arrangement of neighbourhoods in $\mathcal{D}$ can be as varied as a four-element set will allow; if $\Delta$ were made larger, the possible combinations of neighbourhoods could be made as complex as you wish. $\square$
+@import "1980_Example_1_5.english" {code_block=false}
 
-Having some idea now of the variety of neighbourhood systems, we have to discuss what it is they do. As stressed before, the tokens do not have to correspond directly to the elements; but where, we ask, do the elements come from? One obvious suggestion for determining an element is to produce a sequence of "better and better" neighbourhoods:
+## AI: Human-English to AI-Lean
 
-$$
-X_0 \supseteq X_1 \supseteq \cdots \supseteq X_n \supseteq \cdots
-$$
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/Token.lean**
 
-Trivially, any finite initial segment of this sequence is consistent, and so each $X_n$ is a partial approximation to the "limit". If $\mathcal{D}$ were always to be taken as *finite*, of course, there would be no point in discussing limits since any such sequence would eventually be constant. The elements in the finite case would therefore be completely represented by neighbourhoods with the *minimal* neighbourhoods corresponding to the total elements. But there are many reasons to go beyond the finite (though perhaps not too far beyond).
+@import "Token.lean"
 
-Suppose $\langle Y_n \rangle_{n=0}^\infty$ is another "convergent" sequence with
-$Y_{n+1} \subseteq Y_n$ for all indices: when do the two sequences of neighbourhoods determine the *same limit*? The two sequences can surely be different; for example, $\langle Y_n \rangle_{n=0}^\infty$ could be a subsequence of $\langle X_n \rangle_{n=0}^\infty$, say, $Y_n = X_{2n}$. Still we would want to say that the same limit is obtained. Without being given any further structure on the neighbourhoods, a simple answer is just to say that each sequence goes *equally deep* as the other:
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4Mem.lean**
 
-for each $m$ there is an $n$ with $X_n \subseteq Y_m$, and
+@import "P4Mem.lean"
 
-for each $n$ there is an $m$ with $Y_m \subseteq X_n$.
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_inter_mem.lean**
 
-This definition obviously puts sequences into equivalence classes, and so elements could be identified with these. But such a definition is clumsy for two reasons: it is always tiresome to work with equivalence classes, and there is no reason to think that simple infinite sequences are adequate for determining elements without some rather drastic assumptions on $\mathcal{D}$. Nevertheless, the idea is *suggestive*; we just have to find some construct to represent elements in a unique way and to phrase it in a general enough manner.
+@import "P4_inter_mem.lean"
 
-Start with $\langle X_n \rangle_{n=0}^\infty$ again, which "converges" as before. Think of all the other sequences equivalent to this one in the sense just defined. We can define the class of all terms of all such sequences very easily as being the family:
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/master.lean**
 
-$$
-x = \{Z \in \mathcal{D} \mid X_n \subseteq Z \text{ for some } n\}.
-$$
+@import "master.lean"
 
-It is easy to prove that if we form the analogous class for $\langle Y_n \rangle_{n=0}^\infty$, then the two families are *equal* if and only if the sequences are *equivalent*. Thus, we seem justified in letting $x$ represent the limit of $\langle X_n \rangle_{n=0}^\infty$. All we have to do now is to remark on what sort of class $x$ is as a subfamily of $\mathcal{D}$; what we abstract from the construction, however, will be just a bit more general than taking those $x$ that result from sequences.
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_master_mem.lean**
 
-**Lean 4**
+@import "P4_master_mem.lean"
 
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/Token.lean](Token.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4Mem.lean](P4Mem.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_inter_mem.lean](P4_inter_mem.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/master.lean](master.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_master_mem.lean](P4_master_mem.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_master_nonempty.lean](P4_master_nonempty.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_sub_master.lean](P4_sub_master.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/neighborhoodSystem.lean](neighborhoodSystem.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/consistent_iff_inter_nonempty.lean](consistent_iff_inter_nonempty.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/mem_iff_nonempty.lean](mem_iff_nonempty.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15.lean](../Example15.lean)
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_master_nonempty.lean**
+
+@import "P4_master_nonempty.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/P4_sub_master.lean**
+
+@import "P4_sub_master.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/neighborhoodSystem.lean**
+
+@import "neighborhoodSystem.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/consistent_iff_inter_nonempty.lean**
+
+@import "consistent_iff_inter_nonempty.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15/mem_iff_nonempty.lean**
+
+@import "mem_iff_nonempty.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example15.lean**
+
+@import "../Example15.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Token.ai_lean_to_english" {code_block=false}
+
+@import "P4Mem.ai_lean_to_english" {code_block=false}
+
+@import "P4_inter_mem.ai_lean_to_english" {code_block=false}
+
+@import "master.ai_lean_to_english" {code_block=false}
+
+@import "P4_master_mem.ai_lean_to_english" {code_block=false}
+
+@import "P4_master_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "P4_sub_master.ai_lean_to_english" {code_block=false}
+
+@import "neighborhoodSystem.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "consistent_iff_inter_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "mem_iff_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "../Example15.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Example_1_5.ai_english_concordance" {code_block=false}

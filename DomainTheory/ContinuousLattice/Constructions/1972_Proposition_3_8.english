@@ -1,0 +1,29 @@
+Returning now to $\bar{f}$ we can prove:
+
+**3.8 Proposition.** If $D$ is a continuous lattice and $e : X \rightarrow Y$ a subspace embedding, then for each $f : X \rightarrow D$, the function $\bar{f} : Y \rightarrow D$ given by the formula
+
+$$\bar{f}(y) = \bigsqcup  \sqcap  f(x) : e(x) \in U  : y \in U ,$$
+
+where $U$ ranges over open subsets of $Y$ and $x$ over $X$, is the maximal extension of $f$ to a function in the partially ordered set $[Y \rightarrow D]$.
+
+**Proof:** We are saying that $\bar{f}$ is the maximal solution to the equation
+
+$$f = \bar{f} \circ e.$$
+
+We already know it is a solution, so let $f'$ be any other. We have
+
+$$
+\begin{aligned}
+f'(y) &= \bigsqcup  \sqcap  f'(z) : z \in U  : y \in U  
+&\sqsubseteq \bigsqcup  \sqcap  f'(z) : z \in e(X) \cap U  : y \in U  
+&= \bigsqcup  \sqcap  f'(e(x)) : e(x) \in U  : y \in U  
+&= \bigsqcup  \sqcap  f(x) : e(x) \in U  : y \in U  
+&= \bar{f}(y),
+\end{aligned}
+$$
+
+which establishes that $f' \sqsubseteq \bar{f}$. $\square$
+
+The reader should not forget that any space (any *given* number of spaces $X$, $Y$, $\ldots$) can be found as a *subspace* of a continuous lattice $D$. Since $D$ is injective any continuous function $f : X \to Y$ can be extended to a continuous function $\bar{f} : D \to D$. Thus the continuous functions from $D$ into $D$ are a rich totality including *all* the structure of continuous functions on *all* the subspaces. And this remark brings us to the study of [function spaces](../FunctionSpaces/1972_Function_spaces.md).
+
+**Subspace.** There is no separate subspace type. A subspace is Mathlib’s `IsEmbedding`. `IsRetractSubspace` requires its section to be an embedding, and this proposition extends a continuous map along an embedding into a continuous lattice by `scottExtend`. The function-space development writes the same formula as `scottSubspaceExtend`.

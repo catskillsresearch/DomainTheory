@@ -1,8 +1,3 @@
-/-ai
-If i preserves arbitrary suprema and is injective, then Scott's candidate retraction j satisfies j(i(y)) = y.
-
-The set of x with i(x) ≤ i(y) equals the principal ideal of elements below y: i(x) ≤ i(y) implies x ≤ y, and x ≤ y implies i(x) ≤ i(y) because a supremum-preserving map is monotone. The supremum of that ideal is y, since every member lies below y and y itself belongs to the ideal.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

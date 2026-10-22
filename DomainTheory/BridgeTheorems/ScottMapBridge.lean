@@ -1,6 +1,3 @@
-/-ai
-Conjugation along the round way-below filters identifies the Scott maps between continuous lattices with the pointwise-ordered maps of those filters, and the abbreviation scottMap_roundFilter_iso names that order isomorphism of function spaces. Conjugation along the round elements of the way-below information systems does the same for that presentation, and scottMap_roundInfoSys_iso names it. The namespace infoSys_constructions_equiv packages these two conjugations with the product, separated-sum, and function-space domain isomorphisms of information systems and with the Factoid 4.6 equivalence of approximable maps and Scott-continuous maps.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
@@ -25,16 +22,6 @@ public import DomainTheory.BridgeTheorems.ScottMapBridgeInst21
 
 @[expose] public section
 
-/-!
-# Construction cross-links — ApproximableMap ↔ ScottContinuous ↔ ScottMap
-
-* **Factoid 4.6:** `ApproximableMap A B ≃o ScottContinuous A B` (1982).
-* **1972 transport:** `ScottMap D D'` conjugates along `presentation_domains_equiv`
-  (or the round-filter iso) to pointwise-ordered maps on the round presentation.
-* Blueprint packaging: `infoSys_constructions_equiv` bundles the three 1982 domain
-  isos with these cross-links.
--/
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
@@ -44,12 +31,8 @@ open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open DomainTheory.ContinuousLattice
 open ContinuousLatticeToNeighborhood
 
-/-! ## Factoid 4.6 as an order isomorphism -/
-
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-
-/-! ## ScottMap conjugation along the round presentation -/
 
 variable {D E : Type*} [CompleteLattice D] [CompleteLattice E]
 
@@ -91,9 +74,6 @@ noncomputable abbrev scottMap_roundInfoSys_iso :
 
 end ContinuousRoundInfoSys
 
-/-! ## Blueprint packaging
-
-Bundled 1982 construction domain isos + 1972/1982 function-space cross-links. -/
 namespace infoSys_constructions_equiv
 
 noncomputable abbrev product := @infoSys_product_domain_equiv

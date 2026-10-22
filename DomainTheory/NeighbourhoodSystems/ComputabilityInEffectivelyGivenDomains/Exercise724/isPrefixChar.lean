@@ -1,6 +1,3 @@
-/-ai
-The prefix characteristic of two list codes is the list-equality characteristic of the first code against the code of the initial segment, of length given by the length characteristic of the first code, of the list coded by the second. The value 1 records that the list coded by the first is a prefix of the list coded by the second.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

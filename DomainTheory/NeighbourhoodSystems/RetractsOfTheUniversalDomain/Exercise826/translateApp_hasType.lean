@@ -1,8 +1,3 @@
-/-ai
-If b composed with f composed with a equals f, and a fixes an element x, then b fixes the value of f at x.
-
-Rewrite the right-hand side by the sandwich hypothesis and by the two composition laws for element maps, and use that a fixes x.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

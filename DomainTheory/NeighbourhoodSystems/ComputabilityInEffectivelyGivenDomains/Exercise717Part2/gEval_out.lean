@@ -1,8 +1,3 @@
-/-ai
-The second component of the evaluator at the pair of an index and a certificate is the first component of the certificate.
-
-The evaluator at a pair is the certificate step on that pair together with the memo table, and each of the three clauses of the step returns a pair whose second component is the first component of the certificate.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

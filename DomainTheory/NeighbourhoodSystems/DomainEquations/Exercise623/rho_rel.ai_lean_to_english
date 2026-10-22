@@ -1,0 +1,3 @@
+The stage-n retraction relates neighbourhoods A and E of the exponential if and only if both are neighbourhoods of that exponential and some neighbourhood of the n-th tower stage lies between them.
+
+Unfolding the retraction as the composite of the stage projection and the stage injection, a composite witness is a tower neighbourhood related by both subsystem relations, which unpacks as membership of A, membership of the witness, the inclusion of A, membership of E, and the inclusion in E. Those data reassemble the composite in the other direction.

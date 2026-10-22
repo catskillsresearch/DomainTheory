@@ -1,6 +1,3 @@
-/-ai
-The identity Scott map on a complete lattice D is the identity function. It preserves directed suprema because the supremum of a set equals the supremum of its image under the identity.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

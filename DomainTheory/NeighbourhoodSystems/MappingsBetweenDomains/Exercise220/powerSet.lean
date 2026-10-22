@@ -1,6 +1,3 @@
-/-ai
-The powerset neighbourhood system has the natural numbers as tokens and the cofinite sets as neighbourhoods. The master neighbourhood is the universe, which is nonempty, and its complement is empty. The intersection of cofinite sets is cofinite because the complement of an intersection is the union of the complements. Every neighbourhood is contained in the universe.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

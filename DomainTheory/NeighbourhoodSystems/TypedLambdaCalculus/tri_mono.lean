@@ -1,8 +1,3 @@
-/-ai
-The triangular-number function is monotone.
-
-Induct along the hypothesis that the first argument is at most the second. In the reflexive case the two values agree. In a successor step, compose the inductive inequality with the inequality between successive triangular numbers.
-ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

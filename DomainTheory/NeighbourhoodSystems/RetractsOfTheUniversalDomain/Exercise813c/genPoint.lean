@@ -1,6 +1,3 @@
-/-ai
-The coordinate set at a natural number is the set of points of Cantor space whose value at that coordinate is true.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

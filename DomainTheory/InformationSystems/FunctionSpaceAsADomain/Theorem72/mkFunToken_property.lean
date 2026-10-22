@@ -1,8 +1,3 @@
-/-ai
-Two consistent finite sets satisfy the conjunction of those two consistency assertions.
-
-The proof is the pairing of the two hypotheses.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

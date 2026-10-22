@@ -1,8 +1,3 @@
-/-ai
-The root label of the subtree selected by a word equals the label that the original tree assigns to that word.
-
-The root label is simplified.
-ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

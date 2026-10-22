@@ -1,8 +1,3 @@
-/-ai
-The Thue–Morse bit of zero is false.
-
-Simplify the definition of the bit and the bits of zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

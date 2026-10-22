@@ -1,6 +1,3 @@
-/-ai
-The right-hand side of Scott's equation identifying the information system V with the product V × V is the product information system of V with itself.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

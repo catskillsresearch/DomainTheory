@@ -1,8 +1,3 @@
-/-ai
-If two slot prefixes followed by remainders are equal, then the tags, the indices, and the remainders agree.
-
-Unfold both prefixes and cancel the leading tags. The remaining equality of the bodies of ones followed by a zero is the list uniqueness lemma, which returns the indices and the remainders.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

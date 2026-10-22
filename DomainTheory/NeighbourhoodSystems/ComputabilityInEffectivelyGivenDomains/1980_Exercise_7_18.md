@@ -1,11 +1,19 @@
 # Exercise 7.18
 
-**EXERCISE 7.18.** Two effectively given systems $D$ and $E$ are *effectively isomorphic* iff … (complete the sentence!). Show that if $D$ is effectively given then the isomorphism
+## Human-English
 
-$$D^\infty \cong (D^\infty)^\infty$$
+@import "Exercise718.english" {code_block=false}
 
-is effective.
+## AI: Human-English to AI-Lean
 
-**Lean 4**
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise718.lean**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise718.lean](Exercise718.lean)
+@import "Exercise718.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Exercise718.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "Exercise718.ai_english_concordance" {code_block=false}

@@ -1,8 +1,3 @@
-/-ai
-A map f typed in the arrow from a to b lies in the function space from E_a to E_b.
-
-The typing equation writes f as the composite b ∘ f ∘ a. Graph extensionality and the application laws for composites show that f is the graph of its own application. On a pair related by E_a the two arguments are equal and lie in the range of a, so Theorem 4.3 (ii) places the common value of f in the range of b.
-ai-/
 
 module
 

@@ -1,8 +1,3 @@
-/-ai
-The strict stage of bound zero is the bottom element.
-
-Extensionality simplifies the membership characterization of the strict stage and the definition of the bottom element.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

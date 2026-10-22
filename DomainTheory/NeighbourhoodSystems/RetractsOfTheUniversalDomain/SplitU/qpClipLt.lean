@@ -1,6 +1,3 @@
-/-ai
-qpClipLt m p clips a rational pair down to the open ray below m by leaving the left endpoint and replacing the right endpoint with the minimum of that endpoint and m.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

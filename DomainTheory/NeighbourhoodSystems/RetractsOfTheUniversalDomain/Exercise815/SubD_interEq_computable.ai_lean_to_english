@@ -1,0 +1,3 @@
+It is recursively decidable whether the intersection of two enumerated neighbourhoods equals a third.
+
+Equality of that intersection with the third neighbourhood is equivalent to equality of the principal up-set of the concatenated lists with the third up-set, hence to equality of the two finitely generated subsystems, hence to the two inclusions. Each inclusion is recursively decidable. Both decisions are reindexed along the primitive recursive concatenation of the first two components of a triple code, and their conjunction is the required relation.

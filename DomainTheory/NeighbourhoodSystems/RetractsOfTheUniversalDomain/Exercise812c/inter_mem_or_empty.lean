@@ -1,8 +1,3 @@
-/-ai
-If A is empty or a neighbourhood and B is a neighbourhood of a positive system, then A meet B is empty or a neighbourhood.
-
-If A is empty, the intersection is empty. If A is a neighbourhood, the intersection is empty or nonempty, and positivity makes a nonempty intersection of two neighbourhoods a neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

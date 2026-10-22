@@ -1,8 +1,3 @@
-/-ai
-If y lies in the range of b, then the sequence pair of the numeral 1 with y lies in the range of a ⊕ b.
-
-Unfold the range equation and the application of the sum. The component laws give the numeral 1 and the payload y, the double conditional on the numeral 1 selects the right branch, and the hypothesis returns y.
-ai-/
 
 module
 

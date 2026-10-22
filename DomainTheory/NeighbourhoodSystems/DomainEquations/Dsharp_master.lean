@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the tree algebra is the set of path-token pairs whose token lies in the master of the original system.
-
-The two sides are identical by the definition of the tree algebra.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

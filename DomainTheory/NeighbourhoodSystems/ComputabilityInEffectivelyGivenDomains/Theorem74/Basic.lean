@@ -1,34 +1,3 @@
-/-ai
-Scott's Theorem 7.4 says that the sum and the product of effectively given domains are effectively given, and that the injections, extractions, projections, and the sum and product of computable maps are computable. This file proves the sum half.
-
-The sum of two effectively given neighbourhood systems is effectively given.
-
-Unpack the two computable presentations and package them as the sum presentation.
-
-The neighbourhood assigned by the sum presentation is the neighbourhood assigned by the sum enumeration.
-
-The two sides are definitionally equal.
-
-The left injection is a computable map from the first neighbourhood system into the sum.
-
-Inclusion in the first presentation is recursively decidable, and so are the tests that the codomain tag equals zero and that it equals one. The inclusion is reindexed onto the inner component of the codomain index. The injection relation is equivalent to the tag being zero together with that inclusion, or to the tag being neither zero nor one. The tag trichotomy checks the equivalence. A left-copy codomain rewrites as inclusion of left copies. A right-copy codomain cannot contain a nonempty left copy, and both Boolean branches contradict the tag. In the remaining case the codomain is the sum master, which contains the left copy.
-
-The right injection is a computable map from the second neighbourhood system into the sum.
-
-The argument has the same shape with the two presentations and the tags exchanged. Inclusion in the second presentation and the two tag tests are recursively decidable, and the inclusion is reindexed onto the inner component. A left-copy codomain cannot contain a nonempty right copy. A right-copy codomain rewrites as inclusion of right copies. The remaining codomain is the sum master, which contains the right copy.
-
-The left extraction from the sum is a computable map into the first neighbourhood system.
-
-Choose an index of the master of the first system. Inclusion is recursively decidable, as is the test that the domain tag equals zero. Reindex the inclusion onto the left-copy component and onto the master index. The relation is tag zero with the component inclusion, or a tag other than zero with inclusion of the master. A left copy has left part equal to its component. A right copy has left part equal to the master of the first system, and so does the sum master.
-
-The right extraction from the sum is a computable map into the second neighbourhood system.
-
-Choose an index of the master of the second system. The same reindexing, now with the test for tag one, matches the extraction relation. A right copy has right part equal to its component. A left copy has right part equal to the master of the second system, and so does the sum master.
-
-If two maps are computable, then their sum is a computable map of the sums.
-
-The two relations are recursively enumerable, and the four tests that the domain or codomain tag equals zero or one are recursively decidable. Each relation is reindexed onto the inner components. The sum relation is equivalent to the codomain tag being neither zero nor one, or to both tags being zero and the first map relating the components, or to both tags being one and the second map relating the components. From a sum relation, the tag trichotomy and the separation of left copies, right copies, and the master recover the tags and the components. In the other direction, the master, left-copy, and right-copy clauses of the enumeration rebuild the three branches of the sum relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
@@ -63,35 +32,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-/-!
-# Theorem 7.4 (Scott 1981, PRG-19, §7) — `+` and `×` preserve effective givenness
-
-Following Dana Scott, *Lectures on a Mathematical Theory of Computation*, PRG-19, Lecture VII.
-
-> **Theorem 7.4.** If `𝒟₀` and `𝒟₁` are effectively given, then so are `(𝒟₀ + 𝒟₁)` and `(𝒟₀ × 𝒟₁)`.
-> Moreover the combinators `inᵢ`, `outᵢ`, `projᵢ` are all computable; further, if `f` and `g` are
-> computable maps, then so are `f + g` and `f × g`.
-
-**This file: the product (`×`) half.** Scott takes `𝒟₀ × 𝒟₁ = {Xₙ⁰ ∪ Xₘ¹ ∣ n, m}` with a one-one
-pairing function `r(n, m)` and `W_k = X⁰_{p(k)} ∪ X¹_{q(k)}`; we realize `r = Nat.pair`,
-`p = ·.unpair.1`, `q = ·.unpair.2`, and the project's `prodNbhd`/`prod` (over `α ⊕ β`,
-`Product.lean`). The product is *uniform* (no tag analysis), so both of Scott's relations decompose
-into **conjunctions** of the components' relations under index reindexing, handled entirely by the
-choice-free closure layer of `Recursive.lean` (`RecDecidable.and`/`.comp`/`.of_iff`):
-
-* `prodPresentation`, `prod_isEffectivelyGiven` — the product is effectively given;
-* `proj₀_isComputable`, `proj₁_isComputable` — `(Xₙ⁰ ∪ Xₘ¹) projᵢ Z ↔ (component) ⊆ Z` is recursively
-  *decidable* (a slice of `incl_computable`), hence r.e.;
-* `paired_isComputable` — `⟨f, g⟩` is computable when `f, g` are (conjunction of two r.e. relations);
-* `prodMap_isComputable` — `f × g` is computable, via `f × g = ⟨f ∘ p₀, g ∘ p₁⟩` (Exercise 3.19) and
-  `comp_isComputable` (Proposition 7.3).
-
-The sum (`+`) half — which needs tag analysis, hence a little more choice-free recursion theory
-(truncated subtraction, equality/disjunction deciders) — is in the companion development.
-
-Everything here is `⊆ {propext, Quot.sound}` (choice-free).
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
@@ -102,24 +42,12 @@ variable {α β γ α' β' : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-/-! ## The sum (`+`) half of Theorem 7.4
-
-The sum `𝒟₀ + 𝒟₁` (`Exercise318.lean`, over `Option (α ⊕ β)`) has *three* kinds of neighbourhood —
-the master `{Λ}∪0Δ₀∪1Δ₁`, the left copies `0X`, the right copies `1Y` — so its presentation deciders
-require a genuine tag analysis (Scott: "the neighbourhood relations have to be worked out in terms of
-the indices … recursively enumerable relations … closure under conjunctions, disjunctions, …"). We
-enumerate with a `Nat.pair` tag: `tag 0 ↦ 0X⁰ₖ`, `tag 1 ↦ 1X¹ₖ`, `tag ≥ 2 ↦` master. -/
-
-
 section Sum
 
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
 
 variable {P₀ : ComputablePresentation V₀} {P₁ : ComputablePresentation V₁}
-
-
-/-! ### Distinctness of the three neighbourhood kinds (uses non-emptiness). -/
 
 
 include h₀ h₁

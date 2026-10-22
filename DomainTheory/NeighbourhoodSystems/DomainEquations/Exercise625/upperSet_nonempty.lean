@@ -1,8 +1,3 @@
-/-ai
-The upper set of an element x is nonempty.
-
-The injection of x belongs to it, because the projection of that injection equals x.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612

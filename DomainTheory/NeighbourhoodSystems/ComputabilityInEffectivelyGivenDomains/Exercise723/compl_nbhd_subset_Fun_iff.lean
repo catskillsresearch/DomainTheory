@@ -1,8 +1,3 @@
-/-ai
-The complement of nbhd k is contained in Fun of the complements of nbhd n and nbhd m if and only if every j strictly below k whose bit in k is set lies in that Fun set. Every excluded point of nbhd k lies strictly below k, so the subset test is a bounded quantification.
-
-From the inclusion, a set bit is a point of the complement and therefore lies in the Fun set. Conversely, a point of the complement has its bit set, hence lies strictly below k, and the bounded hypothesis applies.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

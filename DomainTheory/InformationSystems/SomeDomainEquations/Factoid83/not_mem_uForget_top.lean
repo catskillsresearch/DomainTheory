@@ -1,8 +1,3 @@
-/-ai
-The top token does not lie in the forget-finset of any finite set of U-tokens.
-
-Such a membership would be the value of some U-token in the set, and that value being top contradicts the U-token predicate.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,6 +1,3 @@
-/-ai
-The generalized Y-step splits the first neighbourhood system by an abstract split and refines the second system directly. It is the component swap of the joint step on the swapped arguments.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

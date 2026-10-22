@@ -1,8 +1,3 @@
-/-ai
-Equal neighbourhoods come from equal lists.
-
-Both directions of the equality give both prefix relations, by the subset law for neighbourhoods. The two length comparisons agree, and a prefix of equal length is the whole list.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

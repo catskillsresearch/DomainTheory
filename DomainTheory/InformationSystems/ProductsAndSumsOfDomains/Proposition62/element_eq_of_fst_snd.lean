@@ -1,8 +1,3 @@
-/-ai
-Two elements of the product system that have the same image under the first projection and the same image under the second projection are equal. This is Scott's uniqueness lemma for product elements.
-
-The two inclusions of the element order are symmetric. Given a token p of the first element, the singleton of p lies in that element and is therefore product-consistent. If p is right-tagged or bottom, reflexivity in B puts its second component in the second projection of the first element, hence of the second element. A consistent set in the second element then entails that component, and rebuilding product entailment with the bottom entailment on the first component and that entailment on the second puts p in the second element by closure. If p is left-tagged, the same argument uses the first projection, reflexivity in A, and the bottom entailment on the second component.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,0 +1,3 @@
+Every neighbourhood of the infinite iterate is contained in the pinning of any chosen copy to that neighbourhood's own fiber at the chosen copy.
+
+Unfold the pinning on a pair in the neighbourhood. If the index is the chosen copy, the pair is membership in the fiber. Otherwise the token lies in a fiber of a neighbourhood, hence in the master.

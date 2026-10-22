@@ -1,8 +1,3 @@
-/-ai
-The LUCID neighbourhood system is effectively given. The digit map from bits to natural numbers is injective. The elements of L are exactly the finite or infinite sequences of natural numbers: the map from sequences to elements is bijective.
-
-The numbered name example_724 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise724.L_isEffectivelyGiven

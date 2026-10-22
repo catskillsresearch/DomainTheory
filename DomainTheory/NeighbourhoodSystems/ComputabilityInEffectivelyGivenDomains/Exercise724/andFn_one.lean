@@ -1,8 +1,3 @@
-/-ai
-Sequential conjunction of the neighbourhood one with any neighbourhood is the neighbourhood one.
-
-Unfold the definition. The neighbourhood one differs from zero, so the first conditional takes the remaining branch, and the second conditional matches one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

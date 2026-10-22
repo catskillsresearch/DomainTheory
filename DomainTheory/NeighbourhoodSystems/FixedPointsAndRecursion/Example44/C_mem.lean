@@ -1,8 +1,3 @@
-/-ai
-A set of strings is a neighbourhood of the binary-sequence system if and only if it satisfies the binary-sequence neighbourhood predicate.
-
-The two sides agree by reflexivity of equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

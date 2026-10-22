@@ -1,0 +1,3 @@
+Every value of the numerical evaluator is combinatory.
+
+At zero, the zero clause and combinatoriness of the G combinator give the result. At a successor, the successor clause writes the value as an application of the values at the two unpairing components, and both are combinatory by the inductive hypothesis. Each recursive call is at an unpairing component, which is strictly smaller than the paired code and hence smaller than the successor.

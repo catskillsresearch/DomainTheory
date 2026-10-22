@@ -1,6 +1,3 @@
-/-ai
-A computable union for the presentation of U takes the concatenation index as its union index, together with primitive recursiveness of that index, correctness whenever a representing index exists, and recursive decidability of that existence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

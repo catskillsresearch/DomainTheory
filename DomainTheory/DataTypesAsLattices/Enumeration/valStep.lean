@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (3.7). One step of the enumerator sends a value v to the graph of the map which returns the McCarthy conditional of the code, with zero branch the G combinator and positive branch the minimal extension of the application selected by v at that code. The positive branch is that minimal extension, which agrees extensionally with Scott's existential clause and displays the continuity of the step.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

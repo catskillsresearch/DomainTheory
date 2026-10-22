@@ -1,0 +1,9 @@
+A raw lambda token over a carrier is the bottom token, an atom drawn from the carrier, or a function token given by an input list and an output list of raw lambda tokens.
+
+Boolean equality of raw tokens, and of lists of raw tokens, is defined mutually. Bottom matches only bottom, atoms match when their carriers match, function tokens match when both lists match, and every other combination fails. Two lists match when they are both empty or when their heads match and their tails match.
+
+Boolean equality of raw tokens holds exactly when the tokens are equal, and boolean equality of lists holds exactly when the lists are equal.
+
+The two statements are proved together by recursion on the tokens and the lists. Both bottoms agree. Two atoms agree by equality of their carriers and injectivity of the atom constructor. Two function tokens agree by the list statement together with injectivity of the function-token constructor. Distinct constructors make the boolean test fail and make equality impossible. Two empty lists agree, two nonempty lists agree by the token statement on the heads and the list statement on the tails, and a mismatch of empty against nonempty fails.
+
+Decidable equality of raw lambda tokens tests this boolean equality and uses the equivalence with propositional equality.

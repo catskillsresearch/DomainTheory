@@ -1,8 +1,3 @@
-/-ai
-Prepending a finite binary string preserves inclusion of sets of strings.
-
-A concatenation of the string with a member of the smaller set is a concatenation of the string with a member of the larger set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

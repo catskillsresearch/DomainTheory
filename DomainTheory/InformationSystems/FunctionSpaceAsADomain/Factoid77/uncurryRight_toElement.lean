@@ -1,8 +1,3 @@
-/-ai
-Evaluating the right uncurry of a morphism φ at a tensor element q equals evaluating the approximable map named by φ at the first component of the swapped product image of q, on the second component of that same swapped image.
-
-Transport along the product–tensor hom equality replaces the tensor evaluation by the product uncurry on the product image of q. Unfolding that product uncurry, the elementwise composition law, the formula for a pair after a swap, and the elementwise formula for application give the stated value.
-ai-/
 
 module
 

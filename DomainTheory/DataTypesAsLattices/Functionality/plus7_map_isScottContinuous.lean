@@ -1,8 +1,3 @@
-/-ai
-The body of a seven-way sum is Scott continuous in its argument.
-
-Tagged injection of the application of a fixed summand at the second component is a composite of continuous maps. Each iterated predecessor of the first component is continuous: the zero iterate is application at zero, and a successor iterate is the predecessor composed with the previous iterate. Nested uses of the ternary continuity theorem assemble the seven double conditionals, with the final positive branch the constant full set.
-ai-/
 
 module
 

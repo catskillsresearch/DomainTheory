@@ -1,8 +1,3 @@
-/-ai
-If a finite set u of sum tokens is sum-consistent and its right projection is empty, then the separated sum entails u from the left lift of the left projection of u.
-
-The sum bottom is entailed because that lift is sum-consistent. A left token of u has its component in the left projection, the left projection of the lift equals that projection and is nonempty at that component, and reflexivity in A supplies the entailment. A right token of u would lie in the right projection, which is empty.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

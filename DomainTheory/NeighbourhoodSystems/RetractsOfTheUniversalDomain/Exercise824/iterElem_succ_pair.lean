@@ -1,8 +1,3 @@
-/-ai
-The successor iterate element of the paired map equals that map applied to the preceding iterate element.
-
-Unfold both sides as the action on the bottom of the pair space of a composite with the iterate map, and of the iterate map followed by the paired map. Rewrite by the element action of a composite.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

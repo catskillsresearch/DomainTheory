@@ -1,8 +1,3 @@
-/-ai
-If the first n coordinates of an argument are all numerals, the guard of depth n agrees with the underlying map at that argument.
-
-Induct on n. At depth 0 the guard is the underlying map. At depth m + 1 the coordinate m is some numeral, so the one-coordinate guard at m is transparent, and the inductive hypothesis applies to the first m coordinates.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

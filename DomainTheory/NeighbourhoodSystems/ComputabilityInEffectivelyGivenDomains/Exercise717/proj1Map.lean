@@ -1,6 +1,3 @@
-/-ai
-The second projection of the pair part of the sharp domain relates neighbourhoods W and Z of that domain when Z is the master neighbourhood, or W is a paired embedding whose right-hand neighbourhood is contained in Z. The domain and codomain are those memberships, and the master neighbourhood is related to itself. If either target in an intersection is the master, the intersection keeps the other target; if both come from the same paired embedding, injectivity matches the right-hand children and their inclusions meet. A smaller source in the master case must itself be the master, and a smaller source in the paired case cannot be the master or a zero embedding, so it is a paired embedding whose right-hand child is carried into the larger target.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Combinators77

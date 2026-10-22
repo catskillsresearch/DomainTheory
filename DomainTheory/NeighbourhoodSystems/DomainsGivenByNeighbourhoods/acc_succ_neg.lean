@@ -1,8 +1,3 @@
-/-ai
-If the consistency test fails at stage n, the running intersection at n + 1 equals the running intersection at n.
-
-Both sides are the second components of the greedy state. The successor equation of the state is rewritten, and the conditional takes its right branch because the test fails.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

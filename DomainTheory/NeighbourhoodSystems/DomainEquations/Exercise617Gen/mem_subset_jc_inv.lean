@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood of the indexed sum that is contained in the copy of a set at a letter is itself a copy at that letter.
-
-The master contains the empty token, which lies in no letter-copy. The unit copy contains the unit token, which lies in no letter-copy. A letter-copy of a nonempty neighbourhood contains a copy token that also lies in the given copy, so injectivity of copy tokens forces the letters to agree and the neighbourhood is that copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

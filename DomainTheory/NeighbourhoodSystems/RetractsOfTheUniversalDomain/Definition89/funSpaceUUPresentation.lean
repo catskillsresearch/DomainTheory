@@ -1,6 +1,3 @@
-/-ai
-A fixed computable presentation of the function space of the universal domain with itself is a chosen witness that this function space is effectively given.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

@@ -1,8 +1,3 @@
-/-ai
-The Kleene iterates of the identity combinator under an operator that sends closures to closures are themselves closures, and the identity combinator is contained in the least fixed point of the operator above the identity.
-
-The iterates are closures by induction on the stage: the zeroth iterate is the identity combinator, which is a closure, and a successor iterate is the operator applied to a closure. The zeroth iterate is one term of the union that defines the least fixed point above the identity, so the identity is contained in that union.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

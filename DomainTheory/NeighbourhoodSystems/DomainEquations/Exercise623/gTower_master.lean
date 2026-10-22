@@ -1,8 +1,3 @@
-/-ai
-Every level of the tower has the same master, namely the fixed-point token set.
-
-The zero level is the generator. At a successor, the chain step identifies the new master with the previous master, and the inductive hypothesis identifies that with the fixed-point set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

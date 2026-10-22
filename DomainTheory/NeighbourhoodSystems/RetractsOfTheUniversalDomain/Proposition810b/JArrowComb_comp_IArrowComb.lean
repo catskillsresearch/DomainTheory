@@ -1,8 +1,3 @@
-/-ai
-The arrow extraction composed after the arrow injection is the identity of the function space of the two fixed neighbourhoods.
-
-Unfold both maps. Associativity, the identity that the arrow extraction after the arrow injection is the identity, the composition law of the exponential, the two subsystem identities that the projection after the injection is the identity, and the identity law of the exponential give the equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

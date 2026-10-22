@@ -1,8 +1,3 @@
-/-ai
-The level set of level k and mask m is the union of the residue classes of those residues ℓ below 2^k whose bit is set in m.
-
-If a number lies in the level set, its remainder modulo 2^k is such a residue, and the number lies in that residue class. Conversely, a number in a selected residue class has remainder equal to that residue, so the corresponding bit of the mask is set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

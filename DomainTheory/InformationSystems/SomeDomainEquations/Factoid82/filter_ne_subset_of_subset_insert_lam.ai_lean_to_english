@@ -1,0 +1,3 @@
+If a finite set of input-output list pairs is contained in the insertion of a pair into another finite set, then filtering that pair out leaves a subset of the other set.
+
+A filtered element belongs to the original set, hence to the insertion, and it is distinct from the inserted pair, so it belongs to the remaining set.

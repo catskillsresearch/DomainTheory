@@ -1,8 +1,3 @@
-/-ai
-The embedded set of index zero is the master neighbourhood of U.
-
-This is the zero law of Scott's sequence, because the index set of zero is the set of all indices.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

@@ -1,8 +1,3 @@
-/-ai
-The tuple of λ-definitions, evaluated at the argument element of a total vector, is argument-like.
-
-At a coordinate below the tuple length, that component is the value of the corresponding realiser, which is bottom or a numeral. At a coordinate at or beyond the tuple length, that component is bottom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

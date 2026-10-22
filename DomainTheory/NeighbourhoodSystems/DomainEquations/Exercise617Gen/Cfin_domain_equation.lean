@@ -1,8 +1,3 @@
-/-ai
-The domain of finite or infinite sequences over the alphabet Fin (n + 1) is isomorphic, as a domain, to the unit summed with one copy of itself for each letter of that alphabet.
-
-The isomorphism is the generic domain equation instantiated at Fin (n + 1).
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

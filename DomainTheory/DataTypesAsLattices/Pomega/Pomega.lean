@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, §1. Pω is the collection of all subsets of the natural numbers.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

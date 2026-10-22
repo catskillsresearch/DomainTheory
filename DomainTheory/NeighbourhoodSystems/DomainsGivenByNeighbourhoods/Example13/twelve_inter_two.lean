@@ -1,8 +1,3 @@
-/-ai
-The intersection of {1, 2} and {2} equals {2}.
-
-Extensionality reduces the equality to membership of a token. Case analysis on the three tokens, together with the two neighbourhood definitions, settles each case.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

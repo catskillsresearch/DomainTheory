@@ -1,6 +1,3 @@
-/-ai
-A valuation trace meets the G condition when every entry whose code is zero has its member in the G combinator.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

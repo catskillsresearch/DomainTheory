@@ -1,8 +1,3 @@
-/-ai
-If f is the retraction of g along a continuous-lattice projection, then the subspace-extension infimum of the inclusion of f is at most the subspace-extension infimum of g.
-
-For a point sent into U, the inclusion of f at that point belongs to the image used on the left, and it lies below g there because the inclusion of a retraction lies below the element. The left-hand infimum therefore lies below every value of g on the preimage.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

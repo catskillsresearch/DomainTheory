@@ -1,8 +1,3 @@
-/-ai
-If an endomap of the universal domain is a finitary projection, then its sharp is a finitary projection.
-
-The sharp is a projection because the endomap is a projection, and it is finitary by the finitariness of the sharp of a finitary projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

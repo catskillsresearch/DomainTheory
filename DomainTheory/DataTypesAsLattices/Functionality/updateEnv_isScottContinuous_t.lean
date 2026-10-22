@@ -1,8 +1,3 @@
-/-ai
-For fixed x and n, the environment update of t by x at n is Scott continuous in t.
-
-It is the graph of a pointwise continuous family. At the numeral n the component is the constant map with value x, and at every other argument it is application in the function place.
-ai-/
 
 module
 

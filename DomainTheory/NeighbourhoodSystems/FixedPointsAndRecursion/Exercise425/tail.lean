@@ -1,6 +1,3 @@
-/-ai
-The tail of length n is the set of naturals at least n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

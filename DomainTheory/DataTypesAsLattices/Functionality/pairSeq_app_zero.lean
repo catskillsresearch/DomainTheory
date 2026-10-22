@@ -1,8 +1,3 @@
-/-ai
-Application of a sequence pair at zero returns the left argument.
-
-This is the zero-place application equation for the two-place sequence.
-ai-/
 
 module
 

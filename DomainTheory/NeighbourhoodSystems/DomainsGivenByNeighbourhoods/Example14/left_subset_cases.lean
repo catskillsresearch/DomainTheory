@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood containing the left branch is the master neighbourhood or the left branch.
-
-Classify the neighbourhood. Those two cases are immediate. In each of the other five cases the token 1, which belongs to the left branch, fails to belong to the neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

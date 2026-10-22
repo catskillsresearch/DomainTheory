@@ -1,8 +1,3 @@
-/-ai
-Proposition 5.4 (Scott 1981, PRG-19) states that the map sending x to the least fixed point in y of τ(x, y) equals the approximable map recovered from the least fixed point of the recursion operator of τ.
-
-The numbered name theorem_54 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition54.pfix_eq_fixElement_recOp

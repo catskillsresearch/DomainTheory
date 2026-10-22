@@ -1,6 +1,3 @@
-/-ai
-The pointwise intersection of two approximable maps is the approximable map that relates an input to an output when both maps do. The master pair, the intersection of outputs, and monotonicity are the corresponding clauses of the two maps taken jointly.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

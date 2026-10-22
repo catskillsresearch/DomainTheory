@@ -1,25 +1,19 @@
 # Exercise 5.13
 
-**EXERCISE 5.13.** Prove the existence of a one-one function $\mathrm{num} : \mathbf{N} \times \mathbf{N} \to \mathbf{N}$ such that
+## Human-English
 
-$$
-\mathrm{num}(0, 0) = 0;
-$$
+@import "Exercise513.english" {code_block=false}
 
-$$
-\mathrm{num}(n, m+1) = \mathrm{num}(n+1, m) + 1;
-$$
+## AI: Human-English to AI-Lean
 
-$$
-\mathrm{num}(n+1, 0) = \mathrm{num}(0, n) + 1.
-$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise513.lean**
 
-Draw a picture (i.e. an infinite matrix) for the function and find a closed form for its values, if possible. Use the function to prove the isomorphism of the domains
+@import "Exercise513.lean"
 
-$$
-P\mathbf{N},\ P(\mathbf{N} \times \mathbf{N}),\ P\mathbf{N} \times P\mathbf{N}.
-$$
+## AI: AI-Lean to AI-English
 
-**Lean 4**
+@import "Exercise513.ai_lean_to_english" {code_block=false}
 
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise513.lean](Exercise513.lean)
+## AI: AI-English to Human-English Concordance
+
+@import "Exercise513.ai_english_concordance" {code_block=false}

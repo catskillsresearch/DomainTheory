@@ -1,8 +1,3 @@
-/-ai
-The structure map of a Tc-algebra, applied to the three-way sum of the identity, g, and g at the image under toCC of the empty structured element, equals the constant descent value.
-
-The empty structured element is sent by toCC to the zero-injection of the unit. The three-way sum acts there by the identity on that unit, and the result is the constant descent value.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

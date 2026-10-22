@@ -1,6 +1,3 @@
-/-ai
-Self-abstraction inside the universal domain sends an approximable self-map f to the image, under i-arrow, of the filter of f.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

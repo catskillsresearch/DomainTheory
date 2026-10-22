@@ -1,8 +1,3 @@
-/-ai
-The prepend of a finite binary string σ to any set of strings is contained in the cone of σ.
-
-An element of the prepend is σ followed by some string, so σ is a prefix of it and it belongs to the cone.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

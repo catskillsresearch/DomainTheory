@@ -1,6 +1,3 @@
-/-ai
-The alternating element is the least fixed point of the composite that prepends true and then prepends false.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,8 +1,3 @@
-/-ai
-The triangular-number function is primitive recursive.
-
-It agrees with the quotient by 2 of the product of the argument with its successor, and multiplication, the successor, and division are primitive recursive.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

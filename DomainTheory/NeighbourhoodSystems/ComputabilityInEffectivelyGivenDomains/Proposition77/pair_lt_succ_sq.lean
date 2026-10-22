@@ -1,8 +1,3 @@
-/-ai
-The pair of x and y is strictly below the square of one more than their maximum.
-
-The square of z plus one expands as the square of z plus twice z plus one. Unfolding the pairing function, if x is strictly below y the maximum is y and the expanded square bounds the pair, and otherwise the maximum is x and the other branch is bounded the same way.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

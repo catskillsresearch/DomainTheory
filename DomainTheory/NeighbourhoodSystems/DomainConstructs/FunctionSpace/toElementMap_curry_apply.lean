@@ -1,8 +1,3 @@
-/-ai
-Theorem 3.12(i) of Scott (1981, PRG-19) states that currying a map g and then evaluating at x and at y recovers the value of g at the pair of x and y.
-
-The two elements contain the same neighbourhoods. A neighbourhood of the curried value is witnessed by an output neighbourhood of y and an input neighbourhood of x, which reassemble as the product neighbourhood of that pair with the same relation. Conversely, a product neighbourhood of the pair splits into those two neighbourhoods, and the step of the output is a neighbourhood because it is the step of a sub-neighbourhood of y and of the codomain of the relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

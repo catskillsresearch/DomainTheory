@@ -1,8 +1,3 @@
-/-ai
-For a projection pair, the injection of an element x lies below an element y if and only if x lies below the projection of y. The injection of a projection pair sends a bounded set of elements to a bounded set. The injection of an element x equals the infimum of the set of elements y such that x lies below the projection of y. The injection preserves least upper bounds of bounded sets: the image of the supremum equals the supremum of the image. Any two members of the lower set of an element y have a common upper bound that still lies in the set. The projection of an element y equals the supremum of the set of elements x such that the injection of x lies below y. The upper set of an element x is nonempty.
-
-The numbered name example_625 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise625.galois

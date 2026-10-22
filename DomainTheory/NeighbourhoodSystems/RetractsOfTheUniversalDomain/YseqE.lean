@@ -1,6 +1,3 @@
-/-ai
-The abstract sequence at stage n is the union, over all Boolean sequences of length n, of the positive piece of the abstract atom obtained by extending that sequence by true and evaluating it at depth n + 1. It is the analogue, for an arbitrary neighbourhood system and splitting operation, of Scott's sequence of positive atoms.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

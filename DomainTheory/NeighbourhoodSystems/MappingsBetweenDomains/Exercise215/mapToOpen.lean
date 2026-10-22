@@ -1,6 +1,3 @@
-/-ai
-The open set of an approximable map into O is the set of elements that the map sends to the top element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

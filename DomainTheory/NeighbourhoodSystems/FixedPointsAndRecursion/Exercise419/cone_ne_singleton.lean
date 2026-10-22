@@ -1,8 +1,3 @@
-/-ai
-A cone of binary strings is never equal to a singleton.
-
-Equality would make the cone a subset of the singleton, and no cone is contained in a singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

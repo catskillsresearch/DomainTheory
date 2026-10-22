@@ -1,8 +1,3 @@
-/-ai
-For each bit there is a truth token outside its bit neighbourhood.
-
-For false, the token 1 lies outside the zero neighbourhood. For true, the token 0 lies outside the one neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

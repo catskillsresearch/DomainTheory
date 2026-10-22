@@ -1,6 +1,3 @@
-/-ai
-Four natural numbers n₀, n₁, n₂, and m are packed by nesting the pairing function as pair(n₀, pair(n₁, pair(n₂, m))).
-ai-/
 module
 
 public import Mathlib.Computability.RE

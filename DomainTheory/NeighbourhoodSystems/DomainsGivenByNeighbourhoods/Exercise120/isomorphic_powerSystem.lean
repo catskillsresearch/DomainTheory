@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood system is isomorphic to its power system.
-
-The order isomorphism between their filters supplies the domain isomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

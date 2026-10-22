@@ -1,0 +1,3 @@
+One formula entails another if and only if the Cantor-space evaluation of the first is contained in the Cantor-space evaluation of the second.
+
+If entailment holds, a point of the first evaluation makes the first formula true and hence the second, so it lies in the second evaluation. Conversely, a valuation making the first formula true is a point of the first evaluation and hence of the second, so it makes the second formula true.

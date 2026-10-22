@@ -1,8 +1,3 @@
-/-ai
-An element of the indexed separated sum that meets tagged copies at two indices meets them at the same index.
-
-The element contains the intersection of the two copies. A neighbourhood equal to that intersection is not the sum master, because the basepoint lies in the sum master and in no tagged copy, so the intersection is a tagged copy at some index. A token of that neighbourhood is tagged into both original copies, and both indices equal that index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

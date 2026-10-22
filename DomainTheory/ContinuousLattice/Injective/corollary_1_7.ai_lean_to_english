@@ -1,0 +1,3 @@
+A T₀-space is injective if and only if every space in which it is embedded admits a continuous retraction onto it.
+
+If the space is injective, its identity extends along any embedding, and the extension is a retraction. Conversely, the embedding into the product of one copy of the Sierpiński space for each open set admits a retraction by hypothesis, and a retract of that injective power is injective.

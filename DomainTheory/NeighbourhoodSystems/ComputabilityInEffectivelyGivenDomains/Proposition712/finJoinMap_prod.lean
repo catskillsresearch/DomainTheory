@@ -1,6 +1,3 @@
-/-ai
-The binary join map on the product of a neighbourhood system with itself is the approximable map into the power domain obtained from the two-variable binary join.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

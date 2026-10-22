@@ -1,8 +1,3 @@
-/-ai
-The i-th bit of a combined by exclusive or with the bitwise conjunction of a and b equals the i-th bit of a conjoined with the negation of the i-th bit of b.
-
-The test-bit laws for exclusive or and for conjunction rewrite the left side, and the four combinations of the two bits are each definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

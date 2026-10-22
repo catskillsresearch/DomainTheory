@@ -1,0 +1,3 @@
+Inserting a token that already belongs to a consistent finite set preserves consistency.
+
+Insertion of an existing member leaves the set unchanged, so consistency of the original set rewrites to consistency of the inserted set.

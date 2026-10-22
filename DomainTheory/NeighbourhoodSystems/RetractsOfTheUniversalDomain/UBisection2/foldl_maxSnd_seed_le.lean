@@ -1,8 +1,3 @@
-/-ai
-A seed is at most the left fold of the maximum of second components.
-
-Induct on the list, generalizing the seed. The empty fold is the seed. For a cons cell, the seed is at most the maximum with the head's second component, and that maximum is at most the remaining fold by the inductive hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

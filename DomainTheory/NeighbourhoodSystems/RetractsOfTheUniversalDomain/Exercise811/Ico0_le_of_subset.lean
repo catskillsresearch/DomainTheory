@@ -1,8 +1,3 @@
-/-ai
-If [0, p) is contained in [0, q) and p is positive, then p ≤ q. Positivity of q follows from the inclusion.
-
-Zero lies in [0, p), hence in [0, q), so q is positive. If q < p, then q would lie in [0, p) and therefore in [0, q), which is impossible.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

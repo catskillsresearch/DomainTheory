@@ -1,8 +1,3 @@
-/-ai
-Composing the left injection, the sum of two approximable maps, and the left projection recovers the first map. Composing the right injection, the sum of two approximable maps, and the right projection recovers the second map.
-
-The numbered name example_319_sum is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum.outMapu2080_comp_sumMap_comp_inMapu2080

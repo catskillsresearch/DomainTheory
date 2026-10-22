@@ -1,6 +1,3 @@
-/-ai
-The separated-sum domain isomorphism identifies a bottom-adjoined disjoint sum of elements of information systems A and B with an element of their sum system, sending a code to its assembly and an element to its classification. The two composites are the identities. Assembly reflects order by a case split: bottom is least; a proper code does not lie under bottom, because a left or right bottom token of its image would then lie in the bottom element; two left codes compare by the order criterion for the left inclusion and two right codes by the order criterion for the right inclusion; and a left code does not lie under a right code, because a left bottom token and a right bottom token cannot both belong to one element. The converse is monotonicity of assembly.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

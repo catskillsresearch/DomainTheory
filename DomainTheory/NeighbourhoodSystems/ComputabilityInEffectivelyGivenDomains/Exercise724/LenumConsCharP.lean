@@ -1,6 +1,3 @@
-/-ai
-The packed consistency characteristic applies the consistency characteristic to the two components of a paired code.
-ai-/
 
 module
 

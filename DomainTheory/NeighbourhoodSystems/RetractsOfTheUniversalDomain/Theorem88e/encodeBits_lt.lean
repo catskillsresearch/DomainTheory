@@ -1,8 +1,3 @@
-/-ai
-The length-n bit encoding of any sign sequence is strictly less than two to the power n.
-
-The argument is by induction on n. The zero encoding is zero. At a successor, two to the successor power is twice two to the n, and adding either two to the n or zero to a strictly smaller encoding stays below that double.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

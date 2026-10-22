@@ -1,8 +1,3 @@
-/-ai
-The doubling encoding is injective.
-
-Equality of encodings yields each string as a prefix of the other, by the prefix law applied to the empty continuation. The two length inequalities then agree, and a prefix of equal length is equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

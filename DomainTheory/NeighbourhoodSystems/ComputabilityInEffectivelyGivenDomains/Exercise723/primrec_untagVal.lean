@@ -1,8 +1,3 @@
-/-ai
-The value extractor untagVal is primitive recursive.
-
-It is the third right projection of untagState, and untagState is primitive recursive.
-ai-/
 
 module
 

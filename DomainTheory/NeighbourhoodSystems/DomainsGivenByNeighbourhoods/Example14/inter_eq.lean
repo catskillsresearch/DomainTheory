@@ -1,8 +1,3 @@
-/-ai
-The intersection of two neighbourhoods of Example 1.4 equals one of the seven neighbourhoods, or is empty.
-
-Classify both arguments by the membership criterion and rewrite each intersection by the corresponding intersection identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

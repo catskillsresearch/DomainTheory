@@ -1,8 +1,3 @@
-/-ai
-At one common level, the union of two level sets is the level set of the bitwise disjunction of the masks.
-
-Membership in the union is the disjunction of the two bit tests, which is the bit test of the bitwise disjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

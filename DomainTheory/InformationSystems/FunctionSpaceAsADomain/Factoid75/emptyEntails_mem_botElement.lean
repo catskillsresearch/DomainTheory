@@ -1,8 +1,3 @@
-/-ai
-A token entailed by the empty set belongs to the bottom element.
-
-This is entailment transitivity applied to the empty entailment-set law and the hypothesis.
-ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

@@ -1,8 +1,3 @@
-/-ai
-If a set X is nonempty and its tagged copy by an index a equals the tagged copy of a set X' by an index a', then a equals a' and X equals X'.
-
-An element of X gives a tagged token in the first copy, hence in the second. Injectivity of tagging forces the indices to agree. The remaining equality of the sets is injectivity of tagging by that common index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

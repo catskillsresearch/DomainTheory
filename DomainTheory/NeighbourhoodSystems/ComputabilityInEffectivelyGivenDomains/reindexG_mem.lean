@@ -1,8 +1,3 @@
-/-ai
-If a doubly indexed set is a neighbourhood of the double iteration, then its reindexing is a neighbourhood of the iteration.
-
-Each fiber of the reindexing is a double fiber, hence a neighbourhood of the system. For the cofinite master condition, take the outer cofinite bound of the doubly indexed neighbourhood and an inner bound that makes every double fiber below that outer bound equal the master. If an index is at least the pairing of those two bounds, then either its first unpaired component meets the outer bound, so the fiber is the master of the iteration, or its second component meets the inner bound. Both components cannot lie strictly below the two bounds, because the pairing would then be strictly smaller.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

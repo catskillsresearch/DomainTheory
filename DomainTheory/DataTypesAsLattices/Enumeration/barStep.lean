@@ -1,6 +1,3 @@
-/-ai
-The bar step of an element B is the graph of the map sending u to the graph of the bar step body at B, u, and a variable element.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

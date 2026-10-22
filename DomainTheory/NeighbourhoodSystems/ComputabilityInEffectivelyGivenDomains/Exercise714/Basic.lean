@@ -1,20 +1,3 @@
-/-ai
-A nonempty recursively enumerable set of natural numbers is the range of a primitive-recursive function.
-
-From a decider of a relation projecting onto the set and a known element of the set, send each code to the second component of the code when the decider accepts and to the known element otherwise. This function is primitive recursive. Every value lies in the set: the fallback is the known element, and an accepted code is a witness of the projected relation at its second component. An element of the set has a witnessing code, and at the pairing of that witness with the element the decider accepts, so the function returns the element.
-
-The running intersection equals the enumerated function at zero, and at a successor it equals the presentation's intersection of the previous value with the next enumerated index.
-
-Both identities are the recursion equations of the definition.
-
-Whenever the enumerated function is primitive recursive, so is the running intersection.
-
-The step that intersects the stored recursive value with the enumerated function at one more than the counter is primitive recursive, by composing the presentation's intersection with the projections and with the enumerated function after successor. Primitive recursion from the constant value at zero, reindexed by pairing a constant zero with the identity, equals the running intersection by those recursion equations.
-
-Every computable element is the union of the principal elements of a decreasing primitive-recursive chain of neighbourhoods.
-
-The index set is recursively enumerable and contains an index of the master, because the element contains the master. Enumerate the index set by a primitive-recursive function, and take its running intersection, which is primitive recursive. Any two enumerated neighbourhoods in the element have a neighbourhood contained in their intersection, by closure of the element under intersection and surjectivity. By induction, every running-intersection neighbourhood lies in the element, and the successor neighbourhood equals the intersection of the current one with the next enumerated neighbourhood. The chain therefore decreases, and each term is contained in the corresponding enumerated neighbourhood. A neighbourhood lies in the element exactly when it contains one of these: surjectivity and the enumeration supply a stage whose enumerated neighbourhood equals it and whose running intersection is contained in it, while the converse is upward closure.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72
@@ -23,67 +6,9 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-/-!
-# Exercise 7.14 (Scott 1981, PRG-19, §7) — the r.e. facts after Definition 7.2
-
-> **Exercise 7.14.** (For recursive-function theorists.) Prove the statements after definition 7.2
-> about the existence of primitive recursive functions for showing things recursively enumerable.
-> (Recall that a non-empty set is r.e. iff it is the range of a primitive recursive function.) Show
-> also that every computable element `y ∈ |ℰ|` can be written
-> `y = ⋃ {↑Y_{t(i)} ∣ i ∈ ℕ}`, where `t : ℕ → ℕ` is primitive recursive and where we may assume
-> `Y_{t(i+1)} ⊆ Y_{t(i)}` for all `i ∈ ℕ`.
-
-This exercise has two halves.
-
-## Half 1 — "a non-empty set is r.e. iff it is the range of a primitive recursive function"
-
-Scott's prose after Definition 7.2 reads: *"What it means to be recursively enumerable is that there
-is a primitive recursive function (hence, a total function) `r : ℕ → ℕ` such that
-`y = {Y_{r(i)} ∣ i ∈ ℕ}`"* and, for a computable map, *"`f = {(X_{s(i)}, Y_{r(i)}) ∣ i ∈ ℕ}` for a
-suitable pair of primitive recursive functions `s` and `r`."* This is exactly the classical
-characterization **non-empty r.e. set = range of a primitive recursive function**. Our choice-free
-model of r.e. is `Domain.Recursive.REPred p := ∃ q, RecDecidable q ∧ ∀ n, p n ↔ ∃ i, q ⟨i,n⟩`
-(projection of a recursively decidable relation), so we prove both directions against it:
-
-* `repred_range_primrec` — the **range** of a primitive recursive `r` is r.e. (the relation
-  `r i = n` is recursively decidable by `RecDecidable.natEq`, and `∃ i, r i = n` is its projection);
-* `repred_exists_primrec_range` — every **non-empty** r.e. set is the range of a primitive recursive
-  function. From a witness `a ∈ p` and the decider `qc` of the underlying relation, the function
-  `r w := selectFn (isOne (qc w)) w.2 a` enumerates `p`: on a witnessing code `w = ⟨i,n⟩` (where
-  `qc w = 1`) it returns `n`, and it falls back to the fixed `a ∈ p` otherwise, so its range is
-  exactly `p`. (The fall-back `a` is precisely why *non-emptiness* is needed.)
-* `repred₂_exists_primrec_enum` — the map form: a non-empty r.e. *relation* `p n m` is enumerated by
-  a pair of primitive recursive functions `s, r` with `p n m ↔ ∃ i, s i = n ∧ r i = m` (split the
-  range function of the `Nat.pair`-coded relation into its two projections). This is Scott's
-  `f = {(X_{s(i)}, Y_{r(i)})}`.
-
-## Half 2 — every computable element is a decreasing union of finite (principal) elements
-
-`computableElement_eq_decreasing_iUnion_principal`: for a computable element `y` of an effectively
-given `W` (`ComputableElement Q y`, i.e. the index set `{m ∣ Yₘ ∈ y}` is r.e.), there is a
-**primitive recursive** `t : ℕ → ℕ` with
-
-* (decreasing)   `Q.X (t (i+1)) ⊆ Q.X (t i)` for all `i`;
-* (union)        `y.mem Z ↔ ∃ i, (↑Y_{t(i)}).mem Z`, i.e. `y = ⋃ᵢ ↑Y_{t(i)}` (Factoid 1.7b form).
-
-The index set is non-empty (it contains the master `Δ`, since every filter contains `Δ`), so Half 1
-gives a primitive recursive enumeration `r₀` of all of `y`'s indices. To force the approximations to
-*decrease*, we take running intersections: `t 0 = r₀ 0`, `t (i+1) = inter (t i) (r₀ (i+1))`, using
-the presentation's primitive-recursive intersection function `Q.inter`. Each `Yₜ₍ᵢ₎` is the meet of
-the first `i+1` members of `y`, hence still in `y` (filters are ∩-closed) and `⊆ Yᵣ₀₍ᵢ₎`, which is
-what makes the union still equal to `y` while being a decreasing chain.
-
-**Choice discipline.** Half 1 is built only on the choice-free `Recursive.lean` layer and audits
-`⊆ {propext, Quot.sound}`. Half 2's *data* (the function `t` and its primitive recursiveness) is also
-choice-free; the `Prop`-level union/membership reasoning over `Set β` may pull `Classical.choice`
-(the usual `Set`-equality pattern of Lecture VII), flagged in the checkpoint.
--/
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise714
 
 open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
-
-/-! ## Half 1 — non-empty r.e. ⇔ range of a primitive recursive function -/
 
 /-- **A non-empty recursively enumerable set is the range of a primitive recursive function.** This
 is the precise content of Scott's prose after Definition 7.2 (*"there is a primitive recursive `r`
@@ -118,8 +43,6 @@ theorem repred_exists_primrec_range {p : ℕ → Prop} (hp : REPred p) {a : ℕ}
     rw [hqc1, selectFn_one, unpair_pair_snd]
   · rintro ⟨w, rfl⟩
     exact hrw_mem w
-
-/-! ## Half 2 — every computable element is a decreasing union of finite elements -/
 
 variable {β : Type*}
 

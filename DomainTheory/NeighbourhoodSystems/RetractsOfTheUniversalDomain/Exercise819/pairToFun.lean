@@ -1,6 +1,3 @@
-/-ai
-The map from a product into the function space of the truth-value domain sends a pair to the function that returns the first component at true, the second component at false, and the bottom element at bottom. It is the curry of the conditional after the swap that places the truth value in the selection argument.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

@@ -1,6 +1,3 @@
-/-ai
-The total element of Example 1.2 determined by {0} is the filter whose neighbourhoods are the master and {0}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

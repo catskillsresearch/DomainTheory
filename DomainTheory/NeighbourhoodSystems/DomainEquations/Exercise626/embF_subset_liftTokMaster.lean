@@ -1,8 +1,3 @@
-/-ai
-If X is a neighbourhood, its false-bit embedding is included in the master of the lift.
-
-The tagged copy of X is included in the tagged copy of the master, and that tagged master is included in the master with the empty string inserted.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

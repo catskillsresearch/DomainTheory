@@ -1,8 +1,3 @@
-/-ai
-The descent map commutes with the algebra structures: composing it with the inverse of the isomorphism ccEquiv equals composing the structure map of the target algebra with the sum map of the descent.
-
-The recursion identity rewrites the left-hand side. Associativity then places the inverse isomorphism next to ccEquiv, that composite is the identity, and the identity cancels.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

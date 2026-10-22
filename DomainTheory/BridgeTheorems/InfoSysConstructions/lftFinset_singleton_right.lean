@@ -1,8 +1,3 @@
-/-ai
-The left part of a singleton consisting of one right token is empty.
-
-A left token in that left part would be a member of the singleton and hence a right token, which is impossible, and the empty set has no members.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

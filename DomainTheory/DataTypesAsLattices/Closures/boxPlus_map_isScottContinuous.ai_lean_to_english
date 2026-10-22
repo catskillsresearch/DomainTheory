@@ -1,0 +1,3 @@
+The map defining the boxed sum, sending u to the double conditional of the occupancy-tag union with the two shifted square-pair branches, is Scott continuous.
+
+The ternary continuity theorem applies to the three continuity lemmas for the double conditional, the continuity of the occupancy test, and the two branches. Each branch is a continuous square pairing of a constant empty set with the composite of application of the corresponding shift and the corresponding square projection.

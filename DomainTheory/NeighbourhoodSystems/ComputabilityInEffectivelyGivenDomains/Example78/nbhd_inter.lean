@@ -1,8 +1,3 @@
-/-ai
-The intersection of the neighbourhoods indexed by n and m is the neighbourhood indexed by their bitwise disjunction.
-
-A position lies in both neighbourhoods exactly when both bits are unset, which is the condition that the corresponding bit of the disjunction is unset.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

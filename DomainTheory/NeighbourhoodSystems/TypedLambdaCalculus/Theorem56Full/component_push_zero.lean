@@ -1,8 +1,3 @@
-/-ai
-The zeroth coordinate of the stack obtained by pushing an element x onto a stack s is x.
-
-Rewrite the zeroth component as the head, and use that the head of a push is the pushed element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

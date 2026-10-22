@@ -1,6 +1,3 @@
-/-ai
-The embedding of an element x of D into the lift is the element whose neighbourhoods are the lift master and the false-tagged copies of the neighbourhoods of x. Downward closure preserves each disjunct, and the master belongs by the left disjunct. The intersection of the master with itself is the master. The intersection of the master with a false-tagged neighbourhood reduces to that neighbourhood by the master-intersection law, and the intersection of two false-tagged neighbourhoods is the false tag of their intersection in x. A set above the master equals the master, because the master is the greatest neighbourhood of the lift. A set above a false-tagged neighbourhood is the master, or a larger false-tagged neighbourhood whose underlying set lies above the original neighbourhood in x.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

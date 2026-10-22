@@ -1,8 +1,3 @@
-/-ai
-The level set coded by the raw difference of n and m is the set difference of the neighbourhoods indexed by n and by m.
-
-Unfold the raw difference, project the paired code, and apply the symmetric form of the upsampled difference formula to the levels and masks of the two canonical indices.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

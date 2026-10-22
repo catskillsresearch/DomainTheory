@@ -1,8 +1,3 @@
-/-ai
-The singleton-stack embedding composed with the head lies below the identity of the infinite power.
-
-Rewrite the inequality of maps as an inequality of element actions. The composite acts by the embedding of the head, and the identity acts as the element. Compare by components. The zero component rewrites as the head of the element. A successor component rewrites as the bottom, which lies below that component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise511

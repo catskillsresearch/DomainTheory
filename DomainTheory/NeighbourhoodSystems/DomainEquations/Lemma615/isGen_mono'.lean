@@ -1,8 +1,3 @@
-/-ai
-If the forward map composed with the backward map lies below the identity on the codomain, and Z generates X while W generates X', then an inclusion of X in X' yields an inclusion of Z in W.
-
-The backward relation from Z to X widens along the inclusion to a backward relation from Z to X'. Composing with the forward relation from X' to W gives a composite relation from Z to W, and the hypothesis on the composite reads off the inclusion of Z in W.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

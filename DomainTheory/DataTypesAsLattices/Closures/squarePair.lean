@@ -1,6 +1,3 @@
-/-ai
-The disjoint pairing of two sets of natural numbers consists of the doubles of members of the first set together with the numbers of the form twice a member of the second set, plus one.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,8 +1,3 @@
-/-ai
-The singleton of bottom is consistent.
-
-Stage zero is a witness. The atom projection is empty, hence consistent, and the function-token projection is empty because bottom is not a function token.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

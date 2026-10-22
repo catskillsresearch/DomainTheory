@@ -1,0 +1,3 @@
+strictRetraction is a retraction on the function space.
+
+Extensionality and the action of a composite reduce the claim to an equality of function-space elements. Injectivity of the passage to approximable maps, and extensionality again, reduce that to an equality of applications. At bottom both sides are bottom. Off bottom both sides equal the original application.

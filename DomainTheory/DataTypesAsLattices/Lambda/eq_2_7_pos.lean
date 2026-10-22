@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.7), the remaining cases. If the test omits 0 and is not ⊥, the McCarthy conditional returns its right argument.
-
-Some positive number belongs to the test. The left branch is then impossible, and the right branch copies the right argument.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

@@ -1,6 +1,3 @@
-/-ai
-For positive n, Scott's domain A is the neighbourhood system on strings whose neighbourhoods are the sets in the inductive family MemA. The master neighbourhood is the set of all strings, which contains the empty string. Consistent intersections are neighbourhoods by memA_inter, and every neighbourhood is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

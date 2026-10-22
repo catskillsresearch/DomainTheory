@@ -1,8 +1,3 @@
-/-ai
-The filter of an approximable map contains a set exactly when that set is a function-space neighborhood and the map belongs to it.
-
-This is the defining clause of the filter of a map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

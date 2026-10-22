@@ -1,6 +1,3 @@
-/-ai
-The packed-state component of an X-sub-step word is the right component of its right component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

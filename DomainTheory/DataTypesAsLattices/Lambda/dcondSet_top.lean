@@ -1,8 +1,3 @@
-/-ai
-The doubly strict conditional on ⊤ is ⊤.
-
-Both sides agree by unfolding the doubly strict conditional, the McCarthy conditional, and ⊤.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

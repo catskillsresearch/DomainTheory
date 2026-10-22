@@ -1,8 +1,3 @@
-/-ai
-The enumeration of T sends 2 to the neighbourhood one.
-
-The equation is the defining clause.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

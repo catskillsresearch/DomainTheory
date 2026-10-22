@@ -1,8 +1,3 @@
-/-ai
-If a carrier equals the token type and transport along that equality sends a neighbourhood system to a second system, then the domain object of the first system equals the domain object of the second.
-
-Cases on the carrier equality and on the system equality reduce the goal to reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

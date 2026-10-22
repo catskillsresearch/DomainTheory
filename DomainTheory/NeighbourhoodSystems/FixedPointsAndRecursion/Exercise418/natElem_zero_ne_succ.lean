@@ -1,8 +1,3 @@
-/-ai
-The numeral zero is distinct from the numeral of every successor.
-
-Injectivity of the numerals would force zero to equal that successor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

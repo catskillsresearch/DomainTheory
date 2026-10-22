@@ -1,6 +1,3 @@
-/-ai
-Appendix case 2. The code myhillCase2Code j n m applies the union code to the finite code of j and to the conditional code applied to n, then to n, then to m. Its value is the union of the finite set e_j with the conditional of the value of m between the value of n and the value of n.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

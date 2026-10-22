@@ -1,8 +1,3 @@
-/-ai
-A set Z belongs to the juxtaposition of the total finite sequence σ with an element y if and only if Z is a neighbourhood of the system C and Z contains the prepend of σ to some neighbourhood of y.
-
-If Z belongs to the juxtaposition, the witnessing first neighbourhood is contained in the singleton of σ. When it is a cone of a string ρ, ρ is a prefix of σ, and the master neighbourhood of y prepends to the cone of σ, which is contained in the cone of ρ and hence in Z. When it is a singleton of ρ, that string equals σ and the witnessing second neighbourhood is the required one. Conversely, the singleton of σ together with the given neighbourhood of y witnesses the singleton disjunct of the relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

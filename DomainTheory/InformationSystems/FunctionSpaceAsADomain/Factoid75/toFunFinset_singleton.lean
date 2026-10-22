@@ -1,8 +1,3 @@
-/-ai
-The underlying function-token set of a singleton strict token is the singleton of its underlying token.
-
-A member of the underlying set is the coercion of that unique token, and conversely that underlying token is the image of the singleton's member.
-ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

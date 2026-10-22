@@ -1,8 +1,3 @@
-/-ai
-The intersection of two tails is the tail of the larger index.
-
-Compare the two sets by extensionality. After unfolding membership, a number lies in both tails exactly when it is at least both indices, which is the comparison with their maximum.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

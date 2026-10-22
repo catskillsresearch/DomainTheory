@@ -1,8 +1,3 @@
-/-ai
-If g is primitive recursive, then so is the function sending n to 2 raised to the power g n.
-
-It is exponentiation composed with the pairing of the constant 2 and g, and the two sides agree after simplifying the unpaired projections.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

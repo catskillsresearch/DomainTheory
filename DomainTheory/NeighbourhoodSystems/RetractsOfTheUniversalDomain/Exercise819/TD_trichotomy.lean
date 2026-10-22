@@ -1,8 +1,3 @@
-/-ai
-Every element of the truth-value domain is the bottom element, the true element, or the false element.
-
-This is the three-way classification of elements of the neighbourhood system of Example 1.2, read with the names of Example 2.3.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

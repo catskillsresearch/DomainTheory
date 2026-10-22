@@ -1,8 +1,3 @@
-/-ai
-If k belongs to x, then some coded finite set is contained in x and contains k.
-
-The singleton coded by 2^k is contained in x and contains k.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

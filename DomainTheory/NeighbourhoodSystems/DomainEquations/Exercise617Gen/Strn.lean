@@ -1,6 +1,3 @@
-/-ai
-Strn A is the type of finite A-strings, identified with the type of lists of elements of A.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

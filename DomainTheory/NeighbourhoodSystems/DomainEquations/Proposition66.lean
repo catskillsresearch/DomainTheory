@@ -1,8 +1,3 @@
-/-ai
-The homomorphism from an initial algebra A to an algebra B that realises their isomorphism is the only homomorphism from A to B.
-
-The numbered name theorem_66 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition66.iso_hom_unique

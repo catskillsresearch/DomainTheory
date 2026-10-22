@@ -1,8 +1,3 @@
-/-ai
-If a coordinate of a stack is a numeral, the guard at that coordinate agrees with the guarded map at the stack.
-
-Rewrite by the application formula and substitute the hypothesis. A zero numeral makes the zero test true, and a successor makes it false. In both cases the conditional returns the guarded map at the stack.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

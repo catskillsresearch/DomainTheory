@@ -1,8 +1,3 @@
-/-ai
-The only element of the unit system is its least element.
-
-Antisymmetry of the element order gives the two inclusions. A token of an arbitrary element is the unique token of the unit type, after which membership in the least element is immediate. The reverse inclusion is the general fact that the least element lies below every element.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56

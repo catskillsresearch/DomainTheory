@@ -1,8 +1,3 @@
-/-ai
-The monoid power-set operator is monotone.
-
-If one subset is contained in another, their pointwise squares are nested, and adjoining the same unit and the same two generators preserves the inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

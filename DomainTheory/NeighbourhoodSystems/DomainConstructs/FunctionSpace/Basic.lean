@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the function space of two neighborhood systems: the order on approximable maps, step sets and their finite intersections, the function-space neighborhood system and its equivalence with approximable maps, the least map of a consistent neighborhood, pointwise boundedness and suprema, evaluation, sections, and currying.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
@@ -64,66 +61,14 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.c
 
 @[expose] public section
 
-/-!
-# Lecture III (§3) — the function space `(𝒟₀ → 𝒟₁)`: Definitions 3.8, Propositions 3.9,
-Theorems 3.10, 3.11, 3.12, 3.13
-
-Following Dana Scott, *Lectures on a Mathematical Theory of Computation*, PRG-19 (1981), Lecture III.
-The **function space** `(𝒟₀ → 𝒟₁)` is the neighbourhood system whose *tokens* are the approximable
-maps `𝒟₀ → 𝒟₁` (Definition 2.1), and whose neighbourhoods are the non-empty finite intersections of
-the *step sets*
-
-`[X, Y] = {f ∣ X f Y}`   (`step X Y`),
-
-for `X ∈ 𝒟₀`, `Y ∈ 𝒟₁`. We model a finite intersection by a `List` of `(X, Y)` pairs, with
-`stepFun L = {f ∣ ∀ (X, Y) ∈ L, X f Y}`; the empty list gives the master `Δ = |𝒟₀ → 𝒟₁|`
-(`Set.univ`). The system is **positive**: a neighbourhood is required non-empty, which is exactly
-what makes a filter's induced relation *intersective* (Theorem 3.10).
-
-This file formalizes:
-
-* **Definition 3.8** — `step`, `stepFun`, the system `funSpace V₀ V₁`, with the basic algebra
-  `step_inter_right` (`[X,Y] ∩ [X,Y'] = [X,Y∩Y']`), `step_subset` (antitone/monotone),
-  `step_master_eq` (`[Δ₀,Δ₁] = univ`), and membership `step_mem`.
-* **Theorem 3.10** (the crux) — `funSpaceEquiv : |𝒟₀ → 𝒟₁| ≃o ApproximableMap V₀ V₁`: every filter
-  is fixed by a unique approximable map (`toApproxMap`/`toFilter`), inclusion-preservingly.
-* **Proposition 3.9** — `leastMap` (the least map `f₀` of a consistent neighbourhood, condition
-  (ii) `X f₀ Y ↔ ⋂{Yᵢ ∣ X ⊆ Xᵢ} ⊆ Y`), `leastMap_mem_stepFun` and `leastMap_le` (it is the minimal
-  element of `⋂[Xᵢ,Yᵢ]`), and `stepFun_subset_step_iff` (the remark after 3.9). The consistency
-  hypothesis `hcons` is Scott's condition (i) in operational form.
-* **Theorem 3.13** — `le_iff_toElementMap_le` (i); `mapsBounded_iff_pointwiseBounded` (ii);
-  `sSupMaps` with `toElementMap_sSupMaps` (iii).
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
-/-! ### The order on approximable maps (rel-inclusion). -/
-
-
-/-! ### Definition 3.8 — step sets and the function space. -/
-
-
-/-! ### Theorem 3.10 — the function space is complete. -/
-
-
-/-! ### Proposition 3.9 — the least map of a consistent neighbourhood. -/
-
-
-/-! ### Theorem 3.13(i) — the pointwise order. -/
-
-/-! ### Theorem 3.13(ii)(iii) — pointwise boundedness and sups. -/
-
-
-/-! ### Theorem 3.11 — evaluation. -/
 
 variable {V₂ : NeighborhoodSystem γ}
-
-
-/-! ### Theorem 3.12 — currying. -/
 
 
 end DomainTheory.NeighbourhoodSystems

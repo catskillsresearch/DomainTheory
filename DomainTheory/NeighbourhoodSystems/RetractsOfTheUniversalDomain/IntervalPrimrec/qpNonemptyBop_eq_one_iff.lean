@@ -1,10 +1,3 @@
-/-ai
-The nonemptiness flag of a rational-pair code equals one if and only if the decoded pair
-has first component strictly less than its second.
-
-Unfolding the flag and the decoding, the claim is the corresponding characterization of
-the rational strict-comparison code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

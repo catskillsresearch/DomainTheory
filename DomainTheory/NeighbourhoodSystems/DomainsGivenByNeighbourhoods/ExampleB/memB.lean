@@ -1,6 +1,3 @@
-/-ai
-A set of finite binary strings belongs to the binary neighbourhood system when it is the cone of some string.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

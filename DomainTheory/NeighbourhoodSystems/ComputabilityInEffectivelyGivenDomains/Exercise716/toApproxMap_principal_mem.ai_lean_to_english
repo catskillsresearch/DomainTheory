@@ -1,0 +1,3 @@
+The least approximable map of a function-space neighbourhood belongs to that neighbourhood.
+
+A function-space neighbourhood is the step neighbourhood of a list of pairs. A pair related by the least map of its principal filter lies in that filter, hence is a step coming from the list, and every map in the neighbourhood relates the pairs of the list.

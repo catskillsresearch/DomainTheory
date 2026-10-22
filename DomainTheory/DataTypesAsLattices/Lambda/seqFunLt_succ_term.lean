@@ -1,8 +1,3 @@
-/-ai
-The conditional that returns the functional at the numeral zero on a zero test, and otherwise the strict stage of the term-shifted functional at the predecessor, equals the strict stage of the functional at the next bound.
-
-The argument is the same case split as for the sequence shift, using the numeral equation for the term shift.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

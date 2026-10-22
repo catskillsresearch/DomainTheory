@@ -1,8 +1,3 @@
-/-ai
-If two finite sets generate the same ideal, they determine the same neighbourhood I(F).
-
-The two inclusions of neighbourhoods each follow from the inclusion criterion, after rewriting the generated ideals by the hypothesis, which leaves the containment of a finite set in the ideal it generates.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

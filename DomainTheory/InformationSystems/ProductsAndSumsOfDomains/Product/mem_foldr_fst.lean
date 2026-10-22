@@ -1,8 +1,3 @@
-/-ai
-A token x lies in the fold that inserts first components of a multiset of product tokens, starting from the empty set, if and only if some token of the multiset has first component x.
-
-The proof is by induction on the multiset. For the empty multiset, both a member of the empty set and a member of the multiset are impossible. At a cons cell, membership in the inserted fold is equality with the first component of the head or membership in the fold of the tail, and the inductive equivalence matches that alternative with the head-or-tail decomposition of membership in the multiset.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

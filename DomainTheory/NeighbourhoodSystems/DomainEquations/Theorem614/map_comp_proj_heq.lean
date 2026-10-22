@@ -1,8 +1,3 @@
-/-ai
-If an injection and a projection between images under T are heterogeneously equal to the canonical injection and projection of a subdomain, then after the carriers are identified with the token type their composite is heterogeneously equal to the injection-projection composite of the transported subdomain.
-
-Substitution of the two carrier equalities and of the two system equalities turns the heterogeneous equalities into ordinary equalities, and rewriting by them leaves the two composites the same.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

@@ -1,8 +1,3 @@
-/-ai
-The projection from the universal domain onto its tree algebra is a computable map.
-
-This is the computability clause for that projection in the projection pair chosen by the strong form of Theorem 8.8.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

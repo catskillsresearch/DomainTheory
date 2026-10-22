@@ -1,8 +1,3 @@
-/-ai
-If f, g, h, and i are Scott continuous, then the map sending u to the four-way sequence of f(u), g(u), h(u), and i(u) is Scott continuous.
-
-Continuity of the graph in the parameter reduces to continuity of the body at each fixed test value. At that value the nested conditionals are continuous by the three-argument continuity theorem, with constant tests, with f, g, h, and i in the four branches, and with bottom as the final constant.
-ai-/
 
 module
 

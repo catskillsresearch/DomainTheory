@@ -1,8 +1,3 @@
-/-ai
-The intersection of the right subtree with the leaf 10 is the leaf 10.
-
-Compare the two sets by extensionality, case-split on the seven tokens, and simplify the membership definitions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

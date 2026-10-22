@@ -1,0 +1,3 @@
+When the enumerator is primitive recursive, it is recursively decidable whether some term-algebra code has neighbourhood contained in the intersection of two enumerated neighbourhoods.
+
+Reindex the consistency decision of the universal domain along the primitive recursive evaluation of the two unpaired components. A witnessing code evaluates to a witnessing index. Conversely, the node code of the two components is a witness: evaluation at a node is the universal intersection of the two evaluations, and the intersection specification of the universal domain applies to the evaluated witness.

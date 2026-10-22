@@ -1,8 +1,3 @@
-/-ai
-The strict coordinatewise order is the conjunction of the coordinatewise order with the failure of the opposite order.
-
-The two sides are definitionally the same relation.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

@@ -1,8 +1,3 @@
-/-ai
-The intersection of two pair embeddings is the pair embedding of the componentwise intersections.
-
-Compare a tagged point. On the empty path both membership conditions fail. On a cons cell the head bit selects the component, and equality of cons cells identifies the tails with the intersections.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

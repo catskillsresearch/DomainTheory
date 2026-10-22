@@ -1,8 +1,3 @@
-/-ai
-The intersection of two proper products is the proper product of the componentwise intersections.
-
-Extensionality reduces both sides to the product membership condition, which matches.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

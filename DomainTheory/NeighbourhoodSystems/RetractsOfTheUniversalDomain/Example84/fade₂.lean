@@ -1,6 +1,3 @@
-/-ai
-Example 8.4's fade combinator, as a two-variable approximable map, relates neighbourhoods X of O, Y of D, and Z of D when Z is the master of D, or X is the singleton {0} and Y is contained in Z. The master is always a safe output, and the informative input X = {0} lets Y pass straight through.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

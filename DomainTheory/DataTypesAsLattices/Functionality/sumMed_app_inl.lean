@@ -1,8 +1,3 @@
-/-ai
-The coproduct mediator of f and g sends the pair of the numeral 0 with x to the application of f to x.
-
-Rewrite by the application law for the mediator, by the two projections of a pair, and by the law for the conditional at the numeral 0.
-ai-/
 
 module
 

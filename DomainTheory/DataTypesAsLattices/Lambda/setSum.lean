@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (2.4). The set-sum of x and y is the set of all sums n + m with n in x and m in y.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

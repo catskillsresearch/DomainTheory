@@ -1,8 +1,3 @@
-/-ai
-Decoding the pair-map code of a parameter and a code equals the reverse of the decoded list with each entry paired on the left with the parameter.
-
-Unfold the pair-map code and rewrite by the fold-code equation. The fold lemma at accumulator 0, together with the decoding of 0 being empty, removes the trailing append.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

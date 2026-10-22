@@ -1,8 +1,3 @@
-/-ai
-Every value of combinedX is contained in the master of D₀.
-
-The proof splits on the parity of the index. An even index equals twice its half, so the value is a set of the first enumeration, and every neighbourhood lies under the master. An odd index equals twice its half plus one, so the value is a YPseq set, already known to lie under the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

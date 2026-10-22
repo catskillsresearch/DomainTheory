@@ -1,8 +1,3 @@
-/-ai
-The inverse product comparison after the forward comparison returns the original element of the smash of the lifts.
-
-By extensionality of elements, a neighbourhood of the composite is the master, which belongs to the element, or a rectangle whose product tag belongs to the forward image and therefore whose rectangle belongs to the element. A neighbourhood of the element is the master, recorded directly, or a proper smash neighbourhood. Each factor of that neighbourhood is proper, hence a false-tagged copy, and the rectangle clause records the corresponding membership of the forward image.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

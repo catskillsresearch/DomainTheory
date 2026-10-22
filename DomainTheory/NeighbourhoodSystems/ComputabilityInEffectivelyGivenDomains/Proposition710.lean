@@ -1,8 +1,3 @@
-/-ai
-Proposition 7.10. The Smyth power domain of an effectively given neighbourhood system is effectively given. The consistency decider is taken from the given presentation inside the existence proof.
-
-The numbered name theorem_710 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710.NeighborhoodSystemu2ePowerDomain_isEffectivelyGiven

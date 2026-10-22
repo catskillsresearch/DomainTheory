@@ -1,8 +1,3 @@
-/-ai
-If a times b is strictly less than a times c, then b is strictly less than c.
-
-Either b is already strictly less than c, or c is at most b. In the second case, multiplying on the left by a contradicts the hypothesis.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,6 +1,3 @@
-/-ai
-The structure map from T(Exp) to Exp, as a raw approximable map, is the underlying map of the forward morphism of the structure isomorphism. Since T(Exp) equals Exp, this map is the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

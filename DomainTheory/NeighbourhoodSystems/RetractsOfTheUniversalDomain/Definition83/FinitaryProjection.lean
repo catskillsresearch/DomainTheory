@@ -1,6 +1,3 @@
-/-ai
-An approximable self-map is a finitary projection when it is a projection and it is finitary.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82

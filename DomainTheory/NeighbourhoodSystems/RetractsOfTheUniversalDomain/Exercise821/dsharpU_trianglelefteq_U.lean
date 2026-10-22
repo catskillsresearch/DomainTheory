@@ -1,8 +1,3 @@
-/-ai
-The tree algebra of the universal domain is a retract of the universal domain.
-
-The embedding and projection supplied by the effective presentation of that tree algebra form a projection pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

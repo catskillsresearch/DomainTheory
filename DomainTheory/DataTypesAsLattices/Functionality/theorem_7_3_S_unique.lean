@@ -1,8 +1,3 @@
-/-ai
-A combinator s that is extensional in its first argument, whose application is extensional in the second argument, and that lies in every function space (A → (B → C)) → ((A → B) → (A → C)), equals the combinator S.
-
-The empty equivalences give the graph equation for s. Extensionality replaces the first argument f by the graph of its double application and the second argument g by the graph of its application. The closure theorem at the empty equivalences, whose relation is empty, shows that the retracted values are graphs. At a third argument, the singleton equivalences of that argument, of g applied there, and of f applied to both, together with the closure theorem, force the triple application to equal the corresponding value of f and g, which is the triple application law for S.
-ai-/
 
 module
 

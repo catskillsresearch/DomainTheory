@@ -1,8 +1,3 @@
-/-ai
-The index sets of i and j are equal if and only if the neighbourhoods e i and e j are equal.
-
-Equal index sets are contained in each other, so the inclusion rule for index sets gives both neighbourhood inclusions. Conversely, rewriting the definition of the index set along e i = e j gives equal index sets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

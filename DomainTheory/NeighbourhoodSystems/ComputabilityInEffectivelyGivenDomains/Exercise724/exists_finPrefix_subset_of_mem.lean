@@ -1,8 +1,3 @@
-/-ai
-If an element x of L has no least neighbourhood, then every neighbourhood belonging to x contains the neighbourhood of some finite prefix of the stream of x.
-
-Write the given neighbourhood as the neighbourhood of a list l, and compare it with the prefix neighbourhood of length one more than the length of l. That prefix neighbourhood belongs to x, so the intersection of the two neighbourhoods belongs to x. The two neighbourhoods are nested or disjoint. Containment of the neighbourhood of l in the prefix neighbourhood would make the prefix a prefix of l, and the length of a prefix is at most the length of l, which arithmetic rejects at this choice of length. Containment the other way is the required inclusion. If the neighbourhoods are disjoint, the intersection is empty and the neighbourhood recovered from membership of that intersection equals the empty set, contradicting that every list neighbourhood is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

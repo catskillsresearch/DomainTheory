@@ -1,8 +1,3 @@
-/-ai
-The closures of consistent finite sets contained in an element are directed.
-
-The union of two such sets is still contained in the element, and it is consistent because it is a finite subset of the element. Each set is included in the union, so monotonicity of closure puts both closures below the closure of the union.
-ai-/
 
 module
 

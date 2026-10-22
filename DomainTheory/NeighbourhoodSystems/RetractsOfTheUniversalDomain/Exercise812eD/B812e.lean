@@ -1,6 +1,3 @@
-/-ai
-The canonical bisection of V is the computable bisection whose halves are the left and right splits of V, together with their primitive recursiveness, disjointness, reunion, and dependence only on the presented set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

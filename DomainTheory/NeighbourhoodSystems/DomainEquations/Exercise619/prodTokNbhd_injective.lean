@@ -1,8 +1,3 @@
-/-ai
-Equal product neighbourhoods have equal components.
-
-Equality gives both inclusions. Each inclusion is componentwise by the subset criterion, and the two inclusions in each component give equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

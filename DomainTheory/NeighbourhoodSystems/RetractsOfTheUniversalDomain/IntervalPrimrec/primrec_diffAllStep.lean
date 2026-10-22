@@ -1,11 +1,3 @@
-/-ai
-The difference-all step is primitive recursive.
-
-Unfolding the step, the accumulator is the left projection of the right projection and
-the rational-pair argument is the left projection. Composing the primitive-recursive
-single-difference code with their pairing, and simplifying the pairing projections,
-matches the unfolded step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

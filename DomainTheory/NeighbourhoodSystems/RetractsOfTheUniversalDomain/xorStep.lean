@@ -1,6 +1,3 @@
-/-ai
-One step of the bitwise exclusive-disjunction fold acts on a packed state of two running arguments, a weight, and an accumulator. It replaces the arguments by their halves, doubles the weight, and adds to the accumulator the product of the weight with the low-bit exclusive disjunction of the two arguments.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

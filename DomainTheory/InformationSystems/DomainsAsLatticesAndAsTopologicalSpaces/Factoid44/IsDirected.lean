@@ -1,6 +1,3 @@
-/-ai
-A family of elements is upward directed when any two of its members have a common upper bound that also belongs to the family.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

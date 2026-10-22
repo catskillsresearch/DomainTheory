@@ -1,6 +1,3 @@
-/-ai
-Subtracting one presenting list of rational pairs from another is the flat map that subtracts the second list from each pair of the first.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

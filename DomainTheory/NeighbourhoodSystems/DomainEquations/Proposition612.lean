@@ -1,8 +1,3 @@
-/-ai
-The injection composed after the projection is contained in the identity on E. The projection composed after the injection equals the identity on D.
-
-The numbered name theorem_612 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition612.inj_comp_proj_le

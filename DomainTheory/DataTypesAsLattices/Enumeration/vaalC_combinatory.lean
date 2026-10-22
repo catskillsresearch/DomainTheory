@@ -1,8 +1,3 @@
-/-ai
-The least fixed point vaalC is combinatory.
-
-The Y combinator applied to the interpretation of the closed step term in the constantly bottom environment equals vaalC. The interpretation of that step term is the graph of vaalF, and Theorem 2.5, using Scott continuity of vaalF, identifies the Y combinator at that graph with the least fixed point. Combinatoriness of the application of the combinatory Y combinator to this interpretation, which Theorem 2.4 supplies for a closed term, transfers along the equality.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

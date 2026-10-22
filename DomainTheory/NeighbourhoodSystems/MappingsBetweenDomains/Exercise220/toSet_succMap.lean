@@ -1,8 +1,3 @@
-/-ai
-The set represented by the successor of an element is the successor of the set represented by the element.
-
-If the singleton complement of a number belongs to the image, some neighbourhood of the element has that number in the successor of its complement, so the number is one more than a member of the complement and the corresponding singleton complement lies above the neighbourhood. Conversely, the complement of the singleton of that predecessor belongs to the element, and the successor of its complement contains the original number.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

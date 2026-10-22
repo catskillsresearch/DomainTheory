@@ -1,8 +1,3 @@
-/-ai
-If the only neighbourhood of a neighbourhood system is its master, then the system has exactly one element.
-
-Two elements contain the same neighbourhoods. A neighbourhood of either equals the master, and therefore belongs to the other element, because every element contains the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

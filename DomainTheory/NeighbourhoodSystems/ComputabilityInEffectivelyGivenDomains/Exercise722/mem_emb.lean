@@ -1,8 +1,3 @@
-/-ai
-A language belongs to the embedding of a word if and only if the language lies in Scott's family and contains the word.
-
-The two sides are the definition of the embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

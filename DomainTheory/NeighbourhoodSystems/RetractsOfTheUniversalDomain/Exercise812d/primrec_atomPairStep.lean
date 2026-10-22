@@ -1,8 +1,3 @@
-/-ai
-The atom-pair step is primitive recursive.
-
-The depth and the packed state are primitive recursive, and so are the remainder and the inner state. The two low bits of the remainder are primitive recursive. Pairing the depth with the first bit and the inner state, applying the X-substep, then pairing the depth with the second bit and that result and applying the Y-substep, is primitive recursive. Dividing the remainder by four is two successive divisions by two. Pairing that quotient with the Y-substep result equals the packed step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

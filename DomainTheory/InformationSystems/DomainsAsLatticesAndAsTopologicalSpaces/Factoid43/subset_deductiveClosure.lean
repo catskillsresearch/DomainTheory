@@ -1,8 +1,3 @@
-/-ai
-A finitely consistent set of tokens is contained in the carrier of its deductive closure.
-
-A token of the set is entailed by its singleton. That singleton is contained in the set, and finite consistency makes the singleton consistent, so reflexivity of entailment applies.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

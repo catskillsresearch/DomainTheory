@@ -1,6 +1,3 @@
-/-ai
-subsetB decides inclusion of the language of the first expression in the language of the second. It checks that every word in the list bounded by the number of pairs of finite state sets, whenever matched by the first expression, is matched by the second.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

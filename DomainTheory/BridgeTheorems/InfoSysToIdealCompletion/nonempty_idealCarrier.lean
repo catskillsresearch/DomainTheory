@@ -1,8 +1,3 @@
-/-ai
-The carrier of an ideal of finite elements is nonempty.
-
-The ideal contains some finite element, and the underlying element of that finite element belongs to the carrier, witnessed by the finite element itself.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

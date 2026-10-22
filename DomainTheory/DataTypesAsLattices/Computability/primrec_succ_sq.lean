@@ -1,8 +1,3 @@
-/-ai
-The function sending k to (k + 1) · (k + 1) is primitive recursive.
-
-It is the product of the successor of the identity function with itself.
-ai-/
 module
 
 public import Mathlib.Computability.RE

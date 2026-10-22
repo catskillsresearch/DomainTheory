@@ -1,6 +1,3 @@
-/-ai
-The elements of the infinite iterate are order-isomorphic to the elements of its product with the original domain, by the correspondence with sequences, the shift that splits off the first term, the product of the identity with the inverse sequence correspondence, and the inverse product equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

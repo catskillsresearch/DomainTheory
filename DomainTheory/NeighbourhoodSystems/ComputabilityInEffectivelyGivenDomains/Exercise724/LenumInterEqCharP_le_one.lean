@@ -1,8 +1,3 @@
-/-ai
-The packed intersection-equality characteristic is at most one.
-
-This is the unpacked bound, applied to the three components.
-ai-/
 
 module
 

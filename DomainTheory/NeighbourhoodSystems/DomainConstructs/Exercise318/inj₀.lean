@@ -1,6 +1,3 @@
-/-ai
-The left copy of a set of tokens is the image of that set under the left tag.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

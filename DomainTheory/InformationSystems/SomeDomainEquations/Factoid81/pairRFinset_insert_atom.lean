@@ -1,8 +1,3 @@
-/-ai
-Inserting an atom into a finset of tree tokens leaves the finset of right-pair payloads unchanged.
-
-A token belongs to the payload finset of the insertion when it is the payload of a right pair in the insertion. An atom is not a right pair, so that membership is membership in the original payload finset, and every original payload remains after the insertion.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

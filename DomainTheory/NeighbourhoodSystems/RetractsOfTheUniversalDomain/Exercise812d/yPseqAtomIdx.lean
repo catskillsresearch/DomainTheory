@@ -1,6 +1,3 @@
-/-ai
-The first-system index of the Y half-step atom at depth n, bit-source i, and bit code bx is the first index of the packed state of that atom. On this side the positive branch of the sub-step is the split side.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,8 +1,3 @@
-/-ai
-The folded intersection of a finite set of neighbourhood indices with a fresh index inserted is the neighbourhood of that index cut with the folded intersection of the remaining set.
-
-This is the recursion law for folding an operation across an inserted element, applied to binary intersection.
-ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

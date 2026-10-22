@@ -1,6 +1,3 @@
-/-ai
-Lemma 3.6 of Scott (1981, PRG-19) defines the constant approximable map at an element b: it relates an input neighbourhood X to an output neighbourhood Y exactly when X is a neighbourhood and Y belongs to b. The domain, codomain, master, intersection, and monotonicity laws are the corresponding laws of neighbourhoods and of the filter b.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

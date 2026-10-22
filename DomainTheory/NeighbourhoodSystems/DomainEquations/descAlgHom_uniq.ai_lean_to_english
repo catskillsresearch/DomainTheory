@@ -1,0 +1,3 @@
+Every algebra homomorphism out of the algebra on C equals the descent homomorphism.
+
+The homomorphism square, read on underlying maps, says the underlying map composed with the inverse equivalence equals the structure map composed with the triple sum of the identity and two copies of the underlying map. Composing on the right with the equivalence and cancelling the inverse composite, which is the identity, is the recursion that determines the descent map. The bundled strict maps therefore agree, and so do the algebra homomorphisms.

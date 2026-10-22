@@ -1,6 +1,3 @@
-/-ai
-Scott's generating operator on subsets of the ambient type sends a set to the singleton of the distinguished zero together with the image of the set under successor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

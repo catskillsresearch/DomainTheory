@@ -1,8 +1,3 @@
-/-ai
-Tail sends the partial element of σ to the partial element of the list tail of σ.
-
-This is the partial clause of the head-test construction of tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

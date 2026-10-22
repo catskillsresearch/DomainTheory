@@ -1,6 +1,3 @@
-/-ai
-The powerset domain is the neighbourhood system on the natural numbers whose neighbourhoods are the cofinite sets of unset bit positions, with master the set of all natural numbers. The master is the neighbourhood of index zero. The intersection of two neighbourhoods is the neighbourhood of the bitwise disjunction of their indices. Every neighbourhood is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-The intersection of two function-space neighborhoods is again a function-space neighborhood whenever the intersection is nonempty.
-
-Each neighborhood is the step neighborhood of a list of pairs. The intersection is the step neighborhood of the appended lists, and every pair of the append belongs to one of the two lists.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

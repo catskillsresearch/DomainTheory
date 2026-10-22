@@ -1,8 +1,3 @@
-/-ai
-On neighbourhood indices, plusMap relates the product of nbhd n and nbhd m to nbhd k if and only if the neighbourhood of plusIdx n m is contained in nbhd k.
-
-Rewrite the claimed inclusion as an inclusion of complements, and rewrite the complement of the plusIdx neighbourhood as the Minkowski sum of the two complements. From a related triple, injectivity of product neighbourhoods recovers the factors and the relation is that sum inclusion. Conversely, the three neighbourhoods themselves witness the relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

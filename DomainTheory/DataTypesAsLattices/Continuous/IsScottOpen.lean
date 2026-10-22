@@ -1,6 +1,3 @@
-/-ai
-A set U of elements of Pω is Scott open when U is the union of the basic neighbourhoods indexed by the members of some set of natural numbers.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

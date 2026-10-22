@@ -1,8 +1,3 @@
-/-ai
-If a consistent finite set of tree tokens has nonempty atom projection, that atom projection is consistent in the atom information system.
-
-Case on the consistency constructor. A left-consistent set supplies the atom consistency directly. A right-consistent set has empty atom projection, contradicting the nonempty hypothesis.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

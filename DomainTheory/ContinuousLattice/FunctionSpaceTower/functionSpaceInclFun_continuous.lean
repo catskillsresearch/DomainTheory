@@ -1,8 +1,3 @@
-/-ai
-For a continuous-lattice projection from D into D' and a Scott map f from D to D, the map x ↦ i(f(j(x))) is continuous for the Scott topologies on D'.
-
-The map agrees at every point with the underlying function of the composite of the Scott maps i, f, and j, and that composite is continuous.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

@@ -1,6 +1,3 @@
-/-ai
-The binary search is the approximable map associated with the least fixed point of the minimization operator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

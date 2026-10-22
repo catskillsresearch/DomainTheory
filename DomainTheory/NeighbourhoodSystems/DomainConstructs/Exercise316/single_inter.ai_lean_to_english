@@ -1,0 +1,3 @@
+The intersection of the pinnings of one copy to two sets is the pinning of that copy to the intersection of the sets.
+
+Compare fibers. At the pinned index, each fiber is the pinned set, so the intersection of the fibers is the intersection of the sets. At every other index, each fiber is the master, and the master intersected with itself is the master.

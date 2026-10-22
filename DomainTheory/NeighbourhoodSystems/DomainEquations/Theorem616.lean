@@ -1,8 +1,3 @@
-/-ai
-If a functor on domains is continuous on maps and D is an initial algebra, then the carrier of D is a subdomain of every domain E isomorphic to its image under the functor.
-
-The numbered name theorem_616 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem616.trianglelefteq_of_isInitial

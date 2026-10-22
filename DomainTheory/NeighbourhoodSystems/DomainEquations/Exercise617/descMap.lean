@@ -1,6 +1,3 @@
-/-ai
-The approximable map from C to the carrier of a T-algebra B is the lift of the head recursion that sends a partial sequence to the iterated branch applied to the bottom element and a total sequence to the iterated branch applied to the distinguished element of the algebra, using the cone and singleton recursion lemmas for that recursion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

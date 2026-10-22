@@ -1,6 +1,3 @@
-/-ai
-For a Scott map f from a complete lattice D to itself, fix f is the least pre-fixed point of f. It is the least fixed point of the order homomorphism associated with f, as in Scott's Proposition 3.14.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

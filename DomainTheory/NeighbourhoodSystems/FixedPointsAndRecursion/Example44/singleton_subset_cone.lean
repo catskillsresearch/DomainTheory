@@ -1,8 +1,3 @@
-/-ai
-The singleton of a string is contained in a cone if and only if the cone's string is a prefix of that string.
-
-Singleton inclusion rewrites as membership of the string in the cone.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

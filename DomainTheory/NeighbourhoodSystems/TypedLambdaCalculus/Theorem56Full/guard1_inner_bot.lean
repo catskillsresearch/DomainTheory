@@ -1,8 +1,3 @@
-/-ai
-If an approximable map returns bottom at a stack and the tested coordinate is bottom or a numeral, the guard at that coordinate returns bottom.
-
-If the coordinate is bottom, the bottom lemma for the guard applies. If it is a numeral, rewrite by the application formula and substitute both hypotheses. A zero numeral makes the zero test true, and a successor makes it false. In both cases the conditional returns the inner value, which is bottom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

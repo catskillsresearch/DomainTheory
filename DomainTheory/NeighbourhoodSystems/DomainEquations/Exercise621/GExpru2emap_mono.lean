@@ -1,8 +1,3 @@
-/-ai
-The action of an expression on maps is monotone: if f ≤ f', then T(f) ≤ T(f').
-
-A constant is unchanged. The variable is the hypothesis. The separated sum, the separated product, the coalesced sum, and the smash product each apply the monotonicity of that operation to the two inductive inequalities.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

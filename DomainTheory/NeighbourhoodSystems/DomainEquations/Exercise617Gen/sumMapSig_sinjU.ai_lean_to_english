@@ -1,0 +1,3 @@
+The indexed sum of a map fixes the unit injection.
+
+A related neighbourhood of the unit injection is the master or the unit copy, both of which belong to the target injection. A letter-copy cannot be related, because the source neighbourhood is the master or the unit copy and neither places the empty token or the unit token in a letter-copy. Conversely, the master is related to the master and the unit copy is related to itself.

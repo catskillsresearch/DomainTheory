@@ -1,8 +1,3 @@
-/-ai
-The intersection of the enumerated sets at 2a+2 and at 2b+2 is the paired embedding of the two componentwise intersections of the unpaired indices.
-
-Rewrite both sets by the even clause and apply the intersection law for paired embeddings.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

@@ -1,6 +1,3 @@
-/-ai
-The restriction of an element x lying below a to the relativized system is the filter with the same membership as x. Membership in x implies membership in a. The master belongs to x. Intersection is inherited from x. Upward closure in the relativized system follows from upward closure of x, since a neighbourhood of a is a neighbourhood of the original system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

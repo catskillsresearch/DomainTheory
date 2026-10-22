@@ -1,8 +1,3 @@
-/-ai
-The intersection of the basic neighbourhoods of n and of m equals the basic neighbourhood of the bitwise or of n and m.
-
-Extensionality, after unfolding the basic neighbourhood and the identity for the finite set coded by a bitwise or, converts the two inclusions into containment of the union of those finite sets.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

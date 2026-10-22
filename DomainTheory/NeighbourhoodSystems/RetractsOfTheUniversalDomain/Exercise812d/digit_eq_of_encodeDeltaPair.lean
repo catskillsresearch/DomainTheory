@@ -1,8 +1,3 @@
-/-ai
-The digit just written by encodeDeltaPair at position n is recovered by dividing the successor encoding by four to the n.
-
-Expand the successor. Division by four to the n separates the previous encoding, which is strictly smaller than that power and contributes zero, from the new digit.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

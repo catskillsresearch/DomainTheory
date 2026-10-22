@@ -1,6 +1,3 @@
-/-ai
-The image of the colimit under T, transported along the identification of its carrier with the token type, is a neighbourhood system over that token type.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the constructions of Scott's Factoid 7.5 on strict approximable maps, the strictify operator, the strict function space, flat BOOL, and the conditional isomorphism of a product with the strict maps out of BOOL, together with the tokens, satisfaction, consistency, entailment, elements, and supporting lemmas those constructions use.
-ai-/
 
 module
 
@@ -54,13 +51,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.I
 
 @[expose] public section
 
-/-!
-# Factoid 7.5 — strict mappings, `strictify`, BOOL, and the conditional
-
-**Scott 1982 (after Prop 7.4).** Strict approximable maps; Scott’s `strict` /
-`strictify` operator; InfoSys `A →ₛ B`; flat BOOL; `A × A ≅ (BOOL →ₛ A)`.
--/
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -77,19 +67,8 @@ namespace ApproximableMap
 
 end ApproximableMap
 
-/-! ## BOOL -/
-
-
-/-! ## Strict function space `A →ₛ B` -/
-
-
-/-! ## Strict maps as elements; retract via `strictify` -/
-
 
 open ApproximableMap
-
-
-/-! ## Conditional: `A × A ≅ (BOOL →ₛ A)` -/
 
 
 end InfoSys

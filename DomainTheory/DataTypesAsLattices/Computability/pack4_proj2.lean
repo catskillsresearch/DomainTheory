@@ -1,6 +1,3 @@
-/-ai
-The second projection of a fourfold pair packing is the first component of the unpairing of the second component.
-ai-/
 module
 
 public import Mathlib.Computability.RE

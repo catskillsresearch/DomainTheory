@@ -1,8 +1,3 @@
-/-ai
-The atom set of a singleton function token is empty.
-
-An atom of that set would require the function token to be an atom, and the empty set contains no carrier.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

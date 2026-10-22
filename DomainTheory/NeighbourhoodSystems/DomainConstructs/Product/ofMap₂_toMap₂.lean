@@ -1,8 +1,3 @@
-/-ai
-Converting a joint approximable map to a two-variable map and back recovers the joint map.
-
-The relations agree. If the composite relates W to an output, the preimage identity rewrites the product of the two preimages as W. Conversely, the domain of the original relation is a product neighbourhood, and the same identity restores the relation on the product of its preimages.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

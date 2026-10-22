@@ -1,0 +1,3 @@
+A fix chain whose tokens lie in the element of an approximable endomap f can be extended by one step of the relation of f: if u is such a chain of length n and f relates u to v, then some consistent enlargement of the token set, still contained in that element, has v as a chain of length n + 1.
+
+Form the function token with input u and output v. It lies in the element of f because f relates u to v, so inserting it keeps the token set inside that element and hence consistent. Monotonicity of chains in the token set transfers the chain for u, since the enlargement entails the original set. The singleton of the new token witnesses the one-step entailment: it is contained in the enlargement, its input is entailed by u, and the output union of that singleton entails v.

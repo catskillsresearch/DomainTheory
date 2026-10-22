@@ -1,8 +1,3 @@
-/-ai
-If the test omits 0 but contains a positive number, the doubly strict conditional returns its right argument.
-
-The left inner conditional is ⊤ by its right branch. The right inner conditional equals the right argument, because its left branch is impossible and its right branch copies that argument. The outer conditional then copies the right argument in the same way.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

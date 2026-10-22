@@ -1,6 +1,3 @@
-/-ai
-The bundled strict homomorphism from the empty-free string object into the carrier of a Tsig-algebra is the pair consisting of the descent map and the proof that the descent map is strict.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

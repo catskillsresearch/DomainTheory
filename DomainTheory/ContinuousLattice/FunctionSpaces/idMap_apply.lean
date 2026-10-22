@@ -1,8 +1,3 @@
-/-ai
-The identity Scott map sends each element to itself.
-
-The equality holds by the definition of the identity map.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

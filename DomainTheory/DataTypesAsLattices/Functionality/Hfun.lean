@@ -1,6 +1,3 @@
-/-ai
-The raw least fixed point of the operator in (4.43) is the least fixed point of the continuous operator HF.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

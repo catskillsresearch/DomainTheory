@@ -1,8 +1,3 @@
-/-ai
-The identity map is strict.
-
-The numbered name example_510 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise510.isStrict_idMap

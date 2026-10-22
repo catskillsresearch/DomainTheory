@@ -1,6 +1,3 @@
-/-ai
-The stream expression on a datum domain N sends X to the coalesced sum of N with the smash product of N and X, the right-hand side of N* congruent to N ⊕ (N ⊗ N*).
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

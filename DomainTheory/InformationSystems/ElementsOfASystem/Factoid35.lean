@@ -1,8 +1,3 @@
-/-ai
-A consistent finite set is contained in its entailment closure.
-
-The numbered name theorem_35 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.subset_closure

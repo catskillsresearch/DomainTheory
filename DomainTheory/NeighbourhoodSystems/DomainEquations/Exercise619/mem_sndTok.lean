@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the second component of a product element if and only if it is a neighbourhood of the second factor and the element contains the product neighbourhood of the master of the first factor with that set.
-
-The two sides are definitionally the same.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

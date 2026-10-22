@@ -1,6 +1,3 @@
-/-ai
-The inverse half of C ≅ 𝟙 + C + C sends an element s of the three-way sum to the element of C that contains the set of all strings, contains the singleton of the empty string when s contains the unit copy of the whole unit set, contains a 0-copy embBit false X when s contains the first C-copy of X, and contains a 1-copy embBit true Y when s contains the second C-copy of Y.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

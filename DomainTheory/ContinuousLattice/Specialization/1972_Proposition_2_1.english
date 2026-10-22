@@ -1,0 +1,7 @@
+**2.1 Proposition.** *In a partially ordered set $X$ with the induced topology, a monotone net $x : I \to X$ with a least upper bound converges to an element $y \in X$ iff*
+
+$$
+y \sqsubseteq \bigsqcup x_i : i \in I.
+$$
+
+$\square$

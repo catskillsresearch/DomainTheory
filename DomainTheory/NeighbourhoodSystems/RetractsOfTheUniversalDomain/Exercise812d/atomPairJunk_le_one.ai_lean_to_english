@@ -1,0 +1,3 @@
+The atom-pair junk flag is at most 1.
+
+The argument is induction on the depth. At depth zero the base state stores the flag 0. At a successor both sub-steps are unfolded. The two remainder bits are at most 1, and a chain of bounds on selection, using the inductive hypothesis and the bounds on the emptiness deciders, bounds the resulting flag.

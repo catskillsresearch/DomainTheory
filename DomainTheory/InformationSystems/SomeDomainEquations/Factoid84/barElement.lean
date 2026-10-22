@@ -1,6 +1,3 @@
-/-ai
-The finite element named by a natural number n is the entailment closure in the powerset system P of the singleton of n.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

@@ -1,8 +1,3 @@
-/-ai
-The second application of the currying combinator, at u and then x, is the graph of y mapped to the application of u to the pair sequence of x and y.
-
-The proof rewrites by the first application rule for the currying combinator, then applies the beta rule to the Scott continuity of the middle currying map at x.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

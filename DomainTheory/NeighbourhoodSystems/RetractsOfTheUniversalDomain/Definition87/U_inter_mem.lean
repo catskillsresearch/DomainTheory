@@ -1,8 +1,3 @@
-/-ai
-If three sets lie in the universal family and the third is contained in the intersection of the first two, then that intersection lies in the universal family.
-
-Presenting lists of the first two sets are combined pairwise, and the intersection identity says that this combination presents the intersection. Nonemptiness passes from the third set along the inclusion, and containment in the unit interval passes from the first set to the intersection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

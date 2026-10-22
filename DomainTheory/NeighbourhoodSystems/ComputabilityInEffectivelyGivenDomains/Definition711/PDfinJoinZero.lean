@@ -1,6 +1,3 @@
-/-ai
-The empty finite join in the power domain is the bottom element of the power domain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

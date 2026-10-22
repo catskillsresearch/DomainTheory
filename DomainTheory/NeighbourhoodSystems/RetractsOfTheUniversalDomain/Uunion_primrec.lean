@@ -1,8 +1,3 @@
-/-ai
-The union index of a paired natural number is primitive recursive.
-
-Unfold the index. Concatenating the canonical codes of the two components is primitive recursive, and that composition equals the unfolded index once the pair is unpacked.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

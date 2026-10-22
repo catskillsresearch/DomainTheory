@@ -1,8 +1,3 @@
-/-ai
-The second projection of the left lift of a finite set of tokens of A is contained in the singleton of the bottom token of B.
-
-A member of that second projection comes from a left-tagged token of the lift, and the projection equation forces the member to be the bottom token of B.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,6 +1,3 @@
-/-ai
-A Scott presentation of a neighbourhood system is an enumeration of its neighbourhoods that meets every neighbourhood, such that equality of an intersection of two enumerated neighbourhoods with a third enumerated neighbourhood is recursively decidable, and such that consistency of two enumerated neighbourhoods, the existence of an enumerated neighbourhood contained in their intersection, is recursively decidable. No primitive-recursive intersection function is carried.
-ai-/
 module
 
 

@@ -1,23 +1,67 @@
 # Exercise 4.11
 
-**EXERCISE 4.11.** (Suggested by G. Plotkin). We can regard $\mathrm{fix}$ as assigning a fixed-point operator to each domain $D$. Show that $\mathrm{fix}$ is uniquely determined by the following general conditions on an assignment $D \rightsquigarrow F_D$:
+## Human-English
 
-(i) $F_D : (D \to D) \to D$;
+@import "1980_Exercise_4_11.english" {code_block=false}
 
-(ii) $F_D(f) = f(F_D(f))$ for all $f : D \to D$;
+## AI: Human-English to AI-Lean
 
-(iii) whenever $f_0 : D_0 \to D_0$ and $f_1 : D_1 \to D_1$ are given and $h : D_0 \to D_1$ is such that $h(\perp) = \perp$ and $h \circ f_0 = f_1 \circ h$, then $h(F_{D_0}(f_0)) = F_{D_1}(f_1)$.
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap.lean**
 
-(Hint: Apply 4.7 to prove $\mathrm{fix}$ satisfies (iii). In the other direction use 4.10.)
+@import "inclMap.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/Basic.lean**
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap.lean](inclMap.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_toElementMap.lean](inclMap_toElementMap.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_bot.lean](inclMap_bot.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_intertwine.lean](inclMap_intertwine.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/fix_unique_of_uniform.lean](fix_unique_of_uniform.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/iterElem_le_fixElement.lean](iterElem_le_fixElement.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/fixElement_uniform.lean](fixElement_uniform.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411.lean](../Exercise411.lean)
+@import "Basic.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_toElementMap.lean**
+
+@import "inclMap_toElementMap.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_bot.lean**
+
+@import "inclMap_bot.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/inclMap_intertwine.lean**
+
+@import "inclMap_intertwine.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/fix_unique_of_uniform.lean**
+
+@import "fix_unique_of_uniform.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/iterElem_le_fixElement.lean**
+
+@import "iterElem_le_fixElement.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411/fixElement_uniform.lean**
+
+@import "fixElement_uniform.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise411.lean**
+
+@import "../Exercise411.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "inclMap.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "inclMap_toElementMap.ai_lean_to_english" {code_block=false}
+
+@import "inclMap_bot.ai_lean_to_english" {code_block=false}
+
+@import "inclMap_intertwine.ai_lean_to_english" {code_block=false}
+
+@import "fix_unique_of_uniform.ai_lean_to_english" {code_block=false}
+
+@import "iterElem_le_fixElement.ai_lean_to_english" {code_block=false}
+
+@import "fixElement_uniform.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise411.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_4_11.ai_english_concordance" {code_block=false}

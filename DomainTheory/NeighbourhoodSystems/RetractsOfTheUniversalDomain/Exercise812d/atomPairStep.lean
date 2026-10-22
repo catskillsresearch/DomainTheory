@@ -1,6 +1,3 @@
-/-ai
-One depth step reads the depth and the packed state, takes the two low bits of the bit-source remainder, runs an X sub-step on the first bit and then a Y sub-step on the second, and packs the remainder divided by 4 together with the resulting state.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

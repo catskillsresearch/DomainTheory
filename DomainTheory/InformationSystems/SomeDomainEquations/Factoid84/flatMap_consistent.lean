@@ -1,8 +1,3 @@
-/-ai
-The flat map satisfies Scott's consistency condition: the finite element of 1 is not contained in the image of the finite element of 0.
-
-The token 1 belongs to the finite element of 1. If it belonged to that image, some finite set contained in the finite element of 0 would be flat-related to the singleton of 1. If 1 belonged to that finite set, it would belong to the finite element of 0, whose members equal 0. The other clause of the flat relation excludes 1 from the singleton of 1.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

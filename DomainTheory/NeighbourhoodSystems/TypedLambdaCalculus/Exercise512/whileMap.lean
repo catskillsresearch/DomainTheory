@@ -1,6 +1,3 @@
-/-ai
-The approximable map while p do f is the approximable map denoted by the while-loop element, the least fixed point of Wop.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

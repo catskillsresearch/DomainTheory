@@ -1,8 +1,3 @@
-/-ai
-Forgetting the empty finite set of lambda tokens yields the empty set of raw tokens.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

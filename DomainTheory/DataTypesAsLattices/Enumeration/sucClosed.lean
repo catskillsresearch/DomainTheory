@@ -1,6 +1,3 @@
-/-ai
-The closed successor term is the abstraction, in binder 4, of the successor of its bound variable. It is a closed term for one of the five packed combinators of G, and its binder avoids slot 8 so that the term can be placed inside the binary sequence constructor.
-ai-/
 
 module
 

@@ -1,8 +1,3 @@
-/-ai
-For every set a and every set x, x is contained in the value of the universe operator at a and x, and that operator is idempotent on the value.
-
-The inclusion is the expansive equation for the operator, and the idempotence is the corresponding idempotence equation.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

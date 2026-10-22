@@ -1,8 +1,3 @@
-/-ai
-Every member of a depth-consistent finset of raw lambda tokens is well formed.
-
-Bottom and atoms are well formed outright. A function token in the finset is a member of its function-token projection. That projection cannot be empty, so the nonempty function clause of depth consistency supplies depth consistency of both components.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

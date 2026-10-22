@@ -1,8 +1,3 @@
-/-ai
-The intersection of two truth neighbourhoods, each equal to the master or to the singleton of zero, is again the master or the singleton of zero.
-
-The four combinations are the master with itself, the master with the singleton in either order, and the singleton with itself, which are the master, the singleton, the singleton, and the singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

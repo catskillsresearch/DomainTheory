@@ -1,8 +1,3 @@
-/-ai
-The homomorphism operator is monotone in the approximable map.
-
-Composition is monotone in each factor, the product with a fixed identity is monotone in the second factor, and the structure map and the projection stay fixed.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

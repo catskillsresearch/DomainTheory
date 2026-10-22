@@ -1,24 +1,25 @@
 # Proposition 2.4
 
-**2.4 Proposition.** A complete lattice $D$ is continuous iff for every $y \in D$ we have:
+## Human-English
 
-$$
-y = \bigsqcup \sqcap U : y \in U,
-$$
+@import "1972_Proposition_2_4.english" {code_block=false}
 
-where $U$ ranges over the open subsets of $D$.
+## AI: Human-English to AI-Lean
 
-**Proof:** Suppose $D$ is continuous. If $y \in D$ and $x \ll y$, then let $U = \text{Int}z : x \sqsubseteq z$, an open set. Now $y \in U$ by definition, and $U \subseteq z : x \sqsubseteq z$. Thus,
+**ContinuousLattice/WayBelow/sInf_wayBelow.lean**
 
-$$
-x \sqsubseteq \sqcap U \sqsubseteq y.
-$$
+@import "sInf_wayBelow.lean"
 
-It easily follows by lattice theory that the equation of 2.3 implies that of 2.4.
+**ContinuousLattice/WayBelow/isContinuousLattice_iff_isLUB_sInf_nhds.lean**
 
-In the converse direction we have only to note that if $U$ is open and $y \in U$, then $\sqcap U \ll y$. The implication from 2.4 to 2.3 results at once. $\square$
+@import "isContinuousLattice_iff_isLUB_sInf_nhds.lean"
 
-**Lean 4**
+## AI: AI-Lean to AI-English
 
-- [ContinuousLattice/WayBelow/sInf_wayBelow.lean](sInf_wayBelow.lean)
-- [ContinuousLattice/WayBelow/isContinuousLattice_iff_isLUB_sInf_nhds.lean](isContinuousLattice_iff_isLUB_sInf_nhds.lean)
+@import "sInf_wayBelow.ai_lean_to_english" {code_block=false}
+
+@import "isContinuousLattice_iff_isLUB_sInf_nhds.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Proposition_2_4.ai_english_concordance" {code_block=false}

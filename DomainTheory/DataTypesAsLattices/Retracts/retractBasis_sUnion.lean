@@ -1,8 +1,3 @@
-/-ai
-The underlying set of a fixed point of a retract equals the union of the underlying sets of its finite-image basis elements.
-
-The point equals the supremum of the basis, and the underlying set of that supremum equals the union of the basis values by Scott continuity of application and directedness of the basis.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

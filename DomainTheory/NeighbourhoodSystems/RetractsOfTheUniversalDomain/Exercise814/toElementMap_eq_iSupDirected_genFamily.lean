@@ -1,8 +1,3 @@
-/-ai
-A fixed point equals the directed supremum of its generating family.
-
-The algebraicity decomposition writes the underlying element as the directed supremum of its principal approximants. The element map of the closure preserves that directed supremum, and the image of the underlying element equals the underlying element because the point is fixed. Those images are the generating family.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

@@ -1,6 +1,3 @@
-/-ai
-The first index of a packed state is the left component of its code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

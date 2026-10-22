@@ -1,8 +1,3 @@
-/-ai
-For a fixed candidate, environment, and index, the recursive call on the application of the payload to that numeral is Scott-continuous in the code.
-
-The proof is Theorem 1.3 of continuity of the recursive call in the subexpression and of Theorem 1.3 of left continuity of application at the index with left continuity of the payload, which is application at the numeral 1.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

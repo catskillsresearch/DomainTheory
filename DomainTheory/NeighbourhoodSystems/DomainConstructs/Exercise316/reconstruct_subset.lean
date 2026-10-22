@@ -1,8 +1,3 @@
-/-ai
-Once N meets the cofinite bound of an iterate neighbourhood W, the intersection of the pinnings of the first N fibers of W is contained in W.
-
-A pair in that intersection has some index j. If j is below N, the intersection is contained in the pinning of the j-th fiber, and membership in that pinning is membership in the fiber, hence in W. If j is at least N, the intersection lies in the master, so the token lies in the original master; the cofinite bound rewrites the j-th fiber as that master, and the token therefore lies in W.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

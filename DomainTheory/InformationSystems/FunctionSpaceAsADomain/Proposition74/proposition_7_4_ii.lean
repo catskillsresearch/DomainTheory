@@ -1,8 +1,3 @@
-/-ai
-Scott's Proposition 7.4(ii): applying an approximable endomap to its least fixed point returns that fixed point.
-
-The proof is the fixed-point equation for the least fixed point.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint

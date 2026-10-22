@@ -1,8 +1,3 @@
-/-ai
-The identity combinator is a closure.
-
-It contains itself, and it is a retract.
-ai-/
 
 module
 

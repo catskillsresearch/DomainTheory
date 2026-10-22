@@ -1,8 +1,3 @@
-/-ai
-If the depths of two S-expressions are at most the fuel, the intersection-equality character of their Gödel codes equals 1 exactly when the two denotations are equal.
-
-Unfold the character. The product equals 1 exactly when both subset characters equal 1, and those two characters are the two inclusions of the denotations, which together are equality of sets.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

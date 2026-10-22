@@ -1,6 +1,3 @@
-/-ai
-The fuel-indexed evaluator of a term-algebra code returns zero at fuel zero, and at a positive fuel applies one fuel step to the evaluator of the preceding fuel.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

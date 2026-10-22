@@ -1,0 +1,1 @@
+The combinatory primitive-recursion step is the term that abstracts a base, a step, a functional, and an argument, and returns the conditional of the argument with the base in the zero branch and the step applied to the predecessor and then to the functional at the predecessor in the other branch.

@@ -1,8 +1,3 @@
-/-ai
-The atom set of a finitary union of finite sets of raw lambda tokens is the finitary union of the atom sets.
-
-By extensionality, an atom belongs to the atom set of the union exactly when the corresponding atom token belongs to the union, hence to one of the two sets. Conversely, an atom of either atom set is an atom token of that set and therefore of the union.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

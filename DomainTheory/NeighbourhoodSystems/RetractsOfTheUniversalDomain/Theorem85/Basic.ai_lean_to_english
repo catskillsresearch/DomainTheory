@@ -1,0 +1,23 @@
+A neighbourhood witnessing membership in an element lies below that element as a principal element.
+
+A neighbourhood of the principal element is a subneighbourhood of the witness, so upward closure puts it in the element.
+
+The principal elements on the neighbourhoods of an element form a directed family.
+
+The intersection of two such neighbourhoods belongs to the element, and each principal element lies below the principal element of the intersection because each neighbourhood contains the intersection.
+
+Every element is the directed supremum of the principal elements on its own neighbourhoods.
+
+If a neighbourhood belongs to the element, the corresponding principal element contributes it. If a principal element on a neighbourhood of the element contains the tested neighbourhood, upward closure from that subneighbourhood puts the tested neighbourhood in the element.
+
+The image under an approximable endomap of a directed supremum of fixed elements is that same supremum.
+
+Continuity rewrites the image of the supremum as the supremum of the images, and each image equals the original summand by the fixed-point hypothesis.
+
+The section induced by an order isomorphism from the fixed-point set onto another domain sends a principal element to the underlying element of the inverse image of that principal element.
+
+This is the principal clause of the monotone-map constructor.
+
+The same section sends every element to the underlying element of its inverse image.
+
+The inverse images of the principal approximants are directed, because the inverse isomorphism is monotone and intersections of neighbourhoods supply upper bounds. The section of the element equals their directed supremum: membership through a principal neighbourhood matches membership in that supremum by the principal clause. Each approximant is fixed because it lies in the fixed-point subtype. The section lies below the inverse image because each approximant does, by monotonicity of the inverse isomorphism on a principal element below the element. For the reverse, the supremum of those fixed approximants is fixed, so the section is a fixed element. Algebraicity reduces the comparison of the element with the image of the section to principal approximants, each of which lies below the section as a summand of that supremum, and the two round trips of the isomorphism recover the inequality.

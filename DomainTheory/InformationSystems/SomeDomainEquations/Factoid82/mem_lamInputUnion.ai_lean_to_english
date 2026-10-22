@@ -1,0 +1,3 @@
+A raw token lies in the input union of a finite set of list pairs if and only if it lies in the finite set of the first list of some pair in the set.
+
+An auxiliary claim on multisets says that the token lies in the right fold of input-union insertion if and only if it lies in the first-list finset of some member. Both directions fail for the empty multiset. On a cons, membership in the choice-free union of the head's first-list finset with the tail fold splits into those two alternatives, matching existence in the cons. Simplifying the definition of input union reduces the claim to this auxiliary statement on the underlying multiset.

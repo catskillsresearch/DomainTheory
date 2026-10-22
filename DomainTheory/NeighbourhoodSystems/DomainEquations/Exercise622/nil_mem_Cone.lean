@@ -1,8 +1,3 @@
-/-ai
-The empty string belongs to the master of the one-point domain.
-
-The membership is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

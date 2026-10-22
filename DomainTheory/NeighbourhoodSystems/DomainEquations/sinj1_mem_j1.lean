@@ -1,8 +1,3 @@
-/-ai
-The one-injection of an element contains the one-copy of a neighbourhood Y exactly when the element contains Y.
-
-If the copy belongs to the injection, it is not the master, because the master contains the point none and a one-copy does not. It is therefore a one-copy of some set, and injectivity of one-copies forces that set to be Y. Conversely, the one-copy of Y is one of the neighbourhoods recorded by the injection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

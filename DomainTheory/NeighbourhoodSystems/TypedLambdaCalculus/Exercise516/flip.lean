@@ -1,6 +1,3 @@
-/-ai
-Flip complements every bit of a finite string by mapping Boolean negation along the string.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

@@ -1,6 +1,3 @@
-/-ai
-The one-argument embedding of the flat naturals into the universal argument domain pushes its input onto the bottom stack. It is push composed with the pairing of the identity and the constant bottom stack, so the head carries the input.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.12). Abstraction distributes over intersection: the intersection of the graphs of τ and σ is the graph of their pointwise intersection.
-
-A pair code in both graphs has the same components by injectivity of pairing, and the value lies in both results. A pair code whose value lies in both results lies in both graphs.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

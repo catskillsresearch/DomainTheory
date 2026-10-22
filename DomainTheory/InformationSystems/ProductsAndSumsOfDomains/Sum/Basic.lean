@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports Scott's Definition 6.3 of the separated sum of information systems: the sum token type and its decidable equality, the sum bottom, left and right insertion and their left-commutativity, the left and right projections together with membership, monotonicity, and the insertion and singleton equations, the fold-membership lemmas, sum consistency and the four consequences of a nonempty side, and sum entailment together with the sum system. Tokens are left copies (X, Δ), right copies (Δ, Y), and a fresh bottom (Δ, Δ), kept pairwise distinct by an inductive type. Consistency and entailment are disjunctive, so a consistent set lies entirely on the left or entirely on the right, or is empty or the singleton of bottom.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
@@ -40,18 +37,6 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumCo
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumCon_rht_con_of_rht_nonempty
 
 @[expose] public section
-
-/-!
-# Separated sum of information systems — Definition 6.3
-
-**Scott 1982, Definition 6.3.** Tokens of `A + B` are left copies `(X, Δ)`, right
-copies `(Δ, Y)`, and a fresh bottom `(Δ, Δ)`. Consistency and entailment are
-disjunctive: a consistent set lives entirely on the left or entirely on the right
-(or is empty / `{⊥}`).
-
-We encode tokens as an inductive type so that `(Δ_A, Δ)`, `(Δ, Δ_B)`, and `(Δ, Δ)`
-remain pairwise distinct, matching Scott’s remark after Def 6.3.
--/
 
 namespace DomainTheory.InformationSystems
 

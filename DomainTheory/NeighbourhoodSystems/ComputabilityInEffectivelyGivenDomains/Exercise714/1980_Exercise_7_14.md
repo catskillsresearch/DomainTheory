@@ -1,18 +1,43 @@
 # Exercise 7.14
 
-**EXERCISE 7.14.** (For recursive-function theorists.) Prove the statements after definition 7.2 about the existence of primitive recursive functions for showing things recursively enumerable. (Recall that a non-empty set is r.e. iff it is the range of a primitive recursive function.) Show also that every computable element $y \in |E|$ can be written
+## Human-English
 
-$$y = \bigcup \{ \uparrow Y_{t(i)} \mid i \in \mathbf{N} \},$$
+@import "1980_Exercise_7_14.english" {code_block=false}
 
-where $t : \mathbf{N} \to \mathbf{N}$ is primitive recursive and where we may assume
-$Y_{t(i+1)} \subseteq Y_{t(i)}$
+## AI: Human-English to AI-Lean
 
-for all $i \in \mathbf{N}$.
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/tFun.lean**
 
-**Lean 4**
+@import "tFun.lean"
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/tFun.lean](tFun.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714.lean](../Exercise714.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/repred_range_primrec.lean](repred_range_primrec.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/repredu2082_exists_primrec_enum.lean](repredu2082_exists_primrec_enum.lean)
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714.lean**
+
+@import "../Exercise714.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/repred_range_primrec.lean**
+
+@import "repred_range_primrec.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise714/repredu2082_exists_primrec_enum.lean**
+
+@import "repredu2082_exists_primrec_enum.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "tFun.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise714.ai_lean_to_english" {code_block=false}
+
+@import "repred_range_primrec.ai_lean_to_english" {code_block=false}
+
+@import "repredu2082_exists_primrec_enum.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_7_14.ai_english_concordance" {code_block=false}

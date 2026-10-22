@@ -1,8 +1,3 @@
-/-ai
-The arrow combinator of two self-maps of the universal domain is the arrow injection composed after the lambda combinator composed after the arrow extraction.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

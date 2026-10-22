@@ -1,8 +1,3 @@
-/-ai
-A right tag lies outside every tagged middle copy.
-
-A membership witness would equate a right tag with a middle tag, and simplification of the two tags makes that equality absurd.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

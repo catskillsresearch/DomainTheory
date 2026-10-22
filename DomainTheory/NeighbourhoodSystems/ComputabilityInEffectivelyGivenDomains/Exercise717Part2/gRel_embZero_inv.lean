@@ -1,8 +1,3 @@
-/-ai
-A catamorphism relation out of the zero embedding of X yields a relation of the leaf map between X and the target.
-
-After generalizing the embedding, the master clause is impossible because a zero embedding is not the master, the leaf clause is identified by injectivity of the zero embedding, and the node clause is impossible because a zero embedding is not a paired embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

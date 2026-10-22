@@ -1,8 +1,3 @@
-/-ai
-The complement of a singleton is a neighbourhood of the powerset system.
-
-Its complement is a singleton, which is finite.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

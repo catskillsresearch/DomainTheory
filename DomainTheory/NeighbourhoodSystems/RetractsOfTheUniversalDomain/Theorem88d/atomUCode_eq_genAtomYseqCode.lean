@@ -1,8 +1,3 @@
-/-ai
-If a bit-source is non-junk at depth n, the universal neighbourhood of its U-code equals the generated atom of the coded Y family against the master neighbourhood, taken along the bits of that bit-source.
-
-Induct on the depth. At depth 0 the code is the master index, whose neighbourhood is the master, and the generated atom at depth 0 is the master. At a successor the previous depth is non-junk. If the bit is true, the generated atom meets the coded neighbourhood at that depth, and the true-branch successor formula is that same intersection. If the bit is false, the generated atom meets the complement of the coded neighbourhood in the master. The false-branch formula gives the old neighbourhood with the coded neighbourhood removed. The old neighbourhood is contained in the master, because it equals the previous generated atom, so removing the coded neighbourhood is the same as meeting the complement in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

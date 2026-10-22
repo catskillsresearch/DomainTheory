@@ -1,6 +1,3 @@
-/-ai
-The approximable operator Ψ on the space of maps from the function space of a neighbourhood system into that system is the currying of evaluation after the pairing of the first projection with evaluation, so that Ψ sends an operator and a map f to the application of f to the operator applied at f.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

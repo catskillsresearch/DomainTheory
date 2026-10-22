@@ -1,8 +1,3 @@
-/-ai
-The embedding of the tree algebra of the universal domain into the universal domain is a computable map.
-
-This is the computability clause for that embedding in the projection pair chosen by the strong form of Theorem 8.8.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

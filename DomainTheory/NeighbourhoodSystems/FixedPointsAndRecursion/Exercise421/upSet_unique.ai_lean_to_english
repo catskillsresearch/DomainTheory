@@ -1,0 +1,3 @@
+A function from naturals to sets of naturals that sends zero to every natural and sends m + 1 to the successor image of its value at m is equal to the up-set function.
+
+Compare values by induction on the argument. At zero, rewrite by the given base and the law that the up-set of zero is every natural. At a successor, rewrite by the given step, the inductive hypothesis, and the law that the up-set of a successor is the successor image of the previous up-set.

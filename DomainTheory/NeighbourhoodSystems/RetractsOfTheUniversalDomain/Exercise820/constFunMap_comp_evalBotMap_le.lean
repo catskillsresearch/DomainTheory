@@ -1,8 +1,3 @@
-/-ai
-The composite of the constant-function embedding after evaluation at bottom lies below the identity on the function space from A to B.
-
-Compare functions pointwise through the function-space equivalence. The constant function whose value is the given function at bottom, evaluated at an argument a, equals that value at bottom, which lies below the value at a by monotonicity, since bottom lies below a.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

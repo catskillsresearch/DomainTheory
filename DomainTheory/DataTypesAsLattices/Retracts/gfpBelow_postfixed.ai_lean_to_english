@@ -1,0 +1,3 @@
+If f is Scott continuous, then the greatest postfixed point below b is contained in the intersection of its image under f with b.
+
+An element of the defining union lies in some admissible set. That set is contained in the greatest postfixed point, so monotonicity of f carries the membership in the image into the image of the greatest postfixed point, while the same membership already lies in b.

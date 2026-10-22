@@ -1,8 +1,3 @@
-/-ai
-A set of tokens that contains the master neighbourhood equals the master neighbourhood.
-
-A set containing the universe equals the universe.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

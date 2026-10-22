@@ -1,0 +1,90 @@
+The purpose of the first section was to introduce in a simple-minded way the basic notions about the topology of $\mathbf{P}\omega$ and its continuous functions. In this section we wish to present the details of a powerful language for defining *particular* functions—especially computable functions—and initiate the study of the *use* of these functions. This study is then extended in different ways in the following sections.
+
+Before looking at the language, a short discussion of the "meaning" of the elements $x \in \mathbf{P}\omega$ will be helpful from the point of view of motivation. Now in itself $x \in \mathbf{P}\omega$ is a set, but this does not reveal its *meaning*. Actually $x$ has no "fixed" meaning, because it can be *used* in strikingly different ways; we look for meaning here solely in terms of use. Nevertheless it is possible to give some coherent guidelines.
+
+In the first place it is convenient to let the singleton subsets $\{n\} \in \mathbf{P}\omega$ stand for the corresponding integers. In fact, we shall enforce by convention the equation $n = \{n\}$ as a way of simplifying notation. In this way, $\omega \subseteq \mathbf{P}\omega$ as a subset. (Note that our convention conflicts with such set-theoretical equations as $5 = \{0, 1, 2, 3, 4\}$. What we have done is to abandon the usual set-theoretical conventions in favor of a slight redefinition of *set of integers* which produces a more helpful convention for present purposes.) So, if we choose, a singleton "means" a single integer. The next
+question is what a "large" set $x \in \mathbf{P}\omega$ could mean. Here is an answer: if we write:
+
+$$x = \{0, 5, 17\} = 0 \cup 5 \cup 17,$$
+
+we are thinking of $x$ as a *multiple integer*. This is especially useful in the case of multiple-valued function where we can write:
+
+$$f(a) = 0 \cup 5 \cup 17.$$
+
+Then "$m \in f(a)$" can be interpreted as "$m$ is one value of $f$ at $a$." Now $a \in \mathbf{P}\omega$, too, and so it is a multiple integer also. This brings us to an important point.
+
+A multiple integer is (often) *more* than just the (random) collection of its elements. From the definition of continuity, $m \in f(a)$ is equivalent to $m \in f(e_n)$ with $e_n \subseteq a$. We may not be able to reduce this to $m \in f(\{n\})$ with $n \in a$ without additional assumptions on $f$. Indeed we shall take advantage of the feature of continuous functions whereby the elements of an argument $a$ can join in *cooperation* in determining $f(a)$. Needless to say, continuity implies that the cooperation cannot extend beyond *finite* configurations, and so we can say that $a$ is the union (or limit) of its finite subsets. However, finitary cooperation will be found to be quite a powerful notion.
+
+Where does this interpretation leave the empty set $\varnothing$? When we write "$f(a) = \varnothing$" we can read this as "$f$ has no value at $a$", or "$f$ is undefined at $a$". In this case $f(a)$ exists (as a set), but it is not "defined" as an integer. Single- (or singleton-) valued functions are "well-defined", but multiple-valued functions are rather "over-defined".
+
+How does this interpretation fit in with monotonicity? In case $a \subseteq b$ and $m \in f(a)$, then we must have $m \in f(b)$. We can read "$a \subseteq b$" as "$b$ is an *improvement of* $a$" or "$b$ is *better-defined than* $a$." The point of monotonicity is that the better we define an argument, the better we define a value. "Better" does not imply "well" (that is, singleton-valuedness), and overdefinedness may well creep in. This is not the fault of the function; it is our fault for not choosing a different function.
+
+As a subspace $\omega \subseteq \mathbf{P}\omega$ is discrete. This implies that arbitrary functions $p : \omega \to \omega$ are continuous. Note that $p : \omega \to \mathbf{P}\omega$ as well, because $\omega \subseteq \mathbf{P}\omega$. By Theorem 1.5 we can extend $p$ continuously to $\bar{p} : \mathbf{P}\omega \to \mathbf{P}\omega$. The formula given produces this function:
+
+$$(2.1) \quad \bar{p}(x) = \begin{cases} \bigcap \{p(n) \mid n \in \omega\} & \text{if } x = \varnothing; \\ p(n) & \text{if } x = n \in \omega; \\ \omega & \text{otherwise.} \end{cases}$$
+
+This is a rather abrupt extension of $p$ (the *maximal extension*); a more gradual, continuous extension (the *minimal extension*) is determined by this equation:
+
+$$(2.2) \quad \hat{p}(x) = \bigcup \{p(n) \mid n \in x\}.$$
+
+The same formulae work for *all* multiple-valued functions $p : \omega \to \mathbf{P}\omega$. Functions like $f = \hat{p}$ are exactly characterized as being those continuous functions $f : \mathbf{P}\omega \to \mathbf{P}\omega$ which in addition are *distributive* in the sense of these equations:
+
+$$f(x \cup y) = f(x) \cup f(y) \quad \text{and} \quad f(\varnothing) = \varnothing.$$
+
+The sets $\varnothing$ and $\omega$ play special roles. When we consider them as elements of $\mathbf{P}\omega$ we shall employ the notation:
+
+$$\bot = \varnothing \quad \text{and} \quad \top = \omega$$
+
+The element $\bot$ is the most "undefined" integer, and $\top$ is the most "overdefined". All others are in between.
+
+One last general point on meaning: suppose $x \in \mathbf{P}\omega$ and $k \in x$. Then $k = (n, m)$ for suitable (uniquely determined) integers $n$ and $m$. That is to say, every element of $x$ can be regarded as an ordered pair; thus, $x$ can be used as a relation. Such an operation as
+
+$$(2.3) \quad x ; y = \{(n, l) \mid \exists m.\, (n, m) \in x,\, (m, l) \in y\}$$
+
+is then a continuous function of two variables that treats both $x$ and $y$ as relations. On the other hand we could define a quite different continuous function such as
+
+$$(2.4) \quad x + y = \{n + m \mid n \in x,\, m \in y\}$$
+
+which treats both $x$ and $y$ arithmetically. The only reason we shall probably never write $(x + y) ; x$ again is that the values of this perfectly well-defined continuous function are, for the most part, quite uninteresting. There is, however, no theoretical reason why we cannot use the same set with several different "meanings" in the same formula. Of course if we do so, it is to be expected that we will show the point of doing this in the special case. We turn now to the definition of the general language for defining all such functions.
+
+The syntax and semantics of the language LAMBDA are set out in Table 2. The syntax is indicated on the left, and the meanings of the combinations are shown on the right as subsets of $\mathbf{P}\omega$. This is the basic language and could have been given (less understandably) in terms of combinators (see Theorem 2.4). It is, however, a very primitive language, and we shall require many definitions before we can see why such functions as in (2.3) and (2.4) are themselves definable.
+
+**TABLE 2**
+
+*The language LAMBDA*
+
+$$0 = \{0\}$$
+
+$$x + 1 = \{n + 1 \mid n \in x\}$$
+
+$$x - 1 = \{n \mid n + 1 \in x\}$$
+
+$$z \supset x, y = \{n \in x \mid 0 \in z\} \cup \{m \in y \mid \exists k.\, k + 1 \in z\}$$
+
+$$u(x) = \{m \mid \exists e_n \subseteq x.\, (n, m) \in u\}$$
+
+$$\lambda x.\, \tau = \{(n, m) \mid m \in \tau[e_n / x]\}$$
+
+The definition has been left somewhat informal in hopes that it will be more understandable. In the above, $\tau$ is any term of the language. LAMBDA is type-free and allows any combination to be made by substitution into the given functions. There is one primitive constant $(0)$; there are two unary functions $(x + 1,\, x - 1)$; there is one binary function $(u(x))$ and one ternary function $(z \supset x, y)$; finally there is one variable binding operator $(\lambda x.\, \tau)$. The first three equations have obvious sense. In the fourth, $z \supset x, y$ is McCarthy's conditional expression (a test for zero). Next $u(x)$ defines *application* ($u$ is treated as a graph and $x$ as a set), and $\lambda x.\, \tau$ is *functional abstraction* (compare the definition of **fun**). In defining $\lambda x.\, \tau$, we use $\tau[e_n/x]$ as a shorthand for evaluating the term $\tau$ when the variable $x$ is given the value $e_n$.
+
+Note that the functions are all multiple-valued. Thus we have such a result as:
+
+$$(2.5) \quad (6 \cup 10) + 1 = 7 \cup 11.$$
+
+The partial character of subtraction has expression as:
+
+$$(2.6) \quad 0 - 1 = \bot.$$
+
+We shall see how to define $+$ and $-$ in LAMBDA later. The conditional could also have been defined by cases:
+
+$$(2.7) \quad z \supset x, y = \begin{cases} \bot & \text{if } z = \bot; \\ x & \text{if } z = 0; \\ y & \text{if } 0 \notin z \neq \bot; \\ x \cup y & \text{if } 0 \in z \neq 0. \end{cases}$$
+
+We say that a LAMBDA-term $\tau$ defines a function of its free variables (at least). Other results depend on this fundamental proposition:
+
+- [Theorem 2.1](1976_Theorem_2_1.md)
+- [Theorem 2.2](1976_Theorem_2_2.md)
+- [Theorem 2.3](1976_Theorem_2_3.md)
+- [Theorem 2.4](1976_Theorem_2_4.md)
+- [Theorem 2.5](1976_Theorem_2_5.md)
+- [Definition (computable)](1976_Definition_computable.md)
+- [Theorem 2.6](../Computability/1976_Theorem_2_6.md)

@@ -1,8 +1,3 @@
-/-ai
-Under the characteristic and consistency hypotheses, every neighbourhood whose raw index is diagonally fixed equals the induced enumeration at the code of the singleton list pairing a characteristic witness with that index.
-
-Extract a witness whose pair with the index has characteristic one. The code-level fold of the singleton code equals one gated step from the master index, by the code-fold equation, the decode-encode round trip, the definition of the list fold, and the cons and nil equations for left folds. The master index is consistent with the index: the index itself is a witness, because the presented neighbourhood is contained in the master neighbourhood, and the master-index specification turns that into the intersection inclusion. The step therefore returns the intersection index, by unfolding the step, reading the second component of the pair, and rewriting both one-tests so that selection takes the intersection. Unfolding the enumeration and rewriting the step, the intersection specification and the master-index specification reduce the intersection with the master neighbourhood to the original neighbourhood, using again that every neighbourhood is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.Basic

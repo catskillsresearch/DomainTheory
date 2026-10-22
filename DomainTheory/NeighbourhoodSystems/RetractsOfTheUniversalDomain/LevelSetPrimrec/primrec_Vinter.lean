@@ -1,11 +1,3 @@
-/-ai
-The map sending a paired natural number to the intersection index of its two components
-is primitive recursive.
-
-It is the composition of primitive-recursive canonicalization with the
-primitive-recursive raw intersection, and the composition agrees with the intersection
-index by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

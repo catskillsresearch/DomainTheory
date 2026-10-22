@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (3.8), the application calculation: code application of 0 to 0 equals 1.
-
-Simplify by the definition of code application and by pairing.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

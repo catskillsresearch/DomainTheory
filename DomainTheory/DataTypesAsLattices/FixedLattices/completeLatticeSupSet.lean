@@ -1,6 +1,3 @@
-/-ai
-The abbreviation completeLatticeSupSet selects the supremum operation of a complete lattice by following the instance through the complete-semilattice supremum.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Defs

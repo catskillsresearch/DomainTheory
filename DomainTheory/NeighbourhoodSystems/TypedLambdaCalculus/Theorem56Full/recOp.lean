@@ -1,6 +1,3 @@
-/-ai
-Given maps φf and φg, the primitive-recursion operator is the curry of their primitive-recursion body, an approximable endomap of the function space from the universal argument domain to N.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

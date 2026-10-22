@@ -1,8 +1,3 @@
-/-ai
-Every enumerated set is a neighbourhood of a finite address.
-
-It is the neighbourhood of the decoded list.
-ai-/
 
 module
 

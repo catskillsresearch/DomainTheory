@@ -1,0 +1,3 @@
+The code-level minimum of first components is primitive recursive.
+
+The step applying the rational minimum to the pair of the inner first unpairing and the first unpairing of the outer first unpairing is primitive recursive by composition, identified by reflexivity. Primitive recursion of code folding with constant parameter zero, constant seed the one code, and the identity, identified by reflexivity, is the minimum code.

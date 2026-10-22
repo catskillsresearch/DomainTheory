@@ -1,8 +1,3 @@
-/-ai
-A Scott map sends the supremum of a nonempty directed set to the supremum of the image of that set.
-
-The underlying function is Scott-continuous, and Scott continuity is equivalent to preservation of directed suprema.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

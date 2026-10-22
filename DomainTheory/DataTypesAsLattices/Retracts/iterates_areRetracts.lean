@@ -1,8 +1,3 @@
-/-ai
-If a map preserves retracts, every Kleene approximant is a retract.
-
-The zero stage is the bottom retract. A successor stage is the image of the preceding retract under the preservation hypothesis.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

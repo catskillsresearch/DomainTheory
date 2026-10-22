@@ -1,6 +1,3 @@
-/-ai
-The table-lookup form of the concatenation branch reads previous matches from the table in the first component and applies the branch to the packed cut, code, and word in the second component.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

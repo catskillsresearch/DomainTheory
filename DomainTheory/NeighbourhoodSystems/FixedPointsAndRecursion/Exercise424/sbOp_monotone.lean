@@ -1,8 +1,3 @@
-/-ai
-Tarski's operator is monotone.
-
-An element of the complement of the range remains there. An element of the image of the smaller set comes from an element of that set, which lies in the larger set by the assumed inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

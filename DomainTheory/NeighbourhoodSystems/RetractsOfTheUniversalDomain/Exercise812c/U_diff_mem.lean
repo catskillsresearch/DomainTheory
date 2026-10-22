@@ -1,8 +1,3 @@
-/-ai
-The difference of two neighbourhoods of U is empty or a neighbourhood of U.
-
-Present the two neighbourhoods by lists of intervals. The difference of the presented intervals is empty, or else nonempty and presented by the difference of the lists, and it remains inside the master because it is contained in the first neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

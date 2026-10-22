@@ -1,0 +1,1 @@
+This file gathers and re-exports membership for the finite nonempty subsets of the natural numbers, the neighbourhood system they form, the principal finite elements, the bottom element, the theorem that every neighbourhood is nonempty, and the simplification of membership in the system.

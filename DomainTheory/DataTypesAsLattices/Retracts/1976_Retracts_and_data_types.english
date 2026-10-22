@@ -1,0 +1,29 @@
+Data can be structured in many ways: ordered tuples, lists, arrays, trees, streams, and even operations and functions. The last point becomes clear if one thinks of *parameters*. We would normally hardly consider the pairing function $\lambda x \lambda y.\, \langle x, y \rangle$ as being in itself a piece of data. But if we treat the first variable as a *parameter*, then it can be specialized to a *fixed value*, say the element $a$, producing the function $\lambda y.\, \langle a, y \rangle$. This function is more likely to be the output of some process and *in itself* can be considered as a datum. It is rather like one *whole row* of a matrix. If we were to regard a two-argument function $f$ as being a matrix, then its $a$th row would be exactly $\lambda y.\, f(a)(y)$. If $s$ were a selection function, then, for example, $\lambda y.\, f(s(y))(y)$ would represent the selection of one element out of each column of the matrix. This selection could be taken as a specialization of parameters in the operator $\lambda u \lambda v \lambda y.\, u(v(y))(y)$. We have not been very definite here about the exact nature of the fixed $a$, $f$, or $s$, or the range of the variable $y$ or the range of values of the function $f$. The point is only to recall a few elements of structure and to suggest an abstract view of data going beyond the usual iterated arrays and trees.
+
+What then is a *data type*? Answer: a type of data. That is to say, a collection of data that have been grouped together for reasons of similarity of structure or perhaps mere convenience. Thus the collection may very well be a mixed bag, but more often than not canons of taste or demands of simplicity dictate an adherence to regularity. The grouping may be formed to eliminate irrelevant objects and focus the attention in other ways. It is frequently a matter of good organization that aids the understanding of complex definitions. In programming languages, one of the major reasons for making an explicit declaration of a data type (that is, the restriction of certain variables to certain *"modes"*) is that the computed objects of that type can enjoy a special *representation* in the machine that allows the manipulation of these objects via the chosen representation to be reasonably efficient. This is a very critical matter for good language design and good compiler writing. In this report, however, we cannot discuss the problems of representation, important as they may be. Our objective here is conceptual organization, and we wish to show how such ideas, in the language for computable functions used here, can find the proper expression.
+
+Which are the data types that can be defined in LAMBDA? No final answer can be given since the number is infinite and inexhaustible. From one point of view, however, there is only one: $\mathbf{P}\omega$ itself. It is the universal type and all other types are subtypes of it; so $\mathbf{P}\omega$ plays a primary role in this exposition. But in a way it is too big, or at least too complex, since each of its elements can be used in so many different ways. When we specify a subtype the intention is to restrict attention to a special use. But even the various subtypes overlap, and so the same elements still get different uses. Style in writing definitions will usually make the differentiation clear though. The main innovation to be described in this section is the use of LAMBDA expressions to define types *as well as* elements. Certain expressions define *retracts* (or better: retraction mappings), and it is the *ranges* (or as we shall see: *sets of finite points*) of such retracts that form the groupings into types. Thus LAMBDA provides a calculus of type definitions including *recursive* type definitions. Examples will be explained both here and in the following sections. Note that types as retracts turn out to be types as *lattices*, that is, types of partial and many-valued objects. The problem of cutting these lattice types down to the perfect or complete objects is discussed in § 6. Another view of types and functionality of mappings is presented in § 7.
+
+The notion of a retract comes from (analytic) topology, but it seems almost an accident that the idea can be applied in the present context. The word is employed not because there is some deep tie-up with topology but because it is short and rather descriptive. Three easy examples will motivate the general plan:
+
+$$(4.1) \quad \mathbf{fun} = \lambda u \lambda x.\, u(x);$$
+
+$$(4.2) \quad \mathbf{pair} = \lambda u.\, \langle u_0, u_1 \rangle;$$
+
+$$(4.3) \quad \mathbf{bool} = \lambda u.\, u \sqsupset 0, 1.$$
+
+Here $\sqsupset$ is the *doubly strict conditional* defined by
+
+$$(4.4) \quad z \sqsupset x, y = z \supset (z \supset x, \top), (z \supset \top, y),$$
+
+which has the property that if $z$ is both zero and positive, then it takes the value $\top$ instead of the value $x \cup y$.
+
+- [Definition (retract)](1976_Definition_retract.md)
+- [Definition (membership)](1976_Definition_membership.md)
+- [Theorem 4.1](1976_Theorem_4_1.md)
+- [Definition (ordering)](1976_Definition_ordering.md)
+- [Theorem 4.2](1976_Theorem_4_2.md)
+- [Theorem 4.3](1976_Theorem_4_3.md)
+- [Theorem 4.4](../Functionality/1976_Theorem_4_4.md)
+- [Theorem 4.5](1976_Theorem_4_5.md)
+- [Theorem 4.6](1976_Theorem_4_6.md)

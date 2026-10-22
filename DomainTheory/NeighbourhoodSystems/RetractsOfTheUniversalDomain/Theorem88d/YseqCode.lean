@@ -1,6 +1,3 @@
-/-ai
-The code of Scott's Y sequence at n is the accumulated union component of the code fold at n, run for two to the power n steps, over the genuine atoms whose nth bit is forced on.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

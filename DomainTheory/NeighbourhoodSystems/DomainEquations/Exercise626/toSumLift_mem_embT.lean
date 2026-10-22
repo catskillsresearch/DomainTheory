@@ -1,8 +1,3 @@
-/-ai
-For a neighbourhood Y of E, the image of a coalesced-sum element under the forward map contains the true tag of Y if and only if the element contains the true tag of the false tag of Y.
-
-The sum master differs from a true tag. A left witness would equate a true tag with a false tag, which fails for a nonempty neighbourhood of E. A right witness is identified by injectivity of tagging. The converse records the right disjunct.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

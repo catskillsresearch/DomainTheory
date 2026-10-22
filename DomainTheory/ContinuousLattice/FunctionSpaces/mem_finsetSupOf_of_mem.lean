@@ -1,8 +1,3 @@
-/-ai
-Every member of a set belongs to the set of finite sub-joins of that set.
-
-The element is the join of the singleton finite set containing it, and that singleton is contained in the set.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,8 +1,3 @@
-/-ai
-When every finite set of tokens is consistent, the top element is total.
-
-Every element lies below the top element, which is what totality asks of the elements above it.
-ai-/
 
 module
 

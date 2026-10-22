@@ -1,8 +1,3 @@
-/-ai
-The Thue–Morse substitution distributes over concatenation: the substitution of σ followed by τ equals the substitution of σ followed by the substitution of τ.
-
-Induction on σ. The empty case holds by reflexivity. A cons simplifies by the inductive hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

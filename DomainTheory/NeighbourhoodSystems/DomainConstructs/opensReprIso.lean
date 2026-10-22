@@ -1,6 +1,3 @@
-/-ai
-The open subsets of the elements of a neighbourhood system, ordered by inclusion, are order-isomorphic to the elements of the function space into the Sierpiński domain. The isomorphism composes the isomorphism with approximable maps into the Sierpiński domain and the inverse of the function-space representation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122

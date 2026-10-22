@@ -1,8 +1,3 @@
-/-ai
-The zero combinator zeroC is lambda-definable, matching one of the constants among the closed lambda terms of Theorem 2.4.
-
-It is the interpretation of the closed term Term.zero.
-ai-/
 module
 
 public import Mathlib.Computability.RE

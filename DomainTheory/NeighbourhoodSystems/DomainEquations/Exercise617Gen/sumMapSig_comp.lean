@@ -1,8 +1,3 @@
-/-ai
-The indexed sum preserves composition of approximable maps.
-
-Relations are compared in both directions. A composite relation is the master, the unit copy on both sides, or a letter-copy related by the composite, and each case factors through the master, the unit copy, or the intermediate letter-copy. Conversely, a factored relation whose right half is the master remains the master. A right half that is the unit copy cannot arise from the master or from a letter-copy, because the empty token and a copy token lie outside the unit copy, and otherwise both sides are the unit copy. A right half that is a letter-copy cannot arise from the master or the unit copy, by the same separations, and otherwise the intermediate copies agree and the two relations compose.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

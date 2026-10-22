@@ -1,6 +1,3 @@
-/-ai
-The intersection-equality character of a fuel bound and two codes is the product of the two subset characters, one in each direction. The definition is irreducible.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

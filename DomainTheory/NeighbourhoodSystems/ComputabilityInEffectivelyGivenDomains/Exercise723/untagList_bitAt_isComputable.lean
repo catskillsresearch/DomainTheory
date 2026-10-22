@@ -1,8 +1,3 @@
-/-ai
-The list check that every index of the decoded extracted list has bit characteristic one is recursively decidable. The word is packed as the code followed by a dummy index and the bit word, the dummy riding along to match a later packing.
-
-Transport the list-bounded universal quantification of the swapped bit-characteristic decider along the primitive-recursive extracted list of the first component, paired with the second component of the second component. The transport is the simplification of the unpairings.
-ai-/
 
 module
 

@@ -1,121 +1,475 @@
 # Proposition 7.7
 
-The major consequence of what we have done up to this point concerns typed $\lambda$-calculus. Any expression involving only *effectively given types* and, perhaps, some *basic computable constants* using only the $\lambda, !$-notation defines a computable function of its free variables. And such functions applied to computable arguments give computable values. And such functions have computable least fixed points. Etc., etc. In a definite sense then we have in the “metalanguage”, as people say, a quite precise and fully *mathematical programming language* for defining computable operators. It is not a machine implemented language, but it is a mathematically well-defined and easy-to-use language. And when we combine the usual type-definition facility together with *domain equations*, we have an especially powerful language.
+## Human-English
 
-**PROPOSITION 7.7.** For any effectively given domain $D$, the domain $D^\S$ is also effectively given, and all the combinators of Example 6.1 prove to be computable.
+@import "1980_Proposition_7_7.english" {code_block=false}
 
-*Proof:* This proof is essentially an exercise, but it is useful to have an easy-to-grasp example. Indeed, to make things easy to reason about, we can assume that $D$ is a system over $\Delta = \mathbf{N}$, and that in the presentation where
+## AI: Human-English to AI-Lean
 
-$$D = \{ X_n \mid n \in \mathbf{N} \},$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/consB.lean**
 
-the relation $k \in X_n$ is *recursive* in $k$ and $n$. (It is worth thinking why this is so.) Of course, a lot of other things are recursive also.
-Now what kind of a system is $D^\S$? The construction of 6.1 made it a system over a certain set of strings $\Gamma$. For the sake of checking various assertions about computability, we are transposing everything back to $\mathbf{N}$. (These are all denumerable sets in any case.) The set $\Gamma$ is divided into three equally big parts, and we can do the same for $\mathbf{N}$. Let us write for any $m, k \in \mathbf{N}$ and subset $X \subseteq \mathbf{N}$:
+@import "consB.lean"
 
-$$mX + k = \{ m \cdot n + k \mid n \in X \}.$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharp_isEffectivelyGiven.lean**
 
-Then by splitting the integers modulo 3 we have:
+@import "dsharp_isEffectivelyGiven.lean"
 
-$$\mathbf{N} = 3\mathbf{N} \cup (3\mathbf{N} + 1) \cup (3\mathbf{N} + 2),$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77.lean**
 
-and this equation is quite analogous to that for $\Gamma$. We then propose this definition for $D^\S$:
+@import "../Proposition77.lean"
 
-$$D^\S = \{\mathbf{N}\} \cup \{3X \mid X \in D\} \cup \{(3X + 1) \cup (3Y + 2) \mid X, Y \in D^\S\},$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/dsharpPresentation_X.lean**
 
-but this does not make the enumeration of $D^\S$ all that obvious. This is one way to do it:
+@import "../Combinators77/dsharpPresentation_X.lean"
 
-$$V_0 = \mathbf{N} \ ; \ V_{2n+1} = 3X_n \ ; \ V_{2n+2} = (3V_{p(n)} + 1) \cup (3V_{q(n)} + 2).$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/inSharpMap.lean**
 
-Here $p$ and $q$ are the inverse of the pairing functions mentioned in 7.4. They must be chosen so that $p(n) < n$ and $q(n) < n$ for all $n \in \mathbf{N}$. Thus, in calculating $V_k$ where $k = 2n + 2$ we will be using $V_{p(n)}$ and $V_{q(n)}$ where both subscripts are strictly less than $k$. This observation is required so that $m \in V_k$ is going to be a recursive relation. What we claim is that
+@import "../Combinators77/inSharpMap.lean"
 
-$$D^\S = \{V_k \mid k \in \mathbf{N}\}.$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/inSharpMap_rel.lean**
 
-It should be clear that everything on the right belongs to $D^\S$. What needs an inductive argument is that everything in $D^\S$ is eventually of the form $V_k$. But this should be fairly obvious owing to the properties of $r : \mathbf{N} \times \mathbf{N} \leftrightarrow \mathbf{N}$.
+@import "../Combinators77/inSharpMap_rel.lean"
 
-The reader also has to check that 7.1(i)–(ii) hold for the $V_k$. The idea is that any such check is either (1) trivial, or (2) something already assumed about $D$ and the $X_n$, or (3) can be thrown back to some sets $V_m$ with strictly smaller subscripts. Therefore, the checks will give an answer in finite time according to an effective reduction.
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/proj0Map.lean**
 
-Next for the combinators, we have to translate neighbourhood relations into relations among integer indices. A selection of examples must suffice,
+@import "../Combinators77/proj0Map.lean"
 
-$$X_n\ (\lambda x.\, x^\S)\ V_k \text{ iff } V_{2n+1} \subseteq V_k$$
-$$V_m \ \mathrm{proj}_0 \ V_k \text{ iff } k = 0 \text{ or } \exists n \in \mathbf{N}.\, m = 2n + 2 \text{ and } V_{p(n)} \subseteq V_k.$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/Basic.lean**
 
-The reader should write out other cases. $\square$
+@import "../Combinators77/Basic.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/inSharpMap_toElementMap.lean**
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/consB.lean](consB.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharp_isEffectivelyGiven.lean](dsharp_isEffectivelyGiven.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77.lean](../Proposition77.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/dsharpPresentation_X.lean](../Combinators77/dsharpPresentation_X.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/inSharpMap.lean](../Combinators77/inSharpMap.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/inSharpMap_rel.lean](../Combinators77/inSharpMap_rel.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/proj0Map.lean](../Combinators77/proj0Map.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/Basic.lean](../Combinators77/Basic.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/inSharpMap_toElementMap.lean](../Combinators77/inSharpMap_toElementMap.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/inSharp_isComputable.lean](../Combinators77/inSharp_isComputable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/proj0_rel_Vsharp_iff.lean](../Combinators77/proj0_rel_Vsharp_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/proj0_isComputable.lean](../Combinators77/proj0_isComputable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/proj0_toElementMap_pairSharp.lean](../Combinators77/proj0_toElementMap_pairSharp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77.lean](../Combinators77.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/eqB.lean](eqB.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/gList_length.lean](gList_length.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/intI.lean](intI.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/le_pair_left.lean](le_pair_left.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGetStp.lean](listGetStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGet.lean](listGet.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGetStp_pair.lean](listGetStp_pair.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGet_foldl_zero.lean](listGet_foldl_zero.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGet_foldl.lean](listGet_foldl.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGet_encodeList.lean](listGet_encodeList.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/max_sq_le_pair.lean](max_sq_le_pair.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/memS_sub_embPair.lean](memS_sub_embPair.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/memS_sub_embZero.lean](memS_sub_embZero.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/nat_shape.lean](nat_shape.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/packT.lean](packT.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/eqB_packT.lean](eqB_packT.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/consB_packT.lean](consB_packT.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/intI_packT.lean](intI_packT.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep.lean](dsharpStep.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_i0.lean](dsharpStep_i0.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_j0.lean](dsharpStep_j0.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_ll.lean](dsharpStep_ll.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_ln.lean](dsharpStep_ln.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_nl.lean](dsharpStep_nl.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_nn.lean](dsharpStep_nn.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/pair_lt_succ_sq.lean](pair_lt_succ_sq.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/pair_lt_pair_of_lt.lean](pair_lt_pair_of_lt.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/primrec_listGet.lean](primrec_listGet.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/primrec_listGet₂.lean](primrec_listGet₂.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/primrec_dsharpStep.lean](primrec_dsharpStep.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/rtbl.lean](rtbl.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/gOf.lean](gOf.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/gList.lean](gList.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/gOf_def.lean](gOf_def.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/getD_gList.lean](getD_gList.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/rtbl_eq_encode.lean](rtbl_eq_encode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGet_rtbl.lean](listGet_rtbl.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/rtbl_eq_rec.lean](rtbl_eq_rec.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/primrec_rtbl.lean](primrec_rtbl.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/primrec_gOf.lean](primrec_gOf.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/unpair_fst_le.lean](unpair_fst_le.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp.lean](Vsharp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_succ.lean](Vsharp_succ.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_even.lean](Vsharp_even.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_even_inter_even.lean](Vsharp_even_inter_even.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_odd.lean](Vsharp_odd.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_odd_inter_even.lean](Vsharp_odd_inter_even.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_even_inter_odd.lean](Vsharp_even_inter_odd.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_odd_inter_odd.lean](Vsharp_odd_inter_odd.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_zero.lean](Vsharp_zero.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_eq_Gamma_iff.lean](Vsharp_eq_Gamma_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_mem.lean](Vsharp_mem.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_inter_zero.lean](Vsharp_inter_zero.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_nonempty.lean](Vsharp_nonempty.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_surj.lean](Vsharp_surj.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_zero_inter.lean](Vsharp_zero_inter.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/exists_sub_embPair_iff.lean](exists_sub_embPair_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/exists_sub_embZero_iff.lean](exists_sub_embZero_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharp_decider_spec.lean](dsharp_decider_spec.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharp_intI_correct.lean](dsharp_intI_correct.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharp_interEq_iff.lean](dsharp_interEq_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpPresentation.lean](dsharpPresentation.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Basic.lean](Basic.lean)
+@import "../Combinators77/inSharpMap_toElementMap.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/inSharp_isComputable.lean**
+
+@import "../Combinators77/inSharp_isComputable.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/proj0_rel_Vsharp_iff.lean**
+
+@import "../Combinators77/proj0_rel_Vsharp_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/proj0_isComputable.lean**
+
+@import "../Combinators77/proj0_isComputable.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77/proj0_toElementMap_pairSharp.lean**
+
+@import "../Combinators77/proj0_toElementMap_pairSharp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Combinators77.lean**
+
+@import "../Combinators77.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/eqB.lean**
+
+@import "eqB.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/gList_length.lean**
+
+@import "gList_length.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/intI.lean**
+
+@import "intI.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/le_pair_left.lean**
+
+@import "le_pair_left.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGetStp.lean**
+
+@import "listGetStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGet.lean**
+
+@import "listGet.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGetStp_pair.lean**
+
+@import "listGetStp_pair.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGet_foldl_zero.lean**
+
+@import "listGet_foldl_zero.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGet_foldl.lean**
+
+@import "listGet_foldl.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGet_encodeList.lean**
+
+@import "listGet_encodeList.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/max_sq_le_pair.lean**
+
+@import "max_sq_le_pair.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/memS_sub_embPair.lean**
+
+@import "memS_sub_embPair.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/memS_sub_embZero.lean**
+
+@import "memS_sub_embZero.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/nat_shape.lean**
+
+@import "nat_shape.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/packT.lean**
+
+@import "packT.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/eqB_packT.lean**
+
+@import "eqB_packT.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/consB_packT.lean**
+
+@import "consB_packT.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/intI_packT.lean**
+
+@import "intI_packT.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep.lean**
+
+@import "dsharpStep.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_i0.lean**
+
+@import "dsharpStep_i0.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_j0.lean**
+
+@import "dsharpStep_j0.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_ll.lean**
+
+@import "dsharpStep_ll.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_ln.lean**
+
+@import "dsharpStep_ln.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_nl.lean**
+
+@import "dsharpStep_nl.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpStep_nn.lean**
+
+@import "dsharpStep_nn.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/pair_lt_succ_sq.lean**
+
+@import "pair_lt_succ_sq.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/pair_lt_pair_of_lt.lean**
+
+@import "pair_lt_pair_of_lt.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/primrec_listGet.lean**
+
+@import "primrec_listGet.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/primrec_listGet₂.lean**
+
+@import "primrec_listGet₂.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/primrec_dsharpStep.lean**
+
+@import "primrec_dsharpStep.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/rtbl.lean**
+
+@import "rtbl.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/gOf.lean**
+
+@import "gOf.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/gList.lean**
+
+@import "gList.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/gOf_def.lean**
+
+@import "gOf_def.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/getD_gList.lean**
+
+@import "getD_gList.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/rtbl_eq_encode.lean**
+
+@import "rtbl_eq_encode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/listGet_rtbl.lean**
+
+@import "listGet_rtbl.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/rtbl_eq_rec.lean**
+
+@import "rtbl_eq_rec.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/primrec_rtbl.lean**
+
+@import "primrec_rtbl.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/primrec_gOf.lean**
+
+@import "primrec_gOf.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/unpair_fst_le.lean**
+
+@import "unpair_fst_le.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp.lean**
+
+@import "Vsharp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_succ.lean**
+
+@import "Vsharp_succ.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_even.lean**
+
+@import "Vsharp_even.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_even_inter_even.lean**
+
+@import "Vsharp_even_inter_even.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_odd.lean**
+
+@import "Vsharp_odd.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_odd_inter_even.lean**
+
+@import "Vsharp_odd_inter_even.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_even_inter_odd.lean**
+
+@import "Vsharp_even_inter_odd.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_odd_inter_odd.lean**
+
+@import "Vsharp_odd_inter_odd.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_zero.lean**
+
+@import "Vsharp_zero.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_eq_Gamma_iff.lean**
+
+@import "Vsharp_eq_Gamma_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_mem.lean**
+
+@import "Vsharp_mem.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_inter_zero.lean**
+
+@import "Vsharp_inter_zero.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_nonempty.lean**
+
+@import "Vsharp_nonempty.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_surj.lean**
+
+@import "Vsharp_surj.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Vsharp_zero_inter.lean**
+
+@import "Vsharp_zero_inter.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/exists_sub_embPair_iff.lean**
+
+@import "exists_sub_embPair_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/exists_sub_embZero_iff.lean**
+
+@import "exists_sub_embZero_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharp_decider_spec.lean**
+
+@import "dsharp_decider_spec.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharp_intI_correct.lean**
+
+@import "dsharp_intI_correct.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharp_interEq_iff.lean**
+
+@import "dsharp_interEq_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/dsharpPresentation.lean**
+
+@import "dsharpPresentation.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition77/Basic.lean**
+
+@import "Basic.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "consB.ai_lean_to_english" {code_block=false}
+
+@import "dsharp_isEffectivelyGiven.ai_lean_to_english" {code_block=false}
+
+@import "../Proposition77.ai_lean_to_english" {code_block=false}
+
+@import "../Combinators77/dsharpPresentation_X.ai_lean_to_english" {code_block=false}
+
+@import "../Combinators77/inSharpMap.ai_lean_to_english" {code_block=false}
+
+@import "../Combinators77/inSharpMap_rel.ai_lean_to_english" {code_block=false}
+
+@import "../Combinators77/proj0Map.ai_lean_to_english" {code_block=false}
+
+@import "../Combinators77/Basic.ai_lean_to_english" {code_block=false}
+
+@import "../Combinators77/inSharpMap_toElementMap.ai_lean_to_english" {code_block=false}
+
+@import "../Combinators77/inSharp_isComputable.ai_lean_to_english" {code_block=false}
+
+@import "../Combinators77/proj0_rel_Vsharp_iff.ai_lean_to_english" {code_block=false}
+
+@import "../Combinators77/proj0_isComputable.ai_lean_to_english" {code_block=false}
+
+@import "../Combinators77/proj0_toElementMap_pairSharp.ai_lean_to_english" {code_block=false}
+
+@import "../Combinators77.ai_lean_to_english" {code_block=false}
+
+@import "eqB.ai_lean_to_english" {code_block=false}
+
+@import "gList_length.ai_lean_to_english" {code_block=false}
+
+@import "intI.ai_lean_to_english" {code_block=false}
+
+@import "le_pair_left.ai_lean_to_english" {code_block=false}
+
+@import "listGetStp.ai_lean_to_english" {code_block=false}
+
+@import "listGet.ai_lean_to_english" {code_block=false}
+
+@import "listGetStp_pair.ai_lean_to_english" {code_block=false}
+
+@import "listGet_foldl_zero.ai_lean_to_english" {code_block=false}
+
+@import "listGet_foldl.ai_lean_to_english" {code_block=false}
+
+@import "listGet_encodeList.ai_lean_to_english" {code_block=false}
+
+@import "max_sq_le_pair.ai_lean_to_english" {code_block=false}
+
+@import "memS_sub_embPair.ai_lean_to_english" {code_block=false}
+
+@import "memS_sub_embZero.ai_lean_to_english" {code_block=false}
+
+@import "nat_shape.ai_lean_to_english" {code_block=false}
+
+@import "packT.ai_lean_to_english" {code_block=false}
+
+@import "eqB_packT.ai_lean_to_english" {code_block=false}
+
+@import "consB_packT.ai_lean_to_english" {code_block=false}
+
+@import "intI_packT.ai_lean_to_english" {code_block=false}
+
+@import "dsharpStep.ai_lean_to_english" {code_block=false}
+
+@import "dsharpStep_i0.ai_lean_to_english" {code_block=false}
+
+@import "dsharpStep_j0.ai_lean_to_english" {code_block=false}
+
+@import "dsharpStep_ll.ai_lean_to_english" {code_block=false}
+
+@import "dsharpStep_ln.ai_lean_to_english" {code_block=false}
+
+@import "dsharpStep_nl.ai_lean_to_english" {code_block=false}
+
+@import "dsharpStep_nn.ai_lean_to_english" {code_block=false}
+
+@import "pair_lt_succ_sq.ai_lean_to_english" {code_block=false}
+
+@import "pair_lt_pair_of_lt.ai_lean_to_english" {code_block=false}
+
+@import "primrec_listGet.ai_lean_to_english" {code_block=false}
+
+@import "primrec_listGet₂.ai_lean_to_english" {code_block=false}
+
+@import "primrec_dsharpStep.ai_lean_to_english" {code_block=false}
+
+@import "rtbl.ai_lean_to_english" {code_block=false}
+
+@import "gOf.ai_lean_to_english" {code_block=false}
+
+@import "gList.ai_lean_to_english" {code_block=false}
+
+@import "gOf_def.ai_lean_to_english" {code_block=false}
+
+@import "getD_gList.ai_lean_to_english" {code_block=false}
+
+@import "rtbl_eq_encode.ai_lean_to_english" {code_block=false}
+
+@import "listGet_rtbl.ai_lean_to_english" {code_block=false}
+
+@import "rtbl_eq_rec.ai_lean_to_english" {code_block=false}
+
+@import "primrec_rtbl.ai_lean_to_english" {code_block=false}
+
+@import "primrec_gOf.ai_lean_to_english" {code_block=false}
+
+@import "unpair_fst_le.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_succ.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_even.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_even_inter_even.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_odd.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_odd_inter_even.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_even_inter_odd.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_odd_inter_odd.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_zero.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_eq_Gamma_iff.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_mem.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_inter_zero.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_surj.ai_lean_to_english" {code_block=false}
+
+@import "Vsharp_zero_inter.ai_lean_to_english" {code_block=false}
+
+@import "exists_sub_embPair_iff.ai_lean_to_english" {code_block=false}
+
+@import "exists_sub_embZero_iff.ai_lean_to_english" {code_block=false}
+
+@import "dsharp_decider_spec.ai_lean_to_english" {code_block=false}
+
+@import "dsharp_intI_correct.ai_lean_to_english" {code_block=false}
+
+@import "dsharp_interEq_iff.ai_lean_to_english" {code_block=false}
+
+@import "dsharpPresentation.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Proposition_7_7.ai_english_concordance" {code_block=false}

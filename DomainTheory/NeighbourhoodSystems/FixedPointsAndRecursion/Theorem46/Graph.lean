@@ -1,6 +1,3 @@
-/-ai
-The graph of two models of Peano's axioms is the least relation that contains the pair of their zero elements and is closed under applying both successor operations.
-ai-/
 module
 
 public import Mathlib.Tactic

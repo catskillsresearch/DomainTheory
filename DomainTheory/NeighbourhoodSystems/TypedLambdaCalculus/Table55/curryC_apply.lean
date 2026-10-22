@@ -1,8 +1,3 @@
-/-ai
-The map recovered by applying the curry combinator at φ, then at x, then at y, equals the map of φ at the pair of x and y.
-
-Rewrite by the identification of the combinator with curry and by the curried application law.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

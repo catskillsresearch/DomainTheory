@@ -1,8 +1,3 @@
-/-ai
-The map sending a paired number to plusIdx of its two components is primitive recursive.
-
-Primitive recursion starts from the packing of the input pair with a zero counter and a zero accumulator, and steps by plusStep on the accumulator, with the iteration count equal to the left component. The constant-iterator form of that recursion, read through the iteration specification of plusStep, is the accumulator plusIdx.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

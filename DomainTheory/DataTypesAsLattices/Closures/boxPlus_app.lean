@@ -1,8 +1,3 @@
-/-ai
-Applying the boxed sum of a and b to u equals the double conditional of the union of the left occupancy tag at zero and the right occupancy tag at one, with branches the square pair of the shifted application of a and bottom, and the square pair of bottom and the shifted application of b.
-
-This is the beta law for the Scott-continuous map that defines the boxed sum.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

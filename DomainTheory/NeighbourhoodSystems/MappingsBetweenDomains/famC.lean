@@ -1,6 +1,3 @@
-/-ai
-The family associated with an ideal element consists of the closures of those tokens whose neighbourhoods belong to the element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

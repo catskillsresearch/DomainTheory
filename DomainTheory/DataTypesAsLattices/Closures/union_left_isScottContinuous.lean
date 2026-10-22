@@ -1,8 +1,3 @@
-/-ai
-Union on the right with a fixed set is Scott continuous.
-
-A member of the varying set lies in the Scott union of the identity, hence in some finite piece contained in the set, and remains in the left disjunct of the union. A member of the fixed set lies in the Scott union at the empty finite set. Conversely, a left disjunct of a Scott-union witness is lifted by monotonicity of the identity, and a right disjunct already lies in the fixed set.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

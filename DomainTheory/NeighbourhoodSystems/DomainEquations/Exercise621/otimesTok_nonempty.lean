@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the smash product is nonempty.
-
-Both the master rectangle and a proper rectangle contain the empty string.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

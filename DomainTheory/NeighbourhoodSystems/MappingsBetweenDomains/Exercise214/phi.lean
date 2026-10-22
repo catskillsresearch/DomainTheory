@@ -1,6 +1,3 @@
-/-ai
-For a domain isomorphism and a neighbourhood, phi selects the neighbourhood whose principal element is the image of the principal element of the given neighbourhood, as provided by the existence of such a principal image.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

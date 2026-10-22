@@ -1,8 +1,3 @@
-/-ai
-An atom belongs to the atom projection of a finite set of tree tokens if and only if the corresponding atom token belongs to the set.
-
-The membership lemma for the fold of atom insertion supplies a token of the underlying multiset equal to the atom token, which is membership in the finite set. Conversely, the atom token itself is such a witness.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

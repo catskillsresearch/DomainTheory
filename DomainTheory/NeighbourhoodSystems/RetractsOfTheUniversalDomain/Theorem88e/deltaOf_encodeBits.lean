@@ -1,8 +1,3 @@
-/-ai
-For every length n and every position i below n, the i-th bit of the length-n encoding of a sign sequence equals the sequence's value at i.
-
-The argument is by induction on n. No position lies below zero. Below a successor length, a strictly smaller position is unchanged by adding two to the current length, so the inductive hypothesis applies whether or not that power is added. The position equal to the current length is true when that power is added, and is false when the encoding, being smaller than that power, is left unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

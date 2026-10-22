@@ -1,36 +1,3 @@
-/-ai
-The periodicity test is at most one. It is the general bound on the zero-test, applied to the two-sided truncated difference of the upsampled low bits and the low bits at the original level.
-
-The test equals one if and only if upsampling the mask truncated at two to the power of the smaller level, from that level up to the original level, reproduces the mask truncated at two to the power of the original level. Unfold the test, rewrite by the characterization of the zero-test, and close the arithmetic.
-
-For a smaller level at most the original level, the test equals one if and only if the two levels present the same level set. From the upsample equality, the level sets of the two sides agree, and the upsample and truncation lemmas turn that into equality of the original level set with the level set at the smaller level of the same mask. Conversely, both the upsampled truncation and the original truncation lie below the level bound, so injectivity of level sets, with the same two lemmas, recovers the upsample equality.
-
-At equal levels the test succeeds. The equality form reduces upsampling to the identity iteration, which returns the mask, and both truncations are the remainder of the mask on division by two to the power of two to that level, already smaller than the modulus.
-
-The minimal level equals the fold of the same search at bound one more than the level. The two sides are definitionally equal.
-
-The successor step of the fold is the outer selector on the zero-test of the current index minus the value so far, whose first branch is the inner selector on the periodicity test, returning the index or the next index. This equation is definitional.
-
-The fold up to a bound either has already found a successful index strictly below the bound, and no smaller index succeeds, or it equals the bound and every smaller index fails. Proceed by induction on the bound. At zero the fold equals zero, and no index is strictly smaller. At a successor, use the successor equation. If a hit was already found, the difference from the current index is nonzero, so the zero-test, which is at most one, equals zero, and the outer selector keeps the previous value. If none was found, the zero-test equals one. The periodicity bit is zero or one. If it is zero, the inner selector returns the next index and every smaller index still fails, including the current one. If it is one, the inner selector returns the current index, which succeeds, and every smaller index fails.
-
-The minimal level is at most the original level. Read the fold specification at bound one more than the level. A successful fold lies strictly below that bound. A failed fold would say that the test at the original level itself fails, contradicting the equal-level case.
-
-The minimal level is a level at which the test succeeds. The same case split gives the successful bit in the first alternative, and the failed alternative again contradicts the equal-level case.
-
-No strictly smaller index succeeds. Rewrite the minimal level as the fold. The successful alternative supplies the minimality clause, and the failed alternative says every index below the bound fails.
-
-The minimal level and the minimal mask present the same level set as the original code. The test characterization, using that the minimal level is at most the original level, identifies the original level set with the level set of the mask at the minimal level, and the minimal mask is the truncation of the mask at that width, which presents the same set.
-
-If the level set is presentable at a smaller level by any mask, then it is presentable there by the original mask. For each bit position below two to the power of the original level, the residue modulo two to the smaller level is still below that power. Specializing the set equality at the position and at that residue, and casing on the two bits, compares the witnessing mask with the original mask. Reducing the moduli identifies the original bit at the position with the original bit at the residue. Extensionality of the level sets rewrites membership by that bit identity at the residue modulo two to the original level, and the two powers of two divide.
-
-Presentability at a smaller level by any mask already makes the periodicity test succeed. Apply the test characterization to the previous identification.
-
-Two codes that present the same level set have the same minimal level. If the levels differed, the smaller one would be a presentation of the other set at a level at most the other level, so the periodicity test of the other code would succeed there, contradicting minimality of that other level. The two orders are the same argument with the codes exchanged.
-
-Two codes that present the same level set have the same minimal mask. The minimal levels agree, so the two minimal presentations are equal sets at that common level, because each equals the original set. Both masks lie below two to the power of two to that level, so injectivity of level sets gives equal masks.
-
-The minimal presentation is independent of the code: equal level sets have equal minimal levels and equal minimal masks. Pair the two previous equalities.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
@@ -42,59 +9,9 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Min
 
 @[expose] public section
 
-/-!
-# Exercise 8.12(e)(d)(i) (Scott 1981, PRG-19, Lecture VIII) — minimal-level canonicalization
-
-`SplitV.lean`'s `splitVLeft`/`splitVRight` (`(e)(b)`) split a `V`-code `n = pair k m` by upsampling
-one more level and taking a residue class *at level `k + 1`* — but `V`'s codes are highly
-non-canonical (`canonIdx` only collapses the "empty → master" case, `LevelSetPrimrec.lean`), so the
-*same* set `VX n` can be presented at arbitrarily many different levels `k`, and the residue-class
-modulus `2 ^ (k + 1)` used by the split is **not** an invariant of the set, only of the
-presentation. Concretely: `evens` presented at `(k, m) = (1, 1)` splits into residue classes mod
-`4`; the *same* set presented at `(k, m) = (2, myUpsample 1 2 1)` splits into residue classes mod
-`8` — genuinely different output sets. This breaks `ComputableBisection.left_congr`/`right_congr`.
-
-This file supplies the fix: a presentation-independent canonical `(level, mask)` pair for any
-`(k, m)`, found by searching for the *smallest* level `j ≤ k` at which `levelSet k m` is *also*
-presentable (`minLevel`), together with the (necessarily unique, `minLevel_unique`) mask witnessing
-it at that level (`minMask`). `(e)(d)(ii)` will reroute `splitVLeft`/`splitVRight` through this
-canonicalization instead of `canonIdx`'s raw (possibly non-minimal) level, making the two outputs
-depend only on `VX n`, not on `n` itself.
-
-## Design
-
-* **`isPeriodicMask k j m`** (`{0,1}`-valued, `Nat.Primrec`): decides whether upsampling `m`'s own
-  low `2 ^ j`-bit truncation from level `j` back up to level `k` reproduces `m`'s own low
-  `2 ^ k`-bit truncation, i.e. whether `levelSet k m` is *also* presentable at level `j` — via the
-  very presentation `myModPow2 m (2 ^ j)` built from `m` itself (`isPeriodicMask_iff`). This is an
-  `O(1)` formula (no bounded loop over bit positions needed), built from the already-primitive-
-  recursive `myUpsample`/`myModPow2` plus the standard "`isZero` of a two-sided truncated
-  subtraction" equality decider (`Exercise724.lean`'s idiom).
-* **`minLevel k m`**: the smallest `j ≤ k` with `isPeriodicMask k j m = 1`, found by the exact same
-  bounded `Nat.rec`-fold search `myFirstBit` uses (`SplitV.lean`), substituting `isPeriodicMask k i m`
-  for `myFirstBit`'s `myTestBit m i` test. The search always succeeds by `j = k` itself
-  (`isPeriodicMask_self`), so the sentinel `k + 1` is never actually witnessed for genuine inputs.
-* **`minMask k m := myModPow2 m (2 ^ minLevel k m)`**: `m`'s own bits, truncated to the minimal
-  level's width.
-* **`levelSet_minLevel`**: `(minLevel k m, minMask k m)` presents the *same* set as `(k, m)`
-  (immediate from `minLevel k m`'s own defining periodicity fact).
-* **`minLevel_unique`** (the crux): if `(k₁, m₁)` and `(k₂, m₂)` present the *same* set, their
-  minimal presentations agree exactly (`minLevel k₁ m₁ = minLevel k₂ m₂` and
-  `minMask k₁ m₁ = minMask k₂ m₂`). The genuinely new content, beyond `minLevel`'s own inductive
-  search spec (mirroring `myFirstBit_spec`) and the existing injectivity/upsample machinery
-  (`levelSet_inj_of_lt`, `levelSet_eq_iff_myUpsample_eq`), is a short elementary argument
-  (`levelSet_presentable_imp_self`) showing that *if* a set `levelSet k m` happens to be presentable
-  at some smaller level `j ≤ k` via *any* witness mask at all, it is already presentable there via
-  the canonical witness `myModPow2 m (2 ^ j)` built from `m` alone — by directly cross-substituting
-  the level-`j`/level-`k` presentation hypothesis at `n = i` and `n = i % 2 ^ j` for each bit
-  position `i < 2 ^ k`, with no induction needed.
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
-
-/-! ## `isPeriodicMask`: an `O(1)` decider for "presentable at a smaller level" -/
 
 
 theorem isPeriodicMask_le_one (k j m : ℕ) : isPeriodicMask k j m ≤ 1 := isZero_le_one _
@@ -129,14 +46,6 @@ theorem isPeriodicMask_self (k m : ℕ) : isPeriodicMask k k m = 1 := by
   unfold myUpsample
   simp only [Nat.sub_self, Function.iterate_zero, id_eq, unpair_pair_snd]
   rw [myModPow2_eq, myModPow2_eq, Nat.mod_eq_of_lt (Nat.mod_lt m (Nat.two_pow_pos (2 ^ k)))]
-
-/-! ## `minLevel`/`minMask`: the minimal presentation, by bounded search
-
-Mirrors `SplitV.lean`'s `myFirstBit` exactly: fold over `i = 0, 1, …, k` (via `Nat.rec` on the
-bound `k + 1`), carrying forward the first `i` found with `isPeriodicMask k i m = 1`. -/
-
-
-/-! ### `minLevel`: correctness -/
 
 
 theorem minLevel_eq_fold (k m : ℕ) : minLevel k m = minLevelFold k m (k + 1) := rfl
@@ -206,8 +115,6 @@ theorem levelSet_minLevel (k m : ℕ) : levelSet (minLevel k m) (minMask k m) = 
   show levelSet (minLevel k m) (myModPow2 m (2 ^ minLevel k m)) = levelSet k m
   rw [levelSet_myModPow2, h]
 
-/-! ### The crux: presentability at a smaller level is witness-independent -/
-
 /-- **If `levelSet k m` is presentable at level `j ≤ k` via *any* mask `m'` at all, it is already
 presentable there via the canonical witness `myModPow2 m (2 ^ j)` built from `m` alone.** The
 genuinely new content of `(e)(d)(i)`: two direct specializations of the hypothesis (at `n = i` and
@@ -243,8 +150,6 @@ theorem levelSet_presentable_imp_self {k j m m' : ℕ} (hj : j ≤ k)
 theorem isPeriodicMask_of_presentable {k j m : ℕ} (hj : j ≤ k) {m' : ℕ}
     (h : levelSet j m' = levelSet k m) : isPeriodicMask k j m = 1 :=
   (isPeriodicMask_iff hj).2 (levelSet_presentable_imp_self hj h)
-
-/-! ### `minLevel_unique`: the presentation-independence of the minimal presentation -/
 
 /-- **`minLevel` is presentation-independent**: two presentations of the same set have the same
 minimal level. -/

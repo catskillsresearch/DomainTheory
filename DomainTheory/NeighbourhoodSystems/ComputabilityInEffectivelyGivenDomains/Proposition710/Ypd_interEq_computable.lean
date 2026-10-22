@@ -1,8 +1,3 @@
-/-ai
-Scott's relation (i): equality of the intersection of two coded neighbourhoods with a third coded neighbourhood is recursively decidable, by way of the primitive-recursive intersection code and the equality decider.
-
-The map sending a triple code to the intersection code of its first component and the first component of its second is primitive recursive, by composing the primitive-recursive intersection-code map with those unpairing projections and using the unpairing identities. Pairing that value with the remaining component is primitive recursive. The equality decider composed with this pairing decides the three-place relation, because unpairing and the correctness of the intersection code rewrite equality of the intersection of the first two neighbourhoods with the third as equality of the neighbourhood of the intersection code with the third.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

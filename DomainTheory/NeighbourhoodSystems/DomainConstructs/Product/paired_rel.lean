@@ -1,8 +1,3 @@
-/-ai
-The pairing of approximable maps f and g relates Z to a product neighbourhood P if and only if P is a product neighbourhood, f relates Z to the left preimage of P, and g relates Z to the right preimage of P.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

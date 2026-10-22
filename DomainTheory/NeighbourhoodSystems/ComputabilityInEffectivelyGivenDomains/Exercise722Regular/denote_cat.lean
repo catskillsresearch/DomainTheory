@@ -1,8 +1,3 @@
-/-ai
-The denotation of a concatenation expression is the concatenation of the two denotations.
-
-The two sides agree by the definition of denotation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

@@ -1,8 +1,3 @@
-/-ai
-If the target is effectively given and the two algebra maps are computable, then the universal strict map is a computable map from the sharp presentation into the presentation of the target.
-
-Primitive-recursive enumerators of the two relations, and the equality decider of the target presentation, are unpacked. The master index denotes the master neighbourhood, so the equality decider decides equality with the master, and the enumerators decide the two relations. The evaluator is primitive recursive because the certificate step is. Success of the evaluator together with equality of the output code and the target code is recursively decidable, by composing the evaluator and the equality decider with primitive-recursive reindexings, hence recursively enumerable. Projecting out the certificate gives a recursively enumerable predicate, which contains exactly the related pairs by completeness and soundness of the certificate.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

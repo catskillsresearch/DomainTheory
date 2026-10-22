@@ -1,8 +1,3 @@
-/-ai
-For fixed s and z, the body of the term-level dollar step is Scott continuous in u.
-
-The else-branch, sending u to the application of the application of s to the term shift of u, evaluated at the predecessor of z, is Scott continuous by two substitutions: left application at the predecessor, and the composite of application of the fixed s with the left continuity of the term shift. Binary substitution then combines continuity of the conditional in its then-branch and in its else-branch with left application at the numeral 0 and with that else-branch.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

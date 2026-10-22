@@ -1,0 +1,3 @@
+Scott 1976, Theorem 5.4, the analogue of (4.5). If y is a fixed value of the shift of b, the right square pair of the empty set with y is a fixed value of the boxed sum of a and b.
+
+The shifted application is never empty, so y is nonempty. The right occupancy case, together with the square-projection equations, returns the square pair of the empty set with y once the typing equation for y is cancelled.

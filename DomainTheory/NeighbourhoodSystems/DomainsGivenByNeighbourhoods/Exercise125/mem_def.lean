@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the final-segment system if and only if it is nonempty and an upper set.
-
-The equivalence holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

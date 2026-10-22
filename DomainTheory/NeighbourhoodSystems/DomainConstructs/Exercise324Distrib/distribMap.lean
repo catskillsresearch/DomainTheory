@@ -1,6 +1,3 @@
-/-ai
-The distribution map of Exercise 3.24(iii) is the copairing, from the sum of the two products into the product of the first domain with the sum of the other two, of the maps that pair the first projection with the injection of the second projection into that sum.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319Sum

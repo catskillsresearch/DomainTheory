@@ -1,8 +1,3 @@
-/-ai
-The square of the square-root iteration of n at a guess is at most n.
-
-Unfold the iteration. If the next guess is strictly smaller, the iteration is the recursive call and the inductive bound applies. Otherwise the iteration is the guess, and the product bound for division, supplied by arithmetic, gives the inequality. The recursion is on the guess and decreases in the first branch.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

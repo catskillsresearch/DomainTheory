@@ -1,0 +1,1 @@
+On objects, the endofunctor sending a strict domain X to the three-way sum of the unit with two copies of X returns the strict domain whose tokens are an optional sum of a unit with two copies of the original tokens, whose neighbourhood system is the three-way separated sum of the unit system with two copies of the original system, and whose neighbourhoods are nonempty.

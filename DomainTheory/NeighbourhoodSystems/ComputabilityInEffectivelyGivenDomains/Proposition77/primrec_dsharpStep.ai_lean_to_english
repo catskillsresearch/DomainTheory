@@ -1,0 +1,3 @@
+The sharp decider step is primitive recursive whenever the consistency, equality, and intersection functions of D are primitive recursive.
+
+The index projections, the halved indices, and the two memo lookups are primitive recursive by composition, division by two, subtraction, and binary list lookup. Packing three primitive-recursive functions is primitive recursive. The leaf pack, the zero pack, and the node pack, whose bits are products of equality and consistency bits and whose index is built from the intersection indices, are therefore primitive recursive. Nesting the selections of the step and rewriting along the definition gives the claim.

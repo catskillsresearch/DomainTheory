@@ -1,8 +1,3 @@
-/-ai
-The action of an expression on domains is monotone: if X is a subsystem of Y, then T(X) is a subsystem of T(Y).
-
-A constant is a subsystem of itself. The variable is the hypothesis. The separated sum, the separated product, the coalesced sum, and the smash product each apply the componentwise subsystem law of that operation to the two inductive subsystem relations.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

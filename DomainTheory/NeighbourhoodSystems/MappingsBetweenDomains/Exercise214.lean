@@ -1,8 +1,3 @@
-/-ai
-If two neighbourhoods are consistent, so that their intersection is a neighbourhood, then phi of the intersection equals the intersection of the two phi values. For a neighbourhood X, the approximable relation of a domain isomorphism holds between X and a set Y exactly when Y is a neighbourhood and the phi-image of X is contained in Y.
-
-The numbered name example_214 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise214.phi_inter

@@ -1,8 +1,3 @@
-/-ai
-The hint neighbourhood system of an inclusion structure is effectively given.
-
-Its computable presentation is a witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

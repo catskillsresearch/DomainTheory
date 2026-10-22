@@ -1,8 +1,3 @@
-/-ai
-Interpreting the closed term for S in any environment yields the combinator S.
-
-Unfolding the term and the combinator, the interpretation, the environment, and the function update simplify to the same element.
-ai-/
 
 module
 

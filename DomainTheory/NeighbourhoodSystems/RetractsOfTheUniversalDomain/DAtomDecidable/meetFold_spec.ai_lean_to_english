@@ -1,0 +1,3 @@
+The positive meet-fold of a list has success bit at most one. Success means that the index set of the resulting index equals the positive index set of the list, and failure means that the positive index set is empty.
+
+Instantiate the folded invariant at the initial accumulator pairing one with the master index and at the set of all indices. The initial success bit is one, its index is the master index, whose index set is everything, and the failure hypothesis on that initial accumulator is impossible. Cancelling the intersection with the set of all indices gives the claim.

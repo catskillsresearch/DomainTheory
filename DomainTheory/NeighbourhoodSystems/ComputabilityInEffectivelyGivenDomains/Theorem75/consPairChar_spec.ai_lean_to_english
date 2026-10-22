@@ -1,0 +1,3 @@
+That characteristic equals one if and only if some enumerated neighbourhood is contained in the intersection of the two enumerated neighbourhoods.
+
+Such a containment exists exactly when the intersection is nonempty: one direction uses nonemptiness of the smaller neighbourhood, and the other takes the intersection index, which enumerates the intersection. If both codes are consistent, the characteristic is consistency of the append, which is nonemptiness of the intersection of the two step neighbourhoods. If the second code is inconsistent, the intersection with the whole space is the first neighbourhood, which is nonempty. If the first code is inconsistent, the intersection is the second neighbourhood, which is nonempty.

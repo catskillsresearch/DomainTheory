@@ -1,8 +1,3 @@
-/-ai
-The graph of an approximable map determines the map.
-
-If two graphs are equal as sets, then every neighbourhood pair belongs to one if and only if it belongs to the other, so the relations agree and the maps are equal by extensionality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222

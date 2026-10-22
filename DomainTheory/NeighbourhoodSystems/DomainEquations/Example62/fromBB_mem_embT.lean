@@ -1,8 +1,3 @@
-/-ai
-For a neighbourhood Y of the binary-sequence domain, the element rebuilt from a sum element contains the true-bit tagging of Y if and only if the sum element contains the right injection of Y.
-
-If the rebuilt element contains that tagging, the witnessing clause is not the master, because a bit tagging is distinct from the full set of strings, and it is not a false-bit tagging, because the booleans differ and the false-tagged neighbourhood is nonempty. The remaining clause is a true-bit tagging of some neighbourhood, and injectivity makes that neighbourhood equal to Y. Conversely, the true-bit clause of the rebuilt membership records that the right injection of Y belongs to the sum element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

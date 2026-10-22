@@ -1,0 +1,17 @@
+**2.4 Proposition.** A complete lattice $D$ is continuous iff for every $y \in D$ we have:
+
+$$
+y = \bigsqcup \sqcap U : y \in U,
+$$
+
+where $U$ ranges over the open subsets of $D$.
+
+**Proof:** Suppose $D$ is continuous. If $y \in D$ and $x \ll y$, then let $U = \text{Int}z : x \sqsubseteq z$, an open set. Now $y \in U$ by definition, and $U \subseteq z : x \sqsubseteq z$. Thus,
+
+$$
+x \sqsubseteq \sqcap U \sqsubseteq y.
+$$
+
+It easily follows by lattice theory that the equation of 2.3 implies that of 2.4.
+
+In the converse direction we have only to note that if $U$ is open and $y \in U$, then $\sqcap U \ll y$. The implication from 2.4 to 2.3 results at once. $\square$

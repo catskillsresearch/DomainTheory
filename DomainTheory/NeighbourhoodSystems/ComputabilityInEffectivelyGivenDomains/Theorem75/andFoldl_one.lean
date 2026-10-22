@@ -1,8 +1,3 @@
-/-ai
-The same fold started at one returns one if and only if the function returns one on every entry.
-
-Apply the previous criterion at one and discard the trivial conjunct.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

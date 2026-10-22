@@ -1,6 +1,3 @@
-/-ai
-The term unpairFstTerm abstracts variable 0 from the conditional whose test is unpairTestTerm, whose zero branch is unpairSqrtTerm, and whose successor branch is unpairDeltaTerm.
-ai-/
 module
 
 public import Mathlib.Computability.RE

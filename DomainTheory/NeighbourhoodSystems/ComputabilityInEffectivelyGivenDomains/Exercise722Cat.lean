@@ -1,8 +1,3 @@
-/-ai
-The concatenation automaton accepts exactly the concatenation of the two accepted languages.
-
-The numbered name example_722_cat is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Cat.catEps_accepts

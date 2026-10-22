@@ -1,8 +1,3 @@
-/-ai
-If two neighbourhood systems are finite and each embeds as a subdomain of the other, then the two systems are isomorphic. If the element domains of two neighbourhood systems are finite and each system embeds as a subdomain of the other, then the systems are isomorphic.
-
-The numbered name example_628 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise628.isomorphic_of_finite_system

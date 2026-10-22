@@ -1,6 +1,3 @@
-/-ai
-The carrier of an ideal of finite elements is the set of underlying elements of the members of the ideal.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

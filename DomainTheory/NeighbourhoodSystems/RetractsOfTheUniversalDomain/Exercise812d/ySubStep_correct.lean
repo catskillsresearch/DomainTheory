@@ -1,8 +1,3 @@
-/-ai
-If a packed state presents a pair satisfying the split hypotheses, and the Y-sub-step at a boolean bit is non-junk, then its two output indices present the two components of the generalized Y-step at that bit.
-
-On the true bit, the junk equation forces the intersection emptiness decider to be zero, so the intersection and the positive split piece are nonempty, and the index equations match the positive split specification and the intersection index. On the false bit, the same reasoning with the difference decider matches the negative split specification and the difference index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

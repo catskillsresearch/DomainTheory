@@ -1,6 +1,3 @@
-/-ai
-Every computable presentation of a neighbourhood system yields function-space data for maps out of L, by choosing concrete deciders from the existential consistency, inclusion, and equality witnesses of the presentation of L and of the given presentation. The chosen consistency deciders determine the function-space consistency characteristic, and the chosen inclusion and equality deciders, together with the specifications and primitive-recursiveness of all of these deciders, fill the remaining fields.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

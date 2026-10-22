@@ -1,0 +1,3 @@
+The map fix, from Scott maps on a complete lattice D into D, preserves directed suprema. This is the continuity half of Scott's Proposition 3.14.
+
+Let S be a nonempty directed set of Scott maps and let T be its image under fix. Monotonicity of fix makes T directed. The supremum of T lies below fix of the supremum of S by that monotonicity. For the reverse inequality it is enough that the supremum of T be a pre-fixed point of the supremum of S. That supremum acts pointwise as the supremum of the members of S, and each member preserves the directed supremum of T. For members f and f' of S, directedness supplies h above both, and f(fix f') lies below h(fix f'), hence below h(fix h). That value equals fix h, which lies below the supremum of T.

@@ -1,8 +1,3 @@
-/-ai
-A set of tokens belongs to the intersection of a sequence of elements if and only if it belongs to every term.
-
-The equivalence holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

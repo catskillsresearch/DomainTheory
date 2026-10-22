@@ -1,6 +1,3 @@
-/-ai
-The product of a fixed empty-free domain with another empty-free object is the strict domain whose carrier is the disjoint sum of the two carriers and whose neighbourhood system is the product of the two systems. The product of empty-free systems is empty-free.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

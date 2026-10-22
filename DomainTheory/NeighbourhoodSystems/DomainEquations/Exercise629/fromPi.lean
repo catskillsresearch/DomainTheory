@@ -1,6 +1,3 @@
-/-ai
-fromPi assembles an element of the indexed product from a tuple of component elements. A product neighbourhood belongs to the assembled element exactly when it is the product neighbourhood of a finitely supported tuple of sets, each belonging to the corresponding component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

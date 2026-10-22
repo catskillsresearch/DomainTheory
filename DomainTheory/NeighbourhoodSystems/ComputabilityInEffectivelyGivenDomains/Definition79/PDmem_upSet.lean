@@ -1,8 +1,3 @@
-/-ai
-The down-set of any neighbourhood is a neighbourhood of the Smyth power domain.
-
-Witness it by the singleton list containing that neighbourhood. By membership in a union of down-sets, a set lies in the corresponding union exactly when it lies in this down-set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

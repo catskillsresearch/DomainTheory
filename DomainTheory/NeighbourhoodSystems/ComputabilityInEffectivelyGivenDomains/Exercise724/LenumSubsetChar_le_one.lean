@@ -1,8 +1,3 @@
-/-ai
-The subset characteristic is at most one.
-
-This is the bound for the prefix characteristic.
-ai-/
 
 module
 

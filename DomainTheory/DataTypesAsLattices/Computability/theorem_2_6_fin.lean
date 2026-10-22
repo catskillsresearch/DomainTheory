@@ -1,8 +1,3 @@
-/-ai
-Scott's definability theorem for a Scott-continuous function f of n arguments in Pω: computability of f on finite tuples holds if and only if its curried graph is recursively enumerable, that graph is recursively enumerable if and only if it is combinatory, and the graph is lambda-definable if and only if it is combinatory.
-
-A computable finite-arity map contributes the recursive enumerability of its curried graph, and recursive enumerability together with the continuity hypothesis hf restores computability. The second equivalence is IsRE.iff_combinatory. A lambda definition by a term t is combinatory by theorem_2_4_closed after rewriting by the defining equation, and a combinatory element is lambda-definable by combinatory_isLambdaDefinable.
-ai-/
 module
 
 public import Mathlib.Computability.RE

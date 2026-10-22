@@ -1,8 +1,3 @@
-/-ai
-The mediating map of a cocone preserves directed suprema.
-
-The image of a nonempty directed set of compatible sequences at each coordinate is directed, and evaluation preserves the directed supremum. Each component map preserves directed suprema, so its value at the coordinate of the supremum is the supremum of its values on the set. The mediating value is the supremum over levels of those values, and exchanging the two suprema yields the supremum of the mediating values.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

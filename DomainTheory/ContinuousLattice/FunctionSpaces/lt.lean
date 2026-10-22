@@ -1,6 +1,3 @@
-/-ai
-The strict pointwise order on Scott maps holds when the first map lies below the second in the pointwise order and the second does not lie below the first.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

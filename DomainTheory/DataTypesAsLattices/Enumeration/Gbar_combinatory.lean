@@ -1,8 +1,3 @@
-/-ai
-G-bar is combinatory.
-
-It is the application of the bar combinator to G, and application preserves combinatory elements.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

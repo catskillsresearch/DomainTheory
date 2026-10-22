@@ -1,8 +1,3 @@
-/-ai
-The intersection of two slices at the same index is the slice of the intersection of their data.
-
-Each slice is a product neighbourhood of a one-coordinate update, so the intersection law reduces the claim to a coordinatewise equality. At the chosen index each update is the corresponding data set. At every other index each update is the master, and the master intersected with itself is the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

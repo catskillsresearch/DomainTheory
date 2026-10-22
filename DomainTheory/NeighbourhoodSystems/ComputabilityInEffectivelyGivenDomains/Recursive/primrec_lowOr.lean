@@ -1,8 +1,3 @@
-/-ai
-The function of a pair code that returns the low-bit disjunction of its two components is primitive recursive.
-
-The remainders modulo 2 of the two components are primitive recursive. One minus one minus their sum agrees with the low-bit disjunction by definition.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

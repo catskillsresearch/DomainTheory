@@ -1,24 +1,3 @@
-/-ai
-In Example 1.2 the neighbourhood {0} is distinct from the master neighbourhood.
-
-If they were equal, the token 1 would belong to {0}, because it belongs to the master.
-
-The neighbourhood {1} is distinct from the master neighbourhood.
-
-If they were equal, the token 0 would belong to {1}, because it belongs to the master.
-
-An element that contains {0} is the total element determined by {0}.
-
-The two elements contain the same neighbourhoods. A neighbourhood of the given element is the master, {0}, or {1}. The last alternative meets {0} in the empty set, which is not a neighbourhood. Conversely the master belongs to every element, and {0} is the given membership.
-
-An element that contains {1} is the total element determined by {1}.
-
-The two elements contain the same neighbourhoods. A neighbourhood of the given element is the master, {0}, or {1}. The middle alternative meets {1} in the empty set, which is not a neighbourhood. Conversely the master belongs to every element, and {1} is the given membership.
-
-The neighbourhoods {0} and {1} are distinct.
-
-The token 0 belongs to {0}. Rewriting the assumed equality would put it in {1}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
@@ -51,17 +30,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12.zero_inter_one
 
 @[expose] public section
-
-/-!
-# Example 1.2 (Scott 1981, PRG-19, §1)
-
-Scott's first worked example: tokens `Δ = {0, 1}` and neighbourhoods
-`𝒟 = {{0, 1}, {0}, {1}}`.
-
-We construct the neighbourhood system, prove it satisfies Definition 1.1, and classify
-its domain elements (Definition 1.6): there are exactly three filters, and exactly one
-partial element — the bottom filter `{Δ}`.
--/
 
 namespace DomainTheory.NeighbourhoodSystems.Example12
 

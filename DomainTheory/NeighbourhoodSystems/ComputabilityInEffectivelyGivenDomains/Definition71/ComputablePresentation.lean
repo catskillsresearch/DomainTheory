@@ -1,6 +1,3 @@
-/-ai
-A computable presentation of a neighbourhood system, in Scott's Definition 7.1, is an enumeration of the neighbourhoods together with a primitive-recursive intersection function and an index of the master neighbourhood. Every enumerated set is a neighbourhood and every neighbourhood occurs. Equality of the intersection of two enumerated neighbourhoods with a third is recursively decidable, and so is the existence of an enumerated neighbourhood contained in such an intersection. On consistent indices the intersection function returns an index of that intersection. The master index enumerates the master neighbourhood.
-ai-/
 module
 
 

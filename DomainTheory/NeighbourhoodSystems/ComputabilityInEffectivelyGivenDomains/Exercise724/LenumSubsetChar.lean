@@ -1,6 +1,3 @@
-/-ai
-The subset characteristic of a paired code is the prefix characteristic of the second component against the first. It is the zero-one test of inclusion of the neighbourhood enumerated by the first component in the neighbourhood enumerated by the second, packaged as a named unary function.
-ai-/
 
 module
 

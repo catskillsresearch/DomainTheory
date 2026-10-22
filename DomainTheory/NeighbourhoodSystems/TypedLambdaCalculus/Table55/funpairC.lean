@@ -1,6 +1,3 @@
-/-ai
-The function-pairing combinator of Table 5.5 (Scott 1981, PRG-19) is the twice-curried approximable map sending maps f and g to the map that pairs their values, obtained by currying the uncurried pairing body twice.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

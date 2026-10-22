@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (4.28). The left projection of a tagged sum is the graph of the conditional set of the first component of u, with the second component as the zero branch and bottom as the positive branch.
-ai-/
 
 module
 

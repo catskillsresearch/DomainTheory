@@ -1,6 +1,3 @@
-/-ai
-The Smyth power domain is the neighbourhood system on sets whose neighbourhoods are the power-domain neighbourhoods and whose master neighbourhood is the down-set of the master. That down-set contains the master, hence is nonempty, and is itself a power-domain neighbourhood. Binary intersection of neighbourhoods stays in the family. Every power-domain neighbourhood is contained in the down-set of the master, because each set in a finite union of down-sets lies in the down-set of some neighbourhood, and that neighbourhood is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

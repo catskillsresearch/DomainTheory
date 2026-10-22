@@ -1,8 +1,3 @@
-/-ai
-If i is less than 4 to the power n and the Y half-step atom at n, i, and the code of a bit b is not junk, then the basic neighbourhood of its first-system index equals the intersection of the first component of the generalized X-step at that bit with the basic neighbourhood of the Y-sequence code of n.
-
-A point of the half-step neighbourhood lies in that first component by the subset lemma, and the unconditional membership criterion for the Y-sequence code, read backwards, puts it in the sequence neighbourhood, in the false-bit summand or the true-bit summand according to b. Conversely, a point of both sets lies in a witness half-step atom of one of the two summands, and the dichotomy lemma returns it to the target atom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

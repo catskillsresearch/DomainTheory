@@ -1,8 +1,3 @@
-/-ai
-If the product of d on the function space is finitary, then the product regarded as a self-map of the universal domain is finitary.
-
-Finitariness supplies a domain and an order isomorphism of its elements with the fixed points of the function-space product. Transport that isomorphism along the order isomorphism of the fixed points of the universal-domain product with those fixed points.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

@@ -1,6 +1,3 @@
-/-ai
-Clipping an endpoint pair to the half-open unit interval replaces the left endpoint by its supremum with zero and the right endpoint by its infimum with one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

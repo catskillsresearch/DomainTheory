@@ -1,0 +1,3 @@
+The second projection of the right lift of a finite set w of tokens of B equals w.
+
+By extensionality, a member of the second projection comes from a token of the lift, hence from the right tag of some member of w, and the projection equation identifies the two tokens. Conversely, the right tag of a member of w lies in the lift and witnesses membership of that token in the second projection.

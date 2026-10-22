@@ -1,6 +1,3 @@
-/-ai
-A computable inverse of Scott pairing, equal to unpair, sends k to the pair whose second component is k minus the w-th triangular number and whose first component is w minus that difference, where w is the least natural number such that k is less than the (w + 1)-st triangular number.
-ai-/
 
 module
 

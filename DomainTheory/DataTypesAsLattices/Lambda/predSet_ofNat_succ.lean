@@ -1,8 +1,3 @@
-/-ai
-The predecessor of the numeral of n + 1 is the numeral of n.
-
-Extensionality simplifies the definitions of the predecessor and the numeral.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

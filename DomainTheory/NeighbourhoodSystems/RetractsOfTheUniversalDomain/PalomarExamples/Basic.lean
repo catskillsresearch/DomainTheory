@@ -1,8 +1,3 @@
-/-ai
-The neighbourhoods of the system S are countable.
-
-Classically, send an S-expression to its denotation when that denotation is nonempty, and to the universal set of Boolean lists otherwise. Every neighbourhood in S is the denotation of some expression, that denotation is nonempty, and the conditional therefore selects it, so the map is surjective and the neighbourhoods in S are countable. The subtype of sets with system membership is equivalent to the subtype of sets in S, so the neighbourhoods of the system S are countable.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88
@@ -19,12 +14,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.hcoreIdxYc
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88e.transfer_dir_idxYc
 @[expose] public section
-
-/-!
-# Palomar example embeddings
-
-Concrete countable neighbourhood systems that instantiate `theorem_8_8`.
--/
 
 namespace DomainTheory.NeighbourhoodSystems.Example15
 

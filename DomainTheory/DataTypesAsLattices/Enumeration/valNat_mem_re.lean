@@ -1,8 +1,3 @@
-/-ai
-Membership in the numerical evaluator is uniformly recursively enumerable. The predicate that the second component of a pair lies in the value of the evaluator at the first component is recursively enumerable.
-
-Well-formedness of a trace conjoined with recording of the two components of a pair is recursively enumerable, by composing the recursively enumerable well-formedness predicate with the second projection and the primitive recursive recording relation with the two projections. Decoding a natural number as a trace, with the empty trace as default, preserves recursive enumerability. Existential quantification over that code, transported along encoding and decoding, is the existence of a well-formed recording trace. The membership criterion for the evaluator identifies that existence with the stated predicate.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

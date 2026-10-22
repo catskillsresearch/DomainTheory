@@ -1,6 +1,3 @@
-/-ai
-The running intersection of a function r, relative to a computable presentation, begins at the value of r at zero and at each later step replaces the value so far by the presentation's intersection of that value with the next value of r.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

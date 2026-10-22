@@ -1,0 +1,3 @@
+The predecessor combinator equals the application of G to the zero combinator, then to the numeral 1, then again to the zero combinator.
+
+The zero combinator is the numeral 0. Simplify by the zero law for G, the one law for the packed combinator, and the zero law for binary sequencing.

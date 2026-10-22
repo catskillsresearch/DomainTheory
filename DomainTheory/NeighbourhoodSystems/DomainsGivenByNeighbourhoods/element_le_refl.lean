@@ -1,8 +1,3 @@
-/-ai
-Every element approximates itself.
-
-A neighbourhood of the element is returned unchanged.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

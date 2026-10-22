@@ -1,8 +1,3 @@
-/-ai
-If a and b are finitary projections, then their arrow combination is finitary, with witnessing domain the function space of the fixed neighbourhood systems of a and b.
-
-The criterion that an endomap equal to a projection pair is finitary is applied to the arrow injection and the arrow projection. The projection composed with the injection is the identity, and reversing the identity for the injection composed with the projection matches the arrow combination.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

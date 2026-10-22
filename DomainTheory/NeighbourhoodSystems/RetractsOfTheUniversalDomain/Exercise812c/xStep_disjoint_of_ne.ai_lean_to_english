@@ -1,0 +1,3 @@
+The two outputs of xStep at two different sign bits are pairwise disjoint on each side.
+
+The claim is the generic disjointness of the paired step at the split specification of the chosen split.

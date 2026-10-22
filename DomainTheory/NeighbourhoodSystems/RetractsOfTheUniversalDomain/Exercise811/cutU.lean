@@ -1,6 +1,3 @@
-/-ai
-The Dedekind up-set of a real t at a rational r holds when r ≤ 1 and either the cut point 1 − t is strictly less than r, or r = 1. The cut point is chosen so that the represented real increases exactly as the up-set does.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

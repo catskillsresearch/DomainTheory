@@ -1,8 +1,3 @@
-/-ai
-Every point of the master neighbourhood of the second neighbourhood system lies, at depth n, in the second component of the generalized atom pair along the bit history of some bit-source strictly below 4 to the n.
-
-A finite history is taken from the second-component covering theorem and encoded as a bit-source below 4 to the n. Congruence applies because the decoded history of that code agrees with the padded finite history below n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

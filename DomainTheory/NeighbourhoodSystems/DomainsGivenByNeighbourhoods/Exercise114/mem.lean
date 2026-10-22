@@ -1,6 +1,3 @@
-/-ai
-A set of natural numbers is a neighbourhood of Exercise 1.14 when it is the whole set of natural numbers, or when it is finite and nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

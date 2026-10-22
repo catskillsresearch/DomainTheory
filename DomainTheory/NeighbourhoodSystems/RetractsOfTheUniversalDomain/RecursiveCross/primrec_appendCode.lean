@@ -1,8 +1,3 @@
-/-ai
-The function sending a packed pair to appendCode of its two components is primitive recursive.
-
-It is the primitive recursive fold of consStep2, with constant zero, the right projection, and the left projection, and that fold agrees with appendCode by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

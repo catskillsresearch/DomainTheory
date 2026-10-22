@@ -1,0 +1,3 @@
+The output of a generalized X-step on a generated pair has empty components together, and its first component is empty or genuine.
+
+The generated pair satisfies the invariant, and the split specification at the neighbourhood of index n gives the emptiness link of the two branches, which is the emptiness link of the step after splitting on the bit. If the bit is true, the intersection of a set that is empty or genuine with a genuine neighbourhood is empty or genuine. If the bit is false, the difference of such a set with a genuine neighbourhood is empty or genuine.

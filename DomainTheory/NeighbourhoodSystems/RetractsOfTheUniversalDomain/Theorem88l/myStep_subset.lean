@@ -1,8 +1,3 @@
-/-ai
-Under the consistency hypothesis, one gated step only shrinks the presented neighbourhood.
-
-Unfold the step. If the characteristic of the entry is not one, the step returns the accumulator. If it is one, decide the consistency test. Failure returns the accumulator. Success returns the intersection index, whose neighbourhood is the intersection by the intersection specification, hence is contained in the accumulator's neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.Basic

@@ -1,8 +1,3 @@
-/-ai
-If r realizes a function p, then the range enumerator of r equals the union, over n, of the numerals of the values p(n).
-
-Rewrite by the definition of the enumerator and equation (2.25). Extensionality in either direction uses the realization equation to pass between membership in that union and membership in the double union given by the equation.
-ai-/
 module
 
 public import Mathlib.Computability.RE

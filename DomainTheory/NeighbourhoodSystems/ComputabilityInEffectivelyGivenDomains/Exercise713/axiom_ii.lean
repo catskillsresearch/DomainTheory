@@ -1,8 +1,3 @@
-/-ai
-The inclusion relation of an inclusion structure is transitive.
-
-This is the transitivity datum of the structure.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

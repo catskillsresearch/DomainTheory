@@ -1,0 +1,3 @@
+For every set u of codes, the application of u is an approximable map.
+
+Monotonicity keeps a witnessing list when the argument grows, since each entry remains in the larger set and the tag remains in u. Finite approximation uses that same list: its entries lie in the argument, each entry belongs to the set of entries, and the tag still lies in u, so the output already belongs to the application of u at those entries.

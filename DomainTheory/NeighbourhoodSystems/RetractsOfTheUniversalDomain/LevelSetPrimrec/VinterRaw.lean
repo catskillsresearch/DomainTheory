@@ -1,9 +1,3 @@
-/-ai
-The raw level-and-mask code of the intersection of two enumerated neighbourhoods, before
-canonicalization, pairs the maximum of the two canonicalized levels with the bitwise
-conjunction of the two canonicalized masks after both have been upsampled to that common
-level.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,0 +1,1 @@
+Assembly turns a bottom-adjoined disjoint sum of an element of A and an element of B into an element of the separated-sum system: bottom goes to the bottom element, a left element goes to its image under the left inclusion, and a right element goes to its image under the right inclusion.

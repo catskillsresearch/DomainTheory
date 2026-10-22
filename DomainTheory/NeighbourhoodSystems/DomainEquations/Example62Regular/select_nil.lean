@@ -1,8 +1,3 @@
-/-ai
-The subtree selected by the empty word is the original tree.
-
-Function extensionality reduces the trees to a continuation, which simplification identifies.
-ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

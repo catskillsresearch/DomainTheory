@@ -1,8 +1,3 @@
-/-ai
-Applying the inverse sum map after the forward sum map returns the original element of the concrete token sum.
-
-Two elements agree when they contain the same neighbourhoods. A neighbourhood of the round trip is the master, which every element contains, or a false-tagged copy, which the left-injection criterion returns to the original element, or a true-tagged copy, which the right-injection criterion returns. Conversely, the subset law says a neighbourhood of the original element is the master, a false-tagged copy, or a true-tagged copy, and each case is the matching clause of the inverse image, using the reverse directions of those two criteria.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,0 +1,3 @@
+By Scott's Theorem 7.3(ii), applying an approximable endomap f to its fixed-point element yields an element below that fixed point.
+
+A token a of the image comes from a set u contained in the fixed-point element and related by f to a. That containment yields a consistent set of function tokens in the element of f and a reachable set that entails u. Monotonicity of the relation of f moves the input to that reachable set and the output to the singleton of a. Extending the witnessing chain by this one step produces a longer chain whose value is that singleton, which entails a, so a lies in the fixed-point element.

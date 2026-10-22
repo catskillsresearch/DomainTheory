@@ -1,6 +1,3 @@
-/-ai
-The self-consistent family of every element of the universal domain is nonempty. The witness is the master neighbourhood, which sub relates to itself and which belongs to the element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

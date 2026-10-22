@@ -1,8 +1,3 @@
-/-ai
-Finitary union of finite sets of the codomain is commutative.
-
-Membership is compared in both directions, exchanging the two summands.
-ai-/
 
 module
 

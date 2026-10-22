@@ -1,0 +1,3 @@
+Equality of the intersection of two coded sets with a third coded set is recursively decidable in the three indices.
+
+The conjunction of the two base inclusions of the third neighbourhood in the first two with emptiness of the corresponding D-atom is recursively decidable, as the conjunction of the two inclusion deciders and the D-atom decider. The intersection equation transfers to the index-set equation, and that equation is this conjunction.

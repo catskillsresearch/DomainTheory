@@ -1,6 +1,3 @@
-/-ai
-Scott's total element determined by a finite string σ is the principal element of the neighbourhood system C on the singleton consisting of that finite sequence, regarded as completed.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

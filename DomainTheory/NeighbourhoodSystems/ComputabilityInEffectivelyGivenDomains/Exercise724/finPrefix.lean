@@ -1,6 +1,3 @@
-/-ai
-The length-n prefix of a stream is the list of its values on the first n natural numbers.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

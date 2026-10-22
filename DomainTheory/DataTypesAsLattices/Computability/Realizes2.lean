@@ -1,6 +1,3 @@
-/-ai
-An element u of Pω realizes a binary number-theoretic function p when, for all natural numbers n and m, applying u first to the numeral of n and then to the numeral of m yields the numeral of p(n, m).
-ai-/
 module
 
 public import Mathlib.Computability.RE

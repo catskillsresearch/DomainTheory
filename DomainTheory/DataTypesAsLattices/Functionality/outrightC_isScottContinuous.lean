@@ -1,8 +1,3 @@
-/-ai
-The map sending u to the conditional set of its first component, with bottom as the zero branch and its second component as the positive branch, is Scott continuous.
-
-The binary continuity theorem applies to continuity of the conditional set in its test and in its positive branch, together with continuity of application in the function argument at zero and at one.
-ai-/
 
 module
 

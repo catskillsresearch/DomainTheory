@@ -1,6 +1,3 @@
-/-ai
-A characteristic bundle for a concrete presentation of the function space from the LUCID system into a presented neighbourhood system carries four primitive-recursive functions. The consistency characteristic equals one exactly when the step function of the decoded list of codes is a nonempty set of approximable maps. The two inclusion characteristics equal one exactly when the first enumerated neighbourhood is contained in the second, one for the LUCID system and one for the codomain. The equality characteristic equals one exactly when the two enumerated neighbourhoods of the codomain are equal.
-ai-/
 
 module
 

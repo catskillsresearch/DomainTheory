@@ -1,8 +1,3 @@
-/-ai
-The pointwise order on Scott maps is antisymmetric. If each of two Scott maps lies below the other at every argument, the two maps are equal.
-
-At each argument the two values are equal by antisymmetry of the codomain order, so the maps are equal by extensionality.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

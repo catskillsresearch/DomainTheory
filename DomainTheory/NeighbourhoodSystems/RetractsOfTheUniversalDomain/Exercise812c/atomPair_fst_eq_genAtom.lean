@@ -1,8 +1,3 @@
-/-ai
-The first component of the atom pair of a sign sequence at depth n equals the Boolean atom, over the interleaved family and the interleaved sign, of depth 2n, taken relative to the master of the first system.
-
-At depth zero both sides are that master. At a successor, the inductive hypothesis and the successor identity for the interleaved atom rewrite the odd depth, the closed form for the first output of the Y-step rewrites the first component of the successor pair, and the doubling 2(n + 1) = 2n + 2 together with the odd-index clauses of the interleaved family and sign complete the identification.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

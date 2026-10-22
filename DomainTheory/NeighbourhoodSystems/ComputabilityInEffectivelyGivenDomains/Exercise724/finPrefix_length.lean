@@ -1,8 +1,3 @@
-/-ai
-The length-n prefix of a stream has length n.
-
-Unfold the prefix and use that mapping a list preserves length and that the range of length n has length n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

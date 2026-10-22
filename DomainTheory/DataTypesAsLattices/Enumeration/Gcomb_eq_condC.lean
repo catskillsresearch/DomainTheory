@@ -1,8 +1,3 @@
-/-ai
-The combinator G equals the application of the conditional to the packed combinators and then to zero.
-
-This is the two-argument beta law for the conditional, read in reverse.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

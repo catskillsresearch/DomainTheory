@@ -1,8 +1,3 @@
-/-ai
-When the conditional running set is a neighbourhood, the fold that intersects with an output exactly when the inclusion test succeeds computes an index of that set.
-
-The empty fold returns the given index. If the head inclusion holds, rewrite the conditional set as the tail from the intersection of the base with the head output, obtain that intersection as a neighbourhood, apply the intersection specification, and use the inductive hypothesis. If the inclusion fails, rewrite the conditional set as the tail from the same base and use the inductive hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,0 +1,3 @@
+When every stage is a continuous lattice, the Scott topology on the inverse limit equals Scott's subspace inverse-limit topology, the topology inherited from the product of the stage Scott topologies.
+
+Equip the inverse limit with that subspace topology and its T0 separation. The backward direction of Theorem 2.12, applied to injectivity of this space and to the agreement of its specialization order with the lattice order, yields the equality of the two topologies.

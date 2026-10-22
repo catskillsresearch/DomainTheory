@@ -1,8 +1,3 @@
-/-ai
-If 1 belongs to a finite set u, then u is flat-related to every finite set.
-
-This is the first clause of the flat relation.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

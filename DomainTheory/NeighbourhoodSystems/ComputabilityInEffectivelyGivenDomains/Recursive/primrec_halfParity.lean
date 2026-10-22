@@ -1,8 +1,3 @@
-/-ai
-The function sending n to the pair of its quotient by 2 and its remainder modulo 2 is primitive recursive.
-
-In the primitive-recursion state the previous value is the second component of the second component. The step that pairs the sum of the two components of that value with one minus its second component is primitive recursive. Primitive recursion from 0 with that step, composed with the pairing of the constant 0 and the identity, agrees with the function after simplifying the unpaired projections and the identity.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the strict function space is the set of all strict maps.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

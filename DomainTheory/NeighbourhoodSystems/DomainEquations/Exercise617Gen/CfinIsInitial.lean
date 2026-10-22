@@ -1,6 +1,3 @@
-/-ai
-For each natural number n, the domain of finite or infinite sequences over the alphabet Fin (n + 1) is the initial algebra of the functor sending a domain to the unit summed with one copy for each letter of that alphabet. The witness is the generic initiality theorem instantiated at Fin (n + 1).
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

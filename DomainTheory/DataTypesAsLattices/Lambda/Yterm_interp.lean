@@ -1,8 +1,3 @@
-/-ai
-Interpretation of the Y term in the constantly bottom environment equals the combinator Y.
-
-This is simplification by the definitions of the term, interpretation, Y, the omega combinator, environment update, and function update.
-ai-/
 
 module
 

@@ -1,0 +1,3 @@
+The output union of a singleton raw-token list pair is the finite set of tokens in that pair's second list.
+
+Membership in the choice-free union of that finite set with the empty set is rewritten, by the membership rules for choice-free union and for the empty finset, as membership in the finite set itself.

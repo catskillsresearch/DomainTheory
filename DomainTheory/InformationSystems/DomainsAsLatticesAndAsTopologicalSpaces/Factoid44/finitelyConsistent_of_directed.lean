@@ -1,8 +1,3 @@
-/-ai
-A nonempty directed family is finitely consistent on the union of its carriers.
-
-Any finite set of tokens from the union is contained in a single member, and that member is consistent.
-ai-/
 
 module
 

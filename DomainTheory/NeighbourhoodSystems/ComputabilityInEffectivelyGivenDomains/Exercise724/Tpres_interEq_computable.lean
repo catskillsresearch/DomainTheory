@@ -1,8 +1,3 @@
-/-ai
-Scott's intersection-equality relation for T is recursively decidable: the intersection of two enumerated neighbourhoods equals a third.
-
-Code the three indices by nested unpairing. The intersection code of the first component and the first component of the second unpairing, each truncated at 2, is primitive recursive, as is truncation at 2 of the remaining component. Equality of those two primitive-recursive functions is recursively decidable, and the canonical intersection criterion identifies that equality with equality of the enumerated intersection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

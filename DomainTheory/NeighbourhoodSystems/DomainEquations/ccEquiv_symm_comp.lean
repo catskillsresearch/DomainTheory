@@ -1,8 +1,3 @@
-/-ai
-The approximable map of the inverse domain-equation equivalence, composed with the approximable map of the equivalence, is the identity on C.
-
-Compare element maps. The composite of the isomorphism element maps is the inverse equivalence followed by the equivalence, which returns the original element, and that is the element map of the identity map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

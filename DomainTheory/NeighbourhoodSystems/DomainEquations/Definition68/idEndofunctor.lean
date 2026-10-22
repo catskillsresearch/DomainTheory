@@ -1,6 +1,3 @@
-/-ai
-The identity endofunctor on a category sends each object to itself and each morphism to itself, and therefore preserves identity morphisms and composition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

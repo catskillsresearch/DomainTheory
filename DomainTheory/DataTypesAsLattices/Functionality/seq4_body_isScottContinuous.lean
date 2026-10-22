@@ -1,8 +1,3 @@
-/-ai
-The nested conditional that defines the four-way sequence, testing the argument and its first three predecessors and returning a, b, c, d, and finally bottom, is Scott continuous.
-
-The continuity theorem for an operation of three arguments is applied once at each conditional. The tests are the identity, the predecessor, the twofold composite of the predecessor, and the threefold composite of the predecessor, each continuous, and the returned values are the constants a, b, c, d, and bottom.
-ai-/
 
 module
 

@@ -1,92 +1,3 @@
-/-ai
-At a successor bound, the least-set-bit search selects the old value when a witness was already found, and otherwise selects the current index if its bit is set and the next sentinel if not.
-
-The equation is the recursion by reflexivity.
-
-Either the search value lies strictly below the bound, the bit there is set, and no smaller index is set, or the value equals the sentinel bound and no bit below the bound is set.
-
-Proceed by induction on the bound. At zero the second alternative holds, since nothing is strictly below zero. At a successor, rewrite by the unfolding equation. If a witness was already found, the difference of the index and that witness is nonzero, so the zero-test of the difference is zero rather than one, and selecting on zero keeps the witness. If nothing was found, the running value equals the index, so the zero-test is one. The test bit is zero or one. If it is zero, the bit itself is unset, for otherwise the test-bit characterization would give one, and the sentinel alternative extends by splitting a smaller index into the old range or the current index. If it is one, the bit is set and the witness alternative holds at that index.
-
-If some bit below the bound is set, the search value lies strictly below the bound.
-
-The specification gives the bound in the witness alternative, and the sentinel alternative contradicts the existence of a set bit.
-
-If some bit below the bound is set, the bit at the search value is set.
-
-The specification gives that bit in the witness alternative, and the sentinel alternative again contradicts the hypothesis.
-
-If bit ell of m is set, clearing that bit by subtraction equals exclusive or with two to the power ell.
-
-The remainder modulo two to ell lies below that power, and below two to the power ell plus one. The remainder modulo the larger power equals two to ell plus the smaller remainder: its ell-th bit is still set, so it is at least two to ell, and reducing again modulo two to ell agrees with the original remainder because the powers divide, and that double remainder is the larger remainder minus two to ell. Division with remainder then rewrites the cleared value as the larger power times the quotient plus the smaller remainder. Compare bits. Below ell both sides read the remainder bit and exclusive or does not flip it. At ell the original bit is set, the remainder bit is unset, and exclusive or flips the power bit. Above ell the low window contributes nothing and the quotient bit is the original bit shifted by ell plus one, while exclusive or does not flip it.
-
-The level set of the minimal level and minimal mask is the V-neighbourhood of n.
-
-It is the minimal level set of the pair stored in the canonical index.
-
-Codes presenting the same V-neighbourhood have the same minimal level and the same minimal mask.
-
-Equality of the neighbourhoods is equality of the level sets of the two canonical pairs, and the minimal pair of a level set is unique.
-
-The upsampled mask has some set bit strictly below two to the power of one more than the minimal level.
-
-The minimal level set is nonempty because it equals the V-neighbourhood, which is nonempty. Passing one level up by upsampling preserves that nonempty level set, which is a set bit below the larger power.
-
-The splitting bit lies strictly below that power.
-
-The least-set-bit search returns a value below the bound once a set bit exists.
-
-The splitting bit is set in the upsampled mask.
-
-The least-set-bit search returns a set bit once a set bit exists.
-
-The bit of the upsampled mask at the splitting bit combined by exclusive or with two to the minimal level is set.
-
-Upsampling identifies the level set of the upsampled mask with the minimal level set. The splitting bit lies below the larger power and is set, and the twin index does too. The twin and the splitting bit have the same remainder modulo two to the minimal level, because exclusive or with that power changes only the bit at the level: below the level the bits agree, and at or above it both modular bits are unset. Membership of the splitting bit in the minimal level set therefore passes to the twin, and membership in the upsampled level set says the twin bit is set.
-
-A natural number combined by exclusive or with a positive power of two is never equal to itself.
-
-If it were, exclusive or on the left by the number, using associativity, exclusive or with itself, and exclusive or with zero, would make the power zero.
-
-The level set one above the minimal level of the singleton mask two to the splitting bit is nonempty.
-
-The splitting bit itself lies below the bound, and its bit in that power is set.
-
-The level set of the cleared upsampled mask at that level is nonempty.
-
-Rewrite the mask as exclusive or with the power of the splitting bit. The twin index lies below the larger power, and its bit in the exclusive or is set because the twin bit is set and the twin differs from the splitting bit, so the power bit there is unset.
-
-The V-neighbourhood of the left half is the level set one above the minimal level of two to the splitting bit.
-
-The pair stored by the left half presents a nonempty level set, so its canonical index is itself, and unpacking the pair is that level set.
-
-The V-neighbourhood of the right half is the level set one above the minimal level of the cleared upsampled mask.
-
-The pair stored by the right half presents a nonempty level set, so its canonical index is itself, and unpacking the pair is that level set.
-
-The left and right V-halves are disjoint.
-
-Rewrite both as those level sets, with clearing as exclusive or, and intersect level sets at the same level. A common element has both the power bit and the exclusive-or bit set at its remainder. The power bit forces the remainder to be the splitting bit, where exclusive or of the set bit with that power is unset.
-
-The union of the left and right V-halves is the original V-neighbourhood.
-
-The level set of the upsampled mask equals that neighbourhood, by upsampling and the minimal presentation. Rewrite the union as the union of the two level sets, with clearing as exclusive or. The masks agree bit by bit: at the splitting bit the original bit is set, and elsewhere the power contributes nothing, so the disjunction reproduces the original bit.
-
-If two codes present the same V-neighbourhood, their left-half indices are equal.
-
-The minimal levels and masks agree, so the upsampled masks agree, so the splitting bits agree, and rewriting those components in the left half gives the equality.
-
-If two codes present the same V-neighbourhood, their right-half indices are equal.
-
-The same agreement of minimal level, minimal mask, upsampled mask, and splitting bit rewrites every component of the right half.
-
-If two codes present the same V-neighbourhood, the V-neighbourhoods of their left halves agree.
-
-The raw left-half indices are equal.
-
-If two codes present the same V-neighbourhood, the V-neighbourhoods of their right halves agree.
-
-The raw right-half indices are equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec
@@ -102,32 +13,10 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Spl
 
 @[expose] public section
 
-/-!
-# Exercise 8.12(e)(b)/(e)(d)(ii) (Scott 1981, PRG-19, Lecture VIII) — a computable canonical
-bisection for `V`, rerouted through the minimal presentation
-
-## 8.12(e)(b)(i): `myFirstBit`, the least-set-bit search combinator
-
-`V_no_minimal`'s classical proof (`Exercise812.lean`) picks its splitting bit `ℓ₀` via a bare
-existential (`levelSet_nonempty_iff.mp hne`). `LevelSetPrimrec.lean`'s existing `bExistsFn`
-combinator only *decides* whether such a witness exists ({0,1}-valued); it never *produces* one.
-`myFirstBit m N` fills that gap: the smallest `ℓ < N` with `m.testBit ℓ = true`, computed by the
-same bounded `Nat.rec`-fold idiom `bExistsFn`/`bForallFn` use, but threading the witnessing index
-itself through the recursion instead of a `{0,1}` flag — a sentinel value of `N` (never itself a
-valid index `< N`) marks "no witness found among the indices scanned so far", exactly mirroring
-`bExistsFn`'s own `0`-sentinel for "not yet found".
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive
 
-/-! ### `myFirstBit`: definition -/
-
-
-/-! ### `myFirstBit`: primitive recursiveness -/
-
-/-! ### `myFirstBit`: correctness -/
 
 /-- **Unfolding equation** for `myFirstBit` at a successor argument, stated so `rw` fires cleanly
 on the outer application (mirrors `LevelSetPrimrec.lean`'s `myUpsampleJointStep_eq`). -/
@@ -190,17 +79,6 @@ theorem myFirstBit_testBit {m N : ℕ} (h : ∃ ℓ < N, m.testBit ℓ = true) :
   · obtain ⟨ℓ, hℓN, hℓtrue⟩ := h
     exact absurd hℓtrue (by simpa using hall ℓ hℓN)
 
-/-! ## 8.12(e)(b)(ii): `myClearBit`, a computable "clear one bit" primitive
-
-`V_no_minimal`'s classical proof needs `M ^^^ 2 ^ ℓ₀` (Mathlib's `Nat.xor`, not exposed as
-`Nat.Primrec` — the reason `myLor`/`myUpsample` etc. had to be hand-built already, per
-`LevelSetPrimrec.lean`'s own header). Since `ℓ₀` is always already known set in `M` at the point
-of use (`myFirstBit_testBit`, `(e)(b)(i)`), a plain truncated subtraction suffices as the
-computable stand-in: clearing a *known-set* bit is the same as subtracting its power of two.
-`myClearBit_eq_xor` bridges the two, so every downstream argument can keep using Mathlib's own
-`Nat.testBit_xor`/`Nat.testBit_two_pow` unchanged, exactly as `V_no_minimal`'s original proof
-does. -/
-
 
 /-- **`myClearBit` realizes `^^^ 2 ^ ℓ` whenever bit `ℓ` is genuinely set.** Proof: decompose `m`
 around the boundary `2 ^ (ℓ + 1)` (`hqr`, via `Nat.div_add_mod`/`Nat.mod_mod_of_dvd` and a
@@ -252,18 +130,6 @@ theorem myClearBit_eq_xor {m ℓ : ℕ} (h : m.testBit ℓ = true) : myClearBit 
       show j - (ℓ + 1) + (ℓ + 1) = j by omega, decide_eq_false_iff_not.mpr (show ℓ ≠ j by omega)]
     simp
 
-/-! ## 8.12(e)(d)(ii): the minimal presentation of `VX n`, at the code level
-
-`canonIdx n`'s raw `(level, mask)` pair is **not** a presentation-independent invariant of the set
-`VX n` (`MinLevel.lean`'s header, `(e)(d)(i)`'s discovery) — the same set can be `canonIdx`-
-canonical at arbitrarily many different levels via repeated `myUpsample`. `MinLevel.lean` supplies
-the genuine invariant: `(minLevel, minMask)` applied to `canonIdx n`'s own pair. Every downstream
-definition in this file is now built from `splitVMinLevel`/`splitVMinMask` (below) rather than
-`(canonIdx n).unpair.1`/`.unpair.2` directly, so that `splitVLeft`/`splitVRight`'s *outputs* — in
-fact, as it turns out, their raw *indices* (`splitVLeft_eq_of_congr`/`splitVRight_eq_of_congr`,
-stronger than the `left_congr`/`right_congr` fields actually demand) — depend only on `VX n` as a
-set, delivering `ComputableBisection.left_congr`/`right_congr` for `(e)(d)(iii)`. -/
-
 
 /-- `(splitVMinLevel n, splitVMinMask n)` presents the same set as `canonIdx n`'s own pair, i.e.
 `VX n` itself. -/
@@ -279,33 +145,6 @@ theorem splitVMin_congr {n n' : ℕ} (hn : VX n = VX n') :
       levelSet (canonIdx n').unpair.1 (canonIdx n').unpair.2 := hn
   exact minLevel_unique h
 
-/-! ## 8.12(e)(b)(iii): `splitVLeft`/`splitVRight` — the actual computable split
-
-Follows `V_no_minimal`'s construction (`Exercise812.lean`, Scott's remark after Definition 8.7)
-verbatim, at the code level: take `(k, m) := (splitVMinLevel n, splitVMinMask n)` — the *minimal*
-presentation of `VX n` (`(e)(d)(ii)`; before the reroute this was `canonIdx n`'s own, possibly
-non-minimal, pair) — upsample `m` one level finer (`M := myUpsample k (k+1) m`), pick the splitting
-bit `ℓ₀` as `M`'s least set bit (`myFirstBit`, `(e)(b)(i)` — the classical proof instead draws `ℓ₀`
-from a bare existential `levelSet_nonempty_iff.mp hne`, bounded by `2 ^ k`; here it is found
-directly on the *upsampled* mask `M`, bounded by `2 ^ (k+1)`, which is fine since `upsample`
-duplicates every set bit of `m` into a matching pair at level `k+1`, so *any* set bit of `M` has a
-genuine "twin" — `(e)(b)(iv)`'s job to make precise). `splitVLeft`/`splitVRight` then package `Y :=
-levelSet (k+1) (2^ℓ₀)` / `Z := levelSet (k+1) (M ^^^ 2^ℓ₀)` (`V_no_minimal`'s own `Y`/`Z`) as codes,
-using `myClearBit` (`(e)(b)(ii)`) as the computable stand-in for `^^^`. -/
-
-
-/-! ## 8.12(e)(b)(iv): correctness — `VX_splitVLeft`/`VX_splitVRight`, `splitV_disjoint`,
-`splitV_union`
-
-Transcribes `V_no_minimal`'s `hInter`/`hUnion` computations (`Exercise812.lean` lines 242–261) to
-the `splitVLeft`/`splitVRight` code level, substituting `myFirstBit`'s spec for the classical
-`hbit`/`ℓ₀` and `myClearBit_eq_xor` for the raw `^^^` occurrences. The one genuine addition beyond
-a verbatim transcription: since `splitVBit`'s `ℓ₀` ranges over the *whole* `[0, 2^(k+1))` (found on
-the upsampled mask `M` directly, per `(e)(b)(iii)`'s docstring) rather than being handed a priori
-as `< 2^k` with a fixed twin `ℓ₀ + 2^k`, `splitV_twin_testBit` below establishes the general
-twin-bit fact (`M`'s bit `ℓ₀ ^^^ 2^k` is set whenever bit `ℓ₀` is) needed for `VX_splitVRight`'s
-nonemptiness — proved directly from `levelSet_myUpsample` (no fresh `testBit`-level `myUpsample`
-lemma needed), by reducing both `ℓ₀` and its twin mod `2^k` and observing they agree there. -/
 
 /-- `splitVUpsampled n`'s mask always has *some* set bit below `2^(k+1)` — inherited from
 `VX n` always being non-empty (`VX_nonempty`), transported to the *minimal* presentation via
@@ -447,15 +286,6 @@ theorem splitV_union (n : ℕ) : VX (splitVLeft n) ∪ VX (splitVRight n) = VX n
   rcases eq_or_ne i (splitVBit n) with rfl | hi
   · simp [splitV_bit_testBit n]
   · simp [Ne.symm hi]
-
-/-! ## 8.12(e)(d)(ii): `splitVLeft_congr`/`splitVRight_congr`
-
-The payoff of the reroute through `splitVMinLevel`/`splitVMinMask`: since `splitVMin_congr` shows
-two codes presenting the *same* `VX`-set route through the identical minimal `(level, mask)` pair,
-every downstream quantity built from it (`splitVUpsampled`, `splitVBit`, and hence `splitVLeft`/
-`splitVRight` themselves) is *literally* the same raw index, not merely presenting the same set —
-strictly stronger than the `ComputableBisection.left_congr`/`right_congr` fields actually demand,
-proved first as `splitVLeft_eq_of_congr`/`splitVRight_eq_of_congr` below and then downgraded. -/
 
 /-- **`splitVLeft`'s raw index is presentation-independent** (stronger than `left_congr` needs):
 two codes presenting the same `VX`-set produce the *literally identical* `splitVLeft` index, since

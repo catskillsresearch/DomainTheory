@@ -1,8 +1,3 @@
-/-ai
-Unfolding a left-pair token with payload x yields the product token whose components are x and the bottom token, witnessed because the right component is the bottom token.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

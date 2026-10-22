@@ -1,8 +1,3 @@
-/-ai
-A map out of a product, transported to a morphism out of the tensor product and evaluated at a tensor element, equals the original map evaluated at the corresponding product element.
-
-Unfold the transports. After substituting the equalities of tensor homs with product maps and of tensor elements with product elements, both sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

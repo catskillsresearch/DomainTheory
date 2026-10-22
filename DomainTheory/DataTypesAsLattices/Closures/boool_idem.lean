@@ -1,8 +1,3 @@
-/-ai
-The conditional set obtained by testing membership of zero and of a successor, with branches the singleton zero and the successor of the full set, is idempotent.
-
-The argument splits on whether zero lies in u and whether some successor does. If both do, the inner conditional is the full set, and the outer conditional of the full set is again the full set. If only zero lies in u, the inner conditional is the singleton zero, and the outer conditional of that singleton is itself. If only a successor lies in u, the inner conditional is the successor of the full set; zero is absent from it and one is present, so the outer conditional stays that successor set. If neither lies in u, the inner conditional is empty, and the outer conditional of the empty set is empty.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

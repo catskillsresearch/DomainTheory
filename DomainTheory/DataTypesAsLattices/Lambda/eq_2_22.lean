@@ -1,8 +1,3 @@
-/-ai
-Applying the cons sequence of x and xs to z yields the conditional z ⊃ x, xs(z − 1).
-
-This is the beta law for the continuous body of that cons sequence.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

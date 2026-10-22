@@ -1,6 +1,3 @@
-/-ai
-The bit product of two naturals is their ordinary product. On flags in {0, 1} it is their conjunction, equal to 1 only when both factors are 1.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

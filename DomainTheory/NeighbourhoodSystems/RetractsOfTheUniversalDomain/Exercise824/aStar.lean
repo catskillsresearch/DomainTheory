@@ -1,6 +1,3 @@
-/-ai
-The first component of the simultaneous fixed point is the map read from the first component of the fixed element of the operator that pairs the two given maps out of the pair space.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

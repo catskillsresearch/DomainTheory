@@ -1,6 +1,3 @@
-/-ai
-A token for partial maps from a set A to a set B is either the least-informative object or a graph atom pairing an element of A with an element of B. Equality of these tokens is decidable.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

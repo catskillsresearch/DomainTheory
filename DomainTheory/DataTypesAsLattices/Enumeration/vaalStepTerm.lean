@@ -1,6 +1,3 @@
-/-ai
-The closed term for the functional whose least fixed point is vaal is the double abstraction whose body is the conditional of the application of the inner variable to zero, with zero branch the closed term for G and positive branch the application of the outer variable at the left child of the inner variable to its application at the right child.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

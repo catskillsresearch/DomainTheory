@@ -1,8 +1,3 @@
-/-ai
-From an entailment of a right pair (Δ, Y), either top belongs to the premise or the right pair projection of the premise entails Y.
-
-Case analysis on the derivation gives the first alternative from the top-membership clause and the second from the projection clause.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,6 +1,3 @@
-/-ai
-One step of the bitwise-or fold acts on the packed state of the two current values, the weight, and the accumulator. It halves both current values, doubles the weight, and adds to the accumulator the weight times the low-bit or of the two current values.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

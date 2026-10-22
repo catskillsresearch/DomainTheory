@@ -1,8 +1,3 @@
-/-ai
-The sum master belongs to the coalesced sum.
-
-It is the master clause of the membership definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

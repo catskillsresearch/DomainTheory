@@ -1,8 +1,3 @@
-/-ai
-Currying the uncurrying of a map into a function space recovers the map.
-
-This is the symmetric form of the uniqueness lemma for currying, applied to that uncurrying and to the map, with a definitional equality.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

@@ -1,8 +1,3 @@
-/-ai
-Over an infinite index, the element domain of the indexed smash product has at most one element.
-
-Any two elements agree on every token set. A neighbourhood of either element equals the master, and the other element contains the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

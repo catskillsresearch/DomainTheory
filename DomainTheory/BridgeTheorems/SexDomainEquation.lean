@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the domain equation of Factoid 8.1. The tree system is an inductive token system whose right-hand side is the sum of the original information system with the product of the tree system with itself. Unfolding of tokens is a retraction, identifying the two encodings of the product bottom, and after the matching clauses for entailment of bottom the closed elements are saturated for that identification, so the image and preimage of unfolding are inverse order isomorphisms of the domains.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
@@ -37,18 +34,6 @@ public import DomainTheory.BridgeTheorems.unfoldElement_foldElement
 public import DomainTheory.BridgeTheorems.foldElement_unfoldElement
 
 @[expose] public section
-
-/-!
-# Domain equation `|T| ≃o |A + (T × T)|` via unfolding
-
-Factoid 8.1 presents `T` as an inductive token system whose official
-right-hand side is `sumSystem A (productSystem T T)`. The token map
-`treeUnfold` is a retraction, identifying only Scott’s two encodings of
-the product bottom (`pairL Δ` and `pairR Δ`). After the matching
-`ent_bot` clauses, closed elements are saturated for that kernel, so
-image and preimage of `treeUnfold` are inverse order isomorphisms of
-domains.
--/
 
 namespace DomainTheory.BridgeTheorems
 

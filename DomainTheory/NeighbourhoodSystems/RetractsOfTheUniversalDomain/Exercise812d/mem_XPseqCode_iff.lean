@@ -1,8 +1,3 @@
-/-ai
-If the X-fold has found a witness by stage four to the n, a point lies in the enumerated neighbourhood of XPseqCode at n exactly when it lies in some genuine half-step atom of index below four to the n.
-
-This is the membership characterization of the fold at that stage.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,8 +1,3 @@
-/-ai
-The dollar step body is Scott continuous in the test.
-
-The conditional is Scott continuous in its test and in its right argument. The test is copied by the identity, and the right branch is application of a fixed element to the predecessor, which is Scott continuous.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

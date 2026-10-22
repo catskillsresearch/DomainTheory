@@ -1,8 +1,3 @@
-/-ai
-A total element equals any element whose carrier is the whole token set.
-
-The total element lies below the full-carrier element because every token belongs to that carrier. Totality, applied to this inequality, gives the reverse inequality.
-ai-/
 
 module
 

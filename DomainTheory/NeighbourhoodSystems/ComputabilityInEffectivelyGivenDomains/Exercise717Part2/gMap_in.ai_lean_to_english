@@ -1,0 +1,3 @@
+The universal strict map sends the injection of an element to the image of that element under the leaf algebra map.
+
+A neighbourhood of the image comes from a neighbourhood of the injection. The master case forces the target to be the master, which the leaf map reaches from the master of the element. A zero embedding yields a relation of the leaf map by inversion. Conversely, a relation of the leaf map on a neighbourhood of the element is the leaf clause on the zero embedding of that neighbourhood.

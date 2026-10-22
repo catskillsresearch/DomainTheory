@@ -1,8 +1,3 @@
-/-ai
-Every combinatory element of Pω is recursively enumerable. This is one direction of the appendix equivalence.
-
-Induct on the combinatory derivation. Zero, successor, predecessor, conditional, K, and S are recursively enumerable by the corresponding theorems, and application preserves recursive enumerability.
-ai-/
 module
 
 public import Mathlib.Computability.RE

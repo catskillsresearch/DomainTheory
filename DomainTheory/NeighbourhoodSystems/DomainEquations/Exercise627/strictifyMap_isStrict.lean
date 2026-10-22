@@ -1,8 +1,3 @@
-/-ai
-The relational strictification of an approximable map is strict.
-
-A relation out of the master carries the clause that the output equals the master, instantiated at reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

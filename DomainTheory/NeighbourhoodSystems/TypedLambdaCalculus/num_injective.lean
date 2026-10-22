@@ -1,8 +1,3 @@
-/-ai
-The uncurried pairing function is injective.
-
-From equal pairing values the diagonal sums agree. If one sum were strictly smaller, the pairing value on that diagonal would lie strictly below the next triangular number, that triangular number would be at most the triangular number of the larger sum, and that triangular number would be at most the other pairing value, which is absurd, and the symmetric case is the same. With the sums equal, cancelling the common triangular number makes the second coordinates agree, and then the first coordinates agree. Substituting these equalities identifies the pairs.
-ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

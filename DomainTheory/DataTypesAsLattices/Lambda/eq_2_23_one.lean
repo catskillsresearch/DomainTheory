@@ -1,8 +1,3 @@
-/-ai
-The binary sequence of x and y, applied to the numeral 1, is y.
-
-This is the application formula for the binary sequence at 1.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

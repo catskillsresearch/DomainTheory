@@ -1,8 +1,3 @@
-/-ai
-The completed encoding of a string beginning with a bit is that bit twice, followed by the completed encoding of the remaining string.
-
-Unfold the completed encoding and simplify.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

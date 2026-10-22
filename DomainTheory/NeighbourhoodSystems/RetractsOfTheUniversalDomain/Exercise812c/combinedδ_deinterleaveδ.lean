@@ -1,8 +1,3 @@
-/-ai
-Re-interleaving the de-interleaving of a Boolean sequence returns the original sequence.
-
-Extensionality reduces the claim to an arbitrary index. Unfolding both maps and splitting on the parity of that index, the doubled half-index, or that quantity plus one, equals the original index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

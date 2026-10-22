@@ -1,8 +1,3 @@
-/-ai
-The successor of the n-th tower system is the transport, along the carrier identification of that level, of the image of that level under T.
-
-The equality is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

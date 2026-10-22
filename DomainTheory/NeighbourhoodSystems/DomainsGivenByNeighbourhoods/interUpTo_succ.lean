@@ -1,8 +1,3 @@
-/-ai
-The intersection of the first n + 1 sets equals the intersection of the first n sets met with the next set.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

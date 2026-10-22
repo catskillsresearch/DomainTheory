@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 3.2 (ii). The numerical evaluator sends the application code of n and m to the application of its value at n to its value at m.
-
-Unfold the application code and rewrite the successor clause of the evaluator by the identity that unpairing inverts pairing.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

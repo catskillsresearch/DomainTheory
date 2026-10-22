@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 7.3 (ii). The combinator K lies in the function space from A to the function space from B to A.
-
-K is a graph, and each application of K is a graph. On a related pair of second arguments, the double application law returns the original related pair in A.
-ai-/
 
 module
 

@@ -1,6 +1,3 @@
-/-ai
-The flat relation holds between finite sets u and v when 1 belongs to u, or every token of v equals 0 or belongs to u and 1 does not belong to v.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

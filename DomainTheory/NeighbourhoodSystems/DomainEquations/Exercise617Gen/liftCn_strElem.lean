@@ -1,8 +1,3 @@
-/-ai
-The lift of a cone valuation and a singleton valuation sends the total element of a string to the singleton valuation of that string.
-
-Two elements are compared neighbourhood by neighbourhood. A neighbourhood of the image that comes from a cone comes from a prefix of the string, and the cone valuation lies below the singleton valuation along that prefix. A neighbourhood that comes from a singleton forces the two strings to agree, because that singleton is contained in the singleton of the string. In the other direction the singleton of the string itself is a neighbourhood of the total element and is related by the singleton clause.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

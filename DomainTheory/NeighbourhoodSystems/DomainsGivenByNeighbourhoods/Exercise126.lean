@@ -1,8 +1,3 @@
-/-ai
-If two finite sets generate the same ideal, they determine the same neighbourhood I(F).
-
-The numbered name example_126 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise126.IFamily_eq_of_span_eq

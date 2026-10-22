@@ -1,6 +1,3 @@
-/-ai
-The Scott union of a map f at an element x is the union, over all codes n, of the Scott pieces of f at x.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

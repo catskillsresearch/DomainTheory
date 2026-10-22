@@ -1,0 +1,3 @@
+Projecting the union of a coherent inverse-limit sequence by a Kleene stage recovers the coordinate at that stage.
+
+Rewrite the projection of the union by the chain lemma for the continuous stage projection and the successive inclusions of the coordinates. An index in the projection of some coordinate falls into the desired coordinate by the earlier-projection equation and the chain when that coordinate is earlier, and by the later-projection equation when it is later. Conversely, an index of the desired coordinate lies in the corresponding summand by the later-projection equation at equal indices.

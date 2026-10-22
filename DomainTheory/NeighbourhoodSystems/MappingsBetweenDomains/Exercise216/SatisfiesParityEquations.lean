@@ -1,6 +1,3 @@
-/-ai
-SatisfiesParityEquations records that an approximable map from the binary-string domain into the truth-value domain sends every string with a leading one to true, every string with a leading zero followed by one to false, and every string with a leading pair of zeros to the value of the remaining string.
-ai-/
 module
 
 

@@ -1,0 +1,3 @@
+The intersection of the neighbourhoods at two indices is nonempty if and only if the safe active decodes of those indices are consistent.
+
+Rewrite each neighbourhood as the denotation of its safe active decode. The intersection of the denotations is the denotation of the intersection expression, which is nonempty exactly when the two expressions are consistent.

@@ -1,8 +1,3 @@
-/-ai
-An element of the function space has a recursively enumerable set of enumeration indices if and only if the corresponding approximable map is computable.
-
-If the index set is recursively enumerable, reindex by the one-entry code of a pair. Decoding that code yields a singleton, which is consistent because a single step neighbourhood is nonempty, so membership in the enumeration is membership in that step. If the map is computable, the bounded universal of its step relation over a decoded list is recursively enumerable, as is failure of the consistency character. Their disjunction matches membership in the enumeration, which is the implication from consistency to that universal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

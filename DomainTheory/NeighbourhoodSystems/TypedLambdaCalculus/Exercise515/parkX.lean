@@ -1,6 +1,3 @@
-/-ai
-Park's proposed solution for the first unknown is the pointwise product of the star of the feedback coefficient a ∪ b · a* · b with the feedback constant c ∪ b · a* · d.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

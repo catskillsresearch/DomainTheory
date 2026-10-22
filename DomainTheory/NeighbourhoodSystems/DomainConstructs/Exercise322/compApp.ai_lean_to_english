@@ -1,0 +1,1 @@
+The uncurried composition sends a pair of a pair of maps with an element to the outer map applied to the inner map applied to the element. It is the outer evaluation composed with the pairing of the first projection of the function-space pair and the inner evaluation of the pairing of the second projection with the remaining argument.

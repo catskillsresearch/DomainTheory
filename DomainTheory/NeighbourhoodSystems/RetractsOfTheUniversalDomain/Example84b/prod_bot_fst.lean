@@ -1,8 +1,3 @@
-/-ai
-The first coordinate of the product bottom is the bottom of D.
-
-Rewrite the product bottom as the pair of the two bottoms, and apply the first projection of a pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

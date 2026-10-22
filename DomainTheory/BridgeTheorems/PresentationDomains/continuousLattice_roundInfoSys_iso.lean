@@ -1,6 +1,3 @@
-/-ai
-The order isomorphism between a continuous lattice and the round elements of the information system of its way-below basis is the composite of the isomorphism with the round way-below filters and the isomorphism from those round filters to the round information-system elements.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

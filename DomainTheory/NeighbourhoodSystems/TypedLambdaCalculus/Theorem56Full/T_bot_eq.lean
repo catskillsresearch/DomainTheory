@@ -1,8 +1,3 @@
-/-ai
-The bottom of the truth domain T equals Example23.botElt. Both are least, which bridges the bottom returned by the zero test with the bottom used by the conditional.
-
-Each lies below the other: the bottom of T lies below Example23.botElt, and Example23.botElt lies below the bottom of T.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

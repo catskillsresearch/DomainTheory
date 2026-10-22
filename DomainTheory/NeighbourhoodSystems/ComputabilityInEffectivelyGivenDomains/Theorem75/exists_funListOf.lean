@@ -1,8 +1,3 @@
-/-ai
-Every finite list of step pairs of neighbourhoods is the step list of some entry list.
-
-The empty list is the empty entry list. For a cons, choose indices of the two components of the head and an entry list for the tail, and cons the paired index. The cons equation for the step list and the pair projections match the head.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

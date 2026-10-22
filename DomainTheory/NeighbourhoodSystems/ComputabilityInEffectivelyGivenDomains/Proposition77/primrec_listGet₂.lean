@@ -1,8 +1,3 @@
-/-ai
-If the code and the index are primitive recursive functions of a parameter, then list lookup of those values is primitive recursive.
-
-It is the paired lookup composed with the pair of the two functions, and unpairing that pair recovers the two arguments.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

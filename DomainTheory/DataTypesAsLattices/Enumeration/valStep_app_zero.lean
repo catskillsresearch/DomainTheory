@@ -1,8 +1,3 @@
-/-ai
-Applying the enumerator step at v to the numeral of zero equals the G combinator.
-
-Rewrite by the application law for the step, and apply equation (2.7) at zero to the G combinator and the minimal extension of the selected application.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

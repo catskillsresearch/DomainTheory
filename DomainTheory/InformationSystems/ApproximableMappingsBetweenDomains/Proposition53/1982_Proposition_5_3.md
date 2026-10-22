@@ -1,28 +1,55 @@
 # Proposition 5.3
 
-**PROPOSITION 5.3.** *Let $f, g : \mathbf{A} \to \mathbf{B}$ be two approximable mappings between two information systems. Then*
+## Human-English
 
-*(i) $f$ always maps elements to elements under Definition 5.2;*
+@import "1982_Proposition_5_3.english" {code_block=false}
 
-*(ii) $f = g$ iff $f(x) = g(x)$ for all $x \in |\mathbf{A}|$; and*
+## AI: Human-English to AI-Lean
 
-*(iii) $f \subseteq g$ iff $f(x) \subseteq g(x)$ for all $x \in |\mathbf{A}|$.*
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Le.lean**
 
-Moreover, the approximable mappings are monotone in the sense that
+@import "Le.lean"
 
-(iv) $x \subseteq y$ in $|\mathbf{A}|$ always implies $f(x) \subseteq f(y)$ in $|\mathbf{B}|$.
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Basic.lean**
 
-*All these results follow from the observation that*
-(v) $\quad u\ f\ v \text{ iff } \bar{v} \subseteq f(\bar{u}),$
+@import "Basic.lean"
 
-for all $u \in \mathrm{Con}_{\mathbf{A}}$ and all $v \in \mathrm{Con}_{\mathbf{B}}$. $\blacksquare$
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_closure_le.lean**
 
-**Lean 4**
+@import "rel_iff_closure_le.lean"
 
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Le.lean](Le.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Basic.lean](Basic.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_closure_le.lean](rel_iff_closure_le.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/le_iff_toElement_le.lean](le_iff_toElement_le.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/ext_iff_toElement.lean](ext_iff_toElement.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53.lean](../Proposition53.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_forall_singleton.lean](rel_iff_forall_singleton.lean)
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/le_iff_toElement_le.lean**
+
+@import "le_iff_toElement_le.lean"
+
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/ext_iff_toElement.lean**
+
+@import "ext_iff_toElement.lean"
+
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition53.lean**
+
+@import "../Proposition53.lean"
+
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_forall_singleton.lean**
+
+@import "rel_iff_forall_singleton.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Le.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "rel_iff_closure_le.ai_lean_to_english" {code_block=false}
+
+@import "le_iff_toElement_le.ai_lean_to_english" {code_block=false}
+
+@import "ext_iff_toElement.ai_lean_to_english" {code_block=false}
+
+@import "../Proposition53.ai_lean_to_english" {code_block=false}
+
+@import "rel_iff_forall_singleton.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1982_Proposition_5_3.ai_english_concordance" {code_block=false}

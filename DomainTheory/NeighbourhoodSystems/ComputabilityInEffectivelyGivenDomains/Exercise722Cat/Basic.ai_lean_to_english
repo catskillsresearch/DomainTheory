@@ -1,0 +1,5 @@
+On a left state and a letter, the concatenation automaton steps to the left copy of the first automaton's step. On a left state and an epsilon it steps to those right copies of the second automaton's start states for which the left state is accepting. On a right state and a letter it steps to the right copy of the second automaton's step, and on a right state and an epsilon it steps to nothing. Its start states are the left copies of the first automaton's start states, and its accept states are the right copies of the second automaton's accept states.
+
+Each of these identities is the corresponding clause of the definition.
+
+The sum of two finite state types is finite.

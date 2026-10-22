@@ -1,0 +1,63 @@
+The digit map from bits to natural numbers is injective.
+
+Cases on both bits reduce an equality of images by the definition of the map.
+
+The embedding of a binary string sends a cons cell to the cons of the image of the head with the image of the tail.
+
+The equation is definitional.
+
+The embedding preserves and reflects the prefix order. The image of one binary string is a prefix of the image of another if and only if the first string is a prefix of the second.
+
+Induction on the first string. The empty string simplifies. For a cons cell, an empty target simplifies by the cons equation of the embedding. A cons target rewrites both prefix relations by the cons criterion and both images by the cons equation, then uses injectivity of the digit map and the inductive hypothesis.
+
+Cone inclusion in Scott's binary system matches neighbourhood inclusion in the LUCID system along this embedding. The cone of one binary string is contained in the cone of another if and only if the neighbourhood of the embedded address is contained in the neighbourhood of the other embedded address.
+
+Rewrite by the cone criterion, the neighbourhood criterion, and the prefix equivalence for the embedding.
+
+The order of finite elements of the binary system matches the order of the corresponding finite elements of the LUCID system. One finite element lies below another if and only if the element of the finite sequence given by the first embedded address lies below the element of the second.
+
+Those elements are the principal filters of the neighbourhoods of the embedded addresses. Rewrite by the order criterion for the finite elements, the order criterion for principal filters, the neighbourhood criterion, and the prefix equivalence.
+
+If a function on the natural numbers is primitive recursive, so is the map sending an argument to the negation code of its value.
+
+The map selects two when the equality characteristic with one is set, and otherwise selects one when the equality characteristic with two is set, and otherwise selects zero. Extensionality is the case split on equality with one and with two. Each equality makes the corresponding characteristic one by the zero test in its definition, and each failure makes it zero, so the selections match the definition of the negation code.
+
+Negation of the neighbourhood enumerated by an index is the neighbourhood enumerated by the negation code of the minimum of that index and two.
+
+Rewrite the enumeration to canonical form. The minimum is at most two, and each of its three values simplifies by the enumeration, the negation code, and the three clauses of negation.
+
+Pointwise negation on the three-point truth domain is a computable map of its presentation to itself.
+
+The map that replaces the first component of a packed pair by the negation code of its minimum with two is primitive recursive, and inclusion of enumerated neighbourhoods along that map is recursively decidable by the inclusion decider of the presentation. The neighbourhood relation of negation is that inclusion, because negation of an enumerated neighbourhood is the enumerated negation code and every enumerated set is a neighbourhood. A decidable relation is recursively enumerable.
+
+If two functions on the natural numbers are primitive recursive, so is the map sending an argument to the conjunction code of their values.
+
+The map selects the second value when the equality characteristic of the first value with one is set, selects two when the characteristic with two is set, and selects zero otherwise. The same case split makes each characteristic one or zero by the zero test, and the selections match the definition of the conjunction code.
+
+Conjunction of the neighbourhoods enumerated by two indices is the neighbourhood enumerated by the conjunction code of the two minima with two.
+
+Both enumerations rewrite to canonical form. Both minima are at most two, and each combination of their values simplifies by the enumeration, the conjunction code, and the three clauses of conjunction.
+
+Pointwise conjunction is a computable map from the product presentation of the three-point domain to its presentation.
+
+The map sending a packed word to the conjunction code of the two minima with two of the components of the first half, paired with the second half, is primitive recursive, and inclusion of the resulting enumerated neighbourhood is recursively decidable. The relation of conjunction on a product neighbourhood is the relation of the underlying binary map after the two preimages of the product, which are the two factors, once the product of two neighbourhoods is known to be a product neighbourhood. That relation is inclusion of the conjunction, rewritten by the enumeration equation, together with the three memberships. Packing through the product presentation makes the relation decidable, hence recursively enumerable.
+
+Postcomposition preserves computability. A computable map between presented neighbourhood systems induces a computable map from the function space of the LUCID system into the first to the function space into the second, relative to presentations built from characteristic bundles.
+
+Evaluation against the first bundle is computable. Composing with the given map stays computable, and currying that composite against the second bundle stays computable.
+
+A computable map out of a product induces a computable pointwise map on a product of function spaces over the LUCID system.
+
+The projections from the product of that product of function spaces with the LUCID system are computable, and composing the product projection with the two function-space projections gives the two pointwise projections. Evaluation of each, paired with the projection onto the LUCID system, is computable. Pairing those evaluations, composing with the binary map, and currying yields the pointwise map.
+
+LUCID negation lifts to a computable endomap of the function space from the LUCID system to the three-point domain.
+
+Apply the postcomposition theorem to the characteristic bundle of that function space and the computability of negation.
+
+LUCID conjunction lifts to a computable map from the product of that function space with itself into the function space.
+
+Apply the pointwise theorem to three copies of the bundle and the computability of conjunction.
+
+The De Morgan combination that negates the conjunction of the two negated arguments is a computable map of that same product type. It is the witness that programs built from the lifted combinators remain computable.
+
+Pair the composites of the two projections with the lifted negation, then compose the lifted conjunction with the lifted negation. Both steps are the closure of computability under pairing and composition.

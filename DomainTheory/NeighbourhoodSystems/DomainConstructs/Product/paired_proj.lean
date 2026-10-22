@@ -1,8 +1,3 @@
-/-ai
-Proposition 3.4(iii) of Scott (1981, PRG-19) states that a map into a product equals the pairing of its compositions with the two projections.
-
-The maps agree on element maps. The element map of a pairing is the pairing of the element maps, the element maps of the projections are the two components, and a product element is the pairing of its components.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

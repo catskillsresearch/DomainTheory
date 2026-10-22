@@ -1,0 +1,3 @@
+If a consistent finite set of tree tokens has empty atom projection, its right pair projection is consistent.
+
+Case on the consistency constructor. A left-consistent set has empty right pair projection, which is consistent. A right-consistent set gives the consistency of the right pair projection directly.

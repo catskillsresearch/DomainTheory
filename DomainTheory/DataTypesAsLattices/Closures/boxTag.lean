@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (5.13). The occupancy tag of a component x at an index i is the conditional set of x with both branches equal to the singleton i. It returns the constant i when the component is nonempty and the empty set when the component is empty.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,73 +1,145 @@
 # Example 2.3
 
-Note that the right-hand side of (ii) can be written:
+## Human-English
 
-$$\uparrow Y \subseteq f(\uparrow X),$$
+@import "1980_Example_2_3.english" {code_block=false}
 
-which can be read as saying that the partial element determined by the neighbourhood $Y$ approximates the function value at the element determined by $X$. This precise relationship of course fits the informal discussion of mapping given earlier. Indeed whenever $x \in [X]$ and $X f Y$ hold, then $f(x) \in [Y]$ always follows, which is another way to construe the mapping character of $f$. Some examples of mappings are now called for.
+## AI: Human-English to AI-Lean
 
-**EXAMPLE 2.3.** Let $T$ be the neighbourhood system of the two-token domain of Example 1.2. To avoid confusion with some other domains, we will call the two total elements of $|T|$ respectively true and false. There is only one other finite element here, namely $\perp = \text{undefined}$. We often use these elements as indicators of results: true indicates a positive outcome; false, a negative outcome; and $\perp$ indicates that there is not enough information to decide the outcome totally.
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/T.lean**
 
-Let $B$ be the system for the binary tree as in the last chapter. What we wish to define is an approximable mapping $f : B \to T$. The intuitive idea of the mapping we have in mind is that the binary sequence is being read from left to right, and we are counting the number of 0's seen before the first 1 is encountered. We then test the parity of this count; if it is even, the output is true; if not, false. Using a suggestive informal notation with three dots, some results of the function that does the counting and testing can be written as:
+@import "T.lean"
 
-$$
-\begin{aligned}
-f(0000101\dots) &= \text{true} \\
-f(1101110\dots) &= \text{true} \\
-f(0111011\dots) &= \text{false} \\
-f(0000000\dots) &= \perp.
-\end{aligned}
-$$
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/botElt.lean**
 
-The last equation is necessary, because $0000000$ as a partial element cannot be counted as either even or odd since it can have inconsistent extensions:
+@import "botElt.lean"
 
-$$
-\begin{aligned}
-0000000\,\perp &\sqsubseteq 00000001\,\perp \\
-0000000\,\perp &\sqsubseteq 000000000001\,\perp.
-\end{aligned}
-$$
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/botElt_le.lean**
 
-So, as far as $f$ is concerned, a plain string of 0's is indefinite. The same answer holds if the 0's go on infinitely.
+@import "botElt_le.lean"
 
-To be more precise we want
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/eq_botElt_of_le.lean**
 
-$$
-\begin{aligned}
-f(0^n 1\,\perp) &= \text{true} && \text{if } n \text{ is even;} \\
-&= \text{false} && \text{if } n \text{ is odd.}
-\end{aligned}
-$$
+@import "eq_botElt_of_le.lean"
 
-As a binary relation $f \subseteq B \times T$ we will have
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/falseElt.lean**
 
-$$
-X f Y \text{ iff } Y \in \perp \text{ or } X \sqsubseteq 0^n 1 \Delta \text{ for some } n \in \mathbf{N} \text{ and either } n \text{ is even and } Y \in \text{true or } n \text{ is odd and } Y \in \text{false.}
-$$
+@import "falseElt.lean"
 
-It should be checked that 2.1(i)–(ii) are satisfied. $\square$
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/parityMap_rel_cone.lean**
 
-**Lean 4**
+@import "parityMap_rel_cone.lean"
 
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/T.lean](T.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/botElt.lean](botElt.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/botElt_le.lean](botElt_le.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/eq_botElt_of_le.lean](eq_botElt_of_le.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/falseElt.lean](falseElt.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/parityMap_rel_cone.lean](parityMap_rel_cone.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/parityMap_toElementMap_mem.lean](parityMap_toElementMap_mem.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/parityMap_toElementMap_sigmaElt.lean](parityMap_toElementMap_sigmaElt.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan.lean](scan.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_append_falseFalse.lean](scan_append_falseFalse.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_append_falseTrue.lean](scan_append_falseTrue.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_append_true.lean](scan_append_true.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_nil.lean](scan_nil.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_true.lean](scan_true.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_false.lean](scan_false.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_append.lean](scan_append.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/trueElt.lean](trueElt.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/valElt.lean](valElt.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/valElt_scan_mono.lean](valElt_scan_mono.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/parityMap.lean](parityMap.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/MappingsBetweenDomains/Example23.lean](../Example23.lean)
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/parityMap_toElementMap_mem.lean**
+
+@import "parityMap_toElementMap_mem.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/parityMap_toElementMap_sigmaElt.lean**
+
+@import "parityMap_toElementMap_sigmaElt.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan.lean**
+
+@import "scan.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_append_falseFalse.lean**
+
+@import "scan_append_falseFalse.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_append_falseTrue.lean**
+
+@import "scan_append_falseTrue.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_append_true.lean**
+
+@import "scan_append_true.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_nil.lean**
+
+@import "scan_nil.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_true.lean**
+
+@import "scan_true.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_false.lean**
+
+@import "scan_false.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/scan_append.lean**
+
+@import "scan_append.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/trueElt.lean**
+
+@import "trueElt.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/valElt.lean**
+
+@import "valElt.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/valElt_scan_mono.lean**
+
+@import "valElt_scan_mono.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/parityMap.lean**
+
+@import "parityMap.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/MappingsBetweenDomains/Example23.lean**
+
+@import "../Example23.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "T.ai_lean_to_english" {code_block=false}
+
+@import "botElt.ai_lean_to_english" {code_block=false}
+
+@import "botElt_le.ai_lean_to_english" {code_block=false}
+
+@import "eq_botElt_of_le.ai_lean_to_english" {code_block=false}
+
+@import "falseElt.ai_lean_to_english" {code_block=false}
+
+@import "parityMap_rel_cone.ai_lean_to_english" {code_block=false}
+
+@import "parityMap_toElementMap_mem.ai_lean_to_english" {code_block=false}
+
+@import "parityMap_toElementMap_sigmaElt.ai_lean_to_english" {code_block=false}
+
+@import "scan.ai_lean_to_english" {code_block=false}
+
+@import "scan_append_falseFalse.ai_lean_to_english" {code_block=false}
+
+@import "scan_append_falseTrue.ai_lean_to_english" {code_block=false}
+
+@import "scan_append_true.ai_lean_to_english" {code_block=false}
+
+@import "scan_nil.ai_lean_to_english" {code_block=false}
+
+@import "scan_true.ai_lean_to_english" {code_block=false}
+
+@import "scan_false.ai_lean_to_english" {code_block=false}
+
+@import "scan_append.ai_lean_to_english" {code_block=false}
+
+@import "trueElt.ai_lean_to_english" {code_block=false}
+
+@import "valElt.ai_lean_to_english" {code_block=false}
+
+@import "valElt_scan_mono.ai_lean_to_english" {code_block=false}
+
+@import "parityMap.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "../Example23.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Example_2_3.ai_english_concordance" {code_block=false}

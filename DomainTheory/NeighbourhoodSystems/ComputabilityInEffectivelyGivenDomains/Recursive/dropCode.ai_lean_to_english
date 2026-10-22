@@ -1,0 +1,1 @@
+Coded drop of n entries from a code is the tabulation, for as many steps as the coded length minus n, of the drop-list lookup at the pair of that difference and the pair of n and the code. Decoding the result is the ordinary drop of the decoded list.

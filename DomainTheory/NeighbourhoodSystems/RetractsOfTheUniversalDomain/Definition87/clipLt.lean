@@ -1,6 +1,3 @@
-/-ai
-Cutting an endpoint pair at a rational leaves the left endpoint unchanged and replaces the right endpoint by its infimum with that rational.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

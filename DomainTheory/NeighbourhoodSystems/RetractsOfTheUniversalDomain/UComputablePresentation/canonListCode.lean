@@ -1,6 +1,3 @@
-/-ai
-The code of the clip-and-filter pass is the flat map, from the empty accumulator, that sends each coded element to the filter step of its second component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

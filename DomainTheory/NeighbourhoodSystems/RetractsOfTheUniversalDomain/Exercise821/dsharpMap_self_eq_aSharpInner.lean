@@ -1,8 +1,3 @@
-/-ai
-The functorial action of an endomap of the universal domain equals the inner sharp of that endomap.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

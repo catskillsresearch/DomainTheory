@@ -1,0 +1,4 @@
+The nonemptiness flag of a rational-pair code is the value in {0, 1} recording whether
+the code decodes to a nondegenerate pair, that is, whether the first component is
+strictly less than the second. It is the strict comparison of the two components of the
+code.

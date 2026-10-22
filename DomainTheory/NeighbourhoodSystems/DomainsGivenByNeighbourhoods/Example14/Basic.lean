@@ -1,20 +1,3 @@
-/-ai
-The left branch, the right branch, and each of the four leaves are distinct from the master neighbourhood. The leaves 00 and 01 are distinct from the left branch, and the leaves 10 and 11 are distinct from the right branch.
-
-If the left branch equalled the master neighbourhood, the token 0 would belong to the left branch, which it does not. The same token separates the right branch and each leaf from the master neighbourhood. The token 1 separates the leaves 00 and 01 from the left branch, and the token 2 separates the leaves 10 and 11 from the right branch.
-
-The leaf 00 is contained in the left branch, the leaf 01 is contained in the left branch, the leaf 10 is contained in the right branch, and the leaf 11 is contained in the right branch.
-
-Take a token of the leaf and case-split on the seven tokens. The leaf and branch definitions discharge the membership.
-
-An element containing the leaf 00 equals the total element at 00, an element containing the leaf 01 equals the total element at 01, an element containing the leaf 10 equals the total element at 10, and an element containing the leaf 11 equals the total element at 11.
-
-Upward closure supplies the left branch from 00 or 01, and the right branch from 10 or 11. Extensionality of elements reduces the equality to membership of a neighbourhood, which is one of the seven. The master neighbourhood, the relevant branch, and the given leaf are the three neighbourhoods of the total element. Each of the other four neighbourhoods meets the given leaf in the empty set, by case analysis on the tokens, so that intersection cannot belong to the element, because the empty set is not a neighbourhood. Conversely, the master neighbourhood belongs by the master axiom, the branch belongs by the upward step, and the leaf belongs by hypothesis.
-
-An element that contains the left branch and neither leaf 00 nor leaf 01 equals the partial element at node 0. An element that contains the right branch and neither leaf 10 nor leaf 11 equals the partial element at node 1.
-
-Extensionality classifies a neighbourhood of the element. The master neighbourhood and the given branch are the two neighbourhoods of the partial element. The opposite branch and the two leaves of the opposite branch meet the given branch in the empty set, by case analysis on the tokens, so they are excluded. The two leaves under the given branch are excluded by hypothesis. Conversely, the master neighbourhood belongs by the master axiom and the branch belongs by hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
@@ -89,37 +72,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 
 @[expose] public section
 
-/-!
-# Example 1.4 (Scott 1981, PRG-19, §1)
-
-Scott's third worked example: the **binary tree** of depth 2. Tokens are the finite binary
-sequences of length ≤ 2, `Δ = {Λ, 0, 1, 00, 01, 10, 11}`, and the neighbourhoods are the
-subtrees rooted at each node:
-
-`𝒟 = {Δ, {0,00,01}, {1,10,11}, {00}, {01}, {10}, {11}}`.
-
-We encode the seven tokens as `Fin 7`:
-
-| token | `Λ` | `0` | `1` | `00` | `01` | `10` | `11` |
-| ----- | --- | --- | --- | ---- | ---- | ---- | ---- |
-| `Fin 7` | `0` | `1` | `2` | `3` | `4` | `5` | `6` |
-
-so `left = {0,00,01} = {1,3,4}`, `right = {1,10,11} = {2,5,6}`, and the four leaves are the
-singletons `{3}, {4}, {5}, {6}`.
-
-We build the neighbourhood system (Definition 1.1) and classify its domain elements
-(Definition 1.6): there are exactly **seven** filters. Unlike Example 1.3's linear chain, this is
-the first example with **branching** — at the partial elements `elemZero`/`elemOne` one has a
-*choice* of how to refine toward one of the four total (leaf) elements.
-
-This is a concrete finite computation (`fin_cases`/`simp`); footprint
-`[propext, Classical.choice, Quot.sound]` — same as Examples 1.2/1.3.
--/
-
 namespace DomainTheory.NeighbourhoodSystems.Example14
 
-
-/-! ### Distinctness of neighbourhoods (only the pairs needed below). -/
 
 theorem left_ne_master : left ≠ master := by
   intro h
@@ -171,8 +125,6 @@ theorem leaf11_ne_right : leaf11 ≠ right := by
   have hmem : (2 : Token) ∈ leaf11 := by rw [h]; simp [right]
   simp [leaf11] at hmem
 
-/-! ### Nested-subset facts. -/
-
 theorem leaf00_subset_left : leaf00 ⊆ left := by
   intro t ht; fin_cases t <;> simp [leaf00, left] at ht ⊢
 
@@ -185,18 +137,11 @@ private theorem leaf10_subset_right : leaf10 ⊆ right := by
 private theorem leaf11_subset_right : leaf11 ⊆ right := by
   intro t ht; fin_cases t <;> simp [leaf11, right] at ht ⊢
 
-/-! ### "Which neighbourhoods contain a given one" (upward classification). -/
-
-
-/-! ### Intersections. -/
-
 
 namespace neighborhoodSystem
 
 open NeighborhoodSystem
 
-
-/-! ### Filter classification: the seven elements. -/
 
 theorem mem_leaf00_imp (x : neighborhoodSystem.Element) (h : x.mem leaf00) :
     x = elem00 := by
@@ -386,6 +331,5 @@ theorem mem_right_imp (x : neighborhoodSystem.Element) (hr : x.mem right)
     · exact x.master_mem
     · exact hr
 
-/-! ### The approximation order (Definition 1.8): a branching tree. -/
 end neighborhoodSystem
 end DomainTheory.NeighbourhoodSystems.Example14

@@ -1,6 +1,3 @@
-/-ai
-The bit neighbourhood sends false to the zero neighbourhood of the truth system and true to its one neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

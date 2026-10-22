@@ -1,8 +1,3 @@
-/-ai
-If both component maps are strict, then their product map is strict: it sends the master input only to the master output.
-
-A related output unpacks as a product neighbourhood whose components are related to the components of the input. Injectivity of product neighbourhoods makes those input components the two masters. Strictness of the components rewrites the output components as the codomain masters, so the output is the product of those masters.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

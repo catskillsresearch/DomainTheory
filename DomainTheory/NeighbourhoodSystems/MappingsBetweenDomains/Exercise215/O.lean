@@ -1,6 +1,3 @@
-/-ai
-The one-token system on a one-point token set has neighbourhoods the whole set and the empty set. It is obtained from the nested-or-disjoint constructor, with the whole set as master, using the neighbourhood predicate and the nested-or-disjoint and submaster facts.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

@@ -1,8 +1,3 @@
-/-ai
-Every fixed point x of a equals the cut element at the cut point of x.
-
-Compare up-sets at a rational r. Membership in the cut element is the cut condition at the cut point, and arithmetic on one minus the infimum of the cut set rewrites that condition as r ≤ 1 together with either the infimum strictly below r or r = 1. Because x is fixed, membership of an interval is the existence of a related neighbourhood. If [0, r) belongs to x and r is not 1, a related neighbourhood [0, r'') lies in the cut set with r'' < r, so the infimum is below r. Conversely, if the infimum is below r, some neighbourhood [0, r0) of x has r0 < r and upward closure includes [0, r); if r = 1, the master belongs to x.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

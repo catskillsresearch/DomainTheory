@@ -1,6 +1,3 @@
-/-ai
-The typical Bδ set is the set of elements u of Pω such that u applied to the singleton {0} equals u applied to the singleton {1}.
-ai-/
 
 module
 

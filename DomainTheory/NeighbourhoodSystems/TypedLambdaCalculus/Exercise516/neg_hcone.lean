@@ -1,8 +1,3 @@
-/-ai
-If σ is a prefix of τ, then the partial element of the bit flip of σ lies below the partial element of the bit flip of τ.
-
-The order of partial elements is the prefix order, and bit flip preserves prefixes.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

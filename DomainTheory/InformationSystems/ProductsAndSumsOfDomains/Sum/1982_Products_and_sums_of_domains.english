@@ -1,0 +1,15 @@
+In the category of sets, the product (the cartesian product) of two sets is by definition just the set of ordered pairs of elements. We could use the same definition in the category of domains—provided we worked in terms of the elements of the domains. The disadvantage is that the determination of the product domain from data objects is lost, or at least pushed into the background. We shall therefore give a construction of products directly in terms of the given data objects, and then show how to prove that the product is just the one expected when we look at the elements.
+
+The idea for the definition is a simple one. Think of two domains $\mathbf{A}$ and $\mathbf{B}$. A data object $X \in D_{\mathbf{A}}$ can be giving information about a possible element $x \in |\mathbf{A}|$, and a data object $Y \in D_{\mathbf{B}}$ can be giving information about a possible element $y \in |\mathbf{B}|$. How do we wish to give information about the pair $(x, y)$? The first piece of advice is not to say all that is known all at once. For
+example, if pressed, we can say we know $X$ about the first coordinate of the pair; only later, if really pressed, we can say we also know $Y$ about the second coordinate. The point is that data objects provide only partial information, and it does not matter if it takes several of them to give fairly complete information about the whole element. This attitude motivates, then, the particular form of our official definition.
+
+- [Definition 6.1](1982_Definition_6_1.md)
+- [Proposition 6.2](../Proposition62/1982_Proposition_6_2.md)
+- [Definition 6.3](1982_Definition_6_3.md)
+- [Proposition 6.4](../Proposition64/1982_Proposition_6_4.md)
+
+It can also be shown that Propositions 6.2 and 6.4 uniquely characterize the domains $\mathbf{A} \times \mathbf{B}$ and $\mathbf{A} + \mathbf{B}$ up to isomorphism, and they give us the existence of additional mappings that are needed to show that product and sum are functors on the category of domains. We can also show from these results that the domain
+
+$$\mathbf{BOOL} = \mathbf{1} + \mathbf{1}$$
+
+has two elements $\mathrm{true}$ and $\mathrm{false}$, such that any mapping on $\mathbf{BOOL}$ is uniquely determined by its action on $\mathrm{true}$, $\mathrm{false}$ and $\perp_{\mathbf{BOOL}}$, and the values on the first two elements may be arbitrarily chosen.

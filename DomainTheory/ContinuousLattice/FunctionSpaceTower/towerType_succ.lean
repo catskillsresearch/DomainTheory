@@ -1,8 +1,3 @@
-/-ai
-Level n+1 of the function-space tower is definitionally the type of Scott maps from level n to itself.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

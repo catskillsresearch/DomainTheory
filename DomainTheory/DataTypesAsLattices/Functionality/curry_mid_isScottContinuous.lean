@@ -1,8 +1,3 @@
-/-ai
-For fixed u, the map sending x to the graph of y mapped to the application of u to the pair sequence of x and y is Scott-continuous.
-
-Constancy of graphs under Scott continuity applies, using for each y Theorem 1.3 of continuity of application of u and left continuity of the pair sequence at y.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

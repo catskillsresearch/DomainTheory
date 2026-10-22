@@ -1,8 +1,3 @@
-/-ai
-If one filter of the relativized system below a lies below another, then the embedding of the first lies below the embedding of the second.
-
-The same witness serves for a neighbourhood of the first embedding, because the neighbourhood of a that belongs to the smaller filter belongs to the larger filter.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

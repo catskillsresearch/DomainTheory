@@ -1,6 +1,3 @@
-/-ai
-The interleaving value of tagged strings (b₀, σ) and (b₁, τ) is a tagged string. An empty first string returns the empty string with tag b₀. A nonempty first string against an empty second string returns the singleton of its head with tag false. Otherwise the two heads are placed in order before the interleaving of the tails, which keeps the recursive tag.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

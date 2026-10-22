@@ -1,8 +1,3 @@
-/-ai
-If a head expression and every expression in a list are rooted, then some nonempty set Γ of strings has its singleton system as a subsystem of the n-ary smash product of that head and list, applied to the same singleton system.
-
-The general singleton-subsystem solution applies to this fold. Rootedness of the fold is the preservation lemma for n-ary folds, using that rootedness of a smash product is definitionally the conjunction of rootedness of its two arguments.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

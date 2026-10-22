@@ -1,8 +1,3 @@
-/-ai
-The bottom element of the smash contains a set exactly when that set is the product of the two master neighbourhoods.
-
-Membership in the bottom element is equality with the master, and the master of the smash is that product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

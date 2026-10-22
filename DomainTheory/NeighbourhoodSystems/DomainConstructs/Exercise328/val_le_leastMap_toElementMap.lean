@@ -1,8 +1,3 @@
-/-ai
-Each active principal filter, for a pair whose input belongs to the element, lies below the least map at that element.
-
-The output of the pair belongs to the least map at the element, because the input belongs to the element and the least map lies in the step neighborhood of the pair. Every neighborhood of the principal filter is then a neighborhood of the least map at the element by upward closure.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

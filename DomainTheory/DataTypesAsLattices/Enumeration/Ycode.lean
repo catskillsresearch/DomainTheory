@@ -1,6 +1,3 @@
-/-ai
-Ycode is a natural number chosen, by the surjectivity in theorem 3.2 applied to the combinatory fixed-point combinator Y, as a Gödel number of Y. It is used for a Kleene-style fixed point on codes.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

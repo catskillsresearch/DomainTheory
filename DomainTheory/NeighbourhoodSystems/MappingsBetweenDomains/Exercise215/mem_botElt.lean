@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the bottom element if and only if it is the universe.
-
-The bottom element is the bottom element of O, whose members are the master neighbourhood, and that master neighbourhood is the universe.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

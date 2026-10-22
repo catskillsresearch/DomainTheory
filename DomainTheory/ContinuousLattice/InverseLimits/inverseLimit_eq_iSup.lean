@@ -1,8 +1,3 @@
-/-ai
-Every compatible sequence x is the supremum of the embeddings of its coordinates. This is Scott's section 4 identity x = sup_n i_{n infinity}(x_n).
-
-The family of those embeddings is directed and its range is nonempty. The underlying function of the supremum is the supremum of the underlying functions. At stage m, the m-th component of the embedded m-th coordinate equals x_m and belongs to the set being supremized, so x lies below the supremum. The opposite inequality holds coordinatewise because the stage embedding of a coordinate of x lies below x.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

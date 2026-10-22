@@ -1,8 +1,3 @@
-/-ai
-A consistent finite set of lambda tokens entails every lambda token it contains.
-
-The underlying raw set entails the underlying token of the member, because that raw token lies in the forget of the set by membership of the token.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

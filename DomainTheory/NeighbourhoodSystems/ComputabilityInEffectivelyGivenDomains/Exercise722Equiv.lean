@@ -1,8 +1,3 @@
-/-ai
-interEqB reports true if and only if the two expressions denote the same language.
-
-The numbered name example_722_equiv is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Equiv.interEqB_iff

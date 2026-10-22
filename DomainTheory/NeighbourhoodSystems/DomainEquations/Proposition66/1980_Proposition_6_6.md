@@ -1,11 +1,43 @@
 # Proposition 6.6
 
-**PROPOSITION 6.6.** Any two initial $T$-algebras are uniquely isomorphic. $\square$
+## Human-English
 
-**Lean 4**
+@import "1980_Proposition_6_6.english" {code_block=false}
 
-- [NeighbourhoodSystems/DomainEquations/Proposition66/comp_desc_eq_id.lean](comp_desc_eq_id.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition66/initialIso.lean](initialIso.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition66/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition66/iso_hom_unique.lean](iso_hom_unique.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition66.lean](../Proposition66.lean)
+## AI: Human-English to AI-Lean
+
+**NeighbourhoodSystems/DomainEquations/Proposition66/comp_desc_eq_id.lean**
+
+@import "comp_desc_eq_id.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition66/initialIso.lean**
+
+@import "initialIso.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition66/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition66/iso_hom_unique.lean**
+
+@import "iso_hom_unique.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition66.lean**
+
+@import "../Proposition66.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "comp_desc_eq_id.ai_lean_to_english" {code_block=false}
+
+@import "initialIso.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "iso_hom_unique.ai_lean_to_english" {code_block=false}
+
+@import "../Proposition66.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Proposition_6_6.ai_english_concordance" {code_block=false}

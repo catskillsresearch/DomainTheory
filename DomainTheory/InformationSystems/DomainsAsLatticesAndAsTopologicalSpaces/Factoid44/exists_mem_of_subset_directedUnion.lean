@@ -1,8 +1,3 @@
-/-ai
-If every token of a finite set lies in some member of a nonempty directed family, then some single member contains the whole finite set.
-
-The proof is by induction on the finite set. The empty set is contained in any member of the nonempty family. For an inserted token, some member contains that token and the inductive hypothesis supplies a member containing the remaining set. Directedness gives a common upper bound in the family, and that bound contains the token and the remaining set.
-ai-/
 
 module
 

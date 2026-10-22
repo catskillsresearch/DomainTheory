@@ -1,8 +1,3 @@
-/-ai
-The action of a construct on objects is monotone for the subsystem relation: if one Scott system is a subsystem of another, then the image of the first is a subsystem of the image of the second.
-
-The proof is by induction on the construct. A constant is a subsystem of itself. The identity variable is the given relation. A sum applies the subsystem lemma for the token sum to the two inductive relations. A product applies the subsystem lemma for the token product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

@@ -1,8 +1,3 @@
-/-ai
-The consistency characteristic of any paired index is at most 1.
-
-Unfold the characteristic. A boolean-to-natural encoding is 0 or 1.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

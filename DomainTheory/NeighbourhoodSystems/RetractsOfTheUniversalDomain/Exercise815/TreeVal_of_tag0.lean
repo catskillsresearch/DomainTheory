@@ -1,8 +1,3 @@
-/-ai
-If the tag of a code is zero, its evaluation is the enumerator at its payload.
-
-The first selector then equals one, so the fuel step returns the enumerator at the payload.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

@@ -1,8 +1,3 @@
-/-ai
-The product presentation enumerates the product neighbourhood of the two component neighbourhoods.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

@@ -1,8 +1,3 @@
-/-ai
-Zero does not belong to the combinator G, so G is a positive nonzero test.
-
-A witnessing pair code equal to zero is the pair of zeros, by the identity of the zero pair and injectivity of pairing. The zero neighborhood and the conditional set then exclude that membership.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

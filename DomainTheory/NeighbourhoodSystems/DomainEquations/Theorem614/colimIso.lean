@@ -1,6 +1,3 @@
-/-ai
-The isomorphism from the image of the colimit under T to the colimit is the identity isomorphism induced by the equality of those two domain objects.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

@@ -1,6 +1,3 @@
-/-ai
-An element of a neighbourhood system is total when it is maximal in the approximation order: every element above it also lies below it.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

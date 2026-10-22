@@ -1,59 +1,151 @@
 # Domain equations
 
-The major reason for introducing the theory of domains is to have a notion of *computability* incorporating both finite and infinite elements. In our many examples already explored we have seen how functions (functionals, operators, combinators) can be defined on domains; owing to the property of *approximability (continuity)* of these functions, we have also seen how they can be "calculated" by finite approximation. In this lecture further examples of domains will be constructed -- especially domains having infinite elements, which can be introduced in a variety of ways giving rise to interesting structural possibilities. The next lecture then treats a precise notion of *computability* appropriate to these domains; while the last lecture opens up new methods of domain construction.
+## Human-English
 
-- [Example 6.1](Example61/1980_Example_6_1.md)
-- [Example 6.2](1980_Example_6_2.md)
-- [Definition 6.3](1980_Definition_6_3.md)
-- [Definition 6.4](1980_Definition_6_4.md)
-- [Definition 6.5](1980_Definition_6_5.md)
-- [Proposition 6.6](Proposition66/1980_Proposition_6_6.md)
-- [Proposition 6.7](1980_Proposition_6_7.md)
-- [Definition 6.8](Definition68/1980_Definition_6_8.md)
-- [Theorem 6.9](Theorem69/1980_Theorem_6_9.md)
-- [Definition 6.10](Definition610/1980_Definition_6_10.md)
-- [Proposition 6.11](1980_Proposition_6_11.md)
-- [Proposition 6.12](Proposition612/1980_Proposition_6_12.md)
-- [Definition 6.13](Definition613/1980_Definition_6_13.md)
-- [Theorem 6.14](Theorem614/1980_Theorem_6_14.md)
-- [Lemma 6.15](Lemma615/1980_Lemma_6_15.md)
-- [Theorem 6.16](Theorem616/1980_Theorem_6_16.md)
-- [Exercise 6.17](Exercise617Gen/1980_Exercise_6_17.md)
-- [Exercise 6.18](Exercise618/1980_Exercise_6_18.md)
-- [Exercise 6.19](Exercise619/1980_Exercise_6_19.md)
-- [Exercise 6.20](1980_Exercise_6_20.md)
-- [Exercise 6.21](Exercise621/1980_Exercise_6_21.md)
-- [Exercise 6.22](Exercise622/1980_Exercise_6_22.md)
-- [Exercise 6.23](Exercise623/1980_Exercise_6_23.md)
-- [Exercise 6.24](Exercise624/1980_Exercise_6_24.md)
-- [Exercise 6.25](Exercise625/1980_Exercise_6_25.md)
-- [Exercise 6.26](Exercise626/1980_Exercise_6_26.md)
-- [Exercise 6.27](Exercise627/1980_Exercise_6_27.md)
-- [Exercise 6.28](Exercise628/1980_Exercise_6_28.md)
-- [Exercise 6.29](Exercise629/1980_Exercise_6_29.md)
+@import "1980_Introduction_to_domain_equations.english" {code_block=false}
 
-**Lean 4**
+## AI: Human-English to AI-Lean
 
-- [NeighbourhoodSystems/DomainEquations/Category/notation4.lean](Category/notation4.lean)
-- [NeighbourhoodSystems/DomainEquations/DomainObj.lean](DomainObj.lean)
-- [NeighbourhoodSystems/DomainEquations/Endofunctor.lean](Endofunctor.lean)
-- [NeighbourhoodSystems/DomainEquations/Iso.lean](Iso.lean)
-- [NeighbourhoodSystems/DomainEquations/TAlgebra.lean](TAlgebra.lean)
-- [NeighbourhoodSystems/DomainEquations/AlgHom.lean](AlgHom.lean)
-- [NeighbourhoodSystems/DomainEquations/IsInitial.lean](IsInitial.lean)
-- [NeighbourhoodSystems/DomainEquations/compAfter.lean](compAfter.lean)
-- [NeighbourhoodSystems/DomainEquations/Category/notation6.lean](Category/notation6.lean)
-- [NeighbourhoodSystems/DomainEquations/Category.lean](Category.lean)
-- [NeighbourhoodSystems/DomainEquations/subFam.lean](subFam.lean)
-- [NeighbourhoodSystems/DomainEquations/subFam_inter_closed.lean](subFam_inter_closed.lean)
-- [NeighbourhoodSystems/DomainEquations/subFam_master_mem.lean](subFam_master_mem.lean)
-- [NeighbourhoodSystems/DomainEquations/subFam_mem_E.lean](subFam_mem_E.lean)
-- [NeighbourhoodSystems/DomainEquations/interSys.lean](interSys.lean)
-- [NeighbourhoodSystems/DomainEquations/interSys_nbset.lean](interSys_nbset.lean)
-- [NeighbourhoodSystems/DomainEquations/interSys_subsystem.lean](interSys_subsystem.lean)
-- [NeighbourhoodSystems/DomainEquations/subFam_nonempty.lean](subFam_nonempty.lean)
-- [NeighbourhoodSystems/DomainEquations/subFam_sInter_mem.lean](subFam_sInter_mem.lean)
-- [NeighbourhoodSystems/DomainEquations/unionSys.lean](unionSys.lean)
-- [NeighbourhoodSystems/DomainEquations/unionSys_nbset.lean](unionSys_nbset.lean)
-- [NeighbourhoodSystems/DomainEquations/unionSys_subsystem.lean](unionSys_subsystem.lean)
-- [NeighbourhoodSystems/DomainEquations/subFam_sUnion_mem.lean](subFam_sUnion_mem.lean)
+**NeighbourhoodSystems/DomainEquations/Category/notation4.lean**
+
+@import "Category/notation4.lean"
+
+**NeighbourhoodSystems/DomainEquations/DomainObj.lean**
+
+@import "DomainObj.lean"
+
+**NeighbourhoodSystems/DomainEquations/Endofunctor.lean**
+
+@import "Endofunctor.lean"
+
+**NeighbourhoodSystems/DomainEquations/Iso.lean**
+
+@import "Iso.lean"
+
+**NeighbourhoodSystems/DomainEquations/TAlgebra.lean**
+
+@import "TAlgebra.lean"
+
+**NeighbourhoodSystems/DomainEquations/AlgHom.lean**
+
+@import "AlgHom.lean"
+
+**NeighbourhoodSystems/DomainEquations/IsInitial.lean**
+
+@import "IsInitial.lean"
+
+**NeighbourhoodSystems/DomainEquations/compAfter.lean**
+
+@import "compAfter.lean"
+
+**NeighbourhoodSystems/DomainEquations/Category/notation6.lean**
+
+@import "Category/notation6.lean"
+
+**NeighbourhoodSystems/DomainEquations/Category.lean**
+
+@import "Category.lean"
+
+**NeighbourhoodSystems/DomainEquations/subFam.lean**
+
+@import "subFam.lean"
+
+**NeighbourhoodSystems/DomainEquations/subFam_inter_closed.lean**
+
+@import "subFam_inter_closed.lean"
+
+**NeighbourhoodSystems/DomainEquations/subFam_master_mem.lean**
+
+@import "subFam_master_mem.lean"
+
+**NeighbourhoodSystems/DomainEquations/subFam_mem_E.lean**
+
+@import "subFam_mem_E.lean"
+
+**NeighbourhoodSystems/DomainEquations/interSys.lean**
+
+@import "interSys.lean"
+
+**NeighbourhoodSystems/DomainEquations/interSys_nbset.lean**
+
+@import "interSys_nbset.lean"
+
+**NeighbourhoodSystems/DomainEquations/interSys_subsystem.lean**
+
+@import "interSys_subsystem.lean"
+
+**NeighbourhoodSystems/DomainEquations/subFam_nonempty.lean**
+
+@import "subFam_nonempty.lean"
+
+**NeighbourhoodSystems/DomainEquations/subFam_sInter_mem.lean**
+
+@import "subFam_sInter_mem.lean"
+
+**NeighbourhoodSystems/DomainEquations/unionSys.lean**
+
+@import "unionSys.lean"
+
+**NeighbourhoodSystems/DomainEquations/unionSys_nbset.lean**
+
+@import "unionSys_nbset.lean"
+
+**NeighbourhoodSystems/DomainEquations/unionSys_subsystem.lean**
+
+@import "unionSys_subsystem.lean"
+
+**NeighbourhoodSystems/DomainEquations/subFam_sUnion_mem.lean**
+
+@import "subFam_sUnion_mem.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Category/notation4.ai_lean_to_english" {code_block=false}
+
+@import "DomainObj.ai_lean_to_english" {code_block=false}
+
+@import "Endofunctor.ai_lean_to_english" {code_block=false}
+
+@import "Iso.ai_lean_to_english" {code_block=false}
+
+@import "TAlgebra.ai_lean_to_english" {code_block=false}
+
+@import "AlgHom.ai_lean_to_english" {code_block=false}
+
+@import "IsInitial.ai_lean_to_english" {code_block=false}
+
+@import "compAfter.ai_lean_to_english" {code_block=false}
+
+@import "Category/notation6.ai_lean_to_english" {code_block=false}
+
+@import "Category.ai_lean_to_english" {code_block=false}
+
+@import "subFam.ai_lean_to_english" {code_block=false}
+
+@import "subFam_inter_closed.ai_lean_to_english" {code_block=false}
+
+@import "subFam_master_mem.ai_lean_to_english" {code_block=false}
+
+@import "subFam_mem_E.ai_lean_to_english" {code_block=false}
+
+@import "interSys.ai_lean_to_english" {code_block=false}
+
+@import "interSys_nbset.ai_lean_to_english" {code_block=false}
+
+@import "interSys_subsystem.ai_lean_to_english" {code_block=false}
+
+@import "subFam_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "subFam_sInter_mem.ai_lean_to_english" {code_block=false}
+
+@import "unionSys.ai_lean_to_english" {code_block=false}
+
+@import "unionSys_nbset.ai_lean_to_english" {code_block=false}
+
+@import "unionSys_subsystem.ai_lean_to_english" {code_block=false}
+
+@import "subFam_sUnion_mem.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Introduction_to_domain_equations.ai_english_concordance" {code_block=false}

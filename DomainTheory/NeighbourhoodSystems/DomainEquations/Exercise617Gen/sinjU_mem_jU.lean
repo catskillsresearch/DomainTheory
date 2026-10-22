@@ -1,8 +1,3 @@
-/-ai
-The unit injection contains the unit copy.
-
-The unit copy is the second alternative in the membership of that element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

@@ -1,6 +1,3 @@
-/-ai
-In the sense of Scott 1976, before Theorem 3.5, a numerical map p is extensional for a valuation when equal values of the valuation at n and m remain equal at p(n) and p(m).
-ai-/
 module
 
 public import Mathlib.Computability.Halting

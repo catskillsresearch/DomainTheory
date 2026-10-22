@@ -1,8 +1,3 @@
-/-ai
-A copy token does not lie in the unit copy.
-
-Simplification of the unit copy, the unit token, and the copy token gives the exclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

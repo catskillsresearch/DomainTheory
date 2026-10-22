@@ -1,0 +1,3 @@
+The composite of a map typed by the function space from a retract a to a retract b with a map typed by the function space from b to a set c is typed by the function space from a to c. The retract hypothesis on c is not used.
+
+Both typing equations write the maps as the corresponding double composites. Rewrite the desired equation by the function-space application law and compare graphs. At each argument, the first typing equation writes the value of the first map as b applied after that map applied after a, the restriction equation removes the inner application of a, the second typing equation writes the value of the second map as c applied after that map applied after b, and the range equation removes that application of b.

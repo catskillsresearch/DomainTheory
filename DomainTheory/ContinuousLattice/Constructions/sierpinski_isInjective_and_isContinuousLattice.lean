@@ -1,8 +1,3 @@
-/-ai
-The Sierpiński space of propositions is both an injective space and a continuous lattice.
-
-Injectivity is Proposition 1.2, and continuity is the theorem that the two-point lattice is a continuous lattice.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

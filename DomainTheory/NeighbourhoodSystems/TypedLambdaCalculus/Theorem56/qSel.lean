@@ -1,6 +1,3 @@
-/-ai
-The argument pair is the second projection from the product of the function space of N times N into N with N times N onto N times N.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

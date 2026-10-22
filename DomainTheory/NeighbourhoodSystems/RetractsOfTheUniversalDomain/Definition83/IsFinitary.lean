@@ -1,6 +1,3 @@
-/-ai
-An approximable self-map is finitary when its set of fixed points, ordered by the inherited inclusion, is order-isomorphic to the element poset of some neighbourhood system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82

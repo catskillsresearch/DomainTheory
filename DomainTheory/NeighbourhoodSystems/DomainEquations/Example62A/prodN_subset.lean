@@ -1,8 +1,3 @@
-/-ai
-One proper product is contained in another if and only if every component is contained in the corresponding component.
-
-In the forward direction an element of a component is viewed as the pair of its index with that element. In the reverse direction a pair in the smaller product has its second component in the larger component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

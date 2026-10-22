@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.24). Sequence revaluation satisfies seq(u)(x) = x ⊃ u₀, seq(λt. u_{t+1})(x − 1).
-
-An element contributed at index 0 is the left branch. An element contributed at a successor index is the right branch, once the shift formula replaces the value of u at that successor by the shifted sequence at its predecessor. Each branch returns to the corresponding index of the union by the same formula.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

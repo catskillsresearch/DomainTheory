@@ -1,0 +1,3 @@
+The atom projection is monotone with respect to inclusion of finite sets of tree tokens.
+
+An atom of the smaller projection is an atom token of the smaller set, hence of the larger set by the inclusion, and therefore an atom of the larger projection.

@@ -1,8 +1,3 @@
-/-ai
-The filter of the excluded-point set of a cofinite filter equals the original filter.
-
-By extensionality, a neighbourhood lies in the reconstructed filter when its complement is finite and contained in the excluded-point set. The reconstruction lemma then places the complement of that complement in the original filter. Conversely, if the neighbourhood lies in the original filter, its complement is finite, and each point of the complement has its singleton complement in the filter by upward closure along the inclusion of the neighbourhood in that singleton complement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

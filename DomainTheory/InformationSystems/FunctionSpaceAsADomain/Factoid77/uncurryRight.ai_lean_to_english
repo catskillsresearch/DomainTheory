@@ -1,0 +1,1 @@
+Right uncurry, the inverse of right curry, sends a morphism from Y into the exponential of A and Z to a morphism from the tensor of A and Y to Z by transporting the product uncurry across the equality of product and tensor hom-types.

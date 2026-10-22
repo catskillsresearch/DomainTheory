@@ -1,8 +1,3 @@
-/-ai
-The bottom Scott map sends every argument to the bottom element of the codomain.
-
-The bottom element of the function space is the supremum of the empty set of Scott maps. The pointwise formula for that supremum is the supremum of the empty image, which is bottom.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,8 +1,3 @@
-/-ai
-Function-space consistency is downward closed: a subset of a consistent finite set of function-space tokens is consistent.
-
-A subset of the smaller set is a subset of the larger set, so the consistency condition for the larger set applies to it.
-ai-/
 
 module
 

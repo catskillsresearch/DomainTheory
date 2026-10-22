@@ -1,6 +1,3 @@
-/-ai
-The morphism part of the endofunctor sending a strict domain X to the three-way sum of the unit with two copies of X sends a strict map to the strict three-fold sum of the identity on the unit system with two copies of that map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

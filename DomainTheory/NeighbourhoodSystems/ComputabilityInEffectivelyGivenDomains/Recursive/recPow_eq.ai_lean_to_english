@@ -1,0 +1,3 @@
+The recursion that starts at 1 and multiplies by a fixed b at each step computes the power of b with exponent e.
+
+The exponent-zero case is the law that a power with exponent zero equals 1, read in reverse. For a successor, the successor law for powers rewrites the goal as multiplication by b, and the inductive hypothesis replaces the recursive value at the previous exponent by the corresponding power.

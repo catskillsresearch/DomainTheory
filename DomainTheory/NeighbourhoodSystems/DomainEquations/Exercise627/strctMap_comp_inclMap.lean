@@ -1,8 +1,3 @@
-/-ai
-Strictification after inclusion is the identity on the strict function space.
-
-The two maps agree on principal inputs. The composite element map is strictification of the inclusion of the principal element, which equals that element, and the identity element map is the same element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

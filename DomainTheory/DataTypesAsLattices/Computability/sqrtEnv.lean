@@ -1,6 +1,3 @@
-/-ai
-The environment sqrtEnv returns the comparison combinator leC at index 3, the multiplication combinator mulC at index 4, and the bottom element at every other index.
-ai-/
 module
 
 public import Mathlib.Computability.RE

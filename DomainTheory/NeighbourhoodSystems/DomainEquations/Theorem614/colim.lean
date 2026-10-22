@@ -1,6 +1,3 @@
-/-ai
-The colimit of the tower is the neighbourhood system over the token type whose neighbourhoods are the sets that belong to some level, with master the master of the generating system. That master is a neighbourhood at level zero. A consistent intersection is formed at the maximum of the three witnessing levels, after the chain inclusions move the three neighbourhoods there. Every neighbourhood is contained in the master because the level that contains it has the generating master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

@@ -1,6 +1,3 @@
-/-ai
-A lambda token is a raw lambda token equipped with a proof that it is a lambda token.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

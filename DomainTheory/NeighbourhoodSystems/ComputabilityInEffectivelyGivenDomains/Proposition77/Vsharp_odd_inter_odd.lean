@@ -1,8 +1,3 @@
-/-ai
-The intersection of the enumerated sets at 2a+1 and at 2b+1 is the zero embedding of the intersection of the two enumerated neighbourhoods.
-
-Rewrite both sets by the odd clause and apply the intersection law for zero embeddings.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

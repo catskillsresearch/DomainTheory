@@ -1,8 +1,3 @@
-/-ai
-If the first argument of a numerical pair strictly increases and the second argument does not decrease, then the pair strictly increases.
-
-Strict increase in the first argument, with the second held at the smaller value, is combined with weak increase in the second argument, with the first held at the larger value.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

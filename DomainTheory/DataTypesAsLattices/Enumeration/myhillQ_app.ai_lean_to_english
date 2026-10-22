@@ -1,0 +1,3 @@
+Applying the Myhill set of the natural valuation and a function p to an element x equals the union, over every code j whose finite set is contained in x, of the natural value of p at the finite code of j. Both inclusions are the direct calculation of the Myhill–Shepherdson relation as an enumeration operator.
+
+If m lies in the application, some j contained in x carries the pair membership of theorem 3.5, so m lies in the value of p at the finite code of j and hence in the union. Conversely, membership in the double union supplies such a j and such a value membership, and the converse direction of theorem 3.5 returns the pair membership.

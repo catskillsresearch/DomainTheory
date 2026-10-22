@@ -1,8 +1,3 @@
-/-ai
-Every U-code produced by the recursion denotes a neighbourhood of the universal system.
-
-Apply the membership theorem for an arbitrary universal code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

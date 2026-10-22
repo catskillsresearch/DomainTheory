@@ -1,8 +1,3 @@
-/-ai
-The n-th approximant equals the n-fold iterate of the elementwise map, applied to the bottom element.
-
-The proof is induction on n. At zero the iterate is the identity map, and the elementwise action of the identity is the identity. At a successor the approximant is the elementwise image of the previous approximant, by the elementwise action of composition, and the inductive hypothesis replaces that approximant by the iterated function. The successor iterate of a function is one further application.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

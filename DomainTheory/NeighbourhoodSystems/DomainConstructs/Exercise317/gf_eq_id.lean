@@ -1,8 +1,3 @@
-/-ai
-The composite of the decoding after the encoding equals the identity on the binary system.
-
-Compare relations by extensionality of approximable maps. In the forward direction, the composite places the encoding of one string inside an iterate neighbourhood contained in the encoding of another, so the first encoding is contained in the second, and prefix recovery supplies the cone inclusion of the identity. Conversely, the identity gives cones of two strings with the second a prefix of the first; the encoding of the longer string witnesses the composite, using that encoding reverses the prefix.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

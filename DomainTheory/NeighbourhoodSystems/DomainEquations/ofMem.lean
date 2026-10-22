@@ -1,6 +1,3 @@
-/-ai
-From a neighbourhood-set of a subsystem of E one rebuilds the neighbourhood system whose neighbourhoods are the members of that set and whose master is the master of E.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

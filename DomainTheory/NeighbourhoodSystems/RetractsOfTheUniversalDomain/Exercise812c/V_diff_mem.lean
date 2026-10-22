@@ -1,8 +1,3 @@
-/-ai
-The difference of two neighbourhoods of V is empty or a neighbourhood of V.
-
-Write both neighbourhoods as level sets. Their difference is empty, or else nonempty and equal to the level-set difference at the maximum of the two levels.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

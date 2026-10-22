@@ -1,6 +1,3 @@
-/-ai
-flatMapCode f x c is the list code of the flat map of the decoded list of c under y mapped to the decoded list of f of the pair of x and y, up to order and duplicates. It is the fold of flatMapStep f, with x held fixed and with empty accumulator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (4.45). The combinator H, of type from expressions to maps from environments to lambda values, is the corresponding arrow retract applied to the raw least fixed point of the syntax-directed operator.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

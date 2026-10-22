@@ -1,26 +1,25 @@
 # Theorem 5.3
 
-**THEOREM 5.3 (The function space theorem for algebraic lattices).** *Suppose that $a$ and $b$ are closure operations; then so is $a \circ\to b$.*
+## Human-English
 
-The proof comes down to showing that
+@import "1976_Theorem_5_3.english" {code_block=false}
 
-$$(5.11) \quad u(x) \sqsubseteq b(u(a(x))),$$
+## AI: Human-English to AI-Lean
 
-whenever $a$ and $b$ are closure operations. But this is easy by monotonicity. Note that (5.1) is needed.
+**DataTypesAsLattices/Closures/theorem_5_3.lean**
 
-For those interested in topology, one can give a construction of the isolated points of the function space which is much more direct than just taking the functions $b \circ e_n \circ a$, which on the face of it do not tell us too much. But we shall not need this explicit construction here.
+@import "theorem_5_3.lean"
 
-The reason for changing the pairing functions is to be able to form products and sums of closure operations. In the case of products, the analogue of $\otimes$ is straightforward:
+**DataTypesAsLattices/Closures/theorem_5_3_closure.lean**
 
-$$(5.12) \quad a \boxtimes b = \lambda u.\, [a([u]_0), b([u]_1)];$$
+@import "theorem_5_3_closure.lean"
 
-while for sums using $a' = \lambda x.\, 0 \cup a(x - 1) + 1$ and similarly for $b'$ we write:
+## AI: AI-Lean to AI-English
 
-$$(5.13) \quad a \boxplus b = \lambda u.\, ([u]_0 \supset 0,\, 0) \cup ([u]_1 \supset 1,\, 1) \sqsupset [a'([u]_0), \bot],\, [\bot, b'([u]_1)].$$
+@import "theorem_5_3.ai_lean_to_english" {code_block=false}
 
-We can then establish with the aid of (5.8)–(5.10):
+@import "theorem_5_3_closure.ai_lean_to_english" {code_block=false}
 
-**Lean 4**
+## AI: AI-English to Human-English Concordance
 
-- [DataTypesAsLattices/Closures/theorem_5_3.lean](theorem_5_3.lean)
-- [DataTypesAsLattices/Closures/theorem_5_3_closure.lean](theorem_5_3_closure.lean)
+@import "1976_Theorem_5_3.ai_english_concordance" {code_block=false}

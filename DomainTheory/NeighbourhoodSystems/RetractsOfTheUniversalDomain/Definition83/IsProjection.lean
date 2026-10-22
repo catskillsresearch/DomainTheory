@@ -1,6 +1,3 @@
-/-ai
-An approximable self-map is a projection when it is a retraction and it lies under the identity map of its neighbourhood system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82

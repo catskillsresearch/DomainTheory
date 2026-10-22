@@ -1,0 +1,3 @@
+The second curry recovers, at every endomap, the exponential of that endomap with the given endomap.
+
+Extensionality of approximable maps, injectivity of the function-space equivalence after rewriting its two applications, and extensionality on a point reduce the claim to an equality of element actions. Unfold the second curry. Rewrite by the element action of a composite, the approximable map of the curry combinator, the element action of curry, the first curry, the element action of curry again, the element action of the joint evaluator, the round trip from a filter to an approximable map, the element action of the exponential, and the element action of a composite twice.

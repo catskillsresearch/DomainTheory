@@ -1,6 +1,3 @@
-/-ai
-The section of a product map at an input neighborhood relates an output neighborhood of the second factor to a neighborhood of the codomain exactly when the product map relates the product of those two input neighborhoods to that codomain neighborhood. Domain, codomain, the master relation, and right intersection are inherited from the product map. Monotonicity uses that the product neighborhood grows when the second factor grows.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

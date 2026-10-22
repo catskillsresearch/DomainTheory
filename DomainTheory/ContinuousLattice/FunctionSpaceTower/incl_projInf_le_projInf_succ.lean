@@ -1,8 +1,3 @@
-/-ai
-For an element w of the inverse limit and an index n, embedding the n-th component of w into the next level stays below the (n+1)-st component of w.
-
-The projection inequality says that the inclusion of the retraction of the (n+1)-st component lies below that component. Inverse-limit coherence identifies that retraction with the n-th component.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

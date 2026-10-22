@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood belongs to the bottom element of the natural-number system if and only if it is the whole space.
-
-This is the membership criterion for the bottom element of that system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

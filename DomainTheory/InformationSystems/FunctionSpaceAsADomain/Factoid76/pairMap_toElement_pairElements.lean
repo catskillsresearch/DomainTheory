@@ -1,8 +1,3 @@
-/-ai
-The pairing of approximable maps f and g, evaluated at an element z, is the pair of their evaluations at z.
-
-The two sides have equal first projections and equal second projections, by the projection laws for a pairing and for a paired element.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

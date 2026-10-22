@@ -1,9 +1,3 @@
-/-ai
-Canonicalization leaves a code of a level and a mask unchanged when the corresponding
-level set is nonempty, and otherwise replaces it by the fixed master code of the pair of
-zero and one, whose level set is the universe. The choice is the selection function on
-the nonemptiness test.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

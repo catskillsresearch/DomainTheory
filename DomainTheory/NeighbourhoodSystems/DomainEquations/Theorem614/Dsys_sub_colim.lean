@@ -1,8 +1,3 @@
-/-ai
-Each level of the tower is a subdomain of the colimit.
-
-The masters agree by the master computations for the colimit and for the tower. A neighbourhood of the level is a neighbourhood of the colimit at that index. For the consistency clause, a neighbourhood of an intersection that lives at some level is moved by the chain inclusion into the maximum of the two indices, and the chain inclusion of the original level into that maximum supplies the inherited consistency.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

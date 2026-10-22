@@ -1,6 +1,3 @@
-/-ai
-Left insertion of sum tokens into a finite set of tokens of A is left-commutative. The proof cases on the two sum tokens, and each case is either commutativity of insertion or reflexivity.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

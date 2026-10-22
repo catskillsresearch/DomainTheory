@@ -1,8 +1,3 @@
-/-ai
-The tagging of a set of binary strings by a boolean is distinct from the set of all binary strings.
-
-If the tagging were the full set, the empty string would belong to the tagging, and the empty string belongs to no such tagging.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

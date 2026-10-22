@@ -1,51 +1,19 @@
 # Proposition 2.6
 
-**2.6 Proposition.** *With functions from complete lattices to complete lattices, a function of several variables is continuous in the variables jointly iff it is continuous in the variables separately.*
+## Human-English
 
-**Proof:** It will be sufficient to discuss functions of two variables. The product $D \times D'$ of two complete lattices is a complete lattice, and it is easy to check that the induced topology is the product topology. Since projection is continuous, joint continuity implies separate continuity. To check the converse suppose that
+@import "proposition_2_6.english" {code_block=false}
 
-$$
-f : D \times D' \to D''
-$$
+## AI: Human-English to AI-Lean
 
-is a map where the separate continuity holds as follows:
+**ContinuousLattice/ScottMaps/proposition_2_6.lean**
 
-$$
-f(\bigsqcup S, y) = \bigsqcup f(x, y) : x \in S
-$$
+@import "proposition_2_6.lean"
 
-and
+## AI: AI-Lean to AI-English
 
-$$
-f(x, \bigsqcup S') = \bigsqcup f(x, y) : y \in S'
-$$
+@import "proposition_2_6.ai_lean_to_english" {code_block=false}
 
-where $S \subseteq D$ and $S' \subseteq D'$ are directed and $x \in D$ and $y \in D'$. Let now
+## AI: AI-English to Human-English Concordance
 
-$$
-S^* \subseteq D \times D'
-$$
-
-be directed in the product. The projection of $S^*$ to $D$ and of $S^*$ to $D'$ produces directed subsets $S \subseteq D$ and $S' \subseteq D'$. Note that
-
-$$
-\bigsqcup S^* = (\bigsqcup S, \bigsqcup S').
-$$
-
-Thus by assumption
-
-$$
-f(\bigsqcup S^*) = \bigsqcup f(x, y) : x \in S, y \in S'.
-$$
-
-But since $S^*$ is directed, $x \in S$ and $y \in S'$ implies $x \sqsubseteq u$ and $y \sqsubseteq v$ for $(u, v) \in S^*$. Thus by monotonicity of $f$ we can show
-
-$$
-f(\bigsqcup S^*) = \bigsqcup f(u, v) : (u, v) \in S^*
-$$
-
-and that gives the joint continuity. $\square$
-
-**Lean 4**
-
-- [ContinuousLattice/ScottMaps/proposition_2_6.lean](proposition_2_6.lean)
+@import "proposition_2_6.ai_english_concordance" {code_block=false}

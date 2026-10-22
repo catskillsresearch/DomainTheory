@@ -1,8 +1,3 @@
-/-ai
-The function set grows along inclusion of finite sets of raw lambda tokens.
-
-A pair of the smaller set is a function token of that set, hence of the larger set, and therefore a pair of the larger function set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

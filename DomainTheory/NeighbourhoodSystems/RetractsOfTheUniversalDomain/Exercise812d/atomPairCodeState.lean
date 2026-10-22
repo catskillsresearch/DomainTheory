@@ -1,6 +1,3 @@
-/-ai
-The atom-pair code state at a packed bit-source and depth is the recursion that starts from the depth-zero base state and applies one atom-pair step at each later depth. The bits of the bit-source supply the two Boolean choices at every depth.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

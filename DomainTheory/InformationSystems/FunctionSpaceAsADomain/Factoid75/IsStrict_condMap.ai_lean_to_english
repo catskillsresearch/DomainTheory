@@ -1,0 +1,3 @@
+The conditional map determined by two elements is a strict map out of BOOL.
+
+A token in the image of the bottom element of BOOL comes from an input contained in that bottom element, so the input is empty-entailed, and the relation's empty-entailment hypothesis puts the output token in the bottom element of the codomain. The bottom element of the codomain lies below every element.

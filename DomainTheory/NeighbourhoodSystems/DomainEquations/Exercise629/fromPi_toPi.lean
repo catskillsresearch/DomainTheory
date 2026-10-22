@@ -1,8 +1,3 @@
-/-ai
-Assembling the projections of a product element recovers that element.
-
-Extensionality of elements reduces the claim to one neighbourhood. If the assembly contains it, the witnessing finitely supported tuple lies in every projection, and reconstruction from those slices puts the cylinder into the original element. If the original element contains it, the neighbourhood is a finitely supported cylinder, and each projection contains the corresponding coordinate because the element contains that slice and the cylinder is contained in the slice.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

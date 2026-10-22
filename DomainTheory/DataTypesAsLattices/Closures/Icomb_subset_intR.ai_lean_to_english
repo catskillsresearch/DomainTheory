@@ -1,0 +1,3 @@
+The identity combinator is contained in the integer retract. Scott's §5 records this containment as the expansiveness half of the statement that the integer retract is a closure.
+
+A pair (n, m) in the identity has m in en, so it is enough that en be contained in the integer retract applied to en, after which the retract equals the graph of its own application. If en is ⊥, the retract fixes ⊥. If en is a singleton integer, the retract fixes that integer. Otherwise en is nonempty and not a singleton, so the retract sends it to ⊤, taking the least element of en as the witness, and en is contained in ⊤.

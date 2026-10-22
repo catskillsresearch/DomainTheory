@@ -1,8 +1,3 @@
-/-ai
-The function-space retract of two closures is a closure.
-
-The identity combinator is contained in the function-space retract, and the function-space theorem says that the retract is a retract.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

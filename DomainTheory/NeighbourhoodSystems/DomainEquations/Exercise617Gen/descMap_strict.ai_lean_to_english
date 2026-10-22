@@ -1,0 +1,3 @@
+The descent map from the string neighbourhood system into the carrier of a Tsig-algebra is strict.
+
+Strictness is agreement on the bottom element. The bottom element of the string system is the partial element named by the empty string, and the descent of that element is the head recursion of the bottom element at the empty string, which is the bottom element of the carrier.

@@ -1,6 +1,3 @@
-/-ai
-The lazy-naturals expression sends a domain X to the separated sum of the one-point domain with X, the right-hand side of M congruent to {{Λ}} + M.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

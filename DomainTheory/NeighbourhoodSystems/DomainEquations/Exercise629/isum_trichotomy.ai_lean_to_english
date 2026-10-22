@@ -1,0 +1,3 @@
+Every element of the indexed separated sum either contains the tagged copy of some neighbourhood or contains only the master.
+
+Split on whether such a tagged copy exists. If it does, that is the first alternative. If it does not, any neighbourhood of the element is either the master or a tagged copy of a neighbourhood, and the second case is excluded by the case hypothesis.

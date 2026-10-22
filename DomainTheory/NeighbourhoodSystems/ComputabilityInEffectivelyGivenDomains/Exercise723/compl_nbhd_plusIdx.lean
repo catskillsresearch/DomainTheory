@@ -1,8 +1,3 @@
-/-ai
-The complement of the neighbourhood of plusIdx n m is the Minkowski sum of the complement of nbhd n and the complement of nbhd m.
-
-Rewrite all three complements by their bit descriptions and extend in the sum k. From a bit of plusIdx, the bit criterion supplies a summand a at most k with the two residual bits set, and the complementary summand is k minus a. Conversely, a pair of set bits adding to k is a witness of the bit criterion, after cancelling a in the second residual.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

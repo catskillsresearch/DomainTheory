@@ -1,8 +1,3 @@
-/-ai
-Applying the K combinator to an element yields the graph of the constant function with that value.
-
-This is beta reduction for the constant-graph map that returns its function argument, which is continuous because the identity is continuous.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

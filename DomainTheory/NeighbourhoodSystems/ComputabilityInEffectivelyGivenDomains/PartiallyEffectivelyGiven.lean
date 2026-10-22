@@ -1,6 +1,3 @@
-/-ai
-A neighbourhood system is partially effectively given when it admits a consistency presentation, that is, when the consistency relation of an effective presentation is available.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

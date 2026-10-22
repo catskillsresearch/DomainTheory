@@ -1,8 +1,3 @@
-/-ai
-For every approximable endomap f, the map sub f is a finitary projection.
-
-Idempotence says that sub f is a fixed point of sub, and a fixed point of sub is a finitary projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

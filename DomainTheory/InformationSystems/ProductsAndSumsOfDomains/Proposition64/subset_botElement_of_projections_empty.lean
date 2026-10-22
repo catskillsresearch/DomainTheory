@@ -1,8 +1,3 @@
-/-ai
-A finite set of sum tokens whose left and right projections are both empty is contained in the bottom element of the separated sum.
-
-A member of the set is the sum bottom, which belongs to the bottom element by reflexivity of entailment on its singleton, or a left or right token, each of which would lie in the corresponding projection.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

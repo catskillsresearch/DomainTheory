@@ -1,0 +1,3 @@
+Scott 1976, (4.37). If a is a retract, then a composed with elimination composed with the sum of a with itself is typed as an arrow from that sum to a.
+
+Typedness unfolds to the arrow equation, which rewrites by the arrow rule. Graph extensionality and composition are followed by the retract equation of the sum of a with itself and the retract equation of a.

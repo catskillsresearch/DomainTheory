@@ -1,6 +1,3 @@
-/-ai
-The three-variable abstraction of a map out of a double product is the curry of its curry, hence an approximable map into the iterated function space. Each curry removes one variable.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

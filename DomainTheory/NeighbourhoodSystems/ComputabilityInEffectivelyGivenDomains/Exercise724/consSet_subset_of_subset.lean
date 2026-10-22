@@ -1,8 +1,3 @@
-/-ai
-If one set is contained in another, then each i-prefixed copy of the first is contained in the corresponding copy of the second.
-
-An element of the smaller copy is the prepend of an element of the smaller set, hence of an element of the larger set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-The curry isomorphism sends a filter of the function space out of the product to the filter of the curry of its least approximable map.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

@@ -1,8 +1,3 @@
-/-ai
-The typical 𝔊 set belongs to the class 𝔊 of Scott-open sets.
-
-Membership is the theorem that the typical set is Scott open.
-ai-/
 
 module
 

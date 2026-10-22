@@ -1,8 +1,3 @@
-/-ai
-Proposition 5.6(iii) states that composing the constant mapping of a given value after any approximable mapping yields the constant mapping of that same value.
-
-Extensionality through images reduces the equality to an identity at each element. Rewriting by the action of composition and by the constant value of a constant mapping gives that identity.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53

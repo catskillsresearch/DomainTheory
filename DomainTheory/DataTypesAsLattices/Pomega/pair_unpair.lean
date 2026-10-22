@@ -1,8 +1,3 @@
-/-ai
-Pairing the two components of the unpairing of a natural number recovers that number.
-
-The unpairing is a chosen witness that every natural number arises as a Cantor pair, and that witness pairs back to the number.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

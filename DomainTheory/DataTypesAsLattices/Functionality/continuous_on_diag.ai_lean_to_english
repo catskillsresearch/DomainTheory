@@ -1,0 +1,3 @@
+Diagonal continuity, packaged from Theorem 1.3. If a binary operation is Scott-continuous in each argument separately, then its diagonal is Scott-continuous.
+
+At an element x, the diagonal form of Theorem 1.3 identifies membership in the diagonal value with membership in the union, over n, of those indices that lie in the value of the operation on the finite element e n in both arguments whenever e n is contained in x. Both directions of membership extensionality transport that description through the Scott union.

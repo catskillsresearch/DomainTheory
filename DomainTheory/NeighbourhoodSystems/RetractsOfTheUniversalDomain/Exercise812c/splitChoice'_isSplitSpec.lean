@@ -1,8 +1,3 @@
-/-ai
-The choice function splitChoice' satisfies the split specification.
-
-Unfolding the definition, the emptiness-matching hypothesis and the empty-or-neighbourhood hypothesis select the witness branch, and the specification of the chosen witness is the required split data.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

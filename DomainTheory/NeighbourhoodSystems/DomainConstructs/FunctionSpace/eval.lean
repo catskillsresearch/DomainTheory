@@ -1,6 +1,3 @@
-/-ai
-Two-variable evaluation relates a function-space neighborhood, an input neighborhood, and an output neighborhood when every map in the function-space neighborhood relates the input to the output. The master triple is related because every map relates the two masters. For the right intersection, a witness map in the function-space neighborhood shows that the intersection of the two outputs is a neighborhood, and each map intersects its own relations on the right. Monotonicity applies each map's monotonicity to the smaller neighborhoods.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

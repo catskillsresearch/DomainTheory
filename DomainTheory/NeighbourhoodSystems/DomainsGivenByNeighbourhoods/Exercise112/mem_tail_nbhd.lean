@@ -1,8 +1,3 @@
-/-ai
-Every tail is a neighbourhood of the final-segment system.
-
-The tail of an index is the neighbourhood of that index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

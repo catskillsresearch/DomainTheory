@@ -1,6 +1,3 @@
-/-ai
-Unfolding a lambda token into the carrier of the sum of A with its function space, following Scott's matching, sends bottom to the sum bottom and an atom to the left injection. A function token whose input and output lists are well formed is sent to the right injection of those two lists, each lifted to a finset of depth-well-formed tokens and shown consistent.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

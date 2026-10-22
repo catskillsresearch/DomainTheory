@@ -1,6 +1,3 @@
-/-ai
-The table-lookup form of one match step reads previous matches from the table in the first component and applies the match body to the code and the word unpacked from the second component.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

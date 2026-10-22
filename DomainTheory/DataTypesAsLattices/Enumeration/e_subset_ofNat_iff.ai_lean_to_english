@@ -1,0 +1,3 @@
+The enumeration element of a code is contained in the numeral n if and only if the code is 0 or the code is 2 raised to the power n.
+
+If the inclusion holds and the code is 0, that disjunct is immediate. Otherwise every set bit index equals n, because such an index lies in the numeral. The bit at the binary logarithm is set, so the bit at n is set. Comparing test bits, the bit at n agrees with the power of two, and every other bit of the code is unset, because a set bit at a different index would have to equal n. Conversely, if the code is 0 then membership in its enumeration simplifies by the empty enumeration of 0, and if the code is 2 to the power n then membership simplifies by the singleton enumeration of that power and the definition of a numeral.

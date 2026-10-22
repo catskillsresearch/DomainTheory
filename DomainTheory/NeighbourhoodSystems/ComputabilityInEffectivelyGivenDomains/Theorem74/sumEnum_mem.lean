@@ -1,8 +1,3 @@
-/-ai
-Every enumerated set is a neighbourhood of the sum.
-
-Unfold the enumeration and split on the two conditionals. Tag zero is a left copy of a neighbourhood of the first system, tag one is a right copy of a neighbourhood of the second system, and the remaining case is the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

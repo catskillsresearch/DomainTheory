@@ -1,0 +1,1 @@
+The uncurried pairing map sends the pair of a pair of maps, from C to A and from C to B, with an element of C to the pair of the two maps applied to that element. It pairs the application of the first component to the element with the application of the second component to the element.

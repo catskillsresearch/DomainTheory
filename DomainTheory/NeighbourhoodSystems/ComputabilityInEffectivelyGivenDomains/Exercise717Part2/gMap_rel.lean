@@ -1,8 +1,3 @@
-/-ai
-The relation of the universal strict map is the catamorphism relation of its two algebra maps.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

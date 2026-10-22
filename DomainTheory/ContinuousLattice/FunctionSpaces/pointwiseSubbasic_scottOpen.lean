@@ -1,8 +1,3 @@
-/-ai
-If U is Scott-open in D', then for each element x the set of Scott maps whose value at x lies in U is Scott-open in the function space. Suprema of Scott maps are pointwise, and this is the inclusion of the pointwise topology in the Scott topology.
-
-The set is an upper set because U is an upper set and the order on Scott maps is pointwise. If a nonempty directed family has its supremum in the set, the values of the family at x form a nonempty directed set whose supremum lies in U, so some value lies in U and the corresponding map lies in the set.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

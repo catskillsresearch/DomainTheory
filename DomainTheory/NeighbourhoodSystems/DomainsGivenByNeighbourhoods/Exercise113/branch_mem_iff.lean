@@ -1,8 +1,3 @@
-/-ai
-The cone of a finite bit string lies on the branch of an infinite path exactly when the string is a prefix of some finite initial segment of the path.
-
-In the forward direction, the union lemma for the monotone branch sequence supplies an index whose cone contains the cone of the string, and that cone inclusion is a prefix. In the reverse direction, the same union lemma is applied to the cone of the string, which is a neighbourhood, together with the cone inclusion coming from the prefix.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,8 +1,3 @@
-/-ai
-A function from naturals to sets of naturals that sends zero to every natural and sends m + 1 to the successor image of its value at m is equal to the up-set function. Any fixed point of Scott's operator on subsets of pairs of naturals equals the order relation. The order relation is a fixed point of Scott's operator on subsets of pairs of naturals. The least fixed point of the multiplication operator of n is the set of multiples of n.
-
-The numbered name example_421 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise421.upSet_unique

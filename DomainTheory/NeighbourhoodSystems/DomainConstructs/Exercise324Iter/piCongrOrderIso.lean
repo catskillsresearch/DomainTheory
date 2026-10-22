@@ -1,6 +1,3 @@
-/-ai
-A family of order isomorphisms, one at each index, induces an order isomorphism of the dependent products by applying the isomorphism at each coordinate and inverting by the inverse at each coordinate. The two directions cancel pointwise, and a pointwise inequality is an inequality at each coordinate, which each isomorphism preserves and reflects.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

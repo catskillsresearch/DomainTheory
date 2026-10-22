@@ -1,8 +1,3 @@
-/-ai
-If the right injection of a set is a neighbourhood of the abstract sum, then that set is a neighbourhood of the second system.
-
-The sum master contains the untagged token, which does not lie in a right injection, so the neighbourhood is not the master. A left injection of a nonempty neighbourhood contains a left-tagged token, which does not lie in a right injection. The remaining case is a right injection of a neighbourhood of the second system, and injectivity of the right injection identifies the set with that neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

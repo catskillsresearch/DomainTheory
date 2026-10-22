@@ -1,6 +1,3 @@
-/-ai
-On a packed input (z, n), the primitive-recursion term recurses from f(z) with step λy λih. g(pair(z, pair(y, ih))).
-ai-/
 module
 
 public import Mathlib.Computability.RE

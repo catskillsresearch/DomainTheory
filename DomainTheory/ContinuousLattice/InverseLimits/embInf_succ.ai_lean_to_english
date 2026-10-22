@@ -1,0 +1,3 @@
+The stage embeddings satisfy the recursion equation of Scott's section 4: embedding into the limit from stage n+1 after the stage inclusion equals embedding into the limit from stage n.
+
+The underlying sequences are compared at an arbitrary coordinate m. When n and n+1 are both at most m, both components climb, and climbing after the first inclusion agrees with climbing from stage n. When n is at most m but n+1 is not, m equals n; the left side descends by one projection and the retraction-after-inclusion identity returns x, while the right side is x at its own stage. When n is not at most m, n+1 is not at most m either; both components descend, and peeling one projection is undone by the retraction-after-inclusion identity.

@@ -1,8 +1,3 @@
-/-ai
-If a bit-source is non-junk at depth n+1 and its bit at n is false, the universal neighbourhood of the new code is the old neighbourhood with the coded Y neighbourhood removed.
-
-The positive twin agrees with the bit-source at depth n. The bit is 0, so the negative check reads 0, and the new code selects between the old code and its right split according to the positive check, which is the twin's emptiness flag. If that flag reads 0, the twin's code is the left split of the old code. The true-branch formula identifies the left split with the part inside the coded Y sequence, and the union and disjointness of the two splits give the right split as the complement of the left split. If the flag reads 1, the twin is junk, so the old neighbourhood is already disjoint from the coded Y sequence, the code stays the old one, and removing that sequence changes nothing.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

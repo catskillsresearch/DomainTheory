@@ -1,8 +1,3 @@
-/-ai
-The decoding of a combination code presents the intersection of the two decoded presentations.
-
-Rewrite the intersection of presentations by the intersection law, then apply the membership congruence. Membership in the decoded combination agrees with membership in the combination of the decoded lists.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

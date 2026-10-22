@@ -1,6 +1,3 @@
-/-ai
-This instance records that insertion of a folded sum token commutes on the left. Inserting the folds of two sum tokens in either order gives the same finite set, by commutativity of insertion.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,140 +1,553 @@
 # Definition 3.6
 
-We need not enumerate the many corollaries that follow easily now from this result. We mention, however, that composition $f \circ g$ of functions (on continuous lattices) is continuous in the two function variables, where we write
+## Human-English
 
-$$
-(f \circ g)(x) = f(g(x)).
-$$
+@import "1972_Definition_3_6.english" {code_block=false}
 
-What will be useful will be to return at this point to a discussion of the injective properties of continuous lattices. If one continuous lattice is a subspace of another it is of course a retract. This relationship between spaces can be given by a pair of continuous maps
+## AI: Human-English to AI-Lean
 
-$$i : D \to D' \quad \text{and} \quad j : D' \to D,$$
+**ContinuousLattice/FunctionSpaces/IsContinuousLatticeRetraction.lean**
 
-where
+@import "IsContinuousLatticeRetraction.lean"
 
-$$j \circ i = \text{id}_D = \lambda x : D . x.$$
+**ContinuousLattice/FunctionSpaces/ScottMapRetraction.lean**
 
-The composition $i \circ j : D' \to i(D)$ is the retraction onto the subspace corresponding to $D$ under $i$. Now if we have a diagram:
+@import "ScottMapRetraction.lean"
 
-$$
-\begin{gathered}
-D \xrightarrow[\ j\ ]{i} D' 
-f \searrow \qquad \swarrow \tilde{f} = f \circ j 
-D''
-\end{gathered}
-$$
+**ContinuousLattice/FunctionSpaces/IsContinuousLatticeProjection.lean**
 
-the given continuous $f$ is at once extendable from $D$ to $D'$ by the obvious definition of $\tilde{f}$. This $\tilde{f}$ is not the $\bar{f}$ used in the proof of 2.11, and it will be well to sort out the connections. On one side note that if $f'$ is any function which extends $f$, then we have $f = f' \circ i$. But this implies
+@import "IsContinuousLatticeProjection.lean"
 
-$$\tilde{f} = f \circ j = f' \circ i \circ j,$$
+**ContinuousLattice/FunctionSpaces/ScottMapProjection.lean**
 
-which shows that $\tilde{f}$ is a "degraded" version of $f'$. There is one situation where this type of degrading is especially nice.
+@import "ScottMapProjection.lean"
 
-**3.6 Definition.** A continuous lattice $D$ is said to be a *projection* of a continuous lattice $D'$ iff there are a pair of continuous maps
+**ContinuousLattice/FunctionSpaces/const.lean**
 
-$$i : D \to D' \quad \text{and} \quad j : D' \to D$$
+@import "const.lean"
 
-such that not only
+**ContinuousLattice/FunctionSpaces/bot.lean**
 
-$$j \circ i = \text{id}_D,$$
+@import "bot.lean"
 
-but also
+**ContinuousLattice/FunctionSpaces/continuousMapInducedPiTopology.lean**
 
-$$i \circ j \sqsubseteq \text{id}_{D'}.$$
+@import "continuousMapInducedPiTopology.lean"
 
-Thus, in case our retraction is a projection, we have $\tilde{f} \sqsubseteq f'$, which means that $\tilde{f}$ is the *minimal* extension of $f \in [D \to D'']$ to a function in $[D' \to D'']$. We will discuss the nature of $\tilde{f}$ in a moment. But before we do we pause to remark that the correspondence $f \rightsquigarrow \tilde{f}$ is *continuous*, and this fact is easily extended.
+**ContinuousLattice/FunctionSpaces/le.lean**
 
-**Retract.** `IsContinuousLatticeRetraction` and `IsContinuousLatticeProjection` are this definition: Scott maps $i$ and $j$ with $j \circ i = \mathrm{id}$, and, for a projection, also $i \circ j \sqsubseteq \mathrm{id}$. The function-space and inverse-limit proofs are built on them. The subspace retract used for injective spaces is [Proposition 1.4](../Injective/1972_Proposition_1_4.md), and the idempotent representation on a power of $\mathbb{O}$ is [Theorem 2.12](../Theorem212/1972_Theorem_2_12.md).
+@import "le.lean"
 
-**Lean 4**
+**ContinuousLattice/FunctionSpaces/le_antisymm'.lean**
 
-- [ContinuousLattice/FunctionSpaces/IsContinuousLatticeRetraction.lean](IsContinuousLatticeRetraction.lean)
-- [ContinuousLattice/FunctionSpaces/ScottMapRetraction.lean](ScottMapRetraction.lean)
-- [ContinuousLattice/FunctionSpaces/IsContinuousLatticeProjection.lean](IsContinuousLatticeProjection.lean)
-- [ContinuousLattice/FunctionSpaces/ScottMapProjection.lean](ScottMapProjection.lean)
-- [ContinuousLattice/FunctionSpaces/const.lean](const.lean)
-- [ContinuousLattice/FunctionSpaces/bot.lean](bot.lean)
-- [ContinuousLattice/FunctionSpaces/continuousMapInducedPiTopology.lean](continuousMapInducedPiTopology.lean)
-- [ContinuousLattice/FunctionSpaces/le.lean](le.lean)
-- [ContinuousLattice/FunctionSpaces/le_antisymm'.lean](le_antisymm'.lean)
-- [ContinuousLattice/FunctionSpaces/le_refl'.lean](le_refl'.lean)
-- [ContinuousLattice/FunctionSpaces/le_trans'.lean](le_trans'.lean)
-- [ContinuousLattice/FunctionSpaces/lt.lean](lt.lean)
-- [ContinuousLattice/FunctionSpaces/lt_iff_le_not_ge'.lean](lt_iff_le_not_ge'.lean)
-- [ContinuousLattice/FunctionSpaces/BasicInst28.lean](BasicInst28.lean)
-- [ContinuousLattice/FunctionSpaces/le_def.lean](le_def.lean)
-- [ContinuousLattice/FunctionSpaces/preservesDirectedSup_coe.lean](preservesDirectedSup_coe.lean)
-- [ContinuousLattice/FunctionSpaces/pointwise_sSup_preservesDirectedSup.lean](pointwise_sSup_preservesDirectedSup.lean)
-- [ContinuousLattice/FunctionSpaces/pointwise_sup_preservesDirectedSup.lean](pointwise_sup_preservesDirectedSup.lean)
-- [ContinuousLattice/FunctionSpaces/sSupMaps_continuous.lean](sSupMaps_continuous.lean)
-- [ContinuousLattice/FunctionSpaces/sSupMaps.lean](sSupMaps.lean)
-- [ContinuousLattice/FunctionSpaces/BasicInst30.lean](BasicInst30.lean)
-- [ContinuousLattice/FunctionSpaces/sSup_apply.lean](sSup_apply.lean)
-- [ContinuousLattice/FunctionSpaces/isLUB_sSup.lean](isLUB_sSup.lean)
-- [ContinuousLattice/FunctionSpaces/BasicInst33.lean](BasicInst33.lean)
-- [ContinuousLattice/FunctionSpaces/idMap.lean](idMap.lean)
-- [ContinuousLattice/FunctionSpaces/idMap_apply.lean](idMap_apply.lean)
-- [ContinuousLattice/FunctionSpaces/comp_apply.lean](comp_apply.lean)
-- [ContinuousLattice/FunctionSpaces/bot_apply.lean](bot_apply.lean)
-- [ContinuousLattice/FunctionSpaces/const_apply.lean](const_apply.lean)
-- [ContinuousLattice/FunctionSpaces/sSup_image_prod_mk_left.lean](sSup_image_prod_mk_left.lean)
-- [ContinuousLattice/FunctionSpaces/curry_right_preservesDirectedSup.lean](curry_right_preservesDirectedSup.lean)
-- [ContinuousLattice/FunctionSpaces/sSup_image_prod_mk_right.lean](sSup_image_prod_mk_right.lean)
-- [ContinuousLattice/FunctionSpaces/curry_left_preservesDirectedSup.lean](curry_left_preservesDirectedSup.lean)
-- [ContinuousLattice/FunctionSpaces/scottFunctionEvalSubbasis.lean](scottFunctionEvalSubbasis.lean)
-- [ContinuousLattice/FunctionSpaces/scottFunctionTopology.lean](scottFunctionTopology.lean)
-- [ContinuousLattice/FunctionSpaces/scottLambdaAt.lean](scottLambdaAt.lean)
-- [ContinuousLattice/FunctionSpaces/lambda_outer_preservesDirectedSup.lean](lambda_outer_preservesDirectedSup.lean)
-- [ContinuousLattice/FunctionSpaces/scottLambda.lean](scottLambda.lean)
-- [ContinuousLattice/FunctionSpaces/scottLambda_apply.lean](scottLambda_apply.lean)
-- [ContinuousLattice/FunctionSpaces/IsProjection.lean](IsProjection.lean)
-- [ContinuousLattice/FunctionSpaces/Projections.lean](Projections.lean)
-- [ContinuousLattice/FunctionSpaces/ambientSSup.lean](ambientSSup.lean)
-- [ContinuousLattice/FunctionSpaces/converseRetr.lean](converseRetr.lean)
-- [ContinuousLattice/FunctionSpaces/converseRetr_mono.lean](converseRetr_mono.lean)
-- [ContinuousLattice/FunctionSpaces/converseRetr_preservesDirectedSup.lean](converseRetr_preservesDirectedSup.lean)
-- [ContinuousLattice/FunctionSpaces/incl_converseRetr_le.lean](incl_converseRetr_le.lean)
-- [ContinuousLattice/FunctionSpaces/incl_sup_of_preservesSSup.lean](incl_sup_of_preservesSSup.lean)
-- [ContinuousLattice/FunctionSpaces/incl_mono_of_preservesSSup.lean](incl_mono_of_preservesSSup.lean)
-- [ContinuousLattice/FunctionSpaces/isProjection_iff.lean](isProjection_iff.lean)
-- [ContinuousLattice/FunctionSpaces/isProjection_bot.lean](isProjection_bot.lean)
-- [ContinuousLattice/FunctionSpaces/isProjection_directedSup.lean](isProjection_directedSup.lean)
-- [ContinuousLattice/FunctionSpaces/le_of_incl_le.lean](le_of_incl_le.lean)
-- [ContinuousLattice/FunctionSpaces/converseRetr_incl.lean](converseRetr_incl.lean)
-- [ContinuousLattice/FunctionSpaces/converseProjection.lean](converseProjection.lean)
-- [ContinuousLattice/FunctionSpaces/scottMapInducedPiTopology.lean](scottMapInducedPiTopology.lean)
-- [ContinuousLattice/FunctionSpaces/scottMapPointwiseSubbasis.lean](scottMapPointwiseSubbasis.lean)
-- [ContinuousLattice/FunctionSpaces/scottMapPointwiseTopology.lean](scottMapPointwiseTopology.lean)
-- [ContinuousLattice/FunctionSpaces/stepFun.lean](stepFun.lean)
-- [ContinuousLattice/FunctionSpaces/stepFun_of_not_wayBelow.lean](stepFun_of_not_wayBelow.lean)
-- [ContinuousLattice/FunctionSpaces/stepFun_of_wayBelow.lean](stepFun_of_wayBelow.lean)
-- [ContinuousLattice/FunctionSpaces/stepFun_preservesDirectedSup.lean](stepFun_preservesDirectedSup.lean)
-- [ContinuousLattice/FunctionSpaces/stepMap.lean](stepMap.lean)
-- [ContinuousLattice/FunctionSpaces/sup.lean](sup.lean)
-- [ContinuousLattice/FunctionSpaces/finsetSupOf.lean](finsetSupOf.lean)
-- [ContinuousLattice/FunctionSpaces/directedOn_finsetSupOf.lean](directedOn_finsetSupOf.lean)
-- [ContinuousLattice/FunctionSpaces/mem_finsetSupOf_of_mem.lean](mem_finsetSupOf_of_mem.lean)
-- [ContinuousLattice/FunctionSpaces/le_sSup_finsetSupOf.lean](le_sSup_finsetSupOf.lean)
-- [ContinuousLattice/FunctionSpaces/sSup_le_finsetSupOf.lean](sSup_le_finsetSupOf.lean)
-- [ContinuousLattice/FunctionSpaces/sSup_finsetSupOf.lean](sSup_finsetSupOf.lean)
-- [ContinuousLattice/FunctionSpaces/sup_apply.lean](sup_apply.lean)
-- [ContinuousLattice/FunctionSpaces/isProjection_sup.lean](isProjection_sup.lean)
-- [ContinuousLattice/FunctionSpaces/isProjection_finsetSup.lean](isProjection_finsetSup.lean)
-- [ContinuousLattice/FunctionSpaces/isProjection_sSup.lean](isProjection_sSup.lean)
-- [ContinuousLattice/FunctionSpaces/instSupSet.lean](instSupSet.lean)
-- [ContinuousLattice/FunctionSpaces/Basic/isLUB_sSup.lean](Basic/isLUB_sSup.lean)
-- [ContinuousLattice/FunctionSpaces/instCompleteLattice.lean](instCompleteLattice.lean)
-- [ContinuousLattice/FunctionSpaces/con_.lean](con_.lean)
-- [ContinuousLattice/FunctionSpaces/con_apply.lean](con_apply.lean)
-- [ContinuousLattice/FunctionSpaces/min.lean](min.lean)
-- [ContinuousLattice/FunctionSpaces/min_apply.lean](min_apply.lean)
-- [ContinuousLattice/FunctionSpaces/projection.lean](projection.lean)
-- [ContinuousLattice/FunctionSpaces/toOrderHom.lean](toOrderHom.lean)
-- [ContinuousLattice/FunctionSpaces/fix.lean](fix.lean)
-- [ContinuousLattice/FunctionSpaces/fix_eq.lean](fix_eq.lean)
-- [ContinuousLattice/FunctionSpaces/fix_le.lean](fix_le.lean)
-- [ContinuousLattice/FunctionSpaces/fix_mono.lean](fix_mono.lean)
-- [ContinuousLattice/FunctionSpaces/fix_preservesDirectedSup.lean](fix_preservesDirectedSup.lean)
-- [ContinuousLattice/FunctionSpaces/fixMap.lean](fixMap.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_sSup.lean](theorem_3_3_sSup.lean)
-- [ContinuousLattice/FunctionSpaces/theorem_3_3_sup.lean](theorem_3_3_sup.lean)
+@import "le_antisymm'.lean"
+
+**ContinuousLattice/FunctionSpaces/le_refl'.lean**
+
+@import "le_refl'.lean"
+
+**ContinuousLattice/FunctionSpaces/le_trans'.lean**
+
+@import "le_trans'.lean"
+
+**ContinuousLattice/FunctionSpaces/lt.lean**
+
+@import "lt.lean"
+
+**ContinuousLattice/FunctionSpaces/lt_iff_le_not_ge'.lean**
+
+@import "lt_iff_le_not_ge'.lean"
+
+**ContinuousLattice/FunctionSpaces/BasicInst28.lean**
+
+@import "BasicInst28.lean"
+
+**ContinuousLattice/FunctionSpaces/le_def.lean**
+
+@import "le_def.lean"
+
+**ContinuousLattice/FunctionSpaces/preservesDirectedSup_coe.lean**
+
+@import "preservesDirectedSup_coe.lean"
+
+**ContinuousLattice/FunctionSpaces/pointwise_sSup_preservesDirectedSup.lean**
+
+@import "pointwise_sSup_preservesDirectedSup.lean"
+
+**ContinuousLattice/FunctionSpaces/pointwise_sup_preservesDirectedSup.lean**
+
+@import "pointwise_sup_preservesDirectedSup.lean"
+
+**ContinuousLattice/FunctionSpaces/sSupMaps_continuous.lean**
+
+@import "sSupMaps_continuous.lean"
+
+**ContinuousLattice/FunctionSpaces/sSupMaps.lean**
+
+@import "sSupMaps.lean"
+
+**ContinuousLattice/FunctionSpaces/BasicInst30.lean**
+
+@import "BasicInst30.lean"
+
+**ContinuousLattice/FunctionSpaces/sSup_apply.lean**
+
+@import "sSup_apply.lean"
+
+**ContinuousLattice/FunctionSpaces/isLUB_sSup.lean**
+
+@import "isLUB_sSup.lean"
+
+**ContinuousLattice/FunctionSpaces/BasicInst33.lean**
+
+@import "BasicInst33.lean"
+
+**ContinuousLattice/FunctionSpaces/idMap.lean**
+
+@import "idMap.lean"
+
+**ContinuousLattice/FunctionSpaces/idMap_apply.lean**
+
+@import "idMap_apply.lean"
+
+**ContinuousLattice/FunctionSpaces/comp_apply.lean**
+
+@import "comp_apply.lean"
+
+**ContinuousLattice/FunctionSpaces/bot_apply.lean**
+
+@import "bot_apply.lean"
+
+**ContinuousLattice/FunctionSpaces/const_apply.lean**
+
+@import "const_apply.lean"
+
+**ContinuousLattice/FunctionSpaces/sSup_image_prod_mk_left.lean**
+
+@import "sSup_image_prod_mk_left.lean"
+
+**ContinuousLattice/FunctionSpaces/curry_right_preservesDirectedSup.lean**
+
+@import "curry_right_preservesDirectedSup.lean"
+
+**ContinuousLattice/FunctionSpaces/sSup_image_prod_mk_right.lean**
+
+@import "sSup_image_prod_mk_right.lean"
+
+**ContinuousLattice/FunctionSpaces/curry_left_preservesDirectedSup.lean**
+
+@import "curry_left_preservesDirectedSup.lean"
+
+**ContinuousLattice/FunctionSpaces/scottFunctionEvalSubbasis.lean**
+
+@import "scottFunctionEvalSubbasis.lean"
+
+**ContinuousLattice/FunctionSpaces/scottFunctionTopology.lean**
+
+@import "scottFunctionTopology.lean"
+
+**ContinuousLattice/FunctionSpaces/scottLambdaAt.lean**
+
+@import "scottLambdaAt.lean"
+
+**ContinuousLattice/FunctionSpaces/lambda_outer_preservesDirectedSup.lean**
+
+@import "lambda_outer_preservesDirectedSup.lean"
+
+**ContinuousLattice/FunctionSpaces/scottLambda.lean**
+
+@import "scottLambda.lean"
+
+**ContinuousLattice/FunctionSpaces/scottLambda_apply.lean**
+
+@import "scottLambda_apply.lean"
+
+**ContinuousLattice/FunctionSpaces/IsProjection.lean**
+
+@import "IsProjection.lean"
+
+**ContinuousLattice/FunctionSpaces/Projections.lean**
+
+@import "Projections.lean"
+
+**ContinuousLattice/FunctionSpaces/ambientSSup.lean**
+
+@import "ambientSSup.lean"
+
+**ContinuousLattice/FunctionSpaces/converseRetr.lean**
+
+@import "converseRetr.lean"
+
+**ContinuousLattice/FunctionSpaces/converseRetr_mono.lean**
+
+@import "converseRetr_mono.lean"
+
+**ContinuousLattice/FunctionSpaces/converseRetr_preservesDirectedSup.lean**
+
+@import "converseRetr_preservesDirectedSup.lean"
+
+**ContinuousLattice/FunctionSpaces/incl_converseRetr_le.lean**
+
+@import "incl_converseRetr_le.lean"
+
+**ContinuousLattice/FunctionSpaces/incl_sup_of_preservesSSup.lean**
+
+@import "incl_sup_of_preservesSSup.lean"
+
+**ContinuousLattice/FunctionSpaces/incl_mono_of_preservesSSup.lean**
+
+@import "incl_mono_of_preservesSSup.lean"
+
+**ContinuousLattice/FunctionSpaces/isProjection_iff.lean**
+
+@import "isProjection_iff.lean"
+
+**ContinuousLattice/FunctionSpaces/isProjection_bot.lean**
+
+@import "isProjection_bot.lean"
+
+**ContinuousLattice/FunctionSpaces/isProjection_directedSup.lean**
+
+@import "isProjection_directedSup.lean"
+
+**ContinuousLattice/FunctionSpaces/le_of_incl_le.lean**
+
+@import "le_of_incl_le.lean"
+
+**ContinuousLattice/FunctionSpaces/converseRetr_incl.lean**
+
+@import "converseRetr_incl.lean"
+
+**ContinuousLattice/FunctionSpaces/converseProjection.lean**
+
+@import "converseProjection.lean"
+
+**ContinuousLattice/FunctionSpaces/scottMapInducedPiTopology.lean**
+
+@import "scottMapInducedPiTopology.lean"
+
+**ContinuousLattice/FunctionSpaces/scottMapPointwiseSubbasis.lean**
+
+@import "scottMapPointwiseSubbasis.lean"
+
+**ContinuousLattice/FunctionSpaces/scottMapPointwiseTopology.lean**
+
+@import "scottMapPointwiseTopology.lean"
+
+**ContinuousLattice/FunctionSpaces/stepFun.lean**
+
+@import "stepFun.lean"
+
+**ContinuousLattice/FunctionSpaces/stepFun_of_not_wayBelow.lean**
+
+@import "stepFun_of_not_wayBelow.lean"
+
+**ContinuousLattice/FunctionSpaces/stepFun_of_wayBelow.lean**
+
+@import "stepFun_of_wayBelow.lean"
+
+**ContinuousLattice/FunctionSpaces/stepFun_preservesDirectedSup.lean**
+
+@import "stepFun_preservesDirectedSup.lean"
+
+**ContinuousLattice/FunctionSpaces/stepMap.lean**
+
+@import "stepMap.lean"
+
+**ContinuousLattice/FunctionSpaces/sup.lean**
+
+@import "sup.lean"
+
+**ContinuousLattice/FunctionSpaces/finsetSupOf.lean**
+
+@import "finsetSupOf.lean"
+
+**ContinuousLattice/FunctionSpaces/directedOn_finsetSupOf.lean**
+
+@import "directedOn_finsetSupOf.lean"
+
+**ContinuousLattice/FunctionSpaces/mem_finsetSupOf_of_mem.lean**
+
+@import "mem_finsetSupOf_of_mem.lean"
+
+**ContinuousLattice/FunctionSpaces/le_sSup_finsetSupOf.lean**
+
+@import "le_sSup_finsetSupOf.lean"
+
+**ContinuousLattice/FunctionSpaces/sSup_le_finsetSupOf.lean**
+
+@import "sSup_le_finsetSupOf.lean"
+
+**ContinuousLattice/FunctionSpaces/sSup_finsetSupOf.lean**
+
+@import "sSup_finsetSupOf.lean"
+
+**ContinuousLattice/FunctionSpaces/sup_apply.lean**
+
+@import "sup_apply.lean"
+
+**ContinuousLattice/FunctionSpaces/isProjection_sup.lean**
+
+@import "isProjection_sup.lean"
+
+**ContinuousLattice/FunctionSpaces/isProjection_finsetSup.lean**
+
+@import "isProjection_finsetSup.lean"
+
+**ContinuousLattice/FunctionSpaces/isProjection_sSup.lean**
+
+@import "isProjection_sSup.lean"
+
+**ContinuousLattice/FunctionSpaces/instSupSet.lean**
+
+@import "instSupSet.lean"
+
+**ContinuousLattice/FunctionSpaces/Basic/isLUB_sSup.lean**
+
+@import "Basic/isLUB_sSup.lean"
+
+**ContinuousLattice/FunctionSpaces/instCompleteLattice.lean**
+
+@import "instCompleteLattice.lean"
+
+**ContinuousLattice/FunctionSpaces/con_.lean**
+
+@import "con_.lean"
+
+**ContinuousLattice/FunctionSpaces/con_apply.lean**
+
+@import "con_apply.lean"
+
+**ContinuousLattice/FunctionSpaces/min.lean**
+
+@import "min.lean"
+
+**ContinuousLattice/FunctionSpaces/min_apply.lean**
+
+@import "min_apply.lean"
+
+**ContinuousLattice/FunctionSpaces/projection.lean**
+
+@import "projection.lean"
+
+**ContinuousLattice/FunctionSpaces/toOrderHom.lean**
+
+@import "toOrderHom.lean"
+
+**ContinuousLattice/FunctionSpaces/fix.lean**
+
+@import "fix.lean"
+
+**ContinuousLattice/FunctionSpaces/fix_eq.lean**
+
+@import "fix_eq.lean"
+
+**ContinuousLattice/FunctionSpaces/fix_le.lean**
+
+@import "fix_le.lean"
+
+**ContinuousLattice/FunctionSpaces/fix_mono.lean**
+
+@import "fix_mono.lean"
+
+**ContinuousLattice/FunctionSpaces/fix_preservesDirectedSup.lean**
+
+@import "fix_preservesDirectedSup.lean"
+
+**ContinuousLattice/FunctionSpaces/fixMap.lean**
+
+@import "fixMap.lean"
+
+**ContinuousLattice/FunctionSpaces/theorem_3_3_sSup.lean**
+
+@import "theorem_3_3_sSup.lean"
+
+**ContinuousLattice/FunctionSpaces/theorem_3_3_sup.lean**
+
+@import "theorem_3_3_sup.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "IsContinuousLatticeRetraction.ai_lean_to_english" {code_block=false}
+
+@import "ScottMapRetraction.ai_lean_to_english" {code_block=false}
+
+@import "IsContinuousLatticeProjection.ai_lean_to_english" {code_block=false}
+
+@import "ScottMapProjection.ai_lean_to_english" {code_block=false}
+
+@import "const.ai_lean_to_english" {code_block=false}
+
+@import "bot.ai_lean_to_english" {code_block=false}
+
+@import "continuousMapInducedPiTopology.ai_lean_to_english" {code_block=false}
+
+@import "le.ai_lean_to_english" {code_block=false}
+
+@import "le_antisymm'.ai_lean_to_english" {code_block=false}
+
+@import "le_refl'.ai_lean_to_english" {code_block=false}
+
+@import "le_trans'.ai_lean_to_english" {code_block=false}
+
+@import "lt.ai_lean_to_english" {code_block=false}
+
+@import "lt_iff_le_not_ge'.ai_lean_to_english" {code_block=false}
+
+@import "BasicInst28.ai_lean_to_english" {code_block=false}
+
+@import "le_def.ai_lean_to_english" {code_block=false}
+
+@import "preservesDirectedSup_coe.ai_lean_to_english" {code_block=false}
+
+@import "pointwise_sSup_preservesDirectedSup.ai_lean_to_english" {code_block=false}
+
+@import "pointwise_sup_preservesDirectedSup.ai_lean_to_english" {code_block=false}
+
+@import "sSupMaps_continuous.ai_lean_to_english" {code_block=false}
+
+@import "sSupMaps.ai_lean_to_english" {code_block=false}
+
+@import "BasicInst30.ai_lean_to_english" {code_block=false}
+
+@import "sSup_apply.ai_lean_to_english" {code_block=false}
+
+@import "isLUB_sSup.ai_lean_to_english" {code_block=false}
+
+@import "BasicInst33.ai_lean_to_english" {code_block=false}
+
+@import "idMap.ai_lean_to_english" {code_block=false}
+
+@import "idMap_apply.ai_lean_to_english" {code_block=false}
+
+@import "comp_apply.ai_lean_to_english" {code_block=false}
+
+@import "bot_apply.ai_lean_to_english" {code_block=false}
+
+@import "const_apply.ai_lean_to_english" {code_block=false}
+
+@import "sSup_image_prod_mk_left.ai_lean_to_english" {code_block=false}
+
+@import "curry_right_preservesDirectedSup.ai_lean_to_english" {code_block=false}
+
+@import "sSup_image_prod_mk_right.ai_lean_to_english" {code_block=false}
+
+@import "curry_left_preservesDirectedSup.ai_lean_to_english" {code_block=false}
+
+@import "scottFunctionEvalSubbasis.ai_lean_to_english" {code_block=false}
+
+@import "scottFunctionTopology.ai_lean_to_english" {code_block=false}
+
+@import "scottLambdaAt.ai_lean_to_english" {code_block=false}
+
+@import "lambda_outer_preservesDirectedSup.ai_lean_to_english" {code_block=false}
+
+@import "scottLambda.ai_lean_to_english" {code_block=false}
+
+@import "scottLambda_apply.ai_lean_to_english" {code_block=false}
+
+@import "IsProjection.ai_lean_to_english" {code_block=false}
+
+@import "Projections.ai_lean_to_english" {code_block=false}
+
+@import "ambientSSup.ai_lean_to_english" {code_block=false}
+
+@import "converseRetr.ai_lean_to_english" {code_block=false}
+
+@import "converseRetr_mono.ai_lean_to_english" {code_block=false}
+
+@import "converseRetr_preservesDirectedSup.ai_lean_to_english" {code_block=false}
+
+@import "incl_converseRetr_le.ai_lean_to_english" {code_block=false}
+
+@import "incl_sup_of_preservesSSup.ai_lean_to_english" {code_block=false}
+
+@import "incl_mono_of_preservesSSup.ai_lean_to_english" {code_block=false}
+
+@import "isProjection_iff.ai_lean_to_english" {code_block=false}
+
+@import "isProjection_bot.ai_lean_to_english" {code_block=false}
+
+@import "isProjection_directedSup.ai_lean_to_english" {code_block=false}
+
+@import "le_of_incl_le.ai_lean_to_english" {code_block=false}
+
+@import "converseRetr_incl.ai_lean_to_english" {code_block=false}
+
+@import "converseProjection.ai_lean_to_english" {code_block=false}
+
+@import "scottMapInducedPiTopology.ai_lean_to_english" {code_block=false}
+
+@import "scottMapPointwiseSubbasis.ai_lean_to_english" {code_block=false}
+
+@import "scottMapPointwiseTopology.ai_lean_to_english" {code_block=false}
+
+@import "stepFun.ai_lean_to_english" {code_block=false}
+
+@import "stepFun_of_not_wayBelow.ai_lean_to_english" {code_block=false}
+
+@import "stepFun_of_wayBelow.ai_lean_to_english" {code_block=false}
+
+@import "stepFun_preservesDirectedSup.ai_lean_to_english" {code_block=false}
+
+@import "stepMap.ai_lean_to_english" {code_block=false}
+
+@import "sup.ai_lean_to_english" {code_block=false}
+
+@import "finsetSupOf.ai_lean_to_english" {code_block=false}
+
+@import "directedOn_finsetSupOf.ai_lean_to_english" {code_block=false}
+
+@import "mem_finsetSupOf_of_mem.ai_lean_to_english" {code_block=false}
+
+@import "le_sSup_finsetSupOf.ai_lean_to_english" {code_block=false}
+
+@import "sSup_le_finsetSupOf.ai_lean_to_english" {code_block=false}
+
+@import "sSup_finsetSupOf.ai_lean_to_english" {code_block=false}
+
+@import "sup_apply.ai_lean_to_english" {code_block=false}
+
+@import "isProjection_sup.ai_lean_to_english" {code_block=false}
+
+@import "isProjection_finsetSup.ai_lean_to_english" {code_block=false}
+
+@import "isProjection_sSup.ai_lean_to_english" {code_block=false}
+
+@import "instSupSet.ai_lean_to_english" {code_block=false}
+
+@import "Basic/isLUB_sSup.ai_lean_to_english" {code_block=false}
+
+@import "instCompleteLattice.ai_lean_to_english" {code_block=false}
+
+@import "con_.ai_lean_to_english" {code_block=false}
+
+@import "con_apply.ai_lean_to_english" {code_block=false}
+
+@import "min.ai_lean_to_english" {code_block=false}
+
+@import "min_apply.ai_lean_to_english" {code_block=false}
+
+@import "projection.ai_lean_to_english" {code_block=false}
+
+@import "toOrderHom.ai_lean_to_english" {code_block=false}
+
+@import "fix.ai_lean_to_english" {code_block=false}
+
+@import "fix_eq.ai_lean_to_english" {code_block=false}
+
+@import "fix_le.ai_lean_to_english" {code_block=false}
+
+@import "fix_mono.ai_lean_to_english" {code_block=false}
+
+@import "fix_preservesDirectedSup.ai_lean_to_english" {code_block=false}
+
+@import "fixMap.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_3_sSup.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_3_sup.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Definition_3_6.ai_english_concordance" {code_block=false}

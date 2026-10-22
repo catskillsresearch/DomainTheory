@@ -1,6 +1,3 @@
-/-ai
-The product combinator of two self-maps of the universal domain is the product embedding composed after the pairing of the first map after the left projection with the second map after the right projection, composed after the product projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

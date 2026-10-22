@@ -1,8 +1,3 @@
-/-ai
-The term-level dollar step is Scott continuous as a map of s.
-
-It is the graph of a family of graphs. For each u the inner graph is Scott continuous in s because the body is Scott continuous in s for each z, and the outer graph is therefore Scott continuous in s.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

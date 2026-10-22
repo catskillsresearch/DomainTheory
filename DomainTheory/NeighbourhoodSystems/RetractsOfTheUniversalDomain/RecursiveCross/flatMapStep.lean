@@ -1,6 +1,3 @@
-/-ai
-The fold step for flatMapCode pops y from the packed argument and appends f of the pair of the fixed parameter x and y onto the accumulator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

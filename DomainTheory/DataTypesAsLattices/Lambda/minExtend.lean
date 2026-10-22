@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (2.2): the minimal, or distributive, extension of a sequence at a set is the union of the values of the sequence at the indices that belong to the set.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

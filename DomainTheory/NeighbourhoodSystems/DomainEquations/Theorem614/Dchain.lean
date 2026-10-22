@@ -1,8 +1,3 @@
-/-ai
-Each system of the tower is a subdomain of the next system.
-
-This is the subdomain component of the iteration at that level.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

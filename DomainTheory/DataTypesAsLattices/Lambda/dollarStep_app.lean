@@ -1,8 +1,3 @@
-/-ai
-Applying the dollar step at s to u yields the graph of z ↦ the body at s, u, and z.
-
-This is the beta law for that graph, using Scott continuity of the body in u.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

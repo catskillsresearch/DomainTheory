@@ -1,8 +1,3 @@
-/-ai
-Two approximable mappings are equal whenever they relate exactly the same pairs of finite sets.
-
-The underlying relations agree by functional and propositional extensionality. Substituting that agreement leaves the two structure packages identical.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

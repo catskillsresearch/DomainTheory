@@ -1,8 +1,3 @@
-/-ai
-If every component of a family Y belongs to MemA, then the right injection of the proper product of Y is a neighbourhood of the separated sum Aⁿ + Aⁿ.
-
-It is the right-summand clause, and apow_mem_prodN supplies the product membership.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

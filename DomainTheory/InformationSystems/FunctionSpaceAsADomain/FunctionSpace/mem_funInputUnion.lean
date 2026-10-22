@@ -1,8 +1,3 @@
-/-ai
-An input token lies in the input union of a finite set of function tokens if and only if it lies in the input of some token of that set.
-
-Unfolding the input union, the claim is the membership law for the fold of input-union applied to the underlying multiset of the set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

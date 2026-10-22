@@ -1,8 +1,3 @@
-/-ai
-The underlying approximable map of the functor applied to a strict map is the indexed sum of the underlying map.
-
-The two sides are the same by definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

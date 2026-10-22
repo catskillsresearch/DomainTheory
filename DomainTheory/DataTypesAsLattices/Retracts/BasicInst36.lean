@@ -1,6 +1,3 @@
-/-ai
-The fixed-point set of the continuous map named by an element of Pω is given the complete lattice structure carried by the fixed points of a Scott-continuous endomap.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

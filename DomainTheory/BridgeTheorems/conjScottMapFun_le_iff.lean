@@ -1,8 +1,3 @@
-/-ai
-Conjugated Scott maps are pointwise ordered if and only if the underlying Scott maps are ordered.
-
-If the conjugates are pointwise ordered, the inequality at the image of an element rewrites, after cancelling the domain isomorphism with its inverse, as an inequality of the codomain isomorphism applied to the two maps, and the codomain isomorphism reflects the order. Conversely, an inequality of Scott maps transports along the monotone codomain isomorphism after the argument is pulled back by the inverse domain isomorphism.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

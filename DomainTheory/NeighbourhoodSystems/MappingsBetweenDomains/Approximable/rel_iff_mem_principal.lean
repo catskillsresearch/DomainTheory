@@ -1,8 +1,3 @@
-/-ai
-For a neighbourhood X, an approximable map relates X to Y if and only if Y belongs to the elementwise image of the principal element on X.
-
-In one direction X belongs to its own principal element. In the other direction a witnessing neighbourhood of that principal contains X, and monotonicity of the relation replaces the input by X.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,6 +1,3 @@
-/-ai
-Scott takes every finite subset of the tokens of V to be consistent. The consistency predicate is the constantly true proposition.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

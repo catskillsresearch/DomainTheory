@@ -1,8 +1,3 @@
-/-ai
-The atom of a positive list and a negative list is empty if and only if the positive meet-fold reports failure, or the neighbourhood of the resulting index is contained in the neighbourhood of some negative index.
-
-The meet-fold specification splits on the success bit. If it is zero, the positive index set is empty, so the atom is empty and the failure disjunct holds. If it is one, the index set of the meet index equals the positive index set. Emptiness of the atom then rules out the meet index itself satisfying every negative constraint, so some negative neighbourhood contains it. Conversely, if some negative neighbourhood contains the meet index, every index in the positive part is contained in the meet neighbourhood and hence in that negative neighbourhood, so the atom is empty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

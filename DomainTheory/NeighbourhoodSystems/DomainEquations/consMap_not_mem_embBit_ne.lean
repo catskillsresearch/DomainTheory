@@ -1,8 +1,3 @@
-/-ai
-The image of an element under the successor map for a bit b is disjoint from the copy for a different bit.
-
-A membership witness would supply a point of a neighbourhood of the element whose prepended copy lies in the other bit embedding. Equality of cons cells would force the bits to agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

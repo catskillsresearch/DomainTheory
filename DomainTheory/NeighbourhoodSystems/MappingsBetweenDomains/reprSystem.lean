@@ -1,6 +1,3 @@
-/-ai
-The representation neighbourhood system on the tokens of a family has as neighbourhoods exactly the neighbourhoods of tokens, and has as master the set of all tokens. The master contains the empty token and equals the neighbourhood of the empty set. If the neighbourhood of a token is contained in the intersection of the neighbourhoods of two tokens, that token lies in its own neighbourhood, so the union of the two underlying sets is contained in its closure, which belongs to the family, and the neighbourhood of that union is the intersection. Every neighbourhood is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

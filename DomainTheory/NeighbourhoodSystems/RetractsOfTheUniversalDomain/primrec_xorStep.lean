@@ -1,8 +1,3 @@
-/-ai
-The exclusive-disjunction step is primitive recursive.
-
-The two arguments, the weight, and the accumulator are primitive recursive projections of the packed state, and the low-bit exclusive disjunction of the two arguments is primitive recursive. Halving the arguments, doubling the weight, and adding the weight times that low-bit value to the accumulator are primitive recursive, and the resulting packed state equals the step by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

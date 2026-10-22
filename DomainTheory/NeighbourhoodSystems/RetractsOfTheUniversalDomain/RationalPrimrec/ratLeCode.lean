@@ -1,6 +1,3 @@
-/-ai
-The comparison code of a paired pair of rational codes is the zero test of the truncated difference between the two cross-cleared sums formed from their positive and negative numerator parts and their denominators.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

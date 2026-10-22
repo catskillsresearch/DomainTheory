@@ -1,8 +1,3 @@
-/-ai
-The difference emptiness decider depends only on the two presented sets.
-
-The characterizations of the value 1 agree after rewriting by the two set equalities, and both values are at most 1, so they are equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

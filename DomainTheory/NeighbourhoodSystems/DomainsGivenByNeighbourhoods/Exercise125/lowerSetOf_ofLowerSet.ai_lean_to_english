@@ -1,0 +1,3 @@
+For a nonempty lower set, the lower set of its associated filter is the original set.
+
+By extensionality of sets. If a token lies in the lower set of the filter, the membership supplies a member of the original set whose principal upper set is contained in the principal upper set of the token. That inclusion gives the inequality, and the lower-set law returns the token. If the token lies in the original set, its principal upper set is a neighbourhood and contains itself.

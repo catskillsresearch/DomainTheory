@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.13). Application distributes over an arbitrary union.
-
-An element of the application of the union is witnessed by a finite set contained in the argument and a pair code in some member of the family, hence lies in the application of that member. A witness in the application of some member is a witness in the application of the union.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

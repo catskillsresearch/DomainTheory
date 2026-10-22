@@ -1,8 +1,3 @@
-/-ai
-If either coordinate of z is bottom, smash of z is the product bottom.
-
-A neighbourhood of the image is the product master, which is membership in the bottom, or else both coordinates would fail to be bottom, contradicting the hypothesis. The product master belongs to the image.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

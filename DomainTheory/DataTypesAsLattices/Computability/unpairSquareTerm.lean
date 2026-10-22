@@ -1,6 +1,3 @@
-/-ai
-The term unpairSquareTerm applies variable 3 to unpairSqrtTerm and again to unpairSqrtTerm, the square of the integer square root in the unpairing environment.
-ai-/
 module
 
 public import Mathlib.Computability.RE

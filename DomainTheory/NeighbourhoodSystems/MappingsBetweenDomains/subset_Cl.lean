@@ -1,8 +1,3 @@
-/-ai
-Every set is contained in its closure relative to the family.
-
-An element of the set belongs to every member of the family that contains the set, which is membership in the intersection defining the closure.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

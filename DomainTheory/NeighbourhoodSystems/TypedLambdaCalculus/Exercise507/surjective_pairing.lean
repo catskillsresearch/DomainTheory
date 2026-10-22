@@ -1,8 +1,3 @@
-/-ai
-Every element of a product is the pair of its two projections.
-
-Rewrite by the action of the two projections and by pairing the first and second components.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

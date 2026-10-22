@@ -1,6 +1,3 @@
-/-ai
-The singleton restricted equivalence of an element a relates x and y precisely when both equal a. Symmetry exchanges the two equations, and transitivity keeps the common value a.
-ai-/
 
 module
 

@@ -1,8 +1,3 @@
-/-ai
-If Y is a neighbourhood of V₁, then the intersection of the three-way master with the tagged middle copy of Y equals that middle copy.
-
-The intersection of a set with a subset equals the subset, and the middle copy of a neighbourhood is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

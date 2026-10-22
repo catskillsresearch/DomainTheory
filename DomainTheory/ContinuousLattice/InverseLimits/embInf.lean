@@ -1,6 +1,3 @@
-/-ai
-The embedding of stage n into the inverse limit is the Scott-continuous map whose underlying function sends an element of D_n to the compatible sequence obtained by climbing and descending the projection tower.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

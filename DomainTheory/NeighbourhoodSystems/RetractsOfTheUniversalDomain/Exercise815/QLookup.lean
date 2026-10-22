@@ -1,6 +1,3 @@
-/-ai
-The lookup form of the fuel step reads the previous fuel from the code table packed into the input, and then applies one fuel step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

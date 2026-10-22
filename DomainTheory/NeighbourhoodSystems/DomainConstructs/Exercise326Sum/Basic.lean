@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the embedding and the sum-valued conditional, the discriminator and its guard, the three containment lemmas for neighbourhoods of the truth domain, the closure of the zero family and the one family under intersection, and the three guard lemmas for the discriminator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326
@@ -20,26 +17,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326Sum.
 
 @[expose] public section
 
-/-!
-# Exercise 3.26, continued (Scott 1981, PRG-19, §3) — the sum-valued conditional and `which`
-
-This module completes Exercise 3.26 with the two follow-up operators Scott asks for:
-
-* the **sum-valued conditional** `condSum : T × D₀ × D₁ → D₀ + D₁`, routing `true → in₀`,
-  `false → in₁`, `⊥ → ⊥`. It is obtained for free by *composition*: feeding the two inputs through
-  the injections `in₀, in₁` into the common domain `S = D₀ + D₁` and then applying the conditional
-  `cond S : T × S × S → S` of Exercise 3.26. The three identities follow from `cond_true/false/bot`.
-
-* the discriminator **`which : D₀ + D₁ → T`** reading the tag (`0X ↦ true`, `1Y ↦ false`,
-  `Λ ↦ ⊥`), together with Scott's identity
-
-  `cond(which x, in₀(out₀ x), in₁(out₁ x)) = x`   for all `x ∈ |D₀ + D₁|`.
-
-The discriminator is built directly as a neighbourhood relation; its three guards on the truth
-component are mutually exclusive because the three forms of a sum-neighbourhood (`Λ`-master, left
-copy, right copy) are mutually exclusive (Exercise 3.18, using non-emptiness).
--/
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise326
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
@@ -48,11 +25,5 @@ variable {α β : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
-/-! ### The sum-valued conditional `condSum`. -/
 
-
-/-! ### The discriminator `which : D₀ + D₁ → T`. -/
-
-
-/-! ### Membership facts and the composite identity. -/
 end DomainTheory.NeighbourhoodSystems.Exercise326

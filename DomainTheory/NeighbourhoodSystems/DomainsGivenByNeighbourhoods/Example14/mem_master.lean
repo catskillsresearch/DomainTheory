@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the binary tree belongs to the neighbourhood family.
-
-Unfold membership, the family, and the master, the two subtrees, and the four leaves, and close by simplification.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

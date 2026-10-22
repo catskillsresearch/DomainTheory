@@ -1,6 +1,3 @@
-/-ai
-The midpoint code of a paired pair of rational codes pairs the cross-cleared sum of the positive numerator parts and the cross-cleared sum of the negative numerator parts with one less than twice the product of the denominators.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

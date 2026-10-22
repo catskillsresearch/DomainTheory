@@ -1,8 +1,3 @@
-/-ai
-The intersection of the way-below neighbourhoods of a and of b equals the way-below neighbourhood of the join of a and b.
-
-If a and b are both way-below an element, then so is their join. Conversely, if the join is way-below an element, then each of a and b is way-below that element because each lies under the join.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

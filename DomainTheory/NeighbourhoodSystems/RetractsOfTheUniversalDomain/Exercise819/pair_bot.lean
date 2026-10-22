@@ -1,8 +1,3 @@
-/-ai
-The pairing of two bottom elements is the bottom element of the product.
-
-The two inequalities are proved separately. A product neighbourhood in the pairing of the bottoms has both factors equal to the master neighbourhood, so it is the master of the product. The other inequality is the general fact that bottom lies below every element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

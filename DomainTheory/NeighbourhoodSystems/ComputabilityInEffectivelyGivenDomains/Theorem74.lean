@@ -1,8 +1,3 @@
-/-ai
-Scott's Theorem 7.4 says that the sum and the product of effectively given domains are effectively given, and that the injections, extractions, projections, and the sum and product of computable maps are computable. If two maps are computable, their pairing into the product is computable. The product of two computable maps is computable. The product of two effectively given neighbourhood systems is effectively given. The first projection of the product is a computable map. The second projection of the product is a computable map.
-
-The numbered name theorem_74 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74.Basic

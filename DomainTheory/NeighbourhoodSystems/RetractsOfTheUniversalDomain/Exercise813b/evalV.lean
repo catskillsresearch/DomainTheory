@@ -1,6 +1,3 @@
-/-ai
-The truth value of a formula under a valuation of the variables is the assigned value of a variable, false for falsehood, true for truth, the negation of the value of a negated formula, the conjunction of the values of the two sides, or the disjunction of the values of the two sides.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

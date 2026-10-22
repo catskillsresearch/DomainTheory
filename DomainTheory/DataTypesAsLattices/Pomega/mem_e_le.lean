@@ -1,8 +1,3 @@
-/-ai
-If k belongs to the finite set coded by n, then k ≤ n.
-
-The inequality k ≤ 2^k and the bound 2^k ≤ n coming from the set digit compose.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

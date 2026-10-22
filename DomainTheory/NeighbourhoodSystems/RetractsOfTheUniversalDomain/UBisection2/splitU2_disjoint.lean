@@ -1,8 +1,3 @@
-/-ai
-The left-hand and right-hand pieces of the canonical split are disjoint.
-
-Rewrite both pieces as the neighbourhood cut by the open ray below the midpoint and the closed ray from the midpoint. A point of both would lie strictly below the midpoint and at least at the midpoint.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

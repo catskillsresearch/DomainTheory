@@ -1,6 +1,3 @@
-/-ai
-Self-application inside the universal domain sends elements u and x to the evaluation of the pair whose first component is the decoding of u by j-arrow and whose second component is x.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

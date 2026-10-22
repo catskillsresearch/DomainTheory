@@ -1,28 +1,3 @@
-/-ai
-The code of a singleton list is a primitive recursive function of its entry.
-
-It equals the successor of the pairing of that entry with zero, because the code of the empty list is zero, and pairing with a constant followed by successor is primitive recursive.
-
-An element of the reconstructed subsystem domain is computable for its presentation if and only if the set of presentation indices whose neighbourhoods lie in the corresponding subsystem is recursively enumerable.
-
-Membership in the enumerated neighbourhood of a code is equivalent to every decoded index lying in that set. In one direction the computable predicate is transported along this equivalence and reindexed by the primitive recursive singleton code, using that decoding a singleton code recovers its entry. In the other direction the recursively enumerable predicate of universal membership over decoded lists is transported back along the same equivalence.
-
-Such an element is computable if and only if that index set is the range of a primitive recursive function.
-
-Rewrite the claim by the previous equivalence. If the index set is recursively enumerable, the master index belongs to it, because the neighbourhood named by the master index is the master neighbourhood of the subsystem, and a recursively enumerable predicate containing a known point is the range of a primitive recursive function. Conversely, the range of a primitive recursive function is recursively enumerable and agrees with the index set by the stated specification.
-
-Folding the universal intersection, from an index that already names a neighbourhood of the subsystem and along a list of such indices, still names a neighbourhood of the subsystem.
-
-The empty list leaves the accumulator. For a longer list, the dichotomy of the universal intersection either returns the master neighbourhood, which belongs to the subsystem, or returns the intersection of the two neighbourhoods. In that case the witnessing finite systems are appended, the element is closed under intersection of neighbourhoods, and the partial meet of the appended list is the intersection of the two partial meets. The inductive hypothesis then continues along the tail.
-
-Every value of the list-indexed enumeration is a neighbourhood of the subsystem.
-
-After rewriting the enumeration as the universal neighbourhood of the fold of the universal intersection along the image of the decoded list, the fold lemma applies. The master index names the master neighbourhood, and each image entry belongs to the subsystem because the range specification supplies the index itself as a witness.
-
-If an element of the reconstructed domain of the universal domain is computable, the corresponding subsystem is effectively given.
-
-The computability criterion supplies a primitive recursive enumerator of its index set, and the term-algebra presentation built from that enumerator is a computable presentation of the subsystem.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75
@@ -129,104 +104,15 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714.repred_range_primrec
 @[expose] public section
 
-/-!
-# Exercise 8.15 (Scott 1981, PRG-19) — `{X ∣ X ◁ D}` is effectively presented if `D` is
-
-Following Dana Scott, *Lectures on a Mathematical Theory of Computation*, PRG-19, Lecture VIII.
-
-> **Exercise 8.15.** Give a *direct* proof that the domain `{X ∣ X ◁ D}` is effectively presented
-> if `D` is. (Hint: the finite elements of the domain correspond exactly to the finite systems
-> `X ◁ D`.) In the case of `D = 𝒰`, show that the computable elements of the domain correspond
-> exactly to the effectively presented domains (up to effective isomorphism).
-
-Scott's `{D' ∣ D' ◁ D}` (ordered by the subsystem relation `◁`, Definition 6.10) is already known to
-*be* a domain: Proposition 6.11 (`Proposition611.subsystemReprIso`) exhibits it as order-isomorphic to
-`|reprSystem (subFam D) …|`, via the **abstract, `Classical.choice`-laden** representation theorem of
-Exercise 2.22. Scott explicitly asks here for a *direct* proof of effective presentability, and the
-hint ("finite elements ↔ finite systems `X ◁ D`") points at a concrete, `ℕ`-indexed reconstruction
-instead — reusing `Theorem75.lean`'s `interFrom`/`idxchain`/`bitSelect`/`decodeList` toolkit (built
-there for exactly this kind of "finite consistent sub-selection" bookkeeping).
-
-## Plan (recorded in `HANDOFF.md` and `arxiv.md`, worked in sequence)
-
-Fix `D : NeighborhoodSystem α` and a `ComputablePresentation P` of `D`.
-
-1. **`Fin(js)`, the finitely generated subsystem** (this file's `finGen`/`finGenSys`): for a finite
-   index list `js : List ℕ`, the set of *consistent sub-meets* `Fin(js) := {Y ∣ ∃ sub ⊑ js, D.mem Y ∧
-   Y = interFrom P D.master sub}`. This is itself a subsystem `finGenSys(js) ◁ D`, and
-   **`Fin_le_iff_forall_mem`**: `Fin(js) ⊆ D'.mem ↔ ∀ i ∈ js, D'.mem (P.X i)` for any `D' ◁ D` — the
-   single workhorse lemma for everything downstream (proved by induction on `js`, using
-   `interFrom_mem_of_witness` from `Theorem75.lean` to handle "an intermediate partial meet along a
-   consistent chain is itself consistent").
-2. **The reconstructed system `SubD`** (token type `List ℕ`): neighbourhoods are the anti-monotone
-   principal up-sets `nbhd(js) := {js' ∣ Fin(js) ⊆ Fin(js')}`.
-3. **The order isomorphism `SubD.Element ≃o {D' ∣ D' ◁ D}`** — fully choice-free, unlike Exercise 2.22.
-4. **`ComputablePresentation SubD`** — Scott's two relations reduce to *bounded* quantifiers over
-   `bitSelect`-selected sub-lists, decided via `consChain_iff`/`idxchain_spec`/`P.eq_computable`.
-5. **Main theorem**: `D.IsEffectivelyGiven → {D' ∣ D' ◁ D}` is (isomorphic to) an effectively given
-   domain.
-6. (Second half, `D = 𝒰`): deferred pending 1–5.
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive
 
 variable {α : Type*} {D : NeighborhoodSystem α}
 
-/-! ## Subgoal 1 — `Fin(js)`, the finitely generated subsystem -/
-
-/-! ### `Fin(js)` is a genuine subsystem of `D`. -/
-
-/-! ### The workhorse lemma: `Fin(js) ⊆ D'.mem ↔ ∀ i ∈ js, D'.mem (P.X i)`. -/
-
-/-! ## Subgoal 2 — the reconstructed system `SubD` -/
-
-/-! ## Subgoal 3 — the order isomorphism `SubD.Element ≃o {D' ∣ D' ◁ D}` -/
-
-/-! ### Round trip 1: `toSubsystem ∘ ofSubsystem = id` -/
-
-/-! ### Round trip 2: `ofSubsystem ∘ toSubsystem = id` -/
-
-/-! ### The order isomorphism -/
-
-/-! ## Subgoal 4 — `ComputablePresentation (SubD P)` -/
-
-/-! ### 4a — the enumeration `X n := nbhd(decodeList n)` -/
-
-/-! ### 4b — `idxCharAt`: primitive-recursive extraction of `idxchain (bitSelect L b)`
-
-Reuses `Theorem75.consStp`'s fold (the same one powering `consCharAt`) but projects the *index*
-component (`.unpair.2.unpair.1`) instead of the consistency flag (`.unpair.2.unpair.2`). -/
-
-/-! ### 4c — singleton membership: `P.X m ∈ Fin(decodeList c)` is recursively decidable -/
-
-/-! ### 4d — subset decidability: `Fin(decodeList c1) ⊆ Fin(decodeList c2)` -/
-
-/-! ### 4e — `interEq_computable`: `SubDX n ∩ SubDX m = SubDX k` is decidable -/
-
-/-! ### 4f — `cons_computable`/`inter`/`inter_primrec`/`inter_spec` are free -/
-
-/-! ### 4g — `masterIdx`/`masterIdx_spec` -/
-
-/-! ### Assembling `ComputablePresentation (SubD P)` -/
-
-/-! ## Subgoal 5 — main theorem: `D.IsEffectivelyGiven → {D' ∣ D' ◁ D}` is (isomorphic to) an
-effectively given domain -/
-
-/-! ## Subgoal 6 — second half: computable elements of `SubD P` ↔ effectively presented `D'x`
-(relative to `P`'s own enumeration)
-
-See `arxiv.md`'s Exercise 8.15 entry for the plan (6a–6g) and the disjoint-interval example showing
-why an *arbitrary* abstract presentation of `D'x` cannot be compared to `P` in general. Everything
-below is stated for a general `D`/`P` (the argument never needed `D = 𝒰` specifically); the exercise
-instantiates it at `D := U`, `P := UComputablePresentation`. -/
-
 section ComputableElements
 
 variable (P : ComputablePresentation D)
-
-/-! ### 6a — reduce `ComputableElement` to the index set `{i ∣ D'x.mem (P.X i)}` -/
 
 /-- The singleton-list code `i ↦ encodeList [i]` is primitive recursive. -/
 theorem primrec_encodeList_singleton : Nat.Primrec (fun i => encodeList [i]) := by
@@ -259,8 +145,6 @@ theorem subsystemU_computable_iff_index_set_re (x : (SubD P).Element) :
     constructor
     exact REPred.of_iff hiff hx.forall_mem_decodeList
 
-/-! ### 6b–6d — the main biconditional, via a `P`-relative primitive recursive enumeration -/
-
 /-- **Subgoals 6b–6d, combined.** `x` is a computable element of `SubD P` iff the index set of
 `D'x := toSubsystemSys P x` (relative to `P`'s own enumeration) is the range of a primitive
 recursive function — Scott's "index set r.e." reduced (Exercise 7.14) to an explicit enumerator.
@@ -281,13 +165,6 @@ theorem subsystemU_element_computable_iff (x : (SubD P).Element) :
     exact REPred.of_iff hspec (Exercise714.repred_range_primrec hr)
 
 end ComputableElements
-
-/-! ## Subgoal 6e/6f — upgrading to a genuine `ComputablePresentation`, specialized to `D = 𝒰`
-
-Generic `D`/`P` is not enough here: the branch needed to keep `Q'x.X` safe requires an *explicit*
-(not merely `RecDecidable`-existentially-known) dichotomy for `P.inter`, which `𝒰`'s canonicalizing
-`Uinter` genuinely has (`UX_Uinter_dichotomy`) but an abstract `P` does not. See `HANDOFF.md`'s
-2026-07-06 checkpoint for the investigation that led here. -/
 
 section UniversalSubsystem
 
@@ -318,13 +195,6 @@ theorem toSubsystemSys_mem_foldl_Uinter (x : (SubD UComputablePresentation).Elem
         rw [hAeq, hJeq, interFrom_append_eq UComputablePresentation U.master subA subJ]
     exact ih (Uinter acc j) hacc' hL.2
 
-/-! ### `Q'X` — an explicit enumeration of `D'x`'s neighbourhoods
-
-Given `r` (from `subsystemU_element_computable_iff`, i.e. `x` computable relative to `UP`),
-`Q'X r n` folds `Uinter` over the `r`-image of the list coded by `n`, starting from `U`'s master —
-reusing the *existing, generic* `Theorem75.idxchain`/`foldCode` machinery (`Recursive.lean`) rather
-than reproving fold-primitive-recursiveness from scratch. -/
-
 /-- **`mem_X` for `Q'X r`.** Every `Q'X r n` is a `D'x`-neighbourhood — no consistency hypothesis on
 `n` needed, since (a) every entry `r j` of the folded list is *unconditionally* `D'x.mem (UX (r j))`
 by `hspec` (taking the trivial witness `j`), and (b) `toSubsystemSys_mem_foldl_Uinter` safely folds
@@ -344,68 +214,9 @@ theorem Q'x_mem_X (r : ℕ → ℕ) (x : (SubD UComputablePresentation).Element)
     obtain ⟨j, -, rfl⟩ := List.mem_map.mp hi
     exact (hspec (r j)).mpr ⟨j, rfl⟩
 
-/-! ### The remaining gap: `inter`/`cons_computable` need a term-algebra encoding (resolved below)
-
-`Q'X r` (above) is a fully choice-free, primitive-recursive **enumeration of `D'x`'s neighbourhoods,
-onto** (`Q'x_mem_X`, `Q'x_surj`) — the enumeration half of a `ComputablePresentation D'x`. Completing
-the *rest* of the structure (`inter`, `inter_spec`, `cons_computable`; `interEq_computable` alone is
-fine, a pure reindexing of `U_interEq_computable` along the primitive-recursive `Q'Xcode r`) hits a
-**newly-identified obstacle, sharper than the one logged previously**:
-
-The natural candidate `Q'inter r n m := encodeList (decodeList n ++ decodeList m)` — extending `n`'s
-list by `m`'s and re-folding — does *not* satisfy `inter_spec`. The reason is that `Uinter`'s
-dichotomy fallback is **not "conservative"**: once a fold step falls back to `U.master` (discarding
-the true partial intersection), *continuing* the fold from `U.master` can "recover" and compute a
-smaller, unrelated value, rather than staying stuck at `U.master`. Concretely: `Q'X r (Q'inter r n
-m)`'s value depends on the entries of `n`'s and `m`'s lists *combined sequentially from scratch*, while
-`Q'X r n` and `Q'X r m` are each computed *independently* from `U`'s master. If (say) `Q'X r m`'s own
-fold happened to fall back internally (its true intersection was empty) while the *globally* combined
-fold does not, `Q'X r n ∩ Q'X r m` (inflated by the fallback) and `Q'X r (Q'inter r n m)` (computed
-honestly) can be genuinely different sets — even though both individually satisfy `mem_X`. The
-alternative fix — `Q'inter r n m := Uinter (Q'Xcode r n) (Q'Xcode r m)` (apply `Uinter` *once more* on
-top of the already-computed indices, correct by the existing, unconditional `Uinter_spec`, no
-compounding at all) — repairs `inter`/`inter_spec` cleanly, but then breaks `cons_computable`: its
-witness `∃k, Q'X r k ⊆ Q'X r n ∩ Q'X r m` needs `k` to be *of the form `Q'Xcode r` applied to some `n,
-m`-derived list-code*, and there is no way to name that code without already tracking, as part of
-`Q'X`'s own index type, a closed-under-`Uinter`-combination term structure (i.e. re-indexing `Q'X` by
-a small term language `{base list, combine n₁ n₂}` via course-of-values recursion, mirroring
-`Recursive.lean`'s `tabCode` pattern for a *different* recursively-defined code). Building that term
-algebra is genuinely comparable in size to Subgoal 4 itself (as flagged previously), and is **left as
-documented future work** — this is a more precise diagnosis of the difficulty than the "extracting a
-witness from a `Prop`" issue logged earlier (that issue is avoided entirely by `Q'X`/`Q'Xcode` being
-directly-defined functions throughout; the *actual* remaining obstacle is this purely arithmetic
-"safe composition of finitely many `Uinter` calls" question). See `HANDOFF.md`'s 2026-07-06 checkpoint.
-
-**Resolution (below): a binary term algebra fixes `inter`/`cons_computable` cleanly.** The fix is to
-stop indexing `D'x`'s neighbourhoods by *lists* folded left-to-right through `Uinter` (not
-compositional under concatenation, as diagnosed above), and instead index them by a **binary term
-algebra** — codes for `leaf j ↦ r j` and `node t1 t2 ↦ Uinter (val t1) (val t2)` — so that combining
-two already-built codes is *literally* the `node` constructor, staying inside the index type by
-construction (no search needed to name the combined index, unlike the list-code domain). -/
-
-/-! ### The term algebra codes: `leaf j`, `node t1 t2`, `master`
-
-Evaluating a code needs **course-of-values recursion** (a `node`'s two children are only known
-`≤` the parent via `Nat.unpair`, not decreasing by a fixed amount), for which we reuse the
-*already-built, generic* `fuelTable`/`fuelTable_eq_of_recursion`/`primrec_fuelTable` machinery from
-`Recursive.lean` (built there for `decodeFuelOkChar`/`autStateCardFuelChar`) rather than
-re-deriving course-of-values primitive recursiveness from scratch. -/
-
-/-! ### `TreeVal r`: evaluating a term-algebra code, via course-of-values fuel recursion -/
-
-/-! ### `Q2X` — the term-algebra-indexed enumeration of `D'x`'s neighbourhoods -/
-
 section TreeVal2
 
 variable (r : ℕ → ℕ) (x : (SubD UComputablePresentation).Element)
-
-/-! ### `inter`/`interEq_computable`/`cons_computable` — resolved by the term algebra
-
-The obstacle diagnosed above (`Uinter`'s non-conservative fallback) is fixed by indexing
-neighbourhoods by term-algebra codes instead of lists: combining two already-built codes `n`, `m` is
-*literally* `nodeCode n m`, no search for a witness code needed, and `Uinter_spec` — applicable
-precisely when the consistency hypothesis holds — guarantees the dichotomy's fallback branch of
-`UX_Uinter_dichotomy` provably never fires on that witness. -/
 
 /-- **Subgoal 6f, main corollary.** If `x` is a computable element of `SubD UComputablePresentation`,
 then `D'x := toSubsystemSys UComputablePresentation x` is effectively given — completing, for
@@ -419,24 +230,6 @@ theorem subsystemU_effectivelyGiven_of_isComputableElement
   obtain ⟨r, hr, hspec⟩ := (subsystemU_element_computable_iff UComputablePresentation x).mp hx
   exact ⟨Q'xPresentation r x hr hspec⟩
 
-/-! ### 6g — scope note: the fully general "arbitrary presentation" converse
-
-`subsystemU_effectivelyGiven_of_isComputableElement` reads Scott's "computable elements correspond
-to effectively presented domains (up to effective isomorphism)" via the *specific* presentation
-`Q'xPresentation` built **relative to `UComputablePresentation`'s own enumeration** — the natural,
-provable reading identified in the Subgoal 6 planning note above (a disjoint-interval example shows
-`x.mem (nbhdGen UP js)` does **not** imply `𝒰.mem (interFrom UP 𝒰.master js)` in general, so an
-*arbitrary*, unrelated abstract presentation `Q : ComputablePresentation D'x` cannot be compared to
-`UP` without extra structure).
-
-The fully general converse Scott's parenthetical "(up to effective isomorphism)" is gesturing at —
-that *every* computable presentation of `D'x`, however constructed, is effectively isomorphic to
-`Q'xPresentation` — is a genuine "uniqueness of computable numberings" fact (a Rogers-style theorem:
-two numberings of the same recursively enumerable structure that both make its structural relations
-decidable must be effectively translatable into each other). This is strictly deeper than anything
-Definition 7.1's axioms hand us directly, is not needed for the "correspond to" reading already
-established by `subsystemU_effectivelyGiven_of_isComputableElement`, and is **deliberately left out
-of scope** here. -/
 end TreeVal2
 end UniversalSubsystem
 end DomainTheory.NeighbourhoodSystems

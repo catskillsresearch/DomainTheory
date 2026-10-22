@@ -1,6 +1,3 @@
-/-ai
-The neighbourhood system of binary sequences is the nested-or-disjoint system of all finite strings whose neighbourhoods are cones or singletons. The master is the whole space, which is nonempty and equals the cone of the empty string, and every neighbourhood is contained in it.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

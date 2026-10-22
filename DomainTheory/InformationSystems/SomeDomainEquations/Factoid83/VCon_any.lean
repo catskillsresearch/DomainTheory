@@ -1,8 +1,3 @@
-/-ai
-Every finite set of V-tokens is consistent.
-
-The proof is the trivial inhabitant of truth.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

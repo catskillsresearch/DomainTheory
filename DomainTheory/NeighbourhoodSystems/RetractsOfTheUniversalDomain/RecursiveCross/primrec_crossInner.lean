@@ -1,8 +1,3 @@
-/-ai
-If bop is primitive recursive, then the function sending a packed pair to crossInner bop of its two components is primitive recursive.
-
-It is the primitive recursive fold of the inner step of bop, with the left projection, the constant zero, and the right projection, and that fold agrees with crossInner by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

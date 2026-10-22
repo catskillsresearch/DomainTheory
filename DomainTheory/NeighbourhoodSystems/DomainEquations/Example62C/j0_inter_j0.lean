@@ -1,8 +1,3 @@
-/-ai
-The intersection of two left copies is the left copy of the intersection.
-
-Extensionality splits a token into the basepoint and the three sum tags, and simplification by the definitions of the left copy and its tag gives the equation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

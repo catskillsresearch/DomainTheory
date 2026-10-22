@@ -1,0 +1,3 @@
+The doubling encoding distributes over concatenation.
+
+Induct on the first string. The empty case simplifies. In the cons case, simplification uses the inductive hypothesis.

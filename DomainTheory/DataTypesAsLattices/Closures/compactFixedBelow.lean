@@ -1,6 +1,3 @@
-/-ai
-The compact fixed points below a fixed point x of application of a are the fixed points that equal a applied to e n for some n and whose underlying set is contained in x.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

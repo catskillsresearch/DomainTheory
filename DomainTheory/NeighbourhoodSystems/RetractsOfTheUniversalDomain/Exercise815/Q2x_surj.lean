@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the subsystem equals some value of the term-algebra enumeration.
-
-The list-indexed enumeration already hits the neighbourhood at some code. The tree built from the master code along the decoded list evaluates to the same fold of the universal intersection: evaluation along that tree is the fold, the master code evaluates to the master index, and the fold is the index chain of the image list, which is the list-indexed value.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

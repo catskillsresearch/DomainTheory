@@ -1,8 +1,3 @@
-/-ai
-Every index set is nonempty.
-
-The index n belongs to the index set of n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

@@ -1,8 +1,3 @@
-/-ai
-With the head and the tail fixed, the body of cons is Scott continuous.
-
-The tuple form of Theorem 1.3 uses continuity of the conditional in its left and right arguments, continuity of the identity, and Theorem 1.3 applied to continuity of application at the tail composed with continuity of the predecessor.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

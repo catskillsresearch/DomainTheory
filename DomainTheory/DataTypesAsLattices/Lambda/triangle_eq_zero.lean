@@ -1,8 +1,3 @@
-/-ai
-If the triangular number of w is 0, then w is 0.
-
-Match on w. The zero case is immediate. If w is n + 1, then n + 1 is at least 1 and n + 2 is at least 2, so the product (n + 1)(n + 2) is at least 2. Half of that product, which is the triangular number, is therefore positive, contradicting the hypothesis that it is zero.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

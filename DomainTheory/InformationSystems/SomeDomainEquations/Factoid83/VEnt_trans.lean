@@ -1,8 +1,3 @@
-/-ai
-V-entailment is transitive: if every member of u is entailed by v and u entails c, then v entails c.
-
-Induct on the derivation of the entailment from u. Bottom is entailed outright. Membership of top is the given entailment of that member by v. For a both-projections derivation, push the entailment set through the left projection. If top belongs to v, then v entails top by the rogue-top property; otherwise push through the right projection in the same way. If neither side meets top, the inductive hypotheses supply both projection entailments. A left pair derived from membership of top is the rogue-top consequence of the entailment of that member. A left pair derived by projection either finds top in v, giving the top-membership clause, or passes the projected entailment set to the inductive hypothesis. The two right-pair cases are symmetric.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,20 +1,37 @@
 # Proposition 5.5
 
-In other words, the given entailment relation itself defines the identity function on the domain in question; and of course, the identity function is an approximable mapping.
+## Human-English
 
-**PROPOSITION 5.5.** *Let $f : \mathbf{A} \to \mathbf{B}$ and $g : \mathbf{B} \to \mathbf{C}$ be two approximable mappings. Then the following formula defines an approximable mapping $g \circ f : \mathbf{A} \to \mathbf{C}$:*
+@import "1982_Proposition_5_5.english" {code_block=false}
 
-(i) $\quad u\ (g \circ f)\ w \text{ iff } u\ f\ v \text{ and } v\ g\ w \text{ for some } v \in \mathrm{Con}_{\mathbf{B}},$
+## AI: Human-English to AI-Lean
 
-*for all $u \in \mathrm{Con}_{\mathbf{A}}$ and $w \in \mathrm{Con}_{\mathbf{C}}$. And we have:*
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean**
 
-(ii) $\quad (g \circ f)(x) = g(f(x)),$
+@import "comp.lean"
 
-*for all $x \in |\mathbf{A}|$.* $\blacksquare$
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/Basic.lean**
 
-**Lean 4**
+@import "Basic.lean"
 
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean](comp.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/Basic.lean](Basic.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp_toElement.lean](comp_toElement.lean)
-- [InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean](../Proposition55.lean)
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp_toElement.lean**
+
+@import "comp_toElement.lean"
+
+**InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean**
+
+@import "../Proposition55.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "comp.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "comp_toElement.ai_lean_to_english" {code_block=false}
+
+@import "../Proposition55.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1982_Proposition_5_5.ai_english_concordance" {code_block=false}

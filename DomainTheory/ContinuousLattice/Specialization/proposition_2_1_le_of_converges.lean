@@ -1,8 +1,3 @@
-/-ai
-Scott 1972, Proposition 2.1, forward direction. If a net converges to y in the Scott topology and L is a least upper bound of its range, then y lies below L.
-
-If y fails to lie below L, Scott convergence into the Scott-open set of elements that fail to lie below L supplies an index from which every later value lies in that set. The value at that index belongs to the range, so the least-upper-bound property puts it below L.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

@@ -1,8 +1,3 @@
-/-ai
-The combinator is a projection.
-
-It is a retraction, and the injection composed with the projection lies below the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

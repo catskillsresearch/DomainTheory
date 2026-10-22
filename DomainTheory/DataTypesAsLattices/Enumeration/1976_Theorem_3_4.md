@@ -1,43 +1,31 @@
 # Theorem 3.4
 
-**THEOREM 3.4 (The incompleteness theorem).** The set of integers $n$ such that $\mathbf{val}(n) = \bot$ is not r.e.; hence, there can be no effectively given formal system for enumerating all true equations between LAMBDA-terms.
+## Human-English
 
-(A critic may sense here an application of Church's thesis in stating the metatheoretic consequence of the nonresult.) A few details of the proof can be given to see how the notation works. First let $v$ be a (total) primitive recursive function such that:
+@import "1976_Theorem_3_4.english" {code_block=false}
 
-$$\mathbf{val}(v(n)) = n \cap \mathbf{val}(n),$$
+## AI: Human-English to AI-Lean
 
-and note that:
+**DataTypesAsLattices/Enumeration/theorem_3_4_diagonal.lean**
 
-$$n \cap \mathbf{val}(n) = \bot \quad \text{iff} \quad n \notin \mathbf{val}(n).$$
+@import "theorem_3_4_diagonal.lean"
 
-Call the set in question in Theorem 3.4 the set $b$. If it were r.e., then so would be:
+**DataTypesAsLattices/Enumeration/theorem_3_4.lean**
 
-$$\{n \in \omega \mid v(n) \in b\} = (\lambda n \in \omega.\, v(n) \cap b \supset n, n)(\top).$$
+@import "theorem_3_4.lean"
 
-That would mean having an integer $k$ such that:
+**DataTypesAsLattices/Enumeration/theorem_3_4_re_diagonal.lean**
 
-$$\mathbf{val}(k) = \{n \in \omega \mid v(n) \in b\}.$$
+@import "theorem_3_4_re_diagonal.lean"
 
-But then:
+## AI: AI-Lean to AI-English
 
-$$
-\begin{aligned}
-k \in \mathbf{val}(k) &\iff v(k) \in b \\
-&\iff \mathbf{val}(v(k)) = \bot \\
-&\iff k \notin \mathbf{val}(k),
-\end{aligned}
-$$
+@import "theorem_3_4_diagonal.ai_lean_to_english" {code_block=false}
 
-which gives us a contradiction. This is the usual diagonal argument.
+@import "theorem_3_4.ai_lean_to_english" {code_block=false}
 
-The relationship $\mathbf{val}(n) = \mathbf{val}(m)$ means that the expressions with Gödel numbers $n$ and $m$ have the same value in the model. (This is not only not r.e. but is a complete $\Pi_2^0$-predicate.) A *total* mapping can be regarded as a *syntactical* transformation on expressions defined via Gödel numbers. Such a mapping $p$ is called *extensional* if it has the property:
+@import "theorem_3_4_re_diagonal.ai_lean_to_english" {code_block=false}
 
-$$\mathbf{val}(p(n)) = \mathbf{val}(p(m)) \quad \text{whenever} \quad \mathbf{val}(n) = \mathbf{val}(m).$$
+## AI: AI-English to Human-English Concordance
 
-The Myhill–Shepherdson theorem shows that extensional, syntactical mappings really depend on the *values* of the expressions. Precisely we have:
-
-**Lean 4**
-
-- [DataTypesAsLattices/Enumeration/theorem_3_4_diagonal.lean](theorem_3_4_diagonal.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_4.lean](theorem_3_4.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_4_re_diagonal.lean](theorem_3_4_re_diagonal.lean)
+@import "1976_Theorem_3_4.ai_english_concordance" {code_block=false}

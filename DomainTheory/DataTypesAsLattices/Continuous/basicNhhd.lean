@@ -1,6 +1,3 @@
-/-ai
-The basic neighbourhood of a finite code n is the set of elements x of Pω such that the finite set coded by n is contained in x.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

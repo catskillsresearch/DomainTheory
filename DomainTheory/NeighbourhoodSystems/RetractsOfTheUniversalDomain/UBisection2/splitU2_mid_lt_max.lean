@@ -1,8 +1,3 @@
-/-ai
-The decoded midpoint of an index is strictly less than the maximum right endpoint of its canonical presenting list.
-
-Rewrite the decoded midpoint, then compare an average with its right-hand summand using the inequality of the minimum left endpoint and the maximum right endpoint.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

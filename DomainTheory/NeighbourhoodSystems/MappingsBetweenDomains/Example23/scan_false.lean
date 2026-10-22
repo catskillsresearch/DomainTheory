@@ -1,8 +1,3 @@
-/-ai
-The scan of a string beginning with false is the negation map applied to the scan of the tail.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

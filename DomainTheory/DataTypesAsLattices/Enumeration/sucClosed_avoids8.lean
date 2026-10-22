@@ -1,8 +1,3 @@
-/-ai
-The closed successor term avoids the variable 8.
-
-Unfolding the term and the avoidance predicate, the claim simplifies directly.
-ai-/
 
 module
 

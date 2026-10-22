@@ -1,8 +1,3 @@
-/-ai
-The underlying maps of two strict homomorphisms from the colimit algebra into the same algebra are equal, when every neighbourhood of the generating system is its master.
-
-The composites of the two maps with the union of the projections agree by relational extensionality. A witness at some level is rewritten by independence of the composite with the projection at that level, and reassembled as a witness for the union. Composition with the identity leaves each map unchanged, and the union of the projections is the identity, so the two maps agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

@@ -1,6 +1,3 @@
-/-ai
-Two computable presentations are effectively isomorphic when an effective isomorphism between them exists.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

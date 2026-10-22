@@ -1,6 +1,3 @@
-/-ai
-Scott's Theorem 7.2 sends an approximable map h from the product of A and B into C to the approximable map from A into the function space B → C that relates a consistent set u to a set of function tokens when h relates the lifted pair of u with the input of each token to the output of that token. Codomain consistency, the empty relation, closure under union, and monotonicity are proved from the pointwise relations by the union and entailment lemmas for lifted pairs.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

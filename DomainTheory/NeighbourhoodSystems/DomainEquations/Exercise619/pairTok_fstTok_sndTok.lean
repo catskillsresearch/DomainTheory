@@ -1,8 +1,3 @@
-/-ai
-Pairing the two components of a product element returns that element.
-
-Two elements agree when they contain the same neighbourhoods. A neighbourhood of the pair is a product neighbourhood whose slices belong to the element, and the splitting lemma returns the product neighbourhood itself. Conversely, the subset law says a neighbourhood of the element is a product neighbourhood of two factor neighbourhoods, the splitting lemma returns the two slices, and those slices are the component memberships required by the pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

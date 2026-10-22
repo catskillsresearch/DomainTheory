@@ -1,6 +1,3 @@
-/-ai
-The fixed-point set of the constant-bottom map is order-isomorphic to the terminal neighbourhood system. Both maps send every element to the default element. They are inverse because every fixed point equals the default and every element of the terminal system equals the default. The order condition holds because any two fixed points are equal and the default element is related to itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

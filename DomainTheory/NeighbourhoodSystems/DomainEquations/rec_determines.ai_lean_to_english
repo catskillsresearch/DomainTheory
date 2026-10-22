@@ -1,0 +1,3 @@
+An approximable map out of C that equals the homomorphism recursion of a Tc-algebra is equal to the descent map of that algebra.
+
+Induction on boolean lists shows agreement on structured bottoms and on structured elements. The empty bottom is the case in which the three-way sum on the bottom is the bottom, and a cons step on a bottom rewrites through the successor key and the inductive value. The empty element is the case in which the three-way sum on the terminator is the constant descent value, and a cons step on an element again uses the successor key. Extensionality for maps out of C, on bottoms and on elements, gives the equality.

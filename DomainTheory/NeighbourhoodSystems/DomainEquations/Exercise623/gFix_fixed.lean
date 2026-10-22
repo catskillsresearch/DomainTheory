@@ -1,8 +1,3 @@
-/-ai
-The token function of a rooted grammar expression fixes the fixed-point token set.
-
-This is the identity that the token function fixes the union of its iterates.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

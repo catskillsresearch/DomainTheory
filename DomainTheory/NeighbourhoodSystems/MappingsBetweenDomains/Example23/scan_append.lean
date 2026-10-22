@@ -1,8 +1,3 @@
-/-ai
-Once the scan of a string has returned a boolean, every extension of the string scans to the same boolean.
-
-The proof is by induction on the string. The empty string contradicts the hypothesis, because its scan is none. A leading true makes both sides some true. A leading false unpacks the negation, the inductive hypothesis keeps the tail's value on the extension, and negating again restores the boolean.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

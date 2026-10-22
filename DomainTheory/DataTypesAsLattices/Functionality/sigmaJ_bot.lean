@@ -1,8 +1,3 @@
-/-ai
-The independent successor σ_j sends bottom to bottom.
-
-Extensionality and unfolding: bottom contains no pair code, so the defining membership of σ_j is empty.
-ai-/
 
 module
 

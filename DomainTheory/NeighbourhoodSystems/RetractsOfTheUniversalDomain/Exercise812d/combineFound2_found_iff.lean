@@ -1,8 +1,3 @@
-/-ai
-If both input found flags are at most 1, the combined found flag is 1 if and only if at least one input flag is 1.
-
-The combination is unfolded and each flag is split into 0 and positive, hence 1. The four branches are the selection equations together with arithmetic on those flags.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

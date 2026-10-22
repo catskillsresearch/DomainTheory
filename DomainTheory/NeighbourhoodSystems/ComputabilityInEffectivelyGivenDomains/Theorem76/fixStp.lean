@@ -1,6 +1,3 @@
-/-ai
-The packed fixed-point step, on a state whose first component is the current index and whose second component pairs the previous accumulator with the function-space parameter, returns the pairing of the current index with the selection of the one-entry inclusion bit of the previous index and the current index when the previous flag is on, and with 0 when the flag is off.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

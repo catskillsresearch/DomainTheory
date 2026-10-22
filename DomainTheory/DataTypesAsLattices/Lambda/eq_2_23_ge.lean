@@ -1,8 +1,3 @@
-/-ai
-The binary sequence of x and y, applied to the numeral n + 2, is ⊥.
-
-The application formula for the binary sequence rewrites the value as a conditional, which simplifies to ⊥.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

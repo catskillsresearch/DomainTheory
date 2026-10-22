@@ -1,8 +1,3 @@
-/-ai
-Whenever the second output of a computable split is nonempty, that output is a neighbourhood of the target system.
-
-Rewrite by the specification of the negative index. The resulting enumerated neighbourhood is a neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

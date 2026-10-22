@@ -1,8 +1,3 @@
-/-ai
-The enumerated set at index 0 is the master neighbourhood of the section domain.
-
-This is the zero clause of the definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

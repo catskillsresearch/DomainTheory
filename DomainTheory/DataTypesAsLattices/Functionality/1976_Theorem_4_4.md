@@ -1,72 +1,25 @@
 # Theorem 4.4
 
-**THEOREM 4.4 (The product theorem).** Suppose $a, b, a', b'$ are retracts. Then we have:
+## Human-English
 
-(i) $a \otimes b$ is a retract, and it is strict if $a$ and $b$ are;
+@import "1976_Theorem_4_4.english" {code_block=false}
 
-(ii) $u : a \otimes b$ iff $u = (u_0, u_1)$ and $u_0 : a$ and $u_1 : b$;
+## AI: Human-English to AI-Lean
 
-(iii) if $a \sqsubseteq a'$ and $b \sqsubseteq b'$, then $a \otimes b \sqsubseteq a' \otimes b'$;
+**DataTypesAsLattices/Retracts/theorem_4_4_ii.lean**
 
-(iv) if $f : a \circ\to b$ and $f' : a' \circ\to b'$, then $f \otimes f' : a \otimes a' \circ\to b \otimes b'$.
+@import "../Retracts/theorem_4_4_ii.lean"
 
-Again the operator proves to be a functor, but what is stated in Theorem 4.4 is not quite enough for the standard identification of $\otimes$ as the categorical product. For this we need some additional combinators:
+**DataTypesAsLattices/Retracts/theorem_4_4.lean**
 
-$$(4.14) \quad \mathbf{fst} = \lambda u.\, u_0;$$
+@import "../Retracts/theorem_4_4.lean"
 
-$$(4.15) \quad \mathbf{snd} = \lambda u.\, u_1;$$
+## AI: AI-Lean to AI-English
 
-$$(4.16) \quad \mathbf{diag} = \lambda u.\, \langle u, u \rangle.$$
+@import "../Retracts/theorem_4_4_ii.ai_lean_to_english" {code_block=false}
 
-Then we have these properties:
+@import "../Retracts/theorem_4_4.ai_lean_to_english" {code_block=false}
 
-$$(4.17) \quad \mathbf{fst} \circ (a \otimes b) : (a \otimes b) \circ\to a;$$
+## AI: AI-English to Human-English Concordance
 
-$$(4.18) \quad \mathbf{snd} \circ (a \otimes b) : (a \otimes b) \circ\to b;$$
-
-$$(4.19) \quad \mathbf{diag} \circ a : a \circ\to a \otimes a;$$
-
-$$(4.20) \quad \mathbf{fst} \circ (f \otimes f') = f \circ \mathbf{fst};$$
-
-$$(4.21) \quad \mathbf{snd} \circ (f \otimes f') = f' \circ \mathbf{snd}.$$
-
-Here $a$ and $b$ are retracts and $f$ and $f'$ are functions. Now suppose $a, b$, and $c$ are retracts and $f : c \circ\to a$ and $g : c \circ\to b$. Let
-
-$$h = (f \otimes g) \circ \mathbf{diag} \circ c.$$
-
-We can readily prove that:
-
-$$h : c \circ\to (a \otimes b),$$
-
-and
-
-$$\mathbf{fst} \circ h = f \quad \text{and} \quad \mathbf{snd} \circ h = g.$$
-
-Furthermore, $h$ is the *unique* such function. It is this uniqueness and existence property of functions into $a \otimes b$ that identifies the construct as a product.
-
-There are important connections between $\circ\to$ and $\otimes$. To state these we require some additional combinators:
-
-$$(4.22) \quad \mathbf{eval} = \lambda u.\, u_0(u_1);$$
-
-$$(4.23) \quad \mathbf{curry} = \lambda u \lambda x \lambda y.\, u(\langle x, y \rangle).$$
-
-If $a$, $b$, and $c$ are retracts, the mapping properties are:
-
-$$(4.24) \quad \mathbf{eval} \circ ((b \circ\to c) \otimes b) : ((b \circ\to c) \otimes b) \circ\to c;$$
-
-$$(4.25) \quad \mathbf{curry} \circ ((a \otimes b) \circ\to c) : ((a \otimes b) \circ\to c) \circ\to (a \circ\to (b \circ\to c)).$$
-
-Suppose next that $f : (a \otimes b) \circ\to c$ and $g : a \circ\to (b \circ\to c)$. We find that
-
-$$\mathbf{eval} \circ (\mathbf{curry}(f) \otimes b) = f$$
-
-and
-
-$$\mathbf{curry}(\mathbf{eval} \circ (g \otimes b)) = g.$$
-
-This shows that our category of retracts is a *Cartesian closed category*, which means roughly that product spaces and function spaces within the category interact harmoniously.
-
-**Lean 4**
-
-- [DataTypesAsLattices/Retracts/theorem_4_4_ii.lean](../Retracts/theorem_4_4_ii.lean)
-- [DataTypesAsLattices/Retracts/theorem_4_4.lean](../Retracts/theorem_4_4.lean)
+@import "1976_Theorem_4_4.ai_english_concordance" {code_block=false}

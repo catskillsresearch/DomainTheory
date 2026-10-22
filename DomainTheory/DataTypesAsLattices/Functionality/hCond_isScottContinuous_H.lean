@@ -1,8 +1,3 @@
-/-ai
-For a fixed code and environment, the conditional clause is Scott-continuous in the candidate.
-
-The proof is Theorem 1.3 of continuity of application of the lambda retract with the ternary continuity package of the conditional. The test is Theorem 1.3 of continuity of application of the which combinator and continuity of the recursive call in the candidate. The middle argument is an inner ternary package whose test is Theorem 1.3 of continuity of application of elimination and continuity of the recursive call, and whose two branches are that same continuity. The outer third argument is again continuity of the recursive call in the candidate.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

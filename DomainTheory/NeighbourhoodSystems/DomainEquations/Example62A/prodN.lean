@@ -1,6 +1,3 @@
-/-ai
-The proper product of a family X is the set of pairs whose second component lies in the component of X indexed by the first component. It is the n-ary analogue of a binary product neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

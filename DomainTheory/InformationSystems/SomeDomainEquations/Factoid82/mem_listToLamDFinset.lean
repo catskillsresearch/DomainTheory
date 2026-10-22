@@ -1,8 +1,3 @@
-/-ai
-A depth-well-formed token lies in the lift of a raw list if and only if its underlying raw token lies in the list.
-
-Induct on the list. Both sides fail for the empty list. On a cons, membership in the inserted finset is equality with the head, whose value heads the list, or membership in the lift of the tail, which the inductive hypothesis turns into membership of the value in the tail. The converse splits list membership in the same way.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

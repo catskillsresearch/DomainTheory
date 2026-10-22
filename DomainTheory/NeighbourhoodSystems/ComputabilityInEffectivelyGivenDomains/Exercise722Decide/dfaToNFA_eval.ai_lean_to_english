@@ -1,0 +1,3 @@
+The nondeterministic automaton obtained from a deterministic automaton evaluates a word to the singleton of the deterministic evaluation.
+
+The proof reads the word from the end. The empty word is immediate. For a word extended by one symbol, the inductive hypothesis and membership in a step set reduce both directions to deterministic evaluation of an appended symbol, with the preceding state the deterministic evaluation of the shorter word.

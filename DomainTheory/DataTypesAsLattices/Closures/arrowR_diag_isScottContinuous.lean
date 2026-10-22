@@ -1,8 +1,3 @@
-/-ai
-The diagonal map sending a to the function space a → a is Scott continuous.
-
-That function space is the graph of u ↦ a ∘ u ∘ a, and composition acts by x ↦ a(u(a(x))), so the diagonal equals the map sending a to the graph of u ↦ the graph of x ↦ a(u(a(x))). For each u the inner graph is Scott continuous in a: the two-variable map (a, b) ↦ a(u(b(x))) is Scott continuous in each variable by continuity of application and the composition theorem, and substituting the identity on both variables and taking a graph preserve Scott continuity. The outer graph in u is therefore Scott continuous in a.
-ai-/
 
 module
 

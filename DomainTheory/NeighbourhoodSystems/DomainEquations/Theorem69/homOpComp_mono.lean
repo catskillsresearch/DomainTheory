@@ -1,8 +1,3 @@
-/-ai
-The strict composite is monotone in the strict map.
-
-The underlying inequality is monotonicity of composition in the middle factor, with k and j held fixed and with the underlying map of the smaller strict map below the underlying map of the larger one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

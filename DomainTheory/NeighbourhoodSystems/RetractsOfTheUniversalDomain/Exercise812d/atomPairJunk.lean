@@ -1,6 +1,3 @@
-/-ai
-The shared junk flag at depth n for a bit-source is the junk flag stored in the inner state of the atom-pair code state. The flag is 1 when both sides are already empty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

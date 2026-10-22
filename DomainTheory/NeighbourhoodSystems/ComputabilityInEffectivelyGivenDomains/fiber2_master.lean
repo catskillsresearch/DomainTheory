@@ -1,8 +1,3 @@
-/-ai
-The double fiber of the master neighbourhood of the double iteration is the master neighbourhood of the original system.
-
-Unfold the double fiber and rewrite each fiber of an iterated master neighbourhood by the master equation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

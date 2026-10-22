@@ -1,0 +1,3 @@
+The positive-list code is primitive recursive.
+
+The first component of the second component of a triple code is primitive recursive. Pairing it with zero and adding one, then pairing the first component with that value and adding one, is primitive recursive. The equation for the list code of a two-element list shows that this function is the positive-list code.

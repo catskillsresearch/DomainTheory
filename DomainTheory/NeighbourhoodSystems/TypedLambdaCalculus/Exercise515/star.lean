@@ -1,6 +1,3 @@
-/-ai
-The star of a set z is the set of points that lie in some finite pointwise power of z, including the empty product, which is the unit.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

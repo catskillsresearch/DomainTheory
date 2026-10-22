@@ -1,8 +1,3 @@
-/-ai
-The basepoint belongs to no tagged copy.
-
-A member of a tagged copy is the tag of some token, and simplifying the resulting equation rules out the basepoint.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

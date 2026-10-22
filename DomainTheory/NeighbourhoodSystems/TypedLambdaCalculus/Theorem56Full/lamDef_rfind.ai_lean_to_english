@@ -1,0 +1,3 @@
+If a realiser λ-defines a total function of arity one more than n, then the strict guard of arity n around the starting search λ-defines the least counter at which that function, with the counter consed onto the parameters, returns zero.
+
+Apply the master constructor to the starting map. If a counter lies in the least-zero search, the function returns zero there and a nonzero value at every smaller counter, so after rewriting the starting map as the search on the vector with 0 consed on, the climbing lemma returns that numeral. If the search is undefined, the function never returns zero, since a zero at any counter would make the least-zero search defined, and the divergence lemma then returns bottom at counter 0.

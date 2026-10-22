@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.23). The binary sequence of x and y, applied to the numeral 0, is x.
-
-This is the application formula for the binary sequence at 0.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

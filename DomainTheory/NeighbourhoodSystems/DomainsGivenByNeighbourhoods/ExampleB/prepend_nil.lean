@@ -1,8 +1,3 @@
-/-ai
-Prepending the empty string leaves a set of strings unchanged.
-
-Compare the two sets by extensionality and simplify membership in a prepend.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

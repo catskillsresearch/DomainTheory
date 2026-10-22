@@ -1,8 +1,3 @@
-/-ai
-C stands in the projection relation to B.
-
-The numbered name example_822 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise822.C_trianglelefteq_B

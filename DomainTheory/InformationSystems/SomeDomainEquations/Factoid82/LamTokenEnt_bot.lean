@@ -1,8 +1,3 @@
-/-ai
-A consistent finite set of lambda tokens entails the bottom lambda token.
-
-The proof applies raw entailment of the bottom token to the consistency of the set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

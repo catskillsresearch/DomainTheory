@@ -1,8 +1,3 @@
-/-ai
-The output of a one followed by another one followed by a tail equals the output of a one followed by that tail.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

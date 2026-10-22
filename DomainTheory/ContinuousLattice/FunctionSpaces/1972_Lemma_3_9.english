@@ -1,0 +1,51 @@
+By the same argument we could show that $\bar{f}$ is the maximal solution of $\bar{f} \circ e \sqsubseteq f$. An interesting question is whether the correspondence $f \rightsquigarrow \bar{f}$ is continuous. I very much doubt it, but at this moment a counterexample escapes me. It is clear that the correspondence is monotonic, for if $f \sqsubseteq g$, then the formula of 3.8 shows that $\bar{f} \sqsubseteq \bar{g}$. This gives us a neat argument for the previous remark: if $g \circ e \sqsubseteq f$, then
+
+$$\overline{g \circ e} \sqsubseteq \bar{f}.$$
+
+But $g \circ e = \overline{g \circ e} \circ e$, so by 3.8, $g \sqsubseteq \overline{g \circ e}$, and $\bar{f}$ is thus maximal.
+
+In the case that the range spaces are being extended, the following lemma relating the extensions will be very useful when we consider inverse limits.
+
+**3.9 Lemma.** Consider the diagram:
+
+$$
+\begin{gathered}
+X \xrightarrow{\quad e\quad} Y 
+f \Big\downarrow \qquad\qquad g \searrow \qquad \bar{f} \swarrow \qquad \downarrow \bar{g} 
+D \xrightarrow[\ j\ ]{\quad i\quad} D'
+\end{gathered}
+$$
+
+where the upper row is a subspace embedding and the lower is a projection. If the given functions $f$ and $g$ are extended to $\bar{f}$ and $\bar{g}$ as in 3.8, and if $f = j \circ g$, then $\bar{f} = j \circ \bar{g}$ also.
+
+*Proof:* $\bar{f}$ and $\bar{g}$ are maximal solutions of $f = \bar{f} \circ e$ and $g = \bar{g} \circ e$. Therefore since
+
+$$
+f = j \circ g = j \circ \bar{g} \circ e,
+$$
+
+we see that
+
+$$
+j \circ \bar{g} \sqsubseteq \bar{f}.
+$$
+
+Note also that
+
+$$
+i \circ \bar{f} \circ e = i \circ f = i \circ j \circ g \sqsubseteq g,
+$$
+
+and so by the remark following 3.8, we have
+
+$$
+i \circ \bar{f} \sqsubseteq \bar{g}.
+$$
+
+Therefore
+
+$$
+\bar{f} = j \circ i \circ \bar{f} \sqsubseteq j \circ \bar{g},
+$$
+
+which proves the equality. $\square$

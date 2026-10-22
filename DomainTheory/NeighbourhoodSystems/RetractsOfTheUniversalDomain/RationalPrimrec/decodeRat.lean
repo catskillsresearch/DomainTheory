@@ -1,6 +1,3 @@
-/-ai
-A rational code is decoded by reading it as a pair, decoding the first component as an integer numerator, and forming the rational with denominator one greater than the second component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

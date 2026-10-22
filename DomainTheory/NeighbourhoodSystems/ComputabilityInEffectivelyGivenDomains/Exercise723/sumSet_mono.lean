@@ -1,8 +1,3 @@
-/-ai
-The Minkowski sum is monotone in each argument. If one set of natural numbers is contained in a second and a third is contained in a fourth, the sum of the first and third is contained in the sum of the second and fourth.
-
-A witness that splits the summand into a member of the first set and a member of the third remains a witness after the two inclusions.
-ai-/
 
 module
 

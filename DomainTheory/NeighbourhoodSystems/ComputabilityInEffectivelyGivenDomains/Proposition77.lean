@@ -1,8 +1,3 @@
-/-ai
-If D has a computable presentation and every neighbourhood of D is nonempty, then the sharp system is effectively given.
-
-The numbered name theorem_77 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77.dsharp_isEffectivelyGiven

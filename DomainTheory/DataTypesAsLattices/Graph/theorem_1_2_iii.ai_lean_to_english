@@ -1,0 +1,3 @@
+The graph of the application of u equals u if and only if u is a graph.
+
+If the two sets are equal and the pair of k and m lies in u with the basic element coded by k contained in the one coded by n, the same pair lies in the graph. Membership there supplies an equal pair and a membership in the application at the basic element coded by k. Injectivity of pairing aligns the components, and the finite witness inside that basic element remains inside the basic element coded by n, so the pair of n and m lies in the graph and therefore in u. Conversely, if u is a graph, one inclusion takes a pair in the graph of the application, whose membership witness is a pair in u at a smaller basic element, and the graph property enlarges it. The other inclusion is Theorem 1.2 (ii).

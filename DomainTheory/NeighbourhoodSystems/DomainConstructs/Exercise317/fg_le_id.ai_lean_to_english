@@ -1,0 +1,3 @@
+The composite of the encoding after the decoding lies below the identity on the infinite iterate of the truth system.
+
+Unfold composition and the identity relation. A composite witness is a binary neighbourhood that is the cone of one string from the decoding and the cone of another from the encoding, so the strings agree by injectivity of cones. The two encoding inclusions then compose to the inclusion required by the identity.

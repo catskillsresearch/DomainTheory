@@ -1,8 +1,3 @@
-/-ai
-Adding a head pair unfolds the intersection of relevant outputs as the conditional head output met with the intersection for the tail.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

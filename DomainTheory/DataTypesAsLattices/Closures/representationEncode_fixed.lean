@@ -1,8 +1,3 @@
-/-ai
-The encoding of an element is a fixed point of the representing-closure code.
-
-Applying the code is the representing closure. An index lies in that closure exactly when the corresponding compact element lies below the decoding of the encoding, and that decoding equals the original element, which is membership in the encoding.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

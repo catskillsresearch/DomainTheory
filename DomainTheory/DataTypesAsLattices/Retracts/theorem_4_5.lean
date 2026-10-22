@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 4.5, the sum theorem, in its core form. The doubly strict conditional on the bottom element, with branches the zero-tagged image of the bottom element under the first summand and the one-tagged image under the second, equals the bottom element, and the bottom element is a retract.
-
-The conditional equation is the strictness clause of the sum theorem, and the bottom element is a retract by the bottom retract lemma.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

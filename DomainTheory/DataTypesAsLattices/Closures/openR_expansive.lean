@@ -1,8 +1,3 @@
-/-ai
-Every set u is contained in the application of the open retract to u.
-
-After unfolding the application, each member k of u is witnessed by the index k itself, using reflexivity of inclusion of finite sets.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,0 +1,3 @@
+The diagonal map sending z to the four-fold tensor of z with itself is Scott continuous.
+
+Continuity of the graph in the parameter reduces to continuity of the body at each fixed u. There the four-way sequence of four continuous maps is continuous, and each map is left application at the corresponding component of u.

@@ -1,8 +1,3 @@
-/-ai
-If the cones of two finite A-strings σ and τ are equal, then σ equals τ.
-
-Equality gives both inclusions of cones, and each inclusion is a prefix relation, so each string is a prefix of the other. The two prefix lengths are therefore equal, and a prefix of equal length is equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

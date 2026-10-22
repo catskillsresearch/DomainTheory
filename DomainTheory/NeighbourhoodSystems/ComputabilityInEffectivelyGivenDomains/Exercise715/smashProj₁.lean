@@ -1,6 +1,3 @@
-/-ai
-The right smash projection relates a smash neighbourhood W to a right neighbourhood Y' when the right preimage of W is contained in Y'. The master clause holds by simplification. Writing W as a product, the right preimage is the right factor, so the intersection of two targets contains that factor and is a right neighbourhood. The relation is monotone because preimages preserve inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

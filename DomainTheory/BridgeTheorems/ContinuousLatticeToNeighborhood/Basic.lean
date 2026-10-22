@@ -1,6 +1,3 @@
-/-ai
-For a continuous lattice D, Scott's way-below neighbourhoods form a neighbourhood system on the token set D. Arbitrary filters need not be principal: the filter of neighbourhoods of elements below an element x has retraction equal to x but may properly contain the principal filter of x. The correct domain is the round filters, those for which membership of the neighbourhood of a yields a finer code b way-below which a lies and whose neighbourhood also belongs to the filter, and under continuity D is order-isomorphic to the round filters by the principal filter and its retraction. The abbreviation continuousLattice_to_neighborhoodSystem names this neighbourhood system.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
@@ -30,18 +27,6 @@ public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilt
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.RoundFilter
 
 @[expose] public section
-
-/-!
-# Continuous lattices → neighbourhood systems (1972 → 1980)
-
-For a continuous lattice `D`, Scott’s way-below neighbourhoods
-`↟a = { z | a ≪ z }` form a `NeighborhoodSystem` on token set `D`.
-
-Arbitrary filters need not be principal (`{ ↟a | a ≤ x }` is a filter with
-`ofFilter = x` but properly contains `toFilter x`). The correct domain is the
-**round** filters: `↟a ∈ f` implies `∃ b, a ≪ b ∧ ↟b ∈ f`. Under
-`ContinuousLattice`, `D ≃o` round filters via `toFilter` / `ofFilter`.
--/
 
 namespace DomainTheory.BridgeTheorems
 

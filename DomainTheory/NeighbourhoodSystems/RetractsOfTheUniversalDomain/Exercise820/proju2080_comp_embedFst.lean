@@ -1,8 +1,3 @@
-/-ai
-The first projection after the first embedding is the identity on A.
-
-Both inequalities reduce to the same computation: the first component of the pair of an element with bottom is that element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

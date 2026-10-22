@@ -1,8 +1,3 @@
-/-ai
-If f is a primitive-recursive function into Bool, then the predicate that f a equals true is primitive recursive.
-
-It is the primitive-recursive equality of f with the constant function whose value is true.
-ai-/
 module
 
 public import Mathlib.Computability.RE

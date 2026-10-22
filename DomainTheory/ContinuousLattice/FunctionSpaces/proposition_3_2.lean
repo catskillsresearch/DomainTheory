@@ -1,8 +1,3 @@
-/-ai
-The specialization order on the space of continuous maps from X to Y, topologized as a Scott function space, is the pointwise specialization order. This is Scott's Proposition 3.2.
-
-The equivalence is the specialization-order lemma for that function topology.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

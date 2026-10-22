@@ -1,8 +1,3 @@
-/-ai
-The equation defining the test one holds on every partial element of the sequence domain.
-
-On the empty string both sides are bottom: the emptiness test returns bottom, and the conditional of bottom is bottom. On a false-headed string both sides are false: the emptiness test returns false, so the outer conditional takes the inner conditional, and the zero test returns true, so the inner conditional takes false. On a true-headed string both sides are true: the emptiness test returns false, the zero test returns false, and the inner conditional takes true.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

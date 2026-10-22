@@ -1,8 +1,3 @@
-/-ai
-One finite element of the binary system approximates another if and only if the first string is an initial segment of the second.
-
-Unfold the finite elements, rewrite the order of principal filters as inclusion of cones, and rewrite that inclusion as the prefix relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

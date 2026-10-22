@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the generic sequence domain is the set of all words.
-
-The two sides are the same by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

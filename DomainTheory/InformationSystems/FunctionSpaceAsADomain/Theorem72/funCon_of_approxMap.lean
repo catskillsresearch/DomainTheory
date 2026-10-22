@@ -1,8 +1,3 @@
-/-ai
-A finite set of function tokens that all lie in the relation of an approximable map is consistent in the function space.
-
-For a subset whose input union is consistent, the union lemma gives that the map relates that input union to the output union, and the codomain law places the output union in the consistency predicate.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,6 +1,3 @@
-/-ai
-The typical Π₁¹ set is the set of elements u of Pω such that for every y there is a z with u(y)(z) equal to the singleton {0}.
-ai-/
 
 module
 

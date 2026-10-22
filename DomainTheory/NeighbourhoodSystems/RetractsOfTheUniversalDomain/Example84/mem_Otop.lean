@@ -1,8 +1,3 @@
-/-ai
-A set Y belongs to Otop if and only if Y is an O-neighbourhood and {0} is contained in Y.
-
-This is the defining membership condition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

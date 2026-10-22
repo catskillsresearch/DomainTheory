@@ -1,8 +1,3 @@
-/-ai
-Evaluation after the pairing of the curry of a product map with the left projection and the right projection equals the original product map.
-
-The composite is rewritten as the uncurry of that curry, which is the original map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

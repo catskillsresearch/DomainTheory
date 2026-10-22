@@ -1,0 +1,3 @@
+The interpretation of topRecTerm in the constantly bottom environment equals the graph of topRec.
+
+Congruence reduces the claim to agreement of the underlying functions. Extensionality and simplification of topRec, the interpretation, the environment update, and equation eq_2_15 give that identity.

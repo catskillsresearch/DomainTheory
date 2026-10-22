@@ -1,6 +1,3 @@
-/-ai
-The output scan sends the empty string to the empty string, copies a leading zero and continues on the tail, and on a leading one hands the tail to the deletion scan.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

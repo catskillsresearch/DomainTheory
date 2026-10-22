@@ -1,8 +1,3 @@
-/-ai
-The second projection of the paired element of two elements is the second element.
-
-Both inclusions are checked. A token in the projection comes from a product set inside the pair, and the second component of that set lies in the second element, so closure applies. Conversely, the right lift of the singleton of a token of the second element lies in the pair, because each such token records, by Factoid 3.2, the bottom token in the first element and that token in the second element. The second component of the right lift is the singleton, which entails itself by Proposition 2.3(iii).
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,6 +1,3 @@
-/-ai
-The positive code at depth n for a bit-source is the positive-list component of the packed state at the pair of that bit-source and the depth.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

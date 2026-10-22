@@ -1,0 +1,3 @@
+The enumeration of the inner intersection code of an index, an accumulator, and a code equals the enumeration of the accumulator united with the intersection of the down-set of that index and the enumeration of the code.
+
+Rewrite by the equation for the inner intersection code, the correctness of the inner fold on the decoded list, and the definition of the enumeration.

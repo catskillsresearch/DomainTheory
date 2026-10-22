@@ -1,8 +1,3 @@
-/-ai
-Interpreting the function-retract term in the constantly bottom environment yields the function-space retract.
-
-Unfold both sides and simplify the interpretation and the environment update.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

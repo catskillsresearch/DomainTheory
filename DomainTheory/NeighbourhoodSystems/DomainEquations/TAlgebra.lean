@@ -1,6 +1,3 @@
-/-ai
-A T-algebra is an object of the underlying category together with a structure map from the image of that object under the endofunctor T to the object itself.
-ai-/
 module
 
 

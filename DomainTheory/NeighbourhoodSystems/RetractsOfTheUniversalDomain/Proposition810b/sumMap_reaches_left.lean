@@ -1,8 +1,3 @@
-/-ai
-If a sum element reaches the left copy, then its image under the sum map also reaches the left copy.
-
-From a left neighbourhood of the element, monotonicity of the left map, applied to the master relation and the inclusion of that neighbourhood in the master, shows that the left map relates the neighbourhood to the master of the target left system. The master of that system, the left injection of the source neighbourhood, and the three left clauses of the sum-map relation witness that the image meets the left injection of the target master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

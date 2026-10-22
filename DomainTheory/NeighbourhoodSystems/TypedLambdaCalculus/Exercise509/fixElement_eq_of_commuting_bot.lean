@@ -1,8 +1,3 @@
-/-ai
-If two approximable endomaps commute and agree at the bottom element, their least fixed points are equal.
-
-By induction on n, the second map sends the n-th iterate of the first from the bottom element to the next iterate: the zero case is the agreement at the bottom element, and the successor is commutation together with the successor law. The second map therefore fixes the least fixed point of the first. Rewriting that fixed point as the directed supremum of the iterates, each image equals the next iterate and so lies below the supremum, while each iterate lies below the next iterate and hence below the supremum of the images. The symmetric argument shows that the first map fixes the least fixed point of the second. Antisymmetry is the least-fixed-point bound applied to each of these equations.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407

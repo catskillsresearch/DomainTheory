@@ -1,8 +1,3 @@
-/-ai
-The embedded set of index n is contained in the master neighbourhood of U.
-
-This is the master-containment law of Scott's sequence, applied to the index sets and the nonempty set of all indices.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

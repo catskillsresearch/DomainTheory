@@ -1,6 +1,3 @@
-/-ai
-Given approximable maps i from D to E and j from E to D such that j composed with i is the identity on D, the elementwise action of i is an order embedding of the elements of D into the elements of E. The action preserves order because it is monotone, and it reflects order because the elementwise action of j is a monotone left inverse, the composite of the two actions being the identity on elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615

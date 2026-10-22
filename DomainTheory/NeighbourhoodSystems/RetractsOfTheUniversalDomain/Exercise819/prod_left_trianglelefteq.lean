@@ -1,8 +1,3 @@
-/-ai
-If A is a retract of B, then the product of A with any neighbourhood system C is a retract of the product of B with C.
-
-Turn the retract into a projection pair, and pair its injection and projection with the identity on the second factor. On a pair, the projection after the injection is the identity because the original pair sections the first factor and the second factor is fixed. The injection after the projection lies below the identity because the original pair does so on the first factor and the second factor is unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

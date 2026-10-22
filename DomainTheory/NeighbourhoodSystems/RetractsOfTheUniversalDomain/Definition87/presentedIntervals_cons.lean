@@ -1,8 +1,3 @@
-/-ai
-The set presented by a list with an endpoint pair adjoined is the union of that pair's half-open interval with the set presented by the tail.
-
-Extensionality reduces membership to the interval condition or membership in the tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

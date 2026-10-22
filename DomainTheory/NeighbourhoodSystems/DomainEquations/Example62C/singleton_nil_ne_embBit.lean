@@ -1,8 +1,3 @@
-/-ai
-The singleton of the empty word is distinct from every bit embedding.
-
-An equality would transport the empty word, which belongs to its singleton, into the embedded set, contradicting that the empty word lies outside every bit embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

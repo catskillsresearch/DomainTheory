@@ -1,0 +1,1 @@
+XPseq n is the union, over all sign sequences of length n extended by the constant true pair, of the second component of the X-step that tests the depth-n atom pair against the enumerated set X n on the positive branch.

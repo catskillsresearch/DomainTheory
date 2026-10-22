@@ -1,8 +1,3 @@
-/-ai
-Applying the bar combinator to u and then to R applied to x yields the positive bar branch of u at R applied to x.
-
-Rewrite by the two-argument application of the bar combinator and unfold the bar step body. Applying R to x and then to the numeral 0 yields the numeral 0, so the zero case of the conditional (2.7) selects the first branch.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

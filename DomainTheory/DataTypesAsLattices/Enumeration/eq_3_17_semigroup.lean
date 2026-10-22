@@ -1,8 +1,3 @@
-/-ai
-The nested positive branch of u at the positive branch of v at R of x, applied to the numeral 1, equals u, and applying L to the positive branch of the application of u to v at R of x recovers the application of that composite to x.
-
-The first conjunct is the first projection in the calculation for (3.17). The second conjunct is equation (3.16) at the application of u to v.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

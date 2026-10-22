@@ -1,0 +1,3 @@
+The identity map of the powerset system P fails Scott's rogue condition.
+
+If the image of the finite element of 1 were the top element, the token 2 would belong to that image. Some finite set contained in the finite element of 1 would then entail the singleton of 2 through the identity relation. The token 2 does not equal 0, so it would belong to that finite set and hence to the finite element of 1, whose members are 0 or 1.

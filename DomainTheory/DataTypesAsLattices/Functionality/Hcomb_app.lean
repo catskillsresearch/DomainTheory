@@ -1,8 +1,3 @@
-/-ai
-Applying the combinator H to an element yields the arrow from environments to lambda values applied to the raw fixed point at the expression retract of that element.
-
-Unfold the combinator and the application equation for the arrow retract, then simplify composition.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

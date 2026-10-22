@@ -1,8 +1,3 @@
-/-ai
-The shift of the singleton of n is the singleton of n + 1.
-
-A member of the shift is the successor of the unique element n, and n + 1 is the successor of n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

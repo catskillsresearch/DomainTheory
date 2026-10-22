@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of D belongs to Fin(js) for every list js.
-
-The empty sublist is a sublist of js, the master is a neighbourhood, and it is the intersection selected by that empty sublist.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

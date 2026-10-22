@@ -1,0 +1,3 @@
+The sum-valued conditional at bottom returns the bottom of the sum. The sum-valued conditional at false returns the right injection of the second argument. The sum-valued conditional at true returns the left injection of the first argument. For every element of a separated sum, the conditional applied to the discriminator of that element and the two injected projections returns the element.
+
+The numbered name example_326_sum is the conjunction of these statements. The proof is that conjunction.

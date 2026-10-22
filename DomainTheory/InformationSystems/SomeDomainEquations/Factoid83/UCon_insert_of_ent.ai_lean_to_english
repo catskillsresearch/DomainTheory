@@ -1,0 +1,3 @@
+If a finite set of U-tokens entails a token, then the set with that token inserted is still consistent.
+
+The entailment supplies consistency of the original set and a V-entailment of the underlying token. Rewriting the inserted forget-finset as an insertion, the claim is the lemma that inserting a non-top entailed token cannot create a V-entailment of top.

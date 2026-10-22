@@ -1,6 +1,3 @@
-/-ai
-The body of the seven-way tagged sum of Scott 1976, (4.44), tests the zeroth component of its argument by a nested doubly strict conditional on the first six iterated predecessors. The branch of index i injects, under tag i, the i-th retract applied to the first component, and exhaustion of the tests returns the top element.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

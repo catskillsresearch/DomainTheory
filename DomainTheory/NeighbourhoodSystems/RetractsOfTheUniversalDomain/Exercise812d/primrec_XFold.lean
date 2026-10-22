@@ -1,8 +1,3 @@
-/-ai
-The X-fold, read on a paired depth and stage, is primitive recursive.
-
-It is primitive recursion from the constant initial pair of zeros along the primitive-recursive fold step, and that recursion equals the fold.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

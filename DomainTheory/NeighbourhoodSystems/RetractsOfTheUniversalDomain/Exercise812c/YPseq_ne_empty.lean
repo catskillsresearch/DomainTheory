@@ -1,8 +1,3 @@
-/-ai
-YPseq n is not empty.
-
-If it were empty, the emptiness transfer would make the enumerated set Y n empty, contradicting that Y n is not empty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,8 +1,3 @@
-/-ai
-Index 0 presents V's master neighbourhood.
-
-Unpairing 0 yields the pair of zeros, whose level set is empty, so the canonical index is the master index. That index presents the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

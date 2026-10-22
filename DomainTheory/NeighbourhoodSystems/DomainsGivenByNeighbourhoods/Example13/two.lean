@@ -1,6 +1,3 @@
-/-ai
-The neighbourhood {2} is the singleton consisting of the token 2.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

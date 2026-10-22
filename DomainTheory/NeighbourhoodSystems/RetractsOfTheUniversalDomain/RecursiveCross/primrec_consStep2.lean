@@ -1,8 +1,3 @@
-/-ai
-consStep2 is primitive recursive.
-
-The left component and the first component of the right half are primitive recursive projections. Successor after their pairing agrees with consStep2 by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

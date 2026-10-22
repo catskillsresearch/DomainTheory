@@ -1,8 +1,3 @@
-/-ai
-The doubly strict conditional on the numeral n + 1 returns its right argument.
-
-That numeral omits 0 and contains the positive number n, so the positive-and-not-zero case applies.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

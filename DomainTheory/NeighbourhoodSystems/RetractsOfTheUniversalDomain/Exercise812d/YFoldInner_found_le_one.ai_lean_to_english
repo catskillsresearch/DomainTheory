@@ -1,0 +1,3 @@
+For a bit at most 1, the found flag of the inner Y-fold is at most 1 at every stage.
+
+The argument is induction on the stage. At zero the fold is the pair of zeros. At a successor the step is unfolded. If the current atom is non-junk, the previous flag is 0 or 1 and both inner branches have first component 1. If the atom is junk, the previous accumulator is kept and the inductive hypothesis applies.

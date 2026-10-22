@@ -1,8 +1,3 @@
-/-ai
-The open retract is a retract.
-
-The retract equation is equality with the graph of double application. Graph extensionality, the unfolding of one application, and the symmetric form of idempotence of the open retract give the equality.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

@@ -1,0 +1,3 @@
+If an element u realizes a function p, then a natural number m lies in val(p(n)) if and only if some code c lies in u applied to the numeral of n and m lies in val(c).
+
+Rewrite by the realizing hypothesis. Membership of m in val(p(n)) is witnessed by the code p(n). Conversely, simplifying the numeral membership forces the witnessing code to equal p(n).

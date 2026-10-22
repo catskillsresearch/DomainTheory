@@ -1,6 +1,3 @@
-/-ai
-The binary join, as a two-variable approximable map into the power domain, relates neighbourhoods X and Y to W when both singleton maps relate their argument to W. The domain, codomain, and master laws, closure under intersection on the right, and monotonicity are the corresponding laws of the singleton map, applied to each argument.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

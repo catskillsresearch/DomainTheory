@@ -1,8 +1,3 @@
-/-ai
-A set is a neighbourhood of the natural-number system if and only if it satisfies the natural-number neighbourhood predicate.
-
-The two sides agree by reflexivity of equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

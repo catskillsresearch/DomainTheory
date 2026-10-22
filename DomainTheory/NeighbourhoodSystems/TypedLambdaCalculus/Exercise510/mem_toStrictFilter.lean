@@ -1,8 +1,3 @@
-/-ai
-The filter of a strict map contains a set of strict maps exactly when that set is a neighbourhood of the strict function space and the map belongs to it.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,6 +1,3 @@
-/-ai
-The uncurried pairing function sends a pair of natural numbers to the pairing function of its two components.
-ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

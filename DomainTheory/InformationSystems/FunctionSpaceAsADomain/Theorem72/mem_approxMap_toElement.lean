@@ -1,8 +1,3 @@
-/-ai
-A function token belongs to the element associated with an approximable map if and only if the map relates the token's input set to its output set.
-
-The two sides are the same proposition, so the equivalence is reflexivity of logical equivalence.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

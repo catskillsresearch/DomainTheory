@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood {1} is not contained in {0}.
-
-The token 1 belongs to {1}. Containment would put it in {0}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

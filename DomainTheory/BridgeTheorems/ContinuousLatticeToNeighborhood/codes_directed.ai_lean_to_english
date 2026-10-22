@@ -1,0 +1,3 @@
+The set of codes of a filter of the way-below neighbourhood system is directed in the lattice order.
+
+Given codes a and b, their join is an upper bound. The filter contains the intersection of the way-below neighbourhoods of a and of b, and that intersection is the way-below neighbourhood of the join, so the join is a code.

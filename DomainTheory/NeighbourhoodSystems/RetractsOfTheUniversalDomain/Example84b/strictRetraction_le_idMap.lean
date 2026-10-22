@@ -1,8 +1,3 @@
-/-ai
-strictRetraction lies below the identity on the function space.
-
-Compare the associated approximable maps. At bottom the strict application is bottom, so its only neighbourhood is the master, which belongs to the original application at bottom. Off bottom the two applications agree. The function-space equivalence turns that inequality of maps into the inequality of elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

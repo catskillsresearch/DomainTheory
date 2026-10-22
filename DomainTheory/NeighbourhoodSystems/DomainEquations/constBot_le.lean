@@ -1,8 +1,3 @@
-/-ai
-The constant-bottom map from the infinite iteration into a target lies below every approximable map into that target.
-
-A relation of the constant map says the input is a neighbourhood and the output is bottom, hence the master neighbourhood, and every approximable map relates a neighbourhood to the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

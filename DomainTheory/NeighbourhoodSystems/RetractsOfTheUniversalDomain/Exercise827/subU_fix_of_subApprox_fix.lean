@@ -1,8 +1,3 @@
-/-ai
-If subApprox fixes a function-space element, then sub on the universal domain fixes its image under i-arrow.
-
-Unfold the element map of sub, cancel j-arrow after i-arrow, and use the fixed-point hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

@@ -1,8 +1,3 @@
-/-ai
-The lower set of a filter in the final-segment system is a lower set.
-
-If a token lies in the lower set and a second token lies below it, the principal upper set of the first belongs to the filter, the principal upper set of the second is a neighbourhood, and the first principal upper set is contained in the second. Upward closure puts the second principal upper set in the filter.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

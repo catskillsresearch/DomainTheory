@@ -1,6 +1,3 @@
-/-ai
-The lower subbasic set determined by y is the set of elements that do not lie below y. This is the lower subbasic set of Scott's March 1972 correction.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

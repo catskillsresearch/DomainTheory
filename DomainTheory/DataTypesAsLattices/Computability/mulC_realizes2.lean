@@ -1,8 +1,3 @@
-/-ai
-The multiplication combinator realizes multiplication of natural numbers.
-
-Simplify by the application equation for multiplication, the evaluation of primitive recursion on numerals, and the value of that recursion for multiplication.
-ai-/
 module
 
 public import Mathlib.Computability.RE

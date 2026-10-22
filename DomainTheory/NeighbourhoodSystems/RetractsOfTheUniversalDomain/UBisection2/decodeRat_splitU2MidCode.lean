@@ -1,8 +1,3 @@
-/-ai
-Decoding the presentation-independent midpoint code is half the sum of the minimum first component and the maximum second component of the decoded canonical list.
-
-Unfold the midpoint code and rewrite by decoding of the rational midpoint, the unpairing of a pair, and the two decoding lemmas for the minimum and maximum codes.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

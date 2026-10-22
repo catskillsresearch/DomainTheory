@@ -1,8 +1,3 @@
-/-ai
-If two self-maps of the universal domain lie below the identity, then so does their sum combinator.
-
-Compare elements, and split on the extracted element. On the left, the left-case formula, monotonicity of the sum injection and of the left injection, and the first map lying below the identity, reduce the image to the left injection after the left extraction of the extracted element, which equals the extracted element, and the sum injection after the sum extraction lies below the identity. The right case is the same argument with the second map. On a point that meets only the master, the master-case formula sends the element to bottom, which lies below every element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

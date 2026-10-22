@@ -1,8 +1,3 @@
-/-ai
-A single input neighbourhood of an element serves every coordinate of a sequence of maps on an iterate neighbourhood if and only if each coordinate has an input neighbourhood of its own.
-
-One direction specializes the common neighbourhood to each coordinate. Conversely, only finitely many fibres are nontrivial. Choosing a neighbourhood for each coordinate and intersecting those up to that finite bound gives a neighbourhood of the element. Below the bound the intersection sits inside the chosen neighbourhood, so monotonicity keeps the relation, and beyond the bound the fibre is the master, which the map relates to the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

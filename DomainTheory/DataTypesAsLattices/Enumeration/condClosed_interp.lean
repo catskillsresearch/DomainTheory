@@ -1,8 +1,3 @@
-/-ai
-Interpreting the closed conditional term in any environment yields the conditional combinator.
-
-Unfold both sides and simplify interpretation, environment extension, and function update.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

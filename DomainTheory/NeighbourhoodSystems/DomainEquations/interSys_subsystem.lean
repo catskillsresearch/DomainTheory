@@ -1,8 +1,3 @@
-/-ai
-The intersection subdomain is a subsystem of E.
-
-The masters agree. A neighbourhood of the intersection belongs to some member of the family, hence is a neighbourhood of E. If two such neighbourhoods have an intersection that is a neighbourhood of E, that intersection belongs to every member of the family by the intersection-closure of subdomain neighbourhood-sets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

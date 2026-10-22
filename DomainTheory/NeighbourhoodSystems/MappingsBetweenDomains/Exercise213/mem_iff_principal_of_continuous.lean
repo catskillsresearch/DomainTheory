@@ -1,8 +1,3 @@
-/-ai
-For a continuous function and an element, a neighbourhood belongs to the image exactly when it belongs to the image of the principal element of some neighbourhood of the element.
-
-If the neighbourhood belongs to the image, the element lies in the preimage of its basic open. That preimage is open, so it contains a basic neighbourhood of some token of the element, and the principal element of that token lies in the basic neighbourhood. Conversely the principal element lies below the element by upward closure, and monotonicity of a continuous map transports the neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

@@ -1,8 +1,3 @@
-/-ai
-The master of the colimit is the master of the generating system.
-
-The equality is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

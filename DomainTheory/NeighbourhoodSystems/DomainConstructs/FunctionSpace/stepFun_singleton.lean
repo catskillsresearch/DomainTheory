@@ -1,8 +1,3 @@
-/-ai
-The step neighborhood of a one-element list is the step set of that pair.
-
-Unfolding the cons cell, the empty tail is the set of all maps, and intersecting with it leaves the head step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

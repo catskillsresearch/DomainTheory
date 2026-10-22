@@ -1,8 +1,3 @@
-/-ai
-If a code has tag 0 and indexes a proper left neighbourhood, the coalesced-sum enumeration returns the left injection of that neighbourhood.
-
-This is the first branch of the enumeration.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

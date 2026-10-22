@@ -1,8 +1,3 @@
-/-ai
-The image of an element s under the inverse product comparison contains the rectangle of false-tagged neighbourhoods X and Y if and only if s contains the false-tagged product neighbourhood of X and Y.
-
-A master witness would identify a false-tagged neighbourhood with the lift master. A rectangle witness is injective in each coordinate, so the membership transfers. The converse is the rectangle clause of the definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,8 +1,3 @@
-/-ai
-The X-fold at stage N + 1 is the fold step applied to the packed triple of the depth, N, and the value at N.
-
-This is the defining equation of the recursion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

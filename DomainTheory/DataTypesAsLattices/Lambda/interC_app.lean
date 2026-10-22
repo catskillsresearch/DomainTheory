@@ -1,8 +1,3 @@
-/-ai
-Applying interC twice yields the conditional that returns zero when both arguments are zero and otherwise the successor of interC applied to the two predecessors.
-
-The outer application is rewritten by the graph equation for interC, and the beta law is applied to continuity of the then-else branch in the second argument.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

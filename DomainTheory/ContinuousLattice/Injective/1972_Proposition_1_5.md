@@ -1,35 +1,31 @@
 # Proposition 1.5
 
-The relationship between arbitrary $T_0$-spaces and the injective spaces is given by the embedding theorem.
+## Human-English
 
-**1.5 Proposition.** Every $T_0$-space can be embedded in an injective space; in fact, in a Cartesian power of the 2-element space $\mathbb{O}$.
+@import "1972_Proposition_1_5.english" {code_block=false}
 
-**Proof:** The proof is well known (cf. Čech (1966), Theorem 26B.9, p. 484.) But we give the argument for completeness sake. Let $X$ be the given space, and let $\mathfrak{O}$ be the class of open subsets of $X$. Let
+## AI: Human-English to AI-Lean
 
-$$
-D = \mathbb{O}^{\mathfrak{O}}
-$$
+**ContinuousLattice/Injective/isInjectiveSpace_sierpinski_power.lean**
 
-be the Cartesian power of $\mathbb{O}$. Then $D$ is injective by 1.3. Define the map $e: X \to D$ by:
+@import "isInjectiveSpace_sierpinski_power.lean"
 
-$$
-e(x)(U) = \begin{cases} \top & \text{if } x \in U,  \bot & \text{if } x \notin U, \end{cases}
-$$
+**ContinuousLattice/Injective/proposition_1_5.lean**
 
-for $x \in X$ and $U \in \mathfrak{O}$. This map $e$ is continuous in view of the topology given to $\mathbb{O}$ and to $D$. The map $e$ is one-one, because $X$ is $T_0$. Finally, if $U \subseteq X$ is open, then
+@import "proposition_1_5.lean"
 
-$$
-\begin{aligned}
-e(U) &= e(x) : x \in U 
-&= e(x) : e(x)(U) = \top 
-&= e(X) \cap t \in D : t(U) \in \top,
-\end{aligned}
-$$
+**ContinuousLattice/Injective/t0_isEmbedding_into_sierpinski_power.lean**
 
-which shows that the image $e(U)$ is open in the subspace $e(X) \subseteq D$. Therefore $e: X \to D$ is an embedding of $X$ as a subspace in $D$. $\square$
+@import "t0_isEmbedding_into_sierpinski_power.lean"
 
-**Lean 4**
+## AI: AI-Lean to AI-English
 
-- [ContinuousLattice/Injective/isInjectiveSpace_sierpinski_power.lean](isInjectiveSpace_sierpinski_power.lean)
-- [ContinuousLattice/Injective/proposition_1_5.lean](proposition_1_5.lean)
-- [ContinuousLattice/Injective/t0_isEmbedding_into_sierpinski_power.lean](t0_isEmbedding_into_sierpinski_power.lean)
+@import "isInjectiveSpace_sierpinski_power.ai_lean_to_english" {code_block=false}
+
+@import "proposition_1_5.ai_lean_to_english" {code_block=false}
+
+@import "t0_isEmbedding_into_sierpinski_power.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Proposition_1_5.ai_english_concordance" {code_block=false}

@@ -1,8 +1,3 @@
-/-ai
-Applying the S combinator first to one function and then to another yields the graph of the pointwise application of the first to the second.
-
-Rewrite by the one-argument application, then apply beta reduction for continuity of the middle map.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

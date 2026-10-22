@@ -1,8 +1,3 @@
-/-ai
-The approximable map a is not finitary.
-
-If it were, the fixed-point set of a would be order-isomorphic to the elements of some neighbourhood system, and composing the inverse of the cut-point isomorphism with that isomorphism would give an order isomorphism g from the unit interval onto those elements. Let x be the image of 1. Every principal approximant of x equals the image of 0: otherwise the cut point of that principal element would be strictly positive, the principal element would be the image of a positive point, and that image would not be compact, contradicting compactness of principal elements. Thus x, being the directed supremum of its principal approximants, equals the image of 0, because each principal equals that image and the family of neighbourhoods of x is nonempty. Injectivity of g then identifies 1 with 0.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

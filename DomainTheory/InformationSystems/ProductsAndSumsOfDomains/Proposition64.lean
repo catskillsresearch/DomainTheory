@@ -1,8 +1,3 @@
-/-ai
-An approximable map h from the separated sum to C that composes with the left injection to give f, composes with the right injection to give g, and sends the bottom element to the bottom element of C, equals the copairing of f and g. This is the uniqueness clause of Scott's Proposition 6.4.
-
-The numbered name theorem_64 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.copairMap_unique

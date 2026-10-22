@@ -1,8 +1,3 @@
-/-ai
-A set is a coalesced neighbourhood exactly when it is the separated-sum master, the left injection of a proper left neighbourhood, or the right injection of a proper right neighbourhood.
-
-The two sides are the same proposition by definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

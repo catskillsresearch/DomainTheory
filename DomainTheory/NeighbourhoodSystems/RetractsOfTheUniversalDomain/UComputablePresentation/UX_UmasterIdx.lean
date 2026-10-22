@@ -1,8 +1,3 @@
-/-ai
-The enumeration of U at the master index is the master neighbourhood.
-
-Unfold the master index and rewrite the enumeration as the canonicalization of the decoded singleton list of the pair zero and one. That singleton presents the master neighbourhood, so canonicalization leaves its presented set unchanged, and that set is the master neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

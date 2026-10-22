@@ -1,8 +1,3 @@
-/-ai
-The McCarthy conditional on the numeral 0 returns its left argument.
-
-Unfolding the conditional and the numeral leaves only the left branch.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

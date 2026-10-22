@@ -1,8 +1,3 @@
-/-ai
-The approximant of f at a successor index equals the elementwise action of f on the preceding approximant.
-
-The successor approximant is the elementwise action at bottom of the composite of f with the preceding iterate map, and the composition law rewrites that action as the elementwise action of f.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

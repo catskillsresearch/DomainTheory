@@ -1,20 +1,25 @@
 # Theorem 5.4
 
-**THEOREM 5.4 (The product and sum theorem for algebraic lattices).** *Suppose that $a$ and $b$ are closure operations; then so are $a \boxtimes b$ and $a \boxplus b$. Analogues of the results in Theorems 4.4 and 4.5 carry over.*
+## Human-English
 
-Following the discussion in § 4, we can also show that the closure operations form a Cartesian closed category, which in some ways is better than the category of all retracts. What makes it better is the existence of a “universe”.
+@import "1976_Theorem_5_4.english" {code_block=false}
 
-Every continuous operation generates a closure operation by just closing up the sets under the continuous function (as a set operation). We can institutionalize this thought by means of this definition:
+## AI: Human-English to AI-Lean
 
-$$(5.14) \quad \mathbf{V} = \lambda a \lambda x.\, \mathbf{Y}(\lambda y.\, x \cup a(y)).$$
+**DataTypesAsLattices/Closures/theorem_5_4.lean**
 
-Clearly $\mathbf{V}$ is LAMBDA-definable, continuous, etc. A more understandable characterization would define $\mathbf{V}(a)(x)$ by this equation:
+@import "theorem_5_4.lean"
 
-$$(5.15) \quad \mathbf{V}(a)(x) = \bigcap \{ y \mid x \sqsubseteq y \text{ and } a(y) \sqsubseteq y \}.$$
+**DataTypesAsLattices/Closures/theorem_5_4_plus.lean**
 
-These two definitions are easily seen to be equivalent. What is unexpected is the discovery (due in a different form to Peter Hancock and Per Martin-Löf) that $\mathbf{V}$ itself is a closure operation.
+@import "theorem_5_4_plus.lean"
 
-**Lean 4**
+## AI: AI-Lean to AI-English
 
-- [DataTypesAsLattices/Closures/theorem_5_4.lean](theorem_5_4.lean)
-- [DataTypesAsLattices/Closures/theorem_5_4_plus.lean](theorem_5_4_plus.lean)
+@import "theorem_5_4.ai_lean_to_english" {code_block=false}
+
+@import "theorem_5_4_plus.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_5_4.ai_english_concordance" {code_block=false}

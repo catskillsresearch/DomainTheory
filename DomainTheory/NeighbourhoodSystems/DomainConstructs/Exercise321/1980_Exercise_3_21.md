@@ -1,20 +1,97 @@
 # Exercise 3.21
 
-**EXERCISE 3.21.** In the proofs of 3.12 in the definition of curry ($g$) it is rather cavalierly assumed that the neighbourhood $[Y, Z]$ uniquely determines $Y$ and $Z$. Show that this is true if $Z \neq \Delta_2$. (Hint: Find explicitly the least of $f \in [Y, Z]$.) Show that if $Z = \Delta_2$ the biconditional stated at the start of the proof is still valid even though $Y$ is not uniquely determined. (Hint: Remember that $\Delta_1\ g\ \Delta_2$ must hold.) For arbitrary pairs of neighbourhoods of $(D_1 \to D_2)$ is there a simple criterion for identity?
+## Human-English
 
-**Lean 4**
+@import "1980_Exercise_3_21.english" {code_block=false}
 
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/interYs_single_not_subset_eq.lean](interYs_single_not_subset_eq.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/interYs_single_subset_eq.lean](interYs_single_subset_eq.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/leastStep_le.lean](leastStep_le.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/leastStep_mem.lean](leastStep_mem.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/leastStep_eq_of_step_eq.lean](leastStep_eq_of_step_eq.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/leastStep_rel.lean](leastStep_rel.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/stepCons.lean](stepCons.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/leastStep.lean](leastStep.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/step_master_right.lean](step_master_right.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/step_eq_univ_iff.lean](step_eq_univ_iff.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/step_eq_of_ne_master.lean](step_eq_of_ne_master.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321/step_eq_iff.lean](step_eq_iff.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise321.lean](../Exercise321.lean)
+## AI: Human-English to AI-Lean
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/interYs_single_not_subset_eq.lean**
+
+@import "interYs_single_not_subset_eq.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/interYs_single_subset_eq.lean**
+
+@import "interYs_single_subset_eq.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/leastStep_le.lean**
+
+@import "leastStep_le.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/leastStep_mem.lean**
+
+@import "leastStep_mem.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/leastStep_eq_of_step_eq.lean**
+
+@import "leastStep_eq_of_step_eq.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/leastStep_rel.lean**
+
+@import "leastStep_rel.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/stepCons.lean**
+
+@import "stepCons.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/leastStep.lean**
+
+@import "leastStep.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/step_master_right.lean**
+
+@import "step_master_right.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/step_eq_univ_iff.lean**
+
+@import "step_eq_univ_iff.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/step_eq_of_ne_master.lean**
+
+@import "step_eq_of_ne_master.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321/step_eq_iff.lean**
+
+@import "step_eq_iff.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise321.lean**
+
+@import "../Exercise321.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "interYs_single_not_subset_eq.ai_lean_to_english" {code_block=false}
+
+@import "interYs_single_subset_eq.ai_lean_to_english" {code_block=false}
+
+@import "leastStep_le.ai_lean_to_english" {code_block=false}
+
+@import "leastStep_mem.ai_lean_to_english" {code_block=false}
+
+@import "leastStep_eq_of_step_eq.ai_lean_to_english" {code_block=false}
+
+@import "leastStep_rel.ai_lean_to_english" {code_block=false}
+
+@import "stepCons.ai_lean_to_english" {code_block=false}
+
+@import "leastStep.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "step_master_right.ai_lean_to_english" {code_block=false}
+
+@import "step_eq_univ_iff.ai_lean_to_english" {code_block=false}
+
+@import "step_eq_of_ne_master.ai_lean_to_english" {code_block=false}
+
+@import "step_eq_iff.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise321.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_3_21.ai_english_concordance" {code_block=false}

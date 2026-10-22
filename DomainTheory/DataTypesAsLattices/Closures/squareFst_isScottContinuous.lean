@@ -1,8 +1,3 @@
-/-ai
-The first projection of a disjoint pairing is Scott continuous.
-
-If the double of a number lies in a set, the finite set whose only member is that double is contained in the set and contains the double, so the number lies in the first projection of that finite set and hence in the Scott union. Conversely, a Scott-union witness is a finite set contained in the original set whose first projection already contains the number, so the double lies in the original set.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

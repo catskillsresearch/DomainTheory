@@ -1,0 +1,3 @@
+If a set U is a neighbourhood of the system at an index i, then the slice of U at i is a neighbourhood of the indexed product.
+
+The witnessing tuple is the update that equals U at i and the master elsewhere. It is a neighbourhood at every index, and the singleton list of i supports it.

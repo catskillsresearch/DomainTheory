@@ -1,6 +1,3 @@
-/-ai
-The three neighbourhoods of Example 1.3 are the master neighbourhood, the neighbourhood {1, 2}, and the neighbourhood {2}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

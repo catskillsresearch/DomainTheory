@@ -1,8 +1,3 @@
-/-ai
-The first projection of the pair space is monotone.
-
-Rewrite membership in the first projection. The first component of that data is unchanged, and the inequality of elements carries the second component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

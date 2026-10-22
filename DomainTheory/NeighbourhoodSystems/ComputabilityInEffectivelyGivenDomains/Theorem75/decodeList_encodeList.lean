@@ -1,8 +1,3 @@
-/-ai
-Decoding the code of a list returns that list.
-
-The empty list decodes from zero. A cons decodes by the successor clause, the pair projections, and the inductive hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

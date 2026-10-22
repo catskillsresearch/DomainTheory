@@ -1,8 +1,3 @@
-/-ai
-On the free monoid of binary words, the least fixed point of the map sending w to {e} · w ∪ {e'} equals the product of the star of {e} with {e'}.
-
-This is the single-equation law of the first part, applied in that monoid.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

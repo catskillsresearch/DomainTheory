@@ -1,8 +1,3 @@
-/-ai
-A natural number lies in the excluded-point set of a cofinite filter exactly when the complement of its singleton belongs to the filter.
-
-The two sides are definitionally identical.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

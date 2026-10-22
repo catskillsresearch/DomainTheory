@@ -1,6 +1,3 @@
-/-ai
-Diagrammatic composition of approximable maps is ordinary composition with the two maps in the opposite order, so that the first map is applied and then the second.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

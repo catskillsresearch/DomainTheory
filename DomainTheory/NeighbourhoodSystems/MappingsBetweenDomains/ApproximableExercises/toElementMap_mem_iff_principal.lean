@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood belongs to the elementwise image of an approximable map at an element exactly when it belongs to the image of the principal element of some neighbourhood of that element.
-
-Elementwise membership unfolds as a relation witness. The equivalence between the relation and membership in the image of the principal element converts each direction into the other.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

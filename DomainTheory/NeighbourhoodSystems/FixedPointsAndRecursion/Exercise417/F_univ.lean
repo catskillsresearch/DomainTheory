@@ -1,8 +1,3 @@
-/-ai
-In any monoid, the whole carrier is a fixed point of the power-set operator.
-
-The image is contained in the whole carrier. Conversely, each element is the product of the unit with itself, so it lies in the pointwise square, which is contained in the image.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

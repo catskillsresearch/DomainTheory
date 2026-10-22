@@ -1,8 +1,3 @@
-/-ai
-The map recovered from the composition combinator at a pair of function-space elements φ and ψ sends x to the value of φ at the value of ψ at x.
-
-Rewrite by the definition of the combinator, the curried application law, and the uncurried body, then simplify composition, pairing, the two projections, the two components of a pair, and evaluation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

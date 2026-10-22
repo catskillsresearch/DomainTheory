@@ -1,8 +1,3 @@
-/-ai
-If the bit embedding of W is a neighbourhood of C, then W is a neighbourhood of C.
-
-Membership splits into a cone and a singleton. In the cone case the selector lies in its own cone and hence in the embedded set, so it is the bit followed by a word; rewriting by the cone form of embedding and applying injectivity of embedding shows that W is the cone of that word, which is a neighbourhood. In the singleton case the selector lies in its own singleton and the same extraction, rewritten by the singleton form of embedding, shows that W is the singleton of the remaining word, which is a neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

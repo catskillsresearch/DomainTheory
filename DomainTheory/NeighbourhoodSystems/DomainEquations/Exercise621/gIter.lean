@@ -1,6 +1,3 @@
-/-ai
-The Kleene iteration of an expression starts at the singleton of the empty string, and each successor stage applies the token-level recursion to the previous stage.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

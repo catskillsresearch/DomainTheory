@@ -1,6 +1,3 @@
-/-ai
-A neighbourhood system is atomless when every neighbourhood splits into two disjoint nonempty neighbourhoods whose union is the original set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

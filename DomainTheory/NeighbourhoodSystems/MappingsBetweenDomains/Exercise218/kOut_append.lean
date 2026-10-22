@@ -1,8 +1,3 @@
-/-ai
-The inverse output of a finite string is a prefix of the inverse output of any extension of that string.
-
-The proof follows the recursion of the inverse output. The empty string and a singleton simplify immediately. For a string that starts with two bits, the cons equation extends the inductive prefix witness by the kept first bit.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example24

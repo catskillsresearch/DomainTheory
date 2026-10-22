@@ -1,8 +1,3 @@
-/-ai
-The enumerated power-domain neighbourhood of a code is the union of down-sets of the list decoded from that code.
-
-The two sides are the same by the definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

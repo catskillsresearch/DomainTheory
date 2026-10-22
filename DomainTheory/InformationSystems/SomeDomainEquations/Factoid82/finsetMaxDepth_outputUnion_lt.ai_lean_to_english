@@ -1,0 +1,3 @@
+If a finite set of input-output pairs is contained in the function set of a finite set of raw lambda tokens, and that function set is nonempty, then the finset depth of the output union of the pairs is strictly below the finset depth of the token set.
+
+Some function token of the set has positive raw depth, so the finset depth is positive. Each token of the output union lies on the output list of a pair from the function set, and its raw depth is strictly below the raw depth of the corresponding function token, hence strictly below the finset depth. The strict right-fold bound then applies.

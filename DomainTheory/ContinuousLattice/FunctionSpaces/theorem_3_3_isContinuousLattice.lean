@@ -1,8 +1,3 @@
-/-ai
-If D and D' are continuous lattices, then the pointwise-ordered space of Scott maps from D to D' is a continuous lattice. Each Scott map is the supremum of the step maps way below it.
-
-Elements way below a map lie below it. If a map g lies above every element way below f, compare them pointwise. At each argument, the value of f is the supremum of those e' for which some e way below the argument has e' way below f at e. Each corresponding step map is way below f, hence lies below g, and its value at the argument is e'.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

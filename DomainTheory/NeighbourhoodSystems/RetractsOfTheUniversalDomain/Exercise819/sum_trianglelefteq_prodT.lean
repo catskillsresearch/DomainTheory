@@ -1,8 +1,3 @@
-/-ai
-The sum of E with itself is a retract of the product of the three-point domain with the product of E with itself.
-
-The tagging embedding and the conditional sum form a projection pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

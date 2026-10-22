@@ -1,6 +1,3 @@
-/-ai
-The inverse of the structure isomorphism, as a raw approximable map from Exp to T(Exp), is the underlying map of the inverse morphism of that isomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

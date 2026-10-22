@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, before Theorem 3.5. The code fin j is the primitive recursive bit scan finAux j (j + 1). It is a uniform code for the finite set e_j, and the only fixed choice it makes is a code for binary union.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

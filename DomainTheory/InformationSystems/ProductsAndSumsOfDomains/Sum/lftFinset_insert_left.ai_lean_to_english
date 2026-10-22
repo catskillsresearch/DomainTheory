@@ -1,0 +1,3 @@
+Inserting the left token of an element into a finite set of sum tokens adjoins that element to the left projection.
+
+By extensionality, a left token in the inserted set is either the inserted left token, and the left constructor is injective, or a left token of the original set. Conversely, the inserted element is recovered as that left token, and an element of the original left projection is a left token of the original set.

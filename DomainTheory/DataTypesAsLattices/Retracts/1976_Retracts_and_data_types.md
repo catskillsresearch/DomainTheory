@@ -1,135 +1,619 @@
 # Retracts and data types
 
-Data can be structured in many ways: ordered tuples, lists, arrays, trees, streams, and even operations and functions. The last point becomes clear if one thinks of *parameters*. We would normally hardly consider the pairing function $\lambda x \lambda y.\, \langle x, y \rangle$ as being in itself a piece of data. But if we treat the first variable as a *parameter*, then it can be specialized to a *fixed value*, say the element $a$, producing the function $\lambda y.\, \langle a, y \rangle$. This function is more likely to be the output of some process and *in itself* can be considered as a datum. It is rather like one *whole row* of a matrix. If we were to regard a two-argument function $f$ as being a matrix, then its $a$th row would be exactly $\lambda y.\, f(a)(y)$. If $s$ were a selection function, then, for example, $\lambda y.\, f(s(y))(y)$ would represent the selection of one element out of each column of the matrix. This selection could be taken as a specialization of parameters in the operator $\lambda u \lambda v \lambda y.\, u(v(y))(y)$. We have not been very definite here about the exact nature of the fixed $a$, $f$, or $s$, or the range of the variable $y$ or the range of values of the function $f$. The point is only to recall a few elements of structure and to suggest an abstract view of data going beyond the usual iterated arrays and trees.
+## Human-English
 
-What then is a *data type*? Answer: a type of data. That is to say, a collection of data that have been grouped together for reasons of similarity of structure or perhaps mere convenience. Thus the collection may very well be a mixed bag, but more often than not canons of taste or demands of simplicity dictate an adherence to regularity. The grouping may be formed to eliminate irrelevant objects and focus the attention in other ways. It is frequently a matter of good organization that aids the understanding of complex definitions. In programming languages, one of the major reasons for making an explicit declaration of a data type (that is, the restriction of certain variables to certain *"modes"*) is that the computed objects of that type can enjoy a special *representation* in the machine that allows the manipulation of these objects via the chosen representation to be reasonably efficient. This is a very critical matter for good language design and good compiler writing. In this report, however, we cannot discuss the problems of representation, important as they may be. Our objective here is conceptual organization, and we wish to show how such ideas, in the language for computable functions used here, can find the proper expression.
+@import "1976_Retracts_and_data_types.english" {code_block=false}
 
-Which are the data types that can be defined in LAMBDA? No final answer can be given since the number is infinite and inexhaustible. From one point of view, however, there is only one: $\mathbf{P}\omega$ itself. It is the universal type and all other types are subtypes of it; so $\mathbf{P}\omega$ plays a primary role in this exposition. But in a way it is too big, or at least too complex, since each of its elements can be used in so many different ways. When we specify a subtype the intention is to restrict attention to a special use. But even the various subtypes overlap, and so the same elements still get different uses. Style in writing definitions will usually make the differentiation clear though. The main innovation to be described in this section is the use of LAMBDA expressions to define types *as well as* elements. Certain expressions define *retracts* (or better: retraction mappings), and it is the *ranges* (or as we shall see: *sets of finite points*) of such retracts that form the groupings into types. Thus LAMBDA provides a calculus of type definitions including *recursive* type definitions. Examples will be explained both here and in the following sections. Note that types as retracts turn out to be types as *lattices*, that is, types of partial and many-valued objects. The problem of cutting these lattice types down to the perfect or complete objects is discussed in § 6. Another view of types and functionality of mappings is presented in § 7.
+## AI: Human-English to AI-Lean
 
-The notion of a retract comes from (analytic) topology, but it seems almost an accident that the idea can be applied in the present context. The word is employed not because there is some deep tie-up with topology but because it is short and rather descriptive. Three easy examples will motivate the general plan:
+**DataTypesAsLattices/FixedLattices/DirectedSet.lean**
 
-$$(4.1) \quad \mathbf{fun} = \lambda u \lambda x.\, u(x);$$
+@import "../FixedLattices/DirectedSet.lean"
 
-$$(4.2) \quad \mathbf{pair} = \lambda u.\, \langle u_0, u_1 \rangle;$$
+**DataTypesAsLattices/FixedLattices/completeLatticeLE.lean**
 
-$$(4.3) \quad \mathbf{bool} = \lambda u.\, u \sqsupset 0, 1.$$
+@import "../FixedLattices/completeLatticeLE.lean"
 
-Here $\sqsupset$ is the *doubly strict conditional* defined by
+**DataTypesAsLattices/FixedLattices/completeLatticePreorder.lean**
 
-$$(4.4) \quad z \sqsupset x, y = z \supset (z \supset x, \top), (z \supset \top, y),$$
+@import "../FixedLattices/completeLatticePreorder.lean"
 
-which has the property that if $z$ is both zero and positive, then it takes the value $\top$ instead of the value $x \cup y$.
+**DataTypesAsLattices/FixedLattices/completeLatticeSupSet.lean**
 
-- [Definition (retract)](1976_Definition_retract.md)
-- [Definition (membership)](1976_Definition_membership.md)
-- [Theorem 4.1](1976_Theorem_4_1.md)
-- [Definition (ordering)](1976_Definition_ordering.md)
-- [Theorem 4.2](1976_Theorem_4_2.md)
-- [Theorem 4.3](1976_Theorem_4_3.md)
-- [Theorem 4.4](../Functionality/1976_Theorem_4_4.md)
-- [Theorem 4.5](1976_Theorem_4_5.md)
-- [Theorem 4.6](1976_Theorem_4_6.md)
+@import "../FixedLattices/completeLatticeSupSet.lean"
 
-**Lean 4**
+**DataTypesAsLattices/FixedLattices/WayBelow.lean**
 
-- [DataTypesAsLattices/FixedLattices/DirectedSet.lean](../FixedLattices/DirectedSet.lean)
-- [DataTypesAsLattices/FixedLattices/completeLatticeLE.lean](../FixedLattices/completeLatticeLE.lean)
-- [DataTypesAsLattices/FixedLattices/completeLatticePreorder.lean](../FixedLattices/completeLatticePreorder.lean)
-- [DataTypesAsLattices/FixedLattices/completeLatticeSupSet.lean](../FixedLattices/completeLatticeSupSet.lean)
-- [DataTypesAsLattices/FixedLattices/WayBelow.lean](../FixedLattices/WayBelow.lean)
-- [DataTypesAsLattices/FixedLattices/IsCompact.lean](../FixedLattices/IsCompact.lean)
-- [DataTypesAsLattices/FixedLattices/CountablyAlgebraic.lean](../FixedLattices/CountablyAlgebraic.lean)
-- [DataTypesAsLattices/FixedLattices/ContinuousBasis.lean](../FixedLattices/ContinuousBasis.lean)
-- [DataTypesAsLattices/FixedLattices/finiteBasisSups.lean](../FixedLattices/finiteBasisSups.lean)
-- [DataTypesAsLattices/FixedLattices/Basic.lean](../FixedLattices/Basic.lean)
-- [DataTypesAsLattices/FixedLattices/finiteBasisSups_directed.lean](../FixedLattices/finiteBasisSups_directed.lean)
-- [DataTypesAsLattices/FixedLattices/sSup_finiteBasisSups.lean](../FixedLattices/sSup_finiteBasisSups.lean)
-- [DataTypesAsLattices/FixedLattices/CountablyAlgebraicu2ecompact_finite_support.lean](../FixedLattices/CountablyAlgebraicu2ecompact_finite_support.lean)
-- [DataTypesAsLattices/FixedLattices.lean](../FixedLattices.lean)
-- [DataTypesAsLattices/Retracts/Fixpoints.lean](Fixpoints.lean)
-- [DataTypesAsLattices/Retracts/Icomb.lean](Icomb.lean)
-- [DataTypesAsLattices/Retracts/Icomb_app.lean](Icomb_app.lean)
-- [DataTypesAsLattices/Retracts/Icomb_isRetract.lean](Icomb_isRetract.lean)
-- [DataTypesAsLattices/Retracts/DirectedSubset.lean](DirectedSubset.lean)
-- [DataTypesAsLattices/Retracts/IsCompactSubset.lean](IsCompactSubset.lean)
-- [DataTypesAsLattices/Retracts/boolR_app.lean](boolR_app.lean)
-- [DataTypesAsLattices/Retracts/comp.lean](comp.lean)
-- [DataTypesAsLattices/Retracts/Retract.lean](Retract.lean)
-- [DataTypesAsLattices/Retracts/arrowR.lean](arrowR.lean)
-- [DataTypesAsLattices/Retracts/comp_app.lean](comp_app.lean)
-- [DataTypesAsLattices/Retracts/comp_isScottContinuous_right.lean](comp_isScottContinuous_right.lean)
-- [DataTypesAsLattices/Retracts/comp_right_const.lean](comp_right_const.lean)
-- [DataTypesAsLattices/Retracts/arrowR_map_isScottContinuous.lean](arrowR_map_isScottContinuous.lean)
-- [DataTypesAsLattices/Retracts/arrowR_app.lean](arrowR_app.lean)
-- [DataTypesAsLattices/Retracts/arrowR_isStrict.lean](arrowR_isStrict.lean)
-- [DataTypesAsLattices/Retracts/dcondSet_bool_idem.lean](dcondSet_bool_idem.lean)
-- [DataTypesAsLattices/Retracts/dcondSet_same_ofNat.lean](dcondSet_same_ofNat.lean)
-- [DataTypesAsLattices/Retracts/directed_finite_cover.lean](directed_finite_cover.lean)
-- [DataTypesAsLattices/Retracts/directed_sUnion_fixed.lean](directed_sUnion_fixed.lean)
-- [DataTypesAsLattices/Retracts/eq_4_11.lean](eq_4_11.lean)
-- [DataTypesAsLattices/Retracts/fstC.lean](fstC.lean)
-- [DataTypesAsLattices/Retracts/fstC_app.lean](fstC_app.lean)
-- [DataTypesAsLattices/Retracts/funOf_fix_idem.lean](funOf_fix_idem.lean)
-- [DataTypesAsLattices/Retracts/funRetract.lean](funRetract.lean)
-- [DataTypesAsLattices/Retracts/funRetract_app.lean](funRetract_app.lean)
-- [DataTypesAsLattices/Retracts/gfpBelow.lean](gfpBelow.lean)
-- [DataTypesAsLattices/Retracts/gfpBelow_isGLB.lean](gfpBelow_isGLB.lean)
-- [DataTypesAsLattices/Retracts/gfpBelow_le.lean](gfpBelow_le.lean)
-- [DataTypesAsLattices/Retracts/gfpBelow_postfixed.lean](gfpBelow_postfixed.lean)
-- [DataTypesAsLattices/Retracts/gfpBelow_fixed_inter.lean](gfpBelow_fixed_inter.lean)
-- [DataTypesAsLattices/Retracts/gfpBelow_subset.lean](gfpBelow_subset.lean)
-- [DataTypesAsLattices/Retracts/graph_ext.lean](graph_ext.lean)
-- [DataTypesAsLattices/Retracts/boolR_isRetract.lean](boolR_isRetract.lean)
-- [DataTypesAsLattices/Retracts/eq_4_11_comp.lean](eq_4_11_comp.lean)
-- [DataTypesAsLattices/Retracts/arrowR_retractLe.lean](arrowR_retractLe.lean)
-- [DataTypesAsLattices/Retracts/funRetract_isRetract.lean](funRetract_isRetract.lean)
-- [DataTypesAsLattices/Retracts/intF_isScottContinuous.lean](intF_isScottContinuous.lean)
-- [DataTypesAsLattices/Retracts/intF_map_isScottContinuous.lean](intF_map_isScottContinuous.lean)
-- [DataTypesAsLattices/Retracts/intF_app.lean](intF_app.lean)
-- [DataTypesAsLattices/Retracts/intR_eq_intF.lean](intR_eq_intF.lean)
-- [DataTypesAsLattices/Retracts/intR_app.lean](intR_app.lean)
-- [DataTypesAsLattices/Retracts/intR_bot.lean](intR_bot.lean)
-- [DataTypesAsLattices/Retracts/intR_isGraph.lean](intR_isGraph.lean)
-- [DataTypesAsLattices/Retracts/intR_ofNat.lean](intR_ofNat.lean)
-- [DataTypesAsLattices/Retracts/inter_const_isScottContinuous.lean](inter_const_isScottContinuous.lean)
-- [DataTypesAsLattices/Retracts/iterateFrom.lean](iterateFrom.lean)
-- [DataTypesAsLattices/Retracts/iterateFrom_bot.lean](iterateFrom_bot.lean)
-- [DataTypesAsLattices/Retracts/iterateFrom_mono.lean](iterateFrom_mono.lean)
-- [DataTypesAsLattices/Retracts/lfpAbove.lean](lfpAbove.lean)
-- [DataTypesAsLattices/Retracts/lfpAbove_bot.lean](lfpAbove_bot.lean)
-- [DataTypesAsLattices/Retracts/lfpAbove_fixed.lean](lfpAbove_fixed.lean)
-- [DataTypesAsLattices/Retracts/lfpAbove_le_of_ub.lean](lfpAbove_le_of_ub.lean)
-- [DataTypesAsLattices/Retracts/lfpAbove_ub.lean](lfpAbove_ub.lean)
-- [DataTypesAsLattices/Retracts/pairSeq.lean](pairSeq.lean)
-- [DataTypesAsLattices/Retracts/plusR.lean](plusR.lean)
-- [DataTypesAsLattices/Retracts/predSet_eq_ofNat_of_no_zero.lean](predSet_eq_ofNat_of_no_zero.lean)
-- [DataTypesAsLattices/Retracts/intR_top_of_nonsingleton.lean](intR_top_of_nonsingleton.lean)
-- [DataTypesAsLattices/Retracts/intR_top.lean](intR_top.lean)
-- [DataTypesAsLattices/Retracts/intR_idem.lean](intR_idem.lean)
-- [DataTypesAsLattices/Retracts/intR_isRetract.lean](intR_isRetract.lean)
-- [DataTypesAsLattices/Retracts/predSet_ofNat_zero.lean](predSet_ofNat_zero.lean)
-- [DataTypesAsLattices/Retracts/retractBasis_directed.lean](retractBasis_directed.lean)
-- [DataTypesAsLattices/Retracts/retractBasis_directedSubset.lean](retractBasis_directedSubset.lean)
-- [DataTypesAsLattices/Retracts/retractLe.lean](retractLe.lean)
-- [DataTypesAsLattices/Retracts/retractLe_refl.lean](retractLe_refl.lean)
-- [DataTypesAsLattices/Retracts/retractLe_trans.lean](retractLe_trans.lean)
-- [DataTypesAsLattices/Retracts/retract_interpolation.lean](retract_interpolation.lean)
-- [DataTypesAsLattices/Retracts/retract_isGraph.lean](retract_isGraph.lean)
-- [DataTypesAsLattices/Retracts/iUnion_retract_isGraph.lean](iUnion_retract_isGraph.lean)
-- [DataTypesAsLattices/Retracts/sSup_fixed_eq_sUnion.lean](sSup_fixed_eq_sUnion.lean)
-- [DataTypesAsLattices/Retracts/retractBasis_sSup.lean](retractBasis_sSup.lean)
-- [DataTypesAsLattices/Retracts/retractBasis_sUnion.lean](retractBasis_sUnion.lean)
-- [DataTypesAsLattices/Retracts/retractBasis_wayBelow.lean](retractBasis_wayBelow.lean)
-- [DataTypesAsLattices/Retracts/sUnion_Fixpoints_le_image.lean](sUnion_Fixpoints_le_image.lean)
-- [DataTypesAsLattices/Retracts/lfpAbove_mem.lean](lfpAbove_mem.lean)
-- [DataTypesAsLattices/Retracts/sndC.lean](sndC.lean)
-- [DataTypesAsLattices/Retracts/sndC_app.lean](sndC_app.lean)
-- [DataTypesAsLattices/Retracts/tensorR.lean](tensorR.lean)
-- [DataTypesAsLattices/Retracts/typed.lean](typed.lean)
-- [DataTypesAsLattices/Retracts/typed_of_arrowR.lean](typed_of_arrowR.lean)
-- [DataTypesAsLattices/Retracts/arrowR_functor.lean](arrowR_functor.lean)
-- [DataTypesAsLattices/Retracts/typed_arrowR_range.lean](typed_arrowR_range.lean)
-- [DataTypesAsLattices/Retracts/typed_arrowR_restrict.lean](typed_arrowR_restrict.lean)
-- [DataTypesAsLattices/Retracts/typed_comp.lean](typed_comp.lean)
-- [DataTypesAsLattices/Retracts/vals.lean](vals.lean)
-- [DataTypesAsLattices/Retracts/vals_subset.lean](vals_subset.lean)
+@import "../FixedLattices/WayBelow.lean"
+
+**DataTypesAsLattices/FixedLattices/IsCompact.lean**
+
+@import "../FixedLattices/IsCompact.lean"
+
+**DataTypesAsLattices/FixedLattices/CountablyAlgebraic.lean**
+
+@import "../FixedLattices/CountablyAlgebraic.lean"
+
+**DataTypesAsLattices/FixedLattices/ContinuousBasis.lean**
+
+@import "../FixedLattices/ContinuousBasis.lean"
+
+**DataTypesAsLattices/FixedLattices/finiteBasisSups.lean**
+
+@import "../FixedLattices/finiteBasisSups.lean"
+
+**DataTypesAsLattices/FixedLattices/Basic.lean**
+
+@import "../FixedLattices/Basic.lean"
+
+**DataTypesAsLattices/FixedLattices/finiteBasisSups_directed.lean**
+
+@import "../FixedLattices/finiteBasisSups_directed.lean"
+
+**DataTypesAsLattices/FixedLattices/sSup_finiteBasisSups.lean**
+
+@import "../FixedLattices/sSup_finiteBasisSups.lean"
+
+**DataTypesAsLattices/FixedLattices/CountablyAlgebraicu2ecompact_finite_support.lean**
+
+@import "../FixedLattices/CountablyAlgebraicu2ecompact_finite_support.lean"
+
+**DataTypesAsLattices/FixedLattices.lean**
+
+@import "../FixedLattices.lean"
+
+**DataTypesAsLattices/Retracts/Fixpoints.lean**
+
+@import "Fixpoints.lean"
+
+**DataTypesAsLattices/Retracts/Icomb.lean**
+
+@import "Icomb.lean"
+
+**DataTypesAsLattices/Retracts/Icomb_app.lean**
+
+@import "Icomb_app.lean"
+
+**DataTypesAsLattices/Retracts/Icomb_isRetract.lean**
+
+@import "Icomb_isRetract.lean"
+
+**DataTypesAsLattices/Retracts/DirectedSubset.lean**
+
+@import "DirectedSubset.lean"
+
+**DataTypesAsLattices/Retracts/IsCompactSubset.lean**
+
+@import "IsCompactSubset.lean"
+
+**DataTypesAsLattices/Retracts/boolR_app.lean**
+
+@import "boolR_app.lean"
+
+**DataTypesAsLattices/Retracts/comp.lean**
+
+@import "comp.lean"
+
+**DataTypesAsLattices/Retracts/Retract.lean**
+
+@import "Retract.lean"
+
+**DataTypesAsLattices/Retracts/arrowR.lean**
+
+@import "arrowR.lean"
+
+**DataTypesAsLattices/Retracts/comp_app.lean**
+
+@import "comp_app.lean"
+
+**DataTypesAsLattices/Retracts/comp_isScottContinuous_right.lean**
+
+@import "comp_isScottContinuous_right.lean"
+
+**DataTypesAsLattices/Retracts/comp_right_const.lean**
+
+@import "comp_right_const.lean"
+
+**DataTypesAsLattices/Retracts/arrowR_map_isScottContinuous.lean**
+
+@import "arrowR_map_isScottContinuous.lean"
+
+**DataTypesAsLattices/Retracts/arrowR_app.lean**
+
+@import "arrowR_app.lean"
+
+**DataTypesAsLattices/Retracts/arrowR_isStrict.lean**
+
+@import "arrowR_isStrict.lean"
+
+**DataTypesAsLattices/Retracts/dcondSet_bool_idem.lean**
+
+@import "dcondSet_bool_idem.lean"
+
+**DataTypesAsLattices/Retracts/dcondSet_same_ofNat.lean**
+
+@import "dcondSet_same_ofNat.lean"
+
+**DataTypesAsLattices/Retracts/directed_finite_cover.lean**
+
+@import "directed_finite_cover.lean"
+
+**DataTypesAsLattices/Retracts/directed_sUnion_fixed.lean**
+
+@import "directed_sUnion_fixed.lean"
+
+**DataTypesAsLattices/Retracts/eq_4_11.lean**
+
+@import "eq_4_11.lean"
+
+**DataTypesAsLattices/Retracts/fstC.lean**
+
+@import "fstC.lean"
+
+**DataTypesAsLattices/Retracts/fstC_app.lean**
+
+@import "fstC_app.lean"
+
+**DataTypesAsLattices/Retracts/funOf_fix_idem.lean**
+
+@import "funOf_fix_idem.lean"
+
+**DataTypesAsLattices/Retracts/funRetract.lean**
+
+@import "funRetract.lean"
+
+**DataTypesAsLattices/Retracts/funRetract_app.lean**
+
+@import "funRetract_app.lean"
+
+**DataTypesAsLattices/Retracts/gfpBelow.lean**
+
+@import "gfpBelow.lean"
+
+**DataTypesAsLattices/Retracts/gfpBelow_isGLB.lean**
+
+@import "gfpBelow_isGLB.lean"
+
+**DataTypesAsLattices/Retracts/gfpBelow_le.lean**
+
+@import "gfpBelow_le.lean"
+
+**DataTypesAsLattices/Retracts/gfpBelow_postfixed.lean**
+
+@import "gfpBelow_postfixed.lean"
+
+**DataTypesAsLattices/Retracts/gfpBelow_fixed_inter.lean**
+
+@import "gfpBelow_fixed_inter.lean"
+
+**DataTypesAsLattices/Retracts/gfpBelow_subset.lean**
+
+@import "gfpBelow_subset.lean"
+
+**DataTypesAsLattices/Retracts/graph_ext.lean**
+
+@import "graph_ext.lean"
+
+**DataTypesAsLattices/Retracts/boolR_isRetract.lean**
+
+@import "boolR_isRetract.lean"
+
+**DataTypesAsLattices/Retracts/eq_4_11_comp.lean**
+
+@import "eq_4_11_comp.lean"
+
+**DataTypesAsLattices/Retracts/arrowR_retractLe.lean**
+
+@import "arrowR_retractLe.lean"
+
+**DataTypesAsLattices/Retracts/funRetract_isRetract.lean**
+
+@import "funRetract_isRetract.lean"
+
+**DataTypesAsLattices/Retracts/intF_isScottContinuous.lean**
+
+@import "intF_isScottContinuous.lean"
+
+**DataTypesAsLattices/Retracts/intF_map_isScottContinuous.lean**
+
+@import "intF_map_isScottContinuous.lean"
+
+**DataTypesAsLattices/Retracts/intF_app.lean**
+
+@import "intF_app.lean"
+
+**DataTypesAsLattices/Retracts/intR_eq_intF.lean**
+
+@import "intR_eq_intF.lean"
+
+**DataTypesAsLattices/Retracts/intR_app.lean**
+
+@import "intR_app.lean"
+
+**DataTypesAsLattices/Retracts/intR_bot.lean**
+
+@import "intR_bot.lean"
+
+**DataTypesAsLattices/Retracts/intR_isGraph.lean**
+
+@import "intR_isGraph.lean"
+
+**DataTypesAsLattices/Retracts/intR_ofNat.lean**
+
+@import "intR_ofNat.lean"
+
+**DataTypesAsLattices/Retracts/inter_const_isScottContinuous.lean**
+
+@import "inter_const_isScottContinuous.lean"
+
+**DataTypesAsLattices/Retracts/iterateFrom.lean**
+
+@import "iterateFrom.lean"
+
+**DataTypesAsLattices/Retracts/iterateFrom_bot.lean**
+
+@import "iterateFrom_bot.lean"
+
+**DataTypesAsLattices/Retracts/iterateFrom_mono.lean**
+
+@import "iterateFrom_mono.lean"
+
+**DataTypesAsLattices/Retracts/lfpAbove.lean**
+
+@import "lfpAbove.lean"
+
+**DataTypesAsLattices/Retracts/lfpAbove_bot.lean**
+
+@import "lfpAbove_bot.lean"
+
+**DataTypesAsLattices/Retracts/lfpAbove_fixed.lean**
+
+@import "lfpAbove_fixed.lean"
+
+**DataTypesAsLattices/Retracts/lfpAbove_le_of_ub.lean**
+
+@import "lfpAbove_le_of_ub.lean"
+
+**DataTypesAsLattices/Retracts/lfpAbove_ub.lean**
+
+@import "lfpAbove_ub.lean"
+
+**DataTypesAsLattices/Retracts/pairSeq.lean**
+
+@import "pairSeq.lean"
+
+**DataTypesAsLattices/Retracts/plusR.lean**
+
+@import "plusR.lean"
+
+**DataTypesAsLattices/Retracts/predSet_eq_ofNat_of_no_zero.lean**
+
+@import "predSet_eq_ofNat_of_no_zero.lean"
+
+**DataTypesAsLattices/Retracts/intR_top_of_nonsingleton.lean**
+
+@import "intR_top_of_nonsingleton.lean"
+
+**DataTypesAsLattices/Retracts/intR_top.lean**
+
+@import "intR_top.lean"
+
+**DataTypesAsLattices/Retracts/intR_idem.lean**
+
+@import "intR_idem.lean"
+
+**DataTypesAsLattices/Retracts/intR_isRetract.lean**
+
+@import "intR_isRetract.lean"
+
+**DataTypesAsLattices/Retracts/predSet_ofNat_zero.lean**
+
+@import "predSet_ofNat_zero.lean"
+
+**DataTypesAsLattices/Retracts/retractBasis_directed.lean**
+
+@import "retractBasis_directed.lean"
+
+**DataTypesAsLattices/Retracts/retractBasis_directedSubset.lean**
+
+@import "retractBasis_directedSubset.lean"
+
+**DataTypesAsLattices/Retracts/retractLe.lean**
+
+@import "retractLe.lean"
+
+**DataTypesAsLattices/Retracts/retractLe_refl.lean**
+
+@import "retractLe_refl.lean"
+
+**DataTypesAsLattices/Retracts/retractLe_trans.lean**
+
+@import "retractLe_trans.lean"
+
+**DataTypesAsLattices/Retracts/retract_interpolation.lean**
+
+@import "retract_interpolation.lean"
+
+**DataTypesAsLattices/Retracts/retract_isGraph.lean**
+
+@import "retract_isGraph.lean"
+
+**DataTypesAsLattices/Retracts/iUnion_retract_isGraph.lean**
+
+@import "iUnion_retract_isGraph.lean"
+
+**DataTypesAsLattices/Retracts/sSup_fixed_eq_sUnion.lean**
+
+@import "sSup_fixed_eq_sUnion.lean"
+
+**DataTypesAsLattices/Retracts/retractBasis_sSup.lean**
+
+@import "retractBasis_sSup.lean"
+
+**DataTypesAsLattices/Retracts/retractBasis_sUnion.lean**
+
+@import "retractBasis_sUnion.lean"
+
+**DataTypesAsLattices/Retracts/retractBasis_wayBelow.lean**
+
+@import "retractBasis_wayBelow.lean"
+
+**DataTypesAsLattices/Retracts/sUnion_Fixpoints_le_image.lean**
+
+@import "sUnion_Fixpoints_le_image.lean"
+
+**DataTypesAsLattices/Retracts/lfpAbove_mem.lean**
+
+@import "lfpAbove_mem.lean"
+
+**DataTypesAsLattices/Retracts/sndC.lean**
+
+@import "sndC.lean"
+
+**DataTypesAsLattices/Retracts/sndC_app.lean**
+
+@import "sndC_app.lean"
+
+**DataTypesAsLattices/Retracts/tensorR.lean**
+
+@import "tensorR.lean"
+
+**DataTypesAsLattices/Retracts/typed.lean**
+
+@import "typed.lean"
+
+**DataTypesAsLattices/Retracts/typed_of_arrowR.lean**
+
+@import "typed_of_arrowR.lean"
+
+**DataTypesAsLattices/Retracts/arrowR_functor.lean**
+
+@import "arrowR_functor.lean"
+
+**DataTypesAsLattices/Retracts/typed_arrowR_range.lean**
+
+@import "typed_arrowR_range.lean"
+
+**DataTypesAsLattices/Retracts/typed_arrowR_restrict.lean**
+
+@import "typed_arrowR_restrict.lean"
+
+**DataTypesAsLattices/Retracts/typed_comp.lean**
+
+@import "typed_comp.lean"
+
+**DataTypesAsLattices/Retracts/vals.lean**
+
+@import "vals.lean"
+
+**DataTypesAsLattices/Retracts/vals_subset.lean**
+
+@import "vals_subset.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "../FixedLattices/DirectedSet.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/completeLatticeLE.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/completeLatticePreorder.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/completeLatticeSupSet.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/WayBelow.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/IsCompact.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/CountablyAlgebraic.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/ContinuousBasis.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/finiteBasisSups.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/Basic.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/finiteBasisSups_directed.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/sSup_finiteBasisSups.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices/CountablyAlgebraicu2ecompact_finite_support.ai_lean_to_english" {code_block=false}
+
+@import "../FixedLattices.ai_lean_to_english" {code_block=false}
+
+@import "Fixpoints.ai_lean_to_english" {code_block=false}
+
+@import "Icomb.ai_lean_to_english" {code_block=false}
+
+@import "Icomb_app.ai_lean_to_english" {code_block=false}
+
+@import "Icomb_isRetract.ai_lean_to_english" {code_block=false}
+
+@import "DirectedSubset.ai_lean_to_english" {code_block=false}
+
+@import "IsCompactSubset.ai_lean_to_english" {code_block=false}
+
+@import "boolR_app.ai_lean_to_english" {code_block=false}
+
+@import "comp.ai_lean_to_english" {code_block=false}
+
+@import "Retract.ai_lean_to_english" {code_block=false}
+
+@import "arrowR.ai_lean_to_english" {code_block=false}
+
+@import "comp_app.ai_lean_to_english" {code_block=false}
+
+@import "comp_isScottContinuous_right.ai_lean_to_english" {code_block=false}
+
+@import "comp_right_const.ai_lean_to_english" {code_block=false}
+
+@import "arrowR_map_isScottContinuous.ai_lean_to_english" {code_block=false}
+
+@import "arrowR_app.ai_lean_to_english" {code_block=false}
+
+@import "arrowR_isStrict.ai_lean_to_english" {code_block=false}
+
+@import "dcondSet_bool_idem.ai_lean_to_english" {code_block=false}
+
+@import "dcondSet_same_ofNat.ai_lean_to_english" {code_block=false}
+
+@import "directed_finite_cover.ai_lean_to_english" {code_block=false}
+
+@import "directed_sUnion_fixed.ai_lean_to_english" {code_block=false}
+
+@import "eq_4_11.ai_lean_to_english" {code_block=false}
+
+@import "fstC.ai_lean_to_english" {code_block=false}
+
+@import "fstC_app.ai_lean_to_english" {code_block=false}
+
+@import "funOf_fix_idem.ai_lean_to_english" {code_block=false}
+
+@import "funRetract.ai_lean_to_english" {code_block=false}
+
+@import "funRetract_app.ai_lean_to_english" {code_block=false}
+
+@import "gfpBelow.ai_lean_to_english" {code_block=false}
+
+@import "gfpBelow_isGLB.ai_lean_to_english" {code_block=false}
+
+@import "gfpBelow_le.ai_lean_to_english" {code_block=false}
+
+@import "gfpBelow_postfixed.ai_lean_to_english" {code_block=false}
+
+@import "gfpBelow_fixed_inter.ai_lean_to_english" {code_block=false}
+
+@import "gfpBelow_subset.ai_lean_to_english" {code_block=false}
+
+@import "graph_ext.ai_lean_to_english" {code_block=false}
+
+@import "boolR_isRetract.ai_lean_to_english" {code_block=false}
+
+@import "eq_4_11_comp.ai_lean_to_english" {code_block=false}
+
+@import "arrowR_retractLe.ai_lean_to_english" {code_block=false}
+
+@import "funRetract_isRetract.ai_lean_to_english" {code_block=false}
+
+@import "intF_isScottContinuous.ai_lean_to_english" {code_block=false}
+
+@import "intF_map_isScottContinuous.ai_lean_to_english" {code_block=false}
+
+@import "intF_app.ai_lean_to_english" {code_block=false}
+
+@import "intR_eq_intF.ai_lean_to_english" {code_block=false}
+
+@import "intR_app.ai_lean_to_english" {code_block=false}
+
+@import "intR_bot.ai_lean_to_english" {code_block=false}
+
+@import "intR_isGraph.ai_lean_to_english" {code_block=false}
+
+@import "intR_ofNat.ai_lean_to_english" {code_block=false}
+
+@import "inter_const_isScottContinuous.ai_lean_to_english" {code_block=false}
+
+@import "iterateFrom.ai_lean_to_english" {code_block=false}
+
+@import "iterateFrom_bot.ai_lean_to_english" {code_block=false}
+
+@import "iterateFrom_mono.ai_lean_to_english" {code_block=false}
+
+@import "lfpAbove.ai_lean_to_english" {code_block=false}
+
+@import "lfpAbove_bot.ai_lean_to_english" {code_block=false}
+
+@import "lfpAbove_fixed.ai_lean_to_english" {code_block=false}
+
+@import "lfpAbove_le_of_ub.ai_lean_to_english" {code_block=false}
+
+@import "lfpAbove_ub.ai_lean_to_english" {code_block=false}
+
+@import "pairSeq.ai_lean_to_english" {code_block=false}
+
+@import "plusR.ai_lean_to_english" {code_block=false}
+
+@import "predSet_eq_ofNat_of_no_zero.ai_lean_to_english" {code_block=false}
+
+@import "intR_top_of_nonsingleton.ai_lean_to_english" {code_block=false}
+
+@import "intR_top.ai_lean_to_english" {code_block=false}
+
+@import "intR_idem.ai_lean_to_english" {code_block=false}
+
+@import "intR_isRetract.ai_lean_to_english" {code_block=false}
+
+@import "predSet_ofNat_zero.ai_lean_to_english" {code_block=false}
+
+@import "retractBasis_directed.ai_lean_to_english" {code_block=false}
+
+@import "retractBasis_directedSubset.ai_lean_to_english" {code_block=false}
+
+@import "retractLe.ai_lean_to_english" {code_block=false}
+
+@import "retractLe_refl.ai_lean_to_english" {code_block=false}
+
+@import "retractLe_trans.ai_lean_to_english" {code_block=false}
+
+@import "retract_interpolation.ai_lean_to_english" {code_block=false}
+
+@import "retract_isGraph.ai_lean_to_english" {code_block=false}
+
+@import "iUnion_retract_isGraph.ai_lean_to_english" {code_block=false}
+
+@import "sSup_fixed_eq_sUnion.ai_lean_to_english" {code_block=false}
+
+@import "retractBasis_sSup.ai_lean_to_english" {code_block=false}
+
+@import "retractBasis_sUnion.ai_lean_to_english" {code_block=false}
+
+@import "retractBasis_wayBelow.ai_lean_to_english" {code_block=false}
+
+@import "sUnion_Fixpoints_le_image.ai_lean_to_english" {code_block=false}
+
+@import "lfpAbove_mem.ai_lean_to_english" {code_block=false}
+
+@import "sndC.ai_lean_to_english" {code_block=false}
+
+@import "sndC_app.ai_lean_to_english" {code_block=false}
+
+@import "tensorR.ai_lean_to_english" {code_block=false}
+
+@import "typed.ai_lean_to_english" {code_block=false}
+
+@import "typed_of_arrowR.ai_lean_to_english" {code_block=false}
+
+@import "arrowR_functor.ai_lean_to_english" {code_block=false}
+
+@import "typed_arrowR_range.ai_lean_to_english" {code_block=false}
+
+@import "typed_arrowR_restrict.ai_lean_to_english" {code_block=false}
+
+@import "typed_comp.ai_lean_to_english" {code_block=false}
+
+@import "vals.ai_lean_to_english" {code_block=false}
+
+@import "vals_subset.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Retracts_and_data_types.ai_english_concordance" {code_block=false}

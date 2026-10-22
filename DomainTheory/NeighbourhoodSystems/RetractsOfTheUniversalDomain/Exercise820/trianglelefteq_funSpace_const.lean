@@ -1,8 +1,3 @@
-/-ai
-Any neighbourhood system B is a retract of the function space from A to B, by the constant-function embedding and evaluation at bottom.
-
-Those two maps form a projection pair: evaluation after the embedding is the identity, and the embedding after evaluation lies below the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

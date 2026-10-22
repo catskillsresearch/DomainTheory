@@ -1,8 +1,3 @@
-/-ai
-The subsystem relation is transitive.
-
-The masters agree by composing the two master equalities. A neighbourhood of the first system is a neighbourhood of the second and therefore of the third. If the intersection of two neighbourhoods of the first system is a neighbourhood of the third, those two neighbourhoods belong to the second system, the second subsystem relation places the intersection in the second system, and the first subsystem relation then places it in the first system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

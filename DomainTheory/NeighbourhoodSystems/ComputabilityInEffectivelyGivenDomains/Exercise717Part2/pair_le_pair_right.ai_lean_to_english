@@ -1,0 +1,3 @@
+Numerical pairing is monotone in its second argument when the first argument is held fixed.
+
+The definition of pairing is unfolded, and the comparisons of the first argument with the two second arguments are split. If the first argument lies below both, the values are the squares of the second arguments, and the inequality follows from monotonicity of multiplication. If it lies below only the larger one, the square of the larger one dominates the square of the first plus the first, by rewriting that quantity as a product and comparing factorwise. If it lies below neither, both values use the remaining clause and the inequality is the given comparison.

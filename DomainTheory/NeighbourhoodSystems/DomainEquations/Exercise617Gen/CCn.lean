@@ -1,6 +1,3 @@
-/-ai
-The right-hand side of the domain equation is the separated sum of the unit with one copy of the generic sequence domain for each letter of the alphabet, using that every neighbourhood of that domain is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

@@ -1,8 +1,3 @@
-/-ai
-Equal product neighbourhoods come from equal families of sets.
-
-Extensionality in the index and in each set reduces to membership of one dependent pair, which is membership in the corresponding coordinate of the product neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

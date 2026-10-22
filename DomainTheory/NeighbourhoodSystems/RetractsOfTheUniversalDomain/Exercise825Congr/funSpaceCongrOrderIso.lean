@@ -1,6 +1,3 @@
-/-ai
-The function space is a congruence for order isomorphisms of elements. Order isomorphisms of the domains and of the codomains induce an order isomorphism of the function spaces, namely the order isomorphism of the two exponential maps formed from each isomorphism and the inverse of the other, using the two composite identities that those exponentials are mutual inverses.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

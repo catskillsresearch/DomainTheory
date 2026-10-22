@@ -1,8 +1,3 @@
-/-ai
-The input union of a choice-free union of finite sets of raw-token list pairs equals the choice-free union of the two input unions.
-
-Extensionality splits each direction by the membership criteria for input union and for choice-free union. A token in the input union of the union comes from the first list of a pair lying on one side or the other, so it lies in that side's input union. A token in either input union comes from a pair on that side, and that pair still belongs to the choice-free union.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

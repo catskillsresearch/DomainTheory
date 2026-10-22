@@ -1,8 +1,3 @@
-/-ai
-One formula entails another if and only if the evaluation set of the first is contained in the evaluation set of the second.
-
-The numbered name example_813_b is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b.entails_iff_evalSet_subset

@@ -1,8 +1,3 @@
-/-ai
-The intermediate element of Example 1.3 is strictly below the total element.
-
-A neighbourhood of the intermediate element is the master or {1, 2}, both of which belong to the total element. The reverse inequality would put {2} in the intermediate filter, so {2} would be the master or equal to {1, 2}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

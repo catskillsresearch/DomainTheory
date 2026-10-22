@@ -1,8 +1,3 @@
-/-ai
-The state extractor is primitive recursive.
-
-It is the primitive-recursive state-component projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,7 +1,3 @@
-/-ai
-A retraction of a neighbourhood system E, in the sense of Definition 8.1 of Scott 1981,
-PRG-19, is an approximable mapping from E to itself equal to its own composite.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

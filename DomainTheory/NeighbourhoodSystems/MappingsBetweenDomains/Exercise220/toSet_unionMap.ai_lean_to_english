@@ -1,0 +1,3 @@
+The set represented by the union of two elements is the union of the sets they represent.
+
+A number whose singleton complement belongs to the union comes from input neighbourhoods whose intersection is contained in that singleton complement. If the number lies in the first neighbourhood, it is absent from the second and the second element contains the singleton complement; otherwise the first element contains it. If the number lies in the first represented set, the singleton complement and the universe witness the relation, and if it lies in the second represented set, the universe and the singleton complement do.

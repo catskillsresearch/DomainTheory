@@ -1,8 +1,3 @@
-/-ai
-If j and j' are distinct, then σ_j of the singleton of the code of (j', m) is bottom.
-
-A member of the image would require the code of (j, k) to equal the code of (j', m), so injectivity of pairing would give j = j', which is excluded. Bottom has no members.
-ai-/
 
 module
 

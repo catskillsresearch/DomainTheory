@@ -1,0 +1,3 @@
+Applying the enumerator step at v to a code k equals the McCarthy conditional of k, with zero branch the G combinator and positive branch the minimal extension of the application selected by v at k.
+
+This is the beta law for the Scott-continuous body of the enumerator step at v.

@@ -1,8 +1,3 @@
-/-ai
-The found flag of the depth-n fold after N steps equals one if and only if some index below N has a non-empty D-side atom at the bit-source shifted by two to the depth.
-
-The argument is by induction on N. The zero fold has found flag zero, so both sides fail. At a successor the fold is one step, which unfolds to a selection on the emptiness value, and that value is zero or one. If it is zero, the inner selection has found component one whether the previous flag is zero or one, using that the previous flag is at most one, and the new index is a witness. If it is one, the selection keeps the previous accumulator, the inductive equivalence applies, and a witness below the successor is a witness below N, since the new index has emptiness value one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

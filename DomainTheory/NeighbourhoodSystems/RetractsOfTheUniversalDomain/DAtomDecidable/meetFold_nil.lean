@@ -1,8 +1,3 @@
-/-ai
-The meet-fold of the empty list is the code of success paired with the master index.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

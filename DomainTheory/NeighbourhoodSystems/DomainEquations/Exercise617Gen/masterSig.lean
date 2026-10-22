@@ -1,6 +1,3 @@
-/-ai
-The master neighbourhood of an indexed sum is the set of tokens that are the empty token, the unit token, or a copy token whose underlying token lies in the master of the summed system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

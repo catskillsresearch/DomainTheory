@@ -1,8 +1,3 @@
-/-ai
-If one element of the binary neighbourhood system contains both the cone of a string σ and the cone of a string τ, then σ is a prefix of τ or τ is a prefix of σ.
-
-The intersection of the two cones belongs to the element, so some cone is contained in that intersection. Trichotomy of cones gives an inclusion one way or the other, and each inclusion is a prefix, or else the cones are disjoint. In the disjoint case the generating string of the contained cone belongs to its own cone, and rewriting that membership through the containment puts it in the empty set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

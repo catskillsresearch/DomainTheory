@@ -1,8 +1,3 @@
-/-ai
-The infimum of the pre-fixed points of f lies below every pre-fixed point.
-
-This is the universal property of the infimum of that set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

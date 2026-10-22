@@ -1,8 +1,3 @@
-/-ai
-Applying a rooted grammar expression to the colimit of its tower yields the colimit itself, so the structure isomorphism is the identity.
-
-The two objects have the same underlying neighbourhood system, and objects with the same underlying system are equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

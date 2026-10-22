@@ -1,8 +1,3 @@
-/-ai
-The product of the universal domain with itself is effectively given.
-
-Apply preservation of effective givenness under products to the effective givenness of the universal domain on both factors.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

@@ -1,8 +1,3 @@
-/-ai
-The tagged copy of a set X by an index is contained in the tagged copy of a set X' by the same index if and only if X is contained in X'.
-
-If the copies are nested and an element lies in X, its tagged token lies in the smaller copy, hence in the larger copy, so the element lies in X'. Conversely, a token of the smaller copy is tagged by an element of X, hence of X', and therefore lies in the larger copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

@@ -1,6 +1,3 @@
-/-ai
-This file introduces the notation 𝟙 for the identity morphism of a category, and re-exports Mathlib's category class.
-ai-/
 module
 
 public import Mathlib.CategoryTheory.Category.Basic

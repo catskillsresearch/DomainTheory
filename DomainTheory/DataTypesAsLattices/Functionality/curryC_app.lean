@@ -1,8 +1,3 @@
-/-ai
-Application of the currying combinator at u is the graph of x mapped to the graph of y mapped to the application of u to the pair sequence of x and y.
-
-This is the beta rule for the Scott continuity of the currying combinator, evaluated at u.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

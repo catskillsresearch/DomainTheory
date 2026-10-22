@@ -1,0 +1,3 @@
+For fixed u and z, the body of the term-level dollar step is Scott continuous in s.
+
+The inner map sending s to the application of the application of s to the term shift of u, evaluated at the predecessor of z, is a composite of two left-application maps, hence Scott continuous by the substitution theorem. The body is the conditional of a value independent of s with that inner map, so a further substitution, using continuity of the conditional in its else-branch, gives continuity in s.

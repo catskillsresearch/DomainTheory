@@ -1,8 +1,3 @@
-/-ai
-For finitary projections a and b, the product injection into the universal domain composed after the product extraction equals the product combinator of a and b.
-
-Unfold both maps. Associativity, the composition law of the product of maps, the identities that each subsystem injection after its projection is the finitary projection, and the composite form of the product combinator give the equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

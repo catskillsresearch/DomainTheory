@@ -1,6 +1,3 @@
-/-ai
-toSum is the forward half of the isomorphism from the concrete token sum to the abstract separated sum, a token-level analogue of the map toBB of Example 6.2. A neighbourhood of the image of a token element is the abstract sum master, or a left injection of a neighbourhood of the first system whose false-tagged copy belongs to the element, or a right injection of a neighbourhood of the second system whose true-tagged copy belongs to the element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

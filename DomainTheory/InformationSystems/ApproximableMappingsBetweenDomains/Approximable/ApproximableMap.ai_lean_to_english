@@ -1,0 +1,1 @@
+An approximable mapping, in the sense of Definition 5.1 of Scott 1982, from an information system A to an information system B is a relation between finite sets of tokens such that related sets are consistent, the empty sets are related, the relation is closed under union on the right, and it is monotone for entailment of A on the left and entailment of B on the right.

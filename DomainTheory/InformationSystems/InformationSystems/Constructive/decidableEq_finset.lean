@@ -1,6 +1,3 @@
-/-ai
-Decidable equality of finite sets is defined by testing mutual inclusion, without the choice-dependent decidable equality of Mathlib. If both inclusions hold, the sets are equal; if not, an equality would be contradictory.
-ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

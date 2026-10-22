@@ -1,8 +1,3 @@
-/-ai
-Applying the subtraction combinator subC to an element x yields the primitive recursion primRecComb x subStepC.
-
-Unfold subC and primRecComb and simplify by the S-combinator law Scomb_beta3 and the K-combinator law Kcomb_beta2.
-ai-/
 module
 
 public import Mathlib.Computability.RE

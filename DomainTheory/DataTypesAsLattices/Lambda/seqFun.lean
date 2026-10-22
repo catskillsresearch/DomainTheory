@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (2.24)–(2.25): revaluation of a functional along a set, as a distributive sequence, is the union of the applications of the functional to the numerals of the indices that belong to the set.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

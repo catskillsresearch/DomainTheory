@@ -1,8 +1,3 @@
-/-ai
-If u realizes p and v realizes q, then their composition realizes the composite p ∘ q.
-
-Rewrite by the definition of composition and the β-rules for S and K, then apply the two realization hypotheses.
-ai-/
 module
 
 public import Mathlib.Computability.RE

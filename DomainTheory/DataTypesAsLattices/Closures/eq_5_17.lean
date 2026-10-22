@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (5.17). The operation V(a) is idempotent on values.
-
-If a set contains x and is closed under a, it contains V(a) applied to x, so it meets the witness condition for the double application. The opposite inclusion is the expansiveness of V(a) at its own value.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

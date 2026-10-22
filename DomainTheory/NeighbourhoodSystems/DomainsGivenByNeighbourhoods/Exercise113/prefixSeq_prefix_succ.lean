@@ -1,8 +1,3 @@
-/-ai
-The length-n prefix of a path is a prefix of the length-(n + 1) prefix.
-
-The one-element list containing the bit at position n witnesses the prefix, by reflexivity of the appended equation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,8 +1,3 @@
-/-ai
-The filter realizer realizes the function filterNum.
-
-This is the second half of the specification of the element chosen as a realizer of the primitive recursive function filterNum.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

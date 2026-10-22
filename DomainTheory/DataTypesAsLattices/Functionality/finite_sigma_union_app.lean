@@ -1,8 +1,3 @@
-/-ai
-The same union, applied to that iterate adjoined with the singleton of the pair of the fresh tag and m, equals the successor iterate adjoined with the singleton of the pair of that tag and m + 1.
-
-The proof rewrites by equation (2.9), the normalized finite application rule for a fresh tag, and the tagged-successor rule, then uses the union rule for a fresh tag from the finite-iterate prohibition.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

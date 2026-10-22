@@ -1,6 +1,3 @@
-/-ai
-The uncurried composition body of Table 5.5 is the approximable map, over a pair of function-space elements together with an argument, that evaluates the first function at the evaluation of the second function at the argument, built from the two projections, pairing, and evaluation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

@@ -1,36 +1,85 @@
 # Exercise 4.13
 
-**EXERCISE 4.13.** The proof of 4.1 uses the integers, whereas the proof of 4.6 uses 4.1. There is a hint of circularity here! It can be eliminated by the following steps:
+## Human-English
 
-(1) If a domain $D$ has an element $a$ where, for $f : D \to D$, the relation $f(a) \sqsubseteq a$ holds, then the least fixed point can be defined by
+@import "1980_Exercise_4_13.english" {code_block=false}
 
-$$
-\mathrm{fix}(f) = \bigcap \{ x \in |D| \mid f(x) \sqsubseteq x \}.
-$$
+## AI: Human-English to AI-Lean
 
-Note that $\mathrm{fix}(f) \sqsubseteq a$. (Hint: Remark that by 1.17 the formula gives a well-defined element. Call the element $b$. Prove that $f(b) \sqsubseteq b$ by showing that $f(b) \sqsubseteq x$ whenever $f(x) \sqsubseteq x$. Then note that $f(f(b)) \sqsubseteq f(b)$ so that $b \sqsubseteq f(b)$ also. Conclude $b = \mathrm{fix}(f)$ as least fixed point.)
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/exists_unique_nat_rec.lean**
 
-(2) Remark that this proof uses only the monotonicity property of $f : |D| \to |D|$. Remark, too, that (1) can always be applied to power-set domains $PA$ for any set $A$.
+@import "exists_unique_nat_rec.lean"
 
-(3) Review the proof of 4.6 and establish by a fixed-point method that for any structured set $\langle Z, z, \cdot \rangle$ there is a unique function $s : \mathbf{N} \to Z$ such that
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix_le_preFix.lean**
 
-(i) $s(0) = z$;
+@import "monoFix_le_preFix.lean"
 
-(ii) $s(n^+) = s(n)^\cdot$, for $n \in \mathbf{N}$.
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix_le.lean**
 
-(4) Employ (3) for the proof of 4.1 by identifying $\langle \mathbf{N}, 0, {}^+ \rangle$.
+@import "monoFix_le.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix_least.lean**
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/exists_unique_nat_rec.lean](exists_unique_nat_rec.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix_le_preFix.lean](monoFix_le_preFix.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix_le.lean](monoFix_le.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix_least.lean](monoFix_least.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix_preFix.lean](monoFix_preFix.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix_isFixed.lean](monoFix_isFixed.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/nat_iterate_unique.lean](nat_iterate_unique.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413.lean](../Exercise413.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/preFix.lean](preFix.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/mem_preFix.lean](mem_preFix.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix.lean](monoFix.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/Basic.lean](Basic.lean)
+@import "monoFix_least.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix_preFix.lean**
+
+@import "monoFix_preFix.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix_isFixed.lean**
+
+@import "monoFix_isFixed.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/nat_iterate_unique.lean**
+
+@import "nat_iterate_unique.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413.lean**
+
+@import "../Exercise413.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/preFix.lean**
+
+@import "preFix.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/mem_preFix.lean**
+
+@import "mem_preFix.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/monoFix.lean**
+
+@import "monoFix.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise413/Basic.lean**
+
+@import "Basic.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "exists_unique_nat_rec.ai_lean_to_english" {code_block=false}
+
+@import "monoFix_le_preFix.ai_lean_to_english" {code_block=false}
+
+@import "monoFix_le.ai_lean_to_english" {code_block=false}
+
+@import "monoFix_least.ai_lean_to_english" {code_block=false}
+
+@import "monoFix_preFix.ai_lean_to_english" {code_block=false}
+
+@import "monoFix_isFixed.ai_lean_to_english" {code_block=false}
+
+@import "nat_iterate_unique.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise413.ai_lean_to_english" {code_block=false}
+
+@import "preFix.ai_lean_to_english" {code_block=false}
+
+@import "mem_preFix.ai_lean_to_english" {code_block=false}
+
+@import "monoFix.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_4_13.ai_english_concordance" {code_block=false}

@@ -1,8 +1,3 @@
-/-ai
-For an arbitrary neighbourhood system G, a neighbourhood Z belongs to fade applied to the pair of t and w if and only if Z is a G-neighbourhood and either Z is the master or t contains {0} and w contains Z.
-
-Unfold fade as the one-variable form of fade₂, apply the pair bridge, and use the closed form of the two-variable action.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

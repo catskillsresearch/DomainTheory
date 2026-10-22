@@ -1,6 +1,3 @@
-/-ai
-The strict coordinatewise order on compatible sequences holds when the first sequence lies below the second and the second does not lie below the first.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

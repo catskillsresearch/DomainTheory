@@ -1,0 +1,3 @@
+The range of a primitive-recursive function on the natural numbers is recursively enumerable.
+
+Equality of the value of the function on the first component of a code with the second component is recursively decidable, by composing the function with the first projection and comparing it with the second projection. A number lies in the range exactly when some index forms such a code, by the pairing equations.

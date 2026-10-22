@@ -1,0 +1,3 @@
+If one input neighborhood is contained in another, the section of a product map at the larger input lies below the section at the smaller input.
+
+A related pair of the section at the larger input is a product relation of the original map. Shrinking the first factor of that product neighborhood preserves the relation by monotonicity.

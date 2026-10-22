@@ -1,0 +1,3 @@
+The input union of a finite set of raw-token list pairs with one pair inserted equals the finite set of the inserted pair's first list, joined by choice-free union to the input union of the original set.
+
+A token in the enlarged input union comes from some pair in the insertion. If that pair is the inserted one, the token lies in its first list; otherwise it lies in the original input union. Conversely, a token from the inserted first list comes from the inserted pair, and a token from the original input union comes from a pair that remains a member after insertion.

@@ -1,8 +1,3 @@
-/-ai
-The code-level domain isomorphism is a computable map from the first presentation to the second.
-
-The relation criterion reduces computability to the existence of a code k giving equality of the second enumeration along XPseqCode and inclusion of the first enumeration. Pairing projections with the primitive-recursive XPseqCode makes the equality recursively decidable by the second equality test, and a pairing of projections makes the inclusion recursively decidable by the first inclusion test. Their conjunction is recursively enumerable, the outer quantifier is projected away, and unpacking the paired witness matches the relation criterion in both directions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

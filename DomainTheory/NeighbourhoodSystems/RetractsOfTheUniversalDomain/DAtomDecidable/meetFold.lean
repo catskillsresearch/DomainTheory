@@ -1,6 +1,3 @@
-/-ai
-The positive meet-fold of a list is the left fold of the meet step across the list, starting from the code of success paired with the master index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88a.Basic

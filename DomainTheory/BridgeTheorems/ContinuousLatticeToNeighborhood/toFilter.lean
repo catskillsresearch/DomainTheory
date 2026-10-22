@@ -1,6 +1,3 @@
-/-ai
-The principal filter of an element x consists of those way-below neighbourhoods whose code is way-below x. Such a neighbourhood is a member of the neighbourhood system, the neighbourhood of bottom belongs to it because bottom is way-below x and that neighbourhood is the whole carrier, the intersection of the neighbourhoods of two codes is the neighbourhood of their join and way-below is closed under joins, and a larger neighbourhood of the system inherits a way-below code from a smaller neighbourhood that it contains.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

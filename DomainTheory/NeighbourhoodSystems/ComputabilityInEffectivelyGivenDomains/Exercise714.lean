@@ -1,8 +1,3 @@
-/-ai
-A nonempty recursively enumerable set of natural numbers is the range of a primitive-recursive function.
-
-The numbered name example_714 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise714.Basic

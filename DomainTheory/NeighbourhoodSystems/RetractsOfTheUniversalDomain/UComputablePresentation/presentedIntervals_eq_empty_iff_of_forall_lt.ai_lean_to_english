@@ -1,0 +1,3 @@
+A list of rational pairs whose every pair is nondegenerate presents the empty set if and only if the list is empty.
+
+If the presented set is empty, the list cannot begin with a pair, because the left endpoint of that pair would lie in the presented set, so the list is empty. Conversely, the empty list presents the empty set.

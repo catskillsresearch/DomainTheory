@@ -1,50 +1,139 @@
 # Theorem 3.2
 
-**THEOREM 3.2 (The enumeration theorem).** *The combinator* $\mathbf{val}$ *enumerates the LAMBDA-definable elements in that* $\mathbf{RE} = \{\mathbf{val}(n) \mid n \in \omega\}$. *Further:*
+## Human-English
 
-*(i)* $\mathbf{val}(0) = \mathbf{G}$,
+@import "1976_Theorem_3_2.english" {code_block=false}
 
-*(ii)* $\mathbf{val}(\mathbf{apply}(n)(m)) = \mathbf{val}(n)(\mathbf{val}(m))$.
+## AI: Human-English to AI-Lean
 
-As a principal application of the Enumeration Theorem we may mention the following: suppose $u$ is given as LAMBDA-definable. We look at its definition and rewrite it in terms of combinators—eventually in terms of $\mathbf{G}$ alone. Then using 0 and $\mathbf{apply}$ we write down the name of an integer corresponding to the combination—say, $n$. By Theorem 3.2 we see that we have *effectively found* from
-the definition an integer such that $\mathbf{val}\, n = u$. This remark can be strengthened by some numerology.
+**DataTypesAsLattices/Enumeration/theorem_3_2.lean**
 
-$$(3.8) \quad \mathbf{apply}(0)(0) = 1 \quad \text{and} \quad \mathbf{val}(1) = 0;$$
+@import "theorem_3_2.lean"
 
-$$(3.9) \quad \mathbf{apply}(0)(1) = 3 \quad \text{and} \quad \mathbf{val}(3) = \langle \mathbf{suc}, \ldots \rangle;$$
+**DataTypesAsLattices/Enumeration/theorem_3_2_i.lean**
 
-$$(3.10) \quad \mathbf{apply}(3)(1) = 12 \quad \text{and} \quad \mathbf{val}(12) = \mathbf{suc}.$$
+@import "theorem_3_2_i.lean"
 
-Thus, define $\mathbf{num}$ as the least fixed point:
+**DataTypesAsLattices/Enumeration/theorem_3_2_range.lean**
 
-$$(3.11) \quad \mathbf{num} = \lambda n \in \omega.\, n \supset 1,\, \mathbf{apply}(12)(\mathbf{num}(n - 1)),$$
+@import "theorem_3_2_range.lean"
 
-and derive the equation for all $n \in \omega$:
+**DataTypesAsLattices/Enumeration/theorem_3_2_surjective.lean**
 
-$$(3.12) \quad \mathbf{val}(\mathbf{num}(n)) = n.$$
+@import "theorem_3_2_surjective.lean"
 
-We note that $\mathbf{num}$ is a primitive recursive (total) function. The combinator $\mathbf{num}$ allows us now to effectively find a LAMBDA-definition, corresponding to a given LAMBDA-definable element $u$, of an element $v$ such that uniformly in the integer variable $n$ we have $\mathbf{val}(v(n)) = u(n)$. Further, $v$ is a primitive recursive (total) function. This is the technique involved in the proof of Kleene's well-known result:
+**DataTypesAsLattices/Enumeration/Ycode.lean**
 
-**Lean 4**
+@import "Ycode.lean"
 
-- [DataTypesAsLattices/Enumeration/theorem_3_2.lean](theorem_3_2.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_2_i.lean](theorem_3_2_i.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_2_range.lean](theorem_3_2_range.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_2_surjective.lean](theorem_3_2_surjective.lean)
-- [DataTypesAsLattices/Enumeration/Ycode.lean](Ycode.lean)
-- [DataTypesAsLattices/Enumeration/botCode.lean](botCode.lean)
-- [DataTypesAsLattices/Enumeration/condCode.lean](condCode.lean)
-- [DataTypesAsLattices/Enumeration/filterOp.lean](filterOp.lean)
-- [DataTypesAsLattices/Enumeration/interCode.lean](interCode.lean)
-- [DataTypesAsLattices/Enumeration/diagonalInterCode.lean](diagonalInterCode.lean)
-- [DataTypesAsLattices/Enumeration/myhillFilterCode.lean](myhillFilterCode.lean)
-- [DataTypesAsLattices/Enumeration/myhillCase1Code.lean](myhillCase1Code.lean)
-- [DataTypesAsLattices/Enumeration/recCode.lean](recCode.lean)
-- [DataTypesAsLattices/Enumeration/secondRecOperatorCode.lean](secondRecOperatorCode.lean)
-- [DataTypesAsLattices/Enumeration/secondRecV.lean](secondRecV.lean)
-- [DataTypesAsLattices/Enumeration/unionCode.lean](unionCode.lean)
-- [DataTypesAsLattices/Enumeration/finAux.lean](finAux.lean)
-- [DataTypesAsLattices/Enumeration/fin.lean](fin.lean)
-- [DataTypesAsLattices/Enumeration/myhillCase2Code.lean](myhillCase2Code.lean)
-- [DataTypesAsLattices/Enumeration/myhillQ.lean](myhillQ.lean)
-- [DataTypesAsLattices/Enumeration/myhillRealizer.lean](myhillRealizer.lean)
+**DataTypesAsLattices/Enumeration/botCode.lean**
+
+@import "botCode.lean"
+
+**DataTypesAsLattices/Enumeration/condCode.lean**
+
+@import "condCode.lean"
+
+**DataTypesAsLattices/Enumeration/filterOp.lean**
+
+@import "filterOp.lean"
+
+**DataTypesAsLattices/Enumeration/interCode.lean**
+
+@import "interCode.lean"
+
+**DataTypesAsLattices/Enumeration/diagonalInterCode.lean**
+
+@import "diagonalInterCode.lean"
+
+**DataTypesAsLattices/Enumeration/myhillFilterCode.lean**
+
+@import "myhillFilterCode.lean"
+
+**DataTypesAsLattices/Enumeration/myhillCase1Code.lean**
+
+@import "myhillCase1Code.lean"
+
+**DataTypesAsLattices/Enumeration/recCode.lean**
+
+@import "recCode.lean"
+
+**DataTypesAsLattices/Enumeration/secondRecOperatorCode.lean**
+
+@import "secondRecOperatorCode.lean"
+
+**DataTypesAsLattices/Enumeration/secondRecV.lean**
+
+@import "secondRecV.lean"
+
+**DataTypesAsLattices/Enumeration/unionCode.lean**
+
+@import "unionCode.lean"
+
+**DataTypesAsLattices/Enumeration/finAux.lean**
+
+@import "finAux.lean"
+
+**DataTypesAsLattices/Enumeration/fin.lean**
+
+@import "fin.lean"
+
+**DataTypesAsLattices/Enumeration/myhillCase2Code.lean**
+
+@import "myhillCase2Code.lean"
+
+**DataTypesAsLattices/Enumeration/myhillQ.lean**
+
+@import "myhillQ.lean"
+
+**DataTypesAsLattices/Enumeration/myhillRealizer.lean**
+
+@import "myhillRealizer.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_3_2.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_2_i.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_2_range.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_2_surjective.ai_lean_to_english" {code_block=false}
+
+@import "Ycode.ai_lean_to_english" {code_block=false}
+
+@import "botCode.ai_lean_to_english" {code_block=false}
+
+@import "condCode.ai_lean_to_english" {code_block=false}
+
+@import "filterOp.ai_lean_to_english" {code_block=false}
+
+@import "interCode.ai_lean_to_english" {code_block=false}
+
+@import "diagonalInterCode.ai_lean_to_english" {code_block=false}
+
+@import "myhillFilterCode.ai_lean_to_english" {code_block=false}
+
+@import "myhillCase1Code.ai_lean_to_english" {code_block=false}
+
+@import "recCode.ai_lean_to_english" {code_block=false}
+
+@import "secondRecOperatorCode.ai_lean_to_english" {code_block=false}
+
+@import "secondRecV.ai_lean_to_english" {code_block=false}
+
+@import "unionCode.ai_lean_to_english" {code_block=false}
+
+@import "finAux.ai_lean_to_english" {code_block=false}
+
+@import "fin.ai_lean_to_english" {code_block=false}
+
+@import "myhillCase2Code.ai_lean_to_english" {code_block=false}
+
+@import "myhillQ.ai_lean_to_english" {code_block=false}
+
+@import "myhillRealizer.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_3_2.ai_english_concordance" {code_block=false}

@@ -1,0 +1,3 @@
+The binary join of two elements lies below any common upper bound.
+
+A token of the join is entailed by a finite set contained in the union of the carriers. Each token of that finite set lies in one of the two elements and therefore in the upper bound, and closure of the upper bound under entailment contains the original token.

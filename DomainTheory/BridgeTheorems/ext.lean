@@ -1,8 +1,3 @@
-/-ai
-Two Scott maps conjugated along the same pair of order isomorphisms are equal when their underlying Scott maps are equal.
-
-Each conjugated map is the value of the single-field constructor, so equality of the fields gives equality of the values.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

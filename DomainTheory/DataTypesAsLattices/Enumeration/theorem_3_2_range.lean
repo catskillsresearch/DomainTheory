@@ -1,8 +1,3 @@
-/-ai
-The set of recursively enumerable elements is exactly the range of val. This is Scott's Theorem 3.2.
-
-If an element is recursively enumerable, surjectivity of the enumeration supplies an index. If an element equals val(n), then val(n) is recursively enumerable by Theorem 3.2.
-ai-/
 
 module
 

@@ -1,6 +1,3 @@
-/-ai
-The lambda combinator of two self-maps of the universal domain curries the composite of the second map after evaluation after the product of the identity on the function space with the first map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

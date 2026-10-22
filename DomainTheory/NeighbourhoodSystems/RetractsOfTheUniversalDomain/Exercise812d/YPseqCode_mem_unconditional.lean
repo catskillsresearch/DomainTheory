@@ -1,8 +1,3 @@
-/-ai
-The image of YPseqCode n is a genuine neighbourhood of the first neighbourhood system.
-
-The conditional genuineness fact is applied to the unconditional witness that the outer found flag equals 1.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

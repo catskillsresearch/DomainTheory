@@ -1,8 +1,3 @@
-/-ai
-The intersection of the down-set of a neighbourhood with a finite union of down-sets is a power-domain neighbourhood.
-
-Induction on the list, distributing the intersection over the union. The empty union gives the empty intersection, which is a power-domain neighbourhood. For a cons cell, the head term is a power-domain neighbourhood by the two-down-set lemma, and the tail is one by the inductive hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

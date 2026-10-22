@@ -1,6 +1,3 @@
-/-ai
-The recursive value of a base element along a finite string is the base element on the empty string, and on a cons cell is the successor operation for the head bit applied to the value of the tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

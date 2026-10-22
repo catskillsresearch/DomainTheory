@@ -1,6 +1,3 @@
-/-ai
-The unlift of an element z of the lift that contains the false tag of the master of D is the element of D whose neighbourhoods are the sets X such that the false tag of X belongs to z. Downward closure is the inverse lift membership, and the given membership of the tagged master is the master of D. Intersections rewrite by the intersection law for tags. Upward closure uses upward closure in z after the larger neighbourhood is tagged, the inclusion of tags being the tag of the inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,8 +1,3 @@
-/-ai
-The length-n prefix of a stream is a prefix of the length-(n + 1) prefix.
-
-Rewrite by the successor law for prefixes, and use that a list is a prefix of the list obtained by appending one further entry.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

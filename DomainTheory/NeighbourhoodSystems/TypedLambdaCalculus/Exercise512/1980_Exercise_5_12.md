@@ -1,43 +1,91 @@
 # Exercise 5.12
 
-**EXERCISE 5.12.** On any domain $D$ introduce (as a least fixed point) a combinator
+## Human-English
 
-$$
-\mathrm{while} : (D \to T) \times (D \to D) \to (D \to D)
-$$
+@import "1980_Exercise_5_12.english" {code_block=false}
 
-by the recursion
+## AI: Human-English to AI-Lean
 
-$$
-\mathrm{while}(p, f)(x) = \mathrm{cond}(p(x), \mathrm{while}(p, f)(f(x)), x).
-$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/bodyMap.lean**
 
-Prove that
+@import "bodyMap.lean"
 
-$$
-\mathrm{while}(p, \mathrm{while}(p, f)) = \mathrm{while}(p, f).
-$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/Wop.lean**
 
-Show how $\mathrm{while}$ could have been used to obtain the least number operator mentioned in the proof of 5.6. Generalize the idea to define a combinator
+@import "Wop.lean"
 
-$$
-\mathrm{find} : D^\infty \times (D \to T) \to D
-$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/bodyMap_apply.lean**
 
-with the meaning "find the first term of the sequence (if any) which satisfies the given precicate."
+@import "bodyMap_apply.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/Wop_apply.lean**
 
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/bodyMap.lean](bodyMap.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/Wop.lean](Wop.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/bodyMap_apply.lean](bodyMap_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/Wop_apply.lean](Wop_apply.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileFix.lean](whileFix.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap.lean](whileMap.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap_least.lean](whileMap_least.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap_rec.lean](whileMap_rec.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512.lean](../Exercise512.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap_bot.lean](whileMap_bot.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap_false.lean](whileMap_false.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap_true.lean](whileMap_true.lean)
+@import "Wop_apply.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileFix.lean**
+
+@import "whileFix.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap.lean**
+
+@import "whileMap.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap_least.lean**
+
+@import "whileMap_least.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap_rec.lean**
+
+@import "whileMap_rec.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512.lean**
+
+@import "../Exercise512.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap_bot.lean**
+
+@import "whileMap_bot.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap_false.lean**
+
+@import "whileMap_false.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise512/whileMap_true.lean**
+
+@import "whileMap_true.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "bodyMap.ai_lean_to_english" {code_block=false}
+
+@import "Wop.ai_lean_to_english" {code_block=false}
+
+@import "bodyMap_apply.ai_lean_to_english" {code_block=false}
+
+@import "Wop_apply.ai_lean_to_english" {code_block=false}
+
+@import "whileFix.ai_lean_to_english" {code_block=false}
+
+@import "whileMap.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "whileMap_least.ai_lean_to_english" {code_block=false}
+
+@import "whileMap_rec.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise512.ai_lean_to_english" {code_block=false}
+
+@import "whileMap_bot.ai_lean_to_english" {code_block=false}
+
+@import "whileMap_false.ai_lean_to_english" {code_block=false}
+
+@import "whileMap_true.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_5_12.ai_english_concordance" {code_block=false}

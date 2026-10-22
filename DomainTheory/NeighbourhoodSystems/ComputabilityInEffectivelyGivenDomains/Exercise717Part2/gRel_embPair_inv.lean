@@ -1,8 +1,3 @@
-/-ai
-A catamorphism relation out of a paired embedding of P and Q yields neighbourhoods Z₁ and Z₂ such that P is related to Z₁, Q is related to Z₂, and the node map relates the product of Z₁ and Z₂ to the target.
-
-The domain law puts the paired embedding in the sharp domain, so both factors are sharp neighbourhoods. After generalizing the embedding, the master clause and the leaf clause are impossible, because a paired embedding is neither the master nor a zero embedding. The node clause is identified with P and Q by injectivity of the paired embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

@@ -1,8 +1,3 @@
-/-ai
-The (k + 1)-st approximant of the least fixed point of the Thue–Morse operator is the partial element of the k-fold substitution iterate of the singleton string of false. The element t unfolds as 0 consed onto the merge of the negation of t with the tail of t.
-
-The numbered name example_516_thue_morse is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse.iterElem_succ_eq

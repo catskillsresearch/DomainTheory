@@ -1,8 +1,3 @@
-/-ai
-Prepending a natural number to a stream places that number at position zero.
-
-This is the zero clause of the definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

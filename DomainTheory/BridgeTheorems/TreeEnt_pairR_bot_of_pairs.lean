@@ -1,8 +1,3 @@
-/-ai
-If a consistent finite set of tree tokens has a nonempty pair-left projection or a nonempty pair-right projection, then the set entails pair-right of bottom.
-
-The atom set is empty and both pair projections are consistent. The entailment payload is the pair-right disjunct, with the entailed component equal to bottom, when the pair-left projection is nonempty, and the pair-left disjunct when the pair-right projection is nonempty.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

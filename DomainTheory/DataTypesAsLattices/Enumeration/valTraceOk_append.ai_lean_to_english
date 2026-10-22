@@ -1,0 +1,3 @@
+The append of two well-formed valuation traces is well formed.
+
+An entry of the append lies in one of the two summands. Its structural justification transfers to the append because a membership recorded by either summand remains recorded after appending on the left or on the right. The G condition of the entry likewise follows from the G condition in the summand that contains it.

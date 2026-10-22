@@ -1,8 +1,3 @@
-/-ai
-The map from the flat naturals sends bottom to the bottom of the unary sequence system.
-
-The numbered name example_425 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise425.relateNToC1_bot

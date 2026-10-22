@@ -1,8 +1,3 @@
-/-ai
-If a set x has a member, its occupancy tag at an index i is the singleton i.
-
-By extensionality, either branch of the conditional set contributes only members of that singleton. Conversely, a member of the singleton lies in the zero branch when the given member of x is zero, and in the successor branch when that member is positive.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

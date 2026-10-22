@@ -1,8 +1,3 @@
-/-ai
-Any two neighbourhoods of the natural-number system are nested or disjoint.
-
-The proof cases on both neighbourhoods. Two copies of the whole space are equal. The whole space contains a singleton, and a singleton is contained in the whole space. Equal singletons coincide. Distinct singletons have empty intersection, because a common element would be both indices.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

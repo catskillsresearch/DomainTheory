@@ -1,8 +1,3 @@
-/-ai
-Every basic neighbourhood is open in the positive topology.
-
-The finite set coded by n is the underlying set of some finite set s, and transporting membership along that equality writes the basic neighbourhood as the intersection of the subbasic opens of the members of s. Each of those subbasic opens is open, so their finite intersection is open.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

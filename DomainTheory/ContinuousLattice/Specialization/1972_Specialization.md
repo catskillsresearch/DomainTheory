@@ -1,65 +1,127 @@
 # Specialization
 
-Scott assumes the $T_0$ separation axiom throughout; for what that means in the paper and in Lean, see [T0 spaces](../Injective/1972_T0_spaces.md). Here we use $T_0$ only as background for the specialization order and Scott topology.
+## Human-English
 
-Every $T_0$-space becomes a partially ordered set under the definition:
+@import "1972_Specialization.english" {code_block=false}
 
-$$
-x \sqsubseteq y \text{ iff whenever } x \in U \text{ and } U \text{ is open, then } y \in U.
-$$
+## AI: Human-English to AI-Lean
 
-Indeed, though this relation is reflexive and transitive, the condition that it be *antisymmetric* is exactly equivalent to the $T_0$-axiom (formalized in Lean as `specializationLe_antisymm`).
+**ContinuousLattice/Specialization/SpecializationLe.lean**
 
-In the converse direction, every partially ordered set $\langle X, \sqsubseteq \rangle$ can be so obtained, for we have only to define $U \subseteq X$ as being open if it satisfies the condition:
+@import "SpecializationLe.lean"
 
-(i) whenever $x \in U$ and $x \sqsubseteq y$, then $y \in U$.
+**ContinuousLattice/Specialization/specializationLe_iff_specializes.lean**
 
-The axioms for partial order make $X$ a $T_0$-space, because for any $y \in X$ the set
+@import "specializationLe_iff_specializes.lean"
 
-$$
-x \in X : x \not\sqsubseteq y
-$$
+**ContinuousLattice/Specialization/specializationLe_antisymm.lean**
 
-is open. This connection is not very interesting, however.
+@import "specializationLe_antisymm.lean"
 
-What *is* interesting in topological spaces is *convergence* and the properties of *limit points*. We shall discuss limits in terms of *nets*, in particular in terms of *monotone nets*. A monotone net in a $T_0$-space $X$ is a function
+**ContinuousLattice/Specialization/SpecializationLeu2emap.lean**
 
-$$
-x : I \to X
-$$
+@import "SpecializationLeu2emap.lean"
 
-where $\langle I, \le \rangle$ is a directed set and where $i \le j$ implies $x_i \sqsubseteq x_j$ for all $i, j \in I$. In a $T_1$-space a monotone net is constant (hence, uninteresting) because the $\sqsubseteq$-relation is the identity. As usual (cf. Kelley (1955), p.66) we say that a net $x$ *converges* to an element $y$ iff whenever $U$ is open and $y \in U$, then for some $i \in I$ we have $x_j \in U$ for all $j \ge i$. Note that a monotone net $x$ converges to each of its terms $x_i$. Suppose that a monotone net $x$ converges to an element $y$ which is an upper bound to all the terms of $x$. Then $y$ must be the *least upper bound*, which we write as:
+**ContinuousLattice/Specialization/specializationPreorder.lean**
 
-$$
-y = \bigsqcup x_i : i \in I.
-$$
+@import "specializationPreorder.lean"
 
-To see this, assume that $z$ is any other upper bound with $x_i \sqsubseteq z$ for all $i \in I$. If $U$ is open and $y \in U$, then $x_i \in U$ for some $i \in I$. But then $z \in U$, and so $y \sqsubseteq z$ follows.
+**ContinuousLattice/Specialization/MonotoneNet.lean**
 
-We shall find that most of the facts about the topology of the spaces we are concerned with here can be expressed in terms of least upper bounds (lubs). It is not always the case, however, that lubs are limits. Thus, for a partially ordered set $X$, we impose a further restriction on its topology beyond condition (i) for saying when a subset $U$ is open:
+@import "MonotoneNet.lean"
 
-(ii) whenever $S \subseteq X$ is *directed*, $\bigsqcup S$ exists, and $\bigsqcup S \in U$, then $S \cap U \neq \emptyset$.
+**ContinuousLattice/Specialization/ScottConvergesTo.lean**
 
-By a directed subset of $X$ we of course mean that it is directed in the sense of the partial ordering $\sqsubseteq$. Note that in this paper directed sets are always *non-empty*. The sets satisfying (i) and (ii) form the *induced topology* on a partially ordered set $X$, which is still a $T_0$-space because the sets $x \in X : x \not\sqsubseteq y$ remain open even in the sense of (ii). Obviously a directed set $S \subseteq X$ can be regarded as a net, and now in view of (ii) it follows that $S$ converges to $\bigsqcup S$ — if this lub exists.
+@import "ScottConvergesTo.lean"
 
-**Lean 4**
+**ContinuousLattice/Specialization/scottTopologicalSpace.lean**
 
-- [ContinuousLattice/Specialization/SpecializationLe.lean](SpecializationLe.lean)
-- [ContinuousLattice/Specialization/specializationLe_iff_specializes.lean](specializationLe_iff_specializes.lean)
-- [ContinuousLattice/Specialization/specializationLe_antisymm.lean](specializationLe_antisymm.lean)
-- [ContinuousLattice/Specialization/SpecializationLeu2emap.lean](SpecializationLeu2emap.lean)
-- [ContinuousLattice/Specialization/specializationPreorder.lean](specializationPreorder.lean)
-- [ContinuousLattice/Specialization/MonotoneNet.lean](MonotoneNet.lean)
-- [ContinuousLattice/Specialization/ScottConvergesTo.lean](ScottConvergesTo.lean)
-- [ContinuousLattice/Specialization/scottTopologicalSpace.lean](scottTopologicalSpace.lean)
-- [ContinuousLattice/Specialization/scottOpen_not_le.lean](scottOpen_not_le.lean)
-- [ContinuousLattice/Specialization/ScottOpen_iff_dirSupInacc.lean](ScottOpen_iff_dirSupInacc.lean)
-- [ContinuousLattice/Specialization/isOpen_iff_scottOpen.lean](isOpen_iff_scottOpen.lean)
-- [ContinuousLattice/Specialization/specializationLe_scott_iff.lean](specializationLe_scott_iff.lean)
-- [ContinuousLattice/Specialization/scottTopology_t0Space.lean](scottTopology_t0Space.lean)
-- [ContinuousLattice/Specialization/isOpen_scott_iff_scottOpen.lean](isOpen_scott_iff_scottOpen.lean)
-- [ContinuousLattice/WayBelow/ScottOpen.lean](../WayBelow/ScottOpen.lean)
-- [ContinuousLattice/WayBelow/ScottOpenu2eisUpperSet.lean](../WayBelow/ScottOpenu2eisUpperSet.lean)
-- [ContinuousLattice/WayBelow/scottOpen_univ.lean](../WayBelow/scottOpen_univ.lean)
-- [ContinuousLattice/WayBelow/scottOpen_inter.lean](../WayBelow/scottOpen_inter.lean)
-- [ContinuousLattice/WayBelow/scottOpen_sUnion.lean](../WayBelow/scottOpen_sUnion.lean)
+@import "scottTopologicalSpace.lean"
+
+**ContinuousLattice/Specialization/scottOpen_not_le.lean**
+
+@import "scottOpen_not_le.lean"
+
+**ContinuousLattice/Specialization/ScottOpen_iff_dirSupInacc.lean**
+
+@import "ScottOpen_iff_dirSupInacc.lean"
+
+**ContinuousLattice/Specialization/isOpen_iff_scottOpen.lean**
+
+@import "isOpen_iff_scottOpen.lean"
+
+**ContinuousLattice/Specialization/specializationLe_scott_iff.lean**
+
+@import "specializationLe_scott_iff.lean"
+
+**ContinuousLattice/Specialization/scottTopology_t0Space.lean**
+
+@import "scottTopology_t0Space.lean"
+
+**ContinuousLattice/Specialization/isOpen_scott_iff_scottOpen.lean**
+
+@import "isOpen_scott_iff_scottOpen.lean"
+
+**ContinuousLattice/WayBelow/ScottOpen.lean**
+
+@import "../WayBelow/ScottOpen.lean"
+
+**ContinuousLattice/WayBelow/ScottOpenu2eisUpperSet.lean**
+
+@import "../WayBelow/ScottOpenu2eisUpperSet.lean"
+
+**ContinuousLattice/WayBelow/scottOpen_univ.lean**
+
+@import "../WayBelow/scottOpen_univ.lean"
+
+**ContinuousLattice/WayBelow/scottOpen_inter.lean**
+
+@import "../WayBelow/scottOpen_inter.lean"
+
+**ContinuousLattice/WayBelow/scottOpen_sUnion.lean**
+
+@import "../WayBelow/scottOpen_sUnion.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "SpecializationLe.ai_lean_to_english" {code_block=false}
+
+@import "specializationLe_iff_specializes.ai_lean_to_english" {code_block=false}
+
+@import "specializationLe_antisymm.ai_lean_to_english" {code_block=false}
+
+@import "SpecializationLeu2emap.ai_lean_to_english" {code_block=false}
+
+@import "specializationPreorder.ai_lean_to_english" {code_block=false}
+
+@import "MonotoneNet.ai_lean_to_english" {code_block=false}
+
+@import "ScottConvergesTo.ai_lean_to_english" {code_block=false}
+
+@import "scottTopologicalSpace.ai_lean_to_english" {code_block=false}
+
+@import "scottOpen_not_le.ai_lean_to_english" {code_block=false}
+
+@import "ScottOpen_iff_dirSupInacc.ai_lean_to_english" {code_block=false}
+
+@import "isOpen_iff_scottOpen.ai_lean_to_english" {code_block=false}
+
+@import "specializationLe_scott_iff.ai_lean_to_english" {code_block=false}
+
+@import "scottTopology_t0Space.ai_lean_to_english" {code_block=false}
+
+@import "isOpen_scott_iff_scottOpen.ai_lean_to_english" {code_block=false}
+
+@import "../WayBelow/ScottOpen.ai_lean_to_english" {code_block=false}
+
+@import "../WayBelow/ScottOpenu2eisUpperSet.ai_lean_to_english" {code_block=false}
+
+@import "../WayBelow/scottOpen_univ.ai_lean_to_english" {code_block=false}
+
+@import "../WayBelow/scottOpen_inter.ai_lean_to_english" {code_block=false}
+
+@import "../WayBelow/scottOpen_sUnion.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Specialization.ai_english_concordance" {code_block=false}

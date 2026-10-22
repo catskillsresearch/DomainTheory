@@ -1,8 +1,3 @@
-/-ai
-Application of a seven-way sum to the full set is the full set.
-
-Rewrite by the application equation, the body, application of the full set, and the double conditional at the full set.
-ai-/
 
 module
 

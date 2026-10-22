@@ -1,8 +1,3 @@
-/-ai
-In the recursion before Theorem 4.4, taken from Proposition 3.7, the successor inclusion acts by i_{n+1}(x)(y) = i_n(x(j_n(y))).
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

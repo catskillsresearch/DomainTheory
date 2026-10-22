@@ -1,6 +1,3 @@
-/-ai
-An element is generated from Scott's single generator G when it is G itself, or the application of one generated element to another.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

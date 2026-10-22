@@ -1,8 +1,3 @@
-/-ai
-The concrete product carries the subsystem relation componentwise.
-
-The numbered name example_619_part_b is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB.prodTok_subsystem

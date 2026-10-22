@@ -1,6 +1,3 @@
-/-ai
-The right injection is the approximable map from the second neighbourhood system to the sum that relates a neighbourhood Y to a sum neighbourhood W when the right copy of Y is contained in W. The masters are related because a right copy of a neighbourhood lies in the sum master. Intersection on the right intersects the sum neighbourhoods, with the right copy of Y as the consistency witness, and monotonicity uses that the right copy preserves inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

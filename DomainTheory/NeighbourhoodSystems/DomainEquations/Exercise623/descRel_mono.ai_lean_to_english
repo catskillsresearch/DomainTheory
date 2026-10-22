@@ -1,0 +1,3 @@
+The Kleene iterates form a chain in the pointwise order: if i is at most j, then the i-th iterate lies below the j-th.
+
+Induction along the inequality gives reflexivity when the indices agree, and a successor step composes the inductive comparison with the inequality of an iterate and the next.

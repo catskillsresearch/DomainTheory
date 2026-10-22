@@ -1,6 +1,3 @@
-/-ai
-Encoding a pair of rationals as a natural number is the natural pairing of the two rational encodings.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

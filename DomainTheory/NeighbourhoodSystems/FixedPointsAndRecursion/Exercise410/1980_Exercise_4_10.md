@@ -1,29 +1,115 @@
 # Exercise 4.10
 
-**EXERCISE 4.10.** Given a domain $D$ and an element $a \in |D|$, construct a domain $D_a$ where
+## Human-English
 
-$$
-|D_a| = \{x \in |D| \mid x \sqsubseteq a\}.
-$$
+@import "1980_Exercise_4_10.english" {code_block=false}
 
-Show that if $f : D \to D$ is approximable, then $f$ can be restricted to an approximable map $f' : D_{\mathrm{fix}(f)} \to D_{\mathrm{fix}(f)}$ where $f'(x) = f(x)$ for all $x \in |D_{\mathrm{fix}(f)}|$. How many fixed points does $f'$ have in $|D_{\mathrm{fix}(f)}|$?
+## AI: Human-English to AI-Lean
 
-**Lean 4**
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/fixElement_below_unique.lean**
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/fixElement_below_unique.lean](fixElement_below_unique.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relMap_toElementMap_embed.lean](relMap_toElementMap_embed.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relMap_unique_fixed.lean](relMap_unique_fixed.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410.lean](../Exercise410.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relSystem.lean](relSystem.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relSystem_mem.lean](relSystem_mem.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relSystem_master.lean](relSystem_master.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/embed.lean](embed.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/embed_le.lean](embed_le.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/embed_mono.lean](embed_mono.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/le_of_embed_le.lean](le_of_embed_le.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relMap.lean](relMap.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/restrict.lean](restrict.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/embed_restrict.lean](embed_restrict.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/restrict_embed.lean](restrict_embed.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relIso.lean](relIso.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/Basic.lean](Basic.lean)
+@import "fixElement_below_unique.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relMap_toElementMap_embed.lean**
+
+@import "relMap_toElementMap_embed.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relMap_unique_fixed.lean**
+
+@import "relMap_unique_fixed.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410.lean**
+
+@import "../Exercise410.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relSystem.lean**
+
+@import "relSystem.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relSystem_mem.lean**
+
+@import "relSystem_mem.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relSystem_master.lean**
+
+@import "relSystem_master.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/embed.lean**
+
+@import "embed.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/embed_le.lean**
+
+@import "embed_le.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/embed_mono.lean**
+
+@import "embed_mono.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/le_of_embed_le.lean**
+
+@import "le_of_embed_le.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relMap.lean**
+
+@import "relMap.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/restrict.lean**
+
+@import "restrict.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/embed_restrict.lean**
+
+@import "embed_restrict.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/restrict_embed.lean**
+
+@import "restrict_embed.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/relIso.lean**
+
+@import "relIso.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise410/Basic.lean**
+
+@import "Basic.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "fixElement_below_unique.ai_lean_to_english" {code_block=false}
+
+@import "relMap_toElementMap_embed.ai_lean_to_english" {code_block=false}
+
+@import "relMap_unique_fixed.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise410.ai_lean_to_english" {code_block=false}
+
+@import "relSystem.ai_lean_to_english" {code_block=false}
+
+@import "relSystem_mem.ai_lean_to_english" {code_block=false}
+
+@import "relSystem_master.ai_lean_to_english" {code_block=false}
+
+@import "embed.ai_lean_to_english" {code_block=false}
+
+@import "embed_le.ai_lean_to_english" {code_block=false}
+
+@import "embed_mono.ai_lean_to_english" {code_block=false}
+
+@import "le_of_embed_le.ai_lean_to_english" {code_block=false}
+
+@import "relMap.ai_lean_to_english" {code_block=false}
+
+@import "restrict.ai_lean_to_english" {code_block=false}
+
+@import "embed_restrict.ai_lean_to_english" {code_block=false}
+
+@import "restrict_embed.ai_lean_to_english" {code_block=false}
+
+@import "relIso.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_4_10.ai_english_concordance" {code_block=false}

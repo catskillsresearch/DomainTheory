@@ -1,8 +1,3 @@
-/-ai
-A sum token lies in the unit copy when it is the unit token.
-
-The equivalence is the defining equation of the unit copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

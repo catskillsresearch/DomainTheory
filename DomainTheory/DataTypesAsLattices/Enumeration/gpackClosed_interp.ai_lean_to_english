@@ -1,0 +1,3 @@
+Interpreting the term gpackClosed in any environment yields the packed combinator.
+
+Unfold both sides. Rewrite the four nested binary sequencings, using that the closed successor, predecessor, conditional, and K terms avoid index 8, that a binary sequencing of terms that avoid index 8 itself avoids index 8, and that the closed S term avoids index 8. Then rewrite by the interpretation theorems for those five closed terms.

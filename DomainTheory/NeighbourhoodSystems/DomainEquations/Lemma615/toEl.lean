@@ -1,6 +1,3 @@
-/-ai
-toEl sends an element of the domain system to the element of the image subdomain whose members are the generators of members of that element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

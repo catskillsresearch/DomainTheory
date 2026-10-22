@@ -1,6 +1,3 @@
-/-ai
-The swap from the product of the product of E with itself and the three-point domain into the product of the three-point domain and the product of E with itself exchanges the two factors, so that a conditional whose domain is shaped as the three-point domain times E times E can be fed from a domain shaped as that product times the three-point domain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

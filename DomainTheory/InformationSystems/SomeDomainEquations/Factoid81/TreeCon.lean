@@ -1,6 +1,3 @@
-/-ai
-Consistency of a finite set of tree tokens, in the sense of Scott's clauses (4) through (7), is defined inductively by two clauses. The set is left-consistent when its atom projection is consistent in the atom information system and both pair projections are empty. The set is right-consistent when its atom projection is empty and both pair projections are themselves consistent.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

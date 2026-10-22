@@ -1,0 +1,3 @@
+Reading a packed triple and applying the positive bisection index is primitive recursive.
+
+The three projections and the pairing of the outer indices are primitive recursive. The intersection and difference deciders, the left half, and the two selections are primitive recursive by composition, and the resulting function equals the index function.

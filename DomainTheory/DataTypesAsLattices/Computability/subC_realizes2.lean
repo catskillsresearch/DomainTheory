@@ -1,8 +1,3 @@
-/-ai
-The combinator subC realizes truncated subtraction of natural numbers.
-
-Simplify by the identities subC_app, primRecComb_ofNat, and primRecVal_sub.
-ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,8 +1,3 @@
-/-ai
-Prepending a finite string to a neighbourhood of the binary-sequence system yields a neighbourhood.
-
-A cone prepends to the cone of the concatenation, and a singleton prepends to the singleton of the concatenation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

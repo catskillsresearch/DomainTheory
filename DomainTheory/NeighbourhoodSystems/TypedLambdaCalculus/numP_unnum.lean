@@ -1,8 +1,3 @@
-/-ai
-The pairing function inverts the diagonal iterate: the pairing value of the iterate of v is v.
-
-Induct on v. At zero the pairing value of the origin is zero. At a successor, the iterate is one diagonal step from the previous iterate, and that step increases the pairing value by one, so the inductive hypothesis gives the successor.
-ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

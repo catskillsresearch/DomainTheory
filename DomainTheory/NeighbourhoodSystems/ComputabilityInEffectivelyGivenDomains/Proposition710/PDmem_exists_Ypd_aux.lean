@@ -1,8 +1,3 @@
-/-ai
-Every finite union of down-sets of neighbourhoods equals the enumerated neighbourhood of some code. The index list is built entry by entry from surjectivity of the presentation.
-
-Induction on the list. The empty union is the enumeration of the code 0. For a cons cell, surjectivity supplies an index for the head, the inductive hypothesis supplies a code for the tail, and the successor of the pairing of those codes enumerates the union of the head down-set with the tail enumeration.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

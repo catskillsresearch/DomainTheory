@@ -1,6 +1,3 @@
-/-ai
-The filter operator code is a natural number chosen, by the surjectivity in theorem 3.2 applied to the combinatory element filterC, as a Gödel number of filterC.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

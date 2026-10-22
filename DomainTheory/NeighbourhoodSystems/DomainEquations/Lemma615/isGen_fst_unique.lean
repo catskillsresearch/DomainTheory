@@ -1,8 +1,3 @@
-/-ai
-If the backward map composed with the forward map is the identity, then two neighbourhoods with the same generator are equal.
-
-Monotonicity of generators, applied in both directions to the equality of the common generator with itself, gives both inclusions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

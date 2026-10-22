@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (3.16): applying the combinator L to the positive branch of u at R applied to x yields the application of u to x.
-
-Rewrite by the application law for L, the values of the positive branch at the numerals 1 and 2, the application law for R, and sequencing at the numeral 1.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

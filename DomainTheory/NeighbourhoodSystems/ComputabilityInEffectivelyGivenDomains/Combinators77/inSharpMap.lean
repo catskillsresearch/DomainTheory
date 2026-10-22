@@ -1,6 +1,3 @@
-/-ai
-Scott's injection from a neighbourhood system D to its sharp system, as an approximable map, relates a neighbourhood X to a sharp neighbourhood W when the zero-embedding of X is contained in W. The master neighbourhood is related to the master neighbourhood of the sharp system, because the zero-embedding of the master neighbourhood is contained there. The intersection of two related codomain neighbourhoods still contains the zero-embedding and remains a sharp neighbourhood. If the domain neighbourhood is replaced by a smaller one and the codomain neighbourhood by a larger one, monotonicity of the zero-embedding preserves the inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77

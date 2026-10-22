@@ -1,8 +1,3 @@
-/-ai
-If the found flag of the X-fold is 1 at stage 4 to the n, then the image of XPseqCode n is a genuine neighbourhood of the second neighbourhood system.
-
-This is the running-code genuineness fact specialized at that stage.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

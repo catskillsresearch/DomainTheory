@@ -1,8 +1,3 @@
-/-ai
-The option that forms the concatenation of the two fuel-bounded decodes of the subcodes of a code is defined if and only if both of those decodes are defined.
-
-Case analysis on the two decodes; each combination simplifies.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

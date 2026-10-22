@@ -1,6 +1,3 @@
-/-ai
-The coalesced left projection relates a coalesced neighbourhood W to a left neighbourhood X when the left part of W is contained in X. The left part of the separated-sum master is contained in the left master. The left part of a left injection is the injected neighbourhood, and the left part of the master or of a right injection is the left master, so an intersection of targets still contains the left part and is a left neighbourhood. The relation is monotone because the left part preserves inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

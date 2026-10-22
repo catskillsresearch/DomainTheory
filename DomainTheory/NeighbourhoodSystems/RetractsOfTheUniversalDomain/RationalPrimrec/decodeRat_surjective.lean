@@ -1,8 +1,3 @@
-/-ai
-Decoding of rational codes is surjective: every rational is the decoding of some natural.
-
-The encoding of the rational is such a code, because decoding inverts encoding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

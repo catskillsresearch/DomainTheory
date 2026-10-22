@@ -1,8 +1,3 @@
-/-ai
-The map defining the shift, sending x to the union of the singleton zero with the successor set of a applied to the predecessor of x, is Scott continuous.
-
-It is the composite of union on the left with a constant, successor, application of a, and the predecessor set, each of which is Scott continuous.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

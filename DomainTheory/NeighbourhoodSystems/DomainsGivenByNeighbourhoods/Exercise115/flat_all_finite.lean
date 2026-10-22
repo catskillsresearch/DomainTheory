@@ -1,8 +1,3 @@
-/-ai
-Every element of the flat domain is the principal filter of some neighbourhood.
-
-Classification says the element is the bottom element or an atom. The bottom element is the principal filter of the master neighbourhood. An atom is the principal filter of its singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

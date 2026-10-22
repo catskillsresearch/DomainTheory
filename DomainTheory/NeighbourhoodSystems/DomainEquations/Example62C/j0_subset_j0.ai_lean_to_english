@@ -1,0 +1,3 @@
+One left copy is contained in another if and only if the underlying set is contained in the other.
+
+In the forward direction, membership of a tagged element transfers across the inclusion and is rewritten by the characterization of membership in a left copy. In the reverse direction, a tagged witness is rewritten by the same characterization.

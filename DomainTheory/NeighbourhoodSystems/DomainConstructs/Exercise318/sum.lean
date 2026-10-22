@@ -1,6 +1,3 @@
-/-ai
-Assuming every neighbourhood of either system is nonempty, the sum is the neighbourhood system on the basepoint together with the left- and right-tagged tokens whose neighbourhoods are the sum master, the left copies of neighbourhoods of the first system, and the right copies of neighbourhoods of the second. The sum master contains the basepoint, and every neighbourhood is contained in it. Closure under consistent intersection is proved by cases on those three forms: the master absorbs a copy, two copies of the same tag meet in the copy of the intersection once a nonempty witness is forced to be a copy of that tag, and a left copy meets a right copy emptily, which cannot contain a nonempty witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

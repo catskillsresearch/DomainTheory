@@ -1,8 +1,3 @@
-/-ai
-The elementwise value of the fixed-point operator at a function-space element equals the least fixed point of the approximable map corresponding to that element.
-
-Extensionality and the principal form of membership split the equality into two inclusions. From a witnessing neighbourhood of the function-space element, the operator on the corresponding principal returns the least fixed point of its least map, that principal lies below the element by upward closure, and monotonicity of the function-space equivalence and of the least fixed point moves the neighbourhood into the desired fixed point. In the other direction a finite chain from the master factors through some neighbourhood of the element, and the principal clause turns that factored chain into membership in the operator value.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

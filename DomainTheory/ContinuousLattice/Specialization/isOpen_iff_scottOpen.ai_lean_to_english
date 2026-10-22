@@ -1,0 +1,3 @@
+A set is open in the Scott topological space if and only if it is Scott-open.
+
+Scott-openness rewrites as the conjunction of being an upper set and being inaccessible by directed suprema, and the Scott topological space is the Scott topology of the whole universe. That topology is a Scott topology by the reflexivity of its defining equality. Mathlib's criterion of openness in a Scott topology is then the same conjunction on the universe, which matches the rewritten form.

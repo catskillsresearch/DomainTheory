@@ -1,0 +1,3 @@
+If two Scott continuous maps agree on every finite set, then they agree on every element of Pω. This is the uniqueness half of Scott's Theorem 3.5: a continuous realizer of an extensional map is unique, because continuous maps are determined by their values on finite sets.
+
+Rewrite both sides by Scott continuity as Scott unions. An element lies in a Scott piece of one side exactly when it lies in the corresponding piece of the other, because the two maps agree on each finite set.

@@ -1,8 +1,3 @@
-/-ai
-The i-th fiber of an intersection is the intersection of the i-th fibers.
-
-The identity is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

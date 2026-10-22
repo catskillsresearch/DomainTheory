@@ -1,0 +1,3 @@
+If a set in the sharp family is contained in a leaf embedding, then it is itself the leaf embedding of a neighbourhood of D.
+
+On the master, nonemptiness supplies a point with a nonempty path, which cannot lie in a leaf embedding. On a leaf, the same neighbourhood is the witness. On a pair, nonemptiness of an embedded pair supplies a point whose path is nonempty, which cannot lie in a leaf embedding.

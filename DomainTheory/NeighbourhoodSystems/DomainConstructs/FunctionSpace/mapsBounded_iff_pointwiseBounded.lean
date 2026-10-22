@@ -1,8 +1,3 @@
-/-ai
-A set of approximable maps is bounded if and only if it is pointwise bounded.
-
-An upper bound in the map order gives, at each element, an upper bound of the images, by the pointwise characterization of the order. Conversely, the supremum map of a pointwise-bounded set is an upper bound: a related pair of a member is membership of the output in that member at the principal filter of the input, and that value lies below the pointwise supremum.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,8 +1,3 @@
-/-ai
-The composite of approximable maps relates an input to an output if and only if some intermediate neighbourhood is related to the input by the first map and to the output by the second.
-
-This equivalence is the defining relation of composition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

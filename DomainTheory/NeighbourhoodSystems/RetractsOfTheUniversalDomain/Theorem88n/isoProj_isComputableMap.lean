@@ -1,8 +1,3 @@
-/-ai
-The code-level projection is a computable map from the presentation of the coded copy to the original presentation.
-
-Pairing the first component of a code with the index involution of the second component is primitive recursive. Inclusion of the coded neighbourhood of the first component in the coded neighbourhood of that reindexed second component is recursively decidable by composing inclusion decidability of the coded presentation with the reindexing; after simplifying the unpairing of a pair the two sides agree by reflexivity. The recursively enumerable predicate of that decidable predicate agrees with the relation of the projection by the reduction of the relation to a single inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88f.Basic

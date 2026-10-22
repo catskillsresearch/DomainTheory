@@ -1,8 +1,3 @@
-/-ai
-The junk flag of an X sub-step is the selection, by the incoming junk flag, of 1 or the bit-selected emptiness decision for intersection or difference.
-
-Unfolding the sub-step and projecting the word components, the junk component of the packed output is that selection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

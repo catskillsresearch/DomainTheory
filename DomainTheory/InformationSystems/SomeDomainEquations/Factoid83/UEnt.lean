@@ -1,6 +1,3 @@
-/-ai
-Entailment for U, Scott's clause (10), holds when the finite set of U-tokens is consistent and the finset of underlying V-tokens entails the underlying value of the conclusion token.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

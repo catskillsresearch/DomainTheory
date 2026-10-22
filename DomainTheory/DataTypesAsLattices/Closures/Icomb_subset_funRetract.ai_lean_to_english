@@ -1,0 +1,3 @@
+Equation (5.1) puts every set below the graph of its own application, and therefore the identity combinator is contained in the function-space retract. Scott records this as the expansiveness half of the statement that the function-space combinator is a closure.
+
+A pair (n, m) in the identity has m in en, and equation (5.1) applied to en contains that m.

@@ -1,6 +1,3 @@
-/-ai
-The master neighbourhood of the lift is the empty string inserted into the false-bit embedding of the master of the original system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

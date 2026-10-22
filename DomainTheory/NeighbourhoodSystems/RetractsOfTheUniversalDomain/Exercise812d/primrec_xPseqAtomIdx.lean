@@ -1,8 +1,3 @@
-/-ai
-The map sending a paired code to the second-system index of the X half-step atom at its two components is primitive recursive.
-
-That index is the second index of the half-step atom state. Composing the primitive-recursive second-index projection with the primitive-recursive atom-state map, and identifying the result by reflexivity, gives the claim.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

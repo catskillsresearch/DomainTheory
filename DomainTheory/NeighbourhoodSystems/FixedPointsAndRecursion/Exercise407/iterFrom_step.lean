@@ -1,8 +1,3 @@
-/-ai
-If a lies below f(a), then each iterate of f from a lies below the next iterate.
-
-The inequality is proved by induction on the index. At zero, the successor and zero laws reduce the claim to a below f(a). At a successor, the successor law rewrites both sides as images under f, and monotonicity of f applies the inductive hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

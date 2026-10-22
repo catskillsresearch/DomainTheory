@@ -1,8 +1,3 @@
-/-ai
-Decoding the encoding of a sign sequence recovers the sequence at every position strictly below the encoded length.
-
-Proceed by induction on the length. A position below zero is impossible. At a successor, a position below the previous length has the same base-four digit after the new higher digit is added, so both bits agree with the inductive value. The newly written position is recovered by reading that digit back, and the four boolean cases match the two bits of the sign.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,8 +1,3 @@
-/-ai
-Conjugating the level summand of the limit embedding by the projection and embedding of that level recovers the component of an inverse-limit element at the next level.
-
-The level projection determines, by the function-space form of a projection, a projection of function spaces, and the retraction-after-inclusion law for that projection, applied to the image of the limit element under the next projection, is the next component.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

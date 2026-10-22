@@ -1,8 +1,3 @@
-/-ai
-The inclusion relation read off a computable presentation holds of n and m if and only if the n-th neighbourhood is contained in the m-th.
-
-This is the defining clause of that relation, so the equivalence is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

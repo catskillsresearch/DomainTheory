@@ -1,8 +1,3 @@
-/-ai
-In a positive difference-closed neighbourhood system, a union of a finite family of sets that are each empty or a neighbourhood is itself empty or a neighbourhood.
-
-By induction on a finite set of indices, the union over that set is empty or a neighbourhood. The empty index set gives the empty union. Inserting an index applies the binary union law to the new set and the inductive union. The full union equals the union indexed by the whole finite type.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

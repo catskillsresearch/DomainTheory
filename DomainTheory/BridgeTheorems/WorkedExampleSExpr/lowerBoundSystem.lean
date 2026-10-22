@@ -1,6 +1,3 @@
-/-ai
-The lower-bound information system on the natural numbers has bottom token zero, takes every finite set to be consistent, and uses the lower-bound entailment of Factoid 2.4, under which a set entails a number when the number is zero or is at most some member of the set. Subsets, singletons, and sets enlarged by an entailed token are consistent because every finite set is. Zero is entailed by the zero clause. A member of a consistent set is entailed by reflexivity of the numerical order. In a composite entailment, a conclusion equal to zero remains zero, and a conclusion bounded by an intermediate token is either zero, when that token is zero, or bounded by a token of the original set, by transitivity of the numerical order.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,0 +1,3 @@
+If D is a continuous lattice and f' is a Scott map from Y to D, then the value of f' at y equals the supremum of those elements that arise as the infimum of the image of f' on some Scott-open neighborhood of y.
+
+Continuity of D writes the value as the supremum of elements way below it. For such an element a, the witnessing Scott-open neighborhood of the value has Scott-open preimage under f', by Scott continuity of f', and that preimage contains y. The element a lies below every value of f' on the preimage, hence below the infimum of the image, and that infimum belongs to the family. Conversely, the infimum of the image of any Scott-open set containing y lies below the value of f' at y.

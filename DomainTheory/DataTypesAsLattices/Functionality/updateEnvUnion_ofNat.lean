@@ -1,8 +1,3 @@
-/-ai
-The index-continuous update of t by x along the numeral n equals the single update of t by x at n.
-
-A member of the union lies in the update at some m contained in the numeral, so m equals n. Conversely, n belongs to its numeral, so a member of the single update belongs to the union.
-ai-/
 
 module
 

@@ -1,8 +1,3 @@
-/-ai
-The inclusion shuffle is primitive recursive.
-
-It pairs the left projection with the pair of the right projection and the left projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

@@ -1,8 +1,3 @@
-/-ai
-If f at the numerals n plus i and m is a positive numeral for every i below k, then the binary search at n and m equals the search at n plus k and m.
-
-Induct on k. For zero, adding zero leaves n unchanged. For a successor, the hypothesis at offset 0 gives a positive numeral at n, so the step lemma advances the search by one. The inductive hypothesis at n plus 1 applies to the shifted run, after rewriting the sum n plus 1 plus i as n plus i plus 1, and the two ways of writing the final offset agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

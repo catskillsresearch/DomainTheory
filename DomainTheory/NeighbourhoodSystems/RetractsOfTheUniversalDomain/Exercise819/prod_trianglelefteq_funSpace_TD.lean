@@ -1,8 +1,3 @@
-/-ai
-The product of E with itself is a retract of the function space from the three-point domain to E.
-
-The curried pairing and the map that reads a function at true and at false form a projection pair: one composite is the identity, and the other lies below the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

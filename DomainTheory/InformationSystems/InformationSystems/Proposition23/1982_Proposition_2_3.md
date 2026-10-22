@@ -1,35 +1,61 @@
 # Proposition 2.3
 
-**PROPOSITION 2.3.** *For all $u, v, w, u', v' \in \mathrm{Con}$, we have:*
+## Human-English
 
-(i) $\emptyset \vdash \{\Delta\}$;
+@import "1982_Proposition_2_3.english" {code_block=false}
 
-(ii) $u \vdash v$ implies $u \cup v \in \mathrm{Con}$;
+## AI: Human-English to AI-Lean
 
-(iii) $u \vdash u$;
-(iv) $u \vdash v$ and $v \vdash w$ imply $u \vdash w$;
+**InformationSystems/InformationSystems/Proposition23/funion_insert.lean**
 
-(v) $u' \supseteq u$, $u \vdash v$, and $v \supseteq v'$ imply $u' \vdash v'$; and
+@import "funion_insert.lean"
 
-(vi) $u \vdash v$ and $u \vdash v'$ imply $u \vdash v \cup v'$.
+**InformationSystems/InformationSystems/Proposition23/proposition_2_3_i.lean**
 
-Proof. Obvious. ■
+@import "proposition_2_3_i.lean"
 
-*Remark.* It is not worth formulating a formal result at this point, but it should be clear that the properties in 2.3 could have been used as axioms. That is to say, we could have taken $\vdash$ as a binary relation on the set $\mathrm{Con}$, used 2.1 (i)–(ii) and 2.3 (i)–(vi) as axioms. (Actually, 2.3(ii) is redundant.) The old-style entailment relation would then be definable by:
+**InformationSystems/InformationSystems/Proposition23/proposition_2_3_ii.lean**
 
-$$
-u \vdash X \quad \text{iff} \quad u \vdash \{X\}.
-$$
+@import "proposition_2_3_ii.lean"
 
-The previous axioms in 2.1 are then easily proved from the new ones. ■
+**InformationSystems/InformationSystems/Proposition23/proposition_2_3_iii.lean**
 
-**Lean 4**
+@import "proposition_2_3_iii.lean"
 
-- [InformationSystems/InformationSystems/Proposition23/funion_insert.lean](funion_insert.lean)
-- [InformationSystems/InformationSystems/Proposition23/proposition_2_3_i.lean](proposition_2_3_i.lean)
-- [InformationSystems/InformationSystems/Proposition23/proposition_2_3_ii.lean](proposition_2_3_ii.lean)
-- [InformationSystems/InformationSystems/Proposition23/proposition_2_3_iii.lean](proposition_2_3_iii.lean)
-- [InformationSystems/InformationSystems/Proposition23/proposition_2_3_iv.lean](proposition_2_3_iv.lean)
-- [InformationSystems/InformationSystems/Proposition23/proposition_2_3_v.lean](proposition_2_3_v.lean)
-- [InformationSystems/InformationSystems/Proposition23/proposition_2_3_vi.lean](proposition_2_3_vi.lean)
-- [InformationSystems/InformationSystems/Proposition23.lean](../Proposition23.lean)
+**InformationSystems/InformationSystems/Proposition23/proposition_2_3_iv.lean**
+
+@import "proposition_2_3_iv.lean"
+
+**InformationSystems/InformationSystems/Proposition23/proposition_2_3_v.lean**
+
+@import "proposition_2_3_v.lean"
+
+**InformationSystems/InformationSystems/Proposition23/proposition_2_3_vi.lean**
+
+@import "proposition_2_3_vi.lean"
+
+**InformationSystems/InformationSystems/Proposition23.lean**
+
+@import "../Proposition23.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "funion_insert.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_3_i.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_3_ii.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_3_iii.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_3_iv.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_3_v.ai_lean_to_english" {code_block=false}
+
+@import "proposition_2_3_vi.ai_lean_to_english" {code_block=false}
+
+@import "../Proposition23.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1982_Proposition_2_3.ai_english_concordance" {code_block=false}

@@ -1,8 +1,3 @@
-/-ai
-If a Scott-continuous map lies above its starting set, its directed iterates are increasing.
-
-The first inclusion is the hypothesis that the starting set lies below its image. Each later inclusion is monotonicity of the map applied to the preceding inclusion.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

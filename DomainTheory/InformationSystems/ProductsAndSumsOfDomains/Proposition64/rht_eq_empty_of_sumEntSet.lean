@@ -1,8 +1,3 @@
-/-ai
-If the right projection of a finite set u is empty and the separated sum entails u' from u, then the right projection of u' is empty.
-
-By extensionality, a token of the right projection of u' would be a right sum token entailed by u, and the first clause of that entailment requires the right projection of u to be nonempty. The empty set contributes no members.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum

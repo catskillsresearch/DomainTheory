@@ -1,7 +1,3 @@
-/-ai
-The remainder of a natural number m on division by two to the power s is m minus the
-product of the corresponding quotient and that power.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,8 +1,3 @@
-/-ai
-Unfolding the tree bottom is the bottom token of the sum.
-
-The two sides are definitionally the same.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

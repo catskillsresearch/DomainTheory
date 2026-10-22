@@ -1,8 +1,3 @@
-/-ai
-The bottom element of T lies below every element of T.
-
-A neighbourhood of bottom is the master neighbourhood, and every element contains the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

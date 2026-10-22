@@ -1,8 +1,3 @@
-/-ai
-Applying the curried combinator S to F, then to G, then to x equals applying F to x and then applying the result to G applied to x.
-
-Rewrite by the definition of S as two curries and apply the curry equation twice. The uncurried body then simplifies by composition, pairing, the two projections, the components of a pair, and evaluation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

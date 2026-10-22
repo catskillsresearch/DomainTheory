@@ -1,8 +1,3 @@
-/-ai
-The step set of the two master neighborhoods is the set of all approximable maps.
-
-Every approximable map relates the two masters.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

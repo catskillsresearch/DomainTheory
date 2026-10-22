@@ -1,8 +1,3 @@
-/-ai
-The inclusion of a continuous-lattice projection sends bottom to bottom. This is the empty case of Scott's Proposition 3.10(i).
-
-The inclusion of the retraction of bottom lies below bottom. The retraction sends bottom to bottom, so the inclusion of bottom lies below bottom. The reverse inequality is the bottom bound.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

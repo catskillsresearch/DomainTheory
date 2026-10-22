@@ -1,6 +1,3 @@
-/-ai
-The sum of two approximable maps relates a sum neighbourhood W to a sum neighbourhood W' when W' is the codomain master, or both are left copies and the first map relates their underlying neighbourhoods, or both are right copies and the second map relates their underlying neighbourhoods. The two masters are related by the first alternative. Closure under intersection on the right and monotonicity follow by cases on those alternatives, using absorption by the master, intersection of matching copies, injectivity of each copy, and the impossibility of placing a nonempty copy of one tag inside a copy of the other.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise318

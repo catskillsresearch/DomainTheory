@@ -1,8 +1,3 @@
-/-ai
-Zero is at most the maximum right endpoint of any list of rational pairs.
-
-This is the seed inequality for the maximum fold, applied to the list with seed zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

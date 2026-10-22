@@ -1,6 +1,3 @@
-/-ai
-The bottom element of the powerset system P is the entailment closure of the empty set of tokens.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

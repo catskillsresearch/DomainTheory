@@ -1,0 +1,1 @@
+The intersection code of n and m is the fold of the outer intersection step along n, starting from accumulator 0, with parameter m. It is a code for the list of intersection indices of the consistent pairs drawn from the decoded lists of n and of m.

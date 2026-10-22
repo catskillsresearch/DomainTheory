@@ -1,8 +1,3 @@
-/-ai
-If an element lies above every term of an ascending sequence, it lies above the union of the sequence.
-
-The numbered name theorem_111 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem111.iUnion_le

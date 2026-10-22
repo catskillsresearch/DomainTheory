@@ -1,8 +1,3 @@
-/-ai
-The fixed points of a Scott-continuous idempotent on a continuous lattice form a continuous lattice.
-
-The fixed-point set is a retract of the ambient lattice, and Proposition 2.10(a) says that a retract of a continuous lattice is a continuous lattice.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

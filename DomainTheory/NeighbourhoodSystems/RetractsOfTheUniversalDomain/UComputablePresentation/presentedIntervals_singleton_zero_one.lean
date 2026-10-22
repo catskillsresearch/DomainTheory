@@ -1,8 +1,3 @@
-/-ai
-The singleton list of the pair zero and one presents the master neighbourhood of U.
-
-The singleton presentation is that interval united with the empty presentation, and dropping the empty union leaves the master neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

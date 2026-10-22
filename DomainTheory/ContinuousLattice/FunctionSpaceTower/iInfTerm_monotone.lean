@@ -1,8 +1,3 @@
-/-ai
-For each element x of the inverse limit D_∞, the sequence of summands m ↦ iInfTerm m x is monotone.
-
-A sequence indexed by the natural numbers is monotone once it increases from each index to the next, and the successor inequality for these summands is that increase.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

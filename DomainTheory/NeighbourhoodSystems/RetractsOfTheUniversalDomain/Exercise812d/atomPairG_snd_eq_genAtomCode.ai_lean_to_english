@@ -1,0 +1,3 @@
+The second component of the generalized atom pair at depth n equals the generated atom, at depth twice n, of the interleaved second-system family along the interleaved bit history.
+
+The argument is induction on n. Depth zero is reflexive. At a successor the odd successor equation for the interleaved family, the doubled index, the successor equation of the generated atom, and the odd clauses rewrite the X half-step. The invariant and the subset property of the X step put the intermediate second component inside the master. Expanding the Y step, one value of the second bit simplifies directly, and the other uses that a set contained in the master satisfies the intersection-difference identity.

@@ -1,8 +1,3 @@
-/-ai
-The map body applied to a function, a stack of functions, and an element pushes the head function of the stack, applied to the element, onto the function applied to the tail of the stack and the element.
-
-Unfolding the composite, the projections, pairings, compositions, and evaluations simplify to that push.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

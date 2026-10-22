@@ -1,8 +1,3 @@
-/-ai
-The component of index n of the tail of a stack is the component of index n + 1 of the stack.
-
-The tail computation rewrites the left side as a sequence, and the component formula for a sequence reads the shifted component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

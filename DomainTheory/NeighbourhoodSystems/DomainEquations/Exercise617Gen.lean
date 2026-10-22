@@ -1,8 +1,3 @@
-/-ai
-The generic sequence domain over a decidable inhabited alphabet is isomorphic, as a domain, to the unit summed with one copy of itself for each letter.
-
-The numbered name example_617_gen is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.Cn_domain_equation

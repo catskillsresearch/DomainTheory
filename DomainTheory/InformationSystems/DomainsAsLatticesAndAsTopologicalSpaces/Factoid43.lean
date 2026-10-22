@@ -1,8 +1,3 @@
-/-ai
-Two elements have a common upper bound if and only if the union of their carriers is finitely consistent.
-
-The numbered name theorem_43 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43.exists_join_iff

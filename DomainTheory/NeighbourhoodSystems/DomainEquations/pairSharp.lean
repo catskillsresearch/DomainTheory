@@ -1,6 +1,3 @@
-/-ai
-Scott's pairing of two elements of D-sharp is the element whose neighbourhoods are the master together with the pair embeddings of one neighbourhood from each element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

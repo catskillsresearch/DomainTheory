@@ -1,8 +1,3 @@
-/-ai
-If a product token has least first component, the right projection of its singleton is the singleton of its second component.
-
-The singleton is insertion into the empty set. The right-insertion lemma adds the second component to the projection of the empty set, and that projection is empty.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

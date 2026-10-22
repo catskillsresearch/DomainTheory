@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the Factoid 8.3 development of the universal domain. Scott's section 8 constructs V with bottom Δ and top ∇, closes it under the product forms (X, Δ) and (Δ, Y), takes every finite set to be consistent, and defines entailment by clauses (3) through (6). U is obtained by deleting ∇ and keeping only those finite sets that do not entail ∇, by clauses (7) through (10). The development packages the information systems of V and of U, the domain equation V ≅ V × V on the product-shaped tokens, and the supporting projection, entailment, and forget-image lemmas. The retract statement, that every countably based domain is a retract of U, is recorded as Scott states it, without a proof in this file.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product
@@ -64,38 +61,11 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.UEnt
 
 @[expose] public section
 
-/-!
-# Factoid 8.3 — universal domain via `V` (with top) and `U` (top removed)
-
-**Scott 1982, §8.** Construct `V` with bottom `Δ` and top `∇`, close under product
-flavours `(X, Δ)` / `(Δ, Y)`, take all finite sets consistent, and define entailment
-by Scott’s clauses (3)–(6). Then form `U` by deleting `∇` and retaining only those
-finite sets that do not entail `∇` (clauses (7)–(10)).
-
-The retract/universality theorem (every countably based domain is a retract of `U`)
-is stated by Scott without proof here; we package `vSystem` / `uSystem` and the
-domain equation `V ≅ V × V` on the product-shaped tokens.
--/
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
-
-/-! ## Tokens of `V` (Scott (1)–(2)) -/
-
-
-/-! ## Projections `{X | (X,Δ) ∈ u}` and `{Y | (Δ,Y) ∈ u}` -/
-
-
-/-! ## Entailment for `V` (Scott (3)–(6)); all finite sets consistent -/
-
-
-/-! ## Domain equation `V ≅ V × V` (product-shaped tokens) -/
-
-
-/-! ## The universal domain `U` (Scott (7)–(10)) -/
 
 
 end InfoSys

@@ -1,8 +1,3 @@
-/-ai
-For every fuel and every code, the decode-ok character is at most 1.
-
-Proceed by induction on the fuel. At fuel 0, simplification of the character gives the bound. At a successor, rewrite by the character and the body equation and match on the tag. For tag 0, the inner indicator is 0 or 1 because it is at most 1; selection on 0 is at most 1, and selection on 1 is immediate. For tag 1, simplification reduces the bound to the binary-digit character. For tags 2 and 3, simplification reduces it to the product of the two recursive values on the subcodes. For a tag of 4 or more, simplification closes the goal.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

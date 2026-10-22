@@ -1,10 +1,3 @@
-/-ai
-The Cartesian product of any family of continuous lattices is a continuous lattice whose induced Scott topology agrees with the product topology.
-
-An upper bound of the elements way-below a point of the product lies above the point. At each coordinate, write the coordinate of the point as the supremum of the elements way-below it. The cylinder that carries such an element in that coordinate and bottom elsewhere is way-below the point: the preimage of a Scott-open witness under evaluation at the coordinate is Scott-open in the product, because suprema and directedness are computed coordinatewise, and the cylinder lies below every point of that preimage. The cylinder therefore lies below the upper bound, so the element lies below the upper bound in that coordinate. Ranging over all such elements, the coordinate of the point, being their supremum, lies below the upper bound.
-
-The product topology is coarser than the Scott topology because each projection preserves directed suprema and is therefore Scott-continuous. Conversely, if a Scott-open set contains a point, the way-below basis supplies an element way-below that point whose principal upset lies in the open set. The element has finite support and is way-below the point in each coordinate. The finite box cut out by the chosen coordinate neighbourhoods is product-open, contains the point, and lies inside the upset, hence inside the open set.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection
@@ -22,8 +15,6 @@ open Topology Set
 
 variable {D : Type*} [CompleteLattice D]
 
-/-- **Scott 1972, Proposition 2.9.** The Cartesian product of any family of continuous lattices is a
-continuous lattice whose Scott topology agrees with the product topology. -/
 theorem proposition_2_9 {ι : Type*} (E : ι → Type*) [∀ i, CompleteLattice (E i)]
     (hE : ∀ i, ContinuousLattice (E i)) :
     ContinuousLattice (∀ i, E i) ∧

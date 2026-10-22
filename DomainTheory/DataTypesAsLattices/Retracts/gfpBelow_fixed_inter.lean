@@ -1,8 +1,3 @@
-/-ai
-If f is Scott continuous, then the intersection of the image of the greatest postfixed point below b with b equals that postfixed point.
-
-One inclusion is the postfixed-point inequality. For the other, that inequality and monotonicity of f show that the intersection of the image with b is contained in the intersection of its own image with b, so the intersection belongs to the family whose union is the greatest postfixed point.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

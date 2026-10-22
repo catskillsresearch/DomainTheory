@@ -1,0 +1,3 @@
+The iterative bitwise exclusive disjunction of a and b equals their bitwise exclusive disjunction.
+
+Unfold the iteration. The invariant after a + b steps says that the accumulator plus 2 to the power a + b times the exclusive disjunction of the two quotients equals the exclusive disjunction. Both quotients are zero, because each argument is strictly below 2 to its own power and that power is at most 2 to the power a + b. Substituting those zeros leaves the accumulator.

@@ -1,8 +1,3 @@
-/-ai
-The functorial action of the identity is the identity on the tree algebra.
-
-Unfold the action, cancel the identity against the leaf embedding, and use that the catamorphism of the leaf embedding and the pairing is the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

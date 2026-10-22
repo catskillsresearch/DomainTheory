@@ -1,8 +1,3 @@
-/-ai
-The basepoint belongs to the sum master.
-
-The sum master is defined by inserting the basepoint.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

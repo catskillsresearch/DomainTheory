@@ -1,6 +1,3 @@
-/-ai
-The element valC is the least fixed point of the enumerator step.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

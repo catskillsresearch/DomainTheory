@@ -1,8 +1,3 @@
-/-ai
-YPseq n is a neighbourhood of the first system.
-
-The empty-or-membership alternative for YPseq n is resolved by the fact that YPseq n is not empty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

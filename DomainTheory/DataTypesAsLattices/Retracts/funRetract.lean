@@ -1,6 +1,3 @@
-/-ai
-The function retract is the graph of the map sending u to the graph of application of u. Scott's formula (4.1) is λu. λx. u(x).
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

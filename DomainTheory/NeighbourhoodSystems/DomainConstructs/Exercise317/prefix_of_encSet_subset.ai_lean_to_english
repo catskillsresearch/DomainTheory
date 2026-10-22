@@ -1,0 +1,3 @@
+If the encoding of a string σ is contained in the encoding of a string τ, then τ is a prefix of σ.
+
+The encoding of σ is an iterate neighbourhood contained in both encodings, so the strings agree wherever both are defined, and therefore one is a prefix of the other. If σ is a prefix of τ and the lengths differ, then τ is strictly longer and has a bit at the length of σ. A token outside that bit neighbourhood lies in the encoding of σ, because σ is undefined there, but the inclusion would place it in the bit neighbourhood. Equal lengths turn the prefix into equality. The remaining alternative is already that τ is a prefix of σ.

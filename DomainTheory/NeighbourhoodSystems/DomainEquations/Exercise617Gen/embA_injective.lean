@@ -1,8 +1,3 @@
-/-ai
-If the copies of two sets of finite strings prefixed by the same letter coincide, then the two sets are equal.
-
-Each inclusion of prefixed copies is an inclusion of the underlying sets, and the two inclusions give equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

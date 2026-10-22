@@ -1,8 +1,3 @@
-/-ai
-An element of the indexed product that contains every slice of a family, with each set contained in the corresponding master, contains the product neighbourhood of the restriction of that family to any finite list.
-
-Proceed by induction on the list. The empty restriction is the family of masters, which is the master of the product, and the element contains the master. For a cons-list, the restricted product neighbourhood is the head slice intersected with the restriction to the tail, and the element contains both factors.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

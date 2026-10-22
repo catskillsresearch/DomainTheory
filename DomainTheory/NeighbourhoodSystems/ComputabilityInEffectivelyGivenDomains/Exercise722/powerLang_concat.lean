@@ -1,8 +1,3 @@
-/-ai
-The concatenation of a power language with itself is contained in the power language.
-
-A split into an m-fold repetition and an n-fold repetition is the repetition of count m plus n, by the addition law for repeated words.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

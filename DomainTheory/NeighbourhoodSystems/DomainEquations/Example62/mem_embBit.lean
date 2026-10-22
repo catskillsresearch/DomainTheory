@@ -1,8 +1,3 @@
-/-ai
-A binary string lies in the tagging of a set by a boolean if and only if the string is that boolean followed by a string belonging to the set.
-
-The two sides are identical by the definition of the tagging.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

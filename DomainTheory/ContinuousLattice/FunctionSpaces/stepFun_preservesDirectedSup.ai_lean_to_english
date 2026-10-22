@@ -1,0 +1,3 @@
+The step function determined by e and e' preserves directed suprema.
+
+At the supremum of a nonempty directed set, either e is way below the supremum or it is not. In the first case the step function equals e', Scott-openness of the way-below set of e supplies a member at which the step function already equals e', and every value of the step function is at most e'. In the second case the step function at the supremum is bottom, and its value at each member is bottom, since a way-below inequality at a member would pass to the supremum.

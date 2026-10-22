@@ -1,8 +1,3 @@
-/-ai
-If a lies below f(a), then a lies below the directed union of the iterates of f from a.
-
-The zero-th iterate lies below that directed union, and the zero law says that this iterate is a.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

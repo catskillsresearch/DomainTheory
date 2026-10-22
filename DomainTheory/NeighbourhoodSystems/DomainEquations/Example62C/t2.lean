@@ -1,6 +1,3 @@
-/-ai
-The right tag of an element c is the token some (inr (inr c)) in Option (α ⊕ β ⊕ γ).
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, before Theorem 3.5. The numerical evaluator sends the finite-set code of j to the finite set of positions at which the bit of j is set.
-
-Rewrite the finite-set code by the auxiliary evaluation. Extensionality, with the membership criteria for a predicate set and for that finite set, leaves the two directions of the bit condition. One direction keeps the bit. The other restores the strict bound from the fact that a member of the finite set lies at most at its index.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

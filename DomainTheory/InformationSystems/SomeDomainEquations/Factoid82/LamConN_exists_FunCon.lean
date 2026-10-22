@@ -1,8 +1,3 @@
-/-ai
-If a finset contains a function token and is consistent at stage n, then some earlier right-hand branch supplies the function clause: an earlier stage at which the atom finset is empty, every function token has consistent components, and input consistency of a subcollection implies output consistency.
-
-Induct on the stage. Stage zero has no function tokens, a contradiction. At a successor stage, the left alternative lifts the earlier witness by one, and the right alternative is itself the witness at the preceding stage.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

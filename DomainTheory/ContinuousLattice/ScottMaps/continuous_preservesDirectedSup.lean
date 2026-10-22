@@ -1,8 +1,3 @@
-/-ai
-A map continuous for the Scott topologies preserves directed suprema.
-
-The Scott topology on the whole carrier is a Scott topology in the order-theoretic sense, on the domain and on the codomain, so continuity on the universe is Scott continuity. For a nonempty directed set, Scott continuity at the least upper bound given by the supremum yields the preservation equation.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

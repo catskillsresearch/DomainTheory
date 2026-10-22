@@ -1,6 +1,3 @@
-/-ai
-The pointwise order on functions from a sum type is order-isomorphic to the product order on the two restricted function types. The forward map splits a family into its two summand restrictions, and the inverse joins a pair of families by the sum eliminator. The left round trip is extensionality by cases on the sum, and the right round trip is reflexivity. A pointwise inequality corresponds to the two restricted inequalities, by cases on the sum in one direction and by evaluation at the two inclusions in the other.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

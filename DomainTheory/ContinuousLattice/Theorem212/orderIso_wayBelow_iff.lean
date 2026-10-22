@@ -1,8 +1,3 @@
-/-ai
-Way-below is invariant under an order isomorphism: one element is way below another if and only if their images stand in the same relation.
-
-One direction is preservation of way-below by the isomorphism. The other applies preservation to the inverse isomorphism and cancels the round trip.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

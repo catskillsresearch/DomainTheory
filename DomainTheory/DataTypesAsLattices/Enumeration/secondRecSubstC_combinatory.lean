@@ -1,8 +1,3 @@
-/-ai
-The substitution combinator is combinatory.
-
-It is the element chosen by the realization theorem for the primitive recursive substitution, and that choice is combinatory.
-ai-/
 
 module
 

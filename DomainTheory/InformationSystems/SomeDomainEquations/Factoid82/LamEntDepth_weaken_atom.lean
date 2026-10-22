@@ -1,8 +1,3 @@
-/-ai
-Atom entailment weakens along a subset when the larger finite set of raw lambda tokens stays in the atom world, with empty function set. If the smaller set depth-entails an atom and the larger set is depth-consistent, then the larger set depth-entails that atom.
-
-The proof cases on the atom entailment. The atom set grows along the subset and remains nonempty. Entailment in the underlying information system transports by transitivity, using reflexivity on the atoms of the smaller set as they sit in the larger set, in the atom world of both sets.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

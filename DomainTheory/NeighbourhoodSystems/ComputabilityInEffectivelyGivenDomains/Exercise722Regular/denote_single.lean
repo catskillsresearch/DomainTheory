@@ -1,8 +1,3 @@
-/-ai
-The denotation of a singleton expression is the singleton of its word.
-
-The two sides agree by the definition of denotation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

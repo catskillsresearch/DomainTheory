@@ -1,8 +1,3 @@
-/-ai
-The intersection of the languages of two expressions is empty if and only if that intersection expression denotes the same language as emptyExpr.
-
-Rewrite by the denotation of emptyExpr.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

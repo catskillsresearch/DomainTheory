@@ -1,23 +1,43 @@
 # Theorem 4.3
 
-**THEOREM 4.3 (The function space theorem).** Suppose $a, b, a', b', c$ are retracts. Then we have:
+## Human-English
 
-(i) $a \circ\to b$ is a retract, and it is strict if $b$ is;
+@import "1976_Theorem_4_3.english" {code_block=false}
 
-(ii) $u : a \circ\to b$ iff $u = \lambda x : a.\, u(x)$ and $\forall x : a.\, u(x) : b$;
+## AI: Human-English to AI-Lean
 
-(iii) if $a \sqsubseteq a'$ and $b \sqsubseteq b'$, then $a \circ\to b \sqsubseteq a' \circ\to b'$;
+**DataTypesAsLattices/Retracts/theorem_4_3_i.lean**
 
-(iv) if $f : a \circ\to b$ and $f' : a' \circ\to b'$, then $f \circ\to f' : (b \circ\to a') \circ\to (a \circ\to b')$;
+@import "theorem_4_3_i.lean"
 
-(v) if $f : a \circ\to b$ and $f' : b \circ\to c$, then $f' \circ f : a \circ\to c$.
+**DataTypesAsLattices/Retracts/arrowR_isRetract.lean**
 
-Parts (i), (iii), (iv), and (v) can be proved using (4.8) and (4.11) in an algebraic (formal) fashion. It is (ii) that tells us what it all means: the range of $a \circ\to b$ consists exactly of those functions which are restricted to (the range of) $a$ and which have values in $b$. So we can read $u : a \circ\to b$ in the normal way: $u$ is a (continuous) mapping from $a$ into $b$. In technical jargon, we can say that the (strict) retracts and continuous functions form a *category*. In fact, it is equivalent to the category of separable continuous lattices and continuous maps. In this context, (iv) shows that $\circ\to$ operates not only on spaces (retracts) but also on maps: it is a functor contravariant in the first argument and covariant in the second. Further categorical properties will emerge.
+@import "arrowR_isRetract.lean"
 
-**Lean 4**
+**DataTypesAsLattices/Retracts/theorem_4_3_ii.lean**
 
-- [DataTypesAsLattices/Retracts/theorem_4_3_i.lean](theorem_4_3_i.lean)
-- [DataTypesAsLattices/Retracts/arrowR_isRetract.lean](arrowR_isRetract.lean)
-- [DataTypesAsLattices/Retracts/theorem_4_3_ii.lean](theorem_4_3_ii.lean)
-- [DataTypesAsLattices/Retracts/typed_arrowR_iff.lean](typed_arrowR_iff.lean)
-- [DataTypesAsLattices/Retracts/theorem_4_3.lean](theorem_4_3.lean)
+@import "theorem_4_3_ii.lean"
+
+**DataTypesAsLattices/Retracts/typed_arrowR_iff.lean**
+
+@import "typed_arrowR_iff.lean"
+
+**DataTypesAsLattices/Retracts/theorem_4_3.lean**
+
+@import "theorem_4_3.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_4_3_i.ai_lean_to_english" {code_block=false}
+
+@import "arrowR_isRetract.ai_lean_to_english" {code_block=false}
+
+@import "theorem_4_3_ii.ai_lean_to_english" {code_block=false}
+
+@import "typed_arrowR_iff.ai_lean_to_english" {code_block=false}
+
+@import "theorem_4_3.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_4_3.ai_english_concordance" {code_block=false}

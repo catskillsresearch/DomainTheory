@@ -1,0 +1,3 @@
+A choice-free union is contained in a finite set w if and only if both summands are contained in w.
+
+If the union is contained in w, each summand is contained in the union and hence in w. If both summands are contained in w, a member of the union lies in one summand and hence in w.

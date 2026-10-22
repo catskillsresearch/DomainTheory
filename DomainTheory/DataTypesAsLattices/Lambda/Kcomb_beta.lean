@@ -1,8 +1,3 @@
-/-ai
-Application of K at x is the graph of the constant map with value x.
-
-This is beta reduction. The outer graph is Scott continuous because it is the graph of the family whose value is the first argument, and each such component is the identity, which is Scott continuous.
-ai-/
 
 module
 

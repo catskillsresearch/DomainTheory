@@ -1,6 +1,3 @@
-/-ai
-The fixed point of an approximable endomap f lying above a pre-fixed point a, that is an element with a below f(a), is the directed union of the iterates f applied n times to a. For any two indices the maximum is an upper bound, by monotonicity of the iteration.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

@@ -1,8 +1,3 @@
-/-ai
-The hint neighbourhood of k is contained in the intersection of the hint neighbourhoods of n and m if and only if k is included in both n and m.
-
-Containment in an intersection is containment in each factor, and each of those containments is the corresponding inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

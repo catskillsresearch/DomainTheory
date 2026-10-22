@@ -1,0 +1,1 @@
+For the product endofunctor, the infinite iterate with its cons map is an initial algebra, and the mediating morphism is the descent homomorphism. Any other strict homomorphism commutes with the cons map in the same way as the descent map, so the uniqueness theorem for maps with that commutation identifies its underlying map with the descent map, and the two homomorphisms agree.

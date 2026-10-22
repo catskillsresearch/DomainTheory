@@ -1,8 +1,3 @@
-/-ai
-The left projection of the empty set of product tokens is empty.
-
-A member of the projection would be witnessed by a token of the empty set, which is impossible, and a member of the empty set in the first system is likewise impossible.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

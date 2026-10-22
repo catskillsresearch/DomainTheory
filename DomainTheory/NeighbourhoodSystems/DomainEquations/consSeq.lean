@@ -1,6 +1,3 @@
-/-ai
-The cons of a head element of a neighbourhood system and a tail element of its infinite iteration is the sequence whose value at zero is the head and whose value at each later index is the corresponding component of the tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,6 +1,3 @@
-/-ai
-The predecessor of a set of natural numbers is the set of numbers whose successor lies in the set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

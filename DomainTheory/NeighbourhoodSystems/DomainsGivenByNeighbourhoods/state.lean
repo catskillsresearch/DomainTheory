@@ -1,6 +1,3 @@
-/-ai
-The greedy state at stage 0 pairs the first enumerated set with its intersection against the master neighbourhood. At a successor, if the current running intersection meets the next enumerated set in a neighbourhood, the state becomes that enumerated set paired with the intersection; otherwise the state is left unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

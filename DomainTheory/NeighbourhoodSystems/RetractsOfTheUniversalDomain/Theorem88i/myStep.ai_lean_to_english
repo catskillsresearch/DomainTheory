@@ -1,0 +1,1 @@
+One step of the qChar-gated fold sends an accumulator index and an entry code to the presentation's intersection of the accumulator with the second component of the entry when both the characteristic of the entry and the consistency test of that pair equal one, and returns the accumulator otherwise. The choice is the selection function applied to the product of the two one-tests.

@@ -1,8 +1,3 @@
-/-ai
-For an indexed family and a set of indices, the set of finite-basis suprema is directed.
-
-The supremum of the family on the empty finite set belongs to the set. Given two finite-basis suprema, indexed by finite sets contained in the index set, the supremum indexed by their union is a common upper bound still in the set. The union remains contained in the index set because each summand is, and each of the two suprema lies below the union supremum because the image of each finite set is contained in the image of the union.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Defs

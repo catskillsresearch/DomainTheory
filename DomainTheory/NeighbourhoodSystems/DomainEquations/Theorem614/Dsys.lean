@@ -1,6 +1,3 @@
-/-ai
-The n-th system of the tower is the neighbourhood system over the token type carried by the iteration at level n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

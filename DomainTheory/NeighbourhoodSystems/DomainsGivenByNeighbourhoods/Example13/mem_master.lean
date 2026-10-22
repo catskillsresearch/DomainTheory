@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood belongs to the neighbourhood system of Example 1.3.
-
-Unfold membership, the set of neighbourhoods, and the three neighbourhood definitions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

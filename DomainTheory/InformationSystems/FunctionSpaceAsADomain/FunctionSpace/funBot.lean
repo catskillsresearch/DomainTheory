@@ -1,6 +1,3 @@
-/-ai
-The bottom token of the function space, Scott's Δ of A → B, is the pair of empty finite sets, which is a token because both empty sets are consistent.
-ai-/
 
 module
 

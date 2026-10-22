@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of Example 1.3 is not contained in {1, 2}.
-
-The token 0 belongs to the master. Containment would put it in {1, 2}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

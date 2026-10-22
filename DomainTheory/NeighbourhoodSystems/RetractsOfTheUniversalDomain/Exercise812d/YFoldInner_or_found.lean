@@ -1,8 +1,3 @@
-/-ai
-At stage 4 to the n, at least one of the two inner Y-folds, for bits 0 and 1, has found flag 1.
-
-A non-junk half-step atom below 4 to the n is given together with its bit, which is 0 or 1, and the found-flag equivalence places that witness in the corresponding fold.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

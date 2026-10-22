@@ -1,8 +1,3 @@
-/-ai
-The descent chain is increasing on each element of the infinite iteration.
-
-Each stage lies below the next stage as a map, and the element map is monotone in the map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

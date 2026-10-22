@@ -1,8 +1,3 @@
-/-ai
-The embedding of finite bit-strings is injective.
-
-Mapping a list is injective once the numerical reading of a bit is injective.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the colimit is a neighbourhood of the image of the colimit under T.
-
-A neighbourhood of the colimit belongs to some level. The step from that level to the next, followed by the inclusion of the next level in the image, places it in the image.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

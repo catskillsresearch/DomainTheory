@@ -1,8 +1,3 @@
-/-ai
-Applying the forward sum map after the inverse sum map returns the original element of the abstract sum.
-
-Two elements agree when they contain the same neighbourhoods. A neighbourhood of the round trip is the master, which every element contains, or a left injection, which the false-tag criterion returns to the original element, or a right injection, which the true-tag criterion returns. Conversely, the subset law says a neighbourhood of the original element is the master, a left injection, or a right injection, and each case is the matching clause of the forward image, using the reverse directions of those two criteria.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

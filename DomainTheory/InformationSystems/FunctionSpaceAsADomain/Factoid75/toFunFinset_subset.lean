@@ -1,8 +1,3 @@
-/-ai
-Passing to underlying function tokens preserves inclusion of finite sets of strict tokens.
-
-A member of the smaller underlying set is the coercion of a member of the smaller set, and that member belongs to the larger set.
-ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

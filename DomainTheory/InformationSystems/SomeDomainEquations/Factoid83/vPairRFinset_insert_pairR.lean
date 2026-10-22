@@ -1,8 +1,3 @@
-/-ai
-The right projection of a finite set with a right-pair token of payload t inserted is the right projection of the original set with t inserted.
-
-Extensionality and the membership criterion turn both sides into membership of a right-pair token in an inserted set. If the inserted token is the right-pair of the candidate, injectivity of the right-pair constructor gives equality of payloads; otherwise the witness already lies in the original set. Conversely, an equal payload or a witness in the original projection supplies the matching disjunct.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,8 +1,3 @@
-/-ai
-Every natural is zero, or odd of the form 2a+1, or even and positive of the form 2a+2.
-
-If the number is zero, the first alternative holds. If it is positive and its residue modulo two is strictly below one, it has the even form with a equal to the quotient minus one. If the residue is at least one, it has the odd form with a equal to the quotient.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

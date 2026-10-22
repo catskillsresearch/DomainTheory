@@ -1,8 +1,3 @@
-/-ai
-A sum is strict.
-
-Strictness is the equation that the sum sends bottom to bottom.
-ai-/
 
 module
 

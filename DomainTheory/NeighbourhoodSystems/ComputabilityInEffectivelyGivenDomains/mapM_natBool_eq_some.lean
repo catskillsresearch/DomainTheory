@@ -1,8 +1,3 @@
-/-ai
-If interpreting every entry of a list of natural numbers as a boolean yields a list of booleans, then the original list is that list of booleans mapped by the boolean-to-natural encoding.
-
-Induction on the list. The empty list forces the boolean list to be empty. A cons cell splits the mapped option: a failed head or tail is impossible, and a successful head and tail identify the boolean list as that boolean followed by the tail list. The inductive hypothesis rewrites the tail, and a successful boolean interpretation means the head equals the encoding of that boolean.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

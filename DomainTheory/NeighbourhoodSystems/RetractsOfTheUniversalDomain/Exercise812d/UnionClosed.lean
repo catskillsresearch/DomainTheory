@@ -1,6 +1,3 @@
-/-ai
-A neighbourhood system is union-closed when the union of any two of its neighbourhoods is again a neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

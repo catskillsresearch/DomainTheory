@@ -1,8 +1,3 @@
-/-ai
-The run map is the only approximable self-map of the binary system that satisfies the four run equations.
-
-Extensionality reduces equality to agreement of relations. When the domain set is a neighbourhood it is a cone, the relation of the given map on that cone is membership in the image of the principal element, the recursive core rewrites that image as the principal element of the output string, and the run map's relation on the cone is membership in the same principal filter. When the domain set is not a neighbourhood, each relation would require a domain neighbourhood, so both sides fail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,13 +1,3 @@
-/-ai
-After d iterations of the joint upsampling step from the pair of a level k and a mask,
-the level set of level k plus d and the resulting mask equals the original level set.
-
-The proof is by induction on d. At zero the iteration simplifies. At a successor, one
-further step, the unfolding equation, and the right pairing projection expose the
-one-step upsampling. The level after d steps is k plus d, the displayed successor level
-equals that level plus one by arithmetic, and the one-step correctness together with the
-inductive hypothesis gives the original level set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

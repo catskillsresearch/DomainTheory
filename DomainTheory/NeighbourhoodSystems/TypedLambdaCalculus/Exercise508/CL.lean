@@ -1,6 +1,3 @@
-/-ai
-A variable-free combinator expression is either a constant, given by an element of a domain, or an application of an expression of arrow type to an expression of the argument type. Its denotation sends a constant to that element and an application to the element map of the denotation of the function applied to the denotation of the argument.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

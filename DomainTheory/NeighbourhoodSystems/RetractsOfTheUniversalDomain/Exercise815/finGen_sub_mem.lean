@@ -1,8 +1,3 @@
-/-ai
-Every member of the finitely generated family Fin(js) is a neighbourhood of D.
-
-A membership witness carries a proof that the selected intersection is a neighbourhood, and that component is the claim.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

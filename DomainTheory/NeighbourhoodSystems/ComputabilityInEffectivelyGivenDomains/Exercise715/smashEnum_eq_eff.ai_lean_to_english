@@ -1,0 +1,3 @@
+Given deciders of properness with values in {0, 1}, the smash enumeration of a code equals the product of the component neighbourhoods at the effective indices, which select the raw index when the product of the decider values is 1 and the master index when that product is 0.
+
+If both factors are proper, both deciders equal 1, selection returns the raw indices, and the enumeration is their product. Otherwise the product of the decider values is 0, because a failing decider is 0, selection returns the master indices, and both sides are the product of the masters.

@@ -1,6 +1,3 @@
-/-ai
-An information-system object consists of a token type, a decidable equality on that type, and an information system with those tokens.
-ai-/
 module
 
 

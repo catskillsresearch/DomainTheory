@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood of the truth domain contained in the singleton of zero equals that singleton.
-
-Of the three neighbourhoods, the master contains one and the singleton of one contains one, neither of which lies in the singleton of zero, so the neighbourhood is the singleton of zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

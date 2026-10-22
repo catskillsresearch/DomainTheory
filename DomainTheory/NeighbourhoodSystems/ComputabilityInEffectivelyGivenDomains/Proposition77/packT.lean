@@ -1,6 +1,3 @@
-/-ai
-Packing an equality bit, a consistency bit, and an intersection index is the pair of the equality bit with the pair of the consistency bit and the intersection index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

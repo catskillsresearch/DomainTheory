@@ -1,0 +1,3 @@
+A map that preserves arbitrary suprema preserves binary joins. Scott checks preservation of suprema on two-element sets.
+
+The join of x and y is the supremum of the two-element set with those members. Preservation of that supremum, together with the image of a two-element set being the two-element set of images, gives the join of the images.

@@ -1,8 +1,3 @@
-/-ai
-The product of the fixed neighbourhood of the combinator with itself is isomorphic to that fixed neighbourhood.
-
-Transport the product of the two copies of the isomorphism with the infinite power along the product isomorphism of the infinite power of the universal domain, and reverse the isomorphism with the infinite power.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

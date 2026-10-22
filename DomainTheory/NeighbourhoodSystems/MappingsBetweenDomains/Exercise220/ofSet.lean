@@ -1,6 +1,3 @@
-/-ai
-The filter of a set of natural numbers contains a cofinite set exactly when the complement of that cofinite set is contained in the given set. It contains the master neighbourhood because the complement of the universe is empty. It is closed under intersection because the complement of an intersection is the union of the complements. It is upward closed because a larger neighbourhood has a smaller complement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

@@ -1,8 +1,3 @@
-/-ai
-The fiber of the reindexing of a doubly indexed neighbourhood, at an index k, is the double fiber of that neighbourhood at the two components of the unpairing of k.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

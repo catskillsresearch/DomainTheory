@@ -1,8 +1,3 @@
-/-ai
-For a bit at most 1, the found flag of the inner Y-fold is 1 if and only if some index below the stage has a non-junk half-step atom at that bit.
-
-The argument is induction on the stage. At zero the fold is the pair of zeros. At a successor the step is unfolded. If the current atom is non-junk, the previous flag is 0 or 1 and the selected flag is 1, so the new index is the witness. If the atom is junk, the accumulator is unchanged, the inductive hypothesis extends the bound, and the new index is impossible.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

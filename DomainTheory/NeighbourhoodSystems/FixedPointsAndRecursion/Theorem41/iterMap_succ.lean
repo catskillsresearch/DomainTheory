@@ -1,8 +1,3 @@
-/-ai
-The successor iterate of an approximable endomap is the composite of the map with the preceding iterate.
-
-This equality is the successor clause in the definition of iteration.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

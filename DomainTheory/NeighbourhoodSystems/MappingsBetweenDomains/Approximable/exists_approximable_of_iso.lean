@@ -1,8 +1,3 @@
-/-ai
-Every order isomorphism between the elements of two neighbourhood systems is the elementwise action of some approximable map.
-
-The approximable map induced by the isomorphism has that elementwise action.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

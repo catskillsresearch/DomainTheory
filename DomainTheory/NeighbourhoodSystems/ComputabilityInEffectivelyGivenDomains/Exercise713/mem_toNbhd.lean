@@ -1,8 +1,3 @@
-/-ai
-An index m lies in the hint neighbourhood of an index n if and only if m is included in n.
-
-This is the defining membership condition, so the equivalence is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

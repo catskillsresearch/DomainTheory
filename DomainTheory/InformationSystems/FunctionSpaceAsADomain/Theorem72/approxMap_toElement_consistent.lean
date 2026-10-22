@@ -1,8 +1,3 @@
-/-ai
-A finite set of function tokens lying in the relation of an approximable map is consistent in the function space.
-
-The function-consistency lemma for an approximable map applies, because every token of the set lies in the relation.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-Scott's monotonicity law states that if u is contained in v and x is contained in y, then the application of u at x is contained in the application of v at y.
-
-Transitivity of inclusion combines monotonicity of application on the left with monotonicity of application on the right.
-ai-/
 
 module
 

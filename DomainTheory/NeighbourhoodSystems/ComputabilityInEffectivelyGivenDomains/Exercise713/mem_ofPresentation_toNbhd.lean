@@ -1,8 +1,3 @@
-/-ai
-An index j lies in the hint neighbourhood of index n obtained from a computable presentation if and only if the j-th neighbourhood is contained in the n-th.
-
-This is the defining membership condition, so the equivalence is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

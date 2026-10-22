@@ -1,0 +1,3 @@
+Exponentiation, as the unpaired function of a base and an exponent, is primitive recursive.
+
+The step that multiplies the previous value by the base is primitive recursive. Primitive recursion from the constant 1 with that step agrees with the power after simplifying the unpaired projections and applying the equality of this recursion with exponentiation.

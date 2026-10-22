@@ -1,8 +1,3 @@
-/-ai
-Up to a length at most the cut of a concatenation, the running intersection along the concatenated sequence equals the running intersection along the first sequence.
-
-The proof is by induction on the length. The zero case is reflexivity. At a successor still at most the cut, the inductive hypothesis and the successor clause reduce the claim to equality of the current concatenated entry with the current entry of the first sequence, which holds because that index lies below the cut.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

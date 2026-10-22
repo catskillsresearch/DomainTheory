@@ -1,8 +1,3 @@
-/-ai
-Taggings by two distinct booleans are disjoint.
-
-A string belonging to both taggings would begin with each of the two booleans, so those booleans would agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

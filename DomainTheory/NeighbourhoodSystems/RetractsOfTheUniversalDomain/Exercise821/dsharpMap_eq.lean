@@ -1,8 +1,3 @@
-/-ai
-The functorial action of a map equals the catamorphism of the leaf embedding composed with that map and the pairing of the target tree algebra.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

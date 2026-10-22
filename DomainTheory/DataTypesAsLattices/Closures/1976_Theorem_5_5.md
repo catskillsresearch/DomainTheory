@@ -1,55 +1,67 @@
 # Theorem 5.5
 
-**THEOREM 5.5 (The universe theorem for algebraic lattices).** *The function $\mathbf{V}$ is a closure operation and its fixed points comprise the set of all closure operations.*
+## Human-English
 
-Thus to say $a$ is a closure operation, write $a : \mathbf{V}$. To have a mapping on closure operations, write $f : \mathbf{V} \circ\to \mathbf{V}$. Remark that 5.5 allows us to write $\mathbf{V} : \mathbf{V}$. It all seems rather circular, but it is quite consistent. The category of separate algebraic lattices “contains itself”—if we are careful to work through retracts of $\mathbf{P}\omega$.
+@import "1976_Theorem_5_5.english" {code_block=false}
 
-The proof of Theorem 5.5 requires a few steps. We note first that for all $x, a \in \mathbf{P}\omega$:
+## AI: Human-English to AI-Lean
 
-$$(5.16) \quad x \subseteq \mathbf{V}(a)(x),$$
+**DataTypesAsLattices/Closures/theorem_5_5.lean**
 
-Let $y = \mathbf{V}(a)(x)$. This is the least $y$ with $x \cup a(y) \subseteq y$. What is the least $z$ with $y \cup a(z) \subseteq z$? The answer is of course $y$, which proves:
+@import "theorem_5_5.lean"
 
-$$(5.17) \quad \mathbf{V}(a)(\mathbf{V}(a)(x)) = \mathbf{V}(a)(x),$$
+**DataTypesAsLattices/Closures/theorem_5_5_iff.lean**
 
-Thus $\mathbf{V}(a)$ is always a closure operation. If $a$ is already a closure operation, then clearly $\mathbf{V}(a)(x) = a(x)$. Therefore we have shown:
+@import "theorem_5_5_iff.lean"
 
-$$(5.18) \quad a = \mathbf{V}(a) \quad \text{iff} \quad a \text{ is a closure operation.}$$
+**DataTypesAsLattices/Closures/eq_5_19.lean**
 
-But then by (5.16) and (5.17) we have by (5.18):
+@import "eq_5_19.lean"
 
-$$(5.19) \quad \mathbf{V}(a) = \mathbf{V}(\mathbf{V}(a)).$$
+**DataTypesAsLattices/Closures/Vcomb_isRetract.lean**
 
-From (5.16) by monotonicity we see:
+@import "Vcomb_isRetract.lean"
 
-$$(5.20) \quad a(x) \subseteq a(\mathbf{V}(a)(x)) \subseteq \mathbf{V}(a)(x).$$
+**DataTypesAsLattices/Closures/theorem_5_5_universe.lean**
 
-Hence by (5.1) we can derive:
+@import "theorem_5_5_universe.lean"
 
-$$(5.21) \quad a \subseteq \lambda x.\, a(x) \subseteq \lambda x.\, \mathbf{V}(a)(x) = \mathbf{V}(a).$$
+**DataTypesAsLattices/Closures/eq_5_22.lean**
 
-From (5.19) and (5.21) it follows that $\mathbf{V}$ itself is a closure operation.
+@import "eq_5_22.lean"
 
-The operation $\mathbf{V}$ forms the least closure operation containing a given element, and it shows that the lattice of closure operations is not only a retract of $\mathbf{P}\omega$ but also an algebraic lattice. Since we can now use $\mathbf{V}$ as a retract, the earlier results become formulas:
+**DataTypesAsLattices/Closures/eq_5_23.lean**
 
-$$(5.22) \quad (\lambda a : \mathbf{V}.\, \lambda b : \mathbf{V}.\, a \boxtimes b) : \mathbf{V} \circ\to (\mathbf{V} \circ\to \mathbf{V});$$
+@import "eq_5_23.lean"
 
-$$(5.23) \quad (\lambda a : \mathbf{V}.\, \lambda b : \mathbf{V}.\, a \boxplus b) : \mathbf{V} \circ\to (\mathbf{V} \circ\to \mathbf{V});$$
+**DataTypesAsLattices/Closures/eq_5_24.lean**
 
-we can also state such functorial properties as:
+@import "eq_5_24.lean"
 
-$$(5.24) \quad (\lambda a : \mathbf{V}.\, \lambda b : \mathbf{V}.\, a \circ\to b) : \mathbf{V} \circ\to (\mathbf{V} \circ\to \mathbf{V}).$$
+**DataTypesAsLattices/Closures/theorem_5_5_values.lean**
 
-Using this style of notation we have:
+@import "theorem_5_5_values.lean"
 
-**Lean 4**
+## AI: AI-Lean to AI-English
 
-- [DataTypesAsLattices/Closures/theorem_5_5.lean](theorem_5_5.lean)
-- [DataTypesAsLattices/Closures/theorem_5_5_iff.lean](theorem_5_5_iff.lean)
-- [DataTypesAsLattices/Closures/eq_5_19.lean](eq_5_19.lean)
-- [DataTypesAsLattices/Closures/Vcomb_isRetract.lean](Vcomb_isRetract.lean)
-- [DataTypesAsLattices/Closures/theorem_5_5_universe.lean](theorem_5_5_universe.lean)
-- [DataTypesAsLattices/Closures/eq_5_22.lean](eq_5_22.lean)
-- [DataTypesAsLattices/Closures/eq_5_23.lean](eq_5_23.lean)
-- [DataTypesAsLattices/Closures/eq_5_24.lean](eq_5_24.lean)
-- [DataTypesAsLattices/Closures/theorem_5_5_values.lean](theorem_5_5_values.lean)
+@import "theorem_5_5.ai_lean_to_english" {code_block=false}
+
+@import "theorem_5_5_iff.ai_lean_to_english" {code_block=false}
+
+@import "eq_5_19.ai_lean_to_english" {code_block=false}
+
+@import "Vcomb_isRetract.ai_lean_to_english" {code_block=false}
+
+@import "theorem_5_5_universe.ai_lean_to_english" {code_block=false}
+
+@import "eq_5_22.ai_lean_to_english" {code_block=false}
+
+@import "eq_5_23.ai_lean_to_english" {code_block=false}
+
+@import "eq_5_24.ai_lean_to_english" {code_block=false}
+
+@import "theorem_5_5_values.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_5_5.ai_english_concordance" {code_block=false}

@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the smash product is the product of the two master neighbourhoods.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

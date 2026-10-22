@@ -1,8 +1,3 @@
-/-ai
-Every combinatory element appears in Scott's enumeration: if u is combinatory, then val(n) = u for some natural number n.
-
-By Theorem 3.1, combinatory elements are those generated from G. The generator G is val(0). If two elements are val(n) and val(m), their application is the value of the application code of n and m.
-ai-/
 
 module
 

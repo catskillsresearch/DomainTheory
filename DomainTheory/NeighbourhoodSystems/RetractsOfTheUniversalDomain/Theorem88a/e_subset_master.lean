@@ -1,8 +1,3 @@
-/-ai
-Every enumerated neighbourhood is contained in the master neighbourhood of D.
-
-The enumerated set is a neighbourhood of D, and every neighbourhood is contained in the master neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

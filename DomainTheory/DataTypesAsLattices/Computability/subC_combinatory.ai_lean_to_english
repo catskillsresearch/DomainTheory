@@ -1,0 +1,3 @@
+The subtraction combinator subC is combinatory.
+
+It is obtained by applying S to K applied to the combinatory application combinator, and to S applied to K applied to the combinatory fixed-point combinator and to S applied to the closed interpretation of primRecStepTerm and to K applied to the combinatory step subStepC.

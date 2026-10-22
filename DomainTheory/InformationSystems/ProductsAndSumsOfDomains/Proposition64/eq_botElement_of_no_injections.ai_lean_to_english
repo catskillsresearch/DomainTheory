@@ -1,0 +1,3 @@
+A sum element that contains no left token and no right token equals the bottom element of the separated sum.
+
+Both inclusions of the element order are checked. A token of the element is the sum bottom, which belongs to the bottom element by reflexivity of entailment on the singleton, since a left or right token is excluded by hypothesis. The opposite inequality is the general inequality of the bottom element under every element.

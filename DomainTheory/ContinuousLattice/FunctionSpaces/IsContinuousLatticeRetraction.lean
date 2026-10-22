@@ -1,6 +1,3 @@
-/-ai
-A retraction of continuous lattices, in the sense of Scott's Definition 3.6, consists of a Scott-map inclusion, a Scott-map retraction, and the law that the retraction after the inclusion is the identity.
-ai-/
 module
 
 

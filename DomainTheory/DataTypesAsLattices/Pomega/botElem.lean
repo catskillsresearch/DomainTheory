@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, after (2.2). The bottom element of Pω is the empty set.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

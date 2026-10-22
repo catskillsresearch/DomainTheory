@@ -1,8 +1,3 @@
-/-ai
-Applying the search body to a function-space element k and a stack z yields the conditional on the zero test of f at z, the head of z, and k applied to the push of the successor of that head onto the tail of z.
-
-Unfold the body and simplify the element maps of composition, pairing, the two projections, and evaluation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

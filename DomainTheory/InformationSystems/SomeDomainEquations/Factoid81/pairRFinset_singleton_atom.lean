@@ -1,8 +1,3 @@
-/-ai
-The finset of right-pair payloads of a singleton atom is empty.
-
-An atom contributes no right-pair payload, and the empty finset has no members.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

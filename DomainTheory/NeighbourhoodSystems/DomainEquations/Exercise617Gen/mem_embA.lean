@@ -1,8 +1,3 @@
-/-ai
-A string lies in the embedding of one letter applied to a set when the string begins with that letter and its tail lies in the set.
-
-The equivalence is the defining equation of the embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

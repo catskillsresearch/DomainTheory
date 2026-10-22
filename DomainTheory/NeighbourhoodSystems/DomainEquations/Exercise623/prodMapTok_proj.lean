@@ -1,8 +1,3 @@
-/-ai
-The product carries the projection. If one neighbourhood system is a subsystem of another and a second pair stands in the same relation, the product map of the two projections equals the projection of the product subsystem.
-
-By extensionality of approximable maps, a pair of factor relations yields the two product-token memberships and the product-token inclusion of the factor inclusions, and a product-token inclusion splits back into those two factor inclusions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

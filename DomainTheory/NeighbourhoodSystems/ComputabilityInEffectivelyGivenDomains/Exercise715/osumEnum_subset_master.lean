@@ -1,8 +1,3 @@
-/-ai
-Every coalesced-sum enumerated set is contained in the separated-sum master.
-
-The enumerated set is a coalesced neighbourhood, and every coalesced neighbourhood is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

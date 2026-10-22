@@ -1,8 +1,3 @@
-/-ai
-Injections from A to B and from B to A yield a bijective map from A to B.
-
-The numbered name example_424 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise424.schroeder_bernstein

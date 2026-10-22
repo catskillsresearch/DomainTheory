@@ -1,8 +1,3 @@
-/-ai
-On indices at most 2, the enumeration of T is injective.
-
-Case on both indices in that range and rewrite by the values of the enumeration at 0, 1, and 2. Equal indices match by reflexivity. Each unequal pair contradicts distinctness of the master neighbourhood from zero, of the master neighbourhood from one, or of zero from one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

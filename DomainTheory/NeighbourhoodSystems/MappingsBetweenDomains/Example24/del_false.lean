@@ -1,8 +1,3 @@
-/-ai
-The deletion scan of a string beginning with zero is the string itself.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

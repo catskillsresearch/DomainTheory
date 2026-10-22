@@ -1,6 +1,3 @@
-/-ai
-A Gödel code for the uniform operator of Theorem 3.3 is a natural number chosen, by surjectivity of Scott's enumeration on combinatory elements, so that its value is the second recursion operator.
-ai-/
 
 module
 

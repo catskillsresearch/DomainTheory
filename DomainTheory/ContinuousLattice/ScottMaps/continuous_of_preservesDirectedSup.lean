@@ -1,8 +1,3 @@
-/-ai
-A map that preserves directed suprema is continuous for the Scott topologies.
-
-Continuity is tested on opens. An open of the codomain is Scott-open, and its preimage under a map preserving directed suprema is Scott-open, hence open in the Scott topology.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

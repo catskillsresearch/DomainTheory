@@ -1,0 +1,3 @@
+The output union of a singleton function-space token is the output component of that token.
+
+Membership is compared in both directions. A member of the output union belongs to the output of the unique token of the singleton, and conversely that output is recovered from singleton membership.

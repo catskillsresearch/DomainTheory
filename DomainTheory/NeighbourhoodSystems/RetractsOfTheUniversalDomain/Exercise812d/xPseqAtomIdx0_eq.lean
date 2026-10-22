@@ -1,8 +1,3 @@
-/-ai
-If the X half-step atom at depth n and bit-source i is not junk, then the first index of its packed state is the intersection index of the atom-pair's first index with n.
-
-The hypothesis is the junk flag of the X sub-step on the packed atom-pair state with bit 1, and the junk formula for the sub-step rewrites it. Unfolding the atom state, the first-index formula for a non-junk sub-step, the first-index projection of a packing, and selection at bit 1 give the intersection index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

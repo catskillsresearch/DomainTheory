@@ -1,8 +1,3 @@
-/-ai
-The composite of strict approximable maps is strict.
-
-Strictness means that a map sends bottom to bottom. The element map of a composite is the composite of the element maps, and each factor sends bottom to bottom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

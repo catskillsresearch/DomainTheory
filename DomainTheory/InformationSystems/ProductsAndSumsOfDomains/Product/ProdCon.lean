@@ -1,6 +1,3 @@
-/-ai
-A finite set of product tokens is consistent when its left projection is consistent in the first system and its right projection is consistent in the second system.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

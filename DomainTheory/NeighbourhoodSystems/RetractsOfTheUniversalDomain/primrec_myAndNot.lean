@@ -1,8 +1,3 @@
-/-ai
-The function sending a paired natural number to the and-not of its two components is primitive recursive.
-
-The iterative conjunction of the two components is primitive recursive, and the iterative exclusive disjunction of the first component with that conjunction is primitive recursive. Simplifying by the definition of and-not and the pairing projections matches the definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

@@ -1,8 +1,3 @@
-/-ai
-For a neighbourhood Y of the second system, the right injection of Y belongs to the forward image of a token element if and only if that element contains the true-tagged copy of Y.
-
-In the forward direction the master clause is impossible, because the untagged token of the master does not lie in a right injection, and the left-injection clause is impossible, because a nonempty neighbourhood supplies a left-tagged token, which does not lie in a right injection. The remaining clause is a right injection of some neighbourhood, and injectivity identifies it with Y. Conversely, the right-injection clause of the forward image applies directly.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

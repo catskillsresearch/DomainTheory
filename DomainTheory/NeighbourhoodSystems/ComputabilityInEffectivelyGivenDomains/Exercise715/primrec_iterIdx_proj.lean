@@ -1,8 +1,3 @@
-/-ai
-If a function on codes is primitive recursive, then so is the function sending a code to the fiber index of its value at the code's first component.
-
-Primitive-recursive list lookup, applied to that function, the first component, and the constant master index, simplifies to this fiber index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

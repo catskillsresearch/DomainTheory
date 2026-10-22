@@ -1,6 +1,3 @@
-/-ai
-The set of neighbourhoods consists of the master neighbourhood, the neighbourhood of the first two tokens, and the neighbourhood of the last two tokens.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

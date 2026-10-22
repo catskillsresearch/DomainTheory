@@ -1,8 +1,3 @@
-/-ai
-The set of all binary words lies in Scott's family.
-
-It is the universe constructor of the family.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

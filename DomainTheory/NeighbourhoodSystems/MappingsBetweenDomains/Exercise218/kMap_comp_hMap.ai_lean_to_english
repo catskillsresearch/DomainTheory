@@ -1,0 +1,3 @@
+The composite of the left inverse with the spacing map is the identity on the binary-string domain.
+
+Extensionality reduces the equality to relations. A composite witness gives an intermediate cone of a doubled input prefix that contains a further prefix whose inverse-output cone lies in the output. That further prefix of the doubled string has inverse output prefixing the original string, so the input cone is contained in the output. Conversely, the doubled cone of the input prefix is an intermediate neighbourhood, and the identity that the inverse output undoes doubling returns the original inclusion.

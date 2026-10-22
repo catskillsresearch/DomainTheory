@@ -1,8 +1,3 @@
-/-ai
-The parity map satisfies the three parity equations.
-
-Each equation compares neighbourhood membership through the shift formula for the parity map on a prefixed element. For a leading one, and for a leading zero followed by one, the corresponding scan rule fixes the value of the concatenation, and the empty string together with the master neighbourhood supplies the converse witness. For a leading pair of zeros, the scan of a double zero and the membership formula for the parity map transport witnesses in both directions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

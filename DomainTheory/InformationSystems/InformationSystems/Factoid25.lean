@@ -1,8 +1,3 @@
-/-ai
-This file's example is example_25.
-
-Scott's second example is an information system whose tokens are strict integer intervals, read as open bounds on a rational, together with a least-informative token read as always true. Consistency means that some rational satisfies every token of the finite set, and entailment means that every rational satisfying the set satisfies the token. The example builds that system from the satisfaction relation, using that the least token is always satisfied and that every token is satisfiable.
-ai-/
 module
 
 public import Mathlib.Algebra.Order.Field.Rat
@@ -18,20 +13,6 @@ public import DomainTheory.InformationSystems.InformationSystems.sat_midpoint
 public import DomainTheory.InformationSystems.InformationSystems.sat_sing
 
 @[expose] public section
-
-/-!
-# Factoid 2.5 — second example: open intervals plus `(0, ∞)`
-
-**Scott 1982, §2 (“A second example”).** Data objects are pairs `(n, m)` of integers
-with `n < m`, read as `n < x < m`, together with an artificial least-informative
-object `(0, ∞)` (our `bot`). Consistency: some point satisfies every token in the
-finite set. Entailment: every point satisfying the left-hand set satisfies the
-right-hand token.
-
-We take the point space to be `ℚ` so every strict integer-endpoint interval is
-inhabited (Def 2.1(ii)). The always-true reading of `bot` matches Scott’s
-“artificial” Δ.
--/
 
 namespace DomainTheory.InformationSystems
 

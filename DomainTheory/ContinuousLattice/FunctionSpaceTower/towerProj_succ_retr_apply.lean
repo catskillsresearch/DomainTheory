@@ -1,8 +1,3 @@
-/-ai
-In the recursion before Theorem 4.4, taken from Proposition 3.7, the successor retraction acts by j_{n+1}(x')(y) = j_n(x'(i_n(y))).
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

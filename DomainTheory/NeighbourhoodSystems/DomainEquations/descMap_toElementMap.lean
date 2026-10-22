@@ -1,8 +1,3 @@
-/-ai
-The descent map sends an element into a neighbourhood exactly when some stage of the descent chain does.
-
-This is the membership characterization of the element map of a directed supremum of approximable maps, applied to the descent chain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,8 +1,3 @@
-/-ai
-The cone of a completed encoding lies in the forward image of an element of C if and only if the singleton of the original string lies in the element.
-
-A cone clause would make a doubled encoding equal a completed encoding. A completed clause gives the same string by injectivity of cones and of the completed encoding. In the other direction, membership of the singleton is the completed clause.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

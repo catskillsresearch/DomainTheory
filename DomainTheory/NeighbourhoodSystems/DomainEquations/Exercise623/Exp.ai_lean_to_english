@@ -1,0 +1,1 @@
+The syntactic domain of expressions is the colimit of the tower obtained by iterating the functor T(X) = N ⊕ ((X × X) + (X × X)), starting from the one-point system on the fixed-point token set. It is the initial solution of the domain equation Exp ≅ N ⊕ ((Exp × Exp) + (Exp × Exp)), for a variable domain N whose master contains the empty string.

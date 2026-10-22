@@ -1,8 +1,3 @@
-/-ai
-The intersection of two product neighbourhoods is the product neighbourhood of the pointwise intersections.
-
-Extensionality on a dependent pair, together with the definition of a product neighbourhood, identifies both sides with membership of the second component in the two coordinate sets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

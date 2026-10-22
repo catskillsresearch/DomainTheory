@@ -1,8 +1,3 @@
-/-ai
-If every token of the left pair projection of a finite set is sent by the left-pair constructor to a token entailed by a second finite set, then either the left pair projection of the second set is nonempty or the left pair projection of the first set is contained in the singleton of the bottom.
-
-Induct on the left pair projection of the first set. The empty projection is contained in the singleton. If the projection is an element inserted into a smaller set, the entailment of the corresponding left-pair token has a payload disjunction: either the left pair projection of the second set is nonempty, or the inserted element is the bottom. In the latter case the inductive hypothesis on the smaller set, fed the remaining entailments, either gives a nonempty left pair projection of the second set or shows that the smaller set is contained in the singleton, and then every member of the inserted set is either the inserted element, hence the bottom, or a member of the smaller set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

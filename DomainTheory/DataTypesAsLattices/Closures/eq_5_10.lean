@@ -1,8 +1,3 @@
-/-ai
-The second square projection of a square pair of x and y is y.
-
-By extensionality, an even code cannot appear in the second projection, while an odd code contributes its index, which lies in y. Conversely, each member of y is the odd code of itself.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

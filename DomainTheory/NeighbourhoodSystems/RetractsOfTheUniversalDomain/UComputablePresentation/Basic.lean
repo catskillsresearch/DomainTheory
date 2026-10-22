@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the constructions assembling a computable presentation of the neighbourhood system U: clipping of rational pairs, canonical presenting lists and their codes, the enumeration, intersection and the master index, the presentation itself, and the supporting facts on presented intervals, decoding, primitive recursiveness, membership, surjectivity, and Scott's two relations.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec
@@ -50,45 +47,9 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UCo
 
 @[expose] public section
 
-/-!
-# Theorem 8.8(b), Part 3 — `𝒰` (Definition 8.7) has a genuine `ComputablePresentation`
-
-Assembles `Definition71.lean`'s `ComputablePresentation U` from `IntervalPrimrec.lean`'s code-level
-interval arithmetic and decidability results, proving `U.IsEffectivelyGiven`.
-
-## The enumeration
-
-Every natural `c` codes a `List (ℚ × ℚ)` (`decodeQPairList`), but not every such list presents a
-genuine `U`-neighbourhood (it may be empty, or stray outside `[0,1)`). `canonList` **canonicalizes**
-an arbitrary list to one that does: clip every pair into `[0,1)` (`qpClip`, mirroring
-`Definition87.lean`'s private `clip`) and discard now-degenerate pairs, falling back to the single
-pair `(0,1)` (presenting `U.master`) if nothing survives. `canonList_fixed` is the key reuse lemma:
-canonicalizing a list that **already** presents a `U`-neighbourhood changes nothing (as a set) — this
-drives both `surj` (every `U`-neighbourhood has a Scott-literal presenting list, by `U_mem_iff_scott`,
-on which `canonList` is a no-op) and `inter_spec` (the raw `combineCode` output, when non-empty, is
-already a `U`-neighbourhood, so re-canonicalizing it is also a no-op).
-
-`canonCode` mirrors `canonList` at the `Nat.Primrec` level (`canonListCode` performs the clip/filter
-via `RecursiveCross.lean`'s `flatMapCode`; a final `selectFn`/`isZero` test supplies the `(0,1)`
-fallback), with `presentedIntervals_decodeQPairList_canonCode` bridging the two. `X n :=
-presentedIntervals (decodeQPairList (canonCode n))` is then `𝒰`'s enumeration, and Scott's two
-relations reduce directly to `IntervalPrimrec.lean`'s `recDecidable₂_presentedIntervals_eq`/
-`recDecidable_presentedIntervals_nonempty` (intersection is a *raw* `combineCode`, and — since `U`
-is so permissive — is automatically a genuine `U`-neighbourhood whenever it is non-empty, so
-"consistent" reduces to "non-empty").
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open Domain.Recursive NeighborhoodSystem
-
-/-! ### List-level canonicalization -/
-
-
-/-! ### Code-level canonicalization: `canonCode` -/
-
-
-/-! ### Assembling `U.ComputablePresentation` -/
 
 
 end DomainTheory.NeighbourhoodSystems

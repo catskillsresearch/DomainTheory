@@ -1,8 +1,3 @@
-/-ai
-If the source is a T₀ space and the sets U n form a topological basis, the embedding along U is injective and continuous.
-
-The two conjuncts are the injectivity lemma and the continuity lemma for the embedding.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

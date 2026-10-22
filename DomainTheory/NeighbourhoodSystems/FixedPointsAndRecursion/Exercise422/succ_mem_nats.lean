@@ -1,8 +1,3 @@
-/-ai
-The carved-out set is closed under successor.
-
-For an arbitrary set closed under the generating operator, the given element lies in that set by the same membership hypothesis, and the closure hypothesis applied to the successor clause places the successor in the set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

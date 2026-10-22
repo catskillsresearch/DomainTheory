@@ -1,0 +1,3 @@
+The successor first approximant is the first operator applied to the previous first and second approximants.
+
+Unfold both sides. The successor iterate of the paired operator is that operator applied to the previous iterate, its first component is the action of the first map, and the previous iterate is the pair of the filters of the two approximants.

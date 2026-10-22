@@ -1,0 +1,3 @@
+The predicate of numbers that lie in the range of the shifted halting enumerator is not computable.
+
+Assume a decision procedure for membership in the range. Composing it with the successor makes membership of n + 1 computable, and the successor law for the enumerator converts that into computability of the domain of evaluation, on input 0, of the code decoded from n. Composing that decision procedure with encoding, and transporting by the identity between a code and the decoding of its encoding, makes the domain of evaluation of an arbitrary code on input 0 a computable predicate. That is the halting problem at input 0.

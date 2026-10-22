@@ -1,8 +1,3 @@
-/-ai
-Arden's lemma: the least fixed point of the operator sending w to z · w ∪ v equals the pointwise product of the star of z with v.
-
-The two inclusions are proved separately. The least-fixed-point comparison, applied to the fixed-point identity for that star product, gives one inclusion. For the other, an element of the star product belongs to any set that contains the value of the operator on itself, by the prefix lemma for the star product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

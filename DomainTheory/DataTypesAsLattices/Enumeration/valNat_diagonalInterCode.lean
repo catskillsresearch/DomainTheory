@@ -1,8 +1,3 @@
-/-ai
-The numerical evaluator sends the diagonal intersection code of n to the intersection of the numeral of n with its value at n.
-
-Unfold the diagonal intersection code, apply the application law for the evaluator twice, replace the intersection code by the intersection combinator, and rewrite by equations (3.12) and (2.17).
-ai-/
 module
 
 public import Mathlib.Computability.Halting

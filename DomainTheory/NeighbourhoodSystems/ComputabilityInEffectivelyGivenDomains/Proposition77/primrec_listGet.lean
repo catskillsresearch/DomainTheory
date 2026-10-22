@@ -1,8 +1,3 @@
-/-ai
-List lookup, as a function of the pair of a code and an index, is primitive recursive.
-
-The indexing step is primitive recursive by subtraction, selection, and the pairing projections. The start state pairing one more than the index with zero is primitive recursive. The right component of the fold of that step is therefore primitive recursive, and it agrees with lookup.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

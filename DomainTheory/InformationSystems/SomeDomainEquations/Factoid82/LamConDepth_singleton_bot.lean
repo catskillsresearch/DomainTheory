@@ -1,8 +1,3 @@
-/-ai
-The singleton of bottom is depth-consistent.
-
-Its function-token projection is empty, because bottom is not a function token. Its atom projection is empty, and the empty set is consistent in A.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

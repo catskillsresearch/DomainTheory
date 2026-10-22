@@ -1,8 +1,3 @@
-/-ai
-The empty set is a retract.
-
-Unfolding the retract equation, composition, and the empty set, extensionality together with the definitions of the graph and of application gives the equality.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

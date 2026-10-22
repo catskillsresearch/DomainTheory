@@ -1,8 +1,3 @@
-/-ai
-Applying the combinator I to an element returns that element.
-
-Rewrite by the definition of I and the round trip from a filter back to an approximable map, and then by the element map of the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

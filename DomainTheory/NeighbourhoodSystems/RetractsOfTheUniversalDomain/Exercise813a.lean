@@ -1,8 +1,3 @@
-/-ai
-U is isomorphic to V as domains.
-
-The numbered name example_813_a is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a.exercise813a

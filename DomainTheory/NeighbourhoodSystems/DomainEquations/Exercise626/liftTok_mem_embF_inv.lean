@@ -1,8 +1,3 @@
-/-ai
-If the false-tagged copy of W is a neighbourhood of the lift of D, then W is a neighbourhood of D.
-
-Lift membership splits into two cases. If the neighbourhood is the lift master, the empty string lies in it, but the empty string does not lie in a false-tagged set. Otherwise some neighbourhood X of D has the same false-tagged copy, and injectivity of tagging forces W to equal X.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

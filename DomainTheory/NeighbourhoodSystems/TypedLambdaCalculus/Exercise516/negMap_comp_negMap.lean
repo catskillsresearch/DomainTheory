@@ -1,8 +1,3 @@
-/-ai
-The composition of negation with itself is the identity approximable map on C.
-
-By extension on finite elements of C, two applications of negation on a partial string apply the bit flip twice and return the same partial element, matching the identity, and the total case is the same with total elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

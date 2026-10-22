@@ -1,8 +1,3 @@
-/-ai
-An element that lies below both arguments of a meet lies below the meet.
-
-A token of that element lies in both arguments, hence in their intersection.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33

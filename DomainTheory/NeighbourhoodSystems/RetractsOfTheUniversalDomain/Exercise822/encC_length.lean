@@ -1,8 +1,3 @@
-/-ai
-The length of the completed encoding of a string is twice the length of the string, plus two.
-
-Unfold the completed encoding and use the length of the doubled encoding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

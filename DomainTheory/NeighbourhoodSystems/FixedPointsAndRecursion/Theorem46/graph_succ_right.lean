@@ -1,8 +1,3 @@
-/-ai
-If the successor of an element m is related by the graph to k, then m is related to some element whose successor is k.
-
-The successor of m is generalized to a variable and the generating relation is split into cases. The base constructor would identify that successor with zero, which is excluded. The step constructor supplies a predecessor pair, and injectivity of the successor identifies the left-hand predecessor with m.
-ai-/
 module
 
 public import Mathlib.Tactic

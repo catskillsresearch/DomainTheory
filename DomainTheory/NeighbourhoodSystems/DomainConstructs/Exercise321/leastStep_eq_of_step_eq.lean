@@ -1,8 +1,3 @@
-/-ai
-Equal step neighbourhoods have the same least single-step map.
-
-Each least map lies in its own step and hence, by the equality of the steps, in the other step, and each least map lies below every member of its step, so the two least maps lie below one another.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-A finite approximant of an element x lies under x.
-
-It is the closure of a consistent finite set of tokens of x, and the closure of such a set lies under x.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

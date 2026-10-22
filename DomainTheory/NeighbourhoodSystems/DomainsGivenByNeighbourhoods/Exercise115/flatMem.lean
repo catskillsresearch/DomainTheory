@@ -1,6 +1,3 @@
-/-ai
-A set of natural numbers is a flat neighbourhood when it is the whole set of natural numbers, or when it is a singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

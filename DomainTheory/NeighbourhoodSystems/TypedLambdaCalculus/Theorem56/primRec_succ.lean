@@ -1,8 +1,3 @@
-/-ai
-Primitive recursion at the numeral n plus 1 and the numeral m equals g at the numeral n, the numeral m, and the recursion at those two numerals.
-
-Unfold the defining recursion and use that the zero test of a positive numeral is false, that the conditional then takes its second branch, and that the predecessor of the numeral n plus 1 is the numeral n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

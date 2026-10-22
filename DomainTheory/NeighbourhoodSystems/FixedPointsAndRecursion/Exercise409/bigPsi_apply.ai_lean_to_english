@@ -1,0 +1,3 @@
+The elementwise action of Ψ at an operator θ, evaluated at a map f, equals f applied to θ(f).
+
+The definition of Ψ is unfolded, and the currying law, the composition law, the pairing law, the first-projection law, the second component of a pair, and the two evaluation laws rewrite the left side into the right side.

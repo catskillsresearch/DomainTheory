@@ -1,8 +1,3 @@
-/-ai
-Applying the first projection to u returns the application of u to the numeral zero.
-
-This is β-conversion, from Scott continuity of application in the function argument at the numeral zero.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

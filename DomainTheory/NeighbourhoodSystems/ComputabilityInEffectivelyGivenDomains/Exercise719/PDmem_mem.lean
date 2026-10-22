@@ -1,8 +1,3 @@
-/-ai
-Every member of a power-domain neighbourhood is itself a neighbourhood of the underlying system.
-
-A power-domain neighbourhood is a union of principal up-sets, and membership in that union records that the member is a neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

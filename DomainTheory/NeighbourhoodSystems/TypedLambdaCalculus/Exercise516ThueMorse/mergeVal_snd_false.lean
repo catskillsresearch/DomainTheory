@@ -1,8 +1,3 @@
-/-ai
-The tag of an interleaving whose first input is partial is false.
-
-The argument follows the clauses of the interleaving value. An empty first string and a nonempty first string against an empty second string both hold by reflexivity. When both strings are nonempty, the cons-cons clause reduces the tag to the same statement on the tails.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

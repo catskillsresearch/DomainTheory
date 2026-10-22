@@ -1,8 +1,3 @@
-/-ai
-Starting from an accumulator at most 1, the left fold of the selection step equals 1 exactly when the accumulator is 1 or some list entry is accepted by the decider.
-
-The proof is by induction on the list. The empty fold is the accumulator, and the list has no entry. For a cons cell, rewrite the fold and bound the updated accumulator by splitting the old one into 0 or 1 and using the selection equations with the bound on the one-indicator. The inductive equivalence at the updated accumulator then rearranges. If the update is 1, the same split yields either that the head is accepted or that the old accumulator is 1, and a later witness remains a witness of the cons cell. Conversely, an old accumulator of 1 makes the update 1, a witness at the head makes the update 1 after the same split and the one-indicator equation, and a witness in the tail remains a tail witness.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

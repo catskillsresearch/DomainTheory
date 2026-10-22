@@ -1,6 +1,3 @@
-/-ai
-The right projection of a finite set of product tokens is the set of second components of those tokens whose first component is the least token of the first system, obtained by folding insertion over that filtered multiset, starting from the empty set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the universal system is nonempty.
-
-Nonemptiness is the second conjunct of membership.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

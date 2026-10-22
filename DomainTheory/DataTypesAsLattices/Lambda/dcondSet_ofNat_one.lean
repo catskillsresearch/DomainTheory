@@ -1,8 +1,3 @@
-/-ai
-The doubly strict conditional on the numeral 1 returns its right argument.
-
-Both sides agree by unfolding the doubly strict conditional, the McCarthy conditional, the numeral, and ⊤.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

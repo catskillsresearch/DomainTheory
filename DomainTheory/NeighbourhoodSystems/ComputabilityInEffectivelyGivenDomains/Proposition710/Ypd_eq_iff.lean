@@ -1,8 +1,3 @@
-/-ai
-Two enumerated power-domain neighbourhoods are equal if and only if every index of the first decoded list lies below some index of the second and every index of the second lies below some index of the first.
-
-Antisymmetry of inclusion, rewritten by the subset characterisation in each direction, gives the equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

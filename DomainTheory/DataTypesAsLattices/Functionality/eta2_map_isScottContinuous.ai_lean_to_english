@@ -1,0 +1,3 @@
+For fixed f, the map sending x to the graph of y mapped to the double application of f at x and then y is Scott-continuous.
+
+Constancy of graphs under Scott continuity applies, using for each y Theorem 1.3 of left continuity of application at y and continuity of application of f.

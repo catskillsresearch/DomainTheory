@@ -1,8 +1,3 @@
-/-ai
-The empty finset of raw lambda tokens is consistent.
-
-Stage zero is a witness: both the atom projection and the function-token projection are empty, and the empty set is consistent in A.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

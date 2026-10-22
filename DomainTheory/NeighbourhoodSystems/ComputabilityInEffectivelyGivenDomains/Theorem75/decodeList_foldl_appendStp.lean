@@ -1,8 +1,3 @@
-/-ai
-Decoding the fold of the packed append step along a list yields the reverse of that list followed by the decoding of the accumulator.
-
-The empty fold is immediate. For a cons, the inductive hypothesis, the packing equation, the decoding of an append step, and the reverse of a cons give the concatenation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

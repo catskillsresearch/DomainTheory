@@ -1,6 +1,3 @@
-/-ai
-The curry isomorphism is the order isomorphism from the function space of a product into a codomain to the iterated function space, obtained by composing the function-space equivalence, the curry equivalence, and the inverse function-space equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

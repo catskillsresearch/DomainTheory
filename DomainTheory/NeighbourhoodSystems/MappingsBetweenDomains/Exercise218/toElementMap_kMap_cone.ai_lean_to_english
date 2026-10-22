@@ -1,0 +1,3 @@
+The left inverse sends the principal cone of a finite string to the principal cone of the inverse output of that string.
+
+Two elements are equal when they contain the same neighbourhoods. Membership in the image is the inverse relation on the cone, which supplies a prefix equal to the string and an inclusion of the inverse cone, and that inclusion is membership in the principal cone of the inverse output. The converse uses the string itself as the witness prefix.

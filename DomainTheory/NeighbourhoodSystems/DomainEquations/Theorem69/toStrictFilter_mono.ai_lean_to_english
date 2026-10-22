@@ -1,0 +1,3 @@
+The strict filter of a strict map is monotone.
+
+A neighbourhood of the smaller filter is a neighbourhood of the strict function space contained in the upward closure of the smaller map, and upward closure passes that membership to the larger map.

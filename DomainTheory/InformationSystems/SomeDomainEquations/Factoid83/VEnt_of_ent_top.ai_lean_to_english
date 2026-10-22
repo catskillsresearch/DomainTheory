@@ -1,0 +1,3 @@
+If a finite set of V-tokens entails top, then it entails every token. This is the rogue-top property.
+
+Match on the conclusion. Bottom is entailed outright, and top is the hypothesis. A left pair is obtained from the top-membership clause when top belongs to the set, and from the left half of a both-projections derivation by the projection clause, using the same statement recursively. A right pair is obtained symmetrically from the right half.

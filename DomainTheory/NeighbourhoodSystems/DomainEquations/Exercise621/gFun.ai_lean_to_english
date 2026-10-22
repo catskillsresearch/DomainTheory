@@ -1,0 +1,1 @@
+The token-level master recursion of an expression sends a constant to its master and the variable to the argument set. Each of the four binary constructors inserts the empty string into the union of the false-tagged and true-tagged recursive values, so all four share one tagged-union body.

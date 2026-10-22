@@ -1,0 +1,3 @@
+The cut point of an element x is at most 1.
+
+Every rational whose interval belongs to x is positive, so the infimum of the cut set is at least 0. Subtracting that infimum from 1 leaves a value at most 1.

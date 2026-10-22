@@ -1,0 +1,3 @@
+For proper neighbourhoods, the image of the strict pairing of their principal filters under an approximable map contains a set exactly when the map relates the product of those neighbourhoods to that set.
+
+A neighbourhood of the pairing that reaches the set is the master or a proper product of neighbourhoods contained in the two given neighbourhoods, and monotonicity absorbs it into their product. Conversely, that product itself belongs to the pairing of the two principal filters.

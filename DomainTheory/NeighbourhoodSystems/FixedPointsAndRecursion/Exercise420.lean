@@ -1,8 +1,3 @@
-/-ai
-For approximable endomaps f and g of a domain, the least fixed point of f composed with g equals f applied to the least fixed point of g composed with f.
-
-The numbered name example_420 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise420.fixElement_comp_comm

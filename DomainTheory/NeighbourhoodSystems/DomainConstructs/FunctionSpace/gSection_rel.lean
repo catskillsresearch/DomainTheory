@@ -1,8 +1,3 @@
-/-ai
-The section of a product map at an input relates a second-factor neighborhood to a codomain neighborhood exactly when the product map relates the corresponding product neighborhood to that codomain neighborhood.
-
-This is the defining clause of the section.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

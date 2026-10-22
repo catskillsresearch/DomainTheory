@@ -1,8 +1,3 @@
-/-ai
-The filter of an approximable map f lies below the filter of g if and only if f lies below g.
-
-The order of filters is the order transported by the inverse of the function-space equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

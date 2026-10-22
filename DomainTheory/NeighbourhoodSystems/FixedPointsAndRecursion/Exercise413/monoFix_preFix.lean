@@ -1,8 +1,3 @@
-/-ai
-If f is monotone, then f sends the infimum of the pre-fixed points below that infimum.
-
-By the dual universal property of the infimum, it is enough that the image lies below every pre-fixed point. The infimum lies below such a point, monotonicity sends the image below the image of that point, and the pre-fixed-point inequality finishes the comparison.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

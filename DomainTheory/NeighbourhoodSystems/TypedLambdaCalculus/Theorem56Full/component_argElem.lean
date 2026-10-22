@@ -1,8 +1,3 @@
-/-ai
-The i-th component of an argument element is the optional numeral at i when i lies below the length, and bottom otherwise.
-
-Unfold the argument element as a sequence and apply the component computation for a sequence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

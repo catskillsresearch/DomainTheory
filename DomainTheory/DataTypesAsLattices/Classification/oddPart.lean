@@ -1,6 +1,3 @@
-/-ai
-The odd part of an element y of Pω is the set of natural numbers n such that 2n + 1 belongs to y.
-ai-/
 
 module
 

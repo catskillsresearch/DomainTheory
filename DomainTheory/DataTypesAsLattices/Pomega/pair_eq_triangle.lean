@@ -1,8 +1,3 @@
-/-ai
-The pair of n and m equals the triangular number of n + m, plus m.
-
-This is the definition of pairing.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

@@ -1,8 +1,3 @@
-/-ai
-If f at the vector with head k and tail v is nonzero, the search at that argument element equals the search at the argument element of the vector with head k + 1 and the same tail.
-
-Write the nonzero value as a successor. Rewrite the argument as a push, apply the search equation, compute the head and tail of a push, restore the pushed numeral, use the value clause of the λ-definition, take the false branch of the conditional on the zero-test of a successor numeral, and apply the successor map, which pushes the counter forward by one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

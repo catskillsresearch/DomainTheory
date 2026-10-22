@@ -1,8 +1,3 @@
-/-ai
-The meet of two elements lies below the right argument.
-
-The carrier of the meet is the intersection, which is contained in the right carrier.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33

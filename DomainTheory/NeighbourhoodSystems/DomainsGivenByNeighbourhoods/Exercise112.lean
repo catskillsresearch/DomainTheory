@@ -1,8 +1,3 @@
-/-ai
-Every element of the final-segment system on the natural numbers is either a finite element or the single limit element.
-
-The numbered name example_112 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise112.element_eq

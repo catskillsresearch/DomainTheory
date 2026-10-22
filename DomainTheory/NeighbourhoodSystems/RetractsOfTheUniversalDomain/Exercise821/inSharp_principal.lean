@@ -1,8 +1,3 @@
-/-ai
-The leaf constructor sends the principal element of a neighbourhood to the principal element of the corresponding leaf neighbourhood.
-
-Rewrite the constructor as the leaf map and compare neighbourhood membership. Membership in the image is a leaf relation, which is membership of the original neighbourhood together with membership in the leaf neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

@@ -1,29 +1,67 @@
 # Definition 6.8
 
-From 6.7 we see that if we are going to have initial algebras at all we have to satisfy the domain equation
+## Human-English
 
-$$
-D \cong T(D).
-$$
+@import "1980_Definition_6_8.english" {code_block=false}
 
-But generally that is not enough to assure that $D$ is initial. There is a condition that our functors satisfy, however, which guarantees the existence of homomorphisms.
+## AI: Human-English to AI-Lean
 
-**DEFINITION 6.8.** On the category of domains and strict approximable maps a functor $T$ is *continuous on maps* if for any systems $D$ and $E$ the induced mapping
+**NeighbourhoodSystems/DomainEquations/Definition68/ContinuousOnMapsu2eisStrict_map.lean**
 
-$$
-\lambda f.\, T(f) : (D \to_\bot E) \to (T(D) \to_\bot T(E))
-$$
+@import "ContinuousOnMapsu2eisStrict_map.lean"
 
-is approximable.
+**NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor.lean**
 
-**Lean 4**
+@import "idEndofunctor.lean"
 
-- [NeighbourhoodSystems/DomainEquations/Definition68/ContinuousOnMapsu2eisStrict_map.lean](ContinuousOnMapsu2eisStrict_map.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor.lean](idEndofunctor.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor_obj.lean](idEndofunctor_obj.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor_map.lean](idEndofunctor_map.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition68/ContinuousOnMaps.lean](ContinuousOnMaps.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition68/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition68/toStrictMap_toStrictFilter.lean](toStrictMap_toStrictFilter.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition68/continuousOnMaps_id.lean](continuousOnMaps_id.lean)
-- [NeighbourhoodSystems/DomainEquations/Definition68.lean](../Definition68.lean)
+**NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor_obj.lean**
+
+@import "idEndofunctor_obj.lean"
+
+**NeighbourhoodSystems/DomainEquations/Definition68/idEndofunctor_map.lean**
+
+@import "idEndofunctor_map.lean"
+
+**NeighbourhoodSystems/DomainEquations/Definition68/ContinuousOnMaps.lean**
+
+@import "ContinuousOnMaps.lean"
+
+**NeighbourhoodSystems/DomainEquations/Definition68/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/DomainEquations/Definition68/toStrictMap_toStrictFilter.lean**
+
+@import "toStrictMap_toStrictFilter.lean"
+
+**NeighbourhoodSystems/DomainEquations/Definition68/continuousOnMaps_id.lean**
+
+@import "continuousOnMaps_id.lean"
+
+**NeighbourhoodSystems/DomainEquations/Definition68.lean**
+
+@import "../Definition68.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "ContinuousOnMapsu2eisStrict_map.ai_lean_to_english" {code_block=false}
+
+@import "idEndofunctor.ai_lean_to_english" {code_block=false}
+
+@import "idEndofunctor_obj.ai_lean_to_english" {code_block=false}
+
+@import "idEndofunctor_map.ai_lean_to_english" {code_block=false}
+
+@import "ContinuousOnMaps.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "toStrictMap_toStrictFilter.ai_lean_to_english" {code_block=false}
+
+@import "continuousOnMaps_id.ai_lean_to_english" {code_block=false}
+
+@import "../Definition68.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Definition_6_8.ai_english_concordance" {code_block=false}

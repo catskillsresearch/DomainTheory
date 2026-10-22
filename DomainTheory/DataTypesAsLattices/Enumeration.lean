@@ -1,6 +1,3 @@
-/-ai
-This module gathers and re-exports the results of Scott 1976, §3, on enumeration, degrees, and the semigroup of operators, from Theorems 3.1 through 3.7, together with the supporting constructions and lemmas of that section.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Enumeration.Basic

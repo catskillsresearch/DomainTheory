@@ -1,6 +1,3 @@
-/-ai
-The extracted intersection-existence decider sends a code to the one-indicator of the chosen consistency predicate.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

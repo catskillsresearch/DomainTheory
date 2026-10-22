@@ -1,10 +1,3 @@
-/-ai
-The rational-pair combine operation is primitive recursive.
-
-The four components of the double unpairing are primitive recursive projections. Pairing
-the rational maximum of the two first components with the rational minimum of the two
-second components agrees with the combine operation by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

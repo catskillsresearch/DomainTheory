@@ -1,6 +1,3 @@
-/-ai
-The encoding instance for expressions encodes by sexprToNat and decodes by sexprOfNat. The round trip decodes the code with fuel one greater than the code, which the fuel lemma and the successor bound show returns the original expression.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

@@ -1,6 +1,3 @@
-/-ai
-This instance decides equality of interval tokens. The two least-informative tokens are equal. A least-informative token and an interval fall under different constructors, so they are unequal. Two intervals are equal exactly when their endpoints agree: equal endpoints give equality of the tokens, and an equality of tokens injects onto the endpoints. The proofs of the strict inequalities are ignored.
-ai-/
 module
 
 public import Mathlib.Algebra.Order.Field.Rat

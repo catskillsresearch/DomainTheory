@@ -1,6 +1,3 @@
-/-ai
-Depth entailment is the inductive relation packaging Scott's clauses (8) through (11). Any depth-consistent finset entails bottom. It entails an atom when it contains no function tokens, its atom finset is nonempty, and that atom finset entails the atom in A. It entails a function token when the finset is depth-consistent, contains no atoms but some function token, both component finsets are depth-consistent, some subcollection of its function tokens has every input token entailed by the input finset and every token of the output list entailed by the output union, and an atom-world input finset forces that input union to be atom-world. The premises are positive, so this recursion is permitted.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
@@ -56,9 +53,6 @@ namespace InfoSys
 variable {α : Type*} [DecidableEq α]
 
 variable (A : InfoSys α)
-
-
-/-! ## Depth measure (for well-founded Con) -/
 
 
 /-- Depth-based entailment as an inductive Prop (Scott (8)–(11)).

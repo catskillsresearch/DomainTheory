@@ -1,6 +1,3 @@
-/-ai
-The infix notation ≪ denotes the way-below relation.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

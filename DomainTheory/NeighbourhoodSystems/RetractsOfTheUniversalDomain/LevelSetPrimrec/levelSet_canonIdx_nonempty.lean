@@ -1,11 +1,3 @@
-/-ai
-Canonicalization always produces a code whose level set is nonempty.
-
-If the original level set is nonempty, canonicalization leaves the code unchanged and
-the same nonemptiness applies. If it is empty, canonicalization sends the code to the
-pair of zero and one. The unpaired components are zero and one, and the level set of
-zero and one is the universe, which is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

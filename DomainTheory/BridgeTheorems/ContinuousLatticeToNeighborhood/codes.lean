@@ -1,6 +1,3 @@
-/-ai
-The codes of a filter of the way-below neighbourhood system are the elements whose way-below neighbourhood belongs to the filter.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

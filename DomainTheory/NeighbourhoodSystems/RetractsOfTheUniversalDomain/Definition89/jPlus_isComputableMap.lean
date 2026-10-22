@@ -1,8 +1,3 @@
-/-ai
-The sum projection is a computable map from the presentation of the universal domain to the fixed presentation of the sum.
-
-This computability is the corresponding component of the projection pair chosen for the sum.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

@@ -1,0 +1,3 @@
+On two even indices 2a+2 and 2b+2, the sharp decider step returns the pack whose equality bit and consistency bit are the products of those bits of the two child memo entries, and whose intersection index is two more than twice the pair of the children's intersection indices.
+
+Both outer selections see zero and both parities are zero, so the step takes the node branch. Dividing each even index by two and subtracting one recovers a and b, and the two list lookups are then the stated memo positions.

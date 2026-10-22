@@ -1,6 +1,3 @@
-/-ai
-The operator Φ of Exercise 5.16 is the approximable endomap of the binary-string domain sending an element to the string that begins with the bit false and continues with the merge of its negation and its tail, realized as cons of false composed with the merge of the paired negation and tail maps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

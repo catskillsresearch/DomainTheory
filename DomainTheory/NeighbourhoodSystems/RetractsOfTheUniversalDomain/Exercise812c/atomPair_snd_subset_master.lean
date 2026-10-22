@@ -1,8 +1,3 @@
-/-ai
-The second component of atomPair at every depth is contained in the master of D₁.
-
-The proof is by induction on the depth. At depth zero the inclusion is reflexive. At a successor the one-step shrinking of the second component is composed with the inductive inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

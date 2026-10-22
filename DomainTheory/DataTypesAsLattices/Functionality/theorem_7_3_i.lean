@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 7.3 (i). The combinator I lies in the function space from A to A.
-
-I is a graph on both sides of the membership, and the application law for I sends a related pair to that same related pair.
-ai-/
 
 module
 

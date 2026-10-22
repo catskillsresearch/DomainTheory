@@ -1,8 +1,3 @@
-/-ai
-The list of Thue–Morse bits of length zero is the empty list.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

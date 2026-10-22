@@ -1,8 +1,3 @@
-/-ai
-The approximable map built from a monotone assignment on neighbourhoods agrees with that assignment on principal elements.
-
-Elements that contain the same neighbourhoods are equal. A neighbourhood of the image of the principal element comes from a neighbourhood containing the given one, and the inclusion-reversing monotonicity of the assignment carries it into the assigned value. Conversely the given neighbourhood, contained in itself, is a witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

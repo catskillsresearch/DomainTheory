@@ -1,8 +1,3 @@
-/-ai
-The finite set coded by 2^k is the singleton of k.
-
-Extensionality and the test-bit law for a power of two give the equality.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

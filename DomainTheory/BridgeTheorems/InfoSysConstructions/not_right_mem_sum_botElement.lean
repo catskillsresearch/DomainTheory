@@ -1,8 +1,3 @@
-/-ai
-No right token belongs to the carrier of the bottom element of a separated sum.
-
-Such a membership would be an entailment of the right token by the singleton of the sum bottom, and that entailment requires the right part of the singleton to be nonempty, whereas the right part of the singleton of the sum bottom is empty.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

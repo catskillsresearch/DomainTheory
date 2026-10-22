@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (4.12). The composite of the tensor of a and b with the tensor of a' and b' equals the tensor of the composite of a with a' and the composite of b with b'.
-
-The equality follows by graph extensionality at the argument, two applications of the tensor rule, the zero and one projections of the pair sequence, and the application rule for composition.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

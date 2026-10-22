@@ -1,0 +1,3 @@
+Scott 1976, Theorem 4.3, the function space theorem. For retracts a, b, a', b', and c, the function space a ∘→ b is a retract; it is strict whenever b is strict; a set is typed by the function space exactly when it equals its composite with a and sends a-typed sets to b-typed sets; the function-space construction preserves the retract order; the function space of two typed maps is typed by the corresponding function space of function spaces; and the composite of typed maps is typed by the function space from a to c.
+
+The six claims are the retract, strictness, typing, retract-order, functor, and composition lemmas for function spaces.

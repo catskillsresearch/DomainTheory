@@ -1,6 +1,3 @@
-/-ai
-The sum of the binary-sequence domain with itself is the neighbourhood system appearing on the right-hand side of the domain equation for that domain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,20 +1,37 @@
 # Definition 2.3
 
-The proofs of these statements can be safely left to the reader.
+## Human-English
 
-**2.3 Definition.** A *continuous lattice* is a complete lattice $D$ in which for every $y \in D$ we have:
+@import "1972_Definition_2_3.english" {code_block=false}
 
-$$
-y = \bigsqcup x \in D : x \ll y.
-$$
+## AI: Human-English to AI-Lean
 
-**Continuous lattice.** `ContinuousLattice` is this definition: every element is the least upper bound of the elements way below it. It is a hypothesis of [Proposition 2.7](../ScottMaps/1972_Proposition_2_7.md), [Proposition 2.8](../Constructions/1972_Proposition_2_8.md), [Proposition 2.9](../Constructions/1972_Proposition_2_9.md), and [Proposition 2.11](../Constructions/1972_Proposition_2_11.md), of [Theorem 2.12](../Theorem212/1972_Theorem_2_12.md), and of the later projection and inverse-limit proofs. The sets $ y \in D : x \ll y $ are a basis for the topology.
+**ContinuousLattice/WayBelow/ContinuousLattice.lean**
 
-As an alternate definition we find [Proposition 2.4](1972_Proposition_2_4.md).
+@import "ContinuousLattice.lean"
 
-**Lean 4**
+**ContinuousLattice/WayBelow/Basic.lean**
 
-- [ContinuousLattice/WayBelow/ContinuousLattice.lean](ContinuousLattice.lean)
-- [ContinuousLattice/WayBelow/Basic.lean](Basic.lean)
-- [ContinuousLattice/WayBelow/IsContinuousLatticeu2esSup_wayBelow.lean](IsContinuousLatticeu2esSup_wayBelow.lean)
-- [ContinuousLattice/WayBelow/directedOn_wayBelow.lean](directedOn_wayBelow.lean)
+@import "Basic.lean"
+
+**ContinuousLattice/WayBelow/IsContinuousLatticeu2esSup_wayBelow.lean**
+
+@import "IsContinuousLatticeu2esSup_wayBelow.lean"
+
+**ContinuousLattice/WayBelow/directedOn_wayBelow.lean**
+
+@import "directedOn_wayBelow.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "ContinuousLattice.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "IsContinuousLatticeu2esSup_wayBelow.ai_lean_to_english" {code_block=false}
+
+@import "directedOn_wayBelow.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Definition_2_3.ai_english_concordance" {code_block=false}

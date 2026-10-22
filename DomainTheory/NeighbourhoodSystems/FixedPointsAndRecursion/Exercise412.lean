@@ -1,8 +1,3 @@
-/-ai
-Every element of the domain of Example 1.2 is a fixed point of the identity map. The identity map on the domain of Example 1.2 has no greatest fixed point.
-
-The numbered name example_412 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise412.idMap_fixed

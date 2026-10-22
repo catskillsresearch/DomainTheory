@@ -1,8 +1,3 @@
-/-ai
-The forward reindexing map composed with the inverse reindexing map is the identity on the twice iterated neighbourhood system.
-
-By extensionality of approximable maps, a composite witness supplies an intermediate neighbourhood whose fibers sit between the double fibers, so after unpairing a pair the first neighbourhood is contained in the second. Conversely, if the first neighbourhood is contained in the second, its reindexing along unpairing is an intermediate neighbourhood: its fibers recover the double fibers, and the forward inclusions are monotonicity of double fibers.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

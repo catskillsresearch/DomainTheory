@@ -1,8 +1,3 @@
-/-ai
-Application of Y at u equals the application of omega(u) to itself.
-
-This is beta reduction of the composite, given by Theorem 1.3, of diagonal application and the omega combinator.
-ai-/
 
 module
 

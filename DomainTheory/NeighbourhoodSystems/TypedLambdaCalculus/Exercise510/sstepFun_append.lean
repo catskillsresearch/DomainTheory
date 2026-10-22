@@ -1,8 +1,3 @@
-/-ai
-The step-function set of a concatenated list is the intersection of the step-function sets of the two lists.
-
-Extensionality and the membership criterion reduce the equality to quantification over the concatenated list. A map that relates every pair of the concatenation relates every pair of each half, and a map that relates every pair of each half relates a pair of the concatenation according to which half contains it.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-A partial recursive function of one natural number, presented as a partial recursive function of a length-one vector, is denoted by an approximable map from N to N that returns the numeral for each value, returns bottom where the function diverges, and sends bottom to bottom.
-
-Apply λ-definability of partial recursive functions to the vector form, and compose the resulting map with the one-argument embedding. On a defined value, the embedding turns the numeral into the corresponding length-one argument, and the definedness clause, rewritten along the head of a cons, returns the numeral. On an undefined value the same rewriting uses the undefinedness clause. On bottom, the embedding sends bottom to the bottom argument, and the strictness clause at its zeroth coordinate returns bottom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

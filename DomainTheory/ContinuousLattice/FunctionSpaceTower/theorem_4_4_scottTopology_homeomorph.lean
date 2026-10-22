@@ -1,6 +1,3 @@
-/-ai
-The pair i_∞ and j_∞ from the proof of Theorem 4.4 is a homeomorphism when both D_∞ and [D_∞ → D_∞] carry the Scott lattice topology. The embedding is i_∞(x) = ⨆_n (i_{n∞} ∘ x_{n+1} ∘ j_{∞n}) and the projection is j_∞(f) = ⨆_n i_{(n+1)∞}(j_{∞n} ∘ f ∘ i_{n∞}). The underlying equivalence is inverse by the two composite identities, and both maps are continuous. The homeomorphism for the source topologies of the numbered theorem is a separate construction.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

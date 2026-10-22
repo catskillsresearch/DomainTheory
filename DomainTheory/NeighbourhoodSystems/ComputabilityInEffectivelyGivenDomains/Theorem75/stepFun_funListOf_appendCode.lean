@@ -1,8 +1,3 @@
-/-ai
-The step-function neighbourhood of the list decoded from the append code of two codes equals the intersection of the step-function neighbourhoods of the two decoded lists.
-
-Decode the append code, then simplify by the list-map laws for append and reverse and by membership in a step-function neighbourhood. A map in the combined neighbourhood restricts to each factor, and a map in both factors lies in the combined neighbourhood by either side of the append.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

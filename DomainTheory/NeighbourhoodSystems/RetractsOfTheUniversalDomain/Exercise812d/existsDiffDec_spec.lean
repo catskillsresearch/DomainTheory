@@ -1,8 +1,3 @@
-/-ai
-The difference-existence decider reads one on a pair exactly when some enumerated neighbourhood equals the set difference of the two codes.
-
-Unfold the decider and rewrite by the one-indicator. The chosen specification of the computable difference predicate, after the pair is unpacked, is that equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

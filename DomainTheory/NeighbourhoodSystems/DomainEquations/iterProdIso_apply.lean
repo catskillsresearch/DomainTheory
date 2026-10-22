@@ -1,8 +1,3 @@
-/-ai
-The product isomorphism sends an element of the infinite iterate to the pair of its component at zero and the sequence of its later components.
-
-This equality is the definition of the isomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

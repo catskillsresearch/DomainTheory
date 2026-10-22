@@ -1,8 +1,3 @@
-/-ai
-If a finite string is a prefix of another, the partial double of the first lies below the total double of the second.
-
-The comparison of a partial element with a total element is the prefix order, and doubling preserves the given prefix.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

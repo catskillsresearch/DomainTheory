@@ -1,8 +1,3 @@
-/-ai
-The first component of deltaPair at depth i is true exactly when the base-four digit of k at place i is odd.
-
-Unfold deltaPair and simplify.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

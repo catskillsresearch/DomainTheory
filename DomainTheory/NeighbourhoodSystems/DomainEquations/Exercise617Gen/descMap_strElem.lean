@@ -1,8 +1,3 @@
-/-ai
-The descent map sends the total element named by a finite string σ to the head recursion started at the distinguished point and evaluated at σ.
-
-This is the total-element clause of the construction liftCn.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

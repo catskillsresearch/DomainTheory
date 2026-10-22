@@ -1,8 +1,3 @@
-/-ai
-The second projection sends the pair of x and y to y.
-
-Rewrite by the second-projection map and the second component of a pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

@@ -1,6 +1,3 @@
-/-ai
-The iterates of an approximable endomap are the identity map at stage zero and the composite of the map with the previous iterate at a successor stage.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

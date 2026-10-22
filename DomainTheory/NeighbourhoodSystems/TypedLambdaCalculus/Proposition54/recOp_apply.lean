@@ -1,8 +1,3 @@
-/-ai
-The approximable map recovered from the recursion operator of τ at a function-space element φ sends x to the value of τ at the pair of x with the map of φ at x.
-
-Rewrite by the definition of the operator, the curried application law, the composition law, the pairing law, the second projection, the second component of a pair, and evaluation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

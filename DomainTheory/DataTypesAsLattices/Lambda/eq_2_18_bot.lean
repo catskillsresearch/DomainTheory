@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.18). Bottom is the graph of the constant map with value ⊥.
-
-The constant value contributes no elements, so the graph is empty.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

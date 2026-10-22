@@ -1,8 +1,3 @@
-/-ai
-The function space of the one-point domain with itself is isomorphic to the one-point domain. The terminal domain is a fixed point of the function-space construction, which is why the obvious solution by retracts carries no information.
-
-The proof applies the isomorphism of neighbourhood systems whose element posets are unique.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

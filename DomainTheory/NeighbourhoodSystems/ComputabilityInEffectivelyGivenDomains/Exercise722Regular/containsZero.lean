@@ -1,6 +1,3 @@
-/-ai
-containsZero is the expression for the language of words that contain a zero. It is the concatenation of the universal language, the singleton of the one-bit word zero, and the universal language again.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

@@ -1,6 +1,3 @@
-/-ai
-The truth domain of this example is the two-token truth domain of Example 1.2.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

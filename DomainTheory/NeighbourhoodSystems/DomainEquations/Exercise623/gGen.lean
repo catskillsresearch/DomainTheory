@@ -1,6 +1,3 @@
-/-ai
-The one-point generator of a grammar expression is the neighbourhood system whose single neighbourhood is the fixed-point token set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

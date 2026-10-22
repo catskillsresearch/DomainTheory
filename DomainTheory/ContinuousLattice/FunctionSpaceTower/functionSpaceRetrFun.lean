@@ -1,6 +1,3 @@
-/-ai
-Given a continuous-lattice projection from D into D', with inclusion i and retraction j, the retraction of function spaces sends a Scott map g from D' to D' to the Scott map on D whose value at x is j(g(i(x))). Continuity of this underlying function is the continuity of the inner composite.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

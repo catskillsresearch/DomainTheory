@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, after (4.7). The integer retract fixes every singleton natural number.
-
-For zero, rewrite by the application law and the zero clause of the doubly strict conditional. For a successor, rewrite by the application law, the successor law for the predecessor set, the inductive hypothesis, and the same-singleton and successor clauses of the doubly strict conditional.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

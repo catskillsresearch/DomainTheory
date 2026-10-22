@@ -1,6 +1,3 @@
-/-ai
-This instance makes a Scott map conjugated along a pair of order isomorphisms callable as a function, by applying the conjugation of its underlying Scott map.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

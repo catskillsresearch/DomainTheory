@@ -1,8 +1,3 @@
-/-ai
-A natural lies in the tail of length n if and only if n is at most that natural.
-
-The equivalence is the definition of the tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

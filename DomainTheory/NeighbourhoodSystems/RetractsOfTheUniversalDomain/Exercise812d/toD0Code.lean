@@ -1,6 +1,3 @@
-/-ai
-The code-level pullback of an element y of the second neighbourhood system is the element of the first system whose members are the basic neighbourhoods of Y-sequence codes n such that y contains the basic neighbourhood of index n. Subset closure is the unconditional genuineness of those codes, the master is the code at index 0 once the zeroth basic neighbourhood is the master, a binary intersection is named by surjectivity and transported by the intersection equation for Y-sequence codes, and upward closure is the separate upward-membership lemma.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

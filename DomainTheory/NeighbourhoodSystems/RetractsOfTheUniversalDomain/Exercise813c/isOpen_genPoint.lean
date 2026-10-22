@@ -1,8 +1,3 @@
-/-ai
-Each coordinate set is open in Cantor space.
-
-It is clopen, and a clopen set is open.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

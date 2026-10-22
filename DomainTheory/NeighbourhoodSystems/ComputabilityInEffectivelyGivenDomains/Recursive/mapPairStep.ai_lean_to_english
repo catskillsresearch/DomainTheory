@@ -1,0 +1,1 @@
+One pair-map step prepends the pair of the parameter and the entry onto the list coded by the accumulator. The result is one more than the pair of that pair and the accumulator.

@@ -1,8 +1,3 @@
-/-ai
-The specialization order of the Scott topology is the underlying lattice order.
-
-If x specializes to y and x fails to lie below y, then x lies in the set of elements that fail to lie below y. That set is Scott-open, hence open in the Scott topology, so specialization puts y in it. Conversely, if x lies below y and a Scott-open set contains x, the upper-set property puts y in the set. Openness in the Scott topology is Scott-openness.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

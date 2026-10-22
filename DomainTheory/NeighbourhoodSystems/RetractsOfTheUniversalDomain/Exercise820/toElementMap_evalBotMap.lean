@@ -1,8 +1,3 @@
-/-ai
-Evaluation at bottom sends a function to the value, at the bottom of the domain, of the approximable map carried by that function.
-
-Unfold evaluation as the composite of the evaluation map with the pairing of the identity and the constant bottom, and apply the evaluation law.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

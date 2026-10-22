@@ -1,8 +1,3 @@
-/-ai
-B is a literal subsystem of C: the two systems have the same master, every B-neighbourhood is a C-neighbourhood, and the intersection of two B-neighbourhoods is a B-neighbourhood whenever it is a C-neighbourhood.
-
-The masters agree by reflexivity. A B-neighbourhood is the cone of a string, hence a C-neighbourhood. For the intersection, trichotomy of cones gives nesting one way, nesting the other way, or disjointness. In the nested cases the intersection is the smaller cone. In the disjoint case the intersection is empty, which cannot be a C-neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

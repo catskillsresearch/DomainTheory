@@ -1,8 +1,3 @@
-/-ai
-The conditional at true returns the first argument.
-
-If an output neighbourhood belongs to the value, the witnessing input splits as a product whose truth component belongs to true, so it is the master or the singleton of zero. The one clause is impossible in either case. The zero clause places the output above a neighbourhood of the first argument, and the master clause forces the output to be the master, which belongs to that argument. Conversely, if the output belongs to the first argument, the product of the singleton of zero with that output and the master lies in the paired argument, and the guard is the zero clause with left component equal to the output.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

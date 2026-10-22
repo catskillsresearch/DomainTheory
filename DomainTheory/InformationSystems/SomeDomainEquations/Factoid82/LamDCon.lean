@@ -1,6 +1,3 @@
-/-ai
-A finset of depth-well-formed lambda tokens is bundled-consistent when the finset of underlying raw tokens is depth-consistent.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

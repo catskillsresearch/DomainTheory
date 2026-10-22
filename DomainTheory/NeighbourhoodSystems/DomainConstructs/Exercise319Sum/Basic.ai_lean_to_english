@@ -1,0 +1,1 @@
+This file gathers and re-exports the sum system, the sum of two approximable maps, and the extraction lemmas that a sum neighbourhood contained in a left or right copy is a copy of that kind, that a sum neighbourhood containing the master equals the master, and that a nonempty copy of one kind is never contained in a copy of the other kind.

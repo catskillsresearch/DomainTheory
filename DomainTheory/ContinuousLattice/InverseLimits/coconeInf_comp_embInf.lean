@@ -1,8 +1,3 @@
-/-ai
-If the components of a cocone commute with the inclusions, then the mediating map composed with the embedding of level n recovers the component at level n.
-
-The mediating value is the supremum of the components at the coordinates of the embedded element. At levels at least n those coordinates are the climbed embeddings, so the value equals the component at n. At lower levels they are the descended projections, so the value is at most the component at n. The coordinate at level n is the original element, so that component occurs in the supremum.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

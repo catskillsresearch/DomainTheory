@@ -1,8 +1,3 @@
-/-ai
-The successor function on vectors of length one, sending a vector to one more than its head, is λ-defined by the successor map composed with the zeroth projection and wrapped in the strict guard of arity one.
-
-Apply the total-function constructor. On the stack of a vector, the zeroth projection reads the zeroth component, the successor map sends that numeral to the next numeral, and the head is the zeroth entry of the vector.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

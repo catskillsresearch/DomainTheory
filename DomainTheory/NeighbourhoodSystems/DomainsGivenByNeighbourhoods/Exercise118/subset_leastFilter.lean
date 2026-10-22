@@ -1,8 +1,3 @@
-/-ai
-Every member of a finitely consistent family belongs to the least filter containing the family.
-
-A member is a neighbourhood. The one-term sequence repeating that member has intersection equal to the master intersected with the member, which is contained in the member.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

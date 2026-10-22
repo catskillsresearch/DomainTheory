@@ -1,8 +1,3 @@
-/-ai
-Interleaving a tagged string with itself yields the element coded by the same tag on the doubled string.
-
-Simplifying the definition of the interleaved element and the diagonal law for the interleaving value gives the doubled shape.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

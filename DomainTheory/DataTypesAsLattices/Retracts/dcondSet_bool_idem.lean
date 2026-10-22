@@ -1,8 +1,3 @@
-/-ai
-The doubly strict conditional on the numerals zero and one is idempotent. A second pass leaves the Boolean value unchanged, and mixed tags stay collapsed.
-
-The proof splits into the four cases of the conditional on the test: zero without a positive element, a positive element without zero, a mixed set, and the empty set. In each case the matching evaluation rewrites the inner conditional and then the outer one, and the two sides agree.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

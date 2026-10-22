@@ -1,8 +1,3 @@
-/-ai
-If the left argument of a pair embedding is nonempty, the embedding is nonempty.
-
-A point of the left argument, with true placed at the head of its path, lies in the left copy of the embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

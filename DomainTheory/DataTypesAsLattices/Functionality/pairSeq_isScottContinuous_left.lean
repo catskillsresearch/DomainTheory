@@ -1,8 +1,3 @@
-/-ai
-For a fixed right argument, sequence pairing is Scott continuous in the left argument.
-
-The graph of a family continuous in a parameter is Scott continuous in that parameter. For each test, the body is continuous in the left argument because a conditional set is continuous in its zero branch.
-ai-/
 
 module
 

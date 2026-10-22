@@ -1,8 +1,3 @@
-/-ai
-Set-level entailment is transitive: if u and v are consistent, u set-entails v, and v set-entails w, then u set-entails w.
-
-A token of w is entailed by v, and the cut axiom, applied to the set-entailment of v by u, yields the entailment by u.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

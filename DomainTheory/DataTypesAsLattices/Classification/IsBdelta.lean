@@ -1,6 +1,3 @@
-/-ai
-A set of elements of Pω is Bδ when it is a countable intersection of Boolean-open sets.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

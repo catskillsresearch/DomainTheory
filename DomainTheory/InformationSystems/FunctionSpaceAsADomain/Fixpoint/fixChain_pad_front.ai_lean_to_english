@@ -1,0 +1,3 @@
+A fix chain of length n for a consistent set w of function tokens is also a fix chain of length n + 1.
+
+The argument is by induction on n. At length zero the value is empty, and the empty-to-empty step is entailment of the bottom token. At a successor step the same preceding set and the same entailment witness the longer chain.

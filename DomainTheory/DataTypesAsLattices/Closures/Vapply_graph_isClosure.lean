@@ -1,8 +1,3 @@
-/-ai
-The graph of x ↦ V(a)(x) is a closure for every a. Scott's equation (5.19) records that the universe of this closure is the closure itself.
-
-The identity is contained in the graph because equation (5.16) puts each finite set en inside V(a)(en). For the retract equation, Theorem 1.2(i), using Scott continuity of V(a) in its argument, recovers the map from its graph, and equation (5.17) says that this map is idempotent, so the graph equals the graph of its own double application.
-ai-/
 
 module
 

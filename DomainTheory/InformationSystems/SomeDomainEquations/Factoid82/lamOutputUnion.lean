@@ -1,6 +1,3 @@
-/-ai
-The output union of a finite set of raw-token list pairs is the right fold of the output-union insertion step over the underlying multiset, starting from the empty finset.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

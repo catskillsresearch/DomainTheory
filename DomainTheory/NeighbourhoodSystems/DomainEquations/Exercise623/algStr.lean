@@ -1,6 +1,3 @@
-/-ai
-The structure map of a T-algebra, as a raw approximable map from the functor applied to the carrier to the carrier, is the underlying map of the strict morphism that is the algebra structure.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,0 +1,1 @@
+This file gathers and re-exports Factoid 3.2 and the bottom element as the setting for Scott's Factoid 3.3. The bottom element is the set of tokens entailed by the singleton of the least informative token, and it is the least element of the domain.

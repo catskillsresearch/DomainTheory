@@ -1,8 +1,3 @@
-/-ai
-The right preimage of a product neighborhood is a neighborhood of the right factor.
-
-A product neighborhood is the product of a left neighborhood and a right neighborhood, and the right preimage is that right factor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,8 +1,3 @@
-/-ai
-The map sending a triply paired code to the packed state of the Y half-step atom at its three components is primitive recursive.
-
-The three unpaired components, and the pair of the first two, are primitive recursive. The two atom-pair indices and the atom-pair junk flag at the first two components are primitive recursive by composition with that pair, after simplifying the unpairing. Packing those three values is primitive recursive. Pairing the third component with that pack, and then the first component in front, is primitive recursive, so the X sub-step of that argument is primitive recursive. Pairing the first component with the constant 1 and that output is primitive recursive. Composing the primitive-recursive Y sub-step with this argument, and identifying the result by reflexivity, gives the claim.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

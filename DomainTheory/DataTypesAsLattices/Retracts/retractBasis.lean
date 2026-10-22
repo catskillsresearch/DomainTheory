@@ -1,6 +1,3 @@
-/-ai
-The canonical finite-image basis of a point x in the fixed-point lattice of a retract a consists of those fixed points of the retract whose underlying set is the retract applied to a finite set e n contained in x.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

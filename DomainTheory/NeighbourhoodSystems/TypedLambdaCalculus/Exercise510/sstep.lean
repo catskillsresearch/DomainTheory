@@ -1,6 +1,3 @@
-/-ai
-The step set of two sets is the set of strict maps whose underlying approximable map relates the first set to the second.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

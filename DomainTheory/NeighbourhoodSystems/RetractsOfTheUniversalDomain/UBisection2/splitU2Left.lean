@@ -1,6 +1,3 @@
-/-ai
-The left-hand code of the canonical split of the neighbourhood indexed by n is that neighbourhood clipped strictly below the midpoint of its intrinsic minimum and maximum.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

@@ -1,8 +1,3 @@
-/-ai
-If the tag is one, the sum enumeration is the right copy of the second component.
-
-The tag is not zero, so the first conditional takes its negative branch and the second takes its positive branch.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

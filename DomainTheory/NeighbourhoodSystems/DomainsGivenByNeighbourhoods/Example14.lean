@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the basic development of Example 1.4, the classification of its elements, the strict comparisons of the bottom element with the elements at nodes 0 and 1, the strict comparisons of those elements with the four leaves, and the maximality of the four leaf elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example14.Basic

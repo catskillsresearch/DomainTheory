@@ -1,8 +1,3 @@
-/-ai
-Set-level entailment is monotone: if u and u' are consistent, u is contained in u', u set-entails v, and v' is contained in v, then u' set-entails v'.
-
-A token of v' lies in v, so u entails it. Cut from u' through u applies, because u' entails every member of u by reflexivity and the inclusion of u in u'.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

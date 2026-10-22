@@ -1,0 +1,3 @@
+For a fixed candidate and environment, the conditional clause is Scott-continuous in the code.
+
+The proof is Theorem 1.3 of continuity of application of the lambda retract with the ternary continuity package of the conditional. The test is Theorem 1.3 of continuity of application of the which combinator and continuity of the recursive call in the code through the payload at index 0. The middle argument is an inner ternary package whose test is Theorem 1.3 of continuity of application of elimination with that same payload continuity, and whose branches are the payload continuities at indices 1 and 2. The outer third argument is the payload continuity at index 3.

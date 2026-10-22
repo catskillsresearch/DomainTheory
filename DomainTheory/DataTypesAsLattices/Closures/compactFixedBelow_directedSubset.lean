@@ -1,8 +1,3 @@
-/-ai
-If a is a closure, the set of compact fixed points below a fixed point x is a directed subset.
-
-That set is the retract basis of x, and the retract basis of a retract is a directed subset.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

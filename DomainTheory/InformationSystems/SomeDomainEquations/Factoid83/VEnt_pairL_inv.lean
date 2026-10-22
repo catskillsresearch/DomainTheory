@@ -1,8 +1,3 @@
-/-ai
-From an entailment of a left pair (X, Δ), either top belongs to the premise or the left pair projection of the premise entails X.
-
-Case analysis on the derivation gives the first alternative from the top-membership clause and the second from the projection clause.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

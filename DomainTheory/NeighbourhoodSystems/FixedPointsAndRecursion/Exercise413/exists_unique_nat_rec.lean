@@ -1,8 +1,3 @@
-/-ai
-For any set, any chosen element, and any unary operation, there is a unique function from the natural numbers that sends zero to the chosen element and sends each successor to the operation applied to the value at the predecessor.
-
-The function defined by recursion from the chosen element and the operation satisfies both equations. Any other such function agrees with it by induction: the zero case is the given equation at zero, and the successor case rewrites by the successor equation and the inductive agreement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

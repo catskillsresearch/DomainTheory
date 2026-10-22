@@ -1,8 +1,3 @@
-/-ai
-The first component of a natural is at most the natural.
-
-The first component is at most its pair with the second component, and pairing the two components recovers the natural.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

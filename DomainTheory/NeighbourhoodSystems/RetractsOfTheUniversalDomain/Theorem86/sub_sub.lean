@@ -1,8 +1,3 @@
-/-ai
-The combinator sub is idempotent: sub of sub f equals sub f.
-
-Unfolding sub, the two retractions agree because the fixed neighbourhood system of sub f equals the fixed neighbourhood system of f.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

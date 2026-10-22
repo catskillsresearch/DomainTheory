@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the computable bisection of V: primitive recursiveness of the least-set-bit search and of clearing one bit, the bound on that search, and primitive recursiveness of the minimal level and mask, the upsampled mask, the splitting bit, and the left and right halves.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitV.Basic

@@ -1,6 +1,3 @@
-/-ai
-The order isomorphism from elements of the ring system to ideals sends a filter to its ideal and an ideal to its filter, with the two round trips given by the identities already proved. If the ideal of the first filter is contained in the ideal of the second and a neighbourhood belongs to the first, the subfamily law writes it as I(F). Each member of F lies in the ideal of the first filter, because upward closure and the inclusion criterion put the singleton neighbourhood in the filter, using that the member lies in the span of F. The ideal inclusion puts the member in the second ideal, and the finite-intersection lemma returns I(F). Conversely, if the first filter lies below the second, each singleton neighbourhood of a member of its ideal belongs to the second filter.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

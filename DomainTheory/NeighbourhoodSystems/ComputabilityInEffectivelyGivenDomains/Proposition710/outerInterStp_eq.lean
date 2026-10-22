@@ -1,8 +1,3 @@
-/-ai
-On the state packed as the pair of a with the pair of the accumulator and m, the outer step equals the inner intersection code of a, the accumulator, and m.
-
-Unfold the definition and simplify the unpairings of the packed pairs.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

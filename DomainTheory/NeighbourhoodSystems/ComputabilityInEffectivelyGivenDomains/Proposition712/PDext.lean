@@ -1,8 +1,3 @@
-/-ai
-Two elements of the power domain are equal when they contain the same neighbourhoods.
-
-This is extensionality of elements, applied in the power domain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

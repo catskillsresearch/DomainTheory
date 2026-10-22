@@ -1,0 +1,3 @@
+For a pointwise bounded family of approximable maps and an element x, the value of the supremum of the maps at x equals the supremum of the values of the members at x.
+
+The two sides are compared by antisymmetry. The value of the supremum of the maps is read off a principal element below x, where it equals the principal supremum of the family, and that principal supremum lies below the supremum of the values at x because each map is monotone. In the other direction, each member lies below the supremum of the maps, so its value at x lies below the value of that supremum.

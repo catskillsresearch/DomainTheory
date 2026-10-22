@@ -1,8 +1,3 @@
-/-ai
-If a complete lattice D is continuous, the retraction of the principal filter of an element x equals x.
-
-The codes of that principal filter are exactly the elements way-below x, and continuity says that the supremum of the elements way-below x is x.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

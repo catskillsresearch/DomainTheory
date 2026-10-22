@@ -1,8 +1,3 @@
-/-ai
-The step set of a neighbourhood and the master neighbourhood contains every strict map.
-
-Extensionality reduces membership to a relation. Every strict map relates the master to the master, and monotonicity along the inclusion of the neighbourhood in the master gives the relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-Flipping a string with head bit b complements that bit and flips the tail.
-
-This is the action of mapping negation along a nonempty list, by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

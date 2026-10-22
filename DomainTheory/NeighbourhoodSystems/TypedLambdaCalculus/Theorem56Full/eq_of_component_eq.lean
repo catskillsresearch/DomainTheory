@@ -1,8 +1,3 @@
-/-ai
-Two elements of the universal argument domain that have the same component at every index are equal.
-
-Each lies below the other, because each component of one lies below the corresponding component of the other by reading the assumed equality in that direction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

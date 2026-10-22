@@ -1,8 +1,3 @@
-/-ai
-The order relation is a fixed point of Scott's operator on subsets of pairs of naturals.
-
-Both inclusions are checked on a pair. A diagonal pair has equal components, so the order holds, and the successor of an ordered pair remains ordered. Conversely, an ordered pair is either equal, hence diagonal, or strictly ordered, in which case the predecessor of the second component is still at least the first and the successor clause recovers the pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

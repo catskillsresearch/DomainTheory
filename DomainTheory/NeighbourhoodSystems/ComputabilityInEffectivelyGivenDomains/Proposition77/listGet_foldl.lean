@@ -1,8 +1,3 @@
-/-ai
-Folding the indexing step from the pair of c plus one and a default value returns the defaulted c-th entry of the list.
-
-On the empty list both sides are the default. On a cons, the step decrements the countdown. If the index is zero, the countdown one selects the head. If the index is positive, it is a successor, the countdown is not one, the value is carried, and the inductive hypothesis reads the tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

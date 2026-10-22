@@ -1,8 +1,3 @@
-/-ai
-The joint upsampling step is primitive recursive. It increments the level component of a paired state and replaces the mask by one upsampling step.
-
-The upsampling step on the two components is primitive recursive. Pairing the successor of the left component with that step is primitive recursive, and it agrees with the joint step by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

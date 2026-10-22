@@ -1,8 +1,3 @@
-/-ai
-If ℓ is at least 2^k, the residue class of ℓ modulo 2^k is empty.
-
-A natural number cannot leave a remainder ℓ, because every remainder modulo 2^k is strictly less than 2^k.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

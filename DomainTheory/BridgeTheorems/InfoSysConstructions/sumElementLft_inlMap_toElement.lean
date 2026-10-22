@@ -1,8 +1,3 @@
-/-ai
-Extracting the left element of the left image of an element x, using the left bottom token as witness, recovers x.
-
-If a token a lies in the extracted element, its witnessing consistent set of tokens of the image entails the left token of a, and after the left part of the singleton of that token is identified with the singleton of a this is an entailment of a in A, so closure of x puts a in x. Conversely, if a lies in x, the singleton of a consists of tokens of x, and it contributes the left token of a to the image by the left consistency clause, the empty right part, and the entailment of that singleton in A.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

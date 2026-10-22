@@ -1,8 +1,3 @@
-/-ai
-The composite of two computable approximable maps is computable.
-
-The two graphs are recursively enumerable. Reindex one so that a code presents the domain index against a middle index, and the other so that it presents that middle index against the codomain index; conjoin them and project away the middle index. The composite relates a domain neighbourhood to a codomain neighbourhood exactly when some middle neighbourhood witnesses both relations. Surjectivity of the middle presentation turns that neighbourhood into an index, using that a related neighbourhood lies in the middle system, and an index conversely supplies the enumerated middle neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

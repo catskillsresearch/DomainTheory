@@ -1,8 +1,3 @@
-/-ai
-The union of two recursively enumerable elements of Pω is recursively enumerable.
-
-The disjunction of the two membership predicates is recursively enumerable, and it is identical to membership in the union.
-ai-/
 module
 
 public import Mathlib.Computability.RE

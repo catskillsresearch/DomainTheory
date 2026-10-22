@@ -1,41 +1,9 @@
-/-ai
-The domain of the counterexample is the neighbourhood system of Scott's Example 1.2 on the two-token set.
-
-The singleton of the token 1 is distinct from the singleton of the token 0.
-
-Extensionality of those singletons would force the token 1 to equal the token 0, which is false.
-
-The singleton of the token 1 is distinct from the master neighbourhood.
-
-Extensionality against the master, which contains every token, would put the token 0 into the singleton of 1, which is false.
-
-The singleton of the token 0 is distinct from the master neighbourhood.
-
-Extensionality against the master would put the token 1 into the singleton of 0, which is false.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example12
 
 @[expose] public section
-
-/-!
-# Exercise 4.12 (Scott 1981, PRG-19, Lecture IV)
-
-*Need an approximable `f : 𝒟 → 𝒟` have a **maximum** fixed point? Give an example where there are
-many fixed points.*
-
-**No.** The identity map `I_𝒟` has *every* element as a fixed point. Taking `𝒟` to be Scott's
-Example 1.2 (the fork `T` with `⊥ ⊏ {0}-total`, `⊥ ⊏ {1}-total` and the two total elements
-incomparable), `I_T` has three fixed points `⊥`, `elemZero`, `elemOne`; the two total ones are
-maximal and incomparable, so there is **no greatest fixed point** (`no_greatest_fixedPoint`) — in
-particular no maximum. This is the simplest counterexample to "a least fixed point is a maximum
-fixed point".
-
-Uses `Classical.choice` only through Example 1.2's finite `fin_cases`/`simp` classification, exactly
-as that file does.
--/
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise412
 

@@ -1,0 +1,3 @@
+The n-th approximant of the paired map is the pairing of the filters of the n-th approximants of the two component operators.
+
+Unfold the component operators as the approximable maps of the two components of the iterate. The round trip from an element through its approximable map and back to its filter, on both components, together with pairing those two components, gives the identity.

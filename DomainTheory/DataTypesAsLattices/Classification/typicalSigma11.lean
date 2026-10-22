@@ -1,6 +1,3 @@
-/-ai
-The typical Σ₁¹ set is the set of elements u of Pω for which there is a y such that u applied to {0}, and u applied to {1}, agree when both are applied to y.
-ai-/
 
 module
 

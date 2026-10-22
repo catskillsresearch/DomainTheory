@@ -1,6 +1,3 @@
-/-ai
-The extended presentation equivalence of a continuous lattice lands in those ideals of finite elements of the way-below information system that come from round information-system elements. It is the composite of the presentation-domains equivalence and the isomorphism from round information-system elements to that part of the ideal completion.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

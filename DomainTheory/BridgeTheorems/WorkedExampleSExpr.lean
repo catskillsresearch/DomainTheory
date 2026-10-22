@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the worked example of the S-expression domain: the identification of its right-hand side with a sum of a product, the unfolding of atom tokens, membership of an atom token in the closure of its singleton, the fold and unfold actions of the domain-equation isomorphism, the existence of the neighbourhood, ideal, and domain-equation isomorphisms, and the action of the identity Scott-continuous map on elements.
-ai-/
 module
 
 public import DomainTheory.BridgeTheorems.WorkedExampleSExpr.Basic

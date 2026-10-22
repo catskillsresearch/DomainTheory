@@ -1,8 +1,3 @@
-/-ai
-For a compatible sequence x, the set of stage embeddings of its coordinates is directed in the inverse-limit order.
-
-Successor comparisons make the sequence of those embeddings monotone, and the range of a monotone sequence of natural numbers is directed.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

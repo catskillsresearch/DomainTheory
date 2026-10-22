@@ -1,8 +1,3 @@
-/-ai
-Interpreting the closed K term in any environment yields the K combinator.
-
-Unfold both sides and simplify the interpretation and the environment update.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

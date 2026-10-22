@@ -1,8 +1,3 @@
-/-ai
-Finitary union of finite sets of raw lambda tokens is associative.
-
-By extensionality, membership in a union of a union is the membership rule for finitary union. The three disjuncts on one side rearrange into the two nested disjuncts on the other side, and conversely.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

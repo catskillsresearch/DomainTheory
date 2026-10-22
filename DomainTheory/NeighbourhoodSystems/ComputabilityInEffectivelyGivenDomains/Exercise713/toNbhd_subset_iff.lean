@@ -1,8 +1,3 @@
-/-ai
-The hint neighbourhood of n is contained in the hint neighbourhood of k if and only if n is included in k.
-
-From the containment, reflexivity places n in its own neighbourhood and hence in the neighbourhood of k. From the inclusion, transitivity sends every index included in n to an index included in k.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

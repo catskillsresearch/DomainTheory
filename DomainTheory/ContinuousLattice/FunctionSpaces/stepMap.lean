@@ -1,6 +1,3 @@
-/-ai
-The step map determined by e and e' is the step function packaged as a Scott map. It is Scott-continuous because the step function preserves directed suprema.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

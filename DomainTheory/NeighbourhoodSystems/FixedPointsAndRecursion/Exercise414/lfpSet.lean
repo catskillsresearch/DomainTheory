@@ -1,6 +1,3 @@
-/-ai
-The least fixed point of an operator on subsets is the intersection of all pre-fixed points: the set of elements that belong to every subset whose image is contained in the subset.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

@@ -1,0 +1,3 @@
+If a Scott system is the union of a nonempty directed family of subsystems, then a neighbourhood of the image of the union under a construct is a neighbourhood of the image of some member.
+
+The proof is by induction on the construct. A constant object does not depend on the argument, so any member works. The identity variable is the given union. A sum neighbourhood is the master, a left copy, or a right copy: any member is a subsystem of the union, so the masters of the sum images agree, and each copy uses the inductive hypothesis. A product neighbourhood is a product of two component neighbourhoods; the inductive hypotheses give two members, directedness supplies a common upper bound, and the subsystem law on each component carries the neighbourhoods to that bound.

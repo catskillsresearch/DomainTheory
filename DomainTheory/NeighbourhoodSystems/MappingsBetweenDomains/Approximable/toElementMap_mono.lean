@@ -1,8 +1,3 @@
-/-ai
-The elementwise action of an approximable map is monotone.
-
-A neighbourhood of the image of the smaller element is witnessed by a neighbourhood of that element. The same neighbourhood belongs to the larger element, and the same relation remains.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

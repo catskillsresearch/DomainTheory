@@ -1,8 +1,3 @@
-/-ai
-The bottom element lies below every element.
-
-A token of the bottom element is entailed by the singleton of the bottom token. That singleton is contained in every element, because every element contains the bottom token, and deductive closure puts the entailed token in the element.
-ai-/
 
 module
 

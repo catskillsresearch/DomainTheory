@@ -1,8 +1,3 @@
-/-ai
-The bar step is Scott continuous.
-
-The outer graph is Scott continuous in its parameter because, for each middle argument, the inner graph is Scott continuous in that parameter by Scott continuity of the bar step body in B.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

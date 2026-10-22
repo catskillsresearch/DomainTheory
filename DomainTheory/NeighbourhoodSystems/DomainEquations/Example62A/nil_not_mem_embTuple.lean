@@ -1,8 +1,3 @@
-/-ai
-The empty string does not lie in a tagged tuple.
-
-A membership witness equates the empty string with the cons of the tag onto a slot body, and a cons is never empty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

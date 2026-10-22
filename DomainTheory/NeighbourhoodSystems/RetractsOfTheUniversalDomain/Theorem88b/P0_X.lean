@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood enumerated by the re-pointed presentation at n is the neighbourhood enumerated by the original presentation at the swapped index.
-
-The equality is the definition of the reindexing.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable

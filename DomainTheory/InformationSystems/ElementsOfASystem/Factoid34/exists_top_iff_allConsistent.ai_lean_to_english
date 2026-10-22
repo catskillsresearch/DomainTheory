@@ -1,0 +1,3 @@
+An element whose carrier is the whole token set exists if and only if every finite set of tokens is consistent.
+
+Such an element makes every finite set consistent, because every finite set is contained in its carrier. If every finite set is consistent, the top element is an element with full carrier.

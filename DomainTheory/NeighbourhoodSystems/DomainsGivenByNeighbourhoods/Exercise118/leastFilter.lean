@@ -1,6 +1,3 @@
-/-ai
-The least filter containing a finitely consistent family of neighbourhoods consists of the neighbourhoods that contain some finite intersection of members of the family. The master is admitted by the empty intersection. The intersection of two such neighbourhoods is admitted by concatenating their witnessing sequences: finite consistency makes the combined intersection a neighbourhood, and that intersection sits inside the intersection of the two neighbourhoods. A larger neighbourhood is admitted by the same finite sequence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

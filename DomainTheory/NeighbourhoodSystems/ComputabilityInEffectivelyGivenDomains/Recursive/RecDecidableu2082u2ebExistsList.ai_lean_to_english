@@ -1,0 +1,3 @@
+If a binary relation is recursively decidable, then so is the relation of a list code and a parameter which says that some entry of the decoded list stands in the relation to the parameter.
+
+The characteristic is the list-existential character of the binary decider. It is primitive recursive, and it equals one exactly when such an entry exists, because that character lemma matches the decider on pairs.

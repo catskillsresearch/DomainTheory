@@ -1,6 +1,3 @@
-/-ai
-Assuming every level of the function-space tower is a continuous lattice, Scott's Theorem 4.4 homeomorphism identifies D_∞, with the inverse-limit subspace topology induced from the product, and [D_∞ → D_∞], with the pointwise topology of Definition 3.1. Proposition 4.1 makes D_∞ a continuous lattice. The inverse-limit Scott topology agrees with the topology induced from the product, and Theorem 3.3 identifies the Scott topology of the function space with the pointwise topology, so the homeomorphism already obtained for the Scott topologies transports along these identifications. The underlying maps remain i_∞ and j_∞.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

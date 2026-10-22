@@ -1,6 +1,3 @@
-/-ai
-The kernel of a is the restricted equivalence relating x and y when application of a to x equals application of a to y. Symmetry reverses the equality, and transitivity composes the two equalities.
-ai-/
 
 module
 

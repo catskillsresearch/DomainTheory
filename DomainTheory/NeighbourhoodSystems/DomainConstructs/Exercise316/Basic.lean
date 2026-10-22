@@ -1,8 +1,3 @@
-/-ai
-If every fiber of a set of pairs is contained in the corresponding fiber of another set, then the first set is contained in the second. The n-th projection relates W to X exactly when W is an iterate neighbourhood, X is a neighbourhood, and the n-th fiber of W is contained in X. The element map of that projection sends an iterate element to its n-th component.
-
-A pair lies in the fiber of its index, so the fiber inclusion places it in the larger set. The relation identity is definitional. For the element map, extend by element extensionality. A witnessing neighbourhood moves, by upward closure, into the pinning of the target at copy n: the pinned fiber is the target at that copy and the master at every other copy. Conversely, that pinning itself witnesses the relation, since its n-th fiber is the target.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315
@@ -40,72 +35,21 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316.le_
 
 @[expose] public section
 
-/-!
-# Exercise 3.16 (Scott 1981, PRG-19, §3) — the infinite iterate `𝒟^∞`
-
-Scott: for a neighbourhood system `𝒟` over `Δ`, let `Δ^∞ = ⋃ₙ 1ⁿ0Δ` be infinitely many disjoint
-copies of `Δ`, and let `𝒟^∞` be the *least* family of subsets with
-
-1. `Δ^∞ ∈ 𝒟^∞`, and
-2. `X ∈ 𝒟`, `Y ∈ 𝒟^∞` ⟹ `0X ∪ 1Y ∈ 𝒟^∞`.
-
-He asks to show `𝒟^∞` is a neighbourhood system over `Δ^∞`, that `𝒟^∞ ≅ 𝒟 × 𝒟^∞`, and that the
-elements of `|𝒟^∞|` are in one-one correspondence with arbitrary infinite sequences `⟨xₙ⟩` of
-elements `xₙ ∈ |𝒟|`, via the combinations of neighbourhoods
-
-`0X₀ ∪ 10X₁ ∪ ⋯ ∪ 1ⁿ0Xₙ ∪ ⋯`   (with all but finitely many `Xₘ = Δ`).
-
-**Model.** We take the token type to be `ℕ × α`, where `(n, a)` is "the token `a ∈ Δ` sitting in
-the `n`-th copy" (i.e. Scott's `1ⁿ0a`). A neighbourhood `0X₀ ∪ 1ⁿ0Xₙ ∪ ⋯` is then exactly the set
-`{(i, a) ∣ a ∈ Xᵢ}`, recovered from `W` by its **fibers** `fiber W i = {a ∣ (i, a) ∈ W}`. The
-"least family" description is equivalent to: `W ∈ 𝒟^∞` iff every fiber is a neighbourhood and all
-but finitely many fibers equal `Δ`. (Closure under (2) and the base (1) generate exactly these, and
-no fewer, because (2) is the one-step "cons" and the cofinite-`Δ` condition is its iterate.)
-
-The element-level payoff is the clean order-isomorphism
-
-`iterSeqEquiv : |𝒟^∞| ≃o (ℕ → |𝒟|)`
-
-(Scott's "one-one correspondence with infinite sequences"), from which `𝒟^∞ ≅ 𝒟 × 𝒟^∞` falls out by
-the shift `(ℕ → E) ≃o E × (ℕ → E)`.
-
-Everything is **choice-free in spirit**; the classical content is only what is inherited from the
-project's `Element.ext`/`prodEquiv` machinery, as elsewhere in §3.
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
 variable {α : Type*}
 
-/-! ### Fibers of a set of `(copy index, token)` pairs. -/
-
 
 theorem subset_of_fiber_subset {W W' : Set (ℕ × α)} (h : ∀ i, fiber W i ⊆ fiber W' i) :
     W ⊆ W' := fun ⟨i, _⟩ ha => h i ha
-
-/-! ### The pinning neighbourhood `single n X` (Scott's `1ⁿ0X`, rest `Δ`). -/
 
 variable (V : NeighborhoodSystem α)
 
 
 variable {V}
 
-
-/-! ### The system `𝒟^∞`. -/
-
-
-/-! ### Components and sequences. -/
-
-
-/-! ### The two round-trips. -/
-
-
-/-! ### Scott's two conclusions. -/
-
-
-/-! ### The coordinate projections `𝒟^∞ → 𝒟` (used in Exercise 3.24(ii)). -/
 
 open ApproximableMap
 

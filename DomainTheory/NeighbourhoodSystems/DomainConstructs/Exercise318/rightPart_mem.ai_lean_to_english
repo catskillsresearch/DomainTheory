@@ -1,0 +1,3 @@
+The right content of a sum neighbourhood is a neighbourhood of the second system.
+
+A sum neighbourhood is the sum master, a left copy, or a right copy. The right content of the master is the second master, the right content of a left copy is the second master because that copy is nonempty, and the right content of a right copy is the underlying neighbourhood.

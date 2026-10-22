@@ -1,8 +1,3 @@
-/-ai
-The directed union x of the iterates of an approximable endomap f, starting from a pre-fixed point a, is a fixed point of f. The directed union of the iterates of f starting from a pre-fixed point a lies below every element z such that a lies below z and f(z) lies below z.
-
-The numbered name example_407 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407.fixAbove_isFixed

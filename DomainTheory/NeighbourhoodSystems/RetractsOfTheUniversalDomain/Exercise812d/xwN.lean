@@ -1,6 +1,3 @@
-/-ai
-The neighbourhood index of an X-sub-step word is its left component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

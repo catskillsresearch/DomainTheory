@@ -1,23 +1,43 @@
 # Theorem 3.3
 
-**THEOREM 3.3 (The second recursion theorem).** Take a LAMBDA-definable element $v$ such that:
+## Human-English
 
-*(i)* $\mathbf{val}(v(n)) = \lambda m \in \omega.\, \mathbf{val}(n)(\mathbf{apply}(m)(\mathbf{num}(m)))$,
+@import "1976_Theorem_3_3.english" {code_block=false}
 
-and then define a combinator by:
+## AI: Human-English to AI-Lean
 
-*(ii)* $\mathbf{rec} = \lambda n \in \omega.\, \mathbf{apply}(v(n))(\mathbf{num}(v(n)))$.
+**DataTypesAsLattices/Enumeration/theorem_3_3_from_v.lean**
 
-Then we have a primitive recursive function with this fixed-point property:
+@import "theorem_3_3_from_v.lean"
 
-*(iii)* $\mathbf{val}(\mathbf{rec}(n)) = \mathbf{val}(n)(\mathbf{rec}(n))$.
+**DataTypesAsLattices/Enumeration/theorem_3_3_i.lean**
 
-Note that if $u$ is LAMBDA-definable, then we find first an $n$ such that $\mathbf{val}(n) = u$. Next we calculate $k = \mathbf{rec}(n)$. This effectively gives us an integer such that $\mathbf{val}(k) = u(k)$. Gödel numbers represent expressions (combinations in $\mathbf{G}$), and $\mathbf{val}$ maps the numbers to the values denoted by the expressions in the model. The $k$ just found thus represents an expression whose value is defined in terms of its own Gödel number. In recursion theory there are many applications of this result. Another familiar argument shows:
+@import "theorem_3_3_i.lean"
 
-**Lean 4**
+**DataTypesAsLattices/Enumeration/theorem_3_3_ii.lean**
 
-- [DataTypesAsLattices/Enumeration/theorem_3_3_from_v.lean](theorem_3_3_from_v.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_3_i.lean](theorem_3_3_i.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_3_ii.lean](theorem_3_3_ii.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_3.lean](theorem_3_3.lean)
-- [DataTypesAsLattices/Enumeration/theorem_3_3_val.lean](theorem_3_3_val.lean)
+@import "theorem_3_3_ii.lean"
+
+**DataTypesAsLattices/Enumeration/theorem_3_3.lean**
+
+@import "theorem_3_3.lean"
+
+**DataTypesAsLattices/Enumeration/theorem_3_3_val.lean**
+
+@import "theorem_3_3_val.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_3_3_from_v.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_3_i.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_3_ii.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_3.ai_lean_to_english" {code_block=false}
+
+@import "theorem_3_3_val.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_3_3.ai_english_concordance" {code_block=false}

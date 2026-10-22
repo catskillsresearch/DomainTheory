@@ -1,8 +1,3 @@
-/-ai
-The greedy sequence at stage zero equals the enumerated set at zero.
-
-The equality holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

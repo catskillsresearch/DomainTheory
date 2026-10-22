@@ -1,8 +1,3 @@
-/-ai
-A consistent finite set of raw lambda tokens entails the bottom token.
-
-Consistency is consistency at some stage. At stage zero, stage-zero entailment of bottom is that consistency. At a successor stage, the successor consistency is the new disjunct of successor entailment of bottom.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,6 +1,3 @@
-/-ai
-The set of points excluded by a cofinite filter is the set of natural numbers whose singleton complements belong to the filter.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

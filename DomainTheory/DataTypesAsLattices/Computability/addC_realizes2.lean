@@ -1,8 +1,3 @@
-/-ai
-The addition combinator realizes addition of natural numbers.
-
-Simplify by the application equation for the addition combinator, the evaluation of primitive recursion on numerals, and the value of that recursion for addition.
-ai-/
 module
 
 public import Mathlib.Computability.RE

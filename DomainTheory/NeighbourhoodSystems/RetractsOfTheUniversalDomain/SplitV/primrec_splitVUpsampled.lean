@@ -1,8 +1,3 @@
-/-ai
-splitVUpsampled is primitive recursive.
-
-The successor of the minimal level is primitive recursive. Upsampling from the minimal level to that successor on the minimal mask agrees with the upsampled mask after the unpair-pair identities.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

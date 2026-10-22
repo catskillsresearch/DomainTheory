@@ -1,8 +1,3 @@
-/-ai
-The product of the embedding of a word with the infinite word of that word equals the infinite word.
-
-Rewrite the product as the action of prepending, and apply the fixed-point equation of that approximable map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

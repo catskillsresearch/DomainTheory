@@ -1,6 +1,3 @@
-/-ai
-The leaf 01 is the singleton consisting of the token 4.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

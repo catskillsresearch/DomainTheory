@@ -1,8 +1,3 @@
-/-ai
-The bottom element of Example 1.2 is strictly below the total element determined by {0}.
-
-Every neighbourhood of the bottom element is the master, which belongs to the larger element. The reverse inequality would put {0} in the bottom filter, forcing {0} to be the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

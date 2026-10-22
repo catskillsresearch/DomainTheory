@@ -1,8 +1,3 @@
-/-ai
-Every element of a separated sum is the bottom element, the left image of some element of the left system, or the right image of some element of the right system.
-
-Classically, if some left token lies in the element, the left extraction at that token is an element whose left image equals the original element. Otherwise, if some right token lies in the element, the right extraction supplies a right image equal to it. If neither sort of token occurs, the element equals the bottom element.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

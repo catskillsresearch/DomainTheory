@@ -1,6 +1,3 @@
-/-ai
-The generic domain of finite or infinite sequences over a decidable alphabet is the neighbourhood system of nested-or-disjoint sets given by the sequence-neighbourhood predicate, with master the set of all words. The empty word witnesses that the master is nonempty, the empty cone is a neighbourhood by the empty-cone law, the nested-or-disjoint law is the sequence law, and every neighbourhood is contained in the set of all words.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

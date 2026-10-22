@@ -1,8 +1,3 @@
-/-ai
-If two tuples with the same tag are equal, then their components are equal.
-
-Each component inclusion is the subset characterization of embTuple applied to one direction of the equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

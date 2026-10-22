@@ -1,6 +1,3 @@
-/-ai
-The carrier of a family meet is the set of tokens that belong to the carrier of every element of the family.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41

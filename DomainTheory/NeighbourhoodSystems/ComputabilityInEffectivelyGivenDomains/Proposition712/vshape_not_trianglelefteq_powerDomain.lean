@@ -1,8 +1,3 @@
-/-ai
-The flat two-point domain is not a subdomain of its power domain.
-
-A subdomain relation would force the domain to have a greatest element, and the flat two-point domain has none.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

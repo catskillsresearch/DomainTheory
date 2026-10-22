@@ -1,0 +1,3 @@
+The lift sends each total element to the prescribed total value.
+
+Extensionality reduces the equality to membership of a codomain neighbourhood. Such a neighbourhood is related to a domain neighbourhood that contains the singleton of the total element. If that neighbourhood is a cone, the singleton lies in the cone of a prefix, and the comparison of partial and total values carries the membership. If it is a singleton, the inclusion forces the two strings to agree, so the membership is already that of the prescribed value. Conversely, the singleton contains itself, is a neighbourhood of the total element, and is related to every neighbourhood of the prescribed value.

@@ -1,6 +1,3 @@
-/-ai
-The generalized atom pair, along a history of pairs of Booleans, starts at depth zero from the two master neighbourhoods. At each later depth it splits the current pair against the next set of the first family according to the first bit, then splits the result against the next set of the second family according to the second bit.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

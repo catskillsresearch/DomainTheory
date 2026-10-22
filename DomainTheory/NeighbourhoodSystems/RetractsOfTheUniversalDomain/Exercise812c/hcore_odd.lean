@@ -1,8 +1,3 @@
-/-ai
-At every odd depth 2n+1, the generic atom of combinedX along a Boolean sequence is empty if and only if the generic atom of combinedY along the same sequence is empty.
-
-The sequence is replaced by the re-interleaving of its de-interleaving. The odd half-step identities, fed by the even closed forms of the two components of atomPair, rewrite both atoms as the two outputs of the X-step at the de-interleaved signs, at depth n, and at the first bit of that pair. The matching-emptiness clause of the bit-general X-step specification, reversed, is that equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

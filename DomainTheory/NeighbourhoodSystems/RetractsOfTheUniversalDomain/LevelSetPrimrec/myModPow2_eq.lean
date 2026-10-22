@@ -1,10 +1,3 @@
-/-ai
-The derived remainder equals the remainder of m modulo two to the power s.
-
-Unfolding the definition and rewriting the quotient, the quotient times the power plus
-the ordinary remainder equals m, by commuting the product and the division-remainder
-identity. Arithmetic then gives the claim.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

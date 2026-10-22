@@ -1,0 +1,3 @@
+At every depth and for every sign sequence, the two components of atomPair are empty together, and each component is either empty or a neighbourhood of its system.
+
+The proof is by induction on the depth. At depth zero both components are the masters, which are neighbourhoods, and neither master is empty. At a successor the first bit selects intersection or difference on the first side and the corresponding piece of the split on the second side. Matching emptiness is the split specification, and the direct side stays empty or a neighbourhood by the intersection or difference closure. The second bit repeats the same step with the sides exchanged, and the two emptiness equivalences are composed.

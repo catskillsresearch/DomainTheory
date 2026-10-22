@@ -1,8 +1,3 @@
-/-ai
-The distributive extension of primitive recursion at the numeral zero equals the base value.
-
-A member of the union lies at the unique index in the numeral zero, where the primitive-recursive value is the base, and conversely membership in the base is membership at index zero.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

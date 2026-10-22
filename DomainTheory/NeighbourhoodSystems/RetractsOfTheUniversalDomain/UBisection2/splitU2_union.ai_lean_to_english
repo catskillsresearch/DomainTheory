@@ -1,0 +1,3 @@
+The left-hand and right-hand pieces of the canonical split reunite to the original neighbourhood.
+
+Rewrite both pieces as cuts of the neighbourhood by the open ray below the midpoint and the closed ray from the midpoint. A point of either cut lies in the neighbourhood. A point of the neighbourhood lies strictly below the midpoint or at least at the midpoint, and those two cases are the two cuts.

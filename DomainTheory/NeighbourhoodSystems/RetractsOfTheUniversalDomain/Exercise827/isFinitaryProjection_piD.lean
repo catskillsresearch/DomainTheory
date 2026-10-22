@@ -1,8 +1,3 @@
-/-ai
-The product of every approximable self-map d, as a self-map of the function space, is a finitary projection.
-
-The step-closure criterion for the product applies to the step-closure formula for the product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

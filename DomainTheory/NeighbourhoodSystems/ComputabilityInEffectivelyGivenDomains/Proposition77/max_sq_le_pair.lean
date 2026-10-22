@@ -1,8 +1,3 @@
-/-ai
-The square of the maximum of i and j is at most the pair of i and j.
-
-Unfolding the pairing function, if i is strictly below j the maximum is j and the pair bound gives the square, and otherwise the maximum is i and the other branch gives the square.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

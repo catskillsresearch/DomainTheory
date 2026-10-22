@@ -1,8 +1,3 @@
-/-ai
-The approximable map of a function-space filter φ relates X to Y if and only if the step neighbourhood of X and Y belongs to φ.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

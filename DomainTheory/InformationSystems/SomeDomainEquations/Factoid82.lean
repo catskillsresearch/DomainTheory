@@ -1,8 +1,3 @@
-/-ai
-The lambda right-hand side of an information system A equals the sum of A with the function space of the lambda system of A with itself.
-
-The numbered name theorem_82 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamRhs_eq_sum_function

@@ -1,8 +1,3 @@
-/-ai
-The identity Scott-continuous endomap of the S-expression system fixes every element.
-
-This is the action of the identity approximable map on elements.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

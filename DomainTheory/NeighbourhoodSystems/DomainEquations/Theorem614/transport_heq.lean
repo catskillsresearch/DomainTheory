@@ -1,8 +1,3 @@
-/-ai
-Transport of an endomorphism along an equality of its object is heterogeneously equal to the original endomorphism.
-
-Cases on the equality reduce the statement to reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

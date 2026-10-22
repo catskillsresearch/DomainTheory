@@ -1,8 +1,3 @@
-/-ai
-The universal automaton accepts every binary word.
-
-Every word is accepted, because the state it reaches lies in the accept set of all states.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular

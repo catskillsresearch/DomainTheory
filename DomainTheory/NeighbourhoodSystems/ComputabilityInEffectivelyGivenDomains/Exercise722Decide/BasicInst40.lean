@@ -1,6 +1,3 @@
-/-ai
-This file introduces decidability of emptiness for the denotation of a fragment expression, by cases on the emptiness bit and the lemma that the bit is true exactly when the denotation is empty. It evaluates that bit on the intersection of the singleton containing false and the singleton containing true.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

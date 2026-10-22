@@ -1,0 +1,3 @@
+A natural number belongs to the bottom element of the powerset system P if and only if it equals 0.
+
+Membership in the closure of the empty set is entailment by the empty set. That entailment is equality with 0, because the empty set has no members. Conversely, equality with 0 is an entailment by the empty set.

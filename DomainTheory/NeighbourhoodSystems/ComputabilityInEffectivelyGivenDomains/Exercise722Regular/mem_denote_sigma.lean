@@ -1,8 +1,3 @@
-/-ai
-Every word belongs to the denotation of the universal expression.
-
-Membership is membership of the word in the set of all words.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

@@ -1,6 +1,3 @@
-/-ai
-Updating an environment at an index replaces the value stored at that index and leaves every other index unchanged.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

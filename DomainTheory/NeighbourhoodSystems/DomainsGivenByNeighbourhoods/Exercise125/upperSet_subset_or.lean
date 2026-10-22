@@ -1,8 +1,3 @@
-/-ai
-In a linear order, any two upper sets are nested.
-
-Case on whether the first upper set is contained in the second. If it is, that is the left alternative. If the containment fails, some token lies in the first set and fails to lie in the second. For a token of the second set, compare the two tokens. If the chosen token lies below the second token, the upper-set law of the first set puts the second token in the first set. If the second token lies below the chosen token, the upper-set law of the second set puts the chosen token in the second set, contradicting the choice.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

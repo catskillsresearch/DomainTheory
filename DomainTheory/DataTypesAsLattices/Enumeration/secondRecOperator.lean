@@ -1,6 +1,3 @@
-/-ai
-The second recursion operator is the uniform operator sending an element u to the map m ↦ u(apply(m)(num(m))). It is introduced as S applied to K of the application combinator, applied to S(S(K S) K) of K of the substitution combinator.
-ai-/
 
 module
 

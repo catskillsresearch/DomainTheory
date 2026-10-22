@@ -1,8 +1,3 @@
-/-ai
-If the first injection is injective, Tarski's map is injective.
-
-Given equal values, split on membership of each argument in the fixed set. If both lie in it, the map agrees with the first injection and its injectivity applies. If one lies in it and the other does not, the equality identifies the image of the member with the chosen preimage of the non-member, so the non-member equals the second injection applied to that image and therefore lies in the fixed set. If neither lies in it, apply the second injection to the equality and rewrite each side by the preimage law.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

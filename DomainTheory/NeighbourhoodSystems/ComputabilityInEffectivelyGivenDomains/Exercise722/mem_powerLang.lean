@@ -1,8 +1,3 @@
-/-ai
-A word lies in the power language of another word if and only if it equals some finite repetition of that word.
-
-The two sides are the definition of the power language.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

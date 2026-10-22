@@ -1,8 +1,3 @@
-/-ai
-Forming the hint presentation of an inclusion structure and reading off inclusion again recovers the original relation.
-
-The recovered relation says that the hint neighbourhood of n is contained in the hint neighbourhood of m, which is inclusion of n in m.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

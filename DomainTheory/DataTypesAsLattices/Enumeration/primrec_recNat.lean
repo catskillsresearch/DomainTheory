@@ -1,8 +1,3 @@
-/-ai
-If a function v is primitive recursive, then its natural recursion code is primitive recursive.
-
-Unfold the recursion code. It is the application of v to the numeral code of v, and application of codes and the numeral code are primitive recursive.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

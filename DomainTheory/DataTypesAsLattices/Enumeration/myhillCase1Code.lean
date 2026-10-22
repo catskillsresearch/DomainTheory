@@ -1,6 +1,3 @@
-/-ai
-The first Myhill case code of n and m is the code obtained by applying the intersection code to n and then to the Myhill filter code of m.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

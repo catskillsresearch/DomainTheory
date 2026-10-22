@@ -1,8 +1,3 @@
-/-ai
-The map of a set U of elements relates X to Y if and only if X is a neighbourhood and either Y is the whole token set or Y is empty and the basic open of X is contained in U.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise122

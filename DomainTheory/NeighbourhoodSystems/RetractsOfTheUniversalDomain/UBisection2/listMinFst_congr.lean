@@ -1,8 +1,3 @@
-/-ai
-Two nonempty, nondegenerate, unit-interval-bounded presenting lists of the same set of intervals have the same minimum first component.
-
-Each minimum lies in the other presented set, by membership of the minimum in its own presented intervals and the equality of the two presented sets. Each minimum is then at most the other by the lower bound, so the two minima are equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.SplitU

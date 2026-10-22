@@ -1,6 +1,3 @@
-/-ai
-The order isomorphism from the elements of the coalesced sum of the lifts of D and E to the elements of the separated sum is toSumLift, with inverse fromSumLift. The two round trips are the corresponding cancellation lemmas. In one direction of the order law, a neighbourhood of the smaller coalesced element is the master, a proper left copy, or a proper right copy. The master belongs to the larger image. An inner lift master is excluded by the properness witness, and a proper false-tagged neighbourhood is carried across by the left or right membership characterization of toSumLift. In the other direction, a neighbourhood of the image is the sum master, a left tag, or a right tag, and the inequality of the images rebuilds the corresponding coalesced membership.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

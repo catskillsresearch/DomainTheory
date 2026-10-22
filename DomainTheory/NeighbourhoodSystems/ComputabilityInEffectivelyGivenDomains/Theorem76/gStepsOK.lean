@@ -1,6 +1,3 @@
-/-ai
-A list of indices is a valid chain of steps for a map from a starting index when the list is empty, and when the map relates the neighbourhood at the current index to the neighbourhood at the head and the tail is a valid chain from the head.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

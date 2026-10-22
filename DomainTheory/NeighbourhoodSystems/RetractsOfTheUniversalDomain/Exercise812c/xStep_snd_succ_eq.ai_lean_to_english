@@ -1,0 +1,3 @@
+The second output of the X-step at either sign equals the second component of atomPair at depth n intersected with XPseq at n when the bit is true, and intersected with the complement of that XPseq set in the master of D₁ when the bit is false.
+
+The invariant supplies the split hypotheses. The true bit is the intersection formula. For the false bit, the two split pieces union to the second component and meet emptily, so the false piece is that component minus XPseq. Since the component lies in the master, the difference agrees with the intersection against the complement in the master.

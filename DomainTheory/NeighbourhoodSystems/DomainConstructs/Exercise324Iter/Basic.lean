@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the infinite pairing of a sequence of maps, the order isomorphism between maps into an iterate and sequences of maps, the pointwise transport of order isomorphisms, the induced domain isomorphism, the quantifier swap behind the pairing, the elementwise value of the pairing, monotonicity of projection composites, and the coordinatewise criterion for an inequality of maps into an iterate.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316
@@ -15,27 +12,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter.le_of_projComp_le
 
 @[expose] public section
-
-/-!
-# Exercise 3.24(ii) (Scott 1981, PRG-19, §3) — `(𝒟₀ → 𝒟₁^∞) ≅ (𝒟₀ → 𝒟₁)^∞`
-
-Using the infinite iterate `𝒟^∞` of Exercise 3.16 and the function space `(𝒟₀ → 𝒟₁)` of
-Definition 3.8 / Theorem 3.10, we establish Scott's isomorphism (ii):
-
-`(𝒟₀ → 𝒟₁^∞) ≅ (𝒟₀ → 𝒟₁)^∞`.
-
-The crux is the order-isomorphism *on approximable maps*
-
-`funIterEquiv : Hom(𝒟₀, 𝒟₁^∞) ≃o (ℕ → Hom(𝒟₀, 𝒟₁))`,
-
-`f ↦ (n ↦ projₙ ∘ f)` with inverse the "infinite pairing" `g ↦ mapOfSeq g`, whose value is the
-sequence `mapOfSeq g (x) = ⟨gₙ(x)⟩ₙ`. Transporting through Theorem 3.10's `funSpaceEquiv` (twice,
-the second time pointwise via `OrderIso.piCongrRight`) and Exercise 3.16's `iterSeqEquiv` yields the
-domain isomorphism.
-
-Everything is **choice-free in spirit**; the only classical input is inherited from `Element.ext`,
-`funSpaceEquiv` and the `choose` in the `∃/∀`-swap lemma, exactly as elsewhere in §3.
--/
 
 namespace DomainTheory.NeighbourhoodSystems
 

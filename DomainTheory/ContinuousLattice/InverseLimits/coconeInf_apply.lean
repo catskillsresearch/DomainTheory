@@ -1,8 +1,3 @@
-/-ai
-The mediating map of a cocone, evaluated at a compatible sequence, equals the supremum of the component values at the coordinates.
-
-The equality is the definition of the mediating map.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

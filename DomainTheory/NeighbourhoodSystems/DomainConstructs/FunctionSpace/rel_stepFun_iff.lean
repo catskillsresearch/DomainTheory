@@ -1,8 +1,3 @@
-/-ai
-A map into a function space relates an input to a step intersection if and only if it relates that input to each step of the list.
-
-The argument inducts on the list. The empty step neighborhood is the master of the function space, related by the master relation. A cons cell is the intersection of the head step and the tail. Monotonicity separates a relation to that intersection into the two factors, the tail is a neighborhood because the intersection is nonempty, and the inductive hypothesis handles the tail. In the other direction the two relations combine by right intersection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

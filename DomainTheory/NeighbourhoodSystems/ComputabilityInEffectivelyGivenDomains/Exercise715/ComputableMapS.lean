@@ -1,6 +1,3 @@
-/-ai
-Relative to bare presentations, an approximable map is computable when the relation holding of indices n and m precisely when the n-th enumerated neighbourhood is related by the map to the m-th is recursively enumerable.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

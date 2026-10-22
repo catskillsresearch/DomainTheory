@@ -1,8 +1,3 @@
-/-ai
-The set of codes of any filter of the way-below neighbourhood system is nonempty.
-
-Bottom belongs to the set of codes.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

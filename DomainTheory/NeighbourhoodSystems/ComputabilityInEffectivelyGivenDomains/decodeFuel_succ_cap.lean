@@ -1,8 +1,3 @@
-/-ai
-If the tag of a code is 3, then one extra unit of fuel decodes it as the intersection of the two subcodes decoded with the remaining fuel, or as nothing if either subcode fails.
-
-Unfold the decoder and substitute the tag. The two sides agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

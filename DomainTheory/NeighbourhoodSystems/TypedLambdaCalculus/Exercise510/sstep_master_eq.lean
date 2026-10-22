@@ -1,8 +1,3 @@
-/-ai
-The step set of the two master neighbourhoods is the set of all strict maps.
-
-Extensionality reduces membership to the master relation of the underlying map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

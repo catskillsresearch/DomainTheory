@@ -1,8 +1,3 @@
-/-ai
-A fix chain of length n for a consistent set w of function tokens remains a fix chain of length n + k for every k.
-
-The argument is by induction on k. The zero case is the given chain, and the successor case is the one-step padding lemma.
-ai-/
 
 module
 

@@ -1,6 +1,3 @@
-/-ai
-That partial order has a least element, the filter whose only neighbourhood is the master. This packages Scott's Factoid 1.8a.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

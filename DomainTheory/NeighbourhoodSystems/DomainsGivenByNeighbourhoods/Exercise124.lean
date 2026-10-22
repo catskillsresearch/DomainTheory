@@ -1,8 +1,3 @@
-/-ai
-Every element approximates some total element.
-
-The numbered name example_124 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124.exists_total_ge

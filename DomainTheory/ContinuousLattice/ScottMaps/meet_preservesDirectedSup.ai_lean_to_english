@@ -1,0 +1,3 @@
+On a continuous lattice, meet with a fixed element preserves directed suprema.
+
+For a nonempty directed set S, every element way below the meet of x with the supremum of S lies below the supremum of the meets of x with members of S. The way-below criterion for a directed supremum supplies a member w of S below which that element lies, the meet of x with w belongs to the image, and the element lies below that meet. The continuous-lattice decomposition replaces the supremum of such way-below elements by the meet with the supremum. In the other direction, the meet of x with a member of S lies below the meet of x with the supremum, because the member lies below the supremum.

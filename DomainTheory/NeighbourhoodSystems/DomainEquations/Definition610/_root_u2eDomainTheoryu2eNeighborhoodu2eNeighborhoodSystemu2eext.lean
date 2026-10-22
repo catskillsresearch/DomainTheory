@@ -1,8 +1,3 @@
-/-ai
-Two neighbourhood systems on the same token type that contain the same neighbourhoods and have the same master neighbourhood are equal.
-
-The membership predicates agree by function extensionality and propositional extensionality. Substituting that equality and the equality of the masters leaves only propositional fields, so the systems are identical.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

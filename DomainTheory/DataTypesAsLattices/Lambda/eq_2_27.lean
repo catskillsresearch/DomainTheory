@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.27). The primitive-recursive revaluation of a and f at x equals the dollar combinator applied to the least fixed point of the recursion step and then to x.
-
-Equation (2.25) rewrites the right-hand side as sequence revaluation of that fixed point. At each index belonging to x, the two values agree by the fixed-point formula for the primitive-recursive value.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

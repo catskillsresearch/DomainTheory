@@ -1,6 +1,3 @@
-/-ai
-Theorem 3.10 of Scott (1981, PRG-19) associates with a filter φ of the function space the approximable map that relates X to Y exactly when the step neighbourhood of X and Y belongs to φ. The domain and codomain of a related pair are read from a map inhabiting that step. The master step is the master neighbourhood of the function space. Right intersection rewrites the step of an intersection of outputs by the step-intersection law and uses that φ is closed under intersection. Monotonicity is upward closure of φ along the inclusion of steps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

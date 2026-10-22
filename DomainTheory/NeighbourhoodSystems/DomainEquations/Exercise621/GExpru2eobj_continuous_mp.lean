@@ -1,8 +1,3 @@
-/-ai
-In the forward direction of continuity on domains, a neighbourhood of T(U) already belongs to T(D) for some D in the directed nonempty family.
-
-The proof is by induction on T. A constant keeps the membership and uses any member of the nonempty family. The variable is the given characterization of membership in U. For a separated sum, the master uses any family member, because the subsystem master equality identifies the masters, and a left or right tag uses the inductive hypothesis on that component. For a separated product, the two coordinates give two family members, directedness supplies a common upper bound, and the subsystem relation transports both memberships. For a coalesced sum, the master is as in the separated sum, and a proper tag uses the corresponding inductive hypothesis; properness survives because equality with the master at that member would become equality with the master at U after the subsystem master equality. For a smash product, the master is as before, and a proper rectangle uses both inductive hypotheses and a common upper bound, with properness preserved by the same master equality at that upper bound.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

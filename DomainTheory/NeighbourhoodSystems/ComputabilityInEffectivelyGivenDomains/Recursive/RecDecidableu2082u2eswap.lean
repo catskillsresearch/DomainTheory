@@ -1,8 +1,3 @@
-/-ai
-Swapping the two arguments of a recursively decidable binary relation leaves it recursively decidable.
-
-The function that swaps the two components of a pairing code is primitive recursive, and reindexing the decidable coding along that swap gives the swapped relation by the pairing projections.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,0 +1,3 @@
+The composite of the curried pairing after the map that reads a function at true and at false lies below the identity on the function space from the three-point domain to E. Feeding those two values back through the conditional agrees with the function at true and at false, and lies below it at bottom.
+
+Compare the maps on elements and pass across the function-space equivalence. Split the argument into bottom, true, and false. At bottom the conditional is the bottom of E, which lies below every value. At true and at false the conditional returns the corresponding component of the pair.

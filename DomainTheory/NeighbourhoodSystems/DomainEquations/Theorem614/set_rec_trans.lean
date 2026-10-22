@@ -1,8 +1,3 @@
-/-ai
-Transport of a set along an equality, followed by transport along a second equality, equals transport along the composite equality.
-
-Cases on both equalities reduce the statement to reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

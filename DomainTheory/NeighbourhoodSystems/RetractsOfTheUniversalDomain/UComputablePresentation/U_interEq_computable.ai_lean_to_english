@@ -1,0 +1,3 @@
+Equality of the intersection of two enumerated neighbourhoods of U with a third enumerated neighbourhood is recursively decidable. It reduces to equality of presented intervals for the combined canonical codes and the canonical code of the third index.
+
+The three components of a triple code are primitive recursive, and so is the pairing of the combined canonical codes of the first two with the canonical code of the third. Recursive decidability of equality of presented intervals, composed with that pairing, decides the predicate once each enumerated neighbourhood is rewritten as a presented set and the intersection as the set presented by the combined codes.

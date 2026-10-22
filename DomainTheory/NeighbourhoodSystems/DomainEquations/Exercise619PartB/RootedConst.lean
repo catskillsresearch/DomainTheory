@@ -1,6 +1,3 @@
-/-ai
-A functor expression has rooted constants when the empty word lies in the master of every constant Scott system occurring in it. The identity variable satisfies the condition outright, and a sum or a product satisfies it when both components do.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

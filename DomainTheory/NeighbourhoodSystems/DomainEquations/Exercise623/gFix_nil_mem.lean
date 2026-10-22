@@ -1,8 +1,3 @@
-/-ai
-The empty string belongs to the fixed-point token set of a grammar expression.
-
-It belongs to the zero iterate, and therefore to the union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

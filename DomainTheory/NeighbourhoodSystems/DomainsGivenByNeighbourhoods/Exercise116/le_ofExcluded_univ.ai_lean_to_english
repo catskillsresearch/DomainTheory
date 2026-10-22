@@ -1,0 +1,3 @@
+Every filter of the cofinite system lies below the filter of excluded points equal to the whole set of natural numbers.
+
+If a set belongs to the filter, its complement is finite, and that complement is contained in the whole set, so the set belongs to the filter of all excluded points.

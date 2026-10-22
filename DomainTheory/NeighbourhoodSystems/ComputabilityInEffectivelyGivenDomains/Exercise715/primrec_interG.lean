@@ -1,8 +1,3 @@
-/-ai
-The coordinate-wise intersection generator is primitive recursive.
-
-The two fiber-index projections are primitive recursive, and the presentation's intersection function is primitive recursive. After unpairing, their composite is the generator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

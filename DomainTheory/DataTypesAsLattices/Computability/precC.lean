@@ -1,6 +1,3 @@
-/-ai
-The primitive-recursion combinator of elements f and g is the interpretation of the primitive-recursion term in the environment determined by f and g.
-ai-/
 module
 
 public import Mathlib.Computability.RE

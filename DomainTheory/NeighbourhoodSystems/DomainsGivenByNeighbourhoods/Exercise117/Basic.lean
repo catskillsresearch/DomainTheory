@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the point filter at a real exactly when it is a rational-interval neighbourhood and contains that real.
-
-The two sides are definitionally identical.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
@@ -18,27 +13,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exe
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise117.ratIntervalSystem_mem
 
 @[expose] public section
-
-/-!
-# Exercise 1.17 (Scott 1981, PRG-19, §1) — rational open intervals on `ℝ`
-
-`Δ = ℝ`; `𝒟 =` the non-empty open intervals with rational endpoints, plus `Δ` itself
-(`ratIntervalSystem`). The system law (`inter_mem`) reduces to the fact that the intersection of
-two rational intervals is empty or again a rational interval
-(`Set.Ioo_inter_Ioo` with `max`/`min` of the rational endpoints): `inter_mem'`.
-
-For each real `t`, `filterAt t = {X ∈ 𝒟 ∣ t ∈ X}` is a filter (`filterAt`). These embed `ℝ` into
-`|𝒟|` injectively (`filterAt_injective`, using rational density), so `|𝒟|` contains a faithful
-copy of the reals.
-
-**Scope.** Scott's full classification of the *total* elements (the hint: for rational `t`,
-intervals with `t` as a right-hand endpoint give a *second* total element at `t`) needs more
-real analysis and is left to prose; we deliver the system, the point-filters, and their
-injectivity. This is the first **uncountable** `Δ` of the block.
-
-The constructions are `[propext, Quot.sound]`; injectivity uses `exists_rat_btwn` (Archimedean,
-classical).
--/
 
 namespace DomainTheory.NeighbourhoodSystems
 

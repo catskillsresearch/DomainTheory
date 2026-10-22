@@ -1,8 +1,3 @@
-/-ai
-The pairing map is a computable map from the product of the sharp presentation with itself into the sharp presentation. The second projection is a computable endomap of the sharp presentation.
-
-The numbered name example_717 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717.pairSharp_isComputable

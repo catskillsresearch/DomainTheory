@@ -1,8 +1,3 @@
-/-ai
-For a fixed code and environment, the abstraction clause is Scott-continuous in the candidate.
-
-The proof is Theorem 1.3 of continuity of application of right injection with constancy of graphs under Scott continuity, whose sections are the continuity of the recursive call in the candidate.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

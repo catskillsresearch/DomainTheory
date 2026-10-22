@@ -1,6 +1,3 @@
-/-ai
-The identity approximable map on a neighbourhood system relates neighbourhoods X and Y precisely when X is contained in Y. The master neighbourhood is related to itself. Two inclusions of the same input give an inclusion into the intersection. A smaller input neighbourhood and a larger output neighbourhood remain related by transitivity of inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,8 +1,3 @@
-/-ai
-For each f, the map sending an input to the integer conditional built from f and that input is Scott continuous.
-
-The ternary substitution theorem is applied to the doubly strict conditional along the identity, the constant numeral zero, and an inner conditional. The inner conditional is continuous by the same theorem, applied to the substitution of the predecessor into application of f, together with two copies of the identity.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,8 +1,3 @@
-/-ai
-The right smash projection relates W to Y' exactly when both are neighbourhoods and the right preimage of W is contained in Y'.
-
-The two sides are the same proposition by definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

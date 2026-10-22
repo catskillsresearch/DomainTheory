@@ -1,0 +1,1 @@
+The inner intersection code of an outer index a, an accumulator, and a code m is the fold of the inner intersection step along m, starting from that accumulator, with parameter a.

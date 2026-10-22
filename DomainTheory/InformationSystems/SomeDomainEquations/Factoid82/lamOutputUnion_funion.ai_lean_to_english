@@ -1,0 +1,3 @@
+The output union of a choice-free union of finite sets of raw-token list pairs equals the choice-free union of the two output unions.
+
+Extensionality splits each direction by the membership criteria for output union and for choice-free union. A token in the output union of the union comes from the second list of a pair lying on one side or the other, so it lies in that side's output union. A token in either output union comes from a pair on that side, and that pair still belongs to the choice-free union.

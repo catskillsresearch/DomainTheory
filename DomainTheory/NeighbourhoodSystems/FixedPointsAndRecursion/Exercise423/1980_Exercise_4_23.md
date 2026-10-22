@@ -1,19 +1,31 @@
 # Exercise 4.23
 
-**EXERCISE 4.23.** (Suggested by S. Eilenberg). Suppose $f : \mathcal{D} \to \mathcal{D}$ is approximable on a given domain $\mathcal{D}$. Suppose $a_n : \mathcal{D} \to \mathcal{D}$ is a sequence of approximable maps where
+## Human-English
 
-(i) $a_0(x) = \bot$, for all $x \in |\mathcal{D}|$;
+@import "1980_Exercise_4_23.english" {code_block=false}
 
-(ii) $a_n \sqsubseteq a_{n+1}$ in $\mathcal{D} \to \mathcal{D}$, for all $n \in \mathbf{N}$;
+## AI: Human-English to AI-Lean
 
-(iii) $\bigsqcup_{n=0}^{\infty} a_n = I_{\mathcal{D}}$ in $\mathcal{D} \to \mathcal{D}$;
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423/Basic.lean**
 
-(iv) $a_{n+1} \circ f = a_{n+1} \circ f \circ a_n$, for all $n \in \mathbf{N}$.
+@import "Basic.lean"
 
-Prove that $f$ has a unique fixed point. (Hint: Show that if $x = f(x)$, then $a_n(x) \sqsubseteq a_n(\mathrm{fix}(f))$ for all $n \in \mathbf{N}$ by induction on $n$.)
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423/f_unique_fixedPoint.lean**
 
-**Lean 4**
+@import "f_unique_fixedPoint.lean"
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423/f_unique_fixedPoint.lean](f_unique_fixedPoint.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423.lean](../Exercise423.lean)
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise423.lean**
+
+@import "../Exercise423.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "f_unique_fixedPoint.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise423.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_4_23.ai_english_concordance" {code_block=false}

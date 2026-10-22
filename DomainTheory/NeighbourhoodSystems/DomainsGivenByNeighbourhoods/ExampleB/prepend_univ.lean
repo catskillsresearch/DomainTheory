@@ -1,8 +1,3 @@
-/-ai
-Prepending a finite binary string to the set of all strings yields the cone of that string.
-
-Compare the two sets by extensionality. A concatenation of the string with any string is an extension of it. Conversely, an extension splits off that string, and the remainder is the required witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

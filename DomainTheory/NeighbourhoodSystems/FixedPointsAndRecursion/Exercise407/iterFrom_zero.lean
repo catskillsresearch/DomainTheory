@@ -1,8 +1,3 @@
-/-ai
-The zero-th iterate of f from an element a is a itself.
-
-This is the defining equation of iteration at zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

@@ -1,8 +1,3 @@
-/-ai
-A sum token lies in the unfold of a finite set of tree tokens if and only if it is the tree unfold of some member of that set.
-
-Unfold the definition of the unfolded finset and apply the membership rule for the multiset fold of the unfold insertion, rewritten along finset membership.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

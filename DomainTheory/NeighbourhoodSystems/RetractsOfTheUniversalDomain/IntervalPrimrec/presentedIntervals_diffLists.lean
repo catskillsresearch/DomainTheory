@@ -1,8 +1,3 @@
-/-ai
-Subtracting one list of rational pairs from another presents the difference of the two presented sets.
-
-The empty list simplifies. For a cons cell, the concatenation of the whole-pair difference with the difference of the tail, the append presentation, the whole-pair presentation, the inductive hypothesis, and the cons presentation law match the distribution of set difference over union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

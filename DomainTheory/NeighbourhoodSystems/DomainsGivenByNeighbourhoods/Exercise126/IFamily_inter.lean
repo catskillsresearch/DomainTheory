@@ -1,8 +1,3 @@
-/-ai
-The intersection of I(F₁) and I(F₂) equals I of the union of F₁ and F₂.
-
-By extensionality of sets. Unfolding I, membership in an intersection, the coercion of a union, and the criterion for containment of a union identifies the two sides.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

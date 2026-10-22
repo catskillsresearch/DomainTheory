@@ -1,8 +1,3 @@
-/-ai
-The left content is monotone in the sum set.
-
-Rewrite membership by the left-content criterion. Inclusion sends a left tag of the smaller set into the larger set, and it sends a right tag or the basepoint of the smaller set into the larger set while leaving membership in the first master unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

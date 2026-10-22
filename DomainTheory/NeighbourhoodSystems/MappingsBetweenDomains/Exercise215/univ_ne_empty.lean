@@ -1,8 +1,3 @@
-/-ai
-The universe of a one-element type is not the empty set.
-
-If the two sets were equal, the unique element would belong to the empty set, and simplification contradicts that membership.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

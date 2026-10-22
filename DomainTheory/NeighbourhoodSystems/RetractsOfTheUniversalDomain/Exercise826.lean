@@ -1,8 +1,3 @@
-/-ai
-Translating the identity map between a and b yields b composed with a.
-
-The numbered name example_826 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826.translateAbs_idMap

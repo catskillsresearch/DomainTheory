@@ -1,8 +1,3 @@
-/-ai
-The predicate on a triple t which holds when the first component equals the Cantor pair of the two remaining components is primitive recursive.
-
-It is the primitive-recursive equality of the first projection with the pairing of the two projections of the second component.
-ai-/
 module
 
 public import Mathlib.Computability.RE

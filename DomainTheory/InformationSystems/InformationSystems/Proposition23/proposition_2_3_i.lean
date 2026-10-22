@@ -1,8 +1,3 @@
-/-ai
-The empty set set-entails the singleton of the least token.
-
-The only token of that singleton is the least token. The empty set is consistent, so the least-token axiom supplies the entailment.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

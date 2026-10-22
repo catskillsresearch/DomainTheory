@@ -1,8 +1,3 @@
-/-ai
-The tail of an element pushed onto a stack is that stack.
-
-The tail is a composite, unfolding after folding cancels, and the second projection of the resulting pair is the stack.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

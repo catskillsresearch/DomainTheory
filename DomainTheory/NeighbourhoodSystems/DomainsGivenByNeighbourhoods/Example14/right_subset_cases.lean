@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood that contains the right subtree is either the master neighbourhood or the right subtree.
-
-By the membership characterization the neighbourhood is the master, the left subtree, the right subtree, or one of the four leaves. The master and the right subtree are the two conclusions. In each remaining case the token 2 lies in the right subtree, hence in the neighbourhood, but it does not lie in that set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

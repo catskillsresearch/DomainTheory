@@ -1,6 +1,3 @@
-/-ai
-The right lift of a finite set w of tokens of B is the finite set of product tokens obtained by folding insertion of the right tag of each token of w, starting from the empty set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,6 +1,3 @@
-/-ai
-The forget-finset of a finite set of U-tokens is the right fold of forget-insertion over its underlying multiset, starting from the empty finset.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

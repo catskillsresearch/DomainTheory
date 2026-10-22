@@ -1,6 +1,3 @@
-/-ai
-The one-indicator of a natural is 1 minus the sum of the argument minus 1 and of 1 minus the argument. It is the {0, 1}-valued primitive-recursive test that the argument equals 1.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

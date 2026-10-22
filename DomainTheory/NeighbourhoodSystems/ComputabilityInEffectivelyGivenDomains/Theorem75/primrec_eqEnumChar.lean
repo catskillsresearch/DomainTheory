@@ -1,8 +1,3 @@
-/-ai
-If the consistency, inclusion, and equality characteristics are primitive recursive, then the function sending a paired code to the enumerated-equality characteristic of its two components is primitive recursive.
-
-The consistency bits of both projections, the inclusion characteristic in each order, and the triviality characteristic of each projection are primitive recursive. The reversed inclusion is the forward one composed with the swap of the projections, and unpacking shows the swap agrees. Three nested selections assemble these bits, and the result agrees with the paired enumerated-equality characteristic.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

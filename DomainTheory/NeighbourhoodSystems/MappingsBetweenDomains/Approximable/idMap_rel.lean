@@ -1,8 +1,3 @@
-/-ai
-The identity map relates two sets if and only if both are neighbourhoods and the first is contained in the second.
-
-This equivalence is the defining relation of the identity map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

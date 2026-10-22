@@ -1,6 +1,3 @@
-/-ai
-toD0 sends an element of D₁ to the element of D₀ whose neighbourhoods are the YPseq sets for which the matching set of the second enumeration belongs to the given element. A neighbourhood of the image lies in D₀ because YPseq sets are neighbourhoods. The master is the image of the zero index once the zero conventions identify YPseq at zero with the master and the zero set of the second enumeration with its master. An intersection is the YPseq set at the index supplied by the intersection lemma on the second side. For an upward step, the covering names the larger neighbourhood as a set of the first enumeration, the cross-order transfer turns the inclusion into an inclusion of a second-enumeration set in an XPseq set, upward closure in the original element and the second covering produce an index, and the equality transfer certifies that the larger neighbourhood is the YPseq set at that index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

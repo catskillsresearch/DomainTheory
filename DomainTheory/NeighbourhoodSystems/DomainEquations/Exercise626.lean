@@ -1,8 +1,3 @@
-/-ai
-Every element of the lift is either the fresh bottom or the lift of some element of the original system. The coalesced sum of the lifts of D and E is domain-isomorphic to the separated sum of D and E. The smash product of the lifts of D and E is domain-isomorphic to the lift of the product of D and E.
-
-The numbered name example_626 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise626.eq_liftBot_or_exists_liftUp

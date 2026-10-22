@@ -1,8 +1,3 @@
-/-ai
-The first component of deltaPair at depth i is the bit of k at position 2i.
-
-Rewrite the decision as a test-bit comparison, using that four to the i equals two to the 2i.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

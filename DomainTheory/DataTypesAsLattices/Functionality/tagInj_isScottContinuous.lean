@@ -1,8 +1,3 @@
-/-ai
-Tag injection at a numeral i is Scott continuous.
-
-It is right continuity of sequence pairing at the numeral i.
-ai-/
 
 module
 

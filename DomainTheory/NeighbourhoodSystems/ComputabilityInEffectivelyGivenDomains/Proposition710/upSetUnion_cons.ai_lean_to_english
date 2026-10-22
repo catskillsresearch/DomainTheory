@@ -1,0 +1,3 @@
+The union of the down-sets of the sets in a cons cell equals the down-set of the head united with the union of the down-sets of the tail.
+
+A set lies in the left-hand union when it lies in the down-set of some member of the cons list. That member is the head, giving the first summand, or a member of the tail, giving the second. Conversely, either summand places the set in the down-set of a member of the cons list.

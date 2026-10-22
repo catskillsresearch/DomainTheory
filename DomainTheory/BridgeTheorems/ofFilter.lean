@@ -1,6 +1,3 @@
-/-ai
-The map ofFilter sends a filter in the neighbourhood system of an information system to the information-system element whose carrier consists of those tokens whose singleton basic open belongs to the filter. A finite set of such tokens is consistent because the filter meets its basic open, that open contains a basic open of some consistent set, and a basic-open inclusion preserves consistency. If the set entails a further token, its basic open is contained in the singleton basic open of that token, since elements are closed under the entailment, and upward closure puts the token in the carrier.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

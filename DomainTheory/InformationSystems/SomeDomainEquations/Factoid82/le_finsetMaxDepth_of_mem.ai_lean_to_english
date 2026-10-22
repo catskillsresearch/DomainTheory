@@ -1,0 +1,3 @@
+A raw lambda token belonging to a finite set has depth at most the maximum depth of that set.
+
+Unfold the maximum depth and induct on the underlying multiset. The empty multiset contributes no member. On a cons, the token is the head, whose depth is at most the maximum of the head depth and the fold of the tail, or it lies in the tail, whose inductive bound is at most that same maximum.

@@ -1,8 +1,3 @@
-/-ai
-The inclusion of a continuous-lattice projection is injective. This is Scott's Proposition 3.10(ii).
-
-If the inclusions of x and y agree, apply the retraction. The retraction is a left inverse of the inclusion, so x and y agree.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

@@ -1,8 +1,3 @@
-/-ai
-Over an infinite index, every neighbourhood of the indexed smash product equals its master. Over an infinite index, the element domain of the indexed smash product has at most one element. An element of the indexed separated sum that meets tagged copies at two indices meets them at the same index. Every element of the indexed separated sum either contains the tagged copy of some neighbourhood or contains only the master.
-
-The numbered name example_629 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise629.iotimes_only_master

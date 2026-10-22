@@ -1,6 +1,3 @@
-/-ai
-The typical 𝔉 ∩ 𝔊 set is the singleton whose only element is the singleton {0}.
-ai-/
 
 module
 

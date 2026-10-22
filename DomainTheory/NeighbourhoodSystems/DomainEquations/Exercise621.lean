@@ -1,8 +1,3 @@
-/-ai
-For every expression T and every nonempty set Γ of strings, the token-level recursion gFun T Γ equals the master of T applied to the singleton system on Γ.
-
-The numbered name example_621 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621.Basic

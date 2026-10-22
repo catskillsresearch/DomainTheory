@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood system U is positive: the intersection of two neighbourhoods is a neighbourhood exactly when it is nonempty.
-
-Present the two neighbourhoods by lists of intervals. A neighbourhood intersection is nonempty. Conversely, a nonempty intersection is presented by the combined interval list and is contained in the master because it is contained in the first neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

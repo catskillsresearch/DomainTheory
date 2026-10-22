@@ -1,8 +1,3 @@
-/-ai
-The set presented by the concatenation of two lists of endpoint pairs is the union of the sets presented by the lists.
-
-The proof is by induction on the first list. The empty list simplifies, and the step that adjoins a pair uses the cons identity together with associativity of union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

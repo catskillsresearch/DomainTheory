@@ -1,6 +1,3 @@
-/-ai
-The copy token of a letter and an underlying token is the right-hand sum token carrying that letter and that token.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

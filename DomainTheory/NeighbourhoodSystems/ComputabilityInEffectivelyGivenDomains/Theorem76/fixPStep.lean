@@ -1,6 +1,3 @@
-/-ai
-The pure fixed-point step, with function-space parameter, an accumulator pairing a previous index with a flag, and a current index, returns the pairing of the current index with the selection of the one-entry inclusion bit of the previous index and the current index when the flag is on, and with 0 when the flag is off.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

@@ -1,8 +1,3 @@
-/-ai
-A decoded rational equals the rational whose numerator is the difference of the positive and negative numerator parts of the code and whose denominator is the denominator of the code.
-
-Unfolding the decoder, the integer decoder, and the three component maps makes the two sides identical.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

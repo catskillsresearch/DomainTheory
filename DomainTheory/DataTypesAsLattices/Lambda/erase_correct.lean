@@ -1,8 +1,3 @@
-/-ai
-For every lambda term and every environment, the combinatory interpretation of the erasure equals the interpretation of the term.
-
-The proof is by induction on the term. Variables, zero, successor, predecessor, conditionals, and applications reduce by the definitions of erasure, combinatory interpretation, and interpretation, using the application laws for successor, predecessor, and the three-place conditional. An abstraction rewrites by the correctness of abstraction, and the inductive hypothesis applies in the environment updated at the bound index.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

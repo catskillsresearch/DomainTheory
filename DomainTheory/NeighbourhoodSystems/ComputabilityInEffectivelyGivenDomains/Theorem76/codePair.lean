@@ -1,6 +1,3 @@
-/-ai
-The one-entry function-space code of indices a and b is one more than the pairing of the pairing of a and b with zero. Its enumerated neighbourhood is the step neighbourhood from a to b.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

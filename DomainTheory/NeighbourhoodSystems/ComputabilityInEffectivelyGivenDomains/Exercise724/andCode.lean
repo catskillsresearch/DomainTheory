@@ -1,6 +1,3 @@
-/-ai
-The code of sequential conjunction returns the second index when the first index is 1, returns 2 when the first index is 2, and returns 0 otherwise. For indices at most 2 these values name the sequential conjunction of the corresponding enumerated neighbourhoods.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

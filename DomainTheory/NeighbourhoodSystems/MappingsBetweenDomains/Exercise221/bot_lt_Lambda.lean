@@ -1,8 +1,3 @@
-/-ai
-The bottom element of the system C is strictly below the total empty sequence.
-
-The bottom element lies below every element, so it remains to show that the two elements differ. If they were equal, the singleton of the empty string would belong to the bottom element, and membership in the bottom element means equality with the master neighbourhood, the set of all strings. The one-bit string true would then belong to that singleton, so it would equal the empty string, which is absurd.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

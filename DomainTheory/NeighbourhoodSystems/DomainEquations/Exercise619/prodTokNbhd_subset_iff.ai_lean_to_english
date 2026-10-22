@@ -1,0 +1,3 @@
+One product neighbourhood is contained in another if and only if each component is contained in the corresponding component.
+
+From an inclusion, a member of the first component is a false-tagged word of the smaller neighbourhood, hence of the larger, and the membership criterion returns it to the first component; the true tag does the same for the second component. Conversely, the empty word lies in every product neighbourhood, a false-tagged word is carried by the first inclusion, and a true-tagged word is carried by the second.

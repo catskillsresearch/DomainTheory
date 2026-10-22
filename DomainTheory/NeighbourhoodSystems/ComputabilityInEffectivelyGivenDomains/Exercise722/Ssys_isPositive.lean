@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood system on binary words is positive.
-
-A neighbourhood intersection yields a nonempty intersection, and a nonempty intersection of two members lies in the family by the intersection constructor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

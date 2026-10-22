@@ -1,6 +1,3 @@
-/-ai
-The double fiber of a doubly indexed set of tokens, at an outer index and an inner index, is the fiber at the inner index of the fiber of the set at the outer index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

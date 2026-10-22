@@ -1,37 +1,61 @@
 # Proposition 8.2
 
-**PROPOSITION 8.2.** If $D \triangleleft E$ and if $a : E \to E$ is defined by
+## Human-English
 
-$$X \ a \ Z \quad \text{iff} \quad \exists Y \in D.\ X \subseteq Y \subseteq Z$$
+@import "1980_Proposition_8_2.english" {code_block=false}
 
-for all $X, Z \in E$, then $a$ is a retraction and $|D|$ is isomorphic to the fixed-point set of $a$, the set $\{y \in |E| \mid a(y) = y\}$, under inclusion.
+## AI: Human-English to AI-Lean
 
-*Proof:* That $a$ is an approximable mapping is a direct consequence of Definition 6.10. Indeed, in the notation of Proposition 6.12, we have
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/isRetraction_retractionOfSubsystem.lean**
 
-$$a = i \circ j,$$
+@import "isRetraction_retractionOfSubsystem.lean"
 
-and this is another proof that $a$ is approximable. This remark is also convenient, since we know from 6.10
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem.lean**
 
-$$j \circ i = I_D.$$
+@import "retractionOfSubsystem.lean"
 
-Therefore, we find:
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem_rel.lean**
 
-$$a \circ a = i \circ j \circ i \circ j = i \circ j = a;$$
+@import "retractionOfSubsystem_rel.lean"
 
-and so $a$ is a retraction.
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem_toElementMap_inj.lean**
 
-We can also employ $i$ and $j$ to give the isomorphism on $|D|$. If $x \in |D|$, then $i(x) \in |E|$ and we calculate:
-$$a(i(x)) = i \circ j \circ i(x) = i(x).$$
+@import "retractionOfSubsystem_toElementMap_inj.lean"
 
-Thus, $i(x)$ belongs to the fixed-point set of $a$. In the other direction, if $a(y) = y$, then $i(j(y)) = y$. But $j(y) \in |D|$, so $i$ maps $|D|$ one-one and onto the fixed-point set of $a$. As $i$ and $j$ are monotone, the map is an isomorphism with respect to $\sqsubseteq$. $\square$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/elementIso.lean**
 
-**Lean 4**
+@import "elementIso.lean"
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/isRetraction_retractionOfSubsystem.lean](isRetraction_retractionOfSubsystem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem.lean](retractionOfSubsystem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem_rel.lean](retractionOfSubsystem_rel.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retractionOfSubsystem_toElementMap_inj.lean](retractionOfSubsystem_toElementMap_inj.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/elementIso.lean](elementIso.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retraction_of_subsystem.lean](retraction_of_subsystem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82.lean](../Proposition82.lean)
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82/retraction_of_subsystem.lean**
+
+@import "retraction_of_subsystem.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition82.lean**
+
+@import "../Proposition82.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "isRetraction_retractionOfSubsystem.ai_lean_to_english" {code_block=false}
+
+@import "retractionOfSubsystem.ai_lean_to_english" {code_block=false}
+
+@import "retractionOfSubsystem_rel.ai_lean_to_english" {code_block=false}
+
+@import "retractionOfSubsystem_toElementMap_inj.ai_lean_to_english" {code_block=false}
+
+@import "elementIso.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "retraction_of_subsystem.ai_lean_to_english" {code_block=false}
+
+@import "../Proposition82.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Proposition_8_2.ai_english_concordance" {code_block=false}

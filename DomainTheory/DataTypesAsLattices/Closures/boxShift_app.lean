@@ -1,8 +1,3 @@
-/-ai
-Applying the shift of a to x equals the union of the singleton zero with the successor set of a applied to the predecessor set of x.
-
-This is the beta law for the Scott-continuous map that defines the shift.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

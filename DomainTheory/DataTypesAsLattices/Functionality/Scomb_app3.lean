@@ -1,8 +1,3 @@
-/-ai
-Applying the S combinator to two functions and then to an argument equals the application of the first function at that argument to the second function at that argument.
-
-Rewrite by the double-application equation, then apply beta reduction for continuity of the inner map.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

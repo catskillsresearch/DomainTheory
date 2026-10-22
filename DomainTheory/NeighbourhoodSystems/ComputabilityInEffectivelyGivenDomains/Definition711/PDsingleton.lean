@@ -1,6 +1,3 @@
-/-ai
-The singleton join of an element x is the finite join of the length-one family whose only value is x.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

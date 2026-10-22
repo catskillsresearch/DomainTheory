@@ -1,8 +1,3 @@
-/-ai
-Twice the k-th triangular number equals k times k + 1.
-
-Unfold the triangular number and cancel the division by 2, which divides k times k + 1 exactly.
-ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

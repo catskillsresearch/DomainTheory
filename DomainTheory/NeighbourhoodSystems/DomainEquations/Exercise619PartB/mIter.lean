@@ -1,6 +1,3 @@
-/-ai
-The Kleene iteration of the token-level master recursion starts at the singleton of the empty word and applies the recursion at each successor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

@@ -1,0 +1,3 @@
+If two compact fixed points lie below a common fixed point, the intersection of their principal up-sets is the principal up-set of their join.
+
+A compact in both up-sets bounds both underlying elements, so their supremum lies below it. Monotonicity of the element map and the fixed-point equation place the join below it. Conversely, each of the two elements lies below their supremum and, by inflation, below the join, so a compact above the join lies above both.

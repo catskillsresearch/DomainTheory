@@ -1,8 +1,3 @@
-/-ai
-Every language in Scott's family is nonempty.
-
-The proof is by induction on membership. The set of all words contains the empty word, a singleton contains its word, concatenation preserves nonempty languages, and an intersection is admitted only when it is already nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

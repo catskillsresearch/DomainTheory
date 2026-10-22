@@ -1,8 +1,3 @@
-/-ai
-Every C-neighbourhood is nonempty.
-
-A C-neighbourhood is either the cone of a string or the singleton of a string. The string belongs to its own cone, because it is a prefix of itself, and it belongs to its own singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

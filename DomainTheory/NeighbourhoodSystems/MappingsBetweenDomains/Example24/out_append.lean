@@ -1,8 +1,3 @@
-/-ai
-The output of a string is a prefix of the output of any extension.
-
-The proof is by induction on the string. The empty case simplifies. A leading one reduces to growth of the deletion scan under extension. A leading zero applies the inductive hypothesis and places the same zero at the head of the prefix equation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

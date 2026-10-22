@@ -1,6 +1,3 @@
-/-ai
-The cons step reads a code as an element, an accumulator, and a parameter, and returns one more than the pair of the element and the accumulator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

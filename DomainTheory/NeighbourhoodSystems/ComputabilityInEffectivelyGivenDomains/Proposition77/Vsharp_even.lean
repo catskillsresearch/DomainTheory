@@ -1,8 +1,3 @@
-/-ai
-The enumerated set at index 2n+2 is the paired embedding of the enumerated sets at the two components of the unpairing of n.
-
-Rewrite the index as the successor of 2n+1 and apply the successor clause. The index is even, so the second branch applies, and half of the predecessor equals n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

@@ -1,6 +1,3 @@
-/-ai
-The list-equality character of two codes is the product of the flag and the zero test of the remainder in the state obtained by folding the equality step over the first code, starting from the pair of 1 and the second code. It equals 1 exactly when the two decoded lists are equal.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,8 +1,3 @@
-/-ai
-The finite approximants of an element form a directed family.
-
-Two approximants are closures of consistent finite sets contained in the element. Directedness of such closures supplies a third consistent finite set, still contained in the element, whose closure lies above both.
-ai-/
 
 module
 

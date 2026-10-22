@@ -1,8 +1,3 @@
-/-ai
-A longer finite prefix determines a smaller neighbourhood: if n is at most m, the neighbourhood of the length-m prefix is contained in the neighbourhood of the length-n prefix.
-
-The subset law for neighbourhoods converts the claim into the prefix relation for the two finite prefixes.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

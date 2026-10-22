@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the Example 8.4(b) arguments for the smash and strict combinators: the membership laws for the inner fade and for smash, the collapse and identity cases, the proof that smash is a retraction below the identity, the smash subsystem of the product together with its retraction formula and compactness witness, the identification of smash with that subsystem retraction, the packaged projection onto the smash product, injectivity of the passage to approximable maps, and the retraction, inequality, and packaged projection for strict.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84b.Basic

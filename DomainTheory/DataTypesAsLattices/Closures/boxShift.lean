@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (5.13). The shift of a set a, used in the sum of closures, is the graph of the map sending x to the union of the singleton zero with the successor set of a applied to the predecessor set of x.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

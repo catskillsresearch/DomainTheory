@@ -1,8 +1,3 @@
-/-ai
-The right tag of c lies in the tagged right copy of Z if and only if c lies in Z.
-
-From a membership witness, simplification of the option and right-sum injections identifies the underlying element with c, and membership transports. Conversely, c itself is a witness that its right tag lies in the copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

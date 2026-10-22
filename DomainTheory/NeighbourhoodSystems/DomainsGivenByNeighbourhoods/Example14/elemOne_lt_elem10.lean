@@ -1,8 +1,3 @@
-/-ai
-The partial element at node 1 is strictly below the total element at the leaf 10.
-
-The master neighbourhood and the right branch of the partial element both belong to the total element. The two elements are unequal because the leaf 10 belongs to the total element and is neither the master neighbourhood nor the right branch.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

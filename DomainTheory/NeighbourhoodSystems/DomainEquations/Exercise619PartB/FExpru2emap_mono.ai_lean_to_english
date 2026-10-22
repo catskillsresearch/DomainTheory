@@ -1,0 +1,3 @@
+The action of a construct on maps is monotone: a sharper approximable map is sent to a sharper image.
+
+The proof is by induction on the construct. A constant image is unchanged. The identity variable is the given inequality. A sum applies the monotonicity lemma for the sum action to the two inductive inequalities. A product applies the monotonicity lemma for the product action.

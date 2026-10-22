@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the neighbourhood system on binary words is the set of all words.
-
-This is the master field of the system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

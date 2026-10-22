@@ -1,8 +1,3 @@
-/-ai
-For a single step, if the input is not contained in the step input, the intersection of the relevant outputs is the codomain master.
-
-A token lies in that intersection when it lies in the master and every listed step whose input contains the given input contributes its output. The only listed step fails that input condition, so the condition is membership in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

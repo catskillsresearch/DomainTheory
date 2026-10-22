@@ -1,8 +1,3 @@
-/-ai
-If two maps from X into a complete lattice agree at every point, then their subspace-extension infima on any subset U of Y agree.
-
-The images of the preimage of U under the two maps are the same set, because the maps take the same value at each point of the preimage.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

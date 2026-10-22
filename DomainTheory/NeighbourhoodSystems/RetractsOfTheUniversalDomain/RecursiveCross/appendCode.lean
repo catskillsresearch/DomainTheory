@@ -1,6 +1,3 @@
-/-ai
-The append of two list codes is the fold of the cons step, with parameter zero and with the second code as accumulator, over the first code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

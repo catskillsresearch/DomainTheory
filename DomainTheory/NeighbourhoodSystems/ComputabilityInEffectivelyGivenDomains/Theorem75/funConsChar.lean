@@ -1,6 +1,3 @@
-/-ai
-The concrete consistency character of a code is the bounded universal, up to two to the power of the code, of the per-mask implication character.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

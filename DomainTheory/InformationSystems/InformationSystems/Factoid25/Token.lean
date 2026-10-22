@@ -1,6 +1,3 @@
-/-ai
-A token is either the least-informative object, read as the unbounded interval from 0 to infinity, or a strict integer interval whose lower endpoint is strictly below its upper endpoint.
-ai-/
 module
 
 public import Mathlib.Algebra.Order.Field.Rat

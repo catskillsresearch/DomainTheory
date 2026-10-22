@@ -1,8 +1,3 @@
-/-ai
-Applying the bar step of B to u yields the graph of the bar step body at B and u.
-
-This is beta reduction. Continuity of the outer graph in its first argument holds because, for each second argument, the bar step body is Scott continuous in u.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

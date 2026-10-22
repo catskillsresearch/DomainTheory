@@ -1,6 +1,3 @@
-/-ai
-Assuming a complete lattice D is continuous, domainEmbedding is the order embedding of D into all filters of the way-below neighbourhood system that sends an element to its principal filter. It is injective because the retraction of a principal filter recovers the element. It reflects order because an inequality of principal filters induces an inequality of their retractions, since each code way-below the source remains a code of the target and so lies under the supremum of those codes, and it preserves order by monotonicity of the principal filter.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

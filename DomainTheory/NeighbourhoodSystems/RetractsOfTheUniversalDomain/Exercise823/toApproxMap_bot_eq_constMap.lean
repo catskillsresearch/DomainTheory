@@ -1,8 +1,3 @@
-/-ai
-The map read from the bottom element of the function space is the constant-bottom map.
-
-Compare relations by extensionality. If the bottom element contains the step from the input to the output, that step is the whole function space, so the constant-bottom map lies in it, and membership in a step means that the constant map relates the two neighbourhoods. Conversely, if the input is a neighbourhood and the output is the bottom neighbourhood, every approximable map relates the input to the master, so the step is the whole space.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

@@ -1,6 +1,3 @@
-/-ai
-The code-level order isomorphism from the elements of the first neighbourhood system to those of the second sends an element along toD1Code and returns along toD0Code, with the two inverse laws given by the corresponding round trips. In one direction of the order law the inequality of images unfolds to an inequality of elements. In the other, surjectivity replaces the tested neighbourhood by an enumerated code, and equality of the XPseqCode images transports that code back to the first enumeration.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

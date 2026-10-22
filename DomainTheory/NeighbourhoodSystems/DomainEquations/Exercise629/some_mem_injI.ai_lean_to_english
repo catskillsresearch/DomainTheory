@@ -1,0 +1,3 @@
+The tagged token built from an index i and a token a lies in the tagged copy of a set X at i if and only if a lies in X.
+
+Membership in the image supplies a preimage whose tag equals this token, so the underlying tokens agree. Conversely, a itself is such a preimage.

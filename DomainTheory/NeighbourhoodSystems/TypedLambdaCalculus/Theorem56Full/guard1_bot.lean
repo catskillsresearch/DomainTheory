@@ -1,8 +1,3 @@
-/-ai
-If a coordinate of a stack is bottom, the guard at that coordinate returns bottom there.
-
-Rewrite by the application formula, substitute the hypothesis, and use that the zero test of bottom is the bottom of the truth domain, that this equals Example23.botElt, and that the conditional on that bottom is bottom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

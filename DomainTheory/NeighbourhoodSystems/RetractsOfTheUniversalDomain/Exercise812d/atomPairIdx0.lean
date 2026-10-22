@@ -1,6 +1,3 @@
-/-ai
-The depth-n index on the first neighbourhood system, for a bit-source, is the first index stored in the inner state of the atom-pair code state at that depth.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

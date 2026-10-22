@@ -1,8 +1,3 @@
-/-ai
-The second component of the unpairing of n is at most n.
-
-The second component of a pair is at most the pair. Rewriting the pair of the two components of the unpairing by the identity that pairing inverts unpairing gives the bound.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

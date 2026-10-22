@@ -1,8 +1,3 @@
-/-ai
-After the consistency update is folded along a list, the index component of the state equals the fold of the presentation's intersection along the entries selected by the bitmask, and is independent of the flag carried beside the index.
-
-Proceed by induction on the list. For the empty list both sides equal the accumulator. For a head and a tail, evaluate one update and one bitmask step. If the low bit is set, the head is selected, the intersection with its projection is taken, and the inductive hypothesis applies to the tail. If the low bit is clear, the accumulator is left unchanged and the inductive hypothesis applies directly.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

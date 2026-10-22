@@ -1,0 +1,1 @@
+Definition 2.1 packages the lambda-calculus information system D. Its least token is the lambda bottom, its consistent sets are the consistent finite sets of depth-well-formed tokens, and its entailment is lambda entailment. The subset, singleton, entailment-consistency, bottom, reflexivity, and transitivity axioms are the corresponding lemmas for that consistency and entailment.

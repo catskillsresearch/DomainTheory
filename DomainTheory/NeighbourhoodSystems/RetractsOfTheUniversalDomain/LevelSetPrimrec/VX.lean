@@ -1,7 +1,3 @@
-/-ai
-The enumeration of V sends a code to the level set of the level and mask obtained by
-canonicalizing that code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

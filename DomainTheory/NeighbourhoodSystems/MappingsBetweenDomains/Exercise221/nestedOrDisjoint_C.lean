@@ -1,8 +1,3 @@
-/-ai
-The predicate memC is pairwise nested or disjoint.
-
-Given two sets satisfying memC, split each as a cone or a singleton. Two cones fall under the cone trichotomy, a cone and a singleton fall under the mixed comparison in either order, and two singletons fall under the singleton comparison.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

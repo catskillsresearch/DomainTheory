@@ -1,8 +1,3 @@
-/-ai
-The elements of L are exactly the finite or infinite sequences of natural numbers: the map from sequences to elements is bijective.
-
-Bijectivity is the conjunction of injectivity and surjectivity of that map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,6 +1,3 @@
-/-ai
-The output-union insertion step sends a pair of raw-token lists and an accumulator finset to the choice-free union of the finite set of the pair's second list with the accumulator.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

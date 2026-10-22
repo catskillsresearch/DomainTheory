@@ -1,6 +1,3 @@
-/-ai
-The power set of pairs of natural numbers is order-isomorphic to the product of two power sets of natural numbers, as the composite of the inverse of the pairing isomorphism with the isomorphism induced by the decomposition of the naturals as a disjoint sum.
-ai-/
 module
 
 public import Mathlib.Logic.Equiv.Nat

@@ -1,8 +1,3 @@
-/-ai
-If two indices are consistent, then some index is a meet of them.
-
-The value of the meet function, with the datum that it satisfies the meet condition on a consistent pair, is a witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

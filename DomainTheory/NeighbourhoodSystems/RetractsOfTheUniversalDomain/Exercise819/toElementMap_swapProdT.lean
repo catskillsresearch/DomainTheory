@@ -1,8 +1,3 @@
-/-ai
-The swap sends the pair of the pair of x and y with t to the pair of t with the pair of x and y.
-
-Unfold the pairing of the two projections and read off the components of the nested pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

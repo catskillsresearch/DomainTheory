@@ -1,8 +1,3 @@
-/-ai
-If the combined found flag is 1, the image of the combined code is a genuine neighbourhood, assuming each input code is genuine when its own flag is 1.
-
-The combination is unfolded. A zero first flag returns the second code. A first flag of 1 and a zero second flag return the first code. Both flags equal to 1 return the union index of two genuine neighbourhoods, which is itself genuine.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

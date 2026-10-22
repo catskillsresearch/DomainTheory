@@ -1,8 +1,3 @@
-/-ai
-The two projections of a point typed by a boxed product of closures remain typed by the two factors.
-
-The typing equation and the application law for the boxed product write the point as the disjoint pairing of the factors applied to the two projections. Applying each projection and using the corresponding projection equation for disjoint pairing yields the two typing equations.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

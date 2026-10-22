@@ -1,6 +1,3 @@
-/-ai
-An approximable map is strict when the image of the bottom element is the bottom element.
-ai-/
 
 module
 

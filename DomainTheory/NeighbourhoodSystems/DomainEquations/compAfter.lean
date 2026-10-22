@@ -1,6 +1,3 @@
-/-ai
-Diagrammatic composition sends a morphism from Y to Z and a morphism from X to Y to their categorical composite from X to Z.
-ai-/
 module
 
 public import Mathlib.CategoryTheory.Category.Basic

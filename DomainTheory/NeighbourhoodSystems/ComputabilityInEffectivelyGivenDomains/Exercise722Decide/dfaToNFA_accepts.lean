@@ -1,8 +1,3 @@
-/-ai
-The nondeterministic automaton built from a deterministic automaton accepts the same language as the deterministic automaton.
-
-Extend by a word. If the nondeterministic automaton accepts it, the evaluation lemma says the reached set is the singleton of the deterministic evaluation, so that state is accepting for the deterministic automaton. Conversely, if the deterministic automaton accepts the word, its evaluation state is accepting and, by the same lemma, lies in the singleton reached by the nondeterministic automaton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

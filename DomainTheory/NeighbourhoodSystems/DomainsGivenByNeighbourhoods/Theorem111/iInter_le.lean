@@ -1,8 +1,3 @@
-/-ai
-The intersection of a sequence of elements lies below each term.
-
-A set belonging to the intersection belongs to the chosen term.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

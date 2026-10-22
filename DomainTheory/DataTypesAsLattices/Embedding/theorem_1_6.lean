@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 1.6, the embedding theorem: if the source is a T₀ space and the sets U n form a topological basis, the embedding along U is a topological embedding into Pω.
-
-The embedding is inducing and injective by the corresponding lemmas.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

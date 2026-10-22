@@ -1,8 +1,3 @@
-/-ai
-If a and b are closures, the identity combinator is contained in their sum.
-
-Containment of the identity in a graph is equivalent to expansiveness on finite sets. The application formula for the sum rewrites the body at en as the sum applied to en, and the sum of two closures is expansive.
-ai-/
 
 module
 

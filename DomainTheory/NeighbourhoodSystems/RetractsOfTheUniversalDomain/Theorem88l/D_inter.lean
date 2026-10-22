@@ -1,6 +1,3 @@
-/-ai
-The intersection operation on list codes for the induced enumeration is concatenation of the two list codes.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.Basic

@@ -1,6 +1,3 @@
-/-ai
-The table-lookup form of one decode-ok step reads the previous fuel level from the table in the first component of the argument and queries the code in the second component, taking a missing entry to be 0.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

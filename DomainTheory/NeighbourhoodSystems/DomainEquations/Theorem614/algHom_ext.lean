@@ -1,8 +1,3 @@
-/-ai
-Two algebra homomorphisms with the same underlying map are equal.
-
-Cases on both homomorphisms and on the equality of their underlying maps reduce the goal to reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

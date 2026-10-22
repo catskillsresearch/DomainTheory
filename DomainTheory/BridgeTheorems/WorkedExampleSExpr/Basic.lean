@@ -1,6 +1,3 @@
-/-ai
-The worked example takes the tree system of Factoid 8.1 over the lower-bound information system on the natural numbers from Factoid 2.4. The abbreviation sexNeighborhoodIso is the order isomorphism of its domain with the filters of basic opens, sexIdealIso is the order isomorphism with the ideal completion of its finite elements, and sexNeighborhoodIdealIso is the order isomorphism between those neighbourhood filters and that ideal completion. The abbreviation sexIdScottContinuous is the identity approximable map, read as a Scott-continuous endomap by Factoid 4.6.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
@@ -25,15 +22,6 @@ public import DomainTheory.BridgeTheorems.WorkedExampleSExpr.SexRhs
 
 @[expose] public section
 
-/-!
-# Worked example — S-expression / tree domain `T ≅ A + (T × T)`
-
-Scott 1982 Factoid 8.1 (`treeSystem`) over the ℕ lower-bound atom system
-(Factoid 2.4), walked through this package’s bridges: information system →
-neighbourhood filters → ideal completion, plus identity approximable maps as
-Scott-continuous maps (Factoid 4.6).
--/
-
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
@@ -42,23 +30,11 @@ open DomainTheory.InformationSystems.InfoSys
 open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 
-/-! ## Atom system (Factoid 2.4, named) -/
-
-
-/-! ## S-expression system -/
-
-
-/-! ## Concrete finite elements -/
-
-
-/-! ## 1982 → 1980: basic-open neighbourhood filters -/
 
 /-- `|T| ≃o` filters of basic opens `[u]`. -/
 noncomputable abbrev sexNeighborhoodIso :
     SexSys.Element ≃o (InfoSysToNeighborhood.toNeighborhoodSystem SexSys).Element :=
   InfoSysToNeighborhood.domainOrderIso SexSys
-
-/-! ## 1982 → ideal completion -/
 
 /-- `|T| ≃o Ideal (FiniteElement T)`. -/
 noncomputable abbrev sexIdealIso :
@@ -69,10 +45,6 @@ noncomputable abbrev sexIdealIso :
 noncomputable abbrev sexNeighborhoodIdealIso :=
   neighborhood_ideal_iso SexSys
 
-/-! ## Domain equation at the level of domains (1982 constructions) -/
-
-
-/-! ## Morphisms: identity is Scott-continuous (Factoid 4.6) -/
 
 /-- Identity approximable map on `T`, as a Scott-continuous endomap. -/
 noncomputable abbrev sexIdScottContinuous : ScottContinuous SexSys SexSys :=

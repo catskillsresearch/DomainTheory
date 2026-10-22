@@ -1,8 +1,3 @@
-/-ai
-The intersection along a list with head j and tail sub is the basic neighbourhood named by j, intersected with the intersection along the tail.
-
-Extensionality reduces the claim to membership. The membership characterization of the intersection, together with the splitting of a universal quantifier over a cons cell, makes the two sides the same proposition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

@@ -1,0 +1,3 @@
+Consistency of two enumerated neighbourhoods is recursively decidable. This is clause (ii) of the effective presentation.
+
+Apply the constructor of a paired zero-one characteristic to the primitive-recursive packed consistency characteristic, the bound that forces its value to be zero or one, and the equivalence of a common lower bound with that characteristic equaling one.

@@ -1,8 +1,3 @@
-/-ai
-The zeroth approximant of the search operator is the bottom element of the function space.
-
-Rewrite the approximant as an iterate. The zeroth iterate is the element being iterated, which is the bottom of the function space.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

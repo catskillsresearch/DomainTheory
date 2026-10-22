@@ -1,0 +1,3 @@
+For neighbourhoods X and Y, the bracket of X is contained in the bracket of Y if and only if X is contained in Y.
+
+If the brackets are nested, the principal filter of X lies in the bracket of X and hence in the bracket of Y, and the inclusion is the second component of that membership. Conversely, if X is contained in Y, an element containing X contains Y by upward closure.

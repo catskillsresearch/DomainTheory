@@ -1,8 +1,3 @@
-/-ai
-A set of strings is a neighbourhood of Asys if and only if it belongs to the inductive family MemA.
-
-The equivalence is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

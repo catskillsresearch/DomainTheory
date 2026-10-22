@@ -1,8 +1,3 @@
-/-ai
-The closed conditional term avoids index 8.
-
-Simplify by the definition of the term and the definition of avoidance.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

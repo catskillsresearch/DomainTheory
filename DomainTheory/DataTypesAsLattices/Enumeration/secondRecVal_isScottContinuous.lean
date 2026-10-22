@@ -1,8 +1,3 @@
-/-ai
-For every element u, the map sending x to the union over m in x of u applied to the numeral of apply(m)(num(m)) is Scott continuous.
-
-An element of the union lies in one summand for some m in x, hence lies in the Scott union at the singleton of m, which is the power of two 2^m and sits below x. Conversely, an element of the Scott union lies in the union over some finite piece below x, and the witnessing index from that piece still belongs to x.
-ai-/
 
 module
 

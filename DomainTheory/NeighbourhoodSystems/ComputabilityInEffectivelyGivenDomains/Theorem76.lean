@@ -1,8 +1,3 @@
-/-ai
-For a computable presentation, together with primitive-recursive consistency, inclusion, and equality characteristics of the function space, the fixed-point combinator is a computable map from the function-space presentation to the presentation. Its neighbourhood relation is the recursively enumerable existential over chains of the decidable least-map step.
-
-The numbered name theorem_76 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem76.fixMap_isComputable

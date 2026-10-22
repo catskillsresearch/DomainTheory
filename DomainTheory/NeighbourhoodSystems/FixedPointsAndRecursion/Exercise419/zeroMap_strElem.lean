@@ -1,8 +1,3 @@
-/-ai
-On a total element, the zero test returns the total head value that is false on the empty string, true on a false-headed string, and false on a true-headed string.
-
-The equality is the total-element equation of the lift, applied to the head data of the zero test.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

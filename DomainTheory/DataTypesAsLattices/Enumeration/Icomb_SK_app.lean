@@ -1,8 +1,3 @@
-/-ai
-Applying the identity combinator built from S and K to any element x returns x.
-
-Unfold the definition and rewrite by the beta law for S, then by the beta law for K.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

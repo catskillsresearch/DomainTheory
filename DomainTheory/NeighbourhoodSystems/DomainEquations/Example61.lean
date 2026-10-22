@@ -1,16 +1,3 @@
-/-ai
-The tree algebra of a neighbourhood system D is isomorphic, as a domain, to the sum of D with the product of the tree algebra with itself.
-
-The domain isomorphism is the order equivalence between the elements of the two sides.
-
-The zero-tagging map from elements of D into the tree algebra reflects and preserves order: the tagged element of x lies below the tagged element of x' if and only if x lies below x'.
-
-If the tagged element of x lies below that of x' and X is a neighbourhood of x, the zero-tagged copy of X belongs to the tagged element of x'. That membership is distinct from the master, so it is the zero-tagged copy of a neighbourhood X' of x', and injectivity of zero-tagging gives X equal to X'. Conversely, a neighbourhood of the tagged element of x is either the master, which belongs to the tagged element of x' by the same clause, or the zero-tagged copy of a neighbourhood of x, which remains a neighbourhood of x' and therefore still determines a neighbourhood of the tagged element of x'.
-
-The pairing map into the tree algebra reflects and preserves order: the pair of x and y lies below the pair of x' and y' if and only if x lies below x' and y lies below y'.
-
-If the pair of x and y lies below the pair of x' and y' and P is a neighbourhood of x, the union of the left tagging of P and the right tagging of the master belongs to the pair of x' and y'. That set is distinct from the master, so it is a tagged union of some P' and Q', and injectivity gives P equal to P'. The symmetric argument, using the left tagging of the master and a neighbourhood of y, gives the comparison of y with y'. Conversely, a neighbourhood of the pair of x and y is either the master, which belongs to the pair of x' and y' by the same clause, or the tagged union of a neighbourhood of x and a neighbourhood of y, which remain neighbourhoods of x' and y' and therefore still form a neighbourhood of that pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product
@@ -64,35 +51,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.toS_fromS
 
 @[expose] public section
 
-/-!
-# Example 6.1 (Scott 1981, PRG-19, §6) — the tree algebra `D^§` and the domain equation
-`D^§ ≅ D + (D^§ × D^§)`
-
-Following Dana Scott, *Lectures on a Mathematical Theory of Computation*, PRG-19 (1981), Lecture VI,
-*Introduction to domain equations*. Starting from a fixed domain `D` (a neighbourhood system over `Δ`)
-Scott iterates the product `D × D` *indefinitely* and collects all the iterates into a **single**
-domain `D^§`, the *tree algebra* over `D`. The construction:
-
-* the tokens of `D^§` live in `Γ = {1,2}* 0 Δ` — a finite `{1,2}`-path (here a `List Bool`, `true = 1`,
-  `false = 2`) followed by a separator `0` and a `D`-token in `Δ`. We model this as `List Bool × α`
-  with the master neighbourhood `Γ = {t | t.2 ∈ Δ}`;
-* the neighbourhoods of `D^§` are the **least** family containing (i) `Γ`, (ii) `0X = {([], a) ∣ a ∈ X}`
-  for `X ∈ 𝒟`, and (iii) `1P ∪ 2Q` for `P, Q ∈ 𝒟^§`. This is the inductive predicate `MemS`.
-
-The heart of the example is Scott's verification that `D^§` is a neighbourhood system: closure under
-consistent intersection, proved by induction on the way `X` was put into `D^§`, using the standing
-assumption `∅ ∉ 𝒟` (passed as `hD : ∀ X, 𝒟.mem X → X.Nonempty`). The pay-off is the **domain
-equation**
-
-`D^§ ≅ D + (D^§ × D^§)`,
-
-formalized as the order-isomorphism `dsharpEquiv : (Dsharp D hD).Element ≃o (sum D (prod …) …).Element`,
-i.e. `Dsharp D hD ≅ᴰ sum D (prod (Dsharp D hD) (Dsharp D hD)) …`.
-
-We use the project's `+` (`sum`, Exercise 3.18) and `×` (`prod`, Definition 3.1). All *data* is
-choice-free (`#print axioms ⊆ {propext, Quot.sound}`).
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
@@ -101,29 +59,6 @@ namespace Example61
 
 variable {α : Type*}
 
-/-! ### Token embeddings `0X`, `1P`, `2Q` and the master `Γ`. -/
-
-
-/-! ### Intersection identities. -/
-
-
-/-! ### Subset / injectivity. -/
-
-
-/-! ### Nonemptiness and `⊆ Γ`. -/
-
-
-/-! ### The neighbourhood system `D^§`. -/
-
-
-/-! ### Inversion lemmas for `D^§`-neighbourhoods.
-
-Because the three neighbourhood shapes `Γ`, `0X`, `1P ∪ 2Q` are mutually distinguishable (by the
-shape of their `{1,2}`-paths, using non-emptiness), a `D^§`-neighbourhood of a given shape can only
-have arisen from the matching constructor. -/
-
-
-/-! ### The domain equation `D^§ ≅ D + (D^§ × D^§)`. -/
 
 section Equation
 
@@ -138,12 +73,6 @@ be seen by reference to the equation for `D^§` and the definitions of `+` and `
 theorem dsharp_domain_equation :
     Dsharp D hD ≅ᴰ sum D (prod (Dsharp D hD) (Dsharp D hD)) hD (prod_dsharp_nonempty D hD) :=
   ⟨dsharpEquiv D hD⟩
-
-/-! ### The isomorphic injections `x ↦ x^§` and `x, y ↦ ⟨x, y⟩`.
-
-Scott exhibits the *finite-element* structure of `|D^§|` through two one-one (information-preserving)
-injections: `λx. x^§ : D → D^§` and `λx, y. ⟨x, y⟩ : D^§ × D^§ → D^§`, with bottom `⊥ = {Γ}`
-(the system's own `bot`). -/
 
 
 /-- **Example 6.1 (Scott 1981, PRG-19).** `λx. x^§` is an *isomorphic injection*: `x^§ ⊑ x'^§ ↔ x ⊑ x'`

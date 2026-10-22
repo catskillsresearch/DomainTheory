@@ -1,0 +1,3 @@
+The tag of a left injection lies below the element true. A left-injected element never receives the tag false.
+
+A neighbourhood of the tag is one of the three neighbourhoods of the three-point domain. The master belongs to true, and the zero neighbourhood is the neighbourhood of true. The one neighbourhood cannot occur, because it would require a left injection to be contained in a right injection.

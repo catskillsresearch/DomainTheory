@@ -1,12 +1,25 @@
 # Theorem 1.5
 
-**THEOREM 1.5** (The extension theorem). *Let $X$ and $Y$ be arbitrary topological spaces where $X \subseteq Y$ as a subspace. Then every continuous function $f : X \to \mathbf{P}\omega$ can be extended to a continuous function $\bar{f} : Y \to \mathbf{P}\omega$ defined by the equation:*
+## Human-English
 
-$$\bar{f}(y) = \bigcup \{ \bigcap \{ f(x) \mid x \in X \cap U \} \mid y \in U \},$$
+@import "1976_Theorem_1_5.english" {code_block=false}
 
-*where $y \in Y$, and $U$ ranges over the open subsets of $Y$.*
+## AI: Human-English to AI-Lean
 
-**Lean 4**
+**DataTypesAsLattices/Embedding/theorem_1_5.lean**
 
-- [DataTypesAsLattices/Embedding/theorem_1_5.lean](theorem_1_5.lean)
-- [DataTypesAsLattices/Embedding/theorem_1_5_extends.lean](theorem_1_5_extends.lean)
+@import "theorem_1_5.lean"
+
+**DataTypesAsLattices/Embedding/theorem_1_5_extends.lean**
+
+@import "theorem_1_5_extends.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_1_5.ai_lean_to_english" {code_block=false}
+
+@import "theorem_1_5_extends.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_1_5.ai_english_concordance" {code_block=false}

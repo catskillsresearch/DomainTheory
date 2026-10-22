@@ -1,8 +1,3 @@
-/-ai
-Converting a strict map to the corresponding element of the strict function space and then back returns the original strict map.
-
-This is the right inverse of the order equivalence between elements of the strict function space and strict maps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

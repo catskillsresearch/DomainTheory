@@ -1,6 +1,3 @@
-/-ai
-The identity combinator built from S and K is the application of S to K and then again to K.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

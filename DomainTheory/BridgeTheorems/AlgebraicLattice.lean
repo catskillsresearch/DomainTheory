@@ -1,6 +1,3 @@
-/-ai
-A complete lattice is algebraic when every element is the supremum of the set of compact elements lying under it, and that set is nonempty and directed.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

@@ -1,0 +1,3 @@
+Application of the union of the graph of the finite element e p with the graph of the tagged successor at one more than the maximum of p and q, to the m-fold iterate of e p at e q, equals the successor iterate.
+
+The proof rewrites by equation (2.9), the normalized finite application rule, and the tagged-successor rule. The no-tag rule, from the finite-iterate prohibition, drops the fresh tag, and simplification of bottom and of the iterate gives the successor iterate.

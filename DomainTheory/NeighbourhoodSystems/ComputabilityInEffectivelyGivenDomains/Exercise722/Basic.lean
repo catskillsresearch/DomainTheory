@@ -1,54 +1,3 @@
-/-ai
-If one word lies in a language and another lies in a second language, their concatenation lies in the concatenation of the languages.
-
-The two words are the witnessing split of the concatenated word.
-
-Concatenation of languages is associative.
-
-A word in a left-associated concatenation splits into a two-piece word and a third word, and associativity of word concatenation regroups it as a right-associated concatenation. The opposite inclusion regroups in the other order.
-
-Multiplication of elements of the domain of the neighbourhood system is associative.
-
-A neighbourhood of a left-associated product contains the concatenation of a neighbourhood of the product of the first two elements with a neighbourhood of the third. That first neighbourhood itself contains a concatenation, and associativity together with monotonicity of concatenation moves the witness to the right-associated product. The opposite inclusion runs the same argument with the associations exchanged.
-
-Repeating a word for a sum of counts concatenates the two separate repetitions.
-
-The proof is by induction on the first count. The zero count contributes the empty word. A successor appends one copy of the word, applies the inductive hypothesis, and reassociates the concatenations.
-
-Every repetition of the empty word is the empty word.
-
-Substitute the empty word and induct on the count. The zero repetition is empty, and a successor appends the empty word to the inductive result.
-
-The language of all powers of the empty word lies in the neighbourhood system.
-
-That language equals the singleton of the empty word, because every repetition of the empty word is empty and the empty word is the zero repetition, and every singleton lies in the system.
-
-A language belongs to the stream element of a word if and only if it satisfies the stream membership predicate for that word.
-
-The two sides are the same proposition.
-
-If a language belongs to the square of the stream element of a word, then every finite power of the word lies in the language.
-
-The product witness supplies two neighbourhoods, each containing every power. Concatenating the chosen power from the first with the zero power from the second, which is the empty word, and deleting that empty suffix, leaves the chosen power in the language.
-
-If every power of a word lies in a member of the neighbourhood system, and the language of those powers itself lies in the system, then that member belongs to the square of the stream element.
-
-Both witnesses are the power language. A word in their concatenation splits into two powers, and the addition law for repetitions makes the concatenation a single power, which the hypothesis places in the member.
-
-If the language of powers of a word lies in the neighbourhood system, then the stream element of the word equals its square.
-
-Compare neighbourhoods. Membership in the square yields the stream predicate by extracting powers, and the stream predicate yields membership in the square by the preceding witness.
-
-The stream element of the empty word equals its square, because the language of powers of the empty word lies in the neighbourhood system.
-
-If the square of the stream element of a word contains a language, then every power of the word lies in that language.
-
-If the language of powers of a word lies in the neighbourhood system, then the triple product of its stream element equals the stream element. Associativity moves the parentheses, and idempotence is applied twice.
-
-If the language of powers of a word followed by true lies in the neighbourhood system, then the stream element of that longer word equals its square.
-
-If the language of powers of the word false-then-true lies in the neighbourhood system, then the fourfold product of its stream element equals the twofold product. Idempotence is applied twice.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
@@ -81,81 +30,11 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-/-!
-# Exercise 7.22 (Scott 1981, PRG-19, §7) — a domain over `{0,1}*` by least fixed point
-
-> **EXERCISE 7.22.** (For algebraists.) Let `Σ = {0,1}*` be the free semigroup. A new domain is
-> constructed by defining a family of sets by the least fixed point theorem as follows:
->
-> `S = {Σ} ∪ {{σ} ∣ σ ∈ Σ} ∪ {XY ∣ X, Y ∈ S} ∪ {X ∩ Y ∣ X, Y ∈ S and X ∩ Y ≠ ∅}.`
->
-> Here `XY = {στ ∣ σ ∈ X and τ ∈ Y}`.
->
-> Prove that `S` is an effectively given, positive neighbourhood system. (Hint: the sets in `S` are
-> each "regular events" in the terminology of automata theory, and we have a decision method for the
-> set algebra of regular events.)
->
-> Define multiplication on `|S|` by `xy = {Z ∈ S ∣ ∃ X ∈ x ∃ Y ∈ y. XY ⊆ Z}`, and show `|S|` becomes
-> a semigroup with `Σ` embedded into `|S|` by the homomorphism `σ ↦ {X ∈ S ∣ σ ∈ X}`.
->
-> Investigate some *infinite words* in `S`, say those defined by least fixed points such as
-> `σ⃗ = σ σ⃗` and `σ⃗ = σ⃗ σ`. Are the equations `σ⃗ σ⃗ = σ⃗`, `σ⃗ σ⃗ σ⃗ = σ⃗`,
-> `σ⃗ 1⃗ σ⃗ 1⃗ = σ⃗ 1⃗`, and `01⃗ 01⃗ 01⃗ 01⃗ = 01⃗ 01⃗` true?
-
-This file formalises the **algebraic core** of the exercise, fully and choice-free:
-
-* the least-fixed-point family `S` as an inductive predicate `InS` over tokens `Σ = {0,1}* = List Bool`;
-* `S` is a **positive neighbourhood system** `Ssys` (Definition 1.1 / Exercise 1.19);
-* the **multiplication** `xy` on the domain `|S|` and the proof that it is **associative**, so `|S|`
-  is a semigroup (`mulElem`, `mulElem_assoc`);
-* the **embedding** `σ ↦ {X ∈ S ∣ σ ∈ X}` of the free monoid into `|S|`, proved a semigroup
-  **homomorphism** (`emb_mul`) and **injective** (`emb_injective`);
-* Scott's **infinite words** `σ⃗`, as genuine least fixed points `σ⃗ = σ · σ⃗` (Theorem 4.1) of
-  `x ↦ σ·x` realised as an approximable self-map `prependMap σ` on `|S|`, and **all four of Scott's
-  equations**, proved unconditionally (`streamArrow_mul_self` and friends, **Exercise 7.22l**).
-
-## Effective givenness (mechanised elsewhere in the project)
-
-Every member of `S` is a *regular event* (Scott's hint), and effective givenness is **fully
-mechanised** (not a gap): `Exercise722Regular.lean` (regularity), `Exercise722Decide.lean` /
-`Exercise722Cat.lean` / `Exercise722Equiv.lean` (explicit finite automata; emptiness and language
-equivalence deciders), `Recursive.lean` (the choice-free primitive-recursive `Nat.Primrec` mirrors),
-and `Exercise722Presentation.lean` (`Ssys_cons_computable`, `Ssys_interEq_computable`: Definition 7.1
-relations (ii) and (i) are recursively decidable). See `arxiv.md`, Exercise 7.22a–k (all Pass).
-
-## Infinite words (Exercise 7.22l)
-
-Scott's last questions ask about *infinite words* in `S` and whether certain multiplicative
-equations hold in `|S|`. We answer them **the way Scott poses the question**: `σ⃗` is a genuine
-**least fixed point in the domain `|S|`**, `σ⃗ = σ · σ⃗` (`streamArrow`, `streamArrow_eq`), built with
-this project's existing Theorem 4.1 machinery — the same construction as `Example44.lean`'s
-alternating sequence `a = 0(1a)` — rather than a set-theoretic proxy. All four of Scott's equations
-then hold **unconditionally**, with no side-condition and no open question:
-`streamArrow_mul_self` (`σ⃗σ⃗ = σ⃗`), `streamArrow_mul_self_self` (`σ⃗σ⃗σ⃗ = σ⃗`),
-`streamArrow_mul_self_append_true` (`σ1⃗ · σ1⃗ = σ1⃗`), and `streamArrow_containsZero_pow_four`
-(`01⃗01⃗01⃗01⃗ = 01⃗01⃗`).
-
-(An earlier pass answered the same questions via a *set-theoretic proxy* instead: `streamElem w`,
-the filter `Z ↦ InS Z ∧ ∀n, wⁿ ∈ Z`, conditional on the side-question `InS (powerLang w)` — is the
-language `{wⁿ}` itself a member of `S`? That side-question turned out to be a genuinely open
-combinatorics-on-words question (kept below, `streamElem`/`powerLang`, for reference), but it is
-*not* Scott's question — it was an artefact of choosing that particular proxy, and `streamArrow`
-above answers Scott's actual equations without ever needing it.)
-
-Everything in this file depends only on `propext` / `Quot.sound` (no `Classical.choice`).
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
 open NeighborhoodSystem ApproximableMap
-
-/-! ## Concatenation of languages over `Σ = {0,1}*`
-
-We work with tokens `Σ = List Bool` (the words over `{0,1}`); a neighbourhood is a `Set (List Bool)`
-(a "language"). We use a bespoke `concat` (rather than mathlib's `Language.*`) so that intersection,
-`Set.univ`, and singletons remain the native `Set` operations the neighbourhood-system API expects. -/
 
 
 /-- `a ∈ X`, `b ∈ Y ⟹ a ++ b ∈ XY`. -/
@@ -172,17 +51,6 @@ theorem concat_assoc (X Y Z : Set (List Bool)) :
     exact ⟨a, ha, b ++ c, ⟨b, hb, c, hc, rfl⟩, by rw [List.append_assoc]⟩
   · rintro ⟨a, ha, bc, ⟨b, hb, c, hc, rfl⟩, rfl⟩
     exact ⟨a ++ b, ⟨a, ha, b, hb, rfl⟩, c, hc, by rw [List.append_assoc]⟩
-
-
-/-! ## The least-fixed-point family `S` -/
-
-
-/-! ## `S` is a positive neighbourhood system -/
-
-
-/-! ## Multiplication on the domain `|S|`
-
-`xy = {Z ∈ S ∣ ∃ X ∈ x ∃ Y ∈ y. XY ⊆ Z}`. We show this is again a filter (an element of `|S|`). -/
 
 
 /-- **Exercise 7.22 (semigroup part): multiplication on `|S|` is associative**, so `|S|` is a
@@ -203,25 +71,6 @@ theorem mulElem_assoc (x y z : Ssys.Element) :
       Set.Subset.refl _⟩, Z, hZ, ?_⟩
     rw [concat_assoc]
     exact (concat_mono (Set.Subset.refl _) hYZ).trans hXQ
-
-/-! ## The embedding of `Σ = {0,1}*` into `|S|` -/
-
-
-/-! ## Infinite words as genuine least fixed points (Exercise 7.22l)
-
-Scott's actual question defines `σ⃗` **as a least fixed point in the domain `|S|`**: `σ⃗ = σ·σ⃗`
-(Theorem 4.1's construction, already built for exactly this purpose, e.g. `Example44.lean`'s
-alternating sequence `a = 0(1a)`). We realise `x ↦ σ·x` as an approximable self-map on `Ssys`
-(`prependMap`, generalising `Example44.lean`'s `consMap` from a single bit to a whole word), and
-take `σ⃗ := (prependMap σ).fixElement`. This gives Scott's equation *unconditionally* — no side
-condition on `InS (powerLang σ)` is needed, and (Theorem 4.1's construction being choice-free) no
-`Classical.choice` is pulled in either. -/
-
-
-/-! ## Stream elements (Scott's infinite-word investigations)
-
-Write `wⁿ` for `w` appended to itself `n` times. **`streamElem w`** is the filter
-`Z ↦ InS Z ∧ ∀ n, wⁿ ∈ Z` (Scott's `w⃗`). -/
 
 
 theorem repeatWord_add (w : List Bool) (a b : ℕ) :

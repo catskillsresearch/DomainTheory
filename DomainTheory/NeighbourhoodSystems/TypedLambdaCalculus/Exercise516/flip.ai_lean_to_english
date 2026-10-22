@@ -1,0 +1,1 @@
+Flip complements every bit of a finite string by mapping Boolean negation along the string.

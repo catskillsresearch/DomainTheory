@@ -1,8 +1,3 @@
-/-ai
-If an automaton accepts a word at least as long as the number of states, then it accepts a strictly shorter word.
-
-An accepting path has one more state position than the length of the word, so two positions carry the same state. Deleting the nonempty segment between the earlier and the later of those positions, by the lemma that skips a loop, leaves a shorter accepted word. Both orders of the two positions are treated.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

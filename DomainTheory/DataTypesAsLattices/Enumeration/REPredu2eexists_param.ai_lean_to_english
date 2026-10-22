@@ -1,0 +1,3 @@
+If a predicate of an element of a primitive-codable inhabited type and a natural number is recursively enumerable as a predicate of pairs, then the predicate asserting that some natural number satisfies it is recursively enumerable.
+
+Transport the predicate along decoding of the first component, using the default inhabitant where decoding fails, by the computable operations of pairing, decoding, projection, and the constant default. Existential quantification over the second component preserves recursive enumerability. Reindex that existential predicate along the computable encoding, and the encode-decode identity identifies the result with existence for the original element.

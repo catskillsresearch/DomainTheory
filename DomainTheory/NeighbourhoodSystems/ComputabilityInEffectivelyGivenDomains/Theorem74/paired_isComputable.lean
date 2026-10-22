@@ -1,8 +1,3 @@
-/-ai
-If two maps are computable, their pairing into the product is computable.
-
-Their relations are recursively enumerable. Reindex them by pairing the domain index with each half of the codomain index. The conjunction matches the paired relation: one direction drops product membership, and the other restores it from the two component neighbourhoods.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

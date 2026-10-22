@@ -1,6 +1,3 @@
-/-ai
-emptyExpr is the expression for the empty language, the intersection of the singleton of the bit zero with the singleton of the bit one. It is the canonical empty expression used to phrase emptiness as an equivalence of languages.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

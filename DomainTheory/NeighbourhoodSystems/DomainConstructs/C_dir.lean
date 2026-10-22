@@ -1,8 +1,3 @@
-/-ai
-A nonempty directed family of members of C has its union in C.
-
-The union equals the graph of the join of the corresponding approximable maps, and that graph lies in C.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222

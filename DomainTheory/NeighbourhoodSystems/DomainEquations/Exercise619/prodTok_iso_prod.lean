@@ -1,8 +1,3 @@
-/-ai
-The concrete token product of Exercise 6.19 is isomorphic, as a domain, to the abstract product. Both present the domain of pairs of elements.
-
-The isomorphism is the token-level order isomorphism composed with the reverse of the abstract product equivalence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

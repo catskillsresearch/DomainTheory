@@ -1,8 +1,3 @@
-/-ai
-The image of an element z under the successor map for a bit b meets the b-copy of a neighbourhood X exactly when z meets X.
-
-A membership witness is a neighbourhood of z contained in the prepended copy. That copy equals the bit embedding, so upward closure puts X in z. If z meets X, the same neighbourhood, the subneighbourhood of z, and membership of the bit embedding are a witness, again because the bit embedding equals the prepended copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

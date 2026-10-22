@@ -1,8 +1,3 @@
-/-ai
-fixOfO u is monotone in the element of O.
-
-If Z belongs to fixOfO u t, then Z is a D-neighbourhood and either Z is the master, which still belongs to fixOfO u t', or t contains {0} and u contains Z. The order on O carries membership of {0} from t to t'.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

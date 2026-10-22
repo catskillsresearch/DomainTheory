@@ -1,8 +1,3 @@
-/-ai
-On the canonical power-domain codes, the power-domain action relates the neighbourhood coded by c to the neighbourhood coded by d exactly when every index in the list coded by c is related by the map to some index in the list coded by d.
-
-A coded generator is a member of the source, so the relation supplies a target neighbourhood, which lies under a generator of the target code, and monotonicity of the map passes to the codes. Conversely, a member of the source lies under a generator, the hypothesis supplies a related code, and monotonicity extends the relation from that generator to the member.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

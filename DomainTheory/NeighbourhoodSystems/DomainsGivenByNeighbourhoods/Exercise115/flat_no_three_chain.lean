@@ -1,8 +1,3 @@
-/-ai
-The flat domain admits no strict three-element chain.
-
-Given a chain a < b < c, classification says b is the bottom element or an atom. If b is the bottom element, then a lies below the bottom element, so a equals b. If b is an atom, maximality of that atom forces c to equal b.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,8 +1,3 @@
-/-ai
-The strict pointwise order on Scott maps is the pointwise order together with the failure of the reverse inequality.
-
-The equivalence is the definition of the strict order.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

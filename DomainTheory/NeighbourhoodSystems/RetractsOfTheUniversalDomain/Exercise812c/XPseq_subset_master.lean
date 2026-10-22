@@ -1,8 +1,3 @@
-/-ai
-XPseq n is contained in the master of the second system.
-
-Each summand is the second output of the positive X-step on the padded atom pair. Using the emptiness agreement and the membership alternative from the atom-pair invariant, that output is contained in the second component of the atom pair, which is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

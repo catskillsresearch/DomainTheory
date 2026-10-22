@@ -1,6 +1,3 @@
-/-ai
-The leaf 11 is the singleton consisting of the token 6.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

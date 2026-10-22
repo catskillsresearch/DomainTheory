@@ -1,8 +1,3 @@
-/-ai
-In Example 1.5, a finite family of sets is consistent in the neighbourhood system if and only if the intersection of those sets is nonempty.
-
-A consistency witness is a nonempty set contained in the intersection, so one of its elements lies in the intersection. Conversely, a nonempty intersection is a nonempty witness contained in itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

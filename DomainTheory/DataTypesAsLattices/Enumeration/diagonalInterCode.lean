@@ -1,6 +1,3 @@
-/-ai
-The diagonal intersection code of n is the code application of the code application of the intersection code to the numeral code of n, and then again to n. It is the primitive-recursive diagonal intersection code used in Theorem 3.4.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

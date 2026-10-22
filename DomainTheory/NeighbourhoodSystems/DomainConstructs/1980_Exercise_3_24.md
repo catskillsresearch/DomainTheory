@@ -1,42 +1,169 @@
 # Exercise 3.24
 
-**EXERCISE 3.24.** Establish some more isomorphisms :
+## Human-English
 
-(i) $(D_0 \to (D_1 \times D_2)) \cong (D_0 \to D_1) \times (D_0 \to D_2)$
+@import "1980_Exercise_3_24.english" {code_block=false}
 
-(ii) $(D_0 \to D_1^\infty) \cong (D_0 \to D_1)^\infty$
+## AI: Human-English to AI-Lean
 
-(iii) $D_0 \times (D_1 + D_2) \cong (D_0 \times D_1) + (D_0 \times D_2)$
+**NeighbourhoodSystems/DomainConstructs/Exercise324/funProdEquiv.lean**
 
-(iv) $(D_0 + D_1) \to D_2 \cong (D_0 \to D_2) \times (D_1 \to D_2)$ . . .
+@import "Exercise324/funProdEquiv.lean"
 
-If some of the above are not true, perhaps at least some mapping relationships can be established.
+**NeighbourhoodSystems/DomainConstructs/Exercise324/funProdIso.lean**
 
-**Lean 4**
+@import "Exercise324/funProdIso.lean"
 
-- [NeighbourhoodSystems/DomainConstructs/Exercise324/funProdEquiv.lean](Exercise324/funProdEquiv.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324/funProdIso.lean](Exercise324/funProdIso.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324/Basic.lean](Exercise324/Basic.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324/funProd_isomorphic.lean](Exercise324/funProd_isomorphic.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324.lean](Exercise324.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copair.lean](Exercise324Distrib/copair.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copair_comp_inMapu2080.lean](Exercise324Distrib/copair_comp_inMapu2080.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copair_comp_inMapu2081.lean](Exercise324Distrib/copair_comp_inMapu2081.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copairProj_copair.lean](Exercise324Distrib/copairProj_copair.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Distrib.lean](Exercise324Distrib.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copair_rel.lean](Exercise324Distrib/copair_rel.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copairProj.lean](Exercise324Distrib/copairProj.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/prod_mem_nonempty.lean](Exercise324Distrib/prod_mem_nonempty.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/distribMap.lean](Exercise324Distrib/distribMap.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/Basic.lean](Exercise324Distrib/Basic.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Iter/exists_forall_swap.lean](Exercise324Iter/exists_forall_swap.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Iter/funIter_isomorphic.lean](Exercise324Iter/funIter_isomorphic.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Iter.lean](Exercise324Iter.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Iter/le_of_projComp_le.lean](Exercise324Iter/le_of_projComp_le.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Iter/mapOfSeq.lean](Exercise324Iter/mapOfSeq.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Iter/piCongrOrderIso.lean](Exercise324Iter/piCongrOrderIso.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Iter/projComp_mono.lean](Exercise324Iter/projComp_mono.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Iter/toElementMap_mapOfSeq.lean](Exercise324Iter/toElementMap_mapOfSeq.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Iter/funIterEquiv.lean](Exercise324Iter/funIterEquiv.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Iter/funIterIso.lean](Exercise324Iter/funIterIso.lean)
-- [NeighbourhoodSystems/DomainConstructs/Exercise324Iter/Basic.lean](Exercise324Iter/Basic.lean)
+**NeighbourhoodSystems/DomainConstructs/Exercise324/Basic.lean**
+
+@import "Exercise324/Basic.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324/funProd_isomorphic.lean**
+
+@import "Exercise324/funProd_isomorphic.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324.lean**
+
+@import "Exercise324.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copair.lean**
+
+@import "Exercise324Distrib/copair.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copair_comp_inMapu2080.lean**
+
+@import "Exercise324Distrib/copair_comp_inMapu2080.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copair_comp_inMapu2081.lean**
+
+@import "Exercise324Distrib/copair_comp_inMapu2081.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copairProj_copair.lean**
+
+@import "Exercise324Distrib/copairProj_copair.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Distrib.lean**
+
+@import "Exercise324Distrib.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copair_rel.lean**
+
+@import "Exercise324Distrib/copair_rel.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/copairProj.lean**
+
+@import "Exercise324Distrib/copairProj.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/prod_mem_nonempty.lean**
+
+@import "Exercise324Distrib/prod_mem_nonempty.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/distribMap.lean**
+
+@import "Exercise324Distrib/distribMap.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Distrib/Basic.lean**
+
+@import "Exercise324Distrib/Basic.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Iter/exists_forall_swap.lean**
+
+@import "Exercise324Iter/exists_forall_swap.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Iter/funIter_isomorphic.lean**
+
+@import "Exercise324Iter/funIter_isomorphic.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Iter.lean**
+
+@import "Exercise324Iter.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Iter/le_of_projComp_le.lean**
+
+@import "Exercise324Iter/le_of_projComp_le.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Iter/mapOfSeq.lean**
+
+@import "Exercise324Iter/mapOfSeq.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Iter/piCongrOrderIso.lean**
+
+@import "Exercise324Iter/piCongrOrderIso.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Iter/projComp_mono.lean**
+
+@import "Exercise324Iter/projComp_mono.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Iter/toElementMap_mapOfSeq.lean**
+
+@import "Exercise324Iter/toElementMap_mapOfSeq.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Iter/funIterEquiv.lean**
+
+@import "Exercise324Iter/funIterEquiv.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Iter/funIterIso.lean**
+
+@import "Exercise324Iter/funIterIso.lean"
+
+**NeighbourhoodSystems/DomainConstructs/Exercise324Iter/Basic.lean**
+
+@import "Exercise324Iter/Basic.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Exercise324/funProdEquiv.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324/funProdIso.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324/Basic.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324/funProd_isomorphic.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Distrib/copair.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Distrib/copair_comp_inMapu2080.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Distrib/copair_comp_inMapu2081.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Distrib/copairProj_copair.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Distrib.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Distrib/copair_rel.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Distrib/copairProj.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Distrib/prod_mem_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Distrib/distribMap.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Distrib/Basic.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Iter/exists_forall_swap.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Iter/funIter_isomorphic.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Iter.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Iter/le_of_projComp_le.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Iter/mapOfSeq.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Iter/piCongrOrderIso.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Iter/projComp_mono.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Iter/toElementMap_mapOfSeq.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Iter/funIterEquiv.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Iter/funIterIso.ai_lean_to_english" {code_block=false}
+
+@import "Exercise324Iter/Basic.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_3_24.ai_english_concordance" {code_block=false}

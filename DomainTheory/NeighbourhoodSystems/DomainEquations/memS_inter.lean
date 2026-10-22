@@ -1,8 +1,3 @@
-/-ai
-If X, Y, and Z are neighbourhoods of D-sharp and Z is contained in the intersection of X and Y, then that intersection is a neighbourhood of D-sharp.
-
-The argument inducts on the construction of X. When X is the master, Y is contained in X, so the intersection is Y. When X is a zero-copy of A and Y is the master, the intersection is that zero-copy. If Y is a zero-copy of B, the witness Z must itself be a zero-copy of some C contained in the intersection of A and B, and the intersection law of D supplies that intersection; a master or pair witness for Z contradicts the shape of a zero-embedding. If Y is a pair, the intersection with the zero-copy is empty, contradicting that Z is nonempty. When X is a pair, the cases of Y the master and of Y a zero-copy are symmetric. If Y is another pair, the witness Z is a pair whose sides lie under the two component intersections, and the inductive hypotheses close those intersections.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,8 +1,3 @@
-/-ai
-Applying the positive bar branch of u and x to the numeral 2 yields the application of x to the numeral 1.
-
-Rewrite by the definition and by equation (2.22). The predecessor of the numeral 2 is the numeral 1, by extensionality and simplification. The successor case of the conditional (2.7) and sequencing at the numeral 1 then return the application of x to the numeral 1.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

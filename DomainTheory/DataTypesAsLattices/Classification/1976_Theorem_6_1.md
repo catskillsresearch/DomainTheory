@@ -1,18 +1,37 @@
 # Theorem 6.1
 
-**THEOREM 6.1 (The $\mathfrak{G}$ theorem).** *The open subsets of $\mathbf{P}\omega$ are exactly the sets of the form:*
+## Human-English
 
-$$\{x \mid f(x) \supseteq 0\},$$
+@import "1976_Theorem_6_1.english" {code_block=false}
 
-*where $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is continuous.*
+## AI: Human-English to AI-Lean
 
-We could have written $0 \in f(x)$ or the equation $f(x) \cap 0 = 0$ instead of $f(x) \supseteq 0$. Note that in case $f : \mathbf{P}\omega \to \{\bot, \top\}$, then $f(x) \supseteq 0$ is equivalent to $f(x) = \top$. Also any other integer could have been used in place of $0$.
+**DataTypesAsLattices/Classification/theorem_6_1.lean**
 
-We can say that $\{x \mid 0 \in x\}$ is the *typical* open set, and that every other open set can be obtained as an inverse image of the typical set by a continuous function. We shall extend this pattern to other classes, especially looking for equations. In the case of openness an inequality could also be used, giving as the typical set $\{x \mid x \neq \bot\}$. But since closed sets are just the complements of open sets, this remark gives us:
+@import "theorem_6_1.lean"
 
-**Lean 4**
+**DataTypesAsLattices/Classification/typicalG_isScottOpen.lean**
 
-- [DataTypesAsLattices/Classification/theorem_6_1.lean](theorem_6_1.lean)
-- [DataTypesAsLattices/Classification/typicalG_isScottOpen.lean](typicalG_isScottOpen.lean)
-- [DataTypesAsLattices/Classification/typicalG_mem_ScottG.lean](typicalG_mem_ScottG.lean)
-- [DataTypesAsLattices/Classification/typicalG_universal.lean](typicalG_universal.lean)
+@import "typicalG_isScottOpen.lean"
+
+**DataTypesAsLattices/Classification/typicalG_mem_ScottG.lean**
+
+@import "typicalG_mem_ScottG.lean"
+
+**DataTypesAsLattices/Classification/typicalG_universal.lean**
+
+@import "typicalG_universal.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_6_1.ai_lean_to_english" {code_block=false}
+
+@import "typicalG_isScottOpen.ai_lean_to_english" {code_block=false}
+
+@import "typicalG_mem_ScottG.ai_lean_to_english" {code_block=false}
+
+@import "typicalG_universal.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_6_1.ai_english_concordance" {code_block=false}

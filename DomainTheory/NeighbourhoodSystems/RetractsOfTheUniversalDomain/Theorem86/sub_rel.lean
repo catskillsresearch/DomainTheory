@@ -1,8 +1,3 @@
-/-ai
-The map sub f relates X to Z exactly when both belong to E and some neighbourhood of E is related to itself by f, contains X, and is contained in Z.
-
-This is the relation of the retraction of the fixed neighbourhood system of f.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

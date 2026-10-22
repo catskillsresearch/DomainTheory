@@ -1,0 +1,1 @@
+Decidable equality of strict function tokens is decidable equality of the underlying function tokens, carried across the subtype. Equal underlying tokens give equal strict tokens by extensionality of subtypes, and unequal underlying tokens remain unequal after the proof is forgotten.

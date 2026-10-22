@@ -1,8 +1,3 @@
-/-ai
-In a positive, difference-closed system with no minimal neighbourhood, the union of two neighbourhoods is a neighbourhood.
-
-The union dichotomy says the union is empty or a neighbourhood. It cannot be empty, because it contains the first neighbourhood and a neighbourhood is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

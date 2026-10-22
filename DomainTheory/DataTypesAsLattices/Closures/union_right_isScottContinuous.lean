@@ -1,8 +1,3 @@
-/-ai
-If a map is Scott continuous, then union on the left with a fixed set, after that map, is Scott continuous.
-
-A member of the fixed set lies in the Scott union at the empty finite set. A member of the image lies in the Scott union of the map and remains in the right disjunct. Conversely, a left disjunct of a Scott-union witness already lies in the fixed set, and a right disjunct is lifted by monotonicity of the map.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

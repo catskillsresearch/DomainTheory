@@ -1,6 +1,3 @@
-/-ai
-An endofunctor that is monotone on domains is continuous on domains when it preserves directed unions of subsystems. For a nonempty family of subsystems of a system E, directed in the subsystem relation, and for a subsystem U of E whose neighbourhoods are exactly those that belong to some member of the family, the target-side neighbourhood family of the image of U equals the union of the target-side neighbourhood families of the images of the members.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

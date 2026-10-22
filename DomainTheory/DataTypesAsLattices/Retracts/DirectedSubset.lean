@@ -1,6 +1,3 @@
-/-ai
-A set of fixed points is directed for inclusion when it is nonempty and any two of its members have values contained in the value of a common member.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

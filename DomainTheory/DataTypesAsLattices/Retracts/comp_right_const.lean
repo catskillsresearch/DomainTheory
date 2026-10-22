@@ -1,8 +1,3 @@
-/-ai
-For a fixed right argument a, composition on the right with a is Scott continuous in the left argument.
-
-Continuity of forming a graph in a parameter reduces the claim to Scott continuity of application in the function argument, taken at the application of a.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

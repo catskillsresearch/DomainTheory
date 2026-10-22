@@ -1,6 +1,3 @@
-/-ai
-The indexed directed union of a nonempty family of elements, any two of which lie below a common later value, is the directed union of the range of the family. The range is nonempty, and a common later index supplies a common upper bound in the range.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

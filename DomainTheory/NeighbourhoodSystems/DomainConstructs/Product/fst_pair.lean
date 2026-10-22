@@ -1,8 +1,3 @@
-/-ai
-The first component of the pairing of elements x and y is x.
-
-The two elements contain the same neighbourhoods. Membership of the product of X with the second master in the pairing splits into membership of X in x. Conversely, if X belongs to x then that product belongs to the pairing because the master belongs to y.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

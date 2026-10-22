@@ -1,8 +1,3 @@
-/-ai
-The domain obtained as the fixed neighbourhood of the fixed point of the continuous operator of the combinator is isomorphic to its own function space.
-
-The proof is the main theorem of the fixed-point construction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise825Unit

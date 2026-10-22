@@ -1,8 +1,3 @@
-/-ai
-An atom lies in the fold of atom insertion over a multiset of tree tokens, starting from the empty set, if and only if that multiset contains the corresponding atom token.
-
-Induct on the multiset. The empty multiset has empty fold and contains no token. If the head is an atom token, membership in the inserted fold is equality with the inserted atom or membership in the fold of the tail, and the inductive hypothesis matches a witness in the tail with a witness in the cons, while a witness at the head is that atom token. If the head is the bottom or a pair constructor, atom insertion acts as the identity, so membership is membership in the tail fold; a witness in the tail remains a witness in the cons, and the head itself cannot be the desired atom token.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

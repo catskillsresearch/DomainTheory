@@ -1,18 +1,3 @@
-/-ai
-One upsampling step from level k to level k + 1 presents the same set as the original
-mask.
-
-By extensionality, the truncated mask is strictly below two to the power two to the k,
-and the step equals that power times the truncation plus the truncation, by reflexivity.
-The test bit of this sum splits into the low and high copies. The remainder of the point
-by two to the k equals the remainder by two to the k of its remainder by two to the k +
-1, and the latter remainder is strictly below two to the k + 1, which equals twice two
-to the k. If that remainder lies below two to the k, the low branch, the remainder form
-of the bit test, and the remainder equaling itself give the original bit. Otherwise the
-remainder is at least two to the k and the difference is strictly below two to the k by
-arithmetic, so the high branch, the remainder form of the bit test, and the
-single-wraparound law for the remainder give the original bit.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

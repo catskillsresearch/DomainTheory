@@ -1,8 +1,3 @@
-/-ai
-For any finite sign prefix of length n and any Boolean, the first output of the true-bit Y-step after the X-step at that Boolean, on atomPair at the padded prefix, is contained in YPseq at n.
-
-An element of that output belongs to the double union defining YPseq, witnessed by the same prefix and the same Boolean.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

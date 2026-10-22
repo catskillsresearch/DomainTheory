@@ -1,0 +1,3 @@
+If a tree token lies in a tree-system element, then the fold of its unfold also lies in that element.
+
+Either the fold of the unfold equals the token, or the token is pair-right of bottom and the fold of its unfold is pair-left of bottom. In the first case the hypothesis applies. In the second, the two pair-bottom tokens belong to an element together.

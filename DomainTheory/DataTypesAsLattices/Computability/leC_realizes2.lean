@@ -1,8 +1,3 @@
-/-ai
-Applying the comparison combinator to the numerals of n and m yields the numeral of 1 when n ≤ m, and the numeral of 0 otherwise.
-
-Unfold the combinator and rewrite by the β-rules for S and K, then use that subtraction realizes truncated subtraction. If n ≤ m, the difference is 0 and the zero test on zero returns 1. If n > m, the difference is positive, hence a successor, and the zero test on a successor returns 0.
-ai-/
 module
 
 public import Mathlib.Computability.RE

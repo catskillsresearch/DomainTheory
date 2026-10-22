@@ -1,6 +1,3 @@
-/-ai
-The zero test is the strict lift, into the truth domain, of the table that sends zero to true and every successor to false.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

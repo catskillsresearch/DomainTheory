@@ -1,0 +1,3 @@
+Mapping the upward clip at m over a list of rational pairs presents the intervals of the original list, cut to the closed ray from m.
+
+A point of a clipped pair still lies in the original interval, because the left endpoint only rises, and it lies at or above m. Conversely, a point of an original interval that lies at or above m lies in the interval whose left endpoint is the maximum of the old left endpoint and m.

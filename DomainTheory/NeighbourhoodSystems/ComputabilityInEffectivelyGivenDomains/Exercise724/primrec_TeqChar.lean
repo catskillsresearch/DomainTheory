@@ -1,8 +1,3 @@
-/-ai
-If two functions on the natural numbers are primitive recursive, then so is the function sending an input to the equality characteristic of T on their values.
-
-The zero test of the sum of the two differences is primitive recursive, and it agrees with the equality characteristic by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-An output neighbourhood belongs to the conditional at a paired argument when the truth element contains zero and the output belongs to the first argument, or the truth element contains one and the output belongs to the second argument, or the output is the master.
-
-A witnessing input splits as a product of a truth neighbourhood with neighbourhoods of the two arguments. The zero clause places zero in the truth element and the output above a neighbourhood of the first argument, the one clause does the same for one and the second argument, and the master clause forces the output to be the master. Conversely, the three alternatives are witnessed by the product of the singleton of zero with the output and the master, the product of the singleton of one with the master and the output, and the product of the three masters, with the corresponding guard clause given by the preimage computations.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

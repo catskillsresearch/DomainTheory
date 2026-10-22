@@ -1,0 +1,1 @@
+A variable i occurs in a term, whether free or bound, as needed for freshness in the alpha law, when the term is the variable i, when it occurs in the argument of a successor or a predecessor, when it occurs in any immediate subterm of a conditional or an application, or when an abstraction binds i or it occurs in the body. The constant zero has no occurrence of i.

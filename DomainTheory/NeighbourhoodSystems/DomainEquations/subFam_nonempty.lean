@@ -1,8 +1,3 @@
-/-ai
-The family of subdomain neighbourhood-sets of E is nonempty.
-
-E is a subsystem of itself, so the collection of its own neighbourhoods belongs to the family.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

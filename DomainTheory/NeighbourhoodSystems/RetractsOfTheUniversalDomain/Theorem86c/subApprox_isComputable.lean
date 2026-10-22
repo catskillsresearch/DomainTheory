@@ -1,8 +1,3 @@
-/-ai
-Theorem 8.6 states that, relative to the function-space presentation built from a computable presentation of E, the packaged map subApprox is computable.
-
-The inclusion character of the function-space presentation decides inclusions of enumerated neighbourhoods. The sub-step predicate is recursively decidable, and projecting it yields a recursively enumerable predicate of a stage, a list entry, and a witness index. Bounded universal quantification of that predicate over the decoded list remains recursively enumerable, as does failure of the consistency character on the second index. Their disjunction matches the relation of subApprox on enumerated neighbourhoods: that relation is an implication from consistency, rewritten as a disjunction with the negated consistency test, and each list entry matches the existential form of sub of the least map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem86

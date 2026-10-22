@@ -1,0 +1,3 @@
+If one set is contained in another, then the slice of the first at a fixed index is contained in the slice of the second.
+
+Each slice is a product neighbourhood of a one-coordinate update, so inclusion is coordinatewise. At the chosen index the updates are the two sets. At every other index both updates are the master.

@@ -1,8 +1,3 @@
-/-ai
-The evaluation map lies below the underlying map of every algebra homomorphism from Exp.
-
-A pair related by the evaluation map is related by some iterate, and every iterate lies below the homomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

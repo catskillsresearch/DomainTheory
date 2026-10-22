@@ -1,8 +1,3 @@
-/-ai
-The pointwise infimum of a set of compatible sequences is compatible.
-
-At each level the projection preserves the infimum of the next coordinates. Compatibility of each sequence identifies those next coordinates with the current coordinates, so the projected infimum equals the infimum of the current coordinates.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

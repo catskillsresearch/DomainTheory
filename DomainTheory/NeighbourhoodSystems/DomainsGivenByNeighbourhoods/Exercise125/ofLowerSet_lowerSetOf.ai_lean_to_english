@@ -1,0 +1,3 @@
+The filter associated with the lower set of a filter equals the original filter.
+
+By extensionality of elements. If a neighbourhood contains the principal upper set of a token in the lower set, upward closure returns the neighbourhood. Conversely, the subfamily law makes the set a neighbourhood, and exists_Ici_of_mem rewrites it as a principal upper set. That rewritten membership, together with reflexivity of inclusion, is the witness.

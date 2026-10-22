@@ -1,6 +1,3 @@
-/-ai
-A neighbourhood system D embeds as a subdomain of a neighbourhood system E when some neighbourhood system on the token type of E is a subdomain of E and is isomorphic to D.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610

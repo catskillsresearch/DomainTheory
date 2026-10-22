@@ -1,8 +1,3 @@
-/-ai
-Transported through the function-space equivalence, the lambda combinator sends an element to the second map composed after the map of that element composed after the first map.
-
-Compare elements of the universal domain. Unfold the lambda combinator as the curry formula, and chain the elementwise law of curry, composition, the product of maps on a pair, the identity map, and evaluation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

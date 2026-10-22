@@ -1,21 +1,103 @@
 # Exercise 4.22
 
-**EXERCISE 4.22.** Suppose $\mathbf{N}^*$ is a structured set satisfying only axioms (i) and (ii) of 4.5. Must there be a subset $\mathbf{N} \subseteq \mathbf{N}^*$ that satisfies (i), (ii), and (iii)? (Hint: Use a least fixed point in $P\mathbf{N}^*$.) (For set theorists): How do we know from the axioms of set theory that there exists such a set $\mathbf{N}^*$?
+## Human-English
 
-**Lean 4**
+@import "1980_Exercise_4_22.english" {code_block=false}
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/exists_peano_submodel.lean](exists_peano_submodel.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422.lean](../Exercise422.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp.lean](genOp.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp_monotone.lean](genOp_monotone.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp_nats.lean](genOp_nats.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/natPeano.lean](natPeano.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/nats.lean](nats.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/Nat'.lean](Nat'.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/nats_induction.lean](nats_induction.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/succ_mem_nats.lean](succ_mem_nats.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/subSucc.lean](subSucc.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/zero_mem_nats.lean](zero_mem_nats.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/subZero.lean](subZero.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/peanoSub.lean](peanoSub.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/Basic.lean](Basic.lean)
+## AI: Human-English to AI-Lean
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/exists_peano_submodel.lean**
+
+@import "exists_peano_submodel.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422.lean**
+
+@import "../Exercise422.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp.lean**
+
+@import "genOp.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp_monotone.lean**
+
+@import "genOp_monotone.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/genOp_nats.lean**
+
+@import "genOp_nats.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/natPeano.lean**
+
+@import "natPeano.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/nats.lean**
+
+@import "nats.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/Nat'.lean**
+
+@import "Nat'.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/nats_induction.lean**
+
+@import "nats_induction.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/succ_mem_nats.lean**
+
+@import "succ_mem_nats.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/subSucc.lean**
+
+@import "subSucc.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/zero_mem_nats.lean**
+
+@import "zero_mem_nats.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/subZero.lean**
+
+@import "subZero.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/peanoSub.lean**
+
+@import "peanoSub.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Exercise422/Basic.lean**
+
+@import "Basic.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "exists_peano_submodel.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise422.ai_lean_to_english" {code_block=false}
+
+@import "genOp.ai_lean_to_english" {code_block=false}
+
+@import "genOp_monotone.ai_lean_to_english" {code_block=false}
+
+@import "genOp_nats.ai_lean_to_english" {code_block=false}
+
+@import "natPeano.ai_lean_to_english" {code_block=false}
+
+@import "nats.ai_lean_to_english" {code_block=false}
+
+@import "Nat'.ai_lean_to_english" {code_block=false}
+
+@import "nats_induction.ai_lean_to_english" {code_block=false}
+
+@import "succ_mem_nats.ai_lean_to_english" {code_block=false}
+
+@import "subSucc.ai_lean_to_english" {code_block=false}
+
+@import "zero_mem_nats.ai_lean_to_english" {code_block=false}
+
+@import "subZero.ai_lean_to_english" {code_block=false}
+
+@import "peanoSub.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_4_22.ai_english_concordance" {code_block=false}

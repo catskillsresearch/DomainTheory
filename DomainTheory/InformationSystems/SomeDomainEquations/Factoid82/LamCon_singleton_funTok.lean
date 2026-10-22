@@ -1,8 +1,3 @@
-/-ai
-The singleton of a function token is consistent whenever both component finsets are consistent.
-
-Take stages witnessing the two components and let k be their maximum. At stage k+1 the right-hand clause applies: there are no atoms, the only function token has components lifted to stage k by monotonicity, and a subcollection either equals that singleton, whose output union is the output component, or is empty, which is consistent at stage k.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

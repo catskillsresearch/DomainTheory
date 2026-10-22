@@ -1,8 +1,3 @@
-/-ai
-The flat domain and the stem domain are not isomorphic as domains.
-
-The numbered name example_115 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise115.not_isomorphic

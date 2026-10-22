@@ -1,6 +1,3 @@
-/-ai
-The state packing of a remainder, a positive-list code, a negative-list code, and a U-code is the nested pair of those four numbers.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

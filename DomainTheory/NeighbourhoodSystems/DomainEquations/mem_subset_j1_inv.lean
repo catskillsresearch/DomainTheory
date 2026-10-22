@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood of the three-way sum that is contained in a one-copy is itself a one-copy.
-
-The master contains the point none, which does not lie in a one-copy. A zero-copy contains a point of tag zero, which does not lie in a one-copy. A one-copy is already of the required form. A two-copy contains a point of tag two, which does not lie in a one-copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

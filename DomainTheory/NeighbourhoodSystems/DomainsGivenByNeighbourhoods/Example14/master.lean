@@ -1,6 +1,3 @@
-/-ai
-The master neighbourhood of Example 1.4 is the whole set of tokens.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

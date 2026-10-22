@@ -1,8 +1,3 @@
-/-ai
-The constant map at an element b relates X to Y if and only if X is a neighbourhood and Y belongs to b.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

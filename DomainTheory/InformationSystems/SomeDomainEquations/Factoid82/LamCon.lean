@@ -1,6 +1,3 @@
-/-ai
-A finset of raw lambda tokens is consistent when it is consistent at some finite stage.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

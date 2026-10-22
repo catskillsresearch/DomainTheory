@@ -1,8 +1,3 @@
-/-ai
-The conditional map of elements x and y evaluates to x at the Boolean element true and to y at the Boolean element false.
-
-The two equalities are the corresponding evaluation lemmas.
-ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

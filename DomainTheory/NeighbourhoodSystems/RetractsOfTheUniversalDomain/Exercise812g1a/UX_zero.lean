@@ -1,8 +1,3 @@
-/-ai
-Index 0 presents U's master neighbourhood.
-
-Decoding 0 yields the empty list, so canonicalization takes its empty-input value. The intervals presented by that singleton, united with the empty presentation, are the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

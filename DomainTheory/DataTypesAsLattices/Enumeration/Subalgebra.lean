@@ -1,6 +1,3 @@
-/-ai
-A combinatory subalgebra is a set of elements of Pω that contains the combinator G and is closed under application.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

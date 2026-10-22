@@ -1,8 +1,3 @@
-/-ai
-A token lies in the double fiber at i and j if and only if the pair of i with the pair of j and the token lies in the doubly indexed set.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

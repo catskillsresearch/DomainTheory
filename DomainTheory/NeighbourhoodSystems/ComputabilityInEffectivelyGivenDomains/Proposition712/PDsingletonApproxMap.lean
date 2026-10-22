@@ -1,6 +1,3 @@
-/-ai
-The singleton approximable map from a neighbourhood system to its power domain is the monotone extension which sends each neighbourhood X to the singleton of the principal element of X. Monotonicity on principal inputs is the monotonicity of that singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

@@ -1,6 +1,3 @@
-/-ai
-Every grammar expression determines an endofunctor of the category whose morphisms are strict maps. On objects it acts by the expression's action on neighbourhood systems, and it sends a strict map to the strict map obtained by applying the expression to the underlying approximable map. Preservation of identities is the identity law for that action, and preservation of composition is its composition law, which applies because every morphism of this category is strict.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

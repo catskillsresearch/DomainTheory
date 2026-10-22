@@ -1,8 +1,3 @@
-/-ai
-Every pair related by the graph relation of the leaf embedding and the pairing lies in the tree algebra on both sides, and the input neighbourhood is contained in the output neighbourhood.
-
-Induct on the graph derivation. The master clause gives the master neighbourhood on both sides. A leaf clause is already a leaf membership together with containment. A node clause combines the inductive containments with the containment coming from the pairing relation, after the product neighbourhood is decomposed.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

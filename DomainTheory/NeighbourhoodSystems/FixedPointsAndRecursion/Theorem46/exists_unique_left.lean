@@ -1,8 +1,3 @@
-/-ai
-Each element of the right-hand model of Peano's axioms is related by the graph to exactly one element of the left-hand model.
-
-Uniqueness on the right for the models in opposite order supplies a unique partner. Swapping the graph returns that relation, and its uniqueness, to the original order.
-ai-/
 module
 
 public import Mathlib.Tactic

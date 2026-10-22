@@ -1,8 +1,3 @@
-/-ai
-The closure of F is contained in every member of the family that contains F.
-
-A point of the closure lies in every such member, and the given member is one of them.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

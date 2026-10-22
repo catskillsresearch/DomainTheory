@@ -1,8 +1,3 @@
-/-ai
-The coalesced sum carries the subsystem relation componentwise.
-
-The masters agree by unfolding the sum master and rewriting the two component masters. Membership sends the master to the master, and a proper tag along the corresponding subsystem, rewriting properness by the component master equality. For intersections, two masters remain the master, and a master meeting a tag reduces by the intersection of the sum master with that tag, commuting when the tag comes first. Two false tags intersect by the bit-embedding intersection; the left subsystem closes the component intersection after the inverse false-tag membership lemma, and properness is the left-factor intersection lemma. Opposite bits have empty intersection, which contradicts nonemptiness. Two true tags are symmetric, using the inverse true-tag membership lemma.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

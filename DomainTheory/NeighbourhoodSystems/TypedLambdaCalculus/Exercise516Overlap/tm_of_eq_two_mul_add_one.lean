@@ -1,8 +1,3 @@
-/-ai
-If x equals twice y plus one, then the Thue–Morse bit at x is the negation of the bit at y.
-
-Rewrite by the hypothesis and the odd recurrence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse

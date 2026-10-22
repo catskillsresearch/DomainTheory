@@ -1,8 +1,3 @@
-/-ai
-Every product neighbourhood equals the product of its left preimage and its right preimage.
-
-A product neighbourhood is the product of some pair of neighbourhoods, and those neighbourhoods are the two preimages.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

@@ -1,31 +1,67 @@
 # Exercise 8.26
 
-**EXERCISE 8.26.** Discuss in more detail the "pay-off" for $U$, namely the translation of "untyped" $\lambda$-calculus into $U$ as shown by the equations at the end of the lecture after the proof of 8.9. In particular show how the whole of the **typed** $\lambda$-calculus can be retranslated back into $U$ with the aid of projections. (Hint: Whenever you want to write
-$$
-f : D_a \to D_b,
-$$
-write instead
+## Human-English
 
-$$f = b \circ f \circ a,$$
+@import "1980_Exercise_8_26.english" {code_block=false}
 
-where $a$, $b$ are finitary projections. Whenever you want to form a $\lambda$-abstraction
+## AI: Human-English to AI-Lean
 
-$$\lambda x^{D_a}.\,\sigma,$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply.lean**
 
-where $\sigma$ is of type $D_b$, instead form
+@import "Uapply.lean"
 
-$$\lambda x.\, b(\sigma'[a(x)/x]),$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply_Ulam.lean**
 
-where $\sigma'$ is the further translation of $\sigma$ into untyped $\lambda$-calculus. Be sure to show that this result "has the right type" in the sense defined above.)
+@import "Uapply_Ulam.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Ulam.lean**
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply.lean](Uapply.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Uapply_Ulam.lean](Uapply_Ulam.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Ulam.lean](Ulam.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs.lean](translateAbs.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_idMap.lean](translateAbs_idMap.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826.lean](../Exercise826.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_sandwich.lean](translateAbs_sandwich.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateApp_hasType.lean](translateApp_hasType.lean)
+@import "Ulam.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs.lean**
+
+@import "translateAbs.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_idMap.lean**
+
+@import "translateAbs_idMap.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826.lean**
+
+@import "../Exercise826.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateAbs_sandwich.lean**
+
+@import "translateAbs_sandwich.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise826/translateApp_hasType.lean**
+
+@import "translateApp_hasType.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Uapply.ai_lean_to_english" {code_block=false}
+
+@import "Uapply_Ulam.ai_lean_to_english" {code_block=false}
+
+@import "Ulam.ai_lean_to_english" {code_block=false}
+
+@import "translateAbs.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "translateAbs_idMap.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise826.ai_lean_to_english" {code_block=false}
+
+@import "translateAbs_sandwich.ai_lean_to_english" {code_block=false}
+
+@import "translateApp_hasType.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_8_26.ai_english_concordance" {code_block=false}

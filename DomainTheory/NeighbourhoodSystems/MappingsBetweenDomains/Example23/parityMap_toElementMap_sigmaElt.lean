@@ -1,8 +1,3 @@
-/-ai
-A neighbourhood belongs to the parity map at the element obtained by prepending a string to an element exactly when some cone of the element has that neighbourhood in the element selected by scanning the concatenation.
-
-From a membership witness, the inner neighbourhood is a cone and the cone inclusion is a prefix of the concatenation, so monotonicity of the scanned value moves the membership to the concatenated scan. Conversely the cone of the concatenation belongs to the shifted element by the prepend inclusion, and its scan is a witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

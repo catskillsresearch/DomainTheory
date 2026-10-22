@@ -1,8 +1,3 @@
-/-ai
-The intersection of a nonempty family of graphs of approximable maps equals the graph of the meet of that family.
-
-After unfolding membership in an intersection and membership in a graph, each direction says that the pair belongs to every member of the family.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222

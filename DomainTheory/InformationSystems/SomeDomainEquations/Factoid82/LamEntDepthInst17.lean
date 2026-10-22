@@ -1,6 +1,3 @@
-/-ai
-Insertion into an input union is left commutative, assuming decidable equality of raw tokens. After unfolding the operation, membership in the union is a three-way disjunction, and the two orders match by rearranging those disjuncts.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

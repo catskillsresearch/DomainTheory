@@ -1,6 +1,3 @@
-/-ai
-This module gathers and re-exports the definitions and early results of Scott 1976, §3, on enumeration, degrees, and the semigroup of operators: generation from G, the recursively enumerable elements, valuation and recursion codes, the Myhill and filter constructions, degrees and combinatory subalgebras, the semigroup generators, Theorem 3.1, and the supporting evaluation and primitive-recursive lemmas.
-ai-/
 module
 
 public import Mathlib.Computability.Halting
@@ -133,17 +130,9 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.filterC_combinatory
 
 @[expose] public section
 
-/-!
-# Scott 1976, §3 — enumeration, degrees, and the semigroup of operators
-
-Theorems 3.1–3.7.
--/
-
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
-
 
 
 end DomainTheory.DataTypesAsLattices

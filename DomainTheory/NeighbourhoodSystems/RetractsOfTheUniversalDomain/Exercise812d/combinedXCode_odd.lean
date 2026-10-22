@@ -1,8 +1,3 @@
-/-ai
-At an odd index twice k plus one, the interleaved first-system family is the image of YPseqCode at k.
-
-The index is odd and its half is k.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

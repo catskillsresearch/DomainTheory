@@ -1,0 +1,3 @@
+An index lies in the atom of a positive list and a negative list if and only if its neighbourhood is contained in every positive target and in no negative target.
+
+Unfold the atom as the intersection of the positive index set with the set of indices avoiding every negative index set, and rewrite by membership in the positive index set and in an index set.

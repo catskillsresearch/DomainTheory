@@ -1,6 +1,3 @@
-/-ai
-This instance decides the relation beforeHalt: it holds of m and j exactly when the halt enumeration differs from m at every index strictly below j + 1, by passing between that bounded statement and quantification over the corresponding initial segment.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,8 +1,3 @@
-/-ai
-Every token of gTok of two countable unions already lies in gTok of a single pair of stages.
-
-The empty string lies at stage zero, a false-tagged token comes from one stage of the first union, and a true-tagged token comes from one stage of the second union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

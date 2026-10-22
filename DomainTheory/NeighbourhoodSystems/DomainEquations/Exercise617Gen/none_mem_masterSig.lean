@@ -1,8 +1,3 @@
-/-ai
-The empty token belongs to the master neighbourhood.
-
-It is the first alternative in the definition of the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

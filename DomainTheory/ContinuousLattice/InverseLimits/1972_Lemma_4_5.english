@@ -1,0 +1,17 @@
+**4.5 Lemma.** Suppose for each $n$ we have $u_{(n+1)} \in D_{n+1}$ and we let:
+
+$$u = \bigsqcup_{n=0}^{\infty} i_{(n+1)\infty}(u_{(n+1)}).$$
+
+Then if
+
+$$j_{n+1}(u_{(n+2)}) = u_{(n+1)}$$
+
+for each $n$, we can conclude that:
+
+$$j_{\infty(n+1)}(u) = u_{(n+1)}.$$
+
+**Proof:** If the sequence $u_{(n+1)}$ satisfies the recursion, then the limit defining $u$ is monotonic. Therefore by continuity of projection it suffices to prove that
+
+$$j_{\infty(n+1)}(i_{(m+1)\infty}(u_{(m+1)})) = u_{(n+1)}$$
+
+for all $m \geqslant n$. This is obvious for $m = n$, and it can be readily proved by induction for larger $m$ using the various recursion equations. (Properly speaking the induction is done on the quantity $(m - n)$ using both $n$ and $m$ as variables.) $\square$

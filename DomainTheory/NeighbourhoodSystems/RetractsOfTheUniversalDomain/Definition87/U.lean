@@ -1,6 +1,3 @@
-/-ai
-The universal neighbourhood system on the rationals takes as its neighbourhoods the universal family, as its master the half-open unit interval, and as its structure laws the nonemptiness of that interval, its membership in the family, closure of the family under intersection, and containment of every member in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

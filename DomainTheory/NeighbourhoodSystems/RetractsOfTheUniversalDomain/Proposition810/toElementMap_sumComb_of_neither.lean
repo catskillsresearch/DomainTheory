@@ -1,8 +1,3 @@
-/-ai
-If every neighbourhood met by the sum extraction of an element is the master of the sum, then the sum combinator sends the element to bottom.
-
-The which-map then meets neither zero nor one, because a left copy and a right copy are distinct from the sum master. Compare neighbourhoods. The membership law of the sum combinator leaves only the master alternative, which is exactly membership in the bottom element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

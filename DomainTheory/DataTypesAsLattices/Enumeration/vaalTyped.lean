@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (4.46). The typed map vaal from trees to the identity is the application of vaalC through the function-space retract from the tree retract to the identity combinator.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,8 +1,3 @@
-/-ai
-If a neighbourhood system is a subdomain of the power domain of another system, then it has a greatest element.
-
-The subdomain relation supplies a subsystem of the power domain and an order isomorphism with that subsystem. The power domain is closed under intersection. The subsystem inherits that closure, hence has a greatest element, and the isomorphism transports the greatest element back.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

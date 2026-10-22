@@ -1,8 +1,3 @@
-/-ai
-If m is a zero of f along the vectors with tail v, and no smaller index is a zero, then the search started at any counter j at most m returns the numeral for m.
-
-Induct downward on the difference d with j + d = m. If d is zero then j equals m, and the found-step returns the numeral for m. If d is a successor then j is strictly below m, so the value at j is nonzero, the continue-step advances the counter by one, and the inductive hypothesis applies.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

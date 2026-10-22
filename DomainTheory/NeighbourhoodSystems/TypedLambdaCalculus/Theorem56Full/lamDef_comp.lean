@@ -1,8 +1,3 @@
-/-ai
-If an outer partial function and each of a family of inner partial functions are λ-defined, then so is the composition that binds the vector of the inner values into the outer function. The realiser is the outer realiser composed with the tuple of the inner realisers, wrapped in the strict guard.
-
-Apply the master constructor to that composite. A defined output gives, by membership in the bind, an intermediate vector at which the outer realiser is defined, and the tuple of the inner realisers agrees with the stack of that vector. If the composite is undefined and every inner function is defined, the vector of their values makes the outer function undefined, so the outer realiser returns bottom on the matching tuple. If some inner function is undefined, the tuple is arg-like and its corresponding coordinate is bottom, so strictness of the outer realiser returns bottom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

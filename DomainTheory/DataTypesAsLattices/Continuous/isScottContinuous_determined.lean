@@ -1,8 +1,3 @@
-/-ai
-Two Scott continuous maps that agree on every finite set are equal.
-
-At an arbitrary element x, Scott continuity rewrites both values as Scott unions. The pieces of those unions agree because the maps agree on the finite set of each code.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

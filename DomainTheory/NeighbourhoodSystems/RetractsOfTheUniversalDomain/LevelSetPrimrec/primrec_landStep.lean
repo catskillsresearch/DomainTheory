@@ -1,12 +1,3 @@
-/-ai
-The bitwise-conjunction step is primitive recursive.
-
-The two arguments, the weight, and the accumulator are primitive recursive projections,
-and the low-bit conjunction of the two arguments is primitive recursive by composition,
-identified by simplifying the pairing projections. Pairing the halved arguments with the
-pairing of the doubled weight and the accumulator increased by the weight times that
-low-bit conjunction agrees with the step by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

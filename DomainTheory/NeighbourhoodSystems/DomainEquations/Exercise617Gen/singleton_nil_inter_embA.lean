@@ -1,8 +1,3 @@
-/-ai
-The singleton of the empty string meets the embedding of one letter in the empty set.
-
-A common member would be the empty string and a string beginning with that letter, which simplification rules out.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

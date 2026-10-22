@@ -1,8 +1,3 @@
-/-ai
-The intersection of two level sets is the level set, at the maximum of the two levels, of the bitwise conjunction of the two masks upsampled to that level.
-
-Upsampling each mask to the maximum level does not change the level set it represents. At that common level, membership in both sets is the conjunction of the two bit tests, which is the bit test of the bitwise conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

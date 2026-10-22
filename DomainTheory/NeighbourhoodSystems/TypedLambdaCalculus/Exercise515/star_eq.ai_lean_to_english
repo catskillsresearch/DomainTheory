@@ -1,0 +1,3 @@
+The star unfolds as the union of the unit set with the product of the set and its star.
+
+Both inclusions are read from membership. A point of the n-th power lies in the unit when n is zero, and when n is a successor it factors as a product of an element of the set with an element of an earlier power, hence of the star. Conversely, a unit element lies in the zeroth power, and an element of the product of the set with the star lies in a successor power by the same factorization.

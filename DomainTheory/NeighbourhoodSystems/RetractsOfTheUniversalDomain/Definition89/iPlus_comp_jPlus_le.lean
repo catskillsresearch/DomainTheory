@@ -1,8 +1,3 @@
-/-ai
-Applying the sum projection and then the sum embedding yields a self-map of the universal domain lying under the identity.
-
-This inequality is the corresponding component of the projection pair chosen for the sum.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

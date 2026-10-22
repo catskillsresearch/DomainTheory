@@ -1,6 +1,3 @@
-/-ai
-The projection from the coalesced sum back to D₀ relates W to X when W is a coalesced-sum neighbourhood, X is a neighbourhood of D₀, and W is contained in the left copy of X. The masters are related by the reverse inclusion for the left copy of the master. For an intersection on the right, split W. If W is the sum master, both targets equal the master of D₀, because the empty string lies in the left copy. If W is a proper left tag, the underlying set is contained in both targets, so their intersection is a neighbourhood and the tagged inclusion lands in the left copy. If W is a proper right tag, both targets equal the master of D₀, because a nonempty true tag contained in the left copy forces the master, and that true tag sits inside the sum master. If W' lies below W and X lies below X', the inclusions compose with the left-copy inclusion induced by that containment.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

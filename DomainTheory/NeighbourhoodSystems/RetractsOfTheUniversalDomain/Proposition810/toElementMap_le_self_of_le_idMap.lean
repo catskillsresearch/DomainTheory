@@ -1,8 +1,3 @@
-/-ai
-A map that lies below the identity acts below the identity on every element.
-
-The order of maps is the order of their actions on elements. Rewrite the identity on elements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

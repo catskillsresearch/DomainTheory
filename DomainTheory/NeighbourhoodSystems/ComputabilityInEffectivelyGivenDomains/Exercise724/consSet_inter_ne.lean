@@ -1,8 +1,3 @@
-/-ai
-If the prepended indices differ, the intersection of the two prefixed copies is empty.
-
-By extensionality, a common element would be a prepend by both indices, and injectivity of prepending would force the indices to agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

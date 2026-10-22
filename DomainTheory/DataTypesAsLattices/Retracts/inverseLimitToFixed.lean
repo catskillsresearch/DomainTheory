@@ -1,6 +1,3 @@
-/-ai
-A coherent inverse-limit sequence determines a point of the least fixed-point range of a Scott-continuous retract functor by taking the union of its coordinates. The carrier is that union, and the fixed-point witness is the symmetric form of the typing of the union by the least fixed point.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

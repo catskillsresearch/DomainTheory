@@ -1,6 +1,3 @@
-/-ai
-Decidable equality of function-space tokens is introduced by comparing the input finite sets and the output finite sets. Equality of both components yields equality of the tokens, and failure of either comparison yields inequality.
-ai-/
 
 module
 

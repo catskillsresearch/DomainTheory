@@ -1,0 +1,3 @@
+A set belongs to the run map at the element obtained by prepending a string exactly when the set is a neighbourhood and some cone of the element has the cone of the output of the concatenation contained in the set.
+
+From a membership witness, the inner neighbourhood is a cone and the cone inclusion is a prefix of the concatenation, so prefix-monotonicity of the output composes with the output inclusion. Conversely the cone of the concatenation belongs to the shifted element by the prepend inclusion, and the relation on that cone is the stated condition.

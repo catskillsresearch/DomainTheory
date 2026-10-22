@@ -1,6 +1,3 @@
-/-ai
-The master pair code is the pairing of the code of zero with the code of one, a fixed code for the rational pair that presents the master neighbourhood of U.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

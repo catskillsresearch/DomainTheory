@@ -1,8 +1,3 @@
-/-ai
-Disjoint pairing is monotone in each argument.
-
-An even member remains even because its first component is carried into the larger first set, and an odd member remains odd because its second component is carried into the larger second set.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

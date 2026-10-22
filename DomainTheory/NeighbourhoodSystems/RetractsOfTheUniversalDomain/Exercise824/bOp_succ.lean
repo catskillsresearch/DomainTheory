@@ -1,8 +1,3 @@
-/-ai
-The successor second approximant is the second operator applied to the previous first and second approximants.
-
-Unfold both sides. The successor iterate of the paired operator is that operator applied to the previous iterate, its second component is the action of the second map, and the previous iterate is the pair of the filters of the two approximants.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

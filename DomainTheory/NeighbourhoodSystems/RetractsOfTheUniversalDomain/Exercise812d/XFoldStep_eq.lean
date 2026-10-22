@@ -1,8 +1,3 @@
-/-ai
-The fold step at the packing of a depth, an index, and an accumulator equals the selection that returns the accumulator when the half-step atom is junk, and otherwise installs the atom index or the union of the accumulated code with that index according to the found flag.
-
-Unfolding the step, the unpairings of the nested pairs recover the depth, the index, and the accumulator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

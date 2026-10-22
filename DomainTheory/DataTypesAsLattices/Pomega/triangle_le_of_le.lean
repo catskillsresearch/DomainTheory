@@ -1,8 +1,3 @@
-/-ai
-If a is at most b, then the triangular number of a is at most the triangular number of b.
-
-The proof proceeds by induction on the inequality. Equality is reflexive. At a successor, the successor formula writes the next triangular number as the previous one plus one more than the index, and the inductive value lies below that sum.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

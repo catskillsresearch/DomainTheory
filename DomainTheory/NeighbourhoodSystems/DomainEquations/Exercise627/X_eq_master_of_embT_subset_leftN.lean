@@ -1,8 +1,3 @@
-/-ai
-If a nonempty true-tagged set is contained in the left copy of X, then X equals the master of D₀.
-
-Take a string of the nonempty set. Its true-tagged copy lies in the left copy, so it is a false-tagged string, or a string of the sum master for which X is the master. The first alternative equates the leading bit with both true and false. The second alternative is the claim.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

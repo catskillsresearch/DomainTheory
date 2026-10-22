@@ -1,8 +1,3 @@
-/-ai
-The strict first projection of a numeral and bottom is bottom.
-
-Rewrite by the application lemma. The zero test of bottom is the bottom of the truth domain, which equals Example23.botElt, and the conditional on that bottom is bottom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

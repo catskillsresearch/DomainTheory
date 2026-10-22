@@ -1,8 +1,3 @@
-/-ai
-The union of a nonempty chain of elements of a domain lies below every upper bound of the chain.
-
-A neighbourhood of the union belongs to some member of the chain, and that member lies below the upper bound, so the neighbourhood belongs to the upper bound.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise124

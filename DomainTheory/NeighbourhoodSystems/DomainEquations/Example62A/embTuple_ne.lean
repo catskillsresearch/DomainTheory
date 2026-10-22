@@ -1,8 +1,3 @@
-/-ai
-If two tags differ and some component of the first tuple is nonempty, then the two tuples are unequal.
-
-A witness in that component, prefixed by its slot prefix, lies in the first tuple and hence in the second. Uniqueness of slot prefixes then forces the tags to agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

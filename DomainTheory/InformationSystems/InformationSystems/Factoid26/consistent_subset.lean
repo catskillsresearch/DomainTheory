@@ -1,8 +1,3 @@
-/-ai
-A subset of a consistent finite set is consistent.
-
-Graph atoms of the subset already lie in the larger set, so consistency of the larger set equates their values.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

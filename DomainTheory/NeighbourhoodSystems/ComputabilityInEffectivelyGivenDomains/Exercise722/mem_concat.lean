@@ -1,8 +1,3 @@
-/-ai
-A word lies in a concatenation of languages if and only if it splits as a word of the first followed by a word of the second.
-
-The two sides are the definition of concatenation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

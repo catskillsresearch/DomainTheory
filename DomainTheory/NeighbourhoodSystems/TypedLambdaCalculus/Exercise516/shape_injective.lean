@@ -1,8 +1,3 @@
-/-ai
-Equal shape neighbourhoods have the same tag and the same string.
-
-Case on the two tags. Equal singletons have equal strings. A singleton differs from a cone in either order. Equal cones have equal strings by injectivity of cones.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

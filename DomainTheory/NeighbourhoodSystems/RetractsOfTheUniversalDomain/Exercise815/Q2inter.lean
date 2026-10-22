@@ -1,6 +1,3 @@
-/-ai
-The intersection operation on term-algebra codes of subsystem neighbourhoods is the node constructor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

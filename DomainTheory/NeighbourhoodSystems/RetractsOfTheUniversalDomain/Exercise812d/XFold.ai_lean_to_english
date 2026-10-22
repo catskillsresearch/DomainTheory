@@ -1,0 +1,1 @@
+XFold at depth n and bound N is the iteration, N times, of the union step of the coded X-sequence. It starts from the packed accumulator whose found flag and code are both zero, and each step receives the packing of the depth, the current index, and the accumulator.

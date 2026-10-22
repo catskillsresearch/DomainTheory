@@ -1,8 +1,3 @@
-/-ai
-The empty token set of an information system is empty-entailing.
-
-This is the law that the empty set entails every token of the empty set.
-ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

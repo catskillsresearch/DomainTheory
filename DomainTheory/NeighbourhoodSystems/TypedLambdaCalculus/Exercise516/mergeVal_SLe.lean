@@ -1,8 +1,3 @@
-/-ai
-If (b₀, σ) lies below (b₀', σ') and (b₁, τ) lies below (b₁', τ') in the tagged-string order, then the interleaving of the first pair lies below the interleaving of the second pair in that order.
-
-The argument follows the clauses of the interleaving value. An empty first string with total tag forces the refined first string to be empty and total, and both interleavings are that empty tagged string; with partial tag the interleaving is the empty partial string, which is a prefix of every string. A nonempty first string against an empty second string splits the first order as a cons, and the resulting singleton partial string is a prefix of the interleaving against the refined second string, whether that string is empty or a cons. When both strings are nonempty, both orders split as conses, and the inductive hypothesis on the tails is lifted by the two-bit cons clause of the tagged-string order.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

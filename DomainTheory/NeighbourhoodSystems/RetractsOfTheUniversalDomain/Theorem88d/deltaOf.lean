@@ -1,6 +1,3 @@
-/-ai
-The bit predicate of a bit-source at position i is the boolean decision that the bit-source divided by two to the power i is odd. The bits are read low bit first, in the same order as the recursion peels the remainder.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

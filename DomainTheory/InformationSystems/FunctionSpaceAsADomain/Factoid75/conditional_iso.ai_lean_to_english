@@ -1,0 +1,3 @@
+The conditional of elements x and y evaluates to x at the Boolean element true and to y at the Boolean element false, and every strict approximable map from the Boolean system is the conditional of its values at true and false.
+
+The three clauses are the two evaluation lemmas and the uniqueness lemma for strict Boolean maps.

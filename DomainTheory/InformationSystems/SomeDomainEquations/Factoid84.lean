@@ -1,8 +1,3 @@
-/-ai
-The identity map of the powerset system P fails Scott's rogue condition.
-
-The numbered name theorem_84 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.not_RogueApprox_idMap

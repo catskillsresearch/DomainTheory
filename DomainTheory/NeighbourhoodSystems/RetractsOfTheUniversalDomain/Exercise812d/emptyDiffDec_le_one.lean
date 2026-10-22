@@ -1,8 +1,3 @@
-/-ai
-The difference-emptiness decider never exceeds one.
-
-Unfold the decider. The existence decider is at most one, so one minus that value is at most one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

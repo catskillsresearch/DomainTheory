@@ -1,6 +1,3 @@
-/-ai
-The fixed-point token set of a grammar expression is the union of the Kleene iterates of its token function. The union is written explicitly, without a choice principle.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

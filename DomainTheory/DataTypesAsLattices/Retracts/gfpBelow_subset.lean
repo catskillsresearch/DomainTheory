@@ -1,8 +1,3 @@
-/-ai
-The greatest postfixed point below b is contained in b.
-
-An element of the defining union lies in some set contained in the intersection of its image with b, and therefore lies in b.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

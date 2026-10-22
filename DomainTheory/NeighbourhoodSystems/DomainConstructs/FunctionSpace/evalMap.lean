@@ -1,6 +1,3 @@
-/-ai
-Evaluation as a single approximable map is the two-variable evaluation map, converted to a map out of the product of the function space with the input domain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,8 +1,3 @@
-/-ai
-There are no three consecutive equal Thue–Morse bits: the bits at j, j + 1, and j + 2 are not all equal.
-
-Equality of consecutive bits forces both j and j + 1 to be odd. The two odd representations are arithmetically incompatible.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516ThueMorse

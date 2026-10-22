@@ -1,8 +1,3 @@
-/-ai
-A set belongs to bottom if and only if it equals the master neighbourhood.
-
-If it belongs to the principal filter of the master, it is a neighbourhood containing the master, and every neighbourhood is contained in the master, so the two inclusions give equality. Conversely, the master is a neighbourhood and is contained in itself.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

@@ -1,8 +1,3 @@
-/-ai
-Clipping every endpoint pair of a presenting list to the half-open unit interval presents the intersection of the original union with that interval. Discarding pairs whose left endpoint fails to lie strictly below the right leaves the presented set unchanged. A set is a neighbourhood of the universal system if and only if it is nonempty and equal to the union presented by a list of intervals whose endpoints satisfy the bounds of Definition 8.7. Cutting every right endpoint at a rational presents the intersection with the open ray below that rational, and raising every left endpoint to a rational presents the intersection with the closed ray from that rational.
-
-Each identity is proved by extensionality of membership. A point of a clipped interval lies in the original interval and in the clipping set, and a point of both is recovered by clipping its witnessing pair. A point of an interval forces the left endpoint strictly below the right, so the strictness filter keeps every witness. From a neighbourhood one clips the presenting list and discards the remaining degenerate pairs; the filter and clip identities, with the inclusion in the unit interval, recover the set, and each surviving pair meets the bounds. Conversely a bounded presenting list exhibits presentability and nonemptiness, and every point of such an interval lies in the unit interval by the endpoint inequalities.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic
@@ -37,56 +32,9 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Def
 
 @[expose] public section
 
-/-!
-# Definition 8.7 (Scott 1981, PRG-19, Lecture VIII) — the universal domain `𝒰` over `ℚ`
-
-Following Dana Scott, *Lectures on a Mathematical Theory of Computation*, PRG-19, Definition 8.7:
-
-> Let `ℚ` be the set of rational numbers, and let `[0,1) = {q ∈ ℚ | 0 ≤ q < 1}`, and similarly for
-> `[r,s)` for any `r < s` in `ℚ`. The neighbourhood system `𝒰` over `[0,1)` is the set of all
-> non-empty finite unions of rational intervals `[r,s)` with `0 ≤ r < s ≤ 1`.
-
-## Encoding
-
-A finite union of intervals is coded by a `List (ℚ × ℚ)` of endpoint pairs
-(`presentedIntervals L := ⋃ p ∈ L, Set.Ico p.1 p.2`). Rather than build the endpoint bounds
-`0 ≤ r < s ≤ 1` into the *list* (which would force bookkeeping through every list operation), we
-build `𝒰.mem X` from the *unconstrained* presentability of `X` plus the two set-level conditions
-Scott's family actually cares about: `X` is non-empty and `X ⊆ [0,1)`. `mem_iff_scott` below shows
-this is no relaxation at all: it is *equivalent* to Scott's literal per-pair-bounded description,
-since clipping any presenting list to `[0,1)` and discarding degenerate (empty) pairs changes
-neither the represented set nor its non-emptiness/inclusion in `[0,1)`.
-
-The point of this encoding is that closure under intersection becomes endpoint-bookkeeping-free:
-`Set.Ico_inter_Ico` says `Ico a₁ b₁ ∩ Ico a₂ b₂ = Ico (a₁ ⊔ a₂) (b₁ ⊓ b₂)` *unconditionally* (the
-result is simply empty when the sup/inf bounds cross), so pairwise-combining two presenting lists
-(`combineIntervals`) always presents the intersection, with no case split on validity.
-
-## Axiom footprint
-
-Every proof here is elementary finite-list recursion plus the linear order on `ℚ` — no genuine
-appeal to choice is made. However, `#print axioms` reports `[propext, Classical.choice,
-Quot.sound]` throughout, because the *pinned Mathlib's* bundled order instance for `ℚ`
-(`Rat.instLinearOrder` in `Mathlib.Algebra.Order.Ring.Unbundled.Rat`) is itself
-`Classical.choice`-tainted at the axiom level — even `Rat.le_refl` reports this footprint in this
-Mathlib snapshot (confirmed directly, and also for the pre-existing `Exercise117.lean`, whose
-`ratIntervalMem_nonempty` is likewise `Classical.choice`-tainted despite that file's now-stale
-"choice-free" docstring claim). This is an upstream artifact of `ℚ`'s order hierarchy, not a
-choice made in this file; nothing here uses `Classical.choice`, `Classical.dec`, or any
-non-constructive existence principle directly.
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
-
-/-! ### Finite unions of rational intervals -/
-
-
-/-! ### `𝒰`, the universal neighbourhood system over `[0,1) ⊆ ℚ` -/
-
-
-/-! ### Faithfulness: `U.mem` literally matches Scott's per-pair-bounded description -/
 
 
 theorem presentedIntervals_map_clip (L : List (ℚ × ℚ)) :
@@ -133,8 +81,6 @@ theorem U_mem_iff_scott {X : Set ℚ} :
     obtain ⟨hp0, -, hp1⟩ := hbound p hp
     exact ⟨hp0.trans hx1, hx2.trans_le hp1⟩
 
-/-! ### `𝒰` has no minimal neighbourhoods -/
-
 
 theorem presentedIntervals_map_clipLt (m : ℚ) (L : List (ℚ × ℚ)) :
     presentedIntervals (L.map (clipLt m)) = presentedIntervals L ∩ Set.Iio m := by
@@ -156,5 +102,4 @@ theorem presentedIntervals_map_clipGe (m : ℚ) (L : List (ℚ × ℚ)) :
   · rintro ⟨⟨q, hq, hxq1, hxq2⟩, hxm⟩
     exact ⟨(q.1 ⊔ m, q.2), ⟨q, hq, rfl⟩, sup_le hxq1 hxm, hxq2⟩
 
-/-! ### `𝒰` is closed under finite unions (needed for Theorem 8.8) -/
 end DomainTheory.NeighbourhoodSystems

@@ -1,8 +1,3 @@
-/-ai
-The carrier of the smash presentation at a code is the smash enumeration of that code.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

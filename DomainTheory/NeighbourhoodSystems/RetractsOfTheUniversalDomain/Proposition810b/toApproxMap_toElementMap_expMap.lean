@@ -1,8 +1,3 @@
-/-ai
-Reading the exponential map of h and k back as an approximable map yields postcomposition with k after precomposition with h.
-
-Extensionality of approximable maps reduces the equality to an element. The defining equation of the exponential map is unfolded, and the element maps of currying, composition, the product map on a pair, the identity, and evaluation are rewritten in turn.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

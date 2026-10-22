@@ -1,8 +1,3 @@
-/-ai
-Applying the S combinator to a function equals the graph of its further applications.
-
-Rewrite by the one-argument application, then use extensionality of graphs. At each argument the equality is the symmetric form of beta reduction for continuity of the middle map.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

@@ -1,0 +1,3 @@
+If a sum element reaches the left copy, the sum map sends it to the left inclusion of f applied to its left projection.
+
+The left round trip rewrites the element as the left inclusion of its left projection, and the inclusion formula for the sum map gives the result.

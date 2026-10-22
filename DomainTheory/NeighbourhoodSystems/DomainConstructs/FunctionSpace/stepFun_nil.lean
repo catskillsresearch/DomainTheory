@@ -1,8 +1,3 @@
-/-ai
-The step neighborhood of the empty list is the set of all approximable maps.
-
-Extensionality reduces the claim to one map, and the requirement that the map relate every pair of the empty list holds outright.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

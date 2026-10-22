@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (2.3), defines relational composition. The composite of two sets consists of the pairs (n, l) for which some m has the pair (n, m) in the first set and the pair (m, l) in the second.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

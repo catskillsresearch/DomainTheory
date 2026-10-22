@@ -1,8 +1,3 @@
-/-ai
-The embedded set of index n is nonempty.
-
-The index n belongs to the set of all indices and to its own index set, so the nonemptiness law of Scott's sequence applies.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

@@ -1,8 +1,3 @@
-/-ai
-A set is a neighbourhood of Example 1.5 if and only if it is nonempty.
-
-The two sides are definitionally the same.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

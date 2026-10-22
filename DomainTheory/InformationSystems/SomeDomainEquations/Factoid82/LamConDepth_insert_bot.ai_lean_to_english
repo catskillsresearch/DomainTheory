@@ -1,0 +1,3 @@
+Inserting bottom into a depth-consistent finset preserves depth consistency.
+
+If the finset has no function tokens, neither does the insertion, and the atom projection is unchanged, so the atom clause still applies. If it has function tokens, the atom projection stays empty, well-formedness of the function tokens is unchanged, and the function clause transports along the equality of the function-token projections.

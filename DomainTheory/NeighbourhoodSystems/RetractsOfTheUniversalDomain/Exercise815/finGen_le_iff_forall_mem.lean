@@ -1,8 +1,3 @@
-/-ai
-For a subsystem, the finitely generated subsystem of a list is contained in the subsystem if and only if every generator named by the list belongs to the subsystem.
-
-Proceed by induction on the list. If the list is empty, there is no generator to check, and any member has empty witnessing sublist, so it equals the master, which belongs to the subsystem because the masters agree. If the list has a head, the generator condition splits into the head and the tail. Containment yields the head, because its principal generator belongs to the finitely generated subsystem, and yields the tail by monotonicity along the tail sublist. Conversely, a member whose witnessing sublist omits the head already lies in the tail subsystem. If the witnessing sublist includes the head, the partial meet is the intersection of the head generator with the tail meet. The tail meet is a neighbourhood because the full meet witnesses it, the inductive inclusion puts the tail meet in the subsystem, and the subsystem is closed under that consistent intersection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

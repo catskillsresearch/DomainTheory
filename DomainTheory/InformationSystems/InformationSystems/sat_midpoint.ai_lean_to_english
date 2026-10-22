@@ -1,0 +1,3 @@
+The midpoint of the endpoints of a strict integer interval, taken in the rationals, satisfies that interval token.
+
+Two is positive as a rational, and the strict inequality of the integer endpoints casts to the rationals. The lower comparison rewrites, by positivity of the divisor, as twice the lower endpoint being below the sum of the endpoints, and the cast inequality closes it. The upper comparison likewise rewrites as the sum being below twice the upper endpoint, and the same inequality closes it.

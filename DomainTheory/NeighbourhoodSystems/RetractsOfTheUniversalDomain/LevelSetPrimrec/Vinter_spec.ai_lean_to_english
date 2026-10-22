@@ -1,0 +1,9 @@
+If some enumerated neighbourhood is contained in the intersection of two enumerated
+neighbourhoods, then the enumeration at their intersection index equals that
+intersection.
+
+The level set of the raw intersection code is nonempty, because that level set is the
+intersection and consistency is equivalent to nonemptiness of the intersection.
+Unfolding the intersection index and rewriting by invariance of the enumeration under
+canonicalization reduces the claim to the level set of the canonicalized raw code.
+Nonemptiness removes that canonicalization, and the raw code presents the intersection.

@@ -1,8 +1,3 @@
-/-ai
-If the fuel exceeds the code, the fuel-free evaluation agrees with the fuel-indexed evaluator at that fuel.
-
-The fuel one greater than the code already exceeds the code, so stability of the fuel recursion identifies the two values.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

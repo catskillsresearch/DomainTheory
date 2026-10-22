@@ -1,8 +1,3 @@
-/-ai
-An element belongs to a choice-free union of finite sets if and only if it belongs to one of the two sets.
-
-The proof is the membership law for a fold of insertion, applied to the underlying multiset of the second set.
-ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

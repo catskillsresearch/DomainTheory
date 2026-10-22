@@ -1,6 +1,3 @@
-/-ai
-For a map e from X to Y, a map f from X into a complete lattice, and a subset U of Y, the subspace-extension infimum is the infimum of the values of f at those points of X that e sends into U.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

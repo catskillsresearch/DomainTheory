@@ -1,8 +1,3 @@
-/-ai
-A retract of an injective space is injective.
-
-This is the preservation of injectivity by retracts.
-ai-/
 module
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski

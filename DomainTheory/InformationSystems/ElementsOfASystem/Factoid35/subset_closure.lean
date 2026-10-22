@@ -1,8 +1,3 @@
-/-ai
-A consistent finite set is contained in its entailment closure.
-
-Reflexivity of entailment puts each of its tokens in the closure.
-ai-/
 
 module
 

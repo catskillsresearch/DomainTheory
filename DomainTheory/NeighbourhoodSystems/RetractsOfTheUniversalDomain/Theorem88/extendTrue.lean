@@ -1,6 +1,3 @@
-/-ai
-The true padding of a sign sequence of length n reads the sequence at every index below n and reads true at every later index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

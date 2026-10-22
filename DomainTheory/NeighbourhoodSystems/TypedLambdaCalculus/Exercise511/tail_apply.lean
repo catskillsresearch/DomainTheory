@@ -1,8 +1,3 @@
-/-ai
-The tail of a stack is the sequence of its components from index one onward.
-
-The tail is a composite, unfolding applies the product isomorphism, that isomorphism is the pair of the zeroth component and the shifted sequence, and the second projection of the pair is the shifted sequence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,8 +1,3 @@
-/-ai
-Scott's splitting law (3) states that, for neighbourhoods X and Y, the product of X and Y belongs to a product element if and only if the product of X with the second master and the product of the first master with Y both belong to it.
-
-If the product belongs to the element, upward closure along the inclusions that replace one component by the master yields the two slices. Conversely, the intersection of the two slices is the product of the componentwise intersections, which reduce to X and Y because each neighbourhood is contained in its master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

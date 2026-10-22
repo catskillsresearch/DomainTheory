@@ -1,8 +1,3 @@
-/-ai
-The tagged middle copy of Y is contained in the tagged middle copy of Y' if and only if Y is contained in Y'.
-
-In the forward direction, a point b of Y has its middle tag in the first copy and hence in the second, so the membership criterion puts b in Y'. In the reverse direction, a token of the first copy is the middle tag of some b in Y, the inclusion puts b in Y', and the membership criterion puts that tag in the second copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

@@ -1,8 +1,3 @@
-/-ai
-Prepending a string to the cone of a second string yields the cone of their concatenation.
-
-A member of the prepend is the first string followed by a string that has the second as a prefix, and cancelling the first string on the left restores the prefix relation for the concatenation. Conversely, a string that has the concatenation as a prefix is the first string followed by the second string followed by the remaining suffix, and the second string is a prefix of that continuation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

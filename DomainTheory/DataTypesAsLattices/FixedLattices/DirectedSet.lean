@@ -1,6 +1,3 @@
-/-ai
-A subset of a preorder is directed when it is nonempty and any two of its elements have a common upper bound that still belongs to the subset.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Defs

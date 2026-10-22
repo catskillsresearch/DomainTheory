@@ -1,0 +1,106 @@
+Whether this lemma is true for retractions in any form, I do not know. My proof seems to require the stronger projection relationship. I suspect there may be difficulties. In general projections are better behaved than retractions. By the way the word projection seems to be properly used in 3.6, for the projection $j : D \times D' \to D$ of the Cartesian product of two continuous lattices onto the first factor *is* a projection with partial inverse $i : D \to D \times D'$ defined by
+
+$$
+i(x) = (x, \bot)
+$$
+
+for $x \in D$.
+
+**3.10 Proposition.** If the continuous lattice $D$ is a projection of the continuous lattice $D'$ via the pair of maps $i, j$; then for all $S \subseteq D$ and all $x, y \in D$ we have:
+
+(i) $i(\bigsqcup S) = \bigsqcup i(x) : x \in S$,
+
+(ii) $i(x) = i(y)$ implies $x = y$,
+
+(iii) $x \ll y$ implies $i(x) \ll i(y)$.
+
+Conversely, if a map $i : D \to D'$ satisfies (i)–(iii), then there exists a continuous $j : D' \to D$ making $D$ a projection of $D'$, and in fact $j$ is uniquely determined by:
+
+(iv) $j(x') = \bigsqcup x \in D : i(x) \sqsubseteq x'$
+
+for all $x' \in D'$.
+
+**Proof:** Equation (i) holds for directed $S \subseteq D$ because $i$ is continuous. To have it hold for arbitrary $S$ it is only necessary to check it for finite sets, because every lub is the directed lub of finite sublubs. (The last word of that sentence is an unfortunate accident.) Further, to check the equation for finite sets it is enough to check it for the empty set and for two element sets. Thus, $i(\bot) = \bot$, because $j(i(\bot)) = \bot$ and since $\bot \sqsubseteq i(\bot)$,
+
+$$
+j(\bot) \sqsubseteq j(i(\bot)) = \bot,
+$$
+
+so $j(\bot) = \bot$. Whence $i(\bot) = i(j(\bot)) \sqsubseteq \bot$. Next $i(x \sqcup y) = i(x) \sqcup i(y)$, because first
+
+$$
+i(x) \sqcup i(y) \sqsubseteq i(x \sqcup y)
+$$
+
+by monotonicity. Then note that
+
+$$
+i(x) \sqsubseteq i(x) \sqcup i(y)
+$$
+
+and so
+
+$$
+x = j(i(x)) \sqsubseteq j(i(x) \sqcup i(y)).
+$$
+
+Similarly
+
+$$
+y \sqsubseteq j(i(x) \sqcup i(y)),
+$$
+
+whence
+
+$$
+x \sqcup y \sqsubseteq j(i(x) \sqcup i(y)).
+$$
+
+But then
+
+$$
+i(x \sqcup y) \sqsubseteq i(j(i(x) \sqcup i(y))) \sqsubseteq i(x) \sqcup i(y),
+$$
+
+which completes the argument for equation (i).
+
+Condition (ii) is obvious. For (iii) we argue as follows. Assume $x \ll y$. Since $D'$ is continuous we can write:
+
+$$i(y) = \bigsqcup  z' \in D' : z' \ll i(y) ,$$
+
+and conclude by the continuity of $j$ that:
+
+$$y = j(i(y)) = \bigsqcup  j(z') : z' \ll i(y) .$$
+
+But $x \ll y$, so $x \ll j(z')$ for some $z' \ll i(y)$. Now $x \sqsubseteq j(z')$ follows; therefore $i(x) \sqsubseteq i(j(z')) \sqsubseteq z'$. Thus $i(x) \ll i(y)$.
+
+Turning now to the converse, assume of the map $i$ that it satisfies (i)–(iii). Compute:
+
+$$i(j(x')) = \bigsqcup  i(x) : i(x) \sqsubseteq x'  \sqsubseteq x'.$$
+
+This is correct because $i$ is continuous and the set $ x : i(x) \sqsubseteq x' $ is directed in view of condition (i). Thus $i \circ j \sqsubseteq \mathrm{id}_{D'}$. Note that by virtue of (i) and (ii) it is the case that
+
+$$i(x) \sqsubseteq i(y) \text{ implies } x \sqsubseteq y.$$
+
+(The reason is that $x \sqsubseteq y$ is equivalent to $x \sqcup y = y$.) This remark allows us to compute:
+
+$$j(i(y)) = \bigsqcup  x : i(x) \sqsubseteq i(y) $$
+$$= \bigsqcup  x : x \sqsubseteq y  = y.$$
+
+Hence, $j \circ i = \mathrm{id}_D$. It remains to show that $j$ is continuous. Suppose $S' \subseteq D'$ is directed. Since $j$ is by definition monotonic, it is sufficient to prove that
+
+$$j(\bigsqcup S') \sqsubseteq \bigsqcup  j(x') : x' \in S' .$$
+
+Now
+
+$$j(\bigsqcup S') = \bigsqcup  x : i(x) \sqsubseteq \bigsqcup S' ,$$
+
+so suppose $i(x) \sqsubseteq \bigsqcup S'$. Let $z \ll x$; whence $i(z) \ll i(x)$. Thus $i(z) \ll x'$ for some $x' \in S'$, and therefore $i(z) \sqsubseteq x'$. We obtain then $z \sqsubseteq j(x')$, which means that
+
+$$z \sqsubseteq \bigsqcup  j(x') : x' \in S' $$
+
+holds for all $z \ll x$. By the continuity of $D$ we conclude
+
+$$x \sqsubseteq \bigsqcup  j(x') : x' \in S' $$
+
+holds for all $x$ with $i(x) \sqsubseteq \bigsqcup S'$. The desired result follows. $\square$

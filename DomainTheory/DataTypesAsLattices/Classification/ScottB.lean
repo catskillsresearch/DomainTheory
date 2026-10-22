@@ -1,6 +1,3 @@
-/-ai
-The class Scott B is the class of Boolean-open subsets of Pω.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

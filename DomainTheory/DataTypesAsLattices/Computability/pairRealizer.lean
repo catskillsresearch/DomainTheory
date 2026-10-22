@@ -1,6 +1,3 @@
-/-ai
-The pairing realizer of elements u and v is S applied to S applied to K applied to the pairing combinator and to u, and then to v.
-ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,0 +1,3 @@
+For a fixed retract parameter a, the map sending b to a ⊕ b is Scott continuous.
+
+Continuity of the graph in the parameter b reduces to continuity of the body at each fixed u. Theorem 1.3 composes right continuity of the double conditional, at the fixed tag application and the fixed left branch, with the composite of right continuity of sequence pairing at the numeral 1 and left continuity of application at the first component of u.

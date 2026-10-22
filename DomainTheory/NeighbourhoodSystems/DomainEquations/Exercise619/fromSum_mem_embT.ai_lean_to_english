@@ -1,0 +1,3 @@
+For a neighbourhood Y of the second system, the true-tagged copy of Y belongs to the inverse image of an abstract sum element if and only if the right injection of Y belongs to that element.
+
+In the forward direction the master clause is impossible, because a true-tagged copy is not the sum master, and the false-tagged clause is impossible, because the two tags differ on a nonempty set. The remaining clause is a true-tagged copy of some neighbourhood, and injectivity of the tagging identifies it with Y. Conversely, the true-tagged clause of the inverse image applies directly.

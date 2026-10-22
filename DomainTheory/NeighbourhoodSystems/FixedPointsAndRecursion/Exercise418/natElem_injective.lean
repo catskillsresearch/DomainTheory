@@ -1,8 +1,3 @@
-/-ai
-Equal numerals name equal natural numbers.
-
-The singleton of the first index belongs to the first numeral and hence to the second. By the membership law for numerals, that neighbourhood is the whole token set, which a singleton is not, or it is the singleton of the second index, and equal singletons have equal indices.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

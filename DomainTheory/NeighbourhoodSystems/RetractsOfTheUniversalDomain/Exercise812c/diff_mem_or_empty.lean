@@ -1,8 +1,3 @@
-/-ai
-If A is empty or a neighbourhood and B is a neighbourhood of a difference-closed system, then A minus B is empty or a neighbourhood.
-
-If A is empty, the difference is empty. If A is a neighbourhood, difference-closure gives membership of the difference.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

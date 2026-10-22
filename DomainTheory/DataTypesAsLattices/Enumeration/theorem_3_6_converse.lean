@@ -1,8 +1,3 @@
-/-ai
-An element x belongs to the degree of the single generator of the singleton list of x. This is the singleton converse of Scott's Theorem 3.6: the packed generator recovers x in its own degree.
-
-The finite-generation clause of Theorem 3.6 puts the packed list in that degree, and the numeral 0 lies in the degree because it is combinatory. The degree is a subalgebra, so the application of the packed list to the numeral 0 lies in the degree, and that application is x.
-ai-/
 
 module
 

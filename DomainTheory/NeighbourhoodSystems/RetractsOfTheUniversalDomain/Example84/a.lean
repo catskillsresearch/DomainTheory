@@ -1,6 +1,3 @@
-/-ai
-The map associated with an element of a neighbourhood system is fade composed after the pairing of check with the constant map at that element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

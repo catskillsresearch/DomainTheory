@@ -1,8 +1,3 @@
-/-ai
-The level set at level 0 with mask 1 is the set of all natural numbers, the master neighbourhood of V.
-
-Every natural number has remainder 0 modulo 1, and the zeroth bit of the mask 1 is set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

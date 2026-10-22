@@ -1,8 +1,3 @@
-/-ai
-Each coordinate of the climbing-and-descending sequence preserves directed suprema.
-
-When n is at most m, that coordinate is the climb of the tower, which preserves directed suprema. When m is below n, that coordinate is the descent of the tower, which preserves directed suprema.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

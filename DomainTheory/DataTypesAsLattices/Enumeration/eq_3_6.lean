@@ -1,8 +1,3 @@
-/-ai
-The argument component of the pair of natural numbers n and m is m.
-
-Simplify by the definition of the argument component and by unpairing a pair.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

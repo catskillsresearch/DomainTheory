@@ -1,8 +1,3 @@
-/-ai
-The omega combinator of u, applied to x, equals the application of u to the self-application of x.
-
-The beta law applies, using Theorem 1.3 to compose continuity of application at u with continuity of diagonal application.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

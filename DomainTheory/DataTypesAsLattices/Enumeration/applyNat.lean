@@ -1,6 +1,3 @@
-/-ai
-Code application of natural numbers n and m is one more than their pairing. This is Scott 1976, (3.4): apply of n and m equals the pair of n and m, plus one.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

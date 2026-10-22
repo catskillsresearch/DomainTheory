@@ -1,6 +1,3 @@
-/-ai
-Scott's idempotence condition on an approximable map r from the powerset system P to itself says that the composite of r with itself equals r.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

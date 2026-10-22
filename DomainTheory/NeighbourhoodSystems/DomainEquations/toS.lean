@@ -1,6 +1,3 @@
-/-ai
-The forward half of the domain equation in Scott's Example 6.1 sends an element z of the sharp system of D to the element of the sum of D with the product of two sharp systems whose neighbourhoods are the master, the left copies of those neighbourhoods X of D for which the zero embedding of X lies in z, and the right copies of those product neighbourhoods of pairs for which the pair embedding lies in z.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,8 +1,3 @@
-/-ai
-Applying R to x returns the pair sequence of the numeral 0 with x.
-
-This is the beta law for the graph of that map, using Scott continuity of pairing on the right with the numeral 0 held fixed.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

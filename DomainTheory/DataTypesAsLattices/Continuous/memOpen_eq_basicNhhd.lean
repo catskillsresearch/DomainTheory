@@ -1,8 +1,3 @@
-/-ai
-The subbasic open of elements containing k equals the basic neighbourhood of the code 2^k.
-
-Extensionality, using that the finite set coded by 2^k is the singleton of k, turns membership of k into inclusion of that finite set.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

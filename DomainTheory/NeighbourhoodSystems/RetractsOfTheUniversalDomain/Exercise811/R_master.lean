@@ -1,8 +1,3 @@
-/-ai
-The master of R is the interval [0, 1).
-
-This is the master supplied to the constructor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

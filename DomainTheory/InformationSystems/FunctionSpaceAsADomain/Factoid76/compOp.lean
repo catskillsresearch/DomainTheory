@@ -1,6 +1,3 @@
-/-ai
-The composition operator from the product of the function spaces from B to C and from A to B into the function space from A to C is the currying of the uncurried composition map.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

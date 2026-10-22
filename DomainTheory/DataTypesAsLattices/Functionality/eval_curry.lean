@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, after (4.25). If a, b, and c are retracts and f is typed as an arrow from the tensor of a and b to c, then evaluation composed with the tensor of the currying of f and b equals f.
-
-The arrow typing of f supplies the arrow equation. Graph extensionality for elements that equal the graphs of their own applications, using that a composite is a graph and that a typed element is a graph, reduces the claim to pointwise agreement. At an argument u, composition, the evaluation rule, the tensor rule, the pair projections, and the third currying rule produce an application of f to a pair. The arrow equation at that pair and at u, another tensor rule, the pair projections, and the retract equation of b match the two sides.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

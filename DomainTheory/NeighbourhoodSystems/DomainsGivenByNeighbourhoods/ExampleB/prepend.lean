@@ -1,6 +1,3 @@
-/-ai
-Prepending a finite binary string to a set of strings forms the concatenations of that string with the members of the set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

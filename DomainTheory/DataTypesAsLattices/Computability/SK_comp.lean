@@ -1,8 +1,3 @@
-/-ai
-For elements f, g, and x of Pω, the combinator S applied to K applied to f, then to g, and then to x, equals f applied to g applied to x.
-
-Rewrite by the three-argument β-rule for S and the two-argument β-rule for K.
-ai-/
 module
 
 public import Mathlib.Computability.RE

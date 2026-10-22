@@ -1,8 +1,3 @@
-/-ai
-A Scott-open set is an upper set.
-
-The upper-set property is the first component of Scott-openness.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

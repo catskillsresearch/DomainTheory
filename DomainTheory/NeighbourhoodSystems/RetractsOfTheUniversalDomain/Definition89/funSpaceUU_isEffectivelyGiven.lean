@@ -1,8 +1,3 @@
-/-ai
-The function space of the universal domain with itself is effectively given.
-
-Apply preservation of effective givenness under function space to the effective givenness of the universal domain on both arguments.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

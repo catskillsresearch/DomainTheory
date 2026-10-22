@@ -1,6 +1,3 @@
-/-ai
-This module gathers and re-exports the basic development of Pω together with the results on the coded finite sets, their codes, and the pairing function: emptiness of the set coded by 0, the bound k < 2^k, the strict membership bound, finiteness, powers of two as singletons, unions of codes, existence of a finite piece containing a given element, bitwise disjunction, list and finite-set codes, existence of a code for every finite set, monotonicity and strict increase of the triangular numbers, the triangular bounds on a pair, injectivity of pairing, the inequalities for the two components, and the pairing and unpairing identities.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Pomega.Basic

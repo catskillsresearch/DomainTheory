@@ -1,8 +1,3 @@
-/-ai
-Decoding the append code of two codes yields the reverse of the decoding of the second, followed by the decoding of the first.
-
-Unfold the append code, rewrite the code fold, and apply the fold lemma for the append step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

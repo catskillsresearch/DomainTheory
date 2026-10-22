@@ -1,8 +1,3 @@
-/-ai
-The basic neighbourhood of a code n equals the intersection, over every k in the finite set coded by n, of the subbasic opens of elements that contain k.
-
-Extensionality, after unfolding the basic neighbourhood, the subbasic open, and the meaning of subset, makes the two sides the same condition on x.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

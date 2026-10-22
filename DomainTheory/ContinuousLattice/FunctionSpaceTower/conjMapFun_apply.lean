@@ -1,8 +1,3 @@
-/-ai
-Conjugation of a Scott endomap, evaluated at a point, is the outer map applied to the endomap applied to the inner map at that point.
-
-This equality is the definition of conjugation.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

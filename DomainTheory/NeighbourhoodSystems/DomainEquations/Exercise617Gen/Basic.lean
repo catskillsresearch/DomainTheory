@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the alphabet-generic development of Exercise 6.17, in which the two-letter domain of finite or infinite binary sequences is replaced by the domain of finite or infinite sequences over a decidable alphabet. It re-exports the neighbourhood system of cones and singletons, the partial and total elements, and the letter-prepending successors; the separated sum of the unit with one copy for each letter, its injections, sum map, and endofunctor; the letter embeddings and the isomorphism with that sum; the lift of approximable maps out of the domain; the unique algebra homomorphism into any algebra for the functor; and the specialisation in which the alphabet is a finite initial segment.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617
@@ -160,78 +157,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617Gen.d
 
 @[expose] public section
 
-/-!
-# Exercise 6.17 part 2 (Scott 1981, PRG-19) — the generalization `Cₐ ≅ 𝟙 + Σₐ Cₐ`
-
-Example 6.2 / Exercise 6.17 ask for the generalization of `C` corresponding to Scott's `A ≅ Aⁿ + Aⁿ`:
-replace the two-letter alphabet `{0,1}` of `C` (`C ≅ 𝟙 + C + C`) by an arbitrary alphabet `A`. The
-domain `Cₐ` of *finite or infinite `A`-sequences* then satisfies the domain equation
-`Cₐ ≅ 𝟙 + Σ_{a:A} Cₐ` (the `A`-indexed separated sum of copies of `Cₐ`). Instantiating `A := Fin n`
-gives **`Cₙ ≅ 𝟙 + n·Cₙ`**; `A := Bool` recovers Example 6.2's `C`.
-
-This module mirrors, generically over an alphabet `A` with decidable equality, the binary development
-of `Example44` (the domain), `Example62`/`Example62C` (the sum and the isomorphism) and `Exercise617`
-(initiality).
-
-## Stage 1 (this section): the generic domain `Cₐ`
-
-`Strn A = List A`; cones `coneN σ = σA*`; the neighbourhood system `Cn = {σA*} ∪ {{σ}}`; the total
-elements `strElemN σ` and partial elements `strBotN σ`; and the successors `consMapN a : Cₐ → Cₐ`
-prepending the letter `a`. Everything is the alphabet-generic copy of `Example44`, and the data
-(`Cn`, `consMapN`) stays choice-free.
--/
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
 
 variable {A : Type} [DecidableEq A]
-
-/-! ### Prepending a letter: the successors `x ↦ a·x`. -/
-
-/-! ## Stage 2: the `A`-indexed separated sum `Tsig(X) = 𝟙 + Σ_{a:A} X`
-
-The right-hand side of the generalized domain equation. Tokens are `Option (Unit ⊕ (A × β))`: a
-fresh basepoint `Λ = none`, the lone `𝟙`-token `tu = some (inl ())`, and the `A`-indexed family of
-tagged copies `tc a t = some (inr (a, t))`. This is the alphabet-generic analogue of `Example62C`'s
-three-way `sum3 unitSys C C` (`= 𝟙 + C + C`), the index `Bool` being replaced by `A`. -/
-
-/-! ### Shape lemmas: no nesting through the wrong tag. -/
-
-/-! ### The canonical injections `𝟙 ↪ 𝟙+Σ_a V` and `V ↪ 𝟙+Σ_a V` (the `a`-th copy). -/
-
-/-! ### The sum map `Σ f = I_𝟙 + Σ_a f` and its functoriality. -/
-
-/-! ## The endofunctor `Tsig(X) = 𝟙 + Σ_a X` on the `∅`-free category. -/
-
-/-! ## Stage 3: the domain equation `Cₐ ≅ 𝟙 + Σ_a Cₐ`.
-
-The alphabet-generic analogue of `Example62C` (`C ≅ 𝟙 + C + C`). Prepending the letter `a` to a
-neighbourhood gives `embA a X`; a `Cₐ`-neighbourhood is the master, the terminator `{Λ}`, or some
-`a`-copy `aX`, exactly the shapes of the `A`-indexed sum `𝟙 + Σ_a Cₐ`. -/
-
-/-! ### The sum target `𝟙 + Σ_a Cₐ` and its inversion lemmas. -/
-
-/-! ### The forward half `toCC : |Cₐ| → |𝟙 + Σ_a Cₐ|`. -/
-
-/-! ### The inverse half `fromCC : |𝟙 + Σ_a Cₐ| → |Cₐ|`. -/
-
-/-! ### The two halves are mutually inverse. -/
-
-/-! ### Bridging the isomorphism to the successors `consMapN`. -/
-
-/-! ## `Cₐ` as a `Tsig`-algebra. -/
-
-/-! ## The `liftCn` combinator: an approximable map out of `Cₐ` (generic `Exercise419.liftC`). -/
-
-/-! ## Initiality of `(Cₐ, i)`: the unique homomorphism into any `Tsig`-algebra. -/
-
-/-! ### The homomorphism square and uniqueness. -/
-
-/-! ## Instantiation: `Cₙ ≅ 𝟙 + n·Cₙ` over the `n`-letter alphabet `Fin (n+1)`.
-
-Taking `A := Fin (n+1)` recovers Scott's `Cₙ`: the domain of finite-or-infinite sequences over an
-`(n+1)`-letter alphabet, satisfying `Cₙ ≅ 𝟙 + (n+1)·Cₙ`. (For `n = 1`, `Fin 2 ≃ Bool` recovers
-Example 6.2's `C ≅ 𝟙 + C + C`.) -/
 
 end DomainTheory.NeighbourhoodSystems.Exercise617Gen

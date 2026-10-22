@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (5.12). The product of closures a and b is the graph of the map sending u to the square pair of a applied to the first square component of u and b applied to the second.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

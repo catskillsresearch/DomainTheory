@@ -1,6 +1,3 @@
-/-ai
-The fresh bottom of the lift is the element whose only neighbourhood is the lift master. That neighbourhood is the master, the only intersection is the master with itself, and any neighbourhood above the master equals the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

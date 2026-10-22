@@ -1,8 +1,3 @@
-/-ai
-The stage embedding of the n-th coordinate of a compatible sequence y lies below y at every coordinate.
-
-When the coordinate m is at least n, the component climbs and climbing a coordinate of y stays below the later coordinate. When m is below n, the component descends, and descending a compatible sequence recovers the earlier coordinate.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

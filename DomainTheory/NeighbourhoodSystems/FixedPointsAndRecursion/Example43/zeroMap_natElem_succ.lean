@@ -1,8 +1,3 @@
-/-ai
-The zero test sends the total element at n + 1 to false.
-
-This is the computation rule of the constant lift on total elements, applied to the zero table at n + 1.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

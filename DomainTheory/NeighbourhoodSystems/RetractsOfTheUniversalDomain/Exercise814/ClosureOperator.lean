@@ -1,6 +1,3 @@
-/-ai
-A closure operator on a neighbourhood system is a retraction of the system into itself that lies above the identity map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

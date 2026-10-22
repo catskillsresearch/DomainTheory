@@ -1,6 +1,3 @@
-/-ai
-The pair space of a neighbourhood system is the product of its function space with itself. Its tokens are sums of two approximable self-maps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

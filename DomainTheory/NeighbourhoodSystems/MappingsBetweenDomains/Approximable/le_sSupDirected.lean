@@ -1,8 +1,3 @@
-/-ai
-Each member of a nonempty directed family of elements lies below the directed union of the family.
-
-A neighbourhood of the member belongs to the union by taking that member as the witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

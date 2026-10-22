@@ -1,6 +1,3 @@
-/-ai
-A filter f of the way-below neighbourhood system on a complete lattice D is round when membership of the way-below neighbourhood of an element a yields a code b with a way-below b whose way-below neighbourhood also belongs to f.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

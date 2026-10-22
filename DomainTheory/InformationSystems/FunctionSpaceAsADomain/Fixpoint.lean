@@ -1,6 +1,3 @@
-/-ai
-This module gathers and re-exports the least-fixed-point results of Scott's Theorem 7.3: the basic relation lemma, the inclusion of fix chains in a pre-fixed point, the least-pre-fixed-point inequality, the one-step extension of a chain, the inequality for the operator applied to the fixed point, the fixed-point equation, uniqueness of the fixed-point element, and uniqueness of the approximable fixed-point map.
-ai-/
 
 module
 

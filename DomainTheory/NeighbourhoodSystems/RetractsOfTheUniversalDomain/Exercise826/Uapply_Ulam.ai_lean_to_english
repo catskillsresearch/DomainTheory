@@ -1,0 +1,3 @@
+Applying the self-hosted abstraction of an approximable self-map f of the universal domain to an element x recovers the action of f on x.
+
+The function-space equivalence shows that converting f to a filter and back recovers f. Unfolding both definitions, the composite of the element maps of j-arrow and i-arrow is the element map of their composite. That composite is the identity, so the identity acts as itself, and the evaluation law together with the recovery of f gives the action of f.

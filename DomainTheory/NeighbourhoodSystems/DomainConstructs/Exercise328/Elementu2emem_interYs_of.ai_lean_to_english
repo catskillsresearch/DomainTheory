@@ -1,0 +1,3 @@
+An element contains the finite intersection of those outputs whose inputs contain a given set as soon as it contains each such output.
+
+The argument inducts on the list. The empty intersection is the master, which every element contains. For a head and a tail, the tail hypothesis applies to the tail. If the given set is contained in the head input, the intersection equals the head output meet the tail intersection, and both belong to the element. Otherwise the head constraint is vacuous and the intersection equals the tail intersection.

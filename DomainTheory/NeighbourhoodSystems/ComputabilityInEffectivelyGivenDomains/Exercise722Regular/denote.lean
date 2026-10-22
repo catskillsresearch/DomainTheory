@@ -1,6 +1,3 @@
-/-ai
-denote sends an expression to a language of words. The universal expression denotes every word, a singleton expression denotes that one word, a concatenation denotes the concatenation of the two languages, and an intersection denotes the intersection of the two languages.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

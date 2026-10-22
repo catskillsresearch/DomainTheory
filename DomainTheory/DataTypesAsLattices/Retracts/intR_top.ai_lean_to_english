@@ -1,0 +1,3 @@
+The integer retract fixes the top element.
+
+Apply the nonsingleton law at zero. Zero belongs to the top element and is a lower bound of every member. The top element is not the bottom element, because zero would then belong to the bottom element. It is not a singleton, because both zero and one belong to the top element and hence to that singleton.

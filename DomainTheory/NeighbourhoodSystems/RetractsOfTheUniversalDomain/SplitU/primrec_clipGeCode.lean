@@ -1,8 +1,3 @@
-/-ai
-clipGeCode is primitive recursive.
-
-The midpoint and the two endpoints are primitive recursive projections. Pairing the maximum of the left endpoint and the midpoint with the right endpoint agrees with the clip by simplification.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

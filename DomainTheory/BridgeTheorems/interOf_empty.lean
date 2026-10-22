@@ -1,8 +1,3 @@
-/-ai
-The folded intersection of the empty set of neighbourhood indices is the master set of the neighbourhood system.
-
-The two sides are identical by the definition of the folded intersection.
-ai-/
 module
 
 public import Mathlib.Data.Finset.Fold

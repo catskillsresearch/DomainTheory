@@ -1,6 +1,3 @@
-/-ai
-The neighbourhood a is the set consisting of the first two tokens.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

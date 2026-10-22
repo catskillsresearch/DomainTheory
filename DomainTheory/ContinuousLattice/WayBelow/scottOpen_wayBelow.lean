@@ -1,8 +1,3 @@
-/-ai
-The set of elements way above a fixed element is Scott-open.
-
-The set is an upper set because way-below is monotone on the right. If the supremum of a nonempty directed set lies in it, a witnessing Scott-open neighbourhood of that supremum meets the directed set, and the same neighbourhood witnesses that the fixed element is way below the meeting point.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

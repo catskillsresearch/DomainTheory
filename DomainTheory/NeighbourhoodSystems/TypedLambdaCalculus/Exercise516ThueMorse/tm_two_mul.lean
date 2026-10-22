@@ -1,8 +1,3 @@
-/-ai
-The Thue–Morse bit of twice n equals the Thue–Morse bit of n.
-
-Split into the case n = 0, which is reflexivity, and the case n > 0. In the positive case simplify the definition of the bit, the bits of an even number, using that n is nonzero, the fold of a cons, and exclusive-or with false.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

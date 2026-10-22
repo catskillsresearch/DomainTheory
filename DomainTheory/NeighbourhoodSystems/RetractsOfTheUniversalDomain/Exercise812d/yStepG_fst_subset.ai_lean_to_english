@@ -1,0 +1,3 @@
+The first component of a generalized Y-step is contained in its first input.
+
+The split specification writes that input as the union of the true and false pieces. The true piece lies in the left summand of the union and the false piece lies in the right summand.

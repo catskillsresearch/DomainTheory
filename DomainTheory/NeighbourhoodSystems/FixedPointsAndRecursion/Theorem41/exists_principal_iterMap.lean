@@ -1,8 +1,3 @@
-/-ai
-A chain of length n from the master neighbourhood under the approximable map of a function-space element factors through one neighbourhood of that element: the least map of the corresponding principal element realizes the same chain.
-
-The argument is induction on the length. At zero the master neighbourhood of the function space belongs to the element and already carries the chain. At a successor the chain splits into an intermediate neighbourhood and a last step. The inductive hypothesis gives a neighbourhood of the element for the first part, the step set of the last step belongs to the element, and the filter is closed under intersection. The least map of that intersection lies above the least map of the first neighbourhood, because a contained set determines a larger principal and the function-space equivalence is monotone, so monotonicity of iteration keeps the intermediate neighbourhood. The step set belongs to the principal of the intersection, so that least map makes the last step, and the two relations are the successor chain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

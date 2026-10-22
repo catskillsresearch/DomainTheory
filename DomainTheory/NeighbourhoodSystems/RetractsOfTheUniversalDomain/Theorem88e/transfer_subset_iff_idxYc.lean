@@ -1,8 +1,3 @@
-/-ai
-The intersection of the whole natural numbers with one index set is contained in a second index set if and only if the intersection of the universal master with the corresponding coded set is contained in the second coded set.
-
-The emptiness transfer for the constraints that the first index is positive and the second is negative equates nonemptiness of the two constrained sets. Extensionality identifies those sets with the two differences, and a difference is empty exactly when the corresponding inclusion holds.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

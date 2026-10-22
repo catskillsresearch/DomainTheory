@@ -1,8 +1,3 @@
-/-ai
-Every singleton of a depth-well-formed lambda token is bundled-consistent.
-
-The forgetful image is the singleton of the underlying raw token. Matching on bottom, an atom, or a function token uses the corresponding raw singleton lemma, and the function-token case takes the two component consistencies from well-formedness.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

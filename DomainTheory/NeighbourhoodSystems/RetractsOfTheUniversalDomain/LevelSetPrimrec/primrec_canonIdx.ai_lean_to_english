@@ -1,0 +1,5 @@
+Canonicalization of a level-and-mask code is primitive recursive.
+
+The nonemptiness test of the two components is primitive recursive. Selection among that
+test, the identity, and the constant code of the pair of zero and one agrees with
+canonicalization by reflexivity.

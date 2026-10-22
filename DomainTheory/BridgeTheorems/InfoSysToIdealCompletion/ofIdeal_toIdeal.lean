@@ -1,8 +1,3 @@
-/-ai
-The element determined by the ideal of finite approximants of an element x is x itself.
-
-The carrier of that ideal equals the set of finite approximants of x. A member of the carrier is the underlying element of a finite approximant, and a finite approximant is the closure of a consistent finite set, hence is itself a finite element witnessing membership in the carrier. The directed supremum of this set is the directed supremum of the finite approximants of x, which is x.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

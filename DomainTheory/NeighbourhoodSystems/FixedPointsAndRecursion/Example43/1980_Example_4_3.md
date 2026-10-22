@@ -1,225 +1,217 @@
 # Example 4.3
 
-The reader may have noticed that we used recursion in the proof of 4.1 (we had to define $f^n$ for all $n \in \mathbf{N}$). But 4.1 and 4.2 can be used to justify definitions by recursion on a large number of domains — definitions where the process of iteration is far from being as straightforward. In discussing this point, let us start with some basic examples.
+## Human-English
 
-**EXAMPLE 4.3.** The infinite generalization of our original example 1.2 is the system
+@import "1980_Example_4_3.english" {code_block=false}
 
-$$
-N = \{ \{n\} \mid n \in \mathbf{N} \} \cup \{ \mathbf{N} \}.
-$$
+## AI: Human-English to AI-Lean
 
-The total elements are clearly in a one-one correspondence with the integers in $\mathbf{N}$. We can apply the construction of Exercise 3.16 to obtain a domain
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/N_bot_mem.lean**
 
-$$
-F = N^\infty.
-$$
+@import "N_bot_mem.lean"
 
-So we already know quite a bit about this domain — but it has a much more familiar presentation.
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/constLiftN_bot.lean**
 
-Let $\Phi$ be the set of all *finite partial functions* $\varphi \subseteq \mathbf{N} \times \mathbf{N}$ (that is, finite sets of ordered pairs of integers where, if $(n,m) \in \varphi$ and $(n,m') \in \varphi$, then $m = m'$). Define
+@import "constLiftN_bot.lean"
 
-$$
-\uparrow \varphi = \{ \psi \in \Phi \mid \varphi \subseteq \psi \}.
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/memN.lean**
 
-Consider the neighbourhood system
+@import "memN.lean"
 
-$$
-F' = \{ \uparrow \varphi \mid \varphi \in \Phi \}.
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/memN_singleton.lean**
 
-It is an easy exercise to show that $F$ and $F'$ are isomorphic and that the elements of these domains correspond exactly to the (possibly infinite) *partial functions* $\pi \subseteq \mathbf{N} \times \mathbf{N}$. Moreover, the *total* elements just correspond to the *total* functions $\tau : \mathbf{N} \to \mathbf{N}$ ("function" in the ordinary, set-theoretical sense of the word).
+@import "memN_singleton.lean"
 
-Another easy exercise is to show that the domains
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/memN_univ.lean**
 
-$$
-F \text{ and } (\mathbf{N} \to \mathbf{N})
-$$
+@import "memN_univ.lean"
 
-by our definitions are *NOT* isomorphic; though the two domains are closely related. We can define a mapping
-$$
-\mathrm{val} : F \times N \to N
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/mem_natElem_iff.lean**
 
-by the relationship
+@import "mem_natElem_iff.lean"
 
-$$
-\uparrow \phi \cup \{n\}\ \mathrm{val}\ \{m\} \quad \text{iff} \quad (n, m) \in \phi.
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/constLiftN_natElem.lean**
 
-(Of course $\mathrm{val}$ has to relate other neighbourhoods such as:
+@import "constLiftN_natElem.lean"
 
-$$
-\uparrow \phi \cup N\ \mathrm{val}\ N,
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/nestedOrDisjoint.lean**
 
-but these are all.) It is then simple to prove that if $\pi \in |F|$ is regarded as a partial function $\pi : N \to N$ and if for $n \in N$ we define $\hat{n} \in |N|$ by
+@import "nestedOrDisjoint.lean"
 
-$$
-\hat{n} = \{ \{n\}, N \},
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/N.lean**
 
-then we have
+@import "N.lean"
 
-$$
-\mathrm{val}(\pi, \hat{n}) = \widehat{\pi(n)}, \text{ if } \pi \text{ is defined at } n;
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/N_mem.lean**
 
-$$
-\qquad\qquad\qquad\qquad = \{N\}, \text{ otherwise.}
-$$
+@import "N_mem.lean"
 
-(Remember that $\{N\} \in |N|$ is the "undefined" element.) This means that
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/N_master.lean**
 
-$$
-\mathrm{curry}(\mathrm{val}) : F \to (N \to N)
-$$
+@import "N_master.lean"
 
-is a one-one function on elements. (The rather slight trouble with $(N \to N)$ is that it has *more* elements than $F$.)
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/T.lean**
 
-So much for the construction of $F$, we now wish to consider mappings
+@import "T.lean"
 
-$$
-f : F \to F
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/natElem.lean**
 
-and their uses. Consider the possibility
+@import "natElem.lean"
 
-$$
-f(\pi)(n) = 0, \qquad\qquad\qquad\qquad \text{if } n = 0;
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predMap_bot.lean**
 
-$$
-\qquad\qquad\qquad = \pi(n-1) + n-1, \text{ if } n > 0.
-$$
+@import "predMap_bot.lean"
 
-If $\pi$ were a total function, then $f(\pi)$ would be total. But if $\pi$ is partial, and if it is, say, undefined at $k$, then $f(\pi)$ becomes undefined at $k + 1$. Note that $f(\pi)$ is always defined at $0$. Note, too, that $f$ is an approximable mapping because it is completely determined by what it does to finite (partial) functions. Indeed,
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predMap_natElem_succ.lean**
 
-$$
-f(\pi) = \bigcup \{ f(\phi) \mid \phi \subseteq \pi \},
-$$
-where $\phi$ ranges over $\Phi$.
+@import "predMap_natElem_succ.lean"
 
-Well, we have proved that every approximable map of a domain into itself has a (*least*) fixed point. What is the least fixed point of this $f$? Suppose $\sigma = f(\sigma)$. Then $\sigma(0) = 0$, and
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predMap_natElem_zero.lean**
 
-$$
-\sigma(n + 1) = f(\sigma)(n + 1)
-$$
+@import "predMap_natElem_zero.lean"
 
-$$
-= \sigma(n) + n.
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predVal.lean**
 
-By induction, then
+@import "predVal.lean"
 
-$$
-\sigma(n) = \sum_{i < n} i
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/singleton_nat_inj.lean**
 
-and $\sigma$ is a total function. (Therefore, $f$ has a *unique* fixed point.)
+@import "singleton_nat_inj.lean"
 
-Actually, we can make the procedure more systematic by defining as fixed points elements of $(N \to N)$ rather than $F$. In the first place we have $\hat{0} \in |N|$, and from now on we will not distinguish between $n$ and $\hat{n}$. Next we have two mappings:
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/succMap_bot.lean**
 
-$$
-\mathrm{succ}, \mathrm{pred} : N \to N
-$$
+@import "succMap_bot.lean"
 
-where, as approximable mappings we have
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/succMap_natElem.lean**
 
-$$
-X\ \mathrm{succ}\ Y\ \mathrm{iff}\ \exists n \in N.\ n \in X\ \mathrm{and}\ n + 1 \in Y,
-$$
+@import "succMap_natElem.lean"
 
-$$
-X\ \mathrm{pred}\ Y\ \mathrm{iff}\ \exists n \in N.\ n + 1 \in X\ \mathrm{and}\ n \in Y,
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predMap_succMap_natElem.lean**
 
-for all $X, Y \in N$. This is *correct*, but what we mean in more understandable terms is:
+@import "predMap_succMap_natElem.lean"
 
-$$
-\mathrm{succ}(n) = n + 1;
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/univ_ne_singleton.lean**
 
-$$
-\mathrm{pred}(n) = n - 1,\ \text{if}\ n > 0;
-$$
+@import "univ_ne_singleton.lean"
 
-$$
-\qquad\qquad = \bot,\ \text{if}\ n = 0.
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/singleton_ne_univ.lean**
 
-Here, $n$ has been identified with $\hat{n} \in |N|$ and $\bot = \{N\} \in |N|$. Moreover, we have a mapping
+@import "singleton_ne_univ.lean"
 
-$$
-\mathrm{zero} : N \to T
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/constLiftN.lean**
 
-which is such that
+@import "constLiftN.lean"
 
-$$
-\mathrm{zero}(n) = \text{true, if } n = 0;
-$$
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predMap.lean**
 
-$$
-\qquad\qquad = \text{false, if } n > 0.
-$$
+@import "predMap.lean"
 
-The *structured domain*
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/succMap.lean**
 
-$$
-\langle N, 0, \mathrm{succ}, \mathrm{pred}, \mathrm{zero} \rangle
-$$
-can be called "THE domain of integers" for our present theory. We shall meet many other structured domains in the sequel.
+@import "succMap.lean"
 
-Now the iterated summation function $\sigma$ can be completely characterized — as a map $\sigma : N \to N$ rather than as an element $\sigma \in |F|$ — by the following equation:
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroElt.lean**
 
-$$
-\sigma(n) = \mathrm{cond}(\mathrm{zero}(n),\ 0,\ \sigma(\mathrm{pred}(n)) + \mathrm{pred}(n)).
-$$
+@import "zeroElt.lean"
 
-The only problem is that we have not defined $+ : N \times N \to N$. (A direct definition is left to the reader; general remarks are given later.) But $+$ could be any function of two variables in order to make the point about the form of the definition of $\sigma$. Remember
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroMap_bot.lean**
 
-$$
-\mathrm{cond} : T \times N \times N \to N,
-$$
+@import "zeroMap_bot.lean"
 
-as defined in Exercise 3.26. We do not put cond in as part of the structure of $N$ because (as should be clear from 3.26) it is part of the structure of $T$.
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroMap_natElem_succ.lean**
 
-The above equation for $\sigma$ is properly called a *functional equation*; it will be written as a fixed-point equation in Lecture V when we have the notation for the $\lambda$-calculus. $\square$
+@import "zeroMap_natElem_succ.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroMap_natElem_zero.lean**
 
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/N_bot_mem.lean](N_bot_mem.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/constLiftN_bot.lean](constLiftN_bot.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/memN.lean](memN.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/memN_singleton.lean](memN_singleton.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/memN_univ.lean](memN_univ.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/mem_natElem_iff.lean](mem_natElem_iff.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/constLiftN_natElem.lean](constLiftN_natElem.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/nestedOrDisjoint.lean](nestedOrDisjoint.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/N.lean](N.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/N_mem.lean](N_mem.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/N_master.lean](N_master.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/T.lean](T.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/natElem.lean](natElem.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predMap_bot.lean](predMap_bot.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predMap_natElem_succ.lean](predMap_natElem_succ.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predMap_natElem_zero.lean](predMap_natElem_zero.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predVal.lean](predVal.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/singleton_nat_inj.lean](singleton_nat_inj.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/succMap_bot.lean](succMap_bot.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/succMap_natElem.lean](succMap_natElem.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predMap_succMap_natElem.lean](predMap_succMap_natElem.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/univ_ne_singleton.lean](univ_ne_singleton.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/singleton_ne_univ.lean](singleton_ne_univ.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/constLiftN.lean](constLiftN.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/predMap.lean](predMap.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/succMap.lean](succMap.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroElt.lean](zeroElt.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroMap_bot.lean](zeroMap_bot.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroMap_natElem_succ.lean](zeroMap_natElem_succ.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroMap_natElem_zero.lean](zeroMap_natElem_zero.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroVal.lean](zeroVal.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroMap.lean](zeroMap.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/FixedPointsAndRecursion/Example43.lean](../Example43.lean)
+@import "zeroMap_natElem_zero.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroVal.lean**
+
+@import "zeroVal.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/zeroMap.lean**
+
+@import "zeroMap.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/FixedPointsAndRecursion/Example43.lean**
+
+@import "../Example43.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "N_bot_mem.ai_lean_to_english" {code_block=false}
+
+@import "constLiftN_bot.ai_lean_to_english" {code_block=false}
+
+@import "memN.ai_lean_to_english" {code_block=false}
+
+@import "memN_singleton.ai_lean_to_english" {code_block=false}
+
+@import "memN_univ.ai_lean_to_english" {code_block=false}
+
+@import "mem_natElem_iff.ai_lean_to_english" {code_block=false}
+
+@import "constLiftN_natElem.ai_lean_to_english" {code_block=false}
+
+@import "nestedOrDisjoint.ai_lean_to_english" {code_block=false}
+
+@import "N.ai_lean_to_english" {code_block=false}
+
+@import "N_mem.ai_lean_to_english" {code_block=false}
+
+@import "N_master.ai_lean_to_english" {code_block=false}
+
+@import "T.ai_lean_to_english" {code_block=false}
+
+@import "natElem.ai_lean_to_english" {code_block=false}
+
+@import "predMap_bot.ai_lean_to_english" {code_block=false}
+
+@import "predMap_natElem_succ.ai_lean_to_english" {code_block=false}
+
+@import "predMap_natElem_zero.ai_lean_to_english" {code_block=false}
+
+@import "predVal.ai_lean_to_english" {code_block=false}
+
+@import "singleton_nat_inj.ai_lean_to_english" {code_block=false}
+
+@import "succMap_bot.ai_lean_to_english" {code_block=false}
+
+@import "succMap_natElem.ai_lean_to_english" {code_block=false}
+
+@import "predMap_succMap_natElem.ai_lean_to_english" {code_block=false}
+
+@import "univ_ne_singleton.ai_lean_to_english" {code_block=false}
+
+@import "singleton_ne_univ.ai_lean_to_english" {code_block=false}
+
+@import "constLiftN.ai_lean_to_english" {code_block=false}
+
+@import "predMap.ai_lean_to_english" {code_block=false}
+
+@import "succMap.ai_lean_to_english" {code_block=false}
+
+@import "zeroElt.ai_lean_to_english" {code_block=false}
+
+@import "zeroMap_bot.ai_lean_to_english" {code_block=false}
+
+@import "zeroMap_natElem_succ.ai_lean_to_english" {code_block=false}
+
+@import "zeroMap_natElem_zero.ai_lean_to_english" {code_block=false}
+
+@import "zeroVal.ai_lean_to_english" {code_block=false}
+
+@import "zeroMap.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "../Example43.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Example_4_3.ai_english_concordance" {code_block=false}

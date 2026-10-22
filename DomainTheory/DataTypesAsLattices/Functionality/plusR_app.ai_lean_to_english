@@ -1,0 +1,3 @@
+Application of the sum of a and b to u is the double conditional of the first component of u, with the sequence pair of zero and the application of a to the second component as the zero branch, and the sequence pair of one and the application of b to the second component as the positive branch.
+
+This is β-conversion, since that map is Scott continuous.

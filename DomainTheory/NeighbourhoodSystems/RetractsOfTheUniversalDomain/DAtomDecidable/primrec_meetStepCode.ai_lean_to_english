@@ -1,0 +1,3 @@
+If the consistency function is primitive recursive, then so is the coded meet step.
+
+The projections to the next index, the accumulator, its success bit, and its index are primitive recursive, and so is the consistency test on the pair of that index with the next index. The product of the two one-tests is primitive recursive. The intersection of the index with the next index is primitive recursive by the presentation, up to the pairing equations, and pairing the constant one with it gives the success branch. Pairing the constant zero with the previous index gives the failure branch. Selection among the condition and the two branches is primitive recursive and agrees with the coded step.

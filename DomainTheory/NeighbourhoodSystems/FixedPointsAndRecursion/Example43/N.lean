@@ -1,6 +1,3 @@
-/-ai
-The natural-number neighbourhood system is the nested-or-disjoint system on the whole space of natural numbers whose neighbourhoods are given by the natural-number predicate. The whole space is nonempty and is a neighbourhood, and every such neighbourhood is contained in it.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the injective-space development: the Sierpiński space and its injectivity, preservation of injectivity by products and by retracts, Scott's Propositions 1.2 through 1.5, the embedding of a T₀-space into a power of the Sierpiński space, and Corollaries 1.6 and 1.7.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Injective.Basic

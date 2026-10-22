@@ -1,21 +1,19 @@
 # Theorem 3.1
 
-**THEOREM 3.1 (The generator theorem).** *All LAMBDA-definable elements can be obtained from* $\mathbf{G}$ *by iterated application.*
+## Human-English
 
-A distributive function $f$ is said to be *total* iff $f(n) \in \omega$ for all $n \in \omega$. As they come from obvious primitive recursive functions, we do not stop to write out LAMBDA-definitions of these three total functions:
+@import "theorem_3_1.english" {code_block=false}
 
-$$(3.4) \quad \mathbf{apply} = \lambda n \in \omega.\, \lambda m \in \omega.\, (n, m) + 1$$
+## AI: Human-English to AI-Lean
 
-$$(3.5) \quad \mathbf{op}((n, m)) = n$$
+**DataTypesAsLattices/Enumeration/theorem_3_1.lean**
 
-$$(3.6) \quad \mathbf{arg}((n, m)) = m.$$
+@import "theorem_3_1.lean"
 
-The point of these auxiliary combinators concerns our Gödel numbering of the r.e. sets. The number 0 will correspond to the generator $\mathbf{G}$; while $(n, m) + 1$ will correspond to the application of the $n$th set to the $m$th. This is formalized in the combinator $\mathbf{val}$ which is defined as the least fixed point of the equation:
+## AI: AI-Lean to AI-English
 
-$$(3.7) \quad \mathbf{val} = \lambda k \in \omega.\, k \supset \mathbf{G},\, \mathbf{val}(\mathbf{op}(k - 1))(\mathbf{val}(\mathbf{arg}(k - 1))).$$
+@import "theorem_3_1.ai_lean_to_english" {code_block=false}
 
-This function accomplishes the enumeration as follows:
+## AI: AI-English to Human-English Concordance
 
-**Lean 4**
-
-- [DataTypesAsLattices/Enumeration/theorem_3_1.lean](theorem_3_1.lean)
+@import "theorem_3_1.ai_english_concordance" {code_block=false}

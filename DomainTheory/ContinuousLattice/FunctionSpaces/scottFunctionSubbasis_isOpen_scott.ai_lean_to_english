@@ -1,0 +1,3 @@
+If U is Scott-open in D', then for each point x of D the set of Scott maps from D to D' that send x into U is open in the Scott function topology on those maps.
+
+That set belongs to the subbasis from which the Scott function topology is generated.

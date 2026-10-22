@@ -1,8 +1,3 @@
-/-ai
-One enumerated neighbourhood is contained in another if and only if the prefix characteristic of the second address against the first equals one.
-
-Unfold the enumeration and rewrite by the neighbourhood-inclusion criterion and the prefix-characteristic criterion.
-ai-/
 
 module
 

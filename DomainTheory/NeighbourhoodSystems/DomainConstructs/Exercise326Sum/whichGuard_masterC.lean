@@ -1,8 +1,3 @@
-/-ai
-If the guard holds and the sum neighborhood is the sum master, then the truth neighborhood is the master.
-
-Splitting the guard, a left or right injection cannot equal the sum master, because the master contains the empty token and those injections do not. The remaining clause says the truth neighborhood is the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

@@ -1,8 +1,3 @@
-/-ai
-Among the three neighbourhoods of T, a containment forces the two neighbourhoods to be equal or the larger one to be the master neighbourhood. The master is the only neighbourhood that properly contains another, because the singletons zero and one are incomparable.
-
-By the trichotomy, the larger neighbourhood is the master, zero, or one. In the first case the second disjunct holds. If it is zero, the trichotomy for the smaller neighbourhood rules out the master and rules out one, because either containment would place the token 1 in zero, so the smaller neighbourhood is zero. If it is one, the same trichotomy rules out the master and zero, because either containment would place the token 0 in one, so the smaller neighbourhood is one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

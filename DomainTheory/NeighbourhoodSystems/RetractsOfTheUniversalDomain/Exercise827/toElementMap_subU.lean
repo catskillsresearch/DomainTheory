@@ -1,8 +1,3 @@
-/-ai
-The combinator sub on the universal domain sends an element w to i-arrow of subApprox applied to j-arrow of w.
-
-Unfold the definition and apply the composition law for element maps twice.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

@@ -1,0 +1,3 @@
+The bottom element equals the entailment closure of the empty set.
+
+Both inclusions are transitivity of entailment. A token entailed by the singleton of the bottom token is entailed by the empty set, because the empty set entails the bottom token. A token entailed by the empty set is entailed by the singleton of the bottom token, because no token lies in the empty set.

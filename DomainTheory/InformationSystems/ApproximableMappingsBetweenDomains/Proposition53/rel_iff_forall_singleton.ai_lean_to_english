@@ -1,0 +1,3 @@
+For consistent finite sets, an approximable mapping relates them if and only if it relates the domain set to the singleton of every token in the codomain set.
+
+If the relation holds, monotonicity with reflexivity of entailment on the domain set and the entailment of a chosen token gives the relation to that singleton. Conversely, induct on the codomain set. The empty set is reached by monotonicity from the empty relation and the empty entailments. For an insertion of a token into a finite set, the hypothesis gives the singleton, the inductive hypothesis gives the remaining set, and closure under union on the right, with the identity of a singleton union and insertion, gives the inserted set.

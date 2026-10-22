@@ -1,6 +1,3 @@
-/-ai
-Currying is an order isomorphism from maps out of a product to maps into the function space, with inverse uncurrying, by the two round-trip identities. If the curry of one map lies below the curry of another, a related pair of the first becomes, after uncurrying the curried relation on the left preimage and the step of the right preimage, a related pair of the second. In the other direction, the inequality of the original maps sends each section membership that expresses the curried relation to the corresponding membership for the larger map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

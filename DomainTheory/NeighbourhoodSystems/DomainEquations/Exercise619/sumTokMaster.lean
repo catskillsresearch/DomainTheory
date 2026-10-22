@@ -1,6 +1,3 @@
-/-ai
-The master neighbourhood of the concrete token sum is the empty word together with the false-tagged copy of the master of the first system and the true-tagged copy of the master of the second.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

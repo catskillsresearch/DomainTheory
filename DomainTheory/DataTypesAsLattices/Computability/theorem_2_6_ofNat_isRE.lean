@@ -1,8 +1,3 @@
-/-ai
-If the numeral of n is combinatory, then that numeral is recursively enumerable, the recursively enumerable direction of Theorem 2.6 for numerals.
-
-The recursive enumerability of the numeral is IsRE.numeral n, which discharges the implication.
-ai-/
 module
 
 public import Mathlib.Computability.RE

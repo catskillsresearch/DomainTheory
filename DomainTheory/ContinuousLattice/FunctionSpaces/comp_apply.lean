@@ -1,8 +1,3 @@
-/-ai
-The composite of Scott maps f and g, evaluated at x, equals f applied to g(x).
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

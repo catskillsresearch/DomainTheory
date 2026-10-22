@@ -1,8 +1,3 @@
-/-ai
-The finite set coded by the code of a finset s is the underlying set of s.
-
-Extensionality and simplification reduce the claim to the decoding law for list codes.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

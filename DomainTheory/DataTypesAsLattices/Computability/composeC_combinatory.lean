@@ -1,8 +1,3 @@
-/-ai
-If u and v are combinatory, then so is their composition.
-
-The composition is the application of S to K applied to u, and to v.
-ai-/
 module
 
 public import Mathlib.Computability.RE

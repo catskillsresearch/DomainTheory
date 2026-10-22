@@ -1,18 +1,49 @@
 # Proposition 6.11
 
-**PROPOSITION 6.11.** For a given neighbourhood system $E$, the set of subsystems
+## Human-English
 
-$$
-\{D \mid D \triangleleft E\}
-$$
+@import "1980_Proposition_6_11.english" {code_block=false}
 
-forms a domain in its own right. $\square$
+## AI: Human-English to AI-Lean
 
-**Lean 4**
+**NeighbourhoodSystems/DomainEquations/Proposition611Inst16.lean**
 
-- [NeighbourhoodSystems/DomainEquations/Proposition611Inst16.lean](Proposition611Inst16.lean)
-- [NeighbourhoodSystems/DomainEquations/ofMem.lean](ofMem.lean)
-- [NeighbourhoodSystems/DomainEquations/ofMem_subsystem.lean](ofMem_subsystem.lean)
-- [NeighbourhoodSystems/DomainEquations/subIso.lean](subIso.lean)
-- [NeighbourhoodSystems/DomainEquations/subsystemReprIso.lean](subsystemReprIso.lean)
-- [NeighbourhoodSystems/DomainEquations/Proposition611.lean](Proposition611.lean)
+@import "Proposition611Inst16.lean"
+
+**NeighbourhoodSystems/DomainEquations/ofMem.lean**
+
+@import "ofMem.lean"
+
+**NeighbourhoodSystems/DomainEquations/ofMem_subsystem.lean**
+
+@import "ofMem_subsystem.lean"
+
+**NeighbourhoodSystems/DomainEquations/subIso.lean**
+
+@import "subIso.lean"
+
+**NeighbourhoodSystems/DomainEquations/subsystemReprIso.lean**
+
+@import "subsystemReprIso.lean"
+
+**NeighbourhoodSystems/DomainEquations/Proposition611.lean**
+
+@import "Proposition611.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Proposition611Inst16.ai_lean_to_english" {code_block=false}
+
+@import "ofMem.ai_lean_to_english" {code_block=false}
+
+@import "ofMem_subsystem.ai_lean_to_english" {code_block=false}
+
+@import "subIso.ai_lean_to_english" {code_block=false}
+
+@import "subsystemReprIso.ai_lean_to_english" {code_block=false}
+
+@import "Proposition611.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Proposition_6_11.ai_english_concordance" {code_block=false}

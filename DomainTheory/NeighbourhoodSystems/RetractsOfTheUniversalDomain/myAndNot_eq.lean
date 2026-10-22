@@ -1,8 +1,3 @@
-/-ai
-The and-not of a and b equals the exclusive disjunction of a with the conjunction of a and b.
-
-Unfold and-not and rewrite by the equations for the iterative exclusive disjunction and the iterative conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

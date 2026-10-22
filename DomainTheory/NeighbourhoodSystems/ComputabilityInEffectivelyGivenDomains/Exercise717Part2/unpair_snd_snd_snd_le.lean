@@ -1,8 +1,3 @@
-/-ai
-The second component of the second component of the second component of a code is at most the code.
-
-Three successive unpairings of the second component do not increase the code, and the inequalities compose.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717

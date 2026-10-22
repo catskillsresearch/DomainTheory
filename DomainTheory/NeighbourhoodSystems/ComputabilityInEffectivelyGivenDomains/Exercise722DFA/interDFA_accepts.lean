@@ -1,8 +1,3 @@
-/-ai
-If two deterministic automata accept the denotations of two expressions, their product automaton accepts the denotation of the intersection expression.
-
-Rewrite by the denotation of intersection and the two hypotheses. A word is accepted by the product when its product evaluation lies in the product accept set, and componentwise evaluation rewrites that membership as the pair of the two component evaluations.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular

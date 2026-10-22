@@ -1,8 +1,3 @@
-/-ai
-The denotation of emptyExpr is the empty set of words.
-
-Extend by a word and simplify the intersection of the singleton of the bit zero with the singleton of the bit one. The only candidate identification makes the word the first singleton, and deciding equality with the second singleton fails.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

@@ -1,0 +1,3 @@
+The left finset of the unfold of a finite set of tree tokens is the finset of atoms of that set.
+
+By extensionality, a left token in the unfold comes from a tree token that unfolds to it, and only an atom does so, so the token is an atom of the set. Conversely, an atom of the set unfolds to the corresponding left token, which belongs to the left finset.

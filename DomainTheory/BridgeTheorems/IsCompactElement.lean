@@ -1,6 +1,3 @@
-/-ai
-An element of a complete lattice is compact when, whenever it lies under the supremum of a nonempty directed set, it lies under some member of that set.
-ai-/
 module
 
 public import Mathlib.Order.CompleteLattice.Basic

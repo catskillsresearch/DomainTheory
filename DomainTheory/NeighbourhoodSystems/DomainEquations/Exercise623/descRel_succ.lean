@@ -1,8 +1,3 @@
-/-ai
-The successor of the n-th Kleene iterate is the structure map composed with the functor image of that iterate composed with the inverse structure map.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

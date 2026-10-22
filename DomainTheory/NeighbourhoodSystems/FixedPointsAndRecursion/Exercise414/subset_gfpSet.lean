@@ -1,8 +1,3 @@
-/-ai
-Every post-fixed point of an operator on subsets is contained in the greatest fixed-point set.
-
-An element of a post-fixed point is entered in the greatest fixed-point set together with that point and the post-fixed inclusion.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

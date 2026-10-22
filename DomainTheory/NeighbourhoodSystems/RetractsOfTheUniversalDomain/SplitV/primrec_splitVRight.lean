@@ -1,8 +1,3 @@
-/-ai
-splitVRight is primitive recursive.
-
-The successor of the minimal level is primitive recursive, and clearing the splitting bit of the upsampled mask is the clear operation on that pair. Pairing the successor level with the cleared mask agrees with the right half by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

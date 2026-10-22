@@ -1,8 +1,3 @@
-/-ai
-The two outputs of xStep at two different sign bits are pairwise disjoint on each side.
-
-The claim is the generic disjointness of the paired step at the split specification of the chosen split.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

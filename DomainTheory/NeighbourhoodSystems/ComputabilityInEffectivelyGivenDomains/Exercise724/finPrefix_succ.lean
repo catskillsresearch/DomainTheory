@@ -1,8 +1,3 @@
-/-ai
-The length-(n + 1) prefix of a stream is the length-n prefix with the value at n appended.
-
-Unfold the prefix, rewrite the range of a successor, and map across the resulting append.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

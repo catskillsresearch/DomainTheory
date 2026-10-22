@@ -1,8 +1,3 @@
-/-ai
-The descent map sends the distinguished-string element of a finite string to the recursive value of the distinguished point along that string.
-
-This is the distinguished-string clause of the lifting along C.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

@@ -1,8 +1,3 @@
-/-ai
-Under the characteristic and consistency hypotheses, every value of the induced enumeration is a neighbourhood of the fixed neighbourhood of the approximable map.
-
-Apply the equivalence of diagonal fixedness with membership in the fixed neighbourhood to diagonal fixedness of the code-level fold.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88i.Basic

@@ -1,8 +1,3 @@
-/-ai
-Including the conjugation of a Scott endomap of the inverse limit by the level projection and embedding into the next level stays below conjugation by the projection and embedding one level higher.
-
-Evaluated as Scott maps, monotonicity of the lower inclusion, of the lower projection, and of the endomap, together with the successor formula for the limit embedding, replaces the lower retraction by the identity up to the inequality between a projection's inclusion followed by its retraction and the identity. The resulting term lies below the next projection of the endomap at the next embedding, by the comparison of an included lower projection with the following projection.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

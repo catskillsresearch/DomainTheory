@@ -1,8 +1,3 @@
-/-ai
-Every member of the universal family is contained in the half-open unit interval.
-
-The inclusion is the third conjunct of membership in the family.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,9 +1,3 @@
-/-ai
-The nonempty-presentation flag of a rational-pair list code is the value in {0, 1}
-recording whether the decoded list contains a nondegenerate rational pair. It is the
-bounded existential, over the decoded list, of the nonemptiness flag of a pair code,
-with the unused parameter of the existential characteristic fixed at zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

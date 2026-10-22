@@ -1,0 +1,3 @@
+The image of an element z under the successor map that prepends a letter a contains the a-prefixed copy of a neighbourhood X if and only if z contains X.
+
+In the forward direction the relation supplies a neighbourhood of z whose prepended copy is contained in the prefixed copy of X. Rewriting by the equality of prefixing and prepending, and comparing prefixed copies, puts that neighbourhood inside X, so upward closure of z gives X. Conversely, X itself witnesses the relation: it belongs to z, it is a neighbourhood, the prefixed copy is a neighbourhood, and the remaining inclusion is the equality of the prefixed copy with the prepended copy.

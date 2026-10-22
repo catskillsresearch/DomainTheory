@@ -1,8 +1,3 @@
-/-ai
-Unfolding the fold of a sum token returns that sum token.
-
-The bottom and left cases are equalities. For a right product token whose second component is tree bottom, the fold is pair-left of the first component and unfolding restores the pair. Otherwise the product law forces the first component to be tree bottom, the fold is pair-right of the second component, and unfolding restores the pair.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,8 +1,3 @@
-/-ai
-The constant map with value the bottom element is strict.
-
-A related output comes with a witness of membership in the bottom element, and that membership means the output is the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

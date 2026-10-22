@@ -1,8 +1,3 @@
-/-ai
-The solution of the vertical-naturals equation is itself a rooted domain, so the stream equation has a solution over that very domain.
-
-The numbered name example_622 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise622.NStar_over_N_exists

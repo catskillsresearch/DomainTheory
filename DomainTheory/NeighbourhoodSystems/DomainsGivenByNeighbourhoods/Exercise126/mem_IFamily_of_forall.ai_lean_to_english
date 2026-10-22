@@ -1,0 +1,3 @@
+If a filter contains I of the singleton of every member of a finite set F, then it contains I(F).
+
+Proceed by induction on F. The empty case is membership of the master. For an insertion, rewrite the finite set as the union of the singleton with the remainder, rewrite the neighbourhood by the intersection identity, and apply intersection closure to the hypothesis at the inserted element and the inductive hypothesis.

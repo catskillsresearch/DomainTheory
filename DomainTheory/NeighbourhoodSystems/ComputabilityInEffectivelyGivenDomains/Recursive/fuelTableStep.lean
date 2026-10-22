@@ -1,6 +1,3 @@
-/-ai
-One fuel-table step applies the body lookup, at every code from 0 through the bound, to the pair of the previous table and the code. The lookup is the body with previous values read from the table.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

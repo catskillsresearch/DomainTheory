@@ -1,6 +1,3 @@
-/-ai
-The exponential of information-system objects A and B is the object whose tokens are the function tokens of their underlying systems and whose information system is their function space.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

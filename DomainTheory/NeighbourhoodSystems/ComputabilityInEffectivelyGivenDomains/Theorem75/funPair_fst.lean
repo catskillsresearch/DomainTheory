@@ -1,8 +1,3 @@
-/-ai
-The first component of the step pair of a code is the domain neighbourhood at the first half of its unpairing.
-
-This is reflexivity from the definition of the step pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

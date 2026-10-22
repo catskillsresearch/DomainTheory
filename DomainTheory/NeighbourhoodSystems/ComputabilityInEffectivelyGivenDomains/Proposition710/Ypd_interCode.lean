@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood coded by the intersection code of n and m equals the intersection of the neighbourhoods coded by n and by m, whenever cons decides whether two enumerated neighbourhoods are consistent.
-
-Rewrite the intersection code by its fold equation, apply the outer-fold identity to the decoded list of n starting from accumulator 0, replace the neighbourhood coded by 0 by the empty set, drop the empty union, and return to the definition of the coded neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

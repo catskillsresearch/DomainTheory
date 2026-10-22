@@ -1,8 +1,3 @@
-/-ai
-Under the correspondence of a function space with its approximable maps, the combinator sends the point named by a map f to the point named by the power-domain action of f.
-
-Elements agree when they contain the same neighbourhoods. A neighbourhood of the image contains the power-domain action of f because f belongs to the witnessing source neighbourhood. Conversely, from membership of that action in a step neighbourhood, a finite list of steps is gathered so that every map agreeing with f on the list again has its power-domain action in the target, and the step neighbourhood of that list is a neighbourhood of f.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition710

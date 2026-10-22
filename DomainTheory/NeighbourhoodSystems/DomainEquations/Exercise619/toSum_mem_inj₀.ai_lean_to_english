@@ -1,0 +1,3 @@
+For a neighbourhood X of the first system, the left injection of X belongs to the forward image of a token element if and only if that element contains the false-tagged copy of X.
+
+In the forward direction the master clause is impossible, because the untagged token of the master does not lie in a left injection, and the right-injection clause is impossible, because a nonempty neighbourhood supplies a left-tagged token of the left injection, which does not lie in a right injection. The remaining clause is a left injection of some neighbourhood, and injectivity identifies it with X. Conversely, the left-injection clause of the forward image applies directly.

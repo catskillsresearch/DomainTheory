@@ -1,6 +1,3 @@
-/-ai
-splitChoice' returns a chosen pair of sets witnessing the abstract split whenever the two incoming sets are empty together and the second is empty or a neighbourhood, and returns the pair of empty sets otherwise.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

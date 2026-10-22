@@ -1,8 +1,3 @@
-/-ai
-Evaluation at a function-space element φ and an element x equals the map of φ at x.
-
-Rewrite by the definition of the combinator and the evaluation map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

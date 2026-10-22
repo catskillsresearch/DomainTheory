@@ -1,8 +1,3 @@
-/-ai
-If Y is a neighbourhood of the function space and the closed form of the product of d at the approximable map of x lies in Y, then some neighbourhood X lies in x, is contained in Y, and is self-related by the product.
-
-A function-space neighbourhood is the step function of a list, and the existence theorem for step functions supplies X.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

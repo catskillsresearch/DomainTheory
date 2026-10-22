@@ -1,8 +1,3 @@
-/-ai
-The projection j_∞ from [D_∞ → D_∞] to D_∞ preserves directed suprema.
-
-Proposition 2.5 converts Scott-continuity of the bundled Scott map j_∞ into preservation of directed suprema.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

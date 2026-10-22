@@ -1,6 +1,3 @@
-/-ai
-The code that subtracts the rational-pair list coded by one natural from the single pair coded by another is the fold of the difference step, starting from the code of the singleton list of that pair, over the subtracted list.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

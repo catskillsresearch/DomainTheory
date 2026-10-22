@@ -1,6 +1,3 @@
-/-ai
-The tagged copy of a set X at an index i is the image of X under the map sending a token to the optional dependent pair given by tagging the pair of i with that token.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

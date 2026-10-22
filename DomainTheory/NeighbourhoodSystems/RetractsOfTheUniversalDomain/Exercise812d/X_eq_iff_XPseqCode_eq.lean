@@ -1,8 +1,3 @@
-/-ai
-Two codes have the same image in the first neighbourhood system if and only if their XPseqCode images coincide in the second.
-
-Each direction is antisymmetry of the two inclusions given by the same-family subset equivalence, applied in both orders.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

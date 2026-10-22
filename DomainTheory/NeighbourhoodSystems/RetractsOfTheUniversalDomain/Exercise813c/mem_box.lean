@@ -1,8 +1,3 @@
-/-ai
-A point lies in a box if and only if it agrees with the prescribed function on every pinned coordinate.
-
-The two sides are definitionally the same.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

@@ -1,8 +1,3 @@
-/-ai
-The identity endofunctor sends each morphism to itself.
-
-The two sides are identical by the definition of the identity endofunctor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

@@ -1,8 +1,3 @@
-/-ai
-The tail at zero is the set of all natural numbers.
-
-Extensionality reduces the equality to an arbitrary natural number, and simplification with the definition of the tail discharges it.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

@@ -1,8 +1,3 @@
-/-ai
-The k-th bit of plusIdx n m is set if and only if some a at most k has its bit in n set and has the residual bit of m at k minus a set.
-
-The equivalence is the self-application of the bit criterion for orUpTo.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

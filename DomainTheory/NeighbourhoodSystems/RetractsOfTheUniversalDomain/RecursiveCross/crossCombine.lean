@@ -1,6 +1,3 @@
-/-ai
-The cross-combine of a binary operation with two list codes is the fold of the outer step of that operation, with the second code as parameter and with accumulator zero, over the first code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

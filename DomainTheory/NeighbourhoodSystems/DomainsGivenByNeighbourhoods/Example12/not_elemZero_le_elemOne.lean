@@ -1,8 +1,3 @@
-/-ai
-The total element determined by {0} does not lie below the total element determined by {1}.
-
-If it did, {0} would belong to the filter of {1}, so {0} would be the master or equal to {1}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

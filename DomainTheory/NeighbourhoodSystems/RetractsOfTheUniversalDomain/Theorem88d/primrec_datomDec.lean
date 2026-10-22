@@ -1,8 +1,3 @@
-/-ai
-The extracted emptiness decider for D-atoms of the base presentation is primitive recursive.
-
-It is the one-indicator composed with the chosen primitive-recursive decider of D-atom emptiness, and that composite equals the extracted decider.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

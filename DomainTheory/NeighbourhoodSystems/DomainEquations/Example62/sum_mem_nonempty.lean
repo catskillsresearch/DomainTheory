@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the sum BB is nonempty.
-
-The membership is the sum master, a left injection, or a right injection. The master contains the basepoint. A left injection is nonempty because the underlying neighbourhood of B is nonempty, and a right injection is nonempty for the same reason.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

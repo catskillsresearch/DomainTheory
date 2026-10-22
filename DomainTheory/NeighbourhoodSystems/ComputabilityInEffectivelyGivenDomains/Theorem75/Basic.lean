@@ -1,130 +1,3 @@
-/-ai
-Scott's Theorem 7.5 says that if two domains are effectively given then so is their function space, that evaluation and currying are computable, and that the computable elements are exactly the computable maps. This file proves the consistency analysis of a coded step list and the existence of the function-space presentation.
-
-The intersection of a cons list with a base is the head intersected with the intersection of the tail.
-
-The two sides are definitionally equal.
-
-A point lies in a list intersection if and only if it lies in the base and in every member of the list.
-
-The empty list is immediate. For a cons, rewrite by the cons equation and the inductive characterization, then split membership of the head from membership in the tail.
-
-If a map relates every pair of a selection and a neighbourhood lies below every selected input, then the map relates that neighbourhood to the intersection of the selected outputs with the master.
-
-The empty selection reduces to the master relation, monotonicity along containment in the master, and the master neighbourhood. For a cons, weaken the head relation along the input inclusion, apply the inductive hypothesis to the tail, and combine the two relations by the right intersection law.
-
-If a step neighbourhood is nonempty, then every sublist whose inputs have a common lower neighbourhood has an intersection of selected outputs that is a neighbourhood of the codomain.
-
-A witness map in the step set relates every pair of the sublist, because the sublist is contained in the list, and the previous relation has a neighbourhood as its codomain.
-
-The step neighbourhood coded by an entry list is nonempty if and only if every sublist whose inputs admit a common lower neighbourhood has an intersection of selected outputs that is a neighbourhood.
-
-Forwards, map the sublist through the step pairing, apply the previous lemma, and rewrite the list of outputs. Backwards, the coded list of pairs is valid. For a neighbourhood of the domain, choose an index and filter the entry list by the decidable inclusion test. Comparing membership shows that the filtered output intersection equals the intersection of those outputs whose inputs contain the neighbourhood, so the hypothesis makes it a neighbourhood. The least map of the list then lies in the step set.
-
-A point lies in the running intersection of a set with the indexed neighbourhoods if and only if it lies in the set and in each indexed neighbourhood.
-
-The empty list is immediate. For a cons, rewrite by the recursive clause and split the head from the tail.
-
-The running intersection is contained in its starting set.
-
-A member satisfies the first conjunct of the membership characterization.
-
-If a neighbourhood is contained in a running intersection and the starting set is a neighbourhood, then the running intersection is a neighbourhood.
-
-The empty case is the starting set. For a cons, the intersection of the starting set with the head neighbourhood is a neighbourhood because the witness sits inside it, and the inductive hypothesis applies to the tail.
-
-If the running intersection is a neighbourhood, folding the presentation's intersection from an index of the starting set computes that running intersection.
-
-The empty fold returns the given index. For a cons, the intersection of the starting set with the head is a neighbourhood, so some index sits inside both factors. The intersection specification identifies the next index, and the inductive hypothesis finishes the fold.
-
-When the running intersection from the master is a neighbourhood, the intersection-chain index enumerates it.
-
-Apply the fold lemma at the master index, which enumerates the master.
-
-Bitmask selection on a cons list keeps the head when the low bit is set and continues on the shifted mask in either case.
-
-The two sides are definitionally equal.
-
-The bitmask selection of a list is a sublist of that list.
-
-The empty list is immediate. For a cons, the selection of the tail is a sublist, and it is consed with the head or not according to the bit.
-
-Every sublist of a list is the bitmask selection for some mask strictly below two to the length of the list.
-
-The empty sublist uses mask zero. A sublist that drops the head doubles a mask of the tail. A sublist that keeps the head doubles a mask of the tail and adds one.
-
-A property holds of every sublist of a decoded list if and only if it holds of the bitmask selection for every mask below two to the code.
-
-One direction uses that every selection is a sublist. The other reconstructs a mask for the given sublist and raises the bound by the estimate on the length of the decoding.
-
-One consistency update, on a state packed as a mask, an index, and a flag, selects on the low bit. The set bit intersects the index with the projected entry and conjoins the flag with the consistency test, while the unset bit only shifts the mask.
-
-Unfold the update and simplify the pair projections.
-
-Once the flag is zero, folding the update keeps the flag zero.
-
-The empty fold reads the flag. For a cons, the set bit takes the zero branch of the inner selection, and both branches appeal to the inductive hypothesis.
-
-Starting from flag one, the final flag is one if and only if the running intersection of the indexed neighbourhood with the projected selected entries is a neighbourhood.
-
-The empty list leaves the flag one and the intersection equal to the indexed neighbourhood, which is a neighbourhood. On a selected head, a successful consistency test lets the intersection specification rewrite the next index, and the inductive hypothesis applies. A failed test forces the flag to zero, which the fold preserves, while a neighbourhood running intersection would supply an index witnessing the consistency test. On an unselected head the inductive hypothesis applies directly.
-
-The consistency characteristic of a packed mask and list code equals one exactly when the running intersection from the master of the projected selected entries is a neighbourhood.
-
-Unfold the characteristic function, rewrite the code fold, identify the packed step with the update, and apply the fold specification at the master index.
-
-The consistency step is primitive recursive when the projection and the consistency tester are.
-
-It is built from the primitive-recursive pair projections, the intersection operation, selection, division by two, and the remainder, and the resulting expression matches the step after simplifying pair projections.
-
-The consistency characteristic is primitive recursive under the same hypotheses.
-
-Fold the step from the master index with flag one and read off the final flag.
-
-Consistency of a bitmask-selected sublist is recursively decidable.
-
-The characteristic function, its primitive recursiveness, and the specification exhibit the predicate as recursively decidable.
-
-The intersection of the indexed neighbourhoods of a list equals the running intersection of that list from the master.
-
-Compare membership. Membership in each indexed neighbourhood corresponds to membership at each index, by transporting membership along the map.
-
-The selected inputs admit a common lower neighbourhood if and only if the running intersection of their indices from the master is a neighbourhood.
-
-A common lower neighbourhood sits inside that running intersection. Conversely, the chain index enumerates the running intersection and therefore lies in each selected input.
-
-The intersection of the selected outputs equals the running intersection of their indices from the master.
-
-Rewrite by the comparison of list intersection with running intersection, and reassociate the maps.
-
-The step neighbourhood coded by a list code is nonempty if and only if, for every mask below two to the code, consistency of the selected inputs implies consistency of the selected outputs.
-
-Rewrite the entry-list criterion, turn the quantifier over sublists into a quantifier over masks, and rewrite the antecedent and the consequent as running intersections. In the reverse direction, the mask of a sublist is raised to the code bound by the length estimate.
-
-Nonemptiness of that step neighbourhood is recursively decidable from primitive-recursive consistency testers of the two presentations.
-
-Each side of the implication is decidable by the consistency fold. The implication is the disjunction of the negated antecedent with the consequent, using the excluded middle for the antecedent. A bounded universal of a decidable predicate is decidable, and the bitmask criterion identifies the resulting predicate with nonemptiness.
-
-For a value at most one, selecting the second argument against one yields one exactly when that value being one forces the second argument to be one.
-
-If the value is zero, the selection is one. If the value is one, the selection is the second argument.
-
-The concrete consistency character of a code equals one exactly when the coded step neighbourhood is nonempty.
-
-Rewrite by the bitmask criterion, unfold the bounded universal, and match each implication with the selection of the two consistency characteristics, which detect consistency of the corresponding running intersections.
-
-The per-mask implication character is primitive recursive when the two consistency testers are.
-
-It is the selection of the two consistency characteristics.
-
-The concrete consistency character is primitive recursive under the same hypotheses.
-
-Primitive recursion of the implication character, up to two to the code, matches the bounded universal after simplifying the packing.
-
-If both neighbourhood systems are effectively given, then so is their function space.
-
-Unpack the inclusion, equality, and consistency deciders of the two presentations, and supply the function-space presentation built from the concrete consistency character and those deciders, using the specifications already proved.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace
@@ -212,40 +85,11 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-/-!
-# Theorem 7.5 (Scott 1981, PRG-19, §7) — `(𝒟₀ → 𝒟₁)` is effectively given
-
-Following Dana Scott, *Lectures on a Mathematical Theory of Computation*, PRG-19, Lecture VII.
-
-> **Theorem 7.5.** If `𝒟₀` and `𝒟₁` are effectively given, then so is `(𝒟₀ → 𝒟₁)`. The combinators
-> `eval` and `curry` are computable, provided all the domains involved are effectively given. The
-> computable elements `f ∈ |𝒟₀ → 𝒟₁|` are exactly the computable maps `f : 𝒟₀ → 𝒟₁`.
-
-This file builds the theorem in green, audited, **choice-free** milestones (see `HANDOFF.md`).
-
-## Milestone 1 — Proposition 3.9(i), the consistency condition (forward, choice-free)
-
-The keystone is Scott's 3.9(i): a function-space neighbourhood `⋂[Xᵢ,Yᵢ]` is non-empty iff for every
-subset `I` of indices with `{Xᵢ ∣ i∈I}` consistent in `𝒟₀`, the outputs `{Yᵢ ∣ i∈I}` are consistent
-in `𝒟₁`. We model a subset by a **sublist** `sub ⊑ L` (this is what the eventual primitive-recursive
-decider enumerates, one entry/bit at a time), and the intersection of a finite list of neighbourhoods
-by `interList`. The forward direction — non-empty ⟹ the subset condition — is choice-free: given a
-witness map `f ∈ stepFun L` and a common lower neighbourhood `Z` of the selected inputs, `f` relates
-`Z` to the intersection of the selected outputs (a finite `inter_right` fold over the *explicit*
-selection, so **no undecidable `X ⊆ Xᵢ` case-split is needed**), whence that intersection is a
-neighbourhood by `f.rel_cod`.
-
-(The reverse direction is genuinely decidable only relative to the presentations — it needs
-`𝒟₀`-inclusion to be decidable to single out `{i ∣ X ⊆ Xᵢ}` — and is developed with the decider.)
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-/-! ### `interList` — the intersection of a finite list of neighbourhoods (with a base). -/
 
 
 theorem interList_cons (base : Set β) (Y : Set β) (M : List (Set β)) :
@@ -263,8 +107,6 @@ theorem mem_interList {base : Set β} {M : List (Set β)} {z : β} :
       exact ⟨hbase, fun W hW => hW.elim (fun h => h ▸ hY) (hM W)⟩
     · rintro ⟨hbase, hall⟩
       exact ⟨hall Y (Or.inl rfl), hbase, fun W hW => hall W (Or.inr hW)⟩
-
-/-! ### Milestone 1 — the forward direction of 3.9(i), choice-free. -/
 
 /-- A witness map `f ∈ stepFun L` relates a common lower neighbourhood `Z` of the *selected* inputs
 to the intersection of the *selected* outputs. The selection `sub` is processed entry-by-entry with
@@ -298,19 +140,6 @@ theorem interList_mem_of_stepFun_nonempty {L : List (Set α × Set β)}
   obtain ⟨f, hf⟩ := h
   have hmem : ∀ p ∈ sub, f.rel p.1 p.2 := fun p hp => hf p (hsub.subset hp)
   exact f.rel_cod (rel_interList_of_selection hZ hmem hZle)
-
-/-! ### Milestone 2 — the consistency characterization over coded entry-lists.
-
-A function-space neighbourhood is presented by a list `el : List ℕ` of *entry codes*: each `e ∈ el`
-codes a step pair `[X_{e.1}, Y_{e.2}]` via `Nat.pair`. `funListOf` turns `el` into the list of step
-pairs, and `stepFun (funListOf el)` is the neighbourhood `⋂[X_{eᵢ.1}, Y_{eᵢ.2}]`.
-
-The characterization `stepFun_funListOf_nonempty_iff` is Scott's 3.9(i): the neighbourhood is
-non-empty iff for every *sub-selection* `sub ⊑ el` whose inputs have a common lower neighbourhood
-`Z ∈ 𝒟₀`, the intersection of the selected outputs is a neighbourhood of `𝒟₁`. The reverse direction
-builds the least map `leastMap`; its consistency hypothesis is discharged input-by-input by
-**filtering `el` with the (choice-free) decidable `𝒟₀`-inclusion test** supplied by the presentation
-`P₀`, so it stays `⊆ {propext, Quot.sound}`. -/
 
 variable (P₀ : ComputablePresentation V₀) (P₁ : ComputablePresentation V₁)
 
@@ -388,20 +217,6 @@ theorem stepFun_funListOf_nonempty_iff (el : List ℕ) :
       exact ((hmem_iff e).mp he).2
     exact ⟨leastMap (funListOf P₀ P₁ el) hL hcons, leastMap_mem_stepFun hL hcons⟩
 
-/-! ### Milestone 3a — deciding consistency of a finite index set via the `inter`-chain.
-
-To decide whether a finite list of neighbourhood indices `js` is *consistent* in `𝒟` (i.e. whether
-`⋂{X_j ∣ j ∈ js}` is a neighbourhood) we fold the presentation's primitive-recursive `inter` along
-`js`, starting from `masterIdx`, to obtain an index `idxchain js`. The crisp characterization is:
-
-> `js` is consistent **iff** `X_{idxchain js} ⊆ X_j` for every `j ∈ js`.
-
-The point is that `X_{idxchain js}` is *always* a neighbourhood (`mem_X`), so if it sits inside every
-`X_j` it witnesses consistency; conversely, when consistent, `inter`'s spec (and the fact that a
-subset of a consistent set is consistent) makes the chain compute the genuine intersection. This
-replaces any consistency-flag bookkeeping by a single `inter`-fold plus a bounded inclusion check —
-all choice-free. -/
-
 section ConsChain
 
 variable {V : NeighborhoodSystem α} (P : ComputablePresentation V)
@@ -461,15 +276,6 @@ theorem idxchain_spec {js : List ℕ} (h : V.mem (interFrom P V.master js)) :
 
 end ConsChain
 
-/-! ### Milestone 3b — bitmask sublist selection.
-
-The eventual decider enumerates the *subsets* of an entry-list one **bit** at a time: `bitSelect L b`
-keeps the entries of `L` whose position is set in the binary expansion of `b` (low bit = head). Every
-sublist arises as some `bitSelect L b` with `b < 2 ^ L.length` (`exists_bitSelect_lt`), so a
-universal statement over sublists is a *bounded* universal statement over bitmasks
-(`forall_sublist_iff_forall_bitmask`) — and bounded-`∀` of a recursively decidable predicate is
-recursively decidable (`RecDecidable.bForall`). All choice-free. -/
-
 
 theorem bitSelect_cons (e : ℕ) (L : List ℕ) (b : ℕ) :
     bitSelect (e :: L) b =
@@ -513,17 +319,6 @@ theorem forall_sublist_iff_forall_bitmask (c : ℕ) (p : List ℕ → Prop) :
     have hb' : b < 2 ^ c :=
       Nat.lt_of_lt_of_le hb (Nat.pow_le_pow_right (Nat.le_succ 1) (decodeList_length_le c))
     rw [← heq]; exact hall b hb'
-
-/-! ### Milestone 3c — the single-pass consistency fold (`section ConsFold`, generic over `P`).
-
-To decide whether a *bitmask-selected* sublist of an index list is consistent, we fold once over the
-list threading a state `s = pair b (pair idx flag)`: `b` the remaining bitmask, `idx` an index of the
-running intersection `⋂{X_j ∣ j selected so far}`, and `flag ∈ {0,1}` recording whether **every
-prefix has been consistent**. At a selected entry we set `idx := P.inter idx (projFn x)` and
-`flag := flag ∧ [P.cons_computable says X_idx ∩ X_{projFn x} is consistent]`. The headline
-`consUpd_foldl_spec` shows the final flag is `1` iff the selected intersection is a neighbourhood
-(using `inter_spec` to keep `X_idx` exact along the consistent prefix, and the fact that the *full*
-intersection being a neighbourhood forces every prefix to be one). All choice-free. -/
 
 section ConsFold
 
@@ -658,16 +453,6 @@ theorem consFold_decidable (projFn fc : ℕ → ℕ)
 
 end ConsFold
 
-/-! ### Milestone 3d — assembling the function-space consistency decider `funCons_decidable`.
-
-`stepFun_funListOf_nonempty_iff` (Milestone 2) characterises non-emptiness as a universal statement
-over sublists; `forall_sublist_iff_forall_bitmask` turns it into a *bounded* universal over bitmasks
-`b < 2^c`; `antecedent_cons_iff` / `funConsequent_eq` rewrite the per-bitmask antecedent and
-consequent into the `interFrom` form decided by `consFold_decidable`. The implication of two
-recursively decidable predicates is recursively decidable (`.not`/`.or`/`.em`, choice-free), and a
-bounded universal of a recursively decidable predicate is recursively decidable
-(`RecDecidable.bForall`). -/
-
 /-- `interList` over `js.map X` is the same set as the `interFrom`-chain over `js`. -/
 theorem interList_X_eq_interFrom {V : NeighborhoodSystem α} (P : ComputablePresentation V)
     (js : List ℕ) : interList V.master (js.map (fun j => P.X j)) = interFrom P V.master js := by
@@ -759,47 +544,6 @@ theorem funCons_decidable (fc0 fc1 : ℕ → ℕ)
   rw [funCons_iff P₀ P₁ c]
   simp only [unpair_pair_fst, unpair_pair_snd]
 
-/-! ### Milestone 4 — `appendCode` (list append on entry codes).
-
-`X n ∩ X m = stepFun (L_n ++ L_m)`, so the presentation's `inter` will splice two entry-lists. We
-fold one code onto another (prepending each entry), giving `appendCode a b` whose decoded list is
-`(decodeList b).reverse ++ decodeList a`; since `stepFun` is an *intersection* (order- and
-duplicate-invariant), this codes `X a ∩ X b` regardless of the reversal. All choice-free. -/
-
-
-/-! ### Milestone 5 — the function-space inclusion characterization (choice-free).
-
-`stepFun La ⊆ stepFun Lb ⟺ ∀ (X',Y') ∈ Lb, ⋂{Y ∣ X' ⊆ X, (X,Y)∈La} ⊆ Y'` (Scott, via the least map
-`leastMap`/3.9(ii)). The forward direction is choice-free (test the least map). The backward direction
-needs `f.rel X' (interYs Δ₁ La X')` for arbitrary `f ∈ stepFun La` — the library `rel_interYs` proves
-this *classically* (`by_cases X' ⊆ Xᵢ`), so we **re-prove it choice-free** for the presented list
-`funListOf el`, replacing the case split by `P₀.incl_computable`'s recursive decidability (`.em`). -/
-
-
-/-! ### Milestone 5b — the function-space inclusion / equality / consistency deciders.
-
-We now turn the choice-free characterization of Milestone 5a into recursive deciders for the
-function-space presentation. Two small generic facts first; then the `interYs`-index fold (a
-*conditional* `inter`-chain over `𝒟₁`, gated by the decidable `𝒟₀`-inclusion test); then the
-deciders themselves. All choice-free. -/
-
-
-/-! #### The `interYs`-index fold: a conditional `inter`-chain over `𝒟₁`.
-
-For a presented list `funListOf (decodeList a)` and a `𝒟₀`-index `k`, the set
-`interYs Δ₁ (funListOf (decodeList a)) (X₀_k)` is the intersection of the outputs `X₁_{e.2}` over the
-entries `e` of `decodeList a` whose input dominates `X₀_k` (`X₀_k ⊆ X₀_{e.1}`). We compute an index of
-it by folding `P₁.inter` over `decodeList a`, intersecting at an entry exactly when the (decidable)
-inclusion test fires. `condSet k A el` is the running set; `interYsFoldl_spec` is the index
-correctness (when the result is consistent), mirroring `interFrom_eq_of_foldl`. -/
-
-
-/-! #### A concrete `{0,1}` characteristic function for function-space consistency.
-
-`funCons_decidable` already shows consistency is recursively decidable, but to use it in *data* (the
-function-space enumeration branches on it) we need a *concrete* primitive-recursive char rather than
-one extracted from an existential (extraction needs choice). We build it explicitly from the
-component presentations' consistency chars `fc0`/`fc1`, and prove its spec via `funCons_iff`. -/
 
 /-- `selectFn A B 1 = 1` decides the implication `A = 1 → B = 1` for `A ∈ {0,1}`. -/
 theorem selectFn_one_iff_imp {A B : ℕ} (hA : A ≤ 1) :
@@ -845,26 +589,6 @@ theorem primrec_funConsChar (fc0 fc1 : ℕ → ℕ) (hfc0p : Nat.Primrec fc0) (h
   unfold funConsChar bForallFn
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
 
-/-! #### A generic list-`AND` and the `stepFun`-inclusion decider `subChar`. -/
-
-
-/-! #### The trivial test: `stepFun (funListOf el) = univ ⟺ every output is `Δ₁`. -/
-
-
-/-! #### The function-space enumeration `Xenum` and its consistency-pair decider. -/
-
-
-/-! #### The equality decider `eqEnumChar` and Scott's relation (i) `interEqChar`. -/
-
-
-/-! ### Milestone 6 — assembling the function-space presentation.
-
-`Theorem 7.5 (existence part)`: `(𝒟₀ → 𝒟₁)` is effectively given. We package the deciders above into a
-`ComputablePresentation (funSpace V₀ V₁)`, with `X = Xenum`, `inter = interIdx` and `masterIdx = 0`
-(the empty step-list, whose neighbourhood is `univ = Δ`). The concrete characteristic functions are
-obtained choice-free from the component presentations' relations *inside* the `Nonempty` proof of
-`funSpace_isEffectivelyGiven` (extraction into a `Prop` goal needs no choice). -/
-
 
 /-- **Theorem 7.5 (existence part) (Scott 1981, PRG-19).** If `𝒟₀` and `𝒟₁` are effectively given,
 then so is the function space `(𝒟₀ → 𝒟₁)`. Choice-free. -/
@@ -884,40 +608,4 @@ theorem funSpace_isEffectivelyGiven (h₀ : V₀.IsEffectivelyGiven) (h₁ : V�
     (fun s => (hincl1s s).symm) hincl1p
     (fun s => (heq1s s).symm) heq1p⟩
 
-/-! ### Milestone 8 — computable elements of `(𝒟₀ → 𝒟₁)` are exactly the computable maps.
-
-Scott (Theorem 7.5): *"The computable elements `f ∈ |𝒟₀ → 𝒟₁|` are exactly the computable maps
-`f : 𝒟₀ → 𝒟₁`."* Under the completeness isomorphism `toApproxMap` (Theorem 3.10), a filter `φ` of the
-function space corresponds to the approximable map `f̂ = toApproxMap φ`, and `φ.mem [X, Y] ↔ X f̂ Y`.
-The enumeration `Xenum c` of a *consistent* code is the finite intersection `⋂[X₀_{eᵢ}, X₁_{eᵢ}]`, so
-`φ ∋ Xenum c ↔ ∀ eᵢ, φ ∋ [X₀_{eᵢ}, X₁_{eᵢ}]` (the generation lemma `mem_stepFun_iff`); junk codes map
-to `univ`, always in `φ`. Hence the element index set `{c ∣ Xenum c ∈ φ}` is r.e. iff the single-step
-relation `{⟨n,m⟩ ∣ [X₀ₙ, X₁ₘ] ∈ φ}` is — the map's neighbourhood relation. The map ⟹ element half is
-the choice-free *bounded-`∀` over a coded list* closure `REPred.forall_mem_decodeList`. -/
-
-/-! ### Milestone 7 — `eval` is computable.
-
-Scott (Theorem 7.5): *"The combinators `eval` and `curry` are computable, provided all the domains
-involved are effectively given."* The evaluation map `eval : (𝒟₀ → 𝒟₁) × 𝒟₀ → 𝒟₁` sends `(F, X)` to
-`Y` iff **every** map `f ∈ F` relates `X` to `Y` (Theorem 3.11), i.e. `F ⊆ [X, Y]` (the step
-neighbourhood, viewed as the set of maps relating `X` to `Y`). On the product presentation
-`prodPresentation funPresentation P₀`, the neighbourhood at index `k` is `Xenum_{k.1} × X₀_{k.2}`, so
-
-  `(Xenum c, X₀ⱼ) eval Y₁ₘ ↔ Xenum c ⊆ [X₀ⱼ, Y₁ₘ]`.
-
-The single step `[X₀ⱼ, Y₁ₘ]` is itself a one-entry function-space neighbourhood — `Xenum` of the
-(always consistent) code `⟨⟨j, m⟩, 0⟩ + 1` — so the relation is exactly the **decidable** function-space
-inclusion `funPresentation.incl_computable`, re-indexed by a primitive-recursive code map. This is
-Scott's observation that `eval` is a *recursive* set; r.e.-ness (hence computability) and
-choice-freeness follow. -/
-
-/-! ### Milestone 9 — `curry` is computable.
-
-Scott (Theorem 7.5): *"The combinators `eval` and `curry` are computable."* For a map
-`g : 𝒟₀ × 𝒟₁ → 𝒟₂`, `curry g : 𝒟₀ → (𝒟₁ → 𝒟₂)` sends `X` to the (filter generated by the) section
-map `gᴬ = gSection g X`, with `gᴬ Y Z ↔ X ∪ Y g Z` (Theorem 3.12). On the codomain presentation
-`funPresentation P₁ P₂`, `(X₀ₙ) curry(g) (Xenum c)` holds iff the section map lies in `Xenum c`, i.e.
-(for consistent `c`) `∀ ⟨j, k⟩ ∈ decodeList c, X₀ₙ ∪ X₁ⱼ g X₂ₖ` — a **bounded `∀` over the coded
-list, with the `𝒟₀`-parameter `n`** of the r.e. relation of `g`. This is r.e. by the parameterised
-closure `REPred.forall_mem_decodeList₂`; junk codes go to `univ` (always satisfied). Choice-free. -/
 end DomainTheory.NeighbourhoodSystems

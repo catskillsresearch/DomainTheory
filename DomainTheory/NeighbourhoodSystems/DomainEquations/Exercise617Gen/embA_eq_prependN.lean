@@ -1,8 +1,3 @@
-/-ai
-The letter-prefixed copy of a set of finite strings equals the set obtained by prepending the corresponding one-letter string.
-
-A string belongs to the prefixed copy when it is that letter followed by a string of the set, and it belongs to the prepended set when it is the one-letter string concatenated with a string of the set. The two descriptions match.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

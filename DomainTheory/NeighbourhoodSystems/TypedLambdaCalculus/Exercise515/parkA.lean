@@ -1,6 +1,3 @@
-/-ai
-The feedback coefficient of David Park's eliminated system, for coefficients a and b, is the union of a with the pointwise product b · a* · b.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

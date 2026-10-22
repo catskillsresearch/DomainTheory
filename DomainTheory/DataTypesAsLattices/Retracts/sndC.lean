@@ -1,6 +1,3 @@
-/-ai
-The second-component combinator is the graph of the map sending a set to its value at the singleton one.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

@@ -1,8 +1,3 @@
-/-ai
-Applying the typed interpretation of a term to an element yields the lambda retract of the interpretation of the term at the environment retract of that element.
-
-Unfold the typed interpretation and the application equation for the arrow retract, simplify composition, and apply congruence of the lambda retract. The remaining equality is beta reduction by continuity of the interpretation at the retracted environment.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

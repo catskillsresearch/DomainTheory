@@ -1,8 +1,3 @@
-/-ai
-The intersection of {0} and {1} is empty.
-
-The two tokens are checked separately, and neither token belongs to both singletons.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

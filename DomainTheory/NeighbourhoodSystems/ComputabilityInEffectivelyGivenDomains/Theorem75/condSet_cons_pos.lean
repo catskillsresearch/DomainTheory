@@ -1,8 +1,3 @@
-/-ai
-If the indexed neighbourhood is contained in the head input, the conditional set of a cons is the conditional set of the tail from the base intersected with the head output.
-
-Compare membership. The head obligation becomes membership in the head output, and the tail obligations are unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

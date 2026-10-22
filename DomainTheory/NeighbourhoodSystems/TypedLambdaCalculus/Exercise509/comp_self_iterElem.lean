@@ -1,8 +1,3 @@
-/-ai
-The n-th iterate, from the bottom element, of a map composed with itself equals the (2n)-th iterate of the map.
-
-The proof is by induction on n. At zero both sides are the zero iterate. At a successor, twice k + 1 equals 2k + 1 + 1 by a ring calculation, and the successor law, the inductive hypothesis, and composition of element maps give the equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407

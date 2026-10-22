@@ -1,6 +1,3 @@
-/-ai
-The positive example is the neighbourhood system on a two-element token set whose neighbourhoods are the nonempty subsets and whose master is the whole token set. Membership of an intersection is nonemptiness of that intersection, so the positive biconditional holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

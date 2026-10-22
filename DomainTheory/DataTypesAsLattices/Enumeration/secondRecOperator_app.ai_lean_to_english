@@ -1,0 +1,3 @@
+Applying the second recursion operator to an element u yields the second recursion value of u.
+
+The combinator S(S(K S) K)(K C), where C is the substitution combinator, applied to u reduces by the three-place S equation, the two-place K equation, and the SK composition law to S(K u) C. Rewriting the operator by SK composition, that reduction, and the application law for the application combinator, the two sides have the same graph. At each numeral m, SK composition and the fact that C realizes the substitution m ↦ apply(m)(num(m)) identify the application with u at the numeral of that substitution, which is the graph of the second recursion value.

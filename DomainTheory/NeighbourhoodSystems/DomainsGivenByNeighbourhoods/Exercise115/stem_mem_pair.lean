@@ -1,8 +1,3 @@
-/-ai
-The pair {0, 1} is a neighbourhood of the stem domain.
-
-It is the middle disjunct of stem membership.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

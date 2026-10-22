@@ -1,6 +1,3 @@
-/-ai
-For n at most m, climbing the tower sends an element of D_n to D_m by iterating the stage inclusions from n up to m.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

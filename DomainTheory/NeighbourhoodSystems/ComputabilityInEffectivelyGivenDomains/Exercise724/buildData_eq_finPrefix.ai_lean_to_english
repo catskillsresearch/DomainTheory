@@ -1,0 +1,3 @@
+The list chosen for an element with no least neighbourhood, at length n, is the length-n prefix of the stream of that element.
+
+Proceed by induction on n. The zero case is definitional. The successor rewrites by the successor laws for the chosen data and for prefixes, and applies the inductive hypothesis.

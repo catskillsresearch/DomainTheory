@@ -1,8 +1,3 @@
-/-ai
-A pair embedding is distinct from the master neighbourhood Gamma.
-
-The master of the system is nonempty, so some point with empty path lies in Gamma. A point of either tagged copy of a pair embedding has a cons path.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

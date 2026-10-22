@@ -1,8 +1,3 @@
-/-ai
-For every approximable endomap f, the map sub f lies below f.
-
-A relation of sub supplies a neighbourhood containing the input, contained in the output, and related to itself by f. Monotonicity of f narrows the input and then widens the output, giving the relation of f.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

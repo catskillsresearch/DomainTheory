@@ -1,0 +1,3 @@
+A point lies in the conditional set of a base along a code list, relative to an input index, if and only if it lies in the base and, for every code in the list, lies in the corresponding output neighbourhood whenever the neighbourhood at the input index is contained in that code's input neighbourhood.
+
+This is reflexivity of the defining equivalence of the conditional set.

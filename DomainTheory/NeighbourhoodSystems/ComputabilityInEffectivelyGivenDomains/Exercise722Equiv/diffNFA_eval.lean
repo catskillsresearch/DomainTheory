@@ -1,8 +1,3 @@
-/-ai
-Evaluation of the difference automaton on a word is the singleton of the pair of finite evaluations of the two expressions.
-
-Evaluation is evaluation from the start set. That start set is the singleton of the pair of finite start sets, and evaluation from a singleton pair supplies the result.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

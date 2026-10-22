@@ -1,8 +1,3 @@
-/-ai
-Passing an approximable map through toScottContinuous and then ofScottContinuous returns the original map.
-
-By extensionality of approximable maps, a pair related by the composite has consistent domain and codomain and sends the closure of the domain into an element containing the closure of the codomain, which is the original relation by the closure criterion. Conversely, a related pair has consistent domain and codomain, and the same criterion puts every token of the codomain closure into the image element.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

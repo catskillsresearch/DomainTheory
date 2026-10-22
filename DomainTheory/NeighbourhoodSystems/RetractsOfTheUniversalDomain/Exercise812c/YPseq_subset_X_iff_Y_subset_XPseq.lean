@@ -1,8 +1,3 @@
-/-ai
-YPseq i is contained in the enumerated set X j if and only if the enumerated set Y i is contained in XPseq j.
-
-Specialize the combined inclusion transfer to the indices 2i + 1 and 2j. At the odd index the interleaved families are YPseq and Y, and at the even index they are X and XPseq. Intersecting with the masters does not change the odd-index sets, because YPseq i lies in the master of the first system and Y i lies in the master of the second.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

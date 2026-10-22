@@ -1,0 +1,3 @@
+Every homomorphism g from Exp agrees with the canonical Kleene iterate after the n-th projection: g composed with that projection equals the n-th iterate. The sequence is forced by the recursion and does not depend on the choice of g.
+
+The zero case is the base identity. At a successor, the recursion for the composite with the next projection, the inductive hypothesis, and the successor clause of the iterates give the equality.

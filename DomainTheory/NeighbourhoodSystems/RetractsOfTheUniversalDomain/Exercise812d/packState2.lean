@@ -1,6 +1,3 @@
-/-ai
-A two-sided code state packs a first index, a second index, and a junk flag by nesting natural-number pairs. The first index codes the first side, the second index codes the second side, and the junk flag records that both sides are already empty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

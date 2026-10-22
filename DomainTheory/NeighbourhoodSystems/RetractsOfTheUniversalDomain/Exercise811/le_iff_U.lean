@@ -1,8 +1,3 @@
-/-ai
-An element x of R lies below y if and only if every interval [0, r) belonging to x belongs to y.
-
-The forward direction restricts the order to those intervals. Conversely, if a set belongs to x, the subproperty writes it as some [0, r), and the hypothesis puts that interval in y.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

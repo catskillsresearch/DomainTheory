@@ -1,0 +1,3 @@
+For each k, the k-fold iterate of the predecessor, applied to the exponential tag, is Scott continuous.
+
+Induct on k. The zero iterate is left continuity of application at the numeral 0. At a successor, Theorem 1.3 composes continuity of the predecessor with the inductive map, and the successor law for iteration rewrites the composite as the successor iterate.

@@ -1,8 +1,3 @@
-/-ai
-If x is neither ⊥ nor a numeral, the maximal extension of x along any family is ⊤.
-
-The residual clause of the maximal extension holds for every number.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

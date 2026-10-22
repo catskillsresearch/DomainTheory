@@ -1,8 +1,3 @@
-/-ai
-The intersection-equality character of a fuel and two codes is primitive recursive as a function of their packed triple.
-
-Swapping the two codes inside the packing is primitive recursive, so both the subset character in the given order and the subset character in the swapped order are primitive recursive. Their product agrees with the intersection-equality character after simplifying the pairing projections and unfolding the character.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

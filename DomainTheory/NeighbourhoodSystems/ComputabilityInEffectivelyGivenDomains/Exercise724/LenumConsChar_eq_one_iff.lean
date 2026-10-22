@@ -1,8 +1,3 @@
-/-ai
-The consistency characteristic equals one if and only if at least one of the two prefix characteristics equals one.
-
-Unfold the arithmetic disjunction and case on each prefix characteristic being zero or one. Simplification gives the equivalence.
-ai-/
 
 module
 

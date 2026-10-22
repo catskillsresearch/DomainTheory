@@ -1,8 +1,3 @@
-/-ai
-The sum map of f and g sends the left inclusion of an element to the left inclusion of its image under f.
-
-The image reaches the left copy, because the left inclusion does and the sum map preserves left reach, so the left round trip recovers the image from its left projection. The left projection of the image equals the left projection composed with the sum map composed with the left inclusion, by the two composition rules for element maps, and that composite equals f.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

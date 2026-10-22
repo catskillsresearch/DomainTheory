@@ -1,0 +1,3 @@
+The minimum code of two rational codes decodes to the minimum of the two decoded rationals.
+
+Unfolding the minimum code and cancelling the pairing, the comparison of the two decoded rationals splits the argument. If the first is at most the second, the comparison code equals one, selection returns the first code, and the minimum is the first rational. Otherwise the comparison code differs from one, and since it is at most one it equals zero, so selection returns the second code and the minimum is the second rational.

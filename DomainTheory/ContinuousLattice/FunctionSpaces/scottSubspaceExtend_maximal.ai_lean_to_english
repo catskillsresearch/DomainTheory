@@ -1,0 +1,3 @@
+If D is a continuous lattice, e embeds X into Y, and a Scott map f' on Y extends f along e, then at each point of Y the value of f' is at most the subspace extension of f.
+
+The value of f' is the supremum of the infima of its images on Scott-open neighborhoods. For each such neighborhood U, the infimum of f' on U is at most the infimum of f' on the intersection of the image of e with U, and that restricted infimum equals the subspace-extension infimum of f on U, which belongs to the family defining the extension.

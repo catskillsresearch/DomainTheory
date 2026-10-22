@@ -1,8 +1,3 @@
-/-ai
-A binary relation is recursively decidable when a primitive-recursive function of the pairing code returns only zero or one and returns one exactly on the pairs in the relation.
-
-Binary decidability is unary decidability of the paired predicate, and the unary zero-one bridge applies. The specification at a code rewrites to the specification at the pair of its components by the pairing round-trip.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

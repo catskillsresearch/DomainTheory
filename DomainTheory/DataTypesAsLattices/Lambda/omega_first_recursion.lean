@@ -1,8 +1,3 @@
-/-ai
-Scott's core induction shows that the self-application of the omega combinator of the graph of a Scott continuous map is the least fixed point of that map.
-
-Let d be that omega combinator. Application of d rewrites, by the omega application law and Theorem 1.2 (i), as the map applied to a self-application, so the self-application of d is a fixed point and Theorem 1.4 places the least fixed point beneath it. For the other inclusion, let a be the least fixed point, so the map fixes a. Strong induction shows that if a finite set is contained in d, its self-application is contained in a: a pair code in that self-application has a strictly smaller index whose finite set is still contained in d, the inductive hypothesis puts that smaller self-application below a, the same code lies in the application of d to the smaller finite set and hence in the image under the map of that self-application, and monotonicity together with the fixed-point equation puts the value in a. The diagonal union formula for self-application then carries membership in the self-application of d into a.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

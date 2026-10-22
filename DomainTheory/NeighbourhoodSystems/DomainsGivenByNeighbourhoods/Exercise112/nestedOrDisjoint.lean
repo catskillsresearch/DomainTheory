@@ -1,8 +1,3 @@
-/-ai
-Any two neighbourhoods of the final-segment system are nested.
-
-The two neighbourhoods are tails of indices. If the first index is at most the second, the second tail is contained in the first; otherwise the first tail is contained in the second.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,8 +1,3 @@
-/-ai
-Every finite set of tokens of the powerset information system P is consistent.
-
-Consistency on P is the universally true predicate, so the claim holds outright.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

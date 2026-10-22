@@ -1,0 +1,3 @@
+A word beginning with true lies in the product neighbourhood of X and Y if and only if its tail lies in Y.
+
+Unfolding the product neighbourhood, membership is the empty word, a false-tagged word from X, or a true-tagged word from Y. The empty word is not a cons. A false tag disagrees with true. A true tag identifies the tail with a member of Y. Conversely, the word itself is that true-tagged member.

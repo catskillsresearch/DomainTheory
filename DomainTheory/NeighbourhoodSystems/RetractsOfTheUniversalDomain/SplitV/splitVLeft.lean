@@ -1,6 +1,3 @@
-/-ai
-splitVLeft n is the code of the left half, the level set one level above the minimal level whose mask is two to the power of the splitting bit.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

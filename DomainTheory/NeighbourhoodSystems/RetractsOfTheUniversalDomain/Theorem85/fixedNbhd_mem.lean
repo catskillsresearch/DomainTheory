@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the fixed neighbourhood system of an approximable endomap a exactly when it belongs to E and a relates it to itself.
-
-The two sides are the same by the definition of membership in that system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

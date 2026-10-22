@@ -1,6 +1,3 @@
-/-ai
-The evaluation of a formula as a set of points of Cantor space sends a variable to the corresponding coordinate set, falsehood to the empty set, truth to the whole space, negation to the complement, conjunction to the intersection, and disjunction to the union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

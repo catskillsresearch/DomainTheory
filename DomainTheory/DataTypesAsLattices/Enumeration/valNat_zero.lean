@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 3.2 (i). The numerical evaluator sends zero to the G combinator.
-
-Unfold the evaluator and apply the computation rule for strong recursion.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

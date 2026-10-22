@@ -1,8 +1,3 @@
-/-ai
-The subtraction step subStepC is combinatory.
-
-It is the K combinator applied to the combinatory safe predecessor.
-ai-/
 module
 
 public import Mathlib.Computability.RE

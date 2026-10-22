@@ -1,0 +1,3 @@
+The while-loop satisfies the recursion w(x) = cond(p(x), w(f(x)), x).
+
+The numbered name example_512 is that statement.

@@ -1,8 +1,3 @@
-/-ai
-Scott's Theorem 1.2, the graph theorem, states that a continuous f is recovered by applying its graph, that every u is contained in the graph of its application, and that this containment is an equality exactly when u is a graph.
-
-The three clauses are the three parts of the theorem.
-ai-/
 
 module
 

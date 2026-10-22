@@ -1,23 +1,19 @@
 # Exercise 1.23
 
-**EXERCISE 1.23.** Suppose that the neighbourhood system $D$ is countable, say,
+## Human-English
 
-$$
-D = \{X_0, X_1, X_2, \ldots, X_n, \ldots\}.
-$$
+@import "Exercise123.english" {code_block=false}
 
-Suppose further that the property of consistency of finite sequences of neighbourhoods is decidable (or "effectively known"). Then the following sequence is well defined:
+## AI: Human-English to AI-Lean
 
-$$
-\begin{aligned}
-Y_0 &= X_0 \\
-Y_{n+1} &= X_{n+1}, \text{ if this set is consistent with } Y_0, Y_1, \ldots, Y_n; \\
-&= Y_n, \text{ if not.}
-\end{aligned}
-$$
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise123.lean**
 
-Show that $\{Y_0, Y_1, \ldots, Y_n, \ldots\}$ is a total element of $|D|$. (Hint: Show first that $Y_0, Y_1, \ldots, Y_{n-1}$ is consistent for all $n$.) In such a system show that all filters can be determined by sequences.
+@import "Exercise123.lean"
 
-**Lean 4**
+## AI: AI-Lean to AI-English
 
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise123.lean](Exercise123.lean)
+@import "Exercise123.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "Exercise123.ai_english_concordance" {code_block=false}

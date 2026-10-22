@@ -1,8 +1,3 @@
-/-ai
-The code of one decodes to the rational one.
-
-The component form of decoding, evaluated on the code of one after cancelling its pairing, equals one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

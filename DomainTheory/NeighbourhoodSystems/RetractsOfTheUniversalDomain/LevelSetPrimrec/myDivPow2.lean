@@ -1,8 +1,3 @@
-/-ai
-Division of a natural number m by two to the power of a count is the iteration, that
-many times, of halving, starting from m. The iteration is the natural-number recursor on
-the count, with m held fixed, packed by unpaired application of the pairing.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

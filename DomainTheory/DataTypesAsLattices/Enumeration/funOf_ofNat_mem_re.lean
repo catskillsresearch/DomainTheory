@@ -1,8 +1,3 @@
-/-ai
-If an element u is recursively enumerable, then the predicate of pairs whose second component lies in the application of u to the numeral of the first component is recursively enumerable.
-
-Pair membership in u, composed with the primitive recursive map sending a pair to the pair of 0 with its second component, is recursively enumerable, and so is the same membership composed with the map sending a pair to the pair of 2 raised to the first component with the second component. The disjunction of these two predicates agrees, by the membership law for application to a numeral, with the stated predicate.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

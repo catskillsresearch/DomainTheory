@@ -1,0 +1,3 @@
+Every primitive recursive function of finitely many natural numbers is λ-definable by a very strict approximable map from the universal argument domain to N.
+
+The argument is induction on the primitive-recursive derivation. Zero and successor are the corresponding λ-definitions, and a projection is the λ-definition of coordinate lookup. For composition, the inductive hypotheses supply λ-definitions, which the primitive-composition construction combines. For primitive recursion, the inductive hypotheses supply λ-definitions of the base and the step, which the primitive-recursion construction combines.

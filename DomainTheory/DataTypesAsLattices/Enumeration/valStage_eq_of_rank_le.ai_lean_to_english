@@ -1,0 +1,3 @@
+If the rank of n is at most a stage s, then applying the s-fold iterate of the enumerator step from bottom to the numeral of n equals the numerical value of n.
+
+The proof recurses on n. A zero argument at stage zero, and a successor argument at stage zero, contradict the rank hypothesis. A zero argument at a successor stage equals the G combinator on both sides, by the zero clauses of the step and of the evaluator. A successor argument at a successor stage reduces, by the two successor clauses, to the two unpairing components at the preceding stage. Their ranks are at most that stage by the definition of rank, so the inductive hypothesis applies. Each recursive call is at an unpairing component, which is strictly smaller than the paired code.

@@ -1,8 +1,3 @@
-/-ai
-The bottom element of the truth-value domain equals the bottom element named in Example 2.3.
-
-Each is below the other, because the bottom of a neighbourhood system is below every element and the named bottom element is below every element. Antisymmetry gives equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

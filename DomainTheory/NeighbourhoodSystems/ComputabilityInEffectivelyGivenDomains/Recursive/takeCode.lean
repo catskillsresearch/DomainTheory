@@ -1,6 +1,3 @@
-/-ai
-The coded take of the first n entries of the list coded by c is the tabulation, of length the minimum of n and the length of c, of the take lookup at the pair of that minimum with the pair of n and c.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

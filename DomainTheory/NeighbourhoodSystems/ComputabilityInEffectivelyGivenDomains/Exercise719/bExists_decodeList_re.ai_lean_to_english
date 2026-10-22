@@ -1,0 +1,3 @@
+A bounded existential quantifier over a coded list preserves recursive enumerability. If a binary relation is recursively enumerable, then so is the relation of a code and a number which holds when some entry of the coded list is related to that number.
+
+Equality of numbers is recursively decidable, so membership in a coded list is decidable by a bounded existential quantifier. After a primitive-recursive rearrangement of components, that membership and the enumerable body are both enumerable, and their conjunction projects to the desired existential quantifier.

@@ -1,8 +1,3 @@
-/-ai
-Postcomposing the diagonal with the first projection returns the identity map.
-
-The numbered name example_314 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise314.proju2080_comp_diag

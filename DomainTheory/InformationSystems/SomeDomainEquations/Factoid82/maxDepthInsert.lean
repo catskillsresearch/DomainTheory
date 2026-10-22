@@ -1,6 +1,3 @@
-/-ai
-The depth-insertion step sends a raw lambda token and a natural number to the maximum of the token's depth and that number.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

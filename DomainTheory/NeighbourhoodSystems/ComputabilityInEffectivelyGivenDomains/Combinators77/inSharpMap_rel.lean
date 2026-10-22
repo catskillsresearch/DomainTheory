@@ -1,8 +1,3 @@
-/-ai
-The sharp injection relates a set X to a set W if and only if X is a neighbourhood of D, W is a sharp neighbourhood, and the zero-embedding of X is contained in W.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77

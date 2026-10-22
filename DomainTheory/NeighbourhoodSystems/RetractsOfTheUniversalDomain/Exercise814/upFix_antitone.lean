@@ -1,8 +1,3 @@
-/-ai
-If one compact fixed point lies below another, the principal up-set of the second is contained in the principal up-set of the first.
-
-Any compact above the second is above the first by transitivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

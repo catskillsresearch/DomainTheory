@@ -1,0 +1,3 @@
+Prepending is injective in the index and the sequence together: equal prepends have equal indices and equal underlying sequences.
+
+Case on whether each sequence is finite or infinite. Two finite sequences give the index and the tail by injectivity of the list constructor. A finite sequence and an infinite sequence are distinct constructors. Two infinite sequences have equal stream-prepends; the value at 0 is the index, and the values at the positive positions are the tails.

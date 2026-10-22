@@ -1,8 +1,3 @@
-/-ai
-The non-positive system is not a positive neighbourhood system.
-
-The numbered name example_119 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise119.not_isPositive

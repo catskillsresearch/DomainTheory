@@ -1,0 +1,3 @@
+On a total element, the predecessor undoes the successor.
+
+The successor computation rule is rewritten, and then the predecessor computation rule on a successor.

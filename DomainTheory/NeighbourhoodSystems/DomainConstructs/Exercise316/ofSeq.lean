@@ -1,6 +1,3 @@
-/-ai
-The iterate element determined by a sequence consists of the iterate neighbourhoods whose every fiber belongs to the corresponding term. The subfamily law is the neighbourhood conjunct. The master belongs because each of its fibers is the original master. An intersection combines the fiberwise intersections of the terms with the maximum of the two cofinite bounds. Upward closure applies each term's upward closure along the monotone fibers.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

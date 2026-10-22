@@ -1,6 +1,3 @@
-/-ai
-The atom set of a finite set of raw lambda tokens is the finite set of carriers of its atom tokens. It is the right fold of atom insertion, starting from the empty set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

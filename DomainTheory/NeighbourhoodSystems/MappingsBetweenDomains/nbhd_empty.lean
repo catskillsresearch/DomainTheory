@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood of the empty set is the set of all tokens.
-
-By extensionality, membership in that neighbourhood simplifies to a condition that holds of every token.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

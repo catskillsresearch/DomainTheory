@@ -1,0 +1,3 @@
+The step-function neighbourhood of a presented list is the whole space of maps if and only if every coded output neighbourhood is the master neighbourhood of the codomain.
+
+If the neighbourhood is the whole space, the bottom map belongs to it, so it relates each coded step, and the relation law for the bottom map forces each output to be the master neighbourhood, since every neighbourhood is contained in the master. Conversely, if every output is the master neighbourhood, every map relates each coded step by weakening its master relation.

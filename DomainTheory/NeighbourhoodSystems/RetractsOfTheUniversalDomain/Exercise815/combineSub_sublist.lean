@@ -1,8 +1,3 @@
-/-ai
-The combined sub-selection of an index list is a sublist of that list.
-
-Filtering a list yields a sublist.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

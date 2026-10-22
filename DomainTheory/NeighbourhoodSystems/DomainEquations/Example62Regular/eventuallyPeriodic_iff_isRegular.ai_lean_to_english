@@ -1,0 +1,3 @@
+The language of a total tree is a regular event if and only if the tree is eventually periodic.
+
+The left-quotient operation of the language equals the composite of the tree language with the subtree selector, by extensionality and the symmetric form of the subtree-quotient law. Regularity rewrites as finiteness of the range of left quotients. After substitution, that range is the image of the range of the selector, and finiteness of the image is equivalent to finiteness of the range because the tree language is injective there; the equivalence is reversed to match the stated order.

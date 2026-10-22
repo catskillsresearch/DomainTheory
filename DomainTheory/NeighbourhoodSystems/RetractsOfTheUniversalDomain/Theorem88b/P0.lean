@@ -1,6 +1,3 @@
-/-ai
-The re-pointed presentation is the computable presentation of D obtained by reindexing the given presentation along the swap of 0 with the master index. The reindexing uses that this swap is an involution and is primitive recursive, so the master neighbourhood is enumerated at index 0 and the decidable index relations are transported with the enumeration.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable

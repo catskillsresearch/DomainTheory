@@ -1,0 +1,3 @@
+For any two strict homomorphisms from the colimit algebra into the same algebra, the composites with the n-th projection agree, when every neighbourhood of the generating system is its master.
+
+The proof is by induction on n. At zero the two composites agree by the base independence lemma. At a successor both sides are rewritten by the fixed-point recursion, and the inductive hypothesis identifies the previous composites.

@@ -1,6 +1,3 @@
-/-ai
-The partial element of a string is the principal element of the system of cones and singletons on the cone of that string.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

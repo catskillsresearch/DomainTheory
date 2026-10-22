@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the indexed sum is the master token set.
-
-The two sides are the same by definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

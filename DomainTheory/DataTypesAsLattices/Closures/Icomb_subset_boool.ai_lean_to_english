@@ -1,0 +1,3 @@
+The identity combinator is contained in the modified boolean closure.
+
+A pair (n, m) in the identity has m in en. Expansiveness of the conditional body puts m in that body at en, which is membership of the same pair in the graph of the boolean closure.

@@ -1,6 +1,3 @@
-/-ai
-The total element at n is the principal filter of the singleton of n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

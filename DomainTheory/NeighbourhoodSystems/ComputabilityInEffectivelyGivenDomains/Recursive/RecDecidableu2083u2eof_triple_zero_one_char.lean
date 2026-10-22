@@ -1,8 +1,3 @@
-/-ai
-A ternary relation is recursively decidable when a primitive-recursive function of the nested pairing code returns only zero or one and returns one exactly on the triples in the relation.
-
-Ternary decidability is unary decidability of the nested pairing, and the unary zero-one bridge applies. The specification rewrites by the pairing round-trip applied twice.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

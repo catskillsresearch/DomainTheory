@@ -1,6 +1,3 @@
-/-ai
-The terminal domain is a left unit for the product: the elements of 𝟙 × D are order-isomorphic to the elements of D, by the product equivalence followed by forgetting the unique first component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

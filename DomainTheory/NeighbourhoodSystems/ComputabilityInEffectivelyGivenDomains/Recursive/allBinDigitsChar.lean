@@ -1,6 +1,3 @@
-/-ai
-The all-binary-digits flag of a code is the list-universal character, at parameter zero, of the predicate that the first component of a pair is a binary digit.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

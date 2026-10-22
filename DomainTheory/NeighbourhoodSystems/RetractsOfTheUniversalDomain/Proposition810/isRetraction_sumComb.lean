@@ -1,8 +1,3 @@
-/-ai
-If two self-maps of the universal domain are retractions, then so is their sum combinator.
-
-Compare elements, and split on whether the sum extraction of the element meets the left copy, the right copy, or only the master. On the left, the left-case formula, the identity that the sum extraction after the sum injection is the identity, and the fact that the left injection meets the left copy again, return to the left case; the left extraction after the left injection is the identity, and the first map is idempotent on elements. The right case is the same argument with the second map and the right injection and extraction. On a point that meets only the master, the master-case formula sends the element to bottom, and the sum extraction of bottom is bottom, which still meets only the master, so the same formula applies again.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

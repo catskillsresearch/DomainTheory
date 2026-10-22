@@ -1,6 +1,3 @@
-/-ai
-The pairing operator from the product of the function spaces from C to A and from C to B into the function space from C to the product of A and B is the currying of the uncurried pairing map.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

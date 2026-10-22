@@ -1,8 +1,3 @@
-/-ai
-The reverse inclusion of (5.18): a applied to x is contained in V(a) applied to x. Whenever a set contains x and is closed under a, it contains a applied to x.
-
-Right monotonicity of application of a sends the containment of x into a containment of a(x) in a(y), and closure of y under a puts that value inside y.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

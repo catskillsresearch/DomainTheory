@@ -1,38 +1,79 @@
 # Exercise 1.22
 
-$$
-\bigcap_{i < n} [ X_i ] \neq \emptyset.
-$$
+## Human-English
 
-**EXERCISE 1.22.** (For topologists). Show that the neighbourhoods $[X]$ for $X \in \mathcal{D}$ make $|\mathcal{D}|$ into a topological space where the open subsets $\mathcal{U} \subseteq |\mathcal{D}|$ can be characterized by the following two conditions:
+@import "1980_Exercise_1_22.english" {code_block=false}
 
-(i) whenever $x \in \mathcal{U}$ and $x \sqsubseteq y \in |\mathcal{D}|$, then $y \in \mathcal{U}$; and
+## AI: Human-English to AI-Lean
 
-(ii) whenever $x \in \mathcal{U}$, then $[X] \in \mathcal{U}$ for some $X \in x$.
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/basicOpen.lean**
 
-Prove also that the inclusion relation on $|\mathcal{D}|$ can be defined topologically as:
+@import "basicOpen.lean"
 
-(iii) $x \sqsubseteq y$ iff for all open $\mathcal{U} \subseteq |\mathcal{D}|$, if $x \in \mathcal{U}$ then $y \in \mathcal{U}$.
-Is $|D|$ ever a Hausdorff space?
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/mem_basicOpen.lean**
 
-Show that if $(x_n)_{n=0}^{\infty}$ is a sequence of elements of $|D|$ with $x_n \subseteq x_{n+1}$ for all $n$, then
+@import "mem_basicOpen.lean"
 
-$$
-\bigcup_{n=0}^{\infty} x_n
-$$
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/OpenFilter.lean**
 
-is not only in $|D|$ but is a topological limit point of the sequence. Show that any element $x$ is a limit point of the set $\{\uparrow X \mid X \in x\}$. Are there other limit points?
+@import "OpenFilter.lean"
 
-**Lean 4**
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/Basic.lean**
 
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/basicOpen.lean](basicOpen.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/mem_basicOpen.lean](mem_basicOpen.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/OpenFilter.lean](OpenFilter.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_basicOpen.lean](isOpen_basicOpen.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_isOpenFilter.lean](isOpen_iff_isOpenFilter.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_isUpperSet.lean](isOpen_isUpperSet.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_upper_basic.lean](isOpen_iff_upper_basic.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/le_iff_isOpen_imp.lean](le_iff_isOpen_imp.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122.lean](../Exercise122.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/specializes_iff_le.lean](specializes_iff_le.lean)
+@import "Basic.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_basicOpen.lean**
+
+@import "isOpen_basicOpen.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_isOpenFilter.lean**
+
+@import "isOpen_iff_isOpenFilter.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_isUpperSet.lean**
+
+@import "isOpen_isUpperSet.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/isOpen_iff_upper_basic.lean**
+
+@import "isOpen_iff_upper_basic.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/le_iff_isOpen_imp.lean**
+
+@import "le_iff_isOpen_imp.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122.lean**
+
+@import "../Exercise122.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise122/specializes_iff_le.lean**
+
+@import "specializes_iff_le.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "basicOpen.ai_lean_to_english" {code_block=false}
+
+@import "mem_basicOpen.ai_lean_to_english" {code_block=false}
+
+@import "OpenFilter.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "isOpen_basicOpen.ai_lean_to_english" {code_block=false}
+
+@import "isOpen_iff_isOpenFilter.ai_lean_to_english" {code_block=false}
+
+@import "isOpen_isUpperSet.ai_lean_to_english" {code_block=false}
+
+@import "isOpen_iff_upper_basic.ai_lean_to_english" {code_block=false}
+
+@import "le_iff_isOpen_imp.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise122.ai_lean_to_english" {code_block=false}
+
+@import "specializes_iff_le.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_1_22.ai_english_concordance" {code_block=false}

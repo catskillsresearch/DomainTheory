@@ -1,6 +1,3 @@
-/-ai
-The append step of an accumulator and an entry is one more than the pair of the entry with the accumulator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

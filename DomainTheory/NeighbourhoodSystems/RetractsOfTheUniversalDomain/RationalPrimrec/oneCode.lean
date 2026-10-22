@@ -1,6 +1,3 @@
-/-ai
-The code of the rational one is the pair whose first component is the pair of one and zero and whose second component is zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

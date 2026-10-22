@@ -1,6 +1,3 @@
-/-ai
-The map from the Lindenbaum algebra to sets of natural numbers sends the class of a formula to its evaluation set. The quotient lift is well-defined because semantically equivalent formulas have equal evaluation sets.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813a

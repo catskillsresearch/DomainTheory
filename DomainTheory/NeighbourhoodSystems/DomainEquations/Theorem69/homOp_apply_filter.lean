@@ -1,8 +1,3 @@
-/-ai
-The approximable post- and pre-composition operator sends the strict filter of a strict map g to the strict filter of k composed with g composed with j.
-
-The strict filter is a left inverse of the strict representation, so it is enough that the represented map of the image equal the composite. On a step neighbourhood, membership in the image filter is a finite neighbourhood of g together with an operator relation, which unpacks as a step through the principal strict map; principal membership supplies an intermediate relation of g contained in that finite neighbourhood, and the composite relates the endpoints. A composite relation is the step of its intermediate pair, that step lies in the filter of g, and the operator relates it because the principal strict map of the step reproduces the same intermediate relation. Extensionality identifies the represented map with the composite.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

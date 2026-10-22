@@ -1,6 +1,3 @@
-/-ai
-The inverse comparison from a separated sum to the coalesced sum of the two lifts reinstates the inner false tag. Its neighbourhoods are the sum master of the two lifts, the double false tags of left neighbourhoods that the source contains as a single false tag, and the true-then-false tags of right neighbourhoods that the source contains as a single true tag. The neighbourhood-system laws are the corresponding tagged membership, intersection, and upward closure of the separated sum, and distinct tags meet emptily.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

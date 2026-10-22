@@ -1,8 +1,3 @@
-/-ai
-The state at the end of a path is the path's final state.
-
-Induction on the path. The empty path reduces by the definitions. A path that begins with one step reduces, after the length of a one-step extension, to the inductive hypothesis on the remaining path.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

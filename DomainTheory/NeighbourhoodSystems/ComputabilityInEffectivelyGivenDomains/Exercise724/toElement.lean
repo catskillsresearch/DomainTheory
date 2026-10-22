@@ -1,6 +1,3 @@
-/-ai
-The map from finite or infinite sequences of natural numbers to elements of L sends a finite list to the principal filter of its neighbourhood and sends an infinite stream to the element determined by that stream.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

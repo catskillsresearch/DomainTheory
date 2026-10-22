@@ -1,8 +1,3 @@
-/-ai
-A token that belongs to a consistent finite set of tree tokens is entailed by that set.
-
-The entailment pairs the given consistency with the payload supplied by membership of the token.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

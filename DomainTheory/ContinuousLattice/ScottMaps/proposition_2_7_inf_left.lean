@@ -1,8 +1,3 @@
-/-ai
-On a continuous lattice, meet on the left with a fixed element is Scott-continuous. This is the separate meet clause of Scott's Proposition 2.7; the joint statement on the product is Proposition 2.6.
-
-Continuity follows from preservation of directed suprema. Commuting the two arguments of the meet reduces that preservation to preservation by meet with the same fixed element on the right.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

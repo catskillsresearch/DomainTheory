@@ -1,8 +1,3 @@
-/-ai
-If X' is a neighbourhood of the first system, Y' is a neighbourhood of the second, X' is contained in X, and Y is contained in Y', then the step neighbourhood of X and Y is contained in the step neighbourhood of X' and Y'.
-
-A map in the first step lies in the second by monotonicity of that map, using the two inclusions and the neighbourhood hypotheses on X' and Y'.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

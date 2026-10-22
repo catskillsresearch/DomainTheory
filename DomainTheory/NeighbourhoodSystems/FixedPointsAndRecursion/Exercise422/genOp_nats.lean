@@ -1,8 +1,3 @@
-/-ai
-The carved-out set is a fixed point of the generating operator.
-
-Apply the least-fixed-point law to the monotone generating operator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

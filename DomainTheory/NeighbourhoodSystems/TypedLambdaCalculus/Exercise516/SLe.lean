@@ -1,6 +1,3 @@
-/-ai
-The approximation order on tagged strings compares a tag and a finite string with another tag and string. A total string lies below only the same string with the total tag. A partial string lies below any string of which it is a prefix.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

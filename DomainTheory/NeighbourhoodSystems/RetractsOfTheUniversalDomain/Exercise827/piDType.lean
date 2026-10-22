@@ -1,6 +1,3 @@
-/-ai
-The type of d at an element s is the approximable map of the image of s under the type map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

@@ -1,8 +1,3 @@
-/-ai
-The universe of natural numbers is nonempty.
-
-Zero belongs to it.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

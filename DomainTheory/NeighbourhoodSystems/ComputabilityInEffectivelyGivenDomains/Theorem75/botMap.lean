@@ -1,6 +1,3 @@
-/-ai
-The bottom map is the least map of the empty step list. Its consistency condition holds because the output intersection of the empty list is the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

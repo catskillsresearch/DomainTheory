@@ -1,8 +1,3 @@
-/-ai
-If three neighbourhood systems have computable presentations, there are computable presentations of the function space from their product into the third system and of the iterated function space such that the neighbourhood relation of the curry combinator is recursively decidable, and hence the combinator is a computable map. The curry combinator relates a neighbourhood G of the maps from the product of the first two neighbourhood systems into the third to a neighbourhood H of the maps from the first into the function space of the second and the third exactly when both are neighbourhoods of those function spaces and the curry of every map in G lies in H. Relative to the function-space presentations of the maps out of the product, of the curried function space, and of the inner function space, the neighbourhood relation of the curry combinator is recursively decidable.
-
-The numbered name example_716 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise716.curryComb_isComputable

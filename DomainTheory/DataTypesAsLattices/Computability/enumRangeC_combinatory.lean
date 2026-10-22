@@ -1,8 +1,3 @@
-/-ai
-If r is combinatory, then so is its range enumerator.
-
-The enumerator is the application of the dollar combinator to r and then to the top element.
-ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,0 +1,3 @@
+The union of two sets of natural numbers, each empty or a neighbourhood of V, is empty or a neighbourhood of V.
+
+If either set is empty, the union is the other set. Otherwise both are nonempty level sets. Upsampling their masks to the maximum of the two levels and taking the bitwise disjunction presents the union as one level set, which is nonempty because it contains the first set.

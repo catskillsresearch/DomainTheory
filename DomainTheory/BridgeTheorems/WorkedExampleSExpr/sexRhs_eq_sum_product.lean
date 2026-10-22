@@ -1,8 +1,3 @@
-/-ai
-The right-hand side of the S-expression system is the sum of the lower-bound system with the product of the S-expression system with itself.
-
-This is the identification of a tree right-hand side with that sum of a product, applied to the lower-bound system.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

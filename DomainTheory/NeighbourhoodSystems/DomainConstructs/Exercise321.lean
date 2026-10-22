@@ -1,8 +1,3 @@
-/-ai
-The step neighbourhood of a pair of neighbourhoods equals the step neighbourhood of another pair if and only if both outputs are the master neighbourhood, or the two pairs coincide. If the output neighbourhood is not the master, equality of step neighbourhoods determines both endpoints. If the output neighbourhood is the master, the step neighbourhood is the whole function space.
-
-The numbered name example_321 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise321.step_eq_iff

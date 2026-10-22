@@ -1,8 +1,3 @@
-/-ai
-Every coordinate at or beyond n of the tuple of n scalar maps is bottom.
-
-Induct on n. The empty tuple is the constant bottom stack, so every coordinate is bottom. For a successor, an index at least n plus 1 has the form j plus 1, and that coordinate is the j-th coordinate of the tail tuple, which is bottom by the inductive hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

@@ -1,8 +1,3 @@
-/-ai
-Theorem 3.11(i) of Scott (1981, PRG-19) states that evaluation of a function-space element φ at an element x equals the value at x of the approximable map associated with φ by Theorem 3.10.
-
-The two elements contain the same neighbourhoods. A neighbourhood of the evaluation comes from a function-space neighbourhood of φ and an input neighbourhood of x related by every map in that neighbourhood, and upward closure of φ puts the corresponding step into φ. Conversely, if a step belongs to φ then that step is a function-space neighbourhood inhabited by some map, and every map in the step is related, which is the evaluation witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

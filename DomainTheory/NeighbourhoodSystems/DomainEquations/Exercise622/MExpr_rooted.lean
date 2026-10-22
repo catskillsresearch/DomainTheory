@@ -1,8 +1,3 @@
-/-ai
-The lazy-naturals expression is rooted.
-
-Rootedness of a separated sum is the conjunction of rootedness of its arguments. The constant one-point domain contributes membership of the empty string in its master, and the variable is rooted outright.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

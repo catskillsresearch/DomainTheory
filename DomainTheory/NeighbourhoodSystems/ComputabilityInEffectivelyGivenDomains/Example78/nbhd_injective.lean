@@ -1,8 +1,3 @@
-/-ai
-If two cofinite neighbourhoods are equal, then their indices are equal.
-
-Equality of the sets gives, at each bit position, the same condition that the bit is unset. Comparing the two bit values in all four combinations yields equal bits, so the numbers are equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

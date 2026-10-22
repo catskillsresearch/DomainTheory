@@ -1,8 +1,3 @@
-/-ai
-If the function-space inclusion characteristic is primitive recursive, then the packed fixed-point step is primitive recursive.
-
-The current index, the parameter, the previous index, and the flag are primitive-recursive projections. The one-entry code is the successor of the pairing of the previous and current indices with zero. Selection of the flag against the inclusion bit of the parameter and that code, paired with the current index, agrees with the packed step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

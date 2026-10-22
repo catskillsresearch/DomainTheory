@@ -1,8 +1,3 @@
-/-ai
-A set is a neighbourhood of the concrete product if and only if it is the product neighbourhood of a neighbourhood of the first factor and a neighbourhood of the second.
-
-The two sides are definitionally the same.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

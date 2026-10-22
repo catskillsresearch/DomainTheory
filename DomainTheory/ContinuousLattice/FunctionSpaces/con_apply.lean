@@ -1,8 +1,3 @@
-/-ai
-The constant Scott map associated with an element x returns x at every argument.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

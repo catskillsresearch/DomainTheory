@@ -1,6 +1,3 @@
-/-ai
-autStateCard assigns to each expression a natural-number bound on the number of states of its automaton. The universal language contributes one, a singleton word of length n contributes n + 2, an intersection multiplies the bounds of its factors, and a concatenation adds them.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722DFA

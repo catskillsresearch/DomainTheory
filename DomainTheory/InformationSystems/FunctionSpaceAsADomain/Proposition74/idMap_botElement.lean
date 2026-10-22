@@ -1,8 +1,3 @@
-/-ai
-The identity approximable map sends the bottom element to itself. Strictness of the identity makes the naturality clause of Scott's Proposition 7.4 a tautology when the mediating map is the identity.
-
-The proof is the evaluation law for the identity map at the bottom element.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint

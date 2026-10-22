@@ -1,0 +1,3 @@
+The element assembled from a tuple of components contains the slice of a set U at an index i if and only if the i-th component contains U.
+
+If the assembled element contains the slice, the witnessing tuple equals the one-coordinate update of U at i, by injectivity of product neighbourhoods, and the i-th component of that update is U. Conversely, that update lies in every component, is supported by the singleton list of i, and presents the slice.

@@ -1,8 +1,3 @@
-/-ai
-The first component of an application of a sum is the double conditional of the tag of the argument, choosing the numeral zero or the numeral one.
-
-Rewrite by the application equation of the sum, the application equation of the double conditional, and the zero-place equation of sequence pairing on both branches.
-ai-/
 
 module
 

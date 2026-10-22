@@ -1,8 +1,3 @@
-/-ai
-The code-driven subsystem D'' is effectively given.
-
-Its computable presentation is the witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88d.Basic

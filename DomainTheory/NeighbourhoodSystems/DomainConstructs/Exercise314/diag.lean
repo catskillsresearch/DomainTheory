@@ -1,6 +1,3 @@
-/-ai
-The diagonal approximable map from a domain to its product with itself is the pairing of the identity map with itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

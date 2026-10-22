@@ -1,8 +1,3 @@
-/-ai
-A natural number k lies in the Scott union of f at x if and only if some code n has its finite set contained in x and has k in f of that finite set.
-
-The Scott union is the union of the Scott pieces. Membership in that union is existence of a piece containing k, and a piece contains k precisely under those two conditions.
-ai-/
 module
 
 public import Mathlib.Topology.Bases

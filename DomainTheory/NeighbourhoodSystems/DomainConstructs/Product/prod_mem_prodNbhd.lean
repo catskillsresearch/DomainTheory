@@ -1,8 +1,3 @@
-/-ai
-The product of a neighbourhood of the first system and a neighbourhood of the second is a neighbourhood of the product system.
-
-Those two neighbourhoods witness the existential membership of their product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

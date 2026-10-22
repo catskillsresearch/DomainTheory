@@ -1,6 +1,3 @@
-/-ai
-A computable union for the presentation of V takes the union index, together with its primitive recursiveness, its correctness whenever a representing index exists, and the recursive decidability of that existence.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

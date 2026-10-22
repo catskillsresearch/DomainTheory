@@ -1,8 +1,3 @@
-/-ai
-If two streams determine the same element of L, then they have the same finite prefixes.
-
-The neighbourhood of the length-n prefix of the first stream belongs to its stream element, witnessed by membership of that neighbourhood, the index n, and a reflexive inclusion. Transport along the equality of stream elements. The resulting membership supplies an index m and an inclusion, which the subset law for neighbourhoods turns into a prefix relation between the length-n prefix of the first stream and the length-m prefix of the second. Comparing lengths gives n at most m. A prefix equals the corresponding initial segment of the longer list, and the take law for prefixes identifies that initial segment with the length-n prefix of the second stream.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

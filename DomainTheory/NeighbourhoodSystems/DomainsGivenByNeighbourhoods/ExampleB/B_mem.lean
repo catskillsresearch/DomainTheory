@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the binary neighbourhood system if and only if it is a cone of some finite binary string.
-
-The two sides are definitionally the same.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

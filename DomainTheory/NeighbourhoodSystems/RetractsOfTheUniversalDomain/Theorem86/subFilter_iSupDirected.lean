@@ -1,8 +1,3 @@
-/-ai
-The filter transport of sub preserves directed suprema.
-
-Injectivity of extraction reduces the equality of elements to an equality of maps. The image of the filter transport is sub of the extracted map. Extensionality reduces the equality to relations. The relation of sub of the extracted supremum holds exactly when it holds at some stage, and the relation of the extracted supremum of the transported elements is the same existence after each transported element is rewritten as sub of the extracted stage.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

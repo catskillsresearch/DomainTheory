@@ -1,8 +1,3 @@
-/-ai
-For two fixed functions, the map sending an argument to the application of the first function at that argument to the second function at that argument is Scott continuous.
-
-This is binary continuous substitution for application, using continuity of application in each argument and continuity of application of each of the two functions.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

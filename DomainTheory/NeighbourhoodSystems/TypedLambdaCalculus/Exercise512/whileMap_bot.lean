@@ -1,8 +1,3 @@
-/-ai
-If the test diverges at x, so that p(x) is bottom, then the while-loop diverges at x.
-
-Rewrite the loop by its recursion equation, substitute the hypothesis that the test is bottom, and apply the conditional law at bottom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

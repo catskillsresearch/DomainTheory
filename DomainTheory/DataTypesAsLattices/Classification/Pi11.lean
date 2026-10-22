@@ -1,6 +1,3 @@
-/-ai
-A set of elements of Pω is Π¹₁ when some Scott-continuous map h cuts it out by the condition that for every y there exists z such that the function coded by h(x), applied to y and then to z, returns zero.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

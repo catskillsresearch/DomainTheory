@@ -1,6 +1,3 @@
-/-ai
-The morphism action of the product endofunctor sends a strict map f to the product of the identity on the fixed domain with f. That product is strict because both the identity and f are strict.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

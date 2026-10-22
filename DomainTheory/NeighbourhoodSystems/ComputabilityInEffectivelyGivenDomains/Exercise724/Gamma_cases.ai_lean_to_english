@@ -1,0 +1,3 @@
+Every token is either the basepoint or the cons of a natural number with another token. This is the defining equation of Γ, read as a theorem.
+
+Case on the sum. A finite list is either empty, which is the basepoint, or a cons cell, which is the cons of its head with the remaining finite list. An infinite stream is the cons of its value at zero with the shifted stream, and the two streams agree by cases on the index, both of which are reflexive.

@@ -1,8 +1,3 @@
-/-ai
-Computational unpairing is primitive recursive.
-
-The pair whose first component is the unpairing witness minus the excess of the argument over the triangular number of that witness, and whose second component is that excess, is primitive recursive, because the witness, subtraction, and triangular numbers are primitive recursive. The pair agrees with computational unpairing by the equation for the witness.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

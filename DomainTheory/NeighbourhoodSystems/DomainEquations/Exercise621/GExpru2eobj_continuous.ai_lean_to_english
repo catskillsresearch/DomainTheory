@@ -1,0 +1,3 @@
+The action of an expression on domains is continuous: a neighbourhood belongs to T(U) exactly when it belongs to T(D) for some D in a directed nonempty family of subsystems of U whose neighbourhoods are exactly those of U.
+
+The forward direction is the forward continuity lemma for the object action. Conversely, such a D is a subsystem of U, so monotonicity of the action on domains transports the membership.

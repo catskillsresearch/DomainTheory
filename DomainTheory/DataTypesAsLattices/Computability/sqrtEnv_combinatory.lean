@@ -1,8 +1,3 @@
-/-ai
-Every value of the environment sqrtEnv is combinatory.
-
-At index 3 the value is combinatory by leC_combinatory, and at index 4 by mulC_combinatory. At indices 0, 1, and 2, and at every index of the form n + 5, it is combinatory by botElem_combinatory.
-ai-/
 module
 
 public import Mathlib.Computability.RE

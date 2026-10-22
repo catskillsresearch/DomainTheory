@@ -1,8 +1,3 @@
-/-ai
-The composite of the first-factor projection after the first-factor injection is the identity on D₀.
-
-A composite relation gives inclusions through a product neighbourhood of some neighbourhood of D₀ with the master of D₁, and the first-factor part of the composite inclusion is the required inclusion in D₀. Conversely, an inclusion X ⊆ Z in D₀ is witnessed by the product neighbourhood of Z with the master of D₁. That set is a product neighbourhood, the injection meets it by the product-inclusion criterion, and the projection meets Z by a reflexive inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

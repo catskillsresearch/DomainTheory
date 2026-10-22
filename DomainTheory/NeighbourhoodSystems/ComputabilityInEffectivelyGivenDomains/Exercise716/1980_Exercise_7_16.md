@@ -1,15 +1,67 @@
 # Exercise 7.16
 
-**EXERCISE 7.16.** Let $D_0 = \{ X_n \mid n \in \mathbf{N} \}$, $D_1 = \{ Y_m \mid m \in \mathbf{N} \}$ and $D_2 = \{ Z_k \mid k \in \mathbf{N} \}$ be three effectively given domains. Complete the proof of 7.5 by writing out curry as a relation between neighbourhoods. Is it a recursive set or only a recursively enumerable set?
+## Human-English
 
-**Lean 4**
+@import "1980_Exercise_7_16.english" {code_block=false}
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryIso_apply.lean](curryIso_apply.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryStepCode.lean](curryStepCode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/primrec_curryStepCode.lean](primrec_curryStepCode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_rel_recDecidable.lean](curryComb_rel_recDecidable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_isComputable.lean](curryComb_isComputable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/toApproxMap_principal_mem.lean](toApproxMap_principal_mem.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_rel.lean](curryComb_rel.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716.lean](../Exercise716.lean)
+## AI: Human-English to AI-Lean
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryIso_apply.lean**
+
+@import "curryIso_apply.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryStepCode.lean**
+
+@import "curryStepCode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/primrec_curryStepCode.lean**
+
+@import "primrec_curryStepCode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_rel_recDecidable.lean**
+
+@import "curryComb_rel_recDecidable.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_isComputable.lean**
+
+@import "curryComb_isComputable.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/toApproxMap_principal_mem.lean**
+
+@import "toApproxMap_principal_mem.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716/curryComb_rel.lean**
+
+@import "curryComb_rel.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise716.lean**
+
+@import "../Exercise716.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "curryIso_apply.ai_lean_to_english" {code_block=false}
+
+@import "curryStepCode.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "primrec_curryStepCode.ai_lean_to_english" {code_block=false}
+
+@import "curryComb_rel_recDecidable.ai_lean_to_english" {code_block=false}
+
+@import "curryComb_isComputable.ai_lean_to_english" {code_block=false}
+
+@import "toApproxMap_principal_mem.ai_lean_to_english" {code_block=false}
+
+@import "curryComb_rel.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise716.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_7_16.ai_english_concordance" {code_block=false}

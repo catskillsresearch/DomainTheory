@@ -1,0 +1,17 @@
+**3.12 Proposition.** For a continuous lattice $D$ the space $J_D$ of projections forms a complete lattice as a $\bigsqcup$-closed subspace of $[D \to D]$.
+
+**Proof:** The constant function $\bot \in J_D$ obviously, so $J_D$ contains $\bigsqcup \emptyset$. Suppose $j, k \in J_D$. We wish to show that $j \sqcup k \in J_D$. Compute:
+
+$$(j \sqcup k)((j \sqcup k)(x)) = j(j(x) \sqcup k(x)) \sqcup k(j(x) \sqcup k(x)).$$
+
+But note:
+
+$$j(x) \sqsubseteq j(j(x)) \sqsubseteq j(j(x) \sqcup k(x)) \sqsubseteq j(x),$$
+
+because $j(x) \sqcup k(x) \sqsubseteq x$. Similarly for $k(x)$. Therefore, we find that $(j \sqcup k) \circ (j \sqcup k) = j \sqcup k \sqsubseteq \mathrm{id}$.
+
+Suppose finally that $S \subseteq J_D$ is directed. We wish to show that $\bigsqcup S \in J_D$. Clearly $\bigsqcup S \sqsubseteq \mathrm{id}$, so compute by continuity of $\circ$:
+
+$$\bigsqcup S \circ \bigsqcup S = \bigsqcup j \circ j : j \in S = \bigsqcup j : j \in S = \bigsqcup S.$$
+
+It follows that $J_D$ is $\bigsqcup$-closed and hence is a complete lattice. $\square$

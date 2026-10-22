@@ -1,0 +1,3 @@
+If D and D' are continuous lattices and f is a Scott map from D to D', then the supremum of those e' for which some e way below x has e' way below f at e equals the value of f at x.
+
+Each such e' lies below f at e, hence below f at x by monotonicity. For the reverse inequality, continuity of D' writes the value as the supremum of elements way below it, while continuity of D and preservation of directed suprema by f write the value as the directed supremum of the image of the way-below set of x. An element way below that supremum is way below f at some e way below x, so it belongs to the family.

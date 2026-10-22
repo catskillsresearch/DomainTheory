@@ -1,8 +1,3 @@
-/-ai
-A set X belongs to the n-th component of an iterate element exactly when X is a neighbourhood and the element contains the pinning of copy n to X.
-
-The identity is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise315

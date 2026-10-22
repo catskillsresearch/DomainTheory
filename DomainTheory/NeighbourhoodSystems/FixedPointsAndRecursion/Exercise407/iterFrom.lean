@@ -1,6 +1,3 @@
-/-ai
-The chain of approximants of an approximable endomap f from a base element a is the n-fold iterate of the elementwise action of f, applied to a.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

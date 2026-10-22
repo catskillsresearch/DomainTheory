@@ -1,18 +1,25 @@
 # Proposition 3.7
 
-**3.7 Proposition.** Suppose the two pairs of maps
+## Human-English
 
-$$i_n : D_n \to D'_n \quad \text{and} \quad j_n : D'_n \to D_n$$
+@import "1972_Proposition_3_7.english" {code_block=false}
 
-for $n = 0,1$ make $D_n$ a retraction (projection) of $D'_n$. Then $[D_0 \rightarrow D_1]$ is also a retraction (projection) of $[D'_0 \rightarrow D'_1]$ by means of the pair of maps:
+## AI: Human-English to AI-Lean
 
-$$\vec{i}(f) = i_1 \circ f \circ j_0 \text{ , and}$$
+**ContinuousLattice/FunctionSpaces/proposition_3_7_projection.lean**
 
-$$\vec{j}(f') = j_1 \circ f' \circ i_0 \text{ ,}$$
+@import "proposition_3_7_projection.lean"
 
-where $f \in [D_0 \rightarrow D_1]$ and $f' \in [D'_0 \rightarrow D'_1]$. $\square$
+**ContinuousLattice/FunctionSpaces/proposition_3_7_retraction.lean**
 
-**Lean 4**
+@import "proposition_3_7_retraction.lean"
 
-- [ContinuousLattice/FunctionSpaces/proposition_3_7_projection.lean](proposition_3_7_projection.lean)
-- [ContinuousLattice/FunctionSpaces/proposition_3_7_retraction.lean](proposition_3_7_retraction.lean)
+## AI: AI-Lean to AI-English
+
+@import "proposition_3_7_projection.ai_lean_to_english" {code_block=false}
+
+@import "proposition_3_7_retraction.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Proposition_3_7.ai_english_concordance" {code_block=false}

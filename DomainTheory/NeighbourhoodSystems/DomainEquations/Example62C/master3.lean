@@ -1,6 +1,3 @@
-/-ai
-The master neighbourhood of the three-way sum of V₀, V₁, and V₂ is the set obtained by inserting the basepoint into the union of the tagged left copy of the master of V₀, the tagged middle copy of the master of V₁, and the tagged right copy of the master of V₂.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

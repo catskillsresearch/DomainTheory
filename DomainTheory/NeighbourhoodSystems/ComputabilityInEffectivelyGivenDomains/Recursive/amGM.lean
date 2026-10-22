@@ -1,8 +1,3 @@
-/-ai
-Four times a times b is at most the square of a plus b.
-
-If either argument is zero, both sides give a trivial inequality. If both are successors, the inductive inequality, increased by four, rearranges by expanding the products into the square of the two successors.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

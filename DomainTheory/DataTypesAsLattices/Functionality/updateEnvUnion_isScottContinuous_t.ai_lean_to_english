@@ -1,0 +1,3 @@
+For fixed x and index, the index-continuous environment update is Scott continuous in the environment t.
+
+Fix t and compare membership of a number k. From the double union, some index n in the argument has k in the update of t at n. Continuity of that single update rewrites the membership as membership in its Scott union, which supplies an approximant m of t, and the same n and m place k in the Scott union of the updated unions. Conversely, membership in that Scott union supplies an approximant m and then an index n, and monotonicity of the continuous update at n carries the membership from m up to t.

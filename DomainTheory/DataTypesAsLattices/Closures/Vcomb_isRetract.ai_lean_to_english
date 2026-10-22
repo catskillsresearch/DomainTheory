@@ -1,0 +1,3 @@
+The universe combinator is a retract: it equals the graph of a ↦ the combinator applied to the combinator applied to a.
+
+Two graphs agree when their bodies agree. The application formula says that the combinator applied to a is the graph of x ↦ V(a)(x), and equation (5.19) says that applying the combinator twice does not change that value.

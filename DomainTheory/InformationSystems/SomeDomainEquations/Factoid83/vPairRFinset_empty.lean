@@ -1,8 +1,3 @@
-/-ai
-The right projection of the empty finite set of tokens of V is empty.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

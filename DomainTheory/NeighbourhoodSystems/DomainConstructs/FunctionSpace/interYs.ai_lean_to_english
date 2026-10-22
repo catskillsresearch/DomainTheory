@@ -1,0 +1,1 @@
+Given a master set and a finite list of input-output pairs, the intersection of the relevant outputs at a set X is computed inside that master. The empty list yields the master. A head pair contributes the set of points that lie in the head output whenever X is contained in the head input, and that set is met with the intersection for the tail.

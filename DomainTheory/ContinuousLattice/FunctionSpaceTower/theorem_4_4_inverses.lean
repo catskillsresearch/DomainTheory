@@ -1,8 +1,3 @@
-/-ai
-The pair written in the proof of Theorem 4.4, with i_∞ the embedding of the inverse limit into its function space and j_∞ the projection back, satisfies j_∞ ∘ i_∞ = id and i_∞ ∘ j_∞ = id.
-
-The two identities are the composite identities of the projection after the embedding and of the embedding after the projection.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

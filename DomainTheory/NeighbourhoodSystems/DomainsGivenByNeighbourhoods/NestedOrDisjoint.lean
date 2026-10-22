@@ -1,6 +1,3 @@
-/-ai
-A family of sets is nested or disjoint when any two members are comparable by inclusion or have empty intersection.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

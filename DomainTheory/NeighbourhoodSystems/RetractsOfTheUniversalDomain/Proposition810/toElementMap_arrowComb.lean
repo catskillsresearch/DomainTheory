@@ -1,8 +1,3 @@
-/-ai
-The arrow combinator sends an element to the arrow injection of the lambda combinator applied to the arrow extraction of that element.
-
-Rewrite by the composite form of the arrow combinator and the elementwise law of composition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

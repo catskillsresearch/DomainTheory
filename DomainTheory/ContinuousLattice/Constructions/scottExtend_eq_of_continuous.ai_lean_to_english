@@ -1,0 +1,3 @@
+If the comparison of spaces is an embedding and the map is continuous into a continuous lattice with its Scott topology, the canonical Scott extension agrees with the map on the image of the embedding.
+
+The extension at an image point lies below the original value, because that value belongs to every set whose infimum appears in the supremum. For the reverse, write the value as the supremum of the elements way-below it. The preimage under the map of the Scott-open set of points way-above such an element is open in the subspace, hence is the preimage of an open set in the codomain. On that preimage the map lies above the element, so the element lies below the corresponding infimum and therefore below the extension.

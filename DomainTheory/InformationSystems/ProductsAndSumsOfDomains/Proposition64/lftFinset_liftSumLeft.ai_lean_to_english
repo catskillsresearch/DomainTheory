@@ -1,0 +1,3 @@
+The left projection of the left sum lift of a finite set v of tokens of A equals v.
+
+Extensionality, rewritten by the two membership characterizations, identifies a left token of the lift with the left constructor of some member of v, and injectivity of that constructor recovers the member. Conversely, each member of v is the component of its own left constructor in the lift.

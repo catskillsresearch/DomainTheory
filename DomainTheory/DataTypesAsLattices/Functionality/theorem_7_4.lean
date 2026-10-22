@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 7.4, the iterator theorem. For every restricted equivalence A and every n, the iterator Z_n lies in the function space from A → A to A → A. Any combinator that is extensional in its function argument and lies in every such function space equals Z_n for some n.
-
-The two conjuncts are the functionality lemma for the iterators and the uniqueness lemma for the iterators.
-ai-/
 
 module
 

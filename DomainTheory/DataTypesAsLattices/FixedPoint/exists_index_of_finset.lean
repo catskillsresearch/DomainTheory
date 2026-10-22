@@ -1,8 +1,3 @@
-/-ai
-If every member of a finite set of natural numbers lies in some stage of an ascending chain, then the whole finite set is contained in a single stage.
-
-Induct on the finite set. The empty set is contained in stage zero. After inserting an element, the inductive hypothesis covers the remainder by one stage and the hypothesis covers the new element by another. Monotonicity of the chain places both inside the stage at the maximum of those two indices.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph

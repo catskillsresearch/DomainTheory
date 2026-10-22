@@ -1,0 +1,5 @@
+This file gathers and re-exports the one-one pairing of Exercise 5.13. It re-exports the triangular numbers with their successor, product, comparison, and monotonicity laws, the pairing num with value zero at the origin and the two successor recurrences, the bound of a value by the next triangular number, and injectivity of the pairing. It also re-exports the diagonal step, the inverse decoding, the equivalence between pairs of natural numbers and natural numbers, transport of power-set domains along a bijection of index types, and the order isomorphisms among the power set of the natural numbers, the power set of pairs, and the product of two power sets.
+
+The diagonal iterate inverts the pairing function: iterating the pairing value of a cell returns that cell.
+
+The numbered name example_513 is that statement.

@@ -1,6 +1,3 @@
-/-ai
-The closed conditional term abstracts variables 4, 5, and 6, and forms the conditional of variable 6 with branches variable 4 and variable 5.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

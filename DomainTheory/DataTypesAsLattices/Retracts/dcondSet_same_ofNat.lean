@@ -1,8 +1,3 @@
-/-ai
-The doubly strict conditional of the numeral n on a repeated argument x equals x.
-
-The case of zero is the conditional on the numeral zero. The successor case is the conditional on a positive numeral.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

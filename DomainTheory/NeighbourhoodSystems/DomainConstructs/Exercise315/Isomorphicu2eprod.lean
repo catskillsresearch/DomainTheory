@@ -1,8 +1,3 @@
-/-ai
-If two domains are isomorphic to two others, then their products are isomorphic.
-
-Eliminate the two domain isomorphisms to obtain order isomorphisms of the element types, and package the induced product order isomorphism as a domain isomorphism.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

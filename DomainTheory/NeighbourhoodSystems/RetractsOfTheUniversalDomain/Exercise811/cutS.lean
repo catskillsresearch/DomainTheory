@@ -1,6 +1,3 @@
-/-ai
-The cut set of an element x of R is the set of real numbers obtained by casting those rationals r for which the interval [0, r) belongs to x.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

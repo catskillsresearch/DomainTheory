@@ -1,8 +1,3 @@
-/-ai
-If a is a retract, then the application of a to any element is typed by a.
-
-This is the symmetric form of the retract application law.
-ai-/
 
 module
 

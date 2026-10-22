@@ -1,8 +1,3 @@
-/-ai
-The element vaalTyped lies in the function-space retract from the tree retract to the identity combinator.
-
-This is the typing rule for application of a retract, using that the arrow of the tree retract and the identity-combinator retract is a retract.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

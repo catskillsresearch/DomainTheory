@@ -1,6 +1,3 @@
-/-ai
-The master neighbourhood is the set of all tokens.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

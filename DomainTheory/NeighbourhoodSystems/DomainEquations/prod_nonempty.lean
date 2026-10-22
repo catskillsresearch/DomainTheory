@@ -1,8 +1,3 @@
-/-ai
-The product of two neighbourhood systems is empty-free whenever the first factor is empty-free.
-
-A product neighbourhood comes from a neighbourhood of the first factor. That neighbourhood contains some element, and the left injection of the element lies in the product neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

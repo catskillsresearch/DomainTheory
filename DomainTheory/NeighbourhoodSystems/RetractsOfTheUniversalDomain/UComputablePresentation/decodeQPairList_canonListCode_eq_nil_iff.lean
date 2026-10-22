@@ -1,8 +1,3 @@
-/-ai
-The rational-pair list decoded from a canonical list code is empty if and only if it presents the empty set. Every pair in that list is already nondegenerate.
-
-This is the reverse of the emptiness criterion for a list of nondegenerate pairs. Each decoded pair is the clip of a source pair whose clip is nondegenerate, so the strict inequality holds.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

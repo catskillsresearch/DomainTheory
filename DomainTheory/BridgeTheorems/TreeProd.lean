@@ -1,6 +1,3 @@
-/-ai
-The tree product is the product information system of the tree system with itself.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

@@ -1,0 +1,3 @@
+Assembly of separated-sum codes is injective.
+
+The argument splits on the two bottom-adjoined codes. Two bottoms agree. A bottom code and a left or right code cannot have the same assembly, because the left bottom token lies in every left image and the right bottom token lies in every right image, while neither token lies in the bottom element. A left image and a right image cannot agree, because the left bottom token of the left image would then lie in the right image, and a token of one element cannot be both left and right. Two left images that agree come from the same element by injectivity of the left inclusion, and two right images likewise.

@@ -1,8 +1,3 @@
-/-ai
-Unfolding the atom token for an element x yields the left sum token x.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

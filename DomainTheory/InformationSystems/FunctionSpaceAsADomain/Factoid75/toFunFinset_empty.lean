@@ -1,8 +1,3 @@
-/-ai
-The underlying function-token set of the empty set of strict tokens is empty.
-
-In both directions of extensionality, membership in an empty set is impossible. One direction invokes the membership characterization of the underlying set.
-ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

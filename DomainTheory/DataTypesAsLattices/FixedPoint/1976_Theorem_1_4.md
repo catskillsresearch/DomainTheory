@@ -1,19 +1,31 @@
 # Theorem 1.4
 
-The other general fact about continuous functions that we shall use constantly concerns fixed points, whose existence can be proved using a well-known method.
+## Human-English
 
-**THEOREM 1.4** (The fixed-point theorem). *Every continuous function $f : \mathbf{P}\omega \to \mathbf{P}\omega$ has a least fixed point given by the formula:*
+@import "1976_Theorem_1_4.english" {code_block=false}
 
-$$\mathbf{fix}(f) = \bigcup \{ f^n(\varnothing) \mid n \in \omega \},$$
+## AI: Human-English to AI-Lean
 
-*where $\varnothing$ is the empty set and $f^n$ is the $n$-fold composition of $f$ with itself.*
+**DataTypesAsLattices/FixedPoint/theorem_1_4.lean**
 
-Actually **fix** is a *functional* with continuity properties of its own. We shall not give the required definitions here because they can be more easily derived from the construction of the model given in the next section.
+@import "theorem_1_4.lean"
 
-For those familiar with the abstract theory of topological spaces we give in conclusion two general facts about continuous functions with values in $\mathbf{P}\omega$ which indicate the scope and generality of our method.
+**DataTypesAsLattices/FixedPoint.lean**
 
-**Lean 4**
+@import "../FixedPoint.lean"
 
-- [DataTypesAsLattices/FixedPoint/theorem_1_4.lean](theorem_1_4.lean)
-- [DataTypesAsLattices/FixedPoint.lean](../FixedPoint.lean)
-- [DataTypesAsLattices/Embedding/Basic.lean](../Embedding/Basic.lean)
+**DataTypesAsLattices/Embedding/Basic.lean**
+
+@import "../Embedding/Basic.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_1_4.ai_lean_to_english" {code_block=false}
+
+@import "../FixedPoint.ai_lean_to_english" {code_block=false}
+
+@import "../Embedding/Basic.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_1_4.ai_english_concordance" {code_block=false}

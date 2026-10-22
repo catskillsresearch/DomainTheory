@@ -1,8 +1,3 @@
-/-ai
-The reverse memo table of a step is primitive recursive whenever the step is.
-
-The successor step that pairs the step's value with the previous table and adds one is primitive recursive. Primitive recursion from zero, composed with the pair of zero and the identity, agrees with the table by its recursion equation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

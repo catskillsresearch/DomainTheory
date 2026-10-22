@@ -1,8 +1,3 @@
-/-ai
-The iterative bitwise conjunction of two natural numbers is the accumulator read from
-the state obtained by iterating the conjunction step, a number of times equal to their
-sum, from the initial state coding the two numbers, weight one, and accumulator zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

@@ -1,0 +1,3 @@
+The filter transport of sub is idempotent.
+
+Unfolding the transport, extraction of a filter recovers the map, and sub is idempotent.

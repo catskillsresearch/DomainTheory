@@ -1,8 +1,3 @@
-/-ai
-The lambda retract is a fixed point of lambF.
-
-Unfolding the definition of lambF, this is the symmetric form of equation (4.39).
-ai-/
 
 module
 

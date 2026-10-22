@@ -1,8 +1,3 @@
-/-ai
-If the composite of f with g equals the composite of g with f, then f and g commute on every element.
-
-The element maps of the two composites agree by the hypothesis. Rewriting both composites as successive element maps gives the elementwise equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407

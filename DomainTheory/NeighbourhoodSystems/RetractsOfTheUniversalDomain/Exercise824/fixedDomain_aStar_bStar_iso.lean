@@ -1,8 +1,3 @@
-/-ai
-If two operators on pairs of self-maps send finitary projections to finitary projections, and two correspondences identify the fixed-point sets of those images with the domains assigned to the pair, then the fixed-point set of the first simultaneous component is order-isomorphic to the first assigned domain, and the fixed-point set of the second component is order-isomorphic to the second assigned domain.
-
-The two components are finitary projections. Instantiate the two correspondences at that pair, and rewrite by the two fixed-point equations.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise823

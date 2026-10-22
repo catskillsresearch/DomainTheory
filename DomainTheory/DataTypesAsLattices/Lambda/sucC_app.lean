@@ -1,8 +1,3 @@
-/-ai
-Applying the successor combinator to x equals the successor of x.
-
-This is the β-law for the successor, which is Scott continuous.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

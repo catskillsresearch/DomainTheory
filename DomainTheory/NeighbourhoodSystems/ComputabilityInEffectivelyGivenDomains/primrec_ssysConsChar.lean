@@ -1,8 +1,3 @@
-/-ai
-The consistency characteristic of a paired index is primitive recursive.
-
-It agrees at every paired index with the primitive-recursive consistency characteristic of the two unpaired components.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-The intersection-equality character of any fuel and any two codes is at most 1.
-
-Unfold the character. The product of the two subset characters is at most 1 because each subset character is at most 1.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,8 +1,3 @@
-/-ai
-The first component of a Cantor pair is strictly less than one more than the pair.
-
-The component is at most the pair, and a natural number is strictly less than the successor of any number that bounds it.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

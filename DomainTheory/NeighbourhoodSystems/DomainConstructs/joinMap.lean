@@ -1,6 +1,3 @@
-/-ai
-The join of a nonempty directed family of graphs of approximable maps relates neighbourhoods X and Y when the pair lies in some member of the family. The domain, codomain, and monotonicity laws are those of that member. The master relation is the master relation of any member. Right intersection uses directedness to pass to a common upper bound and then the intersection law of that bound.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222

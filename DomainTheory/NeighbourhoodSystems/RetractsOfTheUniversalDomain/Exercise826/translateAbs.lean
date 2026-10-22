@@ -1,6 +1,3 @@
-/-ai
-Scott's translation of a lambda abstraction, for approximable self-maps a, b, and body of a neighbourhood system, is b composed with the body composed with a.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

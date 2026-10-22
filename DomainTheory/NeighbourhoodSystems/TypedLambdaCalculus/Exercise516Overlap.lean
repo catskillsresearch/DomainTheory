@@ -1,8 +1,3 @@
-/-ai
-The element t is cube-free in Scott's form: for a finite string u and a nonempty finite string a, the partial element of u followed by three copies of a does not lie below t.
-
-The numbered name example_516_overlap is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516Overlap.tElt_cube_free

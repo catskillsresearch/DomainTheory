@@ -1,0 +1,3 @@
+Function-space entailment is transitive. If v is consistent, every token of a consistent set u is entailed by v, and u entails a token c, then v entails c.
+
+The entailment of c by u supplies a subset of u. Each token of that subset is entailed by v, so it has a witnessing subset of v. Combining those witnesses produces a subset of v whose inputs are entailed by the input of c and whose output union entails the output union of the subset of u. That output union is consistent because the corresponding input union is consistent and u is consistent, and the output union of the combined subset is consistent for the same reason from v. Transitivity of entailment in the codomain carries the entailment on to the output of c.

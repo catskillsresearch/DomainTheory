@@ -1,0 +1,1 @@
+The term filterTerm is λm. pred($ (λj. filterRealizer(pair m j)) ⊤). The bound argument is variable 0, the dollar combinator is variable 5, the bound index is variable 1, the filter realizer is variable 3, the pairing combinator is variable 4, and the top element is variable 7.

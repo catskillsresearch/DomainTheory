@@ -1,0 +1,1 @@
+The flat domain of Exercise 1.15 is the nested-or-disjoint neighbourhood system on the natural numbers whose neighbourhoods are the whole set together with the singletons. The master neighbourhood is the whole set, which is nonempty and is a neighbourhood. Nested-or-disjointness is the flat comparison lemma, and every neighbourhood is contained in the master.

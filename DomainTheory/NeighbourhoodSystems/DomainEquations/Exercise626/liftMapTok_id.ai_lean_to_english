@@ -1,0 +1,3 @@
+The lift of the identity map is the identity map of the lift.
+
+By extensionality, a master relation of the lifted identity is the inclusion of the source in the master, and a proper identity relation is the tagged inclusion. Conversely a master target is the master case, a proper target against a proper source is the underlying inclusion, and a master source included in a tag would put the empty string in a tag.

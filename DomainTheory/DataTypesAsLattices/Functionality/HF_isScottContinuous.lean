@@ -1,8 +1,3 @@
-/-ai
-The operator HF is Scott continuous in the interpreter.
-
-Two applications of the constant-graph lemma, using continuity of the step in the interpreter.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

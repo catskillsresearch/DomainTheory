@@ -1,6 +1,3 @@
-/-ai
-sndTok is Scott's second component of an element of the concrete product. A neighbourhood of the component is a neighbourhood of the second factor for which the product element contains the product neighbourhood formed with the master of the first factor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

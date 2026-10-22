@@ -1,8 +1,3 @@
-/-ai
-If an index is at most the bound, the corresponding entry of one fuel-table step, under any default, equals the body lookup of the pair of the previous table and that index.
-
-Unfold the step, read the tabulated entry strictly below one more than the bound, and simplify the two components of the pair.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

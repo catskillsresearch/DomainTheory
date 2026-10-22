@@ -1,8 +1,3 @@
-/-ai
-The abstract operator of the continuous operator, applied to any endomap, equals the arrow combinator of that endomap with the given endomap.
-
-Unfold the abstract operator as the approximable map of the element action on the filter of the endomap. Rewrite by the definition of the continuous operator, the element action of a composite, the approximable map of the exponential, the recovery of the exponential by the second curry, and the equality of the exponential with the lambda combinator. The resulting goal is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

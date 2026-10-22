@@ -1,8 +1,3 @@
-/-ai
-The master of D' is the set of all strings.
-
-The equality is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

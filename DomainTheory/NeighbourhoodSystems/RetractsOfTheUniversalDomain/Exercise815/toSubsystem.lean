@@ -1,6 +1,3 @@
-/-ai
-The backward map sends a filter of the system of finitely generated subsystems to the subsystem it determines, packaged with the proof that the reconstructed neighbourhood system is a subsystem of the original system.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

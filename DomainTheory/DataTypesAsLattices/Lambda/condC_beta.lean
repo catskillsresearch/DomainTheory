@@ -1,8 +1,3 @@
-/-ai
-Application of the conditional combinator at x is the graph of the map sending y to the graph of the map sending z to the conditional of z, x, and y.
-
-This is beta reduction, using Scott continuity of the outer conditional map.
-ai-/
 
 module
 

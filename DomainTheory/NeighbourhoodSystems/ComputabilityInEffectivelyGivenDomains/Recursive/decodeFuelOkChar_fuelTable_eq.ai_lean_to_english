@@ -1,0 +1,3 @@
+If a code is at most the bound, its entry in the fuel table of the decode-ok lookup, read with default 0, equals the decode-ok character at that fuel and code.
+
+This is course-of-values correctness for the decode-ok recursion. The value at fuel 0 and the successor step are definitional, the lookup unfolds to the body with table lookup, and the body is local.

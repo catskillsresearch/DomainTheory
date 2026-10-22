@@ -1,12 +1,3 @@
-/-ai
-The recursive copy of the Boolean encoding agrees with the encoding used here. The canonical code of an index is the expression code of its safe decoding, and the depth of that decoding is at most one more than the index's second component. Equality of an intersection of enumerated neighbourhoods with a third neighbourhood is equality of the denotation of the intersection of the two safe decodings with the denotation of the third. The numeric characteristic of that relation is at most one, equals one on a paired triple of indices precisely when the relation holds, and is primitive recursive, so Definition 7.1 relation (i) is recursively decidable for the system. The system is partially effectively given.
-
-Agreement of the two Boolean encodings is by cases on the bit. If an index is active, its characteristic is one, so selection returns the first component; decoding yields an expression with that code, and the nonempty test makes the safe decoding that expression. If the index is inactive, the characteristic is zero by the unit bound, selection returns the code of the universal expression, and the safe decoding is the inactive one. The depth bound uses the same split: an active decoding inherits the fuel bound on its depth, and an inactive decoding is the universal expression. The intersection identity rewrites each enumerated neighbourhood as the denotation of its safe decoding and then rewrites the intersection expression. The characteristic is at most one because the underlying intersection characteristic is. Unfolding and unpairing reduce equality with one to that intersection identity; the fuel formed from the three second components dominates both depths, and the intersection code of the first two canonical codes together with the third canonical code are the corresponding codes in the recursive copy, so the underlying criterion applies. Primitive recursivity packages those codes: the canonical code selects, by the active characteristic, between the first component and the constant code of the universal expression, the fuel and the intersection code are primitive recursive combinations of the triple's projections, and composition with the underlying characteristic agrees with this characteristic by unpairing. Recursive decidability is the zero-one packaging of that primitive recursive characteristic, using the unit bound and the equality criterion. Partial effective givenness is the presentation of the system.
-
-The recursive copy of the Boolean encoding agrees with the encoding used here. The canonical code of an index is the expression code of its safe decoding, and the depth of that decoding is at most one more than the index's second component. Equality of an intersection of enumerated neighbourhoods with a third neighbourhood is equality of the denotation of the intersection of the two safe decodings with the denotation of the third. The numeric characteristic of that relation is at most one, equals one on a paired triple of indices precisely when the relation holds, and is primitive recursive, so Definition 7.1 relation (i) is recursively decidable for the system. The system is partially effectively given.
-
-The numbered name example_722_presentation is the first of these statements.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71
@@ -92,89 +83,18 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-/-!
-# Exercise 7.22 — computable presentation backbone (`SsysX`)
-
-Enumeration `n ↦ SsysX n` for Scott's positive neighbourhood system `Ssys` (`Exercise722.lean`),
-toward Definition 7.1 effective givenness. Indices decode to `SExpr` codes; non-empty denotations
-are listed, while junk / empty-syntax indices map to the master neighbourhood `Σ` so every index
-still names a member of `S` (`SsysX_mem`). Surjectivity onto `S` uses
-`inS_iff_exists_denote` (`Exercise722Regular.lean`).
-
-Sessions C9–C10 will add `RecDecidable₂` consistency and the `ComputablePresentation` structure;
-relation (i) `interEq` remains deferred (see `Exercise722Decide.lean`, Session C7a).
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace Exercise722
 
 open Set Domain.Recursive
 
-/-! ## Gödel codes for `SExpr` -/
-
-
-/-! ## The enumeration `SsysX` -/
-
-
-/-! ## Definition 7.1 (ii) — recursively decidable consistency (Session C9)
-
-Scott's consistency `∃ k, X_k ⊆ X_n ∩ X_m` on a positive system is equivalent to
-`(X_n ∩ X_m).Nonempty` (`Ssys_isPositive`). On the `SsysX` enumeration, inactive indices
-(decode failure / empty denotation → `SsysX = Σ`) make consistency automatic; active-active
-pairs reduce to `consistentB` on decoded expressions. -/
-
-
-/-! ### Session C9 — `RecDecidable₂` (primitive-recursive bridge)
-
-The mathematics is finished (`ssys_cons_char_iff`). The generic packaging lemma is
-`RecDecidable₂.of_paired_zero_one_char` in `Recursive.lean`: once a `{0,1}`-valued characteristic is
-`Nat.Primrec`, `RecDecidable₂` follows immediately.
-
-**Numeric characteristic** for the existing Bool decider (no new algorithm).
-
-Unfolding `ssys_cons_char_iff` (which chains through `ssys_cons_iff` / `consistentB_iff`) can exceed
-the default 200000 heartbeat budget; raise the limit for this section only. -/
 
 set_option maxHeartbeats 5000000
 
 
-/-! ### Session C9b7 — `ssysActiveChar`, `ssysConsistentBChar`
-
-`Recursive.lean` cannot import this file (it would cycle: `Presentation → Definition71 →
-Recursive`), so its C9b5/C9b6 Gödel mirror (`c9b5_sexprGodelEncode`/`c9b5_sexprDepth`) is a
-self-contained *structural* copy of `SExpr.encode`/`sexprDepth` above, not literally the same
-function. The bridge equalities below (provable here, downstream, where both sides are visible)
-let every C9b5/C9b6 correctness theorem be re-applied against the *real* `SExpr.encode`/
-`sexprDepth`/`denote`, without re-deriving any of their induction. -/
-
 theorem c9b5_boolNat_eq (b : Bool) : Domain.Recursive.c9b5_boolNat b = boolNat b := by
   cases b <;> rfl
-
-
-/-! #### Decode soundness: `decodeFuel` recovers exactly the canonical encoding, within fuel
-
-Needed to instantiate C9b5/C9b6's `_eq_one_iff` theorems (stated at `c9b5_sexprGodelEncode e` /
-`c9b5_sexprDepth e ≤ fuel`) against a code `n.unpair.1` that merely *decodes* to some `e` under
-`SExpr.decode` — not one already known to equal `SExpr.encode e` syntactically. -/
-
-
-/-! ### Session C9b8 — closing the `C9b` umbrella
-
-`decodeFuelOkChar`/`autStateCardFuelChar`/`matchesBChar`/`decideNonemptyBChar`/`consistentBChar`
-are jointly primitive recursive in `(fuel, code)` (see `Recursive.lean`'s course-of-values
-sections), so `ssysActiveChar`/`ssysConsistentBChar` compose directly, with no further new
-infrastructure needed here. -/
-
-
-/-! ### Session C7b — `ssysInterEqChar` (Exercise 7.22k)
-
-Definition 7.1 relation (i) — `SsysX n ∩ SsysX m = SsysX k` — via the `Exercise722Equiv.lean` /
-`Recursive.lean` language-equivalence decider `interEqChar`. `safeDecodeActive` already gives a
-uniform canonical `SExpr` representative for every index (junk/inactive ↦ `.sigma`,
-`SsysX_eq_denote_safe`), so unlike `ssysConsistentBChar` (where inactive indices are *trivially*
-consistent with anything, since `Σ` is the top element) there is no active/inactive case split
-here: equality is genuinely about the canonical representative in every case. -/
 
 
 theorem ssysCanonicalCode_eq (n : ℕ) : ssysCanonicalCode n = SExpr.encode (safeDecodeActive n) := by
@@ -300,30 +220,6 @@ theorem Ssys_interEq_computable :
       rcases (show ssysInterEqChar t = 0 ∨ ssysInterEqChar t = 1 from by
         have := ssysInterEqChar_le_one t; omega) with h | h <;> simp [h])
     (fun n m k => (ssysInterEqChar_eq_one_iff n m k).symm)
-
-/-! ### Session C10 — Definition 7.1 packaging for `Ssys` (Exercise 7.22j)
-
-**Historical note (superseded by C7b / 7.22k, kept for the record).** At the time this session ran,
-relation (i) — `Xₙ ∩ Xₘ = X_k`, i.e. whether two *different* syntactic caps denote the *same*
-language — was open: strictly harder than emptiness/consistency, since the fragment
-`{sigma, single, cat, cap}` is not closed under complement, so `consistentB`/`decideNonemptyB`
-(which only ever test emptiness) cannot expose language inequality (concrete obstruction:
-`sigma_ne_containsZero`, see `Exercise722Decide.lean`). So `Ssys` got a **partial** presentation
-carrying only what was proved then: the enumeration onto `S` (`SsysX`/`SsysX_mem`/`SsysX_surj`)
-plus relation (ii) (`Ssys_cons_computable`).
-
-**Session C7b since closed relation (i)** (`Ssys_interEq_computable`, below) via a choice-free
-`Finset`-subset-construction automaton simulation (`Exercise722Equiv.lean`) — so `Ssys` now
-satisfies **all of Definition 7.1 exactly as Scott states it** (enumeration, plus both relations
-recursively decidable), between `SsysPres`/`Ssys_partially_effectively_given` here and
-`Ssys_interEq_computable` in the C7b section. What is *not* provided is an instance of this
-codebase's stronger `ComputablePresentation` (`Definition71.lean`) — used throughout the rest of
-Lecture VII's formalisation (Theorem 7.4–7.6, Exercise 7.13–7.18, Proposition 7.7/7.10) — which
-additionally carries a primitive-recursive intersection witness `inter`/`inter_primrec`/
-`inter_spec` and a `masterIdx`. Those two fields are not part of Definition 7.1's text and are not
-asked for by Exercise 7.22; completing them would be mechanical (7.22k's `ssysCanonicalCode`/
-`capCode` already compute the right index) and is worth doing only if a later exercise wants to
-feed `Ssys` into that shared apparatus. -/
 
 
 /-- **Exercise 7.22j.** `Ssys` — Scott's positive system generated by singleton languages under

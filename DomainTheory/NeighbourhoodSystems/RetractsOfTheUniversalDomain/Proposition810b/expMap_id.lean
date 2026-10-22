@@ -1,8 +1,3 @@
-/-ai
-The exponential of the two identity maps is the identity of the function space.
-
-Compare elements, and apply the function-space equivalence, which is injective. The elementwise form of the exponential sends a map to the identity composed after it composed after the identity, which is the map itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

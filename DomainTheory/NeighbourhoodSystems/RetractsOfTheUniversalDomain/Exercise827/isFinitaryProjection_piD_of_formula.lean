@@ -1,8 +1,3 @@
-/-ai
-If the product of d on the function space satisfies Scott's step-closure formula, then it is a finitary projection.
-
-This is the general step-closure criterion specialized to that product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

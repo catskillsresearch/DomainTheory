@@ -1,8 +1,3 @@
-/-ai
-The map sending t to the graph of n mapped to the application of the lambda retract to the application of t at n is Scott-continuous.
-
-Constancy of graphs under Scott continuity applies, using for each n Theorem 1.3 of continuity of application of the lambda retract and left continuity of application at n.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

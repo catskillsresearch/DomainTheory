@@ -1,8 +1,3 @@
-/-ai
-The left projection is monotone with respect to inclusion of finite sets of sum tokens.
-
-An element of the smaller projection is a left token of the smaller set, hence of the larger set by the inclusion, and therefore an element of the larger projection.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

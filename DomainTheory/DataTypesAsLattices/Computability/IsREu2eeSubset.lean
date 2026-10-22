@@ -1,8 +1,3 @@
-/-ai
-If a set is recursively enumerable, then inclusion of a finite set in it is a recursively enumerable predicate of the finite index.
-
-The partial function that returns zero on members of the set is partial recursive and has a code. Existence of a stage at which every bit of the index is either off or successfully evaluated by that code is recursively enumerable, because the common-stage predicate is primitive recursive. That existence is equivalent to inclusion of the finite set in the original set.
-ai-/
 module
 
 public import Mathlib.Computability.RE

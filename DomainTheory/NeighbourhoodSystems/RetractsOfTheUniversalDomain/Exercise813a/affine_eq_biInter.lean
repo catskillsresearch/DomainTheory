@@ -1,8 +1,3 @@
-/-ai
-For a residue below 2 to the k, the affine class of that residue at height k is the intersection, over bits below k, of the corresponding generator or its complement according to that bit of the residue.
-
-A number lies in the class exactly when its residue modulo 2 to the k equals the given residue. Those two numbers are equal exactly when they agree on every bit below k, because low bits survive the reduction and every bit of the residue at or above k is false. Each bit agreement is membership in the generator or its complement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

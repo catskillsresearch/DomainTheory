@@ -1,6 +1,3 @@
-/-ai
-Scott's sum of two sets of natural numbers is their Minkowski sum. A natural number lies in the sum when it is the ordinary sum of a member of the first set and a member of the second.
-ai-/
 
 module
 

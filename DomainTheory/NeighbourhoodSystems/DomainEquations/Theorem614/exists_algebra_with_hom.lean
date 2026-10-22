@@ -1,8 +1,3 @@
-/-ai
-Under the hypotheses of Theorem 6.14 there is a T-algebra whose structure map is an isomorphism, and from it there is a homomorphism into every T-algebra whose structure map is strict.
-
-The witness is the colimit algebra. Its structure isomorphism is the colimit isomorphism, and the homomorphism into a strict algebra is the existence result for that algebra.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

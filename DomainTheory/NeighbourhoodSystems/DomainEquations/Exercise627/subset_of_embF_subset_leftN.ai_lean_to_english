@@ -1,0 +1,3 @@
+If A is contained in the master of D₀ and the false tag of A is contained in the left copy of X, then A is contained in X.
+
+A string of A has its false-tagged copy in the left copy. If that copy is a false-tagged string, the tail is the original string and lies in X. If the left copy instead contributes the clause that X is the master, the string lies in X because A lies below the master.

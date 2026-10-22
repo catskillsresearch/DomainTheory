@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of Example 1.5 is a neighbourhood.
-
-Rewrite the master as the set of all four tokens, which is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

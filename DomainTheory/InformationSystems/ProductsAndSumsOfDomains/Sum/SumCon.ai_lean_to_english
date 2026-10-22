@@ -1,0 +1,1 @@
+A finite set of sum tokens is sum-consistent, in the sense of Scott's Definition 6.3(iii), when its left projection is consistent in A and its right projection is empty, or its left projection is empty and its right projection is consistent in B.

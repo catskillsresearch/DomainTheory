@@ -1,0 +1,3 @@
+A token y lies in the right projection of a finite set of product tokens if and only if some token of the set has least first component and second component y.
+
+Unfolding the projection, the fold-membership lemma supplies a token of the filtered multiset whose second component is y. Membership in that filter is membership in the original set together with the least-first-component test, and the converse packages those data back into the filter.

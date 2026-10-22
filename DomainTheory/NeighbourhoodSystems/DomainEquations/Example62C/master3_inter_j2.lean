@@ -1,8 +1,3 @@
-/-ai
-If Z is a neighbourhood of V₂, then the intersection of the three-way master with the tagged right copy of Z equals that right copy.
-
-The intersection of a set with a subset equals the subset, and the right copy of a neighbourhood is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

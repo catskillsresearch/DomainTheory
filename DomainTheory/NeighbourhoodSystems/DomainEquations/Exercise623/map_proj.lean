@@ -1,8 +1,3 @@
-/-ai
-A grammar expression carries the projection of a subsystem to the projection of the image subsystem.
-
-The argument is by induction on the expression. A constant expression gives the identity projection of a system onto itself. A variable expression acts as the underlying map. For a separated sum, a product, a coalesced sum, or a tensor, the expression acts by the corresponding map constructor on the two components; the inductive hypothesis replaces each component by the projection of its image, and the constructor carries those projections to the projection of the combined subsystem.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

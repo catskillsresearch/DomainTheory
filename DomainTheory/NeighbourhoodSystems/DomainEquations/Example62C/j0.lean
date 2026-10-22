@@ -1,6 +1,3 @@
-/-ai
-The left copy j0 X is the set of tokens of the form t0 a with a in X.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

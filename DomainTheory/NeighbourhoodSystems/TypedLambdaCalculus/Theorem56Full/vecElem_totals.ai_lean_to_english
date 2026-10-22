@@ -1,0 +1,3 @@
+Every coordinate of the argument element of a vector, below the length of the vector, is a numeral.
+
+The coordinate at an index below the length is the numeral for the corresponding entry, by the component formula for a vector element.

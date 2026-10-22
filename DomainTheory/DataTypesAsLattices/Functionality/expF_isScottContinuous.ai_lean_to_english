@@ -1,0 +1,3 @@
+The seven-tag syntax functor is Scott-continuous.
+
+The seven-fold sum preserves Scott continuity on the constant integer retract, the constant bottom, two identity maps, the diagonal of the four-fold tensor, the diagonal of the binary tensor, and the right continuity of the tensor with the integer retract.

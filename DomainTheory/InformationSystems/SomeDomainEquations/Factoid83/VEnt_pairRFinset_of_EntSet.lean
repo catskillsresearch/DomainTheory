@@ -1,8 +1,3 @@
-/-ai
-If every member of u is V-entailed by v, then either top belongs to v, or every member of the right pair projection of u is V-entailed by the right pair projection of v.
-
-If top belongs to v, take the first alternative. Otherwise a member of the right projection of u comes from a right pair in u, which v entails. Inverting that entailment, top cannot belong to v, so the right projection of v entails the member.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

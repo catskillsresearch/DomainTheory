@@ -1,6 +1,3 @@
-/-ai
-The neighbourhood of the empty list is all of Gamma, and the neighbourhood of a nonempty list is the prefixed copy, by its head, of the neighbourhood of its tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

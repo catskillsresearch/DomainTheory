@@ -1,6 +1,3 @@
-/-ai
-Scott's sequence at stage n, relative to a splitting operation and an enumeration with nonempty master set, is the union, over all sign sequences of length n, of the U-side atom of depth n + 1 of the sequence padded by true.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

@@ -1,8 +1,3 @@
-/-ai
-For any approximable map g into the carrier of a Tc-algebra, the structure map applied to the three-way sum of the identity, g, and g, at the image under toCC of a one-step cons on a boolean, equals the descent operation for that boolean on the image of the argument.
-
-After rewriting the cons through toCC, the boolean splits into two cases. The false case is the one-injection clause of the three-way sum, and the true case is the two-injection clause. Each clause is the corresponding clause of the descent operation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

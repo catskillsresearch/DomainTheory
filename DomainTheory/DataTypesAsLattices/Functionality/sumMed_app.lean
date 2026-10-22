@@ -1,8 +1,3 @@
-/-ai
-The coproduct mediator of f and g, applied to u, equals the conditional of the application of u at the numeral 0, returning the application of f or of g to the application of u at the numeral 1.
-
-This is the beta law for the graph of that body, using Scott continuity of the body.
-ai-/
 
 module
 

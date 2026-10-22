@@ -1,6 +1,3 @@
-/-ai
-Scott (1982, §4) forms, for each consistent finite set of tokens, the basic open of those elements of an information system that contain the set. These basic opens are a neighbourhood system on the domain, in the direction converse to the passage from neighbourhood systems to information systems, and the abbreviation infoSys_to_neighborhoodSystem names that system. Its filters recover the original elements.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic
@@ -24,15 +21,6 @@ public import DomainTheory.BridgeTheorems.toFilter_ofFilter
 public import DomainTheory.BridgeTheorems.ofFilter_toFilter
 
 @[expose] public section
-
-/-!
-# Information systems → neighbourhood systems (1982 → 1980)
-
-Scott (1982, §4): for `u ∈ Con`, the basic open
-`[u] = { x ∈ |A| | u ⊆ x }` yields a neighbourhood system on the domain `|A|`
-whose filters recover the original elements. This is the converse direction to
-`NeighborhoodToInfoSys`.
--/
 
 namespace DomainTheory.BridgeTheorems
 

@@ -1,27 +1,19 @@
 # Corollary 4.3
 
-One should note also the recursion equation:
+## Human-English
 
-$$
-i_{n\infty} = i_{(n+1)\infty} \circ i_n.
-$$
+@import "corollary_4_3.english" {code_block=false}
 
-These maps also make it possible to state this useful equation:
+## AI: Human-English to AI-Lean
 
-$$
-x = \bigsqcup_{n=0}^{\infty} i_{n\infty}(x_n),
-$$
+**ContinuousLattice/InverseLimits/corollary_4_3.lean**
 
-where $x \in D_\infty$. It is easy to check that this is a monotone lub, and so we can say each $x \in D_\infty$ is the limit of its projections $x_n$. In fact, from what we know about projections, $x_n$ is the best possible approximation to $x$ in the space $D_n$.
+@import "corollary_4_3.lean"
 
-**4.3 Corollary.** Let the spaces be as in 4.1 and 4.2. Let $D'$ be any complete lattice and suppose continuous functions $f_n : D_n \to D'$ are given so that $f_n = f_{n+1} \circ i_n$. Then we can define $f_\infty : D_\infty \to D'$ by the equation:
+## AI: AI-Lean to AI-English
 
-$$
-f_\infty(x) = \bigsqcup_{n=0}^{\infty} f_n(x_n)
-$$
+@import "corollary_4_3.ai_lean_to_english" {code_block=false}
 
-for $x \in D_\infty$, and we have $f_n = f_\infty \circ i_{n\infty}$. $\square$
+## AI: AI-English to Human-English Concordance
 
-**Lean 4**
-
-- [ContinuousLattice/InverseLimits/corollary_4_3.lean](corollary_4_3.lean)
+@import "corollary_4_3.ai_english_concordance" {code_block=false}

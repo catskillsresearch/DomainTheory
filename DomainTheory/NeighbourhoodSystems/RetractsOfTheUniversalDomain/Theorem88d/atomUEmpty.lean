@@ -1,6 +1,3 @@
-/-ai
-The emptiness flag at depth n for a bit-source is the extracted decider applied to the pair of the positive code and the negative code accumulated at that depth. It reads 1 exactly when that constraint pair denotes the empty D-atom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

@@ -1,8 +1,3 @@
-/-ai
-Every enumerated neighbourhood is nonempty.
-
-Nonemptiness is the second component of membership of the enumerated set in the function space.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

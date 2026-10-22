@@ -1,8 +1,3 @@
-/-ai
-For a fixed factor a, the map sending b to a ⊗ b is Scott continuous.
-
-Continuity of the graph in the parameter b reduces to continuity of the body at each fixed u. Theorem 1.3 composes right continuity of sequence pairing, at the fixed left component, with left continuity of application at the first component of u.
-ai-/
 
 module
 

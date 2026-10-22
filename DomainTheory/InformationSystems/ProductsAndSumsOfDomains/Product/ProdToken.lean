@@ -1,6 +1,3 @@
-/-ai
-The token type of the product of two information systems is the subtype of those pairs that are product tokens.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

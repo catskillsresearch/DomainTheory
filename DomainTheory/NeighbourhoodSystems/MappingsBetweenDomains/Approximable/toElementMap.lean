@@ -1,6 +1,3 @@
-/-ai
-The elementwise image of an element under an approximable map is the element of those neighbourhoods related to some neighbourhood of the element. The master is reached from the master neighbourhood by the master clause of the relation. The intersection of two outputs is reached from the intersection of their witnessing inputs, after monotonicity pulls both relations back to that intersection and the intersection clause combines the outputs. An upward enlargement of an output keeps the same input by monotonicity of the relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

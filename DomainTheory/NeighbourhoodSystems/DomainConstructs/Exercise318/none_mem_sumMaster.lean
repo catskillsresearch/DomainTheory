@@ -1,8 +1,3 @@
-/-ai
-The basepoint lies in the sum master.
-
-It is the element inserted in the definition of the sum master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

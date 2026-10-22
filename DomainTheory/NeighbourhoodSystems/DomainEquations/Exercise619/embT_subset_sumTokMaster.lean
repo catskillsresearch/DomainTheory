@@ -1,8 +1,3 @@
-/-ai
-If Y is a neighbourhood of the second system, the true-tagged copy of Y is contained in the master of the concrete token sum.
-
-The tagged copy of Y sits inside the tagged copy of the master, because Y lies below that master. That copy is the right summand of the union of the two tagged masters, and the union sits inside the master once the empty word is inserted.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

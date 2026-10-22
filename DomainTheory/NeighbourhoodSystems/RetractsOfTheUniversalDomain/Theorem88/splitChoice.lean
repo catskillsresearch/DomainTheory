@@ -1,6 +1,3 @@
-/-ai
-The total splitting choice, given sets A and B and a further set, returns a chosen pair from the existence of a split when emptiness of A matches emptiness of B and B is empty or a neighbourhood of U, and returns the pair of empty sets otherwise.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

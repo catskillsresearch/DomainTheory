@@ -1,8 +1,3 @@
-/-ai
-The approximable map induced by the order isomorphism ccEquiv, composed with the approximable map induced by its inverse, is the identity map on the sum neighbourhood system CCn A.
-
-The two maps are compared by their action on elements. Composition, the two maps induced by the isomorphism and its inverse, and the identity unfold, and the composite acts as the right inverse of ccEquiv.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

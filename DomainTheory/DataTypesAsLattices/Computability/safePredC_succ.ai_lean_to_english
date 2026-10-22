@@ -1,0 +1,3 @@
+Applying safePredC to the numeral n + 1 yields the numeral n.
+
+Unfold safePredC and apply the beta law theorem_2_2_beta. Simplifying the interpretation and the environment update, using eq_2_7_succ and predSet_ofNat_succ, gives the numeral n.

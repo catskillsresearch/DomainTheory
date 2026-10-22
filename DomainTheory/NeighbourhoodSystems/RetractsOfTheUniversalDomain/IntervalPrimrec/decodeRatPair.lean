@@ -1,6 +1,3 @@
-/-ai
-Decoding a natural number as a rational pair is the pair of the rational decodings of its two unpaired components.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

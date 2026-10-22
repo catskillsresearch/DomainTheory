@@ -1,8 +1,3 @@
-/-ai
-If the characteristic and the consistency test are primitive recursive, then the code-level qChar-gated fold is primitive recursive.
-
-Apply primitive recursion of code folding to the primitive-recursive code-level step, the constant zero, the constant master index, and the identity, and match the resulting function with the fold by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic

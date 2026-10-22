@@ -1,8 +1,3 @@
-/-ai
-The master is a neighbourhood.
-
-The classification of neighbourhoods supplies the disjunct that identifies the master with itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,8 +1,3 @@
-/-ai
-A bottom element in the left argument collapses the strict pairing to the bottom of the smash.
-
-An element whose only neighbourhood is the master is bottom. The master case is the master, and a proper product would require the bottom element to contain a neighbourhood other than the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-The automaton for a single word accepts exactly the singleton of that word.
-
-Evaluation from the start state is the prefix law. If the input is a prefix of the word, the resulting length equals the length of the word exactly when the input equals the word. If the input is not a prefix, evaluation is the sink, which is not the accept state, while equality with the word would make the input a prefix of itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular

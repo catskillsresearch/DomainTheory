@@ -1,8 +1,3 @@
-/-ai
-One approximable map lies below another if and only if every pair related by the first is related by the second.
-
-The order is defined to be that inclusion of relations, so the two sides agree by definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,6 +1,3 @@
-/-ai
-The single generator of a finite list of elements of Pω is the conditional combinator applied to the packed list and then to the generator G.
-ai-/
 
 module
 

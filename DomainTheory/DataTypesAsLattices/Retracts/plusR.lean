@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (4.10), modified. The sum of two retracts is the graph of the doubly strict conditional on the zeroth component of the argument: the zero branch pairs tag 0 with the first retract applied to the first component, and the other branch pairs tag 1 with the second retract applied to the first component. The displayed equation writes the ordinary McCarthy conditional, while this definition uses the doubly strict conditional of (4.4), as in the boolean retract (4.3) which (4.8) through (4.10) generalize, so mixed tags map to the top element. That choice is what Theorem 4.5 uses to obtain a retract, and the definition follows the doubly strict conditional rather than a symbol-for-symbol transcription of the displayed (4.10).
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

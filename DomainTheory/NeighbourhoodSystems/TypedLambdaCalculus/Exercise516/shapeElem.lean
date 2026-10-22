@@ -1,6 +1,3 @@
-/-ai
-The element of a tagged string (b, σ) is the principal element of its shape neighbourhood: the total element of σ when the tag is true, and the partial element of σ otherwise.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

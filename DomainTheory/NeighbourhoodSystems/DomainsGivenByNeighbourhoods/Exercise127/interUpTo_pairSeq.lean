@@ -1,8 +1,3 @@
-/-ai
-The running intersection of the first two terms of the two-term sequence of U and W equals the master intersected with U and with W.
-
-Rewrite by the successor and zero laws of the running intersection and by the definition of the two-term sequence, then evaluate the resulting indices.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise118

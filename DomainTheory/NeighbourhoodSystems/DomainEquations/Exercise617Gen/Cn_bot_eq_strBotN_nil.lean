@@ -1,8 +1,3 @@
-/-ai
-The bottom element of the generic sequence domain is the partial element carried by the empty word.
-
-Element extensionality compares a neighbourhood. Membership in the bottom element is neighbourhood membership together with containment of the master, and membership in the partial element is neighbourhood membership together with containment of the cone of the empty word. The master is the set of all words and the empty cone is that same set, so the two conditions agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

@@ -1,6 +1,3 @@
-/-ai
-A functor expression is a construct built from a constant Scott system, the identity variable, binary sums, and binary products.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

@@ -1,8 +1,3 @@
-/-ai
-The union of the post-fixed points of an endomap f contains every fixed point of f. The greatest fixed-point set of a monotone operator on subsets is a fixed point of that operator.
-
-The numbered name example_414 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414.gfpSet_greatest

@@ -1,8 +1,3 @@
-/-ai
-The intersection of relevant outputs is contained in the master set.
-
-Membership in the intersection includes membership in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

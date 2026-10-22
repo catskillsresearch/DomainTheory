@@ -1,6 +1,3 @@
-/-ai
-The slot prefix of a tag i and an index j is the string consisting of the bit i, followed by j ones, followed by a zero. Reaching component j of the tag-i tuple means matching this prefix.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

@@ -1,10 +1,25 @@
 # Proposition 1.3
 
-**1.3 Proposition.** The Cartesian product of any number of injective spaces is injective under the product topology.
+## Human-English
 
-**Proof:** The argument is standard. A map into the product can be projected onto each of the factors. Each of these projections can be extended. Then the separate maps can be put together again to make the required extended map into the product. $\square$
+@import "1972_Proposition_1_3.english" {code_block=false}
 
-**Lean 4**
+## AI: Human-English to AI-Lean
 
-- [ContinuousLattice/Injective/IsInjectiveSpaceu2epi.lean](IsInjectiveSpaceu2epi.lean)
-- [ContinuousLattice/Injective/proposition_1_3.lean](proposition_1_3.lean)
+**ContinuousLattice/Injective/IsInjectiveSpaceu2epi.lean**
+
+@import "IsInjectiveSpaceu2epi.lean"
+
+**ContinuousLattice/Injective/proposition_1_3.lean**
+
+@import "proposition_1_3.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "IsInjectiveSpaceu2epi.ai_lean_to_english" {code_block=false}
+
+@import "proposition_1_3.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Proposition_1_3.ai_english_concordance" {code_block=false}

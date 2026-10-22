@@ -1,6 +1,3 @@
-/-ai
-The set of recursively enumerable, or LAMBDA-definable, closed elements is the set of combinatory elements of Pω.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

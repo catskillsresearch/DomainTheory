@@ -1,6 +1,3 @@
-/-ai
-A fixed computable presentation of the infinite power of the universal domain is a choice of the witness that this power is effectively given, obtained from the effective givenness of the universal domain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

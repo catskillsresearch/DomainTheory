@@ -1,8 +1,3 @@
-/-ai
-If two approximable maps on the universal domain are projections, then so are their sum, product, and arrow combinators. If the two maps are finitary projections, then so are those three combinators.
-
-The numbered name example_818 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise818.exercise_8_18

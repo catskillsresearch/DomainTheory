@@ -1,8 +1,3 @@
-/-ai
-Application of the left injection to x is the sequence pair of zero with x.
-
-This is β-conversion for the graph of sequence pairing in the right argument at the constant zero, which is Scott continuous.
-ai-/
 
 module
 

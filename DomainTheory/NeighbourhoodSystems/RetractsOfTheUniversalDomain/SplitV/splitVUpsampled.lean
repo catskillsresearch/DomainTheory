@@ -1,6 +1,3 @@
-/-ai
-splitVUpsampled n is the mask of the minimal presentation of the V-neighbourhood of n, upsampled from the minimal level to the next level.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

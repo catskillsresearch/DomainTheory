@@ -1,90 +1,283 @@
 # Subsets and their classification
 
-Retracts produce very special subsets of $\mathbf{P}\omega$: a retract always has a nonempty range which forms a lattice under $\sqsubseteq$. For example, the range of **int** is $\{\bot, \top\} \cup \omega$. We often wish to eliminate $\bot$ and $\top$; and with a retract like **tree** the situation is more complex, since combinations like $\langle 1, \langle \langle 1, \langle \bot, \langle 0 \rangle \rangle \rangle, \top \rangle \rangle$ might require elimination. In these two cases the method is simple.
+## Human-English
 
-Consider these two functions:
+@import "1976_Subsets_and_their_classification.english" {code_block=false}
 
-$$(6.1) \quad \mathbf{mid} = \lambda x : \mathbf{int}.\, x \supset 0, 0$$
+## AI: Human-English to AI-Lean
 
-$$(6.2) \quad \mathbf{perf} = \lambda u : \mathbf{tree}.\, \mathbf{which}(u) \supset 0,\, \Delta(\mathbf{perf}(\mathbf{fst}(\mathbf{out}(u))))(\mathbf{perf}(\mathbf{snd}(\mathbf{out}(u))))$$
+**DataTypesAsLattices/Classification/IsBooleanOpen.lean**
 
-where $\Delta$ is a special combinator:
+@import "IsBooleanOpen.lean"
 
-$$(6.3) \quad \Delta = \lambda x \lambda y.\, (x \supset (y \supset 0, \top), \top) \cup (y \supset (x \supset 0, \top), \top).$$
+**DataTypesAsLattices/Classification/BooleanMemE.lean**
 
-We find that $\omega = \{x : \mathbf{int} \mid \mathbf{mid}(x) = 0\}$. In the case of trees, note first this behavior of $\Delta$:
+@import "BooleanMemE.lean"
 
-| $\Delta$ | $\bot$ | $0$ | $\top$ |
-| :---: | :---: | :---: | :---: |
-| $\bot$ | $\bot$ | $\bot$ | $\top$ |
-| $0$ | $\bot$ | $0$ | $\top$ |
-| $\top$ | $\top$ | $\top$ | $\top$ |
+**DataTypesAsLattices/Classification/IsBdelta.lean**
 
-The question is: what subset is $\{u : \mathbf{tree} \mid \mathbf{perf}(u) = 0\}$?
+@import "IsBdelta.lean"
 
-Now **perf** is defined recursively. We can see that
+**DataTypesAsLattices/Classification/IsFcapG.lean**
 
-$$\mathbf{perf}(\bot) = \bot, \quad \mathbf{perf}(\top) = \top, \quad \mathbf{perf}(\langle 0 \rangle) = 0,$$
+@import "IsFcapG.lean"
 
-and
+**DataTypesAsLattices/Classification/Pi11.lean**
 
-$$\mathbf{perf}(\langle 1, \langle x, y \rangle \rangle) = \Delta(\mathbf{perf}(x))(\mathbf{perf}(y))$$
+@import "Pi11.lean"
 
-when $x, y : \mathbf{tree}$. Every tree, aside from $\top$ or $\bot$, is either *atomic* or a pair of trees. The atomic tree is “perfect” (that is, $\mathbf{perf}(\langle 0 \rangle) = 0$). A finite tree which does not contain $\bot$ or $\top$ is perfect—as we can see inductively using the table above for $\Delta$. An infinite tree is never perfect: either some branch ends in $\top$ and **perf** maps it to $\top$, or $\top$ is never reached and **perf** maps it to $\bot$. Thus the subset in question is then seen to be the set of *finite* trees generated from the atom by pairing. This is clearly a desirable subset, and it is sorted out by a function with a simple recursive definition. The general question is: what subsets can be characterized by equations? The answer can be given by reference to the topology of $\mathbf{P}\omega$.
+**DataTypesAsLattices/Classification/IsScottGdelta.lean**
 
-- [Definition (classes)](1976_Definition_classes.md)
-- [Theorem 6.1](1976_Theorem_6_1.md)
-- [Theorem 6.2](1976_Theorem_6_2.md)
-- [Theorem 6.3](1976_Theorem_6_3.md)
-- [Theorem 6.4](1976_Theorem_6_4.md)
-- [Theorem 6.5](1976_Theorem_6_5.md)
-- [Theorem 6.6](1976_Theorem_6_6.md)
-- [Theorem 6.7](1976_Theorem_6_7.md)
+@import "IsScottGdelta.lean"
 
-**Lean 4**
+**DataTypesAsLattices/Classification/IsFcapGdelta.lean**
 
-- [DataTypesAsLattices/Classification/IsBooleanOpen.lean](IsBooleanOpen.lean)
-- [DataTypesAsLattices/Classification/BooleanMemE.lean](BooleanMemE.lean)
-- [DataTypesAsLattices/Classification/IsBdelta.lean](IsBdelta.lean)
-- [DataTypesAsLattices/Classification/IsFcapG.lean](IsFcapG.lean)
-- [DataTypesAsLattices/Classification/Pi11.lean](Pi11.lean)
-- [DataTypesAsLattices/Classification/IsScottGdelta.lean](IsScottGdelta.lean)
-- [DataTypesAsLattices/Classification/IsFcapGdelta.lean](IsFcapGdelta.lean)
-- [DataTypesAsLattices/Classification/IsSigma11.lean](IsSigma11.lean)
-- [DataTypesAsLattices/Classification/ThreeValued.lean](ThreeValued.lean)
-- [DataTypesAsLattices/Classification/ScottB.lean](ScottB.lean)
-- [DataTypesAsLattices/Classification/ScottF.lean](ScottF.lean)
-- [DataTypesAsLattices/Classification/ScottG.lean](ScottG.lean)
-- [DataTypesAsLattices/Classification/charOpen.lean](charOpen.lean)
-- [DataTypesAsLattices/Classification/charTop.lean](charTop.lean)
-- [DataTypesAsLattices/Classification/closedToZero.lean](closedToZero.lean)
-- [DataTypesAsLattices/Classification/evenPart.lean](evenPart.lean)
-- [DataTypesAsLattices/Classification/fcapGdeltaPack.lean](fcapGdeltaPack.lean)
-- [DataTypesAsLattices/Classification/oddEvenPack.lean](oddEvenPack.lean)
-- [DataTypesAsLattices/Classification/oddPart.lean](oddPart.lean)
-- [DataTypesAsLattices/Classification/pairIndexed.lean](pairIndexed.lean)
-- [DataTypesAsLattices/Classification/typicalBdelta.lean](typicalBdelta.lean)
-- [DataTypesAsLattices/Classification/typicalF.lean](typicalF.lean)
-- [DataTypesAsLattices/Classification/typicalFcapG.lean](typicalFcapG.lean)
-- [DataTypesAsLattices/Classification/typicalFcapGdelta.lean](typicalFcapGdelta.lean)
-- [DataTypesAsLattices/Classification/typicalG.lean](typicalG.lean)
-- [DataTypesAsLattices/Classification/typicalGdelta.lean](typicalGdelta.lean)
-- [DataTypesAsLattices/Classification/typicalPi11.lean](typicalPi11.lean)
-- [DataTypesAsLattices/Classification/typicalSigma11.lean](typicalSigma11.lean)
-- [DataTypesAsLattices/Classification/uvU.lean](uvU.lean)
-- [DataTypesAsLattices/Classification/uvV.lean](uvV.lean)
-- [DataTypesAsLattices/Classification/zeroPrime.lean](zeroPrime.lean)
-- [DataTypesAsLattices/Classification/Basic.lean](Basic.lean)
-- [DataTypesAsLattices/Classification/fcapGdeltaPack_isScottContinuous.lean](fcapGdeltaPack_isScottContinuous.lean)
-- [DataTypesAsLattices/Classification/isBdelta_inter.lean](isBdelta_inter.lean)
-- [DataTypesAsLattices/Classification/isBdelta_union.lean](isBdelta_union.lean)
-- [DataTypesAsLattices/Classification/oddEvenPack_eq_zero.lean](oddEvenPack_eq_zero.lean)
-- [DataTypesAsLattices/Classification/pairIndexed_eq_top.lean](pairIndexed_eq_top.lean)
-- [DataTypesAsLattices/Classification/typicalBdelta_isBdelta.lean](typicalBdelta_isBdelta.lean)
-- [DataTypesAsLattices/Classification/typicalGdelta_eq.lean](typicalGdelta_eq.lean)
-- [DataTypesAsLattices/Classification/typicalPi11_isPi11.lean](typicalPi11_isPi11.lean)
-- [DataTypesAsLattices/Classification/typicalPi11_universal.lean](typicalPi11_universal.lean)
-- [DataTypesAsLattices/Classification/typicalSigma11_isSigma11.lean](typicalSigma11_isSigma11.lean)
-- [DataTypesAsLattices/Classification/typicalSigma11_universal.lean](typicalSigma11_universal.lean)
-- [DataTypesAsLattices/Classification/zero_not_mem_succSet_top.lean](zero_not_mem_succSet_top.lean)
-- [DataTypesAsLattices/Classification/fcapGdeltaPack_eq.lean](fcapGdeltaPack_eq.lean)
+@import "IsFcapGdelta.lean"
+
+**DataTypesAsLattices/Classification/IsSigma11.lean**
+
+@import "IsSigma11.lean"
+
+**DataTypesAsLattices/Classification/ThreeValued.lean**
+
+@import "ThreeValued.lean"
+
+**DataTypesAsLattices/Classification/ScottB.lean**
+
+@import "ScottB.lean"
+
+**DataTypesAsLattices/Classification/ScottF.lean**
+
+@import "ScottF.lean"
+
+**DataTypesAsLattices/Classification/ScottG.lean**
+
+@import "ScottG.lean"
+
+**DataTypesAsLattices/Classification/charOpen.lean**
+
+@import "charOpen.lean"
+
+**DataTypesAsLattices/Classification/charTop.lean**
+
+@import "charTop.lean"
+
+**DataTypesAsLattices/Classification/closedToZero.lean**
+
+@import "closedToZero.lean"
+
+**DataTypesAsLattices/Classification/evenPart.lean**
+
+@import "evenPart.lean"
+
+**DataTypesAsLattices/Classification/fcapGdeltaPack.lean**
+
+@import "fcapGdeltaPack.lean"
+
+**DataTypesAsLattices/Classification/oddEvenPack.lean**
+
+@import "oddEvenPack.lean"
+
+**DataTypesAsLattices/Classification/oddPart.lean**
+
+@import "oddPart.lean"
+
+**DataTypesAsLattices/Classification/pairIndexed.lean**
+
+@import "pairIndexed.lean"
+
+**DataTypesAsLattices/Classification/typicalBdelta.lean**
+
+@import "typicalBdelta.lean"
+
+**DataTypesAsLattices/Classification/typicalF.lean**
+
+@import "typicalF.lean"
+
+**DataTypesAsLattices/Classification/typicalFcapG.lean**
+
+@import "typicalFcapG.lean"
+
+**DataTypesAsLattices/Classification/typicalFcapGdelta.lean**
+
+@import "typicalFcapGdelta.lean"
+
+**DataTypesAsLattices/Classification/typicalG.lean**
+
+@import "typicalG.lean"
+
+**DataTypesAsLattices/Classification/typicalGdelta.lean**
+
+@import "typicalGdelta.lean"
+
+**DataTypesAsLattices/Classification/typicalPi11.lean**
+
+@import "typicalPi11.lean"
+
+**DataTypesAsLattices/Classification/typicalSigma11.lean**
+
+@import "typicalSigma11.lean"
+
+**DataTypesAsLattices/Classification/uvU.lean**
+
+@import "uvU.lean"
+
+**DataTypesAsLattices/Classification/uvV.lean**
+
+@import "uvV.lean"
+
+**DataTypesAsLattices/Classification/zeroPrime.lean**
+
+@import "zeroPrime.lean"
+
+**DataTypesAsLattices/Classification/Basic.lean**
+
+@import "Basic.lean"
+
+**DataTypesAsLattices/Classification/fcapGdeltaPack_isScottContinuous.lean**
+
+@import "fcapGdeltaPack_isScottContinuous.lean"
+
+**DataTypesAsLattices/Classification/isBdelta_inter.lean**
+
+@import "isBdelta_inter.lean"
+
+**DataTypesAsLattices/Classification/isBdelta_union.lean**
+
+@import "isBdelta_union.lean"
+
+**DataTypesAsLattices/Classification/oddEvenPack_eq_zero.lean**
+
+@import "oddEvenPack_eq_zero.lean"
+
+**DataTypesAsLattices/Classification/pairIndexed_eq_top.lean**
+
+@import "pairIndexed_eq_top.lean"
+
+**DataTypesAsLattices/Classification/typicalBdelta_isBdelta.lean**
+
+@import "typicalBdelta_isBdelta.lean"
+
+**DataTypesAsLattices/Classification/typicalGdelta_eq.lean**
+
+@import "typicalGdelta_eq.lean"
+
+**DataTypesAsLattices/Classification/typicalPi11_isPi11.lean**
+
+@import "typicalPi11_isPi11.lean"
+
+**DataTypesAsLattices/Classification/typicalPi11_universal.lean**
+
+@import "typicalPi11_universal.lean"
+
+**DataTypesAsLattices/Classification/typicalSigma11_isSigma11.lean**
+
+@import "typicalSigma11_isSigma11.lean"
+
+**DataTypesAsLattices/Classification/typicalSigma11_universal.lean**
+
+@import "typicalSigma11_universal.lean"
+
+**DataTypesAsLattices/Classification/zero_not_mem_succSet_top.lean**
+
+@import "zero_not_mem_succSet_top.lean"
+
+**DataTypesAsLattices/Classification/fcapGdeltaPack_eq.lean**
+
+@import "fcapGdeltaPack_eq.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "IsBooleanOpen.ai_lean_to_english" {code_block=false}
+
+@import "BooleanMemE.ai_lean_to_english" {code_block=false}
+
+@import "IsBdelta.ai_lean_to_english" {code_block=false}
+
+@import "IsFcapG.ai_lean_to_english" {code_block=false}
+
+@import "Pi11.ai_lean_to_english" {code_block=false}
+
+@import "IsScottGdelta.ai_lean_to_english" {code_block=false}
+
+@import "IsFcapGdelta.ai_lean_to_english" {code_block=false}
+
+@import "IsSigma11.ai_lean_to_english" {code_block=false}
+
+@import "ThreeValued.ai_lean_to_english" {code_block=false}
+
+@import "ScottB.ai_lean_to_english" {code_block=false}
+
+@import "ScottF.ai_lean_to_english" {code_block=false}
+
+@import "ScottG.ai_lean_to_english" {code_block=false}
+
+@import "charOpen.ai_lean_to_english" {code_block=false}
+
+@import "charTop.ai_lean_to_english" {code_block=false}
+
+@import "closedToZero.ai_lean_to_english" {code_block=false}
+
+@import "evenPart.ai_lean_to_english" {code_block=false}
+
+@import "fcapGdeltaPack.ai_lean_to_english" {code_block=false}
+
+@import "oddEvenPack.ai_lean_to_english" {code_block=false}
+
+@import "oddPart.ai_lean_to_english" {code_block=false}
+
+@import "pairIndexed.ai_lean_to_english" {code_block=false}
+
+@import "typicalBdelta.ai_lean_to_english" {code_block=false}
+
+@import "typicalF.ai_lean_to_english" {code_block=false}
+
+@import "typicalFcapG.ai_lean_to_english" {code_block=false}
+
+@import "typicalFcapGdelta.ai_lean_to_english" {code_block=false}
+
+@import "typicalG.ai_lean_to_english" {code_block=false}
+
+@import "typicalGdelta.ai_lean_to_english" {code_block=false}
+
+@import "typicalPi11.ai_lean_to_english" {code_block=false}
+
+@import "typicalSigma11.ai_lean_to_english" {code_block=false}
+
+@import "uvU.ai_lean_to_english" {code_block=false}
+
+@import "uvV.ai_lean_to_english" {code_block=false}
+
+@import "zeroPrime.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "fcapGdeltaPack_isScottContinuous.ai_lean_to_english" {code_block=false}
+
+@import "isBdelta_inter.ai_lean_to_english" {code_block=false}
+
+@import "isBdelta_union.ai_lean_to_english" {code_block=false}
+
+@import "oddEvenPack_eq_zero.ai_lean_to_english" {code_block=false}
+
+@import "pairIndexed_eq_top.ai_lean_to_english" {code_block=false}
+
+@import "typicalBdelta_isBdelta.ai_lean_to_english" {code_block=false}
+
+@import "typicalGdelta_eq.ai_lean_to_english" {code_block=false}
+
+@import "typicalPi11_isPi11.ai_lean_to_english" {code_block=false}
+
+@import "typicalPi11_universal.ai_lean_to_english" {code_block=false}
+
+@import "typicalSigma11_isSigma11.ai_lean_to_english" {code_block=false}
+
+@import "typicalSigma11_universal.ai_lean_to_english" {code_block=false}
+
+@import "zero_not_mem_succSet_top.ai_lean_to_english" {code_block=false}
+
+@import "fcapGdeltaPack_eq.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Subsets_and_their_classification.ai_english_concordance" {code_block=false}

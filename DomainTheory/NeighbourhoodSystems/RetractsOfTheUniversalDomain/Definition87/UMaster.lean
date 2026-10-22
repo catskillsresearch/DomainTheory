@@ -1,6 +1,3 @@
-/-ai
-The master neighbourhood of the universal system is the half-open unit interval of rationals.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

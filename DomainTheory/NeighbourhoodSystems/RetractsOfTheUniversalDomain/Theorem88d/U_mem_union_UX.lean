@@ -1,8 +1,3 @@
-/-ai
-The union of two universal neighbourhoods belongs to the universal system.
-
-Each code presents a nonempty set of intervals contained in the master. The concatenation of the two decoded canonical lists presents the union. Nonemptiness of the first neighbourhood remains inside the union, and both neighbourhoods sit inside the master, so their union does.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

@@ -1,6 +1,3 @@
-/-ai
-sumTok is the concrete sum system of Exercise 6.19 over binary words. A neighbourhood is the master, consisting of the empty word together with the false-tagged master of the first system and the true-tagged master of the second, or a false-tagged copy of a neighbourhood of the first system, or a true-tagged copy of a neighbourhood of the second. The standing hypothesis that every neighbourhood is nonempty keeps the two tagged copies disjoint, and the system is closed under consistent intersection by comparing these three kinds of neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

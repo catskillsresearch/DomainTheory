@@ -1,8 +1,3 @@
-/-ai
-Tail sends the total element of σ to the total tail value of σ.
-
-This is the total clause of the head-test construction of tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

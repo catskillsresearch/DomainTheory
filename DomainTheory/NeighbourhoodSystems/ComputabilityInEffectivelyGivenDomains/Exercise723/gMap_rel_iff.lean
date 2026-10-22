@@ -1,8 +1,3 @@
-/-ai
-On neighbourhood indices, gMap relates the product of nbhd n and nbhd m to nbhd k if and only if the complement of nbhd k is contained in Fun of the complements of nbhd n and nbhd m.
-
-From a related triple, injectivity of product neighbourhoods recovers the factors, and the relation is the Fun inclusion. Conversely, the three neighbourhoods themselves witness the relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

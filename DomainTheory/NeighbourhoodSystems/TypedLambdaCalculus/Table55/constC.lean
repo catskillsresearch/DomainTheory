@@ -1,6 +1,3 @@
-/-ai
-The constant combinator of Table 5.5 (Scott 1981, PRG-19) is the approximable map sending an element k of the codomain to the constant map with value k, realized as the curry of the first projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

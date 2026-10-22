@@ -1,8 +1,3 @@
-/-ai
-On self-maps of the universal domain, the exponential agrees with the lambda combinator.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810

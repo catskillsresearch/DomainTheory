@@ -1,8 +1,3 @@
-/-ai
-The composite of the second projection with the pairing of approximable maps f and g equals g. Scott writes this as snd composed with the pair of f and g equals g.
-
-Extensionality of approximable maps reduces the equation to a relation in both directions. If a product set u witnesses the composite, then g relates the source to the second projection of u and the second projection entails the target from that projection, so monotonicity of g, using proposition 2.3(iii) on the domain of the relation, yields the relation for g. Conversely, if g relates s to w, the right lift of w is a witness. Its second projection equals w, so the relation for g is unchanged, and f relates s to the first projection because monotonicity from the empty relation produces a relation to the empty set and the left-handed bottom-subset lemma enlarges the target to that projection. The lift is product-consistent because the codomain of g is consistent, and proposition 2.3(iii) in B supplies the entailment required by the second projection.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

@@ -1,8 +1,3 @@
-/-ai
-The intersection combinator is combinatory.
-
-The graph of the intersection step equals the interpretation of the closed term interStepTerm, so the closed case of theorem 2.4 makes that graph combinatory. Application of the combinatory fixed-point combinator Y preserves combinatory elements. Theorem 2.5, using Scott continuity of the intersection step, rewrites that application as the intersection combinator.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

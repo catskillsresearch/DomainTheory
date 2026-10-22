@@ -1,8 +1,3 @@
-/-ai
-Zero lies in the carved-out set.
-
-For an arbitrary set closed under the generating operator, the closure hypothesis applied to the zero clause places zero in the set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

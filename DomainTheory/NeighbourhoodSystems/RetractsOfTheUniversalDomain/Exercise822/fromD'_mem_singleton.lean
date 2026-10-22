@@ -1,8 +1,3 @@
-/-ai
-The singleton of a string lies in the inverse image of an element of D' if and only if the cone of that string's completed encoding lies in the element.
-
-A cone clause would make a cone equal a singleton. A singleton clause has the same string because the string belongs to that singleton. In the other direction, membership of the completed cone is the singleton clause.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

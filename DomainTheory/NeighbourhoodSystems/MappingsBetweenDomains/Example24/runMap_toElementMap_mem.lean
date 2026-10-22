@@ -1,8 +1,3 @@
-/-ai
-A set belongs to the elementwise value of the run map at an element exactly when the set is a neighbourhood and some cone belonging to the element has its output cone contained in the set.
-
-Elementwise membership is a neighbourhood of the element related by the map. Every such neighbourhood is a cone, and the relation on a cone is the stated condition. Conversely that cone is a witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

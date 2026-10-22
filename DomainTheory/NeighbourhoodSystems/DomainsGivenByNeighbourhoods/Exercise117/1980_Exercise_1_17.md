@@ -1,15 +1,67 @@
 # Exercise 1.17
 
-**EXERCISE 1.17.** Let $\Delta = \mathbf{R}$ be the real line. Let $\mathcal{D}$ be the set of non-empty open intervals with rational end points plus the set $\Delta$. Show that this is a neighbourhood system. For any real $t \in \mathbf{R}$, show that $\{ X \in \mathcal{D} \mid t \in X \}$ is a filter. Is it always total? What are the total elements of $|\mathcal{D}|$? (Hint: When $t$ is rational consider all intervals with $t$ as a right-hand end point.)
+## Human-English
 
-**Lean 4**
+@import "1980_Exercise_1_17.english" {code_block=false}
 
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem.lean](ratIntervalMem.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/inter_mem'.lean](inter_mem'.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem_nonempty.lean](ratIntervalMem_nonempty.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem.lean](ratIntervalSystem.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem_mem.lean](ratIntervalSystem_mem.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt.lean](filterAt.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt_injective.lean](filterAt_injective.lean)
-- [NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117.lean](../Exercise117.lean)
+## AI: Human-English to AI-Lean
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem.lean**
+
+@import "ratIntervalMem.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/inter_mem'.lean**
+
+@import "inter_mem'.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalMem_nonempty.lean**
+
+@import "ratIntervalMem_nonempty.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem.lean**
+
+@import "ratIntervalSystem.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/ratIntervalSystem_mem.lean**
+
+@import "ratIntervalSystem_mem.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt.lean**
+
+@import "filterAt.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117/filterAt_injective.lean**
+
+@import "filterAt_injective.lean"
+
+**NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise117.lean**
+
+@import "../Exercise117.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "ratIntervalMem.ai_lean_to_english" {code_block=false}
+
+@import "inter_mem'.ai_lean_to_english" {code_block=false}
+
+@import "ratIntervalMem_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "ratIntervalSystem.ai_lean_to_english" {code_block=false}
+
+@import "ratIntervalSystem_mem.ai_lean_to_english" {code_block=false}
+
+@import "filterAt.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "filterAt_injective.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise117.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_1_17.ai_english_concordance" {code_block=false}

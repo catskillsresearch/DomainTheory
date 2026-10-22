@@ -1,6 +1,3 @@
-/-ai
-The minimum code selects, according to the comparison code, the first component of its argument or the second.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

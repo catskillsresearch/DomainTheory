@@ -1,6 +1,3 @@
-/-ai
-The difference index of two codes is the code-level difference of their canonical codes.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812e

@@ -1,8 +1,3 @@
-/-ai
-Inserting the bottom token into a finite set of tree tokens leaves the atom projection unchanged.
-
-By extensionality and the membership characterization, an atom token in the inserted set is either the bottom, which is impossible, or an atom token of the original set, and an atom token of the original set remains after insertion.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

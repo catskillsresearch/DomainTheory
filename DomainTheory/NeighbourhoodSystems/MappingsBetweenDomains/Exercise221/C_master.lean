@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the system C is the set of all finite binary strings.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

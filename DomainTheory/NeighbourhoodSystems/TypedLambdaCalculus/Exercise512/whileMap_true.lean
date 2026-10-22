@@ -1,8 +1,3 @@
-/-ai
-If the test holds at x, so that p(x) is true, then the while-loop at x equals the loop at f(x).
-
-Rewrite the loop by its recursion equation, substitute the hypothesis that the test is true, and apply the conditional law for true.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

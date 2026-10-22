@@ -1,8 +1,3 @@
-/-ai
-The first projection of the product is a computable map.
-
-Inclusion in the first presentation is recursively decidable. Reindex it so that the domain index is the first factor of the product code. That predicate matches the projection relation, because the left preimage of a product neighbourhood is the first factor: one direction reads the inclusion, and the other restores product membership together with the codomain neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition72

@@ -1,6 +1,3 @@
-/-ai
-The pointwise supremum of a set of Scott maps from D to D' is the Scott map sending each element to the supremum of the values of the members at that element. Its continuity is the continuity of that pointwise-supremum function.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

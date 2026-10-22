@@ -1,8 +1,3 @@
-/-ai
-The K combinator equals the graph of its own application.
-
-Extensionality of graphs, rewritten by the application equation for K.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

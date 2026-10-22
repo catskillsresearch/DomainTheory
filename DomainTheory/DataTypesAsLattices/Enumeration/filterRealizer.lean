@@ -1,6 +1,3 @@
-/-ai
-The filter realizer is an element of Pω chosen, by the realization of the primitive recursive function filterNum, as a realizer of that function.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

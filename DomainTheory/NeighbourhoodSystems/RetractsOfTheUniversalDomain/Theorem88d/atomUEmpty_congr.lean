@@ -1,8 +1,3 @@
-/-ai
-Bit-sources that agree on every bit below depth n have the same emptiness flag at that depth.
-
-State congruence gives equal positive and negative codes, and the flag is the decider on that pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

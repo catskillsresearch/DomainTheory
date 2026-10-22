@@ -1,8 +1,3 @@
-/-ai
-The canonical code is primitive recursive.
-
-Selection on the zero test of the canonical list code, between the constant master-pair singleton and the canonical list code, equals the canonical code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

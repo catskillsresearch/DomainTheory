@@ -1,6 +1,3 @@
-/-ai
-The left projection is the approximable map from the sum to the first neighbourhood system that relates a sum neighbourhood W to a neighbourhood X when the left content of W is contained in X. The sum master is related to the first master because the left content of the sum master is the first master. Intersection on the right uses that the left content of a sum neighbourhood is a neighbourhood, and monotonicity uses that the left content preserves inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

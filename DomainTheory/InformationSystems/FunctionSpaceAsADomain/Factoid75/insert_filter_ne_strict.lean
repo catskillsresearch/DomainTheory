@@ -1,8 +1,3 @@
-/-ai
-If a strict function token p belongs to a finite set t, then inserting p into the set of members of t other than p recovers t.
-
-A token of the insertion is either p, which belongs to t, or a filtered member of t. A token of t is p, hence the inserted token, or is distinct from p and therefore belongs to the filter.
-ai-/
 module
 
 public import Mathlib.Data.Multiset.MapFold

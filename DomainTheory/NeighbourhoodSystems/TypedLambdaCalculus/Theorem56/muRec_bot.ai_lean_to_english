@@ -1,0 +1,3 @@
+If f at the numerals n and m is bottom, the binary search at that pair is bottom.
+
+Unfold the defining recursion, substitute the hypothesis, and use that the zero test of bottom is the bottom of the truth domain, that this equals Example23.botElt, and that the conditional on that bottom is bottom.

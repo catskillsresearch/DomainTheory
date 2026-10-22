@@ -1,0 +1,3 @@
+The witness used by computational unpairing is primitive recursive.
+
+It agrees with the primitive recursion that starts at 0 and, given the argument k and the previous pair, keeps the previous second component when k is strictly below the triangular number of one more than the previous first component, and otherwise returns one more than that first component. The comparison is primitive recursive because the triangular-number function is primitive recursive.

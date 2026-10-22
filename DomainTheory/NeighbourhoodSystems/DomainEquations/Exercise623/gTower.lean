@@ -1,6 +1,3 @@
-/-ai
-The tower of a grammar expression is the sequence of neighbourhood systems whose zero level is the one-point generator and whose successor level is the expression applied to the previous level.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

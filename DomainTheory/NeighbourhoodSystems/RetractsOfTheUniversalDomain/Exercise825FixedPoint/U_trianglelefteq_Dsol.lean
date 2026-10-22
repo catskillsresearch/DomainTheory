@@ -1,8 +1,3 @@
-/-ai
-The universal domain is a subdomain of the solution domain, so the solution contains a copy of the universal domain.
-
-The universal domain is a subdomain of its infinite power. That power is a subdomain of the fixed neighbourhood of the combinator, witnessed by the identity subsystem and the reverse of their isomorphism. That fixed neighbourhood is a subdomain of the function space from the solution into it, by the constant-function embedding. That function space is a subdomain of the solution, witnessed by the identity subsystem and the reverse of the solution isomorphism. Transitivity of the subdomain relation chains the four embeddings.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

@@ -1,6 +1,3 @@
-/-ai
-extendTruePair extends a finite sequence of Boolean pairs to a sequence on all natural numbers by padding each component separately, filling every index at or beyond the finite length with the true bit.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

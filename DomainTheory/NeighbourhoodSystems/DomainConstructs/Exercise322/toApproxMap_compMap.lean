@@ -1,8 +1,3 @@
-/-ai
-The value of the composition map at a pair of elements, read back as an approximable map, is the composition of the two approximable maps.
-
-The two maps agree on elements by the elementwise computation of the composition and the element map of a composite.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

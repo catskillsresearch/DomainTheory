@@ -1,6 +1,3 @@
-/-ai
-The topology induced on the space of continuous maps from X to Y is the topology induced by viewing each continuous map as an ordinary function and taking the product topology on the space of all functions from X to Y.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

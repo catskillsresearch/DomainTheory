@@ -1,8 +1,3 @@
-/-ai
-If one string is a prefix of another, the element selected by scanning the shorter string lies below the element selected by scanning the longer string.
-
-Write the longer string as the shorter one followed by a tail. If the shorter scan is none, its value is bottom, which lies below every element. If the shorter scan is a boolean, appending the tail leaves the scan unchanged, so the values agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

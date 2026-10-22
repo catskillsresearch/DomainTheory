@@ -1,6 +1,3 @@
-/-ai
-An endofunctor on domains is monotone on domains when every subsystem relation carries pointwise monotonicity data for the images and their projection pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition68

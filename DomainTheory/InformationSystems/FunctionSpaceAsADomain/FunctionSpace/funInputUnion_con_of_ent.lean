@@ -1,8 +1,3 @@
-/-ai
-If every input of a finite set of function-space tokens is entailed by a consistent set u', then the input union of that set is consistent.
-
-The entailment of the input union by u' makes the union of u' with that input union consistent, and consistency passes to the right-hand summand.
-ai-/
 
 module
 

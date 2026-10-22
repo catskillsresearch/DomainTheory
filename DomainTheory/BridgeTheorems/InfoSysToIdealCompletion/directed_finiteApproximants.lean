@@ -1,8 +1,3 @@
-/-ai
-The finite approximants of an element x, viewed as finite elements, are directed.
-
-Two finite approximants are closures of consistent finite sets of tokens of x. Directedness of closures supplies a consistent finite set of tokens of x whose closure lies above both closures, and that closure is a finite approximant above both.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

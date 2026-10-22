@@ -1,8 +1,3 @@
-/-ai
-If a list is a strict prefix of a longer list, then some one-element extension of the shorter list is still a prefix of the longer list.
-
-Write the longer list as the shorter list followed by a remainder. The length hypothesis makes the remainder nonempty, and the head of that remainder is the required element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

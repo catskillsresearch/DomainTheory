@@ -1,8 +1,3 @@
-/-ai
-For Scott maps f and g, f lies below g if and only if f x lies below g x at every argument x.
-
-The equivalence is the definition of the order on Scott maps.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

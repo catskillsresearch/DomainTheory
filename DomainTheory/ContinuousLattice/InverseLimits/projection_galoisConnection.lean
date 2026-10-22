@@ -1,8 +1,3 @@
-/-ai
-The inclusion and retraction of a continuous-lattice projection form a Galois connection: the inclusion of x lies below y if and only if x lies below the retraction of y. The retraction is the upper adjoint, so it preserves arbitrary infima.
-
-If the inclusion of x lies below y, monotonicity of the retraction and the identity given by a retraction after an inclusion put x below the retraction of y. If x lies below the retraction of y, monotonicity of the inclusion and the inequality given by an inclusion after a retraction put the inclusion of x below y.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

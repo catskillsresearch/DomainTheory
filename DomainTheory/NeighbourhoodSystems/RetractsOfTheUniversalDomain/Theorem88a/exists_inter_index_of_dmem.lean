@@ -1,8 +1,3 @@
-/-ai
-If the intersection of e i and e j belongs to D, then some index m satisfies both e i ∩ e j = e m and Yidx e i ∩ Yidx e j = Yidx e m.
-
-The covering names such an m on the D side. The index-set form of that equation, rewritten by the intersection rule for index sets, transfers across the splitting to the same equation for the Yidx neighbourhoods. Every index set is contained in the universe, so the side conditions of the transfer hold.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88.Basic

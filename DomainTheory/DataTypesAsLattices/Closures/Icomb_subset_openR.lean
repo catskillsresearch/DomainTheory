@@ -1,8 +1,3 @@
-/-ai
-The identity combinator is contained in the open-set retract.
-
-Containment of the identity in a graph is equivalent to expansiveness on finite sets. The application formula for the open-set retract rewrites the body at en as the retract applied to en, and that retract is expansive.
-ai-/
 
 module
 

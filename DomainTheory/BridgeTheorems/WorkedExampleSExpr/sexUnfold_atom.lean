@@ -1,8 +1,3 @@
-/-ai
-Unfolding the atom token for a natural number n yields the left sum token n in the sum-of-product carrier of Factoid 8.1.
-
-This is the unfolding of atom tokens, applied to the lower-bound system.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

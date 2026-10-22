@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood system of the image of the colimit under a rooted grammar expression equals the neighbourhood system of the colimit. Continuity on domains along the directed tower turns the image of the union of the levels into the union of the successor levels, which has the same neighbourhoods as the full union because the zero level is absorbed by the chain step. Both masters are the fixed-point token set.
-
-The levels form a nonempty directed family of subsystems of the colimit, directed by passage to the maximum index, and colimit membership is membership in some level. Extensionality of neighbourhood systems reduces the claim to membership and masters. Continuity identifies a neighbourhood of the image with a neighbourhood of the image of some level, hence with a neighbourhood of the next level. Conversely, the chain step carries a neighbourhood of level n into the image of that level. The masters agree because the image of the zero level is the first level, the subsystem law equates its master with the master of the image of the colimit, and every level has master the fixed-point set, which is the master of the colimit.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

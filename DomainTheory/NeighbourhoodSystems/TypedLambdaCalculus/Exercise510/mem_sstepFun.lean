@@ -1,8 +1,3 @@
-/-ai
-A strict map belongs to the step-function set of a list of pairs exactly when its underlying map relates the first component of every pair in the list to the second component.
-
-The two sides agree by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

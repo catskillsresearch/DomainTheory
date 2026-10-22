@@ -1,0 +1,3 @@
+If every component of Y belongs to MemA, then toAA z contains the right injection of the proper product of Y if and only if z contains the true-tagged tuple of Y.
+
+In the forward direction the membership clause is the master, a left injection, or a right injection. The master clause contradicts the basepoint not lying in a right injection. The left clause takes a nonempty witness from apowNe and produces a left-injection token, which cannot lie in a right injection. The right clause uses injectivity of the right injection and of proper products. The reverse direction is the right disjunct.

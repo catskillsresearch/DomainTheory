@@ -1,8 +1,3 @@
-/-ai
-If the output neighbourhood is the master, the step neighbourhood is the whole function space.
-
-A map lies in the step when it relates the input to the master. Every approximable map relates the master to the master, and monotonicity along the inclusion of the input in the master gives the relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,8 +1,3 @@
-/-ai
-For each stage and each value, the iterator is Scott continuous in the function argument.
-
-Induct on the stage. Stage zero is the constant function with the given value. A successor is binary continuous substitution of application, combining the identity in the function argument with the inductive map.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

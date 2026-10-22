@@ -1,8 +1,3 @@
-/-ai
-If A is contained in M, then A intersected with M minus Z equals A minus Z.
-
-An element of the intersection lies in A and outside Z. An element of the difference lies in A, hence in M, and outside Z.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

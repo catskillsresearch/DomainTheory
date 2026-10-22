@@ -1,8 +1,3 @@
-/-ai
-If two list codes are consistent for the induced enumeration, then the enumerated neighbourhood at their list-code intersection equals the intersection of the two enumerated neighbourhoods.
-
-The second enumerated neighbourhood is the neighbourhood at the fold of its decoded list from the master index, by the code-fold equation. The neighbourhood at the first code-level fold is contained in the master neighbourhood by the master-index specification and containment in the master. The consistency hypothesis, rewritten through that description of the second neighbourhood, is a raw consistency witness for the first fold output against the fold from the master. Rewrite by the intersection equation for the enumeration and by the refolding lemma, then restore the description of the second neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.Basic

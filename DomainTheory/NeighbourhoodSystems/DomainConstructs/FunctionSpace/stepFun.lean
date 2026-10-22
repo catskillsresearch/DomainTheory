@@ -1,6 +1,3 @@
-/-ai
-The step neighborhood of a finite list of input-output pairs is the set of approximable maps that relate every pair in the list.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,8 +1,3 @@
-/-ai
-Any two neighbourhoods of the powerset domain are consistent.
-
-The neighbourhood indexed by the bitwise disjunction of the two indices is contained in their intersection, because that intersection equals this neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

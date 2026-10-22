@@ -1,8 +1,3 @@
-/-ai
-The lower set of a filter in the final-segment system is nonempty.
-
-Apply exists_Ici_of_mem to the whole token set, using that it is a nonempty upper set, and rewrite that set as a principal upper set of some token. The master belongs to the filter, and rewriting the membership by that equality shows that the token lies in the lower set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,8 +1,3 @@
-/-ai
-Consistency at stage n implies consistency at every later stage m.
-
-Induct on the inequality n ≤ m. Equality keeps the given stage. A successor step takes the left alternative of the successor clause.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

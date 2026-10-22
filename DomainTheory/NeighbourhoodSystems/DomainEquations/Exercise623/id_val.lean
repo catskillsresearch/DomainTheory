@@ -1,8 +1,3 @@
-/-ai
-The underlying approximable map of the identity strict morphism on a neighbourhood system is the identity map.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

@@ -1,8 +1,3 @@
-/-ai
-If two lists are sublists of js, the intersection along their combination inside js equals the intersection of the two separate intersections along those sublists, all taken from the master neighbourhood.
-
-Extensionality reduces the claim to membership. A point lies in an intersection when it lies in the master and in every selected basic neighbourhood. Membership in the combination is membership in js together with membership in one of the two sublists, so the combined condition splits into the two separate conditions and reassembles from them.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

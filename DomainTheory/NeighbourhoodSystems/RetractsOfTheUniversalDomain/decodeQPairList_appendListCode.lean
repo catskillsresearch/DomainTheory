@@ -1,8 +1,3 @@
-/-ai
-Decoding the concatenation of two list codes yields the concatenation of the two decoded lists of quoted pairs.
-
-Unfold the decoder and rewrite by the equation for appending list codes and by preservation of concatenation under mapping.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

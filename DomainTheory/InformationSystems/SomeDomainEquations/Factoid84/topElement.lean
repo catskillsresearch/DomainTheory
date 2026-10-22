@@ -1,6 +1,3 @@
-/-ai
-The top element of the powerset system P is the top element obtained from the fact that every finite set of tokens of P is consistent. Its carrier contains every token.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

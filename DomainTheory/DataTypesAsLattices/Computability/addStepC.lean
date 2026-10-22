@@ -1,6 +1,3 @@
-/-ai
-The successor step used by the addition combinator is K applied to the successor combinator.
-ai-/
 module
 
 public import Mathlib.Computability.RE

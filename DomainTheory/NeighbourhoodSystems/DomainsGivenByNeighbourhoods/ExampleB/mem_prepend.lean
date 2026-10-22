@@ -1,8 +1,3 @@
-/-ai
-A string lies in the prepend of a prefix to a set if and only if it is that prefix concatenated with a member of the set.
-
-The two sides are definitionally the same.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

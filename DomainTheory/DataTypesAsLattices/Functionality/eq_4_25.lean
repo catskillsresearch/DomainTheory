@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (4.25). If a, b, and c are retracts, then currying composed with the arrow from the tensor of a and b to c is typed as an arrow from that arrow into the arrow from a to the arrow from b to c.
-
-Typedness unfolds to the arrow equation, which rewrites by the arrow rule. The arrow of the tensor is a retract. Graph extensionality at u, composition, and the retract equation of that arrow reduce the claim to an equality of two graphs. The left graph rewrites by the currying application rule, two graph extensionalities, the arrow rule, composition, the tensor rule, and both pair projections. The right graph rewrites by the arrow rule and the left-hand identity, then graph extensionality at x. A beta step, from constancy of graphs built by Theorem 1.3 and left continuity of the pair sequence, the retract equation of a, and the arrow rule, is followed by graph extensionality at y. A further beta step, from Theorem 1.3 and right continuity of the pair sequence, together with the retract equations of b and c, matches the two graphs.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

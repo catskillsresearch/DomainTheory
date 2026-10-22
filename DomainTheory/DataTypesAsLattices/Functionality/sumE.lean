@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (7.8). The sum of restricted equivalences A and B relates u and v when both are pairs with tag the numeral 0 and their payloads are related by A, or both are pairs with tag the numeral 1 and their payloads are related by B. Symmetry exchanges the two sides inside the matching disjunct. Transitivity stays inside one tag and applies transitivity of A or of B; a change of tag on the middle element is impossible because the two pair tags differ.
-ai-/
 
 module
 

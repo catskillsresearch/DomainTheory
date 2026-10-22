@@ -1,6 +1,3 @@
-/-ai
-The embedding of a binary word is the domain element whose neighbourhoods are the members of Scott's family that contain the word. The set of all words is such a neighbourhood. The intersection of two such neighbourhoods still contains the word, so it is nonempty and lies in the family. A larger member of the family that contains the word is again such a neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

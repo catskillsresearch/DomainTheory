@@ -1,8 +1,3 @@
-/-ai
-Inserting an atom token into a finite set of raw lambda tokens leaves the function set unchanged.
-
-By extensionality and the membership rule for the function set, membership in the insertion is the inserted token or membership in the original set. The inserted atom is not a function token, so membership is membership in the original function set, and every original pair embeds into the insertion.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

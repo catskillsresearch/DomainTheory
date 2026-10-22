@@ -1,8 +1,3 @@
-/-ai
-The image of an element under the left injection of a sum always meets the left copy.
-
-The master neighbourhood of the left system is a neighbourhood, the element meets it, and the relation of the left injection holds because the master is carried to the left copy of the master, which contains itself.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition89

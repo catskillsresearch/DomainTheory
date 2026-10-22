@@ -1,8 +1,3 @@
-/-ai
-If the done flag is zero and the first component of the numeral decoding is zero, the transition pairs the second component with the flag one, the reversed accumulator, and that second component.
-
-Unfold the transition. The outer selection on the zero flag and the zero hypothesis leave the inner selection. The zero test of zero is one, so the inner selection is the halt branch.
-ai-/
 
 module
 

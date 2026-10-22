@@ -1,6 +1,3 @@
-/-ai
-One step of the triviality fold returns 0 when the running flag is off, and otherwise returns the bit that the equality characteristic assigns to the current entry's output index paired with the master index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

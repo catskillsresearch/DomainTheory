@@ -1,6 +1,3 @@
-/-ai
-The minimization from N to N sends an element m to the binary search at the pair of the zero seed and m. It is the search composed with the pairing of the constant lift of zero and the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

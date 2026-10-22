@@ -1,8 +1,3 @@
-/-ai
-If the three-point domain is a retract of E and the function space from E to E is a retract of E, then the sum of E with itself is a retract of E.
-
-The product of E with itself is already a retract of E. Chain the retract of the sum into the product of the three-point domain with that product, the left functoriality that replaces the three-point domain by E, the right functoriality that replaces the inner product by E, and the retract of the product into E.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

@@ -1,6 +1,3 @@
-/-ai
-The filter of a strict map is the element of the strict function space consisting of the neighbourhoods that contain the map. A member is a neighbourhood, the master contains the map, the intersection of two members is a neighbourhood because the map witnesses that the intersection is nonempty, and a larger neighbourhood of a member still contains the map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

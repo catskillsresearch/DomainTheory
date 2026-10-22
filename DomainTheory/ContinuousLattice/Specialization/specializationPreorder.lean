@@ -1,6 +1,3 @@
-/-ai
-Scott's specialization relation is a preorder. It is reflexive because a point of an open set remains in that set, and it is transitive because the intermediate point carries membership from the first open-set hypothesis to the second.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

@@ -1,8 +1,3 @@
-/-ai
-A set Z belongs to the juxtaposition of the total finite sequence σ with an element y if and only if Z is a neighbourhood of the system C and Z contains the prepend of σ to some neighbourhood of y.
-
-The numbered name example_221 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise221.juxtapose_singleton_mem

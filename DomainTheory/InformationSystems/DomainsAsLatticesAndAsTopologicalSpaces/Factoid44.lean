@@ -1,8 +1,3 @@
-/-ai
-For a nonempty directed family of elements, the carrier of the directed supremum equals the union of the carriers.
-
-The numbered name theorem_44 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.directedSup_carrier_eq_union

@@ -1,8 +1,3 @@
-/-ai
-The activity characteristic of a coded index equals 1 if and only if the index is active.
-
-Unfold both sides. If the fuel-bounded decode fails, both sides fail. If it recovers an expression, soundness identifies the stored code with the Gödel code of that expression, the recovered depth is at most the fuel, and the nonemptiness characteristic equals 1 exactly when the boolean nonemptiness decision holds.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

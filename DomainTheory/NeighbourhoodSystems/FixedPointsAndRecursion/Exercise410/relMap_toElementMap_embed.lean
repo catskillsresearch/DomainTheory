@@ -1,8 +1,3 @@
-/-ai
-Embedding the image of a relativized filter under the restriction of f equals the image under f of the embedding of that filter.
-
-Extensionality compares membership of a neighbourhood X. In one direction, membership in the embedded image supplies a neighbourhood of the filter related by f to a set contained in X; that neighbourhood belongs to the embedding, and monotonicity of the relation of f puts X in the image of the embedding. In the other direction, membership in the image of the embedding supplies a neighbourhood of the embedding related by f to X, and its witness yields a relation from a neighbourhood of the filter to X. The same comparison of the principal element with a used for the codomain of the restriction shows that X belongs to a, so X belongs to the embedded image of the restricted map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

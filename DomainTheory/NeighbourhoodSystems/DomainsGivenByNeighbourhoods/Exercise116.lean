@@ -1,8 +1,3 @@
-/-ai
-The filter of excluded points equal to the whole set of natural numbers is a total element of the cofinite system.
-
-The numbered name example_116 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise116.ofExcluded_univ_isTotal

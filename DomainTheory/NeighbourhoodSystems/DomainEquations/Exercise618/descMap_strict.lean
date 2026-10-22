@@ -1,8 +1,3 @@
-/-ai
-If a structure map is strict, then its descent map is strict.
-
-Strictness is agreement on the bottom element. A neighbourhood of the image of the bottom belongs to some stage of the descent sequence at the bottom, and that stage is strict, so the neighbourhood is the master of the target. Conversely, the zeroth stage is strict, so the master of the target belongs to the image of the bottom at that stage.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

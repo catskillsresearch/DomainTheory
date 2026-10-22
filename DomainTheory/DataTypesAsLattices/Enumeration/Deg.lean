@@ -1,6 +1,3 @@
-/-ai
-The enumeration degree of an element a of Pω, in the sense of Scott 1976, is the set of elements u such that u is the application of some combinatory element to a.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

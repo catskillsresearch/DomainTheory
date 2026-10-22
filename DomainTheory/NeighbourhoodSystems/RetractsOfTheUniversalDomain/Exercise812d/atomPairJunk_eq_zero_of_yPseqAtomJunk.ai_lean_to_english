@@ -1,0 +1,3 @@
+If a half-step atom at either Boolean choice is non-junk, then the underlying atom-pair junk flag at that depth and bit-source is 0.
+
+The half-step junk flag is the junk flag of a Y sub-step whose input is an X sub-step on the packed atom-pair indices, with outer bit 1. That flag being 0 forces the X sub-step's junk flag to be 0, and the junk equation of the X sub-step then forces the packed atom-pair flag to be 0.

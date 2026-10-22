@@ -1,6 +1,3 @@
-/-ai
-The first argument is the approximable map that selects the argument pair and then takes its first factor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

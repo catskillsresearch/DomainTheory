@@ -1,6 +1,3 @@
-/-ai
-A neighbourhood system is complete when every filter is fixed by a unique token, in the sense that a neighbourhood belongs to the filter if and only if the token lies in the neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110

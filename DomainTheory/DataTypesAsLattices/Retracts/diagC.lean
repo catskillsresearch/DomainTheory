@@ -1,6 +1,3 @@
-/-ai
-The diagonal combinator is the graph of the map sending an element to the sequential pair of that element with itself. Scott records it as (4.16).
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

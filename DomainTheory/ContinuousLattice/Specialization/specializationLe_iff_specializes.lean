@@ -1,8 +1,3 @@
-/-ai
-Scott's specialization order is the reverse of Mathlib's specializes relation.
-
-The two sides are the same condition on membership in open sets, read in opposite directions.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.WayBelow

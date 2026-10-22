@@ -1,8 +1,3 @@
-/-ai
-If the guard holds and the sum neighborhood is a left injection of a nonempty set, then the truth neighborhood is the master or zero.
-
-Splitting the guard, the left clause is the claim. A right injection cannot equal that left injection, because a nonempty left copy is not contained in a right copy. The sum master cannot equal it either, because the master contains the empty token and a left injection does not.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

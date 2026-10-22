@@ -1,6 +1,3 @@
-/-ai
-An open term of result type A with one free variable of type X is the variable itself, a closed constant given by an element of some domain, or an application of an open term of arrow type to an open term of the argument type. Its denotation sends the variable to the supplied element, a constant to that constant, and an application to the element map of the denotation of the function at the variable applied to the denotation of the argument.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

@@ -1,6 +1,3 @@
-/-ai
-The n-ary separated product of a head expression and a list of expressions is the right-nested fold of the separated-product constructor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

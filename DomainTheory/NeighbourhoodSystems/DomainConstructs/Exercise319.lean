@@ -1,8 +1,3 @@
-/-ai
-The element map of a product of approximable maps sends a paired element to the pair of the images of the two factors. The element map of a product of approximable maps sends a product element to the pair of the images of its two components.
-
-The numbered name example_319 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise319.toElementMap_prodMap_pair

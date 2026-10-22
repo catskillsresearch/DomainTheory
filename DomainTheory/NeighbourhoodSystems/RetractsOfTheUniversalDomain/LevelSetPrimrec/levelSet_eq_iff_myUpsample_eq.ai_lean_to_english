@@ -1,0 +1,7 @@
+Two level sets are equal if and only if the masks obtained by upsampling each to the
+maximum of the two levels are equal.
+
+If the level sets are equal, injectivity on masks strictly below the corresponding power
+of two, the bound on upsampling, and preservation of the level set under upsampling to
+each side of the maximum give equality of the upsampled masks. Conversely, rewriting
+each level set by that preservation, equal upsampled masks present equal level sets.

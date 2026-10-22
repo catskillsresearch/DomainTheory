@@ -1,8 +1,3 @@
-/-ai
-Every element of the final-segment system approximates the limit element.
-
-A neighbourhood of the element is a neighbourhood of the system, which is membership in the limit.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,19 +1,31 @@
 # Theorem 6.2
 
-**THEOREM 6.2 (The $\mathfrak{F}$ theorem).** *The closed subsets of $\mathbf{P}\omega$ are exactly the sets of the form:*
+## Human-English
 
-$$\{x \mid f(x) = \bot\},$$
+@import "1976_Theorem_6_2.english" {code_block=false}
 
-*where $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is continuous.*
+## AI: Human-English to AI-Lean
 
-Aside from $\{x \mid x = \bot\}$, we could have used $\{x \mid x \subseteq a\}$ as the typical closed set where $a \in \mathbf{P}\omega$ is any element whatsoever aside from $\top$. This $\top$ has, by the way, a special character. We note:
+**DataTypesAsLattices/Classification/theorem_6_2.lean**
 
-$$\{\top\} = \bigcap \{\{x \mid n \in x\} \mid n \in \omega\}.$$
+@import "theorem_6_2.lean"
 
-Thus $\{\top\}$ is a countable intersection of open sets, otherwise called a $\mathfrak{G}_\delta$-set. There are of course many other $\mathfrak{G}_\delta$-sets, but $\{\top\}$ is the typical one:
+**DataTypesAsLattices/Classification/typicalF_mem_ScottF.lean**
 
-**Lean 4**
+@import "typicalF_mem_ScottF.lean"
 
-- [DataTypesAsLattices/Classification/theorem_6_2.lean](theorem_6_2.lean)
-- [DataTypesAsLattices/Classification/typicalF_mem_ScottF.lean](typicalF_mem_ScottF.lean)
-- [DataTypesAsLattices/Classification/typicalF_universal.lean](typicalF_universal.lean)
+**DataTypesAsLattices/Classification/typicalF_universal.lean**
+
+@import "typicalF_universal.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_6_2.ai_lean_to_english" {code_block=false}
+
+@import "typicalF_mem_ScottF.ai_lean_to_english" {code_block=false}
+
+@import "typicalF_universal.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_6_2.ai_english_concordance" {code_block=false}

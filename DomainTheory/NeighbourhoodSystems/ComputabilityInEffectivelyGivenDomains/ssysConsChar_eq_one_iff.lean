@@ -1,8 +1,3 @@
-/-ai
-The consistency characteristic of a paired index equals 1 if and only if the consistency decision on its two components is true.
-
-Unfold the characteristic and apply the criterion that a boolean-to-natural encoding equals 1.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,0 +1,3 @@
+The element fromCC s contains the singleton of the empty string if and only if s contains the unit neighbourhood of the sum.
+
+Membership under fromCC is the whole token set, the empty-string singleton, or a prefixed copy. The singleton of the empty string is neither the whole token set nor a prefixed copy, so only the unit clause remains. Conversely, that clause records the membership.

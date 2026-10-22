@@ -1,8 +1,3 @@
-/-ai
-For a nonempty set of fixed points of a monotone endomap, the image of the infimum lies below the infimum. The optimal fixed point of a nonempty set of fixed points is consistent with every member of the set: the two elements have a common upper bound. The optimal fixed point of a nonempty set of fixed points lies below every member of the set.
-
-The numbered name example_416 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise416.f_sInf_le

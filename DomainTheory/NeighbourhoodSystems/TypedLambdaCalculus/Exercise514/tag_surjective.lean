@@ -1,8 +1,3 @@
-/-ai
-The tag is surjective: every natural number is the tag of some finite list and some output.
-
-The argument is strong induction on the number. The inverse of the pairing writes it as a pair (a, b). If a is zero, the empty list with output b is a decoding. If a is a successor k, the strict increase of the pairing puts b below the number, so the inductive hypothesis decodes b, and consing k recovers the original number by the cons equation of the tag.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise513

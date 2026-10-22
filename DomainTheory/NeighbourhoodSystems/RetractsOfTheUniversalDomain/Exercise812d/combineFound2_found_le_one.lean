@@ -1,8 +1,3 @@
-/-ai
-If both input found flags are at most 1, the combined found flag is at most 1.
-
-The combination is unfolded. A zero first flag returns the second flag. A first flag of 1 and a zero second flag return the first flag. Both flags equal to 1 return the pair of 1 with the union index, whose first component is 1.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

@@ -1,6 +1,3 @@
-/-ai
-Scott's consistency remark says that, for an approximable map r on the powerset system P, a finite set u of tokens is consistent when the finite element of 1 is not contained in the image under r of the entailment closure of u.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

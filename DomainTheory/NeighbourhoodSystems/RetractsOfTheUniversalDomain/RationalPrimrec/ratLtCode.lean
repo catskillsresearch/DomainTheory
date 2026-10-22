@@ -1,6 +1,3 @@
-/-ai
-The strict comparison code of a paired pair of rational codes is one minus the comparison code of the pair with its two components exchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

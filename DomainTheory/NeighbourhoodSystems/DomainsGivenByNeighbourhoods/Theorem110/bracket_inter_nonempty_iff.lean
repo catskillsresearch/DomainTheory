@@ -1,8 +1,3 @@
-/-ai
-For neighbourhoods X and Y, the intersection of their brackets is nonempty if and only if some neighbourhood is contained in X ∩ Y.
-
-If an element contains both neighbourhoods, their intersection belongs to the element and is therefore a neighbourhood, and it is contained in itself. Conversely, if a neighbourhood Z is contained in the intersection, the principal filter of Z contains both X and Y, because Z is contained in each of them.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

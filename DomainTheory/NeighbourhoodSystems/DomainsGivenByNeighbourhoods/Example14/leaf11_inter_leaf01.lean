@@ -1,8 +1,3 @@
-/-ai
-The intersection of the leaf 11 and the leaf 01 is empty.
-
-Commute the intersection and apply the identity for the leaf 01 intersected with the leaf 11.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

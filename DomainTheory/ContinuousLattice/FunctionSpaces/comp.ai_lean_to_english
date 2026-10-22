@@ -1,0 +1,5 @@
+The composite of two maps that preserve directed suprema again preserves directed suprema.
+
+A map that preserves directed suprema is monotone, so the image of a nonempty directed set under the inner map is nonempty and directed. Preservation for the inner map rewrites its value at the supremum as the supremum of the image, preservation for the outer map rewrites the outer value as the supremum of the further image, and the image of a composite is the composite of the images.
+
+Composition of Scott maps is this set-theoretic composite. The composite preserves directed suprema by the previous fact together with Proposition 2.5 applied to the continuity of each Scott map, and a map that preserves directed suprema is continuous, so the composite is a Scott map.

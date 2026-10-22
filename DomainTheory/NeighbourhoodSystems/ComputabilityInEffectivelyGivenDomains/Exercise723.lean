@@ -1,8 +1,3 @@
-/-ai
-The graph map is computable from an arbitrary valid function-space presentation of PNpres into PNpres. Its neighbourhood relation reduces to a bounded quantification over the excluded set of the output neighbourhood, which is recursively enumerable.
-
-The numbered name example_723 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise723.graphMap_isComputable

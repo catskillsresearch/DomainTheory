@@ -1,8 +1,3 @@
-/-ai
-The singleton map sends each element x to the singleton of x.
-
-By extensionality, a neighbourhood of the image is a neighbourhood X of x related by the singleton map. That relation is singleton membership for the principal element of X, giving a neighbourhood Y of that principal element together with a power-domain neighbourhood and an inclusion, and upward closure of x puts Y in x. Conversely, a singleton witness Y of x is a neighbourhood of x, and the singleton relation holds because Y lies in the principal filter of Y.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition711

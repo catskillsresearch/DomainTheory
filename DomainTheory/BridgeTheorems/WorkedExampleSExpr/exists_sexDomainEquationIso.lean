@@ -1,8 +1,3 @@
-/-ai
-There is an order isomorphism between the elements of the S-expression system and the elements of its right-hand side.
-
-The domain-equation isomorphism of the worked example is a witness.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

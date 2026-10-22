@@ -1,8 +1,3 @@
-/-ai
-The function sending a pair code to the list-code intersection of its two components is primitive recursive.
-
-This function is the primitive-recursive concatenation of list codes, which is the definition of the intersection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88k.Basic

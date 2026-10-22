@@ -1,8 +1,3 @@
-/-ai
-Consistency of a finite set of lambda tokens passes to every subset.
-
-Raw consistency passes from the forget of the larger set to the forget of the subset. A raw token in that forget comes from a lambda token of the subset, hence of the larger set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

@@ -1,6 +1,3 @@
-/-ai
-The unconsumed remainder of a packed atom state is the left component of the state.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

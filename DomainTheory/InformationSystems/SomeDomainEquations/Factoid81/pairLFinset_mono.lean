@@ -1,8 +1,3 @@
-/-ai
-The left pair projection is monotone with respect to inclusion of finite sets of tree tokens.
-
-A token of the smaller projection is a left-pair token of the smaller set, hence of the larger set by the inclusion, and therefore a token of the larger projection.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

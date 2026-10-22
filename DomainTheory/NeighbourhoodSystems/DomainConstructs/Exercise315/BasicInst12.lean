@@ -1,6 +1,3 @@
-/-ai
-The element type of the terminal domain is unique, with default element the bottom element, because every element equals the bottom element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

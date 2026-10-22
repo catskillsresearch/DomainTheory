@@ -1,6 +1,3 @@
-/-ai
-The morphism action of the endofunctor of a grammar expression sends a strict map to the strict map whose underlying approximable map is the expression applied to the underlying map, with strictness given by preservation of strictness under that action.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

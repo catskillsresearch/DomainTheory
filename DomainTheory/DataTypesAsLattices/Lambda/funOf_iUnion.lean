@@ -1,8 +1,3 @@
-/-ai
-Application of a union of sets to a fixed argument equals the union of the applications.
-
-Extensionality swaps the order of the two indexed unions.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

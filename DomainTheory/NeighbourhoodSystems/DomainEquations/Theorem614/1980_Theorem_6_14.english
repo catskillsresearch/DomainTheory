@@ -1,0 +1,87 @@
+**THEOREM 6.14.** If the functor $T$ is continuous on maps and monotone and continuous on domains, and if there is a set $\Gamma$ such that
+
+$$\{\Gamma\} \triangleleft T(\{\Gamma\}),$$
+
+then there exists an initial $T$-algebra.
+
+**Proof:** We proceed as in the proof of the fixed-point theorem by iterating the functor. The assumption about $\Gamma$ means that, as a neighbourhood system, $T(\{\Gamma\})$ is a system over the same set $\Gamma$. Thus, if we iterate $T$ to form $T^n(\{\Gamma\})$, all these systems are over $\Gamma$ and indeed
+
+$$T^n(\{\Gamma\}) \triangleleft T^{n+1}(\{\Gamma\})$$
+
+for all $n$. We can thus introduce
+
+$$\mathcal{D} = \bigcup_{n=0}^{\infty} T^n(\{\Gamma\}),$$
+
+and it is easy to check that $\mathcal{D}$ is a system over $\Gamma$ and
+
+$$T^n(\{\Gamma\}) \triangleleft \mathcal{D}$$
+
+holds for all $n$. But then we have for all $n$:
+
+$$T^n(\{\Gamma\}) \triangleleft T^{n+1}(\{\Gamma\}) \triangleleft T(\mathcal{D}),$$
+
+which implies $\mathcal{D} \triangleleft T(\mathcal{D})$. But $T$ is continuous on domains, so
+
+$$
+\begin{aligned}
+T(\mathcal{D}) &= T\!\left(\bigcup_{n=0}^{\infty} T^n(\{\Gamma\})\right) \\
+&= \bigcup_{n=0}^{\infty} T^{n+1}(\{\Gamma\}) \\
+&= \mathcal{D}.
+\end{aligned}
+$$
+Thus, not only is $\mathcal{D}$ a $T$-algebra, but the isomorphism we get for $\mathcal{D}$ and $T(\mathcal{D})$ is just the identity mapping. We know by 6.9 that homomorphisms exist; what remains to show is that homomorphism from $\mathcal{D}$ are unique. As in the examples, we will show in effect they are determined uniquely on the finite elements of $\mathcal{D}$.
+
+Since each $T^n(\{\Gamma\}) \triangleleft \mathcal{D}$, there are projection mappings $i_n : T^n(\{\Gamma\}) \to \mathcal{D}$ and $j_n : \mathcal{D} \to T^n(\{\Gamma\})$.
+
+Define $\rho_n : \mathcal{D} \to \mathcal{D}$ by $\rho_n = i_n \circ j_n$. Projection pairs are always pairs of strict mappings (Why?), and so are in the category. By assumption and 6.13, the functor $T$ preserves these maps, so we have
+
+$$
+T(\rho_n) = T(i_n) \circ T(j_n) = i_{n+1} \circ j_{n+1} = \rho_{n+1}.
+$$
+
+As a neighbourhood relation $\rho_n$ can be characterized by :
+
+$$
+X \rho_n Y \quad \text{iff} \quad \exists z \in T^n(\{\Gamma\}).\; X \subseteq z \subseteq Y.
+$$
+
+We thus see that $\rho_n \subseteq \rho_{n+1}$ and
+
+$$
+\bigcup_{n=0}^{\infty} \rho_n = I_{\mathcal{D}}.
+$$
+
+Now suppose $k : T(E) \to E$ is any $T$-algebra and $h : \mathcal{D} \to E$ is a homomorphism. The mapping will satisfy the fixed-point equation
+
+$$
+h = k \circ T(h),
+$$
+
+where no other mappings need be written in because $\mathcal{D} = T(\mathcal{D})$ and so
+
+$$
+T(h) : \mathcal{D} \to T(E).
+$$
+
+We wish to show that $h$ really is the least fixed point of this equation.
+
+Define $h_n = h \circ \rho_n : \mathcal{D} \to E$. For $n = 0$, the map $\rho_0$ is the trivial map where $\rho_0(x) = \bot_{\mathcal{D}}$ for all $x \in |\mathcal{D}|$. But $h$ must be strict, so $h_0(x) = \bot_E$ for all $x \in |\mathcal{D}|$; that is, $h_0$ is the least element of $|\mathcal{D} \to_\bot E|$. Now calculate :
+$$
+\begin{aligned}
+k \circ T(h_n) &= k \circ T(h) \circ T(\rho_n) \\
+&= h \circ \rho_{n+1} \\
+&= h_{n+1} \ .
+\end{aligned}
+$$
+
+This shows that the union of the $h_n$ is the least fixed point of $\lambda h.\, k \circ T(h)$. But
+
+$$
+\begin{aligned}
+\bigcup_{n=0}^{\infty} h_n &= \bigcup_{n=0}^{\infty} h \circ \rho_n \\
+&= h \circ \bigcup_{n=0}^{\infty} \rho_n \\
+&= h \circ I_D = h,
+\end{aligned}
+$$
+
+so the given $h$ is in fact the least fixed point. The homomorphism is uniquely determined, and $D$ is the initial $T$-algebra. $\square$

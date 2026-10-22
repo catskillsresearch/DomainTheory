@@ -1,0 +1,3 @@
+The singleton of a token other than top does not entail top.
+
+Match the token against the derivation. If the token is bottom, it is distinct from a member equal to top, and a both-projections derivation has empty left projection, which does not entail top. The case of the top token contradicts the hypothesis. If the token is a left pair, it is distinct from a member equal to top, and a both-projections derivation has empty right projection, which does not entail top. If the token is a right pair, the left projection of the singleton is empty, and the same emptiness fact applies.

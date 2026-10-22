@@ -1,6 +1,3 @@
-/-ai
-Evaluation at a fixed stack is the approximable map on the function space that applies a function-space element to that stack. It is evaluation composed with the pairing of the identity and the constant map with that stack as its value.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

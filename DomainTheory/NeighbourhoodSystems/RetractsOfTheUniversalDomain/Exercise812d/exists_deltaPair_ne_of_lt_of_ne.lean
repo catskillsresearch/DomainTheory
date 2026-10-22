@@ -1,8 +1,3 @@
-/-ai
-Two distinct bit-sources both strictly less than four to the n disagree under deltaPair at some position below n.
-
-If they agreed at every such position, the agreement theorem for bounded bit-sources would force them to be equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

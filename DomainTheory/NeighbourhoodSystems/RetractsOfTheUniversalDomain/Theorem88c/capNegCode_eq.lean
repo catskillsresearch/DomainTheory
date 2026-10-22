@@ -1,8 +1,3 @@
-/-ai
-The list code of a singleton equals one more than the pair of its entry with zero.
-
-The equality is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

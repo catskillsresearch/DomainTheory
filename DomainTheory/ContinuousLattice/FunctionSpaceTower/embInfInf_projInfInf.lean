@@ -1,8 +1,3 @@
-/-ai
-For every Scott map f from D_∞ to itself, applying the embedding i_∞ to the projection j_∞(f) returns f.
-
-The composite identity i_∞ ∘ j_∞ = id, evaluated at f, is simplified by the formulas for composition and for the identity Scott map.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

@@ -1,8 +1,3 @@
-/-ai
-If X is contained in Δ and X is distinct from Δ, then X ∩ X' is distinct from Δ.
-
-An equality of that intersection with Δ would give Δ ⊆ X by rewriting and intersecting on the left, and antisymmetry with the given inclusion would give X = Δ.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

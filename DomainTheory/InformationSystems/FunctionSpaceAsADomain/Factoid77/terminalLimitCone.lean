@@ -1,6 +1,3 @@
-/-ai
-The limit cone of the empty diagram in the category of information-system objects is the cone on the unit object. The morphism from an object X is the constant approximable map onto the bottom element of the unit system, and every morphism into the unit equals that constant map.
-ai-/
 
 module
 

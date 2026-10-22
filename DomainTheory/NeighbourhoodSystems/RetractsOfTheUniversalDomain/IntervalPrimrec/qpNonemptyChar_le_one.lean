@@ -1,9 +1,3 @@
-/-ai
-The nonempty-presentation flag of a rational-pair list code is at most one.
-
-It is the corresponding bound for the bounded existential characteristic, with the
-unused parameter fixed at zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

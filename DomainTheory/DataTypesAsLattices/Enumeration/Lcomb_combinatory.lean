@@ -1,8 +1,3 @@
-/-ai
-The combinator L is combinatory.
-
-Rewrite L as the interpretation of its term, and apply the theorem that the interpretation of a closed term is combinatory.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

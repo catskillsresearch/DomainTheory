@@ -1,0 +1,13 @@
+This module gathers and re-exports the basic constructions of Scott's function spaces: Scott maps and their composition, order, and complete-lattice structure, constant, identity, step, and lambda maps, the pointwise and induced topologies, currying, retractions and projections, subspace extension, and the fixed-point operator. Locally, Scott's notation [X → Y] is the type of continuous maps with the pointwise product topology, and ScottC is the type of continuous maps between complete lattices with Scott topologies on both sides.
+
+A Scott map is continuous for the Scott topologies on its domain and codomain.
+
+The continuity witness is the second component of the map.
+
+The set of elements way below a given element is directed.
+
+The join of two elements way below it is again way below it, and that join lies above each of them.
+
+The underlying value of the fixed-point map at a Scott endomorphism equals the fixed-point operator applied to that endomorphism.
+
+The equality is definitional.

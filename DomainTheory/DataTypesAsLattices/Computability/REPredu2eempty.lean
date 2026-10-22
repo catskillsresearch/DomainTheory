@@ -1,8 +1,3 @@
-/-ai
-The empty predicate on the natural numbers is recursively enumerable.
-
-Unfold the definition and take the nowhere-defined partial function. Extensionality and the characterization of assertion show that it asserts falsehood.
-ai-/
 module
 
 public import Mathlib.Computability.RE

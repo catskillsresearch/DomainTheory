@@ -1,8 +1,3 @@
-/-ai
-check of x contains {0} if and only if x is not bottom.
-
-By the closed form of check, membership of {0} is either the equality of {0} with {0, 1}, which is impossible, or the statement that x is not bottom. The converse uses that {0} is an O-neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

@@ -1,0 +1,3 @@
+The intervals presented by the list decoded from a canonical list code equal the original presented intervals cut by the half-open unit interval.
+
+Rewrite the cut as the intervals presented by the clipped list filtered to nondegenerate pairs. The two lists have the same members: membership in the decoded canonical list code is being the nondegenerate clip of an original pair, which is membership in that filtered clipped list.

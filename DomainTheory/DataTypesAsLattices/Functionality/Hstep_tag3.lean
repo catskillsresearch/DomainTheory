@@ -1,8 +1,3 @@
-/-ai
-The interpreter step at a tag-three injection of an element equals the predecessor clause at that same tagged expression.
-
-Unfold the step and the expression tag. Definite conditionals at positive numerals take the second branch. Three predecessors of the numeral three are zero, and the conditional at zero selects the predecessor clause.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

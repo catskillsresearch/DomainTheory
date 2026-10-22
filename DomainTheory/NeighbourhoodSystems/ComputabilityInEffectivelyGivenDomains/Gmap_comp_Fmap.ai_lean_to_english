@@ -1,0 +1,3 @@
+The inverse reindexing map composed with the forward reindexing map is the identity on the iterated neighbourhood system.
+
+By extensionality of approximable maps, a composite witness supplies an intermediate neighbourhood whose double fibers sit between the fibers, so after pairing an unpairing the first neighbourhood is contained in the second. Conversely, if the first neighbourhood is contained in the second, its reindexing along pairing is an intermediate neighbourhood: its double fibers recover the fibers, and the inverse inclusions are monotonicity of fibers.

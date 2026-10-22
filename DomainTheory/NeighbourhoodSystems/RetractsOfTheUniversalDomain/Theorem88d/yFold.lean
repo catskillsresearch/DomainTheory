@@ -1,6 +1,3 @@
-/-ai
-The depth-n union fold of length N starts from the accumulator that pairs zero with zero and, at each successive index, applies one fold step to the depth, that index, and the accumulator so far.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

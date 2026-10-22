@@ -1,0 +1,25 @@
+**2.12 Theorem.** The injective spaces are exactly the continuous lattices.
+
+This theorem is an immediate consequence of the preceding results: an injective space is a retract of a power of $\mathbb{O}$. But $\mathbb{O}$ is a finite lattice $(\perp \sqsubseteq \top)$, and so the given space is a continuous lattice under its induced topology. On the other hand a continuous lattice is injective. It remains then to prove 2.9–2.11.
+
+Such $T_0$-spaces are injective and every injective space can be obtained in this way with the lattice structure being uniquely determined by the topology.
+
+The retract approach to injective spaces should also be considered. The Cartesian powers $\mathbb{O}^I$ are very simple spaces; indeed, as lattices these are just the Boolean algebras of *all subsets* of $I$ (that is, isomorphic thereto). The topology has as a basis the classes of sets containing given finite sets (the *weak topology*, cf. Nerode (1959)). A continuous function
+
+$$j : \mathcal{P}I \to \mathcal{P}I$$
+
+is one of "finite character" so that
+
+$$j(X) = \bigcup  j(F) : F \subseteq X $$
+
+where $X \subseteq I$ and $F$ ranges over *finite sets*. Such a function $j$ is a *retraction* iff it is an *idempotent*:
+
+$$j \circ j = j,$$
+
+which means that the range of $j$ is the set of fixed points of $j$. As we have seen
+
+$$D =  X \in \mathcal{P}I : j(X) = X $$
+
+is a continuous lattice (under $\subseteq$ in this case), and *every* continuous lattice is isomorphic to one obtained in this way. This provides a representation theorem of sorts for continuous lattices, but it does not seem to be of too much help in proving theorems.
+
+The idempotent map on a power of $\mathbb{O}$ in this paragraph is `IdemFix`, the fixed-point set used in the proof. A retract of an injective space, in the subspace sense, is [Proposition 1.4](../Injective/1972_Proposition_1_4.md). A retraction and a projection of continuous lattices are [Definition 3.6](../FunctionSpaces/1972_Definition_3_6.md).

@@ -1,6 +1,3 @@
-/-ai
-The order isomorphism between round elements of the way-below information system and those ideals of its finite elements that come from round elements sends a round element to the ideal of its finite elements. The ideal is round because the ideal-completion isomorphism and its inverse return the original element. The inverse sends such an ideal back to the corresponding information-system element. The two composites are the identity, and the order comparison is that of the ideal-completion isomorphism.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

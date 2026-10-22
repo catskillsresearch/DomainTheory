@@ -1,8 +1,3 @@
-/-ai
-An element outside the Tarski fixed set lies in the range of the second injection.
-
-After rewriting by the fixed-point equation, failure to lie in the range would place the element in the complement clause of the operator at the fixed set. The resulting double negation is range membership.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

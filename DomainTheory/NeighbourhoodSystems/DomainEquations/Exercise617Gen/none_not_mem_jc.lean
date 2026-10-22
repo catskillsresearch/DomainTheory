@@ -1,8 +1,3 @@
-/-ai
-The empty token does not lie in a letter-copy.
-
-Membership would display the empty token as a copy token, which simplification rules out.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

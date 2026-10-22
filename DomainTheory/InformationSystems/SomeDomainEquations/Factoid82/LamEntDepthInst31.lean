@@ -1,6 +1,3 @@
-/-ai
-The operation that inserts a raw token by taking the maximum of its depth with an accumulated depth is left commutative, by left commutativity of the maximum on the natural numbers.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

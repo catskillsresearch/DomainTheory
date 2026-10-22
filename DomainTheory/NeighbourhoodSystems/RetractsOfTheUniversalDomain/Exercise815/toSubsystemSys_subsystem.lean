@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood system reconstructed from a filter of the system of finitely generated subsystems is a subsystem of the original system.
-
-The masters agree. A reconstructed neighbourhood is a neighbourhood of the original system because it belongs to a finitely generated family. The intersection of two reconstructed neighbourhoods is again one: concatenate the generating lists, use closure of the filter under intersection, concatenate the selected sublists, and identify the combined intersection with the intersection of the two selected intersections.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

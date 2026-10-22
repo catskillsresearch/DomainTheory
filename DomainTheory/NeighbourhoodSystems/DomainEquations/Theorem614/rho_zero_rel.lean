@@ -1,8 +1,3 @@
-/-ai
-When every neighbourhood of the generating system is its master, the zeroth projection relates a set X to a set Y exactly when X is a neighbourhood of the colimit and Y is the master of the colimit.
-
-By the relational description, an intermediate neighbourhood of the generating system equals the generating master. The second set is a neighbourhood of the colimit, so it is contained in the master, and it contains the generating master, so the two are equal. In the other direction the generating master lies between the first set, which is contained in the master of the colimit, and that master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

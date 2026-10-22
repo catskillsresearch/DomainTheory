@@ -1,8 +1,3 @@
-/-ai
-Theorem 5.1, application case (Scott 1981, PRG-19), states that evaluation composed with the pairing of two approximable maps F and G sends w to the map of F at w applied to the value of G at w.
-
-Rewrite by the composition law, the pairing law, and evaluation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

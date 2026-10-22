@@ -1,8 +1,3 @@
-/-ai
-Projection of a compatible sequence onto a fixed stage preserves directed suprema.
-
-The chosen coordinate of the supremum of a nonempty directed set of compatible sequences equals the supremum of that coordinate on the set.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

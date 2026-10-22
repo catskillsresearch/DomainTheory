@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the function-space results beyond the basic development: the order on approximable maps, the intersection of relevant outputs and the least map, comparison of step neighborhoods, the pointwise order, boundedness and suprema of sets of maps, evaluation, and the curry and uncurry identities.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace.Basic

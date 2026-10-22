@@ -1,8 +1,3 @@
-/-ai
-The powerset domain is effectively given.
-
-The computable presentation of the powerset is a witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

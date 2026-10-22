@@ -1,8 +1,3 @@
-/-ai
-For any domain D, D is a retract of the product of D with itself, and D is a retract of the function space from D to D. Every domain D is a retract of the function space from D to D. Every domain D is a retract of the product of D with itself.
-
-The numbered name example_820 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise820.exercise_8_20

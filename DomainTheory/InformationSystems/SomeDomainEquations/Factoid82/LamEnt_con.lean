@@ -1,8 +1,3 @@
-/-ai
-If a finite set of raw lambda tokens entails a raw token, then the set is consistent.
-
-An entailment is entailment at some stage, and stage entailment yields stage consistency, which is consistency.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

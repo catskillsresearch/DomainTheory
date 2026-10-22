@@ -1,8 +1,3 @@
-/-ai
-The infinite word of a word followed by true equals its square.
-
-This is the square equation for that longer word.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

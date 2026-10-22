@@ -1,8 +1,3 @@
-/-ai
-If D has a computable presentation and every neighbourhood of D is nonempty, then the sharp system is effectively given.
-
-The sharp computable presentation is the witness.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

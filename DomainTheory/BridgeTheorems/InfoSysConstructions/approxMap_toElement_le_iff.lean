@@ -1,8 +1,3 @@
-/-ai
-For approximable maps f and g, the element associated with f lies under the element associated with g if and only if f lies under g in the pointwise relation order.
-
-If the elements are ordered and f relates a token u to a token v, the corresponding function token lies in the carrier of the element of f and hence in the carrier of the element of g, so g relates u to v. Conversely, if f lies under g and a token lies in the carrier of the element of f, that token records a relation of f and therefore of g, so it lies in the carrier of the element of g.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

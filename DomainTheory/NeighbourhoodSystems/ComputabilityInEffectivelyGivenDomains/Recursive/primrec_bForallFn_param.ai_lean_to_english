@@ -1,0 +1,3 @@
+If g is primitive recursive, then so is the parametrized bounded universal that applies g to the pair of the outer parameter and the quantified code, taking the remaining parameter and the bound from the packed argument. The selection is arranged with base value 1 and a conjunctive step.
+
+The step that selects, on the previous flag, between the equality-to-one test of g at the packed triple and the constant 0 is primitive recursive. Primitive recursion from the constant 1 with that step, composed with pairing the first component of the input and the second, agrees with the bounded universal after simplifying the unpaired projections.

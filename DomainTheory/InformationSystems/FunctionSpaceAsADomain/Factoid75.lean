@@ -1,8 +1,3 @@
-/-ai
-The conditional of elements x and y evaluates to x at the Boolean element true and to y at the Boolean element false, and every strict approximable map from the Boolean system is the conditional of its values at true and false.
-
-The numbered name theorem_75 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.conditional_iso

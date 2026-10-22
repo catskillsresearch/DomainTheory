@@ -1,8 +1,3 @@
-/-ai
-The second projection relates W to Y' if and only if W is a product neighbourhood, Y' is a neighbourhood, and the right preimage of W is contained in Y'.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

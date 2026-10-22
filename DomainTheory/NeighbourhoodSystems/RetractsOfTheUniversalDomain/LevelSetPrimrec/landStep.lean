@@ -1,9 +1,3 @@
-/-ai
-The bitwise-conjunction step sends a packed state, coding the two current arguments, the
-weight, and the accumulator, to the state in which both arguments are halved, the weight
-is doubled, and the accumulator is increased by the weight times the low-bit conjunction
-of the two arguments.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

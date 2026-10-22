@@ -1,0 +1,3 @@
+The evaluation map commutes with the structure maps: it composed with the structure map equals the algebra structure composed with the functor applied to the evaluation map.
+
+Substitute the fixed-point equation into the left-hand side, reassociate twice, replace the inverse structure map composed with the structure map by the identity on T(Exp), and cancel that identity.

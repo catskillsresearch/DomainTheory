@@ -1,8 +1,3 @@
-/-ai
-The table-lookup form of the concatenation-match step is primitive recursive.
-
-The split index, the two subexpression codes, the word code, and the coded prefix and suffix of the word are primitive recursive, as are the table lookups of the first subexpression against the prefix and of the second against the suffix. Their product agrees with the lookup after unfolding the lookup, the concatenation match, and the bit product.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

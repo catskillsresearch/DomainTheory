@@ -1,8 +1,3 @@
-/-ai
-On two odd indices 2a+1 and 2b+1, the sharp decider step returns the pack of D's equality bit, D's consistency bit, and one more than twice D's intersection index, all at the pair of a and b.
-
-Both outer selections see one minus an odd positive number, hence zero. Both parities are one, so both inner selections take the leaf branch, and dividing the odd indices by two recovers a and b.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

@@ -1,8 +1,3 @@
-/-ai
-The packed combinator is combinatory.
-
-Pairing preserves combinatory elements, applied to successor, predecessor, the conditional, K, and S.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

@@ -1,8 +1,3 @@
-/-ai
-Embedding the restriction of an element x that lies below a recovers x.
-
-Extensionality compares membership. A neighbourhood of the embedding is an enlargement of a neighbourhood of x, hence belongs to x by upward closure. Conversely, a neighbourhood of x belongs to a and witnesses itself as a neighbourhood of the embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

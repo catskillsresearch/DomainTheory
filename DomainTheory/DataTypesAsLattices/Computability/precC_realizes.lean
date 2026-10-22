@@ -1,8 +1,3 @@
-/-ai
-If f realizes p and g realizes q, then the primitive recursion of f and g realizes the function which, on a packed pair (z, n), returns the iteration of n steps starting from p(z), where the step sends y and the previous value ih to q of the pair of z with the pair of y and ih.
-
-One β-reduction of the recursion term in the recursion environment, together with the unpairing realizers, the realization of f, the application equation for the recursion operator, and the numeral equation for primitive recursion, presents the value as a recursion whose step is the interpreted step abstraction. Two further β-reductions show that this step sends numerals y and ih to the numeral of q at the pair of z with the pair of y and ih, using the first unpairing realizer, the pairing combinator, and the realization of g. Induction on the iteration count identifies the recursion values with the numerals of the iterated function, and the second component of the unpacked input is that count.
-ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,8 +1,3 @@
-/-ai
-The intersection of two denoted languages equals a third denoted language if and only if the denotation of the intersection expression equals that third language.
-
-Rewrite by the denotation of an intersection expression.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722

@@ -1,86 +1,307 @@
 # Proposition 7.10
 
-**PROPOSITION 7.10.** The power domain $\mathbb{P}\mathcal{D}$ is a neighbourhood system if $\mathcal{D}$ is, and it is effectively given if $\mathcal{D}$ is.
+## Human-English
 
-*Proof* : The system $\mathcal{D}^\dagger$ is a neighbourhood system as we just remarked; indeed it is a positive neighbourhood system. It is easy to prove that the closure of any positive system under finite unions is a neighbourhood system, because the resulting family of sets is closed under *all* finite intersections. (If we left out the empty union, the result would be a positive system.) The proof is obvious since intersection of sets distributes over finite union. So $\mathbb{P}\mathcal{D}$ is a neighbourhood system.
+@import "1980_Proposition_7_10.english" {code_block=false}
 
-For the second half of the proposition, we just have to constructivize the previous argument. Thus, if
+## AI: Human-English to AI-Lean
 
-$$\mathcal{D} = \{ X_n \mid n \in \mathbb{N} \},$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/NeighborhoodSystemu2ePowerDomain_isEffectivelyGiven.lean**
 
-then the elements of $\mathbb{P}\mathcal{D}$ can be written as:
+@import "NeighborhoodSystemu2ePowerDomain_isEffectivelyGiven.lean"
 
-$$\bigcup_{i < q} (\downarrow X_{n_i}),$$
-and hence are indexed by the finite sequences $\langle n_0, \dots, n_{q-1} \rangle$ of integers. Now one of the standard devices of recursion theory is to put the finite sequences of integers into a recursive one-one correspondence with the integers themselves. This is the start of the recursive presentation of $\mathbb{P}\mathcal{D}$, since it means we can list effectively all the required neighbourhoods.
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710.lean**
 
-Next consider an intersection
+@import "../Proposition710.lean"
 
-$$\bigcup_{i < q} (\downarrow X_{n_i}) \cap \bigcup_{j < r} (\downarrow X_{m_j}) = \bigcup_{\substack{i < q \\ j < r}} \downarrow (X_{n_i} \cap X_{m_j}) \, .$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_upSet_inter.lean**
 
-Some of the terms which are $\emptyset$ have to be thrown out — but this requires only a finite number of decisions all computable by assumption. Now we have to rewrite
+@import "PDmem_upSet_inter.lean"
 
-$$X_{n_i} \cap X_{m_j} = X_{k_{ij}} \, ,$$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/upSetUnion_cons.lean**
 
-but the finding of $k_{ij}$ is also computable. *Finally*, we have to re-order the doubly indexed sequence into a singly indexed sequence of length $q \cdot r$, but this is easily seen to be computable also. Therefore, intersections can be "calculated".
+@import "upSetUnion_cons.lean"
 
-It remains to be shown that equality between neighbourhoods in $\mathbb{P}\mathcal{D}$ is decidable. The question really comes down to deciding something like:
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/upSetUnion_nil.lean**
 
-$$\downarrow X_k \subseteq \bigcup_{i < q} \downarrow X_{n_i} \, .$$
+@import "upSetUnion_nil.lean"
 
-Now since $X_k \in \downarrow X_k$, we find that the above is just equivalent to:
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_upSet_inter_biUnion.lean**
 
-$$\exists i < q \ldotp X_k \subseteq X_{n_i} \, .$$
+@import "PDmem_upSet_inter_biUnion.lean"
 
-By our assumptions on $\mathcal{D}$, this is decidable. (It is this part of the argument that required the passage to $\mathcal{D}^\dagger$. It does not seem to be generally true that the closure under finite unions of an effectively given system is again effectively given.) $\square$
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_biUnion_inter.lean**
 
-**Lean 4**
+@import "PDmem_biUnion_inter.lean"
 
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/NeighborhoodSystemu2ePowerDomain_isEffectivelyGiven.lean](NeighborhoodSystemu2ePowerDomain_isEffectivelyGiven.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710.lean](../Proposition710.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_upSet_inter.lean](PDmem_upSet_inter.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/upSetUnion_cons.lean](upSetUnion_cons.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/upSetUnion_nil.lean](upSetUnion_nil.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_upSet_inter_biUnion.lean](PDmem_upSet_inter_biUnion.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_biUnion_inter.lean](PDmem_biUnion_inter.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_inter.lean](PDmem_inter.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PowerDomain.lean](PowerDomain.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PowerDomain_mem.lean](PowerDomain_mem.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PowerDomain_master.lean](PowerDomain_master.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/UPX.lean](UPX.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/UPX_def.lean](UPX_def.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd.lean](Ypd.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_def.lean](Ypd_def.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/innerInterStp.lean](innerInterStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/innerInterCode.lean](innerInterCode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/innerInterStp_eq.lean](innerInterStp_eq.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/innerInterCode_eq.lean](innerInterCode_eq.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/mem_UPX.lean](mem_UPX.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/UPX_cons.lean](UPX_cons.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/UPX_nil.lean](UPX_nil.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_cons_code.lean](Ypd_cons_code.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_zero.lean](Ypd_zero.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_exists_Ypd_aux.lean](PDmem_exists_Ypd_aux.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_exists_Ypd.lean](PDmem_exists_Ypd.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/mem_Ypd.lean](mem_Ypd.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_isPDmem.lean](Ypd_isPDmem.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/outerInterStp.lean](outerInterStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/interCode.lean](interCode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/outerInterStp_eq.lean](outerInterStp_eq.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/interCode_eq.lean](interCode_eq.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/primrec_innerInterStp.lean](primrec_innerInterStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/primrec_outerInterStp.lean](primrec_outerInterStp.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/primrec_interCode.lean](primrec_interCode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/subCode_computable.lean](subCode_computable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/upSet_inter_eq_empty_of_not_cons.lean](upSet_inter_eq_empty_of_not_cons.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_innerstep.lean](Ypd_innerstep.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_innerfoldl.lean](Ypd_innerfoldl.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_innerInterCode.lean](Ypd_innerInterCode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_outerfoldl.lean](Ypd_outerfoldl.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_interCode.lean](Ypd_interCode.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/upSet_subset_Ypd_iff.lean](upSet_subset_Ypd_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_subset_iff.lean](Ypd_subset_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_eq_iff.lean](Ypd_eq_iff.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/eqCode_computable.lean](eqCode_computable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_interEq_computable.lean](Ypd_interEq_computable.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDPresentation.lean](PDPresentation.lean)
-- [NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Basic.lean](Basic.lean)
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_inter.lean**
+
+@import "PDmem_inter.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PowerDomain.lean**
+
+@import "PowerDomain.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PowerDomain_mem.lean**
+
+@import "PowerDomain_mem.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PowerDomain_master.lean**
+
+@import "PowerDomain_master.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/UPX.lean**
+
+@import "UPX.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/UPX_def.lean**
+
+@import "UPX_def.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd.lean**
+
+@import "Ypd.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_def.lean**
+
+@import "Ypd_def.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/innerInterStp.lean**
+
+@import "innerInterStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/innerInterCode.lean**
+
+@import "innerInterCode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/innerInterStp_eq.lean**
+
+@import "innerInterStp_eq.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/innerInterCode_eq.lean**
+
+@import "innerInterCode_eq.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/mem_UPX.lean**
+
+@import "mem_UPX.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/UPX_cons.lean**
+
+@import "UPX_cons.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/UPX_nil.lean**
+
+@import "UPX_nil.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_cons_code.lean**
+
+@import "Ypd_cons_code.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_zero.lean**
+
+@import "Ypd_zero.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_exists_Ypd_aux.lean**
+
+@import "PDmem_exists_Ypd_aux.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDmem_exists_Ypd.lean**
+
+@import "PDmem_exists_Ypd.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/mem_Ypd.lean**
+
+@import "mem_Ypd.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_isPDmem.lean**
+
+@import "Ypd_isPDmem.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/outerInterStp.lean**
+
+@import "outerInterStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/interCode.lean**
+
+@import "interCode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/outerInterStp_eq.lean**
+
+@import "outerInterStp_eq.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/interCode_eq.lean**
+
+@import "interCode_eq.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/primrec_innerInterStp.lean**
+
+@import "primrec_innerInterStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/primrec_outerInterStp.lean**
+
+@import "primrec_outerInterStp.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/primrec_interCode.lean**
+
+@import "primrec_interCode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/subCode_computable.lean**
+
+@import "subCode_computable.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/upSet_inter_eq_empty_of_not_cons.lean**
+
+@import "upSet_inter_eq_empty_of_not_cons.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_innerstep.lean**
+
+@import "Ypd_innerstep.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_innerfoldl.lean**
+
+@import "Ypd_innerfoldl.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_innerInterCode.lean**
+
+@import "Ypd_innerInterCode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_outerfoldl.lean**
+
+@import "Ypd_outerfoldl.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_interCode.lean**
+
+@import "Ypd_interCode.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/upSet_subset_Ypd_iff.lean**
+
+@import "upSet_subset_Ypd_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_subset_iff.lean**
+
+@import "Ypd_subset_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_eq_iff.lean**
+
+@import "Ypd_eq_iff.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/eqCode_computable.lean**
+
+@import "eqCode_computable.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Ypd_interEq_computable.lean**
+
+@import "Ypd_interEq_computable.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/PDPresentation.lean**
+
+@import "PDPresentation.lean"
+
+**NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition710/Basic.lean**
+
+@import "Basic.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "NeighborhoodSystemu2ePowerDomain_isEffectivelyGiven.ai_lean_to_english" {code_block=false}
+
+@import "../Proposition710.ai_lean_to_english" {code_block=false}
+
+@import "PDmem_upSet_inter.ai_lean_to_english" {code_block=false}
+
+@import "upSetUnion_cons.ai_lean_to_english" {code_block=false}
+
+@import "upSetUnion_nil.ai_lean_to_english" {code_block=false}
+
+@import "PDmem_upSet_inter_biUnion.ai_lean_to_english" {code_block=false}
+
+@import "PDmem_biUnion_inter.ai_lean_to_english" {code_block=false}
+
+@import "PDmem_inter.ai_lean_to_english" {code_block=false}
+
+@import "PowerDomain.ai_lean_to_english" {code_block=false}
+
+@import "PowerDomain_mem.ai_lean_to_english" {code_block=false}
+
+@import "PowerDomain_master.ai_lean_to_english" {code_block=false}
+
+@import "UPX.ai_lean_to_english" {code_block=false}
+
+@import "UPX_def.ai_lean_to_english" {code_block=false}
+
+@import "Ypd.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_def.ai_lean_to_english" {code_block=false}
+
+@import "innerInterStp.ai_lean_to_english" {code_block=false}
+
+@import "innerInterCode.ai_lean_to_english" {code_block=false}
+
+@import "innerInterStp_eq.ai_lean_to_english" {code_block=false}
+
+@import "innerInterCode_eq.ai_lean_to_english" {code_block=false}
+
+@import "mem_UPX.ai_lean_to_english" {code_block=false}
+
+@import "UPX_cons.ai_lean_to_english" {code_block=false}
+
+@import "UPX_nil.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_cons_code.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_zero.ai_lean_to_english" {code_block=false}
+
+@import "PDmem_exists_Ypd_aux.ai_lean_to_english" {code_block=false}
+
+@import "PDmem_exists_Ypd.ai_lean_to_english" {code_block=false}
+
+@import "mem_Ypd.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_isPDmem.ai_lean_to_english" {code_block=false}
+
+@import "outerInterStp.ai_lean_to_english" {code_block=false}
+
+@import "interCode.ai_lean_to_english" {code_block=false}
+
+@import "outerInterStp_eq.ai_lean_to_english" {code_block=false}
+
+@import "interCode_eq.ai_lean_to_english" {code_block=false}
+
+@import "primrec_innerInterStp.ai_lean_to_english" {code_block=false}
+
+@import "primrec_outerInterStp.ai_lean_to_english" {code_block=false}
+
+@import "primrec_interCode.ai_lean_to_english" {code_block=false}
+
+@import "subCode_computable.ai_lean_to_english" {code_block=false}
+
+@import "upSet_inter_eq_empty_of_not_cons.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_innerstep.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_innerfoldl.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_innerInterCode.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_outerfoldl.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_interCode.ai_lean_to_english" {code_block=false}
+
+@import "upSet_subset_Ypd_iff.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_subset_iff.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_eq_iff.ai_lean_to_english" {code_block=false}
+
+@import "eqCode_computable.ai_lean_to_english" {code_block=false}
+
+@import "Ypd_interEq_computable.ai_lean_to_english" {code_block=false}
+
+@import "PDPresentation.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Proposition_7_10.ai_english_concordance" {code_block=false}

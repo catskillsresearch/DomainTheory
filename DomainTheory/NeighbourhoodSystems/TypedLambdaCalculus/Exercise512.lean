@@ -1,8 +1,3 @@
-/-ai
-The while-loop satisfies the recursion w(x) = cond(p(x), w(f(x)), x).
-
-The numbered name example_512 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise512.whileMap_rec

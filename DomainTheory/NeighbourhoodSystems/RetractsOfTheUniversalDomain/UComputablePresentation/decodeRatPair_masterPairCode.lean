@@ -1,8 +1,3 @@
-/-ai
-Decoding the master pair code yields the rational pair zero and one.
-
-Unfold the master pair code and the pair decoding, and simplify the two components as the decodings of the codes of zero and one.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

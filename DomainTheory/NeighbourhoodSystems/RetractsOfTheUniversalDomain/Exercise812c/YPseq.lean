@@ -1,6 +1,3 @@
-/-ai
-YPseq n is the union, over sign sequences of length n and a free Boolean for the X-step at position n, of the first component of the Y-step that tests, on the positive branch against the enumerated set Y n, the pair produced by the X-step of the padded depth-n atom pair against X n with that Boolean.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

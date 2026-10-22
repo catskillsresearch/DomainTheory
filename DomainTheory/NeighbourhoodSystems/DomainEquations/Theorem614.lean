@@ -1,8 +1,3 @@
-/-ai
-Under the hypotheses of Theorem 6.14 there is a T-algebra whose structure map is an isomorphism, and from it there is a homomorphism into every T-algebra whose structure map is strict. When every neighbourhood of the generating system is its master, the colimit algebra admits a unique strict homomorphism into every T-algebra whose structure map is strict.
-
-The numbered name theorem_614 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem614.exists_algebra_with_hom

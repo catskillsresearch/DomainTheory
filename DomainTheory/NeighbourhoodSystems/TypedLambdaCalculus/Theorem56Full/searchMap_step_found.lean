@@ -1,8 +1,3 @@
-/-ai
-If f at the vector with head k and tail v equals zero, the search at the argument element of that vector returns the numeral for k.
-
-Rewrite the argument as a push, apply the search equation, compute the head and tail of a push, restore the pushed numeral, use the value clause of the λ-definition together with the hypothesis that the value is zero, and take the true branch of the conditional on the zero-test of the numeral zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

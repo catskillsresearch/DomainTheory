@@ -1,12 +1,3 @@
-/-ai
-For an abstract atomless neighbourhood system E and a split satisfying the split specification, the E-side atom obeys the successor equation and is unchanged by altering the sign sequence at or beyond the current depth. At every depth the generic atom on the carrier is empty exactly when the E-side atom is empty, the E-side atom is empty or a neighbourhood, and atoms of sign sequences that disagree below that depth are disjoint. The atom shrinks with depth, lies in the master, and its successor is the previous atom intersected with the abstract Y-sequence or with the complement of that sequence in the master. The positive split piece equals the atom meet the Y-sequence. The E-side atom coincides with the generic atom built on the Y-sequence and the master. A finite Boolean combination of the enumerated sets is nonempty in the carrier exactly when the same combination of Y-sequence sets is nonempty in the master, and the same correspondence holds for containment, empty intersection, triple containment, and equality of an intersection. The Y-sequence at zero is the master when the zero enumerated set is the carrier. The Y-sequence is empty or a neighbourhood, and it is nonempty whenever a point of the carrier lies in the enumerated set.
-
-The successor equation is definitional, and congruence is induction through the generic-atom congruence and the shared bit. The invariant is induction: at zero both sides are the nonempty carrier and the master; at a successor the split specification gives matching emptiness and membership for each bit, and disjointness splits into agreement below the previous depth, where the two split pieces are disjoint, and disagreement, where both successor atoms sit inside the previous disjoint atoms. Shrinking reads that subset of a split piece, and containment in the master follows by induction. The intersection formula compares the positive piece with the atom meet the Y-sequence by routing the history updated to true through its finite restriction, and in the other direction uses either agreement of the padded sign with the history or disjointness of disagreeing atoms. The closed form takes the positive piece from that formula and recovers the negative piece from the union and disjointness clauses of the specification, then inserts the master by the containment. Coincidence with the generic atom is induction on the closed form. Finite-constraint transfer runs the generic transfer both ways along the invariant and that coincidence. Containment, empty intersection, and triple containment rewrite the constraint set as a difference or an intersection and negate nonemptiness, and equality reassembles the three containments. The zero law forces the negative piece, for the true padding of the empty prefix, to be empty because the carrier minus itself is empty, so the positive piece is the master and that atom sits in the union. The empty-or-neighbourhood alternative for the Y-sequence is the finite-union law applied to the atom pieces. Nonemptiness from a point uses the sign sequence that records which enumerated sets contain the point, so the point lies in the generic atom meet the enumerated set, the positive split piece is nonempty, and a finite restriction of that sign carries the nonempty atom into the union.
-
-For an abstract atomless neighbourhood system E and a split satisfying the split specification, the E-side atom obeys the successor equation and is unchanged by altering the sign sequence at or beyond the current depth. At every depth the generic atom on the carrier is empty exactly when the E-side atom is empty, the E-side atom is empty or a neighbourhood, and atoms of sign sequences that disagree below that depth are disjoint. The atom shrinks with depth, lies in the master, and its successor is the previous atom intersected with the abstract Y-sequence or with the complement of that sequence in the master. The positive split piece equals the atom meet the Y-sequence. The E-side atom coincides with the generic atom built on the Y-sequence and the master. A finite Boolean combination of the enumerated sets is nonempty in the carrier exactly when the same combination of Y-sequence sets is nonempty in the master, and the same correspondence holds for containment, empty intersection, triple containment, and equality of an intersection. The Y-sequence at zero is the master when the zero enumerated set is the carrier. The Y-sequence is empty or a neighbourhood, and it is nonempty whenever a point of the carrier lies in the enumerated set.
-
-The numbered name example_812_c_yseq is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c
@@ -28,47 +19,11 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exe
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c.Basic
 @[expose] public section
 
-/-!
-# Exercise 8.12(c)(vi)(1) (Scott 1981, PRG-19, Lecture VIII) — the abstract `Yseq` closed form
-
-Generalizes `Theorem88.lean`'s core `Yseq` closed-form apparatus (`atomU`, `Yseq`,
-`split_fst_eq_inter_Yseq`, `atomU_subset_master`, `atomU_succ_eq`, `atomU_eq_genAtom`) from the
-hardcoded target `U : NeighborhoodSystem ℚ` to an **abstract atomless `E : NeighborhoodSystem γ`**,
-exactly mirroring how `Exercise812c.lean`'s `exists_split'`/`SplitSpec'`/`splitChoice'` generalized
-`exists_split`/`SplitSpec`/`splitChoice`. Once done twice (once with `E := D₀`, once with
-`E := D₁`, in 8.12(c)(vi)(5)/(vi)(6)), this is the machinery that recovers a *closed-form*
-description of `atomPair`'s two interleaved sub-steps — the two-sided analogue of Scott's `Yₙ`.
-
-## What is reused unchanged from `Theorem88.lean`
-
-`extendTrue`/`restrictFin` (and their agreement lemmas `extendTrue_agree`/
-`extendTrue_restrictFin_agree`) and the generic `genAtom` family (`genAtom`, `genAtom_subset`,
-`genAtom_congr`, `genAtom_forward`, `genAtom_self`) are **already fully type-generic** in
-`Theorem88.lean` — none of them mention `U` at all. They are imported and used *verbatim* below,
-with no re-statement needed.
-
-## What is new here
-
-Everything downstream of `atomU` in `Theorem88.lean` (`atomU` itself onward) is hardcoded to
-`U.master`/`U.mem`. This file re-proves that whole layer — `atomE` (the `atomU`-analogue),
-`atomE_invariant`, `YseqE` (the `Yseq`-analogue), `split_fst_eq_inter_YseqE`, `atomE_subset_master`,
-`atomE_succ_eq`, `atomE_eq_genAtom` — against an abstract `E : NeighborhoodSystem γ` and an abstract
-`split` satisfying `SplitSpec' E split` (`Exercise812c.lean`), taking `E.master.Nonempty` as an
-extra explicit hypothesis (`U.master`'s nonemptiness was previously a hardcoded fact about `[0,1)`;
-for the eventual instantiations `E := D₀`/`E := D₁` this is exactly the `hD₀mne`/`hD₁mne` hypothesis
-already in scope in `Exercise812c.lean`'s `section AtomPair`). The finite-constraint transfer lemma
-(`transfer_empty_iff` and its corollaries) and the nonemptiness facts (`Yseq_empty_or_mem`/
-`Yseq_nonempty_of_mem`) are deliberately **not** included here — tracked separately as
-8.12(c)(vi)(2)/(vi)(3).
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
 
 variable {α γ : Type*}
-
-/-! ### The abstract `E`-side atom, generalizing `atomU` -/
 
 variable (E : NeighborhoodSystem γ) (split : Set α → Set γ → Set α → Set γ × Set γ)
 
@@ -94,8 +49,6 @@ theorem atomE_congr {δ δ' : ℕ → Bool} {n : ℕ} (h : ∀ i < n, δ i = δ'
       genAtom_congr X Δ (fun i hi => h i (Nat.lt_succ_of_lt hi))
     have hn := h n (Nat.lt_succ_self n)
     rw [atomE_succ, atomE_succ, hA, hprev, hn]
-
-/-! ### The core invariant: emptiness-matching, `E.mem`-or-empty, and pairwise disjointness -/
 
 variable (hΔ : Δ.Nonempty) (hEmne : E.master.Nonempty) (hsplit : SplitSpec' E split)
 include hΔ hEmne hsplit
@@ -179,11 +132,6 @@ theorem atomE_succ_subset (δ : ℕ → Bool) (n : ℕ) :
   by_cases hδ : δ n = true
   · simp only [hδ, ite_true]; exact split_fst_subset' hsplit (hmatch δ) (hmem δ) (X n)
   · simp only [hδ]; exact split_snd_subset' hsplit (hmatch δ) (hmem δ) (X n)
-
-/-! ### `YseqE`: the abstract analogue of Scott's `Yₙ`
-
-Reuses `Theorem88.lean`'s `extendTrue`/`restrictFin` verbatim (already fully generic, no `U`- or
-`E`-specific content). -/
 
 
 omit hΔ hEmne hsplit in
@@ -288,14 +236,6 @@ theorem atomE_eq_genAtom (δ : ℕ → Bool) :
   | 0 => rfl
   | (n + 1) => by
       rw [atomE_succ_eq E split X Δ hΔ hEmne hsplit, atomE_eq_genAtom δ n]; rfl
-
-/-! ### The general finite-constraint transfer lemma, generalized to an abstract `E`
-
-Mirrors `Theorem88.lean`'s `transfer_empty_iff`/`transfer_subset_iff`/`transfer_inter_empty_iff`/
-`transfer_double_subset_iff`/`transfer_inter_eq_iff`, replacing the hardcoded `U`/`Yseq` by an
-abstract `E`/`YseqE`. `transfer_dir` itself needs **no** re-proof: it is already stated fully
-generically over two independent carrier types, connected only by a shared `genAtom`-emptiness
-correspondence — reused verbatim from `Theorem88.lean`. -/
 
 /-- **The transfer lemma, generalized to `E`.** A finite Boolean combination of the `X i` is
 non-empty in `D`'s carrier `Δ` iff the *same* Boolean combination of `YseqE E split X Δ i` is
@@ -429,15 +369,6 @@ theorem transfer_inter_eq_iffE (i j k : ℕ) (hi : X i ⊆ Δ) (_hj : X j ⊆ Δ
     have hijk : YseqE E split X Δ i ∩ YseqE E split X Δ j ⊆ YseqE E split X Δ k :=
       heq ▸ subset_rfl
     exact Set.Subset.antisymm (h3.mpr hijk) (Set.subset_inter (h1.mpr hki) (h2.mpr hkj))
-
-/-! ### `YseqE` is non-empty (and a genuine `E`-neighbourhood) whenever `X n` is non-empty
-
-Mirrors `Theorem88.lean`'s `Yseq_zero_eq_master`/`Yseq_empty_or_mem`/`Yseq_nonempty_of_mem`.
-`YseqE_empty_or_mem` is the one place this file needs more than `hΔ`/`hEmne`/`hsplit`: `Yseq`'s own
-proof leans on `U_iUnion_mem`, which is proved directly from `U`'s presented-interval structure —
-an abstract `E` has no such structure, so `Exercise812c.lean`'s new, genuinely generic
-`iUnion_mem_or_empty` (derived from `IsPositive` + `DiffClosed` alone) is used in its place, taking
-`hEpos`/`hEdiff` as two extra explicit hypotheses. -/
 
 /-- **`YseqE E split X Δ 0 = E.master` whenever `X 0 = Δ`** (Scott's convention `X₀ = Δ`). Mirrors
 `Yseq_zero_eq_master`. -/

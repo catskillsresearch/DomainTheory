@@ -1,8 +1,3 @@
-/-ai
-The iteration sqrtIter n k equals the minimum of k and the integer square root of n.
-
-Induct on k. The zero case is the definition of sqrtIter. At a successor, rewrite by the inductive hypothesis. If k lies strictly below the square root, the minimum is k and (k + 1) · (k + 1) is at most n by Nat.le_sqrt, so the iteration steps to k + 1, the minimum of the successor and the square root. Otherwise the square root is at most k, the minimum is the square root, and the square of one more than the square root fails to be at most n by Nat.lt_succ_sqrt, so the iteration remains at the square root.
-ai-/
 module
 
 public import Mathlib.Computability.RE

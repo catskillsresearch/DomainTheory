@@ -1,8 +1,3 @@
-/-ai
-If selection on a junk flag against the constant one returns zero, the junk flag was already zero.
-
-If the flag is zero, that is the claim. If it is positive, unfolding selection and the bound that the flag is at least one contradict a result of zero.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

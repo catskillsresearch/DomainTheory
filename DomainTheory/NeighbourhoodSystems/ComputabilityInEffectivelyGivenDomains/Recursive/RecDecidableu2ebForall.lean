@@ -1,8 +1,3 @@
-/-ai
-If a predicate is recursively decidable and a bound is primitive recursive, then so is the predicate which says that the original predicate holds at the pair of every index strictly below the bound and the input.
-
-The characteristic is the bounded-forall indicator of the decider at that bound. It is primitive recursive by a primitive recursion whose step selects the one-test of the decider or zero, and the indicator equals one exactly when every index in range passes, which matches the decider.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

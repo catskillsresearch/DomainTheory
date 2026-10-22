@@ -1,8 +1,3 @@
-/-ai
-Interleaving the empty string tagged b₀ with any string τ tagged b₁ returns the empty string tagged b₀.
-
-This is the nil clause of the interleaving value, so the equation holds by reflexivity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

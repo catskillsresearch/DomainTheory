@@ -1,6 +1,3 @@
-/-ai
-xStep is the X-sub-step. It applies the generic paired step to the split chosen for D₁, so the first side is refined directly by the test set and the second side is the piece of the split selected by the same bit.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

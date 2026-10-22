@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (5.25). The set dEq is the least fixed point of the self-arrow step, the least solution of the equation d = I ∪ (d ∘→ d).
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

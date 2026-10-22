@@ -1,6 +1,3 @@
-/-ai
-Conjugation by a Scott map after and a Scott map before, sending an endomap to the composite of the first, the endomap, and the second, is itself a Scott map from the endomorphism space to the space of Scott maps between the outer lattices. Its continuity is preservation of directed suprema by the underlying conjugation.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

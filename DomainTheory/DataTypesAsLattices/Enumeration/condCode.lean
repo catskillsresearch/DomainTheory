@@ -1,6 +1,3 @@
-/-ai
-condCode is a natural number chosen, by the surjectivity in theorem 3.2 applied to the combinatory conditional, as a code of the conditional combinator.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

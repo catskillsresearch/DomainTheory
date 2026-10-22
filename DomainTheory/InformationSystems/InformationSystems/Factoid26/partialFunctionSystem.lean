@@ -1,6 +1,3 @@
-/-ai
-The partial-function information system on tokens for maps from A to B takes the least-informative token as its least element, takes as consistent sets the finite sets whose graph atoms form a partial function, and takes as entailment the relation that requires consistency of the premise together with the token being least-informative or a member. Subsets of consistent sets stay consistent, singletons are consistent, and an entailed token may be inserted while preserving consistency, either as the least token or as a member. Every consistent set entails the least token, a consistent set entails its members, and entailment is transitive because the intermediate set is consistent and the entailed token is either least-informative or already forced by the intermediate entailment.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

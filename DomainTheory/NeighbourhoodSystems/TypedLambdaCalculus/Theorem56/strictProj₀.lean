@@ -1,6 +1,3 @@
-/-ai
-Scott's strict first projection on the product of the flat naturals with itself is the approximable map sending a pair x₀ and x₁ to the conditional of the zero test of x₁ and two copies of x₀. It is the conditional composed with the pairing of the zero test of the second projection and two copies of the first projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

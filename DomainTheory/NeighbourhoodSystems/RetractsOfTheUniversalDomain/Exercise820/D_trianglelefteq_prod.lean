@@ -1,8 +1,3 @@
-/-ai
-Every domain D is a retract of the product of D with itself.
-
-Specialize the retract that embeds an element as a pair with bottom in the second component and retracts by the first projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

@@ -1,8 +1,3 @@
-/-ai
-The successor of sets of natural numbers preserves inclusion.
-
-The image of a subset under adding one is contained in the image of the larger set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

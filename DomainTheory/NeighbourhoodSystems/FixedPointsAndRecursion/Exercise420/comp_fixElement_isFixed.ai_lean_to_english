@@ -1,0 +1,3 @@
+For approximable endomaps f and g, the element obtained by applying f to the least fixed point of g composed with f is a fixed point of f composed with g.
+
+The composition law rewrites the composite as f applied after g. The inner application is the composite of g after f applied to its own least fixed point, which equals that least fixed point.

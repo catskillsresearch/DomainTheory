@@ -1,8 +1,3 @@
-/-ai
-For a computable presentation of a neighbourhood system D, the sharp injection is a computable map into the sharp presentation.
-
-The relation on index codes must be recursively enumerable. Inclusion of sharp neighbourhoods is recursively decidable, and the map sending a code to the pair of one plus twice its first component with its second component is primitive recursive. After that reindexing, the injection relates the enumerated neighbourhoods exactly when the sharp neighbourhood at the resulting odd index is contained in the codomain neighbourhood, because an odd index is a zero-embedding and every enumerated set is a neighbourhood. The inclusion decider composed with the reindexing therefore decides the relation, and a decidable predicate is recursively enumerable.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition77

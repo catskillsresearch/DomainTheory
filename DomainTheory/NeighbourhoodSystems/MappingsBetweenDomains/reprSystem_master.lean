@@ -1,8 +1,3 @@
-/-ai
-The master neighbourhood of the representation system is the set of all tokens.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

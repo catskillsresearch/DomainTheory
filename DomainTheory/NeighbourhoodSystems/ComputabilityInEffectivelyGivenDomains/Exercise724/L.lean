@@ -1,6 +1,3 @@
-/-ai
-The LUCID neighbourhood system of Exercise 7.24 is the neighbourhood system on the tokens Γ whose neighbourhood predicate is the predicate of neighbourhoods of finite addresses, whose master neighbourhood is the whole set of tokens, with the neighbourhood of the empty address a neighbourhood, with the nested-or-disjoint property, and with every neighbourhood contained in the master neighbourhood.
-ai-/
 
 module
 

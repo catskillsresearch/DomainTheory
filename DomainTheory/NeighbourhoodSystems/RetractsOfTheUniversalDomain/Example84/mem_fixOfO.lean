@@ -1,8 +1,3 @@
-/-ai
-A set Z belongs to fixOfO u t if and only if Z is a D-neighbourhood and either Z is the master or t contains {0} and u contains Z.
-
-This is the defining membership condition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition83

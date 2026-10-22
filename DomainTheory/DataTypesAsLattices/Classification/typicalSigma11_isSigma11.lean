@@ -1,8 +1,3 @@
-/-ai
-The typical Σ₁¹ set is a Σ₁¹ set.
-
-A set is Σ₁¹ when it is the set of x at which two Scott-continuous maps agree for some argument. The maps sending u to u applied to {0} and to u applied to {1} are Scott continuous in the function argument, and they reproduce the defining condition of the typical set.
-ai-/
 
 module
 

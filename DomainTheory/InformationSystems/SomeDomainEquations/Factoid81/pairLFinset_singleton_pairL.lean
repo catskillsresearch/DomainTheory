@@ -1,8 +1,3 @@
-/-ai
-The left pair projection of the singleton consisting of a left-pair token is the singleton of its inner token.
-
-Membership in the projection is membership of the left-pair token in the singleton. The left-pair constructor is injective, and an equality of inner tokens is preserved by the left-pair constructor.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

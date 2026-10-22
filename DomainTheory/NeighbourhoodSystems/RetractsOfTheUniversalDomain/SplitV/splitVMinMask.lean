@@ -1,6 +1,3 @@
-/-ai
-splitVMinMask n is the presentation-independent canonical mask of the V-neighbourhood of n, the minimal mask of the pair stored in its canonical index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

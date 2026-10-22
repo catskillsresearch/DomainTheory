@@ -1,8 +1,3 @@
-/-ai
-A finite set is contained in its choice-free union with any finite set.
-
-A member of the first set is a left-hand member of the union by the membership law.
-ai-/
 module
 
 public import Mathlib.Data.Finset.Basic

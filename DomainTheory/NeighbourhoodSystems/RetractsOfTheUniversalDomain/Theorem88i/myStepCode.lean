@@ -1,6 +1,3 @@
-/-ai
-The code-level gated step reads a state as the pair of an entry with the pair of an accumulator and an unused parameter, and applies the list-level gated step to that accumulator and that entry.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88h.Basic

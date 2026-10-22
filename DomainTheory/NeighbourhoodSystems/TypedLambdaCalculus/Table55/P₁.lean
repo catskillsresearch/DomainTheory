@@ -1,6 +1,3 @@
-/-ai
-The combinator P₁ of Table 5.5 (Scott 1981, PRG-19) is the second projection from a product of neighbourhood systems to the second factor.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

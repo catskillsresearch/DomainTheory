@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (5.18). If a is a closure, V(a) applied to x equals a applied to x.
-
-The two inclusions are the containment of the closure value in the application of a and the reverse containment.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

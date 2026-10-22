@@ -1,6 +1,3 @@
-/-ai
-The inverse comparison from the lift of a product to the smash of the two lifts sends an element s to the element whose neighbourhoods are the product neighbourhood of the two lift masters, together with the rectangles of false-tagged factor neighbourhoods whose product tag lies in s. The neighbourhood-system laws are checked by splitting the master case from the rectangle case, using absorption of a false tag by a lift master and the intersection and upward closure of s.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

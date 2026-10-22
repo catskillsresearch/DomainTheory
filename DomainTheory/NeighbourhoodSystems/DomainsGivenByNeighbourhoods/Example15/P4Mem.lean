@@ -1,6 +1,3 @@
-/-ai
-A set of the four tokens is a neighbourhood of Example 1.5 when it is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

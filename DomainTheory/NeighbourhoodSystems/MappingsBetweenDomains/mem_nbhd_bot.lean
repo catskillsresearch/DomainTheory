@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood of the empty token belongs to every ideal element of the representation system.
-
-The underlying set of the empty token is empty, the neighbourhood of the empty set is the set of all tokens, and every element contains the master neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

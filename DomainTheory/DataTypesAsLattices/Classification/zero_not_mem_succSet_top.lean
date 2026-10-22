@@ -1,8 +1,3 @@
-/-ai
-Zero does not belong to ⊤ + 1.
-
-A member of ⊤ + 1 is some successor n + 1, and a successor is never zero.
-ai-/
 
 module
 

@@ -1,8 +1,3 @@
-/-ai
-If every set of a family is contained in the master of its system, then the product neighbourhood of the restriction to a cons-list is the slice at the head intersected with the product neighbourhood of the restriction to the tail.
-
-The slice is a product neighbourhood, so the intersection law reduces the claim to equality of families. At the head, the restricted family is the head set, and the other side is that set intersected with itself or with the master, which contains it. Off the head, the one-coordinate update is the master and membership in the cons-list is membership in the tail, so both sides equal the tail restriction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

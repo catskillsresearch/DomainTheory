@@ -1,8 +1,3 @@
-/-ai
-The composite of the projection from the universal domain onto its tree algebra after the embedding of that tree algebra is the identity on the tree algebra.
-
-This is the section clause of the projection pair chosen by the strong form of Theorem 8.8.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise717Part2

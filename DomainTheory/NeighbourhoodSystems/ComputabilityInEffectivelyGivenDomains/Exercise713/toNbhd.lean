@@ -1,6 +1,3 @@
-/-ai
-The hint neighbourhood of an index n is the set of indices included in n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

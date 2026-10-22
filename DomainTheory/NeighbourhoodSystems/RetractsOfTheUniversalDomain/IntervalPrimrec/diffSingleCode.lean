@@ -1,6 +1,3 @@
-/-ai
-The code that subtracts one coded rational pair from a coded list is the flat map of the one-pair difference code, with the subtracted pair as the parameter.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

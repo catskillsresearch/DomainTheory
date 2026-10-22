@@ -1,8 +1,3 @@
-/-ai
-Applying the packed combinator to the numeral 1 returns the pair sequence of predecessor, the conditional, K, and S.
-
-Unfold the packed sequence and apply the right-projection law for a pair sequence.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

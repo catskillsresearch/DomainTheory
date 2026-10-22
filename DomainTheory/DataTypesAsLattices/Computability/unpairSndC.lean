@@ -1,6 +1,3 @@
-/-ai
-The element unpairSndC is the interpretation of the second-projection term unpairSndTerm in the unpairing environment unpairEnv.
-ai-/
 module
 
 public import Mathlib.Computability.RE

@@ -1,6 +1,3 @@
-/-ai
-The second embedding sends an element b of B to the pair of the bottom of A with b.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise817

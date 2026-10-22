@@ -1,8 +1,3 @@
-/-ai
-Applying the combinator Z at a stage to a function equals the graph of its further applications.
-
-Rewrite by the one-argument application, then use extensionality of graphs. At each value the equality is the symmetric form of beta reduction for continuity of the iterator in the value.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts

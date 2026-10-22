@@ -1,8 +1,3 @@
-/-ai
-The function-space product of d relates a set X to itself if and only if X is a neighbourhood and the section of the uncurried product at X lies in X.
-
-Rewrite by the general relation law for the product. One direction drops the repeated neighbourhood hypothesis, and the other restores it.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

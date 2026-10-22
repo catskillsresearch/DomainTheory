@@ -1,8 +1,3 @@
-/-ai
-splitMidCode is primitive recursive.
-
-It is the rational midpoint code composed with the first-element code composed with the canonical code, and that composite agrees with the midpoint code by simplification.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

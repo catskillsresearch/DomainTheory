@@ -1,8 +1,3 @@
-/-ai
-A Boolean function belongs to every box that pins coordinates to its own values.
-
-At each pinned coordinate the required equality holds definitionally.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise813b

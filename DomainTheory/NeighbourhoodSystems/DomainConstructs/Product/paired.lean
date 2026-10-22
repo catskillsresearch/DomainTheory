@@ -1,6 +1,3 @@
-/-ai
-Definition 3.3 of Scott (1981, PRG-19) pairs approximable maps f and g as the map that relates an input Z to a product neighbourhood P when P is a product neighbourhood, f relates Z to the left preimage of P, and g relates Z to the right preimage. The master relation is the pair of master relations. Right intersection uses the intersection laws of f and g and rebuilds the product of the intersected preimages. Monotonicity decomposes the larger product neighbourhood and applies monotonicity of f and of g on the two preimages.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

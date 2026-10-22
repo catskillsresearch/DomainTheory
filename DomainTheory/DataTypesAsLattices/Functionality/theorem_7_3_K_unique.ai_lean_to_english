@@ -1,0 +1,3 @@
+A combinator that lies in every function space A → (B → A) equals the combinator K.
+
+The empty equivalences supply the graph equation. At an argument a, the closure theorem for the singleton of a and the empty equivalence shows that the value is a graph. At a second argument b, the closure theorem for the two singletons shows that the double application lies in the singleton of a, hence equals a, which is the double application law for K.

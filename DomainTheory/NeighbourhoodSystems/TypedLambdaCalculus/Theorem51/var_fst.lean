@@ -1,8 +1,3 @@
-/-ai
-Theorem 5.1, variable case (Scott 1981, PRG-19), states that the first projection sends the pair of x and y to x.
-
-Rewrite by the first-projection map and the first component of a pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table55

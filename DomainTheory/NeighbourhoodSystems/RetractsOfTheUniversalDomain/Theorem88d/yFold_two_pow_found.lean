@@ -1,8 +1,3 @@
-/-ai
-After two to the power n steps, the found flag of the depth-n fold equals one.
-
-The found-flag characterization, applied to the existence of an index below two to the power n whose shifted atom is non-empty, gives the flag.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

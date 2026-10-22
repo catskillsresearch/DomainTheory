@@ -1,8 +1,3 @@
-/-ai
-If the pair embedding of two sets is a neighbourhood of D-sharp, then both sets are neighbourhoods of D-sharp.
-
-The inductive construction cannot be the master: a point of the master of D with empty boolean list lies in the master of D-sharp but not in a pair embedding. It cannot be a zero-copy: a point of a zero-embedding has empty boolean list, while every point of a nonempty pair embedding has a nonempty list. The remaining case is a pair, and injectivity of the pair embedding identifies the two components.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

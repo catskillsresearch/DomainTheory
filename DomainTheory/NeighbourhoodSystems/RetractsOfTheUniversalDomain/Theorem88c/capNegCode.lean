@@ -1,6 +1,3 @@
-/-ai
-The negative-list code of a triple code is the list code of the singleton whose entry is the third component of the triple.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

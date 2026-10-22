@@ -1,8 +1,3 @@
-/-ai
-A word lies in the language of an expression if and only if the finite evaluation of the word meets the finite accept set.
-
-Rewrite language membership by acceptance of the automaton. If an accept state lies in the evaluation, the evaluation coercion and the accept coercion place it in the finite intersection. Conversely, a state of that finite intersection is accepting and lies in the evaluation, again by those two coercions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Decide

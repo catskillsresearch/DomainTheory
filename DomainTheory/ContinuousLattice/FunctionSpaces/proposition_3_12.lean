@@ -1,8 +1,3 @@
-/-ai
-For a complete lattice D, the projections form a complete lattice as a join-closed subspace of the function space of Scott maps on D. This is Scott's Proposition 3.12.
-
-An arbitrary supremum of projections is a projection, and the type of projections carries a complete-lattice structure.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

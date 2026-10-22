@@ -1,6 +1,3 @@
-/-ai
-One step of the inner fold reads the packed state as the current index, the accumulator, and the outer index. If the consistency test of the outer index with the current index returns one, the step returns the list code obtained by prepending their intersection index to the accumulator; otherwise it returns the accumulator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

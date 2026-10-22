@@ -1,8 +1,3 @@
-/-ai
-Iterating integer halving zero times leaves the input unchanged: halfIter n 0 equals n.
-
-The equation is definitional.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

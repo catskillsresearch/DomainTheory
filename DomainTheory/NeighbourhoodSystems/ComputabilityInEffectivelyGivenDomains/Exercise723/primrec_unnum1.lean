@@ -1,8 +1,3 @@
-/-ai
-The first component unnum1 of the primitive-recursive unnumbering is primitive recursive.
-
-It is the left projection of the primitive-recursive packed unnumbering.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

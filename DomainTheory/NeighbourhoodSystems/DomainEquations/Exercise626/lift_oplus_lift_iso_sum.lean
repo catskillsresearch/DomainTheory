@@ -1,8 +1,3 @@
-/-ai
-The coalesced sum of the lifts of D and E is domain-isomorphic to the separated sum of D and E. Coalescing the fresh bottoms of the two lifts reproduces the separated sum.
-
-The isomorphism is the order isomorphism sumLiftEquiv.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

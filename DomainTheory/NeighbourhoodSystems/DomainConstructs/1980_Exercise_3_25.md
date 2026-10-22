@@ -1,7 +1,19 @@
 # Exercise 3.25
 
-**EXERCISE 3.25.** (For topologists.) Recall from Exercises 1.21 and 2.13 on how to regard a domain $|D|$ as a topological space. Using 3.10 show that the family of open subsets of $|D|$ is isomorphic to a domain.
+## Human-English
 
-**Lean 4**
+@import "Exercise325.english" {code_block=false}
 
-- [NeighbourhoodSystems/DomainConstructs/Exercise325.lean](Exercise325.lean)
+## AI: Human-English to AI-Lean
+
+**NeighbourhoodSystems/DomainConstructs/Exercise325.lean**
+
+@import "Exercise325.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Exercise325.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "Exercise325.ai_english_concordance" {code_block=false}

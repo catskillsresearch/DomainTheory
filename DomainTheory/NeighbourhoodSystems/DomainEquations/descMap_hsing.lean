@@ -1,8 +1,3 @@
-/-ai
-If a finite string is a prefix of another, the recursive value of bottom along the prefix lies below the recursive value of the distinguished point along the longer string.
-
-Write the longer string as the prefix appended with a remainder. The append law moves the remainder into the base value, and monotonicity in the base value uses that bottom is least.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

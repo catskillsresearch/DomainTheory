@@ -1,8 +1,3 @@
-/-ai
-The retraction of a subsystem lies under the identity map.
-
-A related pair of neighbourhoods yields, by the relation criterion, an intermediate neighbourhood of the subsystem lying between them, and transitivity of inclusion gives the identity relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition82

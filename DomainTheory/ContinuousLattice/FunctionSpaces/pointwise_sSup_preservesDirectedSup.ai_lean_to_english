@@ -1,0 +1,3 @@
+For a set of Scott maps, the function sending each element to the supremum of the values of those maps at that element preserves directed suprema.
+
+Let S be a nonempty directed set. Each member preserves the directed supremum of S, and each value on S lies below the corresponding pointwise supremum, which lies below the supremum of those pointwise suprema. In the other direction, monotonicity of each member puts its value at a point of S below its value at the supremum of S, hence below the pointwise supremum there.

@@ -1,8 +1,3 @@
-/-ai
-The singleton of the empty string is distinct from the embedding of one letter.
-
-Equality would place the empty string in the embedding, and the empty string lies in no such embedding.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

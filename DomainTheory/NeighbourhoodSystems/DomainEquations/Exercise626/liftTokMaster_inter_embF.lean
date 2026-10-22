@@ -1,8 +1,3 @@
-/-ai
-The intersection of the lift master with the false-bit embedding of a neighbourhood X equals that embedding.
-
-The embedding is included in the lift master, so intersecting on the left leaves it unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

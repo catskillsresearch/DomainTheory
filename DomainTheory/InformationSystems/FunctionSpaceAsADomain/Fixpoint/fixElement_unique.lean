@@ -1,8 +1,3 @@
-/-ai
-By Scott's Theorem 7.3, an element that is pre-fixed by an approximable endomap f and lies below every pre-fixed point of f equals the fixed-point element of f.
-
-Antisymmetry uses the least-pre-fixed-point hypothesis at the image of the fixed point, which lies below the fixed point, together with the fact that the fixed-point element lies below every pre-fixed point.
-ai-/
 
 module
 

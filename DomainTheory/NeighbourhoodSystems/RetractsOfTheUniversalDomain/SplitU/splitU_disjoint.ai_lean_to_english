@@ -1,0 +1,3 @@
+The left and right halves of the canonical U-split are disjoint.
+
+Rewrite both neighbourhoods as the original neighbourhood cut below the midpoint and cut from the midpoint. A common point would be both strictly below the midpoint and at least the midpoint.

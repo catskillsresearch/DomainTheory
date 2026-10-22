@@ -1,6 +1,3 @@
-/-ai
-The primitive-recursion step sends a base, a step functional, and a functional to the graph of the conditional that returns the base on a zero argument and otherwise applies the step functional and then the functional to the predecessor.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

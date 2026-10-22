@@ -1,8 +1,3 @@
-/-ai
-The preimage of a Scott-open set under a map that preserves directed suprema is Scott-open.
-
-Such a map is monotone, so the preimage is an upper set because the Scott-open set is. If the supremum of a nonempty directed set lies in the preimage, preservation puts the supremum of the image in the Scott-open set. The image is nonempty and directed by monotonicity, so some value of the map lies in the set, and the corresponding argument lies in the preimage.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Specialization

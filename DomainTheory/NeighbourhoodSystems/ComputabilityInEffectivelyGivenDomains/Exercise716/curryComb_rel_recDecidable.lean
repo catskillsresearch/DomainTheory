@@ -1,8 +1,3 @@
-/-ai
-Relative to the function-space presentations of the maps out of the product, of the curried function space, and of the inner function space, the neighbourhood relation of the curry combinator is recursively decidable. On codes it holds exactly when the outer guard is 1 only if, for every coded entry of the target whose inner guard is 1, every coded entry of that inner code has its step neighbourhood contained in the source neighbourhood after the curry step code.
-
-The relation is first rewritten, through the curry isomorphism and filter membership, as membership of the curry of the least map of the principal source neighbourhood. Enumeration membership and the curry relation on enumerated neighbourhoods turn that into the displayed bounded quantification, once each singleton step is identified with the source enumeration at the curry step code. Inclusion after that code is decidable by composing the inclusion decider with a primitive-recursive reindexing. Bounded universal quantification, and the equivalence of an implication with a disjunction against a negated guard, adjoin the inner guard, the outer quantification, and the outer guard.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

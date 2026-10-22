@@ -1,8 +1,3 @@
-/-ai
-The token system is positive: the intersection of two of its neighbourhoods is a neighbourhood if and only if the intersection is nonempty.
-
-The intersection of the brackets of two neighbourhoods is the bracket of their intersection. If that bracket equals the bracket of some neighbourhood, the principal filter of the neighbourhood lies in it. Conversely, an element of the bracket contains the intersection, so the intersection is a neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem110

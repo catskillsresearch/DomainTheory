@@ -1,8 +1,3 @@
-/-ai
-The element map of the encoding from the binary system into the infinite iterate of the truth system is injective.
-
-If two elements have the same encoding image, the element map of composition gives them the same image under the composite of decoding after encoding. That composite is the identity, whose element map is the identity, so the two elements agree.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

@@ -1,0 +1,3 @@
+The relation beforeHalt is primitive recursive.
+
+Inequality between the shifted halting enumerator on the first argument and the second argument is primitive recursive. Quantifying that inequality over the initial segment of length one more than the second argument, and rewriting by the definition of beforeHalt, gives the relation.

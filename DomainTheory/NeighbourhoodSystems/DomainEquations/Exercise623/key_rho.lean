@@ -1,8 +1,3 @@
-/-ai
-The projections onto the levels of the tower satisfy the recursion that the next projection equals the structure map composed with T of the current projection composed with the inverse structure map.
-
-The underlying systems of T(Exp) and Exp agree. Extensionality, the rewriting of T of the current projection as the injection-projection pair of the image subsystem, and the relational forms of composition, of the projections, of the two structure maps, and of injection and projection, reduce both directions to neighbourhood data. Forward, a witness neighbourhood for the next projection is reassembled as a composite through the source and through that witness. Backward, the intermediate neighbourhoods of the composite collapse by transitivity of inclusion to one witness for the next projection.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

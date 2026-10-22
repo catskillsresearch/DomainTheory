@@ -1,8 +1,3 @@
-/-ai
-The element map of the spacing map is not surjective. The composite of the left inverse with the spacing map is the identity on the binary-string domain. The element map of the left inverse is not injective.
-
-The numbered name example_218 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise218.hMap_not_surjective

@@ -1,6 +1,3 @@
-/-ai
-The fuel-bounded decode-ok character is the {0, 1} flag of successful fuel-bounded decoding of an S-expression. It is 0 at fuel 0, and at the next fuel it is one step of the decode-ok body applied to the character at the previous fuel.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

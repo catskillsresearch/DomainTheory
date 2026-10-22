@@ -1,8 +1,3 @@
-/-ai
-The composition of two combinatory elements is combinatory.
-
-Rewrite composition as the application of the function retract to the composition combinator of the two elements. The retract is combinatory, and the composition combinator of two combinatory elements is combinatory.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

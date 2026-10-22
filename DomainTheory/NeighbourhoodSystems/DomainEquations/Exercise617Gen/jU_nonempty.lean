@@ -1,8 +1,3 @@
-/-ai
-The unit neighbourhood of the indexed sum is nonempty.
-
-It contains the unit token.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

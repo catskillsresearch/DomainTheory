@@ -1,8 +1,3 @@
-/-ai
-Every finite set of the form e j is recursively enumerable.
-
-The numbers below j + 1 whose bit in j is set form a finite set equal to e j. One inclusion is the bit characterization of e, and the other uses that characterization together with the bound on members of e. The finite-set theorem then applies.
-ai-/
 module
 
 public import Mathlib.Computability.RE

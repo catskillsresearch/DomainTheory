@@ -1,0 +1,3 @@
+For fixed x and y, the McCarthy conditional is Scott continuous in z.
+
+Fix z and compare membership of a number k. If k lies in x and 0 lies in z, the basic element coded by 1 witnesses membership in the Scott union, since that element is contained in z and contains 0. If k lies in y and some successor t + 1 lies in z, the basic element coded by the power of two at t + 1 is the witness. Conversely, a member of the Scott union lies in the conditional at some basic element contained in z, so the witness that 0 or t + 1 belongs to that element still belongs to z.

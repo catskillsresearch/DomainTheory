@@ -1,6 +1,3 @@
-/-ai
-Pushing an element onto a stack is folding the pair of the element and the stack.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

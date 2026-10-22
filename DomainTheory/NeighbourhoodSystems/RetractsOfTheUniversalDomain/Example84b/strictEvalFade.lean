@@ -1,6 +1,3 @@
-/-ai
-The joint approximable map from the product of the function space and D into E sends a pair of a map f and an argument y to fade of check of y applied to the value of f at y. It is fade on E, composed with the pairing of check after the second projection and the evaluation map.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

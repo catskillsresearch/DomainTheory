@@ -1,8 +1,3 @@
-/-ai
-Applying the graph of x ↦ (the graph of y ↦ x ∪ y) first to x and then to y yields x ∪ y.
-
-The outer graph is Scott continuous because union is Scott continuous in its left argument, so its application to x is the graph of y ↦ x ∪ y. Applying that graph to y yields x ∪ y by Scott continuity of union in its right argument.
-ai-/
 
 module
 

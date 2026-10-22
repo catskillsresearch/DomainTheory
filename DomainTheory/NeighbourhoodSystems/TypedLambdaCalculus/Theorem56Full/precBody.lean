@@ -1,6 +1,3 @@
-/-ai
-Given maps φf and φg out of the universal argument domain, the primitive-recursion body conditions on the zero-test of the head of the argument. The true branch applies φf to the tail. The false branch applies φg to the vector obtained by pushing the predecessor of the head together with the value of the function-space factor at that predecessor pushed onto the tail, and then the tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

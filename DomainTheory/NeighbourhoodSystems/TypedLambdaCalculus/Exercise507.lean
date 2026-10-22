@@ -1,8 +1,3 @@
-/-ai
-Uncurrying the two-variable abstraction of a map returns the original map.
-
-The numbered name example_507 is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise507.uncurry_lam_two_vars

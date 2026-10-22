@@ -1,8 +1,3 @@
-/-ai
-Diagrammatic composition of approximable maps is associative.
-
-The two associations agree on every element, because the elementwise evaluation of diagrammatic composition simplifies to the same nested application.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

@@ -1,8 +1,3 @@
-/-ai
-The inner intersection code equals the left fold, along the decoded list of m, which prepends the intersection index of a and the current index to the accumulator when the consistency test of that pair returns one, and otherwise leaves the accumulator unchanged.
-
-The inner step on the packed state agrees with that selection, by the inner-step equation. Unfolding the definition and rewriting by the fold-code equation therefore gives the left fold.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

@@ -1,8 +1,3 @@
-/-ai
-If membership of a number in the value of a map on a finite set is a recursively enumerable predicate of the two indices, then the graph of the map is recursively enumerable.
-
-The Scott-pair equation, read off an unpacked search index, is primitive recursive, and the membership clause transported along unpacking is recursively enumerable. Their conjunction, existentially quantified, is recursively enumerable. A witness unpacks to a graph clause, and a graph clause packs to a witness.
-ai-/
 module
 
 public import Mathlib.Computability.RE

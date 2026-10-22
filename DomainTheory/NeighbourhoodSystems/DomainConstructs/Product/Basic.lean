@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the product neighbourhood and the product system of Scott's Definition 3.1, the first and second components and the pairing of elements, the order isomorphism of Proposition 3.2, the projections and the paired map of Definition 3.3 and Proposition 3.4, the constant maps of Lemma 3.6, and the equivalence of Theorem 3.5 between joint and two-variable approximable maps, together with the membership, preimage, intersection, inclusion, injectivity, splitting, and round-trip lemmas that support them.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable
@@ -53,39 +50,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product.ofMap�
 
 @[expose] public section
 
-/-!
-# Lecture III (§3) — the product system: Definitions 3.1, 3.3, Propositions 3.2, 3.4,
-Lemma 3.6, Theorems 3.5, 3.7
-
-Following Dana Scott, *Lectures on a Mathematical Theory of Computation*, PRG-19 (1981), Lecture III,
-*Constructions on domains*. Given two neighbourhood systems over **disjoint** token sets `Δ₀`, `Δ₁`,
-the **product system** `𝒟₀ × 𝒟₁` has neighbourhoods `X ∪ Y` (`X ∈ 𝒟₀`, `Y ∈ 𝒟₁`) over `Δ₀ ∪ Δ₁`.
-
-We model the disjoint union of token sets by the **sum type** `α ⊕ β`, and the product
-neighbourhood `X ∪ Y` by `prodNbhd X Y = Sum.inl '' X ∪ Sum.inr '' Y`. Because `Sum.inl` and
-`Sum.inr` have disjoint ranges, the cleanest facts of Scott's proof become transparent:
-
-* `prodNbhd_inter` — `(X ∪ Y) ∩ (X' ∪ Y') = (X ∩ X') ∪ (Y ∩ Y')` (Scott's (2));
-* `prodNbhd_subset_iff` — `X ∪ Y ⊆ X' ∪ Y' ↔ X ⊆ X' ∧ Y ⊆ Y'` (Scott's (1));
-* `prodNbhd_injective` — the representation `X ∪ Y` is unique.
-
-This file formalizes:
-
-* **Definition 3.1 / Proposition 3.2** — the product system `prod V₀ V₁`, the element pairing
-  `pair x y = ⟨x, y⟩`, the order law `pair_le_pair_iff` (3.2(i)), and the order-isomorphism
-  `prodEquiv : |𝒟₀ × 𝒟₁| ≃o |𝒟₀| × |𝒟₁|`.
-* **Definition 3.3 / Proposition 3.4** — projections `proj₀`, `proj₁`, the paired mapping `paired f g`,
-  and `proj₀_comp_paired`, `proj₁_comp_paired`, `paired_proj` (`⟨p₀∘h, p₁∘h⟩ = h`),
-  `toElementMap_paired` (`⟨f, g⟩(w) = ⟨f(w), g(w)⟩`).
-* **Lemma 3.6** — constant maps `constMap b` (`X b Y ↔ Y ∈ b`) with `toElementMap_constMap`.
-* **Theorem 3.5** — joint vs. separate approximability, via the bridge `ApproximableMap (prod V₀ V₁) V₂
-  ≃ ApproximableMap₂ V₀ V₁ V₂` (`ofMap₂` / `toMap₂` and round-trips).
-* **Proposition 3.7** — multivariate approximable functions are closed under substitution
-  (`comp`/`paired`/`proj` bookkeeping).
-
-Everything is **choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
--/
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem
@@ -96,26 +60,10 @@ variable {α β γ δ : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 
-/-! ### Projections of an element (Scott's `z₀`, `z₁`). -/
-
-
-/-! ### Definition 3.1 — the element pairing `⟨x, y⟩`. -/
-
-
-/-! ### Definition 3.3 / Proposition 3.4 — projections and pairing of maps. -/
-
 variable {V₂ : NeighborhoodSystem γ}
 
 open ApproximableMap
 
-
-/-! ### Lemma 3.6 — constant maps. -/
-
-
-/-! ### Theorem 3.5 — joint vs. separate approximability. -/
-
-
-/-! ### Proposition 3.7 — closure under substitution. -/
 
 variable {V₃ : NeighborhoodSystem δ}
 end DomainTheory.NeighbourhoodSystems

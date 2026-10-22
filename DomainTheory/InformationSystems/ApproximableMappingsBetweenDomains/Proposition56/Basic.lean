@@ -1,6 +1,3 @@
-/-ai
-This module gathers and re-exports Propositions 5.3 and 5.5 together with the constant approximable mapping, as the setting for Proposition 5.6 of Scott 1982. For a fixed element there is a unique approximable mapping with that constant value, and composition absorbs a constant mapping on either side.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53
@@ -8,14 +5,6 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.constMap
 
 @[expose] public section
-
-/-!
-# Proposition 5.6 — constant approximable mappings
-
-**Scott 1982, Proposition 5.6.** For a fixed element `b ∈ |B|` there is a unique
-approximable map `const b : A → B` with `(const b)(x) = b` for all `x`. Moreover
-`f ∘ (const b) = const (f(b))` and `(const b) ∘ g = const b`.
--/
 
 namespace DomainTheory.InformationSystems
 

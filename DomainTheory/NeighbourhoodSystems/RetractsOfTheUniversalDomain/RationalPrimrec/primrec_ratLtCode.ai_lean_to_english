@@ -1,0 +1,3 @@
+The strict rational comparison code is primitive recursive.
+
+It is one minus the comparison code of the pair whose components have been exchanged, and exchanging the components is pairing the right component with the left.

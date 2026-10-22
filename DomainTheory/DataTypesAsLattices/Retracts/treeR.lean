@@ -1,6 +1,3 @@
-/-ai
-The tree retract is the application of the Y combinator to the graph of the tree functor.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

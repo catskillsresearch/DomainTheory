@@ -1,8 +1,3 @@
-/-ai
-Every cone is a neighbourhood of the binary system.
-
-The cone of the given string is that neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

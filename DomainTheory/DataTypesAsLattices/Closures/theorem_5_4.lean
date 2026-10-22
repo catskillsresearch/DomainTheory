@@ -1,8 +1,3 @@
-/-ai
-Scott's product theorem says that the boxed product of two closures is a closure.
-
-The identity combinator is contained in the boxed product, and the boxed product of the underlying retracts is a retract.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

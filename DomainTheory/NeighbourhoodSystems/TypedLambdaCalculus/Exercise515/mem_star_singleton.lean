@@ -1,8 +1,3 @@
-/-ai
-A point lies in the star of the singleton of e if and only if it equals some monoid power of e.
-
-Membership in the star is membership in some finite power. The power-of-a-singleton law converts that membership into equality with the corresponding monoid power, in both directions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

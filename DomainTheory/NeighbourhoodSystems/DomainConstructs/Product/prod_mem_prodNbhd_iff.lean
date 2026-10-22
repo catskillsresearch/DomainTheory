@@ -1,8 +1,3 @@
-/-ai
-The product of X and Y is a neighbourhood of the product system if and only if X and Y are neighbourhoods of the two systems.
-
-If the product equals the product of some neighbourhoods, injectivity identifies the components. Conversely, a pair of neighbourhoods forms a product neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

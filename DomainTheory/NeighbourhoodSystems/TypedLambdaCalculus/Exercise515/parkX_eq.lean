@@ -1,8 +1,3 @@
-/-ai
-Park's first component x₀ satisfies the equation x = a · x ∪ b · y ∪ c, with y the accompanying component.
-
-The fixed-point identity for the star product rewrites x₀ as the product of the feedback coefficient with x₀, united with the feedback constant. Expanding those two sets and the accompanying component, and simplifying by both distributivity laws, associativity of the product, and commutation of unions, yields a · x₀ ∪ b · y₀ ∪ c.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

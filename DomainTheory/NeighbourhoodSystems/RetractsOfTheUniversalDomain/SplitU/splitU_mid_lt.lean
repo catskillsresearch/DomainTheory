@@ -1,8 +1,3 @@
-/-ai
-The decoded midpoint is strictly less than the right endpoint of the first pair of the canonical presenting list.
-
-Unfold the midpoint code and rewrite its decoding as the average of the two endpoints. The first pair is nondegenerate, so that average lies strictly below the right endpoint.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

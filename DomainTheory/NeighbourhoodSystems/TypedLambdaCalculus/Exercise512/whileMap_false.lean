@@ -1,8 +1,3 @@
-/-ai
-If the test fails at x, so that p(x) is false, then the while-loop returns x.
-
-Rewrite the loop by its recursion equation, substitute the hypothesis that the test is false, and apply the conditional law for false.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

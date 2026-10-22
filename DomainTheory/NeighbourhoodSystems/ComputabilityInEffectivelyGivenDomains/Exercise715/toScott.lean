@@ -1,6 +1,3 @@
-/-ai
-The Scott presentation underlying a computable presentation keeps the same enumeration, the same proofs that each value is a neighbourhood and that every neighbourhood occurs, and the same recursive decidability of intersection-equality and of consistency.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

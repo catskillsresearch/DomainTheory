@@ -1,6 +1,3 @@
-/-ai
-A subsystem relation determines a projection pair by reusing its injection, its projection, the equality of the projection after the injection with the identity, and the inequality of the injection after the projection with the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88

@@ -1,15 +1,31 @@
 # Theorem 1.6
 
-**THEOREM 1.6** (The embedding theorem). *Every $T_0$-space $X$ with a countable basis $\{U_n \mid n \in \omega\}$ for its topology can be embedded in $\mathbf{P}\omega$ by the continuous function $\varepsilon : X \to \mathbf{P}\omega$ defined by the equation:*
+## Human-English
 
-$$\varepsilon(x) = \{ n \mid x \in U_n \}.$$
+@import "1976_Theorem_1_6.english" {code_block=false}
 
-Technically the $T_0$-hypothesis is what is needed to show that $\varepsilon$ is one-to-one. The upshot of these two theorems is that in looking for (reasonable) topological structures we can confine attention to the subspaces of $\mathbf{P}\omega$ and to continuous functions defined on *all* of $\mathbf{P}\omega$. Thus the emphasis on a single space is justified structurally. What we shall see in the remainder of this work is that the use of a single space is also justified practically because the required subspaces and functions can be *defined* in very simple ways by a natural method of equations.
+## AI: Human-English to AI-Lean
 
-In order to make the plan of the work clearer, the proofs of the theorems have been placed in an Appendix when they are more than simple exercises.
+**DataTypesAsLattices/Embedding/theorem_1_6.lean**
 
-**Lean 4**
+@import "theorem_1_6.lean"
 
-- [DataTypesAsLattices/Embedding/theorem_1_6.lean](theorem_1_6.lean)
-- [DataTypesAsLattices/Embedding/theorem_1_6_injective_continuous.lean](theorem_1_6_injective_continuous.lean)
-- [DataTypesAsLattices/Embedding.lean](../Embedding.lean)
+**DataTypesAsLattices/Embedding/theorem_1_6_injective_continuous.lean**
+
+@import "theorem_1_6_injective_continuous.lean"
+
+**DataTypesAsLattices/Embedding.lean**
+
+@import "../Embedding.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "theorem_1_6.ai_lean_to_english" {code_block=false}
+
+@import "theorem_1_6_injective_continuous.ai_lean_to_english" {code_block=false}
+
+@import "../Embedding.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1976_Theorem_1_6.ai_english_concordance" {code_block=false}

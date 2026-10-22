@@ -1,8 +1,3 @@
-/-ai
-Two two-variable approximable mappings with the same relation are equal.
-
-The relation fields agree by propositional extensionality and by function extensionality in the three arguments, and substituting that equality makes the two structures definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

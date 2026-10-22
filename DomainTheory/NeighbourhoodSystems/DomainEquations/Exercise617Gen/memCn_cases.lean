@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of the system of cones and singletons is the set of all strings, the singleton of the empty string, or the embedding of one letter applied to a neighbourhood.
-
-A neighbourhood is a cone or a singleton. The cone of the empty string is the set of all strings, and the cone of a nonempty string is the embedding of the cone of its tail. The singleton of the empty string is already the terminator, and the singleton of a nonempty string is the embedding of the singleton of its tail.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

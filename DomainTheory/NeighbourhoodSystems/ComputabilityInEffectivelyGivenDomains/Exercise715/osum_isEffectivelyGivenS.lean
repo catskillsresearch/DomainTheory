@@ -1,8 +1,3 @@
-/-ai
-If both neighbourhood systems are effectively given, and every neighbourhood of each is nonempty, their coalesced sum is effectively given in Scott's sense.
-
-The two given presentations determine a Scott presentation of the coalesced sum.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

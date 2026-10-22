@@ -1,8 +1,3 @@
-/-ai
-Unpairing the pairing of elements x and y returns the pair of x and y.
-
-Unfolding the unpairing, the two projections of a paired element are the two elements that were paired.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

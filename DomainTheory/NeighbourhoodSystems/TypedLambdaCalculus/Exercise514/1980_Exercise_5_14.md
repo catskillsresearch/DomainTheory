@@ -1,51 +1,115 @@
 # Exercise 5.14
 
-**EXERCISE 5.14.** Show that there are approximable mappings
+## Human-English
 
-$$
-\mathrm{graph} : (P\mathbf{N} \to P\mathbf{N}) \to P\mathbf{N} \quad \text{and} \quad \mathrm{fun} : P\mathbf{N} \to (P\mathbf{N} \to P\mathbf{N}),
-$$
+@import "1980_Exercise_5_14.english" {code_block=false}
 
-where we have
+## AI: Human-English to AI-Lean
 
-$$
-\mathrm{fun} \circ \mathrm{graph} = \lambda f.\, f, \quad \text{and} \quad \mathrm{graph} \circ \mathrm{fun} \supseteq \lambda x.\, x.
-$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Fun_isApprox.lean**
 
-(Hint: Using the notation
+@import "Fun_isApprox.lean"
 
-$$
-[n_0, n_1, \ldots, n_k] = \mathrm{num}(n_0, [n_1, \ldots, n_k])
-$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514.lean**
 
-two such combinators can be given by formulae
+@import "../Exercise514.lean"
 
-$$
-\mathrm{fun}(u)(x) = \{m \mid \exists n_0, \ldots, n_{k-1} \in x.\ [n_0+1, \ldots, n_{k-1}+1, 0, m] \in u\}
-$$
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Fun_mono.lean**
 
-$$
-\mathrm{graph}(f) = \{[n_0+1, \ldots, n_{k-1}+1, 0, m] \mid m \in f(\{n_0, \ldots, n_{k-1}\})\}
-$$
+@import "Fun_mono.lean"
 
-where $k$ is variable — meaning all finite sequences are to be considered.)
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/num_succ_left_gt.lean**
 
-**Lean 4**
+@import "num_succ_left_gt.lean"
 
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Fun_isApprox.lean](Fun_isApprox.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514.lean](../Exercise514.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Fun_mono.lean](Fun_mono.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/num_succ_left_gt.lean](num_succ_left_gt.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/tag.lean](tag.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/tag_injective.lean](tag_injective.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Fun_Graph.lean](Fun_Graph.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/tag_nil.lean](tag_nil.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/tag_cons.lean](tag_cons.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/entries.lean](entries.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/mem_entries.lean](mem_entries.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Fun.lean](Fun.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Graph.lean](Graph.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/IsApprox.lean](IsApprox.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/tag_surjective.lean](tag_surjective.lean)
-- [NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/id_le_Graph_Fun.lean](id_le_Graph_Fun.lean)
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/tag.lean**
+
+@import "tag.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/tag_injective.lean**
+
+@import "tag_injective.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Fun_Graph.lean**
+
+@import "Fun_Graph.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/tag_nil.lean**
+
+@import "tag_nil.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/tag_cons.lean**
+
+@import "tag_cons.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/entries.lean**
+
+@import "entries.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/mem_entries.lean**
+
+@import "mem_entries.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Fun.lean**
+
+@import "Fun.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Graph.lean**
+
+@import "Graph.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/IsApprox.lean**
+
+@import "IsApprox.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/tag_surjective.lean**
+
+@import "tag_surjective.lean"
+
+**NeighbourhoodSystems/TypedLambdaCalculus/Exercise514/id_le_Graph_Fun.lean**
+
+@import "id_le_Graph_Fun.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Fun_isApprox.ai_lean_to_english" {code_block=false}
+
+@import "../Exercise514.ai_lean_to_english" {code_block=false}
+
+@import "Fun_mono.ai_lean_to_english" {code_block=false}
+
+@import "num_succ_left_gt.ai_lean_to_english" {code_block=false}
+
+@import "tag.ai_lean_to_english" {code_block=false}
+
+@import "tag_injective.ai_lean_to_english" {code_block=false}
+
+@import "Fun_Graph.ai_lean_to_english" {code_block=false}
+
+@import "tag_nil.ai_lean_to_english" {code_block=false}
+
+@import "tag_cons.ai_lean_to_english" {code_block=false}
+
+@import "entries.ai_lean_to_english" {code_block=false}
+
+@import "mem_entries.ai_lean_to_english" {code_block=false}
+
+@import "Fun.ai_lean_to_english" {code_block=false}
+
+@import "Graph.ai_lean_to_english" {code_block=false}
+
+@import "IsApprox.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "tag_surjective.ai_lean_to_english" {code_block=false}
+
+@import "id_le_Graph_Fun.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Exercise_5_14.ai_english_concordance" {code_block=false}

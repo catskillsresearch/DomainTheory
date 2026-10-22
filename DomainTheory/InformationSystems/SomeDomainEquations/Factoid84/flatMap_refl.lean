@@ -1,8 +1,3 @@
-/-ai
-The flat map contains every relation of the identity map of the powerset system P.
-
-An identity relation supplies an entailment of the codomain set by the domain set. If 1 belongs to the domain set, the flat relation holds by that clause. Otherwise each token of the codomain set is entailed, so it equals 0 or belongs to the domain set. If 1 belonged to the codomain set, the same entailment would force 1 to equal 0 or to belong to the domain set.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55

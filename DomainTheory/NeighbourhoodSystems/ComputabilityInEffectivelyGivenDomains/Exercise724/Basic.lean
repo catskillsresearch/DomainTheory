@@ -1,68 +1,3 @@
-/-ai
-The digit map from bits to natural numbers is injective.
-
-Cases on both bits reduce an equality of images by the definition of the map.
-
-The embedding of a binary string sends a cons cell to the cons of the image of the head with the image of the tail.
-
-The equation is definitional.
-
-The embedding preserves and reflects the prefix order. The image of one binary string is a prefix of the image of another if and only if the first string is a prefix of the second.
-
-Induction on the first string. The empty string simplifies. For a cons cell, an empty target simplifies by the cons equation of the embedding. A cons target rewrites both prefix relations by the cons criterion and both images by the cons equation, then uses injectivity of the digit map and the inductive hypothesis.
-
-Cone inclusion in Scott's binary system matches neighbourhood inclusion in the LUCID system along this embedding. The cone of one binary string is contained in the cone of another if and only if the neighbourhood of the embedded address is contained in the neighbourhood of the other embedded address.
-
-Rewrite by the cone criterion, the neighbourhood criterion, and the prefix equivalence for the embedding.
-
-The order of finite elements of the binary system matches the order of the corresponding finite elements of the LUCID system. One finite element lies below another if and only if the element of the finite sequence given by the first embedded address lies below the element of the second.
-
-Those elements are the principal filters of the neighbourhoods of the embedded addresses. Rewrite by the order criterion for the finite elements, the order criterion for principal filters, the neighbourhood criterion, and the prefix equivalence.
-
-If a function on the natural numbers is primitive recursive, so is the map sending an argument to the negation code of its value.
-
-The map selects two when the equality characteristic with one is set, and otherwise selects one when the equality characteristic with two is set, and otherwise selects zero. Extensionality is the case split on equality with one and with two. Each equality makes the corresponding characteristic one by the zero test in its definition, and each failure makes it zero, so the selections match the definition of the negation code.
-
-Negation of the neighbourhood enumerated by an index is the neighbourhood enumerated by the negation code of the minimum of that index and two.
-
-Rewrite the enumeration to canonical form. The minimum is at most two, and each of its three values simplifies by the enumeration, the negation code, and the three clauses of negation.
-
-Pointwise negation on the three-point truth domain is a computable map of its presentation to itself.
-
-The map that replaces the first component of a packed pair by the negation code of its minimum with two is primitive recursive, and inclusion of enumerated neighbourhoods along that map is recursively decidable by the inclusion decider of the presentation. The neighbourhood relation of negation is that inclusion, because negation of an enumerated neighbourhood is the enumerated negation code and every enumerated set is a neighbourhood. A decidable relation is recursively enumerable.
-
-If two functions on the natural numbers are primitive recursive, so is the map sending an argument to the conjunction code of their values.
-
-The map selects the second value when the equality characteristic of the first value with one is set, selects two when the characteristic with two is set, and selects zero otherwise. The same case split makes each characteristic one or zero by the zero test, and the selections match the definition of the conjunction code.
-
-Conjunction of the neighbourhoods enumerated by two indices is the neighbourhood enumerated by the conjunction code of the two minima with two.
-
-Both enumerations rewrite to canonical form. Both minima are at most two, and each combination of their values simplifies by the enumeration, the conjunction code, and the three clauses of conjunction.
-
-Pointwise conjunction is a computable map from the product presentation of the three-point domain to its presentation.
-
-The map sending a packed word to the conjunction code of the two minima with two of the components of the first half, paired with the second half, is primitive recursive, and inclusion of the resulting enumerated neighbourhood is recursively decidable. The relation of conjunction on a product neighbourhood is the relation of the underlying binary map after the two preimages of the product, which are the two factors, once the product of two neighbourhoods is known to be a product neighbourhood. That relation is inclusion of the conjunction, rewritten by the enumeration equation, together with the three memberships. Packing through the product presentation makes the relation decidable, hence recursively enumerable.
-
-Postcomposition preserves computability. A computable map between presented neighbourhood systems induces a computable map from the function space of the LUCID system into the first to the function space into the second, relative to presentations built from characteristic bundles.
-
-Evaluation against the first bundle is computable. Composing with the given map stays computable, and currying that composite against the second bundle stays computable.
-
-A computable map out of a product induces a computable pointwise map on a product of function spaces over the LUCID system.
-
-The projections from the product of that product of function spaces with the LUCID system are computable, and composing the product projection with the two function-space projections gives the two pointwise projections. Evaluation of each, paired with the projection onto the LUCID system, is computable. Pairing those evaluations, composing with the binary map, and currying yields the pointwise map.
-
-LUCID negation lifts to a computable endomap of the function space from the LUCID system to the three-point domain.
-
-Apply the postcomposition theorem to the characteristic bundle of that function space and the computability of negation.
-
-LUCID conjunction lifts to a computable map from the product of that function space with itself into the function space.
-
-Apply the pointwise theorem to three copies of the bundle and the computability of conjunction.
-
-The De Morgan combination that negates the conjunction of the two negated arguments is a computable map of that same product type. It is the witness that programs built from the lifted combinators remain computable.
-
-Pair the composites of the two projections with the lifted negation, then compose the lifted conjunction with the lifted negation. Both steps are the closure of computability under pairing and composition.
-ai-/
 
 module
 
@@ -170,94 +105,9 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75.evalMap_isComputable
 @[expose] public section
 
-/-!
-# Exercise 7.24 (Scott 1981, PRG-19, §7) — the LUCID system `L`
-
-Following Dana Scott, *Lectures on a Mathematical Theory of Computation*, PRG-19, Lecture VII.
-
-> **Exercise 7.24.** (Suggested by the LUCID language of Ashcroft and Wadge: *SIAM Jour. Comp.*
-> vol. 5 (1976).) Define a set `Γ` by
->
-> `Γ = ⋃ᵢ ({i} × Γ) ∪ {*}`.
->
-> Define a system `L = {Γ} ∪ {{i} × X ∣ i ∈ ℕ and X ∈ L}`. Show that `L` is effectively given.
-> Show that the elements of `|L|` can be identified with the finite and infinite sequences of
-> natural numbers. What is the connection between `B` and `L`? Show that the combinators of LUCID
-> can be construed as computable mappings of type `(L→T) → (L→T)` or of type
-> `(L→T) × (L→T) → (L→T)`. Conclude that programs in LUCID define computable maps.
-
-## What this file proves
-
-Scott's `Γ` satisfies a *coinductive* set equation `Γ ≅ 1 + (ℕ × Γ)`: an element is either the
-basepoint `*` or a pair `(i, γ)` with `γ ∈ Γ` again. Taking the **final** (as opposed to initial)
-solution — so that the recursion may run forever — identifies `Γ` with the finite-or-infinite
-sequences of naturals directly:
-
-* **`Gamma := List ℕ ⊕ (ℕ → ℕ)`** — a finite sequence (`inl`, terminating at `*`) or an infinite
-  one (`inr`, a stream that never reaches `*`). **`star`**/**`cons`** realize `*`/`(i, γ)`;
-  **`Gamma_cases`** is the defining equation read as a theorem (every `γ` is `star` or a unique
-  `cons i γ'`), and **`cons_injective`** is the "unique" half.
-* **`consSet i X = {i} × X`** and **`nbhd l`** (`nbhd [] = Γ`, `nbhd (i :: l) = {i} × nbhd l`) —
-  exactly Scott's neighbourhoods, indexed by the finite list of naturals `l` that names them
-  (mirroring `ExampleB.cone`/`Example62.embBit`, generalized from `Bool` to `ℕ`-ary branching).
-  **`nbhd_subset_iff`** (`nbhd l ⊆ nbhd l' ↔ l' <+: l`) is the master reduction, giving
-  **`Lmem`**'s nested-or-disjointness (`L_nestedOrDisjoint`) and hence the system **`L`**.
--/
-
 namespace DomainTheory.NeighbourhoodSystems.Exercise724
 
 open NeighborhoodSystem Domain.Recursive
-
-/-! ## `Γ`: finite and infinite sequences of naturals -/
-
-
-/-! ## The neighbourhood system `L` -/
-
-
-/-! ## `L` is effectively given -/
-
-
-/-! ### The primitive-recursive intersection function
-
-Whenever `Lenum n, Lenum m` are consistent (one is nested inside the other), their intersection
-is simply the more specific of the two: `Lenum n` if `Lenum n ⊆ Lenum m` (i.e. `isPrefixChar m n =
-1`), else `Lenum m`. `selectFn` (from `Recursive.lean`) packages this `{0,1}`-driven choice as a
-primitive-recursive arithmetic combinator. -/
-
-
-/-! ### `L` is effectively given -/
-
-
-/-! ## Exercise 7.24, second claim — `|L|` is the finite-or-infinite sequences
-
-`toElement : Gamma → L.Element` sends a finite list `l` to the *principal* filter `↑(nbhd l)`
-(Scott's finite elements), and an infinite stream `f` to the *limit* filter of its finite
-prefixes (`streamElement`, an instance of Scott's `limitFamily`, Definition 1.6's prose).
-`toElement_bijective` shows this identification is exact: injectivity is choice-free (finite vs.
-finite is `nbhd_injective`; finite vs. infinite is separated by `HasMin`, "having a smallest
-neighbourhood", which the finite elements have and the infinite ones provably don't;
-infinite vs. infinite recovers `f` pointwise from its prefixes). Surjectivity genuinely needs
-choice (build the infinite witness sequence one coordinate at a time; flagged below), matching
-Scott's "**can be identified with**" (an existence claim, not a computable retraction). -/
-
-
-/-! ### Surjectivity (uses choice to build the witness stream, coordinate by coordinate) -/
-
-
-/-! ## Exercise 7.24, third claim — the connection between `B` and `L`
-
-Scott's binary system `B` (`ExampleB.lean`) branches over `Bool = {0,1}` at each node
-(`Σ* = ⋃_b {b} × Σ* ∪ {Λ}`); `L` branches over all of `ℕ` (`Γ = ⋃ᵢ {i} × Γ ∪ {*}`). **`L` is `B`
-generalized from `2`-ary to `ℕ`-ary branching** — concretely, digit-wise embedding the bits `0, 1`
-as the naturals `0, 1` identifies `B` with the sub-system of `L` consisting of addresses built from
-only the two digits `{0, 1}`. `embStr_prefix_iff`/`cone_subset_cone_iff_nbhd_embStr` make this
-precise: the embedding `embStr : Σ* → List ℕ` is an order-embedding of the *prefix* posets, hence
-(via `nbhd_subset_iff`/`cone_subset_cone`) of the neighbourhood-inclusion posets, hence (via
-`principal_le_iff`) of `|B|`'s finite elements into `|L|`'s (`sigmaBot_le_iff_toElement_inl_embStr`).
-The same digit-wise embedding on infinite streams (`ℕ → Bool ↪ ℕ → ℕ`) identifies Scott's *infinite*
-binary sequences with the `ℕ → ℕ`-branch of `Γ` whose values happen to lie in `{0, 1}`, by the same
-argument as `toElement`'s `Sum.inr` case — `B`'s domain `|B|` sits inside `|L|` as the sub-domain of
-"binary-valued" LUCID sequences. -/
 
 
 theorem bitToNat_injective : Function.Injective bitToNat := by
@@ -298,33 +148,7 @@ theorem sigmaBot_le_iff_toElement_inl_embStr (σ τ : ExampleB.Str) :
         L.principal (L_mem.mpr (mem_nbhd (embStr τ)))
   rw [ExampleB.sigmaBot_le_iff, L.principal_le_iff, nbhd_subset_iff, embStr_prefix_iff]
 
-/-! ## Exercise 7.24, fourth claim — LUCID combinators as computable maps
-
-> Show that the combinators of LUCID can be construed as computable mappings of type
-> `(L→T) → (L→T)` or of type `(L→T) × (L→T) → (L→T)`. Conclude that programs in LUCID define
-> computable maps.
-
-`T` is Example 1.2's three-point truth-value domain (`Example23.T`). We give it a computable
-presentation `Tpres` (three neighbourhoods, enumerated by hand — the tiniest instance of Definition
-7.1), then show two representative LUCID-style combinators are computable: pointwise **negation**
-`notT : T → T` and pointwise **conjunction** `andT : T × T → T`. The general engine is the pair of
-*lifting* theorems `postcompose`/`pointwiseBin`: any computable `h : V₁ → V₂` lifts to a computable
-map `(L→V₁) → (L→V₂)` via `curry (h ∘ eval)` (Scott's `postcompose`), and any computable
-`h : V₀ × V₁ → V₂` lifts to a computable `(L→V₀) × (L→V₁) → (L→V₂)` by evaluating both factors at
-the same argument and applying `h`. Since `comp_isComputable`/`paired_isComputable` close
-computability under composition and pairing (Proposition 7.3, Theorem 7.4), **every** LUCID program
-built from such combinators — however deeply composed — again defines a computable map. This is the
-choice-free core of the claim; assembling one concrete presentation of `(L → T)` to state it against
-uses `Classical.choice` exactly once (to extract concrete characteristic functions from the existential
-deciders of `Lpres`/`Tpres`), matching the classical bridge already used for `toElement_surjective`.
--/
-
 open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
-
-/-! ### A computable presentation of `T` (Example 1.2's three-point domain) -/
-
-
-/-! ### `notT` — pointwise negation on `T`, as a computable map -/
 
 
 theorem primrec_notCode {f : ℕ → ℕ} (hf : Nat.Primrec f) : Nat.Primrec (fun n => notCode (f n)) := by
@@ -366,8 +190,6 @@ theorem notT_isComputable : ComputableMap Tpres Tpres notT := by
   have key : RecDecidable₂ (fun n m => notT.rel (Tenum n) (Tenum m)) :=
     RecDecidable.of_iff (fun t => hiff t.unpair.1 t.unpair.2) hdec
   exact key.re
-
-/-! ### `andT` — pointwise (sequential/left-strict) conjunction on `T`, as a computable map -/
 
 
 theorem primrec_andCode {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
@@ -433,19 +255,6 @@ theorem andT_isComputable : ComputableMap (prodPresentation Tpres Tpres) Tpres a
       exact hiff s.unpair.1.unpair.1 s.unpair.1.unpair.2 s.unpair.2) hdec
   exact key.re
 
-/-! ### The general lifting engine: `postcompose` and `pointwiseBin`
-
-Any computable `h : V₁ → V₂` lifts to a computable `(L → V₁) → (L → V₂)` (Scott's `postcompose`,
-`curry (h ∘ eval)`), and any computable `h : V₀ × V₁ → V₂` lifts to a computable
-`(L → V₀) × (L → V₁) → (L → V₂)` (`pointwiseBin`, evaluating both factors at the same argument and
-applying `h`). Stating either against a *concrete* presentation of the relevant function space(s)
-needs a bundle of characteristic functions for `funPresentation Lpres P`; `LFunData` packages
-exactly that bundle, and `LFunData.ofPresentation` extracts one from an arbitrary
-`P : ComputablePresentation V`, using `Classical.choice` exactly once per component presentation (to
-pull concrete deciders out of `P.incl_computable`/`P.cons_computable`/`P.eq_computable`'s existentials
-— the same classical bridge already used for `funSpace_isEffectivelyGiven`, just packaged so it can be
-*named* and reused as data rather than immediately discharged into a `Prop` goal). -/
-
 variable {β γ δ : Type*}
 
 
@@ -497,18 +306,6 @@ theorem pointwiseBin_isComputable {V₀ : NeighborhoodSystem β} {V₁ : Neighbo
   exact curry_isComputable (prodPresentation d₀.pres d₁.pres) Lpres P₂ d₂.gN d₂.incl0 d₂.incl1
     d₂.eq1 d₂.hgN d₂.hgNp d₂.hincl0 d₂.hincl0p d₂.hincl1 d₂.hincl1p d₂.heq1 d₂.heq1p
     (comp_isComputable (paired_isComputable heval0 heval1) hh)
-
-/-! ### Conclusion: the LUCID combinators `notT`/`andT` lift to computable `(L → T)` maps
-
-One concrete choice of `LFunData Tpres` (`LTdata`, via `Classical.choice`) presents `(L → T)`
-(`LTpres`); `notT`/`andT`'s computability (already established, choice-free) transports through
-`postcompose`/`pointwiseBin` to give computable maps of exactly Scott's two stated types,
-`(L→T) → (L→T)` and `(L→T) × (L→T) → (L→T)`. Since `comp_isComputable`/`paired_isComputable` close
-computability under composition and pairing, **any** LUCID program built from these (and their kin,
-built the same way from any other computable `T`-combinator) — however deeply composed — again
-defines a computable map on `(L→T)`; `deMorganT_isComputable` below composes both lifted combinators
-together (`¬(¬f ∧ ¬g)`, De Morgan's law for the sequential `and`) as a concrete witness of this
-closure. -/
 
 
 /-- **Exercise 7.24, fourth claim, `notT` case.** LUCID's pointwise negation lifts to a computable

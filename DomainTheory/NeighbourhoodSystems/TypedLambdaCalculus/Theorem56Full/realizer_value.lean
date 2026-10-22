@@ -1,8 +1,3 @@
-/-ai
-The value of a λ-definition of a partial function, at the argument element of a total vector, is either bottom or the numeral for some natural number.
-
-If the partial function is defined at that vector, the definedness clause returns the numeral for its value. If it is undefined there, the undefinedness clause returns bottom.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

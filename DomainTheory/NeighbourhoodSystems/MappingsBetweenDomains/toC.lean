@@ -1,6 +1,3 @@
-/-ai
-The set represented by an ideal element is the union of the closures of those tokens whose neighbourhoods belong to the element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

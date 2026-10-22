@@ -1,8 +1,3 @@
-/-ai
-If the two-point lattice of propositions is a continuous lattice, then it is an injective space.
-
-The conclusion is Proposition 1.2.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

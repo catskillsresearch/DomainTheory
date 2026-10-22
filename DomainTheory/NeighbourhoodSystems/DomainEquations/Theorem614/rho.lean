@@ -1,6 +1,3 @@
-/-ai
-The n-th projection on the colimit is the composite of the injection and the projection of the inclusion of the n-th tower level in the colimit.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

@@ -1,8 +1,3 @@
-/-ai
-The upper bound on Gödel codes of bit lists of length at most n is primitive recursive.
-
-The step sending a recursion state to one plus the pair of 1 and the second component of the state is primitive recursive. By induction on n, primitive recursion from 1 with the corresponding step equals the code bound: the zero case is the definition, and the successor case simplifies the second projection of a pair and rewrites by the inductive hypothesis. One-argument primitive recursion from 1 with that step therefore agrees with the bound.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

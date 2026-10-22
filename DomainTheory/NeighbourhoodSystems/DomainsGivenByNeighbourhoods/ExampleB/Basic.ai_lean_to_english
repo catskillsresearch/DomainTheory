@@ -1,0 +1,1 @@
+This file gathers and re-exports the binary neighbourhood system of Example 1.B: finite binary strings, cones and the prefix comparison of cones, the nested-or-disjoint family of cones, prepending a prefix to a set or a cone, the finite elements, and the operation of applying a prefix to an element.

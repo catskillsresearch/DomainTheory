@@ -1,6 +1,3 @@
-/-ai
-The dollar step at s is the graph of u ↦ the graph of z ↦ the dollar step body at s, u, and z.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

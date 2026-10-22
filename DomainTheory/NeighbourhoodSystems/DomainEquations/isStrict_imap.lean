@@ -1,8 +1,3 @@
-/-ai
-The cons map into the infinite iterate is strict.
-
-It is the approximable map of an order isomorphism, and every such map is strict.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

@@ -1,6 +1,3 @@
-/-ai
-The list bitsList n is the list of positions k at which the k-th bit of n is set. It is obtained by filtering the initial segment of length n, which is legitimate because every set bit lies strictly below n. It is used to state the covering fact that neighbourhood membership is containment in elemSet; the primitive-recursive analogue used for computability is bitsCode.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

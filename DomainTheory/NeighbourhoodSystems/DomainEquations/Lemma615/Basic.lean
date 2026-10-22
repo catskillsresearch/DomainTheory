@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the constructions of Lemma 6.15: the subdomain-embedding relation and its notation, the generator predicate, the image subdomain and the proof that it is a subdomain, the two directions of the correspondence of elements and the resulting order isomorphism, and the lemmas that generators exist, are monotone in each direction, are unique in each argument, are closed under intersection, and include the pair of masters, together with membership in the image subdomain.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition610
@@ -23,47 +20,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.mem_Dpr
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma615.Dprime_subsystem
 
 @[expose] public section
-
-/-!
-# Lecture VI — Lemma 6.15 (Scott 1981, PRG-19): the converse of Proposition 6.12
-
-Proposition 6.12 says a subdomain relation `D ◁ E` yields a *projection pair* `i : D → E`,
-`j : E → D` with `j ∘ i = I_D` and `i ∘ j ⊆ I_E`. **Lemma 6.15** is the converse: *any* projection
-pair — between two neighbourhood systems `D` and `E` over possibly **different** token types —
-exhibits `D` as (isomorphic to) a subdomain of `E`. Scott writes `D ⊴ E` as short for "`D ≅ D'`
-for some `D' ◁ E`."
-
-**Lemma 6.15.** If there exist approximable maps `i : D → E` and `j : E → D` with `j ∘ i = I_D`
-and `i ∘ j ⊆ I_E`, then `D ⊴ E`.
-
-## The construction (cleaner than Scott's, fully relational)
-
-Scott's proof works with the ideal elements (filters) and shows that `i` carries finite (principal)
-elements to finite elements. We avoid the filter-by-filter argument by isolating one relational
-predicate:
-
-`IsGen i j X Y := X i Y ∧ Y j X`   ("`Y` generates `i(↑X)`").
-
-Everything follows from three relational facts:
-
-* **`isGen_exists`** (uses `j ∘ i = I_D`): every `X ∈ D` has a generator `Y` (apply `j∘i = I` to the
-  identity relation `X I_D X`).
-* **`isGen_mono`** (uses `j ∘ i = I_D`) and **`isGen_mono'`** (uses `i ∘ j ⊆ I_E`): the generator
-  correspondence is inclusion-monotone in both directions — `Y ⊆ Y' ↔ X ⊆ X'`. Their two-way use
-  gives that generators are unique in each argument (`isGen_fst_unique`/`isGen_snd_unique`).
-* **`isGen_inter`** (just `mono`/`inter_right` of `i, j`): if `Y, Y'` are generators and `Y ∩ Y' ∈ E`,
-  then `Y ∩ Y'` generates `X ∩ X'`.
-
-The image system `Dprime i j` has `Y` as a neighbourhood iff `Y` generates some `X ∈ D`; its master
-is `E`'s master. `isGen_inter` makes it a neighbourhood system **and** gives the crucial
-`inter_closed` clause of `◁` (consistency inherited from `E`), so `Dprime i j ◁ E`. The
-order-isomorphism `D ≅ Dprime i j` is `x ↦ {Y ∣ ∃ X ∈ x, IsGen i j X Y}` with inverse
-`y ↦ {X ∣ ∃ Y ∈ y, IsGen i j X Y}`, the inverse laws and order-reflection coming from generator
-uniqueness.
-
-Everything is built at the level of Definition 2.1 relations, so the whole development is
-**choice-free** (`#print axioms ⊆ {propext, Quot.sound}`).
--/
 
 namespace DomainTheory.NeighbourhoodSystems
 

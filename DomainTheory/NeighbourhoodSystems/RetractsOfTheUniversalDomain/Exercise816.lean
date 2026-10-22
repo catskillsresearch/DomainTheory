@@ -1,8 +1,3 @@
-/-ai
-For finitary projections on a neighbourhood system, one lies below the other exactly when the fixed neighbourhood of the first is a subsystem of the fixed neighbourhood of the second. For finitary projections, one lies below the other exactly when the fixed neighbourhood of the first is a subsystem of the fixed neighbourhood of the second.
-
-The numbered name example_816 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise816.exercise_8_16

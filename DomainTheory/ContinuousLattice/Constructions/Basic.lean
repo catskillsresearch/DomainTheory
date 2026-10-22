@@ -1,16 +1,3 @@
-/-ai
-Updating one coordinate of a point of a product preserves directed suprema.
-
-At the updated coordinate the update is the identity, so the image of a set is the set itself. At every other coordinate the update is constant, equal to the original point, so the image is a singleton and its supremum is that constant value. The two sides therefore agree coordinatewise.
-
-If an element is way-below a point of a product, then each of its coordinates is way-below the corresponding coordinate of the point.
-
-A Scott-open witness for the product relation pulls back along the update of the given coordinate of the point. The pullback is Scott-open because that update preserves directed suprema. It contains the coordinate of the point, and any value in it has update above the original element, hence is above that element in the chosen coordinate.
-
-A way-below element of a product is bottom off a finite set of coordinates.
-
-The finite truncations of the point, equal to the point on a finite set of coordinates and bottom elsewhere, are monotone, directed, and have the point as supremum. Way-below therefore places the element below some truncation, which forces it to be bottom off that finite set.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection
@@ -21,42 +8,11 @@ public import DomainTheory.ContinuousLattice.Constructions.scottExtend
 
 @[expose] public section
 
-/-!
-# Continuous lattice constructions (Scott 1972, §2.8–2.12)
-
-The Milner correction (March 1972, pp. 135–136) is in `MilnerCorrection.lean`. Full proofs of
-2.8–2.12 under `CoarserThanScottTopology` are the remaining 1972 items; the Sierpiński
-injectivity base case (1.2) is already complete.
-
-This file additionally proves Scott's first two example/closure results, the order-theoretic
-content of Propositions 2.8 (finite lattices are continuous) and 2.9 (products of continuous
-lattices are continuous). The accompanying topological claims of 2.9–2.10 ("the induced
-topology agrees with the product / subspace topology") are the parts that require the Milner
-correction and remain open.
--/
-
 namespace DomainTheory.ContinuousLattice
 
 open Topology Set
 
 variable {D : Type*} [CompleteLattice D]
-
-/-! ### Proposition 2.9(b): the induced topology of a product is the product topology
-
-Scott 1972, Proposition 2.9 also asserts that the Scott topology of the product `∏ᵢ Dᵢ` of
-continuous lattices coincides with the topological product of the Scott topologies of the factors.
-We prove the two inclusions:
-
-* **Product ⊆ Scott** (`scottTopologicalSpace ≤ Pi.topologicalSpace`): every projection
-  `eval i` preserves directed suprema (they are computed coordinatewise), hence is Scott-continuous,
-  hence the Scott topology of the product is finer than each induced topology, i.e. finer than their
-  infimum (the product topology).
-* **Scott ⊆ Product** (`Pi.topologicalSpace ≤ scottTopologicalSpace`): given a Scott-open `U` and a
-  point `z ∈ U`, the `↟a` basis (`exists_wayBelow_Ici_subset`) yields `a ≪ z` with `↑a ⊆ U`. A
-  way-below element of a product has **finite support** (`wayBelow_finite_support`) and is
-  way-below in each coordinate (`wayBelow_proj`); the resulting finite box
-  `⋂_{i ∈ F} eval i ⁻¹' (↟aᵢ-neighbourhood of zᵢ)` is a product-open neighbourhood of `z` inside
-  `↑a ⊆ U`. -/
 
 /-- Plugging a value into a fixed coordinate, `v ↦ Function.update z i v`, preserves directed
 suprema: away from `i` the result is the constant `z j`, and at `i` it is the identity. -/

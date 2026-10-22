@@ -1,0 +1,3 @@
+A right copy of the product of two sharp neighbourhoods lies in the forward image of an element z if and only if the pair embedding of those neighbourhoods lies in z.
+
+Such a membership is not the master, because the master token does not lie in a right copy, and it is not a left copy, because a token of the left neighbourhood lies in the left copy and not in the right. Injectivity of the right embedding and of the product neighbourhood identifies the two pairs. The converse records that pair-embedding membership as a right copy.

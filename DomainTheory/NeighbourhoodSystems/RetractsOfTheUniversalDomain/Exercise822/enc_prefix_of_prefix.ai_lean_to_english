@@ -1,0 +1,3 @@
+If one string is a prefix of another, then the doubled encoding of the first is a prefix of the doubled encoding of the second.
+
+Write the longer string as the shorter string followed by a continuation. Doubling distributes over that concatenation, and the continuation of the encodings is the encoding of the continuation.

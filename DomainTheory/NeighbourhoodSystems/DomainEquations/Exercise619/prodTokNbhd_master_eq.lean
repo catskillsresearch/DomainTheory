@@ -1,8 +1,3 @@
-/-ai
-The product neighbourhood of the two masters is the master of the concrete token sum.
-
-The two sides are definitionally the same.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

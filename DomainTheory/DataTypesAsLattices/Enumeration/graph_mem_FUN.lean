@@ -1,8 +1,3 @@
-/-ai
-The graph of a Scott continuous endomap of Pω is functional.
-
-Functionality is the identity of the graph with the graph of its own application. Theorem 1.2 (i) gives that identity for a Scott continuous map.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

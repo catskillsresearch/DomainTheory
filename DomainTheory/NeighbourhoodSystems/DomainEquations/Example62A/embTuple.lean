@@ -1,6 +1,3 @@
-/-ai
-The tag-i tuple embTuple i X is the set of strings that begin with the slot prefix of some index j and continue with a string from the component X j. The tag false is Scott's left copy and the tag true is the right copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

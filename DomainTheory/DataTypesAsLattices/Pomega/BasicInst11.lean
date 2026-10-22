@@ -1,6 +1,3 @@
-/-ai
-Membership of a natural number k in the finite set coded by n is decidable, because it is the decidable test of the k-th binary digit of n.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Bitwise

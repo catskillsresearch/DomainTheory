@@ -1,0 +1,3 @@
+For a member X of the family, the set represented by ofC X equals X.
+
+If an element lies in the represented set, it lies in the closure of a token whose neighbourhood belongs to ofC X, so some token contained in X has its neighbourhood contained in that token's neighbourhood. The first token is then contained in the closure of the second and hence in X, and its closure is contained in X. Conversely, if an element belongs to X, its singleton is a token contained in X, the element belongs to the closure of that singleton, and the neighbourhood of the singleton belongs to ofC X.

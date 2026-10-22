@@ -1,8 +1,3 @@
-/-ai
-The input union of the empty set of function-space tokens is empty.
-
-Both sides are definitionally the empty set.
-ai-/
 
 module
 

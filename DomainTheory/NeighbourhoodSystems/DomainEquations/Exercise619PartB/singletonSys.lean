@@ -1,6 +1,3 @@
-/-ai
-The one-neighbourhood system on a nonempty set of binary words has that set as its only neighbourhood and as its master. The intersection of the neighbourhood with itself is the set, every neighbourhood equals the master, and the system is free of the empty set because the set is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619

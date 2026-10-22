@@ -1,6 +1,3 @@
-/-ai
-The reverse memo table of a step is zero at zero, and at a successor it is one more than the pair of the step at the pair of the predecessor and the previous table with that previous table.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, Theorem 4.6, the inverse-limit half packaged with the retract half. Under Scott continuity, preservation of retracts, preservation of strictness, and monotonicity for the retract order, every Kleene stage is a retract, the Y combinator applied to the graph is a retract, and there is a bijection from the range of the least fixed point to the inverse limit of the stage ranges such that one point lies below another exactly when every coordinate does. The statement avoids an order-isomorphism type so that it does not mention a complete-lattice instance.
-
-The two retract claims are the two halves of the limit theorem. The bijection is the inverse-limit isomorphism. An inclusion of fixed points passes to each stage by monotonicity of application on the right. In the other direction, each fixed point equals the union of its stage projections, by the fixed-point equation, the least fixed point as a union, and application of a union, so an element of the smaller point lies in some stage and the coordinate inequality puts it in the larger point.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

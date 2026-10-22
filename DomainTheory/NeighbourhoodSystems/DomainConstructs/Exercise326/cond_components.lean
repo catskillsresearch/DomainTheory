@@ -1,8 +1,3 @@
-/-ai
-The truth component and the two value components of an input neighbourhood of the conditional are themselves neighbourhoods.
-
-Such a neighbourhood is a product of a truth neighbourhood with a product of two neighbourhoods, and the three preimages recover those three neighbourhoods.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

@@ -1,0 +1,3 @@
+Proposition 3.4(iv) of Scott (1981, PRG-19) states that the value of the pairing of approximable maps f and g at w is the pairing of their values at w.
+
+The two elements contain the same neighbourhoods. A neighbourhood of the paired value comes from one input neighbourhood related by both maps, and the preimage identity writes it as the product of those preimages. Conversely, two separate input neighbourhoods may be intersected; the intersection belongs to w, the product of the two codomains is a product neighbourhood, and monotonicity of each map along the intersection inclusions restores the two relations.

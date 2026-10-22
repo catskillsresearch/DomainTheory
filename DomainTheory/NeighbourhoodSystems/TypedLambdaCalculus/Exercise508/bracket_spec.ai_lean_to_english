@@ -1,0 +1,3 @@
+The denotation of the bracket abstraction of an open term, applied to any element, equals the denotation of the term at that element. Thus every lambda-abstraction is denoted by a variable-free expression built from I, K, S, and the constants of the term, using only application.
+
+The proof is by induction on the term. The variable simplifies to the identity combinator, and its value equation returns the element. A constant simplifies to K applied to that constant, and its value equation returns the constant. An application simplifies to S applied to the two abstractions, and the value equation of S, rewritten by the two inductive hypotheses, returns the application of the denotations.

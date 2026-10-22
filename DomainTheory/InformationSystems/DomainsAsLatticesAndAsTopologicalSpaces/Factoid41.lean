@@ -1,8 +1,3 @@
-/-ai
-Factoid 4.1 states that one element lies below another if and only if their meet equals the smaller element.
-
-The numbered name theorem_41 is that statement.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.le_iff_inf_eq

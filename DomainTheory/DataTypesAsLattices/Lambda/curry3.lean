@@ -1,6 +1,3 @@
-/-ai
-The curried form of a ternary map f is the graph of x ↦ the graph of y ↦ the graph of z ↦ f(x, y, z).
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

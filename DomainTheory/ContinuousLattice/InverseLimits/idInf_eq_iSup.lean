@@ -1,8 +1,3 @@
-/-ai
-The identity Scott map on the inverse limit is the supremum, over n, of the composite of the stage embedding with the stage projection. This is the algebraic identity in the remark after Scott's Proposition 4.2, and it is the identity at the heart of Theorem 4.4.
-
-On a compatible sequence x, the supremum of those composites evaluates as the supremum of their values at x, and that supremum is x because every inverse-limit element is the supremum of the embeddings of its coordinates.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

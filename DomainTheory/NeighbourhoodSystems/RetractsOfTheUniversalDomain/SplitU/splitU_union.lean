@@ -1,8 +1,3 @@
-/-ai
-The left and right halves of the canonical U-split reunite to the original neighbourhood.
-
-Rewrite both halves as the cuts below the midpoint and from the midpoint. A point of either cut lies in the original neighbourhood. A point of the original neighbourhood lies strictly below the midpoint or at least the midpoint, hence in one of the two cuts.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

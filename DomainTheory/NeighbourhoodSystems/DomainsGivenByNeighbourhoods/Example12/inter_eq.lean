@@ -1,8 +1,3 @@
-/-ai
-The intersection of two neighbourhoods of Example 1.2 is the master, {0}, {1}, or the empty set.
-
-The proof is the nine-case analysis of the two classifications. The master absorbs either factor, a neighbourhood meets itself, and {0} meets {1} in the empty set.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

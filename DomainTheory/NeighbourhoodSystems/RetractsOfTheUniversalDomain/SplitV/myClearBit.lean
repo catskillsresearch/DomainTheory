@@ -1,6 +1,3 @@
-/-ai
-myClearBit m ell subtracts two to the power ell from m. Whenever bit ell of m is set, this equals m with that bit cleared by exclusive or.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.LevelSetPrimrec

@@ -1,8 +1,3 @@
-/-ai
-The n-th truncation of a sequence in the infinite iterate keeps the components before index n and replaces every later component by bottom.
-
-At zero the truncation is the constant map at the bottom, and the bottom of the iterate is the sequence of bottoms. At a successor the truncation is the cons of the head with the earlier truncation of the tail. The place zero equals the head, which is kept because zero lies below the successor bound, and each later place reduces to the inductive comparison of the two bounds.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

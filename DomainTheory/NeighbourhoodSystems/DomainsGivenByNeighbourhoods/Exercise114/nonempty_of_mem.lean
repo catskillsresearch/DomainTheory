@@ -1,8 +1,3 @@
-/-ai
-Every neighbourhood of Exercise 1.14 is nonempty.
-
-If the neighbourhood is the whole set of natural numbers, that set is nonempty. Otherwise the membership hypothesis already records that the set is nonempty.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

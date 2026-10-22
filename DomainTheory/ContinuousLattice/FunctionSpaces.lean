@@ -1,6 +1,3 @@
-/-ai
-This module gathers and re-exports the function-space development of Scott 1972, §3. It collects the basic constructions, the openness of the function-space subbasis and its agreement with the topology induced from the product, the specialization order, Proposition 3.2, the step-map lemmas and Theorem 3.3 that a function space of continuous lattices is a continuous lattice whose Scott topology is the topology of pointwise convergence, Corollary 3.4 on evaluation, Proposition 3.5 on currying, Proposition 2.10 on retracts, the comparison of subspace and ambient suprema, the preservation and way-below lemmas for inclusions, both directions of Proposition 3.10, the subspace-extension lemmas and Lemma 3.9, and Propositions 3.12, 3.13, and 3.14 together with uniqueness of fixed points.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.Basic

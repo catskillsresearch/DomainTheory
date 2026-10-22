@@ -1,6 +1,3 @@
-/-ai
-The Scott-continuous map associated with an approximable map sends an element to its image under the map, with monotonicity the monotonicity of that image and with preservation of directed suprema the corresponding lemma for approximable maps.
-ai-/
 
 module
 

@@ -1,8 +1,3 @@
-/-ai
-Every tail is a unary neighbourhood.
-
-It is the tail clause of the neighbourhood predicate at that index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example43

@@ -1,0 +1,3 @@
+For neighbourhoods U and W, the two-term sequence is consistent at length 2 if and only if the set of the two principal filters is bounded.
+
+If a neighbourhood is contained in the running intersection, that intersection equals the master intersected with U and with W, so the neighbourhood is contained in U and in W. Its principal filter then lies above both principal filters by the principal-filter comparison. Conversely, a bound contains both U and W, since each belongs to its own principal filter, and therefore contains their intersection. That intersection is a neighbourhood, and it is contained in the running intersection because a member of U ∩ W lies in the master, in U, and in W.

@@ -1,6 +1,3 @@
-/-ai
-The approximation order on elements is filter inclusion: one element is below another when every neighbourhood of the first is a neighbourhood of the second.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

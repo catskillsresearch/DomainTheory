@@ -1,8 +1,3 @@
-/-ai
-The list of Thue–Morse bits of length n + 1 is the list of length n with the bit of n appended.
-
-Unfold the list and rewrite the successor range as the range of n followed by n, then map that concatenation through the cons and nil laws.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise516

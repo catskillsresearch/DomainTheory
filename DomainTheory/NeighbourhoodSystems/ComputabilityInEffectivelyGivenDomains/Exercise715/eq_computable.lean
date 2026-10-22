@@ -1,8 +1,3 @@
-/-ai
-In a Scott presentation, equality of two enumerated neighbourhoods is recursively decidable.
-
-Two sets are equal exactly when each contains the other. Inclusion is recursively decidable, and so is inclusion after the coded pair is swapped, so their conjunction decides equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem74

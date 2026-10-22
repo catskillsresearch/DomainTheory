@@ -1,8 +1,3 @@
-/-ai
-The passage from function-space elements to approximable maps is injective.
-
-Rewrite each element as the filter of its associated map, and use the equality of the maps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Example84

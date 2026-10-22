@@ -1,8 +1,3 @@
-/-ai
-The length of the length-n prefix of a path is n.
-
-The proof is by induction on n. The zero case is reflexivity. The successor case simplifies the recursive clause, using the inductive hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

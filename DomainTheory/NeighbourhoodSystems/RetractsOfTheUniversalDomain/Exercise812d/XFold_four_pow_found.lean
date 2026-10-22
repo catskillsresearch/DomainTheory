@@ -1,8 +1,3 @@
-/-ai
-At stage 4 to the n, the found flag of the X-fold is 1.
-
-The right-to-left direction of the found-flag equivalence is applied to the existence of a non-junk half-step atom strictly below 4 to the n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

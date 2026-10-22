@@ -1,8 +1,3 @@
-/-ai
-A natural number lies in the set represented by an element if and only if the complement of its singleton belongs to the element.
-
-The two sides are definitionally the same proposition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableExercises

@@ -1,6 +1,3 @@
-/-ai
-The infix symbol for domain isomorphism denotes the isomorphism of neighbourhood systems.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

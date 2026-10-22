@@ -1,8 +1,3 @@
-/-ai
-The graph of x ↦ (the graph of y ↦ x ∪ y) is combinatory.
-
-It equals the interpretation of the closed union term in the constantly bottom environment, and the interpretation of a closed term is combinatory by Theorem 2.4.
-ai-/
 
 module
 

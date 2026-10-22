@@ -1,6 +1,3 @@
-/-ai
-Atom insertion sends an atom token to insertion of its carrier, and sends the bottom token and every function token to the identity on finite sets of carriers.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

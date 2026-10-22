@@ -1,69 +1,91 @@
 # Definition 8.3
 
-Not every retraction comes from a relationship like $D \triangleleft E$; in fact, we can see from the definition of $a$ above that $a \sqsubseteq 1_E$. But, as is indicated in Exercise 8.11, even this condition is not sufficient to characterize the kind of retractions provided by 8.2. The characterization is as follows.
+## Human-English
 
-**DEFINITION 8.3.** A retraction $a : E \to E$ is called a *projection* provided
+@import "1980_Definition_8_3.english" {code_block=false}
 
-$$a \sqsubseteq 1_E;$$
+## AI: Human-English to AI-Lean
 
-it is *finitary* iff its fixed-point set is isomorphic to a domain. $\square$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/IsFinitary.lean**
 
-**EXAMPLES 8.4.** If a system $D$ over $\Delta$ is not trivial, then the two element system $O = \{\{0\}, \{0,1\}\}$ comes from a retraction on $D$. Specifically, define a combinator
+@import "IsFinitary.lean"
 
-$$\mathrm{check} : D \to O$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/IsProjection.lean**
 
-by the relation
+@import "IsProjection.lean"
 
-$$X \ \mathrm{check}\ Y \quad \text{iff either } Y = \{0,1\} \text{ or } X \neq \Delta.$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/FinitaryProjection.lean**
 
-We see $\mathrm{check}(x) = \bot_O$ iff $x = \bot_D$. We leave to the reader the definition of a combinator:
+@import "FinitaryProjection.lean"
 
-$$\mathrm{fade} : O \times D \to D,$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/Basic.lean**
 
-where we have for $t \in |O|$ and $x \in |D|$:
+@import "Basic.lean"
 
-$$\begin{aligned}
-\mathrm{fade}(t,x) &= \bot_D, \text{ if } t = \bot_O; \\
-&= x, \text{ if not.}
-\end{aligned}$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isFinitary_retractionOfSubsystem.lean**
 
-Now, take any $u \in |D|$ with $u \neq \bot$, and define
+@import "isFinitary_retractionOfSubsystem.lean"
 
-$$a(x) = \mathrm{fade}(\mathrm{check}(x), u).$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/retractionOfSubsystem_le_idMap.lean**
 
-Then $a$ is a retraction (not a projection in general) and the range of $a$ is isomorphic to $O$.
-Another way of using these combinators is to find $(D \to_{\perp} E)$ as a retraction of $(D \to E)$. Specifically, define a combinator
+@import "retractionOfSubsystem_le_idMap.lean"
 
-$$\mathrm{strict} : (D \to E) \to (D \to E)$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isProjection_retractionOfSubsystem.lean**
 
-by the equation
+@import "isProjection_retractionOfSubsystem.lean"
 
-$$\mathrm{strict}(f) = \lambda x.\ \mathrm{fade}(\mathrm{check}(x), f(x)),$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isFinitaryProjection_retractionOfSubsystem.lean**
 
-where this time
+@import "isFinitaryProjection_retractionOfSubsystem.lean"
 
-$$\mathrm{fade} : O \times E \to E\ .$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83.lean**
 
-The range of $\mathrm{strict}$ consists exactly of the strict functions and this time $\mathrm{strict}$ is a projection whose range is indeed a domain.
+@import "../Definition83.lean"
 
-Similarly, we can find a projection on $D \times E$ with a range isomorphic to $D \otimes E$ by the combinator such that:
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84/Basic.lean**
 
-$$\mathrm{smash}(x, y) = \mathrm{fade}(\mathrm{check}(x), \mathrm{fade}(\mathrm{check}(y), \langle x, y \rangle)),$$
+@import "../Example84/Basic.lean"
 
-for $x \in |D|$ and $y \in |E|$. $\square$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84.lean**
 
-**Lean 4**
+@import "../Example84.lean"
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/IsFinitary.lean](IsFinitary.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/IsProjection.lean](IsProjection.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/FinitaryProjection.lean](FinitaryProjection.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isFinitary_retractionOfSubsystem.lean](isFinitary_retractionOfSubsystem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/retractionOfSubsystem_le_idMap.lean](retractionOfSubsystem_le_idMap.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isProjection_retractionOfSubsystem.lean](isProjection_retractionOfSubsystem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83/isFinitaryProjection_retractionOfSubsystem.lean](isFinitaryProjection_retractionOfSubsystem.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition83.lean](../Definition83.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84/Basic.lean](../Example84/Basic.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84.lean](../Example84.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84b/Basic.lean](../Example84b/Basic.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84b.lean](../Example84b.lean)
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84b/Basic.lean**
+
+@import "../Example84b/Basic.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Example84b.lean**
+
+@import "../Example84b.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "IsFinitary.ai_lean_to_english" {code_block=false}
+
+@import "IsProjection.ai_lean_to_english" {code_block=false}
+
+@import "FinitaryProjection.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "isFinitary_retractionOfSubsystem.ai_lean_to_english" {code_block=false}
+
+@import "retractionOfSubsystem_le_idMap.ai_lean_to_english" {code_block=false}
+
+@import "isProjection_retractionOfSubsystem.ai_lean_to_english" {code_block=false}
+
+@import "isFinitaryProjection_retractionOfSubsystem.ai_lean_to_english" {code_block=false}
+
+@import "../Definition83.ai_lean_to_english" {code_block=false}
+
+@import "../Example84/Basic.ai_lean_to_english" {code_block=false}
+
+@import "../Example84.ai_lean_to_english" {code_block=false}
+
+@import "../Example84b/Basic.ai_lean_to_english" {code_block=false}
+
+@import "../Example84b.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Definition_8_3.ai_english_concordance" {code_block=false}

@@ -1,0 +1,3 @@
+A fixed point of f that lies below every member of a family lies below the greatest postfixed point of f below the intersection of the family.
+
+The fixed-point equation and those lower bounds place the element in the intersection of its image with the intersection of the family, so it belongs to the family of sets whose union is that greatest postfixed point.

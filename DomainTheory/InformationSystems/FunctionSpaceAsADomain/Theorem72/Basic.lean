@@ -1,6 +1,3 @@
-/-ai
-This file gathers and re-exports the ingredients of Scott's Theorem 7.2. Approximable maps from A to B are exactly the elements of the function-space system, there is an approximable application map satisfying apply(g, y) = g(y), and every approximable map from a product A × B into C has a unique curry into the function space B → C satisfying the application equation. The re-exported pieces are the function-space development, Propositions 5.3 and 5.5, Proposition 6.2, Factoid 3.2, and the token packaging, the two conversions between approximable maps and function-space elements, application, the paired lift, currying, paired elements, uncurrying, and the consistency, closure, entailment, and relation lemmas those constructions use.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
@@ -37,17 +34,6 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.f
 
 @[expose] public section
 
-/-!
-# Theorem 7.2 — function space elements, apply, and curry
-
-**Scott 1982, Theorem 7.2.** Approximable maps `A → B` are exactly the elements of
-`|A → B|`. There is approximable `apply : (B → C) × B → C` with `apply(g,y) = g(y)`,
-and for each `h : A × B → C` a unique `curry h : A → (B → C)` satisfying
-`h = apply ∘ ⟨(curry h) ∘ fst, snd⟩`.
-
-(`A → B` as an `InfoSys` is already Def 7.1 / `functionSystem`.)
--/
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -62,9 +48,6 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 
 open ApproximableMap
-
-
-/-! ## Curry helpers -/
 
 
 end InfoSys

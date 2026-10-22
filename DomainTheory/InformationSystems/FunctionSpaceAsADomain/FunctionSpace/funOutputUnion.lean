@@ -1,6 +1,3 @@
-/-ai
-The output union of a finite set of function-space tokens is the right fold of finitary union over their output components, beginning at the empty set.
-ai-/
 
 module
 

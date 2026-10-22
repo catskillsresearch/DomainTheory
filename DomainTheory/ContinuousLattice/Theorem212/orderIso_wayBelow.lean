@@ -1,8 +1,3 @@
-/-ai
-An order isomorphism preserves the way-below relation.
-
-A Scott-open neighbourhood of the larger element contained in the principal upset of the smaller element pulls back along the inverse isomorphism to a Scott-open neighbourhood of the image of the larger element. A point of that preimage has inverse above the smaller element, and the order isomorphism sends that inequality to the image of the smaller element below the point.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Constructions

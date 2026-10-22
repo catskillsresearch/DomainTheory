@@ -1,8 +1,3 @@
-/-ai
-A total finite element of σ never lies below a partial finite element of τ.
-
-Rewrite the order as the principal order. A cone is never contained in a singleton.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

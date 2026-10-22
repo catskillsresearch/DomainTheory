@@ -1,6 +1,3 @@
-/-ai
-The inclusion of the relativized system below an element a into the original system relates an a-neighbourhood X to an original neighbourhood Y precisely when X is contained in Y. The domain and codomain conditions are membership in a and in the original system. The master is related to itself. The intersection of two codomain neighbourhoods remains a codomain neighbourhood containing X. A smaller domain neighbourhood and a larger codomain neighbourhood inherit the subset relation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise407

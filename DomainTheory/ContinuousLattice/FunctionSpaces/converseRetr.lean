@@ -1,6 +1,3 @@
-/-ai
-Scott's candidate retraction in Proposition 3.10(iv) sends an element x' to the supremum of the set of x such that i(x) lies below x'.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

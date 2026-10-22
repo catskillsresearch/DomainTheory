@@ -1,8 +1,3 @@
-/-ai
-The concrete split of U against V satisfies the split specification on V.
-
-The numbered name example_812_e_d is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812eD.hxSplit812e

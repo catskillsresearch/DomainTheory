@@ -1,6 +1,3 @@
-/-ai
-The carrier of the lambda system is the subtype of raw lambda tokens that are well formed under depth consistency.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace

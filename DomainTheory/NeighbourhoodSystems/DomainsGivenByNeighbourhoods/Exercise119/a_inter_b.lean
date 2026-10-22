@@ -1,8 +1,3 @@
-/-ai
-The intersection of the neighbourhood of the first two tokens with the neighbourhood of the last two tokens is the singleton of the middle token.
-
-Extensionality reduces the equality to the three tokens, and each token is checked against the two definitions.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

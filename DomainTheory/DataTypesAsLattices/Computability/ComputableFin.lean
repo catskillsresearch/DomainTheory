@@ -1,6 +1,3 @@
-/-ai
-A continuous map of finitely many arguments is computable when it is continuous in those arguments and its nested graph, the pairing encoding of membership in the value on finite arguments, is recursively enumerable.
-ai-/
 module
 
 public import Mathlib.Computability.RE

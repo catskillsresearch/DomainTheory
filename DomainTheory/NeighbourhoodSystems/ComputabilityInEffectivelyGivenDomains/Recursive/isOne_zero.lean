@@ -1,8 +1,3 @@
-/-ai
-The one-indicator of 0 equals 0.
-
-Unfold the indicator and conclude by arithmetic.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

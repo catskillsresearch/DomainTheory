@@ -1,6 +1,3 @@
-/-ai
-The tokens of Scott's Example 1.5 are the four-element set {0, 1, 2, 3}.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

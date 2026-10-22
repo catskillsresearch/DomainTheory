@@ -1,8 +1,3 @@
-/-ai
-A set of natural numbers is a neighbourhood of V if and only if it is nonempty and equal to a finite union of residue classes 2^k ℕ + ℓ with ℓ < 2^k.
-
-A level set at level k with mask m is the union of the residue classes at that level whose bits are set in m, and each selected residue lies below 2^k. Conversely, each residue class in such a finite family is a nonempty one-bit level set, hence a neighbourhood of V. The union over the finite set of pairs equals the union indexed by that set, so finite-union closure of V supplies membership.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition87

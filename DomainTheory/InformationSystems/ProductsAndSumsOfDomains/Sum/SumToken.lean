@@ -1,6 +1,3 @@
-/-ai
-The token type of the separated sum of token sets α and β, Scott's Definition 6.3(i) and (ii), is the inductive type with a left constructor from α, a right constructor from β, and a bottom constructor. Scott writes the left token as (X, Δ), the right token as (Δ, Y), and the bottom token as (Δ, Δ).
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

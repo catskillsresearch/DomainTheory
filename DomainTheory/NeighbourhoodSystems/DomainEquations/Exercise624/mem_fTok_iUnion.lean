@@ -1,8 +1,3 @@
-/-ai
-Every token of fTok of two countable unions already lies in fTok of a single pair of stages.
-
-The empty string lies at stage zero. A false-tagged token comes from one stage of the first union. A true-tagged token is a token of the inner gTok: its empty string is recorded at stage zero, its false-tagged part comes from one stage of the first union, and its true-tagged part comes from one stage of the second union.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

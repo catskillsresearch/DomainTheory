@@ -1,8 +1,3 @@
-/-ai
-If the combined X-codes of i and of k lie in the master of the first system, then the intersection of the combined X-codes of i and j equals the combined X-code of k if and only if the same equality holds for the combined Y-codes.
-
-The subset transfer and the double-subset transfer, rewritten by absorbing a set already contained in the master into an intersection with the master, give equivalent inclusions of k in i, of k in j, and of the intersection of i and j in k. An equality is those three inclusions. In each direction the equality supplies them on one side, the transfers move them across, and antisymmetry reassembles the equality.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

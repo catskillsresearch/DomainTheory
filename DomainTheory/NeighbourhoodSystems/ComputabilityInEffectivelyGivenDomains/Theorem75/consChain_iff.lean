@@ -1,8 +1,3 @@
-/-ai
-A finite list of indices is consistent if and only if the neighbourhood at the intersection-chain index is contained in each indexed neighbourhood.
-
-If those inclusions hold, the chain neighbourhood sits inside the running intersection, which is therefore a neighbourhood. Conversely, the chain index enumerates the running intersection, so a point of it lies in each indexed neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

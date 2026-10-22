@@ -1,8 +1,3 @@
-/-ai
-If a set is a neighbourhood, its tagged copy by any index is contained in the master neighbourhood of the indexed sum.
-
-A token of the tagged copy is the tagged token of the index and of an element of the neighbourhood. That element belongs to the master neighbourhood of the underlying system, and the corresponding tagged token belongs to the master neighbourhood of the sum.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

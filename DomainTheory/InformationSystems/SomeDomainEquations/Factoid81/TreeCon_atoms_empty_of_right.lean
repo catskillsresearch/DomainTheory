@@ -1,8 +1,3 @@
-/-ai
-If a consistent finite set of tree tokens has nonempty left pair projection or nonempty right pair projection, its atom projection is empty.
-
-Case on the consistency constructor. A left-consistent set has both pair projections empty, contradicting the hypothesis. A right-consistent set has empty atom projection.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

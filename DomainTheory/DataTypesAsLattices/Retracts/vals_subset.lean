@@ -1,8 +1,3 @@
-/-ai
-The values of a set of fixed points of a map on Pω are themselves fixed points of that map.
-
-A value in the image is the underlying element of some fixed-point subtype, and the subtype property is the fixed-point property.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

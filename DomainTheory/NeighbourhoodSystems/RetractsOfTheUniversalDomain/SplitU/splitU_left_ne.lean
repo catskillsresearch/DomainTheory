@@ -1,8 +1,3 @@
-/-ai
-The left half of the canonical U-split is not the whole neighbourhood.
-
-If it were, the right half would be contained in the left half, hence empty by disjointness. The right half is a nonempty U-neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

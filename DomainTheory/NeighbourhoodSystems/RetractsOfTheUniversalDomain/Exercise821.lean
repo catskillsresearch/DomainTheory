@@ -1,8 +1,3 @@
-/-ai
-If an endomap of the universal domain is a finitary projection, then its sharp is a finitary projection. If an endomap a is a retraction, then so is the catamorphism that recurses a on the leaves of the tree algebra and uses the algebra's own pairing on nodes. If an endomap a of the universal domain is a retraction, then its inner sharp is a retraction. If an endomap of the universal domain is a projection, then its sharp is a projection. If the inner sharp of an endomap of the universal domain is a retraction, then the sharp of that endomap is a retraction.
-
-The numbered name example_821 is the conjunction of these statements. The proof is that conjunction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise821.isFinitaryProjection_aSharp

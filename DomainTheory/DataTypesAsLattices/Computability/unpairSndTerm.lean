@@ -1,6 +1,3 @@
-/-ai
-The term unpairSndTerm abstracts variable 0 from the conditional whose test is unpairTestTerm, whose zero branch applies variable 2 to unpairDeltaTerm and then to unpairSqrtTerm, and whose successor branch is unpairSqrtTerm.
-ai-/
 module
 
 public import Mathlib.Computability.RE

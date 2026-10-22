@@ -1,8 +1,3 @@
-/-ai
-The splitting map composed with the cons map is the identity on the product of a system with its infinite iterate.
-
-On elements the composite applies the forward isomorphism after its inverse, which is the identity.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise316

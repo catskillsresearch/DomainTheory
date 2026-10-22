@@ -1,8 +1,3 @@
-/-ai
-If a doubly indexed set is a neighbourhood of the double iteration, then every double fiber of that set is a neighbourhood of the original system.
-
-The neighbourhood data supply a neighbourhood of the iteration at the outer index, and that neighbourhood supplies a neighbourhood of the original system at the inner index.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise715

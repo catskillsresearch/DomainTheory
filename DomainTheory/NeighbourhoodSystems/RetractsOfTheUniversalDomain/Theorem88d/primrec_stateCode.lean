@@ -1,8 +1,3 @@
-/-ai
-The U-code projection of a packed atom state is primitive recursive.
-
-It is three successive right projections.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

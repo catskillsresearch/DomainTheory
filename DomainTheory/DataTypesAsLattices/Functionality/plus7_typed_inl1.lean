@@ -1,8 +1,3 @@
-/-ai
-If x has the type of the second summand, then the injection of x at tag 1 has the type of the seven-way sum.
-
-Rewrite the typing equation by the application clause for tag 1, and substitute the typing equation of x.
-ai-/
 
 module
 

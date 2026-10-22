@@ -1,8 +1,3 @@
-/-ai
-Every power of the Sierpiński space is injective.
-
-Each factor is injective, and a product of injective spaces is injective.
-ai-/
 module
 
 public import Mathlib.Topology.ContinuousMap.T0Sierpinski

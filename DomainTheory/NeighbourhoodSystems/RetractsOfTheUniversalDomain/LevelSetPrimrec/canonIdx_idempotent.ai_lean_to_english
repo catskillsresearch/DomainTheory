@@ -1,0 +1,4 @@
+Canonicalization is idempotent.
+
+The level set of a canonicalized code is nonempty, so a second canonicalization leaves
+that code unchanged.

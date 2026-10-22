@@ -1,8 +1,3 @@
-/-ai
-On a total element, the emptiness test returns the total head value that is true on the empty string and false on both nonempty heads.
-
-The equality is the total-element equation of the lift, applied to the head data of the emptiness test.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

@@ -1,8 +1,3 @@
-/-ai
-The indexed sum of the identity map is the identity of the indexed sum.
-
-A sum-identity relation yields inclusion: the master is contained in every neighbourhood of the sum, the unit copy is contained in itself, and an identity of copies yields inclusion of copies. Conversely, an inclusion of neighbourhoods has a source that is the master, the unit copy, or a letter-copy. The master enlarges only to the master. The unit copy enlarges to the master or to itself, and a letter-copy cannot contain the unit token. A letter-copy enlarges to the master, or to a letter-copy of the same letter by injectivity of copy tokens, with the underlying inclusion read off the copies, and it does not enlarge to the unit copy.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

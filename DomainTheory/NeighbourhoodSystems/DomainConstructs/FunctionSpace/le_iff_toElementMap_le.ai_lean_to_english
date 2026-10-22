@@ -1,0 +1,3 @@
+One approximable map lies below another if and only if its value at every element lies below the other map's value.
+
+If the relation of the first is contained in the second, an output of the first at an element, witnessed by an input in that element, is an output of the second. Conversely, a related pair of the first is membership of the output in the first map at the principal filter of the input, hence in the second map, which is the relation of the second.

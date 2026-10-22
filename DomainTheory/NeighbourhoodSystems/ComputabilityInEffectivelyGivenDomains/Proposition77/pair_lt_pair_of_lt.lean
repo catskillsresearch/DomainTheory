@@ -1,8 +1,3 @@
-/-ai
-If x is strictly below i and y is strictly below j, then the pair of x and y is strictly below the pair of i and j.
-
-The pair of x and y is strictly below the square of one more than their maximum, and the square of the maximum of i and j is at most the pair of i and j. One more than the maximum of x and y is at most the maximum of i and j, by comparing with the larger of i and j, so the squares compare and the two bounds combine.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

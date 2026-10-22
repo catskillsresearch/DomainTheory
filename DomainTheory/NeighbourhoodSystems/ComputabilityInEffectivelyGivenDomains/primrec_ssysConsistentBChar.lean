@@ -1,8 +1,3 @@
-/-ai
-The map sending a paired index to the consistency characteristic of its two components is primitive recursive.
-
-The product of the two activity characteristics is primitive recursive by composition. The fuel equal to the sum of the two stored depths plus two, and the packing of that fuel with the two stored codes, are primitive recursive. Composing the primitive-recursive code consistency characteristic with that packing, and selecting between the result and the constant 1 according to the activity product, matches the definition of the consistency characteristic.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

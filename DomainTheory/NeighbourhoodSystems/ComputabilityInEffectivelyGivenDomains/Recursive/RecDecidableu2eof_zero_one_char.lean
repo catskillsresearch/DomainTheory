@@ -1,8 +1,3 @@
-/-ai
-A predicate is recursively decidable when a primitive-recursive function returns one exactly where the predicate holds, whether or not one separately knows that the function returns only zero or one.
-
-The function itself, together with that equivalence, is the witness required by the definition.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

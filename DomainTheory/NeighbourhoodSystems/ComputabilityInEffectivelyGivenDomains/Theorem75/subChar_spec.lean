@@ -1,8 +1,3 @@
-/-ai
-If the step-function neighbourhood of the list decoded from a is nonempty, then the inclusion characteristic of a and b equals 1 if and only if that neighbourhood is contained in the step-function neighbourhood of the list decoded from b.
-
-Nonemptiness makes every conditional output intersection a codomain neighbourhood, so inclusion of step-function neighbourhoods is the family of output inclusions. The characteristic unfolds as a fold whose step selects the codomain inclusion bit of the conditional-intersection index. The fold equals 1 precisely when every decoded entry satisfies that bit, and the inclusion and index specifications turn each bit into the corresponding output inclusion.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

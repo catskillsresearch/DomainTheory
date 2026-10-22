@@ -1,6 +1,3 @@
-/-ai
-A total tree is eventually periodic when the set of its subtrees, the range of the subtree selector, is finite.
-ai-/
 module
 
 public import Mathlib.Computability.MyhillNerode

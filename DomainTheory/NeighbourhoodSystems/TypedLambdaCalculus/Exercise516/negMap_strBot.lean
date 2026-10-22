@@ -1,8 +1,3 @@
-/-ai
-Negation sends the partial element of σ to the partial element of the bit-flipped string.
-
-This is the partial clause of the head-test construction of negation.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise419

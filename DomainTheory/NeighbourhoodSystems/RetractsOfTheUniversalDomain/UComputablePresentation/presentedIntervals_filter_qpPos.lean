@@ -1,8 +1,3 @@
-/-ai
-Filtering a list of rational pairs to the nondegenerate pairs leaves the presented intervals unchanged.
-
-A point of a surviving pair lies in the original list. A point of an original pair lies strictly between its endpoints, so that pair is nondegenerate and survives the filter.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IntervalPrimrec

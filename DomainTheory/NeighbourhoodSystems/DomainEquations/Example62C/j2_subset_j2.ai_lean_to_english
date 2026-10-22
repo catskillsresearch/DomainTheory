@@ -1,0 +1,3 @@
+The tagged right copy of Z is contained in the tagged right copy of Z' if and only if Z is contained in Z'.
+
+In the forward direction, a point c of Z has its right tag in the first copy and hence in the second, so the membership criterion puts c in Z'. In the reverse direction, a token of the first copy is the right tag of some c in Z, the inclusion puts c in Z', and the membership criterion puts that tag in the second copy.

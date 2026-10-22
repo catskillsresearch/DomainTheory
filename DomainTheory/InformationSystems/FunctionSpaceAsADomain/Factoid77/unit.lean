@@ -1,6 +1,3 @@
-/-ai
-The unit object of the category of information systems is the object whose token type is the one-point type and whose information system is the unit system.
-ai-/
 
 module
 

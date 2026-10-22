@@ -1,8 +1,3 @@
-/-ai
-The atom token n belongs to the carrier of the atom element for n.
-
-The singleton token belongs to the closure of its singleton.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

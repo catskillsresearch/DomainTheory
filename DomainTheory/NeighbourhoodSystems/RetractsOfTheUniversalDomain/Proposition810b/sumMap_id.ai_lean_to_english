@@ -1,0 +1,3 @@
+The sum map preserves identities: the sum of the two identity maps is the identity on the sum.
+
+Extensionality of approximable maps reduces the equality to an element, and the identity acts as that element. The element reaches the left copy, the right copy, or neither. On the left, the left formula for the sum map, the identity on the left component, and the left round trip recover the element. On the right, the right formula, the identity on the right component, and the right round trip recover the element. If the element reaches neither copy, it is the bottom, and the sum map sends bottom to bottom.

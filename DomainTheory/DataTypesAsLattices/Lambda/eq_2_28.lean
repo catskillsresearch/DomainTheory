@@ -1,8 +1,3 @@
-/-ai
-Scott 1976, (2.28). The least fixed point of the section g(x) unfolds as Y(g(x)) = g(x)(Y(g(x))).
-
-This is the fixed-point equation for the Scott-continuous map y ↦ g(x, y).
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

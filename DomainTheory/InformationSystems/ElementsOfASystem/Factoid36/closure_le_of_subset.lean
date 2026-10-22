@@ -1,8 +1,3 @@
-/-ai
-Closure is monotone under inclusion of consistent finite sets.
-
-Inclusion and reflexivity of entailment give entailment of each token of the smaller set, so the entailment form of monotonicity applies.
-ai-/
 
 module
 

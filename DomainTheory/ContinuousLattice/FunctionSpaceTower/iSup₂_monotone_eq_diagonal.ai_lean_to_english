@@ -1,0 +1,3 @@
+If a double family f(n, m) in a complete lattice is monotone in m for each fixed n and monotone in n for each fixed m, then the double supremum over n and m equals the supremum of the diagonal values f(n, n).
+
+Each value f(n, m) lies below f(n ⊔ m, m) by monotonicity in the first argument, and that value lies below f(n ⊔ m, n ⊔ m) by monotonicity in the second, hence below the diagonal supremum. In the other direction, f(n, n) lies below the inner supremum over m of f(n, m), hence below the double supremum.

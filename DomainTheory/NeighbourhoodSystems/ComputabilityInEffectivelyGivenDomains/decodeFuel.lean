@@ -1,6 +1,3 @@
-/-ai
-The fuelled decoder returns nothing when the fuel is zero. With fuel remaining, it unpairs the code. Tag 0 yields sigma when the payload is zero and nothing otherwise. Tag 1 yields the singleton of the decoded boolean list. Tag 2 yields the concatenation of the two fuelled decodings of the payload pair when both succeed. Tag 3 yields their intersection in the same way. Any other tag yields nothing.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition71

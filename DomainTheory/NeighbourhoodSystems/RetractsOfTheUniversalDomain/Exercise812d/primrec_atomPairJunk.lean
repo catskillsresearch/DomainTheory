@@ -1,8 +1,3 @@
-/-ai
-The junk flag extracted from the atom-pair state, read on a paired argument, is primitive recursive.
-
-Swap the pair, run the primitive-recursive state, project the inner state, and project the junk flag. The composite equals the extracted flag.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812c

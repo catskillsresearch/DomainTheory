@@ -1,0 +1,3 @@
+The cone of a doubled encoding lies in the forward image of an element of C if and only if the cone of the original string lies in the element.
+
+A cone clause gives the same string by injectivity of cones and of the doubling encoding. A completed clause would make a doubled encoding equal a completed encoding. In the other direction, membership of the cone is the cone clause.

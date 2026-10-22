@@ -1,8 +1,3 @@
-/-ai
-Equal proper products have equal components.
-
-For each index j and element b, extensionality of the products at the pair (j, b), rewritten by the product membership lemma, gives extensionality of the components.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

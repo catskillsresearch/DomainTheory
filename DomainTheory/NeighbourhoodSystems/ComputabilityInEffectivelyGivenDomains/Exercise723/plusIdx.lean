@@ -1,6 +1,3 @@
-/-ai
-The index plusIdx n m is the primitive-recursive code of the Minkowski sum of the finite sets excluded by nbhd n and by nbhd m. It is orUpTo n m evaluated at the bound n.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

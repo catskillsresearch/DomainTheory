@@ -1,6 +1,3 @@
-/-ai
-The carved-out subset is the least fixed point of the generating operator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

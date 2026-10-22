@@ -1,6 +1,3 @@
-/-ai
-The retraction of a filter of the way-below neighbourhood system is the supremum of its set of codes.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

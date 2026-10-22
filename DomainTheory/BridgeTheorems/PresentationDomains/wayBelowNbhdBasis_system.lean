@@ -1,8 +1,3 @@
-/-ai
-The neighbourhood system of the way-below neighbourhood basis is the way-below neighbourhood system.
-
-The two sides are identical by the definition of the basis.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

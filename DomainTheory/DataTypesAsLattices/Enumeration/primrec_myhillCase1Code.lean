@@ -1,8 +1,3 @@
-/-ai
-For each fixed n, the map sending m to the first Myhill case code of n and m is primitive recursive.
-
-It is the application of the constant intersection code to the constant n, applied again to the Myhill filter code, and application of codes is primitive recursive.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

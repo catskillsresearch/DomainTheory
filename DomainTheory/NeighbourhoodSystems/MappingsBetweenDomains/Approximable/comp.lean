@@ -1,6 +1,3 @@
-/-ai
-The composite of approximable maps g after f relates an input neighbourhood to an output neighbourhood when some intermediate neighbourhood is related to the input by f and to the output by g. The master neighbourhoods are related through the intermediate master. An intersection of outputs is obtained by intersecting the intermediate witnesses with f and then intersecting the outputs with g, after monotonicity narrows each intermediate. Monotonicity of the composite narrows the input through f and enlarges the output through g, keeping the same intermediate neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,8 +1,3 @@
-/-ai
-If the consistency character is not one, the enumeration is the whole space of maps.
-
-This is the negative branch of the conditional in the enumeration.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

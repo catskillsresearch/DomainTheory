@@ -1,0 +1,3 @@
+With the base, the step, and the functional fixed, the body of the primitive-recursion step is Scott continuous in the argument.
+
+The tuple form of Theorem 1.3 uses continuity of the conditional in its left and right arguments and continuity of the identity. The else branch is a second tuple form, using continuity of application in each argument and Theorem 1.3 applied to continuity of application at the step and at the functional, each composed with continuity of the predecessor.

@@ -1,6 +1,3 @@
-/-ai
-A state of the automaton for a single word is either an index at most the length of the word, recording that the input read so far is the prefix of that length, or a sink, recording that the input has left the word.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise722Regular

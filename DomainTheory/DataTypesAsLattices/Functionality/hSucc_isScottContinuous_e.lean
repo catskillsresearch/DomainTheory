@@ -1,8 +1,3 @@
-/-ai
-For fixed H and t, the map sending e to the successor clause hSucc H e t is Scott continuous.
-
-The value of H at the payload of e is the composite of application of H in the expression argument with the payload projection. The ternary continuity theorem applies to the three continuity lemmas for the conditional set. The test is application of the tag combinator composed with that value, the zero branch is the left injection of the successor of the untagged payload of that value, and the positive branch is the constant bottom.
-ai-/
 
 module
 

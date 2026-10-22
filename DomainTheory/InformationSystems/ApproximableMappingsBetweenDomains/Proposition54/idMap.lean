@@ -1,6 +1,3 @@
-/-ai
-Proposition 5.4(i) defines the identity approximable mapping of an information system to relate consistent finite sets exactly when the first entails the second. The empty sets are related because the empty set is consistent and entails the empty set. Union on the right uses entailment of a union, consistency of a set with the finite set it entails, and passage to the subset consisting of that union. Monotonicity is transitivity of entailment.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable

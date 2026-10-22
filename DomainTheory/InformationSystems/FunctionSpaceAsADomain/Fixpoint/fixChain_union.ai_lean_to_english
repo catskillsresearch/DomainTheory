@@ -1,0 +1,3 @@
+If two sets are fix chains of the same length for a consistent set w of function tokens, then so is their union.
+
+The argument is by induction on the length. At length zero both sets are empty, and the union of empty sets is empty. At a successor step the inductive hypothesis unions the preceding sets. Consistency of chain values makes that union consistent, and the union step for function-space entailment supplies the entailment of the union of the two output tokens.

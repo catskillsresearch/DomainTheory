@@ -1,0 +1,3 @@
+The integer retract is idempotent: applying it twice yields the same set as applying it once.
+
+If the argument is the bottom element, both sides rewrite by the bottom law. If it is a singleton natural number, both sides rewrite by the singleton law. Otherwise the argument is nonempty and not a singleton, so the nonsingleton law at its least element says the first application is the top element, and the top law rewrites the second application.

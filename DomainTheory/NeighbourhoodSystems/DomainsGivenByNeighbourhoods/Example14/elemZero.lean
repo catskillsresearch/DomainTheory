@@ -1,6 +1,3 @@
-/-ai
-The partial element at node 0 consists of the master neighbourhood and the left branch. Both are neighbourhoods, the master neighbourhood belongs to the element, the intersection of any two is again one of the two, and a neighbourhood containing one of them is again one of the two, by the master-subset lemma and the subset cases for the left branch.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

@@ -1,0 +1,3 @@
+The action of an expression on maps is continuous: a neighbourhood pair lies in T(f) exactly when it lies in T(g i) for some index i, when f is the pointwise supremum of a directed family g.
+
+The forward direction is the forward continuity lemma for the action. Conversely, an index i gives g i ≤ f because every relation of g i is a relation of f, and monotonicity of the action transports the relation.

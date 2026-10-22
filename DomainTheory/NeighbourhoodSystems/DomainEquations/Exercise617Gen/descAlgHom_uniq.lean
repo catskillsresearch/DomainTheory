@@ -1,8 +1,3 @@
-/-ai
-Every Tsig-algebra homomorphism from Cnalg A to a Tsig-algebra B equals the descent homomorphism.
-
-The given homomorphism is a strict map together with a commuting square. Projecting the square and postcomposing both sides with the approximable map induced by ccEquiv cancels, after reassociation, the composite of the inverse isomorphism with the isomorphism, which is the identity. The resulting recursion is the hypothesis of rec_determines, so the underlying approximable map equals the descent map. The bundled strict maps therefore agree, and after that substitution the two algebra homomorphisms are identical.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

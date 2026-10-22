@@ -1,8 +1,3 @@
-/-ai
-The recursive value along a finite string is monotone in the base element.
-
-On the empty string the inequality is the inequality of the base elements. On a cons cell it is monotonicity of the bit successor applied to the inductive hypothesis.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

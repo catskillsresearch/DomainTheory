@@ -1,8 +1,3 @@
-/-ai
-Scanning two leading zeros followed by a tail returns the scan of the tail.
-
-The append is two leading falses. If the tail scans to none, the false clauses keep none. If the tail scans to a boolean, the two negations cancel.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

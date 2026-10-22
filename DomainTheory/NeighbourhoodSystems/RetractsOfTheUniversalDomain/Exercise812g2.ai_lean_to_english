@@ -1,0 +1,5 @@
+This file gathers and re-exports the computable unions of U and V: list concatenation on U, with its primitive recursiveness, the decoding of appended codes, raw equality, membership, specification, existence, and decidability, and bitwise disjunction on V, with the level-set union law, the raw and canonical primitive recursiveness, the specifications, existence, and decidability.
+
+If some index presents the union of the neighbourhoods indexed by n and by m, then the canonical union index presents that same union.
+
+The numbered name example_812_g2 is that statement.

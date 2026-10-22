@@ -1,8 +1,3 @@
-/-ai
-Folding the indexing step from a countdown of zero returns the carried value unchanged.
-
-On the empty list the fold is the start state. On a cons, the step sees countdown zero, so the selection keeps the value, and the inductive hypothesis applies.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

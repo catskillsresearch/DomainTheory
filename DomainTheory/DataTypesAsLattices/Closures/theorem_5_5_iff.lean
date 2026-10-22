@@ -1,8 +1,3 @@
-/-ai
-A set is a closure if and only if it is a fixed point of the universe combinator.
-
-If the set is a closure, applying the universe combinator yields the graph of its value operator, that graph equals the graph of the set because the operator agrees with the closure on values, and the graph equals the set because the set is a retract. Conversely, a fixed point of the universe combinator is the graph of its value operator, so application of the set is that operator by the beta law. Pairs from the identity combinator remain in the graph because every finite set is contained in the value of the operator on it. The value operator is idempotent and agrees with application of the set, so the graph of the operator is the graph of the double application, and the set is a retract.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

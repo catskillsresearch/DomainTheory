@@ -1,6 +1,3 @@
-/-ai
-The neighbourhood system on binary words takes membership to be Scott's family, and takes the master neighbourhood to be the set of all words. The master neighbourhood is nonempty and belongs to the family, the intersection law is the intersection law of the family, and every member is contained in the master neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

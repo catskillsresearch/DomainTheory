@@ -1,55 +1,199 @@
 # Definition 8.9
 
-We have now proved that $\mathcal{U}$ is a nice and big domain that is nicely behaved with respect to computable mappings. It has some very interesting subdomains; to name a few:
+## Human-English
 
-$$\mathcal{U} + \mathcal{U}, \quad \mathcal{U} \oplus \mathcal{U}, \quad \mathcal{U} \times \mathcal{U}, \quad \mathcal{U} \otimes \mathcal{U}$$
+@import "1980_Definition_8_9.english" {code_block=false}
 
-$$\mathcal{U}_\bot, \quad \mathcal{U}^\infty, \quad \mathcal{U}^\S, \quad \mathbb{P}\mathcal{U}, \quad \mathcal{U} \to \mathcal{U}$$
+## AI: Human-English to AI-Lean
 
-That all of these are $\trianglelefteq \mathcal{U}$ follows from knowing that they are all effectively presented. What we wish to check next is that they all combine well with respect to projections. To this end the explicit definitions are given for the constructs $+$, $\times$, and $\to$, and the details of the others are left for the exercises.
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/U_mem_nonempty.lean**
 
-**DEFINITION 8.9.** Let the computable projection pairs $i_+ : \mathcal{U} + \mathcal{U} \to \mathcal{U}$ and $j_+ : \mathcal{U} \to \mathcal{U} + \mathcal{U}$ be fixed. Similarly choose $i_\times, j_\times$ and $i_\to, j_\to$ for $\mathcal{U} \times \mathcal{U}$ and $\mathcal{U} \to \mathcal{U}$. Define:
+@import "U_mem_nonempty.lean"
 
-$$a + b = \mathrm{cond} \circ \langle \mathrm{which}, i_+ \circ \mathrm{in}_0 \circ a \circ \mathrm{out}_0, i_+ \circ \mathrm{in}_1 \circ b \circ \mathrm{out}_1 \rangle \circ j_+ \ ;$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/funSpaceUU_isEffectivelyGiven.lean**
 
-$$a \times b = i_\times \circ \langle a \circ \mathrm{proj}_0, b \circ \mathrm{proj}_1 \rangle \circ j_\times \ ;$$
+@import "funSpaceUU_isEffectivelyGiven.lean"
 
-$$a \to b = i_\to \circ (\lambda f.\ b \circ f \circ a) \circ j_\to \ ,$$
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/funSpaceUUPresentation.lean**
 
-for all $a, b : \mathcal{U} \to \mathcal{U}$. $\square$
+@import "funSpaceUUPresentation.lean"
 
-These interesting(computable!) combinators on elements of $\mathcal{U} \to \mathcal{U}$ have many, many properties. We shall, however, only see what they do to projections.
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow.lean**
 
-**Lean 4**
+@import "iArrow.lean"
 
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/U_mem_nonempty.lean](U_mem_nonempty.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/funSpaceUU_isEffectivelyGiven.lean](funSpaceUU_isEffectivelyGiven.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/funSpaceUUPresentation.lean](funSpaceUUPresentation.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow.lean](iArrow.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow_comp_jArrow_le.lean](iArrow_comp_jArrow_le.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow_isComputableMap.lean](iArrow_isComputableMap.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus_comp_jPlus_le.lean](iPlus_comp_jPlus_le.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus_isComputableMap.lean](iPlus_isComputableMap.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes_comp_jTimes_le.lean](iTimes_comp_jTimes_le.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes_isComputableMap.lean](iTimes_isComputableMap.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow.lean](jArrow.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow_comp_iArrow.lean](jArrow_comp_iArrow.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow_isComputableMap.lean](jArrow_isComputableMap.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus_comp_iPlus.lean](jPlus_comp_iPlus.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus_isComputableMap.lean](jPlus_isComputableMap.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes_comp_iTimes.lean](jTimes_comp_iTimes.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes_isComputableMap.lean](jTimes_isComputableMap.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/lamComb.lean](lamComb.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/arrowComb.lean](arrowComb.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodUU_isEffectivelyGiven.lean](prodUU_isEffectivelyGiven.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodUUPresentation.lean](prodUUPresentation.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes.lean](iTimes.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes.lean](jTimes.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodComb.lean](prodComb.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumUU_isEffectivelyGiven.lean](sumUU_isEffectivelyGiven.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumUUPresentation.lean](sumUUPresentation.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus.lean](iPlus.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus.lean](jPlus.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumComb.lean](sumComb.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/Basic.lean](Basic.lean)
-- [NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89.lean](../Definition89.lean)
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow_comp_jArrow_le.lean**
+
+@import "iArrow_comp_jArrow_le.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iArrow_isComputableMap.lean**
+
+@import "iArrow_isComputableMap.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus_comp_jPlus_le.lean**
+
+@import "iPlus_comp_jPlus_le.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus_isComputableMap.lean**
+
+@import "iPlus_isComputableMap.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes_comp_jTimes_le.lean**
+
+@import "iTimes_comp_jTimes_le.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes_isComputableMap.lean**
+
+@import "iTimes_isComputableMap.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow.lean**
+
+@import "jArrow.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow_comp_iArrow.lean**
+
+@import "jArrow_comp_iArrow.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jArrow_isComputableMap.lean**
+
+@import "jArrow_isComputableMap.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus_comp_iPlus.lean**
+
+@import "jPlus_comp_iPlus.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus_isComputableMap.lean**
+
+@import "jPlus_isComputableMap.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes_comp_iTimes.lean**
+
+@import "jTimes_comp_iTimes.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes_isComputableMap.lean**
+
+@import "jTimes_isComputableMap.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/lamComb.lean**
+
+@import "lamComb.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/arrowComb.lean**
+
+@import "arrowComb.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodUU_isEffectivelyGiven.lean**
+
+@import "prodUU_isEffectivelyGiven.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodUUPresentation.lean**
+
+@import "prodUUPresentation.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iTimes.lean**
+
+@import "iTimes.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jTimes.lean**
+
+@import "jTimes.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/prodComb.lean**
+
+@import "prodComb.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumUU_isEffectivelyGiven.lean**
+
+@import "sumUU_isEffectivelyGiven.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumUUPresentation.lean**
+
+@import "sumUUPresentation.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/iPlus.lean**
+
+@import "iPlus.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/jPlus.lean**
+
+@import "jPlus.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/sumComb.lean**
+
+@import "sumComb.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89/Basic.lean**
+
+@import "Basic.lean"
+
+**NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition89.lean**
+
+@import "../Definition89.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "U_mem_nonempty.ai_lean_to_english" {code_block=false}
+
+@import "funSpaceUU_isEffectivelyGiven.ai_lean_to_english" {code_block=false}
+
+@import "funSpaceUUPresentation.ai_lean_to_english" {code_block=false}
+
+@import "iArrow.ai_lean_to_english" {code_block=false}
+
+@import "iArrow_comp_jArrow_le.ai_lean_to_english" {code_block=false}
+
+@import "iArrow_isComputableMap.ai_lean_to_english" {code_block=false}
+
+@import "iPlus_comp_jPlus_le.ai_lean_to_english" {code_block=false}
+
+@import "iPlus_isComputableMap.ai_lean_to_english" {code_block=false}
+
+@import "iTimes_comp_jTimes_le.ai_lean_to_english" {code_block=false}
+
+@import "iTimes_isComputableMap.ai_lean_to_english" {code_block=false}
+
+@import "jArrow.ai_lean_to_english" {code_block=false}
+
+@import "jArrow_comp_iArrow.ai_lean_to_english" {code_block=false}
+
+@import "jArrow_isComputableMap.ai_lean_to_english" {code_block=false}
+
+@import "jPlus_comp_iPlus.ai_lean_to_english" {code_block=false}
+
+@import "jPlus_isComputableMap.ai_lean_to_english" {code_block=false}
+
+@import "jTimes_comp_iTimes.ai_lean_to_english" {code_block=false}
+
+@import "jTimes_isComputableMap.ai_lean_to_english" {code_block=false}
+
+@import "lamComb.ai_lean_to_english" {code_block=false}
+
+@import "arrowComb.ai_lean_to_english" {code_block=false}
+
+@import "prodUU_isEffectivelyGiven.ai_lean_to_english" {code_block=false}
+
+@import "prodUUPresentation.ai_lean_to_english" {code_block=false}
+
+@import "iTimes.ai_lean_to_english" {code_block=false}
+
+@import "jTimes.ai_lean_to_english" {code_block=false}
+
+@import "prodComb.ai_lean_to_english" {code_block=false}
+
+@import "sumUU_isEffectivelyGiven.ai_lean_to_english" {code_block=false}
+
+@import "sumUUPresentation.ai_lean_to_english" {code_block=false}
+
+@import "iPlus.ai_lean_to_english" {code_block=false}
+
+@import "jPlus.ai_lean_to_english" {code_block=false}
+
+@import "sumComb.ai_lean_to_english" {code_block=false}
+
+@import "Basic.ai_lean_to_english" {code_block=false}
+
+@import "../Definition89.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1980_Definition_8_9.ai_english_concordance" {code_block=false}

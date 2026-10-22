@@ -1,6 +1,3 @@
-/-ai
-A finite stage of the dollar iteration, at a strict bound, is the union of the applications of the functional to the numeral of each index that belongs to the argument and lies strictly below the bound.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

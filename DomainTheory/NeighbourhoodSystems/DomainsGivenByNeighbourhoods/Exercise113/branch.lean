@@ -1,6 +1,3 @@
-/-ai
-The branch of an infinite binary path is the ascending union of the finite elements of its finite prefixes.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

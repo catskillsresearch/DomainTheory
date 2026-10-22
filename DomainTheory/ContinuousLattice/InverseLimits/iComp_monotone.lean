@@ -1,8 +1,3 @@
-/-ai
-Each coordinate of the climbing-and-descending sequence is monotone in the embedded element.
-
-A map that preserves directed suprema is monotone, and that coordinate preserves directed suprema.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

@@ -1,6 +1,3 @@
-/-ai
-The canonical Scott extension of a map along a comparison of spaces sends a point to the supremum, over the open neighbourhoods of the point, of the infima of the map on the preimages of those neighbourhoods.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.MilnerCorrection

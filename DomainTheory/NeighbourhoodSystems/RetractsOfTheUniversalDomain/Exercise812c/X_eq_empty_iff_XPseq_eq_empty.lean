@@ -1,8 +1,3 @@
-/-ai
-The enumerated set X n is empty if and only if XPseq n is empty.
-
-Specialize the intersection-emptiness transfer to the pair of indices (n, n), and rewrite both intersections as the sets themselves.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812

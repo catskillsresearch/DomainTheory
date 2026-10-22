@@ -1,8 +1,3 @@
-/-ai
-If a binary relation is recursively decidable, then so is the relation of a list code and a parameter which says that every entry of the decoded list stands in the relation to the parameter.
-
-The characteristic is the list-universal character of the binary decider. It is primitive recursive, and it equals one exactly when every entry satisfies the relation, because that character lemma matches the decider on pairs.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

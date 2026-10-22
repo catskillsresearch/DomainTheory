@@ -1,6 +1,3 @@
-/-ai
-Scott 1976, (3.11). The numeral code sends 0 to 1, and sends n + 1 to the application of code 12 to the numeral code of n.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

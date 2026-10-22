@@ -1,8 +1,3 @@
-/-ai
-If an index is at most the bound, the entry of the fuel table at fuel 0, under any default, equals 0.
-
-The table at fuel 0 is the tabulation of the zero function for one more entry than the bound, and the entry strictly below that length is 0.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

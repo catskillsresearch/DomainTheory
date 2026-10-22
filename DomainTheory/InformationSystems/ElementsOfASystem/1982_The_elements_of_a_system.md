@@ -1,63 +1,265 @@
 # The elements of a system
 
-Let $\mathbf{A}$ be an information system, and suppose we already had a concept of being an element of $\mathbf{A}$. The data objects are meant to be propositions about elements, so if $X$ is in $D_{\mathbf{A}}$ and if $x$ is an element, then we can be expected to know what it means to say that $X$ is true of $x$. Since all we are given is the set of data objects $D_{\mathbf{A}}$, we have to assume that it contains enough objects to distinguish between distinct elements. (If there were not enough of them, we would have to change the set $D_{\mathbf{A}}$.) Formally, we can write of two elements $x$ and $y$:
+## Human-English
 
-$$
-x = y \quad \text{iff all } X \in D_{\mathbf{A}} \text{ which are true of } x \text{ are also true of } y, \text{ and conversely.}
-$$
+@import "1982_The_elements_of_a_system.english" {code_block=false}
 
-If this principle is accepted, then the elements can be *identified* with the sets of propositions true of them; formally we can assert:
+## AI: Human-English to AI-Lean
 
-$$
-x = \{X \in D_{\mathbf{A}} \mid X \text{ is true of } x\}.
-$$
+**InformationSystems/ElementsOfASystem/Factoid32/Basic.lean**
 
-There can be no confusion injected here in identifying elements that ought to be distinct, since we are assuming that there are enough data objects in the system. If for some reason we felt we ought to have more of them to distinguish between more elements, then we would have to pass to a larger and *different* information system. By agreement, then, the above equation is a tautology.
-So, for the sake of simplicity, elements can be taken to be *sets* of data objects. But, we hasten to ask, which sets? The question is really: What are the properties of truth? The answers are well known, and, in fact, we have already used them in our examples in the last section. In words, the set of true propositions about a possible element must be (i) consistent in itself, and (ii) closed under entailment (or *deductively closed*, for short). Condition (i) is clear because we are talking about a *possible* element, not an impossible one. Condition (ii) is acceptable, because, by the very meaning of the word, entailment should be truth preserving. In addition, we are also saying the converse: *any* set having properties (i) and (ii) corresponds to a (partial) element. Here is the formal statement:
+@import "Factoid32/Basic.lean"
 
-- [Definition 3.1](1982_Definition_3_1.md)
+**InformationSystems/ElementsOfASystem/Factoid32/factoid_3_2.lean**
 
-**Lean 4**
+@import "Factoid32/factoid_3_2.lean"
 
-- [InformationSystems/ElementsOfASystem/Factoid32/Basic.lean](Factoid32/Basic.lean)
-- [InformationSystems/ElementsOfASystem/Factoid32/factoid_3_2.lean](Factoid32/factoid_3_2.lean)
-- [InformationSystems/ElementsOfASystem/Factoid32.lean](Factoid32.lean)
-- [InformationSystems/ElementsOfASystem/Factoid33/botElement.lean](Factoid33/botElement.lean)
-- [InformationSystems/ElementsOfASystem/Factoid33/Basic.lean](Factoid33/Basic.lean)
-- [InformationSystems/ElementsOfASystem/Factoid33/botElement_le.lean](Factoid33/botElement_le.lean)
-- [InformationSystems/ElementsOfASystem/Factoid33.lean](Factoid33.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/AllConsistent.lean](Factoid34/AllConsistent.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/IsTotal.lean](Factoid34/IsTotal.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/eq_of_carrier_univ_of_isTotal.lean](Factoid34/eq_of_carrier_univ_of_isTotal.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/exists_top_iff_allConsistent.lean](Factoid34/exists_top_iff_allConsistent.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34.lean](Factoid34.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/isTotal_of_carrier_univ.lean](Factoid34/isTotal_of_carrier_univ.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/le_topElement.lean](Factoid34/le_topElement.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/eq_topElement_of_isTotal.lean](Factoid34/eq_topElement_of_isTotal.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/topElement.lean](Factoid34/topElement.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/topElement_isTotal.lean](Factoid34/topElement_isTotal.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/exists_unique_total_of_allConsistent.lean](Factoid34/exists_unique_total_of_allConsistent.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/isTotal_iff_eq_topElement.lean](Factoid34/isTotal_iff_eq_topElement.lean)
-- [InformationSystems/ElementsOfASystem/Factoid35/closure.lean](Factoid35/closure.lean)
-- [InformationSystems/ElementsOfASystem/Factoid35/Basic.lean](Factoid35/Basic.lean)
-- [InformationSystems/ElementsOfASystem/Factoid35/mem_closure_iff.lean](Factoid35/mem_closure_iff.lean)
-- [InformationSystems/ElementsOfASystem/Factoid35/subset_closure.lean](Factoid35/subset_closure.lean)
-- [InformationSystems/ElementsOfASystem/Factoid35.lean](Factoid35.lean)
-- [InformationSystems/ElementsOfASystem/Factoid36/approxUnion.lean](Factoid36/approxUnion.lean)
-- [InformationSystems/ElementsOfASystem/Factoid36/Basic.lean](Factoid36/Basic.lean)
-- [InformationSystems/ElementsOfASystem/Factoid36/closure_le_element.lean](Factoid36/closure_le_element.lean)
-- [InformationSystems/ElementsOfASystem/Factoid36/closure_le_of_entSet.lean](Factoid36/closure_le_of_entSet.lean)
-- [InformationSystems/ElementsOfASystem/Factoid36/closure_le_of_subset.lean](Factoid36/closure_le_of_subset.lean)
-- [InformationSystems/ElementsOfASystem/Factoid36/closures_directed.lean](Factoid36/closures_directed.lean)
-- [InformationSystems/ElementsOfASystem/Factoid36/mem_element_iff_mem_closure.lean](Factoid36/mem_element_iff_mem_closure.lean)
-- [InformationSystems/ElementsOfASystem/Factoid36/element_eq_approxUnion.lean](Factoid36/element_eq_approxUnion.lean)
-- [InformationSystems/ElementsOfASystem/Factoid36.lean](Factoid36.lean)
-- [InformationSystems/InformationSystems/InfoSys/Element.lean](../InformationSystems/InfoSys/Element.lean)
-- [InformationSystems/InformationSystems/InfoSys/Basic.lean](../InformationSystems/InfoSys/Basic.lean)
-- [InformationSystems/InformationSystems/InfoSys/con_empty.lean](../InformationSystems/InfoSys/con_empty.lean)
-- [InformationSystems/InformationSystems/InfoSys.lean](../InformationSystems/InfoSys.lean)
-- [InformationSystems/InformationSystems/Factoid26/Basic.lean](../InformationSystems/Factoid26/Basic.lean)
-- [InformationSystems/InformationSystems/Definition22/Basic.lean](../InformationSystems/Definition22/Basic.lean)
-- [InformationSystems/InformationSystems/Definition22.lean](../InformationSystems/Definition22.lean)
-- [InformationSystems/InformationSystems/Proposition23/Basic.lean](../InformationSystems/Proposition23/Basic.lean)
-- [InformationSystems/ElementsOfASystem/Factoid34/Basic.lean](Factoid34/Basic.lean)
+**InformationSystems/ElementsOfASystem/Factoid32.lean**
+
+@import "Factoid32.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid33/botElement.lean**
+
+@import "Factoid33/botElement.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid33/Basic.lean**
+
+@import "Factoid33/Basic.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid33/botElement_le.lean**
+
+@import "Factoid33/botElement_le.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid33.lean**
+
+@import "Factoid33.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/AllConsistent.lean**
+
+@import "Factoid34/AllConsistent.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/IsTotal.lean**
+
+@import "Factoid34/IsTotal.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/eq_of_carrier_univ_of_isTotal.lean**
+
+@import "Factoid34/eq_of_carrier_univ_of_isTotal.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/exists_top_iff_allConsistent.lean**
+
+@import "Factoid34/exists_top_iff_allConsistent.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34.lean**
+
+@import "Factoid34.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/isTotal_of_carrier_univ.lean**
+
+@import "Factoid34/isTotal_of_carrier_univ.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/le_topElement.lean**
+
+@import "Factoid34/le_topElement.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/eq_topElement_of_isTotal.lean**
+
+@import "Factoid34/eq_topElement_of_isTotal.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/topElement.lean**
+
+@import "Factoid34/topElement.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/topElement_isTotal.lean**
+
+@import "Factoid34/topElement_isTotal.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/exists_unique_total_of_allConsistent.lean**
+
+@import "Factoid34/exists_unique_total_of_allConsistent.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/isTotal_iff_eq_topElement.lean**
+
+@import "Factoid34/isTotal_iff_eq_topElement.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid35/closure.lean**
+
+@import "Factoid35/closure.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid35/Basic.lean**
+
+@import "Factoid35/Basic.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid35/mem_closure_iff.lean**
+
+@import "Factoid35/mem_closure_iff.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid35/subset_closure.lean**
+
+@import "Factoid35/subset_closure.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid35.lean**
+
+@import "Factoid35.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid36/approxUnion.lean**
+
+@import "Factoid36/approxUnion.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid36/Basic.lean**
+
+@import "Factoid36/Basic.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid36/closure_le_element.lean**
+
+@import "Factoid36/closure_le_element.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid36/closure_le_of_entSet.lean**
+
+@import "Factoid36/closure_le_of_entSet.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid36/closure_le_of_subset.lean**
+
+@import "Factoid36/closure_le_of_subset.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid36/closures_directed.lean**
+
+@import "Factoid36/closures_directed.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid36/mem_element_iff_mem_closure.lean**
+
+@import "Factoid36/mem_element_iff_mem_closure.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid36/element_eq_approxUnion.lean**
+
+@import "Factoid36/element_eq_approxUnion.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid36.lean**
+
+@import "Factoid36.lean"
+
+**InformationSystems/InformationSystems/InfoSys/Element.lean**
+
+@import "../InformationSystems/InfoSys/Element.lean"
+
+**InformationSystems/InformationSystems/InfoSys/Basic.lean**
+
+@import "../InformationSystems/InfoSys/Basic.lean"
+
+**InformationSystems/InformationSystems/InfoSys/con_empty.lean**
+
+@import "../InformationSystems/InfoSys/con_empty.lean"
+
+**InformationSystems/InformationSystems/InfoSys.lean**
+
+@import "../InformationSystems/InfoSys.lean"
+
+**InformationSystems/InformationSystems/Factoid26/Basic.lean**
+
+@import "../InformationSystems/Factoid26/Basic.lean"
+
+**InformationSystems/InformationSystems/Definition22/Basic.lean**
+
+@import "../InformationSystems/Definition22/Basic.lean"
+
+**InformationSystems/InformationSystems/Definition22.lean**
+
+@import "../InformationSystems/Definition22.lean"
+
+**InformationSystems/InformationSystems/Proposition23/Basic.lean**
+
+@import "../InformationSystems/Proposition23/Basic.lean"
+
+**InformationSystems/ElementsOfASystem/Factoid34/Basic.lean**
+
+@import "Factoid34/Basic.lean"
+
+## AI: AI-Lean to AI-English
+
+@import "Factoid32/Basic.ai_lean_to_english" {code_block=false}
+
+@import "Factoid32/factoid_3_2.ai_lean_to_english" {code_block=false}
+
+@import "Factoid32.ai_lean_to_english" {code_block=false}
+
+@import "Factoid33/botElement.ai_lean_to_english" {code_block=false}
+
+@import "Factoid33/Basic.ai_lean_to_english" {code_block=false}
+
+@import "Factoid33/botElement_le.ai_lean_to_english" {code_block=false}
+
+@import "Factoid33.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/AllConsistent.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/IsTotal.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/eq_of_carrier_univ_of_isTotal.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/exists_top_iff_allConsistent.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/isTotal_of_carrier_univ.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/le_topElement.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/eq_topElement_of_isTotal.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/topElement.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/topElement_isTotal.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/exists_unique_total_of_allConsistent.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/isTotal_iff_eq_topElement.ai_lean_to_english" {code_block=false}
+
+@import "Factoid35/closure.ai_lean_to_english" {code_block=false}
+
+@import "Factoid35/Basic.ai_lean_to_english" {code_block=false}
+
+@import "Factoid35/mem_closure_iff.ai_lean_to_english" {code_block=false}
+
+@import "Factoid35/subset_closure.ai_lean_to_english" {code_block=false}
+
+@import "Factoid35.ai_lean_to_english" {code_block=false}
+
+@import "Factoid36/approxUnion.ai_lean_to_english" {code_block=false}
+
+@import "Factoid36/Basic.ai_lean_to_english" {code_block=false}
+
+@import "Factoid36/closure_le_element.ai_lean_to_english" {code_block=false}
+
+@import "Factoid36/closure_le_of_entSet.ai_lean_to_english" {code_block=false}
+
+@import "Factoid36/closure_le_of_subset.ai_lean_to_english" {code_block=false}
+
+@import "Factoid36/closures_directed.ai_lean_to_english" {code_block=false}
+
+@import "Factoid36/mem_element_iff_mem_closure.ai_lean_to_english" {code_block=false}
+
+@import "Factoid36/element_eq_approxUnion.ai_lean_to_english" {code_block=false}
+
+@import "Factoid36.ai_lean_to_english" {code_block=false}
+
+@import "../InformationSystems/InfoSys/Element.ai_lean_to_english" {code_block=false}
+
+@import "../InformationSystems/InfoSys/Basic.ai_lean_to_english" {code_block=false}
+
+@import "../InformationSystems/InfoSys/con_empty.ai_lean_to_english" {code_block=false}
+
+@import "../InformationSystems/InfoSys.ai_lean_to_english" {code_block=false}
+
+@import "../InformationSystems/Factoid26/Basic.ai_lean_to_english" {code_block=false}
+
+@import "../InformationSystems/Definition22/Basic.ai_lean_to_english" {code_block=false}
+
+@import "../InformationSystems/Definition22.ai_lean_to_english" {code_block=false}
+
+@import "../InformationSystems/Proposition23/Basic.ai_lean_to_english" {code_block=false}
+
+@import "Factoid34/Basic.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1982_The_elements_of_a_system.ai_english_concordance" {code_block=false}

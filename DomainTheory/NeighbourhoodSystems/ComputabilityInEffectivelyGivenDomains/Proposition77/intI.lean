@@ -1,6 +1,3 @@
-/-ai
-The intersection index of a packed triple is the second component of its second component.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example61

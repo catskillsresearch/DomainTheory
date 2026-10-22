@@ -1,8 +1,3 @@
-/-ai
-Composition of approximable maps is associative.
-
-Extensionality of the relation reduces the equality to a chain of three neighbourhoods, and the two associations are the same three witnesses regrouped.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

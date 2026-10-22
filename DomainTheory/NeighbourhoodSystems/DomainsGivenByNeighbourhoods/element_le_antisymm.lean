@@ -1,8 +1,3 @@
-/-ai
-Elements that contain one another's neighbourhoods are equal.
-
-Extensionality of elements is applied to the two inclusions, which together give equivalence of membership.
-ai-/
 module
 
 public import Mathlib.Data.Set.Basic

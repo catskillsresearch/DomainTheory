@@ -1,27 +1,31 @@
 # Proposition 1.4
 
-We now have a large number of injective spaces, and further examples could be found using the next fact.
+## Human-English
 
-**1.4 Proposition.** A retract of an injective space is injective.
+@import "1972_Proposition_1_4.english" {code_block=false}
 
-**Proof:** Let $D$ be injective. By a retract of $D$ we understand a subspace $D' \subseteq D$ for which there exists a retraction map $j: D \to D'$ such that
+## AI: Human-English to AI-Lean
 
-$$
-D' = x \in D : j(x) = x.
-$$
+**ContinuousLattice/Injective/IsInjectiveSpaceu2eof_retract.lean**
 
-Then if $f: X \to D'$ and $X \subseteq Y$, we have $f: X \to D$ as a continuous map also. Taking $\bar{f}: Y \to D$, we have only to form
+@import "IsInjectiveSpaceu2eof_retract.lean"
 
-$$
-j \circ \bar{f} : Y \to D'
-$$
+**ContinuousLattice/Injective/IsRetractSubspace.lean**
 
-to show that $D'$ is injective. $\square$
+@import "IsRetractSubspace.lean"
 
-**Retract.** `IsRetractSubspace` is a subspace with a continuous retraction, and this proposition uses it to show a retract of an injective space is injective. The continuous-lattice form of the same idea is [Definition 3.6](../FunctionSpaces/1972_Definition_3_6.md). The representation by an idempotent on a power of $\mathbb{O}$ is [Theorem 2.12](../Theorem212/1972_Theorem_2_12.md).
+**ContinuousLattice/Injective/proposition_1_4.lean**
 
-**Lean 4**
+@import "proposition_1_4.lean"
 
-- [ContinuousLattice/Injective/IsInjectiveSpaceu2eof_retract.lean](IsInjectiveSpaceu2eof_retract.lean)
-- [ContinuousLattice/Injective/IsRetractSubspace.lean](IsRetractSubspace.lean)
-- [ContinuousLattice/Injective/proposition_1_4.lean](proposition_1_4.lean)
+## AI: AI-Lean to AI-English
+
+@import "IsInjectiveSpaceu2eof_retract.ai_lean_to_english" {code_block=false}
+
+@import "IsRetractSubspace.ai_lean_to_english" {code_block=false}
+
+@import "proposition_1_4.ai_lean_to_english" {code_block=false}
+
+## AI: AI-English to Human-English Concordance
+
+@import "1972_Proposition_1_4.ai_english_concordance" {code_block=false}

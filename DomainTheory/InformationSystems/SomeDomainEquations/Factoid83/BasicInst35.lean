@@ -1,6 +1,3 @@
-/-ai
-Decidable equality of U-tokens is introduced as the standard decidable equality of a subtype.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

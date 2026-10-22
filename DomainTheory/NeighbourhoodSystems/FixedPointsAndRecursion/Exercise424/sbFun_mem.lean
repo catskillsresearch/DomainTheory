@@ -1,8 +1,3 @@
-/-ai
-On the Tarski fixed set, Tarski's map agrees with the first injection.
-
-The conditional reduces to the membership branch.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise414

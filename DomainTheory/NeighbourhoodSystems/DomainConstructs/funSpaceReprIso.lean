@@ -1,6 +1,3 @@
-/-ai
-Exercise 3.27 states that the function space is order-isomorphic to the domain produced by the abstract representation theorem of Exercise 2.22 applied to the family of graphs of approximable maps. The isomorphism composes that representation isomorphism with the inverse of the graph isomorphism and the inverse of the function-space equivalence of Theorem 3.10.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise222

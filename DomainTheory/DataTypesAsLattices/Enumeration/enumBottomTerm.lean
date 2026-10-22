@@ -1,6 +1,3 @@
-/-ai
-The bottom term is the closed term that applies, to a copy of itself, the abstraction of variable 9 applied to itself. It is a closed divergent term denoting bottom.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

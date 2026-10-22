@@ -1,8 +1,3 @@
-/-ai
-A nonempty directed supremum of projections is a projection. This is the directed-join half of Scott's Proposition 3.12.
-
-Each member is pointwise idempotent and deflationary, so the supremum is deflationary by the pointwise formula. At an argument x, the values of the members form a nonempty directed set A whose supremum is the value of the supremum map. Each member, being continuous, sends the supremum of A to the supremum of its values on A. For two members, directedness supplies a third above both, and idempotence and monotonicity of that third bound the composite values by the corresponding member of A. The reverse comparison uses idempotence and monotonicity of each member.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

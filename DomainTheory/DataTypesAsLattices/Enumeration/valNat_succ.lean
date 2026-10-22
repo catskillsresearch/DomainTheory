@@ -1,8 +1,3 @@
-/-ai
-The numerical evaluator sends n + 1 to the application of its value at the left unpairing component of n to its value at the right component.
-
-Unfold the evaluator and apply the computation rule for strong recursion.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

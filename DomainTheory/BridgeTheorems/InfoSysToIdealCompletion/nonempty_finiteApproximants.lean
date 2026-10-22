@@ -1,8 +1,3 @@
-/-ai
-The set of finite approximants of an element x is nonempty.
-
-The bottom finite element belongs to it, because the bottom element lies under x and a finite element lying under x is a finite approximant of x.
-ai-/
 module
 
 public import Mathlib.Order.Hom.Basic

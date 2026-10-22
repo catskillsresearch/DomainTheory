@@ -1,0 +1,1 @@
+Inclusion of the finite set coded by n in the finite set coded by m is decidable. It is equivalent to the bounded statement that every k at most n which lies in the first set lies in the second: membership in the set coded by n forces k ≤ n, and the converse implication drops that bound.

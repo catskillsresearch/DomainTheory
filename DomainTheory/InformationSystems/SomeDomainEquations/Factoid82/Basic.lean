@@ -1,14 +1,3 @@
-/-ai
-This file assembles Factoid 8.2, the lambda-calculus model in which D is congruent to A plus the function space from D to D. Consistency and the token carrier are developed by well-founded depth, entailment is the inductive depth relation of Scott's clauses (8) through (11), and the lambda system is the information system of well-formed tokens, with the domain equation through the unfolding into the sum of A and the function space.
-
-A raw token lies in the fold, from the empty finset, of forgetful insertion along a multiset of lambda tokens if and only if it is the underlying token of some element of that multiset.
-
-The proof inducts on the multiset. Both sides fail for the empty multiset. For a cons cell, membership in the inserted fold is the value of the head or membership in the fold of the tail, and the inductive hypothesis matches the tail with the tail of the multiset.
-
-The union of a finset u with the insertion of a token a into a finset t equals the insertion of a into the union of u and t.
-
-By extensionality, an element of the left side lies in u, hence in the inserted union, or in the insertion, hence equals a or lies in t, and both of those lie in the inserted union. An element of the right side equals a, hence lies in the inserted right-hand summand, or lies in the union, hence lies in u or in t, and both of those lie in the left side.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
@@ -113,19 +102,6 @@ public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid82.lamF
 
 @[expose] public section
 
-/-!
-# Factoid 8.2 — λ-calculus model `D ≅ A + (D → D)`
-
-**Scott 1982, §8.** `D` and `Con_D` are mutually recursive. Lean rejects putting the
-FunCon-style clause (7) inside an inductive (negative occurrence), so the primary
-path uses well-founded **`LamConDepth`** (`termination_by finsetMaxDepth`) and
-inductive **`LamEntDepth`** (Scott (8)–(11)). Staged `LamConN` / early `LamToken`
-remain scaffolding only.
-
-**Status:** Def 2.1 packaged as `lambdaSystem` on `LamDToken` (depth WF); domain
-equation via `lamUnfold` / `lamRhs` into `sumSystem A (functionSystem D D)`.
--/
-
 namespace DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
@@ -134,12 +110,6 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α]
 
-/-! ## Raw tokens + decidable equality -/
-
-/-! ## Projections -/
-
-
-/-! ## Staged consistency -/
 
 variable (A : InfoSys α)
 
@@ -162,25 +132,6 @@ theorem mem_foldr_lamForget (s : Multiset (LamToken A)) (t : RawLamToken α) :
       · exact Or.inr ⟨q, hq, hq'⟩
 
 
-/-! ## Staged entailment (Scott (8)–(11)) — definitions only
-
-Full `ent_refl` / `ent_con` / `ent_trans` for the `InfoSys` instance remain; the
-definitions below package Scott’s clauses (8)–(11) at stages matching `LamConN`.
--/
-
-
-/-! ## Inversion lemmas for staged Con -/
-
-
-/-! ## ent_con: inserting an entailed token preserves consistency -/
-
-
-/-! ## Depth-based entailment (Scott (8)–(11), inductive FunEnt-style) -/
-
-
-/-! ### Funion / filter helpers + weaken_insert + funion_of_entSet + insert_of_ent -/
-
-
 theorem funion_insert_lam (u : Finset (RawLamToken α)) (a : RawLamToken α)
     (t : Finset (RawLamToken α)) : u ∪' insert a t = insert a (u ∪' t) := by
   ext x
@@ -197,15 +148,6 @@ theorem funion_insert_lam (u : Finset (RawLamToken α)) (a : RawLamToken α)
     · rcases mem_funion.mp h with hu | ht
       · exact mem_funion.mpr (Or.inl hu)
       · exact mem_funion.mpr (Or.inr (Finset.mem_insert.mpr (Or.inr ht)))
-
-
-/-! ### Scott (8)–(11): `ent_trans` (Def 2.1) -/
-
-
-/-! ### Phase B — `lambdaSystem` (Def 2.1) on `LamConDepth` -/
-
-
-/-! ### Phase C — domain equation `D ≅ A + (D → D)` -/
 
 
 end InfoSys

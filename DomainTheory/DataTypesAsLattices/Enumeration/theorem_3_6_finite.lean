@@ -1,8 +1,3 @@
-/-ai
-The packed list of a finite list, and the combinator G, both belong to the degree of the single generator of that list. This is Scott's Theorem 3.6: the conditional of the packed list applied to G, and then to 0, is the packed tuple, and G lies in its degree.
-
-The packed list is the application of S(I)(K 0), where I is S K K, to the single generator. That combinator is combinatory, being built from S, K, and zero. The three-place S equation, the identity equation, the two-place K equation, and the zero-application of the single generator show that the application equals the packed list. The combinator G belongs to the degree because every degree is a subalgebra.
-ai-/
 
 module
 

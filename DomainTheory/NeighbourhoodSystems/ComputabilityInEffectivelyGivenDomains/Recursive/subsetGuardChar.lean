@@ -1,6 +1,3 @@
-/-ai
-The subset guard of a fuel, two codes, and a candidate i is the product of the bit-string character of i and the equality-to-one test of one minus the excess of the length of i over the subset bound. It accepts a code only when that code is a bit string whose length is at most the bound.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

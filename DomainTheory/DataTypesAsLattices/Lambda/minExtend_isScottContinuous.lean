@@ -1,8 +1,3 @@
-/-ai
-The minimal extension of any sequence of sets is Scott continuous.
-
-If a number lies in the extension of a set, it lies in the value of the sequence at some index belonging to the set, and the singleton finite set of that index is a Scott-union witness. Conversely, a Scott-union witness contains some index at which the sequence value contains the number, and that index belongs to the original set.
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding

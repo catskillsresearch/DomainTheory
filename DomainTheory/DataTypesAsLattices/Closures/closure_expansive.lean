@@ -1,8 +1,3 @@
-/-ai
-If a is a closure, every set x is contained in the application of a to x.
-
-Left monotonicity of application, from the identity combinator lying below a, becomes this inclusion once the identity combinator is evaluated as the identity.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

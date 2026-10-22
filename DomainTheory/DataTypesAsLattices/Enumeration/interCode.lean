@@ -1,6 +1,3 @@
-/-ai
-The intersection code is a natural number chosen, by the surjectivity in theorem 3.2 applied to the combinatory intersection combinator, as a Gödel number of that combinator.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

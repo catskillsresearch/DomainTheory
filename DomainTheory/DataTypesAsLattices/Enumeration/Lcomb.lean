@@ -1,6 +1,3 @@
-/-ai
-The combinator L is the graph of the map sending x to the application of x at the numeral 1, applied further to the application of x at the numeral 2.
-ai-/
 module
 
 public import Mathlib.Computability.Halting

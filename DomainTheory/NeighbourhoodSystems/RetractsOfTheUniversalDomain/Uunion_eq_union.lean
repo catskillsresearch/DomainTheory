@@ -1,8 +1,3 @@
-/-ai
-The intervals presented by the list decoded from the union index equal the union of the two enumerated neighbourhoods. Concatenating presenting lists presents the union with no consistency case split.
-
-Unfold the index, rewrite decoding of a concatenation and the presented intervals of an appended list, and the two canonical codes present the two enumerated neighbourhoods.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise812d

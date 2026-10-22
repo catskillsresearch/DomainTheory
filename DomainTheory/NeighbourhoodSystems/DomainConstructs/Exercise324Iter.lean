@@ -1,8 +1,3 @@
-/-ai
-The function space into an iterate is isomorphic, as a domain, to the iterate of the function space.
-
-The numbered name example_324_iter is that statement.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise324Iter.funIter_isomorphic

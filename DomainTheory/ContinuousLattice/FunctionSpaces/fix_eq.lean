@@ -1,8 +1,3 @@
-/-ai
-For a Scott map f from D to D, fix f is a fixed point of f: applying f to fix f returns fix f.
-
-The equality is the fixed-point equation for the least fixed point of the order homomorphism associated with f.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

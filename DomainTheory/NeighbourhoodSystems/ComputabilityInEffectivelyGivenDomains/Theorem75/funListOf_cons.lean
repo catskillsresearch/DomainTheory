@@ -1,8 +1,3 @@
-/-ai
-The image under funListOf of a cons is the cons of the step pair of the head with the image of the tail.
-
-This is reflexivity from the definition of funListOf.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

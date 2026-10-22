@@ -1,6 +1,3 @@
-/-ai
-The power language of a word is the set of all finite repetitions of that word.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

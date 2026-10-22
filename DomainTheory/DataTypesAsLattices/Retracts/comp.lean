@@ -1,6 +1,3 @@
-/-ai
-Composition of u after v is the graph of the map sending x to the application of u to the application of v to x. Scott's formula (4.5) is u ∘ v = λx. u(v(x)).
-ai-/
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedLattices

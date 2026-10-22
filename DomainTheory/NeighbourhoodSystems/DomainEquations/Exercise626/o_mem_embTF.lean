@@ -1,8 +1,3 @@
-/-ai
-If Y' is a neighbourhood of E, then the true tag of the false tag of Y' is a neighbourhood of the coalesced sum of the lifts of D and E.
-
-The false tag of Y' is a neighbourhood of the lift of E, and it differs from the lift master, so the coalesced sum accepts it as a right neighbourhood.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

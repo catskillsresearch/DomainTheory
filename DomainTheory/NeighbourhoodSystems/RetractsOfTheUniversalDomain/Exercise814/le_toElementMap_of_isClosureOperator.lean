@@ -1,8 +1,3 @@
-/-ai
-Every element of the neighbourhood system lies below its image under a closure operator.
-
-The closure inequality says that the identity approximable map lies below the operator. Reading that comparison at the element, and rewriting the element map of the identity as the identity, gives the claim.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem85

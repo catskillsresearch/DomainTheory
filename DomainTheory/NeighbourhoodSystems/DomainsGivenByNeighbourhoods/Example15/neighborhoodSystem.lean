@@ -1,6 +1,3 @@
-/-ai
-Scott's Example 1.5 is the neighbourhood system of all nonempty subsets of the four-element token set. Membership is nonemptiness, the master neighbourhood is the whole token set, and the system laws are the facts that this master is nonempty and a neighbourhood, that a nonempty witness inside an intersection makes the intersection a neighbourhood, and that every set of tokens is contained in the master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Basic

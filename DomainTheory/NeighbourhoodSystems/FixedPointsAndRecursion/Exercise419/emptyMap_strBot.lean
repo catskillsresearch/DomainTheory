@@ -1,8 +1,3 @@
-/-ai
-On a partial element, the emptiness test returns the partial head value whose bit constants are both false.
-
-The equality is the partial-element equation of the lift, applied to the head data of the emptiness test.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example44

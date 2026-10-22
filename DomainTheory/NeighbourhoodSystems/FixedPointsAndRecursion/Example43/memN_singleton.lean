@@ -1,8 +1,3 @@
-/-ai
-Every singleton of a natural number is a neighbourhood of the natural-number system.
-
-It is the second disjunct of the neighbourhood predicate, witnessed by its element.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example23

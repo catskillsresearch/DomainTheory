@@ -1,8 +1,3 @@
-/-ai
-The enumeration of the one-entry code of a pair of indices is the step neighbourhood of the two indexed neighbourhoods.
-
-The pairing of that code is the pair of neighbourhoods, and decoding the successor of the packed code yields the singleton list. The step neighbourhood of that one-pair list is the step. The code is consistent because a step neighbourhood is nonempty, so the positive branch of the enumeration is that step.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.FunctionSpace

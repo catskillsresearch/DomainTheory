@@ -1,8 +1,3 @@
-/-ai
-If a set is a neighbourhood of the summed system, the intersection of the master neighbourhood with its copy at a letter is that copy.
-
-The copy is contained in the master, so intersecting the master on the left leaves the copy unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

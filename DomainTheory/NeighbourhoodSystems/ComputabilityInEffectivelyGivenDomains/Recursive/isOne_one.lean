@@ -1,8 +1,3 @@
-/-ai
-The one-indicator of 1 equals 1.
-
-This is the right-to-left direction of the characterization of the one-indicator, applied at 1 to reflexivity.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,8 +1,3 @@
-/-ai
-If a Scott map f' on Y extends a map f along e, then the subspace-extension infimum of f on U equals the infimum of the values of f' on the intersection of the image of e with U.
-
-The two sets of values coincide. A value of f at a point sent into U is the value of f' at the image point, which lies in the image of e and in U. A value of f' at a point of that intersection is the value of f at a preimage point sent into U.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

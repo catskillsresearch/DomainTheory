@@ -1,8 +1,3 @@
-/-ai
-The intersection of the sum master with the right copy of a neighbourhood is that right copy.
-
-The right copy of a neighbourhood is contained in the sum master, so the intersection with the master leaves the copy unchanged.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approximable

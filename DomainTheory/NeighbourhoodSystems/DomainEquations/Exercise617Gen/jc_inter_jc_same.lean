@@ -1,8 +1,3 @@
-/-ai
-The intersection of the tagged copies of two sets by the same index is the tagged copy of the intersection of the sets.
-
-A token in both copies is tagged by that index, and the two decompositions name the same underlying element, which therefore lies in both sets. Conversely, a token tagged by an element of the intersection lies in both copies.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

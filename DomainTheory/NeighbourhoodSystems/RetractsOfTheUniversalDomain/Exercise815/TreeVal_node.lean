@@ -1,8 +1,3 @@
-/-ai
-Evaluation of a node code is the universal intersection of the evaluations of its two children.
-
-Each child is strictly smaller than the node code. The tag of a node is one, so the first selector equals zero and the second equals one, and the two payloads are the children. The fuel step therefore returns the universal intersection of the fuel values at the children, and those fuel values agree with the fuel-free evaluations because each child lies below the node.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

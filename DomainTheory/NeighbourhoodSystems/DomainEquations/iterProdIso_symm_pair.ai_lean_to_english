@@ -1,0 +1,3 @@
+The inverse of the product isomorphism sends a pair of an element a and a sequence b to the sequence that begins with a and then follows the components of b.
+
+The forward isomorphism applied to that cons sequence returns the original pair: its component at zero is a and its tail is b, by the component formulas for cons and the reconstruction of a sequence from its components. Applying the inverse therefore returns the cons sequence.

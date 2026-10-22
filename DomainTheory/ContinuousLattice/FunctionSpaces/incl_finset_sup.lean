@@ -1,8 +1,3 @@
-/-ai
-The inclusion of a continuous-lattice projection preserves finite joins. The inclusion of the join of a finite set equals the join of the inclusions of its members.
-
-The claim is proved by induction on the finite set. The empty join is bottom, and the inclusion sends bottom to bottom. At a successor, the inclusion preserves the binary join of the new element with the join of the remainder, and the inductive hypothesis rewrites the remainder.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.ScottMaps

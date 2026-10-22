@@ -1,8 +1,3 @@
-/-ai
-An endofunctor that is continuous on maps sends a strict map to a strict map.
-
-The witnessing approximable map on the strict function space identifies the image of the strict map with the underlying map of the strict map obtained by applying the witness and converting back from a filter, and that underlying map is strict.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition63

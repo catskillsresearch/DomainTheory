@@ -1,6 +1,3 @@
-/-ai
-The token map fTok sends sets p and q to gTok of p with gTok of p and q. For the singleton systems on p and q, that is the token set of D summed with the product of D and E.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise619PartB

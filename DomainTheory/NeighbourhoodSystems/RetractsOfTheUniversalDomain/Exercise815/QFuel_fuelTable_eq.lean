@@ -1,8 +1,3 @@
-/-ai
-For every code up to a given bound, the entry of the fuel table built from the lookup step equals the fuel-indexed evaluator.
-
-This is the general agreement of a fuel table with a recursion. The lookup step matches the fuel body after the packed input is unpacked, and the body depends on the previous function only at the two children, each of which is at most the code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem75

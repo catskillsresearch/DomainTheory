@@ -1,8 +1,3 @@
-/-ai
-Any element w' of the function space that satisfies the while-recursion w'(x) = cond(p(x), w'(f(x)), x) lies above the least solution, the while-loop element.
-
-The least-fixed-point comparison reduces the claim to an inequality of element maps, obtained from equality. Injectivity of the function-space equivalence, after rewriting its two applications, reduces that equality to extensionality of element maps. At each argument, the operator identity is the recursion, which is the hypothesis read in the reverse direction.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

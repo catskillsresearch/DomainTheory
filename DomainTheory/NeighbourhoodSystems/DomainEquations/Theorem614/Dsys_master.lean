@@ -1,8 +1,3 @@
-/-ai
-Every system in the tower has the same master as the generating system.
-
-The proof is by induction on the level. The zeroth level is the generating system. At a successor, the subdomain step identifies the master of the successor with the master of the previous level, and the inductive hypothesis replaces that master by the generating master.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition613

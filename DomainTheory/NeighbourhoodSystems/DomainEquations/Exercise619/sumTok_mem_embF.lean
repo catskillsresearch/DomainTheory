@@ -1,8 +1,3 @@
-/-ai
-If X is a neighbourhood of the first system, its false-tagged copy is a neighbourhood of the concrete sum.
-
-It is the left-copy clause of the membership definition.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example62

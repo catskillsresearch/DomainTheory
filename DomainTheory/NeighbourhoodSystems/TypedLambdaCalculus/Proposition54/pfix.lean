@@ -1,6 +1,3 @@
-/-ai
-The left-hand side of Proposition 5.4 is the approximable endomap sending x to the least fixed point in y of τ(x, y), realized as the fixed-point operator composed with the curry of τ.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem41

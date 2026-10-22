@@ -1,8 +1,3 @@
-/-ai
-A code c lies in GraphIdx W if and only if there exist n and m₀ such that the untagged list of c equals bitsCode n n, every map in W relates nbhd n to nbhd m₀, and the bit of m₀ at the untagged value of c is set. Tagging the decoded bit list is one encoding of the pair consisting of the excluded set and a value, and decoding recovers it.
-
-From a witness n, m₀, and m with c equal to tagOfBits n m, the untagging round trip composed with the specification of tagOfBits is a tagging equality. Injectivity of tagging splits it into a list equality and a value equality, injectivity of decoding gives the bit-code equation, and rewriting the bit by the value equality keeps the bit hypothesis. Conversely, the untagged value is the missing third component, and the specification of tagOfBits together with the symmetric untagging round trip recover the code.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example78

@@ -1,8 +1,3 @@
-/-ai
-The atom projection of the empty set of tree tokens is empty.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product

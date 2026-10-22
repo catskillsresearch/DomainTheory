@@ -1,6 +1,3 @@
-/-ai
-The outer step of the coded fold pops the head x from the packed argument, computes the inner cross of that head with the fixed list code, and appends the result onto the accumulator.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

@@ -1,8 +1,3 @@
-/-ai
-The code of Scott's Y sequence is primitive recursive.
-
-Exponentiation by two is primitive recursive. The code fold, fed the pair of the depth with two to that power, is primitive recursive, and its second component agrees with the coded sequence after that pair is unpacked.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem88b.Basic

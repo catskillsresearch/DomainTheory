@@ -1,8 +1,3 @@
-/-ai
-At the index i, the updated tuple at i with value U equals U.
-
-Unfolding the update gives the diagonal value of a function update.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Product

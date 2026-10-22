@@ -1,6 +1,3 @@
-/-ai
-splitURight n is the right half of the canonical split of the neighbourhood of n: every pair of its canonical presenting list, clipped into the closed ray from the midpoint of the first pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

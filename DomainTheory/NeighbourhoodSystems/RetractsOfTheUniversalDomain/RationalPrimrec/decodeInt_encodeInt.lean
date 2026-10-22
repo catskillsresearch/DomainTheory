@@ -1,8 +1,3 @@
-/-ai
-Decoding the encoding of an integer returns that integer.
-
-Unfolding the two maps and cancelling the pairing, the sign of the integer splits the argument. If the integer is nonnegative, its truncation is itself and the truncation of its negation is zero. If it is negative, its truncation is zero and the truncation of its negation is the negation. In each case the difference of those truncations is the integer.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Recursive

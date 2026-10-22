@@ -1,6 +1,3 @@
-/-ai
-The domain of the joint evaluator is the product of the function space of the universal domain with itself and the product of that function space with the universal domain. An element packages the varying map, the curry variable, and the point.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition810b

@@ -1,6 +1,3 @@
-/-ai
-The index swap sends 0 to the master index, sends the master index to 0, and fixes every other natural number. It moves the index of the master neighbourhood to 0 and leaves the rest of the enumeration in place.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DAtomDecidable

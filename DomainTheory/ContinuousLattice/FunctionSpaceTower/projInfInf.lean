@@ -1,6 +1,3 @@
-/-ai
-The projection j_∞ from the function space [D_∞ → D_∞] onto the inverse limit D_∞ is the supremum of the Scott maps jInfTerm n. On a Scott map f it is the supremum over n of the level-(n+1) embedding of j_{∞n} ∘ f ∘ i_{n∞}. As a supremum of Scott maps, it is Scott-continuous.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits

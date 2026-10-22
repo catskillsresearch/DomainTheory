@@ -1,8 +1,3 @@
-/-ai
-Unpairing the pair of a and b recovers the ordered pair of a and b.
-
-Unfolding pairing, if a is strictly less than b then the pair is the square of b plus a. The square-root addition law gives square root b, and simplifying unpairing returns a and b. Otherwise the pair equals a squared plus a plus b. Rewriting that sum as a squared plus the sum of a and b, the same law gives square root a, and the three arithmetic identities for the remainder, the failed strict comparison, and the final subtraction simplify unpairing to a and b.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt

@@ -1,6 +1,3 @@
-/-ai
-Tsig A is the endofunctor, on the category of empty-free domains and strict maps, sending an object to tsigObj A and a morphism to tsigMapHom A. It implements the functor that adds a unit summand and a copy of the domain for each letter of A. Identities are preserved because the underlying sum of an identity map is the identity, and composition is preserved because the underlying sum map preserves composition of the underlying approximable maps; the strict morphisms then agree by comparison of those underlying maps.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise617

@@ -1,8 +1,3 @@
-/-ai
-The evaluation map relates a pair of neighbourhoods if and only if some Kleene iterate does.
-
-The two sides are definitionally equal.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise621

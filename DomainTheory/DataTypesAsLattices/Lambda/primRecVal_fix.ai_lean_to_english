@@ -1,0 +1,3 @@
+Scott 1976, (2.27): the least fixed point of the primitive-recursion step, applied to the numeral n, equals the primitive-recursive value at n.
+
+At zero, the fixed-point equation of Theorem 1.4 rewrites the application as the step at the fixed point, the step application law produces the conditional, and the zero clause for the conditional on the numeral zero returns the base. At a successor, the same rewriting produces the conditional, the successor clause for the conditional together with the predecessor of a successor numeral replaces it by the step applied to the preceding numeral and the fixed point at that numeral, and the inductive hypothesis replaces the fixed point by the recursive value.

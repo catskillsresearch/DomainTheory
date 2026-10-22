@@ -1,6 +1,3 @@
-/-ai
-Decoding a set of indices in a countably algebraic lattice is the supremum of the compact elements indexed by that set.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

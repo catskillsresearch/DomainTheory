@@ -1,8 +1,3 @@
-/-ai
-Applying the boxed sum of a and b to the full set yields the full set.
-
-Both square projections of the full set are the full set, hence nonempty, so the mixed occupancy case applies.
-ai-/
 module
 
 public import Mathlib.Algebra.Ring.Parity

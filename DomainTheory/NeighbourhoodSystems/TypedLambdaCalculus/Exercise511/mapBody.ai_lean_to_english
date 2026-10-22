@@ -1,0 +1,1 @@
+The body of the map recursion sends a function of a stack of functions paired with a point, together with such a pair, to the push of the head function applied to the point onto the value of the function at the tail and the same point. It is the composite of push with the pairing of that evaluation and the evaluation of the function.

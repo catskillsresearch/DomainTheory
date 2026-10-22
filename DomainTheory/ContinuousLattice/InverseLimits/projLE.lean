@@ -1,6 +1,3 @@
-/-ai
-For m at most n, descending the tower sends an element of D_n to D_m by iterating the stage retractions from n down to m, starting from the identity.
-ai-/
 module
 
 public import DomainTheory.ContinuousLattice.Theorem212

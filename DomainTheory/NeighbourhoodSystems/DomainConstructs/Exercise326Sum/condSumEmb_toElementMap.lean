@@ -1,8 +1,3 @@
-/-ai
-The embedding sends a paired element to the pair of the truth element with the pair of the left injection of the first value and the right injection of the second value.
-
-Unfold the embedding and simplify by the element maps of pairing, composition, and the two projections, together with the two components of a pair.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise326

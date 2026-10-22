@@ -1,8 +1,3 @@
-/-ai
-Decoding the singleton list code of a pair code v yields the one-element list whose entry is the decoded rational pair of v.
-
-Unfold decoding of the list, rewrite the successor code by the list-decoding equation and the unpair-pair identities, and use that the tail code decodes to the empty list.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UComputablePresentation

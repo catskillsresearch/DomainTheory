@@ -1,8 +1,3 @@
-/-ai
-If u is consistent and u set-entails v, then the constructive union of u with v is consistent.
-
-The argument proves a stronger claim by induction on a finite set s contained in v: the constructive union of u with s is consistent. The empty case rewrites that union to u. In the inductive step, u entails the newly inserted token because the token lies in v. The inductive union is consistent, and cut moves the entailment from u to that union, since the union entails every member of u by reflexivity along the inclusion of u. The entailment-consistency axiom inserts the token, and distribution of constructive union over insertion rewrites the result. The original claim is the case where s is v.
-ai-/
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive

@@ -1,6 +1,3 @@
-/-ai
-The bottom element of the domain of O is the bottom element of O.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise213

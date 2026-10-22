@@ -1,8 +1,3 @@
-/-ai
-The product of d, regarded as a self-map of the universal domain, is a finitary projection.
-
-It is a projection, and finitariness of the function-space product transports to the universal-domain product.
-ai-/
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exercise826

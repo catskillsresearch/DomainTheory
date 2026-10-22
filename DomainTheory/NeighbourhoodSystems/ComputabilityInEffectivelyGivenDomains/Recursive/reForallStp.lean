@@ -1,6 +1,3 @@
-/-ai
-The fold-shaped witness-threading step, whose separate parameter is unused, updates a packed state in the same way: the remaining witness code becomes the second component of the unpairing of its predecessor, and the flag is conjoined with the equality-to-one test of the predicate at the pair of the popped witness and the current head.
-ai-/
 module
 
 public import Mathlib.Data.Nat.Sqrt
