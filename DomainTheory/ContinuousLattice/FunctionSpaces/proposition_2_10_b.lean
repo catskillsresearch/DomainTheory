@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.image_retr_wayBelow_directed
 public import DomainTheory.ContinuousLattice.FunctionSpaces.image_retr_wayBelow_nonempty

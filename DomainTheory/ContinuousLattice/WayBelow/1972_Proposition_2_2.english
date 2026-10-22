@@ -1,4 +1,4 @@
-The primary purpose of introducing [the relation \(x \ll y\)](1972_Relation.md) is to provide a simple definition for the kind of spaces that are most useful to us. We first mention the most elementary features of this relation.
+The primary purpose of introducing [the way-below relation](1972_WayBelow.md) is to provide a simple definition for the kind of spaces that are most useful to us. We first mention the most elementary features of this relation.
 
 **2.2 Proposition.** In a complete lattice $D$ we have:
 
@@ -24,4 +24,4 @@ $$
 
 then $x \sqsubseteq z$ for some $z \in Z$.
 
-There is no `proposition_2_2` module. The seven clauses are separate files: (i) `bot_wayBelow`, (ii) `WayBelow.sup`, (iii) `WayBelow.trans_le`, (iv) `WayBelow.le_trans`, (v) `WayBelow.le`, (vi) `wayBelow_self_iff_scottOpen_Ici`, and (vii) `wayBelow_sSup_iff`. The directed-supremum characterization just above is not one of those files. The equation that turns this relation into a continuous lattice is [Definition 2.3](1972_Definition_2_3.md).
+There is no `proposition_2_2` module. Clauses (i)–(v) are separate files: (i) `bot_wayBelow`, (ii) `WayBelow.sup`, (iii) `WayBelow.trans_le`, (iv) `WayBelow.le_trans`, and (v) `WayBelow.le`. Clauses (vi) `WayBelow.self_iff_scottOpen_Ici` and (vii) `WayBelow.sSup_iff` are declared with the relation in [WayBelow.lean](WayBelow.lean). The directed-supremum characterization just above is not one of those clauses. The equation that turns this relation into a continuous lattice is [Definition 2.3](1972_ContinuousLattice.md).

@@ -1,1 +1,3 @@
 Scott 1972, Definition 2.3. A complete lattice is a continuous lattice when every element is the least upper bound of the set of elements way below it. The field `sSup_wayBelow` records that this least upper bound is the supremum.
+
+`WayBelow.interpolate` is the interpolation property of a continuous lattice. If a is way below c, some b satisfies a way below b and b way below c. The set of elements way below something way below c is directed and nonempty, and continuity makes its supremum c, so a is way below some member of that set.

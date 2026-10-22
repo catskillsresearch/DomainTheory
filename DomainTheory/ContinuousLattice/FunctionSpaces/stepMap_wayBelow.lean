@@ -1,9 +1,9 @@
 module
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_le_of_wayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
-public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -38,7 +38,7 @@ theorem stepMap_wayBelow {e : D} {e' : D'} {f : ScottMap D D'}
       rintro _ ⟨a, ha, rfl⟩ _ ⟨b, hb, rfl⟩
       obtain ⟨c, hc, hac, hbc⟩ := hFdir a ha b hb
       exact ⟨(c : D → D') e, Set.mem_image_of_mem _ hc, hac e, hbc e⟩
-    obtain ⟨_, ⟨g, hgF, rfl⟩, hg⟩ := (wayBelow_sSup_iff hne hdir).1 hmem
+    obtain ⟨_, ⟨g, hgF, rfl⟩, hg⟩ := (WayBelow.sSup_iff hne hdir).1 hmem
     exact ⟨g, hgF, hg⟩
   · intro g hg
     exact Set.mem_Ici.2 (stepMap_le_of_wayBelow hg)

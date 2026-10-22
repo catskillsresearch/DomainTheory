@@ -1,11 +1,11 @@
 module
 
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.ContinuousLattices.completeLattice
 public import DomainTheory.ContinuousLattice.ContinuousLattices.idemFixRetraction
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_2_10_b
 public import DomainTheory.ContinuousLattice.ScottMaps.preservesDirectedSup_monotone
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

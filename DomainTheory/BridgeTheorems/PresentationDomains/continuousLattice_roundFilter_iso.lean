@@ -1,4 +1,6 @@
 module
+
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.domainOrderIso
 public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 public import Mathlib.Order.Hom.Basic

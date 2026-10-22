@@ -1,10 +1,11 @@
 module
+
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12_backward
 public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12_forward
 public import DomainTheory.ContinuousLattice.Injective.IsInjectiveSpaceu2eof_retract
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

@@ -1,7 +1,0 @@
-**Definition.** A *continuous lattice* is a complete lattice $D$ in which for every $y \in D$ we have:
-
-$$
-y = \bigsqcup x \in D : x \ll y.
-$$
-
-Every element is the least upper bound of the elements way below it. 

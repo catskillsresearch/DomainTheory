@@ -1,10 +1,10 @@
 module
-
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.converseRetr
 public import DomainTheory.ContinuousLattice.FunctionSpaces.converseRetr_mono
-public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic
@@ -49,7 +49,7 @@ theorem converseRetr_preservesDirectedSup
     apply sSup_le
     intro z hz
     have hiz : i z ≪ sSup S' := (hwb hz).trans_le hx'
-    obtain ⟨x', hx'S', hzx'⟩ := (wayBelow_sSup_iff hS'ne hS'dir).1 hiz
+    obtain ⟨x', hx'S', hzx'⟩ := (WayBelow.sSup_iff hS'ne hS'dir).1 hiz
     have hz_mem : z ∈ {x | i x ≤ x'} := hzx'.le
     exact le_trans (le_sSup hz_mem) (le_sSup ⟨x', hx'S', rfl⟩)
   · apply sSup_le

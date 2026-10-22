@@ -1,4 +1,6 @@
 module
+
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.ContinuousLattices.IsContinuousLatticeu2eorderIso
 public import DomainTheory.ContinuousLattice.ContinuousLattices.theorem_2_12_backward
 public import DomainTheory.ContinuousLattice.ContinuousLattices.orderIsoScottHomeomorph
@@ -7,7 +9,6 @@ public import DomainTheory.ContinuousLattice.Specialization.specializationLe_sco
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationLeu2emap
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationLe
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
 

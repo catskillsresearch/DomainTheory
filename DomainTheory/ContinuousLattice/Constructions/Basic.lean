@@ -5,7 +5,6 @@ public import DomainTheory.ContinuousLattice.ScottMaps.scottOpen_preimage
 public import Mathlib.Data.Finset.Lattice.Basic
 public import Mathlib.Data.Finset.Insert
 public import Mathlib.Data.Finset.Defs
-public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import Mathlib.Topology.Defs.Basic
@@ -88,7 +87,7 @@ theorem wayBelow_finite_support {ι : Type*} {E : ι → Type*} [∀ i, Complete
       refine le_sSup ⟨Z {j}, ⟨{j}, rfl⟩, ?_⟩
       simp [hZ, Function.eval]
   rw [← hsup] at h
-  obtain ⟨d, hd𝒵, had⟩ := (wayBelow_sSup_iff h𝒵ne h𝒵dir).1 h
+  obtain ⟨d, hd𝒵, had⟩ := (WayBelow.sSup_iff h𝒵ne h𝒵dir).1 h
   obtain ⟨F, rfl⟩ := hd𝒵
   refine ⟨F, fun j hjF => ?_⟩
   have hj := had.le j

@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.BridgeTheorems.PresentationDomains.roundInfoSys_ideal_iso
 public import DomainTheory.BridgeTheorems.PresentationDomains.presentation_domains_equiv
 public import Mathlib.Order.Hom.Basic

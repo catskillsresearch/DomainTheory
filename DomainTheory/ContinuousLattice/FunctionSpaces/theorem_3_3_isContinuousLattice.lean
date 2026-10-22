@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_pointwise_sSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_wayBelow

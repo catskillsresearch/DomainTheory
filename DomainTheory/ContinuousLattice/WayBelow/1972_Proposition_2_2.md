@@ -26,14 +26,6 @@
 
 @import "WayBelowu2ele.lean"
 
-**[ContinuousLattice/WayBelow/wayBelow_self_iff_scottOpen_Ici.lean](wayBelow_self_iff_scottOpen_Ici.lean)**
-
-@import "wayBelow_self_iff_scottOpen_Ici.lean"
-
-**[ContinuousLattice/WayBelow/wayBelow_sSup_iff.lean](wayBelow_sSup_iff.lean)**
-
-@import "wayBelow_sSup_iff.lean"
-
 ## AI: AI-Lean to AI-English
 
 @import "bot_wayBelow.ai_lean_to_english" {code_block=false}
@@ -45,10 +37,6 @@
 @import "WayBelowu2ele_trans.ai_lean_to_english" {code_block=false}
 
 @import "WayBelowu2ele.ai_lean_to_english" {code_block=false}
-
-@import "wayBelow_self_iff_scottOpen_Ici.ai_lean_to_english" {code_block=false}
-
-@import "wayBelow_sSup_iff.ai_lean_to_english" {code_block=false}
 
 ## AI: AI-English to Human-English Concordance
 

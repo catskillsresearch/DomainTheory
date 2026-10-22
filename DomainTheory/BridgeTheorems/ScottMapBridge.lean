@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.BridgeTheorems.approximableMap_scottContinuous_equiv
 public import DomainTheory.BridgeTheorems.orderIso
 public import DomainTheory.BridgeTheorems.PresentationDomains.presentation_domains_equiv

@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.BridgeTheorems.PresentationDomains.roundFilter_infoSys_iso
 public import DomainTheory.BridgeTheorems.PresentationDomains.continuousLattice_roundFilter_iso
 public import Mathlib.Order.Hom.Basic

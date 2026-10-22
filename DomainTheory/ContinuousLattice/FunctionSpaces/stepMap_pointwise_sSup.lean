@@ -1,11 +1,11 @@
 module
-
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+
 public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.WayBelow.directedOn_wayBelow
-public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
 public import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic
@@ -47,7 +47,7 @@ theorem stepMap_pointwise_sSup (hD : ContinuousLattice D) (hD' : ContinuousLatti
       rintro _ ⟨a, ha, rfl⟩ _ ⟨b, hb, rfl⟩
       obtain ⟨c, hc, hac, hbc⟩ := directedOn_wayBelow x a ha b hb
       exact ⟨f c, Set.mem_image_of_mem _ hc, f.monotone hac, f.monotone hbc⟩
-    obtain ⟨_, ⟨e, hex, rfl⟩, hwe⟩ := (wayBelow_sSup_iff hne hdir).1 hw
+    obtain ⟨_, ⟨e, hex, rfl⟩, hwe⟩ := (WayBelow.sSup_iff hne hdir).1 hw
     exact le_sSup ⟨e, hex, hwe⟩
 
 end DomainTheory.ContinuousLattice

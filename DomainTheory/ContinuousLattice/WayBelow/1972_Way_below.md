@@ -4,6 +4,6 @@
 
 @import "WayBelow.mermaid"
 
-- [The relation \(x \ll y\)](1972_Relation.md)
+- [The way-below relation](1972_WayBelow.md)
 - [Proposition 2.2](1972_Proposition_2_2.md)
-- [Continuous lattices](1972_Definition_2_3.md)
+- [Continuous lattices](1972_ContinuousLattice.md)

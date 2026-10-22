@@ -2,7 +2,7 @@
 
 ## Human-English
 
-@import "1972_Definition_2_3.english" {code_block=false}
+@import "1972_ContinuousLattice.english" {code_block=false}
 
 ## AI: Human-English to AI-Lean
 
@@ -16,4 +16,4 @@
 
 ## AI: AI-English to Human-English Concordance
 
-@import "1972_Definition_2_3.ai_english_concordance" {code_block=false}
+@import "1972_ContinuousLattice.ai_english_concordance" {code_block=false}

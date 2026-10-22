@@ -1,7 +1,7 @@
 module
 
-public import Mathlib.Order.CompleteLattice.Basic
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+public import Mathlib.Order.CompleteLattice.Basic
 public import DomainTheory.ContinuousLattice.Constructions.proposition_2_9
 public import DomainTheory.ContinuousLattice.Constructions.isContinuousLattice_prop
 public import Mathlib.Topology.Defs.Basic

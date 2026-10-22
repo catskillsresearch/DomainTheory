@@ -1,8 +1,8 @@
-# Continuous lattices and the way-below relation
+# The way-below relation
 
 ## Human-English
 
-@import "1972_Relation.english" {code_block=false}
+@import "1972_WayBelow.english" {code_block=false}
 
 ## AI: Human-English to AI-Lean
 
@@ -34,4 +34,4 @@
 
 ## AI: AI-English to Human-English Concordance
 
-@import "1972_Relation.ai_english_concordance" {code_block=false}
+@import "1972_WayBelow.ai_english_concordance" {code_block=false}

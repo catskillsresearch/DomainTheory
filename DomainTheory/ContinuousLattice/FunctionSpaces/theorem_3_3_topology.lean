@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.FunctionSpaces.wayBelow_le_finset_sup_step
 public import DomainTheory.ContinuousLattice.FunctionSpaces.pointwiseSubbasic_scottOpen

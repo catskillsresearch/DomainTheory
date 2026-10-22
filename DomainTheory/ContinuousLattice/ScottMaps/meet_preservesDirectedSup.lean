@@ -1,7 +1,7 @@
 module
-
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
+
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
@@ -25,7 +25,7 @@ theorem meet_preservesDirectedSup (x : D) (hD : ContinuousLattice D) :
   · have hle : sSup {t | t ≪ x ⊓ sSup S} ≤ sSup (Set.image (fun z => x ⊓ z) S) := by
       apply sSup_le
       intro t ht
-      obtain ⟨w, hwS, ht_w⟩ := (wayBelow_sSup_iff hS hSdir).1 (ht.trans_le inf_le_right)
+      obtain ⟨w, hwS, ht_w⟩ := (WayBelow.sSup_iff hS hSdir).1 (ht.trans_le inf_le_right)
       have hmem : x ⊓ w ∈ Set.image (fun z : D => x ⊓ z) S :=
         Set.mem_image_of_mem (fun z => x ⊓ z) hwS
       have hbound : x ⊓ w ≤ sSup (Set.image (fun z => x ⊓ z) S) := le_sSup hmem

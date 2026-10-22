@@ -16,4 +16,4 @@ It easily follows by lattice theory that the equation of 2.3 implies that of 2.4
 
 In the converse direction we have only to note that if $U$ is open and $y \in U$, then $\sqcap U \ll y$. The implication from 2.4 to 2.3 results at once. $\square$
 
-`proposition_2_4` is a synonym of `isContinuousLattice_iff_isLUB_sInf_nhds`. The comparison $\sqcap U \ll y$ is `sInf_wayBelow`, filed with [the relation $x \ll y$](../WayBelow/1972_Relation.md).
+`proposition_2_4` is a synonym of `isContinuousLattice_iff_isLUB_sInf_nhds`. The comparison $\sqcap U \ll y$ is `sInf_wayBelow`, filed with [the way-below relation](../WayBelow/1972_WayBelow.md).

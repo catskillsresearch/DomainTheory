@@ -1,10 +1,10 @@
 module
-
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+
 public import DomainTheory.ContinuousLattice.Constructions.directedOn_finite_sSup_mem
 public import Mathlib.Data.Fintype.EquivFin
 public import Mathlib.Basic.Finite.Defs
-public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_self_iff_scottOpen_Ici
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Set.Basic
@@ -27,7 +27,7 @@ theorem proposition_2_8 [Finite D] : ContinuousLattice D := by
   have hopen : ScottOpen (Set.Ici y) := by
     refine ⟨isUpperSet_Ici y, fun S hSne hSdir hmem => ?_⟩
     exact ⟨sSup S, directedOn_finite_sSup_mem (Set.toFinite S) hSne hSdir, hmem⟩
-  have hyy : y ≪ y := wayBelow_self_iff_scottOpen_Ici.mpr hopen
+  have hyy : y ≪ y := WayBelow.self_iff_scottOpen_Ici.mpr hopen
   exact ⟨fun x hx => hx.le, fun b hb => hb hyy⟩
 
 end DomainTheory.ContinuousLattice

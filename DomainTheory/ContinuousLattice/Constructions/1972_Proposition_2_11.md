@@ -6,9 +6,9 @@
 
 ## AI: Human-English to AI-Lean
 
-**[ContinuousLattice/WayBelow/wayBelow_interpolate.lean](../WayBelow/wayBelow_interpolate.lean)**
+**[ContinuousLattice/WayBelow/ContinuousLattice.lean](../WayBelow/ContinuousLattice.lean)**
 
-@import "../WayBelow/wayBelow_interpolate.lean"
+@import "../WayBelow/ContinuousLattice.lean"
 
 **[ContinuousLattice/Constructions/scottExtend.lean](scottExtend.lean)**
 
@@ -64,7 +64,7 @@
 
 ## AI: AI-Lean to AI-English
 
-@import "../WayBelow/wayBelow_interpolate.ai_lean_to_english" {code_block=false}
+@import "../WayBelow/ContinuousLattice.ai_lean_to_english" {code_block=false}
 
 @import "scottExtend.ai_lean_to_english" {code_block=false}
 

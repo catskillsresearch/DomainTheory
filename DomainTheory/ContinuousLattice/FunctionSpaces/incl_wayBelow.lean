@@ -1,10 +1,10 @@
 module
-
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+
 public import DomainTheory.ContinuousLattice.FunctionSpaces.preservesDirectedSup_coe
 public import DomainTheory.ContinuousLattice.FunctionSpaces.IsContinuousLatticeProjection
 public import DomainTheory.ContinuousLattice.FunctionSpaces.monotone
-public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2esup
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele_trans
 public import DomainTheory.ContinuousLattice.WayBelow.bot_wayBelow
@@ -55,7 +55,7 @@ theorem incl_wayBelow (P : IsContinuousLatticeProjection D D') (hD' : Continuous
     · exact P.retr.monotone le_sup_left
     · exact P.retr.monotone le_sup_right
   have hx : x ≪ sSup (Set.image (P.retr : D' → D) W) := by rwa [← hy]
-  obtain ⟨prz, hprz, hxpr⟩ := (wayBelow_sSup_iff hImgne hImgdir).1 hx
+  obtain ⟨prz, hprz, hxpr⟩ := (WayBelow.sSup_iff hImgne hImgdir).1 hx
   obtain ⟨z', hz', rfl⟩ := hprz
   exact @WayBelow.le_trans D' _ (P.incl x) z' (P.incl y)
     (le_trans (P.incl.monotone hxpr.le) (P.incl_retr_le z')) hz'

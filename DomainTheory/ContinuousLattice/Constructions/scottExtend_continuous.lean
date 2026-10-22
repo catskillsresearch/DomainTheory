@@ -1,13 +1,13 @@
 module
-
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+
 public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_directed
 public import DomainTheory.ContinuousLattice.Constructions.scottExtend_aux_nonempty
 public import DomainTheory.ContinuousLattice.Specialization.isOpen_iff_scottOpen
 public import DomainTheory.ContinuousLattice.WayBelow.exists_wayBelow_subset
-public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2etrans_le
 public import Mathlib.Topology.Defs.Basic
 
@@ -40,7 +40,7 @@ theorem scottExtend_continuous (hE : ContinuousLattice E) (e : X → Y) (f : X �
   intro y₀ hy₀
   have hgy₀U : scottExtend e f y₀ ∈ U := hy₀
   obtain ⟨a, haz, hasub⟩ := exists_wayBelow_subset hE hU hgy₀U
-  obtain ⟨d, hd, had⟩ := (wayBelow_sSup_iff (scottExtend_aux_nonempty e f y₀)
+  obtain ⟨d, hd, had⟩ := (WayBelow.sSup_iff (scottExtend_aux_nonempty e f y₀)
     (scottExtend_aux_directed e f y₀)).1 haz
   obtain ⟨V, hVo, hy₀V, rfl⟩ := hd
   refine ⟨V, ?_, hVo, hy₀V⟩

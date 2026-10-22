@@ -1,9 +1,9 @@
 module
 
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.BridgeTheorems.PresentationDomains.neighborhood_ideal_iso
 public import DomainTheory.BridgeTheorems.PresentationDomains.RoundInfoSysElement
 public import DomainTheory.BridgeTheorems.PresentationDomains.presentation_domains_equiv
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.BridgeTheorems.InfoSysToNeighborhood
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion

@@ -1,6 +1,7 @@
 module
-
+public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
+
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_pointwise_sSup
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_le_of_wayBelow
 public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap_apply_of_wayBelow
@@ -8,7 +9,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.stepMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.BasicInst33
 public import DomainTheory.ContinuousLattice.FunctionSpaces.sSup_apply
 public import DomainTheory.ContinuousLattice.FunctionSpaces.le_def
-public import DomainTheory.ContinuousLattice.WayBelow.wayBelow_sSup_iff
 public import DomainTheory.ContinuousLattice.WayBelow.WayBelowu2ele
 public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Data.Finset.Basic
@@ -29,7 +29,7 @@ variable [CompleteLattice D₀] [CompleteLattice D₀'] [CompleteLattice D₁] [
 
 /-- **Step-function decomposition of `≪`.** If `φ ≪ g` in `[D → D']`, then `φ` lies below a finite
 join of step functions `ē[eᵢ,eᵢ']` with `eᵢ' ≪ g eᵢ`. The finite joins of such step functions form
-a directed family with supremum `g`, so `wayBelow_sSup_iff` produces one above `φ`. -/
+a directed family with supremum `g`, so `WayBelow.sSup_iff` produces one above `φ`. -/
 theorem wayBelow_le_finset_sup_step (hD : ContinuousLattice D) (hD' : ContinuousLattice D')
     {φ g : ScottMap D D'} (h : φ ≪ g) :
     ∃ F : Finset (D × D'), (∀ p ∈ F, (p.2 : D') ≪ (g : D → D') p.1) ∧
@@ -69,7 +69,7 @@ theorem wayBelow_le_finset_sup_step (hD : ContinuousLattice D) (hD' : Continuous
         exact le_sSup ⟨stepMap e e', hmemSg, rfl⟩
       rwa [stepMap_apply_of_wayBelow hex] at hx
   rw [← hSgsup] at h
-  obtain ⟨_, ⟨F, hF, rfl⟩, hφs⟩ := (wayBelow_sSup_iff hSgne hSgdir).1 h
+  obtain ⟨_, ⟨F, hF, rfl⟩, hφs⟩ := (WayBelow.sSup_iff hSgne hSgdir).1 h
   exact ⟨F, hF, hφs.le⟩
 
 end DomainTheory.ContinuousLattice

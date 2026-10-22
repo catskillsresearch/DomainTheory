@@ -1,1 +1,5 @@
 Scott 1972, §2. An element x is way below an element y when some Scott-open neighbourhood of y is contained in the principal upset of x. The infix \(x \ll y\) is notation for this relation.
+
+`WayBelow.self_iff_scottOpen_Ici` is Proposition 2.2(vi): an element is way below itself if and only if its principal upset is Scott-open. If the element is way below itself, a witnessing Scott-open neighbourhood contained in the principal upset equals that upset, because the neighbourhood is an upper set and contains the element. Conversely, a Scott-open principal upset is a neighbourhood of the element contained in itself.
+
+`WayBelow.sSup_iff` is Proposition 2.2(vii): for a nonempty directed set, an element is way below the supremum if and only if it is way below some member. A witnessing Scott-open neighbourhood of the supremum meets the directed set, and the meeting point inherits that neighbourhood. Conversely, the member lies below the supremum, and the same neighbourhood witnesses the relation there.

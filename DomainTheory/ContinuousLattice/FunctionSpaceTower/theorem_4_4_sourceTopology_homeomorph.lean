@@ -1,12 +1,12 @@
 module
 
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.theorem_4_4_scottTopology_homeomorph
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_scottTopology_eq_induced_pi
 public import DomainTheory.ContinuousLattice.InverseLimits.proposition_4_1
 public import DomainTheory.ContinuousLattice.FunctionSpaces.theorem_3_3_topology_induced_pi
 public import DomainTheory.ContinuousLattice.FunctionSpaces.scottMapInducedPiTopology
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 
 @[expose] public section
 

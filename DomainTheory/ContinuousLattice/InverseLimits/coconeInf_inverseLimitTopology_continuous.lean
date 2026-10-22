@@ -1,11 +1,11 @@
 module
 
+public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf_preservesDirectedSup
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimit_scottTopology_eq_induced_pi
 public import DomainTheory.ContinuousLattice.ScottMaps.continuous_of_preservesDirectedSup
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
